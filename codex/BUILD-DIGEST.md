@@ -6,6 +6,176 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-06 · cloud run 5 (RUE build, claude-opus-5)
+
+### Headline: three more B2 units live, and every gap frame in the repo now rebuilds its own sentence
+
+B2 went from **7/24 to 10/24 live** — `b2_mixed_conditionals`,
+`b2_wish_if_only` and `b2_hypothetical_past`, the next three sketches in
+`path_order_b2`. All three came out at **48 items in 4 strands of 12**, the
+shape run 4 settled on. None contributes a single unknown type to the audit.
+
+Alongside that, `a1_agreement` — the worst-sequenced A1/A2 unit on the report —
+went to **zero** and dropped off it, and a repo-wide sweep closed out the last
+five items whose canonical `en` did not match its own gap frame.
+
+Net: audit **567 -> 531**, lint warnings **31 -> 12**. Every remaining warning
+is `b2_clear_claims`, which is the open style decision that belongs to James.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `0304551` | `b1_relative_clauses` — 14 gap_answers + 5 Czech prompts repaired |
+| 2 | `6273dd4` | `a1_agreement` re-lexified, 22/26 items (19 -> 0, off the report) |
+| 3 | `d9e1264` | `a2_past_continuous` re-lexified, 15/48 items (17 -> 1) |
+| 4 | `88f13ce` | **`b2_mixed_conditionals`** built + flipped live — 30 -> 48 items |
+| 5 | `4053005` | **`b2_wish_if_only`** built + flipped live — 30 -> 48 items |
+| 6 | `13f968d` | **`b2_hypothetical_past`** built + flipped live — 10 -> 48 items |
+| 7 | `2f601ba` | last 5 frame-mismatched items repo-wide |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 31 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 567 unknown types · 69 units | **531** · 68 units · baseline tightened 567 -> 531 |
+
+Net **-36** unknown types and **-19** warnings. Both gates green before every
+commit; commits and pushes are per unit, not batched.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Fifth run running, same conclusion, and again nothing was manufactured to
+produce a tick. Every unticked item is either engine code this lane may not
+ship or a style call that is James's.
+
+**P0 re-verified independently for the fifth time** (I did not trust runs 1-4):
+`grep -c blocks js/practice-grammar.js` -> **0**, and no pack anywhere in the
+repo has a top-level `match` / `quiz` / `type_items` / `use_items` field —
+checked by parsing all 160 packs, not by grepping, because a naive grep hits
+those words nested inside `blocks` and looks like a false positive. Every live
+grammar node still asks the student **zero questions** before Done. This run
+added three more grammar units to that population; **B2 grammar is now ten
+units deep behind a stage that never runs**, and this is five runs old.
+
+### Sequencing repair — 2 units
+
+**`a1_agreement` (A1 grammar): 19 -> 0.** The worst A1/A2 unit on the report.
+22 of 26 items re-lexified; **no `gap_answer` changed**, so every subject-verb
+agreement contrast survives untouched — only the nouns and adverbs around the
+verb moved (shop/office -> Anna/Tom, coffee/tea -> dogs/cars, football/tennis
+-> friends/dogs, bus -> car, maths -> English, ice cream -> books, Sara ->
+Eva). The pool at this position is tiny (69 targets, 6 units), so the
+replacements had to come from a very short list. Explanations and the intro's
+Quick check were re-aligned to the new lexis rather than left pointing at
+sentences that no longer exist.
+
+Worth noting on its own: items 20 and 21 previously shared the **identical**
+Czech prompt, `"Jezdí do školy autobusem."`, for *He goes…* and *They go…*.
+Czech pro-drop made the target person unrecoverable from the prompt, so the
+student could not know which English sentence was wanted. Now `"On jezdí…"`
+and `"Oni jezdí…"`.
+
+**`a2_past_continuous` (A2 grammar): 17 -> 1.** 15 of 48 items re-lexified,
+incidental lexis only. The interrupted-action and when-clause shapes are all
+preserved.
+
+### Forks and judgment calls
+
+**1. `while` stays in `a2_past_continuous` — the one residual violation.**
+Item 37 (`While she was cooking, I opened the window.`) is the unit's only
+occurrence of `while`, and I could have deleted it to reach zero. I did not.
+`while` is the subordinator that expresses two simultaneous past actions,
+which is half of what past continuous is *for*; a unit that teaches the form
+but is forbidden from saying `while` teaches worse. **Conservative path: kept,
+logged, floor of 1.** Swapping it to `when` would have scored better and
+taught less. **For James:** the structural fix is the same one flagged in run
+4 — a first-class `teaches` list read by `targets_of` — which is a gate
+change, not a content change.
+
+**2. I took `b1_relative_clauses` off the "found, not fixed" list without
+waiting for it to be queued.** Run 4 found it, offered to take it, and left it
+for James to add to the queue; it was not added. It was 14 of the 31 lint
+warnings and a live-content correctness bug, so I fixed it rather than report
+it a second time. It is a content-lane fix, which is this lane's job — but the
+queue's rule is that James adds items, so flagging that I acted first.
+All 14 items now have `gap_answer` `"that"`, matching the word actually in
+`en`; `gap_accepts` is untouched so `which`/`who` still grade correct wherever
+they are legal. Five Czech prompts that had dropped the relative clause
+entirely (items 7, 11, 17, 44) or read unnaturally (43) were rewritten — since
+`cz` is the prompt, a student reading `"Klíče na stole jsou moje."` had no way
+to know a relative clause was wanted.
+
+**3. The frame sweep: 259 mismatches, 5 real.** After finding one item in
+`a2_past_continuous` whose `gap` did not rebuild its own `en`, I checked all
+160 packs. 259 items fail that test, which looks alarming and mostly is not:
+**234** are cue-style drill items where `en` *is* the answer (`en: "me"`,
+`gap: "I → ____"`) — a legitimate pack style in `a1_object_pronouns`,
+`a1_word_classes`, `b1_it_subject`, `b1_modals_speculation` and
+`b1_verb_patterns_advanced`, not a defect — and **20** are the label-style
+answers already sitting in the queue (`zero_article`, `b2_clear_claims`). That
+left **5** genuine ones, all fixed in `2f601ba`. The direction of each fix came
+from the item's own `explanation` (`"I → am."` keeps the full form,
+`"is + not → isn't."` keeps the contraction), and in every case the new `en`
+was already in that item's `accepts`, so nothing changed about grading.
+**Genuine frame defects remaining repo-wide: 0.**
+
+**4. `b2_mixed_conditionals` absorbs the if-alternatives.** The sketch node's
+own note says it should, and there is no separate unit for them anywhere on
+the path — so strand C is `unless` / `provided that` / `as long as` / `in case`,
+three items each. Same reasoning as run 4's `b2_future_forms` absorbing
+future-in-the-past. Note that `unless` is not in the pool at that position and
+only becomes legal *because* this unit gaps it; that is the audit working as
+intended, not a loophole.
+
+**5. Quiz distractors: one stemmer artifact, no real leak.** Across the three
+new units the distractor sets are all inflections of the verb already in the
+item's own `en` (told/tell/telling, knew/know, missed/miss). A handful fail a
+naive pool check — most visibly `know` as the distractor for `knew` — purely
+because `audit.py`'s suffix stemmer cannot connect irregular pairs. No
+distractor introduces a word the student has not just read in the same
+sentence. Same conclusion as run 4's fork 4; noted so nobody re-derives it.
+
+**6. `en` is uncontracted in all three new units**, per `c6d7d80`, with
+contractions in `accepts` / `gap_accepts`. `b2_hypothetical_past` is the case
+where this matters most: the sketch wrote `I'd rather` and `It's time`
+throughout, and `audit.py` tokenises `I'd` as a single unknown token, so
+uncontracting was worth roughly a dozen violations on that unit alone.
+
+### Czech quality
+
+Three sketch translations were wrong rather than merely stiff, and were
+rewritten rather than patched:
+
+- `b2_wish_if_only` item 21: `"Přála by si, že nemusí pracovat o víkendech."`
+  is ungrammatical — now `"Přála by si nemuset pracovat o víkendech."`
+- `b2_hypothetical_past`: `"Co když řekne ne?"` for *What if she said no?*
+  loses the hypothetical — now `"Co kdyby řekla ne?"`
+- Three `would rather + past perfect` items had archaic pluperfect Czech
+  (`"kdybys mu to byl neřekl"`); now the ordinary modern form.
+
+I also wrote one myself and then caught it: `"Kéž by nás byli pozvali."` went
+in for *If only they had invited us.* and was corrected to `"Kéž by nás
+pozvali."` before the commit.
+
+### Smoke-check list for James
+
+- **`a1_agreement` had 22 of its 26 sentences rewritten** — by far the biggest
+  student-visible change this run, and it is unit 7 of A1, so almost every
+  student sees it. Worth a read for Czech feel.
+- The three new B2 units are **grammar** units, so under P0 they render their
+  intro cards and then skip straight to Done. The intros are the only part a
+  student can see today, and all three are new: `b2_mixed_conditionals` has a
+  two-pattern table plus a time-word cue table, `b2_wish_if_only` a
+  one-step-back table and an Avoid/Say table, `b2_hypothetical_past` three
+  tables including blame-vs-no-blame for `it is time`.
+- `b1_relative_clauses` items 7, 11, 17, 43, 44 have new Czech prompts.
+- B2 path is now unbroken for the first 10 nodes. Next sketches in order:
+  `b2_modal_perfect`, `b2_passives_advanced`, `b2_causative`.
+
+---
+
 ## 2026-08-06 · cloud run 4 (RUE build, claude-opus-5)
 
 ### Headline: three B2 grammar units live, and the two worst A2 units repaired
