@@ -135,7 +135,7 @@ function el(html) {
 }
 
 function pairPl(p) {
-  return p.pl || p.cz || "";
+  return p.cz || p.pl || "";
 }
 
 /**
@@ -160,7 +160,7 @@ export function startPractice(pack, root, opts) {
     checkPhase: "",
     itemIndex: null,
     en: "",
-    pl: "",
+    cz: "",
     gap: "",
     gap_answer: "",
     typed: "",
@@ -397,14 +397,15 @@ export function startPractice(pack, root, opts) {
       checkPhase: "",
       itemIndex: state.introIndex,
       en: card.title || "",
-      pl: card.title_pl || card.body_pl || "",
+      cz: card.title_cz || card.body_cz || "",
       gap: "",
       gap_answer: "",
       typed: "",
     });
     let body = "";
     if (card.body) body += `<p>${esc(card.body)}</p>`;
-    if (card.body_pl) body += `<p><em>${esc(card.body_pl)}</em></p>`;
+    const bodyCz = card.body_cz || card.body_pl;
+    if (bodyCz) body += `<p><em>${esc(bodyCz)}</em></p>`;
     if (card.table) {
       const h = card.table.headers || [];
       body += `<table class="intro-table"><thead><tr>${h
@@ -419,8 +420,8 @@ export function startPractice(pack, root, opts) {
     if (card.examples) {
       body += card.examples
         .map((ex) => {
-          const pl = ex.pl || ex.cz || "";
-          let line = `<div class="intro-ex"><span class="pl">${esc(pl)}</span>`;
+          const cz = ex.cz || ex.pl || "";
+          let line = `<div class="intro-ex"><span class="pl">${esc(cz)}</span>`;
           if (ex.en) line += ` <span class="en">· ${esc(ex.en)}</span>`;
           line += `</div>`;
           return line;
@@ -438,7 +439,7 @@ export function startPractice(pack, root, opts) {
       <div class="intro-card">
         <p class="intro-kicker">Intro · ${i + 1} / ${n}</p>
         <h3>${esc(card.title || "Intro")}</h3>
-        ${card.title_pl ? `<p><em>${esc(card.title_pl)}</em></p>` : ""}
+        ${card.title_cz || card.title_pl ? `<p><em>${esc(card.title_cz || card.title_pl)}</em></p>` : ""}
         ${body}
         <div class="nav">
           <button type="button" class="btn" id="btn-prev" ${i === 0 ? "disabled" : ""}>← Back</button>
@@ -557,9 +558,9 @@ export function startPractice(pack, root, opts) {
       checkPhase: "match",
       itemIndex: doneCount,
       en: (m.left || []).map((x) => x.t).join(" | ").slice(0, 120),
-      pl: (m.right || []).map((x) => x.t).join(" | ").slice(0, 120),
+      cz: "",
       gap: "",
-      gap_answer: "",
+      gap_answer: (m.right || []).map((x) => x.t).join(" | ").slice(0, 120),
       typed: "",
     });
 
@@ -809,7 +810,7 @@ export function startPractice(pack, root, opts) {
       checkPhase: "quiz",
       itemIndex: state.quizIndex,
       en: item.prompt || "",
-      pl: item.answer || "",
+      cz: item.cz || "",
       gap: "",
       gap_answer: item.answer || "",
       typed: "",
@@ -1048,7 +1049,7 @@ export function startPractice(pack, root, opts) {
       checkPhase: "",
       itemIndex: idx,
       en: prompt,
-      pl: item.answer || fullFormOf(item) || "",
+      cz: item.cz || "",
       gap: isGap ? item.stem || "" : "",
       gap_answer: isGap ? item.ending || "" : item.answer || "",
       typed: "",

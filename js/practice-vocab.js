@@ -1,7 +1,8 @@
 /**
  * Practice ladder (RUE3-shaped vocab engine for rue-exp):
  * Match → Quiz → Type word → Use (sentence)
- * Default for word modes: toward English (CZ → EN)
+ * Direction is fixed CZ → EN: items carry en (English target, typed and
+ * graded) + cz (Czech support, shown as prompt).
  * Default pass size: DEFAULT_PASS (12); shorter banks use all items.
  * Each stage stops with score (e.g. 11/12) + retry wrongs before next.
  * Sentence mode:
@@ -46,7 +47,7 @@ function saveSeenStore(store) {
 }
 
 function itemDeckKey(it) {
-  return `${it.pl || it.gap_answer || ""}‖${it.en || ""}`;
+  return `${it.en || it.gap_answer || ""}‖${it.cz || ""}`;
 }
 
 function shuffle(a) {
@@ -88,7 +89,7 @@ function passOrder(listLen, onlyIndices, opts) {
       if (st.some((s) => focus.has(s))) w = FOCUS_WEIGHT;
     }
     if (w === 1 && targets && targets.size && items && items[i]) {
-      if (targets.has(items[i].pl)) w = FOCUS_WEIGHT;
+      if (targets.has(items[i].en)) w = FOCUS_WEIGHT;
     }
     for (let k = 0; k < w; k++) bag.push(i);
   }
@@ -105,7 +106,7 @@ function passOrder(listLen, onlyIndices, opts) {
     used.add(i);
     const it = items && items[i];
     const wasSeen = seen && it && seen.has(itemDeckKey(it));
-    const isTarget = targets && targets.size && it && targets.has(it.pl);
+    const isTarget = targets && targets.size && it && targets.has(it.en);
     if (wasSeen) tSeen.push(i);
     else if (isTarget) tTargets.push(i);
     else tUnseen.push(i);
@@ -163,10 +164,9 @@ function expandContractions(s) {
   return t;
 }
 
-/** Soft production normalizer (case + punctuation). */
+/** Soft production normalizer (case + punctuation + contraction twins). */
 function norm(s) {
-  return String(s)
-    .toLowerCase()
+  return expandContractions(s)
     .replace(/[''`´]/g, "")
     .replace(/[.,!?;:"()\-–—]/g, " ")
     .replace(/\s+/g, " ")
@@ -185,22 +185,6 @@ function accepts(answer) {
         .filter(Boolean),
     ),
   ];
-}
-
-/**
- * Soft full-sentence match for Polish — listed accepts only via itemAccepts;
- * here: exact after norm, or strip optional "ja/ty" subject if rest matches.
- */
-function softSentenceMatch(userNorm, primaryNorm) {
-  if (!userNorm || !primaryNorm) return false;
-  if (userNorm === primaryNorm) return true;
-
-  const dropSubj = (t) =>
-    t.replace(/^(ja|ty|on|ona|ono|my|wy|oni|one)\s+/i, "").trim();
-  const u = dropSubj(userNorm);
-  const p = dropSubj(primaryNorm);
-  if (u && p && u === p) return true;
-  return false;
 }
 
 /**
@@ -223,36 +207,17 @@ function itemAccepts(item, primary, { forGap = false } = {}) {
 }
 
 function isCorrectAnswer(userInput, item, primary, opts = {}) {
-  const { forGap = false } = opts;
   const userN = norm(userInput);
   if (!userN) return false;
+  // norm() already folds case, punctuation and contractions, and English
+  // sentences must keep their subjects — no softer sentence match than this.
   if (itemAccepts(item, primary, opts).includes(userN)) return true;
-  // Soft match only for full sentences / non-gap (gate Sentence, frame Sentence)
-  if (!forGap && primary && String(primary).trim().includes(" ")) {
-    const primaryN = norm(primary);
-    if (softSentenceMatch(userN, primaryN)) return true;
-    // also soft-match against listed accepts
-    if (item && Array.isArray(item.accepts)) {
-      for (const a of item.accepts) {
-        if (softSentenceMatch(userN, norm(a))) return true;
-      }
-    }
-  }
   return false;
 }
 
-/** Drop Polish diacritics. Near-miss detection ONLY — never used to grade a pass. */
+/** Fold any diacritics (café → cafe). Near-miss detection ONLY — never used to grade a pass. */
 function deacc(s) {
-  return String(s)
-    .replace(/ą/g, "a")
-    .replace(/ć/g, "c")
-    .replace(/ę/g, "e")
-    .replace(/ł/g, "l")
-    .replace(/ń/g, "n")
-    .replace(/ó/g, "o")
-    .replace(/ś/g, "s")
-    .replace(/ź/g, "z")
-    .replace(/ż/g, "z");
+  return String(s).normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
 
 /** Levenshtein distance, bailing out once past `cap`. */
@@ -278,8 +243,8 @@ function editDistance(a, b, cap) {
 
 /**
  * Verdict for an answer that failed isCorrectAnswer().
- *   "accent" — right word, only diacritics off (English keyboard problem,
- *              not a knowledge problem) → count it, but show the ogonki.
+ *   "accent" — right word, only diacritics off (keyboard problem, not a
+ *              knowledge problem) → count it, but show the exact spelling.
  *   "close"  — within a couple of edits (dropped ending, typo) → offer one
  *              retry instead of a hard wrong + reveal.
  *   null     — genuinely a different word. Stays wrong.
@@ -303,14 +268,7 @@ function nearMiss(userInput, item, primary, opts = {}) {
   return null;
 }
 
-export {
-  norm,
-  isCorrectAnswer,
-  itemAccepts,
-  softSentenceMatch,
-  expandContractions,
-  nearMiss,
-};
+export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss };
 
 /** Ball-and-box SVG diagrams (from Teaching Material basic-prepositions.html), RUE3 dark tokens. */
 function diagramSvg(key) {
@@ -347,17 +305,19 @@ function diagramBlock(item) {
   return `<div class="picwrap">${svg}</div>`;
 }
 
-function promptOf(item, plToEn) {
-  return plToEn ? item.pl : item.en;
+/** Czech support side — always the prompt. */
+function supportOf(item) {
+  return item.cz;
 }
 
-function answerOf(item, plToEn) {
-  return plToEn ? item.en : item.pl;
+/** English target side — always typed / chosen / graded. */
+function targetOf(item) {
+  return item.en;
 }
 
-/** Lemma used in free Sentence mode (Polish target for RUE3). */
+/** Lemma used in free Sentence mode (English target). */
 function keyWord(item) {
-  const raw = item.pl || item.en || "";
+  const raw = item.en || item.cz || "";
   return String(raw).replace(/\([^)]*\)/g, "").split("/")[0].trim();
 }
 
@@ -369,15 +329,9 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
-/** Human labels for structure tags shown as a soft pattern hint. */
-const STRUCTURE_LABELS = {
-  to_jest: "This is…",
-  poss_nom: "my / your",
-  byc_adj: "I am / it is + adjective",
-  zgoda: "adjective + noun",
-  miec_acc: "I have / has + object",
-  present: "present tense",
-};
+/** Human labels for structure tags shown as a soft pattern hint.
+ * RUE packs don't tag structures[] yet — unknown tags fall back to the raw tag. */
+const STRUCTURE_LABELS = {};
 
 function structureHint(item) {
   const tags = item && Array.isArray(item.structures) ? item.structures : [];
@@ -439,21 +393,21 @@ export function startPractice(root, block, opts) {
   // anchors meaning, not spelling.
   const swatchByText = new Map();
   const iconByText = new Map();
-  // Gender badges keyed by PL only — they mark the Polish noun, and must
-  // never leak onto the EN side (that would gift the answer in PL→EN).
-  const genderByPl = new Map();
+  // Gender badges keyed by the Czech side only — they mark the Czech noun,
+  // and must never leak onto the EN side (that would gift the answer).
+  const genderByCz = new Map();
   const GENDER_LABEL = { m: "m.", f: "f.", n: "n.", pl: "pl." };
   for (const it of block.items || []) {
     if (it.swatch) {
-      swatchByText.set(it.pl, it.swatch);
+      swatchByText.set(it.cz, it.swatch);
       swatchByText.set(it.en, it.swatch);
     }
     if (it.icon) {
-      iconByText.set(it.pl, it.icon);
+      iconByText.set(it.cz, it.icon);
       iconByText.set(it.en, it.icon);
     }
     if (it.gender && GENDER_LABEL[it.gender]) {
-      genderByPl.set(it.pl, it.gender);
+      genderByCz.set(it.cz, it.gender);
     }
   }
 
@@ -465,9 +419,9 @@ export function startPractice(root, block, opts) {
     return "";
   }
 
-  /** Gender badge after a Polish noun (teaches gender during exposure). */
+  /** Gender badge after a Czech noun (teaches gender during exposure). */
   function gb(text) {
-    const g = genderByPl.get(text);
+    const g = genderByCz.get(text);
     return g
       ? ` <span class="gender-badge gender-${g}">${GENDER_LABEL[g]}</span>`
       : "";
@@ -517,7 +471,6 @@ export function startPractice(root, block, opts) {
   const state = {
     // Review launches jump straight to production (opts.startMode = "type")
     mode: opts.startMode || (hasIntro ? "intro" : "match"),
-    plToEn: true, // toward English (label: CZ → EN); var name is historical
     match: null,
     quiz: null,
     typ: null,
@@ -532,7 +485,7 @@ export function startPractice(root, block, opts) {
       stage: "match",
       itemIndex: null,
       en: "",
-      pl: "",
+      cz: "",
       gap: "",
       gap_answer: "",
       typed: "",
@@ -669,7 +622,6 @@ export function startPractice(root, block, opts) {
     ];
     if (hasIntro) base.unshift(["intro", "Intro"]);
     const modes = base.map(([id, label], i) => [id, `${i + 1} · ${label}`]);
-    const showDir = state.mode !== "sentence";
     const nFlags = countFlags();
     const bankN = sentenceBank ? sentenceBank.length : 0;
     const metaBits = isFrames
@@ -706,11 +658,7 @@ export function startPractice(root, block, opts) {
       </div>
       <div class="p-bar">
         <span id="p-status">${escapeHtml(statusText || "")}</span>
-        ${
-          showDir
-            ? `<button type="button" class="dir" id="p-dir">${state.plToEn ? "CZ → EN" : "EN → CZ"}</button>`
-            : `<span class="dir-static">Write in English</span>`
-        }
+        <span class="dir-static">${state.mode === "sentence" ? "Write in English" : "CZ → EN"}</span>
       </div>
       <div id="p-stage" class="stage"></div>
       <div class="practice-exit">
@@ -723,17 +671,6 @@ export function startPractice(root, block, opts) {
     root.querySelectorAll(".mode").forEach((btn) => {
       btn.addEventListener("click", () => setMode(btn.dataset.mode));
     });
-    const dir = root.querySelector("#p-dir");
-    if (dir) {
-      dir.addEventListener("click", () => {
-        state.plToEn = !state.plToEn;
-        state.match = null;
-        state.quiz = null;
-        state.typ = null;
-        clearKey();
-        render();
-      });
-    }
     root.querySelector("#p-flag")?.addEventListener("click", () => {
       openSmokeFlag();
     });
@@ -753,7 +690,7 @@ export function startPractice(root, block, opts) {
         stage: stage || state.mode,
         itemIndex: itemIndex ?? null,
         en: "",
-        pl: "",
+        cz: "",
         gap: "",
         gap_answer: "",
       });
@@ -763,7 +700,7 @@ export function startPractice(root, block, opts) {
       stage: stage || state.mode,
       itemIndex: typeof itemIndex === "number" ? itemIndex : null,
       en: it.en || "",
-      pl: it.pl || "",
+      cz: it.cz || "",
       gap: it.gap || "",
       gap_answer: it.gap_answer || "",
     });
@@ -772,9 +709,9 @@ export function startPractice(root, block, opts) {
   function newMatch() {
     const order = rotatedOrder("match", block.items, null);
     const pool = order.map((i) => block.items[i]);
-    const left = pool.map((it, i) => ({ t: promptOf(it, state.plToEn), id: i }));
+    const left = pool.map((it, i) => ({ t: supportOf(it), id: i }));
     const right = shuffle(
-      pool.map((it, i) => ({ t: answerOf(it, state.plToEn), id: i })),
+      pool.map((it, i) => ({ t: targetOf(it), id: i })),
     );
     state.match = {
       left,
@@ -793,7 +730,7 @@ export function startPractice(root, block, opts) {
       stage: "match",
       itemIndex: null,
       en: "",
-      pl: "",
+      cz: "",
       gap: "",
       gap_answer: "",
       typed: "",
@@ -973,19 +910,19 @@ export function startPractice(root, block, opts) {
     const itemIndex = q.order[q.pos];
     const it = list[itemIndex];
     flagItem(it, itemIndex, "quiz");
-    const correct = answerOf(it, state.plToEn);
+    const correct = targetOf(it);
     const others = shuffle(
-      list.filter((x) => answerOf(x, state.plToEn) !== correct),
+      list.filter((x) => targetOf(x) !== correct),
     )
       .slice(0, 3)
-      .map((x) => answerOf(x, state.plToEn));
+      .map((x) => targetOf(x));
     const opts = shuffle([correct, ...others]);
 
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
-        <div class="prompt">${sw(promptOf(it, state.plToEn))}${escapeHtml(promptOf(it, state.plToEn))}${gb(promptOf(it, state.plToEn))}</div>
-        <div class="sub">Choose the ${state.plToEn ? "English" : "Czech"} version — answer 1–4 · Enter = next</div>
+        <div class="prompt">${sw(supportOf(it))}${escapeHtml(supportOf(it))}${gb(supportOf(it))}</div>
+        <div class="sub">Choose the English version — answer 1–4 · Enter = next</div>
         <div class="opts">
           ${opts
             .map(
@@ -1152,19 +1089,19 @@ export function startPractice(root, block, opts) {
     const it = list[itemIndex];
     flagItem(it, itemIndex, "type");
     const frame = isFrameItem(it);
-    // Frames: gap-fill. Leaves: bilingual word prompt.
-    const prompt = frame
-      ? it.gap
-      : promptOf(it, state.plToEn);
-    const answer = frame ? it.gap_answer : answerOf(it, state.plToEn);
+    // Frames: gap-fill on the English sentence, Czech translation as support
+    // (never the full English sentence — that would show the answer).
+    // Leaves: Czech word prompt, type the English word.
+    const prompt = frame ? it.gap : supportOf(it);
+    const answer = frame ? it.gap_answer : targetOf(it);
     const sub = frame
       ? "Fill the missing English word · Enter = check / next"
-      : `Write ${state.plToEn ? "in English" : "in Czech"} · Enter = check / next`;
+      : "Write in English · Enter = check / next";
     const passLabel = t.retryPass ? "retry" : "set";
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
-        ${frame ? `<div class="sub" style="margin-bottom:0.35rem">${escapeHtml(it.en)}</div>` : ""}
+        ${frame && it.cz ? `<div class="sub" style="margin-bottom:0.35rem">${escapeHtml(it.cz)}</div>` : ""}
         <div class="prompt prompt-gap">${frame ? "" : sw(prompt)}${escapeHtml(prompt)}</div>
         <div class="sub">${sub}</div>
         <input class="type-in" id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here…" />
@@ -1364,7 +1301,7 @@ export function startPractice(root, block, opts) {
         <div class="sub">Sentence <strong>${t.pos + 1}</strong> of <strong>${passLen}</strong>${t.retryPass ? " (retry)" : ""} · write in English</div>
         ${diagramBlock(it)}
         ${structureHint(it)}
-        <div class="prompt" style="font-size:1.2rem">${escapeHtml(it.en)}</div>
+        <div class="prompt" style="font-size:1.2rem">${escapeHtml(it.cz)}</div>
         <div class="sub">Translate into English · Enter = check / next</div>
         <textarea class="type-in type-area" id="ti" rows="2" autocomplete="off" spellcheck="false" placeholder="write the English sentence…"></textarea>
         <div class="fb" id="tfb"></div>
@@ -1411,13 +1348,13 @@ export function startPractice(root, block, opts) {
       if (t.answered) return;
       t.answered = true;
       t.missedThis = false;
-      if (isCorrectAnswer(inp.value, it, it.pl)) {
+      if (isCorrectAnswer(inp.value, it, it.en)) {
         t.score++;
         fb.textContent = "✓ Correct";
         fb.className = "fb good";
       } else {
         t.missedThis = true;
-        fb.innerHTML = `✗ Answer: <span class="reveal">${escapeHtml(it.pl)}</span>`;
+        fb.innerHTML = `✗ Answer: <span class="reveal">${escapeHtml(it.en)}</span>`;
         fb.className = "fb bad";
         const s = document.createElement("button");
         s.type = "button";
@@ -1468,7 +1405,7 @@ export function startPractice(root, block, opts) {
       stage: "sentence",
       itemIndex: null,
       en: "",
-      pl: "",
+      cz: "",
       gap: "",
       gap_answer: "",
       typed: "",
@@ -1497,7 +1434,7 @@ export function startPractice(root, block, opts) {
   }
 
   function renderIntro(stage) {
-    setFlagContext({ stage: "intro", itemIndex: null, en: "", pl: "" });
+    setFlagContext({ stage: "intro", itemIndex: null, en: "", cz: "" });
     const cards = (block.intro || [])
       .map((sec) => {
         const table = sec.table
@@ -1513,10 +1450,10 @@ export function startPractice(root, block, opts) {
         return `
           <div class="q" style="margin-bottom:0.9rem">
             <div class="prompt">${escapeHtml(sec.title || "")}</div>
-            ${sec.title_pl ? `<div class="sub"><em>${escapeHtml(sec.title_pl)}</em></div>` : ""}
+            ${sec.title_cz ? `<div class="sub"><em>${escapeHtml(sec.title_cz)}</em></div>` : ""}
             ${sec.body ? `<p style="white-space:pre-line">${escapeHtml(sec.body)}</p>` : ""}
             ${table}
-            ${sec.body_pl ? `<p class="sub" style="white-space:pre-line"><em>${escapeHtml(sec.body_pl)}</em></p>` : ""}
+            ${sec.body_cz ? `<p class="sub" style="white-space:pre-line"><em>${escapeHtml(sec.body_cz)}</em></p>` : ""}
           </div>`;
       })
       .join("");

@@ -19,6 +19,14 @@
 - Keep dual engines; do not invent a third practice system  
 - Soft path only (no hard G→V locks unless James asks)
 
+## Language contract (locked 2026-08-06)
+
+- Direction is fixed **CZ → EN**: items carry `en` (English **target** — typed,
+  chosen, graded) + `cz` (Czech **support** — always the prompt)  
+- Never reintroduce `pl` data fields or a direction toggle  
+- Frame Type mode shows `cz` as support, never the full `en` sentence (it
+  contains the gap answer)
+
 ## Don’t
 
 - Write to `rue2-exp-progress` or rue3 progress keys  

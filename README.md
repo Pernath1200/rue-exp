@@ -11,7 +11,8 @@
 | **Spine** | `data/spine.json` — A1 + A2 zigzag; B1–C1 full catalogue paths |
 | **Charter** | [CHARTER.md](./CHARTER.md) |
 
-Stable siblings stay separate:
+Stable siblings stay separate for now (end state: rue-exp fully replaces the
+student RUE2/RUE3 apps — new URL + one-time progress import once lesson-proven):
 
 - Grammar lab: `rue-auto/grammar` · student: `rue2-grok-v1.0`  
 - Vocab: `rue3-exp`  

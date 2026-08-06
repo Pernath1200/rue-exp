@@ -3,7 +3,10 @@
 **Status:** active scaffold · grammar (RUE2) + vocab (RUE3) in one shell  
 **Folder:** `projects/rue-exp` only  
 **Model:** `rupl-exp` (Polish unified app that already works)  
-**Does not replace:** `rue2-grok-v1.0` · `rue3-exp` / lab `rue-auto/grammar`
+**End state (decided 2026-08-06):** full replacement of student RUE2 + RUE3 —
+new URL + one-time progress import once lesson-proven. Until James promotes,
+`rue2-grok-v1.0` / `rue3-exp` stay live and untouched; labs remain the content
+source via sync.
 
 ---
 

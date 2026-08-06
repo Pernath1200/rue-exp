@@ -9,7 +9,7 @@ export const FLAG_TAGS = [
   { id: "false_wrong", label: "False wrong (my answer OK)" },
   { id: "ambiguous", label: "Ambiguous cue" },
   { id: "bad_en", label: "Bad / awkward English" },
-  { id: "bad_pl", label: "Bad Polish" },
+  { id: "bad_cz", label: "Bad Czech" },
   { id: "wrong_form", label: "Wrong form target" },
   { id: "intro", label: "Intro confusing" },
   { id: "ui", label: "UI / navigation" },
@@ -88,7 +88,7 @@ export function addFlag(partial) {
     itemIndex:
       typeof partial.itemIndex === "number" ? partial.itemIndex : null,
     en: partial.en || "",
-    pl: partial.pl || "",
+    cz: partial.cz || "",
     gap: partial.gap || "",
     gap_answer: partial.gap_answer || "",
     typed: partial.typed || "",
@@ -126,7 +126,7 @@ export function formatFlagsForAgent() {
     );
     if (f.itemIndex != null) lines.push(`   itemIndex=${f.itemIndex}`);
     if (f.en) lines.push(`   en: ${f.en}`);
-    if (f.pl) lines.push(`   pl: ${f.pl}`);
+    if (f.cz) lines.push(`   cz: ${f.cz}`);
     if (f.gap) lines.push(`   gap: ${f.gap}`);
     if (f.gap_answer) lines.push(`   expected: ${f.gap_answer}`);
     if (f.typed) lines.push(`   typed: ${f.typed}`);
@@ -202,7 +202,7 @@ export function mountSmokeFlagsUI(host) {
         <div><strong>Stage</strong> ${escapeHtml(ctx.stage || "—")}${ctx.checkPhase ? " / " + escapeHtml(ctx.checkPhase) : ""}
           ${ctx.itemIndex != null ? ` · item ${ctx.itemIndex}` : ""}</div>
         ${ctx.en ? `<div class="smoke-line"><strong>en</strong> ${escapeHtml(ctx.en)}</div>` : ""}
-        ${ctx.pl ? `<div class="smoke-line"><strong>pl</strong> ${escapeHtml(ctx.pl)}</div>` : ""}
+        ${ctx.cz ? `<div class="smoke-line"><strong>cz</strong> ${escapeHtml(ctx.cz)}</div>` : ""}
         ${ctx.gap ? `<div class="smoke-line"><strong>gap</strong> ${escapeHtml(ctx.gap)}</div>` : ""}
         ${ctx.gap_answer ? `<div class="smoke-line"><strong>key</strong> ${escapeHtml(ctx.gap_answer)}</div>` : ""}
       </div>
@@ -257,7 +257,7 @@ export function mountSmokeFlagsUI(host) {
       .map((f, i) => {
         const head = `${i + 1}. ${escapeHtml(f.tag)} · ${escapeHtml(f.packId)}`;
         const snip = escapeHtml(
-          (f.en || f.pl || "").slice(0, 80) || "(no stem)",
+          (f.en || f.cz || "").slice(0, 80) || "(no stem)",
         );
         return `
           <div class="smoke-row" data-id="${escapeHtml(f.id)}">
