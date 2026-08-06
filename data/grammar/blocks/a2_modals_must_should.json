@@ -5,7 +5,7 @@
   "tree_node": "a2_modals_must_should",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Obligation (must) and advice (should). Gap on modal. No have to yet. · Bank 48 items · flags: 2026-07-26b intro+accepts",
+  "note": "Obligation (must) and advice (should). Gap on modal. No have to yet. · Bank 48 items · flags: 2026-07-26b intro+accepts · 2026-08-06 re-lexified 16/48 items onto pool-legal vocabulary (BUILD-DIGEST cloud run 2); modal + teaching point unchanged on every item",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -41,12 +41,13 @@
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "You must wear a seatbelt.",
-          "cz": "Musíš mít pás.",
-          "gap": "You ____ wear a seatbelt.",
+          "en": "You must wear a suit to the interview.",
+          "cz": "Na pohovor si musíš vzít oblek.",
+          "gap": "You ____ wear a suit to the interview.",
           "gap_answer": "must",
           "accepts": [
-            "You must wear a seatbelt."
+            "You must wear a suit to the interview.",
+            "You must wear a suit for the interview."
           ],
           "explanation": "must + base = strong necessity.",
           "explanation_cz": "must + základ = silná nutnost."
@@ -63,13 +64,13 @@
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "I mustn't smoke here.",
-          "cz": "Tady se nesmí kouřit.",
-          "gap": "I ____ smoke here.",
+          "en": "I mustn't use my phone here.",
+          "cz": "Tady nesmím používat telefon. (zakázáno / not allowed)",
+          "gap": "I ____ use my phone here.",
           "gap_answer": "mustn't",
           "accepts": [
-            "I mustn't smoke here.",
-            "I must not smoke here."
+            "I mustn't use my phone here.",
+            "I must not use my phone here."
           ],
           "gap_accepts": [
             "must not",
@@ -97,13 +98,13 @@
           "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
-          "en": "She mustn't touch that.",
-          "cz": "Nesmí na to sahat (ona).",
-          "gap": "She ____ touch that.",
+          "en": "She mustn't open that door.",
+          "cz": "Ty dveře nesmí otevřít. (ona)",
+          "gap": "She ____ open that door.",
           "gap_answer": "mustn't",
           "accepts": [
-            "She mustn't touch that.",
-            "She must not touch that."
+            "She mustn't open that door.",
+            "She must not open that door."
           ],
           "gap_accepts": [
             "must not",
@@ -323,26 +324,25 @@
           "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "I must remember her birthday.",
-          "cz": "Musím si pamatovat její narozeniny.",
-          "gap": "I ____ remember her birthday.",
+          "en": "I must buy her a birthday card.",
+          "cz": "Musím jí koupit přání k narozeninám.",
+          "gap": "I ____ buy her a birthday card.",
           "gap_answer": "must",
           "accepts": [
-            "I must remember her birthday."
+            "I must buy her a birthday card.",
+            "I must buy a birthday card for her."
           ],
           "explanation": "must + base = strong necessity.",
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "You must show your ticket.",
-          "cz": "Musíš ukázat lístek. (tvůj / ten lístek)",
-          "gap": "You ____ show your ticket.",
+          "en": "You must have your ticket with you.",
+          "cz": "Musíš mít lístek u sebe.",
+          "gap": "You ____ have your ticket with you.",
           "gap_answer": "must",
           "accepts": [
-            "You must show your ticket.",
-            "You must show the ticket.",
-            "You must show your tickets.",
-            "You must show the tickets."
+            "You must have your ticket with you.",
+            "You must have the ticket with you."
           ],
           "explanation": "must + base = strong necessity.",
           "explanation_cz": "must + základ = silná nutnost."
@@ -359,12 +359,13 @@
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "We must keep this door closed.",
-          "cz": "Tyhle dveře musíme nechat zavřené.",
-          "gap": "We ____ keep this door closed.",
+          "en": "We must close the windows.",
+          "cz": "Musíme zavřít okna.",
+          "gap": "We ____ close the windows.",
           "gap_answer": "must",
           "accepts": [
-            "We must keep this door closed."
+            "We must close the windows.",
+            "We must close the window."
           ],
           "explanation": "must + base = strong necessity.",
           "explanation_cz": "must + základ = silná nutnost."
@@ -408,13 +409,13 @@
           "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
-          "en": "I should apologise.",
+          "en": "I should say sorry.",
           "cz": "Měl bych se omluvit.",
-          "gap": "I ____ apologise.",
+          "gap": "I ____ say sorry.",
           "gap_answer": "should",
           "accepts": [
-            "I should apologise.",
-            "I should apologize."
+            "I should say sorry.",
+            "I should say I'm sorry."
           ],
           "explanation": "should + base = advice.",
           "explanation_cz": "should + základ = rada."
@@ -431,12 +432,12 @@
           "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "He should save more money.",
-          "cz": "Měl by víc šetřit (on).",
-          "gap": "He ____ save more money.",
+          "en": "He should find a better job.",
+          "cz": "Měl by si najít lepší práci. (on)",
+          "gap": "He ____ find a better job.",
           "gap_answer": "should",
           "accepts": [
-            "He should save more money."
+            "He should find a better job."
           ],
           "explanation": "should + base = advice.",
           "explanation_cz": "should + základ = rada."
@@ -453,13 +454,13 @@
           "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "You shouldn't shout at people.",
-          "cz": "Neměl bys na lidi křičet.",
-          "gap": "You ____ shout at people.",
+          "en": "You shouldn't wear jeans at work.",
+          "cz": "Do práce bys neměl nosit džíny.",
+          "gap": "You ____ wear jeans at work.",
           "gap_answer": "shouldn't",
           "accepts": [
-            "You shouldn't shout at people.",
-            "You should not shout at people."
+            "You shouldn't wear jeans at work.",
+            "You should not wear jeans at work."
           ],
           "gap_accepts": [
             "should not",
@@ -469,13 +470,13 @@
           "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
-          "en": "She shouldn't skip breakfast.",
-          "cz": "Neměla by vynechávat snídani (ona).",
-          "gap": "She ____ skip breakfast.",
+          "en": "She shouldn't drink so much coffee.",
+          "cz": "Neměla by pít tolik kávy. (ona)",
+          "gap": "She ____ drink so much coffee.",
           "gap_answer": "shouldn't",
           "accepts": [
-            "She shouldn't skip breakfast.",
-            "She should not skip breakfast."
+            "She shouldn't drink so much coffee.",
+            "She should not drink so much coffee."
           ],
           "gap_accepts": [
             "should not",
@@ -496,15 +497,12 @@
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "Should I bring anything?",
-          "cz": "Mám něco přinést? (rada · should)",
-          "gap": "____ I bring anything?",
+          "en": "Should I help you?",
+          "cz": "Mám ti pomoct? (nabídka · should)",
+          "gap": "____ I help you?",
           "gap_answer": "Should",
           "accepts": [
-            "Should I bring anything?",
-            "Should I bring something?",
-            "Should I bring anything with me?",
-            "Should I bring something with me?"
+            "Should I help you?"
           ],
           "explanation": "should + base = advice.",
           "explanation_cz": "should + základ = rada."
@@ -554,24 +552,24 @@
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "People should recycle more.",
-          "cz": "Lidé by měli víc recyklovat.",
-          "gap": "People ____ recycle more.",
+          "en": "People should walk more.",
+          "cz": "Lidé by měli víc chodit pěšky.",
+          "gap": "People ____ walk more.",
           "gap_answer": "should",
           "accepts": [
-            "People should recycle more."
+            "People should walk more."
           ],
           "explanation": "should + base = advice.",
           "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "You shouldn't believe everything online.",
-          "cz": "Neměl bys věřit všemu online.",
-          "gap": "You ____ believe everything online.",
+          "en": "You shouldn't work every weekend.",
+          "cz": "Neměl bys pracovat každý víkend.",
+          "gap": "You ____ work every weekend.",
           "gap_answer": "shouldn't",
           "accepts": [
-            "You shouldn't believe everything online.",
-            "You should not believe everything online."
+            "You shouldn't work every weekend.",
+            "You should not work every weekend."
           ],
           "gap_accepts": [
             "should not",
@@ -581,23 +579,23 @@
           "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
-          "en": "Drivers must stop at a red light.",
-          "cz": "Řidiči musí zastavit na červené.",
-          "gap": "Drivers ____ stop at a red light.",
+          "en": "Drivers must stop at the border.",
+          "cz": "Řidiči musí zastavit na hranici.",
+          "gap": "Drivers ____ stop at the border.",
           "gap_answer": "must",
           "accepts": [
-            "Drivers must stop at a red light."
+            "Drivers must stop at the border."
           ],
           "explanation": "must + base = strong necessity.",
           "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "You should check the spelling.",
-          "cz": "Měl bys zkontrolovat pravopis.",
-          "gap": "You ____ check the spelling.",
+          "en": "You should check the timetable.",
+          "cz": "Měl bys zkontrolovat jízdní řád.",
+          "gap": "You ____ check the timetable.",
           "gap_answer": "should",
           "accepts": [
-            "You should check the spelling."
+            "You should check the timetable."
           ],
           "explanation": "should + base = advice.",
           "explanation_cz": "should + základ = rada."
@@ -619,12 +617,12 @@
           "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
-          "en": "Should they wait outside?",
-          "cz": "Mají čekat venku?",
-          "gap": "____ they wait outside?",
+          "en": "Should they wait at the station?",
+          "cz": "Mají čekat na nádraží?",
+          "gap": "____ they wait at the station?",
           "gap_answer": "Should",
           "accepts": [
-            "Should they wait outside?"
+            "Should they wait at the station?"
           ],
           "explanation": "should + base = advice.",
           "explanation_cz": "should + základ = rada."
