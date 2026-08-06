@@ -1,0 +1,700 @@
+{
+  "id": "b2_past_perfect",
+  "title": "Past perfect",
+  "level": "B2",
+  "tree_node": "b2_past_perfect",
+  "codex_unit": "G_VP-B1B2-01",
+  "practice": "frames",
+  "note": "REWRITE 2026-08-05 · workable unit: earlier past vs past simple. Decision bank (not had/past participle form drills). Old 72-item form bank archived in git history pre this commit. Match idea/timeline → Quiz tense chips → Type full form → Use full sentence.",
+  "default_direction": "cz_to_en",
+  "quality": "workable_draft",
+  "demo_priority": true,
+  "check": {
+    "sequence": [
+      "match",
+      "quiz"
+    ],
+    "match_pairs": [
+      [
+        "she leave · then I arrive",
+        "earlier → had left"
+      ],
+      [
+        "they finish · then we start",
+        "earlier → had finished"
+      ],
+      [
+        "I lose keys · then I tell you",
+        "earlier → had lost"
+      ],
+      [
+        "rain all night · then morning come",
+        "earlier → had rained"
+      ],
+      [
+        "I go to Prague yesterday (one past time)",
+        "only past simple → went"
+      ],
+      [
+        "we meet in 2019 (finished year)",
+        "only past simple → met"
+      ]
+    ]
+  },
+  "blocks": [
+    {
+      "id": "b2_past_perfect_main",
+      "title": "Past perfect · earlier past",
+      "items": [
+        {
+          "en": "When I arrived, she had left.",
+          "cz": "Když jsem přijel, už odešla.",
+          "gap": "When I arrived, she ____.",
+          "gap_answer": "had left",
+          "gap_accepts": [
+            "had left"
+          ],
+          "accepts": [
+            "When I arrived, she had left."
+          ],
+          "quiz_options": [
+            "left",
+            "had left",
+            "has left",
+            "leaves"
+          ],
+          "explanation": "Leave is earlier than arrive → past perfect: had left.",
+          "explanation_cz": "Odejít dřív než přijet → had left."
+        },
+        {
+          "en": "They had finished before we started.",
+          "cz": "Dokončili to, než jsme začali.",
+          "gap": "They ____ before we started.",
+          "gap_answer": "had finished",
+          "gap_accepts": [
+            "had finished"
+          ],
+          "accepts": [
+            "They had finished before we started."
+          ],
+          "quiz_options": [
+            "finished",
+            "had finished",
+            "have finished",
+            "finish"
+          ],
+          "explanation": "Finish is earlier than start → had finished.",
+          "explanation_cz": "Dokončit dřív než začít → had finished."
+        },
+        {
+          "en": "After she had eaten, she went out.",
+          "cz": "Až snědla, šla ven.",
+          "gap": "After she ____, she went out.",
+          "gap_answer": "had eaten",
+          "gap_accepts": [
+            "had eaten"
+          ],
+          "accepts": [
+            "After she had eaten, she went out."
+          ],
+          "quiz_options": [
+            "ate",
+            "had eaten",
+            "has eaten",
+            "eats"
+          ],
+          "explanation": "Eat is earlier than go out → had eaten.",
+          "explanation_cz": "Jíst dřív než jít ven → had eaten."
+        },
+        {
+          "en": "By the time we got there, the film had started.",
+          "cz": "Než jsme tam dorazili, film už začal.",
+          "gap": "By the time we got there, the film ____.",
+          "gap_answer": "had started",
+          "gap_accepts": [
+            "had started"
+          ],
+          "accepts": [
+            "By the time we got there, the film had started."
+          ],
+          "quiz_options": [
+            "started",
+            "had started",
+            "has started",
+            "starts"
+          ],
+          "explanation": "Start is earlier than get there → had started.",
+          "explanation_cz": "Začátek dřív než příchod → had started."
+        },
+        {
+          "en": "I called him, but he had already left.",
+          "cz": "Volal jsem mu, ale už odešel.",
+          "gap": "I called him, but he ____.",
+          "gap_answer": "had already left",
+          "gap_accepts": [
+            "had already left"
+          ],
+          "accepts": [
+            "I called him, but he had already left."
+          ],
+          "quiz_options": [
+            "already left",
+            "had already left",
+            "has already left",
+            "already leaves"
+          ],
+          "explanation": "Leave is earlier than call → had already left.",
+          "explanation_cz": "Odejít dřív než volat → had already left."
+        },
+        {
+          "en": "She was tired because she had worked all day.",
+          "cz": "Byla unavená, protože celý den pracovala.",
+          "gap": "She was tired because she ____ all day.",
+          "gap_answer": "had worked",
+          "gap_accepts": [
+            "had worked"
+          ],
+          "accepts": [
+            "She was tired because she had worked all day."
+          ],
+          "quiz_options": [
+            "worked",
+            "had worked",
+            "has worked",
+            "works"
+          ],
+          "explanation": "Work is earlier and explains was tired → had worked.",
+          "explanation_cz": "Práce dřív a vysvětluje únavu → had worked."
+        },
+        {
+          "en": "When we opened the door, someone had broken the window.",
+          "cz": "Když jsme otevřeli dveře, někdo rozbil okno.",
+          "gap": "When we opened the door, someone ____ the window.",
+          "gap_answer": "had broken",
+          "gap_accepts": [
+            "had broken"
+          ],
+          "accepts": [
+            "When we opened the door, someone had broken the window."
+          ],
+          "quiz_options": [
+            "broke",
+            "had broken",
+            "has broken",
+            "breaks"
+          ],
+          "explanation": "Break is earlier than open → had broken.",
+          "explanation_cz": "Rozbít dřív než otevřít → had broken."
+        },
+        {
+          "en": "He couldn't get in because he had forgotten his keys.",
+          "cz": "Nemohl se dostat dovnitř, protože zapomněl klíče.",
+          "gap": "He couldn't get in because he ____ his keys.",
+          "gap_answer": "had forgotten",
+          "gap_accepts": [
+            "had forgotten"
+          ],
+          "accepts": [
+            "He couldn't get in because he had forgotten his keys."
+          ],
+          "quiz_options": [
+            "forgot",
+            "had forgotten",
+            "has forgotten",
+            "forgets"
+          ],
+          "explanation": "Forget is earlier than couldn't get in → had forgotten.",
+          "explanation_cz": "Zapomenout dřív → had forgotten."
+        },
+        {
+          "en": "I knew the city well. I had lived there for five years.",
+          "cz": "Znal jsem to město dobře. Bydlel jsem tam pět let.",
+          "gap": "I knew the city well. I ____ there for five years.",
+          "gap_answer": "had lived",
+          "gap_accepts": [
+            "had lived"
+          ],
+          "accepts": [
+            "I knew the city well. I had lived there for five years."
+          ],
+          "quiz_options": [
+            "lived",
+            "had lived",
+            "have lived",
+            "live"
+          ],
+          "explanation": "Live is earlier background before knew → had lived.",
+          "explanation_cz": "Bydlení dřív (pozadí) → had lived."
+        },
+        {
+          "en": "The train had left when we reached the station.",
+          "cz": "Vlak už odjel, když jsme dorazili na nádraží.",
+          "gap": "The train ____ when we reached the station.",
+          "gap_answer": "had left",
+          "gap_accepts": [
+            "had left"
+          ],
+          "accepts": [
+            "The train had left when we reached the station."
+          ],
+          "quiz_options": [
+            "left",
+            "had left",
+            "has left",
+            "leaves"
+          ],
+          "explanation": "Train leave is earlier than we reach → had left.",
+          "explanation_cz": "Odjezd dřív než příchod → had left."
+        },
+        {
+          "en": "I didn't recognise her. She had changed a lot.",
+          "cz": "Nepoznal jsem ji. Hodně se změnila.",
+          "gap": "I didn't recognise her. She ____ a lot.",
+          "gap_answer": "had changed",
+          "gap_accepts": [
+            "had changed"
+          ],
+          "accepts": [
+            "I didn't recognise her. She had changed a lot."
+          ],
+          "quiz_options": [
+            "changed",
+            "had changed",
+            "has changed",
+            "changes"
+          ],
+          "explanation": "Change is earlier than didn't recognise → had changed.",
+          "explanation_cz": "Změna dřív → had changed."
+        },
+        {
+          "en": "We had never met before that day.",
+          "cz": "Předtím jsme se nikdy nepotkali.",
+          "gap": "We ____ before that day.",
+          "gap_answer": "had never met",
+          "gap_accepts": [
+            "had never met"
+          ],
+          "accepts": [
+            "We had never met before that day."
+          ],
+          "quiz_options": [
+            "never met",
+            "had never met",
+            "have never met",
+            "never meet"
+          ],
+          "explanation": "No meeting in the time before that day → had never met.",
+          "explanation_cz": "Až do toho dne se nepotkali → had never met."
+        },
+        {
+          "en": "After they had packed, they called a taxi.",
+          "cz": "Až si sbalili, zavolali taxi.",
+          "gap": "After they ____, they called a taxi.",
+          "gap_answer": "had packed",
+          "gap_accepts": [
+            "had packed"
+          ],
+          "accepts": [
+            "After they had packed, they called a taxi."
+          ],
+          "quiz_options": [
+            "packed",
+            "had packed",
+            "have packed",
+            "pack"
+          ],
+          "explanation": "Pack is earlier than call → had packed.",
+          "explanation_cz": "Balení dřív než volat → had packed."
+        },
+        {
+          "en": "The shop had closed by six o'clock.",
+          "cz": "Obchod už v šest byl zavřený.",
+          "gap": "The shop ____ by six o'clock.",
+          "gap_answer": "had closed",
+          "gap_accepts": [
+            "had closed"
+          ],
+          "accepts": [
+            "The shop had closed by six o'clock."
+          ],
+          "quiz_options": [
+            "closed",
+            "had closed",
+            "has closed",
+            "closes"
+          ],
+          "explanation": "Closed earlier, before the point six o'clock → had closed.",
+          "explanation_cz": "Zavřeno dřív než v šest → had closed."
+        },
+        {
+          "en": "I was happy because I had passed the exam.",
+          "cz": "Byl jsem šťastný, protože jsem prošel u zkoušky.",
+          "gap": "I was happy because I ____ the exam.",
+          "gap_answer": "had passed",
+          "gap_accepts": [
+            "had passed"
+          ],
+          "accepts": [
+            "I was happy because I had passed the exam."
+          ],
+          "quiz_options": [
+            "passed",
+            "had passed",
+            "have passed",
+            "pass"
+          ],
+          "explanation": "Pass is earlier and explains was happy → had passed.",
+          "explanation_cz": "Úspěch dřív a vysvětluje radost → had passed."
+        },
+        {
+          "en": "When the police arrived, the thieves had gone.",
+          "cz": "Když přijela policie, zloději už byli pryč.",
+          "gap": "When the police arrived, the thieves ____.",
+          "gap_answer": "had gone",
+          "gap_accepts": [
+            "had gone"
+          ],
+          "accepts": [
+            "When the police arrived, the thieves had gone."
+          ],
+          "quiz_options": [
+            "went",
+            "had gone",
+            "have gone",
+            "go"
+          ],
+          "explanation": "Thieves leave earlier than police arrive → had gone.",
+          "explanation_cz": "Odchod dřív než příjezd policie → had gone."
+        },
+        {
+          "en": "She showed me the book she had bought.",
+          "cz": "Ukázala mi knihu, kterou koupila.",
+          "gap": "She showed me the book she ____.",
+          "gap_answer": "had bought",
+          "gap_accepts": [
+            "had bought"
+          ],
+          "accepts": [
+            "She showed me the book she had bought."
+          ],
+          "quiz_options": [
+            "bought",
+            "had bought",
+            "has bought",
+            "buys"
+          ],
+          "explanation": "Buy is earlier than show → had bought.",
+          "explanation_cz": "Koupit dřív než ukázat → had bought."
+        },
+        {
+          "en": "We stayed home because it had rained all morning.",
+          "cz": "Zůstali jsme doma, protože celé ráno pršelo.",
+          "gap": "We stayed home because it ____ all morning.",
+          "gap_answer": "had rained",
+          "gap_accepts": [
+            "had rained"
+          ],
+          "accepts": [
+            "We stayed home because it had rained all morning."
+          ],
+          "quiz_options": [
+            "rained",
+            "had rained",
+            "has rained",
+            "rains"
+          ],
+          "explanation": "Rain is earlier reason for stayed → had rained.",
+          "explanation_cz": "Déšť dřív (důvod) → had rained."
+        },
+        {
+          "en": "I went to Prague yesterday.",
+          "cz": "Včera jsem jel do Prahy.",
+          "gap": "I ____ to Prague yesterday.",
+          "gap_answer": "went",
+          "gap_accepts": [
+            "went"
+          ],
+          "accepts": [
+            "I went to Prague yesterday."
+          ],
+          "quiz_options": [
+            "went",
+            "had gone",
+            "have gone",
+            "go"
+          ],
+          "explanation": "One finished past time (yesterday) → past simple, not past perfect.",
+          "explanation_cz": "Jeden hotový čas (yesterday) → past simple, ne past perfect."
+        },
+        {
+          "en": "We met in 2019.",
+          "cz": "Seznámili jsme se v roce 2019.",
+          "gap": "We ____ in 2019.",
+          "gap_answer": "met",
+          "gap_accepts": [
+            "met"
+          ],
+          "accepts": [
+            "We met in 2019."
+          ],
+          "quiz_options": [
+            "met",
+            "had met",
+            "have met",
+            "meet"
+          ],
+          "explanation": "Finished year → past simple. No second earlier event needed.",
+          "explanation_cz": "Hotový rok → past simple. Není druhé dřívější dějství."
+        },
+        {
+          "en": "She called me last night.",
+          "cz": "Včera v noci mi volala.",
+          "gap": "She ____ me last night.",
+          "gap_answer": "called",
+          "gap_accepts": [
+            "called"
+          ],
+          "accepts": [
+            "She called me last night."
+          ],
+          "quiz_options": [
+            "called",
+            "had called",
+            "has called",
+            "calls"
+          ],
+          "explanation": "Last night = finished past → past simple, not had called.",
+          "explanation_cz": "Last night = hotová minulost → past simple."
+        },
+        {
+          "en": "I saw that film two years ago.",
+          "cz": "Ten film jsem viděl před dvěma lety.",
+          "gap": "I ____ that film two years ago.",
+          "gap_answer": "saw",
+          "gap_accepts": [
+            "saw"
+          ],
+          "accepts": [
+            "I saw that film two years ago."
+          ],
+          "quiz_options": [
+            "saw",
+            "had seen",
+            "have seen",
+            "see"
+          ],
+          "explanation": "Ago = finished past → past simple, not past perfect.",
+          "explanation_cz": "Ago = hotová minulost → past simple."
+        },
+        {
+          "en": "They bought a house last summer.",
+          "cz": "Minulé léto koupili dům.",
+          "gap": "They ____ a house last summer.",
+          "gap_answer": "bought",
+          "gap_accepts": [
+            "bought"
+          ],
+          "accepts": [
+            "They bought a house last summer."
+          ],
+          "quiz_options": [
+            "bought",
+            "had bought",
+            "have bought",
+            "buy"
+          ],
+          "explanation": "Last summer → past simple. Don't use past perfect for every past fact.",
+          "explanation_cz": "Last summer → past simple. Ne past perfect na každou minulost."
+        },
+        {
+          "en": "He finished school in June.",
+          "cz": "V červnu dokončil školu.",
+          "gap": "He ____ school in June.",
+          "gap_answer": "finished",
+          "gap_accepts": [
+            "finished"
+          ],
+          "accepts": [
+            "He finished school in June."
+          ],
+          "quiz_options": [
+            "finished",
+            "had finished",
+            "has finished",
+            "finish"
+          ],
+          "explanation": "In June (finished time) → past simple, not had finished.",
+          "explanation_cz": "In June → past simple, ne had finished."
+        },
+        {
+          "en": "When I arrived, the lesson had already begun.",
+          "cz": "Když jsem přišel, hodina už začala.",
+          "gap": "When I arrived, the lesson ____.",
+          "gap_answer": "had already begun",
+          "gap_accepts": [
+            "had already begun",
+            "had already started"
+          ],
+          "accepts": [
+            "When I arrived, the lesson had already begun.",
+            "When I arrived, the lesson had already started."
+          ],
+          "quiz_options": [
+            "already began",
+            "had already begun",
+            "has already begun",
+            "already begins"
+          ],
+          "explanation": "Begin is earlier than arrive → had already begun.",
+          "explanation_cz": "Začátek dřív než příchod → had already begun."
+        },
+        {
+          "en": "I found the bag I had lost.",
+          "cz": "Našel jsem tašku, kterou jsem ztratil.",
+          "gap": "I found the bag I ____.",
+          "gap_answer": "had lost",
+          "gap_accepts": [
+            "had lost"
+          ],
+          "accepts": [
+            "I found the bag I had lost."
+          ],
+          "quiz_options": [
+            "lost",
+            "had lost",
+            "have lost",
+            "lose"
+          ],
+          "explanation": "Lose is earlier than find → had lost.",
+          "explanation_cz": "Ztráta dřív než nalezení → had lost."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "What it is",
+        "body": "Past perfect is the **earlier** past — when one past event happens **before** another past event.",
+        "points": [
+          "Two times in the past",
+          "The **first** in time → past perfect (**had** + past participle)",
+          "The **second** in time → past simple"
+        ],
+        "table": {
+          "headers": [
+            "Time order",
+            "English"
+          ],
+          "rows": [
+            [
+              "1 earlier",
+              "she **had left**"
+            ],
+            [
+              "2 later",
+              "I **arrived**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Timeline",
+        "diagram": "past-perfect-timeline",
+        "body": "Think left → right on a past line. Past perfect sits on the **left** (earlier).",
+        "points": [
+          "When I arrived, she had left.",
+          "Arrive = later · leave = earlier → **had left**"
+        ]
+      },
+      {
+        "title": "Form (short)",
+        "points": [
+          "**had** + past participle: had left, had eaten, had finished",
+          "Negative: **hadn't** + past participle",
+          "Same for I/you/he/she/we/they — always **had**"
+        ],
+        "table": {
+          "headers": [
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "had + past participle",
+              "She **had left**."
+            ],
+            [
+              "hadn't + past participle",
+              "She **hadn't left**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Signals",
+        "points": [
+          "**when / after / before / by the time** + two past events",
+          "**already / never / just** often with the earlier event",
+          "because + earlier reason in the past"
+        ],
+        "table": {
+          "headers": [
+            "Signal",
+            "Example"
+          ],
+          "rows": [
+            [
+              "when…",
+              "When I arrived, she **had left**."
+            ],
+            [
+              "before…",
+              "They **had finished** before we started."
+            ],
+            [
+              "by the time…",
+              "By the time we got there, it **had started**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "When I arrived, she **left**.",
+              "When I arrived, she **had left**."
+            ],
+            [
+              "I **had gone** to Prague yesterday.",
+              "I **went** to Prague yesterday."
+            ],
+            [
+              "We **had met** in 2019.",
+              "We **met** in 2019."
+            ]
+          ]
+        },
+        "points": [
+          "**Miss past perfect** when something is clearly earlier",
+          "**Don't use past perfect** for every past fact — one finished time (yesterday, last year, ago) → past simple"
+        ]
+      },
+      {
+        "title": "Quick check",
+        "points": [
+          "When I arrived, she ____. → **had left** (earlier)",
+          "They ____ before we started. → **had finished**",
+          "I ____ to Prague yesterday. → **went** (not had gone)",
+          "We ____ in 2019. → **met** (not had met)"
+        ]
+      }
+    ]
+  }
+}

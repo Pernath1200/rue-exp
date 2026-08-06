@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <meta name="google" content="notranslate" />
+  <title>RUE</title>
+  <link rel="stylesheet" href="./css/app.css?v=2026-08-06-rue-cyan" />
+</head>
+<body>
+  <div class="container">
+    <div class="util-bar">
+      <span class="brand">RUE</span>
+    </div>
+
+    <div id="howto-overlay" class="howto-overlay" hidden>
+      <div class="howto-panel" role="dialog" aria-modal="true" aria-labelledby="howto-title">
+        <h2 id="howto-title">How to use this site</h2>
+        <p class="howto-lead">Short guide</p>
+        <ol class="howto-steps">
+          <li><strong>Level</strong> — choose A1 (main level for the weekend draft).</li>
+          <li><strong>Do next</strong> — next step on the path (grammar ↔ vocab).</li>
+          <li><strong>Practice</strong> — after picking a unit, open Practice (intro, then exercises).</li>
+          <li><strong>Review</strong> — units due for review today.</li>
+          <li><strong>Topics</strong> — full list / tree of units.</li>
+          <li><strong>This browser only</strong> — progress is not in the cloud.</li>
+        </ol>
+        <details class="howto-more">
+          <summary>More · map and progress</summary>
+          <ul class="howto-more-list">
+            <li><strong>Map / tree</strong> — optional. You can use Do next only.</li>
+            <li><strong>Progress</strong> — optional meters. Open if you want.</li>
+          </ul>
+        </details>
+        <div class="howto-actions">
+          <button type="button" class="home-btn home-btn-primary" id="howto-start">Got it · Do next</button>
+          <button type="button" class="home-btn" id="howto-dismiss">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="home-title">Learn English</h1>
+    <p class="home-intro">Press <strong>Do next</strong> to learn.</p>
+    <p id="author-hint" class="practice-hint" hidden style="color: var(--accent); margin-top: -0.75rem"></p>
+    <div id="boot-error" class="card" hidden></div>
+
+    <div id="view-map" class="home-minimal">
+      <div class="rail-label">Level</div>
+      <div id="level-rail" class="level-rail" role="toolbar" aria-label="CEFR level"></div>
+
+      <div class="card home-actions-card">
+        <p class="home-next-line" id="home-next-line">Loading…</p>
+        <div class="home-actions" role="group" aria-label="Main actions">
+          <button type="button" class="home-btn home-btn-primary" id="btn-do-next">Do next</button>
+          <button type="button" class="home-btn" id="btn-home-review">Review</button>
+          <button type="button" class="home-btn" id="btn-home-topics">Topics</button>
+          <button type="button" class="home-btn" id="btn-how-to-use">How to use</button>
+          <button type="button" class="home-btn" id="btn-home-more" aria-expanded="false">More</button>
+        </div>
+        <p class="home-hint" id="home-review-hint" hidden></p>
+      </div>
+
+      <div class="card home-panel" id="review-card" hidden>
+        <h2>Review</h2>
+        <div id="review-list" class="home-panel-scroll"></div>
+      </div>
+
+      <div class="card" id="up-next-card" hidden>
+        <div id="up-next"></div>
+      </div>
+
+      <div class="card" id="node-detail-card" hidden>
+        <h2>Unit</h2>
+        <div id="node-detail"></div>
+      </div>
+
+      <div class="card home-panel" id="panel-more" hidden>
+        <h2>More</h2>
+        <details class="quiet-details home-more-block" id="progress-details" open>
+          <summary>Progress <span class="quiet-summary-meta" id="progress-summary-meta"></span></summary>
+          <div id="level-meters" class="level-meters" aria-live="polite"></div>
+          <div class="progress-transfer" id="progress-transfer">
+            <p class="home-hint">
+              Progress stays <strong>in this browser on this site</strong>.
+              Backup: <strong>Download</strong> · restore: <strong>Import</strong>.
+            </p>
+            <div class="progress-transfer-actions">
+              <button type="button" class="home-btn" id="btn-progress-download">Download progress</button>
+              <button type="button" class="home-btn" id="btn-progress-import">Import progress…</button>
+              <input type="file" id="input-progress-import" accept="application/json,.json" hidden />
+            </div>
+            <p class="home-hint" id="progress-transfer-msg" hidden></p>
+          </div>
+        </details>
+        <details class="quiet-details home-more-block" id="map-details" open>
+          <summary class="tree-map-summary">
+            <span class="tree-map-summary-label">Map</span>
+            <span class="map-help-wrap">
+              <button type="button" class="map-help-btn" id="btn-map-help"
+                aria-label="What do roots mean?" aria-expanded="false" aria-controls="map-help-tip">?</button>
+              <span class="map-help-tip" id="map-help-tip" role="tooltip" hidden>
+                <strong>Roots</strong> = grammar; <strong>leaves</strong> = vocabulary.
+                Learn step by step — you can skip the map and use <strong>Do next</strong>.
+              </span>
+            </span>
+          </summary>
+          <p class="home-hint">Optional · tap a unit, then Practice.</p>
+          <button type="button" class="btn" id="btn-map-more" aria-expanded="true" aria-controls="map-more" hidden>map</button>
+          <div id="map-more">
+            <div class="card" id="tree-portrait-card">
+              <h2>Tree</h2>
+              <div id="tree-portrait" class="tree-portrait-host"></div>
+            </div>
+            <div class="panel-grid" id="roots-panel-grid" hidden>
+              <div class="card domain-grammar">
+                <h2>Roots · Grammar</h2>
+                <div id="roots-strip" class="roots-strip"></div>
+              </div>
+              <div class="card domain-vocab">
+                <h2>Canopy · Vocab</h2>
+                <div id="vocab-fill" class="roots-strip"></div>
+              </div>
+            </div>
+            <div class="card" id="path-card">
+              <h2>Path</h2>
+              <ul id="path-list" class="path-list home-panel-scroll"></ul>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <div id="view-practice" class="card" hidden>
+      <div class="smoke-toolbar" role="toolbar" aria-label="Smoke flags">
+        <button type="button" class="btn smoke-flag-btn" id="p-flag">⚑ Flag</button>
+        <button type="button" class="btn smoke-flag-list" id="p-flag-list" data-smoke-badge>Flagged</button>
+      </div>
+      <div id="practice-root"></div>
+      <div class="practice-exit">
+        <button type="button" class="btn-ghost" id="btn-practice-back" tabindex="-1">← Back to map</button>
+      </div>
+    </div>
+
+    <div id="smoke-flags-host"></div>
+    <p class="foot">
+      <button type="button" class="util-btn" id="btn-author-unlock" aria-pressed="false">Author unlock</button>
+      · rue-exp · local progress only
+    </p>
+  </div>
+  <script type="module" src="./js/app.js?v=2026-08-06-scaffold"></script>
+</body>
+</html>

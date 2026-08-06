@@ -1,0 +1,762 @@
+{
+  "id": "a1_question_words",
+  "title": "Question words",
+  "level": "A1",
+  "tree_node": "a1_question_words",
+  "practice": "frames",
+  "note": "Two blocks: (1) Match word → meaning (when=time…). (2) Full questions, gap on Q-word. Uses do/does/be from Q & neg. Not whose/which/how much.",
+  "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "match",
+      "quiz"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "qwords_meanings",
+      "title": "Word · meaning",
+      "use": false,
+      "check": {
+        "sequence": [
+          "match",
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "who",
+          "cz": "person · kdo",
+          "gap": "____ = person",
+          "gap_answer": "who",
+          "accepts": [
+            "who"
+          ],
+          "explanation": "who = person.",
+          "explanation_cz": "who = osoba."
+        },
+        {
+          "en": "what",
+          "cz": "thing / job · co",
+          "gap": "____ = thing / job",
+          "gap_answer": "what",
+          "accepts": [
+            "what"
+          ],
+          "explanation": "what = thing / action.",
+          "explanation_cz": "what = věc / děj."
+        },
+        {
+          "en": "where",
+          "cz": "place · kde",
+          "gap": "____ = place",
+          "gap_answer": "where",
+          "accepts": [
+            "where"
+          ],
+          "explanation": "where = place.",
+          "explanation_cz": "where = místo."
+        },
+        {
+          "en": "when",
+          "cz": "time · kdy",
+          "gap": "____ = time",
+          "gap_answer": "when",
+          "accepts": [
+            "when"
+          ],
+          "explanation": "when = time.",
+          "explanation_cz": "when = čas."
+        },
+        {
+          "en": "why",
+          "cz": "reason · proč",
+          "gap": "____ = reason",
+          "gap_answer": "why",
+          "accepts": [
+            "why"
+          ],
+          "explanation": "why = reason.",
+          "explanation_cz": "why = důvod."
+        },
+        {
+          "en": "how",
+          "cz": "way / manner · jak",
+          "gap": "____ = way / manner",
+          "gap_answer": "how",
+          "accepts": [
+            "how"
+          ],
+          "explanation": "how = manner / degree.",
+          "explanation_cz": "how = způsob / míra."
+        },
+        {
+          "en": "who",
+          "cz": "a person · kdo (not a thing)",
+          "gap": "person → ____",
+          "gap_answer": "who",
+          "accepts": [
+            "who"
+          ],
+          "explanation": "who = person.",
+          "explanation_cz": "who = osoba."
+        },
+        {
+          "en": "what",
+          "cz": "a thing · co (not a person)",
+          "gap": "thing → ____",
+          "gap_answer": "what",
+          "accepts": [
+            "what"
+          ],
+          "explanation": "what = thing / action.",
+          "explanation_cz": "what = věc / děj."
+        },
+        {
+          "en": "where",
+          "cz": "a place · kde",
+          "gap": "place → ____",
+          "gap_answer": "where",
+          "accepts": [
+            "where"
+          ],
+          "explanation": "where = place.",
+          "explanation_cz": "where = místo."
+        },
+        {
+          "en": "when",
+          "cz": "a time · kdy",
+          "gap": "time → ____",
+          "gap_answer": "when",
+          "accepts": [
+            "when"
+          ],
+          "explanation": "when = time.",
+          "explanation_cz": "when = čas."
+        },
+        {
+          "en": "why",
+          "cz": "a reason · proč",
+          "gap": "reason → ____",
+          "gap_answer": "why",
+          "accepts": [
+            "why"
+          ],
+          "explanation": "why = reason.",
+          "explanation_cz": "why = důvod."
+        },
+        {
+          "en": "how",
+          "cz": "a way · jak",
+          "gap": "way → ____",
+          "gap_answer": "how",
+          "accepts": [
+            "how"
+          ],
+          "explanation": "how = manner / degree.",
+          "explanation_cz": "how = způsob / míra."
+        }
+      ]
+    },
+    {
+      "id": "qwords_questions",
+      "title": "Question words · sentences",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "Who is she?",
+          "cz": "Kdo je ona?",
+          "gap": "____ is she?",
+          "gap_answer": "Who",
+          "accepts": [
+            "Who is she?",
+            "Who's she?"
+          ],
+          "explanation": "who = person.",
+          "explanation_cz": "who = osoba."
+        },
+        {
+          "en": "Who is your teacher?",
+          "cz": "Kdo je tvůj učitel?",
+          "gap": "____ is your teacher?",
+          "gap_answer": "Who",
+          "accepts": [
+            "Who is your teacher?",
+            "Who's your teacher?"
+          ],
+          "explanation": "who = person.",
+          "explanation_cz": "who = osoba."
+        },
+        {
+          "en": "Who do you live with?",
+          "cz": "S kým bydlíš?",
+          "gap": "____ do you live with?",
+          "gap_answer": "Who",
+          "accepts": [
+            "Who do you live with?"
+          ],
+          "explanation": "who = person.",
+          "explanation_cz": "who = osoba."
+        },
+        {
+          "en": "Who is that?",
+          "cz": "Kdo je to?",
+          "gap": "____ is that?",
+          "gap_answer": "Who",
+          "accepts": [
+            "Who is that?",
+            "Who's that?"
+          ],
+          "explanation": "who = person.",
+          "explanation_cz": "who = osoba."
+        },
+        {
+          "en": "What is your name?",
+          "cz": "Jak se jmenuješ?",
+          "gap": "____ is your name?",
+          "gap_answer": "What",
+          "accepts": [
+            "What is your name?",
+            "What's your name?"
+          ],
+          "explanation": "what = thing / action.",
+          "explanation_cz": "what = věc / děj."
+        },
+        {
+          "en": "What do you want?",
+          "cz": "Co chceš?",
+          "gap": "____ do you want?",
+          "gap_answer": "What",
+          "accepts": [
+            "What do you want?"
+          ],
+          "explanation": "what = thing / action.",
+          "explanation_cz": "what = věc / děj."
+        },
+        {
+          "en": "What does he do?",
+          "cz": "Co on dělá? (práce / běžně)",
+          "gap": "____ does he do?",
+          "gap_answer": "What",
+          "accepts": [
+            "What does he do?",
+            "What does he do for a living?"
+          ],
+          "explanation": "what = thing / action.",
+          "explanation_cz": "what = věc / děj."
+        },
+        {
+          "en": "What is this?",
+          "cz": "Co je to?",
+          "gap": "____ is this?",
+          "gap_answer": "What",
+          "accepts": [
+            "What is this?",
+            "What's this?"
+          ],
+          "explanation": "what = thing / action.",
+          "explanation_cz": "what = věc / děj."
+        },
+        {
+          "en": "Where do you live?",
+          "cz": "Kde bydlíš?",
+          "gap": "____ do you live?",
+          "gap_answer": "Where",
+          "accepts": [
+            "Where do you live?"
+          ],
+          "explanation": "where = place.",
+          "explanation_cz": "where = místo."
+        },
+        {
+          "en": "Where is the station?",
+          "cz": "Kde je nádraží?",
+          "gap": "____ is the station?",
+          "gap_answer": "Where",
+          "accepts": [
+            "Where is the station?",
+            "Where's the station?"
+          ],
+          "explanation": "where = place.",
+          "explanation_cz": "where = místo."
+        },
+        {
+          "en": "Where does she work?",
+          "cz": "Kde ona pracuje?",
+          "gap": "____ does she work?",
+          "gap_answer": "Where",
+          "accepts": [
+            "Where does she work?"
+          ],
+          "explanation": "where = place.",
+          "explanation_cz": "where = místo."
+        },
+        {
+          "en": "Where are you from?",
+          "cz": "Odkud jsi?",
+          "gap": "____ are you from?",
+          "gap_answer": "Where",
+          "accepts": [
+            "Where are you from?",
+            "Where do you come from?"
+          ],
+          "explanation": "where = place.",
+          "explanation_cz": "where = místo."
+        },
+        {
+          "en": "When do you get up?",
+          "cz": "Kdy vstáváš?",
+          "gap": "____ do you get up?",
+          "gap_answer": "When",
+          "accepts": [
+            "When do you get up?"
+          ],
+          "explanation": "when = time.",
+          "explanation_cz": "when = čas."
+        },
+        {
+          "en": "When is the party?",
+          "cz": "Kdy je párty?",
+          "gap": "____ is the party?",
+          "gap_answer": "When",
+          "accepts": [
+            "When is the party?",
+            "When's the party?"
+          ],
+          "explanation": "when = time.",
+          "explanation_cz": "when = čas."
+        },
+        {
+          "en": "When does the film start?",
+          "cz": "Kdy začíná film?",
+          "gap": "____ does the film start?",
+          "gap_answer": "When",
+          "accepts": [
+            "When does the film start?",
+            "When does the film begin?",
+            "When does the movie start?",
+            "When does the movie begin?"
+          ],
+          "explanation": "when = time.",
+          "explanation_cz": "when = čas."
+        },
+        {
+          "en": "When do they work?",
+          "cz": "Kdy oni pracují?",
+          "gap": "____ do they work?",
+          "gap_answer": "When",
+          "accepts": [
+            "When do they work?"
+          ],
+          "explanation": "when = time.",
+          "explanation_cz": "when = čas."
+        },
+        {
+          "en": "Why are you here?",
+          "cz": "Proč jsi tady?",
+          "gap": "____ are you here?",
+          "gap_answer": "Why",
+          "accepts": [
+            "Why are you here?"
+          ],
+          "explanation": "why = reason.",
+          "explanation_cz": "why = důvod."
+        },
+        {
+          "en": "Why do you like English?",
+          "cz": "Proč máš rád angličtinu?",
+          "gap": "____ do you like English?",
+          "gap_answer": "Why",
+          "accepts": [
+            "Why do you like English?"
+          ],
+          "explanation": "why = reason.",
+          "explanation_cz": "why = důvod."
+        },
+        {
+          "en": "Why is she tired?",
+          "cz": "Proč je ona unavená?",
+          "gap": "____ is she tired?",
+          "gap_answer": "Why",
+          "accepts": [
+            "Why is she tired?"
+          ],
+          "explanation": "why = reason.",
+          "explanation_cz": "why = důvod."
+        },
+        {
+          "en": "Why don't you come?",
+          "cz": "Proč nepřijdeš?",
+          "gap": "____ don't you come?",
+          "gap_answer": "Why",
+          "accepts": [
+            "Why don't you come?",
+            "Why do you not come?"
+          ],
+          "explanation": "why = reason.",
+          "explanation_cz": "why = důvod."
+        },
+        {
+          "en": "How are you?",
+          "cz": "Jak se máš?",
+          "gap": "____ are you?",
+          "gap_answer": "How",
+          "accepts": [
+            "How are you?"
+          ],
+          "explanation": "how = manner / degree.",
+          "explanation_cz": "how = způsob / míra."
+        },
+        {
+          "en": "How do you go to work?",
+          "cz": "Jak jezdíš do práce?",
+          "gap": "____ do you go to work?",
+          "gap_answer": "How",
+          "accepts": [
+            "How do you go to work?",
+            "How do you get to work?"
+          ],
+          "explanation": "how = manner / degree.",
+          "explanation_cz": "how = způsob / míra."
+        },
+        {
+          "en": "How old are you?",
+          "cz": "Kolik ti je let?",
+          "gap": "____ old are you?",
+          "gap_answer": "How",
+          "accepts": [
+            "How old are you?"
+          ],
+          "explanation": "how = manner / degree.",
+          "explanation_cz": "how = způsob / míra."
+        },
+        {
+          "en": "How does he cook?",
+          "cz": "Jak on vaří?",
+          "gap": "____ does he cook?",
+          "gap_answer": "How",
+          "accepts": [
+            "How does he cook?"
+          ],
+          "explanation": "how = manner / degree.",
+          "explanation_cz": "how = způsob / míra."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Question words",
+        "title_cz": "Tázací slova — kdo / co / kde…",
+        "body": "These words open a question. Match each word to what it asks about.",
+        "body_cz": "Otevírají otázku. Nejdřív spáruj slovo s významem (when = time…).",
+        "table": {
+          "caption": "six words · A1",
+          "headers": [
+            "EN",
+            "Asks about",
+            "CZ"
+          ],
+          "rows": [
+            [
+              "who",
+              "person",
+              "kdo"
+            ],
+            [
+              "what",
+              "thing / job",
+              "co"
+            ],
+            [
+              "where",
+              "place",
+              "kde"
+            ],
+            [
+              "when",
+              "time",
+              "kdy"
+            ],
+            [
+              "why",
+              "reason",
+              "proč"
+            ],
+            [
+              "how",
+              "way / manner",
+              "jak"
+            ]
+          ]
+        },
+        "points": [
+          "First practice: Match word ↔ meaning",
+          "Then: full questions with do/does/be"
+        ]
+      },
+      {
+        "title": "who",
+        "title_cz": "who = kdo — person",
+        "table": {
+          "caption": "who",
+          "headers": [
+            "English",
+            "Job"
+          ],
+          "rows": [
+            [
+              "Who is she?",
+              "person (be)"
+            ],
+            [
+              "Who is that?",
+              "person"
+            ],
+            [
+              "Who do you live with?",
+              "person + do"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "Who is your teacher?",
+            "cz": "Kdo je tvůj učitel?"
+          },
+          {
+            "en": "Who do you live with?",
+            "cz": "S kým bydlíš?"
+          }
+        ],
+        "points": [
+          "who = a person (not a thing)",
+          "With be: Who is…? · With other verbs: Who do/does…?"
+        ]
+      },
+      {
+        "title": "what",
+        "title_cz": "what = co — thing / job",
+        "table": {
+          "caption": "what",
+          "headers": [
+            "English",
+            "Job"
+          ],
+          "rows": [
+            [
+              "What is this?",
+              "thing"
+            ],
+            [
+              "What is your name?",
+              "info"
+            ],
+            [
+              "What do you want?",
+              "thing + do"
+            ],
+            [
+              "What does he do?",
+              "job (common A1)"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "What is your name?",
+            "cz": "Jak se jmenuješ? / Jaké je tvé jméno?"
+          },
+          {
+            "en": "What do you want?",
+            "cz": "Co chceš?"
+          }
+        ],
+        "points": [
+          "what = thing, idea, or job",
+          "What does he do? often = what is his job?"
+        ],
+        "body_cz": "what = co. What does he do? = Co dělá? (často práce)."
+      },
+      {
+        "title": "where",
+        "title_cz": "where = kde — place",
+        "table": {
+          "caption": "where",
+          "headers": [
+            "English",
+            "Job"
+          ],
+          "rows": [
+            [
+              "Where do you live?",
+              "home"
+            ],
+            [
+              "Where is the station?",
+              "place + be"
+            ],
+            [
+              "Where are you from?",
+              "origin (chunk)"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "Where do you live?",
+            "cz": "Kde bydlíš?"
+          },
+          {
+            "en": "Where are you from?",
+            "cz": "Odkud jsi?"
+          }
+        ],
+        "points": [
+          "where = place",
+          "Where are you from? = fixed useful chunk"
+        ]
+      },
+      {
+        "title": "when · why",
+        "title_cz": "when = kdy · why = proč",
+        "table": {
+          "caption": "time and reason",
+          "headers": [
+            "Word",
+            "EN",
+            "CZ idea"
+          ],
+          "rows": [
+            [
+              "when",
+              "When do you get up?",
+              "kdy"
+            ],
+            [
+              "when",
+              "When is the party?",
+              "kdy (be)"
+            ],
+            [
+              "why",
+              "Why are you here?",
+              "proč"
+            ],
+            [
+              "why",
+              "Why do you like English?",
+              "proč"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "When does the film start?",
+            "cz": "Kdy začíná film?"
+          },
+          {
+            "en": "Why is she tired?",
+            "cz": "Proč je ona unavená?"
+          }
+        ],
+        "points": [
+          "when = time",
+          "why = reason (answer often because…)",
+          "start ≈ begin (both OK)"
+        ]
+      },
+      {
+        "title": "how",
+        "title_cz": "how = jak — way / manner",
+        "table": {
+          "caption": "how",
+          "headers": [
+            "English",
+            "Job"
+          ],
+          "rows": [
+            [
+              "How are you?",
+              "feeling (chunk)"
+            ],
+            [
+              "How old are you?",
+              "age (chunk)"
+            ],
+            [
+              "How do you go to work?",
+              "way / transport"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "How are you?",
+            "cz": "Jak se máš?"
+          },
+          {
+            "en": "How old are you?",
+            "cz": "Kolik ti je let?"
+          }
+        ],
+        "points": [
+          "how = way or manner",
+          "Learn chunks: How are you? · How old are you?"
+        ],
+        "body_cz": "how = jak. Chunky: How are you? · How old are you?"
+      },
+      {
+        "title": "Word order",
+        "title_cz": "Pořadí slov",
+        "body": "Question word first. Then the same question shape as before.",
+        "body_cz": "Nejdřív tázací slovo. Pak stejný tvar otázky jako v Q & neg.",
+        "table": {
+          "caption": "shape",
+          "headers": [
+            "Type",
+            "Order",
+            "Example"
+          ],
+          "rows": [
+            [
+              "with be",
+              "Q-word + be + …",
+              "Where is the station?"
+            ],
+            [
+              "with do",
+              "Q-word + do + I/you/we/they + verb",
+              "Where do you live?"
+            ],
+            [
+              "with does",
+              "Q-word + does + he/she/it + verb",
+              "Where does she work?"
+            ]
+          ]
+        },
+        "points": [
+          "After does use base verb: work (not works)",
+          "Yes/no questions have no who/what… — this unit adds the openers"
+        ]
+      },
+      {
+        "title": "Remember",
+        "title_cz": "Pamatuj",
+        "points": [
+          "who · what · where · when · why · how",
+          "Match first: when = time · where = place · who = person…",
+          "Question word first · then be or do/does",
+          "Chunks: What is your name? · Where are you from? · How are you?"
+        ],
+        "body_cz": "Nejdřív význam (when=time). Pak otázky. Pořadí: who/what… + be/do/does."
+      }
+    ]
+  }
+}

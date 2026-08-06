@@ -1,0 +1,412 @@
+{
+  "id": "b2_clear_claims",
+  "title": "Clear claims",
+  "level": "B2",
+  "tree_node": "b2_clear_claims",
+  "codex_unit": "G_CL-B1B2-01",
+  "practice": "frames",
+  "note": "PILOT 2026-08-05 · claim logic for writing (overgeneral, stance, weak claim, language). Spot-the-problem quiz. Not formal philosophy. See docs/LOGIC_CLAIMS_PILOT.md.",
+  "default_direction": "cz_to_en",
+  "quality": "pilot",
+  "demo_priority": true,
+  "use": false,
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "b2_clear_claims_main",
+      "title": "Clear claims · spot the problem",
+      "items": [
+        {
+          "en": "Personally speaking, technology gives negative impact on families.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Personally speaking, technology gives negative impact on families. → ____",
+          "gap_answer": "language only",
+          "gap_accepts": [
+            "language only",
+            "language"
+          ],
+          "accepts": [
+            "language only"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Main language fault: gives impact → has a negative impact/effect. (Also stance + overgeneral — intro covers layers; primary label here = language.)",
+          "explanation_cz": "Hlavně jazyk: gives impact → has a negative impact. (I postoj a zobecnění — v intro.)"
+        },
+        {
+          "en": "Personally speaking, all teenagers hate reading.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Personally speaking, all teenagers hate reading. → ____",
+          "gap_answer": "stance mismatch",
+          "gap_accepts": [
+            "stance mismatch",
+            "stance"
+          ],
+          "accepts": [
+            "stance mismatch"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Personally speaking does not fit a universal claim about all teenagers. (Also overgeneral — primary here = stance.)",
+          "explanation_cz": "Personally speaking se nehodí k obecnému tvrzení o všech teenagech."
+        },
+        {
+          "en": "Technology ruins every family.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Technology ruins every family. → ____",
+          "gap_answer": "overgeneral",
+          "gap_accepts": [
+            "overgeneral",
+            "overgeneralisation",
+            "overgeneralization"
+          ],
+          "accepts": [
+            "overgeneral"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Every family is too absolute. Hedge: can harm / some families / often…",
+          "explanation_cz": "Every family je příliš absolutní. Zjemni: can harm / some families…"
+        },
+        {
+          "en": "Social media is bad.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Social media is bad. → ____",
+          "gap_answer": "weak claim",
+          "gap_accepts": [
+            "weak claim",
+            "weak"
+          ],
+          "accepts": [
+            "weak claim"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Big judgment with no reason or limit. A clearer claim needs why, for whom, or in what way.",
+          "explanation_cz": "Velký soud bez důvodu. Doplň proč / pro koho / jak."
+        },
+        {
+          "en": "In my experience, group chats help my family plan weekends.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "In my experience, group chats help my family plan weekends. → ____",
+          "gap_answer": "OK · clear claim",
+          "gap_accepts": [
+            "OK · clear claim",
+            "OK",
+            "clear claim",
+            "ok"
+          ],
+          "accepts": [
+            "OK · clear claim"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Stance fits (in my experience), scope is limited (my family, weekends), English is fine.",
+          "explanation_cz": "Postoj sedí, rozsah je omezený, angličtina je v pořádku."
+        },
+        {
+          "en": "Research shows that many parents report less face-to-face talk when phones are at the table.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Research shows that many parents report less face-to-face talk when phones are at the table. → ____",
+          "gap_answer": "OK · clear claim",
+          "gap_accepts": [
+            "OK · clear claim",
+            "OK",
+            "clear claim",
+            "ok"
+          ],
+          "accepts": [
+            "OK · clear claim"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Limited scope (many parents, when phones at table) and a support signal (research shows). OK for this pilot.",
+          "explanation_cz": "Omezený rozsah a opora (research shows). Pro pilot OK."
+        },
+        {
+          "en": "To sum up, phones destroy love.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "To sum up, phones destroy love. → ____",
+          "gap_answer": "overgeneral",
+          "gap_accepts": [
+            "overgeneral",
+            "overgeneralisation",
+            "overgeneralization"
+          ],
+          "accepts": [
+            "overgeneral"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Destroy love is absolute and vague. To sum up needs a fair conclusion, not a slogan.",
+          "explanation_cz": "Destroy love je absolutní a vágní. Závěr má být férový, ne slogan."
+        },
+        {
+          "en": "From my point of view, the government should ban all social media tomorrow.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "From my point of view, the government should ban all social media tomorrow. → ____",
+          "gap_answer": "overgeneral",
+          "gap_accepts": [
+            "overgeneral",
+            "overgeneralisation",
+            "overgeneralization"
+          ],
+          "accepts": [
+            "overgeneral"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "All + tomorrow is extreme policy with no conditions. Opinion marker is OK; the claim is too absolute.",
+          "explanation_cz": "All + tomorrow je extrém bez podmínek. Postoj OK; tvrzení příliš absolutní."
+        },
+        {
+          "en": "Honestly, online games make children more creative when they build and play together.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Honestly, online games make children more creative when they build and play together. → ____",
+          "gap_answer": "OK · clear claim",
+          "gap_accepts": [
+            "OK · clear claim",
+            "OK",
+            "clear claim",
+            "ok"
+          ],
+          "accepts": [
+            "OK · clear claim"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Limited condition (when they build and play together). Soft stance (honestly) is acceptable for a reasoned opinion.",
+          "explanation_cz": "Omezená podmínka (when…). Mírný postoj je v pořádku."
+        },
+        {
+          "en": "It is clear that nobody needs books anymore.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "It is clear that nobody needs books anymore. → ____",
+          "gap_answer": "overgeneral",
+          "gap_accepts": [
+            "overgeneral",
+            "overgeneralisation",
+            "overgeneralization"
+          ],
+          "accepts": [
+            "overgeneral"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Nobody / anymore is absolute. It is clear pretends certainty without support.",
+          "explanation_cz": "Nobody / anymore je absolutní. It is clear předstírá jistotu bez opory."
+        },
+        {
+          "en": "Many families argue more when they check phones during meals.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "Many families argue more when they check phones during meals. → ____",
+          "gap_answer": "OK · clear claim",
+          "gap_accepts": [
+            "OK · clear claim",
+            "OK",
+            "clear claim",
+            "ok"
+          ],
+          "accepts": [
+            "OK · clear claim"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "Many + when… limits the claim. Clear and usable in an essay (still needs support if you develop it).",
+          "explanation_cz": "Many + when… omezuje tvrzení. Použitelné v eseji."
+        },
+        {
+          "en": "In conclusion, because phones exist, society has failed.",
+          "cz": "What is the main problem with this claim?",
+          "gap": "In conclusion, because phones exist, society has failed. → ____",
+          "gap_answer": "weak claim",
+          "gap_accepts": [
+            "weak claim",
+            "weak"
+          ],
+          "accepts": [
+            "weak claim"
+          ],
+          "quiz_options": [
+            "OK · clear claim",
+            "language only",
+            "overgeneral",
+            "stance mismatch",
+            "weak claim"
+          ],
+          "explanation": "The conclusion does not follow: existence of phones does not prove society has failed. Bad premise → conclusion link.",
+          "explanation_cz": "Závěr neplyne: existence telefonů nedokazuje selhání společnosti."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "What is a claim?",
+        "body": "A claim is something you ask the reader to accept. In essays, claims need a fair scope and a reason — not only strong feelings.",
+        "points": [
+          "Claim = idea you want others to take seriously",
+          "Good claims are limited enough to discuss",
+          "Bad claims are absolute, empty, or do not follow from the reason"
+        ]
+      },
+      {
+        "title": "Premise → conclusion",
+        "body": "In plain English: **because of this** (premise), **I say that** (conclusion). The conclusion must follow.",
+        "points": [
+          "Premise = reason or support",
+          "Conclusion = what you want people to accept",
+          "If the conclusion is much bigger than the premise → weak claim"
+        ],
+        "table": {
+          "headers": [
+            "Weak",
+            "Clearer"
+          ],
+          "rows": [
+            [
+              "Phones exist → society has failed",
+              "Phones at meals → some families talk less"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Overgeneralisation",
+        "points": [
+          "Watch **all / every / nobody / always / never / technology / families** used as totals",
+          "Hedge: many, some, often, can, tend to, in some homes…",
+          "Add a limit: when / for teenagers / in my class…"
+        ],
+        "table": {
+          "headers": [
+            "Too big",
+            "Fairer"
+          ],
+          "rows": [
+            [
+              "Technology ruins every family.",
+              "Phones can reduce talk at some meals."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Stance fit",
+        "body": "Markers like **Personally speaking** / **In my experience** must match the size of the claim.",
+        "points": [
+          "Personal marker + universal claim = stance mismatch",
+          "Personal marker + personal evidence = OK",
+          "Formal claim → use research / many people / it seems… — not fake personal padding"
+        ],
+        "table": {
+          "headers": [
+            "Mismatch",
+            "Better fit"
+          ],
+          "rows": [
+            [
+              "Personally speaking, all teens hate books.",
+              "In my class, some teens avoid long novels."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Language vs thinking",
+        "body": "Sometimes the English is wrong; sometimes the thinking is weak; sometimes **both**.",
+        "points": [
+          "**Language only** — collocation/grammar; idea is fair",
+          "**Logic labels** — overgeneral / stance / weak claim",
+          "Your example: *gives negative impact* (language) + personal + total claim (thinking)"
+        ],
+        "table": {
+          "headers": [
+            "Line",
+            "Primary label in practice"
+          ],
+          "rows": [
+            [
+              "…gives negative impact…",
+              "language only (first fix)"
+            ],
+            [
+              "Technology ruins every family.",
+              "overgeneral"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Labels in practice",
+        "points": [
+          "**OK · clear claim** — fair scope; stance fits; English OK enough",
+          "**language only** — fix words/grammar first",
+          "**overgeneral** — too absolute",
+          "**stance mismatch** — marker doesn’t fit the claim",
+          "**weak claim** — big conclusion, no real support / does not follow"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1256 @@
+/**
+ * RUE2 ladder: Intro → Check → Type → Use
+ * Production toward English. Diacritics kept where present (not stripped).
+ *
+ * Shell patterns ported from RUE2 spirit:
+ * - single Enter router (state.enterAdvance) — never exits to map
+ * - ← Back do mapy is mouse-only (shell #btn-practice-back, tabindex -1)
+ * - intro nav: Back / Next · Enter = Next · Backspace = Back
+ * - Polish chrome labels
+ *
+ * Type modes: full_word | ending_gap (morphology packs)
+ */
+
+import {
+  completeMode,
+  touchBlock,
+  hasFruit,
+  grammarBest,
+} from "./progress.js";
+import { setSmokeContext } from "./smoke-flags.js";
+import { attachExplain } from "./explain.js";
+
+/** Alias for dual-engine shell */
+export { startPractice as startGrammarPractice };
+
+/**
+ * Default questions per graded stage (Check quiz · Type · Use).
+ * Also caps Match board size. Packs should author ≥12 items per stage when possible;
+ * shorter banks use all available items (no padding with junk).
+ */
+export const DEFAULT_PASS = 12;
+
+function shuffle(a) {
+  const arr = a.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+const FOCUS_WEIGHT = 3;
+
+/**
+ * Up to DEFAULT_PASS items; if onlyIndices set, those items (retry pass).
+ * Prefer items tagged with pack focus_structures (weight FOCUS_WEIGHT) so
+ * today's pattern appears often while recycle items still enter the bag.
+ */
+function samplePass(items, onlyIndices, focusStructures) {
+  const list = Array.isArray(items) ? items : [];
+  if (!list.length) return [];
+  if (onlyIndices && onlyIndices.length) {
+    return shuffle(onlyIndices.map((i) => list[i]).filter(Boolean));
+  }
+  if (list.length <= DEFAULT_PASS) return shuffle(list.slice());
+  const focus = new Set(focusStructures || []);
+  const bag = [];
+  for (let i = 0; i < list.length; i++) {
+    const it = list[i];
+    let w = 1;
+    if (focus.size && it && Array.isArray(it.structures)) {
+      if (it.structures.some((s) => focus.has(s))) w = FOCUS_WEIGHT;
+    }
+    for (let k = 0; k < w; k++) bag.push(i);
+  }
+  shuffle(bag);
+  const out = [];
+  const used = new Set();
+  for (const i of bag) {
+    if (used.has(i)) continue;
+    used.add(i);
+    out.push(list[i]);
+    if (out.length >= DEFAULT_PASS) break;
+  }
+  return out;
+}
+
+function norm(s) {
+  return String(s)
+    .toLowerCase()
+    .replace(/[!?.,;:"'()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normEnding(s) {
+  return String(s)
+    .toLowerCase()
+    .replace(/[!?.,;:"'()\s]/g, "")
+    .trim();
+}
+
+function typeModeOf(pack, item) {
+  if (item && item.mode) return item.mode;
+  if (pack?.type?.mode) return pack.type.mode;
+  if (pack?.default_type_mode) return pack.default_type_mode;
+  if (pack?.kind === "morphology" || pack?.morphology === true) return "ending_gap";
+  return "full_word";
+}
+
+function fullFormOf(item) {
+  if (item.full != null && item.full !== "") return String(item.full);
+  if (item.stem != null && item.ending != null) return `${item.stem}${item.ending}`;
+  if (item.answer != null) return String(item.answer);
+  return "";
+}
+
+function acceptsList(item, mode) {
+  const raw = [];
+  if (mode === "ending_gap") {
+    if (item.ending != null) raw.push(item.ending);
+    if (Array.isArray(item.accepts)) raw.push(...item.accepts);
+    return [...new Set(raw.map(normEnding).filter((x) => x !== ""))];
+  }
+  if (item.answer != null) raw.push(item.answer);
+  if (Array.isArray(item.accepts)) raw.push(...item.accepts);
+  return [...new Set(raw.map(norm).filter(Boolean))];
+}
+
+function isCorrect(user, item, mode) {
+  if (mode === "ending_gap") {
+    const u = normEnding(user);
+    if (!u) return false;
+    return acceptsList(item, mode).includes(u);
+  }
+  const u = norm(user);
+  if (!u) return false;
+  return acceptsList(item, mode).includes(u);
+}
+
+function el(html) {
+  const d = document.createElement("div");
+  d.innerHTML = html.trim();
+  return d.firstElementChild;
+}
+
+function pairPl(p) {
+  return p.pl || p.cz || "";
+}
+
+/**
+ * @param {object} pack
+ * @param {HTMLElement} root
+ * @param {{ onExit: () => void }} opts
+ */
+export function startPractice(pack, root, opts) {
+  touchBlock(pack.id);
+
+  const focusStructures =
+    Array.isArray(pack.focus_structures) && pack.focus_structures.length
+      ? pack.focus_structures
+      : Array.isArray(pack.teaches_structures)
+        ? pack.teaches_structures
+        : [];
+
+  setSmokeContext({
+    packId: pack.id || pack.tree_node || "",
+    packTitle: pack.title || "",
+    stage: "intro",
+    checkPhase: "",
+    itemIndex: null,
+    en: "",
+    pl: "",
+    gap: "",
+    gap_answer: "",
+    typed: "",
+  });
+
+  const state = {
+    stage: "intro",
+    reviewStart: opts.startStage || null,
+    checkPhase: "match",
+    introIndex: 0,
+    matchPairs: [],
+    matchChoices: {},
+    matchSubmitted: false,
+    quizItems: [],
+    quizIndex: 0,
+    quizScore: 0,
+    quizWrong: [],
+    quizRetryPass: false,
+    quizGate: false,
+    quizScoreCommitted: false,
+    typeItems: [],
+    typeIndex: 0,
+    typeScore: 0,
+    typeWrong: [],
+    typeRetryPass: false,
+    typeGate: false,
+    typeScoreCommitted: false,
+    useItems: [],
+    useIndex: 0,
+    useScore: 0,
+    useWrong: [],
+    useRetryPass: false,
+    useGate: false,
+    useScoreCommitted: false,
+    checkScore: 0,
+    checkTotal: 0,
+    /** @type {null | (() => void)} */
+    enterAdvance: null,
+    /** @type {null | (() => void)} */
+    onBackKey: null,
+    enterOnSelect: false,
+    /** @type {null | ((e: KeyboardEvent) => void)} */
+    digitHandler: null,
+  };
+
+  // ---- RUE2-style key router (one capture handler for the whole practice) ----
+  function clearAdvance() {
+    if (state.digitHandler) {
+      document.removeEventListener("keydown", state.digitHandler, true);
+      state.digitHandler = null;
+    }
+    state.enterAdvance = null;
+    state.onBackKey = null;
+    state.enterOnSelect = false;
+  }
+
+  function isTypingTarget(t) {
+    if (!t || !t.closest) return false;
+    return !!t.closest("input, textarea, [contenteditable=true]");
+  }
+
+  function onPracticeKeydown(e) {
+    const t = e.target;
+
+    // Back to map: never leave on Enter/Space — advance ladder instead (RUE2)
+    if (t && t.closest && t.closest("#btn-practice-back")) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        e.stopPropagation();
+        if (e.key === "Enter" && typeof state.enterAdvance === "function") {
+          state.enterAdvance();
+        }
+      }
+      return;
+    }
+
+    // Esc clears a mis-tapped match token without needing to find it again.
+    if (e.key === "Escape" && state.matchBoard && state.matchBoard.sel) {
+      e.preventDefault();
+      state.matchBoard.sel.el.classList.remove("sel");
+      state.matchBoard.sel = null;
+      return;
+    }
+
+    if (e.key === "Backspace" && typeof state.onBackKey === "function") {
+      if (isTypingTarget(t)) return;
+      e.preventDefault();
+      e.stopPropagation();
+      state.onBackKey();
+      return;
+    }
+
+    if (e.key !== "Enter" || e.shiftKey) return;
+    if (t && t.closest && t.closest("textarea")) return;
+    if (t && t.tagName === "SELECT" && !state.enterOnSelect) return;
+
+    if (typeof state.enterAdvance !== "function") return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    state.enterAdvance();
+  }
+
+  document.addEventListener("keydown", onPracticeKeydown, true);
+
+  // ---- Ladder: click a stage to jump straight to it (no hard lock) ----
+  function onLadderClick(e) {
+    const step =
+      e.target.closest && e.target.closest(".ladder-step[data-stage]");
+    if (!step || !root.contains(step)) return;
+    jumpToStage(step.dataset.stage);
+  }
+  root.addEventListener("click", onLadderClick);
+
+  function teardown() {
+    clearAdvance();
+    document.removeEventListener("keydown", onPracticeKeydown, true);
+    root.removeEventListener("click", onLadderClick);
+    root._RUE2UnbindKeys = null;
+  }
+
+  root._RUE2UnbindKeys = teardown;
+
+  const exitToMap = () => {
+    teardown();
+    opts.onExit();
+  };
+
+  function setStage(s) {
+    state.stage = s;
+    render();
+  }
+
+  // Jump to any ladder stage via its proper entry (each initialises its items)
+  function jumpToStage(id) {
+    if (!id || id === state.stage) return;
+    if (id === "intro") setStage("intro");
+    else if (id === "check") beginCheck();
+    else if (id === "type") beginType();
+    else if (id === "use") beginUse();
+  }
+
+  function ladderHtml() {
+    // Packs without use_items (pure form units) get a 3-step ladder —
+    // never show a stage that would auto-skip.
+    const stepDefs = [
+      ["intro", "Intro"],
+      ["check", "Check"],
+      ["type", "Type"],
+    ];
+    if ((pack.use_items || []).length) stepDefs.push(["use", "Use"]);
+    const steps = stepDefs.map(([k, label], i) => [k, `${i + 1} · ${label}`]);
+    const order = ["intro", "check", "type", "use", "done"];
+    const cur = order.indexOf(state.stage);
+    const banners = {
+      intro: {
+        title: "Stage 1 · Intro",
+        sub: "Read · Enter = Next · Backspace = Back",
+      },
+      check: {
+        title: "Stage 2 · Check",
+        sub:
+          state.checkPhase === "quiz"
+            ? "Quiz · keys 1–4 · Enter = next"
+            : "Match · left → right · Enter = next when done",
+      },
+      type: {
+        title: "Stage 3 · Type",
+        sub: "Type the form · Enter = check · Enter = next",
+      },
+      use: {
+        title: "Stage 4 · Use",
+        sub:
+          pack.use_hint ||
+          "Full sentence in English · Enter = check · Enter = next",
+      },
+      done: {
+        title: "Done",
+        sub: "Enter = map",
+      },
+    };
+    const ban = banners[state.stage] || banners.done;
+    return `
+      <div class="ladder-wrap">
+        <div class="ladder" role="list" aria-label="Practice stages">
+          ${steps
+            .map(([id, label], i) => {
+              let cls = "ladder-step";
+              if (state.stage === id || (state.stage === "done" && id === "use"))
+                cls += " is-current";
+              else if (i < cur) cls += " is-done";
+              const arrow =
+                i < steps.length - 1
+                  ? `<span class="ladder-arrow" aria-hidden="true">→</span>`
+                  : "";
+              return `<button type="button" class="${cls}" data-stage="${id}">${label}</button>${arrow}`;
+            })
+            .join("")}
+        </div>
+        <div class="stage-banner">
+          <div class="stage-banner-title">${ban.title}</div>
+          <div class="stage-banner-sub">${ban.sub}</div>
+        </div>
+        ${
+          pack.title_en
+            ? `<div class="unit-gloss">${esc(pack.title_en)}</div>`
+            : ""
+        }
+      </div>`;
+  }
+
+  function focusPrimary(sel) {
+    const b = root.querySelector(sel);
+    if (!b) return;
+    try {
+      b.focus({ preventScroll: true });
+    } catch {
+      b.focus();
+    }
+  }
+
+  // ---- Intro ----
+  function renderIntro() {
+    clearAdvance();
+    const cards = pack.intro || [];
+    if (!cards.length) {
+      completeMode(pack.id, "intro");
+      beginCheck();
+      return;
+    }
+    const card = cards[state.introIndex];
+    setSmokeContext({
+      stage: "intro",
+      checkPhase: "",
+      itemIndex: state.introIndex,
+      en: card.title || "",
+      pl: card.title_pl || card.body_pl || "",
+      gap: "",
+      gap_answer: "",
+      typed: "",
+    });
+    let body = "";
+    if (card.body) body += `<p>${esc(card.body)}</p>`;
+    if (card.body_pl) body += `<p><em>${esc(card.body_pl)}</em></p>`;
+    if (card.table) {
+      const h = card.table.headers || [];
+      body += `<table class="intro-table"><thead><tr>${h
+        .map((x) => `<th>${esc(x)}</th>`)
+        .join("")}</tr></thead><tbody>${(card.table.rows || [])
+        .map(
+          (row) =>
+            `<tr>${row.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`,
+        )
+        .join("")}</tbody></table>`;
+    }
+    if (card.examples) {
+      body += card.examples
+        .map((ex) => {
+          const pl = ex.pl || ex.cz || "";
+          let line = `<div class="intro-ex"><span class="pl">${esc(pl)}</span>`;
+          if (ex.en) line += ` <span class="en">· ${esc(ex.en)}</span>`;
+          line += `</div>`;
+          return line;
+        })
+        .join("");
+    }
+
+    const last = state.introIndex >= cards.length - 1;
+    const n = cards.length;
+    const i = state.introIndex;
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)}</h2></div>
+      <div class="intro-card">
+        <p class="intro-kicker">Intro · ${i + 1} / ${n}</p>
+        <h3>${esc(card.title || "Intro")}</h3>
+        ${card.title_pl ? `<p><em>${esc(card.title_pl)}</em></p>` : ""}
+        ${body}
+        <div class="nav">
+          <button type="button" class="btn" id="btn-prev" ${i === 0 ? "disabled" : ""}>← Back</button>
+          <button type="button" class="btn primary" id="btn-next">${
+            last ? "Check →" : "Next →"
+          }</button>
+        </div>
+      </div>
+    `;
+
+    const goPrev = () => {
+      if (state.introIndex > 0) {
+        state.introIndex -= 1;
+        render();
+      }
+    };
+    const goNext = () => {
+      if (last) {
+        completeMode(pack.id, "intro");
+        beginCheck();
+      } else {
+        state.introIndex += 1;
+        render();
+      }
+    };
+
+    root.querySelector("#btn-prev")?.addEventListener("click", goPrev);
+    root.querySelector("#btn-next")?.addEventListener("click", goNext);
+    state.enterAdvance = goNext;
+    state.onBackKey = goPrev;
+    focusPrimary("#btn-next");
+  }
+
+  // ---- Check ----
+  /**
+   * Match board: up to DEFAULT_PASS pairs (or whole bank if shorter).
+   * Shuffle order of left rows and right chips.
+   */
+  function newMatchBoard() {
+    const raw = samplePass(pack.match || [], null, focusStructures);
+    const leftSrc = shuffle(raw);
+    const left = leftSrc.map((p, i) => ({
+      id: i,
+      t: p.en || p.prompt || "",
+      ans: pairPl(p),
+    }));
+    // Right chips: same pairs, independent shuffle; id must match left's pair
+    // Rebuild right from left so ids stay aligned with ans
+    const right = shuffle(
+      left.map((row) => ({
+        id: row.id,
+        t: row.ans,
+      })),
+    );
+    state.matchBoard = {
+      left,
+      right,
+      sel: null,
+      doneLeft: new Set(),
+      doneRight: new Set(),
+      total: left.length,
+      wrongFlash: 0,
+    };
+  }
+
+  function beginCheck() {
+    state.stage = "check";
+    state.checkPhase = "match";
+    state.matchSubmitted = false;
+    state.matchBoard = null;
+    state.quizItems = samplePass(pack.quiz || [], null, focusStructures);
+    state.quizIndex = 0;
+    state.quizScore = 0;
+    state.quizWrong = [];
+    state.quizRetryPass = false;
+    state.quizGate = false;
+    state.quizScoreCommitted = false;
+    state.checkScore = 0;
+    state.checkTotal = 0;
+    const hasMatch = (pack.match || []).length > 0;
+    if (!hasMatch && !state.quizItems.length) {
+      completeMode(pack.id, "check", { score: 1, total: 1 });
+      beginType();
+      return;
+    }
+    if (!hasMatch) state.checkPhase = "quiz";
+    else newMatchBoard();
+    render();
+  }
+
+  function beginQuizRetry() {
+    const wrong = state.quizWrong.slice();
+    if (!wrong.length) return;
+    state.quizItems = shuffle(wrong);
+    state.quizIndex = 0;
+    state.quizScore = 0;
+    state.quizWrong = [];
+    state.quizRetryPass = true;
+    state.quizGate = false;
+    // Retry does not re-commit into checkScore
+    state.checkPhase = "quiz";
+    render();
+  }
+
+  /**
+   * RUE2-style two-column match: click left, click right.
+   * Instant pair feedback · no dropdowns · no page scroll needed.
+   */
+  function renderMatch() {
+    clearAdvance();
+    if (!state.matchBoard) newMatchBoard();
+    const m = state.matchBoard;
+    const doneCount = m.doneLeft.size;
+    setSmokeContext({
+      stage: "check",
+      checkPhase: "match",
+      itemIndex: doneCount,
+      en: (m.left || []).map((x) => x.t).join(" | ").slice(0, 120),
+      pl: (m.right || []).map((x) => x.t).join(" | ").slice(0, 120),
+      gap: "",
+      gap_answer: "",
+      typed: "",
+    });
+
+    // Finished board
+    if (m.total > 0 && doneCount >= m.total) {
+      // Full credit for completing the board (wrong tries already flashed)
+      if (!state.matchSubmitted) {
+        state.checkScore += m.total;
+        state.checkTotal += m.total;
+        state.matchSubmitted = true;
+      }
+      root.innerHTML = `
+        ${ladderHtml()}
+        <div class="practice-head"><h2>${esc(pack.title)} · Match</h2></div>
+        <p class="practice-prompt">Matched ${doneCount} / ${m.total}</p>
+        <p class="practice-hint">Enter = next</p>
+        <div class="nav">
+          <button type="button" class="btn" id="m-again">Try again</button>
+          <button type="button" class="btn primary" id="m-next">${
+            state.quizItems.length ? "Next to quiz →" : "Next →"
+          }</button>
+        </div>
+      `;
+      root.querySelector("#m-again")?.addEventListener("click", () => {
+        state.matchSubmitted = false;
+        newMatchBoard();
+        // undo score from previous complete if replaying
+        state.checkScore = Math.max(0, state.checkScore - m.total);
+        state.checkTotal = Math.max(0, state.checkTotal - m.total);
+        render();
+      });
+      const goNext = () => {
+        if (state.quizItems.length) {
+          state.checkPhase = "quiz";
+          render();
+        } else {
+          const s = state.checkTotal ? state.checkScore : 1;
+          const t = state.checkTotal || 1;
+          completeMode(pack.id, "check", { score: s, total: t });
+          beginType();
+        }
+      };
+      root.querySelector("#m-next")?.addEventListener("click", goNext);
+      state.enterAdvance = goNext;
+      focusPrimary("#m-next");
+      return;
+    }
+
+    const col = (arr, side) =>
+      arr
+        .map((x) => {
+          const done =
+            side === "L" ? m.doneLeft.has(x.id) : m.doneRight.has(x.id);
+          const cls = done ? "m done" : "m";
+          const label = done ? "✓ " + x.t : x.t;
+          return `<button type="button" class="${cls}" data-side="${side}" data-id="${x.id}" ${
+            done ? "disabled" : ""
+          }>${esc(label)}</button>`;
+        })
+        .join("");
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Match</h2></div>
+      <p class="score-line">${doneCount} / ${m.total} · click left, then right · click again (or Esc) to deselect</p>
+      <div class="match" id="match-board">
+        <div class="match-col">${col(m.left, "L")}</div>
+        <div class="match-col">${col(m.right, "R")}</div>
+      </div>
+    `;
+
+    root.querySelectorAll(".m:not(.done)").forEach((btnEl) => {
+      btnEl.addEventListener("click", () => {
+        const id = Number(btnEl.dataset.id);
+        const side = btnEl.dataset.side;
+        if (!m.sel) {
+          m.sel = { id, side, el: btnEl };
+          btnEl.classList.add("sel");
+          return;
+        }
+        if (m.sel.el === btnEl) {
+          // De-click: tapped the selected token again → clear it.
+          btnEl.classList.remove("sel");
+          m.sel = null;
+          return;
+        }
+        if (m.sel.side === side) {
+          m.sel.el.classList.remove("sel");
+          m.sel = { id, side, el: btnEl };
+          btnEl.classList.add("sel");
+          return;
+        }
+        const leftId = m.sel.side === "L" ? m.sel.id : id;
+        const rightId = m.sel.side === "R" ? m.sel.id : id;
+        const leftRow = m.left.find((x) => x.id === leftId);
+        const rightRow = m.right.find((x) => x.id === rightId);
+        const ok =
+          leftRow &&
+          rightRow &&
+          norm(leftRow.ans) === norm(rightRow.t) &&
+          !m.doneLeft.has(leftId) &&
+          !m.doneRight.has(rightId);
+
+        if (ok) {
+          m.doneLeft.add(leftId);
+          m.doneRight.add(rightId);
+          m.sel.el.classList.remove("sel");
+          m.sel.el.classList.add("done");
+          m.sel.el.disabled = true;
+          m.sel.el.textContent =
+            "✓ " + m.sel.el.textContent.replace(/^✓\s*/, "");
+          btnEl.classList.add("done");
+          btnEl.disabled = true;
+          btnEl.textContent = "✓ " + btnEl.textContent.replace(/^✓\s*/, "");
+          m.sel = null;
+          const nextDone = m.doneLeft.size;
+          setTimeout(() => render(), nextDone >= m.total ? 280 : 0);
+        } else {
+          const a = m.sel.el;
+          a.classList.add("wrong");
+          btnEl.classList.add("wrong");
+          setTimeout(() => {
+            a.classList.remove("wrong");
+            btnEl.classList.remove("wrong");
+            // Only drop the highlight if nothing was picked during the flash —
+            // a fast re-tap would otherwise leave m.sel set but nothing lit.
+            if (m.sel?.el !== a) a.classList.remove("sel");
+            if (m.sel?.el !== btnEl) btnEl.classList.remove("sel");
+          }, 450);
+          m.sel = null;
+        }
+      });
+    });
+  }
+
+  function quizKeyToIndex(e, optCount) {
+    const codeMap = {
+      Digit1: 0,
+      Digit2: 1,
+      Digit3: 2,
+      Digit4: 3,
+      Digit5: 4,
+      Digit6: 5,
+      Numpad1: 0,
+      Numpad2: 1,
+      Numpad3: 2,
+      Numpad4: 3,
+      Numpad5: 4,
+      Numpad6: 5,
+    };
+    if (Object.prototype.hasOwnProperty.call(codeMap, e.code)) {
+      const i = codeMap[e.code];
+      return i < optCount ? i : null;
+    }
+    const n = parseInt(e.key, 10);
+    if (n >= 1 && n <= optCount) return n - 1;
+    return null;
+  }
+
+  function renderQuizGate() {
+    clearAdvance();
+    const total = state.quizItems.length || 1;
+    const score = state.quizScore;
+    const wrongN = state.quizWrong.length;
+    // Commit quiz score once (not on every re-render). Check is recorded
+    // HERE, on reaching the gate — not on clicking through to Type. Both
+    // the ladder (jumpToStage -> beginType) and leaving the unit bypass that
+    // click, which silently lost a finished Check and left units stuck at
+    // 3/4 (James, 2026-08-05). Type and Use already commit on gate
+    // render; this makes Check behave the same.
+    if (!state.quizScoreCommitted && !state.quizRetryPass) {
+      state.checkScore += score;
+      state.checkTotal += total;
+      state.quizScoreCommitted = true;
+      completeMode(pack.id, "check", {
+        score: state.checkScore,
+        total: state.checkTotal,
+      });
+    }
+    // Clearing every mistake in the retry rounds counts as a full pass —
+    // mastery through correction, not first-try perfection.
+    if (state.quizRetryPass && wrongN === 0) {
+      completeMode(pack.id, "check", { score: 1, total: 1 });
+    }
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Quiz · Done</h2></div>
+      <p class="practice-prompt">Score: <strong>${score} / ${total}</strong></p>
+      <p class="practice-hint">${
+        wrongN > 0
+          ? `${wrongN} wrong · retry or go to Type`
+          : "All clear · next: Type"
+      }${state.quizRetryPass ? " · retry pass" : ""}</p>
+      <div class="nav">
+        ${
+          wrongN > 0
+            ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
+               <button type="button" class="btn" id="q-next">Next to Type →</button>`
+            : `<button type="button" class="btn" id="q-again">Try full set</button>
+               <button type="button" class="btn primary" id="q-next">Next to Type →</button>`
+        }
+      </div>
+      ${
+        wrongN > 0
+          ? `<button type="button" class="link" id="q-again">Try full set</button>`
+          : ""
+      }
+    `;
+    const goType = () => {
+      const s = state.checkTotal ? state.checkScore : 1;
+      const t = state.checkTotal || 1;
+      completeMode(pack.id, "check", { score: s, total: t });
+      beginType();
+    };
+    root.querySelector("#q-next")?.addEventListener("click", goType);
+    root.querySelector("#q-retry")?.addEventListener("click", () => beginQuizRetry());
+    root.querySelector("#q-again")?.addEventListener("click", () => {
+      if (state.quizScoreCommitted) {
+        state.checkScore = Math.max(0, state.checkScore - score);
+        state.checkTotal = Math.max(0, state.checkTotal - total);
+        state.quizScoreCommitted = false;
+      }
+      state.quizItems = samplePass(pack.quiz || [], null, focusStructures);
+      state.quizIndex = 0;
+      state.quizScore = 0;
+      state.quizWrong = [];
+      state.quizRetryPass = false;
+      state.quizGate = false;
+      state.checkPhase = "quiz";
+      render();
+    });
+    state.enterAdvance = wrongN > 0 ? () => beginQuizRetry() : goType;
+    focusPrimary(wrongN > 0 ? "#q-retry" : "#q-next");
+  }
+
+  function renderQuiz() {
+    clearAdvance();
+    const items = state.quizItems;
+    if (state.quizGate || state.quizIndex >= items.length) {
+      if (!state.quizGate) state.quizGate = true;
+      renderQuizGate();
+      return;
+    }
+    const item = items[state.quizIndex];
+    setSmokeContext({
+      stage: "check",
+      checkPhase: "quiz",
+      itemIndex: state.quizIndex,
+      en: item.prompt || "",
+      pl: item.answer || "",
+      gap: "",
+      gap_answer: item.answer || "",
+      typed: "",
+    });
+    const choices = shuffle((item.choices || []).slice());
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Quiz</h2></div>
+      <p class="score-line">${state.quizIndex + 1} / ${items.length} · score ${state.quizScore}${
+        state.quizRetryPass ? " · retry" : ""
+      }</p>
+      <p class="practice-prompt">${esc(item.prompt)}</p>
+      <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · after answer Enter = next</p>
+      <div class="choices" id="choices"></div>
+      <div class="feedback" id="feedback"></div>
+    `;
+    const box = root.querySelector("#choices");
+    let locked = false;
+    let advanceTimer = null;
+
+    const goNextQ = () => {
+      if (advanceTimer) {
+        clearTimeout(advanceTimer);
+        advanceTimer = null;
+      }
+      state.quizIndex += 1;
+      if (state.quizIndex >= items.length) state.quizGate = true;
+      render();
+    };
+
+    const pick = (i) => {
+      if (locked || i < 0 || i >= choices.length) return;
+      locked = true;
+      const c = choices[i];
+      const buttons = [...box.querySelectorAll(".choice")];
+      const good = c === item.answer;
+      if (good) state.quizScore += 1;
+      else if (!state.quizWrong.includes(item)) state.quizWrong.push(item);
+      if (buttons[i]) buttons[i].classList.add(good ? "is-correct" : "is-wrong");
+      buttons.forEach((ch) => {
+        ch.disabled = true;
+        if (ch.dataset.answer === item.answer) ch.classList.add("is-correct");
+      });
+      const fb = root.querySelector("#feedback");
+      fb.className = "feedback " + (good ? "ok" : "bad");
+      fb.textContent = good ? "✓ Correct" : `→ ${item.answer}`;
+      attachExplain(fb, item, () => {
+        if (advanceTimer) {
+          clearTimeout(advanceTimer);
+          advanceTimer = null;
+        }
+      });
+      state.enterAdvance = goNextQ;
+      // Wrong answers wait for Enter so the correction can be read.
+      if (good) advanceTimer = setTimeout(goNextQ, 900);
+    };
+
+    function onDigit(e) {
+      if (e.target.closest("input, textarea, select")) return;
+      if (locked) return;
+      const n = quizKeyToIndex(e, choices.length);
+      if (n != null) {
+        e.preventDefault();
+        e.stopPropagation();
+        pick(n);
+      }
+    }
+    state.digitHandler = onDigit;
+    document.addEventListener("keydown", onDigit, true);
+
+    choices.forEach((c, i) => {
+      const b = el(
+        `<button type="button" class="choice" data-answer="${escAttr(c)}"><span class="knum">${i + 1}</span> ${esc(c)}</button>`,
+      );
+      b.addEventListener("click", () => pick(i));
+      box.appendChild(b);
+    });
+
+    if (document.activeElement && root.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+  }
+
+  function beginType(onlyWrong) {
+    state.stage = "type";
+    state.typeGate = false;
+    state.typeScoreCommitted = false;
+    if (onlyWrong && onlyWrong.length) {
+      state.typeItems = shuffle(onlyWrong.slice());
+      state.typeRetryPass = true;
+    } else {
+      state.typeItems = samplePass(pack.type_items || [], null, focusStructures);
+      state.typeRetryPass = false;
+    }
+    state.typeIndex = 0;
+    state.typeScore = 0;
+    state.typeWrong = [];
+    if (!state.typeItems.length) {
+      completeMode(pack.id, "type", { score: 1, total: 1 });
+      beginUse();
+      return;
+    }
+    render();
+  }
+
+  function beginUse(onlyWrong) {
+    state.stage = "use";
+    state.useGate = false;
+    state.useScoreCommitted = false;
+    if (onlyWrong && onlyWrong.length) {
+      state.useItems = shuffle(onlyWrong.slice());
+      state.useRetryPass = true;
+    } else {
+      state.useItems = samplePass(pack.use_items || [], null, focusStructures);
+      state.useRetryPass = false;
+    }
+    state.useIndex = 0;
+    state.useScore = 0;
+    state.useWrong = [];
+    if (!state.useItems.length) {
+      completeMode(pack.id, "use");
+      state.stage = "done";
+      render();
+      return;
+    }
+    render();
+  }
+
+  function renderTypedGate(kind) {
+    clearAdvance();
+    const items = kind === "type" ? state.typeItems : state.useItems;
+    const score = kind === "type" ? state.typeScore : state.useScore;
+    const wrong = kind === "type" ? state.typeWrong : state.useWrong;
+    const retryPass =
+      kind === "type" ? state.typeRetryPass : state.useRetryPass;
+    const total = items.length || 1;
+    const wrongN = wrong.length;
+    const title = kind === "type" ? "Type" : "Use";
+    const nextLabel =
+      kind === "type" && (pack.use_items || []).length
+        ? "Next to Use →"
+        : "Finish · summary →";
+
+    if (kind === "type" && !state.typeScoreCommitted && !retryPass) {
+      completeMode(pack.id, "type", { score, total });
+      state.typeScoreCommitted = true;
+    }
+    if (kind === "use" && !state.useScoreCommitted && !retryPass) {
+      completeMode(pack.id, "use", { score, total });
+      state.useScoreCommitted = true;
+    }
+    // Clearing every mistake in the retry rounds counts as a full pass —
+    // mastery through correction, not first-try perfection.
+    if (retryPass && wrongN === 0) {
+      completeMode(pack.id, kind, { score: 1, total: 1 });
+    }
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · ${title} · Done</h2></div>
+      <p class="practice-prompt">Score: <strong>${score} / ${total}</strong></p>
+      <p class="practice-hint">${
+        wrongN > 0
+          ? `${wrongN} wrong · retry or continue`
+          : kind === "type"
+            ? "All clear · next: Use"
+            : "All clear · summary"
+      }${retryPass ? " · retry pass" : ""}</p>
+      <div class="nav">
+        ${
+          wrongN > 0
+            ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
+               <button type="button" class="btn" id="t-next">${nextLabel}</button>`
+            : `<button type="button" class="btn" id="t-again">Try full set</button>
+               <button type="button" class="btn primary" id="t-next">${nextLabel}</button>`
+        }
+      </div>
+      ${
+        wrongN > 0
+          ? `<button type="button" class="link" id="t-again">Try full set</button>`
+          : ""
+      }
+    `;
+
+    const goNext = () => {
+      if (kind === "type") beginUse();
+      else {
+        state.stage = "done";
+        render();
+      }
+    };
+    const retry = () => {
+      if (kind === "type") beginType(wrong.slice());
+      else beginUse(wrong.slice());
+    };
+    const again = () => {
+      if (kind === "type") {
+        state.typeScoreCommitted = false;
+        beginType();
+      } else {
+        state.useScoreCommitted = false;
+        beginUse();
+      }
+    };
+
+    root.querySelector("#t-next")?.addEventListener("click", goNext);
+    root.querySelector("#t-retry")?.addEventListener("click", retry);
+    root.querySelector("#t-again")?.addEventListener("click", again);
+    state.enterAdvance = wrongN > 0 ? retry : goNext;
+    focusPrimary(wrongN > 0 ? "#t-retry" : "#t-next");
+  }
+
+  function renderTypedStage(kind) {
+    clearAdvance();
+    const items = kind === "type" ? state.typeItems : state.useItems;
+    const idx = kind === "type" ? state.typeIndex : state.useIndex;
+    const score = kind === "type" ? state.typeScore : state.useScore;
+    const gate = kind === "type" ? state.typeGate : state.useGate;
+    const retryPass =
+      kind === "type" ? state.typeRetryPass : state.useRetryPass;
+
+    if (gate || idx >= items.length) {
+      if (kind === "type") state.typeGate = true;
+      else state.useGate = true;
+      renderTypedGate(kind);
+      return;
+    }
+
+    const item = items[idx];
+    const mode = kind === "use" ? "full_word" : typeModeOf(pack, item);
+    const isGap = mode === "ending_gap" && item.stem != null;
+    const prompt =
+      item.prompt_en || item.prompt || item.en || "Write in English:";
+    setSmokeContext({
+      stage: kind === "type" ? "type" : "use",
+      checkPhase: "",
+      itemIndex: idx,
+      en: prompt,
+      pl: item.answer || fullFormOf(item) || "",
+      gap: isGap ? item.stem || "" : "",
+      gap_answer: isGap ? item.ending || "" : item.answer || "",
+      typed: "",
+    });
+    const hint = item.hint
+      ? `<p class="practice-hint">${esc(item.hint)}</p>`
+      : "";
+
+    const inputBlock = isGap
+      ? `<div class="gap-row" aria-label="Fill the ending">
+          <span class="gap-stem">${esc(item.stem)}</span>
+          <input type="text" id="ans" class="gap-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="__" lang="pl" />
+          <button type="button" class="btn primary" id="btn-submit">Check</button>
+        </div>`
+      : `<div class="input-row">
+          <input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type in English…" lang="en" />
+          <button type="button" class="btn primary" id="btn-submit">Check</button>
+        </div>`;
+
+    const stageLabel =
+      kind === "type" ? (isGap ? "Endings" : "Type") : "Use";
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · ${stageLabel}</h2></div>
+      <p class="score-line">${idx + 1} / ${items.length} · score ${score}${
+        retryPass ? " · retry" : ""
+      }</p>
+      <p class="practice-prompt">${esc(prompt)}</p>
+      ${hint}
+      ${
+        isGap
+          ? `<p class="practice-hint gap-hint">Only the <strong>ending</strong></p>`
+          : ""
+      }
+      ${inputBlock}
+      <div class="feedback" id="feedback"></div>
+    `;
+
+    const input = root.querySelector("#ans");
+    const btn = root.querySelector("#btn-submit");
+    const fb = root.querySelector("#feedback");
+    input.focus();
+
+    let answered = false;
+    let retype = false; // correction practice after a miss — never scored
+    let advanceTimer = null;
+
+    const goNext = () => {
+      if (advanceTimer) {
+        clearTimeout(advanceTimer);
+        advanceTimer = null;
+      }
+      if (kind === "type") {
+        state.typeIndex += 1;
+        if (state.typeIndex >= items.length) state.typeGate = true;
+      } else {
+        state.useIndex += 1;
+        if (state.useIndex >= items.length) state.useGate = true;
+      }
+      render();
+    };
+
+    const grade = () => {
+      if (answered) return;
+      answered = true;
+      const good = isCorrect(input.value, item, mode);
+      if (good) {
+        if (!retype) {
+          if (kind === "type") state.typeScore += 1;
+          else state.useScore += 1;
+        }
+        fb.className = "feedback ok";
+        fb.textContent =
+          (isGap
+            ? `✓ Correct · ${fullFormOf(item) || item.stem + item.ending}`
+            : "✓ Correct") + (retype ? " (retyped)" : "");
+      } else {
+        if (!retype) {
+          if (kind === "type") {
+            if (!state.typeWrong.includes(item)) state.typeWrong.push(item);
+          } else if (!state.useWrong.includes(item)) {
+            state.useWrong.push(item);
+          }
+        }
+        fb.className = "feedback bad";
+        fb.textContent = isGap
+          ? `→ ${item.ending}  ·  ${fullFormOf(item)}`
+          : `→ ${item.answer}`;
+        // Let the learner type the correction — motor memory, not score.
+        const fix = document.createElement("button");
+        fix.type = "button";
+        fix.className = "link";
+        fix.textContent = "Rewrite correctly →";
+        fix.onclick = () => {
+          retype = true;
+          answered = false;
+          input.disabled = false;
+          input.value = "";
+          btn.textContent = "Check";
+          state.enterAdvance = onEnter; // Enter grades again, not skip
+          input.focus();
+        };
+        fb.appendChild(document.createElement("br"));
+        fb.appendChild(fix);
+      }
+      attachExplain(fb, item, () => {
+        if (advanceTimer) {
+          clearTimeout(advanceTimer);
+          advanceTimer = null;
+        }
+      });
+      input.disabled = true;
+      btn.textContent = "Next →";
+      // No btn.onclick here — the persistent onEnter click listener already
+      // routes by `answered`; a second handler double-advanced (item skip).
+      focusPrimary("#btn-submit");
+      state.enterAdvance = goNext;
+      // Correct: gentle auto-advance. Wrong: wait for Enter — the learner
+      // must get time to study the correction (James, comparatives smoke).
+      if (good) {
+        advanceTimer = setTimeout(goNext, isGap ? 750 : 900);
+      }
+    };
+
+    const onEnter = () => {
+      if (answered) goNext();
+      else grade();
+    };
+
+    btn.addEventListener("click", onEnter);
+    state.enterAdvance = onEnter;
+  }
+
+  function renderDone() {
+    clearAdvance();
+    // Stored bests, not the last round's numbers — a retry round of 2
+    // items must never read as "50%" over the whole stage.
+    const best = grammarBest(pack.id);
+    const bCheck = best.check == null ? null : Math.round(best.check * 100);
+    const bType = best.type == null ? null : Math.round(best.type * 100);
+    const fruit = hasFruit(pack.id);
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Done</h2></div>
+      <p class="practice-prompt">${
+        fruit
+          ? "Fruit earned."
+          : "Ladder finished."
+      }</p>
+      <p class="score-line">
+        ${bCheck != null ? `Check: ${bCheck} % · ` : ""}
+        ${bType != null ? `Type: ${bType} % · ` : ""}
+        Use: ${
+          state.useItems.length
+            ? `${state.useScore}/${state.useItems.length}`
+            : "—"
+        }
+      </p>
+      <p class="practice-hint">Progress stays in this browser · write in English</p>
+      <div class="nav">
+        <button type="button" class="btn" id="btn-retry">Practice again</button>
+        <button type="button" class="btn primary" id="btn-map">← Back to map</button>
+      </div>
+    `;
+    root.querySelector("#btn-retry")?.addEventListener("click", () => {
+      state.introIndex = 0;
+      setStage("intro");
+    });
+    root.querySelector("#btn-map")?.addEventListener("click", exitToMap);
+    state.enterAdvance = exitToMap;
+    focusPrimary("#btn-map");
+  }
+
+  function render() {
+    if (state.stage === "intro") return renderIntro();
+    if (state.stage === "check") {
+      if (state.checkPhase === "match") return renderMatch();
+      return renderQuiz();
+    }
+    if (state.stage === "type") return renderTypedStage("type");
+    if (state.stage === "use") return renderTypedStage("use");
+    if (state.stage === "done") return renderDone();
+  }
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function escAttr(s) {
+    return esc(s).replace(/'/g, "&#39;");
+  }
+
+  if (state.reviewStart) {
+    // Review launch: straight to production (Type), skip intro/check
+    jumpToStage(state.reviewStart);
+  } else {
+    render();
+  }
+}
