@@ -5,116 +5,838 @@
   "tree_node": "b2_be_get_used_to",
   "codex_unit": "G_VP-B1B2-01",
   "practice": "frames",
-  "note": "Contrast with used to (past habit) · be used to + -ing/noun · get used to + -ing/noun · thin shell 2026-08-06",
+  "note": "used to (past habit) vs be used to vs get used to · 4 strands x 12 · 48 items · built to live 2026-08-06 (cloud run 4)",
   "default_direction": "cz_to_en",
   "check": {
-    "sequence": ["quiz"]
+    "sequence": [
+      "quiz"
+    ]
   },
-  "quality": "thin_shell",
+  "quality": "good_draft",
   "intro": {
     "cards": [
       {
         "title": "used to ≠ be used to ≠ get used to",
         "title_cz": "used to ≠ be used to ≠ get used to",
-        "body": "**used to + base** = past habit (no longer true). **be used to + noun/-ing** = be familiar with something. **get used to + noun/-ing** = become familiar. Same letters, different grammar.",
-        "body_cz": "**used to + základ** = dřívější zvyk. **be used to + podstatné/-ing** = být zvyklý. **get used to** = zvyknout si. Stejná písmena, jiná gramatika."
+        "body": "Three structures share the same three letters and mean completely different things. What follows **to** is the giveaway: a base verb, or a noun / -ing form.",
+        "body_cz": "Tři konstrukce sdílejí stejná písmena a znamenají úplně něco jiného. Prozradí to, co stojí po **to**: základní tvar, nebo podstatné jméno / -ing.",
+        "table": {
+          "caption": "What follows to",
+          "headers": [
+            "Structure",
+            "After to",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "used to",
+              "base verb",
+              "past habit, over now",
+              "I used to live in Prague."
+            ],
+            [
+              "be used to",
+              "noun / -ing",
+              "already familiar",
+              "I am used to getting up early."
+            ],
+            [
+              "get used to",
+              "noun / -ing",
+              "becoming familiar",
+              "You will get used to driving on the left."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "used to = past habit only",
+        "title_cz": "used to = jen dřívější zvyk",
+        "body": "**used to + base verb** describes something that was true repeatedly in the past and is not true now. It has no present form — for a present habit use the present simple.",
+        "body_cz": "**used to + základní tvar** popisuje něco, co bylo v minulosti opakovaně pravda a teď už není. Nemá přítomný tvar — pro současný zvyk použijte přítomný prostý.",
+        "points": [
+          "She used to work in a bank. (she does not now)",
+          "Question and negative drop the -d: Did you use to play football?",
+          "We did not use to have a car."
+        ]
+      },
+      {
+        "title": "be / get used to take -ing",
+        "title_cz": "Po be / get used to je -ing",
+        "body": "Here **to** is a preposition, not an infinitive marker, so a verb after it has to be an -ing form. This is the single most common mistake in the whole unit.",
+        "body_cz": "Tady je **to** předložka, ne značka infinitivu, takže sloveso po ní musí být v -ing. Tohle je nejčastější chyba v celé lekci.",
+        "points": [
+          "I am used to getting up early. (not: to get up)",
+          "He got used to walking to work. (not: to walk)",
+          "A noun works too: I am used to the traffic."
+        ]
+      },
+      {
+        "title": "be = state · get = change",
+        "title_cz": "be = stav · get = změna",
+        "body": "**be used to** is where you already are. **get used to** is the journey — it works in every tense, and it is the one you need for \"I am still adjusting\".",
+        "body_cz": "**be used to** je stav, ve kterém už jste. **get used to** je cesta k němu — funguje ve všech časech a hodí se na „pořád si zvykám\".",
+        "points": [
+          "She is not used to the cold, but she will get used to it.",
+          "They are still getting used to their new home.",
+          "After a month she was used to the new office."
+        ]
       }
     ]
   },
   "blocks": [
     {
       "id": "b2_be_get_used_to_main",
-      "title": "Be used to / get used to · B2",
+      "title": "used to · be used to · get used to · B2",
       "items": [
         {
-          "en": "I'm used to getting up early.",
+          "en": "I am used to getting up early.",
           "cz": "Jsem zvyklý vstávat brzy.",
-          "gap": "I'm used to ____ up early.",
+          "gap": "I am used to ____ up early.",
           "gap_answer": "getting",
-          "accepts": ["I'm used to getting up early.", "I am used to getting up early."],
-          "explanation": "be used to + -ing = familiar with a situation.",
-          "explanation_cz": "be used to + -ing = být zvyklý."
+          "gap_accepts": [
+            "getting"
+          ],
+          "accepts": [
+            "I am used to getting up early.",
+            "I'm used to getting up early."
+          ],
+          "form": "be_ing",
+          "explanation": "be used to + -ing = you are already familiar with doing it.",
+          "explanation_cz": "be used to + -ing = už jste na to zvyklí."
         },
         {
-          "en": "She isn't used to the noise yet.",
+          "en": "She is not used to the noise yet.",
           "cz": "Ještě není zvyklá na ten hluk.",
-          "gap": "She isn't used ____ the noise yet.",
+          "gap": "She is not used ____ the noise yet.",
           "gap_answer": "to",
-          "accepts": ["She isn't used to the noise yet.", "She is not used to the noise yet."],
-          "explanation": "be used to + noun.",
-          "explanation_cz": "be used to + podstatné jméno."
-        },
-        {
-          "en": "You'll get used to driving on the left.",
-          "cz": "Zvykneš si řídit vlevo.",
-          "gap": "You'll get used to ____ on the left.",
-          "gap_answer": "driving",
-          "accepts": ["You'll get used to driving on the left.", "You will get used to driving on the left."],
-          "explanation": "get used to + -ing = become familiar.",
-          "explanation_cz": "get used to + -ing = zvyknout si."
-        },
-        {
-          "en": "I used to live in Prague.",
-          "cz": "Bydlel jsem v Praze (dřív).",
-          "gap": "I ____ live in Prague.",
-          "gap_answer": "used to",
-          "accepts": ["I used to live in Prague."],
-          "explanation": "used to + base = past habit (contrast item).",
-          "explanation_cz": "used to + základ = dřívější zvyk (kontrast)."
-        },
-        {
-          "en": "He's getting used to his new job.",
-          "cz": "Zvyká si na novou práci.",
-          "gap": "He's getting used ____ his new job.",
-          "gap_answer": "to",
-          "accepts": ["He's getting used to his new job.", "He is getting used to his new job."],
-          "explanation": "get used to in progress.",
-          "explanation_cz": "get used to v průběhu."
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "She is not used to the noise yet.",
+            "She isn't used to the noise yet.",
+            "She's not used to the noise yet."
+          ],
+          "form": "be_noun",
+          "explanation": "be used to + noun = you are already familiar with it.",
+          "explanation_cz": "be used to + podstatné jméno = už jste na to zvyklí."
         },
         {
           "en": "We were used to working long hours.",
           "cz": "Byli jsme zvyklí pracovat dlouho.",
           "gap": "We were used to ____ long hours.",
           "gap_answer": "working",
-          "accepts": ["We were used to working long hours."],
-          "explanation": "be used to in the past.",
-          "explanation_cz": "be used to v minulosti."
+          "gap_accepts": [
+            "working"
+          ],
+          "accepts": [
+            "We were used to working long hours."
+          ],
+          "form": "be_ing",
+          "explanation": "be used to + -ing = you are already familiar with doing it.",
+          "explanation_cz": "be used to + -ing = už jste na to zvyklí."
         },
         {
-          "en": "Did you use to play football?",
-          "cz": "Hrál jsi dřív fotbal?",
-          "gap": "Did you ____ play football?",
-          "gap_answer": "use to",
-          "accepts": ["Did you use to play football?"],
-          "explanation": "Question form of past habit: did + use to.",
-          "explanation_cz": "Otázka na dřívější zvyk: did + use to."
+          "en": "I am not used to being alone.",
+          "cz": "Nejsem zvyklý být sám.",
+          "gap": "I am not used to ____ alone.",
+          "gap_answer": "being",
+          "gap_accepts": [
+            "being"
+          ],
+          "accepts": [
+            "I am not used to being alone.",
+            "I'm not used to being alone."
+          ],
+          "form": "be_ing",
+          "explanation": "be used to + -ing = you are already familiar with doing it.",
+          "explanation_cz": "be used to + -ing = už jste na to zvyklí."
+        },
+        {
+          "en": "Are you used to the cold winters here?",
+          "cz": "Jsi zvyklý na zdejší studené zimy?",
+          "gap": "Are you used ____ the cold winters here?",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "Are you used to the cold winters here?"
+          ],
+          "form": "be_noun",
+          "explanation": "be used to + noun = you are already familiar with it.",
+          "explanation_cz": "be used to + podstatné jméno = už jste na to zvyklí."
+        },
+        {
+          "en": "He is used to hard work.",
+          "cz": "Je zvyklý na těžkou práci.",
+          "gap": "He is used ____ hard work.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "He is used to hard work.",
+            "He's used to hard work."
+          ],
+          "form": "be_noun",
+          "explanation": "be used to + noun = you are already familiar with it.",
+          "explanation_cz": "be used to + podstatné jméno = už jste na to zvyklí."
+        },
+        {
+          "en": "They are used to living in a small flat.",
+          "cz": "Jsou zvyklí bydlet v malém bytě.",
+          "gap": "They are used to ____ in a small flat.",
+          "gap_answer": "living",
+          "gap_accepts": [
+            "living"
+          ],
+          "accepts": [
+            "They are used to living in a small flat.",
+            "They're used to living in a small flat."
+          ],
+          "form": "be_ing",
+          "explanation": "be used to + -ing = you are already familiar with doing it.",
+          "explanation_cz": "be used to + -ing = už jste na to zvyklí."
+        },
+        {
+          "en": "My parents are not used to modern technology.",
+          "cz": "Rodiče nejsou zvyklí na moderní technologie.",
+          "gap": "My parents are not used ____ modern technology.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "My parents are not used to modern technology.",
+            "My parents aren't used to modern technology."
+          ],
+          "form": "be_noun",
+          "explanation": "be used to + noun = you are already familiar with it.",
+          "explanation_cz": "be used to + podstatné jméno = už jste na to zvyklí."
+        },
+        {
+          "en": "She is used to speaking English every day.",
+          "cz": "Je zvyklá mluvit každý den anglicky.",
+          "gap": "She is used to ____ English every day.",
+          "gap_answer": "speaking",
+          "gap_accepts": [
+            "speaking"
+          ],
+          "accepts": [
+            "She is used to speaking English every day.",
+            "She's used to speaking English every day."
+          ],
+          "form": "be_ing",
+          "explanation": "be used to + -ing = you are already familiar with doing it.",
+          "explanation_cz": "be used to + -ing = už jste na to zvyklí."
+        },
+        {
+          "en": "We are not used to eating so late.",
+          "cz": "Nejsme zvyklí jíst tak pozdě.",
+          "gap": "We are not used to ____ so late.",
+          "gap_answer": "eating",
+          "gap_accepts": [
+            "eating"
+          ],
+          "accepts": [
+            "We are not used to eating so late.",
+            "We aren't used to eating so late.",
+            "We're not used to eating so late."
+          ],
+          "form": "be_ing",
+          "explanation": "be used to + -ing = you are already familiar with doing it.",
+          "explanation_cz": "be used to + -ing = už jste na to zvyklí."
+        },
+        {
+          "en": "Was he used to the long journey?",
+          "cz": "Byl na tu dlouhou cestu zvyklý?",
+          "gap": "Was he used ____ the long journey?",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "Was he used to the long journey?"
+          ],
+          "form": "be_noun",
+          "explanation": "be used to + noun = you are already familiar with it.",
+          "explanation_cz": "be used to + podstatné jméno = už jste na to zvyklí."
+        },
+        {
+          "en": "I am used to the traffic in Prague now.",
+          "cz": "Na pražský provoz už jsem zvyklý.",
+          "gap": "I am used ____ the traffic in Prague now.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "I am used to the traffic in Prague now.",
+            "I'm used to the traffic in Prague now."
+          ],
+          "form": "be_noun",
+          "explanation": "be used to + noun = you are already familiar with it.",
+          "explanation_cz": "be used to + podstatné jméno = už jste na to zvyklí."
+        },
+        {
+          "en": "You will get used to driving on the left.",
+          "cz": "Zvykneš si řídit vlevo.",
+          "gap": "You will get used to ____ on the left.",
+          "gap_answer": "driving",
+          "gap_accepts": [
+            "driving"
+          ],
+          "accepts": [
+            "You will get used to driving on the left.",
+            "You'll get used to driving on the left."
+          ],
+          "form": "get_ing",
+          "explanation": "get used to + -ing = you are becoming familiar with doing it.",
+          "explanation_cz": "get used to + -ing = zvykáte si na to."
+        },
+        {
+          "en": "He is getting used to his new job.",
+          "cz": "Zvyká si na novou práci.",
+          "gap": "He is getting used ____ his new job.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "He is getting used to his new job.",
+            "He's getting used to his new job."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
         },
         {
           "en": "It took months to get used to the climate.",
-          "cz": "Trvalo měsíce, než jsem si zvykl na klima.",
+          "cz": "Trvalo měsíce, než jsem si zvykl na to podnebí.",
           "gap": "It took months to get used ____ the climate.",
           "gap_answer": "to",
-          "accepts": ["It took months to get used to the climate."],
-          "explanation": "get used to + noun.",
-          "explanation_cz": "get used to + podstatné jméno."
-        },
-        {
-          "en": "I'm not used to being alone.",
-          "cz": "Nejsem zvyklý být sám.",
-          "gap": "I'm not used to ____ alone.",
-          "gap_answer": "being",
-          "accepts": ["I'm not used to being alone.", "I am not used to being alone."],
-          "explanation": "be used to + being.",
-          "explanation_cz": "be used to + being."
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "It took months to get used to the climate."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
         },
         {
           "en": "They never got used to living abroad.",
           "cz": "Nikdy si nezvykli žít v cizině.",
           "gap": "They never got used to ____ abroad.",
           "gap_answer": "living",
-          "accepts": ["They never got used to living abroad."],
-          "explanation": "get used to + -ing (never fully familiar).",
-          "explanation_cz": "get used to + -ing."
+          "gap_accepts": [
+            "living"
+          ],
+          "accepts": [
+            "They never got used to living abroad."
+          ],
+          "form": "get_ing",
+          "explanation": "get used to + -ing = you are becoming familiar with doing it.",
+          "explanation_cz": "get used to + -ing = zvykáte si na to."
+        },
+        {
+          "en": "I am slowly getting used to my new flat.",
+          "cz": "Pomalu si zvykám na nový byt.",
+          "gap": "I am slowly getting used ____ my new flat.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "I am slowly getting used to my new flat.",
+            "I'm slowly getting used to my new flat."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "She soon got used to the early starts.",
+          "cz": "Brzy si zvykla na brzké vstávání.",
+          "gap": "She soon got used ____ the early starts.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "She soon got used to the early starts."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "You will never get used to it.",
+          "cz": "Nikdy si na to nezvykneš.",
+          "gap": "You will never get used ____ it.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "You will never get used to it.",
+            "You'll never get used to it."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "Did you get used to the food?",
+          "cz": "Zvykl sis na to jídlo?",
+          "gap": "Did you get used ____ the food?",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "Did you get used to the food?"
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "We are getting used to the new system.",
+          "cz": "Zvykáme si na nový systém.",
+          "gap": "We are getting used ____ the new system.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "We are getting used to the new system.",
+            "We're getting used to the new system."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "It is hard to get used to a new city.",
+          "cz": "Je těžké zvyknout si na nové město.",
+          "gap": "It is hard to get used to ____ new city.",
+          "gap_answer": "a",
+          "gap_accepts": [
+            "a"
+          ],
+          "accepts": [
+            "It is hard to get used to a new city.",
+            "It's hard to get used to a new city."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "He got used to walking to work.",
+          "cz": "Zvykl si chodit do práce pěšky.",
+          "gap": "He got used to ____ to work.",
+          "gap_answer": "walking",
+          "gap_accepts": [
+            "walking"
+          ],
+          "accepts": [
+            "He got used to walking to work."
+          ],
+          "form": "get_ing",
+          "explanation": "get used to + -ing = you are becoming familiar with doing it.",
+          "explanation_cz": "get used to + -ing = zvykáte si na to."
+        },
+        {
+          "en": "Children get used to change quickly.",
+          "cz": "Děti si na změnu zvyknou rychle.",
+          "gap": "Children get used ____ change quickly.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "Children get used to change quickly."
+          ],
+          "form": "get_noun",
+          "explanation": "get used to + noun = you are becoming familiar with it.",
+          "explanation_cz": "get used to + podstatné jméno = zvykáte si na to."
+        },
+        {
+          "en": "I used to live in Prague.",
+          "cz": "Dřív jsem bydlel v Praze.",
+          "gap": "I ____ live in Prague.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "I used to live in Prague."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "Did you use to play football?",
+          "cz": "Hrál jsi dřív fotbal?",
+          "gap": "Did you ____ play football?",
+          "gap_answer": "use to",
+          "gap_accepts": [
+            "use to"
+          ],
+          "accepts": [
+            "Did you use to play football?"
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "She used to work in a bank.",
+          "cz": "Dřív pracovala v bance.",
+          "gap": "She ____ work in a bank.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "She used to work in a bank."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "We did not use to have a car.",
+          "cz": "Dřív jsme auto neměli.",
+          "gap": "We did not ____ have a car.",
+          "gap_answer": "use to",
+          "gap_accepts": [
+            "use to"
+          ],
+          "accepts": [
+            "We did not use to have a car.",
+            "We didn't use to have a car."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "There used to be a shop on this corner.",
+          "cz": "Na tomhle rohu býval obchod.",
+          "gap": "There ____ be a shop on this corner.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "There used to be a shop on this corner."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "He used to play tennis, but he stopped.",
+          "cz": "Dřív hrál tenis, ale přestal.",
+          "gap": "He ____ play tennis, but he stopped.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "He used to play tennis, but he stopped."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "They used to visit us every year.",
+          "cz": "Dřív nás navštěvovali každý rok.",
+          "gap": "They ____ visit us every year.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "They used to visit us every year."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "I did not use to like coffee.",
+          "cz": "Dřív jsem kávu neměl rád.",
+          "gap": "I did not ____ like coffee.",
+          "gap_answer": "use to",
+          "gap_accepts": [
+            "use to"
+          ],
+          "accepts": [
+            "I did not use to like coffee.",
+            "I didn't use to like coffee."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "Where did you use to go on holiday?",
+          "cz": "Kam jsi dřív jezdil na dovolenou?",
+          "gap": "Where did you ____ go on holiday?",
+          "gap_answer": "use to",
+          "gap_accepts": [
+            "use to"
+          ],
+          "accepts": [
+            "Where did you use to go on holiday?"
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "My grandmother used to make bread.",
+          "cz": "Babička dřív pekla chleba.",
+          "gap": "My grandmother ____ make bread.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "My grandmother used to make bread."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "This building used to be a school.",
+          "cz": "V téhle budově dřív bývala škola.",
+          "gap": "This building ____ be a school.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "This building used to be a school."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "We used to walk to school together.",
+          "cz": "Dřív jsme chodili do školy spolu.",
+          "gap": "We ____ walk to school together.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "We used to walk to school together."
+          ],
+          "form": "habit",
+          "explanation": "used to + base = a past habit that is over. No -ing here.",
+          "explanation_cz": "used to + základní tvar = dřívější zvyk, který skončil. Žádné -ing."
+        },
+        {
+          "en": "I used to work at night, but now I am used to normal hours.",
+          "cz": "Dřív jsem pracoval v noci, ale teď jsem zvyklý na normální pracovní dobu.",
+          "gap": "I ____ work at night, but now I am used to normal hours.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "I used to work at night, but now I am used to normal hours.",
+            "I used to work at night, but now I'm used to normal hours."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "She is not used to the cold, but she will get used to it.",
+          "cz": "Není zvyklá na zimu, ale zvykne si.",
+          "gap": "She is not used to the cold, but she will ____ it.",
+          "gap_answer": "get used to",
+          "gap_accepts": [
+            "get used to"
+          ],
+          "accepts": [
+            "She is not used to the cold, but she will get used to it.",
+            "She isn't used to the cold, but she will get used to it."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "He used to drive to work; now he is used to taking the bus.",
+          "cz": "Dřív jezdil do práce autem; teď je zvyklý jezdit autobusem.",
+          "gap": "He used to drive to work; now he ____ taking the bus.",
+          "gap_answer": "is used to",
+          "gap_accepts": [
+            "is used to"
+          ],
+          "accepts": [
+            "He used to drive to work; now he is used to taking the bus.",
+            "He used to drive to work; now he's used to taking the bus."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "It was strange at first, but we soon got used to it.",
+          "cz": "Zpočátku to bylo divné, ale brzy jsme si zvykli.",
+          "gap": "It was strange at first, but we soon ____ it.",
+          "gap_answer": "got used to",
+          "gap_accepts": [
+            "got used to"
+          ],
+          "accepts": [
+            "It was strange at first, but we soon got used to it."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "I did not use to drink tea, but now I drink it every day.",
+          "cz": "Dřív jsem čaj nepil, ale teď ho piju každý den.",
+          "gap": "I did not ____ drink tea, but now I drink it every day.",
+          "gap_answer": "use to",
+          "gap_accepts": [
+            "use to"
+          ],
+          "accepts": [
+            "I did not use to drink tea, but now I drink it every day.",
+            "I didn't use to drink tea, but now I drink it every day."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "After a month she was used to the new office.",
+          "cz": "Po měsíci už byla na novou kancelář zvyklá.",
+          "gap": "After a month she ____ the new office.",
+          "gap_answer": "was used to",
+          "gap_accepts": [
+            "was used to"
+          ],
+          "accepts": [
+            "After a month she was used to the new office."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "You will get used to the noise after a week.",
+          "cz": "Na ten hluk si za týden zvykneš.",
+          "gap": "You will ____ the noise after a week.",
+          "gap_answer": "get used to",
+          "gap_accepts": [
+            "get used to"
+          ],
+          "accepts": [
+            "You will get used to the noise after a week.",
+            "You'll get used to the noise after a week."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "They are still getting used to their new home.",
+          "cz": "Pořád si zvykají na nový domov.",
+          "gap": "They are still ____ their new home.",
+          "gap_answer": "getting used to",
+          "gap_accepts": [
+            "getting used to"
+          ],
+          "accepts": [
+            "They are still getting used to their new home.",
+            "They're still getting used to their new home."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "We used to eat late, and we are still used to it.",
+          "cz": "Dřív jsme jedli pozdě a pořád jsme na to zvyklí.",
+          "gap": "We ____ eat late, and we are still used to it.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "We used to eat late, and we are still used to it.",
+            "We used to eat late, and we're still used to it."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "I am not used to this phone yet.",
+          "cz": "Na tenhle telefon ještě nejsem zvyklý.",
+          "gap": "I ____ this phone yet.",
+          "gap_answer": "am not used to",
+          "gap_accepts": [
+            "am not used to",
+            "'m not used to"
+          ],
+          "accepts": [
+            "I am not used to this phone yet.",
+            "I'm not used to this phone yet."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "He never got used to the winter here.",
+          "cz": "Na zdejší zimu si nikdy nezvykl.",
+          "gap": "He never ____ the winter here.",
+          "gap_answer": "got used to",
+          "gap_accepts": [
+            "got used to"
+          ],
+          "accepts": [
+            "He never got used to the winter here."
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
+        },
+        {
+          "en": "Are you getting used to the food here?",
+          "cz": "Zvykáš si na zdejší jídlo?",
+          "gap": "Are you ____ the food here?",
+          "gap_answer": "getting used to",
+          "gap_accepts": [
+            "getting used to"
+          ],
+          "accepts": [
+            "Are you getting used to the food here?"
+          ],
+          "form": "choice",
+          "explanation": "Choose by meaning: past habit (used to) · already familiar (be used to) · becoming familiar (get used to).",
+          "explanation_cz": "Vyberte podle významu: dřívější zvyk (used to) · už zvyklý (be used to) · zvykám si (get used to)."
         }
       ]
     }
