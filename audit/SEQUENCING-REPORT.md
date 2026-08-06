@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**597 unknown word types** across 70 live units (of 117).
+**596 unknown word types** across 70 live units (of 118).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -70,7 +70,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b1_verb_patterns_advanced** (B1 grammar): remember×4, asked×2, forgot×2, email, hope, moment, enjoys, taught, advised, warned, noon, kept
 - **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, form×2, ran×2, turned×2, word×2, volume×2, fire×2, gave, nephew, tv, until, motorway, let's, package, brought, emails, fell, moment, firefighters, extinguished, homework, answer
 - **b1_dependent_prepositions** (B1 grammar): test, keen, villas, health, remembering, fond, aware, capable, rely, believes, consists, think, future, suffers, headaches, sun, rain, accused, lying, approve, plan, concentrate, congratulated, specialises
-- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, since×2, answer, dust, words, quiz, halfway, b, turn, episode, email, inbox, ticked, keep, waking, begin, exhausted, mess
+- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, since×2, answer, dust, words, quiz, halfway, b, turn, episode, email, inbox, ticked, keep, waking, begin, mess
 - **b2_past_perfect** (B2 grammar): couldn't, knew, recognise, thieves, showed, summer, lesson
 - **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, happen, place, everyone, know, truth, pizza, plan
 - **b2_third_conditional** (B2 grammar): weather×2, heard×2, practised, enjoyed, crashed, truth, woken, sunrise, realised, pizza, followed, wi, fi, invoice, remembered, prepared, email, understood, missed, worn, dawn, battery
