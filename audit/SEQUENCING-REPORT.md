@@ -1,12 +1,12 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**756 unknown word types** across 71 live units (of 113).
+**724 unknown word types** across 71 live units (of 113).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
 - **a1_be_have** (A1 grammar): tired, home, name, right, cold, today, dog, children, bike, old, ready, happy, school
 - **trunk_frames_a1** (A1 vocab): name, got, it's
-- **a1_word_order** (A1 grammar): home×4, day×3, coffee×2, eat×2, lunch×2, watch×2, films×2, drink×2, tea×2, dog×2, buys×2, live×2, works×2, new×2, like, likes, reads, morning, bread, play, football, drinks, speak, study, school, work, now, small, wants, book, park, milk, shop
+- **a1_word_order** (A1 grammar): new×3
 - **trunk_social_a1** (A1 vocab): help, nice
 - **a1_present_simple** (A1 grammar): coffee×4, day×3, school×2, football×2, everybody×2, office, shop, home, flat, near, tea, speak, drive, bus, tv, films, lunch, morning, everyone, somebody, hard, nobody
 - **trunk_verbs_daily_a1** (A1 vocab): office, ticket, breakfast, homework, school, home, bread, water, well, early
