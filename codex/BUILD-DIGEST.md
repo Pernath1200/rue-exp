@@ -6,7 +6,129 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
-## 2026-08-06 · cloud run 6 (RUE build, claude-opus-5)
+## 2026-08-06 · cloud run 7 (RUE build, claude-opus-5)
+
+### Headline: the worst unit in the course is now clean, and the reason it was dirty is a spine problem, not a content problem
+
+`a1_be_have` — the first grammar unit a student ever opens, and the worst
+entry on the sequencing report at **13 unknown types** — is at **zero**. So is
+its partner `trunk_frames_a1`. The audit total went **503 → 483** and two units
+dropped off the report. Two more B2 sketches were then built to live:
+**`b2_reported_speech_advanced`** and **`b2_relative_clauses_advanced`**, both
+authored 100 % pool-clean so the tightened baseline still holds.
+
+The interesting part is *why* unit 1 was dirty. Six of its thirteen violations
+were adjectives — *tired, cold, old, ready, happy, right*. **A1 teaches no
+adjective at all until path position 40** (`trunk_adjectives_a1`, which holds
+36 of them). Every be + adjective example anywhere in the first two-thirds of
+A1 is therefore premature by construction. That is a fork for you, below.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `1a55691` | `trunk_frames_a1` repaired — 3 types → 0 |
+| 2 | `4fe86c8` | `a1_be_have` re-lexified, 11/26 items — 13 types → 0 |
+| 3 | `8d99a73` | **`b2_reported_speech_advanced`** built + flipped live — 10 → **48** items |
+| 4 | `9463710` | **`b2_relative_clauses_advanced`** built + flipped live — 10 → **48** items |
+
+B2 is now **15/24 live**. B1 is **finished** — 22/23, and the 23rd (`craft`)
+is `parked`, a side door, not a sketch. Nothing in B1 is left to build.
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 503 unknown types · 66 units | **483** · 64 units · baseline tightened 503 → 483 |
+
+Net **−20** unknown types while adding **76 new items**. Both gates green
+before every commit; commits and pushes are per unit. The two repairs were
+committed separately, each with its own correctly-tightened baseline, so every
+commit on the branch is independently gate-green.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Unchanged from runs 1–6, and again nothing was manufactured to produce a tick.
+The P0 (grammar practice never reads `blocks[].items`) and the hardcoded `A1`
+vocab badge are engine code this lane must not ship; `zero_article` stays
+blocked on the P0 decision; `b2_clear_claims` is a style call that is yours.
+
+This run added **two more grammar units** to the population behind that dead
+stage. B2 grammar is now **fifteen** units deep behind a Check → Type → Use
+sequence that never runs. Seven runs old.
+
+### Judgment calls and forks for James
+
+**1. A1's adjectives sit at the end of A1, and that is the single biggest
+remaining source of violations — this is the fork worth your attention.**
+`trunk_adjectives_a1` (36 adjectives: big, small, old, new, tired, cold,
+hungry, ready, nice, kind…) is at **path position 40 of 41**. Everything before
+it can only say *be + noun*. Conservative path taken: I seeded exactly **one**
+adjective — `tired` — into the partner vocab unit at position 2, and
+re-lexified the rest of unit 1 onto nouns. That one word also cleared `tired`
+out of `a1_frequency`, `a1_and_but_because` and `trunk_glue_linkers_a1`
+downstream, which is a fair measure of the leverage here. **The real fix is to
+move a six-to-eight-word adjective seed early in A1** (or move
+`trunk_adjectives_a1` itself up the path). That is a spine reorder — a
+student-journey decision, so I did not take it. If you want it, one run can
+do it and a visible slice of the remaining 483 dissolves with it.
+
+**2. Unit 1 lost its be + adjective examples except one.** *I am not tired.*
+survives (that is what the seed bought). *You are right · It is cold today ·
+Are you ready? · I am happy · They are at school · She has an old car* are
+gone, replaced by noun frames on taught vocabulary. Every gap answer is
+unchanged, so no teaching point moved — but the unit is noun-heavy now, and if
+you would rather have the adjectives back than have the unit clean, say so and
+I will revert it and log the violations instead. Fork 1 is the way to have both.
+
+**3. `trunk_frames_a1` stayed at exactly 12 items — I traded, I did not add.**
+All twenty `a1_core_frames_*` packs are 12 items in one block (one is 10), so
+12 looks like a house invariant for the Match board and I did not break it. The
+item that went is *"I have a bag."*, which taught `bag` a second time —
+*"This is my bag."* already covers it. If you want twelve *have*-frames
+preserved, that is the line to revert.
+
+**4. `name` is now the gapped target in "My ____ is Anna."** It used to gap
+`Anna`. Proper names are in the audit's GLUE list, so the old item taught the
+student nothing — and `name` was itself flagged as untaught right below it.
+
+**5. Four core B2 reporting verbs were not pool-legal, so the unit teaches
+them itself.** `accuse`, `advise`, `blame`, `congratulate` appear nowhere
+earlier in the course. Rather than drop four verbs a B2 reporting unit cannot
+sensibly omit, they are introduced in the `choose_verb` strand, where the
+reporting verb **is** the gap answer — so the unit genuinely teaches them
+rather than assuming them. One drafted item did leak (`discussed`) and was
+rewritten onto `mention + -ing`.
+
+**6. A blind spot to be aware of before someone reports it as a leak.** The
+audit's stemmer is naive by design (its own docstring says so). It cannot link
+irregular pasts to their base (`sat`, `stood`, `stole`), contractions
+(`who's`), or British/US spelling pairs (`apologised`/`apologized`). Those
+five strings appear in the two new packs **only in `quiz_options` and
+`accepts`, never in `en`** — the gate scores `en` only, so nothing is affected.
+I kept them deliberately: for a *which form?* question the distractor set
+should be the verb's own other forms, and `who's` is the exact error the
+`whose` items exist to contrast. Removing them to satisfy the stemmer would
+make the exercises worse, not the course cleaner.
+
+**7. A content bug worth a queue item, if you agree it is one.**
+`a1_be_have` carried *"She has a dog."* with the Czech *"On má psa."* — wrong
+person, sitting in the first grammar unit in the course. I fixed it in passing.
+It suggests a mechanical sweep for `cz`/`en` person and gender mismatches
+across all 160 packs would be worth doing. I have not added it to
+`REPAIR-QUEUE.md` — that file is your channel, so this is a proposal, not a
+self-issued ticket.
+
+### Smoke-check
+
+- **`a1_be_have`** — 11 of 26 items changed in the first grammar unit students
+  meet. Worth a read-through for tone as much as correctness.
+- **`trunk_frames_a1`** — confirm the Match board still draws 12 pairs, and
+  that *"I am tired."* reads correctly in the deck.
+- **The two new B2 units** — intro cards only, realistically: the P0 means
+  Check/Type/Use still ask zero questions, so the 96 new items cannot be
+  exercised in the app until the adapter lands.
 
 ### Headline: B2 is over half live, and the ratchet now bites — every new unit had to be authored 100 % pool-clean
 
