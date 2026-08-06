@@ -6,6 +6,123 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-06 · cloud run 3 (RUE build, claude-opus-5)
+
+### Headline: B1 is finished, and the two worst-sequenced units are clean
+
+`leaf_home_b1` was the last unbuilt B1 sketch. **B1 is now 22 of 23 live**;
+the only node left is `craft`, which is *parked*, not planned. The course
+path is unbroken from A1 unit 1 to the end of B1.
+
+Alongside that, the two units at the top of the sequencing report were
+re-lexified. `a2_prepositions_movement` went to **zero** and dropped off the
+report entirely — the first grammar unit in the course to do so.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `bd36af1` | `a1_present_simple` re-lexified, 19/31 items (22 -> 6) |
+| 2 | `c34d496` | `a2_prepositions_movement` re-lexified, 20/48 items (21 -> 0) |
+| 3 | `079d448` | **`leaf_knowledge_b1`** built + flipped live — 3x12 = 36 items |
+| 4 | `510e063` | **`leaf_self_b1`** built + flipped live — 3x12 = 36 items |
+| 5 | `660929e` | **`leaf_home_b1`** built + flipped live — 3x12 = 36 items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 157 packs · 0 errors · 31 warnings | **160 packs · 0 errors · 31 warnings** |
+| `audit` | 637 unknown types · 71 units | **596** · 70 units · baseline tightened 637 -> 596 |
+
+Net **-41** unknown types. Both gates green before every commit; commits are
+per unit, not batched. `scripts/smoke.py` passes.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Same conclusion as run 2, and for the same reason: every unticked item is
+either engine code (which this lane may not ship) or a style decision that
+is James's. Nothing was manufactured to produce a tick.
+
+I did **independently re-verify the P0** rather than trust run 1's report:
+`grep -c blocks js/practice-grammar.js` returns **0**, while the file reads
+`pack.match`, `pack.quiz`, `pack.type_items` and `pack.use_items` at lines
+314, 482, 513, 786, 905, 927. The claim holds — no grammar pack in the repo
+has any of those four fields, so all 52 live grammar nodes still ask a
+student zero questions. **This is the single highest-value thing James can
+unblock**, and it is now three runs old.
+
+### Sequencing repair — 2 units
+
+**`a1_present_simple` (A1 grammar): 22 -> 6.** The worst unit on the report.
+19 of 31 items re-lexified. Every teaching point kept and still drilled:
+base verb vs `-s`, `don't` / `doesn't` + base verb, and indefinite pronouns
+taking `-s`. The pool at this position is only **42 targets from 4 units**,
+which is what makes this unit hard rather than careless.
+
+**`a2_prepositions_movement` (A2 grammar): 21 -> 0.** 20 of 48 items. Every
+preposition and every teaching point kept — only the props and the motion
+verbs moved. Also fixed a real defect while in there: item 42's Czech
+support carried a stray English gloss (`"... ze stolu. (on)"`), which is a
+language-contract violation, not a typo.
+
+### Forks and judgment calls for James
+
+**1. The A1 pool is too thin to describe daily life — the real finding.**
+Rewriting `a1_present_simple` honestly, I could not say *coffee*, *tea*,
+*day*, *morning*, *school*, *home*, *office*, *shop*, *bus*, *TV*, or
+*football* — none of them is taught anywhere in the first four units, and
+several are taught nowhere before A2. A present-simple unit is *about*
+habits, and the words for the things people habitually do are missing at
+exactly the position where they are needed.
+
+Conservative path taken: I re-lexified onto what exists (`work`, `live`,
+`like`, `study`, day names, cities, `dogs`, `books`, `car`, `house`,
+`brother`) and **deliberately kept `coffee` and `TV`** — there is nothing
+drinkable and nothing watchable in the pool at that position, and inventing
+a way around that would have produced worse English than admitting it.
+`everybody / everyone / somebody / nobody` were also kept: they are not
+decoration, they *are* the teaching point of items 26-30.
+
+**The fix is not in this pack.** It is a handful of concrete nouns in
+`trunk_verbs_daily_a1` or an earlier leaf: day, morning, evening, coffee,
+tea, home, school, shop. Adding them would clear residual violations across
+`a1_present_simple`, `a1_agreement`, `a1_frequency` and
+`a1_questions_negatives` at once. Flagging rather than doing it: adding
+teaching material to a *different* unit than the one being repaired is a
+curriculum decision, not a repair.
+
+**2. Irregular past forms are invisible to the pool.** `drove`, `ran`,
+`threw`, `swam`, `flew` all read as untaught even where the base verb is
+taught, because `audit.py`'s stemmer only strips regular suffixes. In
+`a2_prepositions_movement` I routed around it (`travelled`, `walked`,
+`went ... by car`, present-tense `throws`). Worth knowing before someone
+reads a future report and concludes an A2 pack is teaching wild vocabulary:
+it may just be an irregular past. Not proposing an `audit.py` change — the
+blind spot is documented in its own docstring, and widening the stemmer
+could hide real violations.
+
+**3. New leaves lower the audit total.** Building `leaf_knowledge_b1` moved
+the total 600 -> 597 on its own, because its targets enter the pool and
+resolve words that later units were already exposing untaught. Worth
+knowing: a falling total is not by itself evidence that repair work happened.
+
+### To smoke-check
+
+All three new units are **vocab**, so unlike the grammar repairs they are
+reachable today. Suggested: open `leaf_knowledge_b1`, `leaf_self_b1` and
+`leaf_home_b1` and confirm each drives a 12-pair Match board, CZ prompt ->
+EN answer, deck 12/36, four graded stages — the same behaviour as
+`leaf_work_b1`. Then eyeball the Czech glosses: the ones I would look at
+first are `temper` ("vznětlivost / povaha"), `content` (dropped for exactly
+this reason — the noun/adjective ambiguity made an honest single gloss
+impossible, `frustrated` took its place), `draught`, and `chore`.
+
+Also worth a look: `a1_present_simple` now reads noticeably plainer than it
+did. That is the honest consequence of fork 1, not a drafting choice.
+
+---
+
 ## 2026-08-06 · cloud run 2 (RUE build, claude-opus-5)
 
 ### Headline: B1 vocab is 6 → 3 sketches from done, and it actually works
