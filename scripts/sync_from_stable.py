@@ -238,8 +238,10 @@ def nodes_for_level(nodes: list[dict], level: str) -> list[dict]:
 
 
 def build_tree(spine: dict):
-    g_tree = load(GRAMMAR_SRC / "data" / "tree.json")
-    v_tree = load(VOCAB_SRC / "data" / "tree.json")
+    # Local registries (lab snapshots, 2026-08-06) — the labs are frozen and
+    # no longer read. New nodes are registered HERE, in these two files.
+    g_tree = load(ROOT / "data" / "nodes-grammar.json")
+    v_tree = load(ROOT / "data" / "nodes-vocab.json")
     g_by_id = {n["id"]: n for n in g_tree.get("nodes", [])}
     v_by_id = {n["id"]: n for n in v_tree.get("nodes", [])}
 
@@ -381,9 +383,9 @@ def build_tree(spine: dict):
         or {"id": "tap_root", "label": "Foundation"},
         "nodes": nodes,
         "synced_from": {
-            "grammar": str(GRAMMAR_SRC),
-            "vocab": str(VOCAB_SRC),
-            "spine": str(SPINE_PATH),
+            "grammar": "data/nodes-grammar.json (lab snapshot 2026-08-06)",
+            "vocab": "data/nodes-vocab.json (lab snapshot 2026-08-06)",
+            "spine": "data/spine.json",
         },
     }
     OUT_TREE.write_text(
@@ -412,8 +414,10 @@ def main():
 
 
 def rebuild_tree_only():
-    """Rebuild data/tree.json from spine + existing local blocks (no lab copy)."""
+    """Rebuild data/tree.json from spine + local node registries (no lab access)."""
     assert SPINE_PATH.is_file(), f"need {SPINE_PATH}"
+    assert (ROOT / "data" / "nodes-grammar.json").is_file(), "need data/nodes-grammar.json"
+    assert (ROOT / "data" / "nodes-vocab.json").is_file(), "need data/nodes-vocab.json"
     build_tree(load(SPINE_PATH))
     print("OK (tree only) ->", OUT_TREE)
 

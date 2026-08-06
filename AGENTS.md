@@ -43,31 +43,38 @@ not add new nodes until that lands.
 - Frame Type mode shows `cz` as support, never the full `en` sentence (it
   contains the gap answer)
 
-## Night shift (protocol, from RUPL — 2026-08-06)
+## Automation lanes (2026-08-06, mirrors RUPL)
 
-Mechanism: James leaves a Claude Code session open in the evening; the main
-session is the **orchestrator**, background agents do the work.
+Two lanes meet on branch **`build`**; `main` moves only when James promotes.
 
-- **Branch:** all night work lands on `night/*` — **never `main`**, even though
-  no Pages deploy exists yet. Orchestrator commits; agents never run git.
-- **One file per agent.** Every RUPL stall was a two-file task; zero failures
-  across ~50 single-file agents. Agents never touch `tree.json`, never run the
-  auditor — the orchestrator wires, audits and commits centrally.
-- **Digest:** orchestrator writes `NIGHT-DIGEST.md` (repo root) before dawn:
-  what was built, what passed which gates, open forks as dropdown-ready
-  questions. James reads it in the morning; nothing merges without him.
-- **Notify:** orchestrator sends a push notification (PushNotification tool)
-  when a batch of units lands and when the digest is ready — one line, counts
-  not adjectives (e.g. "night: 6 B1 vocab packs landed, 5 pass audit").
-  Batch-level only, never per-file noise.
-- **Design forks:** agent takes the conservative path, still builds the unit,
-  logs the fork in the digest.
-- **Verify regardless of self-report.** ~1/3 of fluent "all clean" RUPL agent
-  reports hid a real bug. The orchestrator re-checks every unit mechanically.
-- **Machine gates before content:** night zero builds the RUE auditor / pool /
-  lint (see `NIGHT-ZERO.md`). Content nights only run against real gates.
-- Night output = **drafts that pass the machine gate**. James still smokes —
-  overnight work never promotes itself to students.
+| Lane | What | Branch |
+|------|------|--------|
+| **Cloud routine "RUE build"** | hourly, claude-opus-5, self-contained prompt: repair → build 2-3 units | `build` |
+| **Local sessions** (James + Claude) | judgement work, smoke fixes, design | `build` (promote to `main` = James only) |
+
+Shared rules, from the RUPL build (they all earned their place):
+
+- **Gates before commit** — every commit must pass:
+  `py -X utf8 codex/verify_pack.py` (**0 errors**) and
+  `py -X utf8 codex/audit.py --check` (**ratchet: violations may never rise**).
+- **Pool before authoring** — `py -X utf8 codex/make_pool.py POOL.md --before
+  <node>`; only pool-legal + GLUE + same-step partner material in new units.
+- **Never invent node ids.** Author packs for registered sketch nodes
+  (`data/nodes-grammar.json` / `data/nodes-vocab.json`), flip status there,
+  rebuild via `py scripts/sync_from_stable.py --rebuild-tree`.
+- **Digest per run** — append to `codex/BUILD-DIGEST.md`: what/why/forks.
+  Design forks: conservative path + logged note, never a silent guess.
+- **Verify regardless of self-report** — ~1/3 of fluent "all clean" RUPL agent
+  reports hid a real bug. Re-check mechanically every time.
+- **Engine/shell code**: cloud lane touches `js/`/`css/`/`index.html` ONLY for
+  items listed in `codex/REPAIR-QUEUE.md` — content is its lane, the shell is
+  James's + local Claude's.
+- **Local multi-agent nights**: one file per agent; orchestrator wires, audits,
+  commits centrally (every RUPL stall was a two-file agent task).
+- **Notify (local sessions)**: PushNotification on batch land + digest ready —
+  one line, counts not adjectives. Cloud runs surface in the claude.ai app.
+- All output = **drafts that pass the machine gate**. James still smokes —
+  automation never promotes itself to students.
 
 ## Don't
 

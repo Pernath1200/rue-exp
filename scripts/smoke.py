@@ -80,6 +80,20 @@ def check_progress_key() -> bool:
     return True
 
 
+def check_pack_lint() -> bool:
+    import subprocess
+
+    r = subprocess.run(
+        [sys.executable, "-X", "utf8", str(ROOT / "codex" / "verify_pack.py")],
+        capture_output=True,
+        text=True,
+    )
+    tail = (r.stdout or "").strip().splitlines()
+    if tail:
+        print(tail[-1])
+    return r.returncode == 0
+
+
 def main() -> int:
     print("RUE smoke · v0.2")
     print(f"root={ROOT}")
@@ -87,6 +101,7 @@ def main() -> int:
     ok = step("shell files", check_shell) and ok
     ok = step("data/tree.json", lambda: check_json("data/tree.json")) and ok
     ok = step("data/spine.json", lambda: check_json("data/spine.json")) and ok
+    ok = step("pack lint (codex/verify_pack.py)", check_pack_lint) and ok
     ok = step("progress key (informational)", check_progress_key) and ok
     print("\n" + ("SMOKE PASSED" if ok else "SMOKE FAILED"))
     return 0 if ok else 1
