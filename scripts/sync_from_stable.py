@@ -411,5 +411,24 @@ def main():
     print("OK ->", ROOT)
 
 
+def rebuild_tree_only():
+    """Rebuild data/tree.json from spine + existing local blocks (no lab copy)."""
+    assert SPINE_PATH.is_file(), f"need {SPINE_PATH}"
+    build_tree(load(SPINE_PATH))
+    print("OK (tree only) ->", OUT_TREE)
+
+
 if __name__ == "__main__":
-    main()
+    import sys
+
+    if "--rebuild-tree" in sys.argv:
+        rebuild_tree_only()
+        raise SystemExit(0)
+    raise SystemExit(
+        "RETIRED 2026-08-06: rue-exp is the one canonical repo; labs "
+        "rue-auto/grammar and rue3-exp are FROZEN archives. Edit packs in "
+        "rue-exp/data/ directly. To rebuild data/tree.json after pack or "
+        "spine edits, run:  py scripts/sync_from_stable.py --rebuild-tree\n"
+        "Full lab copy is intentionally disabled (it would overwrite "
+        "canonical content). Only James may re-enable it."
+    )
