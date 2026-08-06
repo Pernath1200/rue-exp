@@ -6,6 +6,160 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-06 · cloud run 4 (RUE build, claude-opus-5)
+
+### Headline: three B2 grammar units live, and the two worst A2 units repaired
+
+B2 went from **4/24 to 7/24 live**. All three units were sketches that had
+never been sized or Czech-carded properly — two 10-item `thin_shell`s and one
+30-item `first_draft` — and each came out at **48 items** with a full Czech
+intro, matching the nearest live good_draft packs (`b2_present_perfect_continuous`,
+`b1_*`). No new node ids were invented; all three were already registered.
+
+On the repair side, `a2_quantifiers` — the worst unit on the whole sequencing
+report — went to **zero** and dropped off it entirely.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `516c613` | `a2_quantifiers` re-lexified, 18/54 items (20 -> 0, off the report) |
+| 2 | `ca98d3b` | `a2_verb_patterns` re-lexified, 13/48 items (19 -> 10) |
+| 3 | `7a7de37` | **`b2_narrative_tenses`** built + flipped live — 30 -> 48 items |
+| 4 | `9f69695` | **`b2_future_forms`** built + flipped live — 10 -> 48 items |
+| 5 | `39f5330` | **`b2_be_get_used_to`** built + flipped live — 10 -> 48 items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 31 warnings | **160 packs · 0 errors · 31 warnings** |
+| `audit` | 596 unknown types · 70 units | **567** · 69 units · baseline tightened 596 -> 567 |
+
+Net **-29** unknown types. Both gates green before every commit; commits and
+pushes are per unit, not batched. All three new units contribute **0** to the
+audit total — every one of their 144 `en` sentences is pool-legal.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Unchanged conclusion, fourth run running: every unticked item is either engine
+code this lane may not ship, or a style decision that is James's. Nothing was
+manufactured to produce a tick.
+
+**P0 re-verified independently again** (I did not trust runs 1-3):
+`grep -c blocks js/practice-grammar.js` -> **0**. The file's only `pack.*`
+reads are `pack.use_items` (x3), `pack.quiz` (x2), `pack.match` (x2),
+`pack.type_items` (x1) — none of which exists in any pack. Every live grammar
+node still asks a student **zero questions** before landing on Done. This run
+added three more grammar units to that population; B2 grammar content is now
+seven units deep behind a stage that never runs. **This is still the single
+highest-value thing James can unblock, and it is now four runs old.**
+
+### Sequencing repair — 2 units
+
+**`a2_quantifiers` (A2 grammar): 20 -> 0.** The worst unit on the report.
+18 of 54 items re-lexified; **no `gap_answer` changed**, so every quantifier
+contrast the unit drills is untouched — only the nouns around them moved
+(questions -> minutes, TV -> football, snow -> juice, seats -> buses, effort ->
+time, patience -> bread, noise -> salt, and so on). Each new `cz` is a fresh
+natural translation, not a patch of the old one. First A2 grammar unit to
+reach zero.
+
+**`a2_verb_patterns` (A2 grammar): 19 -> 10.** 13 of 48 items re-lexified,
+incidental lexis only: medicine, rest, stay, win, podcasts, practise, move,
+join, learn. The `stop + to` / `stop + -ing` minimal pair (items 43/44) was
+moved from *rest* to *eat* **as a pair**, so the contrast that is the whole
+point of those two items survives intact.
+
+### Forks and judgment calls
+
+**1. `a2_verb_patterns`: the 10 residual violations are the teaching point.**
+They are the matrix verbs themselves — enjoy(s) x5, plan x3, hope(s) x4,
+hate x2, love(s) x2, decide(d) x3, agreed. A verb-patterns unit cannot teach
+"which verbs take `to` and which take `-ing`" without naming those verbs, and
+they are never the `gap_answer`, so `audit.py`'s `targets_of()` cannot see the
+unit as teaching them. **Conservative path taken: left in place, nothing
+swapped, nothing deleted.**
+
+I considered registering them via the `lemma` field (which `targets_of` does
+read) and rejected it: in all three packs that use `lemma` today
+(`b1_present_perfect_vs_past`, `b1_reported_speech`,
+`b2_present_perfect_continuous`) it means "base form of the *gapped* verb",
+i.e. the cue shown to the student. Repurposing it as a general "this unit
+teaches this word" register would be gaming the gate with off-label data.
+**For James:** the clean structural fix is a first-class `teaches` list on a
+pack (or on the node), read by `targets_of` alongside `gap_answer`/`lemma`.
+That is a gate change, not a content change, so this lane did not ship it.
+Until then this unit's floor is 10, and the same will be true of any future
+"which verb takes what" unit.
+
+**2. `b2_future_forms` absorbs future-in-the-past.** The sketch's own note
+said it should, and `b2_future_in_the_past` is registered but **not on
+`path_order_b2`** — a student never reaches it. I built the full 8-meaning
+unit including `would` / `was going to` / `was about to` (6 items). **For
+James:** either retire `b2_future_in_the_past`, or put it on the path and I
+will thin `b2_future_forms` back to 7 meanings on a later run. Conservative
+default = the on-path unit is complete on its own.
+
+**3. Contractions stay out of `en`.** Every new item's `en` is uncontracted so
+the gap frame reconstructs exactly; contractions live in `accepts` and
+`gap_accepts`. This follows the precedent set by the ticked queue item
+`c6d7d80` and by `b2_present_perfect_continuous`. Side benefit: `audit.py`
+tokenises `I'll` / `we're` as single unknown tokens, so this also keeps the
+new units off the report.
+
+**4. `b2_narrative_tenses` quiz distractors — checked, no leak.** 15 distractor
+tokens fail a naive pool check: *discussed, sat, slept, talked, ran, escaping,
+turning*. Every one is a different inflection of a lexeme already present in
+that same item's own `en` (discussing, sitting, sleeping, talking, running,
+escaped, turned off). No distractor introduces a word the student has not just
+read. Left as-is; noted so nobody re-derives it.
+
+**5. `b2_be_get_used_to` strand tagging is uneven, coverage is not.** The
+`form` tags came out be_ing 6 / be_noun 6 / get_ing 3 / get_noun 9 / habit 12 /
+choice 12 rather than a clean split, because `get used to` attaches to a noun
+more often than to `-ing` in natural sentences. The **pedagogical** split is
+the intended 12 be / 12 get / 12 used-to / 12 forced-choice. Flagging it in
+case the tag counts get read as coverage counts later.
+
+### Found, not fixed — queue candidate for James
+
+**`b1_relative_clauses` (live, B1): 14 items have `gap_answer` that is not the
+word in `en`.** Items 1, 4, 7, 11, 17, 20, 26, 28, 31, 33, 36, 39, 43, 44 all
+read `en: "The book that I bought…"` while `gap_answer` is `"which"` (or
+`"who"` at 28/33). `gap_accepts` allows both, so the item is answerable, but
+the canonical frame does not rebuild its own `en` — these are 14 of the 31
+`verify_pack` warnings. Two of them (39 `"the only ticket that…"`, and 33
+`"Anyone that…"`) are cases where `which` would actually be the *worse*
+answer, so the fix is almost certainly "set `gap_answer` to `that`, keep
+`gap_accepts`".
+
+Separately, four of those items have a `cz` that drops the relative clause
+altogether — item 7 `"Klíče na stole jsou moje."`, item 11 `"Autobus do Brna
+odjíždí v devět."`, item 17 `"Obchod s nářadím je zavřený."`, item 44 `"Cesta
+k řece je blátivá."`. Since `cz` is the prompt and `en` is the graded target,
+a student reading those cannot know a relative clause is wanted. Item 43's
+`cz` (`"…, ze kterého jsme se smáli"`) is also not natural Czech for "a story
+that made us laugh".
+
+I did **not** touch it: this run's sequencing quota (2 units) and build quota
+(3 units) were both full, and the queue's rules say James adds items. It is a
+content-lane fix, roughly one commit. Put it on the queue and I will take it.
+
+### Smoke-check list for James
+
+- Nothing student-visible changed for A1/A2 beyond example sentences — but
+  `a2_quantifiers` and `a2_verb_patterns` had 31 sentences rewritten between
+  them, so those two are worth a read for Czech feel.
+- The three new B2 units are **grammar** units, so under P0 they will render
+  their intro cards and then skip straight to Done. The intros are the only
+  part a student can actually see today; all three were rewritten and are
+  worth a look on their own terms (`b2_future_forms` has a 7-row meaning->form
+  table, `b2_be_get_used_to` a 3-row what-follows-`to` table).
+- B2 path is now unbroken for the first 7 nodes.
+
+---
+
 ## 2026-08-06 · cloud run 3 (RUE build, claude-opus-5)
 
 ### Headline: B1 is finished, and the two worst-sequenced units are clean
