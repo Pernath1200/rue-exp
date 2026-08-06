@@ -1,20 +1,19 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**503 unknown word types** across 66 live units (of 128).
+**494 unknown word types** across 65 live units (of 128).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
-- **a1_be_have** (A1 grammar): tired, home, name, right, cold, today, dog, children, bike, old, ready, happy, school
-- **trunk_frames_a1** (A1 vocab): name, got, it's
+- **a1_be_have** (A1 grammar): home, right, cold, today, dog, children, bike, old, ready, happy, school
 - **a1_word_order** (A1 grammar): new×3
 - **trunk_social_a1** (A1 vocab): help, nice
 - **a1_present_simple** (A1 grammar): coffee×4, tv×2, everybody×2, everyone, somebody, nobody
 - **trunk_verbs_daily_a1** (A1 vocab): office, ticket, breakfast, homework, school, home, bread, water, well, early
-- **a1_frequency** (A1 grammar): coffee×2, meat×2, hard, lunch, tea, tv, tired, late, school
+- **a1_frequency** (A1 grammar): coffee×2, meat×2, hard, lunch, tea, tv, late, school
 - **leaf_freetime_a1** (A1 vocab): time
 - **a1_questions_negatives** (A1 grammar): rain, lot, ready, tea, coffee, hungry, want, james
 - **trunk_glue_questions_a1** (A1 vocab): late, want, station
-- **a1_question_words** (A1 grammar): want, start, tired
+- **a1_question_words** (A1 grammar): want, start
 - **a1_articles** (A1 grammar): hour
 - **a1_possessives** (A1 grammar): dog×2, job, love, tickets, blue, new
 - **leaf_clothes_a1** (A1 vocab): wrist
@@ -33,8 +32,8 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a1_prepositions_time** (A1 grammar): born×2, summer, tv, closed, midday, call, see, cold
 - **leaf_time_a1** (A1 vocab): ordinal
 - **a1_to_for_with** (A1 grammar): talk×2, wait×2, give, gift, test, roman, pen, send, email
-- **a1_and_but_because** (A1 grammar): tired×4, cold×2, stay×2, homare, small, strong, sunny, cats, sits
-- **trunk_glue_linkers_a1** (A1 vocab): tired×2, stay, sit, put, rest
+- **a1_and_but_because** (A1 grammar): cold×2, stay×2, homare, small, strong, sunny, cats, sits
+- **trunk_glue_linkers_a1** (A1 vocab): stay, sit, put, rest
 - **a1_imperatives** (A1 grammar): board, careful, worry, touch, seat
 - **a2_agreement** (A2 grammar): problem, nobody, answer, abroad
 - **a2_past_simple** (A2 grammar): last×2, see, pasta, course, email, truth, anything, say

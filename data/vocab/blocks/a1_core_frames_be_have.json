@@ -4,11 +4,12 @@
   "level": "A1",
   "tree_node": "trunk_frames_a1",
   "practice": "frames",
-  "note": "Seed kit + Be/Have. Preferred model in en/gap; accepts[] = natural variants. Match/Quiz use preferred form only.",
+  "note": "Seed kit + Be/Have. Preferred model in en/gap; accepts[] = natural variants. Match/Quiz use preferred form only. · sequencing repair 2026-08-06 (cloud run 7): `name` now the gapped target, `got`/`it's` uncontracted out of en, duplicate bag frame traded for the be+adjective seed `tired`.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
     "I", "you", "he", "she", "my", "a", "student", "friend", "brother", "bag",
-    "doctor", "teacher", "name", "Anna", "car", "house", "phone", "table", "chairs", "mine"
+    "doctor", "teacher", "name", "Anna", "car", "house", "phone", "table", "chairs",
+    "tired", "mine"
   ],
   "blocks": [
     {
@@ -60,9 +61,9 @@
         {
           "en": "My name is Anna.",
           "cz": "Jmenuji se Anna. / Mé jméno je Anna.",
-          "gap": "My name is ____.",
-          "gap_answer": "Anna",
-          "accepts": ["I'm Anna.", "I am Anna."]
+          "gap": "My ____ is Anna.",
+          "gap_answer": "name",
+          "accepts": ["My name is Anna.", "I'm Anna.", "I am Anna."]
         },
         {
           "en": "I have a car.",
@@ -79,12 +80,12 @@
           "accepts": ["I've got a house.", "I have got a house."]
         },
         {
-          "en": "Have you got a phone?",
+          "en": "Do you have a phone?",
           "cz": "Máš telefon?",
-          "gap": "Have you got a ____?",
+          "gap": "Do you have a ____?",
           "gap_answer": "phone",
           "accepts": [
-            "Do you have a phone?",
+            "Have you got a phone?",
             "Have you got a mobile?",
             "Do you have a mobile?",
             "Have you got a telephone?",
@@ -92,18 +93,18 @@
           ]
         },
         {
-          "en": "I have a bag.",
-          "cz": "Mám tašku.",
-          "gap": "I have a ____.",
-          "gap_answer": "bag",
-          "accepts": ["I've got a bag.", "I have got a bag."]
+          "en": "I am tired.",
+          "cz": "Jsem unavený. / Jsem unavená.",
+          "gap": "I am ____.",
+          "gap_answer": "tired",
+          "accepts": ["I'm tired.", "I am tired."]
         },
         {
-          "en": "It's mine.",
+          "en": "It is mine.",
           "cz": "Je to moje.",
-          "gap": "It's ____.",
+          "gap": "It is ____.",
           "gap_answer": "mine",
-          "accepts": ["It is mine."]
+          "accepts": ["It's mine.", "It is mine."]
         }
       ]
     }
