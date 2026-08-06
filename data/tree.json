@@ -1,7 +1,7 @@
 {
-  "version": 1,
+  "version": 2,
   "app": "rue-exp",
-  "title": "English · RUE-exp",
+  "title": "English · RUE",
   "levels": [
     "A1",
     "A2",
@@ -9,13 +9,8 @@
     "B2",
     "C1"
   ],
-  "levels_locked": [
-    "A2",
-    "B1",
-    "B2",
-    "C1"
-  ],
-  "levels_locked_note": "Weekend draft: A1 path live. Higher levels visible as coming on map.",
+  "levels_locked": [],
+  "levels_locked_note": "All CEFR levels open for browse. Practice when status is live + pack exists.",
   "default_direction": "cz_to_en",
   "path_order": [
     "a1_word_classes",
@@ -60,8 +55,156 @@
     "leaf_colours_a1",
     "trunk_adjectives_a1"
   ],
-  "path_order_note": "A1 zigzag from data/spine.json (grammar then vocab per step).",
+  "path_order_a2": [
+    "a2_present_continuous",
+    "leaf_routine_a2",
+    "a2_agreement",
+    "leaf_family_a2",
+    "a2_past_simple",
+    "leaf_travel_a2",
+    "a2_past_continuous",
+    "leaf_freetime_a2",
+    "a2_present_perfect",
+    "leaf_feelings_a2",
+    "a2_will_going_to",
+    "leaf_work_a2",
+    "a2_modals_must_should",
+    "leaf_society_a2",
+    "a2_comparatives",
+    "leaf_describing_a2",
+    "a2_ed_ing_adjectives",
+    "leaf_home_a2",
+    "a2_countable",
+    "leaf_food_a2",
+    "a2_quantifiers",
+    "leaf_shopping_a2",
+    "a2_adverbs_order",
+    "leaf_adverbs_a2",
+    "a2_first_conditional",
+    "leaf_ideas_a2",
+    "a2_verb_patterns",
+    "leaf_verbs_a2",
+    "a2_prepositions_movement",
+    "leaf_sports_a2",
+    "leaf_health_a2",
+    "leaf_nature_a2",
+    "leaf_tech_a2",
+    "leaf_school_a2",
+    "leaf_clothes_a2",
+    "leaf_media_a2",
+    "leaf_misc_a2",
+    "trunk_recycle_a2",
+    "trunk_lexis_a2",
+    "trunk_chunks_a2"
+  ],
+  "path_order_b1": [
+    "b1_present_perfect_vs_past",
+    "b1_used_to",
+    "trunk_core_b1",
+    "b1_passives",
+    "b1_modals_speculation",
+    "trunk_chunks_b1",
+    "b1_articles_advanced",
+    "b1_it_subject",
+    "trunk_abstract_b1",
+    "b1_relative_clauses",
+    "b1_reported_speech",
+    "leaf_work_b1",
+    "b1_indirect_questions",
+    "b1_linkers",
+    "leaf_money_b1",
+    "b1_verb_patterns_advanced",
+    "b1_phrasal_verbs",
+    "leaf_communication_b1",
+    "b1_dependent_prepositions",
+    "leaf_knowledge_b1",
+    "leaf_self_b1",
+    "leaf_home_b1",
+    "craft"
+  ],
+  "path_order_b2": [
+    "b2_present_perfect_continuous",
+    "b2_past_perfect",
+    "b2_narrative_tenses",
+    "b2_future_forms",
+    "b2_be_get_used_to",
+    "b2_second_conditional",
+    "b2_third_conditional",
+    "b2_mixed_conditionals",
+    "b2_wish_if_only",
+    "b2_hypothetical_past",
+    "b2_modal_perfect",
+    "b2_passives_advanced",
+    "b2_causative",
+    "b2_reported_speech_advanced",
+    "b2_relative_clauses_advanced",
+    "b2_participle_clauses",
+    "b2_gerunds_infinitives_advanced",
+    "b2_preposition_ing",
+    "b2_articles_genericity",
+    "b2_quantifiers_advanced",
+    "b2_discourse_markers",
+    "craft"
+  ],
+  "path_order_c1": [
+    "c1_narrative_mastery",
+    "c1_time_aspect_edge",
+    "c1_inversion_emphasis",
+    "c1_clefts_fronting",
+    "c1_participle_absolute",
+    "c1_advanced_passive",
+    "c1_nominalisation",
+    "c1_complex_noun_phrases",
+    "c1_ellipsis_substitution",
+    "c1_discourse_grammar",
+    "c1_register",
+    "c1_advanced_modality",
+    "c1_subjunctive",
+    "c1_reporting_complementation",
+    "c1_comparative_advanced",
+    "c1_article_nuance",
+    "c1_spoken_vs_written",
+    "c1_error_patterns"
+  ],
+  "path_order_note": "A1/A2 zigzag spines · B1 G path + all B1 vocab · B2/C1 grammar spines (+ higher vocab). Topics list uses per-level path.",
   "spine": "data/spine.json",
+  "level_stats": {
+    "A1": {
+      "total": 53,
+      "grammar": 20,
+      "vocab": 33,
+      "live": 53,
+      "coming": 0
+    },
+    "A2": {
+      "total": 40,
+      "grammar": 15,
+      "vocab": 25,
+      "live": 40,
+      "coming": 0
+    },
+    "B1": {
+      "total": 23,
+      "grammar": 13,
+      "vocab": 10,
+      "live": 16,
+      "coming": 7
+    },
+    "B2": {
+      "total": 24,
+      "grammar": 23,
+      "vocab": 1,
+      "live": 4,
+      "coming": 20
+    },
+    "C1": {
+      "total": 22,
+      "grammar": 22,
+      "vocab": 0,
+      "live": 0,
+      "coming": 22
+    }
+  },
   "show_full_canopy_ids": {
     "grammar": [
       "a1_word_classes",
@@ -87,76 +230,76 @@
       "a2_present_continuous",
       "a2_agreement",
       "a2_past_simple",
-      "a2_will_going_to",
       "a2_past_continuous",
       "a2_present_perfect",
+      "a2_will_going_to",
       "a2_modals_must_should",
       "a2_comparatives",
-      "a2_quantifiers",
-      "a2_countable",
-      "a2_adverbs_order",
       "a2_ed_ing_adjectives",
+      "a2_countable",
+      "a2_quantifiers",
+      "a2_adverbs_order",
       "a2_first_conditional",
       "a2_verb_patterns",
       "a2_prepositions_movement",
       "b1_present_perfect_vs_past",
-      "b2_present_perfect_continuous",
-      "b2_past_perfect",
       "b1_used_to",
       "b1_passives",
       "b1_modals_speculation",
       "b1_articles_advanced",
       "b1_it_subject",
-      "b2_second_conditional",
       "b1_relative_clauses",
       "b1_reported_speech",
       "b1_indirect_questions",
       "b1_linkers",
       "b1_verb_patterns_advanced",
-      "b1_dependent_prepositions",
-      "b2_third_conditional",
       "b1_phrasal_verbs",
+      "b1_dependent_prepositions",
+      "b2_present_perfect_continuous",
+      "b2_past_perfect",
       "b2_narrative_tenses",
-      "b2_future_in_the_past",
+      "b2_future_forms",
+      "b2_be_get_used_to",
+      "b2_second_conditional",
+      "b2_third_conditional",
       "b2_mixed_conditionals",
       "b2_wish_if_only",
+      "b2_hypothetical_past",
+      "b2_modal_perfect",
       "b2_passives_advanced",
       "b2_causative",
       "b2_reported_speech_advanced",
       "b2_relative_clauses_advanced",
       "b2_participle_clauses",
-      "b2_inversion",
-      "b2_cleft_sentences",
-      "b2_modal_perfect",
+      "b2_gerunds_infinitives_advanced",
+      "b2_preposition_ing",
       "b2_articles_genericity",
       "b2_quantifiers_advanced",
       "b2_discourse_markers",
-      "b2_clear_claims",
-      "b2_emphasis_fronting",
-      "b2_gerunds_infinitives_advanced",
-      "b2_preposition_ing",
-      "b2_hypothetical_past",
-      "c1_nominalisation",
-      "c1_advanced_passive",
-      "c1_subjunctive",
-      "c1_complex_noun_phrases",
-      "c1_hedging_stance",
+      "c1_narrative_mastery",
+      "c1_time_aspect_edge",
       "c1_inversion_emphasis",
+      "c1_clefts_fronting",
+      "c1_participle_absolute",
+      "c1_advanced_passive",
+      "c1_nominalisation",
+      "c1_complex_noun_phrases",
+      "c1_ellipsis_substitution",
       "c1_discourse_grammar",
       "c1_register",
-      "c1_ellipsis_substitution",
       "c1_advanced_modality",
-      "c1_participle_absolute",
+      "c1_subjunctive",
+      "c1_reporting_complementation",
       "c1_comparative_advanced",
       "c1_article_nuance",
-      "c1_time_aspect_edge",
       "c1_spoken_vs_written",
       "c1_error_patterns",
-      "b2_future_forms",
-      "b2_be_get_used_to",
-      "c1_narrative_mastery",
-      "c1_clefts_fronting",
-      "c1_reporting_complementation"
+      "b2_future_in_the_past",
+      "b2_inversion",
+      "b2_cleft_sentences",
+      "b2_clear_claims",
+      "b2_emphasis_fronting",
+      "c1_hedging_stance"
     ],
     "vocab": [
       "trunk_frames_a1",
@@ -180,6 +323,41 @@
       "trunk_verbs_action_a1",
       "leaf_colours_a1",
       "trunk_adjectives_a1",
+      "leaf_routine_a2",
+      "leaf_family_a2",
+      "leaf_travel_a2",
+      "leaf_freetime_a2",
+      "leaf_feelings_a2",
+      "leaf_work_a2",
+      "leaf_society_a2",
+      "leaf_describing_a2",
+      "leaf_home_a2",
+      "leaf_food_a2",
+      "leaf_shopping_a2",
+      "leaf_adverbs_a2",
+      "leaf_ideas_a2",
+      "leaf_verbs_a2",
+      "leaf_sports_a2",
+      "leaf_health_a2",
+      "leaf_nature_a2",
+      "leaf_tech_a2",
+      "leaf_school_a2",
+      "leaf_clothes_a2",
+      "leaf_media_a2",
+      "leaf_misc_a2",
+      "trunk_recycle_a2",
+      "trunk_lexis_a2",
+      "trunk_chunks_a2",
+      "trunk_core_b1",
+      "trunk_chunks_b1",
+      "trunk_abstract_b1",
+      "leaf_work_b1",
+      "leaf_money_b1",
+      "leaf_communication_b1",
+      "leaf_knowledge_b1",
+      "leaf_self_b1",
+      "leaf_home_b1",
+      "craft",
       "trunk_verbs_say_a1",
       "trunk_glue_modals_a1",
       "trunk_verbs_more_a1",
@@ -191,42 +369,7 @@
       "leaf_school_a1",
       "leaf_tech_a1",
       "leaf_nature_a1",
-      "leaf_ideas_a1",
-      "trunk_recycle_a2",
-      "trunk_lexis_a2",
-      "trunk_chunks_a2",
-      "leaf_travel_a2",
-      "leaf_health_a2",
-      "leaf_home_a2",
-      "leaf_work_a2",
-      "leaf_family_a2",
-      "leaf_food_a2",
-      "leaf_shopping_a2",
-      "leaf_routine_a2",
-      "leaf_freetime_a2",
-      "leaf_sports_a2",
-      "leaf_nature_a2",
-      "leaf_tech_a2",
-      "leaf_school_a2",
-      "leaf_clothes_a2",
-      "leaf_feelings_a2",
-      "leaf_ideas_a2",
-      "leaf_society_a2",
-      "leaf_media_a2",
-      "leaf_describing_a2",
-      "leaf_adverbs_a2",
-      "leaf_verbs_a2",
-      "leaf_misc_a2",
-      "trunk_core_b1",
-      "trunk_chunks_b1",
-      "trunk_abstract_b1",
-      "leaf_work_b1",
-      "leaf_money_b1",
-      "leaf_communication_b1",
-      "leaf_knowledge_b1",
-      "leaf_self_b1",
-      "leaf_home_b1",
-      "craft"
+      "leaf_ideas_a1"
     ]
   },
   "roots": [
@@ -970,6 +1113,2112 @@
       "note": "Live · be + adj · 3 blocks · 36 frames · P5+P7"
     },
     {
+      "id": "a2_present_continuous",
+      "domain": "grammar",
+      "label": "Present continuous",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_present_continuous.json",
+      "practice": "grammar",
+      "note": "I am working / she is working · now · be + -ing",
+      "partner_id": "leaf_routine_a2",
+      "related": [
+        "a1_present_simple",
+        "a1_be_have"
+      ]
+    },
+    {
+      "id": "leaf_routine_a2",
+      "domain": "vocab",
+      "label": "Routine & habits",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "work_routine",
+      "codex_unit": "V_THM-A1B1-08",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_routine.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-08 · 1×12ish · Oxford fill",
+      "partner_id": "a2_present_continuous"
+    },
+    {
+      "id": "a2_agreement",
+      "domain": "grammar",
+      "label": "Subject–verb agreement (A2)",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_agreement.json",
+      "practice": "grammar",
+      "note": "do/does · was/were · there is/are · everybody · 2026-08-05",
+      "partner_id": "leaf_family_a2",
+      "related": [
+        "a1_agreement",
+        "a2_present_continuous",
+        "a1_questions_negatives"
+      ]
+    },
+    {
+      "id": "leaf_family_a2",
+      "domain": "vocab",
+      "label": "Family & people",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "home_family",
+      "codex_unit": "V_THM-A1B1-04",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_family.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-04 · 2×12ish · Oxford fill",
+      "partner_id": "a2_agreement"
+    },
+    {
+      "id": "a2_past_simple",
+      "domain": "grammar",
+      "label": "Past simple",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_past_simple.json",
+      "practice": "grammar",
+      "note": "I worked / went · regular -ed + high-frequency irregular · didn't / Did",
+      "partner_id": "leaf_travel_a2",
+      "related": [
+        "a1_present_simple"
+      ]
+    },
+    {
+      "id": "leaf_travel_a2",
+      "domain": "vocab",
+      "label": "Travel & holidays",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "travel_city",
+      "codex_unit": "V_THM-A1B1-03",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_travel.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-03 · 6×12ish · Oxford fill",
+      "partner_id": "a2_past_simple"
+    },
+    {
+      "id": "a2_past_continuous",
+      "domain": "grammar",
+      "label": "Past continuous",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_past_continuous.json",
+      "practice": "grammar",
+      "note": "was/were + -ing · past in progress",
+      "partner_id": "leaf_freetime_a2",
+      "related": [
+        "a2_past_simple"
+      ]
+    },
+    {
+      "id": "leaf_freetime_a2",
+      "domain": "vocab",
+      "label": "Free time",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "free_time",
+      "codex_unit": "V_THM-A1B1-09",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_freetime.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-09 · 3×12ish · Oxford fill",
+      "partner_id": "a2_past_continuous"
+    },
+    {
+      "id": "a2_present_perfect",
+      "domain": "grammar",
+      "label": "Present perfect",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_present_perfect.json",
+      "practice": "grammar",
+      "note": "have/has + past participle · just/already/ever/never/for/since · thin A2 CEFR",
+      "partner_id": "leaf_feelings_a2",
+      "related": [
+        "a2_past_simple"
+      ]
+    },
+    {
+      "id": "leaf_feelings_a2",
+      "domain": "vocab",
+      "label": "Feelings",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "inner_life",
+      "codex_unit": "V_THM-A1B1-09",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_feelings.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-09 · 2×12ish · Oxford fill",
+      "partner_id": "a2_present_perfect"
+    },
+    {
+      "id": "a2_will_going_to",
+      "domain": "grammar",
+      "label": "Will / going to",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_will_going_to.json",
+      "practice": "grammar",
+      "note": "future thin slice · will offers/promises · going to plans/evidence",
+      "partner_id": "leaf_work_a2",
+      "related": [
+        "a1_present_simple"
+      ]
+    },
+    {
+      "id": "leaf_work_a2",
+      "domain": "vocab",
+      "label": "Work",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "work_routine",
+      "codex_unit": "V_THM-A1B1-02",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_work.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-02 · 3×12ish · Oxford fill",
+      "partner_id": "a2_will_going_to"
+    },
+    {
+      "id": "a2_modals_must_should",
+      "domain": "grammar",
+      "label": "Must / should",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_modals_must_should.json",
+      "practice": "grammar",
+      "note": "must obligation · should advice · + base · no have to yet",
+      "partner_id": "leaf_society_a2",
+      "related": [
+        "a1_can"
+      ]
+    },
+    {
+      "id": "leaf_society_a2",
+      "domain": "vocab",
+      "label": "Society",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "public_life",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_society.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 2×12ish · Oxford fill",
+      "partner_id": "a2_modals_must_should"
+    },
+    {
+      "id": "a2_comparatives",
+      "domain": "grammar",
+      "label": "Comparatives",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_comparatives.json",
+      "practice": "grammar",
+      "note": "bigger / more … than · the -est / the most",
+      "partner_id": "leaf_describing_a2",
+      "related": [
+        "a1_word_classes"
+      ]
+    },
+    {
+      "id": "leaf_describing_a2",
+      "domain": "vocab",
+      "label": "A2 word list · adjectives",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "self_body",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_describing.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 23×12ish · Oxford fill",
+      "partner_id": "a2_comparatives"
+    },
+    {
+      "id": "a2_ed_ing_adjectives",
+      "domain": "grammar",
+      "label": "-ed / -ing adjectives",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_ed_ing_adjectives.json",
+      "practice": "grammar",
+      "note": "bored/boring · interested/interesting · feeling vs cause",
+      "partner_id": "leaf_home_a2",
+      "related": [
+        "a1_word_classes",
+        "a2_comparatives"
+      ]
+    },
+    {
+      "id": "leaf_home_a2",
+      "domain": "vocab",
+      "label": "Home life",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "home_family",
+      "codex_unit": "V_THM-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_home.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-01 · 3×12ish · Oxford fill",
+      "partner_id": "a2_ed_ing_adjectives"
+    },
+    {
+      "id": "a2_countable",
+      "domain": "grammar",
+      "label": "Countable and uncountable",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_countable.json",
+      "practice": "grammar",
+      "note": "countable vs uncountable nouns · a/an · some · advice/information",
+      "partner_id": "leaf_food_a2",
+      "related": [
+        "a1_articles",
+        "a1_some_any",
+        "a2_quantifiers"
+      ]
+    },
+    {
+      "id": "leaf_food_a2",
+      "domain": "vocab",
+      "label": "Food & drink",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "food_shopping",
+      "codex_unit": "V_THM-A1B1-05",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_food.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-05 · 2×12ish · Oxford fill",
+      "partner_id": "a2_countable"
+    },
+    {
+      "id": "a2_quantifiers",
+      "domain": "grammar",
+      "label": "Much / many / a lot",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_quantifiers.json",
+      "practice": "grammar",
+      "note": "many + plural · much + uncountable · after countable/uncountable",
+      "partner_id": "leaf_shopping_a2",
+      "related": [
+        "a2_countable",
+        "a1_some_any"
+      ]
+    },
+    {
+      "id": "leaf_shopping_a2",
+      "domain": "vocab",
+      "label": "Shopping & money",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "food_shopping",
+      "codex_unit": "V_THM-A1B1-06",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_shopping.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-06 · 2×12ish · Oxford fill",
+      "partner_id": "a2_quantifiers"
+    },
+    {
+      "id": "a2_adverbs_order",
+      "domain": "grammar",
+      "label": "Adverb position",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_adverbs_order.json",
+      "practice": "grammar",
+      "note": "always/also/still before verb · after be · too/either · manner",
+      "partner_id": "leaf_adverbs_a2",
+      "related": [
+        "a1_frequency",
+        "a1_word_order"
+      ]
+    },
+    {
+      "id": "leaf_adverbs_a2",
+      "domain": "vocab",
+      "label": "Adverbs",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_adverbs.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 4×12ish · Oxford fill",
+      "partner_id": "a2_adverbs_order"
+    },
+    {
+      "id": "a2_first_conditional",
+      "domain": "grammar",
+      "label": "First conditional",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_first_conditional.json",
+      "practice": "grammar",
+      "note": "If/when + present, will + base · light zero",
+      "partner_id": "leaf_ideas_a2",
+      "related": [
+        "a1_and_but_because",
+        "b2_second_conditional"
+      ]
+    },
+    {
+      "id": "leaf_ideas_a2",
+      "domain": "vocab",
+      "label": "A2 word list · abstract",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "knowledge",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_ideas.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 8×12ish · Oxford fill",
+      "partner_id": "a2_first_conditional"
+    },
+    {
+      "id": "a2_verb_patterns",
+      "domain": "grammar",
+      "label": "Verb patterns (to / -ing)",
+      "kind": "topic",
+      "root": "verb_complementation",
+      "tree_part": "chunks",
+      "codex_unit": "G_VC-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_verb_patterns.json",
+      "practice": "grammar",
+      "note": "like/enjoy + -ing · want/need/decide + to · would like to",
+      "partner_id": "leaf_verbs_a2",
+      "related": [
+        "a1_like_want_need"
+      ]
+    },
+    {
+      "id": "leaf_verbs_a2",
+      "domain": "vocab",
+      "label": "A2 word list · verbs",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_verbs.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 9×12ish · Oxford fill",
+      "partner_id": "a2_verb_patterns"
+    },
+    {
+      "id": "a2_prepositions_movement",
+      "domain": "grammar",
+      "label": "Prepositions of movement",
+      "kind": "topic",
+      "root": "prepositions_particles",
+      "tree_part": "links",
+      "codex_unit": "G_PP-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/a2_prepositions_movement.json",
+      "practice": "grammar",
+      "note": "to/into/onto/from · across/through · get on/off",
+      "partner_id": "leaf_sports_a2",
+      "related": [
+        "a1_prepositions_place"
+      ]
+    },
+    {
+      "id": "leaf_sports_a2",
+      "domain": "vocab",
+      "label": "Sport",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "free_time",
+      "codex_unit": "V_THM-A1B1-09",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_sports.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-09 · 2×12ish · Oxford fill",
+      "partner_id": "a2_prepositions_movement"
+    },
+    {
+      "id": "leaf_health_a2",
+      "domain": "vocab",
+      "label": "Health",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "health_body",
+      "codex_unit": "V_THM-A1B1-07",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_health.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-07 · 3×12ish · Oxford fill"
+    },
+    {
+      "id": "leaf_nature_a2",
+      "domain": "vocab",
+      "label": "Nature & weather",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "nature",
+      "codex_unit": "V_THM-A1B1-09",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_nature.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-09 · 1×12ish · Oxford fill"
+    },
+    {
+      "id": "leaf_tech_a2",
+      "domain": "vocab",
+      "label": "Tech & media",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "tech",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_tech.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 3×12ish · Oxford fill"
+    },
+    {
+      "id": "leaf_school_a2",
+      "domain": "vocab",
+      "label": "School & learning",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "knowledge",
+      "codex_unit": "V_THM-A1B1-02",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_school.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-02 · 3×12ish · Oxford fill"
+    },
+    {
+      "id": "leaf_clothes_a2",
+      "domain": "vocab",
+      "label": "Clothes",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "self_body",
+      "codex_unit": "V_THM-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_clothes.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-01 · 1×12ish · Oxford fill"
+    },
+    {
+      "id": "leaf_media_a2",
+      "domain": "vocab",
+      "label": "Media & arts",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "tech",
+      "codex_unit": "V_THM-A1B1-09",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_media.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_THM-A1B1-09 · 2×12ish · Oxford fill"
+    },
+    {
+      "id": "leaf_misc_a2",
+      "domain": "vocab",
+      "label": "A2 word list · general",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_misc.json",
+      "practice": "vocab",
+      "note": "Live · A2 · V_COR-A1B1-01 · 5×12ish · Oxford fill"
+    },
+    {
+      "id": "trunk_recycle_a2",
+      "domain": "vocab",
+      "label": "Core · recycle",
+      "kind": "trunk",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_core_frames_recycle.json",
+      "practice": "vocab",
+      "note": "A2 thickening · re-practise A1 frames · denser slots · not grammar"
+    },
+    {
+      "id": "trunk_lexis_a2",
+      "domain": "vocab",
+      "label": "Core · A2 lexis",
+      "kind": "trunk",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_COR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_core_frames_lexis.json",
+      "practice": "vocab",
+      "note": "A2 high-freq words in simple frames · gap on lemma"
+    },
+    {
+      "id": "trunk_chunks_a2",
+      "domain": "vocab",
+      "label": "Everyday chunks",
+      "kind": "trunk",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_PHR-A1B1-01",
+      "levels": [
+        "A2"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/a2_core_frames_chunks.json",
+      "practice": "vocab",
+      "note": "Lexical phrases only · V_PHR · not tense syllabus"
+    },
+    {
+      "id": "b1_present_perfect_vs_past",
+      "domain": "grammar",
+      "label": "Present perfect vs past",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_present_perfect_vs_past.json",
+      "practice": "grammar",
+      "note": "finished time vs life/result now · demo priority",
+      "related": [
+        "a2_present_perfect",
+        "a2_past_simple"
+      ]
+    },
+    {
+      "id": "b1_used_to",
+      "domain": "grammar",
+      "label": "Used to",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_used_to.json",
+      "practice": "grammar",
+      "note": "past habit no longer true",
+      "related": [
+        "a2_past_simple",
+        "b2_be_get_used_to"
+      ]
+    },
+    {
+      "id": "trunk_core_b1",
+      "domain": "vocab",
+      "label": "Core · B1 frames",
+      "kind": "trunk",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_COR-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/b1_core_frames.json",
+      "practice": "vocab",
+      "note": "Live · V_COR-B1B2-01 · 2×12 frames · gap on lexis · perfect as carrier only"
+    },
+    {
+      "id": "b1_passives",
+      "domain": "grammar",
+      "label": "Passive (form of be)",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_passives.json",
+      "practice": "grammar",
+      "note": "be agreement in simple passive frames · present/past",
+      "related": [
+        "a2_past_simple"
+      ]
+    },
+    {
+      "id": "b1_modals_speculation",
+      "domain": "grammar",
+      "label": "Modals (might / may / must)",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_modals_speculation.json",
+      "practice": "grammar",
+      "note": "possibility vs deduction",
+      "related": [
+        "a2_modals_must_should"
+      ]
+    },
+    {
+      "id": "trunk_chunks_b1",
+      "domain": "vocab",
+      "label": "Collocations & chunks",
+      "kind": "trunk",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_PHR-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/b1_collocations.json",
+      "practice": "vocab",
+      "note": "Live · V_PHR-B1B2-01 · 2×12 frames · make/do/take/have + adj–noun"
+    },
+    {
+      "id": "b1_articles_advanced",
+      "domain": "grammar",
+      "label": "Articles (advanced)",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_articles_advanced.json",
+      "practice": "grammar",
+      "note": "the / zero / a · institutions",
+      "related": [
+        "a1_articles"
+      ]
+    },
+    {
+      "id": "b1_it_subject",
+      "domain": "grammar",
+      "label": "It as subject",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_it_subject.json",
+      "practice": "grammar",
+      "note": "It is + adj + to · weather/time",
+      "related": [
+        "a1_word_order"
+      ]
+    },
+    {
+      "id": "trunk_abstract_b1",
+      "domain": "vocab",
+      "label": "Abstraction starters",
+      "kind": "trunk",
+      "parent": "trunk",
+      "tree_part": "trunk",
+      "codex_unit": "V_THM-A1B1-10",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "content": "vocab/blocks/b1_abstract.json",
+      "practice": "vocab",
+      "note": "Live · V_THM-A1B1-10 · 2×12 abstract lexis · Sentence = fruit"
+    },
+    {
+      "id": "b1_relative_clauses",
+      "domain": "grammar",
+      "label": "Relative clauses",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_relative_clauses.json",
+      "practice": "grammar",
+      "note": "who / which / that",
+      "related": [
+        "a1_word_order",
+        "a1_question_words"
+      ]
+    },
+    {
+      "id": "b1_reported_speech",
+      "domain": "grammar",
+      "label": "Reported speech",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_reported_speech.json",
+      "practice": "grammar",
+      "note": "backshift · said/told",
+      "related": [
+        "a2_past_simple",
+        "a1_questions_negatives",
+        "b1_indirect_questions"
+      ]
+    },
+    {
+      "id": "leaf_work_b1",
+      "domain": "vocab",
+      "label": "Work & routine",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "work_routine",
+      "codex_unit": "V_WRK-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "planned",
+      "practice": "vocab",
+      "note": "Planned · V_WRK-B1B2-01 · grows from THM-02/08"
+    },
+    {
+      "id": "b1_indirect_questions",
+      "domain": "grammar",
+      "label": "Indirect questions",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_indirect_questions.json",
+      "practice": "grammar",
+      "note": "tell me / know / wonder · statement order inside",
+      "related": [
+        "b1_reported_speech",
+        "a1_question_words",
+        "a1_word_order"
+      ]
+    },
+    {
+      "id": "b1_linkers",
+      "domain": "grammar",
+      "label": "Linking words",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_linkers.json",
+      "practice": "grammar",
+      "note": "contrast · result · reason",
+      "related": [
+        "a1_and_but_because"
+      ]
+    },
+    {
+      "id": "leaf_money_b1",
+      "domain": "vocab",
+      "label": "Money & possessions",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "money",
+      "codex_unit": "V_MON-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "planned",
+      "practice": "vocab",
+      "note": "Planned · V_MON-B1B2-01 · grows from THM-06"
+    },
+    {
+      "id": "b1_verb_patterns_advanced",
+      "domain": "grammar",
+      "label": "Verb patterns (advanced)",
+      "kind": "topic",
+      "root": "verb_complementation",
+      "tree_part": "chunks",
+      "codex_unit": "G_VC-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_verb_patterns_advanced.json",
+      "practice": "grammar",
+      "note": "want sb to · stop/remember · make/let",
+      "related": [
+        "a2_verb_patterns"
+      ]
+    },
+    {
+      "id": "b1_phrasal_verbs",
+      "domain": "grammar",
+      "label": "Phrasal verbs",
+      "kind": "topic",
+      "root": "verb_complementation",
+      "tree_part": "chunks",
+      "codex_unit": "G_VC-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_phrasal_verbs.json",
+      "practice": "grammar",
+      "note": "verb + particle · separable frames · demo priority",
+      "related": [
+        "b1_verb_patterns_advanced",
+        "b1_dependent_prepositions"
+      ]
+    },
+    {
+      "id": "leaf_communication_b1",
+      "domain": "vocab",
+      "label": "Communication",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "communication",
+      "codex_unit": "V_COM-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "planned",
+      "practice": "vocab",
+      "note": "Planned · V_COM-B1B2-01 · register + cognate hooks later"
+    },
+    {
+      "id": "b1_dependent_prepositions",
+      "domain": "grammar",
+      "label": "Dependent prepositions",
+      "kind": "topic",
+      "root": "prepositions_particles",
+      "tree_part": "links",
+      "codex_unit": "G_PP-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_dependent_prepositions.json",
+      "practice": "grammar",
+      "note": "adj/verb + prep chunks",
+      "related": [
+        "a1_to_for_with"
+      ]
+    },
+    {
+      "id": "leaf_knowledge_b1",
+      "domain": "vocab",
+      "label": "Knowledge & travel",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "knowledge",
+      "codex_unit": "V_KNO-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "planned",
+      "practice": "vocab",
+      "note": "Planned · V_KNO-B1B2-01 · grows from THM-03"
+    },
+    {
+      "id": "leaf_self_b1",
+      "domain": "vocab",
+      "label": "Self & body",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "self_body",
+      "codex_unit": "V_SEL-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "planned",
+      "practice": "vocab",
+      "note": "Planned · V_SEL-B1B2-01 · grows from THM-07 + feelings"
+    },
+    {
+      "id": "leaf_home_b1",
+      "domain": "vocab",
+      "label": "Home & family",
+      "kind": "leaf",
+      "parent": "trunk",
+      "tree_part": "home_family",
+      "codex_unit": "V_HOM-B1B2-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "planned",
+      "practice": "vocab",
+      "note": "Planned · V_HOM-B1B2-01 · grows from THM-01/04"
+    },
+    {
+      "id": "craft",
+      "domain": "vocab",
+      "label": "Word-craft",
+      "kind": "craft",
+      "tree_part": "trunk",
+      "levels": [
+        "B1",
+        "B2"
+      ],
+      "status": "parked",
+      "practice": "vocab",
+      "note": "Side door later · B1+"
+    },
+    {
+      "id": "b2_present_perfect_continuous",
+      "domain": "grammar",
+      "label": "Present perfect simple vs continuous",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b2_present_perfect_continuous.json",
+      "practice": "grammar",
+      "note": "result/count/complete vs process/duration · B2 (moved from B1)",
+      "related": [
+        "b1_present_perfect_vs_past",
+        "a2_present_perfect",
+        "a2_present_continuous"
+      ]
+    },
+    {
+      "id": "b2_past_perfect",
+      "domain": "grammar",
+      "label": "Past perfect",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b2_past_perfect.json",
+      "practice": "grammar",
+      "note": "had + past participle · earlier past · B2 (moved from B1)",
+      "related": [
+        "a2_past_simple",
+        "a2_present_perfect",
+        "b1_present_perfect_vs_past"
+      ]
+    },
+    {
+      "id": "b2_narrative_tenses",
+      "domain": "grammar",
+      "label": "Narrative tenses",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_narrative_tenses.json",
+      "practice": "grammar",
+      "note": "mixed past simple/continuous/perfect · first draft 2026-08-06",
+      "related": [
+        "a2_past_simple",
+        "a2_past_continuous",
+        "b2_past_perfect"
+      ]
+    },
+    {
+      "id": "b2_future_forms",
+      "domain": "grammar",
+      "label": "Future forms review",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_future_forms.json",
+      "practice": "grammar",
+      "note": "Choice unit: will / going to / PC·PS future / fut cont / fut perfect / time clauses + future-in-the-past · thin shell 2026-08-06",
+      "related": [
+        "a2_will_going_to",
+        "b2_future_in_the_past",
+        "b1_reported_speech"
+      ]
+    },
+    {
+      "id": "b2_be_get_used_to",
+      "domain": "grammar",
+      "label": "Be used to / get used to",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_be_get_used_to.json",
+      "practice": "grammar",
+      "note": "Contrast with used to (past habit) · be/get used to + -ing/noun · thin shell 2026-08-06",
+      "related": [
+        "b1_used_to",
+        "a2_past_simple"
+      ]
+    },
+    {
+      "id": "b2_second_conditional",
+      "domain": "grammar",
+      "label": "Second conditional",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b2_second_conditional.json",
+      "practice": "grammar",
+      "note": "If + past, would + base · absorb if-alternatives lightly (unless / as long as / provided) · B2 contrast after A2 first",
+      "related": [
+        "a2_first_conditional",
+        "b2_third_conditional",
+        "b2_mixed_conditionals"
+      ]
+    },
+    {
+      "id": "b2_third_conditional",
+      "domain": "grammar",
+      "label": "Third conditional",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b2_third_conditional.json",
+      "practice": "grammar",
+      "note": "If + had + past participle, would have + past participle · B2 (moved from B1)",
+      "related": [
+        "b2_second_conditional",
+        "b2_past_perfect"
+      ]
+    },
+    {
+      "id": "b2_mixed_conditionals",
+      "domain": "grammar",
+      "label": "Mixed conditionals",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_mixed_conditionals.json",
+      "practice": "grammar",
+      "note": "Mixed 2nd/3rd · also unless / provided that / as long as / in case (no separate if-alternatives unit) · first draft 2026-08-06",
+      "related": [
+        "b2_second_conditional",
+        "b2_third_conditional"
+      ]
+    },
+    {
+      "id": "b2_wish_if_only",
+      "domain": "grammar",
+      "label": "Wish / if only",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_wish_if_only.json",
+      "practice": "grammar",
+      "note": "wish + past / PP / would · first draft 2026-08-06",
+      "related": [
+        "b2_second_conditional",
+        "b2_third_conditional"
+      ]
+    },
+    {
+      "id": "b2_hypothetical_past",
+      "domain": "grammar",
+      "label": "Hypothetical past",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_hypothetical_past.json",
+      "practice": "grammar",
+      "note": "I'd rather / it's time / as if · thin shell 2026-08-05",
+      "related": [
+        "b2_wish_if_only",
+        "b2_second_conditional"
+      ]
+    },
+    {
+      "id": "b2_modal_perfect",
+      "domain": "grammar",
+      "label": "Modals (meanings + perfect)",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_modal_perfect.json",
+      "practice": "grammar",
+      "note": "Mega unit: ability/permission/obligation/advice/possibility/deduction + perfect modals + semi-modals (have to, need to, ought to, be allowed to, make/let) · expand from first draft 2026-08-06",
+      "related": [
+        "b1_modals_speculation",
+        "a2_modals_must_should",
+        "b1_verb_patterns_advanced"
+      ]
+    },
+    {
+      "id": "b2_passives_advanced",
+      "domain": "grammar",
+      "label": "Passives advanced",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_passives_advanced.json",
+      "practice": "grammar",
+      "note": "forms review + get-passive · thin shell 2026-08-05",
+      "related": [
+        "b1_passives"
+      ]
+    },
+    {
+      "id": "b2_causative",
+      "domain": "grammar",
+      "label": "Causative (have/get done)",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_causative.json",
+      "practice": "grammar",
+      "note": "have/get something done · first draft 2026-08-06",
+      "related": [
+        "b1_passives",
+        "b2_passives_advanced"
+      ]
+    },
+    {
+      "id": "b2_reported_speech_advanced",
+      "domain": "grammar",
+      "label": "Reported speech advanced",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_reported_speech_advanced.json",
+      "practice": "grammar",
+      "note": "reporting verbs · thin shell 2026-08-05",
+      "related": [
+        "b1_reported_speech"
+      ]
+    },
+    {
+      "id": "b2_relative_clauses_advanced",
+      "domain": "grammar",
+      "label": "Relative clauses advanced",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_relative_clauses_advanced.json",
+      "practice": "grammar",
+      "note": "reduced, of which, whose · thin shell 2026-08-05",
+      "related": [
+        "b1_relative_clauses"
+      ]
+    },
+    {
+      "id": "b2_participle_clauses",
+      "domain": "grammar",
+      "label": "Participle clauses",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_participle_clauses.json",
+      "practice": "grammar",
+      "note": "-ing/-ed clauses · thin shell 2026-08-05",
+      "related": [
+        "b2_relative_clauses_advanced"
+      ]
+    },
+    {
+      "id": "b2_gerunds_infinitives_advanced",
+      "domain": "grammar",
+      "label": "Gerunds & infinitives advanced",
+      "kind": "topic",
+      "root": "verb_complementation",
+      "tree_part": "chunks",
+      "codex_unit": "G_VC-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_gerunds_infinitives_advanced.json",
+      "practice": "grammar",
+      "note": "stop/remember/try meaning splits · thin shell 2026-08-05",
+      "related": [
+        "b1_verb_patterns_advanced",
+        "a2_verb_patterns"
+      ]
+    },
+    {
+      "id": "b2_preposition_ing",
+      "domain": "grammar",
+      "label": "Preposition + -ing",
+      "kind": "topic",
+      "root": "prepositions_particles",
+      "tree_part": "links",
+      "codex_unit": "G_PP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_preposition_ing.json",
+      "practice": "grammar",
+      "note": "prep + -ing; adj+prep · thin shell 2026-08-05",
+      "related": [
+        "b1_dependent_prepositions"
+      ]
+    },
+    {
+      "id": "b2_articles_genericity",
+      "domain": "grammar",
+      "label": "Articles / genericity",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_articles_genericity.json",
+      "practice": "grammar",
+      "note": "generic the/zero/a · thin shell 2026-08-05",
+      "related": [
+        "b1_articles_advanced",
+        "a1_articles"
+      ]
+    },
+    {
+      "id": "b2_quantifiers_advanced",
+      "domain": "grammar",
+      "label": "Quantifiers advanced",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_quantifiers_advanced.json",
+      "practice": "grammar",
+      "note": "few/little, most/none of · thin shell 2026-08-05",
+      "related": [
+        "a2_quantifiers"
+      ]
+    },
+    {
+      "id": "b2_discourse_markers",
+      "domain": "grammar",
+      "label": "Discourse markers B2",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_discourse_markers.json",
+      "practice": "grammar",
+      "note": "however / therefore / moreover… · thin shell 2026-08-05",
+      "related": [
+        "b1_linkers"
+      ]
+    },
+    {
+      "id": "c1_narrative_mastery",
+      "domain": "grammar",
+      "label": "Narrative tenses mastery",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_narrative_mastery.json",
+      "practice": "grammar",
+      "note": "Nuanced past combinations · scene/flashback/background · thin shell 2026-08-06 · B2 narrative is foundation",
+      "related": [
+        "b2_narrative_tenses",
+        "b2_past_perfect",
+        "a2_past_continuous",
+        "c1_time_aspect_edge"
+      ]
+    },
+    {
+      "id": "c1_time_aspect_edge",
+      "domain": "grammar",
+      "label": "Future & aspect edge cases",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_time_aspect_edge.json",
+      "practice": "grammar",
+      "note": "Future perfect continuous · finer aspect · future-in-the-past precision · be to · always-ing · thin shell · pairs with narrative mastery 2026-08-06",
+      "related": [
+        "c1_narrative_mastery",
+        "b2_future_forms",
+        "b2_future_in_the_past",
+        "b2_present_perfect_continuous"
+      ]
+    },
+    {
+      "id": "c1_inversion_emphasis",
+      "domain": "grammar",
+      "label": "Inversion & inverted conditionals",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_inversion_emphasis.json",
+      "practice": "grammar",
+      "note": "Negative/limiting adverbials (Never have I…, Not only…, Under no circumstances…) · inverted conditionals (Had I known…, Were I to…, Should you…) · so/such · thin shell · path unit 2026-08-06",
+      "related": [
+        "b2_inversion",
+        "c1_clefts_fronting",
+        "c1_subjunctive",
+        "a1_word_order"
+      ]
+    },
+    {
+      "id": "c1_clefts_fronting",
+      "domain": "grammar",
+      "label": "Clefts & fronting",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_clefts_fronting.json",
+      "practice": "grammar",
+      "note": "It-/wh-/reason/all clefts · fronting · emphatic do · thin shell 2026-08-06",
+      "related": [
+        "b2_cleft_sentences",
+        "b2_emphasis_fronting",
+        "c1_inversion_emphasis",
+        "b1_it_subject"
+      ]
+    },
+    {
+      "id": "c1_participle_absolute",
+      "domain": "grammar",
+      "label": "Participle & absolute constructions",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_participle_absolute.json",
+      "practice": "grammar",
+      "note": "Present/past/perfect participle · absolute · condensed adverbial · deepens B2 participle + reduced relatives · thin shell 2026-08-06",
+      "related": [
+        "b2_participle_clauses",
+        "b2_relative_clauses_advanced",
+        "c1_nominalisation"
+      ]
+    },
+    {
+      "id": "c1_advanced_passive",
+      "domain": "grammar",
+      "label": "Advanced passives & reporting passives",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_advanced_passive.json",
+      "practice": "grammar",
+      "note": "Impersonal It is said that… / He is believed to have… · complex passives · get-passive edges · B2 passives+causative foundation · thin shell 2026-08-06",
+      "related": [
+        "b2_passives_advanced",
+        "b2_causative",
+        "c1_reporting_complementation"
+      ]
+    },
+    {
+      "id": "c1_nominalisation",
+      "domain": "grammar",
+      "label": "Nominalisation",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_nominalisation.json",
+      "practice": "grammar",
+      "note": "verb/adj → noun formal · thin shell 2026-08-05",
+      "related": [
+        "c1_complex_noun_phrases",
+        "c1_register",
+        "c1_advanced_passive"
+      ]
+    },
+    {
+      "id": "c1_complex_noun_phrases",
+      "domain": "grammar",
+      "label": "Complex noun phrases",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_complex_noun_phrases.json",
+      "practice": "grammar",
+      "note": "stacked pre/post-modification · thin shell 2026-08-05",
+      "related": [
+        "c1_nominalisation",
+        "c1_article_nuance"
+      ]
+    },
+    {
+      "id": "c1_ellipsis_substitution",
+      "domain": "grammar",
+      "label": "Ellipsis & substitution",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_ellipsis_substitution.json",
+      "practice": "grammar",
+      "note": "Systematic so/neither, one/ones, VP ellipsis · advanced cohesion · thin shell 2026-08-06"
+    },
+    {
+      "id": "c1_discourse_grammar",
+      "domain": "grammar",
+      "label": "Discourse grammar",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_discourse_grammar.json",
+      "practice": "grammar",
+      "note": "Sophisticated discourse markers · purpose/result/concession/contrast · prep relatives (of which, to whom) edges · thin shell 2026-08-06",
+      "related": [
+        "b2_discourse_markers",
+        "b1_linkers",
+        "b2_relative_clauses_advanced",
+        "c1_ellipsis_substitution"
+      ]
+    },
+    {
+      "id": "c1_register",
+      "domain": "grammar",
+      "label": "Register: formal vs informal",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_register.json",
+      "practice": "grammar",
+      "note": "formal/informal grammar choices · thin shell 2026-08-05"
+    },
+    {
+      "id": "c1_advanced_modality",
+      "domain": "grammar",
+      "label": "Modality, hedging & stance",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_advanced_modality.json",
+      "practice": "grammar",
+      "note": "Fine modal distinctions + hedging/stance (appear/tend/likely/somewhat) · merged hedging into this path unit 2026-08-06 · B2 modals mega is foundation",
+      "related": [
+        "c1_hedging_stance",
+        "b2_modal_perfect",
+        "c1_subjunctive",
+        "b1_modals_speculation"
+      ]
+    },
+    {
+      "id": "c1_subjunctive",
+      "domain": "grammar",
+      "label": "Subjunctive & formal unreal",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_subjunctive.json",
+      "practice": "grammar",
+      "note": "essential/important that + base · were to · elaborate wish/if only/would rather · thin shell · pairs with B2 wish/hypothetical 2026-08-06",
+      "related": [
+        "b2_wish_if_only",
+        "b2_hypothetical_past",
+        "c1_advanced_modality",
+        "c1_inversion_emphasis"
+      ]
+    },
+    {
+      "id": "c1_reporting_complementation",
+      "domain": "grammar",
+      "label": "Reporting verbs & complementation",
+      "kind": "topic",
+      "root": "verb_complementation",
+      "tree_part": "chunks",
+      "codex_unit": "G_VC-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_reporting_complementation.json",
+      "practice": "grammar",
+      "note": "admit/insist/warn/suggest/accuse… patterns · thin shell 2026-08-06",
+      "related": [
+        "b2_reported_speech_advanced",
+        "b1_reported_speech",
+        "b2_gerunds_infinitives_advanced",
+        "c1_subjunctive"
+      ]
+    },
+    {
+      "id": "c1_comparative_advanced",
+      "domain": "grammar",
+      "label": "Comparative structures advanced",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_comparative_advanced.json",
+      "practice": "grammar",
+      "note": "the more…, far more, as…as · thin shell 2026-08-05",
+      "related": [
+        "a2_comparatives"
+      ]
+    },
+    {
+      "id": "c1_article_nuance",
+      "domain": "grammar",
+      "label": "Article nuance",
+      "kind": "topic",
+      "root": "noun_phrase",
+      "tree_part": "forms",
+      "codex_unit": "G_NP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_article_nuance.json",
+      "practice": "grammar",
+      "note": "institutions, media, roles · thin shell 2026-08-05",
+      "related": [
+        "b2_articles_genericity",
+        "b1_articles_advanced"
+      ]
+    },
+    {
+      "id": "c1_spoken_vs_written",
+      "domain": "grammar",
+      "label": "Spoken grammar vs written",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_spoken_vs_written.json",
+      "practice": "grammar",
+      "note": "heads/tails vs formal markers · thin shell 2026-08-05",
+      "related": [
+        "c1_register"
+      ]
+    },
+    {
+      "id": "c1_error_patterns",
+      "domain": "grammar",
+      "label": "Error patterns at C1",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_error_patterns.json",
+      "practice": "grammar",
+      "note": "fossilisation: articles/preps/tense · thin shell 2026-08-05"
+    },
+    {
+      "id": "b2_future_in_the_past",
+      "domain": "grammar",
+      "label": "Future in the past",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_future_in_the_past.json",
+      "practice": "grammar",
+      "note": "Map only · content folded into b2_future_forms · thin shell kept for repair links",
+      "related": [
+        "b2_future_forms",
+        "a2_will_going_to",
+        "b1_reported_speech"
+      ]
+    },
+    {
+      "id": "b2_inversion",
+      "domain": "grammar",
+      "label": "Inversion",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-B1B2-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_inversion.json",
+      "practice": "grammar",
+      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+      "related": [
+        "c1_inversion_emphasis"
+      ]
+    },
+    {
+      "id": "b2_cleft_sentences",
+      "domain": "grammar",
+      "label": "Cleft sentences",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-B1B2-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_cleft_sentences.json",
+      "practice": "grammar",
+      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+      "related": [
+        "c1_clefts_fronting"
+      ]
+    },
+    {
+      "id": "b2_clear_claims",
+      "domain": "grammar",
+      "label": "Clear claims",
+      "kind": "topic",
+      "root": "clause_linking",
+      "tree_part": "links",
+      "codex_unit": "G_CL-B1B2-01",
+      "levels": [
+        "B2"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_clear_claims.json",
+      "practice": "grammar",
+      "note": "Pilot writing logic — not on B2 path · shaded / not class spine · 2026-08-06",
+      "related": [
+        "b2_discourse_markers",
+        "b1_linkers"
+      ]
+    },
+    {
+      "id": "b2_emphasis_fronting",
+      "domain": "grammar",
+      "label": "Emphasis & fronting",
+      "kind": "topic",
+      "root": "sentence_syntax",
+      "tree_part": "sentence",
+      "codex_unit": "G_SS-B1B2-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/b2_emphasis_fronting.json",
+      "practice": "grammar",
+      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+      "related": [
+        "c1_clefts_fronting",
+        "c1_inversion_emphasis"
+      ]
+    },
+    {
+      "id": "c1_hedging_stance",
+      "domain": "grammar",
+      "label": "Hedging & stance",
+      "kind": "topic",
+      "root": "verb_phrase",
+      "tree_part": "verbs",
+      "codex_unit": "G_VP-C1-01",
+      "levels": [
+        "C1"
+      ],
+      "status": "coming",
+      "foundation": false,
+      "content": "grammar/blocks/c1_hedging_stance.json",
+      "practice": "grammar",
+      "note": "Map-only · content folded into c1_advanced_modality (path) · thin shell kept for repair 2026-08-06",
+      "related": [
+        "c1_advanced_modality",
+        "c1_register"
+      ]
+    },
+    {
       "id": "trunk_verbs_say_a1",
       "domain": "vocab",
       "label": "Verbs · say",
@@ -1150,2082 +3399,6 @@
       "content": "vocab/blocks/a1_ideas.json",
       "practice": "vocab",
       "note": "Live · P7 · general core / abstract · 4×12"
-    },
-    {
-      "id": "a2_present_continuous",
-      "domain": "grammar",
-      "label": "Present continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_present_continuous.json",
-      "practice": "grammar",
-      "note": "I am working / she is working · now · be + -ing",
-      "related": [
-        "a1_present_simple",
-        "a1_be_have"
-      ]
-    },
-    {
-      "id": "a2_agreement",
-      "domain": "grammar",
-      "label": "Subject–verb agreement (A2)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_agreement.json",
-      "practice": "grammar",
-      "note": "do/does · was/were · there is/are · everybody · 2026-08-05",
-      "related": [
-        "a1_agreement",
-        "a2_present_continuous",
-        "a1_questions_negatives"
-      ]
-    },
-    {
-      "id": "a2_past_simple",
-      "domain": "grammar",
-      "label": "Past simple",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_past_simple.json",
-      "practice": "grammar",
-      "note": "I worked / went · regular -ed + high-frequency irregular · didn't / Did",
-      "related": [
-        "a1_present_simple"
-      ]
-    },
-    {
-      "id": "a2_will_going_to",
-      "domain": "grammar",
-      "label": "Will / going to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_will_going_to.json",
-      "practice": "grammar",
-      "note": "future thin slice · will offers/promises · going to plans/evidence",
-      "related": [
-        "a1_present_simple"
-      ]
-    },
-    {
-      "id": "a2_past_continuous",
-      "domain": "grammar",
-      "label": "Past continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_past_continuous.json",
-      "practice": "grammar",
-      "note": "was/were + -ing · past in progress",
-      "related": [
-        "a2_past_simple"
-      ]
-    },
-    {
-      "id": "a2_present_perfect",
-      "domain": "grammar",
-      "label": "Present perfect",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_present_perfect.json",
-      "practice": "grammar",
-      "note": "have/has + past participle · just/already/ever/never/for/since · thin A2 CEFR",
-      "related": [
-        "a2_past_simple"
-      ]
-    },
-    {
-      "id": "a2_modals_must_should",
-      "domain": "grammar",
-      "label": "Must / should",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_modals_must_should.json",
-      "practice": "grammar",
-      "note": "must obligation · should advice · + base · no have to yet",
-      "related": [
-        "a1_can"
-      ]
-    },
-    {
-      "id": "a2_comparatives",
-      "domain": "grammar",
-      "label": "Comparatives",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_comparatives.json",
-      "practice": "grammar",
-      "note": "bigger / more … than · the -est / the most",
-      "related": [
-        "a1_word_classes"
-      ]
-    },
-    {
-      "id": "a2_quantifiers",
-      "domain": "grammar",
-      "label": "Much / many / a lot",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_quantifiers.json",
-      "practice": "grammar",
-      "note": "many + plural · much + uncountable · after countable/uncountable",
-      "related": [
-        "a2_countable",
-        "a1_some_any"
-      ]
-    },
-    {
-      "id": "a2_countable",
-      "domain": "grammar",
-      "label": "Countable and uncountable",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_countable.json",
-      "practice": "grammar",
-      "note": "countable vs uncountable nouns · a/an · some · advice/information",
-      "related": [
-        "a1_articles",
-        "a1_some_any",
-        "a2_quantifiers"
-      ]
-    },
-    {
-      "id": "a2_adverbs_order",
-      "domain": "grammar",
-      "label": "Adverb position",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_adverbs_order.json",
-      "practice": "grammar",
-      "note": "always/also/still before verb · after be · too/either · manner",
-      "related": [
-        "a1_frequency",
-        "a1_word_order"
-      ]
-    },
-    {
-      "id": "a2_ed_ing_adjectives",
-      "domain": "grammar",
-      "label": "-ed / -ing adjectives",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_ed_ing_adjectives.json",
-      "practice": "grammar",
-      "note": "bored/boring · interested/interesting · feeling vs cause",
-      "related": [
-        "a1_word_classes",
-        "a2_comparatives"
-      ]
-    },
-    {
-      "id": "a2_first_conditional",
-      "domain": "grammar",
-      "label": "First conditional",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_first_conditional.json",
-      "practice": "grammar",
-      "note": "If/when + present, will + base · light zero",
-      "related": [
-        "a1_and_but_because",
-        "b2_second_conditional"
-      ]
-    },
-    {
-      "id": "a2_verb_patterns",
-      "domain": "grammar",
-      "label": "Verb patterns (to / -ing)",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "tree_part": "chunks",
-      "codex_unit": "G_VC-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_verb_patterns.json",
-      "practice": "grammar",
-      "note": "like/enjoy + -ing · want/need/decide + to · would like to",
-      "related": [
-        "a1_like_want_need"
-      ]
-    },
-    {
-      "id": "a2_prepositions_movement",
-      "domain": "grammar",
-      "label": "Prepositions of movement",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "tree_part": "links",
-      "codex_unit": "G_PP-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_prepositions_movement.json",
-      "practice": "grammar",
-      "note": "to/into/onto/from · across/through · get on/off",
-      "related": [
-        "a1_prepositions_place"
-      ]
-    },
-    {
-      "id": "b1_present_perfect_vs_past",
-      "domain": "grammar",
-      "label": "Present perfect vs past",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_present_perfect_vs_past.json",
-      "practice": "grammar",
-      "note": "finished time vs life/result now · demo priority",
-      "related": [
-        "a2_present_perfect",
-        "a2_past_simple"
-      ]
-    },
-    {
-      "id": "b2_present_perfect_continuous",
-      "domain": "grammar",
-      "label": "Present perfect simple vs continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b2_present_perfect_continuous.json",
-      "practice": "grammar",
-      "note": "result/count/complete vs process/duration · B2 (moved from B1)",
-      "related": [
-        "b1_present_perfect_vs_past",
-        "a2_present_perfect",
-        "a2_present_continuous"
-      ]
-    },
-    {
-      "id": "b2_past_perfect",
-      "domain": "grammar",
-      "label": "Past perfect",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b2_past_perfect.json",
-      "practice": "grammar",
-      "note": "had + past participle · earlier past · B2 (moved from B1)",
-      "related": [
-        "a2_past_simple",
-        "a2_present_perfect",
-        "b1_present_perfect_vs_past"
-      ]
-    },
-    {
-      "id": "b1_used_to",
-      "domain": "grammar",
-      "label": "Used to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_used_to.json",
-      "practice": "grammar",
-      "note": "past habit no longer true",
-      "related": [
-        "a2_past_simple",
-        "b2_be_get_used_to"
-      ]
-    },
-    {
-      "id": "b1_passives",
-      "domain": "grammar",
-      "label": "Passive (form of be)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_passives.json",
-      "practice": "grammar",
-      "note": "be agreement in simple passive frames · present/past",
-      "related": [
-        "a2_past_simple"
-      ]
-    },
-    {
-      "id": "b1_modals_speculation",
-      "domain": "grammar",
-      "label": "Modals (might / may / must)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_modals_speculation.json",
-      "practice": "grammar",
-      "note": "possibility vs deduction",
-      "related": [
-        "a2_modals_must_should"
-      ]
-    },
-    {
-      "id": "b1_articles_advanced",
-      "domain": "grammar",
-      "label": "Articles (advanced)",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_articles_advanced.json",
-      "practice": "grammar",
-      "note": "the / zero / a · institutions",
-      "related": [
-        "a1_articles"
-      ]
-    },
-    {
-      "id": "b1_it_subject",
-      "domain": "grammar",
-      "label": "It as subject",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_it_subject.json",
-      "practice": "grammar",
-      "note": "It is + adj + to · weather/time",
-      "related": [
-        "a1_word_order"
-      ]
-    },
-    {
-      "id": "b2_second_conditional",
-      "domain": "grammar",
-      "label": "Second conditional",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b2_second_conditional.json",
-      "practice": "grammar",
-      "note": "If + past, would + base · absorb if-alternatives lightly (unless / as long as / provided) · B2 contrast after A2 first",
-      "related": [
-        "a2_first_conditional",
-        "b2_third_conditional",
-        "b2_mixed_conditionals"
-      ]
-    },
-    {
-      "id": "b1_relative_clauses",
-      "domain": "grammar",
-      "label": "Relative clauses",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_relative_clauses.json",
-      "practice": "grammar",
-      "note": "who / which / that",
-      "related": [
-        "a1_word_order",
-        "a1_question_words"
-      ]
-    },
-    {
-      "id": "b1_reported_speech",
-      "domain": "grammar",
-      "label": "Reported speech",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_reported_speech.json",
-      "practice": "grammar",
-      "note": "backshift · said/told",
-      "related": [
-        "a2_past_simple",
-        "a1_questions_negatives",
-        "b1_indirect_questions"
-      ]
-    },
-    {
-      "id": "b1_indirect_questions",
-      "domain": "grammar",
-      "label": "Indirect questions",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_indirect_questions.json",
-      "practice": "grammar",
-      "note": "tell me / know / wonder · statement order inside",
-      "related": [
-        "b1_reported_speech",
-        "a1_question_words",
-        "a1_word_order"
-      ]
-    },
-    {
-      "id": "b1_linkers",
-      "domain": "grammar",
-      "label": "Linking words",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_linkers.json",
-      "practice": "grammar",
-      "note": "contrast · result · reason",
-      "related": [
-        "a1_and_but_because"
-      ]
-    },
-    {
-      "id": "b1_verb_patterns_advanced",
-      "domain": "grammar",
-      "label": "Verb patterns (advanced)",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "tree_part": "chunks",
-      "codex_unit": "G_VC-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_verb_patterns_advanced.json",
-      "practice": "grammar",
-      "note": "want sb to · stop/remember · make/let",
-      "related": [
-        "a2_verb_patterns"
-      ]
-    },
-    {
-      "id": "b1_dependent_prepositions",
-      "domain": "grammar",
-      "label": "Dependent prepositions",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "tree_part": "links",
-      "codex_unit": "G_PP-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_dependent_prepositions.json",
-      "practice": "grammar",
-      "note": "adj/verb + prep chunks",
-      "related": [
-        "a1_to_for_with"
-      ]
-    },
-    {
-      "id": "b2_third_conditional",
-      "domain": "grammar",
-      "label": "Third conditional",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b2_third_conditional.json",
-      "practice": "grammar",
-      "note": "If + had + past participle, would have + past participle · B2 (moved from B1)",
-      "related": [
-        "b2_second_conditional",
-        "b2_past_perfect"
-      ]
-    },
-    {
-      "id": "b1_phrasal_verbs",
-      "domain": "grammar",
-      "label": "Phrasal verbs",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "tree_part": "chunks",
-      "codex_unit": "G_VC-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_phrasal_verbs.json",
-      "practice": "grammar",
-      "note": "verb + particle · separable frames · demo priority",
-      "related": [
-        "b1_verb_patterns_advanced",
-        "b1_dependent_prepositions"
-      ]
-    },
-    {
-      "id": "b2_narrative_tenses",
-      "domain": "grammar",
-      "label": "Narrative tenses",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_narrative_tenses.json",
-      "practice": "grammar",
-      "note": "mixed past simple/continuous/perfect · first draft 2026-08-06",
-      "related": [
-        "a2_past_simple",
-        "a2_past_continuous",
-        "b2_past_perfect"
-      ]
-    },
-    {
-      "id": "b2_future_in_the_past",
-      "domain": "grammar",
-      "label": "Future in the past",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_future_in_the_past.json",
-      "practice": "grammar",
-      "note": "Map only · content folded into b2_future_forms · thin shell kept for repair links",
-      "related": [
-        "b2_future_forms",
-        "a2_will_going_to",
-        "b1_reported_speech"
-      ]
-    },
-    {
-      "id": "b2_mixed_conditionals",
-      "domain": "grammar",
-      "label": "Mixed conditionals",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_mixed_conditionals.json",
-      "practice": "grammar",
-      "note": "Mixed 2nd/3rd · also unless / provided that / as long as / in case (no separate if-alternatives unit) · first draft 2026-08-06",
-      "related": [
-        "b2_second_conditional",
-        "b2_third_conditional"
-      ]
-    },
-    {
-      "id": "b2_wish_if_only",
-      "domain": "grammar",
-      "label": "Wish / if only",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_wish_if_only.json",
-      "practice": "grammar",
-      "note": "wish + past / PP / would · first draft 2026-08-06",
-      "related": [
-        "b2_second_conditional",
-        "b2_third_conditional"
-      ]
-    },
-    {
-      "id": "b2_passives_advanced",
-      "domain": "grammar",
-      "label": "Passives advanced",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_passives_advanced.json",
-      "practice": "grammar",
-      "note": "forms review + get-passive · thin shell 2026-08-05",
-      "related": [
-        "b1_passives"
-      ]
-    },
-    {
-      "id": "b2_causative",
-      "domain": "grammar",
-      "label": "Causative (have/get done)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_causative.json",
-      "practice": "grammar",
-      "note": "have/get something done · first draft 2026-08-06",
-      "related": [
-        "b1_passives",
-        "b2_passives_advanced"
-      ]
-    },
-    {
-      "id": "b2_reported_speech_advanced",
-      "domain": "grammar",
-      "label": "Reported speech advanced",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_reported_speech_advanced.json",
-      "practice": "grammar",
-      "note": "reporting verbs · thin shell 2026-08-05",
-      "related": [
-        "b1_reported_speech"
-      ]
-    },
-    {
-      "id": "b2_relative_clauses_advanced",
-      "domain": "grammar",
-      "label": "Relative clauses advanced",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_relative_clauses_advanced.json",
-      "practice": "grammar",
-      "note": "reduced, of which, whose · thin shell 2026-08-05",
-      "related": [
-        "b1_relative_clauses"
-      ]
-    },
-    {
-      "id": "b2_participle_clauses",
-      "domain": "grammar",
-      "label": "Participle clauses",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_participle_clauses.json",
-      "practice": "grammar",
-      "note": "-ing/-ed clauses · thin shell 2026-08-05",
-      "related": [
-        "b2_relative_clauses_advanced"
-      ]
-    },
-    {
-      "id": "b2_inversion",
-      "domain": "grammar",
-      "label": "Inversion",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-B1B2-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_inversion.json",
-      "practice": "grammar",
-      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-      "related": [
-        "c1_inversion_emphasis"
-      ]
-    },
-    {
-      "id": "b2_cleft_sentences",
-      "domain": "grammar",
-      "label": "Cleft sentences",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-B1B2-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_cleft_sentences.json",
-      "practice": "grammar",
-      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-      "related": [
-        "c1_clefts_fronting"
-      ]
-    },
-    {
-      "id": "b2_modal_perfect",
-      "domain": "grammar",
-      "label": "Modals (meanings + perfect)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_modal_perfect.json",
-      "practice": "grammar",
-      "note": "Mega unit: ability/permission/obligation/advice/possibility/deduction + perfect modals + semi-modals (have to, need to, ought to, be allowed to, make/let) · expand from first draft 2026-08-06",
-      "related": [
-        "b1_modals_speculation",
-        "a2_modals_must_should",
-        "b1_verb_patterns_advanced"
-      ]
-    },
-    {
-      "id": "b2_articles_genericity",
-      "domain": "grammar",
-      "label": "Articles / genericity",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_articles_genericity.json",
-      "practice": "grammar",
-      "note": "generic the/zero/a · thin shell 2026-08-05",
-      "related": [
-        "b1_articles_advanced",
-        "a1_articles"
-      ]
-    },
-    {
-      "id": "b2_quantifiers_advanced",
-      "domain": "grammar",
-      "label": "Quantifiers advanced",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_quantifiers_advanced.json",
-      "practice": "grammar",
-      "note": "few/little, most/none of · thin shell 2026-08-05",
-      "related": [
-        "a2_quantifiers"
-      ]
-    },
-    {
-      "id": "b2_discourse_markers",
-      "domain": "grammar",
-      "label": "Discourse markers B2",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_discourse_markers.json",
-      "practice": "grammar",
-      "note": "however / therefore / moreover… · thin shell 2026-08-05",
-      "related": [
-        "b1_linkers"
-      ]
-    },
-    {
-      "id": "b2_clear_claims",
-      "domain": "grammar",
-      "label": "Clear claims",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_clear_claims.json",
-      "practice": "grammar",
-      "note": "Pilot writing logic — not on B2 path · shaded / not class spine · 2026-08-06",
-      "related": [
-        "b2_discourse_markers",
-        "b1_linkers"
-      ]
-    },
-    {
-      "id": "b2_emphasis_fronting",
-      "domain": "grammar",
-      "label": "Emphasis & fronting",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-B1B2-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_emphasis_fronting.json",
-      "practice": "grammar",
-      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-      "related": [
-        "c1_clefts_fronting",
-        "c1_inversion_emphasis"
-      ]
-    },
-    {
-      "id": "b2_gerunds_infinitives_advanced",
-      "domain": "grammar",
-      "label": "Gerunds & infinitives advanced",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "tree_part": "chunks",
-      "codex_unit": "G_VC-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_gerunds_infinitives_advanced.json",
-      "practice": "grammar",
-      "note": "stop/remember/try meaning splits · thin shell 2026-08-05",
-      "related": [
-        "b1_verb_patterns_advanced",
-        "a2_verb_patterns"
-      ]
-    },
-    {
-      "id": "b2_preposition_ing",
-      "domain": "grammar",
-      "label": "Preposition + -ing",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "tree_part": "links",
-      "codex_unit": "G_PP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_preposition_ing.json",
-      "practice": "grammar",
-      "note": "prep + -ing; adj+prep · thin shell 2026-08-05",
-      "related": [
-        "b1_dependent_prepositions"
-      ]
-    },
-    {
-      "id": "b2_hypothetical_past",
-      "domain": "grammar",
-      "label": "Hypothetical past",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_hypothetical_past.json",
-      "practice": "grammar",
-      "note": "I'd rather / it's time / as if · thin shell 2026-08-05",
-      "related": [
-        "b2_wish_if_only",
-        "b2_second_conditional"
-      ]
-    },
-    {
-      "id": "c1_nominalisation",
-      "domain": "grammar",
-      "label": "Nominalisation",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_nominalisation.json",
-      "practice": "grammar",
-      "note": "verb/adj → noun formal · thin shell 2026-08-05",
-      "related": [
-        "c1_complex_noun_phrases",
-        "c1_register",
-        "c1_advanced_passive"
-      ]
-    },
-    {
-      "id": "c1_advanced_passive",
-      "domain": "grammar",
-      "label": "Advanced passives & reporting passives",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_advanced_passive.json",
-      "practice": "grammar",
-      "note": "Impersonal It is said that… / He is believed to have… · complex passives · get-passive edges · B2 passives+causative foundation · thin shell 2026-08-06",
-      "related": [
-        "b2_passives_advanced",
-        "b2_causative",
-        "c1_reporting_complementation"
-      ]
-    },
-    {
-      "id": "c1_subjunctive",
-      "domain": "grammar",
-      "label": "Subjunctive & formal unreal",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_subjunctive.json",
-      "practice": "grammar",
-      "note": "essential/important that + base · were to · elaborate wish/if only/would rather · thin shell · pairs with B2 wish/hypothetical 2026-08-06",
-      "related": [
-        "b2_wish_if_only",
-        "b2_hypothetical_past",
-        "c1_advanced_modality",
-        "c1_inversion_emphasis"
-      ]
-    },
-    {
-      "id": "c1_complex_noun_phrases",
-      "domain": "grammar",
-      "label": "Complex noun phrases",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_complex_noun_phrases.json",
-      "practice": "grammar",
-      "note": "stacked pre/post-modification · thin shell 2026-08-05",
-      "related": [
-        "c1_nominalisation",
-        "c1_article_nuance"
-      ]
-    },
-    {
-      "id": "c1_hedging_stance",
-      "domain": "grammar",
-      "label": "Hedging & stance",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_hedging_stance.json",
-      "practice": "grammar",
-      "note": "Map-only · content folded into c1_advanced_modality (path) · thin shell kept for repair 2026-08-06",
-      "related": [
-        "c1_advanced_modality",
-        "c1_register"
-      ]
-    },
-    {
-      "id": "c1_inversion_emphasis",
-      "domain": "grammar",
-      "label": "Inversion & inverted conditionals",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_inversion_emphasis.json",
-      "practice": "grammar",
-      "note": "Negative/limiting adverbials (Never have I…, Not only…, Under no circumstances…) · inverted conditionals (Had I known…, Were I to…, Should you…) · so/such · thin shell · path unit 2026-08-06",
-      "related": [
-        "b2_inversion",
-        "c1_clefts_fronting",
-        "c1_subjunctive",
-        "a1_word_order"
-      ]
-    },
-    {
-      "id": "c1_discourse_grammar",
-      "domain": "grammar",
-      "label": "Discourse grammar",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_discourse_grammar.json",
-      "practice": "grammar",
-      "note": "Sophisticated discourse markers · purpose/result/concession/contrast · prep relatives (of which, to whom) edges · thin shell 2026-08-06",
-      "related": [
-        "b2_discourse_markers",
-        "b1_linkers",
-        "b2_relative_clauses_advanced",
-        "c1_ellipsis_substitution"
-      ]
-    },
-    {
-      "id": "c1_register",
-      "domain": "grammar",
-      "label": "Register: formal vs informal",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_register.json",
-      "practice": "grammar",
-      "note": "formal/informal grammar choices · thin shell 2026-08-05"
-    },
-    {
-      "id": "c1_ellipsis_substitution",
-      "domain": "grammar",
-      "label": "Ellipsis & substitution",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_ellipsis_substitution.json",
-      "practice": "grammar",
-      "note": "Systematic so/neither, one/ones, VP ellipsis · advanced cohesion · thin shell 2026-08-06"
-    },
-    {
-      "id": "c1_advanced_modality",
-      "domain": "grammar",
-      "label": "Modality, hedging & stance",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_advanced_modality.json",
-      "practice": "grammar",
-      "note": "Fine modal distinctions + hedging/stance (appear/tend/likely/somewhat) · merged hedging into this path unit 2026-08-06 · B2 modals mega is foundation",
-      "related": [
-        "c1_hedging_stance",
-        "b2_modal_perfect",
-        "c1_subjunctive",
-        "b1_modals_speculation"
-      ]
-    },
-    {
-      "id": "c1_participle_absolute",
-      "domain": "grammar",
-      "label": "Participle & absolute constructions",
-      "kind": "topic",
-      "root": "clause_linking",
-      "tree_part": "links",
-      "codex_unit": "G_CL-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_participle_absolute.json",
-      "practice": "grammar",
-      "note": "Present/past/perfect participle · absolute · condensed adverbial · deepens B2 participle + reduced relatives · thin shell 2026-08-06",
-      "related": [
-        "b2_participle_clauses",
-        "b2_relative_clauses_advanced",
-        "c1_nominalisation"
-      ]
-    },
-    {
-      "id": "c1_comparative_advanced",
-      "domain": "grammar",
-      "label": "Comparative structures advanced",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_comparative_advanced.json",
-      "practice": "grammar",
-      "note": "the more…, far more, as…as · thin shell 2026-08-05",
-      "related": [
-        "a2_comparatives"
-      ]
-    },
-    {
-      "id": "c1_article_nuance",
-      "domain": "grammar",
-      "label": "Article nuance",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "tree_part": "forms",
-      "codex_unit": "G_NP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_article_nuance.json",
-      "practice": "grammar",
-      "note": "institutions, media, roles · thin shell 2026-08-05",
-      "related": [
-        "b2_articles_genericity",
-        "b1_articles_advanced"
-      ]
-    },
-    {
-      "id": "c1_time_aspect_edge",
-      "domain": "grammar",
-      "label": "Future & aspect edge cases",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_time_aspect_edge.json",
-      "practice": "grammar",
-      "note": "Future perfect continuous · finer aspect · future-in-the-past precision · be to · always-ing · thin shell · pairs with narrative mastery 2026-08-06",
-      "related": [
-        "c1_narrative_mastery",
-        "b2_future_forms",
-        "b2_future_in_the_past",
-        "b2_present_perfect_continuous"
-      ]
-    },
-    {
-      "id": "c1_spoken_vs_written",
-      "domain": "grammar",
-      "label": "Spoken grammar vs written",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_spoken_vs_written.json",
-      "practice": "grammar",
-      "note": "heads/tails vs formal markers · thin shell 2026-08-05",
-      "related": [
-        "c1_register"
-      ]
-    },
-    {
-      "id": "c1_error_patterns",
-      "domain": "grammar",
-      "label": "Error patterns at C1",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_error_patterns.json",
-      "practice": "grammar",
-      "note": "fossilisation: articles/preps/tense · thin shell 2026-08-05"
-    },
-    {
-      "id": "b2_future_forms",
-      "domain": "grammar",
-      "label": "Future forms review",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_future_forms.json",
-      "practice": "grammar",
-      "note": "Choice unit: will / going to / PC·PS future / fut cont / fut perfect / time clauses + future-in-the-past · thin shell 2026-08-06",
-      "related": [
-        "a2_will_going_to",
-        "b2_future_in_the_past",
-        "b1_reported_speech"
-      ]
-    },
-    {
-      "id": "b2_be_get_used_to",
-      "domain": "grammar",
-      "label": "Be used to / get used to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-B1B2-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/b2_be_get_used_to.json",
-      "practice": "grammar",
-      "note": "Contrast with used to (past habit) · be/get used to + -ing/noun · thin shell 2026-08-06",
-      "related": [
-        "b1_used_to",
-        "a2_past_simple"
-      ]
-    },
-    {
-      "id": "c1_narrative_mastery",
-      "domain": "grammar",
-      "label": "Narrative tenses mastery",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "tree_part": "verbs",
-      "codex_unit": "G_VP-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_narrative_mastery.json",
-      "practice": "grammar",
-      "note": "Nuanced past combinations · scene/flashback/background · thin shell 2026-08-06 · B2 narrative is foundation",
-      "related": [
-        "b2_narrative_tenses",
-        "b2_past_perfect",
-        "a2_past_continuous",
-        "c1_time_aspect_edge"
-      ]
-    },
-    {
-      "id": "c1_clefts_fronting",
-      "domain": "grammar",
-      "label": "Clefts & fronting",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence",
-      "codex_unit": "G_SS-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_clefts_fronting.json",
-      "practice": "grammar",
-      "note": "It-/wh-/reason/all clefts · fronting · emphatic do · thin shell 2026-08-06",
-      "related": [
-        "b2_cleft_sentences",
-        "b2_emphasis_fronting",
-        "c1_inversion_emphasis",
-        "b1_it_subject"
-      ]
-    },
-    {
-      "id": "c1_reporting_complementation",
-      "domain": "grammar",
-      "label": "Reporting verbs & complementation",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "tree_part": "chunks",
-      "codex_unit": "G_VC-C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "coming",
-      "foundation": false,
-      "content": "grammar/blocks/c1_reporting_complementation.json",
-      "practice": "grammar",
-      "note": "admit/insist/warn/suggest/accuse… patterns · thin shell 2026-08-06",
-      "related": [
-        "b2_reported_speech_advanced",
-        "b1_reported_speech",
-        "b2_gerunds_infinitives_advanced",
-        "c1_subjunctive"
-      ]
-    },
-    {
-      "id": "trunk_recycle_a2",
-      "domain": "vocab",
-      "label": "Core · recycle",
-      "kind": "trunk",
-      "parent": "trunk",
-      "tree_part": "trunk",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_core_frames_recycle.json",
-      "practice": "vocab",
-      "note": "A2 thickening · re-practise A1 frames · denser slots · not grammar"
-    },
-    {
-      "id": "trunk_lexis_a2",
-      "domain": "vocab",
-      "label": "Core · A2 lexis",
-      "kind": "trunk",
-      "parent": "trunk",
-      "tree_part": "trunk",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_core_frames_lexis.json",
-      "practice": "vocab",
-      "note": "A2 high-freq words in simple frames · gap on lemma"
-    },
-    {
-      "id": "trunk_chunks_a2",
-      "domain": "vocab",
-      "label": "Everyday chunks",
-      "kind": "trunk",
-      "parent": "trunk",
-      "tree_part": "trunk",
-      "codex_unit": "V_PHR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_core_frames_chunks.json",
-      "practice": "vocab",
-      "note": "Lexical phrases only · V_PHR · not tense syllabus"
-    },
-    {
-      "id": "leaf_travel_a2",
-      "domain": "vocab",
-      "label": "Travel & holidays",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-03",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_travel.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-03 · 6×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_health_a2",
-      "domain": "vocab",
-      "label": "Health",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-07",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_health.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-07 · 3×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_home_a2",
-      "domain": "vocab",
-      "label": "Home life",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_home.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-01 · 3×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_work_a2",
-      "domain": "vocab",
-      "label": "Work",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-02",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_work.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-02 · 3×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_family_a2",
-      "domain": "vocab",
-      "label": "Family & people",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-04",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_family.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-04 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_food_a2",
-      "domain": "vocab",
-      "label": "Food & drink",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-05",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_food.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-05 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_shopping_a2",
-      "domain": "vocab",
-      "label": "Shopping & money",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-06",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_shopping.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-06 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_routine_a2",
-      "domain": "vocab",
-      "label": "Routine & habits",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-08",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_routine.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-08 · 1×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_freetime_a2",
-      "domain": "vocab",
-      "label": "Free time",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-09",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_freetime.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-09 · 3×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_sports_a2",
-      "domain": "vocab",
-      "label": "Sport",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-09",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_sports.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-09 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_nature_a2",
-      "domain": "vocab",
-      "label": "Nature & weather",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-09",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_nature.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-09 · 1×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_tech_a2",
-      "domain": "vocab",
-      "label": "Tech & media",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_tech.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 3×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_school_a2",
-      "domain": "vocab",
-      "label": "School & learning",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-02",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_school.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-02 · 3×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_clothes_a2",
-      "domain": "vocab",
-      "label": "Clothes",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_clothes.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-01 · 1×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_feelings_a2",
-      "domain": "vocab",
-      "label": "Feelings",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-09",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_feelings.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-09 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_ideas_a2",
-      "domain": "vocab",
-      "label": "A2 word list · abstract",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_ideas.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 8×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_society_a2",
-      "domain": "vocab",
-      "label": "Society",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_society.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_media_a2",
-      "domain": "vocab",
-      "label": "Media & arts",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_THM-A1B1-09",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_media.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_THM-A1B1-09 · 2×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_describing_a2",
-      "domain": "vocab",
-      "label": "A2 word list · adjectives",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_describing.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 23×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_adverbs_a2",
-      "domain": "vocab",
-      "label": "Adverbs",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_adverbs.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 4×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_verbs_a2",
-      "domain": "vocab",
-      "label": "A2 word list · verbs",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_verbs.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 9×12ish · Oxford fill"
-    },
-    {
-      "id": "leaf_misc_a2",
-      "domain": "vocab",
-      "label": "A2 word list · general",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COR-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/a2_misc.json",
-      "practice": "vocab",
-      "note": "Live · A2 · V_COR-A1B1-01 · 5×12ish · Oxford fill"
-    },
-    {
-      "id": "trunk_core_b1",
-      "domain": "vocab",
-      "label": "Core · B1 frames",
-      "kind": "trunk",
-      "parent": "trunk",
-      "tree_part": "trunk",
-      "codex_unit": "V_COR-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/b1_core_frames.json",
-      "practice": "vocab",
-      "note": "Live · V_COR-B1B2-01 · 2×12 frames · gap on lexis · perfect as carrier only"
-    },
-    {
-      "id": "trunk_chunks_b1",
-      "domain": "vocab",
-      "label": "Collocations & chunks",
-      "kind": "trunk",
-      "parent": "trunk",
-      "tree_part": "trunk",
-      "codex_unit": "V_PHR-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/b1_collocations.json",
-      "practice": "vocab",
-      "note": "Live · V_PHR-B1B2-01 · 2×12 frames · make/do/take/have + adj–noun"
-    },
-    {
-      "id": "trunk_abstract_b1",
-      "domain": "vocab",
-      "label": "Abstraction starters",
-      "kind": "trunk",
-      "parent": "trunk",
-      "tree_part": "trunk",
-      "codex_unit": "V_THM-A1B1-10",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "vocab/blocks/b1_abstract.json",
-      "practice": "vocab",
-      "note": "Live · V_THM-A1B1-10 · 2×12 abstract lexis · Sentence = fruit"
-    },
-    {
-      "id": "leaf_work_b1",
-      "domain": "vocab",
-      "label": "Work & routine",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_WRK-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "planned",
-      "practice": "vocab",
-      "note": "Planned · V_WRK-B1B2-01 · grows from THM-02/08"
-    },
-    {
-      "id": "leaf_money_b1",
-      "domain": "vocab",
-      "label": "Money & possessions",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_MON-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "planned",
-      "practice": "vocab",
-      "note": "Planned · V_MON-B1B2-01 · grows from THM-06"
-    },
-    {
-      "id": "leaf_communication_b1",
-      "domain": "vocab",
-      "label": "Communication",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_COM-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "planned",
-      "practice": "vocab",
-      "note": "Planned · V_COM-B1B2-01 · register + cognate hooks later"
-    },
-    {
-      "id": "leaf_knowledge_b1",
-      "domain": "vocab",
-      "label": "Knowledge & travel",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_KNO-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "planned",
-      "practice": "vocab",
-      "note": "Planned · V_KNO-B1B2-01 · grows from THM-03"
-    },
-    {
-      "id": "leaf_self_b1",
-      "domain": "vocab",
-      "label": "Self & body",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_SEL-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "planned",
-      "practice": "vocab",
-      "note": "Planned · V_SEL-B1B2-01 · grows from THM-07 + feelings"
-    },
-    {
-      "id": "leaf_home_b1",
-      "domain": "vocab",
-      "label": "Home & family",
-      "kind": "leaf",
-      "parent": "trunk",
-      "tree_part": "free_time",
-      "codex_unit": "V_HOM-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "planned",
-      "practice": "vocab",
-      "note": "Planned · V_HOM-B1B2-01 · grows from THM-01/04"
-    },
-    {
-      "id": "craft",
-      "domain": "vocab",
-      "label": "Word-craft",
-      "kind": "craft",
-      "tree_part": "free_time",
-      "levels": [
-        "B1",
-        "B2"
-      ],
-      "status": "parked",
-      "practice": "vocab",
-      "note": "Side door later · B1+"
     }
   ],
   "synced_from": {

@@ -14,7 +14,8 @@ function empty() {
   return {
     version: 1,
     authorUnlock: false,
-    unlocked: ["A1"],
+    // Exp merge: all CEFR bands open for browse; practice when unit is live
+    unlocked: ["A1", "A2", "B1", "B2", "C1"],
     grammar: { blocks: {} },
     vocab: { blocks: {} },
     units: {},
@@ -35,7 +36,7 @@ export function loadProgress() {
     if (!d.vocab.blocks) d.vocab.blocks = {};
     if (!d.units) d.units = {};
     if (!d.nodes) d.nodes = {};
-    if (!Array.isArray(d.unlocked)) d.unlocked = ["A1"];
+    if (!Array.isArray(d.unlocked)) d.unlocked = ["A1", "A2", "B1", "B2", "C1"];
     return d;
   } catch {
     return empty();
@@ -54,7 +55,7 @@ export function setAuthorUnlock(on) {
   const p = loadProgress();
   p.authorUnlock = !!on;
   if (on) {
-    for (const lv of ["A1", "A2", "B1", "B2"]) {
+    for (const lv of ["A1", "A2", "B1", "B2", "C1"]) {
       if (!p.unlocked.includes(lv)) p.unlocked.push(lv);
     }
   }
@@ -64,7 +65,21 @@ export function setAuthorUnlock(on) {
 export function isLevelUnlocked(level) {
   const p = loadProgress();
   if (p.authorUnlock) return true;
-  return (p.unlocked || []).includes(level);
+  // Migrate older saves that only had A1 unlocked
+  const unlocked = p.unlocked || ["A1"];
+  const need = ["A1", "A2", "B1", "B2", "C1"];
+  let dirty = false;
+  for (const lv of need) {
+    if (!unlocked.includes(lv)) {
+      unlocked.push(lv);
+      dirty = true;
+    }
+  }
+  if (dirty) {
+    p.unlocked = unlocked;
+    save(p);
+  }
+  return unlocked.includes(level);
 }
 
 // ---- Grammar API (compatible with practice-grammar.js) ----

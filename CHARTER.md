@@ -29,7 +29,8 @@ One local tree: **teach system** (grammar roots) then **use on themes** (vocab c
 | Visual identity | **RUE2 cyan** `#569cd6` (not RUPL copper) · soft teal success · warm muted wrong |
 | Brand bar | **RUE** |
 | Domain colour | Subtle G/V chips only (vocab tint `#4db6c7`) · practice chrome stays one accent |
-| Weekend scope | A1 full zigzag practiceable · A2–C1 visible as coming |
+| Levels | **A1–C1 all open** for browse · practice when `live` |
+| Topics | Per-level paths: A1/A2 zigzag · B1 G+V catalogue · B2/C1 grammar spines (+ sketches) |
 | Deploy target | Public repo `Pernath1200/rue-exp` · Pages this weekend when smokeable |
 | Font | System UI only |
 | Logo | Text-only **RUE** (no image asset) |

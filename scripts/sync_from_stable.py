@@ -1,12 +1,19 @@
 #!/usr/bin/env python3
 """
-Sync EN content into rue-exp and rebuild unified tree from data/spine.json.
+Sync EN content into rue-exp and rebuild unified tree.
 
-Sources (lab):
-  - Grammar: projects/rue-auto/grammar
-  - Vocab:   projects/rue3-exp
+Sources:
+  - Grammar: projects/rue-auto/grammar  (full A1–C1 map)
+  - Vocab:   projects/rue3-exp         (A1–B2 catalogue)
 
-Does not touch rue2-grok-v1.0 student site or progress keys of other apps.
+Builds:
+  - path_order      from spine.json steps (A1 zigzag)
+  - path_order_a2   from spine.json steps_a2 (A2 zigzag) + leftover A2 vocab
+  - path_order_b1   grammar path_order_b1 interleaved with B1 vocab nodes
+  - path_order_b2 / path_order_c1 from lab grammar paths (+ any higher vocab)
+
+All source nodes are included (live / coming / planned / parked).
+levels_locked: [] — A1–C1 selectable; practice only when status==live + content.
 """
 from __future__ import annotations
 
@@ -24,7 +31,6 @@ OUT_V = ROOT / "data" / "vocab" / "blocks"
 OUT_TREE = ROOT / "data" / "tree.json"
 SPINE_PATH = ROOT / "data" / "spine.json"
 
-# Map RUE2 root ids → tree_part seats (portrait)
 GRAMMAR_ROOT_TO_PART = {
     "verb_phrase": "verbs",
     "noun_phrase": "forms",
@@ -35,41 +41,56 @@ GRAMMAR_ROOT_TO_PART = {
     "tap_root": "tap_root",
 }
 
-VOCAB_ID_TO_PART = {
-    "trunk_frames_a1": "trunk",
-    "trunk_prepositions_a1": "trunk",
-    "trunk_adjectives_a1": "trunk",
-    "trunk_can_like_want_a1": "trunk",
-    "trunk_there_time_a1": "trunk",
-    "trunk_verbs_daily_a1": "trunk",
-    "trunk_verbs_say_a1": "trunk",
-    "trunk_verbs_action_a1": "trunk",
-    "trunk_social_a1": "trunk",
-    "trunk_glue_questions_a1": "trunk",
-    "trunk_glue_quantity_a1": "trunk",
-    "trunk_glue_linkers_a1": "trunk",
-    "trunk_glue_modals_a1": "trunk",
-    "trunk_glue_pronouns_a1": "trunk",
-    "trunk_verbs_more_a1": "trunk",
-    "trunk_verbs_more2_a1": "trunk",
-    "trunk_verbs_more3_a1": "trunk",
-    "leaf_home_family": "home_family",
-    "leaf_food_a1": "food_shopping",
-    "leaf_freetime_a1": "free_time",
-    "leaf_places": "travel_city",
-    "leaf_work_a1": "work_routine",
-    "leaf_health_a1": "health_body",
-    "leaf_body_a1": "self_body",
-    "leaf_shopping_a1": "food_shopping",
-    "leaf_school_a1": "knowledge",
-    "leaf_time_a1": "free_time",
-    "leaf_colours_a1": "self_body",
-    "leaf_clothes_a1": "self_body",
-    "leaf_animals_a1": "nature",
-    "leaf_tech_a1": "tech",
-    "leaf_nature_a1": "nature",
-    "leaf_ideas_a1": "knowledge",
-}
+# Fallback house seats when codex/tree_part missing
+def vocab_part(n: dict) -> str:
+    vid = n.get("id") or ""
+    kind = n.get("kind", "leaf")
+    if n.get("tree_part"):
+        return n["tree_part"]
+    if kind in ("trunk", "craft"):
+        return "trunk"
+    # heuristics from id
+    for key, part in (
+        ("home", "home_family"),
+        ("family", "home_family"),
+        ("food", "food_shopping"),
+        ("shop", "food_shopping"),
+        ("money", "money"),
+        ("free", "free_time"),
+        ("sport", "free_time"),
+        ("work", "work_routine"),
+        ("routine", "work_routine"),
+        ("travel", "travel_city"),
+        ("place", "travel_city"),
+        ("health", "health_body"),
+        ("body", "self_body"),
+        ("self", "self_body"),
+        ("cloth", "self_body"),
+        ("colour", "self_body"),
+        ("school", "knowledge"),
+        ("know", "knowledge"),
+        ("idea", "knowledge"),
+        ("tech", "tech"),
+        ("media", "tech"),
+        ("nature", "nature"),
+        ("animal", "nature"),
+        ("feel", "inner_life"),
+        ("society", "public_life"),
+        ("commun", "communication"),
+        ("describ", "self_body"),
+        ("adverb", "trunk"),
+        ("verb", "trunk"),
+        ("misc", "trunk"),
+        ("abstract", "trunk"),
+        ("chunk", "trunk"),
+        ("colloc", "trunk"),
+        ("core", "trunk"),
+        ("lexis", "trunk"),
+        ("recycle", "trunk"),
+    ):
+        if key in vid:
+            return part
+    return "free_time"
 
 
 def load(p: Path):
@@ -77,7 +98,6 @@ def load(p: Path):
 
 
 def side(step: dict, which: str) -> dict:
-    """Prefer grammar/vocab; accept legacy rue2/rue3/RUE2/RUE3 keys."""
     if which == "grammar":
         return (
             step.get("grammar")
@@ -158,15 +178,13 @@ def node_from_grammar(n: dict, partner: str | None) -> dict:
 
 
 def node_from_vocab(n: dict, partner: str | None) -> dict:
-    kind = n.get("kind", "leaf")
     out = {
         "id": n["id"],
         "domain": "vocab",
         "label": n.get("label"),
-        "kind": kind,
+        "kind": n.get("kind", "leaf"),
         "parent": n.get("parent"),
-        "tree_part": VOCAB_ID_TO_PART.get(n["id"])
-        or ("trunk" if kind == "trunk" else "free_time"),
+        "tree_part": vocab_part(n),
         "codex_unit": n.get("codex_unit") or n.get("codex_unit_id"),
         "levels": n.get("levels") or ["A1"],
         "status": n.get("status", "coming"),
@@ -178,109 +196,185 @@ def node_from_vocab(n: dict, partner: str | None) -> dict:
     return {k: v for k, v in out.items() if v is not None and v != []}
 
 
+def dedupe(ids: list[str]) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for i in ids:
+        if not i or i in seen:
+            continue
+        seen.add(i)
+        out.append(i)
+    return out
+
+
+def path_from_steps(steps: list[dict], *, include_non_live: bool = True) -> tuple[list[str], dict[str, str], dict[str, str]]:
+    """Build path ids from spine steps. Returns path, g2v, v2g partners."""
+    path: list[str] = []
+    g2v: dict[str, str] = {}
+    v2g: dict[str, str] = {}
+    for step in steps:
+        gs, vs = side(step, "grammar"), side(step, "vocab")
+        gid, gstat = gs.get("node_id"), gs.get("status")
+        vid, vstat = vs.get("node_id"), vs.get("status")
+        if gid and gstat not in (None, "skip"):
+            if include_non_live or gstat == "live":
+                path.append(gid)
+        if vid and vstat not in (None, "skip"):
+            if include_non_live or vstat == "live":
+                path.append(vid)
+        if (
+            gid
+            and vid
+            and gstat not in (None, "skip")
+            and vstat not in (None, "skip")
+        ):
+            g2v[gid] = vid
+            v2g[vid] = gid
+    return dedupe(path), g2v, v2g
+
+
+def nodes_for_level(nodes: list[dict], level: str) -> list[dict]:
+    return [n for n in nodes if level in (n.get("levels") or [])]
+
+
 def build_tree(spine: dict):
     g_tree = load(GRAMMAR_SRC / "data" / "tree.json")
     v_tree = load(VOCAB_SRC / "data" / "tree.json")
     g_by_id = {n["id"]: n for n in g_tree.get("nodes", [])}
     v_by_id = {n["id"]: n for n in v_tree.get("nodes", [])}
 
-    g2v: dict[str, str] = {}
-    v2g: dict[str, str] = {}
-    path_order: list[str] = []
+    # --- A1 path from spine.steps ---
+    path_a1, g2v, v2g = path_from_steps(spine.get("steps") or [], include_non_live=True)
 
-    for step in spine.get("steps", []):
-        gs = side(step, "grammar")
-        vs = side(step, "vocab")
-        gid, gstat = gs.get("node_id"), gs.get("status")
-        vid, vstat = vs.get("node_id"), vs.get("status")
-        if gid and gstat == "live" and vid and vstat == "live":
-            g2v[gid] = vid
-            v2g[vid] = gid
-        if gid and gstat == "live":
-            path_order.append(gid)
-        if vid and vstat == "live":
-            path_order.append(vid)
+    # --- A2 path from spine.steps_a2 ---
+    path_a2, g2v_a2, v2g_a2 = path_from_steps(
+        spine.get("steps_a2") or [], include_non_live=True
+    )
+    g2v.update(g2v_a2)
+    v2g.update(v2g_a2)
 
-    # Dedupe path
-    deduped: list[str] = []
-    seen_p: set[str] = set()
-    for nid in path_order:
-        if nid in seen_p:
-            continue
-        seen_p.add(nid)
-        deduped.append(nid)
-    path_order = deduped
+    # Append any A2 grammar/vocab not yet on path_a2 (full catalogue)
+    for nid in g_tree.get("path_order_a2") or []:
+        if nid not in path_a2:
+            path_a2.append(nid)
+    a2_v = [
+        n["id"]
+        for n in v_tree.get("nodes", [])
+        if "A2" in (n.get("levels") or [])
+    ]
+    for nid in a2_v:
+        if nid not in path_a2:
+            path_a2.append(nid)
+    path_a2 = dedupe(path_a2)
 
+    # --- B1: grammar path + all B1 vocab (live/planned/parked) ---
+    path_b1 = list(g_tree.get("path_order_b1") or [])
+    b1_v = [
+        n["id"]
+        for n in v_tree.get("nodes", [])
+        if "B1" in (n.get("levels") or [])
+    ]
+    # Interleave lightly: after each 2 grammar units, insert next vocab if any
+    inter: list[str] = []
+    vi = 0
+    for i, gid in enumerate(path_b1):
+        inter.append(gid)
+        if (i + 1) % 2 == 0 and vi < len(b1_v):
+            inter.append(b1_v[vi])
+            vi += 1
+    while vi < len(b1_v):
+        inter.append(b1_v[vi])
+        vi += 1
+    path_b1 = dedupe(inter)
+
+    # --- B2 / C1 grammar spines (+ any B2 vocab) ---
+    path_b2 = list(g_tree.get("path_order_b2") or [])
+    for n in v_tree.get("nodes", []):
+        if "B2" in (n.get("levels") or []) and n["id"] not in path_b2:
+            path_b2.append(n["id"])
+    path_b2 = dedupe(path_b2)
+
+    path_c1 = dedupe(list(g_tree.get("path_order_c1") or []))
+
+    # --- Collect ALL nodes ---
     nodes: list[dict] = []
     seen: set[str] = set()
 
     def add_g(nid: str):
         if nid in seen or nid not in g_by_id:
-            if nid not in g_by_id:
-                print(f"  WARN missing grammar node: {nid}")
+            if nid not in g_by_id and nid:
+                print(f"  WARN missing grammar: {nid}")
             return
         seen.add(nid)
         nodes.append(node_from_grammar(g_by_id[nid], g2v.get(nid)))
 
     def add_v(nid: str):
         if nid in seen or nid not in v_by_id:
-            if nid not in v_by_id:
-                print(f"  WARN missing vocab node: {nid}")
+            if nid not in v_by_id and nid:
+                print(f"  WARN missing vocab: {nid}")
             return
         seen.add(nid)
         nodes.append(node_from_vocab(v_by_id[nid], v2g.get(nid)))
 
-    for nid in path_order:
-        if nid in g_by_id:
-            add_g(nid)
-        elif nid in v_by_id:
-            add_v(nid)
+    for path in (path_a1, path_a2, path_b1, path_b2, path_c1):
+        for nid in path:
+            if nid in g_by_id:
+                add_g(nid)
+            elif nid in v_by_id:
+                add_v(nid)
 
-    # Include remaining live A1 units on map (full list / topics) but not path
+    # Any remaining source nodes (full catalogue — nothing dropped)
     for n in g_tree.get("nodes", []):
-        lv = n.get("levels") or []
-        if n.get("status") == "live" and "A1" in lv and n["id"] not in seen:
+        if n["id"] not in seen:
             add_g(n["id"])
     for n in v_tree.get("nodes", []):
-        lv = n.get("levels") or []
-        if n.get("status") == "live" and "A1" in lv and n["id"] not in seen:
+        if n["id"] not in seen:
             add_v(n["id"])
 
-    # Higher levels: coming shells on map (grammar B2/C1 from lab; vocab if any)
-    for n in g_tree.get("nodes", []):
-        lv = n.get("levels") or []
-        if n["id"] in seen:
+    # Verify packs exist; demote missing content live → coming note
+    for n in nodes:
+        c = n.get("content")
+        if not c:
             continue
-        if any(x in lv for x in ("A2", "B1", "B2", "C1")):
-            gn = node_from_grammar(n, None)
-            # Force coming if not live for weekend honesty
-            if gn.get("status") == "live" and "A1" not in lv:
-                pass  # keep live A2+ if any
-            nodes.append(gn)
-            seen.add(n["id"])
-
-    for n in v_tree.get("nodes", []):
-        lv = n.get("levels") or []
-        if n["id"] in seen:
-            continue
-        if any(x in lv for x in ("A2", "B1", "B2", "C1", "C2")):
-            nodes.append(node_from_vocab(n, None))
-            seen.add(n["id"])
+        disk = ROOT / "data" / c
+        if not disk.is_file() and n.get("status") == "live":
+            print(f"  WARN missing pack file for live {n['id']}: {c}")
 
     all_g = [n["id"] for n in nodes if n.get("domain") == "grammar"]
     all_v = [n["id"] for n in nodes if n.get("domain") == "vocab"]
 
+    def count_level(level: str) -> dict:
+        nn = [n for n in nodes if level in (n.get("levels") or [])]
+        return {
+            "total": len(nn),
+            "grammar": sum(1 for n in nn if n.get("domain") == "grammar"),
+            "vocab": sum(1 for n in nn if n.get("domain") == "vocab"),
+            "live": sum(1 for n in nn if n.get("status") == "live"),
+            "coming": sum(
+                1
+                for n in nn
+                if n.get("status") in ("coming", "planned", "parked")
+            ),
+        }
+
     tree = {
-        "version": 1,
+        "version": 2,
         "app": "rue-exp",
-        "title": "English · RUE-exp",
+        "title": "English · RUE",
         "levels": ["A1", "A2", "B1", "B2", "C1"],
-        "levels_locked": ["A2", "B1", "B2", "C1"],
-        "levels_locked_note": "Weekend draft: A1 path live. Higher levels visible as coming on map.",
+        "levels_locked": [],
+        "levels_locked_note": "All CEFR levels open for browse. Practice when status is live + pack exists.",
         "default_direction": "cz_to_en",
-        "path_order": path_order,
-        "path_order_note": "A1 zigzag from data/spine.json (grammar then vocab per step).",
+        "path_order": path_a1,
+        "path_order_a2": path_a2,
+        "path_order_b1": path_b1,
+        "path_order_b2": path_b2,
+        "path_order_c1": path_c1,
+        "path_order_note": "A1/A2 zigzag spines · B1 G path + all B1 vocab · B2/C1 grammar spines (+ higher vocab). Topics list uses per-level path.",
         "spine": "data/spine.json",
+        "level_stats": {
+            lv: count_level(lv) for lv in ["A1", "A2", "B1", "B2", "C1"]
+        },
         "show_full_canopy_ids": {"grammar": all_g, "vocab": all_v},
         "roots": g_tree.get("roots", []),
         "tap_root": g_tree.get("tap_root")
@@ -295,10 +389,16 @@ def build_tree(spine: dict):
     OUT_TREE.write_text(
         json.dumps(tree, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
-    print(f"tree nodes: {len(nodes)} · path: {len(path_order)}")
-    for p in path_order:
-        dom = "G" if p in g_by_id else "V"
-        print(f"  [{dom}] {p}")
+    print(f"tree nodes: {len(nodes)}")
+    for lv in ["A1", "A2", "B1", "B2", "C1"]:
+        st = count_level(lv)
+        po = tree.get(f"path_order_{lv.lower()}" if lv != "A1" else "path_order")
+        if lv == "A1":
+            po = tree["path_order"]
+        print(
+            f"  {lv}: path {len(po or [])} · nodes {st['total']} "
+            f"(G {st['grammar']} V {st['vocab']} · live {st['live']} sketch {st['coming']})"
+        )
 
 
 def main():

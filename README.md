@@ -8,7 +8,7 @@
 | **Port** | **8097** |
 | **Progress** | `rue-exp-progress` (local only · never rename lightly) |
 | **Sources** | `rue-auto/grammar` · `rue3-exp` via `scripts/sync_from_stable.py` |
-| **Spine** | `data/spine.json` — A1 zigzag teach → use |
+| **Spine** | `data/spine.json` — A1 + A2 zigzag; B1–C1 full catalogue paths |
 | **Charter** | [CHARTER.md](./CHARTER.md) |
 
 Stable siblings stay separate:

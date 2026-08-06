@@ -125,17 +125,32 @@ function showPractice(domain) {
   );
 }
 
+/** Path id list for the active CEFR level (A1 zigzag + A2 zigzag + higher spines). */
+function pathOrderForLevel(level) {
+  const t = STATE.tree || {};
+  const lv = level || STATE.level || "A1";
+  if (lv === "A1") return t.path_order || [];
+  if (lv === "A2") return t.path_order_a2 || [];
+  if (lv === "B1") return t.path_order_b1 || [];
+  if (lv === "B2") return t.path_order_b2 || [];
+  if (lv === "C1") return t.path_order_c1 || [];
+  return t.path_order || [];
+}
+
 /**
- * Next = first unfruited live node in tree.path_order — the single source
- * of truth for sequence. (Spine steps kept only for unit meta; walking them
- * directly showed a step's vocab side before later-path units.)
+ * Next = first unfruited **live** node on this level's path.
+ * Coming/planned stay on Topics but do not block Do next.
  */
 function spineNext() {
-  const order = STATE.tree?.path_order || [];
-  const steps = STATE.spine?.steps || [];
+  const order = pathOrderForLevel(STATE.level);
+  const steps = [
+    ...(STATE.spine?.steps || []),
+    ...(STATE.spine?.steps_a2 || []),
+  ];
   for (const nid of order) {
     const node = nodeById(nid);
-    if (!node || node.status !== "live" || !node.content) continue;
+    if (!node || !node.levels?.includes(STATE.level)) continue;
+    if (node.status !== "live" || !node.content) continue;
     if (isFruit(node)) continue;
     const step =
       steps.find((s) => {
@@ -179,35 +194,25 @@ function focusNodeOnMap(node) {
 
 function renderRail() {
   const rail = document.getElementById("level-rail");
-  const levels = STATE.tree?.levels || ["A1", "A2", "B1", "B2"];
+  const levels = STATE.tree?.levels || ["A1", "A2", "B1", "B2", "C1"];
   rail.innerHTML = "";
   for (const lv of levels) {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "level-btn";
-    const locked = !isLevelUnlocked(lv);
-    if (locked) {
-      // Preview: a locked level can be browsed — unit list and detail
-      // cards render; practice stays closed (planned nodes have no content).
-      btn.classList.add("is-preview");
-      btn.setAttribute("aria-pressed", lv === STATE.level ? "true" : "false");
-      btn.innerHTML = `${lv}<span class="tag">preview</span>`;
-      btn.addEventListener("click", () => {
-        STATE.level = lv;
-        renderAll();
-        STATE.setMapMore?.(true);
-        document
-          .getElementById("path-card")
-          ?.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    } else {
-      btn.setAttribute("aria-pressed", lv === STATE.level ? "true" : "false");
-      btn.textContent = lv;
-      btn.addEventListener("click", () => {
-        STATE.level = lv;
-        renderAll();
-      });
-    }
+    // rue-exp: all levels unlocked for browse; live units practiceable
+    void isLevelUnlocked(lv);
+    btn.setAttribute("aria-pressed", lv === STATE.level ? "true" : "false");
+    btn.textContent = lv;
+    btn.addEventListener("click", () => {
+      STATE.level = lv;
+      STATE.selectedId = null;
+      renderAll();
+      STATE.setMapMore?.(true);
+      document
+        .getElementById("path-card")
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
     rail.appendChild(btn);
   }
 }
@@ -465,7 +470,7 @@ function rootChip(name, fill) {
 function renderPath() {
   const list = document.getElementById("path-list");
   list.innerHTML = "";
-  const order = STATE.tree?.path_order || [];
+  const order = pathOrderForLevel(STATE.level);
   let n = 0;
   for (const id of order) {
     const node = nodeById(id);
@@ -475,15 +480,20 @@ function renderPath() {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "path-item";
+    if (node.status !== "live") btn.classList.add("is-coming");
     btn.setAttribute(
       "aria-pressed",
       STATE.selectedId === node.id ? "true" : "false",
     );
     const st = progressState(node);
-    const label = progressLabel(node);
+    let label = progressLabel(node);
+    if (node.status === "coming") label = "coming";
+    else if (node.status === "planned") label = "planned";
+    else if (node.status === "parked") label = "parked";
     let statusCls = "status";
     if (st === "fruit") statusCls += " is-fruit";
-    else if (st === "planned") statusCls += " is-planned";
+    else if (node.status !== "live" || st === "planned")
+      statusCls += " is-planned";
     else statusCls += " is-live";
     const dtag =
       node.domain === "grammar"
@@ -494,8 +504,7 @@ function renderPath() {
       <span class="n">${n}</span>
       <span class="meta">
         <span class="title">${dtag} ${escapeHtml(node.label)}</span>
-        ${isAuthorUnlock() && node.unit_id ? `<span class="note">${escapeHtml(node.unit_id)}</span>` : ""}
-        ${isAuthorUnlock() && node.note ? `<span class="note">${escapeHtml(node.note)}</span>` : ""}
+        ${node.note ? `<span class="note">${escapeHtml(node.note)}</span>` : ""}
       </span>
       <span class="${statusCls}">${escapeHtml(label)}</span>
     `;
@@ -504,6 +513,9 @@ function renderPath() {
     });
     li.appendChild(btn);
     list.appendChild(li);
+  }
+  if (!n) {
+    list.innerHTML = `<li class="path-empty sub">No units on this level yet.</li>`;
   }
 }
 
@@ -520,23 +532,24 @@ function renderDetail() {
     `<span class="pill live">${node.domain === "grammar" ? "grammar" : "vocab"}</span>`,
   );
   if (node.status === "live") pills.push('<span class="pill live">live</span>');
+  else if (node.status === "coming")
+    pills.push('<span class="pill">coming</span>');
+  else if (node.status === "parked")
+    pills.push('<span class="pill">parked</span>');
   else pills.push('<span class="pill">planned</span>');
   if (st === "fruit") pills.push('<span class="pill fruit">done</span>');
-  if (node.unit_id) {
-    const partner = node.partner_id ? nodeById(node.partner_id) : null;
-    if (partner && isFruit(node) && isFruit(partner)) {
-      pills.push('<span class="pill fruit">done ✓</span>');
-    }
-  }
+  pills.push(
+    `<span class="pill">${escapeHtml((node.levels || []).join(" · ") || "?")}</span>`,
+  );
 
   const partner = node.partner_id ? nodeById(node.partner_id) : null;
 
   box.innerHTML = `
     <div>${pills.join("")}</div>
     <p class="practice-prompt" style="margin-top:0.5rem">${escapeHtml(node.label)}</p>
-    ${isAuthorUnlock() && node.note ? `<p class="tree-legend">${escapeHtml(node.note)}</p>` : ""}
+    ${node.note ? `<p class="tree-legend">${escapeHtml(node.note)}</p>` : ""}
     ${
-      isAuthorUnlock() && partner
+      partner
         ? `<p class="tree-legend">Pair: <button type="button" class="today-link" id="btn-detail-partner">${escapeHtml(partner.label)}</button>
            ${isFruit(partner) ? " · done" : " · not done"}</p>`
         : ""
@@ -560,7 +573,11 @@ function renderDetail() {
     wait.className = "btn";
     wait.disabled = true;
     wait.textContent =
-      node.status === "planned" ? "Content coming / off path" : "No content";
+      node.status === "coming" || node.status === "planned"
+        ? "Coming — sketch only (no practice yet)"
+        : node.status === "parked"
+          ? "Parked"
+          : "No content";
     actions.appendChild(wait);
   }
 }
