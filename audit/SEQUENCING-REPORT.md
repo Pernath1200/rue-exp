@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**654 unknown word types** across 71 live units (of 113).
+**648 unknown word types** across 71 live units (of 114).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -67,11 +67,11 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b1_relative_clauses** (B1 grammar): know×2, email, enough, asked, practise, love, berlin, won, think, treated, pardubice, wi, fi, designed, ask, nearby, discussed, languages, rules, hired, story, laugh, path, river, muddy, spain, answer, gave, person, grew, born, stayed, remember, summer
 - **b1_reported_speech** (B1 grammar): asked×12, know, stay, cancelled, think, forget, patrik, ond, ej
 - **b1_indirect_questions** (B1 grammar): tell×5, know×2, whether, wonder
-- **b1_linkers** (B1 grammar): stayed×4, rain×2, raining, slept, test, whispered, wake, plan, cancelled, snow, careless, hurried, missed, remember, tyre, ate, apologised, prepared, felt, everyone, ads
+- **b1_linkers** (B1 grammar): stayed×4, rain×2, raining, slept, test, whispered, wake, plan, snow, careless, hurried, missed, remember, tyre, ate, apologised, prepared, felt, everyone, ads
 - **b1_verb_patterns_advanced** (B1 grammar): remember×4, asked×2, forgot×2, email, hope, moment, enjoys, taught, advised, warned, noon, kept
-- **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, form×2, ran×2, turned×2, word×2, volume×2, fire×2, gave, nephew, tv, until, motorway, let's, package, brought, emails, fell, moment, cancelled, firefighters, extinguished, homework, answer
+- **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, form×2, ran×2, turned×2, word×2, volume×2, fire×2, gave, nephew, tv, until, motorway, let's, package, brought, emails, fell, moment, firefighters, extinguished, homework, answer
 - **b1_dependent_prepositions** (B1 grammar): test, apologise, insisted, keen, villas, health, remembering, fond, aware, capable, rely, believes, consists, think, future, suffers, headaches, sun, rain, accused, lying, approve, plan, concentrate, spends, congratulated, specialises, tax, apologised
-- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, since×2, answer, dust, words, quiz, halfway, b, turn, charger, episode, email, inbox, tasks, ticked, keep, waking, begin, exam, exhausted, mess
+- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, since×2, answer, dust, words, quiz, halfway, b, turn, charger, episode, email, inbox, ticked, keep, waking, begin, exam, exhausted, mess
 - **b2_past_perfect** (B2 grammar): couldn't, knew, recognise, exam, thieves, showed, summer, lesson
-- **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, hire, budget, happen, cancelled, place, share, everyone, know, truth, commute, pizza, plan
+- **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, budget, happen, place, share, everyone, know, truth, pizza, plan
 - **b2_third_conditional** (B2 grammar): weather×2, heard×2, practised, exam, enjoyed, invested, crashed, truth, warning, woken, sunrise, realised, pizza, followed, wi, fi, invoice, remembered, prepared, email, understood, missed, worn, dawn, charged, battery
