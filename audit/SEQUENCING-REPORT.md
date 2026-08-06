@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**724 unknown word types** across 71 live units (of 113).
+**697 unknown word types** across 71 live units (of 113).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -50,7 +50,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a2_countable** (A2 grammar): gave, pair, pizza
 - **a2_quantifiers** (A2 grammar): know×2, questions, tv, words, summer, spends, online, ideas, languages, snow, seats, invited, failed, test, effort, disagreed, noise, patience, tell, else
 - **a2_adverbs_order** (A2 grammar): know×2, drive, drives, forget, answer, missed, won, answered
-- **a2_first_conditional** (A2 grammar): answer×2, hurry×2, pass×2, miss×2, ask×2, stay, catch, without, rain, see, tell, i'm, plants, join, save, email, weather, cry, mix, happen, snows, accept, storms, c, ends, steal, run, say
+- **a2_first_conditional** (A2 grammar): rain
 - **a2_verb_patterns** (A2 grammar): enjoy×3, stay×3, plan×3, hopes×3, enjoys×2, hate×2, loves×2, rest×2, decided×2, medicine, decide, hope, win, podcasts, practise, move, join, learn, agreed
 - **a2_prepositions_movement** (A2 grammar): ball×3, drove×2, ran×2, river×2, hill×2, threw×2, lake×2, path×2, box, cat, climbed, dog, fence, swam, rolled, without, boxes, flew, spain, summer, moved
 - **trunk_recycle_a2** (A2 vocab): nearby
