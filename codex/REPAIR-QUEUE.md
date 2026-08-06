@@ -32,6 +32,18 @@ a note.
 
 ---
 
+- [ ] **Vocab level badge is hardcoded `A1`** (found 2026-08-06, cloud run 2).
+  `js/practice-vocab.js` lines 628–631 build the deck header meta as a literal
+  `"… · A1"` / `"… frames · A1 · trunk"`. Every one of the 41 live vocab nodes
+  therefore announces itself as A1 — verified in Chromium on :8097 against
+  `leaf_work_b1`, `leaf_money_b1`, `leaf_communication_b1` (all show
+  "36 words · A1") and against the pre-existing `leaf_work_a2`
+  ("33 words · A1"). Pre-existing, not a regression from this run.
+  Fix is one line: pass the node's level through `opts` in `openNode`
+  (`js/app.js` ~line 615 already has `node.levels[0]`) and interpolate it
+  instead of the literal. **Engine code — cloud lane must not ship this.**
+  Cosmetic only; nothing is mis-taught.
+
 - [ ] `zero_article` items (a1_articles, 8 items): verify the grammar engine's
   type mode handles an EMPTY gap_answer sanely (typing nothing = correct?).
   If it doesn't, propose the minimal engine-side fix in the digest — do NOT

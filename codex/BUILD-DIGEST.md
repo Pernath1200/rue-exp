@@ -6,6 +6,159 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-06 · cloud run 2 (RUE build, claude-opus-5)
+
+### Headline: B1 vocab is 6 → 3 sketches from done, and it actually works
+
+All three units built this run are **vocab**, and vocab is the half of the
+course the P0 does not touch. Drove all three in Chromium against the app on
+:8097: each renders a real 12-pair Match board, CZ prompt → EN answer, deck
+12/36, four graded stages. Compared side by side with the live `leaf_work_a2`
+board — identical behaviour. These are units a student can use today.
+
+That is deliberate. Every remaining B1 sketch is a vocab leaf, so finishing
+B1 in path order also happens to be the fastest route to material that is not
+blocked behind the grammar engine.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `b6f21e8` | `a1_articles` re-lexified onto pool-legal lexis (26 → 1) |
+| 2 | `de36617` | `a2_modals_must_should` re-lexified, 16/48 items (23 → 5) |
+| 3 | `45f7a22` | **`leaf_work_b1`** built + flipped live — 3×12 = 36 items |
+| 4 | `525f11e` | **`leaf_money_b1`** built + flipped live — 3×12 = 36 items |
+| 5 | `802336e` | **`leaf_communication_b1`** built + flipped live — 3×12 = 36 items |
+
+**B1: 16 → 19 of 23 live.** Remaining sketches: `leaf_knowledge_b1`,
+`leaf_self_b1`, `leaf_home_b1` (+ `craft`, parked).
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 154 packs · 0 errors · 31 warnings | **157 packs · 0 errors · 31 warnings** |
+| `audit` | 697 unknown types (= baseline) | **637** · baseline auto-tightened 697 → 637 |
+
+Net **−60** unknown types. Both gates green before every commit; commits are
+per unit, not batched. `scripts/smoke.py` passes.
+
+### Repair queue — 3 open items reviewed, 0 newly ticked
+
+All three unticked items are blocked on a decision that is James's to make,
+not work the cloud lane is allowed to do:
+
+- **P0 (grammar engine not wired to grammar packs)** — engine code, proposal
+  already written in run 1's entry. Still unshipped, still blocking.
+- **`zero_article`** — blocked on the P0 by construction.
+- **`b2_clear_claims` style** — conservative path already taken in run 1; the
+  style call is James's.
+
+Rather than manufacture a tick, the run spent its budget on sequencing and
+build. **One new item filed** (see below).
+
+### Sequencing repair — 2 units, the two worst on the report
+
+**`a1_articles` (A1 grammar): 26 → 1 unknown type.** Whole 32-item bank and
+all 6 intro cards re-authored. Every teaching point kept and still drilled:
+a/an first mention · a/an + job · an + vowel sound · silent-h *an hour* ·
+a + /j/ *a university* · a → the second mention · only-one → the · zero
+article for plurals · zero article for uncountables.
+
+**`a2_modals_must_should` (A2 grammar): 23 → 5.** 16 of 48 items re-lexified.
+Every item keeps its modal and its teaching point. Replaced words that are
+genuinely untaught at that position: seatbelt, smoke, touch, remember, show,
+keep, apologise, save, shout, skip, bring, anything, recycle, believe,
+online, light, spelling, outside.
+
+**Caveat worth stating plainly:** both of these are grammar packs, so a
+student cannot currently practise either of them at all — the P0 means they
+render intro cards and jump straight to "Done · 100 %". This work improves
+packs that are, today, unreachable. It is still the right work (it is what
+the routine is told to do, and it is what the packs will need the moment the
+adapter lands) — but it buys nothing for students until the P0 is fixed.
+
+### New unit shape — the conservative call
+
+The three B1 leaves are authored in the **leaf house style** (`en` / `cz` /
+`use[]` word banks, 3 blocks of 12), matching all 38 live leaves at A1 and A2
+— *not* the `practice: "frames"` full-sentence style the three B1 *trunks*
+use. Rationale: `kind` drives shape in this repo (trunks teach lexis in
+frames, leaves are thematic banks), and the vocab engine merges a multi-block
+pack into one deck either way. If you want B1 leaves to carry a `sentences[]`
+Use bank on top, say so and it is additive — no rewrite needed.
+
+Every word in all three packs was checked against `make_pool.py` output at
+its own position: **zero already-taught words, zero duplicate `en`, zero
+duplicate `cz`, zero overlap between the three new leaves.**
+
+### Forks for James
+
+1. **`hour` is the only out-of-pool word left in `a1_articles`.** Silent-h is
+   a listed teaching point on the "a or an?" card and *hour* is the only
+   silent-h word in reach — there is no pool-legal substitute. Kept
+   deliberately, rebuilt as "We have an hour." (the old frame needed *wait*
+   too, also untaught). Conservative alternative if you dislike it: drop the
+   silent-h point until a unit teaches *hour*. I did not, because that would
+   be deleting a teaching point to please the gate.
+
+2. **No vowel-initial job noun exists in the pool at `a1_articles`.**
+   *engineer*, *artist* and *nurse* are all taught later (`leaf_work_a1`).
+   So the six job items became four (teacher, doctor, student, policeman) and
+   "an + job" is now taught by composition — the a/an sound rule and the job
+   rule are each drilled separately. Real fix is curricular: move a couple of
+   vowel-initial jobs earlier, then this item comes back for free.
+
+3. **The sun and the moon are gone from `a1_articles`.** Both were
+   out-of-pool. The "only one → the" teaching point is kept in full, moved
+   from world-unique to situation-unique ("There is only one bathroom here.
+   The bathroom is upstairs." / "…only one station in this village."). Honest
+   note: the world-unique flavour is now absent from the pack entirely,
+   including the intro card. If you want *the sun* back as the canonical
+   example, the clean fix is teaching sun/moon in an early nature leaf.
+
+4. **5 of the `a2_modals_must_should` "violations" are audit stemmer
+   artifacts, and I left them in on purpose.** They are *say*, *see*,
+   *drive*, *worry*, *forget* — and *said*, *saw*/*seen*, *driver*/*driving*,
+   *worried* and *forgotten* are all already taught. `audit.py` stems only
+   the **exposed token**, never the **taught set**, so it can never walk
+   backwards from a taught inflected form to an untaught base. Rewriting
+   "You should see a doctor." or "What should I say?" to dodge that would
+   make the course worse to make a number smaller. Proposed fix (not shipped
+   — changing a gate to lower its own score is exactly the wrong incentive,
+   so this needs your say-so): give `audit.py` a small irregular table
+   (said→say, saw/seen→see, forgotten→forget, …) and reverse-derive bases
+   when adding to the pool (driving/driver→drive, worried→worry), instead of
+   only forward-stemming what it reads.
+
+5. **`email` is exposed all over A2 grammar but never *taught* by anything.**
+   `targets_of` only counts vocab `en` and `gap_answer`, and no vocab unit
+   has ever listed it. It is a genuine hole in the registry, not a stemmer
+   quirk. It does not belong in a B1 communication leaf — it belongs in
+   `leaf_tech_a1` / `leaf_tech_a2`. Left alone; flagging it.
+
+### New repair-queue item
+
+**Vocab level badge is hardcoded `A1`.** `js/practice-vocab.js` 628–631
+interpolates the literal string `A1` into the deck header, so all 41 live
+vocab nodes announce themselves as A1. Verified in Chromium: the three new B1
+leaves show "36 words · A1", and the pre-existing `leaf_work_a2` shows
+"33 words · A1" — so this is not a regression from this run. One-line fix
+(`node.levels[0]` is already to hand in `openNode`). Engine code, so filed
+rather than shipped. Cosmetic — nothing is mis-taught.
+
+### Smoke-check list for James
+
+- The three new B1 leaves in the app — Match, Quiz, Type, Use. I verified
+  Match renders and is interactive; I did not play all four stages to the end.
+- `a1_articles` Czech: I normalised the parenthetical hints in the `cz` field
+  to Czech (they were a mix of Czech and English). Worth a skim.
+- `a2_modals_must_should` items 2, 4, 6, 24, 25, 27, 30, 32, 34, 35, 37, 42,
+  43, 44, 45, 47 — the 16 re-lexified ones.
+- The "A1" badge on any vocab unit, to confirm the diagnosis above.
+
+---
+
 ## 2026-08-06 · cloud run 1 (RUE build, claude-opus-5)
 
 ### Headline: grammar practice has never been wired to the grammar packs
