@@ -6,6 +6,111 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-06 · cloud run 6 (RUE build, claude-opus-5)
+
+### Headline: B2 is over half live, and the ratchet now bites — every new unit had to be authored 100 % pool-clean
+
+B2 went from **10/24 to 13/24 live** — `b2_modal_perfect`,
+`b2_passives_advanced` and `b2_causative`, the next three sketches in
+`path_order_b2`. Before them, the two worst-sequenced A2 units on the report
+were repaired to **zero** and dropped off it.
+
+The two repairs tightened the baseline **531 → 503** *before* the builds
+started, which changed the job: with no slack left, all three new units had to
+contribute **zero** unknown types or the ratchet would have failed. They do.
+Every `en`, every `accepts` string and every quiz distractor was checked
+against `make_pool --before <node>` before the pack was written, and the audit
+total is unchanged at **503** with three more live units in it.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `da951c5` | `a2_will_going_to` re-lexified, 16/48 items (15 types → 0, off the report) |
+| 2 | `3dceb13` | `a2_present_continuous` re-lexified, 14/54 items (13 types → 0, off the report) |
+| 3 | `f5692a1` | **`b2_modal_perfect`** built + flipped live — 30 → **60** items |
+| 4 | `98e8d51` | **`b2_passives_advanced`** built + flipped live — 10 → 48 items |
+| 5 | `5452687` | **`b2_causative`** built + flipped live — 30 → 48 items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 531 unknown types · 68 units | **503** · 66 units · baseline tightened 531 → 503 |
+
+Net **−28** unknown types while adding **156 new items** across three units.
+Both gates green before every commit; commits and pushes are per unit.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Same conclusion as runs 1–5, and again nothing was manufactured to produce a
+tick. The P0 (grammar practice never reads `blocks[].items`, so all live
+grammar nodes ask zero questions) and the hardcoded `A1` vocab badge are both
+**engine code this lane must not ship**. `zero_article` stays blocked on the
+P0 decision, and `b2_clear_claims` is a style call that is James's.
+
+This run added **three more grammar units** to the population sitting behind
+that dead stage. B2 grammar is now **thirteen** units deep behind a Check →
+Type → Use sequence that never runs. Six runs old.
+
+### Judgment calls and forks for James
+
+**1. `b2_modal_perfect` is 60 items, not the house 48 — deliberate, and the one
+call worth overruling if you disagree.** The node registry calls it a "Mega
+unit" and lists eight sub-topics (ability, permission, obligation, advice,
+possibility, deduction, perfect modals, semi-modals). Packing eight into 48
+items would give roughly six items per point — thinner than any live B2 pack.
+I read the house invariant as **12 items per strand** rather than 48 per pack
+(the live B2 units are 4 × 12 because they each have four patterns), so this
+one is 5 × 12: obligation, permission/ability, advice, deduction-now, and the
+modal perfect. The conservative alternative was 48 with the perfect modals
+squeezed to 12; say the word and it drops to four strands.
+
+**2. Weather verbs are exposed at A2 but taught nowhere — this is a real gap in
+the vocab spine, not an audit artefact.** Repairing the two A2 units meant
+deleting *It is raining*, *Is it snowing?* and *It will rain later*, because no
+unit anywhere teaches `rain` or `snow` as targets (`rains` is taught inside
+`a1_agreement`, which does not license the base form). A2 grammar currently
+cannot talk about the weather at all. Conservative path taken: the sentences
+were re-lexified onto taught vocabulary rather than kept as violations. The fix
+belongs in a vocab node, not in grammar — suggest adding rain / snow / sun /
+cloud to an A2 vocab unit, after which these examples can come back.
+
+**3. Two packs carried explanations belonging to a different unit.** Content
+bugs, not sequencing ones, both fixed in passing:
+`a2_will_going_to` item 43 explained the **passive voice** inside a
+future-forms pack, and all six stative-slice items in `a2_present_continuous`
+(48–53) carried the pack's generic "am/is/are + -ing" line — which directly
+contradicts the simple-form answer those items teach. The stative items now
+state the actual rule.
+
+**4. `codex/audit.py` prints a misleading line when run without `--check`.**
+When the total *exceeds* the baseline it still prints `ratchet ok: 527 <=
+baseline 503`. The `--check` path fails correctly, so the gate itself is sound
+— but a future run that eyeballs the bare `audit.py` output could conclude it
+passed when it did not. I hit this exact case mid-run. Not touched: changing a
+gate script is your call, not this lane's. One-line fix in the `else` branch.
+
+**5. Dropped from the drafts, deliberately.** `b2_modal_perfect`'s
+"I can't have left my keys there" (its Czech glossed a past deduction as
+present ability) and `b2_causative`'s "Do not have your luggage left
+unattended" (not a natural causative). Neither was replaced by a weaker item —
+both strands were rebuilt from scratch around the teaching point.
+
+### Smoke-check list
+
+- **`b2_modal_perfect`** — the 60-item length is the fork above; also worth
+  checking that five strands read as one unit rather than two.
+- **`b2_causative` `person` strand** — *have + person + base form* vs *get +
+  person + to + infinitive* is the part the draft did not have at all.
+- **`a2_present_continuous` items 48–53** — the stative explanations changed;
+  the answers did not.
+- **`a2_will_going_to`** — 16 of 48 items have new sentences. Gap targets and
+  teaching points are unchanged, but the lexis is all new.
+
+---
+
 ## 2026-08-06 · cloud run 5 (RUE build, claude-opus-5)
 
 ### Headline: three more B2 units live, and every gap frame in the repo now rebuilds its own sentence
