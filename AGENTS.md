@@ -56,6 +56,10 @@ session is the **orchestrator**, background agents do the work.
 - **Digest:** orchestrator writes `NIGHT-DIGEST.md` (repo root) before dawn:
   what was built, what passed which gates, open forks as dropdown-ready
   questions. James reads it in the morning; nothing merges without him.
+- **Notify:** orchestrator sends a push notification (PushNotification tool)
+  when a batch of units lands and when the digest is ready — one line, counts
+  not adjectives (e.g. "night: 6 B1 vocab packs landed, 5 pass audit").
+  Batch-level only, never per-file noise.
 - **Design forks:** agent takes the conservative path, still builds the unit,
   logs the fork in the digest.
 - **Verify regardless of self-report.** ~1/3 of fluent "all clean" RUPL agent
