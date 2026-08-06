@@ -5,142 +5,1192 @@
   "tree_node": "b2_hypothetical_past",
   "codex_unit": "G_CL-B1B2-01",
   "practice": "frames",
-  "note": "I'd rather you… / it's time… / as if… · thin shell night/2026-08-05",
+  "note": "would rather + subject + past · it is (high) time + past · as if / as though · suppose / supposing / what if · 4 strands x 12 · 48 items · built to live 2026-08-06 (cloud run 5)",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
       "quiz"
     ]
   },
-  "quality": "thin_shell",
+  "quality": "good_draft",
+  "intro": {
+    "cards": [
+      {
+        "title": "A past tense that is not about the past",
+        "title_cz": "Minulý čas, který není o minulosti",
+        "body": "Four everyday structures put the verb into the **past simple** while talking about **now** or the **future**. The past tense marks the situation as unreal or unwelcome, not as earlier in time. Step back one further — to the **past perfect** — and you are talking about the real past.",
+        "body_cz": "Čtyři běžné vazby dávají sloveso do **minulého prostého**, i když mluví o **přítomnosti** nebo **budoucnosti**. Minulý čas tu značí nereálnost nebo nelibost, ne dřívější dobu. Když ustoupíte ještě o krok — do **předminulého času** — mluvíte o skutečné minulosti.",
+        "table": {
+          "caption": "The four patterns",
+          "headers": [
+            "Pattern",
+            "Means",
+            "Example"
+          ],
+          "rows": [
+            [
+              "would rather + somebody + past",
+              "what you want them to do",
+              "I would rather you did not park here."
+            ],
+            [
+              "it is time + past",
+              "it should have happened already",
+              "It is time we left."
+            ],
+            [
+              "as if / as though + past",
+              "it is not actually true",
+              "He acts as if he were the boss."
+            ],
+            [
+              "suppose / what if + past",
+              "imagine it",
+              "Suppose we missed the train?"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "would rather: one subject or two",
+        "title_cz": "would rather: jeden podmět, nebo dva",
+        "body": "With **one** subject it is simply **would rather + base form**. Add a **second** subject and the verb must go into the past simple — this is the half learners forget.",
+        "body_cz": "S **jedním** podmětem je to prostě **would rather + základní tvar**. Přidejte **druhý** podmět a sloveso musí do minulého prostého — právě na tuhle půlku se zapomíná.",
+        "points": [
+          "I would rather stay at home. (my own preference — base form)",
+          "I would rather you stayed at home. (about you — past simple)",
+          "I would rather you had not told him. (past perfect — regret about what you did)"
+        ]
+      },
+      {
+        "title": "it is time = a mild complaint",
+        "title_cz": "it is time = mírná výtka",
+        "body": "**it is time + past simple** says the thing is overdue and somebody is at fault. **it is high time** says the same with more impatience. Compare the neutral **it is time to + base form**, which blames nobody.",
+        "body_cz": "**it is time + minulý prostý** říká, že se to mělo stát už dávno a někdo za to může. **it is high time** je totéž, jen netrpělivěji. Srovnejte s neutrálním **it is time to + základní tvar**, které nikoho neobviňuje.",
+        "table": {
+          "caption": "Blame or no blame",
+          "headers": [
+            "Sentence",
+            "Reading"
+          ],
+          "rows": [
+            [
+              "It is time to go home.",
+              "neutral — simply the right moment"
+            ],
+            [
+              "It is time we went home.",
+              "we should already have gone"
+            ],
+            [
+              "It is high time he found a job.",
+              "impatient — he still has not"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "as if: unreal or possible",
+        "title_cz": "as if: nereálné, nebo možné",
+        "body": "**as if** and **as though** are interchangeable. Use the **past** when the comparison is untrue, the **past perfect** when it was untrue earlier — but keep a **normal present tense** when the thing might genuinely be so.",
+        "body_cz": "**as if** a **as though** jsou zaměnitelné. Použijte **minulý čas**, když srovnání není pravdivé, **předminulý**, když nebylo pravdivé dřív — ale nechte **běžný přítomný čas**, když to klidně může být pravda.",
+        "points": [
+          "He acts as if he were the boss. (he is not)",
+          "She looked as though she had seen an accident. (she had not)",
+          "It looks as if it is going to rain. (it really might — present tense)"
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "caption": "Avoid / Say",
+          "headers": [
+            "Avoid",
+            "Say",
+            "Why"
+          ],
+          "rows": [
+            [
+              "I would rather you don't park here.",
+              "I would rather you **did not** park here.",
+              "second subject takes the past"
+            ],
+            [
+              "It is time we go home.",
+              "It is time we **went** home.",
+              "it is time + past"
+            ],
+            [
+              "It is time that you started.",
+              "It is time you **started**.",
+              "no that"
+            ],
+            [
+              "He acts as if he is the boss.",
+              "He acts as if he **were** the boss.",
+              "untrue comparison takes the past"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
       "id": "b2_hypothetical_past_main",
       "title": "Hypothetical past · B2",
       "items": [
         {
-          "en": "I'd rather you didn't smoke here.",
-          "cz": "Byl bych radši, kdybys tu nekouřil.",
-          "gap": "I'd rather you ____ smoke here.",
-          "gap_answer": "didn't",
-          "accepts": [
-            "I'd rather you didn't smoke here."
+          "en": "I would rather you did not park here.",
+          "cz": "Byl bych radši, kdybys tu neparkoval.",
+          "gap": "I would rather you ____ not park here.",
+          "gap_answer": "did",
+          "gap_accepts": [
+            "did"
           ],
-          "explanation": "would rather + past for present preference about others.",
-          "explanation_cz": "would rather + past o druhých."
+          "accepts": [
+            "I would rather you did not park here.",
+            "I'd rather you didn't park here.",
+            "I'd rather you did not park here."
+          ],
+          "quiz_options": [
+            "did",
+            "do",
+            "had",
+            "would"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
         },
         {
-          "en": "It's time we left.",
-          "cz": "Je čas, abychom odešli.",
-          "gap": "It's time we ____.",
-          "gap_answer": "left",
+          "en": "I would rather she stayed at home tonight.",
+          "cz": "Byl bych radši, kdyby dnes večer zůstala doma.",
+          "gap": "I would rather she ____ at home tonight.",
+          "gap_answer": "stayed",
+          "gap_accepts": [
+            "stayed"
+          ],
           "accepts": [
+            "I would rather she stayed at home tonight.",
+            "I'd rather she stayed at home tonight."
+          ],
+          "quiz_options": [
+            "stayed",
+            "stays",
+            "had stayed",
+            "stay"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "I would rather you had not told him.",
+          "cz": "Radši bych, kdybys mu to neřekl.",
+          "gap": "I would rather you ____ not told him.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "I would rather you had not told him.",
+            "I'd rather you hadn't told him.",
+            "I'd rather you had not told him."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past perfect = a regret about what they already did.",
+          "explanation_cz": "would rather + někdo + předminulý čas = lítost nad tím, co už udělali."
+        },
+        {
+          "en": "I would rather we left now.",
+          "cz": "Byl bych radši, kdybychom odešli hned.",
+          "gap": "I would rather we ____ now.",
+          "gap_answer": "left",
+          "gap_accepts": [
+            "left"
+          ],
+          "accepts": [
+            "I would rather we left now.",
+            "I'd rather we left now."
+          ],
+          "quiz_options": [
+            "left",
+            "leave",
+            "had left",
+            "leaves"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "She would rather you called her tomorrow.",
+          "cz": "Byla by radši, kdybys jí zavolal zítra.",
+          "gap": "She would rather you ____ her tomorrow.",
+          "gap_answer": "called",
+          "gap_accepts": [
+            "called"
+          ],
+          "accepts": [
+            "She would rather you called her tomorrow.",
+            "She'd rather you called her tomorrow."
+          ],
+          "quiz_options": [
+            "called",
+            "call",
+            "had called",
+            "calls"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "I would rather they came on Friday.",
+          "cz": "Byl bych radši, kdyby přišli v pátek.",
+          "gap": "I would rather they ____ on Friday.",
+          "gap_answer": "came",
+          "gap_accepts": [
+            "came"
+          ],
+          "accepts": [
+            "I would rather they came on Friday.",
+            "I'd rather they came on Friday."
+          ],
+          "quiz_options": [
+            "came",
+            "come",
+            "had come",
+            "comes"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "He would rather we did not wait.",
+          "cz": "Byl by radši, kdybychom nečekali.",
+          "gap": "He would rather we ____ not wait.",
+          "gap_answer": "did",
+          "gap_accepts": [
+            "did"
+          ],
+          "accepts": [
+            "He would rather we did not wait.",
+            "He'd rather we didn't wait.",
+            "He'd rather we did not wait."
+          ],
+          "quiz_options": [
+            "did",
+            "do",
+            "had",
+            "would"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "I would rather you had asked me first.",
+          "cz": "Radši bych, kdyby ses mě nejdřív zeptal.",
+          "gap": "I would rather you ____ asked me first.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "I would rather you had asked me first.",
+            "I'd rather you had asked me first."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past perfect = a regret about what they already did.",
+          "explanation_cz": "would rather + někdo + předminulý čas = lítost nad tím, co už udělali."
+        },
+        {
+          "en": "I would rather stay at home tonight.",
+          "cz": "Dnes večer bych radši zůstal doma.",
+          "gap": "I would rather ____ at home tonight.",
+          "gap_answer": "stay",
+          "gap_accepts": [
+            "stay"
+          ],
+          "accepts": [
+            "I would rather stay at home tonight.",
+            "I'd rather stay at home tonight."
+          ],
+          "quiz_options": [
+            "stay",
+            "stayed",
+            "staying",
+            "to stay"
+          ],
+          "form": "rather",
+          "explanation": "would rather + base form = your own preference. No second subject, so no tense shift.",
+          "explanation_cz": "would rather + základní tvar = vaše vlastní preference. Není tu druhý podmět, takže se čas neposouvá."
+        },
+        {
+          "en": "They would rather we paid in cash.",
+          "cz": "Byli by radši, kdybychom zaplatili hotově.",
+          "gap": "They would rather we ____ in cash.",
+          "gap_answer": "paid",
+          "gap_accepts": [
+            "paid"
+          ],
+          "accepts": [
+            "They would rather we paid in cash.",
+            "They'd rather we paid in cash."
+          ],
+          "quiz_options": [
+            "paid",
+            "pay",
+            "had paid",
+            "pays"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "I would rather you had come earlier.",
+          "cz": "Radši bych, kdybys přišel dřív.",
+          "gap": "I would rather you ____ come earlier.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "I would rather you had come earlier.",
+            "I'd rather you had come earlier."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "rather",
+          "explanation": "would rather + somebody + past perfect = a regret about what they already did.",
+          "explanation_cz": "would rather + někdo + předminulý čas = lítost nad tím, co už udělali."
+        },
+        {
+          "en": "We would rather not go out tonight.",
+          "cz": "Dnes večer bychom radši nikam nešli.",
+          "gap": "We would ____ not go out tonight.",
+          "gap_answer": "rather",
+          "gap_accepts": [
+            "rather"
+          ],
+          "accepts": [
+            "We would rather not go out tonight.",
+            "We'd rather not go out tonight."
+          ],
+          "quiz_options": [
+            "rather",
+            "better",
+            "sooner",
+            "prefer"
+          ],
+          "form": "rather",
+          "explanation": "would rather + base form = your own preference. No second subject, so no tense shift.",
+          "explanation_cz": "would rather + základní tvar = vaše vlastní preference. Není tu druhý podmět, takže se čas neposouvá."
+        },
+        {
+          "en": "It is time we left.",
+          "cz": "Je čas, abychom odešli.",
+          "gap": "It is time we ____.",
+          "gap_answer": "left",
+          "gap_accepts": [
+            "left"
+          ],
+          "accepts": [
+            "It is time we left.",
             "It's time we left."
           ],
-          "explanation": "It's time + past form.",
-          "explanation_cz": "It's time + minulý tvar."
-        },
-        {
-          "en": "He talks as if he knew everything.",
-          "cz": "Mluví, jako by všechno věděl.",
-          "gap": "He talks as if he ____ everything.",
-          "gap_answer": "knew",
-          "accepts": [
-            "He talks as if he knew everything."
+          "quiz_options": [
+            "left",
+            "leave",
+            "had left",
+            "are leaving"
           ],
-          "explanation": "as if + past for unreal present.",
-          "explanation_cz": "as if + past pro nereal. přítomnost."
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
         },
         {
-          "en": "I'd rather she stayed at home.",
-          "cz": "Byl bych radši, kdyby zůstala doma.",
-          "gap": "I'd rather she ____ at home.",
-          "gap_answer": "stayed",
-          "accepts": [
-            "I'd rather she stayed at home."
-          ],
-          "explanation": "would rather + past.",
-          "explanation_cz": "would rather + past."
-        },
-        {
-          "en": "It's high time you apologised.",
-          "cz": "Už je nejvyšší čas, abys se omluvil.",
-          "gap": "It's high time you ____.",
+          "en": "It is high time you apologised.",
+          "cz": "Už je nejvyšší čas, aby ses omluvil.",
+          "gap": "It is high time you ____.",
           "gap_answer": "apologised",
-          "accepts": [
-            "It's high time you apologised."
+          "gap_accepts": [
+            "apologised"
           ],
-          "explanation": "It's high time + past.",
-          "explanation_cz": "It's high time + past."
+          "accepts": [
+            "It is high time you apologised.",
+            "It's high time you apologised.",
+            "It is high time you apologized."
+          ],
+          "quiz_options": [
+            "apologised",
+            "apologise",
+            "had apologised",
+            "apologising"
+          ],
+          "form": "its_time",
+          "explanation": "it is high time = the same pattern with more impatience.",
+          "explanation_cz": "it is high time = stejná vazba, jen s větší netrpělivostí."
         },
         {
-          "en": "She looked as though she had seen a ghost.",
-          "cz": "Vypadala, jako by viděla ducha.",
-          "gap": "She looked as though she ____ seen a ghost.",
+          "en": "It is time you started studying.",
+          "cz": "Je čas, aby ses začal učit.",
+          "gap": "It is time you ____ studying.",
+          "gap_answer": "started",
+          "gap_accepts": [
+            "started"
+          ],
+          "accepts": [
+            "It is time you started studying.",
+            "It's time you started studying."
+          ],
+          "quiz_options": [
+            "started",
+            "start",
+            "had started",
+            "starting"
+          ],
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "It is time we went home.",
+          "cz": "Je čas, abychom šli domů.",
+          "gap": "It is time we ____ home.",
+          "gap_answer": "went",
+          "gap_accepts": [
+            "went"
+          ],
+          "accepts": [
+            "It is time we went home.",
+            "It's time we went home."
+          ],
+          "quiz_options": [
+            "went",
+            "go",
+            "had gone",
+            "going"
+          ],
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "It is high time they paid us.",
+          "cz": "Už je nejvyšší čas, aby nám zaplatili.",
+          "gap": "It is high time they ____ us.",
+          "gap_answer": "paid",
+          "gap_accepts": [
+            "paid"
+          ],
+          "accepts": [
+            "It is high time they paid us.",
+            "It's high time they paid us."
+          ],
+          "quiz_options": [
+            "paid",
+            "pay",
+            "had paid",
+            "paying"
+          ],
+          "form": "its_time",
+          "explanation": "it is high time = the same pattern with more impatience.",
+          "explanation_cz": "it is high time = stejná vazba, jen s větší netrpělivostí."
+        },
+        {
+          "en": "It is time you told her the news.",
+          "cz": "Je čas, abys jí tu novinu řekl.",
+          "gap": "It is time you ____ her the news.",
+          "gap_answer": "told",
+          "gap_accepts": [
+            "told"
+          ],
+          "accepts": [
+            "It is time you told her the news.",
+            "It's time you told her the news."
+          ],
+          "quiz_options": [
+            "told",
+            "tell",
+            "had told",
+            "telling"
+          ],
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "It is time we bought a new car.",
+          "cz": "Je čas, abychom koupili nové auto.",
+          "gap": "It is time we ____ a new car.",
+          "gap_answer": "bought",
+          "gap_accepts": [
+            "bought"
+          ],
+          "accepts": [
+            "It is time we bought a new car.",
+            "It's time we bought a new car."
+          ],
+          "quiz_options": [
+            "bought",
+            "buy",
+            "had bought",
+            "buying"
+          ],
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "It is high time he found a job.",
+          "cz": "Už je nejvyšší čas, aby si našel práci.",
+          "gap": "It is high time he ____ a job.",
+          "gap_answer": "found",
+          "gap_accepts": [
+            "found"
+          ],
+          "accepts": [
+            "It is high time he found a job.",
+            "It's high time he found a job."
+          ],
+          "quiz_options": [
+            "found",
+            "find",
+            "had found",
+            "finding"
+          ],
+          "form": "its_time",
+          "explanation": "it is high time = the same pattern with more impatience.",
+          "explanation_cz": "it is high time = stejná vazba, jen s větší netrpělivostí."
+        },
+        {
+          "en": "It is time you learned to drive.",
+          "cz": "Je čas, aby ses naučil řídit.",
+          "gap": "It is time you ____ to drive.",
+          "gap_answer": "learned",
+          "gap_accepts": [
+            "learned"
+          ],
+          "accepts": [
+            "It is time you learned to drive.",
+            "It's time you learned to drive."
+          ],
+          "quiz_options": [
+            "learned",
+            "learn",
+            "had learned",
+            "learning"
+          ],
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "It is time the children went to bed.",
+          "cz": "Je čas, aby děti šly spát.",
+          "gap": "It is time the children ____ to bed.",
+          "gap_answer": "went",
+          "gap_accepts": [
+            "went"
+          ],
+          "accepts": [
+            "It is time the children went to bed.",
+            "It's time the children went to bed."
+          ],
+          "quiz_options": [
+            "went",
+            "go",
+            "had gone",
+            "going"
+          ],
+          "form": "its_time",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "It is high time we asked for help.",
+          "cz": "Už je nejvyšší čas, abychom požádali o pomoc.",
+          "gap": "It is high time we ____ for help.",
+          "gap_answer": "asked",
+          "gap_accepts": [
+            "asked"
+          ],
+          "accepts": [
+            "It is high time we asked for help.",
+            "It's high time we asked for help."
+          ],
+          "quiz_options": [
+            "asked",
+            "ask",
+            "had asked",
+            "asking"
+          ],
+          "form": "its_time",
+          "explanation": "it is high time = the same pattern with more impatience.",
+          "explanation_cz": "it is high time = stejná vazba, jen s větší netrpělivostí."
+        },
+        {
+          "en": "It is time to go home.",
+          "cz": "Je čas jít domů.",
+          "gap": "It is time ____ go home.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "It is time to go home.",
+            "It's time to go home."
+          ],
+          "quiz_options": [
+            "to",
+            "we",
+            "that",
+            "for"
+          ],
+          "form": "its_time",
+          "explanation": "it is time to + base form = a general statement, nobody blamed. Compare it is time we left.",
+          "explanation_cz": "it is time to + základní tvar = obecné konstatování, nikoho neobviňujete. Srovnejte s it is time we left."
+        },
+        {
+          "en": "He speaks as if he knew everything.",
+          "cz": "Mluví, jako by všechno věděl.",
+          "gap": "He speaks as if he ____ everything.",
+          "gap_answer": "knew",
+          "gap_accepts": [
+            "knew"
+          ],
+          "accepts": [
+            "He speaks as if he knew everything."
+          ],
+          "quiz_options": [
+            "knew",
+            "knows",
+            "had known",
+            "know"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
+        },
+        {
+          "en": "She looked as though she had seen an accident.",
+          "cz": "Vypadala, jako by viděla nehodu.",
+          "gap": "She looked as though she ____ seen an accident.",
           "gap_answer": "had",
-          "accepts": [
-            "She looked as though she had seen a ghost."
+          "gap_accepts": [
+            "had"
           ],
-          "explanation": "as though + past perfect for earlier unreal.",
-          "explanation_cz": "as though + past perfect."
-        },
-        {
-          "en": "I'd rather you hadn't told him.",
-          "cz": "Radši bych, abys mu to neříkal.",
-          "gap": "I'd rather you ____ told him.",
-          "gap_answer": "hadn't",
           "accepts": [
-            "I'd rather you hadn't told him."
+            "She looked as though she had seen an accident."
           ],
-          "explanation": "would rather + past perfect for past.",
-          "explanation_cz": "would rather + past perfect o minulosti."
-        },
-        {
-          "en": "Suppose we missed the train?",
-          "cz": "Co kdybychom zmeškali vlak?",
-          "gap": "Suppose we ____ the train?",
-          "gap_answer": "missed",
-          "accepts": [
-            "Suppose we missed the train?"
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
           ],
-          "explanation": "Suppose + past for hypothetical.",
-          "explanation_cz": "Suppose + past pro hypotézu."
+          "form": "as_if",
+          "explanation": "as if / as though + past perfect = it was not true earlier either.",
+          "explanation_cz": "as if / as though + předminulý čas = nebyla to pravda ani dřív."
         },
         {
           "en": "He acts as if he were the boss.",
           "cz": "Chová se, jako by byl šéf.",
           "gap": "He acts as if he ____ the boss.",
           "gap_answer": "were",
-          "accepts": [
-            "He acts as if he were the boss."
+          "gap_accepts": [
+            "were"
           ],
-          "explanation": "as if + were unreal.",
-          "explanation_cz": "as if + were nereal."
+          "accepts": [
+            "He acts as if he were the boss.",
+            "He acts as if he was the boss."
+          ],
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
         },
         {
-          "en": "It's time you started studying.",
-          "cz": "Je čas, abys začal studovat.",
-          "gap": "It's time you ____ studying.",
-          "gap_answer": "started",
-          "accepts": [
-            "It's time you started studying."
+          "en": "You look as if you had not eaten.",
+          "cz": "Vypadáš, jako bys nejedl.",
+          "gap": "You look as if you ____ not eaten.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
           ],
-          "explanation": "It's time + past + -ing.",
-          "explanation_cz": "It's time + past + -ing."
+          "accepts": [
+            "You look as if you had not eaten.",
+            "You look as if you hadn't eaten."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past perfect = it was not true earlier either.",
+          "explanation_cz": "as if / as though + předminulý čas = nebyla to pravda ani dřív."
+        },
+        {
+          "en": "He speaks Czech as if he were from Prague.",
+          "cz": "Mluví česky, jako by byl z Prahy.",
+          "gap": "He speaks Czech as if he ____ from Prague.",
+          "gap_answer": "were",
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "He speaks Czech as if he were from Prague.",
+            "He speaks Czech as if he was from Prague."
+          ],
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
+        },
+        {
+          "en": "He behaved as though he had not seen us.",
+          "cz": "Choval se, jako by nás neviděl.",
+          "gap": "He behaved as though he ____ not seen us.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "He behaved as though he had not seen us.",
+            "He behaved as though he hadn't seen us."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past perfect = it was not true earlier either.",
+          "explanation_cz": "as if / as though + předminulý čas = nebyla to pravda ani dřív."
+        },
+        {
+          "en": "It looks as if it is going to rain.",
+          "cz": "Vypadá to, že bude pršet.",
+          "gap": "It looks as if it ____ going to rain.",
+          "gap_answer": "is",
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "It looks as if it is going to rain.",
+            "It looks as if it's going to rain."
+          ],
+          "quiz_options": [
+            "is",
+            "were",
+            "was",
+            "had been"
+          ],
+          "form": "as_if",
+          "explanation": "When it may really be true, as if takes a normal present tense — no unreal past.",
+          "explanation_cz": "Když to klidně může být pravda, po as if následuje běžný přítomný čas — žádná nereálná minulost."
+        },
+        {
+          "en": "They speak as if they knew me.",
+          "cz": "Mluví, jako by mě znali.",
+          "gap": "They speak as if they ____ me.",
+          "gap_answer": "knew",
+          "gap_accepts": [
+            "knew"
+          ],
+          "accepts": [
+            "They speak as if they knew me."
+          ],
+          "quiz_options": [
+            "knew",
+            "know",
+            "had known",
+            "knows"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
+        },
+        {
+          "en": "He looked as though he had run all the way.",
+          "cz": "Vypadal, jako by celou cestu běžel.",
+          "gap": "He looked as though he ____ run all the way.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "He looked as though he had run all the way."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past perfect = it was not true earlier either.",
+          "explanation_cz": "as if / as though + předminulý čas = nebyla to pravda ani dřív."
+        },
+        {
+          "en": "She looks at me as if I were a child.",
+          "cz": "Dívá se na mě, jako bych byl dítě.",
+          "gap": "She looks at me as if I ____ a child.",
+          "gap_answer": "were",
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "She looks at me as if I were a child.",
+            "She looks at me as if I was a child."
+          ],
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
+        },
+        {
+          "en": "It looks as if you had a good time.",
+          "cz": "Vypadá to, že ses dobře bavil.",
+          "gap": "It looks as if you ____ a good time.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "It looks as if you had a good time."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "were",
+            "had had"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
+        },
+        {
+          "en": "You are talking as if I had done something wrong.",
+          "cz": "Mluvíš, jako bych udělal něco špatně.",
+          "gap": "You are talking as if I ____ done something wrong.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "You are talking as if I had done something wrong.",
+            "You're talking as if I had done something wrong."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "as_if",
+          "explanation": "as if / as though + past perfect = it was not true earlier either.",
+          "explanation_cz": "as if / as though + předminulý čas = nebyla to pravda ani dřív."
+        },
+        {
+          "en": "Suppose we missed the train?",
+          "cz": "Co kdybychom zmeškali vlak?",
+          "gap": "Suppose we ____ the train?",
+          "gap_answer": "missed",
+          "gap_accepts": [
+            "missed"
+          ],
+          "accepts": [
+            "Suppose we missed the train?"
+          ],
+          "quiz_options": [
+            "missed",
+            "miss",
+            "had missed",
+            "will miss"
+          ],
+          "form": "choice",
+          "explanation": "suppose / supposing / what if + past simple = imagine it, it is not real.",
+          "explanation_cz": "suppose / supposing / what if + minulý prostý = představte si to, není to skutečné."
+        },
+        {
+          "en": "What if she said no?",
+          "cz": "Co kdyby řekla ne?",
+          "gap": "What if she ____ no?",
+          "gap_answer": "said",
+          "gap_accepts": [
+            "said"
+          ],
+          "accepts": [
+            "What if she said no?"
+          ],
+          "quiz_options": [
+            "said",
+            "says",
+            "had said",
+            "will say"
+          ],
+          "form": "choice",
+          "explanation": "suppose / supposing / what if + past simple = imagine it, it is not real.",
+          "explanation_cz": "suppose / supposing / what if + minulý prostý = představte si to, není to skutečné."
+        },
+        {
+          "en": "Supposing you lost your keys?",
+          "cz": "Co kdybys ztratil klíče?",
+          "gap": "Supposing you ____ your keys?",
+          "gap_answer": "lost",
+          "gap_accepts": [
+            "lost"
+          ],
+          "accepts": [
+            "Supposing you lost your keys?"
+          ],
+          "quiz_options": [
+            "lost",
+            "lose",
+            "had lost",
+            "will lose"
+          ],
+          "form": "choice",
+          "explanation": "suppose / supposing / what if + past simple = imagine it, it is not real.",
+          "explanation_cz": "suppose / supposing / what if + minulý prostý = představte si to, není to skutečné."
+        },
+        {
+          "en": "What if we lost the tickets?",
+          "cz": "Co kdybychom ztratili lístky?",
+          "gap": "What if we ____ the tickets?",
+          "gap_answer": "lost",
+          "gap_accepts": [
+            "lost"
+          ],
+          "accepts": [
+            "What if we lost the tickets?"
+          ],
+          "quiz_options": [
+            "lost",
+            "lose",
+            "had lost",
+            "will lose"
+          ],
+          "form": "choice",
+          "explanation": "suppose / supposing / what if + past simple = imagine it, it is not real.",
+          "explanation_cz": "suppose / supposing / what if + minulý prostý = představte si to, není to skutečné."
+        },
+        {
+          "en": "Supposing the shop were closed?",
+          "cz": "Co kdyby byl obchod zavřený?",
+          "gap": "Supposing the shop ____ closed?",
+          "gap_answer": "were",
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "Supposing the shop were closed?",
+            "Supposing the shop was closed?"
+          ],
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "form": "choice",
+          "explanation": "suppose / supposing / what if + past simple = imagine it, it is not real.",
+          "explanation_cz": "suppose / supposing / what if + minulý prostý = představte si to, není to skutečné."
+        },
+        {
+          "en": "Suppose she asked you to stay?",
+          "cz": "Co kdyby tě požádala, abys zůstal?",
+          "gap": "Suppose she ____ you to stay?",
+          "gap_answer": "asked",
+          "gap_accepts": [
+            "asked"
+          ],
+          "accepts": [
+            "Suppose she asked you to stay?"
+          ],
+          "quiz_options": [
+            "asked",
+            "asks",
+            "had asked",
+            "will ask"
+          ],
+          "form": "choice",
+          "explanation": "suppose / supposing / what if + past simple = imagine it, it is not real.",
+          "explanation_cz": "suppose / supposing / what if + minulý prostý = představte si to, není to skutečné."
+        },
+        {
+          "en": "I would rather you paid by card.",
+          "cz": "Byl bych radši, kdybys zaplatil kartou.",
+          "gap": "I would rather you ____ by card.",
+          "gap_answer": "paid",
+          "gap_accepts": [
+            "paid"
+          ],
+          "accepts": [
+            "I would rather you paid by card.",
+            "I'd rather you paid by card."
+          ],
+          "quiz_options": [
+            "paid",
+            "pay",
+            "had paid",
+            "pays"
+          ],
+          "form": "choice",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "It is time you found a better job.",
+          "cz": "Je čas, aby sis našel lepší práci.",
+          "gap": "It is time you ____ a better job.",
+          "gap_answer": "found",
+          "gap_accepts": [
+            "found"
+          ],
+          "accepts": [
+            "It is time you found a better job.",
+            "It's time you found a better job."
+          ],
+          "quiz_options": [
+            "found",
+            "find",
+            "had found",
+            "finding"
+          ],
+          "form": "choice",
+          "explanation": "it is time + past simple = it should have happened already. A mild complaint.",
+          "explanation_cz": "it is time + minulý prostý = mělo se to stát už dřív. Mírná výtka."
+        },
+        {
+          "en": "He looked as if he were angry.",
+          "cz": "Vypadal, jako by byl naštvaný.",
+          "gap": "He looked as if he ____ angry.",
+          "gap_answer": "were",
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "He looked as if he were angry.",
+            "He looked as if he was angry."
+          ],
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "form": "choice",
+          "explanation": "as if / as though + past simple = it is not true now.",
+          "explanation_cz": "as if / as though + minulý prostý = teď to není pravda."
+        },
+        {
+          "en": "I would rather we did not stay long.",
+          "cz": "Byl bych radši, kdybychom nezůstávali dlouho.",
+          "gap": "I would rather we ____ not stay long.",
+          "gap_answer": "did",
+          "gap_accepts": [
+            "did"
+          ],
+          "accepts": [
+            "I would rather we did not stay long.",
+            "I'd rather we didn't stay long."
+          ],
+          "quiz_options": [
+            "did",
+            "do",
+            "had",
+            "would"
+          ],
+          "form": "choice",
+          "explanation": "would rather + somebody + past simple = what you want THEM to do. Present or future, despite the past tense.",
+          "explanation_cz": "would rather + někdo + minulý prostý = co chcete, aby udělal NĚKDO JINÝ. Přítomnost nebo budoucnost, přestože je tam minulý čas."
+        },
+        {
+          "en": "It is high time she learned to cook.",
+          "cz": "Už je nejvyšší čas, aby se naučila vařit.",
+          "gap": "It is high time she ____ to cook.",
+          "gap_answer": "learned",
+          "gap_accepts": [
+            "learned"
+          ],
+          "accepts": [
+            "It is high time she learned to cook.",
+            "It's high time she learned to cook."
+          ],
+          "quiz_options": [
+            "learned",
+            "learn",
+            "had learned",
+            "learning"
+          ],
+          "form": "choice",
+          "explanation": "it is high time = the same pattern with more impatience.",
+          "explanation_cz": "it is high time = stejná vazba, jen s větší netrpělivostí."
+        },
+        {
+          "en": "She looked as though she had been crying.",
+          "cz": "Vypadala, jako by plakala.",
+          "gap": "She looked as though she ____ been crying.",
+          "gap_answer": "had",
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "She looked as though she had been crying."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "would have",
+            "did"
+          ],
+          "form": "choice",
+          "explanation": "as if / as though + past perfect = it was not true earlier either.",
+          "explanation_cz": "as if / as though + předminulý čas = nebyla to pravda ani dřív."
         }
       ]
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "title": "Hypothetical past · draft",
-        "body": "First-draft shell. Polish later.",
-        "points": [
-          "One core pattern",
-          "Czech cue is support only"
-        ]
-      }
-    ]
-  }
+  ]
 }
