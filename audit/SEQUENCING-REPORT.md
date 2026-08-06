@@ -1,10 +1,9 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**494 unknown word types** across 65 live units (of 128).
+**483 unknown word types** across 64 live units (of 128).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
-- **a1_be_have** (A1 grammar): home, right, cold, today, dog, children, bike, old, ready, happy, school
 - **a1_word_order** (A1 grammar): new×3
 - **trunk_social_a1** (A1 vocab): help, nice
 - **a1_present_simple** (A1 grammar): coffee×4, tv×2, everybody×2, everyone, somebody, nobody
