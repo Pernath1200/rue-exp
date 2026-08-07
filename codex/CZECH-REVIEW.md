@@ -46,3 +46,32 @@ For James:
 
 Spot-checked clean (no log needed, noting only because the bank was flagged
 TEMPLATE by the author): a1_home_family sentence bank — all 12 cz correct.
+
+## 2026-08-07 — second-opinion pass (cloud, afternoon)
+
+Nothing new in the last 3 h beyond the morning review itself, so widened to
+the last day. Scope: the six B1 vocab leaves never reviewed (b1_work,
+b1_money, b1_communication, b1_knowledge, b1_self, b1_home — 216 glosses),
+plus the changed cz in the re-lexify/repair commits to a1_core_frames_be_have,
+verbs_daily, verbs_more.
+
+**Fixed: 2 · Flagged: 1 · everything else ok.**
+
+Fixes (both the same defect — English-shaped personal adjective where the
+Czech verb is impersonal):
+- `b1_self` *dizzy*: *kdo se mu točí hlava* → *komu se točí hlava* — mixed
+  relative (kdo + mu); the dative relative is the grammatical form, and the
+  pack itself already uses it for *relieved* = "komu se ulevilo".
+- `b1_knowledge` *homesick*: *stýskající se po domově* → *komu se stýská po
+  domově* — *stýskat se* is impersonal (*stýská se mi*), so a participle
+  modifying the person is ungrammatical.
+
+For James:
+- `b1_work` *self-employed* = "podnikající na sebe / OSVČ" — the participle
+  is grammatical but clunky; suggest "samostatně výdělečně činný / OSVČ".
+  Defensible (colloquial *podnikat na sebe* exists), so left unchanged.
+
+Clean, no log needed: the re-lexified core-frames Czech (correct
+instrumentals *s bratrem / s kamarády*, dative *kamarádovi*, animate plural
+*psy*, both-gender *Jsem unavený. / Jsem unavená.*) and the other five B1
+leaves' glosses.
