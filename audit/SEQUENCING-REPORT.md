@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**242 unknown word types** across 61 live units (of 139).
+**234 unknown word types** across 60 live units (of 139).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -10,7 +10,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **trunk_verbs_daily_a1** (A1 vocab): water
 - **trunk_verbs_more_a1** (A1 vocab): book, later, film, happy, music, tea, email, map
 - **leaf_freetime_a1** (A1 vocab): time
-- **a1_questions_negatives** (A1 grammar): rain, lot, ready, tea, coffee, hungry, want, james
 - **trunk_glue_questions_a1** (A1 vocab): late, want, station
 - **trunk_verbs_say_a1** (A1 vocab): story, question, answer, bird, map
 - **a1_question_words** (A1 grammar): want, start
