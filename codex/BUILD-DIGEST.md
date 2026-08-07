@@ -6,6 +6,170 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 14 (RUE build, claude-opus-5)
+
+### Headline: **two A1 units repaired to zero and two C1 units built — audit 214 → 206, C1 now 9/18 on path.** The prepositions vocab trunk still carried the ball-and-box lexis its grammar partner lost last run.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `658701d` | `trunk_prepositions_a1` re-lexified, all 10 frames — 3 types / **20 hits** → **0** |
+| 2 | `afe85ea` | `a1_possessives` re-lexified, 6/24 items — 5 types → **0** |
+| 3 | `11c58a3` | **`c1_complex_noun_phrases`** built + live — 10 → **48** items |
+| 4 | `09f8539` | **`c1_ellipsis_substitution`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 76 live grammar units · 0 errors · 1 warning | **78 units · 0 errors · 1 warning** |
+| `audit` | 214 unknown types · 57 units | **206** · 55 units · baseline tightened 214 → 211 → 206 |
+
+Net **−8** unknown types while adding **96** new items. Both repaired units drop
+off the sequencing report entirely, and **both new C1 units are 100 % pool-clean —
+0 violations between them**, and no out-of-scope vocabulary in any quiz distractor
+either. The 12 warnings are the pre-existing `b2_clear_claims` ones and the 1
+warning is the known `order_click` gap; both unchanged. All three gates green
+before every commit; commit and push per unit.
+
+### Repair queue: nothing processed, and that is still correct
+
+Third run in a row. The same three unticked items are all explicitly out of the
+cloud lane — the vocab level badge and `order_click` are marked *engine work,
+cloud must not ship*, and `b2_clear_claims` is a style decision reserved for you
+with the conservative path already taken. **If you want the cloud lane doing
+repair work, the queue needs content-lane items.** Run 12 said this, run 13 said
+this, and it is now the only standing ask I have.
+
+---
+
+### THE FINDING: repairing a grammar unit leaves its vocab partner behind
+
+Run 13 re-lexified `a1_prepositions_place` from ball/box onto book/bag. Its
+same-step vocab partner, **`trunk_prepositions_a1`, was still teaching the same
+ten prepositions with the old ball-and-box sentences** — 20 violation hits, the
+worst occurrence count anywhere in A1 or A2, and worse than that, **the two
+halves of one teaching step were showing the student two different pictures.**
+The grammar drill said *The book is in the bag*; the vocab frames said *The ball
+is in the box*.
+
+This is not a one-off. The zigzag pairs a grammar node with a vocab node at the
+same position and the audit treats the partner's targets as legal, so a repair on
+one side is invisible to the gate on the other. **Any future re-lexification
+should check the partner in the same run.** I did that here by hand; there are
+four more paired A1 units on the report (`a1_there_is` / `trunk_glue_pronouns_a1`
+share cat and dog, `a1_some_any` / `trunk_glue_quantity_a1` share money) where the
+same split almost certainly exists.
+
+Diagram keys were left untouched, exactly as run 13 left them, so the engine art
+still lines up.
+
+---
+
+### Forks and judgment calls
+
+**1. `a1_possessives` carried two accepts bugs and I fixed them.** The Name's items
+had `gap_accepts: ["Annas"]` on the *Vaclav's* item and `["Toms"]` on the
+*Homare's* item — copy-paste from a template, and they meant a student typing
+*Annas* was marked right for *Vaclav's bag*. Changed to the apostrophe-less form
+of each item's own name. That is an accepts-only fix of the kind the repair-queue
+rules explicitly allow, but it was not a sequencing violation, so flagging it.
+Worth a grep for the same pattern elsewhere — I did not widen the search this run.
+
+**2. Nine quiz distractors in `c1_ellipsis_substitution` were second correct
+answers.** Ellipsis is unusually hostile to the "wrong form" distractor pattern,
+because the wrong form is very often a real English sentence with a different
+antecedent. *He said he would call, but he **hasn't***, *I haven't finished, but
+Petr **did***, *He asked me to sign it, and I did **too*** — a teacher would mark
+all three correct. I re-cut them to forms that genuinely fail (wrong number,
+non-finite). **Note that nothing gates this**: `codex/audit.py` only reads
+`items[].en`, and `check_playable`'s single-answer check compares against
+`accepts`, so a distractor that is *also* right passes both gates silently. This
+is the strongest argument yet for a gate that reads `quiz_options`.
+
+**3. `shown` is outside the stemmer — the irregular table has no `show`.** Same
+family as run 13's `men` and run 12's `books`. *The studies have shown a clear
+risk* read as untaught; changed to *have found*. The one-line fix is adding
+`show: showed shown` to `IRREGULAR` in `audit.py`; I did not touch the gate.
+
+**4. `i'm` is taught nowhere in the course, so three sentences carry the
+uncontracted form.** *I am tired, and so is she* · *I am afraid so* · *I am afraid
+not*. The contraction is in `accepts` on all three and the cards say so
+explicitly. This is run 13's `b2_future_forms` precedent (`c6d7d80`) applied
+again. It is the fourth run to work around a contraction gap — `i'm`, `i'd`,
+`it's`, `let's` and `haven't` are all flagged somewhere on the report. **A GLUE
+line for the common contractions would clear five units at once**; still your
+call, still untouched.
+
+**5. Indefinite pronouns cost me items again.** Run 13's finding stands unchanged:
+`everyone`, `everything`, `anyone`, `nobody` are not in GLUE. In
+`c1_ellipsis_substitution` I could not write *Did anyone call?* and used *Did the
+client call?*; in `c1_complex_noun_phrases` I could not write *changed everything*
+and used *changed the budget*. Neither sentence is worse, but the constraint is
+now shaping content in three consecutive runs.
+
+**6. Premodifier-order distractors break a collocation, not a comma.** In
+`c1_complex_noun_phrases` strand 1 the distractors re-order the premodifier stack.
+I deliberately built each wrong order so that it splits a fixed noun-modifier pair
+— *the train recently opened station*, *a school carefully planned trip* — because
+a distractor that merely fronts an adjective (*the senior, highly experienced
+manager*) is readable as coordination with a comma and is therefore not reliably
+wrong. Flagging the reasoning in case you disagree with any single one.
+
+**7. `check.sequence: ["quiz"]` on both new units**, following the seven live C1
+packs. Type and Use still run, so the ladder is full.
+
+### Housekeeping — still needs you, one command (third run of asking)
+
+`codex/__pycache__/audit.cpython-311.pyc` is **still tracked in git**:
+
+```
+git rm --cached codex/__pycache__/audit.cpython-311.pyc
+printf '__pycache__/\n*.pyc\n' >> .gitignore
+```
+
+### Course state after this run
+
+| level | on path | live | remaining |
+|-------|--------:|-----:|-----------|
+| A1 | 53 | 53 | — |
+| A2 | 40 | 40 | — |
+| B1 | 23 | 22 | 1 (`craft`, parked on purpose) |
+| B2 | 22 | 21 | 1 (`craft`, parked on purpose) |
+| C1 | 18 | **9** | **9** |
+
+Remaining C1 sketches, in path order:
+`c1_discourse_grammar` → `c1_register` → `c1_advanced_modality` →
+`c1_subjunctive` → `c1_reporting_complementation` → `c1_comparative_advanced` →
+`c1_article_nuance` → `c1_spoken_vs_written` → `c1_error_patterns`.
+
+**The standing routine prompt still says *"B1 16/23 live, B2 4/24, C1 0/22"*.**
+Runs 12 and 13 both asked for this to be corrected. Halfway through C1 now.
+
+### To smoke-check
+
+- **`c1_complex_noun_phrases`** — 48 items. The `premod` strand is the one to
+  read: the gap is the whole ordered premodifier chunk, not a single word, so the
+  quiz shows four long options and Type asks the student to produce
+  *A recently published government report*. That is a heavier Type item than
+  anything else at C1 — if it plays badly, say so and I will move the gap onto
+  the head noun instead.
+- **`c1_ellipsis_substitution`** — 48 items. The `clausal_so_not` strand runs
+  question-then-answer inside one `en` string (*Will it rain today? I hope not.*),
+  so Use asks the student to type both halves. Same call: if that reads wrong in
+  the app, I will split them.
+- **`trunk_prepositions_a1`** — now *The book is in/on/under/above/in front of/
+  behind/next to/between/opposite/near the bag*, matching the grammar partner
+  word for word. Worth one look that the diagram art still reads with a book and
+  a bag; the keys are unchanged.
+- **`a1_possessives`** — *I like my room* · *She likes her car* · *They have their
+  keys* · *Vaclav's bag is old* · *Homare's car is great* · *My brother has a
+  bike*. Two intro cards were re-lexified to match.
+
+---
+
 ## 2026-08-07 · cloud run 13 (RUE build, claude-opus-5)
 
 ### Headline: **two A1 units repaired to zero and two C1 units built — audit 226 → 214, C1 now 7/18 on path.** One structural finding: `a1_present_simple` cannot be repaired without a GLUE decision from you.
