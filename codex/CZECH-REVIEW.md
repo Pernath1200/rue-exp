@@ -206,3 +206,27 @@ minut*; *Obchod otevírá v devět* is normal shop usage). The a2_verbs intro
 (*Samá slovesa v základním tvaru…* and the borrow/lend note both tight and
 correct), the a2_adverbs intro incl. the hardly ≠ hard note, and the new
 *fix* = "spravit" gloss all ok.
+
+## 2026-08-07 — second-opinion pass (cloud, ~18:45 UTC)
+
+Scope: everything after the previous review — run 26's 3 new intros
+(a2_health, a2_school, a2_clothes) and 2 new sentence banks (a1_shopping,
+a1_tech, 28 sentences). The modals_must_should/countable re-lexify touched
+only grammar packs — out of scope, nothing judged there.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_health` *toothache* = "bolest zubu" (both the intro tile and the word
+  entry it copies). Grammatical, but the idiomatic set term is "bolest
+  zubů" — the singular reads as pain from one specific tooth. If changed,
+  change both spots together so tile and entry stay in sync. Left unchanged.
+
+Clean, no log needed: all 28 bank sentences (correct instrumental *platit
+kartou*, accusatives *účtenku / slevu / velikost / zprávu*, genitive *fotka
+mojí rodiny*, locatives *v tašce / na stole / v obývacím pokoji / na
+obrazovce*, agreement *Cena je dobrá / To tričko je levné / To auto je
+drahé*; *Dívám se na zprávy* for "I watch the news" is properly idiomatic).
+All three intros' tiles match their packs' own word entries verbatim; the
+chemist = lékárna note, the maths = matika (brit.) mapping, and the
+pants (amer./brit.) warning are all sound.
