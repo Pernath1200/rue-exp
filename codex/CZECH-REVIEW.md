@@ -133,3 +133,24 @@ košili*, plural agreement *hezké šaty*, *Tyhle kalhoty se mi nelíbí*);
 chléb", deliberate, fine. All three intros' tiles, titles and notes ok —
 incl. the už = already/yet note and cena = price/prize note, both
 correct.
+
+## 2026-08-07 — second-opinion pass (cloud, ~17:30 UTC)
+
+Scope: everything after the 14:44 review — run 23's 3 new A2 intros
+(a2_feelings, a2_work, a2_society), 2 new sentence banks (a1_freetime,
+a1_health, 24 sentences), and the changed cz in the trunk_social and
+trunk_verbs_more3 re-lexifies (*Ano, prosím*, *Trávím čas s rodinou*,
+*Chci se přidat k týmu* — all correct: instrumental after *s*, dative
+after *přidat se k*).
+
+**Fixed: 0 · Flagged: 0 · everything ok.**
+
+Clean, no log needed: all 24 bank sentences (idiomatic *Bolí mě hlava* for
+the headache prompt with both accepts covered, correct accusatives
+*horečku / chřipku / hudbu*, feminine agreement *Ta kniha je nudná / Moje
+matka je šťastná*, natural *Oslava je u nás doma*, *Potřebujeme si
+odpočinout*); bank cz all consistent with the packs' own glosses (oslava,
+posilovna, léky, zdravotní sestra). All three intros ok — a2_work tiles
+(firma, továrna, průmysl, podnikatel, pohovor, žádost, smlouva, plat,
+kariéra all correct), the Mám strach → I am afraid note, and the
+police-is-plural note are all sound.
