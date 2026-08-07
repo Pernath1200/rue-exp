@@ -6,6 +6,129 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 18 (RUE build, claude-opus-5)
+
+### Headline: **4 more A1 vocab intros (7 → 11 of 30), the two worst A1/A2 sequencing units repaired to zero (audit 177 → 169), and one C1 unit built — but only after finding that `b2_articles_genericity` already owned half of what its sketch asked for. That is the second C1 scope collision in two runs.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `044011b` | **`a1_nature`** picture-led intro — 12 emoji tiles, 5 carrier frames |
+| 2 | `d1d5d0d` | **`a1_places`** picture-led intro — 12 tiles, 5 frames |
+| 3 | `a57bea6` | **`a1_school`** picture-led intro — 12 tiles, 5 frames |
+| 4 | `0922eec` | **`a1_tech`** picture-led intro — 12 tiles, 4 frames |
+| 5 | `3171ed7` | `trunk_glue_modals_a1` re-lexified, 4 items — 4 types → **0** |
+| 6 | `b7ca3a9` | `trunk_lexis_a2` re-lexified, 3 items — 4 types → **0** |
+| 7 | `d68d8ae` | **`c1_article_nuance`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 83 live grammar units · 0 errors · 1 warning | **84 units · 0 errors · 1 warning** |
+| `audit` | 177 unknown types · 49 units | **169** · 47 units · baseline tightened 177 → 173 → 169 |
+
+Net **−8** unknown types while adding 48 new items. The new C1 unit is **100 % pool-clean — 0 violations**: the report's live-unit count goes 150 → 151 with the total unchanged at 169. All three gates green before every commit; commit and push per unit.
+
+---
+
+### Vocab intros — 4 more, all emoji, none needed a schematic
+
+Live vocab units with an intro: **7 → 11**. Remaining: **22 A1**, then **25 A2**.
+
+I took the four remaining A1 leaves where an emoji genuinely carries meaning rather than decorating it: `a1_nature`, `a1_places`, `a1_school`, `a1_tech`. All twelve tiles on every unit.
+
+Rather than eyeball the two rules run 17 set, I made them assertions in the authoring script, so a violation would have refused to write the file:
+
+1. **every tile's `en`/`cz` is byte-identical to that pack's own item** — including the glosses (`camera · fotoaparát / kamera`, `screen · obrazovka / displej`, `exam · zkouška / test`);
+2. **every page-2 frame traces to a `use[]` carrier id the pack's items actually declare**, worded from the live packs' own precedent (`this_is_a` → *This is a …*, `where_is_the` → *Where is the …?*, `i_go_to` → *I go to the …*, `lets_talk_about` → *Let's talk about …*);
+3. and the body's word count has to equal the pack's real item count (36 / 69 / 47 / 24), which is the sort of thing that rots silently.
+
+Then I re-verified all three mechanically from the written files, not from the script's own report.
+
+**One trap per unit, each chosen to explain something already on the page:**
+
+| Unit | Trap | Why that one |
+|---|---|---|
+| `a1_nature` | rain/snow/wind/air/weather take no `a` | it *is* the split between the page's `I like …` / `I need …` frames and its `This is a …` |
+| `a1_places` | `go to the bank` but `go home` — no `to` | `I go to the …` is on the same page, and `home` is taught in `a1_home_family` |
+| `a1_school` | Czech *učit se* is two English verbs, `learn` and `study` | both are items in the pack, and it is the one place the unit hides a distinction Czech does not make |
+| `a1_tech` | `news` is singular; `newspaper` = noviny, `news` = zprávy | Czech *noviny* is plural, so the agreement error is close to automatic |
+
+`a1_nature` is the second unit to take the countable/uncountable trap after `a1_food`. I kept it because on this pack it is not a stray fact — it is the reason the pack splits its own carriers into `*_bare` and `*_a` families. `a1_school` was going to take the same trap and I moved it off deliberately.
+
+---
+
+### Sequencing — the two worst A1/A2 units, both to zero
+
+`trunk_glue_modals_a1` (4 types) and `trunk_lexis_a2` (4 types) were the joint worst A1/A2 units in the report.
+
+| Unit | Was | Now | Teaching point |
+|---|---|---|---|
+| `trunk_glue_modals_a1` | I must go **now**. | I must go **home**. | gap still on `must` |
+| | You should **call** her. | You should **ask** her. | gap still on `should` |
+| | I do not **smoke**. | I do not **cook**. | gap still on `do` |
+| | It is not **difficult**. | It is not **dangerous**. | gap still on `not` after `is` |
+| `trunk_lexis_a2` | We belong to a **club**. | We belong to a **group**. | gap still on `belong` |
+| | They provide free **Wi-Fi**. | They provide free **coffee**. | gap still on `provide` |
+| | They recently **moved** house. | They recently **opened a new restaurant**. | gap still on `recently` |
+
+Every replacement word was checked against `make_pool.py --before <node>` for that unit's own position, not against a general sense of what A1 covers. No teaching point was deleted, no gap moved, and each `cz` was rewritten to stay a natural sentence rather than a gloss (*Musím jít domů.* · *Měl by ses jí zeptat.* · *Nevařím.* · *Není to nebezpečné.* · *Patříme do skupiny.* · *Poskytují kávu zdarma.* · *Nedávno otevřeli novou restauraci.*). Wi-Fi's three `accepts` spelling variants went with it and are no longer needed.
+
+The two units were committed separately with the audit artefacts regenerated for each, so the ratchet has an honest intermediate state (177 → 173 → 169) rather than one jump.
+
+---
+
+### THE FINDING: the C1 sketch collided with a **B2** unit this time, not a B1 one
+
+`c1_reporting_complementation` (node 13 on `path_order_c1`) is still blocked for the reason run 17 gave, so I went to node 15, `c1_article_nuance`. Its thin shell sketches *abstract, institutions, media, unique roles* across 10 items. Seven of those ten are already taught by **`b1_articles_advanced`** (48 items, live) — `in hospital`, `at university` / `The university`, `on the radio`, `the piano`, `Nature` / `The nature of` in the same shape as its own `Life` / `The life`.
+
+That much I expected. What I did not expect, and only caught because the node's own `related` list pointed at it, is that **`b2_articles_genericity` is live, on `path_order_b2`, and owns two more of the four strands I had already written**:
+
+- its `zero_plural_generic` strand teaches the bare-plural generic with sentences a hair from mine — *Books are cheaper than films*, *Students often work at weekends*, *Cars are cheaper in this country*;
+- its `the_group_or_unique` strand teaches `the` + adjective for a group: *The rich should help the poor*, ***The young often move to the city***, *We should do more for the unemployed*.
+
+My strand 4 had *The young often leave the village for work*. **That is the same sentence.** I had a complete, gate-passing 48-item pack on disk before I checked, and it would have shipped a near-duplicate of a live B2 unit past all three gates without a murmur — the gates check pool legality and playability, and neither knows what another unit already teaches.
+
+**So I rebuilt two strands before flipping the node.** What shipped teaches only what is left unowned:
+
+- **the two SINGULAR generics** — `a` + singular as a rule about any member (*A good doctor listens before speaking*) and `the` + singular as the species (*The horse was once the fastest way to travel*) — neither of which B2 touches, since its generic strands are the bare plural and the uncountable. The bare plural appears in the intro card as the already-known baseline, never as a gap item.
+- **article-free prepositional phrases** — `by car` / `on foot`, `in person`, `by hand`, `on average`, `in detail`, `in charge of`, `on behalf of`, plus the repeated-bare-noun pairs `side by side`, `face to face`, `step by step`. Owned by nothing at any level.
+- **abstract nouns going countable** — `business`/`a business`, `experience`/`an experience`, `success`/`a success`, `difficulty`/`a difficulty`, `time`/`a great time`, `doubt`. B2 teaches the pure uncountables that never flip (*Life is short*, *Advice is free*); the flip itself is untaught.
+- **`the` forced by structure** — a noun pinned by a that-clause or a relative (`the fact that`, `the extent to which`, `the way in which`, `the reason why`) and the quantity frames, with **`the number of` + singular verb vs `a number of` + plural verb** as a minimal pair.
+
+Every gap answer in the unit is unique, every frame reconstructs exactly, and no distractor is also an accepted answer — all three asserted in the authoring script before the file was written, then re-checked from the written file.
+
+**This is worth a process change and I cannot make it alone:** before authoring any C1 unit, the `related` list on its node and the notes of every live unit sharing its `root` should be read as a matter of course. Two of the last three C1 nodes have been mostly-already-taught. Cheap fix if you want it: **`make_pool.py` could grow a `--conflicts <node>` mode that prints the notes and gap answers of every live unit with the same `root`.** That is a tool change, so I have not made it.
+
+---
+
+### Forks and judgment calls
+
+**1. Quiz distractors for articles cannot be made unambiguous, and that is inherent, not sloppy.** *The good doctor listens before speaking* is perfectly grammatical English; it is only wrong here because the Czech prompt is generic. For roughly a third of the 48 items the article choice is settled by the `cz` support line and not by the English frame alone. I made distractors outright ungrammatical wherever I could (`A engineer`, `An bicycle`, `The unemployeds`, `Horses was`), but choosing an article from a Czech prompt *is* the skill, so the rest stand. **Worth a look in smoke: if this reads as ambiguous rather than as the exercise, the fix is a longer `cz`, not different options.**
+
+**2. `nobody` was out of pool at C1 and I would not have caught it by eye.** Two of my items used it; I swapped both to `no one`, which is GLUE. Two more near-misses — `ran` and `difficulties` — turned out to be legal (`ran` is in `audit.py`'s irregular table, and `quiz_options` are never scanned). I checked every word of all 48 English sentences against the pool programmatically rather than trusting the audit to catch it after the fact, because the audit only runs once the node is already live.
+
+**3. The node's `note` no longer described the unit, so I rewrote it.** It said *"institutions, media, roles · thin shell 2026-08-05"* — three subjects the shipped unit deliberately does not teach, because B1 owns them. Leaving it would have re-set the same trap for the next run. The `label` ("Article nuance") and `codex_unit` (`G_NP-C1-01`) are untouched: this is still the article node, scoped within its own subject, which is the same call run 17 made scoping `c1_comparative_advanced` around `a2_comparatives`. **If you disagree that a content-lane run may narrow a node's note, say so and I will stop.**
+
+**4. Repair queue: nothing processed, seventh run running.** Same three unticked items, same reasons — the vocab level badge and `order_click` are both marked *engine work, cloud must not ship*, and `b2_clear_claims` is a style decision reserved for you with the conservative path already taken. **The queue has had no content-lane item in it since run 12.** Step 1 of the routine is a no-op every hour until you put one there.
+
+**5. `codex/__pycache__/audit.cpython-311.pyc` is committed to the repo.** Importing `audit.py` to check its irregular-verb table rewrote it and it showed up as a working-tree change. I reverted it rather than commit the churn, but it will keep reappearing for anyone who imports that module. **One line in `.gitignore` and a `git rm -r --cached codex/__pycache__` would end it.** Not content, so not mine.
+
+**6. Run 17's open items are all unchanged** — the `a1_home_family` template still lists `"This is my …"`, which is not a carrier id that pack declares; there is still no carrier-wording registry, so page-2 frames are derived from the ids rather than looked up; the `use[]` carriers are still data-only with no student-facing Use stage; and the six orphaned packs are still orphaned. I have not touched any of them.
+
+### Smoke-check these
+
+- **The four new intro pages** — `a1_nature`, `a1_places`, `a1_school`, `a1_tech`. Page 1 is a 12-tile emoji grid, page 2 a short frame list plus one note, then "Next → Match".
+- **`a1_tech` in particular** — its tiles carry the longest parenthetical glosses of any unit so far (`fotoaparát / kamera`, `obrazovka / displej`), so it is the tile-width stress test, the way `a1_body` was last run.
+- **`c1_article_nuance`** — 48 quiz items, no Match/Type stage by design (`check.sequence: ["quiz"]`, same as the other C1 units). The four intro cards each carry a table.
+- **`trunk_glue_modals_a1` and `trunk_lexis_a2`** — seven sentences changed between them. Worth reading the Czech: *Nevařím.* and *Není to nebezpečné.* replace items you may have taught from.
+- **Whether narrowing `c1_article_nuance` was the right call at all** — if you would rather the C1 article unit re-taught the B1/B2 ground as consolidation, the unit needs rewriting, not adjusting, so it is better to know now than after three more C1 nodes go the same way.
+
+---
+
 ## 2026-08-07 · cloud run 17 (RUE build, claude-opus-5)
 
 ### Headline: **the picture-led intro backlog opens — 4 A1 vocab units done (3 → 7 of 30) — plus 2 A1/A2 units repaired to zero (audit 185 → 177) and one C1 unit built. And the next node on the C1 path cannot be built as sketched: `b2_reported_speech_advanced` already teaches all of it.**
