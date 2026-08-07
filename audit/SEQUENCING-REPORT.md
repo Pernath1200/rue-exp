@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**483 unknown word types** across 64 live units (of 130).
+**469 unknown word types** across 63 live units (of 130).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -38,7 +38,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a2_past_simple** (A2 grammar): last×2, see, pasta, course, email, truth, anything, say
 - **leaf_travel_a2** (A2 vocab): depart
 - **a2_past_continuous** (A2 grammar): while
-- **a2_present_perfect** (A2 grammar): since×2, homework, emails, garage, replied, decided, sent, email, flown, sushi, together, mistake
 - **a2_modals_must_should** (A2 grammar): say×2, see, drive, worry, forget
 - **a2_comparatives** (A2 grammar): last×2, class, autumn, test, thought, app, person, know, motorway, runs, idea, polluted
 - **a2_ed_ing_adjectives** (A2 grammar): feel×2, storm×2, history, ending, mistake, question, result, rule, exam, situation
@@ -49,7 +48,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **trunk_recycle_a2** (A2 vocab): nearby
 - **trunk_lexis_a2** (A2 vocab): club, email, wi, fi, missed, moved
 - **trunk_chunks_a2** (A2 vocab): i'm, weather
-- **b1_present_perfect_vs_past** (B1 grammar): email×3, emails×3, since×2, client×2, until, summer, noon
+- **b1_present_perfect_vs_past** (B1 grammar): email×3, emails×3, client×2, until, summer, noon
 - **b1_used_to** (B1 grammar): summer×4, smoke×4, tv×4, dog, sea, wi, fi
 - **trunk_core_b1** (B1 vocab): plan×2, date, idea
 - **b1_passives** (B1 grammar): online×2, emails, stolen, asia, guard, noon, grown, brazil, taught, cancelled, turned, prepared, story, photos, deleted, package, delivered, rules, form, automatically, invoice
@@ -64,7 +63,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b1_verb_patterns_advanced** (B1 grammar): remember×4, asked×2, forgot×2, email, hope, moment, enjoys, taught, advised, warned, noon, kept
 - **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, form×2, ran×2, turned×2, word×2, volume×2, fire×2, gave, nephew, tv, until, motorway, let's, package, brought, emails, fell, moment, firefighters, extinguished, homework, answer
 - **b1_dependent_prepositions** (B1 grammar): test, keen, villas, health, remembering, fond, aware, capable, rely, believes, consists, think, future, suffers, headaches, sun, rain, accused, lying, approve, plan, concentrate, congratulated, specialises
-- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, since×2, answer, dust, words, quiz, halfway, b, turn, episode, email, inbox, ticked, keep, waking, begin, mess
+- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, answer, dust, words, quiz, halfway, b, turn, episode, email, inbox, ticked, keep, waking, begin, mess
 - **b2_past_perfect** (B2 grammar): couldn't, knew, recognise, thieves, showed, summer, lesson
 - **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, happen, place, everyone, know, truth, pizza, plan
 - **b2_third_conditional** (B2 grammar): weather×2, heard×2, practised, enjoyed, crashed, truth, woken, sunrise, realised, pizza, followed, wi, fi, invoice, remembered, prepared, email, understood, missed, worn, dawn, battery
