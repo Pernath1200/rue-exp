@@ -6,6 +6,152 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 16 (RUE build, claude-opus-5)
+
+### Headline: **two A1 units repaired to zero and two C1 units built — audit 195 → 185, C1 now 13/18 on path, and six authored packs turn out to be unreachable by students.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `67b92d8` | `trunk_verbs_say_a1` re-lexified, 5 items — 5 types → **0** |
+| 2 | `113f10b` | `trunk_glue_pronouns_a1` re-lexified, 5 items — 5 types → **0** |
+| 3 | `5878a36` | **`c1_advanced_modality`** built + live — 10 → **48** items |
+| 4 | `0b8cc87` | **`c1_subjunctive`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 80 live grammar units · 0 errors · 1 warning | **82 units · 0 errors · 1 warning** |
+| `audit` | 195 unknown types · 53 units | **185** · 51 units · baseline tightened 195 → 185 |
+
+Net **−10** unknown types while adding **96** new items. Both repaired units drop
+off the sequencing report entirely, and **both new C1 units are 100 % pool-clean —
+0 violations between them**, verified by simulating `audit.py` against the pack
+before flipping status, not after. The 12 warnings are the pre-existing
+`b2_clear_claims` ones and the 1 warning is the known `order_click` gap; both
+unchanged. All three gates green before every commit; commit and push per unit.
+
+I was pushed back once mid-run — your `2f14743` (picture-led vocab intros) landed
+while I was authoring. Rebased onto it, **re-ran all three gates after the
+rebase**, then pushed. No conflicts.
+
+### Repair queue: nothing processed, and that is still correct
+
+**Fifth run in a row.** Same three unticked items, same reason: the vocab level
+badge and `order_click` are marked *engine work, cloud must not ship*, and
+`b2_clear_claims` is a style decision reserved for you with the conservative path
+already taken. Runs 12–16 have now all said this. **The queue has no content-lane
+item in it. Until it does, step 1 of the routine is a no-op every hour.**
+
+---
+
+### THE FINDING: six authored packs are on disk but unreachable by students
+
+`data/nodes-grammar.json` carries six nodes that are `status: coming`, have a
+`content` path, **have a real pack file on disk**, and appear on **no**
+`path_order_*` list. Nothing in the app can ever open them:
+
+| Node | Registry level | Pack on disk | Why it is probably orphaned |
+|---|---|---|---|
+| `b2_future_in_the_past` | B2 | 10 items, 1 card | absorbed into `b2_future_forms` (its note claims *future in the past*) |
+| `b2_inversion` | C1 | 10 items, 1 card | superseded by live `c1_inversion_emphasis` |
+| `b2_cleft_sentences` | C1 | 10 items, 1 card | superseded by live `c1_clefts_fronting` |
+| `b2_emphasis_fronting` | C1 | 10 items, 1 card | superseded by live `c1_clefts_fronting` |
+| `c1_hedging_stance` | C1 | 10 items, 1 card | merged into `c1_advanced_modality` per its own registry note — **I absorbed it this run** |
+| `b2_clear_claims` | B2 | **12 items, 6 cards** | not a thin shell — a real authored pack |
+
+Five are 10-item thin shells whose ground is already taught by a live unit, so
+leaving them is harmless but misleading. **`b2_clear_claims` is the one that
+matters**: it is a fully authored 12-item, 6-card pack, and `REPAIR-QUEUE.md`
+discusses its gap-answer style as a live design question — but **no student has
+ever seen it or ever can**, because it is off-path and `coming`. Its 12
+`verify_pack` warnings are also the only warnings in the whole repo, so the lint
+noise every run comes from a pack nobody can reach.
+
+**Two clean options, both yours:** delete the five shells and wire
+`b2_clear_claims` onto `path_order_b2`, or delete all six. I did neither —
+deleting registered nodes and editing spine order is outside the content lane.
+
+---
+
+### Forks and judgment calls
+
+**1. `c1_subjunctive` gaps the trigger word, not the verb, in 13 of its 24
+trigger items — 9 of them converted for exactly this reason.** `audit.py` only counts `gap_answer` and `lemma`
+as *taught*, so with the gap always on the verb, the unit's own subject matter
+(`essential`, `vital`, `imperative`, `crucial`, `advisable`, `desirable`,
+`recommendation`, `requirement`, `proposal`) read as **untaught vocabulary** — 10
+fresh violations in a unit that is literally about those words. Rather than
+lemma-tagging around the gate, I made those items gap the trigger, with the
+fact-adjectives (`clear`, `obvious`, `true`, `certain`) as distractors. That is a
+real teaching point — *which* adjective forces the base form is half the unit —
+and the base-form drilling still gets 23 items across strands 1–3. **Flagging it
+because it changes the strand's feel: strand 1 is now half "spot the trigger",
+half "get the form right".**
+
+**2. Quiz distractors that are morphological variants of the answer are
+out-of-pool, and I kept them.** `proving`/`proves`, `binding`, `certainty`,
+`require`/`required`, `propose`/`proposed`, `doubtful`, `principal`. They are not
+in any pool, but they are not vocabulary the student has to *know* — they are the
+wrong-form trap the item exists to set. I did swap out four genuine lexical
+leaks (`possibly`, `maybe`, `measure`, `apart`) for pool-legal wrong answers.
+**Conservative default taken: morphological traps stay, lexical leaks go.** Say
+if you want the traps gone too.
+
+**3. The stemmer tax again — this time it is base forms, not irregulars.**
+`audit.py` treats a `gap_answer` as the taught token, so `happened` becomes
+taught while **`happen` does not** — `variants()` strips suffixes off the word
+being checked but never adds them to the pool. It cost me two sentences this run
+(*Accidents will happen* → *A good teacher will always find a way*; *the change
+happen soon* → *the price stay the same*), both of which were better English
+before I bent them. This is the fifth consecutive run to pay a stemmer tax
+(`rise`, `show`, `men`, `books`, now base forms). **One line in `targets_of` —
+also add the bare stem of every `gap_answer` — would clear this whole family.**
+I have not touched the gate.
+
+**4. `craft` is still parked and still the only non-C1 gap.** B1 is 22/23, B2
+21/22, and in both cases the missing node is `craft` (vocab, B1+B2,
+`content: null`, note *"Side door later · B1+"*). Unchanged from run 15 — parked
+reads as your shelf, not a sketch waiting for an author.
+
+**5. Scoping was again done from the live packs' notes, not the registry.** Run
+15's lesson held. `c1_advanced_modality`'s registry note lists `somewhat` as its
+hedging content — but `c1_register` already owns formal degree adverbs, so I
+dropped that strand and built raising verbs instead. `c1_subjunctive`'s registry
+note lists *wish / if only / would rather*, **all three of which are already
+live** in `b2_wish_if_only` and `b2_hypothetical_past`; had I authored from the
+registry, two thirds of the unit would have been a B2 duplicate. Both packs
+record their exclusions in their own `note` field.
+
+**6. Two prompt-vs-reality mismatches worth fixing in the routine prompt.**
+(a) The prompt's "current state" paragraph says *B1 16/23, B2 4/24, C1 0/22*;
+reality this run was B1 22/23, B2 21/22, C1 11/18 → 13/18. A run that trusted it
+would build the wrong level. (b) The prompt says `py`; this container has only
+`python3`. Both gates ran fine once I substituted, but a stricter run could read
+`py: not found` as a failing gate and spend the whole hour "fixing" it. Run 15
+already asked for `check_playable` to be added to the prompt's gate list — still
+only two named there.
+
+---
+
+### Smoke-check list
+
+- **`c1_advanced_modality`** — 48 items, quiz-only. Worth an eye on the
+  `can` vs `may` pair (items 6–7) and on `wouldn't` as a gap answer (item 12),
+  which is the only contracted answer in the pack.
+- **`c1_subjunctive`** — 48 items, quiz-only. The Czech leans on *aby* throughout;
+  check items 5 (*crucial · aby tým zůstal pohromadě*) and 41 (*Far be it from me
+  · Vůbec mi nepřísluší…*), which were the two hardest to translate naturally.
+- **`trunk_verbs_say_a1` / `trunk_glue_pronouns_a1`** — every teaching verb and
+  glue word is unchanged; only the objects moved. *Give it to me* became *She
+  helps me*, which is the one item where the frame shape changed rather than just
+  its lexis.
+
+---
+
 ## 2026-08-07 · cloud run 15 (RUE build, claude-opus-5)
 
 ### Headline: **two A1 units repaired to zero and two C1 units built — audit 206 → 195, C1 now 11/18 on path, and B1/B2 are complete.**
