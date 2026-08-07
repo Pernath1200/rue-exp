@@ -125,6 +125,36 @@ def lint_pack(path: Path) -> None:
     if n_items == 0:
         warn(f"{pid}: pack has zero items")
 
+    # Use-stage sentence bank (leaf vocab packs). Prompt is cz, answer is en.
+    sents = d.get("sentences")
+    if sents is not None:
+        if not isinstance(sents, list):
+            err(f"{pid}: `sentences` must be a list")
+        else:
+            item_lemmas = {
+                " ".join(norm_words(it["en"]))
+                for b in d.get("blocks") or []
+                for it in (b.get("items") or [])
+                if isinstance(it, dict) and isinstance(it.get("en"), str)
+            }
+            for si, s in enumerate(sents):
+                w = f"sentences[{si}]"
+                if not isinstance(s, dict):
+                    err(f"{pid} {w}: not an object")
+                    continue
+                for f in ("en", "cz"):
+                    if not isinstance(s.get(f), str) or not s[f].strip():
+                        err(f"{pid} {w}: `{f}` missing or empty")
+                check_str_list(pid, w, "accepts", s.get("accepts"))
+                check_str_list(pid, w, "lemmas", s.get("lemmas"))
+                # lemmas drive guaranteed exposure — they must be words this
+                # pack actually teaches, or Use demands an untaught word.
+                for lem in s.get("lemmas") or []:
+                    if item_lemmas and " ".join(norm_words(lem)) not in item_lemmas:
+                        warn(
+                            f"{pid} {w}: lemma {lem!r} is not an item in this pack"
+                        )
+
 
 def cross_check_tree(pack_ids_by_file: dict[str, str]) -> None:
     tree_path = DATA / "tree.json"

@@ -139,11 +139,17 @@ def targets_of(pack: dict, domain: str) -> set[str]:
 
 
 def exposed_text(pack: dict) -> list[str]:
+    """Every English string a student is shown — items AND the Use sentence
+    bank. Sentence banks are production targets, so they expose vocabulary
+    exactly like items do and must be audited the same way."""
     texts: list[str] = []
     for b in pack.get("blocks") or []:
         for it in b.get("items") or []:
             if isinstance(it, dict) and isinstance(it.get("en"), str):
                 texts.append(it["en"])
+    for s in pack.get("sentences") or []:
+        if isinstance(s, dict) and isinstance(s.get("en"), str):
+            texts.append(s["en"])
     return texts
 
 
@@ -239,7 +245,7 @@ def main() -> int:
         )
         print(f"baseline tightened: {base_total} -> {total}")
     else:
-        print(f"ratchet ok: {total} <= baseline {base_total}")
+        print(f"ratchet ok: {total} vs baseline {base_total}")
     return 0
 
 

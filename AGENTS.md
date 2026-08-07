@@ -88,6 +88,40 @@ plus at most one trap.
 - Order: **all live A1 vocab units first, then A2.** B1 only after James
   reviews the A1/A2 set.
 
+## Use-stage sentence banks (James, 2026-08-07)
+
+45 of 67 live vocab units show **"Use · coming soon"** — the fourth stage is
+dead for two thirds of the vocab side. Fix: author a real `sentences[]` bank
+per pack. **Decided: we do NOT port `rue3-exp/js/carriers.js`.** It builds
+Czech by string template with no case or gender agreement (`Mám ${cz}` gives
+*Mám sestra*), and broken Czech in front of a Czech learner is worse than a
+missing stage.
+
+```jsonc
+"sentences": [
+  { "en": "My mother is in the kitchen.",
+    "cz": "Moje matka je v kuchyni.",
+    "lemmas": ["kitchen"],                  // words THIS pack teaches
+    "accepts": ["My mother is in the kitchen"] }
+]
+```
+
+- **~12 per pack**, one per lemma the unit most needs to produce.
+- `lemmas` must name items that exist in this pack — they drive guaranteed
+  exposure (the word modes surface a lemma before Use demands it). Lint warns.
+- **The audit reads sentence banks** (`exposed_text`), so every English word in
+  a sentence must be pool-legal at that unit's position. No free pass.
+- **`use[]` tags stay** — 1,858 of them, curated, naming the frames each word
+  fits (`this_is_a`, `i_have_a`, `he_is_my`). They are **authoring guidance**,
+  not executable: read them to choose a sentence's shape. The engine that made
+  them executable stays in the frozen lab; revisit only if Czech case/gender
+  data ever lands on the lemmas.
+- Template to copy: `a1_home_family`.
+- **Czech is the risk.** Write only Czech you are confident is natural and
+  correctly inflected. If you cannot, choose a simpler English sentence you
+  CAN translate well. Every bank is reviewed by the separate Czech-review
+  routine — flag anything you were unsure of in the digest.
+
 ## Automation lanes (2026-08-06, mirrors RUPL)
 
 Two lanes meet on branch **`build`**; `main` moves only when James promotes.
