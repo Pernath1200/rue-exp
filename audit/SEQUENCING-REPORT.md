@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**469 unknown word types** across 63 live units (of 130).
+**457 unknown word types** across 62 live units (of 130).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -39,7 +39,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **leaf_travel_a2** (A2 vocab): depart
 - **a2_past_continuous** (A2 grammar): while
 - **a2_modals_must_should** (A2 grammar): say×2, see, drive, worry, forget
-- **a2_comparatives** (A2 grammar): last×2, class, autumn, test, thought, app, person, know, motorway, runs, idea, polluted
 - **a2_ed_ing_adjectives** (A2 grammar): feel×2, storm×2, history, ending, mistake, question, result, rule, exam, situation
 - **a2_countable** (A2 grammar): gave, pair, pizza
 - **a2_adverbs_order** (A2 grammar): know×2, drive, drives, forget, answer, missed, won, answered
