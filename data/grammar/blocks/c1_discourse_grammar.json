@@ -1,146 +1,1291 @@
 {
-  "id": "c1_discourse_grammar",
-  "title": "Discourse grammar",
-  "level": "C1",
-  "tree_node": "c1_discourse_grammar",
-  "codex_unit": "G_CL-C1-01",
-  "practice": "frames",
-  "note": "cohesion beyond linkers: reference, theme, given-new · thin shell night/2026-08-05",
-  "default_direction": "cz_to_en",
-  "check": {
-    "sequence": [
-      "quiz"
-    ]
-  },
-  "quality": "thin_shell",
-  "blocks": [
+ "id": "c1_discourse_grammar",
+ "title": "Discourse grammar",
+ "level": "C1",
+ "tree_node": "c1_discourse_grammar",
+ "codex_unit": "G_CL-C1-01",
+ "practice": "frames",
+ "note": "cohesion beyond linkers · demonstrative reference with this / these / such a, agreeing in number with a clause-sized referent · summary (shell) nouns packaging the preceding text and judging it · topic-announcing frames as for, turning to, with regard to, when it comes to, in terms of, as far as … is concerned · parallel reference across the former, the latter, the same applies / is true of / goes for, likewise, respectively · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 15)",
+ "default_direction": "cz_to_en",
+ "blocks": [
+  {
+   "id": "c1_discourse_grammar_main",
+   "title": "Discourse grammar · C1",
+   "items": [
     {
-      "id": "c1_discourse_grammar_main",
-      "title": "Discourse grammar · C1",
-      "items": [
-        {
-          "en": "This raises a further question.",
-          "cz": "To vyvolává další otázku.",
-          "gap": "This ____ a further question.",
-          "gap_answer": "raises",
-          "accepts": [
-            "This raises a further question."
-          ],
-          "explanation": "This for discourse reference to prior idea.",
-          "explanation_cz": "This odkazuje na předchozí myšlenku."
-        },
-        {
-          "en": "The former is cheaper; the latter is better.",
-          "cz": "První je levnější; druhé je lepší.",
-          "gap": "The former is cheaper; the ____ is better.",
-          "gap_answer": "latter",
-          "accepts": [
-            "The former is cheaper; the latter is better."
-          ],
-          "explanation": "former/latter cohesion pair.",
-          "explanation_cz": "former/latter dvojice."
-        },
-        {
-          "en": "Such policies rarely work in practice.",
-          "cz": "Takové politiky v praxi zřídka fungují.",
-          "gap": "____ policies rarely work in practice.",
-          "gap_answer": "Such",
-          "accepts": [
-            "Such policies rarely work in practice."
-          ],
-          "explanation": "Such + noun for prior-type reference.",
-          "explanation_cz": "Such + podst. odkaz na typ."
-        },
-        {
-          "en": "As for funding, the picture is mixed.",
-          "cz": "Pokud jde o finance, obraz je smíšený.",
-          "gap": "As ____ funding, the picture is mixed.",
-          "gap_answer": "for",
-          "accepts": [
-            "As for funding, the picture is mixed."
-          ],
-          "explanation": "As for: topic shift marker.",
-          "explanation_cz": "As for: posun tématu."
-        },
-        {
-          "en": "The point is that reform takes time.",
-          "cz": "Jde o to, že reforma trvá.",
-          "gap": "The point ____ that reform takes time.",
-          "gap_answer": "is",
-          "accepts": [
-            "The point is that reform takes time."
-          ],
-          "explanation": "The point is that… discourse frame.",
-          "explanation_cz": "The point is that… rámec."
-        },
-        {
-          "en": "That said, progress has been made.",
-          "cz": "To řečeno, pokrok nastal.",
-          "gap": "That ____, progress has been made.",
-          "gap_answer": "said",
-          "accepts": [
-            "That said, progress has been made."
-          ],
-          "explanation": "That said: concession turn.",
-          "explanation_cz": "That said: výhrada."
-        },
-        {
-          "en": "In this respect, the two studies differ.",
-          "cz": "V tomto ohledu se studie liší.",
-          "gap": "In this ____, the two studies differ.",
-          "gap_answer": "respect",
-          "accepts": [
-            "In this respect, the two studies differ."
-          ],
-          "explanation": "In this respect: perspective link.",
-          "explanation_cz": "In this respect: vazba pohledu."
-        },
-        {
-          "en": "Turning to costs, the outlook is poor.",
-          "cz": "Pokud jde o náklady, výhled je špatný.",
-          "gap": "____ to costs, the outlook is poor.",
-          "gap_answer": "Turning",
-          "accepts": [
-            "Turning to costs, the outlook is poor."
-          ],
-          "explanation": "Turning to: section shift.",
-          "explanation_cz": "Turning to: posun oddílu."
-        },
-        {
-          "en": "The same applies to small firms.",
-          "cz": "Totéž platí pro malé firmy.",
-          "gap": "The same ____ to small firms.",
-          "gap_answer": "applies",
-          "accepts": [
-            "The same applies to small firms."
-          ],
-          "explanation": "The same applies: parallel cohesion.",
-          "explanation_cz": "The same applies: paralelní koheze."
-        },
-        {
-          "en": "All of this suggests caution.",
-          "cz": "To vše naznačuje opatrnost.",
-          "gap": "All of this ____ caution.",
-          "gap_answer": "suggests",
-          "accepts": [
-            "All of this suggests caution."
-          ],
-          "explanation": "All of this: cumulative reference.",
-          "explanation_cz": "All of this: kumulativní odkaz."
-        }
-      ]
+     "en": "The client changed the plan again. This is now a serious problem.",
+     "cz": "Klient znovu změnil plán. To je teď vážný problém.",
+     "gap": "The client changed the plan again. ____ is now a serious problem.",
+     "gap_answer": "This",
+     "gap_accepts": [
+      "This"
+     ],
+     "accepts": [
+      "The client changed the plan again. This is now a serious problem."
+     ],
+     "quiz_options": [
+      "This",
+      "These",
+      "Those",
+      "Many"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "We missed the deadline by a week. This was expensive for the whole team.",
+     "cz": "Zmeškali jsme termín o týden. To bylo pro celý tým drahé.",
+     "gap": "We missed the deadline by a week. ____ was expensive for the whole team.",
+     "gap_answer": "This",
+     "gap_accepts": [
+      "This"
+     ],
+     "accepts": [
+      "We missed the deadline by a week. This was expensive for the whole team."
+     ],
+     "quiz_options": [
+      "This",
+      "These",
+      "Those",
+      "Both"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "The system stopped twice on Monday. This has never been the case before.",
+     "cz": "Systém se v pondělí dvakrát zastavil. To se dosud nikdy nestalo.",
+     "gap": "The system stopped twice on Monday. ____ has never been the case before.",
+     "gap_answer": "This",
+     "gap_accepts": [
+      "This"
+     ],
+     "accepts": [
+      "The system stopped twice on Monday. This has never been the case before."
+     ],
+     "quiz_options": [
+      "This",
+      "These",
+      "Those",
+      "Few"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "Prices went up and sales fell. This shows a real problem.",
+     "cz": "Ceny vzrostly a prodeje klesly. To ukazuje na skutečný problém.",
+     "gap": "Prices went up and sales fell. ____ shows a real problem.",
+     "gap_answer": "This",
+     "gap_accepts": [
+      "This"
+     ],
+     "accepts": [
+      "Prices went up and sales fell. This shows a real problem."
+     ],
+     "quiz_options": [
+      "This",
+      "These",
+      "Those",
+      "Both"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "The team finished early. This was a real success.",
+     "cz": "Tým skončil dřív. Byl to skutečný úspěch.",
+     "gap": "The team finished early. ____ was a real success.",
+     "gap_answer": "This",
+     "gap_accepts": [
+      "This"
+     ],
+     "accepts": [
+      "The team finished early. This was a real success."
+     ],
+     "quiz_options": [
+      "This",
+      "These",
+      "Those",
+      "Many"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "Three managers left this year. These changes have hurt the team.",
+     "cz": "Letos odešli tři manažeři. Tyto změny týmu ublížily.",
+     "gap": "Three managers left this year. ____ changes have hurt the team.",
+     "gap_answer": "These",
+     "gap_accepts": [
+      "These"
+     ],
+     "accepts": [
+      "Three managers left this year. These changes have hurt the team."
+     ],
+     "quiz_options": [
+      "These",
+      "This",
+      "That",
+      "It"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "The report was late and the figures were wrong. These problems are not new.",
+     "cz": "Zpráva přišla pozdě a čísla byla špatně. Tyto problémy nejsou nové.",
+     "gap": "The report was late and the figures were wrong. ____ problems are not new.",
+     "gap_answer": "These",
+     "gap_accepts": [
+      "These"
+     ],
+     "accepts": [
+      "The report was late and the figures were wrong. These problems are not new."
+     ],
+     "quiz_options": [
+      "These",
+      "This",
+      "That",
+      "It"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "Prices went up twice this year. These increases were not planned.",
+     "cz": "Ceny letos vzrostly dvakrát. Tato zvýšení nebyla v plánu.",
+     "gap": "Prices went up twice this year. ____ increases were not planned.",
+     "gap_answer": "These",
+     "gap_accepts": [
+      "These"
+     ],
+     "accepts": [
+      "Prices went up twice this year. These increases were not planned."
+     ],
+     "quiz_options": [
+      "These",
+      "This",
+      "That",
+      "It"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "Two clients left in June and a third left in July. These are serious problems for the company.",
+     "cz": "Dva klienti odešli v červnu a třetí v červenci. To jsou pro firmu vážné problémy.",
+     "gap": "Two clients left in June and a third left in July. ____ are serious problems for the company.",
+     "gap_answer": "These",
+     "gap_accepts": [
+      "These"
+     ],
+     "accepts": [
+      "Two clients left in June and a third left in July. These are serious problems for the company."
+     ],
+     "quiz_options": [
+      "These",
+      "This",
+      "That",
+      "It"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "The client wants to start again. Such a change would cost us the whole project.",
+     "cz": "Klient chce začít znovu. Taková změna by nás stála celý projekt.",
+     "gap": "The client wants to start again. ____ a change would cost us the whole project.",
+     "gap_answer": "Such",
+     "gap_accepts": [
+      "Such"
+     ],
+     "accepts": [
+      "The client wants to start again. Such a change would cost us the whole project."
+     ],
+     "quiz_options": [
+      "Such",
+      "This",
+      "These",
+      "That"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "The parts arrived three weeks late. Such a delay is rare in this market.",
+     "cz": "Díly dorazily o tři týdny později. Takové zpoždění je na tomto trhu vzácné.",
+     "gap": "The parts arrived three weeks late. ____ a delay is rare in this market.",
+     "gap_answer": "Such",
+     "gap_accepts": [
+      "Such"
+     ],
+     "accepts": [
+      "The parts arrived three weeks late. Such a delay is rare in this market."
+     ],
+     "quiz_options": [
+      "Such",
+      "This",
+      "These",
+      "Every"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "They closed the office in August. Such a decision is always difficult to explain.",
+     "cz": "V srpnu zavřeli kancelář. Takové rozhodnutí se vždycky vysvětluje těžko.",
+     "gap": "They closed the office in August. ____ a decision is always difficult to explain.",
+     "gap_answer": "Such",
+     "gap_accepts": [
+      "Such"
+     ],
+     "accepts": [
+      "They closed the office in August. Such a decision is always difficult to explain."
+     ],
+     "quiz_options": [
+      "Such",
+      "This",
+      "Those",
+      "Each"
+     ],
+     "form": "demonstrative_reference",
+     "explanation": "English points back at what it has just said with this, these and such, and the choice is grammar, not decoration. This and these reach back over a whole clause — not to a noun in it, but to the fact the clause reported — and they must agree in number with what they stand for: one event is this, several are these. Such is different again: it points not at the thing itself but at its kind, and before a singular countable noun it takes a: such a delay, never this a delay. Czech carries all of this on one word, to, which is why Czech writers reach for it in English and produce a sentence that floats free of the paragraph above it.",
+     "explanation_cz": "Angličtina odkazuje na to, co právě řekla, slovy this, these a such, a ta volba je věcí gramatiky, nikoli ozdoby. This a these sahají zpět přes celou větu — ne k některému jejímu jménu, nýbrž k faktu, který věta oznámila — a musí se shodovat v čísle s tím, co zastupují: jedna událost je this, několik jich je these. Such je ještě něco jiného: neukazuje na věc samu, ale na její druh, a před počitatelným jménem v jednotném čísle bere a: such a delay, nikdy this a delay. Čeština tohle všechno unese na jediném slově to, a proto po něm čeští pisatelé v angličtině sahají a vzniká věta, která se vznáší bez vazby na odstavec nad sebou."
+    },
+    {
+     "en": "He said the data were complete. That assumption was wrong.",
+     "cz": "Řekl, že data jsou úplná. Tento předpoklad byl chybný.",
+     "gap": "He said the data were complete. That ____ was wrong.",
+     "gap_answer": "assumption",
+     "gap_accepts": [
+      "assumption"
+     ],
+     "accepts": [
+      "He said the data were complete. That assumption was wrong."
+     ],
+     "quiz_options": [
+      "assumption",
+      "decision",
+      "delay",
+      "increase"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "The board agreed to close the office. This decision was never explained.",
+     "cz": "Vedení se dohodlo, že kancelář zavře. Toto rozhodnutí nikdo nikdy nevysvětlil.",
+     "gap": "The board agreed to close the office. This ____ was never explained.",
+     "gap_answer": "decision",
+     "gap_accepts": [
+      "decision"
+     ],
+     "accepts": [
+      "The board agreed to close the office. This decision was never explained."
+     ],
+     "quiz_options": [
+      "decision",
+      "question",
+      "delay",
+      "example"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "The parts arrived three weeks late. This delay cost us the project.",
+     "cz": "Díly dorazily o tři týdny později. Toto zpoždění nás stálo projekt.",
+     "gap": "The parts arrived three weeks late. This ____ cost us the project.",
+     "gap_answer": "delay",
+     "gap_accepts": [
+      "delay"
+     ],
+     "accepts": [
+      "The parts arrived three weeks late. This delay cost us the project."
+     ],
+     "quiz_options": [
+      "delay",
+      "success",
+      "method",
+      "view"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "Sales fell in every month of last year. This pattern is now clear.",
+     "cz": "Prodeje klesaly každý měsíc loňského roku. Tento vzorec je teď zřejmý.",
+     "gap": "Sales fell in every month of last year. This ____ is now clear.",
+     "gap_answer": "pattern",
+     "gap_accepts": [
+      "pattern"
+     ],
+     "accepts": [
+      "Sales fell in every month of last year. This pattern is now clear."
+     ],
+     "quiz_options": [
+      "pattern",
+      "question",
+      "budget",
+      "price"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "Should we hire more staff or not? This question has no easy answer.",
+     "cz": "Máme přijmout víc lidí, nebo ne? Tato otázka nemá snadnou odpověď.",
+     "gap": "Should we hire more staff or not? This ____ has no easy answer.",
+     "gap_answer": "question",
+     "gap_accepts": [
+      "question"
+     ],
+     "accepts": [
+      "Should we hire more staff or not? This question has no easy answer."
+     ],
+     "quiz_options": [
+      "question",
+      "result",
+      "delay",
+      "success"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "Prices went up again in June. This increase was not planned.",
+     "cz": "Ceny v červnu opět vzrostly. Toto zvýšení nebylo v plánu.",
+     "gap": "Prices went up again in June. This ____ was not planned.",
+     "gap_answer": "increase",
+     "gap_accepts": [
+      "increase"
+     ],
+     "accepts": [
+      "Prices went up again in June. This increase was not planned."
+     ],
+     "quiz_options": [
+      "increase",
+      "delay",
+      "method",
+      "claim"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "The project came in on time and under budget. This success surprised the whole team.",
+     "cz": "Projekt byl hotový včas a pod rozpočtem. Tento úspěch celý tým překvapil.",
+     "gap": "The project came in on time and under budget. This ____ surprised the whole team.",
+     "gap_answer": "success",
+     "gap_accepts": [
+      "success"
+     ],
+     "accepts": [
+      "The project came in on time and under budget. This success surprised the whole team."
+     ],
+     "quiz_options": [
+      "success",
+      "failure",
+      "delay",
+      "risk"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "We test the system three times before we start. This method is slow but safe.",
+     "cz": "Systém testujeme třikrát, než začneme. Tato metoda je pomalá, ale bezpečná.",
+     "gap": "We test the system three times before we start. This ____ is slow but safe.",
+     "gap_answer": "method",
+     "gap_accepts": [
+      "method"
+     ],
+     "accepts": [
+      "We test the system three times before we start. This method is slow but safe."
+     ],
+     "quiz_options": [
+      "method",
+      "problem",
+      "price",
+      "claim"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "He argued that the market will improve. This claim needs more evidence.",
+     "cz": "Tvrdil, že se trh zlepší. Toto tvrzení potřebuje víc důkazů.",
+     "gap": "He argued that the market will improve. This ____ needs more evidence.",
+     "gap_answer": "claim",
+     "gap_accepts": [
+      "claim"
+     ],
+     "accepts": [
+      "He argued that the market will improve. This claim needs more evidence."
+     ],
+     "quiz_options": [
+      "claim",
+      "delay",
+      "budget",
+      "method"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "The new system stopped twice in one week. This failure was expensive.",
+     "cz": "Nový systém se během jednoho týdne dvakrát zastavil. Toto selhání bylo drahé.",
+     "gap": "The new system stopped twice in one week. This ____ was expensive.",
+     "gap_answer": "failure",
+     "gap_accepts": [
+      "failure"
+     ],
+     "accepts": [
+      "The new system stopped twice in one week. This failure was expensive."
+     ],
+     "quiz_options": [
+      "failure",
+      "success",
+      "question",
+      "example"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "Our price is lower and our team is bigger. This difference matters to clients.",
+     "cz": "Naše cena je nižší a náš tým větší. Tento rozdíl je pro klienty důležitý.",
+     "gap": "Our price is lower and our team is bigger. This ____ matters to clients.",
+     "gap_answer": "difference",
+     "gap_accepts": [
+      "difference"
+     ],
+     "accepts": [
+      "Our price is lower and our team is bigger. This difference matters to clients."
+     ],
+     "quiz_options": [
+      "difference",
+      "delay",
+      "decision",
+      "answer"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "We moved the deadline by two weeks. This solution helped the whole team.",
+     "cz": "Posunuli jsme termín o dva týdny. Toto řešení pomohlo celému týmu.",
+     "gap": "We moved the deadline by two weeks. This ____ helped the whole team.",
+     "gap_answer": "solution",
+     "gap_accepts": [
+      "solution"
+     ],
+     "accepts": [
+      "We moved the deadline by two weeks. This solution helped the whole team."
+     ],
+     "quiz_options": [
+      "solution",
+      "problem",
+      "question",
+      "failure"
+     ],
+     "form": "summary_noun",
+     "explanation": "Instead of pointing back with a bare this, careful English writing packages the preceding text inside a noun: this decision, that assumption, this delay. The noun does two jobs at once. It ties the sentence to what came before, and it tells the reader how to file what came before — calling a statement an assumption already judges it, and calling it a claim judges it differently. These summary nouns are the backbone of academic and business prose, and choosing the wrong one is not a style slip but a change of meaning. A bare this is always available and always weaker; the noun is what makes the link say something.",
+     "explanation_cz": "Místo holého this pečlivá angličtina předchozí text zabalí do podstatného jména: this decision, that assumption, this delay. To jméno dělá dvě věci najednou. Váže větu k tomu, co bylo řečeno dřív, a zároveň čtenáři říká, jak si to má zařadit — nazvat výrok předpokladem už znamená jej hodnotit a nazvat jej tvrzením znamená hodnotit jej jinak. Tato shrnující jména jsou páteří odborné i obchodní prózy a špatná volba není stylistickým přehmatem, nýbrž změnou významu. Holé this je vždycky po ruce a vždycky slabší; teprve jméno dá odkazu obsah."
+    },
+    {
+     "en": "As for the budget, the plan has not changed since March.",
+     "cz": "Pokud jde o rozpočet, plán se od března nezměnil.",
+     "gap": "____ for the budget, the plan has not changed since March.",
+     "gap_answer": "As",
+     "gap_accepts": [
+      "As"
+     ],
+     "accepts": [
+      "As for the budget, the plan has not changed since March."
+     ],
+     "quiz_options": [
+      "As",
+      "With",
+      "Turning",
+      "When"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "As for the deadline, we have no news yet.",
+     "cz": "Pokud jde o termín, zatím nemáme žádné zprávy.",
+     "gap": "As ____ the deadline, we have no news yet.",
+     "gap_answer": "for",
+     "gap_accepts": [
+      "for"
+     ],
+     "accepts": [
+      "As for the deadline, we have no news yet."
+     ],
+     "quiz_options": [
+      "for",
+      "in",
+      "on",
+      "by"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "Turning to costs, the picture is worse.",
+     "cz": "Přejdeme-li k nákladům, obraz je horší.",
+     "gap": "Turning ____ costs, the picture is worse.",
+     "gap_answer": "to",
+     "gap_accepts": [
+      "to"
+     ],
+     "accepts": [
+      "Turning to costs, the picture is worse."
+     ],
+     "quiz_options": [
+      "to",
+      "on",
+      "at",
+      "for"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "Turning to the second problem, the answer is simple.",
+     "cz": "Přejdeme-li k druhému problému, odpověď je jednoduchá.",
+     "gap": "____ to the second problem, the answer is simple.",
+     "gap_answer": "Turning",
+     "gap_accepts": [
+      "Turning"
+     ],
+     "accepts": [
+      "Turning to the second problem, the answer is simple."
+     ],
+     "quiz_options": [
+      "Turning",
+      "Turned",
+      "Turns",
+      "Turn"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "When it comes to price, we are the cheapest on the market.",
+     "cz": "Co se týče ceny, jsme na trhu nejlevnější.",
+     "gap": "When it comes ____ price, we are the cheapest on the market.",
+     "gap_answer": "to",
+     "gap_accepts": [
+      "to"
+     ],
+     "accepts": [
+      "When it comes to price, we are the cheapest on the market."
+     ],
+     "quiz_options": [
+      "to",
+      "at",
+      "for",
+      "with"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "When it comes to service, they are better than we are.",
+     "cz": "Co se týče služeb, jsou lepší než my.",
+     "gap": "When it ____ to service, they are better than we are.",
+     "gap_answer": "comes",
+     "gap_accepts": [
+      "comes"
+     ],
+     "accepts": [
+      "When it comes to service, they are better than we are."
+     ],
+     "quiz_options": [
+      "comes",
+      "come",
+      "coming",
+      "is"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "As far as the budget is concerned, the picture has not changed.",
+     "cz": "Co se rozpočtu týče, situace se nezměnila.",
+     "gap": "As far as the budget ____ concerned, the picture has not changed.",
+     "gap_answer": "is",
+     "gap_accepts": [
+      "is"
+     ],
+     "accepts": [
+      "As far as the budget is concerned, the picture has not changed."
+     ],
+     "quiz_options": [
+      "is",
+      "are",
+      "has",
+      "being"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "As far as the deadline is concerned, we are still safe.",
+     "cz": "Co se týče termínu, jsme zatím v bezpečí.",
+     "gap": "As far as the deadline is ____, we are still safe.",
+     "gap_answer": "concerned",
+     "gap_accepts": [
+      "concerned"
+     ],
+     "accepts": [
+      "As far as the deadline is concerned, we are still safe."
+     ],
+     "quiz_options": [
+      "concerned",
+      "concerning",
+      "concern",
+      "concerns"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "In terms of cost, the two plans are very similar.",
+     "cz": "Z hlediska nákladů jsou oba plány velmi podobné.",
+     "gap": "In ____ of cost, the two plans are very similar.",
+     "gap_answer": "terms",
+     "gap_accepts": [
+      "terms"
+     ],
+     "accepts": [
+      "In terms of cost, the two plans are very similar."
+     ],
+     "quiz_options": [
+      "terms",
+      "front",
+      "case",
+      "part"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "In terms of speed, the new system is much better.",
+     "cz": "Z hlediska rychlosti je nový systém mnohem lepší.",
+     "gap": "In terms ____ speed, the new system is much better.",
+     "gap_answer": "of",
+     "gap_accepts": [
+      "of"
+     ],
+     "accepts": [
+      "In terms of speed, the new system is much better."
+     ],
+     "quiz_options": [
+      "of",
+      "in",
+      "at",
+      "for"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "With regard to the meeting, I have no news.",
+     "cz": "Pokud jde o tu schůzku, nemám žádné zprávy.",
+     "gap": "____ regard to the meeting, I have no news.",
+     "gap_answer": "With",
+     "gap_accepts": [
+      "With"
+     ],
+     "accepts": [
+      "With regard to the meeting, I have no news."
+     ],
+     "quiz_options": [
+      "With",
+      "By",
+      "At",
+      "For"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "With regard to the budget, the board has not decided.",
+     "cz": "Pokud jde o rozpočet, vedení zatím nerozhodlo.",
+     "gap": "With ____ to the budget, the board has not decided.",
+     "gap_answer": "regard",
+     "gap_accepts": [
+      "regard"
+     ],
+     "accepts": [
+      "With regard to the budget, the board has not decided."
+     ],
+     "quiz_options": [
+      "regard",
+      "view",
+      "place",
+      "turn"
+     ],
+     "form": "topic_shift",
+     "explanation": "When a text changes subject, English announces it before it starts, with a short phrase that names the new topic and is then closed off by a comma: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. These are fixed frames, and the small words inside them are not interchangeable — as for takes for, turning takes to, in terms takes of. The point of the whole device is that the reader is told what the sentence is about before being told anything about it, which is the ordering English prose expects and Czech, with its freer word order, can leave to the sentence itself.",
+     "explanation_cz": "Když text mění téma, angličtina to oznámí předem krátkou frází, která nové téma pojmenuje a je pak oddělena čárkou: as for the budget, turning to costs, with regard to the meeting, when it comes to price, in terms of speed, as far as the deadline is concerned. Jsou to pevné rámce a drobná slova uvnitř nich nejsou zaměnitelná — as for žádá for, turning žádá to, in terms žádá of. Smysl celého prostředku je v tom, že čtenář se dozví, o čem věta je, dřív než se o tom dozví cokoli dalšího; takové pořadí anglická próza očekává, kdežto čeština si s volnějším slovosledem vystačí i bez něj."
+    },
+    {
+     "en": "We looked at two plans. The former is cheaper; the latter is safer.",
+     "cz": "Zvažovali jsme dva plány. První je levnější, druhý bezpečnější.",
+     "gap": "We looked at two plans. The former is cheaper; the ____ is safer.",
+     "gap_answer": "latter",
+     "gap_accepts": [
+      "latter"
+     ],
+     "accepts": [
+      "We looked at two plans. The former is cheaper; the latter is safer."
+     ],
+     "quiz_options": [
+      "latter",
+      "former",
+      "latest",
+      "late"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "There are two reports. The former is short; the latter runs to two hundred pages.",
+     "cz": "Máme dvě zprávy. První je krátká, druhá má dvě stě stran.",
+     "gap": "There are two reports. The ____ is short; the latter runs to two hundred pages.",
+     "gap_answer": "former",
+     "gap_accepts": [
+      "former"
+     ],
+     "accepts": [
+      "There are two reports. The former is short; the latter runs to two hundred pages."
+     ],
+     "quiz_options": [
+      "former",
+      "latter",
+      "latest",
+      "late"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "We can raise prices or reduce costs. The former is easier; the latter takes longer.",
+     "cz": "Můžeme zvýšit ceny, nebo snížit náklady. První je snazší, druhé trvá déle.",
+     "gap": "We can raise prices or reduce costs. The former is easier; the ____ takes longer.",
+     "gap_answer": "latter",
+     "gap_accepts": [
+      "latter"
+     ],
+     "accepts": [
+      "We can raise prices or reduce costs. The former is easier; the latter takes longer."
+     ],
+     "quiz_options": [
+      "latter",
+      "former",
+      "later",
+      "late"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "We have a London office and a Brno office. The former opened in 1990; the latter only last year.",
+     "cz": "Máme kancelář v Londýně a v Brně. První byla otevřena v roce 1990, druhá teprve loni.",
+     "gap": "We have a London office and a Brno office. The ____ opened in 1990; the latter only last year.",
+     "gap_answer": "former",
+     "gap_accepts": [
+      "former"
+     ],
+     "accepts": [
+      "We have a London office and a Brno office. The former opened in 1990; the latter only last year."
+     ],
+     "quiz_options": [
+      "former",
+      "latter",
+      "late",
+      "next"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "The same applies to small companies.",
+     "cz": "Totéž platí pro malé firmy.",
+     "gap": "The same applies ____ small companies.",
+     "gap_answer": "to",
+     "gap_accepts": [
+      "to"
+     ],
+     "accepts": [
+      "The same applies to small companies."
+     ],
+     "quiz_options": [
+      "to",
+      "for",
+      "with",
+      "on"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "The same applies to the second report.",
+     "cz": "Totéž platí i pro druhou zprávu.",
+     "gap": "The ____ applies to the second report.",
+     "gap_answer": "same",
+     "gap_accepts": [
+      "same"
+     ],
+     "accepts": [
+      "The same applies to the second report."
+     ],
+     "quiz_options": [
+      "same",
+      "similar",
+      "equal",
+      "likewise"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "Costs are falling in Brno. The same is true of Prague.",
+     "cz": "Náklady v Brně klesají. Totéž platí o Praze.",
+     "gap": "Costs are falling in Brno. The same ____ true of Prague.",
+     "gap_answer": "is",
+     "gap_accepts": [
+      "is"
+     ],
+     "accepts": [
+      "Costs are falling in Brno. The same is true of Prague."
+     ],
+     "quiz_options": [
+      "is",
+      "are",
+      "was",
+      "has"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "The same goes for the Brno team.",
+     "cz": "Totéž platí pro brněnský tým.",
+     "gap": "The same ____ for the Brno team.",
+     "gap_answer": "goes",
+     "gap_accepts": [
+      "goes"
+     ],
+     "accepts": [
+      "The same goes for the Brno team."
+     ],
+     "quiz_options": [
+      "goes",
+      "does",
+      "takes",
+      "has"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "The London team missed the deadline. Likewise, the Brno team was late.",
+     "cz": "Londýnský tým nestihl termín. Stejně tak brněnský tým přišel pozdě.",
+     "gap": "The London team missed the deadline. ____, the Brno team was late.",
+     "gap_answer": "Likewise",
+     "gap_accepts": [
+      "Likewise"
+     ],
+     "accepts": [
+      "The London team missed the deadline. Likewise, the Brno team was late."
+     ],
+     "quiz_options": [
+      "Likewise",
+      "Otherwise",
+      "Therefore",
+      "However"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "Prices went up in Prague and, likewise, in Brno.",
+     "cz": "Ceny vzrostly v Praze a stejně tak v Brně.",
+     "gap": "Prices went up in Prague and, ____, in Brno.",
+     "gap_answer": "likewise",
+     "gap_accepts": [
+      "likewise"
+     ],
+     "accepts": [
+      "Prices went up in Prague and, likewise, in Brno."
+     ],
+     "quiz_options": [
+      "likewise",
+      "otherwise",
+      "instead",
+      "however"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "The first plan is cheap and slow; the second is expensive and fast. The two are exactly the opposite of each other.",
+     "cz": "První plán je levný a pomalý, druhý drahý a rychlý. Jsou přesným opakem jeden druhého.",
+     "gap": "The first plan is cheap and slow; the second is expensive and fast. The two are exactly the ____ of each other.",
+     "gap_answer": "opposite",
+     "gap_accepts": [
+      "opposite"
+     ],
+     "accepts": [
+      "The first plan is cheap and slow; the second is expensive and fast. The two are exactly the opposite of each other."
+     ],
+     "quiz_options": [
+      "opposite",
+      "same",
+      "similar",
+      "different"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
+    },
+    {
+     "en": "The Prague and Brno offices opened in 1994 and 2018 respectively.",
+     "cz": "Kanceláře v Praze a v Brně byly otevřeny v roce 1994, respektive 2018.",
+     "gap": "The Prague and Brno offices opened in 1994 and 2018 ____.",
+     "gap_answer": "respectively",
+     "gap_accepts": [
+      "respectively"
+     ],
+     "accepts": [
+      "The Prague and Brno offices opened in 1994 and 2018 respectively."
+     ],
+     "quiz_options": [
+      "respectively",
+      "generally",
+      "together",
+      "equally"
+     ],
+     "form": "parallel_reference",
+     "explanation": "When two things have been named, English can pick them up again without repeating either: the former is the first of the two, the latter the second, and respectively maps two later items back onto two earlier ones in order. Alongside them sits the same, which carries a whole statement across to a new subject — the same applies to, the same is true of, the same goes for — and likewise, which does the same work as a sentence adverb. All of these depend on the reader holding the earlier pair in mind, so they belong in writing that is close-knit; used at a distance they simply lose the reader, and the honest repair is to name the thing again.",
+     "explanation_cz": "Když už byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by kteroukoli opakovala: the former je první z těch dvou, the latter druhá a respectively přiřadí dvě pozdější položky ke dvěma dřívějším v uvedeném pořadí. Vedle nich stojí the same, které přenáší celé tvrzení na nový podmět — the same applies to, the same is true of, the same goes for — a likewise, jež dělá totéž jako větné příslovce. Všechny tyto prostředky spoléhají na to, že čtenář má dřívější dvojici v paměti, a patří proto do sevřeného textu; na delší vzdálenost čtenáře prostě ztratí a poctivou opravou je věc znovu pojmenovat."
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "title": "Discourse grammar · draft",
-        "body": "First-draft shell. Polish later.",
-        "points": [
-          "One core pattern",
-          "Czech cue is support only"
-        ]
-      }
-    ]
+   ]
   }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "title": "Cohesion is grammar",
+    "title_cz": "Návaznost je gramatika",
+    "body": "A paragraph is not a list of correct sentences. Each sentence has to reach back and take hold of the one before it, and English does that reaching with grammar: with the words it chooses to point back, with the nouns it uses to package what has been said, and with the phrases it puts in front of a sentence to announce what it is now about. Linkers such as however and although are only the visible part of this. The rest is what separates prose that holds together from prose that is merely accurate.",
+    "body_cz": "Odstavec není seznam správných vět. Každá věta se musí ohlédnout a chytit se té předchozí, a angličtina se ohlíží gramatikou: slovy, jimiž odkazuje zpět, jmény, do nichž balí to, co už bylo řečeno, a frázemi, které staví před větu, aby ohlásila, o čem teď bude. Spojovací výrazy jako however a although jsou jen viditelnou částí toho všeho. Zbytek je to, co odlišuje text, který drží pohromadě, od textu, který je pouze správný.",
+    "table": {
+     "caption": "four ways a sentence holds on to the one before",
+     "headers": [
+      "Device",
+      "Example"
+     ],
+     "rows": [
+      [
+       "point back",
+       "The system stopped twice. This has never been the case before."
+      ],
+      [
+       "package in a noun",
+       "The board voted to close the office. This decision…"
+      ],
+      [
+       "announce the topic",
+       "As for the budget, nothing has changed."
+      ],
+      [
+       "pick up a pair",
+       "The former is cheaper; the latter is safer."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "this and these point at facts",
+    "title_cz": "this a these ukazují na fakta",
+    "body": "This and these do not reach back to a noun in the previous sentence — they reach back to the whole thing it said. That is why they can begin a sentence with no noun after them at all. They must agree in number with what they stand for: one event or one fact is this, two or more are these. Czech does the whole job with to, and a Czech writer who translates to as it produces an English sentence that has come loose from the paragraph above it.",
+    "body_cz": "This a these se nevracejí k některému jménu v předchozí větě — vracejí se k tomu, co celá věta řekla. Proto mohou stát na začátku věty i bez jakéhokoli jména za sebou. Musejí se shodovat v čísle s tím, co zastupují: jedna událost či jeden fakt je this, dvě a více jich je these. Čeština si vystačí se slovem to, a český pisatel, který to přeloží jako it, vytvoří anglickou větu, jež se odpoutala od odstavce nad sebou.",
+    "table": {
+     "caption": "number follows the referent, not the last noun",
+     "headers": [
+      "Before",
+      "Point back",
+      "Why"
+     ],
+     "rows": [
+      [
+       "The system stopped twice on Monday.",
+       "This has never been the case before.",
+       "one event"
+      ],
+      [
+       "Prices went up and sales fell.",
+       "This shows a real problem.",
+       "one situation"
+      ],
+      [
+       "Three managers left this year.",
+       "These changes have hurt the team.",
+       "several events"
+      ],
+      [
+       "The report was late and the figures were wrong.",
+       "These problems are not new.",
+       "two problems"
+      ]
+     ]
+    },
+    "points": [
+     "The verb gives the number away: this is · these are. Read it back and the wrong one is audible.",
+     "Such points at the kind, not the thing, and takes a before a singular noun: such a delay.",
+     "Never this a delay or these a delay — a belongs to such alone."
+    ]
+   },
+   {
+    "title": "Package it in a noun",
+    "title_cz": "Zabal to do podstatného jména",
+    "body": "A bare this is always available and always the weakest option. Careful writing puts a noun after it, and that noun does a second job on top of the linking: it tells the reader how to classify what was just said. Calling a statement an assumption already casts doubt on it; calling the same statement a claim casts a different kind of doubt; calling it a decision does not question it at all. Choosing the noun is choosing the reading.",
+    "body_cz": "Holé this je vždycky po ruce a vždycky je nejslabší volbou. Pečlivý text za ně postaví podstatné jméno a to jméno kromě navázání dělá ještě druhou věc: říká čtenáři, jak si má právě řečené zařadit. Nazvat výrok předpokladem už znamená jej zpochybnit; nazvat týž výrok tvrzením jej zpochybní jinak; nazvat jej rozhodnutím jej nezpochybní vůbec. Volba jména je volbou výkladu.",
+    "table": {
+     "caption": "the noun is the judgement",
+     "headers": [
+      "What was said",
+      "Packaged as",
+      "Reading"
+     ],
+     "rows": [
+      [
+       "He said the data were complete.",
+       "That assumption…",
+       "taken for granted, may be false"
+      ],
+      [
+       "He argued that the market will grow.",
+       "This claim…",
+       "asserted, needs support"
+      ],
+      [
+       "The board voted to close the office.",
+       "This decision…",
+       "settled, not in question"
+      ],
+      [
+       "The parts arrived three weeks late.",
+       "This delay…",
+       "names the event as a problem"
+      ]
+     ]
+    },
+    "points": [
+     "The noun must genuinely cover what came before — a vote is a decision, not a question.",
+     "This success and this failure both name a result; they are not interchangeable with each other.",
+     "In writing, prefer the noun. This alone is fine in speech and thin on the page."
+    ]
+   },
+   {
+    "title": "Announce the topic first",
+    "title_cz": "Nejdřív ohlas téma",
+    "body": "English tells the reader what a sentence is about before telling them anything about it. When the subject changes, a short phrase goes in front, names the new topic, and is closed off with a comma. These are fixed frames: the small words inside them cannot be swapped for near neighbours, and getting one wrong is the commonest way an otherwise good C1 sentence sounds translated.",
+    "body_cz": "Angličtina čtenáři řekne, o čem věta je, dřív než mu o tom řekne cokoli dalšího. Když se mění téma, postaví se dopředu krátká fráze, pojmenuje nové téma a oddělí se čárkou. Jsou to pevné rámce: drobná slova uvnitř nich nelze zaměnit za blízké sousedy a právě chyba v nich je nejčastějším důvodem, proč jinak dobrá věta na úrovni C1 zní jako překlad.",
+    "table": {
+     "caption": "fixed frames — the small words are not free",
+     "headers": [
+      "Frame",
+      "Example",
+      "CZ"
+     ],
+     "rows": [
+      [
+       "as for",
+       "As for the budget, the plan has not changed.",
+       "pokud jde o…"
+      ],
+      [
+       "turning to",
+       "Turning to costs, the picture is worse.",
+       "přejdeme-li k…"
+      ],
+      [
+       "with regard to",
+       "With regard to the meeting, I have no news.",
+       "pokud jde o…"
+      ],
+      [
+       "when it comes to",
+       "When it comes to price, we are the cheapest.",
+       "co se týče…"
+      ],
+      [
+       "in terms of",
+       "In terms of speed, the new system is better.",
+       "z hlediska…"
+      ],
+      [
+       "as far as … is concerned",
+       "As far as the deadline is concerned, we are safe.",
+       "co se … týče"
+      ]
+     ]
+    },
+    "points": [
+     "Turning to is a participle and only works in that form: not Turned to costs.",
+     "As far as needs both halves — as far as X is concerned. Dropping is concerned leaves it unfinished.",
+     "All of them take a comma before the main clause."
+    ]
+   },
+   {
+    "title": "former, latter, the same",
+    "title_cz": "former, latter, the same",
+    "body": "Once two things have been named, English can pick either up again without repeating it. The former is the first of the two and the latter the second, and they work only when there are exactly two. The same carries a whole statement over to a new subject, and likewise does the same job as a sentence adverb. Respectively pairs off two later items with two earlier ones in the order they were given — it is not a general-purpose also.",
+    "body_cz": "Jakmile byly dvě věci pojmenovány, může se k nim angličtina vrátit, aniž by je opakovala. The former je první z těch dvou a the latter druhá; fungují jen tehdy, jsou-li právě dvě. The same přenáší celé tvrzení na nový podmět a likewise dělá totéž jako větné příslovce. Respectively přiřadí dvě pozdější položky ke dvěma dřívějším v pořadí, v jakém byly uvedeny — není to univerzální „také“.",
+    "table": {
+     "caption": "picking a pair back up",
+     "headers": [
+      "Word",
+      "Means",
+      "Example"
+     ],
+     "rows": [
+      [
+       "the former",
+       "the first of two",
+       "The former is cheaper."
+      ],
+      [
+       "the latter",
+       "the second of two",
+       "The latter is safer."
+      ],
+      [
+       "the same applies to",
+       "carries the statement across",
+       "The same applies to small companies."
+      ],
+      [
+       "the same is true of",
+       "same, with a linking verb",
+       "The same is true of Prague."
+      ],
+      [
+       "the same goes for",
+       "same, less formal",
+       "The same goes for the Brno team."
+      ],
+      [
+       "likewise",
+       "sentence adverb",
+       "Likewise, the Brno team was late."
+      ],
+      [
+       "respectively",
+       "in the order just given",
+       "The offices opened in 1994 and 2018 respectively."
+      ]
+     ]
+    },
+    "points": [
+     "Former and latter need exactly two items — with three, name them.",
+     "The same is a noun phrase here: the same applies, never same applies.",
+     "Respectively goes at the end and only ever pairs two ordered lists."
+    ]
+   },
+   {
+    "title": "When the link fails",
+    "title_cz": "Když odkaz selže",
+    "body": "Every device on these cards depends on the reader being able to find what it points at, immediately and without a second guess. If two candidates are in play, if the referent is a paragraph away, or if a bare this is carrying more than one idea at once, the link fails silently — the sentence still parses, and the reader simply loses the thread. The repair is never a better pointing word; it is a noun, or the thing named again in full.",
+    "body_cz": "Každý prostředek z těchto karet stojí na tom, že čtenář okamžitě a bez váhání najde, k čemu odkazuje. Jsou-li ve hře dva možné odkazované členy, leží-li odkazovaný člen o odstavec výš, nebo nese-li holé this víc než jednu myšlenku najednou, odkaz tiše selže — věta se pořád dá rozebrat a čtenář jen ztratí nit. Opravou nikdy není lepší odkazovací slovo, nýbrž podstatné jméno nebo věc pojmenovaná znovu a celá.",
+    "table": {
+     "caption": "diagnose it by asking what exactly?",
+     "headers": [
+      "Risky",
+      "Why"
+     ],
+     "rows": [
+      [
+       "The manager told the client this was wrong.",
+       "two people, and this has no clear referent"
+      ],
+      [
+       "Prices rose, staff left and the office closed. This was serious.",
+       "three events, one singular this"
+      ],
+      [
+       "The former is cheaper, the latter is safer, the third is faster.",
+       "former and latter cover two, not three"
+      ],
+      [
+       "As for that, we have no news.",
+       "that names no topic — the frame needs a noun"
+      ]
+     ]
+    },
+    "points": [
+     "Ask what exactly? after every this. If you cannot answer in one noun, write the noun in.",
+     "Across a paragraph break, name the thing again — the reader has let go of it.",
+     "In formal writing the fuller version is never wrong, only heavier."
+    ]
+   }
+  ]
+ },
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ }
 }
