@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**177 unknown word types** across 49 live units (of 150).
+**173 unknown word types** across 48 live units (of 150).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -18,7 +18,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **trunk_can_like_want_a1** (A1 vocab): i'd
 - **trunk_verbs_more2_a1** (A1 vocab): day
 - **a1_can** (A1 grammar): use, now
-- **trunk_glue_modals_a1** (A1 vocab): now, call, smoke, difficult
 - **trunk_verbs_more3_a1** (A1 vocab): money, club
 - **a1_there_is** (A1 grammar): cat, dog
 - **trunk_there_time_a1** (A1 vocab): it's×2

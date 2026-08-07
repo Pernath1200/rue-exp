@@ -7,7 +7,16 @@
   "note": "P6 function glue — will/would/must/should/can't + light do/does. Gap on the modal/aux head.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
-    "will", "would", "must", "should", "can", "cannot", "do", "does", "don't", "not"
+    "will",
+    "would",
+    "must",
+    "should",
+    "can",
+    "cannot",
+    "do",
+    "does",
+    "don't",
+    "not"
   ],
   "blocks": [
     {
@@ -19,78 +28,115 @@
           "cz": "Pomůžu ti.",
           "gap": "I ____ help you.",
           "gap_answer": "will",
-          "accepts": ["I will help you", "I'll help you."]
+          "accepts": [
+            "I will help you",
+            "I'll help you."
+          ]
         },
         {
           "en": "I would like a coffee.",
           "cz": "Dal bych si kávu.",
           "gap": "I ____ like a coffee.",
           "gap_answer": "would",
-          "accepts": ["I would like a coffee", "I'd like a coffee."]
+          "accepts": [
+            "I would like a coffee",
+            "I'd like a coffee."
+          ]
         },
         {
-          "en": "I must go now.",
-          "cz": "Musím teď jít.",
-          "gap": "I ____ go now.",
+          "en": "I must go home.",
+          "cz": "Musím jít domů.",
+          "gap": "I ____ go home.",
           "gap_answer": "must",
-          "accepts": ["I must go now", "I must go now."]
+          "accepts": [
+            "I must go home",
+            "I must go home."
+          ]
         },
         {
-          "en": "You should call her.",
-          "cz": "Měl bys jí zavolat.",
-          "gap": "You ____ call her.",
+          "en": "You should ask her.",
+          "cz": "Měl by ses jí zeptat.",
+          "gap": "You ____ ask her.",
           "gap_answer": "should",
-          "accepts": ["You should call her", "You should call her."]
+          "accepts": [
+            "You should ask her",
+            "You should ask her."
+          ]
         },
         {
           "en": "I cannot swim.",
           "cz": "Neumím plavat.",
           "gap": "I ____ swim.",
           "gap_answer": "cannot",
-          "gap_accepts": ["can't", "cannot"],
-          "accepts": ["I cannot swim", "I can't swim."]
+          "gap_accepts": [
+            "can't",
+            "cannot"
+          ],
+          "accepts": [
+            "I cannot swim",
+            "I can't swim."
+          ]
         },
         {
           "en": "Do you live here?",
           "cz": "Bydlíš tady?",
           "gap": "____ you live here?",
           "gap_answer": "Do",
-          "accepts": ["Do you live here", "Do you live here?"]
+          "accepts": [
+            "Do you live here",
+            "Do you live here?"
+          ]
         },
         {
           "en": "Does he work here?",
           "cz": "Pracuje tady?",
           "gap": "____ he work here?",
           "gap_answer": "Does",
-          "accepts": ["Does he work here", "Does he work here?"]
+          "accepts": [
+            "Does he work here",
+            "Does he work here?"
+          ]
         },
         {
-          "en": "I do not smoke.",
-          "cz": "Nekouřím.",
-          "gap": "I ____ not smoke.",
+          "en": "I do not cook.",
+          "cz": "Nevařím.",
+          "gap": "I ____ not cook.",
           "gap_answer": "do",
-          "accepts": ["I do not smoke", "I don't smoke."]
+          "accepts": [
+            "I do not cook",
+            "I don't cook."
+          ]
         },
         {
           "en": "He does not drink coffee.",
           "cz": "Nepije kávu.",
           "gap": "He ____ not drink coffee.",
           "gap_answer": "does",
-          "accepts": ["He does not drink coffee", "He doesn't drink coffee."]
+          "accepts": [
+            "He does not drink coffee",
+            "He doesn't drink coffee."
+          ]
         },
         {
           "en": "I am not a teacher.",
           "cz": "Nejsem učitel.",
           "gap": "I am ____ a teacher.",
           "gap_answer": "not",
-          "accepts": ["I am not a teacher", "I'm not a teacher."]
+          "accepts": [
+            "I am not a teacher",
+            "I'm not a teacher."
+          ]
         },
         {
-          "en": "It is not difficult.",
-          "cz": "Není to těžké.",
-          "gap": "It is ____ difficult.",
+          "en": "It is not dangerous.",
+          "cz": "Není to nebezpečné.",
+          "gap": "It is ____ dangerous.",
           "gap_answer": "not",
-          "accepts": ["It is not difficult", "It's not difficult.", "It isn't difficult."]
+          "accepts": [
+            "It is not dangerous",
+            "It's not dangerous.",
+            "It isn't dangerous."
+          ]
         },
         {
           "en": "Please do not open the door.",
