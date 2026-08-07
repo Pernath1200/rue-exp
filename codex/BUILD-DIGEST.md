@@ -6,6 +6,123 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 26 (RUE build, claude-opus-5)
+
+### Headline: **3 A2 vocab intros (33 → 36, A2 leaves 17 → 20 of 22), 2 Use-stage sentence banks (`a1_shopping`, `a1_tech` — 28 sentences), and 2 units re-lexified (audit 146 → 144).** All three gates green at the start, so step 0 did not consume the run; the repair queue again had no cloud-lane items. **A1 leaves are now one unit from finished on both backlogs.** Two findings that need your call are under Forks — the bigger one is that **164 English words are taught twice across live A1/A2 vocab units**, which I measured rather than fixed.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `6c38cca` | **`a2_health`** intro — 12 emoji tiles, 5 carrier frames |
+| 2 | `55df96e` | **`a2_school`** intro — 12 emoji tiles, 5 carrier frames |
+| 3 | `e060f69` | **`a2_clothes`** intro — 8 emoji tiles, 5 carrier frames |
+| 4 | `e969a2f` | **`a1_shopping`** `sentences[]` bank — 14 sentences, 15 lemmas |
+| 5 | `cf80966` | **`a1_tech`** `sentences[]` bank — 14 sentences, 14 lemmas |
+| 6 | `14f80c4` | `a2_modals_must_should` + `a2_countable` re-lexified — 146 → **144** |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 146 unknown types · 35 units | **144** · 33 units · baseline tightened 146 → 144 |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+Gates re-run before every commit; commit and push per unit. Nothing else landed on `build` while I worked, so no rebase was needed.
+
+### Repair queue — nothing to do this run
+
+Re-checked item by item rather than taken from the last digest; the file is unchanged. All three unticked items are out of the cloud lane: the vocab level badge and `order_click` are marked engine/local, and `b2_clear_claims` already carries its conservative resolution and is left unticked because the style call is yours.
+
+### Vocab intros — 33 → 36 · A2 leaves 17 → 20 of 22
+
+Built in path order (83, 86, 87). **Remaining A2 leaves: `media`, `misc`** — two, then the A2 intro backlog is done. A1 leaves stay finished at 16/16.
+
+| Unit | Page 1 | Trap | Why that shape |
+|---|---|---|---|
+| `a2_health` | 12 emoji | **chemist** is the British shop *and* the person | 41 items, concrete enough for honest glyphs (🦴 bone, 🧠 brain, 🩸 blood, 🦠 virus) |
+| `a2_school` | 12 emoji | **maths / mathematics** are two entries for one subject | every named subject has a real glyph; the five mental nouns are named in the body instead |
+| `a2_clothes` | 8 emoji | **pants** = trousers (AmE) but underwear (BrE) | only 12 items and only 8 with an honest glyph — page 1 runs at the spec minimum |
+
+**Every tile was verified to be an item of its own pack, and every tile's Czech is character-identical to that item's own `cz` gloss** — script, not eyeball, re-run against the files as committed. Same for the frames: each traces to a `use[]` carrier id the pack's items actually declare, worded from the live packs' own precedent.
+
+Three judgment calls worth naming:
+
+- **`a2_clothes` page 1 has 8 tiles, not 12.** `fashion`, `jumper`, `belt` and `button` have no honest single emoji, so the body names them in prose rather than stretching a glyph onto them. `jumper = sweater` (which A1 taught) is stated there too, as a plain fact — the one trap slot went to `pants`, which is the one that can actually embarrass someone.
+- **Two glyphs on that page repeat glyphs A1 already used**: 👖 for `pants` (A1 used it for `jeans`) and 👕 for `casual` (A1 used it for `T-shirt`). Both are honest for the new word — a T-shirt *is* the canonical casual garment — and 👖 is precisely what the pants trap is about. Deliberate, but it is the first intro page in the course to reuse an earlier page's glyph, so it is worth a look.
+- **`a2_health` and `a1_health` both gloss a shop as *lékárna*** (`chemist` vs A1's `pharmacy`). That is a cross-pack instance of run 25's fork 2. I could not disambiguate it without editing A1 content mid-smoke, so I used the trap note to make the pairing explicit instead.
+
+### Use-stage sentence banks — A1 leaves 13 → 15 of 16
+
+Leaf packs still showing *"Use · coming soon"*: **32 → 30.** **A1 leaves still without a bank: `leaf_ideas_a1` — one.** After that the backlog is all A2 (22 leaves).
+
+Legality was decided by an oracle that **imports `audit.py` and asks it** — `variants()`, `tokens_of()`, `GLUE`, the real path walk. Before trusting it I made it reproduce `audit.py`'s own published findings; it matched exactly on all six A1 units that have one (`freetime`/*time*, `social`/*nice*, `body`/*height*, `clothes`/*wrist*, `health`/*illness*, `time`/*ordinal*), and returned "none" for the two packs I was about to author into. All 28 sentences came back legal, and **the audit total did not move when they landed**, which is the independent confirmation.
+
+**Two candidates were cut by the oracle, not by taste** — both cases where the obvious sentence uses a word the course teaches *later*:
+
+- `a1_shopping` — *There is a long queue.* `long` is not taught before path 43, so **`queue` has no bank sentence at all**. I did not reword it into something artificial.
+- `a1_tech` — *The screen is big.* `big` is not taught until path 51 (`trunk_adjectives_a1`, two nodes after tech), so `screen` took *The photo is on the screen.* instead.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- **Register: standard `Potřebuji` / `Poslouchám`**, continuing runs 24–25 and not run 23's colloquial `Potřebuju`. Still inconsistent course-wide; still a one-line convention call that would be a sweep, not a per-run decision.
+- **No speaker-gender prompts**, continuing run 25's rule — nothing in either bank forces *rád* vs *ráda*.
+- `a1_shopping` — *Obchod je zavřený.* The pack's own gloss for `closed` is the impersonal **zavřeno**, but a sentence with a subject needs the adjective, so the bank uses the agreeing form. Deliberate, and it is the same otevřeno/zavřeno wobble the review routine already flagged on this pack's intro.
+- `a1_shopping` — *Máte hotovost?* and *Jakou velikost potřebujete?* use vykání while the rest of the bank is first person. Natural for a shop, but it is a register mix inside one bank.
+- `a1_shopping` — *Chci platit kartou.* Instrumental without a preposition; `accepts` also carries *pay with a card*.
+- `a1_tech` — *To je fotka mojí rodiny.* Genitive **mojí rodiny** rather than the bookish *mé rodiny*.
+- `a1_tech` — **the one I am least happy with**: *Mám pro tebe zprávu.* (message) and *Dívám se na zprávy.* (news) sit in the same bank on the same stem. The singular/plural split plus *dívat se na* makes each prompt determinate, and the contrast is arguably worth teaching, but a tired student could produce *messages* for the second. **If you want one cut, cut the news sentence.**
+
+Everything else — the accusatives (*účtenku, slevu, zprávu, velikost, fotoaparát*), the locatives (*v tašce, na stole, v obývacím pokoji, na obrazovce*), the plurals (*peníze, noviny, zprávy*) and the adjective agreements (*dobrá, drahé, levné, zavřený*) — I am confident in.
+
+**One deliberate exception to the legality discipline, so a later run does not "fix" it:** `a1_tech` carries `"I need your e-mail"` in `accepts`. The audit tokenizer splits that into *e* + *mail*, neither taught — but **`accepts` is never read by `audit.py`** (verified in the source, not assumed; `exposed_text` reads item `en` and sentence `en` only). The pack's own Czech gloss is *e-mail*, so a student who types the Czech spelling would otherwise be marked wrong. Kept on purpose.
+
+### Sequencing — 146 → 144
+
+Six of the ten remaining A1/A2 leads are **not teaching-order defects at all** — they are the parenthesised-disambiguator artefact run 24 flagged: `free (time)`, `watch (wrist)`, `short (height)`, `cold (illness)`, `second (ordinal)`, `leave (depart)`. The bracket is a deliberate gloss, and "repairing" content to satisfy the tokenizer would damage the packs. Still propose-only, still untouched. That leaves four genuine ones; I took the two that substitute cleanly.
+
+| Unit | Path | Was | Now | Gap kept |
+|---|---|---|---|---|
+| `a2_modals_must_should` | 65 | You shouldn't **worry**. | You shouldn't **wait**. | `shouldn't` |
+| `a2_countable` | 71 | He ordered a **pizza**. | He ordered a **salad**. | `a` |
+
+`worry` and `pizza` are taught nowhere in the course; `wait` and `salad` are both taught well before these nodes. Both teaching points are untouched — modal-gap advice, and the article before a singular countable noun. **`salad` rather than the obvious `sandwich`**: item 7 of that same pack is already *He wants a sandwich.* with the same `a` gap answer, so a sandwich swap would have put two near-identical prompts in one Match board. Czech follows (*Neměl bys čekat.*, *Objednal si salát.*). **The old forms are NOT kept in `accepts` here** — unlike run 25's two, the new Czech prompts do not admit the old English, so keeping them would accept a wrong answer. Both units are now clean and both are gone from the report.
+
+The two A1/A2 leads I left: `trunk_social_a1`/*nice* (*Nice to meet you.* is a fixed social formula — re-lexifying it would destroy the chunk, and `nice` is taught nowhere) and `trunk_verbs_daily_a1`/*water* (path 6; almost nothing is taught yet, and the gap is on `drink`, so there is no legal object to swap in). Both are genuine forks, not oversights.
+
+### Forks for James
+
+**1 · 164 English words are taught by two or more live A1/A2 vocab units. Measured, not fixed.** This is redundancy rather than the ambiguity of run 25's fork 2 — a repeated word is not ungradeable, it is just taught twice — but at this scale it is a curriculum question, and it is the reason `a2_clothes` re-teaches `glove` with the identical Czech A1 gave it. The worst pairs:
+
+| Overlap | Units | Words |
+|---|---|---|
+| 14 | `leaf_freetime_a1` × `leaf_describing_a2` | busy, common, complete, correct, dangerous, great, modern, perfect, popular, quick, quiet, similar, sorry, sure |
+| 11 | `leaf_places` × `leaf_travel_a2` | airport, arrive, beach, flight, hotel, journey, map, passport, station, tourist, trip |
+| 8 | `leaf_work_a1` × `leaf_work_a2` | boss, career, colleague, company, interview, manager, meeting, salary |
+| 8 | `leaf_ideas_a1` × `leaf_ideas_a2` | advice, fact, interest, machine, reason, result, situation, success |
+| 6 | `leaf_home_family` × `leaf_home_a2` | apartment, downstairs, neighbour, sofa, stairs, upstairs |
+| 4 | `leaf_shopping_a2` × `leaf_clothes_a2` | belt, button, fashion, jewellery |
+
+Roughly two thirds carry **character-identical Czech** in both places, so they are straight repeats rather than deliberate sense-splits. Three readings, and I took none of them because it is your call: (a) intended spiral revision, in which case nothing to do; (b) A2 units should drop what A1 already taught, which is a content sweep; (c) the A2 unit should keep the word but change the *sense* it teaches, which is authoring. Worth noting that `leaf_freetime_a1` is an A1 unit teaching 14 adjectives that `leaf_describing_a2` teaches again — that pairing looks less like spiralling and more like two imports that overlapped.
+
+**2 · `a2_shopping` and `a2_clothes` overlap on four of `a2_clothes`'s twelve items** (belt, button, fashion, jewellery — a third of the smaller pack). `a2_clothes` is the smallest live vocab pack in the course; after the overlap it contributes eight words of its own. **It may not deserve to be a separate unit.** I authored its intro anyway, because leaving a live unit without one is worse, but if you merge it the intro is throwaway work — say so before the next run and I will skip `media`/`misc` ordering assumptions accordingly.
+
+**3 · Still deliberately unrepaired, all re-checked this run**: `a1_to_for_with`/*wait*, `a1_word_order`/*new*, `a1_articles`/*hour*, plus the two named above. Run 24's two audit-tooling findings (contractions, parenthesised disambiguators) are also still open and still propose-only — by my count they now cover **10 of the remaining 144**.
+
+**4 · The 17 A1 core-frames trunks have no intro, and I have again not built one.** AGENTS.md says *every live vocab unit* gets the two-page intro, but every run since the spec landed has built leaves only. The mechanical reason is sound and I verified it rather than inheriting it: trunk packs are `practice: "frames"`, so `js/practice-vocab.js` already drives their Use stage from their own items — they never show *"Use · coming soon"*, and a picture-led word intro does not describe what they teach. **If you want the leaves-only reading to be the rule, one line in AGENTS.md would stop every future run re-deciding it.**
+
+### Smoke-check list
+
+- `a2_clothes` intro — the 8-tile page (first one below 12) and the `pants` trap; also the 👖/👕 glyph reuse from the A1 clothes page.
+- `a2_school` intro page 1 — twelve subject glyphs; check ⚛️ and ➗ render on your device.
+- `a2_health` intro page 2 — the chemist/pharmacy note, which points back at an A1 word.
+- Use stage on `leaf_shopping_a1` and `leaf_tech_a1` — both were "Use · coming soon" before this run. In tech, watch the *zprávu*/*zprávy* pair specifically.
+- The two re-lexified grammar items: `a2_modals_must_should` item 21 and `a2_countable` item 44.
+
+---
+
 ## 2026-08-07 · cloud run 25 (RUE build, claude-opus-5)
 
 ### Headline: **3 A2 vocab intros (30 → 33), 2 Use-stage sentence banks (`a1_time_numbers`, `a1_nature`), 2 units re-lexified (audit 148 → 146), and one flatly wrong Czech gloss corrected.** All three gates green at the start, so step 0 did not consume the run; the repair queue again had no cloud-lane items. One **verified student-facing defect found and deliberately NOT bulk-fixed** — 32 vocab items whose Czech prompt has two equally correct English answers. It needs your call; the write-up is under Forks.
