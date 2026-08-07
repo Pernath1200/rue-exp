@@ -5,40 +5,671 @@
   "tree_node": "b2_participle_clauses",
   "codex_unit": "G_CL-B1B2-01",
   "practice": "frames",
-  "note": "-ing / -ed clauses for reason, time, result · thin shell night/2026-08-05",
+  "note": "-ing clauses for time and for reason (incl. Not + -ing) · past participle clauses with passive meaning · Having / Having been + past participle for an earlier action · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 8)",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
       "quiz"
     ]
   },
-  "quality": "thin_shell",
+  "quality": "good_draft",
   "blocks": [
     {
       "id": "b2_participle_clauses_main",
       "title": "Participle clauses · B2",
       "items": [
         {
-          "en": "Walking down the street, I saw a friend.",
-          "cz": "Když jsem šel po ulici, potkal jsem přítele.",
-          "gap": "____ down the street, I saw a friend.",
+          "en": "Walking to the station, I met my neighbour.",
+          "cz": "Když jsem šel na nádraží, potkal jsem souseda.",
+          "gap": "____ to the station, I met my neighbour.",
           "gap_answer": "Walking",
           "accepts": [
-            "Walking down the street, I saw a friend."
+            "Walking to the station, I met my neighbour."
           ],
-          "explanation": "-ing clause for time/simultaneity.",
-          "explanation_cz": "-ing věta pro čas."
+          "quiz_options": [
+            "Walking",
+            "Walked",
+            "I walked",
+            "To walk"
+          ],
+          "form": "ing_time",
+          "explanation": "-ing clause for time: same subject, so 'when I' disappears and the -ing form is left.",
+          "explanation_cz": "-ing věta pro čas: stejný podmět, takže „když já“ zmizí a zůstane -ing tvar."
         },
         {
-          "en": "Shocked by the news, she sat down.",
-          "cz": "Šokovaná zprávou si sedla.",
-          "gap": "____ by the news, she sat down.",
+          "en": "Leaving the office, she closed the window.",
+          "cz": "Když odcházela z kanceláře, zavřela okno.",
+          "gap": "____ the office, she closed the window.",
+          "gap_answer": "Leaving",
+          "accepts": [
+            "Leaving the office, she closed the window."
+          ],
+          "quiz_options": [
+            "Leaving",
+            "Left",
+            "She left",
+            "To leave"
+          ],
+          "form": "ing_time",
+          "explanation": "The -ing clause comes first and a comma separates it from the main clause.",
+          "explanation_cz": "-ing věta stojí vpředu a od hlavní věty ji odděluje čárka."
+        },
+        {
+          "en": "Waiting on the platform, we read the newspaper.",
+          "cz": "Zatímco jsme čekali na nástupišti, četli jsme noviny.",
+          "gap": "____ on the platform, we read the newspaper.",
+          "gap_answer": "Waiting",
+          "accepts": [
+            "Waiting on the platform, we read the newspaper."
+          ],
+          "quiz_options": [
+            "Waiting",
+            "Waited",
+            "We waited",
+            "Wait"
+          ],
+          "form": "ing_time",
+          "explanation": "Two actions at the same time: the longer one goes in the -ing clause.",
+          "explanation_cz": "Dva děje současně: ten delší jde do -ing věty."
+        },
+        {
+          "en": "Opening the letter, he found a ticket.",
+          "cz": "Když otevřel dopis, našel lístek.",
+          "gap": "____ the letter, he found a ticket.",
+          "gap_answer": "Opening",
+          "accepts": [
+            "Opening the letter, he found a ticket."
+          ],
+          "quiz_options": [
+            "Opening",
+            "Opened",
+            "He opened",
+            "Open"
+          ],
+          "form": "ing_time",
+          "explanation": "-ing also works for one action straight after another.",
+          "explanation_cz": "-ing funguje i pro děj těsně následující po druhém."
+        },
+        {
+          "en": "Driving to the airport, we listened to the news.",
+          "cz": "Cestou na letiště jsme poslouchali zprávy.",
+          "gap": "____ to the airport, we listened to the news.",
+          "gap_answer": "Driving",
+          "accepts": [
+            "Driving to the airport, we listened to the news."
+          ],
+          "quiz_options": [
+            "Driving",
+            "Drove",
+            "Driven",
+            "We drove"
+          ],
+          "form": "ing_time",
+          "explanation": "The -ing form never shows tense — the main verb does that.",
+          "explanation_cz": "-ing tvar nikdy neukazuje čas — ten určuje sloveso v hlavní větě."
+        },
+        {
+          "en": "Sitting in the garden, she wrote two letters.",
+          "cz": "Když seděla na zahradě, napsala dva dopisy.",
+          "gap": "____ in the garden, she wrote two letters.",
+          "gap_answer": "Sitting",
+          "accepts": [
+            "Sitting in the garden, she wrote two letters."
+          ],
+          "quiz_options": [
+            "Sitting",
+            "Sat",
+            "She sat",
+            "To sit"
+          ],
+          "form": "ing_time",
+          "explanation": "Both clauses share one subject: she. That is the condition for a participle clause.",
+          "explanation_cz": "Obě věty mají jeden podmět: she. To je podmínka participiální vazby."
+        },
+        {
+          "en": "Standing at the window, he looked at the street.",
+          "cz": "Když stál u okna, díval se na ulici.",
+          "gap": "____ at the window, he looked at the street.",
+          "gap_answer": "Standing",
+          "accepts": [
+            "Standing at the window, he looked at the street."
+          ],
+          "quiz_options": [
+            "Standing",
+            "Stood",
+            "He stood",
+            "Stand"
+          ],
+          "form": "ing_time",
+          "explanation": "Not 'Stood at the window' — the active -ing form is needed here.",
+          "explanation_cz": "Ne „Stood at the window“ — je potřeba činný -ing tvar."
+        },
+        {
+          "en": "Entering the restaurant, we looked for a free table.",
+          "cz": "Když jsme vešli do restaurace, hledali jsme volný stůl.",
+          "gap": "____ the restaurant, we looked for a free table.",
+          "gap_answer": "Entering",
+          "accepts": [
+            "Entering the restaurant, we looked for a free table."
+          ],
+          "quiz_options": [
+            "Entering",
+            "Entered",
+            "We entered",
+            "Enter"
+          ],
+          "form": "ing_time",
+          "explanation": "The participle clause replaces a whole 'when …' clause.",
+          "explanation_cz": "Participiální vazba nahrazuje celou větu s „when …“."
+        },
+        {
+          "en": "Reading the contract, she found a mistake.",
+          "cz": "Když četla smlouvu, našla chybu.",
+          "gap": "____ the contract, she found a mistake.",
+          "gap_answer": "Reading",
+          "accepts": [
+            "Reading the contract, she found a mistake."
+          ],
+          "quiz_options": [
+            "Reading",
+            "Read",
+            "She read",
+            "To read"
+          ],
+          "form": "ing_time",
+          "explanation": "Written English uses this to keep two short clauses in one sentence.",
+          "explanation_cz": "Psaná angličtina tím spojí dvě krátké věty do jedné."
+        },
+        {
+          "en": "Running to the platform, I dropped my keys.",
+          "cz": "Když jsem běžel na nástupiště, upustil jsem klíče.",
+          "gap": "____ to the platform, I dropped my keys.",
+          "gap_answer": "Running",
+          "accepts": [
+            "Running to the platform, I dropped my keys."
+          ],
+          "quiz_options": [
+            "Running",
+            "Ran",
+            "I ran",
+            "Run"
+          ],
+          "form": "ing_time",
+          "explanation": "The subject of the -ing clause must be the subject of the main clause.",
+          "explanation_cz": "Podmět -ing věty musí být podmětem hlavní věty."
+        },
+        {
+          "en": "Checking the report, the manager found two problems.",
+          "cz": "Když manažer kontroloval zprávu, našel dva problémy.",
+          "gap": "____ the report, the manager found two problems.",
+          "gap_answer": "Checking",
+          "accepts": [
+            "Checking the report, the manager found two problems."
+          ],
+          "quiz_options": [
+            "Checking",
+            "Checked",
+            "He checked",
+            "Check"
+          ],
+          "form": "ing_time",
+          "explanation": "The subject can come later, in the main clause — it still governs the -ing form.",
+          "explanation_cz": "Podmět může přijít až v hlavní větě — i tak řídí -ing tvar."
+        },
+        {
+          "en": "Travelling to Brno, we stopped in a small village.",
+          "cz": "Cestou do Brna jsme se zastavili v malé vesnici.",
+          "gap": "____ to Brno, we stopped in a small village.",
+          "gap_answer": "Travelling",
+          "gap_accepts": [
+            "Travelling",
+            "Traveling"
+          ],
+          "accepts": [
+            "Travelling to Brno, we stopped in a small village.",
+            "Traveling to Brno, we stopped in a small village."
+          ],
+          "quiz_options": [
+            "Travelling",
+            "Travelled",
+            "We travelled",
+            "Travel"
+          ],
+          "form": "ing_time",
+          "explanation": "British spelling doubles the l: travelling. US English writes traveling.",
+          "explanation_cz": "Britský pravopis zdvojuje l: travelling. Americká angličtina píše traveling."
+        },
+        {
+          "en": "Feeling tired, we stopped for coffee.",
+          "cz": "Protože jsme byli unavení, zastavili jsme se na kávu.",
+          "gap": "____ tired, we stopped for coffee.",
+          "gap_answer": "Feeling",
+          "accepts": [
+            "Feeling tired, we stopped for coffee."
+          ],
+          "quiz_options": [
+            "Feeling",
+            "Felt",
+            "We felt",
+            "To feel"
+          ],
+          "form": "ing_reason",
+          "explanation": "The same -ing clause also gives a reason: 'because we felt tired'.",
+          "explanation_cz": "Stejná -ing věta vyjadřuje i důvod: „protože jsme byli unavení“."
+        },
+        {
+          "en": "Knowing the manager well, she asked for a meeting.",
+          "cz": "Protože manažera dobře znala, požádala o schůzku.",
+          "gap": "____ the manager well, she asked for a meeting.",
+          "gap_answer": "Knowing",
+          "accepts": [
+            "Knowing the manager well, she asked for a meeting."
+          ],
+          "quiz_options": [
+            "Knowing",
+            "Known",
+            "She knew",
+            "Know"
+          ],
+          "form": "ing_reason",
+          "explanation": "State verbs work here too, even though they take no continuous tense.",
+          "explanation_cz": "Fungují tu i stavová slovesa, přestože nemají průběhový čas."
+        },
+        {
+          "en": "Not knowing the address, I called my colleague.",
+          "cz": "Protože jsem neznal adresu, zavolal jsem kolegovi.",
+          "gap": "____ knowing the address, I called my colleague.",
+          "gap_answer": "Not",
+          "accepts": [
+            "Not knowing the address, I called my colleague."
+          ],
+          "quiz_options": [
+            "Not",
+            "Don't",
+            "No",
+            "Didn't"
+          ],
+          "form": "ing_reason",
+          "explanation": "The negative goes in front of the -ing form: Not knowing… Never 'Don't knowing'.",
+          "explanation_cz": "Zápor stojí před -ing tvarem: Not knowing… Nikdy „Don't knowing“."
+        },
+        {
+          "en": "Not having a passport, she could not travel.",
+          "cz": "Protože neměla pas, nemohla cestovat.",
+          "gap": "Not ____ a passport, she could not travel.",
+          "gap_answer": "having",
+          "accepts": [
+            "Not having a passport, she could not travel."
+          ],
+          "quiz_options": [
+            "having",
+            "have",
+            "had",
+            "to have"
+          ],
+          "form": "ing_reason",
+          "explanation": "have becomes having after Not, like any other verb.",
+          "explanation_cz": "have se po Not mění na having, stejně jako každé jiné sloveso."
+        },
+        {
+          "en": "Living near the office, she walks to work.",
+          "cz": "Protože bydlí blízko kanceláře, chodí do práce pěšky.",
+          "gap": "____ near the office, she walks to work.",
+          "gap_answer": "Living",
+          "accepts": [
+            "Living near the office, she walks to work."
+          ],
+          "quiz_options": [
+            "Living",
+            "Lived",
+            "She lives",
+            "Live"
+          ],
+          "form": "ing_reason",
+          "explanation": "The main clause can be present — the -ing form fits any tense.",
+          "explanation_cz": "Hlavní věta může být v přítomném čase — -ing tvar se hodí ke každému času."
+        },
+        {
+          "en": "Wanting a better price, they visited three shops.",
+          "cz": "Protože chtěli lepší cenu, obešli tři obchody.",
+          "gap": "____ a better price, they visited three shops.",
+          "gap_answer": "Wanting",
+          "accepts": [
+            "Wanting a better price, they visited three shops."
+          ],
+          "quiz_options": [
+            "Wanting",
+            "Wanted",
+            "They wanted",
+            "Want"
+          ],
+          "form": "ing_reason",
+          "explanation": "Reason first, result second — the usual order in writing.",
+          "explanation_cz": "Nejdřív důvod, pak výsledek — obvyklé pořadí v psaném projevu."
+        },
+        {
+          "en": "Needing more money, he took a second job.",
+          "cz": "Protože potřeboval víc peněz, vzal si druhou práci.",
+          "gap": "____ more money, he took a second job.",
+          "gap_answer": "Needing",
+          "accepts": [
+            "Needing more money, he took a second job."
+          ],
+          "quiz_options": [
+            "Needing",
+            "Needed",
+            "He needed",
+            "Need"
+          ],
+          "form": "ing_reason",
+          "explanation": "This is 'because he needed', compressed into two words.",
+          "explanation_cz": "Je to „because he needed“ stlačené do dvou slov."
+        },
+        {
+          "en": "Being new in the company, he asked for help.",
+          "cz": "Protože byl ve firmě nový, požádal o pomoc.",
+          "gap": "____ new in the company, he asked for help.",
+          "gap_answer": "Being",
+          "accepts": [
+            "Being new in the company, he asked for help."
+          ],
+          "quiz_options": [
+            "Being",
+            "Been",
+            "He was",
+            "To be"
+          ],
+          "form": "ing_reason",
+          "explanation": "be becomes Being, not Been, at the start of the clause.",
+          "explanation_cz": "be se na začátku věty mění na Being, ne Been."
+        },
+        {
+          "en": "Working in a hotel, she meets a lot of people.",
+          "cz": "Protože pracuje v hotelu, potkává spoustu lidí.",
+          "gap": "____ in a hotel, she meets a lot of people.",
+          "gap_answer": "Working",
+          "accepts": [
+            "Working in a hotel, she meets a lot of people."
+          ],
+          "quiz_options": [
+            "Working",
+            "Worked",
+            "She works",
+            "Work"
+          ],
+          "form": "ing_reason",
+          "explanation": "Nothing marks the reason explicitly — the comma and the order carry it.",
+          "explanation_cz": "Důvod není označen slovem — nese ho čárka a pořadí vět."
+        },
+        {
+          "en": "Missing the last train, we stayed in a hotel.",
+          "cz": "Protože nám ujel poslední vlak, přespali jsme v hotelu.",
+          "gap": "____ the last train, we stayed in a hotel.",
+          "gap_answer": "Missing",
+          "accepts": [
+            "Missing the last train, we stayed in a hotel."
+          ],
+          "quiz_options": [
+            "Missing",
+            "Missed",
+            "We missed",
+            "Miss"
+          ],
+          "form": "ing_reason",
+          "explanation": "-ing here means the reason happened first, not at the same time.",
+          "explanation_cz": "-ing tu znamená, že důvod nastal dřív, ne současně."
+        },
+        {
+          "en": "Using an old laptop, he works slowly.",
+          "cz": "Protože používá starý notebook, pracuje pomalu.",
+          "gap": "____ an old laptop, he works slowly.",
+          "gap_answer": "Using",
+          "accepts": [
+            "Using an old laptop, he works slowly."
+          ],
+          "quiz_options": [
+            "Using",
+            "Used",
+            "He uses",
+            "Use"
+          ],
+          "form": "ing_reason",
+          "explanation": "Used would be passive: 'a used laptop' is a laptop somebody used.",
+          "explanation_cz": "Used by bylo trpné: „a used laptop“ je notebook, který někdo používal."
+        },
+        {
+          "en": "Not speaking Czech, the client brought a colleague to the meeting.",
+          "cz": "Protože klient neuměl česky, vzal si na schůzku kolegu.",
+          "gap": "____ speaking Czech, the client brought a colleague to the meeting.",
+          "gap_answer": "Not",
+          "accepts": [
+            "Not speaking Czech, the client brought a colleague to the meeting."
+          ],
+          "quiz_options": [
+            "Not",
+            "No",
+            "Don't",
+            "Doesn't"
+          ],
+          "form": "ing_reason",
+          "explanation": "Not + -ing is the only negative form of a participle clause.",
+          "explanation_cz": "Not + -ing je jediný záporný tvar participiální vazby."
+        },
+        {
+          "en": "Shocked by the news, she called her sister.",
+          "cz": "Šokovaná tou zprávou zavolala sestře.",
+          "gap": "____ by the news, she called her sister.",
           "gap_answer": "Shocked",
           "accepts": [
-            "Shocked by the news, she sat down."
+            "Shocked by the news, she called her sister."
           ],
-          "explanation": "Past participle for passive feeling.",
-          "explanation_cz": "3. tvar pro pasivní pocit."
+          "quiz_options": [
+            "Shocked",
+            "Shocking",
+            "She shocked",
+            "Shock"
+          ],
+          "form": "ed_clause",
+          "explanation": "The past participle is passive: the news shocked her, not the other way round.",
+          "explanation_cz": "Příčestí minulé je trpné: zpráva šokovala ji, ne naopak."
+        },
+        {
+          "en": "Built in 1900, the house needs repairs.",
+          "cz": "Dům postavený v roce 1900 potřebuje opravy.",
+          "gap": "____ in 1900, the house needs repairs.",
+          "gap_answer": "Built",
+          "accepts": [
+            "Built in 1900, the house needs repairs."
+          ],
+          "quiz_options": [
+            "Built",
+            "Building",
+            "They built",
+            "Build"
+          ],
+          "form": "ed_clause",
+          "explanation": "Somebody built the house — the house did not build. So: past participle.",
+          "explanation_cz": "Dům někdo postavil — dům nestavěl. Proto příčestí minulé."
+        },
+        {
+          "en": "Written in simple English, the book is easy to read.",
+          "cz": "Kniha napsaná jednoduchou angličtinou se čte snadno.",
+          "gap": "____ in simple English, the book is easy to read.",
+          "gap_answer": "Written",
+          "accepts": [
+            "Written in simple English, the book is easy to read."
+          ],
+          "quiz_options": [
+            "Written",
+            "Writing",
+            "Wrote",
+            "Write"
+          ],
+          "form": "ed_clause",
+          "explanation": "Writing here would mean the book writes something.",
+          "explanation_cz": "Writing by tu znamenalo, že kniha něco píše."
+        },
+        {
+          "en": "Delayed by the rain, the train arrived late.",
+          "cz": "Vlak, zdržený deštěm, přijel pozdě.",
+          "gap": "____ by the rain, the train arrived late.",
+          "gap_answer": "Delayed",
+          "accepts": [
+            "Delayed by the rain, the train arrived late."
+          ],
+          "quiz_options": [
+            "Delayed",
+            "Delaying",
+            "It delayed",
+            "Delay"
+          ],
+          "form": "ed_clause",
+          "explanation": "by + the cause is common after a past participle clause.",
+          "explanation_cz": "Po participiální vazbě s příčestím minulým se často pojí by + příčina."
+        },
+        {
+          "en": "Repaired last year, the bridge is safe now.",
+          "cz": "Most, opravený loni, je teď bezpečný.",
+          "gap": "____ last year, the bridge is safe now.",
+          "gap_answer": "Repaired",
+          "accepts": [
+            "Repaired last year, the bridge is safe now."
+          ],
+          "quiz_options": [
+            "Repaired",
+            "Repairing",
+            "They repaired",
+            "Repair"
+          ],
+          "form": "ed_clause",
+          "explanation": "The clause says what was done to the subject, and when.",
+          "explanation_cz": "Vazba říká, co se s podmětem stalo a kdy."
+        },
+        {
+          "en": "Surprised by the price, we left the shop.",
+          "cz": "Překvapeni cenou jsme z obchodu odešli.",
+          "gap": "____ by the price, we left the shop.",
+          "gap_answer": "Surprised",
+          "accepts": [
+            "Surprised by the price, we left the shop."
+          ],
+          "quiz_options": [
+            "Surprised",
+            "Surprising",
+            "We surprised",
+            "Surprise"
+          ],
+          "form": "ed_clause",
+          "explanation": "-ed describes how we felt; -ing would describe the price.",
+          "explanation_cz": "-ed popisuje, jak jsme se cítili; -ing by popisovalo cenu."
+        },
+        {
+          "en": "Seen from the bridge, the city looks small.",
+          "cz": "Z mostu vypadá město malé.",
+          "gap": "____ from the bridge, the city looks small.",
+          "gap_answer": "Seen",
+          "accepts": [
+            "Seen from the bridge, the city looks small."
+          ],
+          "quiz_options": [
+            "Seen",
+            "Seeing",
+            "We see",
+            "See"
+          ],
+          "form": "ed_clause",
+          "explanation": "A past participle clause can set a viewpoint: 'if you see it from…'.",
+          "explanation_cz": "Vazba s příčestím minulým může určit pohled: „když se na to díváte z…“."
+        },
+        {
+          "en": "Printed on old paper, the letter was hard to read.",
+          "cz": "Dopis vytištěný na starém papíře se četl špatně.",
+          "gap": "____ on old paper, the letter was hard to read.",
+          "gap_answer": "Printed",
+          "accepts": [
+            "Printed on old paper, the letter was hard to read."
+          ],
+          "quiz_options": [
+            "Printed",
+            "Printing",
+            "They printed",
+            "Print"
+          ],
+          "form": "ed_clause",
+          "explanation": "No 'which was' is needed — the participle carries it.",
+          "explanation_cz": "Není třeba „which was“ — nese to příčestí."
+        },
+        {
+          "en": "Signed by both managers, the contract went to the client.",
+          "cz": "Smlouva podepsaná oběma manažery šla ke klientovi.",
+          "gap": "____ by both managers, the contract went to the client.",
+          "gap_answer": "Signed",
+          "accepts": [
+            "Signed by both managers, the contract went to the client."
+          ],
+          "quiz_options": [
+            "Signed",
+            "Signing",
+            "They signed",
+            "Sign"
+          ],
+          "form": "ed_clause",
+          "explanation": "This is the short form of 'The contract, which was signed by…'.",
+          "explanation_cz": "Je to zkrácená podoba „The contract, which was signed by…“."
+        },
+        {
+          "en": "Painted last month, the kitchen looks bigger.",
+          "cz": "Kuchyň, vymalovaná minulý měsíc, vypadá větší.",
+          "gap": "____ last month, the kitchen looks bigger.",
+          "gap_answer": "Painted",
+          "accepts": [
+            "Painted last month, the kitchen looks bigger."
+          ],
+          "quiz_options": [
+            "Painted",
+            "Painting",
+            "They painted",
+            "Paint"
+          ],
+          "form": "ed_clause",
+          "explanation": "Painting the kitchen would be the action; painted is the result on the kitchen.",
+          "explanation_cz": "Painting by byla činnost; painted je výsledek na kuchyni."
+        },
+        {
+          "en": "Trained in London, she works as a doctor now.",
+          "cz": "Vyškolená v Londýně teď pracuje jako doktorka.",
+          "gap": "____ in London, she works as a doctor now.",
+          "gap_answer": "Trained",
+          "accepts": [
+            "Trained in London, she works as a doctor now."
+          ],
+          "quiz_options": [
+            "Trained",
+            "Training",
+            "They trained",
+            "Train"
+          ],
+          "form": "ed_clause",
+          "explanation": "Somebody trained her: the participle looks back at that.",
+          "explanation_cz": "Někdo ji vyškolil: příčestí odkazuje zpět na to."
+        },
+        {
+          "en": "Stolen from the office, the laptop was never found.",
+          "cz": "Notebook ukradený z kanceláře se nikdy nenašel.",
+          "gap": "____ from the office, the laptop was never found.",
+          "gap_answer": "Stolen",
+          "accepts": [
+            "Stolen from the office, the laptop was never found."
+          ],
+          "quiz_options": [
+            "Stolen",
+            "Stealing",
+            "They stole",
+            "Steal"
+          ],
+          "form": "ed_clause",
+          "explanation": "Irregular verbs use the third form here: steal - stole - stolen.",
+          "explanation_cz": "Nepravidelná slovesa tu mají třetí tvar: steal - stole - stolen."
         },
         {
           "en": "Having finished the report, he went home.",
@@ -48,85 +679,213 @@
           "accepts": [
             "Having finished the report, he went home."
           ],
-          "explanation": "Having + PP for earlier action.",
-          "explanation_cz": "Having + 3. tvar pro dřívější děj."
-        },
-        {
-          "en": "Not knowing the answer, I stayed quiet.",
-          "cz": "Neznaje odpověď, zůstal jsem zticha.",
-          "gap": "____ knowing the answer, I stayed quiet.",
-          "gap_answer": "Not",
-          "accepts": [
-            "Not knowing the answer, I stayed quiet."
+          "quiz_options": [
+            "Having",
+            "Have",
+            "Had",
+            "Being"
           ],
-          "explanation": "Not + -ing for negative reason.",
-          "explanation_cz": "Not + -ing pro záporný důvod."
+          "form": "having",
+          "explanation": "Having + past participle marks the earlier of two actions.",
+          "explanation_cz": "Having + příčestí minulé označuje dřívější ze dvou dějů."
         },
         {
-          "en": "Seen from above, the city looks small.",
-          "cz": "Pohled zhora: město vypadá malé.",
-          "gap": "____ from above, the city looks small.",
-          "gap_answer": "Seen",
+          "en": "Having checked the contract, she signed it.",
+          "cz": "Poté co smlouvu zkontrolovala, podepsala ji.",
+          "gap": "Having ____ the contract, she signed it.",
+          "gap_answer": "checked",
           "accepts": [
-            "Seen from above, the city looks small."
+            "Having checked the contract, she signed it."
           ],
-          "explanation": "PP clause for viewpoint.",
-          "explanation_cz": "3. tvar pro pohled."
+          "quiz_options": [
+            "checked",
+            "check",
+            "checking",
+            "checks"
+          ],
+          "form": "having",
+          "explanation": "After Having the verb takes its third form, never the -ing form.",
+          "explanation_cz": "Po Having má sloveso třetí tvar, nikdy ne -ing."
         },
         {
-          "en": "Feeling tired, we stopped for coffee.",
-          "cz": "Cítíce se unaveni, zastavili jsme se na kávu.",
-          "gap": "____ tired, we stopped for coffee.",
-          "gap_answer": "Feeling",
+          "en": "Having missed the train, we waited an hour.",
+          "cz": "Protože nám ujel vlak, čekali jsme hodinu.",
+          "gap": "Having ____ the train, we waited an hour.",
+          "gap_answer": "missed",
           "accepts": [
-            "Feeling tired, we stopped for coffee."
+            "Having missed the train, we waited an hour."
           ],
-          "explanation": "-ing for reason.",
-          "explanation_cz": "-ing pro důvod."
+          "quiz_options": [
+            "missed",
+            "miss",
+            "missing",
+            "misses"
+          ],
+          "form": "having",
+          "explanation": "Having also gives a reason, when the reason came first.",
+          "explanation_cz": "Having vyjadřuje i důvod, pokud nastal dřív."
         },
         {
-          "en": "Having been warned, he was careful.",
-          "cz": "Byl varován, takže byl opatrný.",
-          "gap": "____ been warned, he was careful.",
+          "en": "Having been warned, he was more careful.",
+          "cz": "Poté co ho varovali, byl opatrnější.",
+          "gap": "Having ____ warned, he was more careful.",
+          "gap_answer": "been",
+          "accepts": [
+            "Having been warned, he was more careful."
+          ],
+          "quiz_options": [
+            "been",
+            "being",
+            "be",
+            "was"
+          ],
+          "form": "having",
+          "explanation": "Having been + past participle is the passive version: somebody warned him.",
+          "explanation_cz": "Having been + příčestí minulé je trpná varianta: někdo ho varoval."
+        },
+        {
+          "en": "Having lived in Prague for years, she knows the city well.",
+          "cz": "Protože v Praze žije roky, zná to město dobře.",
+          "gap": "____ lived in Prague for years, she knows the city well.",
           "gap_answer": "Having",
           "accepts": [
-            "Having been warned, he was careful."
+            "Having lived in Prague for years, she knows the city well."
           ],
-          "explanation": "Having been + PP (passive earlier).",
-          "explanation_cz": "Having been + 3. tvar."
+          "quiz_options": [
+            "Having",
+            "Have",
+            "Had",
+            "Being"
+          ],
+          "form": "having",
+          "explanation": "Having covers a period running up to now, like the present perfect.",
+          "explanation_cz": "Having pokrývá dobu trvající až doteď, jako předpřítomný čas."
         },
         {
-          "en": "Opening the door, she noticed a letter.",
-          "cz": "Otevřela dveře a všimla si dopisu.",
-          "gap": "____ the door, she noticed a letter.",
-          "gap_answer": "Opening",
+          "en": "Having written the letter, he closed the laptop.",
+          "cz": "Když dopis napsal, zavřel notebook.",
+          "gap": "Having ____ the letter, he closed the laptop.",
+          "gap_answer": "written",
           "accepts": [
-            "Opening the door, she noticed a letter."
+            "Having written the letter, he closed the laptop."
           ],
-          "explanation": "-ing for sequence.",
-          "explanation_cz": "-ing pro pořadí."
+          "quiz_options": [
+            "written",
+            "wrote",
+            "writing",
+            "write"
+          ],
+          "form": "having",
+          "explanation": "wrote is the past simple; after Having you need written.",
+          "explanation_cz": "wrote je minulý čas prostý; po Having je potřeba written."
         },
         {
-          "en": "Built in 1900, the house needs repairs.",
-          "cz": "Postavený v roce 1900, dům potřebuje opravy.",
-          "gap": "____ in 1900, the house needs repairs.",
-          "gap_answer": "Built",
+          "en": "Having been repaired, the car works well now.",
+          "cz": "Poté co ho opravili, auto teď dobře funguje.",
+          "gap": "Having been ____, the car works well now.",
+          "gap_answer": "repaired",
           "accepts": [
-            "Built in 1900, the house needs repairs."
+            "Having been repaired, the car works well now."
           ],
-          "explanation": "PP clause describing subject.",
-          "explanation_cz": "3. tvar popisuje podmět."
+          "quiz_options": [
+            "repaired",
+            "repairing",
+            "repair",
+            "repairs"
+          ],
+          "form": "having",
+          "explanation": "The car did not repair anything, so the passive form is required.",
+          "explanation_cz": "Auto nic neopravilo, proto je nutný trpný tvar."
         },
         {
-          "en": "Realising the mistake, he apologised.",
-          "cz": "Když si uvědomil chybu, omluvil se.",
-          "gap": "____ the mistake, he apologised.",
-          "gap_answer": "Realising",
+          "en": "Having seen the film, we did not want to see it again.",
+          "cz": "Protože jsme ten film už viděli, nechtěli jsme ho vidět znovu.",
+          "gap": "Having ____ the film, we did not want to see it again.",
+          "gap_answer": "seen",
           "accepts": [
-            "Realising the mistake, he apologised."
+            "Having seen the film, we did not want to see it again."
           ],
-          "explanation": "-ing reason clause.",
-          "explanation_cz": "-ing důvodová věta."
+          "quiz_options": [
+            "seen",
+            "saw",
+            "seeing",
+            "see"
+          ],
+          "form": "having",
+          "explanation": "see - saw - seen: the third form follows Having.",
+          "explanation_cz": "see - saw - seen: po Having jde třetí tvar."
+        },
+        {
+          "en": "Having taken the wrong train, they arrived very late.",
+          "cz": "Protože si vzali špatný vlak, dorazili velmi pozdě.",
+          "gap": "Having ____ the wrong train, they arrived very late.",
+          "gap_answer": "taken",
+          "accepts": [
+            "Having taken the wrong train, they arrived very late."
+          ],
+          "quiz_options": [
+            "taken",
+            "took",
+            "taking",
+            "take"
+          ],
+          "form": "having",
+          "explanation": "take - took - taken. took would be wrong after Having.",
+          "explanation_cz": "take - took - taken. took by po Having bylo špatně."
+        },
+        {
+          "en": "Having been invited, we arrived at seven.",
+          "cz": "Protože nás pozvali, dorazili jsme v sedm.",
+          "gap": "Having been ____, we arrived at seven.",
+          "gap_answer": "invited",
+          "accepts": [
+            "Having been invited, we arrived at seven."
+          ],
+          "quiz_options": [
+            "invited",
+            "inviting",
+            "invite",
+            "invites"
+          ],
+          "form": "having",
+          "explanation": "Regular verbs look the same in past simple and third form: invited.",
+          "explanation_cz": "Pravidelná slovesa mají stejný tvar pro minulý čas i třetí tvar: invited."
+        },
+        {
+          "en": "Having studied in London, he speaks very good English.",
+          "cz": "Protože studoval v Londýně, mluví velmi dobře anglicky.",
+          "gap": "____ studied in London, he speaks very good English.",
+          "gap_answer": "Having",
+          "accepts": [
+            "Having studied in London, he speaks very good English."
+          ],
+          "quiz_options": [
+            "Having",
+            "Have",
+            "Had",
+            "Being"
+          ],
+          "form": "having",
+          "explanation": "Being studied would mean somebody studied him.",
+          "explanation_cz": "Being studied by znamenalo, že někdo studoval jeho."
+        },
+        {
+          "en": "Having been closed for a year, the museum opens in May.",
+          "cz": "Muzeum, které bylo rok zavřené, se otevírá v květnu.",
+          "gap": "Having been ____ for a year, the museum opens in May.",
+          "gap_answer": "closed",
+          "accepts": [
+            "Having been closed for a year, the museum opens in May."
+          ],
+          "quiz_options": [
+            "closed",
+            "closing",
+            "close",
+            "closes"
+          ],
+          "form": "having",
+          "explanation": "Having been + past participle works for a state that lasted, too.",
+          "explanation_cz": "Having been + příčestí minulé funguje i pro stav, který trval."
         }
       ]
     }
@@ -134,12 +893,107 @@
   "intro": {
     "cards": [
       {
-        "title": "Participle clauses · draft",
-        "body": "First-draft shell. Polish later.",
+        "title": "One subject, two clauses, no conjunction",
+        "title_cz": "Jeden podmět, dvě věty, žádná spojka",
+        "body": "A participle clause cuts **when / while / because** and the subject out of the first clause and leaves a participle. It is only possible when **both clauses share the same subject** — that is the whole rule, and the source of nearly every mistake.",
+        "body_cz": "Participiální vazba vyškrtne z první věty **when / while / because** i podmět a nechá jen příčestí. Je možná **jen když mají obě věty stejný podmět** — to je celé pravidlo a zdroj skoro všech chyb.",
+        "table": {
+          "caption": "Full clause to participle clause",
+          "headers": [
+            "Full clause",
+            "Participle clause"
+          ],
+          "rows": [
+            [
+              "When I walked to the station, I met my neighbour.",
+              "**Walking** to the station, I met my neighbour."
+            ],
+            [
+              "Because she felt tired, she stopped for coffee.",
+              "**Feeling** tired, she stopped for coffee."
+            ],
+            [
+              "The house, which was built in 1900, needs repairs.",
+              "**Built** in 1900, the house needs repairs."
+            ],
+            [
+              "After he had finished the report, he went home.",
+              "**Having finished** the report, he went home."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "-ing or past participle? Ask who does the action",
+        "title_cz": "-ing, nebo příčestí minulé? Ptejte se, kdo činnost dělá",
+        "body": "The choice is never about time — it is about **direction**. If the subject **does** the action, use **-ing**. If the action is **done to** the subject, use the **past participle** (the third form). This is the same test as -ed/-ing adjectives at A2, applied to a whole clause.",
+        "body_cz": "Volba není o čase, ale o **směru**. Pokud podmět činnost **dělá**, použijte **-ing**. Pokud se činnost **děje jemu**, použijte **příčestí minulé** (třetí tvar). Je to stejný test jako u -ed/-ing přídavných jmen na A2, jen na celou větu.",
         "points": [
-          "One core pattern",
-          "Czech cue is support only"
+          "**Shocking** news → the news does it. **Shocked** by the news, she called her sister.",
+          "**Reading** the contract, she found a mistake. (she reads)",
+          "**Written** in simple English, the book is easy to read. (somebody wrote it)",
+          "Never: *Shocking by the news, she called her sister.*"
         ]
+      },
+      {
+        "title": "Time, reason — and the negative",
+        "title_cz": "Čas, důvod — a zápor",
+        "body": "The same -ing form covers **two actions at once**, **one straight after another**, and **because**. English does not mark which one — the reader takes it from the sense. The negative is simply **Not** in front, and nothing else works.",
+        "body_cz": "Stejný -ing tvar pokrývá **dva děje současně**, **jeden hned po druhém** i **protože**. Angličtina nerozlišuje který — čtenář to pozná z významu. Zápor je prostě **Not** vpředu a nic jiného nefunguje.",
+        "points": [
+          "At the same time: Waiting on the platform, we read the newspaper.",
+          "One after the other: Opening the letter, he found a ticket.",
+          "Reason: Needing more money, he took a second job.",
+          "Negative: **Not** knowing the address, I called my colleague."
+        ]
+      },
+      {
+        "title": "Having + third form: the earlier action",
+        "title_cz": "Having + třetí tvar: dřívější děj",
+        "body": "When the first action clearly finished **before** the second, use **Having + past participle**. If the subject had the action **done to it**, add **been**: **Having been + past participle**. After *Having* the verb is always the third form — never the past simple, never -ing.",
+        "body_cz": "Když první děj jasně skončil **před** druhým, použijte **Having + příčestí minulé**. Pokud se děj podmětu **stal**, přidejte **been**: **Having been + příčestí minulé**. Po *Having* je sloveso vždy ve třetím tvaru — nikdy minulý čas prostý, nikdy -ing.",
+        "points": [
+          "Having **finished** the report, he went home.",
+          "Having **been** warned, he was more careful.",
+          "Never: *Having wrote the letter* · *Having writing the letter*",
+          "Plain -ing is enough when the order is already obvious."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "**Walked** to the station, I met my neighbour.",
+              "**Walking** to the station, I met my neighbour."
+            ],
+            [
+              "**Don't** knowing the address, I called my colleague.",
+              "**Not** knowing the address, I called my colleague."
+            ],
+            [
+              "**Building** in 1900, the house needs repairs.",
+              "**Built** in 1900, the house needs repairs."
+            ],
+            [
+              "Having **wrote** the letter, he closed the laptop.",
+              "Having **written** the letter, he closed the laptop."
+            ],
+            [
+              "**Been** new in the company, he asked for help.",
+              "**Being** new in the company, he asked for help."
+            ],
+            [
+              "Waiting on the platform, **the newspaper** was interesting.",
+              "Waiting on the platform, **we** read the newspaper."
+            ]
+          ]
+        }
       }
     ]
   }
