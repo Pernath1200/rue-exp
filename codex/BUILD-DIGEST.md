@@ -6,6 +6,141 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 9 (RUE build, claude-opus-5)
+
+### Headline: B2 grammar is 20/24 and one sketch off complete on-path; the two worst A2 units are clean; every remaining A1/A2 offender is now an ordinary untaught word
+
+Three B2 sketches went live — **`b2_preposition_ing`**,
+**`b2_articles_genericity`** and **`b2_quantifiers_advanced`** — 144 new
+items, all three authored 100 % pool-clean. Two A2 repairs took the two
+worst remaining A2 units to zero. Total **457 → 429**, four units off the
+report. **`b2_discourse_markers` is the last on-path B2 sketch.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `108ac38` | `a2_ed_ing_adjectives` re-lexified, 12/24 items — 10 types → 0 |
+| 2 | `3d273d1` | `a2_verb_patterns` teaches its own pattern verbs — 10 types → 0, and 8 more downstream |
+| 3 | `edf78d5` | **`b2_preposition_ing`** built + live — 10 → **48** items |
+| 4 | `2da7131` | **`b2_articles_genericity`** built + live — 10 → **48** items |
+| 5 | `77b8f65` | **`b2_quantifiers_advanced`** built + live — 10 → **48** items |
+
+B2 is **20/24 live**. On the B2 path only **`b2_discourse_markers`**
+remains; off-path, `b2_future_in_the_past` and `b2_clear_claims` are still
+sketches and `craft` (B1 vocab) is parked. A1, A2 and B1 grammar are fully
+live. C1 is 0/22.
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 457 unknown types · 62 units | **429** · 60 units · baseline tightened 457 → 429 |
+
+Net **−28** unknown types while adding **144 new items**. Both gates green
+before every commit; commit and push per unit. The 12 warnings are the
+pre-existing `b2_clear_claims` ones, unchanged.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Unchanged from runs 1–8, and again nothing was manufactured to produce a
+tick. All four are outside this lane: the P0 (grammar practice never reads
+`blocks[].items`) and the hardcoded `A1` vocab badge are engine code;
+`zero_article` is blocked on the P0 decision; `b2_clear_claims` style is
+your call. **This run put three more grammar units behind the dead
+Check → Type → Use sequence. B2 grammar is now twenty units deep behind a
+stage that never runs, and the P0 is nine runs old.** Every hour this lane
+runs, the gap between "content that passes the gate" and "content a student
+can actually practise" gets one unit wider.
+
+### Judgment calls and forks for James
+
+**1. I made an error and caught it — logging it so the next run trusts the
+process, not the prose.** I wrote `codex_unit: "G_NP-B1B2-02"` into
+`b2_quantifiers_advanced` — an id that does not exist. The node registry
+says `G_NP-B1B2-01`. Neither gate checks `codex_unit`, so it would have
+shipped silently; I found it on a cross-check against
+`data/nodes-grammar.json` before the commit and restored the registered id.
+All three new packs were then verified pack-vs-registry and match.
+**Worth a gate**: `verify_pack.py` could assert
+`pack.codex_unit == node.codex_unit` and `pack.tree_node == node.id` in
+about five lines. That is engine-adjacent tooling rather than content, so I
+have not written it — say the word.
+
+**2. `feel` is not taught anywhere in the course, and that cost
+`a2_ed_ing_adjectives` its two best sentences.** *I feel tired after work*
+→ *I am always tired after work*; *I feel relaxed after a walk* → *I am
+relaxed after a long walk*. The grammar is untouched and the Czech is
+natural, but "how do you feel" is the single most useful thing an A2
+student can say about `-ed` adjectives, and the honest fix is to teach
+`feel`, not to route around it. This is run 8's fork 1 again, with a new
+name on the list. The other nine words that unit was leaking — `storm`,
+`history`, `ending`, `mistake`, `question`, `result`, `rule`, `exam`,
+`situation` — are all in the same category.
+
+**3. `enough` is not pool-legal at B2.** I went to write *We have enough
+time* in the quantifiers unit and the checker refused it. `enough` is a
+core quantifier and it is taught nowhere in 121 units. It belongs on the
+seed list with `know`, `answer`, `want` and `see` from run 8.
+
+**4. The choose-the-verb technique is now a house pattern, used three runs
+running.** Run 7 (reporting verbs), run 8 (remember/forget/mean/regret),
+and this run `a2_verb_patterns`, where all ten violations *were* the unit's
+own pattern verbs — `enjoy`, `hate`, `love`, `plan`, `hope`, `decide`,
+`agree` appeared in twenty-odd sentences and were never once a gap answer.
+Seven items now gap the first verb, with the Czech prompt disambiguating;
+41 of 48 still gap the to/-ing form and every moved verb is still gapped
+for its pattern elsewhere, so no teaching point was lost. It also cleared 8
+violations downstream (`trunk_core_b1` went 4 → 2). **This is no longer a
+one-off and should probably be written into the house style — or ruled out
+if you dislike it.**
+
+**5. Zero-article items gap the bare noun, not an empty answer.** In
+`b2_articles_genericity` the generic items are *"\_\_\_\_ are expensive
+in this country."* → `Cars`, with `["Cars", "The cars", "A car", "Car"]` as
+the options. The student still chooses the article; they just type the
+noun. This keeps every item gradeable and deliberately steers clear of the
+open `zero_article` question in the repair queue — no new items depend on
+that decision. Conservative, and reversible if the engine ever grades an
+empty gap.
+
+**6. Function-word units repeat their answers, and I let them.** In the
+preposition and article strands the answer alphabet is `at/in/of/for/about`
+and `The/the` — twelve items cannot have twelve distinct answers when the
+teaching point *is* the small closed set. I kept every *content-word*
+answer distinct within its strand (all 12 `plain_prep` answers differ, all
+12 `to_prep_or_infinitive` answers differ, all 24 zero-article nouns
+differ) and let prepositions and `The` repeat where they are the point.
+Same shape as the live `b2_gerunds_infinitives_advanced`, which repeats
+`to` throughout.
+
+**7. `b2_preposition_ing`'s fourth strand is the one to smoke first.** It
+is the `to` trap — `be used to` / `look forward to` + -ing against
+`want/need/decide/agree` + base form — built around the minimal pair *"She
+is used to working at night."* / *"She used to work at night."* That is the
+highest-frequency B2 error Czech speakers make and the strand lives or dies
+on whether the Czech prompts disambiguate cleanly. I think they do
+(*Je zvyklá pracovat v noci* vs *Dřív pracovala v noci*), but it is a
+judgment call about Czech, so it is yours.
+
+**8. One Czech ambiguity found and fixed by re-reading my own output.**
+`b2_preposition_ing` had *"He worries about losing his job."* cued as
+*"Bojí se, že přijde o práci."* — but *"Bojí se létat."* is already the cue
+for `afraid of` two strands earlier, so one Czech prompt pointed at two
+different English adjectives. Now *"Dělá si starosti, že přijde o práci."*
+Mentioning it because the structural checks passed it happily; only reading
+all 48 pairs end to end caught it.
+
+**9. Next run's worst A1/A2 units, for whoever picks this up.**
+`trunk_verbs_daily_a1` (10 types) is the worst, but it is an A1 *vocab
+trunk* sitting fifth in the course — almost nothing is pool-legal that
+early, so repairing it means seeding words, not re-lexifying, and that is a
+spine decision. The best *repairable* targets are `a1_to_for_with` (9) and
+`a2_past_simple` (8).
+
+---
+
 ## 2026-08-07 · cloud run 8 (RUE build, claude-opus-5)
 
 ### Headline: A2's two worst units are clean, B2 gained two units — and ten ordinary words explain an eighth of everything left on the report
