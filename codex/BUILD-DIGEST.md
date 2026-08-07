@@ -6,6 +6,132 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 8 (RUE build, claude-opus-5)
+
+### Headline: A2's two worst units are clean, B2 gained two units — and ten ordinary words explain an eighth of everything left on the report
+
+The two worst remaining A1/A2 units were both A2 and both sat at **12
+unknown types**: `a2_present_perfect` and `a2_comparatives`. Both are now at
+**zero**. Two more B2 sketches went live: **`b2_participle_clauses`** and
+**`b2_gerunds_infinitives_advanced`**, both authored 100 % pool-clean, so
+the audit total ended exactly where the repairs left it despite 96 new
+items. Total **483 → 457**, four units off the report.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `40365b6` | `a2_present_perfect` re-lexified, 11/48 items — 12 types → 0 |
+| 2 | `5553cc3` | `a2_comparatives` re-lexified, 11/48 items — 12 types → 0 |
+| 3 | `04a2fba` | **`b2_participle_clauses`** built + flipped live — 10 → **48** items |
+| 4 | `bbe3ed8` | **`b2_gerunds_infinitives_advanced`** built + live — 10 → **48** items |
+
+B2 is now **17/24 live**; 6 grammar sketches remain in path order
+(`b2_preposition_ing`, `b2_articles_genericity`, `b2_quantifiers_advanced`,
+`b2_discourse_markers`) plus two off-path (`b2_future_in_the_past`,
+`b2_clear_claims`). A1, A2 and B1 are fully live. C1 is 0/22.
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 483 unknown types · 64 units | **457** · 62 units · baseline tightened 483 → 457 |
+
+Net **−26** unknown types while adding **96 new items**. Both gates green
+before every commit; commit and push per unit, so every commit on the
+branch is independently gate-green. The 12 warnings are the pre-existing
+`b2_clear_claims` ones, unchanged.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Unchanged from runs 1–7, and again nothing was manufactured to produce a
+tick. All four are outside this lane: the P0 (grammar practice never reads
+`blocks[].items`) and the hardcoded `A1` vocab badge are engine code;
+`zero_article` is blocked on the P0 decision; `b2_clear_claims` style is
+your call. This run put **two more grammar units** behind the dead
+Check → Type → Use sequence — B2 grammar is now seventeen units deep behind
+a stage that never runs, and the P0 is eight runs old.
+
+### Judgment calls and forks for James
+
+**1. Ten ordinary words account for ~60 of the remaining 457 types. This is
+the highest-leverage thing on the board and it is a spine decision, so I did
+not take it.** Counting how many *separate units* each untaught word breaks:
+
+| word | units it breaks | word | units it breaks |
+|------|-----|------|-----|
+| `email` | 9 | `see` | 5 |
+| `answer` | 8 | `summer` | 5 |
+| `rain` | 7 | `missed` | 5 |
+| `know` | 7 | `plan` | 5 |
+| `tv` | 5 | `want` | 4 |
+
+None of these is exotic — `know`, `answer`, `want`, `see` are among the most
+frequent verbs in English, and **no unit anywhere in the course teaches any
+of them as a target**. They are used constantly from A1 onward and taught
+never. Seeding these ten into early A1/A2 vocab units would dissolve roughly
+**an eighth of the entire report** in one pass. That is the same shape as
+run 7's adjective fork, and bigger. One run can do it if you want it.
+
+**2. `since` was a teaching point of `a2_present_perfect` that the unit
+never actually taught.** for/since is named in the unit's `note` and has its
+own intro card, but `since` was never a gap answer, so the audit correctly
+called it untaught. I changed *"She has lived here since March."* to gap
+`since` instead of `lived` — which fixed the unit, retired a duplicate
+`lived` gap in the same stage, and cleared `since` out of
+`b1_present_perfect_vs_past` and `b2_present_perfect_continuous` downstream.
+**Worth a mechanical sweep**: any other unit whose own headline teaching
+word is never a gap answer has the same silent hole. I have not added this
+to `REPAIR-QUEUE.md` — that file is your channel, so this is a proposal.
+
+**3. `remember`, `forget`, `mean` and `regret` are not pool-legal, and a
+unit about those verbs cannot omit them.** Same fork as run 7's reporting
+verbs, resolved the same way: `b2_gerunds_infinitives_advanced` has a
+`choose_verb` strand where the meaning-change verb **is** the gap answer, so
+the unit genuinely teaches them rather than assuming them. Conservative and
+consistent with precedent, but flagging it because it is the second time
+this pattern has come up — it is becoming a house technique rather than a
+one-off.
+
+**4. `a2_present_perfect` lost every `email` sentence, and I think that is a
+loss.** *She has written three emails* → *three books*; *She hasn't sent the
+email* → *hasn't opened the door*. The teaching points and gap answers are
+identical, but writing emails is exactly what present perfect is for in real
+life. This is fork 1 in miniature: the honest fix is to teach `email`, not
+to route around it. Say the word and I will put the email sentences back.
+
+**5. Two A2 items changed what they gap, nothing else changed teaching
+point.** Beyond `since` above, no gap answer moved in either repair — all 22
+other rewrites keep the identical gap answer and swap only the surrounding
+lexis. In `a2_comparatives` every comparative/superlative form is untouched.
+
+**6. Replacements were checked against the pack, not just the gate.** In
+`a2_comparatives` the obvious swaps would have produced a third
+*"Today … than yesterday"* item, a second *"the old one"*, and a third
+*"expensive"*. I picked around them, so no near-duplicate sentences were
+introduced. Both packs verify 48/48 distinct English sentences and Czech
+prompts.
+
+**7. Quiz distractors in the two new packs deliberately contain
+out-of-scope strings, and the gate is right to ignore them.** `sat`,
+`stood`, `ran`, `felt`, `stole`, `smoke` appear in `quiz_options` only,
+never in `en`. For a *which form?* question the distractor set should be the
+verb's own other forms — that is the exercise. The audit scores `en` only,
+so nothing is affected. Same call as run 7 note 6.
+
+### Smoke-check
+
+- `b2_participle_clauses` and `b2_gerunds_infinitives_advanced` — new intro
+  cards, 5 each, both ending in a Common mistakes table. Worth reading the
+  Czech on the intro bodies; they are longer than the item-level Czech.
+- `a2_present_perfect` item *"She has lived here ____ March."* — this is the
+  one item in the course where I moved a gap onto a different word.
+- Both new units sit behind the P0 dead stage, so in the browser they will
+  show intro cards then jump to Done. That is the P0, not these packs.
+
+---
+
 ## 2026-08-06 · cloud run 7 (RUE build, claude-opus-5)
 
 ### Headline: the worst unit in the course is now clean, and the reason it was dirty is a spine problem, not a content problem
