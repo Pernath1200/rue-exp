@@ -6,6 +6,110 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 17 (RUE build, claude-opus-5)
+
+### Headline: **the picture-led intro backlog opens — 4 A1 vocab units done (3 → 7 of 30) — plus 2 A1/A2 units repaired to zero (audit 185 → 177) and one C1 unit built. And the next node on the C1 path cannot be built as sketched: `b2_reported_speech_advanced` already teaches all of it.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `c98b74d` | **`a1_animals`** picture-led intro — 12 emoji tiles, 4 carrier frames |
+| 2 | `67dd379` | **`a1_body`** picture-led intro — 12 tiles, 5 frames |
+| 3 | `402c9ec` | **`a1_clothes`** picture-led intro — 12 tiles, 4 frames |
+| 4 | `82e37a6` | **`a1_food`** picture-led intro — 12 tiles, 5 frames |
+| 5 | `2d732b9` | `a1_like_want_need` re-lexified, 4 items — 4 types → **0** |
+| 6 | `dbfe0cd` | `a2_past_simple` re-lexified, 5 items — 4 types → **0** |
+| 7 | `7d0ae15` | **`c1_comparative_advanced`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 82 live grammar units · 0 errors · 1 warning | **83 units · 0 errors · 1 warning** |
+| `audit` | 185 unknown types · 51 units | **177** · 49 units · baseline tightened twice (185 → 181 → 177) |
+
+Net **−8** unknown types while adding 48 new items. The new C1 unit is **100 % pool-clean — 0 violations**, verified by simulating `audit.py` against the pack *before* flipping status, not after. The 12 warnings are the pre-existing `b2_clear_claims` ones, the 1 warning is the known `order_click` gap; both unchanged. All three gates green before every commit; commit and push per unit.
+
+---
+
+### Vocab intros — the backlog is 30 A1 + 25 A2, and this run cleared 4
+
+Live vocab units with an intro: **3 → 7**. Remaining: **26 A1**, then **25 A2**. At 4 a run that is roughly six more runs to finish A1 and A2.
+
+I took the four most genuinely picturable A1 leaves first — `a1_animals`, `a1_body`, `a1_clothes`, `a1_food` — because they are where an emoji actually carries meaning rather than decorating it. Every unit got the full 12 tiles.
+
+**Two rules I held to strictly, both of which cost me tiles:**
+
+1. **Every tile's `en`/`cz` is copied verbatim from that pack's own items**, including the pack's disambiguating glosses — `hand · ruka (dlaň)`, `shoe · bota (polobotka)`, `watch (wrist) · hodinky`. A tile that paraphrases is a tile the student will not recognise in Match ten seconds later.
+2. **Every page-2 frame traces to a `use[]` carrier id the pack's items actually declare.** I did not invent one. Where a nicer frame existed but no item declared it, it did not go in.
+
+**One trap per unit, and I chose each to explain something already on the page rather than to add a stray fact:**
+
+| Unit | Trap | Why that one |
+|---|---|---|
+| `a1_animals` | `sheep` is invariant in the plural | the page's own `I like …` frame is the plural carrier `i_like_pl` |
+| `a1_body` | `ruka` = arm *and* hand, `noha` = leg *and* foot | it is the reason the pack glosses those four items in the first place |
+| `a1_clothes` | trousers / jeans / glasses are always plural | they are the exception to `This is a …` and `I have a …`, both on the same page |
+| `a1_food` | countable vs uncountable | it *is* the split between the `*_bare` carriers and `i_buy_a` / `this_is_a` — the note explains the two frame families rather than adding a fact |
+
+No unit resisted a picture, so none needed a schematic or a text page this run. No new schematic needed either.
+
+---
+
+### THE FINDING: `c1_reporting_complementation` cannot be built as sketched — B2 already teaches all of it
+
+It is the next node on `path_order_c1`, so I went to build it, and stopped. Its thin shell sketches *admit doing · insist that · warn sb not to · suggest that/-ing · accuse sb of · promise to*. Compare the note on the **live** `b2_reported_speech_advanced` (48 items, on `path_order_b2`):
+
+> reporting verbs beyond say/tell · verb (+ object) + to-infinitive · verb + -ing and verb + preposition + -ing · verb + (that) clause, **incl. suggest/insist + should or base form** · choosing the verb that fits the pattern
+
+Its gap answers include `accused`, `advised`, `apologised`, `blamed`, `congratulated`, `denied`, `insisted`, `refused`, `reminded`, `suggested`, `warned`, `of`, `on`, `for`, `taking`, `making`, `booking`. **That is the C1 shell's entire content, already live one level down.** And `c1_subjunctive`'s own note (run 16) says it deliberately ceded exactly this ground: *"deliberately avoids … suggest/insist and the other reporting VERB triggers with should or base form (b2_reported_speech_advanced)"*.
+
+The neighbouring C1 units have taken the obvious escape routes too: impersonal *It is said that / He is said to have* belongs to **`c1_advanced_passive`**, and nominalised reporting (*the claim that…*, appositive that-clauses) to **`c1_nominalisation`** and **`c1_complex_noun_phrases`**.
+
+**What is genuinely left unowned**, if you want the node built:
+
+- the object-slot constraint — *tell/remind/inform me* vs \*_explain me_, \*_suggest me_, \*_say me_ (a Czech fossilisation worth a strand on its own)
+- `that`-deletion: when it is optional, when register or an intervening adverbial makes it obligatory
+- complementation with a **meaning change** — *regret to say* vs *regret saying*, *remember to* vs *remember -ing*, *go on to* vs *go on -ing*, *mean*, *stop*, *try*
+
+That is a real unit, but it is **"complementation precision", not "reporting verbs"** — it needs a different title, a different `label`, and a different note from the ones in the registry. **Renaming a registered node's subject matter is your call, not the content lane's, so I did not do it silently.** Conservative path taken: I left the node `coming` and built the next clean node on the C1 path instead.
+
+### So I built `c1_comparative_advanced` — and it is clean ground
+
+Only `a2_comparatives` exists below it (plain `-er`/`-est`, *bigger/more … than*). I checked the two C1 units that could have overlapped and scoped around both: `no sooner` and the other inverted negative adverbials belong to **`c1_inversion_emphasis`**, verb-phrase ellipsis in the than-clause to **`c1_ellipsis_substitution`**. Four strands: scaling the comparative and the equative · `the … the` and doubled comparatives · `as … as` in full · choosing the frame (fewer/less, two-of-a-kind, than/then, *prefer X to Y* vs *would rather X than Y*, *by far*).
+
+---
+
+### Forks and judgment calls
+
+**1. Two of your three intro templates drift from the spec they set, and I copied the spec, not the templates.** Worth knowing before the next run copies either one:
+
+- **`a1_home_family` page 2 lists `"This is my …"`, which is not a carrier id.** The pack declares `he_is_my`, `this_is_a`, `i_am_a`, `i_have_a`, `he_is_a`, `i_need_a`, `where_is_the`, `i_go_to`, `i_want_to`, `have_a_good`, `the_is_long` — no `this_is_my`. AGENTS.md says *"Frames come from the items' `use[]` carrier ids … don't invent frames"*, so the reference template breaks its own rule, and any run that copies it inherits the break. **One-line fix: drop that frame, or swap it for `He is a …` / `I need a …`, both declared.** I did not touch it — it is the artefact you are smoke-testing right now, and changing what you are looking at mid-smoke is worse than telling you.
+- **`a1_colours` tiles carry the short feminine Czech (`červená`) where the items carry `červený / červená`.** On a swatch that is clearly the better call, so I am recording it as deliberate template variance rather than a defect — but it means "tile text is verbatim from the item" is a rule with one sanctioned exception, and the next author should know which.
+
+**2. There is no carrier-wording registry anywhere in the repo.** `this_is_a`, `i_like_pl`, `i_have_bare` and the other 36 ids exist only inside vocab packs and in one line of AGENTS.md. I derived every frame from the id itself (`this_is_a` → *This is a …*), which is deterministic because the ids are self-describing — but it is derivation, not lookup, and two authors could word the same id differently. **A 39-line `data/vocab/carriers.json` would make page 2 mechanical and lintable.** I have not added one: it is a new data file, which is a shape decision.
+
+**3. The `use[]` carriers are currently data-only — no student sees them.** Leaf vocab packs have no authored `sentences` bank, so `getSentenceItems()` returns nothing and the Use stage falls through to *"Use · coming soon"*. That matters two ways: the frames I put on page 2 are, today, the **only** place a student meets these carriers; and some carrier assignments would produce wrong English if the stage were ever switched on — `trousers` and `jeans` both declare `this_is_a` and `i_have_a`, which generate \*_This is a jeans_. **Not a live bug, so I have not touched the data.** Flagging it because the intro pages have just made those carriers visible for the first time, and because it is a landmine under whoever wires the Use stage.
+
+**4. Quiz distractors: I kept morphological traps, swapped one lexical leak.** Same call as run 16, same reasoning. `marginal` / `margin` / `marginals` and `somehow` are out-of-pool but they are wrong *forms* of the answer — the trap the item exists to set. I did swap `considerate` out for `consideration`, because *considerate* is a different lexeme doing no teaching work. **Note that `audit.py` never scans `quiz_options` at all**, so neither choice moves the gate; this is a judgment call the gate cannot see.
+
+**5. `c1_comparative_advanced` cost six items a re-lexify, and one of them dulled the sentence.** `version`, `practise`, `capable`, `else`, `designs`, `convincing` were all out-of-pool at C1 — which is worth noticing on its own, since the pool at that position is 2,942 targets from 148 units. *He is just as capable as anyone else in the team* became *He is just as quick as the others in the team*: same teaching point, flatter English. The others (`phone`, `listen`, `report`, `plans`, `popular`) cost nothing.
+
+**6. Repair queue: nothing processed, and that is still correct — sixth run in a row.** Same three unticked items, same reasons: the vocab level badge and `order_click` are marked *engine work, cloud must not ship*; `b2_clear_claims` is a style decision reserved for you with the conservative path already taken. **The queue has had no content-lane item in it since run 12.** Step 1 of the routine is a no-op every hour until you put one there.
+
+**7. Run 16's orphaned-packs finding is unchanged** — six registered nodes with packs on disk and no `path_order_*` entry, `b2_clear_claims` among them (a real 12-item pack no student can reach, and the source of all 12 lint warnings). Still yours to call; still outside the content lane.
+
+### Smoke-check these
+
+- **The four new intro pages** — `a1_animals`, `a1_body`, `a1_clothes`, `a1_food`. Page 1 should be a 12-tile emoji grid, page 2 a short frame list plus one note, then "Next → Match". Emoji render at whatever size `.pic-icon` sets; I have not seen them in a browser, so **tile-grid wrapping at 12 tiles on a phone is the thing most likely to look wrong.**
+- **`a1_body` in particular** — it is the only unit whose tiles carry parenthetical glosses (`ruka (dlaň)`, `noha (chodidlo)`), so it is the width stress test.
+- **`c1_comparative_advanced`** — 48 quiz items, no Match/Type stage by design (`check.sequence: ["quiz"]`, same as the other C1 units).
+- **`a2_past_simple` items 24 and 46** — both now say *in June* / *in July* where they said *last year* / *last month*. Month names are GLUE, so they keep a real finished-past time marker; check they still read naturally to you.
+
+---
+
 ## 2026-08-07 · cloud run 16 (RUE build, claude-opus-5)
 
 ### Headline: **two A1 units repaired to zero and two C1 units built — audit 195 → 185, C1 now 13/18 on path, and six authored packs turn out to be unreachable by students.**
