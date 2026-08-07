@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**173 unknown word types** across 48 live units (of 150).
+**169 unknown word types** across 47 live units (of 150).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -32,7 +32,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a2_modals_must_should** (A2 grammar): worry
 - **a2_countable** (A2 grammar): pizza
 - **trunk_recycle_a2** (A2 vocab): nearby
-- **trunk_lexis_a2** (A2 vocab): club, wi, fi, moved
 - **trunk_chunks_a2** (A2 vocab): i'm
 - **b1_present_perfect_vs_past** (B1 grammar): client×2, until, noon
 - **b1_used_to** (B1 grammar): smoke×4, wi, fi
