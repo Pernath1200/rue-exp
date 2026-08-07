@@ -75,3 +75,33 @@ Clean, no log needed: the re-lexified core-frames Czech (correct
 instrumentals *s bratrem / s kamarády*, dative *kamarádovi*, animate plural
 *psy*, both-gender *Jsem unavený. / Jsem unavená.*) and the other five B1
 leaves' glosses.
+
+## 2026-08-07 — second-opinion pass (cloud, ~14:00 UTC)
+
+Scope: everything after the 12:48 review — 6 new intros (a1_time_numbers,
+a2_nature, a2_food, a2_sports, a2_tech, a2_travel) and 4 new sentence banks
+(a1_animals, a1_colours, a1_body, a1_places, 48 sentences). Grammar-pack
+re-lexify commits (a1_can, a1_there_is, a1_question_words, a1_some_any)
+skipped — out of scope.
+
+**Fixed: 1 · Flagged: 2 · everything else ok.**
+
+Fixes:
+- `a2_tech` *smartphone*: cz *smartphon* → *smartphone* (both the intro tile
+  and the word entry it was copied from) — standard Czech is *smartphone* or
+  the adapted *smartfon*; *smartphon* is a hybrid misspelling of both.
+
+For James:
+- `a2_food` intro tile *vegetarian* = "vegetariánský" (adjective only), but
+  the pack's own word entry is "vegetarián / vegetariánský" and its carrier
+  frames are noun-shaped ("I am a vegetarian"). Suggest the tile match the
+  entry: "vegetarián / vegetariánský". Adjective isn't wrong (🥗 could read
+  as vegetarian food), so left unchanged.
+- `a2_food` intro tile *chip* = "hranolka" — colloquial feminine; the
+  dictionary-preferred form is "hranolek". Very common in speech, so
+  defensible; left unchanged. Mention only so the choice is deliberate.
+
+Clean, no log needed: all 48 new bank sentences (cases, agreement and dual
+forms all correct — e.g. *Slyším ušima*, *Spím na zádech*, *Jakou barvu má
+tvoje auto?* are properly idiomatic, not calqued) and the other five intros'
+tiles and notes.
