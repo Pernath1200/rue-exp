@@ -11,9 +11,17 @@ a note.
 
 ---
 
-## P0 — grammar practice is not wired to grammar packs
+## P0 — grammar practice is not wired to grammar packs · **FIXED 3c94e84**
 
-- [ ] **BLOCKER (found 2026-08-06, cloud run 1).** `js/practice-grammar.js`
+**Fixed 2026-08-07 (local lane).** `js/pack-adapt.js` translates the real pack
+shape into the ladder's banks: `intro.cards` → cards, `blocks[].items[]` →
+match (en↔cz) · quiz (frame + options; authored `quiz_options` where present,
+else sibling answers, never an option the item itself accepts) · type (gap,
+Czech as the hint) · use (whole-sentence CZ→EN). `check.sequence` is honoured.
+All 72 live grammar units on path now produce a real ladder, gated by
+`codex/check_playable.py` (in smoke). Original report kept below.
+
+- [x] **BLOCKER (found 2026-08-06, cloud run 1).** `js/practice-grammar.js`
   reads `pack.match`, `pack.quiz`, `pack.type_items`, `pack.use_items`.
   **No pack in the repo has ever had any of those four fields** — every
   authored grammar pack stores its material in `blocks[].items`. Result:
@@ -44,16 +52,17 @@ a note.
   instead of the literal. **Engine code — cloud lane must not ship this.**
   Cosmetic only; nothing is mis-taught.
 
-- [ ] `zero_article` items (a1_articles, 8 items): verify the grammar engine's
-  type mode handles an EMPTY gap_answer sanely (typing nothing = correct?).
-  If it doesn't, propose the minimal engine-side fix in the digest — do NOT
-  ship engine code for this without James seeing the proposal first.
-  → **Answered, still open (blocked on P0).** Two findings: (a) the Type
-  stage never runs at all today (see P0), so these 8 items are currently
-  unreachable; (b) once wired, they would still be ungradeable —
-  `isCorrect()` in practice-grammar.js does `if (!u) return false;` for both
-  modes, so an empty answer can never be marked correct. Minimal fix
-  proposed in the digest. Unticked: needs the P0 decision first.
+- [x] `zero_article` items (a1_articles, 8 items) — **resolved in 3c94e84**
+  by routing rather than engine surgery. Your finding (b) stands: `isCorrect()`
+  can never pass an empty answer. So the adapter keeps these 8 items out of
+  Quiz and Type, and puts them in Match and Use, where the missing article
+  shows naturally in a whole sentence. No ungradeable item ships.
+
+- [ ] **`order_click` stage is not implemented.** `a1_word_order` declares
+  `check.sequence: ["order_click"]` and its items carry `tokens[]` for a
+  word-order builder no engine has. It plays intro → Use today, so SVO is
+  taught by translation rather than by ordering. `check_playable.py` warns
+  until it exists. **Engine work — local lane, cloud must not build it.**
 - [x] `b2_future_forms` item 2: gap_answer "am" not present in `en` — check
   the frame reconstructs; fix the item if not. → **c6d7d80** — `en`
   uncontracted to "I am meeting the client at three." so the frame rebuilds

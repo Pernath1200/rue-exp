@@ -6,6 +6,87 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · local (James + Claude) — P0 CLEARED, 12 orphans routed, 3 gates added
+
+James read run 11 and made four calls by dropdown. All four are shipped.
+
+### 1. The P0 is fixed — `3c94e84`
+
+`js/pack-adapt.js` translates the real pack shape into the ladder the engine
+expects. Confirmed your diagnosis independently before touching it: 93/93
+grammar packs carry `blocks[]` and 0/93 carry any of match/quiz/type_items/
+use_items, and `pack.intro` is `{cards:[...]}` against an engine expecting an
+array — so intro was skipped too, not just the drills.
+
+| stage | built from |
+|-------|-----------|
+| match | items with `en` + `cz` |
+| quiz  | gap frame + options: authored `quiz_options` where present, else sibling `gap_answer`s, **never** an option the item itself accepts |
+| type  | `gap` as prompt, `gap_answer` as answer, **`cz` as the hint** so the stage stays CZ→EN |
+| use   | `cz` → full `en` sentence |
+
+`check.sequence` is honoured (packs asking for match+quiz get both; quiz-only
+packs get quiz). Sample of the real output — `a1_present_simple` quiz:
+*I ____ with Anna.* → work / works / live / lives.
+
+### 2. New gate: `codex/check_playable.py` — **run it before every commit**
+
+It simulates the adapter and fails on any live grammar unit whose ladder would
+render empty. This is the gate that would have caught the P0 on day one; lint
+and audit both cannot see this class of defect. It also carries **your quiz
+single-answer check**: any option that the item's own accepts would grade
+correct is a second correct answer, and errors. Now in `scripts/smoke.py`.
+
+Result: **72 live grammar units on path · 0 errors · 1 warning.**
+
+The warning is real and now queued: `a1_word_order` declares
+`check.sequence: ["order_click"]` with `tokens[]` for a word-order builder no
+engine implements. It plays intro → Use today. Engine work, local lane.
+
+### 3. Irregular-verb table in `audit.py` — your run-10/11 request, shipped
+
+~65 pairs (sat/knew/gave/said/ran/stood/became…). Stop re-lexifying around
+them; *No sooner had we sat down…* is legal again.
+
+### 4. The 12 orphans are routed — they were NOT parked on purpose
+
+Your finding was correct and it was the biggest lever in the repo. All 12 are
+now in `data/spine.json` as vocab consolidation steps, placed pedagogically
+rather than dumped at the end: trunk verb/pronoun/modal sets early (core
+material), theme leaves next to their neighbours — health after body, school
+after work, animals after shopping, nature after time, tech and ideas last.
+A1 path 41 → 53 nodes. **Zero orphaned live nodes remain.**
+
+### Gates after all four
+
+| gate | before | after |
+|------|-------:|------:|
+| `verify_pack` | 160 packs · 0 errors | **0 errors** (12 pre-existing warnings) |
+| `check_playable` | (did not exist) | **0 errors** · 1 warning |
+| `audit` | 396 | **242** — baseline 396 → 382 (irregulars) → **242** (routing) |
+
+Against the 756 baseline at setup, sequencing violations are down **68%**.
+The remaining 242 are much likelier to be real authoring debt now, so run 12's
+sequencing repairs should bite properly.
+
+### For the cloud lane
+
+- **Three gates now, not two.** `check_playable.py` joins the pre-commit set —
+  see AGENTS.md. If you ever change pack shape you must change BOTH
+  `js/pack-adapt.js` and `codex/check_playable.py`, or the ladder silently
+  empties again.
+- Keep building — James's call, explicitly. B1/B2 finish, then C1.
+- Your run-11 offer stands and is accepted: **audit older packs for the
+  two-correct-answers defect.** The mechanical half is now gated, but the
+  semantic half (*is being held* is real English) still needs reading. Fold it
+  into runs as you touch each unit rather than one big sweep.
+- Credit where due: the browser verification in run 1 (52/52 units, zero
+  questions asked, then "100%") is what made this diagnosable, and the run-11
+  routing finding was right on the evidence and right to stop short of
+  shipping it.
+
+---
+
 ## 2026-08-07 · cloud run 11 (RUE build, claude-opus-5)
 
 ### Headline: **12 fully-authored, LIVE A1 vocab units are in no `path_order` — students never reach them, and the 267 words they teach account for 169 of the 396 audit violations (43 %).** The "seed-list backlog" of runs 8–10 was never a missing-vocabulary problem. It is a routing problem. Also: two A1 units repaired to zero, and C1 is now 3/22.
