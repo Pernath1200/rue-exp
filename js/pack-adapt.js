@@ -103,18 +103,24 @@ export function adaptGrammarPack(pack) {
       ? pack.intro.cards
       : [];
 
+  // `check.sequence` lists the phases INSIDE Check (match / quiz) only.
+  // `ladder` switches whole stages off (a1_word_classes is metalanguage —
+  // no typed production).
   const seq = Array.isArray(pack.check?.sequence) ? pack.check.sequence : null;
-  const wants = (stage) => !seq || seq.includes(stage);
+  const ladder = pack.ladder || {};
+  const wantsCheck = (phase) =>
+    ladder[phase] !== false && (!seq || seq.includes(phase));
+  const wants = (stage) => ladder[stage] !== false;
 
   const withGap = items.filter((it) => key(it.gap_answer) && it.gap);
 
-  const match = wants("match")
+  const match = wantsCheck("match")
     ? items
         .filter((it) => it.en && it.cz)
         .map((it) => ({ en: it.en, cz: it.cz, structures: it.structures }))
     : [];
 
-  const quiz = wants("quiz")
+  const quiz = wantsCheck("quiz")
     ? withGap
         .map((it) => {
           const choices = choicesFor(
@@ -137,7 +143,7 @@ export function adaptGrammarPack(pack) {
 
   // Type: produce the missing form. Czech rides along as the hint so the
   // stage stays CZ→EN rather than a bare cloze.
-  const type_items = withGap.map((it) => ({
+  const type_items = (wants("type") ? withGap : []).map((it) => ({
     prompt: it.gap,
     hint: it.cz,
     answer: it.gap_answer,
@@ -151,7 +157,7 @@ export function adaptGrammarPack(pack) {
   // Use: whole-sentence production from the Czech. zero_article items (no
   // typed answer exists — the teaching point is the absent word) belong here
   // and nowhere else.
-  const use_items = items
+  const use_items = (wants("use") ? items : [])
     .filter((it) => it.en && it.cz)
     .map((it) => ({
       prompt: it.cz,

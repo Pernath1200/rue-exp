@@ -105,19 +105,30 @@ def check_pack(pid: str, pack: dict) -> None:
     intro = pack.get("intro")
     cards = intro if isinstance(intro, list) else (intro or {}).get("cards") or []
     seq = (pack.get("check") or {}).get("sequence")
-    wants = (lambda s: True) if not isinstance(seq, list) else (lambda s: s in seq)
+    ladder = pack.get("ladder") or {}
+
+    def wants_check(phase: str) -> bool:
+        """match / quiz — the phases inside Check."""
+        if ladder.get(phase) is False:
+            return False
+        return not isinstance(seq, list) or phase in seq
+
+    def wants(stage: str) -> bool:
+        """type / use — whole stages, governed by `ladder` only."""
+        return ladder.get(stage) is not False
 
     with_gap = [it for it in items if key(it.get("gap_answer")) and it.get("gap")]
 
     if not cards:
         warnings.append(f"{pid}: no intro cards")
 
-    match_n = len([it for it in items if it.get("en") and it.get("cz")]) if wants("match") else 0
-    use_n = len([it for it in items if it.get("en") and it.get("cz")])
-    type_n = len(with_gap)
+    pairs_n = len([it for it in items if it.get("en") and it.get("cz")])
+    match_n = pairs_n if wants_check("match") else 0
+    use_n = pairs_n if wants("use") else 0
+    type_n = len(with_gap) if wants("type") else 0
 
     quiz_n = 0
-    if wants("quiz"):
+    if wants_check("quiz"):
         for i, it in enumerate(with_gap):
             ch = choices_for(it, [s for s in with_gap if s is not it])
             if ch is None:
@@ -144,11 +155,11 @@ def check_pack(pid: str, pack: dict) -> None:
                     f"stage; that drill is silently skipped"
                 )
 
-    if wants("match") and match_n == 0 and items:
+    if wants_check("match") and match_n == 0 and items:
         errors.append(f"{pid}: match bank EMPTY — stage renders nothing")
-    if wants("quiz") and with_gap and quiz_n == 0:
+    if wants_check("quiz") and with_gap and quiz_n == 0:
         errors.append(f"{pid}: quiz bank EMPTY despite {len(with_gap)} gap items")
-    if use_n == 0:
+    if use_n == 0 and ladder.get("use") is not False:
         warnings.append(f"{pid}: Use bank empty")
     if match_n == 0 and quiz_n == 0 and type_n == 0 and use_n == 0:
         errors.append(f"{pid}: UNPLAYABLE — every stage empty")
