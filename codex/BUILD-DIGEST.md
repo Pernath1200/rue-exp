@@ -6,6 +6,142 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 12 (RUE build, claude-opus-5)
+
+### Headline: **B1 and B2 are already finished on the path — the frontier is C1.** Two A1 units repaired to zero and two C1 units built; C1 is now 5/22.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `57cea39` | `a1_questions_negatives` re-lexified, 7/25 items — 8 types → **0** |
+| 2 | `f5f2323` | `trunk_verbs_more_a1` re-lexified, 8/12 frames — 8 types → **0** |
+| 3 | `8fde2c5` | **`c1_clefts_fronting`** built + live — 10 → **48** items |
+| 4 | `0f6b5a9` | **`c1_participle_absolute`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 72 live grammar units · 0 errors · 1 warning | **74 units · 0 errors · 1 warning** |
+| `audit` | 242 unknown types · 61 units | **226** · 59 units · baseline tightened 242 → 234 → 226 |
+
+Net **−16** unknown types while adding **96** new items. Both repaired units
+drop off the sequencing report entirely, and **both new C1 units are 100 %
+pool-clean — 0 violations between them.** The 12 warnings are the pre-existing
+`b2_clear_claims` ones and the 1 warning is the known `order_click` gap; both
+unchanged. All three gates green before every commit; commit and push per unit.
+
+### Repair queue: nothing processed, and that is correct
+
+All three unticked items are explicitly out of the cloud lane — the vocab level
+badge and `order_click` are marked *engine work, cloud must not ship*, and
+`b2_clear_claims` is a style decision reserved for you with the conservative
+path already taken. No cloud-lane item was available.
+
+---
+
+### THE FINDING: the standing prompt's course state is out of date
+
+The routine prompt still says *"B1 16/23 live, B2 4/24, C1 0/22"*. The tree says
+otherwise, and the tree is right:
+
+| level | on path | live | genuinely remaining |
+|-------|--------:|-----:|---------------------|
+| A1 | 53 | 53 | — |
+| A2 | 40 | 40 | — |
+| B1 | 23 | 22 | 1 (`craft`, **parked** on purpose) |
+| B2 | 22 | 21 | 1 (`craft`, **parked** on purpose) |
+| C1 | 18 | 5 | **13** |
+
+The other five non-live B2-labelled nodes (`b2_future_in_the_past`,
+`b2_inversion`, `b2_cleft_sentences`, `b2_emphasis_fronting`,
+`b2_clear_claims`) are **off-path map shells** whose own notes say the content
+was folded into a path unit on 2026-08-06 — building them would duplicate
+`c1_inversion_emphasis` and `c1_clefts_fronting`. I did not touch them.
+
+**So "finish B1, then B2, then C1" now just means C1.** Worth editing the
+standing prompt, or a future run will waste its opening minutes rediscovering
+this. Remaining C1 sketches, in path order:
+`c1_advanced_passive` → `c1_nominalisation` → `c1_complex_noun_phrases` →
+`c1_ellipsis_substitution` → `c1_discourse_grammar` → `c1_register` →
+`c1_advanced_modality` → `c1_subjunctive` → `c1_reporting_complementation` →
+`c1_comparative_advanced` → `c1_article_nuance` → `c1_spoken_vs_written` →
+`c1_error_patterns`.
+
+---
+
+### Forks and judgment calls
+
+**1. `James` is not a legal name in examples.** `a1_questions_negatives` had
+*"Does James live in Brno?"*. `GLUE` in `audit.py` carries a name pool
+(anna, petr, tomas, jana, …) and your name is not in it, so it read as an
+untaught word. Conservative path taken: **changed it to Petr.** If you would
+rather appear in your own course — and there is a real pedagogical argument
+for the teacher's name showing up — the one-line fix is adding `james` to the
+GLUE list, and I will stop re-lexifying it. Your call; I did not touch the
+gate to make my own numbers look better.
+
+**2. Intro cards are invisible to the audit.** `audit.py` only reads
+`blocks[].items[].en`. Cards can therefore carry untaught vocabulary
+indefinitely and no gate will ever say so. I checked both new packs' cards by
+hand and fixed six example-sentence leaks (signalling, fault, discuss, ignore,
+struggling, freezing, objection) — and in the `a1_questions_negatives` repair I
+also updated the cards that quoted the two sentences I had rewritten, so the
+cards and the drills teach the same lexis. Metalanguage in cards (cleft,
+clause, singular, bare infinitive) I left alone: the live C1 packs read exactly
+the same way, so that is house style, not debt. **If you want this gated, the
+rule would be "card example rows and table cells, excluding a metalanguage
+allowlist" — happy to build it as a queue item, but it is a new gate and it is
+your call, so I have not.**
+
+**3. A gap_answer is its own unit's target — distractors are not.** Discovered
+while cleaning the participle pack: `arrested` is legal in `c1_participle_absolute`
+because it is a gap_answer, but `arresting` as a quiz distractor is not.
+Same for `surrounding` / `permitted`. Those three items now build their
+distractors from the answer plus function words (`who arrested`, `was
+arrested`, `which arrested`). No teaching value lost, but any future run
+authoring distractors should expect this.
+
+**4. The stemmer widens plural → singular only.** `a1_word_classes` teaches
+`books`; `book` is still unknown at `trunk_verbs_more_a1`, because
+`variants("book")` never reaches `books`. So *"I choose a book"* was a real
+lead, not a false hit — I moved it to *"I choose a car"*. Worth knowing before
+someone "fixes" the stemmer and the count moves for no pedagogical reason.
+
+**5. `check.sequence: ["quiz"]` on both new units.** Followed the two live C1
+packs rather than inventing. At C1 the sentences are long and en↔cz Match is
+poor UX; Type and Use still run, so the ladder is full.
+
+### Housekeeping — needs you, one command
+
+`codex/__pycache__/audit.cpython-311.pyc` is **tracked in git** and rewrites
+itself every time anything imports `audit.py`, so every run starts with a dirty
+tree and every agent has to decide what to do about a binary diff. I restored
+it rather than committing churn — deleting a tracked file is outside the
+content lane. The fix is yours:
+
+```
+git rm --cached codex/__pycache__/audit.cpython-311.pyc
+printf '__pycache__/\n*.pyc\n' >> .gitignore
+```
+
+### To smoke-check
+
+- **`c1_clefts_fronting`** and **`c1_participle_absolute`** — quiz ladder on
+  both, 48 items each. Worth reading a dozen Czech prompts in each: I rewrote
+  the participle shell's Czech from scratch because it was calqued
+  (*"Vše uváženo, uspěli jsme."*, *"To řečeno, rizika zůstávají."*).
+- **`a1_questions_negatives`** — *"Does it help?"*, *"Are you tired?"*,
+  *"I don't like football."*, *"I am not angry."*, *"What do you need?"* now
+  replace the tea/coffee/hungry/ready set, and the intro cards were updated to
+  match.
+- **`trunk_verbs_more_a1`** — the 12 taught verbs are untouched; only the frame
+  objects moved, because at that position the student knows 70 words.
+
+---
+
 ## 2026-08-07 · local (James + Claude) — P0 CLEARED, 12 orphans routed, 3 gates added
 
 James read run 11 and made four calls by dropdown. All four are shipped.
