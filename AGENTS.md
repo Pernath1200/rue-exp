@@ -43,6 +43,51 @@ not add new nodes until that lands.
 - Frame Type mode shows `cz` as support, never the full `en` sentence (it
   contains the gap answer)
 
+## Vocab intros — picture-led (James, 2026-08-07)
+
+Going straight into Match is too abrupt. Every live vocab unit gets a **two-page
+intro**, authored into the pack as `intro: [ page1, page2 ]` (a flat ARRAY —
+grammar packs use `intro.cards`, vocab does not).
+
+**Page 1 — meaning through a picture. Page 2 — the frames** the words live in,
+plus at most one trap.
+
+```jsonc
+"intro": [
+  { "title": "Your family and your home",
+    "title_cz": "Vaše rodina a váš domov",     // see the Czech ladder below
+    "pictures": [                                // emoji OR swatch, 8-12 tiles
+      { "icon": "👩", "en": "mother", "cz": "matka" },
+      { "swatch": "#e04a4a", "en": "red", "cz": "červená" }
+    ],
+    "diagram": "branch",                         // abstract sets INSTEAD of pictures
+    "labels": ["idea", "thing", "place"],        // the schematic's labels
+    "body": "One or two lines. Never a wall." },
+  { "title": "You will use these words in",
+    "frames": ["This is a …", "I have a …"],     // from the items' use[] carriers
+    "note": "home ≠ house: home = domov, house = dům.",
+    "note_cz": "Pozor: home ≠ house." }
+]
+```
+
+- **Czech ladder:** A1/A2 Czech on tiles and notes is fine · B1 a little ·
+  **B2/C1 minimal**.
+- **Pictures**: emoji, colour swatches, or a schematic from
+  `js/intro-visuals.js` (`scale · circles · branch · cycle · contrast`).
+  Abstract sets (Ideas, Feelings, Society) take a **schematic**, never
+  stretched emoji. **No photo or image files** — nothing external, nothing
+  licensed. Need a new schematic? Propose it in the digest; it goes in
+  `intro-visuals.js`, never inside a pack.
+- **Pictures are intro-only.** Never put `icon`/`swatch` on drill items — the
+  chip renders beside BOTH the English and the Czech tile, which would turn
+  Match into pairing identical images.
+- **Frames come from the items' `use[]` carrier ids** — use the real carrier
+  wording (`this_is_a` → "This is a …"); don't invent frames.
+- Templates to copy: `a1_home_family` (emoji), `a1_colours` (swatches),
+  `a1_ideas` (schematic).
+- Order: **all live A1 vocab units first, then A2.** B1 only after James
+  reviews the A1/A2 set.
+
 ## Automation lanes (2026-08-06, mirrors RUPL)
 
 Two lanes meet on branch **`build`**; `main` moves only when James promotes.

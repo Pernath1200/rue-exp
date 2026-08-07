@@ -1762,3 +1762,82 @@ button.m.wrong {
   border-radius: var(--radius);
   max-width: 34rem;
 }
+
+/* ---- Vocab intro: picture-led pages (2026-08-07) ----
+   Pictures live on the intro ONLY. They must never appear on drill items:
+   the chip renders beside both the English and the Czech tile, which would
+   turn Match into pairing identical images. */
+.intro-card {
+  margin-bottom: 0.9rem;
+}
+
+.pic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(6.5rem, 1fr));
+  gap: 0.6rem;
+  margin: 0.9rem 0;
+}
+
+.pic-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.55rem 0.35rem;
+  border: 1px solid var(--vocab-accent-border);
+  border-radius: var(--radius);
+  background: var(--vocab-accent-dim);
+  text-align: center;
+}
+
+.pic-icon {
+  font-size: 1.9rem;
+  line-height: 1.1;
+  font-style: normal;
+}
+
+.pic-swatch {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.pic-en {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.pic-cz {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.intro-diagram {
+  display: flex;
+  justify-content: center;
+  margin: 0.8rem 0;
+}
+
+.intro-scene {
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+}
+
+.intro-frames {
+  margin: 0.6rem 0;
+  padding-left: 1.1rem;
+  line-height: 1.9;
+}
+
+.intro-frames li {
+  font-size: 1.05rem;
+}
+
+.intro-note {
+  margin-top: 0.7rem;
+  padding-left: 0.7rem;
+  border-left: 2px solid var(--vocab-accent-border);
+  color: var(--muted);
+}

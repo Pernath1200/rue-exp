@@ -12,6 +12,7 @@
  */
 
 import { getSmokeApi, countFlags, updateFlagsBadge } from "./smoke-flags.js";
+import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js";
 import { isAuthorUnlock } from "./progress.js";
 
@@ -471,6 +472,7 @@ export function startPractice(root, block, opts) {
   const state = {
     // Review launches jump straight to production (opts.startMode = "type")
     mode: opts.startMode || (hasIntro ? "intro" : "match"),
+    introPage: 0,
     match: null,
     quiz: null,
     typ: null,
@@ -606,6 +608,7 @@ export function startPractice(root, block, opts) {
   function setMode(m) {
     clearKey();
     state.mode = m;
+    if (m === "intro") state.introPage = 0;
     state.match = null;
     state.quiz = null;
     state.typ = null;
@@ -1433,36 +1436,95 @@ export function startPractice(root, block, opts) {
     return renderSentenceSoon(stage);
   }
 
-  function renderIntro(stage) {
-    setFlagContext({ stage: "intro", itemIndex: null, en: "", cz: "" });
-    const cards = (block.intro || [])
-      .map((sec) => {
-        const table = sec.table
-          ? `<table class="intro-table"><thead><tr>${(sec.table.headers || [])
-              .map((h) => `<th>${escapeHtml(h)}</th>`)
-              .join("")}</tr></thead><tbody>${(sec.table.rows || [])
-              .map(
-                (r) =>
-                  `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join("")}</tr>`,
-              )
-              .join("")}</tbody></table>`
-          : "";
-        return `
-          <div class="q" style="margin-bottom:0.9rem">
-            <div class="prompt">${escapeHtml(sec.title || "")}</div>
-            ${sec.title_cz ? `<div class="sub"><em>${escapeHtml(sec.title_cz)}</em></div>` : ""}
-            ${sec.body ? `<p style="white-space:pre-line">${escapeHtml(sec.body)}</p>` : ""}
-            ${table}
-            ${sec.body_cz ? `<p class="sub" style="white-space:pre-line"><em>${escapeHtml(sec.body_cz)}</em></p>` : ""}
+  /** Picture grid: emoji / colour swatch tiles. Meaning before translation. */
+  function pictureGrid(pics) {
+    const tiles = pics
+      .map((p) => {
+        const art = p.swatch
+          ? `<span class="pic-swatch" style="background:${escapeHtml(p.swatch)}"></span>`
+          : p.icon
+            ? `<span class="pic-icon">${escapeHtml(p.icon)}</span>`
+            : "";
+        if (!art && !p.en) return "";
+        return `<div class="pic-tile">
+            ${art}
+            <span class="pic-en">${escapeHtml(p.en || "")}</span>
+            ${p.cz ? `<span class="pic-cz">${escapeHtml(p.cz)}</span>` : ""}
           </div>`;
       })
       .join("");
+    return tiles ? `<div class="pic-grid">${tiles}</div>` : "";
+  }
+
+  function introSection(sec) {
+    const table = sec.table
+      ? `<table class="intro-table"><thead><tr>${(sec.table.headers || [])
+          .map((h) => `<th>${escapeHtml(h)}</th>`)
+          .join("")}</tr></thead><tbody>${(sec.table.rows || [])
+          .map(
+            (r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join("")}</tr>`,
+          )
+          .join("")}</tbody></table>`
+      : "";
+    const pics = Array.isArray(sec.pictures) ? pictureGrid(sec.pictures) : "";
+    const diagram = sec.diagram
+      ? `<div class="intro-diagram">${introDiagram(sec.diagram, sec.labels)}</div>`
+      : "";
+    const frames = Array.isArray(sec.frames) && sec.frames.length
+      ? `<ul class="intro-frames">${sec.frames
+          .map((f) => `<li>${escapeHtml(f)}</li>`)
+          .join("")}</ul>`
+      : "";
+    const note = sec.note
+      ? `<p class="intro-note">${escapeHtml(sec.note)}</p>`
+      : "";
+    return `
+      <div class="q intro-card">
+        ${sec.title ? `<div class="prompt">${escapeHtml(sec.title)}</div>` : ""}
+        ${sec.title_cz ? `<div class="sub"><em>${escapeHtml(sec.title_cz)}</em></div>` : ""}
+        ${diagram}
+        ${pics}
+        ${sec.body ? `<p style="white-space:pre-line">${escapeHtml(sec.body)}</p>` : ""}
+        ${frames}
+        ${table}
+        ${note}
+        ${sec.note_cz ? `<p class="intro-note sub"><em>${escapeHtml(sec.note_cz)}</em></p>` : ""}
+        ${sec.body_cz ? `<p class="sub" style="white-space:pre-line"><em>${escapeHtml(sec.body_cz)}</em></p>` : ""}
+      </div>`;
+  }
+
+  /** Paginated: one section per page, so "1 / 2" means two short pages. */
+  function renderIntro(stage) {
+    setFlagContext({ stage: "intro", itemIndex: null, en: "", cz: "" });
+    const secs = block.intro || [];
+    const total = secs.length;
+    const i = Math.min(state.introPage || 0, Math.max(0, total - 1));
+    const sec = secs[i];
+    const last = i >= total - 1;
     stage.innerHTML = `
-      ${cards}
-      <div class="nav"><button type="button" class="btn primary" id="in-next">Next → Match</button></div>`;
-    stage.querySelector("#in-next").onclick = () => setMode("match");
+      ${introSection(sec || {})}
+      <div class="nav">
+        ${i > 0 ? `<button type="button" class="btn" id="in-prev">← Back</button>` : ""}
+        <button type="button" class="btn primary" id="in-next">${
+          last ? "Next → Match" : "Next →"
+        }</button>
+      </div>`;
+    stage.querySelector("#in-prev")?.addEventListener("click", () => {
+      state.introPage = i - 1;
+      render();
+    });
+    stage.querySelector("#in-next").onclick = () => {
+      if (last) {
+        setMode("match");
+      } else {
+        state.introPage = i + 1;
+        render();
+      }
+    };
     bindEnterPrimary(stage);
-    return "Intro · read · Enter = next";
+    return total > 1
+      ? `Intro ${i + 1} of ${total} · Enter = next`
+      : "Intro · read · Enter = next";
   }
 
   function render() {
