@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**396 unknown word types** across 58 live units (of 139).
+**242 unknown word types** across 61 live units (of 139).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -8,57 +8,60 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **trunk_social_a1** (A1 vocab): help, nice
 - **a1_present_simple** (A1 grammar): coffee×4, tv×2, everybody×2, everyone, somebody, nobody
 - **trunk_verbs_daily_a1** (A1 vocab): water
+- **trunk_verbs_more_a1** (A1 vocab): book, later, film, happy, music, tea, email, map
 - **leaf_freetime_a1** (A1 vocab): time
 - **a1_questions_negatives** (A1 grammar): rain, lot, ready, tea, coffee, hungry, want, james
 - **trunk_glue_questions_a1** (A1 vocab): late, want, station
+- **trunk_verbs_say_a1** (A1 vocab): story, question, answer, bird, map
 - **a1_question_words** (A1 grammar): want, start
 - **a1_articles** (A1 grammar): hour
-- **a1_possessives** (A1 grammar): dog×2, job, love, tickets, blue, new
+- **a1_possessives** (A1 grammar): dog×2, job, tickets, blue, new
 - **leaf_clothes_a1** (A1 vocab): wrist
-- **a1_object_pronouns** (A1 grammar): know×2, calls×2, look×2, want, see
+- **a1_object_pronouns** (A1 grammar): calls×2, want
 - **leaf_body_a1** (A1 vocab): height
+- **leaf_health_a1** (A1 vocab): illness
+- **trunk_glue_pronouns_a1** (A1 vocab): give, big, dog, cat, river
 - **a1_like_want_need** (A1 grammar): pizza, new, money, learn
 - **trunk_can_like_want_a1** (A1 vocab): i'd
-- **a1_can** (A1 grammar): drive×3, sit, use, now
-- **leaf_work_a1** (A1 vocab): rest
+- **trunk_verbs_more2_a1** (A1 vocab): day
+- **a1_can** (A1 grammar): use, now
+- **trunk_glue_modals_a1** (A1 vocab): now, call, smoke, difficult
 - **a1_prepositions_place** (A1 grammar): ball×6, box×6, cat, picture, honza, dog
 - **trunk_prepositions_a1** (A1 vocab): ball×10, box×9, boxes
-- **a1_there_is** (A1 grammar): cat, problem, problems, questions, dog
-- **trunk_there_time_a1** (A1 vocab): it's×2, see
-- **a1_some_any** (A1 grammar): money×2, questions, haven't, got, ideas, problem
-- **trunk_glue_quantity_a1** (A1 vocab): money, wrong, answers
-- **a1_prepositions_time** (A1 grammar): born×2, summer, tv, closed, midday, call, see, cold
+- **trunk_verbs_more3_a1** (A1 vocab): money, club
+- **a1_there_is** (A1 grammar): cat, dog
+- **trunk_there_time_a1** (A1 vocab): it's×2
+- **a1_some_any** (A1 grammar): money×2, haven't
+- **trunk_glue_quantity_a1** (A1 vocab): money, wrong
+- **a1_prepositions_time** (A1 grammar): born×2, summer, tv, closed, midday, call
 - **leaf_time_a1** (A1 vocab): ordinal
 - **a1_to_for_with** (A1 grammar): wait×2
-- **trunk_glue_linkers_a1** (A1 vocab): stay, sit, put, rest
+- **trunk_glue_linkers_a1** (A1 vocab): put
 - **a1_imperatives** (A1 grammar): board, careful, worry, touch, seat
-- **a2_agreement** (A2 grammar): problem, nobody, answer, abroad
-- **a2_past_simple** (A2 grammar): last×2, see, pasta, course, email, truth, anything, say
+- **a2_agreement** (A2 grammar): nobody, abroad
+- **a2_past_simple** (A2 grammar): last×2, pasta, truth, anything
 - **leaf_travel_a2** (A2 vocab): depart
 - **a2_past_continuous** (A2 grammar): while
-- **a2_modals_must_should** (A2 grammar): say×2, see, drive, worry, forget
-- **a2_countable** (A2 grammar): gave, pair, pizza
-- **a2_adverbs_order** (A2 grammar): know×2, drive, drives, forget, answer, missed, won, answered
-- **a2_first_conditional** (A2 grammar): rain
+- **a2_modals_must_should** (A2 grammar): worry
+- **a2_countable** (A2 grammar): pizza
 - **trunk_recycle_a2** (A2 vocab): nearby
-- **trunk_lexis_a2** (A2 vocab): club, email, wi, fi, missed, moved
-- **trunk_chunks_a2** (A2 vocab): i'm, weather
-- **b1_present_perfect_vs_past** (B1 grammar): email×3, emails×3, client×2, until, summer, noon
-- **b1_used_to** (B1 grammar): summer×4, smoke×4, tv×4, dog, sea, wi, fi
-- **trunk_core_b1** (B1 vocab): date, idea
-- **b1_passives** (B1 grammar): online×2, emails, stolen, asia, guard, noon, grown, brazil, taught, cancelled, turned, prepared, story, photos, deleted, package, delivered, rules, form, automatically, invoice
-- **b1_modals_speculation** (B1 grammar): know×3, answer, rain, snow, missed, email, bug, misread, i'm
-- **trunk_chunks_b1** (B1 vocab): favour, homework, asia, responsibility, idea, wifi, rain, accent, priority, answer, gave
-- **b1_articles_advanced** (B1 grammar): love×2, sun, east, piano, eiffel, republic, danube, river, became, sea, atlantic, nurse, place, access
-- **b1_it_subject** (B1 grammar): learn×2, practise, wake, raining, rain, ask, guess, languages, say, until, patience, grammar
-- **b1_relative_clauses** (B1 grammar): know×2, email, enough, asked, practise, love, berlin, won, think, treated, pardubice, wi, fi, designed, ask, nearby, discussed, languages, rules, hired, story, laugh, path, river, muddy, spain, answer, gave, person, grew, born, stayed, remember, summer
-- **b1_reported_speech** (B1 grammar): asked×12, know, stay, cancelled, think, forget, patrik, ond, ej
-- **b1_indirect_questions** (B1 grammar): tell×5, know×2, whether, wonder
-- **b1_linkers** (B1 grammar): stayed×4, rain×2, raining, slept, test, whispered, wake, snow, careless, hurried, missed, remember, tyre, ate, apologised, prepared, felt, everyone, ads
-- **b1_verb_patterns_advanced** (B1 grammar): remember×4, asked×2, forgot×2, email, moment, taught, advised, warned, noon, kept
-- **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, form×2, ran×2, turned×2, word×2, volume×2, fire×2, gave, nephew, tv, until, motorway, let's, package, brought, emails, fell, moment, firefighters, extinguished, homework, answer
-- **b1_dependent_prepositions** (B1 grammar): test, keen, villas, health, remembering, fond, aware, capable, rely, believes, consists, think, future, suffers, headaches, sun, rain, accused, lying, approve, concentrate, congratulated, specialises
-- **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, answer, dust, words, quiz, halfway, b, turn, episode, email, inbox, ticked, keep, waking, begin, mess
-- **b2_past_perfect** (B2 grammar): couldn't, knew, recognise, thieves, showed, summer, lesson
-- **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, happen, place, everyone, know, truth, pizza
-- **b2_third_conditional** (B2 grammar): weather×2, heard×2, practised, crashed, truth, woken, sunrise, realised, pizza, followed, wi, fi, invoice, remembered, prepared, email, understood, missed, worn, dawn, battery
+- **trunk_lexis_a2** (A2 vocab): club, wi, fi, moved
+- **trunk_chunks_a2** (A2 vocab): i'm
+- **b1_present_perfect_vs_past** (B1 grammar): client×2, until, noon
+- **b1_used_to** (B1 grammar): smoke×4, wi, fi
+- **b1_passives** (B1 grammar): stolen, asia, guard, noon, grown, brazil, cancelled, turned, deleted, package, delivered, automatically, invoice
+- **b1_modals_speculation** (B1 grammar): bug, misread, i'm
+- **trunk_chunks_b1** (B1 vocab): favour, asia, responsibility, wifi, accent, priority
+- **b1_articles_advanced** (B1 grammar): east, piano, eiffel, republic, danube, atlantic, access
+- **b1_it_subject** (B1 grammar): practise, guess, until, patience, grammar
+- **b1_relative_clauses** (B1 grammar): enough, practise, berlin, treated, pardubice, wi, fi, designed, nearby, discussed, hired, laugh, path, muddy, spain, grew, born
+- **b1_reported_speech** (B1 grammar): cancelled, patrik, ond, ej
+- **b1_indirect_questions** (B1 grammar): whether, wonder
+- **b1_linkers** (B1 grammar): whispered, careless, hurried, tyre, apologised, everyone, ads
+- **b1_verb_patterns_advanced** (B1 grammar): advised, warned, noon
+- **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, turned×2, volume×2, nephew, until, motorway, let's, package, firefighters, extinguished
+- **b1_dependent_prepositions** (B1 grammar): keen, villas, fond, aware, capable, rely, consists, suffers, accused, lying, approve, concentrate, congratulated, specialises
+- **b2_present_perfect_continuous** (B2 grammar): kilometres×2, dust, quiz, halfway, b, turn, episode, inbox, ticked, mess
+- **b2_past_perfect** (B2 grammar): couldn't, recognise, thieves
+- **b2_second_conditional** (B2 grammar): practised×2, lottery, happen, everyone, truth, pizza
+- **b2_third_conditional** (B2 grammar): practised, crashed, truth, sunrise, realised, pizza, wi, fi, invoice, dawn, battery

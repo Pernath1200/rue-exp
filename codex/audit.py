@@ -56,9 +56,38 @@ anna martina tom tomas petr pavel jana eva jan david peter mary john
 
 SUFFIXES = ("ing", "ed", "es", "s", "er", "est", "ly", "d")
 
+# Irregular past / past participle -> base. Suffix stripping cannot reach these,
+# so without the table every `sat`, `knew`, `said` reads as untaught and agents
+# rewrite good sentences to dodge words the course already teaches.
+IRREGULAR = {}
+for _base, _forms in {
+    "be": "was were been", "become": "became become", "begin": "began begun",
+    "break": "broke broken", "bring": "brought", "build": "built",
+    "buy": "bought", "catch": "caught", "choose": "chose chosen",
+    "come": "came", "cost": "cost", "cut": "cut", "do": "did done",
+    "drink": "drank drunk", "drive": "drove driven", "eat": "ate eaten",
+    "fall": "fell fallen", "feel": "felt", "find": "found", "fly": "flew flown",
+    "forget": "forgot forgotten", "get": "got gotten", "give": "gave given",
+    "go": "went gone", "grow": "grew grown", "have": "had", "hear": "heard",
+    "hold": "held", "keep": "kept", "know": "knew known", "learn": "learnt",
+    "leave": "left", "lend": "lent", "let": "let", "lose": "lost",
+    "make": "made", "mean": "meant", "meet": "met", "pay": "paid",
+    "put": "put", "read": "read", "ride": "rode ridden", "ring": "rang rung",
+    "run": "ran", "say": "said", "see": "saw seen", "sell": "sold",
+    "send": "sent", "shut": "shut", "sing": "sang sung", "sit": "sat",
+    "sleep": "slept", "speak": "spoke spoken", "spend": "spent",
+    "stand": "stood", "swim": "swam swum", "take": "took taken",
+    "teach": "taught", "tell": "told", "think": "thought", "throw": "threw thrown",
+    "understand": "understood", "wake": "woke woken", "wear": "wore worn",
+    "win": "won", "write": "wrote written",
+}.items():
+    for _f in _forms.split():
+        IRREGULAR.setdefault(_f, set()).add(_base)
+
 
 def variants(tok: str) -> list[str]:
     out = [tok]
+    out.extend(IRREGULAR.get(tok, ()))
     for suf in SUFFIXES:
         if tok.endswith(suf) and len(tok) > len(suf) + 2:
             stem = tok[: -len(suf)]

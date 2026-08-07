@@ -54,9 +54,16 @@ Two lanes meet on branch **`build`**; `main` moves only when James promotes.
 
 Shared rules, from the RUPL build (they all earned their place):
 
-- **Gates before commit** — every commit must pass:
-  `py -X utf8 codex/verify_pack.py` (**0 errors**) and
+- **Gates before commit** — every commit must pass all three:
+  `py -X utf8 codex/verify_pack.py` (**0 errors**),
+  `py -X utf8 codex/check_playable.py` (**0 errors** — the ladder a student
+  actually gets, plus the quiz single-correct-answer check), and
   `py -X utf8 codex/audit.py --check` (**ratchet: violations may never rise**).
+- **Pack shape is fixed**: content lives in `blocks[].items[]` with
+  `intro.cards` and `check.sequence`; `js/pack-adapt.js` translates that into
+  the practice ladder. Never author `pack.match/quiz/type_items/use_items`
+  directly, and if you change the pack shape you must change BOTH
+  `pack-adapt.js` and `codex/check_playable.py` or the ladder silently empties.
 - **Pool before authoring** — `py -X utf8 codex/make_pool.py POOL.md --before
   <node>`; only pool-legal + GLUE + same-step partner material in new units.
 - **Never invent node ids.** Author packs for registered sketch nodes

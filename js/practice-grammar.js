@@ -19,6 +19,7 @@ import {
 } from "./progress.js";
 import { setSmokeContext } from "./smoke-flags.js";
 import { attachExplain } from "./explain.js";
+import { adaptGrammarPack } from "./pack-adapt.js";
 
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };
@@ -143,7 +144,9 @@ function pairPl(p) {
  * @param {HTMLElement} root
  * @param {{ onExit: () => void }} opts
  */
-export function startPractice(pack, root, opts) {
+export function startPractice(rawPack, root, opts) {
+  // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
+  const pack = adaptGrammarPack(rawPack);
   touchBlock(pack.id);
 
   const focusStructures =
