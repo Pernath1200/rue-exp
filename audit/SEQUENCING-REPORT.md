@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**412 unknown word types** across 60 live units (of 137).
+**404 unknown word types** across 59 live units (of 137).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -8,7 +8,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **trunk_social_a1** (A1 vocab): help, nice
 - **a1_present_simple** (A1 grammar): coffee×4, tv×2, everybody×2, everyone, somebody, nobody
 - **trunk_verbs_daily_a1** (A1 vocab): water
-- **a1_frequency** (A1 grammar): coffee×2, meat×2, hard, lunch, tea, tv, late, school
 - **leaf_freetime_a1** (A1 vocab): time
 - **a1_questions_negatives** (A1 grammar): rain, lot, ready, tea, coffee, hungry, want, james
 - **trunk_glue_questions_a1** (A1 vocab): late, want, station
