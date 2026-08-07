@@ -6,6 +6,120 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 25 (RUE build, claude-opus-5)
+
+### Headline: **3 A2 vocab intros (30 → 33), 2 Use-stage sentence banks (`a1_time_numbers`, `a1_nature`), 2 units re-lexified (audit 148 → 146), and one flatly wrong Czech gloss corrected.** All three gates green at the start, so step 0 did not consume the run; the repair queue again had no cloud-lane items. One **verified student-facing defect found and deliberately NOT bulk-fixed** — 32 vocab items whose Czech prompt has two equally correct English answers. It needs your call; the write-up is under Forks.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `bd657c0` | **`a2_adverbs`** intro — `scale` schematic, no carrier frames (see fork 1) |
+| 2 | `e4f6722` | **`a2_ideas`** intro — `branch` schematic, 5 carrier frames |
+| 3 | `79b7d7d` | **`a2_verbs`** intro — `branch` schematic, 2 carrier frames |
+| 4 | `67b8c9d` | **`a1_time_numbers`** `sentences[]` bank — 13 sentences, 16 lemmas |
+| 5 | `02df3e2` | **`a1_nature`** `sentences[]` bank — 13 sentences, 18 lemmas |
+| 6 | `1f5d025` | `a2_past_continuous` + `trunk_recycle_a2` re-lexified — 148 → **146** |
+| 7 | `dcc9f69` | `a2_verbs` item `fix` — Czech gloss was the gloss for *form* |
+
+Two commit subjects carry a wrong lemma count (`67b8c9d` says 17, actual 16; `02df3e2` says 16, actual 18). The counts above are the recounted ones; the history is left alone rather than force-pushed.
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 148 unknown types · 37 units | **146** · 35 units · baseline tightened 148 → 146 |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+Gates re-run before every commit, commit and push per unit. Nothing else landed on `build` while I worked, so no rebase was needed.
+
+### Repair queue — nothing to do this run
+
+Unchanged, and re-checked item by item rather than taken from the last digest. All three unticked items are out of the cloud lane: the vocab level badge and `order_click` are marked engine/local, and `b2_clear_claims` already carries its conservative resolution and is left unticked because the style call is yours.
+
+### Vocab intros — 30 → 33 · A2 leaves 14 → 17 of 22
+
+Built in path order (76, 78, 80). Remaining A2 leaves: `health`, `school`, `clothes`, `media`, `misc`. A1 leaves stay finished at 16/16.
+
+| Unit | Page 1 | Trap | Why that shape |
+|---|---|---|---|
+| `a2_adverbs` | `scale` — hardly · slightly · fairly · completely | **hardly ≠ hard** | 66 adverbs, nothing photographable; the scale is the one real relation in the set |
+| `a2_ideas` | `branch` — problem → cause · reason · solution · result | **advice** is uncountable | 92 abstract nouns; the cause/solution chain is the shape they actually make |
+| `a2_verbs` | `branch` — verb → repair · invite · improve · solve | **borrow vs lend** | 112 bare lemmas; no honest emoji exists for *accept*, *achieve*, *affect* |
+
+**Every label and tile was checked to be an item of its own pack** (script, not eyeball) — the only label in the three pages that is not a pack item is the root `verb` on `a2_verbs`, which is a category name and is deliberate. Same for the words named in the body text: `method`, `process`, `system`, `evidence`, `example`, `advice`, `opinion` (ideas) and `repair`, `replace`, `remove`, `invite`, `greet`, `complain`, `increase`, `reduce`, `improve` (verbs) are all items.
+
+**Frames are grounded, not invented.** `a2_ideas` shows the five carriers its own items declare — `is_important` (83 of 92 items), `this_is_a`, `i_have_bare`, `i_need_bare`, `i_like_bare`. `a2_verbs` shows exactly two, because **every one of its 112 items declares exactly `i_want_to` and `we_need_to` and nothing else** — so two frames is the whole truth about that unit, not a thin page.
+
+### Use-stage sentence banks — A1 leaves 11 → 13 of 16
+
+Leaf packs without a bank: **33 → 31.** A1 leaves still without one: `leaf_shopping_a1`, `leaf_tech_a1`, `leaf_ideas_a1` (3 left before A2 starts).
+
+Legality was decided by an oracle that **imports `audit.py` and asks it** — `variants()`, `tokens_of()`, `GLUE`, the real path walk — rather than reimplementing the rules. Before trusting it I made it reproduce `audit.py`'s own published findings; it matched exactly on `leaf_freetime_a1` (`time`), `trunk_social_a1` (`nice`) and `leaf_body_a1` (`height`). All 26 sentences came back legal, and the audit total did not move when they landed, which is the independent confirmation.
+
+**`a1_nature` — a rule I applied that no gate enforces: no speaker-gender prompts.** The obvious sentences for a nature unit are *Mám rád moře* / *Nemám rád vítr*, and both force a masculine speaker into the Czech prompt (*rád* vs *ráda*). The course has handled this before by giving both forms (*Jsem unavený. / Jsem unavená.*), but that reads badly as a Use prompt, so I rewrote around it: `The wind is cold.` → *Vítr je studený.*, `We swim in the river.` → *Plaveme v řece.* Every one of the 13 prompts is gender-neutral. **If you would rather have the dual form, that is a convention call and a sweep, not a per-run decision.**
+
+**Two sentences rewritten before shipping, for reasons no gate would catch.** *Jezero je vyschlé* → **The field is dry.** / *Pole je suché.* (a lake is not *suché*, and *vyschlé* is "dried up", so the prompt did not determine its own answer). And `I can see many stars tonight` → **I see many stars tonight**, because the Czech *vidím* has no *can* in it and a student would have produced the shorter sentence and been marked wrong; both forms are now in `accepts`.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- **Register: I used standard `Pracuji` / `Nepiji`**, continuing run 24's choice and not run 23's colloquial `Potřebuju`. Still inconsistent course-wide; still a one-line convention call that would be a sweep.
+- `a1_time_numbers` — *Kolik je hodin?* → **What time is it?** The pairing is standard but not literal; `accepts` carries *What is the time* and *What's the time* too.
+- `a1_time_numbers` — *Moje narozeniny jsou v květnu.* Chosen over the commoner *Mám narozeniny v květnu* precisely because the commoner one would produce "I have a birthday in May", not the `en`.
+- `a1_time_numbers` — *Obchod otevírá v devět.* Intransitive *otevírá* without *se*; I believe this is the normal shop-hours usage.
+- `a1_time_numbers` — *Jezdíme do Prahy dvakrát za rok.* *jezdit* (by vehicle) rather than *chodit*; *dvakrát za rok* rather than *dvakrát ročně*.
+- `a1_nature` — *Slunce je horké.* Grammatical and clear; *Slunce pálí* is more idiomatic but is a different English sentence.
+- `a1_nature` — *Dnes večer vidím hodně hvězd.* Present tense for a tonight-observation.
+
+Everything else — the accusatives (*schůzku, kávu, oblohu*), the locatives (*v týdnu, v květnu, v horách, v lese, v řece, na zahradě, v létě, v zimě*), the genitive plurals after numerals and quantifiers (*pět dní, deset minut, hodně hvězd*), and the adjective agreements (*teplé počasí, horké, studený, studená, suché*) — I am confident in.
+
+### Sequencing — 148 → 146
+
+Every remaining A1/A2 unit sits at exactly **one** unknown type, so "worst unit" is still a tie; I took the two where the offending word is purely incidental to the gap and a taught word substitutes with no loss.
+
+| Unit | Path | Was | Now | Gap kept |
+|---|---|---|---|---|
+| `a2_past_continuous` | 55 | **While** she was cooking, I opened the window. | **When** she was cooking… | `was` |
+| `trunk_recycle_a2` | 90 | There is a pharmacy **nearby**. | There is a pharmacy **near here**. | `pharmacy` |
+
+`when` is GLUE and `while` is taught nowhere in the course; the background-past-continuous + past-simple-event teaching point is untouched, and the Czech follows (*Zatímco* → *Když*). On the recycle item, `near` and `here` are both taught well before path 90, the new primary **was already one of that item's accepted answers**, and the Czech *Je tu blízko lékárna* fits either form. Old forms kept in `accepts` on both. Both units are now clean.
+
+### Forks for James
+
+**1 · `a2_adverbs` page 2 has no frames, because the pack has no carriers.** It is the only live vocab unit whose items declare `use[]` **zero** times — 0 across all 66 items — and the spec says frames come from real carrier ids and forbids inventing them. Conservative path taken: page 2 instead groups the pack's own words by what they tell you (how / how much / how often / how sure), with all 16 words in that table verified to be items of this pack, plus the hardly/hard trap. **If you want a frames page here, the fix is upstream — tag the pack's items with carriers — not a page-2 rewrite.**
+
+**2 · 32 vocab items have a Czech prompt with two equally correct English answers. Verified in the engine, deliberately not bulk-fixed.** This is the same defect class run 22 swept out of the sentence banks, but it is sitting in the **item glosses**, where no gate looks: `check_playable`'s single-correct-answer check covers the 85 grammar units only.
+
+| Pack | Items | Collisions |
+|---|---|---|
+| `a2_describing` | 22 | bohatý (rich/wealthy) · celý (entire/whole) · elektrický (electric/electrical) · jistý (certain/sure) · nemocný (ill/sick) · obrovský (enormous/huge) · pravděpodobný (likely/probable) · rychlý (fast/quick) · vnitřní (indoor/inner) · vysoký (high/tall) · široký (broad/wide) |
+| `a2_adverbs` | 6 | nakonec (finally/eventually) · rozhodně (certainly/definitely) · zejména (especially/particularly) |
+| `a2_ideas` | 4 | chyba (mistake/error) · možnost (possibility/option) |
+
+What it does to a student, read out of the engine rather than guessed:
+
+- **Quiz** (`js/practice-vocab.js` ~915): distractors are drawn from items whose English differs from the correct one, so the twin is eligible. Grading is `opts[i] === correct` — a straight string match. When *rozhodně* draws *definitely* into its four options, picking *definitely* is marked **wrong**.
+- **Match** (~712): the left column is the Czech, so the board shows **two identical `rozhodně` tiles**; pairing is graded by item id, so the correct-looking pairing is wrong half the time.
+- **Type**: one prompt, one accepted spelling, no `accepts` on any of these items.
+
+Three ways out, and choosing between them is a design decision, not a repair, so I took none of them: (a) disambiguate the Czech on one of each pair; (b) give both items an `accepts` carrying the twin — fixes Type but **not** Quiz or Match, since those grade by identity; (c) engine-side, exclude same-support items from the quiz distractor pool and dedupe the match board — which is engine code and therefore not mine to ship. **(c) is the only one that fixes all three modes, and it is one condition in two places.** Say the word and it goes in the repair queue.
+
+**3 · `a2_verbs` item `fix` was glossed `tvořit / formulář` — the Czech for *form*, which the course already teaches at `a1_ideas`.** A prompt reading "tvořit / formulář" was demanding the answer *fix*. Because `form` is already taught elsewhere, the copy-paste is clearly on the Czech side, not the English, so I corrected the Czech and left the graded target alone. Chose **`spravit`** over the more obvious *opravit* because `repair` in this same pack is already glossed *opravit* and I did not want to add a thirty-third collision to fork 2. Found while reading the pack for its intro — **worth asking whether the rest of that import wants a read.**
+
+**4 · Three A1/A2 violations still deliberately unrepaired**, all re-checked this run and all unchanged from run 24's reasoning: `a1_to_for_with`/`wait` (5-step running-order mismatch, spine decision), `a1_word_order`/`new` (no attributive adjective is taught before path 52), `a1_articles`/`hour` (the pack's own deliberate silent-h example). Run 24's two audit-tooling findings (contractions, parenthesised disambiguators — 12 of the remaining 146) are also still open and still propose-only.
+
+### Smoke-check list
+
+- `a2_adverbs` intro page 1 — the `scale` schematic with four labels; and page 2, which is the first intro page in the course with a table and no frames.
+- `a2_verbs` intro page 1 — `branch` with the root label `verb`, the first schematic root that is a category name rather than a pack word.
+- Use stage on `leaf_time_a1` and `leaf_nature_a1` — both were "Use · coming soon" before this run.
+- The two re-lexified items: `a2_past_continuous` item 38 and `trunk_recycle_a2` item 8.
+- If you want to see fork 2 live: open `leaf_describing_a2` Quiz and page through — 22 of its 314 items can produce a two-correct-answer question.
+
+---
+
 ## 2026-08-07 · cloud run 24 (RUE build, claude-opus-5)
 
 ### Headline: **3 A2 vocab intros (27 → 30), 2 Use-stage sentence banks (`a1_work`, `a1_school` — A1 leaves now 11/16), and 2 units re-lexified (audit 150 → 148).** All three gates green at the start, so step 0 did not consume the run. Repair queue had no cloud-lane items. Two *audit tooling* artefacts found and quantified — 12 of the remaining 148 violations are not teaching-order defects at all; both are propose-only, neither shipped.
