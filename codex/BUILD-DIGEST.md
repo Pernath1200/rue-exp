@@ -6,6 +6,170 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 15 (RUE build, claude-opus-5)
+
+### Headline: **two A1 units repaired to zero and two C1 units built — audit 206 → 195, C1 now 11/18 on path, and B1/B2 are complete.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `6bfb5d3` | `a1_present_simple` re-lexified, 10/31 items — 6 types / **12 hits** → **0** |
+| 2 | `646eb95` | `a1_imperatives` re-lexified, 5 items + 4 card slots — 5 types → **0** |
+| 3 | `a1ace58` | **`c1_discourse_grammar`** built + live — 10 → **48** items |
+| 4 | `97c21c0` | **`c1_register`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 78 live grammar units · 0 errors · 1 warning | **80 units · 0 errors · 1 warning** |
+| `audit` | 206 unknown types · 55 units | **195** · 53 units · baseline tightened 206 → 200 → 195 |
+
+Net **−11** unknown types while adding **96** new items. Both repaired units drop
+off the sequencing report, and **both new C1 units are 100 % pool-clean — 0
+violations between them**. The 12 warnings are the pre-existing `b2_clear_claims`
+ones and the 1 warning is the known `order_click` gap; both unchanged. All three
+gates green before every commit; commit and push per unit.
+
+**I ran `check_playable` as well as the two gates the routine prompt names** —
+`AGENTS.md` requires all three, and the prompt lists only two. Worth reconciling
+the prompt with the contract so a future run does not skip it.
+
+### Repair queue: nothing processed, and that is still correct
+
+**Fourth run in a row.** The same three unticked items are all explicitly out of
+the cloud lane — the vocab level badge and `order_click` are marked *engine work,
+cloud must not ship*, and `b2_clear_claims` is a style decision reserved for you
+with the conservative path already taken. Runs 12, 13, 14 and now 15 have said
+this. **If you want the cloud lane doing repair work, the queue needs
+content-lane items.**
+
+---
+
+### B1 and B2 are finished; the only thing left below C1 is `craft`
+
+B1 is 22/23 and B2 21/22, and in both cases the single missing node is the same
+one: **`craft`** (`Word-craft`, vocab, levels B1+B2), which is `status: parked`
+with `content: null` and the note *"Side door later · B1+"*. It has no content
+path and no defined teaching scope, so I did not build it — parked reads as your
+deliberate shelf, not a sketch waiting for an author. **Say the word if you want
+it scoped and built; otherwise every remaining unit on the path is C1.**
+
+---
+
+### THE FINDING: the node registry notes no longer describe what shipped
+
+`data/nodes-grammar.json` says `c1_discourse_grammar` is *"Sophisticated
+discourse markers · purpose/result/concession/contrast · prep relatives (of
+which, to whom) edges"*. Every one of those is already taught by a live unit:
+`b2_discourse_markers` owns the connectors, and `b2_relative_clauses_advanced`
+owns *"preposition + which/whom, fronted and stranded"*. Had I authored from the
+registry note, I would have shipped a duplicate of two B2 units at C1.
+
+The same happened with `c1_register`. Its obvious strands — inverted conditionals
+(*Should you require…*) and impersonal *It is recommended that…* — are **both
+already built**, in `c1_inversion_emphasis` and `c1_advanced_passive`
+respectively, and its third obvious strand, situational ellipsis and discourse
+particles, is the declared scope of the **`c1_spoken_vs_written` sketch that is
+still unbuilt**.
+
+So I scoped both units against the *pack notes of the live units*, not the
+registry, and recorded the exclusions in each pack's own `note` so the next run
+can see what was deliberately left alone. **The lesson for the remaining nine C1
+sketches: read the live packs' notes before authoring, because the registry notes
+predate them.** The pack `note` field is now the reliable record; the registry
+`note` is not.
+
+---
+
+### Forks and judgment calls
+
+**1. `rise` is outside the stemmer, and this is now the fourth run to pay this
+tax.** `IRREGULAR` in `audit.py` has no `rise: rose risen`, so *Prices rose again
+in June* reads as untaught. I reworded four sentences to *went up*. This is the
+same family as run 14's `show: showed shown`, run 13's `men` and run 12's
+`books`. **Four consecutive runs have now bent good sentences around a missing
+irregular.** One line each would clear them; I have not touched the gate.
+
+**2. Indefinite pronouns cost me a whole teaching point this time, not just
+items.** `everybody`, `everyone`, `somebody`, `nobody` and `nothing` are still not
+GLUE. In `a1_present_simple` **five of the ten items I rewrote were the
+indefinite-pronoun subjects** — *Everybody has a phone*, *Nobody knows* and three
+others — which I moved onto noun subjects. The stated teaching point on all five
+was "he/she/it → verb + -s", and that survives exactly; what quietly leaves the
+unit is the sub-point that *indefinite pronouns take a singular verb*, which no
+card or explanation in the pack ever stated. **If you add these five words to
+GLUE, those five items can go straight back** — this is the fourth run to ask.
+`nothing` also cost me two sentences in `c1_register`.
+
+**3. `water` in `trunk_verbs_daily_a1` — forked, not fixed.** It is the partner of
+the unit I repaired, so I checked it per run 14's finding. Its one violation is
+*I drink water*, and **no drinkable noun is taught anywhere before it** — water,
+coffee and tea all arrive later, at `leaf_food_a1`. The honest options are all
+bad: dropping the object leaves *I drink*, which in English implies alcohol, and
+swapping the verb would delete the `drink` teaching point outright, which the
+rules forbid. This is a **sequencing problem, not a vocabulary gap** — `drink` is
+taught at step 4 and drinks at step 11. Conservative path taken: left alone.
+Cheapest real fix is a GLUE line or a minimal drink noun early.
+
+**4. One item in `a1_present_simple` changed its verb.** *She drinks coffee at
+work* → *She helps my brother at work*, for the same reason as above. `drinks`
+therefore leaves that pack's target set — but `drink` is still taught by the
+same-step partner, and I verified mechanically that **the sequencing report gained
+no new violation anywhere**, so nothing downstream lost the word.
+
+**5. `a1_imperatives`: I moved the intro cards with the items.** Removing *Be
+careful*, *Don't worry*, *Don't touch that* and *Look at the board* from the drill
+would have left four card slots teaching phrases the student never practises, and
+one card was titled *"Be quiet · Be careful"*. Cards are **not** audited — only
+`items[].en` is — so I could have left them and still scored the −5. I moved them
+because a card and a drill disagreeing is worse than a gate number. Flagging in
+case you would rather cards ran ahead of the drill.
+
+**6. Nothing gates `quiz_options`, and this run it mattered five times.** Run 14
+made this case; here is the evidence. In `c1_discourse_grammar` I had to re-cut
+five items where a distractor was also defensible — with only two things named,
+*the second*, *the last* and *the first* all read as correct elliptical noun
+phrases opposite *former*/*latter*, and *Anna and Tom run the Prague and Brno
+offices together* is perfectly good English. I reframed that last one onto two
+different years so *together* genuinely fails. **`audit.py` reads only
+`items[].en` and `check_playable`'s single-answer check compares against
+`accepts`, so a distractor that is also right passes both gates in silence.**
+
+**7. Deliberate policy on out-of-scope distractors, for your ruling.** Both new
+units contain quiz options that are outside the pool *by construction*: `Turn`,
+`Turns` against `Turning`; `concern`, `concerning`, `concerns` against
+`concerned`; `advise`, `advising` against `advised`. They are wrong **inflections
+of the item's own taught word**, which is the only thing a form-choice item can
+offer as a distractor. I treated these as in scope and removed the four that were
+genuinely unrelated vocabulary (`advance`, `briefly`, `currently`, `sight`).
+**Say if you want the rule tightened to cover inflections too** — it would mean
+dropping form-choice items entirely.
+
+**8. A verified gate blind spot: singular uses of plural-taught nouns.** The
+stemmer strips suffixes off the *used* token but never adds them, so a noun taught
+as `dogs` (in `a1_word_classes`) reads as untaught when a later unit writes `dog`.
+I confirmed this directly: `dogs` is in the pool, `dog` is not, and
+`variants("dog")` returns only `["dog"]`. **This means `dog` in
+`trunk_glue_pronouns_a1` is a false positive** — the word is taught. `cat` in the
+same unit is real (neither `cat` nor `cats` is taught anywhere before it).
+Flagging so a future run does not "repair" that unit by pluralising sentences,
+which would move the number without teaching anything.
+
+### Smoke-check suggestions
+
+- `c1_discourse_grammar` and `c1_register` — both are quiz-only ladders of 48
+  items, same shape as the run-14 C1 units. Worth one pass each to see the cards
+  render (six each, all with tables).
+- `a1_present_simple` — ten of its thirty-one items changed; it is the fourth unit
+  on the A1 path and the one a new student meets earliest.
+- `a1_imperatives` — check the four moved card slots read naturally against the
+  drill.
+
+---
+
 ## 2026-08-07 · cloud run 14 (RUE build, claude-opus-5)
 
 ### Headline: **two A1 units repaired to zero and two C1 units built — audit 214 → 206, C1 now 9/18 on path.** The prepositions vocab trunk still carried the ball-and-box lexis its grammar partner lost last run.
