@@ -105,3 +105,31 @@ Clean, no log needed: all 48 new bank sentences (cases, agreement and dual
 forms all correct — e.g. *Slyším ušima*, *Spím na zádech*, *Jakou barvu má
 tvoje auto?* are properly idiomatic, not calqued) and the other five intros'
 tiles and notes.
+
+## 2026-08-07 — second-opinion pass (cloud, ~16:00 UTC)
+
+Scope: everything after the ~14:00 review — run 22's 3 new A2 intros
+(a2_routine, a2_family, a2_freetime), 2 new sentence banks (a1_food,
+a1_clothes, 24 sentences), and the changed cz in the glue_quantity
+re-lexify (*Nemám žádnou vodu*, *Něco je na stole* — both correct). The
+collision-sweep commit touched only `en`/`accepts`, so nothing there to
+judge.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a1_clothes` bank *suit*: en "My brother wears a suit **at work**." but
+  cz "Můj bratr nosí **do práce** oblek." (= *to* work). The Czech is
+  natural, but a student translating the prompt will produce "…wears a
+  suit to work", which `accepts` grades wrong. Either cz → "Můj bratr
+  nosí v práci oblek." or add the to-work form to `accepts` (English, so
+  yours). Not fixed — both halves are individually fine; only the pairing
+  drifts.
+
+Clean, no log needed: all 24 new bank sentences (idiomatic *Snídám doma*,
+*Mám hlad / má žízeň*, correct accusatives *rybu / polévku / vidličku /
+košili*, plural agreement *hezké šaty*, *Tyhle kalhoty se mi nelíbí*);
+*Chleba je na stole* matches the pack's own primary gloss "chleba /
+chléb", deliberate, fine. All three intros' tiles, titles and notes ok —
+incl. the už = already/yet note and cena = price/prize note, both
+correct.
