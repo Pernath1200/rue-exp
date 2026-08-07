@@ -5,7 +5,7 @@
   "tree_node": "a2_verb_patterns",
   "codex_unit": "G_VC-A1B1-01",
   "practice": "frames",
-  "note": "like/enjoy + -ing · want/need/decide + to. Gap on to or -ing form. · Bank 48 items · flags: 2026-07-26e like/have to + plan",
+  "note": "like/enjoy + -ing · want/need/decide + to. Gap on to or the -ing form; 7 items gap the first verb instead, so the pattern verbs are taught, not assumed. · Bank 48 items · flags: 2026-07-26e like/have to + plan",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -76,26 +76,24 @@
         {
           "en": "I hate waiting.",
           "cz": "Nesnáším čekání.",
-          "gap": "I hate ____.",
-          "gap_answer": "waiting",
+          "gap": "I ____ waiting.",
+          "gap_answer": "hate",
           "accepts": [
             "I hate waiting."
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "She loves dancing.",
           "cz": "Miluje tanec.",
-          "gap": "She loves ____.",
-          "gap_answer": "dancing",
+          "gap": "She ____ dancing.",
+          "gap_answer": "loves",
           "accepts": [
-            "She loves dancing.",
-            "She likes dancing.",
-            "She enjoys dancing."
+            "She loves dancing."
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "I want to go home.",
@@ -149,36 +147,35 @@
         {
           "en": "I decide to wait.",
           "cz": "Rozhodnu se počkat.",
-          "gap": "I decide ____ wait.",
-          "gap_answer": "to",
+          "gap": "I ____ to wait.",
+          "gap_answer": "decide",
           "accepts": [
-            "I decide to wait.",
-            "I decided to wait."
+            "I decide to wait."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "They hope to travel.",
           "cz": "Doufají, že budou cestovat.",
-          "gap": "They hope ____ travel.",
-          "gap_answer": "to",
+          "gap": "They ____ to travel.",
+          "gap_answer": "hope",
           "accepts": [
             "They hope to travel."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "I plan to visit Prague.",
           "cz": "Plánuju navštívit Prahu.",
-          "gap": "I plan ____ visit Prague.",
-          "gap_answer": "to",
+          "gap": "I ____ to visit Prague.",
+          "gap_answer": "plan",
           "accepts": [
             "I plan to visit Prague."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "She promises to call.",
@@ -494,13 +491,13 @@
         {
           "en": "They agreed to come.",
           "cz": "Souhlasili, že přijdou.",
-          "gap": "They agreed ____ come.",
-          "gap_answer": "to",
+          "gap": "They ____ to come.",
+          "gap_answer": "agreed",
           "accepts": [
             "They agreed to come."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "I plan to cook.",
@@ -552,14 +549,14 @@
         {
           "en": "Do you enjoy travelling alone?",
           "cz": "Baví tě cestovat sám?",
-          "gap": "Do you enjoy ____ alone?",
-          "gap_answer": "travelling",
+          "gap": "Do you ____ travelling alone?",
+          "gap_answer": "enjoy",
           "accepts": [
             "Do you enjoy travelling alone?",
             "Do you enjoy traveling alone?"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "explanation": "The first verb decides the pattern — the Czech prompt tells you which verb it is.",
+          "explanation_cz": "Vzor určuje první sloveso — které to je, poznáš z české věty."
         },
         {
           "en": "I can't stand waiting in queues.",
@@ -731,6 +728,7 @@
         "title_cz": "Na co se soustředit",
         "points": [
           "Gap is to or the -ing form",
+          "A few items gap the first verb — the Czech tells you which",
           "Learn verb + pattern as a chunk",
           "would like + to (not -ing)"
         ]

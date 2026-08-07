@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**447 unknown word types** across 61 live units (of 132).
+**429 unknown word types** across 60 live units (of 132).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -42,26 +42,25 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a2_countable** (A2 grammar): gave, pair, pizza
 - **a2_adverbs_order** (A2 grammar): know×2, drive, drives, forget, answer, missed, won, answered
 - **a2_first_conditional** (A2 grammar): rain
-- **a2_verb_patterns** (A2 grammar): enjoy×3, plan×3, hopes×3, enjoys×2, hate×2, loves×2, decided×2, decide, hope, agreed
 - **trunk_recycle_a2** (A2 vocab): nearby
 - **trunk_lexis_a2** (A2 vocab): club, email, wi, fi, missed, moved
 - **trunk_chunks_a2** (A2 vocab): i'm, weather
 - **b1_present_perfect_vs_past** (B1 grammar): email×3, emails×3, client×2, until, summer, noon
 - **b1_used_to** (B1 grammar): summer×4, smoke×4, tv×4, dog, sea, wi, fi
-- **trunk_core_b1** (B1 vocab): plan×2, date, idea
+- **trunk_core_b1** (B1 vocab): date, idea
 - **b1_passives** (B1 grammar): online×2, emails, stolen, asia, guard, noon, grown, brazil, taught, cancelled, turned, prepared, story, photos, deleted, package, delivered, rules, form, automatically, invoice
 - **b1_modals_speculation** (B1 grammar): know×3, answer, rain, snow, missed, email, bug, misread, i'm
 - **trunk_chunks_b1** (B1 vocab): favour, homework, asia, responsibility, idea, wifi, rain, accent, priority, answer, gave
-- **b1_articles_advanced** (B1 grammar): love×2, sun, east, piano, eiffel, republic, danube, river, hate, became, sea, atlantic, nurse, place, access
+- **b1_articles_advanced** (B1 grammar): love×2, sun, east, piano, eiffel, republic, danube, river, became, sea, atlantic, nurse, place, access
 - **b1_it_subject** (B1 grammar): learn×2, practise, wake, raining, rain, ask, guess, languages, say, until, patience, grammar
 - **b1_relative_clauses** (B1 grammar): know×2, email, enough, asked, practise, love, berlin, won, think, treated, pardubice, wi, fi, designed, ask, nearby, discussed, languages, rules, hired, story, laugh, path, river, muddy, spain, answer, gave, person, grew, born, stayed, remember, summer
 - **b1_reported_speech** (B1 grammar): asked×12, know, stay, cancelled, think, forget, patrik, ond, ej
 - **b1_indirect_questions** (B1 grammar): tell×5, know×2, whether, wonder
-- **b1_linkers** (B1 grammar): stayed×4, rain×2, raining, slept, test, whispered, wake, plan, snow, careless, hurried, missed, remember, tyre, ate, apologised, prepared, felt, everyone, ads
-- **b1_verb_patterns_advanced** (B1 grammar): remember×4, asked×2, forgot×2, email, hope, moment, enjoys, taught, advised, warned, noon, kept
+- **b1_linkers** (B1 grammar): stayed×4, rain×2, raining, slept, test, whispered, wake, snow, careless, hurried, missed, remember, tyre, ate, apologised, prepared, felt, everyone, ads
+- **b1_verb_patterns_advanced** (B1 grammar): remember×4, asked×2, forgot×2, email, moment, taught, advised, warned, noon, kept
 - **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, form×2, ran×2, turned×2, word×2, volume×2, fire×2, gave, nephew, tv, until, motorway, let's, package, brought, emails, fell, moment, firefighters, extinguished, homework, answer
-- **b1_dependent_prepositions** (B1 grammar): test, keen, villas, health, remembering, fond, aware, capable, rely, believes, consists, think, future, suffers, headaches, sun, rain, accused, lying, approve, plan, concentrate, congratulated, specialises
+- **b1_dependent_prepositions** (B1 grammar): test, keen, villas, health, remembering, fond, aware, capable, rely, believes, consists, think, future, suffers, headaches, sun, rain, accused, lying, approve, concentrate, congratulated, specialises
 - **b2_present_perfect_continuous** (B2 grammar): emails×3, kilometres×2, classes×2, answer, dust, words, quiz, halfway, b, turn, episode, email, inbox, ticked, keep, waking, begin, mess
 - **b2_past_perfect** (B2 grammar): couldn't, knew, recognise, thieves, showed, summer, lesson
-- **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, happen, place, everyone, know, truth, pizza, plan
-- **b2_third_conditional** (B2 grammar): weather×2, heard×2, practised, enjoyed, crashed, truth, woken, sunrise, realised, pizza, followed, wi, fi, invoice, remembered, prepared, email, understood, missed, worn, dawn, battery
+- **b2_second_conditional** (B2 grammar): say×2, answer×2, tell×2, join×2, practised×2, lottery, weather, happen, place, everyone, know, truth, pizza
+- **b2_third_conditional** (B2 grammar): weather×2, heard×2, practised, crashed, truth, woken, sunrise, realised, pizza, followed, wi, fi, invoice, remembered, prepared, email, understood, missed, worn, dawn, battery
