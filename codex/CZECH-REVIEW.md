@@ -154,3 +154,29 @@ posilovna, léky, zdravotní sestra). All three intros ok — a2_work tiles
 (firma, továrna, průmysl, podnikatel, pohovor, žádost, smlouva, plat,
 kariéra all correct), the Mám strach → I am afraid note, and the
 police-is-plural note are all sound.
+
+## 2026-08-07 — second-opinion pass (cloud, ~19:00 UTC)
+
+Scope: everything after the 15:43 review — run 24's 3 new intros
+(a2_describing, a2_home, a2_shopping), 2 new sentence banks (a1_work,
+a1_school, 26 sentences), and the changed cz in the glue_linkers and
+verbs_more2 re-lexifies (*Podívej se do tašky*, *Běhám v parku* — both
+correct: genitive after *do*, locative after *v*).
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_home` intro tile *upstairs* = "nahoře / do patra" but *downstairs* =
+  "dole / dolů". The downstairs pair is location/direction with the plain
+  adverb; the upstairs pair switches to the prepositional "do patra" for
+  direction. "Jít do patra" is real Czech, but the symmetric pair a learner
+  expects is "nahoře / nahoru". Defensible, so left unchanged.
+
+Clean, no log needed: all 26 bank sentences (correct accusatives *práci /
+přestávku / zkoušku / tužku / otázku*, genitive *řidič autobusu*, locatives
+*na schůzce / v kanceláři / v prvním patře* — which also correctly matches
+British *first floor* = české první patro — masculine-animate *To je můj
+kolega*, idiomatic *Chci se učit anglicky*, *Začínám pracovat v sedm*); the
+a2_describing intro (the linguistic "stojí po is nebo am" is standard
+grammar-text usage) and the a2_shopping tiles and quality/quantity note all
+ok, incl. the deliberate "obchod (amer.)" marking on *store*.
