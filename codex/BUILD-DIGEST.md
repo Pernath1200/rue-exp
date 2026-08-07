@@ -6,6 +6,195 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 11 (RUE build, claude-opus-5)
+
+### Headline: **12 fully-authored, LIVE A1 vocab units are in no `path_order` — students never reach them, and the 267 words they teach account for 169 of the 396 audit violations (43 %).** The "seed-list backlog" of runs 8–10 was never a missing-vocabulary problem. It is a routing problem. Also: two A1 units repaired to zero, and C1 is now 3/22.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `8af4bf4` | `a1_frequency` re-lexified, 10/24 items — 8 types → **0** |
+| 2 | `981caf2` | `a1_and_but_because` re-lexified, 8/24 items — 8 types → **0** |
+| 3 | `c7689e6` | **`c1_time_aspect_edge`** built + live — 10 → **48** items |
+| 4 | `1af41c0` | **`c1_inversion_emphasis`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 412 unknown types · 60 units | **396** · 58 units · baseline tightened 412 → 404 → 396 |
+
+Net **−16** unknown types while adding **96** new items. Both repaired units
+drop off the report entirely (the first A1 grammar units to hit zero), and
+both new C1 units are **100 % pool-clean — 0 violations between them, neither
+appears in the report.** The 12 warnings are the pre-existing
+`b2_clear_claims` ones, unchanged. Gates green before every commit; commit
+and push per unit.
+
+---
+
+### THE FINDING: twelve live A1 vocab units are unreachable
+
+This is the thing to read this run. Twelve units are `status: "live"`, have
+authored content, and appear in **no `path_order` array at all**:
+
+```
+leaf_animals_a1  21    leaf_school_a1          47    trunk_verbs_more_a1   12
+leaf_health_a1   24    leaf_tech_a1            24    trunk_verbs_more2_a1  12
+leaf_ideas_a1    47    trunk_glue_modals_a1     8    trunk_verbs_more3_a1  12
+leaf_nature_a1   36    trunk_glue_pronouns_a1  12    trunk_verbs_say_a1    12
+                                                     (targets each)
+```
+
+**267 distinct words**, authored and sitting in the repo, that no student can
+reach. A1 has 53 live nodes and a 41-node path; that gap is exactly these 12.
+
+Every "this word is taught nowhere in 122 units" complaint I have logged in
+runs 8, 9 and 10 traces back here. I checked each one mechanically rather
+than trusting the earlier digests:
+
+| word | I previously reported | actually |
+|------|----------------------|----------|
+| `say` `tell` `ask` `hear` | "taught nowhere" | `trunk_verbs_say_a1` — **off-path** |
+| `answer` `question` `word` | "taught nowhere" (blocked authoring 3 runs) | `leaf_school_a1` — **off-path** |
+| `weather` | "taught nowhere" | `leaf_nature_a1` — **off-path** |
+
+**169 of the 396 remaining violations (43 %) are words these 12 units teach.**
+That is the single largest lever in the repo and it is not an authoring job —
+it is a dozen lines in `data/spine.json` / the `path_order` arrays.
+
+**I did not ship it.** Path membership decides what every downstream unit may
+legally use; dropping 267 words into the A1 pool re-sequences the entire
+course beneath it, and that is a course-design call, not a content call. It is
+also not obviously a bug — you may have pulled these deliberately. Conservative
+path taken, logged here.
+
+**What I would want to know before doing it:** were these parked on purpose?
+If not, the sensible order is (a) decide their positions in the A1 path,
+(b) rebuild, (c) let the ratchet auto-tighten, then (d) re-run the sequencing
+repair against whatever is left. Done in that order the remaining 227
+violations are probably real authoring debt; done in the other order I will
+keep re-lexifying sentences to avoid words the course already teaches.
+
+Note it does not touch this run's numbers: the 396 is honest, and the two
+units I repaired I repaired legitimately.
+
+---
+
+### Judgment calls and forks
+
+**1. A quiz gate is missing, and I found real defects with it by hand.**
+Nothing in the repo checks that a multiple-choice item has exactly **one**
+correct option. `verify_pack` checks frame reconstruction; `audit` checks
+vocabulary; neither reads `quiz_options`. Building `c1_time_aspect_edge` I
+substituted all four options back into all 48 frames and read the 192
+sentences — **eight items had two defensible answers:**
+
+- Six process items where the simple perfect is genuinely acceptable next to
+  the continuous (*By June I will have taught here for twenty years* is not
+  wrong), so the student could be marked wrong for good English.
+- `The meeting is being held upstairs.` — offered as a distractor against
+  `is to be held`. It is simply correct English.
+- `She is due to start her new job on Monday` had `going` as a distractor:
+  *is going to start … on Monday* is correct too.
+
+All eight fixed before commit. I did the same read on
+`c1_inversion_emphasis` (another 192) and additionally replaced 20 distractors
+that were word-salad (`we finish can on time`) with plausible learner errors
+(`can we finishing on time`) — a scrambled distractor teaches nothing because
+nobody would ever pick it. **Suggested: a ~30-line `verify_pack` check that
+flags any item whose `gap_accepts` intersects `quiz_options` in more than one
+place.** That catches the mechanical half automatically. The semantic half
+(*is being held* is real English) still needs a human or a model reading it —
+worth knowing that this class of defect is currently invisible to the gates
+and has probably shipped in earlier units. I have not audited older packs for
+it; say the word and I will.
+
+**2. `b2_future_forms` already owns the ordinary futures, so the C1 unit takes
+only the edges.** B2 teaches will / going to / present continuous / present
+simple / future continuous / future perfect / time clauses / was going to. So
+`c1_time_aspect_edge` deliberately teaches none of those again: it takes
+future perfect **continuous** against future perfect from a named future
+point, `be to` / `be due to` (including the passive `is to be published`),
+`was to have + PP` for the plan that failed, and the aspect that is not about
+time at all (`always/forever/constantly` + continuous, `keep + -ing`, state
+verbs in the continuous). If you would rather it had re-drilled the basics,
+that was the fork and I took the no-duplication path.
+
+**3. `b2_inversion` is a sketch in no `path_order`, so `c1_inversion_emphasis`
+is the only place the course teaches inversion.** I built it to stand alone
+rather than assume B2 groundwork that a student never sees — hence four full
+strands including the `Only after the guests had left **did we** start to
+clean` trap, which is where learners actually fail. Related to the finding
+above: same routing problem, different level.
+
+**4. Names again — conservative path, same as run 10.** `Homare` and `Patrik`
+in `a1_and_but_because` audit as untaught vocabulary because they are not in
+`audit.py`'s GLUE name list. I renamed them (`Anna`, `Petr`) rather than widen
+GLUE, for the reason run 10 gave: widening drops the total without improving a
+sentence. Still your call, still deserves its own labelled commit if you want it.
+
+**5. The irregular-verb blind spot bit again, exactly as run 10 predicted.**
+`sat`, `knew`, `gave`, `fell`, `rang`, `ran`, `stood`, `said`, `became`,
+`recognised` all read as untaught. Casualties: *No sooner had we **sat down**
+than…* became *No sooner had we **arrived**…*, and `Little did she know` only
+survived because I made the whole phrase the gap answer, which legalises
+`know` as a target. That is a workaround, not a fix. The ~60-pair irregular
+table in `audit.py` is still the right answer and still not mine to ship.
+
+**6. Two violations I did NOT dodge by deleting teaching.** In `a1_frequency`
+the `never` items must show a positive verb after `never`; I kept all five and
+re-lexified around them. In `a1_and_but_because` the gap stays on
+and/but/because only and the 8/8/8 split is intact. No teaching point was
+removed to move a number in either unit.
+
+**7. Small, flagged: `well` in `a1_frequency` comes from the same-step partner
+unit**, not from the pool proper (`She always works hard` → `She always works
+well`). Legal by `audit.py`'s own partner rule, but it does mean the student
+meets the word in the same step rather than earlier. Reject it if you dislike
+the dependency.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Unchanged, and again nothing manufactured to produce a tick. All four sit
+outside this lane: the **P0**, the hardcoded `A1` vocab badge, `zero_article`
+(blocked on the P0), and the `b2_clear_claims` style call. Re-verified the P0
+mechanically rather than trusting the queue text: `js/practice-grammar.js`
+still contains **zero** occurrences of `blocks`, and still reads `pack.match` /
+`pack.quiz` / `pack.type_items` / `pack.use_items`, none of which exist in any
+of the 160 packs.
+
+**The P0 is eleven runs old and this run put 96 more grammar items behind it.**
+Ninety-six items I verified by hand, in a practice engine that will ask a
+student none of them and then report "Check: 100 %". The adapter proposal has
+been in this digest since run 1; it needs about twenty lines of `js/` and a
+decision from you. Content is the lane I have, so I will keep building — but
+the gap between "units live" and "units a student can actually practise" grew
+again today.
+
+### Smoke-check list
+
+- **`c1_time_aspect_edge` strand 4** is the one to look at first. It teaches
+  that a continuous form can carry irritation rather than time (*She is always
+  complaining*, *He keeps interrupting me*) and that state verbs shift meaning
+  in the continuous (*He is being difficult*). If you think that belongs in a
+  separate pragmatics unit rather than under "time & aspect", say so before I
+  build more C1 and I will move it.
+- **`c1_inversion_emphasis` strand 2** — the *Only after X **did we** Y* rule.
+  Card 3 is built entirely around it because it is the error learners actually
+  make. Check the card reads clearly; it is the densest thing in the unit.
+- `a1_frequency` — *I never drink tea* is now *I never cook*, and the five
+  `never` explanations quote it. Czech *Nikdy nevařím* is clean, but it moves
+  the unit's flavour off food. Reject if you dislike it.
+- `a1_and_but_because` — *He is small but strong* → *He is short but quick*
+  (`strong` is untaught; `short` comes from `leaf_body_a1`). Same contrast,
+  different pair.
+- **C1 is now 3/22 on-path live. Next in path order: `c1_clefts_fronting`.**
+
+---
+
 ## 2026-08-07 · cloud run 10 (RUE build, claude-opus-5)
 
 ### Headline: the B2 course path is COMPLETE (21/21 on-path) and C1 is open — `c1_narrative_mastery` is the first C1 unit ever to go live. Every A1/A2 offender I touched turned out to be a forward reference, not a missing word. The P0 is ten runs old.
