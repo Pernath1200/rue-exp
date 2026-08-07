@@ -8,13 +8,13 @@ calls & forks for James · anything to smoke-check.
 
 ## 2026-08-07 · cloud run 10 (RUE build, claude-opus-5)
 
-### Headline: the B2 course path is COMPLETE — 21/21 on-path B2 units live. Every A1/A2 offender I touched turned out to be a forward reference, not a missing word. The P0 is ten runs old.
+### Headline: the B2 course path is COMPLETE (21/21 on-path) and C1 is open — `c1_narrative_mastery` is the first C1 unit ever to go live. Every A1/A2 offender I touched turned out to be a forward reference, not a missing word. The P0 is ten runs old.
 
 **`b2_discourse_markers` was the last on-path B2 sketch and it is now live.**
-Nothing buildable remains before C1: `craft` is *parked* (your decision — I
-did not unpark it), and `b2_future_in_the_past` / `b2_clear_claims` are in
-no `path_order` at all, so students never reach them. **The next on-path
-node is `c1_narrative_mastery` and C1 is 0/22.**
+Nothing else was buildable at B2: `craft` is *parked* (your decision — I did
+not unpark it), and `b2_future_in_the_past` / `b2_clear_claims` are in no
+`path_order` at all, so students never reach them. So the run carried on
+into C1 and opened the level: **C1 is 1/22, next is `c1_time_aspect_edge`.**
 
 ### What landed
 
@@ -23,6 +23,7 @@ node is `c1_narrative_mastery` and C1 is 0/22.**
 | 1 | `afff4b0` | `trunk_verbs_daily_a1` re-lexified, 9/12 items — 10 types → 1 |
 | 2 | `8f9c4f7` | `a1_to_for_with` re-lexified, 8/24 items — 9 types → 1 |
 | 3 | `7415f23` | **`b2_discourse_markers`** built + live — 10 → **48** items |
+| 4 | `8676220` | **`c1_narrative_mastery`** built + live — 10 → **48** items · **C1 opens** |
 
 ### Gates
 
@@ -31,11 +32,11 @@ node is `c1_narrative_mastery` and C1 is 0/22.**
 | `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
 | `audit` | 412 unknown types · 60 units | **412** · 60 units · baseline tightened 429 → 412 |
 
-Net **−17** unknown types while adding 48 new items. The new unit is
-**100 % pool-clean — it contributes 0 violations and does not appear in the
-report at all.** The 12 warnings are the pre-existing `b2_clear_claims`
-ones, unchanged. Both gates run green before every commit; commit and push
-per unit.
+Net **−17** unknown types while adding **96** new items. Both new units are
+**100 % pool-clean — they contribute 0 violations between them and neither
+appears in the report at all.** The 12 warnings are the pre-existing
+`b2_clear_claims` ones, unchanged. Both gates run green before every
+commit; commit and push per unit.
 
 ### The finding I would most like you to read
 
@@ -113,7 +114,30 @@ genuinely work (*therefore / consequently / thus*, *despite / in spite of*,
 typed answer is not marked wrong — then checked mechanically that **no quiz
 item has two correct options on screen.** It does not; 0/48.
 
-**6. The seed-list backlog grew again.** Words this run proved are taught
+**6. NEW AND STRUCTURAL — `audit.py` cannot stem irregular past forms, so
+every past-tense unit is penalised for using them.** Building
+`c1_narrative_mastery` I had to throw away good sentences because **`sat`,
+`gave`, `stood`, `shone` and `knew` read as untaught even though `sit`,
+`give`, `stand`, `shine` and `know(s)` are all in the pool.** The stemmer in
+`variants()` only strips regular suffixes, so `sat → sit` is invisible to
+it. Casualties this run: *"By the time we sat down…"* became *"By the time
+we walked in…"*, *"They gave us the room we had booked"* became *"The room
+we had booked was much smaller"*, and *"so I knew the story"* became *"so I
+started a new one."* Every one of those is a worse sentence.
+
+This is not a one-off — **it will hit `c1_time_aspect_edge`,
+`c1_narrative_mastery`'s neighbours and every remaining past-tense unit**,
+and it silently pushes narrative units toward regular verbs, which is the
+opposite of what a C1 narrative unit should be teaching. The honest fix is
+a small irregular-verb table in `audit.py` (about 60 pairs covers
+everything the course uses). **I did not write it** — same reasoning as
+fork 2: it drops the audit total without improving a sentence, so it should
+be your decision and a separate labelled commit. But unlike the names
+issue, this one is actively degrading new content, and I would push for it.
+Also worth noting: `grandmother's` is flagged because the apostrophe blocks
+the `s`-stem, so possessives are penalised the same way.
+
+**7. The seed-list backlog grew again.** Words this run proved are taught
 nowhere in 122 units, on top of run 8's `know`/`answer`/`want`/`see` and
 run 9's `feel`/`enough`: **`talk`, `test`, `pen`, `email`, `homework`,
 `turn`, `weather`, `nobody`**. `answer` and `email` have now blocked
@@ -131,13 +155,16 @@ text: **`js/practice-grammar.js` contains zero occurrences of the string
 `blocks`**, and still reads `pack.match` / `pack.quiz` / `pack.type_items` /
 `pack.use_items`, none of which exist in any of the 160 packs.
 
-**This run put a 21st B2 grammar unit behind that dead sequence.** Fifty-two
-grammar nodes when the P0 was found; the count only goes up. The content
-side of this course is in good shape and getting better every hour — and a
-student practising grammar today still answers zero questions and is told
+**This run put two more grammar units behind that dead sequence — and one
+of them opened a whole new level.** Fifty-two grammar nodes when the P0 was
+found; it is more now, and the count only goes up. The content side of this
+course is in good shape and getting better every hour — and a student
+practising grammar today still answers zero questions and is told
 "Check: 100 %". The adapter proposal has been sitting in this digest since
 run 1. **It needs about twenty lines of `js/` and a decision from you; it
-does not need more content.**
+does not need more content.** I am going to keep building units into a
+practice engine that never asks them, because content is the lane I have —
+but you should know that is what is happening.
 
 ### Smoke-check list
 
@@ -150,6 +177,14 @@ does not need more content.**
 - `a1_to_for_with` — the instrument item is now "I open the door with my
   key." (*Otevírám dveře klíčem.*). Czech instrumental mirrors English
   `with` there exactly as well as *perem* did for the old pen item.
+- **`c1_narrative_mastery` is the first C1 unit — it sets the pattern for
+  the other 21, so it is the one to smoke properly.** Two things to look at
+  in particular: intro card 2 ("Past perfect is a signal, not a rule")
+  teaches a *negative* skill — when to leave the form out — which no
+  earlier unit does; and strand 4 mixes habit forms (`used to` / `would`)
+  with that leave-it-out skill under one heading. If you would rather those
+  were two separate strands, say so before I build more C1 and I will split
+  them across the level.
 
 ---
 
