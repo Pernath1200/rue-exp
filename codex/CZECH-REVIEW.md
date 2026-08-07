@@ -180,3 +180,29 @@ kolega*, idiomatic *Chci se učit anglicky*, *Začínám pracovat v sedm*); the
 a2_describing intro (the linguistic "stojí po is nebo am" is standard
 grammar-text usage) and the a2_shopping tiles and quality/quantity note all
 ok, incl. the deliberate "obchod (amer.)" marking on *store*.
+
+## 2026-08-07 — second-opinion pass (cloud, ~20:00 UTC)
+
+Scope: everything after the 16:43 review — run 25's 3 new intros
+(a2_adverbs, a2_ideas, a2_verbs), 2 new sentence banks (a1_time_numbers,
+a1_nature, 26 sentences), and the *fix* gloss repair in a2_verbs. The
+recycle_a2 re-lexify touched only `en`/`accepts`/`gap` (cz unchanged) and
+past_continuous is a grammar pack — nothing there to judge.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_ideas` intro `body_cz`: "Většina z nich **drží na jednom řetězci**"
+  — calque of the English "hang on one chain"; *držet na řetězci* reads as
+  physically holding/being kept on a chain. Suggest "Většina z nich tvoří
+  jeden řetězec: problém → …". Marginal rather than ungrammatical, so left
+  unchanged.
+
+Clean, no log needed: all 26 bank sentences (correct locatives *V horách /
+v lese / v řece / na zahradě / v květnu*, dative *k moři*, genitive plural
+*hodně hvězd*, neuter agreement *Slunce je horké / Pole je suché*,
+idiomatic *Kolik je hodin?*, *V zimě je zima*, *dvakrát za rok*, *za deset
+minut*; *Obchod otevírá v devět* is normal shop usage). The a2_verbs intro
+(*Samá slovesa v základním tvaru…* and the borrow/lend note both tight and
+correct), the a2_adverbs intro incl. the hardly ≠ hard note, and the new
+*fix* = "spravit" gloss all ok.
