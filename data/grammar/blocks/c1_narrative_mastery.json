@@ -5,116 +5,1176 @@
   "tree_node": "c1_narrative_mastery",
   "codex_unit": "G_VP-C1-01",
   "practice": "frames",
-  "note": "Nuanced narrative: past simple/cont/perfect/perfect cont combinations · scene vs flashback vs background · thin shell 2026-08-06",
+  "note": "past perfect for the earlier event and for a result already true in the scene · past perfect continuous vs past perfect (how long vs how much), state verbs excluded · past continuous background against past simple events · narrative control: used to / would for habit, and when past perfect should be LEFT OUT · 4 strands x 12 · 48 items · first C1 unit, built to live 2026-08-07 (cloud run 10)",
   "default_direction": "cz_to_en",
-  "check": { "sequence": ["quiz"] },
-  "quality": "thin_shell",
-  "intro": {
-    "cards": [
-      {
-        "title": "Narrative control, not new tenses",
-        "title_cz": "Kontrola vyprávění, ne nové časy",
-        "body": "You already know the past forms. At C1 choose **which combination** builds the story: main events, background, earlier past, interrupted process, and why one form is sharper than another.",
-        "body_cz": "Minulé tvary znáte. Na C1 volíte **která kombinace** staví příběh: hlavní děj, pozadí, dřívější minulost, přerušený proces."
-      }
+  "check": {
+    "sequence": [
+      "quiz"
     ]
   },
+  "quality": "authored",
   "blocks": [
     {
       "id": "c1_narrative_mastery_main",
       "title": "Narrative tenses mastery · C1",
       "items": [
         {
-          "en": "She had been waiting for an hour when the bus finally arrived.",
-          "cz": "Čekala už hodinu, když autobus konečně přijel.",
-          "gap": "She ____ waiting for an hour when the bus finally arrived.",
-          "gap_answer": "had been",
-          "accepts": ["She had been waiting for an hour when the bus finally arrived."],
-          "explanation": "Past perfect continuous: process before a past event.",
-          "explanation_cz": "Předminulý průběhový: proces před minulým dějem."
-        },
-        {
           "en": "The streets were empty; it had stopped raining.",
           "cz": "Ulice byly prázdné; přestalo pršet.",
           "gap": "The streets were empty; it ____ raining.",
           "gap_answer": "had stopped",
-          "accepts": ["The streets were empty; it had stopped raining."],
-          "explanation": "Result already true in the past scene: past perfect.",
-          "explanation_cz": "Výsledek už platil v minulé scéně: past perfect."
+          "gap_accepts": [
+            "had stopped"
+          ],
+          "accepts": [
+            "The streets were empty; it had stopped raining."
+          ],
+          "quiz_options": [
+            "had stopped",
+            "has stopped",
+            "was stopping",
+            "stopped"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
         },
         {
-          "en": "While he was speaking, someone knocked.",
-          "cz": "Zatímco mluvil, někdo zaklepal.",
-          "gap": "While he ____ speaking, someone knocked.",
-          "gap_answer": "was",
-          "accepts": ["While he was speaking, someone knocked."],
-          "explanation": "Background process + short event.",
-          "explanation_cz": "Pozadí + krátký děj."
-        },
-        {
-          "en": "I realised I had left my keys at home.",
-          "cz": "Uvědomil jsem si, že jsem doma nechal klíče.",
-          "gap": "I realised I ____ my keys at home.",
+          "en": "I remembered I had left my keys at home.",
+          "cz": "Vzpomněl jsem si, že jsem doma nechal klíče.",
+          "gap": "I remembered I ____ my keys at home.",
           "gap_answer": "had left",
-          "accepts": ["I realised I had left my keys at home."],
-          "explanation": "Earlier past before the realisation.",
-          "explanation_cz": "Dřívější minulost před uvědoměním."
+          "gap_accepts": [
+            "had left"
+          ],
+          "accepts": [
+            "I remembered I had left my keys at home."
+          ],
+          "quiz_options": [
+            "had left",
+            "have left",
+            "was leaving",
+            "had been leaving"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
         },
         {
-          "en": "By the time we sat down, the film had already started.",
-          "cz": "Než jsme si sedli, film už začal.",
-          "gap": "By the time we sat down, the film ____ already started.",
+          "en": "By the time we walked in, the film had already started.",
+          "cz": "Než jsme vešli dovnitř, film už začal.",
+          "gap": "By the time we walked in, the film ____ already started.",
           "gap_answer": "had",
-          "accepts": ["By the time we sat down, the film had already started."],
-          "explanation": "by the time + past perfect for the earlier event.",
-          "explanation_cz": "by the time + past perfect."
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "By the time we walked in, the film had already started."
+          ],
+          "quiz_options": [
+            "had",
+            "has",
+            "was",
+            "would have"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
         },
         {
-          "en": "She used to visit every summer, but that year she didn't come.",
-          "cz": "Každé léto jezdívala, ale ten rok nepřijela.",
-          "gap": "She ____ visit every summer, but that year she didn't come.",
-          "gap_answer": "used to",
-          "accepts": ["She used to visit every summer, but that year she didn't come."],
-          "explanation": "Past habit vs single narrative year.",
-          "explanation_cz": "Dřívější zvyk vs jedna scéna."
+          "en": "When we arrived, the meeting had already finished.",
+          "cz": "Když jsme dorazili, schůzka už skončila.",
+          "gap": "When we arrived, the meeting ____.",
+          "gap_answer": "had already finished",
+          "gap_accepts": [
+            "had already finished"
+          ],
+          "accepts": [
+            "When we arrived, the meeting had already finished."
+          ],
+          "quiz_options": [
+            "had already finished",
+            "has already finished",
+            "was already finishing",
+            "already finished"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
         },
         {
-          "en": "He had only been working there for a week when he resigned.",
-          "cz": "Pracoval tam teprve týden, když dal výpověď.",
-          "gap": "He had only been ____ there for a week when he resigned.",
-          "gap_answer": "working",
-          "accepts": ["He had only been working there for a week when he resigned."],
-          "explanation": "Short prior process before a past decision.",
-          "explanation_cz": "Krátký předchozí proces."
+          "en": "He could not get in because he had lost his key.",
+          "cz": "Nemohl se dostat dovnitř, protože ztratil klíč.",
+          "gap": "He could not get in because he ____ his key.",
+          "gap_answer": "had lost",
+          "gap_accepts": [
+            "had lost"
+          ],
+          "accepts": [
+            "He could not get in because he had lost his key."
+          ],
+          "quiz_options": [
+            "had lost",
+            "has lost",
+            "was losing",
+            "had been losing"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
         },
         {
-          "en": "Everything seemed normal until the lights went out.",
-          "cz": "Všechno vypadalo normálně, dokud nezhasla světla.",
-          "gap": "Everything ____ normal until the lights went out.",
-          "gap_answer": "seemed",
-          "accepts": ["Everything seemed normal until the lights went out."],
-          "explanation": "State background in past simple.",
-          "explanation_cz": "Stavové pozadí v past simple."
+          "en": "The shop was closed; the manager had gone home.",
+          "cz": "Obchod byl zavřený; manažer odešel domů.",
+          "gap": "The shop was closed; the manager ____ home.",
+          "gap_answer": "had gone",
+          "gap_accepts": [
+            "had gone"
+          ],
+          "accepts": [
+            "The shop was closed; the manager had gone home."
+          ],
+          "quiz_options": [
+            "had gone",
+            "has gone",
+            "was going",
+            "had been going"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "When I got to the station, the train had already left.",
+          "cz": "Když jsem dorazil na nádraží, vlak už odjel.",
+          "gap": "When I got to the station, the train ____.",
+          "gap_answer": "had already left",
+          "gap_accepts": [
+            "had already left"
+          ],
+          "accepts": [
+            "When I got to the station, the train had already left."
+          ],
+          "quiz_options": [
+            "had already left",
+            "has already left",
+            "was already leaving",
+            "already left"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "She was tired because she had worked all night.",
+          "cz": "Byla unavená, protože pracovala celou noc.",
+          "gap": "She was tired because she ____ all night.",
+          "gap_answer": "had worked",
+          "gap_accepts": [
+            "had worked",
+            "had been working"
+          ],
+          "accepts": [
+            "She was tired because she had worked all night."
+          ],
+          "quiz_options": [
+            "had worked",
+            "has worked",
+            "was working",
+            "would work"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "The room we had booked was much smaller.",
+          "cz": "Pokoj, který jsme si zarezervovali, byl mnohem menší.",
+          "gap": "The room we ____ was much smaller.",
+          "gap_answer": "had booked",
+          "gap_accepts": [
+            "had booked"
+          ],
+          "accepts": [
+            "The room we had booked was much smaller."
+          ],
+          "quiz_options": [
+            "had booked",
+            "have booked",
+            "were booking",
+            "had been booking"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "The car would not start because he had left the lights on.",
+          "cz": "Auto nenastartovalo, protože nechal rozsvícená světla.",
+          "gap": "The car would not start because he ____ the lights on.",
+          "gap_answer": "had left",
+          "gap_accepts": [
+            "had left"
+          ],
+          "accepts": [
+            "The car would not start because he had left the lights on."
+          ],
+          "quiz_options": [
+            "had left",
+            "has left",
+            "was leaving",
+            "would leave"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "I did not go out because I had already seen the film.",
+          "cz": "Nešel jsem ven, protože jsem ten film už viděl.",
+          "gap": "I did not go out because I ____ the film.",
+          "gap_answer": "had already seen",
+          "gap_accepts": [
+            "had already seen"
+          ],
+          "accepts": [
+            "I did not go out because I had already seen the film."
+          ],
+          "quiz_options": [
+            "had already seen",
+            "have already seen",
+            "was already seeing",
+            "already saw"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "After she had finished the report, she went home.",
+          "cz": "Když dokončila zprávu, šla domů.",
+          "gap": "After she ____ the report, she went home.",
+          "gap_answer": "had finished",
+          "gap_accepts": [
+            "had finished",
+            "finished"
+          ],
+          "accepts": [
+            "After she had finished the report, she went home."
+          ],
+          "quiz_options": [
+            "had finished",
+            "has finished",
+            "was finishing",
+            "had been finishing"
+          ],
+          "form": "sequence_layers",
+          "explanation": "Past perfect marks the event that happened first, or a result that was already true in the past scene. The verb carrying the story stays in past simple.",
+          "explanation_cz": "Předminulý čas označuje děj, který se stal dřív, nebo výsledek, který v minulé scéně už platil. Sloveso, které nese příběh, zůstává v past simple."
+        },
+        {
+          "en": "She had been waiting for an hour when the bus finally arrived.",
+          "cz": "Čekala už hodinu, když autobus konečně přijel.",
+          "gap": "She ____ for an hour when the bus finally arrived.",
+          "gap_answer": "had been waiting",
+          "gap_accepts": [
+            "had been waiting"
+          ],
+          "accepts": [
+            "She had been waiting for an hour when the bus finally arrived."
+          ],
+          "quiz_options": [
+            "had been waiting",
+            "had waited",
+            "has been waiting",
+            "was waiting"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "He had only been working there for a week when he left the company.",
+          "cz": "Pracoval tam teprve týden, když firmu opustil.",
+          "gap": "He ____ there for a week when he left the company.",
+          "gap_answer": "had only been working",
+          "gap_accepts": [
+            "had only been working"
+          ],
+          "accepts": [
+            "He had only been working there for a week when he left the company."
+          ],
+          "quiz_options": [
+            "had only been working",
+            "had only worked",
+            "has only been working",
+            "was only working"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
         },
         {
           "en": "They had known each other for years before they got married.",
           "cz": "Znali se roky, než se vzali.",
           "gap": "They ____ each other for years before they got married.",
           "gap_answer": "had known",
-          "accepts": ["They had known each other for years before they got married."],
-          "explanation": "State lasting up to a past event: past perfect.",
-          "explanation_cz": "Stav až k minulému bodu: past perfect."
+          "gap_accepts": [
+            "had known"
+          ],
+          "accepts": [
+            "They had known each other for years before they got married."
+          ],
+          "quiz_options": [
+            "had known",
+            "had been knowing",
+            "have known",
+            "were knowing"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
         },
         {
-          "en": "I was going to apologise, but she had already left.",
-          "cz": "Chtěl jsem se omluvit, ale už odešla.",
-          "gap": "I was going to apologise, but she ____ already left.",
+          "en": "His hands were dirty; he had been working in the garden.",
+          "cz": "Měl špinavé ruce; pracoval na zahradě.",
+          "gap": "His hands were dirty; he ____ in the garden.",
+          "gap_answer": "had been working",
+          "gap_accepts": [
+            "had been working"
+          ],
+          "accepts": [
+            "His hands were dirty; he had been working in the garden."
+          ],
+          "quiz_options": [
+            "had been working",
+            "had worked",
+            "has been working",
+            "was work"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "I had written three reports before lunch.",
+          "cz": "Před obědem jsem napsal tři zprávy.",
+          "gap": "I ____ three reports before lunch.",
+          "gap_answer": "had written",
+          "gap_accepts": [
+            "had written"
+          ],
+          "accepts": [
+            "I had written three reports before lunch."
+          ],
+          "quiz_options": [
+            "had written",
+            "had been writing",
+            "have written",
+            "was writing"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "She had been studying all night, so she was very tired.",
+          "cz": "Učila se celou noc, takže byla velmi unavená.",
+          "gap": "She ____ all night, so she was very tired.",
+          "gap_answer": "had been studying",
+          "gap_accepts": [
+            "had been studying"
+          ],
+          "accepts": [
+            "She had been studying all night, so she was very tired."
+          ],
+          "quiz_options": [
+            "had been studying",
+            "had studied",
+            "has been studying",
+            "was studied"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "We had been driving for six hours when the engine stopped.",
+          "cz": "Jeli jsme už šest hodin, když se zastavil motor.",
+          "gap": "We ____ for six hours when the engine stopped.",
+          "gap_answer": "had been driving",
+          "gap_accepts": [
+            "had been driving"
+          ],
+          "accepts": [
+            "We had been driving for six hours when the engine stopped."
+          ],
+          "quiz_options": [
+            "had been driving",
+            "had driven",
+            "have been driving",
+            "were driven"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "By six o'clock he had finished all his work.",
+          "cz": "V šest hodin měl veškerou práci hotovou.",
+          "gap": "By six o'clock he ____ all his work.",
+          "gap_answer": "had finished",
+          "gap_accepts": [
+            "had finished"
+          ],
+          "accepts": [
+            "By six o'clock he had finished all his work."
+          ],
+          "quiz_options": [
+            "had finished",
+            "had been finishing",
+            "has finished",
+            "was finishing"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "Her eyes were red; she had been crying.",
+          "cz": "Měla červené oči; plakala.",
+          "gap": "Her eyes were red; she ____.",
+          "gap_answer": "had been crying",
+          "gap_accepts": [
+            "had been crying"
+          ],
+          "accepts": [
+            "Her eyes were red; she had been crying."
+          ],
+          "quiz_options": [
+            "had been crying",
+            "had cried",
+            "has been crying",
+            "was cried"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "They had been living in Brno for ten years before they moved to Prague.",
+          "cz": "Bydleli v Brně deset let, než se přestěhovali do Prahy.",
+          "gap": "They ____ in Brno for ten years before they moved to Prague.",
+          "gap_answer": "had been living",
+          "gap_accepts": [
+            "had been living",
+            "had lived"
+          ],
+          "accepts": [
+            "They had been living in Brno for ten years before they moved to Prague."
+          ],
+          "quiz_options": [
+            "had been living",
+            "have been living",
+            "were living",
+            "had been lived"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "I had already read the book, so I started a new one.",
+          "cz": "Tu knihu jsem už četl, takže jsem začal novou.",
+          "gap": "I ____ the book, so I started a new one.",
+          "gap_answer": "had already read",
+          "gap_accepts": [
+            "had already read"
+          ],
+          "accepts": [
+            "I had already read the book, so I started a new one."
+          ],
+          "quiz_options": [
+            "had already read",
+            "had already been reading",
+            "have already read",
+            "was already reading"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "The ground was wet because it had been raining all morning.",
+          "cz": "Země byla mokrá, protože celé ráno pršelo.",
+          "gap": "The ground was wet because it ____ all morning.",
+          "gap_answer": "had been raining",
+          "gap_accepts": [
+            "had been raining"
+          ],
+          "accepts": [
+            "The ground was wet because it had been raining all morning."
+          ],
+          "quiz_options": [
+            "had been raining",
+            "had rained",
+            "has been raining",
+            "was rained"
+          ],
+          "form": "process_vs_result",
+          "explanation": "Past perfect continuous stresses how long the process ran; past perfect stresses that it was finished or how much was done. State verbs (know, be, live as a state) take the simple form.",
+          "explanation_cz": "Předminulý průběhový zdůrazňuje, jak dlouho proces běžel; předminulý prostý zdůrazňuje, že byl dokončen, nebo kolik se toho udělalo. Stavová slovesa (know, be, live ve významu stavu) mají tvar prostý."
+        },
+        {
+          "en": "While he was speaking, someone knocked.",
+          "cz": "Zatímco mluvil, někdo zaklepal.",
+          "gap": "While he ____, someone knocked.",
+          "gap_answer": "was speaking",
+          "gap_accepts": [
+            "was speaking"
+          ],
+          "accepts": [
+            "While he was speaking, someone knocked."
+          ],
+          "quiz_options": [
+            "was speaking",
+            "spoke",
+            "had spoken",
+            "has spoken"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "Everything seemed normal, and then the lights went out.",
+          "cz": "Všechno vypadalo normálně, a pak zhasla světla.",
+          "gap": "Everything ____ normal, and then the lights went out.",
+          "gap_answer": "seemed",
+          "gap_accepts": [
+            "seemed"
+          ],
+          "accepts": [
+            "Everything seemed normal, and then the lights went out."
+          ],
+          "quiz_options": [
+            "seemed",
+            "was seeming",
+            "had seemed",
+            "has seemed"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "It was hot and the children were playing in the park.",
+          "cz": "Bylo horko a děti si hrály v parku.",
+          "gap": "It was hot and the children ____ in the park.",
+          "gap_answer": "were playing",
+          "gap_accepts": [
+            "were playing"
+          ],
+          "accepts": [
+            "It was hot and the children were playing in the park."
+          ],
+          "quiz_options": [
+            "were playing",
+            "played",
+            "had played",
+            "have played"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "I was working in the kitchen when the noise started.",
+          "cz": "Pracoval jsem v kuchyni, když ten hluk začal.",
+          "gap": "I ____ in the kitchen when the noise started.",
+          "gap_answer": "was working",
+          "gap_accepts": [
+            "was working"
+          ],
+          "accepts": [
+            "I was working in the kitchen when the noise started."
+          ],
+          "quiz_options": [
+            "was working",
+            "worked",
+            "had worked",
+            "has worked"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "As we were leaving, someone called my name.",
+          "cz": "Když jsme odcházeli, někdo zavolal moje jméno.",
+          "gap": "As we ____, someone called my name.",
+          "gap_answer": "were leaving",
+          "gap_accepts": [
+            "were leaving"
+          ],
+          "accepts": [
+            "As we were leaving, someone called my name."
+          ],
+          "quiz_options": [
+            "were leaving",
+            "left",
+            "had left",
+            "have left"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "She was reading a book while she waited.",
+          "cz": "Četla si knihu, zatímco čekala.",
+          "gap": "She ____ a book while she waited.",
+          "gap_answer": "was reading",
+          "gap_accepts": [
+            "was reading"
+          ],
+          "accepts": [
+            "She was reading a book while she waited."
+          ],
+          "quiz_options": [
+            "was reading",
+            "read",
+            "had read",
+            "has read"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "It was getting dark when we finally found the hotel.",
+          "cz": "Stmívalo se, když jsme konečně našli hotel.",
+          "gap": "It ____ dark when we finally found the hotel.",
+          "gap_answer": "was getting",
+          "gap_accepts": [
+            "was getting"
+          ],
+          "accepts": [
+            "It was getting dark when we finally found the hotel."
+          ],
+          "quiz_options": [
+            "was getting",
+            "got",
+            "had got",
+            "has got"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "He was living in London at the time.",
+          "cz": "V té době bydlel v Londýně.",
+          "gap": "He ____ in London at the time.",
+          "gap_answer": "was living",
+          "gap_accepts": [
+            "was living",
+            "lived"
+          ],
+          "accepts": [
+            "He was living in London at the time."
+          ],
+          "quiz_options": [
+            "was living",
+            "had lived",
+            "has lived",
+            "was lived"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "No one was moving; they were all watching the door.",
+          "cz": "Nikdo se nehýbal; všichni sledovali dveře.",
+          "gap": "No one ____; they were all watching the door.",
+          "gap_answer": "was moving",
+          "gap_accepts": [
+            "was moving"
+          ],
+          "accepts": [
+            "No one was moving; they were all watching the door."
+          ],
+          "quiz_options": [
+            "was moving",
+            "moved",
+            "had moved",
+            "has moved"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "The train was full, so we waited for the next one.",
+          "cz": "Vlak byl plný, takže jsme počkali na další.",
+          "gap": "The train ____ full, so we waited for the next one.",
+          "gap_answer": "was",
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "The train was full, so we waited for the next one."
+          ],
+          "quiz_options": [
+            "was",
+            "was being",
+            "had been",
+            "has been"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "They were having dinner when the guests arrived.",
+          "cz": "Večeřeli, když přijeli hosté.",
+          "gap": "They ____ dinner when the guests arrived.",
+          "gap_answer": "were having",
+          "gap_accepts": [
+            "were having"
+          ],
+          "accepts": [
+            "They were having dinner when the guests arrived."
+          ],
+          "quiz_options": [
+            "were having",
+            "had",
+            "had had",
+            "have had"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "It was raining hard, so we took a taxi.",
+          "cz": "Silně pršelo, takže jsme si vzali taxi.",
+          "gap": "It ____ hard, so we took a taxi.",
+          "gap_answer": "was raining",
+          "gap_accepts": [
+            "was raining"
+          ],
+          "accepts": [
+            "It was raining hard, so we took a taxi."
+          ],
+          "quiz_options": [
+            "was raining",
+            "rained",
+            "had rained",
+            "has rained"
+          ],
+          "form": "narrative_frame",
+          "explanation": "Past continuous paints the background — what was already going on when the scene opens. Past simple gives the events that move the story forward and cut into that background.",
+          "explanation_cz": "Průběhový minulý čas maluje pozadí — co už probíhalo, když scéna začíná. Prostý minulý čas přináší děje, které příběh posouvají dál a do toho pozadí zasáhnou."
+        },
+        {
+          "en": "She used to visit every month, but that year she did not come.",
+          "cz": "Jezdívala každý měsíc, ale ten rok nepřijela.",
+          "gap": "She ____ visit every month, but that year she did not come.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "She used to visit every month, but that year she did not come."
+          ],
+          "quiz_options": [
+            "used to",
+            "was used to",
+            "would be",
+            "use to"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "Every Sunday we would walk to the park and back.",
+          "cz": "Každou neděli jsme chodívali do parku a zpátky.",
+          "gap": "Every Sunday we ____ walk to the park and back.",
+          "gap_answer": "would",
+          "gap_accepts": [
+            "would",
+            "used to"
+          ],
+          "accepts": [
+            "Every Sunday we would walk to the park and back."
+          ],
+          "quiz_options": [
+            "would",
+            "used",
+            "did use",
+            "were"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "I was going to call her, but she had already left.",
+          "cz": "Chtěl jsem jí zavolat, ale už odešla.",
+          "gap": "I was going to call her, but she ____ already left.",
           "gap_answer": "had",
-          "accepts": ["I was going to apologise, but she had already left."],
-          "explanation": "Abandoned plan + earlier completion.",
-          "explanation_cz": "Zrušený plán + dřívější dokončení."
+          "gap_accepts": [
+            "had"
+          ],
+          "accepts": [
+            "I was going to call her, but she had already left."
+          ],
+          "quiz_options": [
+            "had",
+            "has",
+            "was",
+            "would have"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "He opened the door, walked in and closed it behind him.",
+          "cz": "Otevřel dveře, vešel dovnitř a zavřel je za sebou.",
+          "gap": "He opened the door, ____ in and closed it behind him.",
+          "gap_answer": "walked",
+          "gap_accepts": [
+            "walked"
+          ],
+          "accepts": [
+            "He opened the door, walked in and closed it behind him."
+          ],
+          "quiz_options": [
+            "walked",
+            "had walked",
+            "was walking",
+            "has walked"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "After we finished dinner, we watched a film.",
+          "cz": "Když jsme dovečeřeli, dívali jsme se na film.",
+          "gap": "After we ____ dinner, we watched a film.",
+          "gap_answer": "finished",
+          "gap_accepts": [
+            "finished",
+            "had finished"
+          ],
+          "accepts": [
+            "After we finished dinner, we watched a film."
+          ],
+          "quiz_options": [
+            "finished",
+            "were finishing",
+            "have finished",
+            "was finished"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "Before she left, she closed all the windows.",
+          "cz": "Než odešla, zavřela všechna okna.",
+          "gap": "Before she left, she ____ all the windows.",
+          "gap_answer": "closed",
+          "gap_accepts": [
+            "closed",
+            "had closed"
+          ],
+          "accepts": [
+            "Before she left, she closed all the windows."
+          ],
+          "quiz_options": [
+            "closed",
+            "was closing",
+            "has closed",
+            "was closed"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "We used to live in a small village when I was a child.",
+          "cz": "Když jsem byl dítě, bydleli jsme v malé vesnici.",
+          "gap": "We ____ live in a small village when I was a child.",
+          "gap_answer": "used to",
+          "gap_accepts": [
+            "used to"
+          ],
+          "accepts": [
+            "We used to live in a small village when I was a child."
+          ],
+          "quiz_options": [
+            "used to",
+            "would",
+            "was used to",
+            "use to"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "As a boy he would spend every holiday with his grandmother.",
+          "cz": "Jako kluk trávil každé prázdniny u babičky.",
+          "gap": "As a boy he ____ spend every holiday with his grandmother.",
+          "gap_answer": "would",
+          "gap_accepts": [
+            "would",
+            "used to"
+          ],
+          "accepts": [
+            "As a boy he would spend every holiday with his grandmother."
+          ],
+          "quiz_options": [
+            "would",
+            "was used to",
+            "did use",
+            "was"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "She said she had never been to Prague.",
+          "cz": "Řekla, že nikdy nebyla v Praze.",
+          "gap": "She said she ____ to Prague.",
+          "gap_answer": "had never been",
+          "gap_accepts": [
+            "had never been"
+          ],
+          "accepts": [
+            "She said she had never been to Prague."
+          ],
+          "quiz_options": [
+            "had never been",
+            "has never been",
+            "never was",
+            "had never being"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "The film had already started when we arrived, so we missed the first part.",
+          "cz": "Film už začal, když jsme dorazili, takže jsme přišli o první část.",
+          "gap": "The film ____ when we arrived, so we missed the first part.",
+          "gap_answer": "had already started",
+          "gap_accepts": [
+            "had already started"
+          ],
+          "accepts": [
+            "The film had already started when we arrived, so we missed the first part."
+          ],
+          "quiz_options": [
+            "had already started",
+            "has already started",
+            "was already starting",
+            "already started"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "He did not use to like his job, but now he does.",
+          "cz": "Dřív ho jeho práce nebavila, ale teď ano.",
+          "gap": "He ____ like his job, but now he does.",
+          "gap_answer": "did not use to",
+          "gap_accepts": [
+            "did not use to"
+          ],
+          "accepts": [
+            "He did not use to like his job, but now he does."
+          ],
+          "quiz_options": [
+            "did not use to",
+            "did not used to",
+            "was not used to",
+            "would not"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
+        },
+        {
+          "en": "We would often stay up late talking.",
+          "cz": "Často jsme ponocovali a povídali si.",
+          "gap": "We ____ stay up late talking.",
+          "gap_answer": "would often",
+          "gap_accepts": [
+            "would often",
+            "often used to"
+          ],
+          "accepts": [
+            "We would often stay up late talking."
+          ],
+          "quiz_options": [
+            "would often",
+            "used often to",
+            "were often",
+            "did often"
+          ],
+          "form": "narrative_control",
+          "explanation": "used to and would both give repeated past habit, but would needs an action verb, never a state. And when after, before or a plain sequence already makes the order clear, the past perfect is optional — leaving it out is usually better style.",
+          "explanation_cz": "used to i would vyjadřují opakovaný zvyk v minulosti, would ale potřebuje sloveso činnosti, nikdy stav. A když pořadí už jasně určuje after, before nebo prostá posloupnost, je předminulý čas volitelný — vynechat ho bývá stylisticky lepší."
         }
       ]
     }
-  ]
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Narrative control, not new tenses",
+        "title_cz": "Kontrola vyprávění, ne nové časy",
+        "body": "You already have every past form. The C1 skill is choosing which combination builds the story — and knowing when the plain past simple is the better choice.",
+        "body_cz": "Všechny minulé tvary už umíte. Dovednost na úrovni C1 je vybrat, která kombinace staví příběh — a poznat, kdy je lepší prostý minulý čas.",
+        "table": {
+          "caption": "the four layers",
+          "headers": [
+            "Layer",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "main events",
+              "past simple",
+              "He opened the door and sat down."
+            ],
+            [
+              "background",
+              "past continuous",
+              "The sun was shining."
+            ],
+            [
+              "earlier past",
+              "past perfect",
+              "The train had already left."
+            ],
+            [
+              "earlier process",
+              "past perfect continuous",
+              "She had been waiting for an hour."
+            ]
+          ]
+        },
+        "points": [
+          "One scene usually needs three of these, not one."
+        ]
+      },
+      {
+        "title": "Past perfect is a signal, not a rule",
+        "title_cz": "Předminulý čas je signál, ne povinnost",
+        "body": "Past perfect exists to show that one event came before another when the order is not otherwise clear. If after, before or the plain order of the sentence already says it, you do not need it.",
+        "body_cz": "Předminulý čas ukazuje, že jeden děj předcházel druhému, když to pořadí jinak není jasné. Pokud to už říká after, before nebo prosté pořadí ve větě, potřeba není.",
+        "points": [
+          "Needed: When I got to the station, the train had already left.",
+          "Not needed: After we finished dinner, we watched a film.",
+          "Not needed: He opened the door, walked in and sat down.",
+          "Overusing it makes writing heavy — that is the commonest C1 fault here."
+        ]
+      },
+      {
+        "title": "How long, or how much?",
+        "title_cz": "Jak dlouho, nebo kolik?",
+        "body": "Past perfect continuous answers how long the process ran. Past perfect answers whether it was finished, or how much got done.",
+        "body_cz": "Předminulý průběhový odpovídá na to, jak dlouho proces běžel. Předminulý prostý na to, jestli byl dokončen, nebo kolik se toho udělalo.",
+        "table": {
+          "caption": "the pair",
+          "headers": [
+            "Process (how long)",
+            "Result (how much)"
+          ],
+          "rows": [
+            [
+              "She had been writing all morning.",
+              "She had written three reports."
+            ],
+            [
+              "We had been driving for six hours.",
+              "We had driven four hundred kilometres."
+            ],
+            [
+              "He had been working in the garden. (so his hands were dirty)",
+              "He had finished the garden. (so it looked good)"
+            ]
+          ]
+        },
+        "points": [
+          "State verbs have no continuous: They had known each other for years, never `had been knowing`.",
+          "The continuous often explains a visible state: Her eyes were red; she had been crying."
+        ]
+      },
+      {
+        "title": "used to and would",
+        "title_cz": "used to a would",
+        "body": "Both give a repeated habit in the past that is over. would is the more literary of the two and takes only action verbs — a state needs used to.",
+        "body_cz": "Obojí vyjadřuje opakovaný zvyk v minulosti, který už skončil. would je z těch dvou literárnější a pojí se jen se slovesy činnosti — u stavu je nutné used to.",
+        "points": [
+          "Every Sunday we would walk to the park. (action — both work)",
+          "We used to live in a small village. (state — only used to)",
+          "Never `would live` for a state, and never `was used to` for a habit — that means something else: accustomed to.",
+          "Negative and question drop the -d: He did not use to like his job."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "caption": "check",
+          "headers": [
+            "✗",
+            "✓"
+          ],
+          "rows": [
+            [
+              "They had been knowing each other for years.",
+              "They had known each other for years."
+            ],
+            [
+              "After we had finished dinner, we had watched a film.",
+              "After we finished dinner, we watched a film."
+            ],
+            [
+              "He would live in a small village.",
+              "He used to live in a small village."
+            ],
+            [
+              "He did not used to like his job.",
+              "He did not use to like his job."
+            ],
+            [
+              "While he spoke, someone knocked.",
+              "While he was speaking, someone knocked."
+            ],
+            [
+              "I was going to call her, but she already left.",
+              "I was going to call her, but she had already left."
+            ]
+          ]
+        },
+        "points": [
+          "Czech has one past tense, so the layers must be built from meaning, not translated.",
+          "was used to + -ing = accustomed; used to + infinitive = a former habit."
+        ]
+      }
+    ]
+  }
 }
