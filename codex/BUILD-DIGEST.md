@@ -6,6 +6,117 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 20 (RUE build, claude-opus-5)
+
+### Headline: **3 vocab intros (15 → 18), the first two Use-stage sentence banks since your template (`a1_colours`, `a1_animals`), and two more A1 grammar units re-lexified to zero (audit 164 → 160). Run 19's claim that "all A1 vocab leaves now have intros" was wrong — `leaf_time_a1` was still bare, and it is the first thing this run fixed.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `cd5a61f` | **`a1_time_numbers`** picture-led intro — 12 tiles, 5 carrier frames |
+| 2 | `9d42997` | **`a2_nature`** picture-led intro — 10 tiles, 4 frames (first A2 intro) |
+| 3 | `c9dc3ae` | **`a2_food`** picture-led intro — 12 tiles, 4 frames |
+| 4 | `66d73b7` | **`a1_colours`** `sentences[]` bank — 12 sentences |
+| 5 | `c459038` | **`a1_animals`** `sentences[]` bank — 12 sentences |
+| 6 | `1ec7bfb` | `a1_there_is` re-lexified, 2 items — 2 types → **0** |
+| 7 | `c3634f6` | `a1_can` re-lexified, 2 items — 2 types → **0** |
+| 8 | `da971b2` | `codex/__pycache__` untracked + `.gitignore` (raised runs 18, 19) |
+| 9 | `2a60865` | two Czech phrasings in this run's own intros, caught on re-read |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 164 unknown types · 45 units | **160** · 43 units · baseline tightened 164 → 162 → 160 |
+
+All three green at the start of the run, so step 0 did not consume it. All three re-run green before every commit, and again after the mid-run rebase. Commit and push per unit.
+
+Your Czech-review routine pushed `7209558` mid-run; my five commits were rejected, so I fetched, rebased, **re-ran all three gates on the rebased tree** (0 / 0 / 164 vs baseline 164) and pushed again. No conflicts — it touched `CZECH-REVIEW.md` and two B1 packs, I touched A1/A2 packs.
+
+---
+
+### Correction to run 19: `leaf_time_a1` was not done
+
+Run 19's digest says *"The four A1 leaves are now finished; everything left at A1 is a `trunk_*` core-frames unit."* **That is false.** `leaf_time_a1` (`a1_time_numbers`, 84 items) is a leaf, was live, and had no intro. I found it by enumerating the registry rather than trusting the digest, which is the only reason it did not sit unnoticed for another eight runs.
+
+Worth knowing because the same sentence would have told the next run to skip A1 entirely.
+
+### Vocab intros — 15 → 18
+
+**A1 is now genuinely finished at leaf level: 16 of 16.** A2 starts at 2 of 25.
+
+| Unit | Tiles | Trap | Why that shape |
+|---|---|---|---|
+| `a1_time_numbers` | 12: number keycaps, four parts of a day, clock units | `soon` vs `early` — both *brzy* | days and months are **deliberately absent**; no picture says Monday, and the body says so rather than shipping a stretched emoji |
+| `a2_nature` | 10 | Czech *měsíc* = **moon** and **month** | month is already taught in `a1_time_numbers`, so the trap contrasts two words the student has both met |
+| `a2_food` | 12 | `soap` = mýdlo, not `soup` | also explains why *soap* is sitting in a food unit at all; `soup` is taught in `a1_food` |
+
+**Words I refused to picture rather than stretch:** *climate, environment, ocean, valley, grass, ground, rock, season* (a2_nature) and *oil, jam, cream, sauce, recipe* (a2_food). An ocean and a planet compete for the same emoji; an olive reads as an olive and a honey pot as honey. `a2_nature` therefore ships **10 tiles, not 12** — within the 8–12 band, and I would rather be at the bottom of the band than pad it.
+
+I kept run 18/19's authoring script and added checks: a tile's `cz` must match the item's own `cz` (or one of its `/`-separated variants), and **every page-2 frame must name a carrier id that an item in that pack actually declares** — which is the rule run 19 found `a1_home_family` itself breaking. The script refuses to write rather than reporting a problem, and I re-read all three written files independently afterwards.
+
+### Use-stage sentence banks — the first two
+
+Leaf packs without a bank: **43 → 41.** (The 45 figure in the prompt counts leaves; the 22 `practice: "frames"` trunks drive Use from `block.items` and need no bank.)
+
+Because your `exposed_text` change means the audit reads these, I generated the pool with `--before <node>` **first** and checked every sentence against it mechanically, reusing `audit.py`'s own `variants()`/`tokens_of()`/`GLUE` rather than re-implementing the rule.
+
+**That check changed the content, and I would not have caught it by eye.** At `leaf_animals_a1`, the words `big`, `small`, `black` and `white` are all taught *later* on the path — so the obvious sentence "The elephant is a big animal" is illegal, and the bank describes what animals *do* instead ("The cow drinks water", "The cat sees a mouse"). `a1_colours` sits after almost everything, so its nouns were free; `a1_animals` was genuinely constrained.
+
+Shapes came from each pack's `use[]` carriers. `a1_colours` declares only two (`it_is`, `the_bag_is`), so all twelve sentences are *X is COLOUR* varied by subject — that is the honest read of the carriers, not a shortcut.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- `a1_animals` — *"Prase žere chleba."* **žrát** is the correct verb for an animal eating, but it is blunt; *jí* is softer and also defensible. Register call, not a grammar call.
+- `a1_colours` — *"Ta taška je růžová."* The demonstrative renders English *the*; without it (*"Taška je růžová."*) is also natural. I kept *ta* because the sentence is pointing at a thing.
+- `a1_colours` — *"Jakou barvu má tvoje auto?"* vs *"Jaké barvy je tvoje auto?"* Both are used; I took the accusative one as the more everyday.
+- `a1_animals` — *"Vidím v zoo slona."* Word order puts the place first; *"Vidím slona v zoo."* is equally correct.
+
+Everything else — the gender agreement across all twelve colour sentences (*jablko je červené* n · *strom je zelený* m · *kočka je černá* f · *vlasy / mraky / šaty jsou -é* pl) and the accusative animates in `a1_animals` (*psa, ptáka, slona, králíka*) — I am confident in.
+
+### Sequencing — two more A1 grammar units to zero
+
+| Unit | Was | Now | Gap |
+|---|---|---|---|
+| `a1_there_is` | There is a **cat** under the chair. | There is a **bag** under the chair. | still `is` |
+| | There is a **dog** in the garden. | There is a **table** in the garden. | still `is` |
+| `a1_can` | You can **use** my phone. | You can **take** my phone. | still `can` |
+| | We can't go **now**. | We can't go **home**. | still `can't` |
+
+No teaching point deleted, no gap moved, every item kept in its original cluster. **`cat` and `dog` are taught by `leaf_animals_a1`, and `now` by `leaf_time_a1` — both units I authored content for earlier in this same run**, and both sit *later* on the path than the grammar units that were using their words. Exactly the ordering failure the audit exists to catch, invisible to anyone reading either pack alone.
+
+One Czech change is a frame change, not a word swap: *použít* takes a bare accusative, *vzít* takes the reflexive — *"Můžeš si vzít můj telefon."* Swapping the verb without swapping the frame would have shipped wrong Czech past all three gates, which check neither.
+
+Committed separately with the audit artefacts regenerated for each, so the ratchet has an honest intermediate state (164 → 162 → 160).
+
+---
+
+### Forks and judgment calls
+
+**1. The 17 A1 `trunk_*` intros are still blocked on you — second run asking.** Run 19 flagged that core-frames packs hold 12 gap items rather than a word list, so *"8–12 tiles that carry meaning in a picture"* does not describe them. That is still true and I did **not** improvise a shape. Instead I finished the last A1 leaf and moved to A2 leaves, where the spec applies exactly. **A1 vocab intros are therefore 16/33, and will stay there until you say which page 1 the trunks get** — schematic, plain frame table, or something else. Improvising per-unit would give you 17 inconsistent intros, which is worse than 17 missing ones.
+
+**2. New fork: `a2_clothes` cannot take an emoji page 1.** I planned it as one of this run's units and dropped it after reading the pack. Of its 12 items only *glove, ring, pants* picture honestly — *belt* and *button* have no emoji at all, *jumper*'s nearest emoji is a coat, and *fashion / clothing / smart / casual* are abstract. That is 3 tiles against a floor of 8. **My read is that it wants a `contrast` schematic labelled smart / casual**, which is the pack's actual teaching heart, but that is a shape call on a unit type (a small A2 leaf that is mostly abstract) that has no precedent yet. Conservative path: left unbuilt, flagged here. Say the word and it is a ten-minute unit.
+
+**3. Repair queue: nothing processed, ninth consecutive run.** Same three unticked items, same reasons — *vocab level badge* and *`order_click`* are both marked **engine work, cloud must not ship**, and `b2_clear_claims` is a style decision reserved for you with the conservative path already taken. **Step 1 has been a no-op every hour since run 12.** If you want the cloud lane doing repair work, the queue needs an item that is content, not shell.
+
+**4. I actioned the `__pycache__` churn this time rather than raising it a third time.** Runs 18 and 19 both reverted it by hand and logged it; I reverted it four times before deciding that was silly. `.gitignore` + `git rm --cached`, nothing in the app reads it, Python regenerates it on demand. **This is the one thing this run touched that is not content**, and it is one `git revert` away if you disagree. My reasoning: with four lanes now pushing to `build`, a tracked file that every single run rewrites with different bytes is a merge conflict waiting to happen for zero benefit.
+
+**5. Step 5 (new C1 unit) skipped, deliberately.** Steps 1–4 filled the run: 3 intros, 2 banks, 2 sequencing repairs, 9 commits. A C1 pack is 48 items authored directly and verified, and the standing rule is that a half-done unit is worse than no unit. Both content backlogs also outrank new units in the current prompt. C1 remains the frontier and is untouched this run.
+
+**6. Two Czech fixes to my own output, caught on re-reading, not by any gate** (`2a60865`). `a2_food`'s `title_cz` said *"Jídlo, vaření a jídlo venku"* — *jídlo* twice in one line. `a1_time_numbers`' `body_cz` had *"ty se naučíte v Match"* instead of the natural clitic order *"naučíte se je v Match"*. Noting these because they are the class of error nothing mechanical will ever catch, and both were mine from forty minutes earlier in the same run.
+
+### Smoke-check list
+
+- **`leaf_time_a1`** — the last A1 leaf to get an intro. Check the body's claim that days and months are absent on purpose reads as deliberate rather than as a gap.
+- **`leaf_nature_a2` / `leaf_food_a2`** — the first two A2 intros. `a2_nature` has **10** tiles where every other unit has 12; tell me if that reads as thin or as honest.
+- **`leaf_colours_a1` and `leaf_animals_a1` Use stages** — the first two banks after your template. These are the first non-template sentences the audit has ever policed; the `a1_animals` bank in particular is shaped by what was *not* available at that position.
+- The four re-lexified grammar items, especially **`Můžeš si vzít můj telefon.`** (reflexive *si*, which the old *použít* did not take).
+
+---
+
 ## 2026-08-07 · cloud run 19 (RUE build, claude-opus-5)
 
 ### Headline: **4 more A1 vocab intros (11 → 15 of 30), the two worst A1/A2 sequencing units repaired to zero (audit 169 → 164), and `c1_spoken_vs_written` built — the first C1 node in three runs whose scope was NOT already owned. Your `sentences[]` commit landed mid-run and I rebased onto it; all three gates re-run green after the rebase.**
