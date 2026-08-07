@@ -6,6 +6,143 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 23 (RUE build, claude-opus-5)
+
+### Headline: **3 A2 vocab intros (24 → 27), 2 more Use-stage sentence banks (`a1_freetime`, `a1_health` — leaf packs still missing one: 37 → 35), and 3 items re-lexified across 2 units (audit 153 → 150). All three gates green at the start, so step 0 did not consume the run.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `ed191e3` | **`a2_feelings`** intro — `contrast` schematic, 4 carrier frames |
+| 2 | `27ae76f` | **`a2_work`** intro — 10 tiles, 5 frames |
+| 3 | `8cf37dc` | **`a2_society`** intro — `branch` schematic, 5 frames |
+| 4 | `ac2ac71` | **`a1_freetime`** `sentences[]` bank — 12 sentences, 14 lemmas |
+| 5 | `6a28701` | **`a1_health`** `sentences[]` bank — 12 sentences, 12 lemmas |
+| 6 | `b843c30` | `trunk_social_a1` re-lexified, 1 item — 2 types → **1** |
+| 7 | `0c1d8ce` | `trunk_verbs_more3_a1` re-lexified, 2 items — 2 types → **0** |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 153 unknown types · 40 units | **150** · 39 units · baseline tightened 153 → 150 |
+
+Commit and push per unit, gates re-run before each. Nothing else pushed to `build` while I worked, so no rebase was needed.
+
+> **Correction to four of this run's own commit messages.** I wrote the path
+> positions in commits `ac2ac71`, `6a28701` and `b843c30` from a
+> vocab-only index instead of the real interleaved path, so they understate
+> every position: `leaf_freetime_a1` is path **12**, not 6; `leaf_health_a1`
+> is **24**, not 22; `trunk_social_a1` is **5**, not 3; `help` arrives **two**
+> steps after social, not one; `important` arrives **28** steps after health,
+> not ten. `ac2ac71` also says 13 lemmas where the bank has **14**. The
+> numbers in this digest entry are the recomputed ones and are what should be
+> trusted. Nothing about the content decisions changes — every legality call
+> was made by importing `audit.py` and asking it, not by counting steps — and
+> the commits are already pushed, so they stand uncorrected rather than
+> force-pushed.
+
+---
+
+### Vocab intros — 24 → 27
+
+A1 leaves stay finished at 16/16. **A2 leaves: 8 → 11 of 22.** Built in path order (63, 65, 67).
+
+| Unit | Page 1 | Trap | Why that shape |
+|---|---|---|---|
+| `a2_feelings` | `contrast` schematic, *angry \| kind* | Czech *Mám strach* is **have**, English *I am afraid* is **be** | AGENTS.md names Feelings as an abstract set, and the contrast is the pack's real organising principle — see below |
+| `a2_work` | 10 tiles | *employer* vs *employee* | 10 honest tiles, not 12; the three I dropped are listed below |
+| `a2_society` | `branch` schematic, root *state* → government · law · war · religion | *police* is plural in English | AGENTS.md names Society as an abstract set |
+
+**`a2_feelings` took `contrast` rather than `scale`.** The obvious reading of a feelings pack is intensity (calm → nervous → afraid), which is what `scale` draws. I did not use it, because it would be a lie about this pack: 25 items and only about four of them sit on one intensity axis. What the pack actually splits into is adjectives that say how you feel *at this moment* (angry, nervous, excited, worried, confused) and adjectives that describe *the person* (kind, polite, honest, rude, serious) — same `I am …` frame, two different jobs, and that is a distinction a student needs before Match starts pairing them. `contrast` draws exactly that.
+
+**`a2_work` — the three words I refused to give a tile.** The spec says 8–12 tiles that *genuinely carry meaning in a picture*, and run 22's precedent is that honest tiles beat a full grid:
+- **`department`** — the obvious glyph is 🏬, which is a *department store*. Planting a false friend on the intro page of the unit that teaches the word is worse than leaving it off.
+- **`wage`** — a second money glyph next to `salary` 💰 distinguishes neither, and the pack teaches them as different things (monthly *plat* vs hourly *mzda*).
+- **`officer`** — 👮 is a police officer; this pack glosses the word *úředník / důstojník*. The glyph would fight the gloss.
+
+The **work for / work in** split is in the body rather than in the note, because it is descriptive rather than a trap, and the page-2 frames then show it (`I work for …` / `I work in …`, both real declared carriers of this pack).
+
+**Two defects in my own output, caught on the re-read off disk, not by any gate:**
+1. `a2_feelings` body used the phrase *"what kind of person you are"* — in a pack where **`kind` is a tile word meaning laskavý**. Two senses of the same word in one paragraph, one of them the word being taught. Reworded to *"describe the person, not the moment"*.
+2. `a2_feelings` `body_cz` read *"Skoro vše jsou přídavná jména…"* — *vše* is singular, *jsou* is plural. Now *"Skoro všechna tato slova jsou…"*.
+
+**The frame check is now grounded in the real carrier ids rather than derived.** Run 20 noted there is no carrier-wording registry (fork still open). I built the inverse table from the 39 ids that actually occur in packs, and it immediately caught that **my derivation was wrong twice**: the id is `it_is`, not `it_is_adj`, and `the_bag_is` is a real id I would have rejected as invented. Run over all 24 existing intros, the check reports **exactly one break — `a1_home_family`'s `"This is my …"`**, which is the one run 20 already logged and deliberately left because you are smoking it. That is a useful independent confirmation that nothing else has drifted.
+
+### Use-stage sentence banks — 2 more
+
+Leaf packs without a bank: **37 → 35.** A1 leaves still without one: `leaf_time_a1`, `leaf_work_a1`, `leaf_school_a1`, `leaf_tech_a1`, `leaf_nature_a1`, `leaf_shopping_a1`, `leaf_ideas_a1` (7 left before A2 starts). Every sentence was checked against `audit.py`'s **own** `variants()` / `tokens_of()` / `GLUE`, by importing the module rather than reimplementing it, by a script that refuses to write.
+
+**`a1_freetime` sits at path 12 — 415 legal tokens, the tightest bank yet.** At that position the only substantial noun source is `leaf_home_family` (path 10), so family subjects dominate the bank (mother, sister, brother). That is the pool, not a stylistic choice; the alternative was to write sentences the audit would reject.
+
+**The carrier-vs-position finding now has a third and fourth instance, and they are worth reading together:**
+
+| Pack | Path | Declares | Word actually taught at | Gap |
+|---|---|---|---|---|
+| `a1_food` (run 22) | 19 | `i_buy_a` ×14 | `leaf_shopping_a1`, path 44 | 25 steps |
+| `a1_freetime` | 12 | `i_want_to` on **all 11 verbs** | `a1_like_want_need`, path 26 | 14 steps |
+| `a1_health` | 24 | `is_important` on `health` | `trunk_adjectives_a1`, path 52 | 28 steps |
+
+This is not a data bug and I have not touched the `use[]` tags. It is the consequence of the rule AGENTS.md already states — carriers name the frames a word *fits*, not frames legal at that word's position — and it is now reliable enough to plan around: **assume any carrier may be dead at any given position, and check before authoring rather than after.** One number for scale: `is_important` is declared **224 times** course-wide, but `important` is not taught until path 52, so every declaration below that point is unwritable.
+
+**A collision I designed out rather than shipped:** `a1_health` glosses **both `ill` and `sick` as *nemocný***. Two prompts would have had two equally right answers with nothing to choose between them — the exact defect run 22 swept out of the older banks. One sentence (*Jsem nemocný.*) now carries both in `accepts`. Same reasoning kept the bank to a **single *Bolí mě …* prompt**: *Bolí mě hlava* → **I have a headache** and *Bolí mě břicho* → **My stomach hurts** are the same Czech construction asking for two different English shapes, so the second was dropped rather than written.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- `a1_freetime` — *Mám rád fotbal.* and `a1_health` — *Jsem nemocný.* are **masculine-only**. The Czech is the prompt and the English is what is graded, so nothing is mis-graded; but a female student reads a sentence that is not about her. `a1_core_frames_be_have` solved this with *Jsem unavený. / Jsem unavená.* — **if you want that convention in the banks, say so and it is a sweep, not a per-run decision.**
+- `a1_freetime` — *Potřebuju léky.* / *Dívám se na filmy doma.*: colloquial *potřebuju* and the spoken word order, deliberate, matching the *piju / tyhle* register calls of run 22.
+- `a1_freetime` — *Oslava je u nás doma.* renders **The party is at our house.** *u nás doma* is closer to "at our place"; **at our home** is in `accepts`.
+- `a1_health` — *Mám chřipku.* → **I have flu**, British and article-less. *I have the flu* is in `accepts`.
+- `a1_health` — *Potřebujeme si odpočinout.* → **We need to rest.** Reflexive *si* + perfective *odpočinout*; I believe this is the natural form, but it is the only sentence in either bank with a clitic.
+- `trunk_verbs_more3_a1` — *Chci se přidat k týmu.* replaced *Chci vstoupit do klubu.* *přidat se k* is the more natural collocation for joining a team than *vstoupit do*; both are correct.
+
+Everything else — the accusatives (*hudbu, knihy, horečku, chřipku*), the locative *v kuchyni*, the genitive *do posilovny*, the instrumental *s rodinou*, and the adjective agreements (*šťastná, nudná, zdravý*) — I am confident in.
+
+### Sequencing — 153 → 150
+
+Both units were the joint-worst A1/A2 entries left (2 types each). **Nothing at A1 or A2 now carries more than one.**
+
+| Unit | Path | Was | Now | Teaching point kept |
+|---|---|---|---|---|
+| `trunk_verbs_more3_a1` | 35 | I spend **money** on food. | I spend **time** with my family. | gap is still *spend* |
+| | | I want to join the **club**. | I want to join the **team**. | gap is still *join* |
+| `trunk_social_a1` | 5 | **Please help me.** | **Yes, please.** | gap is still *please* |
+
+*money* is taught later (`leaf_shopping_a1`, path 44) and *club* **is never taught anywhere in the course**; *time* and *team* are both taught earlier, so both swaps are pure gain.
+
+**The `trunk_social_a1` change is a frame move, not a word swap, and it deserves a look.** At path 5 the legal set is **238 tokens, of which only 32 are not GLUE** — the entire taught vocabulary is *adjective, bag, bags, books, brother, bye, car, cars, doctor, dogs, excuse, friend, friends, goodbye, hello, hi, house, meet, name, noun, phone, phones, pronoun, sorry, student, students, teacher, teachers, thank, thanks, tired, verb*. There is **no legal verb** that "Please ___ me." could take, so no word swap exists. *Yes, please.* keeps the gap on `please`, and is the commonest position the word occupies in spoken English. Nothing is lost course-wide: `help` is still taught two steps later at `trunk_verbs_daily_a1` (path 7).
+
+**Which points at the cheaper fix, and it is yours, not mine.** The only reason `help` is illegal at `trunk_social_a1` is running order: social is the vocab side of the word-order step (path 5), `trunk_verbs_daily_a1` the vocab side of the present-simple step (path 7). **Swapping the vocab sides of those two spine steps would clear the violation with no content change at all** — and *Please help me.* is a better survival phrase than *Yes, please.* is. I did not do it: reordering the spine is a path decision and the run's lane is content. Say the word and it is a two-line edit to `data/spine.json`.
+
+---
+
+### Forks and judgment calls
+
+**1. `nice` in "Nice to meet you." — left, logged, per the rule.** It is the last violation in `trunk_social_a1`. `nice` is not taught until `trunk_adjectives_a1` (path 52), and the item is a **fixed social formula** — there is no rewrite that keeps the teaching point, so per the standing prompt it is logged as a fork rather than dodged. **There is a legitimate one-line fix I did not take:** `audit.py`'s `targets_of()` reads an item's `lemma` field, so adding `"lemma": "nice"` to that item would make the pack teach the word and clear the violation. I did not, because it is a real pedagogical claim with downstream consequences — it tells every later unit that `nice` is available when the student has only ever met it inside one frozen phrase. **Conservative path taken: leave it. Your call whether chunk-taught words should count as taught.**
+
+**2. Fork 1 (contraction / genitive tokenising) untouched, still yours.** Nothing this run needed a possessive-'s, so no new evidence. Run 22's recommendation stands: one rule in `variants()` stripping a trailing `'s` clears both the five contractions and the genitive block.
+
+**3. Fork 2 (`a2_clothes`, `a2_home` schematic-or-emoji) untouched, still yours.** Both are still without an intro. I did **not** improvise an answer off the back of using schematics for feelings and society — those two are named in AGENTS.md as abstract sets, so the spec already decides them; clothes and home are concrete units with too few emoji, which is a different question and still open. **11 of 22 A2 leaves are done; those two are among the 11 remaining and will keep being skipped until you answer.**
+
+**4. Repair queue: nothing processed, twelfth consecutive run.** Same three unticked items, all still blocked on you rather than on me — *vocab level badge* and *`order_click`* are both marked **engine work, cloud must not ship**, and `b2_clear_claims` is a style decision with the conservative path already taken. **The queue has still had no content item since it was created.** Three candidates from this run, all one-line-plus-judgment, which is the shape the cloud lane can actually close: the `'s` rule (fork 1), the schematic decision (fork 2), and the social/verbs_daily spine swap above.
+
+**5. Czech-review "For James" items untouched, again.** `CZECH-REVIEW.md` now carries eight open items across four passes — the seven from run 22 plus the new `a1_clothes` *suit at work / do práce* pairing, where the Czech says *to work* and `accepts` only grades *at work*. That last one is an **English** fix (add the to-work form to `accepts`), so it is inside my lane the moment you say yes — but the rule is to act only once you have answered, and you have not.
+
+**6. The 17 A1 `trunk_*` intros remain blocked on you — fifth run asking.** Core-frames packs hold 12 gap items, not a word list, so "8–12 tiles that carry meaning in a picture" does not describe them. **A1 vocab intros are 16/33 and will stay there until you say which page 1 the trunks get.** Noting it so the count is not read as neglect.
+
+**7. Step 5 (new C1 unit) skipped, deliberately.** Steps 2–4 used their full per-run allowance (3 intros, 2 banks, 2 sequencing units — 7 commits), and both content backlogs outrank new units in the standing prompt. C1 remains the frontier, untouched.
+
+### To smoke
+
+- **`a2_feelings` page 1** is the first use of the `contrast` schematic outside a false-friend pair (`a1_home_family`'s home/house). It is being used for a *category* split, not a word pair — worth a look at whether the two-box drawing reads that way, or whether it looks like it is claiming *angry* and *kind* are opposites.
+- **`a2_work` page 1 has two multi-codepoint emoji** (🧑‍💼 businessman, 🧑‍🤝‍🧑 team). If either renders as separate glyphs or a tofu box on your machine, say so and I will swap them for single-codepoint tiles.
+- **`trunk_social_a1` item 6** now reads *Ano, prosím. → Yes, please.* — it sits two items away from *Ano. → Yes.*, and I would like to know the pair does not feel redundant in Match.
+
+---
+
 ## 2026-08-07 · cloud run 22 (RUE build, claude-opus-5)
 
 ### Headline: **3 A2 vocab intros (21 → 24), 2 more Use-stage sentence banks (`a1_food`, `a1_clothes` — leaf packs still missing one: 39 → 37), 2 units re-lexified (audit 157 → 153), and run 21's requested Czech-collision sweep over the five existing banks, which found two real grading defects — one of them in run 21's own output.**
