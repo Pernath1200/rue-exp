@@ -5,17 +5,250 @@
   "tree_node": "c1_clefts_fronting",
   "codex_unit": "G_SS-C1-01",
   "practice": "frames",
-  "note": "It-cleft / wh-cleft / the reason why / all… · fronting · emphatic do · thin shell 2026-08-06 · pairs with inversion unit",
+  "note": "it-clefts (agreement of be, that vs who, fronted adverbial keeps its preposition, not until / because of) · wh-clefts incl. What + do + be + bare infinitive and singular be before a plural focus · the reason (why) … is that … (never is because) and All (that) … is … · fronting without inversion, contrasted with the inversion unit · emphatic do/does/did · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 12)",
   "default_direction": "cz_to_en",
-  "check": { "sequence": ["quiz"] },
-  "quality": "thin_shell",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
   "intro": {
     "cards": [
       {
-        "title": "Put the news where the reader looks",
-        "title_cz": "Dejte informaci tam, kam se čtenář dívá",
-        "body": "**Clefts** package one piece of information as the focus (*It was… that…*, *What… is…*). **Fronting** moves an object/adverbial first. **Emphatic do** stresses the verb. Together they shape information structure — not new facts, better packaging.",
-        "body_cz": "**Clefts** zdůrazní jednu informaci. **Fronting** posune prvek na začátek. **Emphatic do** zdůrazní sloveso. Jde o strukturu informace."
+        "title": "Clefts: one sentence, split in two",
+        "title_cz": "Klefty: jedna věta rozdělená na dvě",
+        "body": "A cleft takes a sentence you could say in one clause and splits it into two, so that one element sits in the spotlight and the rest is presented as already known. No new facts are added — only the packaging changes. Czech does this with word order and with stress; English word order is too fixed for that, so it builds a frame instead.",
+        "body_cz": "Kleft vezme větu, kterou byste řekli jedním celkem, a rozdělí ji na dvě části tak, aby jeden prvek stál ve světle reflektoru a zbytek se tvářil jako už známý. Nepřidává žádnou novou informaci — mění se jen zabalení. Čeština to dělá slovosledem a přízvukem; anglický slovosled je na to příliš pevný, a tak si staví celou vazbu.",
+        "table": {
+          "caption": "one plain sentence, four packagings",
+          "headers": [
+            "Frame",
+            "Example"
+          ],
+          "rows": [
+            [
+              "plain",
+              "Her advice saved the project."
+            ],
+            [
+              "it-cleft",
+              "It was her advice that saved the project."
+            ],
+            [
+              "wh-cleft",
+              "What saved the project was her advice."
+            ],
+            [
+              "all-cleft",
+              "All that saved the project was her advice."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "The it-cleft",
+        "title_cz": "It-cleft",
+        "body": "it + be + the focus + that. Use who instead of that when the focus is a person. The be belongs to it, so it is always is or was — it never becomes are, however plural the focus is.",
+        "body_cz": "it + be + zdůrazněný prvek + that. Je-li zdůrazněným prvkem osoba, místo that se dá who. Sloveso be patří k it, takže je vždy is nebo was — nikdy se nemění na are, ať je zdůrazněný prvek jakkoli v množném čísle.",
+        "table": {
+          "caption": "what can go in the spotlight",
+          "headers": [
+            "Focus",
+            "Example"
+          ],
+          "rows": [
+            [
+              "person",
+              "It was Petr who broke the window."
+            ],
+            [
+              "thing",
+              "It is the deadline that worries me."
+            ],
+            [
+              "place",
+              "It was in Brno that we first met."
+            ],
+            [
+              "reason",
+              "It was because of the rain that we cancelled the trip."
+            ],
+            [
+              "time",
+              "It was not until midnight that the results appeared."
+            ]
+          ]
+        },
+        "points": [
+          "A fronted adverbial keeps its preposition: It was in Brno that…, not It was Brno that…",
+          "It will be the students who lose most. — the tense of be follows the sentence, the number never does.",
+          "Negate the focus, not the frame: It is not the money that matters to them."
+        ]
+      },
+      {
+        "title": "The wh-cleft",
+        "title_cz": "Wh-cleft",
+        "body": "Also called a pseudo-cleft. The known part goes into a what-clause at the front and the focus lands after be. The what-clause counts as one singular thing, so be stays singular even before a plural focus.",
+        "body_cz": "Také se mu říká pseudo-cleft. Známá část jde do vedlejší věty s what na začátek a zdůrazněný prvek přijde až za sloveso be. Věta s what se počítá jako jedna věc v jednotném čísle, takže be zůstává v jednotném čísle i před množným zdůrazněným prvkem.",
+        "table": {
+          "caption": "what goes after be",
+          "headers": [
+            "Focus is a…",
+            "Example"
+          ],
+          "rows": [
+            [
+              "noun phrase",
+              "What I need is a quiet room."
+            ],
+            [
+              "plural noun phrase",
+              "What we need is more chairs."
+            ],
+            [
+              "action",
+              "What he did was call the police."
+            ],
+            [
+              "to-infinitive",
+              "What they decided was to postpone the meeting."
+            ],
+            [
+              "whole clause",
+              "What the report shows is that costs have gone up sharply."
+            ]
+          ]
+        },
+        "points": [
+          "After What + subject + do + be, the verb is a bare infinitive: What he did was call…, not was called.",
+          "What we need is more chairs. — is, not are. This is the mistake to watch for.",
+          "What, never that or which: ✗ That she wants is more time."
+        ]
+      },
+      {
+        "title": "The reason … and All …",
+        "title_cz": "Vazby s the reason a s all",
+        "body": "Two more frames with the same job. The reason (why) … is that … names a cause. All (that) … is … means 'the only thing' — the that is usually dropped, and the frame is a common polite way of making a request sound small.",
+        "body_cz": "Další dvě vazby se stejnou funkcí. The reason (why) … is that … pojmenuje příčinu. All (that) … is … znamená „jediné, co…“ — that se obvykle vypouští a celá vazba je běžný zdvořilý způsob, jak zmenšit váhu vlastní žádosti.",
+        "table": {
+          "caption": "the second half",
+          "headers": [
+            "Frame",
+            "Example"
+          ],
+          "rows": [
+            [
+              "the reason why … was + noun",
+              "The reason why she left was the noise."
+            ],
+            [
+              "the reason … is that + clause",
+              "The reason I called is that I need your advice."
+            ],
+            [
+              "the reason for + noun",
+              "The reason for the delay was bad weather."
+            ],
+            [
+              "All … is + noun",
+              "All I want is an honest answer."
+            ],
+            [
+              "All … do is + bare infinitive",
+              "All you have to do is sign here."
+            ]
+          ]
+        },
+        "points": [
+          "✗ The reason is because… — after the reason … is, English wants that.",
+          "All she needs is a few days off. — singular is again, exactly as in the wh-cleft.",
+          "All we did was wait. — bare infinitive after was, the same rule as What he did was call…"
+        ]
+      },
+      {
+        "title": "Fronting and emphatic do",
+        "title_cz": "Fronting a emfatické do",
+        "body": "Fronting moves an object or an adverbial to the front to contrast it with something else or to pick up what the previous sentence ended on. The crucial point is that the subject and the verb do NOT swap — that is what separates fronting from inversion. Emphatic do insists that the verb is true.",
+        "body_cz": "Fronting posune předmět nebo příslovečné určení dopředu, aby ho postavil do kontrastu s něčím jiným nebo navázal na konec předchozí věty. Klíčové je, že podmět a sloveso si NEvymění místa — právě tím se fronting liší od inverze. Emfatické do trvá na tom, že sloveso platí.",
+        "table": {
+          "caption": "fronting vs inversion",
+          "headers": [
+            "Fronted element",
+            "Subject + verb"
+          ],
+          "rows": [
+            [
+              "This book",
+              "I finished in two days."
+            ],
+            [
+              "That part of the report",
+              "I have already read."
+            ],
+            [
+              "Such details",
+              "we can talk about later."
+            ],
+            [
+              "Never again (negative → inversion)",
+              "will I make that mistake."
+            ]
+          ]
+        },
+        "points": [
+          "Only a negative or limiting element forces inversion. A plain fronted object does not.",
+          "His first novel I have never managed to finish. — never sits inside, so no inversion.",
+          "do / does / did + bare infinitive: She does know the answer, not She does knows.",
+          "In speech the stress falls on do; in writing the word itself carries the emphasis."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "caption": "check",
+          "headers": [
+            "✗",
+            "✓"
+          ],
+          "rows": [
+            [
+              "It were the students who lost most.",
+              "It was the students who lost most."
+            ],
+            [
+              "It was Brno that we first met.",
+              "It was in Brno that we first met."
+            ],
+            [
+              "What we need are more chairs.",
+              "What we need is more chairs."
+            ],
+            [
+              "What he did was called the police.",
+              "What he did was call the police."
+            ],
+            [
+              "The reason I called is because I need your advice.",
+              "The reason I called is that I need your advice."
+            ],
+            [
+              "All what I want is an honest answer.",
+              "All I want is an honest answer."
+            ],
+            [
+              "This book finished I in two days.",
+              "This book I finished in two days."
+            ],
+            [
+              "She does knows the answer.",
+              "She does know the answer."
+            ]
+          ]
+        },
+        "points": [
+          "Czech can put the focus last and lean on it with the voice; English has to build one of these frames instead."
+        ]
       }
     ]
   },
@@ -25,94 +258,1012 @@
       "title": "Clefts & fronting · C1",
       "items": [
         {
-          "en": "It was Maria who called you.",
-          "cz": "Byla to Maria, kdo ti volal.",
-          "gap": "It ____ Maria who called you.",
+          "en": "It was Petr who broke the window.",
+          "cz": "Byl to Petr, kdo rozbil to okno.",
+          "gap": "____ Petr who broke the window.",
+          "gap_answer": "It was",
+          "gap_accepts": [
+            "It was"
+          ],
+          "accepts": [
+            "It was Petr who broke the window."
+          ],
+          "quiz_options": [
+            "It was",
+            "It were",
+            "There was",
+            "Was it"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It is the deadline that worries me, not the workload.",
+          "cz": "Trápí mě ten termín, ne množství práce.",
+          "gap": "It ____ the deadline that worries me, not the workload.",
+          "gap_answer": "is",
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "It is the deadline that worries me, not the workload."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "has",
+            "does"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was in Brno that we first met.",
+          "cz": "Bylo to v Brně, kde jsme se poprvé potkali.",
+          "gap": "It was ____ that we first met.",
+          "gap_answer": "in Brno",
+          "gap_accepts": [
+            "in Brno"
+          ],
+          "accepts": [
+            "It was in Brno that we first met."
+          ],
+          "quiz_options": [
+            "in Brno",
+            "Brno",
+            "at Brno",
+            "to Brno"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was not until midnight that the results appeared.",
+          "cz": "Výsledky se objevily až o půlnoci.",
+          "gap": "It was not until midnight ____ the results appeared.",
+          "gap_answer": "that",
+          "gap_accepts": [
+            "that"
+          ],
+          "accepts": [
+            "It was not until midnight that the results appeared."
+          ],
+          "quiz_options": [
+            "that",
+            "when",
+            "than",
+            "which"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was her advice that saved the project.",
+          "cz": "Byla to její rada, která ten projekt zachránila.",
+          "gap": "It was her advice ____ saved the project.",
+          "gap_answer": "that",
+          "gap_accepts": [
+            "that"
+          ],
+          "accepts": [
+            "It was her advice that saved the project."
+          ],
+          "quiz_options": [
+            "that",
+            "who",
+            "what",
+            "which saved"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was only after the meeting that he mentioned the problem.",
+          "cz": "Ten problém zmínil až po schůzce.",
+          "gap": "____ only after the meeting that he mentioned the problem.",
+          "gap_answer": "It was",
+          "gap_accepts": [
+            "It was"
+          ],
+          "accepts": [
+            "It was only after the meeting that he mentioned the problem."
+          ],
+          "quiz_options": [
+            "It was",
+            "It had",
+            "There was",
+            "That was"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It is not the money that matters to them.",
+          "cz": "Nejde jim o peníze.",
+          "gap": "It is ____ the money that matters to them.",
+          "gap_answer": "not",
+          "gap_accepts": [
+            "not"
+          ],
+          "accepts": [
+            "It is not the money that matters to them."
+          ],
+          "quiz_options": [
+            "not",
+            "no",
+            "none",
+            "not a"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was the noise from the street that woke me at four.",
+          "cz": "Vzbudil mě ve čtyři hluk z ulice.",
+          "gap": "It ____ the noise from the street that woke me at four.",
           "gap_answer": "was",
-          "accepts": ["It was Maria who called you."],
-          "explanation": "It-cleft for focus on the person.",
-          "explanation_cz": "It-cleft pro důraz na osobu."
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "It was the noise from the street that woke me at four."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "had",
+            "did"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It will be the students who lose most.",
+          "cz": "Nejvíc na to doplatí studenti.",
+          "gap": "____ the students who lose most.",
+          "gap_answer": "It will be",
+          "gap_accepts": [
+            "It will be"
+          ],
+          "accepts": [
+            "It will be the students who lose most."
+          ],
+          "quiz_options": [
+            "It will be",
+            "They will be",
+            "It will",
+            "There will be"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was because of the rain that we cancelled the trip.",
+          "cz": "Ten výlet jsme zrušili kvůli dešti.",
+          "gap": "It was ____ the rain that we cancelled the trip.",
+          "gap_answer": "because of",
+          "gap_accepts": [
+            "because of"
+          ],
+          "accepts": [
+            "It was because of the rain that we cancelled the trip."
+          ],
+          "quiz_options": [
+            "because of",
+            "because",
+            "for that",
+            "due"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It is his patience that I value most.",
+          "cz": "Nejvíc si na něm cením jeho trpělivosti.",
+          "gap": "____ his patience that I value most.",
+          "gap_answer": "It is",
+          "gap_accepts": [
+            "It is"
+          ],
+          "accepts": [
+            "It is his patience that I value most."
+          ],
+          "quiz_options": [
+            "It is",
+            "It has",
+            "That is",
+            "There is"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
+        },
+        {
+          "en": "It was the second email that finally reached her.",
+          "cz": "Nakonec se k ní dostal až ten druhý e-mail.",
+          "gap": "It was the second email ____ finally reached her.",
+          "gap_answer": "that",
+          "gap_accepts": [
+            "that"
+          ],
+          "accepts": [
+            "It was the second email that finally reached her."
+          ],
+          "quiz_options": [
+            "that",
+            "who",
+            "what",
+            "which finally"
+          ],
+          "form": "it_cleft",
+          "explanation": "An it-cleft splits one sentence in two so that a single element carries the focus: it + be + the focused element + that (or who for a person). Everything after that is treated as already known. The verb stays with it — is or was — and never agrees with the focus.",
+          "explanation_cz": "It-cleft rozdělí větu na dvě části tak, aby důraz nesl jediný prvek: it + be + zdůrazněný prvek + that (nebo who u osoby). Vše za that se bere jako už známé. Sloveso patří k it — is nebo was — a nikdy se neshoduje se zdůrazněným prvkem."
         },
         {
           "en": "What I need is a quiet room.",
           "cz": "Co potřebuju, je tichý pokoj.",
           "gap": "What I need ____ a quiet room.",
           "gap_answer": "is",
-          "accepts": ["What I need is a quiet room."],
-          "explanation": "Wh-cleft (pseudo-cleft).",
-          "explanation_cz": "Wh-cleft."
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "What I need is a quiet room."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "it is",
+            "has"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What she wants is more time with her family.",
+          "cz": "Co chce, je víc času s rodinou.",
+          "gap": "____ she wants is more time with her family.",
+          "gap_answer": "What",
+          "gap_accepts": [
+            "What"
+          ],
+          "accepts": [
+            "What she wants is more time with her family."
+          ],
+          "quiz_options": [
+            "What",
+            "That",
+            "Which",
+            "What that"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What we need is more chairs.",
+          "cz": "Co potřebujeme, je víc židlí.",
+          "gap": "What we need ____ more chairs.",
+          "gap_answer": "is",
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "What we need is more chairs."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "were",
+            "have"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What he did was call the police.",
+          "cz": "Udělal to, že zavolal policii.",
+          "gap": "What he did was ____ the police.",
+          "gap_answer": "call",
+          "gap_accepts": [
+            "call"
+          ],
+          "accepts": [
+            "What he did was call the police."
+          ],
+          "quiz_options": [
+            "call",
+            "called",
+            "to calling",
+            "calls"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What came next was a complete surprise.",
+          "cz": "To, co přišlo potom, bylo úplné překvapení.",
+          "gap": "____ came next was a complete surprise.",
+          "gap_answer": "What",
+          "gap_accepts": [
+            "What"
+          ],
+          "accepts": [
+            "What came next was a complete surprise."
+          ],
+          "quiz_options": [
+            "What",
+            "That",
+            "It",
+            "Which"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What they decided was to postpone the meeting.",
+          "cz": "Rozhodli se tu schůzku odložit.",
+          "gap": "What they decided was ____ postpone the meeting.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "What they decided was to postpone the meeting."
+          ],
+          "quiz_options": [
+            "to",
+            "for",
+            "they",
+            "that"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What I don't understand is why no one told me.",
+          "cz": "Nechápu, proč mi to nikdo neřekl.",
+          "gap": "What I don't understand ____ why no one told me.",
+          "gap_answer": "is",
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "What I don't understand is why no one told me."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "it is",
+            "that is"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What the report shows is that costs have gone up sharply.",
+          "cz": "Zpráva ukazuje, že náklady prudce vzrostly.",
+          "gap": "What the report shows is ____ costs have gone up sharply.",
+          "gap_answer": "that",
+          "gap_accepts": [
+            "that"
+          ],
+          "accepts": [
+            "What the report shows is that costs have gone up sharply."
+          ],
+          "quiz_options": [
+            "that",
+            "what",
+            "which",
+            "it"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What matters most is honest work.",
+          "cz": "Nejdůležitější je poctivá práce.",
+          "gap": "____ most is honest work.",
+          "gap_answer": "What matters",
+          "gap_accepts": [
+            "What matters"
+          ],
+          "accepts": [
+            "What matters most is honest work."
+          ],
+          "quiz_options": [
+            "What matters",
+            "What matter",
+            "That matters",
+            "It matters"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What we should do is ask for a written answer.",
+          "cz": "Měli bychom si říct o písemnou odpověď.",
+          "gap": "What we should do is ____ for a written answer.",
+          "gap_answer": "ask",
+          "gap_accepts": [
+            "ask"
+          ],
+          "accepts": [
+            "What we should do is ask for a written answer."
+          ],
+          "quiz_options": [
+            "ask",
+            "asking",
+            "asked",
+            "to asking"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What surprised us all was how calm she stayed.",
+          "cz": "Všechny nás překvapilo, jak klidná zůstala.",
+          "gap": "What surprised us all ____ how calm she stayed.",
+          "gap_answer": "was",
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "What surprised us all was how calm she stayed."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is being",
+            "had"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
+        },
+        {
+          "en": "What this project needs is experience, not talent.",
+          "cz": "Co tenhle projekt potřebuje, jsou zkušenosti, ne talent.",
+          "gap": "What this project ____ is experience, not talent.",
+          "gap_answer": "needs",
+          "gap_accepts": [
+            "needs"
+          ],
+          "accepts": [
+            "What this project needs is experience, not talent."
+          ],
+          "quiz_options": [
+            "needs",
+            "need",
+            "needing",
+            "to need"
+          ],
+          "form": "wh_cleft",
+          "explanation": "A wh-cleft (also called a pseudo-cleft) puts the known part into a what-clause at the front and the focus after be. The what-clause counts as singular, so the verb is is or was even when the focus is plural. To focus an action, use What + subject + do + be + bare infinitive: What he did was call the police.",
+          "explanation_cz": "Wh-cleft (též pseudo-cleft) dá známou část do vedlejší věty s what na začátku a důraz až za sloveso be. Věta s what se počítá jako jednotné číslo, takže sloveso je is nebo was i tehdy, když je zdůrazněný prvek v množném čísle. Chceme-li zdůraznit děj, použijeme What + podmět + do + be + infinitiv bez to: What he did was call the police."
         },
         {
           "en": "The reason why she left was the noise.",
           "cz": "Důvod, proč odešla, byl hluk.",
-          "gap": "The reason why she left ____ the noise.",
-          "gap_answer": "was",
-          "accepts": ["The reason why she left was the noise."],
-          "explanation": "the reason why… is/was…",
-          "explanation_cz": "the reason why…"
+          "gap": "The reason ____ she left was the noise.",
+          "gap_answer": "why",
+          "gap_accepts": [
+            "why"
+          ],
+          "accepts": [
+            "The reason why she left was the noise."
+          ],
+          "quiz_options": [
+            "why",
+            "because",
+            "which",
+            "for"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "The reason I called is that I need your advice.",
+          "cz": "Volám ti proto, že potřebuju tvou radu.",
+          "gap": "The reason I called is ____ I need your advice.",
+          "gap_answer": "that",
+          "gap_accepts": [
+            "that"
+          ],
+          "accepts": [
+            "The reason I called is that I need your advice."
+          ],
+          "quiz_options": [
+            "that",
+            "because",
+            "why",
+            "for"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "The reason for the delay was bad weather.",
+          "cz": "Důvodem zpoždění bylo špatné počasí.",
+          "gap": "The reason ____ the delay was bad weather.",
+          "gap_answer": "for",
+          "gap_accepts": [
+            "for"
+          ],
+          "accepts": [
+            "The reason for the delay was bad weather."
+          ],
+          "quiz_options": [
+            "for",
+            "of",
+            "why",
+            "to"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
         },
         {
           "en": "All I want is an honest answer.",
-          "cz": "Jediné, co chci, je upřímná odpověď.",
-          "gap": "All I want ____ an honest answer.",
+          "cz": "Chci jenom upřímnou odpověď.",
+          "gap": "____ I want is an honest answer.",
+          "gap_answer": "All",
+          "gap_accepts": [
+            "All"
+          ],
+          "accepts": [
+            "All I want is an honest answer."
+          ],
+          "quiz_options": [
+            "All",
+            "All what",
+            "That all",
+            "Only"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "All we did was wait.",
+          "cz": "Jenom jsme čekali.",
+          "gap": "All we did was ____.",
+          "gap_answer": "wait",
+          "gap_accepts": [
+            "wait"
+          ],
+          "accepts": [
+            "All we did was wait."
+          ],
+          "quiz_options": [
+            "wait",
+            "waited",
+            "waiting",
+            "to waiting"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "All that matters now is the deadline.",
+          "cz": "Teď jde jen o ten termín.",
+          "gap": "All that matters now ____ the deadline.",
           "gap_answer": "is",
-          "accepts": ["All I want is an honest answer."],
-          "explanation": "All-cleft focus.",
-          "explanation_cz": "All-cleft."
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "All that matters now is the deadline."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "it is",
+            "being"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "The reason no one complained is that no one noticed.",
+          "cz": "Nikdo si nestěžoval proto, že si toho nikdo nevšiml.",
+          "gap": "The reason no one complained is that no one ____.",
+          "gap_answer": "noticed",
+          "gap_accepts": [
+            "noticed"
+          ],
+          "accepts": [
+            "The reason no one complained is that no one noticed."
+          ],
+          "quiz_options": [
+            "noticed",
+            "notice",
+            "noticing",
+            "did noticed"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "All she needs is a few days off.",
+          "cz": "Potřebuje jen pár dní volna.",
+          "gap": "All she needs ____ a few days off.",
+          "gap_answer": "is",
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "All she needs is a few days off."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "were",
+            "have"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "The reason we were late was the traffic.",
+          "cz": "Důvodem našeho zpoždění byla doprava.",
+          "gap": "The reason we were late ____ the traffic.",
+          "gap_answer": "was",
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "The reason we were late was the traffic."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "was because",
+            "had"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "All you have to do is sign here.",
+          "cz": "Stačí, když se tady podepíšete.",
+          "gap": "All you have to do is ____ here.",
+          "gap_answer": "sign",
+          "gap_accepts": [
+            "sign"
+          ],
+          "accepts": [
+            "All you have to do is sign here."
+          ],
+          "quiz_options": [
+            "sign",
+            "signing",
+            "signed",
+            "to signing"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "All that is left is to thank the team.",
+          "cz": "Zbývá už jen poděkovat týmu.",
+          "gap": "All that is left is ____ thank the team.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to"
+          ],
+          "accepts": [
+            "All that is left is to thank the team."
+          ],
+          "quiz_options": [
+            "to",
+            "for",
+            "that",
+            "of"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
+        },
+        {
+          "en": "The reason they refused was not the price.",
+          "cz": "Důvodem jejich odmítnutí nebyla cena.",
+          "gap": "The reason they refused ____ not the price.",
+          "gap_answer": "was",
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "The reason they refused was not the price."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "did",
+            "had"
+          ],
+          "form": "reason_all",
+          "explanation": "Two more cleft frames. The reason (why) … is that … names a cause, and the second half needs that — never because. All (that) … is … means 'the only thing', and the that is usually left out. Both take a singular verb, however plural the focus is.",
+          "explanation_cz": "Další dva typy kleftu. The reason (why) … is that … pojmenuje příčinu a druhá polovina musí mít that — nikdy because. All (that) … is … znamená „jediné, co…“ a that se obvykle vypouští. Obě vazby berou sloveso v jednotném čísle, i když je zdůrazněný prvek v množném."
         },
         {
           "en": "This book I finished in two days.",
-          "cz": "Tuhle knihu jsem dočetl za dva dny.",
-          "gap": "This book I ____ in two days.",
-          "gap_answer": "finished",
-          "accepts": ["This book I finished in two days."],
-          "explanation": "Object fronting for contrast/topic.",
-          "explanation_cz": "Fronting předmětu."
+          "cz": "Tuhle knihu jsem přečetl za dva dny.",
+          "gap": "This book ____ in two days.",
+          "gap_answer": "I finished",
+          "gap_accepts": [
+            "I finished"
+          ],
+          "accepts": [
+            "This book I finished in two days."
+          ],
+          "quiz_options": [
+            "I finished",
+            "finished I",
+            "did I finish",
+            "I did finished"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
         },
         {
-          "en": "Never again will I ignore a warning like that.",
-          "cz": "Už nikdy nebudu ignorovat takové varování.",
-          "gap": "Never again ____ I ignore a warning like that.",
-          "gap_answer": "will",
-          "accepts": ["Never again will I ignore a warning like that."],
-          "explanation": "Edge: fronted negative time → inversion (also in inversion unit).",
-          "explanation_cz": "Zápor vepředu → inverze (i v unit inversion)."
-        },
-        {
-          "en": "I do understand your concern.",
-          "cz": "Opravdu chápu vaši obavu.",
-          "gap": "I ____ understand your concern.",
+          "en": "I do understand your problem.",
+          "cz": "Váš problém opravdu chápu.",
+          "gap": "I ____ understand your problem.",
           "gap_answer": "do",
-          "accepts": ["I do understand your concern."],
-          "explanation": "Emphatic auxiliary do.",
-          "explanation_cz": "Emfatické do."
+          "gap_accepts": [
+            "do"
+          ],
+          "accepts": [
+            "I do understand your problem."
+          ],
+          "quiz_options": [
+            "do",
+            "does",
+            "am",
+            "have"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
         },
         {
-          "en": "It was in Prague that we first met.",
-          "cz": "Bylo to v Praze, kde jsme se poprvé potkali.",
-          "gap": "It was in Prague ____ we first met.",
-          "gap_answer": "that",
-          "accepts": ["It was in Prague that we first met."],
-          "explanation": "It-cleft on place.",
-          "explanation_cz": "It-cleft na místo."
+          "en": "She does know the answer.",
+          "cz": "Ona tu odpověď opravdu zná.",
+          "gap": "She ____ know the answer.",
+          "gap_answer": "does",
+          "gap_accepts": [
+            "does"
+          ],
+          "accepts": [
+            "She does know the answer."
+          ],
+          "quiz_options": [
+            "does",
+            "do",
+            "is",
+            "has"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
         },
         {
-          "en": "What happened next was unexpected.",
-          "cz": "To, co se stalo dál, bylo neočekávané.",
-          "gap": "What happened next ____ unexpected.",
-          "gap_answer": "was",
-          "accepts": ["What happened next was unexpected."],
-          "explanation": "Wh-cleft on event.",
-          "explanation_cz": "Wh-cleft na děj."
-        },
-        {
-          "en": "Only then did she realise the mistake.",
-          "cz": "Teprve pak si uvědomila chybu.",
-          "gap": "Only then ____ she realise the mistake.",
+          "en": "He did apologise, but no one heard him.",
+          "cz": "Omluvil se, ale nikdo ho neslyšel.",
+          "gap": "He ____ apologise, but no one heard him.",
           "gap_answer": "did",
-          "accepts": ["Only then did she realise the mistake."],
-          "explanation": "Only then + inversion (bridge to inversion unit).",
-          "explanation_cz": "Only then + inverze."
+          "gap_accepts": [
+            "did"
+          ],
+          "accepts": [
+            "He did apologise, but no one heard him."
+          ],
+          "quiz_options": [
+            "did",
+            "does",
+            "has",
+            "was"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "That part of the report I have already read.",
+          "cz": "Tu část zprávy jsem už četl.",
+          "gap": "That part of the report ____ already read.",
+          "gap_answer": "I have",
+          "gap_accepts": [
+            "I have"
+          ],
+          "accepts": [
+            "That part of the report I have already read."
+          ],
+          "quiz_options": [
+            "I have",
+            "have I",
+            "I has",
+            "did I"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "The rest of the money we spent on repairs.",
+          "cz": "Zbytek peněz jsme utratili za opravy.",
+          "gap": "The rest of the money ____ on repairs.",
+          "gap_answer": "we spent",
+          "gap_accepts": [
+            "we spent"
+          ],
+          "accepts": [
+            "The rest of the money we spent on repairs."
+          ],
+          "quiz_options": [
+            "we spent",
+            "spent we",
+            "did we spend",
+            "we did spent"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "His first novel I have never managed to finish.",
+          "cz": "Jeho první román jsem nikdy nedokázal dočíst.",
+          "gap": "His first novel I ____ never managed to finish.",
+          "gap_answer": "have",
+          "gap_accepts": [
+            "have"
+          ],
+          "accepts": [
+            "His first novel I have never managed to finish."
+          ],
+          "quiz_options": [
+            "have",
+            "has",
+            "am",
+            "did"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "We do apologise for the delay.",
+          "cz": "Omlouváme se za zpoždění.",
+          "gap": "We do ____ for the delay.",
+          "gap_answer": "apologise",
+          "gap_accepts": [
+            "apologise"
+          ],
+          "accepts": [
+            "We do apologise for the delay."
+          ],
+          "quiz_options": [
+            "apologise",
+            "apologising",
+            "apologised",
+            "apologises"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "That mistake I will never make again.",
+          "cz": "Tuhle chybu už nikdy neudělám.",
+          "gap": "That mistake ____ never make again.",
+          "gap_answer": "I will",
+          "gap_accepts": [
+            "I will"
+          ],
+          "accepts": [
+            "That mistake I will never make again."
+          ],
+          "quiz_options": [
+            "I will",
+            "will I",
+            "I am",
+            "will be"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "They did warn us about the road.",
+          "cz": "Před tou silnicí nás varovali.",
+          "gap": "They did ____ us about the road.",
+          "gap_answer": "warn",
+          "gap_accepts": [
+            "warn"
+          ],
+          "accepts": [
+            "They did warn us about the road."
+          ],
+          "quiz_options": [
+            "warn",
+            "warned",
+            "warning",
+            "warns"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "Such details we can talk about later.",
+          "cz": "O takových detailech si můžeme promluvit později.",
+          "gap": "Such details ____ talk about later.",
+          "gap_answer": "we can",
+          "gap_accepts": [
+            "we can"
+          ],
+          "accepts": [
+            "Such details we can talk about later."
+          ],
+          "quiz_options": [
+            "we can",
+            "can we",
+            "we are",
+            "can be"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
+        },
+        {
+          "en": "It does look better in the morning.",
+          "cz": "Ráno to vypadá líp.",
+          "gap": "It does ____ better in the morning.",
+          "gap_answer": "look",
+          "gap_accepts": [
+            "look"
+          ],
+          "accepts": [
+            "It does look better in the morning."
+          ],
+          "quiz_options": [
+            "look",
+            "looks",
+            "looking",
+            "looked"
+          ],
+          "form": "fronting_do",
+          "explanation": "Fronting moves an object or an adverbial to the front for contrast or to link back to what came before. Unlike inversion, the subject and the verb keep their normal order. Emphatic do puts do / does / did in front of a bare infinitive to insist that the verb is true; the main verb then loses its own ending.",
+          "explanation_cz": "Fronting posune předmět nebo příslovečné určení na začátek věty kvůli kontrastu nebo kvůli návaznosti na předchozí větu. Na rozdíl od inverze si podmět se slovesem ponechají normální pořadí. Emfatické do postaví do / does / did před infinitiv bez to a tvrdí tím, že sloveso platí; hlavní sloveso pak ztrácí vlastní koncovku."
         }
       ]
     }
