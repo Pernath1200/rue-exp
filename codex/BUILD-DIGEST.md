@@ -6,6 +6,125 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 21 (RUE build, claude-opus-5)
+
+### Headline: **3 A2 vocab intros (18 → 21), 2 more Use-stage sentence banks (`a1_body`, `a1_places` — leaf packs still missing one: 41 → 39), and 2 A1 grammar units re-lexified (audit 160 → 157). One of my own sentences was ungradeable and I caught it only on the re-read pass — details below, it is the interesting bit of this run.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `74a4182` | **`a2_travel`** picture-led intro — 12 tiles, 5 carrier frames |
+| 2 | `ac022e0` | **`a2_sports`** picture-led intro — 12 tiles, 5 frames |
+| 3 | `22f38d0` | **`a2_tech`** picture-led intro — 12 tiles, 5 frames |
+| 4 | `1740c7a` | **`a1_body`** `sentences[]` bank — 12 sentences |
+| 5 | `736ee26` | **`a1_places`** `sentences[]` bank — 12 sentences, 23 lemmas |
+| 6 | `17e9e46` | `a1_question_words` re-lexified, 2 items — 2 types → **0** |
+| 7 | `987e6a5` | `a1_some_any` re-lexified, 2 items — audit 158 → **157** |
+| 8 | `dcda75e` | three defects in this run's own output, caught on re-reading |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 160 unknown types · 43 units | **157** · 42 units · baseline tightened 160 → 158 → 157 |
+
+All three green at the start, so step 0 did not consume the run. All three re-run before every commit. Commit and push per unit; no rebase needed this run (nothing else pushed to `build` while I worked).
+
+---
+
+### The defect worth reading: two Czech prompts, one answer
+
+`a1_body`'s bank shipped with both
+
+- *Moje noha je pod stolem.* → **My leg is under the table.**
+- *Moje noha je v botě.* → **My foot is in my shoe.**
+
+**leg and foot are both *noha*.** The Use stage grades free-typed English against `accepts`, so a student reading the second prompt has no way to know the answer is *foot* and not *leg* — and typing *leg* is marked wrong for a word they translated correctly. Every machine gate passed it: `verify_pack` checks shape, `check_playable` checks the grammar ladder, and the audit checks the English against the pool. **Nothing in the toolchain looks at whether two Czech prompts collide.**
+
+Replaced with *Spím na zádech.* → **I sleep on my back.** (*záda* is unambiguous). `foot` is still taught in Match/Type — it just is not a Use target.
+
+I only found it because I re-read all five files off disk after committing rather than trusting the write. Two smaller things came out of the same pass: `a2_tech`'s `note_cz` mixed a neuter noun with a feminine pronoun (*myš, zvíře i ta u počítače* → *myš zvířecí i počítačová*), and `a2_sports`' body said *"the places they do them"*. All three in `dcda75e`.
+
+**This generalises past this run.** Czech is a smaller vocabulary than English in exactly the places A1 body/family/places packs live — *noha* = leg + foot, *ruka* = hand + arm, *město* = city + town, *cesta* = trip + journey + road + way. Any bank drawing two sentences from a collision pair has the same bug. I did not sweep the existing banks for it this run; **that sweep is a good first item for a future run, or for the Czech-review routine if you would rather it lived there.**
+
+### Vocab intros — 18 → 21
+
+A1 leaves stay finished at 16/16. **A2 leaves: 2 → 5 of 22.**
+
+| Unit | Tiles | Trap | Why that shape |
+|---|---|---|---|
+| `a2_travel` | 12: what you carry, how you get there, what you go to see | *trip / journey / travel* — all *cesta* | the pack's biggest group is places, so the body says so and page 2 leads with **Where is the …?** |
+| `a2_sports` | 12: ten sports + runner + stadium | *football* is *soccer* in the USA | body explains the `-ing` sport vs bare-noun equipment split (*skiing* the sport, *ski* the thing on your foot) — that pattern is most of the pack |
+| `a2_tech` | 12: hardware and screen objects | *mouse* — the animal from `leaf_animals_a1` and the one on the desk | the abstract half (*data, media, technology, code*) stays off page 1 deliberately |
+
+**`a2_home` was planned as this run's third unit and dropped after reading it.** Of 39 items the picture-able ones are *sofa, mirror, lift, bin, lock, housework, washing* — seven, against a floor of eight, because the unit is mostly building parts (*ceiling, roof, basement, balcony, stairs, hall*) that have no emoji and would need stretched stand-ins. Same call run 20 made on `a2_clothes`. `a2_tech` took its slot. **Two A2 units are now blocked on the same question** — see fork 2.
+
+I kept run 20's refuse-to-write authoring script and its two checks (tile `cz` must match the item's own `cz` or one of its `/`-variants; every page-2 frame must name a carrier id an item in that pack actually declares), and re-read all three written files independently afterwards.
+
+### Use-stage sentence banks — 2 more
+
+Leaf packs without a bank: **41 → 39.**
+
+Pool regenerated with `--before <node>` for each, and every sentence checked with `audit.py`'s own `variants()`/`tokens_of()`/`GLUE` before writing — the script refuses to write rather than reporting.
+
+**That check earned its keep again.** At `leaf_places` (path position 16, pool only 252 targets) I wrote *"I want to take the train."* — and **want is not taught until `a1_like_want_need` at position 25**, even though the pack itself declares the `i_want_to` carrier on four items. The carriers are curated as *frames these words fit*, not as *frames legal at this position*; where a unit sits early on the path, some of its own carriers are not yet writable. Became *"I take the train to work."* Worth knowing before the next early-position bank.
+
+`a1_body` was constrained differently: **no plural *teeth* or *feet***. The audit reaches *tooth*/*foot* from neither (its `IRREGULAR` table covers verbs only, and suffix-stripping cannot get there), so those plurals read as untaught. Singular throughout. Colour words are also out — `leaf_colours_a1` is later on the path than `leaf_body_a1`.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- `a1_body` — *"Slyším ušima."* Instrumental dual, correct, but bare; *"Slyším svýma ušima."* is also said. I took the shorter one.
+- `a1_body` — *"Mám na hlavě čepici."* renders *hat*, and the pack glosses *hat* = "klobouk / čepice", so *čepice* is licensed — but a student who learned *klobouk* may produce *hat* less readily from *čepici*. Deliberate: *čepice* is the everyday word.
+- `a1_places` — *"V pátek jdeme do kina."* English *"We go to the cinema on Friday"* is habitual-or-single; *jdeme* commits to the single occasion. *Chodíme* would be the habitual read. Either is defensible from the English.
+- `a1_places` — *"Šťastnou cestu!"* for *"Have a good trip!"* — idiom for idiom rather than word for word, which I think is right here.
+- `a1_places` — *"Supermarket je blízko mého domu."* Genitive after *blízko* is correct; *"kousek od mého domu"* is more colloquial.
+
+Everything else — the locatives (*v bance, na rameni, na zádech*), genitives after *vedle / do / blízko* (*divadla, kina, školy, mého domu*), instrumentals (*autobusem, vlakem, muzeem, ušima*), and the accusative animate plural in *"On nemá žádné kamarády."* — I am confident in.
+
+### Sequencing — two A1 grammar units
+
+Both are the worst A1/A2 entries left in the report; nothing at A1 or A2 now carries more than two unknown types.
+
+| Unit | Was | Now | Gap kept |
+|---|---|---|---|
+| `a1_question_words` (path 15) | What do you **want**? | What do you **need**? | still `What` |
+| | When does the film **start**? | When does the film **begin**? | still `When` |
+| `a1_some_any` (path 37) | He doesn't have any **money**. | He doesn't have any **friends**. | still `any` |
+| | She has some **money**. | She has some **chocolate**. | still `some` |
+
+*want* is first taught at path 25 and *start* at 29; *money* at `leaf_shopping_a1`, path 43. The `friends` swap is a small gain beyond the audit: item 3 of the same pack is *"She has some friends here."*, so the two now sit as a + / − pair on one noun, which is what the unit is teaching.
+
+**`haven't` (item 19, "I haven't got any ideas.") was left alone deliberately** — see fork 1.
+
+---
+
+### Forks and judgment calls
+
+**1. New fork: five "unknown" words at A1 are contraction-tokenising, not content.** `haven't` (`a1_some_any`), `it's×2` (`trunk_there_time_a1`), `i'd` (`trunk_can_like_want_a1`), `i'm` (`trunk_chunks_a2`), `let's` (`b1_phrasal_verbs`). `audit.py`'s `WORD_RE` is `[a-z']+`, so it keeps a contraction whole, while `GLUE` lists the pieces (`n't`, `have`, `it`, `is`) separately — the word can never match. Rewriting the content to dodge these would delete real teaching points: *"I haven't got any ideas."* **is** the British *have got* pattern the item exists to show. **Conservative path taken: content untouched, all five left standing in the audit.** The honest fix is one line in `GLUE` — but that would drop the total by ~6 across units I have not otherwise touched, which changes what the ratchet has been measuring, so it is your call, not mine.
+
+**2. Two A2 units want a schematic, not emoji — same question, now twice.** Run 20 flagged `a2_clothes` (only 3 of 12 items picture honestly; its teaching heart is *smart* vs *casual*, which wants `contrast`). This run adds **`a2_home`**: seven picture-able items against a floor of eight, because the unit is building parts. My read is `a2_clothes` → `contrast` labelled smart/casual, and `a2_home` → `circles` or `branch` labelled *outside / inside / the room / the thing in it*. **Both left unbuilt.** One word from you and they are quick; improvising two different answers to the same question is how the A2 set ends up inconsistent.
+
+**3. The 17 A1 `trunk_*` intros are still blocked on you — third run asking.** Core-frames packs hold 12 gap items rather than a word list, so *"8–12 tiles that carry meaning in a picture"* does not describe them. **A1 vocab intros are 16/33 and will stay there until you say which page 1 the trunks get.** Unchanged from run 20; noting it so the count is not read as neglect.
+
+**4. Repair queue: nothing processed, tenth consecutive run.** Same three unticked items. *Vocab level badge* and *`order_click`* are both marked **engine work, cloud must not ship**; `b2_clear_claims` is a style decision reserved for you with the conservative path already taken. **If you want the cloud lane doing repair work, the queue needs a content item.**
+
+**5. Step 5 (new C1 unit) skipped, deliberately.** Steps 1–4 filled the run — 3 intros, 2 banks, 2 sequencing repairs, 8 commits — and both content backlogs outrank new units in the standing prompt. C1 remains the frontier, untouched.
+
+**6. Czech-review "For James" items untouched.** `CZECH-REVIEW.md` carries four open items (`a1_shopping` *otevřený/zavřeno*, `a1_food` *nepočitatelná jídla*, `a1_health` *špatně (mi je)*, `b1_work` *podnikající na sebe*). The rule is to act only once you have answered them; you have not, so I did not.
+
+### Smoke-check list
+
+- **`leaf_body_a1` Use stage** — specifically that no two Czech prompts in a bank can be answered by two different English words. This bank shipped with that bug for three commits. If you see the pattern anywhere else, it is worth a gate rather than a habit.
+- **`leaf_travel_a2` intro page 1** — the *passport* tile uses 🛂, which is strictly the passport-control glyph. Closest honest emoji; tell me if it reads as wrong.
+- **`leaf_sports_a2` / `leaf_tech_a2` intros** — the second and third A2 intros with a full 12 tiles. `a2_tech`'s trap points back to `leaf_animals_a1` (*mouse*), which is the first intro note to cross-reference an earlier unit by name.
+- **`leaf_places` Use stage** — *"Have a good trip!"* is the only idiom-for-idiom pair in either bank (*Šťastnou cestu!*).
+- The four re-lexified grammar items, especially **`He doesn't have any friends.`** sitting against item 3's `She has some friends here.`
+
+---
+
 ## 2026-08-07 · cloud run 20 (RUE build, claude-opus-5)
 
 ### Headline: **3 vocab intros (15 → 18), the first two Use-stage sentence banks since your template (`a1_colours`, `a1_animals`), and two more A1 grammar units re-lexified to zero (audit 164 → 160). Run 19's claim that "all A1 vocab leaves now have intros" was wrong — `leaf_time_a1` was still bare, and it is the first thing this run fixed.**
