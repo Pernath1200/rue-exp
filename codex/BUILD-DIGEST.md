@@ -6,7 +6,127 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
-## 2026-08-07 · cloud run 21 (RUE build, claude-opus-5)
+## 2026-08-07 · cloud run 22 (RUE build, claude-opus-5)
+
+### Headline: **3 A2 vocab intros (21 → 24), 2 more Use-stage sentence banks (`a1_food`, `a1_clothes` — leaf packs still missing one: 39 → 37), 2 units re-lexified (audit 157 → 153), and run 21's requested Czech-collision sweep over the five existing banks, which found two real grading defects — one of them in run 21's own output.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `4393a62` | **`a2_routine`** intro — `cycle` schematic, 4 carrier frames |
+| 2 | `0ed2947` | **`a2_family`** intro — 10 tiles, 5 frames |
+| 3 | `e31b96f` | **`a2_freetime`** intro — 12 tiles, 5 frames |
+| 4 | `2a5c1f3` | **`a1_food`** `sentences[]` bank — 12 sentences, 14 lemmas |
+| 5 | `5efe53f` | **`a1_clothes`** `sentences[]` bank — 12 sentences, 13 lemmas |
+| 6 | `eb700ea` | `a2_agreement` re-lexified, 2 items — 2 types → **0** |
+| 7 | `8ebb981` | `trunk_glue_quantity_a1` re-lexified, 2 items — 2 types → **0** |
+| 8 | `2926bb7` | **Czech-prompt collision sweep** over all 5 existing banks — 4 fixes |
+| 9 | `d3aa516` | one defect in this run's own output, caught on re-read |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 157 unknown types · 42 units | **153** · 40 units · baseline tightened 157 → 155 → 153 |
+
+All three green at the start, so step 0 did not consume the run. All three re-run before every commit; commit and push per unit. Nothing else pushed to `build` while I worked, so no rebase was needed.
+
+---
+
+### The collision sweep — run 21's ask, and what it found
+
+Run 21 found that two Czech prompts in one bank can have the same right answer, and asked for a sweep. I read all 60 sentences in the five existing banks against their English. **Two real defects, both of which shipped through every machine gate:**
+
+**1. `a1_places` — two identical Czech constructions, two different English shapes.**
+
+- *Jezdím do školy autobusem.* → **I go to school by bus.**
+- *Jezdím do práce vlakem.* → **I take the train to work.**
+
+Same Czech frame, and the student is expected to produce a different English pattern for each with nothing in the prompt to signal which. The second is now **I go to work by train.**, with *I take the train to work* kept in `accepts`. (This is run 21's own sentence — it was rewritten late to dodge the untaught *want*, and the shape drifted away from its sibling.)
+
+**2. `a1_body` — the leg/foot collision is still live in the singleton.** Run 21 removed one of the two *noha* sentences, but the survivor is *Moje noha je pod stolem.* → **My leg is under the table.** *My foot is under the table.* is an equally correct translation of that Czech and was being graded wrong. Added to `accepts`.
+
+Plus two grading-fairness additions where both English forms are genuinely correct for the Czech, not a guess between them: *mapa města* accepts **city** or **town**, and *blond vlasy* accepts **blonde** or **blond**.
+
+**Deliberately not "fixed":** *na stromě / na poli* → **in the tree / in the field** (`a1_animals`). Czech says *on*, English says *in*; that is a real preposition difference the unit should teach, not a grading bug, so adding *on the tree* to `accepts` would grade wrong English as right. **I also left the British spellings alone** — *grey* is accepted, *gray* is not, which matches the course's British stance (trousers, favourite, neighbour). Say the word if you want US spellings tolerated course-wide; it is a one-pass change, not a per-sentence one.
+
+### Vocab intros — 21 → 24
+
+A1 leaves stay finished at 16/16. **A2 leaves: 5 → 8 of 22.** Built in path order (54, 56, 60).
+
+| Unit | Page 1 | Trap | Why that shape |
+|---|---|---|---|
+| `a2_routine` | `cycle` schematic, labels *daily · regular · usual · habit* | *už* = **already** and **yet** | see the judgment call below |
+| `a2_family` | 10 tiles | *character* = **povaha** and **postava** | *sir* and *owner* left off rather than given a stretched glyph — 10 honest tiles beat 12 with two lies in them |
+| `a2_freetime` | 12 tiles | *cena* = **price** and **prize** | the pack is watch/read + make + go + win; the tiles take one from each group |
+
+The `a2_freetime` trap is the one I would most like you to look at. Czech *cena* covers both English words, they differ by one letter, and *price* is already taught at `leaf_shopping_a1` — so the student has both halves and no reason to have noticed they are different words.
+
+I kept run 20's refuse-to-write authoring script and its two checks (tile `cz` must be the item's own `cz` or one of its `/`- or parens-variants; every page-2 frame must name a carrier id an item in that pack actually declares), and re-read all three files off disk afterwards. **That re-read caught one defect in my own output**: `a2_routine`'s already/yet note explained *already* with **"I have already eaten"** — present perfect, which is not taught until path 61, seven steps after this unit. Reworded to a present-simple statement and a short-answer negative (`d3aa516`).
+
+### Use-stage sentence banks — 2 more
+
+Leaf packs without a bank: **39 → 37.** Pool regenerated with `--before <node>` for each; every sentence checked against `audit.py`'s own `variants()`/`tokens_of()`/`GLUE` by a script that refuses to write rather than reporting.
+
+**The pool check earned its keep twice more, and one of them is a new failure mode.**
+
+- At `leaf_food_a1` (path 18): the pack declares `i_buy_a` on 14 of its items, but **buy is not taught until `leaf_shopping_a1` at path 43**. Same shape as run 21's *want* finding — a pack's own carriers are frames the word *fits*, not frames legal at that position. Two carriers of this pack (`i_buy_a`, `i_want_to`) are unwritable here; sentences use *need / have / eat* instead.
+- At `leaf_clothes_a1` (path 20): **`This is my father's shirt.` was refused.** `audit.py`'s `WORD_RE` is `[a-z']+`, so it tokenises **father's** as one word — and the only genitive forms in the pool are the literal `gap_answer`s of `a1_possessives` (*teacher's*, *ondrej's*, *homare's*). **Every possessive-'s noun in the course is unwritable outside that one pack.** This is the same tokenising fork you already have open as fork 1 (contractions); the genitive is its second, larger half. Rewritten as *My father needs a shirt.* — but see fork 1 below, because this one bites content, not just the count.
+
+**Two sets of Czech I deliberately did not use as Use targets**, on the run-21 collision rule: **shoe / boot** (both *bota*, disambiguated only by the pack's parenthesised gloss) and **hat / cap** (*klobouk / čepice* — the pack glosses *hat* as both). Neither can carry a prompt with one right answer. Both words are still taught in Match and Type; they are just not production targets.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- `a1_food` — *Tento dort je výborný.* *Ten dort…* is the more colloquial demonstrative; *tento* is a shade formal for A1 speech. Either is correct.
+- `a1_food` — *Piju kávu v práci.* Colloquial *piju* over standard *piji*, deliberately, to match how the course speaks elsewhere.
+- `a1_food` — *Snídám doma.* renders **I have breakfast at home** — one Czech verb against an English noun phrase. *I eat breakfast at home* is in `accepts`.
+- `a1_clothes` — *Tyhle kalhoty se mi nelíbí.* Spoken *tyhle* rather than written *tyto*. Same register call as above.
+- `a1_clothes` — *Moje sestra má hezké šaty.* → **dress**. In older or formal Czech *šaty* can read as *clothes* generally; sentence 1 of the same bank uses *oblečení* for clothes, so the pair should hold, but it is the weakest disambiguation in either bank.
+- `a2_family` intro tile — *kid* = **dítě**, dropping the pack's own *(hovor.)* marker from the tile; the page body carries the register point in prose instead.
+
+Everything else — the locatives (*na stole, v ložnici, na židli, v práci, v kuchyni*), the accusatives (*košili, polévku, nůž a vidličku, rybu, deštník*), *Mám hlad / má žízeň*, and the *do práce / do školy* directionals — I am confident in.
+
+### Sequencing — 157 → 153
+
+Both units were the joint-worst A1/A2 entries left (2 unknown types each). **Nothing at A1 or A2 now carries more than two.**
+
+| Unit | Was | Now | Teaching point kept |
+|---|---|---|---|
+| `a2_agreement` (path 55) | **Nobody** knows the answer. | **No one** knows the answer. | indefinite pronoun → 3sg *knows* |
+| | One of my friends lives **abroad**. | One of my friends lives **in Prague**. | *one of…* → singular *lives* |
+| `trunk_glue_quantity_a1` (38) | I don't have any **money**. | I don't have any **water**. | gap is still *any* |
+| | Something is **wrong**. | Something is **on the table**. | gap is still *Something* |
+
+*nobody* is untaught but **no one** is two GLUE words, so the swap costs nothing and the item still teaches exactly what it taught; *Nobody knows the answer.* stays in `accepts` so the natural answer passes. The *money → water* swap is a small gain beyond the count: item 0 is *I have some water.*, so the two now sit as a some/any minimal pair on one noun — the same shape run 21 built with *friends*.
+
+---
+
+### Forks and judgment calls
+
+**1. Fork 1 (contraction tokenising) is bigger than it looked — it now blocks content, not just the count.** Run 21 logged five contractions the audit cannot match. The same `WORD_RE` also makes **every possessive genitive unwritable**: *father's*, *sister's*, *mother's* are single tokens that appear in no pool, so a Use sentence cannot say *my father's shirt* anywhere in the course except inside `a1_possessives` itself. That is a real expressive loss in exactly the A1 packs (family, clothes, home) where the genitive is the natural phrasing. **Conservative path taken: content rewritten around it, `audit.py` untouched.** The honest fix is one rule — strip a trailing `'s` in `variants()` before lookup — which would both clear the five contractions and unblock the genitive. It changes what the ratchet measures, so it stays your call; I would take it.
+
+**2. `a2_routine` was built as an abstract set, NOT as a fork-2 case.** Fork 2 (`a2_clothes`, `a2_home`) is about *concrete* units with too few emoji, and it is still yours to answer — I did not touch either. `a2_routine` is different in kind: *habit, lifestyle, daily, regular, usual, already, yet, still, bit* are frequency and time words, which is what AGENTS.md means by an abstract set, and the spec already answers those ("Ideas, Feelings, Society take a schematic"). So it took `cycle`, labelled with the pack's own four adjectives. **If you read routine as a fork-2 case instead, it is a one-page change** — but improvising a schematic answer for `a2_clothes`/`a2_home` off the back of it is exactly what I did not do.
+
+**3. Repair queue: nothing processed, eleventh consecutive run.** Same three unticked items, all still blocked on you, not on me: *vocab level badge* and *`order_click`* are both marked **engine work, cloud must not ship**, and `b2_clear_claims` is a style decision with the conservative path already taken. **The queue has had no content item since it was created.** Two candidates from this run if you want one: the `'s` tokenising rule (fork 1) and the schematic decision (fork 2) — both are one-line-plus-judgment, which is the shape the cloud lane can actually close.
+
+**4. Czech-review "For James" items untouched, again.** `CZECH-REVIEW.md` now carries seven open items across three passes (`a1_shopping` *otevřený/zavřeno*, `a1_food` *nepočitatelná jídla*, `a1_health` *špatně (mi je)*, `b1_work` *podnikající na sebe*, `a2_food` *vegetariánský* and *hranolka*, plus the run-21 smartphone fix which is already applied). The rule is to act only once you have answered them; you have not, so I did not.
+
+**5. Step 5 (new C1 unit) skipped, deliberately.** Steps 2–4 plus the collision sweep filled the run — 9 commits — and both content backlogs outrank new units in the standing prompt. C1 remains the frontier, untouched.
+
+**6. The 17 A1 `trunk_*` intros remain blocked on you — fourth run asking.** Core-frames packs hold 12 gap items, not a word list, so "8–12 tiles that carry meaning in a picture" does not describe them. **A1 vocab intros are 16/33 and will stay there until you say which page 1 the trunks get.** Noting it so the count is not read as neglect.
+
+### Smoke-check list
+
+- **`leaf_places` Use stage** — the changed sentence: *Jezdím do práce vlakem.* now wants **I go to work by train.** It should now feel like the same task as the bus sentence two rows up. This is the one place I overwrote an earlier run's authored English.
+- **`leaf_freetime_a2` intro page 2** — the *price / prize* note. If that trap lands, the same shape is worth repeating; Czech has several of these one-letter English pairs.
+- **`leaf_routine_a2` intro page 1** — the second `cycle` schematic in the course and the first A2 one. Does *daily · regular · usual · habit* on a loop actually read as "how often", or does it just look like four words on a circle?
+- **`leaf_food_a1` / `leaf_clothes_a1` Use stages** — the two new banks, 24 sentences. Particularly *Účet, prosím.* → **The bill, please.**, the only bare-phrase item in either bank.
+- **`trunk_glue_quantity_a1`** — items 0 and 1 are now a some/any pair on *water*; check they read as a pair and not as a repeat.
+
+---
 
 ### Headline: **3 A2 vocab intros (18 → 21), 2 more Use-stage sentence banks (`a1_body`, `a1_places` — leaf packs still missing one: 41 → 39), and 2 A1 grammar units re-lexified (audit 160 → 157). One of my own sentences was ungradeable and I caught it only on the re-read pass — details below, it is the interesting bit of this run.**
 
