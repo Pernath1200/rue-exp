@@ -6,6 +6,120 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 19 (RUE build, claude-opus-5)
+
+### Headline: **4 more A1 vocab intros (11 → 15 of 30), the two worst A1/A2 sequencing units repaired to zero (audit 169 → 164), and `c1_spoken_vs_written` built — the first C1 node in three runs whose scope was NOT already owned. Your `sentences[]` commit landed mid-run and I rebased onto it; all three gates re-run green after the rebase.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `397ba9c` | **`a1_freetime`** picture-led intro — 12 emoji tiles, 5 carrier frames |
+| 2 | `930b063` | **`a1_health`** picture-led intro — 12 tiles, 5 frames |
+| 3 | `545ba23` | **`a1_shopping`** picture-led intro — 12 tiles, 5 frames |
+| 4 | `fc09a8c` | **`a1_work`** picture-led intro — 12 tiles, 5 frames |
+| 5 | `eaebb86` | `trunk_glue_questions_a1` re-lexified, 3 items — 3 types → **0** |
+| 6 | `ac64a7f` | `a1_object_pronouns` re-lexified, 3 items — 3 occurrences → **0** |
+| 7 | `bff1dce` | **`c1_spoken_vs_written`** built + live — 48 items, **0 pool violations** |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 84 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 169 unknown types · 47 units | **164** · 45 units · baseline tightened 169 → 166 → 164 |
+
+Net **−5** unknown types while adding 48 new items. The C1 unit is **100 % pool-clean**: live-unit count goes 151 → 152 with the total unchanged at 164. All three gates green before every commit; commit and push per unit.
+
+---
+
+### Your `sentences[]` commit arrived mid-run (`5570017`)
+
+My C1 commit was rejected on push, so I fetched, rebased onto `5570017`, **re-ran all three gates on the rebased tree** (green: 0 / 0 / 164 vs baseline 164) and pushed again. No conflicts — you touched vocab packs and `audit.py`/`verify_pack.py`, I touched a grammar pack and the node registry.
+
+**I have read the decision and taken no action on it this run**, because the standing prompt still ranks the intro backlog above new content and I had not seen your commit when I planned the run. Next run I will need you to tell me which wins: **45 units of `Use — coming soon` versus 15 remaining A1/A2 intros.** My read is that the `sentences[]` banks are worth more per unit — an empty stage is a visibly broken promise, an absent intro is only an abrupt start — but that is a curriculum call and it is yours. Say the word in `REPAIR-QUEUE.md` and I will switch.
+
+Two things I noticed while rebasing, neither actioned: your `exposed_text` change means a `sentences[]` bank is now audited, so **any bank I author has to come out of `make_pool.py --before <node>` like everything else** — which for an A1 leaf is a very thin pool, and the sentences will have to be correspondingly plain. And `a1_home_family` now carries both a `sentences[]` bank and the intro I have been copying as the emoji template, so it is the right file to look at for the shape of both.
+
+---
+
+### Vocab intros — 4 more, all emoji, none needed a schematic
+
+Live vocab units with an intro: **11 → 15**. Remaining: **18 A1**, then **25 A2**. The four A1 *leaves* are now finished; everything left at A1 is a `trunk_*` core-frames unit, which is a different authoring problem (12 gap items, not a word list) and may want a different intro shape — flagged below.
+
+I kept run 18's authoring script and its assertions, and added one: **a tile must carry an `icon` or a `swatch`**, so a tile can never silently render as bare text. As before the script refuses to write the file rather than reporting a problem, and I re-checked all four written files afterwards rather than trusting its report.
+
+| Unit | Tiles | Trap | Why that one |
+|---|---|---|---|
+| `a1_freetime` | 8 hobbies + 4 feeling faces | `bored` vs `boring` | the pack is half hobbies, half feelings, so a single-domain tile set would misrepresent it; emoji faces are the one abstract set emoji genuinely carry |
+| `a1_health` | 6 symptoms + 6 care | `hurt` (verb) vs `pain` (noun) | Czech *bolí mě hlava* collapses the two |
+| `a1_shopping` | things you hold at the till + open/closed | `wallet` vs `purse` | one Czech word, two English ones; `purse` is the tile, `wallet` is named only in the note, so the note earns its place |
+| `a1_work` | 4 workplace + 8 jobs | `job` (countable) vs `work` (uncountable) | Czech *práce* is both, and `a work` is close to automatic |
+
+**Words I refused to picture rather than stretch:** `pharmacy`, `queue`, `checkout`, `counter`, `waiter`, `engineer`, `driver`, `player`. Each has either no emoji at all or one that reads as the tool or the vehicle rather than the job — 🚗 says *car*, not *driver*. They stay in Match. This is the first run where the honest tile count would have been under 12 for some units, and I padded from elsewhere in the same pack rather than lowering the bar.
+
+One content fix inside an intro: `a1_work`'s page-1 body first read *work → worker, farm → farmer, sing → singer, dance → dancer*. **`farm` is not taught anywhere as a verb**, so the line quietly modelled a derivation from a word the student has never met. Rewritten to `work / sing / dance / play`, all four of which are real items.
+
+---
+
+### Sequencing — the two worst A1/A2 units, both to zero
+
+| Unit | Was | Now | Teaching point |
+|---|---|---|---|
+| `trunk_glue_questions_a1` | Why are you **late**? | Why are you **tired**? | gap still on `Why` |
+| | Which one do you **want**? | Which one do you **like**? | gap still on `Which` |
+| | Where is the **station**? | Where is the **bathroom**? | gap still on `Where` |
+| `a1_object_pronouns` | She **calls** him. | She **helps** him. | gap still on `him` |
+| | He **calls** her. | He **teaches** her. | gap still on `her` |
+| | I **want** it. | I **have** it. | gap still on `it` |
+
+No teaching point deleted, no gap moved. Every replacement was checked against `make_pool.py --before <node>` at that unit's own position.
+
+**`want` was the interesting one — it appears in both units and it is not an untaught word.** It is taught by `trunk_can_like_want_a1`, which sits *later* on the path than both units that were using it. That is the ordering failure the audit exists to catch, and it is invisible to anyone reading either pack on its own.
+
+Czech was rewritten to stay natural rather than glossed: *Proč jsi unavený? · Který se ti líbí? · Kde je koupelna? · Ona mu pomáhá. · On ji učí. · Mám to.* Note the last three **change case as well as vocabulary** — the old items used dative (*Ona mu volá*, correct for *volat*), and *pomáhat* keeps the dative while *učit* takes the accusative. Swapping the verb without swapping the case would have shipped wrong Czech past all three gates, which check neither.
+
+The two units were committed separately with the audit artefacts regenerated for each, so the ratchet has an honest intermediate state (169 → 166 → 164).
+
+---
+
+### `c1_spoken_vs_written` — scope checked BEFORE authoring this time
+
+Run 18 asked for this and it is what I did. Before writing a line I read the node's `related` list and the notes and gap answers of every live unit sharing its `root` (`sentence_syntax`), then grepped the whole live corpus for the phenomena I intended to teach.
+
+**The result was the opposite of the last two runs: the territory is genuinely empty.** Question tags appear **nowhere in the course** — not one tag-shaped sentence in 160 packs, not one occurrence of the word *tag*. Heads and tails are equally unowned. And the node's own `related` pointer, `c1_register`, turned out to be a false alarm: it teaches *lexical* register (phrasal vs Latinate verbs, formal prepositional phrases, correspondence frames), not spoken syntax. No overlap at all.
+
+Four strands x 12: **heads** (left dislocation, gap on the stand-in pronoun so agreement is the drill) · **tails** (right dislocation, the same agreement mirrored — the pronoun commits before the noun phrase arrives) · **tags, the built system** (copy the auxiliary, flip it, add the pronoun; `do` supplies one where the statement has none) · **tags, the cases that are not built** (`aren't I` vs `am I`, imperative + `will/would you`, `there` as tag subject, `never / no one / hardly` taking a positive tag, `someone` + `they`, `used to`, and the tag after `I think` reaching past `I` to the real claim).
+
+**What I deliberately left out, and why it is a fork for you.** The obvious fourth strand was *situational ellipsis* — spoken `Seen him?` for written `Have you seen him?`. I dropped it. Its gap answers would have been `have / do / did / can / is` — **the same auxiliaries `c1_ellipsis_substitution` already gaps 14 times.** Front-clipping and back-clipping are different phenomena, but a student meeting them a few nodes apart with an identical answer set will read them as one unit taught twice. Conservative path: leave it out, and use intro card 2 to name the distinction explicitly so the two units do not blur. **If you want situational ellipsis taught, it belongs inside `c1_ellipsis_substitution` as a fifth strand, not here.**
+
+---
+
+### Forks and judgment calls
+
+**1. Four items were rewritten because the pre-write pool check caught them, and I would not have caught any of them by eye.** `next door` (in `next`), `let's`, `hadn't`, `nothing` are all out of pool at C1 — `nothing` and `nobody` are not GLUE, though `never`, `no one` and, usefully, `hardly` are. Replacements: `My neighbour`; `I am not late, am I?`; `Someone has taken my bag, haven't they?`; `Hardly anyone agrees with him, do they?`. **The cost is that `Let's …, shall we?` is not taught** — it is the one common tag the unit does not cover, and it cannot be until `let's` is taught somewhere. Worth an A2 trunk item if you want it.
+
+**2. I rewrote the `tags_edge` explanation after those swaps.** It still described `let's → shall we` and `had better → hadn't`, neither of which the shipped items drill any more. An explanation teaching a rule the student never practises is worse than a shorter explanation, so it now covers exactly the twelve cases that are there.
+
+**3. Heads and tails reuse `he / she / it / they` across all 24 items and that is not sloppiness — there are only four pronouns.** I authored explicit `quiz_options` on every item so each one still has exactly one correct choice, and asserted that mechanically. This matches house style (`c1_ellipsis_substitution` reuses `so`/`neither` a dozen times; `c1_discourse_grammar` reuses `This` five times).
+
+**4. Question tags are usually a B1 point and I have put them at C1.** Only because the course never taught them anywhere, and C1 is where the frontier is. **If you would rather they sat at B1, this unit should be split** — the built system down to B1, the irregular cases left here. I took the conservative path of shipping them together rather than inventing a B1 node.
+
+**5. Repair queue: nothing processed, eighth run running.** Same three unticked items, same reasons — the vocab level badge and `order_click` are both marked *engine work, cloud must not ship*, and `b2_clear_claims` is a style decision reserved for you with the conservative path already taken. **Step 1 has been a no-op every hour since run 12.** Your `sentences[]` commit is exactly the kind of instruction that would be better placed there than in a commit message, where a fresh cloud session only sees it by accident.
+
+**6. `codex/__pycache__/audit.cpython-311.pyc` is still committed and still churns.** Run 18 raised it; importing `audit.py` to reuse its `variants()`/`tokens_of()` rewrites it. I reverted it again rather than commit the churn. One line in `.gitignore` plus `git rm -r --cached codex/__pycache__` ends it permanently.
+
+**7. All A1 vocab leaves now have intros; the 18 that remain at A1 are all `trunk_*` core-frames packs.** Those hold 12 gap items rather than a word list, so "8–12 tiles that carry meaning in a picture" does not describe them — there is often nothing picturable in `trunk_glue_pronouns_a1`. **They probably want a different page 1: the schematic, or a plain frame table.** I have not invented a shape for them; say which and I will apply it to all 18 consistently rather than improvising per unit.
+
+### Smoke-check list
+
+- The four new intros: `leaf_freetime_a1`, `leaf_health_a1`, `leaf_shopping_a1`, `leaf_work_a1` — 12 tiles each, then a frames page, then Match.
+- `c1_spoken_vs_written` — 48 quiz items. Worth reading the two intro cards; card 2 is the one that keeps it separate from `c1_ellipsis_substitution`.
+- `trunk_glue_questions_a1` and `a1_object_pronouns` — the six rewritten Czech lines, especially the three case changes (*pomáhat* dative, *učit* accusative).
+
+---
+
 ## 2026-08-07 · cloud run 18 (RUE build, claude-opus-5)
 
 ### Headline: **4 more A1 vocab intros (7 → 11 of 30), the two worst A1/A2 sequencing units repaired to zero (audit 177 → 169), and one C1 unit built — but only after finding that `b2_articles_genericity` already owned half of what its sketch asked for. That is the second C1 scope collision in two runs.**
