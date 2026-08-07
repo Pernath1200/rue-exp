@@ -6,6 +6,175 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 13 (RUE build, claude-opus-5)
+
+### Headline: **two A1 units repaired to zero and two C1 units built — audit 226 → 214, C1 now 7/18 on path.** One structural finding: `a1_present_simple` cannot be repaired without a GLUE decision from you.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `b3b67b7` | `a1_prepositions_place` re-lexified — 6 types → **0** |
+| 2 | `cf55ebb` | `a1_prepositions_time` re-lexified, 7/24 items — 6 types → **0** |
+| 3 | `302662e` | **`c1_advanced_passive`** built + live — 10 → **48** items |
+| 4 | `5bc3edf` | **`c1_nominalisation`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 74 live grammar units · 0 errors · 1 warning | **76 units · 0 errors · 1 warning** |
+| `audit` | 226 unknown types · 59 units | **214** · 57 units · baseline tightened 226 → 220 → 214 |
+
+Net **−12** unknown types while adding **96** new items. Both repaired units drop
+off the sequencing report entirely, and **both new C1 units are 100 % pool-clean —
+0 violations between them.** The 12 warnings are the pre-existing `b2_clear_claims`
+ones and the 1 warning is the known `order_click` gap; both unchanged. All three
+gates green before every commit; commit and push per unit.
+
+### Repair queue: nothing processed, and that is still correct
+
+Same three unticked items as run 12, all explicitly out of the cloud lane — the
+vocab level badge and `order_click` are marked *engine work, cloud must not ship*,
+and `b2_clear_claims` is a style decision reserved for you with the conservative
+path already taken. No cloud-lane item was available. Two runs in a row now; if
+you want the cloud lane doing repair work, the queue needs content-lane items.
+
+---
+
+### THE FINDING: `a1_present_simple` is the worst A1 unit and I could not legitimately move it
+
+It ties for worst on the report (6 unknown types: coffee×4, tv×2, everybody×2,
+everyone, somebody, nobody). I worked it fully before picking a different unit,
+and every one of the six is structural, not sloppy lexis:
+
+**1. Four of the six are indefinite pronouns.** `Everybody has a phone.` ·
+`Everyone likes…` · `Somebody lives here.` · `Nobody knows.` These five items
+teach a genuine present-simple point — indefinite pronouns take the -s form.
+Re-lexifying them (*My friend has a phone*) would delete the teaching point,
+which the standing rules forbid. So the words have to stay, and they are untaught
+because **`GLUE` in `audit.py` has no indefinite pronouns.** It already carries
+`every`, `some`, `any`, `no`, `all`, `each`, `both` — the compounds are the same
+class of word by any reasonable definition. **Fork, conservative path taken: I
+left the unit alone and did not touch the gate.** The one-line fix is adding
+`everybody everyone somebody someone anybody anyone nobody no one nothing
+something anything everything` to GLUE. That is your call, not mine — but note
+it also silently costs elsewhere: I had to write *No one likes to be told* and
+*Not a word was said* in `c1_advanced_passive` to dodge exactly this gap, and
+`a2_agreement` carries `nobody` too.
+
+**2. The other two are structurally required nouns.** `drinks` and `watch(es)`
+are both declared targets of this unit, and at position 5 of 141 the pool is
+43 words — it contains no drinkable noun and nothing watchable. `coffee`, `tea`
+and `water` are all taught later (`trunk_can_like_want_a1`); `tv` is **taught
+nowhere in the course at all**. So *She drinks coffee at work* and *I watch TV
+on Sunday* cannot be re-lexified without either dropping a declared target or
+writing something unnatural. Conservative path: left as-is.
+
+Net: this unit's realistic floor is 6 types under today's GLUE, and 2 after the
+GLUE change. **The audit total will not reach zero at A1 until you rule on the
+indefinite pronouns** — three separate units are blocked on it.
+
+I picked `a1_prepositions_place` (6 types, 16 hits, worst by occurrence) and
+`a1_prepositions_time` (6 types) instead, and took both to zero.
+
+---
+
+### Forks and judgment calls
+
+**1. `ball` and `box` are not taught anywhere before the prepositions unit.**
+The whole in/on/under/next to/behind/in front of diagram set rested on them.
+Swapped to **book + bag**, which are both pool-legal and keep the small-object /
+large-object picture the diagrams need. Also `cat`→umbrella, `picture`→clock,
+`dog`→children, `Honza`→Petr (GLUE name pool, same call as run 12). Diagram keys
+untouched — the engine's `in`/`on`/`under` art still lines up.
+
+**2. Intro cards re-lexified by hand again.** Cards remain invisible to the
+audit (fork 2 of run 12 still stands). Both repaired units had card tables and
+worked examples quoting the sentences I rewrote — *"in the box"*, *"ball IN the
+box"*, *"picture ON the wall"*, *"in summer"*, *"at midday"* — so cards and
+drills now teach the same lexis. This is manual every single time. If you want
+it gated, say so and I will build it as a queue item.
+
+**3. Distractors that are morphological relatives of the target are in scope.**
+Run 12's fork 3 said distractors must be built from the answer plus function
+words. In `c1_nominalisation` the entire teaching point is noun-vs-verb, so the
+distractors *have* to be `introduce / introducing / introduced` against
+`introduction`. I read that as inside the rule, not an exception to it: the
+distractor is a form of the very word being taught, not out-of-scope vocabulary.
+Flagging it because it is a genuine widening of run 12's wording. Note also that
+the audit only reads `items[].en` — **distractors are not actually gated at all**,
+so this is a self-imposed standard either way.
+
+**4. `men` is outside the stemmer, like `books`→`book` last run.** *Two men are
+known to have been arrested* read as untaught because `variants("men")` never
+reaches `man`. Changed to *The two drivers*. Same family as run 12's fork 4:
+the irregular-plural table would be a two-line addition (`men child→children`,
+`women`, `people`, `feet`, `teeth`) if you ever want it — I did not touch it.
+
+**5. `arrested` is legal, `arrest` is not.** Exactly as run 12 predicted: the
+gap_answer from `c1_participle_absolute` taught the participle only. One
+distractor had to be rewritten around it. Worth knowing before authoring more
+passive material.
+
+**6. `check.sequence: ["quiz"]` on both new units.** Followed the four live C1
+packs. At C1 the sentences run long and en↔cz Match is poor UX; Type and Use
+still run, so the ladder is full.
+
+### Housekeeping — still needs you, one command
+
+`codex/__pycache__/audit.cpython-311.pyc` is **still tracked in git** (flagged in
+run 12, not yet actioned). It happened not to churn this run, but it will:
+
+```
+git rm --cached codex/__pycache__/audit.cpython-311.pyc
+printf '__pycache__/\n*.pyc\n' >> .gitignore
+```
+
+### Course state after this run
+
+| level | on path | live | remaining |
+|-------|--------:|-----:|-----------|
+| A1 | 53 | 53 | — |
+| A2 | 40 | 40 | — |
+| B1 | 23 | 22 | 1 (`craft`, parked on purpose) |
+| B2 | 22 | 21 | 1 (`craft`, parked on purpose) |
+| C1 | 18 | **7** | **11** |
+
+Remaining C1 sketches, in path order:
+`c1_complex_noun_phrases` → `c1_ellipsis_substitution` → `c1_discourse_grammar` →
+`c1_register` → `c1_advanced_modality` → `c1_subjunctive` →
+`c1_reporting_complementation` → `c1_comparative_advanced` → `c1_article_nuance` →
+`c1_spoken_vs_written` → `c1_error_patterns`.
+
+The standing routine prompt still says *"B1 16/23 live, B2 4/24, C1 0/22"* —
+run 12 asked for this to be corrected and it has not been. Every run burns its
+opening minutes rediscovering that the frontier is C1.
+
+### To smoke-check
+
+- **`c1_advanced_passive`** — 48 items, quiz ladder. The `get_and_agent` strand
+  is the one worth reading: register claims (*got stolen* vs *was stolen*) are
+  judgement calls, and I gave `My phone got stolen` / `We get paid` /
+  `The window got broken` the be-passive as an extra `accepts` so neither form
+  is marked wrong.
+- **`c1_nominalisation`** — 48 items. The `-ness` wrong answers (`ableness`,
+  `strongness`, `longness`, `trueness`) are deliberate: they are the error Czech
+  learners actually produce. If you would rather not put non-words on screen at
+  all, say so and I will restyle that strand.
+- **`a1_prepositions_place`** — the six diagram items now read *The book is
+  in/on/under/next to/behind/in front of the bag*. Worth one look that the
+  engine's diagram art still reads sensibly with a book and a bag rather than a
+  ball and a box; the keys are unchanged but the pictures may be literal.
+- **`a1_prepositions_time`** — *I finish school in July*, *We go on holiday in
+  August*, *They play football in the afternoon*, *The shop is open on Sunday*,
+  *He started school in 2010*, *We eat lunch at twelve*, *I visit her on Monday
+  morning*.
+
+---
+
+
 ## 2026-08-07 · cloud run 12 (RUE build, claude-opus-5)
 
 ### Headline: **B1 and B2 are already finished on the path — the frontier is C1.** Two A1 units repaired to zero and two C1 units built; C1 is now 5/22.
