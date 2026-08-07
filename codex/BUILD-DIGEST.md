@@ -6,6 +6,153 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 10 (RUE build, claude-opus-5)
+
+### Headline: the B2 course path is COMPLETE — 21/21 on-path B2 units live. Every A1/A2 offender I touched turned out to be a forward reference, not a missing word. The P0 is ten runs old.
+
+**`b2_discourse_markers` was the last on-path B2 sketch and it is now live.**
+Nothing buildable remains before C1: `craft` is *parked* (your decision — I
+did not unpark it), and `b2_future_in_the_past` / `b2_clear_claims` are in
+no `path_order` at all, so students never reach them. **The next on-path
+node is `c1_narrative_mastery` and C1 is 0/22.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `afff4b0` | `trunk_verbs_daily_a1` re-lexified, 9/12 items — 10 types → 1 |
+| 2 | `8f9c4f7` | `a1_to_for_with` re-lexified, 8/24 items — 9 types → 1 |
+| 3 | `7415f23` | **`b2_discourse_markers`** built + live — 10 → **48** items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `audit` | 412 unknown types · 60 units | **412** · 60 units · baseline tightened 429 → 412 |
+
+Net **−17** unknown types while adding 48 new items. The new unit is
+**100 % pool-clean — it contributes 0 violations and does not appear in the
+report at all.** The 12 warnings are the pre-existing `b2_clear_claims`
+ones, unchanged. Both gates run green before every commit; commit and push
+per unit.
+
+### The finding I would most like you to read
+
+**Every single offender in both repaired units was a word the course
+teaches *later*, not a word the course never teaches.** I wrote a throwaway
+diagnostic that, for each flagged word, reports the path position where it
+is first taught:
+
+```
+trunk_verbs_daily_a1  (pos 6)   home pos 8 · well pos 10 · office/school pos 14
+                                breakfast/bread/water pos 16 · early pos 20 · ticket pos 22
+a1_to_for_with        (pos 33)  wait pos 37 · give pos 38 · gift pos 62 · send pos 81
+```
+
+That reframes the whole 412. A large part of the audit total is probably
+not "sloppy authoring" but **course ordering** — units reaching forward for
+vocabulary that arrives a few positions later. Re-lexifying is the right
+fix when the sentence survives it, but for `trunk_verbs_daily_a1` the real
+answer may be to move `leaf_food_a1` earlier: it sits **ten positions after
+the daily-verbs unit that needs bread and water.** Worth ~20 lines in
+`codex/` as a permanent report if you want it — I did not ship it, since
+tooling is not this lane.
+
+### Judgment calls and forks for you
+
+**1. I left one violation in each repaired unit on purpose, rather than
+wreck the teaching.** In `trunk_verbs_daily_a1` I kept *I drink water.* —
+there is no drinkable noun anywhere in the 61-word pool at position 6, and
+every alternative I tried ("I don't drink." / "I drink with my friends.")
+taught the verb worse than the honest sentence does. In `a1_to_for_with` I
+kept *Wait for me.* / *I wait for the bus.* — the intro card teaches
+`wait for` as a fixed chunk, so deleting it from the items would have
+deleted a teaching point to dodge a number. Both are one type each.
+
+**2. Czech first names count as untaught vocabulary.** `Roman` in
+`a1_to_for_with` was a violation because `audit.py`'s GLUE name list has
+`petr, pavel, jana, eva, honza`-less coverage — it lists `anna martina tom
+tomas petr pavel jana eva jan david peter mary john` and nothing else. The
+same hits `honza` (a1_prepositions_place), `homare` (a1_and_but_because),
+`patrik` / `ondřej` (b1_reported_speech) and **`james`**
+(a1_questions_negatives — your own name is flagged as untaught vocabulary).
+I took the conservative path and renamed Roman → Petr in the item.
+**I deliberately did NOT add names to GLUE**: that would drop the audit
+total by several types without improving a single sentence, which is
+exactly the kind of gate-gaming the ratchet exists to prevent. Your call —
+but if you do want it, it should be a separate, clearly-labelled commit so
+the ratchet history stays honest.
+
+**3. `b2_discourse_markers` strand 4 is the reason this unit exists.**
+`b1_linkers` already owns the *meanings* (however, although, despite,
+therefore, because of). So the B2 unit takes the *grammar*: sentence adverb
+vs conjunction vs preposition, and the punctuation that follows. Strand 4
+runs minimal pairs over one situation so the choice cannot be made on
+meaning alone:
+
+> Although the cost was high, we bought the car. · Despite the high cost,
+> we bought the car. · The cost was high. However, we bought the car.
+
+If you would rather this unit had been sequencing/summarising markers
+(*first of all, in short, for instance, in other words*), say so and I will
+rebuild strand 4 — that was the live fork and I took the grammar path
+because it is what B1 does not already cover.
+
+**4. `beside` appears in two quiz distractors and is not pool-legal.**
+Deliberate: intro card 4 teaches "besides is the adverb; beside means next
+to — two different words", which is a real Czech-learner trap, and the
+distractor is the point of teaching it. Every other distractor in all 48
+items is either pool-legal or a marker this unit teaches. Flagging it
+because it is the one place I knowingly left an out-of-pool token in
+student-facing material.
+
+**5. Honest `gap_accepts`, single-answer quizzes.** Where several markers
+genuinely work (*therefore / consequently / thus*, *despite / in spite of*,
+*even so / nevertheless / however*) I listed them all in `gap_accepts` so a
+typed answer is not marked wrong — then checked mechanically that **no quiz
+item has two correct options on screen.** It does not; 0/48.
+
+**6. The seed-list backlog grew again.** Words this run proved are taught
+nowhere in 122 units, on top of run 8's `know`/`answer`/`want`/`see` and
+run 9's `feel`/`enough`: **`talk`, `test`, `pen`, `email`, `homework`,
+`turn`, `weather`, `nobody`**. `answer` and `email` have now blocked
+authoring in three separate runs. `talk` is the one that stings — I had to
+write *I speak to my teacher* because `talk` does not exist in the course,
+while `talk to` is on the intro card of the very unit I was repairing.
+
+### Repair queue — 4 open items reviewed, 0 newly ticked
+
+Unchanged from runs 1–9, and again nothing was manufactured to produce a
+tick. All four sit outside this lane: the **P0**, the hardcoded `A1` vocab
+badge, `zero_article` (blocked on the P0), and the `b2_clear_claims` style
+call. I re-verified the P0 mechanically rather than trusting the queue
+text: **`js/practice-grammar.js` contains zero occurrences of the string
+`blocks`**, and still reads `pack.match` / `pack.quiz` / `pack.type_items` /
+`pack.use_items`, none of which exist in any of the 160 packs.
+
+**This run put a 21st B2 grammar unit behind that dead sequence.** Fifty-two
+grammar nodes when the P0 was found; the count only goes up. The content
+side of this course is in good shape and getting better every hour — and a
+student practising grammar today still answers zero questions and is told
+"Check: 100 %". The adapter proposal has been sitting in this digest since
+run 1. **It needs about twenty lines of `js/` and a decision from you; it
+does not need more content.**
+
+### Smoke-check list
+
+- `b2_discourse_markers` intro cards — five of them, and card 1 is a
+  three-row table (adverb / conjunction / preposition). Check it reads as
+  *grammar* and not as a vocabulary list.
+- `trunk_verbs_daily_a1` — "I make cars." replaced "I make breakfast."
+  Deliberate (Czech *Vyrábím auta.* is clean), but it shifts the unit's
+  daily-life flavour slightly toward work. Reject it if you dislike it.
+- `a1_to_for_with` — the instrument item is now "I open the door with my
+  key." (*Otevírám dveře klíčem.*). Czech instrumental mirrors English
+  `with` there exactly as well as *perem* did for the old pen item.
+
+---
+
 ## 2026-08-07 · cloud run 9 (RUE build, claude-opus-5)
 
 ### Headline: B2 grammar is 20/24 and one sketch off complete on-path; the two worst A2 units are clean; every remaining A1/A2 offender is now an ordinary untaught word
