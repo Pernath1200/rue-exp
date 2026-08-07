@@ -6,6 +6,129 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-07 · cloud run 24 (RUE build, claude-opus-5)
+
+### Headline: **3 A2 vocab intros (27 → 30), 2 Use-stage sentence banks (`a1_work`, `a1_school` — A1 leaves now 11/16), and 2 units re-lexified (audit 150 → 148).** All three gates green at the start, so step 0 did not consume the run. Repair queue had no cloud-lane items. Two *audit tooling* artefacts found and quantified — 12 of the remaining 148 violations are not teaching-order defects at all; both are propose-only, neither shipped.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `a195827` | **`a2_describing`** intro — `contrast` schematic, 4 carrier frames |
+| 2 | `78db405` | **`a2_home`** intro — 9 tiles, 5 frames |
+| 3 | `9effa46` | **`a2_shopping`** intro — 12 tiles, 5 frames |
+| 4 | `69ad29d` | **`a1_work`** `sentences[]` bank — 13 sentences, 16 lemmas |
+| 5 | `630475b` | **`a1_school`** `sentences[]` bank — 13 sentences, 14 lemmas |
+| 6 | `a6b4c0f` | `trunk_glue_linkers_a1` + `trunk_verbs_more2_a1` re-lexified — 150 → **148** |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 150 unknown types · 39 units | **148** · 37 units · baseline tightened 150 → 148 |
+
+Gates re-run before every commit; commit and push per unit. Nothing else pushed to `build` while I worked, so no rebase was needed.
+
+### Repair queue — nothing to do this run
+
+All three unticked items are explicitly out of the cloud lane: the vocab level badge and `order_click` are both marked engine/local-lane, and `b2_clear_claims` already carries its conservative resolution and is left unticked because the style call is yours. Nothing ticked; the file is unchanged.
+
+### Vocab intros — 27 → 30
+
+A1 leaves stay finished at 16/16. **A2 leaves: 11 → 14 of 22.** Built in path order (69, 71, 75). Remaining A2: `adverbs`, `ideas`, `verbs`, `health`, `school`, `clothes`, `media`, `misc`.
+
+| Unit | Page 1 | Trap / note | Why that shape |
+|---|---|---|---|
+| `a2_describing` | `contrast` schematic, *empty \| tired* | the **un-** prefix | 314 adjectives — an abstract set, so a schematic |
+| `a2_home` | 9 tiles | British **flat** = American **apartment** | concrete set, but only 9 honest glyphs exist |
+| `a2_shopping` | 12 tiles | **quality** vs **quantity** | money/goods picture-map cleanly |
+
+**`a2_describing` took `contrast`, and the labels come from the `use[]` data rather than from taste.** The pack declares `it_is` 306 times and `the_bag_is` 305 against `i_am_adj` 173 — so almost every one of these words can describe a *thing*, and about half can also describe a *person*. That is the split a student needs before Match starts pairing 314 adjectives, and it is the same two-jobs shape run 23 used for `a2_feelings`. Both label words (`empty`, `tired`) are items in this pack.
+
+**The un- note has four pairs that are both in this pack**: able/unable, fair/unfair, likely/unlikely, usual/unusual (`unhappy` is here too, with `happy` taught back at `a1_freetime`). I preferred it to the *Mám hlad → I am hungry* trap because `a2_feelings` at path 63 already teaches exactly that shape with *Mám strach → I am afraid*, and this unit is six steps later.
+
+**`a2_home` — the words I refused a tile, extending run 22/23's rule.** An emoji that names a *different word the course already teaches* is worse than no tile at all, because the student has the competing answer in memory:
+
+| Word | Glyph | Reads as | Competing word taught at |
+|---|---|---|---|
+| roof | 🏠 | house | `a1_home_family` |
+| shelf | 📚 | books | `a1_home_family` |
+| gate | 🚪 | door | `a1_home_family` |
+| furniture | 🪑 | chair | `a1_home_family` |
+| pillow | 🛏 | bed | `a1_home_family` |
+| garage | 🚗 | car | earlier |
+
+`stairs`, `curtain`, `carpet`, `balcony`, `basement`, `rent`, `landlord` and `neighbour` were left off for the plainer reason that no honest glyph exists (🪜 is a ladder, a different object; 🎭 reads "theatre"). That leaves **9**, which is inside the 8–12 the spec allows. I checked each competing word against the pack list rather than assuming.
+
+**`a2_shopping` refusals**: `fashion` (👗 reads "dress", taught in `a1_clothes`), `bar` (🍫 picks only the *tyčinka* sense and silently drops the drinking-bar sense the gloss also carries), `belt`/`button` (no glyph that is not a UI control), `advertisement` (📣 reads "announcement").
+
+**Frames are grounded, not derived.** I rebuilt run 23's inverse carrier table by intersecting the `use[]` id sets of every pack that already shows a given frame — `This is a …` resolves uniquely to `this_is_a` across 24 packs, `I have a …` to `i_have_a` across 17, and `a1_colours` independently confirms `it_is` → "It is …" and `the_bag_is` → "The bag is …". Every frame on all three new pages was then checked to be a carrier id **actually present on that pack's own items**; all 14 pass.
+
+### Use-stage sentence banks — A1 leaves 9 → 11 of 16
+
+Leaf packs without a bank: **35 → 33**. A1 leaves still without one: `leaf_time_a1`, `leaf_nature_a1`, `leaf_shopping_a1`, `leaf_tech_a1`, `leaf_ideas_a1` (5 left before A2 starts).
+
+**Legality was decided by an oracle that imports `audit.py` and asks it** — `variants()`, `tokens_of()`, `GLUE`, and the real path walk — rather than by reimplementing the rules or counting steps. Before trusting it I made it reproduce `audit.py`'s own published per-unit findings; it matched exactly on every unit tested, so its verdicts are the gate's verdicts. All 26 sentences are legal, and the audit total did not move when they landed, which is the independent confirmation.
+
+**Gloss collisions designed out rather than shipped.** Both packs gloss two taught items with one Czech word, so a single prompt had two equally-right answers — the defect run 22 swept out of the older banks. Each is resolved by widening `accepts`, not by dropping the sentence:
+
+| Prompt | Czech word | Both taught here | `accepts` carries |
+|---|---|---|---|
+| *Potřebuji práci.* | práce | `job` + `work (noun)` | "I need a job" **and** "I need work" |
+| *Moje práce je zajímavá.* | práce | same | "My work is …" **and** "My job is …" |
+| *Mám hodinu v devět.* | hodina | `class` + `lesson` | "a lesson at nine" **and** "a class at nine" |
+| *Mám zkoušku v pondělí.* | zkouška | `exam` + `test` | "an exam on Monday" **and** "a test on Monday" |
+
+**Two sentences I rewrote before shipping, for reasons no gate would have caught.** *Dostávám plat v pátek.* → **I get my salary on Friday** has no possessive in the Czech, so the prompt underdetermines its own answer; replaced with *Mám dobrý plat.* → **I have a good salary.** And *Chci skončit práci v pět* was stiff Czech; replaced with *Začínám pracovat v sedm.* → **I start work at seven.**
+
+**Czech I am confident in but flagging for the review routine:**
+
+- **Register: I used standard `Potřebuji` / `Pracuji`, where run 23's `a1_freetime` used colloquial `Potřebuju`.** Both are correct Czech; the course is now inconsistent across banks. This is a one-line convention call, and if you make it, it is a sweep rather than a per-run decision.
+- `a1_work` — *Můj otec je řidič autobusu.* Genitive `autobusu` for "bus driver"; I believe this is the natural form over *autobusový řidič*.
+- `a1_work` — *Můj manažer je na schůzce.* `na schůzce` reads as both "in a meeting" and "at a meeting"; both are in `accepts`.
+- `a1_work` — *To je můj kolega.* `kolega` is masculine animate but declines like a feminine noun; nominative with `můj` is what I intend.
+- `a1_school` — *Chci se učit anglicky.* Adverbial `anglicky` rather than accusative `angličtinu`; both are natural, the adverb is commoner in speech.
+- `a1_school` — *Neznám to slovo.* `znát` with a bare noun object, following the review routine's own earlier fix to `a1_ideas` (*nevíte slovo* → *neznáte slovo*).
+- `a1_school` — *Učebna je v prvním patře.* Locative `v prvním patře`.
+
+Everything else — the accusatives (*práci, přestávku, schůzku, tužku, hodinu, zkoušku, otázku, větu*), the locatives (*v kanceláři, na schůzce*), and the adjective agreements (*zajímavá, dobrý, zajímavý*) — I am confident in.
+
+### Sequencing — 150 → 148
+
+Every A1 and A2 unit was sitting at exactly **one** unknown type, so "worst unit" was a tie; I took the two where the offending word is purely incidental to the gap and a taught word substitutes cleanly.
+
+| Unit | Path | Was | Now | Gap kept |
+|---|---|---|---|---|
+| `trunk_glue_linkers_a1` | 47 | **Put** it into the bag. | **Look** into the bag. | `into` |
+| `trunk_verbs_more2_a1` | 28 | I run **every day**. | I run **in the park**. | `run` |
+
+`put` is taught at `trunk_verbs_action_a1` (path 49) — two steps too late; `look` at path 15. `day` is taught at `leaf_time_a1` (41); `park` at `leaf_places` (17). Both swaps are pure gain, and both units are now clean.
+
+### Forks for James
+
+**1 · Three A1/A2 violations I deliberately did NOT repair.** Each would have cost a teaching point, which the rules forbid:
+
+- **`a1_to_for_with` / `wait`** — the pack's *own intro card* teaches `wait for = čekat na (chunk)`, and `wait for` appears in four places including a minimal-pair drill (*Wait for me.* vs *Wait to me.*). `wait` is taught at `a1_imperatives` (path 48) but this unit is path 43 — a **5-step running-order mismatch**, the same shape as run 23's `trunk_social_a1`/`help` finding. Cheapest real fix is a spine decision, which is yours: it is content-free.
+- **`a1_word_order` / `new`** (3 occurrences) — the unit is **path 4**, and the course teaches **no attributive adjective before `trunk_adjectives_a1` at path 52**. `tired` is the only legal adjective in the whole pool and does not fit *a ___ phone*. Worth noting for its own sake: **`big`, `small`, `new`, `young` and `nice` all first appear at path 52**, so no bank or example anywhere in the first fifty steps can use a basic size/age adjective. That is a curriculum gap, not a pack defect.
+- **`a1_articles` / `hour`** — already documented in the pack's own note as the deliberate silent-h example. Left alone.
+
+**2 · `audit.py` counts 12 violations that are tokenizer artefacts, not teaching-order defects. Propose-only — I did not touch the gate.** A gate an agent can edit to lower its own number is not a ratchet, so this needs your word. Both are one-line fixes:
+
+- **Contractions (5).** `GLUE` contains `let`, `'s`, `n't`, `it`, `is`, `i`, `am`, `would`, `have`, `not` — every part — but `WORD_RE = [a-z']+` makes `it's` a **single** token, so it never matches. Affected: `i'd` (`trunk_can_like_want_a1`), `it's` (`trunk_there_time_a1`), `i'm` (`trunk_chunks_a2`, `b1_modals_speculation`), `let's` (`b1_phrasal_verbs`). The practical cost is larger than 5: **`Let's` is currently unwritable in any sentence bank course-wide**, even though `lets_talk_about` is a declared carrier and "Let's talk about …" already appears as a frame on three intro pages. I hit this while authoring and routed around it.
+- **Parenthesised disambiguators (7).** `targets_of()` strips `PARENS_RE` before recording what a unit *teaches*, but `exposed_text()` does **not** strip it before recording what a unit *shows*. So `watch (wrist)` exposes `wrist` and teaches only `watch` — the disambiguator becomes a permanent violation of a word the course never intended to use. Verified directly: for `a1_clothes`, `'wrist' in targets_of(...)` is `False` while `exposed_text` contains it. Affected: `time` (`leaf_freetime_a1`), `wrist` (`leaf_clothes_a1`), `height` (`leaf_body_a1`), `illness` (`leaf_health_a1`), `ordinal` (`leaf_time_a1`), `depart` (`leaf_travel_a2`), `extinguished` (`b1_phrasal_verbs`).
+
+Together these are **12 of the 148**, and **7 of the 19** remaining at A1/A2 — so over a third of what still looks broken at A1/A2 is the audit misreading its own packs. Fixing both would drop the total to ~136 genuine violations and make the A1/A2 tail almost entirely real. Say the word and each is a one-line change plus a baseline re-tighten.
+
+### To smoke-check
+
+- The three new intro pages, especially **`a2_describing`'s `contrast` diagram** — it is the first time the schematic carries a full sentence-length idea in the sub-labels ("describes a thing" / "describes a person"), and I sized the labels to the box by hand, not by rendering.
+- **`a2_home`'s 9-tile grid** — one short of the usual 10–12; check it does not look sparse next to `a2_shopping`'s 12.
+- The `a1_work` and `a1_school` **Use** stages now that they exist — in particular that the widened `accepts` above really do let both right answers through.
+
+---
+
 ## 2026-08-07 · cloud run 23 (RUE build, claude-opus-5)
 
 ### Headline: **3 A2 vocab intros (24 → 27), 2 more Use-stage sentence banks (`a1_freetime`, `a1_health` — leaf packs still missing one: 37 → 35), and 3 items re-lexified across 2 units (audit 153 → 150). All three gates green at the start, so step 0 did not consume the run.**
