@@ -1,0 +1,116 @@
+{
+  "id": "b1_nature",
+  "title": "Nature & the physical world",
+  "level": "B1",
+  "tree_node": "leaf_nature_b1",
+  "codex_unit": "V_THM-A1B1-09",
+  "note": "B1 Oxford-gap leaf · ground & plants, animals & the land · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "The ground, the plants, the animals",
+      "title_cz": "Země, rostliny, zvířata",
+      "pictures": [
+        { "icon": "🟫", "en": "soil", "cz": "půda" },
+        { "icon": "🏖", "en": "sand", "cz": "písek" },
+        { "icon": "🥾", "en": "mud", "cz": "bláto" },
+        { "icon": "🌫", "en": "dust", "cz": "prach" },
+        { "icon": "🌱", "en": "seed", "cz": "semeno" },
+        { "icon": "🍃", "en": "leaf", "cz": "list" },
+        { "icon": "🐚", "en": "shell", "cz": "mušle" },
+        { "icon": "🐿", "en": "tail", "cz": "ocas" },
+        { "icon": "🦋", "en": "wing", "cz": "křídlo" },
+        { "icon": "🐑", "en": "fur", "cz": "srst" },
+        { "icon": "🛤", "en": "path", "cz": "stezka" },
+        { "icon": "🌊", "en": "flood", "cz": "povodeň" }
+      ],
+      "body": "Twelve words for the world outside. Six are ground and plants, six are animals and the land itself."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I have a …",
+        "I need a …",
+        "It is …",
+        "Where is the …?"
+      ],
+      "note": "leaf has an irregular plural: one leaf, two leaves.",
+      "note_cz": "Pozor: leaf → leaves."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "Nature · ground and plants",
+      "items": [
+        { "en": "soil", "cz": "půda, zemina", "use": ["this_is_a", "it_is", "i_need_a"] },
+        { "en": "sand", "cz": "písek", "use": ["this_is_a", "it_is", "i_have_a"] },
+        { "en": "mud", "cz": "bláto", "use": ["this_is_a", "it_is"] },
+        { "en": "dust", "cz": "prach", "use": ["this_is_a", "it_is"] },
+        { "en": "seed", "cz": "semeno, semínko", "use": ["this_is_a", "i_have_a", "i_need_a"] },
+        { "en": "leaf", "cz": "list (na stromě)", "use": ["this_is_a", "i_see_a", "it_is"] }
+      ]
+    },
+    {
+      "title": "Nature · animals and the land",
+      "items": [
+        { "en": "shell", "cz": "mušle, ulita", "use": ["this_is_a", "i_have_a", "i_see_a"] },
+        { "en": "tail", "cz": "ocas", "use": ["this_is_a", "it_is", "i_see_a"] },
+        { "en": "wing", "cz": "křídlo", "use": ["this_is_a", "it_is", "i_see_a"] },
+        { "en": "fur", "cz": "srst, kožich", "use": ["this_is_a", "it_is"] },
+        { "en": "path", "cz": "stezka, pěšina", "use": ["this_is_a", "where_is_the", "i_see_a"] },
+        { "en": "flood", "cz": "povodeň, záplava", "use": ["this_is_a", "it_is", "lets_talk_about"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "The soil in our garden is very dry.",
+      "cz": "Půda v naší zahradě je velmi suchá.",
+      "lemmas": ["soil"],
+      "accepts": ["The soil in our garden is very dry"] },
+    { "en": "The children are playing in the sand.",
+      "cz": "Děti si hrají v písku.",
+      "lemmas": ["sand"],
+      "accepts": ["The children are playing in the sand"] },
+    { "en": "There is mud on the path.",
+      "cz": "Na stezce je bláto.",
+      "lemmas": ["mud", "path"],
+      "accepts": ["There is mud on the path", "There's mud on the path"] },
+    { "en": "There is dust on all the books.",
+      "cz": "Na všech knihách je prach.",
+      "lemmas": ["dust"],
+      "accepts": ["There is dust on all the books", "There's dust on all the books"] },
+    { "en": "I put the seeds in the soil.",
+      "cz": "Dal jsem semínka do půdy.",
+      "lemmas": ["seed", "soil"],
+      "accepts": ["I put the seeds in the soil"] },
+    { "en": "In autumn the leaves fall from the trees.",
+      "cz": "Na podzim listy padají ze stromů.",
+      "lemmas": ["leaf"],
+      "accepts": ["In autumn the leaves fall from the trees"] },
+    { "en": "She found a beautiful shell on the beach.",
+      "cz": "Našla na pláži krásnou mušli.",
+      "lemmas": ["shell"],
+      "accepts": ["She found a beautiful shell on the beach"] },
+    { "en": "That dog has a very long tail.",
+      "cz": "Ten pes má velmi dlouhý ocas.",
+      "lemmas": ["tail"],
+      "accepts": ["That dog has a very long tail"] },
+    { "en": "The bird has a broken wing.",
+      "cz": "Ten pták má zlomené křídlo.",
+      "lemmas": ["wing"],
+      "accepts": ["The bird has a broken wing"] },
+    { "en": "Our cat has soft white fur.",
+      "cz": "Naše kočka má měkkou bílou srst.",
+      "lemmas": ["fur"],
+      "accepts": ["Our cat has soft white fur"] },
+    { "en": "Where is the path to the river?",
+      "cz": "Kde je stezka k řece?",
+      "lemmas": ["path"],
+      "accepts": ["Where is the path to the river", "Where's the path to the river"] },
+    { "en": "After the rain there was a flood in the village.",
+      "cz": "Po dešti byla ve vesnici povodeň.",
+      "lemmas": ["flood"],
+      "accepts": ["After the rain there was a flood in the village"] }
+  ]
+}
