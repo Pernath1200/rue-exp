@@ -6,6 +6,93 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 31 (RUE build, claude-opus-5)
+
+### Headline: **three more A2 Use banks** — `a2_feelings`, `a2_society`, `a2_freetime` — 84 sentences covering **every item in all three packs** (25/25, 27/27, 32/32). A2 leaves go **9/22 → 12/22**, so the C1 gate stayed shut. Step 4 was a genuine no-op and I can now say so from first principles rather than by inheritance. I then spent the remaining run on the **trunk-intro backlog run 28 opened**, which my prompt still describes as closed — **two trunk intros landed, one of each branch**.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `f1f9deb` | **`a2_feelings`** `sentences[]` — 25 sentences, all 25 items |
+| 2 | `f2dc0cf` | **`a2_society`** `sentences[]` — 27 sentences, all 27 items |
+| 3 | `697e2fe` | **`a2_freetime`** `sentences[]` — 32 sentences, all 32 items |
+| 4 | `4ca4556` | **`trunk_verbs_daily_a1`** + **`trunk_glue_questions_a1`** intros |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 127 · 20 units · baseline 127 | **127 · 20 units · baseline 127** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All three green at the start, so step 0 did not consume the run. The 12 warnings are the permanent `b2_clear_claims` judgment-label style.
+
+### Step 5 stayed gated — the count, checked directly
+
+Walked `data/nodes-vocab.json`, opened every live pack, tested `sentences[]` presence. **22 A2 leaves live, 9 with banks at run start → 13 open; 10 open now.** Backlog non-empty, so C1 was left untouched.
+
+Remaining 10, with item counts: `health` 41, `home` 39, `tech` 35, `school` 34, `work` 33, `adverbs` 66, `misc` 86, `ideas` 92, `verbs` 112, `describing` 314. **The five small ones are ~2 more runs.** The last five are still the ones run 28 flagged as having no honest 12-sentence answer, and I now have a concrete reason to single out `describing` beyond its size — see the gender trap below.
+
+### Method — the oracle, and why I trusted it before using it
+
+Legality was decided by a script that **imports `codex/audit.py` and calls its own** `variants()` / `tokens_of()` / `GLUE` / `targets_of()` / `full_path()`, reconstructing `main()`'s `legal` set (pool-before | own | partner | GLUE) for a given node. **Before using it I made it reproduce the audit's published findings**: `new` illegal at `a1_word_order` but `nice` legal (matching run 30's correction of run 29), `hour` and `honest` illegal at `a1_articles`, `whether`/`wonder` illegal at `b1_indirect_questions`. Exact match on all four.
+
+Pool regenerated with `--before <node_id>` immediately before each pack. **84/84 sentences pool-legal.** Because a lucky stem can pass, the oracle also reports every token that passed only via a derived variant; 8 did, and all 8 are real derivations of a taught base (`feeling`←`feel`, `pays`/`schools`, `watching`, `loves`, `tickets`, `starts`). No lucky-stem passes.
+
+Two words the pool refused that are worth recording, because both look obviously A1: **`beautiful`** is not taught anywhere before `leaf_freetime_a2`, and **`last`** is not either — so *last night* / *last week* is unwritable in an A2 bank. I routed around both rather than declare them glue.
+
+All three diffs are purely additive (+253, +274, +325, no deletions) — banks appended by **text edit**, never by re-dumping the JSON, so run 30's phantom-diff trap on inline `use[]` arrays did not recur.
+
+### Step 4 — no-op, and this time provably so
+
+Only `a1_word_order` (new×3) and `a1_articles` (hour) remain at A1/A2, both re-derived by run 30 as irreducible. **I did not re-litigate them, and I did not need to take run 30's word for it either**: every commit this run touches an A2 pack, and both units sit far earlier on the path, so the pool *before* them is bit-identical to what run 30 analysed. The conclusion transfers mechanically. **I second run 30's recommendation to mark both permanently accepted in the report**, the way you did for `b2_clear_claims` — three runs have now spent effort re-deriving the same two answers.
+
+### The trunk-intro backlog is open, and my prompt says it is closed
+
+**My prompt is stale in the same way run 30 flagged, but on a different step.** It says step 2 is "DONE for A1+A2 (38/38)" and a no-op. That is true of *leaves*. Run 28 established under your mixed-treatment rule that **trunks are in scope**, making the real backlog 27 units, and built 2. The count today: **A1 trunk intros 2/17, A2 0/3** — so 18 A1/A2 trunks had no intro when this run started, not 0. Since step 2 also says *"if you find one missing, do it"*, I took the missing ones as in scope and built two.
+
+- **`trunk_verbs_daily_a1` · concrete** — 12 items are real actions, so normal emoji tiles. Trap: Czech *dělat* is both `make` and `do`.
+- **`trunk_glue_questions_a1` · glue** — question words name nothing drawable, so text-only page 1, no `pictures[]`, no `diagram`, matching `trunk_glue_pronouns_a1`. Trap: Czech *Kolik* is both `how much` and `how many`.
+
+Page 2 frames are the packs' own sentences verbatim, not invented. Prose kept short and plain per the explanation-language-scaling rule (both A1). **16 A1/A2 trunks remain.**
+
+I did **not** apply run 27's stricter "every tile must be a word its pack teaches first in the course" rule — you have still not ruled on it, and run 28 also left it unapplied. Following the shipped precedent keeps the four trunk intros consistent with each other; if you ratify that rule, all four need revisiting together, not just these two.
+
+### Fork for James — nothing new, but two old ones are still load-bearing
+
+No new design fork this run. Two unanswered ones are still blocking future work, both now cited by more than one run:
+
+1. **Item-level `lemma` as a general tool** (run 29's question, run 30's dependent). Untouched — I did not extend it, so it still affects exactly the two items it did.
+2. **Run 27's stricter tile rule vs the spec as written** — now four trunk intros deep. The longer this sits, the more pages a reversal touches.
+
+### Czech I am flagging for the review routine
+
+Not errors I believe I have made — the places a second opinion is worth most.
+
+- `a2_feelings` — **`bored`: I used the verb, not the adjective the pack glosses.** *Studenti se nudí* is what a Czech actually says; *Studenti jsou znudění* matches the pack's *znuděný* gloss but sounds stilted as a predicate. I chose natural Czech over gloss-matching. This is a real choice and it goes the opposite way to my usual conservative default, so please look.
+- `a2_feelings` — `afraid` is glossed "vyděšený / bát se" and I took the *bát se* sense (*Můj bratr se bojí psů*), because *I am afraid* maps to *Bojím se*, not to *Jsem vyděšený*. The *vyděšený* (terrified) sense gets no production practice.
+- `a2_feelings` — *Jsem v rozpacích* for `embarrassed` is the one 1sg prompt in the pack, chosen precisely because it is gender-neutral. Confirm it reads naturally as a bare sentence with no context.
+- `a2_society` — *Policie je tady* for **The police are here.** Czech *policie* is singular, English `police` takes a plural verb. I put both English forms in `accepts` so a student writing *The police is here* is not punished for the Czech. Flagging because that is an English-side judgment sitting inside a Czech-driven prompt.
+- `a2_society` — *Obyvatelstvo této země je malé.* for **The population of this country is small.** *Obyvatelstvo* is the pack's own gloss but *počet obyvatel* is what a Czech would more likely say for a population figure. Left as the pack has it.
+- `a2_society` — *Někteří lidé věří v Boha.* — accusative *v Boha* is right for belief-in; flagging only because the capital and the case together are easy to get wrong.
+- `a2_society` — *Stát platí za školy.* for **The state pays for schools.** *platit za* is correct with the thing paid for; *platí školy* (paying the schools themselves) is a different meaning and I did not want it.
+- `a2_freetime` — `party` is glossed "večírek / párty" and I used *večírek* (masculine, *Ten večírek byl v sobotu*). If you prefer *párty*, the demonstrative and verb both change gender.
+- `a2_freetime` — *Hrdina toho příběhu je mladý.* — *hrdina* is a masculine noun with feminine-type endings; nominative here so it is safe, but it is the kind of word that goes wrong one case later.
+- `a2_freetime` — `winner` is glossed *vítěz* only, so I gave it a masculine subject (*Můj bratr je vítěz*) rather than write *vítězka* against the gloss.
+
+### Smoke-check list
+
+- **`trunk_glue_questions_a1` intro** — the second text-only page in the course. Same check as `trunk_glue_pronouns_a1`: confirm it does not look broken or empty.
+- **`trunk_verbs_daily_a1` intro** — check `➡️`/`⬅️`/`📋`/`🥤` render, and whether `⬅️` for *come* reads as "come" rather than "back" on your device. It is the weakest glyph on the page.
+- **`a2_feelings` Use stage** — 25 sentences, and the `bored` call above is the one to sanity-check with a student's eye.
+- **`a2_society` Use stage** — confirm both *The police are here* and *The police is here* grade correct.
+- Nothing shell-side changed this run, so the ladder should be identical everywhere else.
+
+---
+
 ## 2026-08-08 · cloud run 30 (RUE build, claude-opus-5)
 
 ### Headline: **three more A2 Use banks** — `a2_shopping`, `a2_sports`, `a2_media` — 68 sentences covering **every item in all three packs** (23/23, 22/22, 24/24). A2 leaves go **6/22 → 9/22**, so the C1 gate stayed shut. Step 4 found **no reducible A1/A2 unit** and I did not force one — details below, because I reached a *different* conclusion from run 29 on `a1_word_order` and I think mine is the one to keep. Also removed 104 KB of junk run 29 committed by accident.

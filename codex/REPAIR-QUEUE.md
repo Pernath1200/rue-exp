@@ -123,6 +123,26 @@ All 72 live grammar units on path now produce a real ladder, gated by
   extinct — run 28's clean sweep cleared the shipped backlog, but new
   authoring reproduces it at roughly 3 % of prompts.
 
+  **Progress · cloud run 31 (2026-08-08): applied to 3 new banks at authoring
+  time** (`a2_feelings` 25, `a2_society` 27, `a2_freetime` 32 — 84 new
+  prompts). **One instance of the target defect caught pre-commit**, in
+  `a2_freetime`: *Je slavná celebrita* is 3sg with the subject dropped and
+  reads *he* or *she*; it became *Anna je slavná celebrita*. Rate is
+  consistent with run 30's ~3 %.
+
+  A fourth trap, and `a2_feelings` is where it is worst: **Czech predicate
+  adjectives inflect for gender** (*naštvaný/naštvaná*,
+  *překvapený/překvapená*), so a 1sg prompt like *Jsem naštvaný* leaks the
+  speaker's gender exactly the way run 30's 1sg past tense does. This is
+  structural for any feelings/describing pack, since almost every item is an
+  adjective. Rule of thumb applied: **route every adjective prompt through an
+  explicit 3rd-person subject** (*Moje matka je naštvaná*) rather than 1sg.
+  Where a 1sg sentence was genuinely wanted, pick a gender-neutral predicate
+  — *Jsem v rozpacích* works because it is a prepositional phrase, and soft
+  adjectives (*nervózní*) are gender-neutral too. **`a2_describing` (314
+  items) will hit this on nearly every sentence** — worth knowing before that
+  pack is attempted.
+
   A third trap to add to run 29's two, and it is the one that bit most often:
   **Czech past-tense verbs inflect for the speaker's gender**, so any 1sg
   past prompt leaks it (*Četl jsem zajímavý článek* vs *Četla*). This is the
