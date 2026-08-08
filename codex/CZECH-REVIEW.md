@@ -357,3 +357,39 @@ ryby*, *výhodná koupě* for *bargain*, *Je tu moc hluku*. The
 football/soccer pair correctly cross-accepts both terms since cz *fotbal*
 cannot disambiguate. No English-shaped Czech found in any of the three
 banks.
+
+## 2026-08-08 — second-opinion pass (cloud, ~18:30 UTC)
+
+Scope: everything after the ~17:00 review — run 31's 3 Use-stage banks
+(a2_feelings 25, a2_society 27, a2_freetime 32 sentences) and 2 new trunk
+intros (glue_questions text-only, verbs_daily picture-led), plus run 32's
+3 Use-stage banks (a2_work 33, a2_school 34, a2_tech 35 sentences). All
+pure additions — no existing cz touched.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_school` bank *teaching*: "Výuka je dobré povolání." — grammatical
+  and consistent with the pack's own gloss (*teaching* = "výuka"), but
+  *výuka* is the instruction itself (lessons), not an occupation, so
+  calling it a *povolání* reads oddly; a Czech would say "Učit je dobré
+  povolání" or "Učitelství je dobré povolání". If the sentence changes,
+  consider whether the gloss should grow to "výuka / učitelství" so they
+  stay in step. Semantic collocation, not a grammar error, so left
+  unchanged.
+
+Clean, no log needed: the other 185 bank sentences. Correct oblique cases
+throughout — genitives *bojí se psů / Hrdina toho příběhu / Obyvatelstvo
+této země / do knihovny / hodně dovedností / hodně lidí*, datives *Vláda
+pomáhá lidem*, accusatives *věří v Boha / našel zloděje / požádat o tuhle
+práci / studuje biologii / Potřebuji kopii*, locatives *na schůzce /
+o nezaměstnanosti / o zeměpisu / o médiích / dobrý v matice / na téhle
+webové stránce*, instrumental *před zkouškou*; agreement incl. neuter
+plural *Tato data jsou velmi důležitá*, masc.-anim. plural *Studenti jsou
+zmatení / pyšní / přátelští*, plurale-tantum-style plural *Jeho znalosti
+jsou velmi dobré* for singular en *knowledge*; the a2_feelings author's
+own note holds — every gendered adjective has an explicit subject, and the
+one 1sg sentence uses gender-neutral *v rozpacích*. Both trunk intros'
+titles, tiles and notes ok (the how much/how many and make/do notes are
+sound; all 12 verbs_daily tiles are clean infinitives matching their
+items).
