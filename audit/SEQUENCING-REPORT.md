@@ -1,10 +1,9 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**127 unknown word types** across 20 live units (of 153).
+**126 unknown word types** across 19 live units (of 153).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
-- **a1_word_order** (A1 grammar): new×3
 - **a1_articles** (A1 grammar): hour
 - **b1_present_perfect_vs_past** (B1 grammar): client×2, until, noon
 - **b1_used_to** (B1 grammar): smoke×4, wi, fi
