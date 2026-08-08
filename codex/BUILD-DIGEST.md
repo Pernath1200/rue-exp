@@ -30,6 +30,8 @@ calls & forks for James · anything to smoke-check.
 
 All three green at the start, so step 0 did not consume the run. The 12 warnings are the permanent `b2_clear_claims` judgment-label style.
 
+**Your `661d8b4` landed while I was writing this entry, and it makes the gate count four.** I rebased onto it and re-ran everything on the new base: `check_codex.py` passes — **37 distinct tags in `data/`, all resolving against the 55 canonical units** — and the other three plus smoke are unchanged from the table above. Nothing this run authors a `codex_unit` tag, so the new gate had nothing of mine to judge; I ran it because my commits sit on top of it, not because they touch it.
+
 ### Step 5 stayed gated — the count, checked directly
 
 Walked `data/nodes-vocab.json`, opened every live pack, tested `sentences[]` presence. **22 A2 leaves live, 9 with banks at run start → 13 open; 10 open now.** Backlog non-empty, so C1 was left untouched.
