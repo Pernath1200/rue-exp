@@ -254,3 +254,49 @@ si píšu do deníku*; the already/yet/still trio each sits where the intro
 teaches it). Both intros' tiles match their packs' own glosses verbatim; the
 fall = podzim (amer.) i pád note and the speaker = mluvčí i reproduktor note
 are both sound, and body_cz prose on both pages is natural, not calqued.
+
+## 2026-08-08 — second-opinion pass (cloud, ~15:00 UTC)
+
+Started as a backlog pass (nothing new since the ~13:00 review), so reviewed
+the oldest never-reviewed pack, **a1_core_frames_adjectives** (36 items, all
+three blocks). Run 28 then landed mid-pass, so its Czech is included too:
+2 new sentence banks (a2_family, a2_travel, 28 sentences), 2 new intros
+(trunk glue_pronouns text-only, trunk verbs_action picture-led), plus the
+verbs_action items themselves (scaffold-era, never previously reviewed).
+c1_reporting_complementation is a grammar pack — out of scope.
+
+**Fixed: 0 · Flagged: 2 · everything else ok.**
+
+For James:
+- `a1_core_frames_verbs_action`: the new intro note correctly teaches
+  "take the bus = jet autobusem, ne „brát autobus“" — but the pack's own
+  *take* item still carries the scaffold-era cz "Jedu autobusem. / **Beru si
+  autobus.**", i.e. exactly the calque the note forbids, shown as prompt
+  Czech. Colloquial *vzít si autobus* exists, so not unambiguously wrong —
+  but note and item now contradict each other. Suggest dropping " / Beru si
+  autobus." from the item. Left unchanged (my rules say unidiomatic = flag).
+- `a1_core_frames_adjectives` first-person items: *tired* gives both genders
+  ("Jsem unavený. / Jsem unavená.") but *healthy* and *ready* give masculine
+  only ("Jsem zdravý.", "Jsem připravený."). Nothing is wrong, and cz is
+  prompt-side so grading is unaffected — but the pack sets the both-genders
+  precedent itself, and a female learner meets masculine-only first person.
+  Suggest adding "/ Jsem zdravá." and "/ Jsem připravená." if the symmetry is
+  wanted. Left unchanged.
+
+Clean, no log needed:
+- adjectives pack: neuter/masculine alternates ("Je to velké. / Je velký."),
+  animate plural "Jsou přátelští.", idiomatic "Mám hlad" and "Je zima. /
+  Je to studené.", adverbial "Je to špatně." for wrong — no English-shaped
+  Czech anywhere in the pack.
+- all 28 new bank sentences: correct animate accusative "Dnes máme hosta",
+  genitives "majitel obchodu" / "blízko pláže", locatives "na dovolené / na
+  letišti / v naší společnosti", accusatives "dobrou povahu / silnou osobnost
+  / zpáteční jízdenku", idiomatic "Let má zpoždění" for *is delayed*; plural
+  "Kde jsou moje zavazadla?" for singular *luggage* is the right Czech and
+  "Where are my bags" is already in accepts, so grading holds.
+- both intros' titles and notes ("Malá slova, která drží větu pohromadě",
+  "Dvanáct věcí, které děláte", the him/her/them note, "jet autobusem" with
+  correct instrumental) and all 12 verbs_action tiles, which match the packs'
+  item glosses. The verbs_action items' possessive-dropping Czech ("Najdu
+  tašku" for *I find my bag*) is natural and safe — frames packs gap only the
+  verb, so "my" is supplied by the English frame, not graded from the cz.
