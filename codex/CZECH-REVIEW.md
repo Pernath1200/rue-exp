@@ -551,3 +551,32 @@ masculine *rád*. No English-shaped Czech in the pack.
 
 Still never reviewed after this pass: a1_core_frames_there_time,
 a2_core_frames_chunks, b1_abstract, b1_collocations, b1_core_frames.
+
+## 2026-08-08 — second-opinion pass (cloud, backlog #2)
+
+Nothing new since the previous backlog pass (run 35's two banks were already
+covered by the ~23:00 entry), so reviewed the next oldest never-reviewed pack:
+**a1_core_frames_there_time** (12 frame items, all cz read).
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a1_core_frames_there_time` items *There is a table.* / *There is a café.*:
+  the second cz alternate fronts the adverb — "**Tam je** stůl." / "**Tam je**
+  kavárna." Fronted *tam* is the deictic order (pointing: "there's the table,
+  over there"); the plain existential order is "Je tam stůl." As an alternate
+  gloss for English *there is* it may nudge learners toward the pointing
+  reading. Grammatical and defensible, so left unchanged; if changed, both
+  items travel together.
+
+Clean, no log needed: the other 10 items — correct existentials with
+quantifiers (*Jsou tu dvě židle*, *Je tam spousta lidí / hodně lidí* with
+singular verb + gen. pl.), question forms (*Je tu banka?*, *Jsou tu nějaké
+obchody?*), time frames (*Je pondělí*, *Jsou tři hodiny / Je třetí hodina* —
+both standard), and the dropped-subject rule holds throughout (*Vstávám v
+šest*, *Večeříme v sedm*, *Uvidíme se zítra* all fixed by 1sg/1pl morphology).
+*Obchod otevírá v devět* matches the form already judged fine on 2026-08-07.
+No English-shaped Czech in the pack.
+
+Still never reviewed after this pass: a2_core_frames_chunks, b1_abstract,
+b1_collocations, b1_core_frames.
