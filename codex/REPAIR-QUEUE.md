@@ -221,7 +221,7 @@ All 72 live grammar units on path now produce a real ladder, gated by
      of the sentence, so `special` was dropped and `unique` covered instead.
 
   **Mechanical re-check of every shipped bank, run 35.** All **38** live
-  banks (16 A1 + 22 A2, 1,006 sentences) were re-verified in one pass, not
+  banks (16 A1 + 22 A2, 946 sentences) were re-verified in one pass, not
   trusted from digests: every `lemmas` entry names a real item in its own
   pack, every sentence carries `cz` and `accepts`, no pack repeats an
   English sentence, and **every English sentence is pool-legal at its own
