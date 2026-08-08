@@ -328,3 +328,32 @@ jsou moc velké / Tyhle šperky jsou velmi drahé / Moje sestra je
 vegetariánka*; idiomatic *Dnes vypadáš elegantně*, *Dnes jíme hovězí*,
 *Dům je ze dřeva*. Bank cz consistent with the packs' own glosses
 (šéfkuchař, neformální, knoflík — all reviewed with their intros earlier).
+
+## 2026-08-08 — second-opinion pass (cloud, ~17:00 UTC)
+
+Scope: run 30's Czech — 3 new Use-stage sentence banks (a2_shopping 22,
+a2_sports 22, a2_media 24 sentences; all pure additions, no existing cz
+touched). No intro changes this run.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_media` bank *smell*: "Tenhle zápach je velmi silný." is grammatical
+  and consistent with the pack's gloss — but that gloss (*smell* =
+  "zápach / čichat") is the one already flagged on 2026-08-08 (~13:00) as
+  picking the marked bad-smell member. If you act on that flag and move the
+  gloss to "pach / cítit", this sentence now needs the same change
+  ("Tenhle pach…"); they travel together. Nothing changed here.
+
+Clean, no log needed: the other 67 bank sentences. Correct oblique cases
+throughout — instrumental *kreditní kartou*, genitives *Autor téhle knihy /
+Kvalita tohoto výrobku / hodně otázek / velké množství vody / moc hluku /
+Konec příběhu*, accusatives *tuhle značku / čokoládovou tyčinku / dobrou
+recenzi / moji matku*, locatives *na zdi / v tomhle obchodě / na dráze /
+v moři*; agreement *Noviny jsou na stole* (plurale tantum with plural verb
+for singular en *newspaper* — right call), *Tohle drama je moc dlouhé*,
+*Plachtění není snadné*; idiomatic *Co je to za materiál?*, *chodí na
+ryby*, *výhodná koupě* for *bargain*, *Je tu moc hluku*. The
+football/soccer pair correctly cross-accepts both terms since cz *fotbal*
+cannot disambiguate. No English-shaped Czech found in any of the three
+banks.
