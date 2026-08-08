@@ -1,0 +1,116 @@
+{
+  "id": "b1_body_health",
+  "title": "The body & getting better",
+  "level": "B1",
+  "tree_node": "leaf_body_health_b1",
+  "codex_unit": "V_THM-A1B1-07",
+  "note": "B1 Oxford-gap leaf · parts of the body the A1 pack does not reach, plus what happens when something goes wrong · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "The rest of the body",
+      "title_cz": "Zbytek těla",
+      "pictures": [
+        { "icon": "💪", "en": "muscle", "cz": "sval" },
+        { "icon": "🫁", "en": "chest", "cz": "hrudník" },
+        { "icon": "👄", "en": "lip", "cz": "ret" },
+        { "icon": "🦶", "en": "toe", "cz": "prst u nohy" },
+        { "icon": "👅", "en": "tongue", "cz": "jazyk" },
+        { "icon": "💅", "en": "nail", "cz": "nehet" },
+        { "icon": "🌬", "en": "breath", "cz": "dech" },
+        { "icon": "🦷", "en": "bite", "cz": "kousnout" },
+        { "icon": "🤕", "en": "injure", "cz": "zranit" },
+        { "icon": "😣", "en": "suffer", "cz": "trpět" },
+        { "icon": "🩺", "en": "treat", "cz": "léčit" },
+        { "icon": "😶", "en": "pale", "cz": "bledý" }
+      ],
+      "body": "The A1 health pack gave you the obvious parts — head, hand, leg. These are the six the doctor actually asks about, plus six words for what happens when something goes wrong and someone puts it right."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I have a …",
+        "It is …",
+        "I am …",
+        "We need to …"
+      ],
+      "note": "tongue is the thing in your mouth here, not a language. nail is the one on your finger, not the one you hit with a hammer.",
+      "note_cz": "Pozor: tongue = jazyk v ústech, ne řeč. nail = nehet, ne hřebík."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "Body · the parts a doctor asks about",
+      "items": [
+        { "en": "muscle", "cz": "sval", "use": ["this_is_a", "i_have_a", "it_is"] },
+        { "en": "chest", "cz": "hrudník, hruď", "use": ["this_is_a", "it_is"] },
+        { "en": "lip", "cz": "ret", "use": ["this_is_a", "it_is"] },
+        { "en": "toe", "cz": "prst u nohy", "use": ["this_is_a", "it_is"] },
+        { "en": "tongue", "cz": "jazyk (v ústech)", "use": ["this_is_a", "it_is"] },
+        { "en": "nail", "cz": "nehet", "use": ["this_is_a", "i_have_a", "it_is"] }
+      ]
+    },
+    {
+      "title": "When something goes wrong",
+      "items": [
+        { "en": "breath", "cz": "dech", "use": ["this_is_a", "i_have_a"] },
+        { "en": "bite", "cz": "kousnout", "use": ["it_is", "we_need_to"] },
+        { "en": "injure", "cz": "zranit", "use": ["it_is", "we_need_to"] },
+        { "en": "suffer", "cz": "trpět", "use": ["it_is", "lets_talk_about"] },
+        { "en": "treat", "cz": "léčit, ošetřit", "use": ["it_is", "we_need_to"] },
+        { "en": "pale", "cz": "bledý", "use": ["it_is", "i_am_adj"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "My brother has very strong muscles.",
+      "cz": "Můj bratr má velmi silné svaly.",
+      "lemmas": ["muscle"],
+      "accepts": ["My brother has very strong muscles"] },
+    { "en": "He has a pain in his chest.",
+      "cz": "Bolí ho na hrudi.",
+      "lemmas": ["chest"],
+      "accepts": ["He has a pain in his chest", "He has pain in his chest"] },
+    { "en": "Her lips are very dry in winter.",
+      "cz": "Její rty jsou v zimě velmi suché.",
+      "lemmas": ["lip"],
+      "accepts": ["Her lips are very dry in winter"] },
+    { "en": "My toe hurts when I run.",
+      "cz": "Bolí mě prst u nohy, když běžím.",
+      "lemmas": ["toe"],
+      "accepts": ["My toe hurts when I run"] },
+    { "en": "The dog drinks with its tongue.",
+      "cz": "Pes pije jazykem.",
+      "lemmas": ["tongue"],
+      "accepts": ["The dog drinks with its tongue"] },
+    { "en": "Her nails are long and clean.",
+      "cz": "Její nehty jsou dlouhé a čisté.",
+      "lemmas": ["nail"],
+      "accepts": ["Her nails are long and clean"] },
+    { "en": "Take a deep breath, please.",
+      "cz": "Zhluboka se nadechněte, prosím.",
+      "lemmas": ["breath"],
+      "accepts": ["Take a deep breath please", "Take a deep breath"] },
+    { "en": "That dog can bite.",
+      "cz": "Ten pes může kousnout.",
+      "lemmas": ["bite"],
+      "accepts": ["That dog can bite"] },
+    { "en": "The player injured his leg on Saturday.",
+      "cz": "Ten hráč si v sobotu zranil nohu.",
+      "lemmas": ["injure"],
+      "accepts": ["The player injured his leg on Saturday"] },
+    { "en": "Many people suffer from this illness.",
+      "cz": "Mnoho lidí trpí touto nemocí.",
+      "lemmas": ["suffer"],
+      "accepts": ["Many people suffer from this illness"] },
+    { "en": "This doctor treats children in the hospital.",
+      "cz": "Tenhle lékař léčí děti v nemocnici.",
+      "lemmas": ["treat"],
+      "accepts": ["This doctor treats children in the hospital"] },
+    { "en": "You look very pale today.",
+      "cz": "Dnes vypadáš hodně bledě.",
+      "lemmas": ["pale"],
+      "accepts": ["You look very pale today"] }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "id": "b1_materials",
+  "title": "Materials & the things they make",
+  "level": "B1",
+  "tree_node": "leaf_materials_b1",
+  "codex_unit": "V_THM-A1B1-01",
+  "note": "B1 Oxford-gap leaf · what things are made of, and the small things that fasten them · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "What is it made of?",
+      "title_cz": "Z čeho to je?",
+      "pictures": [
+        { "icon": "👕", "en": "cotton", "cz": "bavlna" },
+        { "icon": "🧶", "en": "wool", "cz": "vlna" },
+        { "icon": "🥾", "en": "leather", "cz": "kůže" },
+        { "icon": "🔩", "en": "iron", "cz": "železo" },
+        { "icon": "⚫", "en": "coal", "cz": "uhlí" },
+        { "icon": "🧺", "en": "cloth", "cz": "látka" },
+        { "icon": "🪢", "en": "rope", "cz": "lano" },
+        { "icon": "🧵", "en": "string", "cz": "provázek" },
+        { "icon": "⛓", "en": "chain", "cz": "řetěz" },
+        { "icon": "🪡", "en": "needle", "cz": "jehla" },
+        { "icon": "📌", "en": "pin", "cz": "špendlík" },
+        { "icon": "🥫", "en": "tin", "cz": "plechovka" }
+      ],
+      "body": "Six materials and six small objects. The materials answer the question a shop assistant asks you every time — what is it made of? The objects are the things that tie, fasten or hold something together."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I have a …",
+        "I need a …",
+        "It is …"
+      ],
+      "note": "Materials are uncountable: cotton, wool, iron, coal — no plural, and no *a*. The objects are countable and behave normally: a rope, two ropes.",
+      "note_cz": "Materiály jsou nepočitatelné — bez množného čísla a bez *a*."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "Materials · what things are made of",
+      "items": [
+        { "en": "cotton", "cz": "bavlna", "use": ["this_is_a", "it_is"] },
+        { "en": "wool", "cz": "vlna", "use": ["this_is_a", "it_is"] },
+        { "en": "leather", "cz": "kůže (materiál)", "use": ["this_is_a", "it_is"] },
+        { "en": "iron", "cz": "železo", "use": ["this_is_a", "it_is"] },
+        { "en": "coal", "cz": "uhlí", "use": ["this_is_a", "it_is"] },
+        { "en": "cloth", "cz": "látka", "use": ["this_is_a", "i_need_a", "it_is"] }
+      ]
+    },
+    {
+      "title": "Objects · tying, fastening, holding",
+      "items": [
+        { "en": "rope", "cz": "lano", "use": ["this_is_a", "i_need_a", "i_have_a"] },
+        { "en": "string", "cz": "provázek", "use": ["this_is_a", "i_have_a"] },
+        { "en": "chain", "cz": "řetěz", "use": ["this_is_a", "it_is"] },
+        { "en": "needle", "cz": "jehla", "use": ["this_is_a", "i_need_a"] },
+        { "en": "pin", "cz": "špendlík", "use": ["this_is_a", "i_need_a"] },
+        { "en": "tin", "cz": "plechovka", "use": ["this_is_a", "i_have_a"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "This shirt is made of cotton.",
+      "cz": "Tahle košile je z bavlny.",
+      "lemmas": ["cotton"],
+      "accepts": ["This shirt is made of cotton"] },
+    { "en": "My grandmother makes socks from wool.",
+      "cz": "Moje babička plete ponožky z vlny.",
+      "lemmas": ["wool"],
+      "accepts": ["My grandmother makes socks from wool"] },
+    { "en": "His new shoes are made of leather.",
+      "cz": "Jeho nové boty jsou z kůže.",
+      "lemmas": ["leather"],
+      "accepts": ["His new shoes are made of leather"] },
+    { "en": "The old bridge is made of iron.",
+      "cz": "Ten starý most je ze železa.",
+      "lemmas": ["iron"],
+      "accepts": ["The old bridge is made of iron"] },
+    { "en": "There is a lot of coal under the ground.",
+      "cz": "Pod zemí je hodně uhlí.",
+      "lemmas": ["coal"],
+      "accepts": ["There is a lot of coal under the ground", "There's a lot of coal under the ground"] },
+    { "en": "This cloth is very soft.",
+      "cz": "Tahle látka je velmi měkká.",
+      "lemmas": ["cloth"],
+      "accepts": ["This cloth is very soft"] },
+    { "en": "We need a long rope for the boat.",
+      "cz": "Na loď potřebujeme dlouhé lano.",
+      "lemmas": ["rope"],
+      "accepts": ["We need a long rope for the boat"] },
+    { "en": "I have a long string in my bag.",
+      "cz": "Mám v tašce dlouhý provázek.",
+      "lemmas": ["string"],
+      "accepts": ["I have a long string in my bag", "I have long string in my bag"] },
+    { "en": "The chain on my bike is broken.",
+      "cz": "Řetěz na mém kole je rozbitý.",
+      "lemmas": ["chain"],
+      "accepts": ["The chain on my bike is broken"] },
+    { "en": "My mother is looking for a needle.",
+      "cz": "Moje matka hledá jehlu.",
+      "lemmas": ["needle"],
+      "accepts": ["My mother is looking for a needle"] },
+    { "en": "There is a pin on the floor.",
+      "cz": "Na podlaze je špendlík.",
+      "lemmas": ["pin"],
+      "accepts": ["There is a pin on the floor", "There's a pin on the floor"] },
+    { "en": "There are two tins of soup in the kitchen.",
+      "cz": "V kuchyni jsou dvě plechovky polévky.",
+      "lemmas": ["tin"],
+      "accepts": ["There are two tins of soup in the kitchen", "There're two tins of soup in the kitchen"] }
+  ]
+}

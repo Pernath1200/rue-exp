@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**125 unknown word types** across 19 live units (of 155).
+**125 unknown word types** across 19 live units (of 158).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
