@@ -6,6 +6,109 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 33 (RUE build, claude-opus-5)
+
+### Headline: **the small A2 Use banks are finished** — `a2_home` (39) and `a2_health` (41), 80 sentences covering every item in both packs. A2 leaves go **15/22 → 17/22**, so the C1 gate stayed shut. The five remaining leaves are exactly the five giants run 28 flagged and runs 30-32 deferred, so **the fork below is now the only thing standing between the routine and the C1 frontier** — there is no smaller pack left to do instead. I then spent the rest of the run on the trunk-intro backlog: **three intros landed, two concrete and one glue** (A1 trunks 4/17 → 7/17).
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `fe50ec4` | **`a2_home`** `sentences[]` — 39 sentences, all 39 items |
+| 2 | `b18a8dd` | **`a2_health`** `sentences[]` — 41 sentences, all 41 items |
+| 3 | `6f83120` | **`trunk_verbs_more_a1`** + **`trunk_verbs_say_a1`** (concrete) + **`trunk_glue_quantity_a1`** (glue) intros |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 127 · 20 units · baseline 127 | **127 · 20 units · baseline 127** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12 warnings are the permanent `b2_clear_claims` judgment-label style. Nothing this run authors a `codex_unit` tag, so the fourth gate again had nothing of mine to judge.
+
+### The checkout was stale, and that is worth a line
+
+My container started on a **detached `main` at `b6063a2`** — a commit from 2026-08-06, before the entire repair queue, every sentence bank and every intro. `git branch` showed no local `build` at all and `git fetch` had to create it. Had I trusted the working tree I would have re-authored two months of work on top of a two-day-old base. The prompt's "start every run by checking out `build` at its current remote tip" is doing real work; it is not boilerplate.
+
+### Note on the prompt: still stale in the same three places
+
+Run 32 recorded this drift and it has not been fixed, so I am re-recording it rather than re-deriving it:
+
+1. **"A2 has 21 of 22 units still showing coming soon"** — it was 7 at run start, **5 now**.
+2. **"audit baseline ~129"** — it is **127**. A run that trusts 129 would let two regressions through the ratchet. This is the one worth fixing.
+3. **"step 2 vocab intros DONE 38/38"** — true of *leaves* only. After this run **10 A1 trunks and 3 A2 trunks still have no intro**.
+
+### Step 5 stayed gated — the count, checked directly
+
+Walked `data/nodes-vocab.json`, opened every live A2 pack, tested `sentences[]` presence rather than trusting run 32's number. **22 A2 leaves live, 15 with banks at run start → 7 open; 5 open now.** Backlog non-empty, so C1 was left untouched.
+
+Remaining 5, with item counts: `adverbs` 66, `misc` 86, `ideas` 92, `verbs` 112, `describing` 314.
+
+### Method — the oracle, re-validated before use
+
+Legality was decided by a script that **imports `codex/audit.py` and calls its own** `variants()` / `tokens_of()` / `GLUE` / `targets_of()` / `full_path()`, reconstructing `main()`'s `legal` set (pool-before | own | partner | GLUE) for a given node. Rebuilt from scratch rather than inherited, and **re-run against the same six published self-tests before use**: `new` illegal at `a1_word_order` but `nice` legal, `hour` and `honest` illegal at `a1_articles`, `whether`/`wonder` illegal at `b1_indirect_questions`. Exact match on all six.
+
+Pool regenerated with `--before <node_id>` immediately before each pack (`leaf_home_a2` 1439 targets / 69 units, `leaf_health_a2` 1832 / 82). **80/80 sentences pool-legal.** Six tokens passed only via a derived variant and all six are real derivations of a taught base (`curtains`←the pack's own `curtain`, `writes`, `hurts`, `doctors`, `gives`). No lucky-stem passes.
+
+Both bank diffs are purely additive (+403, +418, **zero deletions**), and so are the three intro diffs (+83, +83, +20) — appended by text edit, never by re-dumping the JSON, so run 30's phantom-diff trap on inline `use[]` arrays did not recur.
+
+### Step 4 — no-op, verified not inherited
+
+Only `a1_word_order` (new×3) and `a1_articles` (hour) remain at A1/A2. Same mechanical argument run 32 made, re-checked rather than assumed: both units sit at path indices **3 and 17** and every edit this run is at an A2 vocab leaf far later, so the pool *before* those two units is bit-identical to what run 30 analysed and their `legal` sets are unchanged. **This is the fifth run to spend effort on this.** Runs 30, 31 and 32 all recommended marking the two permanently accepted in the report, the way you did for `b2_clear_claims`. I am seconding it a fourth time. Note it cannot be done by the cloud lane unilaterally — `SEQUENCING-REPORT.md` is *generated* by `audit.py`, so "marking them accepted" means a change to gate tooling, which is a decision, not a content edit.
+
+### Trunk intros — three more, classified by reading the items
+
+- **`trunk_verbs_more_a1` · concrete** — 12 real actions (begin, build, choose, send, show…), so normal emoji tiles. AGENTS.md names this pack as concrete and the items agree. Trap chosen: **`enjoy` reverses the Czech subject** — *Práce mě baví* has the work doing the pleasing, English has you doing the enjoying, so *My work enjoys me* is the error to pre-empt.
+- **`trunk_verbs_say_a1` · concrete** — AGENTS.md names it concrete; reading the items, six are speech verbs and six are head/senses verbs, which is what the page-1 body now says. Trap: **`tell` needs a person after it** (*I tell my brother*), `say` does not (*I say hello*). Tile note: `say`/`tell`/`speak` deliberately do **not** all get speech-bubble glyphs (💬 / 📖 / 🗣️) — three near-identical bubbles would be unreadable as a set.
+- **`trunk_glue_quantity_a1` · glue** — quantity words and the something/someone/everything set name nothing drawable, so **text-only page 1**, matching `trunk_glue_pronouns_a1` and `trunk_glue_questions_a1`. Trap: **some vs any**.
+
+Page-2 frames on all three are pack items verbatim, mechanically checked against the packs' own `en` strings; every page-1 tile maps to a real `gap_answer`, also checked mechanically. A1 prose kept short and plain per the explanation-scaling rule. As runs 28 and 31 did, I did **not** apply run 27's stricter tile rule — still unruled-on, and applying it to some intros and not others is worse than either answer.
+
+### Fork for James — unchanged, unanswered, and now unavoidable
+
+Run 32's fork is the whole remaining A2 backlog. Restating it because it is now load-bearing in a way it was not last run: **there is no smaller pack left to do instead**, so the next run either gets an answer or spends itself on trunk intros again.
+
+The spec says **~12 sentences per pack**; practice since `a1_home_family` has been **one sentence per item**. For `adverbs` (66), `misc` (86), `ideas` (92), `verbs` (112), `describing` (314) that is ~670 sentences.
+
+- **(a) Hold one-per-item.** Full exposure, several runs of work, `describing` alone dwarfs every bank shipped so far.
+- **(b) Return to the spec's ~12 and select.** Cheap and spec-literal, but most items get no Use exposure and the guarantee `lemmas` exists to provide quietly weakens.
+- **(c) Split the giants** into several banks per pack, or treat them as review units drawing on earlier packs.
+
+**Conservative default taken again: none started.** I second run 32's recommendation — **(c) for `describing`, (a) for the other four** — and add one datum from this run: `a2_health` at 41 items took roughly the same effort as `a2_tech` at 35, so cost is close to linear in item count, which makes `describing` ~8× a normal pack rather than merely "big". If you would rather not rule on all five at once, **ruling on `adverbs` alone unblocks the next run**.
+
+The two older forks are still unanswered and still load-bearing: **item-level `lemma` as a general tool** (run 29) and **run 27's stricter tile rule** (now seven trunk intros deep).
+
+### Czech I am flagging for the review routine
+
+Not errors I believe I have made — the places a second opinion is worth most.
+
+- `a2_health` — **`sore throat`: I wrote the gloss-matching *Mám bolest v krku*, not the idiomatic *Bolí mě v krku*.** The idiomatic form is what a Czech actually says; I took the gloss-matching one as the conservative default, and it is slightly stiff. This is the one I would most like overruled if you disagree — note that `ankle` two entries down goes the *other* way (*Bolí mě kotník*, idiomatic), because there the noun stays visible either way. That inconsistency is deliberate but it is still an inconsistency.
+- `a2_health` — **`emergency`: gloss is "nouze / pohotovost" and I wrote *Tohle je nouzová situace*.** Neither gloss form works as a bare predicate — *Tohle je nouze* is odd and *pohotovost* is the emergency room, a different sense. So the Czech is an adjectival derivative of the gloss rather than the gloss itself. Gloss departure, deliberate.
+- `a2_health` — `disease` vs `illness`: I split them by sense to stop the pair collapsing — *choroba* for `disease` (*Lékaři tuhle chorobu znají*), *nemoc* for `illness` (*Moje matka má vážnou nemoc*). The pack glosses `disease` as "nemoc (choroba)" and `illness` as "nemoc", so both are inside the gloss, but the split is mine.
+- `a2_health` — `unfit`: gloss is "nefit / ne v kondici" and I wrote *Tenhle muž není v kondici* — a negated verb rather than a negative adjective. `fit` in the previous sentence is the indeclinable *fit*, chosen precisely because it carries no gender.
+- `a2_health` — `weight`: I wrote *Jeho váha je problém* rather than the far more frequent *Chci zhubnout* (= *I want to lose weight*), because *zhubnout* contains no reflex of *váha* and the student would have no cue for the noun being taught. Frequency traded for cue visibility, deliberately.
+- `a2_health` — `take medicine`: *Musíte užívat léky každý den* — `must`, where the English carrier for this item is *need to*. I used *must* because *Potřebujete užívat léky* is not what a Czech would say. The English is *You must take medicine every day*, so both sides agree; flagging only because it departs from the item's own `use[]` frame.
+- `a2_home` — **`heat`: gloss is "teplo / vytápět" and I wrote *V tomhle pokoji není teplo* (= *There is no heat in this room*).** The positive version (*Teplo v tomhle pokoji je hrozné*) is unnatural where English would say *The heat in this room is terrible* — Czech wants *horko* for oppressive heat and *teplo* for warmth, and the item glosses only *teplo*. The negative frame is the one sentence where both languages agree on which word.
+- `a2_home` — `dishwasher`: gloss is "myčka nádobí" but I wrote plain *myčka*, which is what Czechs actually say. Gloss departure, small.
+- `a2_home` — `landlord`: gloss is "majitel bytu / domácí" and I used the noun *domácí* (*Můj domácí je milý muž*). *domácí* is an adjective used as a noun and can read as "domestic" out of context; *majitel bytu* is unambiguous but reads as a legal term.
+- `a2_home` — `washing` vs `washing machine`: I split the senses so the pair does not collapse — *prádlo* (the laundry, *Prádlo je na balkoně*) for `washing`, *pračka* for `washing machine`. The gloss for `washing` is "praní / prádlo", so both are inside it, but *praní* (the act) gets no production practice.
+- `a2_home` — `board`: the gloss is "prkno / tabule" and I took the *tabule* (classroom board) sense, since *The teacher writes on the board* is the frame a student meets first. The plank sense gets none.
+
+### Smoke-check list
+
+- **`a2_home` Use stage** — 39 sentences; the pairs to eyeball are `heating`/`central heating`, `stairs`/`stair` and `washing`/`washing machine`, since each pair now has two prompts a student could confuse.
+- **`a2_health` Use stage** — 41 sentences; check `disease`/`illness` do not read as the same prompt twice.
+- **`trunk_verbs_say_a1` intro** — check 💬 / 📖 / 🗣️ read as three *different* verbs and not as three ways of drawing "talk", and that 🧩 for `understand` and ❌ for `forget` land rather than puzzle.
+- **`trunk_verbs_more_a1` intro** — check ☑️ (`choose`) and ⚖️ (`decide`) are distinguishable, and that ☑️ does not read as "correct answer" in the tile grid.
+- **`trunk_glue_quantity_a1` intro** — third text-only page 1 in the course; same check as the other two, confirm it does not look broken or empty.
+- Nothing shell-side changed this run, so the ladder should be identical everywhere else.
+
+---
+
 ## 2026-08-08 · cloud run 32 (RUE build, claude-opus-5)
 
 ### Headline: **three more A2 Use banks** — `a2_work`, `a2_school`, `a2_tech` — 102 sentences covering **every item in all three packs** (33/33, 34/34, 35/35). A2 leaves go **12/22 → 15/22**, so the C1 gate stayed shut. Steps 1, 2 and 4 were all genuine no-ops this run and I verified each one rather than inheriting it. **The five "small" A2 leaves run 31 identified are now finished** — every remaining leaf is a big one.

@@ -141,6 +141,24 @@ All 72 live grammar units on path now produce a real ladder, gated by
   phrase. Rate over runs 29-32: 3 defects in ~305 prompts (~1 %), all caught
   pre-commit.
 
+  **Progress · cloud run 33 (2026-08-08): applied to 2 new banks at authoring
+  time** (`a2_home` 39, `a2_health` 41 — 80 new prompts). **Zero instances of
+  the target defect**, by the same authoring method run 32 used: no 3sg prompt
+  was written without an explicit subject in the first place. Every prompt
+  fixes its person by an explicit noun subject (*Moje sestra*, *Náš dům*,
+  *Výtah*, *Lékař*, *To dítě*), by 1sg/1pl/2pl present morphology (*Potřebuji*,
+  *Platím*, *Máme*, *Musíte*), or is impersonal/existential (*Na střeše je
+  pták*, *V tomhle pokoji není teplo*). Rate over runs 29-33: 3 defects in
+  ~385 prompts, all caught pre-commit.
+
+  A note on trap three (1sg past tense) from `a2_health`: the past tense is
+  hard to avoid entirely in a health pack, because accidents and injuries are
+  past events. The escape used was to **put the past on an explicit
+  non-speaker subject** — *Byla tady nehoda* is past tense but its subject is
+  *nehoda*, so the gendered participle agrees with the accident, not with the
+  student. That generalises: past tense is only a leak when the subject is
+  1st person.
+
   The gender traps below were the live constraint again, not the subject
   rule. `a2_school` hit trap one squarely: *biology* and *history* both
   invite *I like biology*, which leaks *rád/ráda*. Both were recast — one
