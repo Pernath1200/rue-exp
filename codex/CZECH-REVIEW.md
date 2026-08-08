@@ -434,3 +434,55 @@ užívat léky*, *bolest v krku* and *bolest zad* are the standard set terms
 the enjoy-inversion note ("Práce mě baví = I enjoy my work") matches the
 pack's own item, the tell-needs-a-person note is sound, and all 24 tiles
 match their packs' item glosses.
+
+## 2026-08-08 — second-opinion pass (cloud, ~21:30 UTC)
+
+Scope: run 34's Czech — the 3 giant A2 Use-stage sentence banks (a2_adverbs
+55, a2_misc 84, a2_ideas 89 sentences; all pure additions, no existing cz
+touched). The a1_word_order sequencing fix is a grammar pack — out of scope.
+
+**Fixed: 0 · Flagged: 4 · everything else ok.**
+
+For James:
+- `a2_adverbs` bank *immediately*: cz "Přijďte okamžitě." but accepts only
+  "Please come immediately" — the cz has no *prosím*, so a student will
+  produce "Come immediately", which grades wrong. Every other imperative in
+  these banks keeps prosím on both sides (Prosím, jezděte opatrně / Mluvte
+  prosím jasně / Nemluvte prosím hlasitě / Počkejte prosím na recepci); only
+  this one drops it. Either cz → "Přijďte prosím okamžitě." or add the bare
+  form to `accepts` (English, so yours). Same shape as the earlier suit/cream
+  flags; nothing changed.
+- `a2_ideas` bank *structure*: "Struktura domu je silná." — grammatical, but
+  *silný* is the English-shaped choice; the Czech collocation for a physically
+  strong structure is **pevná** (and for a house, *konstrukce* is the more
+  natural noun than *struktura*). Suggest "Konstrukce domu je pevná." or
+  minimally "…je pevná."; matches the pack's gloss (structure = struktura),
+  so left unchanged.
+- `a2_ideas` bank *variety*: "Ten obchod má velkou rozmanitost." — calque of
+  "has a large variety"; a Czech says "má velký výběr". *Rozmanitost* is the
+  pack's gloss and is fine for abstract variety/diversity, but a shop "having
+  rozmanitost" reads translationese. If changed, the gloss may want to grow
+  to "rozmanitost / výběr" so sentence and gloss stay in step. Left unchanged.
+- `a2_misc` bank *unit*: "Každá jednotka má deset slov." — the sentence
+  forces the textbook-unit reading, and that in Czech is **lekce**;
+  *jednotka* is a unit of measurement (or a military/emergency unit), so
+  "jednotka má deset slov" reads oddly. The gloss (unit = jednotka) is fine
+  for the general sense — it's only this carrier sentence that lands on the
+  wrong sense. Suggest a measurement carrier ("Metr je jednotka délky.") or
+  cz → "Každá lekce má deset slov." with the gloss grown to "jednotka /
+  lekce". Semantic, not grammatical, so left unchanged.
+
+Clean, no log needed: the other 224 sentences. Correct oblique cases
+throughout — genitives *podél řeky / mnoho přínosů / kousek chleba / sada
+hrnků / druh čaje / láhev vody / hodně síly / zdroj života / z kovu /
+z plastu / deset procent studentů (with correct sg. verb + gen. pl.
+"je nových")*, accusatives *cigaretu / pozvánku / známku / miliardu lidí /
+radu / důležitou roli*, locatives *v kruhu / ve zdi / v misce / na recepci /
+v dobrém stavu*, instrumental-free but correct *Podle mého bratra*; vocative
+*Milá Anno*; plurale tantum *Dveře jsou z kovu* with plural verb for singular
+en *door* (same shape as the earlier luggage/rubbish calls); sám/sama/samy
+agreement all correct incl. *Děti to udělaly samy*; idiomatic *Můj syn má
+potíže* for "is in trouble", *Můj otec tady dřív pracoval* for "used to
+work", *Můj syn dělá pokroky*, *To nemá smysl*, *Mám otevřít okno?* for
+"Shall I…". No dictionary-nominative or possessive-agreement defects found
+in any of the three banks.
