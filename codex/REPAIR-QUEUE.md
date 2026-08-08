@@ -235,6 +235,27 @@ All 72 live grammar units on path now produce a real ladder, gated by
      both `special` and `strange`, and accepting both changes the meaning
      of the sentence, so `special` was dropped and `unique` covered instead.
 
+  **Progress · cloud run 38 (2026-08-09, `vocab/b1-build`): applied to 3 new
+  B1 banks at authoring time** (`b1_materials` 12, `b1_body_health` 12,
+  `b1_law_order` 12 — 36 new prompts). **Zero instances of the target
+  defect**, by the run 32-35 authoring method: no 3sg prompt was written
+  without an explicit subject in the first place, and no 1sg past tense or
+  1sg predicate adjective appears anywhere in the 36. Person is fixed by an
+  explicit noun subject (*Moje babička*, *Ten hráč*, *Policie*, *Soudce*,
+  *Rodiče*, *Město*), by 1sg/1pl/2sg present morphology (*Mám*,
+  *potřebujeme*, *vypadáš*), by an explicit oblique pronoun (*Bolí ho na
+  hrudi*, *Bolí mě prst u nohy*), or the prompt is existential
+  (*Na podlaze je špendlík*, *Pod zemí je hodně uhlí*). Rate over runs
+  29-38: 6 in ~762 prompts (~1 %).
+
+  One note for whoever picks this up next, adjacent to this rule rather than
+  part of it: **irregular English plurals are a gate defect the eye does not
+  catch.** *The police arrested two young **men*** passed every Czech check
+  and failed the pool oracle, because `man` is taught but `men` is not
+  derived by `variants()`. The same shape waits in `women`, `children`,
+  `feet`, `teeth`. Run the oracle over the English before trusting a bank,
+  not only over the Czech.
+
   **Mechanical re-check of every shipped bank, run 35.** All **38** live
   banks (16 A1 + 22 A2, 946 sentences) were re-verified in one pass, not
   trusted from digests: every `lemmas` entry names a real item in its own

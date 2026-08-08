@@ -6,6 +6,185 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · cloud run 38 — **`vocab/b1-build`** (RUE build, claude-opus-5)
+
+### Headline: **step 3 at full rate — three B1 gap packs, 36 words, 36 Use sentences, all pool-legal.** The gap moved **474 → 438, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (diffed, 36 deletions / 0 additions). That is the **second consecutive run** where the measurement tracks authored content 1:1, so run 36's method is now confirmed twice rather than once. All four gates green at the start and at the end; the audit held at 125.
+
+### Branch (step 0) — re-derived, not inherited
+
+The prompt's rule is "skip the count once switched", but I ran it anyway
+rather than trust a digest: live A2 vocab units with neither `sentences[]`
+nor `practice: "frames"` = **0** (25 live A2 vocab nodes, 22 leaf packs
+banked, 3 `trunk_*` frames packs exempt). The switch stands. `build` was
+**not touched at all this run** — not fetched into the tree, not edited, not
+committed to.
+
+Steps 1 and 2 are settled (runs 36 and 37), so this run is entirely step 3.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `9f08a1b` | **`b1_materials` + `b1_body_health` + `b1_law_order`** — 36 items, 36 sentences, nodes registered, tree rebuilt, `oxford-b1-gap.tsv` regenerated (438 rows) |
+| 2 | this entry | digest + REPAIR-QUEUE run-38 progress on the dropped-subject standing rule |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 162 packs · 0 errors · 12 warnings | **165 · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 125 · 19 units · baseline 125 | **125 · 19 units · baseline 125** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12
+warnings are the permanent `b2_clear_claims` judgment-label style — none
+come from this run's packs. **The audit did not tighten this run** (run 37's
+126 → 125 was `dust`); it also did not rise, which is the ratchet's actual
+requirement.
+
+### Step 3 — the three packs
+
+| node | codex_unit | shape | intro |
+|---|---|---|---|
+| `leaf_materials_b1` | `V_THM-A1B1-01` | 2×6 items, 12 sentences | emoji tiles (concrete set) |
+| `leaf_body_health_b1` | `V_THM-A1B1-07` | 2×6 items, 12 sentences | emoji tiles (concrete set) |
+| `leaf_law_order_b1` | `V_THM-A1B1-09` | 2×6 items, 12 sentences | emoji tiles (concrete set) |
+
+- **`b1_materials`** — cotton wool leather iron coal cloth · rope string
+  chain needle pin tin. Two halves that answer two different questions:
+  *what is it made of* (uncountable materials, no article) and *what holds
+  it together* (countable objects). Page 2's note is the countability split,
+  which is the only grammar the pack needs.
+- **`b1_body_health`** — muscle chest lip toe tongue nail · breath bite
+  injure suffer treat pale. Deliberately the parts the **A1 health pack does
+  not reach** — it has head, hand, leg; these are what a doctor actually
+  asks about — plus six words for something going wrong and someone putting
+  it right.
+- **`b1_law_order`** — arrest murder victim weapon escape guard · judge
+  court prisoner punish punishment ban. Ordered as a **sequence** (something
+  happens → police → court → punishment) rather than as twelve separate
+  words, and page 1's body says so, because the sequence is the mnemonic.
+
+Themes were chosen for density against the gap list, not for variety: all 36
+words are on it, and each pack is a block the list already clusters.
+
+**Theme choice is deliberately concrete this run.** Three emoji-tile packs
+and no schematic, which is a change of mix from run 37 (one emoji, one
+`branch`). The reason is that the gap list's remaining concrete nouns are
+the ones an emoji tile teaches honestly and cheaply, and the abstract
+remainder (`policy`, `basis`, `identity`, `impression`) will need schematics
+and more care per item — front-loading the cheap, high-confidence packs
+keeps the rate up while the two open scope questions below are unanswered.
+
+### Method — pool, oracle, then re-verified from disk
+
+Pool regenerated with `--before <node_id>` **per pack** before authoring
+(2400 / 2412 / 2424 targets). Every sentence **and every item** run through
+`codex/_oracle.py` (its own selftest re-run first: **6/6**): **36/36
+pool-legal**, then re-checked from the files on disk *after* writing rather
+than trusting the pre-write pass.
+
+**One draft was caught by the oracle rather than by eye.** *The police
+arrested two young **men*** is illegal at that node: `man` is taught, but
+`men` is an irregular plural and `variants()` does not derive it, so the
+audit would have counted a new unknown type. It became *a young man*.
+Worth naming as a class — **irregular plurals are invisible to the eye and
+visible to the gate** (`men`, `women`, `children`, `feet`, `teeth`); the
+existing `b1_nature` bank hit the same shape with *leaves* and survived only
+because that pack teaches `leaf` itself.
+
+A separate mechanical pass over the three packs, independent of the script
+that wrote them, confirmed: every `lemmas` entry names a real item in its
+own pack · every item is covered by at least one sentence (36/36, no
+uncovered items) · every sentence carries `cz` and `accepts` · no repeated
+English sentence · **no within-pack Czech gloss collision** · intro tiles
+match the item lists exactly · no `icon`/`swatch` on any drill item · and
+**no item duplicates a word any of the other 64 vocab packs already
+teaches**. 0 problems.
+
+**Frames were wrong in one pack and fixed before commit.** `b1_body_health`
+page 2 listed *Where is the …?*, which no item in that pack carries — the
+rule is that frames come from the items' own `use[]` carrier ids. Replaced
+with *I am …* and *We need to …*, both of which its items do carry. Checked
+mechanically across all three packs afterwards.
+
+### Czech I am flagging for the review routine
+
+All 36 prompts were checked for the dropped-subject rule and the gender
+traps before commit. These are the judgment calls a second opinion is worth
+most on:
+
+- `b1_materials` — **`wool`: *Moje babička plete ponožky z vlny*** for *My
+  grandmother makes socks from wool*. I used *plete* (knits) rather than a
+  literal *dělá*, because *dělat ponožky* is not what a Czech would say. The
+  English stays *makes*, so the pair is idiomatic on both sides rather than
+  literal on either. The one I would most like a ruling on — if the review
+  routine prefers literal pairing, this is the sentence to change.
+- `b1_materials` — **`cloth`: *látka*.** The item glosses only *látka*, but
+  English `cloth` covers both the fabric and the rag (*hadr*). I picked the
+  fabric sense and wrote the sentence to force it (*Tahle látka je velmi
+  měkká*). Flagging in case the rag sense is the more useful one at B1.
+- `b1_materials` — `tin`: *plechovka*. The BrE can, not the metal. The metal
+  sense (*cín*) is a different word in Czech, so a student who meets *tin*
+  as a metal later will not be helped by this item.
+- `b1_body_health` — **`chest`: *Bolí ho na hrudi*** for *He has a pain in
+  his chest*. The Czech is the natural idiom and its explicit *ho* fixes the
+  person, but it is structurally nothing like the English, which may make it
+  hard to produce from the prompt. A more parallel *Má bolest na hrudi* is
+  worse Czech. Flagged as a genuine trade.
+- `b1_body_health` — **`pale`: *Dnes vypadáš hodně bledě*.** Adverb *bledě*
+  after *vypadat*, not the adjective — correct, but it means the item
+  (*bledý*, an adjective) never appears in its item form in the bank.
+- `b1_body_health` — `tongue`: *Pes pije jazykem*. Instrumental, no
+  preposition. Deliberate — it is the natural Czech and it keeps the item
+  out of the *jazyk = language* reading, which the intro note also warns
+  about.
+- `b1_law_order` — **`punish` / `punishment`: *trestat* / *trest*.** A verb
+  and its own noun, in the same pack, one letter apart in Czech. They do not
+  collide as glosses, but Match will show *trestat* and *trest* as two
+  tiles, which is a harder discrimination than usual. Page 2's note names
+  the split explicitly. If the review routine thinks that is too fine, the
+  cheap fix is dropping `punishment` and covering another gap word.
+- `b1_law_order` — `guard`: *strážný*. Chose it over *hlídač* (which reads
+  more like a night watchman or a dog) and over *stráž* (the abstract duty).
+- `b1_law_order` — `escape`: item glosses *utéct, uniknout*; the sentence
+  uses *utekli*. Perfective plural past on an explicit subject (*Dva
+  vězni*), so no gender leak.
+
+### Still open — unchanged from run 37, and both get more expensive every run
+
+1. **`codex_unit` reuse (run 37's fork).** Three more packs now carry reused
+   thematic ids (`V_THM-A1B1-01`, `-07`, `-09`). Five B1 packs in total now
+   depend on this reading. The B1B2 band still has exactly **one** unused
+   canonical unit (`V_WFM-B1B2-01`); everything else unused is B2C1, which
+   the contract puts out of scope. Inventing an id is forbidden by the gate's
+   own docstring and the fix is upstream in rue-codex, which this lane cannot
+   reach. **Retagging five packs is still cheap; retagging thirty will not
+   be.**
+2. **Pack-count scope.** `rue_oxford.py` now prints **~37 packs of 12** to
+   close the gap fully (it said ~40 last run; the number falls as packs
+   land). The contract says ~26. Run 36 offered build-all / keep-26-and-defer
+   / re-cut-the-target and recommended re-cut then build; **still
+   unanswered.** Proceeding at 2–3 packs per run on the densest themes first
+   is right under all three options, so nothing is wasted — but the ordering
+   of the long tail still depends on it.
+3. **Re-lexify tie-break** (run 36). Untouched, and correctly so: those
+   repairs live on `build`, which this branch must not touch.
+4. **`teaches_lemmas` judgement pass** (run 36/37). The mechanical 90/93 is
+   done; whether James wants non-gapped taught forms added on top is open
+   and blocks nothing.
+
+### Nothing to smoke beyond the new units
+
+Three new live vocab leaves at the end of the B1 path; `smoke.py` passes. No
+engine, shell, or grammar file was touched this run — the diff is three new
+pack files plus the node registry, the rebuilt tree, the regenerated gap
+file and the audit report's own header line.
+
+---
+
 ## 2026-08-08 · cloud run 37 — **`vocab/b1-build`** (RUE build, claude-opus-5)
 
 ### Headline: **step 2 is complete (90/93) and step 3 has started — the first two B1 gap packs are live.** 24 new B1 words, 24 Use sentences, all pool-legal. The gap moved **498 → 474, exactly 24** — the measurement now tracks authored content word-for-word, which is the first hard confirmation that run 36's number is sound. And the audit **tightened, 126 → 125**: closing the B1 gap repairs sequencing violations as a side effect.
