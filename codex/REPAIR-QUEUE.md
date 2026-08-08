@@ -113,6 +113,26 @@ All 72 live grammar units on path now produce a real ladder, gated by
   dropped subject (*Smaží vejce*) is the exact defect this rule targets and
   was caught pre-commit — it became *Můj otec smaží vejce*.
 
+  **Progress · cloud run 30 (2026-08-08): applied to 3 new banks at authoring
+  time** (`a2_shopping` 22, `a2_sports` 22, `a2_media` 24 — 68 new prompts).
+  **Two genuine instances of the target defect were caught pre-commit**, both
+  in `a2_media`: *Kupuje si každý týden časopis* and *Má krásný úsměv* are
+  3sg with the subject dropped, so each reads *he* **or** *she* and would
+  have graded a correct answer wrong. They became *Moje matka si každý týden
+  kupuje časopis* and *Moje dcera má krásný úsměv*. So the defect is **not**
+  extinct — run 28's clean sweep cleared the shipped backlog, but new
+  authoring reproduces it at roughly 3 % of prompts.
+
+  A third trap to add to run 29's two, and it is the one that bit most often:
+  **Czech past-tense verbs inflect for the speaker's gender**, so any 1sg
+  past prompt leaks it (*Četl jsem zajímavý článek* vs *Četla*). This is the
+  same class as `mít rád` but much easier to write by accident, because the
+  English (*I read an interesting article*) looks perfectly neutral. Rule of
+  thumb applied this run: **no 1sg past tense in a Czech prompt** — recast to
+  the present (*Tenhle článek je velmi zajímavý*) or move the past onto an
+  explicit 3rd-person subject. Note 1pl past has the same problem
+  (*Dívali* vs *Dívaly*), so it is not a singular-only trap.
+
 - [ ] **Explanation-language scaling (James, 2026-08-08).** Explanatory prose
   — intro `body`/`note`/`title_cz` text, grammar `explanation`/
   `explanation_cz`, hints — must match the level it explains, not stay at A1

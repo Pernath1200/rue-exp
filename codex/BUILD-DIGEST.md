@@ -6,6 +6,102 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 30 (RUE build, claude-opus-5)
+
+### Headline: **three more A2 Use banks** — `a2_shopping`, `a2_sports`, `a2_media` — 68 sentences covering **every item in all three packs** (23/23, 22/22, 24/24). A2 leaves go **6/22 → 9/22**, so the C1 gate stayed shut. Step 4 found **no reducible A1/A2 unit** and I did not force one — details below, because I reached a *different* conclusion from run 29 on `a1_word_order` and I think mine is the one to keep. Also removed 104 KB of junk run 29 committed by accident.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `055ad59` | **`a2_shopping`** `sentences[]` — 22 sentences, all 23 items |
+| 2 | `973ec68` | **`a2_sports`** `sentences[]` — 22 sentences, all 22 items |
+| 3 | `217fbb5` | **`a2_media`** `sentences[]` — 24 sentences, all 24 items |
+| 4 | `f1d4d97` | removed stray `--help.json` (104 KB) from repo root |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 127 · 20 units · baseline 127 | **127 · 20 units · baseline 127** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All three green at the start, so step 0 did not consume the run. The 12 `verify_pack` warnings are the permanent `b2_clear_claims` judgment-label style you formalised — not a regression.
+
+**My prompt is stale and you may want to refresh it.** It describes the repo as of run 27 ("A2 has 21 of 22 units still showing Use · coming soon", "run 27 closed the intro backlog"). The remote was at run 29. I worked from the repo, not the prompt, but a run that trusted the prompt would have re-authored `a2_clothes`/`a2_nature`/`a2_food` from scratch.
+
+### Step 5 stayed gated — the count, checked directly
+
+I walked `data/nodes-vocab.json`, opened every live pack and tested `sentences[]` presence rather than trusting run 29's number. **22 A2 leaves live, 6 with banks at run start → 16 open; 13 open now.** Backlog non-empty, so C1 was left untouched. Full picture: A1 leaves **16/16**, A2 **9/22**, B1 **0/6**, and the 17 A1 + 3 A2 + 3 B1 trunks have no banks at all.
+
+Remaining A2 leaves, with item counts, so you can see the shape of what is left: `health` 41, `home` 39, `tech` 35, `school` 34, `work` 33, `freetime` 32, `society` 27, `feelings` 25, `adverbs` 66, `ideas` 92, `verbs` 112, `misc` 86, `describing` 314. **At 3 banks a run that is ~4 more runs**, but the last five are the ones run 28 flagged as having no honest 12-sentence answer — `describing` at 314 items is not a bank, it is a different problem.
+
+### The three banks
+
+| Pack | Items | Sentences | Coverage |
+|---|---|---|---|
+| `a2_shopping` | 23 | 22 | 23/23 |
+| `a2_sports` | 22 | 22 | 22/22 |
+| `a2_media` | 24 | 24 | 24/24 |
+
+**Method.** Pool regenerated with `--before <node_id>` immediately before each pack, then every draft checked by a script that imports `codex/audit.py` and reuses **its own** `tokens_of` / `variants` / `GLUE` / `targets_of` — the answer comes from the gate's logic, not my reading of it. Because "pool-legal" can be passed by a lucky stem, I then probed every content word individually for a real base form. **68/68 sentences pool-legal, 0 lucky-stem passes.** Two words did fail the base-form probe and both resolve honestly: `won` → `win` (taught, via the IRREGULAR table) and `skis` → `ski` (in-pack).
+
+One authoring note: I wrote the banks by **text-level append** rather than re-dumping the JSON. My first pass at `a2_shopping` round-tripped the file through `json.dumps` and silently reflowed 23 `use[]` arrays from inline to expanded — a 24-line phantom diff touching curated data. Reverted and redone; all three diffs are now purely additive (+1 line for the note).
+
+### Step 4 — no unit was reducible, and I am not sure run 29 was right about why
+
+Only two A1/A2 units remain in the report: `a1_word_order` (new×3) and `a1_articles` (hour). I re-derived both instead of inheriting run 29's analysis.
+
+**`a1_articles` · `hour` is genuinely essential.** The item teaches silent-h → *an*. I checked every silent-h alternative (`honest`, `honour`, `honor`, `heir`) — none is pool-legal either, so no re-lexify exists. `hour` **is** taught, by `leaf_time_a1`, which sits *after* `a1_articles` on the path, so this is a true ordering violation and not a gap in the course. Options are: move the unit, teach `hour` earlier, or accept it. **Conservative path taken: accepted, logged, nothing changed.**
+
+**`a1_word_order` — run 29 said irreducible because `tired` is the only legal adjective. That premise is wrong: `nice` is also legal.** It comes from the partner unit `trunk_social_a1`. But I did **not** use it, for two reasons, and the second is the real one:
+
+1. `nice` is legal *only because of run 29's own unratified `lemma` declaration* on *Nice to meet you.* If you revert that fork, `nice` becomes illegal again and any rewrite built on it silently regresses.
+2. **More important: `trunk_social_a1` glosses *Nice to meet you.* as *Těší mě.*** — the Czech never glosses `nice` as a word at all. The student has met the string inside a fixed formula and has been given no meaning for it. Writing *I need a nice phone* would demand a sense they have never been taught, whereas `new` is at least glossed in its own item's Czech (*nový telefon*). **Satisfying the gate here would make the teaching worse.**
+
+So `new` stands as the logged fork, now on firmer ground than "the pool has no adjective". **Recommend marking both `a1_word_order` and `a1_articles` permanently accepted in the report**, the way you did for `b2_clear_claims`, so future runs stop re-deriving this. The A1/A2 sequencing frontier is otherwise clear; everything left in the report is B1/B2.
+
+### Fork for James — run 29's `lemma` question is still open and now has a dependent
+
+Run 29 asked whether item-level `lemma` is an acceptable general tool for declaring taught-in-place words that `targets_of()` cannot see. **You have not answered, so I did not extend it** — that is why `a1_articles` was left alone rather than fixed the same way. Worth knowing before you rule: the mechanism has already changed a downstream pool (it is what makes `nice` legal at `a1_word_order`), so a revert is no longer purely local to the two items it touched. It does not change the audit total — those two units drop out either way — but reason 2 above means I would not want the gate's verdict on `nice` treated as a licence to use it.
+
+### The junk file
+
+`2eb9e3a` (run 29's sequencing commit) swept in **`--help.json`, 104 KB at the repo root** — someone ran `codex/make_pool.py --help`, the flag was taken as the output path, and the tool wrote a full pool dump to a file literally named `--help.json`. Nothing references it. Removed in `f1d4d97`. **`make_pool.py` has no guard against an output path starting with `-`**, so this will happen again; a one-line check would prevent it, but that is gate tooling and I left it alone rather than make an unreviewed change to a gate.
+
+### Repair queue
+
+**No unticked one-time items** — every one-time entry is ticked; the two open entries are the standing rules.
+
+- **Dropped-subject rule** — applied to all 68 new prompts, progress logged in the queue file. **The defect is not extinct.** Run 28's sweep found 0 in shipped banks and run 29 caught 1 at authoring; I caught **2** more in `a2_media` (*Kupuje si každý týden časopis*, *Má krásný úsměv* — both 3sg, subject dropped, both read *he* or *she*). Roughly 3 % of drafted prompts reproduce it, so it needs to stay a live authoring check, not a closed sweep.
+- **A third gender trap, added to the queue.** Czech **past-tense verbs inflect for the speaker's gender**, so a 1sg past prompt leaks it — *Četl jsem zajímavý článek* vs *Četla*. This is the same class as run 29's `mít rád` finding but far easier to write by accident, because the English (*I read an interesting article*) looks completely neutral. I adopted **no 1sg past tense in a Czech prompt** and recast to the present. 1pl past has it too (*Dívali* / *Dívaly*), so it is not singular-only.
+- **Explanation-language scaling** — no-op again, and again I would rather say so than tick it. Sentence banks carry no explanatory prose (`en`/`cz`/`lemmas`/`accepts` only), and nothing else this run added scaffolding text.
+
+### Czech I am flagging for the review routine
+
+Not errors I believe I have made — the places a second opinion is worth most.
+
+- `a2_sports` — **`football` and `soccer` are one word in Czech (*fotbal*)**, so a CZ→EN prompt cannot distinguish them. I gave each sentence the other term in `accepts`, so either answer grades correct. This is a structural clash, not a translation choice, and there are more coming (`store`/`shop`, `trainer`). Might deserve a house rule.
+- `a2_shopping` — *Tahle bunda byla výhodná koupě.* for *This jacket was a bargain.* Czech has no single noun for `bargain`; *výhodná koupě* is the standard phrase but it is a two-word gloss where the English is one word.
+- `a2_shopping` — *Jedno penny není moc peněz.* `penny` is indeclinable in Czech and sits oddly with *jedno*. Lowest-confidence sentence in the three banks. The pack's own gloss is "penny (mince)", so the item is awkward before I touch it.
+- `a2_shopping` — *Moje matka má krásné šperky.* glosses uncountable English `jewellery` with a Czech plural — **the third instance of this exact pattern** (`luggage` run 28, `šperky` run 29). It is now clearly a recurring shape rather than a one-off; a house rule would settle it. `accepts` carries the AmE `jewelry`.
+- `a2_shopping` — *Co je to za materiál?* for *What material is this?* Idiomatic Czech, but structurally quite far from the English; a more literal *Jaký je to materiál?* also works.
+- `a2_media` — *Mluvčí je mladá žena.* The pack glosses `speaker` as "mluvčí / reproduktor". I took the *mluvčí* sense and disambiguated with *mladá žena*; the loudspeaker sense gets no production practice.
+- `a2_media` — *Chatujeme každý večer.* uses the anglicism *chatovat*, matching the pack's own gloss ("pokec / chatovat"). Native *Povídáme si* would be better Czech but would lose the online sense the pack teaches.
+- `a2_media` — *Reportér klade hodně otázek.* — *klást otázky* over *ptát se*; I believe it is the right collocation for a reporter but it is a genuine choice.
+- `a2_media` — *Autor téhle knihy je Čech.* uses the demonstrative *téhle* (colloquial) rather than *této*. Consistent with *tenhle/tahle* used throughout the banks, but it is a register choice repeated ~15 times across this run.
+
+### Smoke-check list
+
+- **`a2_sports` Use stage** — check the football/soccer accepts actually pass in both directions; that is the one place the Czech genuinely underdetermines the English.
+- **`a2_media` Use stage** — the largest of the three (24 sentences) and the two dropped-subject fixes live here.
+- **`a2_shopping`** — the `credit card` lemma is the first two-word lemma in a bank; confirm guaranteed exposure still surfaces it.
+- Nothing shell-side changed this run, so the ladder should be identical everywhere else.
+
+---
+
 ## 2026-08-08 · cloud run 29 (RUE build, claude-opus-5)
 
 ### Headline: **three A2 Use banks** — `a2_clothes`, `a2_nature`, `a2_food` — 51 sentences covering **every item in all three packs** (12/12, 18/18, 22/22), plus a sequencing repair that took the audit **129 → 127**. The C1 gate stayed shut: I counted the A2 backlog myself before step 5 and it is non-empty, so **no new unit was started**. All three gates green at start and end; smoke passed.
