@@ -6,6 +6,124 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 27 (RUE build, claude-opus-5)
+
+### Headline: **the A1/A2 picture-intro backlog is finished** (`a2_media`, `a2_misc` — 38 of 38 live A1/A2 leaves now have a two-page intro), **the A1 sentence-bank backlog is finished** (`a1_ideas` — 16 of 16), the first A2 bank landed (`a2_routine`, all 14 items covered), and `a1_to_for_with` was re-lexified off `wait` — **audit 144 → 143**. All three gates green at the start, so step 0 did not consume the run; the repair queue again had no cloud-lane items. **I did not start a C1 unit — reasons and the verified state of that frontier are under Forks.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `f43e7bc` | **`a2_media`** intro — 11 emoji tiles, 5 carrier frames |
+| 2 | `f052b89` | **`a2_misc`** intro — 12 emoji tiles, 5 carrier frames |
+| 3 | `7eb691c` | **`a1_ideas`** `sentences[]` bank — 14 sentences, 14 lemmas |
+| 4 | `51efcee` | **`a2_routine`** `sentences[]` bank — 14 sentences, all 14 items |
+| 5 | `c2bb5fd` | `a1_to_for_with` re-lexified off `wait` — 144 → **143** |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar units · 0 errors · 1 warning | **85 units · 0 errors · 1 warning** |
+| `audit` | 144 unknown types · 33 units | **143** · 32 units · baseline tightened 144 → 143 |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+Gates run before every commit; commit and push per unit. Nothing else landed on `build` while I worked, so no rebase was needed. Everything below was re-verified mechanically at the end of the run against the files **as committed**, not as authored.
+
+### Repair queue — nothing to do this run
+
+Re-read item by item rather than taken from the last digest; the file is unchanged. All three unticked items are out of the cloud lane: the vocab level badge and `order_click` are marked engine/local, and `b2_clear_claims` already carries its conservative resolution and is left unticked because the style call is yours.
+
+### Vocab intros — the A1/A2 backlog is done · 38 of 38 leaves
+
+| Unit | Page 1 | Trap | Why that shape |
+|---|---|---|---|
+| `a2_media` | 11 emoji | **speaker** = mluvčí *and* reproduktor | 11, not 12 — see below |
+| `a2_misc` | 12 emoji | **fall** = podzim (amer.) *and* pád | the pack has no theme, so the body carries the tail |
+
+**A finding that changed how I picked tiles, and that you should see.** Run 26 measured that 164 English words are taught by two or more live A1/A2 vocab units. That overlap is not evenly spread — it lands almost entirely on **concrete nouns**, which are exactly what a picture page wants. My first tile list for `a2_media` had **6 of 12 tiles on words an earlier pack already taught** (article, camera, comedy, drama, film, magazine, newspaper, photograph are all repeats — 8 of that pack's 24 items). `a2_misc` is worse: **21 of its 86 items** are repeats, including bag, bottle, bowl, card, cup, glass, key, letter, plate, ticket — the entire container set a picture page would reach for first.
+
+So I re-picked both pages against a per-node "taught strictly before this point" set: **every tile on both pages is a word its pack is the first in the course to teach.** That is a stricter rule than the spec asks for, and I would keep it, but it is a rule change worth your nod.
+
+Three judgment calls:
+
+- **`a2_media` page 1 has 11 tiles, not 12.** The 12th honest candidate was `listener`, and 👂 is an ear, not a person. `magazine` (📖 is the nearest print glyph, and it is a repeat anyway) and `journalist` (no glyph left after ✍ author and 🎤 reporter) were also dropped. The body names them in prose instead.
+- **`a2_misc` page 1 is drawn from the picturable quarter, and the body says so.** The pack is the A2 overflow list — `according to`, `whose`, `myself`, `per cent`. I considered a schematic, but no diagram describes a list with no theme; a diagram of the pack's own taxonomy teaches nothing about English. So page 1 shows the twelve most concrete words it genuinely owns and the body names the shape/part, kind/amount and structure-word tail explicitly, so the page is not silently pretending to cover 86 words.
+- **`a2_misc` page 2 could have been a table.** `a2_adverbs` already sets the precedent of a table instead of frames on page 2, and this pack's structure-word tail would suit one far better than five carrier frames do. I stayed with frames because AGENTS.md specifies frames for page 2 — **conservative path, your call.**
+
+Four glyphs reuse a glyph an earlier intro page used (🎤 a1_work *singer*, ⭐ a1_nature *star*, 🎬 a1_freetime *film*, 😊 a1_freetime *happy*; 📦 a2_shopping *product*). Each is honest for the new word and the tile label disambiguates, but 🎬 for `scene` next to a1_freetime's 🎬 for `film` is the one I would look at first.
+
+### Use-stage sentence banks — A1 done (16/16), A2 begun (1/22)
+
+Leaf packs still showing *"Use · coming soon"*: **29 → 27** (21 A2 + 6 B1). (Run 26 reported 30 at its close; my own count of leaf packs with no `sentences[]` was 29 before this run, so one of the two is off by one — mine is the measured number.) **No A1 leaf is left.**
+
+Legality was decided by an oracle that **imports `audit.py` and asks it** — real `variants()`, `tokens_of()`, `GLUE`, the real path walk. Before trusting it I made it reproduce `audit.py`'s own published findings: it matched **exactly on all 33 reported units**. All 28 sentences came back legal, and **the audit total did not move when they landed**, which is the independent confirmation. It also caught things I would have shipped: `dog` (singular) is *not* legal at path 42 — only the plural `dogs` is taught — and `big`, `long` and `nice` are taught later than they feel.
+
+**`a2_routine` covers all 14 of its items**, one sentence each — the first bank in the course with no uncovered item, because the pack is small enough.
+
+**Three drafts were rewritten for a defect that is worth naming, because it will recur in every remaining A2 bank.** Czech drops the subject, so *Už je tady*, *Ještě tu není* and *Je stále v práci* each admit **he, she or it**. A student who answers "He is already here" to *Už je tady* is right, and `accepts` would have marked them wrong. All three prompts now carry an explicit subject (*Můj bratr už je tady*, *Autobus tu ještě není*, *Moje matka je stále v práci*). **The general rule: a Czech prompt with a dropped subject is only safe when the verb form or context fixes the person.** I did not audit the existing banks for this — worth a sweep.
+
+**Czech I am confident in but flagging for the review routine:**
+
+- **Register: standard `Potřebuji`**, continuing runs 24–26. `píšu` in *Každý den si píšu do deníku* is the neutral standard form (`píši` is markedly bookish) — deliberate, not a register slip.
+- **No speaker-gender prompts**, continuing run 25's rule. This bit twice: *I am not ready yet* would have needed *připravený/á*, and *I am a bit tired* the same, so `yet` took *Autobus tu ještě není* and `bit` took the impersonal *Je trochu zima.* instead.
+- `a1_ideas` — *Co je to za věc?* for "What is this thing?". Idiomatic, but *za věc* carries a faint edge of "what on earth is this" that the neutral English does not.
+- `a1_ideas` — **the one I am least happy with**: *Je tu jedna osoba.* (person). Grammatical and determinate, but a slightly artificial standalone sentence. `accepts` also carries *There is one person here*, which is the more natural reading of that Czech. If you want one cut, cut this one.
+- `a1_ideas` — *Potřebuji radu.* glosses `advice` (uncountable) with a countable Czech accusative; that is correct Czech and is exactly the `i_need_bare` carrier the pack declares, but the English/Czech countability mismatch is the point a student will trip on.
+- `a2_routine` — *To je jízdní řád autobusu.* uses the genitive for a noun-noun compound (*bus timetable*), which is the natural Czech and not a calque.
+- `a2_routine` — *Zdravý životní styl je důležitý.* `accepts` also takes the article-less "Healthy lifestyle is important", which is what a Czech speaker will type.
+
+### Sequencing — 144 → 143 · one unit, and a correction to the last digest
+
+**`a1_to_for_with` (path 42) — `wait` ×2 removed.** Run 26 listed this as a genuine fork on the grounds that `wait` is untaught. I checked rather than inherited, and **that reading was wrong in a way that matters**: `wait` is not taught *nowhere*, it is taught **later** — `a1_imperatives` and `trunk_verbs_action_a1` both teach it, and both sit after path 42. So this was a real teaching-order defect, not a tokenizer artefact.
+
+It was also **off-spec for the pack's own stated law.** The pack note says *"for = purpose/benefit"*; `wait for` is a dependent preposition, neither purpose nor benefit. Both `wait` items were therefore the two least on-spec `for` items in the unit.
+
+| Path | Was | Now | Gap kept |
+|---|---|---|---|
+| 42 | Wait **for** me. | Buy a book **for** me. | `for` |
+| 42 | I wait **for** the bus. | She works **for** a company. | `for` |
+
+Shapes preserved (imperative + object pronoun; subject + verb + `for` + noun), gap answer unchanged, both gaps reconstruct exactly, six on-spec `for` items untouched. Czech follows (*Kup pro mě knihu.*, *Ona pracuje pro firmu.*). The unit is now clean and gone from the report.
+
+**The cost, logged as a fork:** A1 no longer exposes **`wait for`**, one of the highest-frequency verb+preposition collocations. It is not lost to the course — `a1_imperatives` teaches `wait`, and `b1_dependent_prepositions` covers verb+prep properly — but if you would rather have the collocation than the clean audit line, revert this one commit and I will treat it as a permanent fork instead.
+
+**The other fourteen A1/A2 leads are all genuinely unrepairable, and I verified each rather than inheriting run 26's list:**
+
+- **Six are the parenthesised-disambiguator artefact** (`free (time)`, `watch (wrist)`, `short (height)`, `cold (illness)`, `second (ordinal)`, `leave (depart)`). `targets_of` strips the bracket, `exposed_text` does not — so the gloss is exposed but never taught. Tooling, propose-only, unchanged since run 24.
+- **Four are the contraction artefact** (`i'd`, `it's` ×2, `haven't`, `i'm`) — `WORD_RE` makes `it's` one token, so GLUE never matches it. Also tooling.
+- **Four are real forks I re-tested this run**: `a1_word_order`/*new* — at path 3 the only adjective taught anywhere in the course so far is `tired`, and *a tired teacher* is not what adj+noun order should be taught on; `trunk_social_a1`/*nice* — the single item is *Nice to meet you.* with the gap on `meet`, a fixed formula that re-lexifying would destroy; `trunk_verbs_daily_a1`/*water* — path 6, no drinkable noun is taught yet and the gap is on `drink`; `a1_articles`/*hour* — *We have an hour.* is the silent-h half of the pair whose other half is *This is a university.*, so removing it deletes a teaching point.
+
+By my count the two tooling artefacts now cover **10 of the remaining 143**.
+
+### Forks for James
+
+**1 · I did not start a C1 unit, and I want you to agree with the reason.** Step 5 was reachable this run. I read the frontier before deciding, and the state is not what "flip the next sketch node" implies:
+
+- The C1 grammar path has **18 nodes: 16 live, 2 unbuilt** — `c1_reporting_complementation` (path 14) and `c1_error_patterns` (path 18).
+- Both are `quality: "thin_shell"` with **10 items and 1 intro card**. The four nearest **live** C1 packs (`c1_subjunctive`, `c1_advanced_modality`, `c1_comparative_advanced`, `c1_spoken_vs_written`) all run **48 items** and 2–5 cards. So promoting one means authoring ~38 more items, not flipping a status.
+- That is ~38 new C1-register **Czech** sentences — the highest-risk content in the course — landing in the same run as 28 new bank sentences and 2 new intros, all of which the Czech-review routine still has to read.
+
+Starting it and not finishing is the one thing the rules forbid outright, so I stopped instead. **`c1_reporting_complementation` is the right next one** (earlier on the path, and its existing 10 items are sound — correct patterns, natural Czech, honest `accepts`). Watch the quiz distractors there: six of the ten items share `to`/`of`/`on` as the gap answer, so sibling-derived options will collide unless `quiz_options` are authored.
+
+**Also verified, and worth knowing: the other six non-live C1/B2 grammar nodes must NOT be promoted.** `b2_inversion`, `b2_cleft_sentences`, `b2_emphasis_fronting` are marked *absorbed into path unit(s)*; `c1_hedging_stance` folded into `c1_advanced_modality`; `b2_future_in_the_past` into `b2_future_forms`; `b2_clear_claims` is shaded and off the B2 path. None is on a path order list. A future run reading only the status field would mistake all six for backlog.
+
+**2 · The overlap fork (run 26's fork 1) is now blocking picture pages, not just curriculum.** See the intro section: it forced a stricter tile rule on both pages this run. `a2_misc` in particular carries 21 repeats out of 86 items, and `a2_clothes` is still four-twelfths overlap with `a2_shopping`. Your call on (a) intended spiral, (b) A2 drops what A1 taught, (c) A2 keeps the word and changes the sense — but note that (b) would strand tiles on both new pages, so **if you are leaning to (b), say so before the next run.**
+
+**3 · The 17 A1 core-frames trunks + 3 A2 + 3 B1 trunks still have no intro, and I again built leaves only.** Same mechanical reason as run 26, re-verified: trunk packs are `practice: "frames"`, so `js/practice-vocab.js` drives their Use stage from their own items — they never show *"Use · coming soon"*, and a picture-led word intro does not describe what they teach. **Now that the A1/A2 leaf backlog is finished, this is the question that decides what the next intro run does.** One line in AGENTS.md — "leaves only" or "trunks too" — would settle it permanently.
+
+**4 · Bank order from here.** 21 A2 leaves left, then 6 B1. I took `a2_routine` because it is next in path order. It was also the smallest (14 items); the next few are `a2_family` (20), `a2_travel` (72), `a2_freetime` (32). **`a2_describing` has 314 items and `a2_verbs` 112** — a ~12-sentence bank cannot represent those honestly, and they will need a different rule when they come up.
+
+### Smoke-check list
+
+- `a2_media` intro page 1 — check ✍ and 🪧 render on your device (🪧 is the newest glyph on any intro page); page 2 is the speaker = mluvčí/reproduktor trap.
+- `a2_misc` intro page 1 — 🛞 and 🛎 are the render risks here; the body is the longest on any intro page, so check it does not read as a wall on a phone.
+- `a2_routine` Use stage — first A2 bank; the already/yet/still trio is where the dropped-subject rewrite landed.
+- `a1_to_for_with` Check/Type — two items changed; confirm *Buy a book for me.* and *She works for a company.* read naturally next to the six untouched `for` items.
+
+
+
 ## 2026-08-07 · cloud run 26 (RUE build, claude-opus-5)
 
 ### Headline: **3 A2 vocab intros (33 → 36, A2 leaves 17 → 20 of 22), 2 Use-stage sentence banks (`a1_shopping`, `a1_tech` — 28 sentences), and 2 units re-lexified (audit 146 → 144).** All three gates green at the start, so step 0 did not consume the run; the repair queue again had no cloud-lane items. **A1 leaves are now one unit from finished on both backlogs.** Two findings that need your call are under Forks — the bigger one is that **164 English words are taught twice across live A1/A2 vocab units**, which I measured rather than fixed.
