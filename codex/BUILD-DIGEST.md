@@ -6,6 +6,168 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 37 — **`vocab/b1-build`** (RUE build, claude-opus-5)
+
+### Headline: **step 2 is complete (90/93) and step 3 has started — the first two B1 gap packs are live.** 24 new B1 words, 24 Use sentences, all pool-legal. The gap moved **498 → 474, exactly 24** — the measurement now tracks authored content word-for-word, which is the first hard confirmation that run 36's number is sound. And the audit **tightened, 126 → 125**: closing the B1 gap repairs sequencing violations as a side effect.
+
+### Branch (step 0) — re-derived, not inherited
+
+Ran the A2 count myself rather than trusting run 35's or run 36's digest:
+live A2 vocab units with neither `sentences[]` nor `practice: "frames"` =
+**0** (22 leaf packs banked, 3 `trunk_*` frames packs exempt, 25 A2 live
+vocab nodes). Confirmed on `vocab/b1-build`; **`build` was not touched at
+all this run.**
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `2a30c51` | **`teaches_lemmas` backfill — step 2 complete, 90/93** (45 packs this run) |
+| 2 | `1b13c7f` | **`b1_nature` + `b1_cause_effect`** — first two B1 gap packs, 24 items, 24 sentences |
+| 3 | this entry | digest + regenerated `oxford-b1-gap.tsv` (474 rows) |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **162 · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 126 · 19 units · baseline 126 | **125 · 19 units · baseline tightened to 125** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12
+warnings are the permanent `b2_clear_claims` judgment-label style — none of
+them come from this run's packs.
+
+---
+
+### Step 2 — complete. **90/93, and the other 3 are honest gaps, not misses**
+
+Resumed run 36's committed, idempotent script; 45 packs written this run
+(`b1_verb_patterns_advanced` → `c1_time_aspect_edge`). Three packs are left
+without the field deliberately, because **no item in them has a single-word
+`gap_answer` to derive one from**:
+
+- `a1_word_order` — drills `tokens[]`, no item has a `gap_answer` at all
+- `b1_it_subject` — all 41 gap answers are multiword constructions
+- `c1_advanced_passive` — all 48 gap answers are multiword constructions
+
+Run 36 named the first two; the third only surfaced now because run 36
+stopped at 45 files alphabetically and never reached it. Giving any of them
+a fake list to make a counter read 93 would be worse than the gap.
+
+**Verified independently of the script's self-report** (run 35's rule, and it
+earned its place): diff is 45 files **+45 / −0**, every changed line is a
+`teaches_lemmas` insert, every pack's field re-derived from its own
+`gap_answer`s from scratch and compared, and every pack diffed field-by-field
+**and key-order** against `HEAD` with the new field excluded. No other change
+in any file.
+
+**Run 36's measurement-neutrality finding is confirmed, not contradicted.**
+The gap was 498 before this backfill and 498 after it — the remaining 45
+packs moved it by zero, exactly as run 36 predicted, because
+`rue_oxford.py` already reads grammar `gap_answer` and the field is derived
+from it. The field is worth having as an explicit declaration; it is not a
+measurement prerequisite. **James's ruling from run 36 is still open** —
+finish-mechanically vs. treat it as a judgement pass that adds non-gapped
+taught forms — but it no longer blocks anything, since the mechanical pass
+is now done and any judgement additions are purely additive on top.
+
+### Step 3 — started. Two packs, and the gap moved by exactly the number of words authored
+
+| node | codex_unit | shape | intro |
+|---|---|---|---|
+| `leaf_nature_b1` | `V_THM-A1B1-09` | 2×6 items, 12 sentences | emoji tiles (concrete set) |
+| `leaf_cause_effect_b1` | `V_KNO-B1B2-01` | 2×6 items, 12 sentences | `branch` schematic (abstract set) |
+
+`b1_nature` — soil sand mud dust seed leaf · shell tail wing fur path flood.
+`b1_cause_effect` — consequence impact influence occur remain require ·
+conclusion conclude indicate prove define determine.
+
+Both are full five modes. Pool regenerated with `--before <node_id>` per pack
+first (2376 / 2388 targets), and **all 24 sentences checked with
+`codex/_oracle.py`** (its own selftest re-run before use: 6/6): **24/24
+pool-legal**, then re-verified from the files on disk *after* writing rather
+than trusting the pre-write check. Dropped-subject rule applied at authoring
+time throughout — no prompt carries a redundant subject pronoun.
+
+**The measurement is now behaving.** 498 → **474**, and 498 − 474 = 24, the
+exact item count. Under run 36's method a word counts as taught only from
+content fields, so this 1:1 movement is the check that the method does what
+it claims. `oxford-b1-gap.tsv` regenerated: **24 deletions, 0 other changes.**
+
+**The audit tightened, 126 → 125.** `b2_present_perfect_continuous` was using
+*dust* without it being taught anywhere; `b1_nature` now teaches it earlier
+on the path and the violation cleared on its own. Worth stating plainly for
+the scoping decision below: **B1 gap-closing and sequencing repair are the
+same work seen from two sides**, so the ~40-pack option buys more than
+vocabulary coverage.
+
+> **FORK — `codex_unit` reuse, conservative path taken, needs a one-line
+> ruling.** New B1 packs need a `codex_unit`, and **the B1B2 band has exactly
+> one unused canonical unit left** (`V_WFM-B1B2-01`); every other unused id in
+> the vendored snapshot is B2C1 band, which is out of scope by the contract's
+> own words. So ~26–40 new B1 packs **cannot** each get their own id, and the
+> gate's docstring is explicit that inventing one is forbidden and the fix is
+> upstream in rue-codex, which this lane cannot reach.
+> **What I did: reused existing thematic units** — `V_THM-A1B1-09` (the
+> A1–B1 band unit that already hosts `leaf_nature_a2` and four others) and
+> `V_KNO-B1B2-01` (knowledge). This is how the tag already works elsewhere:
+> `V_COR-A1B1-01` hosts 10 packs, `V_THM-A1B1-09` hosts 5. `check_codex`
+> passes and nothing was invented.
+> **James — confirm this is the intent**, or add the B1 vocab units upstream
+> in rue-codex and refresh `codex/codex-units.json`, and I will retag. The
+> longer this runs the more packs carry the reused tags, so it is cheaper to
+> answer early than late.
+
+### Still open from run 36 — neither blocks the build, both get more expensive with time
+
+1. **Pack-count scope.** The contract says ~26 packs; the corrected gap needs
+   **~40** (the script now prints this itself). Run 36 offered build-all-40 /
+   keep-26-and-defer-186 / re-cut-the-target, and recommended re-cut then
+   build. **Unanswered.** I am proceeding at 2 packs per run on the highest-
+   value themes first, which is the right first move under *all three*
+   options, so nothing is being wasted while you decide — but the ordering of
+   the long tail (`bride`, `bee`, `bubble`, `campus`) does depend on it.
+2. **Re-lexify tie-break.** 20 Oxford words traded away by sequencing repairs
+   and still absent. Untouched this run — those repairs live on `build`, and
+   this branch must not touch `build`.
+
+### Czech I am flagging for the review routine
+
+All 24 prompts were checked for the dropped-subject rule and for gender
+agreement before commit. These are the judgment calls a second opinion is
+worth most on:
+
+- `b1_nature` — **`path`: *stezka*.** Used in *Na stezce je bláto* and *Kde
+  je stezka k řece?*. A Czech might well say *cesta* in both, and *pěšina*
+  for a narrow one; I kept *stezka* consistently because *cesta* collides
+  with `road`/`way`. The one I would most like a ruling on.
+- `b1_nature` — **`fur`: *srst*.** Right for a cat; the item glosses
+  *srst, kožich* and *kožich* is the garment sense, which the sentence does
+  not use. Flagging in case the double gloss reads as two words.
+- `b1_nature` — `shell`: *mušle* (sea shell, on a beach) vs *ulita* (a
+  snail's). The sentence sets it on a beach so *mušle* should be safe.
+- `b1_cause_effect` — **`occur`: *Tyto problémy nastávají jen v zimě*.**
+  Imperfective *nastávat* for a repeated occurrence; *vyskytovat se* may read
+  more naturally for problems specifically.
+- `b1_cause_effect` — `conclude`: *Z těchto faktů můžeme usoudit, že…*
+  Chose *usoudit* over *dojít k závěru* to keep the clause short; the item
+  glosses both.
+- `b1_cause_effect` — **gloss collision caught and fixed at authoring
+  time:** `impact` and `influence` were both glossed *vliv*, which would have
+  made Match a coin-flip between two correct tiles. `impact` is now *dopad*
+  only. Worth a check that *dopad* is the natural pairing.
+
+### Nothing to smoke beyond the new units
+
+Two new live vocab leaves at the end of the B1 path. `smoke.py` passes.
+Everything else this run is a `teaches_lemmas` field that no engine code
+reads — `js/pack-adapt.js` never touches it.
+
+---
+
 ## 2026-08-08 · cloud run 36 — **`vocab/b1-build`** (RUE build, claude-opus-5)
 
 ### Headline: **switching to `vocab/b1-build` — the A2 backlog is closed**, verified by my own count, not inherited from run 35's digest. And **step 1 is settled: the B1 gap is 498, not 336.** The "coverage moved the wrong way" worry was never a regression — it was two different measurement methods run on the same tree. The ~26-pack plan is sized against a number that was wrong by 162 words. Step 2 then started: **`teaches_lemmas` 45/93** — and it turns out to be measurement-neutral, which contradicts the contract's stated reason for it.
