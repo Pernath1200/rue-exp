@@ -1,102 +1,161 @@
 {
-  "id": "a1_core_frames_glue_pronouns",
-  "title": "Core frames · Pronouns · this that",
-  "level": "A1",
-  "tree_node": "trunk_glue_pronouns_a1",
-  "practice": "frames",
-  "note": "P7 glue — object pronouns, possessives, this/that. Gap on the glue word.",
-  "default_direction": "cz_to_en",
-  "blocks": [
+ "id": "a1_core_frames_glue_pronouns",
+ "title": "Core frames · Pronouns · this that",
+ "level": "A1",
+ "tree_node": "trunk_glue_pronouns_a1",
+ "practice": "frames",
+ "note": "P7 glue — object pronouns, possessives, this/that. Gap on the glue word.",
+ "default_direction": "cz_to_en",
+ "blocks": [
+  {
+   "id": "glue_pronouns_seed",
+   "title": "Glue · pronouns & this/that",
+   "items": [
     {
-      "id": "glue_pronouns_seed",
-      "title": "Glue · pronouns & this/that",
-      "items": [
-        {
-          "en": "She helps me.",
-          "cz": "Pomáhá mi.",
-          "gap": "She helps ____.",
-          "gap_answer": "me",
-          "accepts": ["She helps me", "She helps me."]
-        },
-        {
-          "en": "I see him.",
-          "cz": "Vidím ho.",
-          "gap": "I see ____.",
-          "gap_answer": "him",
-          "accepts": ["I see him", "I see him."]
-        },
-        {
-          "en": "I see her.",
-          "cz": "Vidím ji.",
-          "gap": "I see ____.",
-          "gap_answer": "her",
-          "accepts": ["I see her", "I see her."]
-        },
-        {
-          "en": "Come with us.",
-          "cz": "Pojď s námi.",
-          "gap": "Come with ____.",
-          "gap_answer": "us",
-          "accepts": ["Come with us", "Come with us."]
-        },
-        {
-          "en": "I know them.",
-          "cz": "Znám je.",
-          "gap": "I know ____.",
-          "gap_answer": "them",
-          "accepts": ["I know them", "I know them."]
-        },
-        {
-          "en": "This is my bag.",
-          "cz": "Tohle je moje taška.",
-          "gap": "____ is my bag.",
-          "gap_answer": "This",
-          "accepts": ["This is my bag", "This is my bag."]
-        },
-        {
-          "en": "That is your car.",
-          "cz": "To je tvoje auto.",
-          "gap": "____ is your car.",
-          "gap_answer": "That",
-          "accepts": ["That is your car", "That's your car."]
-        },
-        {
-          "en": "Our house is old.",
-          "cz": "Náš dům je starý.",
-          "gap": "____ house is old.",
-          "gap_answer": "Our",
-          "accepts": ["Our house is old", "Our house is old."]
-        },
-        {
-          "en": "Their teacher is friendly.",
-          "cz": "Jejich učitel je přátelský.",
-          "gap": "____ teacher is friendly.",
-          "gap_answer": "Their",
-          "accepts": ["Their teacher is friendly", "Their teacher is friendly."]
-        },
-        {
-          "en": "It is about love.",
-          "cz": "Je to o lásce.",
-          "gap": "It is ____ love.",
-          "gap_answer": "about",
-          "accepts": ["It is about love", "It's about love."]
-        },
-        {
-          "en": "The book is under the table.",
-          "cz": "Kniha je pod stolem.",
-          "gap": "The book is ____ the table.",
-          "gap_answer": "under",
-          "accepts": ["The book is under the table", "The book is under the table."]
-        },
-        {
-          "en": "The lamp is by the window.",
-          "cz": "Lampa je u okna.",
-          "gap": "The lamp is ____ the window.",
-          "gap_answer": "by",
-          "gap_accepts": ["near", "beside"],
-          "accepts": ["The lamp is by the window", "The lamp is near the window."]
-        }
-      ]
+     "en": "She helps me.",
+     "cz": "Pomáhá mi.",
+     "gap": "She helps ____.",
+     "gap_answer": "me",
+     "accepts": [
+      "She helps me",
+      "She helps me."
+     ]
+    },
+    {
+     "en": "I see him.",
+     "cz": "Vidím ho.",
+     "gap": "I see ____.",
+     "gap_answer": "him",
+     "accepts": [
+      "I see him",
+      "I see him."
+     ]
+    },
+    {
+     "en": "I see her.",
+     "cz": "Vidím ji.",
+     "gap": "I see ____.",
+     "gap_answer": "her",
+     "accepts": [
+      "I see her",
+      "I see her."
+     ]
+    },
+    {
+     "en": "Come with us.",
+     "cz": "Pojď s námi.",
+     "gap": "Come with ____.",
+     "gap_answer": "us",
+     "accepts": [
+      "Come with us",
+      "Come with us."
+     ]
+    },
+    {
+     "en": "I know them.",
+     "cz": "Znám je.",
+     "gap": "I know ____.",
+     "gap_answer": "them",
+     "accepts": [
+      "I know them",
+      "I know them."
+     ]
+    },
+    {
+     "en": "This is my bag.",
+     "cz": "Tohle je moje taška.",
+     "gap": "____ is my bag.",
+     "gap_answer": "This",
+     "accepts": [
+      "This is my bag",
+      "This is my bag."
+     ]
+    },
+    {
+     "en": "That is your car.",
+     "cz": "To je tvoje auto.",
+     "gap": "____ is your car.",
+     "gap_answer": "That",
+     "accepts": [
+      "That is your car",
+      "That's your car."
+     ]
+    },
+    {
+     "en": "Our house is old.",
+     "cz": "Náš dům je starý.",
+     "gap": "____ house is old.",
+     "gap_answer": "Our",
+     "accepts": [
+      "Our house is old",
+      "Our house is old."
+     ]
+    },
+    {
+     "en": "Their teacher is friendly.",
+     "cz": "Jejich učitel je přátelský.",
+     "gap": "____ teacher is friendly.",
+     "gap_answer": "Their",
+     "accepts": [
+      "Their teacher is friendly",
+      "Their teacher is friendly."
+     ]
+    },
+    {
+     "en": "It is about love.",
+     "cz": "Je to o lásce.",
+     "gap": "It is ____ love.",
+     "gap_answer": "about",
+     "accepts": [
+      "It is about love",
+      "It's about love."
+     ]
+    },
+    {
+     "en": "The book is under the table.",
+     "cz": "Kniha je pod stolem.",
+     "gap": "The book is ____ the table.",
+     "gap_answer": "under",
+     "accepts": [
+      "The book is under the table",
+      "The book is under the table."
+     ]
+    },
+    {
+     "en": "The lamp is by the window.",
+     "cz": "Lampa je u okna.",
+     "gap": "The lamp is ____ the window.",
+     "gap_answer": "by",
+     "gap_accepts": [
+      "near",
+      "beside"
+     ],
+     "accepts": [
+      "The lamp is by the window",
+      "The lamp is near the window."
+     ]
     }
-  ]
+   ]
+  }
+ ],
+ "intro": [
+  {
+   "title": "The small words that hold a sentence together",
+   "title_cz": "Malá slova, která drží větu pohromadě",
+   "body": "There is no picture here, because none of these words names a thing you could draw.\nThey point back at whoever you are already talking about — me, him, her, us, them — and my, your, our, their go in front of a noun."
+  },
+  {
+   "title": "You will use these words in",
+   "title_cz": "Tato slova použijete ve větách",
+   "frames": [
+    "She helps me.",
+    "I see him.",
+    "This is my bag.",
+    "That is your car.",
+    "The book is under the table."
+   ],
+   "note": "English changes the pronoun when it is the object: he → him, she → her, they → them. I see him, never I see he.",
+   "note_cz": "Pozor: předmětový tvar je jiný — he → him, she → her, they → them."
+  }
+ ]
 }
