@@ -230,3 +230,27 @@ drahé*; *Dívám se na zprávy* for "I watch the news" is properly idiomatic).
 All three intros' tiles match their packs' own word entries verbatim; the
 chemist = lékárna note, the maths = matika (brit.) mapping, and the
 pants (amer./brit.) warning are all sound.
+
+## 2026-08-08 — second-opinion pass (cloud, ~13:00 UTC)
+
+Scope: run 27's Czech — 2 new intros (a2_media, a2_misc) and 2 new sentence
+banks (a1_ideas, a2_routine, 28 sentences). The a1_to_for_with re-lexify
+touched a grammar pack — out of scope, nothing judged there.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_media` *smell* = "zápach / čichat" (intro tile and the word entry it
+  copies, character-identical). *Zápach* is specifically a **bad** smell and
+  *čichat* is deliberate sniffing — both pick the marked member, so a learner
+  acquires smell = stink + sniff. For the neutral A2 senses suggest
+  "pach / cítit" (or "vůně / zápach" if the nice/nasty pair is wanted). Not
+  ungrammatical, so left unchanged; if changed, change tile and entry together.
+
+Clean, no log needed: all 28 bank sentences (correct accusatives *radu /
+zvyk / rozvrh / plán*, locative *ve skupině*, idiomatic *Co je to za věc?*,
+*Je půlnoc*, *Autobus tu ještě není*, *Je trochu zima*, reflexive *Každý den
+si píšu do deníku*; the already/yet/still trio each sits where the intro
+teaches it). Both intros' tiles match their packs' own glosses verbatim; the
+fall = podzim (amer.) i pád note and the speaker = mluvčí i reproduktor note
+are both sound, and body_cz prose on both pages is natural, not calqued.
