@@ -6,6 +6,109 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 28 (RUE build, claude-opus-5)
+
+### Headline: **the C1 frontier moved** — `c1_reporting_complementation` built from thin shell to house size (48 items, 6 cards, path 14), the first two A2 sentence banks after `a2_routine` (`a2_family`, `a2_travel`), and **the first two trunk intros under your new rule**, one of each kind. Your `6250d7f` landed mid-run; I rebased onto it, re-read the changed contract, and re-ran everything under the new tokenizer. Audit **129, unchanged** — all six commits add zero violations.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `3e86a99` | **`a2_family`** `sentences[]` — 14 sentences, 14 lemmas |
+| 2 | `529ae1c` | **`a2_travel`** `sentences[]` — 14 sentences, 17 items covered |
+| 3 | `6e00891` | **`c1_reporting_complementation`** — thin shell → live, 48 items, 6 cards |
+| 4 | `48da782` | repair queue — dropped-subject sweep result (16 A1 + 3 A2 banks, 0 defects) |
+| 5 | `05f1567` | **`trunk_verbs_action_a1`** intro — concrete trunk, 12 tiles |
+| 6 | `9a54c80` | **`trunk_glue_pronouns_a1`** intro — glue trunk, text-only page 1 |
+
+### Gates
+
+| | start of run | after rebase onto `6250d7f` |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 85 live grammar · 0 errors · 1 warning | **86 live grammar · 0 errors · 0 warnings** |
+| `audit` | 143 · 32 units | **129 · 22 units · baseline 129, unchanged** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All three were green at the start, so step 0 did not consume the run. The audit's drop from 143 to 129 is **yours, not mine** — your tokenizer fix absorbed the contraction and parenthesised-disambiguator artefacts. My six commits moved it by zero.
+
+### The rebase, and what it changed about this run
+
+My push was rejected mid-run: `6250d7f` had landed. I fetched, rebased my three commits onto it (clean, no conflicts), **re-read `AGENTS.md` and `REPAIR-QUEUE.md` rather than assuming my copies were current**, and re-ran all gates under the new `audit.py`. Two of your four decisions changed what I did next:
+
+- **The trunk-intro answer reopened step 2.** Run 27 closed the intro backlog at "38 of 38 leaves" and left the 20 A1/A2 trunks as an open question. Your rule makes them in scope, judged per pack — so the backlog is **27 units, not 0**, and I spent the rest of the run there rather than on a second C1 unit.
+- **Explanation-language scaling** — the C1 pack was already written in natural, unsimplified English, so it complies as authored. Nothing to redo.
+
+### Repair queue — the dropped-subject sweep is done, and it found nothing
+
+**All 16 shipped A1 banks plus the 3 A2 banks: 0 defects.** The method matters more than the result, so it is logged in the queue file too. The defect needs a Czech prompt that *underdetermines the English subject*, so I selected every bank sentence whose English subject is a 3rd-person pronoun and asked whether the Czech carries a matching subject. Nine such sentences exist; five have no explicit Czech subject, and **all five are impersonal** — *Prší*, *Je pozdě*, *Je půlnoc*, *Je trochu zima*, *V zimě je zima* — where English admits only dummy *it* and no he/she reading is available. The sixth, *Jsou šťastný pár*, is 3rd-person **plural**, and English 3pl has no gender split. Everything else fixes its person by verb morphology (*Mám*, *Jsme*, *Potřebuji*, *Máte*), by an explicit noun subject (*Vlak odjíždí*, *Obchod otevírá*), or is an imperative or a formula.
+
+**Run 27's three fixes appear to have been the entire population.** I left the box unticked: the bounded A1/A2 backlog is clear, but the rule still governs every new bank, and my own two A2 banks were written to it — all 28 new prompts carry an explicit subject or a person-fixing verb ending.
+
+My first scan was far too crude (it flagged 154 of ~200 sentences by looking for a missing subject *word*, which ignores that Czech verb endings carry person). I rewrote it before drawing any conclusion. Flagging that because the loose version would have "found" 154 defects and sent a future run rewriting correct Czech.
+
+### The C1 unit — what I checked, and the one number that nearly shipped wrong
+
+`c1_reporting_complementation` was a `thin_shell`: 10 items, 1 card. I verified run 27's sizing claim rather than inheriting it — **16 of 16 live C1 packs and 18 of 21 live B2 packs run exactly 48 items**, so house size is a real standard and promotion meant authoring 38 more items, not flipping a status. Four pattern groups of 12, which is the actual C1 taxonomy of this topic:
+
+| Group | Pattern | Gaps on |
+|---|---|---|
+| `verb_ing` | admit/deny/suggest/recommend + -ing | the -ing form (10), the verb (2) |
+| `verb_to_inf` | promise/offer/refuse + to-inf; advise/warn/remind + obj + to-inf | the infinitive, incl. `not to` |
+| `verb_that` | report verbs (ordinary tense) vs demand verbs (base form) | tense marker or the verb |
+| `verb_prep_ing` | accuse of / congratulate on / prevent from + -ing | the preposition (5), the verb (7) |
+
+**`quiz_options` authored on all 48**, which is what run 27 warned about: with sibling-derived distractors the six items sharing `to`/`of`/`on` would have collided. Verified mechanically — 48/48 gaps reconstruct their `en` exactly, 48/48 produce a real quiz item, 0 items with more than one correct option, 0 duplicate gap answers.
+
+**Three defects I introduced and caught before commit, worth naming because two of them are silent:**
+
+1. **A substring `replace` built the gaps.** For *They congratulated him on winning*, gapping `on` would have produced *They c\_\_\_\_gratulated him …* — a corrupted frame that still passes a naive "is the answer in the sentence" check. Switched to a word-boundary regex with an assertion.
+2. **Eleven out-of-scope tokens** — `propose`, `acknowledge`, `witness`, `invoice`, `threaten`, `wires`, `urge`, `committee`, `lying`, `confess`, `extra`. Left in, the unit would have pushed the audit to 154 and **failed the ratchet**. All eleven re-lexified onto pool-legal vocabulary before commit (`witness`→`neighbour`, `invoice`→`letter`, `committee`→`board`, `threatened`→`decided`, `wires`→`machine`, and so on), keeping every pattern intact. Worth knowing: a **gap answer is self-legal** (`targets_of` reads it), so only the non-gap words of `en` constrain you.
+3. **HTML entities in authored prose** (`doporu&#269;it`) and two explanations still citing examples I had re-lexified away. Both would have rendered to a student.
+
+Note `lying` is doubly unusable: even where `lie` is taught, the stemmer reduces `lying` to `ly`/`lye`, so it can never match. The item now reads *He accused her of hiding the truth.*
+
+### Trunk intros — one of each kind, as the rule specifies
+
+I read the items before classifying, per your instruction not to guess from the id. **Trunk packs are structurally unlike leaves**: their items are whole sentences and **carry no `use[]` tags at all**, so page 2's frames cannot come from carrier ids. I used the pack's own item sentences as the frames, which is the same principle — the real carrier wording — applied to a pack whose items *are* the carriers.
+
+- **`trunk_verbs_action_a1` · concrete** — 12 tiles, one per verb the pack gaps on, each glyph showing the action rather than a noun. Trap: *take the bus* vs *jet autobusem*.
+- **`trunk_glue_pronouns_a1` · glue** — text-only page 1, no `pictures[]`, no `diagram`. Trap: the object form (*I see him*, never *I see he*).
+
+**I verified the engine renders a text-only page before authoring one**: every field in `introSection` is independently optional, and `hasIntro` adds the Intro stage for `practice: "frames"` packs. No engine change, so this stayed inside the content lane.
+
+### Forks for James
+
+**1 · Two tiles I would look at first.** `⬇️` for *put* and `🎁` for *give* are the weakest glyphs on the verbs page — a gift is a thing, not the act of giving. Everything else on that page is unambiguous. If either bothers you, the honest alternative is to drop to 10 tiles and let the body name the two.
+
+**2 · Run 27's stricter tile rule is still unratified, and I did not apply it here.** Run 27 adopted "every tile must be a word its pack is the first in the course to teach" and asked for your nod. You have not answered, and the trunk verbs are taught by earlier leaves in several cases, so applying it would have emptied the page. I took the conservative path — the spec as written — but the two rules are now in visible tension and one of them should win.
+
+**3 · The intro backlog is 27 units, and the shape of the rest is now known.** 15 A1 trunks + 3 A2 + 9 B1. Of the A1 trunks, my reading of the items puts **`verbs_daily`, `verbs_say`, `verbs_more`, `verbs_more2`, `verbs_more3`, `adjectives`** in the concrete branch and **`glue_linkers`, `glue_modals`, `glue_quantity`, `glue_questions`, `prepositions`, `can_like_want`, `frames`, `there_time`, `social`** in the glue branch. `prepositions` is the one genuine toss-up: `js/intro-visuals.js` already ships ball-and-box preposition diagrams, so it could take a schematic page rather than either branch. **That is a third option your rule does not mention — say the word and I will use it.**
+
+**4 · Bank backlog: 25 leaves left** (19 A2 + 6 B1). `a2_describing` (314 items) and `a2_verbs` (112) still have no honest 12-sentence answer and will need a different rule when they come up.
+
+**5 · `c1_error_patterns` is the last unbuilt C1 node** (path 18), also a thin shell. Same 38-item job. The other six non-live C1/B2 nodes must not be promoted — run 27 verified they are absorbed or folded, and I did not re-open that.
+
+### Czech I am confident in but flagging for the review routine
+
+The C1 pack is **grammar**, and the review routine's scope is vocab banks and intro pages — so **38 new C1-register Czech sentences plus 6 card explanations will get no second opinion unless you widen that scope or read them yourself.** That is the single thing I would most like you to look at from this run.
+
+- `a2_family` — *Moje matka má dobrou povahu* (character) and *Můj otec má silnou osobnost* (personality) deliberately use different collocations; *silná osobnost* and *dobrá povaha* are both idiomatic, but the pair is the intro's own trap and worth a glance.
+- `a2_family` — *Jsou šťastný pár.* is nominative singular for a plural English subject. Correct Czech, but it reads oddly beside the English if you scan the two columns.
+- `a2_travel` — *Kde jsou moje zavazadla?* glosses uncountable English `luggage` with a Czech plural. Deliberate: it is the natural Czech and it teaches the countability mismatch, but a student may type *Where are my luggage*. `accepts` carries *Where are my bags*.
+- `a2_travel` — *Let má zpoždění.* for "The flight is delayed" — Czech prefers *má zpoždění* to *je zpožděný*; chosen for naturalness over word-for-word parallelism.
+- `c1_reporting_complementation` — the Czech for the mandative items (*Požadovala, aby peníze byly vráceny*, *Vedení doporučilo, aby se kancelář přestěhovala do Brna*) uses *aby* throughout, which is the right signal for the English base form and matches how `c1_subjunctive` already glosses the same construction.
+- `c1_reporting_complementation` — *Obvinili vedoucího z toho, že vzal peníze* and *Obvinil ji z toho, že zatajila pravdu* use the *z toho, že* clause rather than a verbal noun. Natural, and it avoids inventing a noun the student has not met.
+- No speaker-gender prompts anywhere, continuing run 25's rule. This bit once: *She persuaded me to change my mind* needed *rozmyslel/a*, so the subject became *her brother*.
+
+### Smoke-check list
+
+- **`c1_reporting_complementation`** — the new unit, C1 path 14. Check a few quiz items render four distinct options and that the `not to` item (*They warned us \_\_\_\_ touch the machine.*) reads correctly.
+- **`trunk_glue_pronouns_a1`** — the first text-only intro page in the course. Confirm it does not look broken or empty on your device; that page is the whole point of the glue branch.
+- **`trunk_verbs_action_a1`** — check `⬇️` and `🎁` render, and see fork 1.
+
+---
+
 ## 2026-08-08 · cloud run 27 (RUE build, claude-opus-5)
 
 ### Headline: **the A1/A2 picture-intro backlog is finished** (`a2_media`, `a2_misc` — 38 of 38 live A1/A2 leaves now have a two-page intro), **the A1 sentence-bank backlog is finished** (`a1_ideas` — 16 of 16), the first A2 bank landed (`a2_routine`, all 14 items covered), and `a1_to_for_with` was re-lexified off `wait` — **audit 144 → 143**. All three gates green at the start, so step 0 did not consume the run; the repair queue again had no cloud-lane items. **I did not start a C1 unit — reasons and the verified state of that frontier are under Forks.**
