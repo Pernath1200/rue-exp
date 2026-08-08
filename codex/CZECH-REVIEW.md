@@ -486,3 +486,43 @@ potíže* for "is in trouble", *Můj otec tady dřív pracoval* for "used to
 work", *Můj syn dělá pokroky*, *To nemá smysl*, *Mám otevřít okno?* for
 "Shall I…". No dictionary-nominative or possessive-agreement defects found
 in any of the three banks.
+
+## 2026-08-08 — second-opinion pass (cloud, ~23:00 UTC)
+
+Scope: run 35's Czech — the final 2 A2 Use-stage sentence banks (a2_verbs 28,
+a2_describing 61 sentences; all pure additions, no existing cz touched). This
+closes the A2 Use backlog at 22/22. The other run-35 commits touched only
+codex/ docs and AGENTS.md — no Czech to judge.
+
+**Fixed: 0 · Flagged: 2 · everything else ok.**
+
+For James:
+- `a2_verbs` bank *receive*: "Každý student obdrží knihu." — grammatical
+  (gnomic perfective with *každý* is fine), and it matches the pack's own
+  gloss (*receive* = "obdržet"). But *obdržet* is officialese — everyday
+  Czech is *dostat*: "Každý student dostane knihu." At A2 the formal verb
+  is a register mismatch. If changed, grow the gloss to "obdržet / dostat"
+  so sentence and gloss stay in step. Left unchanged.
+- `a2_describing` bank *messy*: "Jeho pokoj je nepořádný." — matches the
+  pack's gloss (*messy* = "nepořádný"), but *nepořádný* primarily describes
+  a messy **person**; for a room the natural adjective is *neuklizený*,
+  which would also mirror the very next sentence's tidy pair ("Její pokoj
+  je uklizený") exactly. "Nepořádná domácnost" is attested, so defensible;
+  left unchanged. If changed, sentence and gloss travel together.
+
+Clean, no log needed: the other 87 sentences. The dropped-subject rule held
+in both banks exactly as the commit messages claim — every subjectless
+prompt fixes its person by 1sg/1pl morphology or imperative, and
+a2_describing routes every predicate adjective through a 3rd-person or
+inanimate subject, so no gendered form leaks the speaker. Correct oblique
+cases throughout — dative *vyhýbám se centru* (+ gen. *města*), *táhne
+židli ke stolu*; animate accusatives *zveme naše sousedy*; gen. pl.
+*deset lidí*; accusatives *tuhle odpověď / velkou knihu / ranní vlak /
+jinou knihu*; reflexives *si dělá starosti o mou sestru / si balím tašku*.
+Agreement clean incl. plural *Ty děti jsou unavené*, masc.-anim. plural
+*Tihle ptáci jsou vzácní*, and both long and short forms of schopný
+("je schopná pomoci" / "není schopen chodit" — both correct). Idiomatic
+throughout: *chytit ranní vlak*, *šetříme peníze na dovolenou*, *zvládá
+tuhle práci*, the borrow/lend pair *půjčit si / půjčovat* correctly
+distinguished. No dictionary-nominative, possessive-agreement, or
+word-order calques found in either bank.

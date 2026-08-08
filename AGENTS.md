@@ -156,13 +156,72 @@ taught) at any level — only the prose that explains it. Plain grammar terms
 still apply throughout (real category names — preposition, genitive — never
 baby-talk), at every level.
 
+## B1 vocabulary extension (James, 2026-08-08)
+
+Full reasoning: `rupl-exp/codex/VOCAB-REORIENTATION-2026-08-07.md` (covers both
+RUE and RUPL — decisions 9-15 are RUE's). Summary: RUE's grammar goes to C1 and
+its A1/A2 vocab is finished, but vocab stops dead at B1 (56% Oxford coverage
+when last measured). **Scope: bring vocab to a clean B1, ~26 new thematic
+packs. B2/C1 vocab scope is a separate, deliberately unresolved decision —
+do not fold it in here.**
+
+**Branch: `vocab/b1-build`, not `build`.** One writer per branch is the rule
+that held through the RUPL build. While this work is active, the cloud lane's
+entire hourly slot works `vocab/b1-build` — **not** repair queue, not
+sequencing repair, not C1, all on `build`. `main` still only moves when James
+promotes, from whichever branch is ready.
+
+**Order, in this sequence — do not skip ahead:**
+
+1. **Re-verify the gap before trusting it.** The original count (336 words)
+   is stale — re-measured 2026-08-08 after two days of content work and it
+   moved the wrong way (A1 98%→90%, B1 56%→30% coverage), which should not
+   happen when only content is *added*. Likely cause, unconfirmed: sequencing
+   repairs (`fix(unit): re-lexify … onto taught vocabulary` commits) swap a
+   word for an already-taught synonym to clear an audit violation, and may be
+   trading away Oxford-listed words for simpler ones with no preference either
+   way. Before authoring a single B1 pack: run `codex/scripts/rue_oxford.py`
+   fresh, sanity-check a handful of "missing" words by hand against real
+   packs, and if the re-lexify theory holds, decide (log the fork) whether
+   future re-lexify repairs should prefer an Oxford-listed replacement when
+   more than one pool-legal option exists. Regenerate
+   `codex/vocab/oxford-b1-gap.tsv` from the corrected measurement — the
+   number that drives the ~26-pack plan must be one you trust.
+2. **Prerequisite: backfill `teaches_lemmas` across all 93 grammar packs.**
+   Flat array on each pack, e.g. `"teaches_lemmas": ["work", "works", "live",
+   "lives"]` — the actual forms the pack drills (RUPL's grammar packs already
+   have this field; `rupl-exp/data/grammar/blocks/a1_gender.json` is a real
+   example to model the shape on, not the content). Derive mechanically from
+   each item's `gap_answer` plus any other form the pack meaningfully teaches;
+   dedupe per pack. Pure grammar-pack edits, no vocab file touched, fully
+   gate-checkable. Without this the B1 gap number stays a range, not a count.
+3. **Author the B1 packs** from the corrected gap list, ~26 thematic packs of
+   12, matching existing convention exactly: full five modes (intro, match,
+   quiz, type, use), same quality bar as A1/A2, picture-led intros per the
+   spec above, `sentences[]` Use banks per the spec above. **No reading lane,
+   no engine changes — content only**, per the original decision.
+4. **Digest and gates as normal** — same `codex/BUILD-DIGEST.md`, same four
+   gates, same REPAIR-QUEUE.md discipline. Note in each digest entry that
+   you're on `vocab/b1-build`, not `build`, so James can tell the branches
+   apart at a glance.
+
+**Czech review follows this branch too** while it's active — see the
+Czech-review routine's own prompt.
+
+**Multi-word stragglers** (32 A1/A2 items like "have to", "ice cream", "next
+to", "t-shirt") are lower priority than the B1 core — fold them in near the
+end if time allows, don't let them block the main B1 sequence.
+
 ## Automation lanes (2026-08-06, mirrors RUPL)
 
 Two lanes meet on branch **`build`**; `main` moves only when James promotes.
+**Exception, active 2026-08-08: the cloud routine's branch is `vocab/b1-build`
+until the B1 vocabulary extension above is finished — see that section for
+what pauses and what doesn't.**
 
 | Lane | What | Branch |
 |------|------|--------|
-| **Cloud routine "RUE build"** | hourly, claude-opus-5, self-contained prompt: repair → build 2-3 units | `build` |
+| **Cloud routine "RUE build"** | hourly, claude-opus-5, self-contained prompt: repair → build 2-3 units | `build` (currently `vocab/b1-build` — see above) |
 | **Local sessions** (James + Claude) | judgement work, smoke fixes, design | `build` (promote to `main` = James only) |
 
 Shared rules, from the RUPL build (they all earned their place):
