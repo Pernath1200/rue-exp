@@ -130,6 +130,25 @@ All 72 live grammar units on path now produce a real ladder, gated by
   reads *he* or *she*; it became *Anna je slavná celebrita*. Rate is
   consistent with run 30's ~3 %.
 
+  **Progress · cloud run 32 (2026-08-08): applied to 3 new banks at authoring
+  time** (`a2_work` 33, `a2_school` 34, `a2_tech` 35 — 102 new prompts).
+  **Zero instances of the target defect**, and that is a result of authoring
+  method rather than luck: I wrote no 3sg prompt without an explicit subject
+  at all, so there was nothing to catch on review. Every prompt fixes its
+  person by an explicit noun subject (*Můj šéf*, *Moje sestra*, *Tahle
+  továrna*), by 1sg/1pl present morphology (*Mám*, *Potřebuji*, *Chci*,
+  *Máme*, *Mluvíme*), or is a subject-predicate identity with a full noun
+  phrase. Rate over runs 29-32: 3 defects in ~305 prompts (~1 %), all caught
+  pre-commit.
+
+  The gender traps below were the live constraint again, not the subject
+  rule. `a2_school` hit trap one squarely: *biology* and *history* both
+  invite *I like biology*, which leaks *rád/ráda*. Both were recast — one
+  onto a 3rd-person subject (*Moje sestra studuje biologii*), one onto an
+  impersonal predicate (*Dějepis je velmi zajímavý*). Worth noting for the
+  remaining packs that **the school/subject domain invites "I like X" more
+  than any domain so far**, so `mít rád` pressure is highest there.
+
   A fourth trap, and `a2_feelings` is where it is worst: **Czech predicate
   adjectives inflect for gender** (*naštvaný/naštvaná*,
   *překvapený/překvapená*), so a 1sg prompt like *Jsem naštvaný* leaks the

@@ -6,6 +6,95 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 32 (RUE build, claude-opus-5)
+
+### Headline: **three more A2 Use banks** — `a2_work`, `a2_school`, `a2_tech` — 102 sentences covering **every item in all three packs** (33/33, 34/34, 35/35). A2 leaves go **12/22 → 15/22**, so the C1 gate stayed shut. Steps 1, 2 and 4 were all genuine no-ops this run and I verified each one rather than inheriting it. **The five "small" A2 leaves run 31 identified are now finished** — every remaining leaf is a big one.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `2a6fe89` | **`a2_work`** `sentences[]` — 33 sentences, all 33 items |
+| 2 | `accfd44` | **`a2_school`** `sentences[]` — 34 sentences, all 34 items |
+| 3 | `7799b6f` | **`a2_tech`** `sentences[]` — 35 sentences, all 35 items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 127 · 20 units · baseline 127 | **127 · 20 units · baseline 127** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12 warnings are the permanent `b2_clear_claims` judgment-label style. Nothing this run authors a `codex_unit` tag, so the fourth gate again had nothing of mine to judge.
+
+### Note on the prompt: it is stale in three places, and one of them matters
+
+My prompt describes the repo as of run 27. Recording the drift so the next run does not re-derive it:
+
+1. **"A2 has 21 of 22 units still showing coming soon"** — it was 10 at run start, 7 now. The backlog is over two thirds done, not one twentieth.
+2. **"audit baseline ~129"** — it is **127**, and has been since run 28 tightened it. A run that trusts 129 would let two regressions through the ratchet, so this is the one worth fixing in the prompt.
+3. **"step 0: check_playable 0 warnings as of 2026-08-08"** — still true, no action.
+
+Step 2 (vocab intros) also remains as run 31 left it: **leaves are done, trunks are not**. 13 A1 and 3 A2 trunks still have no intro. I did not build any this run because step 3 is explicitly ranked above step 2 and the A2 leaf backlog is still open — but "38/38, DONE" in the prompt is only true of leaves, and the next run should not read it as the whole picture.
+
+### Step 5 stayed gated — the count, checked directly
+
+Walked `data/nodes-vocab.json`, opened every live A2 pack, tested `sentences[]` presence. **22 A2 leaves live, 12 with banks at run start → 10 open; 7 open now.** Backlog non-empty, so C1 was left untouched.
+
+Remaining 7, with item counts: `home` 39, `health` 41, `adverbs` 66, `misc` 86, `ideas` 92, `verbs` 112, `describing` 314. **`home` and `health` are one more run.** The last five are the ones run 28 flagged as having no honest 12-sentence answer, and they are now the entire remaining backlog — so the question run 28 raised can no longer be deferred by doing easier packs first. See the fork below.
+
+### Method — the oracle, re-validated before use
+
+Legality was decided by a script that **imports `codex/audit.py` and calls its own** `variants()` / `tokens_of()` / `GLUE` / `targets_of()` / `full_path()`, reconstructing `main()`'s `legal` set (pool-before | own | partner | GLUE) for a given node. I rebuilt it from scratch rather than trusting run 31's description, and **re-ran the same four published-finding self-tests before using it**: `new` illegal at `a1_word_order` but `nice` legal, `hour` and `honest` illegal at `a1_articles`, `whether`/`wonder` illegal at `b1_indirect_questions`. Exact match on all six assertions.
+
+Pool regenerated with `--before <node_id>` immediately before each pack. **102/102 sentences pool-legal.** The oracle also reports tokens that passed only via a derived variant; 9 did, and all 9 are real derivations of a taught base (`starts`←`start`, `skills`/`earns`/`employs`/`subjects`/`instructions` ← own-pack items, `photos`←`photo`, `sends`←`send`). No lucky-stem passes.
+
+All three diffs are purely additive (+332, +342, +352, **zero deletions**) — banks appended by text edit, never by re-dumping the JSON, so run 30's phantom-diff trap on inline `use[]` arrays did not recur.
+
+### Step 4 — no-op, verified not inherited
+
+Only `a1_word_order` (new×3) and `a1_articles` (hour) remain at A1/A2. I did not re-litigate run 30's irreducibility derivation, but I did **check that it still transfers**: the two units sit at path indices **3 and 17**, and my three edits are at **64, 85, 86**. Everything before those two units is bit-identical to what run 30 analysed, so their `legal` sets are unchanged and the conclusion holds mechanically. **This is now the fourth run to spend effort on this** — run 30 and run 31 both recommended marking the two permanently accepted in the report, the way you did for `b2_clear_claims`. I am seconding it a third time; it is a two-line change to the report and it would give every future run its step 4 back.
+
+### Fork for James — the last five A2 packs need a rule, and the backlog is now only them
+
+Three runs have now deferred `adverbs` (66), `misc` (86), `ideas` (92), `verbs` (112), `describing` (314) by doing smaller packs first. That option is gone after `home` and `health`. The spec says **~12 sentences per pack**; recent practice has been **one sentence per item**, which is what makes these packs expensive — `describing` alone would be 314 sentences, more than every bank shipped so far combined.
+
+**Conservative default taken: none of them started this run.** The genuine fork, for you:
+
+- **(a) Hold the one-per-item convention.** Full exposure guarantee, but `describing` is several runs on its own and the coverage lint stays quiet.
+- **(b) Return to the spec's ~12 and select** the items each pack "most needs to produce". Cheap and spec-literal, but most items get no Use exposure, and the guaranteed-exposure property the `lemmas` field exists to provide silently weakens.
+- **(c) Split the giants** into several banks per pack, or treat the big packs as review units that draw sentences from earlier packs rather than authoring fresh ones.
+
+I did not guess between these because the choice changes roughly 600 sentences of work and cannot be reversed cheaply once authored. **My recommendation is (c) for `describing` specifically and (a) for the rest** — `describing`'s 314 items are mostly adjectives that pair naturally into contrast sentences, so it is the one pack where one-per-item is genuinely the wrong shape, and it is also the pack the gender trap hits worst.
+
+The two older forks are still unanswered and still load-bearing: **item-level `lemma` as a general tool** (run 29) and **run 27's stricter tile rule** (now four trunk intros deep).
+
+### Czech I am flagging for the review routine
+
+Not errors I believe I have made — the places a second opinion is worth most.
+
+- `a2_tech` — **`data`: *Tato data jsou velmi důležitá.* is plural in Czech, but the English is *This data is very important.*** Czech *data* is a neuter plural and takes a plural verb; English *data* as a mass noun takes singular. Both sides are correct in their own language, but the number visibly disagrees across the pair, which no other sentence in these three banks does. If you would rather they match, the English can become *These data are…* — that is stiffer English, so I kept the natural form and am flagging instead.
+- `a2_tech` — `print` is glossed imperfective *tisknout*, and I used the perfective *vytisknout* (*Chci vytisknout tenhle dokument*), because *chci tisknout* means "I want to be printing". Aspect chosen over gloss-matching, deliberately.
+- `a2_tech` — `text` is glossed "psát SMS / text" and the English is *sends a text*, so I wrote *posílá SMS*. The verb therefore does not match the gloss's *psát*. Natural Czech, but it is a gloss departure.
+- `a2_tech` — `record` vs `recording`: I split them by sense, *rekord* for `record` (*Můj bratr má nový rekord*) and *nahrávka* for `recording`, so the pair is not two translations of one word. The gloss allows both senses for `record`; confirm the sport-record reading is the one you want taught.
+- `a2_school` — **`esej`**: I treated it as feminine (*Tahle esej je velmi dlouhá*). It is feminine in standard Czech but is sometimes seen as masculine inanimate; if you prefer that, the demonstrative and adjective both change.
+- `a2_school` — `maths` = *matika* in locative: *Můj syn je dobrý v matice.* Colloquial register, matching the pack's own colloquial gloss, and deliberately different from the `mathematics` sentence so the pair does not collapse.
+- `a2_school` — `knowledge`: *Jeho znalosti jsou velmi dobré.* is plural where the English is singular mass, same shape as the `data` flag above but in the opposite direction. The pack's own gloss is plural *znalosti*, so I followed it.
+- `a2_school` — `mind`: *Moje mysl je unavená.* is grammatical, but *mysl* is a somewhat literary word and a Czech would more likely say *Jsem unavený/unavená* — which I could not use, because that is exactly the 1sg predicate-adjective gender leak. Flagging that the constraint pushed the Czech slightly bookish.
+- `a2_work` — `staff`: *Personál je velmi dobrý.* is singular in both languages here, but English *staff* also takes a plural verb; I did not add *The staff are very good* to `accepts`. Say the word and I will.
+
+### Smoke-check list
+
+- **`a2_work` Use stage** — 33 sentences; check `employer`/`employee` do not read as near-duplicates back to back.
+- **`a2_school` Use stage** — 34 sentences; the `mathematics` / `maths` pair is the one to eyeball, since a student may type either for both prompts.
+- **`a2_tech` Use stage** — 35 sentences; confirm the `data` singular/plural mismatch above does not look like a typo to a student.
+- Nothing shell-side changed this run, so the ladder should be identical everywhere else.
+
+---
+
 ## 2026-08-08 · cloud run 31 (RUE build, claude-opus-5)
 
 ### Headline: **three more A2 Use banks** — `a2_feelings`, `a2_society`, `a2_freetime` — 84 sentences covering **every item in all three packs** (25/25, 27/27, 32/32). A2 leaves go **9/22 → 12/22**, so the C1 gate stayed shut. Step 4 was a genuine no-op and I can now say so from first principles rather than by inheritance. I then spent the remaining run on the **trunk-intro backlog run 28 opened**, which my prompt still describes as closed — **two trunk intros landed, one of each branch**.
