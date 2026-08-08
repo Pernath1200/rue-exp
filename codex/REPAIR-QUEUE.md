@@ -84,6 +84,24 @@ All 72 live grammar units on path now produce a real ladder, gated by
   same pattern as `a2_routine`'s fix. Do this before A2 banks add more
   unswept units on top. One pack per run is fine; log progress here.
 
+  **Progress · cloud run 28 (2026-08-08): the bounded A1 sweep is done —
+  all 16 shipped A1 banks, plus the 3 A2 banks, 0 defects found.** Method:
+  the defect needs a Czech prompt that underdetermines the English subject,
+  so I selected every sentence whose English subject is a 3rd-person pronoun
+  (`He/She/It/They`) and checked whether the Czech carries a matching
+  subject word. 9 such sentences exist across all live banks; 5 have no
+  explicit Czech subject, and **all 5 are impersonal** — *Prší* /
+  *Je pozdě* / *Je půlnoc* / *Je trochu zima* / *V zimě je zima*, where
+  English admits only dummy *it* and no he/she reading exists. The 6th
+  (*Jsou šťastný pár*) is 3rd-person **plural**, and English 3pl has no
+  gender split, so *they* is forced. Every remaining bank sentence fixes its
+  person by verb morphology (1st/2nd person: *Mám*, *Jsme*, *Potřebuji*,
+  *Máte*), by an explicit noun subject (*Vlak odjíždí*, *Obchod otevírá*,
+  *Kočka spí*), or is an imperative/formula. Run 27's three fixes appear to
+  have been the whole population. **Left unticked: this is a standing rule,
+  so it still applies to every new bank** — the A1/A2 backlog is what is
+  clear, not the rule.
+
 - [ ] **Explanation-language scaling (James, 2026-08-08).** Explanatory prose
   — intro `body`/`note`/`title_cz` text, grammar `explanation`/
   `explanation_cz`, hints — must match the level it explains, not stay at A1
