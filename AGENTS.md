@@ -167,11 +167,15 @@ Two lanes meet on branch **`build`**; `main` moves only when James promotes.
 
 Shared rules, from the RUPL build (they all earned their place):
 
-- **Gates before commit** — every commit must pass all three:
+- **Gates before commit** — every commit must pass all four:
   `py -X utf8 codex/verify_pack.py` (**0 errors**),
   `py -X utf8 codex/check_playable.py` (**0 errors** — the ladder a student
-  actually gets, plus the quiz single-correct-answer check), and
-  `py -X utf8 codex/audit.py --check` (**ratchet: violations may never rise**).
+  actually gets, plus the quiz single-correct-answer check),
+  `py -X utf8 codex/audit.py --check` (**ratchet: violations may never rise**), and
+  `py -X utf8 codex/check_codex.py` (**0 unknown tags** — every `codex_unit`
+  must exist in the vendored rue-codex snapshot `codex/codex-units.json`;
+  never invent unit ids — missing unit means add it upstream in rue-codex
+  first, then refresh the snapshot).
 - **Pack shape is fixed**: content lives in `blocks[].items[]` with
   `intro.cards` and `check.sequence`; `js/pack-adapt.js` translates that into
   the practice ladder. Never author `pack.match/quiz/type_items/use_items`
