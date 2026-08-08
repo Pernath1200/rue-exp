@@ -186,6 +186,47 @@ All 72 live grammar units on path now produce a real ladder, gated by
      masculine exactly like a 1sg past. Those two are the only items left
      uncovered in that pack for a gender reason.
 
+  **Progress · cloud run 35 (2026-08-08): applied to the last 2 banks at
+  authoring time** (`a2_verbs` 28, `a2_describing` 61 — 89 new prompts), and
+  **the A2 leaf backlog is now closed at 22/22.** Zero instances of the
+  target defect, by the run 32-34 method: no 3sg prompt was written without
+  an explicit subject at all. Rate over runs 29-35: 6 in ~702 prompts (~1 %).
+
+  Two notes for whoever picks this up next:
+
+  1. **`a2_describing` confirms run 34's prediction and then some.** Czech
+     predicate adjectives inflect for gender, so on a pack that is 314
+     adjectives the rule is not occasional — it is every sentence. The whole
+     bank is routed through 3rd-person or inanimate subjects (*Ta láhev*,
+     *Ten stůl*, *Moje babička*); **not one prompt is 1sg with a predicate
+     adjective**, because there is no gender-safe way to write one. The two
+     1sg-flavoured sentences that survive put the adjective on a noun the
+     student does not inhabit (*Moje čeština je strašná*), so the agreement
+     is with *čeština*, not with the speaker — the same escape `a2_health`
+     found for the past tense.
+  2. **Gloss collision is the binding constraint on that pack**, exactly as
+     run 34 warned: 11 item pairs share an *exact* Czech gloss
+     (rich/wealthy, entire/whole, electric/electrical, certain/sure,
+     ill/sick, enormous/huge, likely/probable, fast/quick, indoor/inner,
+     high/tall, broad/wide), and many more collide loosely
+     (clever/smart, stupid/silly, quiet/silent, simple/easy, shut/closed,
+     correct/right, special/strange). **A new handling was used here and is
+     worth adopting generally: where the Czech genuinely admits the sibling,
+     put the sibling in `accepts[]`** rather than only avoiding the pair.
+     The audit reads `sentences[].en` and not `accepts[]`, so an accepts
+     alternate costs nothing at the gate and stops a right answer grading
+     wrong. Run 34 could only drop such items; this is strictly better.
+     One pair could not be rescued that way — *zvláštní* is the gloss of
+     both `special` and `strange`, and accepting both changes the meaning
+     of the sentence, so `special` was dropped and `unique` covered instead.
+
+  **Mechanical re-check of every shipped bank, run 35.** All **38** live
+  banks (16 A1 + 22 A2, 1,006 sentences) were re-verified in one pass, not
+  trusted from digests: every `lemmas` entry names a real item in its own
+  pack, every sentence carries `cz` and `accepts`, no pack repeats an
+  English sentence, and **every English sentence is pool-legal at its own
+  node** under audit.py's own `legal` set. **0 problems across 38 banks.**
+
   A note on trap three (1sg past tense) from `a2_health`: the past tense is
   hard to avoid entirely in a health pack, because accidents and injuries are
   past events. The escape used was to **put the past on an explicit
@@ -234,3 +275,20 @@ All 72 live grammar units on path now produce a real ladder, gated by
   rise with the student's. This does not relax the target CONTENT's
   difficulty at any level — only the scaffolding prose around it. Also see
   AGENTS.md.
+
+- [ ] **Sequencing repair (A1/A2 scope) — exhausted, 2026-08-08 (run 35).**
+  `audit/SEQUENCING-REPORT.md` now lists exactly **one** A1/A2 unit:
+  `a1_articles` / `hour`. That one is genuinely essential — the item teaches
+  *an hour* (silent h), so removing `hour` deletes the teaching point — and
+  it is already logged as a permanent fork awaiting James. **There is no
+  A1/A2 sequencing work left to pick up.** The remaining 18 units are all
+  B1/B2 and were out of the wind-down's scope.
+
+  Worth knowing before anyone attacks the B1/B2 remainder: **a visible slice
+  of the 126 is tokenizer artifact, not a content defect.** `wi`+`fi` (three
+  units) is *Wi-Fi* split on the hyphen; `ond`+`ej` (`b1_reported_speech`)
+  is *Ondřej* split on its diacritics; `b` (`b2_present_perfect_continuous`)
+  is a fragment. Those are ~7 of the 126 "unknown types" and no rewrite of
+  the content will clear them — they need `tokens_of()` to handle hyphens
+  and non-ASCII letters. That is gate tooling, so it is James's call, not
+  the cloud lane's.
