@@ -40,17 +40,11 @@ All 72 live grammar units on path now produce a real ladder, gated by
 
 ---
 
-- [ ] **Vocab level badge is hardcoded `A1`** (found 2026-08-06, cloud run 2).
-  `js/practice-vocab.js` lines 628–631 build the deck header meta as a literal
-  `"… · A1"` / `"… frames · A1 · trunk"`. Every one of the 41 live vocab nodes
-  therefore announces itself as A1 — verified in Chromium on :8097 against
-  `leaf_work_b1`, `leaf_money_b1`, `leaf_communication_b1` (all show
-  "36 words · A1") and against the pre-existing `leaf_work_a2`
-  ("33 words · A1"). Pre-existing, not a regression from this run.
-  Fix is one line: pass the node's level through `opts` in `openNode`
-  (`js/app.js` ~line 615 already has `node.levels[0]`) and interpolate it
-  instead of the literal. **Engine code — cloud lane must not ship this.**
-  Cosmetic only; nothing is mis-taught.
+- [x] **Vocab level badge is hardcoded `A1`** — **FIXED 2026-08-08 (local
+  lane).** `js/app.js` now passes `packLevel: node.levels[0]` into
+  `startVocabPractice`'s opts; `js/practice-vocab.js` interpolates
+  `packLevel` instead of the literal `"A1"` in `metaBits`. Cosmetic fix,
+  confirmed no content or grading path touched.
 
 - [x] `zero_article` items (a1_articles, 8 items) — **resolved in 3c94e84**
   by routing rather than engine surgery. Your finding (b) stands: `isCorrect()`
@@ -58,19 +52,44 @@ All 72 live grammar units on path now produce a real ladder, gated by
   Quiz and Type, and puts them in Match and Use, where the missing article
   shows naturally in a whole sentence. No ungradeable item ships.
 
-- [ ] **`order_click` stage is not implemented.** `a1_word_order` declares
-  `check.sequence: ["order_click"]` and its items carry `tokens[]` for a
-  word-order builder no engine has. It plays intro → Use today, so SVO is
-  taught by translation rather than by ordering. `check_playable.py` warns
-  until it exists. **Engine work — local lane, cloud must not build it.**
+- [x] **`order_click` stage is not implemented.** — **FIXED 2026-08-08 (local
+  lane).** `js/pack-adapt.js` builds an `order` bank from `tokens[]`;
+  `js/practice-grammar.js` adds a real click-to-order Check phase — shuffled
+  token buttons, click in order, auto-checks against `accepts` once every
+  token is placed. `beginCheck()` routes match → quiz → order_click → Type.
+  `codex/check_playable.py` validates the bank and lists `order_click` as
+  implemented — 0 errors, 0 warnings. Verified against the real
+  `a1_word_order` pack: 26/26 items produce a valid order item.
 - [x] `b2_future_forms` item 2: gap_answer "am" not present in `en` — check
   the frame reconstructs; fix the item if not. → **c6d7d80** — `en`
   uncontracted to "I am meeting the client at three." so the frame rebuilds
   exactly; both forms kept in `accepts`. Also fixed Czech "V tři" → "Ve tři".
-- [ ] `b2_clear_claims`: gap_answers are judgment labels ("overgeneral",
-  "clear claim") not sentence words — decide (digest fork) whether this
-  pack's style is legal or should be restyled; conservative = leave, flag.
-  → **Conservative path taken: style left as-is, fork logged in the digest.**
-  Left unticked per the rules above — the style decision is James's.
-  Separately fixed in **c6d7d80**: all 12 items had an *English* question in
-  the `cz` field, a straight language-contract violation; now Czech.
+- [x] `b2_clear_claims`: gap_answers are judgment labels ("overgeneral",
+  "clear claim") not sentence words. **RESOLVED 2026-08-08 (James): formalized
+  as permanent, correct.** Teaching argumentation vocabulary via a
+  judgment-label gap is pedagogically sound for this pack's subject — this is
+  not a defect and must not be re-raised or restyled. Separately fixed in
+  **c6d7d80**: all 12 items had an *English* question in the `cz` field, a
+  language-contract violation; now Czech.
+
+## Standing rules (not one-time items — apply to every unit, every run)
+
+- [ ] **Dropped-subject Czech grading sweep (James, 2026-08-08).** Czech
+  drops the subject pronoun, so a prompt like *Už je tady* is true for
+  he/she/it alike — a student who answers correctly with a different subject
+  than the author intended currently grades wrong. Run 27 found and fixed
+  3 instances in new sentences. **Sweep the 16 already-shipped A1 Use banks**
+  for the same defect: any `sentences[]` Czech prompt whose verb form doesn't
+  fix the person needs an explicit subject added (a name, "the bus", etc.) —
+  same pattern as `a2_routine`'s fix. Do this before A2 banks add more
+  unswept units on top. One pack per run is fine; log progress here.
+
+- [ ] **Explanation-language scaling (James, 2026-08-08).** Explanatory prose
+  — intro `body`/`note`/`title_cz` text, grammar `explanation`/
+  `explanation_cz`, hints — must match the level it explains, not stay at A1
+  simplicity throughout the course. **A1/A2: simple, plain-English
+  metalanguage** (short sentences, controlled vocabulary). **B1 and up:
+  natural, less simplified English** — the explanation's own register may
+  rise with the student's. This does not relax the target CONTENT's
+  difficulty at any level — only the scaffolding prose around it. Also see
+  AGENTS.md.

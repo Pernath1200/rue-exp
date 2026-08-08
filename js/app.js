@@ -663,6 +663,7 @@ async function openNode(node, launch = {}) {
         practice,
         packId: pack.id || node.id,
         packTitle: pack.title || node.label,
+        packLevel: (node.levels && node.levels[0]) || pack.level || "?",
         onTouch: () =>
           touchVocabBlock(practiceBlock.id || pack.id || node.id, node.id),
         onModeComplete: (mode, meta) => {

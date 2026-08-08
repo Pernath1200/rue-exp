@@ -24,9 +24,9 @@ hard guard. Everything is edited **here**:
 | **Vocab packs** | `rue-exp/data/vocab/blocks/` directly |
 | **Path / spine** | `data/spine.json` → `py scripts/sync_from_stable.py --rebuild-tree` |
 
-Interim limit: `--rebuild-tree` still *reads* the frozen labs' `tree.json` for
-node definitions. Making the node registry fully local is night-zero work — do
-not add new nodes until that lands.
+Node registry is fully local (`data/nodes-grammar.json` / `data/nodes-vocab.json`
+— lab snapshots taken 2026-08-06); `--rebuild-tree` no longer reads the frozen
+labs at all. Register new nodes there, never elsewhere.
 
 ## Do
 
@@ -88,6 +88,22 @@ plus at most one trap.
 - Order: **all live A1 vocab units first, then A2.** B1 only after James
   reviews the A1/A2 set.
 
+**Trunk units (James, 2026-08-08) — mixed treatment, judged per pack, not
+skipped.** The `trunk_*` packs (pronouns, modals, verb-overflow lists,
+question words, quantity/linker glue) don't fit "8-12 tiles" as a rule — some
+teach genuinely concrete, picturable content; others are pure function words
+with no referent. Decide per unit:
+
+- **Concrete trunk** (its items are real nouns/verbs a glyph can carry —
+  `trunk_verbs_more_a1`, `trunk_verbs_say_a1`, `trunk_verbs_action_a1`, and
+  similar): treat exactly like a leaf — normal emoji-tile page 1.
+- **Glue trunk** (pronouns, modals, question words, quantity, linkers — no
+  concrete referent, forcing an emoji would be a lie): **text-only page 1** —
+  a short title + 1-2 line framing of what the pack does, no `pictures[]`,
+  no `diagram`. Page 2 (frames) is unchanged either way.
+- When genuinely unsure which a pack is, read its items first — don't guess
+  from the id alone.
+
 ## Use-stage sentence banks (James, 2026-08-07)
 
 45 of 67 live vocab units show **"Use · coming soon"** — the fourth stage is
@@ -121,6 +137,24 @@ missing stage.
   correctly inflected. If you cannot, choose a simpler English sentence you
   CAN translate well. Every bank is reviewed by the separate Czech-review
   routine — flag anything you were unsure of in the digest.
+
+## Explanation language scales with level (James, 2026-08-08)
+
+Explanatory prose — intro `body`/`note`/`title_cz`, grammar `explanation`/
+`explanation_cz`, hints — is scaffolding around the target content, not the
+target content itself. Its own register should track the student's level:
+
+- **A1/A2: simple, plain-English metalanguage.** Short sentences, controlled
+  vocabulary, avoid subordinate clauses in the explanation itself. The
+  student is reading the explanation to understand something hard — the
+  explanation must not itself be hard.
+- **B1 and up: natural, less simplified English.** The explanation may use
+  normal native-level phrasing and sentence complexity.
+
+This never relaxes the difficulty of the target CONTENT (the `en` being
+taught) at any level — only the prose that explains it. Plain grammar terms
+still apply throughout (real category names — preposition, genitive — never
+baby-talk), at every level.
 
 ## Automation lanes (2026-08-06, mirrors RUPL)
 

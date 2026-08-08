@@ -118,6 +118,10 @@ def check_pack(pid: str, pack: dict) -> None:
         return ladder.get(stage) is not False
 
     with_gap = [it for it in items if key(it.get("gap_answer")) and it.get("gap")]
+    orderable = [
+        it for it in items
+        if isinstance(it.get("tokens"), list) and len(it["tokens"]) >= 2
+    ]
 
     if not cards:
         warnings.append(f"{pid}: no intro cards")
@@ -126,6 +130,7 @@ def check_pack(pid: str, pack: dict) -> None:
     match_n = pairs_n if wants_check("match") else 0
     use_n = pairs_n if wants("use") else 0
     type_n = len(with_gap) if wants("type") else 0
+    order_n = len(orderable) if wants_check("order_click") else 0
 
     quiz_n = 0
     if wants_check("quiz"):
@@ -145,8 +150,8 @@ def check_pack(pid: str, pack: dict) -> None:
                 )
 
     # Stages the engine actually implements. A pack asking for anything else
-    # silently loses that drill (a1_word_order's order_click token builder).
-    IMPLEMENTED = {"match", "quiz"}
+    # silently loses that drill.
+    IMPLEMENTED = {"match", "quiz", "order_click"}
     if isinstance(seq, list):
         for s in seq:
             if s not in IMPLEMENTED:
@@ -159,9 +164,13 @@ def check_pack(pid: str, pack: dict) -> None:
         errors.append(f"{pid}: match bank EMPTY — stage renders nothing")
     if wants_check("quiz") and with_gap and quiz_n == 0:
         errors.append(f"{pid}: quiz bank EMPTY despite {len(with_gap)} gap items")
+    if wants_check("order_click") and items and order_n == 0:
+        errors.append(
+            f"{pid}: order_click bank EMPTY — no item has tokens[] with 2+ entries"
+        )
     if use_n == 0 and ladder.get("use") is not False:
         warnings.append(f"{pid}: Use bank empty")
-    if match_n == 0 and quiz_n == 0 and type_n == 0 and use_n == 0:
+    if match_n == 0 and quiz_n == 0 and order_n == 0 and type_n == 0 and use_n == 0:
         errors.append(f"{pid}: UNPLAYABLE — every stage empty")
 
 

@@ -354,6 +354,7 @@ export function startPractice(root, block, opts) {
   const isFrames = opts.practice === "frames" || block.practice === "frames";
   const packId = opts.packId || block.id || "";
   const packTitle = opts.packTitle || block.title || "";
+  const packLevel = opts.packLevel || block.level || "?";
   /** Authored sentence bank (leaf packs). Trunk frames use block.items. */
   const sentenceBank =
     Array.isArray(block.sentences) && block.sentences.length
@@ -628,10 +629,10 @@ export function startPractice(root, block, opts) {
     const nFlags = countFlags();
     const bankN = sentenceBank ? sentenceBank.length : 0;
     const metaBits = isFrames
-      ? `${block.items.length} frames · A1 · trunk`
+      ? `${block.items.length} frames · ${packLevel} · trunk`
       : bankN
-        ? `${block.items.length} words · ${bankN} sentences · A1`
-        : `${block.items.length} words · A1`;
+        ? `${block.items.length} words · ${bankN} sentences · ${packLevel}`
+        : `${block.items.length} words · ${packLevel}`;
     return `
       <div class="practice-head">
         <div class="practice-title">${escapeHtml(block.title)}</div>

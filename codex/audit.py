@@ -56,6 +56,38 @@ anna martina tom tomas petr pavel jana eva jan david peter mary john
 
 SUFFIXES = ("ing", "ed", "es", "s", "er", "est", "ly", "d")
 
+# Contractions the tokenizer sees as ONE token (WORD_RE includes apostrophe,
+# so "it's" never splits into "it" + "is"). Expand to what they mean; genuinely
+# unlisted 's forms fall through to the generic genitive strip below.
+CONTRACTIONS = {
+    "i'm": ("i", "am"), "i'd": ("i", "would", "had"), "i'll": ("i", "will"),
+    "i've": ("i", "have"),
+    "you're": ("you", "are"), "you'd": ("you", "would", "had"),
+    "you'll": ("you", "will"), "you've": ("you", "have"),
+    "we're": ("we", "are"), "we'd": ("we", "would", "had"),
+    "we'll": ("we", "will"), "we've": ("we", "have"),
+    "they're": ("they", "are"), "they'd": ("they", "would", "had"),
+    "they'll": ("they", "will"), "they've": ("they", "have"),
+    "he's": ("he", "is", "has"), "he'd": ("he", "would", "had"),
+    "he'll": ("he", "will"),
+    "she's": ("she", "is", "has"), "she'd": ("she", "would", "had"),
+    "she'll": ("she", "will"),
+    "it's": ("it", "is", "has"), "it'll": ("it", "will"),
+    "that's": ("that", "is", "has"), "that'll": ("that", "will"),
+    "there's": ("there", "is", "has"), "there'll": ("there", "will"),
+    "who's": ("who", "is", "has"), "what's": ("what", "is", "has"),
+    "where's": ("where", "is", "has"), "when's": ("when", "is"),
+    "how's": ("how", "is"), "let's": ("let", "us"),
+    "isn't": ("is", "not"), "aren't": ("are", "not"),
+    "wasn't": ("was", "not"), "weren't": ("were", "not"),
+    "haven't": ("have", "not"), "hasn't": ("has", "not"),
+    "hadn't": ("had", "not"), "don't": ("do", "not"),
+    "doesn't": ("does", "not"), "didn't": ("did", "not"),
+    "won't": ("will", "not"), "can't": ("can", "not"),
+    "couldn't": ("could", "not"), "shouldn't": ("should", "not"),
+    "wouldn't": ("would", "not"), "mustn't": ("must", "not"),
+}
+
 # Irregular past / past participle -> base. Suffix stripping cannot reach these,
 # so without the table every `sat`, `knew`, `said` reads as untaught and agents
 # rewrite good sentences to dodge words the course already teaches.
@@ -88,6 +120,13 @@ for _base, _forms in {
 def variants(tok: str) -> list[str]:
     out = [tok]
     out.extend(IRREGULAR.get(tok, ()))
+    if tok in CONTRACTIONS:
+        out.extend(CONTRACTIONS[tok])
+    elif tok.endswith("'s") and len(tok) > 3:
+        # Unlisted 's forms are genitive nouns (father's, sister's) — the
+        # bare noun is what matters; strip and let normal suffix rules run
+        # on the result too (father's -> father -> already handled below).
+        out.append(tok[:-2])
     for suf in SUFFIXES:
         if tok.endswith(suf) and len(tok) > len(suf) + 2:
             stem = tok[: -len(suf)]
@@ -141,15 +180,20 @@ def targets_of(pack: dict, domain: str) -> set[str]:
 def exposed_text(pack: dict) -> list[str]:
     """Every English string a student is shown — items AND the Use sentence
     bank. Sentence banks are production targets, so they expose vocabulary
-    exactly like items do and must be audited the same way."""
+    exactly like items do and must be audited the same way.
+
+    Parenthetical content ("free (time)") is a disambiguating gloss note, not
+    vocabulary in its own right — targets_of() already excludes it from what
+    a pack teaches, so it must be excluded here too, or the note reads as an
+    untaught word inside the very item that glosses it."""
     texts: list[str] = []
     for b in pack.get("blocks") or []:
         for it in b.get("items") or []:
             if isinstance(it, dict) and isinstance(it.get("en"), str):
-                texts.append(it["en"])
+                texts.append(PARENS_RE.sub(" ", it["en"]))
     for s in pack.get("sentences") or []:
         if isinstance(s, dict) and isinstance(s.get("en"), str):
-            texts.append(s["en"])
+            texts.append(PARENS_RE.sub(" ", s["en"]))
     return texts
 
 

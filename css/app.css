@@ -1841,3 +1841,57 @@ button.m.wrong {
   border-left: 2px solid var(--vocab-accent-border);
   color: var(--muted);
 }
+
+/* ---- Word-order click drill (Check phase, 2026-08-08) ---- */
+.order-built {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  min-height: 2.4rem;
+  padding: 0.6rem 0.7rem;
+  margin: 0.75rem 0 0.5rem;
+  border: 1px dashed var(--accent-border);
+  border-radius: 6px;
+  align-items: center;
+}
+
+.order-chip.placed {
+  display: inline-block;
+  padding: 0.3rem 0.55rem;
+  border-radius: 5px;
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.order-placeholder {
+  color: var(--muted);
+}
+
+.order-bag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.order-token {
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid var(--accent-border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.order-token:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.order-token:disabled {
+  opacity: 0.3;
+  cursor: default;
+}

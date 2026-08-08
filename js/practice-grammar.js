@@ -184,6 +184,18 @@ export function startPractice(rawPack, root, opts) {
     quizRetryPass: false,
     quizGate: false,
     quizScoreCommitted: false,
+    orderItems: [],
+    orderIndex: 0,
+    orderScore: 0,
+    orderWrong: [],
+    orderRetryPass: false,
+    orderGate: false,
+    orderScoreCommitted: false,
+    orderPicked: [],
+    /** @type {null | object[]} shuffled {t,i} bag for the current order item */
+    orderBag: null,
+    /** @type {null | object} the item orderBag was shuffled for (invalidates on change) */
+    orderBagFor: null,
     typeItems: [],
     typeIndex: 0,
     typeScore: 0,
@@ -328,7 +340,9 @@ export function startPractice(rawPack, root, opts) {
         sub:
           state.checkPhase === "quiz"
             ? "Quiz · keys 1–4 · Enter = next"
-            : "Match · left → right · Enter = next when done",
+            : state.checkPhase === "order_click"
+              ? "Word order · click the words in order · Enter = next"
+              : "Match · left → right · Enter = next when done",
       },
       type: {
         title: "Stage 3 · Type",
@@ -520,17 +534,54 @@ export function startPractice(rawPack, root, opts) {
     state.quizRetryPass = false;
     state.quizGate = false;
     state.quizScoreCommitted = false;
+    state.orderItems = samplePass(pack.order || [], null, focusStructures);
+    state.orderIndex = 0;
+    state.orderScore = 0;
+    state.orderWrong = [];
+    state.orderRetryPass = false;
+    state.orderGate = false;
+    state.orderScoreCommitted = false;
+    state.orderPicked = [];
+    state.orderBag = null;
+    state.orderBagFor = null;
     state.checkScore = 0;
     state.checkTotal = 0;
     const hasMatch = (pack.match || []).length > 0;
-    if (!hasMatch && !state.quizItems.length) {
+    const hasQuiz = state.quizItems.length > 0;
+    const hasOrder = state.orderItems.length > 0;
+    if (!hasMatch && !hasQuiz && !hasOrder) {
       completeMode(pack.id, "check", { score: 1, total: 1 });
       beginType();
       return;
     }
-    if (!hasMatch) state.checkPhase = "quiz";
-    else newMatchBoard();
+    if (hasMatch) newMatchBoard();
+    else if (hasQuiz) state.checkPhase = "quiz";
+    else state.checkPhase = "order_click";
     render();
+  }
+
+  /**
+   * Check has up to three phases in a fixed order: match -> quiz -> order_click.
+   * Called when the CURRENT phase is fully done; moves to the next phase that
+   * actually has items, or closes out Check and starts Type. Order_click is
+   * last today because only a1_word_order uses it and it has neither match
+   * nor quiz — a pack combining all three would still resolve correctly.
+   */
+  function goToNextCheckPhaseOrType() {
+    if (state.checkPhase !== "quiz" && state.checkPhase !== "order_click" && state.quizItems.length) {
+      state.checkPhase = "quiz";
+      render();
+      return;
+    }
+    if (state.checkPhase !== "order_click" && state.orderItems.length) {
+      state.checkPhase = "order_click";
+      render();
+      return;
+    }
+    const s = state.checkTotal ? state.checkScore : 1;
+    const t = state.checkTotal || 1;
+    completeMode(pack.id, "check", { score: s, total: t });
+    beginType();
   }
 
   function beginQuizRetry() {
@@ -583,7 +634,11 @@ export function startPractice(rawPack, root, opts) {
         <div class="nav">
           <button type="button" class="btn" id="m-again">Try again</button>
           <button type="button" class="btn primary" id="m-next">${
-            state.quizItems.length ? "Next to quiz →" : "Next →"
+            state.quizItems.length
+              ? "Next to quiz →"
+              : state.orderItems.length
+                ? "Next to word order →"
+                : "Next →"
           }</button>
         </div>
       `;
@@ -595,17 +650,7 @@ export function startPractice(rawPack, root, opts) {
         state.checkTotal = Math.max(0, state.checkTotal - m.total);
         render();
       });
-      const goNext = () => {
-        if (state.quizItems.length) {
-          state.checkPhase = "quiz";
-          render();
-        } else {
-          const s = state.checkTotal ? state.checkScore : 1;
-          const t = state.checkTotal || 1;
-          completeMode(pack.id, "check", { score: s, total: t });
-          beginType();
-        }
-      };
+      const goNext = goToNextCheckPhaseOrType;
       root.querySelector("#m-next")?.addEventListener("click", goNext);
       state.enterAdvance = goNext;
       focusPrimary("#m-next");
@@ -754,16 +799,16 @@ export function startPractice(rawPack, root, opts) {
       <p class="practice-prompt">Score: <strong>${score} / ${total}</strong></p>
       <p class="practice-hint">${
         wrongN > 0
-          ? `${wrongN} wrong · retry or go to Type`
-          : "All clear · next: Type"
+          ? `${wrongN} wrong · retry or continue`
+          : `All clear · next: ${state.orderItems.length ? "Word order" : "Type"}`
       }${state.quizRetryPass ? " · retry pass" : ""}</p>
       <div class="nav">
         ${
           wrongN > 0
             ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
-               <button type="button" class="btn" id="q-next">Next to Type →</button>`
+               <button type="button" class="btn" id="q-next">${state.orderItems.length ? "Next to word order →" : "Next to Type →"}</button>`
             : `<button type="button" class="btn" id="q-again">Try full set</button>
-               <button type="button" class="btn primary" id="q-next">Next to Type →</button>`
+               <button type="button" class="btn primary" id="q-next">${state.orderItems.length ? "Next to word order →" : "Next to Type →"}</button>`
         }
       </div>
       ${
@@ -772,12 +817,7 @@ export function startPractice(rawPack, root, opts) {
           : ""
       }
     `;
-    const goType = () => {
-      const s = state.checkTotal ? state.checkScore : 1;
-      const t = state.checkTotal || 1;
-      completeMode(pack.id, "check", { score: s, total: t });
-      beginType();
-    };
+    const goType = goToNextCheckPhaseOrType;
     root.querySelector("#q-next")?.addEventListener("click", goType);
     root.querySelector("#q-retry")?.addEventListener("click", () => beginQuizRetry());
     root.querySelector("#q-again")?.addEventListener("click", () => {
@@ -893,6 +933,198 @@ export function startPractice(rawPack, root, opts) {
     });
 
     if (document.activeElement && root.contains(document.activeElement)) {
+      document.activeElement.blur();
+    }
+  }
+
+  function beginOrderRetry() {
+    const wrong = state.orderWrong.slice();
+    if (!wrong.length) return;
+    state.orderItems = shuffle(wrong);
+    state.orderIndex = 0;
+    state.orderScore = 0;
+    state.orderWrong = [];
+    state.orderRetryPass = true;
+    state.orderGate = false;
+    state.orderPicked = [];
+    state.checkPhase = "order_click";
+    render();
+  }
+
+  function renderOrderGate() {
+    clearAdvance();
+    const total = state.orderItems.length || 1;
+    const score = state.orderScore;
+    const wrongN = state.orderWrong.length;
+    // Same rationale as the quiz gate (James, 2026-08-05): commit on reaching
+    // the gate, not on clicking through — leaving early must not lose credit.
+    if (!state.orderScoreCommitted && !state.orderRetryPass) {
+      state.checkScore += score;
+      state.checkTotal += total;
+      state.orderScoreCommitted = true;
+      completeMode(pack.id, "check", {
+        score: state.checkScore,
+        total: state.checkTotal,
+      });
+    }
+    if (state.orderRetryPass && wrongN === 0) {
+      completeMode(pack.id, "check", { score: 1, total: 1 });
+    }
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Word order · Done</h2></div>
+      <p class="practice-prompt">Score: <strong>${score} / ${total}</strong></p>
+      <p class="practice-hint">${
+        wrongN > 0
+          ? `${wrongN} wrong · retry or go to Type`
+          : "All clear · next: Type"
+      }${state.orderRetryPass ? " · retry pass" : ""}</p>
+      <div class="nav">
+        ${
+          wrongN > 0
+            ? `<button type="button" class="btn primary" id="o-retry">Retry wrong (${wrongN})</button>
+               <button type="button" class="btn" id="o-next">Next to Type →</button>`
+            : `<button type="button" class="btn" id="o-again">Try full set</button>
+               <button type="button" class="btn primary" id="o-next">Next to Type →</button>`
+        }
+      </div>
+      ${
+        wrongN > 0
+          ? `<button type="button" class="link" id="o-again">Try full set</button>`
+          : ""
+      }
+    `;
+    const goType = goToNextCheckPhaseOrType;
+    root.querySelector("#o-next")?.addEventListener("click", goType);
+    root.querySelector("#o-retry")?.addEventListener("click", () => beginOrderRetry());
+    root.querySelector("#o-again")?.addEventListener("click", () => {
+      if (state.orderScoreCommitted) {
+        state.checkScore = Math.max(0, state.checkScore - score);
+        state.checkTotal = Math.max(0, state.checkTotal - total);
+        state.orderScoreCommitted = false;
+      }
+      state.orderItems = samplePass(pack.order || [], null, focusStructures);
+      state.orderIndex = 0;
+      state.orderScore = 0;
+      state.orderWrong = [];
+      state.orderRetryPass = false;
+      state.orderGate = false;
+      state.orderPicked = [];
+      state.checkPhase = "order_click";
+      render();
+    });
+    state.enterAdvance = wrongN > 0 ? () => beginOrderRetry() : goType;
+    focusPrimary(wrongN > 0 ? "#o-retry" : "#o-next");
+  }
+
+  /**
+   * Click-to-order: item.tokens[] shuffled as buttons; clicking appends to a
+   * growing preview and disables that button. Auto-checks against `accepts`
+   * once every token is placed — no separate Check button, matching the
+   * quiz's immediate-feedback feel. "Clear" restarts the same item without
+   * counting as a second try.
+   */
+  function renderOrderClick() {
+    clearAdvance();
+    const items = state.orderItems;
+    if (state.orderGate || state.orderIndex >= items.length) {
+      if (!state.orderGate) state.orderGate = true;
+      renderOrderGate();
+      return;
+    }
+    const item = items[state.orderIndex];
+    const picked = state.orderPicked;
+    setSmokeContext({
+      stage: "check",
+      checkPhase: "order_click",
+      itemIndex: state.orderIndex,
+      en: item.answer || "",
+      cz: item.cz || "",
+      gap: "",
+      gap_answer: item.tokens.join(" "),
+      typed: picked.map((p) => p.t).join(" "),
+    });
+
+    if (!state.orderBag || state.orderBagFor !== item) {
+      state.orderBag = shuffle(item.tokens.map((t, i) => ({ t, i })));
+      state.orderBagFor = item;
+    }
+    const bag = state.orderBag;
+    const answered = picked.length >= item.tokens.length;
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Word order</h2></div>
+      <p class="score-line">${state.orderIndex + 1} / ${items.length} · score ${state.orderScore}${
+        state.orderRetryPass ? " · retry" : ""
+      }</p>
+      <p class="practice-prompt">${esc(item.cz || "")}</p>
+      <p class="practice-hint">Click the words in order · Enter = next once answered</p>
+      <div class="order-built" id="order-built">${
+        picked.length
+          ? picked.map((p) => `<span class="order-chip placed">${esc(p.t)}</span>`).join(" ")
+          : `<span class="order-placeholder">…</span>`
+      }</div>
+      <div class="order-bag" id="order-bag"></div>
+      <div class="nav">
+        ${
+          answered
+            ? `<button type="button" class="btn primary" id="o-next">Next →</button>`
+            : `<button type="button" class="btn" id="o-clear" ${picked.length ? "" : "disabled"}>Clear</button>`
+        }
+      </div>
+      <div class="feedback" id="feedback"></div>
+    `;
+
+    const box = root.querySelector("#order-bag");
+    const usedIdx = new Set(picked.map((p) => p.i));
+    bag.forEach(({ t, i }) => {
+      const used = usedIdx.has(i);
+      const b = el(
+        `<button type="button" class="order-token" data-i="${i}" ${
+          used || answered ? "disabled" : ""
+        }>${esc(t)}</button>`,
+      );
+      if (!used && !answered) {
+        b.addEventListener("click", () => {
+          state.orderPicked.push({ t, i });
+          render();
+        });
+      }
+      box.appendChild(b);
+    });
+
+    if (!answered) {
+      root.querySelector("#o-clear")?.addEventListener("click", () => {
+        state.orderPicked = [];
+        render();
+      });
+    }
+
+    if (answered) {
+      const built = picked.map((p) => p.t).join(" ");
+      const good = [item.answer, ...(item.accepts || [])].some(
+        (a) => norm(a) === norm(built),
+      );
+      if (good) state.orderScore += 1;
+      else if (!state.orderWrong.includes(item)) state.orderWrong.push(item);
+      const fb = root.querySelector("#feedback");
+      fb.className = "feedback " + (good ? "ok" : "bad");
+      fb.textContent = good ? "✓ Correct" : `→ ${item.answer}`;
+      attachExplain(fb, item);
+      const goNext = () => {
+        state.orderIndex += 1;
+        state.orderPicked = [];
+        state.orderBag = null;
+        if (state.orderIndex >= items.length) state.orderGate = true;
+        render();
+      };
+      state.enterAdvance = goNext;
+      root.querySelector("#o-next")?.addEventListener("click", goNext);
+      focusPrimary("#o-next");
+    }
+
+    if (document.activeElement && root.contains(document.activeElement) && !answered) {
       document.activeElement.blur();
     }
   }
@@ -1232,6 +1464,7 @@ export function startPractice(rawPack, root, opts) {
     if (state.stage === "intro") return renderIntro();
     if (state.stage === "check") {
       if (state.checkPhase === "match") return renderMatch();
+      if (state.checkPhase === "order_click") return renderOrderClick();
       return renderQuiz();
     }
     if (state.stage === "type") return renderTypedStage("type");

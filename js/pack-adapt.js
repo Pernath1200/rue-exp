@@ -13,10 +13,13 @@
  * reporting a pass. This module is the bridge.
  *
  * Ladder built from one item bank:
- *   match → meaning (English sentence ↔ Czech)
- *   quiz  → choose the right form in the frame
- *   type  → produce the missing form (Czech shown as the hint)
- *   use   → produce the whole English sentence from Czech
+ *   match       → meaning (English sentence ↔ Czech)
+ *   quiz        → choose the right form in the frame
+ *   order_click → click item.tokens[] into the right sequence (needs
+ *                 check.sequence: ["order_click"] and items shaped
+ *                 { tokens: string[], accepts?: string[] } — a1_word_order)
+ *   type        → produce the missing form (Czech shown as the hint)
+ *   use         → produce the whole English sentence from Czech
  */
 
 /** Normalised key for answer/distractor comparison. */
@@ -141,6 +144,26 @@ export function adaptGrammarPack(pack) {
         .filter(Boolean)
     : [];
 
+  // Order-click: click tokens[] into the correct sequence, prompted by cz.
+  // Items with fewer than 2 tokens can't be a real ordering task.
+  const order = wantsCheck("order_click")
+    ? items
+        .filter((it) => Array.isArray(it.tokens) && it.tokens.length >= 2)
+        .map((it) => ({
+          cz: it.cz,
+          tokens: it.tokens,
+          answer:
+            (Array.isArray(it.accepts) && it.accepts[0]) ||
+            it.en ||
+            it.tokens.join(" "),
+          accepts:
+            Array.isArray(it.accepts) && it.accepts.length
+              ? it.accepts
+              : [it.tokens.join(" ")],
+          structures: it.structures,
+        }))
+    : [];
+
   // Type: produce the missing form. Czech rides along as the hint so the
   // stage stays CZ→EN rather than a bare cloze.
   const type_items = (wants("type") ? withGap : []).map((it) => ({
@@ -169,7 +192,7 @@ export function adaptGrammarPack(pack) {
       structures: it.structures,
     }));
 
-  return { ...pack, intro: cards, match, quiz, type_items, use_items };
+  return { ...pack, intro: cards, match, quiz, order, type_items, use_items };
 }
 
 export { key as _normKey, choicesFor as _choicesFor, flatItems as _flatItems };
