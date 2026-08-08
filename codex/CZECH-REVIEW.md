@@ -526,3 +526,28 @@ throughout: *chytit ranní vlak*, *šetříme peníze na dovolenou*, *zvládá
 tuhle práci*, the borrow/lend pair *půjčit si / půjčovat* correctly
 distinguished. No dictionary-nominative, possessive-agreement, or
 word-order calques found in either bank.
+
+## 2026-08-08 — second-opinion pass (cloud, backlog)
+
+Nothing new since run 35 (the branch tip is that run's own log), so per the
+backlog rule reviewed the oldest never-reviewed pack:
+**a1_core_frames_can_like_want** (12 frame items, all cz read).
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a1_core_frames_can_like_want` item *Would you like a coffee?*: cz
+  "Dáš si kávu? / Chtěl bys kávu?" — the conditional alternate is masculine
+  only, while every other gendered form in this pack gives both ("Mám rád /
+  Mám ráda", "Dal bych si / Dala bych si"). Nothing wrong, cz is prompt-side;
+  suggest "/ Chtěla bys kávu?" if the pack's own both-genders symmetry is
+  wanted. Same shape as the 2026-08-08 ~15:00 adjectives flag. Left unchanged.
+
+Clean, no log needed: the other 11 items — correct accusatives (kávu, zimu,
+hudbu, vodu, lístek/jízdenku), idiomatic ability *Umím plavat / Umím
+anglicky* (not the *můžu* calque), *Můžeš mi pomoct?*, *Dal(a) bych si kávu*
+for "I'd like", and the dropped-subject "Má rád hudbu" is fixed as *he* by
+masculine *rád*. No English-shaped Czech in the pack.
+
+Still never reviewed after this pass: a1_core_frames_there_time,
+a2_core_frames_chunks, b1_abstract, b1_collocations, b1_core_frames.
