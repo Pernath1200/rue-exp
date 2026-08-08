@@ -580,3 +580,34 @@ No English-shaped Czech in the pack.
 
 Still never reviewed after this pass: a2_core_frames_chunks, b1_abstract,
 b1_collocations, b1_core_frames.
+
+## 2026-08-08 — second-opinion pass (cloud, backlog #3)
+
+Nothing new in the last day beyond Czech already covered by earlier entries
+(everything through run 35 and both backlog passes is reviewed), so per the
+backlog rule reviewed the next oldest never-reviewed pack:
+**a2_core_frames_chunks** (12 chunk items, all cz read).
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_core_frames_chunks` item *No problem.*: cz "Žádný problém. / **Není
+  zač.**" — *Není zač* is the standard reply to thanks and maps to English
+  "You're welcome", which `accepts` doesn't take (only "No problem."). In
+  gap mode the frame "No ____." constrains the answer, so this bites only
+  in full-translation grading — but a student prompted with *Není zač* will
+  plausibly produce "You're welcome". Either drop " / Není zač." or add
+  "You're welcome." to `accepts` (English, so yours). Both glosses are
+  individually correct; only the pairing drifts. Left unchanged.
+
+Clean, no log needed: the other 11 items — idiomatic *Jsi v pořádku?*,
+*A co ty?* for "What about you?", *Záleží na počasí* (correct locative),
+*Podle mapy* (correct genitive), *Už tu nebydlím* for "any more", *Hezký
+den* (elliptical accusative), formal imperative *Posaďte se, prosím*;
+both-gender pairs given where 1sg is gendered (*Dal bych si / Dala bych
+si*, *Nejsem si jistý / jistá*); the dropped-subject rule holds throughout
+(*Uvidíme se později*, *Už tu nebydlím* fixed by 1pl/1sg morphology).
+No English-shaped Czech in the pack.
+
+Still never reviewed after this pass: b1_abstract, b1_collocations,
+b1_core_frames.
