@@ -8,7 +8,7 @@ calls & forks for James · anything to smoke-check.
 
 ## 2026-08-08 · cloud run 36 — **`vocab/b1-build`** (RUE build, claude-opus-5)
 
-### Headline: **switching to `vocab/b1-build` — the A2 backlog is closed**, verified by my own count, not inherited from run 35's digest. And **step 1 is settled: the B1 gap is 498, not 336.** The "coverage moved the wrong way" worry was never a regression — it was two different measurement methods run on the same tree. The ~26-pack plan is sized against a number that was wrong by 162 words.
+### Headline: **switching to `vocab/b1-build` — the A2 backlog is closed**, verified by my own count, not inherited from run 35's digest. And **step 1 is settled: the B1 gap is 498, not 336.** The "coverage moved the wrong way" worry was never a regression — it was two different measurement methods run on the same tree. The ~26-pack plan is sized against a number that was wrong by 162 words. Step 2 then started: **`teaches_lemmas` 45/93** — and it turns out to be measurement-neutral, which contradicts the contract's stated reason for it.
 
 ### Branch decision (step 0)
 
@@ -32,6 +32,8 @@ prompt is the B1 plan, so James answered "B1". No `HANDOFF.md`, no dormancy.
 |---|--------|------|
 | 1 | `fe0e6ba` | merge `build` → `vocab/b1-build` (run 35 + the B1 contract) |
 | 2 | `92b56ee` | **B1 gap re-measured — 498**, `rue_oxford.py` made runnable, `oxford-b1-gap.tsv` regenerated |
+| 3 | `ce1ca49` | this digest entry + re-lexify standing item in REPAIR-QUEUE |
+| 4 | `6f0e231` | **`teaches_lemmas` backfill 45/93** + committed resumable backfill script |
 
 ### Gates
 
@@ -149,25 +151,75 @@ no silent guess:
 pack count to what survives. But I have not acted on it, and step 2 does not
 depend on the answer, so the build is not blocked while you decide.
 
-### Step 2 not started, deliberately
+### Step 2 — started and half done: **45/93 backfilled**
 
-`teaches_lemmas` is **0/93** grammar packs — verified directly, not inherited.
-The prompt forbids skipping ahead while an earlier step is incomplete, and
-step 1 was genuinely incomplete when this run started (no digest entry, and
-the measurement script could not even execute here). Step 1 is now settled and
-step 2 is unblocked; **next run starts the backfill and reports `n/93`.**
+`teaches_lemmas` was **0/93** at the start of this run, verified directly.
+Step 1 was settled first, so nothing was skipped ahead of; the backfill then
+ran as its own commit (`6f0e231`). **45/93.** Next run resumes with
+`py -X utf8 codex/scripts/backfill_teaches_lemmas.py <n>` — the script is
+committed, idempotent (it skips packs that already have the field) and takes
+a batch size, so resuming is a one-liner.
 
-Worth knowing for that run: `teaches_lemmas` is already read by
-`rue_oxford.py`, so measure B sharpens as the backfill lands — and grammar
-`gap_answer`s alone already contribute **506 tokens** that measure A cannot
-see. That is the whole reason B (498) and A (600) differ, and it is direct
-confirmation of the contract's reasoning that without this field the gap
-"stays a range, not a count".
+Derived mechanically from each item's `gap_answer` — verbatim drilled forms,
+lowercased, deduped, insertion-ordered, matching RUPL's
+`["work","works","live","lives"]` shape. `a1_be_have` → `am are is have has`;
+`b1_phrasal_verbs` → the particles it actually drills.
+
+Method note, because a previous run was bitten by exactly this: the field is
+inserted as **one line by text edit** against an asserted unique anchor, never
+by re-dumping the JSON (run 30's phantom-diff trap). Every file is re-parsed
+after the edit and compared field-by-field **and key-order** against its
+pre-edit parse. Diff is 45 files, **+45 insertions, 0 deletions**.
+
+> **FORK — multiword gap answers excluded (conservative), logged.** 740 of
+> 3772 gap answers are multiword. Most are **construction templates, not
+> lemmas**: `b1_it_subject` alone drills *"it is important"*, *"it is easy"*,
+> *"it was nice"* — 41 of them, and a field called `teaches_lemmas` containing
+> those would mislead anyone who opens it. A minority are genuine multiword
+> lexemes (*next to*, *in front of*, *have to*), and separating the two needs
+> per-pack judgement rather than a rule. **Cut taken: single words only.** It
+> costs the coverage measure nothing — `rue_oxford.py` reads grammar
+> `gap_answer` directly either way — and adding them later is purely additive.
+> These are also the "multi-word stragglers" AGENTS.md already ranks as low
+> priority, so the cut agrees with the contract's own ordering.
+
+**Two packs deliberately have no field**, and both are honest gaps rather
+than misses: `a1_word_order` (a token-ordering pack — **no item has a
+`gap_answer` at all**, it drills `tokens[]`) and `b1_it_subject` (all 41 gap
+answers are the multiword constructions above). Neither should get a fake
+list to make a counter read 47.
+
+### CORRECTION to my own claim earlier in this entry
+
+I wrote above, before running it, that measure B "sharpens as the backfill
+lands". **It does not. Measured after 45 packs: B is unchanged at 498**, to
+the word. The reason is structural — `rue_oxford.py` already reads grammar
+`gap_answer`, and `teaches_lemmas` is *derived from* `gap_answer`, so the
+field is exactly redundant to the measurement that was supposed to consume it.
+
+**This matters for the contract, James.** AGENTS.md justifies step 2 as the
+prerequisite that turns the gap "from a range into a count" — and on the
+evidence, a mechanically-derived `teaches_lemmas` cannot do that, because the
+information was already machine-readable. The gap is *already* a count (498);
+what made it look like a range was the three-methods confusion in step 1,
+which is now resolved.
+
+The field is still worth having — it is an explicit, human-readable
+declaration, and it is the only place a pack can say it teaches a form it
+never gaps on. **But that second part is exactly the clause I did NOT
+exercise:** "plus any other form the pack meaningfully teaches" needs a human
+reading each pack, and it is the only version of step 2 that would actually
+move the number. **Worth your ruling before I do the remaining 48:** finish
+the mechanical pass as-is (cheap, tidy, measurement-neutral), or treat the
+rest as a judgement pass that adds non-gapped taught forms? I have taken the
+conservative path and continued mechanically.
 
 ### Nothing to smoke
 
-No pack changed. The two files touched are a codex script and a codex data
-file, neither loaded by the app.
+45 grammar packs gained a `teaches_lemmas` field, but **nothing a student
+sees changed** — `js/pack-adapt.js` never reads the field and `verify_pack`
+does not validate it (both checked before writing it). The ladder cannot have
+moved. Gates and `scripts/smoke.py` re-run green after the backfill anyway.
 
 ---
 
