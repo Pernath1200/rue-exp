@@ -393,3 +393,44 @@ one 1sg sentence uses gender-neutral *v rozpacích*. Both trunk intros'
 titles, tiles and notes ok (the how much/how many and make/do notes are
 sound; all 12 verbs_daily tiles are clean infinitives matching their
 items).
+
+## 2026-08-08 — second-opinion pass (cloud, ~20:00 UTC)
+
+Scope: run 33's Czech — 2 new Use-stage sentence banks (a2_home 39,
+a2_health 41 sentences) and 3 new trunk intros (verbs_more and verbs_say
+picture-led, glue_quantity text-only). All pure additions — no existing
+cz touched.
+
+**Fixed: 1 · Flagged: 1 · everything else ok.**
+
+Fixes:
+- `glue_quantity` intro `title_cz`: *Kolik, jak moc, a slova, která…* →
+  *Kolik, jak moc a slova, která…* — the comma before *a* is the English
+  Oxford comma carried over; Czech takes no comma before *a* in a plain
+  list.
+
+For James:
+- `a2_health` bank *toothache*: "Můj syn má bolest zubu." — grammatical
+  and consistent with the pack's gloss, but that gloss (*toothache* =
+  "bolest zubu") is the one flagged on 2026-08-07 (~18:45) as reading
+  like pain from one specific tooth; the idiomatic set term is "bolest
+  zubů" (or "Bolí ho zub"). If you act on that flag, this sentence
+  travels with the tile and word entry. Nothing changed here.
+
+Clean, no log needed: the other 79 bank sentences. Correct oblique cases
+throughout — accusatives *novou skříň / bránu / novou pračku / rakovinu /
+tuhle chorobu / vážnou nemoc / velkou kost*, animate accusative *dva psy*,
+genitives *vedle dveří / bolest zad / konec života*, locatives *v garáži /
+ve dřezu / na střeše / na polici / v ložnici / na dveřích / v předsíni /
+na balkoně / v krku*, dative *k lékaři / mi píše recept*, instrumental
+*stávám se učitelem* (in the pack items the tiles copy); agreement incl.
+neuter *Topení je velmi staré*, plural *Tyhle závěsy jsou nové / Schody
+jsou špinavé*; plurale tantum *Tyhle odpadky nejsou moje* for singular en
+*rubbish* is the right Czech and the en side is covered by accepts (same
+shape as the earlier luggage call). Idiomatic *Výtah nefunguje*, *Bolí mě
+kotník*, *Starám se o svoji matku* (correct reflexive *svoji*), *Musíte
+užívat léky*, *bolest v krku* and *bolest zad* are the standard set terms
+(only the zubu one drifts, flagged above). All three intros otherwise ok —
+the enjoy-inversion note ("Práce mě baví = I enjoy my work") matches the
+pack's own item, the tell-needs-a-person note is sound, and all 24 tiles
+match their packs' item glosses.
