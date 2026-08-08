@@ -74,6 +74,21 @@ All 72 live grammar units on path now produce a real ladder, gated by
 
 ## Standing rules (not one-time items — apply to every unit, every run)
 
+- [ ] **Re-lexify repairs structurally erode Oxford coverage (found cloud run
+  36, 2026-08-08).** A `fix(unit): re-lexify … onto taught vocabulary` repair
+  must replace an *untaught* word with a *taught* one — so it selects against
+  exactly the words the B1 Oxford gap is asking for. Measured across **49**
+  re-lexify commits: **268** Oxford A1–B1 words removed, **20 still absent
+  from the course today** (A1 `ball` `born` `carry` `club` `die` `else`
+  `everyone` `happen` `nobody` `practise` `somebody` · A2 `smoke` · B1
+  `apologize` `continuous` `fence` `hurry` `mix` `pan` `plot` `pot`). `club`
+  was traded away twice. Every individual repair is correct; the aggregate is
+  the problem. **Blocked on James** (fork logged in BUILD-DIGEST run 36):
+  should re-lexify prefer an Oxford-listed replacement when more than one
+  pool-legal option exists, and are those 20 words B1-pack material or an
+  A1/A2 patch? Do not change the repair path before that is answered — it
+  runs on `build`, which the B1 lane must not touch.
+
 - [ ] **Dropped-subject Czech grading sweep (James, 2026-08-08).** Czech
   drops the subject pronoun, so a prompt like *Už je tady* is true for
   he/she/it alike — a student who answers correctly with a different subject

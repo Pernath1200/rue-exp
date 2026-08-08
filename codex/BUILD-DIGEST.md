@@ -6,6 +6,171 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 36 — **`vocab/b1-build`** (RUE build, claude-opus-5)
+
+### Headline: **switching to `vocab/b1-build` — the A2 backlog is closed**, verified by my own count, not inherited from run 35's digest. And **step 1 is settled: the B1 gap is 498, not 336.** The "coverage moved the wrong way" worry was never a regression — it was two different measurement methods run on the same tree. The ~26-pack plan is sized against a number that was wrong by 162 words.
+
+### Branch decision (step 0)
+
+Counted live A2 vocab units whose pack has neither `sentences[]` nor
+`practice: "frames"`: **0** — 22 leaf packs all banked, 3 `trunk_*` frames
+packs exempt by rule, 25 A2 live vocab nodes total. Run 35's claim holds.
+**Switching to `vocab/b1-build` — A2 backlog closed.** Every run from here
+works this branch until James says otherwise; `build` is untouched.
+
+`vocab/b1-build` had been cut *before* James's `43ab3c1`, so it did not
+contain the B1 contract it is named for, nor run 35's two A2 banks, nor the
+authoring oracle. Merged `origin/build` in (ordinary merge, no force) so the
+B1 work sits on the current contract. That merge is the first commit here.
+
+**The run-35 conflict is resolved and needs no further action.** This run's
+prompt is the B1 plan, so James answered "B1". No `HANDOFF.md`, no dormancy.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `fe0e6ba` | merge `build` → `vocab/b1-build` (run 35 + the B1 contract) |
+| 2 | `92b56ee` | **B1 gap re-measured — 498**, `rue_oxford.py` made runnable, `oxford-b1-gap.tsv` regenerated |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 126 · 19 units · baseline 126 | **126 · 19 units · baseline 126** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start. Nothing this run touches a pack, so they could
+not have moved — verified anyway.
+
+---
+
+### Step 1 — the gap, settled. **498.**
+
+**There was no regression.** AGENTS.md records the count falling from 336 to
+591 and A1 coverage from 98% to 90% "which should not happen when only
+content is added" — correct, and it didn't. Both figures are accurate
+measurements of the *same tree* by two different methods, and I reproduced
+both exactly before concluding anything:
+
+| | method | A1 | A2 | B1 | A1–B1 untaught |
+|---|---|---|---|---|---|
+| **A** `items` | vocab pack items only — **ignores grammar packs entirely** | 90% | 97% | 30% | 600 |
+| **B** `taught` | every field that actually teaches a word | 94% | 98% | 37% | **498** |
+| **C** `anyfield` | any token anywhere in a pack, incl. explanations | 98% | 98% | 56% | 334 |
+
+C is the old 336 figure; A is the "re-measurement". Neither was wrong about
+its own tree — they were never the same question.
+
+**C is inflated by metalanguage, and that is the substantive finding.** The
+TSV's own header claims a word counts as present if it appears in *any* pack
+field "including notes" — which credits the course for words it only ever
+*talks about*. I hand-checked 14 sampled words. **5 of the 14 are credited
+from prose alone:**
+
+- `hers` — from an `a1_possessives` intro card that reads **"Not yet: mine /
+  yours / hers"**. The pack is explicit that it does not teach the word.
+- `quit` — from a gloss explaining *stop + -ing* ("quit a habit").
+- `medium` — from a size analogy in a diagram, *big → medium → point*.
+- `attach`, `careless` — explanation prose and one incidental adjective in a
+  `b1_linkers` item whose gap answer is `but`.
+
+The other 9 are genuinely absent. So C credits ~36% falsely on this sample,
+and **a plan built on 336 is planning against explanation text.**
+
+**Two false-positive classes in my own measurement, found by hand-check and
+fixed** (this is why B moved 509 → 498 mid-run): multiword Oxford entries
+(`ice cream`, `next to`, `t-shirt`, `used to`) can never be members of a
+token set, so all 11 counted as missing when 9 are taught; and BrE/AmE
+variants — the course teaches `practice`/`apologise`, Oxford lists
+`practise`/`apologize`. Both handled in the script now.
+
+**`rue_oxford.py` could not be run by this lane at all.** It had
+`C:/Users/ADMIN/...` hardcoded and read the Oxford list from Windows `%TEMP%`
+— a temp file, so the input to the original measurement is not even
+reproducible. Now repo-relative, reading the committed CSV, and it prints all
+three measures side by side so this cannot be re-confused. `--write`
+regenerates the TSV.
+
+### The re-lexify theory is TRUE, but it is not the explanation — and it needs a ruling
+
+AGENTS.md suspected re-lexify repairs of trading Oxford words for synonyms.
+**Confirmed, with the mechanism stated in the repairs' own commit messages.**
+Across **49** re-lexify commits, **268** Oxford A1–B1 words were removed from
+packs; **20 are still absent from the course today**:
+
+**A1 (11)** `ball` `born` `carry` `club` `die` `else` `everyone` `happen`
+`nobody` `practise` `somebody` · **A2 (1)** `smoke` · **B1 (8)** `apologize`
+`continuous` `fence` `hurry` `mix` `pan` `plot` `pot`.
+
+`club` is the clearest case — traded away **twice**, and
+`0c1d8ce`'s message spells out the logic: *"join: club (never taught
+anywhere) → team (leaf_freetime_a1)"*. That is the repair working exactly as
+designed: it must replace an untaught word with a taught one, so it
+**structurally selects against precisely the words the Oxford gap is asking
+for.** Every repair is individually correct and the aggregate erodes coverage.
+
+**Scale: 20 words of 498, ~4%.** Real, worth fixing, and **not** the cause of
+the 336/498 discrepancy — that was entirely methodology. I want to be plain
+about that, because the two findings could easily be conflated into "the
+repairs broke coverage", and they did not.
+
+> **FORK for James — conservative path taken, nothing changed.** AGENTS.md
+> asks whether future re-lexify repairs should *prefer an Oxford-listed
+> replacement when more than one pool-legal option exists*. **I did not
+> implement it and did not re-add any of the 20 words.** Reasons: it changes
+> the behaviour of a repair path that runs on `build`, which I must not touch
+> this run; and 11 of the 20 are A1 words (`ball`, `born`, `carry`, `die`,
+> `else`, `everyone`, `happen`, `nobody`, `somebody`, `club`, `practise`)
+> that arguably belong in an A1/A2 pack rather than being smuggled back in
+> through a B1 pack. **A one-line answer settles it: "prefer Oxford" as a
+> tie-break rule, and whether the 20 are B1-pack material or an A1/A2 patch.**
+
+### **The plan is under-sized, and this is the decision that needs you**
+
+~26 packs × 12 = 312 words. The real gap is **498** (A1 54 · A2 12 · B1 432).
+**Closing it fully needs ~42 packs, not ~26** — about 60% more work than the
+contract budgets. I did **not** unilaterally re-scope: AGENTS.md fixes "~26
+thematic packs" and scope is James's call, not the routine's. Three options,
+no silent guess:
+
+1. **Build all ~42** — a clean B1 on the Oxford list, ~60% more runs.
+2. **Keep ~26 and take the top 312 by usefulness**, accepting a partial B1
+   and logging exactly which 186 words are deferred.
+3. **Re-cut the target** — the 432 B1 words include a long tail
+   (`bride`, `bee`, `bubble`, `campus`, `alcoholic`) that is Oxford-listed but
+   thin for a Czech-learner course. A curated 300 may be a better B1 than a
+   mechanical 498.
+
+**My recommendation is 3, then 1** — curate the list first, then size the
+pack count to what survives. But I have not acted on it, and step 2 does not
+depend on the answer, so the build is not blocked while you decide.
+
+### Step 2 not started, deliberately
+
+`teaches_lemmas` is **0/93** grammar packs — verified directly, not inherited.
+The prompt forbids skipping ahead while an earlier step is incomplete, and
+step 1 was genuinely incomplete when this run started (no digest entry, and
+the measurement script could not even execute here). Step 1 is now settled and
+step 2 is unblocked; **next run starts the backfill and reports `n/93`.**
+
+Worth knowing for that run: `teaches_lemmas` is already read by
+`rue_oxford.py`, so measure B sharpens as the backfill lands — and grammar
+`gap_answer`s alone already contribute **506 tokens** that measure A cannot
+see. That is the whole reason B (498) and A (600) differ, and it is direct
+confirmation of the contract's reasoning that without this field the gap
+"stays a range, not a count".
+
+### Nothing to smoke
+
+No pack changed. The two files touched are a codex script and a codex data
+file, neither loaded by the app.
+
+---
+
 ## 2026-08-08 · cloud run 35 (RUE build, claude-opus-5)
 
 ### Headline: **the A2 Use-stage backlog is closed — 22 of 22 A2 leaves now have a sentence bank** (`a2_verbs` 28, `a2_describing` 61, 89 new sentences). That was the whole of the wind-down prompt's step 1. Step 2 is exhausted too: A1/A2 sequencing repair has no work left, and every shipped bank was mechanically re-verified. **Step 3 (write `codex/HANDOFF.md` and go permanently dormant) is DELIBERATELY NOT DONE — see the blocking conflict below. It needs James before any run performs it.**
