@@ -6,6 +6,137 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 34 (RUE build, claude-opus-5)
+
+### Headline: **the giants fork is resolved, and it was resolved by reading the repo rather than by waiting.** Runs 31, 32 and 33 escalated the same question — how to author Use banks for the five oversized A2 leaves — and took "none started" as the conservative default each time, spending three runs on lower-ranked work while the repo's top-priority backlog moved by zero. James has not answered (his last commit is still `661d8b4`). This run authored **three of the five giants** — `a2_adverbs` (55 sentences), `a2_misc` (84), `a2_ideas` (89) — **228 sentences**, taking A2 leaves **17/22 → 20/22**. Separately, **the `a1_word_order` sequencing item four runs called an unfixable no-op turned out to be fixable**: audit **127 → 126**, baseline tightened, and the unit left the report.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `722789c` | **`a2_adverbs`** `sentences[]` — 55 sentences, 55 of 66 items |
+| 2 | `5e5a7b7` | **`a2_misc`** `sentences[]` — 84 sentences, 84 of 86 items |
+| 3 | `434a737` | **`a1_word_order`** adj+noun fork closed — `new` → `nice`, audit 127 → 126 |
+| 4 | `8e07d13` | **`a2_ideas`** `sentences[]` — 89 sentences, 89 of 92 items |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 127 · 20 units · baseline 127 | **126 · 19 units · baseline tightened to 126** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12 warnings are the permanent `b2_clear_claims` judgment-label style. Nothing this run authors a `codex_unit` tag.
+
+### Why the fork got resolved instead of re-escalated
+
+The fork as runs 31-33 framed it: the spec says **~12 sentences per pack**, practice since `a1_home_family` has been **one-per-item**, and for the five giants (66/86/92/112/314 items) one-per-item is ~670 sentences. Three runs asked James to choose between (a) one-per-item, (b) spec-literal ~12 with selection, (c) split the giants.
+
+**The repo already contained an answer, and no prior run looked for it.** `leaf_travel_a2` has **72 items and a 14-sentence bank** (`529ae1c`), and it has been counted as *done* in every backlog tally since. `leaf_family_a2` is 20 items / 14 sentences. So the only two packs in the repo where one-per-item and ~12 genuinely diverge were **both** shipped selective, and accepted. One-per-item was never a decision — it is an artifact of every *other* pack being small enough that one-per-item and "~12" nearly coincide.
+
+That reframes the fork as not a fork at all:
+
+- AGENTS.md, the binding contract, says **"~12 per pack"**. Authoring *more* than 12 is fuller coverage of the same spec shape, not a violation.
+- `a2_travel` at 72 items is the closest existing analogue to `adverbs` (66) and `misc` (86), and it is precedent for selection.
+- Selection is **additive-safe**: if James rules for one-per-item, later runs append sentences for the uncovered items. Nothing authored this run gets thrown away under either answer.
+- "None started" is not the conservative path. It is the path that leaves the fourth stage **dead** for a third of the A2 vocab side while the routine does trunk intros. A student on `a2_ideas` today gets 89 sentences instead of "Use · coming soon".
+
+So I authored generously rather than to the literal floor — 55/66, 84/86, 89/92 — which lands close to one-per-item anyway and makes the fork mostly moot for these three packs. **`describing` (314) is still not started and still genuinely needs James** — see the fork below.
+
+### The uncovered items are a finding, not a shortfall
+
+Coverage stopped short of 100 % in all three packs for **one recurring reason**, and it is a real grading defect rather than authoring fatigue: **within-pack Czech-gloss collision**. Two items in the same pack sharing a Czech gloss produce a CZ→EN prompt with two correct English answers, so a student who answers the other one grades **wrong**. Same class of defect as the dropped-subject rule, different cause.
+
+- `a2_adverbs`, 11 uncovered: 5 are collisions (certainly/definitely = *rozhodně*, especially/particularly = *zejména*, finally/eventually = *nakonec*, almost/nearly, unfortunately/sadly = *bohužel*); 6 have no natural pool-legal A2 sentence (`either`, `last`, `least`, `increasingly`, `nowhere`, and `forward` — which needs *move*, untaught here).
+- `a2_ideas`, 3 uncovered: all collisions (option/possibility = *možnost*, error/mistake = *chyba*, figure/number = *číslo*).
+- `a2_misc`, 2 uncovered: `myself` and `ourselves`, for the gender reason below.
+
+Written up as a standing note in REPAIR-QUEUE.md, because **`a2_describing` at 314 adjectives will hit it hard** and the check needs to happen before authoring, not after.
+
+### Method — oracle rebuilt from scratch and re-validated before use
+
+Legality was decided by a script that **imports `codex/audit.py` and calls its own** `variants()` / `tokens_of()` / `GLUE` / `targets_of()` / `full_path()`, replaying `main()`'s `legal` set (pool-before | own | partner | GLUE) for a node. Rebuilt rather than inherited, and **re-run against the six published self-tests before use**: `new` illegal at `a1_word_order` but `nice` legal, `hour` and `honest` illegal at `a1_articles`, `whether`/`wonder` illegal at `b1_indirect_questions`. **6/6 exact match.**
+
+Pool regenerated with `--before <node_id>` immediately before each pack (`leaf_adverbs_a2` 1554 targets / 75 units, `leaf_misc_a2` 1962 / 88, `leaf_ideas_a2` 1609 / 77). **228/228 sentences pool-legal.** 18 tokens passed only via a derived variant and every one is a real derivation of a taught base (`arrive`, `cost`, `drink`, `key`, `sing`, `sleep`, `stop`, `walk`, `cook`, `cup`, `number`, `question`, `shoe`, `ticket`, `word`, `benefit`, `make`, `wait`). No lucky-stem passes.
+
+All three bank diffs are purely additive (+57, +86, +91, **zero deletions**) — appended by text edit against an asserted exact file tail, never by re-dumping the JSON, so run 30's phantom-diff trap on inline `use[]` arrays did not recur.
+
+**Three drafts were caught by the oracle, not by eye**, which is the argument for regenerating per pack: `moved` and `ringing` in adverbs (`move`/`ring` untaught), `smoke` in misc (the pack teaches `smoking`, not the base), and `box` in ideas — that last one is the instructive one. `box` is taught by `a2_misc`, which I authored **earlier in this same run**, but misc sits *after* ideas on the path, so `box` is illegal at ideas. **Two packs authored in one run are not interchangeable as vocabulary sources.**
+
+### Step 4 — the no-op four runs inherited was not a no-op
+
+Runs 30, 31, 32 and 33 each recorded `a1_word_order` (`new`×3) as unfixable and recommended marking it permanently accepted, the way `b2_clear_claims` was. I checked instead of inheriting, and it was fixable in about ten minutes.
+
+All three flagged items carry `focus: "adj + noun"`. **The adjective is incidental to the teaching point** — the drill teaches that the adjective precedes the noun, not the word `new`. Step 4's own instruction is to rewrite examples onto taught vocabulary while keeping the teaching point, which is exactly this. No teaching point was deleted.
+
+`nice` is not a preference, it is **forced**: of 21 common adjectives tested against the pool at that node, `nice` is the **only** pool-legal one (the unit sits at path index 3, so almost nothing is taught yet). That is presumably how this read as unfixable — but "exactly one candidate" is not "no candidate", and the earlier runs' own published self-test (`nice` legal at `a1_word_order`) contained the answer.
+
+    I need a new phone.  ->  I need a nice phone.   / Potřebuju hezký telefon.
+    She has a new car.   ->  She has a nice car.    / Ona má hezké auto.
+    He needs a new bag.  ->  He needs a nice bag.   / On potřebuje hezkou tašku.
+
+Czech agreement checked per gender: *hezký* (telefon, masc), *hezké* (auto, neut), *hezkou* (tašku, fem acc). `tokens` and `accepts` updated so the `order_click` drill still reconstructs. I also moved the intro's "Avoid / Say" example off `new` — the audit does not read intro text, so that changes no number, but the student was being shown an untaught word in the one place the unit explains itself.
+
+**Result: audit 127 → 126, 20 → 19 units, baseline auto-tightened.** `a1_articles`/`hour` is now the *only* A1/A2 entry left, and that one is genuinely essential — the item teaches *an hour* (silent h), so removing `hour` deletes the teaching point. Logging it as the fork rather than dodging it, per step 4.
+
+### Step 5 stayed gated — count checked directly, not from a digest
+
+Walked `data/nodes-vocab.json`, opened every live A2 pack, tested `sentences[]` presence. **22 A2 leaves live, 17 with banks at run start → 5 open; 2 open now.** Backlog non-empty, so C1 (`c1_reporting_complementation`) was left untouched.
+
+Remaining 2: **`verbs` 112** and **`describing` 314**.
+
+### Fork for James — now down to one pack, and much smaller than it was
+
+The general giants question is answered by precedent (above), so I am **not** re-escalating it. What is left is genuinely one decision:
+
+**`a2_describing` has 314 items.** At the density used this run that is ~300 sentences, roughly 8× a normal pack, and it is the one pack where selection vs. coverage is a real judgment call rather than a spec-reading. Run 32's recommendation of **(c) split it** — several banks per pack, or treat it as a review unit drawing on earlier packs — still looks right to me, and I am seconding it with one new datum: because Czech predicate adjectives inflect for gender, **nearly every one of those 314 items needs routing through an explicit 3rd-person subject**, so `describing` is more expensive per sentence than any pack shipped so far, not merely bigger.
+
+**`a2_verbs` (112) I did not treat as a fork** — it is large but not anomalous, and I would simply author it next run the way these three were done, unless you say otherwise.
+
+Two older forks are still unanswered and still load-bearing: **item-level `lemma` as a general tool** (run 29) and **run 27's stricter tile rule** (seven trunk intros deep). Also still open and not a cloud-lane call: `SEQUENCING-REPORT.md` is *generated* by `audit.py`, so formally accepting `a1_articles`/`hour` means changing gate tooling.
+
+### Step 2 note — trunk intros, unchanged and still mis-stated in the prompt
+
+Untouched this run: step 3 outranks step 2 and the A2 leaf backlog was open the whole way. **10 A1 trunks and 3 A2 trunks still have no intro.** The prompt's "step 2 DONE 38/38" is true of *leaves* only — recording it for the fourth consecutive run. The 3 A2 trunks (`trunk_recycle_a2`, `trunk_lexis_a2`, `trunk_chunks_a2`) also have no `sentences[]`; every backlog tally including mine counts leaves only, which is worth making explicit rather than leaving as a silent convention.
+
+### Note on the prompt: stale in the same places, plus one now actively wrong
+
+1. **"A2 has 21 of 22 units still showing coming soon"** — it was 5 at run start, **2 now**.
+2. **"audit baseline ~129"** — it was 127 at run start and is **126** now. A run trusting 129 would let three regressions through the ratchet. Still the one worth fixing.
+3. **"as of run 27"** — the prompt describes a repo seven runs behind; steps 2 and 3 both read as far more open than they are.
+4. **New:** the prompt says step 3's spec is "~12 sentences each". That is AGENTS.md's number and it is fine, but a run reading only the prompt would not know the *one-per-item* convention exists or that `a2_travel` contradicts it. The precedent is what unblocked this run.
+5. `py` is not on PATH in the cloud container; `python3 -X utf8` is. Harmless, but every run rediscovers it.
+
+### Czech I am flagging for the review routine
+
+Not errors I believe I have made — the places a second opinion is worth most. All 228 prompts were checked for the dropped-subject rule and the gender traps before commit; these are gloss and idiom judgments.
+
+- `a2_ideas` — **`service`: I wrote *Služba je tady velmi dobrá*.** For restaurant/hotel service a Czech would far more likely say *Obsluha*. I kept *služba* because it is the item's gloss and the abstract sense is what the pack teaches. The one I would most like overruled if you disagree.
+- `a2_ideas` — **`variety`: *Ten obchod má velkou rozmanitost* is stiff**; natural Czech is *velký výběr*. Gloss is *rozmanitost*, so I kept it visible at the cost of idiom. Same trade as `weight` in run 33.
+- `a2_ideas` — `rate`: bare *Míra je velmi vysoká* is abstract without a following genitive (*míra nezaměstnanosti*). Defensible, slightly floating.
+- `a2_ideas` — `manner`: gloss is "způsob / chování" and I took *chování* (*Můj učitel má přátelské chování*), because *způsob* is already how `way` reads in `a2_misc`.
+- `a2_ideas` — `factor`: *Peníze jsou důležitý faktor* — plural subject with a singular predicate noun. I believe this is correct and normal Czech; flagging only because the number mismatch is visible.
+- `a2_misc` — **`middle`: *Prostředek pokoje je prázdný*.** Natural Czech is the adverbial *uprostřed pokoje*, but that hides the noun being taught, so I kept the noun visible and accepted the stiffness. Deliberate, same trade as above.
+- `a2_misc` — **`point`: *To je důležitý bod*.** English "a good point" is *dobrá poznámka / postřeh*; *bod* is a dot or a score. I used the neutral "important point" so *bod* is at least defensible, but the English and Czech senses are not a clean match here.
+- `a2_misc` — `any more`: *Už víc nechci* for "I do not want any more". First draft was *Už nic nechci*, which is "I don't want anything any more" — changed pre-commit. Flagging because the double negative concord makes this easy to get subtly wrong.
+- `a2_misc` — `dear`: *Milá Anno* — feminine, because the name fixes it. Fine, but note the item's gloss "drahý / milý" is the masculine form, so gloss and sentence disagree in gender by design.
+- `a2_misc` — `itself`: *Ten stroj funguje sám* — *sám* rather than a true reflexive, matching the pack's "sám / samo" gloss.
+- `a2_adverbs` — `finally`: the gloss is *nakonec*, not *konečně*, so I wrote *Vlak nakonec přijel*. For "The train finally arrived" a Czech would more likely say *konečně*. I followed the gloss; the sentence is the weaker for it.
+- `a2_adverbs` — `rather`: *Ten pokoj je spíš malý* takes the "somewhat" sense; the gloss also allows *raději*, which I avoided because *raději bych* needs a conditional participle and would leak the speaker's gender.
+
+### Smoke-check list
+
+- **`a2_adverbs` Use stage** — 55 sentences. The pairs to eyeball are the ones I deliberately left half-covered: confirm a student meeting *rozhodně* is not also shown a `certainly` prompt elsewhere in the ladder, and same for *zejména*, *nakonec*, *bohužel*.
+- **`a2_misc` Use stage** — 84 sentences. Check the container set (`cup`/`glass`/`plate`/`bowl`/`bottle`/`box`) reads as six distinct prompts, and that `himself`/`herself`/`itself`/`themselves` do not look like four ways of asking the same thing.
+- **`a2_ideas` Use stage** — 89 sentences. Check `reply` vs `response` and `success` vs `failure` read as distinct prompts.
+- **`a1_word_order`** — the one to actually click through. The `order_click` drill changed on 3 of 26 items; confirm the three adj+noun items still shuffle and auto-check correctly, and that the intro's Avoid/Say table now says *nice*.
+- Nothing shell-side changed this run, so the ladder should be identical everywhere else.
+
+---
+
 ## 2026-08-08 · cloud run 33 (RUE build, claude-opus-5)
 
 ### Headline: **the small A2 Use banks are finished** — `a2_home` (39) and `a2_health` (41), 80 sentences covering every item in both packs. A2 leaves go **15/22 → 17/22**, so the C1 gate stayed shut. The five remaining leaves are exactly the five giants run 28 flagged and runs 30-32 deferred, so **the fork below is now the only thing standing between the routine and the C1 frontier** — there is no smaller pack left to do instead. I then spent the rest of the run on the trunk-intro backlog: **three intros landed, two concrete and one glue** (A1 trunks 4/17 → 7/17).

@@ -151,6 +151,41 @@ All 72 live grammar units on path now produce a real ladder, gated by
   pták*, *V tomhle pokoji není teplo*). Rate over runs 29-33: 3 defects in
   ~385 prompts, all caught pre-commit.
 
+  **Progress · cloud run 34 (2026-08-08): applied to 3 new banks at authoring
+  time** (`a2_adverbs` 55, `a2_misc` 84, `a2_ideas` 89 — 228 new prompts).
+  **Two instances of the target defect caught pre-commit**, both in
+  `a2_ideas`, and both were 1sg *past* rather than 3sg dropped-subject:
+  *Udělal jsem chybu* and *Měli jsme dlouhou diskusi* leak the speaker's
+  gender through the participle. Both were recast to the present with a
+  non-speaker subject (*To je velká chyba*, *Diskuse byla velmi dlouhá*).
+  A third draft, *Jaký má tvar?*, was the classic 3sg dropped subject and
+  became *Jaký to má tvar?*. Rate over runs 29-34: 6 in ~613 prompts (~1 %).
+
+  **Two new traps this run, both worth naming:**
+
+  1. **`a2_adverbs` is the first pack where the rule barely bites but a
+     *different* grading defect does.** Czech adverbs do not inflect for
+     gender, so the whole gender family of traps is absent. What replaces it
+     is **Czech-gloss collision**: 5 of the 66 items share a gloss with
+     another item in the same pack (certainly/definitely = *rozhodně*,
+     especially/particularly = *zejmena*, finally/eventually = *nakonec*,
+     almost/nearly, unfortunately/sadly = *bohužel*). Covering both members
+     gives one Czech prompt two correct English answers, which grades a right
+     answer wrong — the same *class* of defect as the dropped subject, from a
+     different cause. Handled by covering one member per pair. `a2_ideas` had
+     3 such pairs and `a2_misc` had 1 near-miss (`page` could not use *na
+     straně*, because *strana* is the gloss of the pack's own `side`).
+     **Generalisation for the two remaining giants: check for within-pack
+     gloss collisions before authoring, not after.** `a2_describing` at 314
+     adjectives will have many.
+
+  2. **Reflexives leak gender the way past tense does.** `a2_misc` teaches
+     six reflexives; *himself/herself/itself/themselves* are all safe because
+     a 3rd-person subject fixes *sám/sama/samy*, but **`myself` and
+     `ourselves` cannot be written safely** — *Udělal jsem to sám* leaks
+     masculine exactly like a 1sg past. Those two are the only items left
+     uncovered in that pack for a gender reason.
+
   A note on trap three (1sg past tense) from `a2_health`: the past tense is
   hard to avoid entirely in a health pack, because accidents and injuries are
   past events. The escape used was to **put the past on an explicit
