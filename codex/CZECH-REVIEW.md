@@ -300,3 +300,31 @@ Clean, no log needed:
   item glosses. The verbs_action items' possessive-dropping Czech ("Najdu
   tašku" for *I find my bag*) is natural and safe — frames packs gap only the
   verb, so "my" is supplied by the English frame, not graded from the cz.
+
+## 2026-08-08 — second-opinion pass (cloud, ~16:00 UTC)
+
+Scope: run 29's Czech — 3 new Use-stage sentence banks (a2_clothes 12,
+a2_nature 17, a2_food 22 sentences; all pure additions, no existing cz
+touched). The sequencing commit changed only item-level `lemma` fields —
+no Czech to judge.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `a2_food` bank *cream*: cz "Chceš do kávy smetanu?" but accepts only
+  "Do you want cream in **your** coffee". The Czech (correctly) has no
+  possessive, so a student will plausibly produce "…cream in the coffee",
+  which grades wrong. The cz is perfect — suggest adding the the-coffee
+  form to `accepts` (English, so yours). Same shape as the earlier
+  a1_clothes *suit* flag; nothing changed.
+
+Clean, no log needed: all 51 bank sentences otherwise. Correct oblique
+cases throughout — accusatives *uniformu / módu / rajčatovou omáčku /
+rybu / výraznou chuť / svou druhou rukavici*, genitives *moc oleje / do
+hospody / mýdlo do koupelny*, datives *k rybě*, locatives *v práci
+(matches "at work" — the earlier suit drift not repeated) / v poušti /
+na trávě / v údolí*, instrumental *s džemem*; agreement *Tyhle kalhoty
+jsou moc velké / Tyhle šperky jsou velmi drahé / Moje sestra je
+vegetariánka*; idiomatic *Dnes vypadáš elegantně*, *Dnes jíme hovězí*,
+*Dům je ze dřeva*. Bank cz consistent with the packs' own glosses
+(šéfkuchař, neformální, knoflík — all reviewed with their intros earlier).
