@@ -6,6 +6,87 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-08 · cloud run 29 (RUE build, claude-opus-5)
+
+### Headline: **three A2 Use banks** — `a2_clothes`, `a2_nature`, `a2_food` — 51 sentences covering **every item in all three packs** (12/12, 18/18, 22/22), plus a sequencing repair that took the audit **129 → 127**. The C1 gate stayed shut: I counted the A2 backlog myself before step 5 and it is non-empty, so **no new unit was started**. All three gates green at start and end; smoke passed.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `bdc11c4` | **`a2_clothes`** `sentences[]` — 12 sentences, all 12 items |
+| 2 | `600efb9` | **`a2_nature`** `sentences[]` — 17 sentences, all 18 items |
+| 3 | `d90335b` | **`a2_food`** `sentences[]` — 22 sentences, all 22 items |
+| 4 | `2eb9e3a` | sequencing repair — 2 A1 trunk items, audit 129 → **127** |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 129 · 22 units · baseline 129 | **127 · 20 units · baseline tightened 129 → 127** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+My checkout started stale (it was sitting on `b6063a2`, the two-lane commit, with an `AGENTS.md` predating your vocab-intro, sentence-bank and explanation-scaling sections). I re-fetched to `ef94c86` and **re-read AGENTS.md, REPAIR-QUEUE.md and CZECH-REVIEW.md from the fresh tree** rather than working from the copies I had loaded. Flagging it because a run that had not noticed would have authored against a contract three sections out of date. Nothing landed on `build` while I worked, so no rebase was needed.
+
+### Step 5 stayed gated — the count, checked directly
+
+Run 28's digest said 19 A2 leaves were open. I did not take that number on faith: I walked `data/nodes-vocab.json`, opened every live pack, and tested `sentences[]` presence. **22 A2 leaves live, 3 with banks (`a2_family`, `a2_routine`, `a2_travel`) → 19 open at run start, 16 open now.** Backlog non-empty, so `c1_error_patterns` and everything else in step 5 was left untouched. Full picture for planning: A1 16/16 leaves done, A2 6/22, B1 0/6, and the 20 A1/A2 trunks + 3 A2 trunks have no banks at all.
+
+### The three banks
+
+| Pack | Items | Sentences | Coverage |
+|---|---|---|---|
+| `a2_clothes` | 12 | 12 | 12/12 |
+| `a2_nature` | 18 | 17 | 18/18 (one sentence carries storm + disaster) |
+| `a2_food` | 22 | 22 | 22/22 |
+
+**Method, because "pool-legal" is easy to assert and easy to get wrong.** I regenerated the pool per node with `--before` immediately before authoring, then checked every draft with a script that imports `codex/audit.py` and reuses **its own** `tokens_of` / `variants` / `GLUE` / `targets_of` — so the answer comes from the gate's logic, not from my reading of it. Two drafted sentences in `a2_food` used untaught words (`pan`, `salty`); both were **re-lexified onto taught vocabulary rather than dropped** — `oil` now rides on `sauce` (*This sauce has too much oil.*), `nut` on a frequency frame (*I eat nuts every day.*). For `a2_nature` I also probed the pool directly for the words most likely to be passing on a lucky stem (`protect`, `village`, `bright`, `favourite`, `wall`, `tonight`) and confirmed each is present as a real base form. Final state: **0 out-of-pool tokens across all 51 sentences**, audit unmoved by the banks.
+
+### Repair queue
+
+**No unticked one-time items** — every one-time entry is ticked; the two open entries are the standing rules, which is what I worked.
+
+- **Dropped-subject rule** — applied at authoring time to all 51 new prompts; progress logged in the queue file. Two traps worth passing on, both adjacent to the rule: Czech **`mít rád` inflects for the speaker's gender**, so every "I like X" prompt leaks *rád/ráda* — I routed all of them through an explicit gendered subject (*Můj syn nemá rád fazole*) or a person-fixing ending. And one genuine instance of the target defect was caught pre-commit: *Smaží vejce* (3sg, subject dropped, reads he **or** she) became *Můj otec smaží vejce*.
+- **Explanation-language scaling** — **no-op this run, and I want to be explicit rather than silently tick it.** Sentence banks contain no explanatory prose at all (`en`/`cz`/`lemmas`/`accepts` only), and the sequencing repair added no prose either. Nothing this run had scaffolding text to scale.
+
+### Sequencing repair — one judgment call, and it is the thing to read
+
+`a1_word_order` is the worst A1 unit in the report (new×3), and **I deliberately left it alone.** Run 2 logged `new` as a fork; I re-derived that call instead of inheriting it, and it holds: the pool before `a1_word_order` is **31 words from 3 units**, and the only legal adjective in it is `tired`, which cannot work attributively for an adj+noun drill. The violation is irreducible without moving the unit or teaching an adjective earlier. **Suggest marking it permanently accepted in the report**, so future runs stop re-picking it as "the worst A1 unit" and re-doing this analysis.
+
+That left three A1 units at one violation each. The shape of all three is the same, and it is an **audit blind spot, not a content defect**:
+
+> `targets_of()` credits a vocab item's `en` only when the item is **not** gapped. So for a gapped item, every word except the gap answer is invisible to the pool — even though the student meets it in that very item with a Czech gloss beside it.
+
+*Nice to meet you.* (gap on `meet`) therefore reads as never teaching `nice`; *I drink water.* (gap on `drink`) as never teaching `water`. Both words are taught in place. I declared them with the **existing item-level `lemma` field**, which `make_pool` and `audit` both read as taught, and for which there is precedent in three shipped grammar packs (`b1_reported_speech`, `b1_present_perfect_vs_past`, `b2_present_perfect_continuous`). Before using it I verified two things mechanically: **`js/` never reads item-level `lemma`** (zero hits — the ladder cannot change), and `verify_pack` does not validate it (its `lemma` logic is about `sentences[].lemmas`, a different field). Audit 129 → 127, no teaching point removed, no sentence rewritten.
+
+**Fork for James — this is the one I actually want a ruling on.** Is `lemma` an acceptable general tool for this class of violation? It is honest by my reading (the word *is* taught, the gate just cannot see it), and if you agree it clears several remaining single-word violations cheaply. If you read it as papering over a signal you want kept loud, **reverting is a two-line change** and I would want to know before applying it more widely.
+
+**One process note against myself.** I first fixed all three units (129 → 126) before rereading that step 4 caps me at **2 units per run**. I reverted `a1_articles` (`hour`, the silent-h example — same shape, same fix) to respect the cap, restored the baseline file the auto-tighten had already moved to 126, and regenerated it cleanly at 127. **`a1_articles` is the obvious first pick for next run's step 4** if you bless the mechanism above.
+
+### Czech I am flagging for the review routine
+
+None of these are errors I believe I have made — they are the places where a second opinion is worth most.
+
+- `a2_clothes` — *Tyhle šperky jsou velmi drahé.* glosses uncountable English `jewellery` with a Czech plural, the **same countability mismatch** run 28 flagged for `luggage`/*zavazadla*. Deliberate and I think right, but it is now a pattern rather than a one-off, so it may deserve a house rule.
+- `a2_clothes` — *Dnes vypadáš elegantně.* for *You look smart today.* The pack glosses `smart` as "elegantní / chytrý"; I took the clothing sense, which is the one the unit is about. Adverbial *elegantně* after *vypadat* is the correct construction, but the tile's double gloss means a student could reasonably read `smart` as *chytrý* here.
+- `a2_clothes` — *Tyhle kalhoty jsou moc velké.* The pack's own intro warns that BrE `pants` = underwear; my prompt uses the American sense the pack teaches, and `accepts` carries *These trousers are too big* so a BrE answer grades correct.
+- `a2_nature` — *Dům je ze dřeva.* The pack glosses `wood` as "les / dřevo"; the bank exercises **only the dřevo sense**. Chosen to disambiguate, but the *les* sense now gets no production practice.
+- `a2_nature` — *Měsíc je dnes v noci jasný.* is grammatical, but *Měsíc dnes v noci jasně svítí* may be the more natural Czech. Lowest-confidence sentence in the three banks.
+- `a2_food` — *Musíš vodu uvařit.* for *You must boil the water.* — perfective *uvařit* over imperfective *vařit*; I believe perfective is right for the one-off instruction, but it is a genuine aspect choice.
+- `a2_food` — *Jím chleba s džemem.* uses the colloquial accusative *chleba* rather than standard *chléb*. Natural in speech; a register choice, not an error.
+- `a2_food` — *Tahle polévka má výraznou chuť.* — *výrazná chuť* rather than a literal *silná chuť*, which would be calqued.
+- `a2_food` — *Moje sestra je vegetariánka.* takes the feminine form to agree with *sestra*, matching the no-speaker-gender rule by putting the gender on an explicit subject.
+
+### Smoke-check list
+
+- **`a2_food` Use stage** — the biggest of the three (22 sentences) and the first A2 bank to cover a pack's items exhaustively. Worth confirming the stage does not feel long next to a 12-sentence bank.
+- **`a2_clothes` Use stage** — check the *pants*/*trousers* accept actually passes, since it is the one place a BrE answer differs from the model.
+- **`trunk_social_a1` and `trunk_verbs_daily_a1`** — the two `lemma`-declared items. Nothing should have changed on screen; that is the claim to falsify.
+
+---
+
 ## 2026-08-08 · cloud run 28 (RUE build, claude-opus-5)
 
 ### Headline: **the C1 frontier moved** — `c1_reporting_complementation` built from thin shell to house size (48 items, 6 cards, path 14), the first two A2 sentence banks after `a2_routine` (`a2_family`, `a2_travel`), and **the first two trunk intros under your new rule**, one of each kind. Your `6250d7f` landed mid-run; I rebased onto it, re-read the changed contract, and re-ran everything under the new tokenizer. Audit **129, unchanged** — all six commits add zero violations.

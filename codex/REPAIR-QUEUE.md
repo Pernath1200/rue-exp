@@ -102,6 +102,17 @@ All 72 live grammar units on path now produce a real ladder, gated by
   so it still applies to every new bank** — the A1/A2 backlog is what is
   clear, not the rule.
 
+  **Progress · cloud run 29 (2026-08-08): applied to 3 new banks at authoring
+  time** (`a2_clothes` 12, `a2_nature` 17, `a2_food` 22 — 51 new prompts).
+  Every prompt fixes its person by an explicit subject, by verb morphology,
+  or is impersonal/existential. Two authoring traps worth naming for future
+  runs, both adjacent to this rule: (1) Czech `mít rád` inflects for the
+  **speaker's gender**, so any "I like X" prompt leaks *rád/ráda* — I routed
+  all of them through an explicit gendered subject (*Můj syn nemá rád
+  fazole*) or a person-fixing ending instead; (2) a 3rd-person prompt with a
+  dropped subject (*Smaží vejce*) is the exact defect this rule targets and
+  was caught pre-commit — it became *Můj otec smaží vejce*.
+
 - [ ] **Explanation-language scaling (James, 2026-08-08).** Explanatory prose
   — intro `body`/`note`/`title_cz` text, grammar `explanation`/
   `explanation_cz`, hints — must match the level it explains, not stay at A1
