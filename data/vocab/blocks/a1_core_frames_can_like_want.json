@@ -7,8 +7,21 @@
   "note": "Ability + preference + want/would like. Gap on content word (or modal where that is the point). Preferred model in en; accepts = contractions and close variants.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
-    "I", "you", "she", "can", "like", "want", "help", "coffee", "tea",
-    "football", "music", "English", "swim", "ticket", "water"
+    "I",
+    "you",
+    "she",
+    "can",
+    "like",
+    "want",
+    "help",
+    "coffee",
+    "tea",
+    "football",
+    "music",
+    "English",
+    "swim",
+    "ticket",
+    "water"
   ],
   "blocks": [
     {
@@ -20,35 +33,50 @@
           "cz": "Umím plavat. / Dokážu plavat.",
           "gap": "I can ____.",
           "gap_answer": "swim",
-          "accepts": ["I can swim"]
+          "accepts": [
+            "I can swim"
+          ]
         },
         {
           "en": "I can speak English.",
           "cz": "Umím anglicky. / Mluvím anglicky.",
           "gap": "I can speak ____.",
           "gap_answer": "English",
-          "accepts": ["I can speak English", "I speak English."]
+          "accepts": [
+            "I can speak English",
+            "I speak English."
+          ]
         },
         {
           "en": "Can you help me?",
           "cz": "Můžeš mi pomoct?",
           "gap": "Can you ____ me?",
           "gap_answer": "help",
-          "accepts": ["Can you help me", "Could you help me?"]
+          "accepts": [
+            "Can you help me",
+            "Could you help me?"
+          ]
         },
         {
           "en": "I like coffee.",
           "cz": "Mám rád kávu. / Mám ráda kávu.",
           "gap": "I like ____.",
           "gap_answer": "coffee",
-          "accepts": ["I like coffee", "I love coffee."]
+          "accepts": [
+            "I like coffee",
+            "I love coffee."
+          ]
         },
         {
           "en": "I like football.",
           "cz": "Mám rád fotbal. / Mám ráda fotbal.",
           "gap": "I like ____.",
           "gap_answer": "football",
-          "accepts": ["I like football", "I like soccer.", "I love football."]
+          "accepts": [
+            "I like football",
+            "I like soccer.",
+            "I love football."
+          ]
         },
         {
           "en": "I don't like winter.",
@@ -66,21 +94,30 @@
           "cz": "Máš rád čaj? / Máš ráda čaj?",
           "gap": "Do you like ____?",
           "gap_answer": "tea",
-          "accepts": ["Do you like tea"]
+          "accepts": [
+            "Do you like tea"
+          ]
         },
         {
           "en": "He likes music.",
           "cz": "Má rád hudbu.",
           "gap": "He likes ____.",
           "gap_answer": "music",
-          "accepts": ["He likes music", "He loves music."]
+          "accepts": [
+            "He likes music",
+            "He loves music."
+          ]
         },
         {
           "en": "I want a ticket.",
           "cz": "Chci lístek. / Chci jízdenku.",
           "gap": "I want a ____.",
           "gap_answer": "ticket",
-          "accepts": ["I want a ticket", "I'd like a ticket.", "I would like a ticket."]
+          "accepts": [
+            "I want a ticket",
+            "I'd like a ticket.",
+            "I would like a ticket."
+          ]
         },
         {
           "en": "I want water.",
@@ -107,7 +144,7 @@
         },
         {
           "en": "Would you like a coffee?",
-          "cz": "Dáš si kávu? / Chtěl bys kávu?",
+          "cz": "Dáš si kávu? / Chtěl/a bys kávu?",
           "gap": "Would you like a ____?",
           "gap_answer": "coffee",
           "accepts": [

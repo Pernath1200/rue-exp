@@ -346,6 +346,19 @@ function isFrameItem(item) {
 }
 
 /**
+ * Normalised Czech gloss, for detecting items that share a prompt.
+ * Two items with the same Czech support (bohatý = rich AND wealthy) are both
+ * correct answers to that prompt — Quiz must not offer one as a distractor
+ * against the other, and Match must not show the same tile twice.
+ */
+function glossKey(s) {
+  return String(s == null ? "" : s)
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
  * @param {HTMLElement} root
  * @param {{ id?: string, title: string, items: object[], practice?: string }} block
  * @param {{ onExit: () => void, practice?: string, packId?: string, packTitle?: string }} opts
@@ -712,7 +725,18 @@ export function startPractice(root, block, opts) {
 
   function newMatch() {
     const order = rotatedOrder("match", block.items, null);
-    const pool = order.map((i) => block.items[i]);
+    // Drop items whose Czech prompt duplicates one already on the board —
+    // two identical tiles are unpairable by sight, and pairing is graded by
+    // item id, so the visually-correct pairing is wrong half the time.
+    const seenGloss = new Set();
+    const pool = [];
+    for (const i of order) {
+      const item = block.items[i];
+      const k = glossKey(supportOf(item));
+      if (k && seenGloss.has(k)) continue;
+      seenGloss.add(k);
+      pool.push(item);
+    }
     const left = pool.map((it, i) => ({ t: supportOf(it), id: i }));
     const right = shuffle(
       pool.map((it, i) => ({ t: targetOf(it), id: i })),
@@ -915,8 +939,15 @@ export function startPractice(root, block, opts) {
     const it = list[itemIndex];
     flagItem(it, itemIndex, "quiz");
     const correct = targetOf(it);
+    // A sibling sharing this item's Czech prompt is an EQUALLY CORRECT answer,
+    // not a distractor (bohatý = rich AND wealthy). Grading is a string match
+    // against `correct`, so offering the twin marks a right answer wrong.
+    const supportKey = glossKey(supportOf(it));
     const others = shuffle(
-      list.filter((x) => targetOf(x) !== correct),
+      list.filter(
+        (x) =>
+          targetOf(x) !== correct && glossKey(supportOf(x)) !== supportKey,
+      ),
     )
       .slice(0, 3)
       .map((x) => targetOf(x));

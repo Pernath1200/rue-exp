@@ -7,8 +7,21 @@
   "note": "Existence (there is/are) + a few clock/routine time frames. Days/months lexis live on Time leaf. Gap on the content word or time phrase head.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
-    "there", "is", "are", "table", "café", "chairs", "people", "bank", "shops",
-    "Monday", "o'clock", "six", "seven", "dinner", "get up"
+    "there",
+    "is",
+    "are",
+    "table",
+    "café",
+    "chairs",
+    "people",
+    "bank",
+    "shops",
+    "Monday",
+    "o'clock",
+    "six",
+    "seven",
+    "dinner",
+    "get up"
   ],
   "blocks": [
     {
@@ -17,7 +30,7 @@
       "items": [
         {
           "en": "There is a table.",
-          "cz": "Je tu stůl. / Tam je stůl.",
+          "cz": "Je tu stůl. / Je tam stůl.",
           "gap": "There is a ____.",
           "gap_answer": "table",
           "accepts": [
@@ -31,10 +44,12 @@
         },
         {
           "en": "There is a café.",
-          "cz": "Je tu kavárna. / Tam je kavárna.",
+          "cz": "Je tu kavárna. / Je tam kavárna.",
           "gap": "There is a ____.",
           "gap_answer": "café",
-          "gap_accepts": ["cafe"],
+          "gap_accepts": [
+            "cafe"
+          ],
           "accepts": [
             "There's a café.",
             "There is a cafe.",
@@ -50,42 +65,60 @@
           "cz": "Jsou tu dvě židle.",
           "gap": "There are two ____.",
           "gap_answer": "chairs",
-          "accepts": ["There are two chairs", "There're two chairs."]
+          "accepts": [
+            "There are two chairs",
+            "There're two chairs."
+          ]
         },
         {
           "en": "There are many people.",
           "cz": "Je tam spousta lidí. / Je tam hodně lidí.",
           "gap": "There are many ____.",
           "gap_answer": "people",
-          "accepts": ["There are many people", "There are a lot of people."]
+          "accepts": [
+            "There are many people",
+            "There are a lot of people."
+          ]
         },
         {
           "en": "Is there a bank?",
           "cz": "Je tu banka?",
           "gap": "Is there a ____?",
           "gap_answer": "bank",
-          "accepts": ["Is there a bank"]
+          "accepts": [
+            "Is there a bank"
+          ]
         },
         {
           "en": "Are there any shops?",
           "cz": "Jsou tu nějaké obchody?",
           "gap": "Are there any ____?",
           "gap_answer": "shops",
-          "accepts": ["Are there any shops", "Are there shops?"]
+          "accepts": [
+            "Are there any shops",
+            "Are there shops?"
+          ]
         },
         {
           "en": "It's Monday.",
           "cz": "Je pondělí.",
           "gap": "It's ____.",
           "gap_answer": "Monday",
-          "accepts": ["It is Monday.", "It's Monday", "Today is Monday."]
+          "accepts": [
+            "It is Monday.",
+            "It's Monday",
+            "Today is Monday."
+          ]
         },
         {
           "en": "It's three o'clock.",
           "cz": "Jsou tři hodiny. / Je třetí hodina.",
           "gap": "It's three ____.",
           "gap_answer": "o'clock",
-          "gap_accepts": ["oclock", "o clock"],
+          "gap_accepts": [
+            "oclock",
+            "o clock"
+          ],
           "accepts": [
             "It is three o'clock.",
             "It's 3 o'clock.",
@@ -120,7 +153,10 @@
           "cz": "Uvidíme se zítra.",
           "gap": "See you ____.",
           "gap_answer": "tomorrow",
-          "accepts": ["See you tomorrow", "See you tomorrow!"]
+          "accepts": [
+            "See you tomorrow",
+            "See you tomorrow!"
+          ]
         },
         {
           "en": "The shop opens at nine.",

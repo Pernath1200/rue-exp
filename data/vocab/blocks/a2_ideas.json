@@ -725,7 +725,7 @@
         "result"
       ],
       "body": "92 abstract words — you cannot photograph any of them, so there is no picture, only the shape they make.\nMost of them hang on one chain: a problem has a cause and a reason, you look for a solution, and it has a result. The rest are the words you need to talk about how something works: method, process, system, evidence, example, advice, opinion.",
-      "body_cz": "Abstraktní slova — nejde je nakreslit. Většina z nich drží na jednom řetězci: problém → příčina → důvod → řešení → výsledek."
+      "body_cz": "Abstraktní slova — nejde je nakreslit. Většina z nich tvoří jeden řetězec: problém → příčina → důvod → řešení → výsledek."
     },
     {
       "title": "You will use these words in",
@@ -742,94 +742,913 @@
     }
   ],
   "sentences": [
-    {"en": "My daughter has the ability to learn quickly.", "cz": "Moje dcera má schopnost se rychle učit.", "lemmas": ["ability"], "accepts": ["My daughter has the ability to learn quickly"]},
-    {"en": "This is a big advantage.", "cz": "To je velká výhoda.", "lemmas": ["advantage"], "accepts": ["This is a big advantage"]},
-    {"en": "The price is a disadvantage.", "cz": "Cena je nevýhoda.", "lemmas": ["disadvantage"], "accepts": ["The price is a disadvantage"]},
-    {"en": "My parents had an argument.", "cz": "Moji rodiče měli hádku.", "lemmas": ["argument"], "accepts": ["My parents had an argument"]},
-    {"en": "This is an important decision.", "cz": "To je důležité rozhodnutí.", "lemmas": ["decision"], "accepts": ["This is an important decision"]},
-    {"en": "This is a good opportunity.", "cz": "To je dobrá příležitost.", "lemmas": ["opportunity"], "accepts": ["This is a good opportunity"]},
-    {"en": "We need a solution.", "cz": "Potřebujeme řešení.", "lemmas": ["solution"], "accepts": ["We need a solution"]},
-    {"en": "We have a problem.", "cz": "Máme problém.", "lemmas": ["problem"], "accepts": ["We have a problem"]},
-    {"en": "What is the reason?", "cz": "Jaký je důvod?", "lemmas": ["reason"], "accepts": ["What is the reason?", "What's the reason?"]},
-    {"en": "The result was good.", "cz": "Výsledek byl dobrý.", "lemmas": ["result"], "accepts": ["The result was good"]},
-    {"en": "The medicine has a strong effect.", "cz": "Ten lék má silný účinek.", "lemmas": ["effect"], "accepts": ["The medicine has a strong effect"]},
-    {"en": "We do not know the cause.", "cz": "Neznáme příčinu.", "lemmas": ["cause"], "accepts": ["We do not know the cause", "We don't know the cause"]},
-    {"en": "There is a possibility.", "cz": "Je tu možnost.", "lemmas": ["possibility"], "accepts": ["There is a possibility", "There's a possibility"]},
-    {"en": "This is a big mistake.", "cz": "To je velká chyba.", "lemmas": ["mistake"], "accepts": ["This is a big mistake"]},
-    {"en": "It is your choice.", "cz": "Je to tvoje volba.", "lemmas": ["choice"], "accepts": ["It is your choice", "It's your choice"]},
-    {"en": "We have a chance.", "cz": "Máme šanci.", "lemmas": ["chance"], "accepts": ["We have a chance"]},
-    {"en": "What is the purpose?", "cz": "Jaký je účel?", "lemmas": ["purpose"], "accepts": ["What is the purpose?", "What's the purpose?"]},
-    {"en": "This method is very good.", "cz": "Tahle metoda je velmi dobrá.", "lemmas": ["method"], "accepts": ["This method is very good"]},
-    {"en": "The process is slow.", "cz": "Proces je pomalý.", "lemmas": ["process"], "accepts": ["The process is slow"]},
-    {"en": "The system does not work.", "cz": "Systém nefunguje.", "lemmas": ["system"], "accepts": ["The system does not work", "The system doesn't work"]},
-    {"en": "We need a new strategy.", "cz": "Potřebujeme novou strategii.", "lemmas": ["strategy"], "accepts": ["We need a new strategy"]},
-    {"en": "The structure of the house is strong.", "cz": "Struktura domu je silná.", "lemmas": ["structure"], "accepts": ["The structure of the house is strong"]},
-    {"en": "This phone has a new feature.", "cz": "Tenhle telefon má novou funkci.", "lemmas": ["feature"], "accepts": ["This phone has a new feature"]},
-    {"en": "Money is an important factor.", "cz": "Peníze jsou důležitý faktor.", "lemmas": ["factor"], "accepts": ["Money is an important factor"]},
-    {"en": "The car is in good condition.", "cz": "Auto je v dobrém stavu.", "lemmas": ["condition"], "accepts": ["The car is in good condition"]},
-    {"en": "The situation is difficult.", "cz": "Situace je složitá.", "lemmas": ["situation"], "accepts": ["The situation is difficult"]},
-    {"en": "The context is important.", "cz": "Kontext je důležitý.", "lemmas": ["context"], "accepts": ["The context is important"]},
-    {"en": "We have no evidence.", "cz": "Nemáme žádný důkaz.", "lemmas": ["evidence"], "accepts": ["We have no evidence"]},
-    {"en": "That is a fact.", "cz": "To je fakt.", "lemmas": ["fact"], "accepts": ["That is a fact", "That's a fact"]},
-    {"en": "This detail is important.", "cz": "Tenhle detail je důležitý.", "lemmas": ["detail"], "accepts": ["This detail is important"]},
-    {"en": "Give me an example.", "cz": "Dej mi příklad.", "lemmas": ["example"], "accepts": ["Give me an example"]},
-    {"en": "What is the difference?", "cz": "Jaký je rozdíl?", "lemmas": ["difference"], "accepts": ["What is the difference?", "What's the difference?"]},
-    {"en": "There is a similarity.", "cz": "Je tu podobnost.", "lemmas": ["similarity"], "accepts": ["There is a similarity", "There's a similarity"]},
-    {"en": "Sport has many benefits.", "cz": "Sport má mnoho přínosů.", "lemmas": ["benefit"], "accepts": ["Sport has many benefits"]},
-    {"en": "My son is making progress.", "cz": "Můj syn dělá pokroky.", "lemmas": ["progress"], "accepts": ["My son is making progress"]},
-    {"en": "His book was a big success.", "cz": "Jeho kniha byla velký úspěch.", "lemmas": ["success"], "accepts": ["His book was a big success"]},
-    {"en": "The test was a failure.", "cz": "Test byl neúspěch.", "lemmas": ["failure"], "accepts": ["The test was a failure"]},
-    {"en": "I have a suggestion.", "cz": "Mám návrh.", "lemmas": ["suggestion"], "accepts": ["I have a suggestion"]},
-    {"en": "I need advice.", "cz": "Potřebuji radu.", "lemmas": ["advice"], "accepts": ["I need advice"]},
-    {"en": "What is your opinion?", "cz": "Jaký je tvůj názor?", "lemmas": ["opinion"], "accepts": ["What is your opinion?", "What's your opinion?"]},
-    {"en": "Thank you for your attention.", "cz": "Děkuji za vaši pozornost.", "lemmas": ["attention"], "accepts": ["Thank you for your attention"]},
-    {"en": "I have no interest in sport.", "cz": "Nemám zájem o sport.", "lemmas": ["interest"], "accepts": ["I have no interest in sport"]},
-    {"en": "You must focus.", "cz": "Musíte se soustředit.", "lemmas": ["focus"], "accepts": ["You must focus"]},
-    {"en": "This does not make sense.", "cz": "To nemá smysl.", "lemmas": ["sense"], "accepts": ["This does not make sense", "This doesn't make sense"]},
-    {"en": "My teacher has a friendly manner.", "cz": "Můj učitel má přátelské chování.", "lemmas": ["manner"], "accepts": ["My teacher has a friendly manner"]},
-    {"en": "I need permission.", "cz": "Potřebuji povolení.", "lemmas": ["permission"], "accepts": ["I need permission"]},
-    {"en": "That is a promise.", "cz": "To je slib.", "lemmas": ["promise"], "accepts": ["That is a promise", "That's a promise"]},
-    {"en": "I have a request.", "cz": "Mám žádost.", "lemmas": ["request"], "accepts": ["I have a request"]},
-    {"en": "I am waiting for a reply.", "cz": "Čekám na odpověď.", "lemmas": ["reply"], "accepts": ["I am waiting for a reply", "I'm waiting for a reply"]},
-    {"en": "The response was quick.", "cz": "Reakce byla rychlá.", "lemmas": ["response"], "accepts": ["The response was quick"]},
-    {"en": "Do you have a comment?", "cz": "Máte komentář?", "lemmas": ["comment"], "accepts": ["Do you have a comment?"]},
-    {"en": "The discussion was very long.", "cz": "Diskuse byla velmi dlouhá.", "lemmas": ["discussion"], "accepts": ["The discussion was very long"]},
-    {"en": "His speech was very good.", "cz": "Jeho projev byl velmi dobrý.", "lemmas": ["speech"], "accepts": ["His speech was very good"]},
-    {"en": "That is a strange expression.", "cz": "To je zvláštní výraz.", "lemmas": ["expression"], "accepts": ["That is a strange expression", "That's a strange expression"]},
-    {"en": "I have a message for you.", "cz": "Mám pro tebe zprávu.", "lemmas": ["message"], "accepts": ["I have a message for you"]},
-    {"en": "There is a notice on the door.", "cz": "Na dveřích je oznámení.", "lemmas": ["notice"], "accepts": ["There is a notice on the door", "There's a notice on the door"]},
-    {"en": "There is a sign on the road.", "cz": "Na cestě je značka.", "lemmas": ["sign"], "accepts": ["There is a sign on the road", "There's a sign on the road"]},
-    {"en": "This is an old symbol.", "cz": "To je starý symbol.", "lemmas": ["symbol"], "accepts": ["This is an old symbol"]},
-    {"en": "This is a beautiful pattern.", "cz": "To je krásný vzor.", "lemmas": ["pattern"], "accepts": ["This is a beautiful pattern"]},
-    {"en": "What shape is it?", "cz": "Jaký to má tvar?", "lemmas": ["shape"], "accepts": ["What shape is it?"]},
-    {"en": "My level of English is good.", "cz": "Moje úroveň angličtiny je dobrá.", "lemmas": ["level"], "accepts": ["My level of English is good"]},
-    {"en": "The rate is very high.", "cz": "Míra je velmi vysoká.", "lemmas": ["rate"], "accepts": ["The rate is very high"]},
-    {"en": "This is a large amount.", "cz": "To je velké množství.", "lemmas": ["amount"], "accepts": ["This is a large amount"]},
-    {"en": "What is your phone number?", "cz": "Jaké je tvoje telefonní číslo?", "lemmas": ["number"], "accepts": ["What is your phone number?", "What's your phone number?"]},
-    {"en": "The value of the house is high.", "cz": "Hodnota domu je vysoká.", "lemmas": ["value"], "accepts": ["The value of the house is high"]},
-    {"en": "The machine has a lot of power.", "cz": "Ten stroj má hodně síly.", "lemmas": ["power"], "accepts": ["The machine has a lot of power"]},
-    {"en": "The driver has control of the car.", "cz": "Řidič má kontrolu nad autem.", "lemmas": ["control"], "accepts": ["The driver has control of the car"]},
-    {"en": "Thank you for your support.", "cz": "Děkuji za vaši podporu.", "lemmas": ["support"], "accepts": ["Thank you for your support"]},
-    {"en": "The service here is very good.", "cz": "Služba je tady velmi dobrá.", "lemmas": ["service"], "accepts": ["The service here is very good"]},
-    {"en": "My sister has an important role.", "cz": "Moje sestra má důležitou roli.", "lemmas": ["role"], "accepts": ["My sister has an important role"]},
-    {"en": "This is a good position.", "cz": "To je dobrá pozice.", "lemmas": ["position"], "accepts": ["This is a good position"]},
-    {"en": "The house is his possession.", "cz": "Ten dům je jeho majetek.", "lemmas": ["possession"], "accepts": ["The house is his possession"]},
-    {"en": "We have an arrangement.", "cz": "Máme domluvu.", "lemmas": ["arrangement"], "accepts": ["We have an arrangement"]},
-    {"en": "There is another alternative.", "cz": "Je tu jiná alternativa.", "lemmas": ["alternative"], "accepts": ["There is another alternative", "There's another alternative"]},
-    {"en": "The shop has a large variety.", "cz": "Ten obchod má velkou rozmanitost.", "lemmas": ["variety"], "accepts": ["The shop has a large variety"]},
-    {"en": "Water is a source of life.", "cz": "Voda je zdroj života.", "lemmas": ["source"], "accepts": ["Water is a source of life"]},
-    {"en": "We have a clear target.", "cz": "Máme jasný cíl.", "lemmas": ["target"], "accepts": ["We have a clear target"]},
-    {"en": "I have a tip for you.", "cz": "Mám pro tebe tip.", "lemmas": ["tip"], "accepts": ["I have a tip for you"]},
-    {"en": "This is a useful tool.", "cz": "To je užitečný nástroj.", "lemmas": ["tool"], "accepts": ["This is a useful tool"]},
-    {"en": "The equipment is very expensive.", "cz": "Vybavení je velmi drahé.", "lemmas": ["equipment"], "accepts": ["The equipment is very expensive"]},
-    {"en": "This machine is very old.", "cz": "Tenhle stroj je velmi starý.", "lemmas": ["machine"], "accepts": ["This machine is very old"]},
-    {"en": "The engine is broken.", "cz": "Motor je rozbitý.", "lemmas": ["engine"], "accepts": ["The engine is broken"]},
-    {"en": "Electricity is expensive.", "cz": "Elektřina je drahá.", "lemmas": ["electricity"], "accepts": ["Electricity is expensive"]},
-    {"en": "The gas is very cheap.", "cz": "Plyn je velmi levný.", "lemmas": ["gas"], "accepts": ["The gas is very cheap"]},
-    {"en": "The door is made of metal.", "cz": "Dveře jsou z kovu.", "lemmas": ["metal"], "accepts": ["The door is made of metal"]},
-    {"en": "The bottle is made of plastic.", "cz": "Láhev je z plastu.", "lemmas": ["plastic"], "accepts": ["The bottle is made of plastic"]},
-    {"en": "This is an important invention.", "cz": "To je důležitý vynález.", "lemmas": ["invention"], "accepts": ["This is an important invention"]},
-    {"en": "That was a great discovery.", "cz": "To byl velký objev.", "lemmas": ["discovery"], "accepts": ["That was a great discovery"]},
-    {"en": "We are doing an experiment.", "cz": "Děláme experiment.", "lemmas": ["experiment"], "accepts": ["We are doing an experiment"]}
+    {
+      "en": "My daughter has the ability to learn quickly.",
+      "cz": "Moje dcera má schopnost se rychle učit.",
+      "lemmas": [
+        "ability"
+      ],
+      "accepts": [
+        "My daughter has the ability to learn quickly"
+      ]
+    },
+    {
+      "en": "This is a big advantage.",
+      "cz": "To je velká výhoda.",
+      "lemmas": [
+        "advantage"
+      ],
+      "accepts": [
+        "This is a big advantage"
+      ]
+    },
+    {
+      "en": "The price is a disadvantage.",
+      "cz": "Cena je nevýhoda.",
+      "lemmas": [
+        "disadvantage"
+      ],
+      "accepts": [
+        "The price is a disadvantage"
+      ]
+    },
+    {
+      "en": "My parents had an argument.",
+      "cz": "Moji rodiče měli hádku.",
+      "lemmas": [
+        "argument"
+      ],
+      "accepts": [
+        "My parents had an argument"
+      ]
+    },
+    {
+      "en": "This is an important decision.",
+      "cz": "To je důležité rozhodnutí.",
+      "lemmas": [
+        "decision"
+      ],
+      "accepts": [
+        "This is an important decision"
+      ]
+    },
+    {
+      "en": "This is a good opportunity.",
+      "cz": "To je dobrá příležitost.",
+      "lemmas": [
+        "opportunity"
+      ],
+      "accepts": [
+        "This is a good opportunity"
+      ]
+    },
+    {
+      "en": "We need a solution.",
+      "cz": "Potřebujeme řešení.",
+      "lemmas": [
+        "solution"
+      ],
+      "accepts": [
+        "We need a solution"
+      ]
+    },
+    {
+      "en": "We have a problem.",
+      "cz": "Máme problém.",
+      "lemmas": [
+        "problem"
+      ],
+      "accepts": [
+        "We have a problem"
+      ]
+    },
+    {
+      "en": "What is the reason?",
+      "cz": "Jaký je důvod?",
+      "lemmas": [
+        "reason"
+      ],
+      "accepts": [
+        "What is the reason?",
+        "What's the reason?"
+      ]
+    },
+    {
+      "en": "The result was good.",
+      "cz": "Výsledek byl dobrý.",
+      "lemmas": [
+        "result"
+      ],
+      "accepts": [
+        "The result was good"
+      ]
+    },
+    {
+      "en": "The medicine has a strong effect.",
+      "cz": "Ten lék má silný účinek.",
+      "lemmas": [
+        "effect"
+      ],
+      "accepts": [
+        "The medicine has a strong effect"
+      ]
+    },
+    {
+      "en": "We do not know the cause.",
+      "cz": "Neznáme příčinu.",
+      "lemmas": [
+        "cause"
+      ],
+      "accepts": [
+        "We do not know the cause",
+        "We don't know the cause"
+      ]
+    },
+    {
+      "en": "There is a possibility.",
+      "cz": "Je tu možnost.",
+      "lemmas": [
+        "possibility"
+      ],
+      "accepts": [
+        "There is a possibility",
+        "There's a possibility"
+      ]
+    },
+    {
+      "en": "This is a big mistake.",
+      "cz": "To je velká chyba.",
+      "lemmas": [
+        "mistake"
+      ],
+      "accepts": [
+        "This is a big mistake"
+      ]
+    },
+    {
+      "en": "It is your choice.",
+      "cz": "Je to tvoje volba.",
+      "lemmas": [
+        "choice"
+      ],
+      "accepts": [
+        "It is your choice",
+        "It's your choice"
+      ]
+    },
+    {
+      "en": "We have a chance.",
+      "cz": "Máme šanci.",
+      "lemmas": [
+        "chance"
+      ],
+      "accepts": [
+        "We have a chance"
+      ]
+    },
+    {
+      "en": "What is the purpose?",
+      "cz": "Jaký je účel?",
+      "lemmas": [
+        "purpose"
+      ],
+      "accepts": [
+        "What is the purpose?",
+        "What's the purpose?"
+      ]
+    },
+    {
+      "en": "This method is very good.",
+      "cz": "Tahle metoda je velmi dobrá.",
+      "lemmas": [
+        "method"
+      ],
+      "accepts": [
+        "This method is very good"
+      ]
+    },
+    {
+      "en": "The process is slow.",
+      "cz": "Proces je pomalý.",
+      "lemmas": [
+        "process"
+      ],
+      "accepts": [
+        "The process is slow"
+      ]
+    },
+    {
+      "en": "The system does not work.",
+      "cz": "Systém nefunguje.",
+      "lemmas": [
+        "system"
+      ],
+      "accepts": [
+        "The system does not work",
+        "The system doesn't work"
+      ]
+    },
+    {
+      "en": "We need a new strategy.",
+      "cz": "Potřebujeme novou strategii.",
+      "lemmas": [
+        "strategy"
+      ],
+      "accepts": [
+        "We need a new strategy"
+      ]
+    },
+    {
+      "en": "The structure of the house is strong.",
+      "cz": "Konstrukce domu je pevná.",
+      "lemmas": [
+        "structure"
+      ],
+      "accepts": [
+        "The structure of the house is strong"
+      ]
+    },
+    {
+      "en": "This phone has a new feature.",
+      "cz": "Tenhle telefon má novou funkci.",
+      "lemmas": [
+        "feature"
+      ],
+      "accepts": [
+        "This phone has a new feature"
+      ]
+    },
+    {
+      "en": "Money is an important factor.",
+      "cz": "Peníze jsou důležitý faktor.",
+      "lemmas": [
+        "factor"
+      ],
+      "accepts": [
+        "Money is an important factor"
+      ]
+    },
+    {
+      "en": "The car is in good condition.",
+      "cz": "Auto je v dobrém stavu.",
+      "lemmas": [
+        "condition"
+      ],
+      "accepts": [
+        "The car is in good condition"
+      ]
+    },
+    {
+      "en": "The situation is difficult.",
+      "cz": "Situace je složitá.",
+      "lemmas": [
+        "situation"
+      ],
+      "accepts": [
+        "The situation is difficult"
+      ]
+    },
+    {
+      "en": "The context is important.",
+      "cz": "Kontext je důležitý.",
+      "lemmas": [
+        "context"
+      ],
+      "accepts": [
+        "The context is important"
+      ]
+    },
+    {
+      "en": "We have no evidence.",
+      "cz": "Nemáme žádný důkaz.",
+      "lemmas": [
+        "evidence"
+      ],
+      "accepts": [
+        "We have no evidence"
+      ]
+    },
+    {
+      "en": "That is a fact.",
+      "cz": "To je fakt.",
+      "lemmas": [
+        "fact"
+      ],
+      "accepts": [
+        "That is a fact",
+        "That's a fact"
+      ]
+    },
+    {
+      "en": "This detail is important.",
+      "cz": "Tenhle detail je důležitý.",
+      "lemmas": [
+        "detail"
+      ],
+      "accepts": [
+        "This detail is important"
+      ]
+    },
+    {
+      "en": "Give me an example.",
+      "cz": "Dej mi příklad.",
+      "lemmas": [
+        "example"
+      ],
+      "accepts": [
+        "Give me an example"
+      ]
+    },
+    {
+      "en": "What is the difference?",
+      "cz": "Jaký je rozdíl?",
+      "lemmas": [
+        "difference"
+      ],
+      "accepts": [
+        "What is the difference?",
+        "What's the difference?"
+      ]
+    },
+    {
+      "en": "There is a similarity.",
+      "cz": "Je tu podobnost.",
+      "lemmas": [
+        "similarity"
+      ],
+      "accepts": [
+        "There is a similarity",
+        "There's a similarity"
+      ]
+    },
+    {
+      "en": "Sport has many benefits.",
+      "cz": "Sport má mnoho přínosů.",
+      "lemmas": [
+        "benefit"
+      ],
+      "accepts": [
+        "Sport has many benefits"
+      ]
+    },
+    {
+      "en": "My son is making progress.",
+      "cz": "Můj syn dělá pokroky.",
+      "lemmas": [
+        "progress"
+      ],
+      "accepts": [
+        "My son is making progress"
+      ]
+    },
+    {
+      "en": "His book was a big success.",
+      "cz": "Jeho kniha byla velký úspěch.",
+      "lemmas": [
+        "success"
+      ],
+      "accepts": [
+        "His book was a big success"
+      ]
+    },
+    {
+      "en": "The test was a failure.",
+      "cz": "Test byl neúspěch.",
+      "lemmas": [
+        "failure"
+      ],
+      "accepts": [
+        "The test was a failure"
+      ]
+    },
+    {
+      "en": "I have a suggestion.",
+      "cz": "Mám návrh.",
+      "lemmas": [
+        "suggestion"
+      ],
+      "accepts": [
+        "I have a suggestion"
+      ]
+    },
+    {
+      "en": "I need advice.",
+      "cz": "Potřebuji radu.",
+      "lemmas": [
+        "advice"
+      ],
+      "accepts": [
+        "I need advice"
+      ]
+    },
+    {
+      "en": "What is your opinion?",
+      "cz": "Jaký je tvůj názor?",
+      "lemmas": [
+        "opinion"
+      ],
+      "accepts": [
+        "What is your opinion?",
+        "What's your opinion?"
+      ]
+    },
+    {
+      "en": "Thank you for your attention.",
+      "cz": "Děkuji za vaši pozornost.",
+      "lemmas": [
+        "attention"
+      ],
+      "accepts": [
+        "Thank you for your attention"
+      ]
+    },
+    {
+      "en": "I have no interest in sport.",
+      "cz": "Nemám zájem o sport.",
+      "lemmas": [
+        "interest"
+      ],
+      "accepts": [
+        "I have no interest in sport"
+      ]
+    },
+    {
+      "en": "You must focus.",
+      "cz": "Musíte se soustředit.",
+      "lemmas": [
+        "focus"
+      ],
+      "accepts": [
+        "You must focus"
+      ]
+    },
+    {
+      "en": "This does not make sense.",
+      "cz": "To nemá smysl.",
+      "lemmas": [
+        "sense"
+      ],
+      "accepts": [
+        "This does not make sense",
+        "This doesn't make sense"
+      ]
+    },
+    {
+      "en": "My teacher has a friendly manner.",
+      "cz": "Můj učitel má přátelské chování.",
+      "lemmas": [
+        "manner"
+      ],
+      "accepts": [
+        "My teacher has a friendly manner"
+      ]
+    },
+    {
+      "en": "I need permission.",
+      "cz": "Potřebuji povolení.",
+      "lemmas": [
+        "permission"
+      ],
+      "accepts": [
+        "I need permission"
+      ]
+    },
+    {
+      "en": "That is a promise.",
+      "cz": "To je slib.",
+      "lemmas": [
+        "promise"
+      ],
+      "accepts": [
+        "That is a promise",
+        "That's a promise"
+      ]
+    },
+    {
+      "en": "I have a request.",
+      "cz": "Mám žádost.",
+      "lemmas": [
+        "request"
+      ],
+      "accepts": [
+        "I have a request"
+      ]
+    },
+    {
+      "en": "I am waiting for a reply.",
+      "cz": "Čekám na odpověď.",
+      "lemmas": [
+        "reply"
+      ],
+      "accepts": [
+        "I am waiting for a reply",
+        "I'm waiting for a reply"
+      ]
+    },
+    {
+      "en": "The response was quick.",
+      "cz": "Reakce byla rychlá.",
+      "lemmas": [
+        "response"
+      ],
+      "accepts": [
+        "The response was quick"
+      ]
+    },
+    {
+      "en": "Do you have a comment?",
+      "cz": "Máte komentář?",
+      "lemmas": [
+        "comment"
+      ],
+      "accepts": [
+        "Do you have a comment?"
+      ]
+    },
+    {
+      "en": "The discussion was very long.",
+      "cz": "Diskuse byla velmi dlouhá.",
+      "lemmas": [
+        "discussion"
+      ],
+      "accepts": [
+        "The discussion was very long"
+      ]
+    },
+    {
+      "en": "His speech was very good.",
+      "cz": "Jeho projev byl velmi dobrý.",
+      "lemmas": [
+        "speech"
+      ],
+      "accepts": [
+        "His speech was very good"
+      ]
+    },
+    {
+      "en": "That is a strange expression.",
+      "cz": "To je zvláštní výraz.",
+      "lemmas": [
+        "expression"
+      ],
+      "accepts": [
+        "That is a strange expression",
+        "That's a strange expression"
+      ]
+    },
+    {
+      "en": "I have a message for you.",
+      "cz": "Mám pro tebe zprávu.",
+      "lemmas": [
+        "message"
+      ],
+      "accepts": [
+        "I have a message for you"
+      ]
+    },
+    {
+      "en": "There is a notice on the door.",
+      "cz": "Na dveřích je oznámení.",
+      "lemmas": [
+        "notice"
+      ],
+      "accepts": [
+        "There is a notice on the door",
+        "There's a notice on the door"
+      ]
+    },
+    {
+      "en": "There is a sign on the road.",
+      "cz": "Na cestě je značka.",
+      "lemmas": [
+        "sign"
+      ],
+      "accepts": [
+        "There is a sign on the road",
+        "There's a sign on the road"
+      ]
+    },
+    {
+      "en": "This is an old symbol.",
+      "cz": "To je starý symbol.",
+      "lemmas": [
+        "symbol"
+      ],
+      "accepts": [
+        "This is an old symbol"
+      ]
+    },
+    {
+      "en": "This is a beautiful pattern.",
+      "cz": "To je krásný vzor.",
+      "lemmas": [
+        "pattern"
+      ],
+      "accepts": [
+        "This is a beautiful pattern"
+      ]
+    },
+    {
+      "en": "What shape is it?",
+      "cz": "Jaký to má tvar?",
+      "lemmas": [
+        "shape"
+      ],
+      "accepts": [
+        "What shape is it?"
+      ]
+    },
+    {
+      "en": "My level of English is good.",
+      "cz": "Moje úroveň angličtiny je dobrá.",
+      "lemmas": [
+        "level"
+      ],
+      "accepts": [
+        "My level of English is good"
+      ]
+    },
+    {
+      "en": "The rate is very high.",
+      "cz": "Míra je velmi vysoká.",
+      "lemmas": [
+        "rate"
+      ],
+      "accepts": [
+        "The rate is very high"
+      ]
+    },
+    {
+      "en": "This is a large amount.",
+      "cz": "To je velké množství.",
+      "lemmas": [
+        "amount"
+      ],
+      "accepts": [
+        "This is a large amount"
+      ]
+    },
+    {
+      "en": "What is your phone number?",
+      "cz": "Jaké je tvoje telefonní číslo?",
+      "lemmas": [
+        "number"
+      ],
+      "accepts": [
+        "What is your phone number?",
+        "What's your phone number?"
+      ]
+    },
+    {
+      "en": "The value of the house is high.",
+      "cz": "Hodnota domu je vysoká.",
+      "lemmas": [
+        "value"
+      ],
+      "accepts": [
+        "The value of the house is high"
+      ]
+    },
+    {
+      "en": "The machine has a lot of power.",
+      "cz": "Ten stroj má hodně síly.",
+      "lemmas": [
+        "power"
+      ],
+      "accepts": [
+        "The machine has a lot of power"
+      ]
+    },
+    {
+      "en": "The driver has control of the car.",
+      "cz": "Řidič má kontrolu nad autem.",
+      "lemmas": [
+        "control"
+      ],
+      "accepts": [
+        "The driver has control of the car"
+      ]
+    },
+    {
+      "en": "Thank you for your support.",
+      "cz": "Děkuji za vaši podporu.",
+      "lemmas": [
+        "support"
+      ],
+      "accepts": [
+        "Thank you for your support"
+      ]
+    },
+    {
+      "en": "The service here is very good.",
+      "cz": "Služba je tady velmi dobrá.",
+      "lemmas": [
+        "service"
+      ],
+      "accepts": [
+        "The service here is very good"
+      ]
+    },
+    {
+      "en": "My sister has an important role.",
+      "cz": "Moje sestra má důležitou roli.",
+      "lemmas": [
+        "role"
+      ],
+      "accepts": [
+        "My sister has an important role"
+      ]
+    },
+    {
+      "en": "This is a good position.",
+      "cz": "To je dobrá pozice.",
+      "lemmas": [
+        "position"
+      ],
+      "accepts": [
+        "This is a good position"
+      ]
+    },
+    {
+      "en": "The house is his possession.",
+      "cz": "Ten dům je jeho majetek.",
+      "lemmas": [
+        "possession"
+      ],
+      "accepts": [
+        "The house is his possession"
+      ]
+    },
+    {
+      "en": "We have an arrangement.",
+      "cz": "Máme domluvu.",
+      "lemmas": [
+        "arrangement"
+      ],
+      "accepts": [
+        "We have an arrangement"
+      ]
+    },
+    {
+      "en": "There is another alternative.",
+      "cz": "Je tu jiná alternativa.",
+      "lemmas": [
+        "alternative"
+      ],
+      "accepts": [
+        "There is another alternative",
+        "There's another alternative"
+      ]
+    },
+    {
+      "en": "The shop has a large variety.",
+      "cz": "Ten obchod má velký výběr.",
+      "lemmas": [
+        "variety"
+      ],
+      "accepts": [
+        "The shop has a large variety"
+      ]
+    },
+    {
+      "en": "Water is a source of life.",
+      "cz": "Voda je zdroj života.",
+      "lemmas": [
+        "source"
+      ],
+      "accepts": [
+        "Water is a source of life"
+      ]
+    },
+    {
+      "en": "We have a clear target.",
+      "cz": "Máme jasný cíl.",
+      "lemmas": [
+        "target"
+      ],
+      "accepts": [
+        "We have a clear target"
+      ]
+    },
+    {
+      "en": "I have a tip for you.",
+      "cz": "Mám pro tebe tip.",
+      "lemmas": [
+        "tip"
+      ],
+      "accepts": [
+        "I have a tip for you"
+      ]
+    },
+    {
+      "en": "This is a useful tool.",
+      "cz": "To je užitečný nástroj.",
+      "lemmas": [
+        "tool"
+      ],
+      "accepts": [
+        "This is a useful tool"
+      ]
+    },
+    {
+      "en": "The equipment is very expensive.",
+      "cz": "Vybavení je velmi drahé.",
+      "lemmas": [
+        "equipment"
+      ],
+      "accepts": [
+        "The equipment is very expensive"
+      ]
+    },
+    {
+      "en": "This machine is very old.",
+      "cz": "Tenhle stroj je velmi starý.",
+      "lemmas": [
+        "machine"
+      ],
+      "accepts": [
+        "This machine is very old"
+      ]
+    },
+    {
+      "en": "The engine is broken.",
+      "cz": "Motor je rozbitý.",
+      "lemmas": [
+        "engine"
+      ],
+      "accepts": [
+        "The engine is broken"
+      ]
+    },
+    {
+      "en": "Electricity is expensive.",
+      "cz": "Elektřina je drahá.",
+      "lemmas": [
+        "electricity"
+      ],
+      "accepts": [
+        "Electricity is expensive"
+      ]
+    },
+    {
+      "en": "The gas is very cheap.",
+      "cz": "Plyn je velmi levný.",
+      "lemmas": [
+        "gas"
+      ],
+      "accepts": [
+        "The gas is very cheap"
+      ]
+    },
+    {
+      "en": "The door is made of metal.",
+      "cz": "Dveře jsou z kovu.",
+      "lemmas": [
+        "metal"
+      ],
+      "accepts": [
+        "The door is made of metal"
+      ]
+    },
+    {
+      "en": "The bottle is made of plastic.",
+      "cz": "Láhev je z plastu.",
+      "lemmas": [
+        "plastic"
+      ],
+      "accepts": [
+        "The bottle is made of plastic"
+      ]
+    },
+    {
+      "en": "This is an important invention.",
+      "cz": "To je důležitý vynález.",
+      "lemmas": [
+        "invention"
+      ],
+      "accepts": [
+        "This is an important invention"
+      ]
+    },
+    {
+      "en": "That was a great discovery.",
+      "cz": "To byl velký objev.",
+      "lemmas": [
+        "discovery"
+      ],
+      "accepts": [
+        "That was a great discovery"
+      ]
+    },
+    {
+      "en": "We are doing an experiment.",
+      "cz": "Děláme experiment.",
+      "lemmas": [
+        "experiment"
+      ],
+      "accepts": [
+        "We are doing an experiment"
+      ]
+    }
   ]
 }
