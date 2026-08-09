@@ -6,6 +6,270 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · cloud run 41 — **`vocab/b1-build`** (RUE build, claude-opus-5)
+
+### Headline: **step 3 held at three packs — 36 words, 36 Use sentences, all pool-legal. The gap moved 366 → 330, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (36 deletions / 0 additions). Fifth consecutive run where the measurement tracks authored content 1:1. All four gates green at the start and the end; the audit held at 124.
+
+### Branch (step 0)
+
+The prompt allows skipping the A2 count once switched, and the last four
+digest entries (runs 37-40) are all `vocab/b1-build`, so the switch is long
+settled. **`build` was not checked out and not touched at all this run** — not
+even to re-run the count, since runs 39 and 40 both re-derived it as 0 from
+disk and the branch is one this lane must leave alone. Steps 1 and 2 are
+settled (runs 36, 37, and re-verified from first principles in run 40), so
+this run is entirely step 3.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `f25304b` | **`b1_disaster` + `b1_trade` + `b1_arts`** — 36 items, 36 sentences, nodes registered, tree rebuilt, `oxford-b1-gap.tsv` regenerated (330 rows) |
+| 2 | this entry | digest + REPAIR-QUEUE run-41 progress on the dropped-subject standing rule |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 171 packs · 0 errors · 12 warnings | **174 · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 124 · 19 units · baseline 124 | **124 · 19 units · baseline 124** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so no gate work consumed the run. The 12 warnings
+are the permanent `b2_clear_claims` judgment-label style — none from this run.
+The audit held rather than tightening, which run 39 established is the expected
+outcome: closing the gap only moves the audit when the word is untaught *and*
+already used earlier on the path, and none of this run's 36 were.
+
+### Step 3 — the three packs
+
+| node | codex_unit | shape | intro |
+|---|---|---|---|
+| `leaf_disaster_b1` | `V_THM-A1B1-10` | 2×6 items, 12 sentences | emoji tiles |
+| `leaf_trade_b1` | `V_MON-B1B2-01` | 2×6 items, 12 sentences | emoji tiles |
+| `leaf_arts_b1` | `V_THM-A1B1-09` | 2×6 items, 12 sentences | emoji tiles |
+
+- **`b1_disaster`** — earthquake explosion damage poison warning survive ·
+  enemy battle horror frighten hurry shoot. The course has taught the calm
+  world exhaustively — weather, doctor, timetable — and has no vocabulary at
+  all for the day it goes wrong, which is most of what a news bulletin is
+  made of. Page 2's note separates `horror` (the feeling) from `battle` (the
+  event), the pair a Czech student most often collapses.
+- **`b1_trade`** — goods supply export import package deliver · consumer trade
+  label sample promote range. The student can already buy something; this is
+  everything that had to happen before the shelf. Page 2's note is the
+  `export`/`import` pair.
+- **`b1_arts`** — exhibition collection statue portrait frame photography ·
+  poem poet narrative mystery drum folk. The course teaches `art`, `artist`,
+  `music`, `film` and then has no way to *talk* about any of them. Page 2's
+  note is `collection` (what a museum owns) against `exhibition` (what is
+  currently on the wall).
+
+**All three tile honestly, so no schematic was needed** — the first run since
+38 where that is true. Every one of the 36 has a glyph that is a picture of
+the thing rather than a metaphor for it, so run 40's `contrast`-schematic
+question does not arise here.
+
+Themes were chosen for density against the gap list, not variety: all 36 words
+are on it.
+
+> **No new design fork this run.** Three existing open forks are untouched and
+> unchanged (below); nothing in these three packs required a decision James has
+> not already seen the shape of.
+
+### Method — the collision sweep ran before authoring, and it changed the wordlist
+
+Pool regenerated with `--before <node_id>` **per pack** before authoring (2508
+targets each). Every sentence **and every item** run through `codex/_oracle.py`
+(selftest re-run first: **6/6**): **36/36 pool-legal**, re-checked from the
+files on disk *after* writing rather than trusting the pre-write pass.
+
+**New this run, and worth keeping: the oracle was probed before being
+believed.** Run 40 trusted a clean oracle result; this run first fed it four
+words known to be untaught (`everyone`, `nobody`, `carry`, `hurricane`) and
+confirmed it rejects all four. A gate that passes everything and a gate that
+passes correctly look identical from the outside, and this is a two-line check
+that tells them apart. **Recommend every future run do this** — it costs
+nothing and it is the only evidence that a 36/36 is real.
+
+Those four probe words are not arbitrary: `everyone`, `nobody`, `carry` and
+`its` are all on the **A1** gap list and read as completely ordinary A1
+English, so they are exactly what a fluent draft reaches for. Three of them
+were caught in drafting and steered around before the file was written.
+
+**The cross-pack gloss check ran over all 78 existing vocab packs before a word
+was chosen, and all 36 final glosses came back free.** That is a better result
+than runs 39 (four collisions) and 40 (seven) — because this run did the check
+at *candidate* stage and simply never advanced a colliding word. Words dropped
+before authoring:
+
+- **`hurricane`** (*hurikán*) and **`bomb`** (*bomba*) — bare cognates, a free
+  Match answer, run 40's `album`/`studio` trap.
+- **`album`** — self-gloss, the same trap named explicitly in run 40's notes.
+- **`theme`** (*téma*) — taken by the taught `topic`; **`printing`** (*tisk*)
+  — taken by the taught `press` (which `b1_media` shipped last run).
+- **`force`** (*síla*) — the exact-string check passed, because the taught
+  `strength` is *síla / silná stránka* and `power` is *síla / moc*. **But
+  *síla* is the head of both**, so one Czech prompt would have had three
+  defensible English answers. **This is a gap in the collision script as run 39
+  and 40 wrote it: it compares whole gloss strings, and a compound gloss hides
+  its own head word.** Splitting on `/` before comparing is a one-line fix.
+
+**So the check is now a committed tool rather than a fourth hand-rolled
+script: `codex/scripts/gloss_check.py`** (`--pack <stem>` to audit a written
+pack, or `EN=CZ` pairs to screen candidates before authoring). Same status as
+`codex/_oracle.py` — **an authoring aid, not a gate**; it reports and always
+exits 0, and no gate imports it. It carries the compound-gloss fix, so the
+`force`/*síla* case that three runs of hand-comparison would have passed is
+now caught mechanically. It also adds an accent-stripped **cognate** warning
+for the `hurricane`/*hurikán* and `bomb`/*bomba* class, which run 40 named but
+no script has ever checked.
+
+Verified against known answers rather than assumed correct: it re-flags every
+word this run dropped (`force`, `theme`, `printing`, `album`, `hurricane`,
+`bomb`) and returns all three shipped packs clean except two cognate warnings
+in `b1_arts`, both of which are logged below as deliberate. It is a warning
+tool and it over-reports slightly by design — `frame`/*rám* is a true flag
+with no better option available, and that is the right failure direction.
+
+Two **derived pairs** were split to one member each rather than shipped
+together, which is the within-pack version of the same defect: `sculpture`
+(*sochařství*) next to `statue` (*socha*), and `poisonous` (*jedovatý*) next
+to `poison` (*jed*), are each one Match board away from being indistinguishable.
+Both discarded members stay on the gap list for a later pack. `producer` went
+the same way for a cross-pack reason — *výrobce* sits one letter from the
+taught `product`/*výrobek*.
+
+**`export`/`import` were deliberately kept together**, against that rule, and
+the reason is worth recording: *vyvážet*/*dovážet* is a strict one-to-one pair
+in both languages, the prefix carries the whole distinction, and Czech marks it
+exactly as English does. A minimal pair is only a defect when the two members
+are **interchangeable**; when they are opposites, shipping them together is the
+teaching point. That is page 2's note.
+
+### A third cause of the same grading defect, found this run
+
+The dropped-subject rule and the gloss-collision rule both exist because one
+Czech prompt can have two defensible English answers. **A third cause turned up
+on 3 of these 36 prompts, and no gate looks for it**: the Czech was correct
+Czech and still did not reconstruct the English it is graded against.
+
+- *Bouře poškodila **naši střechu*** invites "our roof"; the `en` is "the roof
+  of our house". Rewritten to *střechu našeho domu*.
+- *Než si koupíš ten lék, přečti si štítek* fronts the before-clause, so the
+  natural English comes out in the other clause order than `accepts` holds.
+  Rewritten to *Přečti si štítek, než si koupíš ten lék*.
+- A `supply` prompt fronted the instrumental (*zásobuje chlebem všechny
+  školy*), which is grammatical but marked; restored to canonical order.
+
+**Method that catches it, and it is the only one that does: once the Czech is
+correct, translate it back to English cold and check you land on the string in
+`en`.** Correctness and reconstruction are different properties, and the Use
+stage grades the second one. Logged in REPAIR-QUEUE.md alongside the
+dropped-subject rule, since it is the same family.
+
+A separate mechanical pass over the three packs, independent of the authoring
+and reading only from disk, confirmed: every `lemmas` entry names a real item
+in its own pack · every item is covered by at least one sentence (36/36) ·
+every sentence carries `cz` and `accepts` · no repeated English sentence within
+or across the three, or against the other 78 packs · **no item duplicates a
+word any other vocab pack teaches, and no gloss duplicates one either** · no
+self-glosses · intro tiles match the item lists exactly (12/12 in all three) ·
+no `icon`/`swatch` on any drill item · every page-2 frame is carried by a
+`use[]` id on an item in its own pack · and a **Unicode-category scan for
+Cyrillic and Greek look-alikes** (run 40's finding) came back clean on all
+three files. **0 problems.**
+
+### Czech I am flagging for the review routine
+
+All 36 prompts were checked for the dropped-subject rule and the gender traps
+before commit. These are the judgment calls a second opinion is worth most on:
+
+- `b1_trade` — **`supply`: *zásobovat*.** The everyday word for supplying is
+  *dodávat*, which I could not use: it is too close to this pack's own
+  `deliver`/*doručit* in sense, and one of the two would have graded the
+  other's prompt wrong. *Zásobovat* is correct and unambiguous but leans
+  commercial/logistical. The one I would most like a ruling on.
+- `b1_trade` — **`range`: *sortiment*.** Oxford's B1 `range` is broader
+  ("a range of options"), and *sortiment* narrows it to a product range —
+  which is the sentence's reading (*široký sortiment bot*) and the pack's
+  theme, but it does not cover the whole English word. *Škála* was the
+  alternative and is vaguer.
+- `b1_arts` — **`portrait`: *portrét*.** A bare cognate, which run 40's
+  `ambition`/*ctižádost* precedent says to avoid. I kept it because the only
+  native alternative, *podobizna*, is genuinely less known to a modern Czech
+  student, and a support gloss the student does not recognise fails worse
+  than a transparent one. **Flagging rather than deciding**: if James would
+  rather follow the run-40 precedent, *portrét / podobizna* as a compound
+  gloss gets both and is a one-line change.
+- `b1_arts` — **`photography`: *fotografování*.** The taught `photograph` is
+  *fotografie / fotit* (`a1_tech`). *Fotografování* is the activity and
+  *fotografie* the object, so they are genuinely distinct — but they are
+  close strings, and a student who meets them weeks apart may not feel the
+  split. Worth a check.
+- `b1_arts` — **`frame`: *rám*.** Surfaced by the new tool below, not by eye:
+  *rám* and `frame` share r-a-m once accents are stripped, so the tile is
+  partly guessable from shape alone. **Kept, because *rám* is simply the
+  Czech word for a picture frame and there is no alternative** — unlike
+  `portrait`, this one has nothing to trade for. Noting it so the flag is on
+  the record rather than silently dismissed.
+- `b1_arts` — **`folk`: *lidový*.** Adjective, and the pack says so on page 2.
+  The sentence is *Moje babička má ráda lidovou hudbu z hor* — `mít rád` with
+  an explicit feminine subject, so *ráda* agrees with *babička* and not with
+  the student, which is run 29's trap handled the way run 29 prescribes.
+- `b1_disaster` — **`frighten`: *vyděsit*** (perfective) with the sentence
+  *Ten hlasitý zvuk vyděsil našeho psa*. The taught `scared`/`afraid` are
+  *vyděšený*, the participle of the same root — distinct part of speech and
+  distinct string, but adjacent enough to name. Past tense is used, which is
+  safe here because the subject is *zvuk* and not the speaker (`a2_health`'s
+  escape).
+- `b1_disaster` — `explosion`: *Poblíž nádraží došlo k velkému výbuchu*.
+  *Dojít k* + dative is the idiomatic way Czech reports an event happening,
+  and it is impersonal, so nothing leaks — but it is a construction the
+  course has not taught, met here only as a prompt to read.
+- `b1_disaster` — **`horror`: *hrůza*** as the feeling, not the genre. The
+  sentence *Ten film byl plný hrůzy* is about dread rather than about a horror
+  film, which is deliberate — `horror` the genre is a bare cognate in Czech
+  (*horor*) and would have been a free Match answer.
+
+### Still open — unchanged, and all three get more expensive every run
+
+1. **`codex_unit` reuse (run 37's fork).** **Fourteen** B1 packs now depend on
+   this reading. This run spread rather than piled — `b1_trade` went to
+   `V_MON-B1B2-01`, which is a genuine thematic fit and not a dumping ground —
+   but the underlying problem is untouched. The B1B2 band still has exactly
+   **one** unused canonical unit (`V_WFM-B1B2-01`, word-formation, which a
+   thematic pack should not consume); everything else unused is B2C1, out of
+   scope. **Retagging fourteen packs is still cheap; retagging thirty will
+   not be.**
+2. **Pack-count scope.** `rue_oxford.py` now prints **~28 packs of 12** to
+   close the gap fully (31 last run, 34 the run before). The contract says
+   ~26, so the estimate has now nearly converged on it from above and this
+   fork may be about to dissolve on its own. Run 36 offered build-all /
+   keep-26-and-defer / re-cut-the-target and recommended re-cut then build;
+   **still unanswered after six runs**, and still costing nothing, since
+   3 packs per run on the densest themes is right under all three options.
+3. **Re-lexify tie-break** (run 36). Untouched, and correctly so: those
+   repairs live on `build`, which this branch must not touch.
+4. **`teaches_lemmas` judgement pass** (run 36/37). The mechanical 90/93 is
+   done and was re-verified in run 40 as genuinely complete; whether James
+   wants non-gapped taught forms added on top is open and blocks nothing.
+
+### Nothing to smoke beyond the new units
+
+Three new live vocab leaves at the end of the B1 path; `smoke.py` passes. No
+engine, shell, or grammar file was touched — the diff is three new pack files
+plus the node registry, the rebuilt tree, the regenerated gap file and the
+audit report. **`b1_disaster`'s tile row is the one worth a glance**: it is the
+first pack whose emoji are mostly symbols (⚠️ ☠️ 🆘 ⚔️ 🛡️) rather than
+objects or faces, and symbol glyphs render at noticeably different weights
+across platforms — worth checking the row does not look ragged next to a pack
+like `b1_arts`.
+
+---
+
 ## 2026-08-09 · cloud run 40 — **`vocab/b1-build`** (RUE build, claude-opus-5)
 
 ### Headline: **step 3 held at three packs — 36 words, 36 Use sentences, all pool-legal. The gap moved 402 → 366, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (36 deletions / 0 additions). Fourth consecutive run where the measurement tracks authored content 1:1. All four gates green at the start and the end; the audit held at 124.

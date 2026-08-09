@@ -273,6 +273,35 @@ All 72 live grammar units on path now produce a real ladder, gated by
   existential (*V kostele je velký zvon*, *Kolem zahrady je bílý plot*,
   *Na květině sedí včela*). Rate over runs 29-40: 6 in ~834 prompts (~1 %).
 
+  **Progress · cloud run 41 (2026-08-09, `vocab/b1-build`): applied to 3 new
+  B1 banks at authoring time** (`b1_disaster` 12, `b1_trade` 12, `b1_arts` 12
+  — 36 new prompts). **Zero instances of the target defect**, by the run 32-40
+  authoring method: no 3sg prompt was written without an explicit subject in
+  the first place, and no 1sg past or 1sg predicate adjective appears anywhere
+  in the 36. Person is fixed by an explicit noun subject (*Zemětřesení*,
+  *Bouře*, *Policie*, *Vojáci*, *Ta paní*, *Můj bratr*, *Moje babička*), by
+  1pl present morphology (*Musíme*, *Dovážíme*), by 2sg imperative
+  (*Přečti si*), by an existential or impersonal (*Poblíž nádraží došlo k
+  velkému výbuchu*, *V některých z těchto rostlin je jed*, *Před kostelem
+  stojí kamenná socha*), or by a reflexive passive with no person at all
+  (*Vyprávění toho filmu se snadno sleduje*). Rate over runs 29-41: 6 in ~870
+  prompts (~1 %).
+
+  **One new defect class, caught pre-commit on 3 of 36 prompts, and no gate
+  looks for it.** The Use stage grades CZ→EN *production*: the student reads
+  the Czech and types the English, and `accepts[]` holds only the sentences
+  the author listed. So a Czech prompt that is correct Czech but does not
+  **reconstruct** its own English grades a right answer wrong — the same
+  outcome as the dropped subject, from a third cause. Three instances:
+  *Bouře poškodila naši střechu* invites "our roof" against an English of
+  "the roof of our house"; *Než si koupíš ten lék, přečti si štítek* puts the
+  before-clause first and invites the clauses in the other order; and a
+  supply prompt fronted the instrumental. All three were rewritten to track
+  the English clause for clause. **Rule: after the Czech is correct, read it
+  once more backwards — translate it back to English cold and check you land
+  on the sentence in `en`.** Cheap, and it is the only check that catches
+  this.
+
   `b1_character` is a whole pack of character adjectives, so run 31's
   predicate-adjective gender trap was the live constraint again rather than
   the subject rule — every adjective prompt is routed through a 3rd-person or
