@@ -156,72 +156,68 @@ taught) at any level — only the prose that explains it. Plain grammar terms
 still apply throughout (real category names — preposition, genitive — never
 baby-talk), at every level.
 
-## B1 vocabulary extension (James, 2026-08-08)
+## B1 vocabulary extension — PARKED, future work only (James, 2026-08-09)
+
+**Not active. Do not start this.** Briefly planned as a live cloud-routine
+program on 2026-08-08, then explicitly parked the next day when James decided
+to wind RUE down — a multi-week vocab build doesn't fit a short wind-down
+window. Kept here as a scoped, ready-to-resume plan for whoever picks it up
+later; see `codex/HANDOFF.md` for the state RUE was actually left in.
 
 Full reasoning: `rupl-exp/codex/VOCAB-REORIENTATION-2026-08-07.md` (covers both
 RUE and RUPL — decisions 9-15 are RUE's). Summary: RUE's grammar goes to C1 and
-its A1/A2 vocab is finished, but vocab stops dead at B1 (56% Oxford coverage
-when last measured). **Scope: bring vocab to a clean B1, ~26 new thematic
-packs. B2/C1 vocab scope is a separate, deliberately unresolved decision —
-do not fold it in here.**
+its A1/A2 vocab is finished, but vocab stops dead at B1. **Scope if resumed:
+bring vocab to a clean B1, ~26 new thematic packs, on branch `vocab/b1-build`
+(exists, pushed, rebased current as of 2026-08-08 — will need re-rebasing onto
+whatever `build` has moved to by then). B2/C1 vocab scope is a separate,
+deliberately unresolved decision.**
 
-**Branch: `vocab/b1-build`, not `build`.** One writer per branch is the rule
-that held through the RUPL build. While this work is active, the cloud lane's
-entire hourly slot works `vocab/b1-build` — **not** repair queue, not
-sequencing repair, not C1, all on `build`. `main` still only moves when James
-promotes, from whichever branch is ready.
+**Order, if resumed — do not skip ahead:**
 
-**Order, in this sequence — do not skip ahead:**
-
-1. **Re-verify the gap before trusting it.** The original count (336 words)
-   is stale — re-measured 2026-08-08 after two days of content work and it
+1. **Re-verify the gap before trusting it.** The 336-word count was already
+   stale by 2026-08-08 — re-measured after two days of content work and it
    moved the wrong way (A1 98%→90%, B1 56%→30% coverage), which should not
    happen when only content is *added*. Likely cause, unconfirmed: sequencing
    repairs (`fix(unit): re-lexify … onto taught vocabulary` commits) swap a
    word for an already-taught synonym to clear an audit violation, and may be
    trading away Oxford-listed words for simpler ones with no preference either
-   way. Before authoring a single B1 pack: run `codex/scripts/rue_oxford.py`
-   fresh, sanity-check a handful of "missing" words by hand against real
-   packs, and if the re-lexify theory holds, decide (log the fork) whether
-   future re-lexify repairs should prefer an Oxford-listed replacement when
-   more than one pool-legal option exists. Regenerate
-   `codex/vocab/oxford-b1-gap.tsv` from the corrected measurement — the
-   number that drives the ~26-pack plan must be one you trust.
+   way. Re-run `codex/scripts/rue_oxford.py` fresh before trusting any number.
 2. **Prerequisite: backfill `teaches_lemmas` across all 93 grammar packs.**
    Flat array on each pack, e.g. `"teaches_lemmas": ["work", "works", "live",
    "lives"]` — the actual forms the pack drills (RUPL's grammar packs already
    have this field; `rupl-exp/data/grammar/blocks/a1_gender.json` is a real
    example to model the shape on, not the content). Derive mechanically from
    each item's `gap_answer` plus any other form the pack meaningfully teaches;
-   dedupe per pack. Pure grammar-pack edits, no vocab file touched, fully
-   gate-checkable. Without this the B1 gap number stays a range, not a count.
+   dedupe per pack. Not started as of wind-down (0/93).
 3. **Author the B1 packs** from the corrected gap list, ~26 thematic packs of
-   12, matching existing convention exactly: full five modes (intro, match,
-   quiz, type, use), same quality bar as A1/A2, picture-led intros per the
-   spec above, `sentences[]` Use banks per the spec above. **No reading lane,
-   no engine changes — content only**, per the original decision.
-4. **Digest and gates as normal** — same `codex/BUILD-DIGEST.md`, same four
-   gates, same REPAIR-QUEUE.md discipline. Note in each digest entry that
-   you're on `vocab/b1-build`, not `build`, so James can tell the branches
-   apart at a glance.
-
-**Czech review follows this branch too** while it's active — see the
-Czech-review routine's own prompt.
+   12, matching existing convention exactly: full five modes, same quality bar
+   as A1/A2, picture-led intros and `sentences[]` Use banks per the specs
+   above. **No reading lane, no engine changes — content only.**
 
 **Multi-word stragglers** (32 A1/A2 items like "have to", "ice cream", "next
-to", "t-shirt") are lower priority than the B1 core — fold them in near the
-end if time allows, don't let them block the main B1 sequence.
+to", "t-shirt") are lower priority than the B1 core.
+
+## Wind-down (James, 2026-08-09)
+
+RUE reached a workable state; James is closing out unattended work rather
+than starting the B1 extension above. **`codex/WIND-DOWN.md` is the plan and
+counter; `codex/HANDOFF.md` is the exit condition** — once it exists, both
+routines check for it first and stop, exactly like RUPL's 2026-08-08
+wind-down (`rupl-exp/codex/HANDOFF.md` is the template this follows).
+Scope for the remaining sessions: close out the A2 Use-bank backlog and
+`codex/REPAIR-QUEUE.md`, one final Czech-review pass, then write the handoff.
+**No new C1, no B1 vocab, no other new content** — this is a close-out, not
+a final sprint.
 
 ## Automation lanes (2026-08-06, mirrors RUPL)
 
 Two lanes meet on branch **`build`**; `main` moves only when James promotes.
-**Exception, active 2026-08-08: the cloud routine's branch is `vocab/b1-build`
-until the B1 vocabulary extension above is finished — see that section for
-what pauses and what doesn't.**
+**Wound down 2026-08-09 — see "Wind-down" above.** Once `codex/HANDOFF.md`
+exists, treat this whole section as historical; nothing runs unattended.
 
 | Lane | What | Branch |
 |------|------|--------|
-| **Cloud routine "RUE build"** | hourly, claude-opus-5, self-contained prompt: repair → build 2-3 units | `build` (currently `vocab/b1-build` — see above) |
+| **Cloud routine "RUE build"** | hourly, claude-opus-5, self-contained prompt: repair → build 2-3 units | `build` |
 | **Local sessions** (James + Claude) | judgement work, smoke fixes, design | `build` (promote to `main` = James only) |
 
 Shared rules, from the RUPL build (they all earned their place):
