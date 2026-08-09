@@ -1,9 +1,10 @@
 # HANDOFF — RUE (`rue-exp`), unattended work closed 2026-08-09
 
-This is the terminal document for RUE's cloud automation. **Its existence is
-the kill switch:** both scheduled routines (the "RUE build" routine and the
-Czech-review routine) check for this file first and exit immediately on sight
-of it. Nothing runs unattended on this repo any more.
+This is the terminal document for RUE's **Claude** cloud automation. **Its
+existence is the Claude kill switch:** the "RUE build" routine and the
+Czech-review routine check for this file first and exit immediately on sight
+of it. **Grok continuous improvement** is separate — controlled only by
+`agent-nightly/RUE-AUTO.md` Status (READY / OFF), not by this file.
 
 Written by cloud run 36 on branch `build`. Every number below was **re-counted
 from `data/tree.json` and the pack files during that run**, not copied from
@@ -17,11 +18,15 @@ fresh count is what is printed here and the disagreement is called out.
 > accepts-drift flags. Each section is marked inline. **`main` was also
 > fast-forwarded to `build`** on the same day, so the two are aligned and the
 > repo's default branch no longer shows the stale pre-P0 state; nothing is
-> deployed and students remain on the old rue2/rue3 sites. Still open and
-> unchanged: **Q1** (the Oxford coverage anomaly — the most important),
-> **Q2** (2 tokenizer defects), **Q4** (164 twice-taught words), **Q6**
-> (`a1_articles`/`hour`), the 13 vocab trunk intros, and B1's missing intros
-> and Use banks.
+> deployed and students remain on the old rue2/rue3 sites.
+>
+> **Amended again 2026-08-09 (Grok interactive) — James policy session.**
+> **Q6 closed** (`a1_articles`/`hour` permanently accepted). **Item-level
+> `lemma` allowed** (P-lemma). **B1 vocab extension stays interactive-only**
+> (auto must not start). Continuous improvement: **Grok** lane
+> `agent-nightly/RUE-AUTO.md` (every ~3h, no push). Full locks:
+> `codex/POLICY-LOCKS.md`. Still open: **Q1** Oxford anomaly, **Q2**
+> tokenizer, **Q4** twice-taught words, trunk intros, B1 leaf intros/banks.
 
 ---
 
@@ -296,9 +301,10 @@ rather than by string:
 Both use a shared `glossKey()` normaliser. The sentence-bank half described
 above was already handled during the build.
 
-### Q6 · `a1_articles` / `hour` — the last A1/A2 sequencing violation
+### Q6 · `a1_articles` / `hour` — **CLOSED 2026-08-09** (James · P-hour)
 
-Section 2. Move the unit, teach `hour` earlier, or accept it.
+**Accepted permanently.** Silent-h teaching point; do not re-lexify or re-pick.
+See `codex/POLICY-LOCKS.md` and `audit/SEQUENCING-REPORT.md`.
 
 ---
 

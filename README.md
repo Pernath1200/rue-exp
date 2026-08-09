@@ -4,50 +4,58 @@
 
 | | |
 |--|--|
-| **Status** | Weekend draft scaffold (2026-08-06) |
+| **Status** | Canonical working tree · A1+A2 playable · polish before deploy (2026-08-09) |
 | **Port** | **8097** |
 | **Progress** | `rue-exp-progress` (local only · never rename lightly) |
-| **Sources** | `rue-auto/grammar` · `rue3-exp` via `scripts/sync_from_stable.py` |
-| **Spine** | `data/spine.json` — A1 + A2 zigzag; B1–C1 full catalogue paths |
+| **Branch** | `build` (auto) · `main` aligned but **not** student-facing yet |
+| **Spine** | `data/spine.json` — A1 + A2 zigzag; B1–C1 catalogue paths |
 | **Charter** | [CHARTER.md](./CHARTER.md) |
+| **Handoff** | [codex/HANDOFF.md](./codex/HANDOFF.md) — Claude unattended closed |
+| **Auto** | `agent-nightly/RUE-AUTO.md` · Grok every ~3h (content polish · no push) |
 
-Stable siblings stay separate for now (end state: rue-exp fully replaces the
-student RUE2/RUE3 apps — new URL + one-time progress import once lesson-proven):
+Students still use **rue2-grok-v1.0** / **rue3-exp** until James promotes after A1+A2 polish.
 
-- Grammar lab: `rue-auto/grammar` · student: `rue2-grok-v1.0`  
-- Vocab: `rue3-exp`  
+Frozen archives (never edit / never full-sync from):
+
+- Grammar lab: `rue-auto/grammar` · student: `rue2-grok-v1.0`
+- Vocab: `rue3-exp`
 
 ## Run locally
 
 ```powershell
 cd C:\Users\ADMIN\documents\projects\rue-exp
-py scripts\sync_from_stable.py
+py scripts\smoke.py
 py -m http.server 8097
 ```
 
-Open **http://localhost:8097/** · hard-refresh **Ctrl+F5** after sync.
+Open **http://localhost:8097/** · hard-refresh **Ctrl+F5** after pulls.
 
-## What works in the scaffold
+## What works now
 
-- Home: **Do next · Review · Topics · How to use · More**  
-- Dual progress (grammar + vocab) under one key  
-- Path from A1 spine (≈40 steps G/V interleaved)  
-- Map / tree portrait (roots + canopy)  
-- Practice entry for both domains (engines ported from rupl — EN polish ongoing)  
-- Higher levels on map as coming  
+- Home: **Do next · Review · Topics · How to use · More**
+- Dual progress (grammar + vocab) under one key · download/import
+- A1 + A2 full zigzag paths; B1–C1 browse when `live`
+- Grammar ladder wired via `pack-adapt.js` (Match · Quiz · order_click · Type · Use)
+- Vocab: picture-led intros + Use `sentences[]` on **all A1/A2 leaves**
+- Machine gates: `verify_pack` · `check_playable` · `audit --check` · `check_codex` · smoke
 
-## Sync content
+## Rebuild tree (after spine / node registry edits)
 
 ```powershell
-py scripts\sync_from_stable.py
+py scripts\sync_from_stable.py --rebuild-tree
 ```
 
-Copies blocks + rebuilds `data/tree.json` from `data/spine.json`.
+## Continuous improvement (Grok)
 
-## Deploy (when ready)
+```powershell
+cd C:\Users\ADMIN\documents\projects\agent-nightly
+.\run-rue.ps1 -DryRun
+.\install-scheduled-task-rue.ps1   # every 3h, staggered
+# Pause: set RUE-AUTO.md Status to OFF
+```
 
-GitHub Pages → `pernath1200.github.io/rue-exp` · branch `main` · root `/`.
+See **agent-nightly/RUE-AUTO.md**. Local commits only · **no push** · no engine.
 
-## Weekend goal
+## Deploy (when James says)
 
-Drafted **complete A1 app** by end of weekend; then test, add, improve content.
+GitHub Pages → when A1+A2 feel lesson-true · not automatic.

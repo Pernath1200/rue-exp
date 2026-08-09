@@ -6,7 +6,7 @@
  * - single Enter router (state.enterAdvance) — never exits to map
  * - ← Back do mapy is mouse-only (shell #btn-practice-back, tabindex -1)
  * - intro nav: Back / Next · Enter = Next · Backspace = Back
- * - Polish chrome labels
+ * - English chrome labels (RUPL lineage cleaned 2026-08-06)
  *
  * Type modes: full_word | ending_gap (morphology packs)
  */

@@ -1,33 +1,40 @@
 # rue-exp · plan pointer
 
-## What this is
+## Current phase (2026-08-09)
 
-**Phase 1 visual slice** of the RUE unified merge: dual-rail shell at **A1 only**.
+**A1 + A2 polish before any student deploy.** Claude unattended build closed
+(`codex/HANDOFF.md`). Grok continuous lane: repair → A1/A2 polish → B1
+sequencing (see `agent-nightly/RUE-AUTO.md`).
 
-- **Roots** = grammar (RUE2 metaphor)  
-- **Canopy** = vocab (RUE3 trunk + leaves)  
-- **Together** = mixed practice (stub; not built)
+| Area | State |
+|------|--------|
+| Shell | Dual engines · English chrome · progress key isolated |
+| A1 path | Full zigzag · leaf intros + Use banks complete |
+| A2 path | Full zigzag · leaf intros + Use banks complete |
+| Trunk intros | Partial (concrete/glue rule in AGENTS.md) |
+| B1–C1 | Live catalogue · thinner vocab UX · sequencing debt on B1/B2 |
+| Deploy | Blocked on human A1+A2 smoke + polish, not on “more C1 shells” |
 
 ## Source of law
 
 | Doc | Role |
 |-----|------|
-| `.grok/handoffs/rue-exp/A1-unified-shell/HANDOFF.md` | This shell’s build brief |
-| Session plan “RUE unified merge” | Dual rail, phases 0–5 |
-| `rue-codex/CODEX-FIRST.md` | Units hang on `G_*` / `V_*` — shell does not invent theme ids |
+| `CHARTER.md` | Product locks (port, progress key, identity) |
+| `AGENTS.md` | Authoring + automation contract |
+| `codex/HANDOFF.md` | Post-Claude state + open questions |
+| `agent-nightly/RUE-AUTO.md` | Unattended Grok work order |
+| `rue-codex/CODEX-FIRST.md` | Units hang on `G_*` / `V_*` |
 
-## Frozen decisions (test)
+## Near-term (James 2026-08-09)
 
-| ID | Freeze |
-|----|--------|
-| H1 | A1 only in this mock |
-| H7 | Door name **Together** |
-| H2 / H3 | Mixed fruit / first pair later — not this shell |
+1. Shell/UX/docs polish (human + interactive Grok)
+2. Auto: REPAIR-QUEUE → trunk intros / A1–A2 polish → B1 sequencing re-lexify
+3. **Do not** start B1 vocab extension unattended (parked · interactive only)
+4. Lesson-prove A1+A2 before Pages / replace rue2+rue3
 
-## Next (not this folder’s job)
+## Explicitly later
 
-1. First hand-authored Together slice (e.g. present simple × Home & Family)  
-2. Progress merge design (later phases)  
-3. Optional monorepo packages extract (`practice-core`)  
-
-Prefer a working localhost mock over perfect architecture.
+- B1 vocabulary extension (~26 packs) — interactive only when resumed
+- Oxford gap re-measure (`vocab/b1-build` tools not on default branch)
+- Progress import from old RUE2/RUE3 keys
+- Mixed “Together” practice stage

@@ -6,6 +6,35 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · local · Grok interactive (James policy + shell polish + auto)
+
+### Headline
+James answered post-Claude forks and started **Grok continuous improvement**.
+Shell/docs polish this session; unattended content continues via
+`agent-nightly` every ~3h.
+
+### Policy locks (`codex/POLICY-LOCKS.md`)
+- **P-hour** — `a1_articles` / `hour` permanently accepted  
+- **P-lemma** — item-level `lemma` allowed for taught-in-place  
+- **P-b1-vocab** — B1 vocab extension interactive only (auto banned)  
+- **P-deploy** — A1+A2 polish before student deploy  
+- **P-engine** — auto no `js/`/`css/`/`index.html` by default  
+
+### Shell / docs
+- `index.html` How-to + home intro (no “weekend draft”)  
+- README · CHARTER · PLAN · AGENTS automation section refreshed  
+- HANDOFF: Claude kill switch clarified; Grok not stopped by HANDOFF  
+
+### Auto system (`agent-nightly`)
+- `RUE-AUTO.md` · `PROMPT-RUE.md` · `config-rue.json`  
+- `run-rue.ps1` · `install-scheduled-task-rue.ps1` (**AgentRueExp**, +45m stagger)  
+- Work order: REPAIR → A1/A2 trunk intros → B1 sequencing · **no push**
+
+### Gates
+Re-run smoke at end of session.
+
+---
+
 ## 2026-08-09 · cloud run 36 (RUE build, claude-opus-5) — **FINAL RUN**
 
 ### Headline: **`codex/HANDOFF.md` is written and RUE's unattended work is over.** Run 35's blocking conflict is resolved — James parked the B1 vocab extension in AGENTS.md and wrote `codex/WIND-DOWN.md`, so the wind-down is now the only live instruction and the handoff could be written without cancelling anything. The exit condition was met **at run 1 of 6**, not at the cap: the A2 Use-bank backlog is closed and the repair queue has no unticked one-time items. Also **2 real defects found and fixed** in shipped A1 banks by a mechanical sweep that had never been run.

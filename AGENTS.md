@@ -106,12 +106,12 @@ with no referent. Decide per unit:
 
 ## Use-stage sentence banks (James, 2026-08-07)
 
-45 of 67 live vocab units show **"Use · coming soon"** — the fourth stage is
-dead for two thirds of the vocab side. Fix: author a real `sentences[]` bank
-per pack. **Decided: we do NOT port `rue3-exp/js/carriers.js`.** It builds
-Czech by string template with no case or gender agreement (`Mám ${cz}` gives
-*Mám sestra*), and broken Czech in front of a Czech learner is worse than a
-missing stage.
+**A1 + A2 leaves are closed** (38 banks, ~946 sentences as of HANDOFF 2026-08-09).
+B1 leaves still need banks when that tier is polished. Author a real
+`sentences[]` bank per leaf pack. **Decided: we do NOT port
+`rue3-exp/js/carriers.js`.** It builds Czech by string template with no case
+or gender agreement (`Mám ${cz}` gives *Mám sestra*), and broken Czech in
+front of a Czech learner is worse than a missing stage.
 
 ```jsonc
 "sentences": [
@@ -156,13 +156,22 @@ taught) at any level — only the prose that explains it. Plain grammar terms
 still apply throughout (real category names — preposition, genitive — never
 baby-talk), at every level.
 
-## B1 vocabulary extension — PARKED, future work only (James, 2026-08-09)
+## James policy locks (2026-08-09) — full text: `codex/POLICY-LOCKS.md`
 
-**Not active. Do not start this.** Briefly planned as a live cloud-routine
-program on 2026-08-08, then explicitly parked the next day when James decided
-to wind RUE down — a multi-week vocab build doesn't fit a short wind-down
-window. Kept here as a scoped, ready-to-resume plan for whoever picks it up
-later; see `codex/HANDOFF.md` for the state RUE was actually left in.
+| ID | Lock |
+|----|------|
+| **P-hour** | `a1_articles` / `hour` permanently accepted — never re-fix |
+| **P-lemma** | Item-level `lemma` allowed for taught-in-place words the gap hides |
+| **P-b1-vocab** | B1 vocab extension = **interactive only** (auto must not start) |
+| **P-deploy** | A1+A2 polished before any student deploy |
+| **P-engine** | Auto never touches `js/` / `css/` / `index.html` unless REPAIR-QUEUE says engine-ok |
+
+## B1 vocabulary extension — PARKED, interactive only (James, 2026-08-09)
+
+**Not active for auto. Do not start this unattended.** Interactive sessions
+may resume later. Briefly planned as a live cloud-routine program on
+2026-08-08, then parked. Scoped plan for a human-led resume; see
+`codex/HANDOFF.md` Q1 (Oxford coverage anomaly) before trusting gap numbers.
 
 Full reasoning: `rupl-exp/codex/VOCAB-REORIENTATION-2026-08-07.md` (covers both
 RUE and RUPL — decisions 9-15 are RUE's). Summary: RUE's grammar goes to C1 and
@@ -197,61 +206,37 @@ deliberately unresolved decision.**
 **Multi-word stragglers** (32 A1/A2 items like "have to", "ice cream", "next
 to", "t-shirt") are lower priority than the B1 core.
 
-## Wind-down (James, 2026-08-09)
+## Wind-down (historical — Claude closed 2026-08-09)
 
-RUE reached a workable state; James is closing out unattended work rather
-than starting the B1 extension above. **`codex/WIND-DOWN.md` is the plan and
-counter; `codex/HANDOFF.md` is the exit condition** — once it exists, both
-routines check for it first and stop, exactly like RUPL's 2026-08-08
-wind-down (`rupl-exp/codex/HANDOFF.md` is the template this follows).
-Scope for the remaining sessions: close out the A2 Use-bank backlog and
-`codex/REPAIR-QUEUE.md`, one final Czech-review pass, then write the handoff.
-**No new C1, no B1 vocab, no other new content** — this is a close-out, not
-a final sprint.
+Claude cloud + Czech-review routines **self-terminated** on sight of
+`codex/HANDOFF.md`. That file is the **Claude** kill switch only — it does
+**not** stop the **Grok** continuous-improvement lane
+(`agent-nightly/RUE-AUTO.md`).
 
-## Automation lanes (2026-08-06, mirrors RUPL)
-
-Two lanes meet on branch **`build`**; `main` moves only when James promotes.
-**Wound down 2026-08-09 — see "Wind-down" above.** Once `codex/HANDOFF.md`
-exists, treat this whole section as historical; nothing runs unattended.
+## Automation lanes (2026-08-09)
 
 | Lane | What | Branch |
 |------|------|--------|
-| **Cloud routine "RUE build"** | hourly, claude-opus-5, self-contained prompt: repair → build 2-3 units | `build` |
-| **Local sessions** (James + Claude) | judgement work, smoke fixes, design | `build` (promote to `main` = James only) |
+| **Grok auto `AgentRueExp`** | every ~3h · repair → A1/A2 polish → B1 sequencing | `auto/*` local · **no push** |
+| **Interactive** (James + Grok/Claude) | shell, policy, smoke, B1 vocab if resumed | `build` / as asked |
+| **Claude cloud RUE build** | **OFF** (HANDOFF kill switch) | — |
 
-Shared rules, from the RUPL build (they all earned their place):
+Control flag: **`agent-nightly/RUE-AUTO.md` Status = READY | OFF**.
+
+Shared rules:
 
 - **Gates before commit** — every commit must pass all four:
   `py -X utf8 codex/verify_pack.py` (**0 errors**),
-  `py -X utf8 codex/check_playable.py` (**0 errors** — the ladder a student
-  actually gets, plus the quiz single-correct-answer check),
+  `py -X utf8 codex/check_playable.py` (**0 errors**),
   `py -X utf8 codex/audit.py --check` (**ratchet: violations may never rise**), and
-  `py -X utf8 codex/check_codex.py` (**0 unknown tags** — every `codex_unit`
-  must exist in the vendored rue-codex snapshot `codex/codex-units.json`;
-  never invent unit ids — missing unit means add it upstream in rue-codex
-  first, then refresh the snapshot).
-- **Pack shape is fixed**: content lives in `blocks[].items[]` with
-  `intro.cards` and `check.sequence`; `js/pack-adapt.js` translates that into
-  the practice ladder. Never author `pack.match/quiz/type_items/use_items`
-  directly, and if you change the pack shape you must change BOTH
-  `pack-adapt.js` and `codex/check_playable.py` or the ladder silently empties.
-- **Pool before authoring** — `py -X utf8 codex/make_pool.py POOL.md --before
-  <node>`; only pool-legal + GLUE + same-step partner material in new units.
-- **Never invent node ids.** Author packs for registered sketch nodes
-  (`data/nodes-grammar.json` / `data/nodes-vocab.json`), flip status there,
-  rebuild via `py scripts/sync_from_stable.py --rebuild-tree`.
-- **Digest per run** — append to `codex/BUILD-DIGEST.md`: what/why/forks.
-  Design forks: conservative path + logged note, never a silent guess.
-- **Verify regardless of self-report** — ~1/3 of fluent "all clean" RUPL agent
-  reports hid a real bug. Re-check mechanically every time.
-- **Engine/shell code**: cloud lane touches `js/`/`css/`/`index.html` ONLY for
-  items listed in `codex/REPAIR-QUEUE.md` — content is its lane, the shell is
-  James's + local Claude's.
-- **Local multi-agent nights**: one file per agent; orchestrator wires, audits,
-  commits centrally (every RUPL stall was a two-file agent task).
-- **Notify (local sessions)**: PushNotification on batch land + digest ready —
-  one line, counts not adjectives. Cloud runs surface in the claude.ai app.
+  `py -X utf8 codex/check_codex.py` (**0 unknown tags**).
+- **Pack shape is fixed**: content in `blocks[].items[]`; adapter builds the
+  ladder. Never author `pack.match/quiz/type_items/use_items` directly.
+- **Pool before authoring** — `py -X utf8 codex/make_pool.py … --before <node>`.
+- **Never invent node ids.** Register in `data/nodes-*.json`, rebuild tree.
+- **Digest per run** — append to `codex/BUILD-DIGEST.md`.
+- **Engine/shell**: auto touches `js/`/`css/`/`index.html` **only** if
+  REPAIR-QUEUE marks an item engine-ok; default ban.
 - All output = **drafts that pass the machine gate**. James still smokes —
   automation never promotes itself to students.
 
@@ -259,7 +244,8 @@ Shared rules, from the RUPL build (they all earned their place):
 
 - Write to `rue2-exp-progress` or rue3 progress keys
 - Edit `rue-auto` / `rue3-exp` (frozen) or retire the old student apps
-- Push `main` from a night run · force-push anything · deploy Pages without James
+- Push / force-push / deploy Pages from an auto run · promote without James
+- Start B1 vocab extension from auto (interactive only)
 
 ## Smoke
 

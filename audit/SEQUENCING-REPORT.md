@@ -4,7 +4,15 @@
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
-- **a1_articles** (A1 grammar): hour
+## Permanently accepted (do not “fix”)
+
+| Unit | Token | Why | Locked |
+|------|-------|-----|--------|
+| **a1_articles** | `hour` | Silent-h → *an hour*; alternatives not pool-legal; taught later on `leaf_time_a1` | James 2026-08-09 · `codex/POLICY-LOCKS.md` **P-hour** |
+
+## Leads
+
+- **a1_articles** (A1 grammar): hour · **ACCEPTED — leave alone**
 - **b1_present_perfect_vs_past** (B1 grammar): client×2, until, noon
 - **b1_used_to** (B1 grammar): smoke×4, wi, fi
 - **b1_passives** (B1 grammar): stolen, asia, guard, noon, grown, brazil, cancelled, turned, deleted, package, delivered, automatically, invoice
