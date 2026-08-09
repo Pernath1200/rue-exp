@@ -261,6 +261,52 @@ All 72 live grammar units on path now produce a real ladder, gated by
   passive with no person at all (*Chléb se vyrábí ze zrna*). Rate over runs
   29-39: 6 in ~798 prompts (~1 %).
 
+  **Progress · cloud run 40 (2026-08-09, `vocab/b1-build`): applied to 3 new
+  B1 banks at authoring time** (`b1_character` 12, `b1_ceremony` 12,
+  `b1_countryside` 12 — 36 new prompts). **Zero instances of the target
+  defect**, by the run 32-39 authoring method: no 3sg prompt was written
+  without an explicit subject in the first place, and no 1sg past tense or
+  1sg predicate adjective appears anywhere in the 36. Person is fixed by an
+  explicit noun subject (*Její bratr*, *Moje babička*, *Tenhle řidič*,
+  *Hlasitá hudba*, *Kněz*, *Nevěsta*, *Můj strýc*, *Tihle ptáci*), by
+  1pl present morphology (*Obdivujeme*, *Chceme*), or the prompt is
+  existential (*V kostele je velký zvon*, *Kolem zahrady je bílý plot*,
+  *Na květině sedí včela*). Rate over runs 29-40: 6 in ~834 prompts (~1 %).
+
+  `b1_character` is a whole pack of character adjectives, so run 31's
+  predicate-adjective gender trap was the live constraint again rather than
+  the subject rule — every adjective prompt is routed through a 3rd-person or
+  inanimate subject (*Její rodiče jsou vzdělaní*, *Ten film je krutý*), and
+  **not one is 1sg**, because there is no gender-safe way to write one.
+  Same escape `a2_describing` used.
+
+  Two notes for whoever picks this up next, and the first is a genuinely new
+  class:
+
+  1. **Cyrillic look-alikes inside Czech text are invisible to every gate.**
+     A `note_cz` in `b1_countryside` was written with two Cyrillic characters
+     inside a Latin word (*netече* for *neteče*). It renders identically, it
+     is not a spelling the eye can catch, and `verify_pack` has no opinion
+     about it — it would have shipped a nonsense word to a student. Caught by
+     a scripted Unicode-category scan of the new files before commit.
+     **Cheap and worth running on every authored pack: any character whose
+     Unicode name contains CYRILLIC in a `cz`, `en`, `body` or `note` field
+     is a defect, always.** This is the same shape as the irregular-plural
+     finding below — a defect the eye reads straight past — but unlike that
+     one, no existing gate would ever have found it.
+
+  2. **A gloss collision does not always cost you the word.** Run 39 dropped
+     all four of its cross-pack collisions. This run had seven out of 36
+     candidates, and **three were fixed by moving the gloss instead of
+     dropping the word**: `keen` off *nadšený* (taken by `excited`) to
+     *dychtivý*, `celebration` off *oslava* (taken by `party`) to *slavnost*,
+     `custom` off *zvyk* (taken by `habit`) to *obyčej*. In all three the new
+     gloss is the sense the pack actually teaches, so the fix sharpened the
+     item rather than merely rescuing it. The other four (`sensible`,
+     `occasion`, `gather`, `outdoors`) had no distinct gloss carrying the
+     wanted sense and were dropped for `educated`, `bury`, `hunt` and `flow`.
+     **Rule: try the gloss before you drop the word.**
+
   Two notes for whoever picks this up next, both adjacent to this rule rather
   than part of it — they are the same *class* of defect (one Czech prompt,
   two defensible English answers) from different causes:

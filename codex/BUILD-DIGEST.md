@@ -6,6 +6,268 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · cloud run 40 — **`vocab/b1-build`** (RUE build, claude-opus-5)
+
+### Headline: **step 3 held at three packs — 36 words, 36 Use sentences, all pool-legal. The gap moved 402 → 366, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (36 deletions / 0 additions). Fourth consecutive run where the measurement tracks authored content 1:1. All four gates green at the start and the end; the audit held at 124.
+
+### Branch (step 0) — re-derived, not inherited
+
+The prompt allows skipping the count once switched; I ran it anyway rather
+than trust a digest. Live A2 vocab units with neither `sentences[]` nor
+`practice: "frames"` = **0** — 25 live A2 vocab nodes, every pack opened and
+checked from disk rather than inferred from the node list. The switch stands.
+**`build` was checked out only to run that count, then left alone** — not
+edited, not committed to, not pushed.
+
+**Steps 1 and 2 were also re-verified from first principles, not inherited**,
+because the prompt makes step 3 conditional on step 2 reaching completion and
+the digest records it as "complete, 90/93" — a number that reads like a
+shortfall. It is not. All 93 grammar packs were re-read: 90 carry
+`teaches_lemmas`, and the 3 that do not (`a1_word_order`, `b1_it_subject`,
+`c1_advanced_passive`) were re-checked item by item — **26 items with no
+`gap_answer` at all, and 48 + 48 items whose every `gap_answer` is multiword.
+Zero single-word forms exist to derive a field from in any of the three.**
+Step 2 is genuinely finished; step 3 is legitimately open.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `0b6c3ca` | **`b1_character` + `b1_ceremony` + `b1_countryside`** — 36 items, 36 sentences, nodes registered, tree rebuilt, `oxford-b1-gap.tsv` regenerated (366 rows) |
+| 2 | this entry | digest + REPAIR-QUEUE run-40 progress on the dropped-subject standing rule |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 168 packs · 0 errors · 12 warnings | **171 · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 124 · 19 units · baseline 124 | **124 · 19 units · baseline 124** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12
+warnings are the permanent `b2_clear_claims` judgment-label style — none come
+from this run's packs.
+
+**The audit held at 124 rather than tightening, and that was predictable
+before the run rather than a disappointment after it.** Run 39 established
+that closing the gap only moves the audit when the word is genuinely untaught
+*and* already used somewhere earlier on the path. None of this run's 36 words
+were in use anywhere they were not taught, so there was nothing to clear. The
+ratchet's requirement is that violations may never rise; holding is a pass.
+
+### Step 3 — the three packs
+
+| node | codex_unit | shape | intro |
+|---|---|---|---|
+| `leaf_character_b1` | `V_SEL-B1B2-01` | 2×6 items, 12 sentences | **`contrast` schematic** (abstract set) |
+| `leaf_ceremony_b1` | `V_THM-A1B1-10` | 2×6 items, 12 sentences | emoji tiles |
+| `leaf_countryside_b1` | `V_THM-A1B1-09` | 2×6 items, 12 sentences | emoji tiles |
+
+- **`b1_character`** — brave gentle cruel careless educated determined ·
+  talented keen passion ambition admire annoy. The split is *what a person
+  is* against *what that does to everyone around them*, and page 2's note is
+  the one piece of grammar the pack needs: `educated`, `determined` and
+  `talented` look like past-tense verbs and are adjectives here.
+- **`b1_ceremony`** — celebration ceremony bride marriage kiss bell · priest
+  pray spirit custom royal bury. Block one is the day itself, block two is
+  what stands behind it. Page 2's note is the `celebration` / `ceremony`
+  distinction, which Czech *oslava* / *obřad* makes cleanly and English
+  learners routinely collapse.
+- **`b1_countryside`** — tent cottage fence yard bee hunt · port sailor flow
+  explore expedition remote. Deliberately the weekend a Czech student
+  actually has; the course's existing nature vocabulary is all scenery, and
+  none of it is the place you stop at. Page 2's note is that `flow` is
+  intransitive.
+
+Themes were chosen for density against the gap list, not variety: all 36
+words are on it.
+
+> **FORK — `b1_character` takes a schematic, and it is the first pack where
+> *no* item would tile honestly. Conservative path, logged.** Runs 38 and 39
+> front-loaded the concrete emoji packs; run 39's `b1_politics` was the first
+> genuinely mixed one and took a schematic for the whole pack. This one is
+> not mixed at all — an emoji for `brave` would be a metaphor (a lion), not a
+> picture, and the same is true of all twelve. **`contrast` was chosen over
+> `branch` because the pack's own organising idea is a contrast** — some
+> qualities you admire, some annoy you — and all four of its labels are real
+> items of the pack (`admire`, `annoy`, and the two lists under them). This
+> is the cheapest reading of AGENTS.md's rule, not a new one.
+
+> **Minor judgment call, logged rather than hidden — two metonymic tiles in
+> `b1_ceremony`.** Ten of its twelve items tile honestly. `priest` takes ⛪
+> (the church he serves in) and `custom` takes 🎎, and both are the place or
+> the object standing in for the idea rather than a picture of it. AGENTS.md
+> allows 8-12 tiles, so tiling only the honest ten was available and would
+> have been more literal; I kept all twelve because every shipped vocab pack
+> so far tiles every item, and a pack whose tile count silently disagrees
+> with its item count is a worse surprise than a slightly indirect glyph. If
+> James would rather see partial tiling where a glyph would strain, that is a
+> one-line change here and a sentence in AGENTS.md.
+
+### Method — collisions checked before authoring, then re-verified from disk
+
+Pool regenerated with `--before <node_id>` **per pack** before authoring
+(2472 / 2484 / 2496 targets). Every sentence **and every item** run through
+`codex/_oracle.py` (its own selftest re-run first: **6/6**): **36/36
+pool-legal**, then re-checked from the files on disk *after* writing rather
+than trusting the pre-write pass.
+
+**One draft was caught by the oracle rather than by eye** — *We admire his
+**courage*** is illegal at that node; `courage` is taught nowhere in the
+course, which is not obvious when the sentence is about bravery and the pack
+teaches `brave`. It became *We admire our teacher very much.* Same class as
+run 39's *Africa* and run 38's *men*: **the gate sees a word the eye reads
+straight past.**
+
+**Run 39's cross-pack gloss check was re-run as a script and it earned its
+place again — seven collisions, out of 36 candidates.** That is a fifth of
+the wordlist, a higher rate than run 39's four, and every one of them would
+have shipped a Czech prompt with two defensible English answers:
+
+- **`sensible` → *rozumný*** collides with the taught `reasonable`
+  (`a2_describing`). Dropped for **`educated`** (*vzdělaný*).
+- **`occasion` → *příležitost*** collides with the taught `opportunity`
+  (`a2_ideas`, `b1_abstract`). Dropped for **`bury`** (*pohřbít*) — which
+  also gave `b1_ceremony` its funeral half, so the pack covers both the
+  ceremonies a family actually has.
+- **`gather` → *sbírat*** collides with the taught `collect` (`a2_verbs`).
+  Dropped for **`hunt`** (*lovit*).
+- **`outdoors` → *venku*** collides with the taught `outside` (`a2_adverbs`).
+  Dropped for **`flow`** (*téct*).
+- **`keen` → *nadšený*** collides with the taught `excited` (`a1_freetime`,
+  `a2_feelings`); kept the word, moved the gloss to **`dychtivý`**, which is
+  the eager-to-start sense the sentence uses anyway.
+- **`celebration` → *oslava*** collides with the taught `party`
+  (`a1_freetime`); kept the word, moved the gloss to **`slavnost`**.
+- **`custom` → *zvyk*** collides with the taught `habit` (`a2_routine`);
+  kept the word, moved the gloss to **`obyčej`**, which is the traditional-
+  practice sense rather than the personal-habit one.
+
+**Worth adopting as method: a collision does not always cost you the word.**
+Run 39 dropped all four of its collisions. Three of this run's seven were
+fixed by moving the *gloss* instead, and in each case the new gloss is the
+sense the pack actually teaches — so the fix improved the item rather than
+merely rescuing it. Drop the word only when no distinct gloss carries the
+sense you want.
+
+A separate mechanical pass over the three packs, independent of the script
+that wrote them and reading only from disk, confirmed: every `lemmas` entry
+names a real item in its own pack · every item is covered by at least one
+sentence (36/36) · every sentence carries `cz` and `accepts` · no repeated
+English sentence within or across the three, or against the other 68 packs ·
+**no item duplicates a word any other vocab pack already teaches, and no
+gloss duplicates one either** · no self-glosses · intro tiles match the item
+lists exactly (12/12 in both emoji packs) · the schematic's labels are all
+real items · no `icon`/`swatch` on any drill item · and every page-2 frame is
+carried by a `use[]` id on an item in its own pack. **0 problems.**
+
+**One defect I introduced and caught before commit, worth naming because no
+gate would have caught it.** A Czech `note_cz` in `b1_countryside` came out
+with two Cyrillic characters inside a Latin word (*netече*) — visually
+identical to the Czech, invisible to `verify_pack`, and it would have shipped
+a nonsense word to a student. Found by a scripted Unicode-category scan of
+the three new files, which is now cheap enough to be worth running on every
+authored pack: **any character whose Unicode name says CYRILLIC in a Czech or
+English field is a defect, always.** The line was rewritten.
+
+### Czech I am flagging for the review routine
+
+All 36 prompts were checked for the dropped-subject rule and the gender traps
+before commit. These are the judgment calls a second opinion is worth most on:
+
+- `b1_character` — **`keen`: *dychtivý*, and the sentence is *Studenti jsou
+  dychtiví začít*.** The gloss moved off *nadšený* to clear a collision with
+  the taught `excited`, and *dychtivý* is a slightly bookish word where a
+  Czech would more likely say *nedočkaví*. I chose the gloss that keeps
+  `keen` distinct from `excited` over the one a native would reach for
+  first. The one I would most like a ruling on.
+- `b1_character` — **`ambition`: *ctižádost*, not *ambice*.** *Ambice* is the
+  everyday word but it is a bare cognate and would half-give the Match tile
+  away. *Ctižádost* is a real word and unambiguous, at the cost of sounding
+  more formal than the English.
+- `b1_character` — **`annoy`: *otravovat*** (imperfective, "keeps annoying")
+  rather than *naštvat* (perfective, "make angry once"). The sentence
+  *Hlasitá hudba otravuje moje sousedy* is a habitual state, which is what
+  `annoy` most often means in English, so aspect and sense agree.
+- `b1_character` — `admire`: *Velmi obdivujeme naši učitelku*. 1pl present
+  morphology fixes the person and no gender leaks; *učitelku* is feminine
+  accusative, which is a choice the English does not force — a male teacher
+  would be *učitele*. Flagged as a mild over-specification rather than an
+  error.
+- `b1_ceremony` — **`custom`: *obyčej*.** Moved off *zvyk* to clear the
+  collision with the taught `habit`. *Obyčej* is right for a traditional
+  communal practice (*lidový obyčej*) and wrong for a personal habit, which
+  is exactly the split English makes between `custom` and `habit` — so the
+  collision fix also sharpened the item. Worth a check that it does not read
+  as archaic to a modern ear.
+- `b1_ceremony` — **`spirit`: *duch*.** The pack deliberately does **not**
+  teach `ghost`, which glosses to the same *duch*; that word stays on the
+  gap list rather than ship a collision. Flagging so nobody adds `ghost`
+  later without noticing.
+- `b1_ceremony` — **`celebration`: *slavnost*** rather than *oslava* (taken
+  by the taught `party`). Defensible and idiomatic for a village or public
+  celebration, which is the sentence's reading (*Celá vesnice přišla na
+  slavnost*), but *slavnost* is more public and formal than English
+  `celebration`, which also covers a small private one.
+- `b1_ceremony` — `bury`: *Rodina ho chce pohřbít blízko kostela*. Perfective
+  because the act is completed and singular; the object pronoun *ho* keeps
+  the deceased's gender on the pronoun rather than on any verb form.
+- `b1_countryside` — **`fence`: *plot*.** Correct and everyday. Flagging only
+  because `plot` is itself still on the English gap list in its story sense
+  (*zápletka*) — a future pack teaching it will not collide on the gloss, but
+  the coincidence is confusing to read in a wordlist and someone will
+  eventually query it.
+- `b1_countryside` — **`yard`: *dvůr***, and the sentence is *Děti si hrají
+  na dvoře*. British `yard` is a paved area behind a house, which *dvůr*
+  matches well; American `yard` is a garden, which it does not. The pack is
+  otherwise British-leaning (`neighbours` in `b1_character` carries a US
+  spelling in `accepts`), so the British sense was chosen.
+- `b1_countryside` — `remote`: *odlehlý* for a place. English `remote` also
+  covers the TV remote and remote work; neither sense is taught here and the
+  sentence (*Ta vesnice je velmi odlehlá*) forces the place reading.
+- `b1_countryside` — `bee`: *Na květině sedí včela*. Verb-initial with the
+  subject last is the natural Czech presentative order and the subject is
+  explicit, so the dropped-subject rule is satisfied even though the word
+  order looks inverted next to the English.
+
+### Still open — unchanged, and both get more expensive every run
+
+1. **`codex_unit` reuse (run 37's fork).** **Eleven** B1 packs now depend on
+   this reading. This run put `b1_character` on `V_SEL-B1B2-01` rather than
+   piling a third pack onto `V_THM-A1B1-10`, which is a better thematic fit
+   *and* spreads the reuse slightly — but it does not change the underlying
+   problem. The B1B2 band still has exactly **one** unused canonical unit
+   (`V_WFM-B1B2-01`, word-formation, which a thematic pack should not
+   consume); everything else unused is B2C1, out of scope. **Retagging eleven
+   packs is still cheap; retagging thirty will not be.**
+2. **Pack-count scope.** `rue_oxford.py` now prints **~31 packs of 12** to
+   close the gap fully (34 last run, 37 the run before; the number falls as
+   packs land). The contract says ~26. Run 36 offered build-all /
+   keep-26-and-defer / re-cut-the-target and recommended re-cut then build;
+   **still unanswered after five runs.** Proceeding at 3 packs per run on the
+   densest themes first is right under all three options, so nothing is
+   wasted — only the ordering of the long tail depends on it.
+3. **Re-lexify tie-break** (run 36). Untouched, and correctly so: those
+   repairs live on `build`, which this branch must not touch.
+4. **`teaches_lemmas` judgement pass** (run 36/37). The mechanical 90/93 is
+   done and re-verified this run as genuinely complete; whether James wants
+   non-gapped taught forms added on top is open and blocks nothing.
+
+### Nothing to smoke beyond the new units
+
+Three new live vocab leaves at the end of the B1 path; `smoke.py` passes.
+**`b1_character`'s intro page 1 is the one worth a glance** — it is the first
+pack to render the `contrast` schematic from a gap pack, and its two note
+strings under the boxes are longer than the false-friend pair the schematic
+was originally written for (`home` vs `house`), so it is worth checking the
+labels do not overflow at 11px. No engine, shell, or grammar file was touched
+this run — the diff is three new pack files plus the node registry, the
+rebuilt tree, the regenerated gap file and the audit report.
+
+---
+
 ## 2026-08-09 · cloud run 39 — **`vocab/b1-build`** (RUE build, claude-opus-5)
 
 ### Headline: **step 3 held at three packs — 36 words, 36 Use sentences, all pool-legal. The gap moved 438 → 402, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (36 deletions / 0 additions). Third consecutive run where the measurement tracks authored content 1:1. All four gates green at the start and the end, and **the audit tightened again, 125 → 124.**
