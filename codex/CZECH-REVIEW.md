@@ -526,3 +526,58 @@ throughout: *chytit ranní vlak*, *šetříme peníze na dovolenou*, *zvládá
 tuhle práci*, the borrow/lend pair *půjčit si / půjčovat* correctly
 distinguished. No dictionary-nominative, possessive-agreement, or
 word-order calques found in either bank.
+
+## 2026-08-09 — second-opinion pass (cloud, ~02:45 UTC) — on `vocab/b1-build`
+
+First review on the new branch. Scope: all 14 B1 gap packs shipped since
+the run-35 review (runs 36–41: b1_nature, b1_cause_effect, b1_materials,
+b1_body_health, b1_law_order, b1_cooking, b1_media, b1_politics,
+b1_character, b1_ceremony, b1_countryside, b1_arts, b1_disaster,
+b1_trade — ~168 items, 168 bank sentences, intros included), plus the
+gloss-collision fix commit (almost all `accepts` additions — English,
+out of scope — and one correct cz tense change, *Dávám semínka do půdy*).
+
+**Fixed: 0 · Flagged: 5 · everything else ok.**
+
+For James:
+- `b1_materials` bank *wool*: cz "Moje babička **plete** ponožky z vlny."
+  but accepts only "…**makes** socks from wool" — a student translating
+  *plete* will produce "knits", which grades wrong. The build routine
+  chose *plete* deliberately (defuses the wool/wave collision), so the
+  cz should stay; the fix is adding the knits form to `accepts`
+  (English, so yours). Same shape as the earlier suit/cream flags.
+- `b1_ceremony` bank *priest*: cz "Kněz mluví **s** rodinou." but accepts
+  only "The priest speaks **to** the family" — *mluvit s* is the only
+  natural Czech, and it back-translates "speaks with", which grades
+  wrong. Suggest adding the with-form to `accepts`. Nothing changed.
+- `b1_character` bank *admire*: "Velmi obdivujeme **naši** učitelku." —
+  possessor = subject, so prescriptive Czech wants **svoji/svou**
+  učitelku; this same batch does it right elsewhere ("Rodiče **své**
+  děti někdy trestají"). Non-reflexive is widely tolerated in 1st
+  person, so not unambiguously wrong — flag, not fix.
+- `b1_ceremony` intro `note_cz` glosses "celebration = **oslava**
+  obecně", but the pack's own tile and item say celebration =
+  **slavnost** — two different anchor words for the same en word on one
+  page. Suggest aligning (gloss → "slavnost, oslava", or note →
+  slavnost). Both translations are correct, so left unchanged.
+- `b1_cooking` bank *grain*: "Chléb se vyrábí **ze zrna**." — for grain
+  as a crop/mass a Czech says **z obilí**; *zrno* is the single seed (or
+  milling collective), so the sentence reads slightly off. Suggest
+  "Chléb se vyrábí z obilí." with the gloss grown to "zrno, obilí".
+  Semantic collocation, not a grammar error, so left unchanged.
+
+Clean, no log needed: the other ~160 sentences and all intros. The
+dropped-subject rule held everywhere — every subjectless prompt fixes
+its person by morphology (*Našla na pláži krásnou mušli* = 3sg fem past,
+*můžeme usoudit, že měl pravdu*, imperatives *Dej / Nalij / Přečti si /
+Zhluboka se nadechněte*). Oblique cases correct throughout — instrumentals
+*trpí touto nemocí / zásobuje školy chlebem / byla naším nepřítelem /
+pije jazykem*, genitives *plná mléka / hodně ctižádosti / oběť té nehody /
+plný hrůzy / sortiment bot / z těchto faktů*, datives *soudce položil
+tomu muži otázku / doručuje jídlo starým lidem / dává mojí babičce
+polibek*, locatives *o duchu lesa / v přístavu / na hrudi*; idiomatic
+*Ten muž musí v pondělí k soudu*, *došlo k velkému výbuchu*, *Bolí ho na
+hrudi*, *hraje na buben*, *Volby jsou příští měsíc* (plurale tantum
+handled right). Intro prose is natural on all 14 (the *Flow nemá předmět
+— řeka teče, ale nelze „téct řeku"* note is a nice touch, and the
+abstract-pack body_cz lines are real Czech, not calques).
