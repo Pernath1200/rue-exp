@@ -1,0 +1,116 @@
+{
+  "id": "b1_cooking",
+  "title": "In the kitchen: what you cook in, and what you cook with",
+  "level": "B1",
+  "tree_node": "leaf_cooking_b1",
+  "codex_unit": "V_THM-A1B1-05",
+  "note": "B1 Oxford-gap leaf · vessels and portions, then the forms food comes in and what you do to them · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "The kitchen words a recipe assumes you know",
+      "title_cz": "Slova z kuchyně, která recept předpokládá",
+      "pictures": [
+        { "icon": "🍲", "en": "pot", "cz": "hrnec" },
+        { "icon": "🍳", "en": "pan", "cz": "pánev" },
+        { "icon": "🫙", "en": "container", "cz": "nádoba" },
+        { "icon": "🧂", "en": "ingredient", "cz": "přísada" },
+        { "icon": "🍞", "en": "slice", "cz": "plátek" },
+        { "icon": "🎂", "en": "layer", "cz": "vrstva" },
+        { "icon": "🧁", "en": "powder", "cz": "prášek" },
+        { "icon": "🌾", "en": "grain", "cz": "zrno" },
+        { "icon": "💧", "en": "liquid", "cz": "tekutina" },
+        { "icon": "🫗", "en": "pour", "cz": "nalít" },
+        { "icon": "🥄", "en": "mix", "cz": "smíchat" },
+        { "icon": "🧊", "en": "freeze", "cz": "zmrazit" }
+      ],
+      "body": "A recipe rarely names the food you already know — it names the container, the portion and the action, and assumes the rest. Half of these words are things you hold; the other half describe what the food is doing when you hold it."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I need a …",
+        "It is …",
+        "We need to …",
+        "I want to …"
+      ],
+      "note": "powder, grain and liquid are uncountable — a spoon of powder, not a powder. pot, pan, container, slice and layer are countable and take a or the.",
+      "note_cz": "powder, grain, liquid = nepočitatelná, bez členu a. pot, pan, container, slice, layer = počitatelná."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "Pots, pans and portions",
+      "items": [
+        { "en": "pot", "cz": "hrnec", "use": ["this_is_a", "i_need_a"] },
+        { "en": "pan", "cz": "pánev", "use": ["this_is_a", "i_need_a"] },
+        { "en": "container", "cz": "nádoba", "use": ["this_is_a", "i_need_a"] },
+        { "en": "ingredient", "cz": "přísada", "use": ["this_is_a", "i_need_a"] },
+        { "en": "slice", "cz": "plátek", "use": ["this_is_a", "i_have_a"] },
+        { "en": "layer", "cz": "vrstva", "use": ["this_is_a", "it_is"] }
+      ]
+    },
+    {
+      "title": "Powder, grain, liquid — and what you do to them",
+      "items": [
+        { "en": "powder", "cz": "prášek", "use": ["this_is_a", "it_is"] },
+        { "en": "grain", "cz": "zrno", "use": ["this_is_a", "it_is"] },
+        { "en": "liquid", "cz": "tekutina", "use": ["this_is_a", "it_is"] },
+        { "en": "pour", "cz": "nalít, lít", "use": ["we_need_to", "i_want_to"] },
+        { "en": "mix", "cz": "smíchat, míchat", "use": ["we_need_to", "i_want_to"] },
+        { "en": "freeze", "cz": "zmrazit", "use": ["we_need_to", "i_want_to"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "There is hot water in the pot.",
+      "cz": "V hrnci je horká voda.",
+      "lemmas": ["pot"],
+      "accepts": ["There is hot water in the pot"] },
+    { "en": "Put the fish in the pan.",
+      "cz": "Dej tu rybu na pánev.",
+      "lemmas": ["pan"],
+      "accepts": ["Put the fish in the pan"] },
+    { "en": "This container is full of milk.",
+      "cz": "Tahle nádoba je plná mléka.",
+      "lemmas": ["container"],
+      "accepts": ["This container is full of milk"] },
+    { "en": "The cake has only four ingredients.",
+      "cz": "Ten dort má jen čtyři přísady.",
+      "lemmas": ["ingredient"],
+      "accepts": ["The cake has only four ingredients"] },
+    { "en": "My daughter wants a slice of bread.",
+      "cz": "Moje dcera chce plátek chleba.",
+      "lemmas": ["slice"],
+      "accepts": ["My daughter wants a slice of bread"] },
+    { "en": "This cake has three layers.",
+      "cz": "Tenhle dort má tři vrstvy.",
+      "lemmas": ["layer"],
+      "accepts": ["This cake has three layers"] },
+    { "en": "Put the white powder in the bowl.",
+      "cz": "Dej ten bílý prášek do misky.",
+      "lemmas": ["powder"],
+      "accepts": ["Put the white powder in the bowl"] },
+    { "en": "Bread is made from grain.",
+      "cz": "Chléb se vyrábí ze zrna.",
+      "lemmas": ["grain"],
+      "accepts": ["Bread is made from grain"] },
+    { "en": "Water is a liquid.",
+      "cz": "Voda je tekutina.",
+      "lemmas": ["liquid"],
+      "accepts": ["Water is a liquid"] },
+    { "en": "Please pour the milk into the glass.",
+      "cz": "Nalij prosím mléko do sklenice.",
+      "lemmas": ["pour"],
+      "accepts": ["Please pour the milk into the glass", "Pour the milk into the glass please"] },
+    { "en": "We must mix the eggs and the sugar.",
+      "cz": "Musíme smíchat vejce a cukr.",
+      "lemmas": ["mix"],
+      "accepts": ["We must mix the eggs and the sugar", "We have to mix the eggs and the sugar"] },
+    { "en": "You can freeze this soup.",
+      "cz": "Tuhle polévku můžeš zmrazit.",
+      "lemmas": ["freeze"],
+      "accepts": ["You can freeze this soup"] }
+  ]
+}

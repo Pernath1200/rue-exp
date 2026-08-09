@@ -1,0 +1,116 @@
+{
+  "id": "b1_media",
+  "title": "News and screen: who makes the story",
+  "level": "B1",
+  "tree_node": "leaf_media_b1",
+  "codex_unit": "V_THM-A1B1-09",
+  "note": "B1 Oxford-gap leaf · the people and parts of a story in print, then the same on screen · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "The same story, printed and filmed",
+      "title_cz": "Tentýž příběh — v novinách a na obrazovce",
+      "pictures": [
+        { "icon": "📰", "en": "headline", "cz": "titulek" },
+        { "icon": "✏️", "en": "editor", "cz": "redaktor" },
+        { "icon": "🗞", "en": "press", "cz": "tisk" },
+        { "icon": "🤓", "en": "reader", "cz": "čtenář" },
+        { "icon": "📷", "en": "photographer", "cz": "fotograf" },
+        { "icon": "❝", "en": "quotation", "cz": "citát" },
+        { "icon": "📺", "en": "episode", "cz": "epizoda" },
+        { "icon": "🎥", "en": "documentary", "cz": "dokumentární film" },
+        { "icon": "📡", "en": "channel", "cz": "kanál" },
+        { "icon": "👀", "en": "viewer", "cz": "divák" },
+        { "icon": "🎤", "en": "host", "cz": "moderátor" },
+        { "icon": "📜", "en": "script", "cz": "scénář" }
+      ],
+      "body": "Every story reaches you twice, and the two halves of this pack are the two routes. On paper there is a headline, an editor and a reader; on screen there is an episode, a host and a viewer. The words differ, the jobs are the same."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "He is a …",
+        "It is …",
+        "I have a …",
+        "Let's talk about …"
+      ],
+      "note": "the press means newspapers and the journalists who write them, not the verb to press — it is always the with no plural.",
+      "note_cz": "the press = tisk (noviny a novináři), ne sloveso tisknout; vždy s the a bez množného čísla."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "In print",
+      "items": [
+        { "en": "headline", "cz": "titulek", "use": ["this_is_a", "it_is"] },
+        { "en": "editor", "cz": "redaktor", "use": ["this_is_a", "he_is_a"] },
+        { "en": "press", "cz": "tisk", "use": ["it_is", "lets_talk_about"] },
+        { "en": "reader", "cz": "čtenář", "use": ["this_is_a", "he_is_a"] },
+        { "en": "photographer", "cz": "fotograf", "use": ["this_is_a", "he_is_a"] },
+        { "en": "quotation", "cz": "citát", "use": ["this_is_a", "i_have_a"] }
+      ]
+    },
+    {
+      "title": "On screen",
+      "items": [
+        { "en": "episode", "cz": "epizoda", "use": ["this_is_a", "it_is"] },
+        { "en": "documentary", "cz": "dokumentární film", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "channel", "cz": "kanál", "use": ["this_is_a", "where_is_the"] },
+        { "en": "viewer", "cz": "divák", "use": ["this_is_a", "he_is_a"] },
+        { "en": "host", "cz": "moderátor", "use": ["this_is_a", "he_is_a"] },
+        { "en": "script", "cz": "scénář", "use": ["this_is_a", "i_have_a"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "This headline is too long.",
+      "cz": "Tenhle titulek je příliš dlouhý.",
+      "lemmas": ["headline"],
+      "accepts": ["This headline is too long"] },
+    { "en": "The editor read my story yesterday.",
+      "cz": "Redaktor si můj příběh přečetl včera.",
+      "lemmas": ["editor"],
+      "accepts": ["The editor read my story yesterday"] },
+    { "en": "The press wrote about the accident.",
+      "cz": "Tisk psal o té nehodě.",
+      "lemmas": ["press"],
+      "accepts": ["The press wrote about the accident"] },
+    { "en": "This book has many young readers.",
+      "cz": "Tahle kniha má hodně mladých čtenářů.",
+      "lemmas": ["reader"],
+      "accepts": ["This book has many young readers"] },
+    { "en": "A photographer works for this newspaper.",
+      "cz": "Pro tyhle noviny pracuje fotograf.",
+      "lemmas": ["photographer"],
+      "accepts": ["A photographer works for this newspaper"] },
+    { "en": "My teacher used a quotation from a famous book.",
+      "cz": "Můj učitel použil citát ze slavné knihy.",
+      "lemmas": ["quotation"],
+      "accepts": ["My teacher used a quotation from a famous book"] },
+    { "en": "The first episode was very good.",
+      "cz": "První epizoda byla velmi dobrá.",
+      "lemmas": ["episode"],
+      "accepts": ["The first episode was very good"] },
+    { "en": "This documentary is about wild animals.",
+      "cz": "Tenhle dokumentární film je o divokých zvířatech.",
+      "lemmas": ["documentary"],
+      "accepts": ["This documentary is about wild animals"] },
+    { "en": "There is a film on the other channel.",
+      "cz": "Na tom druhém kanálu je film.",
+      "lemmas": ["channel"],
+      "accepts": ["There is a film on the other channel"] },
+    { "en": "Viewers can ask questions after the film.",
+      "cz": "Diváci se mohou po filmu ptát.",
+      "lemmas": ["viewer"],
+      "accepts": ["Viewers can ask questions after the film"] },
+    { "en": "The host asked me a difficult question.",
+      "cz": "Moderátor mi položil těžkou otázku.",
+      "lemmas": ["host"],
+      "accepts": ["The host asked me a difficult question"] },
+    { "en": "The script of this film is not finished.",
+      "cz": "Scénář tohohle filmu není hotový.",
+      "lemmas": ["script"],
+      "accepts": ["The script of this film is not finished"] }
+  ]
+}
