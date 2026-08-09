@@ -676,3 +676,172 @@ Dropped-subject rule holds everywhere else (*Udělala chybu*, *Má problém
 s wifi* fixed by en subject via 3sg + context; 1sg/1pl forms unambiguous).
 
 Still never reviewed after this pass: b1_core_frames.
+
+## FINAL PASS — 2026-08-09
+
+`codex/HANDOFF.md` exists; this is the review routine's one final consolidation
+pass. From the next run onward this routine stops for good.
+
+### Reviewed this pass
+
+- **`a5a8152` (build's last content commit):** the two gender-leak recasts in
+  a1_freetime (*Můj otec má rád fotbal.*) and a1_health (*Můj syn je nemocný.*)
+  — both correct, **ok**. Nothing else with Czech changed between backlog #5
+  and HANDOFF.md.
+- **`b1_core_frames`** (24 frame items, the last never-reviewed pack — reviewed
+  now so the never-reviewed list closes empty). **Fixed: 3 · Flagged: 1.**
+
+Fixes (all one defect — the dropped-subject rule, same shape as the
+b1_collocations *Dala mi* fix): en subject is *She*, but the cz dropped the
+pronoun on a 3sg present verb, which fixes neither person nor gender, so a
+student answering "He …" grades wrong. Explicit *Ona* restores it; en/accepts
+untouched:
+- *She suggests a short break.*: *Navrhuje…* → **Ona navrhuje** krátkou pauzu.
+- *She achieves good results.*: *Dosahuje…* → **Ona dosahuje** dobrých výsledků.
+- *Má spoustu zkušeností.* → **Ona má** spoustu zkušeností.
+
+New flag (also gathered below): *We have made good progress.* = "Udělali jsme
+dobrý pokrok." — 1pl past leaks group gender (*Udělali* vs *Udělaly*); the
+pack's own convention elsewhere is the slash (*rozhodl/a*, *nezkusil/a*), so
+"Udělali/y jsme" would match it. Grammatical mixed-group default, so flagged
+not fixed. (Singular *dobrý pokrok* is fine here — qualified singular is the
+natural case, per the backlog-#5 note.)
+
+Clean in b1_core_frames, no log needed: correct cases throughout (instrumental
+*s plánem / s tím nápadem*, genitive *dobrých výsledků*, dative *Čelíme
+velkému problému*, reflexive possessives *svou zkušenost / svou angličtinu*,
+neuter *jednoduché řešení*); 3pl *Právě přijeli* is safe (en *they* doesn't
+inflect, mixed-group default standard); the 1sg/2sg past items all carry the
+/a slash correctly.
+
+### Every still-open "For James" item, gathered (28)
+
+Grouped by what a ruling would touch. Each item is still in its original entry
+with full reasoning; date in parentheses.
+
+**cz↔accepts pairing drift — cz is fine, but a student translating it produces
+English that `accepts` grades wrong. Fix is English-side (yours) or cz-side;
+either works, they just have to match:**
+1. a1_clothes bank *suit*: cz *do práce* (= to work) vs accepts only "at work"
+   (08-07 ~16:00).
+2. a2_food bank *cream*: cz has no possessive vs accepts only "in **your**
+   coffee" (08-08 ~16:00).
+3. a2_adverbs bank *immediately*: cz has no *prosím* vs accepts only "**Please**
+   come immediately" (08-08 ~21:30).
+4. a2_core_frames_chunks *No problem.*: alternate gloss *Není zač* maps to
+   "You're welcome", not in accepts (08-08 backlog #3).
+
+**Marked-member or wrong-sense glosses — grammatical, but the gloss/sentence
+picks the wrong member of a pair. Tile, word entry and any bank sentence
+travel together:**
+5. a2_media *smell* = "zápach / čichat" — bad-smell + sniff; suggest
+   "pach / cítit" (08-08 ~13:00), and its bank sentence *Tenhle zápach…*
+   travels with it (08-08 ~17:00).
+6. a2_health *toothache* = "bolest zubu" — set term is *bolest zubů* (08-07
+   ~18:45), and the a2_health bank sentence travels with it (08-08 ~20:00).
+7. a2_school bank *teaching*: "Výuka je dobré povolání." — *výuka* isn't an
+   occupation; *Učit / Učitelství je dobré povolání* (08-08 ~18:30).
+8. a2_ideas bank *structure*: "Struktura domu je silná." — collocation is
+   **pevná** (and *konstrukce* the natural noun) (08-08 ~21:30).
+9. a2_ideas bank *variety*: "Obchod má velkou rozmanitost." — calque; a shop
+   has *velký výběr* (08-08 ~21:30).
+10. a2_misc bank *unit*: "Každá jednotka má deset slov." — textbook unit is
+    *lekce*; *jednotka* is measurement/military (08-08 ~21:30).
+11. a2_verbs bank *receive*: "Každý student obdrží knihu." — *obdržet* is
+    officialese at A2; everyday is *dostane* (08-08 ~23:00).
+12. a2_describing bank *messy*: "Jeho pokoj je nepořádný." — for a room the
+    natural adjective is *neuklizený* (08-08 ~23:00).
+
+**Intro-tile choices:**
+13. a1_shopping: *open* = "otevřený / otevřít" vs *closed* = "zavřeno" — mixed
+    forms; suggest the shop-sign pair otevřeno/zavřeno (08-07).
+14. a1_food intro note: "Nepočitatelná **jídla** (bread, rice, water, coffee)"
+    — water/coffee aren't jídla; suggest "slova" or "jídla a pití" (08-07).
+15. a1_health: *sick* = "nemocný / špatně (mi je)" — clumsy inversion; suggest
+    "nemocný / je mi špatně" (08-07).
+16. a2_food: *vegetarian* tile adjective-only vs the pack's own noun-shaped
+    entry "vegetarián / vegetariánský" (08-07 ~14:00).
+17. a2_food: *chip* = "hranolka" — colloquial feminine; dictionary form
+    *hranolek*. Deliberate-choice check only (08-07 ~14:00).
+18. a2_home: *upstairs* = "nahoře / do patra" vs *downstairs* = "dole / dolů"
+    — asymmetric; learner-expected pair is "nahoře / nahoru" (08-07 ~19:00).
+19. a2_ideas intro: "Většina z nich drží na jednom řetězci" — hang-on-one-chain
+    calque; suggest "tvoří jeden řetězec" (08-07 ~20:00).
+
+**Register / idiom in items:**
+20. b1_work *self-employed* = "podnikající na sebe / OSVČ" — clunky participle;
+    suggest "samostatně výdělečně činný / OSVČ" (08-07 afternoon).
+21. a1_core_frames_verbs_action *take*: item cz still carries "/ Beru si
+    autobus." — the exact calque the pack's own new intro note forbids; suggest
+    dropping it (08-08 ~15:00).
+22. b1_collocations *make progress*: "Každý týden děláme pokrok." — ongoing
+    progress is plural, *děláme pokroky* (08-09 backlog #5).
+
+**Gender-symmetry in 1st-person prompts (all the same shape — nothing wrong,
+but the pack sets a both-genders precedent it then breaks):**
+23. a1_core_frames_adjectives: *healthy*/*ready* masculine-only vs *tired*
+    both-genders (08-08 ~15:00).
+24. a1_core_frames_can_like_want: "Chtěl bys kávu?" masculine-only vs the
+    pack's other slashed pairs (08-08 backlog).
+25. b1_core_frames: "Udělali jsme dobrý pokrok." — 1pl past without the pack's
+    own /y slash (this pass, above).
+
+**Word-order / carrier readings:**
+26. a1_core_frames_there_time *There is a table/café*: fronted "**Tam je**
+    stůl." alternate nudges the deictic pointing reading; plain existential is
+    "Je tam stůl." Both items travel together (08-08 backlog #2).
+
+**Answered-by-position but left for the record:**
+27. a2_school (08-08 ~18:30) and a2_health (08-08 ~20:00) sentence-travel notes
+    are folded into items 6-7 above rather than repeated.
+28. HANDOFF.md §Q3 quotes a2_describing *tidy*/*shut* and a2_verbs *fix* as
+    build-side judgment calls wanting a ruling — those are build's own flags,
+    listed there; this file's items are the 27 above plus №25.
+
+(Counting note: HANDOFF.md counted 27 open items across 19 sections; that
+matches items 1-26 with 5, 6 and 27 each covering two original log entries.
+№25 is new this pass, and №28 is a cross-reference, not a new item.)
+
+### Coverage — nothing silently skipped
+
+- **Never-reviewed list is now empty.** b1_core_frames was the last pack never
+  looked at; it was reviewed this pass. Every live **vocab** pack's Czech has
+  been reviewed at least once — leaf glosses, all 38 Use banks (946 sentences,
+  all read at authoring-review time), all shipped intros, and the frame/trunk
+  packs via the backlog passes.
+- Honest limit of "reviewed once": normal runs reviewed *changed* Czech, so a
+  pack touched many times was seen many times, but scaffold-era item cz in
+  packs that were never re-touched was only sampled via the backlog passes,
+  not exhaustively re-read line by line.
+- **Grammar packs (86 live) were never in scope** — by standing rule, not
+  omission. Their cz has had no second opinion at all.
+
+### Patterns across the whole build (for whatever comes next)
+
+- **Totals: 9 fixed, 28 flagged** across 22 review entries. Zero fixes were
+  ever reverted; no gate ever broke on a Czech-only edit.
+- **The dropped-subject defect died in the banks but survived in the frame
+  packs.** Build's run-36 sweep (0 in 946) covered `sentences[]` banks only;
+  both dropped-subject fixes this routine ever made (b1_collocations *Dala*,
+  b1_core_frames ×3) were in **frame/trunk items**, which predate the trap
+  rules and were never swept. If anything gets one more mechanical pass, make
+  it the frame packs' 3sg items.
+- **Most common flag class is pairing drift** (cz↔accepts, items 1-4): each
+  half correct alone, the pair grades wrong. It is invisible to every gate and
+  only a bilingual read catches it.
+- **Czech trusted least:** scaffold-era frame items (verbs_action, core
+  frames) and the giant-pack banks/intros of a2_ideas + a2_misc, where the
+  only real calques lived (structure/variety/unit/řetězec). **Trusted most:**
+  the run-32-35 banks written with the explicit-subject method — hundreds of
+  sentences, near-zero findings; the method in HANDOFF.md §5 demonstrably
+  works and should be the template for any future Czech authoring.
+- Fix count by type, whole build: 4 dropped-subject/relative-person (Dala,
+  Ona ×3 — counting the two impersonal-verb fixes *komu se točí hlava / komu
+  se stýská* here too makes 6), 1 lexical (*neznáte* for *nevíte*), 1 spelling
+  (*smartphone*), 1 punctuation (Oxford comma before *a*). No wrong case, no
+  wrong gender agreement, no word-order calque ever needed fixing — build's
+  Czech was grammatically sound; its residual risk was always **semantics and
+  register**, which is exactly what the 28 flags are.
+
+This routine now stops for good. Answers to the 28 items go in James's own
+channel (REPAIR-QUEUE or direct edits), not in this file.
