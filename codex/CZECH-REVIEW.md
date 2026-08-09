@@ -611,3 +611,28 @@ No English-shaped Czech in the pack.
 
 Still never reviewed after this pass: b1_abstract, b1_collocations,
 b1_core_frames.
+
+## 2026-08-09 — second-opinion pass (cloud, backlog #4)
+
+Nothing new since backlog #3 (the branch tip is that pass's own log commit),
+so per the backlog rule reviewed the next oldest never-reviewed pack:
+**b1_abstract** (24 gloss-level items, both blocks, all cz read; the pack
+has no sentences[] bank and no intro, so glosses are the whole surface).
+
+**Fixed: 0 · Flagged: 0 · everything ok.**
+
+Clean, no log needed: all 24 glosses are correct standard Czech. The dual
+glosses split real sense pairs, not padding — *zkušenost / zážitek*
+(experience as skill vs. as event), *argument / hádka* (reasoning vs.
+quarrel), *souhlas / dohoda* (consent vs. deal), *volba / výběr*, *účel /
+smysl*, *úsilí / snaha*, *vývoj / rozvoj* — and *knowledge* = plural
+"znalosti / vědomosti" matches the plural-knowledge call already
+established in the a2_school bank. No English-shaped Czech in the pack.
+
+One note outside my lane (English-side, changed nothing): *experience* and
+*opportunity* declare the carrier `the_is_long`, which would render "The
+opportunity is long" if a B1 Use stage is ever wired. Carriers are
+data-only today and BUILD-DIGEST already flags this class of landmine, so
+this is a pointer, not a new finding.
+
+Still never reviewed after this pass: b1_collocations, b1_core_frames.
