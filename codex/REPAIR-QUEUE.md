@@ -248,6 +248,43 @@ All 72 live grammar units on path now produce a real ladder, gated by
   (*Na podlaze je špendlík*, *Pod zemí je hodně uhlí*). Rate over runs
   29-38: 6 in ~762 prompts (~1 %).
 
+  **Progress · cloud run 39 (2026-08-09, `vocab/b1-build`): applied to 3 new
+  B1 banks at authoring time** (`b1_cooking` 12, `b1_media` 12, `b1_politics`
+  12 — 36 new prompts). **Zero instances of the target defect**, by the run
+  32-38 authoring method: no 3sg prompt was written without an explicit
+  subject in the first place, and no 1sg past tense or 1sg predicate
+  adjective appears anywhere in the 36. Person is fixed by an explicit noun
+  subject (*Moje dcera*, *Redaktor*, *Tisk*, *Moderátor*, *Studenti*, *Mladí
+  lidé*, *Tenhle politik*), by 1pl/2sg present morphology (*Musíme*,
+  *Nalij*, *můžeš*), by an existential (*V hrnci je horká voda*, *Na té
+  budově je vlajka*, *Na tom druhém kanálu je film*), or by a reflexive
+  passive with no person at all (*Chléb se vyrábí ze zrna*). Rate over runs
+  29-39: 6 in ~798 prompts (~1 %).
+
+  Two notes for whoever picks this up next, both adjacent to this rule rather
+  than part of it — they are the same *class* of defect (one Czech prompt,
+  two defensible English answers) from different causes:
+
+  1. **Czech-gloss collision is a cross-pack problem, not just a within-pack
+     one.** Run 34 found it inside `a2_adverbs`; it exists just as strongly
+     *between* packs, where nothing surfaces it and the student meets both
+     halves weeks apart. Four candidate words for this run were dropped
+     before authoring because their gloss is already the gloss of a word
+     taught elsewhere: `bean`/*fazole* against the taught `beans`,
+     `ad`/*reklama* against `advertisement`, `journal`/*časopis* against
+     `magazine`, and `documentary`/*dokument* against `document` (that last
+     one was kept, glossed “dokumentární film” to force the film reading).
+     **Method that worked and is cheap: check every candidate word's gloss
+     against every gloss in every existing vocab pack BEFORE writing the
+     pack**, not after. It changed a third of one pack's word list and cost
+     one script.
+
+  2. **A gloss that equals its own English word is a free Match answer.**
+     `studio` glosses to *studio*, so the tile pairs itself. Dropped for
+     `quotation`. The same trap waits in `album`, `sport`, `film`, `test`
+     and every other cognate the gap list still holds — worth a look at the
+     candidate list before authoring, alongside the collision check above.
+
   One note for whoever picks this up next, adjacent to this rule rather than
   part of it: **irregular English plurals are a gate defect the eye does not
   catch.** *The police arrested two young **men*** passed every Czech check

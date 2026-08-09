@@ -6,6 +6,243 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · cloud run 39 — **`vocab/b1-build`** (RUE build, claude-opus-5)
+
+### Headline: **step 3 held at three packs — 36 words, 36 Use sentences, all pool-legal. The gap moved 438 → 402, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (36 deletions / 0 additions). Third consecutive run where the measurement tracks authored content 1:1. All four gates green at the start and the end, and **the audit tightened again, 125 → 124.**
+
+### Branch (step 0) — re-derived, not inherited
+
+The prompt allows skipping the count once switched; I ran it anyway rather
+than trust a digest. Live A2 vocab units with neither `sentences[]` nor
+`practice: "frames"` = **0** — 25 live A2 vocab nodes, 22 leaf packs banked,
+3 `trunk_*` frames packs exempt, each pack opened and checked rather than
+inferred from the node list. The switch stands. **`build` was not touched at
+all this run** — checked out only to run the count, never edited, never
+committed to, never pushed.
+
+Steps 1 and 2 are settled (runs 36 and 37), so this run is entirely step 3.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `f485b27` | **`b1_cooking` + `b1_media` + `b1_politics`** — 36 items, 36 sentences, nodes registered, tree rebuilt, `oxford-b1-gap.tsv` regenerated (402 rows) |
+| 2 | this entry | digest + REPAIR-QUEUE run-39 progress on the dropped-subject standing rule |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 165 packs · 0 errors · 12 warnings | **168 · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 125 · 19 units · baseline 125 | **124 · 19 units · baseline tightened to 124** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run. The 12
+warnings are the permanent `b2_clear_claims` judgment-label style — none come
+from this run's packs.
+
+**The audit tightened, 125 → 124.** `b2_present_perfect_continuous` was using
+*episode* without it being taught anywhere; `b1_media` now teaches it earlier
+on the path and the violation cleared on its own. This is the same effect run
+37 saw with *dust* — **B1 gap-closing and sequencing repair are the same work
+seen from two sides**, now observed twice, which strengthens the case for the
+larger pack count in open question 2 below.
+
+### Step 3 — the three packs
+
+| node | codex_unit | shape | intro |
+|---|---|---|---|
+| `leaf_cooking_b1` | `V_THM-A1B1-05` | 2×6 items, 12 sentences | emoji tiles (concrete set) |
+| `leaf_media_b1` | `V_THM-A1B1-09` | 2×6 items, 12 sentences | emoji tiles (concrete set) |
+| `leaf_politics_b1` | `V_THM-A1B1-10` | 2×6 items, 12 sentences | **`cycle` schematic** (abstract set) |
+
+- **`b1_cooking`** — pot pan container ingredient slice layer · powder grain
+  liquid pour mix freeze. The split is *what you hold* against *what the food
+  is doing while you hold it*, and page 2's note is the countability line
+  that falls out of it (powder/grain/liquid uncountable, the rest countable),
+  which is the only grammar the pack needs.
+- **`b1_media`** — headline editor press reader photographer quotation ·
+  episode documentary channel viewer host script. Deliberately parallel: the
+  same story reaches a student twice, and each block is one route. Reader and
+  viewer, editor and host, quotation and script are the same jobs in the two
+  media, which is the mnemonic.
+- **`b1_politics`** — politician election vote campaign protest supporter ·
+  authority nation flag immigrant economy security. Block one is a cycle,
+  block two is the country the cycle belongs to.
+
+Themes were chosen for density against the gap list, not variety: all 36
+words are on it.
+
+> **FORK — `b1_politics` takes a schematic, not emoji tiles. Conservative
+> path, logged.** Run 38 front-loaded concrete emoji packs and named the
+> abstract remainder as the harder, later work. This pack is the first of
+> that remainder and it is genuinely mixed: `flag` and `politician` would
+> tile honestly, but `authority`, `nation`, `economy`, `security`,
+> `election` and `campaign` would not — half the tiles would be a stretched
+> glyph standing in for a process. AGENTS.md puts abstract sets on a
+> schematic rather than stretched emoji, so **the whole pack takes the
+> schematic** rather than mixing two treatments on one page. `cycle` was
+> chosen over `branch` because campaign → election → vote → campaign is a
+> real loop, and its three labels are three of the pack's own items rather
+> than invented headings. If James would rather see mixed packs tile the
+> concrete half, that is a one-line change here and a rule change in
+> AGENTS.md.
+
+### Method — collisions checked before authoring, then re-verified from disk
+
+Pool regenerated with `--before <node_id>` **per pack** before authoring
+(2436 / 2448 / 2460 targets). Every sentence **and every item** run through
+`codex/_oracle.py` (its own selftest re-run first: **6/6**): **36/36
+pool-legal**, then re-checked from the files on disk *after* writing rather
+than trusting the pre-write pass.
+
+**One draft was caught by the oracle rather than by eye** — *This documentary
+is about animals in **Africa*** is illegal at that node, because proper nouns
+are not taught vocabulary and no earlier unit teaches it. It became *wild
+animals*. Same class as run 38's `men`: **the gate sees a word the eye reads
+straight past.**
+
+**Four Czech-gloss collisions were caught before authoring and changed the
+word list, which is new and worth adopting as method.** Run 34 warned about
+within-pack gloss collision; the same defect exists *across* packs, where it
+is harder to see and just as bad — a Czech prompt whose gloss is already the
+gloss of a word taught elsewhere gives the student two defensible English
+answers. Checked all 36 candidates against every gloss in all 65 existing
+vocab packs *before* writing a line:
+
+- **`bean` → *fazole*** collides with the taught `beans` (`a2_food`). Dropped
+  for **`layer`**.
+- **`ad` → *reklama*** collides with the taught `advertisement`
+  (`a2_shopping`). Dropped for **`script`**.
+- **`journal` → *časopis*** collides with the taught `magazine` (`a2_media`
+  and `a1_tech`). Dropped for **`photographer`**.
+- **`studio`** would have glossed to itself — *studio* in both languages, so
+  the Match tile gives itself away. Dropped for **`quotation`**.
+- **`documentary` → *dokument*** collides with the taught `document`
+  (`a2_tech`), but the word is too central to drop; kept and glossed
+  **“dokumentární film”**, which forces the film reading.
+
+`policy` was also dropped, for a within-pack reason: *politika* sits one
+letter from `politician`'s *politik*, the same too-fine discrimination run 38
+flagged for *trestat/trest*. **`flag`** took its place, and it also gave the
+pack its one honest concrete item.
+
+A separate mechanical pass over the three packs, independent of the script
+that wrote them and reading only from disk, confirmed: every `lemmas` entry
+names a real item in its own pack · every item is covered by at least one
+sentence (36/36) · every sentence carries `cz` and `accepts` · no repeated
+English sentence within or across the three · no within-pack Czech gloss
+collision · **no item duplicates a word any of the other 65 vocab packs
+already teaches, and no gloss duplicates one either** · intro tiles match the
+item lists exactly · the schematic's labels are all real items · no
+`icon`/`swatch` on any drill item · and every `use[]` id and every page-2
+frame is carried by an item in its own pack. **0 problems.**
+
+### A measurement note worth keeping
+
+`container`, `photographer`, `reader`, `viewer` and `supporter` are all on the
+gap list yet were **already pool-legal before this run**, because `audit.py`'s
+`variants()` strips `-er` and their stems (`contain`, `photograph`, `read`,
+`view`, `support`) are taught. That is not a contradiction between the two
+tools — the audit asks *will a student parse this?*, the gap asks *does the
+course teach this word?* — but it means **closing the gap on `-er`/`-or`
+derivations never moves the audit**, so runs that pick such words should not
+expect the tightening this run happened to get from `episode`. Worth knowing
+before anyone reads a flat audit as a bad run.
+
+### Czech I am flagging for the review routine
+
+All 36 prompts were checked for the dropped-subject rule and the gender traps
+before commit. These are the judgment calls a second opinion is worth most on:
+
+- `b1_cooking` — **`grain`: *Chléb se vyrábí ze zrna*** for *Bread is made
+  from grain*. Reflexive passive, which is the natural Czech for a generic
+  statement and keeps the person out of it entirely. But *zrno* is a single
+  grain and the English here is the mass noun; *z obilí* would be the more
+  natural mass reading. I kept *zrna* so sentence and gloss stay in step —
+  the one I would most like a ruling on, and if the gloss should grow to
+  “zrno / obilí” the sentence should move with it.
+- `b1_cooking` — **`slice`: *plátek*.** The bread/ham slice. A slice of cake
+  is *kus* or *díl* in Czech, so a student who meets *a slice of cake* later
+  is not helped by this item. Chose the sense the sentence forces.
+- `b1_cooking` — `pour`: *Nalij prosím mléko do sklenice*. 2sg imperative,
+  person-safe, and *nalít* (perfective) rather than *lít* because the
+  sentence is one completed act. Both are in the gloss.
+- `b1_media` — **`press`: *tisk*.** The institution, not the verb. The item
+  glosses only *tisk*, and page 2's note names the trap explicitly, because
+  `press` as a verb is much more frequent input for a B1 student and the two
+  senses share no Czech word at all.
+- `b1_media` — **`host`: *moderátor*.** The broadcast sense. A party host is
+  *hostitel*, a completely different word, and the pack is about media, so
+  the sentence (*Moderátor mi položil těžkou otázku*) forces the broadcast
+  reading. Flagging because *host* in Czech is a false friend meaning
+  **guest** — the opposite role. Page 2 does not currently warn about this
+  and possibly should; I left it out rather than spend the note, which is
+  already used on `press`.
+- `b1_media` — **`episode`: *epizoda*, not *díl*.** *Díl* is the more
+  everyday Czech for a TV instalment, but it also means *part* generally,
+  which would collide with material the course teaches later. Chose the
+  transparent cognate and accept that it is slightly bookish.
+- `b1_media` — `editor`: *Redaktor si můj příběh přečetl včera*. Explicit
+  subject and perfective past on a 3rd-person noun, so no gender leak; the
+  reflexive *si* is what makes the reading “read it through” rather than
+  “read aloud”.
+- `b1_politics` — **`protest`: gloss is the verb *protestovat*** while
+  `vote`'s gloss is the verb *hlasovat*, and both English words are noun and
+  verb alike. Page 2's note names that. The risk is that a student meets *a
+  protest* / *the votes* as nouns and the item form does not help. The
+  alternative — glossing the nouns *protest* / *hlas* — makes `protest`
+  gloss to itself, which is the defect I dropped `studio` for. Verb glosses
+  chosen as the lesser problem.
+- `b1_politics` — **`authority`: *úřad*** (the office you must ask), not
+  *autorita* (personal standing) and not *pravomoc* (the power itself). The
+  sentence forces the office reading. English `authority` covers all three
+  and this pack teaches one.
+- `b1_politics` — `immigrant`: *V tomhle městě pracuje hodně přistěhovalců*.
+  Genitive plural after *hodně* with a singular verb — correct, and it also
+  keeps the sentence from having to choose a gender for the immigrants.
+- `b1_politics` — `supporter`: *příznivec* rather than *fanoušek*. The
+  sentence is about a team, where *fanoušek* is what a Czech would actually
+  say; *příznivec* is right for a political supporter, which is the sense
+  the pack is about. I chose the gloss for the pack's theme and the sentence
+  for the word's commonest carrier, and they pull slightly apart. Flagged.
+
+### Still open — unchanged, and both get more expensive every run
+
+1. **`codex_unit` reuse (run 37's fork).** Three more packs now carry reused
+   thematic ids (`V_THM-A1B1-05`, `-09`, `-10`). **Eight** B1 packs now depend
+   on this reading. The B1B2 band still has exactly **one** unused canonical
+   unit (`V_WFM-B1B2-01`); everything else unused is B2C1, which the contract
+   puts out of scope. Inventing an id is forbidden by the gate's own docstring
+   and the fix is upstream in rue-codex, which this lane cannot reach.
+   **Retagging eight packs is still cheap; retagging thirty will not be.**
+2. **Pack-count scope.** `rue_oxford.py` now prints **~34 packs of 12** to
+   close the gap fully (it said ~37 last run; the number falls as packs land).
+   The contract says ~26. Run 36 offered build-all / keep-26-and-defer /
+   re-cut-the-target and recommended re-cut then build; **still unanswered
+   after four runs.** Proceeding at 3 packs per run on the densest themes
+   first is right under all three options, so nothing is wasted — but the
+   ordering of the long tail still depends on it, and the audit tightening
+   twice now is evidence for the larger number.
+3. **Re-lexify tie-break** (run 36). Untouched, and correctly so: those
+   repairs live on `build`, which this branch must not touch.
+4. **`teaches_lemmas` judgement pass** (run 36/37). The mechanical 90/93 is
+   done; whether James wants non-gapped taught forms added on top is open and
+   blocks nothing.
+
+### Nothing to smoke beyond the new units
+
+Three new live vocab leaves at the end of the B1 path; `smoke.py` passes.
+`b1_politics` is the **first B1 gap pack to use a schematic since
+`b1_cause_effect`**, so its intro page 1 is the one worth a glance — it
+renders `cycle` with three labels. No engine, shell, or grammar file was
+touched this run — the diff is three new pack files plus the node registry,
+the rebuilt tree, the regenerated gap file and the audit report.
+
+---
+
 ## 2026-08-09 · cloud run 38 — **`vocab/b1-build`** (RUE build, claude-opus-5)
 
 ### Headline: **step 3 at full rate — three B1 gap packs, 36 words, 36 Use sentences, all pool-legal.** The gap moved **474 → 438, exactly 36**, and the 36 rows that left `oxford-b1-gap.tsv` are word-for-word the 36 items authored (diffed, 36 deletions / 0 additions). That is the **second consecutive run** where the measurement tracks authored content 1:1, so run 36's method is now confirmed twice rather than once. All four gates green at the start and at the end; the audit held at 125.
