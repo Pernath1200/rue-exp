@@ -10,6 +10,19 @@ from `data/tree.json` and the pack files during that run**, not copied from
 `codex/BUILD-DIGEST.md`. Where a digest figure and a fresh count disagreed, the
 fresh count is what is printed here and the disagreement is called out.
 
+> **Amended 2026-08-09 (local session, commit `7310998`) — read this first.**
+> Three of the open items below were closed after this document was written:
+> **Q3** (all 28 Czech review flags — applied), **Q5 item-level half** (the
+> 32-item gloss-collision grading defect — engine fix shipped), and the four
+> accepts-drift flags. Each section is marked inline. **`main` was also
+> fast-forwarded to `build`** on the same day, so the two are aligned and the
+> repo's default branch no longer shows the stale pre-P0 state; nothing is
+> deployed and students remain on the old rue2/rue3 sites. Still open and
+> unchanged: **Q1** (the Oxford coverage anomaly — the most important),
+> **Q2** (2 tokenizer defects), **Q4** (164 twice-taught words), **Q6**
+> (`a1_articles`/`hour`), the 13 vocab trunk intros, and B1's missing intros
+> and Use banks.
+
 ---
 
 ## 1 · What RUE is, and where it stands
@@ -217,21 +230,29 @@ stripped `PARENS_RE` but `exposed_text()` did not, so `watch (wrist)` exposed
 from 143 to 129. **They are done. The hyphen and non-ASCII cases are what
 remain.**
 
-### Q3 · Czech items flagged for James and never answered
+### Q3 · Czech items flagged for James — **CLOSED 2026-08-09** (`7310998`)
 
-`codex/CZECH-REVIEW.md` carries **27 flagged items across 19 "For James"
-sections** (counted this run) — defensible-but-unidiomatic Czech that the
-routine correctly declined to change on its own. They are all still open. That
-file is the review routine's and **must not be edited by anyone else**; read
-it, answer in your own channel.
+~~`codex/CZECH-REVIEW.md` carries 27 flagged items across 19 "For James"
+sections.~~ **All 28 (the 27 plus №25 from the FINAL PASS) were resolved in a
+local session on 2026-08-09.** James's ruling: apply the review routine's own
+suggested fix in every case, rather than adjudicating one at a time.
 
-The judgments most worth a ruling, per the last passes: `a2_describing`
-`tidy`/`messy` (*nepořádný* describes a person as readily as a room — a Czech
-would often say *V pokoji je nepořádek*; the adjective was kept because the
-item is an adjective — "the one I would most like overruled"), `a2_describing`
-`shut` (*zavřené*), `a2_verbs` `fix` (*spravit* vs `repair`'s *opravit*,
-resolved by context alone), and `a1_shopping`'s mixed *otevřený/zavřeno* intro
-tile pair.
+Applied: 4 accepts-drift fixes (cz correct but `accepts[]` only allowed a
+different English phrasing — a real "right answer marked wrong" class);
+8 wrong-sense glosses (*smell* zápach→pach, *toothache* zubu→zubů,
+*teaching* výuka→Učitelství, *structure*→Konstrukce/pevná, *variety*→výběr,
+*unit*→lekce, *receive* obdrží→dostane, *messy* nepořádný→neuklizený);
+7 intro-tile choices (incl. `a1_shopping`'s otevřeno/zavřeno pair);
+3 register/idiom; 3 gender-symmetry slashes; 2 word-order (there-is items
+now plain existential *Je tam*, not fronted deictic *Tam je*).
+
+**`codex/CZECH-REVIEW.md` was NOT edited** — it belongs to the review routine
+and the rule stands even though the routine has stopped. The flags remain in
+it as the historical record; this entry is the answer to them.
+
+Still genuinely open from that file: nothing. Build-side judgment calls
+quoted below (`a2_describing` *tidy*, *shut*; `a2_verbs` *fix*) were build's
+own flags rather than the review routine's, and were left as authored.
 
 ### Q4 · 164 English words are taught twice across live A1/A2 vocab units
 
@@ -256,10 +277,24 @@ accepting both changes what the sentence means, so `special` was dropped and
 `unique` covered instead. **The test is whether the two readings are the same
 sentence (rescuable) or different ones (not).**
 
-**This was only applied to sentence banks, not to the drill items themselves.**
-A separate run measured **32 vocab items** whose Czech prompt has two equally
-correct English answers at the item level. That is a live student-facing
-grading defect, deliberately not bulk-fixed, and still open.
+**The item-level half is now FIXED — 2026-08-09 (`7310998`), option (c).**
+A separate run measured **32 vocab items** (22 `a2_describing`, 6
+`a2_adverbs`, 4 `a2_ideas`) whose Czech prompt has two equally correct
+English answers at the item level — a live student-facing grading defect.
+James chose the engine fix, which is the only one of the three options that
+repairs all three modes, since Quiz and Match both grade by item identity
+rather than by string:
+
+- **Quiz** (`js/practice-vocab.js`): a sibling sharing this item's Czech
+  gloss is no longer eligible as a distractor. Verified on `a2_adverbs` —
+  *definitely* excluded from *rozhodně*'s options, distractor pool shrinks
+  only 65 → 64, so no collateral loss.
+- **Match**: the board dedupes by Czech gloss, so it can no longer show two
+  identical tiles. `a2_adverbs` 66 items → 63 tiles, 0 duplicates.
+- **Type** was already safe via `accepts[]`.
+
+Both use a shared `glossKey()` normaliser. The sentence-bank half described
+above was already handled during the build.
 
 ### Q6 · `a1_articles` / `hour` — the last A1/A2 sequencing violation
 
