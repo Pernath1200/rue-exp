@@ -6,6 +6,49 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · grok-auto · `auto/2026-08-09-2007`
+
+### Headline
+**1 A1 trunk intro** (`verbs_more3`) + **1 B1 sequencing re-lexify**
+(`b1_used_to`). Cherry-picked prior auto `8a41736` onto this branch from
+`build` (so progress stacks). Audit ratchet tightened **123 → 120**.
+
+### What landed
+
+| # | Unit | What |
+|---|------|------|
+| 1 | `a1_core_frames_verbs_more3` (`trunk_verbs_more3_a1`) | Picture-led intro (concrete trunk · 12 emoji tiles + frames page). Template: sibling `verbs_more2`. |
+| 2 | `b1_used_to` | Re-lexify pool-illegal leads: `smoke`→`cook` (×4 + intro card), `Wi‑Fi`→`internet` (clears `wi`/`fi` tokenizer split without editing the gate). |
+
+### REPAIR-QUEUE
+No unticked **one-time** content items (standing rules only). Skipped.
+
+### Gates
+
+| gate | result |
+|------|--------|
+| verify_pack | 160 packs · 0 errors · 12 warnings |
+| check_playable | 86 live grammar · 0 errors |
+| audit | **120** · 17 units · baseline **120** (was 123) |
+| check_codex | PASSED |
+| smoke | **SMOKE PASSED** |
+
+### Forks / notes
+- **P-hour** still lists `a1_articles`/`hour` — leave alone.
+- Branched from local `build` (`0c34a84`), then cherry-picked prior auto so
+  verbs_more2 intro + present-perfect re-lexify are not lost. Prefer James
+  ff-merge `auto/*` → `build` when ready so next runs start current.
+- A1 trunk intros still missing: adjectives, be_have, can_like_want,
+  there_time, social, glue_modals, prepositions, glue_linkers.
+  A2 trunks: recycle, lexis, chunks (all 3).
+- Next B1 leads (small pairs first): `b1_modals_speculation` (bug, misread),
+  `b1_indirect_questions` (whether, wonder).
+
+### Push
+none (local `auto/*` only)
+
+---
+
 ## 2026-08-09 · grok-auto · `auto/2026-08-09-1706`
 
 ### Headline
