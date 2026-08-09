@@ -1,0 +1,116 @@
+{
+  "id": "b1_trade",
+  "title": "Goods and trade",
+  "level": "B1",
+  "tree_node": "leaf_trade_b1",
+  "codex_unit": "V_MON-B1B2-01",
+  "note": "B1 Oxford-gap leaf · making and moving goods, then selling them · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "How things reach the shop",
+      "title_cz": "Jak se zboží dostane do obchodu",
+      "pictures": [
+        { "icon": "📦", "en": "goods", "cz": "zboží" },
+        { "icon": "🏭", "en": "supply", "cz": "zásobovat" },
+        { "icon": "🚢", "en": "export", "cz": "vyvážet" },
+        { "icon": "🛬", "en": "import", "cz": "dovážet" },
+        { "icon": "🎁", "en": "package", "cz": "balík" },
+        { "icon": "🚚", "en": "deliver", "cz": "doručit" },
+        { "icon": "🛒", "en": "consumer", "cz": "spotřebitel" },
+        { "icon": "🤝", "en": "trade", "cz": "obchodovat" },
+        { "icon": "🏷️", "en": "label", "cz": "štítek" },
+        { "icon": "🧪", "en": "sample", "cz": "vzorek" },
+        { "icon": "📣", "en": "promote", "cz": "propagovat" },
+        { "icon": "📊", "en": "range", "cz": "sortiment" }
+      ],
+      "body": "You already know how to buy something. This unit is about everything that had to happen first — the factory, the ship, the van at the door, and the shelf it finally lands on.\nThe first six follow the journey from the maker to your street. The last six are what happens at the other end, where somebody has to persuade you to pick that shelf and not the next one."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I need a …",
+        "We need to …",
+        "Let's talk about …",
+        "He is a …"
+      ],
+      "note": "export and import are opposite directions of the same journey: you export out of your country and import into it. Czech keeps the pair just as tidily — vyvážet and dovážet — so the prefix does the work in both languages.",
+      "note_cz": "export = vyvážet (ven ze země), import = dovážet (do země)."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "Making and moving",
+      "items": [
+        { "en": "goods", "cz": "zboží", "use": ["i_need_bare", "lets_talk_about"] },
+        { "en": "supply", "cz": "zásobovat", "use": ["we_need_to", "i_want_to"] },
+        { "en": "export", "cz": "vyvážet", "use": ["we_need_to", "lets_talk_about"] },
+        { "en": "import", "cz": "dovážet", "use": ["we_need_to", "lets_talk_about"] },
+        { "en": "package", "cz": "balík", "use": ["this_is_a", "i_have_a"] },
+        { "en": "deliver", "cz": "doručit", "use": ["we_need_to", "i_want_to"] }
+      ]
+    },
+    {
+      "title": "Selling it",
+      "items": [
+        { "en": "consumer", "cz": "spotřebitel", "use": ["he_is_a", "this_is_a"] },
+        { "en": "trade", "cz": "obchodovat", "use": ["we_need_to", "lets_talk_about"] },
+        { "en": "label", "cz": "štítek", "use": ["this_is_a", "i_need_a"] },
+        { "en": "sample", "cz": "vzorek", "use": ["this_is_a", "i_need_a"] },
+        { "en": "promote", "cz": "propagovat", "use": ["we_need_to", "i_want_to"] },
+        { "en": "range", "cz": "sortiment", "use": ["this_is_a", "the_bag_is"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "The shop sells goods from many countries.",
+      "cz": "Ten obchod prodává zboží z mnoha zemí.",
+      "lemmas": ["goods"],
+      "accepts": ["The shop sells goods from many countries"] },
+    { "en": "This company supplies bread to all the schools.",
+      "cz": "Tahle firma zásobuje všechny školy chlebem.",
+      "lemmas": ["supply"],
+      "accepts": ["This company supplies bread to all the schools"] },
+    { "en": "Our country exports cars and glass.",
+      "cz": "Naše země vyváží auta a sklo.",
+      "lemmas": ["export"],
+      "accepts": ["Our country exports cars and glass"] },
+    { "en": "We import coffee and fruit from warm countries.",
+      "cz": "Dovážíme kávu a ovoce z teplých zemí.",
+      "lemmas": ["import"],
+      "accepts": ["We import coffee and fruit from warm countries"] },
+    { "en": "A package arrived for my sister this morning.",
+      "cz": "Dnes ráno přišel balík pro moji sestru.",
+      "lemmas": ["package"],
+      "accepts": ["A package arrived for my sister this morning"] },
+    { "en": "The shop delivers food to old people.",
+      "cz": "Ten obchod doručuje jídlo starým lidem.",
+      "lemmas": ["deliver"],
+      "accepts": ["The shop delivers food to old people"] },
+    { "en": "Every consumer wants a good price.",
+      "cz": "Každý spotřebitel chce dobrou cenu.",
+      "lemmas": ["consumer"],
+      "accepts": ["Every consumer wants a good price"] },
+    { "en": "These two countries trade together.",
+      "cz": "Tyhle dvě země spolu obchodují.",
+      "lemmas": ["trade"],
+      "accepts": ["These two countries trade together"] },
+    { "en": "Read the label before you buy the medicine.",
+      "cz": "Přečti si štítek, než si koupíš ten lék.",
+      "lemmas": ["label"],
+      "accepts": ["Read the label before you buy the medicine"] },
+    { "en": "The woman in the shop gave us a free sample.",
+      "cz": "Ta paní v obchodě nám dala vzorek zdarma.",
+      "lemmas": ["sample"],
+      "accepts": ["The woman in the shop gave us a free sample"] },
+    { "en": "The company wants to promote the new product.",
+      "cz": "Ta firma chce propagovat nový výrobek.",
+      "lemmas": ["promote"],
+      "accepts": ["The company wants to promote the new product"] },
+    { "en": "This shop has a wide range of shoes.",
+      "cz": "Tenhle obchod má široký sortiment bot.",
+      "lemmas": ["range"],
+      "accepts": ["This shop has a wide range of shoes"] }
+  ]
+}

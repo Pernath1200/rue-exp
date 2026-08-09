@@ -1,0 +1,117 @@
+{
+  "id": "b1_arts",
+  "title": "The arts",
+  "level": "B1",
+  "tree_node": "leaf_arts_b1",
+  "codex_unit": "V_THM-A1B1-09",
+  "note": "B1 Oxford-gap leaf · what hangs in the gallery, then what you read and hear · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "In the gallery, and after it",
+      "title_cz": "V galerii a po ní",
+      "pictures": [
+        { "icon": "🖼️", "en": "exhibition", "cz": "výstava" },
+        { "icon": "🗃️", "en": "collection", "cz": "sbírka" },
+        { "icon": "🗿", "en": "statue", "cz": "socha" },
+        { "icon": "👤", "en": "portrait", "cz": "portrét" },
+        { "icon": "🔲", "en": "frame", "cz": "rám" },
+        { "icon": "📷", "en": "photography", "cz": "fotografování" },
+        { "icon": "📜", "en": "poem", "cz": "báseň" },
+        { "icon": "✍️", "en": "poet", "cz": "básník" },
+        { "icon": "📖", "en": "narrative", "cz": "vyprávění" },
+        { "icon": "🔍", "en": "mystery", "cz": "záhada" },
+        { "icon": "🥁", "en": "drum", "cz": "buben" },
+        { "icon": "💃", "en": "folk", "cz": "lidový" }
+      ],
+      "body": "The course has given you art and artist, music and film. What it has not given you is the vocabulary for talking about any of it — the words a review uses, or a museum label, or a friend telling you what a book was actually like.\nThe first six are what you can walk up to and look at. The last six are what you carry home: the poem, the story underneath the story, and the music a country keeps."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I have a …",
+        "He is a …",
+        "Let's talk about …",
+        "It is …"
+      ],
+      "note": "A collection is what a museum owns; an exhibition is the part of it currently on the wall. Folk is the odd one out grammatically — it is an adjective here (folk music, a folk song), not a noun.",
+      "note_cz": "collection = sbírka (co muzeum vlastní), exhibition = výstava (co je právě k vidění). Folk je přídavné jméno."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "What you can look at",
+      "items": [
+        { "en": "exhibition", "cz": "výstava", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "collection", "cz": "sbírka", "use": ["this_is_a", "i_have_a"] },
+        { "en": "statue", "cz": "socha", "use": ["this_is_a", "where_is_the"] },
+        { "en": "portrait", "cz": "portrét", "use": ["this_is_a", "i_have_a"] },
+        { "en": "frame", "cz": "rám", "use": ["this_is_a", "i_need_a"] },
+        { "en": "photography", "cz": "fotografování", "use": ["lets_talk_about", "is_fun"] }
+      ]
+    },
+    {
+      "title": "What you read and hear",
+      "items": [
+        { "en": "poem", "cz": "báseň", "use": ["this_is_a", "i_have_a"] },
+        { "en": "poet", "cz": "básník", "use": ["he_is_a", "this_is_a"] },
+        { "en": "narrative", "cz": "vyprávění", "use": ["this_is_a", "it_is"] },
+        { "en": "mystery", "cz": "záhada", "use": ["this_is_a", "it_is"] },
+        { "en": "drum", "cz": "buben", "use": ["this_is_a", "i_have_a"] },
+        { "en": "folk", "cz": "lidový", "use": ["it_is", "lets_talk_about"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "The new exhibition opens on Friday.",
+      "cz": "Nová výstava se otevírá v pátek.",
+      "lemmas": ["exhibition"],
+      "accepts": ["The new exhibition opens on Friday"] },
+    { "en": "The museum has a large collection of old books.",
+      "cz": "To muzeum má velkou sbírku starých knih.",
+      "lemmas": ["collection"],
+      "accepts": ["The museum has a large collection of old books"] },
+    { "en": "There is a stone statue in front of the church.",
+      "cz": "Před kostelem stojí kamenná socha.",
+      "lemmas": ["statue"],
+      "accepts": ["There is a stone statue in front of the church"] },
+    { "en": "This portrait of her mother is very old.",
+      "cz": "Tenhle portrét její matky je velmi starý.",
+      "lemmas": ["portrait"],
+      "accepts": ["This portrait of her mother is very old"] },
+    { "en": "The picture needs a new frame.",
+      "cz": "Ten obraz potřebuje nový rám.",
+      "lemmas": ["frame"],
+      "accepts": ["The picture needs a new frame"] },
+    { "en": "Photography is her favourite hobby.",
+      "cz": "Fotografování je její oblíbený koníček.",
+      "lemmas": ["photography"],
+      "accepts": ["Photography is her favourite hobby",
+                  "Photography is her favorite hobby"] },
+    { "en": "My brother wrote a short poem about the sea.",
+      "cz": "Můj bratr napsal krátkou báseň o moři.",
+      "lemmas": ["poem"],
+      "accepts": ["My brother wrote a short poem about the sea"] },
+    { "en": "That poet is famous in our country.",
+      "cz": "Ten básník je v naší zemi slavný.",
+      "lemmas": ["poet"],
+      "accepts": ["That poet is famous in our country"] },
+    { "en": "The narrative of the film is easy to follow.",
+      "cz": "Vyprávění toho filmu se snadno sleduje.",
+      "lemmas": ["narrative"],
+      "accepts": ["The narrative of the film is easy to follow"] },
+    { "en": "The end of the story is still a mystery.",
+      "cz": "Konec toho příběhu je stále záhada.",
+      "lemmas": ["mystery"],
+      "accepts": ["The end of the story is still a mystery"] },
+    { "en": "My son plays the drum every evening.",
+      "cz": "Můj syn hraje každý večer na buben.",
+      "lemmas": ["drum"],
+      "accepts": ["My son plays the drum every evening"] },
+    { "en": "My grandmother likes folk music from the mountains.",
+      "cz": "Moje babička má ráda lidovou hudbu z hor.",
+      "lemmas": ["folk"],
+      "accepts": ["My grandmother likes folk music from the mountains"] }
+  ]
+}

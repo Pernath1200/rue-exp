@@ -1,0 +1,117 @@
+{
+  "id": "b1_disaster",
+  "title": "When it goes wrong",
+  "level": "B1",
+  "tree_node": "leaf_disaster_b1",
+  "codex_unit": "V_THM-A1B1-10",
+  "note": "B1 Oxford-gap leaf · disaster and its warnings, then enemies and fear · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "When it goes wrong",
+      "title_cz": "Když se něco stane",
+      "pictures": [
+        { "icon": "🌍", "en": "earthquake", "cz": "zemětřesení" },
+        { "icon": "💥", "en": "explosion", "cz": "výbuch" },
+        { "icon": "🔨", "en": "damage", "cz": "poškodit" },
+        { "icon": "☠️", "en": "poison", "cz": "jed" },
+        { "icon": "⚠️", "en": "warning", "cz": "varování" },
+        { "icon": "🆘", "en": "survive", "cz": "přežít" },
+        { "icon": "⚔️", "en": "enemy", "cz": "nepřítel" },
+        { "icon": "🛡️", "en": "battle", "cz": "bitva" },
+        { "icon": "😱", "en": "horror", "cz": "hrůza" },
+        { "icon": "😨", "en": "frighten", "cz": "vyděsit" },
+        { "icon": "🏃", "en": "hurry", "cz": "spěchat" },
+        { "icon": "🎯", "en": "shoot", "cz": "střílet" }
+      ],
+      "body": "The course has taught you the calm world — the weather, the doctor, the timetable. These twelve words are for the day that goes wrong, and every news bulletin in English is built from them.\nThe first six are the event itself and the seconds before it: what happened, what it ruined, and who walked away. The last six are the older kind of trouble — someone on the other side, and what that does to you."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I have a …",
+        "It is …",
+        "We need to …",
+        "He is a …"
+      ],
+      "note": "damage, survive, frighten, hurry and shoot are verbs; the rest are nouns. Two pairs are easy to collapse: horror is the feeling and a battle is the event, and damage is what a storm does, while an explosion is a thing that happens.",
+      "note_cz": "damage, survive, frighten, hurry, shoot jsou slovesa. Pozor: horror je ten pocit, ne ta událost."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "The event and the warning",
+      "items": [
+        { "en": "earthquake", "cz": "zemětřesení", "use": ["this_is_a", "it_is"] },
+        { "en": "explosion", "cz": "výbuch", "use": ["this_is_a", "the_bag_is"] },
+        { "en": "damage", "cz": "poškodit", "use": ["we_need_to", "it_is"] },
+        { "en": "poison", "cz": "jed", "use": ["this_is_a", "i_have_a"] },
+        { "en": "warning", "cz": "varování", "use": ["this_is_a", "i_need_a"] },
+        { "en": "survive", "cz": "přežít", "use": ["we_need_to", "i_want_to"] }
+      ]
+    },
+    {
+      "title": "Enemies and fear",
+      "items": [
+        { "en": "enemy", "cz": "nepřítel", "use": ["he_is_a", "this_is_a"] },
+        { "en": "battle", "cz": "bitva", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "horror", "cz": "hrůza", "use": ["it_is", "lets_talk_about"] },
+        { "en": "frighten", "cz": "vyděsit", "use": ["we_need_to", "i_want_to"] },
+        { "en": "hurry", "cz": "spěchat", "use": ["we_need_to", "i_want_to"] },
+        { "en": "shoot", "cz": "střílet", "use": ["we_need_to", "i_want_to"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "The earthquake destroyed many old houses.",
+      "cz": "Zemětřesení zničilo mnoho starých domů.",
+      "lemmas": ["earthquake"],
+      "accepts": ["The earthquake destroyed many old houses"] },
+    { "en": "There was a big explosion near the station.",
+      "cz": "Poblíž nádraží došlo k velkému výbuchu.",
+      "lemmas": ["explosion"],
+      "accepts": ["There was a big explosion near the station"] },
+    { "en": "The storm damaged the roof of our house.",
+      "cz": "Bouře poškodila střechu našeho domu.",
+      "lemmas": ["damage"],
+      "accepts": ["The storm damaged the roof of our house"] },
+    { "en": "There is poison in some of these plants.",
+      "cz": "V některých z těchto rostlin je jed.",
+      "lemmas": ["poison"],
+      "accepts": ["There is poison in some of these plants"] },
+    { "en": "The police sent a warning to the whole city.",
+      "cz": "Policie poslala varování celému městu.",
+      "lemmas": ["warning"],
+      "accepts": ["The police sent a warning to the whole city"] },
+    { "en": "All the passengers survived the accident.",
+      "cz": "Všichni cestující tu nehodu přežili.",
+      "lemmas": ["survive"],
+      "accepts": ["All the passengers survived the accident"] },
+    { "en": "That country was our enemy for many years.",
+      "cz": "Ta země byla mnoho let naším nepřítelem.",
+      "lemmas": ["enemy"],
+      "accepts": ["That country was our enemy for many years"] },
+    { "en": "The battle was very long.",
+      "cz": "Ta bitva byla velmi dlouhá.",
+      "lemmas": ["battle"],
+      "accepts": ["The battle was very long"] },
+    { "en": "The film was full of horror.",
+      "cz": "Ten film byl plný hrůzy.",
+      "lemmas": ["horror"],
+      "accepts": ["The film was full of horror"] },
+    { "en": "The loud noise frightened our dog.",
+      "cz": "Ten hlasitý zvuk vyděsil našeho psa.",
+      "lemmas": ["frighten"],
+      "accepts": ["The loud noise frightened our dog"] },
+    { "en": "We need to hurry or we will be late.",
+      "cz": "Musíme spěchat, nebo přijdeme pozdě.",
+      "lemmas": ["hurry"],
+      "accepts": ["We need to hurry or we will be late"] },
+    { "en": "The soldiers did not shoot at the village.",
+      "cz": "Vojáci na vesnici nestříleli.",
+      "lemmas": ["shoot"],
+      "accepts": ["The soldiers did not shoot at the village",
+                  "The soldiers didn't shoot at the village"] }
+  ]
+}
