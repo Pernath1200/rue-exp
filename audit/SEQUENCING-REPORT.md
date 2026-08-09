@@ -1,19 +1,10 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**126 unknown word types** across 19 live units (of 153).
+**123 unknown word types** across 18 live units (of 153).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
-## Permanently accepted (do not “fix”)
-
-| Unit | Token | Why | Locked |
-|------|-------|-----|--------|
-| **a1_articles** | `hour` | Silent-h → *an hour*; alternatives not pool-legal; taught later on `leaf_time_a1` | James 2026-08-09 · `codex/POLICY-LOCKS.md` **P-hour** |
-
-## Leads
-
-- **a1_articles** (A1 grammar): hour · **ACCEPTED — leave alone**
-- **b1_present_perfect_vs_past** (B1 grammar): client×2, until, noon
+- **a1_articles** (A1 grammar): hour
 - **b1_used_to** (B1 grammar): smoke×4, wi, fi
 - **b1_passives** (B1 grammar): stolen, asia, guard, noon, grown, brazil, cancelled, turned, deleted, package, delivered, automatically, invoice
 - **b1_modals_speculation** (B1 grammar): bug, misread

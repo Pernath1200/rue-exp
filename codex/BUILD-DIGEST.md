@@ -6,6 +6,42 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · grok-auto · `auto/2026-08-09-1706`
+
+### Headline
+First Grok auto content run: **1 A1 trunk intro** + **1 B1 sequencing
+re-lexify**. Audit ratchet tightened **126 → 123**.
+
+### What landed
+
+| # | Unit | What |
+|---|------|------|
+| 1 | `a1_core_frames_verbs_more2` (`trunk_verbs_more2_a1`) | Picture-led intro (concrete trunk · 12 emoji tiles + frames page). Template: sibling `verbs_more`. |
+| 2 | `b1_present_perfect_vs_past` | Re-lexify pool-illegal leads: `client`→`teacher` (×2), `until 2019`→`before 2019`, `noon`→`twelve`. Also corrected wrong PP explanation on the past-simple lunch item. |
+
+### REPAIR-QUEUE
+No unticked **one-time** content items (standing rules only). Skipped.
+
+### Gates
+
+| gate | result |
+|------|--------|
+| verify_pack | 160 packs · 0 errors · 12 warnings |
+| check_playable | 86 live grammar · 0 errors |
+| audit | **123** · 18 units · baseline **123** (was 126) |
+| check_codex | PASSED |
+| smoke | **SMOKE PASSED** |
+
+### Forks / notes
+- **P-hour** still lists `a1_articles`/`hour` in report — leave alone.
+- A1 trunk intros remaining (no intro yet): adjectives, be_have, can_like_want, there_time, social, glue_modals, prepositions, glue_linkers, verbs_more3. A2 trunks: recycle, lexis, chunks (all 3).
+- Next B1 leads: `b1_used_to` (smoke/wifi), small pair units (`b1_modals_speculation`, `b1_indirect_questions`).
+
+### Push
+none (local `auto/*` only)
+
+---
+
 ## 2026-08-09 · local · Grok interactive (James policy + shell polish + auto)
 
 ### Headline
