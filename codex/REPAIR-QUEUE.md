@@ -266,6 +266,51 @@ All 72 live grammar units on path now produce a real ladder, gated by
   explicit 3rd-person subject. Note 1pl past has the same problem
   (*Dívali* vs *Dívaly*), so it is not a singular-only trap.
 
+  **Progress · cloud run 36 (2026-08-09, wind-down close-out): the rule and
+  its whole trap family were swept mechanically across all 38 shipped banks
+  (946 sentences), and 2 defects were found and fixed — both in *A1* banks
+  that predate the traps' discovery.** Run 28's bounded A1 sweep covered only
+  the dropped-subject defect; the gender-leak traps (`mít rád`, 1sg past
+  participle, 1sg predicate adjective) were all discovered later, in runs
+  29-35, and **no run ever swept the already-shipped A1 banks for them**. That
+  gap is now closed.
+
+  Method — four mechanical scans over every `sentences[]` prompt in the repo,
+  not a re-read: (A) English subject is `He/She/It/They`, checking whether the
+  Czech carries a matching explicit subject; (B) Czech 1sg/1pl past participle
+  (`jsem`/`jsme` + `-l/-la/-li/-ly`); (C) `mám/máme + rád/ráda`; (D) `jsem` +
+  a gendered predicate adjective (`-ý/-á`).
+
+  - **(A) 16 hits, 0 defects.** 11 are impersonal (*Prší*, *Je pozdě*, *Je
+    půlnoc*, *V zimě je zima*, *Je trochu zima*, *Je skoro pět hodin*,
+    *Pravděpodobně bude zítra pršet*, *V poušti nikdy neprší*, *Dnes možná
+    bude pršet*) or carry the dummy *to* (*Je to každodenní problém*, *Je to
+    pravidelná schůzka*, *Je to tvoje volba*, *Byl to obyčejný den*, *Byl to
+    takový dobrý den*), where English admits only *it*. One is 3rd-person
+    **plural** (*Jsou šťastný pár*), and English 3pl has no gender split. One
+    carries an explicit *On* (*On je majitel obchodu*). **The dropped-subject
+    grading defect is extinct across the shipped course** — 0 in 946.
+  - **(B) 0 hits.** No 1sg/1pl past participle survives in any bank.
+  - **(C) 1 hit, 1 defect — `leaf_freetime_a1` #1**, *Mám rád fotbal*.
+  - **(D) 1 hit, 1 defect — `leaf_health_a1` #5**, *Jsem nemocný*.
+
+  Both fixed in **a5a8152** by the pack's own established pattern — recast
+  onto an explicit 3rd-person subject (*Můj otec má rád fotbal* / *Můj syn je
+  nemocný*), replacements checked pool-legal against `audit.py`'s own legal
+  set. Audit unmoved at 126.
+
+  **Worth stating plainly for the handoff: (C) and (D) are not grading
+  defects.** *Mám rád fotbal* still forces the English answer *I like
+  football* whichever gender the student is — unlike the dropped-subject
+  defect, nothing grades wrong. What they are is a Czech **support prompt that
+  presumes a male student**. Fixed because the cost was two sentences and this
+  is the last unattended run; the distinction matters if anyone later finds a
+  third instance and has to weigh it.
+
+  **Left unticked deliberately — this is a standing rule, not a task.** What
+  is now clear is the shipped population (A1+A2, 38 banks); the rule still
+  binds any future bank, and B1's 6 leaf packs have no banks at all yet.
+
 - [ ] **Explanation-language scaling (James, 2026-08-08).** Explanatory prose
   — intro `body`/`note`/`title_cz` text, grammar `explanation`/
   `explanation_cz`, hints — must match the level it explains, not stay at A1

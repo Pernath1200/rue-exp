@@ -6,6 +6,126 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-09 · cloud run 36 (RUE build, claude-opus-5) — **FINAL RUN**
+
+### Headline: **`codex/HANDOFF.md` is written and RUE's unattended work is over.** Run 35's blocking conflict is resolved — James parked the B1 vocab extension in AGENTS.md and wrote `codex/WIND-DOWN.md`, so the wind-down is now the only live instruction and the handoff could be written without cancelling anything. The exit condition was met **at run 1 of 6**, not at the cap: the A2 Use-bank backlog is closed and the repair queue has no unticked one-time items. Also **2 real defects found and fixed** in shipped A1 banks by a mechanical sweep that had never been run.
+
+### What landed
+
+| # | Commit | What |
+|---|--------|------|
+| 1 | `a5a8152` | **2 gender-leak prompts fixed** — `a1_freetime` #1, `a1_health` #5 |
+| 2 | *(this commit)* | `HANDOFF.md` + REPAIR-QUEUE run-36 progress + WIND-DOWN final counter |
+
+### Gates
+
+| | start of run | end of run |
+|---|---|---|
+| `verify_pack` | 160 packs · 0 errors · 12 warnings | **160 packs · 0 errors · 12 warnings** |
+| `check_playable` | 86 live grammar · 0 errors · 0 warnings | **86 · 0 errors · 0 warnings** |
+| `audit` | 126 · 19 units · baseline 126 | **126 · 19 units · baseline 126** |
+| `check_codex` | 37 tags · 55 units · PASSED | **37 tags · 55 units · PASSED** |
+| `scripts/smoke.py` | — | **SMOKE PASSED** |
+
+All four green at the start, so step 0 did not consume the run.
+
+### The conflict is resolved — James answered "wind down"
+
+Run 35 refused to write `HANDOFF.md` and asked for one word. It arrived as
+repo state rather than as prose: AGENTS.md's B1 section is now titled
+**"PARKED, future work only — Do not start this"**, and `codex/WIND-DOWN.md`
+exists with a scope and a run counter. The wind-down prompt and the contract
+now agree. Run 35's caution cost one run and was correct.
+
+### Step 2 — the standing-rule sweep that had never actually been run
+
+The repair queue's dropped-subject rule accumulated a **family** of traps
+across runs 29-35 (`mít rád`, 1sg past participle, 1sg predicate adjective,
+reflexives, gloss collision). Run 28's bounded sweep of the 16 shipped A1
+banks predates all of them and checked **only** the dropped-subject defect.
+**No run ever swept the shipped A1 banks for the gender leaks.** This run did,
+mechanically, over all 946 sentences in all 38 banks — four scans, described
+in full in REPAIR-QUEUE.md.
+
+- **Dropped-subject grading defect: 0 in 946 — extinct.** All 16 hits on the
+  3rd-person-pronoun scan are impersonal, dummy-*to*, 3rd-person plural, or
+  carry an explicit *On*.
+- **2 gender leaks found**, both A1, both fixed in `a5a8152`: *Mám rád fotbal*
+  → *Můj otec má rád fotbal*, and *Jsem nemocný* → *Můj syn je nemocný*.
+  Replacements checked pool-legal against `audit.py`'s own legal set, not by
+  eye; both match their own pack's established 3rd-person-subject pattern.
+  Audit unmoved at 126.
+
+**Logged rather than buried: these two are not grading defects.** *Mám rád
+fotbal* still forces *I like football* whichever gender the student is —
+unlike the dropped-subject defect, nothing grades wrong. They are Czech
+support prompts that presume a male student. Fixed because the cost was two
+sentences and this was the last unattended run; the distinction is recorded so
+that a future run finding a third instance can weigh it rather than assume.
+
+### Verification — everything re-derived, nothing inherited
+
+Run 35 reported "0 problems across 38 banks". **Re-run independently rather
+than trusted**, per the contract: 38 banks, 946 sentences, every `lemmas`
+entry names a real item in its own pack, every sentence carries `cz` and
+`accepts`, no pack repeats an English sentence, every English sentence
+pool-legal at its own node under `audit.py`'s own `legal` set. **0 problems**
+— run 35's claim confirmed. Re-run again after the two edits: still 0.
+
+Every figure in `HANDOFF.md` was counted fresh from `data/tree.json` and the
+pack files. **One digest figure was wrong and is corrected there:** the
+tokenizer artifacts in the audit's 126 are **9**, not the "~7" runs 35 and
+earlier estimated — `wi`+`fi` in *three* units (`b1_used_to`,
+`b1_relative_clauses`, `b2_third_conditional`), `ond`+`ej` in
+`b1_reported_speech`, `b` in `b2_present_perfect_continuous`. Counted from
+`audit/sequencing-report.json`.
+
+Also verified rather than asserted before printing in the handoff:
+`_oracle.py --selftest` → 6/6, `DEFAULT_PASS` is 12 in `js/practice-vocab.js`,
+`make_pool.py --before` exists, `CZECH-REVIEW.md` carries 27 flagged items
+across 19 "For James" sections, and the Oxford tooling and gap file are
+**absent from `build`** (`git ls-tree origin/vocab/b1-build` — they are only on
+that branch).
+
+### What the handoff covers
+
+Live counts by level and domain · both audit gate numbers and where the 126
+violations actually sit (A1 1 · A2 0 · B1 96 · B2 29 · C1 0) · the 9 tokenizer
+artifacts and the two James already fixed on 2026-08-08 (contraction/genitive,
+parenthesised disambiguator) · **the Oxford coverage anomaly flagged as the
+top unresolved question**, with the re-lexify hypothesis and the warning that
+its tooling is not on `build` · the parked B1 plan by pointer to AGENTS.md,
+not duplicated · 9 things deliberately not done and why · 6 open questions in
+one place · the full Czech trap family and the authoring method that beats it
+· the standing hard rules · how to restart.
+
+### Forks and judgment calls
+
+1. **Fixing the two gender leaks at all** was a fork. They are shipped A1
+   content, they change a graded English target, and they are not grading
+   defects. Taken because both replacements are pool-legal, the audit is
+   unmoved, and the standing rule explicitly binds "every unit, every run".
+   Recorded in full in REPAIR-QUEUE.md so it can be reverted on one commit.
+2. **Writing `HANDOFF.md` at run 1 of 6** rather than spending the remaining
+   five runs. `WIND-DOWN.md` states the exit is "whichever comes first", and
+   the scope section forbids inventing replacement work once the backlog
+   clears. Spending runs to reach a cap would have meant either idling or
+   generating out-of-scope content.
+3. **The three unticked repair-queue entries stay unticked.** All three are
+   standing rules or explicitly-exhausted scopes, not tasks — ticking them
+   would assert a completeness that does not exist (B1's 6 leaf packs have no
+   banks at all, so the Czech rules still bind future work).
+
+### Note for the Czech-review routine
+
+This run changed two `cz` prompts (`a1_freetime` #1, `a1_health` #5). Per the
+wind-down plan the review routine gets **one final consolidation pass** after
+seeing `codex/HANDOFF.md`, and these are the last Czech the build lane will
+ever produce. Both are simple — *Můj otec má rád fotbal*, *Můj syn je
+nemocný* — but neither has had a second opinion.
+
+---
+
 ## 2026-08-08 · cloud run 35 (RUE build, claude-opus-5)
 
 ### Headline: **the A2 Use-stage backlog is closed — 22 of 22 A2 leaves now have a sentence bank** (`a2_verbs` 28, `a2_describing` 61, 89 new sentences). That was the whole of the wind-down prompt's step 1. Step 2 is exhausted too: A1/A2 sequencing repair has no work left, and every shipped bank was mechanically re-verified. **Step 3 (write `codex/HANDOFF.md` and go permanently dormant) is DELIBERATELY NOT DONE — see the blocking conflict below. It needs James before any run performs it.**

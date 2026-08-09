@@ -28,7 +28,13 @@ commit. This file is retired at that point; do not edit it further.
 Format: `<n> / <cap>`. Increment `<n>` by 1 at the end of every run that did
 NOT hit the HANDOFF.md exit check (i.e. every run that did real work).
 
-- **build routine runs used: 0 / 6**
+- **build routine runs used: 1 / 6** — **exit condition met at run 1, not at
+  the cap.** Both halves cleared: the A2 Use-bank backlog is closed (22/22 A2
+  leaves, re-counted from `data/tree.json` this run, not taken from the
+  digest) and `codex/REPAIR-QUEUE.md` has no unticked one-time items left.
+  Run 36 wrote `codex/HANDOFF.md`; **this file is retired and both routines
+  now stop at their step 0.** The remaining 5 runs of the cap go unused, which
+  is the intended outcome — the counter was a ceiling, not a quota.
 - **Czech-review routine runs used: 0 / 6**
 
 The build routine stops (writes HANDOFF.md) at 6, or earlier if the backlog
