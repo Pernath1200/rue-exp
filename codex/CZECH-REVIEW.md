@@ -636,3 +636,43 @@ data-only today and BUILD-DIGEST already flags this class of landmine, so
 this is a pointer, not a new finding.
 
 Still never reviewed after this pass: b1_collocations, b1_core_frames.
+
+## 2026-08-09 — second-opinion pass (cloud, backlog #5)
+
+Nothing new in the last day beyond Czech already covered by earlier entries
+(everything through run 35 and backlog #4 is reviewed), so per the backlog
+rule reviewed the next oldest never-reviewed pack: **b1_collocations**
+(24 frame items in 2 blocks — make/do/take/have and adj+noun — all cz read).
+
+**Fixed: 1 · Flagged: 1 · everything else ok.**
+
+Fixes:
+- *She gave me useful advice.*: cz *Dal/a mi užitečnou radu* → *Dala mi
+  užitečnou radu* — the en subject is fixed as *She*, so the both-genders
+  slash leaves the dropped subject ambiguous (a student reading *Dal…* will
+  produce "He gave me…", which `accepts` grades wrong). This is exactly the
+  dropped-subject rule: the verb form must fix the person, and *Dal/a*
+  deliberately doesn't. Feminine *Dala* restores it.
+
+For James:
+- *We make progress every week.*: cz "Každý týden děláme **pokrok**." —
+  grammatical, but the set phrase for ongoing progress is plural, *dělat
+  pokroky* (the a2_misc bank itself has "Můj syn dělá pokroky"); bare
+  singular *dělat pokrok* without an adjective reads slightly off (singular
+  is natural only qualified: *udělali jsme velký pokrok*). Suggest "Každý
+  týden děláme pokroky." Defensible, so left unchanged.
+
+Clean, no log needed: the other 22 items. The make/do mirrors (*udělat
+rozhodnutí / udělat chybu / udělat laskavost / dělat byznys*) are all real
+contemporary Czech — colloquial in places, but that's the right register
+for eliciting the English collocations, so nothing logged. Correct cases
+throughout — accusatives *pauzu / laskavost / jasnou odpověď / užitečnou
+radu / nabitý rozvrh*, genitive *víc volného času*, instrumental *pod
+velkým tlakem*, animate plural *blízcí přátelé*; idiomatic *Dát si pauzu*,
+*Posaďte se, prosím*, *Bere na sebe odpovědnost*, *Hustě prší*, *Je to
+všeobecně známá věc* for *common knowledge*; *silný déšť / silný přízvuk*
+are the standard collocations, matching the pack's own heavy/strong point.
+Dropped-subject rule holds everywhere else (*Udělala chybu*, *Má problém
+s wifi* fixed by en subject via 3sg + context; 1sg/1pl forms unambiguous).
+
+Still never reviewed after this pass: b1_core_frames.
