@@ -1,0 +1,110 @@
+{
+  "id": "b1_character",
+  "title": "What people are like",
+  "level": "B1",
+  "tree_node": "leaf_character_b1",
+  "codex_unit": "V_SEL-B1B2-01",
+  "note": "B1 Oxford-gap leaf · character words, then talent, drive and irritation · 12 items · carriers via use[] · schematic intro (abstract set) · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "The qualities you admire, and the ones you don't",
+      "title_cz": "Vlastnosti, které obdivujeme — a které ne",
+      "diagram": "contrast",
+      "labels": [
+        "admire",
+        "annoy",
+        "brave, gentle, educated",
+        "cruel, careless"
+      ],
+      "body": "None of these words has a picture, because a quality is not a thing you can point at — you only ever see what someone does, and then you name it.\nSix of them describe what a person is like. The other six are about drive and talent, and about the effect all of that has on everyone else: some qualities you admire, and some simply annoy you.",
+      "body_cz": "Abstraktní slova — vlastnosti, ne věci, takže nemají obrázek."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "He is …",
+        "I am …",
+        "This is a …",
+        "Let's talk about …",
+        "We need to …"
+      ],
+      "note": "educated, determined and talented look like past tense verbs, but here they are adjectives — they describe a person, and they take is or are, never did.",
+      "note_cz": "educated, determined, talented tady nejsou slovesa v minulém čase, ale přídavná jména."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "What a person is like",
+      "items": [
+        { "en": "brave", "cz": "statečný", "use": ["he_is_adj", "i_am_adj"] },
+        { "en": "gentle", "cz": "jemný", "use": ["he_is_adj", "it_is"] },
+        { "en": "cruel", "cz": "krutý", "use": ["he_is_adj", "it_is"] },
+        { "en": "careless", "cz": "nedbalý", "use": ["he_is_adj", "it_is"] },
+        { "en": "educated", "cz": "vzdělaný", "use": ["he_is_adj", "it_is"] },
+        { "en": "determined", "cz": "odhodlaný", "use": ["he_is_adj", "i_am_adj"] }
+      ]
+    },
+    {
+      "title": "Drive, talent, and the effect on other people",
+      "items": [
+        { "en": "talented", "cz": "nadaný", "use": ["he_is_adj", "it_is"] },
+        { "en": "keen", "cz": "dychtivý", "use": ["he_is_adj", "i_am_adj"] },
+        { "en": "passion", "cz": "vášeň", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "ambition", "cz": "ctižádost", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "admire", "cz": "obdivovat", "use": ["we_need_to", "i_want_to"] },
+        { "en": "annoy", "cz": "otravovat", "use": ["we_need_to", "i_want_to"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "Her brother is a very brave man.",
+      "cz": "Její bratr je velmi statečný muž.",
+      "lemmas": ["brave"],
+      "accepts": ["Her brother is a very brave man"] },
+    { "en": "My grandmother has a gentle voice.",
+      "cz": "Moje babička má jemný hlas.",
+      "lemmas": ["gentle"],
+      "accepts": ["My grandmother has a gentle voice"] },
+    { "en": "That film is too cruel for children.",
+      "cz": "Ten film je pro děti příliš krutý.",
+      "lemmas": ["cruel"],
+      "accepts": ["That film is too cruel for children"] },
+    { "en": "This driver is careless and fast.",
+      "cz": "Tenhle řidič je nedbalý a rychlý.",
+      "lemmas": ["careless"],
+      "accepts": ["This driver is careless and fast"] },
+    { "en": "Her parents are educated people.",
+      "cz": "Její rodiče jsou vzdělaní lidé.",
+      "lemmas": ["educated"],
+      "accepts": ["Her parents are educated people"] },
+    { "en": "My sister is determined to win.",
+      "cz": "Moje sestra je odhodlaná vyhrát.",
+      "lemmas": ["determined"],
+      "accepts": ["My sister is determined to win"] },
+    { "en": "This young singer is very talented.",
+      "cz": "Tenhle mladý zpěvák je velmi nadaný.",
+      "lemmas": ["talented"],
+      "accepts": ["This young singer is very talented"] },
+    { "en": "The students are keen to start.",
+      "cz": "Studenti jsou dychtiví začít.",
+      "lemmas": ["keen"],
+      "accepts": ["The students are keen to start"] },
+    { "en": "Music is his big passion.",
+      "cz": "Hudba je jeho velká vášeň.",
+      "lemmas": ["passion"],
+      "accepts": ["Music is his big passion"] },
+    { "en": "This young woman has a lot of ambition.",
+      "cz": "Tahle mladá žena má hodně ctižádosti.",
+      "lemmas": ["ambition"],
+      "accepts": ["This young woman has a lot of ambition"] },
+    { "en": "We admire our teacher very much.",
+      "cz": "Velmi obdivujeme naši učitelku.",
+      "lemmas": ["admire"],
+      "accepts": ["We admire our teacher very much"] },
+    { "en": "Loud music annoys my neighbours.",
+      "cz": "Hlasitá hudba otravuje moje sousedy.",
+      "lemmas": ["annoy"],
+      "accepts": ["Loud music annoys my neighbours", "Loud music annoys my neighbors"] }
+  ]
+}

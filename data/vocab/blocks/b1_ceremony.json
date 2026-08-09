@@ -1,0 +1,116 @@
+{
+  "id": "b1_ceremony",
+  "title": "Celebrations and ceremonies",
+  "level": "B1",
+  "tree_node": "leaf_ceremony_b1",
+  "codex_unit": "V_THM-A1B1-10",
+  "note": "B1 Oxford-gap leaf · the big day, then belief and tradition · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "The days a family remembers",
+      "title_cz": "Dny, na které rodina vzpomíná",
+      "pictures": [
+        { "icon": "🎉", "en": "celebration", "cz": "slavnost" },
+        { "icon": "💒", "en": "ceremony", "cz": "obřad" },
+        { "icon": "👰", "en": "bride", "cz": "nevěsta" },
+        { "icon": "💍", "en": "marriage", "cz": "manželství" },
+        { "icon": "💋", "en": "kiss", "cz": "polibek" },
+        { "icon": "🔔", "en": "bell", "cz": "zvon" },
+        { "icon": "⛪", "en": "priest", "cz": "kněz" },
+        { "icon": "🙏", "en": "pray", "cz": "modlit se" },
+        { "icon": "👻", "en": "spirit", "cz": "duch" },
+        { "icon": "🎎", "en": "custom", "cz": "obyčej" },
+        { "icon": "👑", "en": "royal", "cz": "královský" },
+        { "icon": "⚱️", "en": "bury", "cz": "pohřbít" }
+      ],
+      "body": "Every country marks the same few days — a wedding, a funeral, a festival — and the words for them are older and more fixed than everyday language.\nThe first six are the day itself and what happens on it. The last six are what stands behind it: the person who leads it, the belief it comes from, and the habit of doing it the same way every time."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "He is a …",
+        "It is …",
+        "Let's talk about …",
+        "We need to …"
+      ],
+      "note": "a celebration is the party; a ceremony is the formal part inside it — a wedding has both, and only the ceremony has fixed words that must be said.",
+      "note_cz": "celebration = oslava obecně, ceremony = formální obřad uvnitř ní."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "The big day",
+      "items": [
+        { "en": "celebration", "cz": "slavnost", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "ceremony", "cz": "obřad", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "bride", "cz": "nevěsta", "use": ["this_is_a", "i_see_a"] },
+        { "en": "marriage", "cz": "manželství", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "kiss", "cz": "polibek", "use": ["this_is_a", "i_have_a"] },
+        { "en": "bell", "cz": "zvon", "use": ["this_is_a", "i_see_a"] }
+      ]
+    },
+    {
+      "title": "Belief and tradition",
+      "items": [
+        { "en": "priest", "cz": "kněz", "use": ["this_is_a", "he_is_a"] },
+        { "en": "pray", "cz": "modlit se", "use": ["we_need_to", "i_want_to"] },
+        { "en": "spirit", "cz": "duch", "use": ["this_is_a", "it_is"] },
+        { "en": "custom", "cz": "obyčej", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "royal", "cz": "královský", "use": ["it_is", "he_is_adj"] },
+        { "en": "bury", "cz": "pohřbít", "use": ["we_need_to", "i_want_to"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "The whole village came to the celebration.",
+      "cz": "Celá vesnice přišla na slavnost.",
+      "lemmas": ["celebration"],
+      "accepts": ["The whole village came to the celebration"] },
+    { "en": "The ceremony starts at three.",
+      "cz": "Obřad začíná ve tři.",
+      "lemmas": ["ceremony"],
+      "accepts": ["The ceremony starts at three"] },
+    { "en": "The bride has a long white dress.",
+      "cz": "Nevěsta má dlouhé bílé šaty.",
+      "lemmas": ["bride"],
+      "accepts": ["The bride has a long white dress"] },
+    { "en": "Their marriage is very happy.",
+      "cz": "Jejich manželství je velmi šťastné.",
+      "lemmas": ["marriage"],
+      "accepts": ["Their marriage is very happy"] },
+    { "en": "My grandfather gives my grandmother a kiss.",
+      "cz": "Můj dědeček dává mojí babičce polibek.",
+      "lemmas": ["kiss"],
+      "accepts": ["My grandfather gives my grandmother a kiss"] },
+    { "en": "There is a big bell in the church.",
+      "cz": "V kostele je velký zvon.",
+      "lemmas": ["bell"],
+      "accepts": ["There is a big bell in the church"] },
+    { "en": "The priest speaks to the family.",
+      "cz": "Kněz mluví s rodinou.",
+      "lemmas": ["priest"],
+      "accepts": ["The priest speaks to the family"] },
+    { "en": "Many people pray before dinner.",
+      "cz": "Hodně lidí se modlí před večeří.",
+      "lemmas": ["pray"],
+      "accepts": ["Many people pray before dinner"] },
+    { "en": "Old stories talk about the spirit of the forest.",
+      "cz": "Staré příběhy mluví o duchu lesa.",
+      "lemmas": ["spirit"],
+      "accepts": ["Old stories talk about the spirit of the forest"] },
+    { "en": "This custom is very old in our country.",
+      "cz": "Tenhle obyčej je v naší zemi velmi starý.",
+      "lemmas": ["custom"],
+      "accepts": ["This custom is very old in our country"] },
+    { "en": "The royal family lives in that big house.",
+      "cz": "Královská rodina bydlí v tom velkém domě.",
+      "lemmas": ["royal"],
+      "accepts": ["The royal family lives in that big house"] },
+    { "en": "The family wants to bury him near the church.",
+      "cz": "Rodina ho chce pohřbít blízko kostela.",
+      "lemmas": ["bury"],
+      "accepts": ["The family wants to bury him near the church"] }
+  ]
+}

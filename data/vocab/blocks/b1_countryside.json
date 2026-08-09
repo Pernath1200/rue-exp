@@ -1,0 +1,116 @@
+{
+  "id": "b1_countryside",
+  "title": "Out of town",
+  "level": "B1",
+  "tree_node": "leaf_countryside_b1",
+  "codex_unit": "V_THM-A1B1-09",
+  "note": "B1 Oxford-gap leaf · around the cottage, then water and distance · 12 items · carriers via use[] · picture intro · Use bank",
+  "default_direction": "cz_to_en",
+  "intro": [
+    {
+      "title": "Where the town stops",
+      "title_cz": "Tam, kde končí město",
+      "pictures": [
+        { "icon": "⛺", "en": "tent", "cz": "stan" },
+        { "icon": "🏡", "en": "cottage", "cz": "chata" },
+        { "icon": "🚧", "en": "fence", "cz": "plot" },
+        { "icon": "🚜", "en": "yard", "cz": "dvůr" },
+        { "icon": "🐝", "en": "bee", "cz": "včela" },
+        { "icon": "🏹", "en": "hunt", "cz": "lovit" },
+        { "icon": "⚓", "en": "port", "cz": "přístav" },
+        { "icon": "⛵", "en": "sailor", "cz": "námořník" },
+        { "icon": "🌊", "en": "flow", "cz": "téct" },
+        { "icon": "🧭", "en": "explore", "cz": "prozkoumat" },
+        { "icon": "🥾", "en": "expedition", "cz": "výprava" },
+        { "icon": "🏔️", "en": "remote", "cz": "odlehlý" }
+      ],
+      "body": "A Czech weekend usually happens somewhere these words describe, and English has a whole set of them that a city course never reaches.\nThe first six are the place you stop at: what you sleep in, what stands around it, and what lives there. The last six are about carrying on — down to the water, and then further than that."
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "This is a …",
+        "I have a …",
+        "Where is the …?",
+        "It is …",
+        "We need to …"
+      ],
+      "note": "hunt, flow and explore are verbs; the other nine are nouns and adjectives. A river flows, but you do not flow a river — flow never takes an object.",
+      "note_cz": "hunt, flow, explore jsou slovesa. Flow nemá předmět — řeka teče, ale nelze „téct řeku“."
+    }
+  ],
+  "blocks": [
+    {
+      "title": "Around the cottage",
+      "items": [
+        { "en": "tent", "cz": "stan", "use": ["this_is_a", "i_have_a"] },
+        { "en": "cottage", "cz": "chata", "use": ["this_is_a", "i_have_a"] },
+        { "en": "fence", "cz": "plot", "use": ["this_is_a", "the_bag_is"] },
+        { "en": "yard", "cz": "dvůr", "use": ["this_is_a", "where_is_the"] },
+        { "en": "bee", "cz": "včela", "use": ["this_is_a", "i_see_a"] },
+        { "en": "hunt", "cz": "lovit", "use": ["we_need_to", "i_want_to"] }
+      ]
+    },
+    {
+      "title": "Water and distance",
+      "items": [
+        { "en": "port", "cz": "přístav", "use": ["this_is_a", "where_is_the"] },
+        { "en": "sailor", "cz": "námořník", "use": ["this_is_a", "he_is_a"] },
+        { "en": "flow", "cz": "téct", "use": ["it_is", "we_need_to"] },
+        { "en": "explore", "cz": "prozkoumat", "use": ["we_need_to", "i_want_to"] },
+        { "en": "expedition", "cz": "výprava", "use": ["this_is_a", "lets_talk_about"] },
+        { "en": "remote", "cz": "odlehlý", "use": ["it_is", "the_bag_is"] }
+      ]
+    }
+  ],
+  "sentences": [
+    { "en": "Our tent is under the trees.",
+      "cz": "Náš stan je pod stromy.",
+      "lemmas": ["tent"],
+      "accepts": ["Our tent is under the trees"] },
+    { "en": "My parents have a small cottage in the mountains.",
+      "cz": "Moji rodiče mají v horách malou chatu.",
+      "lemmas": ["cottage"],
+      "accepts": ["My parents have a small cottage in the mountains"] },
+    { "en": "There is a white fence around the garden.",
+      "cz": "Kolem zahrady je bílý plot.",
+      "lemmas": ["fence"],
+      "accepts": ["There is a white fence around the garden"] },
+    { "en": "The children are playing in the yard.",
+      "cz": "Děti si hrají na dvoře.",
+      "lemmas": ["yard"],
+      "accepts": ["The children are playing in the yard"] },
+    { "en": "A bee is sitting on the flower.",
+      "cz": "Na květině sedí včela.",
+      "lemmas": ["bee"],
+      "accepts": ["A bee is sitting on the flower"] },
+    { "en": "These birds hunt at night.",
+      "cz": "Tihle ptáci loví v noci.",
+      "lemmas": ["hunt"],
+      "accepts": ["These birds hunt at night"] },
+    { "en": "The big ship is in the port.",
+      "cz": "Ta velká loď je v přístavu.",
+      "lemmas": ["port"],
+      "accepts": ["The big ship is in the port"] },
+    { "en": "My uncle was a sailor for ten years.",
+      "cz": "Můj strýc byl deset let námořník.",
+      "lemmas": ["sailor"],
+      "accepts": ["My uncle was a sailor for ten years"] },
+    { "en": "This river flows into the sea.",
+      "cz": "Tahle řeka teče do moře.",
+      "lemmas": ["flow"],
+      "accepts": ["This river flows into the sea"] },
+    { "en": "We want to explore the old town.",
+      "cz": "Chceme prozkoumat staré město.",
+      "lemmas": ["explore"],
+      "accepts": ["We want to explore the old town"] },
+    { "en": "Their expedition to the mountains was long.",
+      "cz": "Jejich výprava do hor byla dlouhá.",
+      "lemmas": ["expedition"],
+      "accepts": ["Their expedition to the mountains was long"] },
+    { "en": "That village is very remote.",
+      "cz": "Ta vesnice je velmi odlehlá.",
+      "lemmas": ["remote"],
+      "accepts": ["That village is very remote"] }
+  ]
+}
