@@ -149,6 +149,66 @@ exactly as English does. A minimal pair is only a defect when the two members
 are **interchangeable**; when they are opposites, shipping them together is the
 teaching point. That is page 2's note.
 
+### The new tool was then pointed backwards, and it found shipped defects
+
+**This is the part of the run worth James's attention.** Having built
+`gloss_check.py`, I ran it over the eleven B1 packs runs 37-40 shipped — the
+ones screened by the hand version that carries the compound-gloss bug. **It
+found nine collisions that shipped.** Three are false alarms (the author had
+disambiguated with a parenthetical — `leather`/*kůže (materiál)*,
+`tongue`/*jazyk (v ústech)* — which the tool strips before comparing), and two
+are real collisions that context defuses (`wool`/*vlna* against the taught
+`wave`, in a sentence about knitting socks; `flow`/*téct* against the taught
+`leak`, in a sentence about a river reaching the sea — a river does not leak
+into anything).
+
+**Four genuinely grade a right answer wrong**, and one is marginal. In each the
+Czech prompt admits a second English word the course has already taught:
+
+| pack · run | item | Czech prompt | also correct |
+|---|---|---|---|
+| `b1_materials` · 38 | `cloth` *látka* | *Tahle látka je velmi měkká* | **material** (`a2_shopping`) |
+| `b1_law_order` · 38 | `weapon` *zbraň* | *Ten muž měl v tašce zbraň* | **gun** (`a2_society`) |
+| `b1_media` · 39 | `quotation` *citát* | *…použil citát ze slavné knihy* | **quote** (`b1_communication`) |
+| `b1_nature` · 37 | `soil` *půda* | *Půda v naší zahradě…* / *…do půdy* | **ground** (`a2_nature`) — 2 sentences |
+| `b1_cooking` · 39 | `powder` *prášek* | *Dej ten bílý prášek do misky* | **pill** (`a1_health`) — marginal; the bowl makes powder far more natural |
+
+**All five are fixed by run 35's remedy rather than by rewriting anything: the
+sibling goes in `accepts[]`.** The audit reads `sentences[].en` and never
+`accepts[]`, so an alternate costs nothing at the gate and stops a correct
+answer grading wrong. **Nine accepts strings added across five packs; no `en`,
+no item, no gloss, and no formatting touched** — the first attempt rewrote the
+files through `json.dump` and reformatted all five wholesale, which is the
+drive-by refactor REPAIR-QUEUE.md forbids; it was reverted and redone as five
+surgical edits (13 insertions, 7 deletions total).
+
+**`b1_media`'s is the one with a lesson in it.** Run 39 chose `quotation`
+specifically to *replace* `studio`, which self-glossed — and traded a
+self-gloss for a collision it had no way to see, because *citát* is also the
+gloss of `quote`, which `b1_communication` had already taught. Fixing one class
+of this defect by hand can walk you straight into another.
+
+> **FORK — one gender leak found and deliberately NOT fixed. Conservative
+> path, logged.** `b1_cause_effect` (run 37) has *Došli jsme ke stejnému
+> závěru* — 1pl past, so *Došli* vs *Došly* leaks the group's gender, the trap
+> run 34 named as not-singular-only. **Every fix I could find changes the
+> English**: the present recast gives "we come" against an `en` of "We came",
+> and Czech has no gender-neutral past. Unlike the five above it also **cannot
+> grade a right answer wrong** — it *over*-specifies the prompt rather than
+> underdetermining it, and "We came to the same conclusion" is the only English
+> either way. So it is a register defect, not a grading one, and rewriting an
+> audited `en` to chase it is the more expensive path. Left as is; James's call
+> whether the register cost is worth an `en` change and a re-audit.
+
+**Recommendation, and it is cheap: run `gloss_check.py --pack <stem>` over the
+A1 and A2 packs too.** This run swept only the eleven B1 packs the hand check
+screened. The A1/A2 packs were authored before any collision check existed at
+all, so the same defect is very likely sitting in them — `a2_describing` alone
+shipped 11 exact within-pack gloss pairs by run 35's own count, and the
+cross-pack sweep has never been run over any of it. Bounded and mechanical, and
+a good use of a future run; not started here because one sweep per run is the
+safe rate and this one already had a repair attached.
+
 ### A third cause of the same grading defect, found this run
 
 The dropped-subject rule and the gloss-collision rule both exist because one
