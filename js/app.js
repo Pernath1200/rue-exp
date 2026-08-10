@@ -1012,8 +1012,9 @@ function bindProgressTransfer() {
         /* ignore */
       }
       const ok = window.confirm(
-        "Import this RUE progress file?\n\n" +
-          "• Current progress on THIS site will be replaced.\n" +
+        "Import this progress file?\n\n" +
+          "• Accepts rue-exp exports and RUE2 grammar exports.\n" +
+          "• Current progress on THIS site (active student profile) will be replaced.\n" +
           "• A backup download of current progress was just attempted.\n" +
           "• Page will reload after a successful import.",
       );

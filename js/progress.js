@@ -568,9 +568,169 @@ export function buildProgressExport() {
   };
 }
 
+const RUE2_APP = "rue2-grammar";
+const RUE2_KEY = "rue2-exp-progress";
+
+function modeTruthy(modes, name) {
+  if (!modes || typeof modes !== "object") return false;
+  return !!modes[name];
+}
+
+function ratioFromPair(score, total) {
+  if (typeof score !== "number" || typeof total !== "number" || total <= 0) {
+    return null;
+  }
+  const r = score / total;
+  if (!Number.isFinite(r)) return null;
+  return Math.max(0, Math.min(1, r));
+}
+
+/**
+ * Map one RUE2 grammar block → rue-exp grammar.blocks entry.
+ * Modes: intro/check/type copy; sentence (+ sentenceDone) → use.
+ * Scores: bestCheck/bestType pairs become best.check / best.type ratios.
+ */
+function mapRue2Block(src) {
+  if (!src || typeof src !== "object") return null;
+  const modesIn = src.modes && typeof src.modes === "object" ? src.modes : {};
+  const modes = {};
+  if (modeTruthy(modesIn, "intro")) modes.intro = true;
+  if (modeTruthy(modesIn, "check") || modeTruthy(modesIn, "quiz") || modeTruthy(modesIn, "match")) {
+    modes.check = true;
+  }
+  if (modeTruthy(modesIn, "type")) modes.type = true;
+  if (modeTruthy(modesIn, "sentence") || modeTruthy(modesIn, "use") || src.sentenceDone) {
+    modes.use = true;
+  }
+
+  const best = {};
+  const checkR =
+    ratioFromPair(src.bestCheckScore, src.bestCheckTotal) ??
+    (typeof src.bestQuiz === "number" && src.bestQuiz >= 0 && src.bestQuiz <= 1
+      ? src.bestQuiz
+      : null);
+  const typeR = ratioFromPair(src.bestTypeScore, src.bestTypeTotal);
+  if (checkR != null) best.check = checkR;
+  if (typeR != null) best.type = typeR;
+
+  let touchedAt = Date.now();
+  if (typeof src.touchedAt === "number" && Number.isFinite(src.touchedAt)) {
+    touchedAt = src.touchedAt;
+  } else if (typeof src.touchedAt === "string" && src.touchedAt) {
+    const t = Date.parse(src.touchedAt);
+    if (Number.isFinite(t)) touchedAt = t;
+  }
+
+  // Skip empty shells that were never started
+  if (!Object.keys(modes).length && !Object.keys(best).length && !src.touchedAt) {
+    return null;
+  }
+
+  return { modes, best, touchedAt };
+}
+
+/**
+ * Convert a RUE2 export / progress body into a rue-exp progress object.
+ * Returns { progress, stats } or { error }.
+ */
+export function convertRue2Progress(body) {
+  if (!body || typeof body !== "object") {
+    return { error: "No RUE2 progress data in file." };
+  }
+  const blocksIn =
+    body.blocks && typeof body.blocks === "object" ? body.blocks : null;
+  if (!blocksIn) {
+    return {
+      error:
+        "RUE2 file has no blocks{} (not a grammar progress export).",
+    };
+  }
+
+  const grammarBlocks = {};
+  const mapped = [];
+  const skippedEmpty = [];
+  for (const [id, src] of Object.entries(blocksIn)) {
+    if (!id || typeof id !== "string") continue;
+    const mappedBlock = mapRue2Block(src);
+    if (!mappedBlock) {
+      skippedEmpty.push(id);
+      continue;
+    }
+    grammarBlocks[id] = mappedBlock;
+    mapped.push(id);
+  }
+
+  const unlocked = Array.isArray(body.unlocked)
+    ? body.unlocked.slice()
+    : ["A1", "A2", "B1", "B2", "C1"];
+  for (const lv of ["A1", "A2", "B1", "B2", "C1"]) {
+    if (!unlocked.includes(lv)) unlocked.push(lv);
+  }
+
+  // Carry SRS stamps when present (same node-id grain as grammar packs).
+  const nodes = {};
+  if (body.nodes && typeof body.nodes === "object") {
+    for (const [nid, n] of Object.entries(body.nodes)) {
+      if (!n || typeof n !== "object") continue;
+      nodes[nid] = {
+        learnedAt: n.learnedAt || null,
+        nextDueAt: n.nextDueAt || null,
+        lastReviewAt: n.lastReviewAt || null,
+        successfulReps:
+          typeof n.successfulReps === "number" ? n.successfulReps : 0,
+      };
+    }
+  }
+
+  const progress = {
+    version: 1,
+    authorUnlock: false,
+    unlocked,
+    grammar: { blocks: grammarBlocks },
+    // RUE2 was grammar-only — vocab track starts empty on purpose.
+    vocab: { blocks: {} },
+    units: {},
+    nodes,
+    importedFrom: {
+      app: RUE2_APP,
+      at: new Date().toISOString(),
+      mappedCount: mapped.length,
+      skippedEmptyCount: skippedEmpty.length,
+    },
+  };
+
+  return {
+    progress,
+    stats: {
+      mapped,
+      skippedEmpty,
+      nodeCount: Object.keys(nodes).length,
+    },
+  };
+}
+
+function looksLikeRue2(obj, body) {
+  if (obj.app === RUE2_APP) return true;
+  if (obj.key === RUE2_KEY) return true;
+  // Raw dump: top-level blocks without grammar.blocks
+  if (
+    body &&
+    body.blocks &&
+    typeof body.blocks === "object" &&
+    !(body.grammar && body.grammar.blocks)
+  ) {
+    return true;
+  }
+  return false;
+}
+
 /**
  * Validate and apply an exported file (or raw progress object).
- * Returns { ok, message, unitish }.
+ * Accepts:
+ *   - rue-exp exports (app "rue-exp", key rue-exp-progress[…])
+ *   - RUE2 grammar exports (app "rue2-grammar", key rue2-exp-progress)
+ *   - raw progress objects of either shape
+ * Returns { ok, message, unitish, source }.
  */
 export function importProgressPayload(raw) {
   let obj = raw;
@@ -584,28 +744,73 @@ export function importProgressPayload(raw) {
   if (!obj || typeof obj !== "object") {
     return { ok: false, message: "Empty or invalid file." };
   }
-  // Accept the bare prefix (old exports) or any profile-suffixed key.
-  if (obj.key && obj.key !== PREFIX && !String(obj.key).startsWith(`${PREFIX}:`)) {
-    return {
-      ok: false,
-      message: `Wrong file (key ${obj.key}). Need ${PREFIX}.`,
-    };
-  }
-  if (obj.app && obj.app !== "rue-exp") {
-    return { ok: false, message: "This file is not RUE progress (wrong app)." };
-  }
+
   const body = obj.progress != null ? obj.progress : obj;
   if (!body || typeof body !== "object") {
     return { ok: false, message: "No progress data in file." };
   }
-  // Normalize via load-style checks
+
+  // --- RUE2 grammar → rue-exp ---
+  if (looksLikeRue2(obj, body)) {
+    const conv = convertRue2Progress(body);
+    if (conv.error) {
+      return { ok: false, message: conv.error };
+    }
+    const { progress: normalized, stats } = conv;
+    try {
+      localStorage.setItem(key(), JSON.stringify(normalized));
+    } catch {
+      return {
+        ok: false,
+        message: "Could not save (private mode / full storage).",
+      };
+    }
+    const gN = stats.mapped.length;
+    const skip = stats.skippedEmpty.length;
+    const parts = [
+      `Imported from RUE2 grammar: ${gN} unit(s)`,
+      "vocab track empty (RUE2 had no vocab)",
+    ];
+    if (skip) parts.push(`${skip} empty record(s) skipped`);
+    if (stats.nodeCount) parts.push(`SRS stamps: ${stats.nodeCount}`);
+    return {
+      ok: true,
+      message: parts.join(" · ") + ".",
+      unitish: gN,
+      source: "rue2",
+      mapped: stats.mapped,
+      skippedEmpty: stats.skippedEmpty,
+    };
+  }
+
+  // --- Native rue-exp ---
+  // Accept the bare prefix (old exports) or any profile-suffixed key.
+  if (
+    obj.key &&
+    obj.key !== PREFIX &&
+    !String(obj.key).startsWith(`${PREFIX}:`)
+  ) {
+    return {
+      ok: false,
+      message: `Wrong file (key ${obj.key}). Need ${PREFIX} or a RUE2 grammar export.`,
+    };
+  }
+  if (obj.app && obj.app !== "rue-exp") {
+    return {
+      ok: false,
+      message: `This file is not RUE progress (app ${obj.app}). Need rue-exp or rue2-grammar.`,
+    };
+  }
+
   const normalized = {
     version: 1,
     authorUnlock: !!body.authorUnlock,
     unlocked: Array.isArray(body.unlocked) ? body.unlocked.slice() : ["A1"],
     grammar: {
       blocks:
-        body.grammar && body.grammar.blocks && typeof body.grammar.blocks === "object"
+        body.grammar &&
+        body.grammar.blocks &&
+        typeof body.grammar.blocks === "object"
           ? body.grammar.blocks
           : {},
     },
@@ -626,12 +831,16 @@ export function importProgressPayload(raw) {
   try {
     localStorage.setItem(key(), JSON.stringify(normalized));
   } catch {
-    return { ok: false, message: "Could not save (private mode / full storage)." };
+    return {
+      ok: false,
+      message: "Could not save (private mode / full storage).",
+    };
   }
   return {
     ok: true,
     message: `Imported (grammar units: ${gN}, vocab banks: ${vN}).`,
     unitish: gN + vN,
+    source: "rue-exp",
   };
 }
 
