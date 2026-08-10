@@ -1,7 +1,9 @@
 /**
  * Sapling status-portrait — grows with CEFR level (A1 small → A2 taller → B1+ wider).
  * Grammar = roots below soil · Vocab = trunk + little branches/leaves above.
- * Navigation stays on the spine list; soft click on knots/labels focuses a node.
+ * Roots use tapered ribbons (RUE2 craft, simplified). Root labels hidden —
+ * knots only (atmosphere); soft click still focuses a path unit.
+ * Navigation stays on the spine list.
  */
 
 /** @typedef {{ id: string, domain: string, tree_part?: string, root?: string, status?: string, foundation?: boolean, label?: string }} TreeNode */
@@ -37,88 +39,107 @@ const HOUSES = [
 const LEVEL_PRESETS = {
   A1: {
     W: 620,
-    H: 500,
-    soilY: 250,
+    H: 520,
+    soilY: 248,
     trunkH: 72,
     trunkW0: 9,
     trunkW1: 14,
     canopyScale: 0.72,
-    rootDepth: 105,
-    rootReach: 0.72,
-    fork: false,
-    hair: 0,
-    soilDots: 28,
+    rootDepth: 118,
+    rootReach: 0.82,
+    fork: true,
+    secondaryForks: 0,
+    hair: 3,
+    hairGate: 0.2,
+    segments: 2,
+    wobble: 14,
+    soilDots: 36,
     caption: "Young sapling — small roots, small canopy.",
-    caption2: "Grows with fruit · click = path unit",
+    caption2: "Grows with fruit · click a root knot",
     soilLabel: "A1 · soil",
   },
   A2: {
     W: 640,
-    H: 560,
+    H: 580,
     soilY: 268,
     trunkH: 100,
     trunkW0: 11,
     trunkW1: 18,
     canopyScale: 0.9,
-    rootDepth: 140,
-    rootReach: 0.85,
+    rootDepth: 150,
+    rootReach: 0.9,
     fork: true,
-    hair: 2,
-    soilDots: 40,
+    secondaryForks: 1,
+    hair: 5,
+    hairGate: 0.25,
+    segments: 2,
+    wobble: 20,
+    soilDots: 48,
     caption: "Taller sapling — deeper roots.",
-    caption2: "A2 · more branches",
+    caption2: "A2 · more branches · click a knot",
     soilLabel: "A2 · soil",
   },
   B1: {
     W: 660,
-    H: 620,
+    H: 640,
     soilY: 280,
     trunkH: 120,
     trunkW0: 13,
     trunkW1: 22,
     canopyScale: 1.05,
-    rootDepth: 175,
-    rootReach: 0.95,
+    rootDepth: 180,
+    rootReach: 0.96,
     fork: true,
-    hair: 4,
-    soilDots: 56,
+    secondaryForks: 2,
+    hair: 8,
+    hairGate: 0.2,
+    segments: 3,
+    wobble: 26,
+    soilDots: 64,
     caption: "Young tree — wider system.",
-    caption2: "B1 · denser roots and canopy",
+    caption2: "B1 · denser roots · click a knot",
     soilLabel: "B1 · soil",
   },
   B2: {
     W: 680,
-    H: 660,
+    H: 680,
     soilY: 290,
     trunkH: 135,
     trunkW0: 14,
     trunkW1: 24,
     canopyScale: 1.12,
-    rootDepth: 195,
+    rootDepth: 200,
     rootReach: 1,
     fork: true,
-    hair: 6,
-    soilDots: 72,
+    secondaryForks: 2,
+    hair: 10,
+    hairGate: 0.15,
+    segments: 3,
+    wobble: 30,
+    soilDots: 80,
     caption: "Growing into a full tree.",
-    caption2: "B2 · deep system",
+    caption2: "B2 · deep system · click a knot",
     soilLabel: "B2 · soil",
   },
-  // C1 was missing → fell back to A1 (looked smaller than B2). Fixed 2026-08-10.
   C1: {
     W: 700,
-    H: 720,
+    H: 740,
     soilY: 300,
     trunkH: 155,
     trunkW0: 15,
     trunkW1: 28,
     canopyScale: 1.22,
-    rootDepth: 220,
-    rootReach: 1.05,
+    rootDepth: 230,
+    rootReach: 1.06,
     fork: true,
-    hair: 8,
-    soilDots: 96,
+    secondaryForks: 3,
+    hair: 12,
+    hairGate: 0.12,
+    segments: 3,
+    wobble: 34,
+    soilDots: 100,
     caption: "Mature tree — full system.",
-    caption2: "C1 · deepest roots, densest canopy",
+    caption2: "C1 · densest roots · click a knot",
     soilLabel: "C1 · soil",
   },
 };
@@ -150,22 +171,125 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
-/** Organic cubic from soil collar to tip (slight sag + lateral). */
-function rootCurve(cx, soilY, angleDeg, len, wobble) {
-  const rad = (angleDeg * Math.PI) / 180;
-  // angle 0 = straight down; negative = left
-  const tipX = cx + Math.sin(rad) * len;
-  const tipY = soilY + 10 + Math.cos(rad * 0.15) * len * 0.92;
-  const mid = 0.45;
-  const c1x = cx + Math.sin(rad) * len * mid * 0.55 + wobble * 0.15;
-  const c1y = soilY + 18 + len * 0.22;
-  const c2x = cx + Math.sin(rad) * len * 0.78 + wobble * 0.35;
-  const c2y = soilY + 12 + len * 0.55;
+/** Stable hash → [0,1) for deterministic organic wobble (RUE2). */
+function hash01(str) {
+  let h = 2166136261;
+  const s = String(str);
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return (h >>> 0) / 4294967296;
+}
+
+/**
+ * Tapered ribbon along quadratic Béziers — closed filled path (RUE2 limbChain).
+ * segs: { p0, p1, p2, w0, w1 }[]
+ */
+function limbChain(segs, steps = 22) {
+  const L = [];
+  const R = [];
+  segs.forEach((s, si) => {
+    for (let i = si === 0 ? 0 : 1; i <= steps; i++) {
+      const t = i / steps;
+      const mt = 1 - t;
+      const x = mt * mt * s.p0.x + 2 * mt * t * s.p1.x + t * t * s.p2.x;
+      const y = mt * mt * s.p0.y + 2 * mt * t * s.p1.y + t * t * s.p2.y;
+      const tx = 2 * mt * (s.p1.x - s.p0.x) + 2 * t * (s.p2.x - s.p1.x);
+      const ty = 2 * mt * (s.p1.y - s.p0.y) + 2 * t * (s.p2.y - s.p1.y);
+      const len = Math.hypot(tx, ty) || 1;
+      const nx = -ty / len;
+      const ny = tx / len;
+      const w = (s.w0 + (s.w1 - s.w0) * t) / 2;
+      L.push([x + nx * w, y + ny * w]);
+      R.push([x - nx * w, y - ny * w]);
+    }
+  });
+  if (!L.length) return "";
+  let d = `M${f(L[0][0])} ${f(L[0][1])}`;
+  for (let i = 1; i < L.length; i++) d += `L${f(L[i][0])} ${f(L[i][1])}`;
+  d += `L${f(R[R.length - 1][0])} ${f(R[R.length - 1][1])}`;
+  for (let i = R.length - 2; i >= 0; i--) d += `L${f(R[i][0])} ${f(R[i][1])}`;
+  return `${d}Z`;
+}
+
+function qpoint(p0, p1, p2, t) {
+  const mt = 1 - t;
   return {
-    tipX,
-    tipY,
-    d: `M ${f(cx)} ${f(soilY + 6)} C ${f(c1x)} ${f(c1y)}, ${f(c2x)} ${f(c2y)}, ${f(tipX)} ${f(tipY)}`,
+    x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x,
+    y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y,
   };
+}
+
+function chainPoint(segs, t) {
+  const n = segs.length;
+  if (!n) return { x: 0, y: 0 };
+  const u = Math.max(0, Math.min(1, t)) * n;
+  const i = Math.min(n - 1, Math.floor(u));
+  const local = u - i;
+  const s = segs[i];
+  return qpoint(s.p0, s.p1, s.p2, local);
+}
+
+function ridgePath(segs) {
+  if (!segs.length) return "";
+  let d = `M${f(segs[0].p0.x)} ${f(segs[0].p0.y)}`;
+  for (const s of segs) {
+    d += `Q${f(s.p1.x)} ${f(s.p1.y)} ${f(s.p2.x)} ${f(s.p2.y)}`;
+  }
+  return d;
+}
+
+/**
+ * Multi-segment primary root from soil collar toward tip (RUE2-style wobble).
+ */
+function buildPrimaryRoot(collar, tip, id, preset, fillM) {
+  const segsN = Math.max(2, preset.segments | 0);
+  const wobble = (preset.wobble || 12) * (0.55 + 0.45 * fillM);
+  const pts = [collar];
+  for (let i = 1; i < segsN; i++) {
+    const t = i / segsN;
+    const base = {
+      x: collar.x + (tip.x - collar.x) * t,
+      y: collar.y + (tip.y - collar.y) * t,
+    };
+    const h1 = hash01(`${id}-w${i}a`);
+    const h2 = hash01(`${id}-w${i}b`);
+    const dx = tip.x - collar.x;
+    const dy = tip.y - collar.y;
+    const len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len;
+    const ny = dx / len;
+    const side = (h1 - 0.5) * 2;
+    pts.push({
+      x: base.x + nx * wobble * side,
+      y: base.y + ny * wobble * side * 0.35 + wobble * 0.35 * h2,
+    });
+  }
+  pts.push(tip);
+
+  const segs = [];
+  for (let i = 0; i < pts.length - 1; i++) {
+    const a = pts[i];
+    const b = pts[i + 1];
+    const h = hash01(`${id}-c${i}`);
+    const ctrl = {
+      x: (a.x + b.x) / 2 + (h - 0.5) * wobble * 0.55,
+      y: (a.y + b.y) / 2 + wobble * 0.4 + (hash01(`${id}-cy${i}`) - 0.3) * 10,
+    };
+    const t0 = i / (pts.length - 1);
+    const t1 = (i + 1) / (pts.length - 1);
+    segs.push({ p0: a, p1: ctrl, p2: b, t0, t1 });
+  }
+  return segs;
+}
+
+function withWidths(segs, w0, w1) {
+  return segs.map((s) => ({
+    ...s,
+    w0: w0 + (w1 - w0) * s.t0,
+    w1: w0 + (w1 - w0) * s.t1,
+  }));
 }
 
 /**
@@ -279,72 +403,140 @@ export function renderTreePortrait(container, opts) {
     return C.copper;
   }
 
-  // ---- Roots (below) ----
+  // ---- Roots (below) — tapered ribbons, forks, hair (RUE2 craft) ----
+  const collar = { x: cx, y: soilY + 6 };
   const rootBits = laterals
     .map((L, idx) => {
+      const fillM = L.state === "dim" ? 0.15 : Math.max(0.2, L.fill);
       const len =
-        P.rootDepth * P.rootReach * (0.55 + L.fill * 0.45) *
-        (L.state === "dim" ? 0.55 : 1);
-      const wobble = (idx % 2 === 0 ? -1 : 1) * (10 + idx * 3);
-      const { tipX, tipY, d } = rootCurve(cx, soilY, L.angle, len, wobble);
-      const sw =
-        L.state === "dim" ? 1.6 : 1.8 + L.fill * 4.5;
+        P.rootDepth *
+        P.rootReach *
+        (0.58 + fillM * 0.42) *
+        (L.state === "dim" ? 0.58 : 1);
+      const rad = (L.angle * Math.PI) / 180;
+      // angle 0 ≈ down; negative = left
+      const tip = {
+        x: cx + Math.sin(rad) * len,
+        y: soilY + 12 + Math.cos(rad * 0.12) * len * 0.94,
+      };
+      const segs = buildPrimaryRoot(collar, tip, L.tree_part, P, fillM);
+      const w0 = L.state === "dim" ? 2.2 : 3.2 + fillM * 5.5;
+      const w1 = L.state === "dim" ? 0.9 : 1.1 + fillM * 1.4;
+      const body = limbChain(withWidths(segs, w0, w1), 20);
       const stroke = strokeFor(L.state);
-      const op = L.state === "dim" ? 0.32 : 0.92;
+      const fillBody =
+        L.state === "fruit"
+          ? "rgba(34,197,94,0.55)"
+          : L.state === "dim"
+            ? "rgba(120,140,160,0.14)"
+            : "rgba(86,156,214,0.42)";
+      const op = L.state === "dim" ? 0.55 : 0.95;
+      const tipPt = segs.length ? segs[segs.length - 1].p2 : tip;
       const knotR =
-        (L.state === "dim" ? 2.8 : 3.6 + L.fill * 2.4) * (level === "A1" ? 0.95 : 1);
+        (L.state === "dim" ? 3.2 : 4.2 + fillM * 2.8) *
+        (level === "A1" ? 1.05 : 1);
       const firstNode = (L.nodes || []).find((n) => n.status === "live");
       const dataId = firstNode ? firstNode.id : "";
-      const labFill = L.state === "dim" ? "#555" : C.ink;
 
-      // Optional tiny fork when progressing (A2+)
-      let fork = "";
-      if (P.fork && L.state !== "dim" && L.fill > 0.25) {
-        const side = L.angle < 0 ? -1 : 1;
-        const fx = tipX + side * (12 + L.fill * 10);
-        const fy = tipY - 8 - L.fill * 6;
-        fork = `<path d="M ${f(tipX * 0.35 + cx * 0.65)} ${f((tipY + soilY) / 2)} Q ${f(tipX + side * 8)} ${f(tipY - 4)}, ${f(fx)} ${f(fy)}"
-          fill="none" stroke="${stroke}" stroke-width="${1.2 + L.fill}" opacity="${0.45 + L.fill * 0.4}" stroke-linecap="round"/>`;
+      // Secondary forks
+      let forks = "";
+      const nFork =
+        P.fork && L.state !== "dim"
+          ? Math.max(1, (P.secondaryForks || 0) + (fillM > 0.35 ? 1 : 0))
+          : P.fork && L.state !== "dim"
+            ? 1
+            : 0;
+      for (let fi = 0; fi < nFork; fi++) {
+        const att = chainPoint(segs, 0.42 + fi * 0.18);
+        const sign = (L.angle < 0 ? -1 : 1) * (fi % 2 === 0 ? 1 : -1);
+        const fang = rad + sign * (0.35 + fi * 0.12);
+        const flen = len * (0.28 + 0.08 * fi) * (0.75 + 0.25 * fillM);
+        const ftip = {
+          x: att.x + Math.sin(fang) * flen,
+          y: att.y + Math.abs(Math.cos(fang)) * flen * 0.9 + 6,
+        };
+        const h = hash01(`${L.tree_part}-fk${fi}`);
+        const fctrl = {
+          x: (att.x + ftip.x) / 2 + (h - 0.5) * 12,
+          y: (att.y + ftip.y) / 2 + 8,
+        };
+        const fsegs = [
+          {
+            p0: att,
+            p1: fctrl,
+            p2: ftip,
+            t0: 0,
+            t1: 1,
+            w0: w0 * 0.45,
+            w1: 0.7,
+          },
+        ];
+        forks += `<path d="${limbChain(fsegs, 14)}" fill="${fillBody}" stroke="${stroke}"
+          stroke-width="0.4" opacity="${0.4 + fillM * 0.35}" pointer-events="none"/>`;
       }
 
-      // Fine hairs near tip when fill high
+      // Fine hair rootlets along the primary
       let hairs = "";
-      if (P.hair > 0 && L.fill > 0.35 && L.state !== "dim") {
-        for (let h = 0; h < Math.min(P.hair, 3); h++) {
-          const a = L.angle + (h - 1) * 12;
-          const hr = ((a * Math.PI) / 180);
-          const hx = tipX + Math.sin(hr) * (8 + h * 4);
-          const hy = tipY + 6 + h * 3;
-          hairs += `<path d="M ${f(tipX)} ${f(tipY)} Q ${f((tipX + hx) / 2)} ${f(tipY + 8)}, ${f(hx)} ${f(hy)}"
-            fill="none" stroke="${stroke}" stroke-width="1" opacity="0.35" stroke-linecap="round"/>`;
+      const hairN = P.hair || 0;
+      const hairGate = P.hairGate != null ? P.hairGate : 0.25;
+      if (hairN > 0 && fillM >= hairGate && L.state !== "dim") {
+        const n = Math.min(hairN, 12);
+        for (let h = 0; h < n; h++) {
+          const tA = 0.5 + 0.42 * hash01(`${L.tree_part}-ht${h}`);
+          const att = chainPoint(segs, tA);
+          const a =
+            rad +
+            ((hash01(`${L.tree_part}-ha${h}`) - 0.5) * 1.1);
+          const hlen =
+            8 + 18 * hash01(`${L.tree_part}-hl${h}`) * (0.5 + 0.5 * fillM);
+          const hx = att.x + Math.sin(a) * hlen;
+          const hy = att.y + Math.abs(Math.cos(a)) * hlen + 3;
+          hairs += `<path d="M${f(att.x)} ${f(att.y)}Q${f((att.x + hx) / 2)} ${f((att.y + hy) / 2 + 5)} ${f(hx)} ${f(hy)}"
+            fill="none" stroke="${stroke}" stroke-width="${0.9 + fillM}"
+            opacity="${(0.18 + 0.28 * fillM).toFixed(2)}" stroke-linecap="round" pointer-events="none"/>`;
         }
       }
 
+      // Centre ridge for volume
+      const ridge = ridgePath(segs);
+      const ridgeOp = L.state === "dim" ? 0.15 : 0.35 + fillM * 0.25;
+
       return `
         <g class="tp-lateral" data-part="${L.tree_part}" data-node="${dataId}">
-          <path class="tp-root ${L.state}" d="${d}" fill="none" stroke="${stroke}"
-            stroke-width="${sw}" stroke-linecap="round" opacity="${op}"/>
-          ${fork}${hairs}
+          <path class="tp-root-body ${L.state}" d="${body}" fill="${fillBody}"
+            stroke="${stroke}" stroke-width="0.5" opacity="${op}"/>
+          <path class="tp-root-ridge" d="${ridge}" fill="none" stroke="${stroke}"
+            stroke-width="${1.1 + fillM}" opacity="${ridgeOp}" stroke-linecap="round"
+            pointer-events="none"/>
+          ${forks}${hairs}
           <circle class="tp-knot ${L.state}" data-node="${dataId}"
-            cx="${f(tipX)}" cy="${f(tipY)}" r="${f(knotR)}"
-            fill="${fillFor(L.state)}" stroke="${stroke}" stroke-width="1.1" opacity="${op}"
-            style="cursor:${dataId ? "pointer" : "default"}"/>
-          <text class="tp-label" x="${f(tipX)}" y="${f(tipY + 14)}" text-anchor="middle"
-            fill="${labFill}" font-size="9.5" font-family="Segoe UI,system-ui,sans-serif"
-            opacity="${L.state === "dim" ? 0.55 : 0.95}">${esc(L.label)}</text>
+            cx="${f(tipPt.x)}" cy="${f(tipPt.y)}" r="${f(knotR)}"
+            fill="${fillFor(L.state)}" stroke="${stroke}" stroke-width="1.2" opacity="${op}"
+            style="cursor:${dataId ? "pointer" : "default"}">
+            <title>${esc(L.label)}</title>
+          </circle>
         </g>`;
     })
     .join("");
 
-  // Tap root
-  const tapLen = P.rootDepth * (0.42 + tap.fill * 0.35);
-  const tapSw = tap.state === "dim" && tap.fill === 0 ? 2 : 2.2 + tap.fill * 5;
+  // Tap root (thick central ribbon)
+  const tapFillM =
+    tap.state === "dim" && tap.fill === 0 ? 0.12 : Math.max(0.25, tap.fill);
+  const tapLen = P.rootDepth * (0.48 + tapFillM * 0.38);
+  const tapTip = { x: cx, y: soilY + 8 + tapLen };
+  const tapSegs = buildPrimaryRoot(collar, tapTip, "tap", P, tapFillM);
+  const tapW0 = tap.state === "dim" && tap.fill === 0 ? 3.2 : 4.5 + tapFillM * 7;
+  const tapW1 = 1.4 + tapFillM * 1.2;
+  const tapBody = limbChain(withWidths(tapSegs, tapW0, tapW1), 22);
   const tapStroke = strokeFor(
     tap.state === "dim" && tap.fill === 0 ? "dim" : tap.state,
   );
-  const tapOp = tap.state === "dim" && tap.fill === 0 ? 0.35 : 0.95;
-  // Gentle S for tap
-  const tapD = `M ${f(cx)} ${f(soilY + 6)} C ${f(cx - 6)} ${f(soilY + tapLen * 0.4)}, ${f(cx + 5)} ${f(soilY + tapLen * 0.7)}, ${f(cx)} ${f(soilY + 6 + tapLen)}`;
+  const tapOp = tap.state === "dim" && tap.fill === 0 ? 0.4 : 0.96;
+  const tapFillBody =
+    tap.state === "fruit"
+      ? "rgba(34,197,94,0.5)"
+      : "rgba(61,111,156,0.55)";
+  const tapRidge = ridgePath(tapSegs);
 
   // ---- Trunk (tapered sapling stem) ----
   const tFill = Math.max(0.08, trunk.fill); // tiny visible stem even at zero
@@ -497,16 +689,18 @@ export function renderTreePortrait(container, opts) {
       <text x="${W - 44}" y="${soilY - 8}" text-anchor="end" fill="${C.muted}"
         font-size="9" font-family="Segoe UI,system-ui,sans-serif">${esc(P.soilLabel)}</text>
 
-      <!-- roots -->
+      <!-- roots (ribbons · knots only — no root labels) -->
       <g class="tp-below">
-        <path d="${tapD}" fill="none" stroke="${tapStroke}" stroke-width="${tapSw}"
-          stroke-linecap="round" opacity="${tapOp}"/>
-        <circle cx="${f(cx)}" cy="${f(soilY + 6 + tapLen)}" r="${f(3 + tap.fill * 2.5)}"
+        <path d="${tapBody}" fill="${tapFillBody}" stroke="${tapStroke}"
+          stroke-width="0.55" opacity="${tapOp}"/>
+        <path d="${tapRidge}" fill="none" stroke="${tapStroke}"
+          stroke-width="${1.4 + tapFillM}" opacity="${0.3 + tapFillM * 0.3}"
+          stroke-linecap="round" pointer-events="none"/>
+        <circle cx="${f(tapTip.x)}" cy="${f(tapTip.y)}" r="${f(3.5 + tapFillM * 2.8)}"
           fill="${fillFor(tap.state === "dim" && tap.fill === 0 ? "dim" : tap.state)}"
-          opacity="${tapOp}"/>
-        <text x="${f(cx)}" y="${f(soilY + 6 + tapLen + 15)}" text-anchor="middle"
-          fill="${tap.fill > 0.05 ? C.copper : "#555"}" font-size="9.5"
-          font-family="Segoe UI,system-ui,sans-serif">Foundation · ${Math.round(tap.fill * 100)}%</text>
+          opacity="${tapOp}">
+          <title>Foundation · ${Math.round(tap.fill * 100)}%</title>
+        </circle>
         ${rootBits}
       </g>
 

@@ -82,7 +82,7 @@ Future denser drawing must **preserve seat ids** so progress wiring stays valid.
 - [x] Document vision (`docs/TREE-VISION.md`)
 - [x] Add **C1** `LEVEL_PRESETS` so C1 ≥ B2 in size
 - [x] Level-driven soil texture count
-- [ ] Optional light density polish on current cyan paths (still sketch language)
+- [x] **Root ribbons** (RUE2-style tapered limbs, forks, hair) · cyan denser · **root labels hidden** (knots + title tooltips only) — 2026-08-10
 
 ### Next redesign pass (full cool tree)
 
