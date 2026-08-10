@@ -845,3 +845,54 @@ matches items 1-26 with 5, 6 and 27 each covering two original log entries.
 
 This routine now stops for good. Answers to the 28 items go in James's own
 channel (REPAIR-QUEUE or direct edits), not in this file.
+
+---
+
+# Lesson-ready push — review cycle 2 (re-armed 2026-08-10, cap 10 runs)
+
+The FINAL PASS above closed the previous cycle. This routine was re-armed by
+`codex/LESSON-READY-PLAN.md` (Lane C) to review the Czech the build routine
+writes while dressing the 9 live B1 vocab packs. Same rules, same verdicts.
+
+## 2026-08-10 — second-opinion pass (cloud, run 1/10, ~11:45 UTC)
+
+Scope: build run 1's Czech — b1_work (picture-led intro + 18-sentence Use
+bank), b1_money (picture-led intro + 19-sentence Use bank), b1_core_frames
+(trunk schematic intro, text-only page 1). The b1_money item reformat and
+the emoji-presentation commit changed no Czech; item glosses in both leaves
+were already reviewed 2026-08-07 and are untouched.
+
+**Fixed: 0 · Flagged: 1 · everything else ok.**
+
+For James:
+- `b1_money` bank *exchange*: "Chci si **vyměnit** peníze za jinou měnu." —
+  grammatical and natural, but *vyměnit si* is this pack's own gloss for
+  **swap** ("vyměnit si (mezi sebou)"), while *exchange* is glossed
+  "směnit / výměna (peněz)". A student who learned the pack's pairs may
+  answer "I want to swap my money…", which `accepts` (exchange only) grades
+  wrong — the gloss-collision shape from CZECH-TRAPS.md №6. Suggest cz →
+  "Chci si směnit peníze za jinou měnu." (keeps the two verbs distinct), or
+  add the swap form to `accepts` (English, so yours). Left unchanged.
+
+Clean, no log needed: all 37 other bank sentences. The route-around method
+held throughout — every prompt is an explicit noun subject, 1sg/1pl present,
+or a fixed imperative (*Vezměte si prosím…*); both past-tense sentences hang
+on non-speaker subjects (*Můj bratr dostal povýšení*, *Ta firma měla loni
+zisk*); the one gendered predicate has an explicit feminine subject (*Moje
+babička je velmi štědrá*). Correct oblique cases throughout — genitives
+*ze své staré školy / hodně peněz / moc peněz / majetek mého otce*,
+accusatives *správnou kvalifikaci / dva nové lidi / zálohu / vysoké daně /
+hypotéku / dvouletou záruku / noční směnu*, locatives *na novém účtu /
+v práci / v pátek*, instrumental *vlakem*, datives *škole / mi dluží*,
+correct *utrácet za + acc* (with the intro's spend-on note on the English
+side — the two prepositions correctly not calqued either way). Agreement
+clean incl. neuter *Cestovní pojištění je důležité*, plural *Moje úspory
+jsou na novém účtu*, feminine *Tato práce je stálá, ne dočasná*. Idiomatic
+*odejít do důchodu*, *na částečný úvazek*, *Můj strýc je OSVČ* (the
+short form sidesteps the participle gloss flagged 08-07), *zpětnou vazbu*.
+Bank cz consistent with the packs' glosses — *uzávěrka* and *záloha* are
+both members of their items' dual glosses, fine. All 24 leaf tiles are
+clean trimmed forms of their items' glosses; both leaf title_cz lines,
+the trunk intro's *Od úvahy k výsledku / Budete tvořit celé věty*, and
+all three note_cz lines (incl. correct Czech quotes in „an advice") are
+natural, correct Czech.
