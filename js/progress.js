@@ -4,7 +4,77 @@
  * Vocab fruit: 4 modes + best quiz/type ≥ 0.75 (RUE3 soft)
  */
 
-const KEY = "rue-exp-progress";
+/**
+ * Per-student profiles (2026-08-10). The sacred name "rue-exp-progress"
+ * survives as the PREFIX; each student's record lives at
+ * "rue-exp-progress:<profile>". Pre-profile progress under the bare key
+ * migrates (copy, not move) into profile "me" on first load — the bare key
+ * stays behind untouched as a backup.
+ */
+const PREFIX = "rue-exp-progress";
+const PROFILE_KEY = "rue-exp-profile";
+const PROFILES_KEY = "rue-exp-profiles";
+const DEFAULT_PROFILES = [
+  "me", "martin", "ondrej", "martina", "jan", "vaclav", "tomas", "homare",
+];
+
+function sanitizeProfile(name) {
+  return String(name || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9_-]/g, "")
+    .slice(0, 24);
+}
+
+export function listProfiles() {
+  try {
+    const raw = localStorage.getItem(PROFILES_KEY);
+    const arr = raw ? JSON.parse(raw) : null;
+    if (Array.isArray(arr) && arr.length) return arr.map(sanitizeProfile).filter(Boolean);
+  } catch {
+    /* fall through to defaults */
+  }
+  return DEFAULT_PROFILES.slice();
+}
+
+export function getActiveProfile() {
+  let stored = null;
+  try {
+    stored = localStorage.getItem(PROFILE_KEY);
+  } catch {
+    /* ignore */
+  }
+  return sanitizeProfile(stored) || "me";
+}
+
+/** Select a profile (adds it to the list if new). Returns false on bad name. */
+export function setActiveProfile(name) {
+  const p = sanitizeProfile(name);
+  if (!p) return false;
+  localStorage.setItem(PROFILE_KEY, p);
+  const list = listProfiles();
+  if (!list.includes(p)) {
+    list.push(p);
+    localStorage.setItem(PROFILES_KEY, JSON.stringify(list));
+  }
+  return true;
+}
+
+function key() {
+  return `${PREFIX}:${getActiveProfile()}`;
+}
+
+// One-time migration: copy bare-key progress into the "me" profile.
+(function migrateBareKey() {
+  try {
+    const bare = localStorage.getItem(PREFIX);
+    if (bare != null && localStorage.getItem(`${PREFIX}:me`) == null) {
+      localStorage.setItem(`${PREFIX}:me`, bare);
+    }
+  } catch {
+    /* private mode etc. — profiles still work, just nothing to migrate */
+  }
+})();
+
 export const PASS_RATIO = 0.8;
 export const FRUIT_SOFT = 0.75;
 /** Successful spaced reviews needed for “Mastered” (RUE2 sibling). */
@@ -26,7 +96,7 @@ function empty() {
 
 export function loadProgress() {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(key());
     if (!raw) return empty();
     const d = JSON.parse(raw);
     if (!d || typeof d !== "object") return empty();
@@ -44,7 +114,7 @@ export function loadProgress() {
 }
 
 function save(p) {
-  localStorage.setItem(KEY, JSON.stringify(p));
+  localStorage.setItem(key(), JSON.stringify(p));
 }
 
 export function isAuthorUnlock() {
@@ -476,12 +546,12 @@ export function levelUnitStats(level, nodes) {
 }
 
 export function resetAllProgress() {
-  localStorage.removeItem(KEY);
+  localStorage.removeItem(key());
 }
 
-/** Storage key (stable — never rename; renaming wipes browsers). */
+/** Active profile's storage key. The PREFIX is stable — never rename. */
 export function progressStorageKey() {
-  return KEY;
+  return key();
 }
 
 /**
@@ -491,7 +561,8 @@ export function progressStorageKey() {
 export function buildProgressExport() {
   return {
     app: "rue-exp",
-    key: KEY,
+    key: PREFIX,
+    profile: getActiveProfile(),
     exportedAt: new Date().toISOString(),
     progress: loadProgress(),
   };
@@ -513,10 +584,11 @@ export function importProgressPayload(raw) {
   if (!obj || typeof obj !== "object") {
     return { ok: false, message: "Empty or invalid file." };
   }
-  if (obj.key && obj.key !== KEY) {
+  // Accept the bare prefix (old exports) or any profile-suffixed key.
+  if (obj.key && obj.key !== PREFIX && !String(obj.key).startsWith(`${PREFIX}:`)) {
     return {
       ok: false,
-      message: `Wrong file (key ${obj.key}). Need ${KEY}.`,
+      message: `Wrong file (key ${obj.key}). Need ${PREFIX}.`,
     };
   }
   if (obj.app && obj.app !== "rue-exp") {
@@ -552,7 +624,7 @@ export function importProgressPayload(raw) {
   const gN = Object.keys(normalized.grammar.blocks).length;
   const vN = Object.keys(normalized.vocab.blocks).length;
   try {
-    localStorage.setItem(KEY, JSON.stringify(normalized));
+    localStorage.setItem(key(), JSON.stringify(normalized));
   } catch {
     return { ok: false, message: "Could not save (private mode / full storage)." };
   }

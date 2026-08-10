@@ -31,6 +31,9 @@ import {
   FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
+  listProfiles,
+  getActiveProfile,
+  setActiveProfile,
 } from "./progress.js";
 import {
   mountSmokeFlagsUI,
@@ -844,6 +847,50 @@ function watchAutoTranslate() {
   check();
 }
 
+/**
+ * Student profile picker (2026-08-10). Switching reloads the page — all
+ * rendered state derives from the active profile's progress at load time,
+ * and a reload is the one path that cannot leave stale state behind.
+ */
+function bindProfilePicker() {
+  const sel = document.getElementById("profile-select");
+  if (!sel) return;
+  const ADD = "__add__";
+  function fill() {
+    const active = getActiveProfile();
+    const names = listProfiles();
+    if (!names.includes(active)) names.push(active);
+    sel.innerHTML = "";
+    for (const n of names) {
+      const opt = document.createElement("option");
+      opt.value = n;
+      opt.textContent = n === "me" ? "me (James)" : n;
+      sel.appendChild(opt);
+    }
+    const add = document.createElement("option");
+    add.value = ADD;
+    add.textContent = "+ add student…";
+    sel.appendChild(add);
+    sel.value = active;
+  }
+  fill();
+  sel.addEventListener("change", () => {
+    if (sel.value === ADD) {
+      const name = window.prompt("New student name (letters only):", "");
+      if (name && setActiveProfile(name)) {
+        location.reload();
+      } else {
+        fill(); // bad/cancelled input — restore current selection
+      }
+      return;
+    }
+    if (sel.value && sel.value !== getActiveProfile()) {
+      setActiveProfile(sel.value);
+      location.reload();
+    }
+  });
+}
+
 async function boot() {
   const err = document.getElementById("boot-error");
   try {
@@ -858,6 +905,7 @@ async function boot() {
     backfillReview(STATE.tree.nodes || []);
 
     watchAutoTranslate();
+    bindProfilePicker();
 
     document.getElementById("btn-author-unlock")?.addEventListener("click", () => {
       setAuthorUnlock(!isAuthorUnlock());
