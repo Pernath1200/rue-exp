@@ -8,74 +8,25 @@
  * Unlimited retries: a later perfect retry stamps cleanPass via score 1/1.
  */
 
-/**
- * Per-student profiles (2026-08-10). The sacred name "rue-exp-progress"
- * survives as the PREFIX; each student's record lives at
- * "rue-exp-progress:<profile>". Pre-profile progress under the bare key
- * migrates (copy, not move) into profile "me" on first load — the bare key
- * stays behind untouched as a backup.
- */
-const PREFIX = "rue-exp-progress";
-const PROFILE_KEY = "rue-exp-profile";
-const PROFILES_KEY = "rue-exp-profiles";
-const DEFAULT_PROFILES = [
-  "me", "martin", "ondrej", "martina", "jan", "vaclav", "tomas", "homare",
-];
+const KEY = "rue-exp-progress";
 
-function sanitizeProfile(name) {
-  return String(name || "")
-    .toLowerCase()
-    .replace(/[^a-z0-9_-]/g, "")
-    .slice(0, 24);
-}
-
-export function listProfiles() {
+/* One student per browser — each learner uses their own laptop, so a picker
+   was solving a problem that doesn't exist (removed 2026-08-10, same day it
+   was added). This undoes the brief profile-key experiment: anything written
+   under "rue-exp-progress:me" is copied back to the plain key, then the
+   scoped keys are cleared so a stale copy can't overwrite it on a later load.
+   Runs once and is then a no-op. */
+(function unscopeProgressKeys() {
   try {
-    const raw = localStorage.getItem(PROFILES_KEY);
-    const arr = raw ? JSON.parse(raw) : null;
-    if (Array.isArray(arr) && arr.length) return arr.map(sanitizeProfile).filter(Boolean);
-  } catch {
-    /* fall through to defaults */
-  }
-  return DEFAULT_PROFILES.slice();
-}
-
-export function getActiveProfile() {
-  let stored = null;
-  try {
-    stored = localStorage.getItem(PROFILE_KEY);
-  } catch {
-    /* ignore */
-  }
-  return sanitizeProfile(stored) || "me";
-}
-
-/** Select a profile (adds it to the list if new). Returns false on bad name. */
-export function setActiveProfile(name) {
-  const p = sanitizeProfile(name);
-  if (!p) return false;
-  localStorage.setItem(PROFILE_KEY, p);
-  const list = listProfiles();
-  if (!list.includes(p)) {
-    list.push(p);
-    localStorage.setItem(PROFILES_KEY, JSON.stringify(list));
-  }
-  return true;
-}
-
-function key() {
-  return `${PREFIX}:${getActiveProfile()}`;
-}
-
-// One-time migration: copy bare-key progress into the "me" profile.
-(function migrateBareKey() {
-  try {
-    const bare = localStorage.getItem(PREFIX);
-    if (bare != null && localStorage.getItem(`${PREFIX}:me`) == null) {
-      localStorage.setItem(`${PREFIX}:me`, bare);
+    const scoped = localStorage.getItem(`${KEY}:me`);
+    if (scoped != null) localStorage.setItem(KEY, scoped);
+    for (const k of Object.keys(localStorage)) {
+      if (k.startsWith(`${KEY}:`)) localStorage.removeItem(k);
     }
+    localStorage.removeItem("rue-exp-profile");
+    localStorage.removeItem("rue-exp-profiles");
   } catch {
-    /* private mode etc. — profiles still work, just nothing to migrate */
+    /* private mode — nothing to undo */
   }
 })();
 
@@ -156,7 +107,7 @@ function migrateLegacyFruitClear(p) {
 
 export function loadProgress() {
   try {
-    const raw = localStorage.getItem(key());
+    const raw = localStorage.getItem(KEY);
     if (!raw) return empty();
     const d = JSON.parse(raw);
     if (!d || typeof d !== "object") return empty();
@@ -169,7 +120,7 @@ export function loadProgress() {
     if (!Array.isArray(d.unlocked)) d.unlocked = ["A1", "A2", "B1", "B2", "C1"];
     if (migrateLegacyFruitClear(d)) {
       try {
-        localStorage.setItem(key(), JSON.stringify(d));
+        localStorage.setItem(KEY, JSON.stringify(d));
       } catch {
         /* ignore quota */
       }
@@ -181,7 +132,7 @@ export function loadProgress() {
 }
 
 function save(p) {
-  localStorage.setItem(key(), JSON.stringify(p));
+  localStorage.setItem(KEY, JSON.stringify(p));
 }
 
 export function isAuthorUnlock() {
@@ -714,12 +665,12 @@ export function levelUnitStats(level, nodes) {
 }
 
 export function resetAllProgress() {
-  localStorage.removeItem(key());
+  localStorage.removeItem(KEY);
 }
 
-/** Active profile's storage key. The PREFIX is stable — never rename. */
+/** Storage key (stable — never rename; renaming wipes browsers). */
 export function progressStorageKey() {
-  return key();
+  return KEY;
 }
 
 /**
@@ -729,8 +680,7 @@ export function progressStorageKey() {
 export function buildProgressExport() {
   return {
     app: "rue-exp",
-    key: PREFIX,
-    profile: getActiveProfile(),
+    key: KEY,
     exportedAt: new Date().toISOString(),
     progress: loadProgress(),
   };
@@ -926,7 +876,7 @@ export function importProgressPayload(raw) {
     }
     const { progress: normalized, stats } = conv;
     try {
-      localStorage.setItem(key(), JSON.stringify(normalized));
+      localStorage.setItem(KEY, JSON.stringify(normalized));
     } catch {
       return {
         ok: false,
@@ -955,12 +905,11 @@ export function importProgressPayload(raw) {
   // Accept the bare prefix (old exports) or any profile-suffixed key.
   if (
     obj.key &&
-    obj.key !== PREFIX &&
-    !String(obj.key).startsWith(`${PREFIX}:`)
+    obj.key !== KEY
   ) {
     return {
       ok: false,
-      message: `Wrong file (key ${obj.key}). Need ${PREFIX} or a RUE2 grammar export.`,
+      message: `Wrong file (key ${obj.key}). Need ${KEY} or a RUE2 grammar export.`,
     };
   }
   if (obj.app && obj.app !== "rue-exp") {
@@ -997,7 +946,7 @@ export function importProgressPayload(raw) {
   const gN = Object.keys(normalized.grammar.blocks).length;
   const vN = Object.keys(normalized.vocab.blocks).length;
   try {
-    localStorage.setItem(key(), JSON.stringify(normalized));
+    localStorage.setItem(KEY, JSON.stringify(normalized));
   } catch {
     return {
       ok: false,

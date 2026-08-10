@@ -7,7 +7,7 @@
 | **Folder** | `projects/rue-exp` |
 | **Role** | **The one canonical RUE repo** (decided 2026-08-06) — grammar + vocab zigzag, rupl-exp pattern |
 | **Port** | 8097 |
-| **Progress** | Per-student since 2026-08-10: `rue-exp-progress:<profile>` (picker in the util-bar; bare `rue-exp-progress` = pre-profile data, migrated to `:me` on load, left in place as backup). The prefix is sacred — never rename. Profile meta keys: `rue-exp-profile`, `rue-exp-profiles`. |
+| **Progress** | `rue-exp-progress` only — one key, one browser. A per-student picker was tried and removed 2026-08-10 (students use their own laptops). Never rename the key. |
 | **Codex** | `../rue-codex` — units hang on `G_*` / `V_*`; never invent theme ids |
 | **Do not overwrite** | `rue2-grok-v1.0` / `rue3-exp` student sites without explicit promote |
 
