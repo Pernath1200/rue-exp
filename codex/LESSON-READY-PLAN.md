@@ -1,5 +1,15 @@
 # LESSON-READY PLAN — from here to a lesson-reliable RUE
 
+> **⛔ AUTOMATION CANCELLED — 2026-08-10. MANUAL EDITS ONLY.**
+> Phase 1's two automation lanes below are **dead scope**. Do not arm a cloud
+> routine, cron, or agent lane from this document — credits are the binding
+> constraint (see `codex/HANDOFF.md`, which is the live kill switch, and keep it
+> in place). **Everything below survives only as a manual to-do list**: the
+> content scope, ordering and completion criteria are still right; the delivery
+> mechanism is James at a keyboard, or an interactive session he is driving.
+> Phase 0 is DONE (see its ticks). Two automation runs did land before the stop
+> — `build` is ahead of `main`, unreviewed.
+
 Written 2026-08-10 (James + Claude local session, post-audit). This is the
 scope document for the next automation push. **Any routine or agent working
 this plan reads it in full first**, plus `AGENTS.md` (binding contract) and
