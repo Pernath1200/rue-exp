@@ -108,6 +108,52 @@ function empty() {
   };
 }
 
+/**
+ * One-time: restore fruit after fruit gates tightened (2026-08-10).
+ * Progress was NOT wiped — meters count fruit; modes-only "done" stopped
+ * counting under strict clear rules, so 4/4 units looked incomplete and
+ * Learned dropped to 0%.
+ *
+ * Runs once per progress blob (`fruitClearMigrate: 1`). Grandfathers any
+ * unit that already walked the full ladder (old contract) as clear.
+ * Future completeMode calls still require real clear scores for new fruit.
+ */
+function migrateLegacyFruitClear(p) {
+  if (!p || p.fruitClearMigrate === 1) return false;
+
+  const stamp = (b, bestPath, passKey) => {
+    b[passKey] = true;
+    if (bestPath === "check" || bestPath === "type" || bestPath === "use") {
+      b.best = b.best || {};
+      if (b.best[bestPath] == null || b.best[bestPath] < 1) b.best[bestPath] = 1;
+    } else if (b[bestPath] == null || b[bestPath] < 1) {
+      b[bestPath] = 1;
+    }
+  };
+
+  for (const b of Object.values(p.grammar.blocks || {})) {
+    if (!b || !b.modes) continue;
+    if (!(b.modes.check && b.modes.type && b.modes.use)) continue;
+    stamp(b, "check", "checkCleanPass");
+    stamp(b, "type", "typeCleanPass");
+    stamp(b, "use", "useCleanPass");
+  }
+
+  for (const b of Object.values(p.vocab.blocks || {})) {
+    if (!b || !b.modes) continue;
+    if (!(b.modes.match && b.modes.quiz && b.modes.type && b.modes.sentence)) {
+      continue;
+    }
+    stamp(b, "bestQuiz", "quizCleanPass");
+    stamp(b, "bestType", "typeCleanPass");
+    stamp(b, "bestSentence", "sentenceCleanPass");
+    b.sentenceDone = true;
+  }
+
+  p.fruitClearMigrate = 1;
+  return true;
+}
+
 export function loadProgress() {
   try {
     const raw = localStorage.getItem(key());
@@ -121,6 +167,13 @@ export function loadProgress() {
     if (!d.units) d.units = {};
     if (!d.nodes) d.nodes = {};
     if (!Array.isArray(d.unlocked)) d.unlocked = ["A1", "A2", "B1", "B2", "C1"];
+    if (migrateLegacyFruitClear(d)) {
+      try {
+        localStorage.setItem(key(), JSON.stringify(d));
+      } catch {
+        /* ignore quota */
+      }
+    }
     return d;
   } catch {
     return empty();
