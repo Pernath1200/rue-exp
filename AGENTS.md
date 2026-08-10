@@ -183,14 +183,14 @@ deliberately unresolved decision.**
 
 **Order, if resumed — do not skip ahead:**
 
-1. **Re-verify the gap before trusting it.** The 336-word count was already
-   stale by 2026-08-08 — re-measured after two days of content work and it
-   moved the wrong way (A1 98%→90%, B1 56%→30% coverage), which should not
-   happen when only content is *added*. Likely cause, unconfirmed: sequencing
-   repairs (`fix(unit): re-lexify … onto taught vocabulary` commits) swap a
-   word for an already-taught synonym to clear an audit violation, and may be
-   trading away Oxford-listed words for simpler ones with no preference either
-   way. Re-run `codex/scripts/rue_oxford.py` fresh before trusting any number.
+1. ~~Re-verify the gap before trusting it.~~ **DONE 2026-08-10 — Q1 CLOSED,
+   verdict in `codex/OXFORD-REMEASURE.md`.** The "anomaly" was a
+   measurement-tier artifact (2026-08-07 read tier C/anyfield 98/56,
+   2026-08-08 read tier A/items 90/30 — same table, different rows, nothing
+   moved). Coverage never fell; the re-lexify hypothesis is dead. **Scope
+   the extension off tier B (taught): ~498 words ≈ 42 packs — not the old
+   336, which was the inflated tier-C floor.** Any future coverage claim
+   must name its tier (A items / B taught / C anyfield).
 2. **Prerequisite: backfill `teaches_lemmas` across all 93 grammar packs.**
    Flat array on each pack, e.g. `"teaches_lemmas": ["work", "works", "live",
    "lives"]` — the actual forms the pack drills (RUPL's grammar packs already
@@ -239,6 +239,15 @@ Shared rules:
   REPAIR-QUEUE marks an item engine-ok; default ban.
 - All output = **drafts that pass the machine gate**. James still smokes —
   automation never promotes itself to students.
+
+## Sequencing repair — Oxford-preference rule (2026-08-10)
+
+When re-lexifying a sentence onto taught vocabulary to clear an audit
+violation: if several taught replacements fit, **prefer a word on
+`codex/vocab/oxford-5k-cefr.csv` at or below the pack's level**, and never
+swap an Oxford-listed word for an off-list one when an Oxford-listed
+alternative exists. (Q1 established this failure mode never actually
+happened — the rule exists so it never can. See `codex/OXFORD-REMEASURE.md`.)
 
 ## Don't
 
