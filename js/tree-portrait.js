@@ -696,9 +696,9 @@ export function renderTreePortrait(container, opts) {
         <path d="${tapBody}" fill="${tapFillBody}" stroke="${tapStroke}"
           stroke-width="0.55" opacity="${tapOp}"/>
         <path d="${tapRidge}" fill="none" stroke="${tapStroke}"
-          stroke-width="${1.4 + tapFillM}" opacity="${0.3 + tapFillM * 0.3}"
+          stroke-width="${1.4 + tapStruct}" opacity="${0.3 + tapStruct * 0.3}"
           stroke-linecap="round" pointer-events="none"/>
-        <circle cx="${f(tapTip.x)}" cy="${f(tapTip.y)}" r="${f(3.5 + tapFillM * 2.8)}"
+        <circle cx="${f(tapTip.x)}" cy="${f(tapTip.y)}" r="${f(3.5 + tapStruct * 2.8)}"
           fill="${fillFor(tap.state === "dim" && tap.fill === 0 ? "dim" : tap.state)}"
           opacity="${tapOp}">
           <title>Foundation · ${Math.round(tap.fill * 100)}%</title>
