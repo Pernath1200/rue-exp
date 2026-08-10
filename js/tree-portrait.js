@@ -47,6 +47,7 @@ const LEVEL_PRESETS = {
     rootReach: 0.72,
     fork: false,
     hair: 0,
+    soilDots: 28,
     caption: "Young sapling — small roots, small canopy.",
     caption2: "Grows with fruit · click = path unit",
     soilLabel: "A1 · soil",
@@ -63,6 +64,7 @@ const LEVEL_PRESETS = {
     rootReach: 0.85,
     fork: true,
     hair: 2,
+    soilDots: 40,
     caption: "Taller sapling — deeper roots.",
     caption2: "A2 · more branches",
     soilLabel: "A2 · soil",
@@ -79,6 +81,7 @@ const LEVEL_PRESETS = {
     rootReach: 0.95,
     fork: true,
     hair: 4,
+    soilDots: 56,
     caption: "Young tree — wider system.",
     caption2: "B1 · denser roots and canopy",
     soilLabel: "B1 · soil",
@@ -95,9 +98,28 @@ const LEVEL_PRESETS = {
     rootReach: 1,
     fork: true,
     hair: 6,
+    soilDots: 72,
     caption: "Growing into a full tree.",
     caption2: "B2 · deep system",
     soilLabel: "B2 · soil",
+  },
+  // C1 was missing → fell back to A1 (looked smaller than B2). Fixed 2026-08-10.
+  C1: {
+    W: 700,
+    H: 720,
+    soilY: 300,
+    trunkH: 155,
+    trunkW0: 15,
+    trunkW1: 28,
+    canopyScale: 1.22,
+    rootDepth: 220,
+    rootReach: 1.05,
+    fork: true,
+    hair: 8,
+    soilDots: 96,
+    caption: "Mature tree — full system.",
+    caption2: "C1 · deepest roots, densest canopy",
+    soilLabel: "C1 · soil",
   },
 };
 
@@ -410,9 +432,9 @@ export function renderTreePortrait(container, opts) {
     })
     .join("");
 
-  // Soft soil texture dots
+  // Soft soil texture dots (level-scaled; C1 densest)
   let soilDots = "";
-  const nDots = level === "A1" ? 28 : level === "A2" ? 40 : 56;
+  const nDots = P.soilDots != null ? P.soilDots : 40;
   for (let i = 0; i < nDots; i++) {
     const dx = 30 + ((i * 97) % (W - 60));
     const dy = soilY + 20 + ((i * 53) % (H - soilY - 40));
