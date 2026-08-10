@@ -1923,3 +1923,109 @@ button.m.wrong {
   opacity: 0.3;
   cursor: default;
 }
+
+/* ---- First-fruit payoff (from RUE2 / RUPL) ---- */
+.fruit-payoff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.15rem;
+  padding: 2.25rem 1rem 1.75rem;
+  min-height: 14rem;
+}
+.fruit-payoff-tick {
+  width: 56px;
+  height: 56px;
+}
+.fruit-payoff-tick svg { display: block; }
+.fruit-payoff-tick circle {
+  fill: none;
+  stroke: var(--correct, #5a9e8f);
+  stroke-width: 2;
+  opacity: 0.35;
+}
+.fruit-payoff-tick path {
+  fill: none;
+  stroke: var(--correct, #5a9e8f);
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  transition: stroke-dashoffset 0.5s ease 0.08s;
+}
+.fruit-payoff-tick.is-drawn path { stroke-dashoffset: 0; }
+.fruit-payoff-kind {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.fruit-payoff-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem 0.75rem;
+}
+.fruit-payoff-level {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius, 8px);
+  border: 1px solid var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent);
+  min-width: 3rem;
+  text-align: center;
+  line-height: 1.2;
+}
+.fruit-payoff-stats {
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+.fruit-payoff-stats .fruit-payoff-dot {
+  color: var(--muted);
+  font-weight: 500;
+  margin: 0 0.15rem;
+}
+.fruit-payoff-meter {
+  width: min(100%, 22rem);
+  grid-template-columns: 1fr;
+  margin: 0;
+}
+.fruit-payoff-meter .meter-track { height: 0.55rem; }
+.fruit-payoff-meter .meter-fill {
+  transition: width 1.25s cubic-bezier(0.22, 1, 0.36, 1);
+  background: color-mix(in srgb, var(--correct, #5a9e8f) 82%, transparent);
+}
+.fruit-payoff-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.fruit-payoff-diag {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 28rem;
+  line-height: 1.35;
+  word-break: break-word;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fruit-payoff-tick path {
+    transition: none;
+    stroke-dashoffset: 0;
+  }
+  .fruit-payoff-meter .meter-fill { transition: none; }
+}

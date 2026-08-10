@@ -304,6 +304,22 @@ export function startPractice(rawPack, root, opts) {
     opts.onExit();
   };
 
+  /**
+   * Record progress + fire onFruit only when !wasFruit → nowFruit
+   * (strict clear gates live in progress.js — never modes-only).
+   */
+  function notifyProgress(mode, result) {
+    if (typeof opts.onBeforeProgress === "function") opts.onBeforeProgress();
+    const r = completeMode(pack.id, mode, result);
+    if (r && r.justFruited && typeof opts.onFruit === "function") {
+      opts.onFruit({ domain: "grammar", packId: pack.id, mode });
+    }
+    if (r && r.review && typeof opts.onReview === "function") {
+      opts.onReview(r.review, mode);
+    }
+    return r;
+  }
+
   function setStage(s) {
     state.stage = s;
     render();
@@ -404,7 +420,7 @@ export function startPractice(rawPack, root, opts) {
     clearAdvance();
     const cards = pack.intro || [];
     if (!cards.length) {
-      completeMode(pack.id, "intro");
+      notifyProgress( "intro");
       beginCheck();
       return;
     }
@@ -475,7 +491,7 @@ export function startPractice(rawPack, root, opts) {
     };
     const goNext = () => {
       if (last) {
-        completeMode(pack.id, "intro");
+        notifyProgress( "intro");
         beginCheck();
       } else {
         state.introIndex += 1;
@@ -550,7 +566,7 @@ export function startPractice(rawPack, root, opts) {
     const hasQuiz = state.quizItems.length > 0;
     const hasOrder = state.orderItems.length > 0;
     if (!hasMatch && !hasQuiz && !hasOrder) {
-      completeMode(pack.id, "check", { score: 1, total: 1 });
+      notifyProgress( "check", { score: 1, total: 1 });
       beginType();
       return;
     }
@@ -580,7 +596,7 @@ export function startPractice(rawPack, root, opts) {
     }
     const s = state.checkTotal ? state.checkScore : 1;
     const t = state.checkTotal || 1;
-    completeMode(pack.id, "check", { score: s, total: t });
+    notifyProgress( "check", { score: s, total: t });
     beginType();
   }
 
@@ -783,7 +799,7 @@ export function startPractice(rawPack, root, opts) {
       state.checkScore += score;
       state.checkTotal += total;
       state.quizScoreCommitted = true;
-      completeMode(pack.id, "check", {
+      notifyProgress( "check", {
         score: state.checkScore,
         total: state.checkTotal,
       });
@@ -791,7 +807,7 @@ export function startPractice(rawPack, root, opts) {
     // Clearing every mistake in the retry rounds counts as a full pass —
     // mastery through correction, not first-try perfection.
     if (state.quizRetryPass && wrongN === 0) {
-      completeMode(pack.id, "check", { score: 1, total: 1 });
+      notifyProgress( "check", { score: 1, total: 1 });
     }
     root.innerHTML = `
       ${ladderHtml()}
@@ -961,13 +977,13 @@ export function startPractice(rawPack, root, opts) {
       state.checkScore += score;
       state.checkTotal += total;
       state.orderScoreCommitted = true;
-      completeMode(pack.id, "check", {
+      notifyProgress( "check", {
         score: state.checkScore,
         total: state.checkTotal,
       });
     }
     if (state.orderRetryPass && wrongN === 0) {
-      completeMode(pack.id, "check", { score: 1, total: 1 });
+      notifyProgress( "check", { score: 1, total: 1 });
     }
     root.innerHTML = `
       ${ladderHtml()}
@@ -1143,7 +1159,7 @@ export function startPractice(rawPack, root, opts) {
     state.typeScore = 0;
     state.typeWrong = [];
     if (!state.typeItems.length) {
-      completeMode(pack.id, "type", { score: 1, total: 1 });
+      notifyProgress( "type", { score: 1, total: 1 });
       beginUse();
       return;
     }
@@ -1165,7 +1181,8 @@ export function startPractice(rawPack, root, opts) {
     state.useScore = 0;
     state.useWrong = [];
     if (!state.useItems.length) {
-      completeMode(pack.id, "use");
+      // No Use bank: stage is absent, not failed — stamp clear (1/1).
+      notifyProgress("use", { score: 1, total: 1 });
       state.stage = "done";
       render();
       return;
@@ -1189,17 +1206,17 @@ export function startPractice(rawPack, root, opts) {
         : "Finish · summary →";
 
     if (kind === "type" && !state.typeScoreCommitted && !retryPass) {
-      completeMode(pack.id, "type", { score, total });
+      notifyProgress( "type", { score, total });
       state.typeScoreCommitted = true;
     }
     if (kind === "use" && !state.useScoreCommitted && !retryPass) {
-      completeMode(pack.id, "use", { score, total });
+      notifyProgress( "use", { score, total });
       state.useScoreCommitted = true;
     }
     // Clearing every mistake in the retry rounds counts as a full pass —
     // mastery through correction, not first-try perfection.
     if (retryPass && wrongN === 0) {
-      completeMode(pack.id, kind, { score: 1, total: 1 });
+      notifyProgress( kind, { score: 1, total: 1 });
     }
 
     root.innerHTML = `

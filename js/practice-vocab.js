@@ -1274,7 +1274,10 @@ export function startPractice(root, block, opts) {
 
     if (t.pos >= t.order.length) {
       const wrongN = t.wrong.length;
-      reportMode("sentence", { score: t.score, total: passLen });
+      // Same gate discipline as Quiz/Type: first pass records real score;
+      // perfect retry stamps 1/1 cleanPass. Never fruit on partial Use.
+      if (!t.retryPass) reportMode("sentence", { score: t.score, total: passLen });
+      else if (wrongN === 0) reportMode("sentence", { score: 1, total: 1 });
       stage.innerHTML = `
         <div class="q">
           <div class="prompt">Stage done</div>

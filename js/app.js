@@ -50,6 +50,10 @@ const STATE = {
   selectedId: null,
   view: "map",
   showFull: false,
+  /** Queued first-fruit tick — shown on practice exit only. */
+  pendingFruitPayoff: null,
+  lastPlayedLevel: null,
+  cameFromReview: false,
 };
 
 async function loadJson(path) {
@@ -87,6 +91,14 @@ function progressState(node) {
     : nodeProgressStateVocab(node);
 }
 
+function clearFruitPayoffKeys() {
+  const root = document.getElementById("practice-root");
+  if (root && root.__ruePayoffKey) {
+    document.removeEventListener("keydown", root.__ruePayoffKey, true);
+    root.__ruePayoffKey = null;
+  }
+}
+
 function showMap() {
   const pr = document.getElementById("practice-root");
   if (pr && typeof pr._RUE2UnbindKeys === "function") {
@@ -97,11 +109,13 @@ function showMap() {
     pr._RUEVocabUnbind();
     pr._RUEVocabUnbind = null;
   }
-  pr.innerHTML = "";
+  clearFruitPayoffKeys();
+  if (pr) pr.innerHTML = "";
   STATE.view = "map";
   document.getElementById("view-map").hidden = false;
   document.getElementById("view-practice").hidden = true;
   document.body.classList.remove("domain-grammar", "domain-vocab");
+  if (STATE.lastPlayedLevel) STATE.level = STATE.lastPlayedLevel;
   renderAll();
   // Land on "what's next" — after a review launch, that means the review
   // card (finish the day's queue), falling through to up-next once empty.
@@ -120,12 +134,264 @@ function showMap() {
 
 function showPractice(domain) {
   STATE.view = "practice";
+  clearFruitPayoffKeys();
+  STATE.pendingFruitPayoff = null;
   document.getElementById("view-map").hidden = true;
   document.getElementById("view-practice").hidden = false;
   document.body.classList.remove("domain-grammar", "domain-vocab");
   document.body.classList.add(
     domain === "grammar" ? "domain-grammar" : "domain-vocab",
   );
+}
+
+function escapeXml(s) {
+  return String(s)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function levelOfNode(node) {
+  if (!node) return STATE.level || "A1";
+  if (Array.isArray(node.levels) && node.levels[0]) return node.levels[0];
+  return STATE.level || "A1";
+}
+
+/**
+ * Queue first-fruit tick. Only call when progress says justFruited.
+ * Shown on practice exit — never mid-question.
+ */
+function queueFruitPayoff(nodeId, statsBefore) {
+  const nodes = STATE.tree?.nodes || [];
+  const level = levelOfNode(nodeById(nodeId));
+  const after = levelUnitStats(level, nodes);
+  STATE.pendingFruitPayoff = {
+    kind: "learned",
+    nodeId,
+    level,
+    before: statsBefore || after,
+    after,
+  };
+}
+
+function maybeShowFruitPayoff() {
+  const pending = STATE.pendingFruitPayoff;
+  if (!pending) return false;
+  STATE.pendingFruitPayoff = null;
+  showFruitPayoff(pending);
+  return true;
+}
+
+/**
+ * First fruit only: tick + level chip + Learned bar (from RUE2 / RUPL).
+ * Must not fire unless justFruited was true (strict clear gates).
+ */
+function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId }) {
+  const root = document.getElementById("practice-root");
+  if (!root) return;
+  if (typeof root._RUE2UnbindKeys === "function") {
+    try {
+      root._RUE2UnbindKeys();
+    } catch {
+      /* ignore */
+    }
+    root._RUE2UnbindKeys = null;
+  }
+  if (typeof root._RUEVocabUnbind === "function") {
+    try {
+      root._RUEVocabUnbind();
+    } catch {
+      /* ignore */
+    }
+    root._RUEVocabUnbind = null;
+  }
+  clearFruitPayoffKeys();
+  STATE.view = "payoff";
+  document.getElementById("view-map").hidden = true;
+  document.getElementById("view-practice").hidden = false;
+  document.body.classList.remove("domain-grammar", "domain-vocab");
+
+  const isRemember = kind === "remembered";
+  const meterKey = isRemember ? "remembered" : "learned";
+  const meterLabel = isRemember ? "Remembered" : "Learned";
+  const meterClass = isRemember ? "meter-remembered" : "meter-learned";
+  const level = lvlIn || levelOfNode(nodeById(nodeId)) || STATE.level || "A1";
+  const total = after?.total > 0 ? after.total : 1;
+  const pctOf = (n) => Math.round((100 * (n || 0)) / total);
+  const fromN = before?.[meterKey] ?? 0;
+  const toN = after?.[meterKey] ?? 0;
+  const fromP = pctOf(fromN);
+  const toP = pctOf(toN);
+  const reduce =
+    typeof matchMedia === "function" &&
+    matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const DURATION_MS = 1250;
+  const primaryId = isRemember ? "payoff-review" : "payoff-next";
+  const primaryLabel = isRemember ? "Review" : "Do next";
+
+  const paintStats = (n, p) => {
+    const fracEl = root.querySelector("#payoff-frac");
+    const pctEl = root.querySelector("#payoff-pct");
+    const track = root.querySelector(".meter-track");
+    if (fracEl) fracEl.textContent = `${n}/${total}`;
+    if (pctEl) pctEl.textContent = `${p}%`;
+    if (track) track.setAttribute("aria-valuenow", String(p));
+  };
+
+  // Author mode: gate snapshot so early fruit is self-diagnosing
+  let gateDiag = "";
+  if (isAuthorUnlock() && nodeId) {
+    try {
+      const prog = loadProgress();
+      const gb = prog.grammar.blocks[nodeId] || null;
+      const vb =
+        prog.vocab.blocks[nodeId] ||
+        Object.values(prog.vocab.blocks).find((b) => b && b.nodeId === nodeId) ||
+        null;
+      const b = gb || vb;
+      if (b) {
+        const bits = [];
+        bits.push(`modes: ${Object.keys(b.modes || {}).join(",") || "-"}`);
+        if (gb) {
+          bits.push(
+            `best check=${b.best?.check ?? "-"} type=${b.best?.type ?? "-"} use=${b.best?.use ?? "-"}`,
+          );
+          bits.push(
+            `cleanPass check=${!!b.checkCleanPass} type=${!!b.typeCleanPass} use=${!!b.useCleanPass}`,
+          );
+        } else {
+          bits.push(`best quiz=${b.bestQuiz ?? "-"} type=${b.bestType ?? "-"} sent=${b.bestSentence ?? "-"}`);
+          bits.push(
+            `cleanPass quiz=${!!b.quizCleanPass} type=${!!b.typeCleanPass} sent=${!!b.sentenceCleanPass}`,
+          );
+        }
+        gateDiag = `<div class="fruit-payoff-diag">${escapeXml(nodeId)} · ${escapeXml(bits.join(" · "))}</div>`;
+      }
+    } catch {
+      gateDiag = "";
+    }
+  }
+
+  root.innerHTML = `
+    <div class="fruit-payoff" role="status" aria-live="polite"
+      aria-label="${escapeXml(level)} ${escapeXml(meterLabel)} ${toN} of ${total}, ${toP} percent">
+      <div class="fruit-payoff-tick${reduce ? " is-drawn" : ""}" aria-hidden="true">
+        <svg viewBox="0 0 48 48" width="56" height="56" focusable="false">
+          <circle cx="24" cy="24" r="20" />
+          <path d="M14 24.5 L21 31.5 L34 16.5" />
+        </svg>
+      </div>
+      <div class="fruit-payoff-kind" aria-hidden="true">${escapeXml(meterLabel)}</div>
+      <div class="fruit-payoff-head">
+        <span class="fruit-payoff-level" aria-hidden="true">${escapeXml(level)}</span>
+        <span class="fruit-payoff-stats">
+          <span id="payoff-frac">${reduce ? toN : fromN}/${total}</span>
+          <span class="fruit-payoff-dot" aria-hidden="true">·</span>
+          <span id="payoff-pct">${reduce ? toP : fromP}%</span>
+        </span>
+      </div>
+      <div class="meter-row ${meterClass} fruit-payoff-meter">
+        <div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+          aria-valuenow="${reduce ? toP : fromP}"
+          aria-label="${escapeXml(level)} ${escapeXml(meterLabel)} ${toN} of ${total}">
+          <div class="meter-fill" id="payoff-fill" style="width:${reduce ? toP : fromP}%"></div>
+        </div>
+      </div>
+      ${gateDiag}
+      <div class="home-actions fruit-payoff-nav" role="group" aria-label="Main actions">
+        <button type="button" class="home-btn home-btn-primary" id="${primaryId}">${primaryLabel}</button>
+        <button type="button" class="home-btn" id="payoff-home">Home</button>
+        ${
+          isRemember
+            ? `<button type="button" class="home-btn" id="payoff-next">Do next</button>`
+            : `<button type="button" class="home-btn" id="payoff-review">Review</button>`
+        }
+        <button type="button" class="home-btn" id="payoff-topics">Topics</button>
+        <button type="button" class="home-btn" id="payoff-howto">How to use</button>
+      </div>
+    </div>`;
+
+  const fill = root.querySelector("#payoff-fill");
+  const tick = root.querySelector(".fruit-payoff-tick");
+
+  if (reduce) {
+    paintStats(toN, toP);
+  } else {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (tick) tick.classList.add("is-drawn");
+        if (fill) fill.style.width = `${toP}%`;
+        const t0 = performance.now();
+        const step = (now) => {
+          const t = Math.min(1, (now - t0) / DURATION_MS);
+          const e = 1 - (1 - t) ** 3;
+          const n = Math.round(fromN + (toN - fromN) * e);
+          const p = Math.round(fromP + (toP - fromP) * e);
+          paintStats(n, p);
+          if (t < 1) requestAnimationFrame(step);
+          else paintStats(toN, toP);
+        };
+        requestAnimationFrame(step);
+      });
+    });
+  }
+
+  const leaveToMap = () => {
+    clearFruitPayoffKeys();
+    showMap();
+  };
+
+  root.querySelector("#payoff-next")?.addEventListener("click", () => {
+    leaveToMap();
+    void startDoNext();
+  });
+  root.querySelector("#payoff-home")?.addEventListener("click", () => {
+    leaveToMap();
+    STATE.homePanel = null;
+    renderHomeChrome();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  root.querySelector("#payoff-review")?.addEventListener("click", () => {
+    leaveToMap();
+    STATE.homePanel = "review";
+    renderHomeChrome();
+    document.getElementById("review-card")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  root.querySelector("#payoff-topics")?.addEventListener("click", () => {
+    leaveToMap();
+    STATE.homePanel = "more";
+    STATE.homePanelSource = "topics";
+    renderHomeChrome();
+    document.getElementById("panel-more")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  });
+  root.querySelector("#payoff-howto")?.addEventListener("click", () => {
+    leaveToMap();
+    showHowto();
+  });
+
+  const onKey = (e) => {
+    if (e.key !== "Enter") return;
+    e.preventDefault();
+    e.stopPropagation();
+    clearFruitPayoffKeys();
+    leaveToMap();
+    if (isRemember) {
+      STATE.homePanel = "review";
+      renderHomeChrome();
+    } else {
+      void startDoNext();
+    }
+  };
+  root.__ruePayoffKey = onKey;
+  document.addEventListener("keydown", onKey, true);
+  root.querySelector(`#${primaryId}`)?.focus();
 }
 
 /** Path id list for the active CEFR level (A1 zigzag + A2 zigzag + higher spines). */
@@ -594,13 +860,26 @@ async function openNode(node, launch = {}) {
     const root = document.getElementById("practice-root");
     root.innerHTML = "";
 
+    STATE.lastPlayedLevel = levelOfNode(node);
+
     if (node.domain === "grammar") {
+      let statsBefore = null;
       startGrammarPractice(pack, root, {
         startStage: launch.review ? "type" : undefined,
+        onBeforeProgress: () => {
+          statsBefore = levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []);
+        },
+        onFruit: () => {
+          queueFruitPayoff(
+            node.id,
+            statsBefore || levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []),
+          );
+        },
         onExit: () => {
           if (node.unit_id) {
             refreshUnit(node.unit_id, node.id, node.partner_id);
           }
+          if (maybeShowFruitPayoff()) return;
           showMap();
         },
       });
@@ -660,26 +939,30 @@ async function openNode(node, launch = {}) {
         practiceBlock.focus_structures = focusStructures;
       }
 
-      touchVocabBlock(practiceBlock.id || pack.id || node.id, node.id);
+      const blockId = practiceBlock.id || pack.id || node.id;
+      touchVocabBlock(blockId, node.id);
       startVocabPractice(root, practiceBlock, {
         startMode: launch.review ? "type" : undefined,
         practice,
         packId: pack.id || node.id,
         packTitle: pack.title || node.label,
         packLevel: (node.levels && node.levels[0]) || pack.level || "?",
-        onTouch: () =>
-          touchVocabBlock(practiceBlock.id || pack.id || node.id, node.id),
+        onTouch: () => touchVocabBlock(blockId, node.id),
         onModeComplete: (mode, meta) => {
-          completeVocabMode(
-            practiceBlock.id || pack.id || node.id,
-            mode,
-            meta || {},
-          );
+          const nodes = STATE.tree?.nodes || [];
+          const statsBefore = levelUnitStats(levelOfNode(node), nodes);
+          const wasFruit = hasVocabFruit(node);
+          const r = completeVocabMode(blockId, mode, meta || {});
+          const nowFruit = hasVocabFruit(node);
+          if ((r && r.justFruited) || (!wasFruit && nowFruit)) {
+            queueFruitPayoff(node.id, statsBefore);
+          }
         },
         onExit: () => {
           if (node.unit_id) {
             refreshUnit(node.unit_id, node.partner_id, node.id);
           }
+          if (maybeShowFruitPayoff()) return;
           showMap();
         },
       });
