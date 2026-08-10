@@ -20,7 +20,7 @@ import {
 import { attachExplain } from "./explain.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 
-/** Smoke flags removed with Author unlock ? keep call sites as no-ops. */
+/** Smoke flags removed with Author unlock — keep call sites as no-ops. */
 function setSmokeContext() {}
 
 /** Alias for dual-engine shell */
