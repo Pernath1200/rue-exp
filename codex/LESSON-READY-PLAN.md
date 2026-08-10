@@ -192,5 +192,5 @@ Ordered scope:
 
 ## Appendix — run counters (routines: increment your own line, one per run)
 
-- Claude build runs used: 0 / 10
+- Claude build runs used: 1 / 10
 - Claude Czech-review runs used: 0 / 10
