@@ -957,7 +957,7 @@ export function startPractice(root, block, opts) {
       <div class="q">
         ${diagramBlock(it)}
         <div class="prompt">${sw(supportOf(it))}${escapeHtml(supportOf(it))}${gb(supportOf(it))}</div>
-        <div class="sub">Choose the English version — answer 1–4 · Enter = next</div>
+        <div class="sub">Choose the English · keys 1–4 · then <strong>Enter</strong> = next (always)</div>
         <div class="opts">
           ${opts
             .map(
@@ -991,8 +991,7 @@ export function startPractice(root, block, opts) {
         if (ci >= 0) buttons[ci].classList.add("correct");
         if (!q.wrong.includes(itemIndex)) q.wrong.push(itemIndex);
       }
-      // Auto-advance; Enter skips the wait
-      state.advanceTimer = setTimeout(goNextQuestion, 750);
+      // Stay on feedback until Enter (right or wrong) — no auto-advance.
     };
 
     stage.querySelectorAll(".opt").forEach((el) => {
@@ -1026,15 +1025,8 @@ export function startPractice(root, block, opts) {
         }
         return;
       }
-      if (q.answered) {
-        // Digit during the feedback pause: skip the wait instead of
-        // swallowing the press — fast keying stays responsive.
-        if (quizKeyToIndex(e, opts.length) != null) {
-          e.preventDefault();
-          goNextQuestion();
-        }
-        return;
-      }
+      // After answering, only Enter advances (not another digit press).
+      if (q.answered) return;
       const n = quizKeyToIndex(e, opts.length);
       if (n != null) {
         e.preventDefault();

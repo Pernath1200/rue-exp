@@ -866,7 +866,7 @@ export function startPractice(rawPack, root, opts) {
         state.quizRetryPass ? " · retry" : ""
       }</p>
       <p class="practice-prompt">${esc(item.prompt)}</p>
-      <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · after answer Enter = next</p>
+      <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · then <strong>Enter</strong> = next (always)</p>
       <div class="choices" id="choices"></div>
       <div class="feedback" id="feedback"></div>
     `;
@@ -906,9 +906,8 @@ export function startPractice(rawPack, root, opts) {
           advanceTimer = null;
         }
       });
+      // Always wait for Enter after MC (right or wrong) — no auto-advance.
       state.enterAdvance = goNextQ;
-      // Wrong answers wait for Enter so the correction can be read.
-      if (good) advanceTimer = setTimeout(goNextQ, 900);
     };
 
     function onDigit(e) {
