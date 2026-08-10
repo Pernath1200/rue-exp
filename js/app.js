@@ -20,8 +20,6 @@ import {
   completeMode,
   touchVocabBlock,
   completeVocabMode,
-  rootFill,
-  tapFill,
   refreshUnit,
   levelUnitStats,
   reviewDueList,
@@ -676,36 +674,8 @@ function wireHomeActions() {
   });
 }
 
+/** Combined tree portrait only (Roots/Canopy meter chips removed — 2026-08-10). */
 function renderRoots() {
-  const strip = document.getElementById("roots-strip");
-  if (strip) {
-    strip.innerHTML = "";
-    const roots = STATE.tree?.roots || [];
-    const tap = rootChip("Foundation", tapFill(STATE.tree));
-    strip.appendChild(tap);
-    for (const r of roots) {
-      strip.appendChild(rootChip(r.label, rootFill(STATE.tree, r.id)));
-    }
-  }
-
-  const vfill = document.getElementById("vocab-fill");
-  if (vfill) {
-    vfill.innerHTML = "";
-    const vnodes = (STATE.tree?.nodes || []).filter(
-      (n) => n.domain === "vocab" && n.status === "live",
-    );
-    let vf = 0;
-    if (vnodes.length) {
-      vf = vnodes.filter((n) => isFruit(n)).length / vnodes.length;
-    }
-    vfill.appendChild(rootChip("Vocab on path", vf));
-    const leg = document.getElementById("vocab-fill-legend");
-    if (leg) {
-      leg.textContent = `${vnodes.filter((n) => isFruit(n)).length}/${vnodes.length} done · amber = vocab`;
-    }
-  }
-
-  // Combined status portrait (spine remains primary nav)
   const portrait = document.getElementById("tree-portrait");
   if (portrait && STATE.tree) {
     renderTreePortrait(portrait, {
@@ -722,18 +692,6 @@ function renderRoots() {
       onSelect: (node) => focusNodeOnMap(node),
     });
   }
-}
-
-function rootChip(name, fill) {
-  const pct = Math.round((fill || 0) * 100);
-  const div = document.createElement("div");
-  div.className = "root-chip";
-  div.innerHTML = `
-    <div class="name">${escapeHtml(name)}</div>
-    <div class="bar"><i style="width:${pct}%"></i></div>
-    <div class="pct">${pct}%</div>
-  `;
-  return div;
 }
 
 function renderPath() {
@@ -980,14 +938,8 @@ function renderAuthor() {
   // Smoke/flag toolbar is builder kit — invisible to learners
   const tb = document.querySelector(".smoke-toolbar");
   if (tb) tb.hidden = !on;
-  // Roots/leaves meters are the teacher-facing tree model (James, 2026-08-05):
-  // near-meaningless to a learner, and they were misleading too — the grammar
-  // roots were hard-filtered to A1 so they never moved on A2, while the vocab
-  // bar counted every level at once. Learners get the level meters instead,
-  // which are correctly scoped. Nothing is lost: these are derived views,
-  // recomputed from tree.json + progress on every render.
-  const rootsPanel = document.getElementById("roots-panel-grid");
-  if (rootsPanel) rootsPanel.hidden = !on;
+  // Roots · Grammar / Canopy · Vocab chip panel removed (James 2026-08-10):
+  // took space, low signal; tree portrait + path list stay.
   btn.setAttribute("aria-pressed", on ? "true" : "false");
   btn.textContent = on ? "Author unlock ON" : "Author unlock";
   const hint = document.getElementById("author-hint");
