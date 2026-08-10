@@ -7,8 +7,6 @@ import { startGrammarPractice } from "./practice-grammar.js";
 import { startPractice as startVocabPractice } from "./practice-vocab.js";
 import {
   loadProgress,
-  isAuthorUnlock,
-  setAuthorUnlock,
   isLevelUnlocked,
   hasFruit,
   progressLabelGrammar,
@@ -33,12 +31,6 @@ import {
   getActiveProfile,
   setActiveProfile,
 } from "./progress.js";
-import {
-  mountSmokeFlagsUI,
-  getSmokeApi,
-  setSmokeContext,
-  updateFlagsBadge,
-} from "./smoke-flags.js";
 import { renderTreePortrait } from "./tree-portrait.js";
 
 const STATE = {
@@ -237,40 +229,6 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
     if (track) track.setAttribute("aria-valuenow", String(p));
   };
 
-  // Author mode: gate snapshot so early fruit is self-diagnosing
-  let gateDiag = "";
-  if (isAuthorUnlock() && nodeId) {
-    try {
-      const prog = loadProgress();
-      const gb = prog.grammar.blocks[nodeId] || null;
-      const vb =
-        prog.vocab.blocks[nodeId] ||
-        Object.values(prog.vocab.blocks).find((b) => b && b.nodeId === nodeId) ||
-        null;
-      const b = gb || vb;
-      if (b) {
-        const bits = [];
-        bits.push(`modes: ${Object.keys(b.modes || {}).join(",") || "-"}`);
-        if (gb) {
-          bits.push(
-            `best check=${b.best?.check ?? "-"} type=${b.best?.type ?? "-"} use=${b.best?.use ?? "-"}`,
-          );
-          bits.push(
-            `cleanPass check=${!!b.checkCleanPass} type=${!!b.typeCleanPass} use=${!!b.useCleanPass}`,
-          );
-        } else {
-          bits.push(`best quiz=${b.bestQuiz ?? "-"} type=${b.bestType ?? "-"} sent=${b.bestSentence ?? "-"}`);
-          bits.push(
-            `cleanPass quiz=${!!b.quizCleanPass} type=${!!b.typeCleanPass} sent=${!!b.sentenceCleanPass}`,
-          );
-        }
-        gateDiag = `<div class="fruit-payoff-diag">${escapeXml(nodeId)} · ${escapeXml(bits.join(" · "))}</div>`;
-      }
-    } catch {
-      gateDiag = "";
-    }
-  }
-
   root.innerHTML = `
     <div class="fruit-payoff" role="status" aria-live="polite"
       aria-label="${escapeXml(level)} ${escapeXml(meterLabel)} ${toN} of ${total}, ${toP} percent">
@@ -296,7 +254,6 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
           <div class="meter-fill" id="payoff-fill" style="width:${reduce ? toP : fromP}%"></div>
         </div>
       </div>
-      ${gateDiag}
       <div class="home-actions fruit-payoff-nav" role="group" aria-label="Main actions">
         <button type="button" class="home-btn home-btn-primary" id="${primaryId}">${primaryLabel}</button>
         <button type="button" class="home-btn" id="payoff-home">Home</button>
@@ -932,26 +889,6 @@ async function openNode(node, launch = {}) {
   }
 }
 
-function renderAuthor() {
-  const btn = document.getElementById("btn-author-unlock");
-  const on = isAuthorUnlock();
-  // Smoke/flag toolbar is builder kit — invisible to learners
-  const tb = document.querySelector(".smoke-toolbar");
-  if (tb) tb.hidden = !on;
-  // Roots · Grammar / Canopy · Vocab chip panel removed (James 2026-08-10):
-  // took space, low signal; tree portrait + path list stay.
-  btn.setAttribute("aria-pressed", on ? "true" : "false");
-  btn.textContent = on ? "Author unlock ON" : "Author unlock";
-  const hint = document.getElementById("author-hint");
-  if (on) {
-    hint.hidden = false;
-    hint.textContent =
-      "Author: A2+ open (may lack content). Full canopy = sync show_full (later).";
-  } else {
-    hint.hidden = true;
-  }
-}
-
 /**
  * Three honest meters: learned (fruit) · remembered (≥1 review) · mastered (≥4).
  * Same model as RUE2. Review meters stay at 0 until unit SRS writes successfulReps.
@@ -1039,7 +976,6 @@ function renderReview() {
 
 function renderAll() {
   loadProgress();
-  renderAuthor();
   renderRail();
   renderLevelMeters();
   renderReview();
@@ -1142,10 +1078,6 @@ async function boot() {
     watchAutoTranslate();
     bindProfilePicker();
 
-    document.getElementById("btn-author-unlock")?.addEventListener("click", () => {
-      setAuthorUnlock(!isAuthorUnlock());
-      renderAll();
-    });
     document.getElementById("btn-practice-back")?.addEventListener("click", () => {
       showMap();
     });
@@ -1176,26 +1108,7 @@ async function boot() {
     }
     setMapMore(moreStored === "open");
 
-    const smokeHost = document.getElementById("smoke-flags-host");
-    if (smokeHost) mountSmokeFlagsUI(smokeHost);
-    updateFlagsBadge();
-    document.getElementById("p-flag")?.addEventListener("click", () => {
-      const ti =
-        document.querySelector("#practice-root #ans") ||
-        document.querySelector("#practice-root #ti") ||
-        document.querySelector("#practice-root input");
-      if (ti && "value" in ti) setSmokeContext({ typed: String(ti.value || "") });
-      getSmokeApi()?.openForm();
-    });
-    document.getElementById("p-flag-list")?.addEventListener("click", () => {
-      getSmokeApi()?.openList();
-    });
-
     bindProgressTransfer();
-
-    if (new URLSearchParams(location.search).get("unlock") === "all") {
-      setAuthorUnlock(true);
-    }
     renderAll();
   } catch (e) {
     err.hidden = false;

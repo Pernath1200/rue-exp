@@ -17,9 +17,11 @@ import {
   hasFruit,
   grammarBest,
 } from "./progress.js";
-import { setSmokeContext } from "./smoke-flags.js";
 import { attachExplain } from "./explain.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
+
+/** Smoke flags removed with Author unlock ? keep call sites as no-ops. */
+function setSmokeContext() {}
 
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };

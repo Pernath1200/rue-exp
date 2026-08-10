@@ -46,7 +46,6 @@
 
     <h1 class="home-title">Learn English</h1>
     <p class="home-intro">Press <strong>Do next</strong> to learn. Grammar and vocabulary on one path.</p>
-    <p id="author-hint" class="practice-hint" hidden style="color: var(--accent); margin-top: -0.75rem"></p>
     <div id="boot-error" class="card" hidden></div>
 
     <div id="view-map" class="home-minimal">
@@ -129,22 +128,14 @@
     </div>
 
     <div id="view-practice" class="card" hidden>
-      <div class="smoke-toolbar" role="toolbar" aria-label="Smoke flags">
-        <button type="button" class="btn smoke-flag-btn" id="p-flag">⚑ Flag</button>
-        <button type="button" class="btn smoke-flag-list" id="p-flag-list" data-smoke-badge>Flagged</button>
-      </div>
       <div id="practice-root"></div>
       <div class="practice-exit">
         <button type="button" class="btn-ghost" id="btn-practice-back" tabindex="-1">← Back to map</button>
       </div>
     </div>
 
-    <div id="smoke-flags-host"></div>
-    <p class="foot">
-      <button type="button" class="util-btn" id="btn-author-unlock" aria-pressed="false">Author unlock</button>
-      · rue-exp · local progress only
-    </p>
+    <p class="foot">rue-exp · local progress only</p>
   </div>
-  <script type="module" src="./js/app.js?v=2026-08-10-fruit-restore"></script>
+  <script type="module" src="./js/app.js?v=2026-08-10-no-author"></script>
 </body>
 </html>

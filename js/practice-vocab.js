@@ -11,10 +11,8 @@
  *   - no bank → "Coming soon" placeholder (no free-write)
  */
 
-import { getSmokeApi, countFlags, updateFlagsBadge } from "./smoke-flags.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js";
-import { isAuthorUnlock } from "./progress.js";
 
 /**
  * Default questions per stage (Match board · Quiz · Type · Use).
@@ -514,24 +512,6 @@ export function startPractice(root, block, opts) {
     state.flagContext = { ...state.flagContext, ...partial };
   }
 
-  function captureTyped() {
-    const el =
-      root.querySelector("#ti") ||
-      root.querySelector("#ui") ||
-      root.querySelector("input.type-in") ||
-      root.querySelector("textarea.type-in");
-    if (el) setFlagContext({ typed: String(el.value || "") });
-  }
-
-  function openSmokeFlag() {
-    captureTyped();
-    getSmokeApi()?.openForm({ ...state.flagContext });
-  }
-
-  function openSmokeList() {
-    getSmokeApi()?.openList();
-  }
-
   /**
    * Always push mode complete (so retries raise best Quiz/Word).
    * reported[] only tracks first finish this session.
@@ -639,7 +619,6 @@ export function startPractice(root, block, opts) {
     ];
     if (hasIntro) base.unshift(["intro", "Intro"]);
     const modes = base.map(([id, label], i) => [id, `${i + 1} · ${label}`]);
-    const nFlags = countFlags();
     const bankN = sentenceBank ? sentenceBank.length : 0;
     const metaBits = isFrames
       ? `${block.items.length} frames · ${packLevel} · trunk`
@@ -656,15 +635,6 @@ export function startPractice(root, block, opts) {
         }
         <div class="practice-meta">${metaBits}</div>
       </div>
-      ${
-        isAuthorUnlock()
-          ? `<div class="smoke-toolbar" role="toolbar" aria-label="Smoke flags">
-        <button type="button" class="btn smoke-flag-btn" id="p-flag" title="Flag this item for smoke review">⚑ Flag item</button>
-        <button type="button" class="btn smoke-flag-list" id="p-flag-list" data-smoke-badge title="View flagged items · copy for agent">${nFlags > 0 ? `Flagged (${nFlags})` : "Flagged list"}</button>
-        <span class="smoke-toolbar-hint">Smoke · local notes for the agent</span>
-      </div>`
-          : ""
-      }
       <div class="modes">
         ${modes
           .map(
@@ -688,17 +658,10 @@ export function startPractice(root, block, opts) {
     root.querySelectorAll(".mode").forEach((btn) => {
       btn.addEventListener("click", () => setMode(btn.dataset.mode));
     });
-    root.querySelector("#p-flag")?.addEventListener("click", () => {
-      openSmokeFlag();
-    });
-    root.querySelector("#p-flag-list")?.addEventListener("click", () => {
-      openSmokeList();
-    });
     root.querySelector("#p-exit").addEventListener("click", () => {
       clearKey();
       opts.onExit();
     });
-    updateFlagsBadge();
   }
 
   function flagItem(it, itemIndex, stage) {
