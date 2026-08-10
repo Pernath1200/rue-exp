@@ -131,9 +131,11 @@ Ordered scope:
    (concrete-vs-glue rule), no bank. **Czech authoring: follow HANDOFF §5's
    trap list in full** (dropped subject, mít rád, past-tense gender,
    predicate adjectives, myself/ourselves ban, gloss collision →
-   `accepts[]` where the two readings are the same sentence). Use the
-   route-around method (explicit noun subjects, 1sg/1pl present,
-   impersonal frames) — it hit 0 defects in 946 sentences.
+   `accepts[]` where the two readings are the same sentence). The full
+   trap list lives in `codex/CZECH-TRAPS.md` (extracted from the old
+   HANDOFF §5 before its deletion). Use the route-around method (explicit
+   noun subjects, 1sg/1pl present, impersonal frames) — it hit 0 defects
+   in 946 sentences.
 3. **Czech-review routine**: reviews `cz` in packs the build routine
    changed since its last pass. Fix only unambiguous errors; flag anything
    uncertain to `codex/CZECH-REVIEW.md` "For James"; never touch English;
