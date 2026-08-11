@@ -524,13 +524,14 @@ export function tapFill(tree) {
 
 // ---- Unit SRS ----
 // A unit becomes reviewable when it first fruits (learnedAt, due next day).
-// A review succeeds when, while due, any scored pass reaches FRUIT_SOFT:
-// reps++ and the interval widens. A weak pass while due re-queues tomorrow.
+// A review succeeds when, while due, a stage is CLEARED — every item right,
+// however many retries that took. No percentage threshold: reps++ and the
+// interval widens. An uncleared pass changes nothing; the unit stays due.
 const REVIEW_INTERVALS_DAYS = [1, 3, 7, 14, 30];
 const DAY_MS = 24 * 60 * 60 * 1000;
 
 function reviewTick(nodeId, ratio, fruited) {
-  if (!nodeId) return;
+  if (!nodeId) return null;
   const p = loadProgress();
   const n = (p.nodes[nodeId] = p.nodes[nodeId] || {});
   const now = Date.now();
@@ -538,19 +539,28 @@ function reviewTick(nodeId, ratio, fruited) {
     n.learnedAt = new Date(now).toISOString();
     n.nextDueAt = new Date(now + REVIEW_INTERVALS_DAYS[0] * DAY_MS).toISOString();
     save(p);
-    return;
+    return null;
   }
-  if (!n.learnedAt || !n.nextDueAt || ratio == null) return;
-  if (now < Date.parse(n.nextDueAt)) return;
+  if (!n.learnedAt || !n.nextDueAt || ratio == null) return null;
+  if (now < Date.parse(n.nextDueAt)) return null;
+  // No percentage gate (James, 2026-08-11). Retries are unlimited, so what
+  // counts is finishing the stage with every item right — a 0% first pass
+  // that is then cleared is a pass. Anything short of clear does nothing at
+  // all: the unit simply stays due until it IS cleared. Same rule as
+  // first-learning (stageIsClear), which reviews were not using.
+  if (!stageIsClear(ratio, false)) return null;
   n.lastReviewAt = new Date(now).toISOString();
-  if (ratio >= FRUIT_SOFT) {
-    n.successfulReps = (n.successfulReps || 0) + 1;
-    const idx = Math.min(n.successfulReps, REVIEW_INTERVALS_DAYS.length - 1);
-    n.nextDueAt = new Date(now + REVIEW_INTERVALS_DAYS[idx] * DAY_MS).toISOString();
-  } else {
-    n.nextDueAt = new Date(now + DAY_MS).toISOString();
-  }
+  n.successfulReps = (n.successfulReps || 0) + 1;
+  const idx = Math.min(n.successfulReps, REVIEW_INTERVALS_DAYS.length - 1);
+  const days = REVIEW_INTERVALS_DAYS[idx];
+  n.nextDueAt = new Date(now + days * DAY_MS).toISOString();
   save(p);
+  return {
+    counted: true,
+    successfulReps: n.successfulReps,
+    days,
+    nextDueAt: n.nextDueAt,
+  };
 }
 
 /** Live nodes whose review is due now (pass the tree's live practice nodes). */

@@ -28,7 +28,20 @@ import {
   downloadProgressFile,
   importProgressPayload,
 } from "./progress.js";
+import {
+  mountSmokeFlagsUI,
+  getSmokeApi,
+  updateFlagsBadge,
+} from "./smoke-flags.js";
 import { renderTreePortrait } from "./tree-portrait.js";
+
+/* Smoke flagging is a REVIEW tool, not a student feature (James, 2026-08-10).
+ * Gated on hostname, so it is automatic when serving on :8097 and cannot
+ * appear on GitHub Pages — no unlock button to leave switched on by accident.
+ * Restores the chrome removed in 7ec4bd1 alongside Author unlock. */
+const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
+  location.hostname,
+);
 
 const STATE = {
   level: "A1",
@@ -155,6 +168,22 @@ function queueFruitPayoff(nodeId, statsBefore) {
   const after = levelUnitStats(level, nodes);
   STATE.pendingFruitPayoff = {
     kind: "learned",
+    nodeId,
+    level,
+    before: statsBefore || after,
+    after,
+  };
+}
+
+/* A counted review earns the same payoff screen as first-learning, in its
+ * "remembered" mode — the banner supported it from the start and nothing
+ * ever fired it, so a successful review used to pass in total silence. */
+function queueRememberedPayoff(nodeId, statsBefore) {
+  const nodes = STATE.tree?.nodes || [];
+  const level = levelOfNode(nodeById(nodeId));
+  const after = levelUnitStats(level, nodes);
+  STATE.pendingFruitPayoff = {
+    kind: "remembered",
     nodeId,
     level,
     before: statsBefore || after,
@@ -781,6 +810,12 @@ async function openNode(node, launch = {}) {
         onBeforeProgress: () => {
           statsBefore = levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []);
         },
+        onReview: () => {
+          queueRememberedPayoff(
+            node.id,
+            statsBefore || levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []),
+          );
+        },
         onFruit: () => {
           queueFruitPayoff(
             node.id,
@@ -1033,6 +1068,23 @@ async function boot() {
     document.getElementById("btn-practice-back")?.addEventListener("click", () => {
       showMap();
     });
+
+    if (IS_DEV_HOST) {
+      mountSmokeFlagsUI(document.getElementById("smoke-flags-host"));
+      const bar = document.getElementById("smoke-toolbar");
+      if (bar) bar.hidden = false;
+      document.getElementById("p-flag")?.addEventListener("click", () => {
+        // Capture whatever the student typed before the panel steals focus.
+        const el = document.querySelector(
+          "#practice-root #ti, #practice-root #ui, #practice-root input.type-in, #practice-root textarea.type-in",
+        );
+        getSmokeApi()?.openForm(el ? { typed: String(el.value || "") } : {});
+      });
+      document.getElementById("p-flag-list")?.addEventListener("click", () => {
+        getSmokeApi()?.openList();
+      });
+      updateFlagsBadge();
+    }
 
     const MORE_KEY = "rue-exp-v0.1-map-more";
     const moreBtn = document.getElementById("btn-map-more");

@@ -124,6 +124,12 @@
     </div>
 
     <div id="view-practice" class="card" hidden>
+      <!-- Dev-only: unhidden by app.js on localhost. Never shown on Pages. -->
+      <div class="smoke-toolbar" id="smoke-toolbar" role="toolbar" aria-label="Smoke flags" hidden>
+        <button type="button" class="btn smoke-flag-btn" id="p-flag" title="Flag this item for review">&#9873; Flag</button>
+        <button type="button" class="btn smoke-flag-list" id="p-flag-list" data-smoke-badge title="View flagged items">Flagged</button>
+        <span class="smoke-toolbar-hint">dev only &middot; local notes</span>
+      </div>
       <div id="practice-root"></div>
       <div class="practice-exit">
         <button type="button" class="btn-ghost" id="btn-practice-back" tabindex="-1">â† Back to map</button>
@@ -132,6 +138,7 @@
 
     <p class="foot">rue-exp Â· local progress only</p>
   </div>
-  <script type="module" src="./js/app.js?v=2026-08-10-noprofile"></script>
+  <div id="smoke-flags-host"></div>
+  <script type="module" src="./js/app.js?v=2026-08-10-flag-restore"></script>
 </body>
 </html>

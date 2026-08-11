@@ -19,9 +19,9 @@ import {
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
-
-/** Smoke flags removed with Author unlock — keep call sites as no-ops. */
-function setSmokeContext() {}
+/* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
+ * site below kept computing item context and throwing it away. */
+import { setSmokeContext } from "./smoke-flags.js";
 
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };
@@ -438,19 +438,26 @@ export function startPractice(rawPack, root, opts) {
       typed: "",
     });
     let body = "";
-    if (card.body) body += `<p>${esc(card.body)}</p>`;
+    if (card.body) body += `<p>${escMd(card.body)}</p>`;
     const bodyCz = card.body_cz || card.body_pl;
-    if (bodyCz) body += `<p><em>${esc(bodyCz)}</em></p>`;
+    if (bodyCz) body += `<p><em>${escMd(bodyCz)}</em></p>`;
     if (card.table) {
       const h = card.table.headers || [];
       body += `<table class="intro-table"><thead><tr>${h
-        .map((x) => `<th>${esc(x)}</th>`)
+        .map((x) => `<th>${escMd(x)}</th>`)
         .join("")}</tr></thead><tbody>${(card.table.rows || [])
         .map(
           (row) =>
-            `<tr>${row.map((c) => `<td>${esc(c)}</td>`).join("")}</tr>`,
+            `<tr>${row.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
         )
         .join("")}</tbody></table>`;
+    }
+    // points[] carries the bulk of the authored teaching on 403 of 557 cards
+    // (43 of them have nothing else) — it went unrendered until 2026-08-10.
+    if (Array.isArray(card.points) && card.points.length) {
+      body += `<ul class="intro-points">${card.points
+        .map((p) => `<li>${escMd(p)}</li>`)
+        .join("")}</ul>`;
     }
     if (card.examples) {
       body += card.examples
@@ -884,6 +891,7 @@ export function startPractice(rawPack, root, opts) {
         state.quizRetryPass ? " · retry" : ""
       }</p>
       <p class="practice-prompt">${esc(item.prompt)}</p>
+      ${item.cz ? `<p class="practice-hint">${esc(item.cz)}</p>` : ""}
       <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · then <strong>Enter</strong> = next (always)</p>
       <div class="choices" id="choices"></div>
       <div class="feedback" id="feedback"></div>
@@ -1421,11 +1429,9 @@ export function startPractice(rawPack, root, opts) {
       // routes by `answered`; a second handler double-advanced (item skip).
       focusPrimary("#btn-submit");
       state.enterAdvance = goNext;
-      // Correct: gentle auto-advance. Wrong: wait for Enter — the learner
-      // must get time to study the correction (James, comparatives smoke).
-      if (good) {
-        advanceTimer = setTimeout(goNext, isGap ? 750 : 900);
-      }
+      // Always wait for Enter, right or wrong (James, 2026-08-10): a correct
+      // answer is still worth looking at, and the old 750/900ms auto-advance
+      // pulled the item away mid-read.
     };
 
     const onEnter = () => {
@@ -1500,6 +1506,13 @@ export function startPractice(rawPack, root, opts) {
 
   function escAttr(s) {
     return esc(s).replace(/'/g, "&#39;");
+  }
+
+  /* Intro prose is authored with **bold** markdown. Escape FIRST, then turn
+   * the surviving asterisk pairs into <strong> — never the other way round,
+   * or pack text could inject markup. Bold only; no other markdown. */
+  function escMd(s) {
+    return esc(s).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
   }
 
   if (state.reviewStart) {
