@@ -48,3 +48,48 @@ football*. What they were is a support prompt presuming a male student.
 **Verified state when extracted:** all 38 shipped banks, 946 sentences, swept
 mechanically against all of the above. The dropped-subject grading defect was
 extinct — 0 in 946.
+
+---
+
+## CORRECTION 2026-08-11 — "extinct" covered VOCAB BANKS ONLY
+
+The verified-state note above ("0 in 946") is true of the **38 vocab sentence
+banks** and was **never true of the grammar packs**, whose item `cz` fields had
+never been swept. `a1_agreement` had three defects in it, found by James in
+about two minutes of smoking. Do not read this file as "the trap is handled".
+
+**The triage rule that makes a sweep cheap** — a naive scan of all packs returns
+~42 candidates, of which ~7 are real:
+
+- **Past tense is IMMUNE.** Czech marks gender *and* number on the participle:
+  *šla* is unambiguously she, *byli* unambiguously they. A past prompt with no
+  pronoun is still recoverable.
+- **Present and future 3rd person is EXPOSED.** *bydlí* is he, she **and** they;
+  *musí* is 3sg and 3pl. Nothing in the form fixes the subject.
+- **Dummy "it" is fine** — *Na tom nezáleží* → "It doesn't matter". Czech is
+  correctly subjectless there; the whole of `b1_it_subject` is this by design.
+- Masculine nouns and `rád`/`ráda` also fix the subject (*Je nejlepší student*,
+  *Ráda čte*) — check before "fixing" them.
+
+**Where it bites:** the Use stage grades a whole English sentence from the Czech
+alone. If the Czech does not determine the subject, a correct answer is marked
+wrong. Quiz and Type are safe because the stem shows the subject.
+
+**Still open at 2026-08-11:** four B2/C1 items — `b2_modal_perfect` ×2,
+`b2_future_forms`, `c1_article_nuance`. A1/A2 is clear.
+
+## Czech has no articles, and no continuous aspect (2026-08-11)
+
+Two more classes, both **under-acceptance** rather than bad Czech — every gate
+passes while correct English is marked wrong. Only a human typing a fair answer
+finds them.
+
+1. **Articles.** *Dávám ti knihu* is equally "a book" and "the book". 617 A1/A2
+   vocab items accepted only one. **Fixed in the grader, not the data**
+   (`practice-vocab.js`): a/an/the are interchangeable, but an article must
+   still be PRESENT — dropping it is a real error and `a1_articles` teaches it.
+   Grammar packs are untouched, so the article units still grade exactly.
+2. **Continuous aspect.** *Kráva pije vodu* is "drinks" **or** "is drinking".
+   Fixed by hand in `a1_animals`; the rest of the vocab banks are unswept.
+   **Vocab only** — accepting the continuous in a grammar pack would let the
+   student dodge the very form being drilled.

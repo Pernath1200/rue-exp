@@ -66,7 +66,9 @@ intact; only the wiring was cut.
 
 ### Open, in priority order
 
-1. **`codex/CZECH-TRAPS.md` still says the dropped-subject defect is "extinct —
+1. ~~`CZECH-TRAPS.md` still says "extinct"~~ **DONE 2026-08-11.** It now
+   carries the correction and the triage rule. Original note:
+   **`codex/CZECH-TRAPS.md` said the dropped-subject defect was "extinct —
    0 in 946".** That covered the **vocab sentence banks only**; grammar pack
    `cz` fields had never been swept and `a1_agreement` had three. The triage
    rule that makes a sweep cheap: **past tense is immune** (Czech marks gender
@@ -74,13 +76,46 @@ intact; only the wiring was cut.
    file — it is what an agent reads directly.
 2. **Four known grading defects at B2/C1**, found and deliberately left:
    `b2_modal_perfect` ×2, `b2_future_forms`, `c1_article_nuance`.
-3. **`a2_agreement` is next and is cheap** — `we were` is missing from the pack
+3. ~~`a2_agreement`~~ **DONE 2026-08-11.** Original note: **it is next and cheap** — `we were` is missing from the pack
    entirely (that is Martin's and Tomas's *"we was"*), and 10 of 26 items carry
    the untaught-tense distractor defect already fixed in `a1_agreement`.
 4. **Deep-linking still does not exist** (no hash routing; `openNode()` already
    exists, so it is parse-the-hash-and-call-it). It got more valuable today: it
    is what would let a marked sheet send a student straight into the right
    unit. See the marking-orientation file on James's Desktop.
+
+### Second half of 2026-08-11 — vocab/trunk smoke
+
+James smoked the seven shape-coverage units. Findings, all now fixed or logged:
+
+- **Articles: Czech has none, so a/the is unknowable from the prompt.** 617
+  A1/A2 vocab items accepted only one reading. **Fixed in the grader**
+  (`practice-vocab.js`), not the data: a/an/the interchangeable, but an
+  article must still be PRESENT. Grammar packs unaffected — `a1_articles`
+  still grades exactly. One rule instead of 617 edits that would rot.
+- **Continuous aspect** — *pije* is "drinks" or "is drinking". Fixed in
+  `a1_animals`; the other vocab banks are unswept. Vocab only.
+- **`trunk_glue_pronouns_a1` is a DUD** and it generalises: in any `frames`
+  pack whose target is a FUNCTION word, Match is decided by content words, so
+  the target is never tested. James ruled: **re-scope the packs**, audit the
+  whole glue family first. See REPAIR-QUEUE.
+- **`a1_core_frames_adjectives`** got the first trunk intro (12 tiles as
+  opposite pairs + frames + one trap). **Approved — it is the template for
+  the other 10.** But do not author them before the glue-trunk audit: a good
+  intro on a pack whose exercise cannot test its target is decoration.
+- **`a2_agreement` done** — `we were` added (the most-evidenced error in the
+  whole sweep, both students, and it was missing from the pack), 10 distractor
+  sets stripped of past forms (past simple is A2 step 5; this is step 3).
+- **Load audit built** (scratch, not committed). `leaf_describing_a2` is
+  **314 items introducing 251 new words in one unit** — the largest thing in
+  the app by 3x. A2 carries more new vocabulary than A1 in fewer units: it is
+  **under-partitioned, not thin**. Same finding as 15 A2 grammar units against
+  RUPL's 62. Caveat: raw new-word counts over-predict difficulty where
+  cognates dominate — `leaf_ideas_a1` is 47/47 new and James aced it, while
+  29-new Adjectives was harder. The audit needs a cognate column.
+
+**Next session (James): finish the ESSENTIAL-UNITS list.** Word order, articles,
+possessives next. Each is cheaper now the engine is fixed.
 
 ## Remaining work (manual, whenever James chooses)
 

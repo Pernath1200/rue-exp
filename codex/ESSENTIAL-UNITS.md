@@ -64,9 +64,15 @@ or not sticking.
 The continuation of #1. Do it in the same sitting while the material is fresh.
 - **This is where *"we was"* belongs** — both students, and `we were` is **not
   in the pack**. It has *he was*, *they were*, *you were* only. Add it.
-- **10 of 26 items carry the same distractor defect** fixed in #1 — `lived`,
-  `worked`, `had`, `liked`, `going`, `having` offered on present-tense items.
-  The `was`/`were` items are fine; this unit legitimately teaches them.
+- **10 of 26 items carried the same distractor defect** fixed in #1.
+- **Worked 2026-08-11, 26 → 27 items.** Added `We were at home yesterday.` —
+  *"we was"* is the single most-evidenced error in the whole sweep, from BOTH
+  students, and the form was missing from the pack entirely. Stripped the past
+  distractors from 10 items (past simple is A2 step 5; this is step 3) —
+  dropped them to 3 options rather than invent a 4th that might be
+  accidentally correct ("Everybody works weekends" is fine English). The -ing
+  options stay: present continuous does precede this unit. Intro now names
+  *we → were* alongside *you → were*.
 - [ ] Reviewed
 
 ### 6. `a1_object_pronouns` — Object pronouns · A1 step 22

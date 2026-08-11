@@ -337,3 +337,46 @@ All 72 live grammar units on path now produce a real ladder, gated by
   the content will clear them — they need `tokens_of()` to handle hyphens
   and non-ASCII letters. That is gate tooling, so it is James's call, not
   the cloud lane's.
+
+---
+
+## Smoke 2026-08-11 (James, interactive)
+
+- [ ] **DUD — `trunk_glue_pronouns_a1` (`a1_core_frames_glue_pronouns`): the
+  Match board cannot test what the pack teaches.** James, smoking it: "it's
+  supposed to be about pronouns, but the matching exercise tests other
+  things."
+
+  Every item is a full sentence, so Match is decided by the most salient
+  CONTENT word — *lampa/okno*, *kniha/stůl*, *láska* — and the pronoun is
+  never the feature that distinguishes one card from another. A student can
+  score 12/12 without reading *me*, *him* or *them* once.
+
+  On top of that, **3 of the 12 items contain no pronoun at all**: *It is
+  about love*, *The book is under the table*, *The lamp is by the window*
+  are preposition items. The pack is a grab-bag — object pronouns +
+  possessives + demonstratives + prepositions of place — which is also why
+  its intro title had to be vague enough to cover everything ("The small
+  words that hold a sentence together", rewritten this session to name the
+  real categories).
+
+  **This generalises — do not treat it as one bad pack.** Any `frames` pack
+  whose target is a FUNCTION word has this defect by construction: sentence
+  pairs are matched on content, so the function word is invisible to the
+  exercise. Check every glue trunk (`glue_modals`, `glue_linkers`,
+  `core_frames_*`) for the same thing before authoring their intros.
+
+  **JAMES RULED 2026-08-11: RE-SCOPE THE PACKS (option a).** Make the function
+  word the distinguishing feature; keep the five-stage ladder. Audit all the
+  glue trunks for the same defect first, then apply once across the family —
+  do not fix pack by pack. Still unticked: not started.
+
+  The options were
+  (a) re-scope the pack so the pronoun IS the distinguishing feature — move
+  the 3 preposition items out and make the sentence pairs minimal
+  (*I see him.* / *I see her.* / *I see them.*), which makes Match test the
+  pronoun by elimination; or (b) drop Match for glue trunks and start at
+  Quiz, where the gap sits on the target word. (a) is more work but keeps
+  the five-stage ladder consistent. Note the overlap with `a1_object_pronouns`
+  (A1 step 22) and `a1_possessives` (A1 step 20), both on ESSENTIAL-UNITS —
+  decide what belongs in the trunk vs the leaf before rewriting either.
