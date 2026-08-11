@@ -173,6 +173,48 @@ function norm(s) {
     .trim();
 }
 
+const ARTICLES = new Set(["a", "an", "the"]);
+const STARTS_VOWEL = /^[aeiou]/;
+
+/**
+ * Czech has no articles, so a Czech prompt cannot determine a / an / the —
+ * "Dávám ti knihu" is equally "a book" and "the book", and both are correct
+ * English (James, 2026-08-11: 617 items across 57 A1/A2 vocab units were
+ * marking one of the two wrong).
+ *
+ * So swap articles freely, but NEVER drop one: variants are generated only
+ * from forms that already contain an article, so "I give you book" still
+ * fails. Omitting the article is a real Czech-L1 error and `a1_articles`
+ * exists to teach it.
+ *
+ * The indefinite is rebuilt from the following word so no variant is bad
+ * English ("an dog" is never generated). Vocab only — grammar packs run
+ * through practice-grammar.js and keep exact-article grading.
+ */
+function articleVariants(normed) {
+  const toks = normed.split(" ");
+  const slots = [];
+  toks.forEach((t, i) => {
+    if (ARTICLES.has(t)) slots.push(i);
+  });
+  // No article, or so many that expansion would explode — leave it alone.
+  if (!slots.length || slots.length > 4) return [normed];
+  let variants = [toks];
+  for (const p of slots) {
+    const next = [];
+    for (const v of variants) {
+      const indef = STARTS_VOWEL.test(v[p + 1] || "") ? "an" : "a";
+      for (const art of new Set(["the", indef])) {
+        const copy = v.slice();
+        copy[p] = art;
+        next.push(copy);
+      }
+    }
+    variants = next;
+  }
+  return [...new Set(variants.map((v) => v.join(" ")))];
+}
+
 /** Expand one answer string into normalised acceptable forms (slashes, notes). */
 function accepts(answer) {
   if (answer == null || answer === "") return [];
@@ -203,6 +245,9 @@ function itemAccepts(item, primary, { forGap = false } = {}) {
     for (const n of accepts(a)) out.add(n);
   }
   // Auto contraction-style twins already via expandContractions in norm
+  for (const form of [...out]) {
+    for (const v of articleVariants(form)) out.add(v);
+  }
   return [...out];
 }
 
