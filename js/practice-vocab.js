@@ -13,6 +13,7 @@
 
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js";
+import { setSmokeContext } from "./smoke-flags.js";
 
 /**
  * Default questions per stage (Match board · Quiz · Type · Use).
@@ -510,6 +511,10 @@ export function startPractice(root, block, opts) {
 
   function setFlagContext(partial) {
     state.flagContext = { ...state.flagContext, ...partial };
+    // Also push to the shared context the Flag toolbar reads. Without this a
+    // flag raised in a vocab unit reported whichever GRAMMAR pack was opened
+    // last (James, 2026-08-11 — a1_animals flags came out as a1_present_simple).
+    setSmokeContext(state.flagContext);
   }
 
   /**
