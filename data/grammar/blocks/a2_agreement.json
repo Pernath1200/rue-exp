@@ -67,7 +67,7 @@
           "gap_answer": "goes",
           "gap_accepts": ["goes"],
           "accepts": ["He goes home at five."],
-          "quiz_options": ["go", "goes", "going", "went"],
+          "quiz_options": ["go", "goes", "going"],
           "explanation": "he → goes (irregular 3sg).",
           "explanation_cz": "he → goes."
         },
@@ -78,7 +78,7 @@
           "gap_answer": "has",
           "gap_accepts": ["has"],
           "accepts": ["She has two brothers."],
-          "quiz_options": ["have", "has", "having", "had"],
+          "quiz_options": ["have", "has", "having"],
           "explanation": "she → has (not have).",
           "explanation_cz": "she → has (ne have)."
         },
@@ -103,6 +103,17 @@
           "quiz_options": ["was", "were", "is", "are"],
           "explanation": "he → was (not were).",
           "explanation_cz": "he → was (ne were)."
+        },
+        {
+          "en": "We were at home yesterday.",
+          "cz": "Včera jsme byli doma.",
+          "gap": "We ____ at home yesterday.",
+          "gap_answer": "were",
+          "gap_accepts": ["were"],
+          "accepts": ["We were at home yesterday."],
+          "quiz_options": ["was", "were", "is", "are"],
+          "explanation": "we → were (not was).",
+          "explanation_cz": "we → were (ne was)."
         },
         {
           "en": "They were at home yesterday.",
@@ -177,7 +188,7 @@
           "gap_answer": "likes",
           "gap_accepts": ["likes"],
           "accepts": ["Everybody likes weekends."],
-          "quiz_options": ["like", "likes", "liking", "liked"],
+          "quiz_options": ["like", "likes", "liking"],
           "explanation": "everybody = singular → likes (not like).",
           "explanation_cz": "everybody = jednotné → likes."
         },
@@ -188,7 +199,7 @@
           "gap_answer": "has",
           "gap_accepts": ["has"],
           "accepts": ["Someone has my keys."],
-          "quiz_options": ["have", "has", "having", "had"],
+          "quiz_options": ["have", "has", "having"],
           "explanation": "someone = singular → has.",
           "explanation_cz": "someone = jednotné → has."
         },
@@ -199,7 +210,7 @@
           "gap_answer": "knows",
           "gap_accepts": ["knows"],
           "accepts": ["No one knows the answer.", "Nobody knows the answer."],
-          "quiz_options": ["know", "knows", "knowing", "knew"],
+          "quiz_options": ["know", "knows", "knowing"],
           "explanation": "no one = singular → knows.",
           "explanation_cz": "no one = jednotné → knows."
         },
@@ -210,7 +221,7 @@
           "gap_answer": "looks",
           "gap_accepts": ["looks"],
           "accepts": ["Everything looks fine."],
-          "quiz_options": ["look", "looks", "looking", "looked"],
+          "quiz_options": ["look", "looks", "looking"],
           "explanation": "everything = singular → looks.",
           "explanation_cz": "everything = jednotné → looks."
         },
@@ -243,7 +254,7 @@
           "gap_answer": "lives",
           "gap_accepts": ["lives"],
           "accepts": ["My family lives in Brno."],
-          "quiz_options": ["live", "lives", "living", "lived"],
+          "quiz_options": ["live", "lives", "living"],
           "explanation": "family (group as one unit) often → lives (singular).",
           "explanation_cz": "family často jako celek → lives."
         },
@@ -254,7 +265,7 @@
           "gap_answer": "lives",
           "gap_accepts": ["lives"],
           "accepts": ["One of my friends lives in Prague."],
-          "quiz_options": ["live", "lives", "living", "lived"],
+          "quiz_options": ["live", "lives", "living"],
           "explanation": "one of… → singular verb: lives.",
           "explanation_cz": "one of… → jednotné: lives."
         },
@@ -265,7 +276,7 @@
           "gap_answer": "work",
           "gap_accepts": ["work"],
           "accepts": ["A lot of people work from home."],
-          "quiz_options": ["work", "works", "working", "worked"],
+          "quiz_options": ["work", "works", "working"],
           "explanation": "people = plural → work (not works).",
           "explanation_cz": "people = množné → work."
         },
@@ -276,7 +287,7 @@
           "gap_answer": "has",
           "gap_accepts": ["has"],
           "accepts": ["Each student has a book."],
-          "quiz_options": ["have", "has", "having", "had"],
+          "quiz_options": ["have", "has", "having"],
           "explanation": "each + singular noun → has.",
           "explanation_cz": "each + jednotné → has."
         },
@@ -340,7 +351,7 @@
           ]
         },
         "points": [
-          "you → **were** (not was)",
+          "we → **were** (not was) · you → **were** (not was)",
           "there is + singular · there are + plural"
         ]
       },
