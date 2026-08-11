@@ -74,6 +74,72 @@ function nodeById(id) {
   return (STATE.tree?.nodes || []).find((n) => n.id === id) || null;
 }
 
+/**
+ * Deep-link: marked sheets / smoke notes can open a unit by hash.
+ * Accepts #a1_word_order · #/a1_word_order · #unit=a1_word_order
+ * (optional &review=1 for review launch). Bare # or #/ returns to map.
+ */
+function parseUnitHash(hash) {
+  const raw = String(hash || "")
+    .replace(/^#/, "")
+    .trim();
+  if (!raw || raw === "/") return { id: null, review: false };
+  let body = raw.startsWith("/") ? raw.slice(1) : raw;
+  let review = false;
+  if (body.includes("=") || body.includes("&")) {
+    const params = new URLSearchParams(body.includes("=") ? body : `id=${body}`);
+    const id = params.get("unit") || params.get("id") || params.get("node") || "";
+    review = /^(1|true|yes)$/i.test(params.get("review") || "");
+    body = id || body.split("&")[0];
+  }
+  const id = body.split(/[/?&]/)[0].trim();
+  if (!id || !/^[a-z][a-z0-9_]*$/i.test(id)) return { id: null, review: false };
+  return { id, review };
+}
+
+function setUnitHash(nodeId, launch = {}) {
+  if (STATE._hashSync) return;
+  const next =
+    nodeId
+      ? launch.review
+        ? `#${nodeId}&review=1`
+        : `#${nodeId}`
+      : "";
+  if (location.hash === next || (!location.hash && !next)) return;
+  STATE._hashSync = true;
+  try {
+    if (next) history.replaceState(null, "", next);
+    else history.replaceState(null, "", location.pathname + location.search);
+  } finally {
+    STATE._hashSync = false;
+  }
+}
+
+async function openNodeFromHash({ replace = true } = {}) {
+  const { id, review } = parseUnitHash(location.hash);
+  if (!id) return false;
+  const node = nodeById(id);
+  if (!node || node.status !== "live" || !node.content) return false;
+  const lv = levelOfNode(node);
+  if (lv) STATE.level = lv;
+  STATE.selectedId = node.id;
+  await openNode(node, { review });
+  if (replace) setUnitHash(node.id, { review });
+  return true;
+}
+
+function bindHashRouting() {
+  window.addEventListener("hashchange", () => {
+    if (STATE._hashSync) return;
+    const { id } = parseUnitHash(location.hash);
+    if (!id) {
+      if (STATE.view === "practice") showMap({ fromHash: true });
+      return;
+    }
+    openNodeFromHash({ replace: false });
+  });
+}
+
 function isFruit(node) {
   if (!node || node.status !== "live") return false;
   return node.domain === "grammar" ? hasFruit(node.id) : hasVocabFruit(node);
@@ -99,7 +165,7 @@ function clearFruitPayoffKeys() {
   }
 }
 
-function showMap() {
+function showMap(opts = {}) {
   const pr = document.getElementById("practice-root");
   if (pr && typeof pr._RUE2UnbindKeys === "function") {
     pr._RUE2UnbindKeys();
@@ -116,6 +182,7 @@ function showMap() {
   document.getElementById("view-practice").hidden = true;
   document.body.classList.remove("domain-grammar", "domain-vocab");
   if (STATE.lastPlayedLevel) STATE.level = STATE.lastPlayedLevel;
+  if (!opts.fromHash) setUnitHash(null);
   renderAll();
   // Land on "what's next" — after a review launch, that means the review
   // card (finish the day's queue), falling through to up-next once empty.
@@ -795,6 +862,10 @@ function renderDetail() {
 async function openNode(node, launch = {}) {
   if (node.status !== "live" || !node.content) return;
   STATE.cameFromReview = !!launch.review;
+  const lv = levelOfNode(node);
+  if (lv) STATE.level = lv;
+  STATE.selectedId = node.id;
+  if (!launch.fromHash) setUnitHash(node.id, launch);
   try {
     const pack = await loadJson(`./data/${node.content}`);
     showPractice(node.domain);
@@ -1113,7 +1184,10 @@ async function boot() {
     setMapMore(moreStored === "open");
 
     bindProgressTransfer();
+    bindHashRouting();
     renderAll();
+    // Marked-sheet / bookmark entry: open the unit named in the hash.
+    await openNodeFromHash({ replace: true });
   } catch (e) {
     err.hidden = false;
     err.textContent = String(e.message || e);

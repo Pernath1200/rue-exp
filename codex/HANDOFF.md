@@ -79,10 +79,23 @@ intact; only the wiring was cut.
 3. ~~`a2_agreement`~~ **DONE 2026-08-11.** Original note: **it is next and cheap** — `we were` is missing from the pack
    entirely (that is Martin's and Tomas's *"we was"*), and 10 of 26 items carry
    the untaught-tense distractor defect already fixed in `a1_agreement`.
-4. **Deep-linking still does not exist** (no hash routing; `openNode()` already
-   exists, so it is parse-the-hash-and-call-it). It got more valuable today: it
-   is what would let a marked sheet send a student straight into the right
-   unit. See the marking-orientation file on James's Desktop.
+4. ~~**Deep-linking still does not exist**~~ **DONE 2026-08-12.** Hash routing
+   folded in from a parallel Grok local branch (see merge note below).
+   `#a1_word_order` · `#/unit` · `#unit=id` · optional `&review=1` → `openNode()`.
+   Back to map clears the hash. Marked sheets can deep-link a student into a unit.
+
+### Merge note — 2026-08-12 (Grok local rebuild)
+
+James smoke-tested with Claude on `origin/main` (`3134061`). A parallel Grok
+branch had diverged with overlapping `a2_agreement` / docs. **Resolved:**
+
+| Keep | Drop |
+|------|------|
+| All Claude tip (`3134061`) — engine, vocab, a2_agreement, docs, REPAIR-QUEUE | Grok's alternate `a2_agreement` (28-item version) |
+| Deep-link (`js/app.js`) re-applied on Claude base | Essential pre-pass on word_order / articles / possessives (James smokes those) |
+| Present/future He/She Czech subject sweep on other A1/A2 packs (not a2_agreement) | |
+
+Local only until James OKs push. Pages still at last origin tip until then.
 
 ### Second half of 2026-08-11 — vocab/trunk smoke
 
@@ -115,7 +128,8 @@ James smoked the seven shape-coverage units. Findings, all now fixed or logged:
   29-new Adjectives was harder. The audit needs a cognate column.
 
 **Next session (James): finish the ESSENTIAL-UNITS list.** Word order, articles,
-possessives next. Each is cheaper now the engine is fixed.
+possessives next. Each is cheaper now the engine is fixed. Deep-link is live
+locally for smoke (`#a1_word_order` etc.).
 
 ## Remaining work (manual, whenever James chooses)
 
