@@ -131,6 +131,25 @@ James smoked the seven shape-coverage units. Findings, all now fixed or logged:
 possessives next. Each is cheaper now the engine is fixed. Deep-link is live
 locally for smoke (`#a1_word_order` etc.).
 
+### 2026-08-12 — Grok work merged, `build` merged and closed
+
+- **Deep linking landed** (`c1d8303`, from the home machine, on the Claude
+  base). `#a1_word_order` · `#unit=id` · `&review=1` → `openNode`, hash kept in
+  sync on navigation with a re-entrancy guard, bare `#` returns to the map.
+  Wired at init. **It was pushed to `main` despite its own commit message
+  saying "local only" — so it went live on Pages unsmoked.**
+- **Dropped-subject Czech fixed on 8 A1/A2 packs** in the same commit
+  (`a2_verb_patterns`, `a2_comparatives`, `a2_quantifiers`, `a2_countable`,
+  `a1_present_simple`, `a2_will_going_to`, `a2_ed_ing_adjectives`,
+  `a2_prepositions_movement`). Careful work — clitics were moved correctly
+  (*Zajímá se* → *Ona **se** zajímá*), not just prefixed. **The A1/A2
+  present/future dropped-subject class is now CLEAR**; what the sweep still
+  reports at A1/A2 is past tense or dummy *it*, both immune.
+- **`build` merged into `main` and can be deleted.** Its 7 commits (2026-08-10)
+  dressed `b1_work`, `b1_money` and `trunk_core_b1` — intros plus Use banks.
+  Rebased clean: no file overlap with the engine work. **B1 remains
+  human-unreviewed**; merging banks the authoring, it does not bless it.
+
 ## Remaining work (manual, whenever James chooses)
 
 4 B1 leaves + 2 B1 trunks still undressed · 13 A1/A2 trunk intros · ~117 B1/B2

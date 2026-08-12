@@ -6,6 +6,89 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-10 · claude-cloud (Lane C, run 1/10) · `build`
+
+### Headline
+**B1 vocab dressing opens.** 2 B1 leaves fully dressed (intro + Use bank)
+and 1 B1 trunk intro. Audit ratchet held at **120** — every authored
+sentence pool-legal at its own node, verified mechanically before writing.
+
+### What landed
+
+| # | Unit | What |
+|---|------|------|
+| 1 | `leaf_work_b1` (`b1_work`) | Picture-led intro (12 emoji hint tiles + 6 frames) · **18-sentence** Use bank |
+| 2 | `leaf_money_b1` (`b1_money`) | Picture-led intro (12 emoji hint tiles + 6 frames) · **19-sentence** Use bank |
+| 3 | `trunk_core_b1` (`b1_core_frames`) | Intro only — `scale` schematic page 1, no emoji |
+
+Plus a one-line fix: U+FE0F on the `tax` / `insurance` tiles in `b1_money`
+(both codepoints are text-presentation by default and `.pic-icon` forces no
+emoji font, so they rendered monochrome beside eleven colour tiles).
+
+### Gates
+
+| gate | result |
+|------|--------|
+| verify_pack | 160 packs · 0 errors · 12 warnings (all pre-existing, `b2_clear_claims`) |
+| check_playable | 86 live grammar · 0 errors |
+| audit | **120** · 17 units · baseline **120** (unchanged) |
+| check_codex | PASSED |
+| smoke | SMOKE PASSED |
+
+All four were green at the start of the run — no gate repair was needed.
+
+### Method note (worth reusing)
+Sentence legality was checked **before** authoring, not after, by importing
+`codex/audit.py` itself and rebuilding the pool up to the target node —
+`pool | own | partner | GLUE`, the gate's own set, not a re-implementation.
+Every candidate sentence was run through it, so the ratchet never moved and
+no sentence had to be re-lexified after the fact. The helper is three dozen
+lines; a later run should rebuild it rather than author blind.
+
+### Forks / judgment calls
+
+1. **Bank size above the 12 default.** These B1 leaves carry 36 items, three
+   times a normal leaf. `DEFAULT_PASS` is 12, so a 12-sentence bank has no
+   rotation at all. Wrote 18 / 19 — a little over half the items get a
+   production sentence and Use has something to rotate. Conservative reading
+   of "~12, a few more if the pack is large".
+2. **`trunk_core_b1` is neither concrete nor glue.** Its items are whole
+   sentences gapped on abstract content words (consider, achieve, advice,
+   opportunity). Emoji tiles would be the stretched-emoji failure AGENTS.md
+   names, and a tile grid of bare words would misdescribe a pack that drills
+   whole-sentence production. Took the third sanctioned option for abstract
+   sets — a parameterised schematic (`scale`, five pack targets in the order
+   they come in). **For James:** if you would rather all three B1 trunks look
+   like the A1 core-frames trunks (emoji hint tiles, `verbs_more3` style),
+   say so and the next run will match that instead — the other two B1 trunks
+   are not authored yet, so it is a cheap reversal today and not tomorrow.
+3. **Czech method.** Route-around only: explicit noun subjects (`Moji
+   rodiče`, `Ta firma`, `Moje babička`), 1sg/1pl present, one imperative.
+   Two past tenses total, both on explicit non-speaker subjects (`Můj bratr
+   dostal`, `Ta firma měla`). No 1sg past, no 1sg predicate adjective, no
+   `mít rád`, no myself/ourselves. Nothing needed `accepts[]` for a gloss
+   collision this run.
+4. **Two Czech renderings to sanity-check** (not errors, register calls):
+   `Můj strýc je OSVČ.` for *My uncle is self-employed* — OSVČ is the
+   everyday Czech and the item's own gloss lists it, but it is an
+   abbreviation in a learner prompt. And `Moje uzávěrka je v pátek.` for
+   *My deadline is on Friday* — `termín` was the other option and is more
+   common in speech, but it also means *appointment*, which would make the
+   English ambiguous.
+
+### Left undone (fresh count from the pack files)
+- **B1 leaves fully dressed: 2/6** — remaining: `leaf_communication_b1`,
+  `leaf_knowledge_b1`, `leaf_self_b1`, `leaf_home_b1`.
+- **B1 trunk intros: 1/3** — remaining: `trunk_chunks_b1`,
+  `trunk_abstract_b1`. Note `trunk_chunks_b1` carries 6 pre-existing audit
+  unknowns; an intro does not touch `exposed_text`, so that stays a separate
+  question for whoever owns sequencing.
+
+### Push
+`build` — `61aabef`, `df83261`, `aac7fae`, `def285f`
+
+---
+
 ## 2026-08-09 · grok-auto · `auto/2026-08-09-2007`
 
 ### Headline
