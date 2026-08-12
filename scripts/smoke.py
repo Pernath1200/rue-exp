@@ -56,6 +56,63 @@ def check_shell() -> bool:
     return ok
 
 
+def check_cache_buster() -> bool:
+    """Shell changed but index.html's ?v= didn't → browsers keep the old JS.
+
+    Caught nothing on 2026-08-12: the deep-link feature was correct, gated and
+    smoked green, and did nothing in the browser because `?v=` still read
+    `2026-08-10-flag-restore`. No gate can see that — they read the repo, not
+    the cache. So: fingerprint the shell, record it beside the version, and
+    fail if the fingerprint moves while the version stands still.
+
+    Self-maintaining: bump `?v=` and the next run re-records automatically.
+    """
+    import hashlib
+    import re
+
+    files = sorted((ROOT / "js").glob("*.js")) + sorted((ROOT / "css").glob("*.css"))
+    h = hashlib.sha256()
+    for p in files:
+        h.update(p.name.encode("utf-8"))
+        h.update(p.read_bytes())
+    fingerprint = h.hexdigest()[:16]
+
+    html = (ROOT / "index.html").read_text(encoding="utf-8", errors="replace")
+    m = re.search(r"app\.js\?v=([A-Za-z0-9._-]+)", html)
+    if not m:
+        print("no ?v= cache-buster on app.js in index.html")
+        return False
+    version = m.group(1)
+    print(f"shell: {len(files)} file(s) · fingerprint {fingerprint} · ?v={version}")
+
+    record = ROOT / "scripts" / "shell-version.json"
+    prev = {}
+    if record.exists():
+        try:
+            prev = json.loads(record.read_text(encoding="utf-8"))
+        except Exception:
+            prev = {}
+
+    if prev.get("version") == version and prev.get("fingerprint") not in (
+        None,
+        fingerprint,
+    ):
+        print(
+            f"  FAIL: js/ or css/ changed but ?v= is still '{version}'.\n"
+            f"  Bump it in index.html or returning browsers keep the old code."
+        )
+        return False
+
+    if prev.get("version") != version or prev.get("fingerprint") != fingerprint:
+        record.write_text(
+            json.dumps({"version": version, "fingerprint": fingerprint}, indent=2)
+            + "\n",
+            encoding="utf-8",
+        )
+        print(f"  recorded {version} → {fingerprint}")
+    return True
+
+
 def check_progress_key() -> bool:
     # progress key appears in several files
     hits = 0
@@ -103,6 +160,7 @@ def main() -> int:
     ok = step("data/spine.json", lambda: check_json("data/spine.json")) and ok
     ok = step("pack lint", lambda: run_gate("verify_pack.py")) and ok
     ok = step("playable ladders", lambda: run_gate("check_playable.py")) and ok
+    ok = step("cache-buster vs shell", check_cache_buster) and ok
     ok = step("progress key (informational)", check_progress_key) and ok
     print("\n" + ("SMOKE PASSED" if ok else "SMOKE FAILED"))
     return 0 if ok else 1
