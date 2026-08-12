@@ -49,11 +49,48 @@ const FOCUS_WEIGHT = 3;
  * Prefer items tagged with pack focus_structures (weight FOCUS_WEIGHT) so
  * today's pattern appears often while recycle items still enter the bag.
  */
-function samplePass(items, onlyIndices, focusStructures) {
-  const list = Array.isArray(items) ? items : [];
+/* One pass = one BLOCK. Blocks are the author's pass units (52 packs use
+ * them, almost all sized ~DEFAULT_PASS), and in a1_word_classes — path step
+ * 1 — they are three different exercise types: word-class labels, one/more
+ * than one, plural forms. Mixing them on one board is incoherent, especially
+ * for a first lesson. Repeat visits advance to the next block, so the whole
+ * pack is still reachable. Single-block packs are unaffected. */
+const BLOCK_TURN_KEY = "rue-exp-block-turn";
+
+function blockTurn(packId, stage, count) {
+  if (count <= 1) return 0;
+  let store = {};
+  try {
+    store = JSON.parse(localStorage.getItem(BLOCK_TURN_KEY) || "{}") || {};
+  } catch {
+    store = {};
+  }
+  const k = `${packId}:${stage}`;
+  const turn = Number(store[k] || 0) % count;
+  store[k] = (turn + 1) % count;
+  try {
+    localStorage.setItem(BLOCK_TURN_KEY, JSON.stringify(store));
+  } catch {
+    /* private mode — rotation degrades to always-first-block */
+  }
+  return turn;
+}
+
+function samplePass(items, onlyIndices, focusStructures, pick) {
+  let list = Array.isArray(items) ? items : [];
   if (!list.length) return [];
   if (onlyIndices && onlyIndices.length) {
     return shuffle(onlyIndices.map((i) => list[i]).filter(Boolean));
+  }
+  if (pick && pick.packId) {
+    const blocks = [];
+    for (const it of list) {
+      if (it && it._block && !blocks.includes(it._block)) blocks.push(it._block);
+    }
+    if (blocks.length > 1) {
+      const b = blocks[blockTurn(pick.packId, pick.stage || "", blocks.length)];
+      list = list.filter((it) => it._block === b);
+    }
   }
   if (list.length <= DEFAULT_PASS) return shuffle(list.slice());
   const focus = new Set(focusStructures || []);
@@ -527,7 +564,10 @@ export function startPractice(rawPack, root, opts) {
    * Shuffle order of left rows and right chips.
    */
   function newMatchBoard() {
-    const raw = samplePass(pack.match || [], null, focusStructures);
+    const raw = samplePass(pack.match || [], null, focusStructures, {
+      packId: pack.id,
+      stage: "match",
+    });
     const leftSrc = shuffle(raw);
     const left = leftSrc.map((p, i) => ({
       id: i,
@@ -558,14 +598,20 @@ export function startPractice(rawPack, root, opts) {
     state.checkPhase = "match";
     state.matchSubmitted = false;
     state.matchBoard = null;
-    state.quizItems = samplePass(pack.quiz || [], null, focusStructures);
+    state.quizItems = samplePass(pack.quiz || [], null, focusStructures, {
+      packId: pack.id,
+      stage: "quiz",
+    });
     state.quizIndex = 0;
     state.quizScore = 0;
     state.quizWrong = [];
     state.quizRetryPass = false;
     state.quizGate = false;
     state.quizScoreCommitted = false;
-    state.orderItems = samplePass(pack.order || [], null, focusStructures);
+    state.orderItems = samplePass(pack.order || [], null, focusStructures, {
+      packId: pack.id,
+      stage: "order",
+    });
     state.orderIndex = 0;
     state.orderScore = 0;
     state.orderWrong = [];
@@ -867,7 +913,10 @@ export function startPractice(rawPack, root, opts) {
         state.checkTotal = Math.max(0, state.checkTotal - total);
         state.quizScoreCommitted = false;
       }
-      state.quizItems = samplePass(pack.quiz || [], null, focusStructures);
+      state.quizItems = samplePass(pack.quiz || [], null, focusStructures, {
+      packId: pack.id,
+      stage: "quiz",
+    });
       state.quizIndex = 0;
       state.quizScore = 0;
       state.quizWrong = [];
@@ -1044,7 +1093,10 @@ export function startPractice(rawPack, root, opts) {
         state.checkTotal = Math.max(0, state.checkTotal - total);
         state.orderScoreCommitted = false;
       }
-      state.orderItems = samplePass(pack.order || [], null, focusStructures);
+      state.orderItems = samplePass(pack.order || [], null, focusStructures, {
+      packId: pack.id,
+      stage: "order",
+    });
       state.orderIndex = 0;
       state.orderScore = 0;
       state.orderWrong = [];
@@ -1178,7 +1230,10 @@ export function startPractice(rawPack, root, opts) {
       state.typeItems = shuffle(onlyWrong.slice());
       state.typeRetryPass = true;
     } else {
-      state.typeItems = samplePass(pack.type_items || [], null, focusStructures);
+      state.typeItems = samplePass(pack.type_items || [], null, focusStructures, {
+        packId: pack.id,
+        stage: "type",
+      });
       state.typeRetryPass = false;
     }
     state.typeIndex = 0;
@@ -1200,7 +1255,10 @@ export function startPractice(rawPack, root, opts) {
       state.useItems = shuffle(onlyWrong.slice());
       state.useRetryPass = true;
     } else {
-      state.useItems = samplePass(pack.use_items || [], null, focusStructures);
+      state.useItems = samplePass(pack.use_items || [], null, focusStructures, {
+        packId: pack.id,
+        stage: "use",
+      });
       state.useRetryPass = false;
     }
     state.useIndex = 0;

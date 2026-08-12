@@ -33,12 +33,29 @@ function key(s) {
 
 function flatItems(pack) {
   const out = [];
+  /* Tag each item with its block. Blocks are the author's PASS UNITS — 52
+   * packs use them and almost every block is ~12 items, i.e. DEFAULT_PASS.
+   * a1_word_classes (path step 1) has three: word-class labels, one/more
+   * than one, and plural forms. Flattening them put all three exercise types
+   * on one Match board, which is incoherent for a first lesson (James,
+   * 2026-08-12, in class). Nothing noticed while passes were unshuffled,
+   * because the first 12 items happened to be exactly block 1. */
   for (const b of pack.blocks || []) {
     for (const it of b.items || []) {
-      if (it && typeof it === "object") out.push(it);
+      if (it && typeof it === "object") out.push({ ...it, _block: b.id || "" });
     }
   }
   return out;
+}
+
+/** Distinct block ids present in an adapted bank, in authoring order. */
+export function blocksOf(items) {
+  const seen = [];
+  for (const it of items || []) {
+    const b = it && it._block;
+    if (b && !seen.includes(b)) seen.push(b);
+  }
+  return seen;
 }
 
 /** Every string a given item would accept, normalised (never a distractor). */
@@ -120,7 +137,7 @@ export function adaptGrammarPack(pack) {
   const match = wantsCheck("match")
     ? items
         .filter((it) => it.en && it.cz)
-        .map((it) => ({ en: it.en, cz: it.cz, structures: it.structures }))
+        .map((it) => ({ en: it.en, cz: it.cz, structures: it.structures, _block: it._block }))
     : [];
 
   const quiz = wantsCheck("quiz")
@@ -139,6 +156,7 @@ export function adaptGrammarPack(pack) {
             explanation: it.explanation,
             explanation_cz: it.explanation_cz,
             structures: it.structures,
+            _block: it._block,
           };
         })
         .filter(Boolean)
@@ -166,6 +184,7 @@ export function adaptGrammarPack(pack) {
           explanation: it.explanation,
           explanation_cz: it.explanation_cz,
           structures: it.structures,
+          _block: it._block,
         }))
     : [];
 
@@ -180,6 +199,7 @@ export function adaptGrammarPack(pack) {
     explanation: it.explanation,
     explanation_cz: it.explanation_cz,
     structures: it.structures,
+    _block: it._block,
   }));
 
   // Use: whole-sentence production from the Czech. zero_article items (no
@@ -195,6 +215,7 @@ export function adaptGrammarPack(pack) {
       explanation: it.explanation,
       explanation_cz: it.explanation_cz,
       structures: it.structures,
+      _block: it._block,
     }));
 
   return { ...pack, intro: cards, match, quiz, order, type_items, use_items };
