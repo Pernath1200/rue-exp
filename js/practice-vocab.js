@@ -93,7 +93,10 @@ function passOrder(listLen, onlyIndices, opts) {
     }
     for (let k = 0; k < w; k++) bag.push(i);
   }
-  shuffle(bag);
+  // shuffle() copies and returns; the result was being discarded, so within
+  // each tier the deck was walked in authoring order (same bug as
+  // practice-grammar samplePass — James, 2026-08-12).
+  const bagOrder = shuffle(bag);
   // Three tiers: unseen sentence-targets are GUARANTEED first (Use must
   // never demand a word the word modes haven't shown — deterministic, not
   // weighted odds), then other unseen (rotation), then seen top-up.
@@ -101,7 +104,7 @@ function passOrder(listLen, onlyIndices, opts) {
   const tUnseen = [];
   const tSeen = [];
   const used = new Set();
-  for (const i of bag) {
+  for (const i of bagOrder) {
     if (used.has(i)) continue;
     used.add(i);
     const it = items && items[i];

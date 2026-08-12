@@ -66,10 +66,16 @@ function samplePass(items, onlyIndices, focusStructures) {
     }
     for (let k = 0; k < w; k++) bag.push(i);
   }
-  shuffle(bag);
+  /* shuffle() COPIES (a.slice()) and returns — it does not sort in place.
+   * `shuffle(bag);` threw the result away, so every pass took the first
+   * DEFAULT_PASS items in authoring order, identically, every time. In
+   * a1_and_but_because that meant 8 "and" then 4 "but" and `because` was
+   * unreachable — the unit could not teach a third of itself (James,
+   * 2026-08-12). Every pack with more than 12 items was affected. */
+  const order = shuffle(bag);
   const out = [];
   const used = new Set();
-  for (const i of bag) {
+  for (const i of order) {
     if (used.has(i)) continue;
     used.add(i);
     out.push(list[i]);
