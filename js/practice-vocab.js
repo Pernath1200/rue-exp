@@ -381,8 +381,7 @@ function escapeHtml(s) {
 function escMd(s) {
   return escapeHtml(s)
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-    .replace(/(^|[^*])\*(\S[^*
-]*?)\*(?!\*)/g, "$1<em>$2</em>");
+    .replace(/(^|[^*])\*(\S[^*]*?)\*(?!\*)/g, "$1<em>$2</em>");
 }
 
 

@@ -118,6 +118,47 @@ def check_cache_buster() -> bool:
     return True
 
 
+def check_js_loads() -> bool:
+    """Every js/ module must actually PARSE.
+
+    2026-08-12: a broken regex literal (a real newline inside a character
+    class) shipped to main and left the app stuck on "Loading...". Nothing
+    caught it — verify_pack, check_playable, audit and smoke all read data,
+    never the code. `node --check` does catch it; smoke simply was not asking.
+
+    Skipped with a note if node is absent, so this never blocks a machine
+    without it.
+    """
+    import shutil
+    import subprocess
+
+    node = shutil.which("node")
+    if not node:
+        print("  node not found — JS parse check skipped")
+        return True
+    bad = []
+    files = sorted((ROOT / "js").glob("*.js"))
+    for f in files:
+        # MUST be parsed as a MODULE. Plain `node --check file.js` reads it as
+        # a script, where /.../ is division — the broken regex that caused this
+        # check to exist passes that way (verified). Piping with
+        # --input-type=module is what actually catches it.
+        r = subprocess.run(
+            [node, "--input-type=module", "--check"],
+            input=f.read_text(encoding="utf-8"),
+            capture_output=True,
+            text=True,
+        )
+        if r.returncode != 0:
+            first = (r.stderr or "").strip().splitlines()
+            msg = next((l for l in first if "Error" in l), first[-1] if first else "?")
+            bad.append(f"{f.name}: {msg.strip()}")
+    print(f"  {len(files) - len(bad)}/{len(files)} js modules parse")
+    for b in bad:
+        print(f"  FAIL {b}")
+    return not bad
+
+
 def check_progress_key() -> bool:
     # progress key appears in several files
     hits = 0
@@ -165,6 +206,7 @@ def main() -> int:
     ok = step("data/spine.json", lambda: check_json("data/spine.json")) and ok
     ok = step("pack lint", lambda: run_gate("verify_pack.py")) and ok
     ok = step("playable ladders", lambda: run_gate("check_playable.py")) and ok
+    ok = step("js modules parse", check_js_loads) and ok
     ok = step("cache-buster vs shell", check_cache_buster) and ok
     ok = step("progress key (informational)", check_progress_key) and ok
     print("\n" + ("SMOKE PASSED" if ok else "SMOKE FAILED"))
