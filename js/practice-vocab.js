@@ -374,6 +374,18 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
+/* Intro prose is authored with **bold** / *italic* markdown, same as the
+ * grammar packs. Escape FIRST, then tag — never the reverse. Bold before
+ * italic or `**x**` is eaten as italic wrapping `*x*`. Added 2026-08-12:
+ * the vocab intro renderer had no markdown at all. */
+function escMd(s) {
+  return escapeHtml(s)
+    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+    .replace(/(^|[^*])\*(\S[^*
+]*?)\*(?!\*)/g, "$1<em>$2</em>");
+}
+
+
 /** Human labels for structure tags shown as a soft pattern hint.
  * RUE packs don't tag structures[] yet — unknown tags fall back to the raw tag. */
 const STRUCTURE_LABELS = {};
@@ -1512,24 +1524,24 @@ export function startPractice(root, block, opts) {
       : "";
     const frames = Array.isArray(sec.frames) && sec.frames.length
       ? `<ul class="intro-frames">${sec.frames
-          .map((f) => `<li>${escapeHtml(f)}</li>`)
+          .map((f) => `<li>${escMd(f)}</li>`)
           .join("")}</ul>`
       : "";
     const note = sec.note
-      ? `<p class="intro-note">${escapeHtml(sec.note)}</p>`
+      ? `<p class="intro-note">${escMd(sec.note)}</p>`
       : "";
     return `
       <div class="q intro-card">
-        ${sec.title ? `<div class="prompt">${escapeHtml(sec.title)}</div>` : ""}
-        ${sec.title_cz ? `<div class="sub"><em>${escapeHtml(sec.title_cz)}</em></div>` : ""}
+        ${sec.title ? `<div class="prompt">${escMd(sec.title)}</div>` : ""}
+        ${sec.title_cz ? `<div class="sub"><em>${escMd(sec.title_cz)}</em></div>` : ""}
         ${diagram}
         ${pics}
-        ${sec.body ? `<p style="white-space:pre-line">${escapeHtml(sec.body)}</p>` : ""}
+        ${sec.body ? `<p style="white-space:pre-line">${escMd(sec.body)}</p>` : ""}
         ${frames}
         ${table}
         ${note}
-        ${sec.note_cz ? `<p class="intro-note sub"><em>${escapeHtml(sec.note_cz)}</em></p>` : ""}
-        ${sec.body_cz ? `<p class="sub" style="white-space:pre-line"><em>${escapeHtml(sec.body_cz)}</em></p>` : ""}
+        ${sec.note_cz ? `<p class="intro-note sub"><em>${escMd(sec.note_cz)}</em></p>` : ""}
+        ${sec.body_cz ? `<p class="sub" style="white-space:pre-line"><em>${escMd(sec.body_cz)}</em></p>` : ""}
       </div>`;
   }
 

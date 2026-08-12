@@ -730,10 +730,20 @@ export function startPractice(rawPack, root, opts) {
         const rightId = m.sel.side === "R" ? m.sel.id : id;
         const leftRow = m.left.find((x) => x.id === leftId);
         const rightRow = m.right.find((x) => x.id === rightId);
+        /* Correct when the LEFT LABELS agree — not when the instances do.
+         * a1_word_classes puts the class name on the left, so a board has
+         * three tiles reading "verb"; matching any of them to a verb is right,
+         * but identity matching accepted only the authored instance and marked
+         * the rest wrong (James, 2026-08-12). Where labels are unique this is
+         * identical to the old test, since the true partner shares the id. */
+        const truePartner = rightRow
+          ? m.left.find((x) => x.id === rightRow.id)
+          : null;
         const ok =
           leftRow &&
           rightRow &&
-          norm(leftRow.ans) === norm(rightRow.t) &&
+          truePartner &&
+          norm(truePartner.t) === norm(leftRow.t) &&
           !m.doneLeft.has(leftId) &&
           !m.doneRight.has(rightId);
 
@@ -1508,11 +1518,17 @@ export function startPractice(rawPack, root, opts) {
     return esc(s).replace(/'/g, "&#39;");
   }
 
-  /* Intro prose is authored with **bold** markdown. Escape FIRST, then turn
-   * the surviving asterisk pairs into <strong> — never the other way round,
-   * or pack text could inject markup. Bold only; no other markdown. */
+  /* Intro prose is authored with **bold** and *italic* markdown. Escape
+   * FIRST, then turn the surviving asterisk runs into tags — never the other
+   * way round, or pack text could inject markup. Bold must run before italic
+   * or `**x**` would be eaten as an italic wrapping `*x*`.
+   * Italic added 2026-08-12: 69 single-asterisk spans across 15 packs were
+   * printing raw (James, smoking a1_word_classes). */
   function escMd(s) {
-    return esc(s).replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    return esc(s)
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      // \S guard: a lone "a * b" must not become "a <em> b</em>".
+      .replace(/(^|[^*])\*(\S[^*\n]*?)\*(?!\*)/g, "$1<em>$2</em>");
   }
 
   if (state.reviewStart) {
