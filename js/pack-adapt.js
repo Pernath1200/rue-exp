@@ -160,6 +160,11 @@ export function adaptGrammarPack(pack) {
             Array.isArray(it.accepts) && it.accepts.length
               ? it.accepts
               : [it.tokens.join(" ")],
+          // Carried like quiz/type/use — this branch was the one that dropped
+          // them, so a1_word_order (the only order_click pack) could not have
+          // shown a reason even once authored.
+          explanation: it.explanation,
+          explanation_cz: it.explanation_cz,
           structures: it.structures,
         }))
     : [];

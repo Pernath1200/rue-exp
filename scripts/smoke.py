@@ -78,11 +78,16 @@ def check_cache_buster() -> bool:
     fingerprint = h.hexdigest()[:16]
 
     html = (ROOT / "index.html").read_text(encoding="utf-8", errors="replace")
-    m = re.search(r"app\.js\?v=([A-Za-z0-9._-]+)", html)
-    if not m:
-        print("no ?v= cache-buster on app.js in index.html")
-        return False
-    version = m.group(1)
+    # BOTH cache-busters, or a CSS-only change ships invisible (found the same
+    # day the guard was written: app.css had its own, older, ?v=).
+    versions = []
+    for asset in ("app.js", "app.css"):
+        m = re.search(re.escape(asset) + r"\?v=([A-Za-z0-9._-]+)", html)
+        if not m:
+            print(f"no ?v= cache-buster on {asset} in index.html")
+            return False
+        versions.append(f"{asset}={m.group(1)}")
+    version = " ".join(versions)
     print(f"shell: {len(files)} file(s) · fingerprint {fingerprint} · ?v={version}")
 
     record = ROOT / "scripts" / "shell-version.json"
