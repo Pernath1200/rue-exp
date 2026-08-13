@@ -121,10 +121,35 @@ function samplePass(items, onlyIndices, focusStructures, pick) {
   return out;
 }
 
+/* Clock times, one rule instead of edits on 12 items that would rot (James,
+ * 2026-08-13, smoking a1_word_order): "at three o'clock" was the only accepted
+ * form, so "at three" and "at 3" both graded wrong — "too strict, demoralising".
+ * o'clock is optional in English and the corpus is already inconsistent
+ * (`a2_past_continuous` writes "At 8 o'clock"), so both sides are normalised.
+ *
+ * `one` is deliberately NOT in the table: it is a pronoun in
+ * `c1_ellipsis_substitution` ("I would like the big one") and a label in
+ * `a1_word_classes`, where accepting "1" would be wrong. two-twelve are
+ * unambiguously numerals.
+ *
+ * GRAMMAR ONLY — never port this to practice-vocab.js: `a1_time_numbers`
+ * (84 items) teaches the number WORDS, and there "3" for "three" is the miss. */
+const CLOCK_DIGITS = {
+  two: "2", three: "3", four: "4", five: "5", six: "6",
+  seven: "7", eight: "8", nine: "9", ten: "10", eleven: "11", twelve: "12",
+};
+const CLOCK_WORD_RE = new RegExp(
+  `\\b(${Object.keys(CLOCK_DIGITS).join("|")})\\b`,
+  "g",
+);
+
 function norm(s) {
   return String(s)
     .toLowerCase()
     .replace(/[!?.,;:"'()]/g, " ")
+    // the apostrophe is gone by now, so o'clock reads as "o clock"
+    .replace(/\bo clock\b/g, " ")
+    .replace(CLOCK_WORD_RE, (w) => CLOCK_DIGITS[w])
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -1397,7 +1422,9 @@ export function startPractice(rawPack, root, opts) {
       stage: kind === "type" ? "type" : "use",
       checkPhase: "",
       itemIndex: idx,
-      en: prompt,
+      // `prompt` in Use IS the Czech (use_items prompt = it.cz), so flagging
+      // from Use printed the Czech twice and never showed the English target.
+      en: item.answer || prompt,
       cz: item.cz || "",
       gap: isGap ? item.stem || "" : "",
       gap_answer: isGap ? item.ending || "" : item.answer || "",
