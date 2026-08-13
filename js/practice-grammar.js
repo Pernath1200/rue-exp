@@ -379,14 +379,28 @@ export function startPractice(rawPack, root, opts) {
     else if (id === "use") beginUse();
   }
 
+  /**
+   * Label for whatever really comes after Check, so a gate never promises a
+   * stage the pack cannot play. Mirrors beginType/beginUse's fall-through:
+   * an empty Type stamps 1/1 and hands straight to Use.
+   */
+  function afterCheckLabel() {
+    if ((pack.type_items || []).length) return "Type";
+    if ((pack.use_items || []).length) return "Use";
+    return "Done";
+  }
+
   function ladderHtml() {
-    // Packs without use_items (pure form units) get a 3-step ladder —
-    // never show a stage that would auto-skip.
+    // Never show a stage that would auto-skip. The rule was written for Use
+    // and applied only there (2026-08-13): `a1_word_order` has no gap items,
+    // so its Type bank is empty, `beginType` stamps type 1/1 and falls through
+    // to Use — and the ladder still drew "3 · Type", so the student was shown
+    // a stage they never played and Done reported it 100 %.
     const stepDefs = [
       ["intro", "Intro"],
       ["check", "Check"],
-      ["type", "Type"],
     ];
+    if ((pack.type_items || []).length) stepDefs.push(["type", "Type"]);
     if ((pack.use_items || []).length) stepDefs.push(["use", "Use"]);
     const steps = stepDefs.map(([k, label], i) => [k, `${i + 1} · ${label}`]);
     const order = ["intro", "check", "type", "use", "done"];
@@ -887,15 +901,15 @@ export function startPractice(rawPack, root, opts) {
       <p class="practice-hint">${
         wrongN > 0
           ? `${wrongN} wrong · retry or continue`
-          : `All clear · next: ${state.orderItems.length ? "Word order" : "Type"}`
+          : `All clear · next: ${state.orderItems.length ? "Word order" : afterCheckLabel()}`
       }${state.quizRetryPass ? " · retry pass" : ""}</p>
       <div class="nav">
         ${
           wrongN > 0
             ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
-               <button type="button" class="btn" id="q-next">${state.orderItems.length ? "Next to word order →" : "Next to Type →"}</button>`
+               <button type="button" class="btn" id="q-next">${state.orderItems.length ? "Next to word order →" : `Next to ${afterCheckLabel()} →`}</button>`
             : `<button type="button" class="btn" id="q-again">Try full set</button>
-               <button type="button" class="btn primary" id="q-next">${state.orderItems.length ? "Next to word order →" : "Next to Type →"}</button>`
+               <button type="button" class="btn primary" id="q-next">${state.orderItems.length ? "Next to word order →" : `Next to ${afterCheckLabel()} →`}</button>`
         }
       </div>
       ${
@@ -1066,16 +1080,16 @@ export function startPractice(rawPack, root, opts) {
       <p class="practice-prompt">Score: <strong>${score} / ${total}</strong></p>
       <p class="practice-hint">${
         wrongN > 0
-          ? `${wrongN} wrong · retry or go to Type`
-          : "All clear · next: Type"
+          ? `${wrongN} wrong · retry or go to ${afterCheckLabel()}`
+          : `All clear · next: ${afterCheckLabel()}`
       }${state.orderRetryPass ? " · retry pass" : ""}</p>
       <div class="nav">
         ${
           wrongN > 0
             ? `<button type="button" class="btn primary" id="o-retry">Retry wrong (${wrongN})</button>
-               <button type="button" class="btn" id="o-next">Next to Type →</button>`
+               <button type="button" class="btn" id="o-next">Next to ${afterCheckLabel()} →</button>`
             : `<button type="button" class="btn" id="o-again">Try full set</button>
-               <button type="button" class="btn primary" id="o-next">Next to Type →</button>`
+               <button type="button" class="btn primary" id="o-next">Next to ${afterCheckLabel()} →</button>`
         }
       </div>
       ${
