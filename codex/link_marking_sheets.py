@@ -33,6 +33,18 @@ EDGE = Path(r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe")
 LINK_COLOUR = "0563C1"  # conventional hyperlink blue — must read as clickable
 
 
+def student_label(title: str, level: str) -> str:
+    """"Articles" + A1 -> "Articles (A1)", but never "… (A2) (A2)".
+
+    Some pack titles already carry the level ("Subject-verb agreement (A2)",
+    "Collocations & chunks (B1)"), so appending it blindly doubles it.
+    """
+    title = (title or "").strip()
+    if level and title.endswith(f"({level})"):
+        return title
+    return f"{title} ({level})"
+
+
 def unit_labels() -> dict[str, tuple[str, str]]:
     """node id -> (student-facing name, url)."""
     out: dict[str, tuple[str, str]] = {}
@@ -40,7 +52,10 @@ def unit_labels() -> dict[str, tuple[str, str]]:
         for p in (ROOT / "data" / domain / "blocks").glob("*.json"):
             d = json.loads(p.read_text(encoding="utf-8"))
             node = d.get("tree_node") or d.get("id")
-            out[node] = (f"{d.get('title')} ({d.get('level')})", f"{SITE}#{node}")
+            out[node] = (
+                student_label(d.get("title"), d.get("level")),
+                f"{SITE}#{node}",
+            )
     return out
 
 
