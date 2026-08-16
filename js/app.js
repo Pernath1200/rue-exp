@@ -32,6 +32,8 @@ import {
   mountSmokeFlagsUI,
   getSmokeApi,
   updateFlagsBadge,
+  addFlag,
+  loadFlags,
 } from "./smoke-flags.js";
 import { renderTreePortrait } from "./tree-portrait.js";
 
@@ -72,6 +74,119 @@ function escapeHtml(s) {
 
 function nodeById(id) {
   return (STATE.tree?.nodes || []).find((n) => n.id === id) || null;
+}
+
+/** Typed addresses arrive with any capitalisation — match ids case-blind. */
+function resolveNodeId(id) {
+  const exact = nodeById(id);
+  if (exact) return exact;
+  const low = String(id || "").toLowerCase();
+  return (
+    (STATE.tree?.nodes || []).find((n) => n.id.toLowerCase() === low) || null
+  );
+}
+
+function editDistance(a, b) {
+  if (Math.abs(a.length - b.length) > 3) return 99;
+  const m = a.length;
+  const n = b.length;
+  const row = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) {
+    let prev = row[0];
+    row[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const tmp = row[j];
+      row[j] = Math.min(
+        row[j] + 1,
+        row[j - 1] + 1,
+        prev + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
+      prev = tmp;
+    }
+  }
+  return row[n];
+}
+
+/** Closest openable units to a missed id — prefix beats contains beats typo. */
+function nearestLiveNodes(id, limit = 3) {
+  const low = String(id || "").toLowerCase();
+  const scored = [];
+  for (const n of STATE.tree?.nodes || []) {
+    if (n.status !== "live" || !n.content) continue;
+    const nid = n.id.toLowerCase();
+    let score = null;
+    if (nid.startsWith(low) || low.startsWith(nid)) score = 0;
+    else if (nid.includes(low) || low.includes(nid)) score = 1;
+    else {
+      const d = editDistance(low, nid);
+      if (d <= 3) score = 1 + d;
+    }
+    if (score !== null) scored.push([score, n]);
+  }
+  scored.sort((a, b) => a[0] - b[0] || a[1].id.localeCompare(b[1].id));
+  return scored.slice(0, limit).map(([, n]) => n);
+}
+
+/**
+ * A deep link that did not open a unit. Only James (and family, later) use
+ * these links, so the miss is builder information, not student hand-holding:
+ * say what happened, offer the closest real units, and on the dev host log
+ * the id to the smoke-flag store — a missed link is a unit worth building.
+ */
+function showDeepLinkNotice(id) {
+  clearDeepLinkNotice();
+  const map = document.getElementById("view-map");
+  if (!map) return;
+
+  const inTree = resolveNodeId(id);
+  const near = nearestLiveNodes(id);
+  const head = inTree
+    ? `“${escapeHtml(id)}” is planned but not built yet.`
+    : `No unit called “${escapeHtml(id)}” yet.`;
+
+  let logged = false;
+  if (IS_DEV_HOST) {
+    const note = `deep link miss: #${id}`;
+    const dup = loadFlags().some((f) => f.note === note);
+    if (!dup) {
+      addFlag({ tag: "ui", note, packId: String(id) });
+      logged = true;
+    }
+  }
+
+  const nearHtml = near.length
+    ? `<span class="deeplink-near">Closest built units: ${near
+        .map(
+          (n) =>
+            `<a href="#${escapeHtml(n.id)}">${escapeHtml(
+              n.title || n.id,
+            )}</a>`,
+        )
+        .join(" · ")}</span>`
+    : "";
+  const loggedHtml = logged
+    ? `<span class="deeplink-logged">Flagged as a unit to build.</span>`
+    : "";
+
+  const el = document.createElement("div");
+  el.id = "deeplink-notice";
+  el.className = "deeplink-notice";
+  el.innerHTML = `
+    <div class="deeplink-notice-text">
+      <strong>${head}</strong>
+      ${nearHtml}
+      ${loggedHtml}
+    </div>
+    <button class="deeplink-dismiss" type="button" aria-label="Dismiss">×</button>
+  `;
+  el.querySelector(".deeplink-dismiss").addEventListener("click", () =>
+    clearDeepLinkNotice(),
+  );
+  map.insertBefore(el, map.firstChild);
+}
+
+function clearDeepLinkNotice() {
+  document.getElementById("deeplink-notice")?.remove();
 }
 
 /**
@@ -118,8 +233,14 @@ function setUnitHash(nodeId, launch = {}) {
 async function openNodeFromHash({ replace = true } = {}) {
   const { id, review } = parseUnitHash(location.hash);
   if (!id) return false;
-  const node = nodeById(id);
-  if (!node || node.status !== "live" || !node.content) return false;
+  const node = resolveNodeId(id);
+  if (!node || node.status !== "live" || !node.content) {
+    // A real click on a bad link — say so instead of silently showing the map.
+    if (STATE.view === "practice") showMap({ fromHash: true });
+    showDeepLinkNotice(id);
+    return false;
+  }
+  clearDeepLinkNotice();
   const lv = levelOfNode(node);
   if (lv) STATE.level = lv;
   STATE.selectedId = node.id;
@@ -133,6 +254,7 @@ function bindHashRouting() {
     if (STATE._hashSync) return;
     const { id } = parseUnitHash(location.hash);
     if (!id) {
+      clearDeepLinkNotice();
       if (STATE.view === "practice") showMap({ fromHash: true });
       return;
     }
