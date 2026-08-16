@@ -50,8 +50,8 @@ please let 's am o'clock ok okay
 monday tuesday wednesday thursday friday saturday sunday
 january february march april may june july august september october november
 december english czech polish french german spanish
-prague brno vienna london ostrava
-anna martina tom tomas petr pavel jana eva jan david peter mary john
+prague brno vienna london ostrava italy naples pompeii sicily santorini europe british
+anna martina tom tomas petr pavel jana eva jan david peter mary john freida mcfadden
 """.split())
 
 SUFFIXES = ("ing", "ed", "es", "s", "er", "est", "ly", "d")

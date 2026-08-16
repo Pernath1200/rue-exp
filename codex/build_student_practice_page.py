@@ -173,16 +173,37 @@ code{font-family:Consolas,monospace;font-size:8pt}
     return "\n".join(parts)
 
 
+def load_overrides(path: str | None) -> list[dict]:
+    """Per-row reroutes for rows whose label maps to no unit. Each entry:
+    {"contains": "<err fragment>", "corr": "<optional corr fragment>",
+     "node": "<node_id>"} — matched case-insensitively. Used to route
+    phrasing rows into units built AFTER the sheet was written; the row's
+    text is never touched, only its grouping."""
+    if not path:
+        return []
+    return json.loads(Path(path).read_text(encoding="utf-8"))["overrides"]
+
+
+def override_node(err: str, corr: str, overrides: list[dict]) -> str | None:
+    e, c = err.lower(), corr.lower()
+    for o in overrides:
+        if o["contains"] in e and o.get("corr", "") in c:
+            return o["node"]
+    return None
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--name", required=True)
     ap.add_argument("--out", required=True)
+    ap.add_argument("--overrides", help="JSON of per-row reroutes (see load_overrides)")
     ap.add_argument("sheets", nargs="+")
     a = ap.parse_args()
 
     mapping = json.loads(
         (ROOT / "codex" / "marking_topic_map.json").read_text(encoding="utf-8")
     )["map"]
+    overrides = load_overrides(a.overrides)
     units = unit_labels()
 
     buckets: dict[str, list] = {}
@@ -202,6 +223,10 @@ def main() -> int:
             node = mapping.get(label) if label else None
             if node not in units:
                 node = None
+            if node is None:
+                node = override_node(err, corr, overrides)
+                if node not in units:
+                    node = None
             buckets.setdefault(node or NO_UNIT, []).append((err, corr, note, label))
 
     ordered = OrderedDict(

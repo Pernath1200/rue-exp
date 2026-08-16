@@ -6,7 +6,32 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
-## 2026-08-10 · claude-cloud (Lane C, run 1/10) · `build`
+## 2026-08-16 · local (interactive with James) · `main`
+
+### Headline
+**Martina's error-data build: 6 stranded packs routed live + 4 new units + a2_countable extended.** Driven by her error register (Martina.md sweep) after the Tomas error-summary loop proved out 2026-08-13. James authorised all of it by dropdown this session.
+
+### What landed
+
+| # | Unit | What |
+|---|------|------|
+| 1 | `b2_future_in_the_past` `b2_clear_claims` → B2 path · `b2_inversion` `b2_cleft_sentences` `b2_emphasis_fronting` `c1_hedging_stance` → C1 path | Status coming → **live**. Five are `thin_shell` (10 quiz items, 1 intro card) — routed deliberately; James smokes before student use. |
+| 2 | `b2_false_friends` **NEW** | 25 frames · word splits (jídlo→meal/dish, půjčit→borrow/lend) + false friends (praxe, aktuální, eventuálně…) · codex **V_IFR-B1B2-01** (new row) |
+| 3 | `b2_fixed_phrases` **NEW** | 18 frames · on holiday, in secret, no idea, nerves of steel, by + author · V_PHR-B2C1-01 |
+| 4 | `b2_delexical_collocations` **NEW** | 24 frames · make/do/take/have/get + noun (the 2026-08-13 decision) · V_PHR-B2C1-01 |
+| 5 | `b1_degree_adverbs` **NEW** | 16 quiz items + 3 intro cards · not very / too vs enough / so vs such / absolutely + extreme adj · G_NP-B1B2-01 |
+| 6 | `a2_countable` | +8-item block `countable_a2_numbers` (plural -s after numbers — her "three day") |
+
+### Gates
+verify_pack 0 errors (12 permanent b2_clear_claims warnings) · check_playable 93 live grammar on path, 0/0 · check_codex 56 canonical (snapshot refreshed 2026-08-16) · smoke PASSED · **audit baseline RESET 120 → 144**: +24 is the six routed thin shells' example-sentence lexis (legitimate B2/C1 words, not drift); the four new packs audit clean (lemma declarations + GLUE gained obvious proper nouns: italy naples pompeii sicily santorini europe british, freida mcfadden). Reset authorised by the routing decision itself.
+
+### Tooling
+`build_student_practice_page.py` gains `--overrides` (per-row reroute file, `codex/practice_overrides/Martina.json`) — routes phrasing rows whose sheets predate the new units. Marking map: "Adverbs: Degree and Intensifiers" now → `b1_degree_adverbs`. Orientation doc + Martina practice page + all 8 linked sheets regenerated.
+
+### To smoke (James)
+The six routed packs (five thin) · the four new units end-to-end · a2_countable's new block. Flag button auto-appears on localhost:8097. **Known hazard: smoke.py must run `py -X utf8`** — plain `python` hangs forever in the node stdin writer on any non-ASCII char (hit this session).
+
+
 
 ### Headline
 **B1 vocab dressing opens.** 2 B1 leaves fully dressed (intro + Use bank)

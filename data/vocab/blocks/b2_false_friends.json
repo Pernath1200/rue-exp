@@ -1,0 +1,272 @@
+{
+ "id": "b2_false_friends",
+ "title": "Czech false friends & word splits (B2)",
+ "level": "B2",
+ "tree_node": "b2_false_friends",
+ "codex_unit": "V_IFR-B1B2-01",
+ "practice": "frames",
+ "note": "V_IFR-B1B2-01 · one Czech word, two English words + classic false friends · gap on the English word Czech hides · seeded from Martina/Tomas error registers 2026-08-16",
+ "default_direction": "cz_to_en",
+ "seed_vocab": [
+  "dish",
+  "meal",
+  "tension",
+  "voltage",
+  "wardrobe",
+  "borrow",
+  "lend",
+  "teach",
+  "learn",
+  "recipe",
+  "prescription",
+  "experience",
+  "current",
+  "likeable",
+  "possibly",
+  "boss",
+  "draft",
+  "event",
+  "check-up"
+ ],
+ "blocks": [
+  {
+   "id": "b2_ff_splits",
+   "title": "One Czech word · two English words",
+   "items": [
+    {
+     "en": "We tried some local dishes.",
+     "cz": "Ochutnali jsme místní jídla.",
+     "gap": "We tried some local ____.",
+     "gap_answer": "dishes",
+     "accepts": [
+      "We tried some local dishes."
+     ]
+    },
+    {
+     "en": "Breakfast is my favourite meal of the day.",
+     "cz": "Snídaně je moje nejoblíbenější jídlo dne.",
+     "gap": "Breakfast is my favourite ____ of the day.",
+     "gap_answer": "meal",
+     "accepts": [
+      "Breakfast is my favourite meal of the day."
+     ]
+    },
+    {
+     "en": "The film is full of tension.",
+     "cz": "Ten film je plný napětí.",
+     "gap": "The film is full of ____.",
+     "gap_answer": "tension",
+     "accepts": [
+      "The film is full of tension."
+     ]
+    },
+    {
+     "en": "Be careful — the cable carries a high voltage.",
+     "cz": "Opatrně — v kabelu je vysoké napětí.",
+     "gap": "Be careful — the cable carries a high ____.",
+     "gap_answer": "voltage",
+     "accepts": [
+      "Be careful — the cable carries a high voltage."
+     ],
+     "lemma": "cable carry"
+    },
+    {
+     "en": "The big bedroom has a walk-in wardrobe.",
+     "cz": "Velká ložnice má vlastní šatnu.",
+     "gap": "The big bedroom has a walk-in ____.",
+     "gap_answer": "wardrobe",
+     "accepts": [
+      "The big bedroom has a walk-in wardrobe."
+     ]
+    },
+    {
+     "en": "I left my bag in the changing room at the pool.",
+     "cz": "Nechala jsem si tašku v šatně na bazénu.",
+     "gap": "I left my bag in the ____ room at the pool.",
+     "gap_answer": "changing",
+     "accepts": [
+      "I left my bag in the changing room at the pool."
+     ]
+    },
+    {
+     "en": "Can I borrow your charger?",
+     "cz": "Můžu si půjčit tvoji nabíječku?",
+     "gap": "Can I ____ your charger?",
+     "gap_answer": "borrow",
+     "accepts": [
+      "Can I borrow your charger?"
+     ]
+    },
+    {
+     "en": "She lent me her bike for the weekend.",
+     "cz": "Půjčila mi na víkend své kolo.",
+     "gap": "She ____ me her bike for the weekend.",
+     "gap_answer": "lent",
+     "accepts": [
+      "She lent me her bike for the weekend."
+     ]
+    },
+    {
+     "en": "He taught me everything I know.",
+     "cz": "Naučil mě všechno, co umím.",
+     "gap": "He ____ me everything I know.",
+     "gap_answer": "taught",
+     "accepts": [
+      "He taught me everything I know."
+     ]
+    },
+    {
+     "en": "I learned a lot from that job.",
+     "cz": "V té práci jsem se hodně naučila.",
+     "gap": "I ____ a lot from that job.",
+     "gap_answer": "learned",
+     "accepts": [
+      "I learned a lot from that job."
+     ]
+    },
+    {
+     "en": "I would love to go back to Santorini.",
+     "cz": "Ráda bych se vrátila na Santorini.",
+     "gap": "I would love to ____ back to Santorini.",
+     "gap_answer": "go",
+     "accepts": [
+      "I would love to go back to Santorini."
+     ]
+    },
+    {
+     "en": "I found a great recipe for soup.",
+     "cz": "Našla jsem skvělý recept na polévku.",
+     "gap": "I found a great ____ for soup.",
+     "gap_answer": "recipe",
+     "accepts": [
+      "I found a great recipe for soup."
+     ]
+    },
+    {
+     "en": "The doctor gave me a prescription.",
+     "cz": "Doktor mi dal recept.",
+     "gap": "The doctor gave me a ____.",
+     "gap_answer": "prescription",
+     "accepts": [
+      "The doctor gave me a prescription."
+     ]
+    },
+    {
+     "en": "It rained the whole time.",
+     "cz": "Celou dobu pršelo.",
+     "gap": "It rained the ____ time.",
+     "gap_answer": "whole",
+     "accepts": [
+      "It rained the whole time."
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b2_ff_friends",
+   "title": "False friends",
+   "items": [
+    {
+     "en": "I have ten years of experience in accounting.",
+     "cz": "Mám deset let praxe v účetnictví.",
+     "gap": "I have ten years of ____ in accounting.",
+     "gap_answer": "experience",
+     "accepts": [
+      "I have ten years of experience in accounting."
+     ]
+    },
+    {
+     "en": "This is the current version of the timetable.",
+     "cz": "Tohle je aktuální verze rozvrhu.",
+     "gap": "This is the ____ version of the timetable.",
+     "gap_answer": "current",
+     "accepts": [
+      "This is the current version of the timetable."
+     ],
+     "lemma": "version"
+    },
+    {
+     "en": "Our new neighbour seems very likeable.",
+     "cz": "Náš nový soused působí velmi sympaticky.",
+     "gap": "Our new neighbour seems very ____.",
+     "gap_answer": "likeable",
+     "accepts": [
+      "Our new neighbour seems very likeable."
+     ]
+    },
+    {
+     "en": "We could possibly move the lesson to Friday.",
+     "cz": "Eventuálně bychom mohli hodinu přesunout na pátek.",
+     "gap": "We could ____ move the lesson to Friday.",
+     "gap_answer": "possibly",
+     "accepts": [
+      "We could possibly move the lesson to Friday."
+     ]
+    },
+    {
+     "en": "My boss let me leave early.",
+     "cz": "Šéf mě pustil dřív.",
+     "gap": "My ____ let me leave early.",
+     "gap_answer": "boss",
+     "accepts": [
+      "My boss let me leave early."
+     ]
+    },
+    {
+     "en": "Their daughter studies at a grammar school.",
+     "cz": "Jejich dcera studuje na gymnáziu.",
+     "gap": "Their daughter studies at a ____ school.",
+     "gap_answer": "grammar",
+     "accepts": [
+      "Their daughter studies at a grammar school."
+     ]
+    },
+    {
+     "en": "He passed his school-leaving exams in May.",
+     "cz": "V květnu odmaturoval.",
+     "gap": "He passed his ____ exams in May.",
+     "gap_answer": "school-leaving",
+     "accepts": [
+      "He passed his school-leaving exams in May."
+     ]
+    },
+    {
+     "en": "I sent her the first draft of the report.",
+     "cz": "Poslala jsem jí první koncept zprávy.",
+     "gap": "I sent her the first ____ of the report.",
+     "gap_answer": "draft",
+     "accepts": [
+      "I sent her the first draft of the report."
+     ]
+    },
+    {
+     "en": "The school is planning a charity event.",
+     "cz": "Škola pořádá charitativní akci.",
+     "gap": "The school is planning a charity ____.",
+     "gap_answer": "event",
+     "accepts": [
+      "The school is planning a charity event."
+     ]
+    },
+    {
+     "en": "These trainers were on special offer.",
+     "cz": "Tyhle tenisky byly v akci.",
+     "gap": "These trainers were on ____ offer.",
+     "gap_answer": "special",
+     "accepts": [
+      "These trainers were on special offer."
+     ]
+    },
+    {
+     "en": "I am going to the dentist for a check-up.",
+     "cz": "Jdu k zubaři na kontrolu.",
+     "gap": "I am going to the dentist for a ____.",
+     "gap_answer": "check-up",
+     "accepts": [
+      "I am going to the dentist for a check-up."
+     ]
+    }
+   ]
+  }
+ ]
+}
