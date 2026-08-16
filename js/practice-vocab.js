@@ -965,26 +965,50 @@ export function startPractice(root, block, opts) {
     const itemIndex = q.order[q.pos];
     const it = list[itemIndex];
     flagItem(it, itemIndex, "quiz");
-    const correct = targetOf(it);
-    // A sibling sharing this item's Czech prompt is an EQUALLY CORRECT answer,
-    // not a distractor (bohatý = rich AND wealthy). Grading is a string match
-    // against `correct`, so offering the twin marks a right answer wrong.
-    const supportKey = glossKey(supportOf(it));
-    const others = shuffle(
-      list.filter(
-        (x) =>
-          targetOf(x) !== correct && glossKey(supportOf(x)) !== supportKey,
-      ),
-    )
-      .slice(0, 3)
-      .map((x) => targetOf(x));
+    /* Frame items quiz the GAP, not the sentence. Whole-sentence options from
+     * other items are solved by content-word matching alone — "polévku" finds
+     * "soup" without ever deciding recept = recipe/prescription (James,
+     * 2026-08-16, smoking b2_false_friends). Authored quiz_options carry the
+     * confusable set (the false friend's twin, the learner's error form);
+     * fallback is other items' gap answers. */
+    const frame = isFrameItem(it);
+    const correct = frame ? it.gap_answer : targetOf(it);
+    let others;
+    if (frame) {
+      const authored = Array.isArray(it.quiz_options)
+        ? [...new Set(it.quiz_options.filter((o) => o && o !== correct))]
+        : [];
+      others = authored.length
+        ? shuffle(authored).slice(0, 3)
+        : shuffle([
+            ...new Set(
+              list
+                .filter((x) => x !== it && x.gap_answer && x.gap_answer !== correct)
+                .map((x) => x.gap_answer),
+            ),
+          ]).slice(0, 3);
+    } else {
+      // A sibling sharing this item's Czech prompt is an EQUALLY CORRECT answer,
+      // not a distractor (bohatý = rich AND wealthy). Grading is a string match
+      // against `correct`, so offering the twin marks a right answer wrong.
+      const supportKey = glossKey(supportOf(it));
+      others = shuffle(
+        list.filter(
+          (x) =>
+            targetOf(x) !== correct && glossKey(supportOf(x)) !== supportKey,
+        ),
+      )
+        .slice(0, 3)
+        .map((x) => targetOf(x));
+    }
     const opts = shuffle([correct, ...others]);
 
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
         <div class="prompt">${sw(supportOf(it))}${escapeHtml(supportOf(it))}${gb(supportOf(it))}</div>
-        <div class="sub">Choose the English · keys 1–4 · then <strong>Enter</strong> = next (always)</div>
+        ${frame ? `<div class="prompt prompt-gap">${escapeHtml(it.gap)}</div>` : ""}
+        <div class="sub">Choose the ${frame ? "missing word" : "English"} · keys 1–4 · then <strong>Enter</strong> = next (always)</div>
         <div class="opts">
           ${opts
             .map(
