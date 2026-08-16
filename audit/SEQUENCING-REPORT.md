@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**144 unknown word types** across 23 live units (of 163).
+**142 unknown word types** across 22 live units (of 163).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -12,7 +12,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b1_it_subject** (B1 grammar): practise, guess, until, patience, grammar
 - **b1_relative_clauses** (B1 grammar): enough, practise, berlin, treated, pardubice, wi, fi, designed, nearby, discussed, hired, laugh, path, muddy, spain, grew, born
 - **b1_reported_speech** (B1 grammar): cancelled, patrik, ond, ej
-- **b1_indirect_questions** (B1 grammar): whether, wonder
 - **b1_linkers** (B1 grammar): whispered, careless, hurried, tyre, apologised, everyone, ads
 - **b1_verb_patterns_advanced** (B1 grammar): advised, warned, noon
 - **b1_phrasal_verbs** (B1 grammar): turn×4, switch×3, fill×2, turned×2, volume×2, nephew, until, motorway, package, firefighters
