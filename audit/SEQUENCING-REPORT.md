@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**142 unknown word types** across 22 live units (of 163).
+**141 unknown word types** across 22 live units (of 163).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -21,7 +21,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b2_future_in_the_past** (B2 grammar): interrupted, noon
 - **b2_second_conditional** (B2 grammar): practised×2, lottery, happen, everyone, truth, pizza
 - **b2_third_conditional** (B2 grammar): practised, crashed, truth, sunrise, realised, pizza, wi, fi, invoice, dawn, battery
-- **b2_clear_claims** (B2 grammar): impact, teenagers, ruins, sum, ban, nobody, anymore, conclusion
+- **b2_clear_claims** (B2 grammar): impact, teenagers, ruins, sum, ban, anymore, conclusion
 - **b2_inversion** (C1 grammar): circumstances, chaos, seldom, until, happen
 - **b2_cleft_sentences** (C1 grammar): honesty, disliked, happened
 - **b2_emphasis_fronting** (C1 grammar): care
