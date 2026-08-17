@@ -1116,6 +1116,7 @@ async function openNode(node, launch = {}) {
         packId: pack.id || node.id,
         packTitle: pack.title || node.label,
         packLevel: (node.levels && node.levels[0]) || pack.level || "?",
+        senseMap: STATE.senseMap,
         onTouch: () => touchVocabBlock(blockId, node.id),
         onModeComplete: (mode, meta) => {
           const nodes = STATE.tree?.nodes || [];
@@ -1287,6 +1288,14 @@ async function boot() {
       STATE.reference = await loadJson("./data/reference.json");
     } catch {
       STATE.reference = null;
+    }
+    // Czech sense -> equally-correct English answers. Also optional: without
+    // it grading falls back to the pack's own items, which is narrower but
+    // never wrong.
+    try {
+      STATE.senseMap = await loadJson("./data/senses.json");
+    } catch {
+      STATE.senseMap = null;
     }
     // Adopt units fruited before the SRS existed (learnedAt <- touchedAt),
     // so earlier days' units come due immediately, not never.

@@ -444,6 +444,30 @@ function glossKey(s) {
 }
 
 /**
+ * The bare senses inside a Czech prompt: "silnice / cesta" -> [silnice, cesta],
+ * "cesta (delší)" -> [cesta]. Alternatives and the parenthetical gloss are
+ * stripped, because what a student reads and answers against is the sense.
+ */
+function czSenses(cz) {
+  return String(cz == null ? "" : cz)
+    .split("/")
+    .map((p) => glossKey(p.replace(/\([^)]*\)/g, " ")))
+    .filter(Boolean);
+}
+
+/**
+ * A prompt is BARE when it offers no alternative and no disambiguating gloss.
+ * Bare "cesta" has five right answers (way, road, journey, trip, voyage) and
+ * the student cannot know which is wanted; "cesta (delší)" names one, so it
+ * stays strict. Only bare prompts get widened (James, 2026-08-17, found in a
+ * lesson: cesta was graded as journey alone).
+ */
+function isBarePrompt(cz) {
+  const s = String(cz == null ? "" : cz);
+  return Boolean(s.trim()) && !s.includes("/") && !s.includes("(");
+}
+
+/**
  * @param {HTMLElement} root
  * @param {{ id?: string, title: string, items: object[], practice?: string }} block
  * @param {{ onExit: () => void, practice?: string, packId?: string, packTitle?: string }} opts
@@ -525,6 +549,41 @@ export function startPractice(root, block, opts) {
     return g
       ? ` <span class="gender-badge gender-${g}">${GENDER_LABEL[g]}</span>`
       : "";
+  }
+
+  // ---- Equally-correct answers to an ambiguous prompt ----
+  // One Czech word routinely covers several English ones. Where the prompt
+  // names no sense, every English word the course attaches to that sense is a
+  // correct answer, so grading must accept them all and Quiz must not offer
+  // one as a distractor against another. A grader rule rather than 182 hand
+  // edits, and it stays true as content grows (same call as the 617 article
+  // defects, James 2026-08-11).
+  //
+  // The map is course-wide (data/senses.json), not per-pack: `film` and
+  // `movie` live in different packs, and a pack-local map caught only 73 of
+  // the 182. The pack's own items are folded in on top so a new pack is
+  // covered before the map is regenerated.
+  const enBySense = new Map();
+  const shared = (opts.senseMap && opts.senseMap.senses) || null;
+  if (shared) {
+    for (const [s, list] of Object.entries(shared)) {
+      enBySense.set(s, new Set(list));
+    }
+  }
+  for (const it of block.items || []) {
+    if (!it || !it.en) continue;
+    for (const s of czSenses(it.cz)) {
+      if (!enBySense.has(s)) enBySense.set(s, new Set());
+      enBySense.get(s).add(it.en);
+    }
+  }
+
+  /** Other English answers that are equally right for this item's prompt. */
+  function siblingAnswers(item) {
+    if (!item || !isBarePrompt(item.cz)) return [];
+    const set = enBySense.get(glossKey(item.cz));
+    if (!set || set.size < 2) return [];
+    return [...set].filter((en) => en && en !== item.en);
   }
 
   // ---- Deck rotation (per pack + mode) ----
@@ -1018,11 +1077,17 @@ export function startPractice(root, block, opts) {
       // A sibling sharing this item's Czech prompt is an EQUALLY CORRECT answer,
       // not a distractor (bohatý = rich AND wealthy). Grading is a string match
       // against `correct`, so offering the twin marks a right answer wrong.
+      // The same holds one level down: for a bare prompt like "cesta", every
+      // English word attached to that sense is right, even though the sibling's
+      // own prompt reads "silnice / cesta" and so never matched as a gloss.
       const supportKey = glossKey(supportOf(it));
+      const equally = new Set(siblingAnswers(it).map((en) => glossKey(en)));
       others = shuffle(
         list.filter(
           (x) =>
-            targetOf(x) !== correct && glossKey(supportOf(x)) !== supportKey,
+            targetOf(x) !== correct &&
+            glossKey(supportOf(x)) !== supportKey &&
+            !equally.has(glossKey(targetOf(x))),
         ),
       )
         .slice(0, 3)
@@ -1246,11 +1311,21 @@ export function startPractice(root, block, opts) {
     function grade(opts = {}) {
       if (t.answered) return;
       const { allowNear = true } = opts;
-      if (isCorrectAnswer(inp.value, it, answer, { forGap: frame })) {
+      // Frames gap a sentence, so only word items get the ambiguous-prompt
+      // widening.
+      const equally = frame ? [] : siblingAnswers(it);
+      const alsoRight = equally.find((alt) =>
+        isCorrectAnswer(inp.value, it, alt, { forGap: frame }),
+      );
+      if (isCorrectAnswer(inp.value, it, answer, { forGap: frame }) || alsoRight) {
         t.answered = true;
         t.missedThis = false;
         t.score++;
-        fb.textContent = "✓ Correct";
+        // Say the model answer too, or the student never learns which word
+        // this prompt was reaching for.
+        fb.innerHTML = alsoRight
+          ? `✓ Correct — also: <span class="reveal">${escapeHtml(answer)}</span>`
+          : "✓ Correct";
         fb.className = "fb good";
         afterGrade();
         return;
