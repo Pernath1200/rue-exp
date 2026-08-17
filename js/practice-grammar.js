@@ -18,6 +18,7 @@ import {
   grammarBest,
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
+import { canonSynonyms } from "./synonyms.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
@@ -196,7 +197,16 @@ function isCorrect(user, item, mode) {
   }
   const u = norm(user);
   if (!u) return false;
-  return acceptsList(item, mode).includes(u);
+  const forms = acceptsList(item, mode);
+  if (forms.includes(u)) return true;
+  // Two names for one thing (shop/store, phone/telephone). The lesson fault
+  // that prompted this — "na stole" answered only by desk — was in a GRAMMAR
+  // pack, so the rule has to live here too, not only in the vocab engine.
+  const uc = canonSynonyms(u);
+  if (uc !== u || forms.some((f) => canonSynonyms(f) !== f)) {
+    return forms.some((f) => canonSynonyms(f) === uc);
+  }
+  return false;
 }
 
 function el(html) {

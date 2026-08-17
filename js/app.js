@@ -37,6 +37,7 @@ import {
 } from "./smoke-flags.js";
 import { renderTreePortrait } from "./tree-portrait.js";
 import { initReference, renderReference } from "./reference.js";
+import { setSynonymMap } from "./synonyms.js";
 
 /* Smoke flagging is a REVIEW tool, not a student feature (James, 2026-08-10).
  * Gated on hostname, so it is automatic when serving on :8097 and cannot
@@ -1294,6 +1295,9 @@ async function boot() {
     // never wrong.
     try {
       STATE.senseMap = await loadJson("./data/senses.json");
+      // Freely interchangeable words apply in BOTH engines, so they go into
+      // the shared module rather than being threaded through every call.
+      setSynonymMap(STATE.senseMap?.synonyms || null);
     } catch {
       STATE.senseMap = null;
     }

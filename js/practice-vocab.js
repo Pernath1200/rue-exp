@@ -11,6 +11,7 @@
  *   - no bank → "Coming soon" placeholder (no free-write)
  */
 
+import { canonSynonyms } from "./synonyms.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js";
 import { setSmokeContext } from "./smoke-flags.js";
@@ -286,7 +287,14 @@ function isCorrectAnswer(userInput, item, primary, opts = {}) {
   if (!userN) return false;
   // norm() already folds case, punctuation and contractions, and English
   // sentences must keep their subjects — no softer sentence match than this.
-  if (itemAccepts(item, primary, opts).includes(userN)) return true;
+  const forms = itemAccepts(item, primary, opts);
+  if (forms.includes(userN)) return true;
+  // Two names for one thing (shop/store, phone/telephone) compare equal once
+  // both sides are canonicalised. Context-dependent pairs are NOT in the map.
+  const userC = canonSynonyms(userN);
+  if (userC !== userN || forms.some((f) => canonSynonyms(f) !== f)) {
+    return forms.some((f) => canonSynonyms(f) === userC);
+  }
   return false;
 }
 
