@@ -218,6 +218,33 @@ function articleVariants(normed) {
   return [...new Set(variants.map((v) => v.join(" ")))];
 }
 
+/**
+ * Split alternatives on / and ; — but NEVER inside parentheses.
+ *
+ * A slash in a sense hint is punctuation, not a second answer: "play
+ * (sport/game)" is one word with a disambiguator, and splitting blind also
+ * accepted a bare "game" for hrát (James, 2026-08-17, A1 sweep). Sense
+ * indicators are shown but never required, so accepts() still derives the
+ * paren-stripped form separately — "play" keeps passing.
+ */
+function splitAlternatives(s) {
+  const out = [];
+  let buf = "";
+  let depth = 0;
+  for (const ch of String(s)) {
+    if (ch === "(") depth++;
+    else if (ch === ")") depth = Math.max(0, depth - 1);
+    else if ((ch === "/" || ch === ";") && depth === 0) {
+      out.push(buf);
+      buf = "";
+      continue;
+    }
+    buf += ch;
+  }
+  out.push(buf);
+  return out;
+}
+
 /** Expand one answer string into normalised acceptable forms (slashes, notes). */
 function accepts(answer) {
   if (answer == null || answer === "") return [];
@@ -225,7 +252,7 @@ function accepts(answer) {
   return [
     ...new Set(
       forms
-        .flatMap((f) => String(f).split(/[/;]/))
+        .flatMap(splitAlternatives)
         .map(norm)
         .filter(Boolean),
     ),
