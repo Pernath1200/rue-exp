@@ -206,6 +206,8 @@ def main() -> int:
     ok = step("data/spine.json", lambda: check_json("data/spine.json")) and ok
     ok = step("pack lint", lambda: run_gate("verify_pack.py")) and ok
     ok = step("playable ladders", lambda: run_gate("check_playable.py")) and ok
+    ok = step("feature taught before needed",
+              lambda: run_gate("check_pretaught.py")) and ok
     ok = step("js modules parse", check_js_loads) and ok
     ok = step("cache-buster vs shell", check_cache_buster) and ok
     ok = step("progress key (informational)", check_progress_key) and ok
