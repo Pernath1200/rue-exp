@@ -1,11 +1,12 @@
 /**
  * Tables — reference panel + free practice (James, 2026-08-17).
- * Ported from arta-lat's Tabulae / rupl-exp's Tabele, with the same rulings:
+ * Ported from arta-lat's Tabulae / rupl-exp's Tabele, then simplified on
+ * James's second pass:
  *
- *  - Tables are FULL and always answer a lookup, but they are progress-aware:
- *    a cell is "yours" once the unit that teaches it has fruited. Untaught
- *    cells render dimmed with a "later" mark, so orientation stays honest.
- *  - Practice draws ONLY from taught cells, and needs 3 before it unlocks.
+ *  - Grouped by LEVEL, not by grammatical pattern.
+ *  - NO progress dimming. The level grouping already carries the progression,
+ *    so dimming was doing the same job twice and made the panel look busier
+ *    than it is. Tables are plain lists; every row is practisable.
  *  - The table HIDES while a drill runs — answers above the question defeat
  *    the exercise.
  *  - A wrong answer HALTS the run: the correction sits on screen and nothing
@@ -13,14 +14,13 @@
  *  - Untracked on purpose: no fruit, no SRS. The reference is a whetstone,
  *    not a path station.
  *
- * English has no declension and no conjugation worth tabulating, so the
- * content is the closed lists a Czech speaker must actually memorise —
- * irregular verbs first, prepositions / pronouns+tenses / spelling+pairs to
- * follow.
- *
- * Sections are GENERIC: `columns` drives the table and `drill` drives the
- * pool, both from data/reference.json. Adding a tab is a data job, not a
- * code job.
+ * Sections are GENERIC and drive both the table and the pool:
+ *   columns    [{key,label}]        the table
+ *   drill      [{from,to,label}]    cue "<row[from]> · <label>" -> row[to]
+ *                                   (no label -> the cue is just row[from])
+ *   row.drills [{cue,answer}]       explicit pairs, for anything irregular
+ *   row.skip_drill                  column-pair drills off for this row
+ * Adding a table is a data job, not a code job.
  */
 
 function esc(s) {
@@ -66,23 +66,10 @@ let CTX = null;
 let tab = null;
 const openDrills = new Map(); // sectionId -> drill state
 
-/** ctx = { data, isTaught(unitId) } — injected from app.js. */
+/** ctx = { data } — injected from app.js. */
 export function initReference(ctx) {
   CTX = ctx;
   if (!tab) tab = ctx?.data?.tabs?.[0]?.id || null;
-}
-
-function taught(by) {
-  // No `by` at all = a form the path never teaches. Stays dimmed, stays
-  // visible: the table still answers the lookup.
-  if (!by) return false;
-  return Boolean(CTX && CTX.isTaught && CTX.isTaught(by));
-}
-
-function cell(form, by) {
-  const cls = taught(by) ? "ref-form" : "ref-form ref-later";
-  const mark = taught(by) ? "" : `<span class="ref-later-mark">later</span>`;
-  return `<td class="${cls}">${esc(form)}${mark}</td>`;
 }
 
 function tabs() {
@@ -97,17 +84,24 @@ function sectionsOf(t) {
   return (t && t.sections) || [];
 }
 
-/** Practice items for a section, taught cells only. */
+/** Practice items for a section: explicit row drills, then column pairs. */
 function poolOf(sec) {
   const out = [];
-  for (const spec of sec.drill || []) {
-    for (const row of sec.rows || []) {
+  for (const row of sec.rows || []) {
+    for (const d of row.drills || []) {
+      if (d && d.cue && d.answer) out.push({ cue: d.cue, answer: d.answer });
+    }
+    if (row.skip_drill) continue;
+    for (const spec of sec.drill || []) {
       const answer = row[spec.to];
-      if (!answer) continue;
-      if (!taught(row[`${spec.to}_by`])) continue;
       const cueWord = row[spec.from];
-      if (!cueWord) continue;
-      out.push({ cue: `${cueWord} · ${spec.label}`, answer });
+      // "—" marks a cell with no form (it has no standalone possessive):
+      // it belongs in the table but must never be asked for.
+      if (!answer || !cueWord || answer === "—") continue;
+      out.push({
+        cue: spec.label ? `${cueWord} · ${spec.label}` : cueWord,
+        answer,
+      });
     }
   }
   return out;
@@ -170,7 +164,9 @@ function tableHtml(sec) {
   const head = cols.map((c) => `<th>${esc(c.label)}</th>`).join("");
   const rows = (sec.rows || [])
     .map((r) => {
-      const tds = cols.map((c) => cell(r[c.key], r[`${c.key}_by`])).join("");
+      const tds = cols
+        .map((c) => `<td class="ref-form">${esc(r[c.key])}</td>`)
+        .join("");
       const note = r.note
         ? `<tr class="ref-note-row"><td colspan="${cols.length}">${esc(r.note)}</td></tr>`
         : "";
@@ -183,7 +179,7 @@ function tableHtml(sec) {
     </table>`;
 }
 
-function sectionHtml(sec) {
+function sectionHtml(sec, i) {
   const pool = poolOf(sec);
   const st = openDrills.get(sec.id);
   // Mid-drill the table is HIDDEN — it returns with the score.
@@ -193,7 +189,9 @@ function sectionHtml(sec) {
     : pool.length >= 3
       ? `<button type="button" class="home-btn" data-ref-drill="${esc(sec.id)}">Practise (${pool.length})</button>`
       : `<p class="home-hint">Practice unlocks as the path teaches these forms.</p>`;
-  return `<details class="quiet-details ref-block" data-ref-block="${esc(sec.id)}" ${openDrills.has(sec.id) ? "open" : ""}>
+  // First section open by default, so a tab never opens looking empty.
+  const open = openDrills.has(sec.id) || i === 0 ? "open" : "";
+  return `<details class="quiet-details ref-block" data-ref-block="${esc(sec.id)}" ${open}>
     <summary><strong>${esc(sec.title)}</strong> · ${esc(sec.sub || "")} <span class="ref-exemplar">${esc(sec.exemplar || "")}</span></summary>
     ${sec.intro ? `<p class="home-hint">${esc(sec.intro)}</p>` : ""}
     ${running ? "" : tableHtml(sec)}
@@ -216,8 +214,7 @@ export function renderReference(host) {
     : `<p class="home-hint">Not built yet — this tab is wired and waiting for its table.</p>`;
   host.innerHTML = `
     <div class="ref-tabs" role="tablist">${tabBar}</div>
-    <p class="home-hint">${esc((t && t.blurb) || "")}</p>
-    <p class="home-hint">Full tables. Dimmed forms come later on the path — practice draws only on what you have met, and is not scored towards your progress.</p>
+    <p class="home-hint">${esc((t && t.blurb) || "")} Practice here is not scored towards your progress.</p>
     ${body}
   `;
   wire(host);

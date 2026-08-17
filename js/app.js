@@ -846,12 +846,7 @@ function wireHomeActions() {
         if (!STATE.reference) {
           host.innerHTML = `<p class="home-hint">Tables could not be loaded.</p>`;
         } else {
-          // Rebuild the gate on every open — fruit earned since the last look
-          // should undim its rows straight away.
-          initReference({
-            data: STATE.reference,
-            isTaught: makeIsTaught(),
-          });
+          initReference({ data: STATE.reference });
           renderReference(host);
         }
       }
@@ -1275,54 +1270,6 @@ function watchAutoTranslate() {
     attributeFilter: ["class"],
   });
   check();
-}
-
-/**
- * Course-path order, flattened A1 → C1. Shared by the Tables gate so a unit's
- * position means the same thing there as on the path itself.
- */
-function flatPathOrder() {
-  const seen = new Set();
-  const out = [];
-  for (const key of [
-    "path_order",
-    "path_order_a2",
-    "path_order_b1",
-    "path_order_b2",
-    "path_order_c1",
-  ]) {
-    for (const id of STATE.tree?.[key] || []) {
-      if (!seen.has(id)) {
-        seen.add(id);
-        out.push(id);
-      }
-    }
-  }
-  return out;
-}
-
-/**
- * A reference cell is "yours" when the unit that teaches it sits at or before
- * the furthest point you have actually fruited — the same gate arta-lat uses.
- * Furthest-reached rather than per-unit, so a single skipped unit does not
- * punch a hole in the middle of a table.
- */
-function makeIsTaught() {
-  const order = flatPathOrder();
-  const pos = new Map(order.map((id, i) => [id, i]));
-  const byId = new Map((STATE.tree?.nodes || []).map((n) => [n.id, n]));
-  let furthest = -1;
-  for (const [id, i] of pos) {
-    const node = byId.get(id);
-    if (!node || node.status !== "live") continue;
-    const fruited =
-      node.domain === "vocab" ? hasVocabFruit(node) : hasFruit(node.id);
-    if (fruited && i > furthest) furthest = i;
-  }
-  return (unitId) => {
-    const i = pos.get(unitId);
-    return typeof i === "number" && i <= furthest;
-  };
 }
 
 async function boot() {
