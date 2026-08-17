@@ -2033,3 +2033,110 @@ button.m.wrong {
   }
   .fruit-payoff-meter .meter-fill { transition: none; }
 }
+
+/* ---- Tables · reference + free practice (2026-08-17) ---- */
+.ref-tabs {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.6rem;
+}
+
+.ref-block {
+  margin: 0.6rem 0;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.8rem;
+}
+
+.ref-block summary { cursor: pointer; }
+
+.ref-exemplar {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-left: 0.35rem;
+}
+
+.ref-table {
+  border-collapse: collapse;
+  margin: 0.6rem 0;
+  width: 100%;
+  max-width: 34rem;
+}
+
+.ref-table th,
+.ref-table td {
+  border: 1px solid var(--accent-dim);
+  padding: 0.3rem 0.6rem;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.ref-table thead th {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.ref-form.ref-later { color: var(--locked); }
+
+.ref-later-mark {
+  font-size: 0.68em;
+  color: var(--locked);
+  border: 1px solid var(--locked);
+  border-radius: 999px;
+  padding: 0 0.35em;
+  margin-left: 0.3em;
+  vertical-align: middle;
+}
+
+/* Per-row footnote (read /riːd/ → /red/, gotten, learned) */
+.ref-note-row td {
+  border-top: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-style: italic;
+}
+
+.ref-drill {
+  margin: 0.6rem 0 0.3rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  background: var(--accent-dim);
+}
+
+.ref-drill-cue {
+  font-weight: 600;
+  margin: 0 0 0.45rem;
+}
+
+.ref-drill-n {
+  color: var(--muted);
+  font-weight: 400;
+  font-size: 0.85em;
+  margin-left: 0.4rem;
+}
+
+.ref-drill-input {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.6rem;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  width: 12rem;
+  max-width: 55%;
+}
+
+.ref-drill-fb.is-ok { color: var(--correct); }
+.ref-drill-fb.is-wrong { color: var(--wrong-text); }
+
+.ref-drill-score { margin: 0 0 0.5rem; }
+
+.ref-drill-correction {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0.3rem 0 0.6rem;
+}
