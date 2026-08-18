@@ -351,7 +351,7 @@ function nearMiss(userInput, item, primary, opts = {}) {
   return null;
 }
 
-export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss };
+export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants };
 
 /** Ball-and-box SVG diagrams (from Teaching Material basic-prepositions.html), RUE3 dark tokens. */
 function diagramSvg(key) {

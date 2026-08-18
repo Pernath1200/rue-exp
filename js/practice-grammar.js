@@ -19,6 +19,7 @@ import {
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
 import { canonSynonyms } from "./synonyms.js";
+import { articleVariants } from "./practice-vocab.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
@@ -26,6 +27,8 @@ import { setSmokeContext } from "./smoke-flags.js";
 
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };
+/* exported for engine tests only */
+export { isCorrect as _gradeGrammar, articleMatch as _articleMatch };
 
 /**
  * Default questions per graded stage (Check quiz · Type · Use).
@@ -189,6 +192,28 @@ function acceptsList(item, mode) {
   return [...new Set(raw.map(norm).filter(Boolean))];
 }
 
+/* Czech has no articles, so a Czech prompt cannot pick between a and the —
+ * the same ruling the vocab engine has carried since 2026-08-11 (617 items).
+ * The grammar engine stayed exact because articles are sometimes the point:
+ * packs that TEACH articles set strict_articles and keep exact grading, and
+ * everywhere else SENTENCE answers fold a/an/the freely — never drop: a
+ * missing article stays wrong. Single-word gap answers stay exact in every
+ * pack: a gap cueing 'a' is asking about the article.
+ * (James, 2026-08-18, from the Martina/Tomáš lessons.) */
+let LENIENT_ARTICLES = true;
+
+function articleMatch(u, forms) {
+  if (!LENIENT_ARTICLES || !u.includes(" ")) return false;
+  const uv = new Set(articleVariants(u));
+  for (const f of forms) {
+    if (!f.includes(" ")) continue;
+    for (const v of articleVariants(f)) {
+      if (uv.has(v)) return true;
+    }
+  }
+  return false;
+}
+
 function isCorrect(user, item, mode) {
   if (mode === "ending_gap") {
     const u = normEnding(user);
@@ -199,6 +224,7 @@ function isCorrect(user, item, mode) {
   if (!u) return false;
   const forms = acceptsList(item, mode);
   if (forms.includes(u)) return true;
+  if (articleMatch(u, forms)) return true;
   // Two names for one thing (shop/store, phone/telephone). The lesson fault
   // that prompted this — "na stole" answered only by desk — was in a GRAMMAR
   // pack, so the rule has to live here too, not only in the vocab engine.
@@ -225,6 +251,7 @@ function pairPl(p) {
  * @param {{ onExit: () => void }} opts
  */
 export function startPractice(rawPack, root, opts) {
+  LENIENT_ARTICLES = !rawPack?.strict_articles;
   // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
   const pack = adaptGrammarPack(rawPack);
   touchBlock(pack.id);
