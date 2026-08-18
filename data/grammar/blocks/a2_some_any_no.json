@@ -1,605 +1,611 @@
 {
- "id": "a2_some_any_no",
- "title": "Some / any / no — the traps",
- "level": "A2",
- "tree_node": "a2_some_any_no",
- "codex_unit": "G_NP-A1B1-01",
- "practice": "frames",
- "note": "Builds on a1_some_any (basic + / − / ? rule). The Czech traps: žádný = no OR not…any, one negation only; free-choice any (jakýkoli); some-/any-/no- compounds. Split out of a1_some_any 2026-08-16 (was 52 items — trap material contaminated beginners' shuffled passes). Evidence: Tomas 'we have still any problems', Martina 'I bought any food', 'didn't have no drink'.",
- "default_direction": "cz_to_en",
- "check": {
-  "sequence": [
-   "match",
-   "quiz"
+  "id": "a2_some_any_no",
+  "title": "Some / any / no — the traps",
+  "level": "A2",
+  "tree_node": "a2_some_any_no",
+  "codex_unit": "G_NP-A1B1-01",
+  "practice": "frames",
+  "note": "Builds on a1_some_any (basic + / − / ? rule). The Czech traps: žádný = no OR not…any, one negation only; free-choice any (jakýkoli); some-/any-/no- compounds. Split out of a1_some_any 2026-08-16 (was 52 items — trap material contaminated beginners' shuffled passes). Evidence: Tomas 'we have still any problems', Martina 'I bought any food', 'didn't have no drink'.",
+  "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "match",
+      "quiz"
+    ]
+  },
+  "intro": {
+    "cards": [
+      {
+        "title": "You know the basic rule",
+        "title_cz": "Základní pravidlo už znáte",
+        "table": {
+          "caption": "from Some / any (A1)",
+          "headers": [
+            "+",
+            "− and ?"
+          ],
+          "rows": [
+            [
+              "I have some coffee.",
+              "I don't have any coffee. · Do you have any coffee?"
+            ]
+          ]
+        },
+        "points": [
+          "This unit is about the three places Czech pulls you off that rule."
+        ]
+      },
+      {
+        "title": "no = not…any",
+        "title_cz": "no = not…any (žádný)",
+        "table": {
+          "caption": "same meaning",
+          "headers": [
+            "With no",
+            "With not…any"
+          ],
+          "rows": [
+            [
+              "I have no coffee.",
+              "I don't have any coffee."
+            ],
+            [
+              "She has no questions.",
+              "She doesn't have any questions."
+            ],
+            [
+              "I bought no bread.",
+              "I didn't buy any bread."
+            ]
+          ]
+        },
+        "points": [
+          "English says the negative ONCE — Czech says it twice (nemám žádný).",
+          "no + noun → the verb stays positive.",
+          "Never two negatives: ~~I don't have no coffee~~."
+        ]
+      },
+      {
+        "title": "any in + = it doesn't matter which",
+        "title_cz": "any v kladné větě = jakýkoli",
+        "table": {
+          "caption": "two different meanings",
+          "headers": [
+            "Say",
+            "Meaning"
+          ],
+          "rows": [
+            [
+              "Come at any time.",
+              "kdykoli — it doesn't matter when"
+            ],
+            [
+              "You can take any chair.",
+              "jakoukoli — it doesn't matter which"
+            ],
+            [
+              "I bought some food.",
+              "real food I actually bought — NOT any"
+            ]
+          ]
+        },
+        "points": [
+          "any in a positive sentence = jakýkoli / kdykoli / kamkoli.",
+          "A real specific thing = some: I bought some food, never ~~I bought any food~~."
+        ]
+      },
+      {
+        "title": "something · anything · nothing",
+        "title_cz": "something · anything · nothing",
+        "table": {
+          "caption": "the same rule, one level up",
+          "headers": [
+            "+",
+            "− and ?",
+            "no- (positive verb)"
+          ],
+          "rows": [
+            [
+              "something",
+              "anything",
+              "nothing"
+            ],
+            [
+              "somebody",
+              "anybody",
+              "nobody"
+            ],
+            [
+              "somewhere",
+              "anywhere",
+              "nowhere"
+            ]
+          ]
+        },
+        "points": [
+          "I want something · I don't want anything · I want nothing.",
+          "Nobody / nothing / nowhere already contain the `no` — the verb stays positive."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "caption": "check",
+          "headers": [
+            "Say",
+            "Not"
+          ],
+          "rows": [
+            [
+              "I bought some food.",
+              "I bought any food."
+            ],
+            [
+              "I don't have any coffee. = I have no coffee.",
+              "I don't have no coffee."
+            ],
+            [
+              "I didn't say anything. = I said nothing.",
+              "I didn't say nothing."
+            ],
+            [
+              "We still have some problems.",
+              "We have still any problems."
+            ]
+          ]
+        },
+        "points": [
+          "žádný → no (positive verb) or not…any — never both negatives.",
+          "Real things you have, want or bought → some."
+        ]
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "a2_san_recap",
+      "title": "The rule you know — warm-up",
+      "items": [
+        {
+          "en": "We have some food at home.",
+          "cz": "Máme doma nějaké jídlo.",
+          "gap": "We have ____ food at home.",
+          "gap_answer": "some",
+          "accepts": [
+            "We have some food at home."
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        },
+        {
+          "en": "Do you have any questions?",
+          "cz": "Máte nějaké otázky?",
+          "gap": "Do you have ____ questions?",
+          "gap_answer": "any",
+          "accepts": [
+            "Do you have any questions?"
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        },
+        {
+          "en": "There isn't any milk.",
+          "cz": "Není tu žádné mléko.",
+          "gap": "There isn't ____ milk.",
+          "gap_answer": "any",
+          "accepts": [
+            "There isn't any milk.",
+            "There is no milk."
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        },
+        {
+          "en": "Would you like some tea?",
+          "cz": "Dáš si čaj?",
+          "gap": "Would you like ____ tea?",
+          "gap_answer": "some",
+          "accepts": [
+            "Would you like some tea?"
+          ],
+          "explanation": "Offers and requests use some, even as questions.",
+          "explanation_cz": "Nabídky a prosby používají some, i v otázce."
+        },
+        {
+          "en": "They don't have any children.",
+          "cz": "Nemají žádné děti.",
+          "gap": "They don't have ____ children.",
+          "gap_answer": "any",
+          "accepts": [
+            "They don't have any children."
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        },
+        {
+          "en": "Are there any books about this?",
+          "cz": "Jsou o tom nějaké knihy?",
+          "gap": "Are there ____ books about this?",
+          "gap_answer": "any",
+          "accepts": [
+            "Are there any books about this?"
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        },
+        {
+          "en": "He wants some coffee.",
+          "cz": "Chce kávu.",
+          "gap": "He wants ____ coffee.",
+          "gap_answer": "some",
+          "accepts": [
+            "He wants some coffee.",
+            "She wants some coffee."
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        },
+        {
+          "en": "We don't have any time today.",
+          "cz": "Dnes nemáme žádný čas.",
+          "gap": "We don't have ____ time today.",
+          "gap_answer": "any",
+          "accepts": [
+            "We don't have any time today."
+          ],
+          "explanation": "The basic rule: some in +, any in − and ?.",
+          "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
+        }
+      ]
+    },
+    {
+      "id": "a2_san_no",
+      "title": "no · not…any (žádný)",
+      "items": [
+        {
+          "en": "We have no bread.",
+          "cz": "Nemáme žádný chleba.",
+          "gap": "We have ____ bread.",
+          "gap_answer": "no",
+          "accepts": [
+            "We have no bread.",
+            "We don't have any bread."
+          ],
+          "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
+          "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
+        },
+        {
+          "en": "I don't have any time.",
+          "cz": "Nemám žádný čas.",
+          "gap": "I don't have ____ time.",
+          "gap_answer": "any",
+          "accepts": [
+            "I don't have any time.",
+            "I do not have any time.",
+            "I have no time."
+          ],
+          "explanation": "don't + any = one negation. Same meaning as `I have no time`.",
+          "explanation_cz": "don't + any = jeden zápor. Stejný význam jako `I have no time`."
+        },
+        {
+          "en": "She has no questions.",
+          "cz": "Nemá žádné otázky.",
+          "gap": "She has ____ questions.",
+          "gap_answer": "no",
+          "accepts": [
+            "She has no questions.",
+            "She doesn't have any questions.",
+            "He has no questions.",
+            "He doesn't have any questions."
+          ],
+          "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
+          "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
+        },
+        {
+          "en": "I didn't buy any bread.",
+          "cz": "Nekoupil jsem žádný chleba.",
+          "gap": "I didn't buy ____ bread.",
+          "gap_answer": "any",
+          "accepts": [
+            "I didn't buy any bread.",
+            "I did not buy any bread.",
+            "I bought no bread."
+          ],
+          "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
+          "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
+        },
+        {
+          "en": "There are no chairs here.",
+          "cz": "Nejsou tu žádné židle.",
+          "gap": "There are ____ chairs here.",
+          "gap_answer": "no",
+          "accepts": [
+            "There are no chairs here.",
+            "There aren't any chairs here."
+          ],
+          "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
+          "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
+        },
+        {
+          "en": "I didn't drink any tea.",
+          "cz": "Nevypil jsem žádný čaj.",
+          "gap": "I didn't drink ____ tea.",
+          "gap_answer": "any",
+          "accepts": [
+            "I didn't drink any tea.",
+            "I did not drink any tea."
+          ],
+          "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
+          "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
+        },
+        {
+          "en": "We don't need any help.",
+          "cz": "Nepotřebujeme žádnou pomoc.",
+          "gap": "We don't need ____ help.",
+          "gap_answer": "any",
+          "accepts": [
+            "We don't need any help.",
+            "We do not need any help.",
+            "We need no help."
+          ],
+          "explanation": "don't + any — never `don't need no help`.",
+          "explanation_cz": "don't + any — nikdy `don't need no help`."
+        },
+        {
+          "en": "He has no friends here.",
+          "cz": "Nemá tu žádné kamarády.",
+          "gap": "He has ____ friends here.",
+          "gap_answer": "no",
+          "accepts": [
+            "He has no friends here.",
+            "He doesn't have any friends here.",
+            "She has no friends here.",
+            "She doesn't have any friends here."
+          ],
+          "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
+          "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
+        },
+        {
+          "en": "They didn't ask any questions.",
+          "cz": "Nepoložili žádné otázky.",
+          "gap": "They didn't ask ____ questions.",
+          "gap_answer": "any",
+          "accepts": [
+            "They didn't ask any questions.",
+            "They did not ask any questions.",
+            "They asked no questions."
+          ],
+          "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
+          "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
+        },
+        {
+          "en": "She didn't want any tea.",
+          "cz": "Nechtěla žádný čaj.",
+          "gap": "She didn't want ____ tea.",
+          "gap_answer": "any",
+          "accepts": [
+            "She didn't want any tea.",
+            "She did not want any tea.",
+            "She wanted no tea."
+          ],
+          "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
+          "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
+        }
+      ]
+    },
+    {
+      "id": "a2_san_freechoice",
+      "title": "any in positives — jakýkoli",
+      "items": [
+        {
+          "en": "You can ask any question.",
+          "cz": "Můžeš se zeptat na jakoukoli otázku.",
+          "gap": "You can ask ____ question.",
+          "gap_answer": "any",
+          "accepts": [
+            "You can ask any question."
+          ],
+          "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
+          "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
+        },
+        {
+          "en": "Come at any time.",
+          "cz": "Přijď kdykoli.",
+          "gap": "Come at ____ time.",
+          "gap_answer": "any",
+          "accepts": [
+            "Come at any time."
+          ],
+          "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
+          "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
+        },
+        {
+          "en": "Any table is fine.",
+          "cz": "Jakýkoli stůl je v pořádku.",
+          "gap": "____ table is fine.",
+          "gap_answer": "Any",
+          "accepts": [
+            "Any table is fine."
+          ],
+          "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
+          "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
+        },
+        {
+          "en": "You can take any chair.",
+          "cz": "Můžeš si vzít jakoukoli židli.",
+          "gap": "You can take ____ chair.",
+          "gap_answer": "any",
+          "accepts": [
+            "You can take any chair."
+          ],
+          "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
+          "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
+        },
+        {
+          "en": "I bought some food.",
+          "cz": "Koupil jsem jídlo.",
+          "gap": "I bought ____ food.",
+          "gap_answer": "some",
+          "accepts": [
+            "I bought some food."
+          ],
+          "explanation": "A real, specific thing you got or want = some. `any` here would mean `it doesn't matter which` — wrong.",
+          "explanation_cz": "Skutečná, konkrétní věc, kterou máš nebo chceš = some. `any` by znamenalo `jakýkoli` — tady špatně."
+        },
+        {
+          "en": "She wants some water.",
+          "cz": "Chce (nějakou) vodu.",
+          "gap": "She wants ____ water.",
+          "gap_answer": "some",
+          "accepts": [
+            "She wants some water.",
+            "He wants some water."
+          ],
+          "explanation": "A real, specific thing you got or want = some. `any` here would mean `it doesn't matter which` — wrong.",
+          "explanation_cz": "Skutečná, konkrétní věc, kterou máš nebo chceš = some. `any` by znamenalo `jakýkoli` — tady špatně."
+        },
+        {
+          "en": "We need some chairs.",
+          "cz": "Potřebujeme (nějaké) židle.",
+          "gap": "We need ____ chairs.",
+          "gap_answer": "some",
+          "accepts": [
+            "We need some chairs."
+          ],
+          "explanation": "A real, specific thing you got or want = some. `any` here would mean `it doesn't matter which` — wrong.",
+          "explanation_cz": "Skutečná, konkrétní věc, kterou máš nebo chceš = some. `any` by znamenalo `jakýkoli` — tady špatně."
+        },
+        {
+          "en": "Any child can do it.",
+          "cz": "To zvládne každé dítě.",
+          "gap": "____ child can do it.",
+          "gap_answer": "Any",
+          "accepts": [
+            "Any child can do it."
+          ],
+          "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
+          "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
+        }
+      ]
+    },
+    {
+      "id": "a2_san_compounds",
+      "title": "something / anything / nothing",
+      "items": [
+        {
+          "en": "There is something on the table.",
+          "cz": "Na stole něco je.",
+          "gap": "There is ____ on the table.",
+          "gap_answer": "something",
+          "accepts": [
+            "There is something on the table."
+          ],
+          "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
+          "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
+        },
+        {
+          "en": "I don't want anything.",
+          "cz": "Nechci nic.",
+          "gap": "I don't want ____.",
+          "gap_answer": "anything",
+          "accepts": [
+            "I don't want anything."
+          ],
+          "explanation": "don't + anything = nic. One negation — never `don't want nothing`.",
+          "explanation_cz": "don't + anything = nic. Jeden zápor — nikdy `don't want nothing`."
+        },
+        {
+          "en": "There is nothing on the table.",
+          "cz": "Na stole nic není.",
+          "gap": "There is ____ on the table.",
+          "gap_answer": "nothing",
+          "accepts": [
+            "There is nothing on the table."
+          ],
+          "explanation": "nothing + positive verb: there IS nothing.",
+          "explanation_cz": "nothing + kladné sloveso: there IS nothing."
+        },
+        {
+          "en": "Do you want anything?",
+          "cz": "Chceš něco?",
+          "gap": "Do you want ____?",
+          "gap_answer": "anything",
+          "accepts": [
+            "Do you want anything?"
+          ],
+          "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
+          "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
+        },
+        {
+          "en": "Somebody is here.",
+          "cz": "Někdo tu je.",
+          "gap": "____ is here.",
+          "gap_answer": "Somebody",
+          "accepts": [
+            "Somebody is here."
+          ],
+          "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
+          "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
+        },
+        {
+          "en": "There isn't anybody here.",
+          "cz": "Nikdo tu není.",
+          "gap": "There isn't ____ here.",
+          "gap_answer": "anybody",
+          "accepts": [
+            "There isn't anybody here.",
+            "There is nobody here."
+          ],
+          "explanation": "isn't + anybody = nikdo. Or: There is nobody here.",
+          "explanation_cz": "isn't + anybody = nikdo. Nebo: There is nobody here."
+        },
+        {
+          "en": "Nobody has any questions.",
+          "cz": "Nikdo nemá žádné otázky.",
+          "gap": "____ has any questions.",
+          "gap_answer": "Nobody",
+          "accepts": [
+            "Nobody has any questions."
+          ],
+          "explanation": "Nobody + positive verb — the `no` already lives inside nobody.",
+          "explanation_cz": "Nobody + kladné sloveso — zápor už je uvnitř slova nobody."
+        },
+        {
+          "en": "We can go anywhere.",
+          "cz": "Můžeme jít kamkoli.",
+          "gap": "We can go ____.",
+          "gap_answer": "anywhere",
+          "accepts": [
+            "We can go anywhere."
+          ],
+          "explanation": "any- in a positive sentence = it does not matter where (kamkoli).",
+          "explanation_cz": "any- v kladné větě = je jedno kam (kamkoli)."
+        },
+        {
+          "en": "The children are somewhere here.",
+          "cz": "Děti jsou někde tady.",
+          "gap": "The children are ____ here.",
+          "gap_answer": "somewhere",
+          "accepts": [
+            "The children are somewhere here."
+          ],
+          "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
+          "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
+        },
+        {
+          "en": "She didn't say anything.",
+          "cz": "Nic neřekla.",
+          "gap": "She didn't say ____.",
+          "gap_answer": "anything",
+          "accepts": [
+            "She didn't say anything.",
+            "She said nothing."
+          ],
+          "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
+          "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
+        }
+      ]
+    }
   ]
- },
- "intro": {
-  "cards": [
-   {
-    "title": "You know the basic rule",
-    "title_cz": "Základní pravidlo už znáte",
-    "table": {
-     "caption": "from Some / any (A1)",
-     "headers": [
-      "+",
-      "− and ?"
-     ],
-     "rows": [
-      [
-       "I have some coffee.",
-       "I don't have any coffee. · Do you have any coffee?"
-      ]
-     ]
-    },
-    "points": [
-     "This unit is about the three places Czech pulls you off that rule."
-    ]
-   },
-   {
-    "title": "no = not…any",
-    "title_cz": "no = not…any (žádný)",
-    "table": {
-     "caption": "same meaning",
-     "headers": [
-      "With no",
-      "With not…any"
-     ],
-     "rows": [
-      [
-       "I have no coffee.",
-       "I don't have any coffee."
-      ],
-      [
-       "She has no questions.",
-       "She doesn't have any questions."
-      ],
-      [
-       "I bought no bread.",
-       "I didn't buy any bread."
-      ]
-     ]
-    },
-    "points": [
-     "English says the negative ONCE — Czech says it twice (nemám žádný).",
-     "no + noun → the verb stays positive.",
-     "Never two negatives: ~~I don't have no coffee~~."
-    ]
-   },
-   {
-    "title": "any in + = it doesn't matter which",
-    "title_cz": "any v kladné větě = jakýkoli",
-    "table": {
-     "caption": "two different meanings",
-     "headers": [
-      "Say",
-      "Meaning"
-     ],
-     "rows": [
-      [
-       "Come at any time.",
-       "kdykoli — it doesn't matter when"
-      ],
-      [
-       "You can take any chair.",
-       "jakoukoli — it doesn't matter which"
-      ],
-      [
-       "I bought some food.",
-       "real food I actually bought — NOT any"
-      ]
-     ]
-    },
-    "points": [
-     "any in a positive sentence = jakýkoli / kdykoli / kamkoli.",
-     "A real specific thing = some: I bought some food, never ~~I bought any food~~."
-    ]
-   },
-   {
-    "title": "something · anything · nothing",
-    "title_cz": "something · anything · nothing",
-    "table": {
-     "caption": "the same rule, one level up",
-     "headers": [
-      "+",
-      "− and ?",
-      "no- (positive verb)"
-     ],
-     "rows": [
-      [
-       "something",
-       "anything",
-       "nothing"
-      ],
-      [
-       "somebody",
-       "anybody",
-       "nobody"
-      ],
-      [
-       "somewhere",
-       "anywhere",
-       "nowhere"
-      ]
-     ]
-    },
-    "points": [
-     "I want something · I don't want anything · I want nothing.",
-     "Nobody / nothing / nowhere already contain the `no` — the verb stays positive."
-    ]
-   },
-   {
-    "title": "Common mistakes",
-    "title_cz": "Časté chyby",
-    "table": {
-     "caption": "check",
-     "headers": [
-      "Say",
-      "Not"
-     ],
-     "rows": [
-      [
-       "I bought some food.",
-       "I bought any food."
-      ],
-      [
-       "I don't have any coffee. = I have no coffee.",
-       "I don't have no coffee."
-      ],
-      [
-       "I didn't say anything. = I said nothing.",
-       "I didn't say nothing."
-      ],
-      [
-       "We still have some problems.",
-       "We have still any problems."
-      ]
-     ]
-    },
-    "points": [
-     "žádný → no (positive verb) or not…any — never both negatives.",
-     "Real things you have, want or bought → some."
-    ]
-   }
-  ]
- },
- "blocks": [
-  {
-   "id": "a2_san_recap",
-   "title": "The rule you know — warm-up",
-   "items": [
-    {
-     "en": "We have some food at home.",
-     "cz": "Máme doma nějaké jídlo.",
-     "gap": "We have ____ food at home.",
-     "gap_answer": "some",
-     "accepts": [
-      "We have some food at home."
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    },
-    {
-     "en": "Do you have any questions?",
-     "cz": "Máte nějaké otázky?",
-     "gap": "Do you have ____ questions?",
-     "gap_answer": "any",
-     "accepts": [
-      "Do you have any questions?"
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    },
-    {
-     "en": "There isn't any milk.",
-     "cz": "Není tu žádné mléko.",
-     "gap": "There isn't ____ milk.",
-     "gap_answer": "any",
-     "accepts": [
-      "There isn't any milk.",
-      "There is no milk."
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    },
-    {
-     "en": "Would you like some tea?",
-     "cz": "Dáš si čaj?",
-     "gap": "Would you like ____ tea?",
-     "gap_answer": "some",
-     "accepts": [
-      "Would you like some tea?"
-     ],
-     "explanation": "Offers and requests use some, even as questions.",
-     "explanation_cz": "Nabídky a prosby používají some, i v otázce."
-    },
-    {
-     "en": "They don't have any children.",
-     "cz": "Nemají žádné děti.",
-     "gap": "They don't have ____ children.",
-     "gap_answer": "any",
-     "accepts": [
-      "They don't have any children."
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    },
-    {
-     "en": "Are there any books about this?",
-     "cz": "Jsou o tom nějaké knihy?",
-     "gap": "Are there ____ books about this?",
-     "gap_answer": "any",
-     "accepts": [
-      "Are there any books about this?"
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    },
-    {
-     "en": "He wants some coffee.",
-     "cz": "Chce kávu.",
-     "gap": "He wants ____ coffee.",
-     "gap_answer": "some",
-     "accepts": [
-      "He wants some coffee."
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    },
-    {
-     "en": "We don't have any time today.",
-     "cz": "Dnes nemáme žádný čas.",
-     "gap": "We don't have ____ time today.",
-     "gap_answer": "any",
-     "accepts": [
-      "We don't have any time today."
-     ],
-     "explanation": "The basic rule: some in +, any in − and ?.",
-     "explanation_cz": "Základní pravidlo: some v kladné, any v záporu a otázce."
-    }
-   ]
-  },
-  {
-   "id": "a2_san_no",
-   "title": "no · not…any (žádný)",
-   "items": [
-    {
-     "en": "We have no bread.",
-     "cz": "Nemáme žádný chleba.",
-     "gap": "We have ____ bread.",
-     "gap_answer": "no",
-     "accepts": [
-      "We have no bread.",
-      "We don't have any bread."
-     ],
-     "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
-     "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
-    },
-    {
-     "en": "I don't have any time.",
-     "cz": "Nemám žádný čas.",
-     "gap": "I don't have ____ time.",
-     "gap_answer": "any",
-     "accepts": [
-      "I don't have any time.",
-      "I do not have any time.",
-      "I have no time."
-     ],
-     "explanation": "don't + any = one negation. Same meaning as `I have no time`.",
-     "explanation_cz": "don't + any = jeden zápor. Stejný význam jako `I have no time`."
-    },
-    {
-     "en": "She has no questions.",
-     "cz": "Nemá žádné otázky.",
-     "gap": "She has ____ questions.",
-     "gap_answer": "no",
-     "accepts": [
-      "She has no questions.",
-      "She doesn't have any questions."
-     ],
-     "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
-     "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
-    },
-    {
-     "en": "I didn't buy any bread.",
-     "cz": "Nekoupil jsem žádný chleba.",
-     "gap": "I didn't buy ____ bread.",
-     "gap_answer": "any",
-     "accepts": [
-      "I didn't buy any bread.",
-      "I did not buy any bread.",
-      "I bought no bread."
-     ],
-     "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
-     "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
-    },
-    {
-     "en": "There are no chairs here.",
-     "cz": "Nejsou tu žádné židle.",
-     "gap": "There are ____ chairs here.",
-     "gap_answer": "no",
-     "accepts": [
-      "There are no chairs here.",
-      "There aren't any chairs here."
-     ],
-     "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
-     "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
-    },
-    {
-     "en": "I didn't drink any tea.",
-     "cz": "Nevypil jsem žádný čaj.",
-     "gap": "I didn't drink ____ tea.",
-     "gap_answer": "any",
-     "accepts": [
-      "I didn't drink any tea.",
-      "I did not drink any tea."
-     ],
-     "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
-     "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
-    },
-    {
-     "en": "We don't need any help.",
-     "cz": "Nepotřebujeme žádnou pomoc.",
-     "gap": "We don't need ____ help.",
-     "gap_answer": "any",
-     "accepts": [
-      "We don't need any help.",
-      "We do not need any help.",
-      "We need no help."
-     ],
-     "explanation": "don't + any — never `don't need no help`.",
-     "explanation_cz": "don't + any — nikdy `don't need no help`."
-    },
-    {
-     "en": "He has no friends here.",
-     "cz": "Nemá tu žádné kamarády.",
-     "gap": "He has ____ friends here.",
-     "gap_answer": "no",
-     "accepts": [
-      "He has no friends here.",
-      "He doesn't have any friends here."
-     ],
-     "explanation": "no + noun goes with a POSITIVE verb: I have no coffee.",
-     "explanation_cz": "no + podstatné jméno se pojí s KLADNÝM slovesem: I have no coffee."
-    },
-    {
-     "en": "They didn't ask any questions.",
-     "cz": "Nepoložili žádné otázky.",
-     "gap": "They didn't ask ____ questions.",
-     "gap_answer": "any",
-     "accepts": [
-      "They didn't ask any questions.",
-      "They did not ask any questions.",
-      "They asked no questions."
-     ],
-     "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
-     "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
-    },
-    {
-     "en": "She didn't want any tea.",
-     "cz": "Nechtěla žádný čaj.",
-     "gap": "She didn't want ____ tea.",
-     "gap_answer": "any",
-     "accepts": [
-      "She didn't want any tea.",
-      "She did not want any tea.",
-      "She wanted no tea."
-     ],
-     "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
-     "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
-    }
-   ]
-  },
-  {
-   "id": "a2_san_freechoice",
-   "title": "any in positives — jakýkoli",
-   "items": [
-    {
-     "en": "You can ask any question.",
-     "cz": "Můžeš se zeptat na jakoukoli otázku.",
-     "gap": "You can ask ____ question.",
-     "gap_answer": "any",
-     "accepts": [
-      "You can ask any question."
-     ],
-     "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
-     "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
-    },
-    {
-     "en": "Come at any time.",
-     "cz": "Přijď kdykoli.",
-     "gap": "Come at ____ time.",
-     "gap_answer": "any",
-     "accepts": [
-      "Come at any time."
-     ],
-     "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
-     "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
-    },
-    {
-     "en": "Any table is fine.",
-     "cz": "Jakýkoli stůl je v pořádku.",
-     "gap": "____ table is fine.",
-     "gap_answer": "Any",
-     "accepts": [
-      "Any table is fine."
-     ],
-     "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
-     "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
-    },
-    {
-     "en": "You can take any chair.",
-     "cz": "Můžeš si vzít jakoukoli židli.",
-     "gap": "You can take ____ chair.",
-     "gap_answer": "any",
-     "accepts": [
-      "You can take any chair."
-     ],
-     "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
-     "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
-    },
-    {
-     "en": "I bought some food.",
-     "cz": "Koupil jsem jídlo.",
-     "gap": "I bought ____ food.",
-     "gap_answer": "some",
-     "accepts": [
-      "I bought some food."
-     ],
-     "explanation": "A real, specific thing you got or want = some. `any` here would mean `it doesn't matter which` — wrong.",
-     "explanation_cz": "Skutečná, konkrétní věc, kterou máš nebo chceš = some. `any` by znamenalo `jakýkoli` — tady špatně."
-    },
-    {
-     "en": "She wants some water.",
-     "cz": "Chce (nějakou) vodu.",
-     "gap": "She wants ____ water.",
-     "gap_answer": "some",
-     "accepts": [
-      "She wants some water."
-     ],
-     "explanation": "A real, specific thing you got or want = some. `any` here would mean `it doesn't matter which` — wrong.",
-     "explanation_cz": "Skutečná, konkrétní věc, kterou máš nebo chceš = some. `any` by znamenalo `jakýkoli` — tady špatně."
-    },
-    {
-     "en": "We need some chairs.",
-     "cz": "Potřebujeme (nějaké) židle.",
-     "gap": "We need ____ chairs.",
-     "gap_answer": "some",
-     "accepts": [
-      "We need some chairs."
-     ],
-     "explanation": "A real, specific thing you got or want = some. `any` here would mean `it doesn't matter which` — wrong.",
-     "explanation_cz": "Skutečná, konkrétní věc, kterou máš nebo chceš = some. `any` by znamenalo `jakýkoli` — tady špatně."
-    },
-    {
-     "en": "Any child can do it.",
-     "cz": "To zvládne každé dítě.",
-     "gap": "____ child can do it.",
-     "gap_answer": "Any",
-     "accepts": [
-      "Any child can do it."
-     ],
-     "explanation": "any in a positive sentence = it does not matter which (jakýkoli).",
-     "explanation_cz": "any v kladné větě = je jedno který (jakýkoli)."
-    }
-   ]
-  },
-  {
-   "id": "a2_san_compounds",
-   "title": "something / anything / nothing",
-   "items": [
-    {
-     "en": "There is something on the table.",
-     "cz": "Na stole něco je.",
-     "gap": "There is ____ on the table.",
-     "gap_answer": "something",
-     "accepts": [
-      "There is something on the table."
-     ],
-     "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
-     "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
-    },
-    {
-     "en": "I don't want anything.",
-     "cz": "Nechci nic.",
-     "gap": "I don't want ____.",
-     "gap_answer": "anything",
-     "accepts": [
-      "I don't want anything."
-     ],
-     "explanation": "don't + anything = nic. One negation — never `don't want nothing`.",
-     "explanation_cz": "don't + anything = nic. Jeden zápor — nikdy `don't want nothing`."
-    },
-    {
-     "en": "There is nothing on the table.",
-     "cz": "Na stole nic není.",
-     "gap": "There is ____ on the table.",
-     "gap_answer": "nothing",
-     "accepts": [
-      "There is nothing on the table."
-     ],
-     "explanation": "nothing + positive verb: there IS nothing.",
-     "explanation_cz": "nothing + kladné sloveso: there IS nothing."
-    },
-    {
-     "en": "Do you want anything?",
-     "cz": "Chceš něco?",
-     "gap": "Do you want ____?",
-     "gap_answer": "anything",
-     "accepts": [
-      "Do you want anything?"
-     ],
-     "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
-     "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
-    },
-    {
-     "en": "Somebody is here.",
-     "cz": "Někdo tu je.",
-     "gap": "____ is here.",
-     "gap_answer": "Somebody",
-     "accepts": [
-      "Somebody is here."
-     ],
-     "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
-     "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
-    },
-    {
-     "en": "There isn't anybody here.",
-     "cz": "Nikdo tu není.",
-     "gap": "There isn't ____ here.",
-     "gap_answer": "anybody",
-     "accepts": [
-      "There isn't anybody here.",
-      "There is nobody here."
-     ],
-     "explanation": "isn't + anybody = nikdo. Or: There is nobody here.",
-     "explanation_cz": "isn't + anybody = nikdo. Nebo: There is nobody here."
-    },
-    {
-     "en": "Nobody has any questions.",
-     "cz": "Nikdo nemá žádné otázky.",
-     "gap": "____ has any questions.",
-     "gap_answer": "Nobody",
-     "accepts": [
-      "Nobody has any questions."
-     ],
-     "explanation": "Nobody + positive verb — the `no` already lives inside nobody.",
-     "explanation_cz": "Nobody + kladné sloveso — zápor už je uvnitř slova nobody."
-    },
-    {
-     "en": "We can go anywhere.",
-     "cz": "Můžeme jít kamkoli.",
-     "gap": "We can go ____.",
-     "gap_answer": "anywhere",
-     "accepts": [
-      "We can go anywhere."
-     ],
-     "explanation": "any- in a positive sentence = it does not matter where (kamkoli).",
-     "explanation_cz": "any- v kladné větě = je jedno kam (kamkoli)."
-    },
-    {
-     "en": "The children are somewhere here.",
-     "cz": "Děti jsou někde tady.",
-     "gap": "The children are ____ here.",
-     "gap_answer": "somewhere",
-     "accepts": [
-      "The children are somewhere here."
-     ],
-     "explanation": "Same rule, one level up: some- in +, any- in − and ?, no- with a positive verb.",
-     "explanation_cz": "Stejné pravidlo o patro výš: some- v kladné, any- v záporu a otázce, no- s kladným slovesem."
-    },
-    {
-     "en": "She didn't say anything.",
-     "cz": "Nic neřekla.",
-     "gap": "She didn't say ____.",
-     "gap_answer": "anything",
-     "accepts": [
-      "She didn't say anything.",
-      "She said nothing."
-     ],
-     "explanation": "English says the negative ONCE. Czech says it twice (nemám žádný) — never copy that.",
-     "explanation_cz": "Angličtina říká zápor JEDNOU. Čeština dvakrát (nemám žádný) — to nekopírovat."
-    }
-   ]
-  }
- ]
 }

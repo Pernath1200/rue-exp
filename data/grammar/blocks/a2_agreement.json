@@ -9,7 +9,10 @@
   "quality": "workable_draft",
   "demo_priority": true,
   "check": {
-    "sequence": ["match", "quiz"]
+    "sequence": [
+      "match",
+      "quiz"
+    ]
   },
   "blocks": [
     {
@@ -21,9 +24,20 @@
           "cz": "Pracuje v pondělí?",
           "gap": "____ he work on Mondays?",
           "gap_answer": "Does",
-          "gap_accepts": ["Does", "does"],
-          "accepts": ["Does he work on Mondays?"],
-          "quiz_options": ["Do", "Does", "Is", "Are"],
+          "gap_accepts": [
+            "Does",
+            "does"
+          ],
+          "accepts": [
+            "Does he work on Mondays?",
+            "Does she work on Mondays?"
+          ],
+          "quiz_options": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ],
           "explanation": "he → Does (not Do he…).",
           "explanation_cz": "he → Does (ne Do he…)."
         },
@@ -32,9 +46,19 @@
           "cz": "Pracují v pondělí?",
           "gap": "____ they work on Mondays?",
           "gap_answer": "Do",
-          "gap_accepts": ["Do", "do"],
-          "accepts": ["Do they work on Mondays?"],
-          "quiz_options": ["Do", "Does", "Is", "Are"],
+          "gap_accepts": [
+            "Do",
+            "do"
+          ],
+          "accepts": [
+            "Do they work on Mondays?"
+          ],
+          "quiz_options": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ],
           "explanation": "they → Do (not Does they…).",
           "explanation_cz": "they → Do (ne Does they…)."
         },
@@ -43,9 +67,20 @@
           "cz": "Nemá ráda ryby.",
           "gap": "She ____ like fish.",
           "gap_answer": "doesn't",
-          "gap_accepts": ["doesn't", "does not"],
-          "accepts": ["She doesn't like fish.", "She does not like fish."],
-          "quiz_options": ["don't", "doesn't", "isn't", "aren't"],
+          "gap_accepts": [
+            "doesn't",
+            "does not"
+          ],
+          "accepts": [
+            "She doesn't like fish.",
+            "She does not like fish."
+          ],
+          "quiz_options": [
+            "don't",
+            "doesn't",
+            "isn't",
+            "aren't"
+          ],
           "explanation": "she → doesn't (not don't).",
           "explanation_cz": "she → doesn't (ne don't)."
         },
@@ -54,9 +89,20 @@
           "cz": "Nemají rádi ryby.",
           "gap": "They ____ like fish.",
           "gap_answer": "don't",
-          "gap_accepts": ["don't", "do not"],
-          "accepts": ["They don't like fish.", "They do not like fish."],
-          "quiz_options": ["don't", "doesn't", "isn't", "aren't"],
+          "gap_accepts": [
+            "don't",
+            "do not"
+          ],
+          "accepts": [
+            "They don't like fish.",
+            "They do not like fish."
+          ],
+          "quiz_options": [
+            "don't",
+            "doesn't",
+            "isn't",
+            "aren't"
+          ],
           "explanation": "they → don't (not doesn't).",
           "explanation_cz": "they → don't (ne doesn't)."
         },
@@ -65,9 +111,19 @@
           "cz": "Chodí domů v pět.",
           "gap": "He ____ home at five.",
           "gap_answer": "goes",
-          "gap_accepts": ["goes"],
-          "accepts": ["He goes home at five."],
-          "quiz_options": ["go", "goes", "going"],
+          "gap_accepts": [
+            "goes"
+          ],
+          "accepts": [
+            "He goes home at five.",
+            "She goes home at five.",
+            "They go home at five."
+          ],
+          "quiz_options": [
+            "go",
+            "goes",
+            "going"
+          ],
           "explanation": "he → goes (irregular 3sg).",
           "explanation_cz": "he → goes."
         },
@@ -76,9 +132,18 @@
           "cz": "Má dva bratry.",
           "gap": "She ____ two brothers.",
           "gap_answer": "has",
-          "gap_accepts": ["has"],
-          "accepts": ["She has two brothers."],
-          "quiz_options": ["have", "has", "having"],
+          "gap_accepts": [
+            "has"
+          ],
+          "accepts": [
+            "She has two brothers.",
+            "He has two brothers."
+          ],
+          "quiz_options": [
+            "have",
+            "has",
+            "having"
+          ],
           "explanation": "she → has (not have).",
           "explanation_cz": "she → has (ne have)."
         },
@@ -87,9 +152,20 @@
           "cz": "Má auto?",
           "gap": "____ she have a car?",
           "gap_answer": "Does",
-          "gap_accepts": ["Does", "does"],
-          "accepts": ["Does she have a car?"],
-          "quiz_options": ["Do", "Does", "Has", "Is"],
+          "gap_accepts": [
+            "Does",
+            "does"
+          ],
+          "accepts": [
+            "Does she have a car?",
+            "Does he have a car?"
+          ],
+          "quiz_options": [
+            "Do",
+            "Does",
+            "Has",
+            "Is"
+          ],
           "explanation": "she → Does she have… (not Has she have / Do she).",
           "explanation_cz": "she → Does she have…"
         },
@@ -98,9 +174,19 @@
           "cz": "Včera byl doma.",
           "gap": "He ____ at home yesterday.",
           "gap_answer": "was",
-          "gap_accepts": ["was"],
-          "accepts": ["He was at home yesterday."],
-          "quiz_options": ["was", "were", "is", "are"],
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "He was at home yesterday.",
+            "She was at home yesterday."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "are"
+          ],
           "explanation": "he → was (not were).",
           "explanation_cz": "he → was (ne were)."
         },
@@ -109,9 +195,18 @@
           "cz": "Včera jsme byli doma.",
           "gap": "We ____ at home yesterday.",
           "gap_answer": "were",
-          "gap_accepts": ["were"],
-          "accepts": ["We were at home yesterday."],
-          "quiz_options": ["was", "were", "is", "are"],
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "We were at home yesterday."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "are"
+          ],
           "explanation": "we → were (not was).",
           "explanation_cz": "we → were (ne was)."
         },
@@ -120,9 +215,18 @@
           "cz": "Včera byli doma.",
           "gap": "They ____ at home yesterday.",
           "gap_answer": "were",
-          "gap_accepts": ["were"],
-          "accepts": ["They were at home yesterday."],
-          "quiz_options": ["was", "were", "is", "are"],
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "They were at home yesterday."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "are"
+          ],
           "explanation": "they → were (not was).",
           "explanation_cz": "they → were (ne was)."
         },
@@ -131,9 +235,18 @@
           "cz": "Měl jsi zpoždění.",
           "gap": "You ____ late.",
           "gap_answer": "were",
-          "gap_accepts": ["were"],
-          "accepts": ["You were late."],
-          "quiz_options": ["was", "were", "is", "are"],
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "You were late."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "are"
+          ],
           "explanation": "you → were (always were, not was).",
           "explanation_cz": "you → were (vždy were)."
         },
@@ -142,9 +255,18 @@
           "cz": "Na stole je kniha.",
           "gap": "There ____ a book on the table.",
           "gap_answer": "is",
-          "gap_accepts": ["is"],
-          "accepts": ["There is a book on the table."],
-          "quiz_options": ["is", "are", "was", "were"],
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "There is a book on the table."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "was",
+            "were"
+          ],
           "explanation": "a book = singular → there is.",
           "explanation_cz": "a book = jednotné → there is."
         },
@@ -153,9 +275,18 @@
           "cz": "Na stole jsou dvě knihy.",
           "gap": "There ____ two books on the table.",
           "gap_answer": "are",
-          "gap_accepts": ["are"],
-          "accepts": ["There are two books on the table."],
-          "quiz_options": ["is", "are", "was", "were"],
+          "gap_accepts": [
+            "are"
+          ],
+          "accepts": [
+            "There are two books on the table."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "was",
+            "were"
+          ],
           "explanation": "two books = plural → there are.",
           "explanation_cz": "two books = množné → there are."
         },
@@ -164,9 +295,18 @@
           "cz": "Včera byl problém.",
           "gap": "There ____ a problem yesterday.",
           "gap_answer": "was",
-          "gap_accepts": ["was"],
-          "accepts": ["There was a problem yesterday."],
-          "quiz_options": ["was", "were", "is", "are"],
+          "gap_accepts": [
+            "was"
+          ],
+          "accepts": [
+            "There was a problem yesterday."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "are"
+          ],
           "explanation": "a problem = singular past → there was.",
           "explanation_cz": "a problem = jednotné minulé → there was."
         },
@@ -175,9 +315,20 @@
           "cz": "Na oslavě bylo hodně lidí.",
           "gap": "There ____ many people at the party.",
           "gap_answer": "were",
-          "gap_accepts": ["were"],
-          "accepts": ["There were many people at the party.", "There were a lot of people at the party.", "There were lots of people at the party."],
-          "quiz_options": ["was", "were", "is", "are"],
+          "gap_accepts": [
+            "were"
+          ],
+          "accepts": [
+            "There were many people at the party.",
+            "There were a lot of people at the party.",
+            "There were lots of people at the party."
+          ],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "are"
+          ],
           "explanation": "people = plural → there were.",
           "explanation_cz": "people = množné → there were."
         },
@@ -186,9 +337,17 @@
           "cz": "Každý má rád víkendy.",
           "gap": "Everybody ____ weekends.",
           "gap_answer": "likes",
-          "gap_accepts": ["likes"],
-          "accepts": ["Everybody likes weekends."],
-          "quiz_options": ["like", "likes", "liking"],
+          "gap_accepts": [
+            "likes"
+          ],
+          "accepts": [
+            "Everybody likes weekends."
+          ],
+          "quiz_options": [
+            "like",
+            "likes",
+            "liking"
+          ],
           "explanation": "everybody = singular → likes (not like).",
           "explanation_cz": "everybody = jednotné → likes."
         },
@@ -197,9 +356,17 @@
           "cz": "Někdo má moje klíče.",
           "gap": "Someone ____ my keys.",
           "gap_answer": "has",
-          "gap_accepts": ["has"],
-          "accepts": ["Someone has my keys."],
-          "quiz_options": ["have", "has", "having"],
+          "gap_accepts": [
+            "has"
+          ],
+          "accepts": [
+            "Someone has my keys."
+          ],
+          "quiz_options": [
+            "have",
+            "has",
+            "having"
+          ],
           "explanation": "someone = singular → has.",
           "explanation_cz": "someone = jednotné → has."
         },
@@ -208,9 +375,18 @@
           "cz": "Nikdo nezná odpověď.",
           "gap": "No one ____ the answer.",
           "gap_answer": "knows",
-          "gap_accepts": ["knows"],
-          "accepts": ["No one knows the answer.", "Nobody knows the answer."],
-          "quiz_options": ["know", "knows", "knowing"],
+          "gap_accepts": [
+            "knows"
+          ],
+          "accepts": [
+            "No one knows the answer.",
+            "Nobody knows the answer."
+          ],
+          "quiz_options": [
+            "know",
+            "knows",
+            "knowing"
+          ],
           "explanation": "no one = singular → knows.",
           "explanation_cz": "no one = jednotné → knows."
         },
@@ -219,9 +395,17 @@
           "cz": "Všechno vypadá v pořádku.",
           "gap": "Everything ____ fine.",
           "gap_answer": "looks",
-          "gap_accepts": ["looks"],
-          "accepts": ["Everything looks fine."],
-          "quiz_options": ["look", "looks", "looking"],
+          "gap_accepts": [
+            "looks"
+          ],
+          "accepts": [
+            "Everything looks fine."
+          ],
+          "quiz_options": [
+            "look",
+            "looks",
+            "looking"
+          ],
           "explanation": "everything = singular → looks.",
           "explanation_cz": "everything = jednotné → looks."
         },
@@ -230,9 +414,19 @@
           "cz": "Rozumí tomu všichni?",
           "gap": "____ everybody understand?",
           "gap_answer": "Does",
-          "gap_accepts": ["Does", "does"],
-          "accepts": ["Does everybody understand?"],
-          "quiz_options": ["Do", "Does", "Is", "Are"],
+          "gap_accepts": [
+            "Does",
+            "does"
+          ],
+          "accepts": [
+            "Does everybody understand?"
+          ],
+          "quiz_options": [
+            "Do",
+            "Does",
+            "Is",
+            "Are"
+          ],
           "explanation": "everybody → Does everybody… (singular).",
           "explanation_cz": "everybody → Does everybody…"
         },
@@ -241,9 +435,18 @@
           "cz": "Zprávy jsou v šest.",
           "gap": "The news ____ on at six.",
           "gap_answer": "is",
-          "gap_accepts": ["is"],
-          "accepts": ["The news is on at six."],
-          "quiz_options": ["is", "are", "was", "were"],
+          "gap_accepts": [
+            "is"
+          ],
+          "accepts": [
+            "The news is on at six."
+          ],
+          "quiz_options": [
+            "is",
+            "are",
+            "was",
+            "were"
+          ],
           "explanation": "the news = singular in English → is (not are).",
           "explanation_cz": "the news = v angličtině jednotné → is."
         },
@@ -252,9 +455,17 @@
           "cz": "Moje rodina bydlí v Brně.",
           "gap": "My family ____ in Brno.",
           "gap_answer": "lives",
-          "gap_accepts": ["lives"],
-          "accepts": ["My family lives in Brno."],
-          "quiz_options": ["live", "lives", "living"],
+          "gap_accepts": [
+            "lives"
+          ],
+          "accepts": [
+            "My family lives in Brno."
+          ],
+          "quiz_options": [
+            "live",
+            "lives",
+            "living"
+          ],
           "explanation": "family (group as one unit) often → lives (singular).",
           "explanation_cz": "family často jako celek → lives."
         },
@@ -263,9 +474,17 @@
           "cz": "Jeden z mých kamarádů bydlí v Praze.",
           "gap": "One of my friends ____ in Prague.",
           "gap_answer": "lives",
-          "gap_accepts": ["lives"],
-          "accepts": ["One of my friends lives in Prague."],
-          "quiz_options": ["live", "lives", "living"],
+          "gap_accepts": [
+            "lives"
+          ],
+          "accepts": [
+            "One of my friends lives in Prague."
+          ],
+          "quiz_options": [
+            "live",
+            "lives",
+            "living"
+          ],
           "explanation": "one of… → singular verb: lives.",
           "explanation_cz": "one of… → jednotné: lives."
         },
@@ -274,9 +493,19 @@
           "cz": "Hodně lidí pracuje z domova.",
           "gap": "A lot of people ____ from home.",
           "gap_answer": "work",
-          "gap_accepts": ["work"],
-          "accepts": ["A lot of people work from home.", "Many people work from home.", "Lots of people work from home."],
-          "quiz_options": ["work", "works", "working"],
+          "gap_accepts": [
+            "work"
+          ],
+          "accepts": [
+            "A lot of people work from home.",
+            "Many people work from home.",
+            "Lots of people work from home."
+          ],
+          "quiz_options": [
+            "work",
+            "works",
+            "working"
+          ],
           "explanation": "people = plural → work (not works).",
           "explanation_cz": "people = množné → work."
         },
@@ -285,9 +514,17 @@
           "cz": "Každý student má knihu.",
           "gap": "Each student ____ a book.",
           "gap_answer": "has",
-          "gap_accepts": ["has"],
-          "accepts": ["Each student has a book."],
-          "quiz_options": ["have", "has", "having"],
+          "gap_accepts": [
+            "has"
+          ],
+          "accepts": [
+            "Each student has a book."
+          ],
+          "quiz_options": [
+            "have",
+            "has",
+            "having"
+          ],
           "explanation": "each + singular noun → has.",
           "explanation_cz": "each + jednotné → has."
         },
@@ -296,9 +533,19 @@
           "cz": "Byla na schůzce?",
           "gap": "____ she at the meeting?",
           "gap_answer": "Was",
-          "gap_accepts": ["Was", "was"],
-          "accepts": ["Was she at the meeting?"],
-          "quiz_options": ["Was", "Were", "Is", "Are"],
+          "gap_accepts": [
+            "Was",
+            "was"
+          ],
+          "accepts": [
+            "Was she at the meeting?"
+          ],
+          "quiz_options": [
+            "Was",
+            "Were",
+            "Is",
+            "Are"
+          ],
           "explanation": "she → Was she… (not Were she).",
           "explanation_cz": "she → Was she…"
         },
@@ -307,9 +554,19 @@
           "cz": "Byli na schůzce?",
           "gap": "____ they at the meeting?",
           "gap_answer": "Were",
-          "gap_accepts": ["Were", "were"],
-          "accepts": ["Were they at the meeting?"],
-          "quiz_options": ["Was", "Were", "Is", "Are"],
+          "gap_accepts": [
+            "Were",
+            "were"
+          ],
+          "accepts": [
+            "Were they at the meeting?"
+          ],
+          "quiz_options": [
+            "Was",
+            "Were",
+            "Is",
+            "Are"
+          ],
           "explanation": "they → Were they…",
           "explanation_cz": "they → Were they…"
         }
@@ -330,10 +587,19 @@
       {
         "title": "do / does",
         "table": {
-          "headers": ["Subject", "Question / negative"],
+          "headers": [
+            "Subject",
+            "Question / negative"
+          ],
           "rows": [
-            ["I / you / we / they", "Do they work? · They don't work."],
-            ["he / she / it", "Does he work? · She doesn't work."]
+            [
+              "I / you / we / they",
+              "Do they work? · They don't work."
+            ],
+            [
+              "he / she / it",
+              "Does he work? · She doesn't work."
+            ]
           ]
         },
         "points": [
@@ -344,10 +610,19 @@
       {
         "title": "was / were · there is / are",
         "table": {
-          "headers": ["Use", "Example"],
+          "headers": [
+            "Use",
+            "Example"
+          ],
           "rows": [
-            ["was", "He was late. · There was a problem."],
-            ["were", "They were late. · You were late. · There were problems."]
+            [
+              "was",
+              "He was late. · There was a problem."
+            ],
+            [
+              "were",
+              "They were late. · You were late. · There were problems."
+            ]
           ]
         },
         "points": [
@@ -363,10 +638,19 @@
           "one of my friends **lives**… · each student **has**…"
         ],
         "table": {
-          "headers": ["Avoid", "Say"],
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
           "rows": [
-            ["Everybody **like** weekends.", "Everybody **likes** weekends."],
-            ["Someone **have** my keys.", "Someone **has** my keys."]
+            [
+              "Everybody **like** weekends.",
+              "Everybody **likes** weekends."
+            ],
+            [
+              "Someone **have** my keys.",
+              "Someone **has** my keys."
+            ]
           ]
         }
       },
