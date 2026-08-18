@@ -271,6 +271,110 @@ TENSES = [
 ]
 
 
+
+# ------------------------------------------------- countable / uncountable
+
+# From James's BC FCE lesson + Worksheet_Uncountable-Nouns_2026-05-16 (his
+# proven material — drills are lifted from its Exercises B-E, adjusted only
+# where an answer was not unique). Czech notes ONLY where the trap is Czech:
+# informace, rada, nabytek and ukol are countable in Czech, which is exactly
+# why "informations" and "advices" happen; penize is plural, which is why
+# "money are" happens.
+
+UN_COLUMNS = [
+    {"key": "noun", "label": "Noun"},
+    {"key": "unit", "label": "One unit of it"},
+    {"key": "note", "label": "Watch out"},
+]
+
+# (noun, one-unit-of-it [/ alternatives], watch-out note)
+UNCOUNTABLES = [
+    ("advice", "a piece of advice",
+     "jedna rada — but advice never takes a or -s"),
+    ("information", "a piece of information",
+     "informace → never informations"),
+    ("news", "a piece of news", "looks plural — takes IS: the news is on"),
+    ("furniture", "a piece of furniture", "nábytek → never furnitures"),
+    ("luggage", "a piece of luggage", "zavazadla → luggage is singular"),
+    ("equipment", "a piece of equipment", ""),
+    ("homework", "a piece of homework", "úkol → homework has no plural"),
+    ("research", "a piece of research", "never researches"),
+    ("progress", "—", "make progress — no unit, no plural"),
+    ("feedback", "a piece of feedback", ""),
+    ("traffic", "—", "heavy traffic · takes IS"),
+    ("weather", "—", "takes IS: the weather is awful"),
+    ("luck", "a bit of luck", ""),
+    ("bread", "a slice of bread / a piece of bread", ""),
+    ("coffee", "a cup of coffee", "a coffee = one cup, in a café"),
+    ("water", "a glass of water / a bottle of water", ""),
+    ("money", "—", "peníze jsou množné — money takes IS"),
+]
+
+DL_COLUMNS = [
+    {"key": "word", "label": "Word"},
+    {"key": "unc", "label": "Uncountable"},
+    {"key": "cnt", "label": "Countable"},
+]
+
+DOUBLE_LIFE = [
+    ("experience", "experience in marketing = praxe",
+     "a strange experience = zážitek"),
+    ("time", "we don't have time", "I've been there three times"),
+    ("hair", "she has beautiful hair", "there's a hair in my soup"),
+    ("light", "plants need light", "turn off the lights"),
+    ("paper", "a bag made of paper", "a paper = a newspaper / an essay"),
+    ("room", "is there room for me? = místo", "a room = pokoj"),
+    ("glass", "made of glass", "a glass of wine"),
+    ("chicken", "we had chicken for dinner", "a chicken = the animal"),
+]
+
+# Drills, mined from the worksheet.
+UN_DRILLS = [
+    # Exercise C · counting phrases
+    {"cue": "one unit: advice", "answer": "a piece of advice"},
+    {"cue": "one unit: information", "answer": "a piece of information"},
+    {"cue": "one unit: bread", "answer": "a slice of bread / a piece of bread"},
+    {"cue": "one unit: coffee", "answer": "a cup of coffee"},
+    {"cue": "one unit: luck", "answer": "a bit of luck"},
+    {"cue": "one unit: water", "answer": "a glass of water / a bottle of water"},
+    {"cue": "one unit: furniture", "answer": "a piece of furniture"},
+    # Exercise B · quantifiers (choice in the cue keeps the answer unique)
+    {"cue": "How ___ information do you need? (much / many)", "answer": "much"},
+    {"cue": "How ___ luggage can I take? (much / many)", "answer": "much"},
+    {"cue": "How ___ times have you been there? (much / many)", "answer": "many"},
+    {"cue": "We don't have ___ time today. (much / many)", "answer": "much"},
+    {"cue": "She gave me ___ good advice. (some / a)", "answer": "some"},
+    # Exercise D · error correction — items with one deterministic fix
+    {"cue": "Fix: I have a lot of homeworks tonight.",
+     "answer": "I have a lot of homework tonight."},
+    {"cue": "Fix: We don't have a lot of equipments at the office.",
+     "answer": "We don't have a lot of equipment at the office."},
+    {"cue": "Fix: I bought some new furnitures last weekend.",
+     "answer": "I bought some new furniture last weekend."},
+    {"cue": "Fix: The news about the merger are interesting.",
+     "answer": "The news about the merger is interesting."},
+    {"cue": "Fix: The informations you gave me were very helpful.",
+     "answer": "The information you gave me was very helpful."},
+]
+
+DL_DRILLS = [
+    # Exercise E · double-life gaps (choice in the cue)
+    {"cue": "I have great ___ in marketing. (experience / experiences)",
+     "answer": "experience"},
+    {"cue": "I had a strange ___ yesterday. (experience / an experience)",
+     "answer": "an experience"},
+    {"cue": "We don't have ___ for this. (time / a time)", "answer": "time"},
+    {"cue": "I've visited Paris three ___. (time / times)", "answer": "times"},
+    {"cue": "There's ___ in my soup. (hair / a hair)", "answer": "a hair"},
+    {"cue": "She has beautiful ___. (hair / a hair)", "answer": "hair"},
+    {"cue": "Turn off ___ , please. (light / the lights)",
+     "answer": "the lights"},
+    {"cue": "Plants need ___ to grow. (light / a light)", "answer": "light"},
+    {"cue": "Pour me ___ , please. (wine / a glass of wine)",
+     "answer": "a glass of wine"},
+]
+
+
 def main() -> int:
     # --- verbs ---
     used: set[str] = set()
@@ -369,6 +473,38 @@ def main() -> int:
         "columns": T_COLUMNS, "drill": [], "rows": tense_rows,
     }]
 
+
+    noun_sections = [
+        {
+            "id": "un_always", "title": "Always uncountable",
+            "sub": "no a/an · no plural · verb in the singular",
+            "exemplar": "advice · information · news",
+            "intro": "These never take a/an or -s, however countable the Czech "
+                     "word is. To count one, use a unit phrase — a piece of "
+                     "advice, a slice of bread.",
+            "columns": UN_COLUMNS, "drill": [],
+            "rows": [
+                {"noun": n, "unit": u, **({"note": w} if w else {})}
+                for n, u, w in UNCOUNTABLES
+            ],
+        },
+        {
+            "id": "un_double", "title": "Double life",
+            "sub": "countable and uncountable — different meanings",
+            "exemplar": "experience · time · hair · light",
+            "intro": "The same word, two lives: uncountable for the substance "
+                     "or idea, countable for one specific piece of it. The "
+                     "meaning changes with the article.",
+            "columns": DL_COLUMNS, "drill": [],
+            "rows": [{"word": w, "unc": u, "cnt": c} for w, u, c in DOUBLE_LIFE],
+        },
+    ]
+    # attach the mined drills to the first row of each section (row.drills is
+    # the explicit-pairs hook; the pool is per SECTION, so one carrier row is
+    # enough and keeps the table clean)
+    noun_sections[0]["rows"][0]["drills"] = UN_DRILLS
+    noun_sections[1]["rows"][0]["drills"] = DL_DRILLS
+
     payload = {
         "version": 2,
         "app": "rue-exp",
@@ -389,6 +525,9 @@ def main() -> int:
             {"id": "tenses", "label": "Tenses",
              "blurb": "One verb through every tense, so you can compare the forms.",
              "sections": tense_sections},
+            {"id": "nouns", "label": "Countable & uncountable",
+             "blurb": "advice, information, news — countable in Czech, never in English. And the words with two lives.",
+             "sections": noun_sections},
             {"id": "spell", "label": "Spelling & pairs",
              "blurb": "study → studies, stop → stopping; make/do, say/tell. Coming next.",
              "sections": []},
