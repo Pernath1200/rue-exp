@@ -1,0 +1,383 @@
+{
+  "id": "c1_word_formation",
+  "title": "Word formation (CAE Part 3)",
+  "level": "C1",
+  "tree_node": "c1_word_formation",
+  "kind": "word_formation",
+  "practice": "grammar",
+  "note": "CAE Part 3 shape: rarer suffixes, shifted stems, assimilating negatives · root families drawn from Václav's Ready for C1 list, all sentences original · EN-only cues (James, 2026-08-18)",
+  "default_direction": "en_gap",
+  "check": { "sequence": ["quiz"] },
+  "ladder": { "match": false, "use": false },
+  "quality": "good_draft",
+  "intro": {
+    "cards": [
+      {
+        "title": "Part 3 at CAE",
+        "body": "Same task as at FCE — a sentence, a gap, a root in capitals — but the endings are rarer and the stems shift more. The capital word never fits the gap unchanged.",
+        "points": [
+          "Decide word class first, then positive or negative.",
+          "One letter matters at C1: occurrence has double r, denial loses the y."
+        ]
+      },
+      {
+        "title": "Noun endings beyond -tion",
+        "table": {
+          "headers": ["Root", "Noun"],
+          "rows": [
+            ["cover", "coverage"],
+            ["remove", "removal"],
+            ["reluctant", "reluctance"],
+            ["accurate", "accuracy"],
+            ["anxious", "anxiety"]
+          ]
+        },
+        "points": [
+          "-age, -al, -ance / -ence, -cy, -iety.",
+          "obey → obedience: sometimes the whole stem shifts."
+        ]
+      },
+      {
+        "title": "Shifted stems",
+        "table": {
+          "headers": ["Adjective", "Noun"],
+          "rows": [
+            ["deep", "depth"],
+            ["strong", "strength"],
+            ["high", "height"],
+            ["proud", "pride"],
+            ["poor", "poverty"]
+          ]
+        },
+        "points": [
+          "The vowel often changes: deep → depth, long → length, wide → width.",
+          "-ous → -osity: generous → generosity, curious → curiosity."
+        ]
+      },
+      {
+        "title": "Negatives",
+        "table": {
+          "headers": ["Root", "Negative form"],
+          "rows": [
+            ["relevant", "irrelevant"],
+            ["literate", "illiteracy"],
+            ["approve", "disapproval"],
+            ["appear", "disappearance"]
+          ]
+        },
+        "points": [
+          "The context, not the capital word, tells you the answer is negative.",
+          "in- assimilates: im- before p, ir- before r, il- before l."
+        ]
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "wf_noun_endings",
+      "title": "Noun endings beyond -tion",
+      "items": [
+        {
+          "en": "The war caused a serious shortage of fuel across the region.",
+          "gap": "The war caused a serious ____ of fuel across the region.",
+          "root": "SHORT",
+          "gap_answer": "shortage",
+          "quiz_options": ["shortage", "shortness", "shortening"],
+          "explanation": "-age: a shortage = not enough of something; shortness is the quality of being short."
+        },
+        {
+          "en": "The trial received worldwide media coverage.",
+          "gap": "The trial received worldwide media ____.",
+          "root": "COVER",
+          "gap_answer": "coverage",
+          "quiz_options": ["coverage", "covering", "covered"],
+          "explanation": "Verb → noun with -age: cover → coverage (reporting of an event)."
+        },
+        {
+          "en": "The removal of the statue caused a heated public debate.",
+          "gap": "The ____ of the statue caused a heated public debate.",
+          "root": "REMOVE",
+          "gap_answer": "removal",
+          "quiz_options": ["removal", "removing", "removed"],
+          "explanation": "Verb → noun with -al: remove → removal."
+        },
+        {
+          "en": "His flat denial of any involvement convinced nobody.",
+          "gap": "His flat ____ of any involvement convinced nobody.",
+          "root": "DENY",
+          "gap_answer": "denial",
+          "quiz_options": ["denial", "denying", "denied"],
+          "explanation": "deny → denial: y → i, then -al."
+        },
+        {
+          "en": "The final rehearsal ran until well after midnight.",
+          "gap": "The final ____ ran until well after midnight.",
+          "root": "REHEARSE",
+          "gap_answer": "rehearsal",
+          "quiz_options": ["rehearsal", "rehearsing", "rehearsed"],
+          "explanation": "Verb → noun with -al: rehearse → rehearsal."
+        },
+        {
+          "en": "She signed the contract, but with obvious reluctance.",
+          "gap": "She signed the contract, but with obvious ____.",
+          "root": "RELUCTANT",
+          "gap_answer": "reluctance",
+          "quiz_options": ["reluctance", "reluctant", "reluctantly"],
+          "explanation": "Adjective → noun: -ant → -ance. After 'with obvious' you need a noun."
+        },
+        {
+          "en": "The trainer expects instant obedience from every dog in the class.",
+          "gap": "The trainer expects instant ____ from every dog in the class.",
+          "root": "OBEY",
+          "gap_answer": "obedience",
+          "quiz_options": ["obedience", "obedient", "obediently"],
+          "explanation": "The stem itself shifts: obey → obedience."
+        },
+        {
+          "en": "Power cuts were an everyday occurrence in the village.",
+          "gap": "Power cuts were an everyday ____ in the village.",
+          "root": "OCCUR",
+          "gap_answer": "occurrence",
+          "quiz_options": ["occurrence", "occurring", "occurred"],
+          "explanation": "Double the r, then -ence: occur → occurrence."
+        },
+        {
+          "en": "The report was praised for the accuracy of its figures.",
+          "gap": "The report was praised for the ____ of its figures.",
+          "root": "ACCURATE",
+          "gap_answer": "accuracy",
+          "quiz_options": ["accuracy", "accurate", "accurately"],
+          "explanation": "Adjective → noun with -cy: accurate → accuracy."
+        },
+        {
+          "en": "At that time, genetic medicine was still in its infancy.",
+          "gap": "At that time, genetic medicine was still in its ____.",
+          "root": "INFANT",
+          "gap_answer": "infancy",
+          "quiz_options": ["infancy", "infant", "infantile"],
+          "explanation": "'In its infancy' = at a very early stage; -cy noun."
+        },
+        {
+          "en": "A quiet anxiety spread through the waiting room.",
+          "gap": "A quiet ____ spread through the waiting room.",
+          "root": "ANXIOUS",
+          "gap_answer": "anxiety",
+          "quiz_options": ["anxiety", "anxious", "anxiously"],
+          "explanation": "-ious → -iety: anxious → anxiety."
+        },
+        {
+          "en": "The market offers a wide variety of local cheeses.",
+          "gap": "The market offers a wide ____ of local cheeses.",
+          "root": "VARIOUS",
+          "gap_answer": "variety",
+          "quiz_options": ["variety", "various", "variously"],
+          "explanation": "-ious → -iety: various → variety."
+        }
+      ]
+    },
+    {
+      "id": "wf_shifted_stems",
+      "title": "Shifted stems",
+      "items": [
+        {
+          "en": "The crew measured the depth of the trench before diving.",
+          "gap": "The crew measured the ____ of the trench before diving.",
+          "root": "DEEP",
+          "gap_answer": "depth",
+          "quiz_options": ["depth", "deep", "deepen"],
+          "explanation": "Vowel shift: deep → depth."
+        },
+        {
+          "en": "Months of training doubled the strength of his grip.",
+          "gap": "Months of training doubled the ____ of his grip.",
+          "root": "STRONG",
+          "gap_answer": "strength",
+          "quiz_options": ["strength", "strong", "strengthen"],
+          "explanation": "Vowel shift: strong → strength."
+        },
+        {
+          "en": "The sheer length of the film tested everyone's patience.",
+          "gap": "The sheer ____ of the film tested everyone's patience.",
+          "root": "LONG",
+          "gap_answer": "length",
+          "quiz_options": ["length", "long", "lengthen"],
+          "explanation": "Vowel shift: long → length."
+        },
+        {
+          "en": "Measure the width of the doorway before you order the sofa.",
+          "gap": "Measure the ____ of the doorway before you order the sofa.",
+          "root": "WIDE",
+          "gap_answer": "width",
+          "quiz_options": ["width", "wide", "widen"],
+          "explanation": "Vowel shift: wide → width."
+        },
+        {
+          "en": "The plane cruised at a height of ten kilometres.",
+          "gap": "The plane cruised at a ____ of ten kilometres.",
+          "root": "HIGH",
+          "gap_answer": "height",
+          "quiz_options": ["height", "high", "heighten"],
+          "explanation": "high → height — note the spelling: -eight."
+        },
+        {
+          "en": "She spoke of her daughter's results with quiet pride.",
+          "gap": "She spoke of her daughter's results with quiet ____.",
+          "root": "PROUD",
+          "gap_answer": "pride",
+          "quiz_options": ["pride", "proud", "proudly"],
+          "explanation": "Vowel shift: proud → pride."
+        },
+        {
+          "en": "The crisis pushed millions of families into poverty.",
+          "gap": "The crisis pushed millions of families into ____.",
+          "root": "POOR",
+          "gap_answer": "poverty",
+          "quiz_options": ["poverty", "poor", "poorly"],
+          "explanation": "Full stem shift: poor → poverty."
+        },
+        {
+          "en": "Pure curiosity led him to open the unmarked door.",
+          "gap": "Pure ____ led him to open the unmarked door.",
+          "root": "CURIOUS",
+          "gap_answer": "curiosity",
+          "quiz_options": ["curiosity", "curious", "curiously"],
+          "explanation": "-ous → -osity: curious → curiosity."
+        },
+        {
+          "en": "The shelter survives on the generosity of local donors.",
+          "gap": "The shelter survives on the ____ of local donors.",
+          "root": "GENEROUS",
+          "gap_answer": "generosity",
+          "quiz_options": ["generosity", "generous", "generously"],
+          "explanation": "-ous → -osity: generous → generosity."
+        },
+        {
+          "en": "The discovery of oil brought sudden prosperity to the town.",
+          "gap": "The discovery of oil brought sudden ____ to the town.",
+          "root": "PROSPEROUS",
+          "gap_answer": "prosperity",
+          "quiz_options": ["prosperity", "prosperous", "prosperously"],
+          "explanation": "prosperous → prosperity: -ous → -ity."
+        },
+        {
+          "en": "He has guarded his sobriety carefully for ten years now.",
+          "gap": "He has guarded his ____ carefully for ten years now.",
+          "root": "SOBER",
+          "gap_answer": "sobriety",
+          "quiz_options": ["sobriety", "sober", "soberly"],
+          "explanation": "sober → sobriety: -iety with a stem shift."
+        },
+        {
+          "en": "The storm struck the coast with astonishing ferocity.",
+          "gap": "The storm struck the coast with astonishing ____.",
+          "root": "FEROCIOUS",
+          "gap_answer": "ferocity",
+          "quiz_options": ["ferocity", "ferocious", "ferociously"],
+          "explanation": "-ious → -ity: ferocious → ferocity."
+        }
+      ]
+    },
+    {
+      "id": "wf_negatives",
+      "title": "Negative prefixes",
+      "items": [
+        {
+          "en": "The judge dismissed the question as irrelevant to the case.",
+          "gap": "The judge dismissed the question as ____ to the case.",
+          "root": "RELEVANT",
+          "gap_answer": "irrelevant",
+          "quiz_options": ["irrelevant", "relevant", "irrelevance"],
+          "explanation": "'Dismissed' tells you the meaning is negative, and ir- before r."
+        },
+        {
+          "en": "Religious intolerance drove thousands of families into exile.",
+          "gap": "Religious ____ drove thousands of families into exile.",
+          "root": "TOLERATE",
+          "gap_answer": "intolerance",
+          "quiz_options": ["intolerance", "tolerance", "intolerant"],
+          "explanation": "Driving people into exile is the opposite of tolerating them: in- + -ance."
+        },
+        {
+          "en": "He shook his head in silent disapproval as the plan was read out.",
+          "gap": "He shook his head in silent ____ as the plan was read out.",
+          "root": "APPROVE",
+          "gap_answer": "disapproval",
+          "quiz_options": ["disapproval", "approval", "disapproving"],
+          "explanation": "Shaking the head signals no: dis- + approval."
+        },
+        {
+          "en": "The inquiry blamed the accident on the inadequacy of the safety checks.",
+          "gap": "The inquiry blamed the accident on the ____ of the safety checks.",
+          "root": "ADEQUATE",
+          "gap_answer": "inadequacy",
+          "quiz_options": ["inadequacy", "adequacy", "inadequate"],
+          "explanation": "You blame an accident on what was NOT good enough: in- + adequacy."
+        },
+        {
+          "en": "The campaign aims to end adult illiteracy within a decade.",
+          "gap": "The campaign aims to end adult ____ within a decade.",
+          "root": "LITERATE",
+          "gap_answer": "illiteracy",
+          "quiz_options": ["illiteracy", "literacy", "illiterate"],
+          "explanation": "You end the problem, not the skill — and il- before l."
+        },
+        {
+          "en": "We apologise for any inconvenience caused by the roadworks.",
+          "gap": "We apologise for any ____ caused by the roadworks.",
+          "root": "CONVENIENT",
+          "gap_answer": "inconvenience",
+          "quiz_options": ["inconvenience", "convenience", "inconvenient"],
+          "explanation": "You apologise for the negative: in- + convenience."
+        },
+        {
+          "en": "Years of short-term contracts left him with a deep sense of insecurity.",
+          "gap": "Years of short-term contracts left him with a deep sense of ____.",
+          "root": "SECURE",
+          "gap_answer": "insecurity",
+          "quiz_options": ["insecurity", "security", "insecure"],
+          "explanation": "Short-term contracts produce the negative feeling: in- + security."
+        },
+        {
+          "en": "He drummed his fingers on the desk with growing impatience.",
+          "gap": "He drummed his fingers on the desk with growing ____.",
+          "root": "PATIENT",
+          "gap_answer": "impatience",
+          "quiz_options": ["impatience", "patience", "impatient"],
+          "explanation": "Drumming fingers = the negative state, and im- before p."
+        },
+        {
+          "en": "The scandal exposed the dishonesty at the heart of the ministry.",
+          "gap": "The scandal exposed the ____ at the heart of the ministry.",
+          "root": "HONEST",
+          "gap_answer": "dishonesty",
+          "quiz_options": ["dishonesty", "honesty", "dishonest"],
+          "explanation": "A scandal exposes the negative: dis- + honesty."
+        },
+        {
+          "en": "Police are still investigating the disappearance of the two hikers.",
+          "gap": "Police are still investigating the ____ of the two hikers.",
+          "root": "APPEAR",
+          "gap_answer": "disappearance",
+          "quiz_options": ["disappearance", "appearance", "disappearing"],
+          "explanation": "Missing hikers → dis- + appearance."
+        },
+        {
+          "en": "A minor disagreement over money grew into a lifelong feud.",
+          "gap": "A minor ____ over money grew into a lifelong feud.",
+          "root": "AGREE",
+          "gap_answer": "disagreement",
+          "quiz_options": ["disagreement", "agreement", "disagreeable"],
+          "explanation": "Feuds grow from the negative: dis- + agreement."
+        },
+        {
+          "en": "His immaturity showed in the way he blamed everyone but himself.",
+          "gap": "His ____ showed in the way he blamed everyone but himself.",
+          "root": "MATURE",
+          "gap_answer": "immaturity",
+          "quiz_options": ["immaturity", "maturity", "immature"],
+          "explanation": "Blaming everyone else is the negative trait, and in- becomes im- before m: immaturity."
+        }
+      ]
+    }
+  ]
+}

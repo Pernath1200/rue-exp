@@ -969,6 +969,20 @@ button.m.wrong {
   opacity: 0.9;
 }
 
+/* Word-formation root cue (FCE/CAE Part 3, 2026-08-18): the capitalised
+ * root sits beside the gap sentence, exam-sheet style. */
+.wf-root {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.05rem 0.45rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
 .feedback {
   font-size: 0.9rem;
   margin: 0.5rem 0 0.75rem;

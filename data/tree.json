@@ -163,7 +163,8 @@
   "b2_quantifiers_advanced",
   "b2_discourse_markers",
   "b2_clear_claims",
-  "craft"
+  "craft",
+  "b2_word_formation"
  ],
  "path_order_c1": [
   "c1_narrative_mastery",
@@ -187,7 +188,8 @@
   "c1_comparative_advanced",
   "c1_article_nuance",
   "c1_spoken_vs_written",
-  "c1_error_patterns"
+  "c1_error_patterns",
+  "c1_word_formation"
  ],
  "path_order_note": "A1/A2 zigzag spines · B1 G path + all B1 vocab · B2/C1 grammar spines (+ higher vocab). Topics list uses per-level path.",
  "spine": "data/spine.json",
@@ -214,17 +216,17 @@
    "coming": 1
   },
   "B2": {
-   "total": 24,
-   "grammar": 23,
+   "total": 25,
+   "grammar": 24,
    "vocab": 1,
-   "live": 21,
+   "live": 22,
    "coming": 3
   },
   "C1": {
-   "total": 22,
-   "grammar": 22,
+   "total": 23,
+   "grammar": 23,
    "vocab": 0,
-   "live": 17,
+   "live": 18,
    "coming": 5
   }
  },
@@ -3523,6 +3525,38 @@
     "a1_some_any",
     "a2_quantifiers"
    ]
+  },
+  {
+   "id": "b2_word_formation",
+   "domain": "grammar",
+   "label": "Word formation (FCE Part 3)",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "forms",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_word_formation.json",
+   "practice": "grammar",
+   "note": "FCE Part 3: sentence gap + capitalised root, whole derived word typed · EN-only cues · built 2026-08-18"
+  },
+  {
+   "id": "c1_word_formation",
+   "domain": "grammar",
+   "label": "Word formation (CAE Part 3)",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "forms",
+   "levels": [
+    "C1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/c1_word_formation.json",
+   "practice": "grammar",
+   "note": "CAE Part 3: rarer suffixes, shifted stems, assimilating negatives · roots from Ready for C1 families, original sentences · built 2026-08-18"
   }
  ],
  "synced_from": {

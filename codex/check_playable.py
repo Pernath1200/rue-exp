@@ -107,6 +107,19 @@ def check_pack(pid: str, pack: dict) -> None:
     seq = (pack.get("check") or {}).get("sequence")
     ladder = pack.get("ladder") or {}
 
+    # Word-formation packs (2026-08-18): typeModeOf returns "root_word" and the
+    # engine renders the capitalised root beside the gap in Quiz AND Type. An
+    # item without a root still *renders* — as a bare cloze no student can
+    # answer — which is exactly the authored-but-unplayable class this gate
+    # exists for.
+    if pack.get("kind") == "word_formation":
+        for i, it in enumerate(items):
+            if not str(it.get("root") or "").strip():
+                errors.append(
+                    f"{pid} item {i}: word_formation item has no `root` — "
+                    f"renders as an unanswerable bare cloze"
+                )
+
     def wants_check(phase: str) -> bool:
         """match / quiz — the phases inside Check."""
         if ladder.get(phase) is False:

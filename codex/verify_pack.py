@@ -88,6 +88,11 @@ def lint_pack(path: Path) -> None:
     for hit in find_pl_keys(d):
         err(f"{pid}: forbidden `pl` field at {hit}")
 
+    # Word-formation packs (FCE/CAE Part 3, 2026-08-18): EN-only by James's
+    # ruling — the capitalised root cue carries the item, so `cz` is not
+    # required. Everything the mode depends on is checked per item below.
+    wf = d.get("kind") == "word_formation"
+
     n_items = 0
     for bi, b in enumerate(d.get("blocks") or []):
         where = f"blocks[{bi}]"
@@ -100,9 +105,30 @@ def lint_pack(path: Path) -> None:
             if not isinstance(it, dict):
                 err(f"{pid} {w}: item is not an object")
                 continue
-            for f in ("en", "cz"):
+            for f in ("en",) if wf else ("en", "cz"):
                 if not isinstance(it.get(f), str) or not it[f].strip():
                     err(f"{pid} {w}: `{f}` missing or empty")
+            if wf:
+                root = it.get("root")
+                if not isinstance(root, str) or not root.strip():
+                    err(f"{pid} {w}: word_formation item needs a `root` cue")
+                else:
+                    if root != root.upper():
+                        err(f"{pid} {w}: root {root!r} must be CAPITALISED")
+                    if str(it.get("gap_answer") or "").strip().lower() == root.strip().lower():
+                        err(
+                            f"{pid} {w}: gap_answer equals the root — "
+                            f"nothing is derived"
+                        )
+                # Distractors must be wrong derivations of the SAME root;
+                # sibling-borrowed options would be other roots' words and
+                # transparently wrong, so authored quiz_options are required.
+                if not isinstance(it.get("quiz_options"), list) or len(
+                    it.get("quiz_options") or []
+                ) < 2:
+                    err(f"{pid} {w}: word_formation item needs quiz_options")
+                if not (it.get("explanation") or "").strip():
+                    warn(f"{pid} {w}: no explanation (wrong answers show none)")
             gap, ga = it.get("gap"), it.get("gap_answer")
             if gap is not None or ga is not None:
                 if not (isinstance(gap, str) and BLANK_RE.search(gap)):

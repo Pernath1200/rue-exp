@@ -1,0 +1,386 @@
+{
+  "id": "b2_word_formation",
+  "title": "Word formation (FCE Part 3)",
+  "level": "B2",
+  "tree_node": "b2_word_formation",
+  "kind": "word_formation",
+  "practice": "grammar",
+  "note": "FCE Part 3 shape: sentence gap + capitalised root, student types the WHOLE derived word · EN-only cues (James, 2026-08-18) · all sentences original",
+  "default_direction": "en_gap",
+  "check": { "sequence": ["quiz"] },
+  "ladder": { "match": false, "use": false },
+  "quality": "good_draft",
+  "intro": {
+    "cards": [
+      {
+        "title": "Word formation — the exam task",
+        "body": "In FCE Part 3 every line gives you a sentence with a gap and a word in CAPITALS. Change the capital word so it fits the gap — usually a different word class, sometimes a negative.",
+        "points": [
+          "Read the whole sentence first — it decides the word class AND whether the meaning is negative.",
+          "Type the whole word, never just the ending.",
+          "Watch for stem changes: decide → decision, choose → choice."
+        ]
+      },
+      {
+        "title": "Making nouns",
+        "table": {
+          "headers": ["Verb / Adjective", "Noun"],
+          "rows": [
+            ["improve", "improvement"],
+            ["explain", "explanation"],
+            ["happy", "happiness"],
+            ["able", "ability"],
+            ["perform", "performance"],
+            ["grow", "growth"]
+          ]
+        },
+        "points": [
+          "Common endings: -ment, -ion / -ation, -ness, -ity, -ance / -ence.",
+          "Some nouns change the stem: decide → decision, choose → choice, grow → growth."
+        ]
+      },
+      {
+        "title": "Adjectives — and their negatives",
+        "table": {
+          "headers": ["Root", "Adjective"],
+          "rows": [
+            ["success", "successful"],
+            ["care", "careless"],
+            ["rely", "reliable"],
+            ["fame", "famous"]
+          ]
+        },
+        "points": [
+          "-ful = with · -less = without.",
+          "Negative prefixes: un- (unlucky), in- (informal), im- before p (impossible), ir- before r (irresponsible), il- before l (illegal), dis- (dishonest).",
+          "The sentence tells you when the meaning is negative — look for signals like but, too, nobody, without."
+        ]
+      },
+      {
+        "title": "People, verbs and adverbs",
+        "table": {
+          "headers": ["Root", "New word"],
+          "rows": [
+            ["science", "scientist"],
+            ["employ", "employer / employee"],
+            ["strong", "strengthen"],
+            ["easy", "easily"]
+          ]
+        },
+        "points": [
+          "-er / -or / -ist / -ian = the person.",
+          "-en makes verbs: short → shorten, wide → widen.",
+          "-ly makes adverbs: easy → easily."
+        ]
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "wf_nouns",
+      "title": "Making nouns",
+      "items": [
+        {
+          "en": "He showed great determination in finishing the race with an injured knee.",
+          "gap": "He showed great ____ in finishing the race with an injured knee.",
+          "root": "DETERMINE",
+          "gap_answer": "determination",
+          "quiz_options": ["determination", "determined", "determining"],
+          "explanation": "Verb → noun with -ation: determine → determination. After 'great' you need a noun."
+        },
+        {
+          "en": "There has been a real improvement in her writing since January.",
+          "gap": "There has been a real ____ in her writing since January.",
+          "root": "IMPROVE",
+          "gap_answer": "improvement",
+          "quiz_options": ["improvement", "improved", "improving"],
+          "explanation": "Verb → noun with -ment: improve → improvement."
+        },
+        {
+          "en": "Making the final decision took the committee almost a week.",
+          "gap": "Making the final ____ took the committee almost a week.",
+          "root": "DECIDE",
+          "gap_answer": "decision",
+          "quiz_options": ["decision", "decisive", "decided"],
+          "explanation": "Stem change: decide → decision (not 'decidement'). 'The final ___' needs a noun."
+        },
+        {
+          "en": "The teacher gave a clear explanation of the new rule.",
+          "gap": "The teacher gave a clear ____ of the new rule.",
+          "root": "EXPLAIN",
+          "gap_answer": "explanation",
+          "quiz_options": ["explanation", "explained", "explaining"],
+          "explanation": "explain → explanation — the i of 'explain' disappears."
+        },
+        {
+          "en": "Money alone will not bring you happiness.",
+          "gap": "Money alone will not bring you ____.",
+          "root": "HAPPY",
+          "gap_answer": "happiness",
+          "quiz_options": ["happiness", "happily", "happier"],
+          "explanation": "Adjective → noun with -ness; y → i: happy → happiness."
+        },
+        {
+          "en": "Spelling is her one real weakness in writing.",
+          "gap": "Spelling is her one real ____ in writing.",
+          "root": "WEAK",
+          "gap_answer": "weakness",
+          "quiz_options": ["weakness", "weaken", "weakly"],
+          "explanation": "Adjective → noun with -ness: weak → weakness."
+        },
+        {
+          "en": "She has the ability to learn languages very quickly.",
+          "gap": "She has the ____ to learn languages very quickly.",
+          "root": "ABLE",
+          "gap_answer": "ability",
+          "quiz_options": ["ability", "able", "ably"],
+          "explanation": "Stem change: able → ability. 'The ___ to do something' needs a noun."
+        },
+        {
+          "en": "The band gave an unforgettable performance last night.",
+          "gap": "The band gave an unforgettable ____ last night.",
+          "root": "PERFORM",
+          "gap_answer": "performance",
+          "quiz_options": ["performance", "performer", "performing"],
+          "explanation": "Verb → noun with -ance: perform → performance ('give a performance')."
+        },
+        {
+          "en": "There is a small difference in meaning between the two words.",
+          "gap": "There is a small ____ in meaning between the two words.",
+          "root": "DIFFER",
+          "gap_answer": "difference",
+          "quiz_options": ["difference", "different", "differently"],
+          "explanation": "Verb → noun with -ence: differ → difference."
+        },
+        {
+          "en": "They had a long argument about money in the car.",
+          "gap": "They had a long ____ about money in the car.",
+          "root": "ARGUE",
+          "gap_answer": "argument",
+          "quiz_options": ["argument", "arguable", "arguably"],
+          "explanation": "argue → argument — the e of 'argue' disappears."
+        },
+        {
+          "en": "The growth of the city has been incredibly fast since 2010.",
+          "gap": "The ____ of the city has been incredibly fast since 2010.",
+          "root": "GROW",
+          "gap_answer": "growth",
+          "quiz_options": ["growth", "growing", "grown"],
+          "explanation": "Stem change: grow → growth. 'The ___ of the city' needs a noun."
+        },
+        {
+          "en": "You have a choice between the morning and evening course.",
+          "gap": "You have a ____ between the morning and evening course.",
+          "root": "CHOOSE",
+          "gap_answer": "choice",
+          "quiz_options": ["choice", "chosen", "choosing"],
+          "explanation": "Big stem change: choose → choice."
+        }
+      ]
+    },
+    {
+      "id": "wf_adjectives",
+      "title": "Adjectives and negatives",
+      "items": [
+        {
+          "en": "Her second novel was hugely successful and sold out in weeks.",
+          "gap": "Her second novel was hugely ____ and sold out in weeks.",
+          "root": "SUCCESS",
+          "gap_answer": "successful",
+          "quiz_options": ["successful", "successfully", "success"],
+          "explanation": "Noun → adjective with -ful: success → successful."
+        },
+        {
+          "en": "It was careless of him to leave his passport on the train.",
+          "gap": "It was ____ of him to leave his passport on the train.",
+          "root": "CARE",
+          "gap_answer": "careless",
+          "quiz_options": ["careless", "careful", "carefully"],
+          "explanation": "-less = without. The mistake shows there was no care — so careless, not careful."
+        },
+        {
+          "en": "Flats in the city centre are too expensive for most young people.",
+          "gap": "Flats in the city centre are too ____ for most young people.",
+          "root": "EXPENSE",
+          "gap_answer": "expensive",
+          "quiz_options": ["expensive", "expense", "expensively"],
+          "explanation": "Noun → adjective with -ive: expense → expensive."
+        },
+        {
+          "en": "The team played brilliantly but was unlucky to lose in the final minute.",
+          "gap": "The team played brilliantly but was ____ to lose in the final minute.",
+          "root": "LUCK",
+          "gap_answer": "unlucky",
+          "quiz_options": ["unlucky", "lucky", "luckily"],
+          "explanation": "'but ... to lose' — the meaning is negative, so un- + lucky."
+        },
+        {
+          "en": "The chairs were so uncomfortable that nobody stayed for the second talk.",
+          "gap": "The chairs were so ____ that nobody stayed for the second talk.",
+          "root": "COMFORT",
+          "gap_answer": "uncomfortable",
+          "quiz_options": ["uncomfortable", "comfortable", "comfortably"],
+          "explanation": "Nobody stayed — the meaning is negative: un- + comfortable."
+        },
+        {
+          "en": "Our old car is slow but completely reliable.",
+          "gap": "Our old car is slow but completely ____.",
+          "root": "RELY",
+          "gap_answer": "reliable",
+          "quiz_options": ["reliable", "reliance", "reliably"],
+          "explanation": "Verb → adjective with -able; y → i: rely → reliable."
+        },
+        {
+          "en": "Don't be so impatient — the results come out tomorrow.",
+          "gap": "Don't be so ____ — the results come out tomorrow.",
+          "root": "PATIENT",
+          "gap_answer": "impatient",
+          "quiz_options": ["impatient", "patient", "patiently"],
+          "explanation": "The advice is to stop wanting the results NOW → negative, and im- before p."
+        },
+        {
+          "en": "Prague is famous for its bridges and its old town.",
+          "gap": "Prague is ____ for its bridges and its old town.",
+          "root": "FAME",
+          "gap_answer": "famous",
+          "quiz_options": ["famous", "fame", "famously"],
+          "explanation": "Noun → adjective with -ous: fame → famous (the e disappears)."
+        },
+        {
+          "en": "It was dishonest of her to copy her friend's homework and say nothing.",
+          "gap": "It was ____ of her to copy her friend's homework and say nothing.",
+          "root": "HONEST",
+          "gap_answer": "dishonest",
+          "quiz_options": ["dishonest", "honest", "honestly"],
+          "explanation": "Copying and hiding it is the opposite of honest → dis- + honest."
+        },
+        {
+          "en": "Driving that fast in heavy rain was completely irresponsible.",
+          "gap": "Driving that fast in heavy rain was completely ____.",
+          "root": "RESPONSIBLE",
+          "gap_answer": "irresponsible",
+          "quiz_options": ["irresponsible", "responsible", "responsibly"],
+          "explanation": "Negative meaning, and ir- before r: irresponsible."
+        },
+        {
+          "en": "The staff were friendly and very helpful when we got lost.",
+          "gap": "The staff were friendly and very ____ when we got lost.",
+          "root": "HELP",
+          "gap_answer": "helpful",
+          "quiz_options": ["helpful", "helpless", "helplessly"],
+          "explanation": "-ful = full of help; -less would mean they could not help at all."
+        },
+        {
+          "en": "Without a ticket it is impossible to get into the stadium.",
+          "gap": "Without a ticket it is ____ to get into the stadium.",
+          "root": "POSSIBLE",
+          "gap_answer": "impossible",
+          "quiz_options": ["impossible", "possible", "possibly"],
+          "explanation": "'Without a ticket' — no way in → negative, and im- before p."
+        }
+      ]
+    },
+    {
+      "id": "wf_people_verbs",
+      "title": "People, verbs and adverbs",
+      "items": [
+        {
+          "en": "Her dream is to become a scientist and study the brain.",
+          "gap": "Her dream is to become a ____ and study the brain.",
+          "root": "SCIENCE",
+          "gap_answer": "scientist",
+          "quiz_options": ["scientist", "scientific", "science"],
+          "explanation": "-ist = the person: science → scientist."
+        },
+        {
+          "en": "The politician promised lower taxes at every rally.",
+          "gap": "The ____ promised lower taxes at every rally.",
+          "root": "POLITICS",
+          "gap_answer": "politician",
+          "quiz_options": ["politician", "political", "politics"],
+          "explanation": "-ian = the person: politics → politician."
+        },
+        {
+          "en": "My employer lets me work from home two days a week.",
+          "gap": "My ____ lets me work from home two days a week.",
+          "root": "EMPLOY",
+          "gap_answer": "employer",
+          "quiz_options": ["employer", "employee", "employment"],
+          "explanation": "-er = the person or company that GIVES the work; -ee = the person who does it."
+        },
+        {
+          "en": "In August the old town is completely full of tourists.",
+          "gap": "In August the old town is completely full of ____.",
+          "root": "TOUR",
+          "gap_answer": "tourists",
+          "quiz_options": ["tourists", "tours", "touring"],
+          "explanation": "-ist person noun, and the plural: tour → tourists."
+        },
+        {
+          "en": "The two countries want to strengthen their trade links.",
+          "gap": "The two countries want to ____ their trade links.",
+          "root": "STRONG",
+          "gap_answer": "strengthen",
+          "quiz_options": ["strengthen", "strength", "strongly"],
+          "explanation": "Adjective → verb: strong → strength + -en. After 'want to' you need a verb."
+        },
+        {
+          "en": "They decided to shorten the meeting to thirty minutes.",
+          "gap": "They decided to ____ the meeting to thirty minutes.",
+          "root": "SHORT",
+          "gap_answer": "shorten",
+          "quiz_options": ["shorten", "short", "shortly"],
+          "explanation": "Adjective → verb with -en: short → shorten."
+        },
+        {
+          "en": "She passed the driving test easily at her first attempt.",
+          "gap": "She passed the driving test ____ at her first attempt.",
+          "root": "EASY",
+          "gap_answer": "easily",
+          "quiz_options": ["easily", "easy", "easier"],
+          "explanation": "Adverb describing 'passed': easy → easily (y → i)."
+        },
+        {
+          "en": "Crossing the tracks here is extremely dangerous.",
+          "gap": "Crossing the tracks here is extremely ____.",
+          "root": "DANGER",
+          "gap_answer": "dangerous",
+          "quiz_options": ["dangerous", "dangerously", "danger"],
+          "explanation": "Noun → adjective with -ous: danger → dangerous."
+        },
+        {
+          "en": "I completely forgot about our meeting yesterday.",
+          "gap": "I ____ forgot about our meeting yesterday.",
+          "root": "COMPLETE",
+          "gap_answer": "completely",
+          "quiz_options": ["completely", "complete", "completion"],
+          "explanation": "Adverb describing 'forgot': complete → completely."
+        },
+        {
+          "en": "Could you speak more slowly, please? I can't follow you.",
+          "gap": "Could you speak more ____, please? I can't follow you.",
+          "root": "SLOW",
+          "gap_answer": "slowly",
+          "quiz_options": ["slowly", "slow", "slowness"],
+          "explanation": "Adverb describing 'speak': slow → slowly."
+        },
+        {
+          "en": "Three musicians were playing jazz in the square.",
+          "gap": "Three ____ were playing jazz in the square.",
+          "root": "MUSIC",
+          "gap_answer": "musicians",
+          "quiz_options": ["musicians", "musical", "music"],
+          "explanation": "-ian person noun, and the plural: music → musicians."
+        },
+        {
+          "en": "The city plans to widen the road next year.",
+          "gap": "The city plans to ____ the road next year.",
+          "root": "WIDE",
+          "gap_answer": "widen",
+          "quiz_options": ["widen", "wide", "width"],
+          "explanation": "Adjective → verb with -en: wide → widen. After 'plans to' you need a verb."
+        }
+      ]
+    }
+  ]
+}

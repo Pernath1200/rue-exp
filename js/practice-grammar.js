@@ -170,6 +170,11 @@ function typeModeOf(pack, item) {
   if (pack?.type?.mode) return pack.type.mode;
   if (pack?.default_type_mode) return pack.default_type_mode;
   if (pack?.kind === "morphology" || pack?.morphology === true) return "ending_gap";
+  /* FCE/CAE Part 3 shape (James, 2026-08-18): sentence gap + capitalised root
+   * cue, student produces the WHOLE derived word — prefixes, negatives and
+   * stem changes included. ending_gap cannot carry it: that mode types a
+   * suffix onto an unchanged stem, and decide→decision has no such stem. */
+  if (pack?.kind === "word_formation") return "root_word";
   return "full_word";
 }
 
@@ -219,6 +224,15 @@ function isCorrect(user, item, mode) {
     const u = normEnding(user);
     if (!u) return false;
     return acceptsList(item, mode).includes(u);
+  }
+  /* Word formation grades EXACT against answer + gap_accepts. No article
+   * folding (single words) and — deliberately — no synonym canonicalisation:
+   * a synonym is a different root, and the exam task is "use the word given".
+   * Folding shop/store here would mark a wrong exam answer right. */
+  if (mode === "root_word") {
+    const u = norm(user);
+    if (!u) return false;
+    return acceptsList(item, "full_word").includes(u);
   }
   const u = norm(user);
   if (!u) return false;
@@ -1020,7 +1034,9 @@ export function startPractice(rawPack, root, opts) {
       itemIndex: state.quizIndex,
       en: item.prompt || "",
       cz: item.cz || "",
-      gap: "",
+      // Word formation: the root cue is the item's identity — a flag without
+      // it says "He showed great ____" and nothing else.
+      gap: item.root || "",
       gap_answer: item.answer || "",
       typed: "",
     });
@@ -1031,7 +1047,9 @@ export function startPractice(rawPack, root, opts) {
       <p class="score-line">${state.quizIndex + 1} / ${items.length} · score ${state.quizScore}${
         state.quizRetryPass ? " · retry" : ""
       }</p>
-      <p class="practice-prompt">${esc(item.prompt)}</p>
+      <p class="practice-prompt">${esc(item.prompt)}${
+        item.root ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
+      }</p>
       ${item.cz ? `<p class="practice-hint">${esc(item.cz)}</p>` : ""}
       <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · then <strong>Enter</strong> = next (always)</p>
       <div class="choices" id="choices"></div>
@@ -1453,6 +1471,7 @@ export function startPractice(rawPack, root, opts) {
     const item = items[idx];
     const mode = kind === "use" ? "full_word" : typeModeOf(pack, item);
     const isGap = mode === "ending_gap" && item.stem != null;
+    const isRoot = mode === "root_word" && item.root;
     const prompt =
       item.prompt_en || item.prompt || item.en || "Write in English:";
     setSmokeContext({
@@ -1463,7 +1482,7 @@ export function startPractice(rawPack, root, opts) {
       // from Use printed the Czech twice and never showed the English target.
       en: item.answer || prompt,
       cz: item.cz || "",
-      gap: isGap ? item.stem || "" : "",
+      gap: isGap ? item.stem || "" : isRoot ? item.root : "",
       gap_answer: isGap ? item.ending || "" : item.answer || "",
       typed: "",
     });
@@ -1478,7 +1497,9 @@ export function startPractice(rawPack, root, opts) {
           <button type="button" class="btn primary" id="btn-submit">Check</button>
         </div>`
       : `<div class="input-row">
-          <input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type in English…" lang="en" />
+          <input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${
+            isRoot ? "whole word…" : "type in English…"
+          }" lang="en" />
           <button type="button" class="btn primary" id="btn-submit">Check</button>
         </div>`;
 
@@ -1491,12 +1512,16 @@ export function startPractice(rawPack, root, opts) {
       <p class="score-line">${idx + 1} / ${items.length} · score ${score}${
         retryPass ? " · retry" : ""
       }</p>
-      <p class="practice-prompt">${esc(prompt)}</p>
+      <p class="practice-prompt">${esc(prompt)}${
+        isRoot ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
+      }</p>
       ${hint}
       ${
         isGap
           ? `<p class="practice-hint gap-hint">Only the <strong>ending</strong></p>`
-          : ""
+          : isRoot
+            ? `<p class="practice-hint gap-hint">The <strong>whole word</strong> formed from the word in capitals</p>`
+            : ""
       }
       ${inputBlock}
       <div class="feedback" id="feedback"></div>
