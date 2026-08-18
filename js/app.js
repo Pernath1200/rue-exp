@@ -5,6 +5,7 @@
 
 import { startGrammarPractice } from "./practice-grammar.js";
 import { startPractice as startVocabPractice } from "./practice-vocab.js";
+import { startWordFormationDrill } from "./exam-drill.js";
 import {
   loadProgress,
   isLevelUnlocked,
@@ -699,9 +700,11 @@ function renderHomeChrome() {
   const review = document.getElementById("review-card");
   const more = document.getElementById("panel-more");
   const tables = document.getElementById("tables-card");
+  const exam = document.getElementById("exam-card");
   if (review) review.hidden = STATE.homePanel !== "review";
   if (more) more.hidden = STATE.homePanel !== "more";
   if (tables) tables.hidden = STATE.homePanel !== "tables";
+  if (exam) exam.hidden = STATE.homePanel !== "exam";
   const moreBtn = document.getElementById("btn-home-more");
   if (moreBtn) {
     moreBtn.setAttribute(
@@ -714,14 +717,17 @@ function renderHomeChrome() {
       ? "btn-home-review"
       : STATE.homePanel === "tables"
         ? "btn-home-tables"
-        : STATE.homePanel === "more"
-          ? STATE.homePanelSource === "topics"
-            ? "btn-home-topics"
-            : "btn-home-more"
-          : null;
+        : STATE.homePanel === "exam"
+          ? "btn-home-exam"
+          : STATE.homePanel === "more"
+            ? STATE.homePanelSource === "topics"
+              ? "btn-home-topics"
+              : "btn-home-more"
+            : null;
   for (const id of [
     "btn-home-review",
     "btn-home-topics",
+    "btn-home-exam",
     "btn-home-tables",
     "btn-home-more",
   ]) {
@@ -874,6 +880,96 @@ function wireHomeActions() {
       });
     }
   });
+  document.getElementById("btn-home-exam")?.addEventListener("click", () => {
+    STATE.homePanel = STATE.homePanel === "exam" ? null : "exam";
+    renderHomeChrome();
+    if (STATE.homePanel === "exam") {
+      renderExamPanel();
+      document.getElementById("exam-card")?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+      });
+    }
+  });
+}
+
+/* ---- Exam Practice (James, 2026-08-18, after smoking word formation v1) ----
+ * A reps gym on the front page, not a path stop: one short intro, a drill
+ * entry per tier, and revision links out to the prefix/suffix units. Sources
+ * are tree nodes tagged `exam: "word_formation"`, so new units feed the
+ * drill and the links without touching this code. */
+
+function examDrillNodes(level) {
+  return (STATE.tree?.nodes || []).filter(
+    (n) =>
+      n.exam === "word_formation" &&
+      n.status === "live" &&
+      n.content &&
+      (!level || (n.levels || []).includes(level)),
+  );
+}
+
+const EXAM_TIERS = [
+  { level: "B2", label: "Word formation · FCE (B2)" },
+  { level: "C1", label: "Word formation · CAE (C1)" },
+];
+
+function renderExamPanel() {
+  const host = document.getElementById("exam-host");
+  if (!host) return;
+  const tiers = EXAM_TIERS.filter((t) => examDrillNodes(t.level).length);
+  const linksHtml = (level) =>
+    examDrillNodes(level)
+      .map(
+        (n) =>
+          `<a class="exam-revise-link" href="#${escapeXml(n.id)}">${escapeHtml(n.label)}</a>`,
+      )
+      .join(" · ");
+  host.innerHTML = `
+    <p class="home-hint">
+      FCE/CAE Part 3: change the word in <strong>CAPITALS</strong> to fit the
+      sentence. Rounds of 12 from the whole bank, misses retried until clean —
+      come here for reps. Not part of the path.
+    </p>
+    ${tiers
+      .map(
+        (t) => `
+      <div class="exam-tier">
+        <button type="button" class="home-btn" data-exam-level="${escapeXml(t.level)}">${escapeHtml(t.label)}</button>
+        <p class="home-hint">Revise the families: ${linksHtml(t.level)}</p>
+      </div>`,
+      )
+      .join("")}
+    <p class="home-hint">Open cloze · coming later.</p>
+  `;
+  host.querySelectorAll("[data-exam-level]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      void startExamDrillFor(btn.dataset.examLevel);
+    });
+  });
+}
+
+async function startExamDrillFor(level) {
+  const nodes = examDrillNodes(level);
+  if (!nodes.length) return;
+  const tier = EXAM_TIERS.find((t) => t.level === level);
+  try {
+    const packs = [];
+    for (const n of nodes) packs.push(await loadJson(`./data/${n.content}`));
+    STATE.lastPlayedLevel = level;
+    showPractice("grammar");
+    const root = document.getElementById("practice-root");
+    root.innerHTML = "";
+    startWordFormationDrill({
+      level,
+      title: tier?.label || `Word formation (${level})`,
+      packs,
+      root,
+      onExit: () => showMap(),
+    });
+  } catch (e) {
+    console.warn(e);
+  }
 }
 
 /** Combined tree portrait only (Roots/Canopy meter chips removed — 2026-08-10). */
