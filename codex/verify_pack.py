@@ -127,6 +127,12 @@ def lint_pack(path: Path) -> None:
                     it.get("quiz_options") or []
                 ) < 2:
                     err(f"{pid} {w}: word_formation item needs quiz_options")
+                # House style (James, 2026-08-18, after smoking b1_suffixes):
+                # 4 options — answer + class trap + two by-ear misspellings
+                # (acter, visiter). Spelling is what the exam grades.
+                elif len(it["quiz_options"]) < 4:
+                    warn(f"{pid} {w}: only {len(it['quiz_options'])} quiz options "
+                         f"(house style is 4: answer + trap + 2 misspellings)")
                 if not (it.get("explanation") or "").strip():
                     warn(f"{pid} {w}: no explanation (wrong answers show none)")
             gap, ga = it.get("gap"), it.get("gap_answer")
