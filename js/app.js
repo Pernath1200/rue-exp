@@ -910,6 +910,7 @@ function examDrillNodes(level) {
 }
 
 const EXAM_TIERS = [
+  { level: "B1", label: "Word formation · B1 (the basics)" },
   { level: "B2", label: "Word formation · FCE (B2)" },
   { level: "C1", label: "Word formation · CAE (C1)" },
 ];
