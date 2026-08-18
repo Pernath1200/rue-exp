@@ -925,11 +925,25 @@ function renderExamPanel() {
           `<a class="exam-revise-link" href="#${escapeXml(n.id)}">${escapeHtml(n.label)}</a>`,
       )
       .join(" · ");
+  /* One-page intro (James, 2026-08-18): how the task works + the method,
+   * mined from the legacy curriculum_word_formation.json — then the reps.
+   * Everything a student needs before round one, on one screen. */
   host.innerHTML = `
     <p class="home-hint">
-      FCE/CAE Part 3: change the word in <strong>CAPITALS</strong> to fit the
-      sentence. Rounds of 12 from the whole bank, misses retried until clean —
-      come here for reps. Not part of the path.
+      In FCE and CAE, <strong>Word Formation is Part 3</strong>: a text with
+      eight gaps, and beside each gap a word in <strong>CAPITALS</strong>.
+      You form a new word from it — <em>HOPE → hopeful, hopefully or
+      hopeless</em>, depending on the sentence.
+    </p>
+    <ul class="exam-method home-hint">
+      <li>Read the <strong>whole sentence</strong> first — the meaning decides everything.</li>
+      <li>Decide what you need: a <strong>noun</strong>, <strong>adjective</strong>, <strong>adverb</strong> or <strong>verb</strong>?</li>
+      <li>Then decide: <strong>positive or negative</strong>? The context tells you, not the capital word.</li>
+      <li><strong>Spell it exactly</strong> — one wrong letter makes the answer wrong.</li>
+    </ul>
+    <p class="home-hint">
+      Rounds of 12 from the whole bank, misses retried until clean. Reps,
+      not part of the path.
     </p>
     ${tiers
       .map(
@@ -940,11 +954,29 @@ function renderExamPanel() {
       </div>`,
       )
       .join("")}
+    <p class="home-hint">
+      Look things up in the
+      <button type="button" class="link exam-tables-link" id="exam-open-tables">prefix &amp; suffix tables</button>
+      — 30 of each, with meanings and examples.
+    </p>
     <p class="home-hint">Open cloze · coming later.</p>
   `;
   host.querySelectorAll("[data-exam-level]").forEach((btn) => {
     btn.addEventListener("click", () => {
       void startExamDrillFor(btn.dataset.examLevel);
+    });
+  });
+  host.querySelector("#exam-open-tables")?.addEventListener("click", () => {
+    STATE.homePanel = "tables";
+    renderHomeChrome();
+    const tablesHost = document.getElementById("reference-host");
+    if (tablesHost && STATE.reference) {
+      initReference({ data: STATE.reference, activeTab: "wordform" });
+      renderReference(tablesHost);
+    }
+    document.getElementById("tables-card")?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
     });
   });
 }

@@ -987,6 +987,28 @@ button.m.wrong {
   text-decoration: underline;
 }
 
+.exam-method {
+  margin: 0 0 0.75rem;
+  padding-left: 1.1rem;
+}
+
+.exam-method li {
+  margin: 0.2rem 0;
+}
+
+/* Inline link-shaped button into the Tables panel — a real <a> would need a
+ * hash route; the panel flip is JS state, so it has to be a button. */
+.exam-tables-link {
+  font-family: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  color: var(--accent);
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
 /* Word-formation root cue (FCE/CAE Part 3, 2026-08-18): the capitalised
  * root sits beside the gap sentence, exam-sheet style. */
 .wf-root {

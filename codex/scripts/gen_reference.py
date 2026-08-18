@@ -11,6 +11,8 @@ Tables are plain lists; every row is practisable.
   Prepositions      A1 · A2 · B1                (B1 = dependent prepositions)
   Pronouns          personal/possessive/reflexive · this-that
   Tenses            one row per tense, one verb throughout
+  Word formation    30 prefixes · 30 suffixes by word class (lookup only —
+                    the reps live under Exam Practice)
   Spelling & pairs  stub
   Numbers & dates   stub
 
@@ -374,6 +376,104 @@ DL_DRILLS = [
      "answer": "a glass of wine"},
 ]
 
+# ------------------------------------------------- word formation (affixes)
+# Mined from the legacy app (rue2.cz/reference_word_formation.json) at
+# James's request, 2026-08-18 — "the previous, legacy app had a lot of good
+# reference bits". 30 prefixes most-common-first, 30 suffixes grouped by the
+# word class they make. Lightly edited: examples were kept where they are
+# genuine derivations a student could reuse in Part 3.
+# LOOKUP ONLY — no drills. Reps live under Exam Practice (James, 2026-08-18:
+# tables are for looking up; the drilling belongs in the exam gym).
+
+WF_PRE_COLUMNS = [
+    {"key": "prefix", "label": "Prefix"},
+    {"key": "meaning", "label": "Meaning"},
+    {"key": "examples", "label": "Examples"},
+]
+
+WF_SUF_COLUMNS = [
+    {"key": "suffix", "label": "Suffix"},
+    {"key": "makes", "label": "Makes"},
+    {"key": "examples", "label": "Examples"},
+]
+
+# (prefix, meaning, examples) — most common first, as the legacy list ordered
+# them.
+WF_PREFIXES = [
+    ("un-", "not; opposite", "unable, unhappy, unlock"),
+    ("re-", "again; back", "rewrite, return, rebuild"),
+    ("in- / im- / il- / ir-", "not", "incorrect, impossible, illegal, irregular"),
+    ("dis-", "not; opposite; apart", "disagree, disappear, dislike"),
+    ("en- / em-", "cause to; put into", "enable, encourage, empower"),
+    ("pre-", "before", "preview, prepay, prehistoric"),
+    ("over-", "too much; above", "overflow, overload, oversleep"),
+    ("non-", "not", "nonstop, nonfiction, nonsense"),
+    ("mis-", "wrong; badly", "misunderstand, misuse, misspell"),
+    ("sub-", "under; below", "subway, submarine, subtitle"),
+    ("inter-", "between; among", "international, interact, internet"),
+    ("de-", "reverse; remove", "defrost, decode, decrease"),
+    ("trans-", "across; change", "transport, translate, transform"),
+    ("under-", "too little; below", "underestimate, undercook, underpay"),
+    ("out-", "more; beyond; external", "outdoors, outnumber, outgrow"),
+    ("post-", "after", "postwar, postpone, postgraduate"),
+    ("super-", "above; beyond", "supermarket, superstar, supernatural"),
+    ("fore-", "before; front", "foresee, forearm, foreground"),
+    ("semi-", "half; partly", "semicircle, semicolon, semiconductor"),
+    ("anti-", "against", "anticlockwise, antibody, antisocial"),
+    ("mid-", "middle", "midnight, midday, midweek"),
+    ("multi-", "many", "multicultural, multiply, multimedia"),
+    ("ex-", "former; out", "ex-president, ex-wife, export"),
+    ("self-", "by oneself; for oneself", "self-service, selfish, self-esteem"),
+    ("co-", "together; with", "cooperate, co-worker, coexist"),
+    ("counter-", "opposite; in return",
+     "counteract, counterargument, counterproductive"),
+    ("auto-", "self; by itself", "automatic, autobiography, automobile"),
+    ("bi-", "two; twice", "bicycle, bilingual, biannual"),
+    ("tri-", "three", "triangle, tripod, tricycle"),
+    ("con- / com- / col-", "with; together", "connect, combine, collect"),
+]
+
+# (suffix, makes, examples) grouped by word class. "television" was dropped
+# from the legacy -sion examples: a student cannot derive it in Part 3.
+WF_SUFFIX_NOUNS = [
+    ("-ness", "noun", "happiness, darkness, kindness"),
+    ("-tion", "noun", "action, education, relation"),
+    ("-sion", "noun", "decision, conclusion, permission"),
+    ("-ment", "noun", "movement, development, government"),
+    ("-er", "noun (person/thing)", "teacher, writer, worker"),
+    ("-or", "noun (person)", "actor, director, inventor"),
+    ("-ence", "noun", "difference, reference, confidence"),
+    ("-ance", "noun", "importance, distance, appearance"),
+    ("-ity", "noun", "ability, quality, reality"),
+    ("-ship", "noun", "friendship, leadership, membership"),
+    ("-ist", "noun (person)", "artist, scientist, pianist"),
+    ("-ism", "noun", "capitalism, tourism, criticism"),
+    ("-ty", "noun", "safety, loyalty, certainty"),
+    ("-dom", "noun", "freedom, kingdom, wisdom"),
+]
+
+WF_SUFFIX_VERBS = [
+    ("-ize / -ise", "verb", "organize, realise, apologise"),
+    ("-en", "verb", "widen, strengthen, shorten"),
+    ("-ify", "verb", "simplify, clarify, identify"),
+    ("-ate", "verb", "create, communicate, celebrate"),
+]
+
+WF_SUFFIX_ADJ_ADV = [
+    ("-ful", "adjective", "wonderful, careful, beautiful"),
+    ("-less", "adjective", "hopeless, careless, endless"),
+    ("-able", "adjective", "comfortable, reliable, capable"),
+    ("-ible", "adjective", "possible, visible, responsible"),
+    ("-al", "adjective", "national, personal, musical"),
+    ("-ous", "adjective", "dangerous, famous, nervous"),
+    ("-ive", "adjective", "active, creative, effective"),
+    ("-y", "adjective", "sunny, windy, sleepy"),
+    ("-ic", "adjective", "romantic, economic, artistic"),
+    ("-ary", "adjective", "necessary, voluntary, secondary"),
+    ("-ly", "adverb", "quickly, happily, slowly"),
+    ("-ward(s)", "adverb", "forward, backward, homeward"),
+]
+
 
 def main() -> int:
     # --- verbs ---
@@ -505,6 +605,56 @@ def main() -> int:
     noun_sections[0]["rows"][0]["drills"] = UN_DRILLS
     noun_sections[1]["rows"][0]["drills"] = DL_DRILLS
 
+    # --- word formation (affixes) ---
+    wf_sections = [
+        {
+            "id": "wf_prefixes", "title": "Prefixes",
+            "sub": "most common first",
+            "exemplar": "un- · re- · mis-",
+            "intro": "A prefix changes the MEANING, not the word class: happy "
+                     "→ unhappy is still an adjective. The negatives matter "
+                     "most in the exam — and in- changes its shape: im- before "
+                     "p (impossible), ir- before r (irregular), il- before l "
+                     "(illegal).",
+            "columns": WF_PRE_COLUMNS, "drill": [],
+            "rows": [{"prefix": p, "meaning": m, "examples": e}
+                     for p, m, e in WF_PREFIXES],
+        },
+        {
+            "id": "wf_suf_nouns", "title": "Suffixes — nouns",
+            "sub": "actions, states, people",
+            "exemplar": "-tion · -ness · -er",
+            "intro": "A suffix changes the WORD CLASS. These make nouns; the "
+                     "person endings -er / -or / -ist name who does it. Watch "
+                     "the stems that shift: decide → decision, able → ability.",
+            "columns": WF_SUF_COLUMNS, "drill": [],
+            "rows": [{"suffix": s, "makes": m, "examples": e}
+                     for s, m, e in WF_SUFFIX_NOUNS],
+        },
+        {
+            "id": "wf_suf_verbs", "title": "Suffixes — verbs",
+            "sub": "make it happen",
+            "exemplar": "-en · -ify · -ise",
+            "intro": "Adjective or noun → verb. And one prefix belongs here "
+                     "too: en- makes verbs from the front — enable, enrich, "
+                     "endanger.",
+            "columns": WF_SUF_COLUMNS, "drill": [],
+            "rows": [{"suffix": s, "makes": m, "examples": e}
+                     for s, m, e in WF_SUFFIX_VERBS],
+        },
+        {
+            "id": "wf_suf_adj", "title": "Suffixes — adjectives and adverbs",
+            "sub": "-ful = with · -less = without",
+            "exemplar": "-ful · -able · -ly",
+            "intro": "-ful means with it, -less means without it: careful / "
+                     "careless. -ly turns an adjective into an adverb: quick "
+                     "→ quickly.",
+            "columns": WF_SUF_COLUMNS, "drill": [],
+            "rows": [{"suffix": s, "makes": m, "examples": e}
+                     for s, m, e in WF_SUFFIX_ADJ_ADV],
+        },
+    ]
+
     payload = {
         "version": 2,
         "app": "rue-exp",
@@ -528,6 +678,9 @@ def main() -> int:
             {"id": "nouns", "label": "Countable & uncountable",
              "blurb": "advice, information, news — countable in Czech, never in English. And the words with two lives.",
              "sections": noun_sections},
+            {"id": "wordform", "label": "Word formation",
+             "blurb": "un-, mis-, -tion, -ness — the 30 prefixes and 30 suffixes behind FCE/CAE Part 3. The reps live under Exam Practice.",
+             "sections": wf_sections},
             {"id": "spell", "label": "Spelling & pairs",
              "blurb": "study → studies, stop → stopping; make/do, say/tell. Coming next.",
              "sections": []},

@@ -66,9 +66,14 @@ let CTX = null;
 let tab = null;
 const openDrills = new Map(); // sectionId -> drill state
 
-/** ctx = { data } — injected from app.js. */
+/** ctx = { data, activeTab? } — injected from app.js. activeTab lets a
+ * deep link (the Exam Practice panel's affix-tables link) land on a specific
+ * tab instead of whichever one the visitor last had open. */
 export function initReference(ctx) {
   CTX = ctx;
+  if (ctx?.activeTab && (ctx?.data?.tabs || []).some((t) => t.id === ctx.activeTab)) {
+    tab = ctx.activeTab;
+  }
   if (!tab) tab = ctx?.data?.tabs?.[0]?.id || null;
 }
 
