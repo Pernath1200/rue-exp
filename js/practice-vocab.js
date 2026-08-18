@@ -895,6 +895,7 @@ export function startPractice(root, block, opts) {
           <div class="nav">
             <button type="button" class="btn" id="m-again">New set</button>
             <button type="button" class="btn primary" id="m-quiz">2 · Quiz →</button>
+            <button type="button" class="btn" id="m-map">← Map</button>
           </div>
         </div>`;
       stage.querySelector("#m-again").onclick = () => {
@@ -902,6 +903,10 @@ export function startPractice(root, block, opts) {
         render();
       };
       stage.querySelector("#m-quiz").onclick = () => setMode("quiz");
+      stage.querySelector("#m-map")?.addEventListener("click", () => {
+        clearKey();
+        opts.onExit();
+      });
       bindEnterPrimary(stage);
       return `Matched ${doneCount} of ${m.total}${deckLabel("match", block.items)}`;
     }
@@ -1026,7 +1031,8 @@ export function startPractice(root, block, opts) {
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
-                   <button type="button" class="btn" id="q-type">3 · Type →</button>`
+                   <button type="button" class="btn" id="q-type">3 · Type →</button>
+                   <button type="button" class="btn" id="q-type-map">← Map</button>`
                 : `<button type="button" class="btn" id="q-again">Try full set</button>
                    <button type="button" class="btn primary" id="q-type">3 · Type →</button>`
             }
@@ -1045,6 +1051,10 @@ export function startPractice(root, block, opts) {
         };
       }
       stage.querySelector("#q-type").onclick = () => setMode("type");
+      stage.querySelector("#q-type-map")?.addEventListener("click", () => {
+        clearKey();
+        opts.onExit();
+      });
       const again = stage.querySelector("#q-again");
       if (again) {
         again.onclick = () => {
@@ -1231,7 +1241,8 @@ export function startPractice(root, block, opts) {
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
-                   <button type="button" class="btn" id="t-sent">4 · Use →</button>`
+                   <button type="button" class="btn" id="t-sent">4 · Use →</button>
+                   <button type="button" class="btn" id="t-sent-map">← Map</button>`
                 : `<button type="button" class="btn" id="t-again">Try full set</button>
                    <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
             }
@@ -1250,6 +1261,10 @@ export function startPractice(root, block, opts) {
         };
       }
       stage.querySelector("#t-sent").onclick = () => setMode("sentence");
+      stage.querySelector("#t-sent-map")?.addEventListener("click", () => {
+        clearKey();
+        opts.onExit();
+      });
       const again = stage.querySelector("#t-again");
       if (again) {
         again.onclick = () => {
@@ -1611,10 +1626,15 @@ export function startPractice(root, block, opts) {
         <div class="nav" style="margin-top:1rem">
           <button type="button" class="btn primary" id="soon-type">3 · Type</button>
           <button type="button" class="btn" id="soon-match">1 · Match</button>
+          <button type="button" class="btn" id="soon-map">← Map</button>
         </div>
       </div>`;
     stage.querySelector("#soon-type").onclick = () => setMode("type");
     stage.querySelector("#soon-match").onclick = () => setMode("match");
+    stage.querySelector("#soon-map")?.addEventListener("click", () => {
+      clearKey();
+      opts.onExit();
+    });
     bindEnterPrimary(stage);
     return "Use · coming soon";
   }

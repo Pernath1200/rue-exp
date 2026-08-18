@@ -1311,6 +1311,15 @@ async function boot() {
       showMap();
     });
 
+    /* The RUE brand is a Home button. Martina finished a stage in class and
+     * could not see how to leave the page (2026-08-18) — every terminal
+     * screen now has an always-visible way home, top-left, from any state. */
+    document.getElementById("brand-home")?.addEventListener("click", () => {
+      STATE.homePanel = null;
+      showMap();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
     if (IS_DEV_HOST) {
       mountSmokeFlagsUI(document.getElementById("smoke-flags-host"));
       const bar = document.getElementById("smoke-toolbar");
