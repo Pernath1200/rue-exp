@@ -219,6 +219,39 @@ function articleVariants(normed) {
   return [...new Set(variants.map((v) => v.join(" ")))];
 }
 
+/* Czech "tu" / "tady" / "tam" carry BOTH jobs at once: they mark the
+ * existential ("Je tu pes" = there is a dog) and they say where ("here").
+ * English splits those, and either rendering is right — "There is a teacher"
+ * and "There is a teacher here" are both faithful to "Je tu učitel". The
+ * engines accepted whichever one the item happened to be authored with and
+ * failed the other, which is a fault in the grading, not in the answer.
+ * (James, 2026-08-19, mid-lesson: "je tu meaning here and there … please be
+ * flexible on this: it is frustrating".)
+ *
+ * So: inside an EXISTENTIAL sentence only, a locative "here" is optional and
+ * a TRAILING "there" is optional. Outside one nothing changes — "Bread is
+ * cheap here" still needs its here, because there the word is the meaning.
+ * A pack can set strict_place to opt out where the contrast is the lesson.
+ */
+const EXISTENTIAL = /\bthere (is|are|was|were)\b|\b(is|are|was|were) there\b/;
+
+function placeVariants(normed) {
+  if (!EXISTENTIAL.test(normed)) return [normed];
+  const toks = normed.split(" ");
+  const out = new Set([normed]);
+  const dropHere = (list) => list.filter((t) => t !== "here");
+  const noHere = dropHere(toks);
+  if (noHere.length && noHere.length !== toks.length) out.add(noHere.join(" "));
+  /* A "there" at the very end is locative — the existential one sits in front
+   * of the verb, so removing the last token can never eat it. */
+  if (toks.length > 2 && toks[toks.length - 1] === "there") {
+    const cut = toks.slice(0, -1);
+    out.add(cut.join(" "));
+    out.add(dropHere(cut).join(" "));
+  }
+  return [...out].filter(Boolean);
+}
+
 /**
  * Split alternatives on / and ; — but NEVER inside parentheses.
  *
@@ -253,7 +286,14 @@ function accepts(answer) {
   return [
     ...new Set(
       forms
-        .flatMap(splitAlternatives)
+        /* The WHOLE answer is always acceptable, not only its split parts.
+         * splitAlternatives treats ";" as an alternatives separator, which is
+         * right for "big; large" and catastrophic for a sentence that simply
+         * contains a semicolon: "The data was wrong; thus we cannot use the
+         * report" was split into two halves, so the full correct sentence —
+         * the one the item itself shows as the answer — graded WRONG. 18 B2
+         * and C1 items were ungradeable this way. (James, 2026-08-19.) */
+        .flatMap((f) => [f, ...splitAlternatives(f)])
         .map(norm)
         .filter(Boolean),
     ),
@@ -279,6 +319,11 @@ function itemAccepts(item, primary, { forGap = false } = {}) {
   for (const form of [...out]) {
     for (const v of articleVariants(form)) out.add(v);
   }
+  if (!(item && item._strict_place)) {
+    for (const form of [...out]) {
+      for (const v of placeVariants(form)) out.add(v);
+    }
+  }
   return [...out];
 }
 
@@ -289,6 +334,14 @@ function isCorrectAnswer(userInput, item, primary, opts = {}) {
   // sentences must keep their subjects — no softer sentence match than this.
   const forms = itemAccepts(item, primary, opts);
   if (forms.includes(userN)) return true;
+  /* Both sides get reduced, so it works in either direction: the student who
+   * adds "here" to an item authored without it, and the one who leaves it off
+   * an item authored with it. */
+  if (!(item && item._strict_place)) {
+    for (const uv of placeVariants(userN)) {
+      if (forms.includes(uv)) return true;
+    }
+  }
   // Two names for one thing (shop/store, phone/telephone) compare equal once
   // both sides are canonicalised. Context-dependent pairs are NOT in the map.
   const userC = canonSynonyms(userN);
@@ -351,7 +404,7 @@ function nearMiss(userInput, item, primary, opts = {}) {
   return null;
 }
 
-export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants };
+export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants, placeVariants };
 
 /** Ball-and-box SVG diagrams (from Teaching Material basic-prepositions.html), RUE3 dark tokens. */
 function diagramSvg(key) {

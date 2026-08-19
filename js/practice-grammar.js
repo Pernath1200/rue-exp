@@ -19,7 +19,7 @@ import {
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
 import { canonSynonyms } from "./synonyms.js";
-import { articleVariants } from "./practice-vocab.js";
+import { articleVariants, placeVariants } from "./practice-vocab.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
@@ -219,6 +219,23 @@ function articleMatch(u, forms) {
   return false;
 }
 
+/* The same "je tu" ruling as the vocab engine — see placeVariants in
+ * practice-vocab.js. Grammar packs that TEACH the contrast set strict_place
+ * and keep exact grading; everywhere else an optional locative in an
+ * existential sentence stops being a wrong answer. */
+let LENIENT_PLACE = true;
+
+function placeMatch(u, forms) {
+  if (!LENIENT_PLACE) return false;
+  const uv = new Set(placeVariants(u));
+  for (const f of forms) {
+    for (const v of placeVariants(f)) {
+      if (uv.has(v)) return true;
+    }
+  }
+  return false;
+}
+
 function isCorrect(user, item, mode) {
   if (mode === "ending_gap") {
     const u = normEnding(user);
@@ -239,6 +256,7 @@ function isCorrect(user, item, mode) {
   const forms = acceptsList(item, mode);
   if (forms.includes(u)) return true;
   if (articleMatch(u, forms)) return true;
+  if (placeMatch(u, forms)) return true;
   // Two names for one thing (shop/store, phone/telephone). The lesson fault
   // that prompted this — "na stole" answered only by desk — was in a GRAMMAR
   // pack, so the rule has to live here too, not only in the vocab engine.
@@ -266,6 +284,7 @@ function pairPl(p) {
  */
 export function startPractice(rawPack, root, opts) {
   LENIENT_ARTICLES = !rawPack?.strict_articles;
+  LENIENT_PLACE = !rawPack?.strict_place;
   // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
   const pack = adaptGrammarPack(rawPack);
   touchBlock(pack.id);
