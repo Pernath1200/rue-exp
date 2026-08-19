@@ -21,8 +21,19 @@
 import { _gradeGrammar } from "./practice-grammar.js";
 import { attachExplain } from "./explain.js";
 import { setSmokeContext } from "./smoke-flags.js";
+import {
+  diagnose,
+  invites,
+  ERROR_LABELS,
+  INVITE_LABELS,
+  FOLLOW_UP,
+} from "./error-type.js";
 
 const ROUND_SIZE = 12;
+
+/* A targeted round needs enough items to be worth offering — below this the
+ * gate stays quiet rather than serving the same six items back. */
+const MIN_FOCUS_POOL = 8;
 
 function shuffle(a) {
   const arr = a.slice();
@@ -90,6 +101,11 @@ export function startWordFormationDrill(opts) {
     wrongs: [],
     retryPass: false,
     repsTotal: 0,
+    /* Misses this round by error type, first pass only — same rule as score,
+     * because a retry miss is a second look at a fault already counted. */
+    tally: {},
+    /** @type {null | string} invite bucket this round is narrowed to */
+    focus: null,
     /** @type {null | (() => void)} */
     enterAdvance: null,
   };
@@ -103,6 +119,21 @@ export function startWordFormationDrill(opts) {
     const picked = state.bag.slice(state.bagPos, state.bagPos + n);
     state.bagPos += n;
     return picked.map((i) => pool[i]);
+  }
+
+  /* Which bucket each pool item belongs to, computed once per drill. This is
+   * the item-side half of error-type.js: what the item invites, not what any
+   * student did. */
+  const invitesByItem = pool.map((it) => invites(it.root, it.answer));
+
+  function focusPool(bucket) {
+    return pool.filter((_, i) => invitesByItem[i] === bucket);
+  }
+
+  /** A round drawn only from items that invite one kind of miss. */
+  function drawFocused(bucket) {
+    const items = shuffle(focusPool(bucket));
+    return items.slice(0, Math.min(ROUND_SIZE, items.length));
   }
 
   function onKeydown(e) {
@@ -136,12 +167,14 @@ export function startWordFormationDrill(opts) {
 
   root._RUE2UnbindKeys = teardown;
 
-  function beginRound() {
-    state.items = drawRound();
+  function beginRound(bucket) {
+    state.focus = bucket || null;
+    state.items = bucket ? drawFocused(bucket) : drawRound();
     state.idx = 0;
     state.score = 0;
     state.wrongs = [];
     state.retryPass = false;
+    state.tally = {};
     renderItem();
   }
 
@@ -160,7 +193,16 @@ export function startWordFormationDrill(opts) {
         Math.min(state.idx + 1, state.items.length)
       } / ${state.items.length} · score ${state.score}${
         state.retryPass ? " · retry" : ""
+      }${
+        state.focus ? ` · focus: ${esc(INVITE_LABELS[state.focus] || "")}` : ""
       } · ${state.repsTotal} reps this visit</p>`;
+  }
+
+  /** "2 spelling, 1 missed the negative" — the round's misses, biggest first. */
+  function tallyText() {
+    const rows = Object.entries(state.tally).sort((a, b) => b[1] - a[1]);
+    if (!rows.length) return "";
+    return rows.map(([type, n]) => `${n} ${ERROR_LABELS[type] || type}`).join(", ");
   }
 
   function renderItem() {
@@ -219,6 +261,18 @@ export function startWordFormationDrill(opts) {
         state.wrongs.push(item);
         fb.className = "feedback bad";
         fb.textContent = `→ ${item.answer}`;
+        /* What KIND of miss (James, 2026-08-19). Unclassifiable misses show
+         * the bare answer exactly as before — a wrong tag is worse than none. */
+        const d = diagnose(input.value, item.root, item.answer);
+        if (d) {
+          const tag = document.createElement("span");
+          tag.className = "error-tag";
+          tag.textContent = d.label;
+          fb.appendChild(tag);
+          if (!state.retryPass) {
+            state.tally[d.type] = (state.tally[d.type] || 0) + 1;
+          }
+        }
         attachExplain(fb, item, () => {});
       }
       input.disabled = true;
@@ -230,10 +284,31 @@ export function startWordFormationDrill(opts) {
     btn.addEventListener("click", grade);
   }
 
+  /**
+   * The type the round's misses cluster on, if there is one worth acting on:
+   * at least two misses, a filter that exists for it, and enough items behind
+   * that filter to fill a round. Ties resolve to the first — an arbitrary
+   * pick between equals is no worse than not offering.
+   */
+  function dominantFocus() {
+    const rows = Object.entries(state.tally)
+      .filter(([type, n]) => n >= 2 && FOLLOW_UP[type])
+      .sort((a, b) => b[1] - a[1]);
+    for (const [type] of rows) {
+      const bucket = FOLLOW_UP[type];
+      if (focusPool(bucket).length >= MIN_FOCUS_POOL) return bucket;
+    }
+    return null;
+  }
+
   function renderGate() {
     state.enterAdvance = null;
     const misses = state.wrongs.length;
     const clean = misses === 0;
+    const breakdown = tallyText();
+    /* Offered on the CLEAN gate — either a clean first pass, or the retry
+     * finally cleared. Mid-retry is the wrong moment to propose new work. */
+    const bucket = clean ? dominantFocus() : null;
     root.innerHTML = `
       <div class="practice-head"><h2>${esc(title)}</h2></div>
       <p class="score-line">Round ${state.round} done · score ${state.score} / ${state.items.length}${
@@ -244,10 +319,22 @@ export function startWordFormationDrill(opts) {
           ? "Clean round. Enter = next round."
           : `${misses} to fix — Enter = retry ${misses === 1 ? "it" : "them"}.`
       }</p>
+      ${
+        breakdown
+          ? `<p class="home-hint error-breakdown">This round: ${esc(breakdown)}.</p>`
+          : ""
+      }
       <div class="input-row">
         <button type="button" class="btn primary" id="btn-go">${
           clean ? "Next round" : "Retry wrong"
         }</button>
+        ${
+          bucket
+            ? `<button type="button" class="btn" id="btn-focus">${ROUND_SIZE} more · ${esc(
+                INVITE_LABELS[bucket],
+              )}</button>`
+            : ""
+        }
       </div>
     `;
     const go = () => {
@@ -260,6 +347,10 @@ export function startWordFormationDrill(opts) {
     };
     state.enterAdvance = go;
     root.querySelector("#btn-go")?.addEventListener("click", go);
+    root.querySelector("#btn-focus")?.addEventListener("click", () => {
+      state.round += 1;
+      beginRound(bucket);
+    });
   }
 
   if (!pool.length) {

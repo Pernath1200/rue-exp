@@ -2194,3 +2194,24 @@ button.brand {
   cursor: pointer;
 }
 button.brand:hover { color: var(--accent); }
+
+/* Error typing on exam misses (James, 2026-08-19): "highlight the type of
+ * error". The tag sits after the correct answer, quieter than the answer
+ * itself — the answer is what they need first, the diagnosis second. */
+.error-tag {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.02rem 0.4rem;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+
+.error-breakdown {
+  margin-top: -0.25rem;
+  margin-bottom: 0.6rem;
+}
