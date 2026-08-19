@@ -380,3 +380,123 @@ All 72 live grammar units on path now produce a real ladder, gated by
   the five-stage ladder consistent. Note the overlap with `a1_object_pronouns`
   (A1 step 22) and `a1_possessives` (A1 step 20), both on ESSENTIAL-UNITS —
   decide what belongs in the trunk vs the leaf before rewriting either.
+
+---
+
+## P1 — the blank sits on the half the student already gets right
+
+Found 2026-08-19 reading all 498 items behind the twelve links in Patrik's
+error summary. **Three of the four units carrying his top errors blanked the
+easy half**, so he could score 100% without ever producing the form the unit
+exists to teach. Fixed in `a409e87` for his three; the audit below found the
+same fault in three more.
+
+This is the same insight as the 2026-08-11 function-word ruling above, one
+level up: there the *exercise* couldn't see the target, here the *blank* isn't
+on it. Check both when authoring.
+
+**Test to apply:** for any pack whose point is a verb form, ask whether the
+blank ever falls on the lexical verb. If 100% of blanks are the auxiliary or
+modal, the pack tests nothing the student gets wrong.
+
+- [ ] **`b1_passives` — 48 of 48 blanks on the auxiliary `be`.** `English ____
+  spoken here` → *is*. The past participle is the hard part for a Czech
+  speaker (*was stole* / *was stolen*), and it is never produced once in the
+  bank. Also the worst explanation bank in the corpus: **1 explanation for
+  48 items**.
+- [ ] **`a2_modals_must_should` — 48 of 48 blanks on the modal.** `I ____ go
+  now` → *must*. Never the bare verb after it, so *must to go* — the exact
+  error class as Patrik's *what can we to do* — is untestable. `a1_can` had
+  the identical fault and was fixed 2026-08-19 (9 of 24 blanks moved).
+- [ ] **`b1_used_to` — 48 of 48 blanks on `used to`.** `I ____ live in Brno`
+  → *used to*. Never the base verb, so *used to went* is untestable.
+  2 explanations for 48 items.
+
+Checked and **cleared** — concentrated for a good reason, the blank is on the
+teaching point: `a1_some_any` · `a1_articles` · `a1_be_have` · `a1_there_is` ·
+`a1_questions_negatives` · `a1_to_for_with` · `a1_and_but_because` ·
+`a1_frequency` · `a2_will_going_to` · `b2_wish_if_only` ·
+`b1_modals_speculation`.
+
+Conditional family checked and **already balanced** — blank falls inside the
+if-clause on `b2_second_conditional` 53% · `b2_third_conditional` 44% ·
+`b2_mixed_conditionals` 25%. `a2_first_conditional` was the outlier at 0% and
+is now 23 of 54.
+
+### Explanation poverty (same session)
+
+The explanation is what the student reads when they get it wrong. Banks of
+20+ items with the fewest distinct explanations:
+
+- [ ] `a2_adverbs_order` — 50 items, **1** explanation
+- [ ] `b1_it_subject` — 48 items, **1**
+- [ ] `b1_passives` — 48 items, **1** (see above)
+- [ ] `b2_second_conditional` — 72 items, 3
+- [ ] `b2_third_conditional` — 72 items, 3
+- [ ] `b1_present_perfect_vs_past` — 64 items, 3
+
+Fixed this session: `b1_reported_speech` 1→5 (54 items) · `a2_comparatives`
+1→4 (52) · `b1_verb_patterns_advanced` 2→9 (56). The method that worked: group
+the bank into families (say/tell, no-shift modals, reported questions, past
+perfect) and write one accurate line per family, not one per item.
+
+---
+
+## SMOKE PASS — a2_first_conditional and a1_can · 2026-08-19
+
+The two units whose blanks were rewritten. **23 of 54** blanks in
+`a2_first_conditional` and **9 of 24** in `a1_can` are new shapes that have
+never been walked. `a2_first_conditional` is the first link in Patrik's PDF,
+so it is the one he opens first.
+
+Run `py -m http.server 8097`, hard-refresh, then walk each unit end to end.
+
+### a2_first_conditional — `#a2_first_conditional`
+
+- [ ] **Deep link cold.** Open the hash in a fresh tab with no progress. Unit
+  opens on its intro, not the map.
+- [ ] **Intro** — 6 cards. Cards 1 and 5 promise *when / until / as soon as*;
+  the bank now delivers. Check the `points[]` render.
+- [ ] **New shape: if-clause blank.** `If she ____, I will come. (call)` →
+  *calls*. The lemma hint in brackets is the convention borrowed from
+  verb_patterns — check it reads clearly at A2 and isn't mistaken for part of
+  the sentence.
+- [ ] **Third-person -s.** `When she ____, we will start. (arrive)` →
+  *arrives*, and `When the film ____ (finish)` → *finishes*. Typing *arrive*
+  must be marked wrong — that is the point of the item.
+- [ ] **Negative in the if-clause.** `If it ____, we will go out. (not rain)`
+  → *doesn't rain*. Both *doesn't rain* and *does not rain* must pass.
+- [ ] **The six new time-word items** — as soon as ×2, until ×2, after ×1,
+  and `When we ____ live, I will send you the link. (be)`, which is his own
+  sentence from the PDF.
+- [ ] **Explanation on a wrong answer** — if-clause items should say "never
+  will", time-clause items should name *when, until, as soon as, after*. Six
+  distinct explanations now; check you never see the wrong one.
+- [ ] **Match and Quiz** still work — this pack runs `match+quiz`, and the
+  quiz distractors are auto-generated from sibling answers, which now include
+  present-tense verbs as well as *will*. Watch for a distractor that is
+  accidentally also correct.
+- [ ] **Type and Use** on a rewritten item — the full sentence is unchanged,
+  so `I'll` and `I will` should both pass.
+
+### a1_can — `#a1_can`
+
+- [ ] **Deep link cold**, as above.
+- [ ] **New shape: base verb after can.** `I can ____. (swim)` → *swim*.
+  Typing *to swim* must fail — that is Patrik's *what can we to do*.
+- [ ] **Negative frame.** `I can't ____. (cook)` → *cook*.
+- [ ] **Question frame.** `Can you ____? (swim)` and `Can I ____ the window?
+  (open)` — the blank is now at the end of a question; check the gap renders
+  before the `?` and not after.
+- [ ] **Explanation** — the 9 rewritten items should read "After can, the base
+  verb — no to and no -s", not the old can/can't line.
+- [ ] **Left deliberately lenient:** *I can not swim* is still accepted on the
+  five negative items. Accepts are invisible to the student, and marking a
+  near-correct answer wrong is the demoralising failure mode (Martina/Tomáš
+  ruling, 2026-08-18). Flag if you disagree.
+
+### Both
+
+- [ ] **Flag button** reachable on every screen (`rue_speedrun_flag_button`).
+- [ ] **Progress** — finishing a unit earns fruit and it survives a refresh.
+- [ ] **Way home** — RUE top left returns to the map from mid-drill.

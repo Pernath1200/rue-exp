@@ -5,7 +5,7 @@
   "tree_node": "a2_quantifiers",
   "codex_unit": "G_NP-A1B1-01",
   "practice": "frames",
-  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech",
+  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech · 2026-08-19: 'Little is known about him' (C1 register) replaced with an A2 'little' item",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -423,16 +423,18 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "Little is known about him.",
-          "cz": "Je o něm známo málo.",
-          "gap": "____ is known about him.",
-          "gap_answer": "Little",
+          "en": "We have little information about it.",
+          "cz": "Máme o tom málo informací.",
+          "gap": "We have ____ information about it.",
+          "gap_answer": "little",
           "accepts": [
-            "Little is known about him.",
-            "Little is known about her."
+            "We have little information about it."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména.",
+          "gap_accepts": [
+            "little"
+          ]
         },
         {
           "en": "Do you have much work today?",
