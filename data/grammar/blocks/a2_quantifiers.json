@@ -5,7 +5,7 @@
   "tree_node": "a2_quantifiers",
   "codex_unit": "G_NP-A1B1-01",
   "practice": "frames",
-  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural",
+  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -30,16 +30,20 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "She has much free time.",
+          "en": "She has a lot of free time.",
           "cz": "Ona má hodně volného času.",
           "gap": "She has ____ free time.",
-          "gap_answer": "much",
+          "gap_answer": "a lot of",
           "accepts": [
-            "She has much free time.",
-            "She has a lot of free time."
+            "She has a lot of free time.",
+            "He has a lot of free time."
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "In a positive sentence a lot of is the natural choice — much sounds wrong here.",
+          "explanation_cz": "V kladné větě je přirozené a lot of — much tu zní špatně.",
+          "gap_accepts": [
+            "a lot of",
+            "lots of"
+          ]
         },
         {
           "en": "We have a lot of friends.",
@@ -56,7 +60,7 @@
         },
         {
           "en": "There are many people.",
-          "cz": "Je tam hodně lidí. (existuje — There is/are…)",
+          "cz": "Je tam hodně lidí.",
           "gap": "There are ____ people.",
           "gap_answer": "many",
           "accepts": [
@@ -522,7 +526,7 @@
         },
         {
           "en": "There are too many cars.",
-          "cz": "Je tu příliš aut. (existuje — There is/are…)",
+          "cz": "Je tu příliš aut.",
           "gap": "There are too ____ cars.",
           "gap_answer": "many",
           "accepts": [
@@ -651,6 +655,53 @@
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+        },
+        {
+          "en": "This one is a lot different.",
+          "cz": "Tenhle je dost jiný.",
+          "gap": "This one is ____ different.",
+          "gap_answer": "a lot",
+          "accepts": [
+            "This one is a lot different."
+          ],
+          "gap_accepts": [
+            "a lot",
+            "much"
+          ],
+          "explanation": "Here a lot means much — it strengthens the word after it: a lot better, a lot different.",
+          "explanation_cz": "Tady a lot znamená much — zesiluje slovo za sebou: a lot better, a lot different."
+        },
+        {
+          "en": "The second version is a lot better.",
+          "cz": "Druhá verze je o dost lepší.",
+          "gap": "The second version is ____ better.",
+          "gap_answer": "a lot",
+          "accepts": [
+            "The second version is a lot better."
+          ],
+          "gap_accepts": [
+            "a lot",
+            "much",
+            "far"
+          ],
+          "explanation": "Here a lot means much — it strengthens the word after it: a lot better, a lot different.",
+          "explanation_cz": "Tady a lot znamená much — zesiluje slovo za sebou: a lot better, a lot different."
+        },
+        {
+          "en": "It is a lot colder today.",
+          "cz": "Dnes je o dost chladněji.",
+          "gap": "It is ____ colder today.",
+          "gap_answer": "a lot",
+          "accepts": [
+            "It is a lot colder today."
+          ],
+          "gap_accepts": [
+            "a lot",
+            "much",
+            "far"
+          ],
+          "explanation": "Here a lot means much — it strengthens the word after it: a lot better, a lot different.",
+          "explanation_cz": "Tady a lot znamená much — zesiluje slovo za sebou: a lot better, a lot different."
         }
       ]
     }

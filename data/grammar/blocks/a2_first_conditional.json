@@ -5,7 +5,7 @@
   "tree_node": "a2_first_conditional",
   "codex_unit": "G_CL-A1B1-01",
   "practice": "frames",
-  "note": "If/when + present, will + base. Real future. Light zero. Gap on will/won't or present verb. · Bank 48 items · flags: 2026-07-26f vocab+accepts · sequencing rewrite 2026-08-06 (cloud): 29/48 items re-lexified onto pool-legal words; 'rain' kept as the single logged fork · intro rewritten student-facing 2026-08-16 (was authoring shorthand — James, smoking for Patrik)",
+  "note": "If/when + present, will + base. Real future. Light zero. Gap on will/won't or present verb. · Bank 48 items · flags: 2026-07-26f vocab+accepts · sequencing rewrite 2026-08-06 (cloud): 29/48 items re-lexified onto pool-legal words; 'rain' kept as the single logged fork · intro rewritten student-facing 2026-08-16 (was authoring shorthand — James, smoking for Patrik) · gap-half rewrite 2026-08-19 (James, Patrik smoke): 17 blanks moved onto the if/time clause — the bank only ever tested the result half; + 6 as soon as/until/after items the intro promised",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -33,16 +33,19 @@
         {
           "en": "If she calls, I will come.",
           "cz": "Když zavolá, přijdu.",
-          "gap": "If she calls, I ____ come.",
-          "gap_answer": "will",
+          "gap": "If she ____, I will come. (call)",
+          "gap_answer": "calls",
           "accepts": [
             "If she calls, I will come.",
             "If she calls, I'll come.",
             "If he calls, I will come.",
             "If he calls, I'll come."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "calls"
+          ]
         },
         {
           "en": "If we are early, we will take the first bus.",
@@ -59,14 +62,17 @@
         {
           "en": "If you study, you will find a job.",
           "cz": "Když se budeš učit, najdeš práci.",
-          "gap": "If you study, you ____ find a job.",
-          "gap_answer": "will",
+          "gap": "If you ____, you will find a job. (study)",
+          "gap_answer": "study",
           "accepts": [
             "If you study, you will find a job.",
             "If you study, you'll find a job."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "study"
+          ]
         },
         {
           "en": "If he is late, we will go home.",
@@ -85,14 +91,17 @@
         {
           "en": "If I have time, I will help you.",
           "cz": "Když budu mít čas, pomůžu ti.",
-          "gap": "If I have time, I ____ help you.",
-          "gap_answer": "will",
+          "gap": "If I ____ time, I will help you. (have)",
+          "gap_answer": "have",
           "accepts": [
             "If I have time, I will help you.",
             "If I have time, I'll help you."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "have"
+          ]
         },
         {
           "en": "I will call you if I arrive early.",
@@ -121,14 +130,18 @@
         {
           "en": "If it doesn't rain, we will go out.",
           "cz": "Když nebude pršet, půjdeme ven.",
-          "gap": "If it doesn't rain, we ____ go out.",
-          "gap_answer": "will",
+          "gap": "If it ____, we will go out. (not rain)",
+          "gap_answer": "doesn't rain",
           "accepts": [
             "If it doesn't rain, we will go out.",
             "If it doesn't rain, we'll go out."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "doesn't rain",
+            "does not rain"
+          ]
         },
         {
           "en": "If you don't leave now, you will be late.",
@@ -145,14 +158,17 @@
         {
           "en": "If Tom is free, I will call him.",
           "cz": "Když bude Tom volný, zavolám mu.",
-          "gap": "If Tom is free, I ____ call him.",
-          "gap_answer": "will",
+          "gap": "If Tom ____ free, I will call him. (be)",
+          "gap_answer": "is",
           "accepts": [
             "If Tom is free, I will call him.",
             "If Tom is free, I'll call him."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "is"
+          ]
         },
         {
           "en": "If we leave now, we will be on time.",
@@ -225,14 +241,14 @@
         },
         {
           "en": "If you heat ice, it melts.",
-          "cz": "Když zahřeješ led, roztaje. (zero light)",
+          "cz": "Když zahřeješ led, roztaje. (vždy platí)",
           "gap": "If you heat ice, it ____.",
           "gap_answer": "melts",
           "accepts": [
             "If you heat ice, it melts."
           ],
-          "explanation": "First conditional: if + present, will + base verb.",
-          "explanation_cz": "První kondicionál: if + přítomný, will + základ slovesa."
+          "explanation": "Always true — a fact, not a plan: present + present, no will.",
+          "explanation_cz": "Platí vždy — fakt, ne plán: přítomný + přítomný, žádné will."
         },
         {
           "en": "If you don't sleep, you feel tired.",
@@ -248,52 +264,64 @@
         {
           "en": "When I finish, I will call you.",
           "cz": "Až skončím, zavolám.",
-          "gap": "When I finish, I ____ call you.",
-          "gap_answer": "will",
+          "gap": "When I ____, I will call you. (finish)",
+          "gap_answer": "finish",
           "accepts": [
             "When I finish, I will call you.",
             "When I finish, I'll call you."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will.",
+          "gap_accepts": [
+            "finish"
+          ]
         },
         {
           "en": "When she arrives, we will start.",
           "cz": "Až přijde, začneme.",
-          "gap": "When she arrives, we ____ start.",
-          "gap_answer": "will",
+          "gap": "When she ____, we will start. (arrive)",
+          "gap_answer": "arrives",
           "accepts": [
             "When she arrives, we will start.",
             "When she arrives, we'll start.",
             "When he arrives, we will start.",
             "When he arrives, we'll start."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will.",
+          "gap_accepts": [
+            "arrives"
+          ]
         },
         {
           "en": "If the shop is open, I will buy bread.",
           "cz": "Když bude obchod otevřený, koupím chleba.",
-          "gap": "If the shop is open, I ____ buy bread.",
-          "gap_answer": "will",
+          "gap": "If the shop ____ open, I will buy bread. (be)",
+          "gap_answer": "is",
           "accepts": [
             "If the shop is open, I will buy bread.",
             "If the shop is open, I'll buy bread."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "is"
+          ]
         },
         {
           "en": "If they call us, we will go.",
           "cz": "Když nám zavolají, půjdeme.",
-          "gap": "If they call us, we ____ go.",
-          "gap_answer": "will",
+          "gap": "If they ____ us, we will go. (call)",
+          "gap_answer": "call",
           "accepts": [
             "If they call us, we will go.",
             "If they call us, we'll go."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "call"
+          ]
         },
         {
           "en": "If I am free, I will come.",
@@ -312,14 +340,17 @@
         {
           "en": "If you need help, I will help you.",
           "cz": "Když budeš potřebovat pomoc, pomůžu.",
-          "gap": "If you need help, I ____ help you.",
-          "gap_answer": "will",
+          "gap": "If you ____ help, I will help you. (need)",
+          "gap_answer": "need",
           "accepts": [
             "If you need help, I will help you.",
             "If you need help, I'll help you."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "need"
+          ]
         },
         {
           "en": "If the bus is late, I will take a taxi.",
@@ -350,14 +381,17 @@
         {
           "en": "If we have money, we will travel more.",
           "cz": "Když budeme mít peníze, budeme víc cestovat.",
-          "gap": "If we have money, we ____ travel more.",
-          "gap_answer": "will",
+          "gap": "If we ____ money, we will travel more. (have)",
+          "gap_answer": "have",
           "accepts": [
             "If we have money, we will travel more.",
             "If we have money, we'll travel more."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "have"
+          ]
         },
         {
           "en": "If you open the window, it gets cold.",
@@ -375,14 +409,18 @@
         {
           "en": "If he doesn't come, I will call him.",
           "cz": "Když nepřijde, zavolám mu.",
-          "gap": "If he doesn't come, I ____ call him.",
-          "gap_answer": "will",
+          "gap": "If he ____, I will call him. (not come)",
+          "gap_answer": "doesn't come",
           "accepts": [
             "If he doesn't come, I will call him.",
             "If he doesn't come, I'll call him."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "doesn't come",
+            "does not come"
+          ]
         },
         {
           "en": "If it is warm, we will walk in the park.",
@@ -467,28 +505,34 @@
         {
           "en": "If they offer me the job, I will take it.",
           "cz": "Když mi nabídnou tu práci, vezmu ji.",
-          "gap": "If they offer me the job, I ____ take it.",
-          "gap_answer": "will",
+          "gap": "If they ____ me the job, I will take it. (offer)",
+          "gap_answer": "offer",
           "accepts": [
             "If they offer me the job, I will take it.",
             "If they offer me the job, I'll take it."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "offer"
+          ]
         },
         {
           "en": "If you are hungry, I will make a sandwich.",
           "cz": "Když máš hlad, udělám sendvič.",
-          "gap": "If you are hungry, I ____ make a sandwich.",
-          "gap_answer": "will",
+          "gap": "If you ____ hungry, I will make a sandwich. (be)",
+          "gap_answer": "are",
           "accepts": [
             "If you are hungry, I will make a sandwich.",
             "If you are hungry, I'll make a sandwich.",
             "If you're hungry, I will make a sandwich.",
             "If you're hungry, I'll make a sandwich."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "are"
+          ]
         },
         {
           "en": "We won't go out if it rains.",
@@ -514,45 +558,55 @@
           "accepts": [
             "If you heat water, it boils."
           ],
-          "explanation": "First conditional: if + present, will + base verb.",
-          "explanation_cz": "První kondicionál: if + přítomný, will + základ slovesa."
+          "explanation": "Always true — a fact, not a plan: present + present, no will.",
+          "explanation_cz": "Platí vždy — fakt, ne plán: přítomný + přítomný, žádné will."
         },
         {
           "en": "When the film finishes, we will leave.",
           "cz": "Až film skončí, odejdeme.",
-          "gap": "When the film finishes, we ____ leave.",
-          "gap_answer": "will",
+          "gap": "When the film ____, we will leave. (finish)",
+          "gap_answer": "finishes",
           "accepts": [
             "When the film finishes, we will leave.",
             "When the film finishes, we'll leave.",
             "When the movie finishes, we will leave.",
             "When the movie finishes, we'll leave."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will.",
+          "gap_accepts": [
+            "finishes"
+          ]
         },
         {
           "en": "When I get home, I will have a shower.",
           "cz": "Až přijdu domů, dám si sprchu.",
-          "gap": "When I get home, I ____ have a shower.",
-          "gap_answer": "will",
+          "gap": "When I ____ home, I will have a shower. (get)",
+          "gap_answer": "get",
           "accepts": [
             "When I get home, I will have a shower.",
             "When I get home, I'll have a shower."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will.",
+          "gap_accepts": [
+            "get"
+          ]
         },
         {
           "en": "If you don't lock the door, someone will take the bike.",
           "cz": "Když nezamkneš dveře, někdo to kolo vezme.",
-          "gap": "If you don't lock the door, someone ____ take the bike.",
-          "gap_answer": "will",
+          "gap": "If you ____ the door, someone will take the bike. (not lock)",
+          "gap_answer": "don't lock",
           "accepts": [
             "If you don't lock the door, someone will take the bike."
           ],
-          "explanation": "Result clause: will + base (after if + present).",
-          "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+          "explanation": "If-clause: present simple — never will. The will goes in the other half.",
+          "explanation_cz": "Věta s if: přítomný prostý — nikdy will. Will patří do druhé poloviny.",
+          "gap_accepts": [
+            "don't lock",
+            "do not lock"
+          ]
         },
         {
           "en": "I will be surprised if she wins.",
@@ -620,6 +674,95 @@
           ],
           "explanation": "Result clause: will + base (after if + present).",
           "explanation_cz": "Výsledek: will + základ (po if + přítomný)."
+        },
+        {
+          "en": "As soon as the rain stops, we will leave.",
+          "cz": "Jakmile přestane pršet, odjedeme.",
+          "gap": "As soon as the rain ____, we will leave. (stop)",
+          "gap_answer": "stops",
+          "accepts": [
+            "As soon as the rain stops, we will leave.",
+            "As soon as the rain stops, we'll leave."
+          ],
+          "gap_accepts": [
+            "stops"
+          ],
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will."
+        },
+        {
+          "en": "As soon as I know, I will tell you.",
+          "cz": "Jakmile to budu vědět, řeknu ti.",
+          "gap": "As soon as I ____, I will tell you. (know)",
+          "gap_answer": "know",
+          "accepts": [
+            "As soon as I know, I will tell you.",
+            "As soon as I know, I'll tell you."
+          ],
+          "gap_accepts": [
+            "know"
+          ],
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will."
+        },
+        {
+          "en": "I will wait until you arrive.",
+          "cz": "Počkám, dokud nepřijedeš.",
+          "gap": "I will wait until you ____. (arrive)",
+          "gap_answer": "arrive",
+          "accepts": [
+            "I will wait until you arrive.",
+            "I'll wait until you arrive."
+          ],
+          "gap_accepts": [
+            "arrive"
+          ],
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will."
+        },
+        {
+          "en": "We won't start until everybody is here.",
+          "cz": "Nezačneme, dokud tu nebudou všichni.",
+          "gap": "We won't start until everybody ____ here. (be)",
+          "gap_answer": "is",
+          "accepts": [
+            "We won't start until everybody is here."
+          ],
+          "gap_accepts": [
+            "is"
+          ],
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will."
+        },
+        {
+          "en": "After I finish work, I will call you.",
+          "cz": "Až skončím v práci, zavolám ti.",
+          "gap": "After I ____ work, I will call you. (finish)",
+          "gap_answer": "finish",
+          "accepts": [
+            "After I finish work, I will call you.",
+            "After I finish work, I'll call you."
+          ],
+          "gap_accepts": [
+            "finish"
+          ],
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will."
+        },
+        {
+          "en": "When we are live, I will send you the link.",
+          "cz": "Až budeme v provozu, pošlu ti odkaz.",
+          "gap": "When we ____ live, I will send you the link. (be)",
+          "gap_answer": "are",
+          "accepts": [
+            "When we are live, I will send you the link.",
+            "When we are live, I'll send you the link."
+          ],
+          "gap_accepts": [
+            "are"
+          ],
+          "explanation": "Time clause (when, until, as soon as, after): present simple — never will.",
+          "explanation_cz": "Časová věta (when, until, as soon as, after): přítomný prostý — nikdy will."
         }
       ]
     }

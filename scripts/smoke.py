@@ -148,6 +148,11 @@ def check_js_loads() -> bool:
             input=f.read_text(encoding="utf-8"),
             capture_output=True,
             text=True,
+            # Without an explicit codec Python writes stdin through the locale
+            # encoding (cp1252 here), so any file containing an arrow or a
+            # dash kills the writer thread and node blocks on stdin forever
+            # — the gate hung instead of failing. (James, 2026-08-19.)
+            encoding="utf-8",
         )
         if r.returncode != 0:
             first = (r.stderr or "").strip().splitlines()
