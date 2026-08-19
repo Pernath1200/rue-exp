@@ -32,10 +32,13 @@ Open **http://localhost:8097/** · hard-refresh **Ctrl+F5** after pulls.
 
 ## What works now
 
-- Home: **Do next · Review · Topics · How to use · More**
+- Home: **Do next · Review · Topics · Exam Practice · Tables · How to use · More**
 - Dual progress (grammar + vocab) under one key · download/import
 - A1 + A2 full zigzag paths; B1–C1 browse when `live`
 - Grammar ladder wired via `pack-adapt.js` (Match · Quiz · order_click · Type · Use)
+- Word formation (FCE/CAE Part 3): `root_word` mode · B2 + C1 packs · B1 affix pair
+- **Exam Practice** (`exam-drill.js`) — pooled word-formation reps, rounds of 12, wrong items retried; untracked (no fruit, never in Do next)
+- **Tables** (`reference.js`) — level-grouped reference tabs with free drills; untracked, table hides mid-drill
 - Vocab: picture-led intros + Use `sentences[]` on **all A1/A2 leaves**
 - Machine gates: `verify_pack` · `check_playable` · `audit --check` · `check_codex` · smoke
 
