@@ -180,6 +180,52 @@ function norm(s) {
 const ARTICLES = new Set(["a", "an", "the"]);
 const STARTS_VOWEL = /^[aeiou]/;
 
+/* Czech marks possession by case, not by a separate word, so "v tašce" is
+ * equally "in the bag" and "in her bag" — the prompt cannot tell the student
+ * which the author picked. Article folding already handled a/an/the; this
+ * extends the same ruling to possessive determiners, which sit in the same
+ * slot and are just as unrecoverable from the Czech. (James, 2026-08-20,
+ * mid-smoke: "Anna má telefon v tašce" marked "in the bag" wrong against
+ * "in her bag" — "I have to eliminate this".)
+ *
+ * Folded by REDUCTION, not expansion: eleven determiners over four slots
+ * would be 14k variants, so both sides collapse to one placeholder instead.
+ * The token count is unchanged, so a DROPPED determiner still fails — "she
+ * has bag" stays wrong, which is the Czech-L1 error the app exists to teach.
+ *
+ * A determiner in FINAL position is never folded: "her" there is an object
+ * pronoun ("I like her"), and folding it would accept "I like the".
+ *
+ * Packs that teach articles or possession set strict_articles and keep exact
+ * grading. */
+const DETERMINERS = new Set([
+  "a", "an", "the",
+  "my", "your", "his", "her", "our", "their", "its",
+]);
+
+function detFold(normed) {
+  const toks = normed.split(" ");
+  if (toks.length < 2) return normed;
+  let touched = false;
+  const out = toks.map((t, i) => {
+    if (i === toks.length - 1) return t;
+    if (!DETERMINERS.has(t)) return t;
+    touched = true;
+    return "§d";
+  });
+  return touched ? out.join(" ") : normed;
+}
+
+/* True when user and expected differ only in which determiners were chosen. */
+function determinerMatch(userN, forms) {
+  const u = detFold(userN);
+  if (u === userN) return false;
+  for (const f of forms) {
+    if (f.includes(" ") && detFold(f) === u) return true;
+  }
+  return false;
+}
+
 /**
  * Czech has no articles, so a Czech prompt cannot determine a / an / the —
  * "Dávám ti knihu" is equally "a book" and "the book", and both are correct
@@ -334,6 +380,7 @@ function isCorrectAnswer(userInput, item, primary, opts = {}) {
   // sentences must keep their subjects — no softer sentence match than this.
   const forms = itemAccepts(item, primary, opts);
   if (forms.includes(userN)) return true;
+  if (!(item && item._strict_articles) && determinerMatch(userN, forms)) return true;
   /* Both sides get reduced, so it works in either direction: the student who
    * adds "here" to an item authored without it, and the one who leaves it off
    * an item authored with it. */
@@ -404,7 +451,7 @@ function nearMiss(userInput, item, primary, opts = {}) {
   return null;
 }
 
-export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants, placeVariants };
+export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants, placeVariants, detFold, determinerMatch };
 
 /** Ball-and-box SVG diagrams (from Teaching Material basic-prepositions.html), RUE3 dark tokens. */
 function diagramSvg(key) {
@@ -545,6 +592,13 @@ export function startPractice(root, block, opts) {
       : null;
   /** Optional read-first stage (concept packs). */
   const hasIntro = Array.isArray(block.intro) && block.intro.length > 0;
+  /* Frames packs draw Use from block.items, the same list Type just used, so
+   * on a pack of one-line social chunks Use IS Type — same prompt, same
+   * answer, twice. Such a pack sets ladder.sentence = false: the stage is
+   * dropped and the fruit lands after Type. (James, 2026-08-20, smoking
+   * a1_core_frames_social: "the Use is the same as the type in — let's just
+   * cut it and give the fruit after type in".) */
+  const noSentence = block.ladder ? block.ladder.sentence === false : false;
   const focusStructures =
     Array.isArray(block.focus_structures) && block.focus_structures.length
       ? block.focus_structures
@@ -826,8 +880,8 @@ export function startPractice(root, block, opts) {
       ["match", "Match"],
       ["quiz", "Quiz"],
       ["type", "Type"],
-      ["sentence", "Use"],
     ];
+    if (!noSentence) base.push(["sentence", "Use"]);
     if (hasIntro) base.unshift(["intro", "Intro"]);
     const modes = base.map(([id, label], i) => [id, `${i + 1} · ${label}`]);
     const bankN = sentenceBank ? sentenceBank.length : 0;
@@ -902,13 +956,22 @@ export function startPractice(root, block, opts) {
     // Drop items whose Czech prompt duplicates one already on the board —
     // two identical tiles are unpairable by sight, and pairing is graded by
     // item id, so the visually-correct pairing is wrong half the time.
+    // Compared by SENSE, not by whole string: "Ahoj. / Dobrý den." (Hello),
+    // "Ahoj. (neformálně)" (Hi) and "Ahoj. (na rozloučenou)" (Bye) are three
+    // different strings that a student reads as one word, so all three used
+    // to land on the same board and two of them were a coin-flip. Any shared
+    // sense is enough to keep the later item off this board — it still comes
+    // round in another pass. (James, 2026-08-20, smoking a1_core_frames_social:
+    // "ambiguity here on Ahoj … it's not totally clear".)
     const seenGloss = new Set();
     const pool = [];
     for (const i of order) {
       const item = block.items[i];
-      const k = glossKey(supportOf(item));
-      if (k && seenGloss.has(k)) continue;
-      seenGloss.add(k);
+      const support = supportOf(item);
+      const senses = czSenses(support);
+      const keys = senses.length ? senses : [glossKey(support)].filter(Boolean);
+      if (keys.some((k) => seenGloss.has(k))) continue;
+      for (const k of keys) seenGloss.add(k);
       pool.push(item);
     }
     const left = pool.map((it, i) => ({ t: supportOf(it), id: i }));
@@ -1281,8 +1344,16 @@ export function startPractice(root, block, opts) {
       // clears every remaining mistake (mastery through correction).
       if (!t.retryPass) reportMode("type", { score: t.score, total: passLen });
       else if (wrongN === 0) reportMode("type", { score: 1, total: 1 });
-      const sub =
-        wrongN > 0
+      // No Use stage on this pack: settle it here so the fruit gate, which
+      // still wants four modes, is satisfied by the work actually done.
+      if (noSentence && wrongN === 0) {
+        reportMode("sentence", { score: 1, total: 1 });
+      }
+      const sub = noSentence
+        ? wrongN > 0
+          ? `${wrongN} to retry`
+          : "All clear · unit done"
+        : wrongN > 0
           ? `${wrongN} to retry · or go to Use`
           : "All clear · next: Use";
       stage.innerHTML = `
@@ -1292,12 +1363,18 @@ export function startPractice(root, block, opts) {
           <div class="sub">${sub}${t.retryPass ? " (retry pass)" : ""}</div>
           <div class="nav">
             ${
-              wrongN > 0
-                ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
-                   <button type="button" class="btn" id="t-sent">4 · Use →</button>
-                   <button type="button" class="btn" id="t-sent-map">← Map</button>`
-                : `<button type="button" class="btn" id="t-again">Try full set</button>
-                   <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
+              noSentence
+                ? wrongN > 0
+                  ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
+                     <button type="button" class="btn" id="t-sent-map">← Map</button>`
+                  : `<button type="button" class="btn" id="t-again">Try full set</button>
+                     <button type="button" class="btn primary" id="t-sent-map">← Map</button>`
+                : wrongN > 0
+                  ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
+                     <button type="button" class="btn" id="t-sent">4 · Use →</button>
+                     <button type="button" class="btn" id="t-sent-map">← Map</button>`
+                  : `<button type="button" class="btn" id="t-again">Try full set</button>
+                     <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
             }
           </div>
           ${
@@ -1313,7 +1390,8 @@ export function startPractice(root, block, opts) {
           render();
         };
       }
-      stage.querySelector("#t-sent").onclick = () => setMode("sentence");
+      const sentBtn = stage.querySelector("#t-sent");
+      if (sentBtn) sentBtn.onclick = () => setMode("sentence");
       stage.querySelector("#t-sent-map")?.addEventListener("click", () => {
         clearKey();
         opts.onExit();

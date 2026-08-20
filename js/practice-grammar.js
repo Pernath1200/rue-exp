@@ -19,7 +19,7 @@ import {
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
 import { canonSynonyms } from "./synonyms.js";
-import { articleVariants, placeVariants } from "./practice-vocab.js";
+import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
@@ -207,6 +207,17 @@ function acceptsList(item, mode) {
  * (James, 2026-08-18, from the Martina/Tomáš lessons.) */
 let LENIENT_ARTICLES = true;
 
+/* Possessive determiners fold with the articles — Czech marks possession by
+ * case, so "v tašce" gives the student no way to know the author wrote "in
+ * her bag" rather than "in the bag". Same gate as the articles: packs that
+ * TEACH possession set strict_articles. See detFold in practice-vocab.js. */
+let LENIENT_POSSESSIVES = true;
+
+function possessiveMatch(u, forms) {
+  if (!LENIENT_POSSESSIVES || !u.includes(" ")) return false;
+  return determinerMatch(u, forms);
+}
+
 function articleMatch(u, forms) {
   if (!LENIENT_ARTICLES || !u.includes(" ")) return false;
   const uv = new Set(articleVariants(u));
@@ -256,6 +267,7 @@ function isCorrect(user, item, mode) {
   const forms = acceptsList(item, mode);
   if (forms.includes(u)) return true;
   if (articleMatch(u, forms)) return true;
+  if (possessiveMatch(u, forms)) return true;
   if (placeMatch(u, forms)) return true;
   // Two names for one thing (shop/store, phone/telephone). The lesson fault
   // that prompted this — "na stole" answered only by desk — was in a GRAMMAR
@@ -284,6 +296,7 @@ function pairPl(p) {
  */
 export function startPractice(rawPack, root, opts) {
   LENIENT_ARTICLES = !rawPack?.strict_articles;
+  LENIENT_POSSESSIVES = !rawPack?.strict_possessives;
   LENIENT_PLACE = !rawPack?.strict_place;
   // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
   const pack = adaptGrammarPack(rawPack);
