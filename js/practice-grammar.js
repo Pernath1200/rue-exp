@@ -237,11 +237,12 @@ let LENIENT_ARTICLES = true;
  * her bag" rather than "in the bag". Same gate as the articles: packs that
  * TEACH possession set strict_articles. See detFold in practice-vocab.js. */
 let LENIENT_POSSESSIVES = true;
+let LENIENT_DETERMINERS = true;
 
 function possessiveMatch(u, forms) {
   // DETERMINERS includes a/an/the, so a pack that teaches ARTICLES must switch
   // this off too — otherwise strict_articles would be silently undone here.
-  if (!LENIENT_ARTICLES || !LENIENT_POSSESSIVES || !u.includes(" ")) return false;
+  if (!LENIENT_ARTICLES || !LENIENT_POSSESSIVES || !LENIENT_DETERMINERS || !u.includes(" ")) return false;
   return determinerMatch(u, forms);
 }
 
@@ -327,6 +328,7 @@ function pairPl(p) {
 export function startPractice(rawPack, root, opts) {
   LENIENT_ARTICLES = !rawPack?.strict_articles;
   LENIENT_POSSESSIVES = !rawPack?.strict_possessives;
+  LENIENT_DETERMINERS = !rawPack?.strict_determiners;
   LENIENT_PLACE = !rawPack?.strict_place;
   // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
   const pack = adaptGrammarPack(rawPack);

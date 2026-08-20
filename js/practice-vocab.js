@@ -201,6 +201,11 @@ const STARTS_VOWEL = /^[aeiou]/;
 const DETERMINERS = new Set([
   "a", "an", "the",
   "my", "your", "his", "her", "our", "their", "its",
+  // Czech "ten / ta / to" is both the definite article and the demonstrative:
+  // "Ten doktor tady pracuje" is equally "The doctor works here" and "This
+  // doctor works here". Nothing in the prompt picks between them.
+  // (James, 2026-08-20: "we have to be generous about these things".)
+  "this", "that", "these", "those",
 ]);
 
 function detFold(normed) {
@@ -398,6 +403,11 @@ function itemAccepts(item, primary, { forGap = false } = {}) {
   return [...out];
 }
 
+let STRICT_DETERMINERS = false;
+function strictDeterminersActive() {
+  return STRICT_DETERMINERS;
+}
+
 function isCorrectAnswer(userInput, item, primary, opts = {}) {
   const userN = norm(userInput);
   if (!userN) return false;
@@ -405,7 +415,7 @@ function isCorrectAnswer(userInput, item, primary, opts = {}) {
   // sentences must keep their subjects — no softer sentence match than this.
   const forms = itemAccepts(item, primary, opts);
   if (forms.includes(userN)) return true;
-  if (!(item && item._strict_articles) && determinerMatch(userN, forms)) return true;
+  if (!strictDeterminersActive() && determinerMatch(userN, forms)) return true;
   /* Both sides get reduced, so it works in either direction: the student who
    * adds "here" to an item authored without it, and the one who leaves it off
    * an item authored with it. */
@@ -624,6 +634,11 @@ export function startPractice(root, block, opts) {
    * a1_core_frames_social: "the Use is the same as the type in — let's just
    * cut it and give the fruit after type in".) */
   const ladderCfg = opts.ladder || block.ladder || null;
+  /* Packs that TEACH a determiner contrast keep exact grading. Read from opts
+   * because the engine is handed a BLOCK, and pack-level fields only arrive if
+   * they are passed through explicitly. */
+  const strictDet = !!(opts.strictDeterminers || block.strict_determiners);
+  STRICT_DETERMINERS = strictDet;
   const noSentence = ladderCfg ? ladderCfg.sentence === false : false;
   const focusStructures =
     Array.isArray(block.focus_structures) && block.focus_structures.length

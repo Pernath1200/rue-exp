@@ -1250,6 +1250,7 @@ async function openNode(node, launch = {}) {
         // BLOCK, so anything living at the top of the JSON has to be passed
         // through explicitly or the engine never sees it.
         ladder: pack.ladder || null,
+        strictDeterminers: !!pack.strict_determiners,
         senseMap: STATE.senseMap,
         onTouch: () => touchVocabBlock(blockId, node.id),
         onModeComplete: (mode, meta) => {
