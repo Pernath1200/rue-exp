@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**266 unknown word types** across 31 live units (of 169).
+**264 unknown word types** across 31 live units (of 169).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -9,7 +9,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a2_ed_ing_adjectives** (A2 grammar): deadline, moving
 - **a2_quantifiers** (A2 grammar): version
 - **a2_first_conditional** (A2 grammar): until×2, link
-- **b1_passives** (B1 grammar): stolen, asia, guard, noon, grown, brazil, cancelled, turned, deleted, package, delivered, automatically, invoice
+- **b1_passives** (B1 grammar): asia, guard, noon, brazil, cancelled, turned, deleted, package, delivered, automatically, invoice
 - **b1_modals_speculation** (B1 grammar): bug, misread
 - **trunk_chunks_b1** (B1 vocab): favour, asia, responsibility, wifi, accent, priority
 - **b1_articles_advanced** (B1 grammar): east, piano, eiffel, republic, danube, atlantic, access, vinohrady
