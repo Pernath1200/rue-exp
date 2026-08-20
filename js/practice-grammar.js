@@ -19,7 +19,7 @@ import {
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
 import { canonSynonyms } from "./synonyms.js";
-import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
+import { articleVariants, placeVariants, determinerMatch, expandContractions } from "./practice-vocab.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
@@ -147,8 +147,14 @@ const CLOCK_WORD_RE = new RegExp(
   "g",
 );
 
+/* Contractions expand BEFORE the apostrophe is stripped — otherwise "won't
+ * be" becomes "won t be" and never matches "will not be". The vocab engine
+ * has folded them since 2026-08-10; this engine never did, so every
+ * contraction in every grammar pack graded the long form wrong.
+ * (James, 2026-08-20: "I have said a million times to allow both
+ * contractions and the full form".) */
 function norm(s) {
-  return String(s)
+  return expandContractions(String(s))
     .toLowerCase()
     .replace(/[!?.,;:"'()]/g, " ")
     // the apostrophe is gone by now, so o'clock reads as "o clock"
