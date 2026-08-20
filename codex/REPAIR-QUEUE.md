@@ -399,16 +399,16 @@ on it. Check both when authoring.
 blank ever falls on the lexical verb. If 100% of blanks are the auxiliary or
 modal, the pack tests nothing the student gets wrong.
 
-- [ ] **`b1_passives` — 48 of 48 blanks on the auxiliary `be`.** `English ____
+- [x] **`b1_passives` — 48 of 48 blanks on the auxiliary `be`.** — **FIXED 9e0867b (22 of 48 moved onto the participle; explanations 1→9).** `English ____
   spoken here` → *is*. The past participle is the hard part for a Czech
   speaker (*was stole* / *was stolen*), and it is never produced once in the
   bank. Also the worst explanation bank in the corpus: **1 explanation for
   48 items**.
-- [ ] **`a2_modals_must_should` — 48 of 48 blanks on the modal.** `I ____ go
+- [x] **`a2_modals_must_should` — 48 of 48 blanks on the modal.** — **FIXED b524cc2 (18 of 48 moved onto the bare verb; explanations 4→8).** `I ____ go
   now` → *must*. Never the bare verb after it, so *must to go* — the exact
   error class as Patrik's *what can we to do* — is untestable. `a1_can` had
   the identical fault and was fixed 2026-08-19 (9 of 24 blanks moved).
-- [ ] **`b1_used_to` — 48 of 48 blanks on `used to`.** `I ____ live in Brno`
+- [x] **`b1_used_to` — 48 of 48 blanks on `used to`.** — **FIXED b524cc2 (14 base-verb + 4 use/used blanks; explanations 2→7).** `I ____ live in Brno`
   → *used to*. Never the base verb, so *used to went* is untestable.
   2 explanations for 48 items.
 
@@ -430,7 +430,7 @@ The explanation is what the student reads when they get it wrong. Banks of
 
 - [ ] `a2_adverbs_order` — 50 items, **1** explanation
 - [ ] `b1_it_subject` — 48 items, **1**
-- [ ] `b1_passives` — 48 items, **1** (see above)
+- [x] `b1_passives` — 48 items, **1** → **9, 9e0867b**
 - [ ] `b2_second_conditional` — 72 items, 3
 - [ ] `b2_third_conditional` — 72 items, 3
 - [ ] `b1_present_perfect_vs_past` — 64 items, 3
@@ -500,3 +500,78 @@ Run `py -m http.server 8097`, hard-refresh, then walk each unit end to end.
 - [ ] **Flag button** reachable on every screen (`rue_speedrun_flag_button`).
 - [ ] **Progress** — finishing a unit earns fruit and it survives a refresh.
 - [ ] **Way home** — RUE top left returns to the map from mid-drill.
+
+---
+
+## SMOKE PASS — the three monotonous-blank packs · 2026-08-20
+
+All three had 100% of blanks on the auxiliary or modal, so the form the rule
+actually governs was never produced. 58 blanks were moved onto that form and
+authored `quiz_options` were added so the choice tests the form, not the verb.
+Gates are green but **no one has walked a single one of these in a browser.**
+
+Run `py -m http.server 8097`, hard-refresh, flag anything wrong with the flag
+button rather than stopping to write it down.
+
+### b1_passives — `#b1_passives` · 22 of 48 blanks new
+
+- [ ] **Deep link cold.** Fresh tab, no progress — opens on the intro.
+- [ ] **Participle blank.** `My bike was ____ yesterday. (steal)` → *stolen*.
+  Typing *stole* must fail — that is the whole point of the rewrite.
+- [ ] **Same-verb options.** The quiz choices should be *stolen / stole /
+  steal / stealing*, never a mix of be-forms. Check none of the four reads as
+  also-correct in that frame.
+- [ ] **-ing withheld.** Seven frames deliberately have no *-ing* option
+  because it is grammatical there (*were breaking*, *is still growing*,
+  *will be sending*). Flag if you see one that slipped through.
+- [ ] **be-form blanks still work** — 26 of them, unchanged. `The emails ____
+  sent every morning` → *are*.
+- [ ] **Explanations** — 9 now, by family. On a wrong participle you should
+  read the third-form line, on a wrong be-form the agreement line. Check you
+  never get the wrong one.
+- [ ] **Three fallback items** (`will be finished`, `must be completed`,
+  `will be sent`) draw distractors from siblings, so their options are
+  be-forms. That is intentional — the discrimination is "a participle goes
+  here". Flag if it reads as too easy.
+
+### a2_modals_must_should — `#a2_modals_must_should` · 18 of 48 blanks new
+
+- [ ] **Deep link cold.**
+- [ ] **Bare verb after the modal.** `I must ____ now. (go)` → *go*, options
+  *go / to go / goes*. This is Patrik's *what can we to do* made testable.
+- [ ] **Third person.** `He should ____ his mum. (call)` → *call*, not *calls*.
+- [ ] **Question frame.** `Must I ____ now? (pay)` — check the gap renders
+  before the `?`.
+- [ ] **Negative frame.** `You mustn't ____ here. (park)`.
+- [ ] **mustn't vs don't have to** — the explanation now says mustn't is a
+  ban. Check it reads right at A2.
+- [ ] **Match still works** — this pack runs match+quiz.
+
+### b1_used_to — `#b1_used_to` · 18 of 48 blanks new
+
+- [ ] **Deep link cold.**
+- [ ] **Base verb.** `I used to ____ in Brno. (live)` → *live*, options
+  *live / lived / to live*. *used to went* is now testable.
+- [ ] **be.** `I used to ____ shy. (be)` → *be*, options *be / was / been*.
+- [ ] **use vs used — the new half.** `Did you ____ to play tennis?` → *use*,
+  options *use / used / uses*. **These four items carry NO lemma hint on
+  purpose** — `(use)` would have been the answer. Check the frame still reads
+  clearly without it; that is the one judgement call in this batch.
+- [ ] **Negative.** `He did not use to ____ in Prague. (work)` → *work*.
+- [ ] **Explanations** — 7 now. Wrong *used to went* should get the base-verb
+  line; wrong *Did you used to* should get the "did carries the past" line.
+
+### Noted, not fixed — `b1_used_to` content is thin
+
+- [ ] The bank is eight sentences rewritten four ways (I / She / Did you /
+  He did not): *live in Brno · play tennis · go there every summer · work in
+  Prague · be shy · call every day · cook · watch a lot of TV*. 48 items,
+  ≈12 distinct situations. The blanks are now varied but the **content**
+  repeats. Not touched — it is authoring, not repair. Your call whether it
+  matters in a lesson.
+
+### All three
+
+- [ ] **Flag button** reachable on every screen.
+- [ ] **Progress** survives a refresh.
+- [ ] **Way home** — RUE top left returns to the map mid-drill.
