@@ -185,6 +185,31 @@ function fullFormOf(item) {
   return "";
 }
 
+/* Zero-article items answer with a dash. norm() strips dashes to nothing and
+ * acceptsList drops empty forms, so a dash could be CLICKED in Quiz (which
+ * compares raw strings) but could never be TYPED correctly — the answer
+ * normalised away to nothing. Both sides map to one sentinel instead, so the
+ * dash survives grading. Typed "-", an em dash, "no article", "none" and an
+ * empty box all count. (James, 2026-08-20: "make the zero article a dash".) */
+const ZERO = "§zero";
+const ZERO_WORDS = /^(no article|none|nothing|zero|bez clenu|bez členu)$/i;
+
+const DASHES = new Set([
+  "-", "_", "‐", "‑", "‒", "–", "—", "―", "−",
+]);
+
+function isZeroMark(s) {
+  const t = String(s == null ? "" : s).trim();
+  if (ZERO_WORDS.test(t)) return true;
+  // Every character must be a dash or whitespace — written as a set lookup,
+  // not a character class: "_-‐" inside [] is a RANGE that swallows every
+  // letter, which briefly made "the" count as a zero mark.
+  for (const ch of t) {
+    if (!DASHES.has(ch) && !/\s/.test(ch)) return false;
+  }
+  return true;
+}
+
 function acceptsList(item, mode) {
   const raw = [];
   if (mode === "ending_gap") {
@@ -194,7 +219,7 @@ function acceptsList(item, mode) {
   }
   if (item.answer != null) raw.push(item.answer);
   if (Array.isArray(item.accepts)) raw.push(...item.accepts);
-  return [...new Set(raw.map(norm).filter(Boolean))];
+  return [...new Set(raw.map((r) => (isZeroMark(r) ? ZERO : norm(r))).filter(Boolean))];
 }
 
 /* Czech has no articles, so a Czech prompt cannot pick between a and the —
@@ -214,7 +239,9 @@ let LENIENT_ARTICLES = true;
 let LENIENT_POSSESSIVES = true;
 
 function possessiveMatch(u, forms) {
-  if (!LENIENT_POSSESSIVES || !u.includes(" ")) return false;
+  // DETERMINERS includes a/an/the, so a pack that teaches ARTICLES must switch
+  // this off too — otherwise strict_articles would be silently undone here.
+  if (!LENIENT_ARTICLES || !LENIENT_POSSESSIVES || !u.includes(" ")) return false;
   return determinerMatch(u, forms);
 }
 
@@ -262,10 +289,13 @@ function isCorrect(user, item, mode) {
     if (!u) return false;
     return acceptsList(item, "full_word").includes(u);
   }
-  const u = norm(user);
+  const u = isZeroMark(user) ? ZERO : norm(user);
   if (!u) return false;
   const forms = acceptsList(item, mode);
   if (forms.includes(u)) return true;
+  // A zero-article item is answered by the absence of a word: nothing else
+  // can fold into it, so stop before the lenient passes below.
+  if (u === ZERO || forms.includes(ZERO)) return false;
   if (articleMatch(u, forms)) return true;
   if (possessiveMatch(u, forms)) return true;
   if (placeMatch(u, forms)) return true;

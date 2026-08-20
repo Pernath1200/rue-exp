@@ -280,9 +280,16 @@ function articleVariants(normed) {
  * A pack can set strict_place to opt out where the contrast is the lesson.
  */
 const EXISTENTIAL = /\bthere (is|are|was|were)\b|\b(is|are|was|were) there\b/;
+/* The same Czech word opens both English sentences: "Je tu pes" is equally
+ * "There is a dog" and "Here is a dog". English splits existential from
+ * deictic; Czech does not, so the student has no cue to pick between them and
+ * a unit that is not teaching that contrast must not fail them for it. Packs
+ * that DO teach it set strict_place. (James, 2026-08-20, smoking a1_articles:
+ * "be as generous as possible with tu and here and there: it's annoying".) */
+const OPENER = /^(there|here) (is|are|was|were)\b/;
 
 function placeVariants(normed) {
-  if (!EXISTENTIAL.test(normed)) return [normed];
+  if (!EXISTENTIAL.test(normed) && !OPENER.test(normed)) return [normed];
   const toks = normed.split(" ");
   const out = new Set([normed]);
   const dropHere = (list) => list.filter((t) => t !== "here");
@@ -294,6 +301,24 @@ function placeVariants(normed) {
     const cut = toks.slice(0, -1);
     out.add(cut.join(" "));
     out.add(dropHere(cut).join(" "));
+  }
+  /* Maximum generosity on the tu/here/there cluster, by James's ruling: every
+   * variant built above also gets its opener twin, and any leftover standalone
+   * "here"/"there" is optional inside these sentences. Both sides of the
+   * comparison are reduced the same way, so it works in either direction. */
+  for (const v of [...out]) {
+    if (OPENER.test(v)) {
+      out.add(v.replace(OPENER, (m, w, be) => (w === "there" ? "here" : "there") + " " + be));
+    }
+  }
+  for (const v of [...out]) {
+    const t = v.split(" ");
+    const body = t.slice(2).filter((x) => x !== "here" && x !== "there");
+    if (OPENER.test(v) && body.length !== t.length - 2) {
+      out.add([t[0], t[1], ...body].join(" "));
+      out.add(["there", t[1], ...body].join(" "));
+      out.add(["here", t[1], ...body].join(" "));
+    }
   }
   return [...out].filter(Boolean);
 }
@@ -790,6 +815,15 @@ export function startPractice(root, block, opts) {
   }
 
   if (typeof opts.onTouch === "function") opts.onTouch();
+
+  /* A pack with no Use stage settles that mode the moment the unit is opened,
+   * not when Type happens to be finished. Reporting it at Type-completion only
+   * left anyone who had ALREADY cleared Type stranded on 3/4 for ever, with no
+   * stage left to play. The mode is vacuously complete — the stage does not
+   * exist — and fruit still needs Quiz and Type genuinely clear, so this
+   * cannot hand out a unit nobody worked for. (James, 2026-08-20: "social
+   * should be done, fruited, even without the use part".) */
+  if (noSentence) reportMode("sentence", { score: 1, total: 1 });
 
   function clearKey() {
     if (state.keyHandler) {
