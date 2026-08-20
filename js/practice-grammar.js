@@ -717,11 +717,25 @@ export function startPractice(rawPack, root, opts) {
    * Match board: up to DEFAULT_PASS pairs (or whole bank if shorter).
    * Shuffle order of left rows and right chips.
    */
+  /* Twelve pairs is right for words and a wall of text for sentences. A
+   * sentence-to-sentence board gets 8, which is what fits a screen without
+   * scrolling. Sized from the content, not per pack, so it holds everywhere.
+   * (James, 2026-08-20, smoking a2_first_conditional: "too much words for a
+   * single page — they are full sentences, we only need 8, not 12".) */
+  function matchBoardSize(pairs) {
+    if (!pairs.length) return DEFAULT_PASS;
+    let total = 0;
+    for (const p of pairs) total += String(p.en || p.prompt || "").length;
+    const avg = total / pairs.length;
+    return avg > 24 ? 8 : DEFAULT_PASS;
+  }
+
   function newMatchBoard() {
-    const raw = samplePass(pack.match || [], null, focusStructures, {
+    const pool = pack.match || [];
+    const raw = samplePass(pool, null, focusStructures, {
       packId: pack.id,
       stage: "match",
-    });
+    }).slice(0, matchBoardSize(pool));
     const leftSrc = shuffle(raw);
     const left = leftSrc.map((p, i) => ({
       id: i,
@@ -1749,7 +1763,7 @@ export function startPractice(rawPack, root, opts) {
     return esc(s).replace(/'/g, "&#39;");
   }
 
-  /* Intro prose is authored with **bold** and *italic* markdown. Escape
+  /* Intro prose is authored with **bold**, *italic* and ~~strikethrough~~. Escape
    * FIRST, then turn the surviving asterisk runs into tags — never the other
    * way round, or pack text could inject markup. Bold must run before italic
    * or `**x**` would be eaten as an italic wrapping `*x*`.
@@ -1757,6 +1771,7 @@ export function startPractice(rawPack, root, opts) {
    * printing raw (James, smoking a1_word_classes). */
   function escMd(s) {
     return esc(s)
+      .replace(/~~([^~]+)~~/g, '<s class="wrong-eg">$1</s>')
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
       // \S guard: a lone "a * b" must not become "a <em> b</em>".
       .replace(/(^|[^*])\*(\S[^*\n]*?)\*(?!\*)/g, "$1<em>$2</em>");

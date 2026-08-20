@@ -547,12 +547,13 @@ function escapeHtml(s) {
     .replace(/"/g, "&quot;");
 }
 
-/* Intro prose is authored with **bold** / *italic* markdown, same as the
+/* Intro prose is authored with **bold** / *italic* / ~~struck~~, same as the
  * grammar packs. Escape FIRST, then tag — never the reverse. Bold before
  * italic or `**x**` is eaten as italic wrapping `*x*`. Added 2026-08-12:
  * the vocab intro renderer had no markdown at all. */
 function escMd(s) {
   return escapeHtml(s)
+    .replace(/~~([^~]+)~~/g, '<s class="wrong-eg">$1</s>')
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/(^|[^*])\*(\S[^*]*?)\*(?!\*)/g, "$1<em>$2</em>");
 }

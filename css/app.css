@@ -2215,3 +2215,12 @@ button.brand:hover { color: var(--accent); }
   margin-top: -0.25rem;
   margin-bottom: 0.6rem;
 }
+
+/* Wrong examples inside intro prose (~~like this~~) — deliberately MILD:
+   the sentence must stay readable, it is being shown so it is recognised. */
+.wrong-eg {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba(220, 120, 110, 0.75);
+  opacity: 0.72;
+}
