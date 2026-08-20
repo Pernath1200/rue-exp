@@ -623,7 +623,8 @@ export function startPractice(root, block, opts) {
    * dropped and the fruit lands after Type. (James, 2026-08-20, smoking
    * a1_core_frames_social: "the Use is the same as the type in — let's just
    * cut it and give the fruit after type in".) */
-  const noSentence = block.ladder ? block.ladder.sentence === false : false;
+  const ladderCfg = opts.ladder || block.ladder || null;
+  const noSentence = ladderCfg ? ladderCfg.sentence === false : false;
   const focusStructures =
     Array.isArray(block.focus_structures) && block.focus_structures.length
       ? block.focus_structures

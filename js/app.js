@@ -1246,6 +1246,10 @@ async function openNode(node, launch = {}) {
         packId: pack.id || node.id,
         packTitle: pack.title || node.label,
         packLevel: (node.levels && node.levels[0]) || pack.level || "?",
+        // Pack-level, not block-level: practiceBlock is built from the pack's
+        // BLOCK, so anything living at the top of the JSON has to be passed
+        // through explicitly or the engine never sees it.
+        ladder: pack.ladder || null,
         senseMap: STATE.senseMap,
         onTouch: () => touchVocabBlock(blockId, node.id),
         onModeComplete: (mode, meta) => {
