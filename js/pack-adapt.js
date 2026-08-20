@@ -75,6 +75,105 @@ function acceptedKeys(it) {
  * Returns null when fewer than two distinct options can be built (the item is
  * then left out of the quiz rather than shipped unanswerable).
  */
+/* When a gap names its verb — "everybody ____ here. (be)" — the task is to
+ * pick the right FORM of that verb. Distractors drawn from other items give
+ * you "calls" and "study", which are eliminable without knowing anything and
+ * test nothing. These are the forms a learner actually confuses.
+ * (James, 2026-08-20, smoking a2_first_conditional: "it should have the
+ * common mistakes, including will be, be, would be etc".) */
+const IRREGULAR = {
+  be: ["am", "is", "are", "was", "were", "been", "being"],
+  have: ["has", "had", "having"],
+  do: ["does", "did", "done", "doing"],
+  go: ["goes", "went", "gone", "going"],
+  get: ["gets", "got", "gotten", "getting"],
+  make: ["makes", "made", "making"],
+  take: ["takes", "took", "taken", "taking"],
+  come: ["comes", "came", "coming"],
+  see: ["sees", "saw", "seen", "seeing"],
+  say: ["says", "said", "saying"],
+  know: ["knows", "knew", "known", "knowing"],
+  think: ["thinks", "thought", "thinking"],
+  give: ["gives", "gave", "given", "giving"],
+  find: ["finds", "found", "finding"],
+  tell: ["tells", "told", "telling"],
+  leave: ["leaves", "left", "leaving"],
+  feel: ["feels", "felt", "feeling"],
+  bring: ["brings", "brought", "bringing"],
+  buy: ["buys", "bought", "buying"],
+  pay: ["pays", "paid", "paying"],
+  meet: ["meets", "met", "meeting"],
+  win: ["wins", "won", "winning"],
+  run: ["runs", "ran", "running"],
+  eat: ["eats", "ate", "eaten", "eating"],
+  drink: ["drinks", "drank", "drunk", "drinking"],
+  write: ["writes", "wrote", "written", "writing"],
+  speak: ["speaks", "spoke", "spoken", "speaking"],
+  begin: ["begins", "began", "begun", "beginning"],
+  understand: ["understands", "understood", "understanding"],
+};
+
+function thirdPerson(v) {
+  if (/(s|sh|ch|x|z|o)$/.test(v)) return v + "es";
+  if (/[^aeiou]y$/.test(v)) return v.slice(0, -1) + "ies";
+  return v + "s";
+}
+
+function doubles(v) {
+  // One syllable, consonant-vowel-consonant: swim -> swimming, stop -> stopped.
+  // w, x and y never double.
+  return /^[^aeiou]*[aeiou][^aeiouwxy]$/.test(v);
+}
+
+function pastForm(v) {
+  if (/e$/.test(v)) return v + "d";
+  if (/[^aeiou]y$/.test(v)) return v.slice(0, -1) + "ied";
+  if (doubles(v)) return v + v.slice(-1) + "ed";
+  return v + "ed";
+}
+
+function ingForm(v) {
+  if (/[^aeiou]e$/.test(v)) return v.slice(0, -1) + "ing";
+  if (doubles(v)) return v + v.slice(-1) + "ing";
+  return v + "ing";
+}
+
+/* The lemma a gap cues, if it names one: "… ____ here. (be)" -> "be". */
+function cuedLemma(gap) {
+  const m = String(gap || "").match(/\(([a-z][a-z ]{0,14})\)\s*$/i);
+  if (!m) return null;
+  const w = m[1].trim().toLowerCase();
+  return /^(not )?[a-z]+$/.test(w) ? w : null;
+}
+
+/* A gap sitting after can/could/must/should takes a bare infinitive, so
+ * "will swim" is not a mistake anyone makes there — but "to swim" and
+ * "swimming" are. */
+const MODAL_BEFORE = /(^|\s)(can|could|must|should|might|may|will|would|shall)\s+_{2,}/i;
+
+function negativeForms(v) {
+  const t = thirdPerson(v);
+  return ["doesn't " + v, "don't " + v, "won't " + v, "isn't " + ingForm(v),
+    "not " + v, "didn't " + v, t];
+}
+
+function formsOf(v, gap) {
+  if (/^not /.test(v)) return negativeForms(v.slice(4).trim());
+  const irr = IRREGULAR[v] || null;
+  // An irregular verb NEVER gets the regular endings — "haves", "bed" and
+  // "bes" are not mistakes a learner makes, they are nonsense words.
+  const third = irr ? irr[0] : thirdPerson(v);
+  const past = irr ? (irr.find((f) => !/(s|ing)$/.test(f)) || null) : pastForm(v);
+  const ing = irr ? (irr.find((f) => /ing$/.test(f)) || ingForm(v)) : ingForm(v);
+  // Ordered by how often each is the actual mistake: the bare form and
+  // will + base lead, because that is the classic conditional/time-clause error.
+  const out = MODAL_BEFORE.test(String(gap || ""))
+    ? [v, "to " + v, ing, third, past, "is " + ing]
+    : [v, "will " + v, third, "would " + v, past, ing, "to " + v, "is " + ing];
+  if (irr) irr.forEach((f) => out.push(f));
+  return out.filter(Boolean);
+}
+
 function choicesFor(it, siblings) {
   const answer = it.gap_answer;
   if (!key(answer)) return null;
@@ -95,6 +194,19 @@ function choicesFor(it, siblings) {
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
   const distractors = [];
+
+  // Forms of the cued verb first — they are the mistakes worth offering.
+  const lemma = cuedLemma(it.gap);
+  if (lemma) {
+    for (const f of formsOf(lemma, it.gap)) {
+      if (distractors.length >= 3) break;
+      const k = key(f);
+      if (!k || seen.has(k) || banned.has(k)) continue;
+      seen.add(k);
+      distractors.push(f);
+    }
+  }
+
   for (const s of siblings) {
     if (distractors.length >= 3) break;
     const cand = s.gap_answer;
