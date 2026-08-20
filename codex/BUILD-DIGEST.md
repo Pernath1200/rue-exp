@@ -6,6 +6,94 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-20 · local (interactive with James) · `main`
+
+### Headline
+**`b1_word_order_fronting` — new B1 unit, 36 items.** From Tomas's error log
+("for me is it", 5 word-order errors). James authorised the unit by dropdown
+mid-lesson. Also fixed a tree-rebuild trap found on the way in.
+
+### What landed
+
+| # | What |
+|---|------|
+| 1 | `b1_word_order_fronting` **NEW** · B1 · `sentence_syntax` · G_SS-B1B2-01 · 3 blocks x 12 · 7 intro cards · all five stages populated (match/quiz/order_click/type/use 36 each) |
+| 2 | 9 nodes backfilled into `data/nodes-*.json` — they existed only in `tree.json` |
+| 3 | 12 ids restored to the registry's `path_order_a2/b1/b2/c1` arrays |
+
+**Unit content.** Three strands: adverbial opener + real subject
+(`b1_wof_adverbial`); opener + it/there in the subject seat
+(`b1_wof_subject_seat`); opener that is a whole clause (`b1_wof_clause`).
+`check.sequence` is `["order_click", "quiz"]` — order is the teaching point.
+Quiz distractors are authored, not borrowed: every item offers the inverted
+form and the subject-dropped form, i.e. the two errors Czech speakers actually
+produce. Placed after `b1_it_subject` on the B1 path — that unit already
+covers dummy *it* standing alone (48 items, incl. the "There is necessary
+to…" trap), so this one drills it only under a fronted phrase.
+
+Deliberately NOT covered: fronted-complement repair ("Very difficult was the
+weather") appears in an intro card but has no drill strand, and clefts
+("what's important is…") are left to `b2_cleft_sentences` / `c1_clefts_fronting`.
+
+### The rebuild trap (found, fixed — worth knowing)
+
+`py scripts/sync_from_stable.py --rebuild-tree`, which AGENTS.md tells you to
+run after every pack change, **deleted 9 live units** on first run here:
+`a2_some_any_no`, `b1_degree_adverbs`, `b1_prefixes`, `b1_suffixes`,
+`b2_word_formation`, `c1_word_formation`, `b2_delexical_collocations`,
+`b2_false_friends`, `b2_fixed_phrases` — and dropped 12 ids off the level
+paths (those 9 plus `b2_clear_claims`, `b2_future_in_the_past`,
+`b2_cleft_sentences`, `b2_emphasis_fronting`, `b2_inversion`,
+`c1_hedging_stance`). Cause: the 2026-08-16 run routed those units live by
+editing `data/tree.json` directly and never registered them in
+`data/nodes-*.json` or in the registry's `path_order_*` arrays, which are what
+the rebuild actually reads. Both registries are now backfilled, so a rebuild
+no longer loses them.
+
+**Still open — `tree.json` is not reproducible from `spine.json`.** Even after
+the backfill, a rebuild reorders A1: `a1_articles` moves from step 5 to step
+18, which sends `check_pretaught` from 105 to 180 (a/an/the and my/your/'s
+demanded long before they are taught). The committed tree has the better
+order; `spine.json` is the stale side. **So this unit was inserted into
+`tree.json` surgically, not by rebuilding** — nodes[], `path_order_b1` (after
+`b1_it_subject`), `level_stats.B1`, and three `related` back-references.
+Structural diff verified: one node gained, none lost, every path sequence
+otherwise byte-identical. Until spine.json is reconciled, do not run
+`--rebuild-tree` on this repo.
+
+### Gates
+
+| Gate | HEAD before | After |
+|------|-------------|-------|
+| `verify_pack` | 169 packs · 0 err · 12 warn | 170 packs · **0 err · 12 warn** |
+| `check_playable` | 98 units · 0 err | **99 units · 0 err** |
+| `check_codex` | PASSED | **PASSED** |
+| `check_pretaught` | 105 vs baseline 105 | **105 vs 105 — ratchet ok** |
+| `audit --check` | 266 vs baseline 140 — FAIL | **266 vs 140 — FAIL (unchanged)** |
+| `smoke.py` | FAILED (cache-buster) | **FAILED (cache-buster)** |
+
+The new pack contributes 4 unknown types (*clients, born, although, invoice*)
+and, by teaching them at B1 step 9, clears 4 downstream — audit total is
+unchanged at 266.
+
+**Two pre-existing failures, neither touched by this run.** (a) The audit
+ratchet baseline is stale at 140 while the tree has carried 266 since the
+B1/B2/C1 exam-drill content landed; it fails identically at HEAD. (b) `smoke.py`
+fails the cache-buster check ("js/ or css/ changed but `?v=` is still
+`app.js=2026-08-18-b1affix`") — verified failing at HEAD in a clean worktree,
+and no `js/` or `css/` file was touched here. Both need a decision from James:
+re-baseline the audit, and bump the `?v=` stamp.
+
+### To smoke
+`b1_word_order_fronting` end to end — Order especially, since it is only the
+second pack to use `order_click` (after `a1_word_order`) and the first to pair
+it with Quiz in `check.sequence`. Czech worth your eye on `b1_wof_clause`
+items 1, 9, 10 and 12 (the longer subordinate clauses).
+
+**Not committed** — working tree only.
+
+---
+
 ## 2026-08-16 · local (interactive with James) · `main`
 
 ### Headline
