@@ -3,7 +3,7 @@
   "title": "Places",
   "level": "A1",
   "tree_node": "leaf_places",
-  "note": "Places leaf. P1 Oxford fill: travel + town culture. Directions thinned of pure grammar. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07",
+  "note": "Places leaf. P1 Oxford fill: travel + town culture. Directions thinned of pure grammar. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07 · 2026-08-20 (James, smoke): \"it's saying pred is not before\". Bare před/za gave no way to know whether the place or the time sense was wanted — a1_time_numbers already marks před (časem) → ago, but the spatial pair was unmarked. Cues now say (místem), and před also accepts before, which the app teaches nowhere.",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -338,13 +338,20 @@
         },
         {
           "en": "behind",
-          "cz": "za",
-          "use": []
+          "cz": "za (místem)",
+          "use": [],
+          "accepts": [
+            "behind"
+          ]
         },
         {
           "en": "in front of",
-          "cz": "před",
-          "use": []
+          "cz": "před (místem)",
+          "use": [],
+          "accepts": [
+            "in front of",
+            "before"
+          ]
         },
         {
           "en": "come",
