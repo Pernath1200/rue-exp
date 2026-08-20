@@ -1,3 +1,4 @@
+import { expandContractions } from "./contractions.js";
 /**
  * pack-adapt.js — translate a RUE grammar pack into the shape the practice
  * ladder expects.
@@ -24,7 +25,7 @@
 
 /** Normalised key for answer/distractor comparison. */
 function key(s) {
-  return String(s == null ? "" : s)
+  return expandContractions(String(s == null ? "" : s))
     .toLowerCase()
     .replace(/[!?.,;:"'()]/g, "")
     .replace(/\s+/g, " ")

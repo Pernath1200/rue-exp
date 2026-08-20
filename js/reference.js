@@ -1,3 +1,5 @@
+import { expandContractions } from "./contractions.js";
+
 /**
  * Tables — reference panel + free practice (James, 2026-08-17).
  * Ported from arta-lat's Tabulae / rupl-exp's Tabele, then simplified on
@@ -33,7 +35,7 @@ function esc(s) {
 
 /** Grading normaliser: case, spacing and trailing punctuation only. */
 function normAns(s) {
-  return String(s == null ? "" : s)
+  return expandContractions(String(s == null ? "" : s))
     .toLowerCase()
     .replace(/[.?!,;:]+$/, "")
     .replace(/\s+/g, " ")

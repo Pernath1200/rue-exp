@@ -19,7 +19,8 @@ import {
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
 import { canonSynonyms } from "./synonyms.js";
-import { articleVariants, placeVariants, determinerMatch, expandContractions } from "./practice-vocab.js";
+import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
+import { expandContractions } from "./contractions.js";
 import { adaptGrammarPack } from "./pack-adapt.js";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
@@ -165,7 +166,7 @@ function norm(s) {
 }
 
 function normEnding(s) {
-  return String(s)
+  return expandContractions(String(s))
     .toLowerCase()
     .replace(/[!?.,;:"'()\s]/g, "")
     .trim();
