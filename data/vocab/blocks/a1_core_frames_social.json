@@ -26,7 +26,7 @@
   "level": "A1",
   "tree_node": "trunk_social_a1",
   "practice": "frames",
-  "note": "P6 social formulae. Gap on the key word/chunk. Whole-line practice in Match/Quiz/Sentence.",
+  "note": "P6 social formulae. Gap on the key word/chunk. Whole-line practice in Match/Quiz/Sentence. · 2026-08-20 (James, smoke): \"ahoj can mean hi or bye — no way to know in this question\". Two halves: the Czech cue now fixes the SENSE (při setkání / při loučení), because neformálně alone does not separate greeting from parting; and each item accepts the synonyms its Czech genuinely permits, so a student is never marked wrong for a reading the prompt allows.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
     "hello",
@@ -48,7 +48,7 @@
       "items": [
         {
           "en": "Hello.",
-          "cz": "Ahoj. / Dobrý den.",
+          "cz": "Dobrý den. / Ahoj. (při setkání)",
           "gap": "____.",
           "gap_answer": "Hello",
           "gap_accepts": [
@@ -57,15 +57,15 @@
             "hi"
           ],
           "accepts": [
-            "Hello",
+            "Hello.",
             "Hi.",
-            "Hi",
-            "Hello!"
+            "Hello",
+            "Hi"
           ]
         },
         {
           "en": "Hi.",
-          "cz": "Ahoj. (neformálně)",
+          "cz": "Ahoj. (neformálně, při setkání)",
           "gap": "____.",
           "gap_answer": "Hi",
           "gap_accepts": [
@@ -74,14 +74,17 @@
             "hello"
           ],
           "accepts": [
-            "Hi",
+            "Hi.",
             "Hello.",
-            "Hello"
+            "Hey.",
+            "Hi",
+            "Hello",
+            "Hey"
           ]
         },
         {
           "en": "Goodbye.",
-          "cz": "Nashledanou. / Sbohem.",
+          "cz": "Nashledanou. / Sbohem. (při loučení)",
           "gap": "____.",
           "gap_answer": "Goodbye",
           "gap_accepts": [
@@ -90,15 +93,15 @@
             "bye"
           ],
           "accepts": [
-            "Goodbye",
+            "Goodbye.",
             "Bye.",
-            "Bye",
-            "Good bye."
+            "Goodbye",
+            "Bye"
           ]
         },
         {
           "en": "Bye.",
-          "cz": "Ahoj. (na rozloučenou)",
+          "cz": "Ahoj. (neformálně, při loučení)",
           "gap": "____.",
           "gap_answer": "Bye",
           "gap_accepts": [
@@ -107,9 +110,13 @@
             "goodbye"
           ],
           "accepts": [
-            "Bye",
+            "Bye.",
             "Goodbye.",
-            "Goodbye"
+            "Bye bye.",
+            "See you.",
+            "Bye",
+            "Goodbye",
+            "See you"
           ]
         },
         {
@@ -121,15 +128,15 @@
             "thanks"
           ],
           "accepts": [
-            "Thank you",
+            "Thank you.",
             "Thanks.",
-            "Thanks",
-            "Thank you!"
+            "Thank you",
+            "Thanks"
           ]
         },
         {
           "en": "Thanks.",
-          "cz": "Díky.",
+          "cz": "Díky. (neformálně)",
           "gap": "____.",
           "gap_answer": "Thanks",
           "gap_accepts": [
@@ -137,8 +144,9 @@
             "thanks"
           ],
           "accepts": [
-            "Thanks",
+            "Thanks.",
             "Thank you.",
+            "Thanks",
             "Thank you"
           ]
         },
@@ -148,8 +156,9 @@
           "gap": "Yes, ____.",
           "gap_answer": "please",
           "accepts": [
-            "Yes, please",
-            "Yes, please."
+            "Yes, please.",
+            "Yes please.",
+            "Yes, please"
           ]
         },
         {
@@ -181,13 +190,14 @@
         },
         {
           "en": "Sorry.",
-          "cz": "Promiň. / Promiňte.",
+          "cz": "Promiň. / Promiňte. (omluva)",
           "gap": "____.",
           "gap_answer": "Sorry",
           "accepts": [
-            "Sorry",
+            "Sorry.",
             "I'm sorry.",
-            "I am sorry."
+            "Excuse me.",
+            "Sorry"
           ]
         },
         {
@@ -196,8 +206,9 @@
           "gap": "____ me.",
           "gap_answer": "Excuse",
           "accepts": [
-            "Excuse me",
-            "Excuse me."
+            "Excuse me.",
+            "Sorry.",
+            "Excuse me"
           ]
         },
         {
@@ -207,8 +218,9 @@
           "gap_answer": "meet",
           "lemma": "nice",
           "accepts": [
-            "Nice to meet you",
-            "Nice to meet you."
+            "Nice to meet you.",
+            "Pleased to meet you.",
+            "Nice to meet you"
           ]
         }
       ]
