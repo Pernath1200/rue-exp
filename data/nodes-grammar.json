@@ -638,7 +638,8 @@
    "content": "blocks/b1_articles_advanced.json",
    "codex_unit": "G_NP-B1B2-01",
    "related": [
-    "a1_articles"
+    "a1_articles",
+    "b2_articles_correction"
    ],
    "note": "the / zero / a · institutions"
   },
@@ -1048,7 +1049,25 @@
    "note": "zero article for general statements (plural + uncountable) · `the` + adjective/nationality/unique nouns · generic vs specific minimal pairs · 4 strands x 12 · built 2026-08-07",
    "related": [
     "b1_articles_advanced",
-    "a1_articles"
+    "a1_articles",
+    "b2_articles_correction"
+   ],
+   "codex_unit": "G_NP-B1B2-01"
+  },
+  {
+   "id": "b2_articles_correction",
+   "label": "Articles: the mixed cases",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "blocks/b2_articles_correction.json",
+   "note": "error-correction sheet from Václav's lesson turned into 28 gap items · first mention vs known · the forced by of/superlative/date · names · institutions · generic zero · built 2026-08-22",
+   "related": [
+    "b2_articles_genericity",
+    "b1_articles_advanced"
    ],
    "codex_unit": "G_NP-B1B2-01"
   },
@@ -1475,7 +1494,8 @@
    "note": "Live · the two SINGULAR generics (a + singular as a rule about any member, the + singular as the species) and where the definite singular stops being generic · article-free phrases: by car / on foot, in person, by hand, on average, in detail, in charge of, on behalf of, side by side, face to face, step by step · abstract nouns going countable: business/a business, experience/an experience, success/a success, difficulty/a difficulty · the forced by structure: that-clause and relative post-modification, the number of vs a number of · scoped around b1_articles_advanced and b2_articles_genericity · 48 items · cloud run 18",
    "related": [
     "b2_articles_genericity",
-    "b1_articles_advanced"
+    "b1_articles_advanced",
+    "b2_articles_correction"
    ],
    "codex_unit": "G_NP-B2C1-01"
   },
@@ -1619,6 +1639,114 @@
     "c1_subjunctive"
    ],
    "codex_unit": "G_VC-B2C1-01"
+  },
+  {
+   "id": "a2_articles",
+   "label": "Articles at A2 — the vs zero",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "Second pass at articles between a1_articles and b1_articles_advanced — the vs zero with plurals and abstract nouns (*I like the dogs*, *The life is hard*). Highest-frequency Czech-L1 error.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "a2_simple_vs_continuous",
+   "label": "Present simple vs continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "Contrast unit — both forms are taught separately (a1_present_simple, a2_present_continuous) and never against each other. Czech has no progressive aspect, so the contrast is the error site.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_for_since",
+   "label": "For / since + duration",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "*I live here five years* — Czech uses present tense for continuing states. Pairs with a2_present_perfect.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_have_to",
+   "label": "Have to / don't have to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "Gap beside a2_modals_must_should. *mustn't* vs *don't have to* is a meaning reversal, not a register slip.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_past_questions",
+   "label": "Past questions & negatives",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "*Where did you went?* — do-support collapses in the past. Extends a1_questions_negatives.",
+   "codex_unit": "G_SS-A1B1-01"
+  },
+  {
+   "id": "a2_could_able",
+   "label": "Can / could / be able to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "Extends a1_can to past ability and polite / possibility uses.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_reflexives",
+   "label": "Reflexive verbs & -self",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "*I feel myself good*, *It happened me* — Czech se-verbs mis-map onto English. No equivalent unit anywhere in the app.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "a2_say_tell",
+   "label": "Say / tell / speak / talk",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "říct vs mluvit split differently in English. Survives untreated to C1.",
+   "codex_unit": "G_VC-A1B1-01"
+  },
+  {
+   "id": "a2_too_enough",
+   "label": "Too / enough",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "note": "Absent at every level. Both meaning and position go wrong.",
+   "codex_unit": "G_NP-A1B1-01"
   }
  ],
  "path_order_a2": [
@@ -1679,6 +1807,7 @@
   "b2_gerunds_infinitives_advanced",
   "b2_preposition_ing",
   "b2_articles_genericity",
+  "b2_articles_correction",
   "b2_quantifiers_advanced",
   "b2_discourse_markers",
   "b2_clear_claims",

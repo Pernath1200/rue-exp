@@ -6,6 +6,53 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-22 · local (interactive with James) · `main`
+
+### Headline
+**`b2_articles_correction` — new B2 unit, 28 items, 6 intro cards.** From the
+articles error-correction sheet used in Václav's lesson (15 sentences, 28
+errors). James's dropdown calls: gap-fill (not spot-and-fix) · standalone HTML
+AND app · new B2 block rather than folding into b1_articles_advanced /
+b2_articles_genericity (both cards-first: those units' cards don't teach these
+families) · one-line rule EN+CZ per item.
+
+### What landed
+- `data/grammar/blocks/b2_articles_correction.json` — one item per error, the
+  other error in the sentence shown corrected. Families: first mention vs known
+  (8) · `the` forced by of/superlative/date/compass (7) · a few, jobs (2) ·
+  names with/without `the` (5) · institutions, meals, last weekend (4) ·
+  generic zero (2). Zero-article items gap article+noun (b1 convention).
+- Registered in `data/nodes-grammar.json` (after b2_articles_genericity in
+  path_order_b2) and **spliced into `tree.json` by hand** — nodes[],
+  path_order_b2, level_stats.B2, three `related` back-references. The
+  rebuild trap from 2026-08-20 is still live: `--rebuild-tree` was tried
+  first and re-ordered A1/A2/B1/B2 from the stale spine (a1_articles 5 → 18,
+  check_pretaught 104 → 179), so it was reverted. Structural diff vs HEAD:
+  one node gained, none lost, every path otherwise identical.
+- Marking map +1 key. Names the unit teaches with `the` (the Alps, the
+  Vietnam War, the National Theatre) are gapped as whole phrases, like the
+  zero-article items — the student picks *the Alps* vs *Alps*.
+- Standalone twin generated from the same JSON:
+  `Desktop/Practice_Articles-Mixed-Cases_B2_2026-08-22.html`
+  (Rules → Quiz → Type it; 1–4 / Enter keys; EN+CZ rule on every answer).
+
+### Gates
+verify_pack 0 errors (12 pre-existing warnings, none on this pack) ·
+check_playable 0/0 · check_codex PASSED · check_pretaught 104 = baseline ·
+smoke PASSED · **audit --check: 280 vs baseline 264 — baseline reset to 280,
+authorised by James (dropdown).** The 19 unknown types are the sheet's own
+people and places (Janet, Laura Morgan, Nelson Mandela, Washington, India,
+Russia, Geneva, Oxford, USA, CIA) plus pavement, yoga, examination, lasagne,
+realised, suffer, south. Kept so the app matches the paper sheet the
+students already have. (HEAD's true total was 261; the 264 was stale.)
+
+### Forks for James
+- Dropped `in the hotel → a hotel` (both readable) — 28 not 29.
+- Czech lines are mine; worth a skim before students see the CZ.
+- Not committed / pushed — James's call.
+
+---
+
 ## 2026-08-20 · local (interactive with James) · `main`
 
 ### Headline

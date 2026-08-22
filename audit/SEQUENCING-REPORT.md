@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**264 unknown word types** across 31 live units (of 169).
+**280 unknown word types** across 32 live units (of 170).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -26,12 +26,13 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b2_present_perfect_continuous** (B2 grammar): dust, quiz, halfway, b, turn, episode, inbox, ticked, mess
 - **b2_past_perfect** (B2 grammar): recognise, thieves
 - **b2_future_in_the_past** (B2 grammar): interrupted, noon
-- **b2_second_conditional** (B2 grammar): practised×2, lottery, happen, truth, pizza
+- **b2_second_conditional** (B2 grammar): practised×2, lottery, truth, pizza
 - **b2_third_conditional** (B2 grammar): practised, crashed, truth, sunrise, realised, pizza, wi, fi, invoice, dawn, battery
+- **b2_articles_correction** (B2 grammar): janet×3, laura×2, morgan×2, pavement×2, russia, yoga, examination, nelson, mandela, washington, south, india, cia, lasagne, realised, geneva, oxford, usa, suffer
 - **b2_clear_claims** (B2 grammar): impact, teenagers, ruins, sum, ban, anymore, conclusion
 - **b2_word_formation** (B2 grammar): committee, incredibly, rally, trade, attempt, madrid, terribly, lunchtime, resignation, eclipse, injection
-- **b2_inversion** (C1 grammar): circumstances, chaos, seldom, until, happen
-- **b2_cleft_sentences** (C1 grammar): honesty, disliked, happened
+- **b2_inversion** (C1 grammar): circumstances, chaos, seldom, until
+- **b2_cleft_sentences** (C1 grammar): honesty, disliked
 - **b2_emphasis_fronting** (C1 grammar): care
 - **c1_hedging_stance** (C1 grammar): demand, contradict, findings, reform, cultural, policy
 - **c1_word_formation** (C1 grammar): led×2, fuel, trial, worldwide, statue, debate, involvement, convinced, instant, genetic, spread, crew, measured, trench, diving, grip, measure, doorway, cruised, crisis, unmarked, shelter, survives, donors, guarded, struck, astonishing, judge, dismissed, exile, shook, inquiry, campaign, aims, within, decade, roadworks, drummed, scandal, exposed, ministry, hikers, minor, grew, lifelong, feud, paused, overnight, fleet, volunteering, grant, marine, nations, moravia, shot, viral, among, thrived, firms, boilers, european, ruined, outbreak, worsened, corridors, memo, false, auditors, plot, turns, coincidences
