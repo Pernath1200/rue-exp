@@ -6,6 +6,28 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-24 · cloud (interactive content-quality check) · `cursor/content-quality-a1a2-4225`
+
+### Headline
+**A1/A2 content quality review.** Gates were already green. One live grading defect fixed; the rest is a written report.
+
+### What landed
+- `a1_prepositions_time` — *She calls her mother twice a day* / *Volá mámě dvakrát denně.* → *She helps her mother twice a day* / *Ona pomáhá mámě dvakrát denně.* Dropped-subject Use prompt (He/She both read) plus untaught `calls` (verb is taught later on `trunk_verbs_action_a1`). Teaching point is *twice **a** day*. `help`/`helps`/`mother` pool-legal `--before a1_prepositions_time`.
+- `audit/CONTENT-QUALITY-2026-08-24.md` — full gate table, prioritized leftovers (3 A2 trunk intros, glue-family DUD, 6 remaining A1/A2 unknown types, explanation poverty on `a2_adverbs_order`).
+
+### Gates
+verify_pack 0 errors (12 pre-existing `b2_clear_claims` warnings) · check_playable 0/0 · check_codex PASSED · audit --check: **279 vs baseline 280, tightened to 279**.
+
+### Forks for James
+- Did **not** re-lexify `until` / `link` on `a2_first_conditional` (teaching point + Patrik’s sentence).
+- Did **not** author the 3 missing A2 trunk intros or re-scope glue trunks (family-wide ruling still stands).
+- Did **not** run `--rebuild-tree` (stale-spine reorder trap still live).
+
+### Smoke
+`#a1_prepositions_time` — the *twice a day* item only.
+
+---
+
 ## 2026-08-22 · local (interactive with James) · `main`
 
 ### Headline
