@@ -5,7 +5,7 @@
   "tree_node": "b1_verb_patterns_advanced",
   "codex_unit": "G_VC-B1B2-01",
   "practice": "frames",
-  "note": "Verb patterns: pattern-zone gaps + lemma hints. · Bank 48 · zone overhaul 2026-07-27 · Match off · 2026-08-19 (James, Patrik smoke): + 8 preposition + -ing items (bank had none — his error was 'blocking you from to be'); look-forward-to and the 10 stop/remember/forget items given explanations that match the item",
+  "note": "Verb patterns: pattern-zone gaps + lemma hints. · Bank 48 · zone overhaul 2026-07-27 · Match off · 2026-08-19 (James, Patrik smoke): + 8 preposition + -ing items (bank had none — his error was 'blocking you from to be'); look-forward-to and the 10 stop/remember/forget items given explanations that match the item · card 0 rewritten 2026-08-24 (James, smoking): the old card said \"There is no rule to compute — English fixes it verb by verb\", which is false and demoralising — there are essentially TWO shapes and a real semantic tendency (to = the action is still ahead; -ing = the action is the thing itself). It also stated the tendency nowhere while its own examples named three shapes. Now: recalls the A2 tendency, then names the three things this unit actually adds (object + to, bare verb after let/make, both-shape pairs), with the Czech `aby` clause trap inline. Do NOT reintroduce learn-the-pairs framing. a2_verb_patterns card 0 has the same fault (\"Learn in chunks\") and is still to fix. · use_mode=correct 2026-08-24 (James): the Use stage was whole-sentence translation FROM CZECH, which he cannot smoke-test (he does not read Czech) and which produced most of the false wrongs. Now error correction: the prompt is a WRONG English sentence carrying the real Czech interference error and the student fixes it. All-English, so it is verifiable. Items with no realistic Czech mistake carry no `wrong` field and drop out of Use by design — still drilled in Check and Type. Key-word transformation parked as the better course-wide answer (vault Parked Items). · INTRO REPLACED WHOLESALE 2026-08-24: 7 cards -> 9, from Desktop/Spec_Verb-Patterns_App-Slides_2026-08-24.md (Claude.ai TA project, James-approved). Words above B1 trimmed on his instruction: threaten (slide 2), deny (slide 3), insist on (slide 4); regret stays on slide 8 because that line labels itself B2. Diagrams are LIBRARY schematics (hub_spokes / boxes_row / timelines / decision_flow in js/intro-visuals.js), not inline SVG — geometry in the library, labels in the pack, each with a text fallback. Only the INTRO was replaced: Check, Type and Use are untouched, including the 56 authored quiz_options and the 35 use_mode=correct items built the same day.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -31,7 +31,14 @@
             "to call"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to call",
+            "calling",
+            "call"
+          ],
+          "wrong": "I want that you call me.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "She asked him to wait.",
@@ -46,7 +53,14 @@
             "to wait"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to wait",
+            "waiting",
+            "wait"
+          ],
+          "wrong": "She asked him that he wait.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "They told us to sit down.",
@@ -61,7 +75,14 @@
             "to sit"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to sit",
+            "sitting",
+            "sit"
+          ],
+          "wrong": "They told us that we sit down.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "I stopped smoking last year.",
@@ -76,7 +97,12 @@
             "smoking"
           ],
           "explanation": "stop + -ing = you quit the activity.",
-          "explanation_cz": "stop + -ing = přestal jsi s tou činností."
+          "explanation_cz": "stop + -ing = přestal jsi s tou činností.",
+          "quiz_options": [
+            "smoking",
+            "to smoke",
+            "smoke"
+          ]
         },
         {
           "en": "I stopped to buy coffee.",
@@ -91,7 +117,12 @@
             "to buy"
           ],
           "explanation": "stop + to = you paused in order to do it.",
-          "explanation_cz": "stop + to = zastavil ses, abys to udělal."
+          "explanation_cz": "stop + to = zastavil ses, abys to udělal.",
+          "quiz_options": [
+            "to buy",
+            "buying",
+            "buy"
+          ]
         },
         {
           "en": "Remember to lock the door.",
@@ -106,7 +137,12 @@
             "to lock"
           ],
           "explanation": "remember + to = a duty ahead of you — don't forget it.",
-          "explanation_cz": "remember + to = povinnost, která tě čeká — nezapomeň."
+          "explanation_cz": "remember + to = povinnost, která tě čeká — nezapomeň.",
+          "quiz_options": [
+            "to lock",
+            "locking",
+            "lock"
+          ]
         },
         {
           "en": "I remember locking the door.",
@@ -121,7 +157,12 @@
             "locking"
           ],
           "explanation": "remember + -ing = a memory of something already done.",
-          "explanation_cz": "remember + -ing = vzpomínka na to, co už se stalo."
+          "explanation_cz": "remember + -ing = vzpomínka na to, co už se stalo.",
+          "quiz_options": [
+            "locking",
+            "to lock",
+            "lock"
+          ]
         },
         {
           "en": "He made me laugh.",
@@ -136,7 +177,14 @@
             "laugh"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "laugh",
+            "to laugh",
+            "laughing"
+          ],
+          "wrong": "He made me to laugh.",
+          "wrong_why": "let/make + to"
         },
         {
           "en": "She let us leave early.",
@@ -144,14 +192,22 @@
           "gap": "She let us ____ early. (leave)",
           "gap_answer": "leave",
           "accepts": [
-            "She let us leave early."
+            "She let us leave early.",
+            "She let's leave early."
           ],
           "quiz": "verbpat",
           "gap_accepts": [
             "leave"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "leave",
+            "to leave",
+            "leaving"
+          ],
+          "wrong": "She let us to leave early.",
+          "wrong_why": "let/make + to"
         },
         {
           "en": "I decided to stay.",
@@ -166,7 +222,12 @@
             "to stay"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to stay",
+            "staying",
+            "stay"
+          ]
         },
         {
           "en": "Would you mind opening the window?",
@@ -181,7 +242,14 @@
             "opening"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "opening",
+            "to open",
+            "open"
+          ],
+          "wrong": "Would you mind to open the window?",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "I look forward to meeting you.",
@@ -196,7 +264,14 @@
             "to meeting"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "to meeting",
+            "to meet",
+            "meeting"
+          ],
+          "wrong": "I look forward to meet you.",
+          "wrong_why": "to + base after prep to"
         },
         {
           "en": "She wants me to help.",
@@ -212,7 +287,14 @@
             "to help"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to help",
+            "helping",
+            "help"
+          ],
+          "wrong": "She wants that I help.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "He asked us to wait outside.",
@@ -227,7 +309,14 @@
             "to wait"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to wait",
+            "waiting",
+            "wait"
+          ],
+          "wrong": "He asked us that we wait outside.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "I told her to call later.",
@@ -242,7 +331,14 @@
             "to call"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to call",
+            "calling",
+            "call"
+          ],
+          "wrong": "I told her that she call later.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "They expect you to arrive on time.",
@@ -257,7 +353,14 @@
             "to arrive"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to arrive",
+            "arriving",
+            "arrive"
+          ],
+          "wrong": "They expect that you arrive on time.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "I stopped to check the map.",
@@ -272,7 +375,12 @@
             "to check"
           ],
           "explanation": "stop + to = you paused in order to do it.",
-          "explanation_cz": "stop + to = zastavil ses, abys to udělal."
+          "explanation_cz": "stop + to = zastavil ses, abys to udělal.",
+          "quiz_options": [
+            "to check",
+            "checking",
+            "check"
+          ]
         },
         {
           "en": "She stopped working at six.",
@@ -287,7 +395,12 @@
             "working"
           ],
           "explanation": "stop + -ing = you quit the activity.",
-          "explanation_cz": "stop + -ing = přestal jsi s tou činností."
+          "explanation_cz": "stop + -ing = přestal jsi s tou činností.",
+          "quiz_options": [
+            "working",
+            "to work",
+            "work"
+          ]
         },
         {
           "en": "Remember to send the email.",
@@ -302,7 +415,12 @@
             "to send"
           ],
           "explanation": "remember + to = a duty ahead of you — don't forget it.",
-          "explanation_cz": "remember + to = povinnost, která tě čeká — nezapomeň."
+          "explanation_cz": "remember + to = povinnost, která tě čeká — nezapomeň.",
+          "quiz_options": [
+            "to send",
+            "sending",
+            "send"
+          ]
         },
         {
           "en": "I remember meeting him in 2019.",
@@ -317,7 +435,12 @@
             "meeting"
           ],
           "explanation": "remember + -ing = a memory of something already done.",
-          "explanation_cz": "remember + -ing = vzpomínka na to, co už se stalo."
+          "explanation_cz": "remember + -ing = vzpomínka na to, co už se stalo.",
+          "quiz_options": [
+            "meeting",
+            "to meet",
+            "meet"
+          ]
         },
         {
           "en": "They made us wait.",
@@ -332,7 +455,14 @@
             "wait"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "wait",
+            "to wait",
+            "waiting"
+          ],
+          "wrong": "They made us to wait.",
+          "wrong_why": "let/make + to"
         },
         {
           "en": "Please let me explain.",
@@ -347,7 +477,14 @@
             "explain"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "explain",
+            "to explain",
+            "explaining"
+          ],
+          "wrong": "Please let me to explain.",
+          "wrong_why": "let/make + to"
         },
         {
           "en": "We decided to leave early.",
@@ -362,7 +499,12 @@
             "to leave"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to leave",
+            "leaving",
+            "leave"
+          ]
         },
         {
           "en": "He promised to call.",
@@ -377,7 +519,12 @@
             "to call"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to call",
+            "calling",
+            "call"
+          ]
         },
         {
           "en": "I hope to see you soon.",
@@ -392,7 +539,12 @@
             "to see"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to see",
+            "seeing",
+            "see"
+          ]
         },
         {
           "en": "She agreed to help.",
@@ -407,7 +559,12 @@
             "to help"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to help",
+            "helping",
+            "help"
+          ]
         },
         {
           "en": "Would you mind waiting a moment?",
@@ -422,7 +579,14 @@
             "waiting"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "waiting",
+            "to wait",
+            "wait"
+          ],
+          "wrong": "Would you mind to wait a moment?",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "I look forward to hearing from you.",
@@ -437,7 +601,14 @@
             "to hearing"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "to hearing",
+            "to hear",
+            "hearing"
+          ],
+          "wrong": "I look forward to hear from you.",
+          "wrong_why": "to + base after prep to"
         },
         {
           "en": "He enjoys reading at night.",
@@ -452,7 +623,14 @@
             "reading"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "reading",
+            "to read",
+            "read"
+          ],
+          "wrong": "He enjoys to read at night.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "She avoids talking about work.",
@@ -468,7 +646,14 @@
             "talking"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "talking",
+            "to talk",
+            "talk"
+          ],
+          "wrong": "She avoids to talk about work.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "I need you to sign this.",
@@ -483,7 +668,14 @@
             "to sign"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to sign",
+            "signing",
+            "sign"
+          ],
+          "wrong": "I need that you sign this.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "They invited us to stay.",
@@ -498,7 +690,14 @@
             "to stay"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to stay",
+            "staying",
+            "stay"
+          ],
+          "wrong": "They invited us that we stay.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "She taught me to drive.",
@@ -513,7 +712,14 @@
             "to drive"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to drive",
+            "driving",
+            "drive"
+          ],
+          "wrong": "She taught me that I drive.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "I forgot to bring my keys.",
@@ -528,7 +734,12 @@
             "to bring"
           ],
           "explanation": "forget + to = you failed to do it.",
-          "explanation_cz": "forget + to = neudělal jsi to."
+          "explanation_cz": "forget + to = neudělal jsi to.",
+          "quiz_options": [
+            "to bring",
+            "bringing",
+            "bring"
+          ]
         },
         {
           "en": "I forgot meeting her before.",
@@ -543,7 +754,12 @@
             "meeting"
           ],
           "explanation": "forget + -ing = you have no memory of it happening.",
-          "explanation_cz": "forget + -ing = nepamatuješ si, že se to stalo."
+          "explanation_cz": "forget + -ing = nepamatuješ si, že se to stalo.",
+          "quiz_options": [
+            "meeting",
+            "to meet",
+            "meet"
+          ]
         },
         {
           "en": "She advised me to wait.",
@@ -558,7 +774,14 @@
             "to wait"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to wait",
+            "waiting",
+            "wait"
+          ],
+          "wrong": "She advised me that I wait.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "They warned us not to touch it.",
@@ -573,7 +796,12 @@
             "to touch"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to touch",
+            "touching",
+            "touch"
+          ]
         },
         {
           "en": "He allowed me to leave.",
@@ -588,7 +816,14 @@
             "to leave"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to leave",
+            "leaving",
+            "leave"
+          ],
+          "wrong": "He allowed me that I leave.",
+          "wrong_why": "aby-clause"
         },
         {
           "en": "I refuse to give up.",
@@ -603,7 +838,12 @@
             "to give"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to give",
+            "giving",
+            "give"
+          ]
         },
         {
           "en": "She suggested waiting outside.",
@@ -618,7 +858,14 @@
             "waiting"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "waiting",
+            "to wait",
+            "wait"
+          ],
+          "wrong": "She suggested to wait outside.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "We finished packing at noon.",
@@ -633,7 +880,14 @@
             "packing"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "packing",
+            "to pack",
+            "pack"
+          ],
+          "wrong": "We finished to pack at noon.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "He kept talking during the film.",
@@ -648,7 +902,14 @@
             "talking"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "talking",
+            "to talk",
+            "talk"
+          ],
+          "wrong": "He kept to talk during the film.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "I can't stand waiting in queues.",
@@ -656,14 +917,22 @@
           "gap": "I can't stand ____ in queues. (wait)",
           "gap_answer": "waiting",
           "accepts": [
-            "I can't stand waiting in queues."
+            "I can't stand waiting in queues.",
+            "I cannot stand waiting in queues."
           ],
           "quiz": "verbpat",
           "gap_accepts": [
             "waiting"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "waiting",
+            "to wait",
+            "wait"
+          ],
+          "wrong": "I can't stand to wait in queues.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "She plans to move in June.",
@@ -679,7 +948,12 @@
             "to move"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to move",
+            "moving",
+            "move"
+          ]
         },
         {
           "en": "They offered to help us.",
@@ -694,7 +968,12 @@
             "to help"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to help",
+            "helping",
+            "help"
+          ]
         },
         {
           "en": "I managed to open the door.",
@@ -709,7 +988,12 @@
             "to open"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to open",
+            "opening",
+            "open"
+          ]
         },
         {
           "en": "He failed to arrive on time.",
@@ -724,7 +1008,12 @@
             "to arrive"
           ],
           "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation_cz": "to = směr / příjemce / značka infinitivu.",
+          "quiz_options": [
+            "to arrive",
+            "arriving",
+            "arrive"
+          ]
         },
         {
           "en": "Would you mind closing the door?",
@@ -739,7 +1028,14 @@
             "closing"
           ],
           "explanation": "Pattern after the first verb: to-infinitive, -ing, or bare infinitive.",
-          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv."
+          "explanation_cz": "Vzorec po prvním slovese: to-infinitiv, -ing, nebo holý infinitiv.",
+          "quiz_options": [
+            "closing",
+            "to close",
+            "close"
+          ],
+          "wrong": "Would you mind to close the door?",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "This is blocking you from being powerful.",
@@ -754,7 +1050,14 @@
             "being"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "being",
+            "to be",
+            "be"
+          ],
+          "wrong": "This is blocking you from to be powerful.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "She apologised for being late.",
@@ -769,7 +1072,14 @@
             "being"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "being",
+            "to be",
+            "be"
+          ],
+          "wrong": "She apologised for to be late.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "Thank you for waiting.",
@@ -784,7 +1094,14 @@
             "waiting"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "waiting",
+            "to wait",
+            "wait"
+          ],
+          "wrong": "Thank you for to wait.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "He left without saying goodbye.",
@@ -799,7 +1116,14 @@
             "saying"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "saying",
+            "to say",
+            "say"
+          ],
+          "wrong": "He left without to say goodbye.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "I am interested in learning Spanish.",
@@ -807,14 +1131,22 @@
           "gap": "I am interested in ____ Spanish. (learn)",
           "gap_answer": "learning",
           "accepts": [
-            "I am interested in learning Spanish."
+            "I am interested in learning Spanish.",
+            "I'm interested in learning Spanish."
           ],
           "quiz": "verbpat",
           "gap_accepts": [
             "learning"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "learning",
+            "to learn",
+            "learn"
+          ],
+          "wrong": "I am interested in to learn Spanish.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "We talked about moving to Brno.",
@@ -829,7 +1161,14 @@
             "moving"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "moving",
+            "to move",
+            "move"
+          ],
+          "wrong": "We talked about to move to Brno.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "She is good at explaining things.",
@@ -837,14 +1176,22 @@
           "gap": "She is good at ____ things. (explain)",
           "gap_answer": "explaining",
           "accepts": [
-            "She is good at explaining things."
+            "She is good at explaining things.",
+            "She's good at explaining things."
           ],
           "quiz": "verbpat",
           "gap_accepts": [
             "explaining"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "explaining",
+            "to explain",
+            "explain"
+          ],
+          "wrong": "She is good at to explain things.",
+          "wrong_why": "to for -ing"
         },
         {
           "en": "Instead of waiting, we walked.",
@@ -859,7 +1206,14 @@
             "waiting"
           ],
           "explanation": "After a preposition (from, of, about, at, without, for, to in look forward to) the -ing form — never the infinitive.",
-          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv."
+          "explanation_cz": "Po předložce (from, of, about, at, without, for, to v look forward to) tvar -ing — nikdy infinitiv.",
+          "quiz_options": [
+            "waiting",
+            "to wait",
+            "wait"
+          ],
+          "wrong": "Instead of to wait, we walked.",
+          "wrong_why": "to for -ing"
         }
       ]
     }
@@ -867,123 +1221,302 @@
   "intro": {
     "cards": [
       {
-        "title": "What are verb patterns?",
-        "title_cz": "Co jsou slovesné vazby?",
-        "body": "After some verbs, the NEXT verb has a fixed shape: want TO GO · enjoy GOING · let him GO. There is no rule to compute — English fixes it verb by verb, so you learn the pair together.",
-        "body_cz": "Po některých slovesech má další sloveso pevný tvar: want to go · enjoy going · let him go. Nedá se to spočítat — učí se to po dvojicích."
+        "title": "What is a verb pattern?",
+        "title_cz": "Co je slovesná vazba?",
+        "body": "When two verbs meet, the first verb decides the shape of the second.",
+        "diagram": "hub_spokes",
+        "labels": [
+          "VERB 1",
+          "to + verb",
+          "want to go",
+          "verb + -ing",
+          "enjoy going",
+          "bare verb",
+          "let me go",
+          "person + to + verb",
+          "want you to call"
+        ],
+        "diagram_fallback": "to + verb — want to go · verb + -ing — enjoy going · bare verb — let me go · person + to + verb — want you to call",
+        "points": [
+          "Same idea as Czech *vazba*: the verb governs what follows it. You learn the shape with the verb.",
+          "From A2 you know two shapes: *want **to go***, *enjoy **going***. This set adds two more and sharpens the choice between all four."
+        ]
       },
       {
-        "title": "Patterns",
-        "title_cz": "Vzorce",
+        "title": "Verb + to-infinitive",
+        "title_cz": "Sloveso + to + infinitiv",
+        "body": "The action is ahead: a plan, decision, hope, promise or attempt.",
         "table": {
+          "caption": "groups",
           "headers": [
-            "Pattern",
+            "Group",
+            "Verbs"
+          ],
+          "rows": [
+            [
+              "Wanting, planning",
+              "want, would like, hope, plan, decide, arrange, intend, expect"
+            ],
+            [
+              "Trying, managing",
+              "try, manage, fail, afford, learn"
+            ],
+            [
+              "Agreeing, promising",
+              "agree, promise, offer, refuse"
+            ],
+            [
+              "Seeming",
+              "seem, appear, tend"
+            ]
+          ]
+        },
+        "points": [
+          "*We decided **to leave** early.* · *I can't afford **to buy** it.* · *She seems **to like** it.*",
+          "Negative: *not* goes before *to*: *We decided **not to leave**.*"
+        ]
+      },
+      {
+        "title": "Verb + -ing",
+        "title_cz": "Sloveso + -ing",
+        "body": "The action is seen as an activity or a thing, often general, ongoing or already done.",
+        "table": {
+          "caption": "groups",
+          "headers": [
+            "Group",
+            "Verbs"
+          ],
+          "rows": [
+            [
+              "Like, dislike",
+              "enjoy, don't mind, can't stand, fancy, feel like"
+            ],
+            [
+              "Stop, continue",
+              "finish, give up, keep (on), carry on"
+            ],
+            [
+              "Think about",
+              "consider, imagine, suggest, recommend"
+            ],
+            [
+              "Avoid, other",
+              "avoid, miss, practise, put off, risk, admit"
+            ]
+          ]
+        },
+        "points": [
+          "*I enjoy **working** from home.* · *He suggested **meeting** on Friday.* · *Keep **going**.*",
+          "Czech puts an infinitive after these verbs (*baví mě plavat, přestal kouřit, navrhl jít*); English does not. ~~I enjoy to swim~~ → *I enjoy **swimming**.* ~~He suggested to go~~ → *He suggested **going**.*"
+        ]
+      },
+      {
+        "title": "-ing after prepositions",
+        "title_cz": "-ing po předložkách",
+        "body": "After a preposition, a verb is always -ing, including *to* when *to* is a preposition.",
+        "table": {
+          "caption": "types",
+          "headers": [
+            "Type",
+            "Examples"
+          ],
+          "rows": [
+            [
+              "Adjective + preposition",
+              "interested in, good at, tired of, keen on, afraid of"
+            ],
+            [
+              "Verb + preposition",
+              "look forward to, think about, apologise for, get used to"
+            ],
+            [
+              "Preposition, linking word",
+              "without, before, after, instead of, by, despite"
+            ]
+          ]
+        },
+        "points": [
+          "*I'm interested in **learning** Czech.* · *She left without **saying** goodbye.* · *I look forward to **meeting** you.*",
+          "-ing also works as a subject: ***Swimming** is good for you.*",
+          "*Těším se na setkání* → *look forward to **meeting***, not ~~to meet~~. Purpose is to-infinitive, never *for to*: ~~I'm here for to learn~~ → *I'm here **to learn**.*"
+        ]
+      },
+      {
+        "title": "Verb + person + to-infinitive",
+        "title_cz": "Sloveso + osoba + to + infinitiv",
+        "body": "Some verbs put a person between the two verbs; the person does the second action.",
+        "diagram": "boxes_row",
+        "labels": [
+          "VERB 1",
+          "PERSON",
+          "to + VERB 2",
+          "I want",
+          "you",
+          "to call",
+          "She asked",
+          "me",
+          "to help"
+        ],
+        "diagram_fallback": "VERB 1 → PERSON → to + VERB 2 · *I want you to call* · *She asked me to help*",
+        "table": {
+          "caption": "who needs a person",
+          "headers": [
+            "",
+            "Verbs"
+          ],
+          "rows": [
+            [
+              "Person required",
+              "tell, remind, advise, allow, teach, encourage, persuade, warn, invite, order"
+            ],
+            [
+              "Person optional",
+              "want, would like, ask, expect, need"
+            ]
+          ]
+        },
+        "points": [
+          "*The doctor advised **me to rest**.* · *They didn't allow **us to park** there.* · *We expect **them to arrive** at six.*",
+          "Czech uses *aby*: *Chci, abys zavolal.* English has no *that*, no comma, no second subject: ~~I want that you call~~ → *I want **you to call**.*",
+          "*suggest* and *recommend* never take this shape: ~~He suggested me to go~~ → *He suggested **going*** / *He suggested that I go.*"
+        ]
+      },
+      {
+        "title": "Bare infinitive",
+        "title_cz": "Holý infinitiv",
+        "body": "After *let*, *make* and modal verbs, the second verb has no *to* and no *-ing*.",
+        "table": {
+          "caption": "after",
+          "headers": [
+            "After",
             "Example"
           ],
           "rows": [
             [
-              "want/ask/tell + person + to",
-              "I want you to call."
+              "let, make",
+              "*She let me **go**.* · *They made us **wait**.*"
             ],
             [
-              "stop + -ing",
-              "quit a habit"
+              "help (both shapes)",
+              "*Can you help me **(to) carry** this?*"
             ],
             [
-              "stop + to",
-              "pause in order to"
+              "modals: can, could, may, might, must, should, will, would",
+              "*You must **leave** now.* · *It might **rain**.*"
             ],
             [
-              "make/let + person + base",
-              "no to"
-            ],
-            [
-              "look forward to + -ing",
-              "to is a preposition"
+              "had better, would rather",
+              "*You'd better **call**.* · *I'd rather **stay**.*"
             ]
           ]
-        }
+        },
+        "points": [
+          "~~She made me to wait~~ → *She made me **wait**.*"
+        ]
       },
       {
-        "title": "The three shapes",
-        "title_cz": "Tři tvary",
-        "body": "Three fixed shapes — learn the verb with its shape:",
-        "body_cz": "Tři pevné tvary — učte se sloveso i s tvarem:",
+        "title": "Both shapes, same meaning",
+        "title_cz": "Oba tvary, stejný význam",
+        "body": "After these verbs, *to* or *-ing* both work, with little change in meaning.",
         "table": {
-          "caption": "The three shapes",
+          "caption": "either",
           "headers": [
-            "Shape",
-            "After these verbs",
-            "Example"
+            "Verb",
+            "to",
+            "-ing"
           ],
           "rows": [
             [
-              "to + verb",
-              "want · decide · hope · promise · agree · plan · manage · offer · refuse · ask / tell / teach someone",
-              "I want to go. · She asked him to wait."
+              "like, love, hate, prefer",
+              "*I like **to swim**.*",
+              "*I like **swimming**.*"
             ],
             [
-              "verb + -ing",
-              "enjoy · mind · finish · keep · avoid · suggest · can't stand",
-              "I enjoy reading."
-            ],
-            [
-              "bare verb",
-              "make someone · let someone",
-              "He made me laugh. · She let us leave."
+              "start, begin, continue",
+              "*It started **to rain**.*",
+              "*It started **raining**.*"
             ]
           ]
-        }
+        },
+        "points": [
+          "*would like / would love / would prefer* take *to* only: *I'd like **to go**.*",
+          "After *starting* or *beginning*, use *to*: *It's starting **to rain***, not ~~starting raining~~."
+        ]
       },
       {
-        "title": "Meaning changers — stop / remember / forget",
-        "title_cz": "Mění význam — stop / remember / forget",
-        "body": "Same verb, two meanings — the shape carries the difference:",
-        "body_cz": "Stejné sloveso, dva významy — rozdíl nese tvar:",
+        "title": "Both shapes, different meaning",
+        "title_cz": "Oba tvary, jiný význam",
+        "body": "With these four verbs the shape changes the meaning. -ing looks back at an action or names it; to looks ahead at what to do.",
         "table": {
-          "caption": "stop · remember · forget",
+          "caption": "the four",
           "headers": [
-            "Sentence",
-            "Meaning"
+            "Verb",
+            "+ -ing",
+            "+ to"
           ],
           "rows": [
             [
-              "remember to lock",
-              "future duty — don't forget"
+              "stop",
+              "the activity ends: *He stopped **smoking**.*",
+              "pause in order to do: *He stopped **to smoke**.*"
             ],
             [
-              "remember locking",
-              "memory of the past"
+              "remember",
+              "a memory of a past action: *I remember **locking** the door.*",
+              "a task not forgotten: *Remember **to lock** the door.*"
             ],
             [
-              "stop smoking",
-              "you quit"
+              "forget",
+              "no memory of a past action: *I'll never forget **meeting** her.*",
+              "a task not done: *I forgot **to call**.*"
             ],
             [
-              "stop to buy coffee",
-              "you pause in order to buy"
+              "try",
+              "an experiment, see what happens: *Try **restarting** the laptop.*",
+              "an effort: *I tried **to open** the door.*"
             ]
           ]
-        }
+        },
+        "diagram": "timelines",
+        "labels": [
+          "-ing looks back",
+          "locking",
+          "remember",
+          "the action came first, then the memory",
+          "to looks ahead",
+          "remember",
+          "to lock",
+          "the thinking comes first, then the action"
+        ],
+        "diagram_fallback": "-ing looks back: locking → remember · to looks ahead: remember → to lock",
+        "points": [
+          "*regret*, *go on* and *mean* follow the same logic at B2."
+        ]
       },
       {
-        "title": "look forward to + -ing",
-        "title_cz": "look forward to + -ing",
-        "body": "Here to is a PREPOSITION, so -ing follows: I look forward to meeting you. (not: to meet ✗)",
-        "body_cz": "Tady je to předložka → -ing: look forward to meeting you."
-      },
-      {
-        "title": "CZ trap — infinitive everywhere",
-        "title_cz": "Česká past — infinitiv všude",
-        "body": "Czech uses the infinitive after almost everything, English does not: I enjoy to swim ✗ → I enjoy swimming ✓ · She let me to go ✗ → She let me go ✓",
-        "body_cz": "Čeština dává infinitiv skoro všude — angličtina ne. enjoy + -ing, make/let + holé sloveso."
-      },
-      {
-        "title": "Practice focus",
-        "title_cz": "Nácvik",
-        "body": "The (word) is the verb — type it in the correct shape: to call · calling · call. The FIRST verb decides which.",
-        "body_cz": "Slovo v závorce doplňte ve správném tvaru: to call · calling · call. Rozhoduje první sloveso."
+        "title": "Which shape?",
+        "title_cz": "Který tvar?",
+        "diagram": "decision_flow",
+        "labels": [
+          "A preposition before the verb?",
+          "-ing",
+          "Verb 1 is let, make or a modal?",
+          "bare",
+          "A person between the verbs?",
+          "person + to",
+          "The first verb decides"
+        ],
+        "diagram_fallback": "1. A preposition before the verb? -> -ing: interested in learning. 2. Verb 1 is let, make or a modal? -> bare: let me go, must go. 3. A person between the verbs? -> person + to: want you to call. 4. Otherwise the first verb decides: ahead or planned -> to; activity or thing -> -ing.",
+        "points": [
+          "A preposition before the verb? → **-ing**: *interested in **learning***",
+          "Verb 1 is *let*, *make* or a modal? → **bare**: *let me **go*** · *must **go***",
+          "A person between the verbs? → **person + to**: *want **you to call***",
+          "Otherwise the first verb decides: ahead or planned → **to**; activity or thing → **-ing**. Check the four verbs on the previous slide.",
+          "The first verb decides the shape: learn the shape with the verb."
+        ]
       }
     ]
-  }
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next"
 }
