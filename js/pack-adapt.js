@@ -175,7 +175,103 @@ function formsOf(v, gap) {
   return out.filter(Boolean);
 }
 
-function choicesFor(it, siblings) {
+/* ---- Auxiliary gaps (James, 2026-08-23, smoking a2_present_continuous):
+ * "____ they coming?" must offer "do" — the mistake a Czech speaker makes —
+ * not a random sibling answer. Same family first, then one confusable from
+ * the neighbouring family. */
+const AUX_FAMILIES = [
+  ["am", "is", "are"], ["was", "were"], ["do", "does"], ["did"],
+  ["have", "has"], ["had"],
+  ["will", "would", "can", "could", "should", "must", "might", "may", "shall"],
+  ["isn't", "aren't"], ["wasn't", "weren't"], ["don't", "doesn't"], ["didn't"],
+  ["haven't", "hasn't"], ["hadn't"],
+  ["won't", "wouldn't", "can't", "couldn't", "shouldn't", "mustn't"],
+];
+/* Which other family a learner reaches for by mistake. */
+const AUX_CONFUSABLE = {
+  am: ["do", "was"], is: ["does", "was", "do"], are: ["do", "were", "does"],
+  was: ["is", "did", "were"], were: ["are", "did", "was"],
+  do: ["are", "does", "is"], does: ["is", "do", "are"], did: ["was", "do", "does"],
+  have: ["has", "had", "are"], has: ["have", "had", "is"], had: ["have", "has", "was"],
+  "isn't": ["doesn't", "wasn't"], "aren't": ["don't", "weren't"],
+  "don't": ["doesn't", "isn't", "didn't"], "doesn't": ["don't", "isn't", "didn't"],
+  "didn't": ["don't", "wasn't", "doesn't"], "wasn't": ["isn't", "didn't"], "weren't": ["aren't", "didn't"],
+  "haven't": ["hasn't", "don't"], "hasn't": ["haven't", "doesn't"], "hadn't": ["haven't", "didn't"],
+};
+const AUX_ALL = new Set(AUX_FAMILIES.flat());
+
+function auxDistractors(answer) {
+  // raw lowercase, not key(): key() expands "isn't" to "is not" and the family lookup misses
+  const a = String(answer == null ? "" : answer).toLowerCase().replace(/[’]/g, "'").trim();
+  if (!AUX_ALL.has(a)) return null;
+  const fam = AUX_FAMILIES.find((f) => f.includes(a)) || [];
+  const out = fam.filter((f) => f !== a);
+  for (const c of AUX_CONFUSABLE[a] || []) if (!out.includes(c)) out.push(c);
+  // modals: any two other modals are the live confusion (will/would, can/could)
+  if (fam.length > 6) return [...out.slice(0, 3)];
+  // keep two of the same family, then confusables
+  const same = out.filter((f) => fam.includes(f)).slice(0, 2);
+  const cross = out.filter((f) => !fam.includes(f));
+  return [...same, ...cross];
+}
+
+/* ---- Verb-form gaps: "He is ____ in the park." -> run, ran, ranning — wrong
+ * forms of the SAME verb, not another auxiliary (James, 2026-08-23). The
+ * lemma is recovered from the answer: the irregular table first, then the
+ * spelling rules run backwards. */
+const NOT_VERBS = new Set(["morning", "evening", "thing", "something", "nothing", "anything", "everything",
+  "during", "wedding", "building", "clothing", "ceiling", "king", "ring", "sing", "bring", "spring", "string",
+  "wing", "swing", "meaning", "feeling", "meeting", "parking", "shopping", "need", "bed", "red", "feed", "seed",
+  "indeed", "hundred", "this", "is", "his", "yes", "us", "bus", "plus", "was", "has", "does", "always", "sometimes",
+  "perhaps", "news", "clothes", "glasses", "trousers", "jeans", "maths", "physics", "politics"]);
+
+function lemmaOf(answer) {
+  const a = key(answer);
+  if (!/^[a-z]+$/.test(a) || NOT_VERBS.has(a) || AUX_ALL.has(a)) return null;
+  for (const [base, forms] of Object.entries(IRREGULAR)) {
+    if (a === base || forms.includes(a)) return base;
+  }
+  let stem = null;
+  if (/ing$/.test(a) && a.length > 4) stem = a.slice(0, -3);
+  else if (/ed$/.test(a) && a.length > 3) stem = a.slice(0, -2);
+  else if (/ies$/.test(a)) return a.slice(0, -3) + "y";
+  else if (/(s|sh|ch|x|z|o)es$/.test(a)) return a.slice(0, -2);
+  else if (/s$/.test(a) && a.length > 3) return a.slice(0, -1);
+  if (!stem) return null;
+  if (/([^aeiou])\1$/.test(stem) && !/(ll|ss|ff|zz)$/.test(stem)) return stem.slice(0, -1); // running -> run
+  if (/^[^aeiou]*[aeiou][^aeiouwxy]$/.test(stem) || /[cgvz]$/.test(stem) || /[^aeiou]u$/.test(stem)) return stem + "e"; // making, dancing
+  if (/i$/.test(stem) && /ed$/.test(a)) return stem.slice(0, -1) + "y"; // studied -> study
+  return stem;
+}
+
+function verbFormDistractors(answer, gap, lemma) {
+  const a = key(answer);
+  const v = lemma;
+  const irr = IRREGULAR[v] || null;
+  const third = irr ? irr[0] : thirdPerson(v);
+  const past = irr ? (irr.find((f) => !/(s|ing)$/.test(f)) || pastForm(v)) : pastForm(v);
+  const ing = irr ? (irr.find((f) => /ing$/.test(f)) || ingForm(v)) : ingForm(v);
+  // the malformed -ing a learner actually writes: ran -> ranning, make -> makeing, stop -> stoping
+  const bad = [];
+  if (irr && past && /^[^aeiou]*[aeiou][^aeiouwxy]$/.test(past)) bad.push(past + past.slice(-1) + "ing");
+  if (v + "ing" !== ing) bad.push(v + "ing");
+  if (/ing$/.test(a)) return [v, past, ...bad, third, "to " + v];
+  if (/ed$/.test(a) || a === past) return [v, ing, third, "was " + ing, ...bad];
+  if (a === third) return [v, ing, past, "is " + ing];
+  return [third, past, ing, ...bad];
+}
+
+/* Distractors take the answer's capitalisation — a lone capital at a
+ * sentence-initial gap was giving the answer away. */
+function matchCase(answer, s) {
+  const a = String(answer), t = String(s);
+  if (!a || !t) return t;
+  if (/^I(\s|'|$)/.test(t)) return t;
+  const up = /^[A-Z]/.test(a);
+  return (up ? t.charAt(0).toUpperCase() : t.charAt(0).toLowerCase()) + t.slice(1);
+}
+
+function choicesFor(it, siblings, pack) {
   const answer = it.gap_answer;
   if (!key(answer)) return null;
 
@@ -208,16 +304,34 @@ function choicesFor(it, siblings) {
     }
   }
 
-  for (const s of siblings) {
-    if (distractors.length >= 3) break;
-    const cand = s.gap_answer;
-    const k = key(cand);
-    if (!k || seen.has(k) || banned.has(k)) continue;
-    seen.add(k);
-    distractors.push(cand);
+  const take = (list) => {
+    for (const f of list || []) {
+      if (distractors.length >= 3) break;
+      const k = key(f);
+      if (!k || seen.has(k) || banned.has(k)) continue;
+      seen.add(k);
+      distractors.push(f);
+    }
+  };
+
+  // Auxiliary gap: same family + the cross-family confusable (do for be, ...).
+  if (!lemma) take(auxDistractors(answer));
+
+  // Verb-form gap: wrong forms of the same verb. Single words only; in verb
+  // packs any form, elsewhere only -ing / -ed (so plural nouns in article or
+  // word-class packs keep their sibling distractors).
+  if (!lemma && distractors.length < 3 && /^[A-Za-z]+$/.test(String(answer))) {
+    const verbPack = /^G_V[PC]-/.test(String((pack && pack.codex_unit) || ""));
+    const a = key(answer);
+    if (verbPack || /(ing|ed)$/.test(a)) {
+      const v = lemmaOf(answer);
+      if (v && v !== a) take(verbFormDistractors(answer, it.gap, v));
+    }
   }
+
+  take(siblings.map((s) => s.gap_answer));
   if (!distractors.length) return null;
-  return [answer, ...distractors];
+  return [answer, ...distractors.map((d) => matchCase(answer, d))];
 }
 
 /**
@@ -259,6 +373,7 @@ export function adaptGrammarPack(pack) {
           const choices = choicesFor(
             it,
             withGap.filter((s) => s !== it),
+            pack,
           );
           if (!choices) return null;
           return {
@@ -322,10 +437,19 @@ export function adaptGrammarPack(pack) {
   // Use: whole-sentence production from the Czech. zero_article items (no
   // typed answer exists — the teaching point is the absent word) belong here
   // and nowhere else.
+  /* use_mode: "correct" — the prompt is a WRONG English sentence and the student
+   * fixes it, instead of translating from Czech (James, 2026-08-24). Two reasons:
+   * he cannot smoke-test a Czech prompt (he does not read Czech), and free
+   * translation from an ambiguous Czech sentence was the source of most of the
+   * course's false wrongs. Items carrying no `wrong` have no realistic Czech
+   * error, so they drop out of Use by design and are still drilled elsewhere.
+   * The Czech stays on the item for the support line. */
+  const fixMode = pack.use_mode === "correct";
   const use_items = (wants("use") ? items : [])
-    .filter((it) => it.en && it.cz)
+    .filter((it) => it.en && (fixMode ? it.wrong : it.cz))
     .map((it) => ({
-      prompt: it.cz,
+      prompt: fixMode ? it.wrong : it.cz,
+      wrong: it.wrong || "",
       answer: it.en,
       accepts: it.accepts || [],
       cz: it.cz,

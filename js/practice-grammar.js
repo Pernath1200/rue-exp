@@ -18,6 +18,7 @@ import {
   grammarBest,
 } from "./progress.js";
 import { attachExplain } from "./explain.js";
+import { introDiagram } from "./intro-visuals.js";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";
@@ -253,6 +254,28 @@ function possessiveMatch(u, forms) {
   return determinerMatch(u, forms);
 }
 
+/* Czech `když` is BOTH "if" and "when", so a Czech prompt cannot pick between
+ * them. In a REAL conditional they are interchangeable — a2_first_conditional's
+ * own intro card says "when · until · as soon as · after behave exactly like
+ * if" — and for an always-true sentence "When you heat water, it boils" is if
+ * anything the more natural English. But in an UNREAL conditional ("If I had
+ * money, I would buy it") "when" is simply wrong, and unreal conditionals are
+ * 143 of the 180 If-answers in the course. So unlike every other lenient pass
+ * here this one is OPT-IN: packs whose conditionals are REAL set
+ * `lenient_if_when`, and everything else keeps exact grading.
+ * (James, 2026-08-24: he played the whole Use stage of a2_first_conditional
+ * pasting Google Translate's answers and scored 3/12. "When you heat water, it
+ * boils" was marked wrong by the very unit that teaches when behaves like if.
+ * By his own count this rule rescues half or more of those failures.) */
+let LENIENT_IF_WHEN = false;
+
+function ifWhenMatch(u, forms) {
+  if (!LENIENT_IF_WHEN || !u.includes(" ")) return false;
+  const fold = (s) => s.replace(/\b(if|when)\b/gi, "if");
+  const uf = fold(u);
+  return forms.some((f) => f.includes(" ") && fold(f) === uf);
+}
+
 function articleMatch(u, forms) {
   if (!LENIENT_ARTICLES || !u.includes(" ")) return false;
   const uv = new Set(articleVariants(u));
@@ -277,6 +300,35 @@ function placeMatch(u, forms) {
   for (const f of forms) {
     for (const v of placeVariants(f)) {
       if (uv.has(v)) return true;
+    }
+  }
+  return false;
+}
+
+/* "now" is optional in a present-continuous sentence — the tense already says
+ * it, and the Czech cue "(teď)" is there to force the tense, not to demand the
+ * word. The corpus writes "now" in some answers and not others, so a student
+ * who adds it was marked wrong on one item and one who omits it on the next:
+ * "inconsistent. bad pedagogy. both should be allowed" (James, 2026-08-23,
+ * smoking a2_present_continuous). Sentence answers only; packs that TEACH
+ * the adverb set strict_time. GRAMMAR ONLY, like the clock rule above. */
+let LENIENT_TIME = true;
+const OPTIONAL_TIME_RE = /\b(right now|just now|at the moment|at this moment|currently|now)\b/g;
+
+function stripTime(s) {
+  return String(s).replace(OPTIONAL_TIME_RE, " ").replace(/\s+/g, " ").trim();
+}
+
+function timeMatch(u, forms) {
+  if (!LENIENT_TIME || !u.includes(" ")) return false;
+  const us = stripTime(u);
+  if (!us) return false;
+  for (const f of forms) {
+    if (!f.includes(" ")) continue;
+    const fs = stripTime(f);
+    if (fs === us) return true;
+    if (fs !== f || us !== u) {
+      if (articleMatch(us, [fs]) || possessiveMatch(us, [fs]) || placeMatch(us, [fs])) return true;
     }
   }
   return false;
@@ -307,6 +359,8 @@ function isCorrect(user, item, mode) {
   if (articleMatch(u, forms)) return true;
   if (possessiveMatch(u, forms)) return true;
   if (placeMatch(u, forms)) return true;
+  if (timeMatch(u, forms)) return true;
+  if (ifWhenMatch(u, forms)) return true;
   // Two names for one thing (shop/store, phone/telephone). The lesson fault
   // that prompted this — "na stole" answered only by desk — was in a GRAMMAR
   // pack, so the rule has to live here too, not only in the vocab engine.
@@ -337,6 +391,9 @@ export function startPractice(rawPack, root, opts) {
   LENIENT_POSSESSIVES = !rawPack?.strict_possessives;
   LENIENT_DETERMINERS = !rawPack?.strict_determiners;
   LENIENT_PLACE = !rawPack?.strict_place;
+  LENIENT_TIME = !rawPack?.strict_time;
+  // OPT-IN, not opt-out — see ifWhenMatch. Unreal conditionals must stay exact.
+  LENIENT_IF_WHEN = !!rawPack?.lenient_if_when;
   // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
   const pack = adaptGrammarPack(rawPack);
   touchBlock(pack.id);
@@ -656,6 +713,19 @@ export function startPractice(rawPack, root, opts) {
         )
         .join("")}</tbody></table>`;
     }
+    /* Schematic, named by the card and labelled by the pack (2026-08-24).
+     * Grammar cards could not show one at all — the mechanism existed only in
+     * practice-vocab.js — so specs asking for diagrams had no way in. Geometry
+     * stays in intro-visuals.js; the card supplies `diagram` and `labels`.
+     * A card with an unknown name renders nothing rather than breaking, and
+     * `diagram_fallback` covers that case in text. */
+    if (card.diagram) {
+      const svgMarkup = introDiagram(card.diagram, card.labels || []);
+      if (svgMarkup) body += `<div class="intro-scene-wrap">${svgMarkup}</div>`;
+      else if (card.diagram_fallback)
+        body += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
+    }
+
     // points[] carries the bulk of the authored teaching on 403 of 557 cards
     // (43 of them have nothing else) — it went unrendered until 2026-08-10.
     if (Array.isArray(card.points) && card.points.length) {
@@ -1575,6 +1645,16 @@ export function startPractice(rawPack, root, opts) {
       ? `<p class="practice-hint">${esc(item.hint)}</p>`
       : "";
 
+    /* Fix-the-sentence items (use_mode: "correct") look identical to a
+     * translation prompt otherwise — the banner said "Fix the sentence" but it
+     * was too small to register (James, 2026-08-24). Same treatment as his
+     * Patrik error page: a label above, the wrong sentence in the error colour,
+     * and a placeholder that says what to type. */
+    const fixMode = Boolean(item.wrong);
+    const fixLabel = fixMode
+      ? `<p class="fix-label">Correct this sentence</p>`
+      : "";
+
     const inputBlock = isGap
       ? `<div class="gap-row" aria-label="Fill the ending">
           <span class="gap-stem">${esc(item.stem)}</span>
@@ -1583,7 +1663,11 @@ export function startPractice(rawPack, root, opts) {
         </div>`
       : `<div class="input-row">
           <input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${
-            isRoot ? "whole word…" : "type in English…"
+            isRoot
+              ? "whole word…"
+              : item.wrong
+                ? "type the corrected sentence…"
+                : "type in English…"
           }" lang="en" />
           <button type="button" class="btn primary" id="btn-submit">Check</button>
         </div>`;
@@ -1597,7 +1681,8 @@ export function startPractice(rawPack, root, opts) {
       <p class="score-line">${idx + 1} / ${items.length} · score ${score}${
         retryPass ? " · retry" : ""
       }</p>
-      <p class="practice-prompt">${esc(prompt)}${
+      ${fixLabel}
+      <p class="practice-prompt${fixMode ? " practice-prompt--wrong" : ""}">${esc(prompt)}${
         isRoot ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
       }</p>
       ${hint}

@@ -1,35 +1,42 @@
 /**
- * "Why?" — optional per-item explanation, revealed on demand.
- * Items opt in via an `explain` field (learner English). Never shown
- * unprompted: a small link appears with the answer feedback; clicking it
- * swaps in the note. Authored from A2 unit 1 onward (James 2026-08-04);
- * A1 items gain explains opportunistically.
+ * Per-item explanation, shown WITH the answer feedback.
+ *
+ * Was hidden behind a "Why?" link — "never shown unprompted", to keep the flow
+ * uncluttered (2026-08-04). Reversed 2026-08-24 (James): the explanation IS the
+ * teaching, and behind a click most students never read it. It now renders
+ * immediately, headed "Explanation".
+ *
+ * `explanation` is read first (2026-08-11): 3,759 items across 92 packs carry it
+ * and not one was displayed, because this function only looked at `explain`,
+ * which no item has. `explain` stays supported as the override.
+ *
+ * onOpen() still fires — it cancels the Type stage's auto-advance so the note can
+ * be read. That guarantee is unchanged; it just fires on render, not on click.
  */
 export function attachExplain(fb, item, onOpen) {
-  /* Read `explanation` first (2026-08-11): 3,759 items across 92 packs carry
-   * it and NOT ONE was ever displayed, because this function only looked at
-   * `explain` — which no item in the repo has. The whole explanation layer was
-   * dead. `explain` stays supported as the override. */
   const text = item && (item.explanation || item.explain);
   if (!fb || !text) return;
+  if (onOpen) onOpen(); // cancel auto-advance so the note can actually be read
+
+  const note = document.createElement("div");
+  note.className = "explain-note";
+
+  const head = document.createElement("div");
+  head.className = "explain-head";
+  head.textContent = "Explanation";
+  note.appendChild(head);
+
+  const main = document.createElement("div");
+  main.textContent = text;
+  note.appendChild(main);
+
   const cz = item.explanation_cz || item.explain_cz || "";
-  const btn = document.createElement("button");
-  btn.type = "button";
-  btn.className = "link explain-link";
-  btn.textContent = "Why?";
-  btn.onclick = () => {
-    if (onOpen) onOpen(); // e.g. cancel auto-advance so the note can be read
-    const note = document.createElement("div");
-    note.className = "explain-note";
-    note.textContent = text;
-    if (cz && cz !== text) {
-      const sub = document.createElement("div");
-      sub.className = "explain-note-cz";
-      sub.textContent = cz;
-      note.appendChild(sub);
-    }
-    btn.replaceWith(note);
-  };
-  fb.appendChild(document.createElement("br"));
-  fb.appendChild(btn);
+  if (cz && cz !== text) {
+    const sub = document.createElement("div");
+    sub.className = "explain-note-cz";
+    sub.textContent = cz;
+    note.appendChild(sub);
+  }
+
+  fb.appendChild(note);
 }
