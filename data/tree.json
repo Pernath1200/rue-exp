@@ -206,32 +206,32 @@
    "coming": 0
   },
   "A2": {
-   "total": 40,
-   "grammar": 15,
+   "total": 50,
+   "grammar": 25,
    "vocab": 25,
-   "live": 40,
-   "coming": 0
+   "live": 41,
+   "coming": 9
   },
   "B1": {
-   "total": 26,
-   "grammar": 16,
+   "total": 27,
+   "grammar": 17,
    "vocab": 10,
-   "live": 25,
+   "live": 26,
    "coming": 1
   },
   "B2": {
-   "total": 26,
+   "total": 29,
    "grammar": 25,
-   "vocab": 1,
-   "live": 23,
-   "coming": 3
+   "vocab": 4,
+   "live": 28,
+   "coming": 1
   },
   "C1": {
    "total": 23,
    "grammar": 23,
    "vocab": 0,
-   "live": 18,
-   "coming": 5
+   "live": 22,
+   "coming": 1
   }
  },
  "show_full_canopy_ids": {
@@ -239,13 +239,13 @@
    "a1_word_classes",
    "a1_be_have",
    "a1_word_order",
+   "a1_articles",
    "a1_present_simple",
    "a1_agreement",
+   "a1_possessives",
    "a1_frequency",
    "a1_questions_negatives",
    "a1_question_words",
-   "a1_articles",
-   "a1_possessives",
    "a1_object_pronouns",
    "a1_like_want_need",
    "a1_can",
@@ -278,18 +278,22 @@
    "b1_modals_speculation",
    "b1_articles_advanced",
    "b1_it_subject",
+   "b1_word_order_fronting",
+   "b1_suffixes",
    "b1_relative_clauses",
    "b1_reported_speech",
    "b1_indirect_questions",
    "b1_linkers",
+   "b1_degree_adverbs",
+   "b1_prefixes",
    "b1_verb_patterns_advanced",
    "b1_phrasal_verbs",
    "b1_dependent_prepositions",
-   "b1_degree_adverbs",
    "b2_present_perfect_continuous",
    "b2_past_perfect",
    "b2_narrative_tenses",
    "b2_future_forms",
+   "b2_future_in_the_past",
    "b2_be_get_used_to",
    "b2_second_conditional",
    "b2_third_conditional",
@@ -305,11 +309,17 @@
    "b2_gerunds_infinitives_advanced",
    "b2_preposition_ing",
    "b2_articles_genericity",
+   "b2_articles_correction",
    "b2_quantifiers_advanced",
    "b2_discourse_markers",
+   "b2_clear_claims",
+   "b2_word_formation",
    "c1_narrative_mastery",
    "c1_time_aspect_edge",
+   "b2_inversion",
    "c1_inversion_emphasis",
+   "b2_cleft_sentences",
+   "b2_emphasis_fronting",
    "c1_clefts_fronting",
    "c1_participle_absolute",
    "c1_advanced_passive",
@@ -319,18 +329,23 @@
    "c1_discourse_grammar",
    "c1_register",
    "c1_advanced_modality",
+   "c1_hedging_stance",
    "c1_subjunctive",
    "c1_reporting_complementation",
    "c1_comparative_advanced",
    "c1_article_nuance",
    "c1_spoken_vs_written",
    "c1_error_patterns",
-   "b2_future_in_the_past",
-   "b2_inversion",
-   "b2_cleft_sentences",
-   "b2_clear_claims",
-   "b2_emphasis_fronting",
-   "c1_hedging_stance"
+   "c1_word_formation",
+   "a2_articles",
+   "a2_simple_vs_continuous",
+   "a2_for_since",
+   "a2_have_to",
+   "a2_past_questions",
+   "a2_could_able",
+   "a2_reflexives",
+   "a2_say_tell",
+   "a2_too_enough"
   ],
   "vocab": [
    "trunk_frames_a1",
@@ -401,9 +416,9 @@
    "leaf_self_b1",
    "leaf_home_b1",
    "craft",
+   "b2_delexical_collocations",
    "b2_false_friends",
-   "b2_fixed_phrases",
-   "b2_delexical_collocations"
+   "b2_fixed_phrases"
   ]
  },
  "roots": [
@@ -472,7 +487,7 @@
    "label": "Be / have",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A1"
@@ -506,7 +521,7 @@
    "label": "Word order",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-A1B1-01",
    "levels": [
     "A1"
@@ -520,6 +535,24 @@
    "related": [
     "b1_word_order_fronting"
    ]
+  },
+  {
+   "id": "a1_articles",
+   "domain": "grammar",
+   "label": "Articles",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a1_articles.json",
+   "practice": "grammar",
+   "note": "a/an/the · singular countable NEVER bare · a/an first, the next",
+   "partner_id": "leaf_food_a1"
   },
   {
    "id": "trunk_social_a1",
@@ -543,7 +576,7 @@
    "label": "Present simple",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A1"
@@ -592,7 +625,7 @@
    "label": "Subject–verb agreement",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "levels": [
     "A1"
    ],
@@ -624,12 +657,30 @@
    "partner_id": "a1_agreement"
   },
   {
+   "id": "a1_possessives",
+   "domain": "grammar",
+   "label": "Possessives (my / your / 's)",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a1_possessives.json",
+   "practice": "grammar",
+   "note": "my/your/his/her/our/their · name's · before noun · not mine/yours yet",
+   "partner_id": "leaf_clothes_a1"
+  },
+  {
    "id": "a1_frequency",
    "domain": "grammar",
    "label": "Frequency",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A1"
@@ -647,7 +698,7 @@
    "label": "Free time",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "free_time",
+   "tree_part": "creativity_love",
    "levels": [
     "A1"
    ],
@@ -663,7 +714,7 @@
    "label": "Questions & negatives",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-A1B1-01",
    "levels": [
     "A1"
@@ -712,7 +763,7 @@
    "label": "Question words",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-A1B1-01",
    "levels": [
     "A1"
@@ -730,7 +781,7 @@
    "label": "Places",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "travel_city",
+   "tree_part": "knowledge_travel",
    "levels": [
     "A1"
    ],
@@ -741,30 +792,12 @@
    "partner_id": "a1_question_words"
   },
   {
-   "id": "a1_articles",
-   "domain": "grammar",
-   "label": "Articles",
-   "kind": "topic",
-   "root": "noun_phrase",
-   "tree_part": "forms",
-   "codex_unit": "G_NP-A1B1-01",
-   "levels": [
-    "A1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/a1_articles.json",
-   "practice": "grammar",
-   "note": "a/an/the · singular countable NEVER bare · a/an first, the next",
-   "partner_id": "leaf_food_a1"
-  },
-  {
    "id": "leaf_food_a1",
    "domain": "vocab",
    "label": "Food & drink",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "food_shopping",
+   "tree_part": "home_family",
    "levels": [
     "A1"
    ],
@@ -773,24 +806,6 @@
    "practice": "vocab",
    "note": "meals · food · fruit and vegetables · drinks",
    "partner_id": "a1_articles"
-  },
-  {
-   "id": "a1_possessives",
-   "domain": "grammar",
-   "label": "Possessives (my / your / 's)",
-   "kind": "topic",
-   "root": "noun_phrase",
-   "tree_part": "forms",
-   "codex_unit": "G_NP-A1B1-01",
-   "levels": [
-    "A1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/a1_possessives.json",
-   "practice": "grammar",
-   "note": "my/your/his/her/our/their · name's · before noun · not mine/yours yet",
-   "partner_id": "leaf_clothes_a1"
   },
   {
    "id": "leaf_clothes_a1",
@@ -814,7 +829,7 @@
    "label": "Object pronouns",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-A1B1-01",
    "levels": [
     "A1"
@@ -848,7 +863,7 @@
    "label": "Health",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "health_body",
+   "tree_part": "self_body",
    "codex_unit": "V_THM-A1B1-07",
    "levels": [
     "A1"
@@ -879,7 +894,7 @@
    "label": "Like / want / need",
    "kind": "topic",
    "root": "verb_complementation",
-   "tree_part": "chunks",
+   "tree_part": "verb_complementation",
    "codex_unit": "G_VC-A1B1-01",
    "levels": [
     "A1"
@@ -928,7 +943,7 @@
    "label": "Can / can't",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A1"
@@ -962,7 +977,7 @@
    "label": "School",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "knowledge",
+   "tree_part": "knowledge_travel",
    "levels": [
     "A1"
    ],
@@ -992,7 +1007,7 @@
    "label": "Prepositions of place",
    "kind": "topic",
    "root": "prepositions_particles",
-   "tree_part": "links",
+   "tree_part": "prepositions_particles",
    "codex_unit": "G_PP-A1B1-01",
    "levels": [
     "A1"
@@ -1042,7 +1057,7 @@
    "label": "There is / there are",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-A1B1-01",
    "levels": [
     "A1"
@@ -1076,7 +1091,7 @@
    "label": "Some / any",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-A1B1-01",
    "levels": [
     "A1"
@@ -1110,7 +1125,7 @@
    "label": "Prepositions of time",
    "kind": "topic",
    "root": "prepositions_particles",
-   "tree_part": "links",
+   "tree_part": "prepositions_particles",
    "codex_unit": "G_PP-A1B1-01",
    "levels": [
     "A1"
@@ -1128,7 +1143,7 @@
    "label": "Time & numbers",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "free_time",
+   "tree_part": "trunk",
    "levels": [
     "A1"
    ],
@@ -1144,7 +1159,7 @@
    "label": "Nature",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "nature",
+   "tree_part": "knowledge_travel",
    "levels": [
     "A1"
    ],
@@ -1159,7 +1174,7 @@
    "label": "To / for / with",
    "kind": "topic",
    "root": "prepositions_particles",
-   "tree_part": "links",
+   "tree_part": "prepositions_particles",
    "codex_unit": "G_PP-A1B1-01",
    "levels": [
     "A1"
@@ -1177,7 +1192,7 @@
    "label": "Shopping",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "food_shopping",
+   "tree_part": "money_possessions",
    "codex_unit": "V_THM-A1B1-06",
    "levels": [
     "A1"
@@ -1194,7 +1209,7 @@
    "label": "Animals",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "nature",
+   "tree_part": "home_family",
    "levels": [
     "A1"
    ],
@@ -1209,7 +1224,7 @@
    "label": "And / but / because",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-A1B1-01",
    "levels": [
     "A1"
@@ -1243,7 +1258,7 @@
    "label": "Imperatives",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-A1B1-01",
    "levels": [
     "A1"
@@ -1277,7 +1292,7 @@
    "label": "Tech & media",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "tech",
+   "tree_part": "communication",
    "levels": [
     "A1"
    ],
@@ -1292,7 +1307,7 @@
    "label": "Colours",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "self_body",
+   "tree_part": "trunk",
    "levels": [
     "A1"
    ],
@@ -1322,7 +1337,7 @@
    "label": "Ideas",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "knowledge",
+   "tree_part": "trunk",
    "levels": [
     "A1"
    ],
@@ -1337,7 +1352,7 @@
    "label": "Present continuous",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A2"
@@ -1376,7 +1391,7 @@
    "label": "Subject–verb agreement (A2)",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "levels": [
     "A2"
    ],
@@ -1415,7 +1430,7 @@
    "label": "Past simple",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A2"
@@ -1436,7 +1451,7 @@
    "label": "Travel & holidays",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "travel_city",
+   "tree_part": "knowledge_travel",
    "codex_unit": "V_THM-A1B1-03",
    "levels": [
     "A2"
@@ -1453,7 +1468,7 @@
    "label": "Past continuous",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A2"
@@ -1474,7 +1489,7 @@
    "label": "Free time",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "free_time",
+   "tree_part": "creativity_love",
    "codex_unit": "V_THM-A1B1-09",
    "levels": [
     "A2"
@@ -1491,7 +1506,7 @@
    "label": "Present perfect",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "A2"
@@ -1512,7 +1527,7 @@
    "label": "Feelings",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "inner_life",
+   "tree_part": "inner_life_belief",
    "codex_unit": "V_THM-A1B1-09",
    "levels": [
     "A2"
@@ -1529,7 +1544,7 @@
    "label": "Will / going to",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A2"
@@ -1567,7 +1582,7 @@
    "label": "Must / should",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-A1B1-01",
    "levels": [
     "A2"
@@ -1605,7 +1620,7 @@
    "label": "Comparatives",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-A1B1-01",
    "levels": [
     "A2"
@@ -1626,7 +1641,7 @@
    "label": "A2 word list · adjectives",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "self_body",
+   "tree_part": "trunk",
    "codex_unit": "V_COR-A1B1-01",
    "levels": [
     "A2"
@@ -1643,7 +1658,7 @@
    "label": "-ed / -ing adjectives",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-A1B1-01",
    "levels": [
     "A2"
@@ -1682,7 +1697,7 @@
    "label": "Countable and uncountable",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-A1B1-01",
    "levels": [
     "A2"
@@ -1705,7 +1720,7 @@
    "label": "Food & drink",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "food_shopping",
+   "tree_part": "home_family",
    "codex_unit": "V_THM-A1B1-05",
    "levels": [
     "A2"
@@ -1722,7 +1737,7 @@
    "label": "Much / many / a lot",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-A1B1-01",
    "levels": [
     "A2"
@@ -1739,12 +1754,33 @@
    ]
   },
   {
+   "id": "a2_some_any_no",
+   "domain": "grammar",
+   "label": "Some / any / no — traps",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a2_some_any_no.json",
+   "practice": "grammar",
+   "note": "žádný = no / not…any, one negation · free-choice any · compounds · split from a1_some_any 2026-08-16",
+   "related": [
+    "a1_some_any",
+    "a2_quantifiers"
+   ]
+  },
+  {
    "id": "leaf_shopping_a2",
    "domain": "vocab",
    "label": "Shopping & money",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "food_shopping",
+   "tree_part": "money_possessions",
    "codex_unit": "V_THM-A1B1-06",
    "levels": [
     "A2"
@@ -1761,7 +1797,7 @@
    "label": "Adverb position",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-A1B1-01",
    "levels": [
     "A2"
@@ -1800,7 +1836,7 @@
    "label": "First conditional",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-A1B1-01",
    "levels": [
     "A2"
@@ -1822,7 +1858,7 @@
    "label": "A2 word list · abstract",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "knowledge",
+   "tree_part": "trunk",
    "codex_unit": "V_COR-A1B1-01",
    "levels": [
     "A2"
@@ -1839,7 +1875,7 @@
    "label": "Verb patterns (to / -ing)",
    "kind": "topic",
    "root": "verb_complementation",
-   "tree_part": "chunks",
+   "tree_part": "verb_complementation",
    "codex_unit": "G_VC-A1B1-01",
    "levels": [
     "A2"
@@ -1877,7 +1913,7 @@
    "label": "Prepositions of movement",
    "kind": "topic",
    "root": "prepositions_particles",
-   "tree_part": "links",
+   "tree_part": "prepositions_particles",
    "codex_unit": "G_PP-A1B1-01",
    "levels": [
     "A2"
@@ -1898,7 +1934,7 @@
    "label": "Sport",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "free_time",
+   "tree_part": "creativity_love",
    "codex_unit": "V_THM-A1B1-09",
    "levels": [
     "A2"
@@ -1915,7 +1951,7 @@
    "label": "Health",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "health_body",
+   "tree_part": "self_body",
    "codex_unit": "V_THM-A1B1-07",
    "levels": [
     "A2"
@@ -1931,7 +1967,7 @@
    "label": "Nature & weather",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "nature",
+   "tree_part": "knowledge_travel",
    "codex_unit": "V_THM-A1B1-09",
    "levels": [
     "A2"
@@ -1947,7 +1983,7 @@
    "label": "Tech & media",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "tech",
+   "tree_part": "communication",
    "codex_unit": "V_COR-A1B1-01",
    "levels": [
     "A2"
@@ -1963,7 +1999,7 @@
    "label": "School & learning",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "knowledge",
+   "tree_part": "knowledge_travel",
    "codex_unit": "V_THM-A1B1-02",
    "levels": [
     "A2"
@@ -1995,7 +2031,7 @@
    "label": "Media & arts",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "tech",
+   "tree_part": "communication",
    "codex_unit": "V_THM-A1B1-09",
    "levels": [
     "A2"
@@ -2075,7 +2111,7 @@
    "label": "Present perfect vs past",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B1"
@@ -2096,7 +2132,7 @@
    "label": "Used to",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B1"
@@ -2133,7 +2169,7 @@
    "label": "Passive (form of be)",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B1"
@@ -2153,7 +2189,7 @@
    "label": "Modals (might / may / must)",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B1"
@@ -2186,10 +2222,10 @@
   {
    "id": "b1_articles_advanced",
    "domain": "grammar",
-   "label": "Articles (advanced)",
+   "label": "Articles 2",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B1B2-01",
    "levels": [
     "B1"
@@ -2210,7 +2246,7 @@
    "label": "It as subject",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B1B2-01",
    "levels": [
     "B1"
@@ -2231,7 +2267,7 @@
    "label": "Fronted phrases",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B1B2-01",
    "levels": [
     "B1"
@@ -2265,12 +2301,29 @@
    "note": "Live · V_THM-A1B1-10 · 2×12 abstract lexis · Sentence = fruit"
   },
   {
+   "id": "b1_suffixes",
+   "domain": "grammar",
+   "label": "Suffixes — the basics",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b1_suffixes.json",
+   "practice": "grammar",
+   "note": "B1 affix tranche: -er/-or/-ist, -tion/-sion, -ment/-ness, -ful/-less/-y, -able/-ous/-al, -ly · Czech glosses · built 2026-08-18",
+   "exam": "word_formation"
+  },
+  {
    "id": "b1_relative_clauses",
    "domain": "grammar",
    "label": "Relative clauses",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B1"
@@ -2291,7 +2344,7 @@
    "label": "Reported speech",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B1"
@@ -2329,7 +2382,7 @@
    "label": "Indirect questions",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B1B2-01",
    "levels": [
     "B1"
@@ -2351,7 +2404,7 @@
    "label": "Linking words",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B1"
@@ -2366,12 +2419,50 @@
    ]
   },
   {
+   "id": "b1_degree_adverbs",
+   "domain": "grammar",
+   "label": "Degree adverbs",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-B1B2-01",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b1_degree_adverbs.json",
+   "practice": "grammar",
+   "note": "very/quite/a bit · too vs enough · so vs such · absolutely + extreme adjectives · 2026-08-16",
+   "related": [
+    "a2_comparatives",
+    "b2_quantifiers_advanced"
+   ]
+  },
+  {
+   "id": "b1_prefixes",
+   "domain": "grammar",
+   "label": "Prefixes — the basics",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b1_prefixes.json",
+   "practice": "grammar",
+   "note": "B1 affix tranche: un- (adj + verbs), in-/im-, dis-, re-, choose-the-prefix review · Czech glosses · built 2026-08-18",
+   "exam": "word_formation"
+  },
+  {
    "id": "leaf_money_b1",
    "domain": "vocab",
    "label": "Money & possessions",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "money",
+   "tree_part": "money_possessions",
    "codex_unit": "V_MON-B1B2-01",
    "levels": [
     "B1"
@@ -2384,10 +2475,10 @@
   {
    "id": "b1_verb_patterns_advanced",
    "domain": "grammar",
-   "label": "Verb patterns (advanced)",
+   "label": "Verb patterns 2",
    "kind": "topic",
    "root": "verb_complementation",
-   "tree_part": "chunks",
+   "tree_part": "verb_complementation",
    "codex_unit": "G_VC-B1B2-01",
    "levels": [
     "B1"
@@ -2407,7 +2498,7 @@
    "label": "Phrasal verbs",
    "kind": "topic",
    "root": "verb_complementation",
-   "tree_part": "chunks",
+   "tree_part": "verb_complementation",
    "codex_unit": "G_VC-B1B2-01",
    "levels": [
     "B1"
@@ -2444,7 +2535,7 @@
    "label": "Dependent prepositions",
    "kind": "topic",
    "root": "prepositions_particles",
-   "tree_part": "links",
+   "tree_part": "prepositions_particles",
    "codex_unit": "G_PP-B1B2-01",
    "levels": [
     "B1"
@@ -2464,7 +2555,7 @@
    "label": "Knowledge & travel",
    "kind": "leaf",
    "parent": "trunk",
-   "tree_part": "knowledge",
+   "tree_part": "knowledge_travel",
    "codex_unit": "V_KNO-B1B2-01",
    "levels": [
     "B1"
@@ -2526,7 +2617,7 @@
    "label": "Present perfect simple vs continuous",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2548,7 +2639,7 @@
    "label": "Past perfect",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2570,7 +2661,7 @@
    "label": "Narrative tenses",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2592,7 +2683,7 @@
    "label": "Future forms review",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2609,12 +2700,34 @@
    ]
   },
   {
+   "id": "b2_future_in_the_past",
+   "domain": "grammar",
+   "label": "Future in the past",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-B1B2-01",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_future_in_the_past.json",
+   "practice": "grammar",
+   "note": "Map only · content folded into b2_future_forms · thin shell kept for repair links",
+   "related": [
+    "b2_future_forms",
+    "a2_will_going_to",
+    "b1_reported_speech"
+   ]
+  },
+  {
    "id": "b2_be_get_used_to",
    "domain": "grammar",
    "label": "Be used to / get used to",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2630,12 +2743,28 @@
    ]
   },
   {
+   "id": "b2_delexical_collocations",
+   "domain": "vocab",
+   "label": "make · do · take · have · get",
+   "kind": "trunk",
+   "parent": "trunk",
+   "tree_part": "trunk",
+   "codex_unit": "V_PHR-B2C1-01",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "vocab/blocks/b2_delexical_collocations.json",
+   "practice": "vocab",
+   "note": "Live · V_PHR-B2C1-01 · 24 frames · delexical verb + noun · extends trunk_chunks_b1 · 2026-08-16"
+  },
+  {
    "id": "b2_second_conditional",
    "domain": "grammar",
    "label": "Second conditional",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2657,7 +2786,7 @@
    "label": "Third conditional",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2678,7 +2807,7 @@
    "label": "Mixed conditionals",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2699,7 +2828,7 @@
    "label": "Wish / if only",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2720,7 +2849,7 @@
    "label": "Hypothetical past",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2741,7 +2870,7 @@
    "label": "Modals (meanings + perfect)",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2758,12 +2887,28 @@
    ]
   },
   {
+   "id": "b2_false_friends",
+   "domain": "vocab",
+   "label": "Czech false friends",
+   "kind": "trunk",
+   "parent": "trunk",
+   "tree_part": "trunk",
+   "codex_unit": "V_IFR-B1B2-01",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "vocab/blocks/b2_false_friends.json",
+   "practice": "vocab",
+   "note": "Live · V_IFR-B1B2-01 · 2 blocks · word splits + false friends · seeded from Martina/Tomas error registers 2026-08-16"
+  },
+  {
    "id": "b2_passives_advanced",
    "domain": "grammar",
    "label": "Passives advanced",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2783,7 +2928,7 @@
    "label": "Causative (have/get done)",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B1B2-01",
    "levels": [
     "B2"
@@ -2804,7 +2949,7 @@
    "label": "Reported speech advanced",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2824,7 +2969,7 @@
    "label": "Relative clauses advanced",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2844,7 +2989,7 @@
    "label": "Participle clauses",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2864,7 +3009,7 @@
    "label": "Gerunds & infinitives advanced",
    "kind": "topic",
    "root": "verb_complementation",
-   "tree_part": "chunks",
+   "tree_part": "verb_complementation",
    "codex_unit": "G_VC-B1B2-01",
    "levels": [
     "B2"
@@ -2885,16 +3030,16 @@
    "label": "Preposition + -ing",
    "kind": "topic",
    "root": "prepositions_particles",
-   "tree_part": "links",
+   "tree_part": "prepositions_particles",
    "codex_unit": "G_PP-B1B2-01",
    "levels": [
     "B2"
    ],
-   "status": "live",
+   "status": "parked",
    "foundation": false,
    "content": "grammar/blocks/b2_preposition_ing.json",
    "practice": "grammar",
-   "note": "adjective/verb + preposition + -ing · plain prepositions + -ing · `to` preposition vs infinitive marker · 4 strands x 12 · built 2026-08-07",
+   "note": "adjective/verb + preposition + -ing · plain prepositions + -ing · `to` preposition vs infinitive marker · 4 strands x 12 · built 2026-08-07 · PARKED 2026-08-24, mirrored from nodes-grammar.json. NB status is DUPLICATED across tree.json and nodes-grammar.json and nothing keeps them in sync — the app reads tree.json, the codex scripts read nodes-grammar.json, so a change to one alone silently does nothing where it matters.",
    "related": [
     "b1_dependent_prepositions"
    ]
@@ -2905,7 +3050,7 @@
    "label": "Articles / genericity",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B1B2-01",
    "levels": [
     "B2"
@@ -2923,24 +3068,40 @@
   },
   {
    "id": "b2_articles_correction",
+   "domain": "grammar",
    "label": "Articles: the mixed cases",
    "kind": "topic",
    "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-B1B2-01",
    "levels": [
     "B2"
    ],
    "status": "live",
+   "foundation": false,
    "content": "grammar/blocks/b2_articles_correction.json",
+   "practice": "grammar",
    "note": "error-correction sheet from Václav's lesson turned into 28 gap items · first mention vs known · the forced by of/superlative/date · names · institutions · generic zero · built 2026-08-22",
    "related": [
     "b2_articles_genericity",
     "b1_articles_advanced"
+   ]
+  },
+  {
+   "id": "b2_fixed_phrases",
+   "domain": "vocab",
+   "label": "Fixed phrases & idioms",
+   "kind": "trunk",
+   "parent": "trunk",
+   "tree_part": "trunk",
+   "codex_unit": "V_PHR-B2C1-01",
+   "levels": [
+    "B2"
    ],
-   "codex_unit": "G_NP-B1B2-01",
-   "domain": "grammar",
-   "tree_part": "forms",
-   "foundation": false,
-   "practice": "grammar"
+   "status": "live",
+   "content": "vocab/blocks/b2_fixed_phrases.json",
+   "practice": "vocab",
+   "note": "Live · V_PHR-B2C1-01 · 18 frames · on holiday, in secret, no idea, by + author · 2026-08-16"
   },
   {
    "id": "b2_quantifiers_advanced",
@@ -2948,7 +3109,7 @@
    "label": "Quantifiers advanced",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B1B2-01",
    "levels": [
     "B2"
@@ -2968,7 +3129,7 @@
    "label": "Discourse markers B2",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B1B2-01",
    "levels": [
     "B2"
@@ -2983,12 +3144,50 @@
    ]
   },
   {
+   "id": "b2_clear_claims",
+   "domain": "grammar",
+   "label": "Clear claims",
+   "kind": "topic",
+   "root": "clause_linking",
+   "tree_part": "clause_linking",
+   "codex_unit": "G_CL-B1B2-01",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_clear_claims.json",
+   "practice": "grammar",
+   "note": "Pilot writing logic — not on B2 path · shaded / not class spine · 2026-08-06",
+   "related": [
+    "b2_discourse_markers",
+    "b1_linkers"
+   ]
+  },
+  {
+   "id": "b2_word_formation",
+   "domain": "grammar",
+   "label": "Word formation (FCE Part 3)",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_word_formation.json",
+   "practice": "grammar",
+   "note": "FCE Part 3: sentence gap + capitalised root, whole derived word typed · EN-only cues · built 2026-08-18",
+   "exam": "word_formation"
+  },
+  {
    "id": "c1_narrative_mastery",
    "domain": "grammar",
    "label": "Narrative tenses mastery",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B2C1-01",
    "levels": [
     "C1"
@@ -3011,7 +3210,7 @@
    "label": "Future & aspect edge cases",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B2C1-01",
    "levels": [
     "C1"
@@ -3029,12 +3228,32 @@
    ]
   },
   {
+   "id": "b2_inversion",
+   "domain": "grammar",
+   "label": "Inversion",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-B1B2-01",
+   "levels": [
+    "C1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_inversion.json",
+   "practice": "grammar",
+   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+   "related": [
+    "c1_inversion_emphasis"
+   ]
+  },
+  {
    "id": "c1_inversion_emphasis",
    "domain": "grammar",
    "label": "Inversion & inverted conditionals",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B2C1-01",
    "levels": [
     "C1"
@@ -3052,12 +3271,53 @@
    ]
   },
   {
+   "id": "b2_cleft_sentences",
+   "domain": "grammar",
+   "label": "Cleft sentences",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-B1B2-01",
+   "levels": [
+    "C1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_cleft_sentences.json",
+   "practice": "grammar",
+   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+   "related": [
+    "c1_clefts_fronting"
+   ]
+  },
+  {
+   "id": "b2_emphasis_fronting",
+   "domain": "grammar",
+   "label": "Emphasis & fronting",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-B1B2-01",
+   "levels": [
+    "C1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_emphasis_fronting.json",
+   "practice": "grammar",
+   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+   "related": [
+    "c1_clefts_fronting",
+    "c1_inversion_emphasis"
+   ]
+  },
+  {
    "id": "c1_clefts_fronting",
    "domain": "grammar",
    "label": "Clefts & fronting",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B2C1-01",
    "levels": [
     "C1"
@@ -3081,7 +3341,7 @@
    "label": "Participle & absolute constructions",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B2C1-01",
    "levels": [
     "C1"
@@ -3103,7 +3363,7 @@
    "label": "Advanced passives & reporting passives",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B2C1-01",
    "levels": [
     "C1"
@@ -3125,7 +3385,7 @@
    "label": "Nominalisation",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B2C1-01",
    "levels": [
     "C1"
@@ -3147,7 +3407,7 @@
    "label": "Complex noun phrases",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B2C1-01",
    "levels": [
     "C1"
@@ -3168,7 +3428,7 @@
    "label": "Ellipsis & substitution",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B2C1-01",
    "levels": [
     "C1"
@@ -3185,7 +3445,7 @@
    "label": "Discourse grammar",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B2C1-01",
    "levels": [
     "C1"
@@ -3208,7 +3468,7 @@
    "label": "Register: formal vs informal",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B2C1-01",
    "levels": [
     "C1"
@@ -3225,7 +3485,7 @@
    "label": "Modality, hedging & stance",
    "kind": "topic",
    "root": "verb_phrase",
-   "tree_part": "verbs",
+   "tree_part": "verb_phrase",
    "codex_unit": "G_VP-B2C1-01",
    "levels": [
     "C1"
@@ -3243,12 +3503,33 @@
    ]
   },
   {
+   "id": "c1_hedging_stance",
+   "domain": "grammar",
+   "label": "Hedging & stance",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-B2C1-01",
+   "levels": [
+    "C1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/c1_hedging_stance.json",
+   "practice": "grammar",
+   "note": "Map-only · content folded into c1_advanced_modality (path) · thin shell kept for repair 2026-08-06",
+   "related": [
+    "c1_advanced_modality",
+    "c1_register"
+   ]
+  },
+  {
    "id": "c1_subjunctive",
    "domain": "grammar",
    "label": "Subjunctive & formal unreal",
    "kind": "topic",
    "root": "clause_linking",
-   "tree_part": "links",
+   "tree_part": "clause_linking",
    "codex_unit": "G_CL-B2C1-01",
    "levels": [
     "C1"
@@ -3271,7 +3552,7 @@
    "label": "Reporting verbs & complementation",
    "kind": "topic",
    "root": "verb_complementation",
-   "tree_part": "chunks",
+   "tree_part": "verb_complementation",
    "codex_unit": "G_VC-B2C1-01",
    "levels": [
     "C1"
@@ -3294,7 +3575,7 @@
    "label": "Comparative structures advanced",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B2C1-01",
    "levels": [
     "C1"
@@ -3314,7 +3595,7 @@
    "label": "Article nuance",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "codex_unit": "G_NP-B2C1-01",
    "levels": [
     "C1"
@@ -3336,7 +3617,7 @@
    "label": "Spoken grammar vs written",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B2C1-01",
    "levels": [
     "C1"
@@ -3356,7 +3637,7 @@
    "label": "Error patterns at C1",
    "kind": "topic",
    "root": "sentence_syntax",
-   "tree_part": "sentence",
+   "tree_part": "sentence_syntax",
    "codex_unit": "G_SS-B2C1-01",
    "levels": [
     "C1"
@@ -3368,244 +3649,12 @@
    "note": "fossilisation: articles/preps/tense · thin shell 2026-08-05"
   },
   {
-   "id": "b2_future_in_the_past",
-   "domain": "grammar",
-   "label": "Future in the past",
-   "kind": "topic",
-   "root": "verb_phrase",
-   "tree_part": "verbs",
-   "codex_unit": "G_VP-B1B2-01",
-   "levels": [
-    "B2"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b2_future_in_the_past.json",
-   "practice": "grammar",
-   "note": "Map only · content folded into b2_future_forms · thin shell kept for repair links",
-   "related": [
-    "b2_future_forms",
-    "a2_will_going_to",
-    "b1_reported_speech"
-   ]
-  },
-  {
-   "id": "b2_inversion",
-   "domain": "grammar",
-   "label": "Inversion",
-   "kind": "topic",
-   "root": "sentence_syntax",
-   "tree_part": "sentence",
-   "codex_unit": "G_SS-B1B2-01",
-   "levels": [
-    "C1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b2_inversion.json",
-   "practice": "grammar",
-   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-   "related": [
-    "c1_inversion_emphasis"
-   ]
-  },
-  {
-   "id": "b2_cleft_sentences",
-   "domain": "grammar",
-   "label": "Cleft sentences",
-   "kind": "topic",
-   "root": "sentence_syntax",
-   "tree_part": "sentence",
-   "codex_unit": "G_SS-B1B2-01",
-   "levels": [
-    "C1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b2_cleft_sentences.json",
-   "practice": "grammar",
-   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-   "related": [
-    "c1_clefts_fronting"
-   ]
-  },
-  {
-   "id": "b2_clear_claims",
-   "domain": "grammar",
-   "label": "Clear claims",
-   "kind": "topic",
-   "root": "clause_linking",
-   "tree_part": "links",
-   "codex_unit": "G_CL-B1B2-01",
-   "levels": [
-    "B2"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b2_clear_claims.json",
-   "practice": "grammar",
-   "note": "Pilot writing logic — not on B2 path · shaded / not class spine · 2026-08-06",
-   "related": [
-    "b2_discourse_markers",
-    "b1_linkers"
-   ]
-  },
-  {
-   "id": "b2_emphasis_fronting",
-   "domain": "grammar",
-   "label": "Emphasis & fronting",
-   "kind": "topic",
-   "root": "sentence_syntax",
-   "tree_part": "sentence",
-   "codex_unit": "G_SS-B1B2-01",
-   "levels": [
-    "C1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b2_emphasis_fronting.json",
-   "practice": "grammar",
-   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-   "related": [
-    "c1_clefts_fronting",
-    "c1_inversion_emphasis"
-   ]
-  },
-  {
-   "id": "c1_hedging_stance",
-   "domain": "grammar",
-   "label": "Hedging & stance",
-   "kind": "topic",
-   "root": "verb_phrase",
-   "tree_part": "verbs",
-   "codex_unit": "G_VP-B2C1-01",
-   "levels": [
-    "C1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/c1_hedging_stance.json",
-   "practice": "grammar",
-   "note": "Map-only · content folded into c1_advanced_modality (path) · thin shell kept for repair 2026-08-06",
-   "related": [
-    "c1_advanced_modality",
-    "c1_register"
-   ]
-  },
-  {
-   "id": "b2_false_friends",
-   "domain": "vocab",
-   "label": "Czech false friends",
-   "kind": "trunk",
-   "parent": "trunk",
-   "tree_part": "trunk",
-   "codex_unit": "V_IFR-B1B2-01",
-   "levels": [
-    "B2"
-   ],
-   "status": "live",
-   "content": "vocab/blocks/b2_false_friends.json",
-   "practice": "vocab",
-   "note": "Live · V_IFR-B1B2-01 · 2 blocks · word splits + false friends · seeded from Martina/Tomas error registers 2026-08-16"
-  },
-  {
-   "id": "b2_fixed_phrases",
-   "domain": "vocab",
-   "label": "Fixed phrases & idioms",
-   "kind": "trunk",
-   "parent": "trunk",
-   "tree_part": "trunk",
-   "codex_unit": "V_PHR-B2C1-01",
-   "levels": [
-    "B2"
-   ],
-   "status": "live",
-   "content": "vocab/blocks/b2_fixed_phrases.json",
-   "practice": "vocab",
-   "note": "Live · V_PHR-B2C1-01 · 18 frames · on holiday, in secret, no idea, by + author · 2026-08-16"
-  },
-  {
-   "id": "b2_delexical_collocations",
-   "domain": "vocab",
-   "label": "make · do · take · have · get",
-   "kind": "trunk",
-   "parent": "trunk",
-   "tree_part": "trunk",
-   "codex_unit": "V_PHR-B2C1-01",
-   "levels": [
-    "B2"
-   ],
-   "status": "live",
-   "content": "vocab/blocks/b2_delexical_collocations.json",
-   "practice": "vocab",
-   "note": "Live · V_PHR-B2C1-01 · 24 frames · delexical verb + noun · extends trunk_chunks_b1 · 2026-08-16"
-  },
-  {
-   "id": "b1_degree_adverbs",
-   "domain": "grammar",
-   "label": "Degree adverbs",
-   "kind": "topic",
-   "root": "noun_phrase",
-   "tree_part": "forms",
-   "codex_unit": "G_NP-B1B2-01",
-   "levels": [
-    "B1"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b1_degree_adverbs.json",
-   "practice": "grammar",
-   "note": "very/quite/a bit · too vs enough · so vs such · absolutely + extreme adjectives · 2026-08-16",
-   "related": [
-    "a2_comparatives",
-    "b2_quantifiers_advanced"
-   ]
-  },
-  {
-   "id": "a2_some_any_no",
-   "domain": "grammar",
-   "label": "Some / any / no — traps",
-   "kind": "topic",
-   "root": "noun_phrase",
-   "tree_part": "forms",
-   "codex_unit": "G_NP-A1B1-01",
-   "levels": [
-    "A2"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/a2_some_any_no.json",
-   "practice": "grammar",
-   "note": "žádný = no / not…any, one negation · free-choice any · compounds · split from a1_some_any 2026-08-16",
-   "related": [
-    "a1_some_any",
-    "a2_quantifiers"
-   ]
-  },
-  {
-   "id": "b2_word_formation",
-   "domain": "grammar",
-   "label": "Word formation (FCE Part 3)",
-   "kind": "topic",
-   "root": "noun_phrase",
-   "tree_part": "forms",
-   "levels": [
-    "B2"
-   ],
-   "status": "live",
-   "foundation": false,
-   "content": "grammar/blocks/b2_word_formation.json",
-   "practice": "grammar",
-   "exam": "word_formation",
-   "note": "FCE Part 3: sentence gap + capitalised root, whole derived word typed · EN-only cues · built 2026-08-18"
-  },
-  {
    "id": "c1_word_formation",
    "domain": "grammar",
    "label": "Word formation (CAE Part 3)",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
    "levels": [
     "C1"
    ],
@@ -3613,42 +3662,152 @@
    "foundation": false,
    "content": "grammar/blocks/c1_word_formation.json",
    "practice": "grammar",
-   "exam": "word_formation",
-   "note": "CAE Part 3: rarer suffixes, shifted stems, assimilating negatives · roots from Ready for C1 families, original sentences · built 2026-08-18"
+   "note": "CAE Part 3: rarer suffixes, shifted stems, assimilating negatives · roots from Ready for C1 families, original sentences · built 2026-08-18",
+   "exam": "word_formation"
   },
   {
-   "id": "b1_suffixes",
+   "id": "a2_articles",
    "domain": "grammar",
-   "label": "Suffixes — the basics",
+   "label": "Articles at A2 — the vs zero",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-A1B1-01",
    "levels": [
-    "B1"
+    "A2"
    ],
-   "status": "live",
+   "status": "coming",
    "foundation": false,
-   "content": "grammar/blocks/b1_suffixes.json",
    "practice": "grammar",
-   "exam": "word_formation",
-   "note": "B1 affix tranche: -er/-or/-ist, -tion/-sion, -ment/-ness, -ful/-less/-y, -able/-ous/-al, -ly · Czech glosses · built 2026-08-18"
+   "note": "Second pass at articles between a1_articles and b1_articles_advanced — the vs zero with plurals and abstract nouns (*I like the dogs*, *The life is hard*). Highest-frequency Czech-L1 error."
   },
   {
-   "id": "b1_prefixes",
+   "id": "a2_simple_vs_continuous",
    "domain": "grammar",
-   "label": "Prefixes — the basics",
+   "label": "Present simple vs continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "Contrast unit — both forms are taught separately (a1_present_simple, a2_present_continuous) and never against each other. Czech has no progressive aspect, so the contrast is the error site."
+  },
+  {
+   "id": "a2_for_since",
+   "domain": "grammar",
+   "label": "For / since + duration",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "*I live here five years* — Czech uses present tense for continuing states. Pairs with a2_present_perfect."
+  },
+  {
+   "id": "a2_have_to",
+   "domain": "grammar",
+   "label": "Have to / don't have to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "Gap beside a2_modals_must_should. *mustn't* vs *don't have to* is a meaning reversal, not a register slip."
+  },
+  {
+   "id": "a2_past_questions",
+   "domain": "grammar",
+   "label": "Past questions & negatives",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "*Where did you went?* — do-support collapses in the past. Extends a1_questions_negatives."
+  },
+  {
+   "id": "a2_could_able",
+   "domain": "grammar",
+   "label": "Can / could / be able to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "Extends a1_can to past ability and polite / possibility uses."
+  },
+  {
+   "id": "a2_reflexives",
+   "domain": "grammar",
+   "label": "Reflexive verbs & -self",
    "kind": "topic",
    "root": "noun_phrase",
-   "tree_part": "forms",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-A1B1-01",
    "levels": [
-    "B1"
+    "A2"
    ],
-   "status": "live",
+   "status": "coming",
    "foundation": false,
-   "content": "grammar/blocks/b1_prefixes.json",
    "practice": "grammar",
-   "exam": "word_formation",
-   "note": "B1 affix tranche: un- (adj + verbs), in-/im-, dis-, re-, choose-the-prefix review · Czech glosses · built 2026-08-18"
+   "note": "*I feel myself good*, *It happened me* — Czech se-verbs mis-map onto English. No equivalent unit anywhere in the app."
+  },
+  {
+   "id": "a2_say_tell",
+   "domain": "grammar",
+   "label": "Say / tell / speak / talk",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "tree_part": "verb_complementation",
+   "codex_unit": "G_VC-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "říct vs mluvit split differently in English. Survives untreated to C1."
+  },
+  {
+   "id": "a2_too_enough",
+   "domain": "grammar",
+   "label": "Too / enough",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "codex_unit": "G_NP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "coming",
+   "foundation": false,
+   "practice": "grammar",
+   "note": "Absent at every level. Both meaning and position go wrong."
   }
  ],
  "synced_from": {

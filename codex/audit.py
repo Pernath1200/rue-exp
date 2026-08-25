@@ -14,6 +14,11 @@ The contract is a ratchet, not a wall:
                                          # audit/sequencing-baseline.json;
                                          # if lower, baseline auto-tightens
 
+Proper nouns don't count as vocabulary (known or identical in Czech): any
+word capitalised in a non-sentence-initial position is exempt for that unit.
+A proper noun that only ever appears sentence-initial still flags — it can't
+be told apart from ordinary capitalisation.
+
 Blind spots (documented, not solved): naive suffix stemming; homographs
 (string match is not meaning match); multi-word expressions are checked
 word-by-word. Treat reports as leads, not verdicts.
@@ -143,6 +148,26 @@ def tokens_of(text: str) -> list[str]:
     return WORD_RE.findall(text.lower().replace("’", "'"))
 
 
+SENT_SPLIT_RE = re.compile(r"[.!?]+")
+WORD_SPAN_RE = re.compile(r"[\w'’]+")
+
+
+def proper_tokens(text: str) -> set[str]:
+    """Lowercased tokens of words capitalised mid-sentence — proper nouns.
+
+    The first word of each sentence is skipped (capital proves nothing there).
+    Runs on the ORIGINAL text: tokens_of() has already lost case, and non-ASCII
+    letters (Ondřej) split into fragments there, so the whole span is captured
+    here and every fragment it tokenizes to is exempted."""
+    out: set[str] = set()
+    for sent in SENT_SPLIT_RE.split(text):
+        words = WORD_SPAN_RE.findall(sent)
+        for w in words[1:]:
+            if w[0].isupper():
+                out.update(tokens_of(w))
+    return out
+
+
 def full_path(tree: dict) -> list[str]:
     seen: set[str] = set()
     out: list[str] = []
@@ -233,8 +258,14 @@ def main() -> int:
         partner = node_targets(node["partner_id"]) if node.get("partner_id") else set()
         legal = pool | own | partner | GLUE
         unknown: dict[str, int] = {}
-        for text in exposed_text(pack):
+        texts = exposed_text(pack)
+        proper: set[str] = set()
+        for text in texts:
+            proper |= proper_tokens(text)
+        for text in texts:
             for tok in tokens_of(text):
+                if tok in proper:
+                    continue
                 if any(v in legal for v in variants(tok)):
                     continue
                 unknown[tok] = unknown.get(tok, 0) + 1

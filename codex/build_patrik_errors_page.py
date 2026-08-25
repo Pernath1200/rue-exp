@@ -31,9 +31,9 @@ BASE = "https://pernath1200.github.io/rue-exp/"
 # id -> (title, level). All verified live (status: live, on a path_order) 2026-08-24.
 UNITS = {
     "a2_first_conditional": ("First conditional", "A2"),
-    "b1_verb_patterns_advanced": ("Verb patterns +", "B1"),
+    "b1_verb_patterns_advanced": ("Verb patterns 2", "B1"),
     "b2_preposition_ing": ("Preposition + -ing", "B2"),
-    "b1_articles_advanced": ("Articles (advanced)", "B1"),
+    "b1_articles_advanced": ("Articles 2", "B1"),
     "a2_present_continuous": ("Present continuous", "A2"),
     "a1_prepositions_time": ("Prepositions of time", "A1"),
     "b1_indirect_questions": ("Indirect questions", "B1"),
@@ -52,13 +52,12 @@ GROUP = {
     "small": None,
 }
 
-# verb-group items whose real point is preposition + -ing, not to/bare infinitive.
-PREP_ING = {
-    "blocking you from to be powerful",
-    "I'm thinking about to change the design.",
-    "He is interested in to invest.",
-    "Thanks for to help me yesterday.",
-}
+# These four are preposition + -ing. They used to route to b2_preposition_ing,
+# which was PARKED on 2026-08-24 as duplicate teaching: the rule is one line and
+# now lives on slide 4 of b1_verb_patterns_advanced, and the collocations belong
+# to b1_dependent_prepositions. So they route with the rest of the verb group to
+# b1_verb_patterns_advanced, which teaches the rule and is inspected.
+PREP_ING = set()
 
 # small-group, one at a time. None = no live unit; leave unlinked (see policy above).
 SMALL = {

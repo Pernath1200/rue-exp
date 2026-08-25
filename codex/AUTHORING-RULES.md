@@ -90,6 +90,7 @@ Translate answers.
 |---|---|---|---|
 | **E1** | A sentence needs a situation, not just a grammar frame. | *"I will call you if I arrive early"* — grammatical, and means almost nothing. Compare *"If it rains, I'll work at home."* | `observed` |
 | **E2** | One error per error-correction item. If the "correct" answer still contains something questionable, the item teaches it by implication. | A carrier sentence introduced an over-used *how* beside the target error. | `confirmed` |
+| **E3** | Accepts stay aspect-strict: a continuous twin is NOT an accepted variant of a simple-form answer (Czech learners over-apply the continuous once they acquire it). Add the twin only where the simple form is unnatural in context — momentary weather and the like — and mark it item-by-item as an exception. | `a1_agreement` *Tady prší.* — "It's raining here" is the natural English and was rejected; James's call 2026-08-25: accept there, nowhere else in the unit. | `confirmed` |
 
 ---
 

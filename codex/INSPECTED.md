@@ -14,18 +14,18 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**2 inspected · 0 approved · 98 unseen** of 100 live units
+**3 inspected · 0 approved · 96 unseen** of 99 live units
 
-Of the 36 cloud-authored units, **0 have any tick**.
+Of the 35 cloud-authored units, **0 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 0 inspected / 0 approved / 20 units
+## A1 — 1 inspected / 0 approved / 20 units
 
 - [ ][ ] `a1_be_have` — Be / have · 26 items · **cloud**
 - [ ][ ] `a1_present_simple` — Present simple · 31 items · **cloud** · seen?
-- [ ][ ] `a1_agreement` — Subject–verb agreement · 28 items
+- [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [ ][ ] `a1_and_but_because` — And / but / because · 24 items
 - [ ][ ] `a1_articles` — Articles · 35 items · seen?
 - [ ][ ] `a1_can` — Can / can't · 24 items · seen?
@@ -65,7 +65,7 @@ Of the 36 cloud-authored units, **0 have any tick**.
 
 ## B1 — 1 inspected / 0 approved / 17 units
 
-- [ ][ ] `b1_articles_advanced` — Articles (advanced) · 53 items · seen?
+- [ ][ ] `b1_articles_advanced` — Articles 2 · 62 items · seen?
 - [ ][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 16 items
 - [ ][ ] `b1_dependent_prepositions` — Dependent prepositions · 51 items
 - [ ][ ] `b1_indirect_questions` — Indirect questions · 24 items
@@ -80,10 +80,10 @@ Of the 36 cloud-authored units, **0 have any tick**.
 - [ ][ ] `b1_reported_speech` — Reported speech · 54 items · seen?
 - [ ][ ] `b1_suffixes` — Suffixes — the basics · 72 items
 - [ ][ ] `b1_used_to` — Used to · 48 items
-- [x][ ] `b1_verb_patterns_advanced` — Verb patterns + · 56 items · seen?
+- [x][ ] `b1_verb_patterns_advanced` — Verb patterns 2 · 56 items · seen?
 - [ ][ ] `b1_word_order_fronting` — Fronted phrases · 36 items
 
-## B2 — 0 inspected / 0 approved / 28 units
+## B2 — 0 inspected / 0 approved / 27 units
 
 - [ ][ ] `b2_articles_genericity` — Articles / genericity · 48 items · **cloud**
 - [ ][ ] `b2_be_get_used_to` — Be used to / get used to · 48 items · **cloud**
@@ -97,7 +97,6 @@ Of the 36 cloud-authored units, **0 have any tick**.
 - [ ][ ] `b2_narrative_tenses` — Narrative tenses · 48 items · **cloud**
 - [ ][ ] `b2_participle_clauses` — Participle clauses · 48 items · **cloud**
 - [ ][ ] `b2_passives_advanced` — Passives advanced · 48 items · **cloud**
-- [ ][ ] `b2_preposition_ing` — Preposition + -ing · 48 items · **cloud**
 - [ ][ ] `b2_quantifiers_advanced` — Quantifiers advanced · 48 items · **cloud**
 - [ ][ ] `b2_relative_clauses_advanced` — Relative clauses advanced · 48 items · **cloud**
 - [ ][ ] `b2_reported_speech_advanced` — Reported speech advanced · 48 items · **cloud**

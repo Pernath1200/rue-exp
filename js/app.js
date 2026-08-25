@@ -237,7 +237,13 @@ async function openNodeFromHash({ replace = true } = {}) {
   const { id, review } = parseUnitHash(location.hash);
   if (!id) return false;
   const node = resolveNodeId(id);
-  if (!node || node.status !== "live" || !node.content) {
+  // Deep links are teacher links (see showDeepLinkNotice), so a PARKED unit
+  // whose content is built still opens by hash — the map keeps hiding it.
+  // b2_preposition_ing was built and parked, and its link dead-ended
+  // (James, 2026-08-24 smoke flag).
+  const openable =
+    node && node.content && (node.status === "live" || node.status === "parked");
+  if (!openable) {
     // A real click on a bad link — say so instead of silently showing the map.
     if (STATE.view === "practice") showMap({ fromHash: true });
     showDeepLinkNotice(id);
@@ -457,6 +463,7 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
         </svg>
       </div>
       <div class="fruit-payoff-kind" aria-hidden="true">${escapeXml(meterLabel)}</div>
+      <div class="fruit-payoff-tree" id="payoff-tree" aria-hidden="true"></div>
       <div class="fruit-payoff-head">
         <span class="fruit-payoff-level" aria-hidden="true">${escapeXml(level)}</span>
         <span class="fruit-payoff-stats">
@@ -487,6 +494,47 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
 
   const fill = root.querySelector("#payoff-fill");
   const tick = root.querySelector(".fruit-payoff-tick");
+
+  /* The tree is the reward (James, 2026-08-23): the unit's own seat and the
+   * trunk light up and grow a touch. Grammar -> its codex root; vocab -> its
+   * house (or the trunk itself); every exercise uses trunk vocabulary. */
+  const treeHost = root.querySelector("#payoff-tree");
+  const unit = nodeById(nodeId);
+  if (treeHost && unit && STATE.tree) {
+    const seat = unit.domain === "grammar" ? unit.root || unit.tree_part : unit.tree_part || "trunk";
+    const parts = seat && seat !== "trunk" ? [seat, "trunk"] : ["trunk"];
+    try {
+      renderTreePortrait(treeHost, {
+        level,
+        nodes: STATE.tree.nodes || [],
+        isFruit: (id) => { const n = nodeById(id); return n ? isFruit(n) : false; },
+        progressState: (id) => { const n = nodeById(id); return n ? progressState(n) : "planned"; },
+        highlight: parts,
+        justNow: nodeId,
+        /* Grammar lives below ground: its payoff shows trunk + roots only, the
+         * unit's root grown and labelled — no branches, no crown labels
+         * (James, 2026-08-24, Articles 2 smoke). Vocab payoffs keep the crown. */
+        focus: unit.domain === "grammar" ? "roots" : undefined,
+        focusLabel: unit.domain === "grammar" ? unit.label || "" : "",
+      });
+      root.querySelector(".fruit-payoff")?.classList.add("fruit-payoff--tree");
+      /* Put the tree on screen BEFORE it grows. The CSS animations are held
+       * behind .tp-run, so scroll first, then start them — otherwise the whole
+       * 1.6 s of growth plays below the fold and the student scrolls up to a
+       * finished tree (James, 2026-08-23). */
+      const svg = treeHost.querySelector("svg");
+      window.scrollTo({ top: 0, behavior: "auto" });
+      requestAnimationFrame(() => {
+        treeHost.scrollIntoView({ block: "center", behavior: "smooth" });
+        setTimeout(() => svg && svg.classList.add("tp-run"), 350);
+      });
+    } catch (e) {
+      console.warn("[rue-exp payoff] tree render failed", e);
+      treeHost.remove();
+    }
+  } else if (treeHost) {
+    treeHost.remove();
+  }
 
   if (reduce) {
     paintStats(toN, toP);

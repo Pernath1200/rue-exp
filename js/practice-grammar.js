@@ -155,8 +155,17 @@ const CLOCK_WORD_RE = new RegExp(
  * contraction in every grammar pack graded the long form wrong.
  * (James, 2026-08-20: "I have said a million times to allow both
  * contractions and the full form".) */
+/* Diacritics fold on BOTH sides. The target language is English, so the only
+ * accented characters that ever reach grading are Czech proper nouns the packs
+ * quote — and an English articles unit must not fail "She lives in Karlin"
+ * for the missing í (James, 2026-08-24, b1_articles_advanced smoke). Folding
+ * both sides means the accented and unaccented spellings both pass. */
+function foldDiacritics(s) {
+  return s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+}
+
 function norm(s) {
-  return expandContractions(String(s))
+  return foldDiacritics(expandContractions(String(s)))
     .toLowerCase()
     .replace(/[!?.,;:"'()]/g, " ")
     // the apostrophe is gone by now, so o'clock reads as "o clock"
@@ -167,7 +176,7 @@ function norm(s) {
 }
 
 function normEnding(s) {
-  return expandContractions(String(s))
+  return foldDiacritics(expandContractions(String(s)))
     .toLowerCase()
     .replace(/[!?.,;:"'()\s]/g, "")
     .trim();
@@ -1635,7 +1644,10 @@ export function startPractice(rawPack, root, opts) {
       itemIndex: idx,
       // `prompt` in Use IS the Czech (use_items prompt = it.cz), so flagging
       // from Use printed the Czech twice and never showed the English target.
-      en: item.answer || prompt,
+      // In Type the prompt IS the English cloze — flagging with the answer
+      // there produced "en: queues" and no sentence at all (James, 2026-08-24,
+      // b1_articles_advanced smoke).
+      en: kind === "type" ? item.prompt || item.en || "" : item.answer || prompt,
       cz: item.cz || "",
       gap: isGap ? item.stem || "" : isRoot ? item.root : "",
       gap_answer: isGap ? item.ending || "" : item.answer || "",

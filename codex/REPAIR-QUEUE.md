@@ -575,3 +575,33 @@ button rather than stopping to write it down.
 - [ ] **Flag button** reachable on every screen.
 - [ ] **Progress** survives a refresh.
 - [ ] **Way home** — RUE top left returns to the map mid-drill.
+
+### Smoke flags — 2026-08-25 (James, testing on the GitHub Pages build)
+
+- [ ] **`a1_agreement` — quiz distractors are different verbs, not verb forms.**
+  Authored `quiz_options` mix lemmas: *You ____ English and Czech* offers
+  speak / speaks / **teach / teaches**. James's design rule: distractors must
+  be typical mistakes, i.e. forms of the TARGET verb — never other verbs.
+  **FIXED in working tree 2026-08-25** (same session): all 28 items rewritten
+  to [answer, agreement twin, -ing form, past form]. Tick with hash at the
+  post-session commit.
+- [x] **Same check on `a2_agreement`** (27 items) — **checked 2026-08-25,
+  clean, no change**: every option set is same-slot forms (do/does/is/are in
+  question items is the typical-mistake set for that slot).
+
+### New-unit ideas — authoring, NOT repair. Do not process in any lane; needs a James build session.
+
+- [ ] **nature / countryside (příroda)** — flagged 2026-08-25 (James, reviewing
+  Martina's practice page). *příroda* fans out: **nature** (no article) ·
+  **the countryside** (rural area you go to; *v přírodě* mostly lands here or
+  as **outdoors**) · **scenery / landscape** (what you look at) · **wildlife**
+  (the animals). Evidence: Martina *near of nature*, "the nature"-type slips.
+  Frames: *we went to the nature* → out into the countryside · *in nature* →
+  outdoors · *beautiful nature* → beautiful scenery. Vocab side, Czech-
+  interference (V_IFR) family, sits beside `b2_false_friends`. Codex seat
+  needed before content.
+- [ ] **come / go · bring / take (deixis)** — flagged 2026-08-25, same review.
+  *vrátit se* → *come back* overreach (Martina: *come back to Santorini*,
+  written from Prague); Jan adjacent (*attend to Prague*). Pairs: come/go,
+  bring/take, anchored to where the speaker is. No unit covers deixis today.
+  Codex seat needed before content.

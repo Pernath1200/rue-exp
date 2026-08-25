@@ -6,7 +6,31 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
-## 2026-08-22 · local (interactive with James) · `main`
+## 2026-08-25 · local (design session with James) · tap-root model — settled fork, build-session work
+
+**No engine code landed for this tonight** — this entry records the settled
+design. (Separately landed in the working tree today: a1_agreement distractor
+rewrite + rain-item accepts, payoff root-emphasis strengthening, AUTHORING-RULES
+E3.)
+
+The tap root is a **barometer of always-on sentence machinery**, not a seat:
+
+- **Pulse**: every grammar payoff pulses the tap, exactly as the trunk pulses
+  above ground. (James: this is the felt meaning that was missing.)
+- **Fill / knots**: the curated foundation list only. `a1_agreement` JOINS the
+  list — one-line codex change, `foundation: true`, unit stays on verb_phrase.
+  Middle cases (there_is, imperatives) deliberately left open.
+- **Girth reps beyond fill**: (a) Use-mode completions in ANY grammar unit —
+  whole-sentence production exercises all the machinery, and mode is known at
+  payoff time, so this is the cheap, visible causal link; (b) counted reviews
+  of foundation units add rings with diminishing returns.
+- **Scale**: absolute root size already rides on tree age (tap multiplier
+  1.15 + 0.6·(1−girth) — seedling tap dominance fading with maturity). Keep.
+
+**Rejected** (James, 2026-08-25): all-grammar feeding girth (drowns the
+diagnostic — tap must be able to read "thin foundations" on an advanced tree);
+a dedicated mixed foundations gauntlet unit (not needed); the recycled-item
+(vždy platí) rep channel (tagging partial, Use-mode captures most of it).
 
 ### Headline
 **`b2_articles_correction` — new B2 unit, 28 items, 6 intro cards.** From the

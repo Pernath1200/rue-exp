@@ -34,6 +34,42 @@ function label(x, y, text, { size = 13, fill = TEXT, anchor = "middle" } = {}) {
   return `<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" text-anchor="${anchor}" font-family="var(--font, system-ui)">${esc(text)}</text>`;
 }
 
+/* Labels come from packs, so a renderer can never trust them to fit its
+ * geometry — card 13 of b1_articles_advanced put 65 characters into a 114px
+ * box and the text ran straight through the walls (James, 2026-08-24).
+ * wrapFit() word-wraps into at most maxLines lines and steps the font down
+ * until the longest line fits the given width. ~0.62em per character is the
+ * usual average for system-ui. */
+function wrapWords(text, charsPerLine) {
+  const words = String(text || "").split(" ");
+  const lines = [];
+  let cur = "";
+  words.forEach((w) => {
+    if (cur && (cur + " " + w).length > charsPerLine) { lines.push(cur); cur = w; }
+    else cur = cur ? cur + " " + w : w;
+  });
+  if (cur) lines.push(cur);
+  return lines;
+}
+
+function wrapFit(text, width, size, maxLines = 2, minSize = 8) {
+  for (let s = size; s >= minSize; s--) {
+    const cpl = Math.max(1, Math.floor(width / (0.62 * s)));
+    const lines = wrapWords(text, cpl);
+    if (lines.length <= maxLines && !lines.some((l) => l.length > cpl)) return { lines, size: s };
+  }
+  const cpl = Math.max(1, Math.floor(width / (0.62 * minSize)));
+  return { lines: wrapWords(text, cpl).slice(0, maxLines), size: minSize };
+}
+
+/** Centred wrapped text block inside a box: (cx, cy) is the box centre. */
+function labelBlock(cx, cy, text, width, { size = 11, fill = TEXT, maxLines = 2 } = {}) {
+  const f = wrapFit(text, width, size, maxLines);
+  const lh = f.size + 3;
+  const y0 = cy - ((f.lines.length - 1) * lh) / 2 + f.size * 0.35;
+  return f.lines.map((l, i) => label(cx, y0 + i * lh, l, { size: f.size, fill })).join("");
+}
+
 /** Horizontal axis with graded stops — degree, intensity, frequency. */
 function scale(labels) {
   const pts = labels.slice(0, 5);
@@ -143,42 +179,63 @@ function hub_spokes(labels) {
   const boxes = [
     [8, 86], [164, 86], [8, 152], [164, 152],
   ];
+  // Labels shrink to fit their box — "the: we both know which" overflowed the
+  // 148px spoke box at a fixed size 12 (James, 2026-08-24, b1_articles_advanced).
+  const fit1 = (t, w, s) => Math.max(8, Math.min(s, Math.floor(w / (0.62 * Math.max(1, String(t).length)))));
   let inner = `<rect x="110" y="8" width="100" height="32" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
-  inner += label(160, 29, centre || "", { size: 13 });
+  inner += label(160, 29, centre || "", { size: fit1(centre, 92, 13) });
   spokes.forEach(([top, ex], i) => {
     if (!top) return;
     const [x, y] = boxes[i];
     inner += `<line x1="160" y1="40" x2="${x + 74}" y2="${y}" stroke="${MUTED}" stroke-width="1.5" opacity="0.7"/>`;
     inner += `<rect x="${x}" y="${y}" width="148" height="54" rx="8" fill="none" stroke="${ACCENT}" stroke-width="1.5" opacity="0.8"/>`;
-    inner += label(x + 74, y + 22, top, { size: 12 });
-    if (ex) inner += label(x + 74, y + 40, ex, { size: 11, fill: MUTED });
+    inner += label(x + 74, y + 22, top, { size: fit1(top, 138, 12) });
+    if (ex) inner += label(x + 74, y + 40, ex, { size: fit1(ex, 138, 11), fill: MUTED });
   });
   return svg(inner, 320, 214);
 }
 
 /** Boxes in a row with arrows, and aligned example rows beneath — a slot sequence.
- *  labels: [box1, box2, box3, r1a, r1b, r1c, r2a, r2b, r2c] */
+ *  labels: [box1, box2, box3, r1a, r1b, r1c, r2a, r2b, r2c]
+ *  A box label with " · " renders as two lines (head over detail) in a taller
+ *  box, and any line longer than the box shrinks its font to fit — at one size,
+ *  "FIRST MENTION · a / an" spilled out both sides of its box
+ *  (James, 2026-08-24, b1_articles_advanced "First mention, then known"). */
 function boxes_row(labels) {
   const [b1, b2, b3, ...ex] = labels;
   const xs = [6, 114, 222];
   const mid = [52, 160, 268];
+  const INNER_W = 84; // 92-wide box minus breathing room
+  const fit = (t, size) => Math.min(size, Math.floor(INNER_W / (0.62 * Math.max(1, String(t).length))) || size);
+  const twoLine = [b1, b2, b3].some((t) => String(t || "").includes(" · "));
+  const boxH = twoLine ? 46 : 36;
+  const cy = 10 + boxH / 2;
   let inner = "";
   [b1, b2, b3].forEach((t, i) => {
-    inner += `<rect x="${xs[i]}" y="10" width="92" height="36" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
-    inner += label(mid[i], 33, t || "", { size: 12 });
+    t = t || "";
+    inner += `<rect x="${xs[i]}" y="10" width="92" height="${boxH}" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
+    const parts = twoLine ? String(t).split(" · ") : [String(t)];
+    if (parts.length > 1) {
+      const head = parts[0];
+      const detail = parts.slice(1).join(" · ");
+      inner += label(mid[i], 30, head, { size: fit(head, 11) });
+      inner += label(mid[i], 47, detail, { size: fit(detail, 11), fill: MUTED });
+    } else {
+      inner += label(mid[i], cy + 5, t, { size: fit(t, 12) });
+    }
   });
   [[98, 114], [206, 222]].forEach(([x1, x2]) => {
-    inner += `<line x1="${x1}" y1="28" x2="${x2 - 6}" y2="28" stroke="${MUTED}" stroke-width="1.5"/>`;
-    inner += `<path d="M${x2 - 6} 24 L${x2} 28 L${x2 - 6} 32 Z" fill="${MUTED}"/>`;
+    inner += `<line x1="${x1}" y1="${cy}" x2="${x2 - 6}" y2="${cy}" stroke="${MUTED}" stroke-width="1.5"/>`;
+    inner += `<path d="M${x2 - 6} ${cy - 4} L${x2} ${cy} L${x2 - 6} ${cy + 4} Z" fill="${MUTED}"/>`;
   });
   for (let r = 0; r < 2; r++) {
-    const y = 78 + r * 28;
+    const y = 42 + boxH + r * 28;
     for (let c = 0; c < 3; c++) {
       const t = ex[r * 3 + c];
       if (t) inner += label(mid[c], y, t, { size: 11, fill: r === 0 ? TEXT : MUTED });
     }
   }
-  return svg(inner, 320, 150);
+  return svg(inner, 320, 114 + boxH);
 }
 
 /** Two stacked timelines sharing a `now` marker — before/after contrast.
@@ -209,29 +266,32 @@ function timelines(labels) {
  *  labels: [q1, result1, q2, result2, q3, result3, default] */
 function decision_flow(labels) {
   const qs = [[labels[0], labels[1]], [labels[2], labels[3]], [labels[4], labels[5]]];
+  const BOX_H = 54; // three wrapped lines at size 10 fit; was 42 with one unwrapped line
+  const STEP = BOX_H + 26;
   let inner = "";
   qs.forEach(([q, r], i) => {
     if (!q) return;
-    const y = 8 + i * 68;
-    inner += `<rect x="6" y="${y}" width="180" height="42" rx="8" fill="none" stroke="${ACCENT}" stroke-width="1.5"/>`;
-    inner += label(96, y + 26, q, { size: 11 });
-    inner += `<line x1="186" y1="${y + 21}" x2="${200 - 6}" y2="${y + 21}" stroke="${MUTED}" stroke-width="1.5"/>`;
-    inner += `<path d="M194 ${y + 17} L200 ${y + 21} L194 ${y + 25} Z" fill="${MUTED}"/>`;
-    inner += label(192, y + 14, "yes", { size: 9, fill: MUTED });
-    inner += `<rect x="200" y="${y}" width="114" height="42" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
-    inner += label(257, y + 26, r || "", { size: 11 });
+    const y = 8 + i * STEP;
+    const cy = y + BOX_H / 2;
+    inner += `<rect x="6" y="${y}" width="180" height="${BOX_H}" rx="8" fill="none" stroke="${ACCENT}" stroke-width="1.5"/>`;
+    inner += labelBlock(96, cy, q, 168, { size: 11, maxLines: 3 });
+    inner += `<line x1="186" y1="${cy}" x2="${200 - 6}" y2="${cy}" stroke="${MUTED}" stroke-width="1.5"/>`;
+    inner += `<path d="M194 ${cy - 4} L200 ${cy} L194 ${cy + 4} Z" fill="${MUTED}"/>`;
+    inner += label(192, cy - 7, "yes", { size: 9, fill: MUTED });
+    inner += `<rect x="200" y="${y}" width="114" height="${BOX_H}" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
+    inner += labelBlock(257, cy, r || "", 104, { size: 11, maxLines: 3 });
     if (i < 2) {
-      inner += `<line x1="96" y1="${y + 42}" x2="96" y2="${y + 62}" stroke="${MUTED}" stroke-width="1.5"/>`;
-      inner += `<path d="M92 ${y + 62} L96 ${y + 68} L100 ${y + 62} Z" fill="${MUTED}"/>`;
-      inner += label(108, y + 56, "no", { size: 9, fill: MUTED, anchor: "start" });
+      inner += `<line x1="96" y1="${y + BOX_H}" x2="96" y2="${y + BOX_H + 20}" stroke="${MUTED}" stroke-width="1.5"/>`;
+      inner += `<path d="M92 ${y + BOX_H + 20} L96 ${y + BOX_H + 26} L100 ${y + BOX_H + 20} Z" fill="${MUTED}"/>`;
+      inner += label(108, y + BOX_H + 16, "no", { size: 9, fill: MUTED, anchor: "start" });
     }
   });
-  const dy = 8 + 3 * 68;
+  const dy = 8 + 3 * STEP;
   inner += `<line x1="96" y1="${dy - 26}" x2="96" y2="${dy - 6}" stroke="${MUTED}" stroke-width="1.5"/>`;
   inner += `<path d="M92 ${dy - 6} L96 ${dy} L100 ${dy - 6} Z" fill="${MUTED}"/>`;
-  inner += `<rect x="6" y="${dy}" width="308" height="40" rx="8" fill="none" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="4 4"/>`;
-  inner += label(160, dy + 25, labels[6] || "", { size: 11, fill: MUTED });
-  return svg(inner, 320, dy + 50);
+  inner += `<rect x="6" y="${dy}" width="308" height="46" rx="8" fill="none" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="4 4"/>`;
+  inner += labelBlock(160, dy + 23, labels[6] || "", 292, { size: 11, fill: MUTED, maxLines: 2 });
+  return svg(inner, 320, dy + 56);
 }
 
 const SCHEMATICS = {

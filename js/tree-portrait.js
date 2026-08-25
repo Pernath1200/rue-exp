@@ -1,304 +1,437 @@
 /**
- * Sapling status-portrait — grows with CEFR level (A1 small → A2 taller → B1+ wider).
- * Grammar = roots below soil · Vocab = trunk + little branches/leaves above.
- * Roots use tapered ribbons (RUE2 craft, simplified). Root labels hidden —
- * knots only (atmosphere); soft click still focuses a path unit.
- * Navigation stays on the spine list.
+ * Tree status-portrait: ONE tree, drawn at five ages.
+ *
+ * A single full-size skeleton is grown once from one seed (trunk, five main
+ * limbs, twelve house limbs, twigs, leaf and fruit slots, seven roots). Each
+ * CEFR level renders an AGE of that same skeleton:
+ *   - the stem reaches a fraction of its full height; a main limb is born when
+ *     the stem passes its attach height and elongates from there
+ *   - a house limb sprouts once its parent limb has grown past its attach point;
+ *     twigs and leaves follow the same rule one level down
+ *   - a house with no limb yet is a leaf on the stem at its seat (a bud)
+ *   - roots mirror the crown at every age; forks and rootlets come with age
+ * Nothing re-randomises between levels, so A1 -> C1 reads as growth.
+ *
+ * Seats (rue-codex, 2026-08-23): grammar = tap root + six laterals
+ * (Curriculum_Codex_Grammar); vocab = trunk + twelve houses (the astrological
+ * houses of Curriculum_Codex_Vocab), 1st at the collar, 12th at the crown.
+ * Lighting: leaf lit = unit started/done, fruit lit = unit done, root knot lit
+ * = same on that seat. Unlit slots stay as ghosts so the model is readable.
+ * Navigation stays on the spine list; clicks here only focus a unit.
  */
 
-/** @typedef {{ id: string, domain: string, tree_part?: string, root?: string, status?: string, foundation?: boolean, label?: string }} TreeNode */
+/** @typedef {{ id: string, domain: string, tree_part?: string, root?: string, status?: string, foundation?: boolean, label?: string, codex_unit?: string, levels?: string[] }} TreeNode */
 
-// Angles fan wider (botanical mass under soil, not a tight cluster).
-const GRAMMAR_LATERALS = [
-  { tree_part: "forms", label: "Forms", angle: -68 },
-  { tree_part: "verbs", label: "Verbs", angle: -34 },
-  { tree_part: "sentence", label: "Sentence", angle: 0 },
-  { tree_part: "chunks", label: "Chunks", angle: 34 },
-  { tree_part: "links", label: "Linking", angle: 68 },
+// ---------------------------------------------------------------------------
+// Seats
+// ---------------------------------------------------------------------------
+
+const LATERALS = [
+  { tree_part: "noun_phrase", label: "Forms" },
+  { tree_part: "verb_phrase", label: "Verbs" },
+  { tree_part: "sentence_syntax", label: "Sentence" },
+  { tree_part: "clause_linking", label: "Linking" },
+  { tree_part: "verb_complementation", label: "Verb patterns" },
+  { tree_part: "prepositions_particles", label: "Prepositions" },
 ];
-
-/** Fixed house seats — A1 only lights a few; others stay ghost. */
-const HOUSES = [
-  { tree_part: "home_family", label: "Home", side: "L", i: 0 },
-  { tree_part: "food_shopping", label: "Food", side: "L", i: 1 },
-  { tree_part: "free_time", label: "Free time", side: "L", i: 2 },
-  { tree_part: "work_routine", label: "Work", side: "L", i: 3 },
-  { tree_part: "travel_city", label: "City", side: "R", i: 0 },
-  { tree_part: "health_body", label: "Health", side: "R", i: 1 },
-  { tree_part: "self_body", label: "Body", side: "R", i: 2 },
-  { tree_part: "knowledge", label: "School", side: "R", i: 3 },
-  { tree_part: "communication", label: "Communication", side: "L", i: 4 },
-  { tree_part: "money", label: "Money", side: "R", i: 4 },
-  { tree_part: "public_life", label: "Public life", side: "L", i: 5 },
-  { tree_part: "inner_life", label: "Inner life", side: "R", i: 5 },
+const HOUSES_L = [
+  { tree_part: "self_body", label: "Self & body" },
+  { tree_part: "communication", label: "Communication" },
+  { tree_part: "creativity_love", label: "Creativity & love" },
+  { tree_part: "partnerships", label: "Partnerships" },
+  { tree_part: "knowledge_travel", label: "Knowledge & travel" },
+  { tree_part: "community", label: "Community" },
 ];
+const HOUSES_R = [
+  { tree_part: "money_possessions", label: "Money" },
+  { tree_part: "home_family", label: "Home & family" },
+  { tree_part: "work_routine", label: "Work & routine" },
+  { tree_part: "change_transformation", label: "Change" },
+  { tree_part: "public_life", label: "Public life" },
+  { tree_part: "inner_life_belief", label: "Inner life" },
+];
+const HOUSES = HOUSES_L.concat(HOUSES_R);
+const BRANCH_UNIT = /^V_(SEL|MON|COM|HOM|CRE|WRK|PAR|CHA|KNO|PUB|CMT|INN)-/;
+const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
 
-/**
- * Level-scaled sapling geometry (not a full B1 web — a growing young tree).
- * trunkH / rootDepth / canopyScale drive “small sapling → taller sapling”.
- */
-const LEVEL_PRESETS = {
-  A1: {
-    W: 640,
-    H: 540,
-    soilY: 248,
-    trunkH: 72,
-    trunkW0: 9,
-    trunkW1: 14,
-    canopyScale: 0.72,
-    rootDepth: 120,
-    rootReach: 0.88,
-    fork: true,
-    secondaryForks: 1,
-    hair: 5,
-    hairGate: 0,
-    segments: 2,
-    wobble: 14,
-    soilDots: 42,
-    caption: "Young sapling — small roots, small canopy.",
-    caption2: "Grows with fruit · click a root knot",
-    soilLabel: "A1 · soil",
-  },
-  A2: {
-    W: 640,
-    H: 580,
-    soilY: 268,
-    trunkH: 100,
-    trunkW0: 11,
-    trunkW1: 18,
-    canopyScale: 0.9,
-    rootDepth: 150,
-    rootReach: 0.9,
-    fork: true,
-    secondaryForks: 1,
-    hair: 5,
-    hairGate: 0.25,
-    segments: 2,
-    wobble: 20,
-    soilDots: 48,
-    caption: "Taller sapling — deeper roots.",
-    caption2: "A2 · more branches · click a knot",
-    soilLabel: "A2 · soil",
-  },
-  B1: {
-    W: 660,
-    H: 640,
-    soilY: 280,
-    trunkH: 120,
-    trunkW0: 13,
-    trunkW1: 22,
-    canopyScale: 1.05,
-    rootDepth: 180,
-    rootReach: 0.96,
-    fork: true,
-    secondaryForks: 2,
-    hair: 8,
-    hairGate: 0.2,
-    segments: 3,
-    wobble: 26,
-    soilDots: 64,
-    caption: "Young tree — wider system.",
-    caption2: "B1 · denser roots · click a knot",
-    soilLabel: "B1 · soil",
-  },
-  B2: {
-    W: 680,
-    H: 680,
-    soilY: 290,
-    trunkH: 135,
-    trunkW0: 14,
-    trunkW1: 24,
-    canopyScale: 1.12,
-    rootDepth: 200,
-    rootReach: 1,
-    fork: true,
-    secondaryForks: 2,
-    hair: 10,
-    hairGate: 0.15,
-    segments: 3,
-    wobble: 30,
-    soilDots: 80,
-    caption: "Growing into a full tree.",
-    caption2: "B2 · deep system · click a knot",
-    soilLabel: "B2 · soil",
-  },
-  C1: {
-    W: 700,
-    H: 740,
-    soilY: 300,
-    trunkH: 155,
-    trunkW0: 15,
-    trunkW1: 28,
-    canopyScale: 1.22,
-    rootDepth: 230,
-    rootReach: 1.06,
-    fork: true,
-    secondaryForks: 3,
-    hair: 12,
-    hairGate: 0.12,
-    segments: 3,
-    wobble: 34,
-    soilDots: 100,
-    caption: "Mature tree — full system.",
-    caption2: "C1 · densest roots · click a knot",
-    soilLabel: "C1 · soil",
-  },
+// ---------------------------------------------------------------------------
+// The one tree (full size) and its ages
+// ---------------------------------------------------------------------------
+
+const VB = { w: 860, h: 1100, soil: 700, cx: 430 };
+
+/** Mature tree parameters (the B2 treegen study, which read well). */
+const FULL = {
+  seed: 7, trunkH: 250, trunkW: 50, taper: 0.42, childWidth: 0.66, mainLimbs: 5,
+  branchAngle: 46, limbCurve: 0.5, mainLimbLen: 0.92, houseLimbLen: 100,
+  twigWidth: 1.2, leafSize: 30, leafVar: 0.25, fruitR: 4.6,
+  rootWidth: 0.9, rootSpread: 1.0, rootDepth: 0.7, rootAngle: 64, rootForks: 2,
+};
+
+/** Age per level. stem = fraction of full stem height reached; girth = width factor. */
+const AGES = {
+  A1: { stem: 0.40, girth: 0.11, leaf: 0.40, caption: "Sapling - one stem, first leaves.", soilLabel: "A1 - soil" },
+  A2: { stem: 0.56, girth: 0.24, leaf: 0.55, caption: "Young tree - first limbs.", soilLabel: "A2 - soil" },
+  B1: { stem: 0.72, girth: 0.45, leaf: 0.70, caption: "Growing - limbs branching.", soilLabel: "B1 - soil" },
+  B2: { stem: 0.88, girth: 0.74, leaf: 0.86, caption: "Filling out - a full crown forming.", soilLabel: "B2 - soil" },
+  C1: { stem: 1.00, girth: 1.00, leaf: 1.00, caption: "Mature tree - full system.", soilLabel: "C1 - soil" },
 };
 
 const C = {
-  copper: "#569cd6",
-  copperDeep: "#3d6f9c",
-  amber: "#4db6c7",
-  fruit: "#22c55e",
-  fruitLite: "#4ade80",
-  dim: "rgba(150,150,150,0.28)",
-  dimStroke: "rgba(140,140,140,0.4)",
-  ink: "#c8b090",
-  muted: "#7a7a7a",
-  soil: "#0c1014",
-  soilTop: "#121820",
-  sky: "#0a0a0a",
+  wood: "#569cd6", leaf: "#4db6c7", fruit: "#22c55e", knotBg: "#0c1014",
+  label: "#d4b070", labelDim: "#8a8a8a", muted: "#7a7a7a",
+  sky: "#0a0a0a", soil: "#0c1014", soilTop: "#121820",
 };
+const GHOST = 0.3;
+const D2R = Math.PI / 180;
 
-function f(n) {
-  return (Math.round(n * 10) / 10).toFixed(1);
-}
+// ---------------------------------------------------------------------------
+// RNG + geometry
+// ---------------------------------------------------------------------------
 
-function esc(s) {
-  return String(s)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-/** Stable hash → [0,1) for deterministic organic wobble (RUE2). */
-function hash01(str) {
-  let h = 2166136261;
-  const s = String(str);
-  for (let i = 0; i < s.length; i++) {
-    h ^= s.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  return (h >>> 0) / 4294967296;
-}
-
-/**
- * Tapered ribbon along quadratic Béziers — closed filled path (RUE2 limbChain).
- * segs: { p0, p1, p2, w0, w1 }[]
- */
-function limbChain(segs, steps = 22) {
-  const L = [];
-  const R = [];
-  segs.forEach((s, si) => {
-    for (let i = si === 0 ? 0 : 1; i <= steps; i++) {
-      const t = i / steps;
-      const mt = 1 - t;
-      const x = mt * mt * s.p0.x + 2 * mt * t * s.p1.x + t * t * s.p2.x;
-      const y = mt * mt * s.p0.y + 2 * mt * t * s.p1.y + t * t * s.p2.y;
-      const tx = 2 * mt * (s.p1.x - s.p0.x) + 2 * t * (s.p2.x - s.p1.x);
-      const ty = 2 * mt * (s.p1.y - s.p0.y) + 2 * t * (s.p2.y - s.p1.y);
-      const len = Math.hypot(tx, ty) || 1;
-      const nx = -ty / len;
-      const ny = tx / len;
-      const w = (s.w0 + (s.w1 - s.w0) * t) / 2;
-      L.push([x + nx * w, y + ny * w]);
-      R.push([x - nx * w, y - ny * w]);
-    }
-  });
-  if (!L.length) return "";
-  let d = `M${f(L[0][0])} ${f(L[0][1])}`;
-  for (let i = 1; i < L.length; i++) d += `L${f(L[i][0])} ${f(L[i][1])}`;
-  d += `L${f(R[R.length - 1][0])} ${f(R[R.length - 1][1])}`;
-  for (let i = R.length - 2; i >= 0; i--) d += `L${f(R[i][0])} ${f(R[i][1])}`;
-  return `${d}Z`;
-}
-
-function qpoint(p0, p1, p2, t) {
-  const mt = 1 - t;
-  return {
-    x: mt * mt * p0.x + 2 * mt * t * p1.x + t * t * p2.x,
-    y: mt * mt * p0.y + 2 * mt * t * p1.y + t * t * p2.y,
+function mulberry32(a) {
+  return function () {
+    a |= 0; a = (a + 0x6D2B79F5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
 }
-
-function chainPoint(segs, t) {
-  const n = segs.length;
-  if (!n) return { x: 0, y: 0 };
-  const u = Math.max(0, Math.min(1, t)) * n;
-  const i = Math.min(n - 1, Math.floor(u));
-  const local = u - i;
-  const s = segs[i];
-  return qpoint(s.p0, s.p1, s.p2, local);
+class Rng {
+  constructor(seed) { this.f = mulberry32(seed); }
+  n() { return this.f(); }
+  u(a, b) { return a + (b - a) * this.f(); }
+  j(a) { return (this.f() * 2 - 1) * a; }
+  int(a, b) { return a + Math.floor(this.f() * (b - a + 1)); }
+  sign() { return this.f() < 0.5 ? -1 : 1; }
+}
+const clamp01 = (x) => Math.max(0, Math.min(1, x));
+const dirUp = (th) => [Math.sin(th), -Math.cos(th)];
+const dirDn = (th) => [Math.sin(th), Math.cos(th)];
+function bez(P, t) {
+  const [p0, p1, p2, p3] = P, u = 1 - t;
+  return [u * u * u * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t * t * t * p3[0],
+          u * u * u * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t * t * t * p3[1]];
+}
+function bezTan(P, t) {
+  const [p0, p1, p2, p3] = P, u = 1 - t;
+  const v = [3 * u * u * (p1[0] - p0[0]) + 6 * u * t * (p2[0] - p1[0]) + 3 * t * t * (p3[0] - p2[0]),
+             3 * u * u * (p1[1] - p0[1]) + 6 * u * t * (p2[1] - p1[1]) + 3 * t * t * (p3[1] - p2[1])];
+  const l = Math.hypot(v[0], v[1]) || 1;
+  return [v[0] / l, v[1] / l];
+}
+const f1 = (x) => (Math.round(x * 10) / 10).toString();
+function esc(s) {
+  return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 }
 
-function ridgePath(segs) {
-  if (!segs.length) return "";
-  let d = `M${f(segs[0].p0.x)} ${f(segs[0].p0.y)}`;
-  for (const s of segs) {
-    d += `Q${f(s.p1.x)} ${f(s.p1.y)} ${f(s.p2.x)} ${f(s.p2.y)}`;
+/** Cubic limb leaving `start` at angle th0 (from vertical), bending toward vertical by `curve`. */
+function makeLimb(start, th0, len, curve, s, up, w0, taper) {
+  const th1 = th0 * (1 - 0.55 * curve);
+  const D = up ? dirUp : dirDn;
+  const d0 = D(th0), d1 = D(th1), dm = D((th0 + th1) / 2);
+  const p0 = start;
+  const p3 = [p0[0] + dm[0] * len * 0.95, p0[1] + dm[1] * len * 0.95];
+  const n0 = [-d0[1], d0[0]];
+  const p1 = [p0[0] + d0[0] * len * 0.36 + n0[0] * len * s, p0[1] + d0[1] * len * 0.36 + n0[1] * len * s];
+  const p2 = [p3[0] - d1[0] * len * 0.34 - n0[0] * len * s, p3[1] - d1[1] * len * 0.34 - n0[1] * len * s];
+  const P = [p0, p1, p2, p3];
+  return {
+    P, th0, th1, len, up, w0, taper,
+    at: (t) => bez(P, t),
+    tan: (t) => bezTan(P, t),
+    ang: (t) => { const v = bezTan(P, t); return up ? Math.atan2(v[0], -v[1]) : Math.atan2(v[0], v[1]); },
+    w: (t) => w0 * (1 - (1 - taper) * t),
+    tip: () => bez(P, 1),
+  };
+}
+/** The first `frac` of a limb, re-parametrised to [0,1], tapering to its own tip. */
+function partial(L, frac) {
+  const len = L.len * frac;
+  return {
+    len, up: L.up, w0: L.w0, taper: L.taper, P: L.P,
+    at: (t) => L.at(t * frac),
+    tan: (t) => L.tan(t * frac),
+    ang: (t) => L.ang(t * frac),
+    w: (t) => L.w0 * (1 - (1 - L.taper) * t),
+    tip: () => L.at(frac),
+  };
+}
+/** Filled tapered closed path. `ph` is a fixed phase for the hand-drawn unevenness. */
+function taperedPath(L, flare, ph, pinch) {
+  const n = Math.max(8, Math.min(40, Math.round(L.len / 7)));
+  const left = [], right = [];
+  for (let i = 0; i <= n; i++) {
+    const t = i / n, p = L.at(t), tg = L.tan(t);
+    let hw = L.w(t) / 2;
+    if (flare && t < 0.12) hw *= 1 + flare * Math.pow(1 - t / 0.12, 2);
+    if (pinch !== false && t > 0.86) hw *= 1 - 0.72 * Math.pow((t - 0.86) / 0.14, 1.4);
+    hw *= 1 + 0.035 * Math.sin(ph + i * 0.9);
+    const nx = tg[1], ny = -tg[0];
+    left.push([p[0] + nx * hw, p[1] + ny * hw]);
+    right.push([p[0] - nx * hw, p[1] - ny * hw]);
   }
-  return d;
+  const r = Math.max(0.4, (L.w(1) * (pinch === false ? 1 : 0.28)) / 2);
+  let d = "M" + f1(left[0][0]) + "," + f1(left[0][1]);
+  for (let i = 1; i <= n; i++) d += "L" + f1(left[i][0]) + "," + f1(left[i][1]);
+  d += "A" + f1(r) + "," + f1(r) + " 0 0 1 " + f1(right[n][0]) + "," + f1(right[n][1]);
+  for (let i = n - 1; i >= 0; i--) d += "L" + f1(right[i][0]) + "," + f1(right[i][1]);
+  return d + "Z";
 }
+function hairPath(L) {
+  const P = L.P;
+  return "M" + f1(P[0][0]) + "," + f1(P[0][1]) + "C" + f1(P[1][0]) + "," + f1(P[1][1]) + " " +
+         f1(P[2][0]) + "," + f1(P[2][1]) + " " + f1(P[3][0]) + "," + f1(P[3][1]);
+}
+function edgePoint(parent, t, side, tuck) {
+  const p = parent.at(t), tg = parent.tan(t);
+  const nx = -tg[1], ny = tg[0];
+  const hw = Math.max(0, parent.w(t) / 2 - (tuck == null ? 1.5 : tuck));
+  return [p[0] + nx * hw * side, p[1] + ny * hw * side];
+}
+const LEAF_D = [
+  "M0,0C.36,-.22 .4,-.7 0,-1C-.4,-.7 -.36,-.22 0,0ZM0,0L0,-.72",
+  "M0,0C.2,-.32 .25,-.76 0,-1C-.25,-.76 -.2,-.32 0,0ZM0,0L0,-.7",
+  "M0,0C.44,-.14 .36,-.64 0,-1C-.27,-.74 -.34,-.3 0,0ZM0,0L0,-.68",
+];
 
-/**
- * Multi-segment primary root from soil collar toward tip (RUE2-style wobble).
- */
-function buildPrimaryRoot(collar, tip, id, preset, fillM) {
-  const segsN = Math.max(2, preset.segments | 0);
-  const wobble = (preset.wobble || 12) * (0.55 + 0.45 * fillM);
-  const pts = [collar];
-  for (let i = 1; i < segsN; i++) {
-    const t = i / segsN;
-    const base = {
-      x: collar.x + (tip.x - collar.x) * t,
-      y: collar.y + (tip.y - collar.y) * t,
-    };
-    const h1 = hash01(`${id}-w${i}a`);
-    const h2 = hash01(`${id}-w${i}b`);
-    const dx = tip.x - collar.x;
-    const dy = tip.y - collar.y;
-    const len = Math.hypot(dx, dy) || 1;
-    const nx = -dy / len;
-    const ny = dx / len;
-    const side = (h1 - 0.5) * 2;
-    pts.push({
-      x: base.x + nx * wobble * side,
-      y: base.y + ny * wobble * side * 0.35 + wobble * 0.35 * h2,
+// ---------------------------------------------------------------------------
+// Build the full skeleton once: every random choice is drawn here and stored.
+// ---------------------------------------------------------------------------
+
+let MODEL = null;
+
+function buildModel() {
+  if (MODEL) return MODEL;
+  const p = FULL;
+  const rng = new Rng(p.seed);
+  const m = { p };
+
+  m.trunk = { lean: rng.j(6) * D2R, s: rng.j(0.025), ph: rng.u(0, 6.28) };
+
+  // main limbs: attach fraction t on the stem, angle, length
+  const nMain = p.mainLimbs, hasTop = nMain % 2 === 1, nSide = hasTop ? nMain - 1 : nMain;
+  m.mains = [];
+  let side = rng.sign();
+  for (let i = 0; i < nSide; i++) {
+    const f = nSide > 1 ? i / (nSide - 1) : 0;
+    m.mains.push({
+      t: Math.min(0.99, 0.34 + 0.62 * f + rng.j(0.03)),
+      th0: side * (p.branchAngle + (1 - f) * 10 + rng.j(6)) * D2R,
+      len: p.trunkH * p.mainLimbLen * (1.1 - 0.32 * f) * (1 + rng.j(0.08)),
+      s: rng.j(0.035), ph: rng.u(0, 6.28), side, isTop: false,
     });
+    side = -side;
   }
-  pts.push(tip);
+  if (hasTop) {
+    const s = rng.sign();
+    m.mains.push({ t: 0.985, th0: s * rng.u(6, 14) * D2R, len: p.trunkH * p.mainLimbLen * 0.66, s: rng.j(0.04), ph: rng.u(0, 6.28), side: 0, isTop: true });
+  }
+  m.mains.forEach((L) => L.ph2 = rng.u(0, 6.28));
 
-  const segs = [];
-  for (let i = 0; i < pts.length - 1; i++) {
-    const a = pts[i];
-    const b = pts[i + 1];
-    const h = hash01(`${id}-c${i}`);
-    const ctrl = {
-      x: (a.x + b.x) / 2 + (h - 0.5) * wobble * 0.55,
-      y: (a.y + b.y) / 2 + wobble * 0.4 + (hash01(`${id}-cy${i}`) - 0.3) * 10,
+  // house slots on main limbs
+  const counts = nMain === 5 ? [3, 3, 2, 2, 2] : nMain === 4 ? [3, 3, 3, 3] : [4, 4, 4];
+  const slotT = { 2: [0.56, 1], 3: [0.4, 0.72, 1], 4: [0.32, 0.55, 0.78, 1] };
+  m.houses = [];
+  let topSide = rng.sign();
+  m.mains.forEach((L, mi) => {
+    const k = counts[mi];
+    slotT[k].forEach((t0, si) => {
+      const isTip = si === k - 1;
+      const t = isTip ? 1 : Math.max(0.2, Math.min(0.9, t0 + rng.j(0.03)));
+      let s;
+      if (L.isTop) { s = topSide; topSide = -topSide; } else s = si % 2 === 0 ? L.side : -L.side;
+      const h = { main: mi, t, side: s, isTip,
+        thJit: isTip ? rng.u(6, 18) * D2R : rng.j(8) * D2R,
+        len: p.houseLimbLen * (1 + rng.j(0.12)) * (isTip ? 1.1 : 1),
+        s: rng.j(0.06), ph: rng.u(0, 6.28), twigs: [] };
+      const nt = rng.int(2, 4);
+      let ts = rng.sign();
+      for (let i = 0; i < nt; i++) {
+        h.twigs.push({ t: Math.max(0.12, Math.min(0.95, 0.3 + 0.55 * (nt > 1 ? i / (nt - 1) : 0.5) + rng.j(0.05))),
+          th: ts * rng.u(30, 55) * D2R, lenMul: rng.u(0.3, 0.46), s: rng.j(0.05), side: ts, isTip: false });
+        ts = -ts;
+      }
+      h.twigs.push({ t: 1, th: rng.j(12) * D2R, lenMul: rng.u(0.3, 0.4), s: rng.j(0.05), side: rng.sign(), isTip: true });
+      // leaf candidates: twig tips first, then twig mids; keep six
+      const cands = [];
+      h.twigs.forEach((T, ti) => cands.push({ twig: ti, atTip: true, pri: 0, r: rng.n() }));
+      h.twigs.forEach((T, ti) => cands.push({ twig: ti, atTip: false, pri: 1, r: rng.n(), thOff: -T.side * rng.u(40, 60) * D2R }));
+      cands.sort((a, b) => a.pri - b.pri || a.r - b.r);
+      h.leaves = cands.slice(0, 6).map((c) => ({ ...c, thJit: rng.j(35) * D2R, sizeMul: 1 + rng.j(p.leafVar), v: rng.int(0, 2) }));
+      h.fruit = [1, 4].map(() => ({ nJit: [rng.j(3), rng.j(3)], a0: rng.u(0, 6.28), aJit: [rng.j(0.35), rng.j(0.35), rng.j(0.35)] }));
+      h.budLeaf = { v: rng.int(0, 2), thJit: rng.j(12) * D2R, sizeMul: 1 + rng.j(0.15) };
+      m.houses.push(h);
+    });
+  });
+
+  // roots: six laterals + tap
+  const fr6 = [[-1, 0.36], [-0.7, 0.7], [-0.28, 0.95], [0.28, 0.95], [0.7, 0.7], [1, 0.36]];
+  const thF6 = [-1, -0.62, -0.22, 0.22, 0.62, 1];
+  m.roots = [];
+  for (let i = 0; i < 7; i++) {
+    const tap = i === 6;
+    const r = {
+      tap,
+      fx: tap ? 0 : fr6[i][0], fy: tap ? 1.02 : fr6[i][1], thF: tap ? 0 : thF6[i],
+      endJit: [rng.j(tap ? 6 : 0.05), rng.j(tap ? 0 : 0.06)], thJit: rng.j(tap ? 3 : 4) * D2R,
+      ctrlJit: rng.j(10), ph: rng.u(0, 6.28), forks: [], hairs: [],
+      knotJit: Array.from({ length: 6 }, () => rng.j(0.015)),
     };
-    const t0 = i / (pts.length - 1);
-    const t1 = (i + 1) / (pts.length - 1);
-    segs.push({ p0: a, p1: ctrl, p2: b, t0, t1 });
+    let fs = rng.sign();
+    for (let k = 0; k < p.rootForks; k++) {
+      r.forks.push({ t: k === 0 ? rng.u(0.34, 0.46) : rng.u(0.62, 0.74), th: fs * rng.u(28, 48) * D2R, lenMul: rng.u(0.55, 0.8), s: rng.j(0.05), ph: rng.u(0, 6.28), side: fs });
+      fs = -fs;
+    }
+    const nr = rng.int(2, 3);
+    for (let k = 0; k < nr; k++) r.hairs.push({ host: k, t: rng.u(0.45, 0.9), th: rng.sign() * rng.u(25, 55) * D2R, lenU: rng.u(28, 60), s: rng.j(0.06) });
+    r.tipHair = { th: rng.j(12) * D2R, lenU: rng.u(30, 50), s: rng.j(0.05) };
+    m.roots.push(r);
   }
-  return segs;
+
+  // leader leaves at the stem tip (young ages only)
+  m.leader = Array.from({ length: 3 }, (_, i) => ({ th: (i - 1) * rng.u(28, 40) * D2R + rng.j(6) * D2R, sizeMul: rng.u(0.8, 1.1), v: rng.int(0, 2) }));
+
+  // soil ticks
+  m.ticks = Array.from({ length: rng.int(8, 12) }, () => ({ x: rng.u(20, VB.w - 20), h: rng.u(5, 11), dx: rng.j(3) }));
+
+  // seat assignment on the FULL tree: odd houses left, even right, lowest first
+  const full = layout(m, { stem: 1, girth: 1, leaf: 1 });
+  const lefts = [], rights = [];
+  full.houses.forEach((g, i) => { const isLeft = g.side !== 0 ? g.side < 0 : g.tipX < VB.cx; (isLeft ? lefts : rights).push(i); });
+  const pick = (arr) => { const j = arr.findIndex((i) => m.houses[i].side === 0); return arr.splice(j >= 0 ? j : arr.length - 1, 1)[0]; };
+  while (lefts.length > 6) rights.push(pick(lefts));
+  while (rights.length > 6) lefts.push(pick(rights));
+  lefts.sort((a, b) => full.houses[b].midY - full.houses[a].midY);
+  rights.sort((a, b) => full.houses[b].midY - full.houses[a].midY);
+  lefts.forEach((hi, rank) => { m.houses[hi].seat = rank; m.houses[hi].seatSide = -1; });
+  rights.forEach((hi, rank) => { m.houses[hi].seat = 6 + rank; m.houses[hi].seatSide = 1; });
+  MODEL = m;
+  return m;
 }
 
-function withWidths(segs, w0, w1) {
-  return segs.map((s) => ({
-    ...s,
-    w0: w0 + (w1 - w0) * s.t0,
-    w1: w0 + (w1 - w0) * s.t1,
-  }));
+// ---------------------------------------------------------------------------
+// Lay the skeleton out at an age (pure geometry, no randomness)
+// ---------------------------------------------------------------------------
+
+function layout(m, age) {
+  const p = m.p, cx = VB.cx, soilY = VB.soil;
+  const bbox = { x0: 1e9, x1: -1e9, y0: 1e9 };
+  const see = (x, y) => { if (x < bbox.x0) bbox.x0 = x; if (x > bbox.x1) bbox.x1 = x; if (y < bbox.y0) bbox.y0 = y; };
+  const fb = { x0: 1e9, x1: -1e9, y0: 1e9 };
+  const seeF = (q) => { if (q[0] < fb.x0) fb.x0 = q[0]; if (q[0] > fb.x1) fb.x1 = q[0]; if (q[1] < fb.y0) fb.y0 = q[1]; see(q[0], q[1]); };
+
+  const trunkW = p.trunkW * age.girth;
+  const full = makeLimb([cx, soilY + 3], m.trunk.lean, p.trunkH + 3, 0.25, m.trunk.s, true, trunkW, p.taper);
+  const trunk = partial(full, age.stem);
+  for (let t = 0; t <= 1.001; t += 0.1) seeF(trunk.at(t));
+  const stemTip = trunk.tip();
+
+  const mains = m.mains.map((M) => {
+    // A limb buds a little below the rising tip (at 0.8 of its attach height)
+    // and is full-grown by maturity; lower limbs lead, the crown limb comes last.
+    const born = (age.stem - 0.8 * M.t) / ((1 - 0.8 * M.t) * 0.9);
+    const g = M.isTop ? clamp01(born * 1.3 - 0.3) : clamp01(born);
+    if (g <= 0) return { g: 0, M };
+    const tt = Math.min(0.995, M.t / age.stem);
+    const w0 = (M.isTop ? trunk.w(tt) * 0.92 : trunk.w(tt) * p.childWidth) * (0.55 + 0.45 * g);
+    const start = M.isTop ? trunk.at(tt) : edgePoint(trunk, tt, M.side, w0 * 0.5 + 1);
+    const len = M.len * (0.12 + 0.88 * g);
+    const L = makeLimb(start, M.th0, len, p.limbCurve, M.s, true, w0, p.taper);
+    for (let t = 0; t <= 1.001; t += 0.1) seeF(L.at(t));
+    return { g, M, L, fullLen: M.len };
+  });
+
+  const houses = m.houses.map((H) => {
+    const main = mains[H.main];
+    const out = { H, side: H.side, seat: H.seat, seatSide: H.seatSide, g: 0, twigs: [], leaves: [], fruit: [] };
+    if (!main.g) return out;
+    const cur = main.L.len, attachLen = H.t * main.fullLen;
+    let g;
+    if (H.isTip) g = clamp01((main.g - 0.6) / 0.4);
+    else g = clamp01((cur - attachLen) / (0.32 * main.fullLen));
+    if (g <= 0) return out;
+    const par = main.L;
+    const tt = H.isTip ? 1 : Math.min(0.97, attachLen / cur);
+    const parTh = par.ang(tt);
+    let th0, start, w0;
+    if (H.isTip) { th0 = parTh + H.side * H.thJit; start = par.tip(); w0 = par.w(1) * 0.95; }
+    else { th0 = parTh + H.side * (p.branchAngle * 0.95 * D2R + H.thJit); w0 = par.w(tt) * p.childWidth; start = edgePoint(par, tt, H.side, w0 * 0.5 + 1); }
+    th0 = Math.max(-82 * D2R, Math.min(82 * D2R, th0));
+    const len = H.len * (0.1 + 0.9 * g);
+    const L = makeLimb(start, th0, len, p.limbCurve, H.s, true, w0 * (0.5 + 0.5 * g), p.taper);
+    for (let t = 0; t <= 1.001; t += 0.2) seeF(L.at(t));
+    out.g = g; out.L = L;
+    const mid = L.at(0.5); out.midY = mid[1]; out.tipX = L.tip()[0]; out.tip = L.tip();
+    // twigs grow once the limb has passed them
+    const twigs = H.twigs.map((T) => {
+      const tg = T.isTip ? clamp01((g - 0.55) / 0.45) : clamp01((len - T.t * H.len) / (0.35 * H.len));
+      if (tg <= 0) return null;
+      const tl = H.len * T.lenMul * (0.25 + 0.75 * tg) * (0.6 + 0.4 * age.leaf);
+      let TT;
+      if (T.isTip) TT = makeLimb(L.at(0.985), L.th1 + T.th, tl, 0.5, T.s, true, 0, 1);
+      else { const tt2 = Math.min(0.97, (T.t * H.len) / len); TT = makeLimb(edgePoint(L, tt2, T.side, 0.5), L.ang(tt2) + T.th, tl, 0.5, T.s, true, 0, 1); }
+      TT.side = T.side; TT.g = tg;
+      see(TT.tip()[0], TT.tip()[1]);
+      return TT;
+    });
+    out.twigs = twigs;
+    const base = L.at(0);
+    const leaves = [];
+    H.leaves.forEach((c) => {
+      const T = twigs[c.twig];
+      if (!T) return;
+      const pt = c.atTip ? T.tip() : T.at(0.55);
+      const th = (c.atTip ? T.ang(1) : T.ang(0.55) + c.thOff) + c.thJit;
+      const size = p.leafSize * c.sizeMul * (0.45 + 0.55 * age.leaf) * (0.6 + 0.4 * T.g);
+      const d = dirUp(th);
+      see(pt[0] + d[0] * size, pt[1] + d[1] * size);
+      leaves.push({ p: pt, th, size, v: c.v, dist: Math.hypot(pt[0] - base[0], pt[1] - base[1]) });
+    });
+    leaves.sort((a, b) => a.dist - b.dist);
+    out.leaves = leaves;
+    const fruit = [];
+    H.fruit.forEach((F, fi) => {
+      const li = fi === 0 ? 1 : 4;
+      const lf = leaves[Math.min(li, leaves.length - 1)];
+      if (!lf) return;
+      const d = dirUp(lf.th), n = [-d[1], d[0]];
+      const c = [lf.p[0] + d[0] * lf.size * 0.38 + n[0] * F.nJit[0], lf.p[1] + d[1] * lf.size * 0.38 + n[1] * F.nJit[1]];
+      const rad = p.fruitR * 1.2 * (0.5 + 0.5 * age.leaf);
+      for (let k = 0; k < 3; k++) {
+        const a = F.a0 + k * 2.094 + F.aJit[k];
+        const fp = [c[0] + Math.cos(a) * rad, c[1] + Math.sin(a) * rad];
+        fruit.push({ p: fp, dist: Math.hypot(fp[0] - base[0], fp[1] - base[1]) });
+      }
+    });
+    fruit.sort((a, b) => a.dist - b.dist);
+    out.fruit = fruit;
+    return out;
+  });
+
+  return { trunk, full, stemTip, mains, houses, bbox, fb, trunkW };
 }
+
+// ---------------------------------------------------------------------------
+// Progress helpers
+// ---------------------------------------------------------------------------
+
+function litSlots(live, count) {
+  if (!live.length) return 0;
+  if (live.length <= 6) return Math.min(6, count);
+  return Math.round((6 * count) / live.length);
+}
+
+// ---------------------------------------------------------------------------
+// Render
+// ---------------------------------------------------------------------------
 
 /**
  * @param {HTMLElement} container
  * @param {object} opts
  * @param {TreeNode[]} opts.nodes
  * @param {(id: string) => boolean} opts.isFruit
- * @param {(id: string) => string} opts.progressState
+ * @param {(id: string) => string} opts.progressState  "fruit" | "started" | other
  * @param {(node: TreeNode) => void} [opts.onSelect]
  * @param {string} [opts.level]
  */
@@ -306,392 +439,324 @@ export function renderTreePortrait(container, opts) {
   const nodes = opts.nodes || [];
   const isFruit = opts.isFruit || (() => false);
   const progressState = opts.progressState || (() => "planned");
-  const level = LEVEL_PRESETS[opts.level] ? opts.level : "A1";
-  const P = LEVEL_PRESETS[level];
+  const level = AGES[opts.level] ? opts.level : "A1";
+  const age = AGES[level];
+  const lvIdx = LEVELS.indexOf(level);
+  // Payoff mode: seats to highlight (tree_part ids, "trunk" included) and the
+  // unit just completed, whose newest lit slot gets the grow-in animation.
+  const highlight = new Set(opts.highlight || []);
+  const justNow = opts.justNow || null;
+  /* focus:"roots" — the grammar payoff view (James, 2026-08-24): grammar lives
+   * below ground, so finishing a grammar unit shows trunk + roots ONLY — no
+   * limbs, no crown labels — with the unit's root emphasised, growing, and
+   * labelled (focusLabel), and the trunk pulsing slightly thicker. The map
+   * portrait and vocab payoffs are unchanged. */
+  const focusRoots = opts.focus === "roots";
+  const focusLabel = opts.focusLabel || "";
+  const m = buildModel();
+  const p = m.p;
+  const cx = VB.cx, soilY = VB.soil;
 
-  const byPart = {};
+  // ---- units onto seats (material up to this level) ----
+  const atLevel = (n) => (n.levels || []).some((l) => LEVELS.indexOf(l) >= 0 && LEVELS.indexOf(l) <= lvIdx);
+  const isBranchUnit = (n) => n.domain === "vocab" && BRANCH_UNIT.test(n.codex_unit || "");
+  const byPart = {}, themesByHouse = {};
   for (const n of nodes) {
-    const tp = n.tree_part || (n.domain === "grammar" ? n.root : null);
+    const tp = n.domain === "grammar" ? n.root || n.tree_part : n.tree_part || null;
     if (!tp) continue;
-    if (!byPart[tp]) byPart[tp] = [];
-    byPart[tp].push(n);
+    const bucket = n.domain === "vocab" && tp !== "trunk" && !isBranchUnit(n) ? themesByHouse : byPart;
+    if (!bucket[tp]) bucket[tp] = [];
+    bucket[tp].push(n);
+  }
+  const stateOf = (n) => (isFruit(n.id) || progressState(n.id) === "fruit" ? "fruit" : progressState(n.id) === "started" ? "started" : "none");
+  function seat(list) {
+    const live = (list || []).filter((n) => n.status === "live" && atLevel(n));
+    const fruited = live.filter((n) => stateOf(n) === "fruit");
+    const touched = live.filter((n) => stateOf(n) !== "none");
+    const fill = live.length ? (fruited.length + 0.45 * (touched.length - fruited.length)) / live.length : 0;
+    const state = !live.length ? "dim" : fruited.length ? "fruit" : touched.length ? "started" : "live";
+    return { live, fruited, touched, fill, state, nodes: list || [] };
+  }
+  const laterals = LATERALS.map((L) => {
+    const s = seat(byPart[L.tree_part]);
+    return { ...L, ...s, knots: litSlots(s.live, s.touched.length), knotsFruit: litSlots(s.live, s.fruited.length), dataId: (s.touched[0] || s.live[0] || {}).id || "" };
+  });
+  const tapList = (byPart.tap_root || []).concat(nodes.filter((n) => n.domain === "grammar" && n.foundation && !(byPart.tap_root || []).includes(n)));
+  const ts = seat(tapList);
+  const tap = { tree_part: "tap_root", label: "Foundation", ...ts, knots: litSlots(ts.live, ts.touched.length), knotsFruit: litSlots(ts.live, ts.fruited.length), dataId: (ts.touched[0] || ts.live[0] || {}).id || "" };
+  const houses = HOUSES.map((H) => {
+    const branch = seat(byPart[H.tree_part]), themes = seat(themesByHouse[H.tree_part]);
+    const live = branch.live.concat(themes.live), touched = branch.touched.concat(themes.touched), fruited = branch.fruited.concat(themes.fruited);
+    const state = !live.length ? "dim" : fruited.length ? "fruit" : touched.length ? "started" : "live";
+    return { ...H, live, touched, fruited, state, leaves: litSlots(live, touched.length), fruit: litSlots(live, fruited.length),
+             dataId: (branch.touched[0] || branch.live[0] || themes.touched[0] || themes.live[0] || {}).id || "" };
+  });
+  const trunk = seat((byPart.trunk || []).concat(Object.values(themesByHouse).flat()));
+
+  // ---- geometry at this age ----
+  const G = layout(m, age);
+  const lid = (v) => "lf-" + level + "-" + v;
+  const leafSizeStem = p.leafSize * (0.45 + 0.55 * age.leaf) * 0.8;
+
+  let above = '<g id="trunk" class="lb' + (highlight.has("trunk") ? " tp-hi-trunk" : "") + '" style="transform-origin:' + cx + 'px ' + soilY + 'px" opacity="' + (trunk.state === "dim" ? 0.5 : 0.95) + '">';
+  above += '<path d="' + taperedPath(G.trunk, 0.22, m.trunk.ph, age.stem < 1) + '"/>';
+  { const rx = G.trunkW * 0.66, ry = G.trunkW * 0.22;
+    above += '<path d="M' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY + ry * 2.2) + ' ' + f1(cx + rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY - ry * 1.2) + ' ' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Z"/>'; }
+  if (!focusRoots) G.mains.forEach((Mn) => { if (Mn.g) above += '<path d="' + taperedPath(Mn.L, 0, Mn.M.ph, Mn.g < 0.98) + '"/>'; });
+  above += "</g>";
+
+  // leader leaves while the stem is still rising
+  if (age.stem < 1) {
+    const tip = G.stemTip, th = G.trunk.ang(1);
+    above += '<g class="leader">';
+    m.leader.forEach((lf) => {
+      const size = leafSizeStem * lf.sizeMul;
+      above += '<use href="#' + lid(lf.v) + '" class="lf" transform="translate(' + f1(tip[0]) + ' ' + f1(tip[1]) + ') rotate(' + f1((th + lf.th) / D2R) + ') scale(' + f1(size) + ')"/>';
+    });
+    above += "</g>";
   }
 
-  function seatFill(treePart) {
-    const list = byPart[treePart] || [];
-    if (!list.length) return { fill: 0, state: "dim", nodes: [] };
-    let sum = 0;
-    let anyLive = false;
-    let anyFruit = false;
-    let anyStarted = false;
-    for (const n of list) {
-      if (n.status !== "live") continue;
-      anyLive = true;
-      const st = progressState(n.id);
-      if (st === "fruit" || isFruit(n.id)) {
-        anyFruit = true;
-        sum += 1;
-      } else if (st === "started") {
-        anyStarted = true;
-        sum += 0.45;
+  let canopy = "", labels = "";
+  const labelList = [];
+  if (!focusRoots) G.houses.forEach((g) => {
+    const house = houses[g.seat];
+    const dim = house.state === "dim";
+    const active = house.state === "started" || house.state === "fruit";
+    const hi = highlight.has(house.tree_part);
+    const isNew = hi && Boolean(justNow);
+    let origin = null;
+    let s = "";
+    let labelAt = null, labelSide = g.seatSide;
+    if (g.g > 0 && g.leaves.length >= 2) {
+      // a real limb with twigs and leaf slots
+      origin = g.L.P[0];
+      s += '<path class="lb" d="' + taperedPath(g.L, 0, g.H.ph) + '" opacity="' + (dim ? 0.3 : 0.95) + '"/>';
+      g.twigs.forEach((T) => { if (T) s += '<path class="hr" d="' + hairPath(T) + '" opacity="' + (dim ? 0.3 : 1) + '"/>'; });
+      g.leaves.forEach((lf, i) => {
+        const lit = i < house.leaves;
+        s += '<g class="leaf' + (isNew && lit && i === house.leaves - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(lf.p[0]) + ' ' + f1(lf.p[1]) + ') rotate(' + f1(lf.th / D2R) + ') scale(' + f1(lf.size) + ')"/></g>';
+      });
+      g.fruit.forEach((fr, i) => {
+        const lit = i < house.fruit;
+        s += '<g class="fruit' + (lit ? " done" : "") + (isNew && lit && i === house.fruit - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><circle cx="' + f1(fr.p[0]) + '" cy="' + f1(fr.p[1]) + '" r="' + f1(p.fruitR * (0.5 + 0.5 * age.leaf)) + '"/></g>';
+      });
+      labelAt = [g.tip[0] + g.seatSide * (p.leafSize * age.leaf * 0.9 + 6), g.tip[1] + 4];
+    } else {
+      // young: a shoot, or a bud-leaf on the stem at the seat height
+      let pt, th;
+      if (g.g > 0) {
+        origin = g.L.P[0];
+        s += '<path class="lb" d="' + taperedPath(g.L, 0, g.H.ph) + '" opacity="' + (dim ? 0.3 : 0.95) + '"/>';
+        pt = g.L.tip(); th = g.L.ang(1);
+        labelSide = g.side || g.seatSide;
       } else {
-        sum += 0.12;
-      }
-    }
-    if (!anyLive) return { fill: 0, state: "dim", nodes: list };
-    const fill = Math.min(1, sum / Math.max(1, list.filter((n) => n.status === "live").length || list.length));
-    const state = anyFruit ? "fruit" : anyStarted ? "started" : "live";
-    return { fill, state, nodes: list };
-  }
-
-  const tap = seatFill("tap_root");
-  const foundations = nodes.filter(
-    (n) => n.domain === "grammar" && n.foundation && n.status === "live",
-  );
-  if (foundations.length) {
-    let s = 0;
-    for (const n of foundations) {
-      if (isFruit(n.id)) s += 1;
-      else if (progressState(n.id) === "started") s += 0.45;
-      else s += 0.12;
-    }
-    tap.fill = Math.max(tap.fill, Math.min(1, s / foundations.length));
-    if (tap.fill > 0 && tap.state === "dim") tap.state = "live";
-    if (foundations.some((n) => isFruit(n.id))) tap.state = "fruit";
-  }
-
-  const trunk = seatFill("trunk");
-  // Also count live vocab leaves as canopy life so trunk isn't empty early
-  const vocabLive = nodes.filter(
-    (n) => n.domain === "vocab" && n.status === "live",
-  );
-  if (vocabLive.length) {
-    let s = 0;
-    for (const n of vocabLive) {
-      if (isFruit(n.id) || progressState(n.id) === "fruit") s += 1;
-      else if (progressState(n.id) === "started") s += 0.4;
-      else s += 0.1;
-    }
-    trunk.fill = Math.max(trunk.fill, Math.min(1, s / vocabLive.length));
-    if (vocabLive.some((n) => isFruit(n.id))) trunk.state = "fruit";
-    else if (trunk.state === "dim" && trunk.fill > 0) trunk.state = "live";
-  }
-
-  const laterals = GRAMMAR_LATERALS.map((L) => ({
-    ...L,
-    ...seatFill(L.tree_part),
-  }));
-  const houses = HOUSES.map((H) => ({
-    ...H,
-    ...seatFill(H.tree_part),
-  }));
-
-  const W = P.W;
-  const H = P.H;
-  const cx = W / 2;
-  const soilY = P.soilY;
-
-  function strokeFor(state) {
-    if (state === "dim") return C.dimStroke;
-    if (state === "fruit") return C.fruit;
-    if (state === "started") return C.copper;
-    return C.copper;
-  }
-
-  function fillFor(state) {
-    if (state === "dim") return C.dim;
-    if (state === "fruit") return C.fruit;
-    return C.copper;
-  }
-
-  // ---- Roots (below) — full structure always; progress only tints/thickens ----
-  // Earlier pass looked "the same" because width was scaled by fill≈0.12.
-  const collar = { x: cx, y: soilY + 5 };
-  const rootBits = laterals
-    .map((L) => {
-      const isDim = L.state === "dim";
-      const progress = Math.max(0, Math.min(1, L.fill));
-      const struct = isDim ? 0.55 : 0.82 + progress * 0.18;
-      const len =
-        P.rootDepth * P.rootReach * (0.88 + progress * 0.12) * (isDim ? 0.78 : 1);
-      const rad = (L.angle * Math.PI) / 180;
-      const tip = {
-        x: cx + Math.sin(rad) * len,
-        y: soilY + 14 + Math.cos(rad * 0.08) * len * 0.96,
-      };
-      const segs = buildPrimaryRoot(collar, tip, L.tree_part, P, struct);
-      // Elegant taper (RUE2 scale) — not thick tubes
-      const w0 = isDim ? 2.8 : 3.6 + progress * 2.2;
-      const w1 = isDim ? 0.7 : 0.9 + progress * 0.5;
-      const body = limbChain(withWidths(segs, w0, w1), 22);
-      const stroke = strokeFor(L.state);
-      const fillBody =
-        L.state === "fruit"
-          ? "rgba(34,197,94,0.7)"
-          : isDim
-            ? "rgba(100,130,160,0.22)"
-            : "rgba(86,156,214,0.55)";
-      const op = isDim ? 0.55 : 0.92;
-      const tipPt = segs.length ? segs[segs.length - 1].p2 : tip;
-      const knotR =
-        (isDim ? 3.2 : 4 + progress * 1.6) * (level === "A1" ? 1 : 1);
-      const firstNode = (L.nodes || []).find((n) => n.status === "live");
-      const dataId = firstNode ? firstNode.id : "";
-
-      let forks = "";
-      const nFork = P.fork ? Math.max(0, P.secondaryForks || 0) + (isDim ? 0 : 1) : 0;
-      for (let fi = 0; fi < nFork; fi++) {
-        const att = chainPoint(segs, 0.38 + fi * 0.18);
-        const sign = (L.angle < 0 ? -1 : 1) * (fi % 2 === 0 ? 1 : -1);
-        const fang = rad + sign * (0.38 + fi * 0.12);
-        const flen = len * (0.28 + 0.08 * fi) * (isDim ? 0.65 : 0.85);
-        const ftip = {
-          x: att.x + Math.sin(fang) * flen,
-          y: att.y + Math.abs(Math.cos(fang)) * flen * 0.9 + 6,
-        };
-        const h = hash01(`${L.tree_part}-fk${fi}`);
-        const fctrl = {
-          x: (att.x + ftip.x) / 2 + (h - 0.5) * 12,
-          y: (att.y + ftip.y) / 2 + 8,
-        };
-        const fw0 = w0 * 0.4;
-        const fsegs = [
-          { p0: att, p1: fctrl, p2: ftip, t0: 0, t1: 1, w0: fw0, w1: 0.55 },
-        ];
-        forks += `<path d="${limbChain(fsegs, 14)}" fill="${fillBody}" stroke="${stroke}"
-          stroke-width="0.35" opacity="${isDim ? 0.35 : 0.7}" pointer-events="none"/>`;
-      }
-
-      let hairs = "";
-      const hairN = P.hair || 0;
-      const hairGate = P.hairGate != null ? P.hairGate : 0;
-      if (hairN > 0 && struct >= hairGate) {
-        const n = Math.min(hairN, 10);
-        for (let hi = 0; hi < n; hi++) {
-          const tA = 0.45 + 0.48 * hash01(`${L.tree_part}-ht${hi}`);
-          const att = chainPoint(segs, tA);
-          const a = rad + (hash01(`${L.tree_part}-ha${hi}`) - 0.5) * 1.15;
-          const hlen =
-            8 + 16 * hash01(`${L.tree_part}-hl${hi}`) * (isDim ? 0.5 : 0.9);
-          const hx = att.x + Math.sin(a) * hlen;
-          const hy = att.y + Math.abs(Math.cos(a)) * hlen + 3;
-          hairs += `<path d="M${f(att.x)} ${f(att.y)}Q${f((att.x + hx) / 2)} ${f((att.y + hy) / 2 + 5)} ${f(hx)} ${f(hy)}"
-            fill="none" stroke="${stroke}" stroke-width="0.9"
-            opacity="${isDim ? 0.18 : 0.32}" stroke-linecap="round" pointer-events="none"/>`;
+        const main = G.mains[g.H.main];
+        if (main.g) { origin = main.L.P[0]; pt = main.L.tip(); th = main.L.ang(1); labelSide = main.M.side || g.seatSide; }
+        else {
+          const rank = g.seat % 6;
+          const tt = Math.min(0.95, 0.3 + 0.62 * (rank / 5));
+          pt = edgePoint(G.trunk, tt, g.seatSide, 0.5); th = G.trunk.ang(tt) + g.seatSide * 52 * D2R;
+          origin = pt;
+          const stalk = makeLimb(pt, th, leafSizeStem * 0.5, 0.3, 0, true, 0, 1);
+          s += '<path class="hr" d="' + hairPath(stalk) + '" opacity="' + (dim ? 0.3 : 1) + '"/>';
+          pt = stalk.tip(); th = stalk.ang(1);
         }
       }
-
-      const ridge = ridgePath(segs);
-      const ridgeOp = isDim ? 0.2 : 0.4 + progress * 0.2;
-
-      return `
-        <g class="tp-lateral" data-part="${L.tree_part}" data-node="${dataId}">
-          <path class="tp-root-body ${L.state}" d="${body}" fill="${fillBody}"
-            stroke="${stroke}" stroke-width="0.45" opacity="${op}"/>
-          <path class="tp-root-ridge" d="${ridge}" fill="none" stroke="${stroke}"
-            stroke-width="${1.15 + progress * 0.5}" opacity="${ridgeOp}" stroke-linecap="round"
-            pointer-events="none"/>
-          ${forks}${hairs}
-          <circle class="tp-knot ${L.state}" data-node="${dataId}"
-            cx="${f(tipPt.x)}" cy="${f(tipPt.y)}" r="${f(knotR)}"
-            fill="${fillFor(L.state)}" stroke="${stroke}" stroke-width="1.1" opacity="${op}"
-            style="cursor:${dataId ? "pointer" : "default"}">
-            <title>${esc(L.label)}</title>
-          </circle>
-        </g>`;
-    })
-    .join("");
-
-  // Tap root — heavy central mass
-  const tapProgress = Math.max(0, Math.min(1, tap.fill));
-  const tapIsDim = tap.state === "dim" && tap.fill === 0;
-  const tapStruct = tapIsDim ? 0.5 : 0.88 + tapProgress * 0.12;
-  const tapLen = P.rootDepth * (0.52 + tapProgress * 0.18);
-  const tapTip = { x: cx, y: soilY + 10 + tapLen };
-  const tapSegs = buildPrimaryRoot(collar, tapTip, "tap", P, tapStruct);
-  const tapW0 = tapIsDim ? 3.8 : 5.2 + tapProgress * 2.5;
-  const tapW1 = tapIsDim ? 1.1 : 1.5 + tapProgress * 0.6;
-  const tapBody = limbChain(withWidths(tapSegs, tapW0, tapW1), 24);
-  const tapStroke = strokeFor(tapIsDim ? "dim" : tap.state);
-  const tapOp = tapIsDim ? 0.5 : 0.95;
-  const tapFillBody =
-    tap.state === "fruit"
-      ? "rgba(34,197,94,0.72)"
-      : "rgba(70,140,200,0.62)";
-  const tapRidge = ridgePath(tapSegs);
-
-  // ---- Trunk (tapered sapling stem) ----
-  const tFill = Math.max(0.08, trunk.fill); // tiny visible stem even at zero
-  const trunkH = P.trunkH * (0.85 + tFill * 0.2) * (0.92 + P.canopyScale * 0.08);
-  const twBot = P.trunkW0 + tFill * (P.trunkW1 - P.trunkW0);
-  const twTop = twBot * 0.55;
-  const trunkTop = soilY - trunkH;
-  const trunkOp = trunk.state === "dim" ? 0.45 : 0.95;
-  // Trapezoid path for taper
-  const trunkPath = `M ${f(cx - twBot / 2)} ${f(soilY + 2)}
-    L ${f(cx - twTop / 2)} ${f(trunkTop)}
-    L ${f(cx + twTop / 2)} ${f(trunkTop)}
-    L ${f(cx + twBot / 2)} ${f(soilY + 2)} Z`;
-  const trunkFill =
-    trunk.state === "fruit"
-      ? "url(#tpTrunkFruit)"
-      : "url(#tpTrunkWood)";
-
-  // ---- Canopy: small arched branches + leaf clusters ----
-  // Show dim seats as faint stubs; live/started/fruit as real twigs
-  const canopyBits = houses
-    .map((H) => {
-      const sign = H.side === "L" ? -1 : 1;
-      // Stagger height — lower houses closer to soil collar, upper near tip
-      const yAlong = 0.18 + H.i * 0.12;
-      const y0 = trunkTop + trunkH * yAlong;
-      const baseReach =
-        (38 + H.i * 4) * P.canopyScale * (H.state === "dim" ? 0.55 : 0.75 + H.fill * 0.45);
-      const x1 = cx + sign * (twTop * 0.5 + 1);
-      const x2 = cx + sign * baseReach;
-      // Arch upward like a young tree branch
-      const y2 = y0 - (10 + H.i * 3) * P.canopyScale - H.fill * 8;
-      const cpx = cx + sign * baseReach * 0.55;
-      const cpy = y0 - 14 * P.canopyScale;
-      const op =
-        H.state === "dim" ? 0.22 : H.state === "fruit" ? 1 : H.state === "started" ? 0.88 : 0.7;
-      const stroke =
-        H.state === "fruit"
-          ? C.fruit
-          : H.state === "dim"
-            ? C.dimStroke
-            : C.amber;
-      const sw = H.state === "dim" ? 1.1 : 1.35 + H.fill * 1.8;
-      const leafNodes = (H.nodes || []).filter((n) => n.status === "live");
-      const dataId = leafNodes[0]?.id || "";
-
-      // Leaf cluster (ellipses) near tip — more when filled
-      let leaves = "";
-      if (H.state !== "dim") {
-        const nLeaf = 2 + Math.round(H.fill * 3);
-        for (let k = 0; k < nLeaf; k++) {
-          const t = 0.55 + (k / Math.max(1, nLeaf)) * 0.4;
-          const lx = x1 + (x2 - x1) * t + sign * (k % 2) * 3;
-          const ly = y0 + (y2 - y0) * t - 3 - (k % 3);
-          const rx = 3.2 + H.fill * 2.2;
-          const ry = 2 + H.fill * 1.4;
-          const col =
-            H.state === "fruit"
-              ? k % 2
-                ? C.fruit
-                : C.fruitLite
-              : C.amber;
-          leaves += `<ellipse cx="${f(lx)}" cy="${f(ly)}" rx="${f(rx)}" ry="${f(ry)}"
-            fill="${col}" opacity="${0.55 + H.fill * 0.4}" transform="rotate(${sign * ( -25 + k * 12)} ${f(lx)} ${f(ly)})"/>`;
-        }
-      } else {
-        // ghost tip dot
-        leaves = `<circle cx="${f(x2)}" cy="${f(y2)}" r="2" fill="${C.dim}" opacity="0.5"/>`;
+      const lf = g.H.budLeaf, size = leafSizeStem * lf.sizeMul;
+      const lit = house.leaves > 0;
+      s += '<g class="leaf' + (isNew && lit ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(pt[0]) + ' ' + f1(pt[1]) + ') rotate(' + f1((th + lf.thJit) / D2R) + ') scale(' + f1(size) + ')"/></g>';
+      if (house.fruit > 0) {
+        const d = dirUp(th + lf.thJit), n = [-d[1], d[0]];
+        const fp = [pt[0] + d[0] * size * 0.3 + n[0] * size * 0.35 * labelSide, pt[1] + d[1] * size * 0.3 + n[1] * size * 0.35 * labelSide];
+        s += '<g class="fruit done' + (isNew ? " tp-new" : "") + '"><circle cx="' + f1(fp[0]) + '" cy="' + f1(fp[1]) + '" r="' + f1(p.fruitR * (0.45 + 0.4 * age.leaf)) + '"/></g>';
       }
+      const d = dirUp(th);
+      labelAt = [pt[0] + d[0] * size * 0.5 + labelSide * (size * 0.5 + 6), pt[1] + d[1] * size * 0.5 + 4];
+    }
+    const o = origin || g.tip || [cx, soilY];
+    canopy += '<g class="tp-house ' + house.state + (hi ? " tp-hi" : "") + '" data-part="' + house.tree_part + '" data-node="' + house.dataId + '" style="transform-origin:' + f1(o[0]) + 'px ' + f1(o[1]) + 'px">' + s + "<title>" + esc(house.label) + "</title></g>";
+    const showLabel = lvIdx >= 2 ? !dim : active;
+    if (showLabel && labelAt) labelList.push({ x: labelAt[0], y: labelAt[1], side: labelSide, active, house });
+  });
+  // Labels that would overprint (two houses on one shoot) stack downwards instead.
+  labelList.sort((a, b) => a.y - b.y);
+  const placed = [];
+  const span = (l) => { const w = 6.2 * l.house.label.length; return l.side < 0 ? [l.x - w, l.x] : [l.x, l.x + w]; };
+  labelList.forEach((l) => {
+    const [a0, a1] = span(l);
+    for (const q of placed) {
+      const [b0, b1] = span(q);
+      if (a0 < b1 + 4 && b0 < a1 + 4 && l.y - q.y < 13) l.y = q.y + 13;
+    }
+    placed.push(l);
+    labels += '<text class="tp-house-label" x="' + f1(l.x) + '" y="' + f1(l.y) + '" text-anchor="' + (l.side < 0 ? "end" : "start") + '" fill="' + (l.active ? C.label : C.labelDim) + '" opacity="' + (l.active ? 0.95 : 0.75) + '" data-node="' + l.house.dataId + '" style="cursor:' + (l.house.dataId ? "pointer" : "default") + '">' + esc(l.house.label) + "</text>";
+  });
 
-      const labX = x2 + sign * 5;
-      const labOp = H.state === "dim" ? 0.4 : op;
-      const labFill = H.state === "dim" ? "#555" : "#d4b070";
+  // ---- roots mirror the crown at this age ----
+  const fb = G.fb;
+  const canopySpread = Math.max(40, fb.x1 - fb.x0), canopyH = Math.max(40, soilY - fb.y0);
+  const S = (canopySpread * p.rootSpread) / 2;
+  let Dd = canopyH * p.rootDepth;
+  if (Dd > VB.h - soilY - 62) Dd = VB.h - soilY - 62;
+  const rw0 = Math.max(1.2, G.trunkW * p.childWidth * p.rootWidth);
+  const rb = { x0: 1e9, x1: -1e9, y1: -1e9 };
+  const track = (q) => { if (q[0] < rb.x0) rb.x0 = q[0]; if (q[0] > rb.x1) rb.x1 = q[0]; if (q[1] > rb.y1) rb.y1 = q[1]; };
+  const rootSeats = laterals.concat([tap]);
+  let roots = "";
+  let hiRootTip = null; // tip of the highlighted lateral, for the focus label
+  m.roots.forEach((R0, i) => {
+    const seatInfo = rootSeats[i];
+    // Roots age too: a sapling is a tap root with thin fibrous laterals; the
+    // inner laterals thicken first, the outer pair last.
+    const birth = R0.tap ? 0 : [0.18, 0.08, 0, 0, 0.08, 0.18][i];
+    const rg = clamp01((age.girth - birth) / (1 - birth));
+    const reach = 0.55 + 0.45 * rg;
+    const end = R0.tap ? [cx + R0.endJit[0], soilY + Dd * R0.fy]
+                       : [cx + R0.fx * S * reach * (1 + R0.endJit[0]), soilY + R0.fy * Dd * reach * (1 + R0.endJit[1])];
+    const th0 = R0.thF * p.rootAngle * D2R + R0.thJit;
+    const hiR = highlight.has(seatInfo.tree_part);
+    // A sapling lateral is hairline-thin; without a width boost the payoff
+    // emphasis is invisible at A1 age (James smoke, 2026-08-25).
+    const w0 = rw0 * (0.3 + 0.7 * rg) * (R0.tap ? 1.15 + 0.6 * (1 - age.girth) : 1) * (hiR ? 1.3 : 1);
+    const start = [cx + Math.sin(th0) * G.trunkW * 0.3, soilY - 4];
+    const dist = Math.hypot(end[0] - start[0], end[1] - start[1]);
+    const d0 = dirDn(th0);
+    const P = [start, [start[0] + d0[0] * dist * 0.38, start[1] + d0[1] * dist * 0.38], [end[0] + R0.ctrlJit, end[1] - dist * 0.3], end];
+    const R = { P, len: dist, up: false, w0, taper: p.taper * 0.8, at: (t) => bez(P, t), tan: (t) => bezTan(P, t),
+      ang: (t) => { const v = bezTan(P, t); return Math.atan2(v[0], v[1]); }, w: (t) => w0 * (1 - (1 - p.taper * 0.8) * t), tip: () => end };
+    track(end);
+    const dim = seatInfo.state === "dim";
+    if (hiR && !R0.tap) hiRootTip = { x: end[0], y: end[1], side: Math.sign(end[0] - cx) || 1, seatLabel: seatInfo.label };
+    if (hiR && R0.tap && !hiRootTip) hiRootTip = { x: end[0], y: end[1], side: 1, seatLabel: seatInfo.label };
+    let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : dim ? 0.3 : 0.85) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
+    s += '<path class="rt" d="' + taperedPath(R, 0.15, R0.ph) + '"/>';
+    const forks = [];
+    R0.forks.forEach((F0, k) => {
+      const fg = clamp01((age.girth - (k === 0 ? 0.3 : 0.6)) / 0.3);
+      if (fg <= 0) return;
+      const t = F0.t, len = dist * (1 - t) * F0.lenMul * (0.3 + 0.7 * fg), fw = R.w(t) * p.childWidth * (0.5 + 0.5 * fg);
+      const F = makeLimb(edgePoint({ at: R.at, tan: (t2) => { const v = R.tan(t2); return [-v[0], -v[1]]; }, w: R.w }, t, F0.side, fw * 0.5 + 1), R.ang(t) + F0.th, len, 0.5, F0.s, false, fw, p.taper * 0.7);
+      forks.push(F); s += '<path class="rt" d="' + taperedPath(F, 0, F0.ph) + '"/>'; track(F.tip());
+    });
+    if (age.girth >= 0.2) {
+      const hosts = [R].concat(forks);
+      R0.hairs.forEach((H0) => {
+        const host = hosts[H0.host % hosts.length];
+        const T = makeLimb(host.at(H0.t), host.ang(H0.t) + H0.th, H0.lenU * (dist / 260), 0.5, H0.s, false, 0, 1);
+        s += '<path class="rh" d="' + hairPath(T) + '"/>'; track(T.tip());
+      });
+    }
+    const tipT = makeLimb(R.at(0.99), R.ang(1) + R0.tipHair.th, R0.tipHair.lenU * (dist / 260), 0.4, R0.tipHair.s, false, 0, 1);
+    s += '<path class="rh" d="' + hairPath(tipT) + '"/>'; track(tipT.tip());
+    const kr = p.fruitR * 0.85 * (0.4 + 0.6 * age.leaf) * (0.6 + 0.4 * rg);
+    for (let k = 0; k < 6; k++) {
+      const t = 0.1 + 0.16 * k + R0.knotJit[k];
+      const q = R.at(t);
+      const lit = k < seatInfo.knots, fruited = k < seatInfo.knotsFruit;
+      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (hiR && justNow && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"><title>' + esc(seatInfo.label) + ' - ' + Math.round(seatInfo.fill * 100) + '%</title></circle></g>';
+    }
+    roots += s + "</g>";
+  });
+  // The grown root gets its name written next to its tip — below ground the
+  // roots are otherwise anonymous, and this payoff is about exactly one of them.
+  if (focusRoots && hiRootTip) {
+    const t = focusLabel || hiRootTip.seatLabel;
+    const lx = hiRootTip.x + hiRootTip.side * 16, ly = hiRootTip.y + 5;
+    roots += '<text class="tp-root-label" x="' + f1(lx) + '" y="' + f1(ly) + '" text-anchor="' + (hiRootTip.side < 0 ? "end" : "start") + '">' + esc(t) + "</text>";
+    track([lx + hiRootTip.side * (6.8 * t.length + 10), ly]);
+  }
 
-      return `
-        <g class="tp-house" data-part="${H.tree_part}" data-node="${dataId}">
-          <path class="tp-branch ${H.state}" d="M ${f(x1)} ${f(y0)} Q ${f(cpx)} ${f(cpy)}, ${f(x2)} ${f(y2)}"
-            fill="none" stroke="${stroke}" stroke-width="${sw}" opacity="${op}" stroke-linecap="round"/>
-          ${leaves}
-          <text class="tp-house-label" x="${f(labX)}" y="${f(y2 + 3)}"
-            text-anchor="${H.side === "L" ? "end" : "start"}"
-            fill="${labFill}" font-size="9" font-family="Segoe UI,system-ui,sans-serif"
-            opacity="${labOp}" style="cursor:${dataId ? "pointer" : "default"}" data-node="${dataId}">${esc(H.label)}</text>
-        </g>`;
-    })
-    .join("");
-
-  // Soft soil texture dots (level-scaled; C1 densest)
+  // ---- soil ----
+  let soil = "";
+  m.ticks.forEach((T) => {
+    let x = T.x;
+    if (Math.abs(x - cx) < G.trunkW * 0.9 + 10) x = cx + Math.sign(x - cx || 1) * (G.trunkW * 0.9 + 14);
+    soil += '<path class="sl" d="M' + f1(x) + ',' + soilY + 'l' + f1(T.dx) + ',' + f1(-T.h) + '"/>';
+  });
   let soilDots = "";
-  const nDots = P.soilDots != null ? P.soilDots : 40;
-  for (let i = 0; i < nDots; i++) {
-    const dx = 30 + ((i * 97) % (W - 60));
-    const dy = soilY + 20 + ((i * 53) % (H - soilY - 40));
-    const r = 0.6 + (i % 3) * 0.35;
-    soilDots += `<circle cx="${dx}" cy="${dy}" r="${r}" fill="rgba(200,160,100,0.06)"/>`;
+  for (let i = 0; i < 80; i++) {
+    soilDots += '<circle cx="' + (30 + ((i * 97) % (VB.w - 60))) + '" cy="' + (soilY + 20 + ((i * 53) % (VB.h - soilY - 40))) + '" r="' + (0.6 + (i % 3) * 0.35) + '" fill="rgba(200,160,100,0.06)"/>';
   }
 
-  const svg = `
-    <svg class="tree-portrait-svg" viewBox="0 0 ${W} ${H}" width="100%" height="auto"
-      role="img" aria-label="Sapling: grammar roots, trunk and vocab leaves">
-      <defs>
-        <linearGradient id="tpTrunkWood" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stop-color="${C.copperDeep}"/>
-          <stop offset="55%" stop-color="${C.copper}"/>
-          <stop offset="100%" stop-color="${C.amber}"/>
-        </linearGradient>
-        <linearGradient id="tpTrunkFruit" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0%" stop-color="#15803d"/>
-          <stop offset="100%" stop-color="${C.fruitLite}"/>
-        </linearGradient>
-        <linearGradient id="tpSoilGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="${C.soilTop}"/>
-          <stop offset="100%" stop-color="${C.soil}"/>
-        </linearGradient>
-        <radialGradient id="tpSkyGlow" cx="50%" cy="18%" r="55%">
-          <stop offset="0%" stop-color="rgba(224,160,80,0.09)"/>
-          <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
-        </radialGradient>
-        <linearGradient id="tpGroundGlow" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="rgba(200,120,64,0.2)"/>
-          <stop offset="100%" stop-color="rgba(200,120,64,0)"/>
-        </linearGradient>
-        <filter id="tpSoft" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="2.2"/>
-        </filter>
-      </defs>
+  // ---- per-level crop: frame the tree, keep growth visible (A1 zoomed at most 2.2x) ----
+  const MAX_ZOOM = 2.2;
+  const bb = G.bbox;
+  let x0 = Math.min(bb.x0, rb.x0) - 150, x1 = Math.max(bb.x1, rb.x1) + 150;
+  let y0 = Math.min(bb.y0, fb.y0) - 50, y1 = rb.y1 + 40;
+  if (focusRoots) {
+    // No canopy on screen: frame the trunk and the root system, not the crown's
+    // empty airspace.
+    const trunkTopY = G.trunk.tip()[1];
+    y0 = Math.max(0, trunkTopY - 70);
+    x0 = Math.min(rb.x0 - 60, cx - 170);
+    x1 = Math.max(rb.x1 + 60, cx + 170);
+  }
+  x0 = Math.max(0, x0); x1 = Math.min(VB.w, x1); y0 = Math.max(0, y0); y1 = Math.min(VB.h, y1);
+  const minW = VB.w / MAX_ZOOM, minH = VB.h / MAX_ZOOM;
+  if (x1 - x0 < minW) { const mid = (x0 + x1) / 2; x0 = Math.max(0, mid - minW / 2); x1 = Math.min(VB.w, x0 + minW); x0 = x1 - minW; }
+  if (y1 - y0 < minH) { const mid = (y0 + y1) / 2; y0 = Math.max(0, mid - minH / 2); y1 = Math.min(VB.h, y0 + minH); y0 = y1 - minH; }
+  const crop = { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
 
-      <rect width="${W}" height="${H}" fill="${C.sky}" rx="10"/>
-      <!-- air -->
-      <rect width="${W}" height="${soilY}" fill="url(#tpSkyGlow)"/>
-      <!-- soil bed -->
-      <rect x="0" y="${soilY}" width="${W}" height="${H - soilY}" fill="url(#tpSoilGrad)"/>
-      ${soilDots}
+  const sw = Math.max(0.8, p.twigWidth * 0.95);
+  const css = [
+    ".lb{fill:" + C.wood + ";stroke:none}",
+    ".hr{fill:none;stroke:" + C.leaf + ";stroke-width:" + p.twigWidth + ";stroke-linecap:round;stroke-linejoin:round}",
+    ".rt{fill:" + C.wood + ";stroke:none}",
+    ".rh{fill:none;stroke:" + C.wood + ";stroke-width:" + p.twigWidth + ";stroke-linecap:round}",
+    ".sl{fill:none;stroke:rgba(208,144,80,0.65);stroke-width:1.2;stroke-linecap:round}",
+    ".leaf use,.leader .lf{fill:none;stroke:" + C.leaf + ";stroke-width:" + sw + ";stroke-linejoin:round;stroke-linecap:round}",
+    ".leader .lf{opacity:0.7}",
+    ".fruit circle{fill:none;stroke:" + C.leaf + ";stroke-width:" + sw + "}",
+    ".fruit.done circle{fill:" + C.fruit + ";stroke:" + C.fruit + ";filter:drop-shadow(0 0 2.5px " + C.fruit + ")}",
+    ".knot circle{fill:" + C.knotBg + ";stroke:" + C.wood + ";stroke-width:" + sw + "}",
+    ".knot.lit circle{fill:" + C.wood + "}",
+    ".knot.done circle{fill:" + C.fruit + ";stroke:" + C.fruit + "}",
+    ".tp-house-label{font:11px 'Segoe UI',system-ui,sans-serif;paint-order:stroke;stroke:" + C.sky + ";stroke-width:3px;stroke-linejoin:round}",
+    // payoff: the practised part grows in from its base and glows; the trunk pulses;
+    // the newest lit slot fades in. transform-box:view-box makes the origin above user units.
+    // Animations are held until the host adds .tp-run to the svg, so the growth
+    // plays when the student is LOOKING at the tree, not while it is still
+    // off-screen below the fold (James, 2026-08-23).
+    ".tp-hi{transform-box:view-box;transform:scale(.9)}",
+    ".tp-run .tp-hi{animation:tpGrow 1.6s cubic-bezier(.22,1,.36,1) both}",
+    ".tp-hi .lb{filter:drop-shadow(0 0 4px rgba(77,182,199,.95))}",
+    ".tp-hi .rt{filter:drop-shadow(0 0 5px rgba(77,182,199,1)) drop-shadow(0 0 12px rgba(77,182,199,.6))}",
+    ".tp-hi-trunk{transform-box:view-box}",
+    ".tp-run .tp-hi-trunk{animation:tpPulse 2.2s ease-out both}",
+    ".tp-root-label{font:italic 12px 'Segoe UI',system-ui,sans-serif;fill:" + C.label + ";paint-order:stroke;stroke:" + C.soil + ";stroke-width:3px;stroke-linejoin:round}",
+    ".tp-new{opacity:0}",
+    ".tp-run .tp-new{animation:tpLight 1.3s ease-out .5s both}",
+    ".tp-new use,.tp-new circle{filter:drop-shadow(0 0 5px " + C.fruit + ")}",
+    "@keyframes tpGrow{from{transform:scale(.9)}to{transform:scale(1)}}",
+    // the trunk also THICKENS a touch mid-pulse (origin sits at the collar)
+    "@keyframes tpPulse{0%{filter:brightness(1);transform:scale(1)}40%{filter:brightness(1.5) drop-shadow(0 0 7px rgba(86,156,214,.95));transform:scale(1.035)}100%{filter:brightness(1);transform:scale(1)}}",
+    "@keyframes tpLight{from{opacity:.25;transform:scale(.6)}to{opacity:1;transform:scale(1)}}",
+    ".tp-new{transform-box:fill-box;transform-origin:center}",
+    "@media (prefers-reduced-motion:reduce){.tp-hi,.tp-run .tp-hi,.tp-hi-trunk,.tp-run .tp-hi-trunk," +
+      ".tp-new,.tp-run .tp-new{animation:none;transform:none;opacity:1}}",
+  ].join("\n");
+  const defs = "<defs>" + LEAF_D.map((d, i) => '<path id="' + lid(i) + '" d="' + d + '" vector-effect="non-scaling-stroke"/>').join("") +
+    '<linearGradient id="tpSoilGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="' + C.soilTop + '"/><stop offset="100%" stop-color="' + C.soil + '"/></linearGradient>' +
+    '<radialGradient id="tpSkyGlow" cx="50%" cy="18%" r="55%"><stop offset="0%" stop-color="rgba(224,160,80,0.09)"/><stop offset="100%" stop-color="rgba(0,0,0,0)"/></radialGradient>' +
+    '<linearGradient id="tpGroundGlow" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="rgba(200,120,64,0.2)"/><stop offset="100%" stop-color="rgba(200,120,64,0)"/></linearGradient>' +
+    '<filter id="tpSoft" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="2.2"/></filter></defs>';
 
-      <!-- canopy + trunk -->
-      <g class="tp-above">
-        ${canopyBits}
-        <path class="tp-trunk" d="${trunkPath}" fill="${trunkFill}" opacity="${trunkOp}"
-          stroke="${C.copperDeep}" stroke-width="0.6"/>
-        <!-- tiny leader shoot at tip -->
-        <path d="M ${f(cx)} ${f(trunkTop)} Q ${f(cx - 4)} ${f(trunkTop - 14)}, ${f(cx + 1)} ${f(trunkTop - 22)}"
-          fill="none" stroke="${trunk.state === "fruit" ? C.fruit : C.copper}"
-          stroke-width="1.6" opacity="${0.5 + tFill * 0.4}" stroke-linecap="round"/>
-      </g>
-
-      <!-- soil line + glow -->
-      <rect x="0" y="${soilY - 10}" width="${W}" height="18" fill="url(#tpGroundGlow)" opacity="0.55" filter="url(#tpSoft)"/>
-      <line x1="36" y1="${soilY}" x2="${W - 36}" y2="${soilY}"
-        stroke="rgba(208,144,80,0.65)" stroke-width="1.6"/>
-      <text x="${W - 44}" y="${soilY - 8}" text-anchor="end" fill="${C.muted}"
-        font-size="9" font-family="Segoe UI,system-ui,sans-serif">${esc(P.soilLabel)}</text>
-
-      <!-- roots (ribbons · knots only — no root labels) -->
-      <g class="tp-below">
-        <path d="${tapBody}" fill="${tapFillBody}" stroke="${tapStroke}"
-          stroke-width="0.55" opacity="${tapOp}"/>
-        <path d="${tapRidge}" fill="none" stroke="${tapStroke}"
-          stroke-width="${1.15 + tapStruct * 0.4}" opacity="${0.28 + tapStruct * 0.25}"
-          stroke-linecap="round" pointer-events="none"/>
-        <circle cx="${f(tapTip.x)}" cy="${f(tapTip.y)}" r="${f(3.2 + tapProgress * 1.8)}"
-          fill="${fillFor(tap.state === "dim" && tap.fill === 0 ? "dim" : tap.state)}"
-          opacity="${tapOp}">
-          <title>Foundation · ${Math.round(tap.fill * 100)}%</title>
-        </circle>
-        ${rootBits}
-      </g>
-
-      <text x="${cx}" y="20" text-anchor="middle" fill="${C.muted}" font-size="11"
-        font-style="italic" font-family="Segoe UI,system-ui,sans-serif">${esc(P.caption)}</text>
-      <text x="${cx}" y="36" text-anchor="middle" fill="#555" font-size="10"
-        font-style="italic" font-family="Segoe UI,system-ui,sans-serif">${esc(P.caption2)}</text>
-    </svg>
-  `;
+  let svg = '<svg class="tree-portrait-svg" viewBox="' + f1(crop.x) + ' ' + f1(crop.y) + ' ' + f1(crop.w) + ' ' + f1(crop.h) + '" width="100%" height="auto" role="img" aria-label="Tree: grammar roots, vocab trunk and houses" data-level="' + level + '">' +
+    "<style>" + css + "</style>" + defs +
+    '<rect width="' + VB.w + '" height="' + VB.h + '" fill="' + C.sky + '"/>' +
+    '<rect width="' + VB.w + '" height="' + soilY + '" fill="url(#tpSkyGlow)"/>' +
+    '<rect x="0" y="' + soilY + '" width="' + VB.w + '" height="' + (VB.h - soilY) + '" fill="url(#tpSoilGrad)"/>' + soilDots +
+    '<g class="tp-below">' + roots + "</g>" +
+    '<g class="tp-above">' + above + canopy + "</g>" +
+    '<rect x="0" y="' + (soilY - 10) + '" width="' + VB.w + '" height="18" fill="url(#tpGroundGlow)" opacity="0.55" filter="url(#tpSoft)"/>' +
+    '<path class="sl" d="M' + f1(crop.x + 24) + ',' + soilY + 'L' + f1(crop.x + crop.w - 24) + ',' + soilY + '"/>' + soil +
+    '<text x="' + f1(crop.x + crop.w - 30) + '" y="' + (soilY - 8) + '" text-anchor="end" fill="' + C.muted + '" font-size="10" font-family="Segoe UI,system-ui,sans-serif">' + esc(age.soilLabel) + "</text>" +
+    '<g class="tp-labels">' + labels + "</g>" +
+    (focusRoots ? "" : '<text x="' + cx + '" y="' + f1(crop.y + 20) + '" text-anchor="middle" fill="' + C.muted + '" font-size="12" font-style="italic" font-family="Segoe UI,system-ui,sans-serif">' + esc(age.caption) + "</text>") +
+    "</svg>";
+  svg = svg.replace(/<path class="hr/g, '<path vector-effect="non-scaling-stroke" class="hr')
+           .replace(/<path class="rh/g, '<path vector-effect="non-scaling-stroke" class="rh')
+           .replace(/<circle /g, '<circle vector-effect="non-scaling-stroke" ');
 
   container.innerHTML = svg;
 

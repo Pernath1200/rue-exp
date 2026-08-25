@@ -31,17 +31,30 @@ OUT_V = ROOT / "data" / "vocab" / "blocks"
 OUT_TREE = ROOT / "data" / "tree.json"
 SPINE_PATH = ROOT / "data" / "spine.json"
 
+# Grammar tree_part == codex root seat (rue-codex Curriculum_Codex_Grammar):
+# tap_root + six laterals. An earlier 5-way collapse (prepositions→links,
+# verb_complementation→chunks) hid two roots on the tree; removed 2026-08-23.
 GRAMMAR_ROOT_TO_PART = {
-    "verb_phrase": "verbs",
-    "noun_phrase": "forms",
-    "sentence_syntax": "sentence",
-    "clause_linking": "links",
-    "verb_complementation": "chunks",
-    "prepositions_particles": "links",
+    "verb_phrase": "verb_phrase",
+    "noun_phrase": "noun_phrase",
+    "sentence_syntax": "sentence_syntax",
+    "clause_linking": "clause_linking",
+    "verb_complementation": "verb_complementation",
+    "prepositions_particles": "prepositions_particles",
     "tap_root": "tap_root",
 }
 
-# Fallback house seats when codex/tree_part missing
+# Vocab tree_part = one of the 12 codex houses (rue-codex Curriculum_Codex_Vocab,
+# B2C1 band) or "trunk". The registry's explicit tree_part always wins; the
+# id heuristics below are a fallback for an unregistered node and default to
+# trunk, because at A1–B1 vocab is trunk-building (codex Band 1), not branches.
+CODEX_HOUSES = (
+    "self_body", "money_possessions", "communication", "home_family",
+    "creativity_love", "work_routine", "partnerships", "change_transformation",
+    "knowledge_travel", "public_life", "community", "inner_life_belief",
+)
+
+
 def vocab_part(n: dict) -> str:
     vid = n.get("id") or ""
     kind = n.get("kind", "leaf")
@@ -49,48 +62,45 @@ def vocab_part(n: dict) -> str:
         return n["tree_part"]
     if kind in ("trunk", "craft"):
         return "trunk"
-    # heuristics from id
+    cu = n.get("codex_unit") or n.get("codex_unit_id") or ""
+    for code, house in (
+        ("V_SEL", "self_body"), ("V_MON", "money_possessions"), ("V_COM", "communication"),
+        ("V_HOM", "home_family"), ("V_CRE", "creativity_love"), ("V_WRK", "work_routine"),
+        ("V_PAR", "partnerships"), ("V_CHA", "change_transformation"), ("V_KNO", "knowledge_travel"),
+        ("V_PUB", "public_life"), ("V_CMT", "community"), ("V_INN", "inner_life_belief"),
+    ):
+        if cu.startswith(code + "-"):
+            return house
+    # heuristics from id (theme leaves → nearest codex house)
     for key, part in (
         ("home", "home_family"),
         ("family", "home_family"),
-        ("food", "food_shopping"),
-        ("shop", "food_shopping"),
-        ("money", "money"),
-        ("free", "free_time"),
-        ("sport", "free_time"),
+        ("food", "home_family"),
+        ("animal", "home_family"),
+        ("shop", "money_possessions"),
+        ("money", "money_possessions"),
+        ("free", "creativity_love"),
+        ("sport", "creativity_love"),
         ("work", "work_routine"),
         ("routine", "work_routine"),
-        ("travel", "travel_city"),
-        ("place", "travel_city"),
-        ("health", "health_body"),
+        ("travel", "knowledge_travel"),
+        ("place", "knowledge_travel"),
+        ("school", "knowledge_travel"),
+        ("know", "knowledge_travel"),
+        ("nature", "knowledge_travel"),
+        ("health", "self_body"),
         ("body", "self_body"),
         ("self", "self_body"),
         ("cloth", "self_body"),
-        ("colour", "self_body"),
-        ("school", "knowledge"),
-        ("know", "knowledge"),
-        ("idea", "knowledge"),
-        ("tech", "tech"),
-        ("media", "tech"),
-        ("nature", "nature"),
-        ("animal", "nature"),
-        ("feel", "inner_life"),
-        ("society", "public_life"),
+        ("tech", "communication"),
+        ("media", "communication"),
         ("commun", "communication"),
-        ("describ", "self_body"),
-        ("adverb", "trunk"),
-        ("verb", "trunk"),
-        ("misc", "trunk"),
-        ("abstract", "trunk"),
-        ("chunk", "trunk"),
-        ("colloc", "trunk"),
-        ("core", "trunk"),
-        ("lexis", "trunk"),
-        ("recycle", "trunk"),
+        ("feel", "inner_life_belief"),
+        ("society", "public_life"),
     ):
         if key in vid:
             return part
-    return "free_time"
+    return "trunk"
 
 
 def load(p: Path):
@@ -173,6 +183,8 @@ def node_from_grammar(n: dict, partner: str | None) -> dict:
         "note": n.get("note"),
         "partner_id": partner,
         "related": n.get("related"),
+        # Exam Practice tag (word_formation) — was dropped on rebuild until 2026-08-23.
+        "exam": n.get("exam"),
     }
     return {k: v for k, v in out.items() if v is not None and v != []}
 
@@ -298,6 +310,26 @@ def build_tree(spine: dict):
 
     path_c1 = dedupe(list(g_tree.get("path_order_c1") or []))
 
+    # --- The live tree.json path order is the maintained truth (James, 2026-08-23).
+    # spine.json only seeds: units already on a level's path keep their existing
+    # position; only genuinely new units are appended, in spine order. Without
+    # this, hand placements (articles 5th at A1, etc.) were pushed to the end.
+    def keep_existing_order(key: str, rebuilt: list[str]) -> list[str]:
+        if not OUT_TREE.is_file():
+            return rebuilt
+        try:
+            existing = json.loads(OUT_TREE.read_text(encoding="utf-8")).get(key) or []
+        except (OSError, ValueError):
+            return rebuilt
+        kept = [nid for nid in existing if nid in rebuilt]
+        return dedupe(kept + [nid for nid in rebuilt if nid not in kept])
+
+    path_a1 = keep_existing_order("path_order", path_a1)
+    path_a2 = keep_existing_order("path_order_a2", path_a2)
+    path_b1 = keep_existing_order("path_order_b1", path_b1)
+    path_b2 = keep_existing_order("path_order_b2", path_b2)
+    path_c1 = keep_existing_order("path_order_c1", path_c1)
+
     # --- Collect ALL nodes ---
     nodes: list[dict] = []
     seen: set[str] = set()
@@ -388,8 +420,9 @@ def build_tree(spine: dict):
             "spine": "data/spine.json",
         },
     }
+    # indent=1 matches the committed tree.json, so git diffs show real changes only.
     OUT_TREE.write_text(
-        json.dumps(tree, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+        json.dumps(tree, ensure_ascii=False, indent=1) + "\n", encoding="utf-8"
     )
     print(f"tree nodes: {len(nodes)}")
     for lv in ["A1", "A2", "B1", "B2", "C1"]:
