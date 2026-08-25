@@ -14,72 +14,72 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**3 inspected · 0 approved · 96 unseen** of 99 live units
+**5 inspected · 0 approved · 94 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **0 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 1 inspected / 0 approved / 20 units
+## A1 — 3 inspected / 0 approved / 20 units
 
-- [ ][ ] `a1_be_have` — Be / have · 26 items · **cloud**
+- [ ][ ] `a1_be_have` — Be / have · 26 items · **cloud** · seen?
 - [ ][ ] `a1_present_simple` — Present simple · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
-- [ ][ ] `a1_and_but_because` — And / but / because · 24 items
-- [ ][ ] `a1_articles` — Articles 1 · 35 items · seen?
+- [ ][ ] `a1_and_but_because` — And / but / because · 24 items · seen?
+- [ ][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [ ][ ] `a1_can` — Can / can't · 24 items · seen?
-- [ ][ ] `a1_frequency` — Frequency · 24 items
-- [ ][ ] `a1_imperatives` — Imperatives · 24 items
-- [ ][ ] `a1_like_want_need` — Like / want / need · 24 items
-- [ ][ ] `a1_object_pronouns` — Object pronouns · 36 items
-- [ ][ ] `a1_possessives` — Possessives · 24 items
-- [ ][ ] `a1_prepositions_place` — Prepositions of place · 26 items
-- [ ][ ] `a1_prepositions_time` — Prepositions of time · 27 items · seen?
-- [ ][ ] `a1_question_words` — Question words · 36 items
-- [ ][ ] `a1_questions_negatives` — Questions & negatives · 26 items
-- [ ][ ] `a1_some_any` — Some / any · 24 items
-- [ ][ ] `a1_there_is` — There is / there are · 24 items
-- [ ][ ] `a1_to_for_with` — To / for / with · 24 items
-- [ ][ ] `a1_word_classes` — Word classes · 30 items
-- [ ][ ] `a1_word_order` — Word order 1 · 26 items
+- [ ][ ] `a1_frequency` — Frequency · 24 items · seen?
+- [ ][ ] `a1_imperatives` — Imperatives · 24 items · seen?
+- [ ][ ] `a1_like_want_need` — Like / want / need · 24 items · seen?
+- [ ][ ] `a1_object_pronouns` — Object pronouns · 36 items · seen?
+- [ ][ ] `a1_possessives` — Possessives · 24 items · seen?
+- [ ][ ] `a1_prepositions_place` — Prepositions of place · 26 items · seen?
+- [ ][ ] `a1_prepositions_time` — Prepositions of time · 24 items · seen?
+- [ ][ ] `a1_question_words` — Question words · 36 items · seen?
+- [ ][ ] `a1_questions_negatives` — Questions & negatives · 26 items · seen?
+- [ ][ ] `a1_some_any` — Some / any · 24 items · seen?
+- [ ][ ] `a1_there_is` — There is / there are · 24 items · seen?
+- [ ][ ] `a1_to_for_with` — To / for / with · 24 items · seen?
+- [x][ ] `a1_word_classes` — Word classes · 16 items
+- [x][ ] `a1_word_order` — Word order 1 · 26 items
 
 ## A2 — 1 inspected / 0 approved / 16 units
 
-- [ ][ ] `a2_modals_must_should` — Must / should · 48 items · **cloud**
-- [ ][ ] `a2_adverbs_order` — Adverb position · 50 items
+- [ ][ ] `a2_modals_must_should` — Must / should · 48 items · **cloud** · seen?
+- [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
 - [ ][ ] `a2_agreement` — Subject–verb agreement (A2) · 27 items
-- [ ][ ] `a2_comparatives` — Comparatives · 52 items · seen?
-- [ ][ ] `a2_countable` — Countable and uncountable · 56 items
-- [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 28 items · seen?
+- [ ][ ] `a2_comparatives` — Comparatives · 48 items · seen?
+- [ ][ ] `a2_countable` — Countable and uncountable · 48 items · seen?
+- [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 24 items · seen?
 - [x][ ] `a2_first_conditional` — First conditional · 54 items · seen?
-- [ ][ ] `a2_past_continuous` — Past continuous · 48 items
-- [ ][ ] `a2_past_simple` — Past simple · 48 items
-- [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items
+- [ ][ ] `a2_past_continuous` — Past continuous · 48 items · seen?
+- [ ][ ] `a2_past_simple` — Past simple · 48 items · seen?
+- [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
 - [ ][ ] `a2_present_continuous` — Present continuous · 54 items · seen?
-- [ ][ ] `a2_present_perfect` — Present perfect · 48 items
-- [ ][ ] `a2_quantifiers` — Much / many / a lot · 57 items · seen?
+- [ ][ ] `a2_present_perfect` — Present perfect · 48 items · seen?
+- [ ][ ] `a2_quantifiers` — Much / many / a lot · 54 items · seen?
 - [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 36 items
-- [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items
-- [ ][ ] `a2_will_going_to` — Will / going to · 48 items
+- [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
+- [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
 
 ## B1 — 1 inspected / 0 approved / 17 units
 
-- [ ][ ] `b1_articles_advanced` — Articles 2 · 62 items · seen?
+- [ ][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [ ][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 16 items
-- [ ][ ] `b1_dependent_prepositions` — Dependent prepositions · 51 items
+- [ ][ ] `b1_dependent_prepositions` — Dependent prepositions · 51 items · seen?
 - [ ][ ] `b1_indirect_questions` — Indirect questions · 24 items
-- [ ][ ] `b1_it_subject` — Introductory it · 48 items
-- [ ][ ] `b1_linkers` — Linkers (although / so) · 48 items
-- [ ][ ] `b1_modals_speculation` — Might / may / must (guess) · 48 items
-- [ ][ ] `b1_passives` — Passive (form of be) · 48 items
-- [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items
+- [ ][ ] `b1_it_subject` — Introductory it · 48 items · seen?
+- [ ][ ] `b1_linkers` — Linkers (although / so) · 48 items · seen?
+- [ ][ ] `b1_modals_speculation` — Might / may / must (guess) · 48 items · seen?
+- [ ][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
+- [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items · seen?
 - [ ][ ] `b1_prefixes` — Prefixes — the basics · 72 items
-- [ ][ ] `b1_present_perfect_vs_past` — Present perfect vs past simple · 64 items
-- [ ][ ] `b1_relative_clauses` — Relative clauses · 64 items
+- [ ][ ] `b1_present_perfect_vs_past` — Present perfect vs past simple · 64 items · seen?
+- [ ][ ] `b1_relative_clauses` — Relative clauses · 64 items · seen?
 - [ ][ ] `b1_reported_speech` — Reported speech · 54 items · seen?
 - [ ][ ] `b1_suffixes` — Suffixes — the basics · 72 items
-- [ ][ ] `b1_used_to` — Used to · 48 items
+- [ ][ ] `b1_used_to` — Used to · 48 items · seen?
 - [x][ ] `b1_verb_patterns_advanced` — Verb patterns 2 · 56 items · seen?
 - [ ][ ] `b1_word_order_fronting` — Word order 2 · 36 items
 
@@ -102,15 +102,15 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `b2_reported_speech_advanced` — Reported speech advanced · 48 items · **cloud**
 - [ ][ ] `b2_wish_if_only` — Wish / if only · 48 items · **cloud**
 - [ ][ ] `b2_articles_correction` — Articles: the mixed cases · 28 items
-- [ ][ ] `b2_clear_claims` — Clear claims · 12 items
+- [ ][ ] `b2_clear_claims` — Clear claims · 12 items · seen?
 - [ ][ ] `b2_cleft_sentences` — Cleft sentences · 10 items
 - [ ][ ] `b2_emphasis_fronting` — Emphasis & fronting · 10 items
 - [ ][ ] `b2_future_in_the_past` — Future in the past · 10 items
 - [ ][ ] `b2_inversion` — Inversion · 10 items
-- [ ][ ] `b2_past_perfect` — Past perfect · 26 items
-- [ ][ ] `b2_present_perfect_continuous` — Present perfect simple vs continuous · 48 items
-- [ ][ ] `b2_second_conditional` — Second conditional · 72 items
-- [ ][ ] `b2_third_conditional` — Third conditional · 72 items
+- [ ][ ] `b2_past_perfect` — Past perfect · 26 items · seen?
+- [ ][ ] `b2_present_perfect_continuous` — Present perfect simple vs continuous · 48 items · seen?
+- [ ][ ] `b2_second_conditional` — Second conditional · 72 items · seen?
+- [ ][ ] `b2_third_conditional` — Third conditional · 72 items · seen?
 - [ ][ ] `b2_word_formation` — Word formation (FCE Part 3) · 72 items
 
 ## C1 — 0 inspected / 0 approved / 19 units
