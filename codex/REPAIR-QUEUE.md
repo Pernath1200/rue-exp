@@ -11,7 +11,27 @@ a note.
 
 ---
 
-## TOP OF QUEUE — RUE2 transplant (James, 2026-08-25)
+## TOP OF QUEUE — RUE2 transplant (James, 2026-08-25) · **DONE 837a65d, same evening**
+
+**46 units restored** (blocks + intro from rue2-grok-v1.0, live engine metadata
+kept; per-file note records the swap). Kept live at James's direction:
+a1_word_order, a1_agreement, a2_agreement, a2_first_conditional,
+a1_word_classes (25 Aug rebuild), b1_indirect_questions (his 8→24 Patrik
+dressing), b1_verb_patterns_advanced (his 22 Aug inspection). B2/C1 RUE2
+thin-shells not restored. check_playable green. Report:
+codex/RUE2-TRANSPLANT-REPORT.txt.
+
+Follow-ups:
+
+- [ ] **Re-apply the contraction-twin accepts sweep** (66e1733 era) over the
+  46 transplanted banks — the RUE2 versions predate it, so shared items lost
+  those accepts. Mechanical; scriptable.
+- [ ] **Register backfill is James's call**: transplanted units now carry his
+  RUE2 pass (see quality grades in each note). Suggested path: quick delta
+  look per unit in the new engine → tick INSPECTED — not a fresh full smoke.
+- [ ] **Quarantine decision pending (James)**: the 35 cloud-authored
+  B2/C1 units with no human pedigree remain `live`. Flip to `coming` until
+  earned? Affects beta-gate arithmetic.
 
 **Restore James's smoke-tested RUE2 content into rue-exp, unit by unit.**
 Discovered 2026-08-25: `sync_from_stable.py` sourced grammar from `rue-auto`
