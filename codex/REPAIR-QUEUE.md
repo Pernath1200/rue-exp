@@ -578,7 +578,7 @@ button rather than stopping to write it down.
 
 ### Smoke flags — 2026-08-25 (James, testing on the GitHub Pages build)
 
-- [ ] **`a1_agreement` — quiz distractors are different verbs, not verb forms.**
+- [x] **`a1_agreement` — quiz distractors are different verbs, not verb forms.** · **af6f6ac**
   Authored `quiz_options` mix lemmas: *You ____ English and Czech* offers
   speak / speaks / **teach / teaches**. James's design rule: distractors must
   be typical mistakes, i.e. forms of the TARGET verb — never other verbs.
