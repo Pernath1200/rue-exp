@@ -632,7 +632,7 @@ export function renderTreePortrait(container, opts) {
     const dim = seatInfo.state === "dim";
     if (hiR && !R0.tap) hiRootTip = { x: end[0], y: end[1], side: Math.sign(end[0] - cx) || 1, seatLabel: seatInfo.label };
     if (hiR && R0.tap && !hiRootTip) hiRootTip = { x: end[0], y: end[1], side: 1, seatLabel: seatInfo.label };
-    let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : dim ? 0.3 : 0.85) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
+    let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : focusRoots ? 0.35 : dim ? 0.3 : 0.85) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
     s += '<path class="rt" d="' + taperedPath(R, 0.15, R0.ph) + '"/>';
     const forks = [];
     R0.forks.forEach((F0, k) => {
@@ -666,6 +666,9 @@ export function renderTreePortrait(container, opts) {
   if (focusRoots && hiRootTip) {
     const t = focusLabel || hiRootTip.seatLabel;
     const lx = hiRootTip.x + hiRootTip.side * 16, ly = hiRootTip.y + 5;
+    // Leader from label to its root — at sapling age the laterals bunch and
+    // the emphasised one is otherwise unfindable (James, 2026-08-25).
+    roots += '<line x1="' + f1(hiRootTip.x + hiRootTip.side * 3) + '" y1="' + f1(hiRootTip.y + 1) + '" x2="' + f1(lx - hiRootTip.side * 3) + '" y2="' + f1(ly - 4) + '" stroke="#d4b070" stroke-width="0.8" opacity="0.55"/>';
     roots += '<text class="tp-root-label" x="' + f1(lx) + '" y="' + f1(ly) + '" text-anchor="' + (hiRootTip.side < 0 ? "end" : "start") + '">' + esc(t) + "</text>";
     track([lx + hiRootTip.side * (6.8 * t.length + 10), ly]);
   }

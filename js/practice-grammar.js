@@ -734,6 +734,12 @@ export function startPractice(rawPack, root, opts) {
       else if (card.diagram_fallback)
         body += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
     }
+    /* Inline SVG authored in the pack — H3 overridden by James 2026-08-25:
+     * intros may carry their own drawing; colours are normalized to theme
+     * variables at landing time. */
+    if (card.svg && String(card.svg).trim().startsWith("<svg")) {
+      body += `<div class="intro-scene-wrap">${card.svg}</div>`;
+    }
 
     // points[] carries the bulk of the authored teaching on 403 of 557 cards
     // (43 of them have nothing else) — it went unrendered until 2026-08-10.
@@ -997,7 +1003,7 @@ export function startPractice(rawPack, root, opts) {
           const label = done ? "✓ " + x.t : x.t;
           return `<button type="button" class="${cls}" data-side="${side}" data-id="${x.id}" ${
             done ? "disabled" : ""
-          }>${esc(label)}</button>`;
+          }>${escMd(label)}</button>`;
         })
         .join("");
 

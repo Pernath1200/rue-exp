@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_word_classes",
   "practice": "frames",
-  "note": "Four blocks: (1) labels Match+Quiz. (2) how many Match+Quiz. (3) plural forms Match+Quiz. (4) sentence jobs subject/object Match+Quiz (added 2026-08-25, James: downstream units need the terms — agreement card 0 already says 'fit the subject'). No Type (typing labels is pointless). No Use. · intro + ladder 2026-08-05",
+  "note": "One block: labels Match (12 label pairs, James's class-tested board) + Quiz (12 label items + 4 subject/object swap items mixed in one pass; s/o items carry no cz so they stay out of Match). No Type, no Use. · intro + ladder 2026-08-05 · Block 1 intro landed 2026-08-25 · scaffold blocks cut, jobs block folded to 4 (James: 'only needs a little bit') 2026-08-25. History at 837a65d.",
   "default_direction": "cz_to_en",
   "ladder": {
     "use": false,
@@ -22,6 +22,7 @@
       "title": "Word classes · labels",
       "check": {
         "sequence": [
+          "match",
           "quiz"
         ]
       },
@@ -145,331 +146,9 @@
             "pronoun",
             "pron"
           ]
-        }
-      ]
-    },
-    {
-      "id": "word_classes_one_more",
-      "title": "One · more than one",
-      "check": {
-        "sequence": [
-          "quiz"
-        ]
-      },
-      "items": [
-        {
-          "en": "one",
-          "cz": "a dog · how many? (1 or more?)",
-          "gap": "a dog = ____",
-          "gap_answer": "one",
-          "accepts": [
-            "one",
-            "1"
-          ]
-        },
-        {
-          "en": "more than one",
-          "cz": "dogs · how many? (1 or more?)",
-          "gap": "dogs = ____",
-          "gap_answer": "more than one",
-          "accepts": [
-            "more than one",
-            "plural",
-            "2+",
-            "many"
-          ]
-        },
-        {
-          "en": "one",
-          "cz": "a book · how many? (1 or more?)",
-          "gap": "a book = ____",
-          "gap_answer": "one",
-          "accepts": [
-            "one",
-            "1"
-          ]
-        },
-        {
-          "en": "more than one",
-          "cz": "books · how many? (1 or more?)",
-          "gap": "books = ____",
-          "gap_answer": "more than one",
-          "accepts": [
-            "more than one",
-            "plural",
-            "2+",
-            "many"
-          ]
-        },
-        {
-          "en": "one",
-          "cz": "a bag · how many? (1 or more?)",
-          "gap": "a bag = ____",
-          "gap_answer": "one",
-          "accepts": [
-            "one",
-            "1"
-          ]
-        },
-        {
-          "en": "more than one",
-          "cz": "bags · how many? (1 or more?)",
-          "gap": "bags = ____",
-          "gap_answer": "more than one",
-          "accepts": [
-            "more than one",
-            "plural",
-            "2+",
-            "many"
-          ]
-        },
-        {
-          "en": "one",
-          "cz": "a phone · how many? (1 or more?)",
-          "gap": "a phone = ____",
-          "gap_answer": "one",
-          "accepts": [
-            "one",
-            "1"
-          ]
-        },
-        {
-          "en": "more than one",
-          "cz": "phones · how many? (1 or more?)",
-          "gap": "phones = ____",
-          "gap_answer": "more than one",
-          "accepts": [
-            "more than one",
-            "plural",
-            "2+",
-            "many"
-          ]
-        },
-        {
-          "en": "one",
-          "cz": "a car · how many? (1 or more?)",
-          "gap": "a car = ____",
-          "gap_answer": "one",
-          "accepts": [
-            "one",
-            "1"
-          ]
-        },
-        {
-          "en": "more than one",
-          "cz": "cars · how many? (1 or more?)",
-          "gap": "cars = ____",
-          "gap_answer": "more than one",
-          "accepts": [
-            "more than one",
-            "plural",
-            "2+",
-            "many"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "word_classes_plural",
-      "title": "Plural forms · dog / dogs",
-      "check": {
-        "sequence": [
-          "match",
-          "quiz"
-        ]
-      },
-      "items": [
-        {
-          "en": "dogs",
-          "cz": "plural form: dog → ____",
-          "gap": "dog → ____",
-          "gap_answer": "dogs",
-          "accepts": [
-            "dogs"
-          ],
-          "quiz_options": [
-            "dog",
-            "dogs",
-            "doges",
-            "dogies"
-          ],
-          "gap_accepts": [
-            "dogs"
-          ],
-          "explanation": "Plural noun: dog → dogs.",
-          "explanation_cz": "Množné číslo: dog → dogs."
-        },
-        {
-          "en": "books",
-          "cz": "plural form: book → ____",
-          "gap": "book → ____",
-          "gap_answer": "books",
-          "accepts": [
-            "books"
-          ],
-          "quiz_options": [
-            "book",
-            "books",
-            "bookes",
-            "bookies"
-          ],
-          "gap_accepts": [
-            "books"
-          ],
-          "explanation": "Plural noun: book → books.",
-          "explanation_cz": "Množné číslo: book → books."
-        },
-        {
-          "en": "bags",
-          "cz": "plural form: bag → ____",
-          "gap": "bag → ____",
-          "gap_answer": "bags",
-          "accepts": [
-            "bags"
-          ],
-          "quiz_options": [
-            "bag",
-            "bags",
-            "bages",
-            "bagies"
-          ],
-          "gap_accepts": [
-            "bags"
-          ],
-          "explanation": "Plural noun: bag → bags.",
-          "explanation_cz": "Množné číslo: bag → bags."
-        },
-        {
-          "en": "phones",
-          "cz": "plural form: phone → ____",
-          "gap": "phone → ____",
-          "gap_answer": "phones",
-          "accepts": [
-            "phones"
-          ],
-          "quiz_options": [
-            "phone",
-            "phones",
-            "phonees",
-            "phoneies"
-          ],
-          "gap_accepts": [
-            "phones"
-          ],
-          "explanation": "Plural noun: phone → phones.",
-          "explanation_cz": "Množné číslo: phone → phones."
-        },
-        {
-          "en": "cars",
-          "cz": "plural form: car → ____",
-          "gap": "car → ____",
-          "gap_answer": "cars",
-          "accepts": [
-            "cars"
-          ],
-          "quiz_options": [
-            "car",
-            "cars",
-            "cares",
-            "caries"
-          ],
-          "gap_accepts": [
-            "cars"
-          ],
-          "explanation": "Plural noun: car → cars.",
-          "explanation_cz": "Množné číslo: car → cars."
-        },
-        {
-          "en": "teachers",
-          "cz": "plural form: teacher → ____",
-          "gap": "teacher → ____",
-          "gap_answer": "teachers",
-          "accepts": [
-            "teachers"
-          ],
-          "quiz_options": [
-            "teacher",
-            "teachers",
-            "teacheres",
-            "teacheries"
-          ],
-          "gap_accepts": [
-            "teachers"
-          ],
-          "explanation": "Plural noun: teacher → teachers.",
-          "explanation_cz": "Množné číslo: teacher → teachers."
-        },
-        {
-          "en": "students",
-          "cz": "plural form: student → ____",
-          "gap": "student → ____",
-          "gap_answer": "students",
-          "accepts": [
-            "students"
-          ],
-          "quiz_options": [
-            "student",
-            "students",
-            "studentes",
-            "studenties"
-          ],
-          "gap_accepts": [
-            "students"
-          ],
-          "explanation": "Plural noun: student → students.",
-          "explanation_cz": "Množné číslo: student → students."
-        },
-        {
-          "en": "friends",
-          "cz": "plural form: friend → ____",
-          "gap": "friend → ____",
-          "gap_answer": "friends",
-          "accepts": [
-            "friends"
-          ],
-          "quiz_options": [
-            "friend",
-            "friends",
-            "friendes",
-            "friendies"
-          ],
-          "gap_accepts": [
-            "friends"
-          ],
-          "explanation": "Plural noun: friend → friends.",
-          "explanation_cz": "Množné číslo: friend → friends."
-        }
-      ]
-    },
-    {
-      "id": "word_classes_sentence_jobs",
-      "title": "The sentence · subject and object",
-      "check": {
-        "sequence": [
-          "quiz"
-        ]
-      },
-      "items": [
-        {
-          "en": "subject",
-          "cz": "**Anna** works. · kdo? (podmět)",
-          "gap": "Anna works. — Anna = ____",
-          "gap_answer": "subject",
-          "accepts": [
-            "subject",
-            "subj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "Before the verb → subject: who does it.",
-          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
         },
         {
           "en": "subject",
-          "cz": "**The dog** sees the cat. · kdo? (podmět)",
           "gap": "The dog sees the cat. — the dog = ____",
           "gap_answer": "subject",
           "accepts": [
@@ -485,42 +164,7 @@
           "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
         },
         {
-          "en": "subject",
-          "cz": "**She** likes coffee. · kdo? (podmět)",
-          "gap": "She likes coffee. — she = ____",
-          "gap_answer": "subject",
-          "accepts": [
-            "subject",
-            "subj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "Before the verb → subject: who does it.",
-          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
-        },
-        {
-          "en": "subject",
-          "cz": "**The students** have books. · kdo? (podmět)",
-          "gap": "The students have books. — the students = ____",
-          "gap_answer": "subject",
-          "accepts": [
-            "subject",
-            "subj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "Before the verb → subject: who does it.",
-          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
-        },
-        {
           "en": "object",
-          "cz": "The dog sees **the cat**. · koho? co? (předmět)",
           "gap": "The dog sees the cat. — the cat = ____",
           "gap_answer": "object",
           "accepts": [
@@ -536,59 +180,7 @@
           "explanation_cz": "Za slovesem → object (předmět): koho? co?"
         },
         {
-          "en": "object",
-          "cz": "She likes **coffee**. · koho? co? (předmět)",
-          "gap": "She likes coffee. — coffee = ____",
-          "gap_answer": "object",
-          "accepts": [
-            "object",
-            "obj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "After the verb → object: the action goes to it.",
-          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
-        },
-        {
-          "en": "object",
-          "cz": "I read **a book**. · koho? co? (předmět)",
-          "gap": "I read a book. — a book = ____",
-          "gap_answer": "object",
-          "accepts": [
-            "object",
-            "obj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "After the verb → object: the action goes to it.",
-          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
-        },
-        {
-          "en": "object",
-          "cz": "The teacher helps **the students**. · koho? co? (předmět)",
-          "gap": "The teacher helps the students. — the students = ____",
-          "gap_answer": "object",
-          "accepts": [
-            "object",
-            "obj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "After the verb → object: the action goes to it.",
-          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
-        },
-        {
           "en": "subject",
-          "cz": "**The cat** sees the dog. · same words, new jobs (podmět)",
           "gap": "The cat sees the dog. — the cat = ____",
           "gap_answer": "subject",
           "accepts": [
@@ -605,7 +197,6 @@
         },
         {
           "en": "object",
-          "cz": "The cat sees **the dog**. · same words, new jobs (předmět)",
           "gap": "The cat sees the dog. — the dog = ____",
           "gap_answer": "object",
           "accepts": [
@@ -619,40 +210,6 @@
           ],
           "explanation": "Now the dog is after the verb, so the dog is the object. The place gives the job.",
           "explanation_cz": "The dog je teď za slovesem, takže je předmět. Místo ve větě určuje roli."
-        },
-        {
-          "en": "subject",
-          "cz": "**The students** ask the teacher. · kdo? (podmět)",
-          "gap": "The students ask the teacher. — the students = ____",
-          "gap_answer": "subject",
-          "accepts": [
-            "subject",
-            "subj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "Before the verb → subject: who does it.",
-          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
-        },
-        {
-          "en": "object",
-          "cz": "The students ask **the teacher**. · koho? co? (předmět)",
-          "gap": "The students ask the teacher. — the teacher = ____",
-          "gap_answer": "object",
-          "accepts": [
-            "object",
-            "obj"
-          ],
-          "quiz_options": [
-            "subject",
-            "object",
-            "verb"
-          ],
-          "explanation": "After the verb → object: the action goes to it.",
-          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
         }
       ]
     }
@@ -660,161 +217,42 @@
   "intro": {
     "cards": [
       {
-        "title": "Why this topic?",
-        "body": "Later units talk about **nouns**, **verbs**, and other word classes. This short stop gives you those **names** so the rest of the app is easier to follow.",
-        "points": [
-          "You will see these words again in form tips and explanations",
-          "You do not need a full grammar book — just these labels for now",
-          "Next topics (be/have, word order, present simple) use the same names"
-        ],
-        "title_cz": "Proč tohle téma"
-      },
-      {
-        "title": "What it is",
-        "body": "Every word belongs to a **class**. At A1 we start with four useful classes.",
-        "table": {
-          "headers": [
-            "Class · Třída",
-            "Job",
-            "Examples"
-          ],
-          "rows": [
-            [
-              "noun · *podstatné jméno*",
-              "person / place / thing",
-              "dog · teacher · Brno"
-            ],
-            [
-              "verb · *sloveso*",
-              "action or being",
-              "work · like · is"
-            ],
-            [
-              "adjective · *přídavné jméno*",
-              "describes a noun",
-              "small · new · hot"
-            ],
-            [
-              "pronoun · *zájmeno*",
-              "stands for a person",
-              "I · you · she · they"
-            ]
-          ]
-        },
+        "title": "Every word has a class",
         "title_cz": "Slovní druhy",
-        "body_cz": "podstatné jméno = noun · sloveso = verb · přídavné jméno = adjective · zájmeno = pronoun"
+        "body": "**He drinks black coffee.**",
+        "points": [
+          "A name is a noun too: **Anna drinks black coffee.** (Anna = noun)"
+        ],
+        "svg": "<svg viewBox=\"0 0 520 130\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"26\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"48\">He</text>\n    <text x=\"180\" y=\"48\">drinks</text>\n    <text x=\"305\" y=\"48\">black</text>\n    <text x=\"435\" y=\"48\">coffee.</text>\n  </g>\n  <g stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\">\n    <line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"76\"/>\n    <line x1=\"180\" y1=\"60\" x2=\"180\" y2=\"76\"/>\n    <line x1=\"305\" y1=\"60\" x2=\"305\" y2=\"76\"/>\n    <line x1=\"435\" y1=\"60\" x2=\"435\" y2=\"76\"/>\n  </g>\n  <g font-size=\"15\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"98\">pronoun</text>\n    <text x=\"180\" y=\"98\">verb</text>\n    <text x=\"305\" y=\"98\">adjective</text>\n    <text x=\"435\" y=\"98\">noun</text>\n  </g>\n</svg>"
       },
       {
-        "title": "How to test a word",
+        "title": "The four classes",
+        "title_cz": "Čtyři slovní druhy",
         "points": [
-          "Person, place, or thing? → **noun** · *podstatné jméno*",
-          "Action or being? → **verb** · *sloveso*",
-          "Describes a noun? → **adjective** · *přídavné jméno*",
-          "Stands for *I / you / he…*? → **pronoun** · *zájmeno*"
-        ],
-        "table": {
-          "headers": [
-            "Phrase",
-            "Classes"
-          ],
-          "rows": [
-            [
-              "a **small** **dog**",
-              "adjective + noun"
-            ],
-            [
-              "**She** **works**",
-              "pronoun + verb"
-            ],
-            [
-              "**I** **like** coffee",
-              "pronoun + verb + noun"
-            ]
-          ]
-        },
-        "title_cz": "Jak slovo poznat"
+          "**noun** (*podstatné jméno*) = a person, a place or a thing: **Anna · Prague · coffee**",
+          "**verb** (*sloveso*) = an action, or *be* / *have*: **work · go · is · has**",
+          "**adjective** (*přídavné jméno*) = says what a noun is like: **new · big · tired**",
+          "**pronoun** (*zájmeno*) = stands in for a noun: **I · you · she · they**"
+        ]
       },
       {
-        "title": "Jobs in the sentence · subject and object",
-        "body": "Word classes say what a word **is**. In a sentence, a word also has a **job**. Two jobs to know: **subject** (*podmět*) — who does it. **object** (*předmět*) — the action goes to it.",
-        "table": {
-          "headers": [
-            "Sentence",
-            "subject",
-            "object"
-          ],
-          "rows": [
-            [
-              "**The dog** sees **the cat**.",
-              "the dog",
-              "the cat"
-            ],
-            [
-              "**The cat** sees **the dog**.",
-              "the cat",
-              "the dog"
-            ],
-            [
-              "**She** likes **coffee**.",
-              "she",
-              "coffee"
-            ]
-          ]
-        },
+        "title": "Subject and object",
+        "title_cz": "Podmět a předmět",
+        "body": "**subject** (*podmět — kdo?*) = who does it. **object** (*předmět — koho? co?*) = what they do it to.",
         "points": [
-          "Czech shows the job with an ending: *pes → psa*. English has no endings — **the place in the sentence** gives the job.",
-          "Before the verb = subject · after the verb = object",
-          "This is why English word order is fixed (→ Word order 1)"
+          "**He drinks black coffee.** — subject: *He* · object: *black coffee*"
         ],
-        "title_cz": "Podmět a předmět"
+        "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"15\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"26\">subject</text>\n    <text x=\"435\" y=\"26\">object</text>\n  </g>\n  <g stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\">\n    <line x1=\"60\" y1=\"34\" x2=\"60\" y2=\"50\"/>\n    <line x1=\"435\" y1=\"34\" x2=\"435\" y2=\"50\"/>\n  </g>\n  <g font-size=\"26\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"82\">He</text>\n    <text x=\"180\" y=\"82\">drinks</text>\n    <text x=\"305\" y=\"82\">black</text>\n    <text x=\"435\" y=\"82\">coffee.</text>\n  </g>\n</svg>"
       },
       {
-        "title": "Common mistakes",
-        "table": {
-          "headers": [
-            "Avoid",
-            "Say / think"
-          ],
-          "rows": [
-            [
-              "Treating *is* as a noun",
-              "*is* is a **verb** (be)"
-            ],
-            [
-              "Calling *happy* a verb",
-              "*happy* is an **adjective**"
-            ],
-            [
-              "Forgetting *I / she* are pronouns",
-              "they stand for a person"
-            ],
-            [
-              "One word = one class always",
-              "some words can change class later"
-            ],
-            [
-              "Mixing class and job",
-              "in *The dog sees the cat* and *The cat sees the dog*, *dog* is a noun both times — only its **job** (subject / object) changes"
-            ]
-          ]
-        },
+        "title": "The place shows which is which",
+        "title_cz": "Místo ve větě",
+        "body": "Czech shows *podmět* and *předmět* with an ending (*pes → psa*). English has no endings — the **place** in the sentence shows which is which.",
         "points": [
-          "CZ tip: *je* → English often needs **is** (verb), not a Czech-style gap"
+          "Before the verb = subject · after the verb = object: **He drinks coffee.**",
+          "Swap the places and the meaning swaps: **Anna likes Petr.** · **Petr likes Anna.**"
         ],
-        "title_cz": "Časté chyby"
-      },
-      {
-        "title": "Quick check",
-        "points": [
-          "dog → **noun**",
-          "work → **verb**",
-          "new → **adjective**",
-          "they → **pronoun**",
-          "She likes books. → pronoun · verb · noun",
-          "**Anna** works. → Anna = **subject**",
-          "She likes **books**. → books = **object**"
-        ],
-        "title_cz": "Rychlá kontrola"
+        "svg": "<svg viewBox=\"0 0 520 120\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"26\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"42\">He</text>\n    <text x=\"180\" y=\"42\">drinks</text>\n    <text x=\"305\" y=\"42\">black</text>\n    <text x=\"435\" y=\"42\">coffee.</text>\n  </g>\n  <g stroke=\"#d4b070\" stroke-width=\"1.5\">\n    <line x1=\"60\" y1=\"54\" x2=\"60\" y2=\"70\"/>\n    <line x1=\"180\" y1=\"54\" x2=\"180\" y2=\"70\"/>\n    <line x1=\"435\" y1=\"54\" x2=\"435\" y2=\"70\"/>\n  </g>\n  <g font-size=\"13\" fill=\"#d4b070\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"90\">before the verb</text>\n    <text x=\"180\" y=\"90\">verb</text>\n    <text x=\"435\" y=\"90\">after the verb</text>\n  </g>\n</svg>"
       }
     ]
   }

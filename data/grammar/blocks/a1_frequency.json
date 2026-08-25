@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_frequency",
   "practice": "frames",
-  "note": "always / usually / often / sometimes / never. Gap on the adverb. Position: before main verb, after be. With present simple habits. · flags 2026-07-25: intro scale table · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "always / usually / often / sometimes / never. Gap on the adverb. Position: before main verb, after be. With present simple habits. · flags 2026-07-25: intro scale table · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded. · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped).",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -299,236 +299,42 @@
   "intro": {
     "cards": [
       {
-        "title": "Frequency",
-        "title_cz": "Jak často? — always / never…",
-        "body": "These words say how often something happens. Use them with present simple for habits.",
-        "body_cz": "Říkají, jak často se něco děje. S present simple = zvyky.",
-        "table": {
-          "caption": "scale · 100% → 0%",
-          "headers": [
-            "Word",
-            "How often",
-            "CZ idea"
-          ],
-          "rows": [
-            [
-              "always",
-              "100% · every time",
-              "vždycky"
-            ],
-            [
-              "usually",
-              "most times",
-              "obvykle"
-            ],
-            [
-              "often",
-              "many times",
-              "často"
-            ],
-            [
-              "sometimes",
-              "not always",
-              "někdy"
-            ],
-            [
-              "never",
-              "0% · not ever",
-              "nikdy"
-            ]
-          ]
-        },
+        "title": "How often?",
+        "title_cz": "Jak často?",
+        "body": "Frequency words (*jak často*) say how often you do something. Five for A1. **I always drink coffee in the morning.**",
         "points": [
-          "Five core words for A1",
-          "Pair with present simple: I always work…"
+          "always · usually · often · sometimes · never",
+          "Use them with the present simple: **He never works on Sunday.**"
         ]
       },
       {
-        "title": "Before the main verb",
-        "title_cz": "Před hlavním slovesem",
-        "body": "With most verbs, put the frequency word before the verb.",
-        "body_cz": "U většiny sloves: frekvenční slovo před slovesem.",
-        "table": {
-          "caption": "position",
-          "headers": [
-            "Order",
-            "Example"
-          ],
-          "rows": [
-            [
-              "I + always + verb",
-              "I always drink coffee."
-            ],
-            [
-              "She + often + verb-s",
-              "She often works."
-            ],
-            [
-              "They + never + verb",
-              "They never watch TV."
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I usually get up at seven.",
-            "cz": "Obvykle vstávám v sedm."
-          },
-          {
-            "en": "He often plays football.",
-            "cz": "On často hraje fotbal."
-          }
+        "title": "The scale",
+        "title_cz": "Stupnice",
+        "body": "From every time to no time.",
+        "points": [
+          "**I always get up at seven.** (every time)",
+          "**I never get up at five.** (no time; *never* already says no)"
         ],
-        "points": [
-          "Not: I drink always coffee.",
-          "Subject + frequency + verb"
-        ]
+        "svg": "<svg viewBox=\"0 0 520 120\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"60\" y1=\"52\" x2=\"480\" y2=\"52\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"3\"/>\n  <g fill=\"var(--vocab-accent, #4db6c7)\">\n    <circle cx=\"60\" cy=\"52\" r=\"6\"/><circle cx=\"165\" cy=\"52\" r=\"6\"/><circle cx=\"270\" cy=\"52\" r=\"6\"/><circle cx=\"375\" cy=\"52\" r=\"6\"/>\n  </g>\n  <circle cx=\"480\" cy=\"52\" r=\"6\" fill=\"#d4b070\"/>\n  <g font-size=\"15\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"30\">always</text>\n    <text x=\"165\" y=\"30\">usually</text>\n    <text x=\"270\" y=\"30\">often</text>\n    <text x=\"375\" y=\"30\">sometimes</text>\n    <text x=\"480\" y=\"30\" fill=\"#d4b070\">never</text>\n  </g>\n  <g font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"80\">every time</text>\n    <text x=\"165\" y=\"80\">most times</text>\n    <text x=\"270\" y=\"80\">many times</text>\n    <text x=\"375\" y=\"80\">some times</text>\n    <text x=\"480\" y=\"80\">no time</text>\n  </g>\n  <g font-size=\"11\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"104\">100%</text>\n    <text x=\"480\" y=\"104\">0%</text>\n  </g>\n</svg>"
       },
       {
-        "title": "After be",
-        "title_cz": "Po am / is / are",
-        "body": "With be, put the frequency word after am / is / are.",
-        "body_cz": "U be: frekvence až po am/is/are.",
-        "table": {
-          "caption": "be",
-          "headers": [
-            "Order",
-            "Example"
-          ],
-          "rows": [
-            [
-              "I am always…",
-              "I am always tired."
-            ],
-            [
-              "She is usually…",
-              "She is usually happy."
-            ],
-            [
-              "He is often…",
-              "He is often late."
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I am never bored.",
-            "cz": "Nikdy se nenudím."
-          },
-          {
-            "en": "We are sometimes busy.",
-            "cz": "Někdy máme hodně práce."
-          }
+        "title": "Two places",
+        "title_cz": "Dvě místa ve větě",
+        "body": "Czech can put these words almost anywhere. English has two places.",
+        "points": [
+          "Before the verb: **I often play football.** (not *I play often football*)",
+          "After *be*: **I am often tired.** (not *I often am tired*)"
         ],
-        "points": [
-          "be + frequency + adjective",
-          "Not: I always am tired."
-        ]
+        "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"30\" y=\"48\">I</text>\n    <rect x=\"52\" y=\"26\" width=\"76\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"1.5\"/>\n    <text x=\"90\" y=\"48\" text-anchor=\"middle\" fill=\"#d4b070\" font-weight=\"600\">often</text>\n    <text x=\"140\" y=\"48\">play football.</text>\n  </g>\n  <text x=\"360\" y=\"48\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">before the verb</text>\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"30\" y=\"112\">I am</text>\n    <rect x=\"92\" y=\"90\" width=\"76\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"1.5\"/>\n    <text x=\"130\" y=\"112\" text-anchor=\"middle\" fill=\"#d4b070\" font-weight=\"600\">often</text>\n    <text x=\"180\" y=\"112\">tired.</text>\n  </g>\n  <text x=\"360\" y=\"112\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">after be</text>\n</svg>"
       },
       {
-        "title": "always · usually · often",
-        "title_cz": "Vysoká frekvence",
-        "table": {
-          "caption": "high",
-          "headers": [
-            "Word",
-            "Example"
-          ],
-          "rows": [
-            [
-              "always",
-              "I always go to school."
-            ],
-            [
-              "usually",
-              "We usually eat lunch at home."
-            ],
-            [
-              "often",
-              "I often read books."
-            ]
-          ]
-        },
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "body": "Wrong place, wrong sentence.",
         "points": [
-          "always = every time",
-          "usually = most days / most times",
-          "often = many times (less than always)"
-        ]
-      },
-      {
-        "title": "sometimes · never",
-        "title_cz": "Nízká frekvence",
-        "table": {
-          "caption": "low / zero",
-          "headers": [
-            "Word",
-            "Example"
-          ],
-          "rows": [
-            [
-              "sometimes",
-              "I sometimes go to Brno."
-            ],
-            [
-              "never",
-              "I never drink tea."
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "She never drinks coffee.",
-            "cz": "Ona nikdy nepije kávu."
-          },
-          {
-            "en": "I sometimes work on Saturday.",
-            "cz": "Někdy pracuju v sobotu."
-          }
-        ],
-        "points": [
-          "never = not ever (already negative — no don't needed)",
-          "I never drink tea. (not I don't never…)"
-        ],
-        "body_cz": "never = nikdy. Bez don't: I never drink tea."
-      },
-      {
-        "title": "Questions",
-        "title_cz": "Otázky",
-        "table": {
-          "caption": "Do / Does + frequency",
-          "headers": [
-            "EN",
-            "Note"
-          ],
-          "rows": [
-            [
-              "Do you often travel?",
-              "frequency before verb"
-            ],
-            [
-              "Does she always work here?",
-              "does + she + always + verb"
-            ],
-            [
-              "Are you always busy?",
-              "be: are + you + always"
-            ]
-          ]
-        },
-        "points": [
-          "Same position rules in questions",
-          "With do/does: after the person, before the main verb"
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "body": "Position is the thing to remember:",
-        "body_cz": "Zapamatujte si hlavně pozici:",
-        "points": [
-          "Before main verb: I always work.",
-          "After be: I am always tired.",
-          "never already means no — not don't never"
+          "After the verb: *I drink always coffee* → **I always drink coffee**",
+          "Before *be*: *She always is late* → **She is always late**",
+          "*never* is already no. One word does it: **I never cook.**"
         ]
       }
     ]

@@ -58,7 +58,7 @@ Translate answers.
 | **B2** | Never borrow a sibling item's answer as a distractor in a FORM pack. Borrowing is right only where the point is *which word*. | 1,543 items across 54 units borrow. `b1_verb_patterns_advanced` offered no `-ing` option at all in a unit about `-ing`. | `confirmed` |
 | **B3** | Author `quiz_options` wherever the teaching point is form. The fallback cannot know the axis. | 47% of gap items have none. | `confirmed` |
 | **B4** | The unit's own target error must appear among the options. | `a2_comparatives` was extended for *more better* — and *more better* is never shown. | `observed` |
-| **B5** | A Match board needs distinct left-side values. A block whose answers are two-to-four repeated labels (one/more-than-one, subject/object, noun/verb…) must not ship Match — quiz only. Ten tiles reading "one" five times is clicking, not matching. | `a1_word_classes` one/more-than-one board, James smoke 2026-08-25: "absolute shite". | `confirmed` |
+| **B5** | A Match board needs distinct PROMPT tiles. Repeated labels on the ANSWER side are fine when prompts are distinct and grading is by instance (words → their classes works; James built and class-tested exactly that). The ban is on boards whose prompt tiles repeat — "one" five times is clicking, not matching. First version of this rule over-reached and briefly killed James's own labels board; scope it to the prompt side only. | `a1_word_classes`: one/more board (bad — identical prompts) vs labels board (good — distinct words, repeated classes), both smoked 2026-08-25. | `confirmed` |
 
 ---
 
@@ -124,8 +124,8 @@ scaled today — but it fails in a specific and dangerous way.
 |---|---|---|---|
 | **H1** | Draw a relation prose states badly — sequence, choice, contrast, hierarchy. If a sentence says it as well, don't draw it. | — | `observed` |
 | **H2** | One diagram per card, maximum. | — | `observed` |
-| **H3** | Geometry lives in `js/intro-visuals.js`; the pack supplies labels only. | Not because SVG is unreliable — everything is checked by eye anyway — but so the fifth diagram is nearly free and looks like the first four. | `confirmed` |
-| **H4** | A new diagram type goes in the library, never inside a pack. | — | `confirmed` |
+| **H3** | Geometry lives in `js/intro-visuals.js`; the pack supplies labels only. **OVERRIDDEN by James 2026-08-25 for Claude.ai-authored intros**: inline SVG in packs is allowed — James smokes everything by eye, which is the real quality gate; a 2026-08-24 batch needed only light Claude Code touch-ups. Claude Code normalizes on landing (H5/H6 compliance), never reverts to the library on H3 grounds. | Library rationale was cost+consistency, not quality. | `overridden` |
+| **H4** | A new diagram type goes in the library, never inside a pack. **Softened with H3's override**: applies to library-rendered diagrams; inline SVG packs are exempt. | — | `confirmed` |
 | **H5** | Must read in both themes: `currentColor` and CSS variables, never hardcoded hex. | — | `confirmed` |
 | **H6** | Must degrade to a text fallback. | — | `confirmed` |
 

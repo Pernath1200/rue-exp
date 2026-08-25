@@ -361,14 +361,27 @@ export function adaptGrammarPack(pack) {
 
   const withGap = items.filter((it) => key(it.gap_answer) && it.gap);
 
+  // A block's own check.sequence overrides the unit's for that block's items:
+  // a quiz-only block must not leak into the Match pool (James, 2026-08-25 —
+  // sentence-jobs items flooded the labels Match board off the screen).
+  const blockSeq = {};
+  for (const b of pack.blocks || []) {
+    if (b && b.id && Array.isArray(b.check?.sequence)) blockSeq[b.id] = b.check.sequence;
+  }
+  const blockAllows = (it, phase) => {
+    const s = blockSeq[it._block];
+    return !s || s.includes(phase);
+  };
+
   const match = wantsCheck("match")
     ? items
-        .filter((it) => it.en && it.cz)
+        .filter((it) => it.en && it.cz && blockAllows(it, "match"))
         .map((it) => ({ en: it.en, cz: it.cz, structures: it.structures, _block: it._block }))
     : [];
 
   const quiz = wantsCheck("quiz")
     ? withGap
+        .filter((it) => blockAllows(it, "quiz"))
         .map((it) => {
           const choices = choicesFor(
             it,

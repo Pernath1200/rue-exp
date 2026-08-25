@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_agreement",
   "practice": "frames",
-  "note": "2026-08-05 · Present simple agreement only (I/you/we/they vs he/she/it). Missing -s + wrong -s on plural. After present_simple. Lab first. · intro rewrite 2026-08-05 (first-5 path pass)",
+  "note": "2026-08-05 · Present simple agreement only (I/you/we/they vs he/she/it). Missing -s + wrong -s on plural. After present_simple. Lab first. · intro rewrite 2026-08-05 (first-5 path pass) · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped).",
   "default_direction": "cz_to_en",
   "quality": "workable_draft",
   "demo_priority": true,
@@ -587,75 +587,40 @@
   "intro": {
     "cards": [
       {
-        "title": "What it is",
-        "body": "The verb must **fit the subject**. In the present simple, **he / she / it** take **-s**.",
+        "title": "The verb changes with the subject",
+        "title_cz": "Sloveso podle podmětu",
+        "body": "The subject (*podmět*) decides the form of the verb. English changes the verb for **one group only**: **he / she / it**.",
         "points": [
-          "I / you / we / they → base verb (**work**)",
-          "he / she / it → verb + **-s** (**works**)",
-          "Names and singular nouns = he/she/it (**Anna works** · **the car stops**)"
+          "**She works. They work.**",
+          "**She is. They are.** · **She has. They have.**"
         ]
       },
       {
-        "title": "Form",
-        "table": {
-          "headers": [
-            "Subject",
-            "Verb"
-          ],
-          "rows": [
-            [
-              "I / you / we / they",
-              "work · like · go · have"
-            ],
-            [
-              "he / she / it",
-              "works · likes · goes · has"
-            ]
-          ]
-        },
+        "title": "Two groups",
+        "title_cz": "Dvě skupiny",
+        "body": "Put the subject in its group. Take the form under it. Names and nouns go in too.",
         "points": [
-          "Spelling: watch → **watches** · study → **studies** · go → **goes**",
-          "have → **has** (not haves)"
+          "**Anna works.** (Anna = she) · **My parents work.** (my parents = they)"
+        ],
+        "svg": "<svg viewBox=\"0 0 520 235\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" fill=\"none\">\n    <rect x=\"20\" y=\"15\" width=\"230\" height=\"130\" rx=\"8\"/>\n    <rect x=\"270\" y=\"15\" width=\"230\" height=\"130\" rx=\"8\"/>\n  </g>\n  <g font-size=\"16\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"135\" y=\"44\">he · she · it</text>\n    <text x=\"385\" y=\"44\">I · you · we · they</text>\n  </g>\n  <g font-size=\"22\" font-weight=\"600\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"52\" y=\"84\" font-size=\"21\">is · has · work<tspan fill=\"#d4b070\">s</tspan></text>\n    <text x=\"281\" y=\"84\" font-size=\"21\">are · have · work</text>\n  </g>\n  <g font-size=\"12\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"90\" y=\"118\">one ending: <tspan fill=\"#d4b070\" font-weight=\"600\">-s</tspan></text>\n    <text x=\"330\" y=\"118\">no -s   ·   I → am</text>\n  </g>\n  <g stroke=\"#d4b070\" stroke-width=\"1.5\">\n    <line x1=\"135\" y1=\"176\" x2=\"135\" y2=\"158\"/>\n    <line x1=\"385\" y1=\"176\" x2=\"385\" y2=\"158\"/>\n  </g>\n  <polygon points=\"130,160 135,150 140,160\" fill=\"#d4b070\"/>\n  <polygon points=\"380,160 385,150 390,160\" fill=\"#d4b070\"/>\n  <g font-size=\"13\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"135\" y=\"198\">Anna · my brother · the shop</text>\n    <text x=\"385\" y=\"198\">my parents · Anna and Petr</text>\n  </g>\n  <g font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"135\" y=\"220\">= she · he · it</text>\n    <text x=\"385\" y=\"220\">= they</text>\n  </g>\n</svg>"
+      },
+      {
+        "title": "One ending only",
+        "title_cz": "Jen jedna koncovka",
+        "body": "Czech changes the verb for every person (*pracuju, pracuješ, pracuje, pracujeme…*). English changes it once, for he / she / it. One ending (*koncovka*) is easy to forget.",
+        "points": [
+          "**He works.** The **-s** is the only change. Keep it.",
+          "**He is. He has.** Same group, its own forms."
         ]
       },
       {
         "title": "Common mistakes",
-        "table": {
-          "headers": [
-            "Avoid",
-            "Say"
-          ],
-          "rows": [
-            [
-              "He **work** here.",
-              "He **works** here."
-            ],
-            [
-              "She **like** dogs.",
-              "She **likes** dogs."
-            ],
-            [
-              "They **works** here.",
-              "They **work** here."
-            ],
-            [
-              "We **goes** home.",
-              "We **go** home."
-            ]
-          ]
-        },
+        "title_cz": "Časté chyby",
+        "body": "Find the subject first. Then the form.",
         "points": [
-          "Missing **-s** after he/she/it (very common from Czech)",
-          "Extra **-s** after I/you/we/they or plural nouns"
-        ]
-      },
-      {
-        "title": "Quick check",
-        "points": [
-          "She ____ with Anna. → **works**",
-          "They ____ with Tom. → **work**",
-          "My brother ____ with his friends. → **plays**",
-          "My parents ____ with the dogs. → **play**"
+          "The **-s** is missing: *She work here* → **She works here**",
+          "*have* with he / she / it: *He have a car* → **He has a car**",
+          "The noun ends in -s and pulls the verb: *My parents works* → **My parents work**"
         ]
       }
     ]
