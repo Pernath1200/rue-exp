@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_word_classes",
   "practice": "frames",
-  "note": "Three blocks: (1) labels Match+Quiz. (2) how many Match+Quiz. (3) plural forms Match+Quiz. No Type (typing labels is pointless). No Use. · intro + ladder 2026-08-05",
+  "note": "Four blocks: (1) labels Match+Quiz. (2) how many Match+Quiz. (3) plural forms Match+Quiz. (4) sentence jobs subject/object Match+Quiz (added 2026-08-25, James: downstream units need the terms — agreement card 0 already says 'fit the subject'). No Type (typing labels is pointless). No Use. · intro + ladder 2026-08-05",
   "default_direction": "cz_to_en",
   "ladder": {
     "use": false,
@@ -22,7 +22,6 @@
       "title": "Word classes · labels",
       "check": {
         "sequence": [
-          "match",
           "quiz"
         ]
       },
@@ -154,7 +153,6 @@
       "title": "One · more than one",
       "check": {
         "sequence": [
-          "match",
           "quiz"
         ]
       },
@@ -442,6 +440,221 @@
           "explanation_cz": "Množné číslo: friend → friends."
         }
       ]
+    },
+    {
+      "id": "word_classes_sentence_jobs",
+      "title": "The sentence · subject and object",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "subject",
+          "cz": "**Anna** works. · kdo? (podmět)",
+          "gap": "Anna works. — Anna = ____",
+          "gap_answer": "subject",
+          "accepts": [
+            "subject",
+            "subj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Before the verb → subject: who does it.",
+          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
+        },
+        {
+          "en": "subject",
+          "cz": "**The dog** sees the cat. · kdo? (podmět)",
+          "gap": "The dog sees the cat. — the dog = ____",
+          "gap_answer": "subject",
+          "accepts": [
+            "subject",
+            "subj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Before the verb → subject: who does it.",
+          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
+        },
+        {
+          "en": "subject",
+          "cz": "**She** likes coffee. · kdo? (podmět)",
+          "gap": "She likes coffee. — she = ____",
+          "gap_answer": "subject",
+          "accepts": [
+            "subject",
+            "subj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Before the verb → subject: who does it.",
+          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
+        },
+        {
+          "en": "subject",
+          "cz": "**The students** have books. · kdo? (podmět)",
+          "gap": "The students have books. — the students = ____",
+          "gap_answer": "subject",
+          "accepts": [
+            "subject",
+            "subj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Before the verb → subject: who does it.",
+          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
+        },
+        {
+          "en": "object",
+          "cz": "The dog sees **the cat**. · koho? co? (předmět)",
+          "gap": "The dog sees the cat. — the cat = ____",
+          "gap_answer": "object",
+          "accepts": [
+            "object",
+            "obj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "After the verb → object: the action goes to it.",
+          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
+        },
+        {
+          "en": "object",
+          "cz": "She likes **coffee**. · koho? co? (předmět)",
+          "gap": "She likes coffee. — coffee = ____",
+          "gap_answer": "object",
+          "accepts": [
+            "object",
+            "obj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "After the verb → object: the action goes to it.",
+          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
+        },
+        {
+          "en": "object",
+          "cz": "I read **a book**. · koho? co? (předmět)",
+          "gap": "I read a book. — a book = ____",
+          "gap_answer": "object",
+          "accepts": [
+            "object",
+            "obj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "After the verb → object: the action goes to it.",
+          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
+        },
+        {
+          "en": "object",
+          "cz": "The teacher helps **the students**. · koho? co? (předmět)",
+          "gap": "The teacher helps the students. — the students = ____",
+          "gap_answer": "object",
+          "accepts": [
+            "object",
+            "obj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "After the verb → object: the action goes to it.",
+          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
+        },
+        {
+          "en": "subject",
+          "cz": "**The cat** sees the dog. · same words, new jobs (podmět)",
+          "gap": "The cat sees the dog. — the cat = ____",
+          "gap_answer": "subject",
+          "accepts": [
+            "subject",
+            "subj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Same words as before — but now the cat is before the verb, so the cat is the subject.",
+          "explanation_cz": "Stejná slova — ale the cat je teď před slovesem, takže je podmět."
+        },
+        {
+          "en": "object",
+          "cz": "The cat sees **the dog**. · same words, new jobs (předmět)",
+          "gap": "The cat sees the dog. — the dog = ____",
+          "gap_answer": "object",
+          "accepts": [
+            "object",
+            "obj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Now the dog is after the verb, so the dog is the object. The place gives the job.",
+          "explanation_cz": "The dog je teď za slovesem, takže je předmět. Místo ve větě určuje roli."
+        },
+        {
+          "en": "subject",
+          "cz": "**The students** ask the teacher. · kdo? (podmět)",
+          "gap": "The students ask the teacher. — the students = ____",
+          "gap_answer": "subject",
+          "accepts": [
+            "subject",
+            "subj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "Before the verb → subject: who does it.",
+          "explanation_cz": "Před slovesem → subject (podmět): kdo to dělá."
+        },
+        {
+          "en": "object",
+          "cz": "The students ask **the teacher**. · koho? co? (předmět)",
+          "gap": "The students ask the teacher. — the teacher = ____",
+          "gap_answer": "object",
+          "accepts": [
+            "object",
+            "obj"
+          ],
+          "quiz_options": [
+            "subject",
+            "object",
+            "verb"
+          ],
+          "explanation": "After the verb → object: the action goes to it.",
+          "explanation_cz": "Za slovesem → object (předmět): koho? co?"
+        }
+      ]
     }
   ],
   "intro": {
@@ -451,7 +664,7 @@
         "body": "Later units talk about **nouns**, **verbs**, and other word classes. This short stop gives you those **names** so the rest of the app is easier to follow.",
         "points": [
           "You will see these words again in form tips and explanations",
-          "You do not need a full grammar book — just these four labels for now",
+          "You do not need a full grammar book — just these labels for now",
           "Next topics (be/have, word order, present simple) use the same names"
         ],
         "title_cz": "Proč tohle téma"
@@ -522,6 +735,40 @@
         "title_cz": "Jak slovo poznat"
       },
       {
+        "title": "Jobs in the sentence · subject and object",
+        "body": "Word classes say what a word **is**. In a sentence, a word also has a **job**. Two jobs to know: **subject** (*podmět*) — who does it. **object** (*předmět*) — the action goes to it.",
+        "table": {
+          "headers": [
+            "Sentence",
+            "subject",
+            "object"
+          ],
+          "rows": [
+            [
+              "**The dog** sees **the cat**.",
+              "the dog",
+              "the cat"
+            ],
+            [
+              "**The cat** sees **the dog**.",
+              "the cat",
+              "the dog"
+            ],
+            [
+              "**She** likes **coffee**.",
+              "she",
+              "coffee"
+            ]
+          ]
+        },
+        "points": [
+          "Czech shows the job with an ending: *pes → psa*. English has no endings — **the place in the sentence** gives the job.",
+          "Before the verb = subject · after the verb = object",
+          "This is why English word order is fixed (→ Word order 1)"
+        ],
+        "title_cz": "Podmět a předmět"
+      },
+      {
         "title": "Common mistakes",
         "table": {
           "headers": [
@@ -544,6 +791,10 @@
             [
               "One word = one class always",
               "some words can change class later"
+            ],
+            [
+              "Mixing class and job",
+              "in *The dog sees the cat* and *The cat sees the dog*, *dog* is a noun both times — only its **job** (subject / object) changes"
             ]
           ]
         },
@@ -559,7 +810,9 @@
           "work → **verb**",
           "new → **adjective**",
           "they → **pronoun**",
-          "She likes books. → pronoun · verb · noun"
+          "She likes books. → pronoun · verb · noun",
+          "**Anna** works. → Anna = **subject**",
+          "She likes **books**. → books = **object**"
         ],
         "title_cz": "Rychlá kontrola"
       }

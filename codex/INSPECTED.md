@@ -27,7 +27,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a1_present_simple` — Present simple · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [ ][ ] `a1_and_but_because` — And / but / because · 24 items
-- [ ][ ] `a1_articles` — Articles · 35 items · seen?
+- [ ][ ] `a1_articles` — Articles 1 · 35 items · seen?
 - [ ][ ] `a1_can` — Can / can't · 24 items · seen?
 - [ ][ ] `a1_frequency` — Frequency · 24 items
 - [ ][ ] `a1_imperatives` — Imperatives · 24 items
@@ -42,7 +42,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a1_there_is` — There is / there are · 24 items
 - [ ][ ] `a1_to_for_with` — To / for / with · 24 items
 - [ ][ ] `a1_word_classes` — Word classes · 30 items
-- [ ][ ] `a1_word_order` — Word order · 26 items
+- [ ][ ] `a1_word_order` — Word order 1 · 26 items
 
 ## A2 — 1 inspected / 0 approved / 16 units
 
@@ -60,7 +60,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a2_present_perfect` — Present perfect · 48 items
 - [ ][ ] `a2_quantifiers` — Much / many / a lot · 57 items · seen?
 - [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 36 items
-- [ ][ ] `a2_verb_patterns` — Verb patterns (to / -ing) · 48 items
+- [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items
 - [ ][ ] `a2_will_going_to` — Will / going to · 48 items
 
 ## B1 — 1 inspected / 0 approved / 17 units
@@ -81,7 +81,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `b1_suffixes` — Suffixes — the basics · 72 items
 - [ ][ ] `b1_used_to` — Used to · 48 items
 - [x][ ] `b1_verb_patterns_advanced` — Verb patterns 2 · 56 items · seen?
-- [ ][ ] `b1_word_order_fronting` — Fronted phrases · 36 items
+- [ ][ ] `b1_word_order_fronting` — Word order 2 · 36 items
 
 ## B2 — 0 inspected / 0 approved / 27 units
 

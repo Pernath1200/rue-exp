@@ -1,10 +1,10 @@
 {
   "id": "a1_articles",
-  "title": "Articles",
+  "title": "Articles 1",
   "level": "A1",
   "tree_node": "a1_articles",
   "practice": "frames",
-  "note": "Authoring law: a/an = first time / one job·thing. the = same thing again (a X already in the gap line) OR only-one (situational). Never bare CZ alone as the only cue for the. · names from the GLUE name pool · 2026-08-06 re-lexified onto pool-legal vocabulary · 2026-08-17 MOVED from path slot 18 to slot 5 (James: articles are demanded from slot 2 and were taught 16 units late — 84 sentences owed) and re-lexified again onto the much smaller slot-5 pool, where the only verbs available are be and have. Eight words the unit must own to teach its own content are declared via `lemma`: apple, egg, hour, office, university, old, water, music. Keep them — a/an cannot be taught without a vowel-sound noun, and zero article cannot be taught without an uncountable. · 2026-08-20 (James, smoke): the 8 zero-article items had an EMPTY gap_answer, so the adapter dropped them from Quiz AND Type — zero article was taught in the intro and Match and never once drilled. Answer is now a dash; every item carries an authored 4-option set (a · an · the · —) so 'is an article needed at all?' is live on every question; +3 uncountables (bread, coffee, money) since only water and music carried that case.",
+  "note": "Authoring law: a/an = first time / one job·thing. the = same thing again (a X already in the gap line) OR only-one (situational). Never bare CZ alone as the only cue for the. · names from the GLUE name pool · 2026-08-06 re-lexified onto pool-legal vocabulary · 2026-08-17 MOVED from path slot 18 to slot 5 (James: articles are demanded from slot 2 and were taught 16 units late — 84 sentences owed) and re-lexified again onto the much smaller slot-5 pool, where the only verbs available are be and have. Eight words the unit must own to teach its own content are declared via `lemma`: apple, egg, hour, office, university, old, water, music. Keep them — a/an cannot be taught without a vowel-sound noun, and zero article cannot be taught without an uncountable. · 2026-08-20 (James, smoke): the 8 zero-article items had an EMPTY gap_answer, so the adapter dropped them from Quiz AND Type — zero article was taught in the intro and Match and never once drilled. Answer is now a dash; every item carries an authored 4-option set (a · an · the · —) so 'is an article needed at all?' is live on every question; +3 uncountables (bread, coffee, money) since only water and music carried that case. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -18,799 +18,455 @@
       "title": "Articles · a/an/the",
       "items": [
         {
-          "en": "I have a phone.",
-          "cz": "Mám telefon. (jedna věc — poprvé)",
-          "gap": "I have ____ phone.",
+          "en": "I have a dog.",
+          "cz": "Mám psa. (one dog — first time)",
+          "gap": "I have ____ dog.",
           "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
           "accepts": [
-            "I have a phone.",
-            "I've got a phone."
+            "I have a dog."
           ],
           "explanation": "One thing, first time → a (not the yet).",
-          "explanation_cz": "Jedna věc poprvé → a.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "I have a bag.",
-          "cz": "Mám tašku. (jedna taška — poprvé)",
-          "gap": "I have ____ bag.",
-          "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
-          "accepts": [
-            "I have a bag.",
-            "I've got a bag."
-          ],
-          "explanation": "One thing, first time → a (not the yet).",
-          "explanation_cz": "Jedna věc poprvé → a.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "He is a tired student.",
-          "cz": "On je unavený student. (a + přídavné jméno + podstatné jméno)",
-          "gap": "He is ____ tired student.",
-          "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
-          "accepts": [
-            "He is a tired student.",
-            "He's a tired student."
-          ],
-          "explanation": "a goes before the whole group: a + adjective + noun.",
-          "explanation_cz": "a stojí před celou skupinou: a + přídavné jméno + podstatné jméno.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "She has a car.",
-          "cz": "Ona má auto. (jedna věc — poprvé)",
-          "gap": "She has ____ car.",
-          "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
-          "accepts": [
-            "She has a car.",
-            "She's got a car.",
-            "She is got a car."
-          ],
-          "explanation": "One thing, first time → a (not the yet).",
-          "explanation_cz": "Jedna věc poprvé → a.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "There is a dog in my house.",
-          "cz": "V mém domě je pes. (poprvé zmíněná věc → a)",
-          "lemma": "dog",
-          "gap": "There is ____ dog in my house.",
-          "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
-          "accepts": [
-            "There is a dog in my house.",
-            "There's a dog in my house."
-          ],
-          "explanation": "First mention of one thing → a.",
-          "explanation_cz": "První zmínka o jedné věci → a.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Jedna věc poprvé → a."
         },
         {
           "en": "She is a teacher.",
-          "cz": "Ona je učitelka. (povolání → a/an + povolání; ne the)",
+          "cz": "Ona je učitelka. (job → a/an + job; ne the)",
           "gap": "She is ____ teacher.",
           "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
           "accepts": [
             "She's a teacher.",
             "She is a teacher."
           ],
-          "explanation": "Job words need a/an: She is a teacher.",
-          "explanation_cz": "Povolání: a/an + povolání.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "He is a doctor.",
-          "cz": "On je doktor. (povolání → a/an + povolání; ne the — není to „ten konkrétní“ doktor)",
-          "gap": "He is ____ doctor.",
-          "gap_answer": "a",
           "gap_accepts": [
             "a"
           ],
+          "explanation": "Job words need a/an: She is a teacher.",
+          "explanation_cz": "Povolání: a/an + job."
+        },
+        {
+          "en": "He is an engineer.",
+          "cz": "On je inženýr. (job · vowel sound → an; ne the)",
+          "gap": "He is ____ engineer.",
+          "gap_answer": "an",
+          "accepts": [
+            "He's an engineer.",
+            "He is an engineer."
+          ],
+          "gap_accepts": [
+            "an"
+          ],
+          "explanation": "Job + vowel sound at the start → an (engineer, artist…).",
+          "explanation_cz": "Povolání se samohláskou → an."
+        },
+        {
+          "en": "Patrik is a student.",
+          "cz": "Patrik je student. (job; ne the)",
+          "gap": "Patrik is ____ student.",
+          "gap_answer": "a",
+          "accepts": [
+            "Patrik is a student."
+          ],
+          "gap_accepts": [
+            "a"
+          ],
+          "explanation": "Job words need a/an: She is a teacher.",
+          "explanation_cz": "Povolání: a/an + job."
+        },
+        {
+          "en": "He is a doctor.",
+          "cz": "On je doktor. (povolání → a/an + job; ne the — není to „ten konkrétní“ doktor)",
+          "gap": "He is ____ doctor.",
+          "gap_answer": "a",
           "accepts": [
             "He's a doctor.",
             "He is a doctor."
           ],
-          "explanation": "Job words need a/an: She is a teacher.",
-          "explanation_cz": "Povolání: a/an + povolání.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "Petr is a student.",
-          "cz": "Petr je student. (povolání/role; ne the)",
-          "gap": "Petr is ____ student.",
-          "gap_answer": "a",
           "gap_accepts": [
             "a"
           ],
-          "accepts": [
-            "Petr is a student."
-          ],
           "explanation": "Job words need a/an: She is a teacher.",
-          "explanation_cz": "Povolání: a/an + povolání.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Povolání: a/an + job."
         },
         {
-          "en": "My brother is a doctor.",
-          "cz": "Můj bratr je doktor. (povolání → a; ne the)",
-          "gap": "My brother is ____ doctor.",
+          "en": "She is a nurse.",
+          "cz": "Ona je zdravotní sestra. (job → a + job; ne the)",
+          "gap": "She is ____ nurse.",
           "gap_answer": "a",
+          "accepts": [
+            "She's a nurse.",
+            "She is a nurse."
+          ],
           "gap_accepts": [
             "a"
           ],
-          "accepts": [
-            "My brother is a doctor.",
-            "My brother's a doctor."
-          ],
           "explanation": "Job words need a/an: She is a teacher.",
-          "explanation_cz": "Povolání: a/an + povolání.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Povolání: a/an + job."
         },
         {
-          "en": "I have an apple.",
-          "cz": "Mám jablko. (jedno · samohláska → an)",
-          "lemma": "apple",
-          "gap": "I have ____ apple.",
+          "en": "She is an artist.",
+          "cz": "Ona je umělkyně. (job · vowel sound → an; ne the)",
+          "gap": "She is ____ artist.",
           "gap_answer": "an",
+          "accepts": [
+            "She's an artist.",
+            "She is an artist."
+          ],
           "gap_accepts": [
             "an"
           ],
+          "explanation": "Job + vowel sound at the start → an (engineer, artist…).",
+          "explanation_cz": "Povolání se samohláskou → an."
+        },
+        {
+          "en": "I need a bag.",
+          "cz": "Potřebuju tašku. (one bag — first time)",
+          "gap": "I need ____ bag.",
+          "gap_answer": "a",
           "accepts": [
-            "I have an apple.",
-            "I've got an apple."
+            "I need a bag."
+          ],
+          "explanation": "One thing, first time → a (not the yet).",
+          "explanation_cz": "Jedna věc poprvé → a."
+        },
+        {
+          "en": "I need a new phone.",
+          "cz": "Potřebuju nový telefon. (one phone — first time)",
+          "gap": "I need ____ new phone.",
+          "gap_answer": "a",
+          "accepts": [
+            "I need a new phone."
+          ],
+          "explanation": "One thing, first time → a (not the yet).",
+          "explanation_cz": "Jedna věc poprvé → a."
+        },
+        {
+          "en": "I eat an apple every day.",
+          "cz": "Každý den sním jablko. (one · vowel → an)",
+          "gap": "I eat ____ apple every day.",
+          "gap_answer": "an",
+          "accepts": [
+            "I eat an apple every day."
           ],
           "explanation": "Next word starts with a vowel sound → an.",
-          "explanation_cz": "Další slovo začíná samohláskou → an.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Další slovo začíná samohláskou → an."
         },
         {
           "en": "She has an old car.",
-          "cz": "Ona má staré auto. (jedno · samohláska old → an)",
-          "lemma": "old",
+          "cz": "Ona má staré auto. (one · vowel sound old → an)",
           "gap": "She has ____ old car.",
           "gap_answer": "an",
-          "gap_accepts": [
-            "an"
-          ],
           "accepts": [
             "She's got an old car.",
-            "She has an old car.",
-            "She is got an old car."
+            "She has an old car."
           ],
-          "explanation": "Listen to the next word, not the noun: an old car.",
-          "explanation_cz": "Rozhoduje další slovo, ne podstatné jméno: an old car.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation": "Next word starts with a vowel sound → an.",
+          "explanation_cz": "Další slovo začíná samohláskou → an."
         },
         {
-          "en": "We have an hour.",
-          "cz": "Máme hodinu. (jedna hodina · němé h → an)",
-          "lemma": "hour",
-          "gap": "We have ____ hour.",
+          "en": "I wait for an hour.",
+          "cz": "Čekám hodinu. (one hour · silent h → an)",
+          "gap": "I wait for ____ hour.",
           "gap_answer": "an",
-          "gap_accepts": [
-            "an"
-          ],
           "accepts": [
-            "We have an hour.",
-            "We've got an hour."
+            "I wait for an hour.",
+            "I wait an hour.",
+            "I waited for an hour.",
+            "I waited an hour."
           ],
           "explanation": "Hour starts with a vowel sound (silent h) → an hour.",
-          "explanation_cz": "Hour začíná samohláskou (němé h) → an.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Hour začíná samohláskou (němé h) → an."
         },
         {
-          "en": "This is an office.",
-          "cz": "Tohle je kancelář. (samohláska → an)",
-          "lemma": "office",
-          "gap": "This is ____ office.",
+          "en": "I have an umbrella.",
+          "cz": "Mám deštník. (one · vowel sound → an)",
+          "gap": "I have ____ umbrella.",
           "gap_answer": "an",
-          "gap_accepts": [
-            "an"
-          ],
           "accepts": [
-            "This is an office.",
-            "It's an office.",
-            "It is an office."
+            "I've got an umbrella.",
+            "I have an umbrella."
           ],
-          "explanation": "Next word starts with a vowel sound → an.",
-          "explanation_cz": "Další slovo začíná samohláskou → an.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "I have an egg.",
-          "cz": "Mám vejce. (jedno · samohláska → an)",
-          "lemma": "egg",
-          "gap": "I have ____ egg.",
-          "gap_answer": "an",
-          "gap_accepts": [
-            "an"
-          ],
-          "accepts": [
-            "I have an egg.",
-            "I've got an egg."
-          ],
-          "explanation": "Next word starts with a vowel sound → an.",
-          "explanation_cz": "Další slovo začíná samohláskou → an.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation": "Umbrella starts with a vowel sound → an umbrella.",
+          "explanation_cz": "Umbrella → samohláska → an."
         },
         {
           "en": "This is a university.",
-          "cz": "Tohle je univerzita. (zvuk yu- → a university, ne an; první zmínka, ne the)",
-          "lemma": "university",
+          "cz": "Tohle je univerzita. (zvuk yu- → a university, ne an; první zmínka typu místa, ne the)",
           "gap": "This is ____ university.",
           "gap_answer": "a",
-          "gap_accepts": [
-            "a"
-          ],
           "accepts": [
             "This is a university.",
+            "This is a university",
             "It's a university.",
             "It is a university."
           ],
+          "gap_accepts": [
+            "a"
+          ],
           "explanation": "University starts with a /j/ sound (\"you\") → a, not an.",
-          "explanation_cz": "University zní j- → a.",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "University zní j- → a."
         },
         {
-          "en": "I have a book. The book is in my bag.",
-          "cz": "Mám knihu. Ta kniha je v mé tašce.",
-          "lemma": "book",
-          "gap": "I have a book. ____ book is in my bag.",
+          "en": "I have a dog. The dog is small.",
+          "cz": "Mám psa. Ten pes je malý.",
+          "gap": "I have a dog. ____ dog is small.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "I have a book. The book is in my bag."
+            "I have a dog. The dog is small."
           ],
           "explanation": "Second time (or we know which one) → the.",
-          "explanation_cz": "Podruhé / víme které → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "This is a car. The car is old.",
-          "cz": "Tohle je auto. To auto je staré.",
-          "gap": "This is a car. ____ car is old.",
+          "en": "I have a book. The book is on the table.",
+          "cz": "Mám knihu. Ta kniha je na stole.",
+          "gap": "I have a book. ____ book is on the table.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "This is a car. The car is old."
+            "I have a book. The book is on the table."
           ],
           "explanation": "Second time (or we know which one) → the.",
-          "explanation_cz": "Podruhé / víme které → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "I have a phone. The phone is in my car.",
-          "cz": "Mám telefon. Ten telefon je v mém autě.",
-          "gap": "I have a phone. ____ phone is in my car.",
+          "en": "This is a school. The school is big.",
+          "cz": "Tohle je škola. Ta škola je velká.",
+          "gap": "This is a school. ____ school is big.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "I have a phone. The phone is in my car."
+            "This is a school. The school is big."
           ],
           "explanation": "Second time (or we know which one) → the.",
-          "explanation_cz": "Podruhé / víme které → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "There is a dog. The dog is in my house.",
-          "cz": "Je tu pes. Ten pes je v mém domě. (existuje — There is/are…)",
-          "gap": "There is a dog. ____ dog is in my house.",
+          "en": "I bought a bag. The bag is blue.",
+          "cz": "Koupil jsem tašku. Ta taška je modrá.",
+          "gap": "I bought a bag. ____ bag is blue.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "There is a dog. The dog is in my house.",
-            "There's a dog. The dog is in my house."
-          ],
-          "explanation": "We already said a dog. Now we know which one → the.",
-          "explanation_cz": "Už víme, o kterého psa jde → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
-        },
-        {
-          "en": "He has a bag. The bag is in the car.",
-          "cz": "On má tašku. Ta taška je v autě.",
-          "gap": "He has a bag. ____ bag is in the car.",
-          "gap_answer": "The",
-          "gap_accepts": [
-            "the",
-            "The"
-          ],
-          "accepts": [
-            "He has a bag. The bag is in the car.",
-            "He's got a bag. The bag is in the car.",
-            "He is got a bag. The bag is in the car."
+            "I bought a bag. The bag is blue.",
+            "I have a bag. The bag is blue."
           ],
           "explanation": "Second time (or we know which one) → the.",
-          "explanation_cz": "Podruhé / víme které → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "She has a friend. The friend is a teacher.",
-          "cz": "Ona má kamarádku. Ta kamarádka je učitelka.",
-          "gap": "She has a friend. ____ friend is a teacher.",
+          "en": "There is a window. Open the window, please.",
+          "cz": "Je tu okno. Otevři to okno, prosím. (there/here OK)",
+          "gap": "There is a window. Open ____ window, please.",
+          "gap_answer": "the",
+          "gap_accepts": [
+            "the",
+            "The"
+          ],
+          "accepts": [
+            "There is a window. Open the window, please.",
+            "There is a window. Open the window please.",
+            "Here is a window. Open the window, please.",
+            "Here's a window. Open the window, please.",
+            "Here is a window. Open the window, please",
+            "Here's a window. Open the window, please",
+            "There is a window. Open the window, please"
+          ],
+          "explanation": "We already said a window. Now we know which one → the.",
+          "explanation_cz": "Už víme, které okno → the."
+        },
+        {
+          "en": "He has a cat. The cat is black.",
+          "cz": "On má kočku. Ta kočka je černá.",
+          "gap": "He has a cat. ____ cat is black.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "She has a friend. The friend is a teacher.",
-            "She's got a friend. The friend is a teacher.",
-            "She is got a friend. The friend is a teacher."
+            "He has a cat. The cat is black.",
+            "He's got a cat. The cat is black."
           ],
           "explanation": "Second time (or we know which one) → the.",
-          "explanation_cz": "Podruhé / víme které → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "There is a teacher here. The teacher is tired.",
-          "cz": "Je tu učitel. Ten učitel je unavený. (existuje — There is/are…)",
-          "gap": "There is a teacher here. ____ teacher is tired.",
+          "en": "I bought a ticket. The ticket is expensive.",
+          "cz": "Koupil jsem lístek. Ten lístek je drahý.",
+          "gap": "I bought a ticket. ____ ticket is expensive.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "There is a teacher here. The teacher is tired.",
-            "There's a teacher here. The teacher is tired."
+            "I bought a ticket. The ticket is expensive.",
+            "I buy a ticket. The ticket is expensive.",
+            "I have a ticket. The ticket is expensive."
           ],
           "explanation": "Second time (or we know which one) → the.",
-          "explanation_cz": "Podruhé / víme které → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "There is only one doctor here. The doctor is my friend.",
-          "cz": "Je tu jen jeden doktor. Ten doktor je můj kamarád. (existuje — There is/are…)",
-          "gap": "There is only one doctor here. ____ doctor is my friend.",
+          "en": "There is a car. The car is red.",
+          "cz": "Je tu auto. To auto je červené. (there/here + first a; second = the same car)",
+          "gap": "There is a car. ____ car is red.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "There is only one doctor here. The doctor is my friend.",
-            "There's only one doctor here. The doctor is my friend."
+            "There is a car. The car is red.",
+            "There's a car. The car is red.",
+            "Here is a car. The car is red.",
+            "Here's a car. The car is red.",
+            "There is a car. The car is red",
+            "Here is a car. The car is red"
           ],
-          "explanation": "Only one in the situation — we both know which → the.",
-          "explanation_cz": "Jen jeden v dané situaci → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation": "Second time (or we know which one) → the.",
+          "explanation_cz": "Podruhé / víme které → the."
         },
         {
-          "en": "There is only one student here. The student is tired.",
-          "cz": "Je tu jen jeden student. Ten student je unavený. (existuje — There is/are…)",
-          "gap": "There is only one student here. ____ student is tired.",
+          "en": "There is only one sun. The sun is hot today.",
+          "cz": "Je jen jedno slunce. To slunce je dnes horké.",
+          "gap": "There is only one sun. ____ sun is hot today.",
           "gap_answer": "The",
           "gap_accepts": [
             "the",
             "The"
           ],
           "accepts": [
-            "There is only one student here. The student is tired.",
-            "There's only one student here. The student is tired."
+            "There is only one sun. The sun is hot today."
           ],
-          "explanation": "Only one in the situation — we both know which → the.",
-          "explanation_cz": "Jen jeden v dané situaci → the.",
-          "quiz_options": [
-            "A",
-            "An",
-            "The",
-            "—"
-          ]
+          "explanation": "There is only one sun / moon in the sky — we both know which → the.",
+          "explanation_cz": "Jen jedno slunce/měsíc → the."
         },
         {
-          "en": "I have dogs.",
-          "cz": "Mám psy. (množné číslo obecně — bez členu)",
-          "gap": "I have ____ dogs.",
-          "gap_answer": "—",
+          "en": "There is only one moon. The moon is bright.",
+          "cz": "Je jen jeden měsíc. Ten měsíc je jasný.",
+          "gap": "There is only one moon. ____ moon is bright.",
+          "gap_answer": "The",
+          "gap_accepts": [
+            "the",
+            "The"
+          ],
+          "accepts": [
+            "There is only one moon. The moon is bright."
+          ],
+          "explanation": "There is only one sun / moon in the sky — we both know which → the.",
+          "explanation_cz": "Jen jedno slunce/měsíc → the."
+        },
+        {
+          "en": "I like dogs.",
+          "cz": "Mám rád psy. (plural — no a/an/the)",
+          "gap": "I like ____ dogs.",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
-            "I have dogs.",
-            "I've got dogs."
+            "I like dogs."
           ],
           "explanation": "Plural in general → no article. Not a dogs / the dogs (unless specific dogs).",
-          "explanation_cz": "Množné obecně → bez členu.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Množné obecně → bez členu."
         },
         {
           "en": "She has books.",
-          "cz": "Ona má knihy. (množné číslo — bez členu)",
+          "cz": "Ona má knihy. (plural — no article)",
           "gap": "She has ____ books.",
-          "gap_answer": "—",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
             "She's got books.",
-            "She has books.",
-            "She is got books."
+            "She has books."
           ],
           "explanation": "Plural in general → no article.",
-          "explanation_cz": "Množné obecně → bez členu.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Množné obecně → bez členu."
         },
         {
-          "en": "We have cars.",
-          "cz": "Máme auta. (množné číslo — bez členu)",
-          "gap": "We have ____ cars.",
-          "gap_answer": "—",
+          "en": "We need tickets.",
+          "cz": "Potřebujeme lístky. (plural — no article)",
+          "gap": "We need ____ tickets.",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
-            "We have cars.",
-            "We've got cars."
+            "We need tickets."
           ],
           "explanation": "Plural in general → no article.",
-          "explanation_cz": "Množné obecně → bez členu.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Množné obecně → bez členu."
         },
         {
-          "en": "They have phones.",
-          "cz": "Oni mají telefony. (množné číslo — bez členu)",
-          "gap": "They have ____ phones.",
-          "gap_answer": "—",
+          "en": "They have cats.",
+          "cz": "Oni mají kočky. (plural — no article)",
+          "gap": "They have ____ cats.",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
-            "They've got phones.",
-            "They have phones."
+            "They've got cats.",
+            "They have cats."
           ],
           "explanation": "Plural in general → no article.",
-          "explanation_cz": "Množné obecně → bez členu.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Množné obecně → bez členu."
         },
         {
-          "en": "They are students.",
-          "cz": "Oni jsou studenti. (množné číslo — bez členu)",
-          "gap": "They are ____ students.",
-          "gap_answer": "—",
+          "en": "I drink water.",
+          "cz": "Piju vodu. (uncountable — no a/an)",
+          "gap": "I drink ____ water.",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
-            "They are students.",
-            "They're students."
-          ],
-          "explanation": "Plural after be → no article. One student, but a: He is a student.",
-          "explanation_cz": "Množné po be → bez členu. Jednotné: He is a student.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
-        },
-        {
-          "en": "This is water.",
-          "cz": "Tohle je voda. (nepočitatelné — bez a/an)",
-          "lemma": "water",
-          "gap": "This is ____ water.",
-          "gap_answer": "—",
-          "zero_article": true,
-          "accepts": [
-            "This is water.",
-            "It is water.",
-            "It's water."
+            "I drink water."
           ],
           "explanation": "Uncountable (water, milk, music…) → usually no a/an.",
-          "explanation_cz": "Nepočitatelné → obvykle bez a/an.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Nespočetné → obvykle bez a/an."
         },
         {
-          "en": "This is music.",
-          "cz": "Tohle je hudba. (nepočitatelné — bez a/an)",
-          "lemma": "music",
-          "gap": "This is ____ music.",
-          "gap_answer": "—",
+          "en": "She likes music.",
+          "cz": "Ona má ráda hudbu. (uncountable — no a/an)",
+          "gap": "She likes ____ music.",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
-            "This is music.",
-            "It is music.",
-            "It's music."
+            "She likes music."
           ],
           "explanation": "Uncountable (water, milk, music…) → usually no a/an.",
-          "explanation_cz": "Nepočitatelné → obvykle bez a/an.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation_cz": "Nespočetné → obvykle bez a/an."
         },
         {
-          "en": "We have friends.",
-          "cz": "Máme kamarády. (množné číslo — bez členu)",
-          "gap": "We have ____ friends.",
-          "gap_answer": "—",
+          "en": "He needs help.",
+          "cz": "On potřebuje pomoc. (uncountable — no a/an)",
+          "gap": "He needs ____ help.",
+          "gap_answer": "",
           "zero_article": true,
           "accepts": [
-            "We have friends.",
-            "We've got friends."
+            "He needs help."
           ],
-          "explanation": "Plural in general → no article.",
-          "explanation_cz": "Množné obecně → bez členu.",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ]
+          "explanation": "Uncountable abstract words (help, information…) → usually no a/an.",
+          "explanation_cz": "Nespočetné (help…) → obvykle bez a/an."
         },
         {
-          "en": "I have bread.",
-          "cz": "Mám chleba. (látkové — bez členu)",
-          "gap": "I have ____ bread.",
-          "gap_answer": "—",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
+          "en": "I want milk.",
+          "cz": "Chci mléko. (uncountable — no a/an)",
+          "gap": "I want ____ milk.",
+          "gap_answer": "",
           "zero_article": true,
-          "lemma": "bread",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ],
           "accepts": [
-            "I have bread.",
-            "I've got bread."
+            "I want milk."
           ],
-          "explanation": "Uncountable → no article. Not a bread.",
-          "explanation_cz": "Látkové podstatné jméno → bez členu."
-        },
-        {
-          "en": "We have coffee.",
-          "cz": "Máme kávu. (látkové — bez členu)",
-          "gap": "We have ____ coffee.",
-          "gap_answer": "—",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "zero_article": true,
-          "lemma": "coffee",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ],
-          "accepts": [
-            "We have coffee.",
-            "We've got coffee."
-          ],
-          "explanation": "Uncountable → no article. Not a coffee.",
-          "explanation_cz": "Látkové podstatné jméno → bez členu."
-        },
-        {
-          "en": "They have money.",
-          "cz": "Mají peníze. (látkové — bez členu)",
-          "gap": "They have ____ money.",
-          "gap_answer": "—",
-          "gap_accepts": [
-            "—",
-            "-",
-            "no article"
-          ],
-          "zero_article": true,
-          "lemma": "money",
-          "quiz_options": [
-            "a",
-            "an",
-            "the",
-            "—"
-          ],
-          "accepts": [
-            "They have money.",
-            "They've got money."
-          ],
-          "explanation": "Uncountable → no article. Not a money.",
-          "explanation_cz": "Látkové podstatné jméno → bez členu."
+          "explanation": "Uncountable (water, milk, music…) → usually no a/an.",
+          "explanation_cz": "Nespočetné → obvykle bez a/an."
         }
       ]
     }
@@ -822,7 +478,6 @@
         "body": "Small words before a noun. In Czech you often say nothing — in English you usually choose **a / an**, **the**, or **nothing**.",
         "points": [
           "Missing a/an/the before **one** person or thing is a very common error",
-          "You have already said *I am a student* — this is the unit that explains the **a**",
           "First goal: choose the right option — use the map on the next card"
         ]
       },
@@ -841,7 +496,7 @@
         "points": [
           "Listen to the **sound**, not only the letter",
           "**a** + consonant sound: a bag, a teacher, a university (yoo-)",
-          "**an** + vowel sound: an apple, an office, an hour (silent h)"
+          "**an** + vowel sound: an apple, an engineer, an hour (silent h)"
         ],
         "table": {
           "headers": [
@@ -851,11 +506,11 @@
           "rows": [
             [
               "**a**",
-              "a phone · a student · a tired student"
+              "a dog · a student · a new phone"
             ],
             [
               "**an**",
-              "an apple · an egg · an hour"
+              "an apple · an artist · an hour"
             ]
           ]
         }
@@ -864,8 +519,8 @@
         "title": "When: the (and a → the)",
         "points": [
           "We both know which one",
-          "You said it before (**a** book → **the** book)",
-          "Only one in the situation (**the** doctor here · **the** student here)"
+          "You said it before (**a** dog → **the** dog)",
+          "Only one in the situation (open **the** window · **the** sun)"
         ],
         "table": {
           "headers": [
@@ -874,12 +529,12 @@
           ],
           "rows": [
             [
-              "I have a book.",
-              "**The** book is in my bag."
+              "I have **a** dog.",
+              "**The** dog is small."
             ],
             [
-              "I have a phone.",
-              "**The** phone is in my car."
+              "I bought **a** bag.",
+              "**The** bag is blue."
             ]
           ]
         }
@@ -897,12 +552,12 @@
               "I am **a** teacher."
             ],
             [
-              "I have phone.",
-              "I have **a** phone."
+              "I have dog.",
+              "I have **a** dog."
             ],
             [
-              "He is doctor.",
-              "He is **a** doctor."
+              "Open window.",
+              "Open **the** window."
             ]
           ]
         },
@@ -914,11 +569,11 @@
         "title": "Quick check",
         "body": "One of many (first time) → a/an. We know which → the. Plurals / uncountables often → nothing.",
         "points": [
-          "I have ___ phone. → **a**",
-          "I have ___ apple. → **an**",
-          "I have a book. ___ book is in my bag. → **The**",
-          "I have ___ dogs. → **(no article)**",
-          "This is ___ water. → **(no article)**",
+          "I have ___ dog. → **a**",
+          "She is ___ engineer. → **an**",
+          "I have a book. ___ book is on the table. → **The**",
+          "I like ___ dogs. → **(no article)**",
+          "I drink ___ water. → **(no article)**",
           "Harder zero patterns (school, hospital, countries…) come later"
         ]
       }

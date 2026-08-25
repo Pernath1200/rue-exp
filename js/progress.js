@@ -338,6 +338,24 @@ export function touchVocabBlock(blockId, nodeId) {
 }
 
 /**
+ * Node ids with activity inside the window (default 24h). The map portrait
+ * uses this so house labels name recent growth, then fade — an old completed
+ * unit must not keep a permanent nameplate (James, 2026-08-25).
+ */
+export function recentNodeIds(withinMs = 24 * 60 * 60 * 1000) {
+  const p = loadProgress();
+  const cutoff = Date.now() - withinMs;
+  const ids = new Set();
+  for (const [id, b] of Object.entries((p.grammar && p.grammar.blocks) || {})) {
+    if ((b.touchedAt || 0) >= cutoff) ids.add(id);
+  }
+  for (const [id, b] of Object.entries((p.vocab && p.vocab.blocks) || {})) {
+    if ((b.touchedAt || 0) >= cutoff) ids.add(b.nodeId || id);
+  }
+  return ids;
+}
+
+/**
  * @returns {{ wasFruit: boolean, nowFruit: boolean, justFruited: boolean, review?: object }}
  */
 export function completeVocabMode(blockId, mode, meta = {}) {

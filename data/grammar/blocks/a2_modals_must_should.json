@@ -5,7 +5,7 @@
   "tree_node": "a2_modals_must_should",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Obligation (must) and advice (should). Gap on modal. No have to yet. · Bank 48 items · flags: 2026-07-26b intro+accepts · 2026-08-06 re-lexified 16/48 items onto pool-legal vocabulary (BUILD-DIGEST cloud run 2); modal + teaching point unchanged on every item",
+  "note": "Obligation (must) and advice (should). Gap on modal. No have to yet. · Bank 48 items · flags: 2026-07-26b intro+accepts · 2026-08-06 re-lexified 16/48 items onto pool-legal vocabulary (BUILD-DIGEST cloud run 2); modal + teaching point unchanged on every item · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -21,21 +21,13 @@
         {
           "en": "I must go now.",
           "cz": "Musím teď jít.",
-          "gap": "I must ____ now. (go)",
-          "gap_answer": "go",
+          "gap": "I ____ go now.",
+          "gap_answer": "must",
           "accepts": [
             "I must go now."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "go"
-          ],
-          "quiz_options": [
-            "go",
-            "to go",
-            "goes"
-          ]
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "She must work tomorrow.",
@@ -45,28 +37,19 @@
           "accepts": [
             "She must work tomorrow."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "You must wear a suit to the interview.",
-          "cz": "Na pohovor si musíš vzít oblek.",
-          "gap": "You must ____ a suit to the interview. (wear)",
-          "gap_answer": "wear",
+          "en": "You must wear a seatbelt.",
+          "cz": "Musíš mít pás.",
+          "gap": "You ____ wear a seatbelt.",
+          "gap_answer": "must",
           "accepts": [
-            "You must wear a suit to the interview.",
-            "You must wear a suit for the interview."
+            "You must wear a seatbelt."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "wear"
-          ],
-          "quiz_options": [
-            "wear",
-            "to wear",
-            "wears"
-          ]
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "We must be quiet.",
@@ -76,28 +59,24 @@
           "accepts": [
             "We must be quiet."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "I mustn't use my phone here.",
-          "cz": "Tady nesmím používat telefon. (zakázáno / not allowed)",
-          "gap": "I mustn't ____ my phone here. (use)",
-          "gap_answer": "use",
+          "en": "I mustn't smoke here.",
+          "cz": "Tady se nesmí kouřit.",
+          "gap": "I ____ smoke here.",
+          "gap_answer": "mustn't",
           "accepts": [
-            "I mustn't use my phone here.",
-            "I must not use my phone here."
+            "I mustn't smoke here.",
+            "I must not smoke here."
           ],
           "gap_accepts": [
-            "use"
+            "must not",
+            "mustn't"
           ],
-          "explanation": "mustn't and shouldn't are still modals, so the verb after them stays in the base form: mustn't park, shouldn't drive.",
-          "explanation_cz": "mustn't a shouldn't jsou také modální slovesa — sloveso po nich zůstává v základním tvaru.",
-          "quiz_options": [
-            "use",
-            "to use",
-            "uses"
-          ]
+          "explanation": "mustn't + base = not allowed.",
+          "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
           "en": "You mustn't be late.",
@@ -114,63 +93,47 @@
             "must not",
             "mustn't"
           ],
-          "explanation": "mustn't = it is forbidden, not \"you don't have to\". You mustn't park here means parking is banned.",
-          "explanation_cz": "mustn't = je to zakázáno, ne „nemusíš“. You mustn't park here = parkování je zakázáno."
+          "explanation": "mustn't + base = not allowed.",
+          "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
-          "en": "She mustn't open that door.",
-          "cz": "Ty dveře nesmí otevřít. (ona)",
-          "gap": "She ____ open that door.",
+          "en": "She mustn't touch that.",
+          "cz": "Nesmí na to sahat (ona).",
+          "gap": "She ____ touch that.",
           "gap_answer": "mustn't",
           "accepts": [
-            "She mustn't open that door.",
-            "She must not open that door."
+            "She mustn't touch that.",
+            "She must not touch that."
           ],
           "gap_accepts": [
             "must not",
             "mustn't"
           ],
-          "explanation": "mustn't = it is forbidden, not \"you don't have to\". You mustn't park here means parking is banned.",
-          "explanation_cz": "mustn't = je to zakázáno, ne „nemusíš“. You mustn't park here = parkování je zakázáno."
+          "explanation": "mustn't + base = not allowed.",
+          "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
           "en": "You should study more.",
           "cz": "Měl bys se víc učit.",
-          "gap": "You should ____ more. (study)",
-          "gap_answer": "study",
+          "gap": "You ____ study more.",
+          "gap_answer": "should",
           "accepts": [
             "You should study more."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "study"
-          ],
-          "quiz_options": [
-            "study",
-            "to study",
-            "studies"
-          ]
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "He should call his mum.",
           "cz": "Měl by zavolat mámě (on).",
-          "gap": "He should ____ his mum. (call)",
-          "gap_answer": "call",
+          "gap": "He ____ call his mum.",
+          "gap_answer": "should",
           "accepts": [
             "He should call his mum.",
             "He should call his mom."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "call"
-          ],
-          "quiz_options": [
-            "call",
-            "to call",
-            "calls"
-          ]
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "We should go home.",
@@ -180,8 +143,8 @@
           "accepts": [
             "We should go home."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "You should see a doctor.",
@@ -191,8 +154,8 @@
           "accepts": [
             "You should see a doctor."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "I should sleep more.",
@@ -202,8 +165,8 @@
           "accepts": [
             "I should sleep more."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "You shouldn't eat so much sugar.",
@@ -218,28 +181,24 @@
             "should not",
             "shouldn't"
           ],
-          "explanation": "shouldn't = advice against something. It is a bad idea, not a ban — that is mustn't.",
-          "explanation_cz": "shouldn't = rada proti něčemu. Špatný nápad, ne zákaz — zákaz je mustn't."
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
           "en": "He shouldn't drive fast.",
           "cz": "Neměl by jet rychle (on).",
-          "gap": "He shouldn't ____ fast. (drive)",
-          "gap_answer": "drive",
+          "gap": "He ____ drive fast.",
+          "gap_answer": "shouldn't",
           "accepts": [
             "He shouldn't drive fast.",
             "He should not drive fast."
           ],
           "gap_accepts": [
-            "drive"
+            "should not",
+            "shouldn't"
           ],
-          "explanation": "mustn't and shouldn't are still modals, so the verb after them stays in the base form: mustn't park, shouldn't drive.",
-          "explanation_cz": "mustn't a shouldn't jsou také modální slovesa — sloveso po nich zůstává v základním tvaru.",
-          "quiz_options": [
-            "drive",
-            "to drive",
-            "drives"
-          ]
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
           "en": "We shouldn't be rude.",
@@ -254,46 +213,30 @@
             "should not",
             "shouldn't"
           ],
-          "explanation": "shouldn't = advice against something. It is a bad idea, not a ban — that is mustn't.",
-          "explanation_cz": "shouldn't = rada proti něčemu. Špatný nápad, ne zákaz — zákaz je mustn't."
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
           "en": "Must I pay now?",
           "cz": "Musím teď platit?",
-          "gap": "Must I ____ now? (pay)",
-          "gap_answer": "pay",
+          "gap": "____ I pay now?",
+          "gap_answer": "Must",
           "accepts": [
             "Must I pay now?"
           ],
-          "explanation": "The modal moves to the front in a question, but the verb after the subject is still the base form: Must I pay? — not Must I to pay?",
-          "explanation_cz": "V otázce jde modál dopředu, ale sloveso po podmětu zůstává v základním tvaru.",
-          "gap_accepts": [
-            "pay"
-          ],
-          "quiz_options": [
-            "pay",
-            "to pay",
-            "pays"
-          ]
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "Should I open the window?",
           "cz": "Mám otevřít okno?",
-          "gap": "Should I ____ the window? (open)",
-          "gap_answer": "open",
+          "gap": "____ I open the window?",
+          "gap_answer": "Should",
           "accepts": [
             "Should I open the window?"
           ],
-          "explanation": "The modal moves to the front in a question, but the verb after the subject is still the base form: Must I pay? — not Must I to pay?",
-          "explanation_cz": "V otázce jde modál dopředu, ale sloveso po podmětu zůstává v základním tvaru.",
-          "gap_accepts": [
-            "open"
-          ],
-          "quiz_options": [
-            "open",
-            "to open",
-            "opens"
-          ]
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "Should we wait?",
@@ -303,27 +246,19 @@
           "accepts": [
             "Should we wait?"
           ],
-          "explanation": "In a question the modal jumps in front of the subject: Must I pay? Should we wait? No do and no does.",
-          "explanation_cz": "V otázce skočí modální sloveso před podmět: Must I pay? Žádné do ani does."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "I must finish this today.",
           "cz": "Musím to dnes dokončit.",
-          "gap": "I must ____ this today. (finish)",
-          "gap_answer": "finish",
+          "gap": "I ____ finish this today.",
+          "gap_answer": "must",
           "accepts": [
             "I must finish this today."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "finish"
-          ],
-          "quiz_options": [
-            "finish",
-            "to finish",
-            "finishes"
-          ]
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "You should drink more water.",
@@ -333,8 +268,8 @@
           "accepts": [
             "You should drink more water."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "Children must go to school.",
@@ -345,44 +280,36 @@
             "Children must go to school.",
             "Kids must go to school."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "You shouldn't wait.",
-          "cz": "Neměl bys čekat.",
-          "gap": "You ____ wait.",
+          "en": "You shouldn't worry.",
+          "cz": "Neměl by sis dělat starosti.",
+          "gap": "You ____ worry.",
           "gap_answer": "shouldn't",
           "accepts": [
-            "You shouldn't wait.",
-            "You should not wait."
+            "You shouldn't worry.",
+            "You should not worry."
           ],
           "gap_accepts": [
             "should not",
             "shouldn't"
           ],
-          "explanation": "shouldn't = advice against something. It is a bad idea, not a ban — that is mustn't.",
-          "explanation_cz": "shouldn't = rada proti něčemu. Špatný nápad, ne zákaz — zákaz je mustn't."
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
           "en": "She must speak English at work.",
           "cz": "V práci musí mluvit anglicky. (ona)",
-          "gap": "She must ____ English at work. (speak)",
-          "gap_answer": "speak",
+          "gap": "She ____ speak English at work.",
+          "gap_answer": "must",
           "accepts": [
             "She must speak English at work.",
             "She must speak English at the office."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "speak"
-          ],
-          "quiz_options": [
-            "speak",
-            "to speak",
-            "speaks"
-          ]
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "We should leave early.",
@@ -392,40 +319,33 @@
           "accepts": [
             "We should leave early."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "I must buy her a birthday card.",
-          "cz": "Musím jí koupit přání k narozeninám.",
-          "gap": "I must ____ her a birthday card. (buy)",
-          "gap_answer": "buy",
-          "accepts": [
-            "I must buy her a birthday card.",
-            "I must buy a birthday card for her."
-          ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "buy"
-          ],
-          "quiz_options": [
-            "buy",
-            "to buy",
-            "buys"
-          ]
-        },
-        {
-          "en": "You must have your ticket with you.",
-          "cz": "Musíš mít lístek u sebe.",
-          "gap": "You ____ have your ticket with you.",
+          "en": "I must remember her birthday.",
+          "cz": "Musím si pamatovat její narozeniny.",
+          "gap": "I ____ remember her birthday.",
           "gap_answer": "must",
           "accepts": [
-            "You must have your ticket with you.",
-            "You must have the ticket with you."
+            "I must remember her birthday."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
+        },
+        {
+          "en": "You must show your ticket.",
+          "cz": "Musíš ukázat lístek. (tvůj / ten lístek)",
+          "gap": "You ____ show your ticket.",
+          "gap_answer": "must",
+          "accepts": [
+            "You must show your ticket.",
+            "You must show the ticket.",
+            "You must show your tickets.",
+            "You must show the tickets."
+          ],
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "Students must arrive on time.",
@@ -435,40 +355,35 @@
           "accepts": [
             "Students must arrive on time."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "We must close the windows.",
-          "cz": "Musíme zavřít okna.",
-          "gap": "We ____ close the windows.",
+          "en": "We must keep this door closed.",
+          "cz": "Tyhle dveře musíme nechat zavřené.",
+          "gap": "We ____ keep this door closed.",
           "gap_answer": "must",
           "accepts": [
-            "We must close the windows.",
-            "We must close the window."
+            "We must keep this door closed."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "You mustn't park here.",
           "cz": "Tady se nesmí parkovat.",
-          "gap": "You mustn't ____ here. (park)",
-          "gap_answer": "park",
+          "gap": "You ____ park here.",
+          "gap_answer": "mustn't",
           "accepts": [
             "You mustn't park here.",
             "You must not park here."
           ],
           "gap_accepts": [
-            "park"
+            "must not",
+            "mustn't"
           ],
-          "explanation": "mustn't and shouldn't are still modals, so the verb after them stays in the base form: mustn't park, shouldn't drive.",
-          "explanation_cz": "mustn't a shouldn't jsou také modální slovesa — sloveso po nich zůstává v základním tvaru.",
-          "quiz_options": [
-            "park",
-            "to park",
-            "parks"
-          ]
+          "explanation": "mustn't + base = not allowed.",
+          "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
           "en": "Children mustn't play with matches.",
@@ -489,59 +404,42 @@
             "must not",
             "mustn't"
           ],
-          "explanation": "mustn't = it is forbidden, not \"you don't have to\". You mustn't park here means parking is banned.",
-          "explanation_cz": "mustn't = je to zakázáno, ne „nemusíš“. You mustn't park here = parkování je zakázáno."
+          "explanation": "mustn't + base = not allowed.",
+          "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
-          "en": "I should say sorry.",
+          "en": "I should apologise.",
           "cz": "Měl bych se omluvit.",
-          "gap": "I ____ say sorry.",
+          "gap": "I ____ apologise.",
           "gap_answer": "should",
           "accepts": [
-            "I should say sorry.",
-            "I should say I'm sorry.",
-            "I should say i am sorry."
+            "I should apologise.",
+            "I should apologize."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "You should take an umbrella.",
           "cz": "Měl bys si vzít deštník.",
-          "gap": "You should ____ an umbrella. (take)",
-          "gap_answer": "take",
+          "gap": "You ____ take an umbrella.",
+          "gap_answer": "should",
           "accepts": [
             "You should take an umbrella."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "take"
-          ],
-          "quiz_options": [
-            "take",
-            "to take",
-            "takes"
-          ]
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "He should find a better job.",
-          "cz": "Měl by si najít lepší práci. (on)",
-          "gap": "He should ____ a better job. (find)",
-          "gap_answer": "find",
+          "en": "He should save more money.",
+          "cz": "Měl by víc šetřit (on).",
+          "gap": "He ____ save more money.",
+          "gap_answer": "should",
           "accepts": [
-            "He should find a better job."
+            "He should save more money."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "find"
-          ],
-          "quiz_options": [
-            "find",
-            "to find",
-            "finds"
-          ]
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "We should book a table.",
@@ -551,44 +449,40 @@
           "accepts": [
             "We should book a table."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "You shouldn't wear jeans at work.",
-          "cz": "Do práce bys neměl nosit džíny.",
-          "gap": "You ____ wear jeans at work.",
+          "en": "You shouldn't shout at people.",
+          "cz": "Neměl bys na lidi křičet.",
+          "gap": "You ____ shout at people.",
           "gap_answer": "shouldn't",
           "accepts": [
-            "You shouldn't wear jeans at work.",
-            "You should not wear jeans at work."
+            "You shouldn't shout at people.",
+            "You should not shout at people."
           ],
           "gap_accepts": [
             "should not",
             "shouldn't"
           ],
-          "explanation": "shouldn't = advice against something. It is a bad idea, not a ban — that is mustn't.",
-          "explanation_cz": "shouldn't = rada proti něčemu. Špatný nápad, ne zákaz — zákaz je mustn't."
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
-          "en": "She shouldn't drink so much coffee.",
-          "cz": "Neměla by pít tolik kávy. (ona)",
-          "gap": "She shouldn't ____ so much coffee. (drink)",
-          "gap_answer": "drink",
+          "en": "She shouldn't skip breakfast.",
+          "cz": "Neměla by vynechávat snídani (ona).",
+          "gap": "She ____ skip breakfast.",
+          "gap_answer": "shouldn't",
           "accepts": [
-            "She shouldn't drink so much coffee.",
-            "She should not drink so much coffee."
+            "She shouldn't skip breakfast.",
+            "She should not skip breakfast."
           ],
           "gap_accepts": [
-            "drink"
+            "should not",
+            "shouldn't"
           ],
-          "explanation": "mustn't and shouldn't are still modals, so the verb after them stays in the base form: mustn't park, shouldn't drive.",
-          "explanation_cz": "mustn't a shouldn't jsou také modální slovesa — sloveso po nich zůstává v základním tvaru.",
-          "quiz_options": [
-            "drink",
-            "to drink",
-            "drinks"
-          ]
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
           "en": "Must we leave now?",
@@ -598,19 +492,22 @@
           "accepts": [
             "Must we leave now?"
           ],
-          "explanation": "In a question the modal jumps in front of the subject: Must I pay? Should we wait? No do and no does.",
-          "explanation_cz": "V otázce skočí modální sloveso před podmět: Must I pay? Žádné do ani does."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "Should I help you?",
-          "cz": "Mám ti pomoct? (nabídka · should)",
-          "gap": "____ I help you?",
+          "en": "Should I bring anything?",
+          "cz": "Mám něco přinést? (rada · should)",
+          "gap": "____ I bring anything?",
           "gap_answer": "Should",
           "accepts": [
-            "Should I help you?"
+            "Should I bring anything?",
+            "Should I bring something?",
+            "Should I bring anything with me?",
+            "Should I bring something with me?"
           ],
-          "explanation": "In a question the modal jumps in front of the subject: Must I pay? Should we wait? No do and no does.",
-          "explanation_cz": "V otázce skočí modální sloveso před podmět: Must I pay? Žádné do ani does."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "What should I say?",
@@ -620,8 +517,8 @@
           "accepts": [
             "What should I say?"
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "Where should we meet?",
@@ -631,8 +528,8 @@
           "accepts": [
             "Where should we meet?"
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "You must try this cake.",
@@ -642,8 +539,8 @@
           "accepts": [
             "You must try this cake."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
           "en": "I must be at work by eight.",
@@ -653,106 +550,84 @@
           "accepts": [
             "I must be at work by eight."
           ],
-          "explanation": "must + base verb = strong necessity. It is the same for every subject — I must, she must, they must, never musts.",
-          "explanation_cz": "must + základní tvar = silná nutnost. Pro všechny osoby stejně — nikdy musts."
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "People should walk more.",
-          "cz": "Lidé by měli víc chodit pěšky.",
-          "gap": "People ____ walk more.",
+          "en": "People should recycle more.",
+          "cz": "Lidé by měli víc recyklovat.",
+          "gap": "People ____ recycle more.",
           "gap_answer": "should",
           "accepts": [
-            "People should walk more."
+            "People should recycle more."
           ],
-          "explanation": "should + base verb = advice, the right thing to do. Weaker than must.",
-          "explanation_cz": "should + základní tvar = rada, správná věc. Slabší než must."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "You shouldn't work every weekend.",
-          "cz": "Neměl bys pracovat každý víkend.",
-          "gap": "You ____ work every weekend.",
+          "en": "You shouldn't believe everything online.",
+          "cz": "Neměl bys věřit všemu online.",
+          "gap": "You ____ believe everything online.",
           "gap_answer": "shouldn't",
           "accepts": [
-            "You shouldn't work every weekend.",
-            "You should not work every weekend."
+            "You shouldn't believe everything online.",
+            "You should not believe everything online."
           ],
           "gap_accepts": [
             "should not",
             "shouldn't"
           ],
-          "explanation": "shouldn't = advice against something. It is a bad idea, not a ban — that is mustn't.",
-          "explanation_cz": "shouldn't = rada proti něčemu. Špatný nápad, ne zákaz — zákaz je mustn't."
+          "explanation": "shouldn't + base = advice not to.",
+          "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
-          "en": "Drivers must stop at the border.",
-          "cz": "Řidiči musí zastavit na hranici.",
-          "gap": "Drivers must ____ at the border. (stop)",
-          "gap_answer": "stop",
+          "en": "Drivers must stop at a red light.",
+          "cz": "Řidiči musí zastavit na červené.",
+          "gap": "Drivers ____ stop at a red light.",
+          "gap_answer": "must",
           "accepts": [
-            "Drivers must stop at the border."
+            "Drivers must stop at a red light."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "stop"
-          ],
-          "quiz_options": [
-            "stop",
-            "to stop",
-            "stops"
-          ]
+          "explanation": "must + base = strong necessity.",
+          "explanation_cz": "must + základ = silná nutnost."
         },
         {
-          "en": "You should check the timetable.",
-          "cz": "Měl bys zkontrolovat jízdní řád.",
-          "gap": "You should ____ the timetable. (check)",
-          "gap_answer": "check",
+          "en": "You should check the spelling.",
+          "cz": "Měl bys zkontrolovat pravopis.",
+          "gap": "You ____ check the spelling.",
+          "gap_answer": "should",
           "accepts": [
-            "You should check the timetable."
+            "You should check the spelling."
           ],
-          "explanation": "After must and should comes the base verb — no to and no -s: must go (not must to go, not must goes).",
-          "explanation_cz": "Po must a should následuje základní tvar — žádné to, žádné -s: must go (ne must to go, ne must goes).",
-          "gap_accepts": [
-            "check"
-          ],
-          "quiz_options": [
-            "check",
-            "to check",
-            "checks"
-          ]
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         },
         {
           "en": "We mustn't forget our passports.",
           "cz": "Nesmíme zapomenout pasy.",
-          "gap": "We mustn't ____ our passports. (forget)",
-          "gap_answer": "forget",
+          "gap": "We ____ forget our passports.",
+          "gap_answer": "mustn't",
           "accepts": [
             "We mustn't forget our passports.",
             "We must not forget our passports."
           ],
           "gap_accepts": [
-            "forget"
+            "must not",
+            "mustn't"
           ],
-          "explanation": "mustn't and shouldn't are still modals, so the verb after them stays in the base form: mustn't park, shouldn't drive.",
-          "explanation_cz": "mustn't a shouldn't jsou také modální slovesa — sloveso po nich zůstává v základním tvaru.",
-          "quiz_options": [
-            "forget",
-            "to forget",
-            "forgets"
-          ]
+          "explanation": "mustn't + base = not allowed.",
+          "explanation_cz": "mustn't + základ = není dovoleno."
         },
         {
-          "en": "Should they wait at the station?",
-          "cz": "Mají čekat na nádraží?",
-          "gap": "____ they wait at the station?",
+          "en": "Should they wait outside?",
+          "cz": "Mají čekat venku?",
+          "gap": "____ they wait outside?",
           "gap_answer": "Should",
           "accepts": [
-            "Should they wait at the station?",
-            "Should they wait at the train station?",
-            "Should they wait at the railway station?"
+            "Should they wait outside?"
           ],
-          "explanation": "In a question the modal jumps in front of the subject: Must I pay? Should we wait? No do and no does.",
-          "explanation_cz": "V otázce skočí modální sloveso před podmět: Must I pay? Žádné do ani does."
+          "explanation": "should + base = advice.",
+          "explanation_cz": "should + základ = rada."
         }
       ]
     }

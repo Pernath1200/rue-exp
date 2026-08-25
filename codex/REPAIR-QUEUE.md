@@ -11,6 +11,32 @@ a note.
 
 ---
 
+## TOP OF QUEUE — RUE2 transplant (James, 2026-08-25)
+
+**Restore James's smoke-tested RUE2 content into rue-exp, unit by unit.**
+Discovered 2026-08-25: `sync_from_stable.py` sourced grammar from `rue-auto`
+(the auto lane's A1–C1 map), so the app runs auto-authored units while James's
+personally smoke-tested versions sit unused in
+`C:\Users\ADMIN\Documents\projects\rue2-grok-v1.0\data\blocks\` — 72
+level-named files, schema near-identical to rue-exp's (extra keys: `quality`,
+`demo_priority` — check `quality` as evidence of his weekend pass).
+
+Job shape, per unit (A1–B1 first — the range James smoked):
+
+- [ ] Diff RUE2 version vs rue-exp version: items, intro, note.
+- [ ] Where they differ, the fork is JAMES's call — default assumption is his
+  smoked content wins over auto filler, but he judges, not the lane.
+- [ ] Transplant items/intro into the rue-exp file, preserving new-engine
+  fields (authored quiz_options per B2/B3/B5, accepts, explanations,
+  block-level check sequences).
+- [ ] Light delta re-check in the new engine by James, then tick INSPECTED.
+- [ ] Run lint + check_playable after each unit.
+
+This is restoration of human-passed content replacing auto-authored content —
+the direct repayment of the August build-first debt, on the agents-verify-
+never-author policy. Work it in sessions with James, top priority; a first
+diff report (which units differ, how much) is the natural opening move.
+
 ## P0 — grammar practice is not wired to grammar packs · **FIXED 3c94e84**
 
 **Fixed 2026-08-07 (local lane).** `js/pack-adapt.js` translates the real pack

@@ -5,7 +5,7 @@
   "tree_node": "a2_quantifiers",
   "codex_unit": "G_NP-A1B1-01",
   "practice": "frames",
-  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech · 2026-08-19: 'Little is known about him' (C1 register) replaced with an A2 'little' item",
+  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech · 2026-08-19: 'Little is known about him' (C1 register) replaced with an A2 'little' item · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -30,20 +30,16 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "She has a lot of free time.",
-          "cz": "Ona má hodně volného času.",
+          "en": "She has much free time.",
+          "cz": "Má hodně volného času.",
           "gap": "She has ____ free time.",
-          "gap_answer": "a lot of",
+          "gap_answer": "much",
           "accepts": [
-            "She has a lot of free time.",
-            "He has a lot of free time."
+            "She has much free time.",
+            "She has a lot of free time."
           ],
-          "explanation": "In a positive sentence a lot of is the natural choice — much sounds wrong here.",
-          "explanation_cz": "V kladné větě je přirozené a lot of — much tu zní špatně.",
-          "gap_accepts": [
-            "a lot of",
-            "lots of"
-          ]
+          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
+          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
           "en": "We have a lot of friends.",
@@ -109,20 +105,18 @@
           "gap": "I don't have ____ money.",
           "gap_answer": "much",
           "accepts": [
-            "I don't have much money.",
-            "I do not have much money."
+            "I don't have much money."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
           "en": "He doesn't have many friends.",
-          "cz": "On nemá mnoho kamarádů.",
+          "cz": "Nemá mnoho kamarádů.",
           "gap": "He doesn't have ____ friends.",
           "gap_answer": "many",
           "accepts": [
-            "He doesn't have many friends.",
-            "He does not have many friends."
+            "He doesn't have many friends."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -133,8 +127,7 @@
           "gap": "There isn't ____ coffee.",
           "gap_answer": "much",
           "accepts": [
-            "There isn't much coffee.",
-            "There is not much coffee."
+            "There isn't much coffee."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -145,8 +138,7 @@
           "gap": "There aren't ____ chairs.",
           "gap_answer": "many",
           "accepts": [
-            "There aren't many chairs.",
-            "There are not many chairs."
+            "There aren't many chairs."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -165,7 +157,7 @@
         },
         {
           "en": "She reads a lot of books.",
-          "cz": "Ona čte hodně knih.",
+          "cz": "Čte hodně knih.",
           "gap": "She reads ____ of books.",
           "gap_answer": "a lot",
           "accepts": [
@@ -188,12 +180,12 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "I have a few minutes.",
-          "cz": "Mám pár minut.",
-          "gap": "I have a ____ minutes.",
+          "en": "I have a few questions.",
+          "cz": "Mám pár otázek.",
+          "gap": "I have a ____ questions.",
           "gap_answer": "few",
           "accepts": [
-            "I have a few minutes."
+            "I have a few questions."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -226,7 +218,6 @@
           "gap": "How ____ is it?",
           "gap_answer": "much",
           "accepts": [
-            "How much does this cost?",
             "How much is it?"
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
@@ -256,13 +247,12 @@
           "explanation_cz": "a + souhlásková hláska (jedno, poprvé)."
         },
         {
-          "en": "She doesn't watch much football.",
-          "cz": "Moc se na fotbal nedívá.",
-          "gap": "She doesn't watch ____ football.",
+          "en": "She doesn't watch much TV.",
+          "cz": "Nedívá se moc na televizi.",
+          "gap": "She doesn't watch ____ TV.",
           "gap_answer": "much",
           "accepts": [
-            "She doesn't watch much football.",
-            "She does not watch much football."
+            "She doesn't watch much TV."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -291,24 +281,23 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "She has a few German friends.",
-          "cz": "Ona má pár německých kamarádů.",
-          "gap": "She has a ____ German friends.",
+          "en": "I know a few words in German.",
+          "cz": "Umím pár německých slov.",
+          "gap": "I know a ____ words in German.",
           "gap_answer": "few",
           "accepts": [
-            "She has a few German friends."
+            "I know a few words in German."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "There are many tourists in Prague.",
-          "cz": "V Praze je hodně turistů.",
-          "gap": "There are ____ tourists in Prague.",
+          "en": "There are many tourists in summer.",
+          "cz": "V létě je hodně turistů.",
+          "gap": "There are ____ tourists in summer.",
           "gap_answer": "many",
           "accepts": [
-            "There are many tourists in Prague.",
-            "There are a lot of tourists in Prague."
+            "There are many tourists in summer."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -319,43 +308,43 @@
           "gap": "I don't drink ____ coffee.",
           "gap_answer": "much",
           "accepts": [
-            "I don't drink much coffee.",
-            "I do not drink much coffee."
+            "I don't drink much coffee."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "He watches a lot of films.",
-          "cz": "On se dívá na hodně filmů.",
-          "gap": "He watches ____ of films.",
+          "en": "She spends a lot of time online.",
+          "cz": "Tráví spoustu času online.",
+          "gap": "She spends ____ of time online.",
           "gap_answer": "a lot",
           "accepts": [
-            "He watches a lot of films.",
-            "He watches lots of films."
+            "She spends a lot of time online.",
+            "She spends lots of time online."
           ],
           "explanation": "a + consonant sound (one, first time).",
           "explanation_cz": "a + souhlásková hláska (jedno, poprvé)."
         },
         {
-          "en": "We have lots of luggage.",
-          "cz": "Máme spoustu zavazadel.",
-          "gap": "We have ____ of luggage.",
+          "en": "We have lots of ideas.",
+          "cz": "Máme spoustu nápadů.",
+          "gap": "We have ____ of ideas.",
           "gap_answer": "lots",
           "accepts": [
-            "We have lots of luggage.",
-            "We have a lot of luggage."
+            "We have lots of ideas.",
+            "We have a lot of ideas.",
+            "We have many ideas."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "How many rooms does the flat have?",
-          "cz": "Kolik pokojů má ten byt?",
-          "gap": "How ____ rooms does the flat have?",
+          "en": "How many languages do you speak?",
+          "cz": "Kolik jazyků umíš?",
+          "gap": "How ____ languages do you speak?",
           "gap_answer": "many",
           "accepts": [
-            "How many rooms does the flat have?"
+            "How many languages do you speak?"
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -372,25 +361,23 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "There isn't much juice in the bottle.",
-          "cz": "V lahvi není moc džusu.",
-          "gap": "There isn't ____ juice in the bottle.",
+          "en": "There isn't much snow this year.",
+          "cz": "Letos není moc sněhu.",
+          "gap": "There isn't ____ snow this year.",
           "gap_answer": "much",
           "accepts": [
-            "There isn't much juice in the bottle.",
-            "There is not much juice in the bottle."
+            "There isn't much snow this year."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "There aren't many buses on Sunday.",
-          "cz": "V neděli nejezdí moc autobusů.",
-          "gap": "There aren't ____ buses on Sunday.",
+          "en": "There aren't many free seats.",
+          "cz": "Není mnoho volných míst.",
+          "gap": "There aren't ____ free seats.",
           "gap_answer": "many",
           "accepts": [
-            "There aren't many buses on Sunday.",
-            "There are not many buses on Sunday."
+            "There aren't many free seats."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -407,40 +394,37 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "She bought a few apples.",
-          "cz": "Koupila pár jablek.",
-          "gap": "She bought a ____ apples.",
+          "en": "She invited a few friends.",
+          "cz": "Pozvala pár kamarádů.",
+          "gap": "She invited a ____ friends.",
           "gap_answer": "few",
           "accepts": [
-            "She bought a few apples."
+            "She invited a few friends."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "Few students were late.",
-          "cz": "Málo studentů přišlo pozdě.",
-          "gap": "____ students were late.",
+          "en": "Few students failed the test.",
+          "cz": "Málo studentů neudělalo test.",
+          "gap": "____ students failed the test.",
           "gap_answer": "Few",
           "accepts": [
-            "Few students were late."
+            "Few students failed the test."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "We have little information about it.",
-          "cz": "Máme o tom málo informací.",
-          "gap": "We have ____ information about it.",
-          "gap_answer": "little",
+          "en": "Little is known about him.",
+          "cz": "Je o něm známo málo.",
+          "gap": "____ is known about him.",
+          "gap_answer": "Little",
           "accepts": [
-            "We have little information about it."
+            "Little is known about him."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména.",
-          "gap_accepts": [
-            "little"
-          ]
+          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
           "en": "Do you have much work today?",
@@ -465,25 +449,24 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "This job takes a lot of time.",
-          "cz": "Tahle práce zabere hodně času.",
-          "gap": "This job takes ____ of time.",
+          "en": "I put a lot of effort into this.",
+          "cz": "Dal jsem do toho spoustu úsilí.",
+          "gap": "I put ____ of effort into this.",
           "gap_answer": "a lot",
           "accepts": [
-            "This job takes a lot of time.",
-            "This job takes lots of time."
+            "I put a lot of effort into this.",
+            "I put lots of effort into this."
           ],
           "explanation": "a + consonant sound (one, first time).",
           "explanation_cz": "a + souhlásková hláska (jedno, poprvé)."
         },
         {
           "en": "He doesn't have many hobbies.",
-          "cz": "On nemá mnoho koníčků.",
+          "cz": "Nemá mnoho koníčků.",
           "gap": "He doesn't have ____ hobbies.",
           "gap_answer": "many",
           "accepts": [
-            "He doesn't have many hobbies.",
-            "He does not have many hobbies."
+            "He doesn't have many hobbies."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -500,12 +483,12 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "A few people were waiting.",
-          "cz": "Pár lidí čekalo.",
-          "gap": "A ____ people were waiting.",
+          "en": "A few people disagreed.",
+          "cz": "Pár lidí nesouhlasilo.",
+          "gap": "A ____ people disagreed.",
           "gap_answer": "few",
           "accepts": [
-            "A few people were waiting."
+            "A few people disagreed."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -516,31 +499,36 @@
           "gap": "How ____ does this cost?",
           "gap_answer": "much",
           "accepts": [
-            "How much does this cost?",
-            "How much is it?"
+            "How much does this cost?"
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "There is too much salt in the soup.",
-          "cz": "V polévce je moc soli.",
-          "gap": "There is too ____ salt in the soup.",
+          "en": "There is too much noise.",
+          "cz": "Je tu příliš hluku. (there/here OK)",
+          "gap": "There is too ____ noise.",
           "gap_answer": "much",
           "accepts": [
-            "There is too much salt in the soup.",
-            "There's too much salt in the soup."
+            "There is too much noise.",
+            "Here is too much noise.",
+            "Here's too much noise.",
+            "Here is too much noise",
+            "Here's too much noise",
+            "There is too much noise"
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
           "en": "There are too many cars.",
-          "cz": "Je tu příliš aut.",
+          "cz": "Je tu příliš aut. (there/here OK)",
           "gap": "There are too ____ cars.",
           "gap_answer": "many",
           "accepts": [
-            "There are too many cars."
+            "There are too many cars.",
+            "Here are too many cars.",
+            "Here are too many cars"
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -558,12 +546,12 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "We have very little bread.",
-          "cz": "Máme velmi málo chleba.",
-          "gap": "We have very ____ bread.",
+          "en": "She has very little patience.",
+          "cz": "Má velmi málo trpělivosti.",
+          "gap": "She has very ____ patience.",
           "gap_answer": "little",
           "accepts": [
-            "We have very little bread."
+            "She has very little patience."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -580,15 +568,15 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "I didn't meet anybody.",
-          "cz": "Nikoho jsem nepotkal.",
-          "gap": "I didn't meet ____.",
+          "en": "I didn't tell anybody.",
+          "cz": "Nikomu jsem to neřekl.",
+          "gap": "I didn't tell ____.",
           "gap_answer": "anybody",
           "accepts": [
-            "I didn't meet anybody.",
-            "I didn't meet anyone.",
-            "I did not meet anybody.",
-            "I did not meet anyone."
+            "I didn't tell anybody.",
+            "I did not tell anybody.",
+            "I didn't tell anyone.",
+            "I did not tell anyone."
           ],
           "gap_accepts": [
             "anyone"
@@ -609,15 +597,15 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "She doesn't like anyone here.",
-          "cz": "Nikoho tu nemá ráda.",
-          "gap": "She doesn't like ____ here.",
+          "en": "She doesn't know anyone here.",
+          "cz": "Tady nikoho nezná.",
+          "gap": "She doesn't know ____ here.",
           "gap_answer": "anyone",
           "accepts": [
-            "She doesn't like anyone here.",
-            "She doesn't like anybody here.",
-            "She does not like anyone here.",
-            "She does not like anybody here."
+            "She doesn't know anyone here.",
+            "She does not know anyone here.",
+            "She doesn't know anybody here.",
+            "She does not know anybody here."
           ],
           "gap_accepts": [
             "anybody"
@@ -644,7 +632,7 @@
         },
         {
           "en": "He doesn't go anywhere at weekends.",
-          "cz": "On o víkendech nikam nechodí.",
+          "cz": "O víkendech nikam nechodí.",
           "gap": "He doesn't go ____ at weekends.",
           "gap_answer": "anywhere",
           "accepts": [
@@ -657,64 +645,16 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "I don't need anything now.",
-          "cz": "Teď nic nepotřebuju.",
-          "gap": "I don't need ____ now.",
+          "en": "I don't need anything else.",
+          "cz": "Nic dalšího nepotřebuju.",
+          "gap": "I don't need ____ else.",
           "gap_answer": "anything",
           "accepts": [
-            "I don't need anything now.",
-            "I do not need anything now."
+            "I don't need anything else.",
+            "I do not need anything else."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
-        },
-        {
-          "en": "This one is a lot different.",
-          "cz": "Tenhle je dost jiný.",
-          "gap": "This one is ____ different.",
-          "gap_answer": "a lot",
-          "accepts": [
-            "This one is a lot different."
-          ],
-          "gap_accepts": [
-            "a lot",
-            "much"
-          ],
-          "explanation": "Here a lot means much — it strengthens the word after it: a lot better, a lot different.",
-          "explanation_cz": "Tady a lot znamená much — zesiluje slovo za sebou: a lot better, a lot different."
-        },
-        {
-          "en": "The second version is a lot better.",
-          "cz": "Druhá verze je o dost lepší.",
-          "gap": "The second version is ____ better.",
-          "gap_answer": "a lot",
-          "accepts": [
-            "The second version is a lot better."
-          ],
-          "gap_accepts": [
-            "a lot",
-            "much",
-            "far"
-          ],
-          "explanation": "Here a lot means much — it strengthens the word after it: a lot better, a lot different.",
-          "explanation_cz": "Tady a lot znamená much — zesiluje slovo za sebou: a lot better, a lot different."
-        },
-        {
-          "en": "It is a lot colder today.",
-          "cz": "Dnes je o dost chladněji.",
-          "gap": "It is ____ colder today.",
-          "gap_answer": "a lot",
-          "accepts": [
-            "It is a lot colder today.",
-            "It's a lot colder today."
-          ],
-          "gap_accepts": [
-            "a lot",
-            "much",
-            "far"
-          ],
-          "explanation": "Here a lot means much — it strengthens the word after it: a lot better, a lot different.",
-          "explanation_cz": "Tady a lot znamená much — zesiluje slovo za sebou: a lot better, a lot different."
         }
       ]
     }

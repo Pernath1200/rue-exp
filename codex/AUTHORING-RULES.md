@@ -58,6 +58,7 @@ Translate answers.
 | **B2** | Never borrow a sibling item's answer as a distractor in a FORM pack. Borrowing is right only where the point is *which word*. | 1,543 items across 54 units borrow. `b1_verb_patterns_advanced` offered no `-ing` option at all in a unit about `-ing`. | `confirmed` |
 | **B3** | Author `quiz_options` wherever the teaching point is form. The fallback cannot know the axis. | 47% of gap items have none. | `confirmed` |
 | **B4** | The unit's own target error must appear among the options. | `a2_comparatives` was extended for *more better* — and *more better* is never shown. | `observed` |
+| **B5** | A Match board needs distinct left-side values. A block whose answers are two-to-four repeated labels (one/more-than-one, subject/object, noun/verb…) must not ship Match — quiz only. Ten tiles reading "one" five times is clicking, not matching. | `a1_word_classes` one/more-than-one board, James smoke 2026-08-25: "absolute shite". | `confirmed` |
 
 ---
 

@@ -8,6 +8,7 @@ import { startPractice as startVocabPractice } from "./practice-vocab.js";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   loadProgress,
+  recentNodeIds,
   isLevelUnlocked,
   hasFruit,
   progressLabelGrammar,
@@ -1068,6 +1069,7 @@ function renderRoots() {
         const n = nodeById(id);
         return n ? progressState(n) : "planned";
       },
+      recent: recentNodeIds(),
       onSelect: (node) => focusNodeOnMap(node),
     });
   }

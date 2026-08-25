@@ -446,6 +446,9 @@ export function renderTreePortrait(container, opts) {
   // unit just completed, whose newest lit slot gets the grow-in animation.
   const highlight = new Set(opts.highlight || []);
   const justNow = opts.justNow || null;
+  // Node ids with recent activity (Set) — when provided, sapling-age house
+  // labels only name houses with recent growth instead of any activity ever.
+  const recent = opts.recent || null;
   /* focus:"roots" — the grammar payoff view (James, 2026-08-24): grammar lives
    * below ground, so finishing a grammar unit shows trunk + roots ONLY — no
    * limbs, no crown labels — with the unit's root emphasised, growing, and
@@ -575,7 +578,8 @@ export function renderTreePortrait(container, opts) {
     }
     const o = origin || g.tip || [cx, soilY];
     canopy += '<g class="tp-house ' + house.state + (hi ? " tp-hi" : "") + '" data-part="' + house.tree_part + '" data-node="' + house.dataId + '" style="transform-origin:' + f1(o[0]) + 'px ' + f1(o[1]) + 'px">' + s + "<title>" + esc(house.label) + "</title></g>";
-    const showLabel = lvIdx >= 2 ? !dim : active;
+    const recentHouse = recent ? house.touched.some((n) => recent.has(n.id)) : true;
+    const showLabel = lvIdx >= 2 ? !dim : hi || (active && recentHouse);
     if (showLabel && labelAt) labelList.push({ x: labelAt[0], y: labelAt[1], side: labelSide, active, house });
   });
   // Labels that would overprint (two houses on one shoot) stack downwards instead.

@@ -5,7 +5,7 @@
   "tree_node": "b1_relative_clauses",
   "codex_unit": "G_CL-B1B2-01",
   "practice": "frames",
-  "note": "who/which/that + where/when/why · defining · omission page. · Bank 64 · full-pronoun expansion + that-rebalance 2026-07-27",
+  "note": "who/which/that + where/when/why · defining · omission page. · Bank 64 · full-pronoun expansion + that-rebalance 2026-07-27 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -38,7 +38,7 @@
           "en": "The book that I bought is useful.",
           "cz": "Kniha, kterou jsem koupil, je užitečná.",
           "gap": "The book ____ I bought is useful.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The book that I bought is useful.",
             "The book which I bought is useful."
@@ -86,7 +86,7 @@
           "en": "The film that we saw was long.",
           "cz": "Film, který jsme viděli, byl dlouhý.",
           "gap": "The film ____ we saw was long.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The film that we saw was long.",
             "The film which we saw was long."
@@ -105,9 +105,7 @@
           "gap_answer": "who",
           "accepts": [
             "She is the teacher who helped me.",
-            "She is the teacher that helped me.",
-            "She's the teacher who helped me.",
-            "She's the teacher that helped me."
+            "She is the teacher that helped me."
           ],
           "gap_accepts": [
             "who",
@@ -134,9 +132,9 @@
         },
         {
           "en": "The keys that are on the table are mine.",
-          "cz": "Klíče, které jsou na stole, jsou moje.",
+          "cz": "Klíče na stole jsou moje.",
           "gap": "The keys ____ are on the table are mine.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The keys that are on the table are mine.",
             "The keys which are on the table are mine."
@@ -200,9 +198,9 @@
         },
         {
           "en": "The bus that goes to Brno leaves at nine.",
-          "cz": "Autobus, který jede do Brna, odjíždí v devět.",
+          "cz": "Autobus do Brna odjíždí v devět.",
           "gap": "The bus ____ goes to Brno leaves at nine.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The bus that goes to Brno leaves at nine.",
             "The bus which goes to Brno leaves at nine."
@@ -237,8 +235,7 @@
           "gap_answer": "that",
           "accepts": [
             "I need a bag that is big enough.",
-            "I need a bag which is big enough.",
-            "I need a bag that's big enough."
+            "I need a bag which is big enough."
           ],
           "gap_accepts": [
             "that",
@@ -299,9 +296,9 @@
         },
         {
           "en": "The shop that sells tools is closed.",
-          "cz": "Obchod, který prodává nářadí, je zavřený.",
+          "cz": "Obchod s nářadím je zavřený.",
           "gap": "The shop ____ sells tools is closed.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The shop that sells tools is closed.",
             "The shop which sells tools is closed."
@@ -320,13 +317,7 @@
           "gap_answer": "who",
           "accepts": [
             "He is someone who never gives up.",
-            "He is someone that never gives up.",
-            "She is someone who never gives up.",
-            "She is someone that never gives up.",
-            "He's someone who never gives up.",
-            "He's someone that never gives up.",
-            "She's someone who never gives up.",
-            "She's someone that never gives up."
+            "He is someone that never gives up."
           ],
           "gap_accepts": [
             "who",
@@ -355,7 +346,7 @@
           "en": "The city that I love is Prague.",
           "cz": "Město, které miluju, je Praha.",
           "gap": "The city ____ I love is Prague.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The city that I love is Prague.",
             "The city which I love is Prague."
@@ -374,9 +365,7 @@
           "gap_answer": "who",
           "accepts": [
             "She has a brother who lives in Berlin.",
-            "She has a brother that lives in Berlin.",
-            "He has a brother who lives in Berlin.",
-            "He has a brother that lives in Berlin."
+            "She has a brother that lives in Berlin."
           ],
           "gap_accepts": [
             "who",
@@ -453,7 +442,7 @@
           "en": "Is this the train that stops in Pardubice?",
           "cz": "Je tohle vlak, který staví v Pardubicích?",
           "gap": "Is this the train ____ stops in Pardubice?",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "Is this the train that stops in Pardubice?",
             "Is this the train which stops in Pardubice?"
@@ -485,7 +474,7 @@
           "en": "People that work from home need good Wi‑Fi.",
           "cz": "Lidé, kteří pracují z domova, potřebují dobré wi‑fi.",
           "gap": "People ____ work from home need good Wi‑Fi.",
-          "gap_answer": "that",
+          "gap_answer": "who",
           "accepts": [
             "People that work from home need good Wi‑Fi.",
             "People who work from home need good Wi‑Fi."
@@ -520,9 +509,7 @@
           "gap_answer": "who",
           "accepts": [
             "He is the engineer who designed the bridge.",
-            "He is the engineer that designed the bridge.",
-            "He's the engineer who designed the bridge.",
-            "He's the engineer that designed the bridge."
+            "He is the engineer that designed the bridge."
           ],
           "gap_accepts": [
             "who",
@@ -535,11 +522,10 @@
           "en": "I want a job that is interesting.",
           "cz": "Chci práci, která je zajímavá.",
           "gap": "I want a job ____ is interesting.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "I want a job that is interesting.",
-            "I want a job which is interesting.",
-            "I want a job that's interesting."
+            "I want a job which is interesting."
           ],
           "gap_accepts": [
             "that",
@@ -568,7 +554,7 @@
           "en": "Anyone that needs help can ask.",
           "cz": "Kdokoli, kdo potřebuje pomoc, se může zeptat.",
           "gap": "Anyone ____ needs help can ask.",
-          "gap_answer": "that",
+          "gap_answer": "who",
           "accepts": [
             "Anyone that needs help can ask.",
             "Anyone who needs help can ask."
@@ -603,13 +589,7 @@
           "gap_answer": "who",
           "accepts": [
             "She is a writer who lives nearby.",
-            "She is a writer that lives nearby.",
-            "He is a writer who lives nearby.",
-            "He is a writer that lives nearby.",
-            "She's a writer who lives nearby.",
-            "She's a writer that lives nearby.",
-            "He's a writer who lives nearby.",
-            "He's a writer that lives nearby."
+            "She is a writer that lives nearby."
           ],
           "gap_accepts": [
             "who",
@@ -622,7 +602,7 @@
           "en": "The problem that we discussed is hard.",
           "cz": "Problém, o kterém jsme mluvili, je těžký.",
           "gap": "The problem ____ we discussed is hard.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The problem that we discussed is hard.",
             "The problem which we discussed is hard."
@@ -670,11 +650,10 @@
           "en": "This is the only ticket that is left.",
           "cz": "Tohle je jediný lístek, který zbývá.",
           "gap": "This is the only ticket ____ is left.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "This is the only ticket that is left.",
-            "This is the only ticket which is left.",
-            "This is the only ticket that's left."
+            "This is the only ticket which is left."
           ],
           "gap_accepts": [
             "that",
@@ -733,9 +712,9 @@
         },
         {
           "en": "He told a story that made us laugh.",
-          "cz": "Vyprávěl příběh, který nás rozesmál.",
+          "cz": "Vyprávěl příběh, ze kterého jsme se smáli.",
           "gap": "He told a story ____ made us laugh.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "He told a story that made us laugh.",
             "He told a story which made us laugh."
@@ -749,9 +728,9 @@
         },
         {
           "en": "The path that leads to the river is muddy.",
-          "cz": "Cesta, která vede k řece, je blátivá.",
+          "cz": "Cesta k řece je blátivá.",
           "gap": "The path ____ leads to the river is muddy.",
-          "gap_answer": "that",
+          "gap_answer": "which",
           "accepts": [
             "The path that leads to the river is muddy.",
             "The path which leads to the river is muddy."
@@ -770,9 +749,7 @@
           "gap_answer": "who",
           "accepts": [
             "She has friends who live in Spain.",
-            "She has friends that live in Spain.",
-            "He has friends who live in Spain.",
-            "He has friends that live in Spain."
+            "She has friends that live in Spain."
           ],
           "gap_accepts": [
             "who",
@@ -852,13 +829,7 @@
           "gap_answer": "that",
           "accepts": [
             "She is looking for a flat that has a balcony.",
-            "She is looking for a flat which has a balcony.",
-            "He is looking for a flat that has a balcony.",
-            "He is looking for a flat which has a balcony.",
-            "She's looking for a flat that has a balcony.",
-            "She's looking for a flat which has a balcony.",
-            "He's looking for a flat that has a balcony.",
-            "He's looking for a flat which has a balcony."
+            "She is looking for a flat which has a balcony."
           ],
           "gap_accepts": [
             "that",
@@ -904,8 +875,7 @@
             "where"
           ],
           "accepts": [
-            "The office where she works is in the centre.",
-            "The office where he works is in the centre."
+            "The office where she works is in the centre."
           ],
           "explanation": "where = place.",
           "explanation_cz": "where = místo."
@@ -933,10 +903,7 @@
             "where"
           ],
           "accepts": [
-            "That is the hotel where we stayed.",
-            "That is the hotel where we lived.",
-            "That's the hotel where we stayed.",
-            "That's the hotel where we lived."
+            "That is the hotel where we stayed."
           ],
           "explanation": "where = place.",
           "explanation_cz": "where = místo."
@@ -1030,9 +997,7 @@
           ],
           "accepts": [
             "I don't know the reason why she left.",
-            "I don't know the reason that she left.",
-            "I do not know the reason why she left.",
-            "I do not know the reason that she left."
+            "I don't know the reason that she left."
           ],
           "explanation": "why = reason.",
           "explanation_cz": "why = důvod."
@@ -1125,7 +1090,7 @@
       {
         "title": "Form",
         "title_cz": "Tvar",
-        "body": "noun + who/which/that + clause: the app that I use · the woman who lives next door. Defining = necessary info, no commas in this unit.",
+        "body": "noun + who/which/that + clause: the app that I use · the woman who lives next door. Defining = necessary info, no commas in this pack.",
         "body_cz": "podstatné jméno + who/which/that + věta. Vymezovací = nutná informace, bez čárek."
       },
       {

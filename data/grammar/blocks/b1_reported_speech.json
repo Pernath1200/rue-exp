@@ -5,7 +5,7 @@
   "tree_node": "b1_reported_speech",
   "codex_unit": "G_CL-B1B2-01",
   "practice": "frames",
-  "note": "backshift · said/told · if/wh. · Bank 54 · good draft · said/told ROI slice · Match off · reported quiz backshift traps 2026-07-26 · 2026-08-19 (James, Patrik smoke): bank had ONE explanation for all 54 items — say/tell, no-shift modals, reported questions and past perfect now carry the reason that actually fits · 2026-08-19: negatives contracted (do not -> don't) — textbook register for a B1/B2 speaker; full forms still accepted",
+  "note": "backshift · said/told · if/wh. · Bank 54 · good draft · said/told ROI slice · Match off · reported quiz backshift traps 2026-07-26 · 2026-08-19 (James, Patrik smoke): bank had ONE explanation for all 54 items — say/tell, no-shift modals, reported questions and past perfect now carry the reason that actually fits · 2026-08-19: negatives contracted (do not -> don't) — textbook register for a B1/B2 speaker; full forms still accepted · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -24,8 +24,7 @@
           "gap": "He said he ____ tired.",
           "gap_answer": "was",
           "accepts": [
-            "He said he was tired.",
-            "He said that he was tired."
+            "He said he was tired."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -36,8 +35,7 @@
           "gap": "She said she ____ in Brno.",
           "gap_answer": "worked",
           "accepts": [
-            "She said she worked in Brno.",
-            "She said that she worked in Brno."
+            "She said she worked in Brno."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -48,11 +46,10 @@
           "gap": "They said they ____ finished.",
           "gap_answer": "had",
           "accepts": [
-            "They said they had finished.",
-            "They said that they had finished."
+            "They said they had finished."
           ],
-          "explanation": "present perfect / past simple → past perfect: had + past participle.",
-          "explanation_cz": "předpřítomný / minulý → předminulý: had + příčestí."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He told me he would call.",
@@ -60,10 +57,7 @@
           "gap": "He told me he ____ call.",
           "gap_answer": "would",
           "accepts": [
-            "He told me he would call.",
-            "She told me she would call.",
-            "He told me that he would call.",
-            "She told me that she would call."
+            "He told me he would call."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -74,8 +68,7 @@
           "gap": "She said she ____ help.",
           "gap_answer": "could",
           "accepts": [
-            "She said she could help.",
-            "She said that she could help."
+            "She said she could help."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -88,8 +81,8 @@
           "accepts": [
             "He asked if I was ready."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "She asked where I lived.",
@@ -103,8 +96,8 @@
           "gap_accepts": [
             "lived"
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He said he had never been there.",
@@ -112,13 +105,10 @@
           "gap": "He said he ____ never been there.",
           "gap_answer": "had",
           "accepts": [
-            "He said he had never been there.",
-            "She said she had never been there.",
-            "He said that he had never been there.",
-            "She said that she had never been there."
+            "He said he had never been there."
           ],
-          "explanation": "present perfect / past simple → past perfect: had + past participle.",
-          "explanation_cz": "předpřítomný / minulý → předminulý: had + příčestí."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "They told us they were leaving.",
@@ -126,8 +116,7 @@
           "gap": "They told us they ____ leaving.",
           "gap_answer": "were",
           "accepts": [
-            "They told us they were leaving.",
-            "They told us that they were leaving."
+            "They told us they were leaving."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -139,16 +128,14 @@
           "gap_answer": "might",
           "accepts": [
             "She said she might come.",
-            "She said she would come.",
-            "She said that she might come.",
-            "She said that she would come."
+            "She said she would come."
           ],
           "gap_accepts": [
             "might",
             "would"
           ],
-          "explanation": "might, could, would and should do not shift — they are already past-form modals.",
-          "explanation_cz": "might, could, would a should se neposouvají — už jsou v minulém tvaru."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He asked me what I wanted.",
@@ -162,20 +149,17 @@
           "gap_accepts": [
             "wanted"
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
-          "en": "I said I didn't know.",
+          "en": "I said I did not know.",
           "cz": "Řekl jsem, že nevím.",
           "gap": "I said I ____ know. (negative)",
-          "gap_answer": "didn't",
+          "gap_answer": "did not",
           "accepts": [
-            "I said I didn't know.",
-            "I said I didn't know.",
             "I said I did not know.",
-            "I said that I didn't know.",
-            "I said that I did not know."
+            "I said I didn't know."
           ],
           "gap_accepts": [
             "did not",
@@ -190,8 +174,7 @@
           "gap": "She said she ____ busy.",
           "gap_answer": "was",
           "accepts": [
-            "She said she was busy.",
-            "She said that she was busy."
+            "She said she was busy."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -202,10 +185,7 @@
           "gap": "He said they ____ at home.",
           "gap_answer": "were",
           "accepts": [
-            "He said they were at home.",
-            "She said they were at home.",
-            "He said that they were at home.",
-            "She said that they were at home."
+            "He said they were at home."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -216,8 +196,7 @@
           "gap": "She told him she ____ time.",
           "gap_answer": "needed",
           "accepts": [
-            "She told him she needed time.",
-            "She told him that she needed time."
+            "She told him she needed time."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -228,10 +207,7 @@
           "gap": "He said he ____ be late.",
           "gap_answer": "would",
           "accepts": [
-            "He said he would be late.",
-            "She said she would be late.",
-            "He said that he would be late.",
-            "She said that she would be late."
+            "He said he would be late."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -242,8 +218,7 @@
           "gap": "They said they ____ wait.",
           "gap_answer": "could",
           "accepts": [
-            "They said they could wait.",
-            "They said that they could wait."
+            "They said they could wait."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -256,8 +231,8 @@
           "accepts": [
             "She asked if we had eaten."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He asked when the train left.",
@@ -273,8 +248,8 @@
             "left",
             "departed"
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "She said she had lost her phone.",
@@ -282,11 +257,10 @@
           "gap": "She said she ____ lost her phone.",
           "gap_answer": "had",
           "accepts": [
-            "She said she had lost her phone.",
-            "She said that she had lost her phone."
+            "She said she had lost her phone."
           ],
-          "explanation": "present perfect / past simple → past perfect: had + past participle.",
-          "explanation_cz": "předpřítomný / minulý → předminulý: had + příčestí."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He told us he worked nights.",
@@ -294,10 +268,7 @@
           "gap": "He told us he ____ nights.",
           "gap_answer": "worked",
           "accepts": [
-            "He told us he worked nights.",
-            "She told us she worked nights.",
-            "He told us that he worked nights.",
-            "She told us that she worked nights."
+            "He told us he worked nights."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -308,8 +279,7 @@
           "gap": "They said they ____ help.",
           "gap_answer": "would",
           "accepts": [
-            "They said they would help.",
-            "They said that they would help."
+            "They said they would help."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -322,8 +292,8 @@
           "accepts": [
             "She asked why I was angry."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He said he might stay.",
@@ -332,20 +302,14 @@
           "gap_answer": "might",
           "accepts": [
             "He said he might stay.",
-            "He said he would stay.",
-            "She said she might stay.",
-            "She said she would stay.",
-            "He said that he might stay.",
-            "He said that he would stay.",
-            "She said that she might stay.",
-            "She said that she would stay."
+            "He said he would stay."
           ],
           "gap_accepts": [
             "might",
             "would"
           ],
-          "explanation": "might, could, would and should do not shift — they are already past-form modals.",
-          "explanation_cz": "might, could, would a should se neposouvají — už jsou v minulém tvaru."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "I told her I was free.",
@@ -353,8 +317,7 @@
           "gap": "I told her I ____ free.",
           "gap_answer": "was",
           "accepts": [
-            "I told her I was free.",
-            "I told her that I was free."
+            "I told her I was free."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -365,7 +328,6 @@
           "gap": "She said the shop ____ closed.",
           "gap_answer": "was",
           "accepts": [
-            "She said that the shop was closed.",
             "She said the shop was closed."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
@@ -379,8 +341,8 @@
           "accepts": [
             "He asked if she liked coffee."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "They said they had arrived.",
@@ -388,11 +350,10 @@
           "gap": "They said they ____ arrived.",
           "gap_answer": "had",
           "accepts": [
-            "They said they had arrived.",
-            "They said that they had arrived."
+            "They said they had arrived."
           ],
-          "explanation": "present perfect / past simple → past perfect: had + past participle.",
-          "explanation_cz": "předpřítomný / minulý → předminulý: had + příčestí."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "She told me she would write.",
@@ -400,28 +361,19 @@
           "gap": "She told me she ____ write.",
           "gap_answer": "would",
           "accepts": [
-            "She told me she would write.",
-            "She told me that she would write."
+            "She told me she would write."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
-          "en": "He said he couldn't come.",
+          "en": "He said he could not come.",
           "cz": "Řekl, že nemůže přijít.",
           "gap": "He said he ____ come. (unable / negative)",
-          "gap_answer": "couldn't",
+          "gap_answer": "could not",
           "accepts": [
-            "He said he couldn't come.",
-            "He said he couldn't come.",
-            "She said she couldn't come.",
-            "She said she couldn't come.",
             "He said he could not come.",
-            "He said that he couldn't come.",
-            "She said that she couldn't come.",
-            "He said that he could not come.",
-            "She said she could not come.",
-            "She said that she could not come."
+            "He said he couldn't come."
           ],
           "gap_accepts": [
             "could not",
@@ -438,8 +390,8 @@
           "accepts": [
             "She asked who had called."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He said he was going home.",
@@ -447,10 +399,7 @@
           "gap": "He said he ____ going home.",
           "gap_answer": "was",
           "accepts": [
-            "He said he was going home.",
-            "She said she was going home.",
-            "He said that he was going home.",
-            "She said that she was going home."
+            "He said he was going home."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -461,8 +410,7 @@
           "gap": "They told me the meeting ____ cancelled.",
           "gap_answer": "was",
           "accepts": [
-            "They told me the meeting was cancelled.",
-            "They told me that the meeting was cancelled."
+            "They told me the meeting was cancelled."
           ],
           "gap_accepts": [
             "was"
@@ -476,11 +424,10 @@
           "gap": "She said she ____ already paid.",
           "gap_answer": "had",
           "accepts": [
-            "She said she had already paid.",
-            "She said that she had already paid."
+            "She said she had already paid."
           ],
-          "explanation": "present perfect / past simple → past perfect: had + past participle.",
-          "explanation_cz": "předpřítomný / minulý → předminulý: had + příčestí."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He asked how long I had waited.",
@@ -490,8 +437,8 @@
           "accepts": [
             "He asked how long I had waited."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "I said I would think about it.",
@@ -499,8 +446,7 @@
           "gap": "I said I ____ think about it.",
           "gap_answer": "would",
           "accepts": [
-            "I said I would think about it.",
-            "I said that I would think about it."
+            "I said I would think about it."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -511,8 +457,7 @@
           "gap": "She said they ____ moving soon.",
           "gap_answer": "were",
           "accepts": [
-            "She said they were moving soon.",
-            "She said that they were moving soon."
+            "She said they were moving soon."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -523,8 +468,7 @@
           "gap": "He told her he ____ the idea.",
           "gap_answer": "loved",
           "accepts": [
-            "He told her he loved the idea.",
-            "He told her that he loved the idea."
+            "He told her he loved the idea."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -537,8 +481,8 @@
           "accepts": [
             "They asked if I could drive."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "She said she might be late.",
@@ -547,16 +491,14 @@
           "gap_answer": "might",
           "accepts": [
             "She said she might be late.",
-            "She said she would be late.",
-            "She said that she might be late.",
-            "She said that she would be late."
+            "She said she would be late."
           ],
           "gap_accepts": [
             "might",
             "would"
           ],
-          "explanation": "might, could, would and should do not shift — they are already past-form modals.",
-          "explanation_cz": "might, could, would a should se neposouvají — už jsou v minulém tvaru."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He said the film was great.",
@@ -564,8 +506,7 @@
           "gap": "He said the film ____ great.",
           "gap_answer": "was",
           "accepts": [
-            "He said the film was great.",
-            "He said that the film was great."
+            "He said the film was great."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -578,20 +519,17 @@
           "accepts": [
             "I asked where they lived."
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
-          "en": "She said she wouldn't forget.",
+          "en": "She said she would not forget.",
           "cz": "Řekla, že nezapomene.",
           "gap": "She said she ____ forget.",
-          "gap_answer": "wouldn't",
+          "gap_answer": "would not",
           "accepts": [
-            "She said she wouldn't forget.",
-            "She said she wouldn't forget.",
             "She said she would not forget.",
-            "She said that she wouldn't forget.",
-            "She said that she would not forget."
+            "She said she wouldn't forget."
           ],
           "gap_accepts": [
             "would not",
@@ -606,11 +544,10 @@
           "gap": "He told us he ____ finished work.",
           "gap_answer": "had",
           "accepts": [
-            "He told us he had finished work.",
-            "He told us that he had finished work."
+            "He told us he had finished work."
           ],
-          "explanation": "present perfect / past simple → past perfect: had + past participle.",
-          "explanation_cz": "předpřítomný / minulý → předminulý: had + příčestí."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "They said they were happy.",
@@ -618,8 +555,7 @@
           "gap": "They said they ____ happy.",
           "gap_answer": "were",
           "accepts": [
-            "They said they were happy.",
-            "They said that they were happy."
+            "They said they were happy."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -638,8 +574,8 @@
             "started",
             "began"
           ],
-          "explanation": "After asked, statement order inside — no do/does/did, no inversion — and the tense steps back.",
-          "explanation_cz": "Po asked je uvnitř oznamovací pořadí — bez do/does/did, bez inverze — a čas se posune zpět."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He said he needed a break.",
@@ -647,10 +583,7 @@
           "gap": "He said he ____ a break.",
           "gap_answer": "needed",
           "accepts": [
-            "He said he needed a break.",
-            "She said she needed a break.",
-            "He said that he needed a break.",
-            "She said that she needed a break."
+            "He said he needed a break."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -661,8 +594,7 @@
           "gap": "I told them I ____ arrive at six.",
           "gap_answer": "would",
           "accepts": [
-            "I told them I would arrive at six.",
-            "I told them that I would arrive at six."
+            "I told them I would arrive at six."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -673,11 +605,10 @@
           "gap": "He ____ me the news.",
           "gap_answer": "told",
           "accepts": [
-            "He told me the news.",
-            "She told me the news."
+            "He told me the news."
           ],
-          "explanation": "tell needs a person after it (told me); say does not take one (said that…).",
-          "explanation_cz": "tell má po sobě osobu (told me); say osobu jako předmět nemá (said that…)."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "She said that the shop was closed.",
@@ -688,8 +619,8 @@
             "She said that the shop was closed.",
             "She said the shop was closed."
           ],
-          "explanation": "tell needs a person after it (told me); say does not take one (said that…).",
-          "explanation_cz": "tell má po sobě osobu (told me); say osobu jako předmět nemá (said that…)."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "They told us about the delay.",
@@ -699,8 +630,8 @@
           "accepts": [
             "They told us about the delay."
           ],
-          "explanation": "tell needs a person after it (told me); say does not take one (said that…).",
-          "explanation_cz": "tell má po sobě osobu (told me); say osobu jako předmět nemá (said that…)."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "He said he was free on Friday.",
@@ -709,12 +640,10 @@
           "gap_answer": "said",
           "accepts": [
             "He said he was free on Friday.",
-            "He said that he was free on Friday.",
-            "She said she was free on Friday.",
-            "She said that she was free on Friday."
+            "He said that he was free on Friday."
           ],
-          "explanation": "tell needs a person after it (told me); say does not take one (said that…).",
-          "explanation_cz": "tell má po sobě osobu (told me); say osobu jako předmět nemá (said that…)."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "Patrik said that the meeting was short.",
@@ -725,8 +654,8 @@
             "Patrik said that the meeting was short.",
             "Patrik said the meeting was short."
           ],
-          "explanation": "tell needs a person after it (told me); say does not take one (said that…).",
-          "explanation_cz": "tell má po sobě osobu (told me); say osobu jako předmět nemá (said that…)."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         },
         {
           "en": "Ondřej told me he worked in Brno.",
@@ -735,12 +664,10 @@
           "gap_answer": "told",
           "accepts": [
             "Ondřej told me he worked in Brno.",
-            "Ondřej told me that he worked in Brno.",
-            "Ondřej told me she worked in Brno.",
-            "Ondřej told me that she worked in Brno."
+            "Ondřej told me that he worked in Brno."
           ],
-          "explanation": "tell needs a person after it (told me); say does not take one (said that…).",
-          "explanation_cz": "tell má po sobě osobu (told me); say osobu jako předmět nemá (said that…)."
+          "explanation": "Backshift: present → past when the reporting verb is past.",
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
         }
       ]
     }
