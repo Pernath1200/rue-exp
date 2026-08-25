@@ -14,7 +14,7 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**6 inspected · 0 approved · 93 unseen** of 99 live units
+**7 inspected · 0 approved · 92 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **0 have any tick**.
 
@@ -44,11 +44,11 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 1 inspected / 0 approved / 16 units
+## A2 — 2 inspected / 0 approved / 16 units
 
 - [ ][ ] `a2_modals_must_should` — Must / should · 48 items · **cloud** · seen?
 - [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
-- [ ][ ] `a2_agreement` — Subject–verb agreement (A2) · 27 items
+- [x][ ] `a2_agreement` — Subject–verb agreement (A2) · 27 items
 - [ ][ ] `a2_comparatives` — Comparatives · 48 items · seen?
 - [ ][ ] `a2_countable` — Countable and uncountable · 48 items · seen?
 - [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 24 items · seen?
