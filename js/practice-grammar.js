@@ -1742,7 +1742,14 @@ export function startPractice(rawPack, root, opts) {
     const grade = () => {
       if (answered) return;
       answered = true;
-      const good = isCorrect(input.value, item, mode);
+      // Zero-article items: the empty box IS the answer — Enter with nothing
+      // typed submits "no article" (James, 2026-08-25, a1_articles smoke).
+      const zeroItem =
+        item.answer === "—" || item.ending === "—" ||
+        (item.accepts || []).includes("—");
+      const typedVal =
+        zeroItem && input.value.trim() === "" ? "—" : input.value;
+      const good = isCorrect(typedVal, item, mode);
       if (good) {
         if (!retype) {
           if (kind === "type") state.typeScore += 1;

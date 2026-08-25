@@ -14,20 +14,20 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**5 inspected · 0 approved · 94 unseen** of 99 live units
+**6 inspected · 0 approved · 93 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **0 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 3 inspected / 0 approved / 20 units
+## A1 — 4 inspected / 0 approved / 20 units
 
 - [ ][ ] `a1_be_have` — Be / have · 26 items · **cloud** · seen?
 - [ ][ ] `a1_present_simple` — Present simple · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [ ][ ] `a1_and_but_because` — And / but / because · 24 items · seen?
-- [ ][ ] `a1_articles` — Articles 1 · 32 items · seen?
+- [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [ ][ ] `a1_can` — Can / can't · 24 items · seen?
 - [ ][ ] `a1_frequency` — Frequency · 24 items · seen?
 - [ ][ ] `a1_imperatives` — Imperatives · 24 items · seen?

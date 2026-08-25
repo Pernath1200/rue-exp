@@ -635,6 +635,16 @@ button rather than stopping to write it down.
   clean, no change**: every option set is same-slot forms (do/does/is/are in
   question items is the typical-mistake set for that slot).
 
+### Sequencing sweep over the 46 transplanted units (James flag, 2026-08-25 evening)
+
+- [ ] **Run `check_pretaught` over the transplanted banks and recast violations.**
+  The RUE2 content predates the pool/sequencing discipline: a1_articles used
+  *bought* (irregular past) at unit 9 — fixed same evening (→ *have*; also
+  note *was in prison* in the same unit, unfixed). Enumerate with the gate,
+  recast each violation onto taught-only language, James's eye on the recasts,
+  Czech edits queue into the Czech lane. This is the one systematic cost of
+  the transplant and it is finite.
+
 ### New-unit ideas — authoring, NOT repair. Do not process in any lane; needs a James build session.
 
 - [ ] **nature / countryside (příroda)** — flagged 2026-08-25 (James, reviewing
