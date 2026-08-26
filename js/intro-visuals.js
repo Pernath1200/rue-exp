@@ -17,6 +17,7 @@
 const ACCENT = "var(--vocab-accent, #4db6c7)";
 const MUTED = "var(--muted, #a0a0a0)";
 const TEXT = "var(--text, #fff)";
+const SURFACE = "var(--surface, #141414)";
 
 function esc(s) {
   return String(s == null ? "" : s)
@@ -294,9 +295,88 @@ function decision_flow(labels) {
   return svg(inner, 320, dy + 56);
 }
 
+/* Place prepositions — ball and box. Same scenes the vocab engine already
+ * draws on items (practice-vocab diagramSvg). Grammar intros named these
+ * keys for years and got a blank: introDiagram only knew scale/branch/…
+ * (a1_prepositions_place, James 2026-08-26). Theme strokes, not the old
+ * hardcoded orange. */
+function pBox(x, y, w, h) {
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6" fill="${SURFACE}" stroke="${ACCENT}" stroke-width="3"/>`;
+}
+function pOpenBox(x, y, w, h) {
+  return `<path d="M${x} ${y} L${x} ${y + h} L${x + w} ${y + h} L${x + w} ${y}" fill="none" stroke="${ACCENT}" stroke-width="3" stroke-linejoin="round"/>`;
+}
+function pBall(cx, cy) {
+  return `<circle cx="${cx}" cy="${cy}" r="16" fill="${ACCENT}" stroke="${MUTED}" stroke-width="2"/>`;
+}
+function placeIn() {
+  return svg(pOpenBox(70, 70, 80, 45) + pBall(110, 96), 220, 150);
+}
+function placeOn() {
+  return svg(pBox(70, 80, 80, 40) + pBall(110, 64), 220, 150);
+}
+function placeUnder() {
+  return svg(pBox(70, 55, 80, 40) + pBall(110, 116), 220, 150);
+}
+function placeNextTo() {
+  return svg(pBox(58, 70, 70, 45) + pBall(162, 92), 220, 150);
+}
+function placeBehind() {
+  /* Ball first, filled box on top — outline-only read as "on" (James, smoke). */
+  return svg(pBall(110, 72) + pBox(66, 70, 88, 52), 220, 150);
+}
+function placeInFrontOf() {
+  return svg(pBox(66, 46, 88, 48) + pBall(110, 102), 220, 150);
+}
+function pMap(x, y, w, h, dotX, dotY) {
+  const x2 = x + w, y2 = y + h;
+  const streets =
+    `<line x1="${x}" y1="${y + h * 0.38}" x2="${x2}" y2="${y + h * 0.38}" stroke="${MUTED}" stroke-width="1.5"/>` +
+    `<line x1="${x}" y1="${y + h * 0.68}" x2="${x2}" y2="${y + h * 0.68}" stroke="${MUTED}" stroke-width="1.5"/>` +
+    `<line x1="${x + w * 0.45}" y1="${y}" x2="${x + w * 0.45}" y2="${y2}" stroke="${MUTED}" stroke-width="1.5"/>`;
+  return (
+    `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" fill="${SURFACE}" stroke="${ACCENT}" stroke-width="2"/>` +
+    streets +
+    `<circle cx="${dotX}" cy="${dotY}" r="6" fill="${ACCENT}"/>`
+  );
+}
+function placeAt() {
+  /* Point on a map — not a pin over the ball (James: lollipop, 2026-08-26). */
+  return svg(
+    pMap(30, 22, 160, 100, 102, 90) +
+      label(148, 94, "station", { size: 12, fill: ACCENT, anchor: "start" }),
+    220,
+    150,
+  );
+}
+function placeInOnAt() {
+  const col = (cx, drawing, caption) =>
+    `<g transform="translate(${cx - 40}, 8)">${drawing}</g>` +
+    label(cx, 148, caption, { size: 14, fill: ACCENT });
+  return svg(
+    col(54, pOpenBox(5, 48, 70, 40) + pBall(40, 72), "in") +
+      col(160, pBox(5, 72, 70, 36) + pBall(40, 56), "on") +
+      col(
+        266,
+        pMap(2, 22, 76, 88, 36, 82),
+        "at",
+      ),
+    320,
+    164,
+  );
+}
+
 const SCHEMATICS = {
   scale, circles, branch, cycle, contrast,
   hub_spokes, boxes_row, timelines, decision_flow,
+  in: placeIn,
+  on: placeOn,
+  under: placeUnder,
+  at: placeAt,
+  "next to": placeNextTo,
+  behind: placeBehind,
+  "in front of": placeInFrontOf,
+  "in-on-at": placeInOnAt,
 };
 
 /** Names a pack may use in `diagram`. */

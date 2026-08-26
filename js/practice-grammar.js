@@ -1365,6 +1365,13 @@ export function startPractice(rawPack, root, opts) {
     focusPrimary(wrongN > 0 ? "#q-retry" : "#q-next");
   }
 
+  function itemDiagramHtml(item) {
+    if (!item || !item.diagram) return "";
+    const markup = introDiagram(item.diagram, []);
+    if (!markup) return "";
+    return `<div class="item-scene-wrap">${markup}</div>`;
+  }
+
   function renderQuiz() {
     clearAdvance();
     const items = state.quizItems;
@@ -1393,11 +1400,16 @@ export function startPractice(rawPack, root, opts) {
       <p class="score-line">${state.quizIndex + 1} / ${items.length} · score ${state.quizScore}${
         state.quizRetryPass ? " · retry" : ""
       }</p>
-      <p class="practice-prompt">${esc(item.prompt)}${
-        item.root ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
-      }</p>
-      ${item.cz ? `<p class="practice-hint">${esc(item.cz)}</p>` : ""}
-      <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · then <strong>Enter</strong> = next (always)</p>
+      <div class="item-stem">
+        <div class="item-stem-text">
+          <p class="practice-prompt">${esc(item.prompt)}${
+            item.root ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
+          }</p>
+          ${item.cz ? `<p class="practice-hint">${esc(item.cz)}</p>` : ""}
+          <p class="practice-hint">Keys <strong>1–${choices.length}</strong> · then <strong>Enter</strong> = next (always)</p>
+        </div>
+        ${itemDiagramHtml(item)}
+      </div>
       <div class="choices" id="choices"></div>
       <div class="feedback" id="feedback"></div>
     `;
@@ -1876,17 +1888,22 @@ export function startPractice(rawPack, root, opts) {
         retryPass ? " · retry" : ""
       }</p>
       ${fixLabel}
-      <p class="practice-prompt${fixMode ? " practice-prompt--wrong" : ""}">${esc(prompt)}${
-        isRoot ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
-      }</p>
-      ${hint}
-      ${
-        isGap
-          ? `<p class="practice-hint gap-hint">Only the <strong>ending</strong></p>`
-          : isRoot
-            ? `<p class="practice-hint gap-hint">The <strong>whole word</strong> formed from the word in capitals</p>`
-            : ""
-      }
+      <div class="item-stem">
+        <div class="item-stem-text">
+          <p class="practice-prompt${fixMode ? " practice-prompt--wrong" : ""}">${esc(prompt)}${
+            isRoot ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
+          }</p>
+          ${hint}
+          ${
+            isGap
+              ? `<p class="practice-hint gap-hint">Only the <strong>ending</strong></p>`
+              : isRoot
+                ? `<p class="practice-hint gap-hint">The <strong>whole word</strong> formed from the word in capitals</p>`
+                : ""
+          }
+        </div>
+        ${itemDiagramHtml(item)}
+      </div>
       ${inputBlock}
       <div class="feedback" id="feedback"></div>
     `;

@@ -104,7 +104,8 @@ Martin's pronoun thread; also *"my physio said me that…"* (Tomas) sits near he
 
 ### 11. `a1_prepositions_place` — Prepositions of place · A1 step 33
 - Tomas: *"we worked to our garden"* → in our garden
-- [ ] Reviewed
+- **Inspected 2026-08-26** (`[x][ ]`). Ball-and-box diagrams wired into intro + quiz; *at* is a map-dot; quiz pictures sit beside the prompt.
+- [x] Reviewed
 
 ---
 

@@ -410,6 +410,7 @@ export function adaptGrammarPack(pack) {
             answer: it.gap_answer,
             choices,
             cz: it.cz,
+            diagram: it.diagram || "",
             // Word-formation packs (2026-08-18): the capitalised root cue IS
             // the item — EN-only by James's ruling, no Czech anywhere.
             root: it.root,
@@ -476,6 +477,7 @@ export function adaptGrammarPack(pack) {
     answer: it.gap_answer,
     accepts: it.gap_accepts || [],
     cz: it.cz,
+    diagram: it.diagram || "",
     root: it.root,
     explanation: it.explanation,
     explanation_cz: it.explanation_cz,
@@ -502,6 +504,7 @@ export function adaptGrammarPack(pack) {
       answer: it.en,
       accepts: it.accepts || [],
       cz: it.cz,
+      diagram: it.diagram || "",
       explanation: it.explanation,
       explanation_cz: it.explanation_cz,
       structures: it.structures,
