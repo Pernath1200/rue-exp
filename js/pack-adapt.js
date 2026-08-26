@@ -119,6 +119,10 @@ const IRREGULAR = {
   choose: ["chooses", "chose", "chosen", "choosing"],
   break: ["breaks", "broke", "broken", "breaking"],
   drive: ["drives", "drove", "driven", "driving"],
+  grow: ["grows", "grew", "grown", "growing"],
+  steal: ["steals", "stole", "stolen", "stealing"],
+  teach: ["teaches", "taught", "taught", "teaching"],
+  build: ["builds", "built", "built", "building"],
 };
 
 function thirdPerson(v) {
@@ -497,6 +501,33 @@ function ppVsPastChoices(it, pack) {
   return opts.length >= 2 ? opts : null;
 }
 
+/** Passive: gap is be + past participle of THIS verb (James, 2026-08-26). */
+function passiveBeChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "passive") return null;
+  const lemma = String(it.lemma || cuedLemma(it.gap) || "").toLowerCase().trim();
+  const answer = String(it.gap_answer || "").trim();
+  if (!lemma || !answer) return null;
+  const bits = answer.split(/\s+/);
+  const pp = bits[bits.length - 1];
+  if (!pp) return null;
+  const seen = new Set([key(answer)]);
+  const opts = [answer];
+  const take = (x) => {
+    const k = key(x);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(matchCase(answer, x));
+  };
+  take("is " + pp);
+  take("are " + pp);
+  take("was " + pp);
+  take("were " + pp);
+  take("be " + pp);
+  take(bits[0] + " " + lemma);
+  take(pp);
+  return opts.length >= 2 ? opts : null;
+}
+
 function gapPrompt(it, pack) {
   const g = String(it.gap || "");
   if (/\(.*\)\s*$/.test(g)) return g;
@@ -505,7 +536,7 @@ function gapPrompt(it, pack) {
     if (lemma) return g + " (" + lemma + ")";
   }
   /* PP vs past (James, 2026-08-26): Type/Quiz cue the base verb. */
-  if (String(pack && pack.quiz_axis) === "pp_vs_past") {
+  if (pack && (pack.quiz_axis === "pp_vs_past" || pack.quiz_axis === "passive")) {
     const lemma = String(it.lemma || "").trim();
     if (lemma) return g + " (" + lemma + ")";
   }
@@ -539,6 +570,9 @@ function choicesFor(it, siblings, pack) {
 
   const tenseOpts = ppVsPastChoices(it, pack);
   if (tenseOpts) return tenseOpts;
+
+  const passOpts = passiveBeChoices(it, pack);
+  if (passOpts) return passOpts;
 
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
@@ -757,20 +791,52 @@ export function adaptGrammarPack(pack) {
    * error, so they drop out of Use by design and are still drilled elsewhere.
    * The Czech stays on the item for the support line. */
   const fixMode = pack.use_mode === "correct";
-  const use_items = (wants("use") ? items : [])
-    .filter((it) => it.en && !(it.bin && !it.gap) && (fixMode ? it.wrong : it.cz))
-    .map((it) => ({
-      prompt: fixMode ? it.wrong : it.cz,
-      wrong: it.wrong || "",
-      answer: it.en,
-      accepts: it.accepts || [],
-      cz: it.cz,
-      diagram: it.diagram || "",
-      explanation: it.explanation,
-      explanation_cz: it.explanation_cz,
-      structures: it.structures,
-      _block: it._block,
-    }));
+  const voiceMode = pack.use_mode === "voice";
+  const use_items = !(wants("use") ? items : []).length
+    ? []
+    : voiceMode
+      ? items
+          .filter((it) => it.en && it.active)
+          .flatMap((it) => {
+            const passive = it.en;
+            const active = it.active;
+            const passAcc = it.accepts && it.accepts.length ? it.accepts : [passive];
+            const actAcc =
+              it.active_accepts && it.active_accepts.length
+                ? it.active_accepts
+                : [active];
+            const row = (prompt, answer, accepts, hint) => ({
+              prompt,
+              wrong: "",
+              answer,
+              accepts,
+              hint,
+              cz: "",
+              diagram: it.diagram || "",
+              explanation: it.explanation,
+              explanation_cz: it.explanation_cz,
+              structures: it.structures,
+              _block: it._block,
+            });
+            return [
+              row(active, passive, passAcc, "Make this passive."),
+              row(passive, active, actAcc, "Make this active."),
+            ];
+          })
+      : items
+          .filter((it) => it.en && !(it.bin && !it.gap) && (fixMode ? it.wrong : it.cz))
+          .map((it) => ({
+            prompt: fixMode ? it.wrong : it.cz,
+            wrong: it.wrong || "",
+            answer: it.en,
+            accepts: it.accepts || [],
+            cz: it.cz,
+            diagram: it.diagram || "",
+            explanation: it.explanation,
+            explanation_cz: it.explanation_cz,
+            structures: it.structures,
+            _block: it._block,
+          }));
 
   return { ...pack, intro: cards, match, sortbins, quiz, order, type_items, use_items };
 }

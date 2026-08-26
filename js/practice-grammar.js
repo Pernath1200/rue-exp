@@ -1883,7 +1883,9 @@ export function startPractice(rawPack, root, opts) {
               ? "whole word…"
               : item.wrong
                 ? "type the corrected sentence…"
-                : "type in English…"
+                : item.hint && String(item.hint).startsWith("Make this")
+                  ? "type the other sentence…"
+                  : "type in English…"
           }" lang="en" />
           <button type="button" class="btn primary" id="btn-submit">Check</button>
         </div>`;
