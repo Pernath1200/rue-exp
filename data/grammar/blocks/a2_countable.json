@@ -9,7 +9,7 @@
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
@@ -19,137 +19,89 @@
       "title": "Countable or uncountable? · A2",
       "check": {
         "sequence": [
-          "match"
+          "sort_bins"
         ]
       },
       "items": [
         {
-          "en": "uncountable",
-          "cz": "advice · rada",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "advice",
+          "cz": "rada",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "information · informace",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "information",
+          "cz": "informace",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "furniture · nábytek",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "furniture",
+          "cz": "nábytek",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "news · zprávy",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "news",
+          "cz": "zprávy",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "money · peníze",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "money",
+          "cz": "peníze",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "bread · chleba",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "bread",
+          "cz": "chleba",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "traffic · doprava",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "traffic",
+          "cz": "doprava",
+          "bin": "uncountable"
         },
         {
-          "en": "uncountable",
-          "cz": "water · voda",
-          "accepts": [
-            "uncountable",
-            "u"
-          ]
+          "en": "water",
+          "cz": "voda",
+          "bin": "uncountable"
         },
         {
-          "en": "countable",
-          "cz": "apple · jablko",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "apple",
+          "cz": "jablko",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "chair · židle",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "chair",
+          "cz": "židle",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "egg · vejce",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "egg",
+          "cz": "vejce",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "bottle · láhev",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "bottle",
+          "cz": "láhev",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "job · práce",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "job",
+          "cz": "práce",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "room · pokoj",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "room",
+          "cz": "pokoj",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "coin · mince",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "coin",
+          "cz": "mince",
+          "bin": "countable"
         },
         {
-          "en": "countable",
-          "cz": "plate · talíř",
-          "accepts": [
-            "countable",
-            "c"
-          ]
+          "en": "plate",
+          "cz": "talíř",
+          "bin": "countable"
         }
       ]
     },
@@ -715,5 +667,9 @@
       }
     ]
   },
-  "use_mode": "correct"
+  "use_mode": "correct",
+  "bins": [
+    "countable",
+    "uncountable"
+  ]
 }

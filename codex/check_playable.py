@@ -144,6 +144,11 @@ def check_pack(pid: str, pack: dict) -> None:
     use_n = pairs_n if wants("use") else 0
     type_n = len(with_gap) if wants("type") else 0
     order_n = len(orderable) if wants_check("order_click") else 0
+    sort_n = (
+        len([it for it in items if it.get("bin") and it.get("en")])
+        if wants_check("sort_bins")
+        else 0
+    )
 
     quiz_n = 0
     if wants_check("quiz"):
@@ -164,7 +169,7 @@ def check_pack(pid: str, pack: dict) -> None:
 
     # Stages the engine actually implements. A pack asking for anything else
     # silently loses that drill.
-    IMPLEMENTED = {"match", "quiz", "order_click"}
+    IMPLEMENTED = {"match", "quiz", "order_click", "sort_bins"}
     if isinstance(seq, list):
         for s in seq:
             if s not in IMPLEMENTED:
@@ -181,9 +186,31 @@ def check_pack(pid: str, pack: dict) -> None:
         errors.append(
             f"{pid}: order_click bank EMPTY — no item has tokens[] with 2+ entries"
         )
+    if wants_check("sort_bins"):
+        if sort_n == 0:
+            errors.append(
+                f"{pid}: sort_bins bank EMPTY — no item carries a `bin`"
+            )
+        bins = pack.get("bins") or sorted(
+            {it["bin"] for it in items if it.get("bin")}
+        )
+        if len(bins) < 2:
+            errors.append(f"{pid}: sort_bins needs at least 2 bins, got {bins!r}")
+        stray = sorted(
+            {it["bin"] for it in items if it.get("bin") and it["bin"] not in bins}
+        )
+        if stray:
+            errors.append(f"{pid}: sort_bins items in undeclared bin(s) {stray!r}")
     if use_n == 0 and ladder.get("use") is not False:
         warnings.append(f"{pid}: Use bank empty")
-    if match_n == 0 and quiz_n == 0 and order_n == 0 and type_n == 0 and use_n == 0:
+    if (
+        match_n == 0
+        and quiz_n == 0
+        and order_n == 0
+        and sort_n == 0
+        and type_n == 0
+        and use_n == 0
+    ):
         errors.append(f"{pid}: UNPLAYABLE — every stage empty")
 
 

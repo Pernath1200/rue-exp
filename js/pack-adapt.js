@@ -406,6 +406,26 @@ export function adaptGrammarPack(pack) {
         .filter(Boolean)
     : [];
 
+  /* Sort into bins (2026-08-26, James): classification, not matching. The
+   * Match board was being used to put nouns into countable/uncountable, which
+   * meant twelve tiles reading "countable" down one side — "you are not
+   * really matching things here". Here the student drags each word into one
+   * of `pack.bins` and checks at the end.
+   * Items carry `bin`; the pack names the columns. */
+  const sortbins = wantsCheck("sort_bins")
+    ? items
+        .filter((it) => it.bin && it.en && blockAllows(it, "sort_bins"))
+        .map((it) => ({
+          en: it.en,
+          cz: it.cz,
+          bin: it.bin,
+          explanation: it.explanation,
+          explanation_cz: it.explanation_cz,
+          structures: it.structures,
+          _block: it._block,
+        }))
+    : [];
+
   // Order-click: click tokens[] into the correct sequence, prompted by cz.
   // Items with fewer than 2 tokens can't be a real ordering task.
   const order = wantsCheck("order_click")
@@ -472,7 +492,7 @@ export function adaptGrammarPack(pack) {
       _block: it._block,
     }));
 
-  return { ...pack, intro: cards, match, quiz, order, type_items, use_items };
+  return { ...pack, intro: cards, match, sortbins, quiz, order, type_items, use_items };
 }
 
 export { key as _normKey, choicesFor as _choicesFor, flatItems as _flatItems };

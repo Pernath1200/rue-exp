@@ -626,7 +626,9 @@ export function startPractice(rawPack, root, opts) {
       check: {
         title: "Stage 2 · Check",
         sub:
-          state.checkPhase === "quiz"
+          state.checkPhase === "sort_bins"
+            ? "Sort · drag each word into a column · check when they are all placed"
+            : state.checkPhase === "quiz"
             ? "Quiz · keys 1–4 · Enter = next"
             : state.checkPhase === "order_click"
               ? "Word order · click the words in order · Enter = next"
@@ -822,6 +824,145 @@ export function startPractice(rawPack, root, opts) {
     return avg > 24 ? 8 : DEFAULT_PASS;
   }
 
+
+  /* Sort into bins — classification, NOT matching (James, 2026-08-26).
+   * The Match board was being used to put nouns into countable/uncountable,
+   * which meant twelve tiles reading "countable" down one side: "you are not
+   * really matching things here". Here each word is dragged into a column.
+   *
+   * Marking happens at the END, once every word is placed (his call): the
+   * student commits to a whole sort instead of fishing for green one word at
+   * a time. Click-to-place is kept alongside drag — a trackpad drag is fiddly
+   * and a student who cannot drag would otherwise be stuck mid-lesson.
+   */
+  function renderSortBins() {
+    const items = state.sortItems;
+    const bins = Array.isArray(pack.bins) && pack.bins.length
+      ? pack.bins
+      : [...new Set(items.map((it) => it.bin))];
+    const placed = state.sortPlaced;
+    const done = state.sortSubmitted;
+    const poolIdx = items.map((_, i) => i).filter((i) => placed[i] == null);
+    const allPlaced = poolIdx.length === 0;
+
+    const chip = (i, inBin) => {
+      const it = items[i];
+      const sel = state.sortSel === i ? " sel" : "";
+      let mark = "";
+      if (done && inBin) {
+        mark = placed[i] === it.bin ? " good" : " bad";
+      }
+      const cz = it.cz ? `<span class="sb-cz">${esc(it.cz)}</span>` : "";
+      const truth =
+        done && inBin && placed[i] !== it.bin
+          ? `<span class="sb-truth">${esc(it.bin)}</span>`
+          : "";
+      return `<button type="button" class="sb-chip${sel}${mark}" data-i="${i}"${
+        done ? " disabled" : ' draggable="true"'
+      }>${esc(it.en)}${cz}${truth}</button>`;
+    };
+
+    const cols = bins
+      .map(
+        (b) => `
+        <div class="sb-bin" data-bin="${esc(b)}">
+          <h3>${esc(b)}</h3>
+          <div class="sb-drop">${items
+            .map((_, i) => i)
+            .filter((i) => placed[i] === b)
+            .map((i) => chip(i, true))
+            .join("")}</div>
+        </div>`,
+      )
+      .join("");
+
+    const score = done
+      ? items.filter((it, i) => placed[i] === it.bin).length
+      : 0;
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Sort</h2></div>
+      <p class="score-line">${
+        done
+          ? `${score} / ${items.length} correct`
+          : `${items.length - poolIdx.length} / ${items.length} placed · drag a word into a column, or click it then click a column`
+      }</p>
+      <div class="sb-pool" id="sb-pool">${poolIdx
+        .map((i) => chip(i, false))
+        .join("")}</div>
+      <div class="sb-bins">${cols}</div>
+      <div class="nav">
+        ${
+          done
+            ? `<button type="button" class="primary" id="sb-next">Continue →</button>`
+            : `<button type="button" class="primary" id="sb-check"${
+                allPlaced ? "" : " disabled"
+              }>Check</button>`
+        }
+      </div>
+    `;
+
+    if (done) {
+      root.querySelector("#sb-next")?.addEventListener("click", () => {
+        if (!state.sortScoreCommitted) {
+          state.checkScore += score;
+          state.checkTotal += items.length;
+          state.sortScoreCommitted = true;
+        }
+        goToNextCheckPhaseOrType();
+      });
+      return;
+    }
+
+    const place = (i, bin) => {
+      if (i == null || Number.isNaN(i)) return;
+      state.sortPlaced[i] = bin;
+      state.sortSel = null;
+      render();
+    };
+
+    root.querySelectorAll(".sb-chip").forEach((el) => {
+      const i = Number(el.dataset.i);
+      el.addEventListener("click", () => {
+        // A placed chip goes back to the pool; a pooled chip gets selected.
+        if (state.sortPlaced[i] != null) {
+          delete state.sortPlaced[i];
+          state.sortSel = null;
+        } else {
+          state.sortSel = state.sortSel === i ? null : i;
+        }
+        render();
+      });
+      el.addEventListener("dragstart", (e) => {
+        e.dataTransfer.setData("text/plain", String(i));
+        e.dataTransfer.effectAllowed = "move";
+      });
+    });
+
+    root.querySelectorAll(".sb-bin").forEach((el) => {
+      const bin = el.dataset.bin;
+      el.addEventListener("click", () => {
+        if (state.sortSel != null) place(state.sortSel, bin);
+      });
+      el.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        el.classList.add("over");
+      });
+      el.addEventListener("dragleave", () => el.classList.remove("over"));
+      el.addEventListener("drop", (e) => {
+        e.preventDefault();
+        el.classList.remove("over");
+        place(Number(e.dataTransfer.getData("text/plain")), bin);
+      });
+    });
+
+    root.querySelector("#sb-check")?.addEventListener("click", () => {
+      state.sortSubmitted = true;
+      render();
+    });
+  }
+
   function newMatchBoard() {
     const pool = pack.match || [];
     const raw = samplePass(pool, null, focusStructures, {
@@ -881,17 +1022,27 @@ export function startPractice(rawPack, root, opts) {
     state.orderPicked = [];
     state.orderBag = null;
     state.orderBagFor = null;
+    state.sortItems = samplePass(pack.sortbins || [], null, focusStructures, {
+      packId: pack.id,
+      stage: "sortbins",
+    });
+    state.sortPlaced = {};
+    state.sortSubmitted = false;
+    state.sortSel = null;
+    state.sortScoreCommitted = false;
     state.checkScore = 0;
     state.checkTotal = 0;
+    const hasSort = state.sortItems.length > 0;
     const hasMatch = (pack.match || []).length > 0;
     const hasQuiz = state.quizItems.length > 0;
     const hasOrder = state.orderItems.length > 0;
-    if (!hasMatch && !hasQuiz && !hasOrder) {
+    if (!hasSort && !hasMatch && !hasQuiz && !hasOrder) {
       notifyProgress( "check", { score: 1, total: 1 });
       beginType();
       return;
     }
-    if (hasMatch) newMatchBoard();
+    if (hasSort) state.checkPhase = "sort_bins";
+    else if (hasMatch) newMatchBoard();
     else if (hasQuiz) state.checkPhase = "quiz";
     else state.checkPhase = "order_click";
     render();
@@ -905,6 +1056,14 @@ export function startPractice(rawPack, root, opts) {
    * nor quiz — a pack combining all three would still resolve correctly.
    */
   function goToNextCheckPhaseOrType() {
+    /* sort_bins runs first — classify, then work with the classes. Coming OUT
+     * of it we fall through to Match if the pack has one. */
+    if (state.checkPhase === "sort_bins" && (pack.match || []).length) {
+      newMatchBoard();
+      state.checkPhase = "match";
+      render();
+      return;
+    }
     if (state.checkPhase !== "quiz" && state.checkPhase !== "order_click" && state.quizItems.length) {
       state.checkPhase = "quiz";
       render();
@@ -1866,6 +2025,7 @@ export function startPractice(rawPack, root, opts) {
   function render() {
     if (state.stage === "intro") return renderIntro();
     if (state.stage === "check") {
+      if (state.checkPhase === "sort_bins") return renderSortBins();
       if (state.checkPhase === "match") return renderMatch();
       if (state.checkPhase === "order_click") return renderOrderClick();
       return renderQuiz();
