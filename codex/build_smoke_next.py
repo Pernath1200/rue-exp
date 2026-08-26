@@ -104,11 +104,11 @@ path order — foundation upward.
 Scope: **grammar only, A1–B1.** B2 and C1 are hidden from the rail; vocab and
 `trunk_*` stay built and linkable but sit outside the beta.
 
-Tick by telling the bot `<unit_id> tested` or `<unit_id> approved` — it logs to
-[[smoke-done-log]]. Carry ticks into the register with
-`python codex/reconcile_inspected.py --apply`, then rebuild this file. A ticked
-unit drops off the list because it is gone from the source, so the bot's own
-promotion is only cosmetic until the next rebuild.
+Tick by telling the bot `<unit_id> tested` (full id, no list number). The bot
+**only appends** [[smoke-done-log]] and **replies with this file's Top 5**.
+It must never rewrite this file. Rank comes from INSPECTED.md; rebuild after
+ticks with `python codex/reconcile_inspected.py --apply` (which also --writes
+this file).
 
 Remaining: **{len(todo)} grammar units** — A1 {counts['A1']} · A2 {counts['A2']} · B1 {counts['B1']}.
 

@@ -2,9 +2,8 @@
 """Apply James's bot ticks to codex/INSPECTED.md.
 
 He messages the Telegram bot "<unit_id> tested"; the bot appends a line to the
-vault's smoke-done-log.md and stops there. Nothing ever carried those ticks
-into the register — it was being done by hand in session, and on 2026-08-26 it
-silently didn't happen at all. This closes the loop.
+vault's smoke-done-log.md and must not rewrite smoke-next.md. This script
+carries ticks into INSPECTED.md and rebuilds the generated list from that.
 
     python codex/reconcile_inspected.py            # show what would change
     python codex/reconcile_inspected.py --apply    # write it
@@ -105,6 +104,15 @@ def main() -> int:
 
     print(f"\napplied {len(changes)} tick(s) · register now "
           f"{insp} inspected · {appr} approved · {total - insp} unseen")
+
+    # Rank lives in INSPECTED.md. Rebuild the vault list so the Telegram bot
+    # never has to rewrite it (that rewrite was the drift).
+    import subprocess
+    builder = ROOT / "codex" / "build_smoke_next.py"
+    subprocess.run(
+        [sys.executable, str(builder), "--write"],
+        check=False,
+    )
     return 0
 
 
