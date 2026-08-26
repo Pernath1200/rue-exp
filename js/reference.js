@@ -186,16 +186,23 @@ function tableHtml(sec) {
     </table>`;
 }
 
+function drillsReady(sec) {
+  // Untested tables keep the lookup and hide Practise (James, modals 2026-08-26).
+  return sec && sec.drill_ok !== false;
+}
+
 function sectionHtml(sec, i) {
   const pool = poolOf(sec);
   const st = openDrills.get(sec.id);
   // Mid-drill the table is HIDDEN — it returns with the score.
   const running = st && st.i < st.items.length;
-  const drill = openDrills.has(sec.id)
-    ? drillHtml(sec.id)
-    : pool.length >= 3
-      ? `<button type="button" class="home-btn" data-ref-drill="${esc(sec.id)}">Practise (${pool.length})</button>`
-      : `<p class="home-hint">Practice unlocks as the path teaches these forms.</p>`;
+  const drill = !drillsReady(sec)
+    ? ""
+    : openDrills.has(sec.id)
+      ? drillHtml(sec.id)
+      : pool.length >= 3
+        ? `<button type="button" class="home-btn" data-ref-drill="${esc(sec.id)}">Practise (${pool.length})</button>`
+        : `<p class="home-hint">Practice unlocks as the path teaches these forms.</p>`;
   // First section open by default, so a tab never opens looking empty.
   const open = openDrills.has(sec.id) || i === 0 ? "open" : "";
   return `<details class="quiet-details ref-block" data-ref-block="${esc(sec.id)}" ${open}>
@@ -219,9 +226,14 @@ export function renderReference(host) {
   const body = secs.length
     ? secs.map(sectionHtml).join("")
     : `<p class="home-hint">Not built yet — this tab is wired and waiting for its table.</p>`;
+  const anyDrill = secs.some((s) => drillsReady(s) && poolOf(s).length >= 3);
+  const blurb = (t && t.blurb) || "";
+  const practiceNote = anyDrill
+    ? " Practice here is not scored towards your progress."
+    : "";
   host.innerHTML = `
     <div class="ref-tabs" role="tablist">${tabBar}</div>
-    <p class="home-hint">${esc((t && t.blurb) || "")} Practice here is not scored towards your progress.</p>
+    <p class="home-hint">${esc(blurb)}${practiceNote}</p>
     ${body}
   `;
   wire(host);

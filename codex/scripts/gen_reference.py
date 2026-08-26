@@ -704,6 +704,7 @@ def main() -> int:
             ),
             "columns": M_COLUMNS,
             "drill": M_DRILL,
+            "drill_ok": False,
             "rows": [
                 {"modal": m, "meaning": meaning, "cz": cz, "example": ex}
                 for m, meaning, cz, ex in MODAL_ROWS
