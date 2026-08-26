@@ -750,6 +750,11 @@ export function startPractice(rawPack, root, opts) {
         .map((p) => `<li>${escMd(p)}</li>`)
         .join("")}</ul>`;
     }
+    if (card.ref && card.ref.tab) {
+      body += `<p class="intro-ref"><button type="button" class="link" id="intro-open-ref">${esc(
+        card.ref.label || "Full table",
+      )}</button></p>`;
+    }
     if (card.examples) {
       body += card.examples
         .map((ex) => {
@@ -799,6 +804,11 @@ export function startPractice(rawPack, root, opts) {
       }
     };
 
+    root.querySelector("#intro-open-ref")?.addEventListener("click", () => {
+      if (typeof opts.onOpenReference === "function") {
+        opts.onOpenReference(card.ref.tab);
+      }
+    });
     root.querySelector("#btn-prev")?.addEventListener("click", goPrev);
     root.querySelector("#btn-next")?.addEventListener("click", goNext);
     state.enterAdvance = goNext;

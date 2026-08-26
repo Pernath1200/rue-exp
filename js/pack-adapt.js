@@ -320,7 +320,21 @@ function choicesFor(it, siblings, pack) {
   };
 
   // Auxiliary gap: same family + the cross-family confusable (do for be, ...).
-  if (!lemma) take(auxDistractors(answer));
+  // Modal packs: this unit's other modals first (must / should / mustn't),
+  // not will / can / would from the giant aux family (James, a2_modals smoke).
+  if (!lemma) {
+    const aux = auxDistractors(answer);
+    const sibsNow = siblings.map((s) => s.gap_answer);
+    const ansIsModal = !!(aux && AUX_ALL.has(String(answer).toLowerCase().replace(/[’]/g, "'").trim()));
+    if (ansIsModal) {
+      const modalSibs = sibsNow.filter((s) => {
+        const k = String(s || "").toLowerCase().replace(/[’]/g, "'").trim();
+        return AUX_ALL.has(k);
+      });
+      take(modalSibs);
+    }
+    take(aux);
+  }
 
   // Verb-form gap: wrong forms of the same verb. Single words only; in verb
   // packs any form, elsewhere only -ing / -ed (so plural nouns in article or

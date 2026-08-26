@@ -217,17 +217,6 @@
           "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
-          "en": "Must I pay now?",
-          "cz": "Musím teď platit?",
-          "gap": "____ I pay now?",
-          "gap_answer": "Must",
-          "accepts": [
-            "Must I pay now?"
-          ],
-          "explanation": "must + base = strong necessity.",
-          "explanation_cz": "must + základ = silná nutnost."
-        },
-        {
           "en": "Should I open the window?",
           "cz": "Mám otevřít okno?",
           "gap": "____ I open the window?",
@@ -485,17 +474,6 @@
           "explanation_cz": "shouldn't + základ = rada nedělat."
         },
         {
-          "en": "Must we leave now?",
-          "cz": "Musíme teď odejít?",
-          "gap": "____ we leave now?",
-          "gap_answer": "Must",
-          "accepts": [
-            "Must we leave now?"
-          ],
-          "explanation": "must + base = strong necessity.",
-          "explanation_cz": "must + základ = silná nutnost."
-        },
-        {
           "en": "Should I bring anything?",
           "cz": "Mám něco přinést? (rada · should)",
           "gap": "____ I bring anything?",
@@ -532,12 +510,12 @@
           "explanation_cz": "should + základ = rada."
         },
         {
-          "en": "You must try this cake.",
-          "cz": "Musíš zkusit tenhle dort.",
+          "en": "You should try this cake.",
+          "cz": "Měl bys zkusit tenhle dort.",
           "gap": "You ____ try this cake.",
-          "gap_answer": "must",
+          "gap_answer": "should",
           "accepts": [
-            "You must try this cake."
+            "You should try this cake."
           ],
           "explanation": "must + base = strong necessity.",
           "explanation_cz": "must + základ = silná nutnost."
@@ -635,45 +613,67 @@
   "intro": {
     "cards": [
       {
+        "title": "Modal verbs",
+        "title_cz": "modální slovesa",
+        "body": "These are **modal verbs**, like **can**.",
+        "body_cz": "To jsou **modální slovesa**, jako **can**.",
+        "points": [
+          "A modal verb does not name the action. It adds a meaning to another verb.",
+          "That extra meaning is **modality**.",
+          "**can** added **ability**. This unit adds a **rule**, or **advice**.",
+          "Other meanings live in the full table."
+        ],
+        "ref": {
+          "tab": "modals",
+          "label": "Full table · all modal verbs"
+        }
+      },
+      {
         "title": "Must / should",
         "title_cz": "must = musím · should = měl bych",
-        "body": "Modals + base verb. No -s. No to.",
-        "body_cz": "Modální sloveso + základní tvar. Bez -s. Bez to.",
         "table": {
-          "caption": "jobs",
+          "caption": "this unit",
           "headers": [
             "Modal",
             "Job",
+            "CZ",
             "Example"
           ],
           "rows": [
             [
               "must",
               "strong need / rule",
+              "silná nutnost / pravidlo",
               "I must go."
             ],
             [
               "mustn't",
               "not allowed",
+              "zákaz",
               "You mustn't smoke."
             ],
             [
               "should",
               "advice",
+              "rada",
               "You should study."
             ],
             [
               "shouldn't",
               "bad idea",
+              "spíš ne",
               "You shouldn't drive fast."
             ]
           ]
-        },
+        }
+      },
+      {
+        "title": "The form",
+        "title_cz": "tvar",
         "points": [
-          "must / should + base (go, not goes)",
-          "must = strong need / rule · should = advice",
-          "mustn't = not allowed (strong no)",
-          "Not: must to go · Not: shoulds"
+          "Same form for I / you / he — not *musts* / *shoulds*.",
+          "+ base verb: must **go**.",
+          "Not *must to go*. Not *must goes*."
         ]
       },
       {
@@ -796,30 +796,15 @@
             ],
             [
               "Should I call her?"
-            ],
-            [
-              "Must we leave now? (strong / rare)"
             ]
           ]
         },
         "points": [
           "Modal before subject: Should I…?",
-          "Yes, you should. / No, you shouldn't.",
-          "Must I…? is possible but less common in everyday speech"
+          "Yes, you should. / No, you shouldn't."
         ],
-        "body": "Should is common in questions. Must questions are rarer.",
-        "body_cz": "Should v otázkách je běžné. Must v otázkách méně."
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "must / should + base verb",
-          "must = strong need · should = advice",
-          "mustn't = not allowed (not just 'bad idea')",
-          "Not: must to · Not: shoulds"
-        ],
-        "body_cz": "must/should + základní sloveso. Bez to."
+        "body": "Advice questions use **Should I…?** Do not teach **Must I…?** — people do not say it.",
+        "body_cz": "Otázky na radu: **Should I…?** **Must I…?** se skoro neříká."
       }
     ]
   }

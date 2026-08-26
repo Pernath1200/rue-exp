@@ -11,6 +11,7 @@ Tables are plain lists; every row is practisable.
   Prepositions      A1 · A2 · B1                (B1 = dependent prepositions)
   Pronouns          personal/possessive/reflexive · this-that
   Tenses            one row per tense, one verb throughout
+  Modal verbs       one family table (not by level) + free drills
   Word formation    30 prefixes · 30 suffixes by word class (lookup only —
                     the reps live under Exam Practice)
   Spelling & pairs  stub
@@ -655,6 +656,61 @@ def main() -> int:
         },
     ]
 
+    # --- modal verbs: one family table, not split by level (James 2026-08-26) ---
+    M_COLUMNS = [
+        {"key": "modal", "label": "Modal"},
+        {"key": "meaning", "label": "Meaning"},
+        {"key": "cz", "label": "CZ"},
+        {"key": "example", "label": "Example"},
+    ]
+    M_DRILL = [
+        {"from": "meaning", "to": "modal"},
+        {"from": "cz", "to": "modal"},
+    ]
+    # meaning and cz must be unique enough to cue one row.
+    MODAL_ROWS = [
+        ("can", "ability", "umět", "I can swim."),
+        ("can", "permission", "smět", "You can sit here."),
+        ("can't", "not able", "neumět / nemohu", "I can't come today."),
+        ("can't", "not allowed", "nesmět", "You can't park here."),
+        ("could", "past ability", "uměl", "I could swim at five."),
+        ("could", "polite request", "mohl bys", "Could you help me?"),
+        ("must", "rule / strong need", "muset (pravidlo)", "You must wear a seatbelt."),
+        ("mustn't", "not allowed (rule)", "nesmět (zákaz)", "You mustn't smoke here."),
+        ("have to", "need from the situation", "muset (situace)", "I have to work tomorrow."),
+        ("don't have to", "not necessary", "nemuset", "You don't have to come."),
+        ("should", "advice", "měl by", "You should see a doctor."),
+        ("shouldn't", "bad idea", "neměl by", "You shouldn't drive fast."),
+        ("ought to", "advice (like should)", "měl by (formálnější)", "You ought to apologise."),
+        ("had better", "strong advice now", "radši bys", "You'd better go now."),
+        ("may", "possible / allowed", "možná / smět", "It may rain. / You may go."),
+        ("might", "possible", "možná", "It might rain."),
+        ("must", "almost sure", "určitě (odhad)", "She must be at home."),
+        ("can't", "almost sure not", "to nemůže být", "That can't be true."),
+        ("need to", "need", "potřebovat", "I need to call her."),
+        ("needn't", "not necessary (like don't have to)", "nemuset (needn't)", "You needn't wait."),
+    ]
+    modal_sections = [
+        {
+            "id": "mod_all",
+            "title": "Modal verbs",
+            "sub": "the extra meaning on another verb",
+            "exemplar": f"{len(MODAL_ROWS)} forms",
+            "intro": (
+                "Modal verbs do not name the action. They add a meaning — "
+                "that extra meaning is modality: ability, permission, a rule, "
+                "advice, possibility. Most take a base verb with no to "
+                "(must go). Exceptions that keep to: have to, need to, ought to."
+            ),
+            "columns": M_COLUMNS,
+            "drill": M_DRILL,
+            "rows": [
+                {"modal": m, "meaning": meaning, "cz": cz, "example": ex}
+                for m, meaning, cz, ex in MODAL_ROWS
+            ],
+        }
+    ]
+
     payload = {
         "version": 2,
         "app": "rue-exp",
@@ -675,6 +731,9 @@ def main() -> int:
             {"id": "tenses", "label": "Tenses",
              "blurb": "One verb through every tense, so you can compare the forms.",
              "sections": tense_sections},
+            {"id": "modals", "label": "Modal verbs",
+             "blurb": "The extra meaning on another verb — ability, a rule, advice, possibility. One family, not split by level.",
+             "sections": modal_sections},
             {"id": "nouns", "label": "Countable & uncountable",
              "blurb": "advice, information, news — countable in Czech, never in English. And the words with two lives.",
              "sections": noun_sections},

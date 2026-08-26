@@ -297,6 +297,28 @@ function clearFruitPayoffKeys() {
   }
 }
 
+/** Open the Reference panel, optionally on a named tab (modals, wordform…). */
+function openReference(tabId) {
+  STATE.homePanel = "tables";
+  showMap();
+  const host = document.getElementById("reference-host");
+  if (host) {
+    if (!STATE.reference) {
+      host.innerHTML = `<p class="home-hint">Reference could not be loaded.</p>`;
+    } else {
+      initReference({
+        data: STATE.reference,
+        activeTab: tabId || undefined,
+      });
+      renderReference(host);
+    }
+  }
+  document.getElementById("tables-card")?.scrollIntoView({
+    behavior: "smooth",
+    block: "nearest",
+  });
+}
+
 function showMap(opts = {}) {
   const pr = document.getElementById("practice-root");
   if (pr && typeof pr._RUE2UnbindKeys === "function") {
@@ -894,23 +916,12 @@ function wireHomeActions() {
     }
   });
   document.getElementById("btn-home-tables")?.addEventListener("click", () => {
-    STATE.homePanel = STATE.homePanel === "tables" ? null : "tables";
-    renderHomeChrome();
     if (STATE.homePanel === "tables") {
-      const host = document.getElementById("reference-host");
-      if (host) {
-        if (!STATE.reference) {
-          host.innerHTML = `<p class="home-hint">Tables could not be loaded.</p>`;
-        } else {
-          initReference({ data: STATE.reference });
-          renderReference(host);
-        }
-      }
-      document.getElementById("tables-card")?.scrollIntoView({
-        behavior: "smooth",
-        block: "nearest",
-      });
+      STATE.homePanel = null;
+      renderHomeChrome();
+      return;
     }
+    openReference();
   });
   document.getElementById("btn-home-topics")?.addEventListener("click", () => {
     const reopen = STATE.homePanel === "more" && STATE.homePanelSource !== "topics";
@@ -1017,17 +1028,7 @@ function renderExamPanel() {
     });
   });
   host.querySelector("#exam-open-tables")?.addEventListener("click", () => {
-    STATE.homePanel = "tables";
-    renderHomeChrome();
-    const tablesHost = document.getElementById("reference-host");
-    if (tablesHost && STATE.reference) {
-      initReference({ data: STATE.reference, activeTab: "wordform" });
-      renderReference(tablesHost);
-    }
-    document.getElementById("tables-card")?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-    });
+    openReference("wordform");
   });
 }
 
@@ -1229,6 +1230,7 @@ async function openNode(node, launch = {}) {
           if (maybeShowFruitPayoff()) return;
           showMap();
         },
+        onOpenReference: (tabId) => openReference(tabId),
       });
     } else {
       // Vocab: pack may be multi-block; use first block or whole pack as RUE3 does
