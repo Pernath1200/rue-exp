@@ -87,8 +87,11 @@ Martin's pronoun thread; also *"my physio said me that…"* (Tomas) sits near he
 - Tomas: *"much people"* · *"very much tourists"*
 - His own jotting lists "several, meaning, a few, many" as a set to teach
 - One dropped-subject prompt already fixed in passing 2026-08-11 (*O víkendech
-  nikam nechodí* → *On o víkendech…*); the rest of the unit is unreviewed.
-- [ ] Reviewed
+  nikam nechodí* → *On o víkendech…*).
+- **Inspected 2026-08-26** (`[x][ ]`). Usable, not approved. Dropped bare *Few
+  people came* / *Few students failed*; any-slice quiz now some/any/no; Use
+  accepts *German words* as well as *words in German*.
+- [x] Reviewed
 
 ### 9. `a2_verb_patterns` — Verb patterns (to / -ing) · A2 step 27
 - Tomas: *"we try go"* → we try to go

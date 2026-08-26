@@ -59,6 +59,7 @@ Translate answers.
 | **B3** | Author `quiz_options` wherever the teaching point is form. The fallback cannot know the axis. | 47% of gap items have none. | `confirmed` |
 | **B4** | The unit's own target error must appear among the options. | `a2_comparatives` was extended for *more better* — and *more better* is never shown. | `observed` |
 | **B5** | A Match board needs distinct PROMPT tiles. Repeated labels on the ANSWER side are fine when prompts are distinct and grading is by instance (words → their classes works; James built and class-tested exactly that). The ban is on boards whose prompt tiles repeat — "one" five times is clicking, not matching. First version of this rule over-reached and briefly killed James's own labels board; scope it to the prompt side only. | `a1_word_classes`: one/more board (bad — identical prompts) vs labels board (good — distinct words, repeated classes), both smoked 2026-08-25. | `confirmed` |
+| **B6** | Options stay on the teaching axis. *anybody / somebody / nobody* tests the quantifier; *anyone / anywhere / anything* tests the stem. | `a2_quantifiers` *There isn't ____ at home* offered anyone / anywhere / anything. 2026-08-26. | `observed` |
 
 ---
 
@@ -90,7 +91,7 @@ majority shape, not a new format.
 
 | ID | Rule | From | State |
 |---|---|---|---|
-| **D1** | An explanation must name THIS item's word and shape, and give the reason. A generic note is filler. | `b1_verb_patterns_advanced` had **9 distinct explanations for 56 items**; one string covered 23. *"to = direction / receiver / infinitive marker"* is pasted across 61 items in 4 units. | `observed` — lintable: count distinct explanations per pack |
+| **D1** | An explanation must name THIS item's word and shape, and give the reason. A generic note is filler. | `b1_verb_patterns_advanced` had **9 distinct explanations for 56 items**; one string covered 23. `a2_quantifiers` pasted *"Quantifier: much/many/a lot of…"* on almost every item, including the any-compounds. | `confirmed` — lintable: count distinct explanations per pack |
 | **D2** | Explanations render automatically with the feedback, not behind a click. | Hidden behind "Why?", most students never read them. Reversed 2026-08-24 — which makes D1 urgent, since filler is now visible. | `confirmed` |
 
 ---
@@ -102,6 +103,7 @@ majority shape, not a new format.
 | **E1** | A sentence needs a situation, not just a grammar frame. | *"I will call you if I arrive early"* — grammatical, and means almost nothing. Compare *"If it rains, I'll work at home."* | `observed` |
 | **E2** | One error per error-correction item. If the "correct" answer still contains something questionable, the item teaches it by implication. | A carrier sentence introduced an over-used *how* beside the target error. | `confirmed` |
 | **E3** | Accepts stay aspect-strict: a continuous twin is NOT an accepted variant of a simple-form answer (Czech learners over-apply the continuous once they acquire it). Add the twin only where the simple form is unnatural in context — momentary weather and the like — and mark it item-by-item as an exception. | `a1_agreement` *Tady prší.* — "It's raining here" is the natural English and was rejected; James's call 2026-08-25: accept there, nowhere else in the unit. | `confirmed` |
+| **E4** | Don't ask the student to produce a sentence a teacher has never heard. Coursebook contrast (*Few people came*) is not Use material. | `a2_quantifiers` smoke 2026-08-26: dropped both bare-*Few* items. *a few* / *very few* stay. | `observed` |
 
 ---
 

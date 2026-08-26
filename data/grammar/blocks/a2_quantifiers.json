@@ -5,7 +5,7 @@
   "tree_node": "a2_quantifiers",
   "codex_unit": "G_NP-A1B1-01",
   "practice": "frames",
-  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 54 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech · 2026-08-19: 'Little is known about him' (C1 register) replaced with an A2 'little' item · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "many + countable plural · much + uncountable · a lot of both. Teach after countable/uncountable. · Bank 52 · neg+any slice · flags: intro CZ + countable wording 2026-07-26 · flags: 2026-07-26d many≈a lot of plural · 2026-08-19 (James, Patrik smoke): 'She has much free time' was not English (card 3 says so itself) — now a lot of; + 3 items for a lot = much (his 'a lot different'); 2 authoring notes removed from the Czech · 2026-08-19: 'Little is known about him' (C1 register) replaced with an A2 'little' item · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded. · 2026-08-26 smoke: dropped bare Few people came / Few students failed the test (textbook, not spoken). a few / very few stay.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -202,17 +202,6 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "Few people came.",
-          "cz": "Přišlo málo lidí.",
-          "gap": "____ people came.",
-          "gap_answer": "Few",
-          "accepts": [
-            "Few people came."
-          ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
-        },
-        {
           "en": "How much is it?",
           "cz": "Kolik to stojí?",
           "gap": "How ____ is it?",
@@ -286,7 +275,9 @@
           "gap": "I know a ____ words in German.",
           "gap_answer": "few",
           "accepts": [
-            "I know a few words in German."
+            "I know a few words in German.",
+            "I know a few German words.",
+            "I know a few words of German."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -354,6 +345,12 @@
           "cz": "Kolik cukru zbývá?",
           "gap": "How ____ sugar is left?",
           "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "many",
+            "a lot",
+            "few"
+          ],
           "accepts": [
             "How much sugar is left?"
           ],
@@ -400,17 +397,6 @@
           "gap_answer": "few",
           "accepts": [
             "She invited a few friends."
-          ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
-        },
-        {
-          "en": "Few students failed the test.",
-          "cz": "Málo studentů neudělalo test.",
-          "gap": "____ students failed the test.",
-          "gap_answer": "Few",
-          "accepts": [
-            "Few students failed the test."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -572,6 +558,11 @@
           "cz": "Nikomu jsem to neřekl.",
           "gap": "I didn't tell ____.",
           "gap_answer": "anybody",
+          "quiz_options": [
+            "anybody",
+            "somebody",
+            "nobody"
+          ],
           "accepts": [
             "I didn't tell anybody.",
             "I did not tell anybody.",
@@ -581,26 +572,36 @@
           "gap_accepts": [
             "anyone"
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "After a negative: any-, not some- or no-. I didn't tell nobody = two negatives.",
+          "explanation_cz": "Po záporu: any-, ne some- ani no-. I didn't tell nobody = dva zápory."
         },
         {
           "en": "We didn't buy anything.",
           "cz": "Nic jsme nekoupili.",
           "gap": "We didn't buy ____.",
           "gap_answer": "anything",
+          "quiz_options": [
+            "anything",
+            "something",
+            "nothing"
+          ],
           "accepts": [
             "We didn't buy anything.",
             "We did not buy anything."
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "After a negative: any-, not some- or no-. We didn't buy nothing = two negatives.",
+          "explanation_cz": "Po záporu: any-, ne some- ani no-. We didn't buy nothing = dva zápory."
         },
         {
           "en": "She doesn't know anyone here.",
           "cz": "Tady nikoho nezná.",
           "gap": "She doesn't know ____ here.",
           "gap_answer": "anyone",
+          "quiz_options": [
+            "anyone",
+            "someone",
+            "no one"
+          ],
           "accepts": [
             "She doesn't know anyone here.",
             "She does not know anyone here.",
@@ -610,14 +611,19 @@
           "gap_accepts": [
             "anybody"
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "After a negative: any-, not some- or no-. She doesn't know no one = two negatives.",
+          "explanation_cz": "Po záporu: any-, ne some- ani no-. She doesn't know no one = dva zápory."
         },
         {
           "en": "There isn't anyone at home.",
           "cz": "Doma nikdo není.",
           "gap": "There isn't ____ at home.",
           "gap_answer": "anyone",
+          "quiz_options": [
+            "anyone",
+            "someone",
+            "no one"
+          ],
           "accepts": [
             "There isn't anyone at home.",
             "There is not anyone at home.",
@@ -627,34 +633,44 @@
           "gap_accepts": [
             "anybody"
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "After a negative: any-, not some- or no-. There isn't no one = two negatives.",
+          "explanation_cz": "Po záporu: any-, ne some- ani no-. There isn't no one = dva zápory."
         },
         {
           "en": "He doesn't go anywhere at weekends.",
           "cz": "O víkendech nikam nechodí.",
           "gap": "He doesn't go ____ at weekends.",
           "gap_answer": "anywhere",
+          "quiz_options": [
+            "anywhere",
+            "somewhere",
+            "nowhere"
+          ],
           "accepts": [
             "He doesn't go anywhere at weekends.",
             "He does not go anywhere at weekends.",
             "He doesn't go anywhere at the weekend.",
             "He does not go anywhere at the weekend."
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "After a negative: any-, not some- or no-. He doesn't go nowhere = two negatives.",
+          "explanation_cz": "Po záporu: any-, ne some- ani no-. He doesn't go nowhere = dva zápory."
         },
         {
           "en": "I don't need anything else.",
           "cz": "Nic dalšího nepotřebuju.",
           "gap": "I don't need ____ else.",
           "gap_answer": "anything",
+          "quiz_options": [
+            "anything",
+            "something",
+            "nothing"
+          ],
           "accepts": [
             "I don't need anything else.",
             "I do not need anything else."
           ],
-          "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
-          "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
+          "explanation": "After a negative: any-, not some- or no-. I don't need nothing = two negatives.",
+          "explanation_cz": "Po záporu: any-, ne some- ani no-. I don't need nothing = dva zápory."
         }
       ]
     }
@@ -708,7 +724,9 @@
         "body_cz": "Po don't / didn't / isn't → **any**body / **any**thing / **any**where — ne nobody / nothing. V angličtině jeden zápor.",
         "points": [
           "I didn't tell **any**body. (not nobody)",
-          "We did not buy **any**thing."
+          "We did not buy **any**thing.",
+          "**any** is for negatives and questions, not positives.",
+          "~~I have any problems.~~ · I have **some** problems."
         ]
       },
       {

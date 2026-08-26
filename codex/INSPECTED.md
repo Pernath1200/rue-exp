@@ -14,7 +14,7 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**8 inspected · 0 approved · 91 unseen** of 99 live units
+**9 inspected · 0 approved · 90 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **0 have any tick**.
 
@@ -44,7 +44,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 2 inspected / 0 approved / 16 units
+## A2 — 4 inspected / 0 approved / 16 units
 
 - [ ][ ] `a2_modals_must_should` — Must / should · 48 items · **cloud** · seen?
 - [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
@@ -58,7 +58,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
 - [ ][ ] `a2_present_continuous` — Present continuous · 54 items · seen?
 - [ ][ ] `a2_present_perfect` — Present perfect · 48 items · seen?
-- [ ][ ] `a2_quantifiers` — Much / many / a lot · 54 items · seen?
+- [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items
 - [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 36 items
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
 - [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
