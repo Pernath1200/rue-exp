@@ -14,7 +14,7 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**7 inspected · 0 approved · 92 unseen** of 99 live units
+**8 inspected · 0 approved · 91 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **0 have any tick**.
 
@@ -50,7 +50,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
 - [x][ ] `a2_agreement` — Subject–verb agreement (A2) · 27 items
 - [ ][ ] `a2_comparatives` — Comparatives · 48 items · seen?
-- [ ][ ] `a2_countable` — Countable and uncountable · 48 items · seen?
+- [x][ ] `a2_countable` — Countable and uncountable · 48 items · seen?
 - [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 24 items · seen?
 - [x][ ] `a2_first_conditional` — First conditional · 54 items · seen?
 - [ ][ ] `a2_past_continuous` — Past continuous · 48 items · seen?
