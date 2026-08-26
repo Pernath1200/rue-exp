@@ -30,13 +30,13 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "She has much free time.",
+          "en": "She has a lot of free time.",
           "cz": "Má hodně volného času.",
-          "gap": "She has ____ free time.",
-          "gap_answer": "much",
+          "gap": "She has ____ of free time.",
+          "gap_answer": "a lot",
           "accepts": [
-            "She has much free time.",
-            "She has a lot of free time."
+            "She has a lot of free time.",
+            "She has lots of free time."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -416,12 +416,12 @@
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
         },
         {
-          "en": "Little is known about him.",
-          "cz": "Je o něm známo málo.",
-          "gap": "____ is known about him.",
-          "gap_answer": "Little",
+          "en": "I speak a little Czech.",
+          "cz": "Mluvím trochu česky.",
+          "gap": "I speak a ____ Czech.",
+          "gap_answer": "little",
           "accepts": [
-            "Little is known about him."
+            "I speak a little Czech."
           ],
           "explanation": "Quantifier: much/many/a lot of/a few/a little — match the noun type.",
           "explanation_cz": "Kvantifikátor: much/many/a lot of/a few/a little — podle podstatného jména."
@@ -704,11 +704,11 @@
       {
         "title": "After a negative",
         "title_cz": "Po záporu",
-        "body": "After don't / didn't / isn't use anybody / anything / anywhere — not nobody / nothing. English has one negative.",
-        "body_cz": "Po don't / didn't / isn't → anybody / anything / anywhere — ne nobody / nothing. V angličtině jeden zápor.",
+        "body": "After don't / didn't / isn't use **any**body / **any**thing / **any**where — not nobody / nothing. English has one negative.",
+        "body_cz": "Po don't / didn't / isn't → **any**body / **any**thing / **any**where — ne nobody / nothing. V angličtině jeden zápor.",
         "points": [
-          "I didn't tell anybody. (not nobody)",
-          "We did not buy anything."
+          "I didn't tell **any**body. (not nobody)",
+          "We did not buy **any**thing."
         ]
       },
       {
@@ -749,8 +749,8 @@
       {
         "title": "Negatives",
         "title_cz": "Zápor — často much / many",
-        "body": "In negative sentences, much and many are common. In positive sentences, a lot of is often more natural.",
-        "body_cz": "V záporu se často používá much / many. V kladné větě je a lot of často přirozenější.",
+        "body": "In negatives and questions, both much and many are common. In a positive sentence **much** on its own is not natural — use **a lot of**. **Many** is fine in a positive sentence.",
+        "body_cz": "V záporu a v otázce se běžně používá much i many. V kladné větě samotné **much** nezní přirozeně — použij **a lot of**. **Many** je v kladné větě v pořádku.",
         "table": {
           "caption": "−",
           "headers": [
@@ -773,7 +773,8 @@
           ]
         },
         "points": [
-          "In + sentences a lot of is common",
+          "+ I have **a lot of** money. (~~much money~~)",
+          "+ **Many** people came. ✓ — many is fine in +",
           "much / many frequent in − and ?"
         ]
       },
