@@ -627,7 +627,7 @@ export function startPractice(rawPack, root, opts) {
         title: "Stage 2 · Check",
         sub:
           state.checkPhase === "sort_bins"
-            ? "Sort · drag each word into a column · check when they are all placed"
+            ? "Sort · drag a word into a column · Enter = check when all placed"
             : state.checkPhase === "quiz"
             ? "Quiz · keys 1–4 · Enter = next"
             : state.checkPhase === "order_click"
@@ -904,14 +904,17 @@ export function startPractice(rawPack, root, opts) {
     `;
 
     if (done) {
-      root.querySelector("#sb-next")?.addEventListener("click", () => {
+      const goNext = () => {
         if (!state.sortScoreCommitted) {
           state.checkScore += score;
           state.checkTotal += items.length;
           state.sortScoreCommitted = true;
         }
         goToNextCheckPhaseOrType();
-      });
+      };
+      root.querySelector("#sb-next")?.addEventListener("click", goNext);
+      state.enterAdvance = goNext;
+      focusPrimary("#sb-next");
       return;
     }
 
@@ -957,10 +960,17 @@ export function startPractice(rawPack, root, opts) {
       });
     });
 
-    root.querySelector("#sb-check")?.addEventListener("click", () => {
+    const submit = () => {
+      if (poolIdx.length) return;   // not all placed — Enter does nothing
       state.sortSubmitted = true;
       render();
-    });
+    };
+    root.querySelector("#sb-check")?.addEventListener("click", submit);
+    /* Enter MUST be re-pointed here. Leaving it unset let it keep the intro's
+     * action (beginCheck), so pressing Enter after placing every word wiped
+     * sortPlaced and restarted the sort at 0/12 — James, first play. */
+    state.enterAdvance = submit;
+    if (allPlaced) focusPrimary("#sb-check");
   }
 
   function newMatchBoard() {
