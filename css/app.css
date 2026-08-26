@@ -2353,10 +2353,18 @@ button.brand:hover { color: var(--accent); }
 }
 
 .sb-bin h3 {
-  margin: 0 0 0.35rem;
+  margin: 0 0 0.15rem;
   font-size: 0.8rem;
   color: var(--accent);
   text-transform: lowercase;
+}
+
+.sb-cap {
+  margin: 0 0 0.35rem;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
+  text-transform: none;
 }
 
 .sb-drop {
@@ -2377,6 +2385,7 @@ button.sb-chip {
   color: var(--text);
   cursor: grab;
   text-align: left;
+  flex: 0 0 auto;
 }
 
 button.sb-chip:hover:not(:disabled) {
@@ -2412,6 +2421,6 @@ button.sb-chip.bad {
   color: var(--wrong);
 }
 
-@media (max-width: 560px) {
+@media (max-width: 360px) {
   .sb-bins { grid-template-columns: 1fr; }
 }

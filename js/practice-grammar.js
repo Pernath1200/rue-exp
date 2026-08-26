@@ -713,6 +713,17 @@ export function startPractice(rawPack, root, opts) {
     if (card.body) body += `<p>${escMd(card.body)}</p>`;
     const bodyCz = card.body_cz || card.body_pl;
     if (bodyCz) body += `<p><em>${escMd(bodyCz)}</em></p>`;
+    /* Schematic before the table so the picture of WHEN lands first
+     * (James, 2026-08-26: small timelines on later intro pages). */
+    if (card.diagram) {
+      const svgMarkup = introDiagram(card.diagram, card.labels || []);
+      if (svgMarkup) body += `<div class="intro-scene-wrap">${svgMarkup}</div>`;
+      else if (card.diagram_fallback)
+        body += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
+    }
+    if (card.svg && String(card.svg).trim().startsWith("<svg")) {
+      body += `<div class="intro-scene-wrap">${card.svg}</div>`;
+    }
     if (card.table) {
       const h = card.table.headers || [];
       body += `<table class="intro-table"><thead><tr>${h
@@ -723,24 +734,6 @@ export function startPractice(rawPack, root, opts) {
             `<tr>${row.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
         )
         .join("")}</tbody></table>`;
-    }
-    /* Schematic, named by the card and labelled by the pack (2026-08-24).
-     * Grammar cards could not show one at all — the mechanism existed only in
-     * practice-vocab.js — so specs asking for diagrams had no way in. Geometry
-     * stays in intro-visuals.js; the card supplies `diagram` and `labels`.
-     * A card with an unknown name renders nothing rather than breaking, and
-     * `diagram_fallback` covers that case in text. */
-    if (card.diagram) {
-      const svgMarkup = introDiagram(card.diagram, card.labels || []);
-      if (svgMarkup) body += `<div class="intro-scene-wrap">${svgMarkup}</div>`;
-      else if (card.diagram_fallback)
-        body += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
-    }
-    /* Inline SVG authored in the pack — H3 overridden by James 2026-08-25:
-     * intros may carry their own drawing; colours are normalized to theme
-     * variables at landing time. */
-    if (card.svg && String(card.svg).trim().startsWith("<svg")) {
-      body += `<div class="intro-scene-wrap">${card.svg}</div>`;
     }
 
     // points[] carries the bulk of the authored teaching on 403 of 557 cards
@@ -776,7 +769,7 @@ export function startPractice(rawPack, root, opts) {
       <div class="practice-head"><h2>${esc(pack.title)}</h2></div>
       <div class="intro-card">
         <p class="intro-kicker">Intro · ${i + 1} / ${n}</p>
-        <h3>${esc(card.title || "Intro")}</h3>
+        ${card.title ? `<h3>${esc(card.title)}</h3>` : ""}
         ${card.title_cz || card.title_pl ? `<p><em>${esc(card.title_cz || card.title_pl)}</em></p>` : ""}
         ${body}
         <div class="nav">
@@ -872,11 +865,15 @@ export function startPractice(rawPack, root, opts) {
       }>${esc(it.en)}${cz}${truth}</button>`;
     };
 
+    const captions = pack.bin_captions && typeof pack.bin_captions === "object"
+      ? pack.bin_captions
+      : {};
     const cols = bins
       .map(
         (b) => `
         <div class="sb-bin" data-bin="${esc(b)}">
           <h3>${esc(b)}</h3>
+          ${captions[b] ? `<p class="sb-cap">${esc(captions[b])}</p>` : ""}
           <div class="sb-drop">${items
             .map((_, i) => i)
             .filter((i) => placed[i] === b)
@@ -1042,10 +1039,13 @@ export function startPractice(rawPack, root, opts) {
     state.orderPicked = [];
     state.orderBag = null;
     state.orderBagFor = null;
-    state.sortItems = samplePass(pack.sortbins || [], null, focusStructures, {
-      packId: pack.id,
-      stage: "sortbins",
-    });
+    const sortBank = pack.sortbins || [];
+    state.sortItems = sortBank.length <= 16
+      ? shuffle(sortBank.slice())
+      : samplePass(sortBank, null, focusStructures, {
+          packId: pack.id,
+          stage: "sortbins",
+        });
     state.sortPlaced = {};
     state.sortSubmitted = false;
     state.sortSel = null;

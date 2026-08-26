@@ -9,15 +9,101 @@
   "default_direction": "en_gap",
   "check": {
     "sequence": [
+      "sort_bins",
       "quiz"
     ]
   },
   "quality": "workable_draft",
   "demo_priority": true,
+  "quiz_axis": "pp_vs_past",
+  "bins": [
+    "past simple",
+    "present perfect"
+  ],
+  "bin_captions": {
+    "past simple": "finished time",
+    "present perfect": "unfinished time · now"
+  },
   "blocks": [
+    {
+      "id": "sort",
+      "title": "Finished or still now? · B1",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "yesterday",
+          "bin": "past simple"
+        },
+        {
+          "en": "last week",
+          "bin": "past simple"
+        },
+        {
+          "en": "last year",
+          "bin": "past simple"
+        },
+        {
+          "en": "two years ago",
+          "bin": "past simple"
+        },
+        {
+          "en": "in 2010",
+          "bin": "past simple"
+        },
+        {
+          "en": "then",
+          "bin": "past simple"
+        },
+        {
+          "en": "after that",
+          "bin": "past simple"
+        },
+        {
+          "en": "last night",
+          "bin": "past simple"
+        },
+        {
+          "en": "since 2015",
+          "bin": "present perfect"
+        },
+        {
+          "en": "ever",
+          "bin": "present perfect"
+        },
+        {
+          "en": "never",
+          "bin": "present perfect"
+        },
+        {
+          "en": "just",
+          "bin": "present perfect"
+        },
+        {
+          "en": "already",
+          "bin": "present perfect"
+        },
+        {
+          "en": "yet",
+          "bin": "present perfect"
+        },
+        {
+          "en": "so far",
+          "bin": "present perfect"
+        }
+      ]
+    },
     {
       "id": "b1_present_perfect_vs_past_main",
       "title": "Present perfect vs past simple · B1",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
           "en": "I saw him at the station yesterday.",
@@ -177,17 +263,17 @@
           ]
         },
         {
-          "en": "He has lived in Brno for five years.",
+          "en": "He has lived in Brno for five years now.",
           "cz": "Už pět let bydlí v Brně.",
-          "gap": "He ____ in Brno for five years.",
+          "gap": "He ____ in Brno for five years now.",
           "gap_answer": "has lived",
           "gap_accepts": [
             "has lived",
             "he's lived"
           ],
           "accepts": [
-            "He has lived in Brno for five years.",
-            "He's lived in Brno for five years."
+            "He has lived in Brno for five years now.",
+            "He's lived in Brno for five years now."
           ],
           "lemma": "live",
           "explanation": "Present perfect links past to now (no finished past time word).",
@@ -196,7 +282,7 @@
             "he",
             "live",
             "in Brno",
-            "for five years"
+            "for five years now"
           ]
         },
         {
@@ -223,11 +309,13 @@
         {
           "en": "They have just bought a new flat.",
           "cz": "Právě koupili nový byt.",
-          "gap": "They ____ just bought a new flat.",
-          "gap_answer": "have",
+          "gap": "They ____ a new flat already. (buy)",
+          "gap_answer": "have bought",
           "gap_accepts": [
-            "have",
-            "they've"
+            "have bought",
+            "they've bought",
+            "have just bought",
+            "they've just bought"
           ],
           "accepts": [
             "They have just bought a new flat.",
@@ -240,7 +328,8 @@
             "buy",
             "a new flat",
             "just"
-          ]
+          ],
+          "lemma": "buy"
         },
         {
           "en": "I lost my keys this morning.",
@@ -314,10 +403,12 @@
         {
           "en": "The train has just arrived.",
           "cz": "Vlak právě přijel.",
-          "gap": "The train ____ just arrived.",
-          "gap_answer": "has",
+          "gap": "The train ____ already. (arrive)",
+          "gap_answer": "has arrived",
           "gap_accepts": [
-            "has"
+            "has arrived",
+            "has just arrived",
+            "the train's arrived"
           ],
           "accepts": [
             "The train has just arrived.",
@@ -329,7 +420,8 @@
             "the train",
             "arrive",
             "just"
-          ]
+          ],
+          "lemma": "arrive"
         },
         {
           "en": "I worked there from 2018 to 2021.",
@@ -378,11 +470,17 @@
         {
           "en": "Did you call the client yesterday?",
           "cz": "Volal jsi klientovi včera?",
-          "gap": "____ you call the client yesterday?",
-          "gap_answer": "Did",
+          "gap": "____ the client yesterday? (call)",
+          "gap_answer": "Did you call",
           "gap_accepts": [
-            "Did",
-            "did"
+            "Did you call",
+            "did you call"
+          ],
+          "quiz_options": [
+            "Did you call",
+            "Have you called",
+            "Did you called",
+            "Have you call"
           ],
           "accepts": [
             "Did you call the client yesterday?"
@@ -395,16 +493,23 @@
             "the client",
             "yesterday",
             "?"
-          ]
+          ],
+          "lemma": "call"
         },
         {
           "en": "Have you called the client yet?",
           "cz": "Už jsi volal klientovi?",
-          "gap": "____ you called the client yet?",
-          "gap_answer": "Have",
+          "gap": "____ the client yet? (call)",
+          "gap_answer": "Have you called",
           "gap_accepts": [
-            "Have",
-            "have"
+            "Have you called",
+            "have you called"
+          ],
+          "quiz_options": [
+            "Have you called",
+            "Did you call",
+            "Have you call",
+            "Did you called"
           ],
           "accepts": [
             "Have you called the client yet?"
@@ -417,17 +522,19 @@
             "the client",
             "yet",
             "?"
-          ]
+          ],
+          "lemma": "call"
         },
         {
           "en": "She didn't send the email on Monday.",
           "cz": "V pondělí ten email neposlala.",
-          "gap": "She ____ send the email on Monday.",
-          "gap_answer": "didn't",
+          "gap": "She ____ the email on Monday. (send / not)",
+          "gap_answer": "didn't send",
           "gap_accepts": [
-            "didn't",
-            "did not"
+            "didn't send",
+            "did not send"
           ],
+          "lemma": "send",
           "accepts": [
             "She didn't send the email on Monday.",
             "She did not send the email on Monday."
@@ -446,12 +553,13 @@
         {
           "en": "She hasn't sent the email yet.",
           "cz": "Ještě neposlala ten email.",
-          "gap": "She ____ sent the email yet.",
-          "gap_answer": "hasn't",
+          "gap": "She ____ the email yet. (send / not)",
+          "gap_answer": "hasn't sent",
           "gap_accepts": [
-            "hasn't",
-            "has not"
+            "hasn't sent",
+            "has not sent"
           ],
+          "lemma": "send",
           "accepts": [
             "She hasn't sent the email yet.",
             "She has not sent the email yet."
@@ -489,27 +597,27 @@
           ]
         },
         {
-          "en": "I have never met her before.",
-          "cz": "Nikdy předtím jsem ji nepotkal.",
-          "gap": "I ____ never met her before.",
-          "gap_answer": "have",
+          "en": "I have met her twice already.",
+          "cz": "Už jsem ji dvakrát potkal.",
+          "gap": "I ____ her twice already. (meet)",
+          "gap_answer": "have met",
           "gap_accepts": [
-            "have",
-            "I've"
+            "have met",
+            "I've met"
           ],
           "accepts": [
-            "I have never met her before.",
-            "I've never met her before."
+            "I have met her twice already.",
+            "I've met her twice already."
           ],
           "explanation": "Present perfect links past to now (no finished past time word).",
           "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
           "use_cues": [
             "I",
-            "never",
             "meet",
             "her",
-            "before"
-          ]
+            "twice already"
+          ],
+          "lemma": "meet"
         },
         {
           "en": "He broke his phone last week.",
@@ -627,11 +735,13 @@
         {
           "en": "She has already been to the gym today.",
           "cz": "Dnes už byla v posilovně.",
-          "gap": "She ____ already been to the gym today.",
-          "gap_answer": "has",
+          "gap": "She ____ to the gym already. (be)",
+          "gap_answer": "has been",
           "gap_accepts": [
-            "has",
-            "she's"
+            "has been",
+            "she's been",
+            "has already been",
+            "she's already been"
           ],
           "accepts": [
             "She has already been to the gym today.",
@@ -645,7 +755,8 @@
             "to the gym",
             "already",
             "today"
-          ]
+          ],
+          "lemma": "be"
         },
         {
           "en": "We chose the hotel in March.",
@@ -671,11 +782,13 @@
         {
           "en": "We have already chosen the hotel.",
           "cz": "Hotel už jsme vybrali.",
-          "gap": "We ____ already chosen the hotel.",
-          "gap_answer": "have",
+          "gap": "We ____ the hotel already. (choose)",
+          "gap_answer": "have chosen",
           "gap_accepts": [
-            "have",
-            "we've"
+            "have chosen",
+            "we've chosen",
+            "have already chosen",
+            "we've already chosen"
           ],
           "accepts": [
             "We have already chosen the hotel.",
@@ -688,7 +801,8 @@
             "choose",
             "the hotel",
             "already"
-          ]
+          ],
+          "lemma": "choose"
         },
         {
           "en": "He started the course last month.",
@@ -714,11 +828,13 @@
         {
           "en": "He has just started the course.",
           "cz": "Kurz právě začal.",
-          "gap": "He ____ just started the course.",
-          "gap_answer": "has",
+          "gap": "He ____ the course already. (start)",
+          "gap_answer": "has started",
           "gap_accepts": [
-            "has",
-            "he's"
+            "has started",
+            "he's started",
+            "has just started",
+            "he's just started"
           ],
           "accepts": [
             "He has just started the course.",
@@ -731,7 +847,8 @@
             "start",
             "the course",
             "just"
-          ]
+          ],
+          "lemma": "start"
         },
         {
           "en": "I spoke to the manager yesterday.",
@@ -759,11 +876,13 @@
         {
           "en": "I have already spoken to the manager.",
           "cz": "Už jsem mluvil s manažerem.",
-          "gap": "I ____ already spoken to the manager.",
-          "gap_answer": "have",
+          "gap": "I ____ to the manager already. (speak)",
+          "gap_answer": "have spoken",
           "gap_accepts": [
-            "have",
-            "I've"
+            "have spoken",
+            "I've spoken",
+            "have already spoken",
+            "I've already spoken"
           ],
           "accepts": [
             "I have already spoken to the manager.",
@@ -776,7 +895,8 @@
             "speak",
             "to the manager",
             "already"
-          ]
+          ],
+          "lemma": "speak"
         },
         {
           "en": "She wrote the email this morning.",
@@ -876,11 +996,17 @@
         {
           "en": "Did they reply last week?",
           "cz": "Odpověděli minulý týden?",
-          "gap": "____ they reply last week?",
-          "gap_answer": "Did",
+          "gap": "____ last week? (reply)",
+          "gap_answer": "Did they reply",
           "gap_accepts": [
-            "Did",
-            "did"
+            "Did they reply",
+            "did they reply"
+          ],
+          "quiz_options": [
+            "Did they reply",
+            "Have they replied",
+            "Did they replied",
+            "Have they reply"
           ],
           "accepts": [
             "Did they reply last week?"
@@ -892,16 +1018,23 @@
             "reply",
             "last week",
             "?"
-          ]
+          ],
+          "lemma": "reply"
         },
         {
           "en": "Have they replied yet?",
           "cz": "Už odpověděli?",
-          "gap": "____ they replied yet?",
-          "gap_answer": "Have",
+          "gap": "____ yet? (reply)",
+          "gap_answer": "Have they replied",
           "gap_accepts": [
-            "Have",
-            "have"
+            "Have they replied",
+            "have they replied"
+          ],
+          "quiz_options": [
+            "Have they replied",
+            "Did they reply",
+            "Have they reply",
+            "Did they replied"
           ],
           "accepts": [
             "Have they replied yet?"
@@ -913,7 +1046,8 @@
             "reply",
             "yet",
             "?"
-          ]
+          ],
+          "lemma": "reply"
         },
         {
           "en": "I found a better flat last month.",
@@ -939,11 +1073,13 @@
         {
           "en": "I have just found a better flat.",
           "cz": "Právě jsem našel lepší byt.",
-          "gap": "I ____ just found a better flat.",
-          "gap_answer": "have",
+          "gap": "I ____ a better flat already. (find)",
+          "gap_answer": "have found",
           "gap_accepts": [
-            "have",
-            "I've"
+            "have found",
+            "I've found",
+            "have just found",
+            "I've just found"
           ],
           "accepts": [
             "I have just found a better flat.",
@@ -956,7 +1092,8 @@
             "find",
             "a better flat",
             "just"
-          ]
+          ],
+          "lemma": "find"
         },
         {
           "en": "He took the train yesterday.",
@@ -1026,11 +1163,13 @@
         {
           "en": "I have already read that book.",
           "cz": "Tu knihu jsem už četl.",
-          "gap": "I ____ already read that book.",
-          "gap_answer": "have",
+          "gap": "I ____ that book already. (read)",
+          "gap_answer": "have read",
           "gap_accepts": [
-            "have",
-            "I've"
+            "have read",
+            "I've read",
+            "have already read",
+            "I've already read"
           ],
           "accepts": [
             "I have already read that book.",
@@ -1043,7 +1182,8 @@
             "read",
             "that book",
             "already"
-          ]
+          ],
+          "lemma": "read"
         },
         {
           "en": "She paid the bill last night.",
@@ -1069,11 +1209,13 @@
         {
           "en": "She has already paid the bill.",
           "cz": "Účet už zaplatila.",
-          "gap": "She ____ already paid the bill.",
-          "gap_answer": "has",
+          "gap": "She ____ the bill already. (pay)",
+          "gap_answer": "has paid",
           "gap_accepts": [
-            "has",
-            "she's"
+            "has paid",
+            "she's paid",
+            "has already paid",
+            "she's already paid"
           ],
           "accepts": [
             "She has already paid the bill.",
@@ -1086,7 +1228,8 @@
             "pay",
             "the bill",
             "already"
-          ]
+          ],
+          "lemma": "pay"
         },
         {
           "en": "We sold the car in January.",
@@ -1135,11 +1278,17 @@
         {
           "en": "Was he in Vienna last year?",
           "cz": "Byl loni ve Vídni?",
-          "gap": "____ he in Vienna last year?",
-          "gap_answer": "Was",
+          "gap": "____ in Vienna last year? (be)",
+          "gap_answer": "Was he",
           "gap_accepts": [
-            "Was",
-            "was"
+            "Was he",
+            "was he"
+          ],
+          "quiz_options": [
+            "Was he",
+            "Has he been",
+            "Have he been",
+            "Was he been"
           ],
           "accepts": [
             "Was he in Vienna last year?"
@@ -1152,16 +1301,25 @@
             "in Vienna",
             "last year",
             "?"
-          ]
+          ],
+          "lemma": "be"
         },
         {
           "en": "Has he ever been to Vienna?",
           "cz": "Byl někdy ve Vídni?",
-          "gap": "____ he ever been to Vienna?",
-          "gap_answer": "Has",
+          "gap": "____ to Vienna? (be)",
+          "gap_answer": "Has he ever been",
           "gap_accepts": [
-            "Has",
-            "has"
+            "Has he ever been",
+            "has he ever been",
+            "Has he been",
+            "has he been"
+          ],
+          "quiz_options": [
+            "Has he ever been",
+            "Was he",
+            "Has he ever",
+            "Did he be"
           ],
           "accepts": [
             "Has he ever been to Vienna?"
@@ -1174,7 +1332,8 @@
             "be",
             "to Vienna",
             "?"
-          ]
+          ],
+          "lemma": "be"
         },
         {
           "en": "I checked the timetable an hour ago.",
@@ -1200,11 +1359,13 @@
         {
           "en": "I have just checked the timetable.",
           "cz": "Právě jsem zkontroloval jízdní řád.",
-          "gap": "I ____ just checked the timetable.",
-          "gap_answer": "have",
+          "gap": "I ____ the timetable already. (check)",
+          "gap_answer": "have checked",
           "gap_accepts": [
-            "have",
-            "I've"
+            "have checked",
+            "I've checked",
+            "have just checked",
+            "I've just checked"
           ],
           "accepts": [
             "I have just checked the timetable.",
@@ -1217,17 +1378,19 @@
             "check",
             "the timetable",
             "just"
-          ]
+          ],
+          "lemma": "check"
         },
         {
           "en": "They didn't finish the report yesterday.",
           "cz": "Včera tu zprávu nedokončili.",
-          "gap": "They ____ finish the report yesterday.",
-          "gap_answer": "didn't",
+          "gap": "They ____ the report yesterday. (finish / not)",
+          "gap_answer": "didn't finish",
           "gap_accepts": [
-            "didn't",
-            "did not"
+            "didn't finish",
+            "did not finish"
           ],
+          "lemma": "finish",
           "accepts": [
             "They didn't finish the report yesterday.",
             "They did not finish the report yesterday."
@@ -1245,12 +1408,13 @@
         {
           "en": "They haven't finished the report yet.",
           "cz": "Tu zprávu ještě nedokončili.",
-          "gap": "They ____ finished the report yet.",
-          "gap_answer": "haven't",
+          "gap": "They ____ the report yet. (finish / not)",
+          "gap_answer": "haven't finished",
           "gap_accepts": [
-            "haven't",
-            "have not"
+            "haven't finished",
+            "have not finished"
           ],
+          "lemma": "finish",
           "accepts": [
             "They haven't finished the report yet.",
             "They have not finished the report yet."
@@ -1268,11 +1432,17 @@
         {
           "en": "Where did you go last weekend?",
           "cz": "Kam jsi jel minulý víkend?",
-          "gap": "Where ____ you go last weekend?",
-          "gap_answer": "did",
+          "gap": "Where ____ last weekend? (go)",
+          "gap_answer": "did you go",
           "gap_accepts": [
-            "did",
-            "Did"
+            "did you go",
+            "Did you go"
+          ],
+          "quiz_options": [
+            "did you go",
+            "have you been",
+            "have you gone",
+            "did you went"
           ],
           "accepts": [
             "Where did you go last weekend?"
@@ -1285,16 +1455,23 @@
             "go",
             "last weekend",
             "?"
-          ]
+          ],
+          "lemma": "go"
         },
         {
           "en": "Where have you been?",
           "cz": "Kde jsi byl?",
-          "gap": "Where ____ you been?",
-          "gap_answer": "have",
+          "gap": "Where ____? (be)",
+          "gap_answer": "have you been",
           "gap_accepts": [
-            "have",
-            "Have"
+            "have you been",
+            "Have you been"
+          ],
+          "quiz_options": [
+            "have you been",
+            "were you",
+            "did you go",
+            "have you gone"
           ],
           "accepts": [
             "Where have you been?",
@@ -1308,7 +1485,8 @@
             "been",
             "?"
           ],
-          "use_prompt": "Full question — link to now (use been)"
+          "use_prompt": "Full question — link to now (use been)",
+          "lemma": "be"
         },
         {
           "en": "He left the office at six.",
@@ -1334,11 +1512,13 @@
         {
           "en": "He has already left the office.",
           "cz": "Už odešel z kanceláře.",
-          "gap": "He ____ already left the office.",
-          "gap_answer": "has",
+          "gap": "He ____ the office already. (leave)",
+          "gap_answer": "has left",
           "gap_accepts": [
-            "has",
-            "he's"
+            "has left",
+            "he's left",
+            "has already left",
+            "he's already left"
           ],
           "accepts": [
             "He has already left the office.",
@@ -1351,12 +1531,13 @@
             "leave",
             "the office",
             "already"
-          ]
+          ],
+          "lemma": "leave"
         },
         {
           "en": "We had lunch at noon.",
           "cz": "V poledne jsme obědvali.",
-          "gap": "We ____ lunch at noon.",
+          "gap": "We ____ lunch at noon. (have)",
           "gap_answer": "had",
           "gap_accepts": [
             "had"
@@ -1377,11 +1558,13 @@
         {
           "en": "We have already had lunch.",
           "cz": "Už jsme obědvali.",
-          "gap": "We ____ already had lunch.",
-          "gap_answer": "have",
+          "gap": "We ____ lunch already. (have)",
+          "gap_answer": "have had",
           "gap_accepts": [
-            "have",
-            "we've"
+            "have had",
+            "we've had",
+            "have already had",
+            "we've already had"
           ],
           "accepts": [
             "We have already had lunch.",
@@ -1401,7 +1584,8 @@
             "have",
             "lunch",
             "already"
-          ]
+          ],
+          "lemma": "have"
         },
         {
           "en": "I sent three emails yesterday.",
@@ -1454,15 +1638,29 @@
   "intro": {
     "cards": [
       {
-        "title": "What is this?",
+        "diagram": "pp_vs_past",
+        "labels": [
+          "Past simple",
+          "moved",
+          "The moving finished last year.",
+          "Present perfect",
+          "moved",
+          "I live here",
+          "Same event — we talk about the result now."
+        ],
         "points": [
-          "**Past simple** — finished past (*I moved*)",
-          "**Present perfect** — past with a link to **now** (*I have moved*)",
-          "Same verb idea — different time picture"
+          "I **moved** last year. We name **when** the moving happened.",
+          "I **have moved**. Same moving — we name what is true **now**."
         ]
       },
       {
         "title": "Past simple — when?",
+        "diagram": "time_now",
+        "labels": [
+          "I moved",
+          "last year",
+          "closed"
+        ],
         "table": {
           "headers": [
             "Signal",
@@ -1484,11 +1682,17 @@
           ]
         },
         "points": [
-          "The time is closed. The story step is finished."
+          "The **time** of the action is finished — not the whole story."
         ]
       },
       {
-        "title": "Present perfect — when?",
+        "title": "Present perfect — now?",
+        "diagram": "time_now",
+        "labels": [
+          "lost keys",
+          "I don't have them",
+          "bridge"
+        ],
         "table": {
           "headers": [
             "Idea",
@@ -1512,36 +1716,34 @@
       },
       {
         "title": "Why it matters",
+        "diagram": "time_now",
+        "labels": [
+          "Then I moved",
+          "a finished step",
+          "closed"
+        ],
         "points": [
           "Listeners hear **then** as a finished step → past simple",
           "Present perfect with **then** often sounds wrong",
-          "Classroom hit: *Then I **have moved*** → *Then I **moved***"
+          "*Then I **have moved*** → *Then I **moved***"
         ]
       },
       {
-        "title": "Picture in your head",
-        "table": {
-          "headers": [
-            "Form",
-            "Picture"
-          ],
-          "rows": [
-            [
-              "Past simple",
-              "● event  ·  then finished  ·  now separate"
-            ],
-            [
-              "Present perfect",
-              "● event  ······  bridge to NOW"
-            ]
-          ]
-        },
+        "title": "Unfinished time",
+        "title_cz": "čas, který ještě běží",
+        "diagram": "time_now",
+        "labels": [
+          "I have lived here",
+          "still true",
+          "span"
+        ],
         "points": [
-          "If the story says **then / after that**, use past simple."
+          "If the story says **then / after that**, use past simple.",
+          "**for / since** with a situation that continues → present perfect."
         ]
       },
       {
-        "title": "Signal words (start list)",
+        "title": "Signal words",
         "table": {
           "headers": [
             "Past simple",
@@ -1565,29 +1767,32 @@
       },
       {
         "title": "Common mistakes",
+        "diagram": "time_now",
+        "labels": [
+          "I saw him",
+          "yesterday",
+          "closed"
+        ],
         "table": {
           "headers": [
-            "✗ Avoid",
-            "✓ Better"
+            "✗",
+            "✓"
           ],
           "rows": [
             [
-              "Then I have moved to a village.",
-              "Then I **moved** to a village."
+              "Then I have moved.",
+              "Then I **moved**."
             ],
             [
               "I have seen him yesterday.",
               "I **saw** him yesterday."
             ],
             [
-              "I lived here since 2015. (and still do)",
+              "I lived here since 2015.",
               "I **have lived** here since 2015."
             ]
           ]
-        },
-        "points": [
-          "Czech often loves perfect — English does not always."
-        ]
+        }
       },
       {
         "title": "Quick check",
@@ -1595,14 +1800,6 @@
           "I ___ (move) to Prague in 2012. → **moved**",
           "I ___ (live) here for twelve years. (still here) → **have lived**",
           "Then I ___ (start) a new job. → **started**"
-        ]
-      },
-      {
-        "title": "Remember",
-        "body": "Finished time or story step → past simple. Link to now → present perfect.",
-        "points": [
-          "**Then** + perfect is a red flag",
-          "Ask: is the time closed, or still connected to now?"
         ]
       }
     ]

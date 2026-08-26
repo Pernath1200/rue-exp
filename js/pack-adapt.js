@@ -112,6 +112,13 @@ const IRREGULAR = {
   speak: ["speaks", "spoke", "spoken", "speaking"],
   begin: ["begins", "began", "begun", "beginning"],
   understand: ["understands", "understood", "understanding"],
+  read: ["reads", "read", "read", "reading"],
+  send: ["sends", "sent", "sent", "sending"],
+  sell: ["sells", "sold", "sold", "selling"],
+  lose: ["loses", "lost", "lost", "losing"],
+  choose: ["chooses", "chose", "chosen", "choosing"],
+  break: ["breaks", "broke", "broken", "breaking"],
+  drive: ["drives", "drove", "driven", "driving"],
 };
 
 function thirdPerson(v) {
@@ -407,12 +414,102 @@ function comparativeFormChoices(it) {
   return opts.length >= 2 ? opts : null;
 }
 
-function gapPrompt(it) {
+function simplePastOf(lemma) {
+  if (lemma === "be") return "was";
+  const irr = IRREGULAR[lemma];
+  if (!irr) return pastForm(lemma);
+  const hit = irr.find((f) => !/(s|ing)$/.test(f));
+  return hit || pastForm(lemma);
+}
+
+function participleOf(lemma) {
+  if (lemma === "be") return "been";
+  const irr = IRREGULAR[lemma];
+  if (!irr) return pastForm(lemma);
+  const en = irr.find((f) => /n$/.test(f) && !/ing$/.test(f));
+  if (en) return en;
+  return simplePastOf(lemma);
+}
+
+/** Past simple vs present perfect — options are forms of THIS verb, not sibling vocab.
+ *  Packs opt in with quiz_axis: "pp_vs_past" (James, 2026-08-26: saw/have seen/read/finished). */
+function ppVsPastChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "pp_vs_past") return null;
+  const lemma = String(it.lemma || cuedLemma(it.gap) || "").toLowerCase().trim();
+  const answer = String(it.gap_answer || "").trim();
+  if (!answer) return null;
+  const ansKey = key(answer);
+  const seen = new Set([ansKey]);
+  const opts = [answer];
+  const take = (x) => {
+    const k = key(x);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(matchCase(answer, x));
+  };
+
+  const aux = ansKey.replace(/'/g, "'");
+  const qPhrase = /^(did|have|has|was|were)\s+([a-z]+)\b/.exec(aux);
+  if (qPhrase && lemma) {
+    const subj = qPhrase[2];
+    const past = simplePastOf(lemma);
+    const pp = participleOf(lemma);
+    if (lemma === "be") {
+      take("was " + subj);
+      take("were " + subj);
+      take("have " + subj + " been");
+      take("has " + subj + " been");
+    } else {
+      take("did " + subj + " " + lemma);
+      take("have " + subj + " " + pp);
+      take("has " + subj + " " + pp);
+      take("did " + subj + " " + past);
+      take("have " + subj + " " + lemma);
+    }
+    return opts.length >= 2 ? opts : null;
+  }
+  const negPhrase = /^(didn't|did not|haven't|have not|hasn't|has not)\s+/.test(aux);
+  if (negPhrase) {
+    if (!lemma) return null;
+    const past = simplePastOf(lemma);
+    const pp = participleOf(lemma);
+    take("didn't " + lemma);
+    take("haven't " + pp);
+    take("hasn't " + pp);
+    take("didn't " + past);
+    take("haven't " + lemma);
+    return opts.length >= 2 ? opts : null;
+  }
+  if (!lemma) return null;
+  const past = simplePastOf(lemma);
+  const pp = participleOf(lemma);
+  take(past);
+  take("have " + pp);
+  take("has " + pp);
+  if (past !== pp) {
+    take(pp);
+    if (lemma !== "be") take("have " + past);
+  } else {
+    take(lemma);
+    if (lemma !== "have") take("have " + lemma);
+    if (!/ed$/.test(lemma)) take("have " + lemma + "ed");
+  }
+  return opts.length >= 2 ? opts : null;
+}
+
+function gapPrompt(it, pack) {
   const g = String(it.gap || "");
-  if (!isComparativeAnswer(it)) return g;
-  const lemma = comparativeLemma(it);
-  if (!lemma || /\(.*\)\s*$/.test(g)) return g;
-  return g + " (" + lemma + ")";
+  if (/\(.*\)\s*$/.test(g)) return g;
+  if (isComparativeAnswer(it)) {
+    const lemma = comparativeLemma(it);
+    if (lemma) return g + " (" + lemma + ")";
+  }
+  /* PP vs past (James, 2026-08-26): Type/Quiz cue the base verb. */
+  if (String(pack && pack.quiz_axis) === "pp_vs_past") {
+    const lemma = String(it.lemma || "").trim();
+    if (lemma) return g + " (" + lemma + ")";
+  }
+  return g;
 }
 
 /* some/any/no/every + body/one/thing/where. These behave as one closed family:
@@ -439,6 +536,9 @@ function choicesFor(it, siblings, pack) {
 
   const formOpts = comparativeFormChoices(it);
   if (formOpts) return formOpts;
+
+  const tenseOpts = ppVsPastChoices(it, pack);
+  if (tenseOpts) return tenseOpts;
 
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
@@ -567,7 +667,7 @@ export function adaptGrammarPack(pack) {
           );
           if (!choices) return null;
           return {
-            prompt: gapPrompt(it),
+            prompt: gapPrompt(it, pack),
             answer: it.gap_answer,
             choices,
             cz: it.cz,
@@ -633,7 +733,7 @@ export function adaptGrammarPack(pack) {
   // Type: produce the missing form. Czech rides along as the hint so the
   // stage stays CZ→EN rather than a bare cloze.
   const type_items = (wants("type") ? withGap : []).map((it) => ({
-    prompt: gapPrompt(it),
+    prompt: gapPrompt(it, pack),
     hint: it.cz,
     answer: it.gap_answer,
     accepts: it.gap_accepts || [],
@@ -658,7 +758,7 @@ export function adaptGrammarPack(pack) {
    * The Czech stays on the item for the support line. */
   const fixMode = pack.use_mode === "correct";
   const use_items = (wants("use") ? items : [])
-    .filter((it) => it.en && (fixMode ? it.wrong : it.cz))
+    .filter((it) => it.en && !(it.bin && !it.gap) && (fixMode ? it.wrong : it.cz))
     .map((it) => ({
       prompt: fixMode ? it.wrong : it.cz,
       wrong: it.wrong || "",

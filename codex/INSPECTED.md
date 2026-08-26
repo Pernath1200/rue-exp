@@ -14,9 +14,9 @@ Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
 
 ---
 
-**12 inspected · 0 approved · 87 unseen** of 99 live units
+**13 inspected · 0 approved · 86 unseen** of 99 live units
 
-Of the 35 cloud-authored units, **0 have any tick**.
+Of the 35 cloud-authored units, **1 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
@@ -34,7 +34,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a1_like_want_need` — Like / want / need · 24 items · seen?
 - [ ][ ] `a1_object_pronouns` — Object pronouns · 36 items · seen?
 - [ ][ ] `a1_possessives` — Possessives · 24 items · seen?
-- [x][ ] `a1_prepositions_place` — Prepositions of place · 26 items
+- [x][ ] `a1_prepositions_place` — Prepositions of place · 26 items · seen?
 - [ ][ ] `a1_prepositions_time` — Prepositions of time · 24 items · seen?
 - [ ][ ] `a1_question_words` — Question words · 36 items · seen?
 - [ ][ ] `a1_questions_negatives` — Questions & negatives · 26 items · seen?
@@ -46,11 +46,11 @@ Of the 35 cloud-authored units, **0 have any tick**.
 
 ## A2 — 6 inspected / 0 approved / 16 units
 
-- [x][ ] `a2_modals_must_should` — Must / should · 46 items
+- [x][ ] `a2_modals_must_should` — Must / should · 46 items · **cloud** · seen?
 - [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
 - [x][ ] `a2_agreement` — Subject–verb agreement (A2) · 27 items
-- [x][ ] `a2_comparatives` — Comparatives · 48 items
-- [x][ ] `a2_countable` — Countable and uncountable · 48 items · seen?
+- [x][ ] `a2_comparatives` — Comparatives · 48 items · seen?
+- [x][ ] `a2_countable` — Countable and uncountable nouns · 32 items · seen?
 - [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 24 items · seen?
 - [x][ ] `a2_first_conditional` — First conditional · 54 items · seen?
 - [ ][ ] `a2_past_continuous` — Past continuous · 48 items · seen?
@@ -58,12 +58,12 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
 - [ ][ ] `a2_present_continuous` — Present continuous · 54 items · seen?
 - [ ][ ] `a2_present_perfect` — Present perfect · 48 items · seen?
-- [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items
+- [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items · seen?
 - [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 36 items
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
 - [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
 
-## B1 — 1 inspected / 0 approved / 17 units
+## B1 — 2 inspected / 0 approved / 17 units
 
 - [ ][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [ ][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 16 items
@@ -75,7 +75,7 @@ Of the 35 cloud-authored units, **0 have any tick**.
 - [ ][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
 - [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items · seen?
 - [ ][ ] `b1_prefixes` — Prefixes — the basics · 72 items
-- [ ][ ] `b1_present_perfect_vs_past` — Present perfect vs past simple · 64 items · seen?
+- [x][ ] `b1_present_perfect_vs_past` — Present perfect vs past simple · 79 items
 - [ ][ ] `b1_relative_clauses` — Relative clauses · 64 items · seen?
 - [ ][ ] `b1_reported_speech` — Reported speech · 54 items · seen?
 - [ ][ ] `b1_suffixes` — Suffixes — the basics · 72 items

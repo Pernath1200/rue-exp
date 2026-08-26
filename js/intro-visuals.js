@@ -366,9 +366,75 @@ function placeInOnAt() {
   );
 }
 
+/** Past simple vs present perfect — SAME event, two ways of looking.
+ *  labels: [pastTitle, pastEvent, pastCaption, ppTitle, ppEvent, ppResult, ppCaption] */
+function pp_vs_past(labels) {
+  const [pTitle, pEvent, pCap, ppTitle, ppEvent, ppResult, ppCap] = labels;
+  const NOW = 248;
+  const PAST = 88;
+  const axis = (y) =>
+    `<line x1="16" y1="${y}" x2="304" y2="${y}" stroke="${MUTED}" stroke-width="1.5"/>` +
+    `<line x1="${NOW}" y1="${y - 10}" x2="${NOW}" y2="${y + 10}" stroke="${ACCENT}" stroke-width="2.5"/>` +
+    label(NOW, y + 26, "NOW", { size: 11, fill: ACCENT });
+  const event = (x, y) =>
+    `<circle cx="${x}" cy="${y}" r="7" fill="${ACCENT}" stroke="${ACCENT}" stroke-width="2"/>`;
+  let inner = "";
+  inner += label(16, 18, pTitle || "Past simple", { size: 13, anchor: "start" });
+  inner += axis(50);
+  inner += event(PAST, 50);
+  inner += label(PAST, 38, pEvent || "", { size: 12 });
+  if (pCap) inner += label(16, 90, pCap, { size: 11, fill: MUTED, anchor: "start" });
+  inner += label(16, 122, ppTitle || "Present perfect", { size: 13, anchor: "start" });
+  inner += axis(154);
+  inner += `<line x1="${PAST}" y1="154" x2="${NOW}" y2="154" stroke="${ACCENT}" stroke-width="3" stroke-dasharray="5 4"/>`;
+  inner += event(PAST, 154);
+  inner += label(PAST, 142, ppEvent || "", { size: 12 });
+  inner += `<circle cx="${NOW}" cy="154" r="5" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
+  if (ppResult) inner += label(NOW, 142, ppResult, { size: 11, fill: ACCENT });
+  if (ppCap) inner += label(16, 194, ppCap, { size: 11, fill: MUTED, anchor: "start" });
+  return svg(inner, 320, 210);
+}
+
+/** One compact axis: event in the past, NOW on the right.
+ *  closed = finished when (short bar, gap to NOW)
+ *  bridge = result still true now (dashed link)
+ *  span   = situation started then and continues (bar through NOW) */
+function timeNowRow(event, note, mode, y) {
+  const NOW = 250;
+  const PAST = 88;
+  let inner = "";
+  inner += `<line x1="16" y1="${y}" x2="304" y2="${y}" stroke="${MUTED}" stroke-width="1.5"/>`;
+  inner += `<line x1="${NOW}" y1="${y - 10}" x2="${NOW}" y2="${y + 10}" stroke="${ACCENT}" stroke-width="2.5"/>`;
+  inner += label(NOW, y + 26, "NOW", { size: 11, fill: ACCENT });
+  if (mode === "span") {
+    inner += `<line x1="${PAST}" y1="${y}" x2="${NOW + 16}" y2="${y}" stroke="${ACCENT}" stroke-width="4"/>`;
+    inner += `<polygon points="${NOW + 24},${y} ${NOW + 14},${y - 5} ${NOW + 14},${y + 5}" fill="${ACCENT}"/>`;
+  } else if (mode === "bridge") {
+    inner += `<line x1="${PAST}" y1="${y}" x2="${NOW}" y2="${y}" stroke="${ACCENT}" stroke-width="3" stroke-dasharray="5 4"/>`;
+    inner += `<circle cx="${NOW}" cy="${y}" r="5" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
+  } else {
+    inner += `<line x1="${PAST - 22}" y1="${y}" x2="${PAST + 22}" y2="${y}" stroke="${ACCENT}" stroke-width="5"/>`;
+  }
+  inner += `<circle cx="${PAST}" cy="${y}" r="6" fill="${ACCENT}"/>`;
+  inner += label(PAST, y - 16, event || "", { size: 12 });
+  if (note) {
+    if (mode === "bridge") inner += label(NOW, y - 16, note, { size: 11, fill: ACCENT });
+    else if (mode === "span") inner += label((PAST + NOW) / 2, y + 26, note, { size: 11, fill: MUTED });
+    else inner += label(PAST, y + 26, note, { size: 11, fill: MUTED });
+  }
+  return inner;
+}
+
+/** Compact one-row time line for later intro cards.
+ *  labels: [event, note, mode]  mode = closed | bridge | span */
+function time_now(labels) {
+  const [event, note, mode] = labels;
+  return svg(timeNowRow(event, note, mode, 38), 320, 90);
+}
+
 const SCHEMATICS = {
   scale, circles, branch, cycle, contrast,
-  hub_spokes, boxes_row, timelines, decision_flow,
+  hub_spokes, boxes_row, timelines, decision_flow, pp_vs_past, time_now,
   in: placeIn,
   on: placeOn,
   under: placeUnder,
