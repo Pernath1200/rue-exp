@@ -645,6 +645,18 @@ button rather than stopping to write it down.
   Czech edits queue into the Czech lane. This is the one systematic cost of
   the transplant and it is finite.
 
+### Shop-talk sweep (James flag, 2026-08-25 late)
+
+- [ ] **Purge "(this pack)" / "the pack" from student-facing card text** across
+  the transplanted banks (~12 instances: a1_imperatives, a1_some_any,
+  a1_prepositions_time, a1_to_for_with, a2_adverbs_order, a2_verb_patterns,
+  a2_will_going_to, a2_past_simple, b1_articles_advanced, b2_second_conditional
+  + grep for stragglers). Each is a judgement: delete the caveat, or reword to
+  student language ("not in this unit"). "Matches the quantifiers pack" in
+  a2_countable fixed same evening → "How many → countable · How much →
+  uncountable". Same class as the 2026-08-17 "this pack→this unit" sweep,
+  which never reached this generation of files.
+
 ### New-unit ideas — authoring, NOT repair. Do not process in any lane; needs a James build session.
 
 - [ ] **nature / countryside (příroda)** — flagged 2026-08-25 (James, reviewing

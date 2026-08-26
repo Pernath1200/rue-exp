@@ -73,6 +73,7 @@ Translate answers.
 | **C5** | If the engine forgives something, the card must say so — and say where the forgiven forms still differ. | `lenient_if_when` accepted *when* silently. Silent forgiveness teaches nothing. | `observed` |
 | **C6** | A gloss must not be harder than the word it glosses. Easier, not merely at-level. | *stop* (A1) explained with *quit* (B1) and *pause* (B2); *"pause in order to"* at B1. | `observed` — lintable against `codex/vocab/oxford-5k-cefr.csv` |
 | **C7** | Never assert there is no pattern when there is one. It is false and it is demoralising. | *"There is no rule to compute — English fixes it verb by verb"*, and *"Learn in chunks"* at A2. Verb patterns have two shapes and a real semantic tendency. | `confirmed` |
+| **C8** | When a card teaches a test or rule of thumb, it must disclose the test's blind spot in the same card — especially where the student's L1 instinct feeds the test wrong answers. Prefer the test over an abstract definition (C6 territory), but never sell it as complete. | a2_countable: "can you say one ___?" passes *one advice* for a Czech speaker (jedna rada is fine Czech). The trap list existed three cards later, disconnected (James, 2026-08-25). | `confirmed` |
 
 ---
 

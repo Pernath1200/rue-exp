@@ -1007,15 +1007,22 @@ export function startPractice(rawPack, root, opts) {
         })
         .join("");
 
+    // Smoke-only escape hatch: re-testing the quiz must not pay the match
+    // toll every time (James, 2026-08-25). Gated on the dev toolbar, so
+    // students never see it — their Check stays match → quiz.
+    const smokeOn = document.getElementById("smoke-toolbar")?.hidden === false;
     root.innerHTML = `
       ${ladderHtml()}
       <div class="practice-head"><h2>${esc(pack.title)} · Match</h2></div>
-      <p class="score-line">${doneCount} / ${m.total} · click left, then right · click again (or Esc) to deselect</p>
+      <p class="score-line">${doneCount} / ${m.total} · click left, then right · click again (or Esc) to deselect${
+        smokeOn ? ` · <button type="button" class="link" id="m-skip">skip match (smoke) →</button>` : ""
+      }</p>
       <div class="match" id="match-board">
         <div class="match-col">${col(m.left, "L")}</div>
         <div class="match-col">${col(m.right, "R")}</div>
       </div>
     `;
+    root.querySelector("#m-skip")?.addEventListener("click", goToNextCheckPhaseOrType);
 
     root.querySelectorAll(".m:not(.done)").forEach((btnEl) => {
       btnEl.addEventListener("click", () => {
