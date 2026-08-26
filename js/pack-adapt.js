@@ -271,6 +271,150 @@ function matchCase(answer, s) {
   return (up ? t.charAt(0).toUpperCase() : t.charAt(0).toLowerCase()) + t.slice(1);
 }
 
+/* Comparatives (James, a2_comparatives smoke): Quiz was offering bigger /
+ * taller / smaller — vocabulary, not form. Options stay on THIS adjective:
+ * correct · misspelling · more+comparative · wrong degree. Base in (brackets)
+ * on the prompt so it is a cue, not a fourth vocab item. */
+const CMP_IRREG = {
+  better: "good",
+  best: "good",
+  worse: "bad",
+  worst: "bad",
+};
+const CMP_SILENT_E = {
+  saf: "safe",
+  nic: "nice",
+  lat: "late",
+  wid: "wide",
+  larg: "large",
+  clos: "close",
+  strang: "strange",
+};
+
+function comparativeLemma(it) {
+  const ans = String(it.gap_answer || "").trim();
+  const low = ans.toLowerCase();
+  const mMore = /^(more|most|less)\s+(.+)/i.exec(ans);
+  if (mMore) return mMore[2];
+  if (low === "more" || low === "most" || low === "less") {
+    const after = String(it.gap || "").match(/____\s+(\w+)/);
+    return after ? after[1] : "";
+  }
+  if (CMP_IRREG[low]) return CMP_IRREG[low];
+  if (/iest$/i.test(ans)) return ans.slice(0, -4) + "y";
+  if (/ier$/i.test(ans)) return ans.slice(0, -3) + "y";
+  if (/est$/i.test(ans)) {
+    let s = ans.slice(0, -3);
+    // bigger → big; keep ll (small/tall already end in double l).
+    if (/(.)\1$/i.test(s) && !/ll$/i.test(s)) s = s.slice(0, -1);
+    return CMP_SILENT_E[s.toLowerCase()] || s.toLowerCase();
+  }
+  if (/er$/i.test(ans)) {
+    let s = ans.slice(0, -2);
+    if (/(.)\1$/i.test(s) && !/ll$/i.test(s)) s = s.slice(0, -1);
+    return CMP_SILENT_E[s.toLowerCase()] || s.toLowerCase();
+  }
+  return "";
+}
+
+function isComparativeAnswer(it) {
+  const a = String(it.gap_answer || "").trim();
+  if (/^(more|most|less)(\s|$)/i.test(a)) return true;
+  if (/^(better|worse|best|worst)$/i.test(a)) return true;
+  if (/(ier|iest|er|est)$/i.test(a) && comparativeLemma(it)) return true;
+  return false;
+}
+
+function misspellComparative(form, lemma) {
+  const f = String(form);
+  if (/^(more|most|less)\s+/i.test(f)) {
+    const adj = f.replace(/^(more|most|less)\s+/i, "");
+    if (/ly$/i.test(adj)) return f.replace(/ly$/i, "ley");
+    if (/e$/i.test(adj)) return f.replace(/e$/i, "er");
+    return `${adj}er`;
+  }
+  if (/(.)\1(er|est)$/i.test(f)) return f.replace(/(.)\1(er|est)$/i, "$1$2");
+  if (/ier$/i.test(f)) return f.replace(/ier$/i, "yer");
+  if (/iest$/i.test(f)) return f.replace(/iest$/i, "yest");
+  if (/er$/i.test(f) && lemma && lemma.length > 2) {
+    // quiet → quiter (not quieer). Drop the vowel before the last consonant
+    // on longer stems; short CVC keeps taler / fater.
+    if (lemma.length >= 5) {
+      return lemma.replace(/([aeiou])([^aeiouy])$/i, "$2") + "er";
+    }
+    return lemma.slice(0, -1) + "er";
+  }
+  if (/est$/i.test(f) && lemma && lemma.length > 2) {
+    return lemma.slice(0, -1) + "est";
+  }
+  if (/^better$/i.test(f)) return "beter";
+  if (/^worse$/i.test(f)) return "worser";
+  if (/^worst$/i.test(f)) return "worstest";
+  if (/^best$/i.test(f)) return "bestest";
+  return "";
+}
+
+function doubleComparative(form, lemma) {
+  const f = String(form);
+  if (/^(more|most|less)\s+/i.test(f)) {
+    const adj = f.replace(/^(more|most|less)\s+/i, "");
+    const head = /^(most)/i.test(f) ? "most" : /^(less)/i.test(f) ? "more" : "more";
+    if (/ly$/i.test(adj)) return `${head} ${adj}`;
+    return `${head} ${adj}er`;
+  }
+  if (/(est)$/i.test(f) && !/^(best|worst)$/i.test(f)) return "more " + f;
+  if (/^(best)$/i.test(f)) return "most best";
+  if (/^(worst)$/i.test(f)) return "most worst";
+  return "more " + f;
+}
+
+function wrongDegree(form, lemma) {
+  const f = String(form);
+  const m = /^(more|most|less)\s+(.+)/i.exec(f);
+  if (m) {
+    if (/^more$/i.test(m[1])) return "most " + m[2];
+    if (/^most$/i.test(m[1])) return "more " + m[2];
+    return "least " + m[2];
+  }
+  if (/^better$/i.test(f)) return "best";
+  if (/^best$/i.test(f)) return "better";
+  if (/^worse$/i.test(f)) return "worst";
+  if (/^worst$/i.test(f)) return "worse";
+  if (/ier$/i.test(f)) return f.slice(0, -3) + "iest";
+  if (/iest$/i.test(f)) return f.slice(0, -4) + "ier";
+  if (/er$/i.test(f)) return f.slice(0, -2) + "est";
+  if (/est$/i.test(f)) return f.slice(0, -3) + "er";
+  return lemma ? "more " + lemma : "";
+}
+
+function comparativeFormChoices(it) {
+  if (!isComparativeAnswer(it)) return null;
+  const answer = String(it.gap_answer || "").trim();
+  const lemma = comparativeLemma(it);
+  if (!lemma) return null;
+  const opts = [answer];
+  const seen = new Set([key(answer)]);
+  for (const x of [
+    misspellComparative(answer, lemma),
+    doubleComparative(answer, lemma),
+    wrongDegree(answer, lemma),
+  ]) {
+    const k = key(x);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    opts.push(x);
+  }
+  return opts.length >= 2 ? opts : null;
+}
+
+function gapPrompt(it) {
+  const g = String(it.gap || "");
+  if (!isComparativeAnswer(it)) return g;
+  const lemma = comparativeLemma(it);
+  if (!lemma || /\(.*\)\s*$/.test(g)) return g;
+  return g + " (" + lemma + ")";
+}
+
 /* some/any/no/every + body/one/thing/where. These behave as one closed family:
  * a quantifier can never stand where a compound stands, and vice versa. */
 const COMPOUND_ANSWER = /^(any|some|no|every)(body|one|thing|where)$/;
@@ -292,6 +436,9 @@ function choicesFor(it, siblings, pack) {
     if (opts.some((o) => key(o) === key(answer)) && opts.length >= 2) return opts;
     return null;
   }
+
+  const formOpts = comparativeFormChoices(it);
+  if (formOpts) return formOpts;
 
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
@@ -420,7 +567,7 @@ export function adaptGrammarPack(pack) {
           );
           if (!choices) return null;
           return {
-            prompt: it.gap,
+            prompt: gapPrompt(it),
             answer: it.gap_answer,
             choices,
             cz: it.cz,
@@ -486,7 +633,7 @@ export function adaptGrammarPack(pack) {
   // Type: produce the missing form. Czech rides along as the hint so the
   // stage stays CZ→EN rather than a bare cloze.
   const type_items = (wants("type") ? withGap : []).map((it) => ({
-    prompt: it.gap,
+    prompt: gapPrompt(it),
     hint: it.cz,
     answer: it.gap_answer,
     accepts: it.gap_accepts || [],
