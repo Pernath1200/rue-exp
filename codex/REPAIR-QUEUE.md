@@ -657,6 +657,46 @@ button rather than stopping to write it down.
   uncountable". Same class as the 2026-08-17 "this pack→this unit" sweep,
   which never reached this generation of files.
 
+### a2_countable — REDESIGN AGREED 2026-08-26 (James). Authoring, not repair.
+
+Designed in session after James's smoke pass found the unit tested vocabulary,
+not countability. **Do not build any of this in a lane — it is his authoring
+job.** The unit's subject is the nouns where English and Czech disagree:
+advice, information, furniture, news, money, bread, traffic, space.
+
+**Hard constraint: much / many belong to `a2_quantifiers`** (54 items, already
+drills them). This unit must not gap them — the first attempt did and produced
+a straight duplicate of that pack's *How ___ rice → much*. Reverted in
+`d8f533d`.
+
+Four-stage ladder, James's design, recognition → production → repair:
+
+| stage | demand | shape |
+|---|---|---|
+| Match → **Sort** | classify | nouns into countable / uncountable. Replaces the matching exercise for this unit. Precedent: `a1_word_classes` labels board. |
+| Quiz | recognise | choose the correct sentence |
+| Type | produce | noun given as a cue, student writes the form: *I'd like ___ (water).* → **some water** |
+| Use | repair | fix the wrong sentence (`use_mode: "correct"`) — *The furnitures are new.* → *The furniture is new.* |
+
+Type and Use are deliberately **all-English** so James can smoke them without
+reading Czech — the same reason `b1_verb_patterns_advanced` moved to
+`use_mode: "correct"`.
+
+- [ ] **Measure words: general only in this unit.** *bit* and *piece* cover
+  most cases and belong in the intro — **checked 2026-08-26, they are NOT
+  taught there**; "a piece of advice" appears once as a bullet on card 5 and
+  no item drills one. Specific measure words (**loaf**, slice, bar, grain) go
+  to *Countable and uncountable 2*, NOT here. Rationale: making a student
+  produce *loaf* to repair a countability error tests vocabulary to test
+  grammar — the same fault as gapping the noun. Killed a drafted Use item
+  (*two breads* → *two loaves of bread*, should be *some bread*).
+- [ ] **Countable and uncountable 2** — new unit. Home for the specific
+  measure words above.
+- [ ] **Reference sheet**, linked from the intro. **James has good material
+  for this from his own lessons** — his to supply, not to be authored.
+- [ ] Zero-article generics (*Coffee is nice*, *Apples are healthy*) move to
+  Use, where `pack-adapt.js` says zero_article items belong.
+
 ### New-unit ideas — authoring, NOT repair. Do not process in any lane; needs a James build session.
 
 - [ ] **nature / countryside (příroda)** — flagged 2026-08-25 (James, reviewing
