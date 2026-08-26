@@ -68,6 +68,88 @@ def check_str_list(pack_id, where, name, val):
         err(f"{pack_id} {where}: {name} must be a list of non-empty strings")
 
 
+C9_WORD_CAP = 15
+C9_BASELINE = ROOT / "codex" / "c9-baseline.json"
+c9_hits: list[tuple[str, str]] = []  # (pack_id, what)
+
+
+def c9_words(s: str) -> int:
+    """Words in a student-facing string, ignoring markdown emphasis marks."""
+    return len(re.findall(r"[A-Za-zÀ-ÿ']+", str(s)))
+
+
+def check_intro_density(pid: str, d: dict) -> None:
+    """Rule C9 — no walltext in intro cards.
+
+    Intro cards teach with tables, diagrams, bullets and example pairs.
+    `body`/`body_cz` are not teaching surfaces, and no single element runs
+    past C9_WORD_CAP words. The `why` lives in the item's explanation /
+    explanation_cz, which js/explain.js shows beside the answer feedback —
+    at the moment the student gets it wrong, which is when it is read.
+
+    Ratcheted, not absolute: the existing corpus predates the rule, so a
+    hard error would open at ~450 and stay red forever. The baseline may
+    only fall. Once it reaches 0 every violation is an error.
+    """
+    intro = d.get("intro")
+    cards = intro.get("cards") if isinstance(intro, dict) else intro
+    if not isinstance(cards, list):
+        return
+    for i, c in enumerate(cards):
+        if not isinstance(c, dict):
+            continue
+        where = f"intro card {i}"
+        for f in ("body", "body_cz", "body_pl"):
+            if str(c.get(f) or "").strip():
+                c9_hits.append((pid, f"{where}: `{f}` set ({c9_words(c[f])}w)"))
+        for j, p in enumerate(c.get("points") or []):
+            if c9_words(p) > C9_WORD_CAP:
+                c9_hits.append((pid, f"{where}: points[{j}] {c9_words(p)}w"))
+        for j, ex in enumerate(c.get("examples") or []):
+            if isinstance(ex, dict):
+                n = c9_words(f"{ex.get('cz', '')} {ex.get('en', '')}")
+                if n > C9_WORD_CAP:
+                    c9_hits.append((pid, f"{where}: examples[{j}] {n}w"))
+        tbl = c.get("table")
+        if isinstance(tbl, dict):
+            for r, row in enumerate(tbl.get("rows") or []):
+                for k, cell in enumerate(row or []):
+                    if c9_words(cell) > C9_WORD_CAP:
+                        c9_hits.append(
+                            (pid, f"{where}: table[{r}][{k}] {c9_words(cell)}w")
+                        )
+
+
+def report_c9() -> None:
+    """Print the C9 tally and enforce the ratchet. Never writes on its own."""
+    n = len(c9_hits)
+    try:
+        base = json.loads(C9_BASELINE.read_text(encoding="utf-8"))["count"]
+    except Exception:  # noqa: BLE001
+        base = None
+
+    packs = sorted({p for p, _ in c9_hits})
+    worst = sorted(
+        ((sum(1 for p, _ in c9_hits if p == pk), pk) for pk in packs), reverse=True
+    )
+    if n:
+        print(f"\nC9 walltext: {n} violations across {len(packs)} packs")
+        for cnt, pk in worst[:8]:
+            print(f"  {cnt:4}  {pk}")
+        if len(worst) > 8:
+            print(f"  ... and {len(worst) - 8} more packs")
+
+    if base is None:
+        print(f"C9: no baseline yet — write {{\"count\": {n}}} to {C9_BASELINE.name}")
+        return
+    if n > base:
+        err(f"C9 walltext regressed: {n} violations vs baseline {base}")
+    elif n < base:
+        print(f"C9: baseline can tighten {base} → {n} (run with --tighten to write it)")
+    if base == 0 and n:
+        err(f"C9 walltext: {n} violations and the baseline is 0")
+
+
 def lint_pack(path: Path) -> None:
     rel = path.relative_to(ROOT).as_posix()
     try:
@@ -87,6 +169,8 @@ def lint_pack(path: Path) -> None:
 
     for hit in find_pl_keys(d):
         err(f"{pid}: forbidden `pl` field at {hit}")
+
+    check_intro_density(pid, d)
 
     # Word-formation packs (FCE/CAE Part 3, 2026-08-18): EN-only by James's
     # ruling — the capitalised root cue carries the item, so `cz` is not
@@ -235,6 +319,17 @@ def main() -> int:
         lint_pack(f)
     if not args:
         cross_check_tree(pack_tree_nodes)
+
+    report_c9()
+    if "--tighten" in sys.argv:
+        # Only on a full-corpus run — a subset would write a false baseline.
+        if args:
+            print("C9: --tighten ignored (needs a full run, no file arguments)")
+        else:
+            C9_BASELINE.write_text(
+                json.dumps({"count": len(c9_hits)}, indent=2) + "\n", encoding="utf-8"
+            )
+            print(f"C9: baseline written — {len(c9_hits)}")
 
     for w in warnings:
         print(f"WARN  {w}")

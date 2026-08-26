@@ -74,6 +74,15 @@ Translate answers.
 | **C6** | A gloss must not be harder than the word it glosses. Easier, not merely at-level. | *stop* (A1) explained with *quit* (B1) and *pause* (B2); *"pause in order to"* at B1. | `observed` — lintable against `codex/vocab/oxford-5k-cefr.csv` |
 | **C7** | Never assert there is no pattern when there is one. It is false and it is demoralising. | *"There is no rule to compute — English fixes it verb by verb"*, and *"Learn in chunks"* at A2. Verb patterns have two shapes and a real semantic tendency. | `confirmed` |
 | **C8** | When a card teaches a test or rule of thumb, it must disclose the test's blind spot in the same card — especially where the student's L1 instinct feeds the test wrong answers. Prefer the test over an abstract definition (C6 territory), but never sell it as complete. | a2_countable: "can you say one ___?" passes *one advice* for a Czech speaker (jedna rada is fine Czech). The trap list existed three cards later, disconnected (James, 2026-08-25). | `confirmed` |
+| **C9** | **NO WALLTEXT.** An intro card teaches with **tables, diagrams, bullets and example pairs**. `body`/`body_cz` are not teaching surfaces — do not author them. No single bullet, cell or example over **~15 words**. Czech goes in `examples[]` (renders *cz · en*) or `title_cz`. The *why* belongs in the item's `explanation`/`explanation_cz`, which the student reads at the moment they get it wrong. | a2_countable card 0 carried 72 words while five of its seven cards carried none — the whole unit's prose on card 1 of 7. James, 2026-08-26: *"no walltext: this is fatal — I want none of my intros to have walltext."* | `enforced` — `verify_pack` intro-density lint, ratcheted |
+
+**C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
+already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`
+beside the answer feedback. Intro prose was mostly duplicating a layer that
+delivers the same content at the point of error, where it is actually read.
+Removing it loses nothing; it relocates. 214 of 482 live-rail cards (44%) were
+already body-less before this rule, so this is enforcement of the app's
+majority shape, not a new format.
 
 ---
 
