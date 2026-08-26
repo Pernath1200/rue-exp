@@ -1112,7 +1112,6 @@ function renderPath() {
       <span class="n">${n}</span>
       <span class="meta">
         <span class="title">${dtag} ${escapeHtml(node.label)}</span>
-        ${node.note ? `<span class="note">${escapeHtml(node.note)}</span>` : ""}
       </span>
       <span class="${statusCls}">${escapeHtml(label)}</span>
     `;
@@ -1155,7 +1154,6 @@ function renderDetail() {
   box.innerHTML = `
     <div>${pills.join("")}</div>
     <p class="practice-prompt" style="margin-top:0.5rem">${escapeHtml(node.label)}</p>
-    ${node.note ? `<p class="tree-legend">${escapeHtml(node.note)}</p>` : ""}
     ${
       partner
         ? `<p class="tree-legend">Pair: <button type="button" class="today-link" id="btn-detail-partner">${escapeHtml(partner.label)}</button>
