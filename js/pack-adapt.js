@@ -271,9 +271,14 @@ function matchCase(answer, s) {
   return (up ? t.charAt(0).toUpperCase() : t.charAt(0).toLowerCase()) + t.slice(1);
 }
 
+/* some/any/no/every + body/one/thing/where. These behave as one closed family:
+ * a quantifier can never stand where a compound stands, and vice versa. */
+const COMPOUND_ANSWER = /^(any|some|no|every)(body|one|thing|where)$/;
+
 function choicesFor(it, siblings, pack) {
   const answer = it.gap_answer;
   if (!key(answer)) return null;
+  const answerIsCompound = COMPOUND_ANSWER.test(key(answer));
 
   if (Array.isArray(it.quiz_options) && it.quiz_options.length >= 2) {
     const seen = new Set();
@@ -329,7 +334,18 @@ function choicesFor(it, siblings, pack) {
     }
   }
 
-  take(siblings.map((s) => s.gap_answer));
+  // Siblings, own family first. A pack with two slices (a2_quantifiers carries
+  // quantifiers AND the neg+any slice) was handing "anywhere" the options
+  // a lot / many / much — none can fit the frame, so the item fell to
+  // elimination with no knowledge (James, smoke 2026-08-26). Compounds only
+  // ever confuse other compounds; quantifiers only other quantifiers.
+  const sibs = siblings.map((s) => s.gap_answer);
+  const sameFamily = (s) => COMPOUND_ANSWER.test(key(s)) === answerIsCompound;
+  take(sibs.filter(sameFamily));
+  // Cross-family only to rescue an item that would otherwise be a coin flip
+  // (a lone compound in a quantifier pack). A three-option item beats a
+  // four-option one where the fourth gives the answer away.
+  if (distractors.length < 2) take(sibs);
   if (!distractors.length) return null;
   return [answer, ...distractors.map((d) => matchCase(answer, d))];
 }
