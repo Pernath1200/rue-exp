@@ -31,7 +31,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = Path(r"C:\Users\ADMIN\Documents\original\TA\smoke-next.md")
+OUT = Path.home() / "Documents" / "original" / "TA" / "smoke-next.md"
 
 LEVELS = ("A1", "A2", "B1")
 TOP_N = 5

@@ -20,7 +20,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTER = ROOT / "codex" / "INSPECTED.md"
-DONE_LOG = Path(r"C:\Users\ADMIN\Documents\original\TA\smoke-done-log.md")
+DONE_LOG = Path.home() / "Documents" / "original" / "TA" / "smoke-done-log.md"
 
 # "2026-08-26 13:56 · a2_countable · tested"  (date, optional time, id, verdict)
 LOG_RE = re.compile(
