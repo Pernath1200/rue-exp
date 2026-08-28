@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**15 inspected · 0 approved · 84 unseen** of 99 live units
+**16 inspected · 0 approved · 83 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **1 have any tick**.
 
@@ -63,7 +63,7 @@ Of the 35 cloud-authored units, **1 have any tick**.
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
 - [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
 
-## B1 — 4 inspected / 0 approved / 17 units
+## B1 — 5 inspected / 0 approved / 17 units
 
 - [x][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [ ][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 16 items
@@ -72,7 +72,7 @@ Of the 35 cloud-authored units, **1 have any tick**.
 - [x][ ] `b1_it_subject` — Introductory it · 46 items · seen?
 - [ ][ ] `b1_linkers` — Linkers (although / so) · 48 items · seen?
 - [ ][ ] `b1_modals_speculation` — Might / may / must (guess) · 48 items · seen?
-- [ ][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
+- [x][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
 - [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items · seen?
 - [ ][ ] `b1_prefixes` — Prefixes — the basics · 72 items
 - [x][ ] `b1_present_perfect_vs_past` — Present perfect vs past simple · 79 items · seen?
