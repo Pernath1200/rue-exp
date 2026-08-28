@@ -106,9 +106,9 @@ Scope: **grammar only, A1–B1.** B2 and C1 are hidden from the rail; vocab and
 
 Tick by telling the bot `<unit_id> tested` (full id, no list number). The bot
 **only appends** [[smoke-done-log]] and **replies with this file's Top 5**.
-It must never rewrite this file. Rank comes from INSPECTED.md; rebuild after
-ticks with `python codex/reconcile_inspected.py --apply` (which also --writes
-this file).
+It must never rewrite this file. That log line is the inspect tick.
+`python codex/reconcile_inspected.py` copies it into INSPECTED.md and --writes
+this file. Undo with `<unit_id> untested`.
 
 Remaining: **{len(todo)} grammar units** — A1 {counts['A1']} · A2 {counts['A2']} · B1 {counts['B1']}.
 

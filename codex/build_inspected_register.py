@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 """Regenerate codex/INSPECTED.md — what James has actually looked at.
 
-Two boxes per unit. James fills them in by hand; nothing else may.
+Two boxes per unit. The first box is the Telegram done-log. James ticks
+by messaging the bot `<unit_id> tested`. This file is generated from that.
+Do not hand-tick the first box.
 
     - [ ][ ]   nobody has looked at it. NOT SAFE TO SHOW ANYONE.
     - [x][ ]   INSPECTED — James has played it end to end.
@@ -12,10 +14,11 @@ That is the rule the file exists to enforce. A green audit is not a tick. A clea
 check_playable is not a tick. An agent reporting that it went fine is not a tick.
 Those check structure; they say nothing about whether the teaching is any good.
 
-Existing ticks are read back and preserved, so this is safe to re-run whenever
-units are added or go live. The generator NEVER ticks anything.
+Legacy in-session ticks stay until the log mentions that unit. Last log
+verdict wins (`tested` / `approved` / `untested`).
 
     python codex/build_inspected_register.py
+    python codex/reconcile_inspected.py   # register + Top 5
 
 Why it exists: on 2026-08-24, 36 live units (1,701 items — all of B2 and C1) turned
 out to have been written by the August cloud routine and never read by anyone.
@@ -26,6 +29,8 @@ import glob
 import os
 import re
 from pathlib import Path
+
+from smoke_ticks import merge_ticks, ticks_from_done_log
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "codex" / "INSPECTED.md"
@@ -65,12 +70,13 @@ def inspected_units():
     Imported by build_patrik_errors_page.py so a student-facing page cannot link
     into unreviewed material even by accident.
     """
-    return {uid for uid, (insp, appr) in read_existing().items() if insp or appr}
+    ticks = merge_ticks(read_existing(), ticks_from_done_log())
+    return {uid for uid, (insp, appr) in ticks.items() if insp or appr}
 
 
 def main():
     live, status = load_live()
-    prev = read_existing()
+    prev = merge_ticks(read_existing(), ticks_from_done_log())
 
     rows = []
     for p in sorted(glob.glob(str(ROOT / "data/grammar/blocks/*.json"))):
@@ -110,10 +116,14 @@ def main():
     o.append("| `- [x][ ]` | **inspected** — played end to end |")
     o.append("| `- [x][x]` | **approved** — fit to put in front of a student |\n")
     o.append("**Unless a unit has at least one tick it does not go in front of anyone.**\n")
-    o.append("Only James ticks. A green audit is not a tick; a clean `check_playable` is "
-             "not a tick; an agent's report is not a tick. Those check structure, not "
-             "whether the teaching is any good.\n")
-    o.append("Regenerate (ticks are preserved): `python codex/build_inspected_register.py`\n")
+    o.append("James ticks on Telegram (`<unit_id> tested`). That appends "
+             "`TA/smoke-done-log.md`; this file is generated from that log. "
+             "Do not hand-tick the first box. A green audit is not a tick; "
+             "a clean `check_playable` is not a tick; an agent's report is not "
+             "a tick.\n")
+    o.append("Sync: `python codex/reconcile_inspected.py` "
+             "(register + Top 5). Undo a premature tick with "
+             "`<unit_id> untested` on Telegram.\n")
     o.append("---\n")
     o.append(f"**{insp} inspected · {appr} approved · {len(unseen)} unseen** of {n} live units\n")
     o.append(f"Of the {len(cloud)} cloud-authored units, "

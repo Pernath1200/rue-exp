@@ -149,7 +149,7 @@ scaled today — but it fails in a specific and dangerous way.
 |---|---|---|---|
 | **I1** | A green gate is not evidence of quality. | 36 live units (1,701 items — all of B2 and C1) were auto-authored and never read, with every gate green throughout. | `confirmed` |
 | **I2** | Agents verify, never author. Building creates smoke debt; read-only review pays it off. | The overnight agent pass produced 13 verified blockers and 53 unverified claims — precision under half. Deterministic checks run at ~1.0. | `confirmed` |
-| **I3** | Only James ticks `INSPECTED.md`. A link, or anything student-facing, requires at least one tick. | Four items on a student page linked into a cloud-authored unit nobody had read. Now enforced in the page builder, not left to memory. | `enforced` |
+| **I3** | Only James ticks, and he ticks **once**: Telegram `<unit_id> tested` appends `TA/smoke-done-log.md`. `INSPECTED.md` is generated from that log (`python codex/reconcile_inspected.py`). Do not hand-tick the first box — a second tick is how Articles 2 drifted. A link, or anything student-facing, requires at least one tick. | Four items on a student page linked into a cloud-authored unit nobody had read. Dual-tick (bot + register) left Articles 2 tested in Telegram and blank in the register. | `enforced` |
 | **I4** | Lint first, play second, fix the CLASS not the instance. | Unit one cost two hours, mostly discovery. Unit two arrived with its suspects listed. | `confirmed` |
 | **I5** | The two failure kinds are different jobs. Unit one failed at GRADING; unit two graded fine and failed at TEACHING. The lint catches the first and none of the second. | — | `confirmed` |
 

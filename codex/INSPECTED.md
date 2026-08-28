@@ -8,13 +8,13 @@
 
 **Unless a unit has at least one tick it does not go in front of anyone.**
 
-Only James ticks. A green audit is not a tick; a clean `check_playable` is not a tick; an agent's report is not a tick. Those check structure, not whether the teaching is any good.
+James ticks on Telegram (`<unit_id> tested`). That appends `TA/smoke-done-log.md`; this file is generated from that log. Do not hand-tick the first box. A green audit is not a tick; a clean `check_playable` is not a tick; an agent's report is not a tick.
 
-Regenerate (ticks are preserved): `python codex/build_inspected_register.py`
+Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature tick with `<unit_id> untested` on Telegram.
 
 ---
 
-**14 inspected · 0 approved · 85 unseen** of 99 live units
+**15 inspected · 0 approved · 84 unseen** of 99 live units
 
 Of the 35 cloud-authored units, **1 have any tick**.
 
@@ -63,9 +63,9 @@ Of the 35 cloud-authored units, **1 have any tick**.
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
 - [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
 
-## B1 — 3 inspected / 0 approved / 17 units
+## B1 — 4 inspected / 0 approved / 17 units
 
-- [ ][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
+- [x][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [ ][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 16 items
 - [ ][ ] `b1_dependent_prepositions` — Dependent prepositions · 51 items · seen?
 - [ ][ ] `b1_indirect_questions` — Indirect questions · 24 items
