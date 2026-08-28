@@ -63,9 +63,52 @@ function useAcceptsWithoutWrong(accepts, wrong) {
   return accepts.filter((a) => key(a) !== bare);
 }
 
+/** Linker Type: intro words are the target. Silent cousins still pass
+ *  (James, 2026-08-28: omitted from the unit, not marked wrong). */
+function linkerTypeAccepts(it) {
+  const ans = String(it.gap_answer || "").trim();
+  const out = [];
+  const seen = new Set();
+  const push = (x) => {
+    const t = String(x || "").trim();
+    if (!t) return;
+    const k = key(t);
+    if (!k || seen.has(k) || k === key(ans)) return;
+    seen.add(k);
+    out.push(t);
+  };
+  for (const x of it.gap_accepts || []) push(x);
+  if (key(ans) === "but") {
+    push("although");
+    push("though");
+    push("even though");
+  }
+  if (key(ans) === "although") {
+    push("though");
+    push("even though");
+  }
+  if (key(ans) === "however") push("On the other hand");
+  if (key(ans) === "because") {
+    push("as");
+    push("since");
+  }
+  if (key(ans) === "because of") push("due to");
+  if (key(ans) === "so that") {
+    push("so");
+    push("in order that");
+  }
+  if (key(ans) === "too") push("as well");
+  if (key(ans) === "despite") push("in spite of");
+  if (key(ans) === "in spite of") push("despite");
+  if (key(ans) === "when") push("after");
+  if (key(ans) === "after") push("when");
+  return out;
+}
+
 /** Type must not be “always that”. Quiz already dropped that as a free chip.
  *  Keep that in Type only when it is the written answer, or when/why (taught). */
 function relativeTypeAccepts(it, pack) {
+  if (String(pack && pack.quiz_axis) === "linkers") return linkerTypeAccepts(it);
   const raw = [it.gap_answer, ...(it.gap_accepts || [])].filter(Boolean);
   if (String(pack && pack.quiz_axis) !== "relative") return it.gap_accepts || [];
   const ans = String(it.gap_answer || "").trim().toLowerCase();
@@ -127,6 +170,274 @@ function relativeDropAccepts(accepts) {
     if (d && d !== s) out.push(d);
   }
   return [...new Set(out)];
+}
+
+function capFirst(s) {
+  const t = String(s || "").trim();
+  if (!t) return t;
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+function lowerFirst(s) {
+  const t = String(s || "").trim();
+  if (!t) return t;
+  if (/^I\b/.test(t)) return t;
+  return t.charAt(0).toLowerCase() + t.slice(1);
+}
+
+function splitJoin(join) {
+  const raw = String(join || "").trim();
+  const m = raw.match(/^(.+?[.?!])\s+(.+)$/);
+  if (!m) return null;
+  const strip = (s) => s.replace(/[.?!]+$/g, "").trim();
+  const a = strip(m[1]);
+  const b = strip(m[2]);
+  if (!a || !b) return null;
+  return { a, b };
+}
+
+function thereWasNoun(s) {
+  const m = String(s || "").match(/^There (?:was|were) (.+)$/i);
+  return m ? m[1].trim() : "";
+}
+
+function linkerKind(answer) {
+  const a = String(answer || "").trim().toLowerCase();
+  if (
+    ["although", "though", "even though", "however", "but", "on the other hand"].includes(
+      a,
+    )
+  ) {
+    return "contrast";
+  }
+  if (["despite", "in spite of"].includes(a)) return "contrast_np";
+  if (["so", "therefore"].includes(a)) return "result";
+  if (["because", "as", "since"].includes(a)) return "reason";
+  if (["because of", "due to"].includes(a)) return "reason_np";
+  if (a === "so that") return "purpose";
+  if (["and", "also", "too"].includes(a)) return "addition";
+  if (["when", "after", "then", "before"].includes(a)) return "time";
+  return "";
+}
+
+/** Same-job joins from the two-clause prompt (James, 2026-08-28 smoke:
+ *  but/although/however, because/so/so that, because of + clause). */
+function pushContrastJoins(push, a, b) {
+  const la = lowerFirst(a);
+  const lb = lowerFirst(b);
+  push(`Although ${la}, ${lb}.`);
+  push(`Even though ${la}, ${lb}.`);
+  push(`Though ${la}, ${lb}.`);
+  push(`${a}, but ${lb}.`);
+  push(`${a} but ${lb}.`);
+  push(`${a}. However, ${lb}.`);
+  push(`${a}. On the other hand, ${lb}.`);
+  push(`${capFirst(b)} although ${la}.`);
+  push(`${capFirst(b)} even though ${la}.`);
+  push(`${capFirst(b)} though ${la}.`);
+  const subjA = a.match(/^(I|You|He|She|We|They|It)\s+(?:am|is|are|was|were)\s+/i);
+  const subjB = b.match(
+    /^(I|You|He|She|We|They|It)\s+(?:am|is|are|was|were)\s+(.+)$/i,
+  );
+  if (
+    subjA &&
+    subjB &&
+    subjA[1].toLowerCase() === subjB[1].toLowerCase()
+  ) {
+    push(`${a} but ${subjB[2]}.`);
+    push(`${a}, but ${subjB[2]}.`);
+  }
+}
+
+function nounForms(noun) {
+  const n = String(noun || "").trim();
+  if (!n) return [];
+  const bare = n.replace(/^(the|a|an)\s+/i, "");
+  return [...new Set([n, bare, `the ${bare}`].filter(Boolean))];
+}
+
+function pushBecauseOfNoun(push, noun, result) {
+  const lr = lowerFirst(result);
+  for (const f of nounForms(noun)) {
+    push(`Because of ${f}, ${lr}.`);
+    push(`Due to ${f}, ${lr}.`);
+    push(`${result} because of ${f}.`);
+    push(`${result} due to ${f}.`);
+  }
+}
+
+function pushDespiteNoun(push, noun, result) {
+  const lr = lowerFirst(result);
+  for (const f of nounForms(noun)) {
+    push(`Despite ${f}, ${lr}.`);
+    push(`In spite of ${f}, ${lr}.`);
+    push(`${result} despite ${f}.`);
+    push(`${result} in spite of ${f}.`);
+  }
+}
+
+function pushCausalJoins(push, reason, result) {
+  const lr = lowerFirst(result);
+  const lrsn = lowerFirst(reason);
+  push(`${result} because ${lrsn}.`);
+  push(`${result} as ${lrsn}.`);
+  push(`${result} since ${lrsn}.`);
+  push(`Because ${lrsn}, ${lr}.`);
+  push(`As ${lrsn}, ${lr}.`);
+  push(`Since ${lrsn}, ${lr}.`);
+  push(`${reason}, so ${lr}.`);
+  push(`${reason}. So ${lr}.`);
+  push(`${reason}. Therefore, ${lr}.`);
+  const noun = thereWasNoun(reason);
+  if (noun) pushBecauseOfNoun(push, noun, result);
+}
+
+function pushAdditionJoins(push, a, b) {
+  const lb = lowerFirst(b);
+  push(`${a.replace(/\.?$/, "")} and ${lb}.`);
+  const left = a.match(
+    /^(I|You|He|She|We|They|It)\s+(like|likes|bought|plays|play|speaks|speak)\s+(.+)$/i,
+  );
+  const right = b.match(
+    /^(I|You|He|She|We|They|It)\s+(like|likes|bought|plays|play|speaks|speak)\s+(.+)$/i,
+  );
+  if (
+    left &&
+    right &&
+    left[1].toLowerCase() === right[1].toLowerCase() &&
+    left[2].toLowerCase() === right[2].toLowerCase()
+  ) {
+    push(`${left[1]} ${left[2]} ${left[3].replace(/\.?$/, "")} and ${right[3]}.`);
+  }
+  const subj = b.match(/^(I|You|He|She|We|They|It)\s+(.+)$/i);
+  if (subj) {
+    push(`${a.replace(/\.?$/, "")}. ${subj[1]} also ${subj[2]}.`);
+    push(`${a.replace(/\.?$/, "")}. ${capFirst(b.replace(/\.?$/, ""))}, too.`);
+    push(`${a.replace(/\.?$/, "")}. ${capFirst(b.replace(/\.?$/, ""))} as well.`);
+  }
+}
+
+function pushTimeJoins(push, a, b) {
+  const la = lowerFirst(a);
+  const lb = lowerFirst(b);
+  push(`When ${la}, ${lb}.`);
+  push(`${capFirst(b)} when ${la}.`);
+  push(`After ${la}, ${lb}.`);
+  push(`${capFirst(b)} after ${la}.`);
+  push(`${a.replace(/\.?$/, "")}. Then ${lb}.`);
+  push(`${a.replace(/\.?$/, "")}, then ${lb}.`);
+}
+
+function pushPurposeJoins(push, a, b) {
+  const lb = lowerFirst(b);
+  push(`${a} because ${lb}.`);
+  push(`${a} in order that ${lb}.`);
+  const wanted = b.match(/\bwanted to (.+)$/i);
+  if (wanted) {
+    const v = wanted[1].trim();
+    push(`${a} so that we would ${v}.`);
+    push(`${a} so that we could ${v}.`);
+    push(`${a} so we would ${v}.`);
+    push(`${a} so we could ${v}.`);
+    push(`${a} so that I would ${v}.`);
+    push(`${a} so that I could ${v}.`);
+  }
+  if (/\b(will|would|can|could|do not|don't|does not)\b/i.test(b)) {
+    push(`${a} so that ${lb}.`);
+    push(`${a} so ${lb}.`);
+  }
+}
+
+/** Linker Use join: same-job word order AND same-job linker (although/but/
+ *  however · because/so/so that). Authored en stays the shown answer. */
+function linkerUseAccepts(it) {
+  const out = [];
+  const seen = new Set();
+  const push = (s) => {
+    const t = String(s || "").replace(/\s+/g, " ").trim();
+    if (!t) return;
+    const k = key(t);
+    if (!k || seen.has(k)) return;
+    seen.add(k);
+    out.push(t);
+  };
+  push(it.en);
+  for (const a of it.accepts || []) push(a);
+
+  const pair = splitJoin(it.join);
+  const kind = linkerKind(it.gap_answer);
+  if (pair) {
+    const { a, b } = pair;
+    if (kind === "contrast" || kind === "contrast_np") {
+      pushContrastJoins(push, a, b);
+      const noun = thereWasNoun(a) || thereWasNoun(b);
+      const result = thereWasNoun(a) ? b : a;
+      if (kind === "contrast_np" && noun) pushDespiteNoun(push, noun, result);
+    } else if (kind === "result") {
+      pushCausalJoins(push, a, b);
+    } else if (kind === "reason") {
+      pushCausalJoins(push, b, a);
+    } else if (kind === "reason_np") {
+      if (thereWasNoun(a) && !thereWasNoun(b)) pushCausalJoins(push, a, b);
+      else if (thereWasNoun(b) && !thereWasNoun(a)) pushCausalJoins(push, b, a);
+      else pushCausalJoins(push, a, b);
+    } else if (kind === "purpose") {
+      pushPurposeJoins(push, a, b);
+    } else if (kind === "addition") {
+      pushAdditionJoins(push, a, b);
+    } else if (kind === "time") {
+      pushTimeJoins(push, a, b);
+    }
+  }
+
+  const FRONT =
+    /^(Although|Even though|Though|Despite|In spite of|Because of|Due to)\s+(.+?),\s+(.+?)\.?$/i;
+  for (const s of out.slice()) {
+    const m = String(s).match(FRONT);
+    if (!m) continue;
+    const linker = String(m[1]).toLowerCase();
+    const dep = m[2].trim();
+    const main = m[3].trim().replace(/[.?!]+$/, "");
+    push(`${capFirst(main)} ${linker} ${dep}.`);
+  }
+
+  const REASON = /^(.+?)\s+(because(?!\s+of)|as|since)\s+(.+?)\.?$/i;
+  for (const s of out.slice()) {
+    const m = String(s).match(REASON);
+    if (!m) continue;
+    const main = m[1].trim().replace(/[.,;:]+$/, "");
+    if (
+      /^(although|even though|though|because|as|since|despite|however|so)\b/i.test(
+        main,
+      )
+    ) {
+      continue;
+    }
+    const linker = m[2];
+    const dep = m[3].trim().replace(/[.?!]+$/, "");
+    push(`${capFirst(linker)} ${dep}, ${lowerFirst(main)}.`);
+  }
+  return out;
+}
+
+function joinUseAnswer(it, pack) {
+  if (String(pack && pack.quiz_axis) === "relative") return relativeUseAnswer(it);
+  return it.en;
+}
+
+function joinUseAccepts(it, pack) {
+  if (String(pack && pack.quiz_axis) === "relative") return relativeUseAccepts(it);
+  if (String(pack && pack.quiz_axis) === "linkers") return linkerUseAccepts(it);
+  const out = [];
+  const seen = new Set();
+  for (const s of [it.en, ...(it.accepts || [])]) {
+    const t = String(s || "").trim();
+    const k = key(t);
+    if (!t || !k || seen.has(k)) continue;
+    seen.add(k);
+    out.push(t);
+  }
+  return out;
 }
 
 /** Distinct block ids present in an adapted bank, in authoring order. */
@@ -762,8 +1073,73 @@ const LINKER_CONFUSIONS = {
   despite: ["although", "because of", "however"],
   "in spite of": ["although", "because of", "despite"],
   "on the other hand": ["however", "although", "because"],
+  and: ["but", "so", "because"],
+  also: ["too", "and", "but"],
+  too: ["also", "and", "so"],
+  when: ["after", "because", "so"],
+  after: ["when", "because", "then"],
+  then: ["so", "when", "after"],
 };
-const LINKER_FILL = ["because", "so", "although", "however", "but", "therefore"];
+const LINKER_FILL = [
+  "because",
+  "so",
+  "although",
+  "however",
+  "but",
+  "therefore",
+  "and",
+  "when",
+];
+
+const DEP_PREP_FAMILY = [
+  "in",
+  "at",
+  "on",
+  "for",
+  "of",
+  "to",
+  "about",
+  "with",
+  "from",
+];
+/* Czech-shaped traps first, then the rest of the family.
+ * Silent cousins (gap_accepts) are banned — not a free chip (James, linkers). */
+const DEP_PREP_TRAPS = {
+  in: ["about", "on", "at"],
+  at: ["in", "on", "to"],
+  on: ["of", "in", "at"],
+  for: ["to", "of", "at"],
+  of: ["from", "for", "about"],
+  to: ["for", "at", "with"],
+  about: ["of", "for", "with"],
+  with: ["about", "to", "at"],
+  from: ["of", "to", "with"],
+};
+
+function depPrepChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "dependent_prep") return null;
+  const answer = String(it.gap_answer || "").trim();
+  if (!answer || answer === "—") return null;
+  const opts = [];
+  const seen = new Set();
+  const banned = acceptedKeys(it);
+  const take = (x) => {
+    const t = String(x || "").trim();
+    if (!t || t === "—") return;
+    const k = key(t);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(t);
+  };
+  const takeWrong = (x) => {
+    if (banned.has(key(x))) return;
+    take(x);
+  };
+  take(answer);
+  for (const x of DEP_PREP_TRAPS[answer.toLowerCase()] || []) takeWrong(x);
+  for (const x of DEP_PREP_FAMILY) takeWrong(x);
+  return opts.length >= 2 ? opts : null;
+}
 
 function linkerFormChoices(it, pack) {
   if (String(pack && pack.quiz_axis) !== "linkers") return null;
@@ -879,6 +1255,9 @@ function choicesFor(it, siblings, pack) {
   const linkOpts = linkerFormChoices(it, pack);
   if (linkOpts) return linkOpts;
 
+  const depOpts = depPrepChoices(it, pack);
+  if (depOpts) return depOpts;
+
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
   const distractors = [];
@@ -991,8 +1370,25 @@ export function adaptGrammarPack(pack) {
 
   const match = wantsCheck("match")
     ? items
-        .filter((it) => it.en && it.cz && blockAllows(it, "match"))
-        .map((it) => ({ en: it.en, cz: it.cz, structures: it.structures, _block: it._block }))
+        .filter((it) => it.en && (it.lemma || it.cz) && blockAllows(it, "match"))
+        .map((it) => {
+          /* Lemma → preposition board (James, 2026-08-28, dependent preps):
+           * left is the adjective/verb, right is the prep. Not Czech. */
+          if (it.lemma && it.gap_answer) {
+            return {
+              en: it.lemma,
+              cz: String(it.gap_answer),
+              structures: it.structures,
+              _block: it._block,
+            };
+          }
+          return {
+            en: it.en,
+            cz: it.cz,
+            structures: it.structures,
+            _block: it._block,
+          };
+        })
     : [];
 
   const quiz = wantsCheck("quiz")
@@ -1116,8 +1512,8 @@ export function adaptGrammarPack(pack) {
           .map((it) => ({
             prompt: it.join,
             wrong: "",
-            answer: relativeUseAnswer(it),
-            accepts: relativeUseAccepts(it),
+            answer: joinUseAnswer(it, pack),
+            accepts: joinUseAccepts(it, pack),
             hint: "Join into one sentence.",
             cz: it.cz || "",
             diagram: it.diagram || "",
@@ -1156,7 +1552,10 @@ export function adaptGrammarPack(pack) {
             ];
           })
       : items
-          .filter((it) => it.en && !(it.bin && !it.gap) && (fixMode ? it.wrong : it.cz))
+          /* Early A1 (James, 2026-08-28, a1_be_have): Match/Quiz may show a
+           * carrier word the path has not taught yet (Czech is on screen).
+           * Use is production — skip items marked use: false. */
+          .filter((it) => it.en && !(it.bin && !it.gap) && it.use !== false && (fixMode ? it.wrong : it.cz))
           .map((it) => ({
             prompt: fixMode ? it.wrong : it.cz,
             wrong: it.wrong || "",

@@ -504,6 +504,25 @@ export function nodeProgressStateVocab(node) {
   return "live";
 }
 
+/**
+ * Map-tree paint: started < fruit (learned) < remembered (≥1 review) < mastered (≥4).
+ * Path labels still use nodeProgressState*; this is portrait-only.
+ */
+export function nodeTreeStrength(node) {
+  if (!node || node.status !== "live") return "none";
+  const reps = getNodeReview(node.id).successfulReps || 0;
+  if (reps >= MASTERY_REPS) return "mastered";
+  if (reps >= 1) return "remembered";
+  if (node.domain === "vocab" ? hasVocabFruit(node) : hasFruit(node.id)) {
+    return "fruit";
+  }
+  const st =
+    node.domain === "vocab"
+      ? nodeProgressStateVocab(node)
+      : nodeProgressStateGrammar(node);
+  return st === "started" ? "started" : "none";
+}
+
 export function unitStatus(unitId) {
   const p = loadProgress();
   return p.units[unitId] || { grammarFruit: false, vocabFruit: false };

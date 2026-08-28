@@ -1940,6 +1940,14 @@ button.m.wrong {
   margin: 0.8rem 0;
 }
 
+/* Pack-authored <svg> (no .intro-scene class) was filling the card width and
+ * scaling cell type to ~30px — Form on a1_be_have, James 2026-08-28. */
+.intro-scene-wrap > svg {
+  width: 100%;
+  max-width: 22rem;
+  height: auto;
+}
+
 /* Articles decision map (intro) — ported from rue2-grok-v1.0, 2026-08-28 */
 .articles-map {
   margin: 0.55rem 0 0.85rem;

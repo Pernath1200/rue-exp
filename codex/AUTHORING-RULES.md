@@ -75,15 +75,19 @@ Translate answers.
 | **C6** | A gloss must not be harder than the word it glosses. Easier, not merely at-level. | *stop* (A1) explained with *quit* (B1) and *pause* (B2); *"pause in order to"* at B1. | `observed` — lintable against `codex/vocab/oxford-5k-cefr.csv` |
 | **C7** | Never assert there is no pattern when there is one. It is false and it is demoralising. | *"There is no rule to compute — English fixes it verb by verb"*, and *"Learn in chunks"* at A2. Verb patterns have two shapes and a real semantic tendency. | `confirmed` |
 | **C8** | When a card teaches a test or rule of thumb, it must disclose the test's blind spot in the same card — especially where the student's L1 instinct feeds the test wrong answers. Prefer the test over an abstract definition (C6 territory), but never sell it as complete. | a2_countable: "can you say one ___?" passes *one advice* for a Czech speaker (jedna rada is fine Czech). The trap list existed three cards later, disconnected (James, 2026-08-25). | `confirmed` |
-| **C9** | **NO WALLTEXT.** An intro card teaches with **tables, diagrams, bullets and example pairs**. `body`/`body_cz` are not teaching surfaces — do not author them. No single bullet, cell or example over **~15 words**. Czech goes in `examples[]` (renders *cz · en*) or `title_cz`. The *why* belongs in the item's `explanation`/`explanation_cz`, which the student reads at the moment they get it wrong. | a2_countable card 0 carried 72 words while five of its seven cards carried none — the whole unit's prose on card 1 of 7. James, 2026-08-26: *"no walltext: this is fatal — I want none of my intros to have walltext."* | `enforced` — `verify_pack` intro-density lint, ratcheted |
+| **C9** | **NO WALLTEXT.** An intro card teaches with **tables, diagrams, bullets and example pairs**. `body`/`body_cz` are not teaching surfaces — do not author them. No single bullet, cell or example over **~15 words**. Czech goes in `examples[]` (renders *cz · en*) or `title_cz`. The *why* belongs in the item's `explanation`/`explanation_cz`, which the student reads at the moment they get it wrong. | a2_countable card 0 carried 72 words while five of its seven cards carried none — the whole unit's prose on card 1 of 7. James, 2026-08-26: *"no walltext: this is fatal — I want none of my intros to have walltext."* | `enforced` for **A1–B1 grammar** — `verify_pack` intro-density lint, ratcheted. Vocab and B2+ paused. |
+| **C10** | **Every intro card has a table and/or a diagram.** `table.rows`, `diagram` (a key from `intro-visuals.js`), or inline `svg`. Points and example pairs may sit *with* the visual — they do not replace it. | 2026-08-28: 327 of 715 cards had neither. James: grammar only for now; A1–B1 first; put `body` into bullets and tables. | `enforced` for **A1–B1 grammar** — `verify_pack` intro-visual lint, ratcheted. Vocab and B2+ paused. |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
 already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`
 beside the answer feedback. Intro prose was mostly duplicating a layer that
 delivers the same content at the point of error, where it is actually read.
-Removing it loses nothing; it relocates. 214 of 482 live-rail cards (44%) were
-already body-less before this rule, so this is enforcement of the app's
-majority shape, not a new format.
+Removing it loses nothing; it relocates.
+
+A **ratchet** is a count of remaining violations that is only allowed to fall.
+It was how C9 survived a 986-hit corpus without turning the build red forever.
+As of 2026-08-28 the A1–B1 grammar count is **0**: a new `body`, or a bullet
+over ~15 words, is an error. Vocab and B2+ are not in that count.
 
 ---
 
@@ -113,6 +117,7 @@ majority shape, not a new format.
 |---|---|---|---|
 | **F1** | Recycling earlier material into later units is wanted — but recycled material must be MARKED, so the student knows which rule is being asked for. | Six always-true items sat inside a unit teaching *will*; one carried `(vždy platí)`, five did not. | `enforced` — lint `zeromark` |
 | **F2** | Don't introduce a topic inside a neighbour's unit. A topic with no unit of its own gets smuggled in and breaks the host. | Zero conditional is taught nowhere on the path — it exists only as a sub-topic of first conditional, which is why its items are ambiguous. | `observed` |
+| **F3** | Early A1: recognition may lead, production may not. Match / Quiz / Type may use a short carrier (Czech on screen). Use only partner + glue + words this unit owns. Mark the rest `use: false`. | `a1_be_have` 2026-08-28: *afraid* on Use; hungry / ready / bike not taught yet. | `observed` |
 
 ---
 

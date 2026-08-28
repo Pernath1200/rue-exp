@@ -16,6 +16,7 @@ const {
   hasVocabFruit,
   nodeProgressStateGrammar,
   nodeProgressStateVocab,
+  nodeTreeStrength,
   ProgressStore,
   importProgressPayload,
   loadProgress,
@@ -151,6 +152,54 @@ assert(
   home.fruit === 3,
   "home 3/10 fruit → 3 lights, not 2 (ghosts do not steal)",
 );
+
+function setReps(id, n) {
+  const p = loadProgress();
+  p.nodes = p.nodes || {};
+  p.nodes[id] = Object.assign({}, p.nodes[id] || {}, { successfulReps: n });
+  ProgressStore.write(JSON.stringify(p));
+}
+setReps("home_0", 4);
+setReps("home_1", 1);
+setReps("a1_verbs", 4);
+
+const strengthPaint = renderTreePortrait(host, {
+  level: "A1",
+  nodes,
+  isFruit: (id) => {
+    const n = nodes.find((x) => x.id === id);
+    return n ? isFruit(n) : false;
+  },
+  progressState: (id) => {
+    const n = nodes.find((x) => x.id === id);
+    return n ? nodeTreeStrength(n) : "none";
+  },
+});
+const home2 = strengthPaint.houses.find((H) => H.tree_part === "home_family");
+assert(home2.fruit === 3, "learned count unchanged after reviews");
+assert(home2.fruitRemembered === 2, "remembered+mastered fill first (strongest first)");
+assert(home2.fruitMastered === 1, "one mastered home unit → one strongest fruit");
+assert(/fruit[^"]*mastered/.test(host.innerHTML), "SVG paints mastered fruit");
+assert(/fruit[^"]*remembered/.test(host.innerHTML), "SVG paints remembered fruit");
+const verbs2 = strengthPaint.laterals.find((L) => L.tree_part === "verb_phrase");
+assert(verbs2.knotsMastered === 1, "mastered Verbs knot");
+assert(/knot[^"]*mastered/.test(host.innerHTML), "SVG paints mastered knot");
+
+const payoffPaint = renderTreePortrait(host, {
+  level: "A1",
+  nodes,
+  isFruit: (id) => {
+    const n = nodes.find((x) => x.id === id);
+    return n ? isFruit(n) : false;
+  },
+  progressState: (id) => {
+    const n = nodes.find((x) => x.id === id);
+    return n ? progressState(n) : "planned";
+  },
+});
+const homePay = payoffPaint.houses.find((H) => H.tree_part === "home_family");
+assert(homePay.fruitMastered === 0, "payoff path does not paint mastery");
+assert(homePay.fruit === 3, "payoff still shows learned fruit");
 
 if (failed) {
   console.error(`\n${failed} failed`);

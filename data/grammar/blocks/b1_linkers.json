@@ -8,13 +8,91 @@
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
+      "sort_bins",
       "quiz"
     ]
   },
+  "bins": [
+    "addition",
+    "contrast",
+    "cause / effect",
+    "time"
+  ],
   "quiz_axis": "linkers",
   "quality": "good_draft",
-  "note": "contrast · result · reason. · Bank 48 · good draft · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: Match off; Quiz same-job chips (because/because of, although/however, so/therefore); Type keeps cousin accepts.",
+  "note": "Four jobs: addition · contrast · cause/effect · time. Sort = 12 chips into those boxes. Quiz/Type/Use stay on although/so/because confusions. · Bank 48 + sort 12 · 2026-08-28: intro names the four jobs; Check starts with four-box sort.",
   "blocks": [
+    {
+      "id": "b1_linkers_sort",
+      "title": "Four jobs",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "and",
+          "cz": "a",
+          "bin": "addition"
+        },
+        {
+          "en": "also",
+          "cz": "také",
+          "bin": "addition"
+        },
+        {
+          "en": "too",
+          "cz": "taky",
+          "bin": "addition"
+        },
+        {
+          "en": "but",
+          "cz": "ale",
+          "bin": "contrast"
+        },
+        {
+          "en": "although",
+          "cz": "i když",
+          "bin": "contrast"
+        },
+        {
+          "en": "however",
+          "cz": "nicméně",
+          "bin": "contrast"
+        },
+        {
+          "en": "because",
+          "cz": "protože",
+          "bin": "cause / effect"
+        },
+        {
+          "en": "so",
+          "cz": "tak",
+          "bin": "cause / effect"
+        },
+        {
+          "en": "therefore",
+          "cz": "proto",
+          "bin": "cause / effect"
+        },
+        {
+          "en": "when",
+          "cz": "když",
+          "bin": "time"
+        },
+        {
+          "en": "after",
+          "cz": "poté",
+          "bin": "time"
+        },
+        {
+          "en": "then",
+          "cz": "potom",
+          "bin": "time"
+        }
+      ]
+    },
     {
       "id": "b1_linkers_main",
       "title": "Linkers (although / so) · B1",
@@ -28,7 +106,8 @@
             "I was tired, so I went home."
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "I was tired. I went home."
         },
         {
           "en": "Although it was raining, we walked.",
@@ -36,18 +115,14 @@
           "gap": "____ it was raining, we walked.",
           "gap_answer": "Although",
           "accepts": [
-            "Although it was raining, we walked.",
-            "Even though it was raining, we walked.",
-            "Though it was raining, we walked."
+            "Although it was raining, we walked."
           ],
           "gap_accepts": [
-            "Although",
-            "though",
-            "Even though",
-            "Though"
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "It was raining. We walked."
         },
         {
           "en": "She studied hard. However, she failed.",
@@ -58,11 +133,11 @@
             "She studied hard. However, she failed."
           ],
           "gap_accepts": [
-            "However",
-            "On the other hand"
+            "However"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "She studied hard. She failed."
         },
         {
           "en": "He stayed home because he was ill.",
@@ -70,17 +145,14 @@
           "gap": "He stayed home ____ he was ill.",
           "gap_answer": "because",
           "accepts": [
-            "He stayed home because he was ill.",
-            "He stayed home as he was ill.",
-            "He stayed home since he was ill."
+            "He stayed home because he was ill."
           ],
           "gap_accepts": [
-            "because",
-            "as",
-            "since"
+            "because"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "He stayed home. He was ill."
         },
         {
           "en": "Because of the rain, we stayed in.",
@@ -91,7 +163,8 @@
             "Because of the rain, we stayed in."
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "There was rain. We stayed in."
         },
         {
           "en": "I like tea, but I prefer coffee.",
@@ -99,28 +172,31 @@
           "gap": "I like tea, ____ I prefer coffee.",
           "gap_answer": "but",
           "accepts": [
-            "I like tea, but I prefer coffee."
-          ],
-          "explanation": "Linker shows relation: contrast / reason / result / addition.",
-          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek."
-        },
-        {
-          "en": "Even though it was late, he called.",
-          "cz": "I když bylo pozdě, zavolal.",
-          "gap": "____ it was late, he called.",
-          "gap_answer": "Even though",
-          "accepts": [
-            "Even though it was late, he called.",
-            "Although it was late, he called.",
-            "Though it was late, he called."
+            "I like tea, but I prefer coffee.",
+            "I like tea, although I prefer coffee."
           ],
           "gap_accepts": [
-            "Even though",
-            "Although",
-            "Though"
+            "but",
+            "although"
+          ],
+          "explanation": "Linker shows relation: contrast / reason / result / addition.",
+          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek.",
+          "join": "I like tea. I prefer coffee."
+        },
+        {
+          "en": "Although it was late, he called.",
+          "cz": "I když bylo pozdě, zavolal.",
+          "gap": "____ it was late, he called.",
+          "gap_answer": "Although",
+          "accepts": [
+            "Although it was late, he called."
+          ],
+          "gap_accepts": [
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "It was late. He called."
         },
         {
           "en": "She was busy. Therefore, she left early.",
@@ -128,14 +204,18 @@
           "gap": "She was busy. ____ she left early.",
           "gap_answer": "Therefore",
           "accepts": [
-            "She was busy. Therefore, she left early."
+            "She was busy. Therefore, she left early.",
+            "She was busy, so she left early.",
+            "She was busy. So she left early.",
+            "She was busy. So, she left early."
           ],
           "gap_accepts": [
             "Therefore",
             "So"
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "She was busy. She left early."
         },
         {
           "en": "In spite of the noise, I slept.",
@@ -151,7 +231,8 @@
             "Despite"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "It was noisy. I slept."
         },
         {
           "en": "We left early so that we would catch the train.",
@@ -160,46 +241,45 @@
           "gap_answer": "so that",
           "accepts": [
             "We left early so that we would catch the train.",
-            "We left early so we would catch the train."
+            "We left early so we would catch the train.",
+            "We left early so that we could catch the train.",
+            "We left early so we could catch the train."
           ],
           "gap_accepts": [
             "so that",
             "so"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "We left early. We wanted to catch the train."
         },
         {
-          "en": "He is friendly. On the other hand, he is often late.",
-          "cz": "Je přátelský. Na druhou stranu často chodí pozdě.",
+          "en": "He is friendly. However, he is often late.",
+          "cz": "Je přátelský. Nicméně často chodí pozdě.",
           "gap": "He is friendly. ____, he is often late.",
-          "gap_answer": "On the other hand",
+          "gap_answer": "However",
           "accepts": [
-            "He is friendly. On the other hand, he is often late."
+            "He is friendly. However, he is often late."
           ],
           "gap_accepts": [
-            "On the other hand",
             "However"
           ],
-          "explanation": "Linker of addition.",
-          "explanation_cz": "Spojka dodatku."
+          "explanation": "Linker of contrast.",
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "He is friendly. He is often late."
         },
         {
-          "en": "I called her only because of the meeting.",
-          "cz": "Zavolal jsem jí jen kvůli schůzce.",
-          "gap": "I called her only ____ the meeting.",
-          "gap_answer": "because of",
+          "en": "I like tea and coffee.",
+          "cz": "Mám rád čaj a kávu.",
+          "gap": "I like tea ____ coffee.",
+          "gap_answer": "and",
           "accepts": [
-            "I called her only because of the meeting.",
-            "I called her only due to the meeting."
+            "I like tea and coffee.",
+            "I like tea and I like coffee."
           ],
-          "gap_accepts": [
-            "because of",
-            "due to"
-          ],
-          "use_prompt": "Reason linker · only because of / due to + the meeting",
-          "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation": "Linker of addition.",
+          "explanation_cz": "Spojka dodatku.",
+          "join": "I like tea. I like coffee."
         },
         {
           "en": "It was cold, so we stayed inside.",
@@ -210,7 +290,8 @@
             "It was cold, so we stayed inside."
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "It was cold. We stayed inside."
         },
         {
           "en": "Although she was tired, she finished.",
@@ -218,18 +299,14 @@
           "gap": "____ she was tired, she finished.",
           "gap_answer": "Although",
           "accepts": [
-            "Although she was tired, she finished.",
-            "Even though she was tired, she finished.",
-            "Though she was tired, she finished."
+            "Although she was tired, she finished."
           ],
           "gap_accepts": [
-            "Although",
-            "though",
-            "Even though",
-            "Though"
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "She was tired. She finished."
         },
         {
           "en": "He is rich. However, he is not happy.",
@@ -240,11 +317,11 @@
             "He is rich. However, he is not happy."
           ],
           "gap_accepts": [
-            "However",
-            "On the other hand"
+            "However"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "He is rich. He is not happy."
         },
         {
           "en": "I left early because I had a train to catch.",
@@ -252,17 +329,14 @@
           "gap": "I left early ____ I had a train to catch.",
           "gap_answer": "because",
           "accepts": [
-            "I left early because I had a train to catch.",
-            "I left early as I had a train to catch.",
-            "I left early since I had a train to catch."
+            "I left early because I had a train to catch."
           ],
           "gap_accepts": [
-            "because",
-            "as",
-            "since"
+            "because"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "I left early. I had a train to catch."
         },
         {
           "en": "Because of traffic, we were late.",
@@ -273,7 +347,8 @@
             "Because of traffic, we were late."
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "There was traffic. We were late."
         },
         {
           "en": "She wanted to come, but she was busy.",
@@ -281,28 +356,29 @@
           "gap": "She wanted to come, ____ she was busy.",
           "gap_answer": "but",
           "accepts": [
-            "She wanted to come, but she was busy."
-          ],
-          "explanation": "Linker shows relation: contrast / reason / result / addition.",
-          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek."
-        },
-        {
-          "en": "Even though I explained, he refused.",
-          "cz": "I když jsem to vysvětlil, odmítl.",
-          "gap": "____ I explained, he refused.",
-          "gap_answer": "Even though",
-          "accepts": [
-            "Even though I explained, he refused.",
-            "Although I explained, he refused.",
-            "Though I explained, he refused."
+            "She wanted to come, but she was busy.",
+            "She wanted to come, although she was busy."
           ],
           "gap_accepts": [
-            "Even though",
-            "Although",
-            "Though"
+            "but",
+            "although"
           ],
-          "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation": "Linker shows relation: contrast / reason / result / addition.",
+          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek.",
+          "join": "She wanted to come. She was busy."
+        },
+        {
+          "en": "We bought bread and milk.",
+          "cz": "Koupili jsme chleba a mléko.",
+          "gap": "We bought bread ____ milk.",
+          "gap_answer": "and",
+          "accepts": [
+            "We bought bread and milk.",
+            "We bought bread and we bought milk."
+          ],
+          "explanation": "Linker of addition.",
+          "explanation_cz": "Spojka dodatku.",
+          "join": "We bought bread. We bought milk."
         },
         {
           "en": "The test was hard. Therefore, only a few people passed.",
@@ -310,16 +386,15 @@
           "gap": "The test was hard. ____ only a few people passed.",
           "gap_answer": "Therefore",
           "accepts": [
-            "The test was hard. Therefore, only a few people passed.",
-            "The test was hard. So only a few people passed.",
-            "The test was hard. So, only a few people passed."
+            "The test was hard. Therefore, only a few people passed."
           ],
           "gap_accepts": [
             "Therefore",
             "So"
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "The test was hard. Only a few people passed."
         },
         {
           "en": "Despite the rain, they played.",
@@ -335,7 +410,8 @@
             "In spite of"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "There was rain. They played."
         },
         {
           "en": "I whispered so that the baby would not wake.",
@@ -344,40 +420,49 @@
           "gap_answer": "so that",
           "accepts": [
             "I whispered so that the baby would not wake.",
-            "I whispered so the baby would not wake."
+            "I whispered so the baby would not wake.",
+            "I whispered so that the baby would not wake up.",
+            "I whispered so the baby would not wake up."
           ],
           "gap_accepts": [
             "so that",
             "so"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "I whispered. I did not want the baby to wake."
         },
         {
-          "en": "The plan is cheap. On the other hand, it is slow.",
-          "cz": "Plán je levný. Na druhou stranu je pomalý.",
-          "gap": "The plan is cheap. ____, it is slow.",
-          "gap_answer": "On the other hand",
+          "en": "The bus is cheap. However, it is slow.",
+          "cz": "Ten bus je levný. Nicméně je pomalý.",
+          "gap": "The bus is cheap. ____, it is slow.",
+          "gap_answer": "However",
           "accepts": [
-            "The plan is cheap. On the other hand, it is slow."
+            "The bus is cheap. However, it is slow.",
+            "The bus is cheap, but it is slow.",
+            "The bus is cheap but it is slow.",
+            "Although the bus is cheap, it is slow."
           ],
           "gap_accepts": [
-            "On the other hand",
             "However"
           ],
-          "explanation": "Linker of addition.",
-          "explanation_cz": "Spojka dodatku."
+          "explanation": "Linker of contrast.",
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "The bus is cheap. It is slow."
         },
         {
-          "en": "She smiled because of the good news.",
-          "cz": "Usmála se kvůli dobré zprávě.",
-          "gap": "She smiled ____ the good news.",
-          "gap_answer": "because of",
+          "en": "He plays football. He also plays tennis.",
+          "cz": "Hraje fotbal. Taky hraje tenis.",
+          "gap": "He plays football. He ____ plays tennis.",
+          "gap_answer": "also",
           "accepts": [
-            "She smiled because of the good news."
+            "He plays football. He also plays tennis.",
+            "He plays football and tennis.",
+            "He plays football and he plays tennis."
           ],
-          "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation": "Linker of addition.",
+          "explanation_cz": "Spojka dodatku.",
+          "join": "He plays football. He plays tennis."
         },
         {
           "en": "We were hungry, so we ordered food.",
@@ -388,7 +473,8 @@
             "We were hungry, so we ordered food."
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "We were hungry. We ordered food."
         },
         {
           "en": "Although he tried, he failed.",
@@ -396,18 +482,14 @@
           "gap": "____ he tried, he failed.",
           "gap_answer": "Although",
           "accepts": [
-            "Although he tried, he failed.",
-            "Even though he tried, he failed.",
-            "Though he tried, he failed."
+            "Although he tried, he failed."
           ],
           "gap_accepts": [
-            "Although",
-            "though",
-            "Even though",
-            "Though"
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "He tried. He failed."
         },
         {
           "en": "The room is small. However, it is bright.",
@@ -418,11 +500,11 @@
             "The room is small. However, it is bright."
           ],
           "gap_accepts": [
-            "However",
-            "On the other hand"
+            "However"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "The room is small. It is bright."
         },
         {
           "en": "They cancelled the trip because of snow.",
@@ -433,7 +515,8 @@
             "They cancelled the trip because of snow."
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "They cancelled the trip. There was snow."
         },
         {
           "en": "I stayed because I wanted to help.",
@@ -441,46 +524,50 @@
           "gap": "I stayed ____ I wanted to help.",
           "gap_answer": "because",
           "accepts": [
-            "I stayed because I wanted to help.",
-            "I stayed as I wanted to help.",
-            "I stayed since I wanted to help."
+            "I stayed because I wanted to help."
           ],
           "gap_accepts": [
-            "because",
-            "as",
-            "since"
+            "because"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "I stayed. I wanted to help."
         },
         {
-          "en": "She is smart but sometimes careless.",
+          "en": "She is clever but sometimes careless.",
           "cz": "Je chytrá, ale někdy neopatrná.",
-          "gap": "She is smart ____ sometimes careless.",
+          "gap": "She is clever ____ sometimes careless.",
           "gap_answer": "but",
           "accepts": [
-            "She is smart but sometimes careless."
-          ],
-          "explanation": "Linker shows relation: contrast / reason / result / addition.",
-          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek."
-        },
-        {
-          "en": "Even though we hurried, we missed it.",
-          "cz": "I když jsme spěchali, zmeškali jsme to.",
-          "gap": "____ we hurried, we missed it.",
-          "gap_answer": "Even though",
-          "accepts": [
-            "Even though we hurried, we missed it.",
-            "Although we hurried, we missed it.",
-            "Though we hurried, we missed it."
+            "She is clever but sometimes careless.",
+            "She is clever, but she is sometimes careless.",
+            "She is clever but she is sometimes careless.",
+            "She is clever, but sometimes careless.",
+            "She is smart but sometimes careless.",
+            "She is smart, but she is sometimes careless."
           ],
           "gap_accepts": [
-            "Even though",
-            "Although",
-            "Though"
+            "but",
+            "although"
+          ],
+          "explanation": "Linker shows relation: contrast / reason / result / addition.",
+          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek.",
+          "join": "She is clever. She is sometimes careless."
+        },
+        {
+          "en": "Although we hurried, we missed it.",
+          "cz": "I když jsme spěchali, zmeškali jsme to.",
+          "gap": "____ we hurried, we missed it.",
+          "gap_answer": "Although",
+          "accepts": [
+            "Although we hurried, we missed it."
+          ],
+          "gap_accepts": [
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "We hurried. We missed it."
         },
         {
           "en": "He trained hard. Therefore, he improved.",
@@ -495,65 +582,85 @@
             "So"
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "He trained hard. He improved."
         },
         {
-          "en": "In spite of her fear, she spoke.",
+          "en": "In spite of her strong fear, she spoke.",
           "cz": "Navzdory strachu promluvila.",
-          "gap": "____ her fear, she spoke.",
+          "gap": "____ her strong fear, she spoke.",
           "gap_answer": "In spite of",
           "accepts": [
+            "In spite of her strong fear, she spoke.",
+            "Despite her strong fear, she spoke.",
+            "She spoke in spite of her strong fear.",
+            "She spoke despite her strong fear.",
             "In spite of her fear, she spoke.",
-            "Despite her fear, she spoke."
+            "Despite her fear, she spoke.",
+            "Although her fear was strong, she spoke.",
+            "Her fear was strong, but she spoke.",
+            "Although she was afraid, she spoke.",
+            "She was afraid, but she spoke."
           ],
           "gap_accepts": [
             "In spite of",
             "Despite"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "Her fear was strong. She spoke."
         },
         {
-          "en": "Write it down so that you remember.",
+          "en": "Write it down so that you do not forget.",
           "cz": "Napiš si to, abys to nezapomněl.",
-          "gap": "Write it down ____ you remember.",
+          "gap": "Write it down ____ you do not forget.",
           "gap_answer": "so that",
           "accepts": [
-            "Write it down so that you remember.",
-            "Write it down so you remember."
+            "Write it down so that you do not forget.",
+            "Write it down so you do not forget.",
+            "Write it down so that you will not forget.",
+            "Write it down so you will not forget.",
+            "Write it down so that you don't forget.",
+            "Write it down so you don't forget."
           ],
           "gap_accepts": [
             "so that",
             "so"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "Write it down. You do not forget."
         },
         {
-          "en": "The job pays well. On the other hand, the hours are long.",
-          "cz": "Práce dobře platí. Na druhou stranu jsou dlouhé směny.",
+          "en": "The job pays well. However, the hours are long.",
+          "cz": "Práce dobře platí. Nicméně jsou dlouhé směny.",
           "gap": "The job pays well. ____, the hours are long.",
-          "gap_answer": "On the other hand",
+          "gap_answer": "However",
           "accepts": [
-            "The job pays well. On the other hand, the hours are long."
+            "The job pays well. However, the hours are long."
           ],
           "gap_accepts": [
-            "On the other hand",
             "However"
           ],
-          "explanation": "Linker of addition.",
-          "explanation_cz": "Spojka dodatku."
+          "explanation": "Linker of contrast.",
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "The job pays well. The hours are long."
         },
         {
-          "en": "We stopped because of a flat tyre.",
-          "cz": "Zastavili jsme kvůli prázdné pneumatice.",
-          "gap": "We stopped ____ a flat tyre.",
-          "gap_answer": "because of",
+          "en": "You like tea. I like tea, too.",
+          "cz": "Máš rád čaj. Já taky.",
+          "gap": "You like tea. I like tea, ____.",
+          "gap_answer": "too",
           "accepts": [
-            "We stopped because of a flat tyre."
+            "You like tea. I like tea, too.",
+            "You like tea and I like tea."
           ],
-          "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "gap_accepts": [
+            "too"
+          ],
+          "explanation": "Linker of addition.",
+          "explanation_cz": "Spojka dodatku.",
+          "join": "You like tea. I like tea."
         },
         {
           "en": "It was late, so we took a taxi.",
@@ -564,7 +671,8 @@
             "It was late, so we took a taxi."
           ],
           "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation_cz": "Spojka výsledku.",
+          "join": "It was late. We took a taxi."
         },
         {
           "en": "Although the food was cold, we ate it.",
@@ -572,18 +680,14 @@
           "gap": "____ the food was cold, we ate it.",
           "gap_answer": "Although",
           "accepts": [
-            "Although the food was cold, we ate it.",
-            "Even though the food was cold, we ate it.",
-            "Though the food was cold, we ate it."
+            "Although the food was cold, we ate it."
           ],
           "gap_accepts": [
-            "Although",
-            "though",
-            "Even though",
-            "Though"
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "The food was cold. We ate it."
         },
         {
           "en": "He is young. However, he is experienced.",
@@ -594,11 +698,11 @@
             "He is young. However, he is experienced."
           ],
           "gap_accepts": [
-            "However",
-            "On the other hand"
+            "However"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "He is young. He is experienced."
         },
         {
           "en": "I apologised because I was wrong.",
@@ -606,28 +710,32 @@
           "gap": "I apologised ____ I was wrong.",
           "gap_answer": "because",
           "accepts": [
-            "I apologised because I was wrong.",
-            "I apologised as I was wrong.",
-            "I apologised since I was wrong."
+            "I apologised because I was wrong."
           ],
           "gap_accepts": [
-            "because",
-            "as",
-            "since"
+            "because"
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "I apologised. I was wrong."
         },
         {
-          "en": "Because of her help, we finished early.",
-          "cz": "Díky její pomoci jsme skončili brzy.",
-          "gap": "____ her help, we finished early.",
-          "gap_answer": "Because of",
+          "en": "Call me when you arrive.",
+          "cz": "Zavolej, až přijedeš.",
+          "gap": "Call me ____ you arrive.",
+          "gap_answer": "when",
           "accepts": [
-            "Because of her help, we finished early."
+            "Call me when you arrive.",
+            "When you arrive, call me.",
+            "Call me after you arrive."
           ],
-          "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "gap_accepts": [
+            "when",
+            "after"
+          ],
+          "explanation": "Linker of time.",
+          "explanation_cz": "Spojka času.",
+          "join": "You arrive. Call me."
         },
         {
           "en": "I wanted coffee but there was none.",
@@ -635,43 +743,49 @@
           "gap": "I wanted coffee ____ there was none.",
           "gap_answer": "but",
           "accepts": [
-            "I wanted coffee but there was none."
+            "I wanted coffee but there was none.",
+            "I wanted coffee although there was none."
+          ],
+          "gap_accepts": [
+            "but",
+            "although"
           ],
           "explanation": "Linker shows relation: contrast / reason / result / addition.",
-          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek."
+          "explanation_cz": "Spojka ukazuje vztah: kontrast / důvod / výsledek / dodatek.",
+          "join": "I wanted coffee. There was none."
         },
         {
-          "en": "Even though it was expensive, I bought it.",
+          "en": "Although it was expensive, I bought it.",
           "cz": "I když to bylo drahé, koupil jsem to.",
           "gap": "____ it was expensive, I bought it.",
-          "gap_answer": "Even though",
+          "gap_answer": "Although",
           "accepts": [
-            "Even though it was expensive, I bought it.",
-            "Although it was expensive, I bought it.",
-            "Though it was expensive, I bought it."
+            "Although it was expensive, I bought it."
           ],
           "gap_accepts": [
-            "Even though",
-            "Although",
-            "Though"
+            "Although"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "It was expensive. I bought it."
         },
         {
-          "en": "She prepared well. Therefore, she felt calm.",
-          "cz": "Dobře se připravila. Proto byla klidná.",
-          "gap": "She prepared well. ____ she felt calm.",
-          "gap_answer": "Therefore",
+          "en": "After the film ended, we left.",
+          "cz": "Když film skončil, odešli jsme.",
+          "gap": "____ the film ended, we left.",
+          "gap_answer": "After",
           "accepts": [
-            "She prepared well. Therefore, she felt calm."
+            "After the film ended, we left.",
+            "When the film ended, we left.",
+            "We left after the film ended."
           ],
           "gap_accepts": [
-            "Therefore",
-            "So"
+            "After",
+            "When"
           ],
-          "explanation": "Linker of result.",
-          "explanation_cz": "Spojka výsledku."
+          "explanation": "Linker of time.",
+          "explanation_cz": "Spojka času.",
+          "join": "The film ended. We left."
         },
         {
           "en": "Despite the cost, they agreed.",
@@ -687,38 +801,39 @@
             "In spite of"
           ],
           "explanation": "Linker of contrast.",
-          "explanation_cz": "Spojka kontrastu."
+          "explanation_cz": "Spojka kontrastu.",
+          "join": "It cost a lot. They agreed."
         },
         {
-          "en": "Speak slowly so that everyone understands.",
-          "cz": "Mluv pomalu, aby všichni rozuměli.",
-          "gap": "Speak slowly ____ everyone understands.",
-          "gap_answer": "so that",
+          "en": "We ate. Then we left.",
+          "cz": "Najedli jsme se. Pak jsme odešli.",
+          "gap": "We ate. ____ we left.",
+          "gap_answer": "Then",
           "accepts": [
-            "Speak slowly so that everyone understands.",
-            "Speak slowly so everyone understands."
+            "We ate. Then we left.",
+            "We ate, then we left."
           ],
-          "gap_accepts": [
-            "so that",
-            "so"
-          ],
-          "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation": "Linker of time.",
+          "explanation_cz": "Spojka času.",
+          "join": "We ate. We left."
         },
         {
-          "en": "The app is free. On the other hand, it has ads.",
-          "cz": "Appka je zdarma. Na druhou stranu má reklamy.",
-          "gap": "The app is free. ____, it has ads.",
-          "gap_answer": "On the other hand",
+          "en": "She called when she arrived.",
+          "cz": "Zavolala, když přijela.",
+          "gap": "She called ____ she arrived.",
+          "gap_answer": "when",
           "accepts": [
-            "The app is free. On the other hand, it has ads."
+            "She called when she arrived.",
+            "She called after she arrived.",
+            "When she arrived, she called."
           ],
           "gap_accepts": [
-            "On the other hand",
-            "However"
+            "when",
+            "after"
           ],
-          "explanation": "Linker of addition.",
-          "explanation_cz": "Spojka dodatku."
+          "explanation": "Linker of time.",
+          "explanation_cz": "Spojka času.",
+          "join": "She called. She arrived."
         },
         {
           "en": "They left early because of the storm.",
@@ -729,7 +844,8 @@
             "They left early because of the storm."
           ],
           "explanation": "Linker of reason / purpose.",
-          "explanation_cz": "Spojka důvodu / účelu."
+          "explanation_cz": "Spojka důvodu / účelu.",
+          "join": "They left early. There was a storm."
         }
       ]
     }
@@ -737,63 +853,187 @@
   "intro": {
     "cards": [
       {
-        "title": "Functions",
-        "title_cz": "Funkce",
+        "title": "What they are",
+        "title_cz": "Co to jsou",
+        "diagram": "boxes_row",
+        "labels": [
+          "idea",
+          "linker",
+          "idea",
+          "I was tired",
+          "so",
+          "I went home"
+        ],
+        "points": [
+          "Linking joins two ideas and shows how they relate",
+          "A linker is often a conjunction: *because, so, although, but*",
+          "Four jobs here — a small set of each"
+        ],
         "table": {
           "headers": [
-            "Linker",
-            "Function"
+            "Job",
+            "Example"
           ],
           "rows": [
             [
-              "because / because of",
-              "reason"
+              "addition",
+              "I like tea **and** coffee."
             ],
             [
-              "so / therefore",
-              "result"
+              "contrast",
+              "**Although** it rained, we walked."
             ],
             [
-              "although / however / even though",
-              "contrast"
+              "cause / effect",
+              "I was tired, **so** I went home."
             ],
             [
-              "but",
-              "simple contrast"
+              "time",
+              "We left **after** the film."
             ]
           ]
         }
       },
       {
-        "title": "because vs because of",
-        "title_cz": "because vs because of",
-        "body": "because + clause · because of + noun",
-        "body_cz": "because + věta · because of + podstatné jméno"
+        "title": "Addition",
+        "title_cz": "Dodatek",
+        "diagram": "branch",
+        "labels": [
+          "add",
+          "and",
+          "also",
+          "too"
+        ],
+        "table": {
+          "headers": [
+            "Linker",
+            "Example"
+          ],
+          "rows": [
+            [
+              "and",
+              "I like tea **and** coffee."
+            ],
+            [
+              "also",
+              "She **also** speaks Czech."
+            ],
+            [
+              "too",
+              "I like tea, **too**."
+            ]
+          ]
+        },
+        "points": [
+          "**and** joins two things in one phrase"
+        ]
       },
       {
-        "title": "although vs however",
-        "title_cz": "although vs however",
-        "body": "although joins clauses. However often starts a new sentence.",
-        "body_cz": "although spojuje věty · However často nové souvětí"
+        "title": "Contrast",
+        "title_cz": "Kontrast",
+        "diagram": "branch",
+        "labels": [
+          "vs",
+          "but",
+          "although",
+          "however"
+        ],
+        "table": {
+          "headers": [
+            "Linker",
+            "Example"
+          ],
+          "rows": [
+            [
+              "but",
+              "I like tea, **but** I prefer coffee."
+            ],
+            [
+              "although",
+              "**Although** it rained, we walked."
+            ],
+            [
+              "however",
+              "She studied. **However**, she failed."
+            ]
+          ]
+        },
+        "points": [
+          "**although** joins two clauses",
+          "**However** often starts a new sentence",
+          "**despite / in spite of** + a noun, not a clause"
+        ]
       },
       {
-        "title": "despite",
-        "title_cz": "despite",
-        "body": "+ noun / -ing — not a full finite clause alone",
-        "body_cz": "+ podstatné jméno / -ing"
+        "title": "Cause / effect",
+        "title_cz": "Příčina / následek",
+        "diagram": "branch",
+        "labels": [
+          "why",
+          "because",
+          "so",
+          "therefore"
+        ],
+        "table": {
+          "headers": [
+            "Linker",
+            "Example"
+          ],
+          "rows": [
+            [
+              "because",
+              "He stayed **because** he was ill."
+            ],
+            [
+              "so",
+              "I was tired, **so** I went home."
+            ],
+            [
+              "therefore",
+              "She was busy. **Therefore**, she left."
+            ]
+          ]
+        },
+        "points": [
+          "**because** + clause · **because of** + noun",
+          "**so** = result · **so that** = purpose"
+        ]
       },
       {
-        "title": "so that",
-        "title_cz": "so that",
-        "body": "purpose: so that we would catch the train",
-        "body_cz": "účel"
-      },
-      {
-        "title": "Gap focus",
-        "title_cz": "Nácvik",
-        "body": "Gap on the linker.",
-        "body_cz": "Mezera na spojku."
+        "title": "Time",
+        "title_cz": "Čas",
+        "diagram": "branch",
+        "labels": [
+          "time",
+          "when",
+          "after",
+          "then"
+        ],
+        "table": {
+          "headers": [
+            "Linker",
+            "Example"
+          ],
+          "rows": [
+            [
+              "when",
+              "Call me **when** you arrive."
+            ],
+            [
+              "after",
+              "We left **after** the film."
+            ],
+            [
+              "then",
+              "We ate. **Then** we left."
+            ]
+          ]
+        },
+        "points": [
+          "Time order: **when** / **after** / **then**"
+        ]
       }
     ]
-  }
+  },
+  "use_mode": "join"
 }

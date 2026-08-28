@@ -26,15 +26,21 @@ export function attachExplain(fb, item, onOpen) {
   head.textContent = "Explanation";
   note.appendChild(head);
 
+  const md = (s) =>
+    String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+
   const main = document.createElement("div");
-  main.textContent = text;
+  main.innerHTML = md(text);
   note.appendChild(main);
 
   const cz = item.explanation_cz || item.explain_cz || "";
   if (cz && cz !== text) {
     const sub = document.createElement("div");
     sub.className = "explain-note-cz";
-    sub.textContent = cz;
+    sub.innerHTML = md(cz);
     note.appendChild(sub);
   }
 

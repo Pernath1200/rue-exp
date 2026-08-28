@@ -219,38 +219,59 @@
       {
         "title": "Every word has a class",
         "title_cz": "Slovní druhy",
-        "body": "**He drinks black coffee.**",
         "points": [
-          "A name is a noun too: **Anna drinks black coffee.** (Anna = noun)"
+          "A name is a noun too: **Anna drinks black coffee.** (Anna = noun)",
+          "**He drinks black coffee.**"
         ],
         "svg": "<svg viewBox=\"0 0 520 130\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"26\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"48\">He</text>\n    <text x=\"180\" y=\"48\">drinks</text>\n    <text x=\"305\" y=\"48\">black</text>\n    <text x=\"435\" y=\"48\">coffee.</text>\n  </g>\n  <g stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\">\n    <line x1=\"60\" y1=\"60\" x2=\"60\" y2=\"76\"/>\n    <line x1=\"180\" y1=\"60\" x2=\"180\" y2=\"76\"/>\n    <line x1=\"305\" y1=\"60\" x2=\"305\" y2=\"76\"/>\n    <line x1=\"435\" y1=\"60\" x2=\"435\" y2=\"76\"/>\n  </g>\n  <g font-size=\"15\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"98\">pronoun</text>\n    <text x=\"180\" y=\"98\">verb</text>\n    <text x=\"305\" y=\"98\">adjective</text>\n    <text x=\"435\" y=\"98\">noun</text>\n  </g>\n</svg>"
       },
       {
         "title": "The four classes",
         "title_cz": "Čtyři slovní druhy",
-        "points": [
-          "**noun** (*podstatné jméno*) = a person, a place or a thing: **Anna · Prague · coffee**",
-          "**verb** (*sloveso*) = an action, or *be* / *have*: **work · go · is · has**",
-          "**adjective** (*přídavné jméno*) = says what a noun is like: **new · big · tired**",
-          "**pronoun** (*zájmeno*) = stands in for a noun: **I · you · she · they**"
-        ]
+        "table": {
+          "headers": [
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "**noun** (*podstatné jméno*)",
+              "a person, a place or a thing: **Anna · Prague · coffee**"
+            ],
+            [
+              "**verb** (*sloveso*)",
+              "an action, or *be* / *have*: **work · go · is · has**"
+            ],
+            [
+              "**adjective** (*přídavné jméno*)",
+              "says what a noun is like: **new · big · tired**"
+            ],
+            [
+              "**pronoun** (*zájmeno*)",
+              "stands in for a noun: **I · you · she · they**"
+            ]
+          ]
+        }
       },
       {
         "title": "Subject and object",
         "title_cz": "Podmět a předmět",
-        "body": "**subject** (*podmět — kdo?*) = who does it. **object** (*předmět — koho? co?*) = what they do it to.",
         "points": [
-          "**He drinks black coffee.** — subject: *He* · object: *black coffee*"
+          "**He drinks black coffee.** — subject: *He* · object: *black coffee*",
+          "**subject** (*podmět — kdo?*) = who does it.",
+          "**object** (*předmět — koho?",
+          "co?*) = what they do it to."
         ],
         "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"15\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"26\">subject</text>\n    <text x=\"435\" y=\"26\">object</text>\n  </g>\n  <g stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\">\n    <line x1=\"60\" y1=\"34\" x2=\"60\" y2=\"50\"/>\n    <line x1=\"435\" y1=\"34\" x2=\"435\" y2=\"50\"/>\n  </g>\n  <g font-size=\"26\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"82\">He</text>\n    <text x=\"180\" y=\"82\">drinks</text>\n    <text x=\"305\" y=\"82\">black</text>\n    <text x=\"435\" y=\"82\">coffee.</text>\n  </g>\n</svg>"
       },
       {
         "title": "The place shows which is which",
         "title_cz": "Místo ve větě",
-        "body": "Czech shows *podmět* and *předmět* with an ending (*pes → psa*). English has no endings — the **place** in the sentence shows which is which.",
         "points": [
           "Before the verb = subject · after the verb = object: **He drinks coffee.**",
-          "Swap the places and the meaning swaps: **Anna likes Petr.** · **Petr likes Anna.**"
+          "Swap the places and the meaning swaps: **Anna likes Petr.** · **Petr likes Anna.**",
+          "Czech shows *podmět* and *předmět* with an ending (*pes → psa*).",
+          "English has no endings — the **place** in the sentence shows which is which."
         ],
         "svg": "<svg viewBox=\"0 0 520 120\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"26\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"42\">He</text>\n    <text x=\"180\" y=\"42\">drinks</text>\n    <text x=\"305\" y=\"42\">black</text>\n    <text x=\"435\" y=\"42\">coffee.</text>\n  </g>\n  <g stroke=\"#d4b070\" stroke-width=\"1.5\">\n    <line x1=\"60\" y1=\"54\" x2=\"60\" y2=\"70\"/>\n    <line x1=\"180\" y1=\"54\" x2=\"180\" y2=\"70\"/>\n    <line x1=\"435\" y1=\"54\" x2=\"435\" y2=\"70\"/>\n  </g>\n  <g font-size=\"13\" fill=\"#d4b070\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"90\">before the verb</text>\n    <text x=\"180\" y=\"90\">verb</text>\n    <text x=\"435\" y=\"90\">after the verb</text>\n  </g>\n</svg>"
       }

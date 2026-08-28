@@ -3,7 +3,7 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-28-use-skip";
 import { startPractice as startVocabPractice } from "./practice-vocab.js";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
@@ -22,6 +22,7 @@ import {
   completeVocabMode,
   refreshUnit,
   levelUnitStats,
+  nodeTreeStrength,
   reviewDueList,
   backfillReview,
   PASS_RATIO,
@@ -1074,7 +1075,7 @@ function renderRoots() {
       },
       progressState: (id) => {
         const n = nodeById(id);
-        return n ? progressState(n) : "planned";
+        return n ? nodeTreeStrength(n) : "none";
       },
       recent: recentNodeIds(),
       onSelect: (node) => focusNodeOnMap(node),

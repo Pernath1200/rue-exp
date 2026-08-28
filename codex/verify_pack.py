@@ -72,13 +72,25 @@ C9_WORD_CAP = 15
 C9_BASELINE = ROOT / "codex" / "c9-baseline.json"
 c9_hits: list[tuple[str, str]] = []  # (pack_id, what)
 
+# C10 — every intro card has a table and/or a diagram (James, 2026-08-28).
+C10_BASELINE = ROOT / "codex" / "c10-baseline.json"
+c10_hits: list[tuple[str, str]] = []
+
 
 def c9_words(s: str) -> int:
     """Words in a student-facing string, ignoring markdown emphasis marks."""
     return len(re.findall(r"[A-Za-zÀ-ÿ']+", str(s)))
 
 
-def check_intro_density(pid: str, d: dict) -> None:
+def intro_lint_scope(path: Path, d: dict) -> bool:
+    """C9/C10 are enforced on A1–B1 grammar only (James, 2026-08-28).
+    Vocab page-1 prose is a different product. B2+ intros are paused."""
+    if d.get("level") not in ("A1", "A2", "B1"):
+        return False
+    return "grammar" in path.parts
+
+
+def check_intro_density(pid: str, d: dict, path: Path | None = None) -> None:
     """Rule C9 — no walltext in intro cards.
 
     Intro cards teach with tables, diagrams, bullets and example pairs.
@@ -87,10 +99,11 @@ def check_intro_density(pid: str, d: dict) -> None:
     explanation_cz, which js/explain.js shows beside the answer feedback —
     at the moment the student gets it wrong, which is when it is read.
 
-    Ratcheted, not absolute: the existing corpus predates the rule, so a
-    hard error would open at ~450 and stay red forever. The baseline may
-    only fall. Once it reaches 0 every violation is an error.
+    Enforced for A1–B1 grammar. Ratcheted: the baseline may only fall.
+    Once it reaches 0 every in-scope violation is an error.
     """
+    if path is not None and not intro_lint_scope(path, d):
+        return
     intro = d.get("intro")
     cards = intro.get("cards") if isinstance(intro, dict) else intro
     if not isinstance(cards, list):
@@ -150,6 +163,62 @@ def report_c9() -> None:
         err(f"C9 walltext: {n} violations and the baseline is 0")
 
 
+def check_intro_visual(pid: str, d: dict, path: Path | None = None) -> None:
+    """Rule C10 — every intro card has a table and/or a diagram.
+
+    Accepted visuals: table.rows, diagram (intro-visuals.js key), or inline svg.
+    Points and examples[] may accompany a visual; they do not replace it.
+    Enforced for A1–B1 grammar. Ratcheted like C9.
+    """
+    if path is not None and not intro_lint_scope(path, d):
+        return
+    intro = d.get("intro")
+    cards = intro.get("cards") if isinstance(intro, dict) else intro
+    if not isinstance(cards, list):
+        return
+    for i, c in enumerate(cards):
+        if not isinstance(c, dict):
+            continue
+        tbl = c.get("table")
+        has_table = isinstance(tbl, dict) and bool(tbl.get("rows"))
+        has_diagram = bool(str(c.get("diagram") or "").strip())
+        has_svg = bool(str(c.get("svg") or "").strip())
+        has_pics = isinstance(c.get("pictures"), list) and bool(c.get("pictures"))
+        if has_table or has_diagram or has_svg or has_pics:
+            continue
+        title = str(c.get("title") or "").strip() or "(untitled)"
+        c10_hits.append((pid, f"intro card {i}: no table/diagram ({title})"))
+
+
+def report_c10() -> None:
+    n = len(c10_hits)
+    try:
+        base = json.loads(C10_BASELINE.read_text(encoding="utf-8"))["count"]
+    except Exception:  # noqa: BLE001
+        base = None
+
+    packs = sorted({p for p, _ in c10_hits})
+    worst = sorted(
+        ((sum(1 for p, _ in c10_hits if p == pk), pk) for pk in packs), reverse=True
+    )
+    if n:
+        print(f"\nC10 no visual: {n} cards across {len(packs)} packs")
+        for cnt, pk in worst[:8]:
+            print(f"  {cnt:4}  {pk}")
+        if len(worst) > 8:
+            print(f"  ... and {len(worst) - 8} more packs")
+
+    if base is None:
+        print(f"C10: no baseline yet — write {{\"count\": {n}}} to {C10_BASELINE.name}")
+        return
+    if n > base:
+        err(f"C10 intro visual regressed: {n} cards vs baseline {base}")
+    elif n < base:
+        print(f"C10: baseline can tighten {base} → {n} (run with --tighten to write it)")
+    if base == 0 and n:
+        err(f"C10 intro visual: {n} cards missing a table/diagram and the baseline is 0")
+
+
 def lint_pack(path: Path) -> None:
     rel = path.relative_to(ROOT).as_posix()
     try:
@@ -170,7 +239,8 @@ def lint_pack(path: Path) -> None:
     for hit in find_pl_keys(d):
         err(f"{pid}: forbidden `pl` field at {hit}")
 
-    check_intro_density(pid, d)
+    check_intro_density(pid, d, path)
+    check_intro_visual(pid, d, path)
 
     # Word-formation packs (FCE/CAE Part 3, 2026-08-18): EN-only by James's
     # ruling — the capitalised root cue carries the item, so `cz` is not
@@ -321,15 +391,20 @@ def main() -> int:
         cross_check_tree(pack_tree_nodes)
 
     report_c9()
+    report_c10()
     if "--tighten" in sys.argv:
         # Only on a full-corpus run — a subset would write a false baseline.
         if args:
-            print("C9: --tighten ignored (needs a full run, no file arguments)")
+            print("C9/C10: --tighten ignored (needs a full run, no file arguments)")
         else:
             C9_BASELINE.write_text(
                 json.dumps({"count": len(c9_hits)}, indent=2) + "\n", encoding="utf-8"
             )
             print(f"C9: baseline written — {len(c9_hits)}")
+            C10_BASELINE.write_text(
+                json.dumps({"count": len(c10_hits)}, indent=2) + "\n", encoding="utf-8"
+            )
+            print(f"C10: baseline written — {len(c10_hits)}")
 
     for w in warnings:
         print(f"WARN  {w}")

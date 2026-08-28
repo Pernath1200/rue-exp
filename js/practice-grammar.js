@@ -17,12 +17,12 @@ import {
   hasFruit,
   grammarBest,
 } from "./progress.js";
-import { attachExplain } from "./explain.js";
-import { introDiagram } from "./intro-visuals.js";
+import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
+import { introDiagram } from "./intro-visuals.js?v=2026-08-28-hub";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";
-import { adaptGrammarPack } from "./pack-adapt.js";
+import { adaptGrammarPack } from "./pack-adapt.js?v=2026-08-28-use-skip";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
 import { setSmokeContext } from "./smoke-flags.js";
@@ -749,24 +749,29 @@ export function startPractice(rawPack, root, opts) {
     if (card.body) body += `<p>${escMd(card.body)}</p>`;
     const bodyCz = card.body_cz || card.body_pl;
     if (bodyCz) body += `<p><em>${escMd(bodyCz)}</em></p>`;
-    /* Schematic before the table so the picture of WHEN lands first
-     * (James, 2026-08-26: small timelines on later intro pages). */
-    if (card.diagram) {
-      const svgMarkup = introDiagram(card.diagram, card.labels || []);
-      if (svgMarkup) {
-        body +=
-          card.diagram === "articles_map"
-            ? svgMarkup
-            : `<div class="intro-scene-wrap">${svgMarkup}</div>`;
-      } else if (card.diagram_fallback)
-        body += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
-    }
-    if (card.svg && String(card.svg).trim().startsWith("<svg")) {
-      body += `<div class="intro-scene-wrap">${card.svg}</div>`;
-    }
-    if (card.table) {
+
+    const diagramBlock = () => {
+      let html = "";
+      if (card.diagram) {
+        const svgMarkup = introDiagram(card.diagram, card.labels || []);
+        if (svgMarkup) {
+          html +=
+            card.diagram === "articles_map"
+              ? svgMarkup
+              : `<div class="intro-scene-wrap">${svgMarkup}</div>`;
+        } else if (card.diagram_fallback)
+          html += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
+      }
+      if (card.svg && String(card.svg).trim().startsWith("<svg")) {
+        html += `<div class="intro-scene-wrap">${card.svg}</div>`;
+      }
+      return html;
+    };
+    const tableBlock = () => {
+      if (Array.isArray(card.links) && card.links.length) return "";
+      if (!card.table) return "";
       const h = card.table.headers || [];
-      body += `<table class="intro-table"><thead><tr>${h
+      return `<table class="intro-table"><thead><tr>${h
         .map((x) => `<th>${escMd(x)}</th>`)
         .join("")}</tr></thead><tbody>${(card.table.rows || [])
         .map(
@@ -774,22 +779,18 @@ export function startPractice(rawPack, root, opts) {
             `<tr>${row.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
         )
         .join("")}</tbody></table>`;
-    }
-
+    };
     // points[] carries the bulk of the authored teaching on 403 of 557 cards
     // (43 of them have nothing else) — it went unrendered until 2026-08-10.
-    if (Array.isArray(card.points) && card.points.length) {
-      body += `<ul class="intro-points">${card.points
+    const pointsBlock = () => {
+      if (!Array.isArray(card.points) || !card.points.length) return "";
+      return `<ul class="intro-points">${card.points
         .map((p) => `<li>${escMd(p)}</li>`)
         .join("")}</ul>`;
-    }
-    if (card.ref && card.ref.tab) {
-      body += `<p class="intro-ref"><button type="button" class="link" id="intro-open-ref">${esc(
-        card.ref.label || "Full table",
-      )}</button></p>`;
-    }
-    if (card.examples) {
-      body += card.examples
+    };
+    const examplesBlock = () => {
+      if (!card.examples) return "";
+      return card.examples
         .map((ex) => {
           const cz = ex.cz || ex.pl || "";
           let line = `<div class="intro-ex"><span class="pl">${esc(cz)}</span>`;
@@ -798,6 +799,38 @@ export function startPractice(rawPack, root, opts) {
           return line;
         })
         .join("");
+    };
+
+    /* Default: schematic before the table so the picture of WHEN lands first
+     * (James, 2026-08-26: small timelines on later intro pages).
+     * text_first: definition + examples, then the picture (James, 2026-08-28:
+     * degree "What they are" opened on the scale, not on what they are). */
+    if (card.text_first) {
+      body += pointsBlock();
+      body += examplesBlock();
+      body += tableBlock();
+      body += diagramBlock();
+    } else {
+      body += diagramBlock();
+      body += tableBlock();
+      body += pointsBlock();
+      body += examplesBlock();
+    }
+    if (card.ref && card.ref.tab) {
+      body += `<p class="intro-ref"><button type="button" class="link" id="intro-open-ref">${esc(
+        card.ref.label || "Full table",
+      )}</button></p>`;
+    }
+    if (Array.isArray(card.links) && card.links.length) {
+      body += `<table class="intro-table"><thead><tr><th>Related</th><th>You already know</th></tr></thead><tbody>`;
+      for (const L of card.links) {
+        const id = String(L.id || "").trim();
+        if (!/^[a-z][a-z0-9_]*$/i.test(id)) continue;
+        const label = esc(L.label || id);
+        const note = escMd(L.note || "");
+        body += `<tr><td><a class="link" href="#${esc(id)}">${label}</a></td><td>${note}</td></tr>`;
+      }
+      body += `</tbody></table>`;
     }
 
     const last = state.introIndex >= cards.length - 1;
@@ -927,13 +960,22 @@ export function startPractice(rawPack, root, opts) {
       ? items.filter((it, i) => placed[i] === it.bin).length
       : 0;
 
+    /* Smoke-only: same hatch as Match (James, 2026-08-25 / 2026-08-28).
+     * Re-testing Quiz must not pay the sort toll every time. Hidden unless
+     * the dev toolbar is up, so students still do the four-box sort. */
+    const smokeOn = document.getElementById("smoke-toolbar")?.hidden === false;
+
     root.innerHTML = `
       ${ladderHtml()}
       <div class="practice-head"><h2>${esc(pack.title)} · Sort</h2></div>
       <p class="score-line">${
         done
           ? `${score} / ${items.length} correct`
-          : `${items.length - poolIdx.length} / ${items.length} placed · drag a word into a column, or click it then click a column`
+          : `${items.length - poolIdx.length} / ${items.length} placed · drag a word into a column, or click it then click a column${
+              smokeOn
+                ? ` · <button type="button" class="link" id="sb-skip">skip sort (smoke) →</button>`
+                : ""
+            }`
       }</p>
       <div class="sb-pool" id="sb-pool">${poolIdx
         .map((i) => chip(i, false))
@@ -964,6 +1006,8 @@ export function startPractice(rawPack, root, opts) {
       focusPrimary("#sb-next");
       return;
     }
+
+    root.querySelector("#sb-skip")?.addEventListener("click", goToNextCheckPhaseOrType);
 
     const place = (i, bin) => {
       if (i == null || Number.isNaN(i)) return;
@@ -1269,20 +1313,27 @@ export function startPractice(rawPack, root, opts) {
         const rightId = m.sel.side === "R" ? m.sel.id : id;
         const leftRow = m.left.find((x) => x.id === leftId);
         const rightRow = m.right.find((x) => x.id === rightId);
-        /* Correct when the LEFT LABELS agree — not when the instances do.
-         * a1_word_classes puts the class name on the left, so a board has
-         * three tiles reading "verb"; matching any of them to a verb is right,
-         * but identity matching accepted only the authored instance and marked
-         * the rest wrong (James, 2026-08-12). Where labels are unique this is
-         * identical to the old test, since the true partner shares the id. */
+        /* Two ways a pair can be right — never grade by instance id alone.
+         * 1. Repeating LEFT labels (a1_word_classes: three tiles "verb"):
+         *    any left with that label matches a right whose partner shares it
+         *    (James, 2026-08-12).
+         * 2. Repeating RIGHT labels (dependent preps: several "to" / "for"):
+         *    the right chip's text is this left's answer. Instance matching
+         *    marked married→to wrong when the chip belonged to belong
+         *    (James, 2026-08-28). */
         const truePartner = rightRow
           ? m.left.find((x) => x.id === rightRow.id)
           : null;
+        const byLeftLabel =
+          truePartner && norm(truePartner.t) === norm(leftRow && leftRow.t);
+        const byRightText =
+          leftRow &&
+          rightRow &&
+          norm(leftRow.ans) === norm(rightRow.t);
         const ok =
           leftRow &&
           rightRow &&
-          truePartner &&
-          norm(truePartner.t) === norm(leftRow.t) &&
+          (byLeftLabel || byRightText) &&
           !m.doneLeft.has(leftId) &&
           !m.doneRight.has(rightId);
 

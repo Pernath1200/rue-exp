@@ -1,11 +1,11 @@
 {
   "id": "b1_dependent_prepositions",
-  "title": "Dependent prepositions",
+  "title": "Dependent prepositions 1",
   "level": "B1",
   "tree_node": "b1_dependent_prepositions",
   "codex_unit": "G_PP-B1B2-01",
   "practice": "frames",
-  "note": "high-frequency adj/verb + prep. · Bank 51 · good draft · ROI deps · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
+  "note": "Dependent prepositions 1 (B1). Frequency list, one sense each (~30). Match = lemma → prep. Duals + extra chunks parked for units 2/3. look for in; look after in phrasal. 2026-08-28 smoke redesign.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -17,176 +17,205 @@
   "blocks": [
     {
       "id": "b1_dependent_prepositions_main",
-      "title": "Dependent prepositions · B1",
+      "title": "Dependent prepositions 1 · B1",
       "items": [
         {
           "en": "I am interested in music.",
           "cz": "Zajímám se o hudbu.",
+          "lemma": "interested",
           "gap": "I am interested ____ music.",
           "gap_answer": "in",
           "accepts": [
-            "I am interested in music."
+            "I am interested in music.",
+            "I'm interested in music."
           ],
-          "explanation": "Fixed chunk: adjective/verb + in — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
+          "wrong": "I am interested about music.",
+          "explanation": "The pair is interested **in**. Not *about*.",
+          "explanation_cz": "Pár je interested **in**. Ne *about*.",
+          "quiz_options": [
+            "in",
+            "about",
+            "on",
+            "at"
+          ]
         },
         {
           "en": "She is good at maths.",
           "cz": "Je dobrá v matematice.",
+          "lemma": "good",
           "gap": "She is good ____ maths.",
           "gap_answer": "at",
+          "wrong": "She is good in maths.",
+          "explanation": "The pair is good **at**. Not *in*.",
+          "explanation_cz": "Pár je good **at**. Ne *in*.",
           "accepts": [
             "She is good at maths."
           ],
-          "explanation": "Fixed chunk: adjective/verb + at — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + at — uč se jako celek."
+          "quiz_options": [
+            "at",
+            "in",
+            "on",
+            "to"
+          ]
         },
         {
-          "en": "He depends on his parents.",
-          "cz": "Závisí na rodičích.",
-          "gap": "He depends ____ his parents.",
-          "gap_answer": "on",
-          "accepts": [
-            "He depends on his parents."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "They are worried about the test.",
-          "cz": "Mají obavy z testu.",
-          "gap": "They are worried ____ the test.",
-          "gap_answer": "about",
-          "accepts": [
-            "They are worried about the test."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + about — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + about — uč se jako celek."
-        },
-        {
-          "en": "I apologise for the delay.",
-          "cz": "Omlouvám se za zpoždění.",
-          "gap": "I apologise ____ the delay.",
-          "gap_answer": "for",
-          "accepts": [
-            "I apologise for the delay."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
-        },
-        {
-          "en": "She is responsible for the project.",
-          "cz": "Je zodpovědná za projekt.",
-          "gap": "She is responsible ____ the project.",
-          "gap_answer": "for",
-          "accepts": [
-            "She is responsible for the project."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
-        },
-        {
-          "en": "We arrived at the station.",
-          "cz": "Dorazili jsme na nádraží.",
-          "gap": "We arrived ____ the station.",
+          "en": "I am bad at remembering names.",
+          "cz": "Jsem špatný v pamatování jmen.",
+          "lemma": "bad",
+          "gap": "I am bad ____ remembering names.",
           "gap_answer": "at",
           "accepts": [
-            "We arrived at the station."
+            "I am bad at remembering names.",
+            "I'm bad at remembering names."
           ],
-          "explanation": "Fixed chunk: adjective/verb + at — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + at — uč se jako celek."
-        },
-        {
-          "en": "We arrived in Prague.",
-          "cz": "Dorazili jsme do Prahy.",
-          "gap": "We arrived ____ Prague.",
-          "gap_answer": "in",
-          "accepts": [
-            "We arrived in Prague."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + in — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
+          "wrong": "I am bad in remembering names.",
+          "explanation": "The pair is bad **at**. Same shape as good **at**.",
+          "explanation_cz": "Pár je bad **at**. Stejně jako good **at**.",
+          "quiz_options": [
+            "at",
+            "in",
+            "on",
+            "to"
+          ]
         },
         {
           "en": "He is afraid of spiders.",
           "cz": "Bojí se pavouků.",
+          "lemma": "afraid",
           "gap": "He is afraid ____ spiders.",
           "gap_answer": "of",
+          "wrong": "He is afraid from spiders.",
+          "explanation": "The pair is afraid **of**. Not *from*.",
+          "explanation_cz": "Pár je afraid **of**. Ne *from*.",
           "accepts": [
             "He is afraid of spiders."
           ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "I am proud of my team.",
-          "cz": "Jsem hrdý na svůj tým.",
-          "gap": "I am proud ____ my team.",
-          "gap_answer": "of",
-          "accepts": [
-            "I am proud of my team."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "She insisted on paying.",
-          "cz": "Trvala na tom, že zaplatí.",
-          "gap": "She insisted ____ paying.",
-          "gap_answer": "on",
-          "accepts": [
-            "She insisted on paying."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "They succeed in finishing on time.",
-          "cz": "Uspejí v dokončení včas.",
-          "gap": "They succeed ____ finishing on time.",
-          "gap_answer": "in",
-          "accepts": [
-            "They succeed in finishing on time."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + in — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
-        },
-        {
-          "en": "I am keen on football.",
-          "cz": "Jsem nadšený do fotbalu.",
-          "gap": "I am keen ____ football.",
-          "gap_answer": "on",
-          "accepts": [
-            "I am keen on football."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "She is tired of waiting.",
-          "cz": "Je unavená z čekání.",
-          "gap": "She is tired ____ waiting.",
-          "gap_answer": "of",
-          "accepts": [
-            "She is tired of waiting."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+          "quiz_options": [
+            "of",
+            "from",
+            "for",
+            "about"
+          ]
         },
         {
           "en": "Brno is famous for its villas.",
           "cz": "Brno je slavné vilami.",
+          "lemma": "famous",
           "gap": "Brno is famous ____ its villas.",
           "gap_answer": "for",
+          "wrong": "Brno is famous of its villas.",
+          "explanation": "The pair is famous **for**.",
+          "explanation_cz": "Pár je famous **for**.",
           "accepts": [
             "Brno is famous for its villas."
           ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "en": "I am proud of my team.",
+          "cz": "Jsem hrdý na svůj tým.",
+          "lemma": "proud",
+          "gap": "I am proud ____ my team.",
+          "gap_answer": "of",
+          "accepts": [
+            "I am proud of my team.",
+            "I'm proud of my team."
+          ],
+          "wrong": "I am proud on my team.",
+          "explanation": "The pair is proud **of**. Czech *na* is not *on*.",
+          "explanation_cz": "Pár je proud **of**. České *na* není *on*.",
+          "quiz_options": [
+            "of",
+            "from",
+            "for",
+            "about"
+          ]
+        },
+        {
+          "en": "They are worried about the test.",
+          "cz": "Mají obavy z testu.",
+          "lemma": "worried",
+          "gap": "They are worried ____ the test.",
+          "gap_answer": "about",
+          "wrong": "They are worried of the test.",
+          "explanation": "The pair is worried **about**.",
+          "explanation_cz": "Pár je worried **about**.",
+          "accepts": [
+            "They are worried about the test."
+          ],
+          "quiz_options": [
+            "about",
+            "of",
+            "for",
+            "with"
+          ]
+        },
+        {
+          "en": "She is tired of waiting.",
+          "cz": "Je unavená z čekání.",
+          "lemma": "tired",
+          "gap": "She is tired ____ waiting.",
+          "gap_answer": "of",
+          "wrong": "She is tired from waiting.",
+          "explanation": "The pair is tired **of**.",
+          "explanation_cz": "Pár je tired **of**.",
+          "accepts": [
+            "She is tired of waiting."
+          ],
+          "quiz_options": [
+            "of",
+            "from",
+            "for",
+            "about"
+          ]
+        },
+        {
+          "en": "The bag is full of books.",
+          "cz": "Taška je plná knih.",
+          "lemma": "full",
+          "gap": "The bag is full ____ books.",
+          "gap_answer": "of",
+          "wrong": "The bag is full with books.",
+          "explanation": "The pair is full **of**.",
+          "explanation_cz": "Pár je full **of**.",
+          "accepts": [
+            "The bag is full of books."
+          ],
+          "quiz_options": [
+            "of",
+            "from",
+            "for",
+            "about"
+          ]
+        },
+        {
+          "en": "Your bag is similar to mine.",
+          "cz": "Tvoje taška je podobná mé.",
+          "lemma": "similar",
+          "gap": "Your bag is similar ____ mine.",
+          "gap_answer": "to",
+          "wrong": "Your bag is similar with mine.",
+          "explanation": "The pair is similar **to**.",
+          "explanation_cz": "Pár je similar **to**.",
+          "accepts": [
+            "Your bag is similar to mine."
+          ],
+          "quiz_options": [
+            "to",
+            "for",
+            "at",
+            "with"
+          ]
         },
         {
           "en": "This is different from the others.",
           "cz": "Tohle je jiné než ostatní.",
+          "lemma": "different",
           "gap": "This is different ____ the others.",
           "gap_answer": "from",
           "accepts": [
@@ -197,404 +226,474 @@
             "from",
             "to"
           ],
-          "explanation": "Fixed chunk: adjective/verb + from — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
+          "wrong": "This is different of the others.",
+          "explanation": "The pair is different **from**.",
+          "explanation_cz": "Pár je different **from**.",
+          "quiz_options": [
+            "from",
+            "of",
+            "with",
+            "in"
+          ]
         },
         {
-          "en": "Your bag is similar to mine.",
-          "cz": "Tvoje taška je podobná mé.",
-          "gap": "Your bag is similar ____ mine.",
-          "gap_answer": "to",
+          "en": "She is responsible for the project.",
+          "cz": "Je zodpovědná za projekt.",
+          "lemma": "responsible",
+          "gap": "She is responsible ____ the project.",
+          "gap_answer": "for",
+          "wrong": "She is responsible of the project.",
+          "explanation": "The pair is responsible **for**.",
+          "explanation_cz": "Pár je responsible **for**.",
           "accepts": [
-            "Your bag is similar to mine."
+            "She is responsible for the project."
           ],
-          "explanation": "Fixed chunk: adjective/verb + to — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + to — uč se jako celek."
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
         },
         {
-          "en": "She is angry with him.",
-          "cz": "Je naštvaná na něj.",
-          "gap": "She is angry ____ him.",
-          "gap_answer": "with",
-          "accepts": [
-            "She is angry with him."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + with — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + with — uč se jako celek."
-        },
-        {
-          "en": "He is angry about the decision.",
-          "cz": "Je naštvaný kvůli rozhodnutí.",
-          "gap": "He is angry ____ the decision.",
-          "gap_answer": "about",
-          "accepts": [
-            "He is angry about the decision."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + about — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + about — uč se jako celek."
-        },
-        {
-          "en": "Fruit is good for your health.",
-          "cz": "Ovoce je dobré pro zdraví.",
-          "gap": "Fruit is good ____ your health.",
+          "en": "I am sorry for the delay.",
+          "cz": "Omlouvám se za zpoždění.",
+          "lemma": "sorry",
+          "gap": "I am sorry ____ the delay.",
           "gap_answer": "for",
           "accepts": [
-            "Fruit is good for your health."
+            "I am sorry for the delay.",
+            "I'm sorry for the delay."
           ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
+          "wrong": "I am sorry the delay.",
+          "explanation": "The pair is sorry **for**.",
+          "explanation_cz": "Pár je sorry **for**.",
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
         },
         {
-          "en": "I am bad at remembering names.",
-          "cz": "Jsem špatný v pamatování jmen.",
-          "gap": "I am bad ____ remembering names.",
-          "gap_answer": "at",
-          "accepts": [
-            "I am bad at remembering names."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + at — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + at — uč se jako celek."
-        },
-        {
-          "en": "She is fond of chocolate.",
-          "cz": "Má ráda čokoládu.",
-          "gap": "She is fond ____ chocolate.",
-          "gap_answer": "of",
-          "accepts": [
-            "She is fond of chocolate."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "I am aware of the risk.",
-          "cz": "Jsem si vědom rizika.",
-          "gap": "I am aware ____ the risk.",
-          "gap_answer": "of",
-          "accepts": [
-            "I am aware of the risk."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "He is capable of doing more.",
-          "cz": "Je schopný udělat víc.",
-          "gap": "He is capable ____ doing more.",
-          "gap_answer": "of",
-          "accepts": [
-            "He is capable of doing more."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "This bag belongs to me.",
-          "cz": "Tahle taška patří mně.",
-          "gap": "This bag belongs ____ me.",
+          "en": "He is married to Anna.",
+          "cz": "Je ženatý s Annou.",
+          "lemma": "married",
+          "gap": "He is married ____ Anna.",
           "gap_answer": "to",
+          "wrong": "He is married with Anna.",
+          "explanation": "The pair is married **to**. Not *with*.",
+          "explanation_cz": "Pár je married **to**. Ne *with*.",
           "accepts": [
-            "This bag belongs to me."
+            "He is married to Anna."
           ],
-          "explanation": "Fixed chunk: adjective/verb + to — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + to — uč se jako celek."
+          "quiz_options": [
+            "to",
+            "for",
+            "at",
+            "with"
+          ]
         },
         {
-          "en": "I listen to music every day.",
-          "cz": "Každý den poslouchám hudbu.",
-          "gap": "I listen ____ music every day.",
-          "gap_answer": "to",
-          "accepts": [
-            "I listen to music every day."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + to — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + to — uč se jako celek."
-        },
-        {
-          "en": "I am looking for my keys.",
-          "cz": "Hledám klíče.",
-          "gap": "I am looking ____ my keys.",
+          "en": "Are you ready for the exam?",
+          "cz": "Jsi připravený na zkoušku?",
+          "lemma": "ready",
+          "gap": "Are you ready ____ the exam?",
           "gap_answer": "for",
+          "wrong": "Are you ready on the exam?",
+          "explanation": "The pair is ready **for**. Czech *na* is not *on*.",
+          "explanation_cz": "Pár je ready **for**. České *na* není *on*.",
           "accepts": [
-            "I am looking for my keys."
+            "Are you ready for the exam?"
           ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
-        },
-        {
-          "en": "She looks after the kids.",
-          "cz": "Hlídá děti.",
-          "gap": "She looks ____ the kids.",
-          "gap_answer": "after",
-          "accepts": [
-            "She looks after the kids."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + after — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + after — uč se jako celek."
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
         },
         {
           "en": "We are waiting for the bus.",
           "cz": "Čekáme na autobus.",
+          "lemma": "wait",
           "gap": "We are waiting ____ the bus.",
           "gap_answer": "for",
+          "wrong": "We are waiting on the bus.",
+          "explanation": "The pair is wait **for**. Czech *na* is not *on*.",
+          "explanation_cz": "Pár je wait **for**. České *na* není *on*.",
           "accepts": [
             "We are waiting for the bus."
           ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
-        },
-        {
-          "en": "I rely on my friends.",
-          "cz": "Spoléhám na přátele.",
-          "gap": "I rely ____ my friends.",
-          "gap_answer": "on",
-          "accepts": [
-            "I rely on my friends."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "She believes in hard work.",
-          "cz": "Věří v tvrdou práci.",
-          "gap": "She believes ____ hard work.",
-          "gap_answer": "in",
-          "accepts": [
-            "She believes in hard work."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + in — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
-        },
-        {
-          "en": "The team consists of five people.",
-          "cz": "Tým se skládá z pěti lidí.",
-          "gap": "The team consists ____ five people.",
-          "gap_answer": "of",
-          "accepts": [
-            "The team consists of five people."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "He deals with customer problems.",
-          "cz": "Řeší problémy zákazníků.",
-          "gap": "He deals ____ customer problems.",
-          "gap_answer": "with",
-          "accepts": [
-            "He deals with customer problems."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + with — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + with — uč se jako celek."
-        },
-        {
-          "en": "I paid for the tickets.",
-          "cz": "Zaplatil jsem lístky.",
-          "gap": "I paid ____ the tickets.",
-          "gap_answer": "for",
-          "accepts": [
-            "I paid for the tickets."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
-        },
-        {
-          "en": "Thank you for your help.",
-          "cz": "Děkuji za pomoc.",
-          "gap": "Thank you ____ your help.",
-          "gap_answer": "for",
-          "accepts": [
-            "Thank you for your help."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + for — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + for — uč se jako celek."
-        },
-        {
-          "en": "I often think about the future.",
-          "cz": "Často přemýšlím o budoucnosti.",
-          "gap": "I often think ____ the future.",
-          "gap_answer": "about",
-          "accepts": [
-            "I often think about the future.",
-            "I often think of the future."
-          ],
-          "gap_accepts": [
-            "about",
-            "of"
-          ],
-          "explanation": "Fixed chunk: adjective/verb + about — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + about — uč se jako celek."
-        },
-        {
-          "en": "She dreams of travel.",
-          "cz": "Sní o cestování.",
-          "gap": "She dreams ____ travel.",
-          "gap_answer": "of",
-          "accepts": [
-            "She dreams of travel.",
-            "She dreams about travel."
-          ],
-          "gap_accepts": [
+          "quiz_options": [
+            "for",
+            "to",
             "of",
-            "about"
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+            "at"
+          ]
         },
         {
-          "en": "He suffers from headaches.",
-          "cz": "Trpí bolestmi hlavy.",
-          "gap": "He suffers ____ headaches.",
-          "gap_answer": "from",
+          "en": "I listen to music every day.",
+          "cz": "Každý den poslouchám hudbu.",
+          "lemma": "listen",
+          "gap": "I listen ____ music every day.",
+          "gap_answer": "to",
+          "wrong": "I listen music every day.",
+          "explanation": "The pair is listen **to**.",
+          "explanation_cz": "Pár je listen **to**.",
           "accepts": [
-            "He suffers from headaches."
+            "I listen to music every day."
           ],
-          "explanation": "Fixed chunk: adjective/verb + from — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
+          "quiz_options": [
+            "to",
+            "for",
+            "at",
+            "with"
+          ]
         },
         {
-          "en": "She recovered from a cold.",
-          "cz": "Zotavila se z nachlazení.",
-          "gap": "She recovered ____ a cold.",
-          "gap_answer": "from",
-          "accepts": [
-            "She recovered from a cold."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + from — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
-        },
-        {
-          "en": "This cream protects you from the sun.",
-          "cz": "Ten krém chrání před sluncem.",
-          "gap": "This cream protects you ____ the sun.",
-          "gap_answer": "from",
-          "accepts": [
-            "This cream protects you from the sun."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + from — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
-        },
-        {
-          "en": "The rain prevented us from leaving.",
-          "cz": "Déšť nám zabránil v odchodu.",
-          "gap": "The rain prevented us ____ leaving.",
-          "gap_answer": "from",
-          "accepts": [
-            "The rain prevented us from leaving."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + from — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
-        },
-        {
-          "en": "They accused him of lying.",
-          "cz": "Obvinili ho ze lži.",
-          "gap": "They accused him ____ lying.",
-          "gap_answer": "of",
-          "accepts": [
-            "They accused him of lying."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "Do you approve of the plan?",
-          "cz": "Schvaluješ ten plán?",
-          "gap": "Do you approve ____ the plan?",
-          "gap_answer": "of",
-          "accepts": [
-            "Do you approve of the plan?"
-          ],
-          "explanation": "Fixed chunk: adjective/verb + of — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
-        },
-        {
-          "en": "I need to concentrate on work.",
-          "cz": "Musím se soustředit na práci.",
-          "gap": "I need to concentrate ____ work.",
+          "en": "He depends on his parents.",
+          "cz": "Závisí na rodičích.",
+          "lemma": "depend",
+          "gap": "He depends ____ his parents.",
           "gap_answer": "on",
+          "wrong": "He depends of his parents.",
+          "explanation": "The pair is depend **on**.",
+          "explanation_cz": "Pár je depend **on**.",
           "accepts": [
-            "I need to concentrate on work."
+            "He depends on his parents."
           ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+          "quiz_options": [
+            "on",
+            "of",
+            "in",
+            "at"
+          ]
         },
         {
-          "en": "Focus on the details.",
-          "cz": "Zaměř se na detaily.",
-          "gap": "Focus ____ the details.",
-          "gap_answer": "on",
+          "en": "This bag belongs to me.",
+          "cz": "Tahle taška patří mně.",
+          "lemma": "belong",
+          "gap": "This bag belongs ____ me.",
+          "gap_answer": "to",
+          "wrong": "This bag belongs me.",
+          "explanation": "The pair is belong **to**.",
+          "explanation_cz": "Pár je belong **to**.",
           "accepts": [
-            "Focus on the details."
+            "This bag belongs to me."
           ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "She spends money on books.",
-          "cz": "Utrácí peníze za knihy.",
-          "gap": "She spends money ____ books.",
-          "gap_answer": "on",
-          "accepts": [
-            "She spends money on books."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "I congratulated her on the result.",
-          "cz": "Pogratuloval jsem jí k výsledku.",
-          "gap": "I congratulated her ____ the result.",
-          "gap_answer": "on",
-          "accepts": [
-            "I congratulated her on the result."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
-        },
-        {
-          "en": "He specialises in tax law.",
-          "cz": "Specializuje se na daňové právo.",
-          "gap": "He specialises ____ tax law.",
-          "gap_answer": "in",
-          "accepts": [
-            "He specialises in tax law."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + in — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
-        },
-        {
-          "en": "It depends on my timetable.",
-          "cz": "Záleží to na mém rozvrhu.",
-          "gap": "It depends ____ my timetable.",
-          "gap_answer": "on",
-          "accepts": [
-            "It depends on my timetable."
-          ],
-          "explanation": "Fixed chunk: adjective/verb + on — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+          "quiz_options": [
+            "to",
+            "for",
+            "at",
+            "with"
+          ]
         },
         {
           "en": "I look forward to the weekend.",
           "cz": "Těším se na víkend.",
+          "lemma": "look forward",
           "gap": "I look forward ____ the weekend.",
           "gap_answer": "to",
+          "wrong": "I look forward for the weekend.",
+          "explanation": "The pair is look forward **to**.",
+          "explanation_cz": "Pár je look forward **to**.",
           "accepts": [
             "I look forward to the weekend."
           ],
-          "explanation": "Fixed chunk: adjective/verb + to — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + to — uč se jako celek."
+          "quiz_options": [
+            "to",
+            "for",
+            "at",
+            "with"
+          ]
         },
         {
-          "en": "I apologised to the teacher.",
-          "cz": "Omluvil jsem se učiteli.",
-          "gap": "I apologised ____ the teacher.",
-          "gap_answer": "to",
+          "en": "I paid for the tickets.",
+          "cz": "Zaplatil jsem lístky.",
+          "lemma": "pay",
+          "gap": "I paid ____ the tickets.",
+          "gap_answer": "for",
+          "wrong": "I paid the tickets.",
+          "explanation": "The pair is pay **for**.",
+          "explanation_cz": "Pár je pay **for**.",
           "accepts": [
-            "I apologised to the teacher.",
-            "I apologized to the teacher."
+            "I paid for the tickets."
           ],
-          "explanation": "Fixed chunk: adjective/verb + to — learn together.",
-          "explanation_cz": "Pevné spojení: přídavné/sloveso + to — uč se jako celek."
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "en": "She asked for water.",
+          "cz": "Požádala o vodu.",
+          "lemma": "ask",
+          "gap": "She asked ____ water.",
+          "gap_answer": "for",
+          "wrong": "She asked about water.",
+          "explanation": "The pair is ask **for**.",
+          "explanation_cz": "Pár je ask **for**.",
+          "accepts": [
+            "She asked for water."
+          ],
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "en": "I often think about the future.",
+          "cz": "Často přemýšlím o budoucnosti.",
+          "lemma": "think",
+          "gap": "I often think ____ the future.",
+          "gap_answer": "about",
+          "gap_accepts": [
+            "about",
+            "of"
+          ],
+          "wrong": "I often think on the future.",
+          "explanation": "think **about** or think **of**. Not *on*.",
+          "explanation_cz": "think **about** nebo think **of**. Ne *on*.",
+          "accepts": [
+            "I often think about the future.",
+            "I often think of the future."
+          ],
+          "quiz_options": [
+            "about",
+            "on",
+            "for",
+            "with"
+          ]
+        },
+        {
+          "en": "I need to talk to my teacher.",
+          "cz": "Musím mluvit se svým učitelem.",
+          "lemma": "talk (person)",
+          "gap": "I need to talk ____ my teacher.",
+          "gap_answer": "to",
+          "gap_accepts": [
+            "to",
+            "with"
+          ],
+          "wrong": "I need to talk my teacher.",
+          "explanation": "talk **to** / **with** a person. talk **about** a thing.",
+          "explanation_cz": "talk **to** / **with** osoba. talk **about** věc.",
+          "accepts": [
+            "I need to talk to my teacher.",
+            "I need to talk with my teacher."
+          ],
+          "quiz_options": [
+            "to",
+            "about",
+            "for",
+            "at"
+          ]
+        },
+        {
+          "en": "We talked about the problem.",
+          "cz": "Mluvili jsme o tom problému.",
+          "lemma": "talk (topic)",
+          "gap": "We talked ____ the problem.",
+          "gap_answer": "about",
+          "gap_accepts": [
+            "about",
+            "of"
+          ],
+          "wrong": "We talked to the problem.",
+          "explanation": "talk **about** / **of** a thing. talk **to** a person.",
+          "explanation_cz": "talk **about** / **of** věc. talk **to** osoba.",
+          "accepts": [
+            "We talked about the problem.",
+            "We talked of the problem."
+          ],
+          "quiz_options": [
+            "about",
+            "to",
+            "for",
+            "with"
+          ]
+        },
+        {
+          "en": "I agree with you.",
+          "cz": "Souhlasím s tebou.",
+          "lemma": "agree",
+          "gap": "I agree ____ you.",
+          "gap_answer": "with",
+          "wrong": "I agree to you.",
+          "explanation": "The pair is agree **with**.",
+          "explanation_cz": "Pár je agree **with**.",
+          "accepts": [
+            "I agree with you."
+          ],
+          "quiz_options": [
+            "with",
+            "about",
+            "to",
+            "at"
+          ]
+        },
+        {
+          "en": "She believes in hard work.",
+          "cz": "Věří v tvrdou práci.",
+          "lemma": "believe",
+          "gap": "She believes ____ hard work.",
+          "gap_answer": "in",
+          "wrong": "She believes on hard work.",
+          "explanation": "The pair is believe **in**.",
+          "explanation_cz": "Pár je believe **in**.",
+          "accepts": [
+            "She believes in hard work."
+          ],
+          "quiz_options": [
+            "in",
+            "about",
+            "on",
+            "at"
+          ]
+        },
+        {
+          "en": "She applied for the job.",
+          "cz": "Přihlásila se o tu práci.",
+          "lemma": "apply",
+          "gap": "She applied ____ the job.",
+          "gap_answer": "for",
+          "wrong": "She applied to the job.",
+          "explanation": "The pair is apply **for** a job.",
+          "explanation_cz": "Pár je apply **for** práci.",
+          "accepts": [
+            "She applied for the job."
+          ],
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "en": "Thank you for your help.",
+          "cz": "Děkuji za pomoc.",
+          "lemma": "thank",
+          "gap": "Thank you ____ your help.",
+          "gap_answer": "for",
+          "wrong": "Thank you of your help.",
+          "explanation": "The pair is thank **for**.",
+          "explanation_cz": "Pár je thank **for**.",
+          "accepts": [
+            "Thank you for your help."
+          ],
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "en": "I am looking for my keys.",
+          "cz": "Hledám klíče.",
+          "lemma": "look (search)",
+          "gap": "I am looking ____ my keys. (search)",
+          "gap_answer": "for",
+          "accepts": [
+            "I am looking for my keys.",
+            "I'm looking for my keys."
+          ],
+          "wrong": "I am looking my keys.",
+          "explanation": "look **for** = search. look **at** = see. look after is phrasal.",
+          "explanation_cz": "look **for** = hledat. look **at** = dívat se. look after je frázové.",
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "on"
+          ]
+        },
+        {
+          "en": "I apologise for the delay.",
+          "cz": "Omlouvám se za zpoždění.",
+          "lemma": "apologise",
+          "gap": "I apologise ____ the delay.",
+          "gap_answer": "for",
+          "accepts": [
+            "I apologise for the delay.",
+            "I apologize for the delay."
+          ],
+          "wrong": "I apologise to the delay.",
+          "explanation": "The pair is apologise **for** the thing.",
+          "explanation_cz": "Pár je apologise **for** věc.",
+          "quiz_options": [
+            "for",
+            "to",
+            "of",
+            "at"
+          ]
+        },
+        {
+          "en": "That is the reason for the delay.",
+          "cz": "To je důvod toho zpoždění.",
+          "lemma": "reason",
+          "gap": "That is the reason ____ the delay.",
+          "gap_answer": "for",
+          "accepts": [
+            "That is the reason for the delay.",
+            "That's the reason for the delay."
+          ],
+          "wrong": "That is the reason of the delay.",
+          "explanation": "The pair is reason **for** (a noun).",
+          "explanation_cz": "Pár je reason **for** (podstatné jméno).",
+          "quiz_options": [
+            "for",
+            "of",
+            "to",
+            "at"
+          ]
+        },
+        {
+          "en": "This is an example of the problem.",
+          "cz": "Tohle je příklad toho problému.",
+          "lemma": "example",
+          "gap": "This is an example ____ the problem.",
+          "gap_answer": "of",
+          "wrong": "This is an example for the problem.",
+          "explanation": "The pair is example **of** (a noun).",
+          "explanation_cz": "Pár je example **of** (podstatné jméno).",
+          "quiz_options": [
+            "of",
+            "for",
+            "from",
+            "about"
+          ]
+        },
+        {
+          "en": "We discussed the plan.",
+          "cz": "Probírali jsme ten plán.",
+          "gap": "We discussed ____ the plan.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "gap_accepts": [
+            "—",
+            "–",
+            "-",
+            "no preposition"
+          ],
+          "wrong": "We discussed about the plan.",
+          "quiz_options": [
+            "—",
+            "about",
+            "of",
+            "for"
+          ],
+          "explanation": "discuss takes no preposition. Not *discuss about*.",
+          "explanation_cz": "discuss je bez předložky. Ne *discuss about*.",
+          "accepts": [
+            "We discussed the plan."
+          ]
         }
       ]
     }
@@ -602,73 +701,796 @@
   "intro": {
     "cards": [
       {
-        "title": "Chunks",
-        "title_cz": "Celky",
-        "body": "Learn adjective/verb + preposition together.",
-        "body_cz": "Přídavné jméno/sloveso + předložka jako celek."
-      },
-      {
-        "title": "discuss (no about)",
-        "title_cz": "discuss (bez about)",
-        "body": "discuss something — no about. We discussed the plan. (depend on · look forward to · apologise to someone)",
-        "body_cz": "discuss něco — bez about. We discussed the plan."
-      },
-      {
-        "title": "High frequency",
-        "title_cz": "Časté",
+        "title": "What they are",
+        "title_cz": "Co to jsou",
+        "text_first": true,
+        "diagram": "hub_spokes",
+        "labels": [
+          "dependent preposition depends on",
+          "adjective",
+          "interested in",
+          "verb",
+          "wait for",
+          "noun",
+          "reason for"
+        ],
+        "points": [
+          "A preposition is a small word before a noun: **in**, **at**, **on**, **for**",
+          "A *dependent* one is chosen by the word before it — adjective, verb, or noun",
+          "It comes after that word. You cannot guess which one"
+        ],
         "table": {
           "headers": [
-            "Chunk",
-            "CZ hint"
+            "After",
+            "Example"
           ],
           "rows": [
             [
-              "interested in",
-              "zajímá se o"
+              "adjective",
+              "interested **in** music"
             ],
             [
-              "good at",
-              "dobrý v"
+              "verb",
+              "wait **for** the bus"
             ],
             [
-              "depend on",
-              "záviset na"
-            ],
-            [
-              "worried about",
-              "obavy z/o"
-            ],
-            [
-              "responsible for",
-              "zodpovědný za"
+              "noun",
+              "a reason **for** the delay"
             ]
           ]
         }
       },
       {
-        "title": "arrive at / in",
-        "title_cz": "arrive at / in",
-        "body": "at + place · in + city/country",
-        "body_cz": "at + místo · in + město/země"
+        "title": "Not phrasal verbs",
+        "title_cz": "Ne frázová slovesa",
+        "text_first": true,
+        "diagram": "contrast",
+        "labels": [
+          "dependent",
+          "phrasal",
+          "wait for",
+          "look after"
+        ],
+        "points": [
+          "Dependent: the verb keeps its meaning — wait **for** the bus (you wait)",
+          "Phrasal: the particle changes the meaning — look **after** = care for"
+        ],
+        "table": {
+          "headers": [
+            "Dependent",
+            "Phrasal"
+          ],
+          "rows": [
+            [
+              "wait **for** the bus",
+              "look **after** the kids"
+            ],
+            [
+              "listen **to** music",
+              "give **up** chocolate"
+            ],
+            [
+              "look **for** my keys",
+              "get **up** at seven"
+            ]
+          ]
+        }
       },
       {
-        "title": "look for / after",
-        "title_cz": "look for / after",
-        "body": "for = search · after = care for",
-        "body_cz": "for = hledat · after = starat se"
+        "title": "at · in",
+        "title_cz": "at · in",
+        "diagram": "branch",
+        "labels": [
+          "at / in",
+          "good at",
+          "bad at",
+          "interested in",
+          "believe in"
+        ],
+        "points": [
+          "Memorise the pair. **at** is not Czech *v*."
+        ],
+        "table": {
+          "headers": [
+            "Pair",
+            "Example"
+          ],
+          "rows": [
+            [
+              "good **at**",
+              "good **at** maths"
+            ],
+            [
+              "bad **at**",
+              "bad **at** names"
+            ],
+            [
+              "interested **in**",
+              "interested **in** music"
+            ],
+            [
+              "believe **in**",
+              "believe **in** hard work"
+            ]
+          ]
+        }
       },
       {
-        "title": "A1 step",
-        "title_cz": "A1",
-        "body": "Builds on to/for/with.",
-        "body_cz": "Navazuje na to/for/with."
+        "title": "of",
+        "title_cz": "of",
+        "diagram": "branch",
+        "labels": [
+          "of",
+          "afraid of",
+          "proud of",
+          "tired of",
+          "full of"
+        ],
+        "points": [
+          "A common pair-ending. Not *from* or *with*."
+        ],
+        "table": {
+          "headers": [
+            "Pair",
+            "Example"
+          ],
+          "rows": [
+            [
+              "afraid **of**",
+              "afraid **of** spiders"
+            ],
+            [
+              "proud **of**",
+              "proud **of** my team"
+            ],
+            [
+              "tired **of**",
+              "tired **of** waiting"
+            ],
+            [
+              "full **of**",
+              "full **of** books"
+            ],
+            [
+              "example **of**",
+              "an example **of** the problem"
+            ]
+          ]
+        }
       },
       {
-        "title": "Gap focus",
-        "title_cz": "Nácvik",
-        "body": "Gap on the preposition.",
-        "body_cz": "Mezera na předložku."
+        "title": "for",
+        "title_cz": "for",
+        "diagram": "branch",
+        "labels": [
+          "for",
+          "wait for",
+          "look for",
+          "famous for",
+          "sorry for"
+        ],
+        "points": [
+          "Many verbs take **for**. Czech *na* is not *on*."
+        ],
+        "table": {
+          "headers": [
+            "Pair",
+            "Example"
+          ],
+          "rows": [
+            [
+              "wait **for**",
+              "wait **for** the bus"
+            ],
+            [
+              "look **for**",
+              "look **for** my keys"
+            ],
+            [
+              "famous **for**",
+              "famous **for** its food"
+            ],
+            [
+              "sorry **for**",
+              "sorry **for** the delay"
+            ],
+            [
+              "pay **for**",
+              "pay **for** the tickets"
+            ],
+            [
+              "ask **for**",
+              "ask **for** water"
+            ],
+            [
+              "thank **for**",
+              "thank you **for** your help"
+            ],
+            [
+              "ready **for**",
+              "ready **for** the exam"
+            ],
+            [
+              "responsible **for**",
+              "responsible **for** the project"
+            ],
+            [
+              "apologise **for**",
+              "apologise **for** the delay"
+            ],
+            [
+              "apply **for**",
+              "apply **for** the job"
+            ],
+            [
+              "reason **for**",
+              "a reason **for** the delay"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "to",
+        "title_cz": "to",
+        "diagram": "branch",
+        "labels": [
+          "to",
+          "listen to",
+          "belong to",
+          "look forward to",
+          "talk to"
+        ],
+        "points": [
+          "**to** here is a preposition, not the infinitive",
+          "talk **to** a person · talk **about** a thing"
+        ],
+        "table": {
+          "headers": [
+            "Pair",
+            "Example"
+          ],
+          "rows": [
+            [
+              "listen **to**",
+              "listen **to** music"
+            ],
+            [
+              "belong **to**",
+              "belongs **to** me"
+            ],
+            [
+              "look forward **to**",
+              "look forward **to** the weekend"
+            ],
+            [
+              "talk **to**",
+              "talk **to** my teacher"
+            ],
+            [
+              "similar **to**",
+              "similar **to** mine"
+            ],
+            [
+              "married **to**",
+              "married **to** Anna"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "about · on · with · from",
+        "title_cz": "about · on · with · from",
+        "diagram": "branch",
+        "labels": [
+          "more",
+          "worried about",
+          "depend on",
+          "agree with",
+          "different from"
+        ],
+        "points": [
+          "Four more endings. Learn each pair."
+        ],
+        "table": {
+          "headers": [
+            "Pair",
+            "Example"
+          ],
+          "rows": [
+            [
+              "worried **about**",
+              "worried **about** the test"
+            ],
+            [
+              "think **about**",
+              "think **about** the future"
+            ],
+            [
+              "talk **about**",
+              "talk **about** a problem"
+            ],
+            [
+              "depend **on**",
+              "depend **on** his parents"
+            ],
+            [
+              "agree **with**",
+              "agree **with** you"
+            ],
+            [
+              "different **from**",
+              "different **from** the others"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common errors",
+        "title_cz": "Časté chyby",
+        "diagram": "contrast",
+        "labels": [
+          "Czech prep",
+          "English prep",
+          "o, v, na, za",
+          "in, at, on, for"
+        ],
+        "points": [
+          "Do not copy the Czech preposition",
+          "**discuss** takes no preposition — not *discuss about*"
+        ],
+        "table": {
+          "headers": [
+            "Wrong",
+            "Right"
+          ],
+          "rows": [
+            [
+              "~~interested about~~",
+              "interested **in**"
+            ],
+            [
+              "~~good in maths~~",
+              "good **at** maths"
+            ],
+            [
+              "~~wait on the bus~~",
+              "wait **for** the bus"
+            ],
+            [
+              "~~married with~~",
+              "married **to**"
+            ],
+            [
+              "~~discussed about~~",
+              "discussed (no prep)"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Related",
+        "title_cz": "Související",
+        "points": [
+          "You already met these small words as place, time, and movement",
+          "Here they complete a pair, not a place"
+        ],
+        "table": {
+          "headers": [
+            "Related",
+            "You already know"
+          ],
+          "rows": [
+            [
+              "Prepositions of place (A1)",
+              "**in** the bag · **at** school"
+            ],
+            [
+              "Prepositions of time (A1)",
+              "**at** 3 · **on** Monday"
+            ],
+            [
+              "To / for / with (A1)",
+              "**to** school · **for** you"
+            ],
+            [
+              "Prepositions of movement (A2)",
+              "**into** · **onto**"
+            ],
+            [
+              "Phrasal verbs (B1)",
+              "look **after** · give **up**"
+            ]
+          ]
+        },
+        "links": [
+          {
+            "id": "a1_prepositions_place",
+            "label": "Prepositions of place (A1)",
+            "note": "**in** the bag · **at** school"
+          },
+          {
+            "id": "a1_prepositions_time",
+            "label": "Prepositions of time (A1)",
+            "note": "**at** 3 · **on** Monday"
+          },
+          {
+            "id": "a1_to_for_with",
+            "label": "To / for / with (A1)",
+            "note": "**to** school · **for** you"
+          },
+          {
+            "id": "a2_prepositions_movement",
+            "label": "Prepositions of movement (A2)",
+            "note": "**into** · **onto**"
+          },
+          {
+            "id": "b1_phrasal_verbs",
+            "label": "Phrasal verbs (B1)",
+            "note": "look **after** · give **up**"
+          }
+        ]
       }
     ]
-  }
+  },
+  "use_mode": "correct",
+  "parked_items": [
+    {
+      "en": "We arrived at the station.",
+      "cz": "Dorazili jsme na nádraží.",
+      "gap": "We arrived ____ the station.",
+      "gap_answer": "at",
+      "accepts": [
+        "We arrived at the station."
+      ],
+      "quiz_options": [
+        "at",
+        "in",
+        "on",
+        "to"
+      ],
+      "wrong": "We arrived in the station.",
+      "explanation": "arrive **at** a building or station.",
+      "explanation_cz": "arrive **at** budova nebo nádraží."
+    },
+    {
+      "en": "We arrived in Prague.",
+      "cz": "Dorazili jsme do Prahy.",
+      "gap": "We arrived ____ Prague.",
+      "gap_answer": "in",
+      "accepts": [
+        "We arrived in Prague."
+      ],
+      "quiz_options": [
+        "in",
+        "at",
+        "on",
+        "to"
+      ],
+      "wrong": "We arrived at Prague.",
+      "explanation": "arrive **in** a city or country.",
+      "explanation_cz": "arrive **in** město nebo země."
+    },
+    {
+      "en": "Fruit is good for your health.",
+      "cz": "Ovoce je dobré pro zdraví.",
+      "gap": "Fruit is good ____ your health.",
+      "gap_answer": "for",
+      "accepts": [
+        "Fruit is good for your health."
+      ],
+      "quiz_options": [
+        "for",
+        "at",
+        "in",
+        "to"
+      ],
+      "wrong": "Fruit is good at your health.",
+      "explanation": "good **for** = it helps. **at** is a skill.",
+      "explanation_cz": "good **for** = prospívá. **at** je dovednost."
+    },
+    {
+      "en": "She is angry with him.",
+      "cz": "Je naštvaná na něj.",
+      "gap": "She is angry ____ him.",
+      "gap_answer": "with",
+      "accepts": [
+        "She is angry with him."
+      ],
+      "quiz_options": [
+        "with",
+        "about",
+        "at",
+        "on"
+      ],
+      "wrong": "She is angry about him.",
+      "explanation": "angry **with** a person. **about** a thing.",
+      "explanation_cz": "angry **with** osoba. **about** věc."
+    },
+    {
+      "en": "He is angry about the decision.",
+      "cz": "Je naštvaný kvůli rozhodnutí.",
+      "gap": "He is angry ____ the decision.",
+      "gap_answer": "about",
+      "accepts": [
+        "He is angry about the decision."
+      ],
+      "quiz_options": [
+        "about",
+        "with",
+        "at",
+        "of"
+      ],
+      "wrong": "He is angry with the decision.",
+      "explanation": "angry **about** a thing. **with** a person.",
+      "explanation_cz": "angry **about** věc. **with** osoba."
+    },
+    {
+      "en": "I apologised to the teacher.",
+      "cz": "Omluvil jsem se učiteli.",
+      "gap": "I apologised ____ the teacher.",
+      "gap_answer": "to",
+      "accepts": [
+        "I apologised to the teacher.",
+        "I apologized to the teacher."
+      ],
+      "quiz_options": [
+        "to",
+        "for",
+        "at",
+        "with"
+      ],
+      "wrong": "I apologised for the teacher.",
+      "explanation": "apologise **to** the person. **for** is the thing.",
+      "explanation_cz": "apologise **to** osoba. **for** je věc."
+    },
+    {
+      "en": "She insisted on paying.",
+      "cz": "Trvala na tom, že zaplatí.",
+      "gap": "She insisted ____ paying.",
+      "gap_answer": "on",
+      "accepts": [
+        "She insisted on paying."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "They succeed in finishing on time.",
+      "cz": "Uspejí v dokončení včas.",
+      "gap": "They succeed ____ finishing on time.",
+      "gap_answer": "in",
+      "accepts": [
+        "They succeed in finishing on time."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + in — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
+    },
+    {
+      "en": "I am keen on football.",
+      "cz": "Jsem nadšený do fotbalu.",
+      "gap": "I am keen ____ football.",
+      "gap_answer": "on",
+      "accepts": [
+        "I am keen on football."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "She is fond of chocolate.",
+      "cz": "Má ráda čokoládu.",
+      "gap": "She is fond ____ chocolate.",
+      "gap_answer": "of",
+      "accepts": [
+        "She is fond of chocolate."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "I am aware of the risk.",
+      "cz": "Jsem si vědom rizika.",
+      "gap": "I am aware ____ the risk.",
+      "gap_answer": "of",
+      "accepts": [
+        "I am aware of the risk."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "He is capable of doing more.",
+      "cz": "Je schopný udělat víc.",
+      "gap": "He is capable ____ doing more.",
+      "gap_answer": "of",
+      "accepts": [
+        "He is capable of doing more."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "I rely on my friends.",
+      "cz": "Spoléhám na přátele.",
+      "gap": "I rely ____ my friends.",
+      "gap_answer": "on",
+      "accepts": [
+        "I rely on my friends."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "The team consists of five people.",
+      "cz": "Tým se skládá z pěti lidí.",
+      "gap": "The team consists ____ five people.",
+      "gap_answer": "of",
+      "accepts": [
+        "The team consists of five people."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "He deals with customer problems.",
+      "cz": "Řeší problémy zákazníků.",
+      "gap": "He deals ____ customer problems.",
+      "gap_answer": "with",
+      "accepts": [
+        "He deals with customer problems."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + with — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + with — uč se jako celek."
+    },
+    {
+      "en": "She dreams of travel.",
+      "cz": "Sní o cestování.",
+      "gap": "She dreams ____ travel.",
+      "gap_answer": "of",
+      "accepts": [
+        "She dreams of travel.",
+        "She dreams about travel."
+      ],
+      "gap_accepts": [
+        "of",
+        "about"
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "He suffers from headaches.",
+      "cz": "Trpí bolestmi hlavy.",
+      "gap": "He suffers ____ headaches.",
+      "gap_answer": "from",
+      "accepts": [
+        "He suffers from headaches."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + from — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
+    },
+    {
+      "en": "She recovered from a cold.",
+      "cz": "Zotavila se z nachlazení.",
+      "gap": "She recovered ____ a cold.",
+      "gap_answer": "from",
+      "accepts": [
+        "She recovered from a cold."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + from — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
+    },
+    {
+      "en": "This cream protects you from the sun.",
+      "cz": "Ten krém chrání před sluncem.",
+      "gap": "This cream protects you ____ the sun.",
+      "gap_answer": "from",
+      "accepts": [
+        "This cream protects you from the sun."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + from — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
+    },
+    {
+      "en": "The rain prevented us from leaving.",
+      "cz": "Déšť nám zabránil v odchodu.",
+      "gap": "The rain prevented us ____ leaving.",
+      "gap_answer": "from",
+      "accepts": [
+        "The rain prevented us from leaving."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + from — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + from — uč se jako celek."
+    },
+    {
+      "en": "They accused him of lying.",
+      "cz": "Obvinili ho ze lži.",
+      "gap": "They accused him ____ lying.",
+      "gap_answer": "of",
+      "accepts": [
+        "They accused him of lying."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "Do you approve of the plan?",
+      "cz": "Schvaluješ ten plán?",
+      "gap": "Do you approve ____ the plan?",
+      "gap_answer": "of",
+      "accepts": [
+        "Do you approve of the plan?"
+      ],
+      "explanation": "Fixed chunk: adjective/verb + of — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + of — uč se jako celek."
+    },
+    {
+      "en": "I need to concentrate on work.",
+      "cz": "Musím se soustředit na práci.",
+      "gap": "I need to concentrate ____ work.",
+      "gap_answer": "on",
+      "accepts": [
+        "I need to concentrate on work."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "Focus on the details.",
+      "cz": "Zaměř se na detaily.",
+      "gap": "Focus ____ the details.",
+      "gap_answer": "on",
+      "accepts": [
+        "Focus on the details."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "She spends money on books.",
+      "cz": "Utrácí peníze za knihy.",
+      "gap": "She spends money ____ books.",
+      "gap_answer": "on",
+      "accepts": [
+        "She spends money on books."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "I congratulated her on the result.",
+      "cz": "Pogratuloval jsem jí k výsledku.",
+      "gap": "I congratulated her ____ the result.",
+      "gap_answer": "on",
+      "accepts": [
+        "I congratulated her on the result."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    },
+    {
+      "en": "He specialises in tax law.",
+      "cz": "Specializuje se na daňové právo.",
+      "gap": "He specialises ____ tax law.",
+      "gap_answer": "in",
+      "accepts": [
+        "He specialises in tax law."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + in — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + in — uč se jako celek."
+    },
+    {
+      "en": "It depends on my timetable.",
+      "cz": "Záleží to na mém rozvrhu.",
+      "gap": "It depends ____ my timetable.",
+      "gap_answer": "on",
+      "accepts": [
+        "It depends on my timetable."
+      ],
+      "explanation": "Fixed chunk: adjective/verb + on — learn together.",
+      "explanation_cz": "Pevné spojení: přídavné/sloveso + on — uč se jako celek."
+    }
+  ],
+  "parked_note": "Leftover chunks and duals (good for, angry with/about, arrive at, apologise to, look after). Seed for units 2 (B2) and 3 (C1).",
+  "quiz_axis": "dependent_prep"
 }

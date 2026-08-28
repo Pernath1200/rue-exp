@@ -89,6 +89,30 @@ function scale(labels) {
   return svg(inner);
 }
 
+/** Sufficiency scale — too / enough are not ticks on 0–100.
+ *  They sit relative to a need: short of it, at it, past it.
+ *  labels: ["not enough", "enough", "too"] */
+function need_scale(labels) {
+  const left = labels[0] || "not enough";
+  const mid = labels[1] || "enough";
+  const right = labels[2] || "too";
+  const y = 78;
+  const x0 = 28;
+  const xNeed = 150;
+  const x1 = 292;
+  let inner = `<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="${MUTED}" stroke-width="2"/>`;
+  inner += `<polygon points="${x1},${y} ${x1 - 8},${y - 5} ${x1 - 8},${y + 5}" fill="${MUTED}"/>`;
+  inner += `<line x1="${xNeed}" y1="${y - 18}" x2="${xNeed}" y2="${y + 18}" stroke="${ACCENT}" stroke-width="2.5"/>`;
+  inner += label(xNeed, 42, "need", { size: 12, fill: ACCENT });
+  inner += `<circle cx="70" cy="${y}" r="5" fill="${ACCENT}"/>`;
+  inner += label(70, 112, left, { size: 12 });
+  inner += `<circle cx="${xNeed}" cy="${y}" r="7" fill="${ACCENT}"/>`;
+  inner += label(xNeed, 112, mid, { size: 12 });
+  inner += `<circle cx="250" cy="${y}" r="9" fill="${ACCENT}"/>`;
+  inner += label(250, 112, right, { size: 12 });
+  return svg(inner, 320, 140);
+}
+
 /** Nested rings — widening scope: me → family → community. */
 function circles(labels) {
   const pts = labels.slice(0, 3);
@@ -200,12 +224,15 @@ function hub_spokes(labels) {
       ];
   const fit1 = (t, w, s) =>
     Math.max(8, Math.min(s, Math.floor(w / (0.62 * Math.max(1, String(t).length)))));
-  let inner = `<rect x="110" y="8" width="100" height="32" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
-  inner += label(160, 29, centre || "", { size: fit1(centre, 92, 13) });
+  const hub = wrapFit(centre || "", 176, 12, 2);
+  const hubH = hub.lines.length > 1 ? 40 : 32;
+  const hubW = 188;
+  let inner = `<rect x="${160 - hubW / 2}" y="6" width="${hubW}" height="${hubH}" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
+  inner += labelBlock(160, 6 + hubH / 2, centre || "", 176, { size: 12, maxLines: 2 });
   spokes.forEach(([top, ex], i) => {
     const [x, by] = boxes[i];
     const cx = x + bw / 2;
-    inner += `<line x1="160" y1="40" x2="${cx}" y2="${by}" stroke="${MUTED}" stroke-width="1.5" opacity="0.7"/>`;
+    inner += `<line x1="160" y1="${6 + hubH}" x2="${cx}" y2="${by}" stroke="${MUTED}" stroke-width="1.5" opacity="0.7"/>`;
     inner += `<rect x="${x}" y="${by}" width="${bw}" height="${bh}" rx="8" fill="none" stroke="${ACCENT}" stroke-width="1.5" opacity="0.8"/>`;
     inner += label(cx, by + 22, top, { size: fit1(top, bw - 10, 12) });
     if (ex) inner += label(cx, by + 40, ex, { size: fit1(ex, bw - 10, 11), fill: MUTED });
@@ -450,7 +477,7 @@ function time_now(labels) {
 }
 
 const SCHEMATICS = {
-  scale, circles, branch, cycle, contrast,
+  scale, need_scale, circles, branch, cycle, contrast,
   hub_spokes, boxes_row, timelines, decision_flow, pp_vs_past, time_now,
   in: placeIn,
   on: placeOn,

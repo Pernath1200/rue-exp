@@ -18,7 +18,8 @@
  * Lighting: leaf lit = unit started/done, fruit lit = unit done, root knot lit
  * = same on that seat. Unlit slots stay as ghosts so the model is readable.
  * At most 6 slots per seat; empty live units do not steal lights from work
- * already done (A1 map slice, 2026-08-28). Navigation stays on the spine
+ * already done (A1 map slice, 2026-08-28). Fruit strengthens at remembered
+ * then mastered (map only; strongest first). Navigation stays on the spine
  * list; clicks here only focus a unit.
  */
 
@@ -80,7 +81,9 @@ const AGES = {
 };
 
 const C = {
-  wood: "#569cd6", leaf: "#4db6c7", fruit: "#22c55e", knotBg: "#0c1014",
+  wood: "#569cd6", leaf: "#4db6c7", fruit: "#22c55e",
+  fruitRemembered: "#4ade80", fruitMastered: "#86efac",
+  knotBg: "#0c1014",
   label: "#d4b070", labelDim: "#8a8a8a", muted: "#7a7a7a",
   sky: "#0a0a0a", soil: "#0c1014", soilTop: "#121820",
 };
@@ -473,27 +476,44 @@ export function renderTreePortrait(container, opts) {
     if (!bucket[tp]) bucket[tp] = [];
     bucket[tp].push(n);
   }
-  const stateOf = (n) => (isFruit(n.id) || progressState(n.id) === "fruit" ? "fruit" : progressState(n.id) === "started" ? "started" : "none");
+  const stateOf = (n) => {
+    const st = progressState(n.id);
+    if (st === "mastered" || st === "remembered" || st === "fruit" || st === "started") return st;
+    if (isFruit(n.id)) return "fruit";
+    return "none";
+  };
+  const rankOf = (s) => (s === "mastered" ? 4 : s === "remembered" ? 3 : s === "fruit" ? 2 : s === "started" ? 1 : 0);
   function seat(list) {
     const live = (list || []).filter((n) => n.status === "live" && atLevel(n));
-    const fruited = live.filter((n) => stateOf(n) === "fruit");
-    const touched = live.filter((n) => stateOf(n) !== "none");
+    const touched = live.filter((n) => rankOf(stateOf(n)) >= 1);
+    const fruited = live.filter((n) => rankOf(stateOf(n)) >= 2);
+    const remembered = live.filter((n) => rankOf(stateOf(n)) >= 3);
+    const mastered = live.filter((n) => rankOf(stateOf(n)) >= 4);
     const fill = live.length ? (fruited.length + 0.45 * (touched.length - fruited.length)) / live.length : 0;
     const state = !live.length ? "dim" : fruited.length ? "fruit" : touched.length ? "started" : "live";
-    return { live, fruited, touched, fill, state, nodes: list || [] };
+    return { live, fruited, remembered, mastered, touched, fill, state, nodes: list || [] };
   }
   const laterals = LATERALS.map((L) => {
     const s = seat(byPart[L.tree_part]);
-    return { ...L, ...s, knots: litSlots(s.live, s.touched.length), knotsFruit: litSlots(s.live, s.fruited.length), dataId: (s.touched[0] || s.live[0] || {}).id || "" };
+    return { ...L, ...s, knots: litSlots(s.live, s.touched.length), knotsFruit: litSlots(s.live, s.fruited.length),
+             knotsRemembered: litSlots(s.live, s.remembered.length), knotsMastered: litSlots(s.live, s.mastered.length),
+             dataId: (s.touched[0] || s.live[0] || {}).id || "" };
   });
   const tapList = (byPart.tap_root || []).concat(nodes.filter((n) => n.domain === "grammar" && n.foundation && !(byPart.tap_root || []).includes(n)));
   const ts = seat(tapList);
-  const tap = { tree_part: "tap_root", label: "Foundation", ...ts, knots: litSlots(ts.live, ts.touched.length), knotsFruit: litSlots(ts.live, ts.fruited.length), dataId: (ts.touched[0] || ts.live[0] || {}).id || "" };
+  const tap = { tree_part: "tap_root", label: "Foundation", ...ts, knots: litSlots(ts.live, ts.touched.length), knotsFruit: litSlots(ts.live, ts.fruited.length),
+                knotsRemembered: litSlots(ts.live, ts.remembered.length), knotsMastered: litSlots(ts.live, ts.mastered.length),
+                dataId: (ts.touched[0] || ts.live[0] || {}).id || "" };
   const houses = HOUSES.map((H) => {
     const branch = seat(byPart[H.tree_part]), themes = seat(themesByHouse[H.tree_part]);
-    const live = branch.live.concat(themes.live), touched = branch.touched.concat(themes.touched), fruited = branch.fruited.concat(themes.fruited);
+    const live = branch.live.concat(themes.live), touched = branch.touched.concat(themes.touched);
+    const fruited = branch.fruited.concat(themes.fruited);
+    const remembered = branch.remembered.concat(themes.remembered);
+    const mastered = branch.mastered.concat(themes.mastered);
     const state = !live.length ? "dim" : fruited.length ? "fruit" : touched.length ? "started" : "live";
-    return { ...H, live, touched, fruited, state, leaves: litSlots(live, touched.length), fruit: litSlots(live, fruited.length),
+    return { ...H, live, touched, fruited, remembered, mastered, state,
+             leaves: litSlots(live, touched.length), fruit: litSlots(live, fruited.length),
+             fruitRemembered: litSlots(live, remembered.length), fruitMastered: litSlots(live, mastered.length),
              dataId: (branch.touched[0] || branch.live[0] || themes.touched[0] || themes.live[0] || {}).id || "" };
   });
   const trunk = seat((byPart.trunk || []).concat(Object.values(themesByHouse).flat()));
@@ -539,11 +559,13 @@ export function renderTreePortrait(container, opts) {
       g.twigs.forEach((T) => { if (T) s += '<path class="hr" d="' + hairPath(T) + '" opacity="' + (dim ? 0.3 : 1) + '"/>'; });
       g.leaves.forEach((lf, i) => {
         const lit = i < house.leaves;
-        s += '<g class="leaf' + (isNew && lit && i === house.leaves - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(lf.p[0]) + ' ' + f1(lf.p[1]) + ') rotate(' + f1(lf.th / D2R) + ') scale(' + f1(lf.size) + ')"/></g>';
+        const str = (i < house.fruitMastered ? " mastered" : i < house.fruitRemembered ? " remembered" : "");
+        s += '<g class="leaf' + str + (isNew && lit && i === house.leaves - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(lf.p[0]) + ' ' + f1(lf.p[1]) + ') rotate(' + f1(lf.th / D2R) + ') scale(' + f1(lf.size) + ')"/></g>';
       });
       g.fruit.forEach((fr, i) => {
         const lit = i < house.fruit;
-        s += '<g class="fruit' + (lit ? " done" : "") + (isNew && lit && i === house.fruit - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><circle cx="' + f1(fr.p[0]) + '" cy="' + f1(fr.p[1]) + '" r="' + f1(p.fruitR * (0.5 + 0.5 * age.leaf)) + '"/></g>';
+        const str = (i < house.fruitMastered ? " mastered" : i < house.fruitRemembered ? " remembered" : lit ? " done" : "");
+        s += '<g class="fruit' + str + (isNew && lit && i === house.fruit - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><circle cx="' + f1(fr.p[0]) + '" cy="' + f1(fr.p[1]) + '" r="' + f1(p.fruitR * (0.5 + 0.5 * age.leaf)) + '"/></g>';
       });
       labelAt = [g.tip[0] + g.seatSide * (p.leafSize * age.leaf * 0.9 + 6), g.tip[1] + 4];
     } else {
@@ -569,11 +591,13 @@ export function renderTreePortrait(container, opts) {
       }
       const lf = g.H.budLeaf, size = leafSizeStem * lf.sizeMul;
       const lit = house.leaves > 0;
-      s += '<g class="leaf' + (isNew && lit ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(pt[0]) + ' ' + f1(pt[1]) + ') rotate(' + f1((th + lf.thJit) / D2R) + ') scale(' + f1(size) + ')"/></g>';
+      const budStr = (house.fruitRemembered > 0 ? " remembered" : "") + (house.fruitMastered > 0 ? " mastered" : "");
+      s += '<g class="leaf' + budStr + (isNew && lit ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(pt[0]) + ' ' + f1(pt[1]) + ') rotate(' + f1((th + lf.thJit) / D2R) + ') scale(' + f1(size) + ')"/></g>';
       if (house.fruit > 0) {
         const d = dirUp(th + lf.thJit), n = [-d[1], d[0]];
         const fp = [pt[0] + d[0] * size * 0.3 + n[0] * size * 0.35 * labelSide, pt[1] + d[1] * size * 0.3 + n[1] * size * 0.35 * labelSide];
-        s += '<g class="fruit done' + (isNew ? " tp-new" : "") + '"><circle cx="' + f1(fp[0]) + '" cy="' + f1(fp[1]) + '" r="' + f1(p.fruitR * (0.45 + 0.4 * age.leaf)) + '"/></g>';
+        const frStr = " done" + (house.fruitRemembered > 0 ? " remembered" : "") + (house.fruitMastered > 0 ? " mastered" : "");
+        s += '<g class="fruit' + frStr + (isNew ? " tp-new" : "") + '"><circle cx="' + f1(fp[0]) + '" cy="' + f1(fp[1]) + '" r="' + f1(p.fruitR * (0.45 + 0.4 * age.leaf)) + '"/></g>';
       }
       const d = dirUp(th);
       labelAt = [pt[0] + d[0] * size * 0.5 + labelSide * (size * 0.5 + 6), pt[1] + d[1] * size * 0.5 + 4];
@@ -659,7 +683,8 @@ export function renderTreePortrait(container, opts) {
       const t = 0.1 + 0.16 * k + R0.knotJit[k];
       const q = R.at(t);
       const lit = k < seatInfo.knots, fruited = k < seatInfo.knotsFruit;
-      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (hiR && justNow && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"><title>' + esc(seatInfo.label) + ' - ' + Math.round(seatInfo.fill * 100) + '%</title></circle></g>';
+      const rem = k < (seatInfo.knotsRemembered || 0), mas = k < (seatInfo.knotsMastered || 0);
+      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (rem ? " remembered" : "") + (mas ? " mastered" : "") + (hiR && justNow && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"><title>' + esc(seatInfo.label) + ' - ' + Math.round(seatInfo.fill * 100) + '%</title></circle></g>';
     }
     roots += s + "</g>";
   });
@@ -717,9 +742,15 @@ export function renderTreePortrait(container, opts) {
     ".leader .lf{opacity:0.7}",
     ".fruit circle{fill:none;stroke:" + C.leaf + ";stroke-width:" + sw + "}",
     ".fruit.done circle{fill:" + C.fruit + ";stroke:" + C.fruit + ";filter:drop-shadow(0 0 2.5px " + C.fruit + ")}",
+    ".fruit.remembered circle{fill:" + C.fruitRemembered + ";stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 5px " + C.fruitRemembered + ")}",
+    ".fruit.mastered circle{fill:" + C.fruitMastered + ";stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 8px " + C.fruitMastered + ") drop-shadow(0 0 14px " + C.fruit + ")}",
+    ".leaf.remembered use{stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 3px " + C.fruitRemembered + ")}",
+    ".leaf.mastered use{stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 6px " + C.fruitMastered + ")}",
     ".knot circle{fill:" + C.knotBg + ";stroke:" + C.wood + ";stroke-width:" + sw + "}",
     ".knot.lit circle{fill:" + C.wood + "}",
     ".knot.done circle{fill:" + C.fruit + ";stroke:" + C.fruit + "}",
+    ".knot.remembered circle{fill:" + C.fruitRemembered + ";stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 4px " + C.fruitRemembered + ")}",
+    ".knot.mastered circle{fill:" + C.fruitMastered + ";stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 7px " + C.fruitMastered + ")}",
     ".tp-house-label{font:11px 'Segoe UI',system-ui,sans-serif;paint-order:stroke;stroke:" + C.sky + ";stroke-width:3px;stroke-linejoin:round}",
     // payoff: the practised part grows in from its base and glows; the trunk pulses;
     // the newest lit slot fades in. transform-box:view-box makes the origin above user units.
