@@ -63,6 +63,72 @@ function useAcceptsWithoutWrong(accepts, wrong) {
   return accepts.filter((a) => key(a) !== bare);
 }
 
+/** Type must not be “always that”. Quiz already dropped that as a free chip.
+ *  Keep that in Type only when it is the written answer, or when/why (taught). */
+function relativeTypeAccepts(it, pack) {
+  const raw = [it.gap_answer, ...(it.gap_accepts || [])].filter(Boolean);
+  if (String(pack && pack.quiz_axis) !== "relative") return it.gap_accepts || [];
+  const ans = String(it.gap_answer || "").trim().toLowerCase();
+  /* Some thats, not most: only when the gap is that, or when/why (taught).
+   * who/which Type wants who or which. (James, 2026-08-28.) */
+  const allowThat = ans === "that" || ans === "when" || ans === "why";
+  const out = [];
+  const seen = new Set();
+  for (const x of raw) {
+    if (!allowThat && String(x).trim().toLowerCase() === "that") continue;
+    const k = key(x);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    out.push(x);
+  }
+  return out;
+}
+
+function fillRelativeGap(it, word) {
+  const g = String(it.gap || "");
+  const w = String(word || "").trim();
+  if (!w || !/_{2,}/.test(g)) return "";
+  return g.replace(/_{2,}/, w);
+}
+
+/** Use: only a few items should accept that (the ones whose gap is that).
+ *  who/which items must not be passable with that every time. */
+function relativeUseAnswer(it) {
+  const w = String(it.gap_answer || "").trim();
+  if (w && w.toLowerCase() !== "that") {
+    const filled = fillRelativeGap(it, w);
+    if (filled) return filled;
+  }
+  return it.en;
+}
+
+function relativeUseAccepts(it) {
+  const w = String(it.gap_answer || "").trim().toLowerCase();
+  const allowThat = w === "that";
+  const primary = relativeUseAnswer(it);
+  let forms = [primary, it.en, ...(it.accepts || [])].filter(Boolean);
+  if (!allowThat) {
+    const thatSent = fillRelativeGap(it, "that");
+    forms = forms.filter((s) => !thatSent || key(s) !== key(thatSent));
+  }
+  return relativeDropAccepts(forms);
+}
+
+/** Object relatives may drop who/which/that/when/why. Never drop where. */
+function relativeDropAccepts(accepts) {
+  const out = [];
+  for (const s of accepts || []) {
+    out.push(s);
+    const d = String(s)
+      .replace(/\s+\b(who|which|that|when|why)\s+(?=(I|you|he|she|we|they)\b)/gi, " ")
+      .replace(/\s+/g, " ")
+      .replace(/\s+([.,!?])/g, "$1")
+      .trim();
+    if (d && d !== s) out.push(d);
+  }
+  return [...new Set(out)];
+}
+
 /** Distinct block ids present in an adapted bank, in authoring order. */
 export function blocksOf(items) {
   const seen = [];
@@ -621,6 +687,61 @@ function itSubjectChoices(it, pack) {
   return opts.length >= 2 ? opts : null;
 }
 
+/** Relative-clause Quiz: who / which / that / where / when / why.
+ *  Distractors are the intro errors: what, who/which swap, how after the way.
+ *  (James, 2026-08-28, b1_relative_clauses.) */
+function relativeFormChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "relative") return null;
+  const answer = String(it.gap_answer || "").trim().toLowerCase();
+  if (!answer) return null;
+  const gap = String(it.gap || "");
+  const opts = [];
+  const seen = new Set();
+  const take = (x) => {
+    const t = String(x || "").trim().toLowerCase();
+    const k = key(t);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(t);
+  };
+  take(answer);
+  /* `that` is a valid defining relative for who/which/when/why. If it sits
+   * on the chip row AND in gap_accepts, every item is "click that". Keep it
+   * as a chip only when it is the authored answer, or a real error (where).
+   * Type/Use still accept it. (James, 2026-08-28.) */
+  const banned = acceptedKeys(it);
+  const takeWrong = (x) => {
+    if (banned.has(key(x))) return;
+    take(x);
+  };
+  if (/\bway\s+_{2,}/i.test(gap) || /\bway ____/i.test(gap)) {
+    takeWrong("how");
+    takeWrong("what");
+    takeWrong("which");
+    takeWrong("who");
+    return opts.length >= 2 ? opts : null;
+  }
+  takeWrong("what");
+  if (answer === "who") {
+    takeWrong("which");
+    takeWrong("where");
+  } else if (answer === "which") {
+    takeWrong("who");
+    takeWrong("where");
+  } else if (answer === "that") {
+    takeWrong("who");
+    takeWrong("which");
+  } else if (answer === "where") {
+    takeWrong("that");
+    takeWrong("which");
+  } else if (answer === "when" || answer === "why") {
+    takeWrong("who");
+    takeWrong("which");
+  }
+  if (opts.length < 4) takeWrong("where");
+  return opts.length >= 2 ? opts : null;
+}
+
 /** Passive Quiz: form of THIS verb only (James, 2026-08-28 smoke).
  *  Four chips: correct be+pp · swapped number · be+bare lemma · participle alone.
  *  Gap answer must be `is/are/was/were/be + pp` (subject stays in the stem). */
@@ -699,6 +820,9 @@ function choicesFor(it, siblings, pack) {
 
   const itOpts = itSubjectChoices(it, pack);
   if (itOpts) return itOpts;
+
+  const relOpts = relativeFormChoices(it, pack);
+  if (relOpts) return relOpts;
 
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
@@ -838,6 +962,7 @@ export function adaptGrammarPack(pack) {
             prompt: gapPrompt(it, pack),
             answer: quizAnswer,
             choices,
+            accepts: it.gap_accepts || [],
             cz: it.cz,
             diagram: it.diagram || "",
             // Word-formation packs (2026-08-18): the capitalised root cue IS
@@ -904,7 +1029,7 @@ export function adaptGrammarPack(pack) {
     prompt: gapPrompt(it, pack),
     hint: it.cz,
     answer: it.gap_answer,
-    accepts: it.gap_accepts || [],
+    accepts: relativeTypeAccepts(it, pack),
     zero_article: !!it.zero_article,
     cz: it.cz,
     diagram: it.diagram || "",
@@ -927,8 +1052,25 @@ export function adaptGrammarPack(pack) {
    * The Czech stays on the item for the support line. */
   const fixMode = pack.use_mode === "correct";
   const voiceMode = pack.use_mode === "voice";
+  const joinMode = pack.use_mode === "join";
   const use_items = !(wants("use") ? items : []).length
     ? []
+    : joinMode
+      ? items
+          .filter((it) => it.en && it.join)
+          .map((it) => ({
+            prompt: it.join,
+            wrong: "",
+            answer: relativeUseAnswer(it),
+            accepts: relativeUseAccepts(it),
+            hint: "Join into one sentence.",
+            cz: it.cz || "",
+            diagram: it.diagram || "",
+            explanation: it.explanation,
+            explanation_cz: it.explanation_cz,
+            structures: it.structures,
+            _block: it._block,
+          }))
     : voiceMode
       ? items
           .filter((it) => it.en && it.active)

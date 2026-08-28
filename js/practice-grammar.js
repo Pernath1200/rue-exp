@@ -360,6 +360,25 @@ function timeMatch(u, forms) {
   return false;
 }
 
+function quizChoiceOk(item, choice) {
+  const u = norm(choice);
+  if (!u) return false;
+  if (norm(item.answer) === u) return true;
+  return (item.accepts || []).some((a) => norm(a) === u);
+}
+
+function quizShowAnswer(item) {
+  const seen = new Set();
+  const out = [];
+  for (const x of [item.answer, ...(item.accepts || [])]) {
+    const k = norm(x);
+    if (!k || seen.has(k)) continue;
+    seen.add(k);
+    out.push(String(x).trim());
+  }
+  return out.join(" / ") || String(item.answer || "");
+}
+
 function isCorrect(user, item, mode) {
   if (mode === "ending_gap") {
     const u = normEnding(user);
@@ -1465,17 +1484,17 @@ export function startPractice(rawPack, root, opts) {
       locked = true;
       const c = choices[i];
       const buttons = [...box.querySelectorAll(".choice")];
-      const good = c === item.answer;
+      const good = quizChoiceOk(item, c);
       if (good) state.quizScore += 1;
       else if (!state.quizWrong.includes(item)) state.quizWrong.push(item);
       if (buttons[i]) buttons[i].classList.add(good ? "is-correct" : "is-wrong");
       buttons.forEach((ch) => {
         ch.disabled = true;
-        if (ch.dataset.answer === item.answer) ch.classList.add("is-correct");
+        if (quizChoiceOk(item, ch.dataset.answer)) ch.classList.add("is-correct");
       });
       const fb = root.querySelector("#feedback");
       fb.className = "feedback " + (good ? "ok" : "bad");
-      fb.textContent = good ? "✓ Correct" : `→ ${item.answer}`;
+      fb.textContent = good ? "✓ Correct" : `→ ${quizShowAnswer(item)}`;
       attachExplain(fb, item, () => {
         if (advanceTimer) {
           clearTimeout(advanceTimer);
@@ -1895,9 +1914,10 @@ export function startPractice(rawPack, root, opts) {
       : /passive$/i.test(voiceHint)
         ? "type the passive sentence…"
         : "";
+    const joinHint = /^Join into one sentence/i.test(String(item.hint || ""));
 
     const hint =
-      item.hint && !voiceHint
+      item.hint && !voiceHint && !joinHint
         ? `<p class="practice-hint">${esc(item.hint)}</p>`
         : "";
 
@@ -1919,7 +1939,9 @@ export function startPractice(rawPack, root, opts) {
       ? `<p class="fix-label">Correct this sentence</p>`
       : voiceHint
         ? `<p class="fix-label">${esc(voiceHint)}</p>${agentHint}`
-        : "";
+        : joinHint
+          ? `<p class="fix-label">Join into one sentence</p>`
+          : "";
 
     const inputBlock = isGap
       ? `<div class="gap-row" aria-label="Fill the ending">
@@ -1933,6 +1955,8 @@ export function startPractice(rawPack, root, opts) {
               ? "whole word…"
               : item.wrong
                 ? "type the corrected sentence…"
+                : joinHint
+                  ? "type one sentence…"
                 : voicePlaceholder || "type in English…"
           }" lang="en" />
           <button type="button" class="btn primary" id="btn-submit">Check</button>
