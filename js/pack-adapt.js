@@ -410,6 +410,9 @@ function comparativeLemma(it) {
 
 function isComparativeAnswer(it) {
   const a = String(it.gap_answer || "").trim();
+  if (/^(however|therefore|moreover|nevertheless|whatever|whenever|wherever)$/i.test(a)) {
+    return false;
+  }
   if (/^(more|most|less)(\s|$)/i.test(a)) return true;
   if (/^(better|worse|best|worst)$/i.test(a)) return true;
   if (/(ier|iest|er|est)$/i.test(a) && comparativeLemma(it)) return true;
@@ -742,6 +745,52 @@ function relativeFormChoices(it, pack) {
   return opts.length >= 2 ? opts : null;
 }
 
+/** Linker Quiz: same-job confusions, never a valid cousin as a wrong chip.
+ *  because vs because of; although vs however; so vs therefore vs so that.
+ *  (James, 2026-08-28, b1_linkers.) */
+const LINKER_CONFUSIONS = {
+  so: ["because", "although", "therefore"],
+  therefore: ["however", "because", "although"],
+  because: ["because of", "so", "although"],
+  "because of": ["because", "despite", "so"],
+  although: ["however", "because", "so"],
+  though: ["however", "because", "so"],
+  "even though": ["however", "because", "so"],
+  however: ["although", "therefore", "because"],
+  but: ["although", "so", "however"],
+  "so that": ["so", "because", "although"],
+  despite: ["although", "because of", "however"],
+  "in spite of": ["although", "because of", "despite"],
+  "on the other hand": ["however", "although", "because"],
+};
+const LINKER_FILL = ["because", "so", "although", "however", "but", "therefore"];
+
+function linkerFormChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "linkers") return null;
+  const answer = String(it.gap_answer || "").trim();
+  if (!answer) return null;
+  const opts = [];
+  const seen = new Set();
+  const banned = acceptedKeys(it);
+  const take = (x) => {
+    const t = String(x || "").trim();
+    if (!t) return;
+    const k = key(t);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(matchCase(answer, t));
+  };
+  const takeWrong = (x) => {
+    if (banned.has(key(x))) return;
+    take(x);
+  };
+  take(answer);
+  const fam = LINKER_CONFUSIONS[answer.toLowerCase()] || [];
+  for (const x of fam) takeWrong(x);
+  for (const x of LINKER_FILL) takeWrong(x);
+  return opts.length >= 2 ? opts : null;
+}
+
 /** Passive Quiz: form of THIS verb only (James, 2026-08-28 smoke).
  *  Four chips: correct be+pp · swapped number · be+bare lemma · participle alone.
  *  Gap answer must be `is/are/was/were/be + pp` (subject stays in the stem). */
@@ -806,7 +855,10 @@ function choicesFor(it, siblings, pack) {
     return null;
   }
 
-  const formOpts = comparativeFormChoices(it);
+  const formOpts =
+    !pack?.quiz_axis || pack.quiz_axis === "comparatives"
+      ? comparativeFormChoices(it)
+      : null;
   if (formOpts) return formOpts;
 
   const tenseOpts = ppVsPastChoices(it, pack);
@@ -823,6 +875,9 @@ function choicesFor(it, siblings, pack) {
 
   const relOpts = relativeFormChoices(it, pack);
   if (relOpts) return relOpts;
+
+  const linkOpts = linkerFormChoices(it, pack);
+  if (linkOpts) return linkOpts;
 
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
