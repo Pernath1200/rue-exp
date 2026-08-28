@@ -5,7 +5,7 @@
   "tree_node": "b1_passives",
   "codex_unit": "G_VP-B1B2-01",
   "practice": "frames",
-  "note": "B1 · be agreement in passive frames · EVERY stem tense-forced (every/always/still vs yesterday/last/year) · will/must be · Match off · 2026-07-26 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
+  "note": "B1 · be agreement in passive frames · EVERY stem tense-forced (every/always/still vs yesterday/last/year) · will/must be · Match off · 2026-07-26 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: Quiz = form MC (correct be+pp · swapped number · be+lemma · bare pp). Type = fill that form. Use = active↔passive. Six inverted-question gaps rewritten as statements so the subject is never inside the gap (Were the lights turned / Was turned mix).",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -125,16 +125,16 @@
           ]
         },
         {
-          "en": "These phones are made in Asia these days.",
+          "en": "These phones are made in Asia now.",
           "cz": "Tyhle telefony se teď vyrábějí v Asii.",
-          "gap": "These phones ____ in Asia these days. (make)",
+          "gap": "These phones ____ in Asia now. (make)",
           "gap_answer": "are made",
           "gap_accepts": [
             "are made",
             "Are made"
           ],
           "accepts": [
-            "These phones are made in Asia these days."
+            "These phones are made in Asia now."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
@@ -218,36 +218,45 @@
           "lemma": "finish"
         },
         {
-          "en": "Is coffee grown in Brazil these days?",
-          "cz": "Pěstuje se káva v Brazílii pořád?",
-          "gap": "____ in Brazil these days? (grow)",
-          "gap_answer": "Is coffee grown",
+          "en": "Coffee is grown in Brazil these days.",
+          "cz": "Káva se v Brazílii pořád pěstuje.",
+          "gap": "Coffee ____ in Brazil these days. (grow)",
+          "gap_answer": "is grown",
           "gap_accepts": [
-            "Is coffee grown",
-            "is coffee grown"
+            "is grown",
+            "Is grown"
           ],
           "accepts": [
-            "Is coffee grown in Brazil these days?"
+            "Coffee is grown in Brazil these days."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "grow"
+          "lemma": "grow",
+          "active": "They grow coffee in Brazil these days.",
+          "active_accepts": [
+            "They grow coffee in Brazil these days.",
+            "People grow coffee in Brazil these days."
+          ]
         },
         {
-          "en": "Was the film directed by her in 2019?",
-          "cz": "Režírovala ten film ona v roce 2019?",
-          "gap": "____ by her in 2019? (direct)",
-          "gap_answer": "Was the film directed",
+          "en": "The film was directed by her in 2019.",
+          "cz": "Ten film v roce 2019 režírovala ona.",
+          "gap": "The film ____ by her in 2019. (direct)",
+          "gap_answer": "was directed",
           "gap_accepts": [
-            "Was the film directed",
-            "was the film directed"
+            "was directed",
+            "Was directed"
           ],
           "accepts": [
-            "Was the film directed by her in 2019?"
+            "The film was directed by her in 2019."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "direct"
+          "lemma": "direct",
+          "active": "She directed the film in 2019.",
+          "active_accepts": [
+            "She directed the film in 2019."
+          ]
         },
         {
           "en": "The cake was eaten quickly at the party yesterday.",
@@ -280,14 +289,18 @@
             "Are sold"
           ],
           "accepts": [
-            "Tickets are sold online every day."
+            "Tickets are sold online every day.",
+            "Tickets are sold every day online.",
+            "Every day tickets are sold online."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
           "lemma": "sell",
           "active": "They sell tickets online every day.",
           "active_accepts": [
-            "They sell tickets online every day."
+            "They sell tickets online every day.",
+            "They sell tickets every day online.",
+            "Every day they sell tickets online."
           ]
         },
         {
@@ -449,36 +462,47 @@
           ]
         },
         {
-          "en": "Are these chairs made of wood these days?",
-          "cz": "Dělají se tyhle židle ze dřeva i teď?",
-          "gap": "____ of wood these days? (make)",
-          "gap_answer": "Are these chairs made",
+          "en": "These chairs are made of wood now.",
+          "cz": "Tyhle židle se i teď dělají ze dřeva.",
+          "gap": "These chairs ____ of wood now. (make)",
+          "gap_answer": "are made",
           "gap_accepts": [
-            "Are these chairs made",
-            "are these chairs made"
+            "are made",
+            "Are made"
           ],
           "accepts": [
-            "Are these chairs made of wood these days?"
+            "These chairs are made of wood now."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "make"
+          "lemma": "make",
+          "active": "They make these chairs of wood now.",
+          "active_accepts": [
+            "They make these chairs of wood now."
+          ]
         },
         {
-          "en": "Were the lights turned off last night?",
-          "cz": "Bylo včera v noci zhasnuto světlo?",
-          "gap": "____ off last night? (turn)",
-          "gap_answer": "Were the lights turned",
+          "en": "The lights were turned off last night.",
+          "cz": "Světla byla včera v noci zhasnutá.",
+          "gap": "The lights ____ off last night. (turn)",
+          "gap_answer": "were turned",
           "gap_accepts": [
-            "Were the lights turned",
-            "were the lights turned"
+            "were turned",
+            "Were turned"
           ],
           "accepts": [
-            "Were the lights turned off last night?"
+            "The lights were turned off last night."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "turn"
+          "lemma": "turn",
+          "active": "Someone turned the lights off last night.",
+          "active_accepts": [
+            "Someone turned the lights off last night.",
+            "They turned the lights off last night.",
+            "Someone turned off the lights last night.",
+            "They turned off the lights last night."
+          ]
         },
         {
           "en": "The book was written in 2015.",
@@ -687,36 +711,45 @@
           "lemma": "delete"
         },
         {
-          "en": "Is the office cleaned every night?",
-          "cz": "Uklízí se kancelář každou noc?",
-          "gap": "____ every night? (clean)",
-          "gap_answer": "Is the office cleaned",
+          "en": "The office is cleaned every night.",
+          "cz": "Kancelář se uklízí každou noc.",
+          "gap": "The office ____ every night. (clean)",
+          "gap_answer": "is cleaned",
           "gap_accepts": [
-            "Is the office cleaned",
-            "is the office cleaned"
+            "is cleaned",
+            "Is cleaned"
           ],
           "accepts": [
-            "Is the office cleaned every night?"
+            "The office is cleaned every night."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "clean"
+          "lemma": "clean",
+          "active": "They clean the office every night.",
+          "active_accepts": [
+            "They clean the office every night."
+          ]
         },
         {
-          "en": "Was the package delivered yesterday?",
-          "cz": "Byl balík doručen včera?",
-          "gap": "____ yesterday? (deliver)",
-          "gap_answer": "Was the package delivered",
+          "en": "The package was delivered yesterday.",
+          "cz": "Balík byl doručen včera.",
+          "gap": "The package ____ yesterday. (deliver)",
+          "gap_answer": "was delivered",
           "gap_accepts": [
-            "Was the package delivered",
-            "was the package delivered"
+            "was delivered",
+            "Was delivered"
           ],
           "accepts": [
-            "Was the package delivered yesterday?"
+            "The package was delivered yesterday."
           ],
           "explanation": "Passive: form of be agrees with the subject + past participle.",
           "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "deliver"
+          "lemma": "deliver",
+          "active": "Someone delivered the package yesterday.",
+          "active_accepts": [
+            "Someone delivered the package yesterday.",
+            "They delivered the package yesterday."
+          ]
         },
         {
           "en": "The rules are explained clearly every week.",

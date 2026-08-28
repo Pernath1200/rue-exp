@@ -1055,13 +1055,19 @@ async function startExamDrillFor(level) {
   }
 }
 
+/** A1 slice (2026-08-28): map portrait is the A1 record. Rail still
+ *  drives Path / Topics / meters. Later pass: pass the viewed level here.
+ *  Do not hardcode A1 filters inside the portrait itself. */
+const MAP_TREE_LEVEL = "A1";
+
 /** Combined tree portrait only (Roots/Canopy meter chips removed — 2026-08-10). */
 function renderRoots() {
   const portrait = document.getElementById("tree-portrait");
   if (portrait && STATE.tree) {
+    const nodes = STATE.tree.nodes || [];
     renderTreePortrait(portrait, {
-      level: STATE.level || "A1",
-      nodes: STATE.tree.nodes || [],
+      level: MAP_TREE_LEVEL,
+      nodes,
       isFruit: (id) => {
         const n = nodeById(id);
         return n ? isFruit(n) : false;
@@ -1073,6 +1079,13 @@ function renderRoots() {
       recent: recentNodeIds(),
       onSelect: (node) => focusNodeOnMap(node),
     });
+    const meta = document.getElementById("tree-portrait-meta");
+    if (meta) {
+      const s = levelUnitStats(MAP_TREE_LEVEL, nodes);
+      meta.textContent = s.total
+        ? `· A1 · ${s.learned}/${s.total} learned`
+        : "· A1";
+    }
   }
 }
 

@@ -10,6 +10,37 @@
 
 const KEY = "rue-exp-progress";
 
+/**
+ * Thin storage adapter. Today: this browser (localStorage).
+ * Later: swap read/write for an account without rewriting fruit gates,
+ * the tree, or Download / Import. Never rename KEY. Never write RUE2/RUE3 keys.
+ */
+export const ProgressStore = {
+  key: KEY,
+  read() {
+    try {
+      return localStorage.getItem(KEY);
+    } catch {
+      return null;
+    }
+  },
+  write(raw) {
+    try {
+      localStorage.setItem(KEY, raw);
+      return true;
+    } catch {
+      return false;
+    }
+  },
+  clear() {
+    try {
+      localStorage.removeItem(KEY);
+    } catch {
+      /* private mode */
+    }
+  },
+};
+
 /* One student per browser — each learner uses their own laptop, so a picker
    was solving a problem that doesn't exist (removed 2026-08-10, same day it
    was added). This undoes the brief profile-key experiment: anything written
@@ -107,7 +138,7 @@ function migrateLegacyFruitClear(p) {
 
 export function loadProgress() {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = ProgressStore.read();
     if (!raw) return empty();
     const d = JSON.parse(raw);
     if (!d || typeof d !== "object") return empty();
@@ -119,11 +150,7 @@ export function loadProgress() {
     if (!d.nodes) d.nodes = {};
     if (!Array.isArray(d.unlocked)) d.unlocked = ["A1", "A2", "B1", "B2", "C1"];
     if (migrateLegacyFruitClear(d)) {
-      try {
-        localStorage.setItem(KEY, JSON.stringify(d));
-      } catch {
-        /* ignore quota */
-      }
+      ProgressStore.write(JSON.stringify(d));
     }
     return d;
   } catch {
@@ -132,7 +159,7 @@ export function loadProgress() {
 }
 
 function save(p) {
-  localStorage.setItem(KEY, JSON.stringify(p));
+  ProgressStore.write(JSON.stringify(p));
 }
 
 export function isAuthorUnlock() {
@@ -693,7 +720,7 @@ export function levelUnitStats(level, nodes) {
 }
 
 export function resetAllProgress() {
-  localStorage.removeItem(KEY);
+  ProgressStore.clear();
 }
 
 /** Storage key (stable — never rename; renaming wipes browsers). */
@@ -903,9 +930,7 @@ export function importProgressPayload(raw) {
       return { ok: false, message: conv.error };
     }
     const { progress: normalized, stats } = conv;
-    try {
-      localStorage.setItem(KEY, JSON.stringify(normalized));
-    } catch {
+    if (!ProgressStore.write(JSON.stringify(normalized))) {
       return {
         ok: false,
         message: "Could not save (private mode / full storage).",
@@ -973,9 +998,7 @@ export function importProgressPayload(raw) {
   }
   const gN = Object.keys(normalized.grammar.blocks).length;
   const vN = Object.keys(normalized.vocab.blocks).length;
-  try {
-    localStorage.setItem(KEY, JSON.stringify(normalized));
-  } catch {
+  if (!ProgressStore.write(JSON.stringify(normalized))) {
     return {
       ok: false,
       message: "Could not save (private mode / full storage).",

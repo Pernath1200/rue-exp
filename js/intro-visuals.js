@@ -172,28 +172,45 @@ function contrast(labels) {
  * ------------------------------------------------------------------------- */
 
 /** Hub and spokes — one thing, several options.
- *  labels: [centre, label1, example1, label2, example2, label3, example3, label4, example4] */
+ *  labels: [centre, label1, example1, label2, example2, label3, example3, label4, example4]
+ *  Three options sit in a row under the hub so a line cannot cut through a box
+ *  (James, 2026-08-28, Articles 2). Four still use a 2×2 grid. */
 function hub_spokes(labels) {
   const [centre, ...rest] = labels;
   const spokes = [];
-  for (let i = 0; i < 8; i += 2) spokes.push([rest[i] || "", rest[i + 1] || ""]);
-  const boxes = [
-    [8, 86], [164, 86], [8, 152], [164, 152],
-  ];
-  // Labels shrink to fit their box — "the: we both know which" overflowed the
-  // 148px spoke box at a fixed size 12 (James, 2026-08-24, b1_articles_advanced).
-  const fit1 = (t, w, s) => Math.max(8, Math.min(s, Math.floor(w / (0.62 * Math.max(1, String(t).length)))));
+  for (let i = 0; i < 8; i += 2) {
+    if (rest[i]) spokes.push([rest[i], rest[i + 1] || ""]);
+  }
+  const n = spokes.length;
+  const three = n === 3;
+  const bw = three ? 100 : 148;
+  const bh = 54;
+  const y = 86;
+  const boxes = three
+    ? [
+        [6, y],
+        [110, y],
+        [214, y],
+      ]
+    : [
+        [8, 86],
+        [164, 86],
+        [8, 152],
+        [164, 152],
+      ];
+  const fit1 = (t, w, s) =>
+    Math.max(8, Math.min(s, Math.floor(w / (0.62 * Math.max(1, String(t).length)))));
   let inner = `<rect x="110" y="8" width="100" height="32" rx="8" fill="none" stroke="${ACCENT}" stroke-width="2"/>`;
   inner += label(160, 29, centre || "", { size: fit1(centre, 92, 13) });
   spokes.forEach(([top, ex], i) => {
-    if (!top) return;
-    const [x, y] = boxes[i];
-    inner += `<line x1="160" y1="40" x2="${x + 74}" y2="${y}" stroke="${MUTED}" stroke-width="1.5" opacity="0.7"/>`;
-    inner += `<rect x="${x}" y="${y}" width="148" height="54" rx="8" fill="none" stroke="${ACCENT}" stroke-width="1.5" opacity="0.8"/>`;
-    inner += label(x + 74, y + 22, top, { size: fit1(top, 138, 12) });
-    if (ex) inner += label(x + 74, y + 40, ex, { size: fit1(ex, 138, 11), fill: MUTED });
+    const [x, by] = boxes[i];
+    const cx = x + bw / 2;
+    inner += `<line x1="160" y1="40" x2="${cx}" y2="${by}" stroke="${MUTED}" stroke-width="1.5" opacity="0.7"/>`;
+    inner += `<rect x="${x}" y="${by}" width="${bw}" height="${bh}" rx="8" fill="none" stroke="${ACCENT}" stroke-width="1.5" opacity="0.8"/>`;
+    inner += label(cx, by + 22, top, { size: fit1(top, bw - 10, 12) });
+    if (ex) inner += label(cx, by + 40, ex, { size: fit1(ex, bw - 10, 11), fill: MUTED });
   });
-  return svg(inner, 320, 214);
+  return svg(inner, 320, three ? 150 : 214);
 }
 
 /** Boxes in a row with arrows, and aligned example rows beneath — a slot sequence.
@@ -445,8 +462,49 @@ const SCHEMATICS = {
   "in-on-at": placeInOnAt,
 };
 
+/** A1 articles decision map — HTML flowchart, not SVG (James, 2026-08-04).
+ *  Ported into rue-exp 2026-08-28; was drawing only in rue2-grok-v1.0. */
+function articlesMapHtml() {
+  return `
+    <div class="articles-map" role="img" aria-label="Article decision map: the, a or an, or no article">
+      <div class="am-ask">
+        <span class="am-kicker">Ask yourself</span>
+        <span class="am-q">Does my listener know which one I mean?</span>
+      </div>
+      <div class="am-split">
+        <div class="am-branch am-yes">
+          <span class="am-label am-label-yes">Yes</span>
+          <div class="am-box am-box-the">
+            <div class="am-head">the</div>
+            <p class="am-rule">We both know which one.</p>
+            <p class="am-ex">Open <strong>the</strong> window.</p>
+          </div>
+        </div>
+        <div class="am-branch am-no">
+          <span class="am-label am-label-no">No</span>
+          <div class="am-ask am-ask-sm">
+            <span class="am-q">What kind of noun?</span>
+          </div>
+          <div class="am-leaves">
+            <div class="am-box am-box-a">
+              <span class="am-leaf-tag">one thing <span class="am-cz">· jedna věc</span></span>
+              <div class="am-head">a / an</div>
+              <p class="am-ex">I have <strong>a</strong> dog.</p>
+            </div>
+            <div class="am-box am-box-zero">
+              <span class="am-leaf-tag">many / mass <span class="am-cz">· víc / voda…</span></span>
+              <div class="am-head">no article</div>
+              <p class="am-ex">I like <strong>dogs</strong>. · I drink <strong>water</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="am-foot">Ask again for every new noun.</p>
+    </div>`;
+}
+
 /** Names a pack may use in `diagram`. */
-export const DIAGRAM_KEYS = Object.keys(SCHEMATICS);
+export const DIAGRAM_KEYS = Object.keys(SCHEMATICS).concat("articles_map");
 
 /**
  * @param {string} name schematic id
@@ -454,6 +512,7 @@ export const DIAGRAM_KEYS = Object.keys(SCHEMATICS);
  * @returns {string} SVG markup, or "" if the name is unknown
  */
 export function introDiagram(name, labels) {
+  if (name === "articles_map") return articlesMapHtml();
   const fn = SCHEMATICS[name];
   if (!fn) return "";
   return fn(Array.isArray(labels) ? labels.map((l) => String(l)) : []);

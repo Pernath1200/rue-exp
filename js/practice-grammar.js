@@ -124,6 +124,23 @@ function samplePass(items, onlyIndices, focusStructures, pick) {
     out.push(list[i]);
     if (out.length >= DEFAULT_PASS) break;
   }
+  if (pick && pick.minZero > 0) {
+    const isZ = (it) =>
+      it &&
+      (it.answer === "—" ||
+        it.zero_article ||
+        (it.accepts || []).includes("—"));
+    let have = out.filter(isZ).length;
+    const extras = shuffle(list.filter((it) => isZ(it) && !out.includes(it)));
+    for (const it of extras) {
+      if (have >= pick.minZero) break;
+      const idx = out.findIndex((x) => !isZ(x));
+      if (idx < 0) break;
+      out[idx] = it;
+      have += 1;
+    }
+    return shuffle(out);
+  }
   return out;
 }
 
@@ -717,8 +734,12 @@ export function startPractice(rawPack, root, opts) {
      * (James, 2026-08-26: small timelines on later intro pages). */
     if (card.diagram) {
       const svgMarkup = introDiagram(card.diagram, card.labels || []);
-      if (svgMarkup) body += `<div class="intro-scene-wrap">${svgMarkup}</div>`;
-      else if (card.diagram_fallback)
+      if (svgMarkup) {
+        body +=
+          card.diagram === "articles_map"
+            ? svgMarkup
+            : `<div class="intro-scene-wrap">${svgMarkup}</div>`;
+      } else if (card.diagram_fallback)
         body += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
     }
     if (card.svg && String(card.svg).trim().startsWith("<svg")) {
@@ -753,7 +774,7 @@ export function startPractice(rawPack, root, opts) {
         .map((ex) => {
           const cz = ex.cz || ex.pl || "";
           let line = `<div class="intro-ex"><span class="pl">${esc(cz)}</span>`;
-          if (ex.en) line += ` <span class="en">· ${esc(ex.en)}</span>`;
+          if (ex.en) line += ` <span class="en">· ${escMd(ex.en)}</span>`;
           line += `</div>`;
           return line;
         })
@@ -1019,6 +1040,7 @@ export function startPractice(rawPack, root, opts) {
     state.quizItems = samplePass(pack.quiz || [], null, focusStructures, {
       packId: pack.id,
       stage: "quiz",
+      minZero: pack.quiz_axis === "articles" ? 3 : 0,
     });
     state.quizIndex = 0;
     state.quizScore = 0;
@@ -1362,6 +1384,7 @@ export function startPractice(rawPack, root, opts) {
       state.quizItems = samplePass(pack.quiz || [], null, focusStructures, {
       packId: pack.id,
       stage: "quiz",
+      minZero: pack.quiz_axis === "articles" ? 3 : 0,
     });
       state.quizIndex = 0;
       state.quizScore = 0;
@@ -1695,6 +1718,7 @@ export function startPractice(rawPack, root, opts) {
       state.typeItems = samplePass(pack.type_items || [], null, focusStructures, {
         packId: pack.id,
         stage: "type",
+        minZero: pack.quiz_axis === "articles" ? 3 : 0,
       });
       state.typeRetryPass = false;
     }
@@ -1720,6 +1744,7 @@ export function startPractice(rawPack, root, opts) {
       state.useItems = samplePass(pack.use_items || [], null, focusStructures, {
         packId: pack.id,
         stage: "use",
+        minZero: pack.quiz_axis === "articles" ? 3 : 0,
       });
       state.useRetryPass = false;
     }
@@ -1857,9 +1882,24 @@ export function startPractice(rawPack, root, opts) {
       gap_answer: isGap ? item.ending || "" : item.answer || "",
       typed: "",
     });
-    const hint = item.hint
-      ? `<p class="practice-hint">${esc(item.hint)}</p>`
-      : "";
+    /* Voice Use (James, 2026-08-28): "Make this active/passive" as a grey
+     * line under the sentence was missed. Same slot as fix-the-sentence:
+     * task label above, sentence as the object, placeholder names the target. */
+    const voiceHint = (() => {
+      const h = String(item.hint || "");
+      if (!h.startsWith("Make this")) return "";
+      return h.replace(/\.\s*$/, "");
+    })();
+    const voicePlaceholder = /active$/i.test(voiceHint)
+      ? "type the active sentence…"
+      : /passive$/i.test(voiceHint)
+        ? "type the passive sentence…"
+        : "";
+
+    const hint =
+      item.hint && !voiceHint
+        ? `<p class="practice-hint">${esc(item.hint)}</p>`
+        : "";
 
     /* Fix-the-sentence items (use_mode: "correct") look identical to a
      * translation prompt otherwise — the banner said "Fix the sentence" but it
@@ -1867,9 +1907,19 @@ export function startPractice(rawPack, root, opts) {
      * Patrik error page: a label above, the wrong sentence in the error colour,
      * and a placeholder that says what to type. */
     const fixMode = Boolean(item.wrong);
-    const fixLabel = fixMode
+    const agentHint = (() => {
+      if (!/active$/i.test(voiceHint)) return "";
+      const pool = [item.answer, ...(item.accepts || [])];
+      const unspec = pool.some((s) =>
+        /^(someone|they|people)\b/i.test(String(s || "").trim())
+      );
+      return unspec ? `<p class="practice-hint">Use <strong>they</strong> or <strong>someone</strong>.</p>` : "";
+    })();
+    const taskLabel = fixMode
       ? `<p class="fix-label">Correct this sentence</p>`
-      : "";
+      : voiceHint
+        ? `<p class="fix-label">${esc(voiceHint)}</p>${agentHint}`
+        : "";
 
     const inputBlock = isGap
       ? `<div class="gap-row" aria-label="Fill the ending">
@@ -1883,9 +1933,7 @@ export function startPractice(rawPack, root, opts) {
               ? "whole word…"
               : item.wrong
                 ? "type the corrected sentence…"
-                : item.hint && String(item.hint).startsWith("Make this")
-                  ? "type the other sentence…"
-                  : "type in English…"
+                : voicePlaceholder || "type in English…"
           }" lang="en" />
           <button type="button" class="btn primary" id="btn-submit">Check</button>
         </div>`;
@@ -1899,7 +1947,7 @@ export function startPractice(rawPack, root, opts) {
       <p class="score-line">${idx + 1} / ${items.length} · score ${score}${
         retryPass ? " · retry" : ""
       }</p>
-      ${fixLabel}
+      ${taskLabel}
       <div class="item-stem">
         <div class="item-stem-text">
           <p class="practice-prompt${fixMode ? " practice-prompt--wrong" : ""}">${esc(prompt)}${
@@ -1911,7 +1959,9 @@ export function startPractice(rawPack, root, opts) {
               ? `<p class="practice-hint gap-hint">Only the <strong>ending</strong></p>`
               : isRoot
                 ? `<p class="practice-hint gap-hint">The <strong>whole word</strong> formed from the word in capitals</p>`
-                : ""
+                : kind === "type" && pack.quiz_axis === "articles"
+                  ? `<p class="practice-hint">No article? leave empty and press <strong>Enter</strong>.</p>`
+                  : ""
           }
         </div>
         ${itemDiagramHtml(item)}

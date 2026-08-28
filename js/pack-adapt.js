@@ -49,6 +49,20 @@ function flatItems(pack) {
   return out;
 }
 
+/** Drop a trailing teacher cue — "(as a patient)", "(in general)" — so the
+ *  uncorrected English can be compared with accepts. */
+function stripTeacherCue(s) {
+  return String(s || "")
+    .replace(/\s*\([^)]*\)\s*$/, "")
+    .trim();
+}
+
+function useAcceptsWithoutWrong(accepts, wrong) {
+  const bare = key(stripTeacherCue(wrong));
+  if (!bare) return accepts.slice();
+  return accepts.filter((a) => key(a) !== bare);
+}
+
 /** Distinct block ids present in an adapted bank, in authoring order. */
 export function blocksOf(items) {
   const seen = [];
@@ -501,15 +515,125 @@ function ppVsPastChoices(it, pack) {
   return opts.length >= 2 ? opts : null;
 }
 
-/** Passive: gap is be + past participle of THIS verb (James, 2026-08-26). */
+/** Articles Quiz: a / an / the / — or this noun with those articles.
+ *  Sibling gap-answers were other nouns (school / hospital) — vocabulary,
+ *  not articles (James, 2026-08-28, b1_articles_advanced). */
+function articleFormChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "articles") return null;
+  const answer = String(it.gap_answer ?? "").trim();
+  if (!answer) return null;
+  const al = answer.toLowerCase();
+  const seen = new Set();
+  const opts = [];
+  const take = (x) => {
+    const k = key(x);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(x);
+  };
+  if (al === "a" || al === "an" || al === "the" || answer === "—" || al === "—") {
+    /* Always lowercase chips — "The" at the start of a stem made the
+     * item guessable from capitalisation (James, 2026-08-28). */
+    take("a");
+    take("an");
+    take("the");
+    take("—");
+    return opts.length >= 2 ? opts : null;
+  }
+  const np = /^(a|an|the)\s+(.+)$/i.exec(answer);
+  if (np) {
+    const noun = np[2];
+    take("a " + noun);
+    take("an " + noun);
+    take("the " + noun);
+    take(noun);
+    return opts.length >= 2 ? opts : null;
+  }
+  take(answer);
+  take("the " + answer);
+  const vowel = /^[aeiou]/i.test(answer);
+  take((vowel ? "an " : "a ") + answer);
+  take((vowel ? "a " : "an ") + answer);
+  return opts.length >= 2 ? opts : null;
+}
+
+/** *Important is to…* — Czech adjective-first order (James, 2026-08-28). */
+function itAdjFront(answer) {
+  const m = String(answer).match(/^it\s+(is|was)\s+(.+)$/i);
+  if (!m) return "";
+  const be = m[1].toLowerCase();
+  const rest = m[2].trim();
+  if (/^(a|an|the)\s/i.test(rest)) return "";
+  if (/^(no use|worth)\b/i.test(rest)) return "";
+  const that = /\s+that$/i.test(rest);
+  const adj = rest.replace(/\s+that$/i, "").trim();
+  if (!/^[a-z]+$/i.test(adj)) return "";
+  const front = adj.charAt(0).toUpperCase() + adj.slice(1).toLowerCase();
+  return that ? `${front} ${be} that` : `${front} ${be}`;
+}
+
+/** Introductory-it Quiz: dummy it, not sibling adjectives / fake verb forms.
+ *  Czech has no subject here — chips are the live mistakes: adjective-first
+ *  (*Illegal is…*) · drop it · there for it. (James, 2026-08-28.) */
+function itSubjectChoices(it, pack) {
+  if (String(pack && pack.quiz_axis) !== "it_subject") return null;
+  const answer = String(it.gap_answer || "").trim();
+  if (!/^it\b/i.test(answer)) return null;
+
+  const opts = [];
+  const seen = new Set();
+  const take = (x) => {
+    const k = key(x);
+    if (!k || seen.has(k) || opts.length >= 4) return;
+    seen.add(k);
+    opts.push(matchCase(answer, x));
+  };
+
+  take(answer);
+  const front = itAdjFront(answer);
+  if (front) take(front);
+
+  const dropped = answer.replace(/^it's\s+/i, "").replace(/^it\s+/i, "");
+  if (dropped) take(dropped);
+
+  const there = /^it's\b/i.test(answer)
+    ? answer.replace(/^it's/i, "There's")
+    : answer.replace(/^it\b/i, "There");
+  take(there);
+
+  const noBe = dropped.replace(/^(is|was|are|were|'s)\s+/i, "").trim();
+  if (noBe) take(noBe);
+
+  if (opts.length < 4) {
+    const agr = answer
+      .replace(/\bdoesn't\b/i, "don't")
+      .replace(/\bseems\b/i, "seem")
+      .replace(/\bappears\b/i, "appear")
+      .replace(/\btakes\b/i, "take")
+      .replace(/\bcosts\b/i, "cost")
+      .replace(/\blooks\b/i, "look")
+      .replace(/\bfeels\b/i, "feel")
+      .replace(/\bsurprised\b/i, "surprise");
+    if (key(agr) !== key(answer)) take(agr);
+  }
+  if (opts.length < 4 && dropped) take("This " + dropped);
+
+  return opts.length >= 2 ? opts : null;
+}
+
+/** Passive Quiz: form of THIS verb only (James, 2026-08-28 smoke).
+ *  Four chips: correct be+pp · swapped number · be+bare lemma · participle alone.
+ *  Gap answer must be `is/are/was/were/be + pp` (subject stays in the stem). */
 function passiveBeChoices(it, pack) {
   if (String(pack && pack.quiz_axis) !== "passive") return null;
   const lemma = String(it.lemma || cuedLemma(it.gap) || "").toLowerCase().trim();
   const answer = String(it.gap_answer || "").trim();
   if (!lemma || !answer) return null;
-  const bits = answer.split(/\s+/);
-  const pp = bits[bits.length - 1];
-  if (!pp) return null;
+  const m = key(answer).match(/^(is|are|was|were|be)\s+(\S+)$/);
+  if (!m) return null;
+  const be = m[1];
+  const pp = m[2];
+  const swap = { is: "are", are: "is", was: "were", were: "was", be: "is" };
   const seen = new Set([key(answer)]);
   const opts = [answer];
   const take = (x) => {
@@ -518,12 +642,8 @@ function passiveBeChoices(it, pack) {
     seen.add(k);
     opts.push(matchCase(answer, x));
   };
-  take("is " + pp);
-  take("are " + pp);
-  take("was " + pp);
-  take("were " + pp);
-  take("be " + pp);
-  take(bits[0] + " " + lemma);
+  take(swap[be] + " " + pp);
+  take(be + " " + lemma);
   take(pp);
   return opts.length >= 2 ? opts : null;
 }
@@ -573,6 +693,12 @@ function choicesFor(it, siblings, pack) {
 
   const passOpts = passiveBeChoices(it, pack);
   if (passOpts) return passOpts;
+
+  const artOpts = articleFormChoices(it, pack);
+  if (artOpts) return artOpts;
+
+  const itOpts = itSubjectChoices(it, pack);
+  if (itOpts) return itOpts;
 
   const banned = acceptedKeys(it);
   const seen = new Set([key(answer)]);
@@ -700,9 +826,17 @@ export function adaptGrammarPack(pack) {
             pack,
           );
           if (!choices) return null;
+          let quizAnswer = it.gap_answer;
+          if (String(pack.quiz_axis) === "articles") {
+            const raw = String(it.gap_answer || "").trim();
+            const al = raw.toLowerCase();
+            const np = /^(a|an|the)\s+(.+)$/i.exec(raw);
+            if (al === "a" || al === "an" || al === "the") quizAnswer = al;
+            else if (np) quizAnswer = np[1].toLowerCase() + " " + np[2];
+          }
           return {
             prompt: gapPrompt(it, pack),
-            answer: it.gap_answer,
+            answer: quizAnswer,
             choices,
             cz: it.cz,
             diagram: it.diagram || "",
@@ -771,6 +905,7 @@ export function adaptGrammarPack(pack) {
     hint: it.cz,
     answer: it.gap_answer,
     accepts: it.gap_accepts || [],
+    zero_article: !!it.zero_article,
     cz: it.cz,
     diagram: it.diagram || "",
     root: it.root,
@@ -829,7 +964,13 @@ export function adaptGrammarPack(pack) {
             prompt: fixMode ? it.wrong : it.cz,
             wrong: it.wrong || "",
             answer: it.en,
-            accepts: it.accepts || [],
+            /* Never accept the uncorrected prompt. Type can allow AmE
+             * "in the hospital"; Use's wrong IS that form (plus a teacher
+             * cue), so the same accept would mark "no change" as right. */
+            accepts: fixMode
+              ? useAcceptsWithoutWrong(it.accepts || [], it.wrong)
+              : it.accepts || [],
+            zero_article: !!it.zero_article,
             cz: it.cz,
             diagram: it.diagram || "",
             explanation: it.explanation,

@@ -1940,6 +1940,150 @@ button.m.wrong {
   margin: 0.8rem 0;
 }
 
+/* Articles decision map (intro) — ported from rue2-grok-v1.0, 2026-08-28 */
+.articles-map {
+  margin: 0.55rem 0 0.85rem;
+  padding: 0.75rem 0.7rem 0.65rem;
+  border-radius: 12px;
+  border: 1px solid var(--accent-border);
+  background: rgba(255, 255, 255, 0.02);
+}
+.am-ask {
+  text-align: center;
+  padding: 0.55rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid rgba(160, 160, 160, 0.28);
+  background: rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.55rem;
+}
+.am-ask-sm {
+  margin-bottom: 0.45rem;
+  padding: 0.4rem 0.5rem;
+}
+.am-kicker {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+}
+.am-q {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+}
+.am-split {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 0.55rem;
+  align-items: start;
+}
+@media (max-width: 520px) {
+  .am-split {
+    grid-template-columns: 1fr;
+  }
+}
+.am-branch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+.am-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  align-self: flex-start;
+}
+.am-label-yes {
+  color: var(--correct);
+}
+.am-label-no {
+  color: var(--wrong-text);
+}
+.am-box {
+  border-radius: 10px;
+  border: 1px solid rgba(160, 160, 160, 0.28);
+  background: var(--surface);
+  padding: 0.55rem 0.65rem 0.6rem;
+  min-width: 0;
+}
+.am-box-the {
+  border-top: 3px solid var(--correct);
+}
+.am-box-a {
+  border-top: 3px solid color-mix(in srgb, var(--accent) 75%, #c4a574);
+}
+.am-box-zero {
+  border: 1px dashed rgba(160, 160, 160, 0.4);
+  border-top: 3px solid rgba(160, 160, 160, 0.55);
+}
+.am-head {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+  color: var(--text);
+}
+.am-box-the .am-head {
+  color: var(--correct);
+}
+.am-box-a .am-head {
+  color: #c9a0b0;
+}
+.am-box-zero .am-head {
+  color: var(--muted);
+}
+.am-rule {
+  margin: 0 0 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+.am-ex {
+  margin: 0;
+  font-size: 0.84rem;
+  color: var(--text);
+  line-height: 1.4;
+}
+.am-ex strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+.am-leaves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+@media (max-width: 380px) {
+  .am-leaves {
+    grid-template-columns: 1fr;
+  }
+}
+.am-leaf-tag {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+  line-height: 1.25;
+}
+.am-leaf-tag .am-cz {
+  font-weight: 500;
+  opacity: 0.85;
+}
+.am-foot {
+  margin: 0.55rem 0 0;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
 /* Quiz / Type / Use: thumbnail beside the prompt so choices stay on screen. */
 .item-stem {
   display: flex;

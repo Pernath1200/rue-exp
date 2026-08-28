@@ -17,7 +17,9 @@
  * houses of Curriculum_Codex_Vocab), 1st at the collar, 12th at the crown.
  * Lighting: leaf lit = unit started/done, fruit lit = unit done, root knot lit
  * = same on that seat. Unlit slots stay as ghosts so the model is readable.
- * Navigation stays on the spine list; clicks here only focus a unit.
+ * At most 6 slots per seat; empty live units do not steal lights from work
+ * already done (A1 map slice, 2026-08-28). Navigation stays on the spine
+ * list; clicks here only focus a unit.
  */
 
 /** @typedef {{ id: string, domain: string, tree_part?: string, root?: string, status?: string, foundation?: boolean, label?: string, codex_unit?: string, levels?: string[] }} TreeNode */
@@ -416,10 +418,10 @@ function layout(m, age) {
 // Progress helpers
 // ---------------------------------------------------------------------------
 
-function litSlots(live, count) {
-  if (!live.length) return 0;
-  if (live.length <= 6) return Math.min(6, count);
-  return Math.round((6 * count) / live.length);
+/** Cap 6. Ghosts of empty units do not thin started/fruited lights. */
+export function litSlots(live, count) {
+  if (!live || !live.length || !count) return 0;
+  return Math.min(6, count);
 }
 
 // ---------------------------------------------------------------------------

@@ -3,9 +3,9 @@
 **Status:** canonical English app (grammar + vocab) · A1+A2 polish before deploy  
 **Folder:** `projects/rue-exp` only  
 **Model:** `rupl-exp` (Polish unified app)  
-**End state:** full replacement of student RUE2 + RUE3 — new URL + one-time
-progress import once lesson-proven. Until James promotes, `rue2-grok-v1.0` /
-`rue3-exp` stay live and untouched; labs are frozen archives.
+**End state:** this folder *is* the English app. Old RUE2/RUE3 splits are in
+`projects/_archive/` (2026-08-27). `rue2-grok-v1.0` is frozen, not a second
+product. Labs (`rue-auto`) stay frozen.
 
 ---
 
@@ -25,7 +25,7 @@ One local tree: **teach system** (grammar roots) then **use on themes** (vocab c
 | Smoke | `rue-exp-smoke-flags` |
 | Architecture | Dual practice modules (`practice-grammar.js` + `practice-vocab.js`) |
 | Spine | Soft path · `data/spine.json` steps with `grammar` / `vocab` sides |
-| Content | Edit **here only** · labs frozen · no full sync from rue-auto / rue3-exp |
+| Content | Edit **here only** · labs frozen · no full sync from `rue-auto` |
 | UI chrome | English |
 | Content scaffolding | Czech in packs (as RUE2/3) |
 | Visual identity | **RUE2 cyan** `#569cd6` · soft teal success · warm muted wrong |
@@ -45,7 +45,7 @@ One local tree: **teach system** (grammar roots) then **use on themes** (vocab c
 
 ## Non-goals (until promote)
 
-- Replace student RUE2 / RUE3 URLs without explicit James go  
+- Revive archived RUE3 / old RUE2 folders as products  
 - Hard grammar→vocab locks  
 - Single mega practice engine  
 - Unattended B1 vocab extension (interactive only when resumed)  
