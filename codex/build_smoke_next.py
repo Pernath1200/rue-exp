@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """Generate the vault's smoke-next.md from data already in the repo.
 
-The list was hand-ranked, on the home PC only, because the Telegram bot
-rewrites the file wholesale when James ticks a unit. That meant a trip between
-machines every time the priorities changed — and it went stale the moment the
-beta ceiling moved on 2026-08-26, leaving three hidden B2 units in the Top 5.
+Laptop is the only writer of this ranking. The Telegram bot on the home PC
+must ONLY append smoke-done-log.md and re-read this file. If the bot rewrites
+Top 5 itself, the two machines fight (2026-08-29: bot still served b1_used_to
+and already-smoked A2 units after the laptop had moved on).
 
 Nothing here needs a human. The ranking is derivable:
   ticks        codex/INSPECTED.md
@@ -105,10 +105,13 @@ Scope: **grammar only, A1–B1.** B2 and C1 are hidden from the rail; vocab and
 `trunk_*` stay built and linkable but sit outside the beta.
 
 Tick by telling the bot `<unit_id> tested` (full id, no list number). The bot
-**only appends** [[smoke-done-log]] and **replies with this file's Top 5**.
-It must never rewrite this file. That log line is the inspect tick.
-`python codex/reconcile_inspected.py` copies it into INSPECTED.md and --writes
-this file. Undo with `<unit_id> untested`.
+**only appends** [[smoke-done-log]] and **replies with this file's Top 5**,
+hiding ids already in the log. It must **never rewrite this file**. That log
+line is the inspect tick. `python codex/reconcile_inspected.py` copies it into
+INSPECTED.md and --writes this file. Undo with `<unit_id> untested`.
+If Telegram's Top 5 does not match this file, the home bot is stale — send
+`units to test` after Obsidian Sync, and paste `codex/smoke_list.py` onto the
+home PC listener.
 
 Remaining: **{len(todo)} grammar units** — A1 {counts['A1']} · A2 {counts['A2']} · B1 {counts['B1']}.
 

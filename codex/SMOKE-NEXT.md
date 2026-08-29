@@ -1,13 +1,17 @@
-# SMOKE NEXT — moved to the vault 2026-08-25
+# SMOKE NEXT — generated into the vault
 
-The running top-5 list lives at `Documents\original\TA\smoke-next.md` (Obsidian
-Sync carries it to the home PC, where the Telegram bot reads it).
+The running Top 5 lives at `Documents\original\TA\smoke-next.md`.
+Rebuild: `py -X utf8 codex\build_smoke_next.py --write` then
+`py -X utf8 codex\reconcile_inspected.py`.
 
-**Telegram is the tick.** `<unit_id> tested` appends `TA/smoke-done-log.md`.
-That log is the inspect register. `INSPECTED.md` is generated from it — do not
-hand-tick the first box. After a bot tick, run
-`python codex/reconcile_inspected.py` (copies the log into the register and
-rebuilds Top 5). Undo with `<unit_id> untested`.
+**Laptop is the only writer of that file.** The Telegram bot on the home PC
+must only append `TA/smoke-done-log.md` and re-read Top 5. If it rewrites
+the ranking, the two machines fight.
 
-Bot contract (home PC): `TA/smoke-bot.md`. Full unit id; never rewrite the ranking;
-`units to test` re-reads the file.
+Canonical bot handler: `codex/smoke_list.py` — copy onto
+`C:\Users\james\reminders\smoke_list.py` and restart the listener.
+
+Tick: `<unit_id> tested`. Parked ids alias (`b1_used_to` → `a2_used_to`).
+Undo: `<unit_id> untested`. Ask: `units to test`.
+
+If Telegram's Top 5 is not this ranking, the home bot is stale.

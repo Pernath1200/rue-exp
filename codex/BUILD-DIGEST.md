@@ -6,6 +6,16 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — Telegram bot vs laptop list desync
+
+James: *the telegram bot and the list we have are not in sync.* Cause: home PC handler **rewrites** `TA/smoke-next.md` when it ticks, and still ranks a 53-unit universe (`b1_used_to`, already-smoked A2). Laptop `build_smoke_next.py --write` is the only ranking.
+
+Fix: `codex/smoke_list.py` is the canonical handler — append log, alias `b1_used_to` → `a2_used_to`, hide ticked ids, **never write the ranking**. Copy onto `C:\Users\james\reminders\smoke_list.py` and restart. `units to test` after Obsidian Sync.
+
+Live Top 5 (this laptop): `a2_present_perfect`, `a2_some_any_no`, `a2_verb_patterns`, `a2_prepositions_movement`, `b1_modals_speculation`. Note: present_perfect and some_any_no were rewritten this weekend but never Telegram-ticked, so they stay on the list by I3.
+
+---
+
 ## 2026-08-29 · local (interactive) — `a2_used_to` Telegram-tested · rules
 
 Smoke closed (James: *okay that's not a bad unit*). Telegram `b1_used_to tested` (parked id) — aliased to live `a2_used_to`. Log line `a2_used_to · tested`.
