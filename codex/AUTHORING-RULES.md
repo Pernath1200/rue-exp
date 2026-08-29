@@ -37,11 +37,11 @@ Then dropdowns. Then change. Then James plays.
 
 | Stage | Look for |
 |--|--|
-| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech · C23 no *this pack* / *at A2* · C24 no joiner POS taxonomy (*two things* / *two actions*) · C25 no *Not add, not why* / *Not in / on / at* · C26 no *small words* · C27 mistakes column first · C28 diagram key must exist |
+| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech · C23 no *this pack* / *at A2* · C24 no joiner POS taxonomy (*two things* / *two actions*) · C25 no *Not add, not why* / *Not in / on / at* · C26 no *small words* · C27 mistakes column first · C28 diagram key must exist · **C29** tense card 0 has a timeline vs tenses already taught |
 | **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. **B9:** full sentences → 8 pairs, not 12 (12 is for words and short phrases). **B10:** in/on/at time → sort boxes, not sentence pairs. D3: no teacher notes in `cz`. |
 | **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · B8 gap is THIS unit's point (not a neighbour, not *a/an* inside *there is*, not *can/can't* when the error is *to swim*) · chips include the right answer · no untaught extras (C11) |
 | **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
-| **Use** | F3: production may not lead. Partner + glue + this unit's words. A1 Czech is fine to smoke. Flag translation-only false-wrongs. |
+| **Use** | F3: production may not lead. Partner + glue + this unit's words. A1 Czech is fine to smoke. Flag translation-only false-wrongs. **D5:** a stative in this unit names present simple in the explanation. |
 
 A1/A2 translation is allowed. Recognition may lead; Use may not (F3).
 
@@ -127,6 +127,7 @@ Czech *Pojď se mnou* only means *with* — kept. *I talk ____ my teacher* is A5
 | **C26** | Don't call the target *small words*. *a*, *if*, *no* are small and different. Name the class (*prepositions*). | `a1_to_for_with` 2026-08-29: *"this is moronic"*. C18's *With small words* title was the same leftover. | `enforced` — lint `smallwords` |
 | **C27** | A Common mistakes table puts the **error first**, the correct form second. | `a1_to_for_with` 2026-08-29: Say / Not was backwards. `a1_there_is` already had mistake → correct. | `enforced` — lint `mistakecol` |
 | **C28** | A `diagram` key must exist in `intro-visuals.js`. An unknown key is a blank picture; C10 still goes green because it only checks the field is non-empty. Use a real key, or inline `svg` and drop the dead key. | `a1_prepositions_time` 2026-08-29: `in-on-at-scale` was not a schematic — card 0 drew nothing. | `enforced` — lint `baddiagram` |
+| **C29** | A tense unit's card 0 has a **timeline** against tenses already taught. A now/every-day table is not that picture. | `a2_present_continuous` 2026-08-29: *"should have a timeline to compare it to previously covered tenses"*. | `observed` |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
 already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`
@@ -149,6 +150,7 @@ over ~15 words, is an error. Vocab and B2+ are not in that count.
 | **D2** | Explanations render automatically with the feedback, not behind a click. | Hidden behind "Why?", most students never read them. Reversed 2026-08-24 — which makes D1 urgent, since filler is now visible. | `confirmed` |
 | **D3** | `cz` is student-facing. No teacher notes, English asides, or editor leftovers in it. *(On — a man)*, *desk ≈ table*, *povolání → a/an* all rendered on Match and Use. Dual Czech with a slash is the same class of leftover. | `a1_possessives` 2026-08-29. `a1_frequency` 2026-08-29: *Vždycky piju kávu. / Vždy piju kávu.* and *Máš vždycky hodně práce? / Jsi vždycky zaneprázdněný?* — pick one. | `confirmed` |
 | **D4** | A gloss names what the word **asks for or points to**, not what the word is. *why = reason* is false (why is not a reason). *how = way* is too loose (*way* is a road, a habit, a gap). Write *asks for a reason* / *the way you do it*. | `a1_question_words` 2026-08-29: flags 7–8. | `observed` |
+| **D5** | If a continuous unit carries present-simple / stative items, the explanation names **present simple** and bans **-ing** on THAT verb. A generic continuous helper pasted on *needs* is silent. | `a2_present_continuous` 2026-08-29: *We prefer tea to coffee* — *"this should be shown in explanation"*. | `observed` |
 
 ---
 

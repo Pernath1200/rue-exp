@@ -5,7 +5,7 @@
   "tree_node": "a2_present_continuous",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Now / around now. be (am/is/are) + -ing. Gap on be or -ing. Contrast with present simple habits stays light. · Bank 54 items · stative slice · flags: 2026-07-26 gender/talk/evening · 2026-08-19 (James, Patrik smoke): 3 authoring notes removed from the Czech; the two am-not items explained as negatives instead of 'I → am' · intro card 0 rewritten 2026-08-24 (James, Patrik smoke): was 'Use for now / around now. Form: be + verb-ing' — the form restated, no reason. Now leads on the Czech contrast (one present tense doing two jobs), because the Czech speaker has no native reason to reach for be+-ing at all. Patrik's two logged errors are opposite halves of one mistake — 'we are communicate with' (be, no -ing) and 'how he thinking' (-ing, no be) — so the third point names both. · card 0 given an orientation opening 2026-08-24 (same fault as a2_first_conditional): the earlier rewrite led with the Czech contrast and dropped the line saying what the tense IS. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Now / around now. Gap the whole VP (be + -ing). Questions gap Are/Is vs Do/Does. Five statives in the bank — explanation names present simple, no -ing. · 2026-08-29 smoke: I8 audit; B8 whole VP; flags: C29 timeline, A5 eat/have dinner, D5 stative explanations.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -21,298 +21,224 @@
         {
           "en": "I am working now.",
           "cz": "Teď pracuji.",
-          "gap": "I ____ working now.",
-          "gap_answer": "am",
+          "gap": "I ____ now.",
+          "gap_answer": "am working",
+          "quiz_options": [
+            "am working",
+            "work",
+            "working",
+            "am work"
+          ],
           "accepts": [
             "I am working now.",
             "I'm working now."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "I → **am working**. Now, not every day. Not *work* and not *am work*.",
+          "explanation_cz": "I → **am working**. Teď, ne každý den. Ne *work* a ne *am work*."
         },
         {
           "en": "She is reading a book.",
           "cz": "Ona čte knihu. (teď)",
-          "gap": "She ____ reading a book.",
-          "gap_answer": "is",
+          "gap": "She ____ a book.",
+          "gap_answer": "is reading",
+          "quiz_options": [
+            "is reading",
+            "reads",
+            "reading",
+            "is read"
+          ],
           "accepts": [
             "She is reading a book.",
             "She's reading a book."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "she → **is reading**. **is** + **-ing**. Not *reads* now.",
+          "explanation_cz": "she → **is reading**. **is** + **-ing**. Teď ne *reads*."
         },
         {
           "en": "He is cooking dinner.",
           "cz": "On vaří večeři. (teď)",
-          "gap": "He ____ cooking dinner.",
-          "gap_answer": "is",
+          "gap": "He ____ dinner.",
+          "gap_answer": "is cooking",
+          "quiz_options": [
+            "is cooking",
+            "cooks",
+            "cooking",
+            "is cook"
+          ],
           "accepts": [
             "He is cooking dinner.",
             "He's cooking dinner."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "he → **is cooking**. **is** + **-ing**.",
+          "explanation_cz": "he → **is cooking**. **is** + **-ing**."
         },
         {
           "en": "We are watching a film.",
           "cz": "Díváme se na film. (teď)",
-          "gap": "We ____ watching a film.",
-          "gap_answer": "are",
+          "gap": "We ____ a film.",
+          "gap_answer": "are watching",
+          "quiz_options": [
+            "are watching",
+            "watch",
+            "watching",
+            "are watch"
+          ],
           "accepts": [
             "We are watching a film.",
             "We're watching a film.",
             "We are watching a movie.",
             "We're watching a movie."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "we → **are watching**. **are** + **-ing**.",
+          "explanation_cz": "we → **are watching**. **are** + **-ing**."
         },
         {
           "en": "They are playing football.",
           "cz": "Hrají fotbal. (teď)",
-          "gap": "They ____ playing football.",
-          "gap_answer": "are",
+          "gap": "They ____ football.",
+          "gap_answer": "are playing",
+          "quiz_options": [
+            "are playing",
+            "play",
+            "playing",
+            "are play"
+          ],
           "accepts": [
             "They are playing football.",
             "They're playing football.",
             "They are playing soccer.",
             "They're playing soccer."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "they → **are playing**. **are** + **-ing**.",
+          "explanation_cz": "they → **are playing**. **are** + **-ing**."
         },
         {
           "en": "I am studying English.",
-          "cz": "Učím se angličtinu. (teď / teďka)",
-          "gap": "I am ____ English.",
-          "gap_answer": "studying",
+          "cz": "Učím se angličtinu. (teď)",
+          "gap": "I ____ English.",
+          "gap_answer": "am studying",
+          "quiz_options": [
+            "am studying",
+            "study",
+            "studying",
+            "am study"
+          ],
           "accepts": [
             "I am studying English.",
             "I'm studying English."
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "She is writing an email.",
-          "cz": "Ona píše e-mail. (teď)",
-          "gap": "She is ____ an email.",
-          "gap_answer": "writing",
-          "accepts": [
-            "She is writing an email.",
-            "She's writing an email.",
-            "She is writing an e-mail.",
-            "She's writing an e-mail."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "He is running in the park.",
-          "cz": "On běží v parku. (teď)",
-          "gap": "He is ____ in the park.",
-          "gap_answer": "running",
-          "accepts": [
-            "He is running in the park.",
-            "He's running in the park."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "explanation": "I → **am studying**. **am** + **-ing**.",
+          "explanation_cz": "I → **am studying**. **am** + **-ing**."
         },
         {
           "en": "It is raining.",
           "cz": "Prší.",
-          "gap": "It ____ raining.",
-          "gap_answer": "is",
+          "gap": "It ____.",
+          "gap_answer": "is raining",
+          "quiz_options": [
+            "is raining",
+            "rains",
+            "raining",
+            "is rain"
+          ],
           "accepts": [
             "It is raining.",
             "It's raining."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "Weather now: **is raining**. Not *rains* here.",
+          "explanation_cz": "Počasí teď: **is raining**. Tady ne *rains*."
         },
         {
           "en": "You are listening to me.",
           "cz": "Posloucháš mě. (teď)",
-          "gap": "You ____ listening to me.",
-          "gap_answer": "are",
+          "gap": "You ____ to me.",
+          "gap_answer": "are listening",
+          "quiz_options": [
+            "are listening",
+            "listen",
+            "listening",
+            "are listen"
+          ],
           "accepts": [
             "You are listening to me.",
             "You're listening to me."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "you → **are listening**. **are** + **-ing**.",
+          "explanation_cz": "you → **are listening**. **are** + **-ing**."
         },
         {
-          "en": "I am not working now.",
-          "cz": "Teď nepracuji.",
-          "gap": "I ____ working now.",
-          "gap_answer": "am not",
-          "gap_accepts": [
-            "'m not",
-            "am not"
+          "en": "He is drinking coffee.",
+          "cz": "On pije kávu. (teď)",
+          "gap": "He ____ coffee.",
+          "gap_answer": "is drinking",
+          "quiz_options": [
+            "is drinking",
+            "drinks",
+            "drinking",
+            "is drink"
           ],
           "accepts": [
-            "I am not working now.",
-            "I'm not working now."
+            "He is drinking coffee.",
+            "He's drinking coffee."
           ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
-        },
-        {
-          "en": "She is not sleeping.",
-          "cz": "Ona nespí. (teď)",
-          "gap": "She ____ sleeping.",
-          "gap_answer": "isn't",
-          "gap_accepts": [
-            "is not",
-            "isn't"
-          ],
-          "accepts": [
-            "She isn't sleeping.",
-            "She is not sleeping.",
-            "She's not sleeping."
-          ],
-          "explanation": "is + not → isn't.",
-          "explanation_cz": "is + not → isn't."
-        },
-        {
-          "en": "He isn't working today.",
-          "cz": "On dnes nepracuje. (teď / dnes)",
-          "gap": "He ____ working today.",
-          "gap_answer": "isn't",
-          "gap_accepts": [
-            "is not",
-            "isn't"
-          ],
-          "accepts": [
-            "He isn't working today.",
-            "He is not working today.",
-            "He's not working today."
-          ],
-          "explanation": "is + not → isn't.",
-          "explanation_cz": "is + not → isn't."
-        },
-        {
-          "en": "We aren't watching TV.",
-          "cz": "Nedíváme se na televizi. (teď)",
-          "gap": "We ____ watching TV.",
-          "gap_answer": "aren't",
-          "gap_accepts": [
-            "are not",
-            "aren't"
-          ],
-          "accepts": [
-            "We aren't watching TV.",
-            "We are not watching TV.",
-            "We're not watching TV.",
-            "We aren't watching television.",
-            "We are not watching television."
-          ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
-        },
-        {
-          "en": "They aren't playing.",
-          "cz": "Nehrají. (teď)",
-          "gap": "They ____ playing.",
-          "gap_answer": "aren't",
-          "gap_accepts": [
-            "are not",
-            "aren't"
-          ],
-          "accepts": [
-            "They aren't playing.",
-            "They are not playing.",
-            "They're not playing."
-          ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
-        },
-        {
-          "en": "Are you working?",
-          "cz": "Pracuješ? (teď)",
-          "gap": "____ you working?",
-          "gap_answer": "Are",
-          "accepts": [
-            "Are you working?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "Is she cooking?",
-          "cz": "Vaří? (ona · teď)",
-          "gap": "____ she cooking?",
-          "gap_answer": "Is",
-          "accepts": [
-            "Is she cooking?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "Is he sleeping?",
-          "cz": "Spí on? (teď)",
-          "gap": "____ he sleeping?",
-          "gap_answer": "Is",
-          "accepts": [
-            "Is he sleeping?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "Are they waiting?",
-          "cz": "Čekají? (teď)",
-          "gap": "____ they waiting?",
-          "gap_answer": "Are",
-          "accepts": [
-            "Are they waiting?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "What are you doing?",
-          "cz": "Co děláš? (teď)",
-          "gap": "What ____ you doing?",
-          "gap_answer": "are",
-          "accepts": [
-            "What are you doing?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "Where is she going?",
-          "cz": "Kam jde? (ona · teď)",
-          "gap": "Where ____ she going?",
-          "gap_answer": "is",
-          "accepts": [
-            "Where is she going?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "he → **is drinking**. **is** + **-ing**.",
+          "explanation_cz": "he → **is drinking**. **is** + **-ing**."
         },
         {
           "en": "I am sitting at home.",
           "cz": "Sedím doma. (teď)",
-          "gap": "I am ____ at home.",
-          "gap_answer": "sitting",
+          "gap": "I ____ at home.",
+          "gap_answer": "am sitting",
+          "quiz_options": [
+            "am sitting",
+            "am siting",
+            "sit",
+            "sitting"
+          ],
           "accepts": [
             "I am sitting at home.",
             "I'm sitting at home."
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "explanation": "sit → **sitting** (double t). I **am sitting**.",
+          "explanation_cz": "sit → **sitting** (zdvojené t). I **am sitting**."
+        },
+        {
+          "en": "We are having lunch now.",
+          "cz": "Teď obědváme.",
+          "gap": "We ____ lunch now.",
+          "gap_answer": "are having",
+          "gap_accepts": [
+            "are eating"
+          ],
+          "quiz_options": [
+            "are having",
+            "have",
+            "having",
+            "are haveing"
+          ],
+          "accepts": [
+            "We are having lunch now.",
+            "We're having lunch now.",
+            "We are eating lunch now.",
+            "We're eating lunch now."
+          ],
+          "explanation": "have lunch is an action: **are having**. **are eating** is also fine.",
+          "explanation_cz": "have lunch je činnost: **are having**. **are eating** taky jde."
         },
         {
           "en": "She is talking to Tom.",
-          "cz": "Mluví s Tomem. (ona · teď)",
-          "gap": "She is ____ to Tom.",
-          "gap_answer": "talking",
+          "cz": "Ona mluví s Tomem. (teď)",
+          "gap": "She ____ to Tom.",
+          "gap_answer": "is talking",
+          "gap_accepts": [
+            "is speaking"
+          ],
+          "quiz_options": [
+            "is talking",
+            "talks",
+            "talking",
+            "is talk"
+          ],
           "accepts": [
             "She is talking to Tom.",
             "She's talking to Tom.",
@@ -323,401 +249,706 @@
             "She is speaking with Tom.",
             "She's speaking with Tom."
           ],
-          "gap_accepts": [
-            "talking",
-            "speaking"
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "explanation": "she → **is talking**. **is** + **-ing**.",
+          "explanation_cz": "she → **is talking**. **is** + **-ing**."
         },
         {
-          "en": "We are having lunch now.",
-          "cz": "Teď obědváme.",
-          "gap": "We are ____ lunch now.",
-          "gap_answer": "having",
-          "accepts": [
-            "We are having lunch now.",
-            "We're having lunch now."
+          "en": "She is writing an email.",
+          "cz": "Ona píše e-mail. (teď)",
+          "use": false,
+          "gap": "She ____ an email.",
+          "gap_answer": "is writing",
+          "quiz_options": [
+            "is writing",
+            "is writeing",
+            "writes",
+            "writing"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "She is writing an email.",
+            "She's writing an email.",
+            "She is writing an e-mail.",
+            "She's writing an e-mail."
+          ],
+          "explanation": "write → **writing** (drop e). she **is writing**.",
+          "explanation_cz": "write → **writing** (bez e). she **is writing**."
+        },
+        {
+          "en": "He is running in the park.",
+          "cz": "On běží v parku. (teď)",
+          "use": false,
+          "gap": "He ____ in the park.",
+          "gap_answer": "is running",
+          "quiz_options": [
+            "is running",
+            "is runing",
+            "runs",
+            "running"
+          ],
+          "accepts": [
+            "He is running in the park.",
+            "He's running in the park."
+          ],
+          "explanation": "run → **running** (double n). he **is running**.",
+          "explanation_cz": "run → **running** (zdvojené n). he **is running**."
         },
         {
           "en": "I am waiting for the bus.",
           "cz": "Čekám na autobus. (teď)",
-          "gap": "I ____ waiting for the bus.",
-          "gap_answer": "am",
+          "use": false,
+          "gap": "I ____ for the bus.",
+          "gap_answer": "am waiting",
+          "quiz_options": [
+            "am waiting",
+            "wait",
+            "waiting",
+            "am wait"
+          ],
           "accepts": [
             "I am waiting for the bus.",
             "I'm waiting for the bus."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "I → **am waiting**. **am** + **-ing**.",
+          "explanation_cz": "I → **am waiting**. **am** + **-ing**."
+        },
+        {
+          "en": "They are having dinner now.",
+          "cz": "Teď večeří.",
+          "use": false,
+          "gap": "They ____ dinner now.",
+          "gap_answer": "are having",
+          "gap_accepts": [
+            "are eating"
+          ],
+          "quiz_options": [
+            "are having",
+            "have",
+            "having",
+            "are haveing"
+          ],
+          "accepts": [
+            "They are having dinner now.",
+            "They're having dinner now.",
+            "They are eating dinner now.",
+            "They're eating dinner now."
+          ],
+          "explanation": "have dinner is an action: **are having**. **are eating** is also fine.",
+          "explanation_cz": "have dinner je činnost: **are having**. **are eating** taky jde."
         },
         {
           "en": "She is wearing a blue coat.",
-          "cz": "Má na sobě modrý kabát. (ona · teď)",
-          "gap": "She ____ wearing a blue coat.",
-          "gap_answer": "is",
+          "cz": "Ona má na sobě modrý kabát. (teď)",
+          "use": false,
+          "gap": "She ____ a blue coat.",
+          "gap_answer": "is wearing",
+          "quiz_options": [
+            "is wearing",
+            "wears",
+            "wearing",
+            "is wear"
+          ],
           "accepts": [
             "She is wearing a blue coat.",
             "She's wearing a blue coat."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "He is drinking coffee.",
-          "cz": "Pije kávu. (on · teď)",
-          "gap": "He is ____ coffee.",
-          "gap_answer": "drinking",
-          "accepts": [
-            "He is drinking coffee.",
-            "He's drinking coffee."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "explanation": "she → **is wearing**. **is** + **-ing**.",
+          "explanation_cz": "she → **is wearing**. **is** + **-ing**."
         },
         {
           "en": "We are learning English.",
           "cz": "Učíme se angličtinu. (teď)",
-          "gap": "We are ____ English.",
-          "gap_answer": "learning",
+          "use": false,
+          "gap": "We ____ English.",
+          "gap_answer": "are learning",
+          "quiz_options": [
+            "are learning",
+            "learn",
+            "learning",
+            "are learn"
+          ],
           "accepts": [
             "We are learning English.",
             "We're learning English."
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "explanation": "we → **are learning**. **are** + **-ing**.",
+          "explanation_cz": "we → **are learning**. **are** + **-ing**."
         },
         {
           "en": "They are building a house.",
           "cz": "Staví dům. (teď)",
-          "gap": "They ____ building a house.",
-          "gap_answer": "are",
+          "use": false,
+          "gap": "They ____ a house.",
+          "gap_answer": "are building",
+          "quiz_options": [
+            "are building",
+            "build",
+            "building",
+            "are build"
+          ],
           "accepts": [
             "They are building a house.",
             "They're building a house."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "they → **are building**. **are** + **-ing**.",
+          "explanation_cz": "they → **are building**. **are** + **-ing**."
         },
         {
           "en": "The baby is crying.",
           "cz": "Dítě pláče. (teď)",
-          "gap": "The baby ____ crying.",
-          "gap_answer": "is",
+          "use": false,
+          "gap": "The baby ____.",
+          "gap_answer": "is crying",
+          "quiz_options": [
+            "is crying",
+            "cries",
+            "crying",
+            "is cry"
+          ],
           "accepts": [
             "The baby is crying.",
             "The baby's crying."
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "the baby → **is crying**. **is** + **-ing**.",
+          "explanation_cz": "the baby → **is crying**. **is** + **-ing**."
+        },
+        {
+          "en": "The sun is shining.",
+          "cz": "Slunce svítí.",
+          "use": false,
+          "gap": "The sun ____.",
+          "gap_answer": "is shining",
+          "quiz_options": [
+            "is shining",
+            "shines",
+            "shining",
+            "is shine"
+          ],
+          "accepts": [
+            "The sun is shining.",
+            "The sun's shining."
+          ],
+          "explanation": "the sun → **is shining**. **is** + **-ing**.",
+          "explanation_cz": "the sun → **is shining**. **is** + **-ing**."
+        },
+        {
+          "en": "Look! The train is leaving.",
+          "cz": "Koukni! Vlak odjíždí.",
+          "use": false,
+          "gap": "Look! The train ____.",
+          "gap_answer": "is leaving",
+          "quiz_options": [
+            "is leaving",
+            "leaves",
+            "leaving",
+            "is leave"
+          ],
+          "accepts": [
+            "Look! The train is leaving.",
+            "Look! The train's leaving."
+          ],
+          "explanation": "Look! → now. the train **is leaving**.",
+          "explanation_cz": "Look! → teď. the train **is leaving**."
+        },
+        {
+          "en": "Please be quiet. I am thinking.",
+          "cz": "Prosím buď zticha. Přemýšlím.",
+          "use": false,
+          "gap": "Please be quiet. I ____.",
+          "gap_answer": "am thinking",
+          "quiz_options": [
+            "am thinking",
+            "think",
+            "thinking",
+            "am think"
+          ],
+          "accepts": [
+            "Please be quiet. I am thinking.",
+            "Please be quiet. I'm thinking."
+          ],
+          "explanation": "I → **am thinking** (this action now). Not *think* here.",
+          "explanation_cz": "I → **am thinking** (tahle činnost teď). Tady ne *think*."
+        },
+        {
+          "en": "I am trying to open the door.",
+          "cz": "Snažím se otevřít dveře.",
+          "use": false,
+          "gap": "I ____ to open the door.",
+          "gap_answer": "am trying",
+          "quiz_options": [
+            "am trying",
+            "try",
+            "trying",
+            "am try"
+          ],
+          "accepts": [
+            "I am trying to open the door.",
+            "I'm trying to open the door."
+          ],
+          "explanation": "I → **am trying**. **am** + **-ing**.",
+          "explanation_cz": "I → **am trying**. **am** + **-ing**."
+        },
+        {
+          "en": "I am not working now.",
+          "cz": "Teď nepracuji.",
+          "gap": "I ____ now. (no)",
+          "gap_answer": "am not working",
+          "quiz_options": [
+            "am not working",
+            "don't work",
+            "am not work",
+            "not working"
+          ],
+          "accepts": [
+            "I am not working now.",
+            "I'm not working now."
+          ],
+          "explanation": "I → **am not working**. **be** + not + **-ing**. Not *don't work* now.",
+          "explanation_cz": "I → **am not working**. **be** + not + **-ing**. Teď ne *don't work*."
+        },
+        {
+          "en": "She isn't sleeping.",
+          "cz": "Ona nespí. (teď)",
+          "gap": "She ____. (no)",
+          "gap_answer": "isn't sleeping",
+          "gap_accepts": [
+            "is not sleeping"
+          ],
+          "quiz_options": [
+            "isn't sleeping",
+            "doesn't sleep",
+            "isn't sleep",
+            "not sleeping"
+          ],
+          "accepts": [
+            "She isn't sleeping.",
+            "She is not sleeping.",
+            "She's not sleeping."
+          ],
+          "explanation": "she → **isn't sleeping**. **isn't** + **-ing**. Not *doesn't sleep* now.",
+          "explanation_cz": "she → **isn't sleeping**. **isn't** + **-ing**. Teď ne *doesn't sleep*."
+        },
+        {
+          "en": "He isn't working today.",
+          "cz": "On dnes nepracuje.",
+          "use": false,
+          "gap": "He ____ today. (no)",
+          "gap_answer": "isn't working",
+          "gap_accepts": [
+            "is not working"
+          ],
+          "quiz_options": [
+            "isn't working",
+            "doesn't work",
+            "isn't work",
+            "not working"
+          ],
+          "accepts": [
+            "He isn't working today.",
+            "He is not working today.",
+            "He's not working today."
+          ],
+          "explanation": "he → **isn't working**. **isn't** + **-ing**.",
+          "explanation_cz": "he → **isn't working**. **isn't** + **-ing**."
+        },
+        {
+          "en": "We aren't watching TV.",
+          "cz": "Nedíváme se na televizi. (teď)",
+          "use": false,
+          "gap": "We ____ TV. (no)",
+          "gap_answer": "aren't watching",
+          "gap_accepts": [
+            "are not watching"
+          ],
+          "quiz_options": [
+            "aren't watching",
+            "don't watch",
+            "aren't watch",
+            "not watching"
+          ],
+          "accepts": [
+            "We aren't watching TV.",
+            "We are not watching TV.",
+            "We're not watching TV.",
+            "We aren't watching television.",
+            "We are not watching television.",
+            "We're not watching television."
+          ],
+          "explanation": "we → **aren't watching**. **aren't** + **-ing**.",
+          "explanation_cz": "we → **aren't watching**. **aren't** + **-ing**."
+        },
+        {
+          "en": "They aren't playing.",
+          "cz": "Nehrají. (teď)",
+          "use": false,
+          "gap": "They ____. (no)",
+          "gap_answer": "aren't playing",
+          "gap_accepts": [
+            "are not playing"
+          ],
+          "quiz_options": [
+            "aren't playing",
+            "don't play",
+            "aren't play",
+            "not playing"
+          ],
+          "accepts": [
+            "They aren't playing.",
+            "They are not playing.",
+            "They're not playing."
+          ],
+          "explanation": "they → **aren't playing**. **aren't** + **-ing**.",
+          "explanation_cz": "they → **aren't playing**. **aren't** + **-ing**."
         },
         {
           "en": "I am not watching TV.",
           "cz": "Nedívám se na televizi. (teď)",
-          "gap": "I ____ watching TV.",
-          "gap_answer": "am not",
+          "use": false,
+          "gap": "I ____ TV. (no)",
+          "gap_answer": "am not watching",
+          "quiz_options": [
+            "am not watching",
+            "don't watch",
+            "am not watch",
+            "not watching"
+          ],
           "accepts": [
             "I am not watching TV.",
             "I'm not watching TV."
           ],
-          "gap_accepts": [
-            "'m not",
-            "am not"
-          ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
+          "explanation": "I → **am not watching**. **be** + not + **-ing**.",
+          "explanation_cz": "I → **am not watching**. **be** + not + **-ing**."
         },
         {
           "en": "She isn't listening to me.",
-          "cz": "Neposlouchá mě. (ona · teď)",
-          "gap": "She ____ listening to me.",
-          "gap_answer": "isn't",
+          "cz": "Ona mě neposlouchá. (teď)",
+          "use": false,
+          "gap": "She ____ to me. (no)",
+          "gap_answer": "isn't listening",
+          "gap_accepts": [
+            "is not listening"
+          ],
+          "quiz_options": [
+            "isn't listening",
+            "doesn't listen",
+            "isn't listen",
+            "not listening"
+          ],
           "accepts": [
             "She isn't listening to me.",
             "She is not listening to me.",
             "She's not listening to me."
           ],
-          "gap_accepts": [
-            "is not",
-            "isn't"
-          ],
-          "explanation": "is + not → isn't.",
-          "explanation_cz": "is + not → isn't."
+          "explanation": "she → **isn't listening**. **isn't** + **-ing**.",
+          "explanation_cz": "she → **isn't listening**. **isn't** + **-ing**."
         },
         {
-          "en": "We aren't going out tonight.",
-          "cz": "Dnes večer nechodíme ven. (plán teď)",
-          "gap": "We ____ going out tonight.",
-          "gap_answer": "aren't",
+          "en": "He isn't wearing a jacket.",
+          "cz": "On nemá na sobě bundu.",
+          "use": false,
+          "gap": "He ____ a jacket. (no)",
+          "gap_answer": "isn't wearing",
+          "gap_accepts": [
+            "is not wearing"
+          ],
+          "quiz_options": [
+            "isn't wearing",
+            "doesn't wear",
+            "isn't wear",
+            "not wearing"
+          ],
           "accepts": [
-            "We aren't going out tonight.",
-            "We are not going out tonight.",
-            "We're not going out tonight.",
-            "We aren't going out this evening.",
-            "We are not going out this evening.",
-            "We're not going out this evening."
+            "He isn't wearing a jacket.",
+            "He is not wearing a jacket.",
+            "He's not wearing a jacket."
           ],
-          "gap_accepts": [
-            "are not",
-            "aren't"
-          ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
+          "explanation": "he → **isn't wearing**. **isn't** + **-ing**.",
+          "explanation_cz": "he → **isn't wearing**. **isn't** + **-ing**."
         },
         {
-          "en": "Are they coming?",
-          "cz": "Přicházejí? (teď)",
-          "gap": "____ they coming?",
+          "en": "Are you working?",
+          "cz": "Pracuješ? (teď)",
+          "gap": "____ you working?",
           "gap_answer": "Are",
-          "accepts": [
-            "Are they coming?"
+          "quiz_options": [
+            "Are",
+            "Do",
+            "Is",
+            "Does"
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "accepts": [
+            "Are you working?"
+          ],
+          "explanation": "**Are** you working? Not *Do you working?* Move **be** first.",
+          "explanation_cz": "**Are** you working? Ne *Do you working?* **be** jde dopředu."
+        },
+        {
+          "en": "Is she cooking?",
+          "cz": "Vaří ona? (teď)",
+          "use": false,
+          "gap": "____ she cooking?",
+          "gap_answer": "Is",
+          "quiz_options": [
+            "Is",
+            "Does",
+            "Are",
+            "Do"
+          ],
+          "accepts": [
+            "Is she cooking?"
+          ],
+          "explanation": "**Is** she cooking? Not *Does she cooking?*",
+          "explanation_cz": "**Is** she cooking? Ne *Does she cooking?*"
+        },
+        {
+          "en": "Is he sleeping?",
+          "cz": "Spí on? (teď)",
+          "use": false,
+          "gap": "____ he sleeping?",
+          "gap_answer": "Is",
+          "quiz_options": [
+            "Is",
+            "Does",
+            "Are",
+            "Do"
+          ],
+          "accepts": [
+            "Is he sleeping?"
+          ],
+          "explanation": "**Is** he sleeping? Not *Does he sleeping?*",
+          "explanation_cz": "**Is** he sleeping? Ne *Does he sleeping?*"
+        },
+        {
+          "en": "Are they waiting?",
+          "cz": "Čekají? (teď)",
+          "use": false,
+          "gap": "____ they waiting?",
+          "gap_answer": "Are",
+          "quiz_options": [
+            "Are",
+            "Do",
+            "Is",
+            "Does"
+          ],
+          "accepts": [
+            "Are they waiting?"
+          ],
+          "explanation": "**Are** they waiting? Not *Do they waiting?*",
+          "explanation_cz": "**Are** they waiting? Ne *Do they waiting?*"
         },
         {
           "en": "Is it snowing?",
           "cz": "Sněží?",
+          "use": false,
           "gap": "____ it snowing?",
           "gap_answer": "Is",
+          "quiz_options": [
+            "Is",
+            "Does",
+            "Are",
+            "Do"
+          ],
           "accepts": [
             "Is it snowing?"
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "**Is** it snowing? Not *Does it snowing?*",
+          "explanation_cz": "**Is** it snowing? Ne *Does it snowing?*"
+        },
+        {
+          "en": "Are they coming?",
+          "cz": "Přicházejí? (teď)",
+          "use": false,
+          "gap": "____ they coming?",
+          "gap_answer": "Are",
+          "quiz_options": [
+            "Are",
+            "Do",
+            "Is",
+            "Does"
+          ],
+          "accepts": [
+            "Are they coming?"
+          ],
+          "explanation": "**Are** they coming? Not *Do they coming?*",
+          "explanation_cz": "**Are** they coming? Ne *Do they coming?*"
+        },
+        {
+          "en": "What are you doing?",
+          "cz": "Co děláš? (teď)",
+          "use": false,
+          "gap": "What ____ you doing?",
+          "gap_answer": "are",
+          "quiz_options": [
+            "are",
+            "do",
+            "is",
+            "does"
+          ],
+          "accepts": [
+            "What are you doing?"
+          ],
+          "explanation": "What **are** you doing? Not *What do you doing?*",
+          "explanation_cz": "What **are** you doing? Ne *What do you doing?*"
         },
         {
           "en": "What is he eating?",
           "cz": "Co jí? (teď)",
+          "use": false,
           "gap": "What ____ he eating?",
           "gap_answer": "is",
+          "quiz_options": [
+            "is",
+            "does",
+            "are",
+            "do"
+          ],
           "accepts": [
             "What is he eating?"
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "Why are you laughing?",
-          "cz": "Proč se směješ?",
-          "gap": "Why ____ you laughing?",
-          "gap_answer": "are",
-          "accepts": [
-            "Why are you laughing?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "explanation": "What **is** he eating? Not *What does he eating?*",
+          "explanation_cz": "What **is** he eating? Ne *What does he eating?*"
         },
         {
           "en": "Who is calling?",
           "cz": "Kdo volá? (teď)",
-          "gap": "Who ____ calling?",
-          "gap_answer": "is",
-          "accepts": [
-            "Who is calling?"
+          "use": false,
+          "gap": "Who ____?",
+          "gap_answer": "is calling",
+          "quiz_options": [
+            "is calling",
+            "calls",
+            "calling",
+            "does call"
           ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
+          "accepts": [
+            "Who is calling?",
+            "Who's calling?"
+          ],
+          "explanation": "Who **is calling**? **is** + **-ing**. Not *Who calls?* now.",
+          "explanation_cz": "Who **is calling**? **is** + **-ing**. Teď ne *Who calls?*"
         },
         {
           "en": "I am meeting Tom at five.",
-          "cz": "V pět se scházím s Tomem. (domluva)",
-          "gap": "I am ____ Tom at five.",
-          "gap_answer": "meeting",
+          "cz": "V pět se scházím s Tomem.",
+          "gap": "I ____ Tom at five.",
+          "gap_answer": "am meeting",
+          "quiz_options": [
+            "am meeting",
+            "meet",
+            "meeting",
+            "am meet"
+          ],
           "accepts": [
             "I am meeting Tom at five.",
             "I'm meeting Tom at five."
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "explanation": "A plan near now: **am meeting**. Still **be** + **-ing**.",
+          "explanation_cz": "Plán blízko teď: **am meeting**. Pořád **be** + **-ing**."
         },
         {
           "en": "She is staying with friends this week.",
-          "cz": "Tento týden bydlí u kamarádů. (ona)",
-          "gap": "She is ____ with friends this week.",
-          "gap_answer": "staying",
+          "cz": "Ona tento týden bydlí u kamarádů.",
+          "use": false,
+          "gap": "She ____ with friends this week.",
+          "gap_answer": "is staying",
+          "quiz_options": [
+            "is staying",
+            "stays",
+            "staying",
+            "is stay"
+          ],
           "accepts": [
             "She is staying with friends this week.",
             "She's staying with friends this week.",
             "She is staying with her friends this week.",
             "She's staying with her friends this week."
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "Look! The train is leaving.",
-          "cz": "Koukni! Vlak odjíždí.",
-          "gap": "Look! The train ____ leaving.",
-          "gap_answer": "is",
-          "accepts": [
-            "Look! The train is leaving.",
-            "Look! The train's leaving."
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "Please be quiet. I am thinking.",
-          "cz": "Prosím buď zticha. Přemýšlím.",
-          "gap": "Please be quiet. I ____ thinking.",
-          "gap_answer": "am",
-          "accepts": [
-            "Please be quiet. I am thinking.",
-            "Please be quiet. I'm thinking."
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "He is not wearing a jacket.",
-          "cz": "Nemá na sobě bundu (on).",
-          "gap": "He ____ wearing a jacket.",
-          "gap_answer": "isn't",
-          "accepts": [
-            "He isn't wearing a jacket.",
-            "He is not wearing a jacket.",
-            "He's not wearing a jacket."
-          ],
-          "gap_accepts": [
-            "is not",
-            "isn't"
-          ],
-          "explanation": "is + not → isn't.",
-          "explanation_cz": "is + not → isn't."
-        },
-        {
-          "en": "Are you using this chair?",
-          "cz": "Používáš tuhle židli? (teď)",
-          "gap": "____ you using this chair?",
-          "gap_answer": "Are",
-          "accepts": [
-            "Are you using this chair?"
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "I am trying to open the door.",
-          "cz": "Snažím se otevřít dveře.",
-          "gap": "I am ____ to open the door.",
-          "gap_answer": "trying",
-          "accepts": [
-            "I am trying to open the door.",
-            "I'm trying to open the door."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "They are having dinner now.",
-          "cz": "Teď večeří.",
-          "gap": "They are ____ dinner now.",
-          "gap_answer": "having",
-          "accepts": [
-            "They are having dinner now.",
-            "They're having dinner now."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "The sun is shining.",
-          "cz": "Slunce svítí.",
-          "gap": "The sun ____ shining.",
-          "gap_answer": "is",
-          "accepts": [
-            "The sun is shining.",
-            "The sun's shining."
-          ],
-          "explanation": "Present continuous helper: am/is/are + -ing.",
-          "explanation_cz": "Pomocné u přítomného průběhového: am/is/are + -ing."
-        },
-        {
-          "en": "We are not selling the car.",
-          "cz": "Neprodáváme to auto. (teď/plán)",
-          "gap": "We ____ selling the car.",
-          "gap_answer": "aren't",
-          "accepts": [
-            "We aren't selling the car.",
-            "We are not selling the car.",
-            "We're not selling the car."
-          ],
-          "gap_accepts": [
-            "are not",
-            "aren't"
-          ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
-        },
-        {
-          "en": "I understand the question now.",
-          "cz": "Té otázce teď rozumím.",
-          "gap": "I ____ the question now.",
-          "gap_answer": "understand",
-          "accepts": [
-            "I understand the question now."
-          ],
-          "explanation": "Present continuous: am/is/are + -ing (now / around now).",
-          "explanation_cz": "Přítomný průběhový: am/is/are + -ing (teď / kolem teď)."
-        },
-        {
-          "en": "She knows the answer.",
-          "cz": "Ona zná odpověď.",
-          "gap": "She ____ the answer.",
-          "gap_answer": "knows",
-          "accepts": [
-            "She knows the answer."
-          ],
-          "explanation": "Present continuous: am/is/are + -ing (now / around now).",
-          "explanation_cz": "Přítomný průběhový: am/is/are + -ing (teď / kolem teď)."
-        },
-        {
-          "en": "This phone belongs to me.",
-          "cz": "Ten telefon patří mně.",
-          "gap": "This phone ____ to me.",
-          "gap_answer": "belongs",
-          "accepts": [
-            "This phone belongs to me."
-          ],
-          "explanation": "Present continuous: am/is/are + -ing (now / around now).",
-          "explanation_cz": "Přítomný průběhový: am/is/are + -ing (teď / kolem teď)."
-        },
-        {
-          "en": "I want some tea.",
-          "cz": "Chci trochu čaje.",
-          "gap": "I ____ some tea.",
-          "gap_answer": "want",
-          "accepts": [
-            "I want some tea."
-          ],
-          "explanation": "Present continuous: am/is/are + -ing (now / around now).",
-          "explanation_cz": "Přítomný průběhový: am/is/are + -ing (teď / kolem teď)."
+          "explanation": "this week: **is staying**. Still **be** + **-ing**.",
+          "explanation_cz": "tento týden: **is staying**. Pořád **be** + **-ing**."
         },
         {
           "en": "He needs help now.",
-          "cz": "Teď potřebuje pomoc (on).",
+          "cz": "On teď potřebuje pomoc.",
           "gap": "He ____ help now.",
           "gap_answer": "needs",
+          "quiz_options": [
+            "needs",
+            "is needing",
+            "need",
+            "needing"
+          ],
           "accepts": [
             "He needs help now."
           ],
-          "explanation": "Present continuous: am/is/are + -ing (now / around now).",
-          "explanation_cz": "Přítomný průběhový: am/is/are + -ing (teď / kolem teď)."
+          "explanation": "**needs** is present simple. No **-ing**. Not *is needing*.",
+          "explanation_cz": "**needs** je přítomný prostý. Bez **-ing**. Ne *is needing*."
         },
         {
           "en": "We prefer tea to coffee.",
           "cz": "Preferujeme čaj před kávou.",
           "gap": "We ____ tea to coffee.",
           "gap_answer": "prefer",
+          "quiz_options": [
+            "prefer",
+            "are preferring",
+            "prefers",
+            "preferring"
+          ],
           "accepts": [
             "We prefer tea to coffee."
           ],
-          "explanation": "Present continuous: am/is/are + -ing (now / around now).",
-          "explanation_cz": "Přítomný průběhový: am/is/are + -ing (teď / kolem teď)."
+          "explanation": "**prefer** is present simple. No **-ing**. Not *are preferring*.",
+          "explanation_cz": "**prefer** je přítomný prostý. Bez **-ing**. Ne *are preferring*."
+        },
+        {
+          "en": "I want some tea.",
+          "cz": "Chci trochu čaje.",
+          "gap": "I ____ some tea.",
+          "gap_answer": "want",
+          "quiz_options": [
+            "want",
+            "am wanting",
+            "wants",
+            "wanting"
+          ],
+          "accepts": [
+            "I want some tea."
+          ],
+          "explanation": "**want** is present simple. No **-ing**. Not *am wanting*.",
+          "explanation_cz": "**want** je přítomný prostý. Bez **-ing**. Ne *am wanting*."
+        },
+        {
+          "en": "She knows the answer.",
+          "cz": "Ona zná odpověď.",
+          "gap": "She ____ the answer.",
+          "gap_answer": "knows",
+          "quiz_options": [
+            "knows",
+            "is knowing",
+            "know",
+            "knowing"
+          ],
+          "accepts": [
+            "She knows the answer."
+          ],
+          "explanation": "**knows** is present simple. No **-ing**. Not *is knowing*.",
+          "explanation_cz": "**knows** je přítomný prostý. Bez **-ing**. Ne *is knowing*."
+        },
+        {
+          "en": "I understand the question now.",
+          "cz": "Té otázce teď rozumím.",
+          "gap": "I ____ the question now.",
+          "gap_answer": "understand",
+          "quiz_options": [
+            "understand",
+            "am understanding",
+            "understands",
+            "understanding"
+          ],
+          "accepts": [
+            "I understand the question now."
+          ],
+          "explanation": "**understand** is present simple. No **-ing**. Not *am understanding*.",
+          "explanation_cz": "**understand** je přítomný prostý. Bez **-ing**. Ne *am understanding*."
         }
       ]
     }
@@ -726,105 +957,70 @@
     "cards": [
       {
         "title": "Present continuous",
-        "title_cz": "Přítomný průběhový — teď",
-        "table": {
-          "caption": "shape",
-          "headers": [
-            "Person",
-            "be",
-            "+ -ing"
-          ],
-          "rows": [
-            [
-              "I",
-              "am",
-              "working"
-            ],
-            [
-              "he / she / it",
-              "is",
-              "working"
-            ],
-            [
-              "you / we / they",
-              "are",
-              "working"
-            ]
-          ]
-        },
+        "title_cz": "Přítomný průběhový",
         "points": [
-          "I am working. · She is reading.",
-          "Not: I working. · Not: She working.",
-          "Use for now / around now. Form: be + verb-ing."
-        ]
-      },
-      {
-        "title": "Stative verbs",
-        "title_cz": "Stavová slovesa",
-        "points": [
-          "Some verbs stay present simple even with now"
+          "You know **I work** (every day).",
+          "This form is **now**.",
+          "Czech *pracuju* is both."
         ],
+        "svg": "<svg viewBox=\"0 0 520 190\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"40\" y1=\"88\" x2=\"490\" y2=\"88\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"490,88 480,83 480,93\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"150\" cy=\"88\" r=\"6\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"150\" y=\"58\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">every day</text>\n  <text x=\"150\" y=\"122\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I work</text>\n  <text x=\"150\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present simple</text>\n  <circle cx=\"370\" cy=\"88\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"370\" y=\"58\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <text x=\"370\" y=\"122\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I am working</text>\n  <text x=\"370\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present continuous</text>\n</svg>",
         "table": {
           "headers": [
-            "",
-            ""
+            "When",
+            "English"
           ],
           "rows": [
             [
-              "know, understand, want, need, prefer, belong… Not",
-              "I am understanding."
+              "every day",
+              "I work"
+            ],
+            [
+              "now",
+              "**am working**"
             ]
           ]
         }
       },
       {
-        "title": "Positive",
-        "title_cz": "Kladný tvar",
+        "title": "Form",
+        "title_cz": "Tvary",
+        "text_first": true,
+        "points": [
+          "**be** + **-ing**. Both pieces.",
+          "Not *I working*. Not *I am work*.",
+          "Short: **I'm** · **she's** · **we're**"
+        ],
         "table": {
-          "caption": "+",
           "headers": [
-            "EN",
-            "CZ idea"
+            "Person",
+            "now"
           ],
           "rows": [
             [
-              "I am working now.",
-              "Teď pracuji."
+              "I",
+              "**am working**"
             ],
             [
-              "She is reading.",
-              "Ona čte. (teď)"
+              "he / she / it",
+              "**is working**"
             ],
             [
-              "We are watching a film.",
-              "Díváme se na film."
-            ],
-            [
-              "It is raining.",
-              "Prší."
+              "you / we / they",
+              "**are working**"
             ]
           ]
-        },
-        "examples": [
-          {
-            "en": "He is cooking dinner.",
-            "cz": "On vaří večeři."
-          },
-          {
-            "en": "They are playing football.",
-            "cz": "Hrají fotbal."
-          }
-        ],
-        "points": [
-          "am / is / are + -ing",
-          "Short forms OK: I'm · she's · we're"
-        ]
+        }
       },
       {
         "title": "Spelling -ing",
         "title_cz": "Psaní -ing",
+        "text_first": true,
+        "points": [
+          "Most verbs: just add **-ing**.",
+          "Drop e: write → **writing**.",
+          "Short vowel: run → **running**."
+        ],
         "table": {
-          "caption": "common",
           "headers": [
             "Base",
             "-ing"
@@ -832,196 +1028,171 @@
           "rows": [
             [
               "work",
-              "working"
-            ],
-            [
-              "read",
-              "reading"
+              "**working**"
             ],
             [
               "write",
-              "writing (e drops)"
+              "**writing**"
             ],
             [
               "run",
-              "running (double n)"
+              "**running**"
             ],
             [
               "sit",
-              "sitting"
+              "**sitting**"
             ],
             [
               "have",
-              "having"
+              "**having**"
             ]
           ]
-        },
-        "points": [
-          "write → writing (drop e)",
-          "run → running (short vowel + one consonant → double)"
-        ]
+        }
       },
       {
         "title": "Negative",
         "title_cz": "Zápor",
+        "text_first": true,
+        "points": [
+          "**be** + not + **-ing**.",
+          "Not *don't working*."
+        ],
         "table": {
-          "caption": "−",
           "headers": [
             "Full",
             "Short"
           ],
           "rows": [
             [
-              "I am not working.",
-              "I'm not working."
+              "I am not working",
+              "**I'm not** working"
             ],
             [
-              "She is not sleeping.",
-              "She isn't / She's not…"
+              "She is not sleeping",
+              "She **isn't** sleeping"
             ],
             [
-              "We are not watching.",
-              "We aren't / We're not…"
+              "We are not watching",
+              "We **aren't** watching"
             ]
           ]
-        },
-        "examples": [
-          {
-            "en": "He isn't working today.",
-            "cz": "On dnes nepracuje."
-          },
-          {
-            "en": "They aren't playing.",
-            "cz": "Nehrají."
-          }
-        ],
-        "points": [
-          "be + not + -ing",
-          "isn't / aren't are fine"
-        ]
+        }
       },
       {
         "title": "Questions",
         "title_cz": "Otázky",
+        "text_first": true,
+        "points": [
+          "Move **be** before the person.",
+          "Not *Do you working?*"
+        ],
         "table": {
-          "caption": "?",
           "headers": [
             "Question",
             "Short answer"
           ],
           "rows": [
             [
-              "Are you working?",
-              "Yes, I am. / No, I'm not."
+              "**Are** you working?",
+              "Yes, I am."
             ],
             [
-              "Is she cooking?",
-              "Yes, she is. / No, she isn't."
+              "**Is** she cooking?",
+              "No, she isn't."
             ],
             [
-              "What are you doing?",
+              "What **are** you doing?",
               "—"
-            ],
-            [
-              "Where is she going?",
-              "—"
-            ]
-          ]
-        },
-        "points": [
-          "Are you…? · Is he/she…?",
-          "Not: Do you working?",
-          "Move be before the person."
-        ]
-      },
-      {
-        "title": "Now vs habits",
-        "title_cz": "Teď vs zvyk",
-        "table": {
-          "caption": "light contrast",
-          "headers": [
-            "Continuous (now)",
-            "Simple (habit)"
-          ],
-          "rows": [
-            [
-              "I am working now.",
-              "I work every day."
-            ],
-            [
-              "She is reading.",
-              "She reads a lot."
-            ],
-            [
-              "It is raining.",
-              "It rains a lot here."
-            ]
-          ]
-        },
-        "points": [
-          "now / look / at the moment → continuous",
-          "every day / usually → present simple (other pack)"
-        ]
-      },
-      {
-        "title": "Arrangements",
-        "title_cz": "Domluvené plány (light)",
-        "examples": [
-          {
-            "en": "I am meeting Tom at five.",
-            "cz": "V pět se scházím s Tomem."
-          },
-          {
-            "en": "She is staying with friends this week.",
-            "cz": "Tento týden bydlí u kamarádů."
-          }
-        ],
-        "points": [
-          "Still be + -ing form",
-          "Not full future system here",
-          "Present continuous can mean a fixed plan near now."
-        ],
-        "table": {
-          "headers": [
-            "Czech",
-            "English"
-          ],
-          "rows": [
-            [
-              "V pět se scházím s Tomem.",
-              "I am meeting Tom at five."
-            ],
-            [
-              "Tento týden bydlí u kamarádů.",
-              "She is staying with friends this week."
             ]
           ]
         }
       },
       {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "title": "Stative verbs",
+        "title_cz": "Stavová slovesa",
+        "text_first": true,
         "points": [
-          "be + -ing for now",
-          "I am · he/she/it is · you/we/they are"
+          "These stay present simple, even with now.",
+          "have lunch is an action — **-ing** is fine."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Verb",
+            "Now"
           ],
           "rows": [
             [
-              "−",
-              "isn't / aren't / I'm not"
+              "know / understand",
+              "**I know**"
             ],
             [
-              "?",
-              "Are you…? Is she…?"
+              "want / need / prefer",
+              "**I want** tea"
             ],
             [
-              "Not",
-              "I working · Not: Do you working?"
+              "belong",
+              "It **belongs** to me"
+            ],
+            [
+              "have lunch",
+              "We **are having** lunch"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Need **be** and **-ing**."
+        ],
+        "table": {
+          "headers": [
+            "Mistake",
+            "Say"
+          ],
+          "rows": [
+            [
+              "*I working*",
+              "I **am working**"
+            ],
+            [
+              "*I am work*",
+              "I **am working**"
+            ],
+            [
+              "*Do you working?*",
+              "**Are you working?**"
+            ],
+            [
+              "*I am understanding*",
+              "**I understand**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Plans near now",
+        "title_cz": "Domluvené plány",
+        "text_first": true,
+        "points": [
+          "Still **be** + **-ing**.",
+          "A fixed plan near now."
+        ],
+        "table": {
+          "headers": [
+            "Plan",
+            "Form"
+          ],
+          "rows": [
+            [
+              "at five",
+              "I **am meeting** Tom"
+            ],
+            [
+              "this week",
+              "She **is staying** here"
             ]
           ]
         }

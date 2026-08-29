@@ -14,14 +14,14 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**34 inspected · 0 approved · 26 unseen** of 60 live units
+**37 inspected · 0 approved · 23 unseen** of 60 live units
 
 Of the 2 cloud-authored units, **2 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 19 inspected / 0 approved / 20 units
+## A1 — 20 inspected / 0 approved / 20 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
@@ -29,7 +29,7 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [x][ ] `a1_can` — Can / can't · 24 items
 - [x][ ] `a1_frequency` — Frequency · 24 items
-- [ ][ ] `a1_imperatives` — Imperatives · 24 items · seen?
+- [x][ ] `a1_imperatives` — Imperatives · 22 items
 - [x][ ] `a1_like_want_need` — Like / want / need · 24 items
 - [x][ ] `a1_object_pronouns` — Object pronouns · 31 items
 - [x][ ] `a1_possessives` — Possessives · 24 items
@@ -44,7 +44,7 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 6 inspected / 0 approved / 16 units
+## A2 — 8 inspected / 0 approved / 16 units
 
 - [x][ ] `a2_modals_must_should` — Must / should · 46 items · **cloud** · seen?
 - [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
@@ -54,9 +54,9 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 24 items · seen?
 - [x][ ] `a2_first_conditional` — First conditional · 54 items · seen?
 - [ ][ ] `a2_past_continuous` — Past continuous · 48 items · seen?
-- [ ][ ] `a2_past_simple` — Past simple · 48 items · seen?
+- [x][ ] `a2_past_simple` — Past simple · 79 items
 - [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
-- [ ][ ] `a2_present_continuous` — Present continuous · 54 items · seen?
+- [x][ ] `a2_present_continuous` — Present continuous · 48 items
 - [ ][ ] `a2_present_perfect` — Present perfect · 48 items · seen?
 - [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items · seen?
 - [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 36 items
