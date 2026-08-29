@@ -361,7 +361,26 @@
    "codex_unit": "G_VP-A1B1-01",
    "note": "was/were + -ing · past in progress",
    "related": [
-    "a2_past_simple"
+    "a2_past_simple",
+    "a2_used_to"
+   ]
+  },
+  {
+   "id": "a2_used_to",
+   "label": "Used to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_used_to.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "past habit no longer true · moved from B1 2026-08-29 (James)",
+   "related": [
+    "a2_past_simple",
+    "a2_past_continuous",
+    "b2_be_get_used_to"
    ]
   },
   {
@@ -594,14 +613,15 @@
    "levels": [
     "B1"
    ],
-   "status": "live",
+   "status": "parked",
    "content": "blocks/b1_used_to.json",
    "codex_unit": "G_VP-B1B2-01",
    "related": [
+    "a2_used_to",
     "a2_past_simple",
     "b2_be_get_used_to"
    ],
-   "note": "past habit no longer true"
+   "note": "PARKED 2026-08-29 — live copy is a2_used_to. Do not edit."
   },
   {
    "id": "b1_passives",
@@ -1603,7 +1623,7 @@
    "content": "blocks/b2_be_get_used_to.json",
    "note": "Contrast with used to (past habit) · be/get used to + -ing/noun · thin shell 2026-08-06",
    "related": [
-    "b1_used_to",
+    "a2_used_to",
     "a2_past_simple"
    ],
    "codex_unit": "G_VP-B1B2-01"
@@ -1780,6 +1800,7 @@
   "a2_agreement",
   "a2_past_simple",
   "a2_past_continuous",
+  "a2_used_to",
   "a2_present_perfect",
   "a2_will_going_to",
   "a2_modals_must_should",
@@ -1795,7 +1816,6 @@
  ],
  "path_order_b1": [
   "b1_present_perfect_vs_past",
-  "b1_used_to",
   "b1_passives",
   "b1_modals_speculation",
   "b1_articles_advanced",

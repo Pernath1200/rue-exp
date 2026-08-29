@@ -1,11 +1,11 @@
 {
-  "id": "b1_used_to",
+  "id": "a2_used_to",
   "title": "Used to",
-  "level": "B1",
-  "tree_node": "b1_used_to",
-  "codex_unit": "G_VP-B1B2-01",
+  "level": "A2",
+  "tree_node": "a2_used_to",
+  "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "PARKED 2026-08-29 — live copy is a2_used_to. Do not edit. · past habit/state no longer true. · Bank 48 · good draft · RUE2 TRANSPLANT 2026-08-25.",
+  "note": "Past habit / state, not now. Moved from B1 2026-08-29 (James: used to is A2). After past continuous. Match off. Do not teach be used to here (B2).",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -15,8 +15,8 @@
   "quality": "good_draft",
   "blocks": [
     {
-      "id": "b1_used_to_main",
-      "title": "Used to · B1",
+      "id": "used_to_a2",
+      "title": "Used to · A2",
       "items": [
         {
           "en": "I used to live in Brno.",
@@ -85,12 +85,12 @@
           "explanation_cz": "used to + základ pro minulé zvyky."
         },
         {
-          "en": "I used to smoke.",
-          "cz": "Dřív jsem kouřil.",
-          "gap": "I ____ smoke.",
+          "en": "I used to cook.",
+          "cz": "Dřív jsem vařil.",
+          "gap": "I ____ cook.",
           "gap_answer": "used to",
           "accepts": [
-            "I used to smoke."
+            "I used to cook."
           ],
           "explanation": "used to + base verb for past habits.",
           "explanation_cz": "used to + základ pro minulé zvyky."
@@ -261,12 +261,12 @@
           "explanation_cz": "used to + základ pro minulé zvyky."
         },
         {
-          "en": "She used to smoke.",
-          "cz": "Dřív kouřila.",
-          "gap": "She ____ smoke.",
+          "en": "She used to cook.",
+          "cz": "Dřív vařila.",
+          "gap": "She ____ cook.",
           "gap_answer": "used to",
           "accepts": [
-            "She used to smoke."
+            "She used to cook."
           ],
           "explanation": "used to + base verb for past habits.",
           "explanation_cz": "used to + základ pro minulé zvyky."
@@ -349,12 +349,12 @@
           "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
         },
         {
-          "en": "Did you use to smoke?",
+          "en": "Did you use to cook?",
           "cz": "Kouřil jsi dřív?",
-          "gap": "____ you use to smoke?",
+          "gap": "____ you use to cook?",
           "gap_answer": "Did",
           "accepts": [
-            "Did you use to smoke?"
+            "Did you use to cook?"
           ],
           "explanation": "Past questions/negatives: did + base verb.",
           "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
@@ -467,13 +467,13 @@
           "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
         },
         {
-          "en": "He did not use to smoke.",
-          "cz": "Dřív nekouřil.",
-          "gap": "He ____ smoke. (not)",
+          "en": "He did not use to cook.",
+          "cz": "Dřív nevařil.",
+          "gap": "He ____ cook. (not)",
           "gap_answer": "did not use to",
           "accepts": [
-            "He did not use to smoke.",
-            "He didn't use to smoke."
+            "He did not use to cook.",
+            "He didn't use to cook."
           ],
           "gap_accepts": [
             "did not use to",
@@ -581,13 +581,13 @@
           "explanation_cz": "used to + základ pro minulé zvyky."
         },
         {
-          "en": "We did not use to have Wi‑Fi.",
-          "cz": "Nemívali jsme wi-fi.",
-          "gap": "We ____ have Wi‑Fi. (not)",
+          "en": "We did not use to have internet.",
+          "cz": "Nemívali jsme internet.",
+          "gap": "We ____ have internet. (not)",
           "gap_answer": "did not use to",
           "accepts": [
-            "We did not use to have Wi‑Fi.",
-            "We didn't use to have Wi‑Fi."
+            "We did not use to have internet.",
+            "We didn't use to have internet."
           ],
           "gap_accepts": [
             "did not use to",
@@ -602,52 +602,83 @@
   "intro": {
     "cards": [
       {
-        "title": "What it's for",
-        "title_cz": "K čemu je",
+        "title": "Used to",
+        "title_cz": "Dřív jsem…",
+        "points": [
+          "A **habit** in the past, not now.",
+          "Not **was playing** (that is one moment)."
+        ],
         "table": {
           "headers": [
-            "Job",
-            "Example"
+            "When",
+            "Say"
           ],
           "rows": [
             [
-              "past habit, not now",
-              "I used to play tennis."
+              "every day, not now",
+              "I **used to** play"
             ],
             [
-              "past state",
-              "I used to live in Brno."
+              "at six (one moment)",
+              "I **was playing**"
             ]
           ]
-        }
+        },
+        "tables": [
+          {
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~I was playing every day as a child~~",
+                "I **used to** play as a child"
+              ],
+              [
+                "~~I used to playing~~",
+                "I **used to** play"
+              ]
+            ]
+          }
+        ]
       },
       {
         "title": "Form",
         "title_cz": "Tvar",
+        "text_first": true,
+        "points": [
+          "**used to** + play / live / go.",
+          "Same form for I / you / he."
+        ],
         "table": {
           "headers": [
             "",
-            "Example"
+            "Say"
           ],
           "rows": [
             [
-              "used to + base",
-              "I used to play."
+              "+",
+              "I **used to** play"
             ],
             [
-              "did not use to",
-              "I did not use to play."
+              "−",
+              "I **didn't** use to play"
             ],
             [
-              "Did … use to …?",
-              "Did you use to play?"
+              "?",
+              "**Did** you use to play?"
             ]
           ]
         }
       },
       {
-        "title": "Contrast now",
-        "title_cz": "Kontrast teď",
+        "title": "Then and now",
+        "title_cz": "Dřív a teď",
+        "text_first": true,
+        "points": [
+          "**used to** = then, not now."
+        ],
         "table": {
           "headers": [
             "Then",
@@ -655,68 +686,12 @@
           ],
           "rows": [
             [
-              "I used to smoke",
+              "I **used to** live in Brno",
+              "I live in Prague now"
+            ],
+            [
+              "I **used to** play tennis",
               "I don't now"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Not the same",
-        "title_cz": "Není totéž",
-        "table": {
-          "headers": [
-            "Form",
-            "Meaning"
-          ],
-          "rows": [
-            [
-              "used to + base",
-              "past habit"
-            ],
-            [
-              "be used to + -ing",
-              "accustomed now"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "All persons",
-        "title_cz": "Osoby",
-        "table": {
-          "headers": [
-            "Person",
-            "Form"
-          ],
-          "rows": [
-            [
-              "I / you / he",
-              "used to play"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Gap focus",
-        "title_cz": "Nácvik",
-        "table": {
-          "headers": [
-            "You type",
-            "Meaning"
-          ],
-          "rows": [
-            [
-              "used to",
-              "affirmative"
-            ],
-            [
-              "did not use to",
-              "negative"
-            ],
-            [
-              "Did … use to",
-              "question"
             ]
           ]
         }

@@ -309,7 +309,8 @@ def lint_pack(uid):
                          "fakes3sg", "toparticle", "remember",
                          "articlegap", "theregap", "cancant", "a1meta",
                          "courseaside", "negdef", "smallwords", "mistakecol",
-                         "timesort", "aweek", "baddiagram", "notbullet")}
+                         "timesort", "aweek", "baddiagram", "notbullet",
+                         "verbcue")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -367,6 +368,19 @@ def lint_pack(uid):
                 and re.search(
                     r"\b(?:I|You|He|She|We|They|It)\s+_{2,}\s+[A-Za-z]", gap):
             f["cancant"].append(it)
+
+        # B11 — whole-VP Type/Quiz missing (lemma) when the stem doesn't name the verb
+        # a2_past_continuous 2026-08-29: You ____ when I called. → were sleeping.
+        # "should have verb needed in brackets"
+        ing = re.search(
+            r"\b(?:was|were|wasn't|weren't)\s+(\w+ing)\b", ga, re.I)
+        if ing and "(" not in gap and ing.group(1).lower() not in gap.lower():
+            after = re.split(r"_{2,}", gap, maxsplit=1)
+            rest = after[1] if len(after) > 1 else ""
+            if not re.search(
+                    r"\b(a|an|the|to|for|in|lunch|dinner|football|english)\b",
+                    rest, re.I):
+                f["verbcue"].append(it)
 
         # F3 — Use production uses a word the path has not taught  [EXACT]
         if it.get("use") is not False:
@@ -819,6 +833,7 @@ LABELS = [
     ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),
     ("theregap",    "EXACT  B8  there-is pack never gaps There — dummy subject untested"),
     ("cancant",     "EXACT  B8  a1_can statement gaps can/can't — Czech already picks the chip"),
+    ("verbcue",     "EXACT  B11 whole-VP gap has no (lemma) and the stem does not name the verb"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),

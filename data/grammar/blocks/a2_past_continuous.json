@@ -5,7 +5,7 @@
   "tree_node": "a2_past_continuous",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "was/were + -ing for past-in-progress. Gap on was/were or -ing. · Bank 48 items · flags: 2026-07-26 kids/talk/pc-cue · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Usual job: past continuous (background) interrupted by past simple. Gap the whole VP (B8). Questions Was/Were vs Did. Habits: past simple, not was playing. Match: 8 short when-pairs. · 2026-08-29 smoke.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -15,593 +15,847 @@
   },
   "blocks": [
     {
-      "id": "past_continuous_a2",
-      "title": "Past continuous · A2",
+      "id": "past_continuous_match",
+      "title": "Past continuous · match",
+      "check": {
+        "sequence": [
+          "match"
+        ]
+      },
       "items": [
         {
-          "en": "I was working at six.",
-          "cz": "V šest jsem pracoval.",
-          "gap": "I ____ working at six.",
-          "gap_answer": "was",
-          "accepts": [
-            "I was working at six."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "I was working when she called.",
+          "cz": "Zrovna jsem pracoval, když zavolala.",
+          "use": false
         },
         {
-          "en": "She was reading a book.",
-          "cz": "Četla knihu. (v tu chvíli) (ona).",
-          "gap": "She ____ reading a book.",
-          "gap_answer": "was",
-          "accepts": [
-            "She was reading a book."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "She was reading when I came.",
+          "cz": "Ona zrovna četla, když jsem přišel.",
+          "use": false
         },
         {
-          "en": "He was cooking dinner.",
-          "cz": "Vařil večeři. (v tu chvíli) (on).",
-          "gap": "He ____ cooking dinner.",
-          "gap_answer": "was",
-          "accepts": [
-            "He was cooking dinner."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "He was cooking when you called.",
+          "cz": "On zrovna vařil, když jsi volal.",
+          "use": false
         },
         {
-          "en": "We were watching a film.",
-          "cz": "Dívali jsme se na film.",
-          "gap": "We ____ watching a film.",
-          "gap_answer": "were",
-          "accepts": [
-            "We were watching a film.",
-            "We were watching a movie."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "He was sleeping when I came.",
+          "cz": "On zrovna spal, když jsem přišel.",
+          "use": false
         },
         {
-          "en": "They were playing football.",
-          "cz": "Hráli fotbal.",
-          "gap": "They ____ playing football.",
-          "gap_answer": "were",
-          "accepts": [
-            "They were playing football.",
-            "They were playing soccer."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "I was reading when he called.",
+          "cz": "Zrovna jsem četl, když zavolal.",
+          "use": false
         },
         {
-          "en": "It was raining.",
-          "cz": "Pršelo.",
-          "gap": "It ____ raining.",
-          "gap_answer": "was",
-          "accepts": [
-            "It was raining."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "She was cooking when I came.",
+          "cz": "Ona zrovna vařila, když jsem přišel.",
+          "use": false
         },
         {
-          "en": "You were sleeping.",
-          "cz": "Spal jsi.",
-          "gap": "You ____ sleeping.",
-          "gap_answer": "were",
-          "accepts": [
-            "You were sleeping."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "en": "You were sleeping when I called.",
+          "cz": "Zrovna jsi spal, když jsem volal.",
+          "use": false
         },
         {
-          "en": "I was studying English.",
-          "cz": "Učil jsem se angličtinu.",
-          "gap": "I was ____ English.",
-          "gap_answer": "studying",
-          "accepts": [
-            "I was studying English."
+          "en": "I wasn't working when she called.",
+          "cz": "Zrovna jsem nepracoval, když zavolala.",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "past_continuous_a2",
+      "title": "Past continuous · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I was working when she came.",
+          "cz": "Zrovna jsem pracoval, když přišla.",
+          "gap": "I ____ when she came. (work)",
+          "gap_answer": "was working",
+          "quiz_options": [
+            "was working",
+            "worked",
+            "working",
+            "was work"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "I was working when she came."
+          ],
+          "explanation": "**was working** is the background. **came** finished.",
+          "explanation_cz": "**was working** je pozadí. **came** to přerušilo."
         },
         {
-          "en": "She was writing an email.",
-          "cz": "Psala e-mail. (ona · právě tehdy)",
-          "gap": "She was ____ an email.",
-          "gap_answer": "writing",
-          "accepts": [
-            "She was writing an email.",
-            "She was writing an e-mail."
+          "en": "She was reading when I came.",
+          "cz": "Ona zrovna četla, když jsem přišel.",
+          "gap": "She ____ when I came. (read)",
+          "gap_answer": "was reading",
+          "quiz_options": [
+            "was reading",
+            "read",
+            "reading",
+            "was read"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "She was reading when I came."
+          ],
+          "explanation": "**was reading** is the background. **came** finished.",
+          "explanation_cz": "**was reading** je pozadí. **came** to přerušilo."
         },
         {
-          "en": "He was running in the park.",
-          "cz": "Běžel v parku (on).",
-          "gap": "He was ____ in the park.",
-          "gap_answer": "running",
-          "accepts": [
-            "He was running in the park."
+          "en": "He was cooking when you came.",
+          "cz": "On zrovna vařil, když jsi přišel.",
+          "gap": "He ____ when you came. (cook)",
+          "gap_answer": "was cooking",
+          "quiz_options": [
+            "was cooking",
+            "cooked",
+            "cooking",
+            "was cook"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "He was cooking when you came."
+          ],
+          "explanation": "**was cooking** is the background. **came** finished.",
+          "explanation_cz": "**was cooking** je pozadí. **came** to přerušilo."
         },
         {
-          "en": "I wasn't working yesterday at five.",
-          "cz": "Včera v pět jsem nepracoval.",
-          "gap": "I ____ working yesterday at five.",
-          "gap_answer": "wasn't",
-          "accepts": [
-            "I wasn't working yesterday at five.",
-            "I was not working yesterday at five."
+          "en": "We were watching a film when she came.",
+          "cz": "Dívali jsme se na film, když přišla.",
+          "gap": "We ____ a film when she came.",
+          "gap_answer": "were watching",
+          "quiz_options": [
+            "were watching",
+            "watched",
+            "watching",
+            "were watch"
           ],
+          "accepts": [
+            "We were watching a film when she came.",
+            "We were watching a movie when she came."
+          ],
+          "explanation": "**were watching** is the background. **came** finished.",
+          "explanation_cz": "**were watching** je pozadí. **came** to přerušilo."
+        },
+        {
+          "en": "They were playing football when I came.",
+          "cz": "Zrovna hráli fotbal, když jsem přišel.",
+          "gap": "They ____ football when I came.",
+          "gap_answer": "were playing",
+          "quiz_options": [
+            "were playing",
+            "played",
+            "playing",
+            "were play"
+          ],
+          "accepts": [
+            "They were playing football when I came.",
+            "They were playing soccer when I came."
+          ],
+          "explanation": "**were playing** is the background. **came** finished.",
+          "explanation_cz": "**were playing** je pozadí. **came** to přerušilo."
+        },
+        {
+          "en": "I wasn't working when she came.",
+          "cz": "Zrovna jsem nepracoval, když přišla.",
+          "gap": "I ____ when she came. (work)",
+          "gap_answer": "wasn't working",
+          "quiz_options": [
+            "wasn't working",
+            "didn't work",
+            "wasn't work",
+            "weren't working"
+          ],
+          "accepts": [
+            "I wasn't working when she came.",
+            "I was not working when she came."
+          ],
+          "explanation": "**wasn't working** is the background. **came** finished.",
+          "explanation_cz": "**wasn't working** je pozadí. **came** to přerušilo.",
           "gap_accepts": [
-            "was not",
-            "wasn't"
+            "was not working"
           ],
-          "explanation": "was + not → wasn't.",
-          "explanation_cz": "was + not → wasn't."
+          "use": false
         },
         {
-          "en": "She wasn't listening.",
-          "cz": "Neposlouchala (ona).",
-          "gap": "She ____ listening.",
-          "gap_answer": "wasn't",
+          "en": "She was sleeping when I came.",
+          "cz": "Ona zrovna spala, když jsem přišel.",
+          "gap": "She ____ when I came. (sleep)",
+          "gap_answer": "was sleeping",
+          "quiz_options": [
+            "was sleeping",
+            "slept",
+            "sleeping",
+            "was sleep"
+          ],
           "accepts": [
-            "She wasn't listening.",
-            "She was not listening."
+            "She was sleeping when I came."
           ],
-          "gap_accepts": [
-            "was not",
-            "wasn't"
-          ],
-          "explanation": "was + not → wasn't.",
-          "explanation_cz": "was + not → wasn't."
+          "explanation": "**was sleeping** is the background. **came** finished.",
+          "explanation_cz": "**was sleeping** je pozadí. **came** to přerušilo."
         },
         {
-          "en": "We weren't watching TV.",
-          "cz": "Nedívali jsme se na televizi.",
-          "gap": "We ____ watching TV.",
-          "gap_answer": "weren't",
-          "accepts": [
-            "We weren't watching TV.",
-            "We were not watching TV."
-          ],
-          "gap_accepts": [
-            "were not",
-            "weren't"
-          ],
-          "explanation": "were + not → weren't.",
-          "explanation_cz": "were + not → weren't."
-        },
-        {
-          "en": "They weren't playing.",
-          "cz": "Nehráli.",
-          "gap": "They ____ playing.",
-          "gap_answer": "weren't",
-          "accepts": [
-            "They weren't playing.",
-            "They were not playing."
-          ],
-          "gap_accepts": [
-            "were not",
-            "weren't"
-          ],
-          "explanation": "were + not → weren't.",
-          "explanation_cz": "were + not → weren't."
-        },
-        {
-          "en": "Were you working?",
-          "cz": "Pracoval jsi? (v tu chvíli)",
-          "gap": "____ you working?",
+          "en": "Were you working when she came?",
+          "cz": "Pracoval jsi, když přišla? (v tu chvíli)",
+          "gap": "____ you working when she came?",
           "gap_answer": "Were",
+          "quiz_options": [
+            "Were",
+            "Did",
+            "Was",
+            "Do"
+          ],
           "accepts": [
-            "Were you working?"
+            "Were you working when she came?"
           ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "Was she cooking?",
-          "cz": "Vařila?",
-          "gap": "____ she cooking?",
-          "gap_answer": "Was",
-          "accepts": [
-            "Was she cooking?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "Was he sleeping?",
-          "cz": "Spal?",
-          "gap": "____ he sleeping?",
-          "gap_answer": "Was",
-          "accepts": [
-            "Was he sleeping?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "Were they waiting?",
-          "cz": "Čekali?",
-          "gap": "____ they waiting?",
-          "gap_answer": "Were",
-          "accepts": [
-            "Were they waiting?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "What were you doing?",
-          "cz": "Co jsi dělal?",
-          "gap": "What ____ you doing?",
-          "gap_answer": "were",
-          "accepts": [
-            "What were you doing?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "Where was she going?",
-          "cz": "Kam šla? (v tu chvíli)",
-          "gap": "Where ____ she going?",
-          "gap_answer": "was",
-          "accepts": [
-            "Where was she going?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "I was sitting at home.",
-          "cz": "Seděl jsem doma.",
-          "gap": "I was ____ at home.",
-          "gap_answer": "sitting",
-          "accepts": [
-            "I was sitting at home."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "She was talking to Tom.",
-          "cz": "Mluvila s Tomem (ona).",
-          "gap": "She was ____ to Tom.",
-          "gap_answer": "talking",
-          "accepts": [
-            "She was talking to Tom.",
-            "She was speaking to Tom.",
-            "She was speaking with Tom.",
-            "She was talking with Tom."
-          ],
-          "gap_accepts": [
-            "talking",
-            "speaking"
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "We were having lunch.",
-          "cz": "Obědvali jsme.",
-          "gap": "We were ____ lunch.",
-          "gap_answer": "having",
-          "accepts": [
-            "We were having lunch."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "At 8 o'clock I was driving.",
-          "cz": "V osm jsem řídil.",
-          "gap": "At 8 o'clock I ____ driving.",
-          "gap_answer": "was",
-          "accepts": [
-            "At 8 o'clock I was driving."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "I was cleaning the flat.",
-          "cz": "Uklízel jsem byt. (v tu chvíli)",
-          "gap": "I ____ cleaning the flat.",
-          "gap_answer": "was",
-          "accepts": [
-            "I was cleaning the flat.",
-            "I was cleaning the apartment."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "She was shopping all afternoon.",
-          "cz": "Celé odpoledne nakupovala (ona).",
-          "gap": "She ____ shopping all afternoon.",
-          "gap_answer": "was",
-          "accepts": [
-            "She was shopping all afternoon."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "He was fixing his bike.",
-          "cz": "Opravoval kolo (on).",
-          "gap": "He was ____ his bike.",
-          "gap_answer": "fixing",
-          "accepts": [
-            "He was fixing his bike."
-          ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
-        },
-        {
-          "en": "We were waiting for a taxi.",
-          "cz": "Čekali jsme na taxi.",
-          "gap": "We ____ waiting for a taxi.",
-          "gap_answer": "were",
-          "accepts": [
-            "We were waiting for a taxi."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "They were arguing again.",
-          "cz": "Zase se hádali.",
-          "gap": "They ____ arguing again.",
-          "gap_answer": "were",
-          "accepts": [
-            "They were arguing again."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "It was getting dark.",
-          "cz": "Stmívalo se.",
-          "gap": "It ____ getting dark.",
-          "gap_answer": "was",
-          "accepts": [
-            "It was getting dark."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "I wasn't feeling well.",
-          "cz": "Necítil jsem se dobře.",
-          "gap": "I ____ feeling well.",
-          "gap_answer": "wasn't",
-          "accepts": [
-            "I wasn't feeling well.",
-            "I was not feeling well."
-          ],
-          "gap_accepts": [
-            "was not",
-            "wasn't"
-          ],
-          "explanation": "was + not → wasn't.",
-          "explanation_cz": "was + not → wasn't."
-        },
-        {
-          "en": "She wasn't wearing glasses.",
-          "cz": "Neměla brýle. (v tu chvíli) (ona).",
-          "gap": "She ____ wearing glasses.",
-          "gap_answer": "wasn't",
-          "accepts": [
-            "She wasn't wearing glasses.",
-            "She was not wearing glasses."
-          ],
-          "gap_accepts": [
-            "was not",
-            "wasn't"
-          ],
-          "explanation": "was + not → wasn't.",
-          "explanation_cz": "was + not → wasn't."
-        },
-        {
-          "en": "Were you listening to the radio?",
-          "cz": "Poslouchal jsi rádio?",
-          "gap": "____ you listening to the radio?",
-          "gap_answer": "Were",
-          "accepts": [
-            "Were you listening to the radio?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "Was it snowing when you left?",
-          "cz": "Sněžilo, když jsi odcházel?",
-          "gap": "____ it snowing when you left?",
-          "gap_answer": "Was",
-          "accepts": [
-            "Was it snowing when you left?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "What was he wearing?",
-          "cz": "Co měl na sobě?",
-          "gap": "What ____ he wearing?",
-          "gap_answer": "was",
-          "accepts": [
-            "What was he wearing?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "Why were they shouting?",
-          "cz": "Proč křičeli?",
-          "gap": "Why ____ they shouting?",
-          "gap_answer": "were",
-          "accepts": [
-            "Why were they shouting?"
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "At midnight I was still working.",
-          "cz": "O půlnoci jsem pořád pracoval.",
-          "gap": "At midnight I ____ still working.",
-          "gap_answer": "was",
-          "accepts": [
-            "At midnight I was still working."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
-        },
-        {
-          "en": "While she was cooking, I set the table.",
-          "cz": "Zatímco vařila, prostřel jsem stůl.",
-          "gap": "While she ____ cooking, I set the table.",
-          "gap_answer": "was",
-          "accepts": [
-            "While she was cooking, I set the table."
-          ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "explanation": "**Were** you working when she came? Not *Did you working?*",
+          "explanation_cz": "**Were** you working when she came? Ne *Did you working?*"
         },
         {
           "en": "I was walking home when it started to rain.",
           "cz": "Šel jsem domů, když začalo pršet.",
-          "gap": "I ____ walking home when it started to rain.",
-          "gap_answer": "was",
+          "gap": "I ____ home when it started to rain. (walk)",
+          "gap_answer": "was walking",
+          "quiz_options": [
+            "was walking",
+            "walked",
+            "walking",
+            "was walk"
+          ],
           "accepts": [
             "I was walking home when it started to rain."
           ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "explanation": "**was walking** is the background. **started** is past simple.",
+          "explanation_cz": "**was walking** je pozadí. **started** je minulý prostý.",
+          "use": false
         },
         {
-          "en": "They were playing cards all evening.",
-          "cz": "Celý večer hráli karty.",
-          "gap": "They were ____ cards all evening.",
-          "gap_answer": "playing",
-          "accepts": [
-            "They were playing cards all evening."
+          "en": "She was cooking when I came home.",
+          "cz": "Ona zrovna vařila, když jsem přišel domů.",
+          "gap": "She ____ when I came home. (cook)",
+          "gap_answer": "was cooking",
+          "quiz_options": [
+            "was cooking",
+            "cooked",
+            "cooking",
+            "was cook"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "She was cooking when I came home."
+          ],
+          "explanation": "**was cooking** is the background. **came** finished.",
+          "explanation_cz": "**was cooking** je pozadí. **came** to přerušilo."
         },
         {
-          "en": "He was driving too fast.",
-          "cz": "Jel příliš rychle (on).",
-          "gap": "He was ____ too fast.",
-          "gap_answer": "driving",
-          "accepts": [
-            "He was driving too fast."
+          "en": "He was sleeping when I came.",
+          "cz": "On zrovna spal, když jsem přišel.",
+          "gap": "He ____ when I came. (sleep)",
+          "gap_answer": "was sleeping",
+          "quiz_options": [
+            "was sleeping",
+            "slept",
+            "sleeping",
+            "was sleep"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "He was sleeping when I came."
+          ],
+          "explanation": "**was sleeping** is the background. **came** finished.",
+          "explanation_cz": "**was sleeping** je pozadí. **came** to přerušilo."
         },
         {
-          "en": "We weren't using the computer.",
-          "cz": "Nepoužívali jsme počítač.",
-          "gap": "We ____ using the computer.",
-          "gap_answer": "weren't",
-          "accepts": [
-            "We weren't using the computer.",
-            "We were not using the computer."
+          "en": "I was reading when he called.",
+          "cz": "Zrovna jsem četl, když zavolal.",
+          "gap": "I ____ when he called. (read)",
+          "gap_answer": "was reading",
+          "quiz_options": [
+            "was reading",
+            "read",
+            "reading",
+            "was read"
           ],
+          "accepts": [
+            "I was reading when he called."
+          ],
+          "explanation": "**was reading** is the background. **called** finished.",
+          "explanation_cz": "**was reading** je pozadí. **called** to přerušilo.",
+          "use": false
+        },
+        {
+          "en": "They were playing football when it started to rain.",
+          "cz": "Hráli fotbal, když začalo pršet.",
+          "gap": "They ____ football when it started to rain.",
+          "gap_answer": "were playing",
+          "quiz_options": [
+            "were playing",
+            "played",
+            "playing",
+            "were play"
+          ],
+          "accepts": [
+            "They were playing football when it started to rain.",
+            "They were playing soccer when it started to rain."
+          ],
+          "explanation": "**were playing** is the background. **started** is past simple.",
+          "explanation_cz": "**were playing** je pozadí. **started** je minulý prostý.",
+          "use": false
+        },
+        {
+          "en": "I was sitting at home when she called.",
+          "cz": "Seděl jsem doma, když zavolala.",
+          "gap": "I ____ at home when she called. (sit)",
+          "gap_answer": "was sitting",
+          "quiz_options": [
+            "was sitting",
+            "was siting",
+            "sat",
+            "sitting"
+          ],
+          "accepts": [
+            "I was sitting at home when she called."
+          ],
+          "explanation": "sit → **sitting**. **was sitting** is the background.",
+          "explanation_cz": "sit → **sitting**. **was sitting** je pozadí.",
+          "use": false
+        },
+        {
+          "en": "She was talking to Tom when I came.",
+          "cz": "Ona zrovna mluvila s Tomem, když jsem přišel.",
+          "gap": "She ____ to Tom when I came.",
+          "gap_answer": "was talking",
+          "quiz_options": [
+            "was talking",
+            "talked",
+            "talking",
+            "was talk"
+          ],
+          "accepts": [
+            "She was talking to Tom when I came.",
+            "She was speaking to Tom when I came.",
+            "She was talking with Tom when I came.",
+            "She was speaking with Tom when I came."
+          ],
+          "explanation": "**was talking** is the background. **came** finished.",
+          "explanation_cz": "**was talking** je pozadí. **came** to přerušilo.",
+          "use": false,
           "gap_accepts": [
-            "were not",
-            "weren't"
-          ],
-          "explanation": "were + not → weren't.",
-          "explanation_cz": "were + not → weren't."
+            "was speaking"
+          ]
         },
         {
-          "en": "Was anybody sitting here?",
-          "cz": "Seděl tady někdo?",
-          "gap": "____ anybody sitting here?",
+          "en": "You were sleeping when I came.",
+          "cz": "Zrovna jsi spal, když jsem přišel.",
+          "gap": "You ____ when I came. (sleep)",
+          "gap_answer": "were sleeping",
+          "quiz_options": [
+            "were sleeping",
+            "slept",
+            "sleeping",
+            "were sleep"
+          ],
+          "accepts": [
+            "You were sleeping when I came."
+          ],
+          "explanation": "**were sleeping** is the background. **came** finished.",
+          "explanation_cz": "**were sleeping** je pozadí. **came** to přerušilo."
+        },
+        {
+          "en": "We were having lunch when she called.",
+          "cz": "Zrovna jsme obědvali, když zavolala.",
+          "gap": "We ____ lunch when she called.",
+          "gap_answer": "were having",
+          "quiz_options": [
+            "were having",
+            "had",
+            "having",
+            "were haveing"
+          ],
+          "accepts": [
+            "We were having lunch when she called.",
+            "We were eating lunch when she called."
+          ],
+          "explanation": "**were having** is the background. **called** finished.",
+          "explanation_cz": "**were having** je pozadí. **called** to přerušilo.",
+          "use": false,
+          "gap_accepts": [
+            "were eating"
+          ]
+        },
+        {
+          "en": "I was studying English when he called.",
+          "cz": "Učil jsem se angličtinu, když zavolal.",
+          "gap": "I ____ English when he called.",
+          "gap_answer": "was studying",
+          "quiz_options": [
+            "was studying",
+            "studied",
+            "studying",
+            "was study"
+          ],
+          "accepts": [
+            "I was studying English when he called."
+          ],
+          "explanation": "**was studying** is the background. **called** finished.",
+          "explanation_cz": "**was studying** je pozadí. **called** to přerušilo.",
+          "use": false
+        },
+        {
+          "en": "She was writing an email when I called.",
+          "cz": "Ona zrovna psala e-mail, když jsem volal.",
+          "gap": "She ____ an email when I called.",
+          "gap_answer": "was writing",
+          "quiz_options": [
+            "was writing",
+            "was writeing",
+            "wrote",
+            "writing"
+          ],
+          "accepts": [
+            "She was writing an email when I called.",
+            "She was writing an e-mail when I called."
+          ],
+          "explanation": "write → **writing**. **was writing** is the background.",
+          "explanation_cz": "write → **writing**. **was writing** je pozadí.",
+          "use": false
+        },
+        {
+          "en": "He was running when it started to rain.",
+          "cz": "On zrovna běžel, když začalo pršet.",
+          "gap": "He ____ when it started to rain. (run)",
+          "gap_answer": "was running",
+          "quiz_options": [
+            "was running",
+            "was runing",
+            "ran",
+            "running"
+          ],
+          "accepts": [
+            "He was running when it started to rain."
+          ],
+          "explanation": "run → **running**. **was running** is the background.",
+          "explanation_cz": "run → **running**. **was running** je pozadí.",
+          "use": false
+        },
+        {
+          "en": "We were waiting for a bus when she called.",
+          "cz": "Čekali jsme na autobus, když zavolala.",
+          "gap": "We ____ for a bus when she called.",
+          "gap_answer": "were waiting",
+          "quiz_options": [
+            "were waiting",
+            "waited",
+            "waiting",
+            "were wait"
+          ],
+          "accepts": [
+            "We were waiting for a bus when she called."
+          ],
+          "explanation": "**were waiting** is the background. **called** finished.",
+          "explanation_cz": "**were waiting** je pozadí. **called** to přerušilo.",
+          "use": false
+        },
+        {
+          "en": "We were having lunch when he came.",
+          "cz": "Zrovna jsme obědvali, když přišel.",
+          "gap": "We ____ lunch when he came.",
+          "gap_answer": "were having",
+          "quiz_options": [
+            "were having",
+            "had",
+            "having",
+            "were haveing"
+          ],
+          "accepts": [
+            "We were having lunch when he came.",
+            "We were eating lunch when he came."
+          ],
+          "explanation": "**were having** is the background. **came** finished.",
+          "explanation_cz": "**were having** je pozadí. **came** to přerušilo.",
+          "gap_accepts": [
+            "were eating"
+          ]
+        },
+        {
+          "en": "They were waiting for a bus when I came.",
+          "cz": "Čekali na autobus, když jsem přišel.",
+          "gap": "They ____ for a bus when I came.",
+          "gap_answer": "were waiting",
+          "quiz_options": [
+            "were waiting",
+            "waited",
+            "waiting",
+            "were wait"
+          ],
+          "accepts": [
+            "They were waiting for a bus when I came."
+          ],
+          "explanation": "**were waiting** is the background. **came** finished.",
+          "explanation_cz": "**were waiting** je pozadí. **came** to přerušilo."
+        },
+        {
+          "en": "He was working when I called.",
+          "cz": "On zrovna pracoval, když jsem volal.",
+          "gap": "He ____ when I called. (work)",
+          "gap_answer": "was working",
+          "quiz_options": [
+            "was working",
+            "worked",
+            "working",
+            "was work"
+          ],
+          "accepts": [
+            "He was working when I called."
+          ],
+          "explanation": "**was working** is the background. **called** finished.",
+          "explanation_cz": "**was working** je pozadí. **called** to přerušilo.",
+          "use": false
+        },
+        {
+          "en": "Was she cooking when you came?",
+          "cz": "Vařila, když jsi přišel? (v tu chvíli)",
+          "gap": "____ she cooking when you came?",
           "gap_answer": "Was",
-          "accepts": [
-            "Was anybody sitting here?"
+          "quiz_options": [
+            "Was",
+            "Did",
+            "Were",
+            "Does"
           ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "accepts": [
+            "Was she cooking when you came?"
+          ],
+          "explanation": "**Was** she cooking when you came? Not *Did she cooking?*",
+          "explanation_cz": "**Was** she cooking when you came? Ne *Did she cooking?*",
+          "use": false
         },
         {
-          "en": "I was hoping for better news.",
-          "cz": "Doufal jsem v lepší zprávy.",
-          "gap": "I was ____ for better news.",
-          "gap_answer": "hoping",
-          "accepts": [
-            "I was hoping for better news."
+          "en": "What were you doing when she called?",
+          "cz": "Co jsi dělal, když zavolala? (v tu chvíli)",
+          "gap": "What ____ you doing when she called?",
+          "gap_answer": "were",
+          "quiz_options": [
+            "were",
+            "did",
+            "was",
+            "do"
           ],
-          "explanation": "Continuous form: verb + -ing.",
-          "explanation_cz": "Průběhový tvar: sloveso + -ing."
+          "accepts": [
+            "What were you doing when she called?"
+          ],
+          "explanation": "What **were** you doing when she called? Not *What did you doing?*",
+          "explanation_cz": "What **were** you doing when she called? Ne *What did you doing?*",
+          "use": false
         },
         {
-          "en": "She was teaching English in 2019.",
-          "cz": "V roce 2019 učila angličtinu (ona).",
-          "gap": "She ____ teaching English in 2019.",
+          "en": "Was it raining when you left?",
+          "cz": "Pršelo, když jsi odcházel?",
+          "gap": "____ it raining when you left?",
+          "gap_answer": "Was",
+          "quiz_options": [
+            "Was",
+            "Did",
+            "Were",
+            "Does"
+          ],
+          "accepts": [
+            "Was it raining when you left?"
+          ],
+          "explanation": "**Was** it raining when you left? The rain is the background.",
+          "explanation_cz": "**Was** it raining when you left? Déšť je pozadí.",
+          "use": false
+        },
+        {
+          "en": "Who were you talking to when I came?",
+          "cz": "S kým jsi mluvil, když jsem přišel? (v tu chvíli)",
+          "gap": "Who ____ you talking to when I came?",
+          "gap_answer": "were",
+          "quiz_options": [
+            "were",
+            "did",
+            "was",
+            "do"
+          ],
+          "accepts": [
+            "Who were you talking to when I came?",
+            "Who were you speaking to when I came?",
+            "Who were you talking with when I came?",
+            "Who were you speaking with when I came."
+          ],
+          "explanation": "Who **were** you talking to when I came? Not *Who did you talking to?*",
+          "explanation_cz": "Who **were** you talking to when I came? Ne *Who did you talking to?*",
+          "use": false
+        },
+        {
+          "en": "Where was she walking when you called?",
+          "cz": "Kam šla, když jsi volal? (v tu chvíli)",
+          "gap": "Where ____ she walking when you called?",
           "gap_answer": "was",
-          "accepts": [
-            "She was teaching English in 2019."
+          "quiz_options": [
+            "was",
+            "did",
+            "were",
+            "does"
           ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "accepts": [
+            "Where was she walking when you called?"
+          ],
+          "explanation": "Where **was** she walking when you called? Not *Where did she walking?*",
+          "explanation_cz": "Where **was** she walking when you called? Ne *Where did she walking?*",
+          "use": false
         },
         {
-          "en": "The kids were sleeping upstairs.",
-          "cz": "Děti spaly nahoře.",
-          "gap": "The kids ____ sleeping upstairs.",
-          "gap_answer": "were",
-          "accepts": [
-            "The kids were sleeping upstairs.",
-            "The children were sleeping upstairs.",
-            "The kids were sleeping.",
-            "The children were sleeping."
+          "en": "Was he sleeping when you called?",
+          "cz": "Spal, když jsi volal? (v tu chvíli)",
+          "gap": "____ he sleeping when you called?",
+          "gap_answer": "Was",
+          "quiz_options": [
+            "Was",
+            "Did",
+            "Were",
+            "Does"
           ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "accepts": [
+            "Was he sleeping when you called?"
+          ],
+          "explanation": "**Was** he sleeping when you called? Not *Did he sleeping?*",
+          "explanation_cz": "**Was** he sleeping when you called? Ne *Did he sleeping?*",
+          "use": false
         },
         {
-          "en": "I was not joking.",
-          "cz": "Nedělal jsem si legraci.",
-          "gap": "I ____ joking.",
-          "gap_answer": "wasn't",
-          "accepts": [
-            "I wasn't joking.",
-            "I was not joking."
+          "en": "Were they playing football when you came?",
+          "cz": "Hráli fotbal, když jsi přišel? (v tu chvíli)",
+          "gap": "____ they playing football when you came?",
+          "gap_answer": "Were",
+          "quiz_options": [
+            "Were",
+            "Did",
+            "Was",
+            "Do"
           ],
+          "accepts": [
+            "Were they playing football when you came?",
+            "Were they playing soccer when you came?"
+          ],
+          "explanation": "**Were** they playing football when you came? Not *Did they playing?*",
+          "explanation_cz": "**Were** they playing football when you came? Ne *Did they playing?*",
+          "use": false
+        },
+        {
+          "en": "I was cooking dinner when you called.",
+          "cz": "Zrovna jsem vařil večeři, když jsi volal.",
+          "gap": "I ____ dinner when you called.",
+          "gap_answer": "was cooking",
+          "quiz_options": [
+            "was cooking",
+            "cooked",
+            "cooking",
+            "was cook"
+          ],
+          "accepts": [
+            "I was cooking dinner when you called."
+          ],
+          "explanation": "**was cooking** is the background. **called** finished.",
+          "explanation_cz": "**was cooking** je pozadí. **called** to přerušilo.",
+          "use": false
+        },
+        {
+          "en": "She wasn't wearing a coat when I came.",
+          "cz": "Neměla na sobě kabát, když jsem přišel.",
+          "gap": "She ____ a coat when I came.",
+          "gap_answer": "wasn't wearing",
+          "quiz_options": [
+            "wasn't wearing",
+            "didn't wear",
+            "wasn't wear",
+            "weren't wearing"
+          ],
+          "accepts": [
+            "She wasn't wearing a coat when I came.",
+            "She was not wearing a coat when I came."
+          ],
+          "explanation": "**wasn't wearing** is the background. **came** finished.",
+          "explanation_cz": "**wasn't wearing** je pozadí. **came** to přerušilo.",
+          "use": false,
           "gap_accepts": [
-            "was not",
-            "wasn't"
-          ],
-          "explanation": "was + not → wasn't.",
-          "explanation_cz": "was + not → wasn't."
+            "was not wearing"
+          ]
         },
         {
-          "en": "Who were you talking to?",
-          "cz": "S kým jsi mluvil?",
-          "gap": "Who ____ you talking to?",
-          "gap_answer": "were",
-          "accepts": [
-            "Who were you talking to?",
-            "Who were you speaking to?",
-            "Who were you talking with?",
-            "Who were you speaking with?"
+          "en": "I was working at six.",
+          "cz": "V šest jsem zrovna pracoval.",
+          "gap": "I ____ at six. (work)",
+          "gap_answer": "was working",
+          "quiz_options": [
+            "was working",
+            "worked",
+            "working",
+            "was work"
           ],
-          "explanation": "Past continuous helper: was/were + -ing.",
-          "explanation_cz": "Pomocné u minulého průběhového: was/were + -ing."
+          "accepts": [
+            "I was working at six."
+          ],
+          "explanation": "At six, in progress: **was working**. Not *worked*.",
+          "explanation_cz": "V šest to běželo: **was working**. Ne *worked*.",
+          "use": false
+        },
+        {
+          "en": "It was raining.",
+          "cz": "Zrovna pršelo.",
+          "gap": "It ____. (rain)",
+          "gap_answer": "was raining",
+          "quiz_options": [
+            "was raining",
+            "rained",
+            "raining",
+            "was rain"
+          ],
+          "accepts": [
+            "It was raining."
+          ],
+          "explanation": "Weather then: **was raining**. Not *rained* here.",
+          "explanation_cz": "Počasí tehdy: **was raining**. Tady ne *rained*.",
+          "use": false
+        },
+        {
+          "en": "At eight I was driving.",
+          "cz": "V osm jsem zrovna řídil.",
+          "gap": "At eight I ____. (drive)",
+          "gap_answer": "was driving",
+          "quiz_options": [
+            "was driving",
+            "drove",
+            "driving",
+            "was drive"
+          ],
+          "accepts": [
+            "At eight I was driving.",
+            "At 8 I was driving.",
+            "At eight o'clock I was driving.",
+            "At 8 o'clock I was driving."
+          ],
+          "explanation": "At eight, in progress: **was driving**. Not *drove*.",
+          "explanation_cz": "V osm to běželo: **was driving**. Ne *drove*.",
+          "use": false
+        },
+        {
+          "en": "I played football every day.",
+          "cz": "Každý den jsem hrál fotbal.",
+          "gap": "I ____ football every day.",
+          "gap_answer": "played",
+          "quiz_options": [
+            "played",
+            "was playing",
+            "playing",
+            "was play"
+          ],
+          "accepts": [
+            "I played football every day.",
+            "I used to play football every day.",
+            "I played soccer every day.",
+            "I used to play soccer every day."
+          ],
+          "explanation": "every day as a habit → **played**. Not **was playing**.",
+          "explanation_cz": "každý den jako zvyk → **played**. Ne **was playing**.",
+          "use": false,
+          "gap_accepts": [
+            "used to play"
+          ]
+        },
+        {
+          "en": "She walked to school every day.",
+          "cz": "Každý den chodila do školy.",
+          "gap": "She ____ to school every day.",
+          "gap_answer": "walked",
+          "quiz_options": [
+            "walked",
+            "was walking",
+            "walking",
+            "was walk"
+          ],
+          "accepts": [
+            "She walked to school every day.",
+            "She used to walk to school every day."
+          ],
+          "explanation": "every day as a habit → **walked**. Not **was walking**.",
+          "explanation_cz": "každý den jako zvyk → **walked**. Ne **was walking**.",
+          "use": false,
+          "gap_accepts": [
+            "used to walk"
+          ]
+        },
+        {
+          "en": "We usually watched a film.",
+          "cz": "Obvykle jsme se dívali na film.",
+          "gap": "We usually ____ a film.",
+          "gap_answer": "watched",
+          "quiz_options": [
+            "watched",
+            "were watching",
+            "watching",
+            "were watch"
+          ],
+          "accepts": [
+            "We usually watched a film.",
+            "We used to watch a film.",
+            "We usually watched a movie.",
+            "We used to watch a movie."
+          ],
+          "explanation": "usually = a habit → **watched**. Not **were watching**.",
+          "explanation_cz": "obvykle = zvyk → **watched**. Ne **were watching**.",
+          "use": false,
+          "gap_accepts": [
+            "used to watch"
+          ]
+        },
+        {
+          "en": "He lived in Brno when he was young.",
+          "cz": "Když byl mladý, bydlel v Brně.",
+          "gap": "He ____ in Brno when he was young. (live)",
+          "gap_answer": "lived",
+          "quiz_options": [
+            "lived",
+            "was living",
+            "living",
+            "was live"
+          ],
+          "accepts": [
+            "He lived in Brno when he was young.",
+            "He used to live in Brno when he was young."
+          ],
+          "explanation": "when he was young = a habit/state → **lived**. Not **was living**.",
+          "explanation_cz": "když byl mladý = zvyk/stav → **lived**. Ne **was living**.",
+          "use": false,
+          "gap_accepts": [
+            "used to live"
+          ]
+        },
+        {
+          "en": "They went to school every day.",
+          "cz": "Každý den chodili do školy.",
+          "gap": "They ____ to school every day. (go)",
+          "gap_answer": "went",
+          "quiz_options": [
+            "went",
+            "were going",
+            "going",
+            "were go"
+          ],
+          "accepts": [
+            "They went to school every day.",
+            "They used to go to school every day."
+          ],
+          "explanation": "every day as a habit → **went**. Not **were going**.",
+          "explanation_cz": "každý den jako zvyk → **went**. Ne **were going**.",
+          "use": false,
+          "gap_accepts": [
+            "used to go"
+          ]
         }
       ]
     }
@@ -610,163 +864,245 @@
     "cards": [
       {
         "title": "Past continuous",
-        "title_cz": "Minulý průběhový — was/were + -ing",
+        "title_cz": "Minulý průběhový",
+        "points": [
+          "You know **I worked** (finished) and **I'm working** (now).",
+          "This form is **in progress** at a past time.",
+          "Usual job: **was walking** when something **started**."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 210\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"120\" x2=\"500\" y2=\"120\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,120 490,115 490,125\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"400\" y1=\"36\" x2=\"400\" y2=\"168\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"400\" y=\"28\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <text x=\"140\" y=\"28\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">yesterday</text>\n  <rect x=\"70\" y=\"72\" width=\"140\" height=\"22\" rx=\"11\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"140\" y=\"64\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I was working</text>\n  <text x=\"140\" y=\"112\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past continuous</text>\n  <circle cx=\"140\" cy=\"120\" r=\"8\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"140\" y=\"152\" font-size=\"14\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I worked</text>\n  <text x=\"140\" y=\"170\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple</text>\n  <rect x=\"360\" y=\"108\" width=\"80\" height=\"24\" rx=\"12\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"400\" y=\"188\" font-size=\"14\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I'm working</text>\n  <text x=\"400\" y=\"206\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present continuous</text>\n</svg>",
         "table": {
           "caption": "form",
           "headers": [
             "Person",
-            "be past",
-            "+ -ing"
+            "Past continuous"
           ],
           "rows": [
             [
               "I / he / she / it",
-              "was",
-              "working"
+              "**was working**"
             ],
             [
               "you / we / they",
-              "were",
-              "working"
+              "**were working**"
             ]
           ]
         },
-        "points": [
-          "I was working at six.",
-          "Not: I working · Not: I were working (for I)",
-          "In progress at a past moment. was/were + verb-ing."
+        "tables": [
+          {
+            "caption": "not",
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~I working~~",
+                "I **was working**"
+              ],
+              [
+                "~~I was work~~",
+                "I **was working**"
+              ],
+              [
+                "~~I were working~~",
+                "I **was working**"
+              ]
+            ]
+          }
         ]
       },
       {
-        "title": "Positive",
-        "title_cz": "Kladný tvar",
+        "title": "When",
+        "title_cz": "Když",
+        "text_first": true,
+        "points": [
+          "This is the usual job.",
+          "**was walking** when it **started**.",
+          "Past simple = the finished cut."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 170\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"80\" x2=\"500\" y2=\"80\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,80 490,75 490,85\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"430\" y1=\"28\" x2=\"430\" y2=\"120\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"430\" y=\"22\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">now</text>\n  <rect x=\"50\" y=\"68\" width=\"220\" height=\"24\" rx=\"12\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"160\" y=\"56\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I was walking</text>\n  <line x1=\"200\" y1=\"52\" x2=\"200\" y2=\"108\" stroke=\"var(--text, #eaeaea)\" stroke-width=\"2\"/>\n  <circle cx=\"200\" cy=\"80\" r=\"6\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"200\" y=\"128\" font-size=\"13\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">it started to rain</text>\n  <text x=\"200\" y=\"148\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple</text>\n</svg>",
         "table": {
-          "caption": "+",
           "headers": [
-            "EN",
-            "CZ"
+            "In progress",
+            "when + finished"
           ],
           "rows": [
             [
-              "I was working at six.",
-              "V šest jsem pracoval."
+              "I **was walking**",
+              "**when** it **started** to rain"
             ],
             [
-              "She was reading.",
-              "Četla. (v tu chvíli)"
+              "She **was cooking**",
+              "**when** I **came** home"
             ],
             [
-              "We were watching a film.",
-              "Dívali jsme se na film."
-            ],
-            [
-              "It was raining.",
-              "Pršelo."
+              "We **were watching**",
+              "**when** she **called**"
             ]
           ]
-        },
+        }
+      },
+      {
+        "title": "Spelling -ing",
+        "title_cz": "Psaní -ing",
+        "text_first": true,
         "points": [
-          "was / were + -ing",
-          "Same -ing spelling as present continuous"
-        ]
+          "Same **-ing** as present continuous.",
+          "Drop e: write → **writing**.",
+          "Short vowel: run → **running**."
+        ],
+        "table": {
+          "headers": [
+            "work / write / run",
+            "-ing"
+          ],
+          "rows": [
+            [
+              "work",
+              "**working**"
+            ],
+            [
+              "write",
+              "**writing**"
+            ],
+            [
+              "run",
+              "**running**"
+            ],
+            [
+              "sit",
+              "**sitting**"
+            ],
+            [
+              "have",
+              "**having**"
+            ]
+          ]
+        }
       },
       {
         "title": "Negative",
         "title_cz": "Zápor",
+        "text_first": true,
+        "points": [
+          "**wasn't** / **weren't** + **-ing**.",
+          "Not ~~didn't working~~."
+        ],
         "table": {
           "caption": "−",
           "headers": [
-            "Full",
-            "Short"
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "I was not working.",
-              "I wasn't working."
+              "~~I didn't working~~",
+              "I **wasn't working**"
             ],
             [
-              "We were not watching.",
-              "We weren't watching."
+              "~~She didn't listening~~",
+              "She **wasn't listening**"
+            ],
+            [
+              "~~We didn't watching~~",
+              "We **weren't watching**"
             ]
           ]
-        },
-        "points": [
-          "wasn't / weren't + -ing"
-        ]
+        }
       },
       {
         "title": "Questions",
         "title_cz": "Otázky",
+        "text_first": true,
+        "points": [
+          "**Was** / **Were** before the person.",
+          "Not ~~Did you working?~~"
+        ],
         "table": {
           "caption": "?",
           "headers": [
-            "Question"
+            "Question",
+            "Short answer"
           ],
           "rows": [
             [
-              "Were you working?"
+              "**Were** you working when she called?",
+              "Yes, I was."
             ],
             [
-              "Was she cooking?"
+              "**Was** she cooking when you came?",
+              "No, she wasn't."
             ],
             [
-              "What were you doing?"
+              "What **were** you doing when she called?",
+              "—"
             ]
           ]
-        },
-        "points": [
-          "Was / Were before the person",
-          "Not: Did you working?"
-        ]
+        }
       },
       {
-        "title": "When to use",
-        "title_cz": "Kdy použít",
+        "title": "Habits",
+        "title_cz": "Zvyky",
+        "text_first": true,
+        "points": [
+          "**every day** as a child → past simple.",
+          "**used to** is also a habit.",
+          "Not ~~I was playing every day as a child~~."
+        ],
         "table": {
-          "caption": "use",
           "headers": [
-            "Idea",
-            "Example"
+            "When",
+            "Say"
           ],
           "rows": [
             [
-              "at a past clock time",
-              "At 8 I was driving."
+              "as a child",
+              "I **played**"
             ],
             [
-              "background action",
-              "It was raining."
+              "**used to**",
+              "I **used to** play"
             ],
             [
-              "interrupted later (simple)",
-              "I was reading when… (next pack light)"
+              "when she called",
+              "I **was playing**"
             ]
           ]
-        },
-        "points": [
-          "Past moment in progress",
-          "Past simple = finished fact (other pack)"
-        ]
+        }
       },
       {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Need **was** / **were** and **-ing**."
+        ],
         "table": {
           "headers": [
-            "Remember"
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "I/he/she/it was + -ing"
+              "~~I working~~",
+              "I **was working**"
             ],
             [
-              "you/we/they were + -ing"
+              "~~I was work~~",
+              "I **was working**"
             ],
             [
-              "− wasn't / weren't"
+              "~~Did you working?~~",
+              "**Were** you working?"
             ],
             [
-              "? Was she…? Were you…?"
+              "~~I walked home when it started~~",
+              "I **was walking** when it **started**"
+            ],
+            [
+              "~~I was playing every day as a child~~",
+              "I **played** every day as a child"
             ]
           ]
         }

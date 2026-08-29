@@ -74,6 +74,7 @@
   "leaf_travel_a2",
   "a2_past_continuous",
   "leaf_freetime_a2",
+  "a2_used_to",
   "a2_present_perfect",
   "leaf_feelings_a2",
   "a2_will_going_to",
@@ -110,7 +111,6 @@
  ],
  "path_order_b1": [
   "b1_present_perfect_vs_past",
-  "b1_used_to",
   "trunk_core_b1",
   "b1_passives",
   "b1_modals_speculation",
@@ -258,6 +258,7 @@
    "a2_agreement",
    "a2_past_simple",
    "a2_past_continuous",
+   "a2_used_to",
    "a2_present_perfect",
    "a2_will_going_to",
    "a2_modals_must_should",
@@ -271,7 +272,6 @@
    "a2_verb_patterns",
    "a2_prepositions_movement",
    "b1_present_perfect_vs_past",
-   "b1_used_to",
    "b1_passives",
    "b1_modals_speculation",
    "b1_articles_advanced",
@@ -1484,7 +1484,8 @@
    "note": "was/were + -ing · past in progress",
    "partner_id": "leaf_freetime_a2",
    "related": [
-    "a2_past_simple"
+    "a2_past_simple",
+    "a2_used_to"
    ]
   },
   {
@@ -1503,6 +1504,28 @@
    "practice": "vocab",
    "note": "Live · A2 · V_THM-A1B1-09 · 3×12ish · Oxford fill",
    "partner_id": "a2_past_continuous"
+  },
+  {
+   "id": "a2_used_to",
+   "domain": "grammar",
+   "label": "Used to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a2_used_to.json",
+   "practice": "grammar",
+   "note": "past habit no longer true · moved from B1 2026-08-29 (James)",
+   "related": [
+    "a2_past_simple",
+    "a2_past_continuous",
+    "b2_be_get_used_to"
+   ]
   },
   {
    "id": "a2_present_perfect",
@@ -2141,12 +2164,13 @@
    "levels": [
     "B1"
    ],
-   "status": "live",
+   "status": "parked",
    "foundation": false,
    "content": "grammar/blocks/b1_used_to.json",
    "practice": "grammar",
-   "note": "past habit no longer true",
+   "note": "PARKED 2026-08-29 — live copy is a2_used_to. Do not edit.",
    "related": [
+    "a2_used_to",
     "a2_past_simple",
     "b2_be_get_used_to"
    ]
@@ -2747,7 +2771,7 @@
    "practice": "grammar",
    "note": "Contrast with used to (past habit) · be/get used to + -ing/noun · thin shell 2026-08-06",
    "related": [
-    "b1_used_to",
+    "a2_used_to",
     "a2_past_simple"
    ]
   },

@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**37 inspected · 0 approved · 23 unseen** of 60 live units
+**38 inspected · 0 approved · 22 unseen** of 60 live units
 
 Of the 2 cloud-authored units, **2 have any tick**.
 
@@ -44,26 +44,27 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 8 inspected / 0 approved / 16 units
+## A2 — 9 inspected / 0 approved / 17 units
 
 - [x][ ] `a2_modals_must_should` — Must / should · 46 items · **cloud** · seen?
-- [ ][ ] `a2_adverbs_order` — Adverb position · 50 items · seen?
+- [ ][ ] `a2_adverbs_order` — Adverb position · 43 items
 - [x][ ] `a2_agreement` — Subject–verb agreement (A2) · 27 items
 - [x][ ] `a2_comparatives` — Comparatives · 48 items · seen?
 - [x][ ] `a2_countable` — Countable and uncountable nouns · 32 items · seen?
-- [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 24 items · seen?
+- [ ][ ] `a2_ed_ing_adjectives` — -ed / -ing adjectives · 36 items
 - [x][ ] `a2_first_conditional` — First conditional · 54 items · seen?
-- [ ][ ] `a2_past_continuous` — Past continuous · 48 items · seen?
+- [x][ ] `a2_past_continuous` — Past continuous · 49 items
 - [x][ ] `a2_past_simple` — Past simple · 79 items
 - [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
 - [x][ ] `a2_present_continuous` — Present continuous · 48 items
-- [ ][ ] `a2_present_perfect` — Present perfect · 48 items · seen?
+- [ ][ ] `a2_present_perfect` — Present perfect · 55 items
 - [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items · seen?
-- [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 36 items
+- [ ][ ] `a2_some_any_no` — Some / any / no — the traps · 38 items
+- [ ][ ] `a2_used_to` — Used to · 48 items
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
-- [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
+- [ ][ ] `a2_will_going_to` — Will / going to · 36 items
 
-## B1 — 9 inspected / 0 approved / 17 units
+## B1 — 9 inspected / 0 approved / 16 units
 
 - [x][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [x][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 12 items
@@ -79,7 +80,6 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `b1_relative_clauses` — Relative clauses · 66 items · seen?
 - [ ][ ] `b1_reported_speech` — Reported speech · 54 items · seen?
 - [ ][ ] `b1_suffixes` — Suffixes — the basics · 72 items
-- [ ][ ] `b1_used_to` — Used to · 48 items · seen?
 - [x][ ] `b1_verb_patterns_advanced` — Verb patterns 2 · 56 items · seen?
 - [ ][ ] `b1_word_order_fronting` — Word order 2 · 36 items
 
