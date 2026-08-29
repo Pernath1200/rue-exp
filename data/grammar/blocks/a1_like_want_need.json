@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_like_want_need",
   "practice": "frames",
-  "note": "Verb + noun (and light want to). Gap on like/want/need forms. 3sg CZ always On/Ona or gendered form — Match has only one EN chip per row. · flags like/want intro: simple defs; natural examples · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Verb + noun (and light want to). Gap on like/want/need forms; want-to gaps to-V vs V, not the particle. 3sg CZ always On/Ona or gendered form. · 2026-08-29 smoke: C12 drop I likes; drop Remember teacher-speak; B8 to-V chips; B6 3sg form chips.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -25,6 +25,7 @@
           "accepts": [
             "I like coffee."
           ],
+          "quiz_options": ["like", "likes", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -36,6 +37,7 @@
           "accepts": [
             "She likes English."
           ],
+          "quiz_options": ["likes", "like", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -47,6 +49,7 @@
           "accepts": [
             "He likes tea."
           ],
+          "quiz_options": ["likes", "like", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -59,6 +62,7 @@
             "We like films.",
             "We like movies."
           ],
+          "quiz_options": ["like", "likes", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -70,17 +74,20 @@
           "accepts": [
             "They like music."
           ],
+          "quiz_options": ["like", "likes", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
         {
           "en": "You like pizza.",
-          "cz": "Máš rád pizzu. / Máš ráda pizzu.",
+          "cz": "Máš rád pizzu.",
+          "use": false,
           "gap": "You ____ pizza.",
           "gap_answer": "like",
           "accepts": [
             "You like pizza."
           ],
+          "quiz_options": ["like", "likes", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -93,6 +100,7 @@
             "I want a new phone.",
             "I want a new telephone."
           ],
+          "quiz_options": ["want", "wants", "wanting"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -104,6 +112,7 @@
           "accepts": [
             "He wants tea."
           ],
+          "quiz_options": ["wants", "want", "wanting"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -115,6 +124,7 @@
           "accepts": [
             "She wants coffee."
           ],
+          "quiz_options": ["wants", "want", "wanting"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -126,6 +136,7 @@
           "accepts": [
             "They want lunch."
           ],
+          "quiz_options": ["want", "wants", "wanting"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -137,6 +148,7 @@
           "accepts": [
             "We want water."
           ],
+          "quiz_options": ["want", "wants", "wanting"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -148,6 +160,7 @@
           "accepts": [
             "You want a bag."
           ],
+          "quiz_options": ["want", "wants", "wanting"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -159,6 +172,7 @@
           "accepts": [
             "I need help."
           ],
+          "quiz_options": ["need", "needs", "needing"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -170,6 +184,7 @@
           "accepts": [
             "She needs a bag."
           ],
+          "quiz_options": ["needs", "need", "needing"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -182,6 +197,7 @@
             "He needs a phone.",
             "He needs a telephone."
           ],
+          "quiz_options": ["needs", "need", "needing"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -193,17 +209,20 @@
           "accepts": [
             "We need time."
           ],
+          "quiz_options": ["need", "needs", "needing"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
         {
           "en": "They need money.",
           "cz": "Oni potřebují peníze.",
+          "use": false,
           "gap": "They ____ money.",
           "gap_answer": "need",
           "accepts": [
             "They need money."
           ],
+          "quiz_options": ["need", "needs", "needing"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
@@ -215,64 +234,74 @@
           "accepts": [
             "You need a ticket."
           ],
+          "quiz_options": ["need", "needs", "needing"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         },
         {
           "en": "I want to go home.",
           "cz": "Chci jít domů.",
-          "gap": "I want ____ go home.",
-          "gap_answer": "to",
+          "gap": "I want ____ home.",
+          "gap_answer": "to go",
           "accepts": [
             "I want to go home."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "quiz_options": ["to go", "go", "going"],
+          "explanation": "**want to** + verb: I **want to go** home, not *want go*.",
+          "explanation_cz": "**want to** + sloveso: I **want to go** home, ne *want go*."
         },
         {
           "en": "She wants to work.",
           "cz": "Ona chce pracovat.",
-          "gap": "She wants ____ work.",
-          "gap_answer": "to",
+          "gap": "She wants ____.",
+          "gap_answer": "to work",
           "accepts": [
             "She wants to work."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "quiz_options": ["to work", "work", "working"],
+          "explanation": "**wants to** + verb: She **wants to work**, not *wants work*.",
+          "explanation_cz": "**wants to** + sloveso: She **wants to work**, ne *wants work*."
         },
         {
           "en": "He wants to sleep.",
           "cz": "On chce spát.",
-          "gap": "He wants ____ sleep.",
-          "gap_answer": "to",
+          "gap": "He wants ____.",
+          "gap_answer": "to sleep",
           "accepts": [
             "He wants to sleep."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "quiz_options": ["to sleep", "sleep", "sleeping"],
+          "explanation": "**wants to** + verb: He **wants to sleep**, not *wants sleep*.",
+          "explanation_cz": "**wants to** + sloveso: He **wants to sleep**, ne *wants sleep*."
         },
         {
           "en": "We want to eat.",
           "cz": "Chceme jíst.",
-          "gap": "We want ____ eat.",
-          "gap_answer": "to",
+          "gap": "We want ____.",
+          "gap_answer": "to eat",
           "accepts": [
             "We want to eat."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "quiz_options": ["to eat", "eat", "eating"],
+          "explanation": "**want to** + verb: We **want to eat**, not *want eat*.",
+          "explanation_cz": "**want to** + sloveso: We **want to eat**, ne *want eat*."
         },
         {
           "en": "They want to learn English.",
-          "cz": "Oni chtějí studovat angličtinu. / Oni chtějí se učit anglicky.",
-          "gap": "They want ____ learn English.",
-          "gap_answer": "to",
+          "cz": "Oni chtějí studovat angličtinu.",
+          "use": false,
+          "gap": "They want ____ English.",
+          "gap_answer": "to learn",
+          "gap_accepts": [
+            "to study"
+          ],
           "accepts": [
             "They want to learn English.",
             "They want to study English."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "quiz_options": ["to learn", "learn", "learning"],
+          "explanation": "**want to** + verb: They **want to learn**, not *want learn*.",
+          "explanation_cz": "**want to** + sloveso: They **want to learn**, ne *want learn*."
         },
         {
           "en": "I like films.",
@@ -283,6 +312,7 @@
             "I like films.",
             "I like movies."
           ],
+          "quiz_options": ["like", "likes", "liking"],
           "explanation": "like / want / need + object (or to + verb).",
           "explanation_cz": "like / want / need + předmět (nebo to + sloveso)."
         }
@@ -303,17 +333,17 @@
           ],
           "rows": [
             [
-              "like",
+              "**like**",
               "mít rád / ráda",
               "feel good about it"
             ],
             [
-              "want",
+              "**want**",
               "chtít",
               "you would like to have it"
             ],
             [
-              "need",
+              "**need**",
               "potřebovat",
               "it is important for you"
             ]
@@ -321,15 +351,15 @@
         },
         "examples": [
           {
-            "en": "I like coffee.",
+            "en": "I **like** coffee.",
             "cz": "Mám rád kávu."
           },
           {
-            "en": "I want tea.",
+            "en": "I **want** tea.",
             "cz": "Chci čaj."
           },
           {
-            "en": "I need help.",
+            "en": "I **need** help.",
             "cz": "Potřebuju pomoc."
           }
         ],
@@ -349,32 +379,32 @@
           ],
           "rows": [
             [
-              "like",
-              "likes"
+              "**like**",
+              "**likes**"
             ],
             [
-              "want",
-              "wants"
+              "**want**",
+              "**wants**"
             ],
             [
-              "need",
-              "needs"
+              "**need**",
+              "**needs**"
             ]
           ]
         },
         "points": [
-          "I like · she likes",
-          "we want · he wants",
-          "they need · she needs",
+          "I **like** · she **likes**",
+          "we **want** · he **wants**",
+          "they **need** · she **needs**",
           "With he and she, add -s to the verb."
         ],
         "examples": [
           {
-            "en": "She likes English.",
+            "en": "She **likes** English.",
             "cz": "Ona má ráda angličtinu."
           },
           {
-            "en": "He wants tea.",
+            "en": "He **wants** tea.",
             "cz": "On chce čaj."
           }
         ]
@@ -390,27 +420,27 @@
           ],
           "rows": [
             [
-              "want to + verb",
-              "I want to go home."
+              "**want to** + verb",
+              "I **want to** go home."
             ],
             [
-              "wants to + verb",
-              "She wants to work."
+              "**wants to** + verb",
+              "She **wants to** work."
             ]
           ]
         },
         "points": [
-          "to sits between want and the next verb",
-          "After to use the base verb: go, work, eat — not goes",
-          "want to + verb = you wish to do something."
+          "**to** sits between want and the next verb",
+          "After **to** use the base verb: go, work, eat — not goes",
+          "**want to** + verb = you wish to do something."
         ],
         "examples": [
           {
-            "en": "I want to go home.",
+            "en": "I **want to** go home.",
             "cz": "Chci jít domů."
           },
           {
-            "en": "She wants to work.",
+            "en": "She **wants to** work.",
             "cz": "Ona chce pracovat."
           }
         ]
@@ -426,27 +456,27 @@
           ],
           "rows": [
             [
-              "I like coffee.",
+              "I **like** coffee.",
               "Mám rád kávu."
             ],
             [
-              "She likes films.",
+              "She **likes** films.",
               "Ona má ráda filmy."
             ],
             [
-              "We want some lunch.",
+              "We **want** some lunch.",
               "Chceme oběd."
             ],
             [
-              "He wants a phone.",
+              "He **wants** a phone.",
               "On chce telefon."
             ],
             [
-              "They need help.",
+              "They **need** help.",
               "Oni potřebují pomoc."
             ],
             [
-              "I want to sleep.",
+              "I **want to** sleep.",
               "Chci spát."
             ]
           ]
@@ -463,27 +493,26 @@
           ],
           "rows": [
             [
-              "I like coffee.",
-              "I likes coffee."
+              "She **likes** tea.",
+              "*She like tea.*"
             ],
             [
-              "She likes tea.",
-              "She like tea."
+              "He **wants** a bag.",
+              "*He want a bag.*"
             ],
             [
-              "He wants a bag.",
-              "He want a bag."
+              "She **needs** a bag.",
+              "*She need a bag.*"
             ],
             [
-              "I want to go home.",
-              "I want go home."
+              "I **want to** go home.",
+              "*I want go home.*"
             ]
           ]
         },
         "points": [
-          "I / you / we / they → no -s (like, want, need)",
-          "he / she / it → with -s (likes, wants, needs)",
-          "want to + verb — don't drop to"
+          "he / she / it → with -s (**likes**, **wants**, **needs**)",
+          "**want to** + verb — don't drop **to**"
         ]
       },
       {
@@ -498,59 +527,31 @@
           "rows": [
             [
               "I ____ coffee.",
-              "like"
+              "**like**"
             ],
             [
               "She ____ English.",
-              "likes"
-            ],
-            [
-              "I ____ help.",
-              "need"
+              "**likes**"
             ],
             [
               "He ____ a phone.",
-              "needs / wants"
+              "**needs**"
             ],
             [
-              "I want ____ go home.",
-              "to"
+              "I want ____ home.",
+              "**to go**"
+            ],
+            [
+              "She wants ____.",
+              "**to work**"
             ]
           ]
         },
         "points": [
           "Look at the person first: I/you/we/they vs he/she",
-          "want to… → gap is often to",
-          "In the gap, fill like / likes / want / wants / need / needs — or to after want."
+          "he / she takes **-s**: **likes**, **wants**, **needs**",
+          "**want to** + verb, not *want go*."
         ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "like / want / need + noun",
-          "want to + verb (I want to go)"
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "he / she",
-              "likes, wants, needs"
-            ],
-            [
-              "I / you / we / they",
-              "like, want, need (no -s)"
-            ],
-            [
-              "Not full grammar theory",
-              "just these frames"
-            ]
-          ]
-        }
       }
     ]
   }

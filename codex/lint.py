@@ -21,6 +21,10 @@ EXACT vs CANDIDATE. Checks marked EXACT are facts about the data — an item eit
 lists `it` or it does not. Checks marked CANDIDATE need James's judgement: English
 often forces `the`, and Czech perfectives are detected by a wordlist, not morphology.
 Candidates are for looking at, never for acting on unread.
+
+Weekend smoke-prep (2026-08-29) added D3 slash / teacher-note, F3 Use-leads,
+F2 Do/Does-in-Use before questions, C4 intro-not-in-bank, C11 Quiz word absent
+from intro, F4 unknown 's names. Still read-only. `/smoke-prep` runs this.
 """
 import json
 import re
@@ -138,6 +142,118 @@ def card_text(card):
     return " ".join(bits)
 
 
+# --- weekend smoke-prep (2026-08-29): D3 / F3 / C4 / C11 / F4 / F2 -------------
+# Read-only. Every check is a class found by playing a unit this weekend.
+
+FUNCTION = set(
+    """
+    i you he she it we they me him her us them
+    my your his our their mine yours hers ours theirs
+    a an the this that these those
+    am is are was were be been being
+    do does did doing done
+    have has had having
+    will would can could should must may might
+    not no yes please
+    to from in on at of for with by as than into
+    and but or so because if when
+    here there now then too very just also
+    what who where why how
+    one two three four five six seven eight nine ten eleven twelve
+    mr mrs
+    """.split()
+)
+
+CLASS_NAMES = {
+    "martin", "ondrej", "vaclav", "anna", "patrik", "tomas", "james", "martina",
+    "prague", "brno",
+}
+
+_TREE_IDX = None
+
+
+def tree_index():
+    global _TREE_IDX
+    if _TREE_IDX is None:
+        t = json.loads((ROOT / "data/tree.json").read_text(encoding="utf-8"))
+        nodes = t.get("nodes") or []
+        path = []
+        for k in (
+            "path_order",
+            "path_order_a2",
+            "path_order_b1",
+            "path_order_b2",
+            "path_order_c1",
+        ):
+            path.extend(t.get(k) or [])
+        _TREE_IDX = {
+            "path": path,
+            "by_id": {n["id"]: n for n in nodes if isinstance(n, dict) and n.get("id")},
+        }
+    return _TREE_IDX
+
+
+def pack_lexicon(rel):
+    """Content words in a pack at data/<rel>."""
+    if not rel:
+        return set()
+    p = ROOT / "data" / rel
+    if not p.exists():
+        return set()
+    d = json.loads(p.read_text(encoding="utf-8"))
+    out = set()
+    blocks = d.get("blocks") or []
+    items = []
+    for b in blocks:
+        items.extend(b.get("items") or [])
+    if not items:
+        items = d.get("items") or []
+    for it in items:
+        out.update(_words(it.get("en") or ""))
+        out.update(_words(it.get("gap_answer") or ""))
+    return out
+
+
+def taught_lexicon(uid, this_items):
+    """Partner + prior path + this unit's gap_answers + function words."""
+    idx = tree_index()
+    words = set(FUNCTION)
+    path = idx["path"]
+    by_id = idx["by_id"]
+    for nid in path:
+        if nid == uid:
+            break
+        n = by_id.get(nid)
+        if n:
+            words |= pack_lexicon(n.get("content"))
+    partner = (by_id.get(uid) or {}).get("partner_id")
+    if partner and partner in by_id:
+        words |= pack_lexicon(by_id[partner].get("content"))
+    for it in this_items:
+        words.update(_words(it.get("gap_answer") or ""))
+    return words
+
+
+def questions_already_taught(uid):
+    path = tree_index()["path"]
+    if uid not in path or "a1_questions_negatives" not in path:
+        return True
+    return path.index("a1_questions_negatives") < path.index(uid)
+
+
+def intro_cards(d):
+    intro = d.get("intro")
+    if isinstance(intro, list):
+        return intro
+    if isinstance(intro, dict):
+        return intro.get("cards") or []
+    return []
+
+
+def intro_blob(d):
+    return " ".join(card_text(c) for c in intro_cards(d) if isinstance(c, dict)).lower()
+
+
 def distinctive_words(uid, packs):
     """Words this unit uses that few other units use — its subject matter."""
     counts = collections.Counter()
@@ -182,7 +298,13 @@ def lint_pack(uid):
 
     f = {k: [] for k in ("ifwhen", "subject", "article", "contraction", "synonym",
                          "czfuture", "zeromark", "noopts", "onewording",
-                         "filler", "nopattern", "hardgloss", "badname", "vocablevel")}
+                         "filler", "nopattern", "hardgloss", "badname", "vocablevel",
+                         "slash", "teachernote", "uselead", "qlead",
+                         "introex", "quizextra", "hardname", "chunkword",
+                         "fakes3sg", "toparticle")}
+
+    taught = taught_lexicon(uid, items)
+    q_ok = questions_already_taught(uid)
 
     for it in items:
         acc = it.get("accepts") or []
@@ -197,6 +319,43 @@ def lint_pack(uid):
             continue
         if len(acc) == 1:
             f["onewording"].append(it)
+
+        # D3 — slash dumps two student-facing Czechs  [EXACT]
+        if " / " in cz:
+            f["slash"].append(it)
+
+        # D3 — teacher marks that rendered on Match/Use  [EXACT]
+        if re.search(r"(≈|→|\(as a |\(in general\)|desk ≈|povolání)", cz, re.I):
+            f["teachernote"].append(it)
+
+        # F4 — 's name the class does not already know  [EXACT]
+        for name in re.findall(r"\b([A-Z][a-z]+)'s\b", it.get("en") or ""):
+            if name.lower() not in CLASS_NAMES:
+                f["hardname"].append(it)
+                break
+
+        # F2 — Use produces Do/Does before the questions unit  [EXACT]
+        if it.get("use") is not False and not q_ok:
+            if re.match(r"^(do|does)\b", str(en), re.I):
+                f["qlead"].append(it)
+
+        # B8 — infinitive particle as the Quiz gap (want ____ work → to)  [EXACT]
+        gap = str(it.get("gap") or "")
+        if re.search(r"\bwant[s]?\s+_{2,}\s+\w", gap, re.I) \
+                and str(it.get("gap_answer") or "").strip().lower() == "to":
+            f["toparticle"].append(it)
+
+        # F3 — Use production uses a word the path has not taught  [EXACT]
+        if it.get("use") is not False:
+            leftover = [
+                w for w in _words(en)
+                if w not in taught and w not in FUNCTION and len(w) > 2
+            ]
+            if leftover:
+                f["uselead"].append({
+                    "cz": cz,
+                    "en": "%s  ·  leads: %s" % (en, ", ".join(leftover[:6])),
+                })
 
         # A1 — Czech `když` is both if and when  [EXACT]
         if uid not in UNREAL and not lenient_if_when:
@@ -295,6 +454,66 @@ def lint_pack(uid):
                                  str(row[0])[:22], "level %d" % easiest, w, l)})
                         break
 
+    # C4 — intro example sentence is not in this bank  [EXACT]
+    bank_en = set()
+    for it in items:
+        for s in [it.get("en"), *(it.get("accepts") or [])]:
+            bank_en.add(re.sub(r"[.!?]+$", "", str(s or "").lower().strip()))
+    for c in intro_cards(d):
+        blob = json.dumps(c, ensure_ascii=False)
+        for ex in re.findall(r"\*\*([^*]+)\*\*", blob):
+            s = re.sub(r"[.!?]+$", "", ex.strip().lower())
+            if " " in s and len(s.split()) >= 3 and s not in bank_en:
+                f["introex"].append({"cz": c.get("title", ""), "en": ex.strip()})
+
+    # C11 — Quiz teaching-words never named in intro  [EXACT]
+    # Skip form packs with many unique gap_answers (verbs, etc.).
+    ga = collections.Counter(
+        str(it.get("gap_answer") or "").strip().lower()
+        for it in items if it.get("gap_answer")
+    )
+    intro_l = intro_blob(d)
+    if 1 <= len(ga) <= 8 and intro_l:
+        for w, n in ga.items():
+            if n < 2 or not w or w in FUNCTION:
+                continue
+            if w not in intro_l:
+                f["quizextra"].append(
+                    {"cz": "%dx in bank, absent from intro" % n, "en": w}
+                )
+
+    # C15 — teacher-course word "chunk(s)" on an A1 card  [EXACT]
+    if str(d.get("level", "")).upper() == "A1":
+        for i, c in enumerate(intro_cards(d)):
+            cap = str((c.get("table") or {}).get("caption") or "")
+            heads = " ".join(str(h) for h in ((c.get("table") or {}).get("headers") or []))
+            blob = " ".join([
+                str(c.get("title") or ""),
+                str(c.get("title_cz") or ""),
+                cap, heads, card_text(c),
+            ])
+            if re.search(
+                    r"\bchunks?\b|grammar theory|just these frames|full grammar",
+                    blob, re.I):
+                f["chunkword"].append({
+                    "cz": "card %d · %s" % (i, c.get("title", "")),
+                    "en": "chunk/frames/grammar-theory is teacher-speak, not A1",
+                })
+
+    # C12 — invented I + -s on a common-mistakes card  [EXACT]
+    # James has never heard I works / I likes from Czech learners.
+    for i, c in enumerate(intro_cards(d)):
+        title = str(c.get("title") or "")
+        if not re.search(r"common mistakes", title, re.I):
+            continue
+        blob = card_text(c)
+        m = re.search(r"\bI\s+(likes|works|wants|needs|goes)\b", blob)
+        if m:
+            f["fakes3sg"].append({
+                "cz": "card %d · %s" % (i, title),
+                "en": "I %s — not a heard Czech-learner error" % m.group(1),
+            })
+
     # C4 — cards promise connectors the bank barely drills  [EXACT]
     cardtext = json.dumps(d.get("intro", {}), ensure_ascii=False).lower()
     promised = [c for c in CONNECTORS if c in cardtext]
@@ -374,6 +593,16 @@ def overlap_report(uid, top=3):
 
 
 LABELS = [
+    ("chunkword",   "EXACT  C15 A1 intro uses teacher-speak (chunk / frames / grammar theory)"),
+    ("fakes3sg",    "EXACT  C12 common-mistakes lists I+likes/works (not a heard error)"),
+    ("toparticle",  "EXACT  B8  Quiz gaps the particle to (want ____ work), not to-V vs V"),
+    ("slash",       "EXACT  D3  cz has two prompts joined with /"),
+    ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
+    ("uselead",     "EXACT  F3  Use item has words not yet taught (partner+prior+this)"),
+    ("qlead",       "EXACT  F2  Use starts with Do/Does before the questions unit"),
+    ("introex",     "EXACT  C4  intro example is not a sentence in this bank"),
+    ("quizextra",   "EXACT  C11 teaching-word in Quiz never named in intro"),
+    ("hardname",    "EXACT  F4  's name is not on the class list"),
     ("filler",      "EXACT      one explanation doing duty for many items"),
     ("badname",     "EXACT      title claims `advanced` below B2"),
     ("ifwhen",      "EXACT      accepts `If` but not `When` — Czech `když` is both"),
@@ -413,8 +642,8 @@ def report(r, brief=False):
         print("  [%d] %s" % (len(hits), label))
         if not brief:
             for it in hits[:6]:
-                cz = (it.get("cz") or "")[:48]
-                en = ((it.get("accepts") or [it.get("en", "")])[0])[:60]
+                cz = (it.get("cz") or "")[:56]
+                en = (it.get("en") or (it.get("accepts") or [""])[0])[:72]
                 print("        cz: %s" % cz)
                 print("        en: %s" % en)
             if len(hits) > 6:
