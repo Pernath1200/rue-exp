@@ -229,7 +229,8 @@ Shared rules:
   `py -X utf8 codex/verify_pack.py` (**0 errors**),
   `py -X utf8 codex/check_playable.py` (**0 errors**),
   `py -X utf8 codex/audit.py --check` (**ratchet: violations may never rise**), and
-  `py -X utf8 codex/check_codex.py` (**0 unknown tags**).
+  `py -X utf8 codex/check_codex.py` (**0 unknown tags · 0 new hang findings** —
+  known hangs live in `codex/hang-baseline.json`, which only ever shrinks).
 - **Pack shape is fixed**: content in `blocks[].items[]`; adapter builds the
   ladder. Never author `pack.match/quiz/type_items/use_items` directly.
 - **Pool before authoring** — `py -X utf8 codex/make_pool.py … --before <node>`.
