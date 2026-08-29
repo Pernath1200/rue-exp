@@ -37,9 +37,9 @@ Then dropdowns. Then change. Then James plays.
 
 | Stage | Look for |
 |--|--|
-| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form, not the sentence |
+| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form, not the sentence · C15 no *chunk* · C16 no hyponym-as-meaning |
 | **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. D3: no teacher notes in `cz`. |
-| **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · chips include the right answer · no untaught extras (C11) |
+| **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · chips include the right answer · no untaught extras (C11) |
 | **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
 | **Use** | F3: production may not lead. Partner + glue + this unit's words. A1 Czech is fine to smoke. Flag translation-only false-wrongs. |
 
@@ -81,8 +81,9 @@ Translate answers.
 | **B2** | Never borrow a sibling item's answer as a distractor in a FORM pack. Borrowing is right only where the point is *which word*. | 1,543 items across 54 units borrow. `b1_verb_patterns_advanced` offered no `-ing` option at all in a unit about `-ing`. | `confirmed` |
 | **B3** | Author `quiz_options` wherever the teaching point is form. The fallback cannot know the axis. | 47% of gap items have none. | `confirmed` |
 | **B4** | The unit's own target error must appear among the options. | `a2_comparatives` was extended for *more better* — and *more better* is never shown. | `observed` |
-| **B5** | A Match board needs distinct PROMPT tiles. Repeated labels on the ANSWER side are fine when prompts are distinct and grading is by instance (words → their classes works; James built and class-tested exactly that). The ban is on boards whose prompt tiles repeat — "one" five times is clicking, not matching. First version of this rule over-reached and briefly killed James's own labels board; scope it to the prompt side only. | `a1_word_classes`: one/more board (bad — identical prompts) vs labels board (good — distinct words, repeated classes), both smoked 2026-08-25. | `confirmed` |
+| **B5** | A Match board needs distinct PROMPT tiles. Repeated labels on the ANSWER side are fine when prompts are distinct and grading is by instance (words → their classes works; James built and class-tested exactly that). The ban is on boards whose prompt tiles repeat — "one" five times is clicking, not matching. First version of this rule over-reached and briefly killed James's own labels board; scope it to the prompt side only. A closed class is **one tile per word**, not doubled to fill twelve slots. | `a1_word_classes`: one/more board (bad — identical prompts) vs labels board (good — distinct words, repeated classes), both smoked 2026-08-25. `a1_question_words` 2026-08-29: who/what/where twice each — "just have them once". | `confirmed` |
 | **B6** | Options stay on the teaching axis. *anybody / somebody / nobody* tests the quantifier; *anyone / anywhere / anything* tests the stem. A form pack offers forms of THIS word, not sibling verbs. | `a2_quantifiers` 2026-08-26; `a1_present_simple` 2026-08-29: *I ____ in an office* offered work / live / like. | `confirmed` |
+| **B7** | Closed-class Quiz/Type is a **gapped sentence**, not a definition (`____ = person` / `time → ____`). Meaning pairing is Match. | `a1_question_words` 2026-08-29: flags 9–10. | `observed` |
 
 ---
 
@@ -102,8 +103,10 @@ Translate answers.
 | **C10** | **Every intro card has a table and/or a diagram.** `table.rows`, `diagram` (a key from `intro-visuals.js`), or inline `svg`. Points and example pairs may sit *with* the visual — they do not replace it. | 2026-08-28: 327 of 715 cards had neither. James: grammar only for now; A1–B1 first; put `body` into bullets and tables. | `enforced` for **A1–B1 grammar** — `verify_pack` intro-visual lint, ratcheted. Vocab and B2+ paused. |
 | **C11** | If Quiz tests a contrast, an intro card named it. No silent extras in the bank. | `b1_linkers` 2026-08-28: chips included *on the other hand* with no intro page. `a1_present_simple` 2026-08-29: don't/doesn't, goes/studies/watches, everybody in the bank, not in the cards. `a1_questions_negatives` 2026-08-29: be vs do, don't vs isn't. | `confirmed` |
 | **C12** | A "common mistakes" card lists only errors a Czech learner actually makes. Do not invent ones a teacher has never heard. | `a1_present_simple` 2026-08-29: *I works* — James has never heard it. Left *She work*, *I am work*, *He doesn't works*. `a1_questions_negatives` kept *You work here?*, *Are you live here?*, *I don't tired*, *Does she works?* | `observed` |
-| **C13** | In intro examples, bold the **taught form**, not the whole sentence. | `a1_questions_negatives` 2026-08-29: four flags — highlight *Do / Are / don't*, not *Do you work here?* | `observed` |
+| **C13** | In intro examples, bold the **taught form**, not the whole sentence. | `a1_questions_negatives` 2026-08-29: highlight *Do / Are / don't*, not *Do you work here?*. `a1_question_words` 2026-08-29: highlight *who*, not *Who is she?*. | `confirmed` |
 | **C14** | Card 0's title is the unit's name in English and Czech (`title` / `title_cz`). A nickname is not a name. | `a1_questions_negatives` 2026-08-29: *"2 systems"* / *"2 systémy"* — James: translation for *Questions & negatives*, and drop *2 systems*. Now *Otázky a zápor*. | `observed` |
+| **C15** | No ELT teacher-words on an A1 card. *chunk / chunks* is course jargon, not student English. | `a1_question_words` 2026-08-29: *"remove chunks: this is not a1 vocab, and it's teacher speak"*. | `observed` — lint `chunkword` |
+| **C16** | Don't list a hyponym as a second meaning. A job is a thing; `thing / job` is not two readings. | `a1_question_words` 2026-08-29: *what* glossed *thing / job*. Job stays on *What does he do?*. | `observed` |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
 already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`
@@ -125,6 +128,7 @@ over ~15 words, is an error. Vocab and B2+ are not in that count.
 | **D1** | An explanation must name THIS item's word and shape, and give the reason. A generic note is filler. | `b1_verb_patterns_advanced` had **9 distinct explanations for 56 items**; one string covered 23. `a2_quantifiers` pasted *"Quantifier: much/many/a lot of…"* on almost every item, including the any-compounds. | `confirmed` — lintable: count distinct explanations per pack |
 | **D2** | Explanations render automatically with the feedback, not behind a click. | Hidden behind "Why?", most students never read them. Reversed 2026-08-24 — which makes D1 urgent, since filler is now visible. | `confirmed` |
 | **D3** | `cz` is student-facing. No teacher notes, English asides, or editor leftovers in it. *(On — a man)*, *desk ≈ table*, *povolání → a/an* all rendered on Match and Use. Dual Czech with a slash is the same class of leftover. | `a1_possessives` 2026-08-29. `a1_frequency` 2026-08-29: *Vždycky piju kávu. / Vždy piju kávu.* and *Máš vždycky hodně práce? / Jsi vždycky zaneprázdněný?* — pick one. | `confirmed` |
+| **D4** | A gloss names what the word **asks for or points to**, not what the word is. *why = reason* is false (why is not a reason). *how = way* is too loose (*way* is a road, a habit, a gap). Write *asks for a reason* / *the way you do it*. | `a1_question_words` 2026-08-29: flags 7–8. | `observed` |
 
 ---
 
@@ -190,7 +194,7 @@ scaled today — but it fails in a specific and dangerous way.
 | **I6** | After Telegram `<unit_id> tested`: capture new rules, reconcile the register, commit. A long tab is not a memory. | Frozen 31-hour smoke tab 2026-08-28. Weekend protocol 2026-08-29. | `confirmed` |
 | **I7** | After a rename, grep `gap_accepts` / `accepts`. Leftover keys from the old name still grade. | `a1_possessives`: *Ondrej's* accepted *Patriks*; *Vaclav's* accepted *Annas*; *Homare's* accepted *Toms*. | `observed` |
 | **I8** | **Audit every stage before changing anything.** Findings, then dropdowns, then rewrite. Diving in repeats the same class of mistake the previous unit just taught. | Weekend smoke 2026-08-29: present simple and possessives only got clean when the audit ran first. | `confirmed` |
-| **I9** | Finish the rewrite **before** James plays. A long pretest means he smokes the old pack; flags cite titles that no longer exist. | `a1_questions_negatives` 2026-08-29: flags were *2 systems* / *BE ?* / *Remember* against a pack that had already been rewritten. | `observed` |
+| **I9** | Finish the rewrite **before** James plays. A long pretest means he smokes the old pack; flags cite titles that no longer exist. | `a1_questions_negatives` 2026-08-29: *2 systems* / *BE ?* / *Remember*. `a1_question_words` 2026-08-29: *who* / *Remember* / 12-tile Match against the rewritten four-card pack. | `confirmed` |
 
 ---
 
