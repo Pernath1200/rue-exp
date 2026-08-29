@@ -46,7 +46,11 @@ shared files touched). Four commits + one in rue-codex:
 Gates this run: check_codex PASSED (0 new · 22 known) · check_playable 0/0 ·
 smoke shell/js 14/14 · **verify_pack 19 errors + audit ratchet 420>246 are
 red at the PRE-session HEAD** — smoke-lane content, not touched from here.
-**Parked**: 18-pack codex_unit sync (baselined) until Grok's pack run ends.
+**Late additions (Grok's run ended)**: 17-pack codex_unit sync applied
+(tags copied from tree.json, one stash dance around a1_present_simple WIP)
+— baseline down to **4** (the word-formation codex gaps only). And
+`a1_agreement` `foundation: true` applied — the 08-25 tap-list decision,
+finally landed; agreement now feeds the tap barometer.
 
 ## 2026-08-25 · local (design session with James) · tap-root model — settled fork, build-session work
 
