@@ -463,6 +463,7 @@ export function renderTreePortrait(container, opts) {
   // unit just completed, whose newest lit slot gets the grow-in animation.
   const highlight = new Set(opts.highlight || []);
   const justNow = opts.justNow || null;
+  const animateGrowth = opts.animateGrowth !== false && Boolean(justNow);
   // Node ids with recent activity (Set) — when provided, sapling-age house
   // labels only name houses with recent growth instead of any activity ever.
   const recent = opts.recent || null;
@@ -595,7 +596,7 @@ export function renderTreePortrait(container, opts) {
     const dim = house.state === "dim";
     const active = house.state === "started" || house.state === "fruit";
     const hi = highlight.has(house.tree_part);
-    const isNew = hi && Boolean(justNow);
+    const isNew = hi && animateGrowth;
     let origin = null;
     let s = "";
     let labelAt = null, labelSide = g.seatSide;
@@ -737,7 +738,7 @@ export function renderTreePortrait(container, opts) {
       const q = R.at(t);
       const lit = k < seatInfo.knots, fruited = k < seatInfo.knotsFruit;
       const rem = k < (seatInfo.knotsRemembered || 0), mas = k < (seatInfo.knotsMastered || 0);
-      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (rem ? " remembered" : "") + (mas ? " mastered" : "") + (hiR && justNow && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"><title>' + esc(seatInfo.label) + ' - ' + Math.round(seatInfo.fill * 100) + '%</title></circle></g>';
+      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (rem ? " remembered" : "") + (mas ? " mastered" : "") + (hiR && animateGrowth && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"><title>' + esc(seatInfo.label) + ' - ' + Math.round(seatInfo.fill * 100) + '%</title></circle></g>';
     }
     roots += s + "</g>";
   });
@@ -831,6 +832,8 @@ export function renderTreePortrait(container, opts) {
     // off-screen below the fold (James, 2026-08-23).
     ".tp-hi{transform-box:view-box;transform:scale(.9)}",
     ".tp-run .tp-hi{animation:tpGrow 1.6s cubic-bezier(.22,1,.36,1) both}",
+    ".tp-still .tp-hi{transform:scale(1)}",
+    ".tp-still .tp-hi-trunk{filter:drop-shadow(0 0 7px rgba(86,156,214,.85))}",
     ".tp-hi .lb{filter:drop-shadow(0 0 4px rgba(77,182,199,.95))}",
     ".tp-hi .rt{filter:drop-shadow(0 0 5px rgba(77,182,199,1)) drop-shadow(0 0 12px rgba(77,182,199,.6))}",
     ".tp-hi-trunk{transform-box:view-box}",

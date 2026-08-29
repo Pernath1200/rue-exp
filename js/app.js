@@ -3,7 +3,7 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-29-imp-tables";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-29-replay-tree";
 import { startPractice as startVocabPractice } from "./practice-vocab.js";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
@@ -38,7 +38,7 @@ import {
   addFlag,
   loadFlags,
 } from "./smoke-flags.js";
-import { renderTreePortrait } from "./tree-portrait.js";
+import { renderTreePortrait } from "./tree-portrait.js?v=2026-08-29-replay";
 import { initReference, renderReference } from "./reference.js";
 import { setSynonymMap } from "./synonyms.js";
 
@@ -381,18 +381,20 @@ function levelOfNode(node) {
 }
 
 /**
- * Queue first-fruit tick. Only call when progress says justFruited.
- * Shown on practice exit — never mid-question.
+ * Queue the tree payoff. Shown on practice exit — never mid-question.
+ * grow: true = first fruit (new knot lights up). false = replay (highlight only).
  */
-function queueFruitPayoff(nodeId, statsBefore) {
+function queueFruitPayoff(nodeId, statsBefore, opts = {}) {
+  const grow = opts.grow !== false;
   const nodes = STATE.tree?.nodes || [];
   const level = levelOfNode(nodeById(nodeId));
   const after = levelUnitStats(level, nodes);
   STATE.pendingFruitPayoff = {
     kind: "learned",
+    grow,
     nodeId,
     level,
-    before: statsBefore || after,
+    before: grow ? (statsBefore || after) : after,
     after,
   };
 }
@@ -422,10 +424,11 @@ function maybeShowFruitPayoff() {
 }
 
 /**
- * First fruit only: tick + level chip + Learned bar (from RUE2 / RUPL).
- * Must not fire unless justFruited was true (strict clear gates).
+ * Tree payoff after a clear ladder. grow (default true) is first fruit —
+ * new knot lights and the root grows. Replay passes grow: false: same tree,
+ * highlight what is already there, no new-growth animation (James, 2026-08-29).
  */
-function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId }) {
+function showFruitPayoff({ before, after, kind = "learned", grow = true, level: lvlIn, nodeId }) {
   const root = document.getElementById("practice-root");
   if (!root) return;
   if (typeof root._RUE2UnbindKeys === "function") {
@@ -480,7 +483,7 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
   root.innerHTML = `
     <div class="fruit-payoff" role="status" aria-live="polite"
       aria-label="${escapeXml(level)} ${escapeXml(meterLabel)} ${toN} of ${total}, ${toP} percent">
-      <div class="fruit-payoff-tick${reduce ? " is-drawn" : ""}" aria-hidden="true">
+      <div class="fruit-payoff-tick${reduce || !grow ? " is-drawn" : ""}" aria-hidden="true">
         <svg viewBox="0 0 48 48" width="56" height="56" focusable="false">
           <circle cx="24" cy="24" r="20" />
           <path d="M14 24.5 L21 31.5 L34 16.5" />
@@ -491,16 +494,16 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
       <div class="fruit-payoff-head">
         <span class="fruit-payoff-level" aria-hidden="true">${escapeXml(level)}</span>
         <span class="fruit-payoff-stats">
-          <span id="payoff-frac">${reduce ? toN : fromN}/${total}</span>
+          <span id="payoff-frac">${reduce || !grow ? toN : fromN}/${total}</span>
           <span class="fruit-payoff-dot" aria-hidden="true">·</span>
-          <span id="payoff-pct">${reduce ? toP : fromP}%</span>
+          <span id="payoff-pct">${reduce || !grow ? toP : fromP}%</span>
         </span>
       </div>
       <div class="meter-row ${meterClass} fruit-payoff-meter">
         <div class="meter-track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-          aria-valuenow="${reduce ? toP : fromP}"
+          aria-valuenow="${reduce || !grow ? toP : fromP}"
           aria-label="${escapeXml(level)} ${escapeXml(meterLabel)} ${toN} of ${total}">
-          <div class="meter-fill" id="payoff-fill" style="width:${reduce ? toP : fromP}%"></div>
+          <div class="meter-fill" id="payoff-fill" style="width:${reduce || !grow ? toP : fromP}%"></div>
         </div>
       </div>
       <div class="home-actions fruit-payoff-nav" role="group" aria-label="Main actions">
@@ -534,7 +537,8 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
         isFruit: (id) => { const n = nodeById(id); return n ? isFruit(n) : false; },
         progressState: (id) => { const n = nodeById(id); return n ? progressState(n) : "planned"; },
         highlight: parts,
-        justNow: nodeId,
+        justNow: grow ? nodeId : null,
+        animateGrowth: grow,
         /* Grammar lives below ground: its payoff shows trunk + roots only, the
          * unit's root grown and labelled — no branches, no crown labels
          * (James, 2026-08-24, Articles 2 smoke). Vocab payoffs keep the crown. */
@@ -549,7 +553,11 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
       const svg = treeHost.querySelector("svg");
       window.scrollTo({ top: 0, behavior: "auto" });
       requestAnimationFrame(() => {
-        treeHost.scrollIntoView({ block: "center", behavior: "smooth" });
+        treeHost.scrollIntoView({ block: "center", behavior: grow ? "smooth" : "auto" });
+        if (!grow) {
+          svg && svg.classList.add("tp-still");
+          return;
+        }
         setTimeout(() => svg && svg.classList.add("tp-run"), 350);
       });
     } catch (e) {
@@ -560,7 +568,7 @@ function showFruitPayoff({ before, after, kind = "learned", level: lvlIn, nodeId
     treeHost.remove();
   }
 
-  if (reduce) {
+  if (reduce || !grow) {
     paintStats(toN, toP);
   } else {
     requestAnimationFrame(() => {
@@ -1277,10 +1285,13 @@ async function openNode(node, launch = {}) {
             statsBefore || levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []),
           );
         },
-        onFruit: () => {
+        onFruit: (meta = {}) => {
           queueFruitPayoff(
             node.id,
-            statsBefore || levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []),
+            meta.grow === false
+              ? null
+              : statsBefore || levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []),
+            { grow: meta.grow !== false },
           );
         },
         onExit: () => {

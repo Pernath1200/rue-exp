@@ -6,6 +6,20 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — `a2_some_any_no` smoke closed · rules
+
+Smoke play done (James: *okay that's done*). Telegram `a2_some_any_no tested` still needed for INSPECTED.
+
+New rules:
+- **C36** no *in + / in − and ?* — write positives / negatives / questions. lint `plusminus`
+- **B15** Match is not required; a task solved by reading the chip or pairing the same noun is not a test
+- **C13** *don't* bolded with *any* on not-any examples
+- **A0** *Do you want something/anything*; *ask some/any questions* — cut
+
+Pack: title **Some / any 2** (A1 renamed **Some / any 1**); link to 1; intro 6 cards; Check is Quiz only; tree replay highlights with no new-growth animation.
+
+---
+
 ## 2026-08-29 · local (interactive) — `a2_present_perfect` Telegram-tested · rules + lint
 
 Smoke closed (Telegram `a2_present_perfect tested`). New rules in AUTHORING-RULES:

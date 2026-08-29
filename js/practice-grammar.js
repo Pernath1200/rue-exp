@@ -598,15 +598,19 @@ export function startPractice(rawPack, root, opts) {
     opts.onExit();
   };
 
+  let justFruitedThisRun = false;
+
   /**
-   * Record progress + fire onFruit only when !wasFruit → nowFruit
+   * Record progress + fire onFruit when !wasFruit → nowFruit
    * (strict clear gates live in progress.js — never modes-only).
+   * Replay (already fruited) is queued from renderDone, without growth.
    */
   function notifyProgress(mode, result) {
     if (typeof opts.onBeforeProgress === "function") opts.onBeforeProgress();
     const r = completeMode(pack.id, mode, result);
     if (r && r.justFruited && typeof opts.onFruit === "function") {
-      opts.onFruit({ domain: "grammar", packId: pack.id, mode });
+      justFruitedThisRun = true;
+      opts.onFruit({ domain: "grammar", packId: pack.id, mode, grow: true });
     }
     if (r && r.review && typeof opts.onReview === "function") {
       opts.onReview(r.review, mode);
@@ -768,9 +772,17 @@ export function startPractice(rawPack, root, opts) {
       return html;
     };
     const tableBlock = () => {
-      if (Array.isArray(card.links) && card.links.length) return "";
       const list = [];
-      if (card.table) list.push(card.table);
+      /* Later-cards author a dummy Related table; `links[]` is what renders.
+       * A teaching card may keep its real table AND a prerequisite link
+       * (James, a2_some_any_no 2026-08-29: jump to Some / any 1). */
+      const dummyRelated =
+        Array.isArray(card.links) &&
+        card.links.length &&
+        String((card.table && card.table.headers && card.table.headers[0]) || "")
+          .trim()
+          .toLowerCase() === "related";
+      if (card.table && !dummyRelated) list.push(card.table);
       if (Array.isArray(card.tables)) {
         for (const t of card.tables) if (t && Array.isArray(t.rows)) list.push(t);
       }
@@ -830,7 +842,13 @@ export function startPractice(rawPack, root, opts) {
       )}</button></p>`;
     }
     if (Array.isArray(card.links) && card.links.length) {
-      body += `<table class="intro-table"><thead><tr><th>Related</th><th>You already know</th></tr></thead><tbody>`;
+      const heads =
+        Array.isArray(card.link_headers) && card.link_headers.length
+          ? card.link_headers
+          : ["Related", "You already know"];
+      body += `<table class="intro-table"><thead><tr><th>${escMd(
+        heads[0] || "Related",
+      )}</th><th>${escMd(heads[1] || "")}</th></tr></thead><tbody>`;
       for (const L of card.links) {
         const id = String(L.id || "").trim();
         if (!/^[a-z][a-z0-9_]*$/i.test(id)) continue;
@@ -953,7 +971,7 @@ export function startPractice(rawPack, root, opts) {
           : "";
       return `<button type="button" class="sb-chip${sel}${mark}" data-i="${i}"${
         done ? " disabled" : ' draggable="true"'
-      }>${esc(it.en)}${cz}${truth}</button>`;
+      }>${escMd(it.en)}${cz}${truth}</button>`;
     };
 
     const captions = pack.bin_captions && typeof pack.bin_captions === "object"
@@ -2172,14 +2190,18 @@ export function startPractice(rawPack, root, opts) {
     const bCheck = best.check == null ? null : Math.round(best.check * 100);
     const bType = best.type == null ? null : Math.round(best.type * 100);
     const fruit = hasFruit(pack.id);
+    // Replay: still show the tree, but do not grow a new knot (James, 2026-08-29).
+    if (fruit && !justFruitedThisRun && typeof opts.onFruit === "function") {
+      opts.onFruit({ domain: "grammar", packId: pack.id, grow: false });
+    }
 
     root.innerHTML = `
       ${ladderHtml()}
       <div class="practice-head"><h2>${esc(pack.title)} · Done</h2></div>
       <p class="practice-prompt">${
         fruit
-          ? "Fruit earned."
-          : "Ladder finished."
+          ? "Fruit earned. Back to map for the tree."
+          : "Ladder finished. Fruit needs Check, Type and Use all clear — retry the wrong items."
       }</p>
       <p class="score-line">
         ${bCheck != null ? `Check: ${bCheck} % · ` : ""}

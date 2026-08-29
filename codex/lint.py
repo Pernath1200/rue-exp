@@ -311,7 +311,7 @@ def lint_pack(uid):
                          "courseaside", "negdef", "smallwords", "mistakecol",
                          "timesort", "aweek", "baddiagram", "notbullet",
                          "verbcue", "thirdform", "ppcuz", "ppsort",
-                         "stemcue", "longtable")}
+                         "stemcue", "longtable", "plusminus")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -670,6 +670,34 @@ def lint_pack(uid):
                     "en": "points[%d]: %s" % (j, str(p).strip()[:72]),
                 })
 
+    # C36 — teacher shorthand in + / in − and ?  [EXACT]
+    # a2_some_any_no 2026-08-29: "some in + · any in − and ?" took James time
+    # to decode. Write positives / negatives / questions. Table headers that
+    # are just + / − (a1_imperatives) stay — that table was kept (C30).
+    PLUSMINUS = re.compile(
+        r"\bin\s+\+"
+        r"|\bin\s+[−\-]"
+        r"|[−\-]\s+and\s+\?",
+        re.I,
+    )
+    for i, c in enumerate(intro_cards(d)):
+        surfaces = [("title", str(c.get("title") or ""))]
+        for j, p in enumerate(c.get("points") or []):
+            surfaces.append(("points[%d]" % j, str(p)))
+        for j, ex in enumerate(c.get("examples") or []):
+            if isinstance(ex, dict):
+                surfaces.append(("examples[%d]" % j, str(ex.get("en") or "")))
+        for j, L in enumerate(c.get("links") or []):
+            if isinstance(L, dict):
+                surfaces.append(("links[%d]" % j, str(L.get("note") or "")))
+        for loc, text in surfaces:
+            if PLUSMINUS.search(text):
+                f["plusminus"].append({
+                    "cz": "card %d · %s" % (i, c.get("title") or ""),
+                    "en": "%s: %s" % (loc, text.strip()[:72]),
+                })
+                break
+
     # C26 — don't call the target "small words"  [EXACT]
     # a1_to_for_with 2026-08-29: "Three small words" — a, if, no are small too.
     if str(d.get("level", "")).upper() == "A1":
@@ -904,6 +932,7 @@ def overlap_report(uid, top=3):
 
 
 LABELS = [
+    ("plusminus",   "EXACT  C36 intro says in + / in − and ? — write positives / negatives / questions"),
     ("ppsort",      "EXACT  B12 present perfect Check is Match — Czech cannot pick this tense, use sort"),
     ("thirdform",   "EXACT  C34 A1/A2 intro says 3rd form — name past participle"),
     ("ppcuz",       "EXACT  A9  present-perfect item has no just/already/yet/for (Czech past is also past simple)"),
