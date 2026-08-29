@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_can",
   "practice": "frames",
-  "note": "Ability + light permission. can for all persons (no -s). Gap on can/can't. Not must/should. · gap-half rewrite 2026-08-19 (James, Patrik smoke): 9 of 24 blanks moved onto the base verb after can — the bank only ever tested can/can't, never the shape he gets wrong (what can we to do) · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Ability + light permission. can for all persons (no -s). After can: base verb, no to. · 2026-08-29 smoke: Remember cut (C17); modal + no to on After can; permission = dovolení; Quiz gaps the verb (swim / to swim), not can/can't; D3 one Czech; F3 French + use.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -20,312 +20,320 @@
         {
           "en": "I can swim.",
           "cz": "Umím plavat.",
-          "gap": "I ____ swim.",
-          "gap_answer": "can",
+          "gap": "I can ____.",
+          "gap_answer": "swim",
+          "quiz_options": ["swim", "to swim", "swimming", "swims"],
           "accepts": [
             "I can swim."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **swim**, not *can to swim*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **swim**, ne *can to swim*."
         },
         {
           "en": "She can drive.",
           "cz": "Ona umí řídit.",
-          "gap": "She ____ drive.",
-          "gap_answer": "can",
+          "gap": "She can ____.",
+          "gap_answer": "drive",
+          "quiz_options": ["drive", "to drive", "driving", "drives"],
           "accepts": [
             "She can drive."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **drive**, not *can to drive*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **drive**, ne *can to drive*."
         },
         {
           "en": "He can speak English.",
-          "cz": "On umí anglicky. / On umí mluvit anglicky.",
-          "gap": "He ____ speak English.",
-          "gap_answer": "can",
+          "cz": "On umí anglicky.",
+          "gap": "He can ____ English.",
+          "gap_answer": "speak",
+          "quiz_options": ["speak", "to speak", "speaking", "speaks"],
           "accepts": [
             "He can speak English.",
             "He can speak English well."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **speak**, not *can to speak*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **speak**, ne *can to speak*."
         },
         {
           "en": "We can help.",
-          "cz": "Můžeme pomoct. / Umíme pomoct.",
-          "gap": "We ____ help.",
-          "gap_answer": "can",
+          "cz": "Můžeme pomoct.",
+          "gap": "We can ____.",
+          "gap_answer": "help",
+          "quiz_options": ["help", "to help", "helping", "helps"],
           "accepts": [
             "We can help.",
             "We can help you."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **help**, not *can to help*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **help**, ne *can to help*."
         },
         {
           "en": "They can cook.",
           "cz": "Oni umějí vařit.",
-          "gap": "They ____ cook.",
-          "gap_answer": "can",
+          "gap": "They can ____.",
+          "gap_answer": "cook",
+          "quiz_options": ["cook", "to cook", "cooking", "cooks"],
           "accepts": [
             "They can cook."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **cook**, not *can to cook*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **cook**, ne *can to cook*."
         },
         {
           "en": "I can't swim.",
           "cz": "Neumím plavat.",
-          "gap": "I ____ swim.",
-          "gap_answer": "can't",
-          "gap_accepts": [
-            "cannot",
-            "can not"
-          ],
+          "gap": "I can't ____.",
+          "gap_answer": "swim",
+          "quiz_options": ["swim", "to swim", "swimming", "swims"],
           "accepts": [
             "I can't swim.",
             "I cannot swim.",
             "I can not swim."
           ],
-          "explanation": "can't = cannot + base verb.",
-          "explanation_cz": "can't = cannot + základ slovesa."
+          "explanation": "After **can't**, the base verb — no **to**: can't **swim**, not *can't to swim*.",
+          "explanation_cz": "Po **can't** základní sloveso — bez **to**: can't **swim**, ne *can't to swim*."
         },
         {
           "en": "She can't drive.",
           "cz": "Ona neumí řídit.",
-          "gap": "She ____ drive.",
-          "gap_answer": "can't",
-          "gap_accepts": [
-            "cannot",
-            "can not"
-          ],
+          "gap": "She can't ____.",
+          "gap_answer": "drive",
+          "quiz_options": ["drive", "to drive", "driving", "drives"],
           "accepts": [
             "She can't drive.",
             "She cannot drive.",
             "She can not drive."
           ],
-          "explanation": "can't = cannot + base verb.",
-          "explanation_cz": "can't = cannot + základ slovesa."
+          "explanation": "After **can't**, the base verb — no **to**: can't **drive**, not *can't to drive*.",
+          "explanation_cz": "Po **can't** základní sloveso — bez **to**: can't **drive**, ne *can't to drive*."
         },
         {
           "en": "He can't speak French.",
           "cz": "On neumí francouzsky.",
-          "gap": "He ____ speak French.",
-          "gap_answer": "can't",
-          "gap_accepts": [
-            "cannot",
-            "can not"
-          ],
+          "use": false,
+          "gap": "He can't ____ French.",
+          "gap_answer": "speak",
+          "quiz_options": ["speak", "to speak", "speaking", "speaks"],
           "accepts": [
             "He can't speak French.",
             "He cannot speak French.",
             "He can not speak French."
           ],
-          "explanation": "can't = cannot + base verb.",
-          "explanation_cz": "can't = cannot + základ slovesa."
+          "explanation": "After **can't**, the base verb — no **to**: can't **speak**, not *can't to speak*.",
+          "explanation_cz": "Po **can't** základní sloveso — bez **to**: can't **speak**, ne *can't to speak*."
         },
         {
           "en": "Can you swim?",
           "cz": "Umíš plavat?",
-          "gap": "____ you swim?",
-          "gap_answer": "Can",
+          "gap": "Can you ____?",
+          "gap_answer": "swim",
+          "quiz_options": ["swim", "to swim", "swimming", "swims"],
           "accepts": [
             "Can you swim?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **Can**, the base verb — no **to**: Can you **swim**? not *Can you to swim?*",
+          "explanation_cz": "Po **Can** základní sloveso — bez **to**: Can you **swim**? ne *Can you to swim?*"
         },
         {
           "en": "Can she drive?",
           "cz": "Umí ona řídit?",
           "gap": "____ she drive?",
           "gap_answer": "Can",
+          "quiz_options": ["Can", "Do", "Does", "Are"],
           "accepts": [
             "Can she drive?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "**Can** she…? Not *Does she can* and not *Do she drive*.",
+          "explanation_cz": "**Can** she…? Ne *Does she can* a ne *Do she drive*."
         },
         {
           "en": "Can he cook?",
           "cz": "Umí vařit?",
           "gap": "____ he cook?",
           "gap_answer": "Can",
+          "quiz_options": ["Can", "Do", "Does", "Are"],
           "accepts": [
             "Can he cook?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "**Can** he…? Not *Does he can*.",
+          "explanation_cz": "**Can** he…? Ne *Does he can*."
         },
         {
           "en": "Yes, I can.",
-          "cz": "Ano, umím. / Ano, můžu.",
+          "cz": "Ano, umím.",
           "gap": "Yes, I ____.",
           "gap_answer": "can",
+          "quiz_options": ["can", "can't", "do", "am"],
           "accepts": [
             "Yes, I can.",
             "Yes I can."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "Short answer: Yes, I **can**. Not *Yes, I do*.",
+          "explanation_cz": "Krátká odpověď: Yes, I **can**. Ne *Yes, I do*."
         },
         {
           "en": "No, I can't.",
-          "cz": "Ne, neumím. / Ne, nemůžu.",
+          "cz": "Ne, neumím.",
           "gap": "No, I ____.",
           "gap_answer": "can't",
           "gap_accepts": [
             "cannot",
             "can not"
           ],
+          "quiz_options": ["can't", "can", "don't", "am not"],
           "accepts": [
             "No, I can't.",
             "No, I cannot.",
-            "No I can't."
+            "No, I can not.",
+            "No I can't.",
+            "No I cannot."
           ],
-          "explanation": "can't = cannot + base verb.",
-          "explanation_cz": "can't = cannot + základ slovesa."
+          "explanation": "Short answer: No, I **can't**. Not *No, I don't*.",
+          "explanation_cz": "Krátká odpověď: No, I **can't**. Ne *No, I don't*."
         },
         {
           "en": "Can I open the window?",
           "cz": "Můžu otevřít okno?",
-          "gap": "____ I open the window?",
-          "gap_answer": "Can",
+          "gap": "Can I ____ the window?",
+          "gap_answer": "open",
+          "quiz_options": ["open", "to open", "opening", "opens"],
           "accepts": [
             "Can I open the window?",
             "Can I open the window, please?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **Can**, the base verb — no **to**: Can I **open**…? not *Can I to open*.",
+          "explanation_cz": "Po **Can** základní sloveso — bez **to**: Can I **open**…? ne *Can I to open*."
         },
         {
           "en": "Can I sit here?",
           "cz": "Můžu si tady sednout?",
           "gap": "____ I sit here?",
           "gap_answer": "Can",
+          "quiz_options": ["Can", "Do", "Does", "Am"],
           "accepts": [
             "Can I sit here?",
             "Can I sit here, please?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "**Can I…?** = is it OK? Not *Do I sit here?*",
+          "explanation_cz": "**Can I…?** = je to OK? (dovolení). Ne *Do I sit here?*"
         },
         {
           "en": "I can speak English.",
-          "cz": "Umím anglicky. / Umím mluvit anglicky.",
-          "gap": "I ____ speak English.",
-          "gap_answer": "can",
+          "cz": "Umím anglicky.",
+          "gap": "I can ____ English.",
+          "gap_answer": "speak",
+          "quiz_options": ["speak", "to speak", "speaking", "speaks"],
           "accepts": [
             "I can speak English.",
             "I can speak English well."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **speak**, not *can to speak*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **speak**, ne *can to speak*."
         },
         {
           "en": "You can use my phone.",
           "cz": "Můžeš použít můj telefon.",
-          "gap": "You ____ use my phone.",
-          "gap_answer": "can",
+          "use": false,
+          "gap": "You can ____ my phone.",
+          "gap_answer": "use",
+          "quiz_options": ["use", "to use", "using", "uses"],
           "accepts": [
             "You can use my phone.",
             "You can use my telephone."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **use**, not *can to use*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **use**, ne *can to use*."
         },
         {
           "en": "We can't go now.",
           "cz": "Teď nemůžeme jít.",
-          "gap": "We ____ go now.",
-          "gap_answer": "can't",
-          "gap_accepts": [
-            "cannot",
-            "can not"
-          ],
+          "gap": "We can't ____ now.",
+          "gap_answer": "go",
+          "quiz_options": ["go", "to go", "going", "goes"],
           "accepts": [
             "We can't go now.",
             "We cannot go now.",
             "We can not go now."
           ],
-          "explanation": "can't = cannot + base verb.",
-          "explanation_cz": "can't = cannot + základ slovesa."
+          "explanation": "After **can't**, the base verb — no **to**: can't **go**, not *can't to go*.",
+          "explanation_cz": "Po **can't** základní sloveso — bez **to**: can't **go**, ne *can't to go*."
         },
         {
           "en": "They can play football.",
           "cz": "Oni umějí hrát fotbal.",
-          "gap": "They ____ play football.",
-          "gap_answer": "can",
+          "gap": "They can ____ football.",
+          "gap_answer": "play",
+          "quiz_options": ["play", "to play", "playing", "plays"],
           "accepts": [
             "They can play football.",
             "They can play soccer."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **play**, not *can to play*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **play**, ne *can to play*."
         },
         {
           "en": "Can you help me?",
           "cz": "Můžeš mi pomoct?",
           "gap": "____ you help me?",
           "gap_answer": "Can",
+          "quiz_options": ["Can", "Do", "Does", "Are"],
           "accepts": [
             "Can you help me?",
             "Can you help me, please?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "**Can** you…? Not *Do you can*.",
+          "explanation_cz": "**Can** you…? Ne *Do you can*."
         },
         {
           "en": "She can sing.",
           "cz": "Ona umí zpívat.",
-          "gap": "She ____ sing.",
-          "gap_answer": "can",
+          "gap": "She can ____.",
+          "gap_answer": "sing",
+          "quiz_options": ["sing", "to sing", "singing", "sings"],
           "accepts": [
             "She can sing."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "After **can**, the base verb — no **to**: can **sing**, not *can to sing*.",
+          "explanation_cz": "Po **can** základní sloveso — bez **to**: can **sing**, ne *can to sing*."
         },
         {
           "en": "I can't cook.",
           "cz": "Neumím vařit.",
-          "gap": "I ____ cook.",
-          "gap_answer": "can't",
-          "gap_accepts": [
-            "cannot",
-            "can not"
-          ],
+          "gap": "I can't ____.",
+          "gap_answer": "cook",
+          "quiz_options": ["cook", "to cook", "cooking", "cooks"],
           "accepts": [
             "I can't cook.",
             "I cannot cook.",
             "I can not cook."
           ],
-          "explanation": "can't = cannot + base verb.",
-          "explanation_cz": "can't = cannot + základ slovesa."
+          "explanation": "After **can't**, the base verb — no **to**: can't **cook**, not *can't to cook*.",
+          "explanation_cz": "Po **can't** základní sloveso — bez **to**: can't **cook**, ne *can't to cook*."
         },
         {
           "en": "Can they come?",
           "cz": "Můžou přijít?",
           "gap": "____ they come?",
           "gap_answer": "Can",
+          "quiz_options": ["Can", "Do", "Does", "Are"],
           "accepts": [
             "Can they come?"
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "**Can** they…? Not *Do they can*.",
+          "explanation_cz": "**Can** they…? Ne *Do they can*."
         },
         {
           "en": "Yes, she can.",
-          "cz": "Ano, umí. / Ano, může.",
+          "cz": "Ano, umí.",
           "gap": "Yes, she ____.",
           "gap_answer": "can",
+          "quiz_options": ["can", "can't", "does", "is"],
           "accepts": [
             "Yes, she can.",
             "Yes she can."
           ],
-          "explanation": "can + base verb (ability / permission).",
-          "explanation_cz": "can + základ slovesa (umím / smím)."
+          "explanation": "Short answer: Yes, she **can**. Not *Yes, she does*.",
+          "explanation_cz": "Krátká odpověď: Yes, she **can**. Ne *Yes, she does*."
         }
       ]
     }
@@ -333,42 +341,51 @@
   "intro": {
     "cards": [
       {
-        "title": "Can",
-        "title_cz": "can = umím / můžu",
+        "title": "Can / can't",
+        "title_cz": "umím / můžu · nemůžu",
+        "text_first": true,
+        "points": [
+          "**can** = umím (skill) or můžu (permission / dovolení).",
+          "Same form for I / you / he / she — no **-s**."
+        ],
         "table": {
-          "caption": "frame",
           "headers": [
-            "English",
-            "Job"
+            "EN",
+            "CZ",
+            "idea"
           ],
           "rows": [
             [
-              "I can + verb",
-              "I am able / allowed"
+              "**can**",
+              "umím / můžu",
+              "skill · permission (dovolení)"
             ],
             [
-              "She can + verb",
-              "same form — no -s"
+              "**can't**",
+              "neumím / nemůžu",
+              "the no form"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I can swim.",
+            "en": "I **can** swim.",
             "cz": "Umím plavat."
           },
           {
-            "en": "She can drive.",
+            "en": "She **can** drive.",
             "cz": "Ona umí řídit."
           }
-        ],
-        "points": [
-          "Use can to say what is possible for you — skills and simple permission."
         ]
       },
       {
         "title": "No -s",
         "title_cz": "Bez -s — he/she can (ne cans)",
+        "text_first": true,
+        "points": [
+          "**can** is the same for every person",
+          "After **can** use the base verb — not *swims*"
+        ],
         "table": {
           "caption": "one form",
           "headers": [
@@ -379,29 +396,30 @@
           "rows": [
             [
               "I / you / we / they",
-              "can",
-              "I can cook."
+              "**can**",
+              "I **can** cook."
             ],
             [
               "he / she / it",
-              "can",
-              "He can cook."
+              "**can**",
+              "He **can** cook."
             ],
             [
               "never",
-              "cans",
-              "✗ He cans cook."
+              "*cans*",
+              "✗ He *cans* cook."
             ]
           ]
-        },
-        "points": [
-          "can is the same for every person",
-          "After can use the base verb: swim, go, help — not swims"
-        ]
+        }
       },
       {
         "title": "Can't",
         "title_cz": "can't = neumím / nemůžu",
+        "text_first": true,
+        "points": [
+          "**can't** = **cannot** (same meaning)",
+          "Write **can't** or **cannot** — both OK"
+        ],
         "table": {
           "caption": "negative",
           "headers": [
@@ -410,27 +428,28 @@
           ],
           "rows": [
             [
-              "I can swim.",
-              "I can't swim."
+              "I **can** swim.",
+              "I **can't** swim."
             ],
             [
-              "She can drive.",
-              "She can't drive."
+              "She **can** drive.",
+              "She **can't** drive."
             ],
             [
-              "We can help.",
-              "We can't help."
+              "We **can** help.",
+              "We **can't** help."
             ]
           ]
-        },
-        "points": [
-          "can't = cannot (same meaning)",
-          "Write can't or cannot — both OK"
-        ]
+        }
       },
       {
         "title": "Questions",
         "title_cz": "Otázky: Can you…?",
+        "text_first": true,
+        "points": [
+          "Put **Can** first — not *Do you can*",
+          "Short answers: Yes, I **can**. · No, I **can't**."
+        ],
         "table": {
           "caption": "Can + person + verb?",
           "headers": [
@@ -439,41 +458,37 @@
           ],
           "rows": [
             [
-              "Can you swim?",
-              "Yes, I can. / No, I can't."
+              "**Can** you swim?",
+              "Yes, I **can**. / No, I **can't**."
             ],
             [
-              "Can she drive?",
-              "Yes, she can. / No, she can't."
+              "**Can** she drive?",
+              "Yes, she **can**. / No, she **can't**."
             ],
             [
-              "Can they come?",
-              "Yes, they can. / No, they can't."
+              "**Can** they come?",
+              "Yes, they **can**. / No, they **can't**."
             ]
           ]
-        },
-        "points": [
-          "Put Can first — not Do you can",
-          "Short answers: Yes, I can. · No, I can't."
-        ]
+        }
       },
       {
         "title": "Permission",
-        "title_cz": "Dovolení (lehký A1)",
+        "title_cz": "permission = dovolení (smím?)",
+        "text_first": true,
+        "points": [
+          "**Can I…?** = is it OK? (dovolení / permission)",
+          "Same **can** — umím (skill) or můžu (dovolení)"
+        ],
         "examples": [
           {
-            "en": "Can I open the window?",
+            "en": "**Can** I open the window?",
             "cz": "Můžu otevřít okno?"
           },
           {
-            "en": "Can I sit here?",
+            "en": "**Can** I sit here?",
             "cz": "Můžu si tady sednout?"
           }
-        ],
-        "points": [
-          "Same word can — skill or permission from context",
-          "Please is optional and friendly",
-          "Can I…? also asks for permission — is it OK?"
         ],
         "table": {
           "headers": [
@@ -483,64 +498,41 @@
           "rows": [
             [
               "Můžu otevřít okno?",
-              "Can I open the window?"
+              "**Can** I open the window?"
             ],
             [
               "Můžu si tady sednout?",
-              "Can I sit here?"
+              "**Can** I sit here?"
             ]
           ]
         }
       },
       {
-        "title": "Word order",
-        "title_cz": "Pořadí slov",
+        "title": "After can",
+        "title_cz": "can je modální sloveso — bez to",
+        "text_first": true,
+        "points": [
+          "**can** is a modal verb — no **to** after it",
+          "No **do** / **does** with **can**"
+        ],
         "table": {
           "caption": "shape",
           "headers": [
-            "Type",
-            "Order"
+            "Right",
+            "Wrong"
           ],
           "rows": [
             [
-              "+",
-              "I can swim."
+              "I **can swim**",
+              "*I can to swim*"
             ],
             [
-              "−",
-              "I can't swim."
+              "I **can't swim**",
+              "*I can't to swim*"
             ],
             [
-              "?",
-              "Can you swim?"
-            ]
-          ]
-        },
-        "points": [
-          "No do/does with can",
-          "Base verb after can — always"
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "can + base verb (swim, not swims)",
-          "Can you…? · Yes, I can. / No, I can't."
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "can / can't",
-              "same form for I he she we they"
-            ],
-            [
-              "Can I…?",
-              "permission · not must / should yet"
+              "**Can** you swim?",
+              "*Do you can swim?*"
             ]
           ]
         }
