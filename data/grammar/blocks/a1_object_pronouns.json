@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_object_pronouns",
   "practice": "frames",
-  "note": "Block 1: subject↔object form pairs only (I/me, he/him) — Match+Quiz, no sentences, no Use. Block 2: sentence Match+Quiz/Type/Use with subject vs object roles. him=On, her=Ona. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Block 1: subject↔object form pairs, Match only, one tile per form (B5). Block 2: gapped sentences Quiz/Type/Use. him=On, her=Ona. · 2026-08-29 smoke-prep: D3 teacher notes stripped from cz; C15 chunks; C13 bold the object form; C14 card 0 = unit name; F3 calls use:false; B7 no I→me definition quiz; authored chips include the subject-form error.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -19,142 +19,58 @@
       "use": false,
       "check": {
         "sequence": [
-          "match",
-          "quiz"
+          "match"
         ]
       },
       "items": [
         {
           "en": "me",
           "cz": "I",
-          "gap": "I → ____",
-          "gap_answer": "me",
-          "accepts": [
-            "me"
-          ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "use": false,
+          "explanation": "I → **me** after the verb.",
+          "explanation_cz": "I → **me** za slovesem."
         },
         {
           "en": "you",
           "cz": "you",
-          "gap": "you → ____ (same)",
-          "gap_answer": "you",
-          "accepts": [
-            "you"
-          ],
-          "explanation": "Object pronoun after the verb: me / him / her / us / them.",
-          "explanation_cz": "Předmětové zájmeno po slovese: me / him / her / us / them."
+          "use": false,
+          "explanation": "you stays **you**.",
+          "explanation_cz": "you zůstává **you**."
         },
         {
           "en": "him",
           "cz": "he",
-          "gap": "he → ____",
-          "gap_answer": "him",
-          "accepts": [
-            "him"
-          ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
+          "use": false,
+          "explanation": "he → **him** after the verb.",
+          "explanation_cz": "he → **him** za slovesem."
         },
         {
           "en": "her",
           "cz": "she",
-          "gap": "she → ____",
-          "gap_answer": "her",
-          "accepts": [
-            "her"
-          ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "use": false,
+          "explanation": "she → **her** after the verb.",
+          "explanation_cz": "she → **her** za slovesem."
         },
         {
           "en": "it",
           "cz": "it",
-          "gap": "it → ____ (same)",
-          "gap_answer": "it",
-          "accepts": [
-            "it"
-          ],
-          "explanation": "Object pronoun after the verb: me / him / her / us / them.",
-          "explanation_cz": "Předmětové zájmeno po slovese: me / him / her / us / them."
+          "use": false,
+          "explanation": "it stays **it**.",
+          "explanation_cz": "it zůstává **it**."
         },
         {
           "en": "us",
           "cz": "we",
-          "gap": "we → ____",
-          "gap_answer": "us",
-          "accepts": [
-            "us"
-          ],
-          "explanation": "Object form of we → us.",
-          "explanation_cz": "Předmět od we → us."
+          "use": false,
+          "explanation": "we → **us** after the verb.",
+          "explanation_cz": "we → **us** za slovesem."
         },
         {
           "en": "them",
           "cz": "they",
-          "gap": "they → ____",
-          "gap_answer": "them",
-          "accepts": [
-            "them"
-          ],
-          "explanation": "Object form of they → them.",
-          "explanation_cz": "Předmět od they → them."
-        },
-        {
-          "en": "me",
-          "cz": "I (object form)",
-          "gap": "subject I · object ____",
-          "gap_answer": "me",
-          "accepts": [
-            "me"
-          ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
-        },
-        {
-          "en": "him",
-          "cz": "he (On → object)",
-          "gap": "subject he · object ____",
-          "gap_answer": "him",
-          "accepts": [
-            "him"
-          ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
-        },
-        {
-          "en": "her",
-          "cz": "she (Ona → object)",
-          "gap": "subject she · object ____",
-          "gap_answer": "her",
-          "accepts": [
-            "her"
-          ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
-        },
-        {
-          "en": "us",
-          "cz": "we (object form)",
-          "gap": "subject we · object ____",
-          "gap_answer": "us",
-          "accepts": [
-            "us"
-          ],
-          "explanation": "Object form of we → us.",
-          "explanation_cz": "Předmět od we → us."
-        },
-        {
-          "en": "them",
-          "cz": "they (Oni → object)",
-          "gap": "subject they · object ____",
-          "gap_answer": "them",
-          "accepts": [
-            "them"
-          ],
-          "explanation": "Object form of they → them.",
-          "explanation_cz": "Předmět od they → them."
+          "use": false,
+          "explanation": "they → **them** after the verb.",
+          "explanation_cz": "they → **them** za slovesem."
         }
       ]
     },
@@ -170,268 +86,294 @@
       "items": [
         {
           "en": "She likes me.",
-          "cz": "Ona mě má ráda. · I → me (object)",
+          "cz": "Ona mě má ráda.",
           "gap": "She likes ____.",
           "gap_answer": "me",
           "accepts": [
             "She likes me."
           ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "quiz_options": ["me", "I", "him", "her"],
+          "explanation": "Object form of I → **me**.",
+          "explanation_cz": "Předmět od I → **me**."
         },
         {
           "en": "I like her.",
-          "cz": "Mám ji rád. · she → her (object) · Ona",
+          "cz": "Mám ji rád.",
           "gap": "I like ____.",
           "gap_answer": "her",
           "accepts": [
             "I like her."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "she", "him", "me"],
+          "explanation": "Object form of she → **her**.",
+          "explanation_cz": "Předmět od she → **her**."
         },
         {
           "en": "He likes me.",
-          "cz": "On mě má rád. · I → me (not I)",
+          "cz": "On mě má rád.",
           "gap": "He likes ____.",
           "gap_answer": "me",
           "accepts": [
             "He likes me."
           ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "quiz_options": ["me", "I", "him", "her"],
+          "explanation": "Object form of I → **me**.",
+          "explanation_cz": "Předmět od I → **me**."
         },
         {
           "en": "I like him.",
-          "cz": "Mám ho rád. · he → him (not he) · On",
+          "cz": "Mám ho rád.",
           "gap": "I like ____.",
           "gap_answer": "him",
           "accepts": [
             "I like him."
           ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
+          "quiz_options": ["him", "he", "her", "me"],
+          "explanation": "Object form of he → **him**.",
+          "explanation_cz": "Předmět od he → **him**."
         },
         {
           "en": "I know him.",
-          "cz": "Znám ho. · he → him · On",
+          "cz": "Znám ho.",
           "gap": "I know ____.",
           "gap_answer": "him",
           "accepts": [
             "I know him."
           ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
+          "quiz_options": ["him", "he", "her", "me"],
+          "explanation": "Object form of he → **him**.",
+          "explanation_cz": "Předmět od he → **him**."
         },
         {
           "en": "He knows me.",
-          "cz": "On mě zná. · I → me (object)",
+          "cz": "On mě zná.",
           "gap": "He knows ____.",
           "gap_answer": "me",
           "accepts": [
             "He knows me."
           ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "quiz_options": ["me", "I", "him", "her"],
+          "explanation": "Object form of I → **me**.",
+          "explanation_cz": "Předmět od I → **me**."
         },
         {
           "en": "I know her.",
-          "cz": "Znám ji. · she → her · Ona",
+          "cz": "Znám ji.",
           "gap": "I know ____.",
           "gap_answer": "her",
           "accepts": [
             "I know her."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "she", "him", "me"],
+          "explanation": "Object form of she → **her**.",
+          "explanation_cz": "Předmět od she → **her**."
         },
         {
           "en": "She knows me.",
-          "cz": "Ona mě zná. · I → me",
+          "cz": "Ona mě zná.",
           "gap": "She knows ____.",
           "gap_answer": "me",
           "accepts": [
             "She knows me."
           ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "quiz_options": ["me", "I", "him", "her"],
+          "explanation": "Object form of I → **me**.",
+          "explanation_cz": "Předmět od I → **me**."
         },
         {
           "en": "They help us.",
-          "cz": "Oni nám pomáhají. · we → us",
+          "cz": "Oni nám pomáhají.",
           "gap": "They help ____.",
           "gap_answer": "us",
           "accepts": [
             "They help us."
           ],
-          "explanation": "Object form of we → us.",
-          "explanation_cz": "Předmět od we → us."
+          "quiz_options": ["us", "we", "them", "me"],
+          "explanation": "Object form of we → **us**.",
+          "explanation_cz": "Předmět od we → **us**."
         },
         {
           "en": "We help them.",
-          "cz": "My jim pomáháme. · they → them · Oni",
+          "cz": "My jim pomáháme.",
           "gap": "We help ____.",
           "gap_answer": "them",
           "accepts": [
             "We help them."
           ],
-          "explanation": "Object form of they → them.",
-          "explanation_cz": "Předmět od they → them."
+          "quiz_options": ["them", "they", "us", "him"],
+          "explanation": "Object form of they → **them**.",
+          "explanation_cz": "Předmět od they → **them**."
         },
         {
           "en": "Can you help me?",
-          "cz": "Můžeš mi pomoct? · I → me",
+          "cz": "Můžeš mi pomoct?",
           "gap": "Can you help ____?",
           "gap_answer": "me",
           "accepts": [
             "Can you help me?",
             "Can you help me, please?"
           ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "quiz_options": ["me", "I", "him", "her"],
+          "explanation": "Object form of I → **me**.",
+          "explanation_cz": "Předmět od I → **me**."
         },
         {
           "en": "She calls him.",
-          "cz": "Ona mu volá. · he → him · On",
+          "cz": "Ona mu volá.",
+          "use": false,
           "gap": "She calls ____.",
           "gap_answer": "him",
           "accepts": [
             "She calls him."
           ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
+          "quiz_options": ["him", "he", "her", "me"],
+          "explanation": "Object form of he → **him**.",
+          "explanation_cz": "Předmět od he → **him**."
         },
         {
           "en": "He calls her.",
-          "cz": "On jí volá. · she → her · Ona",
+          "cz": "On jí volá.",
+          "use": false,
           "gap": "He calls ____.",
           "gap_answer": "her",
           "accepts": [
             "He calls her."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "she", "him", "me"],
+          "explanation": "Object form of she → **her**.",
+          "explanation_cz": "Předmět od she → **her**."
         },
         {
           "en": "I want it.",
-          "cz": "Chci to. · it stays it",
+          "cz": "Chci to.",
           "gap": "I want ____.",
           "gap_answer": "it",
           "accepts": [
             "I want it."
           ],
-          "explanation": "Object pronoun after the verb: me / him / her / us / them.",
-          "explanation_cz": "Předmětové zájmeno po slovese: me / him / her / us / them."
+          "quiz_options": ["it", "him", "her", "them"],
+          "explanation": "it stays **it** after the verb.",
+          "explanation_cz": "it zůstává **it** za slovesem."
         },
         {
           "en": "She needs it.",
-          "cz": "Ona to potřebuje. · it (object)",
+          "cz": "Ona to potřebuje.",
           "gap": "She needs ____.",
           "gap_answer": "it",
           "accepts": [
             "She needs it."
           ],
-          "explanation": "Object pronoun after the verb: me / him / her / us / them.",
-          "explanation_cz": "Předmětové zájmeno po slovese: me / him / her / us / them."
+          "quiz_options": ["it", "him", "her", "them"],
+          "explanation": "it stays **it** after the verb.",
+          "explanation_cz": "it zůstává **it** za slovesem."
         },
         {
           "en": "I see you.",
-          "cz": "Vidím tě. · you stays you",
+          "cz": "Vidím tě.",
           "gap": "I see ____.",
           "gap_answer": "you",
           "accepts": [
             "I see you."
           ],
-          "explanation": "Object pronoun after the verb: me / him / her / us / them.",
-          "explanation_cz": "Předmětové zájmeno po slovese: me / him / her / us / them."
+          "quiz_options": ["you", "I", "me", "him"],
+          "explanation": "you stays **you** after the verb.",
+          "explanation_cz": "you zůstává **you** za slovesem."
         },
         {
           "en": "Do you like him?",
-          "cz": "Máš ho rád? · he → him · On",
+          "cz": "Máš ho rád?",
           "gap": "Do you like ____?",
           "gap_answer": "him",
           "accepts": [
             "Do you like him?"
           ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
+          "quiz_options": ["him", "he", "her", "me"],
+          "explanation": "Object form of he → **him**.",
+          "explanation_cz": "Předmět od he → **him**."
         },
         {
           "en": "Do you like her?",
-          "cz": "Máš ji rád? · she → her · Ona",
+          "cz": "Máš ji rád?",
           "gap": "Do you like ____?",
           "gap_answer": "her",
           "accepts": [
             "Do you like her?"
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "she", "him", "me"],
+          "explanation": "Object form of she → **her**.",
+          "explanation_cz": "Předmět od she → **her**."
         },
         {
           "en": "I like them.",
-          "cz": "Mám je rád. · they → them · Oni",
+          "cz": "Mám je rád.",
           "gap": "I like ____.",
           "gap_answer": "them",
           "accepts": [
             "I like them."
           ],
-          "explanation": "Object form of they → them.",
-          "explanation_cz": "Předmět od they → them."
+          "quiz_options": ["them", "they", "us", "him"],
+          "explanation": "Object form of they → **them**.",
+          "explanation_cz": "Předmět od they → **them**."
         },
         {
           "en": "They like us.",
-          "cz": "Oni nás mají rádi. · we → us",
+          "cz": "Oni nás mají rádi.",
           "gap": "They like ____.",
           "gap_answer": "us",
           "accepts": [
             "They like us."
           ],
-          "explanation": "Object form of we → us.",
-          "explanation_cz": "Předmět od we → us."
+          "quiz_options": ["us", "we", "them", "me"],
+          "explanation": "Object form of we → **us**.",
+          "explanation_cz": "Předmět od we → **us**."
         },
         {
           "en": "Look at him.",
-          "cz": "Podívej se na něj. · he → him · On",
+          "cz": "Podívej se na něj.",
           "gap": "Look at ____.",
           "gap_answer": "him",
           "accepts": [
             "Look at him."
           ],
-          "explanation": "Object form of he → him.",
-          "explanation_cz": "Předmět od he → him."
+          "quiz_options": ["him", "he", "her", "me"],
+          "explanation": "Object form of he → **him**.",
+          "explanation_cz": "Předmět od he → **him**."
         },
         {
           "en": "Look at her.",
-          "cz": "Podívej se na ni. · she → her · Ona",
+          "cz": "Podívej se na ni.",
           "gap": "Look at ____.",
           "gap_answer": "her",
           "accepts": [
             "Look at her."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "she", "him", "me"],
+          "explanation": "Object form of she → **her**.",
+          "explanation_cz": "Předmět od she → **her**."
         },
         {
           "en": "Come with us.",
-          "cz": "Pojď s námi. · we → us",
+          "cz": "Pojď s námi.",
           "gap": "Come with ____.",
           "gap_answer": "us",
           "accepts": [
             "Come with us."
           ],
-          "explanation": "Object form of we → us.",
-          "explanation_cz": "Předmět od we → us."
+          "quiz_options": ["us", "we", "them", "me"],
+          "explanation": "Object form of we → **us**.",
+          "explanation_cz": "Předmět od we → **us**."
         },
         {
           "en": "Listen to me.",
-          "cz": "Poslouchej mě. · I → me",
+          "cz": "Poslouchej mě.",
           "gap": "Listen to ____.",
           "gap_answer": "me",
           "accepts": [
             "Listen to me."
           ],
-          "explanation": "Object form of I → me.",
-          "explanation_cz": "Předmět od I → me."
+          "quiz_options": ["me", "I", "him", "her"],
+          "explanation": "Object form of I → **me**.",
+          "explanation_cz": "Předmět od I → **me**."
         }
       ]
     }
@@ -439,87 +381,86 @@
   "intro": {
     "cards": [
       {
-        "title": "Subject vs object",
-        "title_cz": "Podmět vs předmět",
-        "table": {
-          "caption": "two jobs",
-          "headers": [
-            "Job",
-            "Question",
-            "Example"
-          ],
-          "rows": [
-            [
-              "subject",
-              "Who does it?",
-              "I like coffee."
-            ],
-            [
-              "object",
-              "Who after the verb?",
-              "She likes me."
-            ]
-          ]
-        },
+        "title": "Object pronouns",
+        "title_cz": "Předmětová zájmena",
+        "text_first": true,
         "points": [
-          "First: match subject form ↔ object form (I ↔ me)",
-          "Then: full sentences (She likes me — not She likes I)",
-          "Two jobs for person words. Subject does the action. Object comes after the verb."
-        ]
-      },
-      {
-        "title": "Form pairs",
-        "title_cz": "Páry tvarů — revision",
+          "You already know I, you, he, she, it, we, they.",
+          "After the verb, most of them change."
+        ],
         "table": {
-          "caption": "subject → object",
           "headers": [
-            "Subject",
-            "Object",
-            "Note"
+            "you know",
+            "after the verb"
           ],
           "rows": [
             [
               "I",
-              "me",
-              "changes"
-            ],
-            [
-              "you",
-              "you",
-              "same"
+              "**me**"
             ],
             [
               "he",
-              "him",
-              "changes · On"
+              "**him**"
             ],
             [
               "she",
-              "her",
-              "changes · Ona"
-            ],
-            [
-              "it",
-              "it",
-              "same"
+              "**her**"
             ],
             [
               "we",
-              "us",
-              "changes"
+              "**us**"
             ],
             [
               "they",
-              "them",
-              "changes · Oni"
+              "**them**"
             ]
           ]
-        },
+        }
+      },
+      {
+        "title": "Form pairs",
+        "title_cz": "Páry tvarů",
+        "text_first": true,
         "points": [
-          "Practice block: I / me · he / him — Match the pairs",
-          "you and it stay the same",
-          "Match the subject form with the object form. No full sentences yet."
-        ]
+          "**you** and **it** stay the same."
+        ],
+        "table": {
+          "caption": "subject → object",
+          "headers": [
+            "Subject",
+            "Object"
+          ],
+          "rows": [
+            [
+              "I",
+              "**me**"
+            ],
+            [
+              "you",
+              "**you**"
+            ],
+            [
+              "he",
+              "**him**"
+            ],
+            [
+              "she",
+              "**her**"
+            ],
+            [
+              "it",
+              "**it**"
+            ],
+            [
+              "we",
+              "**us**"
+            ],
+            [
+              "they",
+              "**them**"
+            ]
+          ]
+        }
       },
       {
         "title": "After the verb",
@@ -532,26 +473,26 @@
           ],
           "rows": [
             [
-              "She likes me.",
-              "She likes I."
+              "She likes **me**.",
+              "She likes *I*."
             ],
             [
-              "I know him.",
-              "I know he."
+              "I know **him**.",
+              "I know *he*."
             ],
             [
-              "They help us.",
-              "They help we."
+              "They help **us**.",
+              "They help *we*."
             ]
           ]
         },
         "examples": [
           {
-            "en": "She likes me.",
+            "en": "She likes **me**.",
             "cz": "Ona mě má ráda."
           },
           {
-            "en": "I know him.",
+            "en": "I know **him**.",
             "cz": "Znám ho."
           }
         ],
@@ -572,24 +513,24 @@
           ],
           "rows": [
             [
-              "I like him.",
+              "I like **him**.",
               "I (subject)",
-              "him (object)"
+              "**him** (object)"
             ],
             [
-              "He likes me.",
-              "me (object)",
+              "He likes **me**.",
+              "**me** (object)",
               "He (subject)"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I like him.",
+            "en": "I like **him**.",
             "cz": "Mám ho rád."
           },
           {
-            "en": "He likes me.",
+            "en": "He likes **me**.",
             "cz": "On mě má rád."
           }
         ],
@@ -611,84 +552,57 @@
           ],
           "rows": [
             [
-              "him",
+              "**him**",
               "he",
-              "I know him."
+              "I know **him**."
             ],
             [
-              "her",
+              "**her**",
               "she",
-              "I know her."
+              "I know **her**."
             ],
             [
-              "them",
+              "**them**",
               "they",
-              "I like them."
+              "I like **them**."
             ]
           ]
         },
         "points": [
-          "his (possessive my/your unit) ≠ him (object)",
-          "her after the verb = object: I know her.",
+          "his (possessive my/your unit) ≠ **him** (object)",
+          "**her** after the verb = object: I know **her**.",
           "Each subject has its object form:"
         ]
       },
       {
-        "title": "With small words",
+        "title": "After to / with / at",
         "title_cz": "S předložkou",
         "table": {
-          "caption": "chunks",
+          "caption": "after to / with / at",
           "headers": [
             "EN",
             "CZ idea"
           ],
           "rows": [
             [
-              "Listen to me.",
+              "Listen to **me**.",
               "Poslouchej mě."
             ],
             [
-              "Look at him.",
+              "Look at **him**.",
               "Podívej se na něj."
             ],
             [
-              "Come with us.",
+              "Come with **us**.",
               "Pojď s námi."
             ]
           ]
         },
         "points": [
-          "to me · with us · at her",
+          "to **me** · with **us** · at **her**",
           "Still not I / we / she there",
           "After to / with / at use the object form too."
         ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "you / it same in both jobs"
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "1) Match pairs",
-              "I–me · he–him · she–her · we–us · they–them"
-            ],
-            [
-              "2) Sentences: after the verb",
-              "object form"
-            ],
-            [
-              "him",
-              "On · her = Ona · them = Oni"
-            ]
-          ]
-        }
       }
     ]
   }

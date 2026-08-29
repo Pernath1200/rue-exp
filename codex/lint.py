@@ -301,7 +301,7 @@ def lint_pack(uid):
                          "filler", "nopattern", "hardgloss", "badname", "vocablevel",
                          "slash", "teachernote", "uselead", "qlead",
                          "introex", "quizextra", "hardname", "chunkword",
-                         "fakes3sg", "toparticle")}
+                         "fakes3sg", "toparticle", "remember")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -500,6 +500,18 @@ def lint_pack(uid):
                     "en": "chunk/frames/grammar-theory is teacher-speak, not A1",
                 })
 
+    # C17 — Remember / Pamatuj recap card  [EXACT]
+    # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
+    # cringe and unnecessary." Same leftover on questions_negatives / question_words.
+    for i, c in enumerate(intro_cards(d)):
+        title = str(c.get("title") or "").strip()
+        title_cz = str(c.get("title_cz") or "").strip()
+        if re.search(r"^remember$", title, re.I) or re.search(r"^pamatuj$", title_cz, re.I):
+            f["remember"].append({
+                "cz": "card %d · %s" % (i, title or title_cz),
+                "en": "Remember/Pamatuj recap — cut it (C17)",
+            })
+
     # C12 — invented I + -s on a common-mistakes card  [EXACT]
     # James has never heard I works / I likes from Czech learners.
     for i, c in enumerate(intro_cards(d)):
@@ -594,6 +606,7 @@ def overlap_report(uid, top=3):
 
 LABELS = [
     ("chunkword",   "EXACT  C15 A1 intro uses teacher-speak (chunk / frames / grammar theory)"),
+    ("remember",    "EXACT  C17 intro has a Remember/Pamatuj recap card — cut it"),
     ("fakes3sg",    "EXACT  C12 common-mistakes lists I+likes/works (not a heard error)"),
     ("toparticle",  "EXACT  B8  Quiz gaps the particle to (want ____ work), not to-V vs V"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
