@@ -70,3 +70,46 @@ C1 packs on `G_VP-B2C1-01` / `G_NP-B2C1-01` / `G_VC-B2C1-01` match those roots. 
 `a1_agreement` + `a2_agreement` still sit on Verbs without a `G_*`. That is the next Degree-class pair if you want one.
 
 Not ticked in INSPECTED. Pack items/intro for Degree not rewritten here.
+
+---
+
+## 4. a1_frequency — the case (drafted 2026-08-29, NOT applied)
+
+James asked for the for/against on the audit's FLAG. Decision is his.
+
+**Hang now:** `verb_phrase` · `G_VP-A1B1-01`.
+
+**For moving to `sentence_syntax` · `G_SS-A1B1-01`:**
+
+1. **The tag has no Codex backing.** No rue-codex file mentions frequency at
+   all — `G_VP-A1B1-01`'s app_ref (auxiliaries, will/going to, irregulars,
+   past simple/continuous) never claimed it. The VP tag is app-side only, so
+   this is not "overruling Codex", it is filling a blank.
+2. **The pack teaches position, not verb form.** Note: "before verb / after
+   be". The smoke lane's current intro edit adds "With the verb, or after
+   *be*" — position framing again. Codex VP scope is tense/aspect/aux/modals.
+3. **The family unifies.** `a2_adverbs_order` (Sentence · G_SS-A1B1-01)
+   already lists `a1_frequency` as related and teaches the same rule
+   (always/also/still before verb · after be). Degree joined Sentence
+   2026-08-28. Moving frequency puts the whole adverb-position family in one
+   house; agreement joined the same unit 2026-08-29.
+3b. **Same unit, same seat:** move = `G_SS-A1B1-01`, the unit agreement now
+   hangs on. Seat lights: one A1 light leaves Verbs (30 topics, heaviest),
+   Sentence gains its natural member.
+
+**Against / cautions:**
+
+1. Pedagogically A1 frequency lives beside present simple routines (Verbs
+   neighborhood on the path). But the path is unchanged by a retag —
+   `related[]` (currently empty!) can carry the present-simple link.
+2. The audit's FLAG was about the family split with `a2_adverbs_order` —
+   moving resolves it, but James said do not merge the packs; a move is a
+   retag only, both packs stay separate.
+3. None. There is no Codex counter-claim to weigh.
+
+**Recommended if applied:** `root`/`tree_part` = `sentence_syntax`,
+`codex_unit` = `G_SS-A1B1-01`, `related[]` = `["a1_present_simple",
+"a2_adverbs_order"]`, all files together (tree, nodes-grammar, pack tag,
+rue-codex mapping G_SS-A1B1-01 + reverse map). Pack items/intro untouched
+(smoke lane owns the pack content and has live WIP in it — retag must wait
+for that WIP to land or go in as tag-only line insert).
