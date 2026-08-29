@@ -260,8 +260,9 @@ happened — the rule exists so it never can. See `codex/OXFORD-REMEASURE.md`.)
 
 ## Smoke
 
-Interactive: **audit first** (intro / Match / Quiz / Type / Use), findings, dropdowns,
-then rewrite. Full method: `codex/AUTHORING-RULES.md` § Smoke method (I8).
+**Prep is lint, not a 20-minute audit.** `py -X utf8 codex/lint.py <unit_id>` → 8-line
+card → stop. Skill: `smoke-prep`. Do not dump `pack-adapt` or read every item before
+James plays. Full method: `codex/AUTHORING-RULES.md` § Smoke method (I8 play/rewrite, **I10 prep**).
 After Telegram `<unit_id> tested`: new rules in that file → reconcile → commit → new tab.
 
 ```powershell

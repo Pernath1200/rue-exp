@@ -27,13 +27,29 @@ good.**
 
 ---
 
-## Smoke method — audit first, then change (I8)
+## Smoke method — three jobs, not one (I8 / I10)
 
-Do not dive in. Lessons from one unit carry to the next only if they are in this file
-and in git, not in a long tab.
+Do not dive in. Lessons carry only if they are in this file and in git.
 
-**Before any rewrite**, audit every stage against the rules below. Write findings.
-Then dropdowns. Then change. Then James plays.
+| Job | What | How long |
+|--|--|--|
+| **Prep** (I10) | `py -X utf8 codex/lint.py <unit_id>` → 8-line card. No rewrite. | **seconds** |
+| **Play** | James smokes. Skip Match. Flag as you go. Telegram tick. | 10–20 min |
+| **Rewrite** (I8) | Only after flags, or if Prep said Wreck and James waits. Findings → dropdowns → change. | a sit |
+
+**Prep is not a full audit.** A tab that dumps `pack-adapt`, reads every intro card, and writes a stage essay is doing I8 before the play. That ran **22 minutes / 155k tokens** (2026-08-29) and blocked the next unit. Kill it. Paste for a new tab is the I10 block below, not “audit intro/Match/Quiz/Type/Use”.
+
+**I10 paste (prep only):**
+
+```
+Smoke-prep: <unit_id> in rue-exp. http://localhost:8097/#<unit_id>
+Run py -X utf8 codex/lint.py <unit_id>. Write the 8-line SMOKE-PREP card. Stop.
+Do not adapt the pack. Do not read every item. Do not rewrite. Do not tick INSPECTED.
+If Wreck: one dropdown (play anyway / wait). Otherwise stop.
+```
+
+**I8 — when rewriting**, audit every stage against the rules below. Write findings.
+Then dropdowns. Then change. Then James plays again.
 
 | Stage | Look for |
 |--|--|
@@ -245,8 +261,9 @@ scaled today — but it fails in a specific and dangerous way.
 | **I5** | The two failure kinds are different jobs. Unit one failed at GRADING; unit two graded fine and failed at TEACHING. The lint catches the first and none of the second. | — | `confirmed` |
 | **I6** | After Telegram `<unit_id> tested`: capture new rules, reconcile the register, commit. A long tab is not a memory. | Frozen 31-hour smoke tab 2026-08-28. Weekend protocol 2026-08-29. | `confirmed` |
 | **I7** | After a rename, grep `gap_accepts` / `accepts`. Leftover keys from the old name still grade. | `a1_possessives`: *Ondrej's* accepted *Patriks*; *Vaclav's* accepted *Annas*; *Homare's* accepted *Toms*. | `observed` |
-| **I8** | **Audit every stage before changing anything.** Findings, then dropdowns, then rewrite. Diving in repeats the same class of mistake the previous unit just taught. | Weekend smoke 2026-08-29: present simple and possessives only got clean when the audit ran first. | `confirmed` |
-| **I9** | Finish the rewrite **before** James plays. A long pretest means he smokes the old pack; flags cite titles that no longer exist. | `a1_questions_negatives` 2026-08-29: *2 systems* / *BE ?* / *Remember*. `a1_question_words` 2026-08-29: *who* / *Remember* / 12-tile Match against the rewritten four-card pack. | `confirmed` |
+| **I8** | **When rewriting:** audit every stage before changing anything. Findings, then dropdowns, then rewrite. Diving in repeats the same class of mistake the previous unit just taught. | Weekend smoke 2026-08-29: present simple and possessives only got clean when the audit ran first. | `confirmed` |
+| **I9** | If a rewrite is in flight, finish it **before** James plays. A long pretest against the old pack means flags cite titles that no longer exist. First play of a unit does not wait for a rewrite — that is I10. | `a1_questions_negatives` 2026-08-29: *2 systems* / *BE ?* / *Remember*. `a1_question_words` 2026-08-29: *who* / *Remember* / 12-tile Match against the rewritten four-card pack. | `confirmed` |
+| **I10** | **Pre-smoke is `lint.py` + an 8-line card.** Seconds, not a quarter hour. Do not dump `pack-adapt`, do not read every item, do not write a stage essay before the play. | 2026-08-29: a “pre-smoke audit” tab ran 22 minutes / 155k tokens and blocked the next unit. | `confirmed` |
 
 ---
 
