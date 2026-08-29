@@ -1,13 +1,20 @@
-# smoke_list.py — Telegram smoke-next handler.
+# smoke_list.py — Telegram smoke-next handler. Lives in the vault AND the repo.
 #
-# Rank comes from the vault file (generated on the laptop).
-# This process NEVER writes smoke-next.md. It only appends smoke-done-log.md.
-# `units to test` re-reads both files and hides ids already in the log.
+# Hard rules (2026-08-29 rewind: remaining went 10 → 14, tested units came back):
+#   1. NEVER write smoke-next.md or smoke-order.json.
+#   2. ONLY append smoke-done-log.md.
+#   3. Rank from smoke-order.json (full remaining list) minus the log.
+#      A 5-line snapshot is how already-tested units resurrected.
+#   4. Remaining = how many of that order are still untested. Never a baked 53.
+#   5. Parked ids alias (b1_used_to → a2_used_to).
 #
-# Copy to the home PC listener (`C:\Users\james\reminders\smoke_list.py`)
-# and restart that process. Canonical copy: rue-exp/codex/smoke_list.py
+# Canonical: rue-exp/codex/smoke_list.py
+# Live copy:  Documents/original/TA/smoke_list.py  (Obsidian Sync)
+# The listener should load THIS vault file every message, not a cached copy
+# in reminders/.
 from __future__ import annotations
 
+import json
 import re
 from datetime import datetime
 from pathlib import Path
@@ -26,31 +33,67 @@ LOG_RE = re.compile(
     r"(?P<date>\d{4}-\d{2}-\d{2})(?:\s+\d{2}:\d{2})?\s*·\s*"
     r"(?P<unit>[a-z0-9_]+)\s*·\s*(?P<verdict>tested|approved|untested)\b"
 )
-REMAINING_RE = re.compile(r"Remaining:\s+\*\*(\d+)\s+grammar units\*\*", re.I)
-STAMP_RE = re.compile(r"GENERATED\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2})", re.I)
 
-# Live id after a move. Telegram may still send the parked id.
-ALIASES = {
+DEFAULT_ALIASES = {
     "b1_used_to": "a2_used_to",
 }
 
 
 def _vault() -> Path:
     for p in CANDIDATE_VAULTS:
-        if (p / "smoke-next.md").exists() or (p / "smoke-done-log.md").exists():
+        if (p / "smoke-order.json").exists() or (p / "smoke-next.md").exists():
             return p
     return CANDIDATE_VAULTS[0]
 
 
-def _paths():
-    v = _vault()
-    return v / "smoke-next.md", v / "smoke-done-log.md"
+def _canon(uid: str, aliases: dict) -> str:
+    return aliases.get(uid, uid)
 
 
-def _parse(text: str):
+def _tested_ids(done_text: str, aliases: dict) -> set[str]:
+    last: dict[str, str] = {}
+    for ln in done_text.splitlines():
+        m = LOG_RE.search(ln.replace("~~", ""))
+        if not m:
+            continue
+        last[_canon(m.group("unit"), aliases)] = m.group("verdict")
+    out = set()
+    for uid, v in last.items():
+        if v in ("tested", "approved"):
+            out.add(uid)
+            for parked, live in aliases.items():
+                if live == uid:
+                    out.add(parked)
+    return out
+
+
+def _load_order(vault: Path):
+    """Full remaining list from the laptop. Markdown Top 5 is display-only."""
+    aliases = dict(DEFAULT_ALIASES)
+    stamp = "unknown"
+    order = []
+    jpath = vault / "smoke-order.json"
+    if jpath.exists():
+        data = json.loads(jpath.read_text(encoding="utf-8"))
+        aliases.update(data.get("aliases") or {})
+        stamp = str(data.get("generated") or stamp)
+        for row in data.get("order") or []:
+            uid = str(row.get("id") or "").strip()
+            if uid:
+                order.append((uid, str(row.get("label") or uid)))
+        if order:
+            return order, aliases, stamp
+    # Fallback: markdown snapshot (legacy). Worse if the file is only 5+bench.
+    md = vault / "smoke-next.md"
+    if not md.exists():
+        return [], aliases, stamp
+    raw = md.read_text(encoding="utf-8")
+    m = re.search(r"GENERATED\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2})", raw, re.I)
+    if m:
+        stamp = m.group(1)
     top, bench = [], []
     in_top = in_bench = False
-    for line in text.splitlines():
+    for line in raw.splitlines():
         if line.startswith("## Top 5"):
             in_top, in_bench = True, False
             continue
@@ -61,136 +104,109 @@ def _parse(text: str):
             in_top = in_bench = False
             continue
         if in_top:
-            m = TOP_RE.match(line.strip())
-            if m:
-                top.append((m.group(2), m.group(3).strip()))
+            mm = TOP_RE.match(line.strip())
+            if mm:
+                top.append((mm.group(2), mm.group(3).strip()))
         elif in_bench:
-            m = BENCH_RE.match(line.strip())
-            if m:
-                bench.append((m.group(1), m.group(2).strip()))
-    return top, bench
+            mm = BENCH_RE.match(line.strip())
+            if mm:
+                bench.append((mm.group(1), mm.group(2).strip()))
+    return top + bench, aliases, stamp
 
 
-def _canon(uid: str) -> str:
-    return ALIASES.get(uid, uid)
-
-
-def _tested_ids(done_text: str) -> set[str]:
-    """Last verdict wins. Aliases apply both ways."""
-    last: dict[str, str] = {}
-    for ln in done_text.splitlines():
-        m = LOG_RE.search(ln.replace("~~", ""))
-        if not m:
-            continue
-        last[_canon(m.group("unit"))] = m.group("verdict")
-    out = set()
-    for uid, v in last.items():
-        if v in ("tested", "approved"):
-            out.add(uid)
-            for parked, live in ALIASES.items():
-                if live == uid:
-                    out.add(parked)
-    return out
-
-
-def _filter(top, bench, done: set[str]):
-    rest = [(u, lab) for u, lab in top + bench if _canon(u) not in done and u not in done]
-    return rest[:5], rest[5:]
+def _visible(order, done: set[str], aliases: dict):
+    rest = [
+        (u, lab)
+        for u, lab in order
+        if _canon(u, aliases) not in done and u not in done
+    ]
+    return rest
 
 
 def _format_top(top) -> str:
     lines = [f"{i} {uid} — {label}" for i, (uid, label) in enumerate(top[:5], 1)]
-    return "\n".join(lines) if lines else "(no units left in Top 5)"
+    return "\n".join(lines) if lines else "(no units left)"
 
 
-def _footer(raw: str, top, bench) -> str:
-    m = REMAINING_RE.search(raw)
-    n = int(m.group(1)) if m else len(top) + len(bench)
-    stamp = STAMP_RE.search(raw)
-    when = stamp.group(1) if stamp else "unknown"
-    return (
-        f"\n{n} left. Snapshot {when}. "
-        f"If this is not the laptop Top 5, the bot is stale."
-    )
+def _reply(order, done, aliases, stamp, note: str = "") -> str:
+    vis = _visible(order, done, aliases)
+    n = len(vis)
+    body = _format_top(vis)
+    foot = f"{n} left. Snapshot {stamp}."
+    return (note + body + "\n" + foot).strip() + "\n"
 
 
-def _matches_slot(query: str, uid: str, label: str) -> bool:
+def _matches_slot(query: str, uid: str, label: str, aliases: dict) -> bool:
     q = query.strip().lower().replace(" ", "_")
     u = uid.lower()
     lab = label.lower()
-    if q == u or q in u or _canon(q) == _canon(u):
+    if q == u or q in u or _canon(q, aliases) == _canon(u, aliases):
         return True
     if q.replace("_", " ") in lab:
         return True
     return False
 
 
-def _tick(uid: str, next_path: Path, done_path: Path) -> str:
-    uid = _canon(uid.strip().lower())
+def _append_tick(done_path: Path, uid: str) -> None:
     stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
-    prev = done_path.read_text(encoding="utf-8") if done_path.exists() else ""
-    done_path.write_text(
-        prev.rstrip() + f"\n{stamp} · {uid} · tested\n",
-        encoding="utf-8",
-    )
-    raw = next_path.read_text(encoding="utf-8") if next_path.exists() else ""
-    top, bench = _parse(raw)
-    done = _tested_ids(done_path.read_text(encoding="utf-8"))
-    new_top, new_bench = _filter(top, bench, done)
-    note = ""
-    ids = [_canon(u) for u, _ in top + bench]
-    if uid not in ids and uid not in done:
-        note = f"{uid} logged (was not on the snapshot)\n"
-    elif uid not in ids:
-        note = f"{uid} logged\n"
-    else:
-        note = f"{uid} logged\n"
-    return note + _format_top(new_top) + _footer(raw, new_top, new_bench)
+    done_path.parent.mkdir(parents=True, exist_ok=True)
+    with done_path.open("a", encoding="utf-8") as f:
+        f.write(f"\n{stamp} · {uid} · tested\n")
 
 
 def handle_smoke(text: str) -> str | None:
     """Return a Telegram reply, or None if this is not a smoke command."""
     msg = " ".join(text.strip().split())
     low = msg.lower()
-    next_path, done_path = _paths()
-
-    if low in ("units to test", "unit to test", "next unit", "smoke next"):
-        if not next_path.exists():
-            return "smoke-next.md not found on this machine."
-        raw = next_path.read_text(encoding="utf-8")
-        top, bench = _parse(raw)
-        done = _tested_ids(done_path.read_text(encoding="utf-8")) if done_path.exists() else set()
-        top, bench = _filter(top, bench, done)
-        return _format_top(top) + _footer(raw, top, bench)
-
-    if not low.endswith("tested"):
+    is_list = low in ("units to test", "unit to test", "next unit", "smoke next")
+    is_tick = low.endswith("tested")
+    if not is_list and not is_tick:
         return None
-    if not next_path.exists():
-        return "smoke-next.md not found on this machine."
 
-    raw = next_path.read_text(encoding="utf-8")
-    top, bench = _parse(raw)
+    vault = _vault()
+    order, aliases, stamp = _load_order(vault)
+    done_path = vault / "smoke-done-log.md"
+    done = _tested_ids(
+        done_path.read_text(encoding="utf-8") if done_path.exists() else "",
+        aliases,
+    )
+
+    if is_list:
+        if not order:
+            return "smoke-order.json not found. Run build_smoke_next.py --write on the laptop."
+        return _reply(order, done, aliases, stamp)
+
+    if not order:
+        return "smoke-order.json not found. Run build_smoke_next.py --write on the laptop."
+
+    vis = _visible(order, done, aliases)
 
     m = TESTED_NUM.match(msg)
     if m:
         n = int(m.group(1))
         query = m.group(2).strip()
-        if n < 1 or n > len(top):
-            return f"No slot {n} on the list.\n" + _format_top(top)
-        uid, label = top[n - 1]
-        if not _matches_slot(query, uid, label):
+        if n < 1 or n > min(5, len(vis)):
+            return f"No slot {n} on the list.\n" + _reply(order, done, aliases, stamp)
+        uid, label = vis[n - 1]
+        if not _matches_slot(query, uid, label, aliases):
             return (
                 f"Slot {n} is {uid} ({label}), not “{query}”. "
-                f"Send `{uid} tested`.\n" + _format_top(top)
+                f"Send `{uid} tested`.\n"
+                + _reply(order, done, aliases, stamp)
             )
-        return _tick(uid, next_path, done_path)
+        live = _canon(uid, aliases)
+        _append_tick(done_path, live)
+        done = _tested_ids(done_path.read_text(encoding="utf-8"), aliases)
+        return _reply(order, done, aliases, stamp, note=f"{live} logged\n")
 
     m = TESTED_ID.match(msg)
     if m:
-        return _tick(m.group(1).lower(), next_path, done_path)
+        live = _canon(m.group(1).lower(), aliases)
+        _append_tick(done_path, live)
+        done = _tested_ids(done_path.read_text(encoding="utf-8"), aliases)
+        return _reply(order, done, aliases, stamp, note=f"{live} logged\n")
 
     return (
-        "Say `a2_comparatives tested` (the unit id) "
-        "or `1 present_perfect tested` only if slot 1 matches.\n"
-        + _format_top(top)
+        "Say `a2_present_perfect tested` (the unit id).\n"
+        + _reply(order, done, aliases, stamp)
     )

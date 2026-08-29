@@ -1,6 +1,8 @@
 # SMOKE NEXT — generated into the vault
 
 The running Top 5 lives at `Documents\original\TA\smoke-next.md`.
+The bot ranks from `Documents\original\TA\smoke-order.json` (the **full**
+remaining list, not five lines) minus `smoke-done-log.md`.
 Rebuild: `py -X utf8 codex\build_smoke_next.py --write` then
 `py -X utf8 codex\reconcile_inspected.py`.
 

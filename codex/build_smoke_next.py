@@ -32,7 +32,14 @@ from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = Path.home() / "Documents" / "original" / "TA" / "smoke-next.md"
+VAULT = Path.home() / "Documents" / "original" / "TA"
+OUT = VAULT / "smoke-next.md"
+ORDER_JSON = VAULT / "smoke-order.json"
+
+# Parked id → live id. Bot and log both use this.
+ALIASES = {
+    "b1_used_to": "a2_used_to",
+}
 
 LEVELS = ("A1", "A2", "B1")
 TOP_N = 5
@@ -127,7 +134,26 @@ Remaining: **{len(todo)} grammar units** — A1 {counts['A1']} · A2 {counts['A2
 
     if "--write" in sys.argv:
         OUT.write_text(doc, encoding="utf-8", newline="\r\n")
+        payload = {
+            "generated": stamp,
+            "remaining": len(todo),
+            "aliases": ALIASES,
+            "order": [
+                {
+                    "id": u,
+                    "label": f"{labels.get(u, u)} · {level_of(u)}",
+                    "level": level_of(u),
+                }
+                for u in todo
+            ],
+        }
+        ORDER_JSON.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+            newline="\r\n",
+        )
         print(f"written: {OUT}")
+        print(f"written: {ORDER_JSON} ({len(todo)} remaining)")
         print(f"top: {', '.join(top)}")
     else:
         print(doc)

@@ -6,6 +6,12 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — smoke ranking is now one writer
+
+Bot was rewriting a 5-line snapshot (and a baked 53-count), so a tick could resurrect tested units. `build_smoke_next.py --write` now also writes `TA/smoke-order.json` (full remaining list). `smoke_list.py` appends the log only, ranks json minus log, remaining = untested count. Vault copy is the live handler; `telegram_sweep_bot.py` on this machine loads that file each message.
+
+---
+
 ## 2026-08-29 · local (interactive) — Telegram rewind after `b1_used_to`
 
 Proof the home listener is not this laptop's handler: after `a2_adverbs_order` it said 10 to go; after `b1_used_to` it said **14 to go** and put already-tested units back (`ed_ing`, `adverbs_order`, old *Some / any / no — the traps* title). Remaining went **up**. That is the old 53-count bot rewriting a stale ranking. This machine has no live telegram poller (only http.server 8097). Fix is on home PC: copy `codex/smoke_list.py` → `reminders\smoke_list.py`, restart, send `units to test`. Must show Snapshot timestamp and must never say `of 53`.
