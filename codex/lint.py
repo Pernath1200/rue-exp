@@ -530,9 +530,8 @@ def lint_pack(uid):
                 "en": "dummy There never tested — gap was is/are with There given",
             })
 
-    # C22 — A1 metalanguage "permission" with no Czech on the same card  [EXACT]
-    # a1_can 2026-08-29: "permission is going to be confusing word for a1
-    # learners: have cz translations."
+    # C22 — A1 metalanguage with no Czech on the same card  [EXACT]
+    # a1_can 2026-08-29: permission. a1_some_any 2026-08-29: quantifiers.
     if str(d.get("level", "")).upper() == "A1":
         for i, c in enumerate(intro_cards(d)):
             bits = [card_text(c), str(c.get("title_cz") or ""),
@@ -546,6 +545,12 @@ def lint_pack(uid):
                 f["a1meta"].append({
                     "cz": "card %d · %s" % (i, c.get("title", "")),
                     "en": "permission with no Czech (dovolení / smím)",
+                })
+            if re.search(r"\bquantifiers?\b", blob, re.I) and not re.search(
+                    r"množstv", blob, re.I):
+                f["a1meta"].append({
+                    "cz": "card %d · %s" % (i, c.get("title", "")),
+                    "en": "quantifier with no Czech (množství)",
                 })
 
     # C23 — intro names the pack, the level, or the syllabus  [EXACT]
@@ -693,7 +698,7 @@ LABELS = [
     ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),
     ("theregap",    "EXACT  B8  there-is pack never gaps There — dummy subject untested"),
     ("cancant",     "EXACT  B8  a1_can statement gaps can/can't — Czech already picks the chip"),
-    ("a1meta",      "EXACT  C22 A1 intro says permission with no Czech gloss"),
+    ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
     ("uselead",     "EXACT  F3  Use item has words not yet taught (partner+prior+this)"),

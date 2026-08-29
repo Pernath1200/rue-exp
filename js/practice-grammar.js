@@ -891,13 +891,23 @@ export function startPractice(rawPack, root, opts) {
    * sentence-to-sentence board gets 8, which is what fits a screen without
    * scrolling. Sized from the content, not per pack, so it holds everywhere.
    * (James, 2026-08-20, smoking a2_first_conditional: "too much words for a
-   * single page — they are full sentences, we only need 8, not 12".) */
+   * single page — they are full sentences, we only need 8, not 12".)
+   * 2026-08-29 a1_some_any: char-avg > 24 missed A1 sentences
+   * ("I have some coffee." is 20 chars, pack avg 23) and still painted 12.
+   * Count as a sentence if it has a .?! or four-plus words — short phrases
+   * and single words stay at 12. */
   function matchBoardSize(pairs) {
     if (!pairs.length) return DEFAULT_PASS;
-    let total = 0;
-    for (const p of pairs) total += String(p.en || p.prompt || "").length;
-    const avg = total / pairs.length;
-    return avg > 24 ? 8 : DEFAULT_PASS;
+    const isSentence = (s) => {
+      const t = String(s || "").trim();
+      const words = t.split(/\s+/).filter(Boolean);
+      return words.length >= 4 || /[.?!]/.test(t);
+    };
+    let n = 0;
+    for (const p of pairs) {
+      if (isSentence(p.en || p.prompt || "")) n += 1;
+    }
+    return n > pairs.length / 2 ? 8 : DEFAULT_PASS;
   }
 
 
@@ -1066,10 +1076,11 @@ export function startPractice(rawPack, root, opts) {
 
   function newMatchBoard() {
     const pool = pack.match || [];
-    const raw = samplePass(pool, null, focusStructures, {
+    const sampled = samplePass(pool, null, focusStructures, {
       packId: pack.id,
       stage: "match",
-    }).slice(0, matchBoardSize(pool));
+    });
+    const raw = sampled.slice(0, matchBoardSize(sampled));
     const leftSrc = shuffle(raw);
     const left = leftSrc.map((p, i) => ({
       id: i,

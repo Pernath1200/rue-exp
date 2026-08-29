@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_some_any",
   "practice": "frames",
-  "note": "some in + · any in − and ?. Gap on some/any. Ties to there is + have. Not much/many/a lot yet. · classfix B/D/E-2026-07-25 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "some in + · any in − and ?. Gap on some/any. Ties to there is + have. Offers/requests Quiz/Type only. Not much/many/a lot; no/not any is a2_some_any_no. · 2026-08-29 smoke: Remember cut (C17); D3 one Czech; F3 brothers + haven't got use:false; offers use:false; authored some/any chips; no≈not any parked at A2.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -19,81 +19,88 @@
       "items": [
         {
           "en": "I have some coffee.",
-          "cz": "Mám nějakou kávu. / Mám kávu.",
+          "cz": "Mám nějakou kávu.",
           "gap": "I have ____ coffee.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "I have some coffee."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Positive **have** + **some**. Not *any*.",
+          "explanation_cz": "Kladné **have** + **some**. Ne *any*."
         },
         {
           "en": "We have some bread.",
-          "cz": "Máme nějaký chleba. / Máme chleba.",
+          "cz": "Máme nějaký chleba.",
           "gap": "We have ____ bread.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "We have some bread."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Positive **have** + **some**. Not *any*.",
+          "explanation_cz": "Kladné **have** + **some**. Ne *any*."
         },
         {
           "en": "There are some books on the table.",
           "cz": "Na stole jsou nějaké knihy.",
           "gap": "There are ____ books on the table.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "There are some books on the table."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "**There are** + **some** + plural. Not *any*.",
+          "explanation_cz": "**There are** + **some** + množné. Ne *any*."
         },
         {
           "en": "She has some friends here.",
           "cz": "Ona tady má nějaké kamarády.",
           "gap": "She has ____ friends here.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "She has some friends here."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Positive **has** + **some**. Not *any*.",
+          "explanation_cz": "Kladné **has** + **some**. Ne *any*."
         },
         {
           "en": "I don't have any coffee.",
           "cz": "Nemám žádnou kávu.",
           "gap": "I don't have ____ coffee.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "I don't have any coffee.",
             "I do not have any coffee.",
             "I haven't got any coffee.",
             "I have no coffee."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Negative: **don't** + **any**. Not *some*.",
+          "explanation_cz": "Zápor: **don't** + **any**. Ne *some*."
         },
         {
           "en": "We don't have any bread.",
           "cz": "Nemáme žádný chleba.",
           "gap": "We don't have ____ bread.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "We don't have any bread.",
             "We do not have any bread.",
             "We haven't got any bread.",
             "We have no bread."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Negative: **don't** + **any**. Not *some*.",
+          "explanation_cz": "Zápor: **don't** + **any**. Ne *some*."
         },
         {
           "en": "There isn't any milk.",
           "cz": "Není žádné mléko.",
           "gap": "There isn't ____ milk.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "There isn't any milk.",
             "There is not any milk.",
@@ -101,214 +108,221 @@
             "There is no milk.",
             "There's no milk."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "**There isn't** + **any**. Not *some*.",
+          "explanation_cz": "**There isn't** + **any**. Ne *some*."
         },
         {
           "en": "There aren't any chairs.",
           "cz": "Nejsou tu žádné židle.",
           "gap": "There aren't ____ chairs.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "There aren't any chairs.",
             "There are not any chairs.",
             "There are no chairs."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "**There aren't** + **any**. Not *some*.",
+          "explanation_cz": "**There aren't** + **any**. Ne *some*."
         },
         {
           "en": "He doesn't have any money.",
           "cz": "On nemá žádné peníze.",
           "gap": "He doesn't have ____ money.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "He doesn't have any money.",
             "He does not have any money.",
             "He hasn't got any money.",
             "He has no money."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Negative: **doesn't** + **any**. Not *some*.",
+          "explanation_cz": "Zápor: **doesn't** + **any**. Ne *some*."
         },
         {
           "en": "Do you have any questions?",
           "cz": "Máš nějaké otázky?",
           "gap": "Do you have ____ questions?",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "Do you have any questions?",
             "Have you got any questions?"
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Question: **Do you have any…?** Not *some*.",
+          "explanation_cz": "Otázka: **Do you have any…?** Ne *some*."
         },
         {
           "en": "Is there any coffee?",
           "cz": "Je nějaká káva?",
           "gap": "Is there ____ coffee?",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "Is there any coffee?"
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "**Is there any…?** Not *some*.",
+          "explanation_cz": "**Is there any…?** Ne *some*."
         },
         {
           "en": "Are there any chairs?",
           "cz": "Jsou nějaké židle?",
           "gap": "Are there ____ chairs?",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "Are there any chairs?"
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "**Are there any…?** Not *some*.",
+          "explanation_cz": "**Are there any…?** Ne *some*."
         },
         {
           "en": "Do they have any children?",
           "cz": "Mají nějaké děti?",
           "gap": "Do they have ____ children?",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "Do they have any children?",
             "Have they got any children?"
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Question: **Do they have any…?** Not *some*.",
+          "explanation_cz": "Otázka: **Do they have any…?** Ne *some*."
         },
         {
           "en": "Does she have any brothers?",
           "cz": "Má ona nějaké bratry?",
+          "use": false,
           "gap": "Does she have ____ brothers?",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "Does she have any brothers?",
             "Has she got any brothers?"
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Question: **Does she have any…?** Not *some*.",
+          "explanation_cz": "Otázka: **Does she have any…?** Ne *some*."
         },
         {
           "en": "Would you like some tea?",
-          "cz": "Dáš si čaj? / Chceš čaj?",
+          "cz": "Dáš si čaj?",
+          "use": false,
           "gap": "Would you like ____ tea?",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "Would you like some tea?",
             "Do you want some tea?"
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Offer: **Would you like some…?** Not *any*.",
+          "explanation_cz": "Nabídka: **Would you like some…?** Ne *any*."
         },
         {
           "en": "Would you like some water?",
-          "cz": "Dáš si vodu? / Chceš vodu?",
+          "cz": "Dáš si vodu?",
+          "use": false,
           "gap": "Would you like ____ water?",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "Would you like some water?",
             "Do you want some water?"
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Offer: **Would you like some…?** Not *any*.",
+          "explanation_cz": "Nabídka: **Would you like some…?** Ne *any*."
         },
         {
           "en": "Can I have some bread?",
-          "cz": "Můžu dostat chleba? / Můžu si vzít chleba?",
+          "cz": "Můžu dostat chleba?",
+          "use": false,
           "gap": "Can I have ____ bread?",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "Can I have some bread?",
             "Can I have some bread, please?"
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Asking: **Can I have some…?** Not *any*.",
+          "explanation_cz": "Prosba: **Can I have some…?** Ne *any*."
         },
         {
           "en": "I need some help.",
           "cz": "Potřebuju nějakou pomoc.",
           "gap": "I need ____ help.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "I need some help."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Positive **need** + **some**. Not *any*.",
+          "explanation_cz": "Kladné **need** + **some**. Ne *any*."
         },
         {
           "en": "We need some time.",
           "cz": "Potřebujeme nějaký čas.",
           "gap": "We need ____ time.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "We need some time."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Positive **need** + **some**. Not *any*.",
+          "explanation_cz": "Kladné **need** + **some**. Ne *any*."
         },
         {
           "en": "I haven't got any ideas.",
           "cz": "Nemám žádné nápady.",
+          "use": false,
           "gap": "I haven't got ____ ideas.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "I haven't got any ideas.",
             "I don't have any ideas.",
             "I do not have any ideas.",
             "I have no ideas."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
-        },
-        {
-          "en": "Is there any problem?",
-          "cz": "Je nějaký problém?",
-          "gap": "Is there ____ problem?",
-          "gap_answer": "any",
-          "accepts": [
-            "Is there any problem?",
-            "Is there a problem?"
-          ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Negative: **haven't got** + **any**. Not *some*.",
+          "explanation_cz": "Zápor: **haven't got** + **any**. Ne *some*."
         },
         {
           "en": "There are some people here.",
-          "cz": "Jsou tady nějací lidé. (there/here OK)",
+          "cz": "Jsou tady nějací lidé.",
           "gap": "There are ____ people here.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
-            "There are some people here.",
-            "There are some people here.",
-            "There are some people here"
+            "There are some people here."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "**There are** + **some** + plural. Not *any*.",
+          "explanation_cz": "**There are** + **some** + množné. Ne *any*."
         },
         {
           "en": "I don't want any coffee.",
           "cz": "Nechci žádnou kávu.",
           "gap": "I don't want ____ coffee.",
           "gap_answer": "any",
+          "quiz_options": ["any", "some"],
           "accepts": [
             "I don't want any coffee.",
             "I do not want any coffee."
           ],
-          "explanation": "any in negatives and most questions.",
-          "explanation_cz": "any v záporu a většině otázek."
+          "explanation": "Negative: **don't want** + **any**. Not *some*.",
+          "explanation_cz": "Zápor: **don't want** + **any**. Ne *some*."
         },
         {
           "en": "She has some money.",
           "cz": "Ona má nějaké peníze.",
           "gap": "She has ____ money.",
           "gap_answer": "some",
+          "quiz_options": ["some", "any"],
           "accepts": [
             "She has some money.",
             "She's got some money."
           ],
-          "explanation": "some in positive sentences (and offers/requests).",
-          "explanation_cz": "some v kladných větách (i nabídky/prosby)."
+          "explanation": "Positive **has** + **some**. Not *any*.",
+          "explanation_cz": "Kladné **has** + **some**. Ne *any*."
         }
       ]
     }
@@ -317,242 +331,231 @@
     "cards": [
       {
         "title": "Some / any",
-        "title_cz": "some / any — nějaký / žádný",
+        "title_cz": "množství — some / any",
+        "text_first": true,
+        "points": [
+          "**some** and **any** are quantifiers (množství)",
+          "They tell you the quantity of a noun",
+          "**some** = positive · **any** = negatives and questions"
+        ],
         "table": {
-          "caption": "big rule",
+          "caption": "quantity of a noun",
           "headers": [
             "Word",
-            "Usually in",
+            "Used in",
             "Example"
           ],
           "rows": [
             [
-              "some",
-              "+ statements",
-              "I have some coffee."
+              "**some**",
+              "positive",
+              "I have **some** coffee."
             ],
             [
-              "any",
-              "− negatives",
-              "I don't have any coffee."
+              "**any**",
+              "negatives",
+              "I don't have **any** coffee."
             ],
             [
-              "any",
-              "? questions",
-              "Do you have any coffee?"
+              "**any**",
+              "questions",
+              "Do you have **any** coffee?"
             ]
           ]
         },
-        "points": [
-          "some ≈ + (I have…)",
-          "any ≈ − and ? (I don't… · Do you…?)",
-          "Two small words before nouns when you do not say exact number.",
-          "some and any often mean 'a bit of' or 'one or more'."
+        "examples": [
+          {
+            "en": "I have **some** coffee.",
+            "cz": "Mám nějakou kávu."
+          },
+          {
+            "en": "I don't have **any** coffee.",
+            "cz": "Nemám žádnou kávu."
+          }
         ]
       },
       {
         "title": "some (+)",
-        "title_cz": "some = v kladné větě",
+        "title_cz": "some v kladné větě",
         "table": {
           "caption": "positive",
           "headers": [
-            "EN",
-            "CZ idea"
+            "Frame",
+            "Example"
           ],
           "rows": [
             [
-              "I have some coffee.",
-              "mám (nějakou) kávu"
+              "have + **some**",
+              "I have **some** coffee."
             ],
             [
-              "There are some books.",
-              "jsou (nějaké) knihy"
+              "There are + **some**",
+              "There are **some** books."
             ],
             [
-              "She has some friends.",
-              "má (nějaké) kamarády"
+              "has + **some**",
+              "She has **some** friends."
             ]
           ]
         },
         "examples": [
           {
-            "en": "We have some bread.",
-            "cz": "Máme chleba."
+            "en": "We have **some** bread.",
+            "cz": "Máme nějaký chleba."
           },
           {
-            "en": "There are some people here.",
+            "en": "There are **some** people here.",
             "cz": "Jsou tady nějací lidé."
           }
         ],
         "points": [
-          "Use some in normal + sentences",
-          "Works with things you cannot easily count (coffee) and plurals (books)"
+          "Use **some** in normal + sentences",
+          "Works with coffee and with books"
         ]
       },
       {
         "title": "any (−)",
-        "title_cz": "any = v záporu",
+        "title_cz": "any v záporu",
         "table": {
           "caption": "negative",
           "headers": [
-            "EN",
-            "CZ idea"
+            "Frame",
+            "Example"
           ],
           "rows": [
             [
-              "I don't have any coffee.",
-              "nemám žádnou kávu"
+              "don't have + **any**",
+              "I don't have **any** coffee."
             ],
             [
-              "There isn't any milk.",
-              "není žádné mléko"
+              "There isn't + **any**",
+              "There isn't **any** milk."
             ],
             [
-              "There aren't any chairs.",
-              "nejsou žádné židle"
+              "There aren't + **any**",
+              "There aren't **any** chairs."
             ]
           ]
         },
         "examples": [
           {
-            "en": "I don't want any coffee.",
+            "en": "I don't want **any** coffee.",
             "cz": "Nechci žádnou kávu."
           },
           {
-            "en": "He doesn't have any money.",
+            "en": "He doesn't have **any** money.",
             "cz": "On nemá žádné peníze."
           }
         ],
         "points": [
-          "don't / doesn't / isn't / aren't + any",
-          "Also OK in life: no coffee ≈ not any coffee (both fine here)"
+          "don't / doesn't / isn't / aren't + **any**",
+          "Not *some* after a negative"
         ]
       },
       {
         "title": "any (?)",
-        "title_cz": "any = v otázce",
+        "title_cz": "any v otázce",
         "table": {
           "caption": "questions",
           "headers": [
-            "EN",
-            "CZ idea"
+            "Frame",
+            "Example"
           ],
           "rows": [
             [
-              "Do you have any questions?",
-              "máš nějaké otázky?"
+              "Do you have + **any**",
+              "Do you have **any** questions?"
             ],
             [
-              "Is there any coffee?",
-              "je nějaká káva?"
+              "Is there + **any**",
+              "Is there **any** coffee?"
             ],
             [
-              "Are there any chairs?",
-              "jsou nějaké židle?"
+              "Are there + **any**",
+              "Are there **any** chairs?"
             ]
           ]
         },
         "examples": [
           {
-            "en": "Is there any coffee?",
+            "en": "Is there **any** coffee?",
             "cz": "Je nějaká káva?"
           },
           {
-            "en": "Do they have any children?",
+            "en": "Do they have **any** children?",
             "cz": "Mají nějaké děti?"
           }
         ],
         "points": [
-          "Questions usually take any",
-          "Yes answer can use some: Yes, I have some."
+          "Questions usually take **any**",
+          "Offers are different: Would you like **some**…?"
         ]
       },
       {
         "title": "some in offers",
-        "title_cz": "some v nabídce (výjimka)",
+        "title_cz": "some v nabídce",
         "table": {
-          "caption": "offers / requests",
+          "caption": "offers / asking",
           "headers": [
-            "EN",
+            "English",
             "Job"
           ],
           "rows": [
             [
-              "Would you like some tea?",
+              "Would you like **some** tea?",
               "offer"
             ],
             [
-              "Can I have some bread?",
-              "polite request"
+              "Can I have **some** bread?",
+              "asking"
+            ],
+            [
+              "Do you have **any** coffee?",
+              "real question"
             ]
           ]
         },
         "examples": [
           {
-            "en": "Would you like some water?",
+            "en": "Would you like **some** water?",
             "cz": "Dáš si vodu?"
           },
           {
-            "en": "Can I have some bread?",
+            "en": "Can I have **some** bread?",
             "cz": "Můžu dostat chleba?"
           }
         ],
         "points": [
-          "Offer / request → some is normal",
-          "Do you have any…? = real question about existence",
-          "When you offer or ask for something politely, English often uses some",
-          "even in a question."
+          "Offer or asking → **some** is normal",
+          "Do you have **any**…? = a real question"
         ]
       },
       {
         "title": "Common mistakes",
         "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "+ → **some** · − / ? → **any**",
+          "Offers: Would you like **some**…?"
+        ],
         "table": {
           "caption": "check",
           "headers": [
             "Say",
-            "Not (this pack)"
+            "Not"
           ],
           "rows": [
             [
-              "I have some coffee.",
-              "I have any coffee."
+              "I have **some** coffee.",
+              "*I have any coffee.*"
             ],
             [
-              "I don't have any coffee.",
-              "I don't have some coffee."
+              "I don't have **any** coffee.",
+              "*I don't have some coffee.*"
             ],
             [
-              "Do you have any milk?",
-              "Do you have some milk? (offer = different)"
-            ]
-          ]
-        },
-        "points": [
-          "+ → some · − / ? → any (basic rule)",
-          "Offers: Would you like some…?"
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "Would you like some…? · Can I have some…? (offers)",
-          "Works with there is/are and have"
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "some",
-              "+ statements"
-            ],
-            [
-              "any",
-              "negatives and most questions"
+              "Would you like **some** tea?",
+              "*Would you like any tea?*"
             ]
           ]
         }

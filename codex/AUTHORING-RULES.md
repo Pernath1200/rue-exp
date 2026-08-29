@@ -38,7 +38,7 @@ Then dropdowns. Then change. Then James plays.
 | Stage | Look for |
 |--|--|
 | **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech · C23 no *this pack* / *at A2* |
-| **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. D3: no teacher notes in `cz`. |
+| **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. **B9:** full sentences → 8 pairs, not 12 (12 is for words and short phrases). D3: no teacher notes in `cz`. |
 | **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · B8 gap is THIS unit's point (not a neighbour, not *a/an* inside *there is*, not *can/can't* when the error is *to swim*) · chips include the right answer · no untaught extras (C11) |
 | **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
 | **Use** | F3: production may not lead. Partner + glue + this unit's words. A1 Czech is fine to smoke. Flag translation-only false-wrongs. |
@@ -58,7 +58,9 @@ A1/A2 translation is allowed. Recognition may lead; Use may not (F3).
 
 **Test for any item:** could a competent translator, or Google Translate, produce something
 correct that this item rejects? A whole Use stage scored **3/12** against pasted Google
-Translate answers.
+Translate answers. `a1_some_any` 2026-08-29: *Is there any problem?* — James has heard
+*a problem* and *some problem*; cut the item. A native who would fill the gap with more
+than one of *some* / *any* / *a* is not a teaching item.
 
 | ID | Rule | From | State |
 |---|---|---|---|
@@ -85,6 +87,7 @@ Translate answers.
 | **B6** | Options stay on the teaching axis. *anybody / somebody / nobody* tests the quantifier; *anyone / anywhere / anything* tests the stem. A form pack offers forms of THIS word, not sibling verbs. | `a2_quantifiers` 2026-08-26; `a1_present_simple` 2026-08-29: *I ____ in an office* offered work / live / like. `a1_like_want_need` 2026-08-29: *He ____ a phone* must offer *needs / need*, not like / want / to. | `confirmed` |
 | **B7** | Closed-class Quiz/Type is a **gapped sentence**, not a definition (`____ = person` / `time → ____`). Meaning pairing is Match. | `a1_question_words` 2026-08-29: flags 9–10. | `observed` |
 | **B8** | The gap is THIS unit's teaching point, not a neighbour's. Do not gap the infinitive particle `to` alone (`She wants ____ work` → `to` — contrast *to V* with bare *V*). Do not gap *a/an* inside *there is*. Do not leave dummy *There* already on the page and only test *is/are*. Do not gap *can/can't* when Czech already picks the chip and the error is *can to swim*. | `a1_like_want_need` 2026-08-29: *She wants ____ work*. `a1_there_is` 2026-08-29: *There is ____ university*. `a1_can` 2026-08-29: *I ____ speak English* → can. *"just clicking can/can't — pointless."* | `confirmed` — lint `toparticle`, `articlegap`, `theregap`, `cancant` |
+| **B9** | Twelve Match pairs is for **words and short phrases**. Full-sentence boards are **8**. Sized from the tiles on the board (a `.?!` or four-plus words counts as a sentence), not a character average. | `a2_first_conditional` 2026-08-20: *"full sentences, we only need 8, not 12"*. `a1_some_any` 2026-08-29: char-avg 23 still painted 12 and felt walltexty. | `enforced` — engine `matchBoardSize` |
 
 ---
 
@@ -92,7 +95,7 @@ Translate answers.
 
 | ID | Rule | From | State |
 |---|---|---|---|
-| **C1** | Orient before you correct. Card 0 says what the thing IS, then what trips a Czech speaker. For a form-change unit, name the forms they already know, then the change. | The rewritten first-conditional card opened on the contrast; a student who had never met a conditional met the correction first. `a1_object_pronouns` 2026-08-29: opened on *two jobs / subject vs object* instead of *you already know I, you, he… they change after the verb*. | `confirmed` |
+| **C1** | Orient before you correct. Card 0 says what the thing IS, then what trips a Czech speaker. For a form-change unit, name the forms they already know, then the change. | The rewritten first-conditional card opened on the contrast; a student who had never met a conditional met the correction first. `a1_object_pronouns` 2026-08-29: opened on *two jobs / subject vs object* instead of *you already know I, you, he… they change after the verb*. `a1_some_any` 2026-08-29: opened on *some in + / any in − and ?* instead of *they are quantifiers — quantity of a noun — then some = positive, any = negatives and questions*. | `confirmed` |
 | **C2** | Name the misconception the card replaces. Restating the form teaches nothing — the student already half-knows it. | The cards that work say *why*: *"English word order is fixed, so articles carry that signal"*. The ones that fail restate the shape. | `confirmed` |
 | **C3** | Don't bury the insight below the rule. | The *Czech marks the future twice* line existed — as a bullet on a card titled "Examples", after the rule. Nobody reaches it. | `observed` |
 | **C4** | Don't promise equivalence the bank doesn't drill. | A card claimed five connectors behave alike; `if` got 44 items, the other four nine between them. | `enforced` — lint connector check |
@@ -113,7 +116,7 @@ Translate answers.
 | **C19** | Don't sprinkle L1 into an English form table. Czech lives in `title_cz` and `examples[]`. | `a1_object_pronouns` 2026-08-29: *On / Ona / Oni* in the Form pairs Note column — *"why are you using Czech randomly?"* | `observed` |
 | **C20** | An intro card teaches the student, not the lesson plan. No practice-sequence notes. | `a1_object_pronouns` 2026-08-29: *First: match subject form… Then: full sentences…* / *Practice block* — *"teacher notes on this page: not good"*. | `observed` |
 | **C21** | A unit whose English structure Czech does not have (dummy *there*) needs a **Common mistakes** card for the L1 calque (*It is a cat…*, *On the table is a book*, *Is a bathroom here?*). Cutting Remember (C17) is not that card. | `a1_there_is` 2026-08-29: intro had nothing on common errors; James: *"there is, there are is a weird/new structure for cz learners"*. | `observed` |
-| **C22** | A1 metalanguage needs a Czech gloss on the same card. *permission* is not student A1 English. | `a1_can` 2026-08-29: *"permission is going to be confusing word for a1 learners: have cz translations."* Now *permission = dovolení*. | `observed` — lint `a1meta` |
+| **C22** | A1 metalanguage needs a Czech gloss on the same card. *permission* is not student A1 English. | `a1_can` 2026-08-29: *"permission is going to be confusing word for a1 learners: have cz translations."* Now *permission = dovolení*. `a1_some_any` 2026-08-29: *quantifiers (množství)*. | `confirmed` — lint `a1meta` |
 | **C23** | The intro never names the pack, the level, or the syllabus. *this pack*, *this unit*, *at A2*, *common A1*, *CEFR* are course-author notes. The page teaches English. | Voice audit 2026-08-29: 20 A1–B1 units. Worst: `b1_modals_speculation` “this pack” table; remaining A1: `some_any`, `prepositions_time`, `to_for_with`, `imperatives`. | `enforced` — lint `courseaside` |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
