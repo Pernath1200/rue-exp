@@ -302,7 +302,8 @@ def lint_pack(uid):
                          "slash", "teachernote", "uselead", "qlead",
                          "introex", "quizextra", "hardname", "chunkword",
                          "fakes3sg", "toparticle", "remember",
-                         "articlegap", "theregap", "cancant", "a1meta")}
+                         "articlegap", "theregap", "cancant", "a1meta",
+                         "courseaside")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -547,6 +548,38 @@ def lint_pack(uid):
                     "en": "permission with no Czech (dovolení / smím)",
                 })
 
+    # C23 — intro names the pack, the level, or the syllabus  [EXACT]
+    # Voice audit 2026-08-29: "this pack" / "this unit" / "at A2" / "common A1"
+    # on the student page. The intro teaches English, not the course.
+    COURSE_ASIDE = re.compile(
+        r"\bthis pack\b|\bthis unit\b|\bthis bank\b|\bfor this pack\b|"
+        r"\bnot this pack\b|\bcovered at\b|"
+        r"\bat A[12]\b|\bat B[12]\b|\bat C1\b|"
+        r"\bcommon A\d\b|\bCEFR\b",
+        re.I,
+    )
+    for i, c in enumerate(intro_cards(d)):
+        surfaces = [
+            ("title", str(c.get("title") or "")),
+            ("title_cz", str(c.get("title_cz") or "")),
+            ("body", str(c.get("body") or "")),
+        ]
+        for j, p in enumerate(c.get("points") or []):
+            surfaces.append(("points[%d]" % j, str(p)))
+        tb = c.get("table") or {}
+        for h in tb.get("headers") or []:
+            surfaces.append(("header", str(h)))
+        for r, row in enumerate(tb.get("rows") or []):
+            for cell in row or []:
+                surfaces.append(("cell", str(cell)))
+        for loc, text in surfaces:
+            m = COURSE_ASIDE.search(text)
+            if m:
+                f["courseaside"].append({
+                    "cz": "card %d · %s" % (i, c.get("title") or ""),
+                    "en": "%s: %s" % (loc, text.strip()[:72]),
+                })
+
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
     # cringe and unnecessary." Same leftover on questions_negatives / question_words.
@@ -654,6 +687,7 @@ def overlap_report(uid, top=3):
 LABELS = [
     ("chunkword",   "EXACT  C15 A1 intro uses teacher-speak (chunk / frames / grammar theory)"),
     ("remember",    "EXACT  C17 intro has a Remember/Pamatuj recap card — cut it"),
+    ("courseaside", "EXACT  C23 intro names this pack / this unit / at A2 / common A1"),
     ("fakes3sg",    "EXACT  C12 common-mistakes lists I+likes/works (not a heard error)"),
     ("toparticle",  "EXACT  B8  Quiz gaps the particle to (want ____ work), not to-V vs V"),
     ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),

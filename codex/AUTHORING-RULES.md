@@ -37,7 +37,7 @@ Then dropdowns. Then change. Then James plays.
 
 | Stage | Look for |
 |--|--|
-| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech |
+| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech · C23 no *this pack* / *at A2* |
 | **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. D3: no teacher notes in `cz`. |
 | **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · B8 gap is THIS unit's point (not a neighbour, not *a/an* inside *there is*, not *can/can't* when the error is *to swim*) · chips include the right answer · no untaught extras (C11) |
 | **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
@@ -114,6 +114,7 @@ Translate answers.
 | **C20** | An intro card teaches the student, not the lesson plan. No practice-sequence notes. | `a1_object_pronouns` 2026-08-29: *First: match subject form… Then: full sentences…* / *Practice block* — *"teacher notes on this page: not good"*. | `observed` |
 | **C21** | A unit whose English structure Czech does not have (dummy *there*) needs a **Common mistakes** card for the L1 calque (*It is a cat…*, *On the table is a book*, *Is a bathroom here?*). Cutting Remember (C17) is not that card. | `a1_there_is` 2026-08-29: intro had nothing on common errors; James: *"there is, there are is a weird/new structure for cz learners"*. | `observed` |
 | **C22** | A1 metalanguage needs a Czech gloss on the same card. *permission* is not student A1 English. | `a1_can` 2026-08-29: *"permission is going to be confusing word for a1 learners: have cz translations."* Now *permission = dovolení*. | `observed` — lint `a1meta` |
+| **C23** | The intro never names the pack, the level, or the syllabus. *this pack*, *this unit*, *at A2*, *common A1*, *CEFR* are course-author notes. The page teaches English. | Voice audit 2026-08-29: 20 A1–B1 units. Worst: `b1_modals_speculation` “this pack” table; remaining A1: `some_any`, `prepositions_time`, `to_for_with`, `imperatives`. | `enforced` — lint `courseaside` |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
 already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`
