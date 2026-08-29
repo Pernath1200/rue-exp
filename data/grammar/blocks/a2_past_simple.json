@@ -5,7 +5,7 @@
   "tree_node": "a2_past_simple",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Finished past. Regular -ed + high-frequency irregulars. Gap on past form or didn't. Not continuous past yet. · Bank 48 items · flags: 2026-07-26 a-the film · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Finished past. Regular -ed + high-frequency irregulars. Match is work→worked. Quiz/Type gap the past form, or work/go after didn't/Did (B8). Not present perfect. · 2026-08-29 smoke: C29 timeline vs I work / I'm working; C31 no base; C32 ~~strike~~ mistakes; A5 eat/have breakfast; D3 Ne, nepracoval; F3 trip is partner (kept).",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -15,579 +15,635 @@
   },
   "blocks": [
     {
+      "id": "past_simple_forms",
+      "title": "Past simple · forms",
+      "check": {
+        "sequence": [
+          "match"
+        ]
+      },
+      "items": [
+        { "en": "work", "cz": "worked", "use": false },
+        { "en": "live", "cz": "lived", "use": false },
+        { "en": "play", "cz": "played", "use": false },
+        { "en": "watch", "cz": "watched", "use": false },
+        { "en": "study", "cz": "studied", "use": false },
+        { "en": "visit", "cz": "visited", "use": false },
+        { "en": "finish", "cz": "finished", "use": false },
+        { "en": "clean", "cz": "cleaned", "use": false },
+        { "en": "cook", "cz": "cooked", "use": false },
+        { "en": "start", "cz": "started", "use": false },
+        { "en": "walk", "cz": "walked", "use": false },
+        { "en": "go", "cz": "went", "use": false },
+        { "en": "have", "cz": "had", "use": false },
+        { "en": "see", "cz": "saw", "use": false },
+        { "en": "come", "cz": "came", "use": false },
+        { "en": "make", "cz": "made", "use": false },
+        { "en": "get", "cz": "got", "use": false },
+        { "en": "say", "cz": "said", "use": false },
+        { "en": "take", "cz": "took", "use": false },
+        { "en": "buy", "cz": "bought", "use": false },
+        { "en": "write", "cz": "wrote", "use": false },
+        { "en": "drink", "cz": "drank", "use": false },
+        { "en": "meet", "cz": "met", "use": false },
+        { "en": "leave", "cz": "left", "use": false },
+        { "en": "find", "cz": "found", "use": false },
+        { "en": "tell", "cz": "told", "use": false },
+        { "en": "wake", "cz": "woke", "use": false }
+      ]
+    },
+    {
       "id": "past_simple_a2",
       "title": "Past simple · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
           "en": "I worked yesterday.",
           "cz": "Včera jsem pracoval.",
           "gap": "I ____ yesterday.",
           "gap_answer": "worked",
-          "accepts": [
-            "I worked yesterday."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["worked", "work", "working", "works"],
+          "accepts": ["I worked yesterday."],
+          "explanation": "work → **worked**.",
+          "explanation_cz": "work → **worked**."
         },
         {
           "en": "She lived in Brno.",
           "cz": "Bydlela v Brně.",
           "gap": "She ____ in Brno.",
           "gap_answer": "lived",
-          "accepts": [
-            "She lived in Brno."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["lived", "live", "living", "lives"],
+          "accepts": ["She lived in Brno."],
+          "explanation": "live → **lived**.",
+          "explanation_cz": "live → **lived**."
         },
         {
           "en": "We played football.",
           "cz": "Hráli jsme fotbal.",
           "gap": "We ____ football.",
           "gap_answer": "played",
+          "quiz_options": ["played", "play", "playing", "plays"],
           "accepts": [
             "We played football.",
             "We played soccer."
           ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "explanation": "play → **played**.",
+          "explanation_cz": "play → **played**."
         },
         {
           "en": "He watched a film.",
-          "cz": "Díval se na film. (on)",
+          "cz": "Díval se na film.",
           "gap": "He ____ a film.",
           "gap_answer": "watched",
+          "quiz_options": ["watched", "watch", "watching", "watches"],
           "accepts": [
             "He watched a film.",
             "He watched a movie.",
             "He watched the film.",
             "He watched the movie."
           ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "explanation": "watch → **watched**.",
+          "explanation_cz": "watch → **watched**."
         },
         {
           "en": "They studied English.",
           "cz": "Učili se angličtinu.",
           "gap": "They ____ English.",
           "gap_answer": "studied",
-          "accepts": [
-            "They studied English."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["studied", "study", "studying", "studies"],
+          "accepts": ["They studied English."],
+          "explanation": "study → **studied** (y → i + ed).",
+          "explanation_cz": "study → **studied** (y → i + ed)."
         },
         {
           "en": "I went to school.",
           "cz": "Šel jsem do školy.",
           "gap": "I ____ to school.",
           "gap_answer": "went",
-          "accepts": [
-            "I went to school."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["went", "go", "goed", "going"],
+          "accepts": ["I went to school."],
+          "explanation": "go → **went**, not *goed.",
+          "explanation_cz": "go → **went**, ne *goed."
         },
         {
           "en": "She went home.",
           "cz": "Šla domů.",
           "gap": "She ____ home.",
           "gap_answer": "went",
-          "accepts": [
-            "She went home."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["went", "go", "goed", "going"],
+          "accepts": ["She went home."],
+          "explanation": "go → **went**, not *goed.",
+          "explanation_cz": "go → **went**, ne *goed."
         },
         {
           "en": "He had a coffee.",
-          "cz": "Dal si kávu. / Měl kávu.",
+          "cz": "Dal si kávu.",
           "gap": "He ____ a coffee.",
           "gap_answer": "had",
+          "quiz_options": ["had", "have", "haved", "having"],
           "accepts": [
             "He had a coffee.",
             "He had coffee."
           ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "explanation": "have → **had**, not *haved.",
+          "explanation_cz": "have → **had**, ne *haved."
         },
         {
           "en": "We had lunch at home.",
           "cz": "Obědvali jsme doma.",
           "gap": "We ____ lunch at home.",
           "gap_answer": "had",
+          "gap_accepts": ["ate", "had"],
+          "quiz_options": ["had", "have", "haved", "having"],
           "accepts": [
-            "We had lunch at home."
+            "We had lunch at home.",
+            "We ate lunch at home."
           ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "explanation": "have lunch or eat lunch → **had** / **ate**.",
+          "explanation_cz": "have lunch nebo eat lunch → **had** / **ate**."
         },
         {
           "en": "I saw a film yesterday.",
           "cz": "Včera jsem viděl film.",
           "gap": "I ____ a film yesterday.",
           "gap_answer": "saw",
+          "quiz_options": ["saw", "see", "seed", "seeing"],
           "accepts": [
             "I saw a film yesterday.",
             "I saw a movie yesterday.",
             "I saw the film yesterday.",
             "I saw the movie yesterday."
           ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "explanation": "see → **saw**, not *seed.",
+          "explanation_cz": "see → **saw**, ne *seed."
         },
         {
           "en": "She came late.",
           "cz": "Přišla pozdě.",
           "gap": "She ____ late.",
           "gap_answer": "came",
-          "accepts": [
-            "She came late."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["came", "come", "comed", "coming"],
+          "accepts": ["She came late."],
+          "explanation": "come → **came**, not *comed.",
+          "explanation_cz": "come → **came**, ne *comed."
         },
         {
           "en": "He made tea.",
           "cz": "Udělal čaj.",
           "gap": "He ____ tea.",
           "gap_answer": "made",
-          "accepts": [
-            "He made tea."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["made", "make", "maked", "making"],
+          "accepts": ["He made tea."],
+          "explanation": "make → **made**, not *maked.",
+          "explanation_cz": "make → **made**, ne *maked."
         },
         {
           "en": "I got up at seven.",
           "cz": "Vstal jsem v sedm.",
           "gap": "I ____ up at seven.",
           "gap_answer": "got",
+          "quiz_options": ["got", "get", "getted", "getting"],
           "accepts": [
             "I got up at seven.",
             "I got up at 7.",
             "I got up at seven o'clock."
           ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "explanation": "get → **got**, not *getted.",
+          "explanation_cz": "get → **got**, ne *getted."
         },
         {
           "en": "She said hello.",
           "cz": "Řekla ahoj.",
           "gap": "She ____ hello.",
           "gap_answer": "said",
-          "accepts": [
-            "She said hello."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["said", "say", "sayed", "saying"],
+          "accepts": ["She said hello."],
+          "explanation": "say → **said**, not *sayed.",
+          "explanation_cz": "say → **said**, ne *sayed."
         },
         {
           "en": "We took a bus.",
           "cz": "Jeli jsme autobusem.",
           "gap": "We ____ a bus.",
           "gap_answer": "took",
-          "accepts": [
-            "We took a bus."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["took", "take", "taked", "taking"],
+          "accepts": ["We took a bus."],
+          "explanation": "take → **took**, not *taked.",
+          "explanation_cz": "take → **took**, ne *taked."
         },
         {
           "en": "I was tired yesterday.",
           "cz": "Včera jsem byl unavený.",
           "gap": "I ____ tired yesterday.",
           "gap_answer": "was",
-          "accepts": [
-            "I was tired yesterday."
-          ],
-          "explanation": "Past of am/is → was (I/he/she/it).",
-          "explanation_cz": "Minulý tvar am/is → was."
+          "quiz_options": ["was", "were", "is", "didn't"],
+          "accepts": ["I was tired yesterday."],
+          "explanation": "I/he/she → **was**. Not *didn't be*.",
+          "explanation_cz": "I/he/she → **was**. Ne *didn't be*."
         },
         {
           "en": "She was at home.",
           "cz": "Byla doma.",
           "gap": "She ____ at home.",
           "gap_answer": "was",
-          "accepts": [
-            "She was at home."
-          ],
-          "explanation": "Past of am/is → was (I/he/she/it).",
-          "explanation_cz": "Minulý tvar am/is → was."
+          "quiz_options": ["was", "were", "is", "didn't"],
+          "accepts": ["She was at home."],
+          "explanation": "she → **was**. Not *didn't be*.",
+          "explanation_cz": "she → **was**. Ne *didn't be*."
         },
         {
           "en": "We were happy.",
           "cz": "Byli jsme šťastní.",
           "gap": "We ____ happy.",
           "gap_answer": "were",
-          "accepts": [
-            "We were happy."
-          ],
-          "explanation": "Past of are → were (you/we/they); also unreal if.",
-          "explanation_cz": "Minulý tvar are → were."
+          "quiz_options": ["were", "was", "are", "didn't"],
+          "accepts": ["We were happy."],
+          "explanation": "we/they/you → **were**. Not *didn't be*.",
+          "explanation_cz": "we/they/you → **were**. Ne *didn't be*."
         },
         {
           "en": "They were in Prague.",
           "cz": "Byli v Praze.",
           "gap": "They ____ in Prague.",
           "gap_answer": "were",
-          "accepts": [
-            "They were in Prague."
-          ],
-          "explanation": "Past of are → were (you/we/they); also unreal if.",
-          "explanation_cz": "Minulý tvar are → were."
+          "quiz_options": ["were", "was", "are", "didn't"],
+          "accepts": ["They were in Prague."],
+          "explanation": "they → **were**. Not *didn't be*.",
+          "explanation_cz": "they → **were**. Ne *didn't be*."
         },
         {
           "en": "I didn't work yesterday.",
           "cz": "Včera jsem nepracoval.",
-          "gap": "I ____ work yesterday.",
-          "gap_answer": "didn't",
-          "gap_accepts": [
-            "did not",
-            "didn't"
-          ],
+          "gap": "I didn't ____ yesterday.",
+          "gap_answer": "work",
+          "quiz_options": ["work", "worked", "working", "works"],
           "accepts": [
             "I didn't work yesterday.",
             "I did not work yesterday."
           ],
-          "explanation": "didn't + base verb (not the past form).",
-          "explanation_cz": "didn't + základ slovesa (ne minulý tvar)."
+          "explanation": "After **didn't**: **work**, not *worked.",
+          "explanation_cz": "Po **didn't**: **work**, ne *worked."
         },
         {
           "en": "She didn't go to school.",
           "cz": "Nešla do školy.",
-          "gap": "She ____ go to school.",
-          "gap_answer": "didn't",
-          "gap_accepts": [
-            "did not",
-            "didn't"
-          ],
+          "gap": "She didn't ____ to school.",
+          "gap_answer": "go",
+          "quiz_options": ["go", "went", "going", "goed"],
           "accepts": [
             "She didn't go to school.",
             "She did not go to school."
           ],
-          "explanation": "didn't + base verb (not the past form).",
-          "explanation_cz": "didn't + základ slovesa (ne minulý tvar)."
+          "explanation": "After **didn't**: **go**, not *went.",
+          "explanation_cz": "Po **didn't**: **go**, ne *went."
         },
         {
           "en": "We didn't see him.",
           "cz": "Neviděli jsme ho.",
-          "gap": "We ____ see him.",
-          "gap_answer": "didn't",
-          "gap_accepts": [
-            "did not",
-            "didn't"
-          ],
+          "gap": "We didn't ____ him.",
+          "gap_answer": "see",
+          "quiz_options": ["see", "saw", "seeing", "seed"],
           "accepts": [
             "We didn't see him.",
             "We did not see him."
           ],
-          "explanation": "didn't + base verb (not the past form).",
-          "explanation_cz": "didn't + základ slovesa (ne minulý tvar)."
+          "explanation": "After **didn't**: **see**, not *saw.",
+          "explanation_cz": "Po **didn't**: **see**, ne *saw."
         },
         {
           "en": "Did you work yesterday?",
           "cz": "Pracoval jsi včera?",
-          "gap": "____ you work yesterday?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did you work yesterday?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "gap": "Did you ____ yesterday?",
+          "gap_answer": "work",
+          "quiz_options": ["work", "worked", "working", "works"],
+          "accepts": ["Did you work yesterday?"],
+          "explanation": "After **Did**: **work**, not *worked.",
+          "explanation_cz": "Po **Did**: **work**, ne *worked."
         },
         {
           "en": "Did she go home?",
           "cz": "Šla domů?",
-          "gap": "____ she go home?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did she go home?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "gap": "Did she ____ home?",
+          "gap_answer": "go",
+          "quiz_options": ["go", "went", "going", "goed"],
+          "accepts": ["Did she go home?"],
+          "explanation": "After **Did**: **go**, not *went.",
+          "explanation_cz": "Po **Did**: **go**, ne *went."
         },
         {
-          "en": "I visited Prague last year.",
-          "cz": "Loni jsem navštívil Prahu.",
-          "gap": "I ____ Prague last year.",
+          "en": "I visited Prague in June.",
+          "cz": "V červnu jsem navštívil Prahu.",
+          "gap": "I ____ Prague in June.",
           "gap_answer": "visited",
-          "accepts": [
-            "I visited Prague last year."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["visited", "visit", "visiting", "visits"],
+          "accepts": ["I visited Prague in June."],
+          "explanation": "visit → **visited**.",
+          "explanation_cz": "visit → **visited**."
         },
         {
           "en": "She finished work at six.",
           "cz": "Dokončila práci v šest.",
           "gap": "She ____ work at six.",
           "gap_answer": "finished",
-          "accepts": [
-            "She finished work at six."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["finished", "finish", "finishing", "finishes"],
+          "accepts": ["She finished work at six."],
+          "explanation": "finish → **finished**.",
+          "explanation_cz": "finish → **finished**."
         },
         {
           "en": "We cleaned the kitchen.",
           "cz": "Uklidili jsme kuchyň.",
           "gap": "We ____ the kitchen.",
           "gap_answer": "cleaned",
-          "accepts": [
-            "We cleaned the kitchen."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["cleaned", "clean", "cleaning", "cleans"],
+          "accepts": ["We cleaned the kitchen."],
+          "explanation": "clean → **cleaned**.",
+          "explanation_cz": "clean → **cleaned**."
         },
         {
-          "en": "He cooked pasta yesterday.",
-          "cz": "Včera uvařil těstoviny.",
-          "gap": "He ____ pasta yesterday.",
+          "en": "He cooked dinner yesterday.",
+          "cz": "Včera uvařil večeři.",
+          "gap": "He ____ dinner yesterday.",
           "gap_answer": "cooked",
-          "accepts": [
-            "He cooked pasta yesterday."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["cooked", "cook", "cooking", "cooks"],
+          "accepts": ["He cooked dinner yesterday."],
+          "explanation": "cook → **cooked**.",
+          "explanation_cz": "cook → **cooked**."
         },
         {
           "en": "They started the course in May.",
           "cz": "Kurz začali v květnu.",
           "gap": "They ____ the course in May.",
           "gap_answer": "started",
-          "accepts": [
-            "They started the course in May."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["started", "start", "starting", "starts"],
+          "accepts": ["They started the course in May."],
+          "explanation": "start → **started**.",
+          "explanation_cz": "start → **started**."
         },
         {
           "en": "I bought a new phone.",
           "cz": "Koupil jsem nový telefon.",
           "gap": "I ____ a new phone.",
           "gap_answer": "bought",
-          "accepts": [
-            "I bought a new phone."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["bought", "buy", "buyed", "buying"],
+          "accepts": ["I bought a new phone."],
+          "explanation": "buy → **bought**, not *buyed.",
+          "explanation_cz": "buy → **bought**, ne *buyed."
         },
         {
           "en": "She wrote an email.",
           "cz": "Napsala e-mail.",
           "gap": "She ____ an email.",
           "gap_answer": "wrote",
+          "quiz_options": ["wrote", "write", "writed", "writing"],
           "accepts": [
             "She wrote an email.",
             "She wrote an e-mail."
           ],
-          "explanation": "Past simple: finished past — regular -ed or irregular form.",
-          "explanation_cz": "Minulý prostý: ukončená minulost — -ed nebo nepravidelný tvar."
+          "explanation": "write → **wrote**, not *writed.",
+          "explanation_cz": "write → **wrote**, ne *writed."
         },
         {
-          "en": "He drank two coffees.",
-          "cz": "Vypil dvě kávy.",
-          "gap": "He ____ two coffees.",
+          "en": "He drank coffee.",
+          "cz": "Vypil kávu.",
+          "gap": "He ____ coffee.",
           "gap_answer": "drank",
-          "accepts": [
-            "He drank two coffees."
-          ],
-          "explanation": "Past simple: finished past — regular -ed or irregular form.",
-          "explanation_cz": "Minulý prostý: ukončená minulost — -ed nebo nepravidelný tvar."
+          "quiz_options": ["drank", "drink", "drinked", "drinking"],
+          "accepts": ["He drank coffee."],
+          "explanation": "drink → **drank**, not *drinked.",
+          "explanation_cz": "drink → **drank**, ne *drinked."
         },
         {
           "en": "We met at the station.",
           "cz": "Sešli jsme se na nádraží.",
           "gap": "We ____ at the station.",
           "gap_answer": "met",
-          "accepts": [
-            "We met at the station."
-          ],
-          "explanation": "Past simple: finished past — regular -ed or irregular form.",
-          "explanation_cz": "Minulý prostý: ukončená minulost — -ed nebo nepravidelný tvar."
+          "quiz_options": ["met", "meet", "meeted", "meeting"],
+          "accepts": ["We met at the station."],
+          "explanation": "meet → **met**, not *meeted.",
+          "explanation_cz": "meet → **met**, ne *meeted."
         },
         {
           "en": "I left home at seven.",
           "cz": "Odešel jsem z domova v sedm.",
           "gap": "I ____ home at seven.",
           "gap_answer": "left",
-          "accepts": [
-            "I left home at seven."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["left", "leave", "leaved", "leaving"],
+          "accepts": ["I left home at seven."],
+          "explanation": "leave → **left**, not *leaved.",
+          "explanation_cz": "leave → **left**, ne *leaved."
         },
         {
           "en": "She found her keys.",
           "cz": "Našla klíče.",
           "gap": "She ____ her keys.",
           "gap_answer": "found",
-          "accepts": [
-            "She found her keys."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["found", "find", "finded", "finding"],
+          "accepts": ["She found her keys."],
+          "explanation": "find → **found**, not *finded.",
+          "explanation_cz": "find → **found**, ne *finded."
         },
         {
-          "en": "He told me the truth.",
-          "cz": "Řekl mi pravdu.",
-          "gap": "He ____ me the truth.",
+          "en": "He told me a story.",
+          "cz": "Řekl mi příběh.",
+          "gap": "He ____ me a story.",
           "gap_answer": "told",
-          "accepts": [
-            "He told me the truth."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["told", "tell", "telled", "telling"],
+          "accepts": ["He told me a story."],
+          "explanation": "tell → **told**, not *telled.",
+          "explanation_cz": "tell → **told**, ne *telled."
         },
         {
-          "en": "I didn't buy anything.",
-          "cz": "Nic jsem nekoupil.",
-          "gap": "I ____ buy anything.",
-          "gap_answer": "didn't",
+          "en": "I didn't buy a book.",
+          "cz": "Nekoupil jsem knihu.",
+          "gap": "I didn't ____ a book.",
+          "gap_answer": "buy",
+          "quiz_options": ["buy", "bought", "buying", "buyed"],
           "accepts": [
-            "I didn't buy anything.",
-            "I did not buy anything."
+            "I didn't buy a book.",
+            "I did not buy a book."
           ],
-          "gap_accepts": [
-            "did not",
-            "didn't"
-          ],
-          "explanation": "didn't + base verb (not the past form).",
-          "explanation_cz": "didn't + základ slovesa (ne minulý tvar)."
+          "explanation": "After **didn't**: **buy**, not *bought.",
+          "explanation_cz": "Po **didn't**: **buy**, ne *bought."
         },
         {
           "en": "They didn't like the film.",
           "cz": "Film se jim nelíbil.",
-          "gap": "They ____ like the film.",
-          "gap_answer": "didn't",
+          "gap": "They didn't ____ the film.",
+          "gap_answer": "like",
+          "quiz_options": ["like", "liked", "liking", "likes"],
           "accepts": [
             "They didn't like the film.",
             "They did not like the film.",
             "They didn't like the movie.",
             "They did not like the movie."
           ],
-          "gap_accepts": [
-            "did not",
-            "didn't"
-          ],
-          "explanation": "didn't + base verb (not the past form).",
-          "explanation_cz": "didn't + základ slovesa (ne minulý tvar)."
+          "explanation": "After **didn't**: **like**, not *liked.",
+          "explanation_cz": "Po **didn't**: **like**, ne *liked."
         },
         {
           "en": "Did he call you?",
           "cz": "Volal ti?",
-          "gap": "____ he call you?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did he call you?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "gap": "Did he ____ you?",
+          "gap_answer": "call",
+          "quiz_options": ["call", "called", "calling", "calls"],
+          "accepts": ["Did he call you?"],
+          "explanation": "After **Did**: **call**, not *called.",
+          "explanation_cz": "Po **Did**: **call**, ne *called."
         },
         {
           "en": "Did they arrive on time?",
           "cz": "Přijeli včas?",
-          "gap": "____ they arrive on time?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did they arrive on time?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "gap": "Did they ____ on time?",
+          "gap_answer": "arrive",
+          "quiz_options": ["arrive", "arrived", "arriving", "arrives"],
+          "accepts": ["Did they arrive on time?"],
+          "explanation": "After **Did**: **arrive**, not *arrived.",
+          "explanation_cz": "Po **Did**: **arrive**, ne *arrived."
         },
         {
           "en": "Where did you go?",
           "cz": "Kam jsi šel?",
-          "gap": "Where ____ you go?",
-          "gap_answer": "did",
-          "accepts": [
-            "Where did you go?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "gap": "Where did you ____?",
+          "gap_answer": "go",
+          "quiz_options": ["go", "went", "going", "goed"],
+          "accepts": ["Where did you go?"],
+          "explanation": "After **did**: **go**, not *went.",
+          "explanation_cz": "Po **did**: **go**, ne *went."
         },
         {
           "en": "What did she say?",
           "cz": "Co řekla?",
-          "gap": "What ____ she say?",
-          "gap_answer": "did",
-          "accepts": [
-            "What did she say?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "gap": "What did she ____?",
+          "gap_answer": "say",
+          "quiz_options": ["say", "said", "saying", "sayed"],
+          "accepts": ["What did she say?"],
+          "explanation": "After **did**: **say**, not *said.",
+          "explanation_cz": "Po **did**: **say**, ne *said."
         },
         {
           "en": "I was in the office all day.",
           "cz": "Byl jsem celý den v kanceláři.",
           "gap": "I ____ in the office all day.",
           "gap_answer": "was",
-          "accepts": [
-            "I was in the office all day."
-          ],
-          "explanation": "Past of am/is → was (I/he/she/it).",
-          "explanation_cz": "Minulý tvar am/is → was."
+          "quiz_options": ["was", "were", "is", "didn't"],
+          "accepts": ["I was in the office all day."],
+          "explanation": "I → **was** (be in the past).",
+          "explanation_cz": "I → **was** (be v minulosti)."
         },
         {
           "en": "They were tired after the trip.",
           "cz": "Po výletu byli unavení.",
           "gap": "They ____ tired after the trip.",
           "gap_answer": "were",
-          "accepts": [
-            "They were tired after the trip."
-          ],
-          "explanation": "Past of are → were (you/we/they); also unreal if.",
-          "explanation_cz": "Minulý tvar are → were."
+          "quiz_options": ["were", "was", "are", "didn't"],
+          "accepts": ["They were tired after the trip."],
+          "explanation": "they → **were** (be in the past).",
+          "explanation_cz": "they → **were** (be v minulosti)."
         },
         {
           "en": "He didn't eat breakfast.",
           "cz": "Nesnídal.",
-          "gap": "He ____ eat breakfast.",
-          "gap_answer": "didn't",
+          "gap": "He didn't ____ breakfast.",
+          "gap_answer": "eat",
+          "gap_accepts": ["eat", "have"],
+          "quiz_options": ["eat", "ate", "eating", "eated"],
           "accepts": [
             "He didn't eat breakfast.",
-            "He did not eat breakfast."
+            "He did not eat breakfast.",
+            "He didn't have breakfast.",
+            "He did not have breakfast."
           ],
-          "gap_accepts": [
-            "did not",
-            "didn't"
-          ],
-          "explanation": "didn't + base verb (not the past form).",
-          "explanation_cz": "didn't + základ slovesa (ne minulý tvar)."
+          "explanation": "After **didn't**: **eat** or **have**, not *ate.",
+          "explanation_cz": "Po **didn't**: **eat** nebo **have**, ne *ate."
         },
         {
           "en": "We walked to the park.",
           "cz": "Šli jsme pěšky do parku.",
           "gap": "We ____ to the park.",
           "gap_answer": "walked",
-          "accepts": [
-            "We walked to the park."
-          ],
-          "explanation": "Past simple form for a finished past action.",
-          "explanation_cz": "Minulý prostý tvar pro ukončený děj v minulosti."
+          "quiz_options": ["walked", "walk", "walking", "walks"],
+          "accepts": ["We walked to the park."],
+          "explanation": "walk → **walked**.",
+          "explanation_cz": "walk → **walked**."
         },
         {
-          "en": "She read two books last month.",
-          "cz": "Minulý měsíc přečetla dvě knihy.",
-          "gap": "She ____ two books last month.",
+          "en": "She read two books in May.",
+          "cz": "V květnu přečetla dvě knihy.",
+          "gap": "She ____ two books in May.",
           "gap_answer": "read",
-          "accepts": [
-            "She read two books last month."
-          ],
-          "explanation": "Past simple: finished past — regular -ed or irregular form.",
-          "explanation_cz": "Minulý prostý: ukončená minulost — -ed nebo nepravidelný tvar."
+          "quiz_options": ["read", "reads", "reading", "readed"],
+          "accepts": ["She read two books in May."],
+          "explanation": "read → **read** (same letters). Not *readed.",
+          "explanation_cz": "read → **read** (stejná písmena). Ne *readed."
         },
         {
           "en": "I woke up late.",
           "cz": "Probudil jsem se pozdě.",
           "gap": "I ____ up late.",
           "gap_answer": "woke",
+          "quiz_options": ["woke", "wake", "waked", "waking"],
+          "accepts": ["I woke up late."],
+          "explanation": "wake → **woke**, not *waked.",
+          "explanation_cz": "wake → **woke**, ne *waked."
+        },
+        {
+          "en": "Yes, I did.",
+          "cz": "Ano, pracoval.",
+          "use": false,
+          "gap": "Yes, I ____.",
+          "gap_answer": "did",
+          "quiz_options": ["did", "do", "was", "didn't"],
+          "accepts": ["Yes, I did."],
+          "explanation": "Short answer: Yes, I **did**.",
+          "explanation_cz": "Krátká odpověď: Yes, I **did**."
+        },
+        {
+          "en": "No, I didn't.",
+          "cz": "Ne, nepracoval.",
+          "use": false,
+          "gap": "No, I ____.",
+          "gap_answer": "didn't",
+          "gap_accepts": ["did not", "didn't"],
+          "quiz_options": ["didn't", "don't", "wasn't", "did"],
           "accepts": [
-            "I woke up late."
+            "No, I didn't.",
+            "No, I did not."
           ],
-          "explanation": "Past simple: finished past — regular -ed or irregular form.",
-          "explanation_cz": "Minulý prostý: ukončená minulost — -ed nebo nepravidelný tvar."
+          "explanation": "Short answer: No, I **didn't**.",
+          "explanation_cz": "Krátká odpověď: No, I **didn't**."
+        },
+        {
+          "en": "I wasn't tired yesterday.",
+          "cz": "Včera jsem nebyl unavený.",
+          "gap": "I ____ tired yesterday. (no)",
+          "gap_answer": "wasn't",
+          "gap_accepts": ["was not", "wasn't"],
+          "quiz_options": ["wasn't", "didn't", "was", "weren't"],
+          "accepts": [
+            "I wasn't tired yesterday.",
+            "I was not tired yesterday."
+          ],
+          "explanation": "I/he/she → **wasn't**. Not *didn't be*.",
+          "explanation_cz": "I/he/she → **wasn't**. Ne *didn't be*."
+        },
+        {
+          "en": "They weren't at home.",
+          "cz": "Nebyli doma.",
+          "gap": "They ____ at home. (no)",
+          "gap_answer": "weren't",
+          "gap_accepts": ["were not", "weren't"],
+          "quiz_options": ["weren't", "didn't", "were", "wasn't"],
+          "accepts": [
+            "They weren't at home.",
+            "They were not at home."
+          ],
+          "explanation": "they → **weren't**. Not *didn't be*.",
+          "explanation_cz": "they → **weren't**. Ne *didn't be*."
         }
       ]
     }
@@ -596,326 +652,170 @@
     "cards": [
       {
         "title": "Past simple",
-        "title_cz": "Minulý čas prostý — hotová minulost",
+        "title_cz": "Minulý prostý",
+        "points": [
+          "You know **I work** (every day) and **I'm working** (now).",
+          "Finished: **I worked** yesterday.",
+          "Same form for I / you / he (except **be**).",
+          "After **didn't** / **Did**: **work**, not *worked."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 190\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"88\" x2=\"500\" y2=\"88\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,88 490,83 490,93\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"90\" cy=\"88\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"90\" y=\"58\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">yesterday</text>\n  <text x=\"90\" y=\"122\" font-size=\"16\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I worked</text>\n  <text x=\"90\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple</text>\n  <circle cx=\"260\" cy=\"88\" r=\"6\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"260\" y=\"58\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">every day</text>\n  <text x=\"260\" y=\"122\" font-size=\"16\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I work</text>\n  <text x=\"260\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present simple</text>\n  <circle cx=\"430\" cy=\"88\" r=\"6\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"430\" y=\"58\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">now</text>\n  <text x=\"430\" y=\"122\" font-size=\"16\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I'm working</text>\n  <text x=\"430\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present continuous</text>\n</svg>",
         "table": {
           "caption": "shape",
-          "headers": [
-            "Type",
-            "Form",
-            "Example"
-          ],
+          "headers": ["", "Form", "Example"],
           "rows": [
-            [
-              "regular +",
-              "verb + -ed",
-              "I worked yesterday."
-            ],
-            [
-              "irregular +",
-              "special form",
-              "I went home."
-            ],
-            [
-              "−",
-              "didn't + base",
-              "I didn't work."
-            ],
-            [
-              "?",
-              "Did + subject + base",
-              "Did you work?"
-            ]
+            ["+", "work → **worked**", "I **worked** yesterday."],
+            ["+", "go → **went**", "I **went** home."],
+            ["−", "**didn't** + work", "I **didn't** work."],
+            ["?", "**Did** you work?", "**Did** you work?"]
           ]
-        },
-        "points": [
-          "yesterday · last week · in 2010 → past simple",
-          "Not continuous past in this pack",
-          "Finished time in the past.",
-          "One form for I/you/he/she/we/they (except be)."
-        ]
+        }
       },
       {
         "title": "Regular -ed",
         "title_cz": "Pravidelná slovesa",
+        "text_first": true,
+        "points": [
+          "Add **-ed**. Same form for every person.",
+          "study → **studied** (y → i + ed)"
+        ],
         "table": {
           "caption": "regular",
-          "headers": [
-            "Base",
-            "Past",
-            "Example"
-          ],
+          "headers": ["every day", "yesterday", "Example"],
           "rows": [
-            [
-              "work",
-              "worked",
-              "I worked yesterday."
-            ],
-            [
-              "live",
-              "lived",
-              "She lived in Brno."
-            ],
-            [
-              "play",
-              "played",
-              "We played football."
-            ],
-            [
-              "watch",
-              "watched",
-              "He watched a film."
-            ],
-            [
-              "study",
-              "studied",
-              "They studied English."
-            ]
+            ["work", "**worked**", "I **worked** yesterday."],
+            ["live", "**lived**", "She **lived** in Brno."],
+            ["play", "**played**", "We **played** football."],
+            ["watch", "**watched**", "He **watched** a film."],
+            ["study", "**studied**", "They **studied** English."]
           ]
-        },
-        "points": [
-          "study → studied (y → i + ed)",
-          "Same past form for all persons"
-        ]
+        }
       },
       {
-        "title": "Irregular (high frequency)",
+        "title": "Irregular",
         "title_cz": "Nepravidelná — častá",
+        "text_first": true,
+        "points": [
+          "Learn the past form. Not ~~goed~~.",
+          "After **didn't** / **Did**: **go**, not *went."
+        ],
         "table": {
           "caption": "must know",
-          "headers": [
-            "Base",
-            "Past"
-          ],
+          "headers": ["every day", "yesterday"],
           "rows": [
-            [
-              "go",
-              "went"
-            ],
-            [
-              "have",
-              "had"
-            ],
-            [
-              "see",
-              "saw"
-            ],
-            [
-              "come",
-              "came"
-            ],
-            [
-              "make",
-              "made"
-            ],
-            [
-              "get",
-              "got"
-            ],
-            [
-              "say",
-              "said"
-            ],
-            [
-              "take",
-              "took"
-            ]
+            ["go", "**went**"],
+            ["have", "**had**"],
+            ["see", "**saw**"],
+            ["come", "**came**"],
+            ["make", "**made**"],
+            ["get", "**got**"],
+            ["say", "**said**"],
+            ["take", "**took**"]
           ]
         },
         "examples": [
-          {
-            "en": "I went to school.",
-            "cz": "Šel jsem do školy."
-          },
-          {
-            "en": "She saw a film.",
-            "cz": "Viděla film."
-          }
-        ],
-        "points": [
-          "Learn these early — very common",
-          "Past form in + ; base after didn't / Did"
-        ]
-      },
-      {
-        "title": "Be in the past",
-        "title_cz": "Be — was / were",
-        "table": {
-          "caption": "be",
-          "headers": [
-            "Person",
-            "Past"
-          ],
-          "rows": [
-            [
-              "I / he / she / it",
-              "was"
-            ],
-            [
-              "you / we / they",
-              "were"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I was tired yesterday.",
-            "cz": "Včera jsem byl unavený."
-          },
-          {
-            "en": "We were happy.",
-            "cz": "Byli jsme šťastní."
-          }
-        ],
-        "points": [
-          "was / were — not didn't be",
-          "− : wasn't / weren't (later pack can expand)"
-        ]
-      },
-      {
-        "title": "Negative",
-        "title_cz": "Zápor — didn't",
-        "table": {
-          "caption": "−",
-          "headers": [
-            "Wrong idea",
-            "Correct"
-          ],
-          "rows": [
-            [
-              "I didn't went",
-              "I didn't go"
-            ],
-            [
-              "She didn't worked",
-              "She didn't work"
-            ],
-            [
-              "We didn't saw",
-              "We didn't see"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I didn't work yesterday.",
-            "cz": "Včera jsem nepracoval."
-          },
-          {
-            "en": "She didn't go to school.",
-            "cz": "Nešla do školy."
-          }
-        ],
-        "points": [
-          "didn't = did not",
-          "After didn't: work / go / see (base)",
-          "didn't + base verb (not past form)."
-        ]
-      },
-      {
-        "title": "Questions",
-        "title_cz": "Otázky — Did…?",
-        "table": {
-          "caption": "?",
-          "headers": [
-            "Question",
-            "Short answer"
-          ],
-          "rows": [
-            [
-              "Did you work yesterday?",
-              "Yes, I did. / No, I didn't."
-            ],
-            [
-              "Did she go home?",
-              "Yes, she did. / No, she didn't."
-            ]
-          ]
-        },
-        "points": [
-          "Did + subject + base verb",
-          "Not: Did she went? · Not: Worked you?"
+          { "en": "I **went** to school.", "cz": "Šel jsem do školy." },
+          { "en": "She **saw** a film.", "cz": "Viděla film." }
         ]
       },
       {
         "title": "More irregulars",
         "title_cz": "Další nepravidelná",
+        "text_first": true,
+        "points": [
+          "**read** → **read** (same letters).",
+          "After **didn't** / **Did**: **buy**, not *bought."
+        ],
         "table": {
           "caption": "past",
-          "headers": [
-            "Base",
-            "Past"
-          ],
+          "headers": ["every day", "yesterday"],
           "rows": [
-            [
-              "buy",
-              "bought"
-            ],
-            [
-              "write",
-              "wrote"
-            ],
-            [
-              "drink",
-              "drank"
-            ],
-            [
-              "meet",
-              "met"
-            ],
-            [
-              "leave",
-              "left"
-            ],
-            [
-              "find",
-              "found"
-            ],
-            [
-              "tell",
-              "told"
-            ],
-            [
-              "read",
-              "read"
-            ],
-            [
-              "wake",
-              "woke"
-            ]
+            ["buy", "**bought**"],
+            ["write", "**wrote**"],
+            ["drink", "**drank**"],
+            ["meet", "**met**"],
+            ["leave", "**left**"],
+            ["find", "**found**"],
+            ["tell", "**told**"],
+            ["read", "**read**"],
+            ["wake", "**woke**"]
+          ]
+        }
+      },
+      {
+        "title": "Be in the past",
+        "title_cz": "Be — was / were",
+        "text_first": true,
+        "points": [
+          "You already know **was** / **were**.",
+          "Not ~~I didn't be tired~~."
+        ],
+        "table": {
+          "caption": "be",
+          "headers": ["Person", "Past", "Negative"],
+          "rows": [
+            ["I / he / she / it", "**was**", "**wasn't**"],
+            ["you / we / they", "**were**", "**weren't**"]
           ]
         },
-        "points": [
-          "Still: didn't / Did + base"
+        "examples": [
+          { "en": "I **was** tired yesterday.", "cz": "Včera jsem byl unavený." },
+          { "en": "We **were** happy.", "cz": "Byli jsme šťastní." }
         ]
       },
       {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "title": "Negative",
+        "title_cz": "Zápor — didn't",
+        "text_first": true,
         "points": [
-          "− didn't + base · ? Did + subject + base"
+          "**didn't** = did not",
+          "After **didn't**: **work** / **go** / **see** — not *worked."
         ],
         "table": {
-          "headers": [
-            "",
-            ""
-          ],
+          "caption": "−",
+          "headers": ["Wrong", "Right"],
           "rows": [
-            [
-              "+ regular",
-              "worked · lived · played"
-            ],
-            [
-              "+ irregular",
-              "went · had · saw · came · made · got · said · took"
-            ],
-            [
-              "be",
-              "was / were"
-            ],
-            [
-              "Not",
-              "didn't went · Not: Did she went?"
-            ]
+            ["~~I didn't went~~", "I **didn't go**"],
+            ["~~She didn't worked~~", "She **didn't work**"],
+            ["~~We didn't saw~~", "We **didn't see**"]
+          ]
+        },
+        "examples": [
+          { "en": "I **didn't** work yesterday.", "cz": "Včera jsem nepracoval." },
+          { "en": "She **didn't** go to school.", "cz": "Nešla do školy." }
+        ]
+      },
+      {
+        "title": "Questions",
+        "title_cz": "Otázky — Did…?",
+        "text_first": true,
+        "points": [
+          "**Did** + person + **work** / **go**",
+          "Not ~~Did she went?~~ · Not ~~Worked you?~~"
+        ],
+        "table": {
+          "caption": "?",
+          "headers": ["Question", "Short answer"],
+          "rows": [
+            ["**Did** you work yesterday?", "Yes, I **did**. / No, I **didn't**."],
+            ["**Did** she go home?", "Yes, she **did**. / No, she **didn't**."]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Finished time → past simple, not present."
+        ],
+        "table": {
+          "headers": ["Wrong", "Right"],
+          "rows": [
+            ["~~I work yesterday~~", "I **worked** yesterday"],
+            ["~~I goed home~~", "I **went** home"],
+            ["~~I didn't went~~", "I **didn't go**"],
+            ["~~Did she went?~~", "**Did** she **go**?"]
           ]
         }
       }
