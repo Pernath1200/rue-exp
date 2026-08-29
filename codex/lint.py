@@ -303,7 +303,7 @@ def lint_pack(uid):
                          "introex", "quizextra", "hardname", "chunkword",
                          "fakes3sg", "toparticle", "remember",
                          "articlegap", "theregap", "cancant", "a1meta",
-                         "courseaside", "negdef")}
+                         "courseaside", "negdef", "smallwords", "mistakecol")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -552,6 +552,12 @@ def lint_pack(uid):
                     "cz": "card %d · %s" % (i, c.get("title", "")),
                     "en": "quantifier with no Czech (množství)",
                 })
+            if re.search(r"\bprepositions?\b", blob, re.I) and not re.search(
+                    r"předložk", blob, re.I):
+                f["a1meta"].append({
+                    "cz": "card %d · %s" % (i, c.get("title", "")),
+                    "en": "preposition with no Czech (předložky)",
+                })
 
     # C23 — intro names the pack, the level, or the syllabus  [EXACT]
     # Voice audit 2026-08-29: "this pack" / "this unit" / "at A2" / "common A1"
@@ -585,9 +591,14 @@ def lint_pack(uid):
                     "en": "%s: %s" % (loc, text.strip()[:72]),
                 })
 
-    # C25 — don't define this word by naming the other cards  [EXACT]
-    # a1_and_but_because 2026-08-29: "Not add, not why" / "Not add, not opposite".
-    NEG_DEF = re.compile(r"^\s*not\s+\w+[,;]?\s+not\s+\w+", re.I)
+    # C25 — don't define this thing by listing what it is not  [EXACT]
+    # a1_and_but_because 2026-08-29: "Not add, not why".
+    # a1_to_for_with 2026-08-29: "Not in / on / at (place or time)."
+    NEG_DEF = re.compile(
+        r"^\s*not\s+\w+[,;]?\s+not\s+\w+"
+        r"|^\s*not\s+\w+(\s*/\s*\w+){2,}",
+        re.I,
+    )
     for i, c in enumerate(intro_cards(d)):
         for j, p in enumerate(c.get("points") or []):
             if NEG_DEF.search(str(p)):
@@ -595,6 +606,34 @@ def lint_pack(uid):
                     "cz": "card %d · %s" % (i, c.get("title") or ""),
                     "en": "points[%d]: %s" % (j, str(p).strip()[:72]),
                 })
+
+    # C26 — don't call the target "small words"  [EXACT]
+    # a1_to_for_with 2026-08-29: "Three small words" — a, if, no are small too.
+    if str(d.get("level", "")).upper() == "A1":
+        for i, c in enumerate(intro_cards(d)):
+            blob = " ".join([
+                str(c.get("title") or ""),
+                str(c.get("title_cz") or ""),
+                card_text(c),
+            ])
+            if re.search(r"\bsmall words\b", blob, re.I):
+                f["smallwords"].append({
+                    "cz": "card %d · %s" % (i, c.get("title") or ""),
+                    "en": "small words — name the class (prepositions)",
+                })
+
+    # C27 — Common mistakes: error column first  [EXACT]
+    # a1_to_for_with 2026-08-29: Say / Not was backwards.
+    for i, c in enumerate(intro_cards(d)):
+        title = str(c.get("title") or "")
+        if not re.search(r"common mistakes", title, re.I):
+            continue
+        heads = [str(h).strip().lower() for h in ((c.get("table") or {}).get("headers") or [])]
+        if len(heads) >= 2 and heads[0] == "say" and heads[1] == "not":
+            f["mistakecol"].append({
+                "cz": "card %d · %s" % (i, title),
+                "en": "Say / Not — put the mistake first (Not / Say)",
+            })
 
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
@@ -701,7 +740,9 @@ def overlap_report(uid, top=3):
 
 
 LABELS = [
-    ("negdef",      "EXACT  C25 intro point is Not X, not Y — sibling-card leftover"),
+    ("smallwords",  "EXACT  C26 A1 intro calls them small words — name the class"),
+    ("mistakecol",  "EXACT  C27 Common mistakes table is Say / Not — error first"),
+    ("negdef",      "EXACT  C25 intro point is Not X, not Y / Not in / on / at"),
     ("chunkword",   "EXACT  C15 A1 intro uses teacher-speak (chunk / frames / grammar theory)"),
     ("remember",    "EXACT  C17 intro has a Remember/Pamatuj recap card — cut it"),
     ("courseaside", "EXACT  C23 intro names this pack / this unit / at A2 / common A1"),
@@ -710,7 +751,7 @@ LABELS = [
     ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),
     ("theregap",    "EXACT  B8  there-is pack never gaps There — dummy subject untested"),
     ("cancant",     "EXACT  B8  a1_can statement gaps can/can't — Czech already picks the chip"),
-    ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier with no Czech gloss"),
+    ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
     ("uselead",     "EXACT  F3  Use item has words not yet taught (partner+prior+this)"),

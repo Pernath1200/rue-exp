@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_to_for_with",
   "practice": "frames",
-  "note": "Relationship preps (not place/time). to=direction/recipient · for=purpose/benefit · with=company/instrument. Gap on to/for/with. Light first step before full dependent preps. Object pronouns after prep OK. · names diversified (Martin/Anna pool) · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Relationship preps (not place/time). to=direction/recipient · for=purpose/benefit · with=company/instrument. Gap on to/for/with. Object pronouns after prep OK. · 2026-08-29 smoke: C17 Remember cut; C15 chunk; D3 one Czech, strip (On)/(Ona); F3 Give use:false, gift→book, Roman→Anna, listens→I listen, email→book; C11 no infinitive marker; authored to/for/with chips; C13 bold the prep; A8 She's.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -22,281 +22,311 @@
           "cz": "Chodím do školy.",
           "gap": "I go ____ school.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "I go to school."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "go **to** + place: go **to** school, not *go for school*.",
+          "explanation_cz": "go **to** + místo: go **to** school, ne *go for school*."
         },
         {
           "en": "She goes to work.",
           "cz": "Ona chodí do práce.",
           "gap": "She goes ____ work.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "She goes to work."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "go **to** + place: she goes **to** work.",
+          "explanation_cz": "go **to** + místo: she goes **to** work."
         },
         {
           "en": "We go to Brno.",
           "cz": "Jedeme do Brna.",
           "gap": "We go ____ Brno.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "We go to Brno."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "go **to** + city: go **to** Brno.",
+          "explanation_cz": "go **to** + město: go **to** Brno."
         },
         {
           "en": "Give it to me.",
-          "cz": "Dej mi to. / Dej to mně.",
+          "cz": "Dej mi to.",
+          "use": false,
           "gap": "Give it ____ me.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "Give it to me.",
             "Give it to me, please.",
             "Please give it to me."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "**to** + person who gets it: give it **to** me.",
+          "explanation_cz": "**to** + kdo to dostane: give it **to** me."
         },
         {
           "en": "Talk to her.",
-          "cz": "Mluv s ní. / Promluv si s ní. (Ona)",
+          "cz": "Mluv s ní.",
           "gap": "Talk ____ her.",
           "gap_answer": "to",
+          "gap_accepts": ["with"],
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "Talk to her.",
+            "Talk with her.",
             "Speak to her.",
-            "Talk to her, please."
+            "Speak with her.",
+            "Talk to her, please.",
+            "Talk with her, please."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "talk **to** or **with** + person. Both are fine.",
+          "explanation_cz": "talk **to** nebo **with** + osoba. Obojí je v pořádku."
         },
         {
           "en": "Listen to me.",
           "cz": "Poslouchej mě.",
           "gap": "Listen ____ me.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "Listen to me.",
             "Listen to me, please.",
             "Please listen to me."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "listen **to** + person: listen **to** me.",
+          "explanation_cz": "listen **to** + osoba: listen **to** me."
         },
         {
           "en": "This is for you.",
           "cz": "Tohle je pro tebe.",
           "gap": "This is ____ you.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "This is for you."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "**for** + who gets it: this is **for** you, not *to you*.",
+          "explanation_cz": "**for** + kdo to dostane: this is **for** you, ne *to you*."
         },
         {
-          "en": "This gift is for her.",
-          "cz": "Tenhle dárek je pro ni. (Ona)",
-          "gap": "This gift is ____ her.",
+          "en": "This book is for her.",
+          "cz": "Tahle kniha je pro ni.",
+          "gap": "This book is ____ her.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
-            "This gift is for her.",
-            "This present is for her."
+            "This book is for her."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "**for** + who it is for: a book **for** her.",
+          "explanation_cz": "**for** + pro koho: a book **for** her."
         },
         {
           "en": "Wait for me.",
           "cz": "Počkej na mě.",
           "gap": "Wait ____ me.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "Wait for me.",
             "Wait for me, please.",
             "Please wait for me."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "wait **for** (not *wait to*): wait **for** me.",
+          "explanation_cz": "wait **for** (ne *wait to*): wait **for** me."
         },
         {
           "en": "I study for a test.",
           "cz": "Učím se na test.",
           "gap": "I study ____ a test.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "I study for a test.",
             "I study for the test."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "**for** = purpose: study **for** a test.",
+          "explanation_cz": "**for** = účel: study **for** a test."
         },
         {
           "en": "Thank you for your help.",
           "cz": "Děkuju za tvoji pomoc.",
           "gap": "Thank you ____ your help.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "Thank you for your help.",
             "Thanks for your help."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "thank you **for** + thing: **for** your help.",
+          "explanation_cz": "thank you **for** + věc: **for** your help."
         },
         {
           "en": "I need it for school.",
-          "cz": "Potřebuju to do školy. / Potřebuju to na školu.",
+          "cz": "Potřebuju to na školu.",
           "gap": "I need it ____ school.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "I need it for school."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "**for** = purpose. go **to** school is direction.",
+          "explanation_cz": "**for** = účel. go **to** school je směr."
         },
         {
           "en": "Come with me.",
           "cz": "Pojď se mnou.",
           "gap": "Come ____ me.",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
             "Come with me.",
             "Come with me, please."
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "**with** = together: come **with** me.",
+          "explanation_cz": "**with** = spolu: come **with** me."
         },
         {
           "en": "I live with my parents.",
           "cz": "Bydlím s rodiči.",
           "gap": "I live ____ my parents.",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
             "I live with my parents."
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "live **with** + people: **with** my parents.",
+          "explanation_cz": "live **with** + lidé: **with** my parents."
         },
         {
-          "en": "She works with Roman.",
-          "cz": "Ona pracuje s Romanem.",
-          "gap": "She works ____ Roman.",
+          "en": "She works with Anna.",
+          "cz": "Ona pracuje s Annou.",
+          "gap": "She works ____ Anna.",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
-            "She works with Roman."
+            "She works with Anna."
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "work **with** = together. work **for** = they pay you.",
+          "explanation_cz": "work **with** = spolu. work **for** = oni platí."
         },
         {
           "en": "I write with a pen.",
           "cz": "Píšu perem.",
           "gap": "I write ____ a pen.",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
             "I write with a pen.",
             "I write with a biro."
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "**with** = using: write **with** a pen.",
+          "explanation_cz": "**with** = pomocí: write **with** a pen."
         },
         {
           "en": "Coffee with milk, please.",
           "cz": "Kávu s mlékem, prosím.",
           "gap": "Coffee ____ milk, please.",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
             "Coffee with milk, please.",
             "Coffee with milk please."
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "**with** = added: coffee **with** milk.",
+          "explanation_cz": "**with** = přidané: coffee **with** milk."
         },
         {
           "en": "Can I go with you?",
           "cz": "Můžu jít s tebou?",
           "gap": "Can I go ____ you?",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
             "Can I go with you?"
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "go **with** + person: go **with** you.",
+          "explanation_cz": "go **with** + osoba: go **with** you."
         },
         {
           "en": "I talk to my teacher.",
-          "cz": "Mluvím se svým učitelem. / Mluvím s učitelem.",
+          "cz": "Mluvím s učitelem.",
           "gap": "I talk ____ my teacher.",
           "gap_answer": "to",
+          "gap_accepts": ["with"],
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
             "I talk to my teacher.",
-            "I speak to my teacher."
+            "I talk with my teacher.",
+            "I speak to my teacher.",
+            "I speak with my teacher."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "talk **to** or **with** + person. Both are fine.",
+          "explanation_cz": "talk **to** nebo **with** + osoba. Obojí je v pořádku."
         },
         {
-          "en": "He listens to music.",
-          "cz": "On poslouchá hudbu.",
-          "gap": "He listens ____ music.",
+          "en": "I listen to music.",
+          "cz": "Poslouchám hudbu.",
+          "gap": "I listen ____ music.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
-            "He listens to music."
+            "I listen to music."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "listen **to** + sound: listen **to** music.",
+          "explanation_cz": "listen **to** + zvuk: listen **to** music."
         },
         {
           "en": "This book is for children.",
           "cz": "Tahle kniha je pro děti.",
           "gap": "This book is ____ children.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "This book is for children."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "**for** + who it is for: a book **for** children.",
+          "explanation_cz": "**for** + pro koho: a book **for** children."
         },
         {
           "en": "I wait for the bus.",
           "cz": "Čekám na autobus.",
           "gap": "I wait ____ the bus.",
           "gap_answer": "for",
+          "quiz_options": ["for", "to", "with"],
           "accepts": [
             "I wait for the bus."
           ],
-          "explanation": "for = purpose / duration / beneficiary.",
-          "explanation_cz": "for = účel / trvání / pro koho."
+          "explanation": "wait **for** + thing: wait **for** the bus.",
+          "explanation_cz": "wait **for** + věc: wait **for** the bus."
         },
         {
           "en": "She is with her friends.",
-          "cz": "Ona je s kamarády. / Ona je se svými kamarády.",
+          "cz": "Ona je s kamarády.",
           "gap": "She is ____ her friends.",
           "gap_answer": "with",
+          "quiz_options": ["with", "to", "for"],
           "accepts": [
-            "She is with her friends."
+            "She is with her friends.",
+            "She's with her friends."
           ],
-          "explanation": "with = together / using.",
-          "explanation_cz": "with = spolu / pomocí."
+          "explanation": "be **with** + people: **with** her friends.",
+          "explanation_cz": "be **with** + lidé: **with** her friends."
         },
         {
-          "en": "Send this email to him.",
-          "cz": "Pošli mu tenhle email. (On)",
-          "gap": "Send this email ____ him.",
+          "en": "Send this book to him.",
+          "cz": "Pošli mu tuhle knihu.",
+          "gap": "Send this book ____ him.",
           "gap_answer": "to",
+          "quiz_options": ["to", "for", "with"],
           "accepts": [
-            "Send this email to him.",
-            "Send this e-mail to him.",
-            "Send him this email."
+            "Send this book to him."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "explanation": "send **to** + person who gets it: send it **to** him.",
+          "explanation_cz": "send **to** + kdo to dostane: send it **to** him."
         }
       ]
     }
@@ -305,7 +335,18 @@
     "cards": [
       {
         "title": "To / for / with",
-        "title_cz": "to · for · with — vztahy (ne místo/čas)",
+        "title_cz": "Předložky: to / for / with",
+        "ref": {
+          "tab": "preps",
+          "label": "Prepositions table"
+        },
+        "diagram": "to-for-with",
+        "labels": ["I", "school", "this", "you", "me", "you"],
+        "diagram_fallback": "to = towards · for = intended for · with = together",
+        "points": [
+          "**to**, **for**, **with** are prepositions (předložky).",
+          "They go before a person or a thing."
+        ],
         "table": {
           "caption": "three jobs",
           "headers": [
@@ -315,27 +356,22 @@
           ],
           "rows": [
             [
-              "to",
-              "direction · recipient",
-              "go to school · give to me"
+              "**to**",
+              "where / who gets it",
+              "go **to** school · give **to** me"
             ],
             [
-              "for",
-              "purpose · benefit",
-              "for you · wait for me"
+              "**for**",
+              "who it is for / why",
+              "this is **for** you · wait **for** me"
             ],
             [
-              "with",
-              "company · instrument",
-              "with me · with a pen"
+              "**with**",
+              "together / using",
+              "**with** me · **with** a pen"
             ]
           ]
-        },
-        "points": [
-          "Often + person: to me · for her · with us",
-          "Three small words that link people and things.",
-          "Not in/on/under (place) and not at 7 o'clock (time)."
-        ]
+        }
       },
       {
         "title": "to",
@@ -349,32 +385,32 @@
           "rows": [
             [
               "go / come + place",
-              "I go to school. · We go to Brno."
+              "I go **to** school. · We go **to** Brno."
             ],
             [
               "give / send + person",
-              "Give it to me. · Send it to him."
+              "Give it **to** me. · Send this book **to** him."
             ],
             [
-              "talk / speak / listen",
-              "Talk to her. · Listen to me. · Listen to music."
+              "talk / listen",
+              "Talk **to** her. · Listen **to** me."
             ]
           ]
         },
         "examples": [
           {
-            "en": "I go to work.",
-            "cz": "Chodím do práce."
+            "en": "I go **to** school.",
+            "cz": "Chodím do školy."
           },
           {
-            "en": "Give it to me.",
+            "en": "Give it **to** me.",
             "cz": "Dej mi to."
           }
         ],
         "points": [
-          "to + place of movement",
-          "to + person who receives",
-          "listen to · talk to (fixed useful chunks)"
+          "**to** + place you go",
+          "**to** + person who gets it",
+          "listen **to** · talk **to**"
         ]
       },
       {
@@ -388,37 +424,37 @@
           ],
           "rows": [
             [
-              "benefit · who gets it",
-              "This is for you. · a gift for her"
+              "who gets it",
+              "This is **for** you. · a book **for** her"
             ],
             [
-              "wait for",
-              "Wait for me. · wait for the bus"
+              "wait **for**",
+              "Wait **for** me. · wait **for** the bus"
             ],
             [
               "purpose",
-              "study for a test · need it for school"
+              "study **for** a test · need it **for** school"
             ],
             [
-              "thank for",
-              "Thank you for your help."
+              "thank **for**",
+              "Thank you **for** your help."
             ]
           ]
         },
         "examples": [
           {
-            "en": "This gift is for her.",
-            "cz": "Tenhle dárek je pro ni."
+            "en": "This book is **for** her.",
+            "cz": "Tahle kniha je pro ni."
           },
           {
-            "en": "I wait for the bus.",
+            "en": "I wait **for** the bus.",
             "cz": "Čekám na autobus."
           }
         ],
         "points": [
-          "for you = pro tebe (benefit)",
-          "wait for = čekat na (chunk)",
-          "Not the same as to: give to me · a gift for you"
+          "**for** you = who gets it",
+          "wait **for** me, not *wait to*",
+          "give **to** me · this is **for** you"
         ]
       },
       {
@@ -432,32 +468,33 @@
           ],
           "rows": [
             [
-              "company · who is there",
-              "Come with me. · live with my parents"
+              "together · who is there",
+              "Come **with** me. · live **with** my parents"
             ],
             [
-              "instrument · tool",
-              "write with a pen"
+              "using a tool",
+              "write **with** a pen"
             ],
             [
               "together / added",
-              "coffee with milk"
+              "coffee **with** milk"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I live with my parents.",
+            "en": "I live **with** my parents.",
             "cz": "Bydlím s rodiči."
           },
           {
-            "en": "Can I go with you?",
+            "en": "Can I go **with** you?",
             "cz": "Můžu jít s tebou?"
           }
         ],
         "points": [
-          "with = s (people) or 'using' (pen)",
-          "She is with her friends."
+          "**with** people = together",
+          "**with** a pen = using",
+          "She is **with** her friends."
         ]
       },
       {
@@ -466,87 +503,58 @@
         "table": {
           "caption": "check",
           "headers": [
-            "Say",
-            "Not (this pack)"
+            "Not",
+            "Say"
           ],
           "rows": [
             [
-              "I go to school.",
-              "I go for school."
+              "I go *for* school.",
+              "I go **to** school."
             ],
             [
-              "This is for you.",
-              "This is to you."
+              "This is *to* you.",
+              "This is **for** you."
             ],
             [
-              "Wait for me.",
-              "Wait to me."
+              "Wait *to* me.",
+              "Wait **for** me."
             ],
             [
-              "Come with me.",
-              "Come to me. (different meaning)"
+              "*Listen music.*",
+              "Listen **to** music."
             ]
           ]
         },
         "points": [
-          "to school = direction · for school = purpose (I need it for school)",
-          "give to someone · something for someone",
-          "with = company"
+          "**to** school = direction · **for** school = purpose",
+          "give **to** someone · something **for** someone",
+          "**with** = together or using"
         ]
       },
       {
-        "title": "After the preposition",
-        "title_cz": "Za předložkou — object form",
+        "title": "After to / for / with",
+        "title_cz": "Za předložkou: me / him / her",
         "table": {
-          "caption": "chunks",
+          "caption": "object form",
           "headers": [
-            "EN"
+            "Phrase"
           ],
           "rows": [
             [
-              "to me · to him · to her"
+              "**to me** · **to him** · **to her**"
             ],
             [
-              "for you · for us"
+              "**for you** · **for us**"
             ],
             [
-              "with me · with them"
+              "**with me** · **with them**"
             ]
           ]
         },
         "points": [
-          "Give it to me. (not to I)",
-          "Same idea as object pronouns unit",
-          "After to / for / with use object pronouns: me, him, her, us, them."
+          "Give it **to me**. (not *to I*)",
+          "After **to** / **for** / **with**: me, him, her"
         ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "to",
-              "direction / recipient / talk·listen to"
-            ],
-            [
-              "for",
-              "pro / purpose / wait for / thank for"
-            ],
-            [
-              "with",
-              "s / company / instrument"
-            ],
-            [
-              "Not full dependent preps yet",
-              "just these three starters"
-            ]
-          ]
-        }
       }
     ]
   }

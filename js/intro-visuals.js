@@ -410,6 +410,49 @@ function placeInOnAt() {
   );
 }
 
+/** to / for / with — three relations (a1_to_for_with, James 2026-08-29).
+ *  to   = movement toward (arrow). for = intended for someone (thing tagged
+ *  to a person — not a second arrow, or it collapses into to). with = together
+ *  (two overlapping rings). labels: [from, dest, thing, who, a, b]
+ *  e.g. I, school, this, you, me, you */
+function toForWith(labels) {
+  const from = labels[0] || "I";
+  const dest = labels[1] || "school";
+  const thing = labels[2] || "this";
+  const who = labels[3] || "you";
+  const a = labels[4] || "me";
+  const b = labels[5] || "you";
+  const col = (cx, drawing, caption) =>
+    `<g transform="translate(${cx - 50}, 6)">${drawing}</g>` +
+    label(cx, 158, caption, { size: 14, fill: ACCENT });
+  const toPanel =
+    `<circle cx="16" cy="50" r="12" fill="none" stroke="${ACCENT}" stroke-width="2"/>` +
+    `<line x1="30" y1="50" x2="58" y2="50" stroke="${ACCENT}" stroke-width="2.5"/>` +
+    `<polygon points="66,50 56,45 56,55" fill="${ACCENT}"/>` +
+    `<rect x="68" y="34" width="30" height="32" rx="6" fill="none" stroke="${ACCENT}" stroke-width="2"/>` +
+    label(16, 80, from, { size: 11, fill: MUTED }) +
+    label(83, 80, dest, { size: 11, fill: MUTED });
+  const forPanel =
+    `<rect x="10" y="34" width="30" height="32" rx="6" fill="none" stroke="${ACCENT}" stroke-width="2"/>` +
+    `<circle cx="86" cy="50" r="12" fill="none" stroke="${ACCENT}" stroke-width="2"/>` +
+    label(25, 80, thing, { size: 11, fill: MUTED }) +
+    label(86, 80, who, { size: 11, fill: MUTED }) +
+    `<path d="M25 88 L25 104 L86 104 L86 88" fill="none" stroke="${MUTED}" stroke-width="1.5"/>` +
+    label(56, 120, "for", { size: 11, fill: ACCENT });
+  const withPanel =
+    `<circle cx="38" cy="50" r="16" fill="none" stroke="${ACCENT}" stroke-width="2"/>` +
+    `<circle cx="62" cy="50" r="16" fill="none" stroke="${ACCENT}" stroke-width="2"/>` +
+    label(38, 82, a, { size: 11, fill: MUTED }) +
+    label(62, 82, b, { size: 11, fill: MUTED });
+  return svg(
+    col(54, toPanel, "to") +
+      col(160, forPanel, "for") +
+      col(266, withPanel, "with"),
+    320,
+    172,
+  );
+}
+
 /** Past simple vs present perfect — SAME event, two ways of looking.
  *  labels: [pastTitle, pastEvent, pastCaption, ppTitle, ppEvent, ppResult, ppCaption] */
 function pp_vs_past(labels) {
@@ -487,6 +530,7 @@ const SCHEMATICS = {
   behind: placeBehind,
   "in front of": placeInFrontOf,
   "in-on-at": placeInOnAt,
+  "to-for-with": toForWith,
 };
 
 /** A1 articles decision map — HTML flowchart, not SVG (James, 2026-08-04).

@@ -18,7 +18,7 @@ import {
   grammarBest,
 } from "./progress.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
-import { introDiagram } from "./intro-visuals.js?v=2026-08-28-hub";
+import { introDiagram } from "./intro-visuals.js?v=2026-08-29-tfw";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";

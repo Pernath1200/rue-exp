@@ -37,7 +37,7 @@ Then dropdowns. Then change. Then James plays.
 
 | Stage | Look for |
 |--|--|
-| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech · C23 no *this pack* / *at A2* · C24 no joiner POS taxonomy (*two things* / *two actions*) · C25 no *Not add, not why* |
+| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes · C22 A1 metalanguage (*permission*) needs Czech · C23 no *this pack* / *at A2* · C24 no joiner POS taxonomy (*two things* / *two actions*) · C25 no *Not add, not why* / *Not in / on / at* · C26 no *small words* · C27 mistakes column first |
 | **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. **B9:** full sentences → 8 pairs, not 12 (12 is for words and short phrases). D3: no teacher notes in `cz`. |
 | **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · B8 gap is THIS unit's point (not a neighbour, not *a/an* inside *there is*, not *can/can't* when the error is *to swim*) · chips include the right answer · no untaught extras (C11) |
 | **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
@@ -61,6 +61,9 @@ correct that this item rejects? A whole Use stage scored **3/12** against pasted
 Translate answers. `a1_some_any` 2026-08-29: *Is there any problem?* — James has heard
 *a problem* and *some problem*; cut the item. A native who would fill the gap with more
 than one of *some* / *any* / *a* is not a teaching item.
+`a1_to_for_with` 2026-08-29: *Come ____ me* is *to* / *with* / *for* in English, but
+Czech *Pojď se mnou* only means *with* — kept. *I talk ____ my teacher* is A5
+(*to* and *with* both from Czech *s*), not a Czech-forced chip.
 
 | ID | Rule | From | State |
 |---|---|---|---|
@@ -68,7 +71,7 @@ than one of *some* / *any* / *a* is not a teaching item.
 | **A2** | A Czech clause with no explicit subject does not specify one. Name the subject, or accept he/she/it. | *Když přijde pozdě* is he, she or it. 169 items list `he` and `she` but not `it` — the author knew and stopped halfway. | `enforced` — lint `subject` |
 | **A3** | Czech perfective present is FUTURE. Never use a perfective prompt for an English present-tense answer. | *přijdeš* = *you will arrive*, but the item demanded *"you arrive late"*. The worst credibility failure found. | `enforced` — lint `czfuture` (candidate) |
 | **A4** | Czech has no articles. Don't demand `the` unless English forces it or the Czech marks it. | *koupím kávu* → *"buy **the** coffee"* required; *"buy coffee"* rejected. ~1,009 items demand `the` with no Czech support. | `enforced` — lint `article` (candidate) |
-| **A5** | One Czech word with two English renderings needs both accepted. | *brzy* is *soon* and *early*; only *early* was accepted. | `observed` |
+| **A5** | One Czech word with two English renderings needs both accepted. | *brzy* is *soon* and *early*; only *early* was accepted. `a1_to_for_with` 2026-08-29: *Mluvím s učitelem* → talk **to** or **with**; Type marked *with* wrong. | `confirmed` |
 | **A6** | Never demand a word the Czech does not contain. | *Zavolám* is *I will call*; the key was *"I will call **you**"*. | `observed` |
 | **A7** | Free English synonyms must be in the synonym map. | *everyone* rejected for *everybody*. The map had 41 Czech-ambiguity pairs and no English-side free choices. | `enforced` — lint `synonym` |
 | **A8** | Contractions accepted both ways, always. | *"I cannot stand"* rejected where *"I can't stand"* was the key. 404 items across 71 units. | `enforced` — lint `contraction` |
@@ -116,10 +119,12 @@ than one of *some* / *any* / *a* is not a teaching item.
 | **C19** | Don't sprinkle L1 into an English form table. Czech lives in `title_cz` and `examples[]`. | `a1_object_pronouns` 2026-08-29: *On / Ona / Oni* in the Form pairs Note column — *"why are you using Czech randomly?"* | `observed` |
 | **C20** | An intro card teaches the student, not the lesson plan. No practice-sequence notes. | `a1_object_pronouns` 2026-08-29: *First: match subject form… Then: full sentences…* / *Practice block* — *"teacher notes on this page: not good"*. | `observed` |
 | **C21** | A unit whose English structure Czech does not have (dummy *there*) needs a **Common mistakes** card for the L1 calque (*It is a cat…*, *On the table is a book*, *Is a bathroom here?*). Cutting Remember (C17) is not that card. | `a1_there_is` 2026-08-29: intro had nothing on common errors; James: *"there is, there are is a weird/new structure for cz learners"*. | `observed` |
-| **C22** | A1 metalanguage needs a Czech gloss on the same card. *permission* is not student A1 English. | `a1_can` 2026-08-29: *"permission is going to be confusing word for a1 learners: have cz translations."* Now *permission = dovolení*. `a1_some_any` 2026-08-29: *quantifiers (množství)*. | `confirmed` — lint `a1meta` |
+| **C22** | A1 metalanguage needs a Czech gloss on the same card. *permission* is not student A1 English. | `a1_can` 2026-08-29: *"permission is going to be confusing word for a1 learners: have cz translations."* Now *permission = dovolení*. `a1_some_any` 2026-08-29: *quantifiers (množství)*. `a1_to_for_with` 2026-08-29: *prepositions (předložky)*. | `confirmed` — lint `a1meta` |
 | **C23** | The intro never names the pack, the level, or the syllabus. *this pack*, *this unit*, *at A2*, *common A1*, *CEFR* are course-author notes. The page teaches English. | Voice audit 2026-08-29: 20 A1–B1 units. Worst: `b1_modals_speculation` “this pack” table; remaining A1: `some_any`, `prepositions_time`, `to_for_with`, `imperatives`. | `enforced` — lint `courseaside` |
 | **C24** | Don't taxonomize a joiner by word class. *and* joins two of whatever is already there — nouns, verbs, adjectives, adverbs. A Frame column of *two things* / *two actions* is fake grammar of *and*, and repeating *two things* on consecutive rows is goofy. | `a1_and_but_because` 2026-08-29: *"why is it necessary to make these distinctions anyway?"* | `observed` |
-| **C25** | Don't define this word by naming the other cards. *Not add, not why* on But (and the twins on And / Because). Each card names its own job; the sibling cards already exist. | `a1_and_but_because` 2026-08-29: *"no need for not add, not opposite"*. | `enforced` — lint `negdef` |
+| **C25** | Don't define this thing by listing what it is not. *Not add, not why* (sibling cards) and *Not in / on / at* (other prepositions) are the same leftover — they are also not proper nouns, adverbs, etc. Name the job. | `a1_and_but_because` 2026-08-29: *"no need for not add, not opposite"*. `a1_to_for_with` 2026-08-29: *"they are not many other things either"*. | `enforced` — lint `negdef` |
+| **C26** | Don't call the target *small words*. *a*, *if*, *no* are small and different. Name the class (*prepositions*). | `a1_to_for_with` 2026-08-29: *"this is moronic"*. C18's *With small words* title was the same leftover. | `enforced` — lint `smallwords` |
+| **C27** | A Common mistakes table puts the **error first**, the correct form second. | `a1_to_for_with` 2026-08-29: Say / Not was backwards. `a1_there_is` already had mistake → correct. | `enforced` — lint `mistakecol` |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
 already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`
