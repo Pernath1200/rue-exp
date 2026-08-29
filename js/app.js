@@ -1056,10 +1056,15 @@ async function startExamDrillFor(level) {
   }
 }
 
-/** A1 slice (2026-08-28): map portrait is the A1 record. Rail still
- *  drives Path / Topics / meters. Later pass: pass the viewed level here.
- *  Do not hardcode A1 filters inside the portrait itself. */
-const MAP_TREE_LEVEL = "A1";
+/** Lifted 2026-08-29 (was the A1 slice, 2026-08-28): the map portrait
+ *  follows the level rail. The viewed level sets the skeleton age; lights =
+ *  work at or below that level (the portrait's own atLevel filter — do not
+ *  hardcode level filters here or in fill paths). Falls back to the tree's
+ *  first rail level if STATE.level is off the rail (B2/C1 parked). */
+function mapTreeLevel() {
+  const lvls = STATE.tree?.levels || ["A1"];
+  return lvls.includes(STATE.level) ? STATE.level : lvls[0] || "A1";
+}
 
 /** Combined tree portrait only (Roots/Canopy meter chips removed — 2026-08-10). */
 function renderRoots() {
@@ -1067,7 +1072,7 @@ function renderRoots() {
   if (portrait && STATE.tree) {
     const nodes = STATE.tree.nodes || [];
     renderTreePortrait(portrait, {
-      level: MAP_TREE_LEVEL,
+      level: mapTreeLevel(),
       nodes,
       isFruit: (id) => {
         const n = nodeById(id);
@@ -1082,10 +1087,11 @@ function renderRoots() {
     });
     const meta = document.getElementById("tree-portrait-meta");
     if (meta) {
-      const s = levelUnitStats(MAP_TREE_LEVEL, nodes);
+      const lv = mapTreeLevel();
+      const s = levelUnitStats(lv, nodes);
       meta.textContent = s.total
-        ? `· A1 · ${s.learned}/${s.total} learned`
-        : "· A1";
+        ? `· Your tree at ${lv} — follows the rail · ${s.learned}/${s.total} learned at ${lv}`
+        : `· Your tree at ${lv} — follows the rail`;
     }
   }
 }

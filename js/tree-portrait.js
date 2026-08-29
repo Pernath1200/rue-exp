@@ -731,6 +731,15 @@ export function renderTreePortrait(container, opts) {
   if (y1 - y0 < minH) { const mid = (y0 + y1) / 2; y0 = Math.max(0, mid - minH / 2); y1 = Math.min(VB.h, y0 + minH); y0 = y1 - minH; }
   const crop = { x: x0, y: y0, w: x1 - x0, h: y1 - y0 };
 
+  // Type holds the optical size the A1 slice established (lift, 2026-08-29):
+  // world-space labels render ~MAX_ZOOM× larger at A1 than at full view, so
+  // scale label type with the crop width. A1 (max zoom) is the anchor — its
+  // look is unchanged. Map only: payoff frames its own crop and keeps
+  // today's look.
+  const typeScale = focusRoots
+    ? 1
+    : Math.min(MAX_ZOOM, Math.max(1, (crop.w * MAX_ZOOM) / VB.w));
+
   const sw = Math.max(0.8, p.twigWidth * 0.95);
   const css = [
     ".lb{fill:" + C.wood + ";stroke:none}",
@@ -751,7 +760,7 @@ export function renderTreePortrait(container, opts) {
     ".knot.done circle{fill:" + C.fruit + ";stroke:" + C.fruit + "}",
     ".knot.remembered circle{fill:" + C.fruitRemembered + ";stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 4px " + C.fruitRemembered + ")}",
     ".knot.mastered circle{fill:" + C.fruitMastered + ";stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 7px " + C.fruitMastered + ")}",
-    ".tp-house-label{font:11px 'Segoe UI',system-ui,sans-serif;paint-order:stroke;stroke:" + C.sky + ";stroke-width:3px;stroke-linejoin:round}",
+    ".tp-house-label{font:" + f1(11 * typeScale) + "px 'Segoe UI',system-ui,sans-serif;paint-order:stroke;stroke:" + C.sky + ";stroke-width:" + f1(3 * typeScale) + "px;stroke-linejoin:round}",
     // payoff: the practised part grows in from its base and glows; the trunk pulses;
     // the newest lit slot fades in. transform-box:view-box makes the origin above user units.
     // Animations are held until the host adds .tp-run to the svg, so the growth
@@ -763,7 +772,7 @@ export function renderTreePortrait(container, opts) {
     ".tp-hi .rt{filter:drop-shadow(0 0 5px rgba(77,182,199,1)) drop-shadow(0 0 12px rgba(77,182,199,.6))}",
     ".tp-hi-trunk{transform-box:view-box}",
     ".tp-run .tp-hi-trunk{animation:tpPulse 2.2s ease-out both}",
-    ".tp-root-label{font:italic 12px 'Segoe UI',system-ui,sans-serif;fill:" + C.label + ";paint-order:stroke;stroke:" + C.soil + ";stroke-width:3px;stroke-linejoin:round}",
+    ".tp-root-label{font:italic " + f1(12 * typeScale) + "px 'Segoe UI',system-ui,sans-serif;fill:" + C.label + ";paint-order:stroke;stroke:" + C.soil + ";stroke-width:" + f1(3 * typeScale) + "px;stroke-linejoin:round}",
     ".tp-new{opacity:0}",
     ".tp-run .tp-new{animation:tpLight 1.3s ease-out .5s both}",
     ".tp-new use,.tp-new circle{filter:drop-shadow(0 0 5px " + C.fruit + ")}",
@@ -790,9 +799,9 @@ export function renderTreePortrait(container, opts) {
     '<g class="tp-above">' + above + canopy + "</g>" +
     '<rect x="0" y="' + (soilY - 10) + '" width="' + VB.w + '" height="18" fill="url(#tpGroundGlow)" opacity="0.55" filter="url(#tpSoft)"/>' +
     '<path class="sl" d="M' + f1(crop.x + 24) + ',' + soilY + 'L' + f1(crop.x + crop.w - 24) + ',' + soilY + '"/>' + soil +
-    '<text x="' + f1(crop.x + crop.w - 30) + '" y="' + (soilY - 8) + '" text-anchor="end" fill="' + C.muted + '" font-size="10" font-family="Segoe UI,system-ui,sans-serif">' + esc(age.soilLabel) + "</text>" +
+    '<text x="' + f1(crop.x + crop.w - 30) + '" y="' + (soilY - 8) + '" text-anchor="end" fill="' + C.muted + '" font-size="' + f1(10 * typeScale) + '" font-family="Segoe UI,system-ui,sans-serif">' + esc(age.soilLabel) + "</text>" +
     '<g class="tp-labels">' + labels + "</g>" +
-    (focusRoots ? "" : '<text x="' + cx + '" y="' + f1(crop.y + 20) + '" text-anchor="middle" fill="' + C.muted + '" font-size="12" font-style="italic" font-family="Segoe UI,system-ui,sans-serif">' + esc(age.caption) + "</text>") +
+    (focusRoots ? "" : '<text x="' + cx + '" y="' + f1(crop.y + 20 * typeScale) + '" text-anchor="middle" fill="' + C.muted + '" font-size="' + f1(12 * typeScale) + '" font-style="italic" font-family="Segoe UI,system-ui,sans-serif">' + esc(age.caption) + "</text>") +
     "</svg>";
   svg = svg.replace(/<path class="hr/g, '<path vector-effect="non-scaling-stroke" class="hr')
            .replace(/<path class="rh/g, '<path vector-effect="non-scaling-stroke" class="rh')

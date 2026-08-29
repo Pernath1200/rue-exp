@@ -6,6 +6,41 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (Claude tree session) — hang gate · agreement retag · portrait lift
+
+Tree lane only (Grok holds the smoke/pack lane and committed mid-session; no
+shared files touched). Four commits + one in rue-codex:
+
+- **Hang-integrity gate** (`9c00d06`): check_codex.py now enforces one hang,
+  not two maps — root == tree_part == nodes-grammar == pack codex_unit ==
+  Codex unit tree_part. Snapshot carries unit_tree_parts (56 units, ids
+  unchanged). Known findings live in `codex/hang-baseline.json` (only ever
+  shrinks). Proven: half-retags fail in both directions.
+- **Agreement retag applied** (`3b62b13` + rue-codex `8492a51`, James's
+  apply): a1_agreement + a2_agreement → sentence_syntax · G_SS-A1B1-01, all
+  files together. Baseline 24 → 22. Codex validator PASSED. Supersedes the
+  08-25 note "stays on verb_phrase". `foundation: true` (08-25 tap decision)
+  is separate and **still unapplied**; a1_agreement pack note carries a
+  6×-duplicated line (smoke lane, untouched).
+- **a1_frequency case drafted, not applied** (`4b54f2b`, audit §4). Headline:
+  its G_VP tag has no Codex backing at all — James to judge.
+- **Portrait lift**: map tree follows the level rail (mapTreeLevel() in
+  app.js; skeleton age = viewed level, lights ≤ level via the portrait's own
+  atLevel). Meta copy says "follows the rail". Label type now holds the A1
+  optical size across ages (typeScale by crop width; payoff untouched at 1).
+  Tests: scripts/_test_map_lift.js (rail age, lights ≤ level both ways,
+  agreement retag lock, 1-of-30 slot floor) + a1_tree + degree green.
+  Cache `?v=2026-08-29-tree-rail-b`.
+- **Claude.ai mock verdict** (Mock_TreePortrait A1–B1): geometry discarded —
+  the app renderer is stronger. Salvaged: label compensation (landed), slot
+  floor test (landed), caption copy (meta line), and three proposals parked
+  for James: ghost labels at 0.55, crop easing on rail change, apex bud.
+
+Gates this run: check_codex PASSED (0 new · 22 known) · check_playable 0/0 ·
+smoke shell/js 14/14 · **verify_pack 19 errors + audit ratchet 420>246 are
+red at the PRE-session HEAD** — smoke-lane content, not touched from here.
+**Parked**: 18-pack codex_unit sync (baselined) until Grok's pack run ends.
+
 ## 2026-08-25 · local (design session with James) · tap-root model — settled fork, build-session work
 
 **No engine code landed for this tonight** — this entry records the settled
