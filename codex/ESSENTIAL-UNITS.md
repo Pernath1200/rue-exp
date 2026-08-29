@@ -100,6 +100,7 @@ Martin's pronoun thread; also *"my physio said me that…"* (Tomas) sits near he
 ### 10. `a1_prepositions_time` — Prepositions of time · A1 step 40
 - Tomas: *"I go there 7.30"* → at 7.30
 - Martin: "half past eleven" recurs twice, and "in on at for time as well as place" is his own note
+- Patrik: *"3 times in week"* → *a week*. **Not this unit** (smoke 2026-08-29). Seed in `codex/parked-once-a-week.json` for a later Time 2 (once/twice/three times **a** day/week/year — no in/on/at). No node yet.
 - [ ] Reviewed
 
 ### 11. `a1_prepositions_place` — Prepositions of place · A1 step 33

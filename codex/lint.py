@@ -303,7 +303,8 @@ def lint_pack(uid):
                          "introex", "quizextra", "hardname", "chunkword",
                          "fakes3sg", "toparticle", "remember",
                          "articlegap", "theregap", "cancant", "a1meta",
-                         "courseaside", "negdef", "smallwords", "mistakecol")}
+                         "courseaside", "negdef", "smallwords", "mistakecol",
+                         "timesort", "aweek", "baddiagram")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -661,6 +662,48 @@ def lint_pack(uid):
                 "en": "I %s — not a heard Czech-learner error" % m.group(1),
             })
 
+    # B10 — in/on/at time pack uses sentence Match, not sort boxes  [EXACT]
+    # a1_prepositions_time 2026-08-29: "drag and drop with in on at".
+    ga_set = {
+        str(it.get("gap_answer") or "").strip().lower()
+        for it in items if it.get("gap_answer")
+    }
+    ga_set.discard("")
+    time_core = ga_set - {"a week"}
+    seq = [str(x) for x in ((d.get("check") or {}).get("sequence") or [])]
+    if time_core == {"in", "on", "at"}:
+        if "match" in seq and "sort_bins" not in seq:
+            f["timesort"].append({
+                "cz": "check.sequence has match, no sort_bins",
+                "en": "in/on/at time → three boxes, not sentence Match (B10)",
+            })
+        for it in items:
+            if str(it.get("gap_answer") or "").strip().lower() == "a week":
+                f["aweek"].append({
+                    "cz": it.get("cz", ""),
+                    "en": "%s  ·  a week is Time 2, not at/on/in (F2)"
+                    % (it.get("en") or ""),
+                })
+
+    # C28 — intro diagram key is unknown → blank picture  [EXACT]
+    # a1_prepositions_time 2026-08-29: in-on-at-scale was not a schematic.
+    # C10 still green (the field is non-empty). Inline svg without a key is fine.
+    DIAGRAM_KEYS = {
+        "scale", "need_scale", "circles", "branch", "cycle", "contrast",
+        "hub_spokes", "boxes_row", "timelines", "decision_flow", "pp_vs_past",
+        "time_now", "in", "on", "under", "at", "next to", "behind",
+        "in front of", "in-on-at", "to-for-with", "articles_map",
+    }
+    for i, c in enumerate(intro_cards(d)):
+        name = str(c.get("diagram") or "").strip()
+        has_svg = bool(str(c.get("svg") or "").strip())
+        if name and name not in DIAGRAM_KEYS and not has_svg:
+            f["baddiagram"].append({
+                "cz": "card %d · %s" % (i, c.get("title", "")),
+                "en": "diagram %r is not in intro-visuals.js (blank picture)"
+                % name,
+            })
+
     # C4 — cards promise connectors the bank barely drills  [EXACT]
     cardtext = json.dumps(d.get("intro", {}), ensure_ascii=False).lower()
     promised = [c for c in CONNECTORS if c in cardtext]
@@ -740,6 +783,9 @@ def overlap_report(uid, top=3):
 
 
 LABELS = [
+    ("timesort",    "EXACT  B10 in/on/at time pack still uses sentence Match — sort boxes"),
+    ("aweek",       "EXACT  F2  once/twice a week inside an at/on/in pack — Time 2"),
+    ("baddiagram",  "EXACT  C28 intro diagram key is not in intro-visuals.js — blank picture"),
     ("smallwords",  "EXACT  C26 A1 intro calls them small words — name the class"),
     ("mistakecol",  "EXACT  C27 Common mistakes table is Say / Not — error first"),
     ("negdef",      "EXACT  C25 intro point is Not X, not Y / Not in / on / at"),

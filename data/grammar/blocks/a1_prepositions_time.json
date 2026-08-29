@@ -4,312 +4,436 @@
   "level": "A1",
   "tree_node": "a1_prepositions_time",
   "practice": "frames",
-  "note": "at / on / in for time. Gap on the preposition. Not place (in the room) — time only. · re-lexified onto pool-legal vocabulary 2026-08-07 · 2026-08-19 (James, Patrik smoke): + 3 'times a week' items and a card row (his '3 times in week') · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "at / on / in for time. Gap on the preposition. Not place. Not once/twice a week (Patrik in week — parked for a later Time 2). · 2026-08-29 smoke: C17 Remember cut; C15 chunks cut; Place vs time cut; time-only scale SVG on card 0; C14 unit name; C13 bold the prep; F3 Use relexified / born use:false; authored at/on/in chips; D1 item explanations (no place gloss). Sort board: in/on/at boxes, not sentence Match.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
+  "bins": [
+    "in",
+    "on",
+    "at"
+  ],
+  "bin_captions": {
+    "in": "big time",
+    "on": "a day",
+    "at": "a clock time"
+  },
   "blocks": [
+    {
+      "id": "sort",
+      "title": "in · on · at",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "July",
+          "cz": "červenec",
+          "bin": "in",
+          "use": false
+        },
+        {
+          "en": "2010",
+          "cz": "2010",
+          "bin": "in",
+          "use": false
+        },
+        {
+          "en": "winter",
+          "cz": "zima",
+          "bin": "in",
+          "use": false
+        },
+        {
+          "en": "the morning",
+          "cz": "ráno",
+          "bin": "in",
+          "use": false
+        },
+        {
+          "en": "Saturday",
+          "cz": "sobota",
+          "bin": "on",
+          "use": false
+        },
+        {
+          "en": "Monday",
+          "cz": "pondělí",
+          "bin": "on",
+          "use": false
+        },
+        {
+          "en": "5 May",
+          "cz": "5. května",
+          "bin": "on",
+          "use": false
+        },
+        {
+          "en": "Saturday evening",
+          "cz": "sobota večer",
+          "bin": "on",
+          "use": false
+        },
+        {
+          "en": "5 o'clock",
+          "cz": "pět hodin",
+          "bin": "at",
+          "use": false
+        },
+        {
+          "en": "night",
+          "cz": "noc",
+          "bin": "at",
+          "use": false
+        },
+        {
+          "en": "the weekend",
+          "cz": "víkend",
+          "bin": "at",
+          "use": false
+        },
+        {
+          "en": "twelve",
+          "cz": "dvanáct",
+          "bin": "at",
+          "use": false
+        }
+      ]
+    },
     {
       "id": "time_preps_a1",
       "title": "Time prepositions · A1",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
           "en": "I get up at seven o'clock.",
           "cz": "Vstávám v sedm hodin.",
           "gap": "I get up ____ seven o'clock.",
           "gap_answer": "at",
+          "quiz_options": ["at", "on", "in"],
           "accepts": [
             "I get up at seven o'clock.",
             "I get up at 7 o'clock.",
             "I get up at seven."
           ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "The film starts at eight.",
-          "cz": "Film začíná v osm.",
-          "gap": "The film starts ____ eight.",
-          "gap_answer": "at",
-          "accepts": [
-            "The film starts at eight.",
-            "The film starts at 8.",
-            "The movie starts at eight."
-          ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "I sleep at night.",
-          "cz": "V noci spím.",
-          "gap": "I sleep ____ night.",
-          "gap_answer": "at",
-          "accepts": [
-            "I sleep at night."
-          ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "We meet at the weekend.",
-          "cz": "O víkendu se scházíme.",
-          "gap": "We meet ____ the weekend.",
-          "gap_answer": "at",
-          "accepts": [
-            "We meet at the weekend.",
-            "We meet on the weekend."
-          ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "I work on Monday.",
-          "cz": "V pondělí pracuju.",
-          "gap": "I work ____ Monday.",
-          "gap_answer": "on",
-          "accepts": [
-            "I work on Monday.",
-            "I work on Mondays."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "She plays tennis on Saturday.",
-          "cz": "Ona hraje tenis v sobotu.",
-          "gap": "She plays tennis ____ Saturday.",
-          "gap_answer": "on",
-          "accepts": [
-            "She plays tennis on Saturday.",
-            "She plays tennis on Saturdays."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "We go shopping on Friday.",
-          "cz": "V pátek jdeme nakupovat.",
-          "gap": "We go shopping ____ Friday.",
-          "gap_answer": "on",
-          "accepts": [
-            "We go shopping on Friday.",
-            "We go shopping on Fridays."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "My birthday is on 5 May.",
-          "cz": "Mám narozeniny 5. května.",
-          "gap": "My birthday is ____ 5 May.",
-          "gap_answer": "on",
-          "accepts": [
-            "My birthday is on 5 May.",
-            "My birthday is on May 5.",
-            "My birthday is on the 5th of May.",
-            "My birthday is on May 5th."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "I was born in July.",
-          "cz": "Narodil jsem se v červenci.",
-          "gap": "I was born ____ July.",
-          "gap_answer": "in",
-          "accepts": [
-            "I was born in July."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
-        },
-        {
-          "en": "We go on holiday in summer.",
-          "cz": "V létě jezdíme na dovolenou.",
-          "gap": "We go on holiday ____ summer.",
-          "gap_answer": "in",
-          "accepts": [
-            "We go on holiday in summer.",
-            "We go on holiday in the summer.",
-            "We go on vacation in summer.",
-            "We go on vacation in the summer."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
-        },
-        {
-          "en": "I drink coffee in the morning.",
-          "cz": "Ráno piju kávu.",
-          "gap": "I drink coffee ____ the morning.",
-          "gap_answer": "in",
-          "accepts": [
-            "I drink coffee in the morning."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
-        },
-        {
-          "en": "She studies in the evening.",
-          "cz": "Ona se učí večer.",
-          "gap": "She studies ____ the evening.",
-          "gap_answer": "in",
-          "accepts": [
-            "She studies in the evening.",
-            "She studies in the evenings."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
-        },
-        {
-          "en": "They watch TV in the afternoon.",
-          "cz": "Oni odpoledne koukají na televizi.",
-          "gap": "They watch TV ____ the afternoon.",
-          "gap_answer": "in",
-          "accepts": [
-            "They watch TV in the afternoon.",
-            "They watch television in the afternoon."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
+          "explanation": "Clock time takes **at**: at **seven**.",
+          "explanation_cz": "Hodina bere **at**: at **seven**."
         },
         {
           "en": "I start work at nine.",
           "cz": "Začínám práci v devět.",
           "gap": "I start work ____ nine.",
           "gap_answer": "at",
+          "quiz_options": ["at", "on", "in"],
           "accepts": [
             "I start work at nine.",
             "I start work at 9.",
             "I start work at nine o'clock."
           ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "The shop is closed on Sunday.",
-          "cz": "V neděli je obchod zavřený.",
-          "gap": "The shop is closed ____ Sunday.",
-          "gap_answer": "on",
-          "accepts": [
-            "The shop is closed on Sunday.",
-            "The shop is closed on Sundays."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "He was born in 2010.",
-          "cz": "On se narodil v roce 2010.",
-          "gap": "He was born ____ 2010.",
-          "gap_answer": "in",
-          "accepts": [
-            "He was born in 2010."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
-        },
-        {
-          "en": "We eat lunch at midday.",
-          "cz": "Obědváme v poledne.",
-          "gap": "We eat lunch ____ midday.",
-          "gap_answer": "at",
-          "accepts": [
-            "We eat lunch at midday.",
-            "We have lunch at midday.",
-            "We eat lunch at noon.",
-            "We have lunch at noon."
-          ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "I call her on Monday morning.",
-          "cz": "Volám jí v pondělí ráno.",
-          "gap": "I call her ____ Monday morning.",
-          "gap_answer": "on",
-          "accepts": [
-            "I call her on Monday morning.",
-            "I call her on Monday mornings."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "School starts in September.",
-          "cz": "Škola začíná v září.",
-          "gap": "School starts ____ September.",
-          "gap_answer": "in",
-          "accepts": [
-            "School starts in September."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
-        },
-        {
-          "en": "See you at six.",
-          "cz": "Uvidíme se v šest.",
-          "gap": "See you ____ six.",
-          "gap_answer": "at",
-          "accepts": [
-            "See you at six.",
-            "See you at 6.",
-            "See you at six o'clock."
-          ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
-        },
-        {
-          "en": "The party is on Saturday evening.",
-          "cz": "Párty je v sobotu večer.",
-          "gap": "The party is ____ Saturday evening.",
-          "gap_answer": "on",
-          "accepts": [
-            "The party is on Saturday evening.",
-            "The party is on Saturday night."
-          ],
-          "explanation": "on = on a surface / day or date.",
-          "explanation_cz": "on = na ploše / den nebo datum."
-        },
-        {
-          "en": "It is cold in winter.",
-          "cz": "V zimě je zima.",
-          "gap": "It is cold ____ winter.",
-          "gap_answer": "in",
-          "accepts": [
-            "It is cold in winter.",
-            "It is cold in the winter.",
-            "It's cold in winter."
-          ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
+          "explanation": "Clock time takes **at**: at **nine**.",
+          "explanation_cz": "Hodina bere **at**: at **nine**."
         },
         {
           "en": "I finish at five o'clock.",
           "cz": "Končím v pět hodin.",
           "gap": "I finish ____ five o'clock.",
           "gap_answer": "at",
+          "quiz_options": ["at", "on", "in"],
           "accepts": [
             "I finish at five o'clock.",
             "I finish at 5 o'clock.",
             "I finish at five."
           ],
-          "explanation": "at = point (place or clock time).",
-          "explanation_cz": "at = bod (místo nebo hodina)."
+          "explanation": "Clock time takes **at**: at **five**.",
+          "explanation_cz": "Hodina bere **at**: at **five**."
+        },
+        {
+          "en": "See you at six.",
+          "cz": "Uvidíme se v šest.",
+          "gap": "See you ____ six.",
+          "gap_answer": "at",
+          "quiz_options": ["at", "on", "in"],
+          "accepts": [
+            "See you at six.",
+            "See you at 6.",
+            "See you at six o'clock."
+          ],
+          "explanation": "Clock time takes **at**: at **six**.",
+          "explanation_cz": "Hodina bere **at**: at **six**."
+        },
+        {
+          "en": "We eat lunch at twelve.",
+          "cz": "Obědváme ve dvanáct.",
+          "gap": "We eat lunch ____ twelve.",
+          "gap_answer": "at",
+          "quiz_options": ["at", "on", "in"],
+          "accepts": [
+            "We eat lunch at twelve.",
+            "We eat lunch at 12.",
+            "We eat lunch at twelve o'clock.",
+            "We have lunch at twelve."
+          ],
+          "explanation": "Clock time takes **at**: at **twelve**.",
+          "explanation_cz": "Hodina bere **at**: at **twelve**."
+        },
+        {
+          "en": "I sleep at night.",
+          "cz": "V noci spím.",
+          "gap": "I sleep ____ night.",
+          "gap_answer": "at",
+          "quiz_options": ["at", "on", "in"],
+          "accepts": [
+            "I sleep at night."
+          ],
+          "explanation": "**at night** — not *in the night*.",
+          "explanation_cz": "**at night** — ne *in the night*."
+        },
+        {
+          "en": "We meet at the weekend.",
+          "cz": "O víkendu se scházíme.",
+          "gap": "We meet ____ the weekend.",
+          "gap_answer": "at",
+          "gap_accepts": ["on"],
+          "quiz_options": ["at", "in"],
+          "accepts": [
+            "We meet at the weekend.",
+            "We meet on the weekend."
+          ],
+          "explanation": "**at** the weekend (UK). *on* the weekend is OK too.",
+          "explanation_cz": "**at** the weekend (UK). *on* the weekend taky jde."
+        },
+        {
+          "en": "I work on Monday.",
+          "cz": "V pondělí pracuju.",
+          "gap": "I work ____ Monday.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "I work on Monday.",
+            "I work on Mondays."
+          ],
+          "explanation": "A day takes **on**: on **Monday**.",
+          "explanation_cz": "Den bere **on**: on **Monday**."
+        },
+        {
+          "en": "We work on Friday.",
+          "cz": "V pátek pracujeme.",
+          "gap": "We work ____ Friday.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "We work on Friday.",
+            "We work on Fridays."
+          ],
+          "explanation": "A day takes **on**: on **Friday**.",
+          "explanation_cz": "Den bere **on**: on **Friday**."
+        },
+        {
+          "en": "She plays tennis on Saturday.",
+          "cz": "Ona hraje tenis v sobotu.",
+          "gap": "She plays tennis ____ Saturday.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "She plays tennis on Saturday.",
+            "She plays tennis on Saturdays."
+          ],
+          "explanation": "A day takes **on**: on **Saturday**.",
+          "explanation_cz": "Den bere **on**: on **Saturday**."
+        },
+        {
+          "en": "The shop is open on Sunday.",
+          "cz": "V neděli je obchod otevřený.",
+          "gap": "The shop is open ____ Sunday.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "The shop is open on Sunday.",
+            "The shop is open on Sundays."
+          ],
+          "explanation": "A day takes **on**: on **Sunday**.",
+          "explanation_cz": "Den bere **on**: on **Sunday**."
+        },
+        {
+          "en": "My birthday is on 5 May.",
+          "cz": "Mám narozeniny 5. května.",
+          "gap": "My birthday is ____ 5 May.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "My birthday is on 5 May.",
+            "My birthday is on May 5.",
+            "My birthday is on the 5th of May.",
+            "My birthday is on May 5th."
+          ],
+          "explanation": "A date takes **on**: on **5 May**.",
+          "explanation_cz": "Datum bere **on**: on **5 May**."
+        },
+        {
+          "en": "I meet her on Monday morning.",
+          "cz": "Potkávám ji v pondělí ráno.",
+          "gap": "I meet her ____ Monday morning.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "I meet her on Monday morning.",
+            "I meet her on Monday mornings."
+          ],
+          "explanation": "Day + morning/evening takes **on**: on **Monday morning**.",
+          "explanation_cz": "Den + ráno/večer bere **on**: on **Monday morning**."
+        },
+        {
+          "en": "The party is on Saturday evening.",
+          "cz": "Párty je v sobotu večer.",
+          "gap": "The party is ____ Saturday evening.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "The party is on Saturday evening.",
+            "The party is on Saturday night."
+          ],
+          "explanation": "Day + evening takes **on**: on **Saturday evening**.",
+          "explanation_cz": "Den + večer bere **on**: on **Saturday evening**."
+        },
+        {
+          "en": "It is hot in July.",
+          "cz": "V červenci je horko.",
+          "gap": "It is hot ____ July.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "It is hot in July.",
+            "It's hot in July."
+          ],
+          "explanation": "A month takes **in**: in **July**.",
+          "explanation_cz": "Měsíc bere **in**: in **July**."
         },
         {
           "en": "We travel in March.",
           "cz": "V březnu cestujeme.",
           "gap": "We travel ____ March.",
           "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
           "accepts": [
             "We travel in March."
           ],
-          "explanation": "in = inside an area / longer period.",
-          "explanation_cz": "in = uvnitř prostoru / delší období."
+          "explanation": "A month takes **in**: in **March**.",
+          "explanation_cz": "Měsíc bere **in**: in **March**."
+        },
+        {
+          "en": "I was born in July.",
+          "cz": "Narodil jsem se v červenci.",
+          "use": false,
+          "gap": "I was born ____ July.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "I was born in July."
+          ],
+          "explanation": "A month takes **in**: in **July**.",
+          "explanation_cz": "Měsíc bere **in**: in **July**."
+        },
+        {
+          "en": "He was born in 2010.",
+          "cz": "On se narodil v roce 2010.",
+          "use": false,
+          "gap": "He was born ____ 2010.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "He was born in 2010."
+          ],
+          "explanation": "A year takes **in**: in **2010**.",
+          "explanation_cz": "Rok bere **in**: in **2010**."
+        },
+        {
+          "en": "It is cold in winter.",
+          "cz": "V zimě je zima.",
+          "gap": "It is cold ____ winter.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "It is cold in winter.",
+            "It is cold in the winter.",
+            "It's cold in winter.",
+            "It's cold in the winter."
+          ],
+          "explanation": "A season takes **in**: in **winter**.",
+          "explanation_cz": "Roční období bere **in**: in **winter**."
+        },
+        {
+          "en": "I drink coffee in the morning.",
+          "cz": "Ráno piju kávu.",
+          "gap": "I drink coffee ____ the morning.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "I drink coffee in the morning."
+          ],
+          "explanation": "**in the** morning. Night is **at night**.",
+          "explanation_cz": "**in the** morning. Noc je **at night**."
+        },
+        {
+          "en": "She studies in the evening.",
+          "cz": "Ona se učí večer.",
+          "gap": "She studies ____ the evening.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "She studies in the evening.",
+            "She studies in the evenings."
+          ],
+          "explanation": "**in the** evening. Night is **at night**.",
+          "explanation_cz": "**in the** evening. Noc je **at night**."
+        },
+        {
+          "en": "They watch TV in the afternoon.",
+          "cz": "Oni odpoledne koukají na televizi.",
+          "gap": "They watch TV ____ the afternoon.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "They watch TV in the afternoon.",
+            "They watch television in the afternoon."
+          ],
+          "explanation": "**in the** afternoon.",
+          "explanation_cz": "**in the** afternoon."
+        },
+        {
+          "en": "I work in September.",
+          "cz": "V září pracuju.",
+          "gap": "I work ____ September.",
+          "gap_answer": "in",
+          "quiz_options": ["in", "on", "at"],
+          "accepts": [
+            "I work in September."
+          ],
+          "explanation": "A month takes **in**: in **September**.",
+          "explanation_cz": "Měsíc bere **in**: in **September**."
+        },
+        {
+          "en": "They play tennis on Sunday.",
+          "cz": "Oni hrají tenis v neděli.",
+          "gap": "They play tennis ____ Sunday.",
+          "gap_answer": "on",
+          "quiz_options": ["on", "in", "at"],
+          "accepts": [
+            "They play tennis on Sunday.",
+            "They play tennis on Sundays."
+          ],
+          "explanation": "A day takes **on**: on **Sunday**.",
+          "explanation_cz": "Den bere **on**: on **Sunday**."
         }
       ]
     }
@@ -317,243 +441,195 @@
   "intro": {
     "cards": [
       {
-        "title": "Time: at / on / in",
-        "title_cz": "Čas: at · on · in",
-        "diagram": "in-on-at-scale",
+        "title": "Prepositions of time",
+        "title_cz": "Předložky času",
+        "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"16\" y=\"36\" width=\"188\" height=\"48\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"2.5\"/>\n  <text x=\"110\" y=\"66\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\">in</text>\n  <text x=\"110\" y=\"110\" text-anchor=\"middle\" font-size=\"13\" fill=\"var(--text, #eaeaea)\">July · 2010</text>\n  <rect x=\"224\" y=\"44\" width=\"120\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"2.5\"/>\n  <text x=\"284\" y=\"66\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"600\" fill=\"#d4b070\">on</text>\n  <text x=\"284\" y=\"110\" text-anchor=\"middle\" font-size=\"13\" fill=\"var(--text, #eaeaea)\">Monday</text>\n  <circle cx=\"430\" cy=\"60\" r=\"9\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"430\" y=\"36\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\">at</text>\n  <text x=\"430\" y=\"110\" text-anchor=\"middle\" font-size=\"13\" fill=\"var(--text, #eaeaea)\">seven</text>\n</svg>",
         "table": {
-          "caption": "big → small",
           "headers": [
-            "Word",
-            "Size idea",
-            "Use for"
+            "",
+            "",
+            ""
           ],
           "rows": [
             [
-              "in",
-              "big area of time",
-              "months · years · seasons · morning"
+              "**in**",
+              "big time",
+              "July · 2010 · winter · morning"
             ],
             [
-              "on",
-              "a day (a line on the calendar)",
-              "days · dates"
+              "**on**",
+              "a day",
+              "Monday · 5 May"
             ],
             [
-              "at",
-              "a point on the clock",
-              "clock times · night · weekend"
+              "**at**",
+              "a clock time",
+              "seven · night · weekend"
             ]
           ]
         },
         "points": [
-          "in = big (July, 2010, the morning)",
-          "on = day / date (Monday, 5 May)",
-          "at = exact time (seven o'clock)",
-          "Same idea as place: big period → day → clock point."
+          "Czech often uses one *v*. English picks **in** / **on** / **at**.",
+          "**in** = July, 2010, winter, the morning",
+          "**on** = Monday, 5 May, Monday morning",
+          "**at** = seven o'clock, night, the weekend"
         ]
       },
       {
         "title": "at",
-        "title_cz": "at = point on the clock",
-        "diagram": "at",
+        "title_cz": "at = přesný čas (hodina)",
         "table": {
-          "caption": "at",
           "headers": [
             "English",
             "When"
           ],
           "rows": [
             [
-              "at seven / at 7 o'clock",
+              "**at** seven / **at** 7 o'clock",
               "clock time"
             ],
             [
-              "at night",
-              "night (chunk)"
+              "**at** twelve",
+              "clock time"
             ],
             [
-              "at the weekend",
+              "**at night**",
+              "night"
+            ],
+            [
+              "**at** the weekend",
               "weekend (UK)"
-            ],
-            [
-              "at midday / at noon",
-              "middle of day"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I get up at seven o'clock.",
+            "en": "I get up **at** seven o'clock.",
             "cz": "Vstávám v sedm hodin."
           },
           {
-            "en": "I sleep at night.",
+            "en": "I sleep **at** night.",
             "cz": "V noci spím."
           }
         ],
         "points": [
-          "Clock times almost always take at",
-          "at the weekend (UK) — on the weekend also OK",
-          "at = a point in time — the exact hour."
+          "Clock times take **at**",
+          "**at** the weekend (UK). *on* the weekend also OK",
+          "**at night**, not *in the night*"
         ]
       },
       {
         "title": "on",
-        "title_cz": "on = day / date (a line)",
+        "title_cz": "on = den / datum",
         "table": {
-          "caption": "on",
           "headers": [
             "English",
             "When"
           ],
           "rows": [
             [
-              "on Monday",
+              "**on** Monday",
               "day of the week"
             ],
             [
-              "on Friday evening",
+              "**on** Saturday evening",
               "day + part of day"
             ],
             [
-              "on 5 May",
+              "**on** 5 May",
               "date"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I work on Monday.",
+            "en": "I work **on** Monday.",
             "cz": "V pondělí pracuju."
           },
           {
-            "en": "The party is on Saturday evening.",
+            "en": "The party is **on** Saturday evening.",
             "cz": "Párty je v sobotu večer."
           }
         ],
         "points": [
-          "Days of the week → on",
-          "Dates → on",
-          "on = one day on the calendar — bigger than a clock point, smaller than a month."
+          "Days of the week → **on**",
+          "Dates → **on**",
+          "Day + morning/evening → **on**"
         ]
       },
       {
         "title": "in",
-        "title_cz": "in = big period (area of time)",
+        "title_cz": "in = delší období",
         "table": {
-          "caption": "in",
           "headers": [
             "English",
             "When"
           ],
           "rows": [
             [
-              "in July",
+              "**in** July",
               "month"
             ],
             [
-              "in 2010",
+              "**in** 2010",
               "year"
             ],
             [
-              "in summer / in winter",
+              "**in** winter",
               "season"
             ],
             [
-              "in the morning",
+              "**in the** morning",
               "part of day"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I drink coffee in the morning.",
+            "en": "I drink coffee **in** the morning.",
             "cz": "Ráno piju kávu."
           },
           {
-            "en": "School starts in September.",
-            "cz": "Škola začíná v září."
+            "en": "It is hot **in** July.",
+            "cz": "V červenci je horko."
           }
         ],
         "points": [
-          "in the morning / afternoon / evening",
-          "But: at night (not in the night for this pack)",
-          "in = a bigger stretch of time — month, year, season, part of day."
+          "**in the** morning / afternoon / evening",
+          "But: **at night**",
+          "Months, years, seasons → **in**"
         ]
       },
       {
         "title": "Common mistakes",
         "title_cz": "Časté chyby",
         "table": {
-          "caption": "check",
           "headers": [
-            "Say",
-            "Not"
+            "Not",
+            "Say"
           ],
           "rows": [
             [
-              "on Monday",
-              "in Monday / at Monday"
+              "*in Monday*",
+              "**on** Monday"
             ],
             [
-              "at seven",
-              "in seven / on seven"
+              "*in seven* · *seven* (no word)",
+              "**at** seven"
             ],
             [
-              "in the morning",
-              "at the morning"
+              "*at the morning*",
+              "**in the** morning"
             ],
             [
-              "at night",
-              "in the night (this pack)"
+              "*in the night*",
+              "**at** night"
             ]
           ]
         },
         "points": [
-          "Czech often uses one v — English picks at / on / in",
-          "Learn chunks: at night · in the morning · on Monday"
-        ]
-      },
-      {
-        "title": "Place vs time",
-        "title_cz": "Místo vs čas",
-        "diagram": "in-on-at",
-        "table": {
-          "caption": "two jobs",
-          "headers": [
-            "Place (other unit)",
-            "Time (this unit)"
-          ],
-          "rows": [
-            [
-              "in the room (area)",
-              "in July (big period)"
-            ],
-            [
-              "on the table (surface)",
-              "on Monday (day)"
-            ],
-            [
-              "at the door (point)",
-              "at seven (clock point)"
-            ]
-          ]
-        },
-        "points": [
-          "Place unit = where · this unit = when",
-          "Size idea helps both: big → medium → point",
-          "Same three words. Place = where (area / surface / point). Time = when (big period / day / clock)."
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "diagram": "in-on-at-scale",
-        "points": [
-          "in = big period · on = day · at = clock point",
-          "at night · in the morning · on Monday",
-          "Same size idea as place (area / surface / point)",
-          "Chunks beat rules when you forget"
+          "Czech often uses one *v* — English picks **at** / **on** / **in**",
+          "Clock times need **at**: *I go there at 7.30*"
         ]
       }
     ]

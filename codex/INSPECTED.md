@@ -14,14 +14,14 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**33 inspected · 0 approved · 66 unseen** of 99 live units
+**34 inspected · 0 approved · 65 unseen** of 99 live units
 
 Of the 34 cloud-authored units, **2 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 18 inspected / 0 approved / 20 units
+## A1 — 19 inspected / 0 approved / 20 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
@@ -34,7 +34,7 @@ Of the 34 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_object_pronouns` — Object pronouns · 31 items
 - [x][ ] `a1_possessives` — Possessives · 24 items
 - [x][ ] `a1_prepositions_place` — Prepositions of place · 26 items · seen?
-- [ ][ ] `a1_prepositions_time` — Prepositions of time · 24 items
+- [x][ ] `a1_prepositions_time` — Prepositions of time · 36 items
 - [x][ ] `a1_present_simple` — Present simple · 31 items
 - [x][ ] `a1_question_words` — Question words · 30 items
 - [x][ ] `a1_questions_negatives` — Questions & negatives · 26 items

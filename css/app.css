@@ -2487,7 +2487,7 @@ button.brand:hover { color: var(--accent); }
 
 .sb-bins {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
   gap: 0.5rem;
   margin-bottom: 0.6rem;
 }
