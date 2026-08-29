@@ -1066,6 +1066,35 @@ function mapTreeLevel() {
   return lvls.includes(STATE.level) ? STATE.level : lvls[0] || "A1";
 }
 
+/** Crop easing (James polish apply, 2026-08-29): when the rail changes the
+ *  viewed age, glide the viewBox from the old crop to the new one — the
+ *  zoom-out itself is the growth moment. Never cut. Same-crop re-renders
+ *  and reduced-motion users get the instant swap as before. */
+let lastMapViewBox = null;
+function easeMapViewBox(portrait) {
+  const svg = portrait.querySelector("svg");
+  if (!svg) return;
+  const target = svg.getAttribute("viewBox");
+  const prev = lastMapViewBox;
+  lastMapViewBox = target;
+  if (!prev || prev === target) return;
+  if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+  const a = prev.split(" ").map(Number);
+  const b = target.split(" ").map(Number);
+  if (a.length !== 4 || a.some((v) => !Number.isFinite(v))) return;
+  const t0 = performance.now(), D = 650;
+  const ease = (t) => 1 - Math.pow(1 - t, 3);
+  const step = (now) => {
+    const t = Math.min(1, (now - t0) / D), e = ease(t);
+    svg.setAttribute("viewBox", a.map((v, i) => f4(v + (b[i] - v) * e)).join(" "));
+    if (t < 1 && svg.isConnected) requestAnimationFrame(step);
+    else svg.setAttribute("viewBox", target);
+  };
+  svg.setAttribute("viewBox", prev);
+  requestAnimationFrame(step);
+}
+const f4 = (x) => Math.round(x * 10) / 10;
+
 /** Combined tree portrait only (Roots/Canopy meter chips removed — 2026-08-10). */
 function renderRoots() {
   const portrait = document.getElementById("tree-portrait");
@@ -1085,6 +1114,7 @@ function renderRoots() {
       recent: recentNodeIds(),
       onSelect: (node) => focusNodeOnMap(node),
     });
+    easeMapViewBox(portrait);
     const meta = document.getElementById("tree-portrait-meta");
     if (meta) {
       const lv = mapTreeLevel();

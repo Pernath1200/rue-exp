@@ -460,6 +460,10 @@ export function renderTreePortrait(container, opts) {
    * labelled (focusLabel), and the trunk pulsing slightly thicker. The map
    * portrait and vocab payoffs are unchanged. */
   const focusRoots = opts.focus === "roots";
+  // Map render vs payoff render: payoffs pass focus:"roots" (grammar) or
+  // justNow (vocab). Map-only dressing (root names, apex bud) keys off this
+  // so the payoff look stays exactly as it was (James, 2026-08-29).
+  const mapOnly = !focusRoots && !opts.justNow;
   const focusLabel = opts.focusLabel || "";
   const m = buildModel();
   const p = m.p;
@@ -538,6 +542,13 @@ export function renderTreePortrait(container, opts) {
       const size = leafSizeStem * lf.sizeMul;
       above += '<use href="#' + lid(lf.v) + '" class="lf" transform="translate(' + f1(tip[0]) + ' ' + f1(tip[1]) + ') rotate(' + f1((th + lf.th) / D2R) + ') scale(' + f1(size) + ')"/>';
     });
+    // Apex bud (James polish apply, 2026-08-29): one cyan bud at the growing
+    // tip — the quiet promise of the next level. Map only; gone at full
+    // growth (age.stem = 1) because a mature tree has nowhere left to go.
+    if (mapOnly) {
+      const bs = 0.55 + 0.45 * age.leaf;
+      above += '<ellipse class="tp-bud" cx="0" cy="' + f1(-4.5 * bs) + '" rx="' + f1(2.6 * bs) + '" ry="' + f1(5 * bs) + '" fill="' + C.leaf + '" opacity="0.95" transform="translate(' + f1(tip[0]) + ' ' + f1(tip[1]) + ') rotate(' + f1(th / D2R) + ')"/>';
+    }
     above += "</g>";
   }
 
@@ -634,6 +645,7 @@ export function renderTreePortrait(container, opts) {
   const rootSeats = laterals.concat([tap]);
   let roots = "";
   let hiRootTip = null; // tip of the highlighted lateral, for the focus label
+  const rootLabelSpots = []; // map-only: every seat wears its name at its tip
   m.roots.forEach((R0, i) => {
     const seatInfo = rootSeats[i];
     // Roots age too: a sapling is a tap root with thin fibrous laterals; the
@@ -656,6 +668,11 @@ export function renderTreePortrait(container, opts) {
       ang: (t) => { const v = bezTan(P, t); return Math.atan2(v[0], v[1]); }, w: (t) => w0 * (1 - (1 - p.taper * 0.8) * t), tip: () => end };
     track(end);
     const dim = seatInfo.state === "dim";
+    if (mapOnly) {
+      const lblSide = R0.tap ? 1 : Math.sign(end[0] - cx) || 1;
+      rootLabelSpots.push({ x: end[0] + lblSide * (R0.tap ? 10 : 14), y: end[1] + (R0.tap ? 8 : 12), side: lblSide, dim, label: seatInfo.label, dataId: seatInfo.dataId });
+      track([end[0] + lblSide * (6.8 * seatInfo.label.length + 16), end[1] + 16]);
+    }
     if (hiR && !R0.tap) hiRootTip = { x: end[0], y: end[1], side: Math.sign(end[0] - cx) || 1, seatLabel: seatInfo.label };
     if (hiR && R0.tap && !hiRootTip) hiRootTip = { x: end[0], y: end[1], side: 1, seatLabel: seatInfo.label };
     let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : focusRoots ? 0.35 : dim ? 0.3 : 0.85) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
@@ -698,6 +715,16 @@ export function renderTreePortrait(container, opts) {
     roots += '<line x1="' + f1(hiRootTip.x + hiRootTip.side * 3) + '" y1="' + f1(hiRootTip.y + 1) + '" x2="' + f1(lx - hiRootTip.side * 3) + '" y2="' + f1(ly - 4) + '" stroke="#d4b070" stroke-width="0.8" opacity="0.55"/>';
     roots += '<text class="tp-root-label" x="' + f1(lx) + '" y="' + f1(ly) + '" text-anchor="' + (hiRootTip.side < 0 ? "end" : "start") + '">' + esc(t) + "</text>";
     track([lx + hiRootTip.side * (6.8 * t.length + 10), ly]);
+  }
+
+  // Map only: every seat wears its name at its tip — a ghost seat keeps a
+  // readable name (muted, 0.55) so "future" is something the student can aim
+  // at; awake seats take the label gold. Payoff keeps its single focus label
+  // (James polish apply, 2026-08-29).
+  if (mapOnly) {
+    rootLabelSpots.forEach((L) => {
+      roots += '<text class="tp-root-label" x="' + f1(L.x) + '" y="' + f1(L.y) + '" text-anchor="' + (L.side < 0 ? "end" : "start") + '"' + (L.dim ? ' fill="' + C.muted + '" opacity="0.55"' : ' opacity="0.9"') + ' data-node="' + L.dataId + '" style="cursor:' + (L.dataId ? "pointer" : "default") + '">' + esc(L.label) + "</text>";
+    });
   }
 
   // ---- soil ----

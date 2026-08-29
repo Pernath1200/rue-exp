@@ -53,4 +53,27 @@ const verbs = p.laterals.find((L) => L.tree_part === "verb_phrase");
 assert(verbs.knots === 1, "1 started of 30 live → exactly 1 lit slot");
 assert(litSlots(synth, 1) === 1, "litSlots floor holds at 1/30");
 
+// 4. Map dressing (polish, 2026-08-29): seats wear their names on the map,
+//    the growing tip carries the apex bud — and neither leaks into payoffs.
+const mapHost = host();
+renderTreePortrait(mapHost, {
+  level: "A1", nodes: tree.nodes,
+  isFruit: () => false, progressState: () => "none",
+});
+assert(mapHost.innerHTML.includes(">Linking</text>"),
+  "map names every root seat (Linking labelled)");
+assert(mapHost.innerHTML.includes(">Foundation</text>"),
+  "tap root labelled Foundation");
+assert(mapHost.innerHTML.includes("tp-bud"),
+  "apex bud on the growing map tree");
+const payHost = host();
+renderTreePortrait(payHost, {
+  level: "A1", nodes: tree.nodes,
+  isFruit: () => false, progressState: () => "none",
+  justNow: "leaf_home_family", highlight: ["home_family", "trunk"],
+});
+assert(!payHost.innerHTML.includes(">Linking</text>"),
+  "payoff stays unlabelled below ground");
+assert(!payHost.innerHTML.includes("tp-bud"), "payoff carries no bud");
+
 process.exit(failed ? 1 : 0);

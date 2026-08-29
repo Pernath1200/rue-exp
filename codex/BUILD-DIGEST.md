@@ -22,8 +22,11 @@ shared files touched). Four commits + one in rue-codex:
   08-25 note "stays on verb_phrase". `foundation: true` (08-25 tap decision)
   is separate and **still unapplied**; a1_agreement pack note carries a
   6×-duplicated line (smoke lane, untouched).
-- **a1_frequency case drafted, not applied** (`4b54f2b`, audit §4). Headline:
-  its G_VP tag has no Codex backing at all — James to judge.
+- **a1_frequency case drafted** (`4b54f2b`, audit §4) **then applied on
+  James's word** (`9622e73` + rue-codex `91a6194`): → Sentence ·
+  G_SS-A1B1-01 with the adverb-position family. Its G_VP tag had no Codex
+  backing at all. Pack tag went in around Grok's live WIP (per-file stash,
+  popped clean). Baseline 22 → 21.
 - **Portrait lift**: map tree follows the level rail (mapTreeLevel() in
   app.js; skeleton age = viewed level, lights ≤ level via the portrait's own
   atLevel). Meta copy says "follows the rail". Label type now holds the A1
@@ -33,8 +36,12 @@ shared files touched). Four commits + one in rue-codex:
   Cache `?v=2026-08-29-tree-rail-b`.
 - **Claude.ai mock verdict** (Mock_TreePortrait A1–B1): geometry discarded —
   the app renderer is stronger. Salvaged: label compensation (landed), slot
-  floor test (landed), caption copy (meta line), and three proposals parked
-  for James: ghost labels at 0.55, crop easing on rail change, apex bud.
+  floor test (landed), caption copy (meta line).
+- **Polish trio applied (James's picks)**: map root seats wear their names
+  (gold awake, muted 0.55 ghosts — payoff untouched via mapOnly gate); crop
+  easing on rail change (viewBox glide, reduced-motion safe); apex bud at
+  the growing tip (gone at full growth). Tests extended to 11 asserts —
+  labels/bud proven absent from payoffs. Cache `?v=2026-08-29-tree-polish`.
 
 Gates this run: check_codex PASSED (0 new · 22 known) · check_playable 0/0 ·
 smoke shell/js 14/14 · **verify_pack 19 errors + audit ratchet 420>246 are
