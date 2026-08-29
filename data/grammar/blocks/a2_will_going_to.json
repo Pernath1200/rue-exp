@@ -5,11 +5,10 @@
   "tree_node": "a2_will_going_to",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Thin future slice. will + base (offers, decisions now, promises). be going to + base (plans, clear evidence). Gap on will/won't or am/is/are going to. · Bank 48 items · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Thin unit. 8 items for Quiz/Type/Use. will (decide now, promise, request) vs going to (plan, evidence). Gap the whole VP. Stem forces the job (A0). No Match/sort. Not going to work (commute). · 2026-08-29 smoke.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
-      "match",
       "quiz"
     ]
   },
@@ -19,619 +18,158 @@
       "title": "Will / going to · A2",
       "items": [
         {
-          "en": "I will help you.",
-          "cz": "Pomůžu ti. (teď se rozhoduju / nabídka)",
-          "gap": "I ____ help you.",
-          "gap_answer": "will",
-          "accepts": [
-            "I will help you.",
-            "I'll help you."
+          "en": "It is hot in here. I will open the window.",
+          "cz": "Je tu horko. Otevřu okno.",
+          "gap": "It is hot in here. I ____ the window. (open)",
+          "gap_answer": "will open",
+          "quiz_options": [
+            "will open",
+            "am going to open",
+            "open",
+            "am open"
           ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
+          "accepts": [
+            "It is hot in here. I will open the window.",
+            "It is hot in here. I'll open the window.",
+            "It's hot in here. I will open the window.",
+            "It's hot in here. I'll open the window."
+          ],
+          "explanation": "Hot now → decide now → **will open**. Not a plan.",
+          "explanation_cz": "Horko teď → rozhodnutí teď → **will open**. Ne plán."
         },
         {
-          "en": "She will call tomorrow.",
-          "cz": "Zavolá zítra.",
-          "gap": "She ____ call tomorrow.",
-          "gap_answer": "will",
-          "accepts": [
-            "She will call tomorrow.",
-            "She'll call tomorrow."
+          "en": "I am thirsty. I will get some water.",
+          "cz": "Mám žízeň. Přinesu vodu.",
+          "gap": "I am thirsty. I ____ some water. (get)",
+          "gap_answer": "will get",
+          "quiz_options": [
+            "will get",
+            "am going to get",
+            "get",
+            "am get"
           ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
+          "accepts": [
+            "I am thirsty. I will get some water.",
+            "I am thirsty. I'll get some water.",
+            "I'm thirsty. I will get some water.",
+            "I'm thirsty. I'll get some water."
+          ],
+          "explanation": "Thirsty now → decide now → **will get**.",
+          "explanation_cz": "Žízeň teď → rozhodnutí teď → **will get**."
         },
         {
-          "en": "We will see.",
-          "cz": "Uvidíme.",
-          "gap": "We ____ see.",
-          "gap_answer": "will",
-          "accepts": [
-            "We will see.",
-            "We'll see."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "It will rain later.",
-          "cz": "Později bude pršet. (předpověď / domněnka)",
-          "gap": "It ____ rain later.",
-          "gap_answer": "will",
-          "accepts": [
-            "It will rain later.",
-            "It'll rain later."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "I won't be late.",
-          "cz": "Nepřijdu pozdě. (slib)",
-          "gap": "I ____ be late.",
-          "gap_answer": "won't",
+          "en": "Sorry. I won't be late.",
+          "cz": "Promiň. Nepřijdu pozdě.",
+          "gap": "Sorry. I ____ late. (be)",
+          "gap_answer": "won't be",
           "gap_accepts": [
-            "will not",
-            "won't"
+            "will not be"
           ],
-          "accepts": [
-            "I won't be late.",
-            "I will not be late."
-          ],
-          "explanation": "won't = will not + base.",
-          "explanation_cz": "won't = will not + základ."
-        },
-        {
-          "en": "She won't come.",
-          "cz": "Nepřijde.",
-          "gap": "She ____ come.",
-          "gap_answer": "won't",
-          "gap_accepts": [
-            "will not",
-            "won't"
-          ],
-          "accepts": [
-            "She won't come.",
-            "She will not come."
-          ],
-          "explanation": "won't = will not + base.",
-          "explanation_cz": "won't = will not + základ."
-        },
-        {
-          "en": "They won't wait.",
-          "cz": "Nebudou čekat.",
-          "gap": "They ____ wait.",
-          "gap_answer": "won't",
-          "gap_accepts": [
-            "will not",
-            "won't"
-          ],
-          "accepts": [
-            "They won't wait.",
-            "They will not wait."
-          ],
-          "explanation": "won't = will not + base.",
-          "explanation_cz": "won't = will not + základ."
-        },
-        {
-          "en": "Will you help me?",
-          "cz": "Pomůžeš mi?",
-          "gap": "____ you help me?",
-          "gap_answer": "Will",
-          "accepts": [
-            "Will you help me?"
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "Will she call?",
-          "cz": "Zavolá?",
-          "gap": "____ she call?",
-          "gap_answer": "Will",
-          "accepts": [
-            "Will she call?"
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "I am going to study tonight.",
-          "cz": "Dnes večer se budu učit. (plán)",
-          "gap": "I ____ going to study tonight.",
-          "gap_answer": "am",
-          "accepts": [
-            "I am going to study tonight.",
-            "I'm going to study tonight."
-          ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
-        },
-        {
-          "en": "She is going to travel in July.",
-          "cz": "V červenci bude cestovat. (plán)",
-          "gap": "She ____ going to travel in July.",
-          "gap_answer": "is",
-          "accepts": [
-            "She is going to travel in July.",
-            "She's going to travel in July."
-          ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
-        },
-        {
-          "en": "We are going to watch a film.",
-          "cz": "Budeme se dívat na film. (plán)",
-          "gap": "We ____ going to watch a film.",
-          "gap_answer": "are",
-          "accepts": [
-            "We are going to watch a film.",
-            "We're going to watch a film.",
-            "We are going to watch a movie.",
-            "We're going to watch a movie."
-          ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
-        },
-        {
-          "en": "They are going to buy a car.",
-          "cz": "Koupí auto. (plán)",
-          "gap": "They ____ going to buy a car.",
-          "gap_answer": "are",
-          "accepts": [
-            "They are going to buy a car.",
-            "They're going to buy a car."
-          ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
-        },
-        {
-          "en": "He is going to work tomorrow.",
-          "cz": "Zítra bude pracovat. (plán)",
-          "gap": "He is ____ to work tomorrow.",
-          "gap_answer": "going",
-          "accepts": [
-            "He is going to work tomorrow.",
-            "He's going to work tomorrow."
-          ],
-          "explanation": "be going to + base = plan or clear evidence.",
-          "explanation_cz": "be going to + základ = plán nebo jasný důkaz."
-        },
-        {
-          "en": "I am going to call Tom.",
-          "cz": "Zavolám Tomovi. (plán)",
-          "gap": "I am going to ____ Tom.",
-          "gap_answer": "call",
-          "accepts": [
-            "I am going to call Tom.",
-            "I'm going to call Tom."
-          ],
-          "explanation": "will = decision/offer/prediction · going to = plan/evidence.",
-          "explanation_cz": "will = rozhodnutí/nabídka/předpověď · going to = plán/důkaz."
-        },
-        {
-          "en": "Look at those clouds. It is going to rain.",
-          "cz": "Podívej se na ty mraky. Bude pršet. (důkaz teď)",
-          "gap": "It ____ going to rain.",
-          "gap_answer": "is",
-          "accepts": [
-            "It is going to rain.",
-            "It's going to rain."
-          ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
-        },
-        {
-          "en": "I am not going to stay.",
-          "cz": "Nezůstanu. (plán)",
-          "gap": "I ____ going to stay.",
-          "gap_answer": "am not",
-          "gap_accepts": [
-            "'m not",
+          "quiz_options": [
+            "won't be",
+            "am not going to be",
+            "will be",
             "am not"
           ],
           "accepts": [
-            "I am not going to stay.",
-            "I'm not going to stay."
+            "Sorry. I won't be late.",
+            "Sorry. I will not be late.",
+            "Sorry. I'll not be late."
           ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
+          "explanation": "Sorry → promise → **won't be** (= will not).",
+          "explanation_cz": "Promiň → slib → **won't be** (= will not)."
         },
         {
-          "en": "She isn't going to come.",
-          "cz": "Nepřijde. (plán)",
-          "gap": "She ____ going to come.",
-          "gap_answer": "isn't",
-          "gap_accepts": [
-            "is not",
-            "isn't"
+          "en": "I can't open this. Will you open the door?",
+          "cz": "Nemůžu to otevřít. Otevřeš dveře?",
+          "gap": "I can't open this. ____ the door? (open)",
+          "gap_answer": "Will you open",
+          "quiz_options": [
+            "Will you open",
+            "Are you going to open",
+            "Do you open",
+            "Are you open"
           ],
           "accepts": [
-            "She isn't going to come.",
-            "She is not going to come.",
-            "She's not going to come."
+            "I can't open this. Will you open the door?",
+            "I cannot open this. Will you open the door?"
           ],
-          "explanation": "is + not → isn't.",
-          "explanation_cz": "is + not → isn't."
+          "explanation": "I can't → request now → **Will you open**.",
+          "explanation_cz": "Nemůžu → prosba teď → **Will you open**."
         },
         {
-          "en": "We aren't going to wait.",
-          "cz": "Nebudeme čekat. (plán)",
-          "gap": "We ____ going to wait.",
-          "gap_answer": "aren't",
-          "gap_accepts": [
-            "are not",
-            "aren't"
+          "en": "We have tickets. We are going to watch a film.",
+          "cz": "Máme lístky. Budeme se dívat na film.",
+          "gap": "We have tickets. We ____ a film. (watch)",
+          "gap_answer": "are going to watch",
+          "quiz_options": [
+            "are going to watch",
+            "will watch",
+            "watch",
+            "are watch"
           ],
           "accepts": [
-            "We aren't going to wait.",
-            "We are not going to wait.",
-            "We're not going to wait."
+            "We have tickets. We are going to watch a film.",
+            "We have tickets. We're going to watch a film.",
+            "We have tickets. We are going to watch a movie.",
+            "We have tickets. We're going to watch a movie."
           ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
+          "explanation": "Tickets already → plan → **are going to watch**.",
+          "explanation_cz": "Lístky už jsou → plán → **are going to watch**."
         },
         {
-          "en": "Are you going to study?",
-          "cz": "Budeš se učit? (plán)",
-          "gap": "____ you going to study?",
-          "gap_answer": "Are",
+          "en": "I have a plan. I am going to study tonight.",
+          "cz": "Mám plán. Dnes večer se budu učit.",
+          "gap": "I have a plan. I ____ tonight. (study)",
+          "gap_answer": "am going to study",
+          "quiz_options": [
+            "am going to study",
+            "will study",
+            "study",
+            "am study"
+          ],
           "accepts": [
-            "Are you going to study?"
+            "I have a plan. I am going to study tonight.",
+            "I have a plan. I'm going to study tonight."
           ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
+          "explanation": "I have a plan → **am going to study** tonight.",
+          "explanation_cz": "Mám plán → **am going to study** tonight."
         },
         {
-          "en": "Is she going to travel?",
-          "cz": "Bude cestovat? (plán)",
-          "gap": "____ she going to travel?",
-          "gap_answer": "Is",
+          "en": "Look at the sky. It is going to rain.",
+          "cz": "Podívej se na oblohu. Bude pršet.",
+          "gap": "Look at the sky. It ____. (rain)",
+          "gap_answer": "is going to rain",
+          "quiz_options": [
+            "is going to rain",
+            "will rain",
+            "rains",
+            "is rain"
+          ],
           "accepts": [
-            "Is she going to travel?"
+            "Look at the sky. It is going to rain.",
+            "Look at the sky. It's going to rain."
           ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
+          "explanation": "Look at the sky → evidence now → **is going to rain**.",
+          "explanation_cz": "Podívej se na oblohu → důkaz teď → **is going to rain**."
         },
         {
-          "en": "I will open the window.",
-          "cz": "Otevřu okno. (rozhodnutí teď)",
-          "gap": "I ____ open the window.",
-          "gap_answer": "will",
-          "accepts": [
-            "I will open the window.",
-            "I'll open the window."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "I am going to visit my parents next week.",
-          "cz": "Příští týden navštívím rodiče. (plán)",
-          "gap": "I am ____ to visit my parents next week.",
-          "gap_answer": "going",
-          "accepts": [
-            "I am going to visit my parents next week.",
-            "I'm going to visit my parents next week."
-          ],
-          "explanation": "be going to + base = plan or clear evidence.",
-          "explanation_cz": "be going to + základ = plán nebo jasný důkaz."
-        },
-        {
-          "en": "Will you open the door?",
-          "cz": "Otevřeš dveře? (prosba / nabídka)",
-          "gap": "____ you open the door?",
-          "gap_answer": "Will",
-          "accepts": [
-            "Will you open the door?"
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "I will text you later.",
-          "cz": "Napsu ti později.",
-          "gap": "I ____ text you later.",
-          "gap_answer": "will",
-          "accepts": [
-            "I will text you later.",
-            "I'll text you later."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "She will be twenty next month.",
-          "cz": "Příští měsíc jí bude dvacet.",
-          "gap": "She ____ be twenty next month.",
-          "gap_answer": "will",
-          "accepts": [
-            "She will be twenty next month.",
-            "She'll be twenty next month."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "We will need more chairs.",
-          "cz": "Budeme potřebovat víc židlí.",
-          "gap": "We ____ need more chairs.",
-          "gap_answer": "will",
-          "accepts": [
-            "We will need more chairs.",
-            "We'll need more chairs."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "He won't forget.",
-          "cz": "Nezapomene.",
-          "gap": "He ____ forget.",
-          "gap_answer": "won't",
-          "accepts": [
-            "He won't forget.",
-            "He will not forget."
-          ],
-          "gap_accepts": [
-            "will not",
-            "won't"
-          ],
-          "explanation": "won't = will not + base.",
-          "explanation_cz": "won't = will not + základ."
-        },
-        {
-          "en": "Will it be cold tomorrow?",
-          "cz": "Bude zítra zima?",
-          "gap": "____ it be cold tomorrow?",
-          "gap_answer": "Will",
-          "accepts": [
-            "Will it be cold tomorrow?"
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "I am going to start a course.",
-          "cz": "Začnu kurz. (plán)",
-          "gap": "I ____ going to start a course.",
-          "gap_answer": "am",
-          "accepts": [
-            "I am going to start a course.",
-            "I'm going to start a course."
-          ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
-        },
-        {
-          "en": "She is going to change jobs.",
-          "cz": "Změní práci. (plán)",
-          "gap": "She ____ going to change jobs.",
-          "gap_answer": "is",
-          "accepts": [
-            "She is going to change jobs.",
-            "She's going to change jobs."
-          ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
-        },
-        {
-          "en": "We are going to paint the kitchen.",
-          "cz": "Vymalujeme kuchyň. (plán)",
-          "gap": "We ____ going to paint the kitchen.",
-          "gap_answer": "are",
-          "accepts": [
-            "We are going to paint the kitchen.",
-            "We're going to paint the kitchen."
-          ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
-        },
-        {
-          "en": "They are going to move house.",
-          "cz": "Budou se stěhovat. (plán)",
-          "gap": "They are ____ to move house.",
-          "gap_answer": "going",
-          "accepts": [
-            "They are going to move house.",
-            "They're going to move house."
-          ],
-          "explanation": "be going to + base = plan or clear evidence.",
-          "explanation_cz": "be going to + základ = plán nebo jasný důkaz."
-        },
-        {
-          "en": "Look at the time. We are going to miss the train.",
+          "en": "Look at the clock. We are going to miss the train.",
           "cz": "Koukni na hodiny. Zmeškáme vlak.",
-          "gap": "We are ____ to miss the train.",
-          "gap_answer": "going",
+          "gap": "Look at the clock. We ____ the train. (miss)",
+          "gap_answer": "are going to miss",
+          "quiz_options": [
+            "are going to miss",
+            "will miss",
+            "miss",
+            "are miss"
+          ],
           "accepts": [
-            "We are going to miss the train.",
-            "We're going to miss the train."
+            "Look at the clock. We are going to miss the train.",
+            "Look at the clock. We're going to miss the train."
           ],
-          "explanation": "be going to + base = plan or clear evidence.",
-          "explanation_cz": "be going to + základ = plán nebo jasný důkaz."
-        },
-        {
-          "en": "I am not going to argue.",
-          "cz": "Nebudu se hádat. (plán)",
-          "gap": "I ____ going to argue.",
-          "gap_answer": "am not",
-          "accepts": [
-            "I am not going to argue.",
-            "I'm not going to argue."
-          ],
-          "gap_accepts": [
-            "'m not",
-            "am not"
-          ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
-        },
-        {
-          "en": "Is he going to join us?",
-          "cz": "Přidá se k nám? (plán)",
-          "gap": "____ he going to join us?",
-          "gap_answer": "Is",
-          "accepts": [
-            "Is he going to join us?"
-          ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
-        },
-        {
-          "en": "Are we going to stay here?",
-          "cz": "Zůstaneme tady? (plán)",
-          "gap": "____ we going to stay here?",
-          "gap_answer": "Are",
-          "accepts": [
-            "Are we going to stay here?"
-          ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
-        },
-        {
-          "en": "I will carry that for you.",
-          "cz": "To ti ponesu. (nabídka teď)",
-          "gap": "I ____ carry that for you.",
-          "gap_answer": "will",
-          "accepts": [
-            "I will carry that for you.",
-            "I'll carry that for you."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "Don't worry. I will be fine.",
-          "cz": "Neboj se. Budu v pohodě.",
-          "gap": "Don't worry. I ____ be fine.",
-          "gap_answer": "will",
-          "accepts": [
-            "Don't worry. I will be fine.",
-            "Don't worry. I'll be fine."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "She won't mind.",
-          "cz": "Nebude jí to vadit.",
-          "gap": "She ____ mind.",
-          "gap_answer": "won't",
-          "accepts": [
-            "She won't mind.",
-            "She will not mind."
-          ],
-          "gap_accepts": [
-            "will not",
-            "won't"
-          ],
-          "explanation": "won't = will not + base.",
-          "explanation_cz": "won't = will not + základ."
-        },
-        {
-          "en": "What are you going to wear?",
-          "cz": "Co si vezmeš na sebe? (plán)",
-          "gap": "What are you ____ to wear?",
-          "gap_answer": "going",
-          "accepts": [
-            "What are you going to wear?"
-          ],
-          "explanation": "be going to + base = plan or clear evidence.",
-          "explanation_cz": "be going to + základ = plán nebo jasný důkaz."
-        },
-        {
-          "en": "Who will open the meeting?",
-          "cz": "Kdo otevře schůzi?",
-          "gap": "Who ____ open the meeting?",
-          "gap_answer": "will",
-          "accepts": [
-            "Who will open the meeting?"
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "I am going to cook tonight.",
-          "cz": "Dnes večer budu vařit. (plán)",
-          "gap": "I am going to ____ tonight.",
-          "gap_answer": "cook",
-          "accepts": [
-            "I am going to cook tonight.",
-            "I'm going to cook tonight."
-          ],
-          "explanation": "will = decision/offer/prediction · going to = plan/evidence.",
-          "explanation_cz": "will = rozhodnutí/nabídka/předpověď · going to = plán/důkaz."
-        },
-        {
-          "en": "He is going to be late.",
-          "cz": "Bude mít zpoždění. (důkaz/plán)",
-          "gap": "He is going to ____ late.",
-          "gap_answer": "be",
-          "accepts": [
-            "He is going to be late.",
-            "He's going to be late."
-          ],
-          "explanation": "Passive needs a form of be + past participle.",
-          "explanation_cz": "Pasivum potřebuje tvar be + příčestí."
-        },
-        {
-          "en": "We won't wait all night.",
-          "cz": "Nebudeme čekat celou noc.",
-          "gap": "We ____ wait all night.",
-          "gap_answer": "won't",
-          "accepts": [
-            "We won't wait all night.",
-            "We will not wait all night."
-          ],
-          "gap_accepts": [
-            "will not",
-            "won't"
-          ],
-          "explanation": "won't = will not + base.",
-          "explanation_cz": "won't = will not + základ."
-        },
-        {
-          "en": "I will always remember this day.",
-          "cz": "Tenhle den si vždycky zapamatuju.",
-          "gap": "I ____ always remember this day.",
-          "gap_answer": "will",
-          "accepts": [
-            "I will always remember this day.",
-            "I'll always remember this day."
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
-        },
-        {
-          "en": "They aren't going to sell the flat.",
-          "cz": "Nebudou prodávat byt. (plán)",
-          "gap": "They ____ going to sell the flat.",
-          "gap_answer": "aren't",
-          "accepts": [
-            "They aren't going to sell the flat.",
-            "They are not going to sell the flat.",
-            "They're not going to sell the flat.",
-            "They aren't going to sell the apartment."
-          ],
-          "gap_accepts": [
-            "are not",
-            "aren't"
-          ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
-        },
-        {
-          "en": "Will you marry me?",
-          "cz": "Vezmeš si mě?",
-          "gap": "____ you marry me?",
-          "gap_answer": "Will",
-          "accepts": [
-            "Will you marry me?"
-          ],
-          "explanation": "will + base (future / offer / prediction).",
-          "explanation_cz": "will + základ (budoucnost / nabídka / předpověď)."
+          "explanation": "Look at the clock → evidence now → **are going to miss**.",
+          "explanation_cz": "Koukni na hodiny → důkaz teď → **are going to miss**."
         }
       ]
     }
@@ -640,76 +178,102 @@
     "cards": [
       {
         "title": "Will / going to",
-        "title_cz": "Budoucnost — tenký A2 řez",
+        "title_cz": "Will a going to",
+        "points": [
+          "You know **I worked**, **I work**, and **I'm working**.",
+          "Later: **I will** or **going to**.",
+          "Two forms. Two jobs."
+        ],
+        "svg": "<svg viewBox=\"0 0 560 220\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"280\" y=\"22\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <line x1=\"280\" y1=\"28\" x2=\"280\" y2=\"175\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <line x1=\"40\" y1=\"88\" x2=\"520\" y2=\"88\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"520,88 510,83 510,93\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"130\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"168\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"206\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"244\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"280\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"316\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"354\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"392\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"80\" cy=\"88\" r=\"7\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"80\" y=\"48\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">yesterday</text>\n  <text x=\"80\" y=\"68\" font-size=\"15\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I worked</text>\n  <text x=\"280\" y=\"58\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">every day</text>\n  <text x=\"280\" y=\"112\" font-size=\"15\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I work</text>\n  <rect x=\"228\" y=\"122\" width=\"104\" height=\"16\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"280\" y=\"160\" font-size=\"15\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I'm working</text>\n  <text x=\"280\" y=\"178\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">now · a short time</text>\n  <circle cx=\"470\" cy=\"88\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"470\" y=\"48\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">later</text>\n  <text x=\"470\" y=\"68\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I'll / I'm going to</text>\n</svg>",
         "table": {
           "caption": "jobs",
           "headers": [
             "Form",
-            "Main use (A2)"
+            "Job"
           ],
           "rows": [
             [
-              "will + base",
-              "offer · promise · decision now · prediction"
+              "**will** + help",
+              "offer · promise · decide now"
             ],
             [
-              "be going to + base",
-              "plan · intention · clear evidence now"
+              "**going to** + study",
+              "plan · evidence now"
             ]
           ]
         },
-        "points": [
-          "Both talk about the future",
-          "This pack is thin — not every nuance",
-          "Two common future forms. Different jobs at A2."
+        "tables": [
+          {
+            "caption": "not",
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~I will to help~~",
+                "I **will** help"
+              ],
+              [
+                "~~I going to study~~",
+                "I am **going to** study"
+              ]
+            ]
+          }
         ]
       },
       {
         "title": "Will",
-        "title_cz": "will + základní sloveso",
+        "title_cz": "will + help",
+        "text_first": true,
+        "points": [
+          "**will** / **won't** + **help** (not *helps*).",
+          "Same for I / she / they: **I will** · **she will**."
+        ],
         "table": {
           "caption": "will",
           "headers": [
-            "EN",
-            "Idea"
+            "English",
+            "Job"
           ],
           "rows": [
             [
-              "I will help you.",
-              "offer / decision now"
+              "I **will** open the window.",
+              "decide now"
             ],
             [
-              "I won't be late.",
+              "I **will** get some water.",
+              "decide now"
+            ],
+            [
+              "I **won't** be late.",
               "promise"
             ],
             [
-              "It will rain later.",
-              "prediction"
-            ],
-            [
-              "Will you open the door?",
+              "**Will** you open the door?",
               "request"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I'll open the window.",
-            "cz": "Otevřu okno. (teď se rozhoduju)"
+            "en": "I **will** open the window.",
+            "cz": "Otevřu okno."
           },
           {
-            "en": "She will call tomorrow.",
-            "cz": "Zavolá zítra."
+            "en": "I **will** get some water.",
+            "cz": "Přinesu vodu."
           }
-        ],
-        "points": [
-          "will / won't + base (help, not helps)",
-          "Same for all persons: I will · she will"
         ]
       },
       {
         "title": "Going to — form",
-        "title_cz": "be going to",
+        "title_cz": "am / is / are going to",
+        "text_first": true,
+        "points": [
+          "**am** / **is** / **are** + **going to** + **study**.",
+          "Not ~~I going to study~~."
+        ],
         "table": {
           "caption": "form",
           "headers": [
@@ -719,65 +283,67 @@
           "rows": [
             [
               "I",
-              "am going to + base"
+              "am **going to** study"
             ],
             [
               "he / she / it",
-              "is going to + base"
+              "is **going to** study"
             ],
             [
               "you / we / they",
-              "are going to + base"
+              "are **going to** study"
             ]
           ]
         },
         "examples": [
           {
-            "en": "I am going to study tonight.",
+            "en": "I am **going to** study tonight.",
             "cz": "Dnes večer se budu učit."
           },
           {
-            "en": "They are going to buy a car.",
-            "cz": "Koupí auto."
+            "en": "We are **going to** watch a film.",
+            "cz": "Budeme se dívat na film."
           }
-        ],
-        "points": [
-          "be + going to + base verb",
-          "Not: I going to study"
         ]
       },
       {
-        "title": "Going to — use",
+        "title": "Plan or evidence",
         "title_cz": "plán a důkaz",
+        "text_first": true,
+        "points": [
+          "A plan already in your head → **going to**.",
+          "Something you can see now → **going to**."
+        ],
         "table": {
-          "caption": "use",
+          "caption": "why",
           "headers": [
-            "EN",
-            "Why going to"
+            "English",
+            "Why"
           ],
           "rows": [
             [
-              "I am going to visit my parents next week.",
+              "I am **going to** study tonight.",
               "plan"
             ],
             [
-              "She is going to travel in July.",
+              "We are **going to** watch a film.",
               "plan"
             ],
             [
-              "Look at those clouds. It is going to rain.",
+              "Look at the sky. It is **going to** rain.",
               "evidence now"
             ]
           ]
-        },
-        "points": [
-          "plan / intention already in mind",
-          "evidence you can see now → going to"
-        ]
+        }
       },
       {
-        "title": "Negatives & questions",
+        "title": "Negatives and questions",
         "title_cz": "Zápor a otázky",
+        "text_first": true,
+        "points": [
+          "**won't** = will not.",
+          "**going to**: change **am** / **is** / **are**."
+        ],
         "table": {
           "caption": "− and ?",
           "headers": [
@@ -786,85 +352,44 @@
           ],
           "rows": [
             [
-              "I won't come.",
-              "I'm not going to stay."
+              "I **won't** be late.",
+              "I am **going to** study tonight."
             ],
             [
-              "She won't wait.",
-              "She isn't going to come."
-            ],
-            [
-              "Will you help?",
-              "Are you going to study?"
-            ],
-            [
-              "Will she call?",
-              "Is she going to travel?"
+              "**Will** you open the door?",
+              "**Are** you **going to** study?"
             ]
           ]
-        },
-        "points": [
-          "won't = will not",
-          "going to: change be (am/is/are) for − and ?"
-        ]
+        }
       },
       {
-        "title": "Quick contrast",
-        "title_cz": "Rychlý kontrast",
-        "table": {
-          "caption": "pick one",
-          "headers": [
-            "Situation",
-            "Often"
-          ],
-          "rows": [
-            [
-              "Offer / decide now",
-              "will"
-            ],
-            [
-              "Promise",
-              "will / won't"
-            ],
-            [
-              "Plan already made",
-              "going to"
-            ],
-            [
-              "Evidence now (clouds…)",
-              "going to"
-            ]
-          ]
-        },
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
         "points": [
-          "Overlap exists in real English — learn the core jobs first",
-          "Not present continuous for future in this pack"
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "will / won't + base · all persons",
-          "am/is/are + going to + base"
+          "Czech *budu* likes **to**. English **will** does not."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "will",
-              "offer, promise, decision now, prediction"
+              "~~I will to help~~",
+              "I **will** help"
             ],
             [
-              "going to",
-              "plan, intention, evidence now"
+              "~~I going to study~~",
+              "I am **going to** study"
             ],
             [
-              "Not",
-              "I will to go · Not: I going to study"
+              "~~I will going~~",
+              "I **will** go / I am **going to** go"
+            ],
+            [
+              "~~I am go~~",
+              "I am **going to** go"
             ]
           ]
         }
