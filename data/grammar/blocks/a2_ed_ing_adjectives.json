@@ -5,287 +5,371 @@
   "tree_node": "a2_ed_ing_adjectives",
   "codex_unit": "G_NP-A1B1-01",
   "practice": "frames",
-  "note": "Feeling (-ed) vs cause (-ing). Gap on adjective. · Bank 24 · ROI inject 2026-07-25 · grow #4 2026-08-04 · 2026-08-19 (James, Patrik smoke): + stressed/stressful pair (his logged error, absent from the 12 pairs); news was/byly number mismatch fixed · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
+  "note": "Feeling (-ed) vs cause (-ing). Gap on the adjective. Sort is feeling/cause, not EN↔CZ sentences. Chips are THIS pair (bored/boring), not sibling adjectives. Type/Quiz cue the stem in brackets (surprise) so it is not a vocab test. Use is error correction (use_mode: correct) — A2 CZ→EN Use was extra translation load. stressed/stressful parked 2026-08-29: same job, -ful not -ing — see codex/parked-stressed-stressful.json (B1). · 2026-08-29 smoke: I8 audit; B6 on-axis chips; B8 adjective gap; C14 unit name; C17 cut Remember; C20 cut Practice focus; F2 cut prepositions card (b1_dependent_prepositions); C12 one mistake row per pair; C32 ~~strike~~; D3 slash; F3 Use relexified; D1 item explanations.",
   "default_direction": "cz_to_en",
+  "use_mode": "correct",
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
-  "quality": "good_draft",
+  "bins": [
+    "feeling",
+    "cause"
+  ],
+  "bin_captions": {
+    "feeling": "a person",
+    "cause": "a thing / situation"
+  },
   "blocks": [
+    {
+      "id": "sort",
+      "title": "Feeling or cause?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        { "en": "bored", "cz": "znuděný", "bin": "feeling", "use": false },
+        { "en": "boring", "cz": "nudný", "bin": "cause", "use": false },
+        { "en": "interested", "cz": "zaujatý", "bin": "feeling", "use": false },
+        { "en": "interesting", "cz": "zajímavý", "bin": "cause", "use": false },
+        { "en": "excited", "cz": "nadšený", "bin": "feeling", "use": false },
+        { "en": "exciting", "cz": "napínavý", "bin": "cause", "use": false },
+        { "en": "tired", "cz": "unavený", "bin": "feeling", "use": false },
+        { "en": "tiring", "cz": "únavný", "bin": "cause", "use": false },
+        { "en": "surprised", "cz": "překvapený", "bin": "feeling", "use": false },
+        { "en": "surprising", "cz": "překvapivý", "bin": "cause", "use": false },
+        { "en": "annoyed", "cz": "naštvaný", "bin": "feeling", "use": false },
+        { "en": "annoying", "cz": "otravný", "bin": "cause", "use": false }
+      ]
+    },
     {
       "id": "ed_ing_a2",
       "title": "-ed / -ing adjectives · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
-          "en": "I was really bored during the film.",
-          "cz": "Během filmu jsem se hrozně nudil.",
-          "gap": "I was really ____ during the film.",
+          "en": "I was bored at home.",
+          "cz": "Doma jsem se nudil.",
+          "gap": "I was ____ at home. (bore)",
           "gap_answer": "bored",
+          "quiz_options": ["bored", "boring"],
           "accepts": [
-            "I was really bored during the film."
+            "I was bored at home."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "I was boring at home.",
+          "explanation": "**bored** = how I feel. Not *boring* (that is the film).",
+          "explanation_cz": "**bored** = jak se cítím. Ne *boring* (to je film)."
         },
         {
-          "en": "The film was really boring.",
-          "cz": "Ten film byl opravdu nudný.",
-          "gap": "The film was really ____.",
+          "en": "The film was boring.",
+          "cz": "Ten film byl nudný.",
+          "gap": "The film was ____. (bore)",
           "gap_answer": "boring",
+          "quiz_options": ["boring", "bored"],
           "accepts": [
-            "The film was really boring."
+            "The film was boring."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The film was bored.",
+          "explanation": "**boring** = the film causes the feeling. I was **bored**.",
+          "explanation_cz": "**boring** = film ten pocit způsobuje. Já jsem byl **bored**."
         },
         {
           "en": "She is interested in history.",
           "cz": "Zajímá se o historii.",
-          "gap": "She is ____ in history.",
+          "gap": "She is ____ in history. (interest)",
           "gap_answer": "interested",
+          "quiz_options": ["interested", "interesting"],
           "accepts": [
             "She is interested in history.",
             "She's interested in history."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "She is interesting in history.",
+          "explanation": "**interested** = how she feels. Not *interesting in*.",
+          "explanation_cz": "**interested** = jak se cítí. Ne *interesting in*."
         },
         {
           "en": "This book is very interesting.",
           "cz": "Tahle kniha je velmi zajímavá.",
-          "gap": "This book is very ____.",
+          "gap": "This book is very ____. (interest)",
           "gap_answer": "interesting",
+          "quiz_options": ["interesting", "interested"],
           "accepts": [
             "This book is very interesting."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "This book is very interested.",
+          "explanation": "**interesting** = the book causes the feeling. She is **interested**.",
+          "explanation_cz": "**interesting** = kniha ten pocit způsobuje. Ona je **interested**."
         },
         {
           "en": "We are excited about the trip.",
           "cz": "Jsme z toho výletu nadšení.",
-          "gap": "We are ____ about the trip.",
+          "gap": "We are ____ about the trip. (excite)",
           "gap_answer": "excited",
+          "quiz_options": ["excited", "exciting"],
           "accepts": [
             "We are excited about the trip.",
             "We're excited about the trip."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "We are exciting about the trip.",
+          "explanation": "**excited** = how we feel. Not *exciting about*.",
+          "explanation_cz": "**excited** = jak se cítíme. Ne *exciting about*."
         },
         {
           "en": "The match was exciting.",
           "cz": "Ten zápas byl napínavý.",
-          "gap": "The match was ____.",
+          "gap": "The match was ____. (excite)",
           "gap_answer": "exciting",
+          "quiz_options": ["exciting", "excited"],
           "accepts": [
             "The match was exciting."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The match was excited.",
+          "explanation": "**exciting** = the match causes the feeling. We were **excited**.",
+          "explanation_cz": "**exciting** = zápas ten pocit způsobuje. My jsme byli **excited**."
         },
         {
           "en": "He was surprised by the news.",
           "cz": "Ta zpráva ho překvapila.",
-          "gap": "He was ____ by the news.",
+          "gap": "He was ____ by the news. (surprise)",
           "gap_answer": "surprised",
+          "quiz_options": ["surprised", "surprising"],
           "accepts": [
             "He was surprised by the news."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "He was surprising by the news.",
+          "explanation": "**surprised** = how he feels. Not *surprising by*.",
+          "explanation_cz": "**surprised** = jak se cítí. Ne *surprising by*."
         },
         {
-          "en": "The ending was surprising.",
-          "cz": "Ten konec byl překvapivý.",
-          "gap": "The ending was ____.",
+          "en": "The book was surprising.",
+          "cz": "Ta kniha byla překvapivá.",
+          "gap": "The book was ____. (surprise)",
           "gap_answer": "surprising",
+          "quiz_options": ["surprising", "surprised"],
           "accepts": [
-            "The ending was surprising."
+            "The book was surprising."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The book was surprised.",
+          "explanation": "**surprising** = the book causes the feeling. He was **surprised**.",
+          "explanation_cz": "**surprising** = kniha ten pocit způsobuje. On byl **surprised**."
         },
         {
           "en": "I feel tired after work.",
           "cz": "Po práci se cítím unavený.",
-          "gap": "I feel ____ after work.",
+          "gap": "I feel ____ after work. (tire)",
           "gap_answer": "tired",
+          "quiz_options": ["tired", "tiring"],
           "accepts": [
             "I feel tired after work."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "I feel tiring after work.",
+          "explanation": "**tired** = how I feel. The journey is **tiring**.",
+          "explanation_cz": "**tired** = jak se cítím. Cesta je **tiring**."
         },
         {
           "en": "The journey was tiring.",
           "cz": "Ta cesta byla únavná.",
-          "gap": "The journey was ____.",
+          "gap": "The journey was ____. (tire)",
           "gap_answer": "tiring",
+          "quiz_options": ["tiring", "tired"],
           "accepts": [
             "The journey was tiring."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The journey was tired.",
+          "explanation": "**tiring** = the journey causes the feeling. I feel **tired**.",
+          "explanation_cz": "**tiring** = cesta ten pocit způsobuje. Já se cítím **tired**."
         },
         {
           "en": "She was annoyed with her brother.",
           "cz": "Byla naštvaná na bratra.",
-          "gap": "She was ____ with her brother.",
+          "gap": "She was ____ with her brother. (annoy)",
           "gap_answer": "annoyed",
+          "quiz_options": ["annoyed", "annoying"],
           "accepts": [
             "She was annoyed with her brother."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "She was annoying with her brother.",
+          "explanation": "**annoyed** = how she feels. Not *annoying with*.",
+          "explanation_cz": "**annoyed** = jak se cítí. Ne *annoying with*."
         },
         {
           "en": "His loud music is annoying.",
           "cz": "Jeho hlasitá hudba je otravná.",
-          "gap": "His loud music is ____.",
+          "gap": "His loud music is ____. (annoy)",
           "gap_answer": "annoying",
+          "quiz_options": ["annoying", "annoyed"],
           "accepts": [
             "His loud music is annoying."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "His loud music is annoyed.",
+          "explanation": "**annoying** = the music causes the feeling. She was **annoyed**.",
+          "explanation_cz": "**annoying** = hudba ten pocit způsobuje. Ona byla **annoyed**."
         },
         {
-          "en": "I was embarrassed by my mistake.",
-          "cz": "Byla mi z té chyby trapně.",
-          "gap": "I was ____ by my mistake.",
+          "en": "I was embarrassed at work.",
+          "cz": "V práci mi bylo trapně.",
+          "gap": "I was ____ at work. (embarrass)",
           "gap_answer": "embarrassed",
+          "quiz_options": ["embarrassed", "embarrassing"],
           "accepts": [
-            "I was embarrassed by my mistake."
+            "I was embarrassed at work."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "I was embarrassing at work.",
+          "explanation": "**embarrassed** = how I feel. Not *embarrassing* for a person here.",
+          "explanation_cz": "**embarrassed** = jak se cítím. Tady ne *embarrassing* o člověku."
         },
         {
           "en": "That was an embarrassing question.",
           "cz": "To byla trapná otázka.",
-          "gap": "That was an ____ question.",
+          "gap": "That was an ____ question. (embarrass)",
           "gap_answer": "embarrassing",
+          "quiz_options": ["embarrassing", "embarrassed"],
           "accepts": [
             "That was an embarrassing question."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "That was an embarrassed question.",
+          "explanation": "**embarrassing** = the question causes the feeling. I was **embarrassed**.",
+          "explanation_cz": "**embarrassing** = otázka ten pocit způsobuje. Já jsem byl **embarrassed**."
         },
         {
           "en": "They were disappointed with the result.",
           "cz": "Byli zklamaní z výsledku.",
-          "gap": "They were ____ with the result.",
+          "gap": "They were ____ with the result. (disappoint)",
           "gap_answer": "disappointed",
+          "quiz_options": ["disappointed", "disappointing"],
           "accepts": [
             "They were disappointed with the result."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "They were disappointing with the result.",
+          "explanation": "**disappointed** = how they feel. Not *disappointing with*.",
+          "explanation_cz": "**disappointed** = jak se cítí. Ne *disappointing with*."
         },
         {
           "en": "The news was disappointing.",
           "cz": "Ty novinky byly zklamáním.",
-          "gap": "The news was ____.",
+          "gap": "The news was ____. (disappoint)",
           "gap_answer": "disappointing",
+          "quiz_options": ["disappointing", "disappointed"],
           "accepts": [
             "The news was disappointing."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The news was disappointed.",
+          "explanation": "**disappointing** = the news causes the feeling. They were **disappointed**.",
+          "explanation_cz": "**disappointing** = novinky ten pocit způsobují. Oni byli **disappointed**."
         },
         {
-          "en": "The children were frightened by the storm.",
-          "cz": "Děti se bály bouřky.",
-          "gap": "The children were ____ by the storm.",
+          "en": "The children were frightened by the dog.",
+          "cz": "Děti se bály psa.",
+          "gap": "The children were ____ by the dog. (frighten)",
           "gap_answer": "frightened",
+          "quiz_options": ["frightened", "frightening"],
           "accepts": [
-            "The children were frightened by the storm."
+            "The children were frightened by the dog."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "The children were frightening by the dog.",
+          "explanation": "**frightened** = how the children feel. Not *frightening by*.",
+          "explanation_cz": "**frightened** = jak se děti cítí. Ne *frightening by*."
         },
         {
-          "en": "The storm was frightening.",
-          "cz": "Ta bouřka byla děsivá.",
-          "gap": "The storm was ____.",
+          "en": "The film was frightening.",
+          "cz": "Ten film byl děsivý.",
+          "gap": "The film was ____. (frighten)",
           "gap_answer": "frightening",
+          "quiz_options": ["frightening", "frightened"],
           "accepts": [
-            "The storm was frightening."
+            "The film was frightening."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The film was frightened.",
+          "explanation": "**frightening** = the film causes the feeling. Not *frightened* — a film does not feel.",
+          "explanation_cz": "**frightening** = film ten pocit způsobuje. Ne *frightened* — film se necítí."
         },
         {
           "en": "I am confused about this rule.",
           "cz": "Jsem z toho pravidla zmatený.",
-          "gap": "I am ____ about this rule.",
+          "gap": "I am ____ about this rule. (confuse)",
           "gap_answer": "confused",
+          "quiz_options": ["confused", "confusing"],
           "accepts": [
             "I am confused about this rule.",
             "I'm confused about this rule."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "I am confusing about this rule.",
+          "explanation": "**confused** = how I feel. Not *confusing about*.",
+          "explanation_cz": "**confused** = jak se cítím. Ne *confusing about*."
         },
         {
           "en": "This exercise is confusing.",
           "cz": "Tohle cvičení je matoucí.",
-          "gap": "This exercise is ____.",
+          "gap": "This exercise is ____. (confuse)",
           "gap_answer": "confusing",
+          "quiz_options": ["confusing", "confused"],
           "accepts": [
             "This exercise is confusing."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "This exercise is confused.",
+          "explanation": "**confusing** = the exercise causes the feeling. I am **confused**.",
+          "explanation_cz": "**confusing** = cvičení ten pocit způsobuje. Já jsem **confused**."
         },
         {
           "en": "She is worried about the exam.",
-          "cz": "Bojí se o zkoušku / má z ní starosti.",
-          "gap": "She is ____ about the exam.",
+          "cz": "Bojí se o zkoušku.",
+          "gap": "She is ____ about the exam. (worry)",
           "gap_answer": "worried",
+          "quiz_options": ["worried", "worrying"],
           "accepts": [
             "She is worried about the exam.",
             "She's worried about the exam."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "explanation": "**worried** = how she feels. Not *worrying about* here.",
+          "explanation_cz": "**worried** = jak se cítí. Tady ne *worrying about*."
         },
         {
           "en": "The situation is worrying.",
           "cz": "Ta situace je znepokojivá.",
-          "gap": "The situation is ____.",
+          "gap": "The situation is ____. (worry)",
           "gap_answer": "worrying",
+          "quiz_options": ["worrying", "worried"],
           "accepts": [
             "The situation is worrying."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "The situation is worried.",
+          "explanation": "**worrying** = the situation causes the feeling. She is **worried**.",
+          "explanation_cz": "**worrying** = situace ten pocit způsobuje. Ona je **worried**."
         },
         {
           "en": "I feel relaxed after a walk.",
           "cz": "Po procházce se cítím uvolněně.",
-          "gap": "I feel ____ after a walk.",
+          "gap": "I feel ____ after a walk. (relax)",
           "gap_answer": "relaxed",
+          "quiz_options": ["relaxed", "relaxing"],
           "accepts": [
             "I feel relaxed after a walk."
           ],
-          "explanation": "-ed adjective = how someone feels.",
-          "explanation_cz": "Přídavné -ed = jak se někdo cítí."
+          "wrong": "I feel relaxing after a walk.",
+          "explanation": "**relaxed** = how I feel. The evening is **relaxing**.",
+          "explanation_cz": "**relaxed** = jak se cítím. Večer je **relaxing**."
         },
         {
           "en": "A quiet evening is relaxing.",
           "cz": "Klidný večer je uvolňující.",
-          "gap": "A quiet evening is ____.",
+          "gap": "A quiet evening is ____. (relax)",
           "gap_answer": "relaxing",
+          "quiz_options": ["relaxing", "relaxed"],
           "accepts": [
             "A quiet evening is relaxing."
           ],
-          "explanation": "-ing adjective = what causes the feeling.",
-          "explanation_cz": "Přídavné -ing = co ten pocit způsobuje."
+          "wrong": "A quiet evening is relaxed.",
+          "explanation": "**relaxing** = the evening causes the feeling. I feel **relaxed**.",
+          "explanation_cz": "**relaxing** = večer ten pocit způsobuje. Já se cítím **relaxed**."
         }
       ]
     }
@@ -293,172 +377,106 @@
   "intro": {
     "cards": [
       {
-        "title": "Feeling vs cause",
-        "title_cz": "Pocit vs příčina",
-        "table": {
-          "headers": [
-            "Person (feeling)",
-            "Thing / situation"
-          ],
-          "rows": [
-            [
-              "I was bored",
-              "The film was boring"
-            ],
-            [
-              "She is interested",
-              "The book is interesting"
-            ],
-            [
-              "We are excited",
-              "The match was exciting"
-            ],
-            [
-              "I am confused",
-              "The exercise is confusing"
-            ]
-          ]
-        },
+        "title": "-ed / -ing adjectives",
+        "title_cz": "Přídavná jména -ed / -ing",
+        "diagram": "contrast",
+        "labels": ["-ed", "-ing", "person feels", "thing causes"],
         "points": [
-          "-ed = how a person feels. -ing = what causes the feeling."
-        ]
+          "You know **bored** and **boring** as words.",
+          "Two jobs: how a person feels, and what causes it.",
+          "**-ed** = feeling. **-ing** = cause."
+        ],
+        "table": {
+          "caption": "feeling vs cause",
+          "headers": ["Person (feeling)", "Thing / situation"],
+          "rows": [
+            ["I was **bored**", "The film was **boring**"],
+            ["She is **interested**", "The book is **interesting**"],
+            ["We are **excited**", "The match was **exciting**"],
+            ["I am **confused**", "The exercise is **confusing**"]
+          ]
+        }
       },
       {
         "title": "Common pairs",
         "title_cz": "Časté páry",
-        "table": {
-          "headers": [
-            "Remember"
-          ],
-          "rows": [
-            [
-              "bored / boring"
-            ],
-            [
-              "interested / interesting"
-            ],
-            [
-              "excited / exciting"
-            ],
-            [
-              "surprised / surprising"
-            ],
-            [
-              "tired / tiring"
-            ],
-            [
-              "annoyed / annoying"
-            ],
-            [
-              "embarrassed / embarrassing"
-            ],
-            [
-              "disappointed / disappointing"
-            ],
-            [
-              "frightened / frightening"
-            ],
-            [
-              "confused / confusing"
-            ],
-            [
-              "worried / worrying"
-            ],
-            [
-              "relaxed / relaxing"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Prepositions",
-        "title_cz": "Předložky",
-        "table": {
-          "headers": [
-            "Remember"
-          ],
-          "rows": [
-            [
-              "interested in"
-            ],
-            [
-              "excited about"
-            ],
-            [
-              "surprised by"
-            ],
-            [
-              "annoyed with"
-            ],
-            [
-              "disappointed with"
-            ],
-            [
-              "worried about"
-            ],
-            [
-              "confused about"
-            ],
-            [
-              "embarrassed by"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "CZ trap",
-        "title_cz": "Častá chyba",
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "I was boring during the film ✗",
-              "I was bored ✓"
-            ],
-            [
-              "The film was bored ✗",
-              "The film was boring ✓"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Practice focus",
-        "title_cz": "Nácvik",
-        "table": {
-          "headers": [
-            "Remember"
-          ],
-          "rows": [
-            [
-              "Gap on the adjective. Choose -ed or -ing from the context."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "text_first": true,
         "points": [
-          "interested in · excited about · worried about"
+          "Learn the two forms together.",
+          "Person → **-ed**. Thing → **-ing**."
         ],
         "table": {
-          "headers": [
-            "",
-            ""
-          ],
+          "caption": "pairs",
+          "headers": ["-ed (feeling)", "-ing (cause)"],
           "rows": [
-            [
-              "I / she / we",
-              "often -ed"
-            ],
-            [
-              "film / book / match / ending / storm",
-              "often -ing"
-            ]
+            ["**bored**", "**boring**"],
+            ["**interested**", "**interesting**"],
+            ["**excited**", "**exciting**"],
+            ["**surprised**", "**surprising**"],
+            ["**tired**", "**tiring**"],
+            ["**annoyed**", "**annoying**"]
+          ]
+        }
+      },
+      {
+        "title": "More pairs",
+        "title_cz": "Další páry",
+        "text_first": true,
+        "points": [
+          "Same jobs: feeling / cause.",
+          "Person → **-ed**. Thing → **-ing**."
+        ],
+        "table": {
+          "caption": "more",
+          "headers": ["-ed (feeling)", "-ing (cause)"],
+          "rows": [
+            ["**embarrassed**", "**embarrassing**"],
+            ["**disappointed**", "**disappointing**"],
+            ["**frightened**", "**frightening**"],
+            ["**confused**", "**confusing**"],
+            ["**worried**", "**worrying**"],
+            ["**relaxed**", "**relaxing**"]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Czech often has one adjective for both jobs.",
+          "English needs the right ending."
+        ],
+        "table": {
+          "caption": "wrong → right",
+          "headers": ["Wrong", "Right"],
+          "rows": [
+            ["~~I was boring during the film~~", "I was **bored**"],
+            ["~~This book is interested~~", "This book is **interesting**"],
+            ["~~We are exciting about the trip~~", "We are **excited**"],
+            ["~~The match was excited~~", "The match was **exciting**"],
+            ["~~I feel tiring after work~~", "I feel **tired**"],
+            ["~~His music is annoyed~~", "His music is **annoying**"]
+          ]
+        }
+      },
+      {
+        "title": "More mistakes",
+        "title_cz": "Další chyby",
+        "text_first": true,
+        "points": [
+          "Same trap: person = **-ed**, thing = **-ing**."
+        ],
+        "table": {
+          "caption": "wrong → right",
+          "headers": ["Wrong", "Right"],
+          "rows": [
+            ["~~I was embarrassing at work~~", "I was **embarrassed**"],
+            ["~~The news was disappointed~~", "The news was **disappointing**"],
+            ["~~The children were frightening by the dog~~", "The children were **frightened**"],
+            ["~~This exercise is confused~~", "This exercise is **confusing**"],
+            ["~~The situation is worried~~", "The situation is **worrying**"],
+            ["~~A quiet evening is relaxed~~", "A quiet evening is **relaxing**"]
           ]
         }
       }

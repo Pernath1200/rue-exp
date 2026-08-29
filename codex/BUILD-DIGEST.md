@@ -67,6 +67,10 @@ I8 audit then rewrite. James lock: Czech ok; F3 / C11 / D3 / B8; chips on-axis (
 - Quiz/Type: 24 items, authored `quiz_options` = this pair only. Gap stays on the adjective (B8).
 - Use: 24 items, 0 F3 leads. Relexified during/really/ending/mistake/storm (home, film, book, work, dog).
 - D3: one Czech on worried. Unit dropped off the sequencing report (storm, mistake gone).
+- Use → `use_mode: correct` (James: A2 CZ→EN Use is extra translation load). 23 wrongs, one swap per sentence. *She is worried about the exam* has no `wrong` — *She is worrying about the exam* is real English (G4).
+
+**Telegram `a2_ed_ing_adjectives tested` 2026-08-29.** New rules: A11 stem cue · B14 feeling/cause sort · C35 split 12-row dumps · E7 A2 many-pair Use is error-correction. F2 + G4 instances. Lint `stemcue` / `longtable`. Reconcile → commit → new tab.
+- **stressed / stressful** cut from this A2 unit (odd one out: *-ful* not *-ing*). Parked as a B1 draft: `codex/parked-stressed-stressful.json` (with scared/scary, pleased/pleasant, delighted/delightful). Not `b1_suffixes` / `b2_word_formation`. No new node until James asks.
 
 **Gates (this pack):** lint EXACT 0 (3 A4 `the` candidates left — result / children+dog / exam). C9 0 · C10 0 · this unit not in playable errors · check_codex PASSED. `audit.py --check` still red on the **course** total 367 vs baseline 246 (pre-existing dirty tree). This unit is not in that 367.
 

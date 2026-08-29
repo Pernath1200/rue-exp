@@ -310,7 +310,8 @@ def lint_pack(uid):
                          "articlegap", "theregap", "cancant", "a1meta",
                          "courseaside", "negdef", "smallwords", "mistakecol",
                          "timesort", "aweek", "baddiagram", "notbullet",
-                         "verbcue", "thirdform", "ppcuz", "ppsort")}
+                         "verbcue", "thirdform", "ppcuz", "ppsort",
+                         "stemcue", "longtable")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -368,6 +369,20 @@ def lint_pack(uid):
                 and re.search(
                     r"\b(?:I|You|He|She|We|They|It)\s+_{2,}\s+[A-Za-z]", gap):
             f["cancant"].append(it)
+
+        # A11 — many-pair form pack Type/Quiz missing (stem)  [EXACT]
+        # a2_ed_ing_adjectives 2026-08-29: The book was ____. → surprising
+        # was a vocab test (interesting). Cue (surprise).
+        if ga and re.fullmatch(r"[A-Za-z]+(ed|ing)", ga) and "(" not in gap:
+            pairish = [
+                str(x.get("gap_answer") or "").strip().lower()
+                for x in items if x.get("gap_answer")
+            ]
+            pairish = [w for w in pairish if re.fullmatch(r"[a-z]+(ed|ing)", w)]
+            eds = {w for w in pairish if w.endswith("ed")}
+            ings = {w for w in pairish if w.endswith("ing")}
+            if len(eds) >= 4 and len(ings) >= 4 and len(set(pairish)) >= 8:
+                f["stemcue"].append(it)
 
         # B11 — whole-VP Type/Quiz missing (lemma) when the stem doesn't name the verb
         # a2_past_continuous 2026-08-29: You ____ when I called. → were sleeping.
@@ -670,6 +685,29 @@ def lint_pack(uid):
                     "en": "small words — name the class (prepositions)",
                 })
 
+    # C35 — pairs/mistakes table over ~8 rows is two cards  [EXACT]
+    # a2_ed_ing_adjectives 2026-08-29: 12-row Common pairs then 12-row
+    # Common mistakes — "too much text / split to two pages".
+    for i, c in enumerate(intro_cards(d)):
+        extra = c.get("tables") if isinstance(c.get("tables"), list) else []
+        tables = []
+        if isinstance(c.get("table"), dict):
+            tables.append(c["table"])
+        tables.extend(t for t in extra if isinstance(t, dict))
+        title = str(c.get("title") or "")
+        for tb in tables:
+            rows = tb.get("rows") or []
+            heads = " ".join(str(h) for h in (tb.get("headers") or [])).lower()
+            dump = bool(re.search(
+                r"wrong|right|feeling|cause|-ed|-ing|pair|mistake",
+                heads + " " + title, re.I,
+            ))
+            if dump and len(rows) > 8:
+                f["longtable"].append({
+                    "cz": "card %d · %s" % (i, title),
+                    "en": "%d rows — split across two cards (C35)" % len(rows),
+                })
+
     # C27 — Common mistakes: error column first  [EXACT]
     # a1_to_for_with 2026-08-29: Say / Not was backwards.
     for i, c in enumerate(intro_cards(d)):
@@ -884,6 +922,8 @@ LABELS = [
     ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),
     ("theregap",    "EXACT  B8  there-is pack never gaps There — dummy subject untested"),
     ("cancant",     "EXACT  B8  a1_can statement gaps can/can't — Czech already picks the chip"),
+    ("stemcue",     "EXACT  A11 many-pair form pack gap has no (stem) — Type is a vocab test"),
+    ("longtable",   "EXACT  C35 pairs/mistakes intro table has >8 rows — split across two cards"),
     ("verbcue",     "EXACT  B11 whole-VP gap has no (lemma) and the stem does not name the verb"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
