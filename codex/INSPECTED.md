@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**41 inspected · 0 approved · 19 unseen** of 60 live units
+**42 inspected · 0 approved · 18 unseen** of 60 live units
 
 Of the 2 cloud-authored units, **2 have any tick**.
 
@@ -44,7 +44,7 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 12 inspected / 0 approved / 17 units
+## A2 — 13 inspected / 0 approved / 17 units
 
 - [x][ ] `a2_modals_must_should` — Must / should · 46 items · **cloud** · seen?
 - [x][ ] `a2_adverbs_order` — Adverb position · 43 items
@@ -60,8 +60,8 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [ ][ ] `a2_present_perfect` — Present perfect · 55 items
 - [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items · seen?
 - [ ][ ] `a2_some_any_no` — Some / any 2 · 29 items
-- [ ][ ] `a2_used_to` — Used to · 48 items
-- [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
+- [x][ ] `a2_used_to` — Used to · 32 items
+- [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 36 items
 - [x][ ] `a2_will_going_to` — Will / going to · 8 items
 
 ## B1 — 9 inspected / 0 approved / 16 units

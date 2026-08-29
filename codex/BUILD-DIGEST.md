@@ -6,6 +6,42 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — `a2_used_to` Telegram-tested · rules
+
+Smoke closed (James: *okay that's not a bad unit*). Telegram `b1_used_to tested` (parked id) — aliased to live `a2_used_to`. Log line `a2_used_to · tested`.
+
+New / moved rules in AUTHORING-RULES:
+
+- **C29** extended: *used to* is the same past as past simple (repeated habit), not a station left of *I played*
+- **C39** (observed): don't gloss *then, not now* — that is also past simple. Habit / many times vs one time
+- **C13** extended: bold **didn't use**, not only **didn't**
+- **B15** → confirmed; **B17** (observed): sort column is the job, not the word on the chip
+- **E7** → confirmed and broadened: A2 form-pack Use is error-correction when CZ→EN lets extra errors in
+
+Play flags already in the pack: split intro; habit/one-time sort; Use `use_mode: correct`. `codex/smoke_ticks.py` aliases `b1_used_to` → `a2_used_to`. Reconcile → `a2_used_to` inspected. Next tab: I10 prep only.
+
+---
+
+## 2026-08-29 · local (interactive) — smoke rewrite `a2_used_to`
+
+I8 audit then rewrite. James lock: past habit that has **stopped** — not past simple, not would. Czech ok. F3 / C11 / D3 / B8. Do not tick INSPECTED.
+
+Dropdowns: Check = sort used to vs past simple. Quiz/Type = whole VP `used to live` / `lived` / `was living`.
+
+**Before (lint):** F3 Use-leads ×5 (`shy` ×4, `together`) · C11 `did not use to` unnamed · noopts 48/48 · filler explanations ×2 (29+19) · B8 questions gapped `Did` with `use to` already on the stem · 8×4 copy of the same eight sentences · D3 `(dřív)` leftover · `Did you use to cook?` with Czech *Kouřil jsi dřív?* (smoke→cook relexify) · no timeline (C29) · Match off.
+
+**After:**
+- Intro 3 cards. Card 0 unit name (C14) + timeline vs I played / now (C29) + shape + Not/Say (C30/C32). Then and now: used to vs yesterday. Didn't / Did: **use to**, not *used to. No would. No be used to.
+- Check: sort_bins, 8 chips, same 4 verbs (live / work / study / play). used to = habit not now; past simple = in 2019 / on Saturday. Skip exists.
+- Quiz/Type: 24 items, authored chips. Gap is the **whole VP**. Stem carries not-now / does-now so Czech *dřív* cannot pick past simple (A0). Questions gap `Did you use to live`, not `Did`. 4th chip is the form error (`used to playing` / `Did you used to`).
+- Use: 18 items. Questions `use: false`. Relexified shy→quiet, together→here. Cook Czech is *vařil*, not *kouřil*. 0 F3 leads. Unit dropped off the sequencing report.
+
+**Gates (this pack):** lint EXACT 0. verify_pack this file 0 · C9 0 · C10 0. Playable: this pack not in the 2 pre-existing `a1_to_for_with` errors. check_codex PASSED. Course `audit.py --check` still red 361 vs 246 (dirty tree).
+
+**Smoke:** http://localhost:8097/#a2_used_to — Ctrl+F5. Sort skip exists on the smoke toolbar. After Telegram `a2_used_to tested`: new rules → reconcile → commit → new tab.
+
+---
+
 ## 2026-08-29 · local (interactive) — `a2_adverbs_order` Telegram-tested · rules + lint
 
 Smoke closed (Telegram `a2_adverbs_order tested`). Bugs from the play, then rules:

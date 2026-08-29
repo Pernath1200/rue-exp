@@ -20,6 +20,12 @@ ROOT = Path(__file__).resolve().parents[1]
 VAULT_TA = Path.home() / "Documents" / "original" / "TA"
 DONE_LOG = VAULT_TA / "smoke-done-log.md"
 
+# Live id after a move. Telegram may still send the parked id.
+# 2026-08-29: James smoked a2_used_to and messaged `b1_used_to tested`.
+ALIASES = {
+    "b1_used_to": "a2_used_to",
+}
+
 # "2026-08-26 13:56 · a2_countable · tested"
 # Struck history and " — note" suffixes are ignored for matching.
 LOG_RE = re.compile(
@@ -38,7 +44,7 @@ def ticks_from_done_log(path: Path | None = None) -> dict[str, tuple[bool, bool]
         m = LOG_RE.search(ln.replace("~~", ""))
         if not m:
             continue
-        unit = m.group("unit")
+        unit = ALIASES.get(m.group("unit"), m.group("unit"))
         v = m.group("verdict")
         if v == "approved":
             out[unit] = (True, True)

@@ -5,596 +5,557 @@
   "tree_node": "a2_used_to",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Past habit / state, not now. Moved from B1 2026-08-29 (James: used to is A2). After past continuous. Match off. Do not teach be used to here (B2).",
+  "note": "Past habit that has stopped. Not past simple (one time). Not would. Not be used to (B2). Sort: habit / one time (not the word used to). Quiz/Type whole VP. Use is error correction (use_mode: correct). · 2026-08-29 smoke.",
   "default_direction": "cz_to_en",
+  "use_mode": "correct",
   "check": {
     "sequence": [
+      "sort_bins",
       "quiz"
     ]
   },
   "quality": "good_draft",
+  "bins": [
+    "habit",
+    "one time"
+  ],
+  "bin_captions": {
+    "habit": "many times",
+    "one time": "yesterday · 2019"
+  },
   "blocks": [
+    {
+      "id": "used_to_sort",
+      "title": "Which time?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I **used to** live here.",
+          "cz": "Dřív jsem tady bydlel.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "I **used to** work here.",
+          "cz": "Dřív jsem tady pracoval.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "I **used to** study English.",
+          "cz": "Dřív jsem se učil angličtinu.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "I **used to** play football.",
+          "cz": "Dřív jsem hrál fotbal.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "I **lived** here in 2019.",
+          "cz": "V roce 2019 jsem tady bydlel.",
+          "bin": "one time",
+          "use": false
+        },
+        {
+          "en": "I **worked** here in 2018.",
+          "cz": "V roce 2018 jsem tady pracoval.",
+          "bin": "one time",
+          "use": false
+        },
+        {
+          "en": "I **studied** English in May.",
+          "cz": "V květnu jsem se učil angličtinu.",
+          "bin": "one time",
+          "use": false
+        },
+        {
+          "en": "I **played** football on Saturday.",
+          "cz": "V sobotu jsem hrál fotbal.",
+          "bin": "one time",
+          "use": false
+        }
+      ]
+    },
     {
       "id": "used_to_a2",
       "title": "Used to · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
           "en": "I used to live in Brno.",
-          "cz": "Dřív jsem bydlel v Brně.",
-          "gap": "I ____ live in Brno.",
-          "gap_answer": "used to",
+          "cz": "Dřív jsem bydlel v Brně. Teď už ne.",
+          "gap": "I ____ in Brno. I don't now. (live)",
+          "gap_answer": "used to live",
+          "quiz_options": [
+            "used to live",
+            "lived",
+            "was living",
+            "used to living"
+          ],
           "accepts": [
             "I used to live in Brno."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "**used to live** = a habit, many times. Not *lived (one time).",
+          "explanation_cz": "**used to live** = dřív, teď ne. Ne *lived (jednou).",
+          "wrong": "I used to living in Brno."
+        },
+        {
+          "en": "She used to live in Prague.",
+          "cz": "Dřív bydlela v Praze. Teď už ne.",
+          "gap": "She ____ in Prague. She doesn't now. (live)",
+          "gap_answer": "used to live",
+          "quiz_options": [
+            "used to live",
+            "lived",
+            "was living",
+            "use to live"
+          ],
+          "accepts": [
+            "She used to live in Prague."
+          ],
+          "explanation": "she → **used to live**. A habit. Not *lived (one time).",
+          "explanation_cz": "she → **used to live**. Dřív, teď ne. Ne *lived.",
+          "wrong": "She use to live in Prague."
         },
         {
           "en": "I used to play tennis.",
-          "cz": "Dřív jsem hrál tenis.",
-          "gap": "I ____ play tennis.",
-          "gap_answer": "used to",
+          "cz": "Dřív jsem hrál tenis. Teď už ne.",
+          "gap": "I ____ tennis. I don't now. (play)",
+          "gap_answer": "used to play",
+          "quiz_options": [
+            "used to play",
+            "played",
+            "was playing",
+            "used to playing"
+          ],
           "accepts": [
             "I used to play tennis."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "**used to play** = habit, stopped. Not *played yesterday.",
+          "explanation_cz": "**used to play** = zvyk, skončil. Ne *played včera.",
+          "wrong": "I used to playing tennis."
         },
         {
-          "en": "I used to go there every summer.",
-          "cz": "Dřív jsem tam jezdil každé léto.",
-          "gap": "I ____ go there every summer.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to go there every summer."
+          "en": "We used to play football.",
+          "cz": "Dřív jsme hráli fotbal. Teď už ne.",
+          "gap": "We ____ football. We don't now. (play)",
+          "gap_answer": "used to play",
+          "quiz_options": [
+            "used to play",
+            "played",
+            "were playing",
+            "use to play"
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "accepts": [
+            "We used to play football.",
+            "We used to play soccer."
+          ],
+          "explanation": "**used to play** football. We don't now.",
+          "explanation_cz": "**used to play** fotbal. Teď už ne.",
+          "wrong": "We used to played football."
         },
         {
           "en": "I used to work in Prague.",
-          "cz": "Dřív jsem pracoval v Praze.",
-          "gap": "I ____ work in Prague.",
-          "gap_answer": "used to",
+          "cz": "Dřív jsem pracoval v Praze. Teď už ne.",
+          "gap": "I ____ in Prague. I don't now. (work)",
+          "gap_answer": "used to work",
+          "quiz_options": [
+            "used to work",
+            "worked",
+            "was working",
+            "used to working"
+          ],
           "accepts": [
             "I used to work in Prague."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "**used to work** there. Not *worked in 2019.",
+          "explanation_cz": "**used to work** tam. Ne *worked v roce 2019.",
+          "wrong": "I used to working in Prague."
         },
         {
-          "en": "I used to be shy.",
-          "cz": "Dřív jsem byl stydlivý.",
-          "gap": "I ____ be shy.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to be shy."
+          "en": "He used to work here.",
+          "cz": "Dřív tady pracoval. Teď už ne.",
+          "gap": "He ____ here. He doesn't now. (work)",
+          "gap_answer": "used to work",
+          "quiz_options": [
+            "used to work",
+            "worked",
+            "was working",
+            "use to work"
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to call every day.",
-          "cz": "Dřív jsem volal každý den.",
-          "gap": "I ____ call every day.",
-          "gap_answer": "used to",
           "accepts": [
-            "I used to call every day."
+            "He used to work here."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to cook.",
-          "cz": "Dřív jsem vařil.",
-          "gap": "I ____ cook.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to cook."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to watch a lot of TV.",
-          "cz": "Dřív jsem hodně koukal na televizi.",
-          "gap": "I ____ watch a lot of TV.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to watch a lot of TV."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "he → **used to work** here. Stopped.",
+          "explanation_cz": "he → **used to work** tady. Skončilo to.",
+          "wrong": "He use to work here."
         },
         {
           "en": "I used to walk to school.",
-          "cz": "Dřív jsem chodil pěšky do školy.",
-          "gap": "I ____ walk to school.",
-          "gap_answer": "used to",
+          "cz": "Dřív jsem chodil pěšky do školy. Teď už ne.",
+          "gap": "I ____ to school. I don't now. (walk)",
+          "gap_answer": "used to walk",
+          "quiz_options": [
+            "used to walk",
+            "walked",
+            "was walking",
+            "used to walking"
+          ],
           "accepts": [
             "I used to walk to school."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to eat meat.",
-          "cz": "Dřív jsem jedl maso.",
-          "gap": "I ____ eat meat.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to eat meat."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to travel for work.",
-          "cz": "Dřív jsem cestoval kvůli práci.",
-          "gap": "I ____ travel for work.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to travel for work."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "**used to walk** every day. Not *walked yesterday.",
+          "explanation_cz": "**used to walk** každý den. Ne *walked včera.",
+          "wrong": "I used to walking to school."
         },
         {
           "en": "I used to have a dog.",
-          "cz": "Dřív jsem měl psa.",
-          "gap": "I ____ have a dog.",
-          "gap_answer": "used to",
+          "cz": "Dřív jsem měl psa. Teď už ne.",
+          "gap": "I ____ a dog. I don't now. (have)",
+          "gap_answer": "used to have",
+          "quiz_options": [
+            "used to have",
+            "had",
+            "was having",
+            "use to have"
+          ],
           "accepts": [
             "I used to have a dog."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "**used to have** = past state, not now. Not *had last year.",
+          "explanation_cz": "**used to have** = minulý stav, teď ne. Ne *had loni.",
+          "wrong": "I used to had a dog."
         },
         {
-          "en": "I used to get up early.",
-          "cz": "Dřív jsem vstával brzy.",
-          "gap": "I ____ get up early.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to get up early."
+          "en": "I used to be quiet.",
+          "cz": "Dřív jsem byl tichý. Teď už ne.",
+          "gap": "I ____ quiet. I am not now. (be)",
+          "gap_answer": "used to be",
+          "quiz_options": [
+            "used to be",
+            "was",
+            "was being",
+            "used to being"
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "accepts": [
+            "I used to be quiet."
+          ],
+          "explanation": "**used to be** quiet. States too: be / have. Not now.",
+          "explanation_cz": "**used to be** tichý. I stavy: be / have. Teď ne.",
+          "wrong": "I used to being quiet."
         },
         {
-          "en": "I used to read paper books.",
-          "cz": "Dřív jsem četl papírové knihy.",
-          "gap": "I ____ read paper books.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to read paper books."
+          "en": "I used to eat meat.",
+          "cz": "Dřív jsem jedl maso. Teď už ne.",
+          "gap": "I ____ meat. I don't now. (eat)",
+          "gap_answer": "used to eat",
+          "quiz_options": [
+            "used to eat",
+            "ate",
+            "was eating",
+            "use to eat"
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to live near the sea.",
-          "cz": "Dřív jsem bydlel u moře.",
-          "gap": "I ____ live near the sea.",
-          "gap_answer": "used to",
           "accepts": [
-            "I used to live near the sea."
+            "I used to eat meat."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "I used to play in a band.",
-          "cz": "Dřív jsem hrál v kapele.",
-          "gap": "I ____ play in a band.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to play in a band."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "She used to live in Brno.",
-          "cz": "Dřív bydlela v Brně.",
-          "gap": "She ____ live in Brno.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to live in Brno."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "She used to play tennis.",
-          "cz": "Dřív hrála tenis.",
-          "gap": "She ____ play tennis.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to play tennis."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "She used to go there every summer.",
-          "cz": "Dřív tam jezdila každé léto.",
-          "gap": "She ____ go there every summer.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to go there every summer."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "She used to work in Prague.",
-          "cz": "Dřív pracovala v Praze.",
-          "gap": "She ____ work in Prague.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to work in Prague."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "She used to be shy.",
-          "cz": "Dřív byla stydlivá.",
-          "gap": "She ____ be shy.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to be shy."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "She used to call every day.",
-          "cz": "Dřív volala každý den.",
-          "gap": "She ____ call every day.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to call every day."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "**used to eat** meat. The habit stopped.",
+          "explanation_cz": "**used to eat** maso. Zvyk skončil.",
+          "wrong": "I use to eat meat."
         },
         {
           "en": "She used to cook.",
-          "cz": "Dřív vařila.",
-          "gap": "She ____ cook.",
-          "gap_answer": "used to",
+          "cz": "Dřív vařila. Teď už ne.",
+          "gap": "She ____. She doesn't now. (cook)",
+          "gap_answer": "used to cook",
+          "quiz_options": [
+            "used to cook",
+            "cooked",
+            "was cooking",
+            "used to cooking"
+          ],
           "accepts": [
             "She used to cook."
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "explanation": "she → **used to cook**. Not *was cooking at six.",
+          "explanation_cz": "she → **used to cook**. Ne *was cooking v šest.",
+          "wrong": "She used to cooking."
         },
         {
-          "en": "She used to watch a lot of TV.",
-          "cz": "Dřív hodně koukala na televizi.",
-          "gap": "She ____ watch a lot of TV.",
-          "gap_answer": "used to",
-          "accepts": [
-            "She used to watch a lot of TV."
+          "en": "I used to get up early.",
+          "cz": "Dřív jsem vstával brzy. Teď už ne.",
+          "gap": "I ____ early. I don't now. (get up)",
+          "gap_answer": "used to get up",
+          "quiz_options": [
+            "used to get up",
+            "got up",
+            "was getting up",
+            "use to get up"
           ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
+          "accepts": [
+            "I used to get up early."
+          ],
+          "explanation": "**used to get up** early. Habit, stopped.",
+          "explanation_cz": "**used to get up** brzy. Zvyk, skončil.",
+          "wrong": "I used to got up early."
+        },
+        {
+          "en": "He didn't use to like coffee.",
+          "cz": "Kávu nemíval rád. Teď ano.",
+          "gap": "He ____ coffee. He does now. (like)",
+          "gap_answer": "didn't use to like",
+          "quiz_options": [
+            "didn't use to like",
+            "didn't like",
+            "wasn't liking",
+            "didn't used to like"
+          ],
+          "accepts": [
+            "He didn't use to like coffee.",
+            "He did not use to like coffee."
+          ],
+          "gap_accepts": [
+            "didn't use to like",
+            "did not use to like"
+          ],
+          "explanation": "**didn't use to like**. After **didn't**: **use**, not *used.",
+          "explanation_cz": "**didn't use to like**. Po **didn't**: **use**, ne *used.",
+          "wrong": "He didn't used to like coffee."
+        },
+        {
+          "en": "She didn't use to drive.",
+          "cz": "Dřív neřídila. Teď ano.",
+          "gap": "She ____. She does now. (drive)",
+          "gap_answer": "didn't use to drive",
+          "quiz_options": [
+            "didn't use to drive",
+            "didn't drive",
+            "wasn't driving",
+            "didn't used to drive"
+          ],
+          "accepts": [
+            "She didn't use to drive.",
+            "She did not use to drive."
+          ],
+          "gap_accepts": [
+            "didn't use to drive",
+            "did not use to drive"
+          ],
+          "explanation": "she → **didn't use to drive**. **use** after didn't.",
+          "explanation_cz": "she → **didn't use to drive**. **use** po didn't.",
+          "wrong": "She didn't used to drive."
+        },
+        {
+          "en": "We didn't use to have internet.",
+          "cz": "Nemívali jsme internet. Teď ano.",
+          "gap": "We ____ internet. We do now. (have)",
+          "gap_answer": "didn't use to have",
+          "quiz_options": [
+            "didn't use to have",
+            "didn't have",
+            "weren't having",
+            "didn't used to have"
+          ],
+          "accepts": [
+            "We didn't use to have internet.",
+            "We did not use to have internet."
+          ],
+          "gap_accepts": [
+            "didn't use to have",
+            "did not use to have"
+          ],
+          "explanation": "**didn't use to have** internet. We do now.",
+          "explanation_cz": "**didn't use to have** internet. Teď ano.",
+          "wrong": "We didn't used to have internet."
+        },
+        {
+          "en": "He didn't use to live here.",
+          "cz": "Dřív tady nebydlel. Teď ano.",
+          "gap": "He ____ here. He does now. (live)",
+          "gap_answer": "didn't use to live",
+          "quiz_options": [
+            "didn't use to live",
+            "didn't live",
+            "wasn't living",
+            "didn't used to live"
+          ],
+          "accepts": [
+            "He didn't use to live here.",
+            "He did not use to live here."
+          ],
+          "gap_accepts": [
+            "didn't use to live",
+            "did not use to live"
+          ],
+          "explanation": "he → **didn't use to live** here. He does now.",
+          "explanation_cz": "he → **didn't use to live** tady. Teď ano.",
+          "wrong": "He didn't used to live here."
+        },
+        {
+          "en": "I didn't use to cook.",
+          "cz": "Dřív jsem nevařil. Teď ano.",
+          "gap": "I ____. I do now. (cook)",
+          "gap_answer": "didn't use to cook",
+          "quiz_options": [
+            "didn't use to cook",
+            "didn't cook",
+            "wasn't cooking",
+            "didn't used to cook"
+          ],
+          "accepts": [
+            "I didn't use to cook.",
+            "I did not use to cook."
+          ],
+          "gap_accepts": [
+            "didn't use to cook",
+            "did not use to cook"
+          ],
+          "explanation": "**didn't use to cook**. I do now. **use**, not *used.",
+          "explanation_cz": "**didn't use to cook**. Teď vařím. **use**, ne *used.",
+          "wrong": "I didn't used to cook."
+        },
+        {
+          "en": "They didn't use to watch TV.",
+          "cz": "Dřív nekoukali na televizi. Teď ano.",
+          "gap": "They ____ TV. They do now. (watch)",
+          "gap_answer": "didn't use to watch",
+          "quiz_options": [
+            "didn't use to watch",
+            "didn't watch",
+            "weren't watching",
+            "didn't used to watch"
+          ],
+          "accepts": [
+            "They didn't use to watch TV.",
+            "They did not use to watch TV.",
+            "They didn't use to watch television.",
+            "They did not use to watch television."
+          ],
+          "gap_accepts": [
+            "didn't use to watch",
+            "did not use to watch"
+          ],
+          "explanation": "**didn't use to watch** TV. They do now.",
+          "explanation_cz": "**didn't use to watch** televizi. Teď ano.",
+          "wrong": "They didn't used to watch TV."
         },
         {
           "en": "Did you use to live in Brno?",
           "cz": "Bydlel jsi dřív v Brně?",
-          "gap": "____ you use to live in Brno?",
-          "gap_answer": "Did",
+          "gap": "____ in Brno? You don't now. (live)",
+          "gap_answer": "Did you use to live",
+          "quiz_options": [
+            "Did you use to live",
+            "Did you live",
+            "Were you living",
+            "Did you used to live"
+          ],
           "accepts": [
             "Did you use to live in Brno?"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "explanation": "**Did you use to live?** After **Did**: **use to**, not *used to.",
+          "explanation_cz": "**Did you use to live?** Po **Did**: **use to**, ne *used to.",
+          "wrong": "Did you used to live in Brno?"
         },
         {
           "en": "Did you use to play tennis?",
           "cz": "Hrál jsi dřív tenis?",
-          "gap": "____ you use to play tennis?",
-          "gap_answer": "Did",
+          "gap": "____ tennis? You don't now. (play)",
+          "gap_answer": "Did you use to play",
+          "quiz_options": [
+            "Did you use to play",
+            "Did you play",
+            "Were you playing",
+            "Did you used to play"
+          ],
           "accepts": [
             "Did you use to play tennis?"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "explanation": "**Did you use to play?** Not *Did you used to.",
+          "explanation_cz": "**Did you use to play?** Ne *Did you used to.",
+          "wrong": "Did you used to play tennis?"
         },
         {
-          "en": "Did you use to go there every summer?",
-          "cz": "Jezdil jsi tam dřív každé léto?",
-          "gap": "____ you use to go there every summer?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did you use to go there every summer?"
+          "en": "Did they use to work here?",
+          "cz": "Pracovali tady dřív?",
+          "gap": "____ here? They don't now. (work)",
+          "gap_answer": "Did they use to work",
+          "quiz_options": [
+            "Did they use to work",
+            "Did they work",
+            "Were they working",
+            "Did they used to work"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "accepts": [
+            "Did they use to work here?"
+          ],
+          "explanation": "**Did they use to work** here? **use to** after Did.",
+          "explanation_cz": "**Did they use to work** tady? **use to** po Did.",
+          "wrong": "Did they used to work here?"
         },
         {
-          "en": "Did you use to work in Prague?",
-          "cz": "Pracoval jsi dřív v Praze?",
-          "gap": "____ you use to work in Prague?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did you use to work in Prague?"
+          "en": "Did she use to be quiet?",
+          "cz": "Bývala tichá?",
+          "gap": "____ quiet? She isn't now. (be)",
+          "gap_answer": "Did she use to be",
+          "quiz_options": [
+            "Did she use to be",
+            "Did she was",
+            "Was she",
+            "Did she used to be"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "accepts": [
+            "Did she use to be quiet?"
+          ],
+          "explanation": "**Did she use to be** quiet? After Did: **use to be**, not *was.",
+          "explanation_cz": "**Did she use to be** tichá? Po Did: **use to be**, ne *was.",
+          "wrong": "Did she used to be quiet?"
         },
         {
-          "en": "Did you use to be shy?",
-          "cz": "Býval jsi stydlivý?",
-          "gap": "____ you use to be shy?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did you use to be shy?"
+          "en": "Did you use to walk to school?",
+          "cz": "Chodil jsi dřív pěšky do školy?",
+          "gap": "____ to school? You don't now. (walk)",
+          "gap_answer": "Did you use to walk",
+          "quiz_options": [
+            "Did you use to walk",
+            "Did you walk",
+            "Were you walking",
+            "Did you used to walk"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "Did you use to call every day?",
-          "cz": "Volal jsi dřív každý den?",
-          "gap": "____ you use to call every day?",
-          "gap_answer": "Did",
           "accepts": [
-            "Did you use to call every day?"
+            "Did you use to walk to school?"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "explanation": "**Did you use to walk** to school? **use**, not *used.",
+          "explanation_cz": "**Did you use to walk** do školy? **use**, ne *used.",
+          "wrong": "Did you used to walk to school?"
         },
         {
           "en": "Did you use to cook?",
-          "cz": "Kouřil jsi dřív?",
-          "gap": "____ you use to cook?",
-          "gap_answer": "Did",
+          "cz": "Vařil jsi dřív?",
+          "gap": "____? You don't now. (cook)",
+          "gap_answer": "Did you use to cook",
+          "quiz_options": [
+            "Did you use to cook",
+            "Did you cook",
+            "Were you cooking",
+            "Did you used to cook"
+          ],
           "accepts": [
             "Did you use to cook?"
           ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "Did you use to watch a lot of TV?",
-          "cz": "Koukal jsi dřív hodně na televizi?",
-          "gap": "____ you use to watch a lot of TV?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did you use to watch a lot of TV?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to live in Brno.",
-          "cz": "Dřív nebydlel v Brně.",
-          "gap": "He ____ live in Brno. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to live in Brno.",
-            "He didn't use to live in Brno."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to play tennis.",
-          "cz": "Dřív nehrál tenis.",
-          "gap": "He ____ play tennis. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to play tennis.",
-            "He didn't use to play tennis."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to go there every summer.",
-          "cz": "Dřív tam nejezdil každé léto.",
-          "gap": "He ____ go there every summer. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to go there every summer.",
-            "He didn't use to go there every summer."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to work in Prague.",
-          "cz": "Dřív nepracoval v Praze.",
-          "gap": "He ____ work in Prague. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to work in Prague.",
-            "He didn't use to work in Prague."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to be shy.",
-          "cz": "Dřív nebýval stydlivý.",
-          "gap": "He ____ be shy. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to be shy.",
-            "He didn't use to be shy."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to call every day.",
-          "cz": "Dřív nevolal každý den.",
-          "gap": "He ____ call every day. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to call every day.",
-            "He didn't use to call every day."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to cook.",
-          "cz": "Dřív nevařil.",
-          "gap": "He ____ cook. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to cook.",
-            "He didn't use to cook."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "He did not use to watch a lot of TV.",
-          "cz": "Dřív nekoukal hodně na televizi.",
-          "gap": "He ____ watch a lot of TV. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "He did not use to watch a lot of TV.",
-            "He didn't use to watch a lot of TV."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "I never used to like coffee.",
-          "cz": "Nikdy jsem neměl rád kávu (dřív).",
-          "gap": "I never ____ like coffee.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I never used to like coffee."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "We used to meet after work.",
-          "cz": "Scházeli jsme se po práci.",
-          "gap": "We ____ meet after work.",
-          "gap_answer": "used to",
-          "accepts": [
-            "We used to meet after work."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "They used to live next door.",
-          "cz": "Bydleli vedle.",
-          "gap": "They ____ live next door.",
-          "gap_answer": "used to",
-          "accepts": [
-            "They used to live next door."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "Did they use to work together?",
-          "cz": "Pracovali spolu dřív?",
-          "gap": "____ they use to work together?",
-          "gap_answer": "Did",
-          "accepts": [
-            "Did they use to work together?"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "She did not use to drive.",
-          "cz": "Dřív neřídila.",
-          "gap": "She ____ drive. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "She did not use to drive.",
-            "She didn't use to drive."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
-        },
-        {
-          "en": "I used to take the train every day.",
-          "cz": "Každý den jsem jezdil vlakem.",
-          "gap": "I ____ take the train every day.",
-          "gap_answer": "used to",
-          "accepts": [
-            "I used to take the train every day."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "He used to be my manager.",
-          "cz": "Býval můj manažer.",
-          "gap": "He ____ be my manager.",
-          "gap_answer": "used to",
-          "accepts": [
-            "He used to be my manager."
-          ],
-          "explanation": "used to + base verb for past habits.",
-          "explanation_cz": "used to + základ pro minulé zvyky."
-        },
-        {
-          "en": "We did not use to have internet.",
-          "cz": "Nemívali jsme internet.",
-          "gap": "We ____ have internet. (not)",
-          "gap_answer": "did not use to",
-          "accepts": [
-            "We did not use to have internet.",
-            "We didn't use to have internet."
-          ],
-          "gap_accepts": [
-            "did not use to",
-            "didn't use to"
-          ],
-          "explanation": "Past questions/negatives: did + base verb.",
-          "explanation_cz": "Minulé otázky/zápor: did + základ slovesa."
+          "explanation": "**Did you use to cook?** Not *Did you used to cook?",
+          "explanation_cz": "**Did you use to cook?** Ne *Did you used to cook?",
+          "wrong": "Did you used to cook?"
         }
       ]
     }
@@ -603,95 +564,92 @@
     "cards": [
       {
         "title": "Used to",
-        "title_cz": "Dřív jsem…",
+        "title_cz": "Minulý zvyk",
         "points": [
-          "A **habit** in the past, not now.",
-          "Not **was playing** (that is one moment)."
+          "A **habit** in the past — **repeated**. It has **stopped**.",
+          "Same time as **I played** (one day). Not earlier."
         ],
-        "table": {
-          "headers": [
-            "When",
-            "Say"
-          ],
-          "rows": [
-            [
-              "every day, not now",
-              "I **used to** play"
-            ],
-            [
-              "at six (one moment)",
-              "I **was playing**"
-            ]
-          ]
-        },
-        "tables": [
-          {
-            "headers": [
-              "Not",
-              "Say"
-            ],
-            "rows": [
-              [
-                "~~I was playing every day as a child~~",
-                "I **used to** play as a child"
-              ],
-              [
-                "~~I used to playing~~",
-                "I **used to** play"
-              ]
-            ]
-          }
-        ]
+        "svg": "<svg viewBox=\"0 0 520 230\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"410\" y1=\"22\" x2=\"410\" y2=\"214\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"410\" y=\"16\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <line x1=\"30\" y1=\"80\" x2=\"500\" y2=\"80\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,80 490,75 490,85\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"90\" cy=\"80\" r=\"7\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <circle cx=\"140\" cy=\"80\" r=\"7\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <circle cx=\"190\" cy=\"80\" r=\"7\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <circle cx=\"240\" cy=\"80\" r=\"7\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"165\" y=\"56\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I used to play</text>\n  <text x=\"165\" y=\"108\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">many times</text>\n  <text x=\"410\" y=\"108\" font-size=\"14\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I don't now</text>\n  <line x1=\"30\" y1=\"176\" x2=\"500\" y2=\"176\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,176 490,171 490,181\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"165\" cy=\"176\" r=\"8\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"165\" y=\"154\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">yesterday</text>\n  <text x=\"165\" y=\"200\" font-size=\"14\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I played</text>\n  <text x=\"165\" y=\"218\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">one time</text>\n</svg>"
       },
       {
         "title": "Form",
         "title_cz": "Tvar",
         "text_first": true,
         "points": [
-          "**used to** + play / live / go.",
-          "Same form for I / you / he."
+          "Same form for I / you / he.",
+          "Negative: **didn't use**. After **Did**: **use to**, not ~~used to~~."
         ],
         "table": {
+          "caption": "shape",
           "headers": [
             "",
             "Say"
           ],
           "rows": [
             [
-              "+",
+              "positive",
               "I **used to** play"
             ],
             [
-              "−",
-              "I **didn't** use to play"
+              "negative",
+              "I **didn't use** to play"
             ],
             [
-              "?",
-              "**Did** you use to play?"
+              "question",
+              "**Did** you **use to** play?"
             ]
           ]
-        }
+        },
+        "tables": [
+          {
+            "caption": "not",
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~I used to playing~~",
+                "I **used to** play"
+              ],
+              [
+                "~~Did you used to play?~~",
+                "**Did** you **use to** play?"
+              ],
+              [
+                "~~I used to play yesterday~~",
+                "I **played** yesterday"
+              ]
+            ]
+          }
+        ]
       },
       {
-        "title": "Then and now",
-        "title_cz": "Dřív a teď",
+        "title": "Habit or one time",
+        "title_cz": "Zvyk, nebo jednou",
         "text_first": true,
         "points": [
-          "**used to** = then, not now."
+          "**used to** = a **habit**. Many times.",
+          "**I played** yesterday = **one** time."
         ],
         "table": {
+          "caption": "contrast",
           "headers": [
-            "Then",
-            "Now"
+            "Habit",
+            "One time"
           ],
           "rows": [
             [
               "I **used to** live in Brno",
-              "I live in Prague now"
+              "I **lived** in Brno in 2019"
             ],
             [
               "I **used to** play tennis",
-              "I don't now"
+              "I **played** tennis yesterday"
+            ],
+            [
+              "I **used to** work here",
+              "I **worked** here on Monday"
             ]
           ]
         }
