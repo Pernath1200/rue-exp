@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_questions_negatives",
   "practice": "frames",
-  "note": "do/does vs be. Gap on auxiliary or negative form. · names diversified (Martin/Anna pool) · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "do/does vs be. Gap on auxiliary or negative form. · 2026-08-29 smoke: intro names be vs do (C11); authored aux chips, no didn't/wasn't; Use F3-trimmed onto taught verbs; D3 job note stripped; James → Martin; ready → tired.",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -19,8 +19,9 @@
           "accepts": [
             "Do you speak English?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["Do", "Does", "Are", "Is"],
+          "explanation": "**Do** + you + speak. Not *Are you speak*.",
+          "explanation_cz": "**Do** + you + speak. Ne *Are you speak*."
         },
         {
           "en": "Do you live here?",
@@ -30,8 +31,9 @@
           "accepts": [
             "Do you live here?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["Do", "Does", "Are", "Is"],
+          "explanation": "**Do** with you. Not *Are you live*.",
+          "explanation_cz": "**Do** s you. Ne *Are you live*."
         },
         {
           "en": "Does she work here?",
@@ -41,8 +43,9 @@
           "accepts": [
             "Does she work here?"
           ],
-          "explanation": "does with he/she/it in questions/negatives.",
-          "explanation_cz": "does s he/she/it v otázkách/záporu."
+          "quiz_options": ["Does", "Do", "Is", "Are"],
+          "explanation": "**Does** with she. Verb = **work**, not *works*.",
+          "explanation_cz": "**Does** s she. Sloveso **work**, ne *works*."
         },
         {
           "en": "Does he speak Czech?",
@@ -52,8 +55,9 @@
           "accepts": [
             "Does he speak Czech?"
           ],
-          "explanation": "does with he/she/it in questions/negatives.",
-          "explanation_cz": "does s he/she/it v otázkách/záporu."
+          "quiz_options": ["Does", "Do", "Is", "Are"],
+          "explanation": "**Does** with he. Verb stays **speak**.",
+          "explanation_cz": "**Does** s he. Sloveso **speak**."
         },
         {
           "en": "Do they have a car?",
@@ -64,30 +68,33 @@
             "Do they have a car?",
             "Have they got a car?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["Do", "Does", "Are", "Is"],
+          "explanation": "**Do** with they + have.",
+          "explanation_cz": "**Do** s they + have."
         },
         {
-          "en": "Does it rain a lot?",
-          "cz": "Prší hodně?",
-          "gap": "____ it rain a lot?",
+          "en": "Does he play football?",
+          "cz": "Hraje on fotbal?",
+          "gap": "____ he play football?",
           "gap_answer": "Does",
           "accepts": [
-            "Does it rain a lot?"
+            "Does he play football?"
           ],
-          "explanation": "does with he/she/it in questions/negatives.",
-          "explanation_cz": "does s he/she/it v otázkách/záporu."
+          "quiz_options": ["Does", "Do", "Is", "Are"],
+          "explanation": "**Does** with he. Verb = **play**, not *plays*.",
+          "explanation_cz": "**Does** s he. Sloveso **play**, ne *plays*."
         },
         {
-          "en": "Are you ready?",
-          "cz": "Jsi připravený?",
-          "gap": "____ you ready?",
+          "en": "Are you tired?",
+          "cz": "Jsi unavený?",
+          "gap": "____ you tired?",
           "gap_answer": "Are",
           "accepts": [
-            "Are you ready?"
+            "Are you tired?"
           ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
+          "quiz_options": ["Are", "Is", "Do", "Does"],
+          "explanation": "**Are** you…? Be — no *do*.",
+          "explanation_cz": "**Are** you…? Be — ne *do*."
         },
         {
           "en": "Is he a student?",
@@ -97,8 +104,9 @@
           "accepts": [
             "Is he a student?"
           ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
+          "quiz_options": ["Is", "Are", "Do", "Does"],
+          "explanation": "**Is** he…? Be — no *does*.",
+          "explanation_cz": "**Is** he…? Be — ne *does*."
         },
         {
           "en": "Is she at home?",
@@ -108,8 +116,9 @@
           "accepts": [
             "Is she at home?"
           ],
-          "explanation": "he/she/it → is.",
-          "explanation_cz": "he/she/it → is."
+          "quiz_options": ["Is", "Are", "Do", "Does"],
+          "explanation": "**Is** she…? Be, not *Does she at home*.",
+          "explanation_cz": "**Is** she…? Be, ne *Does she at home*."
         },
         {
           "en": "Are they friends?",
@@ -119,23 +128,25 @@
           "accepts": [
             "Are they friends?"
           ],
-          "explanation": "you/we/they → are.",
-          "explanation_cz": "you/we/they → are."
+          "quiz_options": ["Are", "Is", "Do", "Does"],
+          "explanation": "**Are** they…? Be — no *do*.",
+          "explanation_cz": "**Are** they…? Be — ne *do*."
         },
         {
-          "en": "I don't like tea.",
-          "cz": "Nemám rád čaj.",
-          "gap": "I ____ like tea.",
+          "en": "I don't like football.",
+          "cz": "Nemám rád fotbal.",
+          "gap": "I ____ like football.",
           "gap_answer": "don't",
           "gap_accepts": [
             "do not"
           ],
           "accepts": [
-            "I do not like tea.",
-            "I don't like tea."
+            "I do not like football.",
+            "I don't like football."
           ],
-          "explanation": "don't = do not (I/you/we/they).",
-          "explanation_cz": "don't = do not (I/you/we/they)."
+          "quiz_options": ["don't", "doesn't", "isn't", "aren't"],
+          "explanation": "**don't** + like. Not *am not like*.",
+          "explanation_cz": "**don't** + like. Ne *am not like*."
         },
         {
           "en": "She doesn't live here.",
@@ -149,65 +160,72 @@
             "She does not live here.",
             "She doesn't live here."
           ],
-          "explanation": "doesn't = does not (he/she/it).",
-          "explanation_cz": "doesn't = does not (he/she/it)."
+          "quiz_options": ["doesn't", "don't", "isn't", "aren't"],
+          "explanation": "**doesn't** + live. Not *doesn't lives*.",
+          "explanation_cz": "**doesn't** + live. Ne *doesn't lives*."
         },
         {
-          "en": "He doesn't work on Sunday.",
-          "cz": "On v neděli nepracuje.",
-          "gap": "He ____ work on Sunday.",
+          "en": "He doesn't work here.",
+          "cz": "On tady nepracuje.",
+          "gap": "He ____ work here.",
           "gap_answer": "doesn't",
           "gap_accepts": [
             "does not"
           ],
           "accepts": [
-            "He does not work on Sunday.",
-            "He doesn't work on Sunday."
+            "He does not work here.",
+            "He doesn't work here."
           ],
-          "explanation": "doesn't = does not (he/she/it).",
-          "explanation_cz": "doesn't = does not (he/she/it)."
+          "quiz_options": ["doesn't", "don't", "isn't", "aren't"],
+          "explanation": "**doesn't** with he. Verb = **work**.",
+          "explanation_cz": "**doesn't** s he. Sloveso **work**."
         },
         {
-          "en": "We don't speak French.",
-          "cz": "Nemluvíme francouzsky.",
-          "gap": "We ____ speak French.",
+          "en": "We don't work here.",
+          "cz": "Tady nepracujeme.",
+          "gap": "We ____ work here.",
           "gap_answer": "don't",
           "gap_accepts": [
             "do not"
           ],
           "accepts": [
-            "We do not speak French.",
-            "We don't speak French."
+            "We do not work here.",
+            "We don't work here."
           ],
-          "explanation": "don't = do not (I/you/we/they).",
-          "explanation_cz": "don't = do not (I/you/we/they)."
+          "quiz_options": ["don't", "doesn't", "isn't", "aren't"],
+          "explanation": "**don't** with we. Not *aren't work*.",
+          "explanation_cz": "**don't** s we. Ne *aren't work*."
         },
         {
-          "en": "They don't like coffee.",
-          "cz": "Oni nemají rádi kávu.",
-          "gap": "They ____ like coffee.",
+          "en": "They don't like films.",
+          "cz": "Oni nemají rádi filmy.",
+          "gap": "They ____ like films.",
           "gap_answer": "don't",
           "gap_accepts": [
             "do not"
           ],
           "accepts": [
-            "They do not like coffee.",
-            "They don't like coffee."
+            "They do not like films.",
+            "They don't like films.",
+            "They do not like movies.",
+            "They don't like movies."
           ],
-          "explanation": "don't = do not (I/you/we/they).",
-          "explanation_cz": "don't = do not (I/you/we/they)."
+          "quiz_options": ["don't", "doesn't", "isn't", "aren't"],
+          "explanation": "**don't** with they. Not *aren't like*.",
+          "explanation_cz": "**don't** s they. Ne *aren't like*."
         },
         {
-          "en": "I'm not hungry.",
-          "cz": "Nemám hlad.",
-          "gap": "I ____ not hungry.",
+          "en": "I am not tired.",
+          "cz": "Nejsem unavený.",
+          "gap": "I ____ not tired.",
           "gap_answer": "am",
           "accepts": [
-            "I'm not hungry.",
-            "I am not hungry."
+            "I'm not tired.",
+            "I am not tired."
           ],
-          "explanation": "I → am.",
-          "explanation_cz": "I → am."
+          "quiz_options": ["am", "is", "are", "don't"],
+          "explanation": "I **am** not. Not *I don't tired*.",
+          "explanation_cz": "I **am** not. Ne *I don't tired*."
         },
         {
           "en": "She isn't a teacher.",
@@ -222,8 +240,9 @@
             "She isn't a teacher.",
             "She's not a teacher."
           ],
-          "explanation": "is + not → isn't.",
-          "explanation_cz": "is + not → isn't."
+          "quiz_options": ["isn't", "aren't", "doesn't", "don't"],
+          "explanation": "**isn't** = is not. Be, not *doesn't*.",
+          "explanation_cz": "**isn't** = is not. Be, ne *doesn't*."
         },
         {
           "en": "They aren't at home.",
@@ -238,8 +257,9 @@
             "They're not at home.",
             "They aren't at home."
           ],
-          "explanation": "are + not → aren't.",
-          "explanation_cz": "are + not → aren't."
+          "quiz_options": ["aren't", "isn't", "don't", "doesn't"],
+          "explanation": "**aren't** = are not. Be, not *don't*.",
+          "explanation_cz": "**aren't** = are not. Be, ne *don't*."
         },
         {
           "en": "Where do you live?",
@@ -249,8 +269,9 @@
           "accepts": [
             "Where do you live?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["do", "does", "are", "is"],
+          "explanation": "**do** after Where. Not *Where you live?*",
+          "explanation_cz": "**do** po Where. Ne *Where you live?*"
         },
         {
           "en": "Where does she work?",
@@ -260,33 +281,33 @@
           "accepts": [
             "Where does she work?"
           ],
-          "explanation": "does with he/she/it in questions/negatives.",
-          "explanation_cz": "does s he/she/it v otázkách/záporu."
+          "quiz_options": ["does", "do", "is", "are"],
+          "explanation": "**does** after Where + she. Verb = **work**.",
+          "explanation_cz": "**does** po Where + she. Sloveso **work**."
         },
         {
-          "en": "What does he do?",
-          "cz": "Čím se živí? / Co dělá v práci? (job · habit)",
-          "gap": "What ____ he do?",
+          "en": "What does she like?",
+          "cz": "Co má ráda?",
+          "gap": "What ____ she like?",
           "gap_answer": "does",
           "accepts": [
-            "What does he do?",
-            "What does he do for a living?",
-            "What's his job?",
-            "What is his job?"
+            "What does she like?"
           ],
-          "explanation": "does with he/she/it in questions/negatives.",
-          "explanation_cz": "does s he/she/it v otázkách/záporu."
+          "quiz_options": ["does", "do", "is", "are"],
+          "explanation": "**does** after What + she. Not *What she like?*",
+          "explanation_cz": "**does** po What + she. Ne *What she like?*"
         },
         {
-          "en": "What do you want?",
-          "cz": "Co chceš?",
-          "gap": "What ____ you want?",
+          "en": "What do you like?",
+          "cz": "Co máš rád?",
+          "gap": "What ____ you like?",
           "gap_answer": "do",
           "accepts": [
-            "What do you want?"
+            "What do you like?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["do", "does", "are", "is"],
+          "explanation": "**do** after What + you.",
+          "explanation_cz": "**do** po What + you."
         },
         {
           "en": "When do you study?",
@@ -296,8 +317,9 @@
           "accepts": [
             "When do you study?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["do", "does", "are", "is"],
+          "explanation": "**do** after When. Not *When you study?*",
+          "explanation_cz": "**do** po When. Ne *When you study?*"
         },
         {
           "en": "Do you like English?",
@@ -307,19 +329,21 @@
           "accepts": [
             "Do you like English?"
           ],
-          "explanation": "do with I/you/we/they in questions/negatives.",
-          "explanation_cz": "do s I/you/we/they v otázkách/záporu."
+          "quiz_options": ["Do", "Does", "Are", "Is"],
+          "explanation": "**Do** + you + like. Not *Are you like*.",
+          "explanation_cz": "**Do** + you + like. Ne *Are you like*."
         },
         {
-          "en": "Does James live in Brno?",
-          "cz": "Bydlí James v Brně?",
-          "gap": "____ James live in Brno?",
+          "en": "Does Martin live in Brno?",
+          "cz": "Bydlí Martin v Brně?",
+          "gap": "____ Martin live in Brno?",
           "gap_answer": "Does",
           "accepts": [
-            "Does James live in Brno?"
+            "Does Martin live in Brno?"
           ],
-          "explanation": "does with he/she/it in questions/negatives.",
-          "explanation_cz": "does s he/she/it v otázkách/záporu."
+          "quiz_options": ["Does", "Do", "Is", "Are"],
+          "explanation": "A name = he → **Does**. Verb = **live**.",
+          "explanation_cz": "Jméno = he → **Does**. Sloveso **live**."
         },
         {
           "en": "I don't have a car.",
@@ -331,10 +355,13 @@
           ],
           "accepts": [
             "I do not have a car.",
-            "I don't have a car."
+            "I don't have a car.",
+            "I haven't got a car.",
+            "I have not got a car."
           ],
-          "explanation": "don't = do not (I/you/we/they).",
-          "explanation_cz": "don't = do not (I/you/we/they)."
+          "quiz_options": ["don't", "doesn't", "isn't", "aren't"],
+          "explanation": "**don't** + have. Not *am not have*.",
+          "explanation_cz": "**don't** + have. Ne *am not have*."
         }
       ]
     }
@@ -342,69 +369,84 @@
   "intro": {
     "cards": [
       {
-        "title": "2 systems",
-        "title_cz": "2 systémy: BE vs ostatní slovesa",
+        "title": "Questions",
+        "title_cz": "Otázky",
+        "text_first": true,
+        "points": [
+          "English puts a **helper** first.",
+          "You already know **don't / doesn't**."
+        ],
+        "diagram": "boxes_row",
+        "labels": [
+          "helper",
+          "subject",
+          "verb",
+          "Do",
+          "you",
+          "work?",
+          "Are",
+          "you",
+          "tired?"
+        ],
+        "diagram_fallback": "helper + subject + verb: Do you work? / Are you tired?",
         "table": {
-          "caption": "questions · otázky",
-          "headers": [
-            "type",
-            "pattern",
-            "example"
-          ],
-          "rows": [
-            [
-              "BE",
-              "Be + subject…?",
-              "Are you ready?"
-            ],
-            [
-              "other verbs",
-              "Do/Does + subject + verb…?",
-              "Do you live here?"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "Are you ready?",
-            "cz": "Jsi připravený?"
-          },
-          {
-            "en": "Do you live here?",
-            "cz": "Bydlíš tady?"
-          }
-        ]
-      },
-      {
-        "title": "BE ?",
-        "title_cz": "Otázky s BE (bez do)",
-        "table": {
-          "caption": "be questions",
           "headers": [
             "statement",
             "question"
           ],
           "rows": [
             [
-              "You are ready.",
-              "Are you ready?"
+              "You work here.",
+              "**Do you work here?**"
             ],
             [
-              "She is a teacher.",
-              "Is she a teacher?"
-            ],
-            [
-              "They are at home.",
-              "Are they at home?"
+              "You are tired.",
+              "**Are you tired?**"
             ]
           ]
         }
       },
       {
-        "title": "DO / DOES ?",
-        "title_cz": "Otázky s DO / DOES",
+        "title": "be or do?",
+        "title_cz": "be, nebo do?",
+        "text_first": true,
+        "points": [
+          "Two helpers. Pick from the verb."
+        ],
+        "diagram": "contrast",
+        "labels": [
+          "be",
+          "do / does",
+          "Are you tired?",
+          "Do you work?"
+        ],
+        "diagram_fallback": "be → Are you…? Other verbs → Do / Does you…?",
         "table": {
-          "caption": "do / does",
+          "headers": [
+            "verb",
+            "question"
+          ],
+          "rows": [
+            [
+              "**be**",
+              "**Are you tired?**"
+            ],
+            [
+              "other verbs",
+              "**Do you work?**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Do / Does",
+        "title_cz": "Do / Does",
+        "text_first": true,
+        "points": [
+          "**Does she work?** Verb stays **work**.",
+          "Where / What / When still need **do / does**."
+        ],
+        "table": {
           "headers": [
             "",
             "question"
@@ -412,66 +454,83 @@
           "rows": [
             [
               "I / you / we / they",
-              "Do you work?"
+              "**Do you work?**"
             ],
             [
               "he / she / it",
-              "Does she work?"
+              "**Does she work?**"
+            ],
+            [
+              "Where / What / When",
+              "**Where do you live?**"
             ]
           ]
-        },
+        }
+      },
+      {
+        "title": "be questions",
+        "title_cz": "Otázky s be",
+        "text_first": true,
         "points": [
-          "Does she work? (ne works)"
+          "**Be** moves to the front. No **do**."
         ],
-        "examples": [
-          {
-            "en": "Where do you live?",
-            "cz": "Kde bydlíš?"
-          },
-          {
-            "en": "What does he do?",
-            "cz": "Čím se živí? / Co dělá v práci?"
-          }
-        ]
+        "table": {
+          "headers": [
+            "statement",
+            "question"
+          ],
+          "rows": [
+            [
+              "You are tired.",
+              "**Are you tired?**"
+            ],
+            [
+              "She is a teacher.",
+              "**Is she a teacher?**"
+            ],
+            [
+              "They are at home.",
+              "**Are they at home?**"
+            ]
+          ]
+        }
       },
       {
         "title": "No / −",
         "title_cz": "Zápor",
+        "text_first": true,
+        "points": [
+          "**don't / doesn't** + the base verb.",
+          "**be** takes **not**: I'm not, isn't, aren't."
+        ],
         "table": {
-          "caption": "negatives",
           "headers": [
-            "BE",
+            "be",
             "other verbs"
           ],
           "rows": [
             [
-              "I'm not",
-              "I don't work"
+              "**I'm not** tired",
+              "**I don't** work"
             ],
             [
-              "she isn't",
-              "she doesn't work"
+              "**she isn't**",
+              "**she doesn't** work"
             ],
             [
-              "they aren't",
-              "they don't work"
+              "**they aren't**",
+              "**they don't** work"
             ]
           ]
-        },
-        "examples": [
-          {
-            "en": "I don't like tea.",
-            "cz": "Nemám rád čaj."
-          },
-          {
-            "en": "She doesn't live here.",
-            "cz": "Ona nebydlí tady."
-          }
-        ]
+        }
       },
       {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Czech can skip the helper. English cannot."
+        ],
         "table": {
           "headers": [
             "",
@@ -479,15 +538,64 @@
           ],
           "rows": [
             [
-              "BE",
-              "Are you…? Is she…?"
+              "*You work here?*",
+              "**Do you work here?**"
             ],
             [
-              "other",
-              "Do you…? Does he…?"
+              "*Are you live here?*",
+              "**Do you live here?**"
+            ],
+            [
+              "*I don't tired.*",
+              "**I'm not tired.**"
+            ],
+            [
+              "*Does she works?*",
+              "**Does she work?**"
             ]
           ]
         }
+      },
+      {
+        "title": "Later",
+        "title_cz": "Později",
+        "table": {
+          "headers": [
+            "Related",
+            ""
+          ],
+          "rows": [
+            [
+              "Present simple",
+              "**don't / doesn't** + verb"
+            ],
+            [
+              "Be / have",
+              "**Are you…? I'm not**"
+            ],
+            [
+              "Question words",
+              "**Where / What / When**"
+            ]
+          ]
+        },
+        "links": [
+          {
+            "id": "a1_present_simple",
+            "label": "Present simple",
+            "note": "**don't / doesn't** + verb"
+          },
+          {
+            "id": "a1_be_have",
+            "label": "Be / have",
+            "note": "**Are you…? I'm not**"
+          },
+          {
+            "id": "a1_question_words",
+            "label": "Question words",
+            "note": "**Where / What / When**"
+          }
+        ]
       }
     ]
   },
