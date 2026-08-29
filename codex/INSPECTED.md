@@ -14,21 +14,21 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**23 inspected · 0 approved · 76 unseen** of 99 live units
+**24 inspected · 0 approved · 75 unseen** of 99 live units
 
 Of the 34 cloud-authored units, **2 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 8 inspected / 0 approved / 20 units
+## A1 — 9 inspected / 0 approved / 20 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [ ][ ] `a1_and_but_because` — And / but / because · 24 items · seen?
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [ ][ ] `a1_can` — Can / can't · 24 items · seen?
-- [ ][ ] `a1_frequency` — Frequency · 24 items · seen?
+- [x][ ] `a1_frequency` — Frequency · 24 items · seen?
 - [ ][ ] `a1_imperatives` — Imperatives · 24 items · seen?
 - [ ][ ] `a1_like_want_need` — Like / want / need · 24 items · seen?
 - [ ][ ] `a1_object_pronouns` — Object pronouns · 36 items · seen?
