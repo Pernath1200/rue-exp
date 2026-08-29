@@ -14,17 +14,16 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**17 inspected · 0 approved · 82 unseen** of 99 live units
+**23 inspected · 0 approved · 76 unseen** of 99 live units
 
-Of the 35 cloud-authored units, **1 have any tick**.
+Of the 34 cloud-authored units, **2 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 5 inspected / 0 approved / 20 units
+## A1 — 8 inspected / 0 approved / 20 units
 
-- [ ][ ] `a1_be_have` — Be / have · 26 items · **cloud** · seen?
-- [ ][ ] `a1_present_simple` — Present simple · 31 items · **cloud** · seen?
+- [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [ ][ ] `a1_and_but_because` — And / but / because · 24 items · seen?
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
@@ -33,9 +32,10 @@ Of the 35 cloud-authored units, **1 have any tick**.
 - [ ][ ] `a1_imperatives` — Imperatives · 24 items · seen?
 - [ ][ ] `a1_like_want_need` — Like / want / need · 24 items · seen?
 - [ ][ ] `a1_object_pronouns` — Object pronouns · 36 items · seen?
-- [ ][ ] `a1_possessives` — Possessives · 24 items · seen?
+- [x][ ] `a1_possessives` — Possessives · 24 items
 - [x][ ] `a1_prepositions_place` — Prepositions of place · 26 items · seen?
 - [ ][ ] `a1_prepositions_time` — Prepositions of time · 24 items · seen?
+- [x][ ] `a1_present_simple` — Present simple · 31 items
 - [ ][ ] `a1_question_words` — Question words · 36 items · seen?
 - [ ][ ] `a1_questions_negatives` — Questions & negatives · 26 items · seen?
 - [ ][ ] `a1_some_any` — Some / any · 24 items · seen?
@@ -63,14 +63,14 @@ Of the 35 cloud-authored units, **1 have any tick**.
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 48 items · seen?
 - [ ][ ] `a2_will_going_to` — Will / going to · 48 items · seen?
 
-## B1 — 6 inspected / 0 approved / 17 units
+## B1 — 9 inspected / 0 approved / 17 units
 
 - [x][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
-- [ ][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 16 items
-- [ ][ ] `b1_dependent_prepositions` — Dependent prepositions · 51 items · seen?
+- [x][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 12 items
+- [x][ ] `b1_dependent_prepositions` — Dependent prepositions 1 · 34 items
 - [ ][ ] `b1_indirect_questions` — Indirect questions · 24 items
 - [x][ ] `b1_it_subject` — Introductory it · 46 items · seen?
-- [ ][ ] `b1_linkers` — Linkers (although / so) · 48 items · seen?
+- [x][ ] `b1_linkers` — Linkers (although / so) · 60 items
 - [ ][ ] `b1_modals_speculation` — Might / may / must (guess) · 48 items · seen?
 - [x][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
 - [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items · seen?

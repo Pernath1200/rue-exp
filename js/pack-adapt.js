@@ -721,12 +721,19 @@ function comparativeLemma(it) {
 
 function isComparativeAnswer(it) {
   const a = String(it.gap_answer || "").trim();
-  if (/^(however|therefore|moreover|nevertheless|whatever|whenever|wherever)$/i.test(a)) {
+  /* Closed-class -er words are not comparatives. her → lemma "h" was
+   * offering "more her / hest" on a1_possessives (James, 2026-08-29). */
+  if (
+    /^(her|after|never|over|under|other|either|neither|whether|former|per|ever|together|however|therefore|moreover|nevertheless|whatever|whenever|wherever)$/i.test(
+      a,
+    )
+  ) {
     return false;
   }
   if (/^(more|most|less)(\s|$)/i.test(a)) return true;
   if (/^(better|worse|best|worst)$/i.test(a)) return true;
-  if (/(ier|iest|er|est)$/i.test(a) && comparativeLemma(it)) return true;
+  const lemma = comparativeLemma(it);
+  if (/(ier|iest|er|est)$/i.test(a) && lemma && lemma.length >= 2) return true;
   return false;
 }
 

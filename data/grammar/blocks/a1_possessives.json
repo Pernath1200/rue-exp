@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_possessives",
   "practice": "frames",
-  "note": "my/your/his/her/our/their + name's. Gap on possessive. Not mine/yours object forms (light later). Gender: his→On, her→Ona. · names diversified (Martin/Anna pool) · classfix B/D/E-2026-07-25 · flags possessives: intro names; like/love; desk/table · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "my/your/his/her/our/their + name's. Gap on possessive. Not mine/yours. · 2026-08-29 smoke: intro covers the bank (Ondrej/Vaclav/Martin/teacher); authored chips; her no longer a comparative; Use F3-trimmed; teacher notes stripped from cz. Homare → Martin (James: Japanese name made 's too hard).",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -12,6 +12,7 @@
       "quiz"
     ]
   },
+  "strict_possessives": true,
   "blocks": [
     {
       "id": "possessives_a1",
@@ -25,12 +26,13 @@
           "accepts": [
             "This is my book."
           ],
-          "explanation": "Possessive determiner: my + noun.",
-          "explanation_cz": "Přivlastňovací: my + podstatné jméno."
+          "quiz_options": ["my", "your", "his", "her"],
+          "explanation": "I → **my** + noun.",
+          "explanation_cz": "I → **my** + podstatné jméno."
         },
         {
           "en": "That is your bag.",
-          "cz": "Tohle je tvoje taška. / To je tvoje taška.",
+          "cz": "To je tvoje taška.",
           "gap": "That is ____ bag.",
           "gap_answer": "your",
           "accepts": [
@@ -38,31 +40,34 @@
             "That's your bag.",
             "This is your bag."
           ],
-          "explanation": "Possessive determiner: your + noun.",
-          "explanation_cz": "Přivlastňovací: your + podstatné jméno."
+          "quiz_options": ["your", "my", "his", "her"],
+          "explanation": "you → **your** + noun.",
+          "explanation_cz": "you → **your** + podstatné jméno."
         },
         {
           "en": "This is his car.",
-          "cz": "Tohle je jeho auto. (On — a man)",
+          "cz": "Tohle je jeho auto.",
           "gap": "This is ____ car.",
           "gap_answer": "his",
           "accepts": [
             "This is his car."
           ],
-          "explanation": "Possessive: his + noun.",
-          "explanation_cz": "Přivlastňovací: his + podstatné jméno."
+          "quiz_options": ["his", "her", "my", "your"],
+          "explanation": "he → **his** + noun.",
+          "explanation_cz": "he → **his** + podstatné jméno."
         },
         {
           "en": "This is her phone.",
-          "cz": "Tohle je její telefon. (Ona — a woman)",
+          "cz": "Tohle je její telefon.",
           "gap": "This is ____ phone.",
           "gap_answer": "her",
           "accepts": [
             "This is her phone.",
             "This is her telephone."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "his", "my", "your"],
+          "explanation": "she → **her** + noun.",
+          "explanation_cz": "she → **her** + podstatné jméno."
         },
         {
           "en": "This is our house.",
@@ -72,77 +77,84 @@
           "accepts": [
             "This is our house."
           ],
-          "explanation": "Possessive: our + noun.",
-          "explanation_cz": "Přivlastňovací: our + podstatné jméno."
+          "quiz_options": ["our", "my", "your", "their"],
+          "explanation": "we → **our** + noun.",
+          "explanation_cz": "we → **our** + podstatné jméno."
         },
         {
           "en": "These are their books.",
-          "cz": "Tohle jsou jejich knihy. (Oni)",
+          "cz": "Tohle jsou jejich knihy.",
           "gap": "These are ____ books.",
           "gap_answer": "their",
           "accepts": [
             "These are their books."
           ],
-          "explanation": "Possessive: their + noun.",
-          "explanation_cz": "Přivlastňovací: their + podstatné jméno."
+          "quiz_options": ["their", "our", "his", "her"],
+          "explanation": "they → **their** + noun.",
+          "explanation_cz": "they → **their** + podstatné jméno."
         },
         {
           "en": "I like my job.",
-          "cz": "Mám rád svou práci. / Líbí se mi moje práce.",
+          "cz": "Mám rád svou práci.",
+          "use": false,
           "gap": "I like ____ job.",
           "gap_answer": "my",
           "accepts": [
             "I like my job."
           ],
-          "explanation": "Possessive determiner: my + noun.",
-          "explanation_cz": "Přivlastňovací: my + podstatné jméno."
+          "quiz_options": ["my", "your", "his", "her"],
+          "explanation": "I → **my** + noun.",
+          "explanation_cz": "I → **my** + podstatné jméno."
         },
         {
           "en": "She likes her dog.",
-          "cz": "Ona má ráda svého psa. / Ona má ráda jejího psa.",
+          "cz": "Ona má ráda svého psa.",
           "gap": "She likes ____ dog.",
           "gap_answer": "her",
           "accepts": [
             "She likes her dog."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "his", "my", "your"],
+          "explanation": "she → **her** + noun.",
+          "explanation_cz": "she → **her** + podstatné jméno."
         },
         {
           "en": "He likes his coffee.",
-          "cz": "On má rád svou kávu. / On má rád jeho kávu.",
+          "cz": "On má rád svou kávu.",
+          "use": false,
           "gap": "He likes ____ coffee.",
           "gap_answer": "his",
           "accepts": [
             "He likes his coffee."
           ],
-          "explanation": "Possessive: his + noun.",
-          "explanation_cz": "Přivlastňovací: his + podstatné jméno."
+          "quiz_options": ["his", "her", "my", "your"],
+          "explanation": "he → **his** + noun.",
+          "explanation_cz": "he → **his** + podstatné jméno."
         },
         {
-          "en": "We love our school.",
+          "en": "We like our school.",
           "cz": "Máme rádi naši školu.",
-          "gap": "We love ____ school.",
+          "gap": "We like ____ school.",
           "gap_answer": "our",
           "accepts": [
-            "We love our school.",
-            "We like our school.",
-            "We love our school",
-            "We like our school"
+            "We like our school."
           ],
-          "explanation": "Possessive: our + noun.",
-          "explanation_cz": "Přivlastňovací: our + podstatné jméno."
+          "quiz_options": ["our", "my", "your", "their"],
+          "explanation": "we → **our** + noun.",
+          "explanation_cz": "we → **our** + podstatné jméno."
         },
         {
           "en": "Is this your bag?",
           "cz": "Je tohle tvoje taška?",
+          "use": false,
           "gap": "Is this ____ bag?",
           "gap_answer": "your",
           "accepts": [
             "Is this your bag?"
           ],
-          "explanation": "Possessive determiner: your + noun.",
-          "explanation_cz": "Přivlastňovací: your + podstatné jméno."
+          "quiz_options": ["your", "my", "his", "her"],
+          "explanation": "you → **your** + noun.",
+          "explanation_cz": "you → **your** + podstatné jméno."
         },
         {
           "en": "Where is my phone?",
@@ -154,54 +166,60 @@
             "Where's my phone?",
             "Where is my telephone?"
           ],
-          "explanation": "Possessive determiner: my + noun.",
-          "explanation_cz": "Přivlastňovací: my + podstatné jméno."
+          "quiz_options": ["my", "your", "his", "her"],
+          "explanation": "I → **my** + noun.",
+          "explanation_cz": "I → **my** + podstatné jméno."
         },
         {
           "en": "What is her name?",
-          "cz": "Jaké je její jméno? (Ona — a woman)",
+          "cz": "Jaké je její jméno?",
           "gap": "What is ____ name?",
           "gap_answer": "her",
           "accepts": [
             "What is her name?",
             "What's her name?"
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["her", "his", "my", "your"],
+          "explanation": "she → **her** + noun.",
+          "explanation_cz": "she → **her** + podstatné jméno."
         },
         {
           "en": "What is his name?",
-          "cz": "Jaké je jeho jméno? (On — a man)",
+          "cz": "Jaké je jeho jméno?",
           "gap": "What is ____ name?",
           "gap_answer": "his",
           "accepts": [
             "What is his name?",
             "What's his name?"
           ],
-          "explanation": "Possessive: his + noun.",
-          "explanation_cz": "Přivlastňovací: his + podstatné jméno."
+          "quiz_options": ["his", "her", "my", "your"],
+          "explanation": "he → **his** + noun.",
+          "explanation_cz": "he → **his** + podstatné jméno."
         },
         {
           "en": "They have their tickets.",
-          "cz": "Oni mají své lístky. / Oni mají jejich lístky.",
+          "cz": "Oni mají své lístky.",
+          "use": false,
           "gap": "They have ____ tickets.",
           "gap_answer": "their",
           "accepts": [
             "They have their tickets."
           ],
-          "explanation": "Possessive: their + noun.",
-          "explanation_cz": "Přivlastňovací: their + podstatné jméno."
+          "quiz_options": ["their", "our", "his", "her"],
+          "explanation": "they → **their** + noun.",
+          "explanation_cz": "they → **their** + podstatné jméno."
         },
         {
           "en": "You need your passport.",
-          "cz": "Potřebuješ svůj pas. / Potřebuješ svůj cestovní pas.",
+          "cz": "Potřebuješ svůj pas.",
           "gap": "You need ____ passport.",
           "gap_answer": "your",
           "accepts": [
             "You need your passport."
           ],
-          "explanation": "Possessive determiner: your + noun.",
-          "explanation_cz": "Přivlastňovací: your + podstatné jméno."
+          "quiz_options": ["your", "my", "his", "her"],
+          "explanation": "you → **your** + noun.",
+          "explanation_cz": "you → **your** + podstatné jméno."
         },
         {
           "en": "This is Ondrej's book.",
@@ -209,33 +227,36 @@
           "gap": "This is ____ book.",
           "gap_answer": "Ondrej's",
           "gap_accepts": [
-            "Patriks"
+            "Ondrejs"
           ],
           "accepts": [
             "This is Ondrej's book.",
             "This is Ondrejs book."
           ],
-          "explanation": "Possessive: my/your/his/her… or Name's.",
-          "explanation_cz": "Přivlastnění: my/your/his/her… nebo Name's."
+          "quiz_options": ["Ondrej's", "Ondrej", "his", "my"],
+          "explanation": "Name + **'s**. Ondrej → **Ondrej's**.",
+          "explanation_cz": "Jméno + **'s**. Ondrej → **Ondrej's**."
         },
         {
           "en": "Vaclav's bag is blue.",
           "cz": "Václavova taška je modrá.",
+          "use": false,
           "gap": "____ bag is blue.",
           "gap_answer": "Vaclav's",
           "gap_accepts": [
-            "Annas"
+            "Vaclavs"
           ],
           "accepts": [
             "Vaclav's bag is blue.",
             "Vaclavs bag is blue."
           ],
-          "explanation": "Possessive: my/your/his/her… or Name's.",
-          "explanation_cz": "Přivlastnění: my/your/his/her… nebo Name's."
+          "quiz_options": ["Vaclav's", "Vaclav", "his", "my"],
+          "explanation": "Name + **'s**. Vaclav → **Vaclav's**.",
+          "explanation_cz": "Jméno + **'s**. Vaclav → **Vaclav's**."
         },
         {
           "en": "This is the teacher's desk.",
-          "cz": "Tohle je stůl učitele. / Tohle je učitelův stůl. (desk ≈ table OK here)",
+          "cz": "Tohle je učitelův stůl.",
           "gap": "This is the ____ desk.",
           "gap_answer": "teacher's",
           "gap_accepts": [
@@ -245,27 +266,28 @@
             "This is the teacher's desk.",
             "This is the teachers desk.",
             "This is the teacher's table.",
-            "This is the teachers table.",
-            "This is the teacher's desk",
-            "This is the teacher's table"
+            "This is the teachers table."
           ],
-          "explanation": "Possessive: my/your/his/her… or Name's.",
-          "explanation_cz": "Přivlastnění: my/your/his/her… nebo Name's."
+          "quiz_options": ["teacher's", "teachers", "teacher", "his"],
+          "explanation": "person + **'s**. teacher → **teacher's**.",
+          "explanation_cz": "osoba + **'s**. teacher → **teacher's**."
         },
         {
-          "en": "Homare's car is new.",
-          "cz": "Homareovo auto je nové.",
+          "en": "Martin's car is new.",
+          "cz": "Martinovo auto je nové.",
+          "use": false,
           "gap": "____ car is new.",
-          "gap_answer": "Homare's",
+          "gap_answer": "Martin's",
           "gap_accepts": [
-            "Toms"
+            "Martins"
           ],
           "accepts": [
-            "Homare's car is new.",
-            "Homares car is new."
+            "Martin's car is new.",
+            "Martins car is new."
           ],
-          "explanation": "Possessive: my/your/his/her… or Name's.",
-          "explanation_cz": "Přivlastnění: my/your/his/her… nebo Name's."
+          "quiz_options": ["Martin's", "Martin", "his", "my"],
+          "explanation": "Name + **'s**. Martin → **Martin's**.",
+          "explanation_cz": "Jméno + **'s**. Martin → **Martin's**."
         },
         {
           "en": "My brother has a dog.",
@@ -275,30 +297,33 @@
           "accepts": [
             "My brother has a dog."
           ],
-          "explanation": "Possessive determiner: my + noun.",
-          "explanation_cz": "Přivlastňovací: my + podstatné jméno."
+          "quiz_options": ["My", "Your", "His", "Her"],
+          "explanation": "I → **My** + noun.",
+          "explanation_cz": "I → **My** + podstatné jméno."
         },
         {
           "en": "Her sister is a student.",
-          "cz": "Její sestra je studentka. (Ona — a woman has a sister) (povolání → a/an + job, ne the)",
+          "cz": "Její sestra je studentka.",
           "gap": "____ sister is a student.",
           "gap_answer": "Her",
           "accepts": [
             "Her sister is a student."
           ],
-          "explanation": "Object form of she → her (or possessive her).",
-          "explanation_cz": "Předmět od she → her (nebo přivlastňovací)."
+          "quiz_options": ["Her", "His", "My", "Your"],
+          "explanation": "she → **Her** + noun.",
+          "explanation_cz": "she → **Her** + podstatné jméno."
         },
         {
           "en": "His father works here.",
-          "cz": "Jeho otec tady pracuje. (On — a man)",
+          "cz": "Jeho otec tady pracuje.",
           "gap": "____ father works here.",
           "gap_answer": "His",
           "accepts": [
             "His father works here."
           ],
-          "explanation": "Possessive: his + noun.",
-          "explanation_cz": "Přivlastňovací: his + podstatné jméno."
+          "quiz_options": ["His", "Her", "My", "Your"],
+          "explanation": "he → **His** + noun.",
+          "explanation_cz": "he → **His** + podstatné jméno."
         },
         {
           "en": "Our friends live in Brno.",
@@ -306,11 +331,11 @@
           "gap": "____ friends live in Brno.",
           "gap_answer": "Our",
           "accepts": [
-            "Our friends live in Brno.",
-            "Our friends live in Brno"
+            "Our friends live in Brno."
           ],
-          "explanation": "Possessive: our + noun.",
-          "explanation_cz": "Přivlastňovací: our + podstatné jméno."
+          "quiz_options": ["Our", "My", "Your", "Their"],
+          "explanation": "we → **Our** + noun.",
+          "explanation_cz": "we → **Our** + podstatné jméno."
         }
       ]
     }
@@ -319,236 +344,58 @@
     "cards": [
       {
         "title": "Possessives",
-        "title_cz": "Přivlastňovací — whose?",
+        "title_cz": "Přivlastňovací",
+        "text_first": true,
+        "points": [
+          "These words say **who** it belongs to.",
+          "They go **before** a noun: my book."
+        ],
         "table": {
-          "caption": "person → word",
           "headers": [
-            "Person",
-            "Word",
-            "CZ idea"
+            "",
+            "",
+            "Česky"
           ],
           "rows": [
             [
               "I",
-              "my",
-              "můj / moje"
+              "**my**",
+              "*můj / moje*"
             ],
             [
               "you",
-              "your",
-              "tvůj / vaše"
+              "**your**",
+              "*tvůj / vaše*"
             ],
             [
               "he",
-              "his",
-              "jeho"
+              "**his**",
+              "*jeho*"
             ],
             [
               "she",
-              "her",
-              "její"
+              "**her**",
+              "*její*"
             ],
             [
               "we",
-              "our",
-              "náš / naše"
+              "**our**",
+              "*náš / naše*"
             ],
             [
               "they",
-              "their",
-              "jejich"
+              "**their**",
+              "*jejich*"
             ]
           ]
-        },
-        "points": [
-          "Possessive + noun: my book · her phone",
-          "Not a second article: my the book ✗",
-          "These words say WHO something belongs to. They go before a noun."
-        ]
+        }
       },
       {
         "title": "my · your · our",
         "title_cz": "my · your · our",
-        "table": {
-          "caption": "I / you / we",
-          "headers": [
-            "EN",
-            "Example"
-          ],
-          "rows": [
-            [
-              "my",
-              "This is my book."
-            ],
-            [
-              "your",
-              "Is this your bag?"
-            ],
-            [
-              "our",
-              "This is our house."
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I like my job.",
-            "cz": "Mám rád svou práci."
-          },
-          {
-            "en": "You need your passport.",
-            "cz": "Potřebuješ svůj pas."
-          }
-        ],
+        "text_first": true,
         "points": [
-          "my = belongs to me",
-          "your = belongs to you",
-          "our = belongs to us"
-        ]
-      },
-      {
-        "title": "his · her · their",
-        "title_cz": "his · her · their — pozor na rod",
-        "table": {
-          "caption": "he / she / they",
-          "headers": [
-            "Word",
-            "Example",
-            "Person"
-          ],
-          "rows": [
-            [
-              "his",
-              "This is his car.",
-              "he (On)"
-            ],
-            [
-              "her",
-              "This is her phone.",
-              "she (Ona)"
-            ],
-            [
-              "their",
-              "These are their books.",
-              "they (Oni)"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "What is his name?",
-            "cz": "Jaké je jeho jméno?"
-          },
-          {
-            "en": "What is her name?",
-            "cz": "Jaké je její jméno?"
-          }
-        ],
-        "points": [
-          "his ≠ her — look at the person",
-          "their = more than one owner",
-          "Match the word to the person:"
-        ]
-      },
-      {
-        "title": "Before a noun",
-        "title_cz": "Před podstatným jménem",
-        "table": {
-          "caption": "shape",
-          "headers": [
-            "✓ Yes",
-            "✗ No"
-          ],
-          "rows": [
-            [
-              "my book",
-              "the my book"
-            ],
-            [
-              "her name",
-              "her the name"
-            ],
-            [
-              "our friends",
-              "friends our"
-            ]
-          ]
-        },
-        "points": [
-          "Order: possessive + noun",
-          "One determiner is enough — not my the book"
-        ]
-      },
-      {
-        "title": "Name + 's",
-        "title_cz": "Jméno + 's — belonging to a person",
-        "table": {
-          "caption": "'s",
-          "headers": [
-            "EN",
-            "CZ"
-          ],
-          "rows": [
-            [
-              "Patrik's book",
-              "Patrikova kniha"
-            ],
-            [
-              "Martina's bag",
-              "Martinina taška"
-            ],
-            [
-              "the teacher's desk",
-              "stůl učitele"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "This is Patrik's book.",
-            "cz": "Tohle je Patrikova kniha."
-          },
-          {
-            "en": "Homare's car is new.",
-            "cz": "Homareovo auto je nové."
-          }
-        ],
-        "points": [
-          "Write the apostrophe: Patrik's (not Patriks if you can)",
-          "Name + 's + noun",
-          "Add 's to a name (or person noun) to show ownership."
-        ]
-      },
-      {
-        "title": "his or 's?",
-        "title_cz": "his vs Patrik's",
-        "table": {
-          "caption": "two ways",
-          "headers": [
-            "Use",
-            "Example"
-          ],
-          "rows": [
-            [
-              "his / her / their (pronoun)",
-              "This is his book."
-            ],
-            [
-              "Name + 's",
-              "This is Patrik's book."
-            ]
-          ]
-        },
-        "points": [
-          "No name → his / her / their",
-          "With a name → Patrik's / Martina's"
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "my · your · his · her · our · their + noun"
+          "**my** = me. **your** = you. **our** = us."
         ],
         "table": {
           "headers": [
@@ -557,21 +404,189 @@
           ],
           "rows": [
             [
-              "his",
-              "he · her = she · their = they"
+              "**my**",
+              "**This is my book.**"
             ],
             [
-              "Name + 's",
-              "Patrik's book"
+              "**your**",
+              "**That is your bag.**"
             ],
             [
-              "Not yet",
-              "mine / yours / hers (alone without noun)"
+              "**our**",
+              "**This is our house.**"
             ]
           ]
         }
+      },
+      {
+        "title": "his · her · their",
+        "title_cz": "his · her · their",
+        "text_first": true,
+        "points": [
+          "**his** = he (*jeho*). **her** = she (*její*).",
+          "**their** = they — more than one owner."
+        ],
+        "table": {
+          "headers": [
+            "",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "he",
+              "**his**",
+              "**This is his car.**"
+            ],
+            [
+              "she",
+              "**her**",
+              "**This is her phone.**"
+            ],
+            [
+              "they",
+              "**their**",
+              "**These are their books.**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Before a noun",
+        "title_cz": "Před podstatným jménem",
+        "text_first": true,
+        "points": [
+          "One word is enough — not *my the book*."
+        ],
+        "table": {
+          "headers": [
+            "Yes",
+            "No"
+          ],
+          "rows": [
+            [
+              "**my book**",
+              "*the my book*"
+            ],
+            [
+              "**her name**",
+              "*her the name*"
+            ],
+            [
+              "**our friends**",
+              "*friends our*"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Name + 's",
+        "title_cz": "Jméno + 's",
+        "text_first": true,
+        "points": [
+          "Add **'s** to a name: Ondrej → **Ondrej's**."
+        ],
+        "table": {
+          "headers": [
+            "",
+            "Česky"
+          ],
+          "rows": [
+            [
+              "**Ondrej's book**",
+              "*Ondřejova kniha*"
+            ],
+            [
+              "**Vaclav's bag**",
+              "*Václavova taška*"
+            ],
+            [
+              "**the teacher's desk**",
+              "*učitelův stůl*"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "his or 's?",
+        "title_cz": "his, nebo 's?",
+        "text_first": true,
+        "points": [
+          "No name → **his / her / their**.",
+          "A name → **Ondrej's**."
+        ],
+        "table": {
+          "headers": [
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "he (no name)",
+              "**This is his book.**"
+            ],
+            [
+              "Ondrej (a name)",
+              "**This is Ondrej's book.**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Write the apostrophe: **Ondrej's**, not *Ondrejs*."
+        ],
+        "table": {
+          "headers": [
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "*the my book*",
+              "**my book**"
+            ],
+            [
+              "*This is she car*",
+              "**This is her car**"
+            ],
+            [
+              "*Ondrejs book*",
+              "**Ondrej's book**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Later",
+        "title_cz": "Později",
+        "table": {
+          "headers": [
+            "Related",
+            ""
+          ],
+          "rows": [
+            [
+              "Not yet",
+              "**mine / yours / hers** (no noun after)"
+            ],
+            [
+              "Object pronouns",
+              "Give it to **her**."
+            ]
+          ]
+        },
+        "links": [
+          {
+            "id": "a1_object_pronouns",
+            "label": "Object pronouns",
+            "note": "Give it to **her**."
+          }
+        ]
       }
     ]
-  },
-  "strict_possessives": true
+  }
 }

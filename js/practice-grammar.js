@@ -22,7 +22,7 @@ import { introDiagram } from "./intro-visuals.js?v=2026-08-28-hub";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";
-import { adaptGrammarPack } from "./pack-adapt.js?v=2026-08-28-use-skip";
+import { adaptGrammarPack } from "./pack-adapt.js?v=2026-08-29-her";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
 import { setSmokeContext } from "./smoke-flags.js";
