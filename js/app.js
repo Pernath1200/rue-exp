@@ -1100,14 +1100,24 @@ function renderRoots() {
   const portrait = document.getElementById("tree-portrait");
   if (portrait && STATE.tree) {
     const nodes = STATE.tree.nodes || [];
+    /* Cambium harness (dev-only, 2026-08-29): ?cambium=edge picks the
+     * living edge-line variant (default: girth only); ?cambiumDemo=
+     * started|learned|remembered|mastered forces every word_craft pack to
+     * that state so the treatments can be judged without grinding packs. */
+    const q = new URLSearchParams(location.search);
+    const demoState = { started: "started", learned: "fruit", remembered: "remembered", mastered: "mastered" }[q.get("cambiumDemo")] || null;
+    const isWC = (id) => { const n = nodeById(id); return !!n && (n.root || n.tree_part) === "word_craft"; };
     renderTreePortrait(portrait, {
       level: mapTreeLevel(),
       nodes,
+      cambium: q.get("cambium") || "",
       isFruit: (id) => {
+        if (demoState && isWC(id)) return demoState !== "started";
         const n = nodeById(id);
         return n ? isFruit(n) : false;
       },
       progressState: (id) => {
+        if (demoState && isWC(id)) return demoState;
         const n = nodeById(id);
         return n ? nodeTreeStrength(n) : "none";
       },

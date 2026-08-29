@@ -53,6 +53,18 @@ V_WFM-B1B2-01 + V_WFM-B2C1-01 woke drafted → app-integrated (rue-codex
 V_* units on grammar topics; **hang-baseline.json is now EMPTY** (24 → 0
 in one day). Portrait girth-feed deferred, direction in TREE-AND-CODEX.md.
 
+**Cambium visuals harness (James, session close)**: girth feed landed —
+word-craft reps thicken the trunk (saturating `cambiumGirthBonus`, capped
+under one age step, level-filtered like every light; collar and root
+bases follow through G.trunkW). Two treatments judged in-browser, real
+renderer: default girth-only vs `?cambium=edge` living edge-line (state
+ladder of the strongest word-craft pack, map-only). `?cambiumDemo=
+started|learned|remembered|mastered` forces word_craft states for
+judging. Decision on the winner: James's, in the browser. Claude.ai
+mockup round consciously skipped — the morning showed mockups cannot
+answer "how does it read on the real organism". _test_map_lift.js now
+19 asserts. Cache `?v=2026-08-29-cambium`.
+
 **Late additions (Grok's run ended)**: 17-pack codex_unit sync applied
 (tags copied from tree.json, one stash dance around a1_present_simple WIP)
 — baseline down to **4** (the word-formation codex gaps only). And

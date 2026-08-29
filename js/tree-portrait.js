@@ -319,14 +319,17 @@ function buildModel() {
 // Lay the skeleton out at an age (pure geometry, no randomness)
 // ---------------------------------------------------------------------------
 
-function layout(m, age) {
+function layout(m, age, girthBonus = 0) {
   const p = m.p, cx = VB.cx, soilY = VB.soil;
   const bbox = { x0: 1e9, x1: -1e9, y0: 1e9 };
   const see = (x, y) => { if (x < bbox.x0) bbox.x0 = x; if (x > bbox.x1) bbox.x1 = x; if (y < bbox.y0) bbox.y0 = y; };
   const fb = { x0: 1e9, x1: -1e9, y0: 1e9 };
   const seeF = (q) => { if (q[0] < fb.x0) fb.x0 = q[0]; if (q[0] > fb.x1) fb.x1 = q[0]; if (q[1] < fb.y0) fb.y0 = q[1]; see(q[0], q[1]); };
 
-  const trunkW = p.trunkW * age.girth;
+  // Cambium bonus rides on top of age girth (trunk + collar + root bases
+  // follow through G.trunkW — the growth layer thickens the whole column).
+  // The skeleton stays level-driven; the bonus is small, capped, additive.
+  const trunkW = p.trunkW * Math.min(1, age.girth + girthBonus);
   const full = makeLimb([cx, soilY + 3], m.trunk.lean, p.trunkH + 3, 0.25, m.trunk.s, true, trunkW, p.taper);
   const trunk = partial(full, age.stem);
   for (let t = 0; t <= 1.001; t += 0.1) seeF(trunk.at(t));
@@ -427,6 +430,15 @@ export function litSlots(live, count) {
   return Math.min(6, count);
 }
 
+/** Cambium girth bonus (James, 2026-08-29): word-craft reps thicken the
+ *  trunk with diminishing returns — rings, not a meter. repSum is the
+ *  weighted rank sum of word_craft packs at or below the viewed level
+ *  (started 0.5 · learned 1 · remembered 1.6 · mastered 2). Saturating:
+ *  early work shows most; hard cap well under one age step. */
+export function cambiumGirthBonus(repSum) {
+  return repSum > 0 ? 0.14 * (repSum / (repSum + 3)) : 0;
+}
+
 // ---------------------------------------------------------------------------
 // Render
 // ---------------------------------------------------------------------------
@@ -523,7 +535,15 @@ export function renderTreePortrait(container, opts) {
   const trunk = seat((byPart.trunk || []).concat(Object.values(themesByHouse).flat()));
 
   // ---- geometry at this age ----
-  const G = layout(m, age);
+  // Cambium (James, 2026-08-29): the multiplier made visible as mass.
+  // Word-craft work at or below the viewed level feeds trunk girth.
+  const wcRanks = (byPart.word_craft || [])
+    .filter((n) => n.status === "live" && atLevel(n))
+    .map((n) => rankOf(stateOf(n)));
+  const wcSum = wcRanks.reduce((a, r) => a + [0, 0.5, 1, 1.6, 2][r], 0);
+  const cambiumStyle = opts.cambium || "";
+
+  const G = layout(m, age, cambiumGirthBonus(wcSum));
   const lid = (v) => "lf-" + level + "-" + v;
   const leafSizeStem = p.leafSize * (0.45 + 0.55 * age.leaf) * 0.8;
 
@@ -533,6 +553,22 @@ export function renderTreePortrait(container, opts) {
     above += '<path d="M' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY + ry * 2.2) + ' ' + f1(cx + rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY - ry * 1.2) + ' ' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Z"/>'; }
   if (!focusRoots) G.mains.forEach((Mn) => { if (Mn.g) above += '<path d="' + taperedPath(Mn.L, 0, Mn.M.ph, Mn.g < 0.98) + '"/>'; });
   above += "</g>";
+
+  // Living edge-line variant (?cambium=edge): the growth layer visible
+  // under the bark — a thin line up the trunk's edge in the state ladder
+  // of the strongest word-craft pack. Map only; absent with no work.
+  if (mapOnly && cambiumStyle === "edge" && wcSum > 0) {
+    const wcMax = Math.max(0, ...wcRanks);
+    const wcCol = wcMax >= 4 ? C.fruitMastered : wcMax >= 3 ? C.fruitRemembered : wcMax >= 2 ? C.fruit : C.leaf;
+    let cpts = "";
+    for (let t = 0; t <= 1.001; t += 0.08) {
+      const q = G.trunk.at(t), v = G.trunk.tan(t);
+      const nrm = [-v[1], v[0]];
+      const hw = G.trunk.w(t) / 2 + 1;
+      cpts += (cpts ? "L" : "M") + f1(q[0] + nrm[0] * hw) + "," + f1(q[1] + nrm[1] * hw);
+    }
+    above += '<path class="tp-cambium" d="' + cpts + '" fill="none" stroke="' + wcCol + '" stroke-width="1.4" stroke-linecap="round" opacity="0.85"' + (wcMax >= 3 ? ' style="filter:drop-shadow(0 0 3px ' + wcCol + ')"' : "") + "/>";
+  }
 
   // leader leaves while the stem is still rising
   if (age.stem < 1) {
@@ -847,5 +883,6 @@ export function renderTreePortrait(container, opts) {
     });
   }
 
-  return { laterals, houses, trunk, tap, level };
+  return { laterals, houses, trunk, tap, level,
+           cambium: { sum: wcSum, bonus: cambiumGirthBonus(wcSum) } };
 }

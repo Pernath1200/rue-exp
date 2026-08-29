@@ -7,7 +7,8 @@ const fs = await import("node:fs/promises");
 const tree = JSON.parse(
   await fs.readFile(new URL("../data/tree.json", import.meta.url), "utf8"),
 );
-const { litSlots, renderTreePortrait } = await import("../js/tree-portrait.js");
+const { litSlots, renderTreePortrait, cambiumGirthBonus } =
+  await import("../js/tree-portrait.js");
 
 let failed = 0;
 function assert(cond, msg) {
@@ -75,5 +76,43 @@ renderTreePortrait(payHost, {
 assert(!payHost.innerHTML.includes(">Linking</text>"),
   "payoff stays unlabelled below ground");
 assert(!payHost.innerHTML.includes("tp-bud"), "payoff carries no bud");
+
+// 5. Cambium (2026-08-29): word-craft reps thicken the trunk — saturating,
+//    capped, level-filtered; the edge-line variant is map-only.
+assert(cambiumGirthBonus(0) === 0, "cambium: no work, no bonus");
+assert(
+  cambiumGirthBonus(1) - cambiumGirthBonus(0) >
+    cambiumGirthBonus(2) - cambiumGirthBonus(1),
+  "cambium: diminishing returns");
+assert(cambiumGirthBonus(1000) < 0.15, "cambium: hard cap holds");
+const wcState = (id) =>
+  ["b1_prefixes", "b1_suffixes", "b2_word_formation", "c1_word_formation"]
+    .includes(id) ? "mastered" : "none";
+const wcHost = host();
+let wp = renderTreePortrait(wcHost, {
+  level: "B1", nodes: tree.nodes, cambium: "edge",
+  isFruit: (id) => wcState(id) === "mastered",
+  progressState: wcState,
+});
+assert(wp.cambium.sum === 4,
+  "cambium counts only packs at or below the viewed level (2 of 4 at B1)");
+assert(wp.cambium.bonus > 0, "cambium bonus feeds girth");
+assert(wcHost.innerHTML.includes("tp-cambium"),
+  "edge-line renders on the map with word-craft work");
+const wcClean = host();
+wp = renderTreePortrait(wcClean, {
+  level: "B1", nodes: tree.nodes, cambium: "edge",
+  isFruit: () => false, progressState: () => "none",
+});
+assert(wp.cambium.bonus === 0 && !wcClean.innerHTML.includes("tp-cambium"),
+  "no work: no bonus, no edge-line");
+const wcPay = host();
+renderTreePortrait(wcPay, {
+  level: "B1", nodes: tree.nodes, cambium: "edge",
+  isFruit: (id) => wcState(id) === "mastered",
+  progressState: wcState, justNow: "b1_prefixes",
+});
+assert(!wcPay.innerHTML.includes("tp-cambium"),
+  "edge-line never leaks into payoffs (girth itself still applies)");
 
 process.exit(failed ? 1 : 0);
