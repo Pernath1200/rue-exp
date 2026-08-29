@@ -5,612 +5,927 @@
   "tree_node": "a2_present_perfect",
   "codex_unit": "G_VP-B1B2-01",
   "practice": "frames",
-  "note": "Thin have/has + past participle. just/already/ever/never/for/since. Codex: G_VP-B1B2-01 home; taught at A2 CEFR thin. · Bank 48 items · flags: 2026-07-26 bag+intro+gender · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "have/has + past participle. Sort: three tenses, same 4 verbs, light time cue. Quiz/Type gap the whole VP; every item has just/already/yet/never/for so Czech past cannot pick past simple. · 2026-08-29 smoke: tense cue on every quiz item (James: Uklidil jsem kuchyň is not enough).",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
+  "bins": [
+    "present simple",
+    "past simple",
+    "present perfect"
+  ],
+  "bin_captions": {
+    "present simple": "always true",
+    "past simple": "finished time",
+    "present perfect": "started, still now"
+  },
   "blocks": [
+    {
+      "id": "present_perfect_sort",
+      "title": "Which time?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I live here.",
+          "bin": "present simple",
+          "use": false
+        },
+        {
+          "en": "I work here.",
+          "bin": "present simple",
+          "use": false
+        },
+        {
+          "en": "I study English.",
+          "bin": "present simple",
+          "use": false
+        },
+        {
+          "en": "I play football.",
+          "bin": "present simple",
+          "use": false
+        },
+        {
+          "en": "I lived here in 2019.",
+          "bin": "past simple",
+          "use": false
+        },
+        {
+          "en": "I worked here in 2018.",
+          "bin": "past simple",
+          "use": false
+        },
+        {
+          "en": "I studied English in May.",
+          "bin": "past simple",
+          "use": false
+        },
+        {
+          "en": "I played football on Saturday.",
+          "bin": "past simple",
+          "use": false
+        },
+        {
+          "en": "I have lived here for two years.",
+          "bin": "present perfect",
+          "use": false
+        },
+        {
+          "en": "I have worked here for two years.",
+          "bin": "present perfect",
+          "use": false
+        },
+        {
+          "en": "I have studied English for two years.",
+          "bin": "present perfect",
+          "use": false
+        },
+        {
+          "en": "I have played football for two years.",
+          "bin": "present perfect",
+          "use": false
+        }
+      ]
+    },
     {
       "id": "present_perfect_a2",
       "title": "Present perfect · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
-          "en": "I have finished.",
-          "cz": "Dokončil jsem. (výsledek teď)",
-          "gap": "I ____ finished.",
-          "gap_answer": "have",
-          "accepts": [
-            "I have finished."
+          "en": "I have just finished.",
+          "cz": "Právě jsem dokončil.",
+          "gap": "I ____. (just/finish)",
+          "gap_answer": "have just finished",
+          "quiz_options": [
+            "have just finished",
+            "finished",
+            "just finished",
+            "has just finished"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "accepts": [
+            "I have just finished.",
+            "I've just finished."
+          ],
+          "explanation": "**have just finished**. **just** = a moment ago. Not *finished.",
+          "explanation_cz": "**have just finished**. **just** = před chvílí. Ne *finished."
         },
         {
-          "en": "She has finished.",
-          "cz": "Dokončila (ona).",
-          "gap": "She ____ finished.",
-          "gap_answer": "has",
-          "accepts": [
-            "She has finished."
+          "en": "She has already finished.",
+          "cz": "Už dokončila.",
+          "gap": "She ____. (already/finish)",
+          "gap_answer": "has already finished",
+          "quiz_options": [
+            "has already finished",
+            "finished",
+            "already finished",
+            "have already finished"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "accepts": [
+            "She has already finished."
+          ],
+          "explanation": "she → **has already finished**. **already**, not *finished.",
+          "explanation_cz": "she → **has already finished**. **already**, ne *finished."
         },
         {
-          "en": "We have arrived.",
-          "cz": "Dorazili jsme.",
-          "gap": "We ____ arrived.",
-          "gap_answer": "have",
-          "accepts": [
-            "We have arrived."
+          "en": "We have already started.",
+          "cz": "Už jsme začali.",
+          "gap": "We ____. (already/start)",
+          "gap_answer": "have already started",
+          "quiz_options": [
+            "have already started",
+            "started",
+            "already started",
+            "has already started"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "accepts": [
+            "We have already started.",
+            "We've already started."
+          ],
+          "explanation": "**have already started**. **already**, not *started.",
+          "explanation_cz": "**have already started**. **already**, ne *started."
         },
         {
-          "en": "He has arrived.",
-          "cz": "Dorazil (on).",
-          "gap": "He ____ arrived.",
-          "gap_answer": "has",
-          "accepts": [
-            "He has arrived."
+          "en": "He has just arrived.",
+          "cz": "Právě dorazil.",
+          "gap": "He ____. (just/arrive)",
+          "gap_answer": "has just arrived",
+          "quiz_options": [
+            "has just arrived",
+            "arrived",
+            "just arrived",
+            "have just arrived"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "accepts": [
+            "He has just arrived."
+          ],
+          "explanation": "he → **has just arrived**. **just**, not *arrived.",
+          "explanation_cz": "he → **has just arrived**. **just**, ne *arrived."
         },
         {
-          "en": "I have seen that film.",
-          "cz": "Viděl jsem ten film. (už / někdy)",
-          "gap": "I have ____ that film.",
-          "gap_answer": "seen",
-          "accepts": [
-            "I have seen that film.",
-            "I have seen that movie.",
-            "I've seen that film.",
-            "I've seen that movie."
+          "en": "I have already seen that film.",
+          "cz": "Ten film už jsem viděl.",
+          "gap": "I ____ that film. (already/see)",
+          "gap_answer": "have already seen",
+          "quiz_options": [
+            "have already seen",
+            "saw",
+            "already seen",
+            "has already seen"
           ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
+          "accepts": [
+            "I have already seen that film.",
+            "I've already seen that film.",
+            "I have already seen that movie.",
+            "I've already seen that movie."
+          ],
+          "explanation": "**have already seen**. **already**, not *saw.",
+          "explanation_cz": "**have already seen**. **already**, ne *saw."
         },
         {
-          "en": "She has gone home.",
-          "cz": "Odešla domů. (není tady) (ona).",
-          "gap": "She has ____ home.",
-          "gap_answer": "gone",
-          "accepts": [
-            "She has gone home.",
-            "She's gone home."
+          "en": "She has already gone home.",
+          "cz": "Už odešla domů.",
+          "gap": "She ____ home. (already/go)",
+          "gap_answer": "has already gone",
+          "quiz_options": [
+            "has already gone",
+            "went",
+            "already gone",
+            "have already gone"
           ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
+          "accepts": [
+            "She has already gone home."
+          ],
+          "explanation": "**has already gone**. **already**. **gone** = not here now.",
+          "explanation_cz": "**has already gone**. **already**. **gone** = teď tady není."
         },
         {
-          "en": "They have eaten lunch.",
-          "cz": "Obědvali. / Snědli oběd.",
-          "gap": "They have ____ lunch.",
-          "gap_answer": "eaten",
-          "accepts": [
-            "They have eaten lunch.",
-            "They've eaten lunch."
+          "en": "They have already eaten lunch.",
+          "cz": "Už obědvali.",
+          "gap": "They ____ lunch. (already/eat)",
+          "gap_answer": "have already eaten",
+          "quiz_options": [
+            "have already eaten",
+            "ate",
+            "already eaten",
+            "has already eaten"
           ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "I have lost my keys.",
-          "cz": "Ztratil jsem klíče.",
-          "gap": "I have ____ my keys.",
-          "gap_answer": "lost",
           "accepts": [
-            "I have lost my keys.",
-            "I've lost my keys."
+            "They have already eaten lunch.",
+            "They've already eaten lunch.",
+            "They have already had lunch.",
+            "They've already had lunch."
           ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "He has broken his phone.",
-          "cz": "Rozbil si telefon (on).",
-          "gap": "He has ____ his phone.",
-          "gap_answer": "broken",
-          "accepts": [
-            "He has broken his phone.",
-            "He's broken his phone."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "We have bought a car.",
-          "cz": "Koupili jsme auto.",
-          "gap": "We have ____ a car.",
-          "gap_answer": "bought",
-          "accepts": [
-            "We have bought a car.",
-            "We've bought a car."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "I haven't finished.",
-          "cz": "Nedokončil jsem.",
-          "gap": "I ____ finished.",
-          "gap_answer": "haven't",
-          "accepts": [
-            "I haven't finished.",
-            "I have not finished."
-          ],
+          "explanation": "**have already eaten**. **already**, not *ate.",
+          "explanation_cz": "**have already eaten**. **already**, ne *ate.",
           "gap_accepts": [
-            "have not",
-            "haven't"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
+            "have already eaten",
+            "have already had"
+          ]
         },
         {
-          "en": "She hasn't called.",
-          "cz": "Nezavolala (ona).",
-          "gap": "She ____ called.",
-          "gap_answer": "hasn't",
-          "accepts": [
-            "She hasn't called.",
-            "She has not called."
+          "en": "I have just lost my keys.",
+          "cz": "Právě jsem ztratil klíče.",
+          "gap": "I ____ my keys. (just/lose)",
+          "gap_answer": "have just lost",
+          "quiz_options": [
+            "have just lost",
+            "lost",
+            "just lost",
+            "has just lost"
           ],
+          "accepts": [
+            "I have just lost my keys.",
+            "I've just lost my keys.",
+            "I have just lost my key.",
+            "I've just lost my key."
+          ],
+          "explanation": "**have just lost**. **just**, not *lost.",
+          "explanation_cz": "**have just lost**. **just**, ne *lost."
+        },
+        {
+          "en": "He has just broken his phone.",
+          "cz": "Právě si rozbil telefon.",
+          "gap": "He ____ his phone. (just/break)",
+          "gap_answer": "has just broken",
+          "quiz_options": [
+            "has just broken",
+            "broke",
+            "just broken",
+            "have just broken"
+          ],
+          "accepts": [
+            "He has just broken his phone."
+          ],
+          "explanation": "**has just broken**. **just**, not *broke.",
+          "explanation_cz": "**has just broken**. **just**, ne *broke."
+        },
+        {
+          "en": "We have just bought a car.",
+          "cz": "Právě jsme koupili auto.",
+          "gap": "We ____ a car. (just/buy)",
+          "gap_answer": "have just bought",
+          "quiz_options": [
+            "have just bought",
+            "bought",
+            "just bought",
+            "has just bought"
+          ],
+          "accepts": [
+            "We have just bought a car.",
+            "We've just bought a car."
+          ],
+          "explanation": "**have just bought**. **just**, not *bought.",
+          "explanation_cz": "**have just bought**. **just**, ne *bought."
+        },
+        {
+          "en": "I have already done my homework.",
+          "cz": "Úkol už jsem udělal.",
+          "gap": "I ____ my homework. (already/do)",
+          "gap_answer": "have already done",
+          "quiz_options": [
+            "have already done",
+            "did",
+            "already done",
+            "has already done"
+          ],
+          "accepts": [
+            "I have already done my homework.",
+            "I've already done my homework."
+          ],
+          "explanation": "**have already done**. **already**, not *did.",
+          "explanation_cz": "**have already done**. **already**, ne *did."
+        },
+        {
+          "en": "She has already written an email.",
+          "cz": "Už napsala e-mail.",
+          "gap": "She ____ an email. (already/write)",
+          "gap_answer": "has already written",
+          "quiz_options": [
+            "has already written",
+            "wrote",
+            "already written",
+            "have already written"
+          ],
+          "accepts": [
+            "She has already written an email.",
+            "She has already written an e-mail."
+          ],
+          "explanation": "**has already written**. **already**, not *wrote.",
+          "explanation_cz": "**has already written**. **already**, ne *wrote."
+        },
+        {
+          "en": "I have just cleaned the kitchen.",
+          "cz": "Právě jsem uklidil kuchyň.",
+          "gap": "I ____ the kitchen. (just/clean)",
+          "gap_answer": "have just cleaned",
+          "quiz_options": [
+            "have just cleaned",
+            "cleaned",
+            "just cleaned",
+            "has just cleaned"
+          ],
+          "accepts": [
+            "I have just cleaned the kitchen.",
+            "I've just cleaned the kitchen."
+          ],
+          "explanation": "**have just cleaned**. **just**, not *cleaned.",
+          "explanation_cz": "**have just cleaned**. **just**, ne *cleaned."
+        },
+        {
+          "en": "She has already opened the window.",
+          "cz": "Už otevřela okno.",
+          "gap": "She ____ the window. (already/open)",
+          "gap_answer": "has already opened",
+          "quiz_options": [
+            "has already opened",
+            "opened",
+            "already opened",
+            "have already opened"
+          ],
+          "accepts": [
+            "She has already opened the window."
+          ],
+          "explanation": "**has already opened**. **already**, not *opened.",
+          "explanation_cz": "**has already opened**. **already**, ne *opened."
+        },
+        {
+          "en": "I have already read that book.",
+          "cz": "Tu knihu už jsem četl.",
+          "gap": "I ____ that book. (already/read)",
+          "gap_answer": "have already read",
+          "quiz_options": [
+            "have already read",
+            "readed",
+            "already read",
+            "has already read"
+          ],
+          "accepts": [
+            "I have already read that book.",
+            "I've already read that book."
+          ],
+          "explanation": "**have already read**. **already**, not *readed.",
+          "explanation_cz": "**have already read**. **already**, ne *readed."
+        },
+        {
+          "en": "She has just taken my bag.",
+          "cz": "Právě mi vzala tašku.",
+          "gap": "She ____ my bag. (just/take)",
+          "gap_answer": "has just taken",
+          "quiz_options": [
+            "has just taken",
+            "took",
+            "just taken",
+            "have just taken"
+          ],
+          "accepts": [
+            "She has just taken my bag."
+          ],
+          "explanation": "**has just taken**. **just**, not *took.",
+          "explanation_cz": "**has just taken**. **just**, ne *took."
+        },
+        {
+          "en": "We have already made lunch.",
+          "cz": "Oběd už jsme udělali.",
+          "gap": "We ____ lunch. (already/make)",
+          "gap_answer": "have already made",
+          "quiz_options": [
+            "have already made",
+            "made",
+            "already made",
+            "has already made"
+          ],
+          "accepts": [
+            "We have already made lunch.",
+            "We've already made lunch."
+          ],
+          "explanation": "**have already made**. **already**, not *made.",
+          "explanation_cz": "**have already made**. **already**, ne *made."
+        },
+        {
+          "en": "They have just left the office.",
+          "cz": "Právě odešli z kanceláře.",
+          "gap": "They ____ the office. (just/leave)",
+          "gap_answer": "have just left",
+          "quiz_options": [
+            "have just left",
+            "left",
+            "just left",
+            "has just left"
+          ],
+          "accepts": [
+            "They have just left the office.",
+            "They've just left the office."
+          ],
+          "explanation": "**have just left**. **just**, not *left.",
+          "explanation_cz": "**have just left**. **just**, ne *left."
+        },
+        {
+          "en": "I have already been to London.",
+          "cz": "V Londýně už jsem byl.",
+          "gap": "I ____ to London. (already/be)",
+          "gap_answer": "have already been",
+          "quiz_options": [
+            "have already been",
+            "was",
+            "already been",
+            "has already been"
+          ],
+          "accepts": [
+            "I have already been to London.",
+            "I've already been to London."
+          ],
+          "explanation": "**have already been**. **already**, not *was.",
+          "explanation_cz": "**have already been**. **already**, ne *was."
+        },
+        {
+          "en": "She has already spoken to the manager.",
+          "cz": "S manažerem už mluvila.",
+          "gap": "She ____ to the manager. (already/speak)",
+          "gap_answer": "has already spoken",
+          "quiz_options": [
+            "has already spoken",
+            "spoke",
+            "already spoken",
+            "have already spoken"
+          ],
+          "accepts": [
+            "She has already spoken to the manager.",
+            "She has already talked to the manager.",
+            "She has already spoken with the manager.",
+            "She has already talked with the manager."
+          ],
+          "explanation": "**has already spoken**. **already**, not *spoke.",
+          "explanation_cz": "**has already spoken**. **already**, ne *spoke.",
           "gap_accepts": [
-            "has not",
-            "hasn't"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
+            "has already spoken",
+            "has already talked"
+          ]
         },
         {
-          "en": "We haven't seen him.",
-          "cz": "Neviděli jsme ho.",
-          "gap": "We ____ seen him.",
-          "gap_answer": "haven't",
-          "accepts": [
-            "We haven't seen him.",
-            "We have not seen him."
+          "en": "I have just broken a glass.",
+          "cz": "Právě jsem rozbil sklenici.",
+          "gap": "I ____ a glass. (just/break)",
+          "gap_answer": "have just broken",
+          "quiz_options": [
+            "have just broken",
+            "broke",
+            "just broken",
+            "has just broken"
           ],
+          "accepts": [
+            "I have just broken a glass.",
+            "I've just broken a glass."
+          ],
+          "explanation": "**have just broken**. **just**, not *broke.",
+          "explanation_cz": "**have just broken**. **just**, ne *broke."
+        },
+        {
+          "en": "They have already forgotten the address.",
+          "cz": "Adresu už zapomněli.",
+          "gap": "They ____ the address. (already/forget)",
+          "gap_answer": "have already forgotten",
+          "quiz_options": [
+            "have already forgotten",
+            "forgot",
+            "already forgotten",
+            "has already forgotten"
+          ],
+          "accepts": [
+            "They have already forgotten the address.",
+            "They've already forgotten the address."
+          ],
+          "explanation": "**have already forgotten**. **already**, not *forgot.",
+          "explanation_cz": "**have already forgotten**. **already**, ne *forgot."
+        },
+        {
+          "en": "I haven't finished yet.",
+          "cz": "Ještě jsem nedokončil.",
+          "gap": "I ____ yet. (finish)",
+          "gap_answer": "haven't finished",
+          "quiz_options": [
+            "haven't finished",
+            "didn't finish",
+            "haven't finish",
+            "hasn't finished"
+          ],
+          "accepts": [
+            "I haven't finished yet.",
+            "I have not finished yet."
+          ],
+          "explanation": "**haven't finished** + **yet**. Not *didn't finish.",
+          "explanation_cz": "**haven't finished** + **yet**. Ne *didn't finish.",
           "gap_accepts": [
-            "have not",
-            "haven't"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
+            "have not finished",
+            "haven't finished"
+          ]
         },
         {
-          "en": "Have you finished?",
-          "cz": "Dokončil jsi?",
-          "gap": "____ you finished?",
-          "gap_answer": "Have",
-          "accepts": [
-            "Have you finished?"
+          "en": "She hasn't called yet.",
+          "cz": "Ještě nezavolala.",
+          "gap": "She ____ yet. (call)",
+          "gap_answer": "hasn't called",
+          "quiz_options": [
+            "hasn't called",
+            "didn't call",
+            "hasn't call",
+            "haven't called"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "accepts": [
+            "She hasn't called yet.",
+            "She has not called yet."
+          ],
+          "explanation": "**hasn't called** + **yet**. Not *didn't call.",
+          "explanation_cz": "**hasn't called** + **yet**. Ne *didn't call.",
+          "gap_accepts": [
+            "has not called",
+            "hasn't called"
+          ]
         },
         {
-          "en": "Has she arrived?",
-          "cz": "Dorazila?",
-          "gap": "____ she arrived?",
-          "gap_answer": "Has",
-          "accepts": [
-            "Has she arrived?"
+          "en": "We haven't seen him yet.",
+          "cz": "Ještě jsme ho neviděli.",
+          "gap": "We ____ him yet. (see)",
+          "gap_answer": "haven't seen",
+          "quiz_options": [
+            "haven't seen",
+            "didn't see",
+            "haven't saw",
+            "hasn't seen"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "accepts": [
+            "We haven't seen him yet.",
+            "We have not seen him yet."
+          ],
+          "explanation": "**haven't seen** + **yet**. see → **seen**.",
+          "explanation_cz": "**haven't seen** + **yet**. see → **seen**.",
+          "gap_accepts": [
+            "have not seen",
+            "haven't seen"
+          ]
         },
         {
-          "en": "Have they eaten?",
-          "cz": "Jedli? / Snědli?",
-          "gap": "____ they eaten?",
-          "gap_answer": "Have",
-          "accepts": [
-            "Have they eaten?"
+          "en": "He hasn't left yet.",
+          "cz": "Ještě neodešel.",
+          "gap": "He ____ yet. (leave)",
+          "gap_answer": "hasn't left",
+          "quiz_options": [
+            "hasn't left",
+            "didn't leave",
+            "hasn't leave",
+            "haven't left"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
-        },
-        {
-          "en": "I have never been to London.",
-          "cz": "Nikdy jsem nebyl v Londýně.",
-          "gap": "I have ____ been to London.",
-          "gap_answer": "never",
           "accepts": [
-            "I have never been to London.",
-            "I've never been to London."
+            "He hasn't left yet.",
+            "He has not left yet."
           ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "She has already left.",
-          "cz": "Už odešla (ona).",
-          "gap": "She has ____ left.",
-          "gap_answer": "already",
-          "accepts": [
-            "She has already left.",
-            "She's already left."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "Have you ever visited Prague?",
-          "cz": "Navštívil jsi někdy Prahu?",
-          "gap": "Have you ____ visited Prague?",
-          "gap_answer": "ever",
-          "accepts": [
-            "Have you ever visited Prague?"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "I have just started.",
-          "cz": "Právě jsem začal.",
-          "gap": "I have ____ started.",
-          "gap_answer": "just",
-          "accepts": [
-            "I have just started.",
-            "I've just started."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "He has lived here for two years.",
-          "cz": "Bydlí tady dva roky. (on · stále)",
-          "gap": "He has ____ here for two years.",
-          "gap_answer": "lived",
-          "accepts": [
-            "He has lived here for two years.",
-            "He's lived here for two years."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "We have known Tom since 2019.",
-          "cz": "Známe Toma od roku 2019.",
-          "gap": "We have ____ Tom since 2019.",
-          "gap_answer": "known",
-          "accepts": [
-            "We have known Tom since 2019.",
-            "We've known Tom since 2019."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "I have done my homework.",
-          "cz": "Udělal jsem úkol.",
-          "gap": "I have ____ my homework.",
-          "gap_answer": "done",
-          "accepts": [
-            "I have done my homework.",
-            "I've done my homework."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "She has written three emails.",
-          "cz": "Napsala tři e-maily (ona).",
-          "gap": "She has ____ three emails.",
-          "gap_answer": "written",
-          "accepts": [
-            "She has written three emails.",
-            "She's written three emails.",
-            "She has written three e-mails."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "I have cleaned the kitchen.",
-          "cz": "Uklidil jsem kuchyň. (je uklizená)",
-          "gap": "I have ____ the kitchen.",
-          "gap_answer": "cleaned",
-          "accepts": [
-            "I have cleaned the kitchen.",
-            "I've cleaned the kitchen."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "She has packed her bag.",
-          "cz": "Sbalila si tašku (ona).",
-          "gap": "She has ____ her bag.",
-          "gap_answer": "packed",
-          "accepts": [
-            "She has packed her bag.",
-            "She's packed her bag."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "We have booked a hotel.",
-          "cz": "Zarezervovali jsme hotel.",
-          "gap": "We have ____ a hotel.",
-          "gap_answer": "booked",
-          "accepts": [
-            "We have booked a hotel.",
-            "We've booked a hotel."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "He has chosen a new job.",
-          "cz": "Vybral si novou práci (on).",
-          "gap": "He has ____ a new job.",
-          "gap_answer": "chosen",
-          "accepts": [
-            "He has chosen a new job.",
-            "He's chosen a new job."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "They have built a garage.",
-          "cz": "Postavili garáž.",
-          "gap": "They have ____ a garage.",
-          "gap_answer": "built",
-          "accepts": [
-            "They have built a garage.",
-            "They've built a garage."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "I have read that book.",
-          "cz": "Tu knihu jsem četl. (znám ji)",
-          "gap": "I have ____ that book.",
-          "gap_answer": "read",
-          "accepts": [
-            "I have read that book.",
-            "I've read that book."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "She has spoken to the manager.",
-          "cz": "Mluvila s manažerem (ona).",
-          "gap": "She has ____ to the manager.",
-          "gap_answer": "spoken",
-          "accepts": [
-            "She has spoken to the manager.",
-            "She's spoken to the manager."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "Have you paid the bill?",
-          "cz": "Zaplatil jsi účet?",
-          "gap": "____ you paid the bill?",
-          "gap_answer": "Have",
-          "accepts": [
-            "Have you paid the bill?"
-          ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
-        },
-        {
-          "en": "Has he replied yet?",
-          "cz": "Už odpověděl?",
-          "gap": "____ he replied yet?",
-          "gap_answer": "Has",
-          "accepts": [
-            "Has he replied yet?"
-          ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "explanation": "**hasn't left** + **yet**.",
+          "explanation_cz": "**hasn't left** + **yet**.",
+          "use": false,
+          "gap_accepts": [
+            "has not left",
+            "hasn't left"
+          ]
         },
         {
           "en": "I haven't decided yet.",
           "cz": "Ještě jsem se nerozhodl.",
-          "gap": "I ____ decided yet.",
-          "gap_answer": "haven't",
+          "gap": "I ____ yet. (decide)",
+          "gap_answer": "haven't decided",
+          "quiz_options": [
+            "haven't decided",
+            "didn't decide",
+            "haven't decide",
+            "hasn't decided"
+          ],
           "accepts": [
             "I haven't decided yet.",
             "I have not decided yet."
           ],
+          "explanation": "**haven't decided** + **yet**.",
+          "explanation_cz": "**haven't decided** + **yet**.",
+          "use": false,
           "gap_accepts": [
-            "have not",
-            "haven't"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
+            "have not decided",
+            "haven't decided"
+          ]
         },
         {
-          "en": "She hasn't sent the email.",
-          "cz": "Neposlala e-mail (ona).",
-          "gap": "She ____ sent the email.",
-          "gap_answer": "hasn't",
-          "accepts": [
-            "She hasn't sent the email.",
-            "She has not sent the email.",
-            "She hasn't sent the e-mail."
+          "en": "She hasn't sent the email yet.",
+          "cz": "Ještě neposlala e-mail.",
+          "gap": "She ____ the email yet. (send)",
+          "gap_answer": "hasn't sent",
+          "quiz_options": [
+            "hasn't sent",
+            "didn't send",
+            "hasn't send",
+            "haven't sent"
           ],
+          "accepts": [
+            "She hasn't sent the email yet.",
+            "She has not sent the email yet.",
+            "She hasn't sent the e-mail yet.",
+            "She has not sent the e-mail yet."
+          ],
+          "explanation": "**hasn't sent** + **yet**. Not *didn't send.",
+          "explanation_cz": "**hasn't sent** + **yet**. Ne *didn't send.",
+          "use": false,
           "gap_accepts": [
-            "has not",
-            "hasn't"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "We have just eaten.",
-          "cz": "Právě jsme jedli.",
-          "gap": "We have ____ eaten.",
-          "gap_answer": "just",
-          "accepts": [
-            "We have just eaten.",
-            "We've just eaten."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "He has already left the office.",
-          "cz": "Už odešel z kanceláře (on).",
-          "gap": "He has ____ left the office.",
-          "gap_answer": "already",
-          "accepts": [
-            "He has already left the office.",
-            "He's already left the office."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "Have you ever flown?",
-          "cz": "Letěl jsi někdy letadlem?",
-          "gap": "Have you ____ flown?",
-          "gap_answer": "ever",
-          "accepts": [
-            "Have you ever flown?"
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "I have never tried sushi.",
-          "cz": "Nikdy jsem nezkusil sushi.",
-          "gap": "I have ____ tried sushi.",
-          "gap_answer": "never",
-          "accepts": [
-            "I have never tried sushi.",
-            "I've never tried sushi."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "She has lived here since March.",
-          "cz": "Bydlí tady od března (ona).",
-          "gap": "She has ____ here since March.",
-          "gap_answer": "lived",
-          "accepts": [
-            "She has lived here since March.",
-            "She's lived here since March."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "We have worked together for years.",
-          "cz": "Pracujeme spolu roky.",
-          "gap": "We have ____ together for years.",
-          "gap_answer": "worked",
-          "accepts": [
-            "We have worked together for years.",
-            "We've worked together for years."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "I have broken a glass.",
-          "cz": "Rozbil jsem sklenici.",
-          "gap": "I have ____ a glass.",
-          "gap_answer": "broken",
-          "accepts": [
-            "I have broken a glass.",
-            "I've broken a glass."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "They have forgotten the address.",
-          "cz": "Zapomněli adresu.",
-          "gap": "They have ____ the address.",
-          "gap_answer": "forgotten",
-          "accepts": [
-            "They have forgotten the address.",
-            "They've forgotten the address."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
-        },
-        {
-          "en": "Has the post arrived?",
-          "cz": "Přišla pošta?",
-          "gap": "____ the post arrived?",
-          "gap_answer": "Has",
-          "accepts": [
-            "Has the post arrived?",
-            "Has the mail arrived?"
-          ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
-        },
-        {
-          "en": "I have made a mistake.",
-          "cz": "Udělal jsem chybu.",
-          "gap": "I have ____ a mistake.",
-          "gap_answer": "made",
-          "accepts": [
-            "I have made a mistake.",
-            "I've made a mistake."
-          ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
-        },
-        {
-          "en": "She has taken my bag.",
-          "cz": "Vzala mi tašku. (ona · výsledek teď)",
-          "gap": "She has ____ my bag.",
-          "gap_answer": "taken",
-          "accepts": [
-            "She has taken my bag.",
-            "She's taken my bag.",
-            "She has taken my bag by mistake.",
-            "She's taken my bag by mistake."
-          ],
-          "explanation": "Past participle after have/has.",
-          "explanation_cz": "Příčestí minulé po have/has."
+            "has not sent",
+            "hasn't sent"
+          ]
         },
         {
           "en": "We haven't met before.",
           "cz": "Ještě jsme se nepotkali.",
-          "gap": "We ____ met before.",
-          "gap_answer": "haven't",
+          "gap": "We ____ before. (meet)",
+          "gap_answer": "haven't met",
+          "quiz_options": [
+            "haven't met",
+            "didn't meet",
+            "haven't meet",
+            "hasn't met"
+          ],
           "accepts": [
             "We haven't met before.",
             "We have not met before."
           ],
+          "explanation": "**haven't met** before. Not *didn't meet.",
+          "explanation_cz": "**haven't met** before. Ne *didn't meet.",
           "gap_accepts": [
-            "have not",
-            "haven't"
+            "have not met",
+            "haven't met"
+          ]
+        },
+        {
+          "en": "Have you finished yet?",
+          "cz": "Už jsi dokončil?",
+          "gap": "____ you finished yet?",
+          "gap_answer": "Have",
+          "quiz_options": [
+            "Have",
+            "Did",
+            "Has",
+            "Do"
           ],
-          "explanation": "Present perfect: have/has + past participle (link to now).",
-          "explanation_cz": "Předpřítomný: have/has + příčestí (vazba na teď)."
+          "accepts": [
+            "Have you finished yet?"
+          ],
+          "explanation": "**Have** you finished **yet**? Not *Did you finished?*",
+          "explanation_cz": "**Have** you finished **yet**? Ne *Did you finished?*",
+          "use": false
+        },
+        {
+          "en": "Has she arrived yet?",
+          "cz": "Už dorazila?",
+          "gap": "____ she arrived yet?",
+          "gap_answer": "Has",
+          "quiz_options": [
+            "Has",
+            "Did",
+            "Have",
+            "Does"
+          ],
+          "accepts": [
+            "Has she arrived yet?"
+          ],
+          "explanation": "**Has** she arrived **yet**? she → **Has**.",
+          "explanation_cz": "**Has** she arrived **yet**? she → **Has**.",
+          "use": false
+        },
+        {
+          "en": "Have they eaten yet?",
+          "cz": "Už obědvali?",
+          "gap": "____ they eaten yet?",
+          "gap_answer": "Have",
+          "quiz_options": [
+            "Have",
+            "Did",
+            "Has",
+            "Do"
+          ],
+          "accepts": [
+            "Have they eaten yet?"
+          ],
+          "explanation": "**Have** they eaten **yet**?",
+          "explanation_cz": "**Have** they eaten **yet**?",
+          "use": false
+        },
+        {
+          "en": "Have you seen that film yet?",
+          "cz": "Už jsi viděl ten film?",
+          "gap": "____ you seen that film yet?",
+          "gap_answer": "Have",
+          "quiz_options": [
+            "Have",
+            "Did",
+            "Has",
+            "Do"
+          ],
+          "accepts": [
+            "Have you seen that film yet?",
+            "Have you seen that movie yet?"
+          ],
+          "explanation": "**Have** you seen… **yet**? see → **seen**.",
+          "explanation_cz": "**Have** you seen… **yet**? see → **seen**.",
+          "use": false
+        },
+        {
+          "en": "Has he called yet?",
+          "cz": "Už zavolal?",
+          "gap": "____ he called yet?",
+          "gap_answer": "Has",
+          "quiz_options": [
+            "Has",
+            "Did",
+            "Have",
+            "Does"
+          ],
+          "accepts": [
+            "Has he called yet?"
+          ],
+          "explanation": "**Has** he called **yet**?",
+          "explanation_cz": "**Has** he called **yet**?",
+          "use": false
         },
         {
           "en": "What have you done?",
           "cz": "Co jsi udělal?",
           "gap": "What ____ you done?",
           "gap_answer": "have",
+          "quiz_options": [
+            "have",
+            "did",
+            "has",
+            "do"
+          ],
           "accepts": [
             "What have you done?"
           ],
-          "explanation": "Present perfect: have/has + past participle.",
-          "explanation_cz": "Předpřítomný: have/has + příčestí minulé."
+          "explanation": "What **have** you **done**? **done** is already there, so not *did.",
+          "explanation_cz": "What **have** you **done**? **done** už je tam, ne *did.",
+          "use": false
+        },
+        {
+          "en": "I have just started.",
+          "cz": "Právě jsem začal.",
+          "gap": "I ____. (just/start)",
+          "gap_answer": "have just started",
+          "quiz_options": [
+            "have just started",
+            "just started",
+            "have started",
+            "has just started"
+          ],
+          "accepts": [
+            "I have just started.",
+            "I've just started."
+          ],
+          "explanation": "**have just started**. **just** = a moment ago.",
+          "explanation_cz": "**have just started**. **just** = před chvílí.",
+          "use": false
+        },
+        {
+          "en": "She has already left.",
+          "cz": "Už odešla.",
+          "gap": "She ____. (already/leave)",
+          "gap_answer": "has already left",
+          "quiz_options": [
+            "has already left",
+            "already left",
+            "has left",
+            "have already left"
+          ],
+          "accepts": [
+            "She has already left."
+          ],
+          "explanation": "**has already left**. **already**.",
+          "explanation_cz": "**has already left**. **already**.",
+          "use": false
+        },
+        {
+          "en": "We have just eaten.",
+          "cz": "Právě jsme jedli.",
+          "gap": "We ____. (just/eat)",
+          "gap_answer": "have just eaten",
+          "quiz_options": [
+            "have just eaten",
+            "just eaten",
+            "have eaten",
+            "has just eaten"
+          ],
+          "accepts": [
+            "We have just eaten.",
+            "We've just eaten."
+          ],
+          "explanation": "**have just eaten**. **just** after **have**.",
+          "explanation_cz": "**have just eaten**. **just** po **have**.",
+          "use": false
+        },
+        {
+          "en": "I have never been to London.",
+          "cz": "Nikdy jsem nebyl v Londýně.",
+          "gap": "I ____ to London. (never/be)",
+          "gap_answer": "have never been",
+          "quiz_options": [
+            "have never been",
+            "never was",
+            "have been",
+            "has never been"
+          ],
+          "accepts": [
+            "I have never been to London.",
+            "I've never been to London."
+          ],
+          "explanation": "**have never been**. **never** after **have**.",
+          "explanation_cz": "**have never been**. **never** po **have**.",
+          "use": false
+        },
+        {
+          "en": "He has lived here for two years.",
+          "cz": "On bydlí tady dva roky.",
+          "gap": "He ____ here for two years. (live)",
+          "gap_answer": "has lived",
+          "quiz_options": [
+            "has lived",
+            "lived",
+            "has live",
+            "have lived"
+          ],
+          "accepts": [
+            "He has lived here for two years."
+          ],
+          "explanation": "**has lived** + **for** + a period. Still true now.",
+          "explanation_cz": "**has lived** + **for** + doba. Platí i teď.",
+          "use": false
+        },
+        {
+          "en": "She has lived here for a long time.",
+          "cz": "Ona bydlí tady dlouho.",
+          "gap": "She ____ here for a long time. (live)",
+          "gap_answer": "has lived",
+          "quiz_options": [
+            "has lived",
+            "lived",
+            "has live",
+            "have lived"
+          ],
+          "accepts": [
+            "She has lived here for a long time."
+          ],
+          "explanation": "she → **has lived**. **for** + how long.",
+          "explanation_cz": "she → **has lived**. **for** + jak dlouho.",
+          "use": false
+        },
+        {
+          "en": "They have already built a house.",
+          "cz": "Dům už postavili.",
+          "gap": "They ____ a house. (already/build)",
+          "gap_answer": "have already built",
+          "quiz_options": [
+            "have already built",
+            "built",
+            "already built",
+            "has already built"
+          ],
+          "accepts": [
+            "They have already built a house.",
+            "They've already built a house."
+          ],
+          "explanation": "**have already built**. **already**, not *built.",
+          "explanation_cz": "**have already built**. **already**, ne *built.",
+          "use": false
+        },
+        {
+          "en": "I have already paid the bill.",
+          "cz": "Účet už jsem zaplatil.",
+          "gap": "I ____ the bill. (already/pay)",
+          "gap_answer": "have already paid",
+          "quiz_options": [
+            "have already paid",
+            "paid",
+            "already paid",
+            "has already paid"
+          ],
+          "accepts": [
+            "I have already paid the bill.",
+            "I've already paid the bill."
+          ],
+          "explanation": "**have already paid**. **already**, not *paid.",
+          "explanation_cz": "**have already paid**. **already**, ne *paid.",
+          "use": false
         }
       ]
     }
@@ -619,296 +934,378 @@
     "cards": [
       {
         "title": "Present perfect",
-        "title_cz": "Předpřítomný — have/has + 3. tvar",
+        "title_cz": "Předpřítomný — have/has + příčestí minulé",
+        "points": [
+          "You know I **live** here (always) and I **lived** here (finished).",
+          "This form is **have** / **has** + past participle.",
+          "It started in the past and is still true **now**."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 210\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"260\" y=\"22\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">always</text>\n  <text x=\"260\" y=\"42\" font-size=\"15\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I live here</text>\n  <line x1=\"30\" y1=\"100\" x2=\"500\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,100 490,95 490,105\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"430\" y1=\"70\" x2=\"430\" y2=\"155\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"430\" y=\"64\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <circle cx=\"90\" cy=\"100\" r=\"6\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"90\" y=\"80\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">2019</text>\n  <text x=\"90\" y=\"128\" font-size=\"14\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I lived here</text>\n  <text x=\"90\" y=\"146\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple</text>\n  <rect x=\"180\" y=\"92\" width=\"250\" height=\"16\" rx=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"305\" y=\"172\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I have lived here</text>\n  <text x=\"305\" y=\"190\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">still now</text>\n</svg>",
         "table": {
-          "caption": "form",
+          "caption": "shape",
           "headers": [
             "Person",
-            "have",
-            "participle"
+            "Form",
+            "Example"
           ],
           "rows": [
             [
               "I / you / we / they",
-              "have",
-              "finished / seen"
+              "**have** + past participle",
+              "I **have lived** here."
             ],
             [
               "he / she / it",
-              "has",
-              "finished / seen"
+              "**has** + past participle",
+              "She **has lived** here."
             ]
           ]
         },
-        "points": [
-          "I have finished. · She has gone.",
-          "Not: I has · Not: She have",
-          "Link past → now. have/has + past participle."
-        ]
-      },
-      {
-        "title": "Regular / irregular",
-        "title_cz": "3. tvar",
-        "table": {
-          "caption": "participles",
-          "headers": [
-            "Base",
-            "Past simple",
-            "Participle"
-          ],
-          "rows": [
-            [
-              "finish",
-              "finished",
-              "finished"
+        "tables": [
+          {
+            "caption": "not",
+            "headers": [
+              "Not",
+              "Say"
             ],
-            [
-              "see",
-              "saw",
-              "seen"
-            ],
-            [
-              "go",
-              "went",
-              "gone"
-            ],
-            [
-              "eat",
-              "ate",
-              "eaten"
-            ],
-            [
-              "do",
-              "did",
-              "done"
-            ],
-            [
-              "write",
-              "wrote",
-              "written"
-            ],
-            [
-              "buy",
-              "bought",
-              "bought"
-            ],
-            [
-              "lose",
-              "lost",
-              "lost"
+            "rows": [
+              [
+                "~~I has lived here~~",
+                "I **have lived** here"
+              ],
+              [
+                "~~She have lived here~~",
+                "She **has lived** here"
+              ]
             ]
-          ]
-        },
-        "points": [
-          "Gap often on have/has or the participle",
-          "Learn high-frequency irregulars"
+          }
         ]
       },
       {
-        "title": "Negative & questions",
-        "title_cz": "Zápor a otázky",
-        "table": {
-          "caption": "− / ?",
-          "headers": [
-            "Form",
-            "Example"
-          ],
-          "rows": [
-            [
-              "haven't / hasn't + past participle",
-              "I haven't finished."
-            ],
-            [
-              "Have / Has + subject + past participle",
-              "Have you finished?"
-            ]
-          ]
-        },
+        "title": "Present simple",
+        "title_cz": "Přítomný prostý",
+        "text_first": true,
         "points": [
-          "Have you…? · Has she…?",
-          "Yes, I have. / No, I haven't."
-        ]
-      },
-      {
-        "title": "Time words",
-        "title_cz": "just · already · yet · ever · never · for · since",
+          "Always true. No finished time.",
+          "Not a story about the past."
+        ],
         "table": {
-          "caption": "words",
+          "caption": "always",
           "headers": [
-            "Word",
+            "English",
             "Idea"
           ],
           "rows": [
             [
-              "just",
-              "a moment ago → now"
+              "I **live** here.",
+              "true now, any day"
             ],
             [
-              "already",
-              "sooner than expected"
+              "I **work** here.",
+              "true now, any day"
             ],
             [
-              "ever / never",
-              "in your life"
+              "I **study** English.",
+              "true now, any day"
             ],
             [
-              "for + period",
-              "for two years"
-            ],
-            [
-              "since + point",
-              "since 2019"
-            ]
-          ]
-        },
-        "points": [
-          "Thin A2 slice — not every use"
-        ]
-      },
-      {
-        "title": "Timeline · vs past simple",
-        "title_cz": "Časová osa · vs past simple",
-        "table": {
-          "caption": "same idea, different form",
-          "headers": [
-            "Situation",
-            "Form",
-            "Example"
-          ],
-          "rows": [
-            [
-              "Result still true now",
-              "present perfect",
-              "I have lost my keys. (still lost)"
-            ],
-            [
-              "Finished time said",
-              "past simple",
-              "I lost my keys yesterday."
-            ],
-            [
-              "Duration to now",
-              "present perfect",
-              "I have lived here for two years."
-            ],
-            [
-              "Closed period",
-              "past simple",
-              "I lived in Brno in 2019."
-            ]
-          ]
-        },
-        "points": [
-          "PP: have/has + past participle · link to now",
-          "Past simple: yesterday / last week / in 2010",
-          "CZ often uses past for both — English chooses by now-link",
-          "No yesterday with present perfect (usual A2 rule)",
-          "Picture a line: PAST ———● NOW.",
-          "Present perfect still touches NOW (result, experience, for/since).",
-          "Past simple is a closed box in the past (yesterday, in 2019)."
-        ]
-      },
-      {
-        "title": "Now ← past",
-        "title_cz": "Teď ← minulost",
-        "points": [
-          "PAST · · · · · · · · · NOW\\n[ past simple box ] [ perfect touches now ]"
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "I have finished.",
-              "result now"
-            ],
-            [
-              "I finished at six.",
-              "finished time"
-            ],
-            [
-              "Have you ever…?",
-              "life up to now"
+              "I **play** football.",
+              "true now, any day"
             ]
           ]
         }
       },
       {
-        "title": "More participles",
-        "title_cz": "Další 3. tvary",
+        "title": "Past simple",
+        "title_cz": "Minulý prostý",
+        "text_first": true,
+        "points": [
+          "Finished time. It stopped.",
+          "The sentence names that time."
+        ],
         "table": {
-          "caption": "past participle",
+          "caption": "finished",
           "headers": [
-            "Base",
-            "Past",
-            "Participle"
+            "English",
+            "Finished time"
           ],
           "rows": [
             [
-              "choose",
-              "chose",
-              "chosen"
+              "I **lived** here in 2019.",
+              "in 2019"
             ],
             [
-              "speak",
-              "spoke",
-              "spoken"
+              "I **worked** here in 2018.",
+              "in 2018"
+            ],
+            [
+              "I **studied** English in May.",
+              "in May"
+            ],
+            [
+              "I **played** football on Saturday.",
+              "on Saturday"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Always · finished · now",
+        "title_cz": "Vždy · hotovo · teď",
+        "text_first": true,
+        "points": [
+          "Same verb. Three times.",
+          "Present perfect: started, still true **now**."
+        ],
+        "table": {
+          "caption": "one verb",
+          "headers": [
+            "Time",
+            "English"
+          ],
+          "rows": [
+            [
+              "always",
+              "I **live** here."
+            ],
+            [
+              "finished",
+              "I **lived** here in 2019."
+            ],
+            [
+              "still now",
+              "I **have lived** here for two years."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Past participle",
+        "title_cz": "Příčestí minulé",
+        "text_first": true,
+        "points": [
+          "After **have/has**, use the **past participle**.",
+          "Regular: add **-ed**.",
+          "**gone** = not here now. **been** = went and came back."
+        ],
+        "table": {
+          "caption": "forms",
+          "headers": [
+            "every day",
+            "yesterday",
+            "with have"
+          ],
+          "rows": [
+            [
+              "live",
+              "lived",
+              "have **lived**"
+            ],
+            [
+              "finish",
+              "finished",
+              "have **finished**"
+            ],
+            [
+              "see",
+              "saw",
+              "have **seen**"
+            ],
+            [
+              "go",
+              "went",
+              "have **gone**"
+            ],
+            [
+              "be",
+              "was / were",
+              "have **been**"
+            ],
+            [
+              "eat",
+              "ate",
+              "have **eaten**"
+            ],
+            [
+              "do",
+              "did",
+              "have **done**"
+            ],
+            [
+              "write",
+              "wrote",
+              "have **written**"
+            ],
+            [
+              "lose",
+              "lost",
+              "have **lost**"
             ],
             [
               "break",
               "broke",
-              "broken"
-            ],
-            [
-              "forget",
-              "forgot",
-              "forgotten"
-            ],
-            [
-              "take",
-              "took",
-              "taken"
-            ],
-            [
-              "make",
-              "made",
-              "made"
-            ],
-            [
-              "pay",
-              "paid",
-              "paid"
-            ],
-            [
-              "read",
-              "read",
-              "read"
+              "have **broken**"
             ]
           ]
-        },
-        "points": [
-          "High-frequency set for A2"
-        ]
+        }
       },
       {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "title": "Negative",
+        "title_cz": "Zápor",
+        "text_first": true,
         "points": [
-          "have/has + past participle",
-          "haven't / hasn't · Have you…?",
-          "just · already · ever · never · for · since"
+          "**haven't** / **hasn't** + past participle.",
+          "Not ~~I didn't finished~~."
         ],
         "table": {
+          "caption": "−",
           "headers": [
-            "",
-            ""
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "he/she/it",
-              "has"
+              "~~I didn't finished~~",
+              "I **haven't finished**"
+            ],
+            [
+              "~~She hasn't call~~",
+              "She **hasn't called**"
+            ],
+            [
+              "~~We haven't saw him~~",
+              "We **haven't seen** him"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "I **haven't finished**.",
+            "cz": "Nedokončil jsem."
+          },
+          {
+            "en": "She **hasn't called**.",
+            "cz": "Nezavolala."
+          }
+        ]
+      },
+      {
+        "title": "Questions",
+        "title_cz": "Otázky",
+        "text_first": true,
+        "points": [
+          "**Have** / **Has** + person + past participle.",
+          "Not ~~Did you finished?~~"
+        ],
+        "table": {
+          "caption": "?",
+          "headers": [
+            "Question",
+            "Short answer"
+          ],
+          "rows": [
+            [
+              "**Have** you finished?",
+              "Yes, I **have**. / No, I **haven't**."
+            ],
+            [
+              "**Has** she arrived?",
+              "Yes, she **has**. / No, she **hasn't**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Time words",
+        "title_cz": "just · already · yet · ever · never · for · since",
+        "text_first": true,
+        "points": [
+          "These words often sit with this form.",
+          "**just**, **already**, **never** after **have** / **has**.",
+          "**yet** at the end, in **−** and **?**."
+        ],
+        "table": {
+          "caption": "words",
+          "headers": [
+            "Word",
+            "Idea",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**just**",
+              "a moment ago",
+              "I have **just** started."
+            ],
+            [
+              "**already**",
+              "sooner than you think",
+              "She has **already** left."
+            ],
+            [
+              "**yet**",
+              "up to now (− / ?)",
+              "He hasn't left **yet**."
+            ],
+            [
+              "**never**",
+              "not in your life",
+              "I have **never** been."
+            ],
+            [
+              "**ever**",
+              "in your life (?)",
+              "Have you **ever** been?"
+            ],
+            [
+              "**for** + period",
+              "how long",
+              "for two years"
+            ],
+            [
+              "**since** + point",
+              "from when",
+              "since 2019"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Need **have/has** and the **past participle**."
+        ],
+        "table": {
+          "headers": [
+            "Wrong",
+            "Right"
+          ],
+          "rows": [
+            [
+              "~~I has finished~~",
+              "I **have finished**"
+            ],
+            [
+              "~~She have gone~~",
+              "She **has gone**"
+            ],
+            [
+              "~~I have saw~~",
+              "I **have seen**"
+            ],
+            [
+              "~~I have went~~",
+              "I **have gone**"
+            ],
+            [
+              "~~Did you finished?~~",
+              "**Have** you **finished**?"
+            ],
+            [
+              "~~I live here two years~~",
+              "I **have lived** here for two years"
             ]
           ]
         }

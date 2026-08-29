@@ -6,6 +6,93 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — `a2_present_perfect` Telegram-tested · rules + lint
+
+Smoke closed (Telegram `a2_present_perfect tested`). New rules in AUTHORING-RULES:
+
+- **C34** no *3rd form* — say past participle. lint `thirdform`
+- **A9** Czech past does not pick present perfect — *just/already/yet/for*. lint `ppcuz`
+- **B12** Check is a 3-box sort of English sentences, not Match. lint `ppsort`
+- **B11** extended: Type `(just/finish)` on whole-VP gaps
+
+Pack: sort (live/work/study/play × 3 tenses, light cue); Quiz whole VP with tense cue + bracket; *packed* → *opened the window*. `a2_past_continuous` habit item got `(go)`.
+
+---
+
+## 2026-08-29 · local (interactive) — smoke rewrite `a2_adverbs_order`
+
+I8 audit then rewrite. James lock: **position** (before verb / after be), not which adverb. Frequency was A1 — always/usually are carriers. Czech ok. Do not tick INSPECTED. Dropdowns declined; used recommended: keep too/either/also + manner; Match = sort boxes.
+
+**Before (lint):** C17 Remember · C23/C30 *this pack* / Not: bullet · D3 `≈ rarely` · F3 Use-leads ×8 · noopts 50/50 · one filler explanation on all 50 · Quiz gapped the adverb word (always vs usually vs carefully). Frequency review card re-taught A1. already/yet meaning already in `a2_present_perfect`.
+
+**After:**
+- Intro 8→6 cards. Card 0 unit name + two places (SVG). After can. also/too/either. Manner (hard ≠ hardly). like … very much. Common mistakes ~~strike~~ (C32/C27). Cut Remember, Practice focus, Frequency review, already/yet meaning.
+- Sort: 12 frames into *before verb* / *after be/can* / *at the end*.
+- Quiz/Type: 31 items, authored chips. Gap is the **slot** (`always drink` / `drink always`; `is always` / `always is`; `can also` / `also can`; `works hard` / `hard works`; `coffee very much` / `very much coffee`). too/either/also is the one which-word contrast (end of +/− vs mid).
+- Use: 28 items. `can also` `use: false` (taky = also or too). A5: Use of also/too/either accepts the twin. 0 F3 leads. Unit dropped off the sequencing report (`ever` gone).
+
+**Gates (this pack):** lint EXACT 0. verify_pack this file 0 · C9 0 · C10 0. Playable: this pack not in the 2 pre-existing `a1_to_for_with` errors. check_codex PASSED. Course `audit.py --check` still red 366 vs 246 (dirty tree).
+
+**Smoke:** http://localhost:8097/#a2_adverbs_order — Ctrl+F5. Sort skip exists on the smoke toolbar. After Telegram `a2_adverbs_order tested`: new rules → reconcile → commit → new tab.
+
+---
+
+## 2026-08-29 · local (interactive) — smoke rewrite `a2_some_any_no`
+
+I8 audit then rewrite. James: *what is this unit about?* — not a repeat of smoked `a1_some_any`. This unit is **no = not…any** (one negation), **any in + = jakýkoli** vs **some**, and **something / anything / nothing**. Czech ok. Do not tick INSPECTED.
+
+**Before (lint):** C23 *this unit* / *A1* · C27 Say/Not · C14 card 0 not the unit name · 8-item A1 recap + offer · 36 EN↔CZ Match sentences · noopts 36 · B6 compounds mixed somebody onto something · D3 `(nějakou)` · D1 filler ×3 · A7 somebody/someone · A0 *každé dítě* = every.
+
+**After:**
+- Intro 4 cards. Card 0 = unit name + **no** = **not any** table + one-negation Not/Say (C14/C1/C27/C32). Card 1 any = jakýkoli vs some. Card 2 thing-compounds only. Card 3 Common mistakes Not/Say. No course-aside (C23). Bold the form (C13).
+- Match: 8 equivalent pairs *I have no coffee* = *I don't have any coffee* (like past simple work→worked). Quiz-only blocks do not leak into Match.
+- Quiz/Type: 30 items, authored chips. **no** / **not any** on-axis `no/any/some` (trap chip is `no` after *don't*). Free-choice `any/some/no`. Compounds `something/anything/nothing` only (B6). Cut A1 recap and the offer.
+- Use: 28 items. Dual no/not any accepts. `Do you want anything?` and `I want nothing` `use: false` (offer vs question; duplicate of *don't want anything*). Named subjects on 3sg. No parenthetical Czech.
+
+**Gates (this pack):** lint EXACT 0 (2 A4 `the table` candidates — English forces it). verify_pack this file 0 · C9 0 · C10 0. Playable: this pack not in the 2 pre-existing `a1_to_for_with` errors. check_codex PASSED. This unit is not in the audit 367 (0 unknowns). Course `audit.py --check` still red 367 vs 246 (dirty tree).
+
+**Smoke:** http://localhost:8097/#a2_some_any_no — Ctrl+F5. Match skip exists. After Telegram `a2_some_any_no tested`: new rules → reconcile → commit → new tab.
+
+---
+
+## 2026-08-29 · local (interactive) — smoke rewrite `a2_ed_ing_adjectives`
+
+I8 audit then rewrite. James lock: Czech ok; F3 / C11 / D3 / B8; chips on-axis (B6) bored vs boring, not sibling adjectives; C12 one mistake row per pair (dropdown). Match = sort feeling/cause (dropdown). Do not tick INSPECTED.
+
+**Before (lint):** C17 Remember · D3 slash on worried · F3 Use-leads ×6 (really, during, ending, mistake, storm) · noopts 24/24 (sibling-adjective chips) · filler explanations ×2 · 6 intro cards including Practice focus (C20) and a prepositions card (F2 / b1_dependent_prepositions).
+
+**After:**
+- Intro 6→3. Card 0 unit name (C14) + contrast diagram + feeling/cause table. Common pairs 2-col. Common mistakes 12 rows, Wrong first, ~~strike~~ (C32). Cut Remember, Practice focus, prepositions. Did not restore stressed/stressful (not an -ing pair).
+- Check: sort_bins (feeling / cause, 12 chips, 6 pairs) then Quiz. No EN↔CZ sentence Match.
+- Quiz/Type: 24 items, authored `quiz_options` = this pair only. Gap stays on the adjective (B8).
+- Use: 24 items, 0 F3 leads. Relexified during/really/ending/mistake/storm (home, film, book, work, dog).
+- D3: one Czech on worried. Unit dropped off the sequencing report (storm, mistake gone).
+
+**Gates (this pack):** lint EXACT 0 (3 A4 `the` candidates left — result / children+dog / exam). C9 0 · C10 0 · this unit not in playable errors · check_codex PASSED. `audit.py --check` still red on the **course** total 367 vs baseline 246 (pre-existing dirty tree). This unit is not in that 367.
+
+**Smoke:** http://localhost:8097/#a2_ed_ing_adjectives — Ctrl+F5. Sort skip exists on the smoke toolbar. After Telegram `a2_ed_ing_adjectives tested`: new rules → reconcile → commit → new tab.
+
+---
+
+## 2026-08-29 · local (interactive) — smoke rewrite `a2_present_perfect`
+
+I8 audit then rewrite. James lock: this unit is **have/has + 3rd form**; vs past simple stays `b1_present_perfect_vs_past`. Czech ok. Do not tick INSPECTED.
+
+**Before (lint):** C17 Remember · C30 Not: bullets · D3 slash ×3 · F3 Use-leads ×18 · noopts 48/48 · filler explanations ×3 · contraction false-flags on She's=she is · two vs-past-simple intro cards · teacher notes in `cz` · Quiz gapped have / the participle / just/already/ever/never as three different axes.
+
+**After:**
+- Intro 8→7 cards. Card 0 timeline (C29) vs I worked / I have finished / I'm working. C30 Not/Say. Cut Remember. Cut vs-past-simple teaching cards. Time-word card kept (C11). C32 ~~strike~~ mistakes. No `base` (C31).
+- Match: 12 form pairs see→seen (same shape as smoked `a2_past_simple`).
+- Quiz/Type: 43 items, authored `quiz_options`. Statements gap the **whole VP** (`have seen`, `hasn't called`) — B8 analog of continuous `am working`. Questions gap Have/Has vs Did/Do (same analog as Are vs Do).
+- Use: 26 items, 0 F3 leads. Questions / just-already-never / for-duration marked `use: false`.
+- Relexified audit unknowns off the bank: since, garage, sushi, together, mistake, replied. Unit dropped off the sequencing report (6 types).
+
+**Gates (this pack):** lint EXACT 0 (6 A4 `the` candidates left — English forces kitchen/office/manager/address/email/bill). C9 0 · C10 0 · playable 0 errors · check_codex PASSED · check_pretaught ratchet 92=92. `audit.py --check` still red on the **course** total 366 vs baseline 246 (pre-existing dirty tree; was 382 at session start). This unit is not in that 366.
+
+**Smoke:** http://localhost:8097/#a2_present_perfect — Ctrl+F5. Match skip exists. After Telegram `a2_present_perfect tested`: new rules → reconcile → commit → new tab.
+
+---
+
 ## 2026-08-29 · local (Claude tree session) — hang gate · agreement retag · portrait lift
 
 Tree lane only (Grok holds the smoke/pack lane and committed mid-session; no

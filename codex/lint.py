@@ -310,7 +310,7 @@ def lint_pack(uid):
                          "articlegap", "theregap", "cancant", "a1meta",
                          "courseaside", "negdef", "smallwords", "mistakecol",
                          "timesort", "aweek", "baddiagram", "notbullet",
-                         "verbcue")}
+                         "verbcue", "thirdform", "ppcuz", "ppsort")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -381,6 +381,29 @@ def lint_pack(uid):
                     r"\b(a|an|the|to|for|in|lunch|dinner|football|english)\b",
                     rest, re.I):
                 f["verbcue"].append(it)
+
+        # B11 — present perfect whole VP (have just finished) with no (just/finish)
+        # a2_present_perfect 2026-08-29: I ____. → have just finished.
+        if uid == "a2_present_perfect":
+            if re.search(r"\b(have|has|haven't|hasn't)\s+\w+", ga) and "(" not in gap:
+                after = re.split(r"_{2,}", gap, maxsplit=1)
+                rest = after[1] if len(after) > 1 else ""
+                if not re.search(r"\b(finished|arrived|eaten|seen|called|done)\b",
+                                 rest, re.I):
+                    f["verbcue"].append(it)
+
+        # A9 — Czech past does not pick present perfect  [EXACT]
+        # a2_present_perfect 2026-08-29: Uklidil jsem kuchyň is also I cleaned.
+        if uid == "a2_present_perfect" and it.get("gap"):
+            if re.search(r"\b(have|has|haven't|hasn't)\b", ga) and ga not in (
+                    "have", "has"):
+                blob = " ".join([cz, en, gap]).lower()
+                if not re.search(
+                        r"just|already|yet|never|ever|\bfor\b|since|"
+                        r"už|ještě|právě|nikdy|někdy|dlouho|\brok|\blet\b|"
+                        r"before",
+                        blob, re.I):
+                    f["ppcuz"].append(it)
 
         # F3 — Use production uses a word the path has not taught  [EXACT]
         if it.get("use") is not False:
@@ -720,6 +743,31 @@ def lint_pack(uid):
                     % (it.get("en") or ""),
                 })
 
+    # B12 — present perfect Check is sort, not Match  [EXACT]
+    # a2_present_perfect 2026-08-29: see→seen and person→have/has both failed;
+    # Czech cannot pick this tense. Three boxes, English sentences.
+    if uid == "a2_present_perfect":
+        if "match" in seq and "sort_bins" not in seq:
+            f["ppsort"].append({
+                "cz": "check.sequence has match, no sort_bins",
+                "en": "Czech cannot pick PP vs past — sort English sentences (B12)",
+            })
+
+    # C34 — 3rd form / 3. tvar on an A1/A2 card  [EXACT]
+    # a2_present_perfect 2026-08-29: "3rd form to me is 3rd of what?"
+    if str(d.get("level", "")).upper() in ("A1", "A2"):
+        for i, c in enumerate(intro_cards(d)):
+            blob = " ".join([
+                str(c.get("title") or ""),
+                str(c.get("title_cz") or ""),
+                card_text(c),
+            ])
+            if re.search(r"\b3rd form\b|3\.\s*tvar", blob, re.I):
+                f["thirdform"].append({
+                    "cz": "card %d · %s" % (i, c.get("title") or ""),
+                    "en": "3rd form — say past participle (C34)",
+                })
+
     # C28 — intro diagram key is unknown → blank picture  [EXACT]
     # a1_prepositions_time 2026-08-29: in-on-at-scale was not a schematic.
     # C10 still green (the field is non-empty). Inline svg without a key is fine.
@@ -818,6 +866,9 @@ def overlap_report(uid, top=3):
 
 
 LABELS = [
+    ("ppsort",      "EXACT  B12 present perfect Check is Match — Czech cannot pick this tense, use sort"),
+    ("thirdform",   "EXACT  C34 A1/A2 intro says 3rd form — name past participle"),
+    ("ppcuz",       "EXACT  A9  present-perfect item has no just/already/yet/for (Czech past is also past simple)"),
     ("timesort",    "EXACT  B10 in/on/at time pack still uses sentence Match — sort boxes"),
     ("aweek",       "EXACT  F2  once/twice a week inside an at/on/in pack — Time 2"),
     ("baddiagram",  "EXACT  C28 intro diagram key is not in intro-visuals.js — blank picture"),
