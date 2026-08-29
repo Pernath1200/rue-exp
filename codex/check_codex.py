@@ -97,8 +97,10 @@ def hang_findings(unit_tree_parts):
             yield ("split:" + nid,
                    f"tree.json root={root} but tree_part={n.get('tree_part')}")
 
-        # wrong house: legal G_* on the wrong root (the Degree bug)
-        if unit and unit.startswith("G_"):
+        # wrong house: a legal unit on the wrong root (the Degree bug). Any
+        # prefix — grammar topics may hang on V_* strands too (word_craft,
+        # 2026-08-29); the unit's tree_part still names the one true seat.
+        if unit:
             want = unit_tree_parts.get(unit)
             if want is not None and want != root:
                 yield ("wrong-house:" + nid,

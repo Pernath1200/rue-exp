@@ -149,6 +149,30 @@ So: **shared topology forever**; **shared unit rows only where the system is rea
 
 ---
 
+## The cambium — word formation's seat (James, 2026-08-29)
+
+Word formation is neither trunk (it is not core words) nor branches (it has
+no theme) nor a root (morphology is not syntax). It is the **multiplier** —
+the system that turns hundreds of known roots into thousands of family
+members. The tree already has a name for "structural, but neither roots nor
+branches": the **cambium**, the thin living layer that produces all new
+mass. Height comes from the apex bud (next level, new material); width
+comes from the cambium (densifying what you have). A thick trunk on a
+modest tree = someone who makes a few hundred roots go a long way.
+
+- **Data**: the Codex's existing `word_craft` strand IS the cambium — no
+  rename, no new tree_part upstream. `V_WFM-B1B2-01` (b1_prefixes,
+  b1_suffixes) and `V_WFM-B2C1-01` (b2_word_formation, c1_word_formation —
+  the FCE/CAE gyms) woke from drafted to app-integrated. Etymology
+  (`V_WFM-B2C1-02`) stays drafted.
+- **Portrait**: visuals deferred. Direction when it comes: word-craft
+  progress feeds **trunk girth** (the 08-25 tap-decision mechanism — reps
+  add rings, diminishing returns), possibly a thin living edge-line on the
+  trunk. No knots, no slots, no new limb. Mockup-first if wanted.
+- **Copy caveat** (vocab-roots research 2026-06-03): the affix multiplier
+  is receptive and front-loaded B1→B2, tapering. Do not oversell — no
+  "50 roots unlock thousands" claims in student-facing text.
+
 ## Open (non-blocking)
 
 - Exact EN labels for the six seats (Forms vs Noun phrase, etc.)  

@@ -46,6 +46,13 @@ shared files touched). Four commits + one in rue-codex:
 Gates this run: check_codex PASSED (0 new · 22 known) · check_playable 0/0 ·
 smoke shell/js 14/14 · **verify_pack 19 errors + audit ratchet 420>246 are
 red at the PRE-session HEAD** — smoke-lane content, not touched from here.
+**Cambium (James, late session)**: word formation placed — the Codex's
+`word_craft` strand rendered (later) as the tree's cambium/growth layer.
+V_WFM-B1B2-01 + V_WFM-B2C1-01 woke drafted → app-integrated (rue-codex
+`e528cad`); 4 packs hung off Forms; gate's wrong-house check extended to
+V_* units on grammar topics; **hang-baseline.json is now EMPTY** (24 → 0
+in one day). Portrait girth-feed deferred, direction in TREE-AND-CODEX.md.
+
 **Late additions (Grok's run ended)**: 17-pack codex_unit sync applied
 (tags copied from tree.json, one stash dance around a1_present_simple WIP)
 — baseline down to **4** (the word-formation codex gaps only). And

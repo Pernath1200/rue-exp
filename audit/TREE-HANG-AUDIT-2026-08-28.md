@@ -113,3 +113,17 @@ James asked for the for/against on the audit's FLAG. Decision is his.
 rue-codex mapping G_SS-A1B1-01 + reverse map). Pack items/intro untouched
 (smoke lane owns the pack content and has live WIP in it — retag must wait
 for that WIP to land or go in as tag-only line insert).
+
+---
+
+## 5. Word formation — resolved (2026-08-29, applied)
+
+The §2 CODEX GAP verdicts are closed. James's placement decision: the
+**cambium** — the Codex's existing `word_craft` strand (legal tree_part,
+three V_WFM units already drafted upstream). Applied: V_WFM-B1B2-01 +
+V_WFM-B2C1-01 woke to app-integrated; b1_prefixes + b1_suffixes hung on
+B1B2, b2_word_formation + c1_word_formation on B2C1; all four off Forms.
+Gate extended: wrong-house now checks any unit prefix on grammar topics.
+**hang-baseline.json is empty** — 24 findings on 2026-08-28, zero today.
+Portrait rendering of the cambium deferred (girth-feed direction recorded
+in docs/TREE-AND-CODEX.md).
