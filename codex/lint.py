@@ -301,7 +301,8 @@ def lint_pack(uid):
                          "filler", "nopattern", "hardgloss", "badname", "vocablevel",
                          "slash", "teachernote", "uselead", "qlead",
                          "introex", "quizextra", "hardname", "chunkword",
-                         "fakes3sg", "toparticle", "remember")}
+                         "fakes3sg", "toparticle", "remember",
+                         "articlegap", "theregap")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -341,9 +342,14 @@ def lint_pack(uid):
 
         # B8 — infinitive particle as the Quiz gap (want ____ work → to)  [EXACT]
         gap = str(it.get("gap") or "")
-        if re.search(r"\bwant[s]?\s+_{2,}\s+\w", gap, re.I) \
-                and str(it.get("gap_answer") or "").strip().lower() == "to":
+        ga = str(it.get("gap_answer") or "").strip().lower()
+        if re.search(r"\bwant[s]?\s+_{2,}\s+\w", gap, re.I) and ga == "to":
             f["toparticle"].append(it)
+
+        # B8 — a/an/the gap in a pack that is not articles  [EXACT]
+        # a1_there_is 2026-08-29: There is ____ university tested articles.
+        if ga in ("a", "an", "the") and "article" not in uid:
+            f["articlegap"].append(it)
 
         # F3 — Use production uses a word the path has not taught  [EXACT]
         if it.get("use") is not False:
@@ -500,6 +506,19 @@ def lint_pack(uid):
                     "en": "chunk/frames/grammar-theory is teacher-speak, not A1",
                 })
 
+    # B8 — dummy There never the gap in a there-is pack  [EXACT]
+    # a1_there_is 2026-08-29: There ____ a book left There on the page.
+    if re.search(r"there_is", uid):
+        n_there = sum(
+            1 for it in items
+            if re.search(r"\bthere\b", str(it.get("gap_answer") or ""), re.I)
+        )
+        if n_there == 0:
+            f["theregap"].append({
+                "cz": "0 items gap There / There is / Is there",
+                "en": "dummy There never tested — gap was is/are with There given",
+            })
+
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
     # cringe and unnecessary." Same leftover on questions_negatives / question_words.
@@ -609,6 +628,8 @@ LABELS = [
     ("remember",    "EXACT  C17 intro has a Remember/Pamatuj recap card — cut it"),
     ("fakes3sg",    "EXACT  C12 common-mistakes lists I+likes/works (not a heard error)"),
     ("toparticle",  "EXACT  B8  Quiz gaps the particle to (want ____ work), not to-V vs V"),
+    ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),
+    ("theregap",    "EXACT  B8  there-is pack never gaps There — dummy subject untested"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
     ("uselead",     "EXACT  F3  Use item has words not yet taught (partner+prior+this)"),

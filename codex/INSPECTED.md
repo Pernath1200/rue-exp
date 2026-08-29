@@ -14,20 +14,20 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**28 inspected · 0 approved · 71 unseen** of 99 live units
+**29 inspected · 0 approved · 70 unseen** of 99 live units
 
 Of the 34 cloud-authored units, **2 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 13 inspected / 0 approved / 20 units
+## A1 — 14 inspected / 0 approved / 20 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [ ][ ] `a1_and_but_because` — And / but / because · 24 items · seen?
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
-- [ ][ ] `a1_can` — Can / can't · 24 items · seen?
+- [ ][ ] `a1_can` — Can / can't · 24 items
 - [x][ ] `a1_frequency` — Frequency · 24 items
 - [ ][ ] `a1_imperatives` — Imperatives · 24 items · seen?
 - [x][ ] `a1_like_want_need` — Like / want / need · 24 items
@@ -39,7 +39,7 @@ Of the 34 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_question_words` — Question words · 30 items
 - [x][ ] `a1_questions_negatives` — Questions & negatives · 26 items
 - [ ][ ] `a1_some_any` — Some / any · 24 items · seen?
-- [ ][ ] `a1_there_is` — There is / there are · 24 items · seen?
+- [x][ ] `a1_there_is` — There is / there are · 24 items
 - [ ][ ] `a1_to_for_with` — To / for / with · 24 items · seen?
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items

@@ -37,9 +37,9 @@ Then dropdowns. Then change. Then James plays.
 
 | Stage | Look for |
 |--|--|
-| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes |
+| **Intro** | C1 what it is before any correction · C14 card 0 is the unit name + Czech · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank · C13 bold the form on every card · C15 no *chunk* · C16 no hyponym-as-meaning · C17 no *Remember* recap · C18 title names the thing · C19 no stray L1 in an English table · C20 no lesson-plan notes · C21 dummy-subject units need Common mistakes |
 | **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. D3: no teacher notes in `cz`. |
-| **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · B8 gap is the teaching point (`to V` vs `V`, not the particle `to`) · chips include the right answer · no untaught extras (C11) |
+| **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · B7 sentence gap, not `____ = meaning` · B8 gap is THIS unit's point (not a neighbour, not *a/an* inside *there is*) · chips include the right answer · no untaught extras (C11) |
 | **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
 | **Use** | F3: production may not lead. Partner + glue + this unit's words. A1 Czech is fine to smoke. Flag translation-only false-wrongs. |
 
@@ -84,7 +84,7 @@ Translate answers.
 | **B5** | A Match board needs distinct PROMPT tiles. Repeated labels on the ANSWER side are fine when prompts are distinct and grading is by instance (words → their classes works; James built and class-tested exactly that). The ban is on boards whose prompt tiles repeat — "one" five times is clicking, not matching. First version of this rule over-reached and briefly killed James's own labels board; scope it to the prompt side only. A closed class is **one tile per word**, not doubled to fill twelve slots. | `a1_word_classes`: one/more board (bad — identical prompts) vs labels board (good — distinct words, repeated classes), both smoked 2026-08-25. `a1_question_words` 2026-08-29: who/what/where twice each — "just have them once". | `confirmed` |
 | **B6** | Options stay on the teaching axis. *anybody / somebody / nobody* tests the quantifier; *anyone / anywhere / anything* tests the stem. A form pack offers forms of THIS word, not sibling verbs. | `a2_quantifiers` 2026-08-26; `a1_present_simple` 2026-08-29: *I ____ in an office* offered work / live / like. `a1_like_want_need` 2026-08-29: *He ____ a phone* must offer *needs / need*, not like / want / to. | `confirmed` |
 | **B7** | Closed-class Quiz/Type is a **gapped sentence**, not a definition (`____ = person` / `time → ____`). Meaning pairing is Match. | `a1_question_words` 2026-08-29: flags 9–10. | `observed` |
-| **B8** | The gap is the teaching point. Do not gap the infinitive particle `to` alone (`She wants ____ work` → `to`). Contrast *to V* with bare *V* (`to work` / `work`). | `a1_like_want_need` 2026-08-29: *She wants ____ work* tested the particle, not like/want/need. | `observed` — lint `toparticle` |
+| **B8** | The gap is THIS unit's teaching point, not a neighbour's. Do not gap the infinitive particle `to` alone (`She wants ____ work` → `to` — contrast *to V* with bare *V*). Do not gap *a/an* inside *there is*. Do not leave dummy *There* already on the page and only test *is/are*. | `a1_like_want_need` 2026-08-29: *She wants ____ work*. `a1_there_is` 2026-08-29: *There is ____ university* tested articles; *There ____ a book* left the new structure untested. | `confirmed` — lint `toparticle`, `articlegap`, `theregap` |
 
 ---
 
@@ -112,6 +112,7 @@ Translate answers.
 | **C18** | An intro card title names the thing, precisely. | `a1_object_pronouns` 2026-08-29: *With small words* → *After to / with / at* (Czech *S předložkou* was already the real name). | `observed` |
 | **C19** | Don't sprinkle L1 into an English form table. Czech lives in `title_cz` and `examples[]`. | `a1_object_pronouns` 2026-08-29: *On / Ona / Oni* in the Form pairs Note column — *"why are you using Czech randomly?"* | `observed` |
 | **C20** | An intro card teaches the student, not the lesson plan. No practice-sequence notes. | `a1_object_pronouns` 2026-08-29: *First: match subject form… Then: full sentences…* / *Practice block* — *"teacher notes on this page: not good"*. | `observed` |
+| **C21** | A unit whose English structure Czech does not have (dummy *there*) needs a **Common mistakes** card for the L1 calque (*It is a cat…*, *On the table is a book*, *Is a bathroom here?*). Cutting Remember (C17) is not that card. | `a1_there_is` 2026-08-29: intro had nothing on common errors; James: *"there is, there are is a weird/new structure for cz learners"*. | `observed` |
 
 **C9 note — why the prose can go.** 2,111 of 2,123 A1/A2/B1 grammar items (99%)
 already carry `explanation` *and* `explanation_cz`, rendered by `js/explain.js`

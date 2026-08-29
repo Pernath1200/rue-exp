@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_there_is",
   "practice": "frames",
-  "note": "There is / are = something is here. Gap on is/are. Not 'there' = place (tam). · classfix B/D/E-2026-07-25 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "There is / are = something is here. Dummy There is the new structure (not Czech je / It is / Czech order). Locative items gap There is / Is there; others gap is/are. · classfix B/D/E-2026-07-25 · RUE2 TRANSPLANT 2026-08-25. · 2026-08-29 smoke: C12 common mistakes; B4 It is / Is / Czech order on chips.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -19,68 +19,113 @@
       "items": [
         {
           "en": "There is a book on the table.",
-          "cz": "Na stole je kniha. / Je tam kniha.",
-          "gap": "There ____ a book on the table.",
-          "gap_answer": "is",
+          "cz": "Na stole je kniha.",
+          "gap": "____ a book on the table.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is a book on the table.",
             "There's a book on the table."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Not *It is* or *On the table is*. **There is** a book + place.",
+          "explanation_cz": "Ne *It is* a ne český pořádek. **There is** a book + místo."
         },
         {
           "en": "There are two books on the table.",
           "cz": "Na stole jsou dvě knihy.",
-          "gap": "There ____ two books on the table.",
-          "gap_answer": "are",
+          "gap": "____ two books on the table.",
+          "gap_answer": "There are",
+          "quiz_options": [
+            "There are",
+            "There is",
+            "It is",
+            "They are"
+          ],
           "accepts": [
             "There are two books on the table."
           ],
-          "explanation": "There are + plural noun.",
-          "explanation_cz": "There are + množné podstatné jméno."
+          "explanation": "More than one: **There are**, not *There is* or *They are*.",
+          "explanation_cz": "Víc věcí: **There are**, ne *There is* ani *They are*."
         },
         {
           "en": "There is a cat under the chair.",
           "cz": "Pod židlí je kočka.",
-          "gap": "There ____ a cat under the chair.",
-          "gap_answer": "is",
+          "gap": "____ a cat under the chair.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is a cat under the chair.",
             "There's a cat under the chair."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Not *It is*. **There is** a cat + place.",
+          "explanation_cz": "Ne *It is*. **There is** a cat + místo."
         },
         {
           "en": "There are three chairs in the room.",
           "cz": "V pokoji jsou tři židle.",
-          "gap": "There ____ three chairs in the room.",
-          "gap_answer": "are",
+          "gap": "____ three chairs in the room.",
+          "gap_answer": "There are",
+          "quiz_options": [
+            "There are",
+            "There is",
+            "It is",
+            "They are"
+          ],
           "accepts": [
             "There are three chairs in the room."
           ],
-          "explanation": "There are + plural noun.",
-          "explanation_cz": "There are + množné podstatné jméno."
+          "explanation": "More than one: **There are**, not *There is* or *They are*.",
+          "explanation_cz": "Víc věcí: **There are**, ne *There is* ani *They are*."
         },
         {
           "en": "There is a phone in the bag.",
           "cz": "V tašce je telefon.",
-          "gap": "There ____ a phone in the bag.",
-          "gap_answer": "is",
+          "gap": "____ a phone in the bag.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is a phone in the bag.",
             "There's a phone in the bag.",
             "There is a telephone in the bag."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Not *It is*. **There is** a phone + place.",
+          "explanation_cz": "Ne *It is*. **There is** a phone + místo."
         },
         {
           "en": "There are keys on the table.",
           "cz": "Na stole jsou klíče.",
           "gap": "There ____ keys on the table.",
           "gap_answer": "are",
+          "quiz_options": [
+            "are",
+            "is",
+            "aren't",
+            "isn't"
+          ],
           "accepts": [
             "There are keys on the table."
           ],
@@ -89,21 +134,34 @@
         },
         {
           "en": "There is a problem.",
-          "cz": "Je problém. / Máme problém.",
+          "cz": "Je problém.",
           "gap": "There ____ a problem.",
           "gap_answer": "is",
+          "quiz_options": [
+            "is",
+            "are",
+            "isn't",
+            "aren't"
+          ],
           "accepts": [
             "There is a problem.",
             "There's a problem."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "There is + singular noun. (*It's a problem* is a different sentence.)",
+          "explanation_cz": "There is + jednotné podstatné jméno. (*It's a problem* je jiná věta.)"
         },
         {
           "en": "There are two problems.",
           "cz": "Jsou dva problémy.",
+          "use": false,
           "gap": "There ____ two problems.",
           "gap_answer": "are",
+          "quiz_options": [
+            "are",
+            "is",
+            "aren't",
+            "isn't"
+          ],
           "accepts": [
             "There are two problems."
           ],
@@ -115,6 +173,12 @@
           "cz": "Blízko je škola.",
           "gap": "There ____ a school near here.",
           "gap_answer": "is",
+          "quiz_options": [
+            "is",
+            "are",
+            "isn't",
+            "aren't"
+          ],
           "accepts": [
             "There is a school near here.",
             "There's a school near here."
@@ -124,13 +188,17 @@
         },
         {
           "en": "There are many people here.",
-          "cz": "Je tady hodně lidí. (there/here OK)",
+          "cz": "Je tady hodně lidí.",
           "gap": "There ____ many people here.",
           "gap_answer": "are",
+          "quiz_options": [
+            "are",
+            "is",
+            "aren't",
+            "isn't"
+          ],
           "accepts": [
-            "There are many people here.",
-            "Here are many people here.",
-            "Here are many people here"
+            "There are many people here."
           ],
           "explanation": "There are + plural noun.",
           "explanation_cz": "There are + množné podstatné jméno."
@@ -138,24 +206,37 @@
         {
           "en": "There isn't a bank here.",
           "cz": "Není tady banka.",
-          "gap": "There ____ a bank here.",
-          "gap_answer": "isn't",
+          "gap": "____ a bank here.",
+          "gap_answer": "There isn't",
           "gap_accepts": [
-            "is not"
+            "There is not",
+            "There's not"
+          ],
+          "quiz_options": [
+            "There isn't",
+            "It isn't",
+            "Isn't",
+            "There aren't"
           ],
           "accepts": [
             "There isn't a bank here.",
             "There is not a bank here.",
             "There's not a bank here."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Not *It isn't*. **There isn't** a bank here.",
+          "explanation_cz": "Ne *It isn't*. **There isn't** a bank here."
         },
         {
           "en": "There aren't any chairs.",
           "cz": "Nejsou tu žádné židle.",
           "gap": "There ____ any chairs.",
           "gap_answer": "aren't",
+          "quiz_options": [
+            "aren't",
+            "isn't",
+            "are",
+            "is"
+          ],
           "gap_accepts": [
             "are not"
           ],
@@ -170,21 +251,33 @@
         },
         {
           "en": "Is there a bathroom?",
-          "cz": "Je tady koupelna? / Je tu záchod?",
-          "gap": "____ there a bathroom?",
-          "gap_answer": "Is",
-          "accepts": [
-            "Is there a bathroom?",
-            "Is there a toilet?"
+          "cz": "Je tady koupelna?",
+          "gap": "____ a bathroom?",
+          "gap_answer": "Is there",
+          "quiz_options": [
+            "Is there",
+            "Is",
+            "Is here",
+            "There is"
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "accepts": [
+            "Is there a bathroom?"
+          ],
+          "explanation": "Question: **Is there**…? Not *Is a bathroom?* or *Is here…?*",
+          "explanation_cz": "Otázka: **Is there**…? Ne *Is a bathroom?* ani *Is here…?*"
         },
         {
           "en": "Are there any questions?",
           "cz": "Jsou nějaké otázky?",
+          "use": false,
           "gap": "____ there any questions?",
           "gap_answer": "Are",
+          "quiz_options": [
+            "Are",
+            "Is",
+            "Aren't",
+            "Isn't"
+          ],
           "accepts": [
             "Are there any questions?"
           ],
@@ -193,20 +286,33 @@
         },
         {
           "en": "Is there a bus to Brno?",
-          "cz": "Jede do Brna autobus? / Je autobus do Brna?",
-          "gap": "____ there a bus to Brno?",
-          "gap_answer": "Is",
+          "cz": "Je autobus do Brna?",
+          "gap": "____ a bus to Brno?",
+          "gap_answer": "Is there",
+          "quiz_options": [
+            "Is there",
+            "Is",
+            "Is here",
+            "There is"
+          ],
           "accepts": [
             "Is there a bus to Brno?"
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Question: **Is there**…? Not *Is a bus…?* or *Is here…?*",
+          "explanation_cz": "Otázka: **Is there**…? Ne *Is a bus…?* ani *Is here…?*"
         },
         {
           "en": "Are there two windows?",
           "cz": "Jsou tam dvě okna?",
+          "use": false,
           "gap": "____ there two windows?",
           "gap_answer": "Are",
+          "quiz_options": [
+            "Are",
+            "Is",
+            "Aren't",
+            "Isn't"
+          ],
           "accepts": [
             "Are there two windows?"
           ],
@@ -216,44 +322,77 @@
         {
           "en": "There is an apple on the table.",
           "cz": "Na stole je jablko.",
-          "gap": "There is ____ apple on the table.",
-          "gap_answer": "an",
+          "gap": "____ an apple on the table.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is an apple on the table.",
             "There's an apple on the table."
           ],
-          "explanation": "After there is: a/an + singular countable.",
-          "explanation_cz": "Po there is: a/an + jednotné spočitatelné."
+          "explanation": "Not *It is*. **There is** an apple + place.",
+          "explanation_cz": "Ne *It is*. **There is** an apple + místo."
         },
         {
           "en": "There is a university in the city.",
-          "cz": "Ve městě je univerzita. (university · zvuk yu- → a, ne an)",
-          "gap": "There is ____ university in the city.",
-          "gap_answer": "a",
+          "cz": "Ve městě je univerzita.",
+          "gap": "____ a university in the city.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is a university in the city.",
             "There's a university in the city."
           ],
-          "explanation": "After there is: a/an + singular countable.",
-          "explanation_cz": "Po there is: a/an + jednotné spočitatelné."
+          "explanation": "Not *It is*. **There is** a university + place.",
+          "explanation_cz": "Ne *It is*. **There is** a university + místo."
         },
         {
           "en": "There is a dog in the garden.",
           "cz": "Na zahradě je pes.",
-          "gap": "There ____ a dog in the garden.",
-          "gap_answer": "is",
+          "gap": "____ a dog in the garden.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is a dog in the garden.",
             "There's a dog in the garden."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Not *It is*. **There is** a dog + place.",
+          "explanation_cz": "Ne *It is*. **There is** a dog + místo."
         },
         {
           "en": "There are four people in the room.",
           "cz": "V pokoji jsou čtyři lidé.",
           "gap": "There ____ four people in the room.",
           "gap_answer": "are",
+          "quiz_options": [
+            "are",
+            "is",
+            "aren't",
+            "isn't"
+          ],
           "accepts": [
             "There are four people in the room."
           ],
@@ -263,20 +402,35 @@
         {
           "en": "There is a car in front of the house.",
           "cz": "Před domem je auto.",
-          "gap": "There ____ a car in front of the house.",
-          "gap_answer": "is",
+          "gap": "____ a car in front of the house.",
+          "gap_answer": "There is",
+          "gap_accepts": [
+            "There's"
+          ],
+          "quiz_options": [
+            "There is",
+            "It is",
+            "Is",
+            "There are"
+          ],
           "accepts": [
             "There is a car in front of the house.",
             "There's a car in front of the house."
           ],
-          "explanation": "There is + singular noun.",
-          "explanation_cz": "There is + jednotné podstatné jméno."
+          "explanation": "Not *It is*. **There is** a car + place.",
+          "explanation_cz": "Ne *It is*. **There is** a car + místo."
         },
         {
           "en": "There are shops next to the school.",
           "cz": "Vedle školy jsou obchody.",
           "gap": "There ____ shops next to the school.",
           "gap_answer": "are",
+          "quiz_options": [
+            "are",
+            "is",
+            "aren't",
+            "isn't"
+          ],
           "accepts": [
             "There are shops next to the school."
           ],
@@ -288,6 +442,12 @@
           "cz": "V lednici je mléko.",
           "gap": "There ____ milk in the fridge.",
           "gap_answer": "is",
+          "quiz_options": [
+            "is",
+            "are",
+            "isn't",
+            "aren't"
+          ],
           "accepts": [
             "There is milk in the fridge.",
             "There's milk in the fridge."
@@ -297,9 +457,15 @@
         },
         {
           "en": "There isn't any coffee.",
-          "cz": "Není žádná káva. / Nemáme kávu.",
+          "cz": "Není žádná káva.",
           "gap": "There ____ any coffee.",
           "gap_answer": "isn't",
+          "quiz_options": [
+            "isn't",
+            "aren't",
+            "is",
+            "are"
+          ],
           "gap_accepts": [
             "is not"
           ],
@@ -330,22 +496,22 @@
           ],
           "rows": [
             [
-              "There is + one thing",
+              "**There is** + one thing",
               "one thing is here"
             ],
             [
-              "There are + more things",
+              "**There are** + more things",
               "more things are here"
             ]
           ]
         },
         "examples": [
           {
-            "en": "There is a book on the table.",
+            "en": "**There is** a book on the table.",
             "cz": "Na stole je kniha."
           },
           {
-            "en": "There are two books on the table.",
+            "en": "**There are** two books on the table.",
             "cz": "Na stole jsou dvě knihy."
           }
         ],
@@ -365,13 +531,13 @@
           ],
           "rows": [
             [
-              "There is… ★",
-              "There is a problem.",
+              "**There is**… ★",
+              "**There is** a problem.",
               "something is here"
             ],
             [
-              "… is there",
-              "The book is there.",
+              "… is **there**",
+              "The book is **there**.",
               "in that place (tam)"
             ]
           ]
@@ -394,23 +560,23 @@
           "rows": [
             [
               "one thing (a book)",
-              "is",
-              "There is a book."
+              "**is**",
+              "**There is** a book."
             ],
             [
               "more things (books)",
-              "are",
-              "There are books."
+              "**are**",
+              "**There are** books."
             ],
             [
               "a / an + singular",
-              "is",
-              "There is an apple."
+              "**is**",
+              "**There is** an apple."
             ],
             [
               "two / many + plural",
-              "are",
-              "There are two cats."
+              "**are**",
+              "**There are** two cats."
             ]
           ]
         },
@@ -430,22 +596,22 @@
           ],
           "rows": [
             [
-              "There is a bag",
+              "**There is** a bag",
               "on the table"
             ],
             [
-              "There are shoes",
+              "**There are** shoes",
               "under the bed"
             ],
             [
-              "There is a school",
+              "**There is** a school",
               "near here"
             ]
           ]
         },
         "examples": [
           {
-            "en": "There is a car in front of the house.",
+            "en": "**There is** a car in front of the house.",
             "cz": "Před domem je auto."
           }
         ]
@@ -461,12 +627,12 @@
           ],
           "rows": [
             [
-              "Is there a bus?",
-              "Yes, there is. / No, there isn't."
+              "**Is there** a bus?",
+              "Yes, **there is**. / No, **there isn't**."
             ],
             [
-              "Are there any chairs?",
-              "Yes, there are. / No, there aren't."
+              "**Are there** any chairs?",
+              "Yes, **there are**. / No, **there aren't**."
             ]
           ]
         },
@@ -486,27 +652,28 @@
           ],
           "rows": [
             [
-              "There is a bank.",
-              "There isn't a bank."
+              "**There is** a bank.",
+              "**There isn't** a bank."
             ],
             [
-              "There are chairs.",
-              "There aren't any chairs."
+              "**There are** chairs.",
+              "**There aren't** any chairs."
             ]
           ]
         },
         "examples": [
           {
-            "en": "There isn't any coffee.",
+            "en": "**There isn't** any coffee.",
             "cz": "Není žádná káva."
           }
         ]
       },
       {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
         "points": [
-          "Is there…? / Are there…? · isn't / aren't"
+          "Czech *je* + place → **There is**. Not *It is*."
         ],
         "table": {
           "headers": [
@@ -515,16 +682,16 @@
           ],
           "rows": [
             [
-              "There is / are",
-              "something is here"
+              "*On the table is a book.*",
+              "**There is** a book on the table."
             ],
             [
-              "is (one) · are (more)",
-              "look at the noun after"
+              "*It is a cat under the chair.*",
+              "**There is** a cat under the chair."
             ],
             [
-              "There ≠ place (tam) · place words optional",
-              "on the table…"
+              "*Is a bathroom here?*",
+              "**Is there** a bathroom?"
             ]
           ]
         }
