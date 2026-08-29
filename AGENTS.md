@@ -258,6 +258,10 @@ happened — the rule exists so it never can. See `codex/OXFORD-REMEASURE.md`.)
 
 ## Smoke
 
+Interactive: **audit first** (intro / Match / Quiz / Type / Use), findings, dropdowns,
+then rewrite. Full method: `codex/AUTHORING-RULES.md` § Smoke method (I8).
+After Telegram `<unit_id> tested`: new rules in that file → reconcile → commit → new tab.
+
 ```powershell
 cd C:\Users\ADMIN\documents\projects\rue-exp
 py scripts\smoke.py

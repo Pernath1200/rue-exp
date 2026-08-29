@@ -27,6 +27,28 @@ good.**
 
 ---
 
+## Smoke method — audit first, then change (I8)
+
+Do not dive in. Lessons from one unit carry to the next only if they are in this file
+and in git, not in a long tab.
+
+**Before any rewrite**, audit every stage against the rules below. Write findings.
+Then dropdowns. Then change. Then James plays.
+
+| Stage | Look for |
+|--|--|
+| **Intro** | C1 what it is before any correction · one job per page · C9 no walltext · C10 table/diagram on every card · C11 every Quiz contrast has a card · C12 common mistakes are real L1 errors · C4 examples from this bank |
+| **Match** | Does it test the grammar point, or only EN↔CZ? Sentence boards are a toll; skip exists. D3: no teacher notes in `cz`. |
+| **Quiz** | A0 one degree of freedom · B3 authored chips on a form pack · B6 on-axis · chips include the right answer · no untaught extras (C11) |
+| **Type** | Same target as Quiz · A8 contractions · I7 leftover `accepts` after a rename · explanations name THIS item (D1), not a neighbour (F2) |
+| **Use** | F3: production may not lead. Partner + glue + this unit's words. A1 Czech is fine to smoke. Flag translation-only false-wrongs. |
+
+A1/A2 translation is allowed. Recognition may lead; Use may not (F3).
+
+**After Telegram `<unit_id> tested`:** new rules in this file → `python codex/reconcile_inspected.py` → commit → **new tab** for the next unit.
+
+---
+
 ## A · Prompt determinacy
 
 > **A0 — Every item has exactly ONE degree of freedom: the thing being taught.** Everything
@@ -165,6 +187,7 @@ scaled today — but it fails in a specific and dangerous way.
 | **I5** | The two failure kinds are different jobs. Unit one failed at GRADING; unit two graded fine and failed at TEACHING. The lint catches the first and none of the second. | — | `confirmed` |
 | **I6** | After Telegram `<unit_id> tested`: capture new rules, reconcile the register, commit. A long tab is not a memory. | Frozen 31-hour smoke tab 2026-08-28. Weekend protocol 2026-08-29. | `confirmed` |
 | **I7** | After a rename, grep `gap_accepts` / `accepts`. Leftover keys from the old name still grade. | `a1_possessives`: *Ondrej's* accepted *Patriks*; *Vaclav's* accepted *Annas*; *Homare's* accepted *Toms*. | `observed` |
+| **I8** | **Audit every stage before changing anything.** Findings, then dropdowns, then rewrite. Diving in repeats the same class of mistake the previous unit just taught. | Weekend smoke 2026-08-29: present simple and possessives only got clean when the audit ran first. | `confirmed` |
 
 ---
 
