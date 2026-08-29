@@ -303,7 +303,7 @@ def lint_pack(uid):
                          "introex", "quizextra", "hardname", "chunkword",
                          "fakes3sg", "toparticle", "remember",
                          "articlegap", "theregap", "cancant", "a1meta",
-                         "courseaside")}
+                         "courseaside", "negdef")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -585,6 +585,17 @@ def lint_pack(uid):
                     "en": "%s: %s" % (loc, text.strip()[:72]),
                 })
 
+    # C25 — don't define this word by naming the other cards  [EXACT]
+    # a1_and_but_because 2026-08-29: "Not add, not why" / "Not add, not opposite".
+    NEG_DEF = re.compile(r"^\s*not\s+\w+[,;]?\s+not\s+\w+", re.I)
+    for i, c in enumerate(intro_cards(d)):
+        for j, p in enumerate(c.get("points") or []):
+            if NEG_DEF.search(str(p)):
+                f["negdef"].append({
+                    "cz": "card %d · %s" % (i, c.get("title") or ""),
+                    "en": "points[%d]: %s" % (j, str(p).strip()[:72]),
+                })
+
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
     # cringe and unnecessary." Same leftover on questions_negatives / question_words.
@@ -690,6 +701,7 @@ def overlap_report(uid, top=3):
 
 
 LABELS = [
+    ("negdef",      "EXACT  C25 intro point is Not X, not Y — sibling-card leftover"),
     ("chunkword",   "EXACT  C15 A1 intro uses teacher-speak (chunk / frames / grammar theory)"),
     ("remember",    "EXACT  C17 intro has a Remember/Pamatuj recap card — cut it"),
     ("courseaside", "EXACT  C23 intro names this pack / this unit / at A2 / common A1"),
