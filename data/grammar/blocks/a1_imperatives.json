@@ -5,7 +5,7 @@
   "tree_node": "a1_imperatives",
   "codex_unit": "G_SS-A1B1-01",
   "practice": "frames",
-  "note": "Base verb for + commands · Don't + base for −. Gap on verb or Don't. No subject I/you. Soft please. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Base verb for + commands · Don't + base for −. Gap on the form (Open / Opens / You open / To open; Don't / Not / No / Don't to). No subject I/you. Soft please on intro only. · 2026-08-29 smoke: C17 Remember cut; C23 this pack; C13 bold the form; D3 one Czech; F3 careful/worry/touch use:false; adult commands (board / Don't speak Czech / Stand up / Come here → Look at this / Don't call me / Stand here / Come in); authored form chips; Common mistakes You / Not / Don't to / Be not.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -23,157 +23,213 @@
           "cz": "Otevři okno.",
           "gap": "____ the window.",
           "gap_answer": "Open",
+          "quiz_options": ["Open", "Opens", "You open", "To open"],
           "accepts": [
             "Open the window.",
             "Open the window, please.",
             "Please open the window."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Open** + the thing. Not *You open* and not *to open*.",
+          "explanation_cz": "Rozkaz: **Open** + věc. Ne *You open* a ne *to open*."
         },
         {
           "en": "Close the door.",
           "cz": "Zavři dveře.",
           "gap": "____ the door.",
           "gap_answer": "Close",
+          "quiz_options": ["Close", "Closes", "You close", "To close"],
           "accepts": [
             "Close the door.",
             "Close the door, please.",
             "Please close the door."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Close** + the thing. Not *You close* and not *to close*.",
+          "explanation_cz": "Rozkaz: **Close** + věc. Ne *You close* a ne *to close*."
         },
         {
           "en": "Sit down.",
           "cz": "Sedni si.",
           "gap": "____ down.",
           "gap_answer": "Sit",
+          "quiz_options": ["Sit", "Sits", "You sit", "To sit"],
           "accepts": [
             "Sit down.",
             "Sit down, please.",
-            "Please sit down."
+            "Please sit down.",
+            "Sit down please."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Sit** down. Not *You sit* and not *to sit*.",
+          "explanation_cz": "Rozkaz: **Sit** down. Ne *You sit* a ne *to sit*."
         },
         {
-          "en": "Stand up.",
-          "cz": "Vstaň.",
-          "gap": "____ up.",
-          "gap_answer": "Stand",
-          "accepts": [
-            "Stand up.",
-            "Stand up, please.",
-            "Please stand up."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Come here.",
-          "cz": "Pojď sem.",
+          "en": "Stand here.",
+          "cz": "Stůj tady.",
           "gap": "____ here.",
-          "gap_answer": "Come",
+          "gap_answer": "Stand",
+          "quiz_options": ["Stand", "Stands", "You stand", "To stand"],
           "accepts": [
-            "Come here.",
-            "Come here, please.",
-            "Please come here."
+            "Stand here.",
+            "Stand here, please.",
+            "Please stand here."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Stand** here. Not *You stand* and not *to stand*.",
+          "explanation_cz": "Rozkaz: **Stand** here. Ne *You stand* a ne *to stand*."
+        },
+        {
+          "en": "Come in.",
+          "cz": "Pojď dál.",
+          "gap": "____ in.",
+          "gap_answer": "Come",
+          "quiz_options": ["Come", "Comes", "You come", "To come"],
+          "accepts": [
+            "Come in.",
+            "Come in, please.",
+            "Please come in."
+          ],
+          "explanation": "Command: **Come** in. Not *You come* and not *to come*.",
+          "explanation_cz": "Rozkaz: **Come** in. Ne *You come* a ne *to come*."
         },
         {
           "en": "Listen to me.",
           "cz": "Poslouchej mě.",
           "gap": "____ to me.",
           "gap_answer": "Listen",
+          "quiz_options": ["Listen", "Listens", "You listen", "To listen"],
           "accepts": [
             "Listen to me.",
             "Listen to me, please.",
             "Please listen to me."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Listen** to me. Not *You listen* and not *to listen*.",
+          "explanation_cz": "Rozkaz: **Listen** to me. Ne *You listen* a ne *to listen*."
         },
         {
-          "en": "Look at the board.",
-          "cz": "Podívej se na tabuli.",
-          "gap": "____ at the board.",
+          "en": "Look at me.",
+          "cz": "Podívej se na mě.",
+          "gap": "____ at me.",
           "gap_answer": "Look",
+          "quiz_options": ["Look", "Looks", "You look", "To look"],
           "accepts": [
-            "Look at the board.",
-            "Look at the board, please.",
-            "Please look at the board."
+            "Look at me.",
+            "Look at me, please.",
+            "Please look at me."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Look** at me. Not *You look* and not *to look*.",
+          "explanation_cz": "Rozkaz: **Look** at me. Ne *You look* a ne *to look*."
+        },
+        {
+          "en": "Look at this.",
+          "cz": "Podívej se na to.",
+          "gap": "____ at this.",
+          "gap_answer": "Look",
+          "quiz_options": ["Look", "Looks", "You look", "To look"],
+          "accepts": [
+            "Look at this.",
+            "Look at this, please.",
+            "Please look at this."
+          ],
+          "explanation": "Command: **Look** at this. Not *You look* and not *to look*.",
+          "explanation_cz": "Rozkaz: **Look** at this. Ne *You look* a ne *to look*."
         },
         {
           "en": "Help me.",
           "cz": "Pomož mi.",
           "gap": "____ me.",
           "gap_answer": "Help",
+          "quiz_options": ["Help", "Helps", "You help", "To help"],
           "accepts": [
             "Help me.",
             "Help me, please.",
-            "Please help me."
+            "Please help me.",
+            "Help me please."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Help** me. Not *You help* and not *to help*.",
+          "explanation_cz": "Rozkaz: **Help** me. Ne *You help* a ne *to help*."
         },
         {
           "en": "Wait a minute.",
           "cz": "Počkej chvíli.",
           "gap": "____ a minute.",
           "gap_answer": "Wait",
+          "quiz_options": ["Wait", "Waits", "You wait", "To wait"],
           "accepts": [
             "Wait a minute.",
             "Wait a minute, please.",
             "Please wait a minute.",
             "Wait one minute."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Be quiet.",
-          "cz": "Buď zticha. / Buďte zticha.",
-          "gap": "____ quiet.",
-          "gap_answer": "Be",
-          "accepts": [
-            "Be quiet.",
-            "Be quiet, please.",
-            "Please be quiet."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Be careful.",
-          "cz": "Buď opatrný.",
-          "gap": "____ careful.",
-          "gap_answer": "Be",
-          "accepts": [
-            "Be careful.",
-            "Be careful, please.",
-            "Please be careful."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Wait** a minute. Not *You wait* and not *to wait*.",
+          "explanation_cz": "Rozkaz: **Wait** a minute. Ne *You wait* a ne *to wait*."
         },
         {
           "en": "Write your name.",
           "cz": "Napiš své jméno.",
           "gap": "____ your name.",
           "gap_answer": "Write",
+          "quiz_options": ["Write", "Writes", "You write", "To write"],
           "accepts": [
             "Write your name.",
             "Write your name, please.",
             "Please write your name."
           ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
+          "explanation": "Command: **Write** your name. Not *You write* and not *to write*.",
+          "explanation_cz": "Rozkaz: **Write** your name. Ne *You write* a ne *to write*."
+        },
+        {
+          "en": "Stop!",
+          "cz": "Přestaň!",
+          "gap": "____!",
+          "gap_answer": "Stop",
+          "quiz_options": ["Stop", "Stops", "You stop", "To stop"],
+          "accepts": [
+            "Stop!",
+            "Stop."
+          ],
+          "explanation": "Short command: **Stop!** Not *You stop* and not *to stop*.",
+          "explanation_cz": "Krátký rozkaz: **Stop!** Ne *You stop* a ne *to stop*."
+        },
+        {
+          "en": "Go home.",
+          "cz": "Jdi domů.",
+          "gap": "____ home.",
+          "gap_answer": "Go",
+          "quiz_options": ["Go", "Goes", "You go", "To go"],
+          "accepts": [
+            "Go home.",
+            "Go home, please.",
+            "Please go home."
+          ],
+          "explanation": "Command: **Go** home. Not *You go* and not *to go*.",
+          "explanation_cz": "Rozkaz: **Go** home. Ne *You go* a ne *to go*."
+        },
+        {
+          "en": "Be quiet.",
+          "cz": "Buď zticha.",
+          "gap": "____ quiet.",
+          "gap_answer": "Be",
+          "quiz_options": ["Be", "Is", "Are", "You be"],
+          "accepts": [
+            "Be quiet.",
+            "Be quiet, please.",
+            "Please be quiet."
+          ],
+          "explanation": "**Be** quiet. Not *You be* and not *Is quiet*.",
+          "explanation_cz": "**Be** quiet. Ne *You be* a ne *Is quiet*."
+        },
+        {
+          "en": "Be careful.",
+          "cz": "Buď opatrný.",
+          "use": false,
+          "gap": "____ careful.",
+          "gap_answer": "Be",
+          "quiz_options": ["Be", "Is", "Are", "You be"],
+          "accepts": [
+            "Be careful.",
+            "Be careful, please.",
+            "Please be careful."
+          ],
+          "explanation": "**Be** careful. Not *You be* and not *Is careful*.",
+          "explanation_cz": "**Be** careful. Ne *You be* a ne *Is careful*."
         },
         {
           "en": "Don't open the window.",
@@ -184,13 +240,13 @@
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
             "Don't open the window.",
-            "Do not open the window.",
-            "Don't open the window, please."
+            "Do not open the window."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't** + open. Not *Not open* and not *Don't to open*.",
+          "explanation_cz": "**Don't** + open. Ne *Not open* a ne *Don't to open*."
         },
         {
           "en": "Don't close the door.",
@@ -201,12 +257,13 @@
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
             "Don't close the door.",
             "Do not close the door."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't** + close. Not *Not close* and not *Don't to close*.",
+          "explanation_cz": "**Don't** + close. Ne *Not close* a ne *Don't to close*."
         },
         {
           "en": "Don't sit here.",
@@ -217,141 +274,83 @@
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
             "Don't sit here.",
             "Do not sit here."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't** + sit. Not *Not sit* and not *Don't to sit*.",
+          "explanation_cz": "**Don't** + sit. Ne *Not sit* a ne *Don't to sit*."
         },
         {
           "en": "Don't be late.",
-          "cz": "Nepřicházej pozdě. / Nebuď pozdě.",
+          "cz": "Nebuď pozdě.",
           "gap": "____ be late.",
           "gap_answer": "Don't",
           "gap_accepts": [
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
             "Don't be late.",
             "Do not be late."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't be** late. Not *Be not late* and not *Not be late*.",
+          "explanation_cz": "**Don't be** late. Ne *Be not late* a ne *Not be late*."
         },
         {
           "en": "Don't worry.",
-          "cz": "Nedělej si starosti. / Neboj se.",
+          "cz": "Nedělej si starosti.",
+          "use": false,
           "gap": "____ worry.",
           "gap_answer": "Don't",
           "gap_accepts": [
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
             "Don't worry.",
             "Do not worry."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't** worry. Not *Not worry* and not *Don't to worry*.",
+          "explanation_cz": "**Don't** worry. Ne *Not worry* a ne *Don't to worry*."
         },
         {
           "en": "Don't touch that.",
           "cz": "Na to nesahej.",
+          "use": false,
           "gap": "____ touch that.",
           "gap_answer": "Don't",
           "gap_accepts": [
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
             "Don't touch that.",
             "Do not touch that."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't** touch that. Not *Not touch* and not *Don't to touch*.",
+          "explanation_cz": "**Don't** touch that. Ne *Not touch* a ne *Don't to touch*."
         },
         {
-          "en": "Please sit down.",
-          "cz": "Prosím, sedni si.",
-          "gap": "Please ____ down.",
-          "gap_answer": "sit",
-          "accepts": [
-            "Please sit down.",
-            "Sit down, please.",
-            "Sit down please."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Please help me.",
-          "cz": "Prosím, pomož mi.",
-          "gap": "Please ____ me.",
-          "gap_answer": "help",
-          "accepts": [
-            "Please help me.",
-            "Help me, please.",
-            "Help me please."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Stop!",
-          "cz": "Stůj! / Přestaň!",
-          "gap": "____!",
-          "gap_answer": "Stop",
-          "accepts": [
-            "Stop!",
-            "Stop."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Go home.",
-          "cz": "Jdi domů.",
-          "gap": "____ home.",
-          "gap_answer": "Go",
-          "accepts": [
-            "Go home.",
-            "Go home, please.",
-            "Please go home."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Take a seat.",
-          "cz": "Sedni si. / Posadit se.",
-          "gap": "____ a seat.",
-          "gap_answer": "Take",
-          "accepts": [
-            "Take a seat.",
-            "Take a seat, please.",
-            "Please take a seat."
-          ],
-          "explanation": "Positive imperative: base verb only (no subject).",
-          "explanation_cz": "Kladný rozkaz: jen základ slovesa (bez podmětu)."
-        },
-        {
-          "en": "Don't speak Czech.",
-          "cz": "Nemluv česky. (in English class)",
-          "gap": "____ speak Czech.",
+          "en": "Don't call me.",
+          "cz": "Nevolej mi.",
+          "gap": "____ call me.",
           "gap_answer": "Don't",
           "gap_accepts": [
             "Do not",
             "don't"
           ],
+          "quiz_options": ["Don't", "Not", "No", "Don't to"],
           "accepts": [
-            "Don't speak Czech.",
-            "Do not speak Czech.",
-            "Don't speak Czech, please."
+            "Don't call me.",
+            "Do not call me."
           ],
-          "explanation": "Negative imperative: Don't + base verb.",
-          "explanation_cz": "Záporný rozkaz: Don't + základ slovesa."
+          "explanation": "**Don't** call me. Not *Not call* and not *Don't to call*.",
+          "explanation_cz": "**Don't** call me. Ne *Not call* a ne *Don't to call*."
         }
       ]
     }
@@ -360,7 +359,10 @@
     "cards": [
       {
         "title": "Imperatives",
-        "title_cz": "Rozkaz / instrukce — Open! · Don't!",
+        "title_cz": "Rozkaz",
+        "points": [
+          "A command tells someone what to do."
+        ],
         "table": {
           "caption": "shape",
           "headers": [
@@ -371,226 +373,207 @@
           "rows": [
             [
               "+",
-              "Base verb + …",
-              "Open the window."
+              "verb + …",
+              "**Open** the window."
             ],
             [
               "−",
-              "Don't + base verb",
-              "Don't open the window."
+              "**Don't** + verb",
+              "**Don't** open the window."
             ]
           ]
         },
-        "points": [
-          "Not: You open the window. (for this pack)",
-          "Not: Opens the window.",
-          "Use the base verb to tell someone what to do.",
-          "No I / you at the start."
+        "tables": [
+          {
+            "caption": "not",
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "*You open the window.*",
+                "**Open** the window."
+              ],
+              [
+                "*Not open the window.*",
+                "**Don't** open the window."
+              ],
+              [
+                "*To open the window.*",
+                "**Open** the window."
+              ]
+            ]
+          }
+        ],
+        "examples": [
+          {
+            "en": "**Open** the window.",
+            "cz": "Otevři okno."
+          },
+          {
+            "en": "**Don't** open the window.",
+            "cz": "Neotvírej okno."
+          }
         ]
       },
       {
         "title": "Positive",
         "title_cz": "Kladný rozkaz",
+        "text_first": true,
+        "points": [
+          "Start with the verb: **Sit**, **Open**, **Come**.",
+          "**Open**, not *You open* and not *to open*."
+        ],
         "table": {
           "caption": "+",
           "headers": [
-            "EN",
-            "CZ idea"
+            "Say"
           ],
           "rows": [
             [
-              "Open the window.",
-              "Otevři okno."
+              "**Open** the window."
             ],
             [
-              "Sit down.",
-              "Sedni si."
+              "**Sit** down."
             ],
             [
-              "Come here.",
-              "Pojď sem."
+              "**Come** in."
             ],
             [
-              "Help me.",
-              "Pomož mi."
+              "**Help** me."
             ]
           ]
         },
         "examples": [
           {
-            "en": "Close the door.",
+            "en": "**Close** the door.",
             "cz": "Zavři dveře."
           },
           {
-            "en": "Listen to me.",
+            "en": "**Listen** to me.",
             "cz": "Poslouchej mě."
           }
-        ],
-        "points": [
-          "Start with the verb",
-          "Base form: open, sit, come (not opens)"
         ]
       },
       {
-        "title": "Negative",
+        "title": "Don't",
         "title_cz": "Zápor — Don't",
+        "text_first": true,
+        "points": [
+          "**Don't** + the verb: **Don't** sit.",
+          "**Don't** = **Do not**. Both are OK."
+        ],
         "table": {
           "caption": "−",
           "headers": [
-            "EN",
-            "CZ idea"
+            "Say"
           ],
           "rows": [
             [
-              "Don't open the window.",
-              "Neotvírej okno."
+              "**Don't** open the window."
             ],
             [
-              "Don't be late.",
-              "Nepřicházej pozdě."
+              "**Don't** sit here."
             ],
             [
-              "Don't worry.",
-              "Nedělej si starosti."
+              "**Don't be** late."
             ]
           ]
-        },
-        "examples": [
-          {
-            "en": "Don't sit here.",
-            "cz": "Nesedej tady."
-          },
-          {
-            "en": "Don't touch that.",
-            "cz": "Na to nesahej."
-          }
-        ],
-        "points": [
-          "Don't + base verb",
-          "Don't = Do not (both OK)"
-        ]
+        }
       },
       {
-        "title": "Be + adjective",
+        "title": "Be",
         "title_cz": "Be quiet · Be careful",
+        "text_first": true,
+        "points": [
+          "**Be** + a state: **Be** quiet.",
+          "Negative: **Don't be** late. Not *Be not*."
+        ],
         "table": {
           "caption": "be",
           "headers": [
-            "+",
-            "−"
+            "Say"
           ],
           "rows": [
             [
-              "Be quiet.",
-              "Don't be late."
+              "**Be** quiet."
             ],
             [
-              "Be careful.",
-              "Don't be noisy."
+              "**Be** careful."
+            ],
+            [
+              "**Don't be** late."
             ]
           ]
         },
         "examples": [
           {
-            "en": "Be quiet.",
+            "en": "**Be** quiet.",
             "cz": "Buď zticha."
           },
           {
-            "en": "Don't be late.",
-            "cz": "Nepřicházej pozdě."
+            "en": "**Don't be** late.",
+            "cz": "Nebuď pozdě."
           }
-        ],
-        "points": [
-          "Be + adjective for states",
-          "Negative: Don't be…"
         ]
       },
       {
         "title": "Please",
         "title_cz": "Prosím — zdvořile",
+        "text_first": true,
+        "points": [
+          "**please** is extra — the verb stays the same.",
+          "**Please** sit down. · Sit down, **please**."
+        ],
         "table": {
           "caption": "polite",
           "headers": [
-            "EN"
+            "Say"
           ],
           "rows": [
             [
-              "Please sit down."
+              "**Please** sit down."
             ],
             [
-              "Sit down, please."
+              "Sit down, **please**."
             ],
             [
-              "Please help me."
+              "**Please** help me."
             ]
           ]
-        },
-        "points": [
-          "please is optional but friendly",
-          "Same verb form with or without please",
-          "Add please to sound polite. Position is flexible."
-        ]
+        }
       },
       {
-        "title": "Classroom & daily",
-        "title_cz": "Ve třídě a denně",
-        "table": {
-          "caption": "useful",
-          "headers": [
-            "EN",
-            "When"
-          ],
-          "rows": [
-            [
-              "Look at the board.",
-              "class"
-            ],
-            [
-              "Write your name.",
-              "class"
-            ],
-            [
-              "Wait a minute.",
-              "daily"
-            ],
-            [
-              "Go home.",
-              "daily"
-            ],
-            [
-              "Stop!",
-              "short / strong"
-            ]
-          ]
-        },
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
         "points": [
-          "Short commands are normal: Stop!",
-          "Full phrase when you need the object: Open the window."
-        ]
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "No subject you at the start (this pack)"
+          "No **you** at the front.",
+          "**Don't**, not *Not* or *No*."
         ],
         "table": {
+          "caption": "check",
           "headers": [
-            "",
-            ""
+            "Not",
+            "Say"
           ],
           "rows": [
             [
-              "+ Base verb",
-              "Open… · Sit… · Help…"
+              "*You sit down.*",
+              "**Sit** down."
             ],
             [
-              "− Don't + base",
-              "Don't open… · Don't be late."
+              "*Not open the window.*",
+              "**Don't** open the window."
             ],
             [
-              "please optional · Don't",
-              "Do not"
+              "*Don't to sit.*",
+              "**Don't** sit here."
+            ],
+            [
+              "*Be not late.*",
+              "**Don't be** late."
             ]
           ]
         }

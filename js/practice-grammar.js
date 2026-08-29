@@ -769,16 +769,24 @@ export function startPractice(rawPack, root, opts) {
     };
     const tableBlock = () => {
       if (Array.isArray(card.links) && card.links.length) return "";
-      if (!card.table) return "";
-      const h = card.table.headers || [];
-      return `<table class="intro-table"><thead><tr>${h
-        .map((x) => `<th>${escMd(x)}</th>`)
-        .join("")}</tr></thead><tbody>${(card.table.rows || [])
-        .map(
-          (row) =>
-            `<tr>${row.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
-        )
-        .join("")}</tbody></table>`;
+      const list = [];
+      if (card.table) list.push(card.table);
+      if (Array.isArray(card.tables)) {
+        for (const t of card.tables) if (t && Array.isArray(t.rows)) list.push(t);
+      }
+      if (!list.length) return "";
+      const one = (tbl) => {
+        const h = tbl.headers || [];
+        return `<table class="intro-table"><thead><tr>${h
+          .map((x) => `<th>${escMd(x)}</th>`)
+          .join("")}</tr></thead><tbody>${(tbl.rows || [])
+          .map(
+            (row) =>
+              `<tr>${row.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
+          )
+          .join("")}</tbody></table>`;
+      };
+      return list.map(one).join("");
     };
     // points[] carries the bulk of the authored teaching on 403 of 557 cards
     // (43 of them have nothing else) — it went unrendered until 2026-08-10.

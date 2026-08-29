@@ -3,7 +3,7 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-29-her";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-29-imp-tables";
 import { startPractice as startVocabPractice } from "./practice-vocab.js";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {

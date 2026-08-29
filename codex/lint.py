@@ -136,9 +136,14 @@ def _words(text):
 def card_text(card):
     bits = [card.get("body", ""), card.get("title", "")]
     bits += [str(x) for x in (card.get("points") or [])]
-    tb = card.get("table") or {}
-    for row in (tb.get("rows") or []):
-        bits += [str(x) for x in row]
+    tbs = [card.get("table") or {}]
+    if isinstance(card.get("tables"), list):
+        tbs.extend(card["tables"])
+    for tb in tbs:
+        if not isinstance(tb, dict):
+            continue
+        for row in (tb.get("rows") or []):
+            bits += [str(x) for x in row]
     return " ".join(bits)
 
 
@@ -304,7 +309,7 @@ def lint_pack(uid):
                          "fakes3sg", "toparticle", "remember",
                          "articlegap", "theregap", "cancant", "a1meta",
                          "courseaside", "negdef", "smallwords", "mistakecol",
-                         "timesort", "aweek", "baddiagram")}
+                         "timesort", "aweek", "baddiagram", "notbullet")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -578,12 +583,17 @@ def lint_pack(uid):
         ]
         for j, p in enumerate(c.get("points") or []):
             surfaces.append(("points[%d]" % j, str(p)))
-        tb = c.get("table") or {}
-        for h in tb.get("headers") or []:
-            surfaces.append(("header", str(h)))
-        for r, row in enumerate(tb.get("rows") or []):
-            for cell in row or []:
-                surfaces.append(("cell", str(cell)))
+        tbs = [c.get("table") or {}]
+        if isinstance(c.get("tables"), list):
+            tbs.extend(c["tables"])
+        for tb in tbs:
+            if not isinstance(tb, dict):
+                continue
+            for h in tb.get("headers") or []:
+                surfaces.append(("header", str(h)))
+            for r, row in enumerate(tb.get("rows") or []):
+                for cell in row or []:
+                    surfaces.append(("cell", str(cell)))
         for loc, text in surfaces:
             m = COURSE_ASIDE.search(text)
             if m:
@@ -647,6 +657,17 @@ def lint_pack(uid):
                 "cz": "card %d · %s" % (i, title or title_cz),
                 "en": "Remember/Pamatuj recap — cut it (C17)",
             })
+
+    # C30 — "Not:" bullets under the IS table  [EXACT]
+    # a1_imperatives 2026-08-29: shape table was good; the four Not: lines
+    # at the bottom had to become a Not/Say table.
+    for i, c in enumerate(intro_cards(d)):
+        for j, p in enumerate(c.get("points") or []):
+            if re.match(r"^\s*not\s*:", str(p), re.I):
+                f["notbullet"].append({
+                    "cz": "card %d · %s" % (i, c.get("title") or ""),
+                    "en": "points[%d]: %s" % (j, str(p).strip()[:72]),
+                })
 
     # C12 — invented I + -s on a common-mistakes card  [EXACT]
     # James has never heard I works / I likes from Czech learners.
@@ -791,6 +812,7 @@ LABELS = [
     ("negdef",      "EXACT  C25 intro point is Not X, not Y / Not in / on / at"),
     ("chunkword",   "EXACT  C15 A1 intro uses teacher-speak (chunk / frames / grammar theory)"),
     ("remember",    "EXACT  C17 intro has a Remember/Pamatuj recap card — cut it"),
+    ("notbullet",   "EXACT  C30 intro point is a Not: bullet — use a Not/Say table"),
     ("courseaside", "EXACT  C23 intro names this pack / this unit / at A2 / common A1"),
     ("fakes3sg",    "EXACT  C12 common-mistakes lists I+likes/works (not a heard error)"),
     ("toparticle",  "EXACT  B8  Quiz gaps the particle to (want ____ work), not to-V vs V"),

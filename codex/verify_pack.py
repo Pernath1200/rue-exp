@@ -123,13 +123,18 @@ def check_intro_density(pid: str, d: dict, path: Path | None = None) -> None:
                 n = c9_words(f"{ex.get('cz', '')} {ex.get('en', '')}")
                 if n > C9_WORD_CAP:
                     c9_hits.append((pid, f"{where}: examples[{j}] {n}w"))
-        tbl = c.get("table")
-        if isinstance(tbl, dict):
+        extra = c.get("tables") if isinstance(c.get("tables"), list) else []
+        for ti, tbl in enumerate(
+            [c.get("table"), *extra] if isinstance(c.get("table"), dict) else extra
+        ):
+            if not isinstance(tbl, dict):
+                continue
+            tag = "table" if ti == 0 and isinstance(c.get("table"), dict) else f"tables[{ti}]"
             for r, row in enumerate(tbl.get("rows") or []):
                 for k, cell in enumerate(row or []):
                     if c9_words(cell) > C9_WORD_CAP:
                         c9_hits.append(
-                            (pid, f"{where}: table[{r}][{k}] {c9_words(cell)}w")
+                            (pid, f"{where}: {tag}[{r}][{k}] {c9_words(cell)}w")
                         )
 
 
