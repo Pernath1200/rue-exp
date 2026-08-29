@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "a1_frequency",
   "practice": "frames",
-  "note": "always / usually / often / sometimes / never. Gap on the adverb. Position: before main verb, after be. With present simple habits. · flags 2026-07-25: intro scale table · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded. · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped). · Block 1 intro landed 2026-08-25 (Claude.ai authored, James-edited; SVG colours theme-mapped).",
+  "note": "always / usually / often / sometimes / never. Gap on the adverb. Position: before main verb, after be. sometimes also first/last. · 2026-08-29 smoke: intro five-word table + C8 sometimes-front; one Czech (D3); Use F3-trimmed onto freetime + be/have; questions stay Quiz/Type only; authored adverb chips.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -19,25 +19,37 @@
       "items": [
         {
           "en": "I always drink coffee.",
-          "cz": "Vždycky piju kávu. / Vždy piju kávu.",
+          "cz": "Vždycky piju kávu.",
           "gap": "I ____ drink coffee.",
           "gap_answer": "always",
           "accepts": [
             "I always drink coffee."
           ],
-          "explanation": "always = every time · vždycky / vždy",
-          "explanation_cz": "always = vždycky / vždy (pořád, 100 %)"
+          "explanation": "always = every time. Before the verb: I **always** drink…",
+          "explanation_cz": "always = vždycky. Před slovesem: I **always** drink…",
+          "quiz_options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ]
         },
         {
-          "en": "She always works hard.",
-          "cz": "Ona vždycky tvrdě pracuje.",
-          "gap": "She ____ works hard.",
+          "en": "She always plays tennis.",
+          "cz": "Ona vždycky hraje tenis.",
+          "gap": "She ____ plays tennis.",
           "gap_answer": "always",
           "accepts": [
-            "She always works hard."
+            "She always plays tennis."
           ],
-          "explanation": "always = every time · vždycky / vždy",
-          "explanation_cz": "always = vždycky / vždy (pořád, 100 %)"
+          "explanation": "always = every time. Before the verb: She **always** plays…",
+          "explanation_cz": "always = vždycky. Před slovesem: She **always** plays…",
+          "quiz_options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ]
         },
         {
           "en": "I usually get up at seven.",
@@ -49,20 +61,33 @@
             "I usually get up at 7.",
             "I usually get up at seven o'clock."
           ],
-          "explanation": "usually = most of the time · obvykle",
-          "explanation_cz": "usually = obvykle (většinou)"
+          "explanation": "usually = most of the time. Before the verb: I **usually** get up…",
+          "explanation_cz": "usually = obvykle. Před slovesem: I **usually** get up…",
+          "quiz_options": [
+            "usually",
+            "always",
+            "often",
+            "sometimes"
+          ]
         },
         {
           "en": "We usually eat lunch at home.",
           "cz": "Obvykle obědváme doma.",
+          "use": false,
           "gap": "We ____ eat lunch at home.",
           "gap_answer": "usually",
           "accepts": [
             "We usually eat lunch at home.",
             "We usually have lunch at home."
           ],
-          "explanation": "usually = most of the time · obvykle",
-          "explanation_cz": "usually = obvykle (většinou)"
+          "explanation": "usually = most of the time. Before the verb: We **usually** eat…",
+          "explanation_cz": "usually = obvykle. Před slovesem: We **usually** eat…",
+          "quiz_options": [
+            "usually",
+            "always",
+            "often",
+            "sometimes"
+          ]
         },
         {
           "en": "I often watch films.",
@@ -73,8 +98,14 @@
             "I often watch films.",
             "I often watch movies."
           ],
-          "explanation": "often = many times · často",
-          "explanation_cz": "often = často"
+          "explanation": "often = many times. Before the verb: I **often** watch…",
+          "explanation_cz": "often = často. Před slovesem: I **often** watch…",
+          "quiz_options": [
+            "often",
+            "always",
+            "usually",
+            "sometimes"
+          ]
         },
         {
           "en": "He often plays football.",
@@ -85,8 +116,14 @@
             "He often plays football.",
             "He often plays soccer."
           ],
-          "explanation": "often = many times · často",
-          "explanation_cz": "often = často"
+          "explanation": "often = many times. Before the verb: He **often** plays…",
+          "explanation_cz": "often = často. Před slovesem: He **often** plays…",
+          "quiz_options": [
+            "often",
+            "always",
+            "usually",
+            "sometimes"
+          ]
         },
         {
           "en": "I sometimes go to Brno.",
@@ -94,22 +131,39 @@
           "gap": "I ____ go to Brno.",
           "gap_answer": "sometimes",
           "accepts": [
-            "I sometimes go to Brno."
+            "I sometimes go to Brno.",
+            "Sometimes I go to Brno.",
+            "I go to Brno sometimes."
           ],
-          "explanation": "sometimes = not always · někdy",
-          "explanation_cz": "sometimes = někdy"
+          "explanation": "sometimes = not always. Before the verb, or first: **Sometimes** I go…",
+          "explanation_cz": "sometimes = někdy. Před slovesem, nebo na začátku: **Sometimes** I go…",
+          "quiz_options": [
+            "sometimes",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "She sometimes works on Saturday.",
           "cz": "Ona někdy pracuje v sobotu.",
+          "use": false,
           "gap": "She ____ works on Saturday.",
           "gap_answer": "sometimes",
           "accepts": [
             "She sometimes works on Saturday.",
-            "She sometimes works on Saturdays."
+            "She sometimes works on Saturdays.",
+            "Sometimes she works on Saturday.",
+            "She works on Saturday sometimes."
           ],
-          "explanation": "sometimes = not always · někdy",
-          "explanation_cz": "sometimes = někdy"
+          "explanation": "sometimes = not always. Before the verb, or first: **Sometimes** she works…",
+          "explanation_cz": "sometimes = někdy. Před slovesem, nebo na začátku.",
+          "quiz_options": [
+            "sometimes",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "I never drink tea.",
@@ -119,31 +173,51 @@
           "accepts": [
             "I never drink tea."
           ],
-          "explanation": "never = not ever · nikdy (0%). Positive verb: I never drink… (not don't never)",
-          "explanation_cz": "never = nikdy. Kladné sloveso: I never drink… (ne don't never)"
+          "explanation": "never = no time. Positive verb: I **never** drink… (not *don't never*)",
+          "explanation_cz": "never = nikdy. Kladné sloveso: I **never** drink… (ne *don't never*)",
+          "quiz_options": [
+            "never",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "He never eats meat.",
           "cz": "On nikdy nejí maso.",
+          "use": false,
           "gap": "He ____ eats meat.",
           "gap_answer": "never",
           "accepts": [
             "He never eats meat."
           ],
-          "explanation": "never = not ever · nikdy (0%). Positive verb: I never drink… (not don't never)",
-          "explanation_cz": "never = nikdy. Kladné sloveso: I never drink… (ne don't never)"
+          "explanation": "never = no time. Positive verb: He **never** eats… (not *doesn't never*)",
+          "explanation_cz": "never = nikdy. Kladné sloveso: He **never** eats… (ne *doesn't never*)",
+          "quiz_options": [
+            "never",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "They never watch TV.",
           "cz": "Oni se nikdy nedívají na televizi.",
+          "use": false,
           "gap": "They ____ watch TV.",
           "gap_answer": "never",
           "accepts": [
             "They never watch TV.",
             "They never watch television."
           ],
-          "explanation": "never = not ever · nikdy (0%). Positive verb: I never drink… (not don't never)",
-          "explanation_cz": "never = nikdy. Kladné sloveso: I never drink… (ne don't never)"
+          "explanation": "never = no time. Positive verb: They **never** watch… (not *don't never*)",
+          "explanation_cz": "never = nikdy. Kladné sloveso: They **never** watch… (ne *don't never*)",
+          "quiz_options": [
+            "never",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "I am always tired.",
@@ -154,8 +228,14 @@
             "I am always tired.",
             "I'm always tired."
           ],
-          "explanation": "always = every time · vždycky / vždy · after be",
-          "explanation_cz": "always = vždycky / vždy (pořád, 100 %) · po be"
+          "explanation": "always = every time. After *be*: I am **always** tired.",
+          "explanation_cz": "always = vždycky. Po *be*: I am **always** tired.",
+          "quiz_options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ]
         },
         {
           "en": "She is usually happy.",
@@ -166,99 +246,160 @@
             "She is usually happy.",
             "She's usually happy."
           ],
-          "explanation": "usually = most of the time · obvykle · after be",
-          "explanation_cz": "usually = obvykle (většinou) · po be"
+          "explanation": "usually = most of the time. After *be*: She is **usually** happy.",
+          "explanation_cz": "usually = obvykle. Po *be*: She is **usually** happy.",
+          "quiz_options": [
+            "usually",
+            "always",
+            "often",
+            "sometimes"
+          ]
         },
         {
-          "en": "He is often late.",
-          "cz": "On má často zpoždění. / On je často pozdě.",
-          "gap": "He is ____ late.",
+          "en": "He is often angry.",
+          "cz": "On je často naštvaný.",
+          "gap": "He is ____ angry.",
           "gap_answer": "often",
           "accepts": [
-            "He is often late.",
-            "He's often late."
+            "He is often angry.",
+            "He's often angry."
           ],
-          "explanation": "often = many times · často · after be",
-          "explanation_cz": "often = často · po be"
+          "explanation": "often = many times. After *be*: He is **often** angry.",
+          "explanation_cz": "often = často. Po *be*: He is **often** angry.",
+          "quiz_options": [
+            "often",
+            "always",
+            "usually",
+            "sometimes"
+          ]
         },
         {
           "en": "We are sometimes busy.",
-          "cz": "Někdy máme hodně práce. / Jsme někdy zaneprázdnění.",
+          "cz": "Jsme někdy zaneprázdnění.",
           "gap": "We are ____ busy.",
           "gap_answer": "sometimes",
           "accepts": [
             "We are sometimes busy.",
-            "We're sometimes busy."
+            "We're sometimes busy.",
+            "Sometimes we are busy.",
+            "We are busy sometimes."
           ],
-          "explanation": "sometimes = not always · někdy · after be",
-          "explanation_cz": "sometimes = někdy · po be"
+          "explanation": "sometimes = not always. After *be*, or first: **Sometimes** we are busy.",
+          "explanation_cz": "sometimes = někdy. Po *be*, nebo na začátku.",
+          "quiz_options": [
+            "sometimes",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "I am never bored.",
-          "cz": "Nikdy se nenudím. / Nejsem nikdy znuděný.",
+          "cz": "Nejsem nikdy znuděný.",
           "gap": "I am ____ bored.",
           "gap_answer": "never",
           "accepts": [
             "I am never bored.",
             "I'm never bored."
           ],
-          "explanation": "never = not ever · nikdy · after be",
-          "explanation_cz": "never = nikdy · po be"
+          "explanation": "never = no time. After *be*: I am **never** bored.",
+          "explanation_cz": "never = nikdy. Po *be*: I am **never** bored.",
+          "quiz_options": [
+            "never",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "Do you often travel?",
           "cz": "Cestuješ často?",
+          "use": false,
           "gap": "Do you ____ travel?",
           "gap_answer": "often",
           "accepts": [
-            "Do you often travel?"
+            "Do you often travel?",
+            "Do you travel often?"
           ],
-          "explanation": "often = many times · často",
-          "explanation_cz": "often = často"
+          "explanation": "often = many times. After *do*: Do you **often** travel? End is also fine: Do you travel **often**?",
+          "explanation_cz": "often = často. Do you **often** travel? i Do you travel **often**?",
+          "quiz_options": [
+            "often",
+            "always",
+            "usually",
+            "sometimes"
+          ]
         },
         {
           "en": "Does she always work here?",
           "cz": "Pracuje ona tady vždycky?",
+          "use": false,
           "gap": "Does she ____ work here?",
           "gap_answer": "always",
           "accepts": [
             "Does she always work here?"
           ],
-          "explanation": "always = every time · vždycky / vždy",
-          "explanation_cz": "always = vždycky / vždy (pořád, 100 %)"
+          "explanation": "always = every time. After *does*: Does she **always** work…?",
+          "explanation_cz": "always = vždycky. Za *does*: Does she **always** work…?",
+          "quiz_options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ]
         },
         {
-          "en": "I always go to school.",
-          "cz": "Vždycky chodím do školy.",
-          "gap": "I ____ go to school.",
+          "en": "I always go to the gym.",
+          "cz": "Vždycky chodím do posilovny.",
+          "gap": "I ____ go to the gym.",
           "gap_answer": "always",
           "accepts": [
-            "I always go to school."
+            "I always go to the gym."
           ],
-          "explanation": "always = every time · vždycky / vždy",
-          "explanation_cz": "always = vždycky / vždy (pořád, 100 %)"
+          "explanation": "always = every time. Before the verb: I **always** go…",
+          "explanation_cz": "always = vždycky. Před slovesem: I **always** go…",
+          "quiz_options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ]
         },
         {
           "en": "We never eat meat.",
           "cz": "Nikdy nejíme maso.",
+          "use": false,
           "gap": "We ____ eat meat.",
           "gap_answer": "never",
           "accepts": [
             "We never eat meat."
           ],
-          "explanation": "never = not ever · nikdy (0%). Positive verb: I never drink… (not don't never)",
-          "explanation_cz": "never = nikdy. Kladné sloveso: I never drink… (ne don't never)"
+          "explanation": "never = no time. Positive verb: We **never** eat… (not *don't never*)",
+          "explanation_cz": "never = nikdy. Kladné sloveso: We **never** eat… (ne *don't never*)",
+          "quiz_options": [
+            "never",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "They usually speak English.",
           "cz": "Oni obvykle mluví anglicky.",
+          "use": false,
           "gap": "They ____ speak English.",
           "gap_answer": "usually",
           "accepts": [
             "They usually speak English."
           ],
-          "explanation": "usually = most of the time · obvykle",
-          "explanation_cz": "usually = obvykle (většinou)"
+          "explanation": "usually = most of the time. Before the verb: They **usually** speak…",
+          "explanation_cz": "usually = obvykle. Před slovesem: They **usually** speak…",
+          "quiz_options": [
+            "usually",
+            "always",
+            "often",
+            "sometimes"
+          ]
         },
         {
           "en": "I often read books.",
@@ -268,8 +409,14 @@
           "accepts": [
             "I often read books."
           ],
-          "explanation": "often = many times · často",
-          "explanation_cz": "often = často"
+          "explanation": "often = many times. Before the verb: I **often** read…",
+          "explanation_cz": "often = často. Před slovesem: I **often** read…",
+          "quiz_options": [
+            "often",
+            "always",
+            "usually",
+            "sometimes"
+          ]
         },
         {
           "en": "She never drinks coffee.",
@@ -279,19 +426,31 @@
           "accepts": [
             "She never drinks coffee."
           ],
-          "explanation": "never = not ever · nikdy (0%). Positive verb: I never drink… (not don't never)",
-          "explanation_cz": "never = nikdy. Kladné sloveso: I never drink… (ne don't never)"
+          "explanation": "never = no time. Positive verb: She **never** drinks… (not *doesn't never*)",
+          "explanation_cz": "never = nikdy. Kladné sloveso: She **never** drinks… (ne *doesn't never*)",
+          "quiz_options": [
+            "never",
+            "always",
+            "usually",
+            "often"
+          ]
         },
         {
           "en": "Are you always busy?",
-          "cz": "Máš vždycky hodně práce? / Jsi vždycky zaneprázdněný?",
+          "cz": "Jsi vždycky zaneprázdněný?",
           "gap": "Are you ____ busy?",
           "gap_answer": "always",
           "accepts": [
             "Are you always busy?"
           ],
-          "explanation": "always = every time · vždycky / vždy",
-          "explanation_cz": "always = vždycky / vždy (pořád, 100 %)"
+          "explanation": "always = every time. After *be*: Are you **always** busy?",
+          "explanation_cz": "always = vždycky. Po *be*: Are you **always** busy?",
+          "quiz_options": [
+            "always",
+            "usually",
+            "often",
+            "sometimes"
+          ]
         }
       ]
     }
@@ -301,21 +460,41 @@
       {
         "title": "How often?",
         "title_cz": "Jak často?",
+        "text_first": true,
         "points": [
-          "always · usually · often · sometimes · never",
-          "Frequency words (*jak často*) say how often you do something.",
-          "Five for A1.",
-          "**I always drink coffee in the morning.**"
+          "These words say **how often**."
         ],
         "table": {
           "headers": [
+            "",
             "",
             ""
           ],
           "rows": [
             [
-              "Use them with the present simple",
-              "**He never works on Sunday.**"
+              "**always**",
+              "every time",
+              "**I always drink coffee.**"
+            ],
+            [
+              "**usually**",
+              "most times",
+              "**I usually get up at seven.**"
+            ],
+            [
+              "**often**",
+              "many times",
+              "**I often watch films.**"
+            ],
+            [
+              "**sometimes**",
+              "some times",
+              "**I sometimes go to Brno.**"
+            ],
+            [
+              "**never**",
+              "no time",
+              "**I never drink tea.**"
             ]
           ]
         }
@@ -324,8 +503,8 @@
         "title": "The scale",
         "title_cz": "Stupnice",
         "points": [
-          "**I always get up at seven.** (every time)",
-          "**I never get up at five.** (no time; *never* already says no)",
+          "**I always drink coffee.** (every time)",
+          "**I never drink tea.** (no time; *never* already says no)",
           "From every time to no time."
         ],
         "svg": "<svg viewBox=\"0 0 520 120\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"60\" y1=\"52\" x2=\"480\" y2=\"52\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"3\"/>\n  <g fill=\"var(--vocab-accent, #4db6c7)\">\n    <circle cx=\"60\" cy=\"52\" r=\"6\"/><circle cx=\"165\" cy=\"52\" r=\"6\"/><circle cx=\"270\" cy=\"52\" r=\"6\"/><circle cx=\"375\" cy=\"52\" r=\"6\"/>\n  </g>\n  <circle cx=\"480\" cy=\"52\" r=\"6\" fill=\"#d4b070\"/>\n  <g font-size=\"15\" font-weight=\"600\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"30\">always</text>\n    <text x=\"165\" y=\"30\">usually</text>\n    <text x=\"270\" y=\"30\">often</text>\n    <text x=\"375\" y=\"30\">sometimes</text>\n    <text x=\"480\" y=\"30\" fill=\"#d4b070\">never</text>\n  </g>\n  <g font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"80\">every time</text>\n    <text x=\"165\" y=\"80\">most times</text>\n    <text x=\"270\" y=\"80\">many times</text>\n    <text x=\"375\" y=\"80\">some times</text>\n    <text x=\"480\" y=\"80\">no time</text>\n  </g>\n  <g font-size=\"11\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">\n    <text x=\"60\" y=\"104\">100%</text>\n    <text x=\"480\" y=\"104\">0%</text>\n  </g>\n</svg>"
@@ -334,17 +513,34 @@
         "title": "Two places",
         "title_cz": "Dvě místa ve větě",
         "points": [
-          "Before the verb: **I often play football.** (not *I play often football*)",
-          "After *be*: **I am often tired.** (not *I often am tired*)",
-          "Czech can put these words almost anywhere. English has two places."
+          "Before the verb: **He often plays football.**",
+          "After *be*: **He is often angry.**",
+          "*sometimes* can also go first: **Sometimes I go to Brno.**"
         ],
-        "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"30\" y=\"48\">I</text>\n    <rect x=\"52\" y=\"26\" width=\"76\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"1.5\"/>\n    <text x=\"90\" y=\"48\" text-anchor=\"middle\" fill=\"#d4b070\" font-weight=\"600\">often</text>\n    <text x=\"140\" y=\"48\">play football.</text>\n  </g>\n  <text x=\"360\" y=\"48\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">before the verb</text>\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"30\" y=\"112\">I am</text>\n    <rect x=\"92\" y=\"90\" width=\"76\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"1.5\"/>\n    <text x=\"130\" y=\"112\" text-anchor=\"middle\" fill=\"#d4b070\" font-weight=\"600\">often</text>\n    <text x=\"180\" y=\"112\">tired.</text>\n  </g>\n  <text x=\"360\" y=\"112\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">after be</text>\n</svg>"
+        "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"30\" y=\"48\">He</text>\n    <rect x=\"68\" y=\"26\" width=\"76\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"1.5\"/>\n    <text x=\"106\" y=\"48\" text-anchor=\"middle\" fill=\"#d4b070\" font-weight=\"600\">often</text>\n    <text x=\"154\" y=\"48\">plays football.</text>\n  </g>\n  <text x=\"360\" y=\"48\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">before the verb</text>\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"30\" y=\"112\">He is</text>\n    <rect x=\"98\" y=\"90\" width=\"76\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#d4b070\" stroke-width=\"1.5\"/>\n    <text x=\"136\" y=\"112\" text-anchor=\"middle\" fill=\"#d4b070\" font-weight=\"600\">often</text>\n    <text x=\"184\" y=\"112\">angry.</text>\n  </g>\n  <text x=\"360\" y=\"112\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">after be</text>\n</svg>",
+        "table": {
+          "headers": [
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "sometimes first",
+              "**Sometimes I go to Brno.**"
+            ],
+            [
+              "sometimes last",
+              "**I go to Brno sometimes.**"
+            ]
+          ]
+        }
       },
       {
         "title": "Common mistakes",
         "title_cz": "Časté chyby",
+        "text_first": true,
         "points": [
-          "Wrong place, wrong sentence."
+          "The adverb has two places. *never* is already no."
         ],
         "table": {
           "headers": [
@@ -353,16 +549,16 @@
           ],
           "rows": [
             [
-              "After the verb: *I drink always coffee*",
+              "*I drink always coffee*",
               "**I always drink coffee**"
             ],
             [
-              "Before *be*: *She always is late*",
-              "**She is always late**"
+              "*I always am tired*",
+              "**I am always tired**"
             ],
             [
-              "*never* is already no. One word does it",
-              "**I never cook.**"
+              "*I don't never drink tea*",
+              "**I never drink tea**"
             ]
           ]
         }
