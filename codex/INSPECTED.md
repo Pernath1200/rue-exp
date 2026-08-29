@@ -14,9 +14,9 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**34 inspected · 0 approved · 65 unseen** of 99 live units
+**34 inspected · 0 approved · 26 unseen** of 60 live units
 
-Of the 34 cloud-authored units, **2 have any tick**.
+Of the 2 cloud-authored units, **2 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
@@ -83,54 +83,15 @@ Of the 34 cloud-authored units, **2 have any tick**.
 - [x][ ] `b1_verb_patterns_advanced` — Verb patterns 2 · 56 items · seen?
 - [ ][ ] `b1_word_order_fronting` — Word order 2 · 36 items
 
-## B2 — 0 inspected / 0 approved / 27 units
+## B2 — 0 inspected / 0 approved / 6 units
 
-- [ ][ ] `b2_articles_genericity` — Articles / genericity · 48 items · **cloud**
-- [ ][ ] `b2_be_get_used_to` — Be used to / get used to · 48 items · **cloud**
-- [ ][ ] `b2_causative` — Causative (have/get done) · 48 items · **cloud**
-- [ ][ ] `b2_discourse_markers` — Discourse markers B2 · 48 items · **cloud**
-- [ ][ ] `b2_future_forms` — Future forms review · 48 items · **cloud**
-- [ ][ ] `b2_gerunds_infinitives_advanced` — Gerunds and infinitives advanced · 48 items · **cloud**
-- [ ][ ] `b2_hypothetical_past` — Hypothetical past · 48 items · **cloud**
-- [ ][ ] `b2_mixed_conditionals` — Mixed conditionals · 48 items · **cloud**
-- [ ][ ] `b2_modal_perfect` — Modals (meanings + perfect) · 60 items · **cloud**
-- [ ][ ] `b2_narrative_tenses` — Narrative tenses · 48 items · **cloud**
-- [ ][ ] `b2_participle_clauses` — Participle clauses · 48 items · **cloud**
-- [ ][ ] `b2_passives_advanced` — Passives advanced · 48 items · **cloud**
-- [ ][ ] `b2_quantifiers_advanced` — Quantifiers advanced · 48 items · **cloud**
-- [ ][ ] `b2_relative_clauses_advanced` — Relative clauses advanced · 48 items · **cloud**
-- [ ][ ] `b2_reported_speech_advanced` — Reported speech advanced · 48 items · **cloud**
-- [ ][ ] `b2_wish_if_only` — Wish / if only · 48 items · **cloud**
-- [ ][ ] `b2_articles_correction` — Articles: the mixed cases · 28 items
 - [ ][ ] `b2_clear_claims` — Clear claims · 12 items · seen?
-- [ ][ ] `b2_cleft_sentences` — Cleft sentences · 10 items
-- [ ][ ] `b2_emphasis_fronting` — Emphasis & fronting · 10 items
-- [ ][ ] `b2_future_in_the_past` — Future in the past · 10 items
-- [ ][ ] `b2_inversion` — Inversion · 10 items
 - [ ][ ] `b2_past_perfect` — Past perfect · 26 items · seen?
 - [ ][ ] `b2_present_perfect_continuous` — Present perfect simple vs continuous · 48 items · seen?
 - [ ][ ] `b2_second_conditional` — Second conditional · 72 items · seen?
 - [ ][ ] `b2_third_conditional` — Third conditional · 72 items · seen?
 - [ ][ ] `b2_word_formation` — Word formation (FCE Part 3) · 72 items
 
-## C1 — 0 inspected / 0 approved / 19 units
+## C1 — 0 inspected / 0 approved / 1 units
 
-- [ ][ ] `c1_advanced_modality` — Advanced modality · 48 items · **cloud**
-- [ ][ ] `c1_advanced_passive` — Advanced passive / reporting · 48 items · **cloud**
-- [ ][ ] `c1_article_nuance` — Article nuance · 48 items · **cloud**
-- [ ][ ] `c1_clefts_fronting` — Clefts & fronting · 48 items · **cloud**
-- [ ][ ] `c1_comparative_advanced` — Advanced comparison · 48 items · **cloud**
-- [ ][ ] `c1_complex_noun_phrases` — Complex noun phrases · 48 items · **cloud**
-- [ ][ ] `c1_discourse_grammar` — Discourse grammar · 48 items · **cloud**
-- [ ][ ] `c1_ellipsis_substitution` — Ellipsis & substitution · 48 items · **cloud**
-- [ ][ ] `c1_inversion_emphasis` — Inversion & emphasis · 48 items · **cloud**
-- [ ][ ] `c1_narrative_mastery` — Narrative tenses mastery · 48 items · **cloud**
-- [ ][ ] `c1_nominalisation` — Nominalisation · 48 items · **cloud**
-- [ ][ ] `c1_participle_absolute` — Participle & absolute constructions · 48 items · **cloud**
-- [ ][ ] `c1_register` — Register: formal vs informal · 48 items · **cloud**
-- [ ][ ] `c1_spoken_vs_written` — Spoken grammar vs written · 48 items · **cloud**
-- [ ][ ] `c1_subjunctive` — Subjunctive & formal unreal · 48 items · **cloud**
-- [ ][ ] `c1_time_aspect_edge` — Time & aspect edge cases · 48 items · **cloud**
-- [ ][ ] `c1_hedging_stance` — Hedging & stance · 10 items
-- [ ][ ] `c1_reporting_complementation` — Reporting verbs & complementation · 48 items
 - [ ][ ] `c1_word_formation` — Word formation (CAE Part 3) · 72 items

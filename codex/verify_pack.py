@@ -308,7 +308,7 @@ def lint_pack(path: Path) -> None:
                         )
             for name in ("accepts", "gap_accepts", "quiz_options"):
                 check_str_list(pid, w, name, it.get(name))
-    if n_items == 0:
+    if n_items == 0 and d.get("status") != "stub":
         warn(f"{pid}: pack has zero items")
 
     # Use-stage sentence bank (leaf vocab packs). Prompt is cz, answer is en.

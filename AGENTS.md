@@ -165,6 +165,7 @@ baby-talk), at every level.
 | **P-b1-vocab** | B1 vocab extension = **interactive only** (auto must not start) |
 | **P-deploy** | A1+A2 polished before any student deploy |
 | **P-engine** | Auto never touches `js/` / `css/` / `index.html` unless REPAIR-QUEUE says engine-ok |
+| **P-b2c1-stub** | Auto B2/C1 banks are title-only stubs — never refill. Keep-list in POLICY-LOCKS.md |
 
 ## B1 vocabulary extension — PARKED, interactive only (James, 2026-08-09)
 
