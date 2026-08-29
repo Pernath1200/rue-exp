@@ -296,7 +296,16 @@ def lint_pack(uid):
     if not p.exists():
         return None
     d = json.loads(p.read_text(encoding="utf-8"))
-    items = [it for b in d.get("blocks", []) for it in b.get("items", [])]
+    pack_seq = (d.get("check") or {}).get("sequence")
+    pack_wants_quiz = pack_seq is None or "quiz" in pack_seq
+    items = []
+    item_in_quiz = {}
+    for b in d.get("blocks") or []:
+        seq = (b.get("check") or {}).get("sequence")
+        wants_q = pack_wants_quiz if seq is None else ("quiz" in seq)
+        for it in b.get("items") or []:
+            items.append(it)
+            item_in_quiz[id(it)] = wants_q
     strict_articles = bool(d.get("strict_articles"))
     lenient_if_when = bool(d.get("lenient_if_when"))
     syn = json.loads((ROOT / "data/senses.json").read_text(encoding="utf-8")).get("synonyms", {})
@@ -312,7 +321,7 @@ def lint_pack(uid):
                          "timesort", "aweek", "baddiagram", "notbullet",
                          "verbcue", "thirdform", "ppcuz", "ppsort",
                          "stemcue", "longtable", "plusminus",
-                         "sortlabel", "sortbold")}
+                         "sortlabel", "sortbold", "patternchip", "bothsort")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -322,7 +331,7 @@ def lint_pack(uid):
         cz = it.get("cz", "")
         en = acc[0] if acc else it.get("en", "")
 
-        if it.get("gap_answer") and not (
+        if item_in_quiz.get(id(it), True) and it.get("gap_answer") and not (
                 isinstance(it.get("quiz_options"), list) and len(it["quiz_options"]) >= 2):
             f["noopts"].append(it)
 
@@ -355,6 +364,14 @@ def lint_pack(uid):
         ga = str(it.get("gap_answer") or "").strip().lower()
         if re.search(r"\bwant[s]?\s+_{2,}\s+\w", gap, re.I) and ga == "to":
             f["toparticle"].append(it)
+
+        # B18 — mashup chip "to swimming" / "to reading"  [EXACT]
+        # a2_verb_patterns 2026-08-29: "to swimming isn't even a common error".
+        for o in it.get("quiz_options") or []:
+            if re.fullmatch(r"to\s+[a-z]+ing", str(o).strip(), re.I) \
+                    and str(o).strip().lower() != ga:
+                f["patternchip"].append(it)
+                break
 
         # B8 — a/an/the gap in a pack that is not articles  [EXACT]
         # a1_there_is 2026-08-29: There is ____ university tested articles.
@@ -711,16 +728,40 @@ def lint_pack(uid):
                 })
                 break
 
+    # B13 — both-pattern verb on a to vs -ing sort  [EXACT]
+    # a2_verb_patterns 2026-08-29: try on the to-column; try takes both.
+    BOTH_PATTERN = {
+        "like", "love", "hate", "prefer", "try", "start", "begin",
+        "continue", "stop", "remember", "forget",
+    }
+    bins_l = " ".join(str(x) for x in (d.get("bins") or [])).lower()
+    if "ing" in bins_l and re.search(r"\bto\b", bins_l):
+        for it in items:
+            if not it.get("bin"):
+                continue
+            chip = re.sub(r"[^a-z]+", " ", str(it.get("en") or "").lower()).strip()
+            head = chip.split()[0] if chip else ""
+            if head in BOTH_PATTERN:
+                f["bothsort"].append(it)
+
     # B16 — position-sort column titled "before verb" / "before drink"
     # a2_adverbs_order 2026-08-29: He is often tired is after is, not before verb;
     # "before drink" as a column only fits one chip.
     bin_names = [str(x) for x in (d.get("bins") or [])]
     bin_names += [str(it.get("bin") or "") for it in items if it.get("bin")]
     for bname in bin_names:
-        if re.search(r"^before\s+(the\s+)?(verb|drink)\b", bname, re.I):
+        if re.search(r"^before\s+drink\b", bname, re.I):
             f["sortlabel"].append({
                 "cz": bname,
-                "en": "sort column is the pattern (always drink), not before verb/drink",
+                "en": "sort column is the pattern, not before drink",
+            })
+            break
+        if re.search(r"^before\s+(the\s+)?verb\b", bname, re.I) \
+                and "be" not in str(d.get("sort_rule") or "").lower() \
+                and "can" not in str(d.get("sort_rule") or "").lower():
+            f["sortlabel"].append({
+                "cz": bname,
+                "en": "before the verb needs a be/can rule line (sort_rule)",
             })
             break
 
@@ -991,6 +1032,8 @@ LABELS = [
     ("verbcue",     "EXACT  B11 whole-VP gap has no (lemma) and the stem does not name the verb"),
     ("sortlabel",   "EXACT  B16 position-sort column is 'before verb' / 'before drink' — name the pattern"),
     ("sortbold",    "EXACT  C37 sentence-sort chip is 3+ words with no **taught form**"),
+    ("patternchip", "EXACT  B18 Quiz chip is to+ing mashup (to swimming) — use the two real forms"),
+    ("bothsort",    "EXACT  B13 sort chip takes both to and -ing (try/like) — cannot pick a bin"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),

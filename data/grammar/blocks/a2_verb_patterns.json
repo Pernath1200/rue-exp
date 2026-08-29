@@ -5,587 +5,525 @@
   "tree_node": "a2_verb_patterns",
   "codex_unit": "G_VC-A1B1-01",
   "practice": "frames",
-  "note": "like/enjoy + -ing · want/need/decide + to. Gap on to or the -ing form; 7 items gap the first verb instead, so the pattern verbs are taught, not assumed. · Bank 48 items · flags: 2026-07-26e like/have to + plan · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Two shapes: want/need/decide/hope/plan/try/promise/would like/offer/agree + to · enjoy/don't mind/finish + -ing. like/love/hate: teach -ing, also accept to-V (would like is to only). Quiz chips are only the two patterns (to-V vs -ing). like/love/try take both — Type/Use, not Quiz. like/want/need already smoked at A1 — recycled as known first verbs. Sort: first verb → +to / +-ing; like/love/hate/try off the board (both). Use is error-correction (use_mode: correct). stop-to vs stop-ing, start both-OK, try-ing, can't stand parked 2026-08-29: see codex/parked-stop-to-ing.json (B1). · 2026-08-29 smoke: I8 audit; B8 to-V chips; B3 authored options; B11 (lemma) cue; C7 no chunks; C11 extras named; C14 unit name; C17 cut Remember; C20 cut Practice focus; C23 no this pack/at A2; C30 Not/Say; C32 ~~strike~~; D1 per-verb explanations; D3 slash; F2 park B1 meaning-change; F3 Use on taught lemmas; E7 error-correction Use.",
   "default_direction": "cz_to_en",
+  "use_mode": "correct",
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
+  "bins": [
+    "to + verb",
+    "verb + -ing"
+  ],
+  "bin_captions": {
+    "to + verb": "want to go",
+    "verb + -ing": "enjoy going"
+  },
   "blocks": [
+    {
+      "id": "sort",
+      "title": "to or -ing?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "want",
+          "cz": "chtít",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "need",
+          "cz": "potřebovat",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "decide",
+          "cz": "rozhodnout se",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "hope",
+          "cz": "doufat",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "plan",
+          "cz": "plánovat",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "would like",
+          "cz": "chtěl bych",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "offer",
+          "cz": "nabídnout",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "agree",
+          "cz": "souhlasit",
+          "bin": "to + verb",
+          "use": false
+        },
+        {
+          "en": "enjoy",
+          "cz": "baví mě",
+          "bin": "verb + -ing",
+          "use": false
+        },
+        {
+          "en": "don't mind",
+          "cz": "nevadí mi",
+          "bin": "verb + -ing",
+          "use": false
+        },
+        {
+          "en": "finish",
+          "cz": "dokončit",
+          "bin": "verb + -ing",
+          "use": false
+        }
+      ]
+    },
     {
       "id": "verb_patterns_a2",
       "title": "Verb patterns (to / -ing) · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
-        {
-          "en": "I like swimming.",
-          "cz": "Rád plavu. / Mám rád plavání.",
-          "gap": "I like ____.",
-          "gap_answer": "swimming",
-          "accepts": [
-            "I like swimming.",
-            "I enjoy swimming.",
-            "I love swimming."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "She likes reading.",
-          "cz": "Ráda čte.",
-          "gap": "She likes ____.",
-          "gap_answer": "reading",
-          "accepts": [
-            "She likes reading.",
-            "She enjoys reading.",
-            "She loves reading."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
         {
           "en": "We enjoy travelling.",
           "cz": "Rádi cestujeme.",
-          "gap": "We enjoy ____.",
+          "gap": "We enjoy ____. (travel)",
           "gap_answer": "travelling",
+          "gap_accepts": [
+            "traveling"
+          ],
+          "quiz_options": [
+            "travelling",
+            "to travel"
+          ],
           "accepts": [
             "We enjoy travelling.",
-            "We enjoy traveling.",
-            "We like travelling.",
-            "We like traveling.",
-            "We love travelling.",
-            "We love traveling."
+            "We enjoy traveling."
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "He enjoys cooking.",
-          "cz": "Rád vaří.",
-          "gap": "He enjoys ____.",
-          "gap_answer": "cooking",
-          "accepts": [
-            "He enjoys cooking.",
-            "He likes cooking.",
-            "He loves cooking."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "I hate waiting.",
-          "cz": "Nesnáším čekání.",
-          "gap": "I hate ____.",
-          "gap_answer": "waiting",
-          "accepts": [
-            "I hate waiting."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "She loves dancing.",
-          "cz": "Miluje tanec.",
-          "gap": "She loves ____.",
-          "gap_answer": "dancing",
-          "accepts": [
-            "She loves dancing.",
-            "She likes dancing.",
-            "She enjoys dancing."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "I want to go home.",
-          "cz": "Chci jít domů.",
-          "gap": "I want ____ go home.",
-          "gap_answer": "to",
-          "accepts": [
-            "I want to go home."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "She wants to study medicine.",
-          "cz": "Chce studovat medicínu.",
-          "gap": "She wants ____ study medicine.",
-          "gap_answer": "to",
-          "accepts": [
-            "She wants to study medicine."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "We need to leave now.",
-          "cz": "Musíme teď odejít. / Potřebujeme odejít.",
-          "gap": "We need ____ leave now.",
-          "gap_answer": "to",
-          "accepts": [
-            "We need to leave now.",
-            "We have to leave now.",
-            "We've got to leave now.",
-            "We have got to leave now."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "He needs to rest.",
-          "cz": "Potřebuje odpočívat.",
-          "gap": "He needs ____ rest.",
-          "gap_answer": "to",
-          "accepts": [
-            "He needs to rest.",
-            "He has to rest.",
-            "He has got to rest."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I decide to stay.",
-          "cz": "Rozhodnu se zůstat.",
-          "gap": "I decide ____ stay.",
-          "gap_answer": "to",
-          "accepts": [
-            "I decide to stay.",
-            "I decided to stay."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "They hope to win.",
-          "cz": "Doufají, že vyhrají.",
-          "gap": "They hope ____ win.",
-          "gap_answer": "to",
-          "accepts": [
-            "They hope to win."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I plan to visit Prague.",
-          "cz": "Plánuju navštívit Prahu.",
-          "gap": "I plan ____ visit Prague.",
-          "gap_answer": "to",
-          "accepts": [
-            "I plan to visit Prague."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "She promises to call.",
-          "cz": "Slibuje, že zavolá.",
-          "gap": "She promises ____ call.",
-          "gap_answer": "to",
-          "accepts": [
-            "She promises to call."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I try to help.",
-          "cz": "Snažím se pomoct.",
-          "gap": "I try ____ help.",
-          "gap_answer": "to",
-          "accepts": [
-            "I try to help."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "He started working at nine.",
-          "cz": "Začal pracovat v devět.",
-          "gap": "He started ____ at nine.",
-          "gap_answer": "working",
-          "accepts": [
-            "He started working at nine.",
-            "He started to work at nine."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "I stopped smoking.",
-          "cz": "Přestal jsem kouřit.",
-          "gap": "I stopped ____.",
-          "gap_answer": "smoking",
-          "accepts": [
-            "I stopped smoking."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "Would you like to sit down?",
-          "cz": "Nechtěl byste si sednout?",
-          "gap": "Would you like ____ sit down?",
-          "gap_answer": "to",
-          "accepts": [
-            "Would you like to sit down?"
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I would like to order, please.",
-          "cz": "Chtěl bych si objednat, prosím.",
-          "gap": "I would like ____ order, please.",
-          "gap_answer": "to",
-          "accepts": [
-            "I would like to order, please.",
-            "I'd like to order, please."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "She decided to leave.",
-          "cz": "Rozhodla se odejít.",
-          "gap": "She decided ____ leave.",
-          "gap_answer": "to",
-          "accepts": [
-            "She decided to leave."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I don't like getting up early.",
-          "cz": "Nemám rád ranní vstávání.",
-          "gap": "I don't like ____ up early.",
-          "gap_answer": "getting",
-          "accepts": [
-            "I don't like getting up early."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "They want to buy a house.",
-          "cz": "Chtějí koupit dům.",
-          "gap": "They want ____ buy a house.",
-          "gap_answer": "to",
-          "accepts": [
-            "They want to buy a house."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "We enjoy meeting friends.",
-          "cz": "Rádi potkáváme kamarády.",
-          "gap": "We enjoy ____ friends.",
-          "gap_answer": "meeting",
-          "accepts": [
-            "We enjoy meeting friends.",
-            "We like meeting friends.",
-            "We love meeting friends."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "He hopes to find a job.",
-          "cz": "Doufá, že najde práci.",
-          "gap": "He hopes ____ find a job.",
-          "gap_answer": "to",
-          "accepts": [
-            "He hopes to find a job."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I like cooking at weekends.",
-          "cz": "Rád vařím o víkendech.",
-          "gap": "I like ____ at weekends.",
-          "gap_answer": "cooking",
-          "accepts": [
-            "I like cooking at weekends.",
-            "I like cooking on weekends.",
-            "I enjoy cooking at weekends.",
-            "I love cooking at weekends."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "She loves meeting new people.",
-          "cz": "Miluje seznamování s novými lidmi.",
-          "gap": "She loves ____ new people.",
-          "gap_answer": "meeting",
-          "accepts": [
-            "She loves meeting new people.",
-            "She likes meeting new people.",
-            "She enjoys meeting new people."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "We hate getting up early.",
-          "cz": "Nesnášíme ranní vstávání.",
-          "gap": "We hate ____ up early.",
-          "gap_answer": "getting",
-          "accepts": [
-            "We hate getting up early."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
-        },
-        {
-          "en": "He enjoys listening to podcasts.",
-          "cz": "Rád poslouchá podcasty.",
-          "gap": "He enjoys ____ to podcasts.",
-          "gap_answer": "listening",
-          "accepts": [
-            "He enjoys listening to podcasts.",
-            "He likes listening to podcasts.",
-            "He loves listening to podcasts."
-          ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "wrong": "We enjoy to travel.",
+          "explanation": "**enjoy** + **-ing**. Not *to travel*.",
+          "explanation_cz": "**enjoy** + **-ing**. Ne *to travel*."
         },
         {
           "en": "I don't mind waiting.",
           "cz": "Nevadí mi čekat.",
-          "gap": "I don't mind ____.",
+          "use": false,
+          "gap": "I don't mind ____. (wait)",
           "gap_answer": "waiting",
-          "accepts": [
-            "I don't mind waiting."
+          "quiz_options": [
+            "waiting",
+            "to wait"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "accepts": [
+            "I don't mind waiting.",
+            "I do not mind waiting."
+          ],
+          "explanation": "**don't mind** + **-ing**. Not *to wait*.",
+          "explanation_cz": "**don't mind** + **-ing**. Ne *to wait*."
         },
         {
-          "en": "She finished writing the report.",
-          "cz": "Dokončila psaní reportu.",
-          "gap": "She finished ____ the report.",
+          "en": "She finished writing.",
+          "cz": "Dokončila psaní.",
+          "use": false,
+          "gap": "She finished ____. (write)",
           "gap_answer": "writing",
-          "accepts": [
-            "She finished writing the report."
+          "quiz_options": [
+            "writing",
+            "to write"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "accepts": [
+            "She finished writing."
+          ],
+          "explanation": "**finish** + **-ing**. Not *to write*.",
+          "explanation_cz": "**finish** + **-ing**. Ne *to write*."
         },
         {
-          "en": "I want to improve my English.",
-          "cz": "Chci si zlepšit angličtinu.",
-          "gap": "I want ____ improve my English.",
-          "gap_answer": "to",
-          "accepts": [
-            "I want to improve my English."
+          "en": "We enjoy meeting friends.",
+          "cz": "Rádi potkáváme kamarády.",
+          "use": false,
+          "gap": "We enjoy ____ friends. (meet)",
+          "gap_answer": "meeting",
+          "quiz_options": [
+            "meeting",
+            "to meet"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "We enjoy meeting friends."
+          ],
+          "explanation": "**enjoy** + **-ing**. Not *to meet*.",
+          "explanation_cz": "**enjoy** + **-ing**. Ne *to meet*."
         },
         {
-          "en": "They need to practise more.",
-          "cz": "Potřebují víc cvičit.",
-          "gap": "They need ____ practise more.",
-          "gap_answer": "to",
-          "accepts": [
-            "They need to practise more.",
-            "They need to practice more.",
-            "They have to practise more.",
-            "They have got to practise more."
+          "en": "He enjoys listening to music.",
+          "cz": "Rád poslouchá hudbu.",
+          "use": false,
+          "gap": "He enjoys ____ to music. (listen)",
+          "gap_answer": "listening",
+          "quiz_options": [
+            "listening",
+            "to listen"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "He enjoys listening to music."
+          ],
+          "explanation": "**enjoys** + **-ing**. Not *to listen*.",
+          "explanation_cz": "**enjoys** + **-ing**. Ne *to listen*."
         },
         {
-          "en": "He hopes to study abroad.",
-          "cz": "Doufá, že bude studovat v zahraničí.",
-          "gap": "He hopes ____ study abroad.",
-          "gap_answer": "to",
-          "accepts": [
-            "He hopes to study abroad."
+          "en": "I want to go home.",
+          "cz": "Chci jít domů.",
+          "gap": "I want ____ home. (go)",
+          "gap_answer": "to go",
+          "quiz_options": [
+            "to go",
+            "going"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "I want to go home."
+          ],
+          "wrong": "I want go home.",
+          "explanation": "**want** + **to go**. Not *want go* or *want going*.",
+          "explanation_cz": "**want** + **to go**. Ne *want go* ani *want going*."
         },
         {
-          "en": "We plan to move next year.",
-          "cz": "Plánujeme se příští rok stěhovat.",
-          "gap": "We plan ____ move next year.",
-          "gap_answer": "to",
-          "accepts": [
-            "We plan to move next year."
+          "en": "She wants to go.",
+          "cz": "Ona chce jít.",
+          "gap": "She wants ____. (go)",
+          "gap_answer": "to go",
+          "quiz_options": [
+            "to go",
+            "going"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "She wants to go."
+          ],
+          "wrong": "She wants go.",
+          "explanation": "**wants** + **to go**. Not *wants go*.",
+          "explanation_cz": "**wants** + **to go**. Ne *wants go*."
         },
         {
-          "en": "I promise to be careful.",
-          "cz": "Slibuju, že budu opatrný.",
-          "gap": "I promise ____ be careful.",
-          "gap_answer": "to",
-          "accepts": [
-            "I promise to be careful."
+          "en": "We need to leave now.",
+          "cz": "Potřebujeme teď odejít.",
+          "gap": "We need ____ now. (leave)",
+          "gap_answer": "to leave",
+          "quiz_options": [
+            "to leave",
+            "leaving"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "We need to leave now."
+          ],
+          "wrong": "We need leave now.",
+          "explanation": "**need** + **to leave**. Not *need leave*.",
+          "explanation_cz": "**need** + **to leave**. Ne *need leave*."
         },
         {
-          "en": "She decided to stay in Prague.",
-          "cz": "Rozhodla se zůstat v Praze.",
-          "gap": "She decided ____ stay in Prague.",
-          "gap_answer": "to",
-          "accepts": [
-            "She decided to stay in Prague."
+          "en": "He needs to rest.",
+          "cz": "Potřebuje odpočívat.",
+          "use": false,
+          "gap": "He needs ____. (rest)",
+          "gap_answer": "to rest",
+          "quiz_options": [
+            "to rest",
+            "resting"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "He needs to rest."
+          ],
+          "explanation": "**needs** + **to rest**. Not *needs rest*.",
+          "explanation_cz": "**needs** + **to rest**. Ne *needs rest*."
         },
         {
-          "en": "I tried to call you.",
-          "cz": "Snažil jsem se ti zavolat.",
-          "gap": "I tried ____ call you.",
-          "gap_answer": "to",
-          "accepts": [
-            "I tried to call you."
+          "en": "She decided to stay.",
+          "cz": "Rozhodla se zůstat.",
+          "use": false,
+          "gap": "She decided ____. (stay)",
+          "gap_answer": "to stay",
+          "quiz_options": [
+            "to stay",
+            "staying"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "She decided to stay."
+          ],
+          "explanation": "**decided** + **to stay**. Not *decided stay*.",
+          "explanation_cz": "**decided** + **to stay**. Ne *decided stay*."
         },
         {
-          "en": "Would you like to join us?",
-          "cz": "Chtěl bys se k nám přidat?",
-          "gap": "Would you like ____ join us?",
-          "gap_answer": "to",
-          "accepts": [
-            "Would you like to join us?"
+          "en": "They hope to win.",
+          "cz": "Doufají, že vyhrají.",
+          "gap": "They hope ____. (win)",
+          "gap_answer": "to win",
+          "quiz_options": [
+            "to win",
+            "winning"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "I would like to learn Spanish.",
-          "cz": "Chtěl bych se učit španělsky.",
-          "gap": "I would like ____ learn Spanish.",
-          "gap_answer": "to",
           "accepts": [
-            "I would like to learn Spanish.",
-            "I'd like to learn Spanish."
+            "They hope to win."
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "He offered to help.",
-          "cz": "Nabídl, že pomůže.",
-          "gap": "He offered ____ help.",
-          "gap_answer": "to",
-          "accepts": [
-            "He offered to help."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
-        },
-        {
-          "en": "They agreed to come.",
-          "cz": "Souhlasili, že přijdou.",
-          "gap": "They agreed ____ come.",
-          "gap_answer": "to",
-          "accepts": [
-            "They agreed to come."
-          ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "wrong": "They hope winning.",
+          "explanation": "**hope** + **to win**. Not *hope winning*.",
+          "explanation_cz": "**hope** + **to win**. Ne *hope winning*."
         },
         {
           "en": "I plan to stay.",
           "cz": "Plánuju zůstat.",
-          "gap": "I plan ____ stay.",
-          "gap_answer": "to",
-          "accepts": [
-            "I plan to stay.",
-            "I plan to stay here.",
-            "I am planning to stay.",
-            "I'm planning to stay."
+          "gap": "I plan ____. (stay)",
+          "gap_answer": "to stay",
+          "quiz_options": [
+            "to stay",
+            "staying"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "I plan to stay."
+          ],
+          "wrong": "I plan stay.",
+          "explanation": "**plan** + **to stay**. Not *plan stay*.",
+          "explanation_cz": "**plan** + **to stay**. Ne *plan stay*."
         },
         {
-          "en": "She started learning German.",
-          "cz": "Začala se učit německy.",
-          "gap": "She started ____ German.",
-          "gap_answer": "learning",
-          "accepts": [
-            "She started learning German.",
-            "She started to learn German."
+          "en": "I would like to order, please.",
+          "cz": "Chtěl bych si objednat, prosím.",
+          "gap": "I would like ____, please. (order)",
+          "gap_answer": "to order",
+          "quiz_options": [
+            "to order",
+            "ordering"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "accepts": [
+            "I would like to order, please.",
+            "I'd like to order, please."
+          ],
+          "wrong": "I would like ordering, please.",
+          "explanation": "**would like** + **to order**. Not *would like ordering*.",
+          "explanation_cz": "**would like** + **to order**. Ne *would like ordering*."
         },
         {
-          "en": "I stopped to rest.",
-          "cz": "Zastavil jsem se odpočinout. (purpose)",
-          "gap": "I stopped ____ rest.",
-          "gap_answer": "to",
-          "accepts": [
-            "I stopped to rest."
+          "en": "I would like to learn English.",
+          "cz": "Chtěl bych se učit anglicky.",
+          "use": false,
+          "gap": "I would like ____ English. (learn)",
+          "gap_answer": "to learn",
+          "quiz_options": [
+            "to learn",
+            "learning"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "I would like to learn English.",
+            "I'd like to learn English."
+          ],
+          "explanation": "**would like** + **to learn**. Not **-ing**.",
+          "explanation_cz": "**would like** + **to learn**. Ne **-ing**."
         },
         {
-          "en": "I stopped resting and continued.",
-          "cz": "Přestal jsem odpočívat a pokračoval.",
-          "gap": "I stopped ____ and continued.",
-          "gap_answer": "resting",
-          "accepts": [
-            "I stopped resting and continued."
+          "en": "I promise to be careful.",
+          "cz": "Slibuju, že budu opatrný.",
+          "use": false,
+          "gap": "I promise ____ careful. (be)",
+          "gap_answer": "to be",
+          "quiz_options": [
+            "to be",
+            "being"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "accepts": [
+            "I promise to be careful."
+          ],
+          "explanation": "**promise** + **to be**. Not *promise being*.",
+          "explanation_cz": "**promise** + **to be**. Ne *promise being*."
         },
         {
-          "en": "Do you enjoy travelling alone?",
-          "cz": "Baví tě cestovat sám?",
-          "gap": "Do you enjoy ____ alone?",
-          "gap_answer": "travelling",
-          "accepts": [
-            "Do you enjoy travelling alone?",
-            "Do you enjoy traveling alone?"
+          "en": "He offered to help us.",
+          "cz": "Nabídl, že nám pomůže.",
+          "use": false,
+          "gap": "He offered ____ us. (help)",
+          "gap_answer": "to help",
+          "quiz_options": [
+            "to help",
+            "helping"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "accepts": [
+            "He offered to help us."
+          ],
+          "explanation": "**offered** + **to help**. Not *offered helping*.",
+          "explanation_cz": "**offered** + **to help**. Ne *offered helping*."
         },
         {
-          "en": "I can't stand waiting in queues.",
-          "cz": "Nesnáším čekání ve frontách.",
-          "gap": "I can't stand ____ in queues.",
-          "gap_answer": "waiting",
-          "accepts": [
-            "I can't stand waiting in queues.",
-            "I can't stand waiting in lines."
+          "en": "They agreed to help.",
+          "cz": "Souhlasili, že pomůžou.",
+          "use": false,
+          "gap": "They agreed ____. (help)",
+          "gap_answer": "to help",
+          "quiz_options": [
+            "to help",
+            "helping"
           ],
-          "explanation": "After this verb: to + verb, or verb-ing — the first verb decides.",
-          "explanation_cz": "Po tomto slovese: to + sloveso, nebo -ing — rozhoduje první sloveso."
+          "accepts": [
+            "They agreed to help."
+          ],
+          "explanation": "**agreed** + **to help**. Not *agreed helping*.",
+          "explanation_cz": "**agreed** + **to help**. Ne *agreed helping*."
         },
         {
-          "en": "She hopes to find a flat soon.",
-          "cz": "Doufá, že brzy najde byt.",
-          "gap": "She hopes ____ find a flat soon.",
-          "gap_answer": "to",
-          "accepts": [
-            "She hopes to find a flat soon.",
-            "She hopes to find an apartment soon."
+          "en": "They want to buy a house.",
+          "cz": "Chtějí koupit dům.",
+          "gap": "They want ____ a house. (buy)",
+          "gap_answer": "to buy",
+          "quiz_options": [
+            "to buy",
+            "buying"
           ],
-          "explanation": "to = direction / receiver / infinitive marker.",
-          "explanation_cz": "to = směr / příjemce / značka infinitivu."
+          "accepts": [
+            "They want to buy a house."
+          ],
+          "wrong": "They want buy a house.",
+          "explanation": "**want** + **to buy**. Not *want buy*.",
+          "explanation_cz": "**want** + **to buy**. Ne *want buy*."
+        },
+        {
+          "en": "Would you like to sit down?",
+          "cz": "Nechtěl byste si sednout?",
+          "use": false,
+          "gap": "Would you like ____ down? (sit)",
+          "gap_answer": "to sit",
+          "quiz_options": ["to sit", "sitting"],
+          "accepts": [
+            "Would you like to sit down?"
+          ],
+          "explanation": "**would like** + **to sit**. Not **-ing**.",
+          "explanation_cz": "**would like** + **to sit**. Ne **-ing**."
+        }
+      ]
+    },
+    {
+      "id": "both_ok",
+      "title": "like / love / try · Type",
+      "check": {
+        "sequence": []
+      },
+      "items": [
+        {
+          "en": "I like swimming.",
+          "cz": "Rád plavu.",
+          "gap": "I like ____. (swim)",
+          "gap_answer": "swimming",
+          "gap_accepts": [
+            "to swim"
+          ],
+          "accepts": [
+            "I like swimming.",
+            "I like to swim."
+          ],
+          "wrong": "I like swim.",
+          "explanation": "**like** + **-ing** (or **to swim**). Not *like swim*.",
+          "explanation_cz": "**like** + **-ing** (nebo **to swim**). Ne *like swim*."
+        },
+        {
+          "en": "She likes reading.",
+          "cz": "Ráda čte.",
+          "use": false,
+          "gap": "She likes ____. (read)",
+          "gap_answer": "reading",
+          "gap_accepts": [
+            "to read"
+          ],
+          "accepts": [
+            "She likes reading.",
+            "She likes to read."
+          ],
+          "explanation": "**likes** + **-ing** (or **to read**). Not *likes read*.",
+          "explanation_cz": "**likes** + **-ing** (nebo **to read**). Ne *likes read*."
+        },
+        {
+          "en": "I love dancing.",
+          "cz": "Miluju tanec.",
+          "gap": "I love ____. (dance)",
+          "gap_answer": "dancing",
+          "gap_accepts": [
+            "to dance"
+          ],
+          "accepts": [
+            "I love dancing.",
+            "I love to dance."
+          ],
+          "wrong": "I love dance.",
+          "explanation": "**love** + **-ing** (or **to dance**). Not *love dance*.",
+          "explanation_cz": "**love** + **-ing** (nebo **to dance**). Ne *love dance*."
+        },
+        {
+          "en": "I don't like getting up early.",
+          "cz": "Nemám rád ranní vstávání.",
+          "gap": "I don't like ____ up early. (get)",
+          "gap_answer": "getting",
+          "gap_accepts": [
+            "to get"
+          ],
+          "accepts": [
+            "I don't like getting up early.",
+            "I do not like getting up early.",
+            "I don't like to get up early.",
+            "I do not like to get up early."
+          ],
+          "wrong": "I don't like get up early.",
+          "explanation": "**don't like** + **-ing** (or **to get**). Not *like get*.",
+          "explanation_cz": "**don't like** + **-ing** (nebo **to get**). Ne *like get*."
+        },
+        {
+          "en": "I like cooking.",
+          "cz": "Rád vařím.",
+          "use": false,
+          "gap": "I like ____. (cook)",
+          "gap_answer": "cooking",
+          "gap_accepts": [
+            "to cook"
+          ],
+          "accepts": [
+            "I like cooking.",
+            "I like to cook."
+          ],
+          "explanation": "**like** + **-ing** (or **to cook**). Not *like cook*.",
+          "explanation_cz": "**like** + **-ing** (nebo **to cook**). Ne *like cook*."
+        },
+        {
+          "en": "I try to help.",
+          "cz": "Snažím se pomoct.",
+          "gap": "I try ____. (help)",
+          "gap_answer": "to help",
+          "gap_accepts": [
+            "helping"
+          ],
+          "accepts": [
+            "I try to help.",
+            "I try helping."
+          ],
+          "wrong": "I try help.",
+          "explanation": "**try** + **to help** (or **-ing**). Not *try help*.",
+          "explanation_cz": "**try** + **to help** (nebo **-ing**). Ne *try help*."
         }
       ]
     }
@@ -593,196 +531,214 @@
   "intro": {
     "cards": [
       {
-        "title": "Verb patterns",
-        "title_cz": "Vzorce sloves — to / -ing",
+        "title": "Verb patterns 1 (to / -ing)",
+        "title_cz": "Vzorce sloves 1 (to / -ing)",
+        "text_first": true,
         "table": {
-          "caption": "two patterns",
+          "caption": "main patterns",
           "headers": [
             "Pattern",
-            "Verbs",
             "Example"
           ],
           "rows": [
             [
-              "verb + -ing",
-              "like, love, hate, enjoy",
-              "I like swimming."
+              "verb + **to** + verb",
+              "want **to go**"
             ],
             [
-              "verb + to + base",
-              "want, need, decide, hope, plan, try, promise",
-              "I want to go."
+              "verb + **-ing**",
+              "enjoy **swimming**"
             ]
           ]
         },
         "points": [
-          "Not: I want go · Not: I enjoy to swim (this pack)",
-          "Some verbs take -ing. Some take to + base. Learn in chunks."
+          "After some verbs, another verb follows — in a pattern.",
+          "Not after every verb. The first verb picks the pattern."
         ]
       },
       {
-        "title": "+ -ing",
-        "title_cz": "like / love / hate / enjoy",
+        "title": "to or -ing",
+        "title_cz": "to, nebo -ing",
+        "diagram": "contrast",
+        "labels": [
+          "to + verb",
+          "verb + -ing",
+          "want to go",
+          "enjoy going"
+        ],
+        "diagram_fallback": "to + verb — want to go · verb + -ing — enjoy going",
         "table": {
-          "caption": "ing",
+          "caption": "not this",
           "headers": [
-            "EN",
-            "CZ"
+            "Not",
+            "Say"
           ],
           "rows": [
             [
-              "I like swimming.",
-              "Rád plavu."
+              "~~I want go~~",
+              "I **want to** go"
             ],
             [
-              "We enjoy travelling.",
-              "Rádi cestujeme."
-            ],
-            [
-              "I hate waiting.",
-              "Nesnáším čekání."
+              "~~I enjoy to swim~~",
+              "I **enjoy swimming**"
             ]
           ]
         },
         "points": [
-          "like + -ing common at A2",
-          "would like → to (polite want)"
+          "**to** = the action is still ahead.",
+          "**-ing** = the action is the activity."
         ]
       },
       {
-        "title": "+ to",
-        "title_cz": "want / need / decide / hope…",
+        "title": "to + verb",
+        "title_cz": "sloveso + to",
+        "text_first": true,
         "table": {
           "caption": "to",
           "headers": [
-            "EN",
-            "CZ"
+            "Verb",
+            "Example"
           ],
           "rows": [
             [
-              "I want to go home.",
-              "Chci jít domů."
+              "**want**",
+              "I want **to go** home"
             ],
             [
-              "We need to leave.",
-              "Potřebujeme odejít."
+              "**need**",
+              "We need **to leave**"
             ],
             [
-              "She decided to leave.",
-              "Rozhodla se odejít."
+              "**decide**",
+              "She decided **to stay**"
             ],
             [
-              "They hope to win.",
-              "Doufají, že vyhrají."
+              "**hope**",
+              "They hope **to win**"
+            ],
+            [
+              "**plan**",
+              "I plan **to stay**"
             ]
           ]
         },
         "points": [
-          "to + base (go, not going / goes)"
+          "**promise**, **offer**, **agree** also take **to**.",
+          "**try** takes **to** or **-ing**.",
+          "After these: **to go**, not **go** or **going**."
         ]
       },
       {
-        "title": "Would like",
+        "title": "verb + -ing",
+        "title_cz": "sloveso + -ing",
+        "text_first": true,
+        "table": {
+          "caption": "ing",
+          "headers": [
+            "Verb",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**enjoy**",
+              "I **enjoy swimming**"
+            ],
+            [
+              "**like**",
+              "I **like cooking**"
+            ],
+            [
+              "**love**",
+              "I **love dancing**"
+            ],
+            [
+              "**don't mind**",
+              "I don't mind **waiting**"
+            ],
+            [
+              "**finish**",
+              "She **finished writing**"
+            ]
+          ]
+        },
+        "points": [
+          "**like**, **love**, **hate** also take **to**. Both are fine."
+        ]
+      },
+      {
+        "title": "would like",
         "title_cz": "would like to — zdvořile chci",
-        "examples": [
-          {
-            "en": "Would you like to sit down?",
-            "cz": "Nechtěl byste si sednout?"
-          },
-          {
-            "en": "I would like to order, please.",
-            "cz": "Chtěl bych si objednat."
-          }
+        "diagram": "contrast",
+        "labels": [
+          "like + -ing",
+          "would like + to",
+          "I like swimming",
+          "I'd like to sit"
         ],
-        "points": [
-          "would like + to + base",
-          "Polite requests and offers"
-        ],
+        "diagram_fallback": "like + -ing — I like swimming · would like + to — I'd like to sit",
         "table": {
+          "caption": "trap",
           "headers": [
-            "Czech",
-            "English"
+            "like",
+            "would like"
           ],
           "rows": [
             [
-              "Nechtěl byste si sednout?",
-              "Would you like to sit down?"
+              "I **like swimming**",
+              "I would **like to** sit"
             ],
             [
-              "Chtěl bych si objednat.",
-              "I would like to order, please."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "start / stop",
-        "title_cz": "start · stop — tenká nápověda",
-        "table": {
-          "caption": "note",
-          "headers": [
-            "Pattern",
-            "Meaning"
-          ],
-          "rows": [
-            [
-              "start + -ing / to",
-              "often both OK"
-            ],
-            [
-              "stop + -ing",
-              "quit the activity"
-            ],
-            [
-              "stop + to + base",
-              "pause in order to…"
+              "also I **like to** swim",
+              "not ~~would like sitting~~"
             ]
           ]
         },
         "points": [
-          "I stopped smoking. · I stopped to rest."
+          "**would like** = a polite **want**.",
+          "It takes **to**, like **want**."
         ]
       },
       {
-        "title": "Practice focus",
-        "title_cz": "Na co se soustředit",
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
         "table": {
+          "caption": "wrong → right",
           "headers": [
-            "Remember"
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "Gap is to or the -ing form"
+              "~~I want go home~~",
+              "I **want to** go home"
             ],
             [
-              "Learn verb + pattern as a chunk"
+              "~~I enjoy to swim~~",
+              "I **enjoy swimming**"
             ],
             [
-              "would like + to (not -ing)"
+              "~~I would like sitting~~",
+              "I would **like to** sit"
+            ],
+            [
+              "~~We try go~~",
+              "We **try to** help"
+            ],
+            [
+              "~~I don't mind to wait~~",
+              "I don't mind **waiting**"
+            ],
+            [
+              "~~She finished to write~~",
+              "She **finished writing**"
             ]
           ]
-        }
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
+        },
         "points": [
-          "like/enjoy/hate + -ing",
-          "want/need/decide/hope/plan/try + to",
-          "would like + to"
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "Not",
-              "want go · enjoy to swim (basic rule)"
-            ]
-          ]
-        }
+          "Czech often uses a second verb with no **to** or **-ing**.",
+          "English needs one of the two shapes."
+        ]
       }
     ]
   }
