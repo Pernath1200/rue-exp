@@ -302,7 +302,7 @@ def lint_pack(uid):
                          "slash", "teachernote", "uselead", "qlead",
                          "introex", "quizextra", "hardname", "chunkword",
                          "fakes3sg", "toparticle", "remember",
-                         "articlegap", "theregap")}
+                         "articlegap", "theregap", "cancant", "a1meta")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -350,6 +350,16 @@ def lint_pack(uid):
         # a1_there_is 2026-08-29: There is ____ university tested articles.
         if ga in ("a", "an", "the") and "article" not in uid:
             f["articlegap"].append(it)
+
+        # B8 — can/can't polarity on a statement in the A1 can unit  [EXACT]
+        # a1_can 2026-08-29: I ____ speak English → can. "just clicking can/can't
+        # — pointless." Czech umím/neumím already picks the chip. Short answers
+        # (Yes, I ____.) and fronted questions (____ you swim?) stay.
+        # Not B1/B2 modal packs — there which modal IS the point.
+        if uid.startswith("a1_can") and ga in ("can", "can't", "cannot", "can not") \
+                and re.search(
+                    r"\b(?:I|You|He|She|We|They|It)\s+_{2,}\s+[A-Za-z]", gap):
+            f["cancant"].append(it)
 
         # F3 — Use production uses a word the path has not taught  [EXACT]
         if it.get("use") is not False:
@@ -519,6 +529,24 @@ def lint_pack(uid):
                 "en": "dummy There never tested — gap was is/are with There given",
             })
 
+    # C22 — A1 metalanguage "permission" with no Czech on the same card  [EXACT]
+    # a1_can 2026-08-29: "permission is going to be confusing word for a1
+    # learners: have cz translations."
+    if str(d.get("level", "")).upper() == "A1":
+        for i, c in enumerate(intro_cards(d)):
+            bits = [card_text(c), str(c.get("title_cz") or ""),
+                    str(c.get("body_cz") or "")]
+            for ex in c.get("examples") or []:
+                if isinstance(ex, dict):
+                    bits += [str(ex.get("en") or ""), str(ex.get("cz") or "")]
+            blob = " ".join(bits)
+            if re.search(r"\bpermission\b", blob, re.I) and not re.search(
+                    r"(dovolen|smím|smíš|smíme|smíte|\bsmí\b)", blob, re.I):
+                f["a1meta"].append({
+                    "cz": "card %d · %s" % (i, c.get("title", "")),
+                    "en": "permission with no Czech (dovolení / smím)",
+                })
+
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
     # cringe and unnecessary." Same leftover on questions_negatives / question_words.
@@ -630,6 +658,8 @@ LABELS = [
     ("toparticle",  "EXACT  B8  Quiz gaps the particle to (want ____ work), not to-V vs V"),
     ("articlegap",  "EXACT  B8  Quiz gaps a/an/the in a pack that is not articles"),
     ("theregap",    "EXACT  B8  there-is pack never gaps There — dummy subject untested"),
+    ("cancant",     "EXACT  B8  a1_can statement gaps can/can't — Czech already picks the chip"),
+    ("a1meta",      "EXACT  C22 A1 intro says permission with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
     ("uselead",     "EXACT  F3  Use item has words not yet taught (partner+prior+this)"),
