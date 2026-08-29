@@ -28,6 +28,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -90,9 +91,10 @@ def main() -> int:
     bench = todo[TOP_N : TOP_N + BENCH_N]
     counts = {lv: sum(1 for u in todo if level_of(u) == lv) for lv in LEVELS}
 
+    stamp = datetime.now().strftime("%Y-%m-%d %H:%M")
     doc = f"""# SMOKE NEXT — the five units to test first
 
-**GENERATED — do not hand-edit.** Rebuild with
+**GENERATED {stamp} (laptop).** Do not hand-edit. Rebuild with
 `python codex/build_smoke_next.py --write` in the rue-exp repo. Everything it
 needs is in the repo (INSPECTED.md, marking_topic_map.json, tree.json), so the
 ranking never has to be maintained by hand or on a particular machine.

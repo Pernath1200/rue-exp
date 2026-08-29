@@ -27,6 +27,7 @@ LOG_RE = re.compile(
     r"(?P<unit>[a-z0-9_]+)\s*·\s*(?P<verdict>tested|approved|untested)\b"
 )
 REMAINING_RE = re.compile(r"Remaining:\s+\*\*(\d+)\s+grammar units\*\*", re.I)
+STAMP_RE = re.compile(r"GENERATED\s+(\d{4}-\d{2}-\d{2} \d{2}:\d{2})", re.I)
 
 # Live id after a move. Telegram may still send the parked id.
 ALIASES = {
@@ -104,14 +105,13 @@ def _format_top(top) -> str:
 
 def _footer(raw: str, top, bench) -> str:
     m = REMAINING_RE.search(raw)
-    n = len(top) + len(bench)
-    if m:
-        # File remaining minus anything the log already ticked that the
-        # snapshot still listed.
-        listed = n
-        file_n = int(m.group(1))
-        n = min(file_n, listed) if listed else file_n
-    return f"\n{n} left on this list. Laptop reconcile is source of truth."
+    n = int(m.group(1)) if m else len(top) + len(bench)
+    stamp = STAMP_RE.search(raw)
+    when = stamp.group(1) if stamp else "unknown"
+    return (
+        f"\n{n} left. Snapshot {when}. "
+        f"If this is not the laptop Top 5, the bot is stale."
+    )
 
 
 def _matches_slot(query: str, uid: str, label: str) -> bool:

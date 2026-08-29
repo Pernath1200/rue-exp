@@ -6,6 +6,12 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — Telegram rewind after `b1_used_to`
+
+Proof the home listener is not this laptop's handler: after `a2_adverbs_order` it said 10 to go; after `b1_used_to` it said **14 to go** and put already-tested units back (`ed_ing`, `adverbs_order`, old *Some / any / no — the traps* title). Remaining went **up**. That is the old 53-count bot rewriting a stale ranking. This machine has no live telegram poller (only http.server 8097). Fix is on home PC: copy `codex/smoke_list.py` → `reminders\smoke_list.py`, restart, send `units to test`. Must show Snapshot timestamp and must never say `of 53`.
+
+---
+
 ## 2026-08-29 · local (interactive) — Telegram bot vs laptop list desync
 
 James: *the telegram bot and the list we have are not in sync.* Cause: home PC handler **rewrites** `TA/smoke-next.md` when it ticks, and still ranks a 53-unit universe (`b1_used_to`, already-smoked A2). Laptop `build_smoke_next.py --write` is the only ranking.
