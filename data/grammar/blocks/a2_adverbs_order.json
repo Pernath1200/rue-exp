@@ -5,595 +5,483 @@
   "tree_node": "a2_adverbs_order",
   "codex_unit": "G_SS-A1B1-01",
   "practice": "frames",
-  "note": "Mid-position adverbs (always/also/still) · too/either · manner. Gap on adverb. G_SS-A1B1-01. · Bank 50 items · like very much · flags: 2026-07-26c adverbs · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Position, not which adverb. Frequency (always/usually) is A1 — those words are carriers. Mid: always drink / after is (before the adjective) / after can. too/either end vs also mid. Manner at the end. like + object + very much. · 2026-08-29 smoke: I8; B8 slot chips; B11 (always/drink) Type cues; B16 sort columns are the pattern not before verb; C37 sort chips bold the adverb; C38 also/too are not conjunctions.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
+  "bins": [
+    "always drink",
+    "is always / can also",
+    "at the end"
+  ],
+  "bin_captions": {
+    "always drink": "still live · often watch",
+    "is always / can also": "is often tired",
+    "at the end": "hard · too · either"
+  },
   "blocks": [
     {
-      "id": "adverbs_order_a2",
+      "id": "sort",
+      "title": "Where does it go?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I **always** drink coffee",
+          "cz": "Vždycky piju kávu",
+          "bin": "always drink",
+          "use": false
+        },
+        {
+          "en": "I **never** eat meat",
+          "cz": "Nikdy nejím maso",
+          "bin": "always drink",
+          "use": false
+        },
+        {
+          "en": "I **often** watch films",
+          "cz": "Často se dívám na filmy",
+          "bin": "always drink",
+          "use": false
+        },
+        {
+          "en": "I **still** live in Brno",
+          "cz": "Pořád bydlím v Brně",
+          "bin": "always drink",
+          "use": false
+        },
+        {
+          "en": "She is **always** late",
+          "cz": "Vždycky má zpoždění",
+          "bin": "is always / can also",
+          "use": false
+        },
+        {
+          "en": "He is **often** tired",
+          "cz": "Často je unavený",
+          "bin": "is always / can also",
+          "use": false
+        },
+        {
+          "en": "She can **also** drive",
+          "cz": "Taky umí řídit",
+          "bin": "is always / can also",
+          "use": false
+        },
+        {
+          "en": "I can **also** swim",
+          "cz": "Taky umím plavat",
+          "bin": "is always / can also",
+          "use": false
+        },
+        {
+          "en": "She works **hard**",
+          "cz": "Pracuje tvrdě",
+          "bin": "at the end",
+          "use": false
+        },
+        {
+          "en": "He speaks **clearly**",
+          "cz": "Mluví jasně",
+          "bin": "at the end",
+          "use": false
+        },
+        {
+          "en": "I like coffee **too**",
+          "cz": "Kávu mám rád taky",
+          "bin": "at the end",
+          "use": false
+        },
+        {
+          "en": "I don't like coffee **either**",
+          "cz": "Kávu taky nemám rád",
+          "bin": "at the end",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "position",
       "title": "Adverb position · A2",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
           "en": "I always drink coffee.",
           "cz": "Vždycky piju kávu.",
-          "gap": "I ____ drink coffee.",
-          "gap_answer": "always",
-          "accepts": [
-            "I always drink coffee."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "gap": "I ____ coffee. (always/drink)",
+          "gap_answer": "always drink",
+          "quiz_options": ["always drink", "drink always"],
+          "accepts": ["I always drink coffee."],
+          "explanation": "Before *drink*: I **always** drink… not *drink always.",
+          "explanation_cz": "Před *drink*: I **always** drink… ne *drink always."
         },
         {
-          "en": "She is always late.",
-          "cz": "Vždycky má zpoždění (ona).",
-          "gap": "She is ____ late.",
-          "gap_answer": "always",
-          "accepts": [
-            "She is always late."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "I usually drink tea.",
+          "cz": "Obvykle piju čaj.",
+          "gap": "I ____ tea. (usually/drink)",
+          "gap_answer": "usually drink",
+          "quiz_options": ["usually drink", "drink usually"],
+          "accepts": ["I usually drink tea."],
+          "explanation": "Before *drink*: I **usually** drink… not *drink usually.",
+          "explanation_cz": "Před *drink*: I **usually** drink… ne *drink usually."
+        },
+        {
+          "en": "I often watch films.",
+          "cz": "Často se dívám na filmy.",
+          "gap": "I ____ films. (often/watch)",
+          "gap_answer": "often watch",
+          "quiz_options": ["often watch", "watch often"],
+          "accepts": ["I often watch films."],
+          "explanation": "Before *watch*: I **often** watch… not *watch often.",
+          "explanation_cz": "Před *watch*: I **often** watch… ne *watch often."
         },
         {
           "en": "I never eat meat.",
           "cz": "Nikdy nejím maso.",
-          "gap": "I ____ eat meat.",
-          "gap_answer": "never",
-          "accepts": [
-            "I never eat meat."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "gap": "I ____ meat. (never/eat)",
+          "gap_answer": "never eat",
+          "quiz_options": ["never eat", "eat never"],
+          "accepts": ["I never eat meat."],
+          "explanation": "Before *eat*: I **never** eat… not *eat never.",
+          "explanation_cz": "Před *eat*: I **never** eat… ne *eat never."
         },
         {
-          "en": "He is never at home.",
-          "cz": "Nikdy není doma (on).",
-          "gap": "He is ____ at home.",
-          "gap_answer": "never",
-          "accepts": [
-            "He is never at home."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "She always plays tennis.",
+          "cz": "Vždycky hraje tenis.",
+          "gap": "She ____ tennis. (always/plays)",
+          "gap_answer": "always plays",
+          "quiz_options": ["always plays", "plays always"],
+          "accepts": ["She always plays tennis."],
+          "explanation": "Before *plays*: She **always** plays… not *plays always.",
+          "explanation_cz": "Před *plays*: She **always** plays… ne *plays always."
         },
         {
-          "en": "I also like tea.",
-          "cz": "Taky mám rád čaj.",
-          "gap": "I ____ like tea.",
-          "gap_answer": "also",
-          "accepts": [
-            "I also like tea."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "They never drink coffee.",
+          "cz": "Nikdy nepijí kávu.",
+          "gap": "They ____ coffee. (never/drink)",
+          "gap_answer": "never drink",
+          "quiz_options": ["never drink", "drink never"],
+          "accepts": ["They never drink coffee."],
+          "explanation": "Before *drink*: They **never** drink… not *drink never.",
+          "explanation_cz": "Před *drink*: They **never** drink… ne *drink never."
         },
         {
-          "en": "She is also a teacher.",
-          "cz": "Ona je taky učitelka (ona).",
-          "gap": "She is ____ a teacher.",
-          "gap_answer": "also",
-          "accepts": [
-            "She is also a teacher."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I only want water.",
-          "cz": "Chci jen vodu.",
-          "gap": "I ____ want water.",
-          "gap_answer": "only",
-          "accepts": [
-            "I only want water."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "We just arrived.",
-          "cz": "Právě jsme dorazili.",
-          "gap": "We ____ arrived.",
-          "gap_answer": "just",
-          "accepts": [
-            "We just arrived."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "We often speak English.",
+          "cz": "Často mluvíme anglicky.",
+          "gap": "We ____ English. (often/speak)",
+          "gap_answer": "often speak",
+          "quiz_options": ["often speak", "speak often"],
+          "accepts": ["We often speak English."],
+          "explanation": "Before *speak*: We **often** speak… not *speak often.",
+          "explanation_cz": "Před *speak*: We **often** speak… ne *speak often."
         },
         {
           "en": "I still live in Brno.",
           "cz": "Pořád bydlím v Brně.",
-          "gap": "I ____ live in Brno.",
-          "gap_answer": "still",
-          "accepts": [
-            "I still live in Brno."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "gap": "I ____ in Brno. (still/live)",
+          "gap_answer": "still live",
+          "quiz_options": ["still live", "live still"],
+          "accepts": ["I still live in Brno."],
+          "explanation": "still: before *live*. I **still** live… not *live still.",
+          "explanation_cz": "still: před *live*. I **still** live… ne *live still."
         },
         {
-          "en": "She is still sleeping.",
-          "cz": "Pořád spí. (ona)",
-          "gap": "She is ____ sleeping.",
-          "gap_answer": "still",
+          "en": "She is always late.",
+          "cz": "Vždycky má zpoždění.",
+          "gap": "She ____ late. (is/always)",
+          "gap_answer": "is always",
+          "quiz_options": ["is always", "always is"],
           "accepts": [
-            "She is still sleeping.",
-            "She's still sleeping."
+            "She is always late.",
+            "She's always late."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I already know.",
-          "cz": "Už to vím.",
-          "gap": "I ____ know.",
-          "gap_answer": "already",
-          "accepts": [
-            "I already know."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "Have you finished yet?",
-          "cz": "Už jsi hotový?",
-          "gap": "Have you finished ____?",
-          "gap_answer": "yet",
-          "accepts": [
-            "Have you finished yet?"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I don't like coffee either.",
-          "cz": "Nemám rád kávu taky. (zápor)",
-          "gap": "I don't like coffee ____.",
-          "gap_answer": "either",
-          "accepts": [
-            "I don't like coffee either."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I like coffee too.",
-          "cz": "Mám rád kávu taky.",
-          "gap": "I like coffee ____.",
-          "gap_answer": "too",
-          "accepts": [
-            "I like coffee too."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "She can also drive.",
-          "cz": "Ona taky umí řídit (ona).",
-          "gap": "She can ____ drive.",
-          "gap_answer": "also",
-          "accepts": [
-            "She can also drive."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I usually get up early.",
-          "cz": "Obvykle vstávám brzy.",
-          "gap": "I ____ get up early.",
-          "gap_answer": "usually",
-          "accepts": [
-            "I usually get up early."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "After *is*, before the adjective: She is **always** late.",
+          "explanation_cz": "Po *is*, před přídavným jménem: She is **always** late."
         },
         {
           "en": "He is often tired.",
-          "cz": "Často je unavený (on).",
-          "gap": "He is ____ tired.",
-          "gap_answer": "often",
+          "cz": "Často je unavený.",
+          "gap": "He ____ tired. (is/often)",
+          "gap_answer": "is often",
+          "quiz_options": ["is often", "often is"],
           "accepts": [
-            "He is often tired."
+            "He is often tired.",
+            "He's often tired."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "After *is*, before the adjective: He is **often** tired.",
+          "explanation_cz": "Po *is*, před přídavným jménem: He is **often** tired."
         },
         {
-          "en": "They hardly ever go out.",
-          "cz": "Skoro nikdy nechodí ven. (hardly ever ≈ rarely)",
-          "gap": "They ____ ever go out.",
-          "gap_answer": "hardly",
+          "en": "I am never busy.",
+          "cz": "Nikdy nejsem zaneprázdněný.",
+          "gap": "I ____ busy. (am/never)",
+          "gap_answer": "am never",
+          "quiz_options": ["am never", "never am"],
           "accepts": [
-            "They hardly ever go out.",
-            "They rarely go out."
+            "I am never busy.",
+            "I'm never busy."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "After *am*, before the adjective: I am **never** busy.",
+          "explanation_cz": "Po *am*, před přídavným jménem: I am **never** busy."
         },
         {
-          "en": "I almost finished.",
-          "cz": "Skoro jsem dokončil.",
-          "gap": "I ____ finished.",
-          "gap_answer": "almost",
+          "en": "She is usually happy.",
+          "cz": "Obvykle je šťastná.",
+          "gap": "She ____ happy. (is/usually)",
+          "gap_answer": "is usually",
+          "quiz_options": ["is usually", "usually is"],
           "accepts": [
-            "I almost finished.",
-            "I nearly finished."
+            "She is usually happy.",
+            "She's usually happy."
           ],
-          "gap_accepts": [
-            "almost",
-            "nearly"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "After *is*, before the adjective: She is **usually** happy.",
+          "explanation_cz": "Po *is*, před přídavným jménem: She is **usually** happy."
         },
         {
-          "en": "Please speak clearly.",
-          "cz": "Prosím, mluv jasně.",
-          "gap": "Please speak ____.",
-          "gap_answer": "clearly",
+          "en": "We are still here.",
+          "cz": "Pořád jsme tady.",
+          "gap": "We ____ here. (are/still)",
+          "gap_answer": "are still",
+          "quiz_options": ["are still", "still are"],
           "accepts": [
-            "Please speak clearly."
+            "We are still here.",
+            "We're still here."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "After *are*: We are **still** here. not *still are.",
+          "explanation_cz": "Po *are*: We are **still** here. ne *still are."
         },
         {
-          "en": "He drives carefully.",
-          "cz": "Řídí opatrně (on).",
-          "gap": "He drives ____.",
-          "gap_answer": "carefully",
+          "en": "He is never at home.",
+          "cz": "Nikdy není doma.",
+          "gap": "He ____ at home. (is/never)",
+          "gap_answer": "is never",
+          "quiz_options": ["is never", "never is"],
           "accepts": [
-            "He drives carefully."
+            "He is never at home.",
+            "He's never at home."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "After *is*: He is **never** at home. not *never is.",
+          "explanation_cz": "Po *is*: He is **never** at home. ne *never is."
         },
         {
-          "en": "She works hard.",
-          "cz": "Pracuje tvrdě (ona).",
-          "gap": "She works ____.",
-          "gap_answer": "hard",
-          "accepts": [
-            "She works hard."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I really like this song.",
-          "cz": "Opravdu mám rád tuhle písničku.",
-          "gap": "I ____ like this song.",
-          "gap_answer": "really",
-          "accepts": [
-            "I really like this song."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "We probably need more time.",
-          "cz": "Asi potřebujeme víc času.",
-          "gap": "We ____ need more time.",
-          "gap_answer": "probably",
-          "accepts": [
-            "We probably need more time."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I often forget names.",
-          "cz": "Často zapomínám jména.",
-          "gap": "I ____ forget names.",
-          "gap_answer": "often",
-          "accepts": [
-            "I often forget names."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "She is rarely angry.",
-          "cz": "Zřídka je naštvaná (ona).",
-          "gap": "She is ____ angry.",
-          "gap_answer": "rarely",
-          "accepts": [
-            "She is rarely angry.",
-            "She is hardly ever angry."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "We sometimes eat out.",
-          "cz": "Někdy jíme venku.",
-          "gap": "We ____ eat out.",
-          "gap_answer": "sometimes",
-          "accepts": [
-            "We sometimes eat out."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "He can never sit still.",
-          "cz": "Nikdy nevydrží sedět v klidu (on).",
-          "gap": "He can ____ sit still.",
-          "gap_answer": "never",
-          "accepts": [
-            "He can never sit still."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I have already paid.",
-          "cz": "Už jsem zaplatil.",
-          "gap": "I have ____ paid.",
-          "gap_answer": "already",
-          "accepts": [
-            "I have already paid."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "She hasn't called yet.",
-          "cz": "Ještě nezavolala (ona).",
-          "gap": "She hasn't called ____.",
-          "gap_answer": "yet",
-          "accepts": [
-            "She hasn't called yet."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "Are you still here?",
-          "cz": "Pořád jsi tady?",
-          "gap": "Are you ____ here?",
-          "gap_answer": "still",
-          "accepts": [
-            "Are you still here?"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I only sleep five hours.",
-          "cz": "Spím jen pět hodin.",
-          "gap": "I ____ sleep five hours.",
-          "gap_answer": "only",
-          "accepts": [
-            "I only sleep five hours."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "He probably knows the answer.",
-          "cz": "Asi zná odpověď (on).",
-          "gap": "He ____ knows the answer.",
-          "gap_answer": "probably",
-          "accepts": [
-            "He probably knows the answer."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I definitely need a break.",
-          "cz": "Určitě potřebuju pauzu.",
-          "gap": "I ____ need a break.",
-          "gap_answer": "definitely",
-          "accepts": [
-            "I definitely need a break."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "She almost missed the bus.",
-          "cz": "Skoro zmeškala autobus (ona).",
-          "gap": "She ____ missed the bus.",
-          "gap_answer": "almost",
-          "accepts": [
-            "She almost missed the bus.",
-            "She nearly missed the bus."
-          ],
-          "gap_accepts": [
-            "almost",
-            "nearly"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "We nearly won.",
-          "cz": "Skoro jsme vyhráli.",
-          "gap": "We ____ won.",
-          "gap_answer": "nearly",
-          "accepts": [
-            "We nearly won.",
-            "We almost won."
-          ],
-          "gap_accepts": [
-            "nearly",
-            "almost"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "Please write neatly.",
-          "cz": "Prosím piš úhledně.",
-          "gap": "Please write ____.",
-          "gap_answer": "neatly",
-          "accepts": [
-            "Please write neatly."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "He answered quickly.",
-          "cz": "Odpověděl rychle (on).",
-          "gap": "He answered ____.",
-          "gap_answer": "quickly",
-          "accepts": [
-            "He answered quickly."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "She speaks English fluently.",
-          "cz": "Mluví plynně anglicky (ona).",
-          "gap": "She speaks English ____.",
-          "gap_answer": "fluently",
-          "accepts": [
-            "She speaks English fluently."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I don't like fish either.",
-          "cz": "Nemám rád ryby taky. (− · either, not too)",
-          "gap": "I don't like fish ____.",
-          "gap_answer": "either",
-          "accepts": [
-            "I don't like fish either.",
-            "I do not like fish either."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
-        },
-        {
-          "en": "I like fish too.",
-          "cz": "Mám rád ryby taky. (+)",
-          "gap": "I like fish ____.",
-          "gap_answer": "too",
-          "accepts": [
-            "I like fish too."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "She can also drive.",
+          "cz": "Taky umí řídit.",
+          "use": false,
+          "gap": "She ____ drive. (can/also)",
+          "gap_answer": "can also",
+          "quiz_options": ["can also", "also can"],
+          "accepts": ["She can also drive."],
+          "explanation": "After *can*: She can **also** drive. not *also can.",
+          "explanation_cz": "Po *can*: She can **also** drive. ne *also can."
         },
         {
           "en": "I can also swim.",
           "cz": "Taky umím plavat.",
-          "gap": "I can ____ swim.",
-          "gap_answer": "also",
-          "accepts": [
-            "I can also swim."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "use": false,
+          "gap": "I ____ swim. (can/also)",
+          "gap_answer": "can also",
+          "quiz_options": ["can also", "also can"],
+          "accepts": ["I can also swim."],
+          "explanation": "After *can*: I can **also** swim. not *also can.",
+          "explanation_cz": "Po *can*: I can **also** swim. ne *also can."
         },
         {
-          "en": "They are also coming.",
-          "cz": "Taky přijdou.",
-          "gap": "They are ____ coming.",
-          "gap_answer": "also",
-          "accepts": [
-            "They are also coming."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "She can still swim.",
+          "cz": "Pořád umí plavat.",
+          "gap": "She ____ swim. (can/still)",
+          "gap_answer": "can still",
+          "quiz_options": ["can still", "still can"],
+          "accepts": ["She can still swim."],
+          "explanation": "After *can*: She can **still** swim. not *still can.",
+          "explanation_cz": "Po *can*: She can **still** swim. ne *still can."
         },
         {
-          "en": "I usually finish by six.",
-          "cz": "Obvykle končím do šesti.",
-          "gap": "I ____ finish by six.",
-          "gap_answer": "usually",
-          "accepts": [
-            "I usually finish by six."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "en": "He can also play.",
+          "cz": "Taky umí hrát.",
+          "use": false,
+          "gap": "He ____ play. (can/also)",
+          "gap_answer": "can also",
+          "quiz_options": ["can also", "also can"],
+          "accepts": ["He can also play."],
+          "explanation": "After *can*: He can **also** play. not *also can.",
+          "explanation_cz": "Po *can*: He can **also** play. ne *also can."
         },
         {
-          "en": "She is usually friendly.",
-          "cz": "Obvykle je přátelská (ona).",
-          "gap": "She is ____ friendly.",
-          "gap_answer": "usually",
+          "en": "I also like tea.",
+          "cz": "Taky mám rád čaj.",
+          "gap": "I ____ tea. (also/like)",
+          "gap_answer": "also like",
+          "quiz_options": ["also like", "like also"],
           "accepts": [
-            "She is usually friendly."
+            "I also like tea.",
+            "I like tea too.",
+            "I like tea as well."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "also before *like*: I **also** like… not *like also.",
+          "explanation_cz": "also před *like*: I **also** like… ne *like also."
         },
         {
-          "en": "He works extremely hard.",
-          "cz": "Pracuje extrémně tvrdě (on).",
-          "gap": "He works extremely ____.",
-          "gap_answer": "hard",
+          "en": "She also works here.",
+          "cz": "Taky tady pracuje.",
+          "gap": "She ____ here. (also/works)",
+          "gap_answer": "also works",
+          "quiz_options": ["also works", "works also"],
           "accepts": [
-            "He works extremely hard."
+            "She also works here.",
+            "She works here too.",
+            "She works here as well."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "also before *works*: She **also** works… not *works also.",
+          "explanation_cz": "also před *works*: She **also** works… ne *works also."
         },
         {
-          "en": "I really don't understand.",
-          "cz": "Opravdu nerozumím.",
-          "gap": "I ____ don't understand.",
-          "gap_answer": "really",
+          "en": "I like coffee too.",
+          "cz": "Kávu mám rád taky.",
+          "gap": "I like coffee ____. (too)",
+          "gap_answer": "too",
+          "gap_accepts": ["as well"],
+          "quiz_options": ["too", "either", "also"],
           "accepts": [
-            "I really don't understand."
+            "I like coffee too.",
+            "I like coffee as well.",
+            "I also like coffee."
           ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "**too** at the end of a + sentence. not *either.",
+          "explanation_cz": "**too** na konci kladné věty. ne *either."
+        },
+        {
+          "en": "She likes tea too.",
+          "cz": "Čaj má ráda taky.",
+          "gap": "She likes tea ____. (too)",
+          "gap_answer": "too",
+          "gap_accepts": ["as well"],
+          "quiz_options": ["too", "either", "also"],
+          "accepts": [
+            "She likes tea too.",
+            "She likes tea as well.",
+            "She also likes tea."
+          ],
+          "explanation": "**too** at the end of a + sentence. not *either.",
+          "explanation_cz": "**too** na konci kladné věty. ne *either."
+        },
+        {
+          "en": "I don't like coffee either.",
+          "cz": "Kávu taky nemám rád.",
+          "gap": "I don't like coffee ____. (either)",
+          "gap_answer": "either",
+          "quiz_options": ["either", "too", "also"],
+          "accepts": [
+            "I don't like coffee either.",
+            "I do not like coffee either.",
+            "I also don't like coffee.",
+            "I also do not like coffee."
+          ],
+          "explanation": "**either** at the end of a − sentence. not *too.",
+          "explanation_cz": "**either** na konci záporu. ne *too."
+        },
+        {
+          "en": "They don't like tea either.",
+          "cz": "Čaj taky nemají rádi.",
+          "gap": "They don't like tea ____. (either)",
+          "gap_answer": "either",
+          "quiz_options": ["either", "too", "also"],
+          "accepts": [
+            "They don't like tea either.",
+            "They do not like tea either.",
+            "They also don't like tea.",
+            "They also do not like tea."
+          ],
+          "explanation": "**either** at the end of a − sentence. not *too.",
+          "explanation_cz": "**either** na konci záporu. ne *too."
+        },
+        {
+          "en": "She works hard.",
+          "cz": "Pracuje tvrdě.",
+          "gap": "She ____. (works/hard)",
+          "gap_answer": "works hard",
+          "quiz_options": ["works hard", "hard works"],
+          "accepts": ["She works hard."],
+          "explanation": "Manner at the end: She **works hard**. not *hard works.",
+          "explanation_cz": "Způsob na konci: She **works hard**. ne *hard works."
+        },
+        {
+          "en": "He speaks clearly.",
+          "cz": "Mluví jasně.",
+          "gap": "He ____. (speaks/clearly)",
+          "gap_answer": "speaks clearly",
+          "quiz_options": ["speaks clearly", "clearly speaks"],
+          "accepts": ["He speaks clearly."],
+          "explanation": "Manner at the end: He **speaks clearly**. not *clearly speaks.",
+          "explanation_cz": "Způsob na konci: He **speaks clearly**. ne *clearly speaks."
+        },
+        {
+          "en": "She speaks quickly.",
+          "cz": "Mluví rychle.",
+          "gap": "She ____. (speaks/quickly)",
+          "gap_answer": "speaks quickly",
+          "quiz_options": ["speaks quickly", "quickly speaks"],
+          "accepts": ["She speaks quickly."],
+          "explanation": "Manner at the end: She **speaks quickly**. not *quickly speaks.",
+          "explanation_cz": "Způsob na konci: She **speaks quickly**. ne *quickly speaks."
+        },
+        {
+          "en": "Please speak clearly.",
+          "cz": "Prosím, mluv jasně.",
+          "gap": "Please ____. (speak/clearly)",
+          "gap_answer": "speak clearly",
+          "quiz_options": ["speak clearly", "clearly speak"],
+          "accepts": ["Please speak clearly."],
+          "explanation": "Manner at the end: Please **speak clearly**. not *clearly speak.",
+          "explanation_cz": "Způsob na konci: Please **speak clearly**. ne *clearly speak."
         },
         {
           "en": "We hardly know them.",
           "cz": "Skoro je neznáme.",
-          "gap": "We ____ know them.",
+          "gap": "We ____ know them. (hardly)",
           "gap_answer": "hardly",
-          "accepts": [
-            "We hardly know them."
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "quiz_options": ["hardly", "hard", "never"],
+          "accepts": ["We hardly know them."],
+          "explanation": "**hardly** = almost not. Before *know*. not *hard.",
+          "explanation_cz": "**hardly** = skoro ne. Před *know*. ne *hard."
         },
         {
-          "en": "I like this city very much.",
-          "cz": "Tohle město mám moc rád.",
-          "gap": "I like this city ____.",
-          "gap_answer": "very much",
+          "en": "I like coffee very much.",
+          "cz": "Kávu mám moc rád.",
+          "gap": "I like ____. (coffee/very much)",
+          "gap_answer": "coffee very much",
+          "gap_accepts": ["coffee a lot"],
+          "quiz_options": ["coffee very much", "very much coffee"],
           "accepts": [
-            "I like this city very much.",
-            "I like this city a lot."
+            "I like coffee very much.",
+            "I like coffee a lot."
           ],
-          "gap_accepts": [
-            "a lot"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "like + thing + **very much**. not *like very much coffee.",
+          "explanation_cz": "like + věc + **very much**. ne *like very much coffee."
         },
         {
-          "en": "She likes her job very much.",
-          "cz": "Svoji práci má moc ráda (ona).",
-          "gap": "She likes her job ____.",
-          "gap_answer": "very much",
+          "en": "She likes tea very much.",
+          "cz": "Čaj má moc ráda.",
+          "gap": "She likes ____. (tea/very much)",
+          "gap_answer": "tea very much",
+          "gap_accepts": ["tea a lot"],
+          "quiz_options": ["tea very much", "very much tea"],
           "accepts": [
-            "She likes her job very much.",
-            "She likes her job a lot."
+            "She likes tea very much.",
+            "She likes tea a lot."
           ],
-          "gap_accepts": [
-            "a lot"
-          ],
-          "explanation": "Adverb position: manner/place/time — keep natural English order.",
-          "explanation_cz": "Pozice příslovce: způsob/místo/čas — přirozené anglické pořadí."
+          "explanation": "like + thing + **very much**. not *like very much tea.",
+          "explanation_cz": "like + věc + **very much**. ne *like very much tea."
         }
       ]
     }
@@ -602,216 +490,166 @@
     "cards": [
       {
         "title": "Adverb position",
-        "title_cz": "Pozice příslovcí — A2 thin",
+        "title_cz": "Pozice příslovcí",
+        "points": [
+          "These words sit in a fixed place."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 140\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"24\" y=\"48\">I</text>\n    <rect x=\"48\" y=\"26\" width=\"88\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n    <text x=\"92\" y=\"48\" text-anchor=\"middle\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">always</text>\n    <text x=\"146\" y=\"48\">drink coffee.</text>\n  </g>\n  <text x=\"400\" y=\"48\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">always drink</text>\n  <g font-size=\"22\" fill=\"var(--text, #eaeaea)\">\n    <text x=\"24\" y=\"112\">She is</text>\n    <rect x=\"108\" y=\"90\" width=\"88\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n    <text x=\"152\" y=\"112\" text-anchor=\"middle\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">always</text>\n    <text x=\"206\" y=\"112\">late.</text>\n  </g>\n  <text x=\"400\" y=\"112\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">after is</text>\n</svg>",
         "table": {
           "caption": "place",
           "headers": [
-            "Structure",
+            "",
+            ""
+          ],
+          "rows": [
+            [
+              "I **always** drink coffee.",
+              "always then drink / live / play"
+            ],
+            [
+              "She is **always** late.",
+              "after *is*, before the adjective"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "After can / will / must",
+        "title_cz": "Po can / will / must",
+        "points": [
+          "After *can* / *will* / *must*, then the verb."
+        ],
+        "table": {
+          "caption": "mid",
+          "headers": [
+            "",
             "Example"
           ],
           "rows": [
             [
-              "before main verb",
-              "I always drink coffee."
+              "after *can*",
+              "She can **also** drive."
             ],
             [
-              "after be",
-              "She is always late."
+              "after *can*",
+              "I can **also** swim."
             ],
             [
-              "after can/must",
-              "She can also drive."
+              "after *can*",
+              "She can **still** swim."
             ]
           ]
-        },
+        }
+      },
+      {
+        "title": "also / too / either",
+        "title_cz": "taky — tři místa",
         "points": [
-          "always · usually · often · never · also · still · already",
-          "Not: I drink always coffee (this pack)",
-          "Most mid-sentence adverbs: before main verb, after be."
-        ]
+          "*and* goes in the middle.",
+          "These three sit in one sentence."
+        ],
+        "table": {
+          "caption": "taky",
+          "headers": [
+            "",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**and**",
+              "I like tea **and** coffee."
+            ],
+            [
+              "**also**",
+              "I **also** like tea."
+            ],
+            [
+              "**too**",
+              "I like coffee **too**."
+            ],
+            [
+              "**either**",
+              "I don't like coffee **either**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Manner",
+        "title_cz": "Jak — clearly · hard",
+        "points": [
+          "How: at the end.",
+          "*hard* = a lot. *hardly* = almost not."
+        ],
+        "table": {
+          "caption": "end",
+          "headers": [
+            "",
+            "Example"
+          ],
+          "rows": [
+            [
+              "after the verb",
+              "She **works hard**."
+            ],
+            [
+              "after the verb",
+              "He **speaks clearly**."
+            ],
+            [
+              "*hard* ≠ *hardly*",
+              "We **hardly** know them."
+            ]
+          ]
+        }
       },
       {
         "title": "like … very much",
         "title_cz": "like … very much",
+        "points": [
+          "like + thing + very much."
+        ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "like + object + very much (end). Not",
-              "I like very much this city."
+              "~~I like very much coffee~~",
+              "I like coffee **very much**"
             ]
           ]
         }
       },
       {
-        "title": "still / already / yet",
-        "title_cz": "pořád · už · už (v otázce/záporu)",
-        "table": {
-          "caption": "time",
-          "headers": [
-            "Word",
-            "Use"
-          ],
-          "rows": [
-            [
-              "still",
-              "continuing now"
-            ],
-            [
-              "already",
-              "+ sooner than expected"
-            ],
-            [
-              "yet",
-              "? and − near end"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I still live in Brno.",
-            "cz": "Pořád bydlím v Brně."
-          },
-          {
-            "en": "Have you finished yet?",
-            "cz": "Už jsi hotový?"
-          }
-        ]
-      },
-      {
-        "title": "too / either / also",
-        "title_cz": "taky",
-        "table": {
-          "caption": "also",
-          "headers": [
-            "Form",
-            "Where"
-          ],
-          "rows": [
-            [
-              "also",
-              "mid position"
-            ],
-            [
-              "too",
-              "end of + sentence"
-            ],
-            [
-              "either",
-              "end of − sentence"
-            ]
-          ]
-        },
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
         "points": [
-          "I like coffee too. · I don't like coffee either.",
-          "I also like tea."
-        ]
-      },
-      {
-        "title": "Manner adverbs",
-        "title_cz": "Jak — carefully · clearly",
-        "table": {
-          "caption": "manner",
-          "headers": [
-            "Adj",
-            "Adverb"
-          ],
-          "rows": [
-            [
-              "careful",
-              "carefully"
-            ],
-            [
-              "clear",
-              "clearly"
-            ],
-            [
-              "hard",
-              "hard (not hardly)"
-            ]
-          ]
-        },
-        "points": [
-          "usually after the verb: drive carefully",
-          "hard ≠ hardly"
-        ]
-      },
-      {
-        "title": "Frequency review",
-        "title_cz": "Frekvence — připomenutí",
-        "table": {
-          "caption": "mid",
-          "headers": [
-            "Adverb",
-            "Example"
-          ],
-          "rows": [
-            [
-              "always",
-              "I always try."
-            ],
-            [
-              "usually",
-              "She is usually kind."
-            ],
-            [
-              "often",
-              "We often walk."
-            ],
-            [
-              "sometimes",
-              "I sometimes forget."
-            ],
-            [
-              "never",
-              "He never smokes."
-            ]
-          ]
-        },
-        "points": [
-          "Same position rule as A1 frequency pack"
-        ]
-      },
-      {
-        "title": "Practice focus",
-        "title_cz": "Na co se soustředit",
-        "points": [
-          "Gap is the adverb",
-          "too vs either vs also"
+          "The word is not new. The place is."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Wrong",
+            "Right"
           ],
           "rows": [
             [
-              "Check",
-              "before verb or after be?"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "points": [
-          "yet at end in ? / −",
-          "too (+) · either (−)",
-          "carefully · clearly · hard"
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
+              "~~I drink always coffee~~",
+              "I **always** drink coffee"
+            ],
             [
-              "before verb / after be",
-              "always, also, still, already"
+              "~~I always am late~~",
+              "I am **always** late"
+            ],
+            [
+              "~~She also can drive~~",
+              "She can **also** drive"
+            ],
+            [
+              "~~I like very much coffee~~",
+              "I like coffee **very much**"
             ]
           ]
         }

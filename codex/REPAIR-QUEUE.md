@@ -474,7 +474,7 @@ is now 23 of 54.
 The explanation is what the student reads when they get it wrong. Banks of
 20+ items with the fewest distinct explanations:
 
-- [ ] `a2_adverbs_order` — 50 items, **1** explanation
+- [x] `a2_adverbs_order` — 50 items, **1** explanation → item-level, smoked 2026-08-29
 - [ ] `b1_it_subject` — 48 items, **1**
 - [x] `b1_passives` — 48 items, **1** → **9, 9e0867b**
 - [ ] `b2_second_conditional` — 72 items, 3

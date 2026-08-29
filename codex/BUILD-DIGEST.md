@@ -6,6 +6,17 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-29 · local (interactive) — `a2_adverbs_order` Telegram-tested · rules + lint
+
+Smoke closed (Telegram `a2_adverbs_order tested`). Bugs from the play, then rules:
+
+- **B11** extended: Type of a multi-word slot needs `(always/drink)` / `(coffee/very much)`. lint `verbcue` also catches position-swap chips with no bracket.
+- **B16** sort column is the pattern (*always drink*), not *before verb* / *before drink*. lint `sortlabel`
+- **C37** sentence-sort chips bold the taught word. Engine `escMd` on `.sb-chip`. lint `sortbold`
+- **C38** *also* / *too* / *either* are additive adverbs, not conjunctions. *and* is the joiner. observed
+
+---
+
 ## 2026-08-29 · local (interactive) — `a2_some_any_no` smoke closed · rules
 
 Smoke play done (James: *okay that's done*). Telegram `a2_some_any_no tested` still needed for INSPECTED.

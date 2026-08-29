@@ -311,7 +311,8 @@ def lint_pack(uid):
                          "courseaside", "negdef", "smallwords", "mistakecol",
                          "timesort", "aweek", "baddiagram", "notbullet",
                          "verbcue", "thirdform", "ppcuz", "ppsort",
-                         "stemcue", "longtable", "plusminus")}
+                         "stemcue", "longtable", "plusminus",
+                         "sortlabel", "sortbold")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -406,6 +407,18 @@ def lint_pack(uid):
                 if not re.search(r"\b(finished|arrived|eaten|seen|called|done)\b",
                                  rest, re.I):
                     f["verbcue"].append(it)
+
+        # B11 — position-slot Type (always drink / drink always) with no (always/drink)
+        # a2_adverbs_order 2026-08-29: I like ____. → coffee very much.
+        if "(" not in gap:
+            ga_words = re.findall(r"[a-z]+", ga)
+            if len(ga_words) >= 2:
+                bag = tuple(sorted(ga_words))
+                for o in (it.get("quiz_options") or []):
+                    ow = re.findall(r"[a-z]+", str(o).lower())
+                    if ow and tuple(sorted(ow)) == bag and ow != ga_words:
+                        f["verbcue"].append(it)
+                        break
 
         # A9 — Czech past does not pick present perfect  [EXACT]
         # a2_present_perfect 2026-08-29: Uklidil jsem kuchyň is also I cleaned.
@@ -698,6 +711,28 @@ def lint_pack(uid):
                 })
                 break
 
+    # B16 — position-sort column titled "before verb" / "before drink"
+    # a2_adverbs_order 2026-08-29: He is often tired is after is, not before verb;
+    # "before drink" as a column only fits one chip.
+    bin_names = [str(x) for x in (d.get("bins") or [])]
+    bin_names += [str(it.get("bin") or "") for it in items if it.get("bin")]
+    for bname in bin_names:
+        if re.search(r"^before\s+(the\s+)?(verb|drink)\b", bname, re.I):
+            f["sortlabel"].append({
+                "cz": bname,
+                "en": "sort column is the pattern (always drink), not before verb/drink",
+            })
+            break
+
+    # C37 — sentence-sort chips: if any chip uses **bold**, all 3+ word chips must
+    # a2_adverbs_order 2026-08-29: "the adverbs should be highlighted"
+    sort_items = [it for it in items if it.get("bin") and it.get("en")]
+    if any("**" in str(it.get("en")) for it in sort_items):
+        for it in sort_items:
+            en = str(it.get("en") or "")
+            if len(en.split()) >= 3 and "**" not in en:
+                f["sortbold"].append(it)
+
     # C26 — don't call the target "small words"  [EXACT]
     # a1_to_for_with 2026-08-29: "Three small words" — a, if, no are small too.
     if str(d.get("level", "")).upper() == "A1":
@@ -954,6 +989,8 @@ LABELS = [
     ("stemcue",     "EXACT  A11 many-pair form pack gap has no (stem) — Type is a vocab test"),
     ("longtable",   "EXACT  C35 pairs/mistakes intro table has >8 rows — split across two cards"),
     ("verbcue",     "EXACT  B11 whole-VP gap has no (lemma) and the stem does not name the verb"),
+    ("sortlabel",   "EXACT  B16 position-sort column is 'before verb' / 'before drink' — name the pattern"),
+    ("sortbold",    "EXACT  C37 sentence-sort chip is 3+ words with no **taught form**"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
