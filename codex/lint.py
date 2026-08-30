@@ -325,7 +325,7 @@ def lint_pack(uid):
                          "stemcue", "longtable", "plusminus",
                          "sortlabel", "sortbold", "patternchip", "bothsort",
                          "parencue", "practisenote", "sortcz", "sentquiz",
-                         "wordordertype")}
+                         "wordordertype", "slotgap", "closedset")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -366,6 +366,12 @@ def lint_pack(uid):
         # B8 — infinitive particle as the Quiz gap (want ____ work → to)  [EXACT]
         gap = str(it.get("gap") or "")
         ga = str(it.get("gap_answer") or "").strip().lower()
+
+        # B7 — slot-label gap (person: ____) is a definition, not a cloze
+        # b1_suffixes 2026-08-30: Type "person: ____" USE — James: FCE sentence + root.
+        if re.search(r":\s*_{2,}\s*$", gap) and len(re.findall(r"[A-Za-z]+", gap)) <= 4:
+            f["slotgap"].append(it)
+
         if re.search(r"\bwant[s]?\s+_{2,}\s+\w", gap, re.I) and ga == "to":
             f["toparticle"].append(it)
 
@@ -915,6 +921,22 @@ def lint_pack(uid):
                 "en": "What you practise recap — cut it (C20)",
             })
 
+    # C45 — "The eight prefixes" implies English has only eight  [EXACT]
+    # b1_prefixes 2026-08-30: "misleading to say the eight prefixes /
+    # implies that there are only eight / maybe the most common eight".
+    for i, c in enumerate(intro_cards(d)):
+        title = str(c.get("title") or "").strip()
+        if re.search(
+            r"\bthe (two|three|four|five|six|seven|eight|nine|ten|twelve) "
+            r"(prefixes?|suffixes?)\b",
+            title,
+            re.I,
+        ):
+            f["closedset"].append({
+                "cz": "card %d · %s" % (i, title),
+                "en": "closed inventory title — say the most common N (C45)",
+            })
+
     # C30 — "Not:" bullets under the IS table  [EXACT]
     # a1_imperatives 2026-08-29: shape table was good; the four Not: lines
     # at the bottom had to become a Not/Say table.
@@ -1134,6 +1156,8 @@ LABELS = [
     ("sortcz",      "EXACT  B20 sentence-sort chip still has Czech — omit cz (sort_cz: false)"),
     ("sentquiz",    "EXACT  B21 word-order Quiz is a gap, not Which is correct? with full sentences"),
     ("wordordertype","EXACT  E8  word-order sentence Quiz still has Type — skip Type"),
+    ("closedset",   "EXACT  C45 intro title is The eight prefixes — implies a closed set"),
+    ("slotgap",     "EXACT  B7  gap is a slot label (person: ____), not a sentence"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),

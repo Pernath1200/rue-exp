@@ -6,6 +6,34 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-30 · local (interactive) — `b1_prefixes` Telegram-tested
+
+James: *okay that's done*. Telegram `b1_prefixes tested` (09:39). 51 down, 2 to go.
+
+Rules from the play:
+
+- **C45** *The eight prefixes* implies English has only eight → *The most common eight*. Lint `closedset`.
+- **E9** Use must not rewrite a sentence that is already correct English (*Parking is legal* / *It is possible*). Show a wrong prefix (~~unlegal~~) and correct it. Opposite-rewrite cut.
+- Quiz / Type / Use filled to 12 (DEFAULT_PASS) after "only 5" twice — not a new ID (suffixes ticked at 5 Quiz).
+
+Reconcile → `b1_prefixes` inspected · 44 items. Next tab I10: `b1_reported_speech`, then `b1_phrasal_verbs`.
+
+---
+
+## 2026-08-30 · local (interactive) — `b1_prefixes` rewrite to spec
+
+James: redo prefixes from `Spec_Prefixes_B1_V_WFM_2026-08-30.md`.
+
+Pack `b1_prefixes`: 72-item form gym → spec core 8 (un- / dis- / in- family / re- / pre- / over- / under- / mis-). 8 intro cards (library diagrams: `boxes_row`, `hub_spokes`×5, `decision_flow`). Check: 8 prefix→meaning+example pairs, then 5 Quiz. Type 5. Use 5 opposite-rewrite (checkable). `licence` / `pizza` / `footballers` / `without` swapped (`street` / `chicken` / `Teachers`) so the audit pool stays legal. `She disagreed with the plan` (not *manager's*) — F3 `manager's`.
+
+Engine: `use_mode: "rewrite"` (task label + prefix-free feedback *Correct English — but use a prefix here.*); `hub_spokes` 5-flat; match `lemma` without gap. Suffixes `open` Use untouched.
+
+Gates: this pack C9/C10 0 · lint F3 0 · adapter jsdom ok. Full-corpus verify/playable still red on other units (`a1_word_classes` cz, `a1_to_for_with` to/with). Audit: this pack 0 unknowns; did not write the ratchet.
+
+Smoke: http://localhost:8097/#b1_prefixes · Ctrl+F5.
+
+---
+
 ## 2026-08-30 · local (interactive) — `b1_indirect_questions` Telegram-tested
 
 James: *okay so this unit is fairly good*. Telegram `b1_indirect_questions tested`.

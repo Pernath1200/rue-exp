@@ -223,18 +223,33 @@ function contrast(labels) {
  * ------------------------------------------------------------------------- */
 
 /** Hub and spokes — one thing, several options.
- *  labels: [centre, label1, example1, label2, example2, label3, example3, label4, example4]
+ *  Paired labels: [centre, label1, example1, …] up to four pairs.
+ *  Flat labels: [centre, word1, word2, …] — odd remainder, or five words
+ *  with no examples (b1_prefixes PAID family, 2026-08-30).
  *  Three options sit in a row under the hub so a line cannot cut through a box
- *  (James, 2026-08-28, Articles 2). Four still use a 2×2 grid. */
+ *  (James, 2026-08-28, Articles 2). Four still use a 2×2 grid. Five: 3+2. */
 function hub_spokes(labels) {
   const [centre, ...rest] = labels;
   const spokes = [];
-  for (let i = 0; i < 8; i += 2) {
-    if (rest[i]) spokes.push([rest[i], rest[i + 1] || ""]);
+  const paired =
+    rest.length >= 4 &&
+    rest.length % 2 === 0 &&
+    rest.length <= 8 &&
+    rest.some((t, i) => i % 2 === 1 && String(t || "").trim());
+  if (paired) {
+    for (let i = 0; i < 8; i += 2) {
+      if (rest[i]) spokes.push([rest[i], rest[i + 1] || ""]);
+    }
+  } else {
+    for (const t of rest) {
+      if (t) spokes.push([String(t), ""]);
+    }
+    if (spokes.length > 5) spokes.length = 5;
   }
   const n = spokes.length;
   const three = n === 3;
-  const bw = three ? 100 : 148;
+  const five = n === 5;
+  const bw = three || five ? 100 : 148;
   const bh = 54;
   const y = 86;
   const boxes = three
@@ -243,12 +258,20 @@ function hub_spokes(labels) {
         [110, y],
         [214, y],
       ]
-    : [
-        [8, 86],
-        [164, 86],
-        [8, 152],
-        [164, 152],
-      ];
+    : five
+      ? [
+          [6, 86],
+          [110, 86],
+          [214, 86],
+          [58, 152],
+          [162, 152],
+        ]
+      : [
+          [8, 86],
+          [164, 86],
+          [8, 152],
+          [164, 152],
+        ];
   const fit1 = (t, w, s) =>
     Math.max(8, Math.min(s, Math.floor(w / (0.62 * Math.max(1, String(t).length)))));
   const hub = wrapFit(centre || "", 176, 12, 2);

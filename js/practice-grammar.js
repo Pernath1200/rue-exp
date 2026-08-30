@@ -18,11 +18,11 @@ import {
   grammarBest,
 } from "./progress.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
-import { introDiagram } from "./intro-visuals.js?v=2026-08-30-certscale";
+import { introDiagram } from "./intro-visuals.js?v=2026-08-30-pfx";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";
-import { adaptGrammarPack } from "./pack-adapt.js?v=2026-08-29-her";
+import { adaptGrammarPack } from "./pack-adapt.js?v=2026-08-30-pfxuse";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
 import { setSmokeContext } from "./smoke-flags.js";
@@ -1865,11 +1865,15 @@ export function startPractice(rawPack, root, opts) {
       state.typeItems = shuffle(onlyWrong.slice());
       state.typeRetryPass = true;
     } else {
-      state.typeItems = samplePass(pack.type_items || [], null, focusStructures, {
-        packId: pack.id,
-        stage: "type",
-        minZero: pack.quiz_axis === "articles" ? 3 : 0,
-      });
+      const raw = pack.type_items || [];
+      state.typeItems =
+        pack.type_order === "as_authored"
+          ? raw.slice()
+          : samplePass(raw, null, focusStructures, {
+              packId: pack.id,
+              stage: "type",
+              minZero: pack.quiz_axis === "articles" ? 3 : 0,
+            });
       state.typeRetryPass = false;
     }
     state.typeIndex = 0;
@@ -1943,13 +1947,19 @@ export function startPractice(rawPack, root, opts) {
     root.innerHTML = `
       ${ladderHtml()}
       <div class="practice-head"><h2>${esc(pack.title)} · ${title} · Done</h2></div>
-      <p class="practice-prompt">Score: <strong>${score} / ${total}</strong></p>
+      <p class="practice-prompt">${
+        kind === "use" && pack.use_mode === "open"
+          ? `Wrote <strong>${score} / ${total}</strong>`
+          : `Score: <strong>${score} / ${total}</strong>`
+      }</p>
       <p class="practice-hint">${
         wrongN > 0
           ? `${wrongN} wrong · retry or continue`
           : kind === "type"
             ? "All clear · next: Use"
-            : "All clear · summary"
+            : pack.use_mode === "open"
+              ? "All written · summary"
+              : "All clear · summary"
       }${retryPass ? " · retry pass" : ""}</p>
       <div class="nav">
         ${
@@ -1995,6 +2005,91 @@ export function startPractice(rawPack, root, opts) {
     focusPrimary(wrongN > 0 ? "#t-retry" : "#t-next");
   }
 
+  /* use_mode: "open" — produce-first, not graded (b1_suffixes spec 2026-08-30).
+   * Sample stays locked until the student has written something. */
+  function renderOpenUse(item, idx, total, score) {
+    clearAdvance();
+    const prompt = item.prompt || item.use_prompt || "Write a few sentences.";
+    const sample = item.sample || item.answer || item.en || "";
+    const targets = Array.isArray(item.targets) ? item.targets.filter(Boolean) : [];
+    setSmokeContext({
+      stage: "use",
+      checkPhase: "",
+      itemIndex: idx,
+      en: sample,
+      cz: item.cz || "",
+      gap: targets.join(" "),
+      gap_answer: sample,
+      typed: "",
+    });
+    const chips = targets.length
+      ? `<p class="use-targets">${targets
+          .map((t) => `<span class="use-target">${esc(t)}</span>`)
+          .join("")}</p>`
+      : "";
+    const cz = item.cz
+      ? `<p class="practice-hint">${esc(item.cz)}</p>`
+      : "";
+
+    root.innerHTML = `
+      ${ladderHtml()}
+      <div class="practice-head"><h2>${esc(pack.title)} · Use</h2></div>
+      <p class="score-line">${idx + 1} / ${total} · write first, then sample</p>
+      <p class="fix-label">Write a few sentences</p>
+      <div class="item-stem">
+        <div class="item-stem-text">
+          <p class="practice-prompt">${esc(prompt)}</p>
+          ${cz}
+          ${chips}
+        </div>
+      </div>
+      <textarea id="ans" class="type-in type-area use-open-area" rows="4" autocomplete="off" spellcheck="true" lang="en" placeholder="Write something…"></textarea>
+      <div class="input-row">
+        <button type="button" class="btn primary" id="btn-submit">Show sample</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    `;
+
+    const input = root.querySelector("#ans");
+    const btn = root.querySelector("#btn-submit");
+    const fb = root.querySelector("#feedback");
+    input.focus();
+
+    let revealed = false;
+
+    const goNext = () => {
+      state.useIndex += 1;
+      if (state.useIndex >= state.useItems.length) state.useGate = true;
+      render();
+    };
+
+    const reveal = () => {
+      if (revealed) {
+        goNext();
+        return;
+      }
+      if (!input.value.trim()) {
+        fb.className = "feedback bad";
+        fb.textContent = "Write something first — then the sample unlocks.";
+        input.focus();
+        return;
+      }
+      revealed = true;
+      state.useScore += 1;
+      input.disabled = true;
+      fb.className = "feedback ok";
+      fb.innerHTML = sample
+        ? `<span class="use-sample-label">Sample</span> ${esc(sample)}`
+        : "Saved.";
+      btn.textContent = "Next →";
+      focusPrimary("#btn-submit");
+      state.enterAdvance = goNext;
+    };
+
+    btn.addEventListener("click", reveal);
+    state.enterAdvance = reveal;
+  }
+
   function renderTypedStage(kind) {
     clearAdvance();
     const items = kind === "type" ? state.typeItems : state.useItems;
@@ -2012,6 +2107,10 @@ export function startPractice(rawPack, root, opts) {
     }
 
     const item = items[idx];
+    if (kind === "use" && item && item.open) {
+      renderOpenUse(item, idx, items.length, score);
+      return;
+    }
     const mode = kind === "use" ? "full_word" : typeModeOf(pack, item);
     const isGap = mode === "ending_gap" && item.stem != null;
     const isRoot = mode === "root_word" && item.root;
@@ -2046,6 +2145,12 @@ export function startPractice(rawPack, root, opts) {
         ? "type the passive sentence…"
         : "";
     const joinHint = /^Join into one sentence/i.test(String(item.hint || ""));
+    const rewriteHint =
+      kind === "use" &&
+      (pack.use_mode === "rewrite" ||
+        /^Change one word so the sentence means the opposite/i.test(
+          String(item.hint || ""),
+        ));
 
     const hint =
       item.hint && !voiceHint && !joinHint
@@ -2068,6 +2173,8 @@ export function startPractice(rawPack, root, opts) {
     })();
     const taskLabel = fixMode
       ? `<p class="fix-label">Correct this sentence</p>`
+      : rewriteHint
+        ? `<p class="fix-label">Rewrite with a prefix</p>`
       : voiceHint
         ? `<p class="fix-label">${esc(voiceHint)}</p>${agentHint}`
         : joinHint
@@ -2084,6 +2191,8 @@ export function startPractice(rawPack, root, opts) {
           <input type="text" id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${
             isRoot
               ? "whole word…"
+              : rewriteHint
+                ? "type the opposite sentence…"
               : item.wrong
                 ? "type the corrected sentence…"
                 : joinHint
@@ -2105,7 +2214,7 @@ export function startPractice(rawPack, root, opts) {
       ${taskLabel}
       <div class="item-stem">
         <div class="item-stem-text">
-          <p class="practice-prompt${fixMode ? " practice-prompt--wrong" : ""}">${esc(prompt)}${
+          <p class="practice-prompt${fixMode && !rewriteHint ? " practice-prompt--wrong" : ""}">${esc(prompt)}${
             isRoot ? ` <span class="wf-root">${esc(item.root)}</span>` : ""
           }</p>
           ${hint}
@@ -2179,9 +2288,18 @@ export function startPractice(rawPack, root, opts) {
           }
         }
         fb.className = "feedback bad";
-        fb.textContent = isGap
-          ? `→ ${item.ending}  ·  ${fullFormOf(item)}`
-          : `→ ${item.answer}`;
+        const prefixFree =
+          kind === "use" &&
+          (item.no_prefix || []).some((s) => norm(s) === norm(typedVal));
+        if (prefixFree) {
+          fb.textContent = "Correct English — but use a prefix here.";
+          fb.appendChild(document.createElement("br"));
+          fb.appendChild(document.createTextNode("→ " + item.answer));
+        } else {
+          fb.textContent = isGap
+            ? `→ ${item.ending}  ·  ${fullFormOf(item)}`
+            : `→ ${item.answer}`;
+        }
         // Let the learner type the correction — motor memory, not score.
         const fix = document.createElement("button");
         fix.type = "button";

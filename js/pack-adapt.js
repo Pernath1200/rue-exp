@@ -1204,6 +1204,9 @@ function passiveBeChoices(it, pack) {
 function gapPrompt(it, pack) {
   const g = String(it.gap || "");
   if (/\(.*\)\s*$/.test(g)) return g;
+  /* Word-formation already shows the capitalised root. Do not also glue on a
+   * comparative lemma: user → (us), helper → (help), teacher → (teach). */
+  if (pack && pack.kind === "word_formation") return g;
   if (isComparativeAnswer(it)) {
     const lemma = comparativeLemma(it);
     if (lemma) return g + " (" + lemma + ")";
@@ -1642,6 +1645,7 @@ export function adaptGrammarPack(pack) {
             explanation: it.explanation,
             explanation_cz: it.explanation_cz,
             structures: it.structures,
+            no_prefix: it.no_prefix || [],
             _block: it._block,
           }));
 

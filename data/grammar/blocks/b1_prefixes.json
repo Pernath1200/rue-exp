@@ -1,1262 +1,821 @@
 {
   "id": "b1_prefixes",
-  "title": "Prefixes — the basics",
+  "title": "Prefixes",
   "level": "B1",
   "tree_node": "b1_prefixes",
   "codex_unit": "V_WFM-B1B2-01",
   "kind": "word_formation",
   "practice": "grammar",
-  "note": "B1 tranche of the affix programme (James, 2026-08-18). un- / in- (im-) / dis- / re- with a choose-the-prefix review block. Czech glosses display only. 6 blocks × 12.",
+  "note": "Rewrite 2026-08-30 from Spec_Prefixes_B1_V_WFM. Core 8: un- dis- in-(im-/il-/ir-) re- pre- over- under- mis-. Match = prefix→meaning+examples. Quiz 12 · Type 12 · Use 12 error-correction (wrong prefix). Exam Practice still pools the gap items.",
   "default_direction": "en_gap",
+  "use_mode": "correct",
+  "type_order": "as_authored",
   "check": {
     "sequence": [
+      "match",
       "quiz"
     ]
-  },
-  "ladder": {
-    "match": false,
-    "use": false
   },
   "quality": "good_draft",
   "intro": {
     "cards": [
       {
-        "title": "What a prefix does",
-        "points": [
-          "The sentence tells you when the meaning is negative.",
-          "A prefix goes on the FRONT of a word and changes its meaning",
-          "not its word class"
+        "title": "Prefixes",
+        "title_cz": "Předpony",
+        "diagram": "boxes_row",
+        "labels": [
+          "prefix",
+          "root",
+          "suffix",
+          "un",
+          "help",
+          "ful"
         ],
+        "diagram_fallback": "un + help + ful → unhelpful",
+        "points": [
+          "A prefix goes **before** the root and changes the **meaning**.",
+          "A suffix goes **after** the root and changes the **word class**.",
+          "This lesson is prefixes."
+        ],
+        "ref": {
+          "tab": "wordform",
+          "label": "Full prefix and suffix tables"
+        }
+      },
+      {
+        "title": "One root, many meanings",
+        "title_cz": "Jeden kořen, různé významy",
+        "diagram": "hub_spokes",
+        "labels": [
+          "PAID",
+          "unpaid",
+          "overpaid",
+          "underpaid",
+          "prepaid",
+          "repaid"
+        ],
+        "diagram_fallback": "unpaid · overpaid · underpaid · prepaid · repaid",
+        "points": [
+          "The root stays the same.",
+          "The prefix changes what it means."
+        ]
+      },
+      {
+        "title": "Not / the opposite: un- and dis-",
+        "title_cz": "Zápor: un- a dis-",
         "table": {
           "headers": [
-            "",
-            ""
+            "prefix",
+            "with adjectives",
+            "with verbs"
           ],
           "rows": [
             [
-              "The four to know first",
-              "un-, in- (im-), dis-, re-."
+              "**un**-",
+              "**un**happy, **un**fair",
+              "**un**lock, **un**pack"
             ],
             [
-              "happy",
-              "unhappy is still an adjective, lock → unlock is still a verb."
+              "**dis**-",
+              "**dis**honest",
+              "**dis**agree, **dis**appear"
+            ]
+          ]
+        },
+        "points": [
+          "With verbs, **un**- and **dis**- reverse the action: lock → **unlock**."
+        ]
+      },
+      {
+        "title": "The in- family",
+        "title_cz": "Rodina in-",
+        "diagram": "decision_flow",
+        "labels": [
+          "starts with m / p / b?",
+          "im-",
+          "starts with l?",
+          "il-",
+          "starts with r?",
+          "ir-",
+          "anything else → in-"
+        ],
+        "diagram_fallback": "m/p/b → im- · l → il- · r → ir- · else → in-",
+        "table": {
+          "headers": [
+            "form",
+            "examples"
+          ],
+          "rows": [
+            [
+              "**im**-",
+              "**im**possible, **im**patient, **im**polite"
+            ],
+            [
+              "**il**-",
+              "**il**legal"
+            ],
+            [
+              "**ir**-",
+              "**ir**regular, **ir**responsible"
+            ],
+            [
+              "**in**-",
+              "**in**formal, **in**correct"
+            ]
+          ]
+        },
+        "points": [
+          "Czech **ne-** covers all of these — English chooses by the root.",
+          "Watch for ~~unpossible~~, ~~unlegal~~."
+        ]
+      },
+      {
+        "title": "Time: re- and pre-",
+        "title_cz": "Čas: re- a pre-",
+        "table": {
+          "headers": [
+            "prefix",
+            "meaning",
+            "examples"
+          ],
+          "rows": [
+            [
+              "**re**-",
+              "again",
+              "**re**write, **re**take, **re**play"
+            ],
+            [
+              "**pre**-",
+              "before",
+              "**pre**pay, **pre**heat, **pre**historic"
             ]
           ]
         }
       },
       {
-        "title": "un- — the everyday negative",
+        "title": "Too much, too little",
+        "title_cz": "Příliš / málo",
         "table": {
           "headers": [
-            "Word",
-            "Opposite"
+            "prefix",
+            "meaning",
+            "examples"
           ],
           "rows": [
             [
-              "happy",
-              "unhappy"
+              "**over**-",
+              "too much",
+              "**over**sleep, **over**cook, **over**paid"
             ],
             [
-              "safe",
-              "unsafe"
-            ],
-            [
-              "fair",
-              "unfair"
-            ],
-            [
-              "lock",
-              "unlock"
+              "**under**-",
+              "too little",
+              "**under**paid, **under**cooked"
             ]
           ]
         },
         "points": [
-          "un- is the most common negative in English.",
-          "On verbs it reverses the action: lock → unlock, pack → unpack."
+          "They often come in pairs — **over**paid / **under**paid."
         ]
       },
       {
-        "title": "in- / im- and dis-",
+        "title": "Wrongly: mis-",
+        "title_cz": "Špatně: mis-",
         "table": {
           "headers": [
-            "Word",
-            "Opposite"
+            "prefix",
+            "meaning",
+            "examples"
           ],
           "rows": [
             [
-              "correct",
-              "incorrect"
-            ],
-            [
-              "polite",
-              "impolite"
-            ],
-            [
-              "agree",
-              "disagree"
-            ],
-            [
-              "honest",
-              "dishonest"
+              "**mis**-",
+              "wrongly, badly",
+              "**mis**understand, **mis**spell, **mis**take"
             ]
           ]
-        },
-        "points": [
-          "in- becomes im- before p: possible → impossible, polite → impolite.",
-          "dis- works on verbs too: agree → disagree, appear → disappear.",
-          "Careful: discover is not the opposite of cover — not every dis- word is negative."
-        ]
+        }
       },
       {
-        "title": "re- = again",
+        "title": "The most common eight",
+        "title_cz": "Osm nejčastějších",
         "table": {
           "headers": [
-            "Word",
-            "New word"
+            "prefix",
+            "meaning",
+            "examples"
           ],
           "rows": [
             [
-              "turn",
-              "return"
+              "un-",
+              "not / the opposite",
+              "unfair, unlock"
             ],
             [
-              "new",
-              "renew"
+              "dis-",
+              "not / the opposite",
+              "disagree, dishonest"
             ],
             [
-              "start",
-              "restart"
+              "in- (im-/il-/ir-)",
+              "not",
+              "impossible, illegal"
             ],
             [
-              "cycle",
-              "recycle"
+              "re-",
+              "again",
+              "rewrite, retake"
+            ],
+            [
+              "pre-",
+              "before",
+              "prepay, preheat"
+            ],
+            [
+              "over-",
+              "too much",
+              "oversleep, overpaid"
+            ],
+            [
+              "under-",
+              "too little",
+              "underpaid, undercooked"
+            ],
+            [
+              "mis-",
+              "wrongly",
+              "misunderstand, misspell"
             ]
           ]
-        },
-        "points": [
-          "re- means again or back — it is not negative.",
-          "Often the new word is its own word: remind, replace, return."
-        ]
+        }
       }
     ]
   },
   "blocks": [
     {
-      "id": "pfx_un_adj",
-      "title": "un- with adjectives",
+      "id": "pfx_match",
+      "title": "Prefix → meaning",
+      "check": {
+        "sequence": [
+          "match"
+        ]
+      },
       "items": [
         {
+          "en": "He unlocked the door.",
+          "cz": "not, the opposite · __fair, __lock",
+          "lemma": "un-",
+          "use": false
+        },
+        {
+          "en": "She disagreed with the plan.",
+          "cz": "not, the opposite · __agree, __honest",
+          "lemma": "dis-",
+          "use": false
+        },
+        {
+          "en": "Parking is illegal on this street.",
+          "cz": "not · __possible, __legal",
+          "lemma": "in- (im-/il-/ir-)",
+          "use": false
+        },
+        {
+          "en": "You have to rewrite the report.",
+          "cz": "again · __write, __take",
+          "lemma": "re-",
+          "use": false
+        },
+        {
+          "en": "Preheat the oven first.",
+          "cz": "before · __pay, __heat",
+          "lemma": "pre-",
+          "use": false
+        },
+        {
+          "en": "I overslept this morning.",
+          "cz": "too much · __sleep, __cook",
+          "lemma": "over-",
+          "use": false
+        },
+        {
+          "en": "The chicken was undercooked.",
+          "cz": "too little · __paid, __cooked",
+          "lemma": "under-",
+          "use": false
+        },
+        {
+          "en": "I think you misunderstood me.",
+          "cz": "wrongly · __understand, __spell",
+          "lemma": "mis-",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "pfx_quiz",
+      "title": "Choose the form",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I overslept this morning and missed the train.",
+          "gap": "I ____ this morning and missed the train.",
+          "root": "SLEEP",
+          "gap_answer": "overslept",
+          "quiz_options": [
+            "misslept",
+            "overslept",
+            "underslept",
+            "preslept"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "You slept too much and missed the train: **over** + sleep → **overslept**.",
+          "explanation_cz": "Spal jsi moc dlouho a vlak ujel: **over** + sleep → **overslept**."
+        },
+        {
+          "en": "There are too many mistakes — you will have to rewrite the report.",
+          "gap": "There are too many mistakes — you'll have to ____ the report.",
+          "root": "WRITE",
+          "gap_answer": "rewrite",
+          "quiz_options": [
+            "unwrite",
+            "miswrite",
+            "rewrite",
+            "overwrite"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "Too many mistakes → do it again: **re**write. **Overwrite** means write on top.",
+          "explanation_cz": "Příliš chyb → znovu: **re**write. **Overwrite** je napsat přes to."
+        },
+        {
+          "en": "I think you misunderstood me — I said Tuesday, not Thursday.",
+          "gap": "I think you ____ me — I said Tuesday, not Thursday.",
+          "root": "UNDERSTAND",
+          "gap_answer": "misunderstood",
+          "quiz_options": [
+            "misunderstood",
+            "disunderstood",
+            "ununderstood",
+            "re-understood"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "You took Tuesday as Thursday: **mis**- = wrongly. **Misunderstood**.",
+          "explanation_cz": "Úterý jako čtvrtek: **mis**- = špatně. **Misunderstood**."
+        },
+        {
+          "en": "It is illegal to drive on this street.",
+          "gap": "It is ____ to drive on this street.",
+          "root": "LEGAL",
+          "gap_answer": "illegal",
+          "quiz_options": [
+            "unlegal",
+            "dislegal",
+            "inlegal",
+            "illegal"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "**legal** starts with **l**, so **il**-: **illegal**. Not ~~unlegal~~.",
+          "explanation_cz": "**legal** začíná na **l**, proto **il**-: **illegal**. Ne ~~unlegal~~."
+        },
+        {
+          "en": "The chicken was undercooked, so we put it back in the oven.",
+          "gap": "The chicken was ____, so we put it back in the oven.",
+          "root": "COOK",
+          "gap_answer": "undercooked",
+          "quiz_options": [
+            "precooked",
+            "overcooked",
+            "undercooked",
+            "miscooked"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "Back in the oven: not cooked enough → **under**cooked. **Over**cooked is too much.",
+          "explanation_cz": "Zpět do trouby: málo uvařené → **under**cooked. **Over**cooked je moc."
+        },
+        {
           "en": "She failed the test and was very unhappy about it.",
-          "cz": "Neuspěla u testu a byla z toho velmi nešťastná.",
           "gap": "She failed the test and was very ____ about it.",
           "root": "HAPPY",
           "gap_answer": "unhappy",
           "quiz_options": [
             "unhappy",
-            "happy",
             "inhappy",
-            "unhapy"
+            "dishappy",
+            "rehappy"
           ],
-          "explanation": "She failed — the feeling is negative: un- + happy.",
-          "explanation_cz": "Neuspěla — pocit je negativní: un- + happy."
+          "type": false,
+          "use": false,
+          "explanation": "She failed — the feeling is the opposite: **un** + happy.",
+          "explanation_cz": "Neuspěla — opak: **un** + happy."
         },
         {
-          "en": "That's unfair! You got two cakes and I got none.",
-          "cz": "To je nefér! Ty jsi dostal dva koláče a já žádný.",
-          "gap": "That's ____! You got two cakes and I got none.",
-          "root": "FAIR",
-          "gap_answer": "unfair",
-          "quiz_options": [
-            "unfair",
-            "fair",
-            "infair",
-            "unfare"
-          ],
-          "explanation": "A complaint: un- + fair.",
-          "explanation_cz": "Stížnost: un- + fair (nespravedlivé)."
-        },
-        {
-          "en": "The old bridge is unsafe — don't cross it.",
-          "cz": "Starý most není bezpečný — nechoď přes něj.",
-          "gap": "The old bridge is ____ — don't cross it.",
-          "root": "SAFE",
-          "gap_answer": "unsafe",
-          "quiz_options": [
-            "unsafe",
-            "safe",
-            "insafe",
-            "unsave"
-          ],
-          "explanation": "'Don't cross it' — the bridge is dangerous: un- + safe.",
-          "explanation_cz": "'Nechoď přes něj' — most je nebezpečný: un- + safe."
-        },
-        {
-          "en": "His room is always untidy — clothes everywhere.",
-          "cz": "Jeho pokoj je pořád neuklizený — všude oblečení.",
-          "gap": "His room is always ____ — clothes everywhere.",
-          "root": "TIDY",
-          "gap_answer": "untidy",
-          "quiz_options": [
-            "untidy",
-            "tidy",
-            "intidy",
-            "untydy"
-          ],
-          "explanation": "Clothes everywhere = not tidy: un- + tidy.",
-          "explanation_cz": "Všude oblečení = neuklizeno: un- + tidy."
-        },
-        {
-          "en": "It is unusual to see snow here in May.",
-          "cz": "Vidět tady v květnu sníh je neobvyklé.",
-          "gap": "It is ____ to see snow here in May.",
-          "root": "USUAL",
-          "gap_answer": "unusual",
-          "quiz_options": [
-            "unusual",
-            "usual",
-            "inusual",
-            "unusuall"
-          ],
-          "explanation": "Snow in May is not normal: un- + usual.",
-          "explanation_cz": "Sníh v květnu není normální: un- + usual."
-        },
-        {
-          "en": "Eating chips every day is unhealthy.",
-          "cz": "Jíst každý den hranolky je nezdravé.",
-          "gap": "Eating chips every day is ____.",
-          "root": "HEALTHY",
-          "gap_answer": "unhealthy",
-          "quiz_options": [
-            "unhealthy",
-            "healthy",
-            "inhealthy",
-            "unhelthy"
-          ],
-          "explanation": "Chips every day — bad for you: un- + healthy.",
-          "explanation_cz": "Hranolky každý den — škodí: un- + healthy."
-        },
-        {
-          "en": "It was unkind of you to laugh at him.",
-          "cz": "Bylo od tebe nehezké se mu smát.",
-          "gap": "It was ____ of you to laugh at him.",
-          "root": "KIND",
-          "gap_answer": "unkind",
-          "quiz_options": [
-            "unkind",
-            "kind",
-            "inkind",
-            "unkinde"
-          ],
-          "explanation": "Laughing at someone is not kind: un- + kind.",
-          "explanation_cz": "Smát se někomu není hezké: un- + kind."
-        },
-        {
-          "en": "He apologised because the story he told was untrue.",
-          "cz": "Omluvil se, protože příběh, který vyprávěl, nebyl pravdivý.",
-          "gap": "He apologised because the story he told was ____.",
-          "root": "TRUE",
-          "gap_answer": "untrue",
-          "quiz_options": [
-            "untrue",
-            "true",
-            "intrue",
-            "untru"
-          ],
-          "explanation": "He apologised — so the story was false: un- + true.",
-          "explanation_cz": "Omluvil se — příběh byl nepravdivý: un- + true."
-        },
-        {
-          "en": "Don't worry — it's an unimportant detail.",
-          "cz": "Neboj se — to je nedůležitý detail.",
-          "gap": "Don't worry — it's an ____ detail.",
-          "root": "IMPORTANT",
-          "gap_answer": "unimportant",
-          "quiz_options": [
-            "unimportant",
-            "important",
-            "inimportant",
-            "unimportent"
-          ],
-          "explanation": "'Don't worry' — it doesn't matter: un- + important.",
-          "explanation_cz": "'Neboj se' — na tom nezáleží: un- + important."
-        },
-        {
-          "en": "Students hate the new rule — it is very unpopular.",
-          "cz": "Studenti nové pravidlo nesnášejí — je velmi neoblíbené.",
-          "gap": "Students hate the new rule — it is very ____.",
-          "root": "POPULAR",
-          "gap_answer": "unpopular",
-          "quiz_options": [
-            "unpopular",
-            "popular",
-            "impopular",
-            "unpopuler"
-          ],
-          "explanation": "They hate it: un- + popular.",
-          "explanation_cz": "Nesnášejí ho: un- + popular (neoblíbené)."
-        },
-        {
-          "en": "His answer was unclear, so I asked again.",
-          "cz": "Jeho odpověď byla nejasná, tak jsem se zeptal znovu.",
-          "gap": "His answer was ____, so I asked again.",
-          "root": "CLEAR",
-          "gap_answer": "unclear",
-          "quiz_options": [
-            "unclear",
-            "clear",
-            "inclear",
-            "uncleer"
-          ],
-          "explanation": "I had to ask again — I did not understand: un- + clear.",
-          "explanation_cz": "Musel jsem se zeptat znovu: un- + clear (nejasná)."
-        },
-        {
-          "en": "Don't bring money — it's unnecessary.",
-          "cz": "Neber si peníze — není to potřeba.",
-          "gap": "Don't bring money — it's ____.",
-          "root": "NECESSARY",
-          "gap_answer": "unnecessary",
-          "quiz_options": [
-            "unnecessary",
-            "necessary",
-            "unecessary",
-            "innecessary"
-          ],
-          "explanation": "'Don't bring' — you don't need it: un- + necessary.",
-          "explanation_cz": "'Neber si' — není třeba: un- + necessary."
-        }
-      ]
-    },
-    {
-      "id": "pfx_un_verbs",
-      "title": "un- with verbs and participles",
-      "items": [
-        {
-          "en": "The door is locked — can you unlock it for me?",
-          "cz": "Dveře jsou zamčené — můžeš mi je odemknout?",
-          "gap": "The door is locked — can you ____ it for me?",
-          "root": "LOCK",
-          "gap_answer": "unlock",
-          "quiz_options": [
-            "unlock",
-            "lock",
-            "inlock",
-            "onlock"
-          ],
-          "explanation": "It is already locked — you need the opposite action: un- + lock.",
-          "explanation_cz": "Už je zamčeno — potřebuješ opačnou akci: un- + lock."
-        },
-        {
-          "en": "You can undo the last change with Ctrl+Z.",
-          "cz": "Poslední změnu můžeš vrátit pomocí Ctrl+Z.",
-          "gap": "You can ____ the last change with Ctrl+Z.",
-          "root": "DO",
-          "gap_answer": "undo",
-          "quiz_options": [
-            "undo",
-            "do",
-            "redo",
-            "undoo"
-          ],
-          "explanation": "un- + do = take the action back.",
-          "explanation_cz": "un- + do = vzít akci zpět."
-        },
-        {
-          "en": "We arrived at the hotel and unpacked our bags.",
-          "cz": "Přijeli jsme do hotelu a vybalili si tašky.",
-          "gap": "We arrived at the hotel and ____ our bags.",
-          "root": "PACK",
-          "gap_answer": "unpacked",
-          "quiz_options": [
-            "unpacked",
-            "packed",
-            "unpaked",
-            "inpacked"
-          ],
-          "explanation": "You pack at home, and un-pack when you arrive. Past form.",
-          "explanation_cz": "Doma balíš, po příjezdu vybaluješ: un- + packed."
-        },
-        {
-          "en": "The doctor asked him to undress.",
-          "cz": "Doktor ho požádal, aby se svlékl.",
-          "gap": "The doctor asked him to ____.",
-          "root": "DRESS",
-          "gap_answer": "undress",
-          "quiz_options": [
-            "undress",
-            "dress",
-            "undres",
-            "indress"
-          ],
-          "explanation": "un- + dress = take clothes off.",
-          "explanation_cz": "un- + dress = svléknout se."
-        },
-        {
-          "en": "Unplug the TV before you clean it.",
-          "cz": "Před čištěním televizi odpoj ze zásuvky.",
-          "gap": "____ the TV before you clean it.",
-          "root": "PLUG",
-          "gap_answer": "unplug",
-          "quiz_options": [
-            "unplug",
-            "plug",
-            "inplug",
-            "unplugg"
-          ],
-          "explanation": "un- + plug = take it out of the socket.",
-          "explanation_cz": "un- + plug = odpojit ze zásuvky."
-        },
-        {
-          "en": "The writer of this old song is unknown.",
-          "cz": "Autor téhle staré písně je neznámý.",
-          "gap": "The writer of this old song is ____.",
-          "root": "KNOW",
-          "gap_answer": "unknown",
-          "quiz_options": [
-            "unknown",
-            "known",
-            "unknow",
-            "inknown"
-          ],
-          "explanation": "Nobody knows the name: un- + known.",
-          "explanation_cz": "Nikdo nezná jméno: un- + known (neznámý)."
-        },
-        {
-          "en": "She did a year of unpaid work for the charity.",
-          "cz": "Rok dělala pro charitu neplacenou práci.",
-          "gap": "She did a year of ____ work for the charity.",
-          "root": "PAY",
-          "gap_answer": "unpaid",
-          "quiz_options": [
-            "unpaid",
-            "paid",
-            "unpayed",
-            "inpaid"
-          ],
-          "explanation": "Charity work — no money: un- + paid.",
-          "explanation_cz": "Práce pro charitu — bez peněz: un- + paid."
-        },
-        {
-          "en": "His last book stayed unfinished.",
-          "cz": "Jeho poslední kniha zůstala nedokončená.",
-          "gap": "His last book stayed ____.",
-          "root": "FINISH",
-          "gap_answer": "unfinished",
-          "quiz_options": [
-            "unfinished",
-            "finished",
-            "unfinish",
-            "infinished"
-          ],
-          "explanation": "un- + finished = never completed.",
-          "explanation_cz": "un- + finished = nedokončený."
-        },
-        {
-          "en": "Give unwanted clothes to the charity shop.",
-          "cz": "Nechtěné oblečení dej do charitativního obchodu.",
-          "gap": "Give ____ clothes to the charity shop.",
-          "root": "WANT",
-          "gap_answer": "unwanted",
-          "quiz_options": [
-            "unwanted",
-            "wanted",
-            "inwanted",
-            "unvanted"
-          ],
-          "explanation": "Clothes you don't want any more: un- + wanted.",
-          "explanation_cz": "Oblečení, které už nechceš: un- + wanted."
-        },
-        {
-          "en": "There are two hundred unread emails in my inbox.",
-          "cz": "Ve schránce mám dvě stě nepřečtených e-mailů.",
-          "gap": "There are two hundred ____ emails in my inbox.",
-          "root": "READ",
-          "gap_answer": "unread",
-          "quiz_options": [
-            "unread",
-            "read",
-            "unred",
-            "inread"
-          ],
-          "explanation": "Not read yet: un- + read.",
-          "explanation_cz": "Ještě nepřečtené: un- + read."
-        },
-        {
-          "en": "Grandma was unable to climb the stairs.",
-          "cz": "Babička nebyla schopná vyjít schody.",
-          "gap": "Grandma was ____ to climb the stairs.",
-          "root": "ABLE",
-          "gap_answer": "unable",
-          "quiz_options": [
-            "unable",
-            "able",
-            "enable",
-            "unible"
-          ],
-          "explanation": "She could not do it: un- + able.",
-          "explanation_cz": "Nedokázala to: un- + able (neschopná)."
-        },
-        {
-          "en": "The knot is too tight — I can't untie it.",
-          "cz": "Uzel je moc utažený — nemůžu ho rozvázat.",
-          "gap": "The knot is too tight — I can't ____ it.",
-          "root": "TIE",
-          "gap_answer": "untie",
-          "quiz_options": [
-            "untie",
-            "tie",
-            "untye",
-            "intie"
-          ],
-          "explanation": "The knot exists — the problem is the opposite action: un- + tie.",
-          "explanation_cz": "Uzel už existuje — jde o opačnou akci: un- + tie."
-        }
-      ]
-    },
-    {
-      "id": "pfx_in_im",
-      "title": "in- and im-",
-      "items": [
-        {
-          "en": "Check numbers 3 and 5 again — they are incorrect.",
-          "cz": "Zkontroluj znovu čísla 3 a 5 — jsou nesprávně.",
-          "gap": "Check numbers 3 and 5 again — they are ____.",
-          "root": "CORRECT",
-          "gap_answer": "incorrect",
-          "quiz_options": [
-            "incorrect",
-            "correct",
-            "uncorrect",
-            "incorect"
-          ],
-          "explanation": "'Check again' — something is wrong: in- + correct.",
-          "explanation_cz": "'Zkontroluj znovu' — něco je špatně: in- + correct."
-        },
-        {
-          "en": "Wear jeans — the party is informal.",
-          "cz": "Vezmi si džíny — večírek je neformální.",
-          "gap": "Wear jeans — the party is ____.",
-          "root": "FORMAL",
-          "gap_answer": "informal",
-          "quiz_options": [
-            "informal",
-            "formal",
-            "unformal",
-            "imformal"
-          ],
-          "explanation": "Jeans = no dress code: in- + formal.",
-          "explanation_cz": "Džíny = žádný dress code: in- + formal."
-        },
-        {
-          "en": "In the thick fog the path was almost invisible.",
-          "cz": "V husté mlze nebyla cesta skoro vidět.",
-          "gap": "In the thick fog the path was almost ____.",
-          "root": "VISIBLE",
-          "gap_answer": "invisible",
-          "quiz_options": [
-            "invisible",
-            "visible",
-            "unvisible",
-            "invisable"
-          ],
-          "explanation": "Thick fog — you cannot see it: in- + visible.",
-          "explanation_cz": "Hustá mlha — není vidět: in- + visible."
-        },
-        {
-          "en": "Your form is incomplete — the address is missing.",
-          "cz": "Tvůj formulář je neúplný — chybí adresa.",
-          "gap": "Your form is ____ — the address is missing.",
-          "root": "COMPLETE",
-          "gap_answer": "incomplete",
-          "quiz_options": [
-            "incomplete",
-            "complete",
-            "uncomplete",
-            "imcomplete"
-          ],
-          "explanation": "Something is missing: in- + complete.",
-          "explanation_cz": "Něco chybí: in- + complete (neúplný)."
-        },
-        {
-          "en": "Students like the hostel because it is clean and inexpensive.",
-          "cz": "Studenti mají hostel rádi, protože je čistý a levný.",
-          "gap": "Students like the hostel because it is clean and ____.",
-          "root": "EXPENSIVE",
-          "gap_answer": "inexpensive",
-          "quiz_options": [
-            "inexpensive",
-            "expensive",
-            "unexpensive",
-            "inexpencive"
-          ],
-          "explanation": "Students like it — so it is cheap: in- + expensive.",
-          "explanation_cz": "Studentům se líbí — je levný: in- + expensive."
-        },
-        {
-          "en": "It is impolite to point at people.",
-          "cz": "Je nezdvořilé ukazovat na lidi.",
-          "gap": "It is ____ to point at people.",
-          "root": "POLITE",
-          "gap_answer": "impolite",
-          "quiz_options": [
-            "impolite",
-            "polite",
-            "inpolite",
-            "unpolite"
-          ],
-          "explanation": "in- becomes im- before p: im- + polite.",
-          "explanation_cz": "Před p se in- mění na im-: impolite."
-        },
-        {
-          "en": "The copy is imperfect — you can see small mistakes.",
-          "cz": "Kopie není dokonalá — jsou vidět malé chyby.",
-          "gap": "The copy is ____ — you can see small mistakes.",
-          "root": "PERFECT",
-          "gap_answer": "imperfect",
-          "quiz_options": [
-            "imperfect",
-            "perfect",
-            "inperfect",
-            "unperfect"
-          ],
-          "explanation": "im- before p: im- + perfect.",
-          "explanation_cz": "Před p je im-: imperfect (nedokonalý)."
-        },
-        {
-          "en": "We took a longer, indirect route through the villages.",
-          "cz": "Jeli jsme delší cestou oklikou přes vesnice.",
-          "gap": "We took a longer, ____ route through the villages.",
-          "root": "DIRECT",
-          "gap_answer": "indirect",
-          "quiz_options": [
-            "indirect",
-            "direct",
-            "undirect",
-            "inderect"
-          ],
-          "explanation": "Longer and through the villages — not straight: in- + direct.",
-          "explanation_cz": "Delší, přes vesnice — ne přímo: in- + direct."
-        },
-        {
-          "en": "The country became independent in 1918.",
-          "cz": "Země se stala nezávislou v roce 1918.",
-          "gap": "The country became ____ in 1918.",
-          "root": "DEPENDENT",
-          "gap_answer": "independent",
-          "quiz_options": [
-            "independent",
-            "dependent",
-            "undependent",
-            "independant"
-          ],
-          "explanation": "No longer ruled by others: in- + dependent.",
-          "explanation_cz": "Už nepodléhá jiným: in- + dependent (nezávislý)."
-        },
-        {
-          "en": "Don't worry, the volcano has been inactive for centuries.",
-          "cz": "Neboj, sopka je už staletí nečinná.",
-          "gap": "Don't worry, the volcano has been ____ for centuries.",
-          "root": "ACTIVE",
-          "gap_answer": "inactive",
-          "quiz_options": [
-            "inactive",
-            "active",
-            "unactive",
-            "inaktive"
-          ],
-          "explanation": "'Don't worry' — it does nothing: in- + active.",
-          "explanation_cz": "'Neboj' — nic nedělá: in- + active (nečinná)."
-        },
-        {
-          "en": "He felt insecure about speaking English.",
-          "cz": "Cítil se nejistě, když měl mluvit anglicky.",
-          "gap": "He felt ____ about speaking English.",
-          "root": "SECURE",
-          "gap_answer": "insecure",
-          "quiz_options": [
-            "insecure",
-            "secure",
-            "unsecure",
-            "incecure"
-          ],
-          "explanation": "Not sure of himself: in- + secure.",
-          "explanation_cz": "Nejistý sám sebou: in- + secure."
-        },
-        {
-          "en": "They protested against injustice.",
-          "cz": "Protestovali proti nespravedlnosti.",
-          "gap": "They protested against ____.",
-          "root": "JUSTICE",
-          "gap_answer": "injustice",
-          "quiz_options": [
-            "injustice",
-            "justice",
-            "unjustice",
-            "injustis"
-          ],
-          "explanation": "You protest against the bad thing: in- + justice.",
-          "explanation_cz": "Protestuje se proti špatnému: in- + justice."
-        }
-      ]
-    },
-    {
-      "id": "pfx_dis",
-      "title": "dis-",
-      "items": [
-        {
-          "en": "We always disagree about politics — we never share the same opinion.",
-          "cz": "V politice se vždycky neshodneme — nikdy nemáme stejný názor.",
-          "gap": "We always ____ about politics — we never share the same opinion.",
-          "root": "AGREE",
-          "gap_answer": "disagree",
-          "quiz_options": [
-            "disagree",
-            "agree",
-            "dissagree",
-            "disagre"
-          ],
-          "explanation": "Never the same opinion: dis- + agree.",
-          "explanation_cz": "Nikdy stejný názor: dis- + agree (neshodovat se)."
-        },
-        {
-          "en": "The sun disappeared behind the clouds.",
-          "cz": "Slunce zmizelo za mraky.",
-          "gap": "The sun ____ behind the clouds.",
-          "root": "APPEAR",
-          "gap_answer": "disappeared",
-          "quiz_options": [
-            "disappeared",
-            "appeared",
-            "dissapeared",
-            "disapeared"
-          ],
-          "explanation": "It went out of sight: dis- + appeared.",
-          "explanation_cz": "Zmizelo z dohledu: dis- + appeared."
-        },
-        {
-          "en": "She dislikes loud music, so she left the concert early.",
-          "cz": "Hlasitou hudbu nemá ráda, a tak z koncertu odešla dřív.",
-          "gap": "She ____ loud music, so she left the concert early.",
-          "root": "LIKE",
-          "gap_answer": "dislikes",
-          "quiz_options": [
-            "dislikes",
-            "likes",
-            "disslikes",
-            "deslikes"
-          ],
-          "explanation": "She left early — she does not like it: dis- + likes.",
-          "explanation_cz": "Odešla dřív — nemá to ráda: dis- + likes."
-        },
-        {
-          "en": "The soldier was punished because he disobeyed the order.",
-          "cz": "Voják byl potrestán, protože neuposlechl rozkaz.",
-          "gap": "The soldier was punished because he ____ the order.",
-          "root": "OBEY",
-          "gap_answer": "disobeyed",
-          "quiz_options": [
-            "disobeyed",
-            "obeyed",
-            "dissobeyed",
-            "disobeied"
-          ],
-          "explanation": "Punished — so he did NOT follow the order: dis- + obeyed.",
-          "explanation_cz": "Potrestán — rozkaz nesplnil: dis- + obeyed."
-        },
-        {
-          "en": "His desk is a mess — he is completely disorganised.",
-          "cz": "Na stole má nepořádek — je úplně nepořádný.",
-          "gap": "His desk is a mess — he is completely ____.",
-          "root": "ORGANISE",
-          "gap_answer": "disorganised",
-          "gap_accepts": [
-            "disorganized"
-          ],
-          "quiz_options": [
-            "disorganised",
-            "organised",
-            "dissorganised",
-            "disorganissed"
-          ],
-          "explanation": "A mess: dis- + organised (US disorganized — both accepted).",
-          "explanation_cz": "Nepořádek: dis- + organised."
-        },
-        {
-          "en": "The internet stopped because the cable was disconnected.",
-          "cz": "Internet přestal fungovat, protože kabel byl odpojený.",
-          "gap": "The internet stopped because the cable was ____.",
-          "root": "CONNECT",
-          "gap_answer": "disconnected",
-          "quiz_options": [
-            "disconnected",
-            "connected",
-            "disconected",
-            "dissconnected"
-          ],
-          "explanation": "The internet stopped — the cable was out: dis- + connected.",
-          "explanation_cz": "Internet nefungoval — kabel byl odpojený: dis- + connected."
-        },
-        {
-          "en": "After the lie, she felt deep distrust of him.",
-          "cz": "Po té lži k němu cítila hlubokou nedůvěru.",
-          "gap": "After the lie, she felt deep ____ of him.",
-          "root": "TRUST",
-          "gap_answer": "distrust",
-          "quiz_options": [
-            "distrust",
-            "trust",
-            "disstrust",
-            "destrust"
-          ],
-          "explanation": "After a lie you stop trusting: dis- + trust.",
-          "explanation_cz": "Po lži důvěra mizí: dis- + trust (nedůvěra)."
-        },
-        {
-          "en": "Talking during the anthem shows disrespect.",
-          "cz": "Mluvit během hymny je projev neúcty.",
-          "gap": "Talking during the anthem shows ____.",
-          "root": "RESPECT",
-          "gap_answer": "disrespect",
-          "quiz_options": [
-            "disrespect",
-            "respect",
-            "dissrespect",
-            "desrespect"
-          ],
-          "explanation": "It is rude: dis- + respect.",
-          "explanation_cz": "Je to neuctivé: dis- + respect (neúcta)."
-        },
-        {
-          "en": "The injection causes only small discomfort.",
-          "cz": "Injekce způsobí jen malé nepohodlí.",
-          "gap": "The injection causes only small ____.",
-          "root": "COMFORT",
-          "gap_answer": "discomfort",
-          "quiz_options": [
-            "discomfort",
-            "comfort",
-            "disscomfort",
-            "descomfort"
-          ],
-          "explanation": "An injection is unpleasant: dis- + comfort.",
-          "explanation_cz": "Injekce je nepříjemná: dis- + comfort (nepohodlí)."
-        },
-        {
-          "en": "Her parents disapprove of her new boyfriend — they never smile at him.",
-          "cz": "Rodiče jejího nového přítele neschvalují — nikdy se na něj neusmějí.",
-          "gap": "Her parents ____ of her new boyfriend — they never smile at him.",
-          "root": "APPROVE",
-          "gap_answer": "disapprove",
-          "quiz_options": [
-            "disapprove",
-            "approve",
-            "dissapprove",
-            "disaprove"
-          ],
-          "explanation": "They never smile at him: dis- + approve.",
-          "explanation_cz": "Nikdy se na něj neusmějí: dis- + approve (neschvalovat)."
-        },
-        {
-          "en": "Scientists discover new stars every year.",
-          "cz": "Vědci každý rok objevují nové hvězdy.",
-          "gap": "Scientists ____ new stars every year.",
-          "root": "COVER",
-          "gap_answer": "discover",
-          "quiz_options": [
-            "discover",
-            "cover",
-            "diskover",
-            "descover"
-          ],
-          "explanation": "dis- + cover = find something hidden. Not every dis- word is negative!",
-          "explanation_cz": "dis- + cover = objevit. Ne každé dis- je záporné!"
-        },
-        {
-          "en": "A disloyal friend tells your secrets.",
-          "cz": "Neloajální kamarád vyzrazuje tvá tajemství.",
-          "gap": "A ____ friend tells your secrets.",
-          "root": "LOYAL",
-          "gap_answer": "disloyal",
-          "quiz_options": [
-            "disloyal",
-            "loyal",
-            "dissloyal",
-            "desloyal"
-          ],
-          "explanation": "Telling secrets is betrayal: dis- + loyal.",
-          "explanation_cz": "Vyzrazovat tajemství je zrada: dis- + loyal."
-        }
-      ]
-    },
-    {
-      "id": "pfx_re",
-      "title": "re- = again",
-      "items": [
-        {
-          "en": "Please return the books to the library by Friday.",
-          "cz": "Vrať prosím knihy do knihovny do pátku.",
-          "gap": "Please ____ the books to the library by Friday.",
-          "root": "TURN",
-          "gap_answer": "return",
-          "quiz_options": [
-            "return",
-            "turn",
-            "riturn",
-            "returne"
-          ],
-          "explanation": "re- + turn = give back / go back.",
-          "explanation_cz": "re- + turn = vrátit."
-        },
-        {
-          "en": "The old bridge was destroyed and rebuilt two years later.",
-          "cz": "Starý most byl zničen a o dva roky později znovu postaven.",
-          "gap": "The old bridge was destroyed and ____ two years later.",
-          "root": "BUILD",
-          "gap_answer": "rebuilt",
-          "quiz_options": [
-            "rebuilt",
-            "built",
-            "rebuild",
-            "rebuilded"
-          ],
-          "explanation": "Destroyed, then built AGAIN: re- + built.",
-          "explanation_cz": "Zničen a postaven ZNOVU: re- + built."
-        },
-        {
-          "en": "The essay is full of mistakes — please rewrite it.",
-          "cz": "Esej je plná chyb — přepiš ji prosím.",
-          "gap": "The essay is full of mistakes — please ____ it.",
-          "root": "WRITE",
-          "gap_answer": "rewrite",
-          "quiz_options": [
-            "rewrite",
-            "write",
-            "rewrote",
-            "rewrit"
-          ],
-          "explanation": "It exists but is bad — write it AGAIN: re- + write.",
-          "explanation_cz": "Existuje, ale je špatná — napsat ZNOVU: re- + write."
-        },
-        {
-          "en": "The colours are wrong — we must redo the poster.",
-          "cz": "Barvy jsou špatně — plakát musíme udělat znovu.",
-          "gap": "The colours are wrong — we must ____ the poster.",
-          "root": "DO",
-          "gap_answer": "redo",
-          "quiz_options": [
-            "redo",
-            "do",
-            "redid",
-            "reedo"
-          ],
-          "explanation": "Do it again from the start: re- + do.",
-          "explanation_cz": "Udělat znovu: re- + do."
-        },
-        {
-          "en": "Let's watch the replay of the goal.",
-          "cz": "Podívejme se na opakovaný záběr gólu.",
-          "gap": "Let's watch the ____ of the goal.",
-          "root": "PLAY",
-          "gap_answer": "replay",
-          "quiz_options": [
-            "replay",
-            "play",
-            "reply",
-            "replai"
-          ],
-          "explanation": "Played again on screen: re- + play.",
-          "explanation_cz": "Přehráno znovu: re- + play (opakovaný záběr)."
-        },
-        {
-          "en": "We recycle glass and paper at home.",
-          "cz": "Doma recyklujeme sklo a papír.",
-          "gap": "We ____ glass and paper at home.",
-          "root": "CYCLE",
-          "gap_answer": "recycle",
-          "quiz_options": [
-            "recycle",
-            "cycle",
-            "recicle",
-            "recykle"
-          ],
-          "explanation": "Material goes round again: re- + cycle.",
-          "explanation_cz": "Materiál jde znovu do oběhu: re- + cycle."
-        },
-        {
-          "en": "If the app freezes, restart your phone.",
-          "cz": "Když aplikace zamrzne, restartuj telefon.",
-          "gap": "If the app freezes, ____ your phone.",
-          "root": "START",
-          "gap_answer": "restart",
-          "quiz_options": [
-            "restart",
-            "start",
-            "ristart",
-            "restarted"
-          ],
-          "explanation": "The phone is on — start it AGAIN: re- + start.",
-          "explanation_cz": "Telefon běží — zapnout ZNOVU: re- + start."
-        },
-        {
-          "en": "Can I get a refill of coffee, please?",
-          "cz": "Můžu dostat dolít kávu, prosím?",
-          "gap": "Can I get a ____ of coffee, please?",
-          "root": "FILL",
-          "gap_answer": "refill",
-          "quiz_options": [
-            "refill",
-            "fill",
-            "refil",
-            "refyll"
-          ],
-          "explanation": "The cup was full before: re- + fill.",
-          "explanation_cz": "Šálek už byl plný: re- + fill (dolití)."
-        },
-        {
-          "en": "You must renew your passport — it expired in May.",
-          "cz": "Musíš si obnovit pas — v květnu mu skončila platnost.",
-          "gap": "You must ____ your passport — it expired in May.",
-          "root": "NEW",
-          "gap_answer": "renew",
-          "quiz_options": [
-            "renew",
-            "new",
-            "renue",
-            "renewe"
-          ],
-          "explanation": "Make it valid again: re- + new.",
-          "explanation_cz": "Zajistit novou platnost: re- + new (obnovit)."
-        },
-        {
-          "en": "Click here to refresh the page.",
-          "cz": "Klikni sem pro obnovení stránky.",
-          "gap": "Click here to ____ the page.",
-          "root": "FRESH",
-          "gap_answer": "refresh",
-          "quiz_options": [
-            "refresh",
-            "fresh",
-            "refreash",
-            "refres"
-          ],
-          "explanation": "Load it fresh again: re- + fresh.",
-          "explanation_cz": "Načíst znovu: re- + fresh (obnovit)."
-        },
-        {
-          "en": "The battery is dead — we need to replace it.",
-          "cz": "Baterie je vybitá — musíme ji vyměnit.",
-          "gap": "The battery is dead — we need to ____ it.",
-          "root": "PLACE",
-          "gap_answer": "replace",
-          "quiz_options": [
-            "replace",
-            "place",
-            "replase",
-            "replaice"
-          ],
-          "explanation": "Put a new one in its place: re- + place.",
-          "explanation_cz": "Dát na její místo novou: re- + place (vyměnit)."
-        },
-        {
-          "en": "Please remind me to call the dentist tomorrow.",
-          "cz": "Připomeň mi prosím, ať zítra zavolám zubaři.",
-          "gap": "Please ____ me to call the dentist tomorrow.",
-          "root": "MIND",
-          "gap_answer": "remind",
-          "quiz_options": [
-            "remind",
-            "mind",
-            "remaind",
-            "remynd"
-          ],
-          "explanation": "Bring it back to my mind: re- + mind.",
-          "explanation_cz": "Vrátit do mysli: re- + mind (připomenout)."
-        }
-      ]
-    },
-    {
-      "id": "pfx_choose",
-      "title": "Which prefix? — review",
-      "items": [
-        {
-          "en": "All my answers were incorrect — I got zero points.",
-          "cz": "Všechny mé odpovědi byly nesprávné — dostal jsem nula bodů.",
-          "gap": "All my answers were ____ — I got zero points.",
-          "root": "CORRECT",
-          "gap_answer": "incorrect",
-          "quiz_options": [
-            "incorrect",
-            "uncorrect",
-            "discorrect",
-            "incorect"
-          ],
-          "explanation": "correct takes in-: incorrect. (uncorrect and discorrect do not exist.)",
-          "explanation_cz": "correct má in-: incorrect. (uncorrect a discorrect neexistují.)"
-        },
-        {
-          "en": "It's impossible to learn Czech in a month.",
-          "cz": "Naučit se česky za měsíc je nemožné.",
-          "gap": "It's ____ to learn Czech in a month.",
-          "root": "POSSIBLE",
-          "gap_answer": "impossible",
-          "quiz_options": [
-            "impossible",
-            "unpossible",
-            "dispossible",
-            "imposible"
-          ],
-          "explanation": "possible takes im- (before p): impossible.",
-          "explanation_cz": "possible má im- (před p): impossible."
-        },
-        {
-          "en": "He was dishonest — he kept the money he found and told nobody.",
-          "cz": "Byl nepoctivý — nalezené peníze si nechal a nikomu nic neřekl.",
-          "gap": "He was ____ — he kept the money he found and told nobody.",
-          "root": "HONEST",
-          "gap_answer": "dishonest",
-          "quiz_options": [
-            "dishonest",
-            "unhonest",
-            "inhonest",
-            "dishonnest"
-          ],
-          "explanation": "honest takes dis-: dishonest.",
-          "explanation_cz": "honest má dis-: dishonest (nepoctivý)."
-        },
-        {
-          "en": "Her desk is always untidy — nothing is ever in its place.",
-          "cz": "Její stůl je pořád neuklizený — nic není na svém místě.",
-          "gap": "Her desk is always ____ — nothing is ever in its place.",
-          "root": "TIDY",
-          "gap_answer": "untidy",
-          "quiz_options": [
-            "untidy",
-            "intidy",
-            "distidy",
-            "untydy"
-          ],
-          "explanation": "tidy takes un-: untidy.",
-          "explanation_cz": "tidy má un-: untidy (neuklizený)."
-        },
-        {
-          "en": "The brothers disagree about everything, so they rarely talk.",
-          "cz": "Bratři se neshodnou na ničem, a tak spolu skoro nemluví.",
-          "gap": "The brothers ____ about everything, so they rarely talk.",
+          "en": "I think you are wrong — I disagree.",
+          "gap": "I think you are wrong — I ____.",
           "root": "AGREE",
           "gap_answer": "disagree",
           "quiz_options": [
             "disagree",
             "unagree",
-            "inagree",
-            "dissagree"
+            "misagree",
+            "re-agree"
           ],
-          "explanation": "agree takes dis-: disagree.",
-          "explanation_cz": "agree má dis-: disagree."
+          "type": false,
+          "use": false,
+          "explanation": "You are wrong → the opposite of agree: **dis**agree.",
+          "explanation_cz": "Mýlíš se → opak agree: **dis**agree."
         },
         {
-          "en": "I can't open it — can you unlock the door?",
-          "cz": "Nemůžu to otevřít — odemkneš ty dveře?",
-          "gap": "I can't open it — can you ____ the door?",
-          "root": "LOCK",
-          "gap_answer": "unlock",
+          "en": "It is impossible to finish this today.",
+          "gap": "It is ____ to finish this today.",
+          "root": "POSSIBLE",
+          "gap_answer": "impossible",
           "quiz_options": [
-            "unlock",
-            "dislock",
-            "relock",
-            "onlock"
+            "unpossible",
+            "dispossible",
+            "impossible",
+            "mispossible"
           ],
-          "explanation": "lock takes un- for the reverse action: unlock.",
-          "explanation_cz": "Opačná akce k lock je s un-: unlock."
+          "type": false,
+          "use": false,
+          "explanation": "**possible** starts with **p**, so **im**-: **impossible**. Not ~~unpossible~~.",
+          "explanation_cz": "**possible** začíná na **p**, proto **im**-: **impossible**. Ne ~~unpossible~~."
         },
         {
-          "en": "Stars are invisible in the city because of the lights.",
-          "cz": "Hvězdy nejsou ve městě vidět kvůli světlům.",
-          "gap": "Stars are ____ in the city because of the lights.",
-          "root": "VISIBLE",
-          "gap_answer": "invisible",
+          "en": "Two of the answers are incorrect.",
+          "gap": "Two of the answers are ____.",
+          "root": "CORRECT",
+          "gap_answer": "incorrect",
           "quiz_options": [
-            "invisible",
-            "unvisible",
-            "disvisible",
-            "invisable"
+            "uncorrect",
+            "discorrect",
+            "incorrect",
+            "miscorrect"
           ],
-          "explanation": "visible takes in-: invisible.",
-          "explanation_cz": "visible má in-: invisible."
+          "type": false,
+          "use": false,
+          "explanation": "**correct** takes **in**-: **incorrect**. Not un- or dis-.",
+          "explanation_cz": "**correct** bere **in**-: **incorrect**. Ne un- ani dis-."
         },
         {
-          "en": "The computer is frozen — restart it.",
-          "cz": "Počítač zamrzl — restartuj ho.",
-          "gap": "The computer is frozen — ____ it.",
-          "root": "START",
-          "gap_answer": "restart",
+          "en": "Please prepay for the room before you arrive.",
+          "gap": "Please ____ for the room before you arrive.",
+          "root": "PAY",
+          "gap_answer": "prepay",
           "quiz_options": [
-            "restart",
-            "unstart",
-            "disstart",
-            "ristart"
+            "repay",
+            "overpay",
+            "prepay",
+            "unpay"
           ],
-          "explanation": "Here you need AGAIN, not a negative: re- + start.",
-          "explanation_cz": "Tady je potřeba ZNOVU, ne zápor: re- + start."
+          "type": false,
+          "use": false,
+          "explanation": "**Before** you arrive: **pre**pay. **Repay** is pay back.",
+          "explanation_cz": "**Před** příjezdem: **pre**pay. **Repay** je splatit."
         },
         {
-          "en": "Arriving late without a phone call is impolite.",
-          "cz": "Přijít pozdě bez zavolání je nezdvořilé.",
-          "gap": "Arriving late without a phone call is ____.",
-          "root": "POLITE",
-          "gap_answer": "impolite",
+          "en": "She failed the test, so she will retake it on Monday.",
+          "gap": "She failed the test, so she will ____ it on Monday.",
+          "root": "TAKE",
+          "gap_answer": "retake",
           "quiz_options": [
-            "impolite",
-            "unpolite",
-            "dispolite",
-            "inpolite"
+            "untake",
+            "mistake",
+            "retake",
+            "overtake"
           ],
-          "explanation": "polite takes im- (before p): impolite.",
-          "explanation_cz": "polite má im- (před p): impolite."
+          "type": false,
+          "use": false,
+          "explanation": "She failed → do the test again: **re**take. **Overtake** is pass a car.",
+          "explanation_cz": "Neuspěla → test znovu: **re**take. **Overtake** je předjet auto."
         },
         {
-          "en": "My keys always disappear when I need them.",
-          "cz": "Klíče mi vždycky zmizí, když je potřebuju.",
-          "gap": "My keys always ____ when I need them.",
+          "en": "I always misspell that word.",
+          "gap": "I always ____ that word.",
+          "root": "SPELL",
+          "gap_answer": "misspell",
+          "quiz_options": [
+            "unspell",
+            "misspell",
+            "respell",
+            "overspell"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "The letters come out wrong: **mis**- = wrongly → **misspell**.",
+          "explanation_cz": "Písmena špatně: **mis**- = špatně → **misspell**."
+        }
+      ]
+    },
+    {
+      "id": "pfx_type",
+      "title": "Type the word",
+      "check": {
+        "sequence": []
+      },
+      "items": [
+        {
+          "en": "The lecture was so uninteresting that half the audience fell asleep.",
+          "gap": "The lecture was so ____ that half the audience fell asleep.",
+          "root": "INTERESTING",
+          "gap_answer": "uninteresting",
+          "use": false,
+          "explanation": "The audience fell asleep: not interesting → **un**interesting.",
+          "explanation_cz": "Publikum usnulo: ne interesting → **un**interesting."
+        },
+        {
+          "en": "My glasses always disappear just when I need them.",
+          "gap": "My glasses always ____ just when I need them.",
           "root": "APPEAR",
           "gap_answer": "disappear",
-          "quiz_options": [
-            "disappear",
-            "unappear",
-            "reappear",
-            "dissapear"
-          ],
-          "explanation": "They vanish: dis- + appear. (reappear = come back!)",
-          "explanation_cz": "Zmizí: dis- + appear. (reappear = objevit se znovu!)"
+          "use": false,
+          "explanation": "They go: the opposite of appear is **dis**appear.",
+          "explanation_cz": "Zmizí: opak appear je **dis**appear."
         },
         {
-          "en": "She stayed in an unpaid job because she loved it.",
-          "cz": "Zůstala v neplacené práci, protože ji milovala.",
-          "gap": "She stayed in an ____ job because she loved it.",
-          "root": "PAY",
-          "gap_answer": "unpaid",
-          "quiz_options": [
-            "unpaid",
-            "dispaid",
-            "impaid",
-            "unpayed"
-          ],
-          "explanation": "paid takes un-: unpaid.",
-          "explanation_cz": "paid má un-: unpaid (neplacený)."
+          "en": "Go is an irregular verb — the past form is went.",
+          "gap": "\"Go\" is an ____ verb — the past form is \"went\".",
+          "root": "REGULAR",
+          "gap_answer": "irregular",
+          "use": false,
+          "explanation": "**regular** starts with **r**, so **ir**-: **irregular**.",
+          "explanation_cz": "**regular** začíná na **r**, proto **ir**-: **irregular**."
         },
         {
-          "en": "Glass and paper go in these bins — we recycle them.",
-          "cz": "Sklo a papír patří do těchto košů — recyklujeme je.",
-          "gap": "Glass and paper go in these bins — we ____ them.",
-          "root": "CYCLE",
-          "gap_answer": "recycle",
-          "quiz_options": [
-            "recycle",
-            "uncycle",
-            "discycle",
-            "recicle"
+          "en": "Preheat the oven to 200 degrees before you put the chicken in.",
+          "gap": "____ the oven to 200 degrees before you put the chicken in.",
+          "root": "HEAT",
+          "gap_answer": "Preheat",
+          "gap_accepts": [
+            "preheat"
           ],
-          "explanation": "Round again: re- + cycle.",
-          "explanation_cz": "Znovu do oběhu: re- + cycle."
+          "use": false,
+          "explanation": "Heat it **before**: **pre**heat.",
+          "explanation_cz": "Zahřej **předem**: **pre**heat."
+        },
+        {
+          "en": "Don't be so impatient — the bus will come in a minute.",
+          "gap": "Don't be so ____ — the bus will come in a minute.",
+          "root": "PATIENT",
+          "gap_answer": "impatient",
+          "use": false,
+          "explanation": "**patient** starts with **p**, so **im**-: **impatient**.",
+          "explanation_cz": "**patient** začíná na **p**, proto **im**-: **impatient**."
+        },
+        {
+          "en": "That's unfair — he got two and I got none.",
+          "gap": "That's ____ — he got two and I got none.",
+          "root": "FAIR",
+          "gap_answer": "unfair",
+          "use": false,
+          "explanation": "He got two, you got none: the opposite of fair is **un**fair.",
+          "explanation_cz": "On dva, ty nic: opak fair je **un**fair."
+        },
+        {
+          "en": "This food is terrible. I dislike it.",
+          "gap": "This food is terrible. I ____ it.",
+          "root": "LIKE",
+          "gap_answer": "dislike",
+          "use": false,
+          "explanation": "Terrible → the opposite of like: **dis**like.",
+          "explanation_cz": "Hrozné → opak like: **dis**like."
+        },
+        {
+          "en": "You don't need a jacket — it's informal.",
+          "gap": "You don't need a jacket — it's ____.",
+          "root": "FORMAL",
+          "gap_answer": "informal",
+          "use": false,
+          "explanation": "No jacket needed: **in** + formal → **informal**.",
+          "explanation_cz": "Sako netřeba: **in** + formal → **informal**."
+        },
+        {
+          "en": "Please replay the last song.",
+          "gap": "Please ____ the last song.",
+          "root": "PLAY",
+          "gap_answer": "replay",
+          "use": false,
+          "explanation": "The last song **again**: **re**play.",
+          "explanation_cz": "Poslední píseň **znovu**: **re**play."
+        },
+        {
+          "en": "The chicken is dry because you overcooked it.",
+          "gap": "The chicken is dry because you ____ it.",
+          "root": "COOK",
+          "gap_answer": "overcooked",
+          "use": false,
+          "explanation": "Dry → cooked too much: **over**cooked.",
+          "explanation_cz": "Suché → moc uvařené: **over**cooked."
+        },
+        {
+          "en": "He works sixty hours a week and he is still underpaid.",
+          "gap": "He works sixty hours a week and he is still ____.",
+          "root": "PAID",
+          "gap_answer": "underpaid",
+          "use": false,
+          "explanation": "Long hours and still too little: **under**paid.",
+          "explanation_cz": "Dlouhé hodiny a pořád málo: **under**paid."
+        },
+        {
+          "en": "I'm sorry — that was a mistake.",
+          "gap": "I'm sorry — that was a ____.",
+          "root": "TAKE",
+          "gap_answer": "mistake",
+          "use": false,
+          "explanation": "**mis**- + take → **mistake** (something done wrongly).",
+          "explanation_cz": "**mis**- + take → **mistake** (něco špatně)."
+        }
+      ]
+    },
+    {
+      "id": "pfx_use",
+      "title": "Fix the prefix",
+      "check": {
+        "sequence": []
+      },
+      "items": [
+        {
+          "wrong": "It is unpossible to learn a language in a year.",
+          "en": "It is impossible to learn a language in a year.",
+          "accepts": [
+            "It is impossible to learn a language in a year.",
+            "It's impossible to learn a language in a year."
+          ],
+          "no_prefix": [
+            "It is not possible to learn a language in a year.",
+            "It's not possible to learn a language in a year.",
+            "It isn't possible to learn a language in a year."
+          ],
+          "root": "POSSIBLE",
+          "gap": "It is ____ to learn a language in a year.",
+          "gap_answer": "impossible",
+          "type": false,
+          "explanation": "~~unpossible~~ — **possible** starts with **p**, so **im**-: **impossible**.",
+          "explanation_cz": "~~unpossible~~ — **possible** začíná na **p**, proto **im**-: **impossible**."
+        },
+        {
+          "wrong": "She unagreed with the plan.",
+          "en": "She disagreed with the plan.",
+          "accepts": [
+            "She disagreed with the plan."
+          ],
+          "no_prefix": [
+            "She didn't agree with the plan.",
+            "She did not agree with the plan."
+          ],
+          "root": "AGREE",
+          "gap": "She ____ with the plan.",
+          "gap_answer": "disagreed",
+          "type": false,
+          "explanation": "~~unagreed~~ — **agree** takes **dis**-: **disagreed**.",
+          "explanation_cz": "~~unagreed~~ — **agree** bere **dis**-: **disagreed**."
+        },
+        {
+          "wrong": "He dislocked the door and went inside.",
+          "en": "He unlocked the door and went inside.",
+          "accepts": [
+            "He unlocked the door and went inside."
+          ],
+          "root": "LOCK",
+          "gap": "He ____ the door and went inside.",
+          "gap_answer": "unlocked",
+          "type": false,
+          "explanation": "~~dislocked~~ — the opposite action is **un**lock.",
+          "explanation_cz": "~~dislocked~~ — opak děje je **un**lock."
+        },
+        {
+          "wrong": "Don't be unpatient. The bus will come soon.",
+          "en": "Don't be impatient. The bus will come soon.",
+          "accepts": [
+            "Don't be impatient. The bus will come soon.",
+            "Do not be impatient. The bus will come soon."
+          ],
+          "root": "PATIENT",
+          "gap": "Don't be ____. The bus will come soon.",
+          "gap_answer": "impatient",
+          "type": false,
+          "explanation": "~~unpatient~~ — **patient** starts with **p**, so **im**-: **impatient**.",
+          "explanation_cz": "~~unpatient~~ — **patient** začíná na **p**, proto **im**-: **impatient**."
+        },
+        {
+          "wrong": "Parking is unlegal on this street.",
+          "en": "Parking is illegal on this street.",
+          "accepts": [
+            "Parking is illegal on this street."
+          ],
+          "no_prefix": [
+            "Parking is not legal on this street.",
+            "Parking isn't legal on this street."
+          ],
+          "root": "LEGAL",
+          "gap": "Parking is ____ on this street.",
+          "gap_answer": "illegal",
+          "type": false,
+          "explanation": "~~unlegal~~ — **legal** starts with **l**, so **il**-: **illegal**.",
+          "explanation_cz": "~~unlegal~~ — **legal** začíná na **l**, proto **il**-: **illegal**."
+        },
+        {
+          "wrong": "I underslept this morning and missed the train.",
+          "en": "I overslept this morning and missed the train.",
+          "accepts": [
+            "I overslept this morning and missed the train."
+          ],
+          "root": "SLEEP",
+          "gap": "I ____ this morning and missed the train.",
+          "gap_answer": "overslept",
+          "type": false,
+          "explanation": "~~underslept~~ — you missed the train, so you slept too much: **over**slept.",
+          "explanation_cz": "~~underslept~~ — vlak ujel, spal jsi moc: **over**slept."
+        },
+        {
+          "wrong": "There are too many mistakes — you will have to unwrite the report.",
+          "en": "There are too many mistakes — you will have to rewrite the report.",
+          "accepts": [
+            "There are too many mistakes — you will have to rewrite the report.",
+            "There are too many mistakes — you'll have to rewrite the report."
+          ],
+          "root": "WRITE",
+          "gap": "There are too many mistakes — you'll have to ____ the report.",
+          "gap_answer": "rewrite",
+          "type": false,
+          "explanation": "~~unwrite~~ — do it **again**: **re**write.",
+          "explanation_cz": "~~unwrite~~ — udělej to **znovu**: **re**write."
+        },
+        {
+          "wrong": "I think you ununderstood me — I said Tuesday, not Thursday.",
+          "en": "I think you misunderstood me — I said Tuesday, not Thursday.",
+          "accepts": [
+            "I think you misunderstood me — I said Tuesday, not Thursday."
+          ],
+          "root": "UNDERSTAND",
+          "gap": "I think you ____ me — I said Tuesday, not Thursday.",
+          "gap_answer": "misunderstood",
+          "type": false,
+          "explanation": "~~ununderstood~~ — wrongly understood: **mis**understood.",
+          "explanation_cz": "~~ununderstood~~ — špatně pochopeno: **mis**understood."
+        },
+        {
+          "wrong": "Two of the answers are uncorrect.",
+          "en": "Two of the answers are incorrect.",
+          "accepts": [
+            "Two of the answers are incorrect."
+          ],
+          "root": "CORRECT",
+          "gap": "Two of the answers are ____.",
+          "gap_answer": "incorrect",
+          "type": false,
+          "explanation": "~~uncorrect~~ — **correct** takes **in**-: **incorrect**.",
+          "explanation_cz": "~~uncorrect~~ — **correct** bere **in**-: **incorrect**."
+        },
+        {
+          "wrong": "\"Go\" is an unregular verb — the past form is \"went\".",
+          "en": "Go is an irregular verb — the past form is went.",
+          "accepts": [
+            "Go is an irregular verb — the past form is went.",
+            "\"Go\" is an irregular verb — the past form is \"went\"."
+          ],
+          "root": "REGULAR",
+          "gap": "\"Go\" is an ____ verb — the past form is \"went\".",
+          "gap_answer": "irregular",
+          "type": false,
+          "explanation": "~~unregular~~ — **regular** starts with **r**, so **ir**-: **irregular**.",
+          "explanation_cz": "~~unregular~~ — **regular** začíná na **r**, proto **ir**-: **irregular**."
+        },
+        {
+          "wrong": "Unheat the oven before you put the chicken in.",
+          "en": "Preheat the oven before you put the chicken in.",
+          "accepts": [
+            "Preheat the oven before you put the chicken in."
+          ],
+          "root": "HEAT",
+          "gap": "____ the oven before you put the chicken in.",
+          "gap_answer": "Preheat",
+          "gap_accepts": [
+            "preheat"
+          ],
+          "type": false,
+          "explanation": "~~Unheat~~ — heat it **before**: **pre**heat.",
+          "explanation_cz": "~~Unheat~~ — zahřej **předem**: **pre**heat."
+        },
+        {
+          "wrong": "She failed the test and was very inhappy about it.",
+          "en": "She failed the test and was very unhappy about it.",
+          "accepts": [
+            "She failed the test and was very unhappy about it."
+          ],
+          "root": "HAPPY",
+          "gap": "She failed the test and was very ____ about it.",
+          "gap_answer": "unhappy",
+          "type": false,
+          "explanation": "~~inhappy~~ — **happy** takes **un**-: **unhappy**.",
+          "explanation_cz": "~~inhappy~~ — **happy** bere **un**-: **unhappy**."
         }
       ]
     }
