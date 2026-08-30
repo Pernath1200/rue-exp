@@ -5,7 +5,7 @@
   "tree_node": "b1_reported_speech",
   "codex_unit": "G_CL-B1B2-01",
   "practice": "frames",
-  "note": "backshift · said/told · if/wh. · Bank 54 · good draft · said/told ROI slice · Match off · reported quiz backshift traps 2026-07-26 · 2026-08-19 (James, Patrik smoke): bank had ONE explanation for all 54 items — say/tell, no-shift modals, reported questions and past perfect now carry the reason that actually fits · 2026-08-19: negatives contracted (do not -> don't) — textbook register for a B1/B2 speaker; full forms still accepted · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
+  "note": "backshift · said/told · if/wh. · Bank 54 · good draft · said/told ROI slice · Match off · reported quiz backshift traps 2026-07-26 · 2026-08-19 (James, Patrik smoke): bank had ONE explanation for all 54 items — say/tell, no-shift modals, reported questions and past perfect now carry the reason that actually fits · 2026-08-19: negatives contracted (do not -> don't) — textbook register for a B1/B2 speaker; full forms still accepted · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-30 intro: two backshift cards · no must/time-words/say-to · cut recap and this-unit · fold examples.",
   "default_direction": "cz_to_en",
   "check": {
     "sequence": [
@@ -21,10 +21,17 @@
         {
           "en": "He said he was tired.",
           "cz": "Řekl, že je unavený.",
-          "gap": "He said he ____ tired.",
+          "gap": "He said he ____ tired. (be)",
           "gap_answer": "was",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ],
           "accepts": [
-            "He said he was tired."
+            "He said he was tired.",
+            "He said that he was tired."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -35,21 +42,35 @@
           "gap": "She said she ____ in Brno.",
           "gap_answer": "worked",
           "accepts": [
-            "She said she worked in Brno."
+            "She said she worked in Brno.",
+            "She said that she worked in Brno."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "worked",
+            "works",
+            "work",
+            "working"
+          ]
         },
         {
           "en": "They said they had finished.",
           "cz": "Řekli, že skončili.",
-          "gap": "They said they ____ finished.",
+          "gap": "They said they ____ finished. (have)",
           "gap_answer": "had",
           "accepts": [
-            "They said they had finished."
+            "They said they had finished.",
+            "They said that they had finished."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "He told me he would call.",
@@ -57,10 +78,17 @@
           "gap": "He told me he ____ call.",
           "gap_answer": "would",
           "accepts": [
-            "He told me he would call."
+            "He told me he would call.",
+            "He told me that he would call."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "would",
+            "will",
+            "would to",
+            "will to"
+          ]
         },
         {
           "en": "She said she could help.",
@@ -68,21 +96,34 @@
           "gap": "She said she ____ help.",
           "gap_answer": "could",
           "accepts": [
-            "She said she could help."
+            "She said she could help.",
+            "She said that she could help."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "could",
+            "can",
+            "could to",
+            "can to"
+          ]
         },
         {
           "en": "He asked if I was ready.",
           "cz": "Zeptal se, jestli jsem připravený.",
-          "gap": "He asked if I ____ ready.",
+          "gap": "He asked if I ____ ready. (be)",
           "gap_answer": "was",
           "accepts": [
             "He asked if I was ready."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "She asked where I lived.",
@@ -97,29 +138,49 @@
             "lived"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "lived",
+            "live",
+            "lives",
+            "living"
+          ]
         },
         {
           "en": "He said he had never been there.",
           "cz": "Řekl, že tam nikdy nebyl.",
-          "gap": "He said he ____ never been there.",
+          "gap": "He said he ____ never been there. (have)",
           "gap_answer": "had",
           "accepts": [
-            "He said he had never been there."
+            "He said he had never been there.",
+            "He said that he had never been there."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "They told us they were leaving.",
           "cz": "Řekli nám, že odcházejí.",
-          "gap": "They told us they ____ leaving.",
+          "gap": "They told us they ____ leaving. (be)",
           "gap_answer": "were",
           "accepts": [
-            "They told us they were leaving."
+            "They told us they were leaving.",
+            "They told us that they were leaving."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "were",
+            "are",
+            "was",
+            "is"
+          ]
         },
         {
           "en": "She said she might come.",
@@ -128,14 +189,25 @@
           "gap_answer": "might",
           "accepts": [
             "She said she might come.",
-            "She said she would come."
+            "She said she may come.",
+            "She said she would come.",
+            "She said that she might come.",
+            "She said that she may come.",
+            "She said that she would come."
           ],
           "gap_accepts": [
             "might",
+            "may",
             "would"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "might",
+            "may",
+            "might to",
+            "may to"
+          ]
         },
         {
           "en": "He asked me what I wanted.",
@@ -150,7 +222,13 @@
             "wanted"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "wanted",
+            "want",
+            "wants",
+            "wanting"
+          ]
         },
         {
           "en": "I said I did not know.",
@@ -159,36 +237,58 @@
           "gap_answer": "did not",
           "accepts": [
             "I said I did not know.",
-            "I said I didn't know."
+            "I said I didn't know.",
+            "I said that I did not know.",
+            "I said that I didn't know."
           ],
           "gap_accepts": [
             "did not",
             "didn't"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "did not",
+            "do not",
+            "does not",
+            "did"
+          ]
         },
         {
           "en": "She said she was busy.",
           "cz": "Řekla, že je zaneprázdněná.",
-          "gap": "She said she ____ busy.",
+          "gap": "She said she ____ busy. (be)",
           "gap_answer": "was",
           "accepts": [
-            "She said she was busy."
+            "She said she was busy.",
+            "She said that she was busy."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "He said they were at home.",
           "cz": "Řekl, že jsou doma.",
-          "gap": "He said they ____ at home.",
+          "gap": "He said they ____ at home. (be)",
           "gap_answer": "were",
           "accepts": [
-            "He said they were at home."
+            "He said they were at home.",
+            "He said that they were at home."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "were",
+            "are",
+            "was",
+            "is"
+          ]
         },
         {
           "en": "She told him she needed time.",
@@ -196,10 +296,17 @@
           "gap": "She told him she ____ time.",
           "gap_answer": "needed",
           "accepts": [
-            "She told him she needed time."
+            "She told him she needed time.",
+            "She told him that she needed time."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "needed",
+            "needs",
+            "need",
+            "needing"
+          ]
         },
         {
           "en": "He said he would be late.",
@@ -207,10 +314,17 @@
           "gap": "He said he ____ be late.",
           "gap_answer": "would",
           "accepts": [
-            "He said he would be late."
+            "He said he would be late.",
+            "He said that he would be late."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "would",
+            "will",
+            "would to",
+            "will to"
+          ]
         },
         {
           "en": "They said they could wait.",
@@ -218,21 +332,34 @@
           "gap": "They said they ____ wait.",
           "gap_answer": "could",
           "accepts": [
-            "They said they could wait."
+            "They said they could wait.",
+            "They said that they could wait."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "could",
+            "can",
+            "could to",
+            "can to"
+          ]
         },
         {
           "en": "She asked if we had eaten.",
           "cz": "Zeptala se, jestli jsme jedli.",
-          "gap": "She asked if we ____ eaten.",
+          "gap": "She asked if we ____ eaten. (have)",
           "gap_answer": "had",
           "accepts": [
             "She asked if we had eaten."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "He asked when the train left.",
@@ -249,18 +376,31 @@
             "departed"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "left",
+            "leaves",
+            "leave",
+            "leaving"
+          ]
         },
         {
           "en": "She said she had lost her phone.",
           "cz": "Řekla, že ztratila telefon.",
-          "gap": "She said she ____ lost her phone.",
+          "gap": "She said she ____ lost her phone. (have)",
           "gap_answer": "had",
           "accepts": [
-            "She said she had lost her phone."
+            "She said she had lost her phone.",
+            "She said that she had lost her phone."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "He told us he worked nights.",
@@ -268,18 +408,38 @@
           "gap": "He told us he ____ nights.",
           "gap_answer": "worked",
           "accepts": [
-            "He told us he worked nights."
+            "He told us he worked nights.",
+            "He told us that he worked nights."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "worked",
+            "works",
+            "work",
+            "working"
+          ]
         },
         {
           "en": "They said they would help.",
           "cz": "Řekli, že pomůžou.",
           "gap": "They said they ____ help.",
           "gap_answer": "would",
+          "quiz_options": [
+            "would",
+            "will",
+            "can",
+            "would to"
+          ],
           "accepts": [
-            "They said they would help."
+            "They said they would help.",
+            "They said they could help.",
+            "They said that they would help.",
+            "They said that they could help."
+          ],
+          "gap_accepts": [
+            "would",
+            "could"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -287,13 +447,19 @@
         {
           "en": "She asked why I was angry.",
           "cz": "Zeptala se, proč jsem naštvaný.",
-          "gap": "She asked why I ____ angry.",
+          "gap": "She asked why I ____ angry. (be)",
           "gap_answer": "was",
           "accepts": [
             "She asked why I was angry."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "He said he might stay.",
@@ -302,33 +468,58 @@
           "gap_answer": "might",
           "accepts": [
             "He said he might stay.",
-            "He said he would stay."
+            "He said he may stay.",
+            "He said he would stay.",
+            "He said that he might stay.",
+            "He said that he may stay.",
+            "He said that he would stay."
           ],
           "gap_accepts": [
             "might",
+            "may",
             "would"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "might",
+            "may",
+            "might to",
+            "may to"
+          ]
         },
         {
           "en": "I told her I was free.",
           "cz": "Řekl jsem jí, že mám volno.",
-          "gap": "I told her I ____ free.",
+          "gap": "I told her I ____ free. (be)",
           "gap_answer": "was",
           "accepts": [
-            "I told her I was free."
+            "I told her I was free.",
+            "I told her that I was free."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "She said the shop was closed.",
           "cz": "Řekla, že obchod je zavřený.",
-          "gap": "She said the shop ____ closed.",
+          "gap": "She said the shop ____ closed. (be)",
           "gap_answer": "was",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "are"
+          ],
           "accepts": [
-            "She said the shop was closed."
+            "She said the shop was closed.",
+            "She said that the shop was closed."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -342,18 +533,31 @@
             "He asked if she liked coffee."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "liked",
+            "likes",
+            "like",
+            "liking"
+          ]
         },
         {
           "en": "They said they had arrived.",
           "cz": "Řekli, že dorazili.",
-          "gap": "They said they ____ arrived.",
+          "gap": "They said they ____ arrived. (have)",
           "gap_answer": "had",
           "accepts": [
-            "They said they had arrived."
+            "They said they had arrived.",
+            "They said that they had arrived."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "She told me she would write.",
@@ -361,10 +565,17 @@
           "gap": "She told me she ____ write.",
           "gap_answer": "would",
           "accepts": [
-            "She told me she would write."
+            "She told me she would write.",
+            "She told me that she would write."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "would",
+            "will",
+            "would to",
+            "will to"
+          ]
         },
         {
           "en": "He said he could not come.",
@@ -373,72 +584,113 @@
           "gap_answer": "could not",
           "accepts": [
             "He said he could not come.",
-            "He said he couldn't come."
+            "He said he couldn't come.",
+            "He said that he could not come.",
+            "He said that he couldn't come."
           ],
           "gap_accepts": [
             "could not",
             "couldn't"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "could not",
+            "cannot",
+            "can not",
+            "could"
+          ]
         },
         {
           "en": "She asked who had called.",
           "cz": "Zeptala se, kdo volal.",
-          "gap": "She asked who ____ called.",
+          "gap": "She asked who ____ called. (have)",
           "gap_answer": "had",
           "accepts": [
             "She asked who had called."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "He said he was going home.",
           "cz": "Řekl, že jde domů.",
-          "gap": "He said he ____ going home.",
+          "gap": "He said he ____ going home. (be)",
           "gap_answer": "was",
           "accepts": [
-            "He said he was going home."
+            "He said he was going home.",
+            "He said that he was going home."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "They told me the meeting was cancelled.",
           "cz": "Řekli mi, že schůzka je zrušená.",
-          "gap": "They told me the meeting ____ cancelled.",
+          "gap": "They told me the meeting ____ cancelled. (be)",
           "gap_answer": "was",
           "accepts": [
-            "They told me the meeting was cancelled."
+            "They told me the meeting was cancelled.",
+            "They told me that the meeting was cancelled."
           ],
           "gap_accepts": [
             "was"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "She said she had already paid.",
           "cz": "Řekla, že už zaplatila.",
-          "gap": "She said she ____ already paid.",
+          "gap": "She said she ____ already paid. (have)",
           "gap_answer": "had",
           "accepts": [
-            "She said she had already paid."
+            "She said she had already paid.",
+            "She said that she had already paid."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "He asked how long I had waited.",
           "cz": "Zeptal se, jak dlouho jsem čekal.",
-          "gap": "He asked how long I ____ waited.",
+          "gap": "He asked how long I ____ waited. (have)",
           "gap_answer": "had",
           "accepts": [
             "He asked how long I had waited."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ]
         },
         {
           "en": "I said I would think about it.",
@@ -446,21 +698,35 @@
           "gap": "I said I ____ think about it.",
           "gap_answer": "would",
           "accepts": [
-            "I said I would think about it."
+            "I said I would think about it.",
+            "I said that I would think about it."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "would",
+            "will",
+            "would to",
+            "will to"
+          ]
         },
         {
           "en": "She said they were moving soon.",
           "cz": "Řekla, že se brzy stěhují.",
-          "gap": "She said they ____ moving soon.",
+          "gap": "She said they ____ moving soon. (be)",
           "gap_answer": "were",
           "accepts": [
-            "She said they were moving soon."
+            "She said they were moving soon.",
+            "She said that they were moving soon."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "were",
+            "are",
+            "was",
+            "is"
+          ]
         },
         {
           "en": "He told her he loved the idea.",
@@ -468,21 +734,34 @@
           "gap": "He told her he ____ the idea.",
           "gap_answer": "loved",
           "accepts": [
-            "He told her he loved the idea."
+            "He told her he loved the idea.",
+            "He told her that he loved the idea."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "loved",
+            "loves",
+            "love",
+            "loving"
+          ]
         },
         {
           "en": "They asked if I could drive.",
           "cz": "Zeptali se, jestli umím řídit.",
-          "gap": "They asked if I ____ drive.",
+          "gap": "They asked if I ____ drive. (can)",
           "gap_answer": "could",
           "accepts": [
             "They asked if I could drive."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "could",
+            "can",
+            "could to",
+            "can to"
+          ]
         },
         {
           "en": "She said she might be late.",
@@ -491,25 +770,43 @@
           "gap_answer": "might",
           "accepts": [
             "She said she might be late.",
-            "She said she would be late."
+            "She said she may be late.",
+            "She said she would be late.",
+            "She said that she might be late.",
+            "She said that she may be late.",
+            "She said that she would be late."
           ],
           "gap_accepts": [
             "might",
+            "may",
             "would"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "might",
+            "may",
+            "might to",
+            "may to"
+          ]
         },
         {
           "en": "He said the film was great.",
           "cz": "Řekl, že film je skvělý.",
-          "gap": "He said the film ____ great.",
+          "gap": "He said the film ____ great. (be)",
           "gap_answer": "was",
           "accepts": [
-            "He said the film was great."
+            "He said the film was great.",
+            "He said that the film was great."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "was",
+            "is",
+            "were",
+            "am"
+          ]
         },
         {
           "en": "I asked where they lived.",
@@ -520,31 +817,52 @@
             "I asked where they lived."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "lived",
+            "live",
+            "lives",
+            "living"
+          ]
         },
         {
           "en": "She said she would not forget.",
           "cz": "Řekla, že nezapomene.",
-          "gap": "She said she ____ forget.",
+          "gap": "She said she ____ forget. (won't)",
           "gap_answer": "would not",
           "accepts": [
             "She said she would not forget.",
-            "She said she wouldn't forget."
+            "She said she wouldn't forget.",
+            "She said that she would not forget.",
+            "She said that she wouldn't forget."
           ],
           "gap_accepts": [
             "would not",
             "wouldn't"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "would not",
+            "will not",
+            "would",
+            "will"
+          ]
         },
         {
           "en": "He told us he had finished work.",
           "cz": "Řekl nám, že skončil v práci.",
-          "gap": "He told us he ____ finished work.",
+          "gap": "He told us he ____ finished work. (have)",
           "gap_answer": "had",
+          "quiz_options": [
+            "had",
+            "have",
+            "has",
+            "did"
+          ],
           "accepts": [
-            "He told us he had finished work."
+            "He told us he had finished work.",
+            "He told us that he had finished work."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
           "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
@@ -552,13 +870,20 @@
         {
           "en": "They said they were happy.",
           "cz": "Řekli, že jsou šťastní.",
-          "gap": "They said they ____ happy.",
+          "gap": "They said they ____ happy. (be)",
           "gap_answer": "were",
           "accepts": [
-            "They said they were happy."
+            "They said they were happy.",
+            "They said that they were happy."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "were",
+            "are",
+            "was",
+            "is"
+          ]
         },
         {
           "en": "She asked what time it started.",
@@ -575,7 +900,13 @@
             "began"
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "started",
+            "starts",
+            "start",
+            "starting"
+          ]
         },
         {
           "en": "He said he needed a break.",
@@ -583,10 +914,17 @@
           "gap": "He said he ____ a break.",
           "gap_answer": "needed",
           "accepts": [
-            "He said he needed a break."
+            "He said he needed a break.",
+            "He said that he needed a break."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "needed",
+            "needs",
+            "need",
+            "needing"
+          ]
         },
         {
           "en": "I told them I would arrive at six.",
@@ -594,10 +932,17 @@
           "gap": "I told them I ____ arrive at six.",
           "gap_answer": "would",
           "accepts": [
-            "I told them I would arrive at six."
+            "I told them I would arrive at six.",
+            "I told them that I would arrive at six."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "would",
+            "will",
+            "would to",
+            "will to"
+          ]
         },
         {
           "en": "He told me the news.",
@@ -608,7 +953,13 @@
             "He told me the news."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "told",
+            "said",
+            "tell",
+            "say"
+          ]
         },
         {
           "en": "She said that the shop was closed.",
@@ -620,7 +971,13 @@
             "She said the shop was closed."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "said",
+            "told",
+            "say",
+            "tell"
+          ]
         },
         {
           "en": "They told us about the delay.",
@@ -631,7 +988,13 @@
             "They told us about the delay."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "told",
+            "said",
+            "tell",
+            "say"
+          ]
         },
         {
           "en": "He said he was free on Friday.",
@@ -643,7 +1006,13 @@
             "He said that he was free on Friday."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "said",
+            "told",
+            "say",
+            "tell"
+          ]
         },
         {
           "en": "Patrik said that the meeting was short.",
@@ -655,7 +1024,13 @@
             "Patrik said the meeting was short."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "said",
+            "told",
+            "say",
+            "tell"
+          ]
         },
         {
           "en": "Ondřej told me he worked in Brno.",
@@ -667,7 +1042,13 @@
             "Ondřej told me that he worked in Brno."
           ],
           "explanation": "Backshift: present → past when the reporting verb is past.",
-          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti."
+          "explanation_cz": "Posun: přítomný → minulý, když je uvozovací sloveso v minulosti.",
+          "quiz_options": [
+            "told",
+            "said",
+            "tell",
+            "say"
+          ]
         }
       ]
     }
@@ -675,163 +1056,162 @@
   "intro": {
     "cards": [
       {
-        "title": "What is reported speech?",
-        "title_cz": "Co je nepřímá řeč?",
+        "title": "Reported speech",
+        "title_cz": "Nepřímá řeč",
+        "text_first": true,
         "points": [
-          "Reported speech (also called indirect speech) is how we tell someone what another person said",
-          "without quoting their exact words."
+          "We tell someone what another person said.",
+          "We do not quote their exact words."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Direct",
+            "Reported"
           ],
           "rows": [
             [
-              "Direct",
-              "She said, “I am tired.” (exact words)"
-            ],
-            [
-              "Reported",
-              "She said (that) she was tired. (we report the meaning later)"
+              "She said, “I **am** tired.”",
+              "She said she **was** tired."
             ]
           ]
         }
       },
       {
-        "title": "When do we use it?",
-        "title_cz": "Kdy to používáme?",
+        "title": "When we use it",
+        "title_cz": "Kdy to používáme",
+        "text_first": true,
+        "points": [
+          "After a past reporting verb: **said**, **told**, **asked**.",
+          "We pass on a message, or retell what someone said."
+        ],
         "table": {
           "headers": [
-            "Remember"
+            "verb",
+            "example"
           ],
           "rows": [
             [
-              "He told me he would call later."
+              "**said**",
+              "They said they **had** finished."
             ],
             [
-              "They said they had finished the work."
+              "**told**",
+              "He told me he **would** call."
             ],
             [
-              "She asked if I was free."
-            ],
-            [
-              "When we pass on a message, retell a conversation, or summarise news"
-            ],
-            [
-              "usually after a reporting verb in the past (said, told, asked)."
+              "**asked**",
+              "He asked if I **was** ready."
             ]
           ]
         }
       },
       {
-        "title": "The basic pattern",
+        "title": "The pattern",
         "title_cz": "Základní vzorec",
+        "text_first": true,
         "points": [
-          "She said (that) she worked in Brno.",
-          "He told me (that) he would call.",
-          "Reporting verb + (that) + clause.",
-          "The verb in the clause often moves one step back into the past",
-          "that move is called backshift."
+          "Reporting verb + (that) + clause. **that** is optional.",
+          "The verb often moves one step back. That move is **backshift**."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Direct",
+            "Reported"
           ],
           "rows": [
             [
-              "that is optional in speech",
-              "He said he was tired."
+              "“I **am** tired.”",
+              "He **said** (that) he **was** tired."
             ]
           ]
         }
       },
       {
-        "title": "Backshift table",
-        "title_cz": "Tabulka posunů",
+        "title": "Backshift · present",
+        "title_cz": "Posun · přítomný",
+        "text_first": true,
+        "points": [
+          "After past **said** / **told** / **asked**:"
+        ],
         "table": {
-          "caption": "Direct → reported (after said / told)",
           "headers": [
-            "Direct speech",
-            "Reported speech"
+            "Direct",
+            "from",
+            "Reported",
+            "to"
           ],
           "rows": [
             [
-              "am / is",
-              "was"
+              "“I **work** in Brno.”",
+              "present simple",
+              "She said she **worked** in Brno.",
+              "past simple"
             ],
             [
-              "are",
-              "were"
+              "“I **am** busy.”",
+              "present simple",
+              "She said she **was** busy.",
+              "past simple"
             ],
             [
-              "present simple (work / works)",
-              "past simple (worked)"
+              "“They **are** happy.”",
+              "present simple",
+              "They said they **were** happy.",
+              "past simple"
             ],
             [
-              "present continuous (am/is working)",
-              "past continuous (was/were working)"
-            ],
-            [
-              "past simple (worked)",
-              "past perfect (had worked)"
-            ],
-            [
-              "present perfect (have/has done)",
-              "past perfect (had done)"
-            ],
-            [
-              "will",
-              "would"
-            ],
-            [
-              "can",
-              "could"
-            ],
-            [
-              "may",
-              "might"
-            ],
-            [
-              "must (obligation)",
-              "had to"
+              "“We **are leaving**.”",
+              "present continuous",
+              "They told us they **were leaving**.",
+              "past continuous"
             ]
           ]
-        },
-        "points": [
-          "If the reporting verb is past (said / told / asked), shift the tense in the reported",
-          "clause like this"
-        ]
+        }
       },
       {
-        "title": "Examples of backshift",
-        "title_cz": "Příklady posunu",
+        "title": "Backshift · past and modals",
+        "title_cz": "Posun · minulost a would / could",
+        "text_first": true,
+        "points": [
+          "After past **said** / **told** / **asked**:"
+        ],
         "table": {
           "headers": [
-            "Someone said…",
-            "We report…"
+            "Direct",
+            "from",
+            "Reported",
+            "to"
           ],
           "rows": [
             [
-              "“I am busy.”",
-              "He said he was busy."
+              "“I **have** finished.”",
+              "present perfect",
+              "They said they **had** finished.",
+              "past perfect"
             ],
             [
-              "“We work in Brno.”",
-              "They said they worked in Brno."
+              "“I **lost** my phone.”",
+              "past simple",
+              "She said she **had** lost her phone.",
+              "past perfect"
             ],
             [
-              "“I will call you.”",
-              "She said she would call me."
+              "“I **will** call.”",
+              "**will**",
+              "He told me he **would** call.",
+              "**would**"
             ],
             [
-              "“I have finished.”",
-              "He said he had finished."
+              "“I **can** help.”",
+              "**can**",
+              "She said she **could** help.",
+              "**could**"
             ],
             [
-              "“I can help.”",
-              "She said she could help."
+              "“I **may** be late.”",
+              "**may**",
+              "She said she **might** be late.",
+              "**might**"
             ]
           ]
         }
@@ -839,20 +1219,24 @@
       {
         "title": "say vs tell",
         "title_cz": "say vs tell",
+        "text_first": true,
         "points": [
-          "He told me he was tired. ✓",
-          "He said (that) he was tired. ✓",
-          "tell needs a person. say does not take a person object."
+          "**tell** needs a person.",
+          "**say** does not take a person object."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Not",
+            "Say"
           ],
           "rows": [
             [
-              "He said me he was tired. ✗",
-              "He told me…"
+              "~~He **said me** he was tired.~~",
+              "He **told me** he was tired."
+            ],
+            [
+              "~~He **told** he was tired.~~",
+              "He **said** he was tired."
             ]
           ]
         }
@@ -860,100 +1244,92 @@
       {
         "title": "Questions in reported speech",
         "title_cz": "Otázky v nepřímé řeči",
+        "text_first": true,
         "points": [
-          "Use asked + if/whether (yes–no) or asked + wh-word."
+          "**asked** + **if** (yes–no), or **asked** + a wh-word.",
+          "Inside: statement order — no inversion, no **do** / **does** / **did**."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Direct",
+            "Reported"
           ],
           "rows": [
             [
-              "“Are you free?”",
-              "He asked if I was free."
+              "“**Are** you ready?”",
+              "He asked **if** I **was** ready."
             ],
             [
-              "“Where do you live?”",
-              "She asked where I lived."
-            ],
-            [
-              "Not",
-              "She asked where do I live. ✗"
-            ],
-            [
-              "Inside: statement word order",
-              "no do/does/did inversion."
+              "“**Where do** you live?”",
+              "She asked **where** I **lived**."
             ]
           ]
-        }
+        },
+        "tables": [
+          {
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~She asked where **do** I live.~~",
+                "She asked where I **lived**."
+              ]
+            ]
+          }
+        ]
       },
       {
         "title": "What does not always shift",
         "title_cz": "Co se ne vždy posouvá",
+        "text_first": true,
         "points": [
-          "might, could, would, should, and ought to often stay the same.",
-          "If something is still true now, speakers sometimes keep present",
-          "but this unit practises the standard backshift after past said/told."
+          "**might**, **could**, **would**, **should** often stay the same.",
+          "If it is still true now, speakers sometimes keep present.",
+          "After past **said** / **told**, these sentences still backshift."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Direct",
+            "Reported"
           ],
           "rows": [
             [
-              "“I might be late.”",
-              "She said she might be late."
+              "“I **might** be late.”",
+              "She said she **might** be late."
             ],
             [
-              "“I could help.”",
-              "He said he could help."
+              "“I **could** help.”",
+              "She said she **could** help."
             ]
           ]
         }
       },
       {
-        "title": "Czech trap",
-        "title_cz": "Česká past",
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
         "points": [
           "Czech often keeps one past or present look.",
-          "English usually steps the verb back after said/told in the past."
+          "English steps the verb back after past **said** / **told**."
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Czech",
+            "Not",
+            "Say"
           ],
           "rows": [
             [
               "Řekl, že je unavený.",
-              "He said he was tired. (not is, after said)"
+              "~~He said he **is** tired.~~",
+              "He said he **was** tired."
             ],
             [
               "Řekla, že zavolá.",
-              "She said she would call. (will → would)"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "What you practise",
-        "title_cz": "Co trénuješ",
-        "points": [
-          "Prefer tell + person; say without a person object.",
-          "Gaps hit the shifted form in the reported clause (was, worked, would, had, could…) and",
-          "sometimes said/told."
-        ],
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "Read the whole line",
-              "who said what, and which tense fits after said/told."
+              "~~She said she **will** call.~~",
+              "She said she **would** call."
             ]
           ]
         }

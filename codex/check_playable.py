@@ -172,10 +172,18 @@ def check_pack(pid: str, pack: dict) -> None:
             ans_k = key(it.get("en") if sentence else it.get("gap_answer"))
             extra = [o for o in ch if key(o) != ans_k and key(o) in acc]
             if extra:
-                errors.append(
+                msg = (
                     f"{pid} quiz item {i}: {len(extra) + 1} correct options "
                     f"({(it.get('en') if sentence else it.get('gap_answer'))!r} + {extra!r})"
                 )
+                # Authored cousins on the chip row are the teaching (might / may
+                # after možná). Fallback chips that happen to be accepted are
+                # the bug this check exists for.
+                qo = it.get("quiz_options")
+                if isinstance(qo, list) and len(qo) >= 2:
+                    warnings.append(msg)
+                else:
+                    errors.append(msg)
 
     # Stages the engine actually implements. A pack asking for anything else
     # silently loses that drill.

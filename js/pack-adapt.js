@@ -1298,11 +1298,15 @@ function choicesFor(it, siblings, pack) {
   // Auxiliary gap: same family + the cross-family confusable (do for be, ...).
   // Modal packs: this unit's other modals first (must / should / mustn't),
   // not will / can / would from the giant aux family (James, a2_modals smoke).
+  // Anywhere else (reported speech, …) sibling aux is vocab — had must offer
+  // have / has, not was / could / would (James, b1_reported_speech 2026-08-30).
   if (!lemma) {
     const aux = auxDistractors(answer);
     const sibsNow = siblings.map((s) => s.gap_answer);
     const ansIsModal = !!(aux && AUX_ALL.has(String(answer).toLowerCase().replace(/[’]/g, "'").trim()));
-    if (ansIsModal) {
+    const modalPack = /modal/i.test(String((pack && pack.id) || "")) ||
+      /modal/i.test(String((pack && pack.title) || ""));
+    if (ansIsModal && modalPack) {
       const modalSibs = sibsNow.filter((s) => {
         const k = String(s || "").toLowerCase().replace(/[’]/g, "'").trim();
         return AUX_ALL.has(k);

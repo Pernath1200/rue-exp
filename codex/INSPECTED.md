@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**51 inspected · 0 approved · 9 unseen** of 60 live units
+**53 inspected · 0 approved · 7 unseen** of 60 live units
 
 Of the 2 cloud-authored units, **2 have any tick**.
 
@@ -64,7 +64,7 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 36 items
 - [x][ ] `a2_will_going_to` — Will / going to · 8 items
 
-## B1 — 14 inspected / 0 approved / 16 units
+## B1 — 16 inspected / 0 approved / 16 units
 
 - [x][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [x][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 12 items
@@ -74,11 +74,11 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `b1_linkers` — Linkers (although / so) · 60 items
 - [x][ ] `b1_modals_speculation` — Might / may / could / must (guess) · 48 items
 - [x][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
-- [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items · seen?
+- [x][ ] `b1_phrasal_verbs` — Phrasal verbs 1 · 44 items · seen?
 - [x][ ] `b1_prefixes` — Prefixes · 44 items
 - [x][ ] `b1_present_perfect_vs_past` — Present perfect vs past simple · 79 items · seen?
 - [x][ ] `b1_relative_clauses` — Relative clauses · 66 items · seen?
-- [ ][ ] `b1_reported_speech` — Reported speech · 54 items · seen?
+- [x][ ] `b1_reported_speech` — Reported speech · 54 items · seen?
 - [x][ ] `b1_suffixes` — Word Formation: Suffixes · 44 items
 - [x][ ] `b1_verb_patterns_advanced` — Verb patterns 2 · 56 items · seen?
 - [x][ ] `b1_word_order_fronting` — Word order 2 · 21 items
