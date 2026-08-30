@@ -68,6 +68,7 @@ SYNONYM_GROUPS = [
     ["rubbish", "garbage"],
     ["biscuit", "cookie"],
     ["timetable", "schedule"],
+    ["tv", "television"],
 ]
 
 

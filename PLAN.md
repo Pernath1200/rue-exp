@@ -1,40 +1,41 @@
 # rue-exp · plan pointer
 
-## Current phase (2026-08-09)
+## Current phase (2026-08-30)
 
-**A1 + A2 polish before any student deploy.** Claude unattended build closed
-(`codex/HANDOFF.md`). Grok continuous lane: repair → A1/A2 polish → B1
-sequencing (see `agent-nightly/RUE-AUTO.md`).
+**A1–B1 units (and a few B2s) complete and usable — not perfect.**  
+The landing page was the dud. Packs and teaching, not shell.
 
-| Area | State |
-|------|--------|
-| Shell | Dual engines · English chrome · progress key isolated |
-| A1 path | Full zigzag · leaf intros + Use banks complete |
-| A2 path | Full zigzag · leaf intros + Use banks complete |
-| Trunk intros | Partial (concrete/glue rule in AGENTS.md) |
-| B1–C1 | Live catalogue · thinner vocab UX · sequencing debt on B1/B2 |
-| Deploy | Blocked on human A1+A2 smoke + polish, not on “more C1 shells” |
+Full definition: `codex/WORKING-SYSTEM.md`.
+
+| | |
+|--|--|
+| App | `rue-exp` · port **8097** · progress **`rue-exp-progress`** |
+| Students | Still on rue2 / rue3 until James promotes · he wants them **here** |
+| Grammar A1–B1 | 53 inspected · 0 approved · James: okay to link, more to test |
+| Vocab A1–B1 | Live · barely smoked · main hole |
+| B2 | A few live keep-list units, when James names them · no stub refill |
+| Codex | `../rue-codex` · never invent node ids |
 
 ## Source of law
 
 | Doc | Role |
 |-----|------|
-| `CHARTER.md` | Product locks (port, progress key, identity) |
+| `codex/WORKING-SYSTEM.md` | What working is · this phase |
+| `CHARTER.md` | Product locks |
 | `AGENTS.md` | Authoring + automation contract |
-| `codex/HANDOFF.md` | Post-Claude state + open questions |
-| `agent-nightly/RUE-AUTO.md` | Unattended Grok work order |
+| `codex/AUTHORING-RULES.md` | Smoke method I10 / I8 / I6 |
+| `codex/POLICY-LOCKS.md` | P-deploy · P-b1-vocab · P-engine · P-b2c1-stub |
 | `rue-codex/CODEX-FIRST.md` | Units hang on `G_*` / `V_*` |
 
-## Near-term (James 2026-08-09)
+## This phase
 
-1. Shell/UX/docs polish (human + interactive Grok)
-2. Auto: REPAIR-QUEUE → trunk intros / A1–A2 polish → B1 sequencing re-lexify
-3. **Do not** start B1 vocab extension unattended (parked · interactive only)
-4. Lesson-prove A1+A2 before Pages / replace rue2+rue3
+1. **Smoke vocab A1–B1** (path order). Usable bar. Telegram tick. Suggestions → `codex/UNIT-SUGGESTIONS.md`.
+2. Grammar leftovers that are still duds (known: `b1_word_order_fronting`, reported-speech teaching).
+3. **A2 coming grammar (9)** — specs in `codex/A2-COMING.md`. First pack: `a2_articles`. No auto-fill.
+4. A few B2s when named.
+5. Level checks: `codex/LEVEL-CHECKS.md` (`a1_vocab_match` + `a1_vocab_type` + `a1_grammar_match` + `a1_grammar_type` + `a1_finale` live).
+6. Do not hand-tick INSPECTED. Do not invent nodes.
 
 ## Explicitly later
 
-- B1 vocabulary extension (~26 packs) — interactive only when resumed
-- Oxford gap re-measure (`vocab/b1-build` tools not on default branch)
-- Progress import from old RUE2/RUE3 keys
-- Mixed “Together” practice stage
+Search · related UI · error log · enjoyability pass · B1 vocab extension · Time 2 / dep-prep 2/3 (no node yet) · Pages.

@@ -171,7 +171,8 @@ def report_c9() -> None:
 def check_intro_visual(pid: str, d: dict, path: Path | None = None) -> None:
     """Rule C10 — every intro card has a table and/or a diagram.
 
-    Accepted visuals: table.rows, diagram (intro-visuals.js key), or inline svg.
+    Accepted visuals: table.rows, diagram (intro-visuals.js key), diagrams[]
+    (several small scenes on one card), or inline svg.
     Points and examples[] may accompany a visual; they do not replace it.
     Enforced for A1–B1 grammar. Ratcheted like C9.
     """
@@ -187,9 +188,15 @@ def check_intro_visual(pid: str, d: dict, path: Path | None = None) -> None:
         tbl = c.get("table")
         has_table = isinstance(tbl, dict) and bool(tbl.get("rows"))
         has_diagram = bool(str(c.get("diagram") or "").strip())
+        diagrams = c.get("diagrams")
+        has_diagrams = isinstance(diagrams, list) and any(
+            (isinstance(d, str) and d.strip())
+            or (isinstance(d, dict) and str(d.get("diagram") or "").strip())
+            for d in diagrams
+        )
         has_svg = bool(str(c.get("svg") or "").strip())
         has_pics = isinstance(c.get("pictures"), list) and bool(c.get("pictures"))
-        if has_table or has_diagram or has_svg or has_pics:
+        if has_table or has_diagram or has_diagrams or has_svg or has_pics:
             continue
         title = str(c.get("title") or "").strip() or "(untitled)"
         c10_hits.append((pid, f"intro card {i}: no table/diagram ({title})"))
@@ -268,32 +275,49 @@ def lint_pack(path: Path) -> None:
                 if not isinstance(it.get(f), str) or not it[f].strip():
                     err(f"{pid} {w}: `{f}` missing or empty")
             if wf:
-                root = it.get("root")
-                if not isinstance(root, str) or not root.strip():
-                    err(f"{pid} {w}: word_formation item needs a `root` cue")
-                else:
-                    if root != root.upper():
-                        err(f"{pid} {w}: root {root!r} must be CAPITALISED")
-                    if str(it.get("gap_answer") or "").strip().lower() == root.strip().lower():
-                        err(
-                            f"{pid} {w}: gap_answer equals the root — "
-                            f"nothing is derived"
-                        )
-                # Distractors must be wrong derivations of the SAME root;
-                # sibling-borrowed options would be other roots' words and
-                # transparently wrong, so authored quiz_options are required.
-                if not isinstance(it.get("quiz_options"), list) or len(
-                    it.get("quiz_options") or []
-                ) < 2:
-                    err(f"{pid} {w}: word_formation item needs quiz_options")
-                # House style (James, 2026-08-18, after smoking b1_suffixes):
-                # 4 options — answer + class trap + two by-ear misspellings
-                # (acter, visiter). Spelling is what the exam grades.
-                elif len(it["quiz_options"]) < 4:
-                    warn(f"{pid} {w}: only {len(it['quiz_options'])} quiz options "
-                         f"(house style is 4: answer + trap + 2 misspellings)")
-                if not (it.get("explanation") or "").strip():
-                    warn(f"{pid} {w}: no explanation (wrong answers show none)")
+                has_gap = isinstance(it.get("gap"), str) and BLANK_RE.search(
+                    it.get("gap") or ""
+                )
+                # Match / open-Use rows are not clozes — no root cue, no chips.
+                # Root + quiz_options stay mandatory on every gap (Quiz/Type).
+                if has_gap:
+                    root = it.get("root")
+                    if not isinstance(root, str) or not root.strip():
+                        err(f"{pid} {w}: word_formation item needs a `root` cue")
+                    else:
+                        if root != root.upper():
+                            err(f"{pid} {w}: root {root!r} must be CAPITALISED")
+                        if str(it.get("gap_answer") or "").strip().lower() == root.strip().lower():
+                            err(
+                                f"{pid} {w}: gap_answer equals the root — "
+                                f"nothing is derived"
+                            )
+                    block_seq = b.get("check", {}).get("sequence") if isinstance(b, dict) else None
+                    pack_seq = d.get("check", {}).get("sequence")
+                    pack_wants_quiz = pack_seq is None or (
+                        isinstance(pack_seq, list) and "quiz" in pack_seq
+                    )
+                    wants_quiz = (
+                        pack_wants_quiz
+                        if not isinstance(block_seq, list)
+                        else ("quiz" in block_seq)
+                    )
+                    if wants_quiz:
+                        # Distractors must be wrong derivations of the SAME root;
+                        # sibling-borrowed options would be other roots' words and
+                        # transparently wrong, so authored quiz_options are required.
+                        if not isinstance(it.get("quiz_options"), list) or len(
+                            it.get("quiz_options") or []
+                        ) < 2:
+                            err(f"{pid} {w}: word_formation item needs quiz_options")
+                        # House style (James, 2026-08-18, after smoking b1_suffixes):
+                        # 4 options — answer + class trap + two by-ear misspellings
+                        # (acter, visiter). Spelling is what the exam grades.
+                        elif len(it["quiz_options"]) < 4:
+                            warn(f"{pid} {w}: only {len(it['quiz_options'])} quiz options "
+                                 f"(house style is 4: answer + trap + 2 misspellings)")
+                    if not (it.get("explanation") or "").strip():
+                        warn(f"{pid} {w}: no explanation (wrong answers show none)")
             gap, ga = it.get("gap"), it.get("gap_answer")
             if gap is not None or ga is not None:
                 if not (isinstance(gap, str) and BLANK_RE.search(gap)):
@@ -313,7 +337,18 @@ def lint_pack(path: Path) -> None:
                         )
             for name in ("accepts", "gap_accepts", "quiz_options"):
                 check_str_list(pid, w, name, it.get(name))
-    if n_items == 0 and d.get("status") != "stub":
+    if (
+        n_items == 0
+        and d.get("status") != "stub"
+        and d.get("practice")
+        not in (
+            "match_sprint",
+            "type_sprint",
+            "grammar_match_sprint",
+            "grammar_type_sprint",
+            "use_sprint",
+        )
+    ):
         warn(f"{pid}: pack has zero items")
 
     # Use-stage sentence bank (leaf vocab packs). Prompt is cz, answer is en.

@@ -32,6 +32,7 @@
   "trunk_verbs_say_a1",
   "a1_question_words",
   "leaf_places",
+  "leaf_countries_a1",
   "leaf_food_a1",
   "leaf_clothes_a1",
   "a1_object_pronouns",
@@ -65,7 +66,12 @@
   "leaf_tech_a1",
   "leaf_colours_a1",
   "trunk_adjectives_a1",
-  "leaf_ideas_a1"
+  "leaf_ideas_a1",
+  "a1_vocab_match",
+  "a1_vocab_type",
+  "a1_grammar_match",
+  "a1_grammar_type",
+  "a1_finale"
  ],
  "path_order_a2": [
   "a2_present_continuous",
@@ -199,10 +205,10 @@
  "spine": "data/spine.json",
  "level_stats": {
   "A1": {
-   "total": 53,
-   "grammar": 20,
-   "vocab": 33,
-   "live": 53,
+   "total": 59,
+   "grammar": 23,
+   "vocab": 36,
+   "live": 59,
    "coming": 0
   },
   "A2": {
@@ -256,6 +262,9 @@
    "a1_to_for_with",
    "a1_and_but_because",
    "a1_imperatives",
+   "a1_grammar_match",
+   "a1_grammar_type",
+   "a1_finale",
    "a2_present_continuous",
    "a2_agreement",
    "a2_past_simple",
@@ -358,6 +367,7 @@
    "trunk_glue_questions_a1",
    "trunk_verbs_say_a1",
    "leaf_places",
+   "leaf_countries_a1",
    "leaf_food_a1",
    "leaf_clothes_a1",
    "leaf_body_a1",
@@ -382,6 +392,8 @@
    "leaf_colours_a1",
    "trunk_adjectives_a1",
    "leaf_ideas_a1",
+   "a1_vocab_match",
+   "a1_vocab_type",
    "leaf_routine_a2",
    "leaf_family_a2",
    "leaf_travel_a2",
@@ -796,6 +808,21 @@
    "practice": "vocab",
    "note": "town · transport · directions · travel",
    "partner_id": "a1_question_words"
+  },
+  {
+   "id": "leaf_countries_a1",
+   "domain": "vocab",
+   "label": "Countries",
+   "kind": "leaf",
+   "parent": "trunk",
+   "tree_part": "knowledge_travel",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "vocab/blocks/a1_countries.json",
+   "practice": "vocab",
+   "note": "12 countries · 12 people/languages · 6 cities · I am Czech · I am from Prague · I speak"
   },
   {
    "id": "leaf_food_a1",
@@ -1351,6 +1378,93 @@
    "content": "vocab/blocks/a1_ideas.json",
    "practice": "vocab",
    "note": "thing · part · place · person · life — common general words"
+  },
+  {
+   "id": "a1_vocab_match",
+   "domain": "vocab",
+   "label": "A1 vocab · match",
+   "kind": "leaf",
+   "parent": "trunk",
+   "tree_part": "trunk",
+   "codex_unit": "V_COR-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "vocab/blocks/a1_vocab_match.json",
+   "practice": "match_sprint",
+   "fruit": false,
+   "note": "Level check · timed EN↔CZ sprint · pool from live A1 vocab packs · no Use · no fruit"
+  },
+  {
+   "id": "a1_vocab_type",
+   "domain": "vocab",
+   "label": "A1 vocab · type",
+   "kind": "leaf",
+   "parent": "trunk",
+   "tree_part": "trunk",
+   "codex_unit": "V_COR-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "vocab/blocks/a1_vocab_type.json",
+   "practice": "type_sprint",
+   "fruit": false,
+   "note": "Level check · untimed CZ→EN type-in · same pool as a1_vocab_match · no Use · no fruit"
+  },
+  {
+   "id": "a1_grammar_match",
+   "domain": "grammar",
+   "label": "Which is correct?",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a1_grammar_match.json",
+   "practice": "grammar_match_sprint",
+   "fruit": false,
+   "note": "Level check · Which is correct? · three English sentences · smoked A1 grammar · no Use · no fruit · Do next skips it (LEVEL-CHECKS §2)"
+  },
+  {
+   "id": "a1_grammar_type",
+   "domain": "grammar",
+   "label": "A1 grammar · type",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a1_grammar_type.json",
+   "practice": "grammar_type_sprint",
+   "fruit": false,
+   "note": "Level check · cloze type-in · Czech + gapped English · smoked A1 grammar · no Use · no fruit · Do next skips it (LEVEL-CHECKS §3)"
+  },
+  {
+   "id": "a1_finale",
+   "domain": "grammar",
+   "label": "A1 review",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a1_finale.json",
+   "practice": "use_sprint",
+   "note": "Level check · public title A1 review · CZ → English sentence · fruit this node only on Whole A1 clean · Do next does not skip it (LEVEL-CHECKS §4)"
   },
   {
    "id": "a2_present_continuous",
@@ -2505,7 +2619,7 @@
   {
    "id": "b1_phrasal_verbs",
    "domain": "grammar",
-   "label": "Phrasal verbs",
+   "label": "Phrasal verbs 1",
    "kind": "topic",
    "root": "verb_complementation",
    "tree_part": "verb_complementation",
@@ -2517,7 +2631,7 @@
    "foundation": false,
    "content": "grammar/blocks/b1_phrasal_verbs.json",
    "practice": "grammar",
-   "note": "verb + particle · separable frames · demo priority",
+   "note": "frames rewrite 2026-08-30: 12-verb bank · separable/inseparable · demo priority",
    "related": [
     "b1_verb_patterns_advanced",
     "b1_dependent_prepositions"

@@ -1601,6 +1601,15 @@ button.link:hover {
   border-color: var(--accent);
 }
 
+/* Fat-leaf Type: first letter + blanks (James, 2026-08-30). */
+.type-clue {
+  margin: 0.35rem 0 0;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
 .type-area {
   resize: vertical;
   line-height: 1.4;
@@ -2993,7 +3002,7 @@ button.sprint-tile.gone {
   margin: 0 0 0.55rem;
 }
 
-/* A1 finale · CZ → full English sentence */
+/* A1 review (a1_finale) · CZ → full English sentence */
 .sprint-finale .sprint-type-card {
   max-width: 36rem;
 }

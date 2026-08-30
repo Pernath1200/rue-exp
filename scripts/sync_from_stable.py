@@ -42,6 +42,7 @@ GRAMMAR_ROOT_TO_PART = {
     "verb_complementation": "verb_complementation",
     "prepositions_particles": "prepositions_particles",
     "tap_root": "tap_root",
+    "word_craft": "word_craft",
 }
 
 # Vocab tree_part = one of the 12 codex houses (rue-codex Curriculum_Codex_Vocab,
@@ -179,7 +180,8 @@ def node_from_grammar(n: dict, partner: str | None) -> dict:
         "status": n.get("status", "coming"),
         "foundation": n.get("foundation", False),
         "content": content_grammar(n),
-        "practice": "grammar",
+        "practice": n.get("practice") or "grammar",
+        "fruit": n.get("fruit"),
         "note": n.get("note"),
         "partner_id": partner,
         "related": n.get("related"),
@@ -201,7 +203,8 @@ def node_from_vocab(n: dict, partner: str | None) -> dict:
         "levels": n.get("levels") or ["A1"],
         "status": n.get("status", "coming"),
         "content": content_vocab(n),
-        "practice": "vocab",
+        "practice": n.get("practice") or "vocab",
+        "fruit": n.get("fruit"),
         "note": n.get("note"),
         "partner_id": partner,
     }

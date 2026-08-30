@@ -16,6 +16,7 @@ import { expandContractions } from "./contractions.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
 import { setSmokeContext } from "./smoke-flags.js";
+import { vocabCoverNeed } from "./progress.js";
 
 /**
  * Default questions per stage (Match board · Quiz · Type · Use).
@@ -558,6 +559,18 @@ function isFrameItem(item) {
   return Boolean(item && item.gap && item.gap_answer);
 }
 
+/** First letter + blanks, and letter count. Fat vocab Type only. */
+function typeLetterClue(answer) {
+  const raw = String(answer || "").trim();
+  if (!raw) return "";
+  const letters = (raw.match(/[A-Za-zÀ-ž]/g) || []).length;
+  const pat = raw.replace(/[A-Za-zÀ-ž]+/g, (word) =>
+    word[0] + "_".repeat(Math.max(0, word.length - 1)),
+  );
+  if (letters < 2) return "";
+  return `${pat} · ${letters} letter${letters === 1 ? "" : "s"}`;
+}
+
 /** Which-is-correct? Quiz (B21). Match and Type skip these. */
 function isSentenceQuiz(item) {
   return item && item.quiz_axis === "sentence";
@@ -659,6 +672,49 @@ export function startPractice(root, block, opts) {
   }
   function matchList() {
     return wordItems.length ? wordItems : block.items || [];
+  }
+
+  const quizCovered = new Set(opts.quizKeys || []);
+  const typeCovered = new Set(opts.typeKeys || []);
+
+  function coverNeed() {
+    return vocabCoverNeed(quizList().length);
+  }
+
+  function coverRoundTotal(need) {
+    return Math.max(1, Math.ceil(need / DEFAULT_PASS));
+  }
+
+  function coverRoundAt(have) {
+    return Math.max(0, Math.ceil(have / DEFAULT_PASS));
+  }
+
+  function moreQuizzesLine(have, need) {
+    const total = coverRoundTotal(need);
+    const done = coverRoundAt(have);
+    const left = Math.max(0, total - done);
+    if (!left) return "All clear · next: Type";
+    if (left === 1) return "Complete 1 more quiz to continue";
+    return `Complete ${left} more quizzes to continue`;
+  }
+
+  function pickUnseen(list, covered, n) {
+    const prefer = [];
+    const rest = [];
+    for (let i = 0; i < list.length; i++) {
+      if (covered.has(itemDeckKey(list[i]))) continue;
+      if (sentenceTargets.size && sentenceTargets.has(list[i].en)) prefer.push(i);
+      else rest.push(i);
+    }
+    return [...shuffle(prefer), ...shuffle(rest)].slice(0, n);
+  }
+
+  /** First-learn Type only produces words already quizzed. Review uses the pack. */
+  function typeList() {
+    const all = matchList();
+    if (opts.typeCleared) return all;
+    const quizzed = all.filter((it) => quizCovered.has(itemDeckKey(it)));
+    return quizzed.length ? quizzed : all;
   }
 
   /** Same job as grammar matchBoardSize (B9). Word chips stay 12.
@@ -769,17 +825,30 @@ export function startPractice(root, block, opts) {
   /** Mark a freshly built pass as seen; a completed cycle resets to empty. */
   function markDeckSeen(mode, order, items) {
     if (!items || items.length <= DEFAULT_PASS) return;
+    markKeysSeen(
+      mode,
+      order.map((i) => items[i] && itemDeckKey(items[i])).filter(Boolean),
+      items,
+    );
+  }
+
+  /** First-learn coverage (36 unique) must count as seen so review
+   *  Type/Quiz draw the leftover words, not a reshuffle of the same 36. */
+  function markKeysSeen(mode, keys, items) {
+    if (!items || items.length <= DEFAULT_PASS || !keys || !keys.length) return;
     const key = `${deckKeyBase}::${mode}`;
     const store = loadSeenStore();
     const set = new Set(store[key] || []);
-    for (const i of order) {
-      if (items[i]) set.add(itemDeckKey(items[i]));
-    }
+    for (const k of keys) set.add(k);
     const allKeys = items.map(itemDeckKey);
     const complete = allKeys.every((k) => set.has(k));
     store[key] = complete ? [] : [...set].filter((k) => allKeys.includes(k));
     saveSeenStore(store);
   }
+
+  markKeysSeen("quiz", [...quizCovered], quizList());
+  markKeysSeen("type", [...typeCovered], matchList());
+  markKeysSeen("match", [...quizCovered], matchList());
 
   /** "· deck 24/36" coverage suffix for decks bigger than one pass. */
   function deckLabel(mode, items) {
@@ -1219,14 +1288,24 @@ export function startPractice(root, block, opts) {
   /** @param {number[] | null} onlyIndices item indices to practice (retry wrong) */
   function newQuiz(onlyIndices) {
     const list = quizList();
-    const order = rotatedOrder("quiz", list, onlyIndices);
+    const retry = Boolean(onlyIndices && onlyIndices.length);
+    const keepKeys = retry && state.quiz ? state.quiz.roundKeys || [] : [];
+    let order;
+    if (retry) {
+      order = shuffle(onlyIndices.slice());
+    } else if (!opts.quizCleared && quizCovered.size < coverNeed()) {
+      order = pickUnseen(list, quizCovered, DEFAULT_PASS);
+    } else {
+      order = rotatedOrder("quiz", list, null);
+    }
     state.quiz = {
       order,
       pos: 0,
       score: 0,
       answered: false,
-      wrong: [], // item indices missed this pass
-      retryPass: Boolean(onlyIndices && onlyIndices.length),
+      wrong: [],
+      retryPass: retry,
+      roundKeys: retry ? keepKeys : order.map((i) => itemDeckKey(list[i])),
     };
   }
 
@@ -1238,27 +1317,59 @@ export function startPractice(root, block, opts) {
 
     if (q.pos >= q.order.length) {
       const wrongN = q.wrong.length;
-      // Full-set runs feed best-score; a retry round only counts once it
-      // clears every remaining mistake (mastery through correction).
-      if (!q.retryPass) reportMode("quiz", { score: q.score, total: passLen });
-      else if (wrongN === 0) reportMode("quiz", { score: 1, total: 1 });
+      const need = coverNeed();
+      if (wrongN === 0) {
+        if (!opts.quizCleared) {
+          for (const k of q.roundKeys || []) quizCovered.add(k);
+          markKeysSeen("quiz", q.roundKeys || [], quizList());
+          markKeysSeen("match", q.roundKeys || [], matchList());
+        }
+        const done = opts.quizCleared || quizCovered.size >= need;
+        reportMode("quiz", {
+          score: q.retryPass ? 1 : q.score,
+          total: q.retryPass ? 1 : passLen,
+          coverageDone: done,
+          coveredKeys: [...quizCovered],
+          need,
+        });
+      } else if (!q.retryPass) {
+        reportMode("quiz", {
+          score: q.score,
+          total: passLen,
+          coverageDone: opts.quizCleared || quizCovered.size >= need,
+          coveredKeys: [...quizCovered],
+          need,
+        });
+      }
+      const have = quizCovered.size;
+      const moreN = Math.min(DEFAULT_PASS, Math.max(0, need - have));
+      const more = wrongN === 0 && !opts.quizCleared && have < need;
+      const roundN = coverRoundAt(have);
+      const roundTotal = coverRoundTotal(need);
+      const title = need > DEFAULT_PASS && wrongN === 0
+        ? `Quiz ${roundN} of ${roundTotal} done`
+        : "Quiz done";
+      const sub = wrongN > 0
+        ? `${wrongN} to retry · or go to Type`
+        : more
+          ? moreQuizzesLine(have, need)
+          : "All clear · next: Type";
       stage.innerHTML = `
         <div class="q">
-          <div class="prompt">Quiz done</div>
-          <div class="scoreline">${q.score} / ${passLen}</div>
-          <div class="sub">${
-            wrongN > 0
-              ? `${wrongN} to retry · or go to Type`
-              : "All clear · next: Type"
-          }${q.retryPass ? " (retry pass)" : ""} · Enter = next</div>
+          <div class="prompt">${title}</div>
+          <div class="scoreline">${q.score} / ${passLen}${need > DEFAULT_PASS ? ` · ${have} / ${need} words` : ""}</div>
+          <div class="sub">${sub}${q.retryPass ? " (retry pass)" : ""} · Enter = next</div>
           <div class="nav">
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
                    <button type="button" class="btn" id="q-type">3 · Type →</button>
                    <button type="button" class="btn" id="q-type-map">← Home</button>`
-                : `<button type="button" class="btn" id="q-again">Try full set</button>
-                   <button type="button" class="btn primary" id="q-type">3 · Type →</button>`
+                : more
+                  ? `<button type="button" class="btn primary" id="q-more">Quiz ${roundN + 1} of ${roundTotal} →</button>
+                     <button type="button" class="btn" id="q-type">3 · Type →</button>`
+                  : `<button type="button" class="btn" id="q-again">Try full set</button>
+                     <button type="button" class="btn primary" id="q-type">3 · Type →</button>`
             }
           </div>
           ${
@@ -1271,6 +1382,13 @@ export function startPractice(root, block, opts) {
       if (retryBtn) {
         retryBtn.onclick = () => {
           newQuiz(q.wrong.slice());
+          render();
+        };
+      }
+      const moreBtn = stage.querySelector("#q-more");
+      if (moreBtn) {
+        moreBtn.onclick = () => {
+          newQuiz();
           render();
         };
       }
@@ -1287,7 +1405,9 @@ export function startPractice(root, block, opts) {
         };
       }
       bindEnterPrimary(stage);
-      return wrongN > 0 ? `Done · wrong: ${wrongN}` : `Done · ${q.score}/${passLen}`;
+      return wrongN > 0
+        ? `Done · wrong: ${wrongN}`
+        : `Done · ${q.score}/${passLen}${need > DEFAULT_PASS ? ` · ${have}/${need} words` : ""}`;
     }
 
     const itemIndex = q.order[q.pos];
@@ -1345,7 +1465,7 @@ export function startPractice(root, block, opts) {
         .slice(0, 3)
         .map((x) => targetOf(x));
     }
-    const opts = shuffle([correct, ...others]);
+    const choices = shuffle([correct, ...others]);
 
     stage.innerHTML = `
       <div class="q">
@@ -1367,7 +1487,7 @@ export function startPractice(root, block, opts) {
             : `Choose the ${frame ? "missing word" : "English"} · keys 1–4 · then <strong>Enter</strong> = next (always)`
         }</div>
         <div class="opts">
-          ${opts
+          ${choices
             .map(
               (o, i) =>
                 `<button type="button" class="opt" data-i="${i}"><span class="knum">${i + 1}</span>${sentence ? "" : sw(o)}${escapeHtml(o)}${sentence ? "" : gb(o)}</button>`,
@@ -1393,12 +1513,12 @@ export function startPractice(root, block, opts) {
       const chipEq = sentence
         ? (a, b) => sentenceChipKey(a) === sentenceChipKey(b)
         : (a, b) => norm(a) === norm(b);
-      if (chipEq(opts[i], correct)) {
+      if (chipEq(choices[i], correct)) {
         buttons[i].classList.add("correct");
         q.score++;
       } else {
         buttons[i].classList.add("wrong");
-        const ci = opts.findIndex((o) => chipEq(o, correct));
+        const ci = choices.findIndex((o) => chipEq(o, correct));
         if (ci >= 0) buttons[ci].classList.add("correct");
         if (!q.wrong.includes(itemIndex)) q.wrong.push(itemIndex);
       }
@@ -1427,8 +1547,8 @@ export function startPractice(root, block, opts) {
     clearKey();
     state.keyHandler = (e) => {
       // Only skip when typing in a real field (not chrome buttons)
-      if (e.target.closest("input, textarea, select")) return;
-      if (e.target.closest("#smoke-flags-host")) return;
+      if (e.target && e.target.closest && e.target.closest("input, textarea, select")) return;
+      if (e.target && e.target.closest && e.target.closest("#smoke-flags-host")) return;
       if (e.key === "Enter") {
         if (q.answered) {
           e.preventDefault();
@@ -1438,7 +1558,7 @@ export function startPractice(root, block, opts) {
       }
       // After answering, only Enter advances (not another digit press).
       if (q.answered) return;
-      const n = quizKeyToIndex(e, opts.length);
+      const n = quizKeyToIndex(e, choices.length);
       if (n != null) {
         e.preventDefault();
         e.stopPropagation();
@@ -1453,62 +1573,112 @@ export function startPractice(root, block, opts) {
 
   /** @param {number[] | null} onlyIndices item indices to practice (retry wrong) */
   function newType(onlyIndices) {
-    const list = matchList();
-    const order = rotatedOrder("type", list, onlyIndices);
+    const list = typeList();
+    const retry = Boolean(onlyIndices && onlyIndices.length);
+    const keepKeys = retry && state.typ ? state.typ.roundKeys || [] : [];
+    let order;
+    if (retry) {
+      order = shuffle(onlyIndices.slice());
+    } else if (!opts.typeCleared && typeCovered.size < coverNeed()) {
+      order = pickUnseen(list, typeCovered, DEFAULT_PASS);
+    } else {
+      order = rotatedOrder("type", list, null);
+    }
     state.typ = {
       order,
       pos: 0,
       score: 0,
       answered: false,
       missedThis: false,
-      wrong: [], // item indices missed this pass
-      retryPass: Boolean(onlyIndices && onlyIndices.length),
+      wrong: [],
+      retryPass: retry,
+      roundKeys: retry ? keepKeys : order.map((i) => itemDeckKey(list[i])),
     };
   }
 
   function renderType(stage) {
-    const list = matchList();
+    const list = typeList();
     if (!state.typ) newType();
     const t = state.typ;
     const passLen = t.order.length;
 
     if (t.pos >= t.order.length) {
       const wrongN = t.wrong.length;
-      // Full-set runs feed best-score; a retry round only counts once it
-      // clears every remaining mistake (mastery through correction).
-      if (!t.retryPass) reportMode("type", { score: t.score, total: passLen });
-      else if (wrongN === 0) reportMode("type", { score: 1, total: 1 });
-      // No Use stage on this pack: settle it here so the fruit gate, which
-      // still wants four modes, is satisfied by the work actually done.
-      if (noSentence && wrongN === 0) {
+      const need = coverNeed();
+      if (wrongN === 0) {
+        if (!opts.typeCleared) {
+          for (const k of t.roundKeys || []) {
+            if (quizCovered.has(k)) typeCovered.add(k);
+          }
+          markKeysSeen("type", t.roundKeys || [], matchList());
+        }
+        const done =
+          opts.typeCleared ||
+          (quizCovered.size >= need && typeCovered.size >= need);
+        reportMode("type", {
+          score: t.retryPass ? 1 : t.score,
+          total: t.retryPass ? 1 : passLen,
+          coverageDone: done,
+          coveredKeys: [...typeCovered],
+          need,
+        });
+      } else if (!t.retryPass) {
+        reportMode("type", {
+          score: t.score,
+          total: passLen,
+          coverageDone:
+            opts.typeCleared ||
+            (quizCovered.size >= need && typeCovered.size >= need),
+          coveredKeys: [...typeCovered],
+          need,
+        });
+      }
+      if (noSentence && wrongN === 0 && (opts.typeCleared || typeCovered.size >= need)) {
         reportMode("sentence", { score: 1, total: 1 });
       }
-      const sub = noSentence
-        ? wrongN > 0
-          ? `${wrongN} to retry`
-          : "All clear · unit done"
-        : wrongN > 0
-          ? `${wrongN} to retry · or go to Use`
-          : "All clear · next: Use";
+      const have = typeCovered.size;
+      const quizHave = quizCovered.size;
+      const typeCap = Math.min(need, Math.max(quizHave, 0));
+      const more = wrongN === 0 && !opts.typeCleared && have < typeCap;
+      const quizFirst = wrongN === 0 && !opts.typeCleared && quizHave < need;
+      const moreN = Math.min(DEFAULT_PASS, Math.max(0, typeCap - have));
+      const roundN = coverRoundAt(have);
+      const roundTotal = coverRoundTotal(need);
+      const typeLeft = Math.max(0, roundTotal - roundN);
+      const title = need > DEFAULT_PASS && wrongN === 0
+        ? `Type ${roundN} of ${roundTotal} done`
+        : "Type done";
+      const sub = wrongN > 0
+        ? `${wrongN} to retry`
+        : more
+          ? typeLeft === 1
+            ? "Complete 1 more type-in to continue"
+            : `Complete ${typeLeft} more type-ins to continue`
+          : quizFirst
+            ? `All clear · Quiz ${quizHave} / ${need} first`
+            : noSentence
+              ? "All clear · unit done"
+              : "All clear · next: Use";
       stage.innerHTML = `
         <div class="q">
-          <div class="prompt">Type done</div>
-          <div class="scoreline">${t.score} / ${passLen}</div>
+          <div class="prompt">${title}</div>
+          <div class="scoreline">${t.score} / ${passLen}${need > DEFAULT_PASS ? ` · ${have} / ${need} words` : ""}</div>
           <div class="sub">${sub}${t.retryPass ? " (retry pass)" : ""}</div>
           <div class="nav">
             ${
-              noSentence
-                ? wrongN > 0
-                  ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
-                     <button type="button" class="btn" id="t-sent-map">← Home</button>`
-                  : `<button type="button" class="btn" id="t-again">Try full set</button>
-                     <button type="button" class="btn primary" id="t-sent-map">← Home</button>`
-                : wrongN > 0
-                  ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
-                     <button type="button" class="btn" id="t-sent">4 · Use →</button>
-                     <button type="button" class="btn" id="t-sent-map">← Home</button>`
-                  : `<button type="button" class="btn" id="t-again">Try full set</button>
-                     <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
+              wrongN > 0
+                ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
+                   ${noSentence ? `<button type="button" class="btn" id="t-sent-map">← Home</button>` : `<button type="button" class="btn" id="t-sent">4 · Use →</button>`}`
+                : more
+                  ? `<button type="button" class="btn primary" id="t-more">Type ${roundN + 1} of ${roundTotal} →</button>
+                     <button type="button" class="btn" id="t-quiz">Quiz →</button>`
+                  : quizFirst
+                    ? `<button type="button" class="btn primary" id="t-quiz">Quiz · ${Math.min(DEFAULT_PASS, need - quizHave)} more →</button>`
+                    : noSentence
+                      ? `<button type="button" class="btn" id="t-again">Try full set</button>
+                         <button type="button" class="btn primary" id="t-sent-map">← Home</button>`
+                      : `<button type="button" class="btn" id="t-again">Try full set</button>
+                         <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
             }
           </div>
           ${
@@ -1526,6 +1696,11 @@ export function startPractice(root, block, opts) {
       }
       const sentBtn = stage.querySelector("#t-sent");
       if (sentBtn) sentBtn.onclick = () => setMode("sentence");
+      stage.querySelector("#t-more")?.addEventListener("click", () => {
+        newType();
+        render();
+      });
+      stage.querySelector("#t-quiz")?.addEventListener("click", () => setMode("quiz"));
       stage.querySelector("#t-sent-map")?.addEventListener("click", () => {
         clearKey();
         opts.onExit();
@@ -1556,12 +1731,15 @@ export function startPractice(root, block, opts) {
       ? "Fill the missing English word · Enter = check / next"
       : "Write in English · Enter = check / next";
     const passLabel = t.retryPass ? "retry" : "set";
+    const clue =
+      !frame && quizList().length > DEFAULT_PASS ? typeLetterClue(answer) : "";
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
         ${frame && it.cz ? `<div class="sub" style="margin-bottom:0.35rem">${escapeHtml(it.cz)}</div>` : ""}
         <div class="prompt prompt-gap">${frame ? "" : sw(prompt)}${escapeHtml(prompt)}</div>
         <div class="sub">${sub}</div>
+        ${clue ? `<div class="type-clue">${escapeHtml(clue)}</div>` : ""}
         <input class="type-in" id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here…" />
         <div class="fb" id="tfb"></div>
         <div class="nav"><button type="button" class="btn primary" id="chk">Check</button></div>

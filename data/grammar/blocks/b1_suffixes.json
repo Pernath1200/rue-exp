@@ -1,78 +1,117 @@
 {
   "id": "b1_suffixes",
-  "title": "Suffixes — the basics",
+  "title": "Word Formation: Suffixes",
   "level": "B1",
   "tree_node": "b1_suffixes",
   "codex_unit": "V_WFM-B1B2-01",
   "kind": "word_formation",
   "practice": "grammar",
-  "note": "B1 tranche of the affix programme (James, 2026-08-18: all the basics covered by end of B1). Czech glosses on items — display only, grading stays root_word exact. 6 blocks × 12.",
+  "note": "Rewrite 2026-08-30 from Spec_Word-Formation-Suffixes_B1. Core 8: -er/-or, -tion, -ment, -ness, -ful, -less, -able, -ly. Match = suffix→job (tion/ment/ness share noun-maker). Quiz 12 · Type 12 FCE clozes · Use 12 error-correction (E7).",
   "default_direction": "en_gap",
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "type_order": "as_authored",
   "check": {
     "sequence": [
+      "match",
       "quiz"
     ]
-  },
-  "ladder": {
-    "match": false,
-    "use": false
   },
   "quality": "good_draft",
   "intro": {
     "cards": [
       {
-        "title": "What a suffix does",
+        "title": "Word Formation: Suffixes",
+        "title_cz": "Tvoření slov: přípony",
         "points": [
-          "The sentence tells you which class you need.",
-          "Type the whole new word, not just the ending.",
-          "A suffix is an ending that changes the WORD CLASS"
+          "A **suffix** is an ending that changes the word's job.",
+          "A prefix changes meaning. This lesson is suffixes."
         ],
+        "svg": "<svg viewBox=\"0 0 520 168\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"28\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"98\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" font-weight=\"600\">PREFIX</text>\n  <text x=\"98\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">un</text>\n  <rect x=\"190\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">ROOT</text>\n  <text x=\"260\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">help</text>\n  <rect x=\"352\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"422\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" font-weight=\"600\">SUFFIX</text>\n  <text x=\"422\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">ful</text>\n  <line x1=\"260\" y1=\"80\" x2=\"260\" y2=\"108\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <polygon points=\"260,114 255,104 265,104\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"260\" y=\"150\" text-anchor=\"middle\" font-size=\"22\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">unhelpful</text>\n</svg>",
+        "ref": {
+          "tab": "wordform",
+          "label": "Full prefix and suffix tables"
+        }
+      },
+      {
+        "title": "One root, four jobs",
+        "title_cz": "Jeden kořen, čtyři role",
+        "points": [
+          "The same root does different jobs with different suffixes."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 200\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"196\" y=\"78\" width=\"128\" height=\"44\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">help</text>\n  <line x1=\"260\" y1=\"78\" x2=\"260\" y2=\"44\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"324\" y1=\"100\" x2=\"430\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"260\" y1=\"122\" x2=\"260\" y2=\"156\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"196\" y1=\"100\" x2=\"90\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">help (verb)</text>\n  <text x=\"470\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helper</text>\n  <text x=\"470\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">noun</text>\n  <text x=\"260\" y=\"176\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helpful</text>\n  <text x=\"260\" y=\"194\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">adjective</text>\n  <text x=\"50\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helpfully</text>\n  <text x=\"50\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">adverb</text>\n</svg>",
         "table": {
           "headers": [
-            "",
-            ""
+            "Root",
+            "New word"
           ],
           "rows": [
             [
-              "teach (verb)",
-              "teacher (person), happy (adjective) → happiness (noun), quick (adjective) → quickly (adverb)."
+              "help (verb)",
+              "**helper** (noun)"
+            ],
+            [
+              "help",
+              "**helpful** (adjective)"
+            ],
+            [
+              "helpful",
+              "**helpfully** (adverb)"
             ]
           ]
         }
       },
       {
-        "title": "People: -er / -or / -ist",
+        "title": "Noun makers 1: -er / -or",
+        "title_cz": "Přípony osob: -er / -or",
+        "points": [
+          "The person or thing that does the action."
+        ],
         "table": {
           "headers": [
-            "Verb / Noun",
+            "Root",
             "Person"
           ],
           "rows": [
             [
               "teach",
-              "teacher"
-            ],
-            [
-              "drive",
-              "driver"
+              "**teacher**"
             ],
             [
               "act",
-              "actor"
+              "**actor**"
             ],
             [
-              "art",
-              "artist"
+              "manage",
+              "**manager**"
             ]
           ]
         },
-        "points": [
-          "-er is the everyday one; -or appears on Latin-style verbs (actor, visitor, inventor).",
-          "-ist often means a professional or specialist: artist, scientist, tourist."
+        "tables": [
+          {
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~cooker~~ for a person",
+                "**cook** is the person"
+              ],
+              [
+                "~~a cook machine~~",
+                "a **cooker** is a machine"
+              ]
+            ]
+          }
         ]
       },
       {
-        "title": "Nouns: -tion / -ment / -ness",
+        "title": "Noun makers 2: -tion / -ment",
+        "title_cz": "Přípony: -tion / -ment",
+        "points": [
+          "These make nouns for actions and results."
+        ],
         "table": {
           "headers": [
             "Root",
@@ -81,1178 +120,664 @@
           "rows": [
             [
               "inform",
-              "information"
+              "informa**tion**"
             ],
             [
               "decide",
-              "decision"
+              "deci**sion**"
             ],
             [
-              "pay",
-              "payment"
+              "develop",
+              "develop**ment**"
             ],
             [
-              "kind",
-              "kindness"
+              "improve",
+              "improve**ment**"
             ]
           ]
-        },
-        "points": [
-          "-tion / -sion for actions and results — watch the stem: decide → decision, permit → permission.",
-          "-ness turns adjectives into feelings and qualities: sad → sadness, ill → illness."
-        ]
+        }
       },
       {
-        "title": "Adjectives and adverbs",
+        "title": "Noun maker 3: -ness",
+        "title_cz": "Přípona -ness",
+        "points": [
+          "A quality, made from an adjective.",
+          "Spelling: **y** → **i** (happy → happi**ness**)."
+        ],
+        "table": {
+          "headers": [
+            "Adjective",
+            "Noun"
+          ],
+          "rows": [
+            [
+              "kind",
+              "**kindness**"
+            ],
+            [
+              "ill",
+              "**illness**"
+            ],
+            [
+              "happy",
+              "**happiness**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Adjective makers: -ful, -less, -able",
+        "title_cz": "Přípony přídavných jmen",
+        "points": [
+          "**-ful** = with. **-less** = without. **-able** = can be."
+        ],
+        "svg": "<svg viewBox=\"0 0 520 110\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"90\" y=\"58\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">careful</text>\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">with</text>\n  <line x1=\"160\" y1=\"52\" x2=\"360\" y2=\"52\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <polygon points=\"160,52 170,47 170,57\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <polygon points=\"360,52 350,47 350,57\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"260\" y=\"42\" text-anchor=\"middle\" font-size=\"16\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">care</text>\n  <text x=\"430\" y=\"58\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">careless</text>\n  <text x=\"430\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">without</text>\n</svg>",
         "table": {
           "headers": [
             "Root",
-            "New word"
+            "Adjectives"
           ],
           "rows": [
             [
               "care",
-              "careful / careless"
+              "**careful** / **careless**"
             ],
             [
-              "sun",
-              "sunny"
+              "use",
+              "**useful** / **useless**"
             ],
             [
-              "danger",
-              "dangerous"
+              "enjoy",
+              "**enjoyable**"
             ],
+            [
+              "rely",
+              "**reliable**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Adverb maker: -ly",
+        "title_cz": "Přípona -ly",
+        "points": [
+          "How something is done. Spelling: **y** → **i**."
+        ],
+        "table": {
+          "headers": [
+            "Adjective",
+            "Adverb"
+          ],
+          "rows": [
             [
               "quick",
-              "quickly"
+              "**quickly**"
+            ],
+            [
+              "careful",
+              "**carefully**"
+            ],
+            [
+              "easy",
+              "**easily**"
             ]
           ]
         },
-        "points": [
-          "-ful = with it, -less = without it: careful / careless.",
-          "-y makes weather and everyday adjectives: sunny, rainy, dirty.",
-          "-ly makes adverbs: quick → quickly, happy → happily (y → i)."
+        "tables": [
+          {
+            "headers": [
+              "Not",
+              "Say"
+            ],
+            "rows": [
+              [
+                "~~friendly~~ as an adverb",
+                "**friendly** is an adjective"
+              ],
+              [
+                "~~lovely, lonely~~ as adverbs",
+                "same: they are adjectives"
+              ]
+            ]
+          }
         ]
+      },
+      {
+        "title": "Ask: what job?",
+        "title_cz": "Jakou má to slovo roli?",
+        "points": [
+          "Before you write the word, ask: what job does it do?"
+        ],
+        "table": {
+          "headers": [
+            "Suffix",
+            "Job"
+          ],
+          "rows": [
+            [
+              "**-er / -or**",
+              "person or thing that does the action · noun"
+            ],
+            [
+              "**-tion** · **-ment** · **-ness**",
+              "turns a word into a noun · noun"
+            ],
+            [
+              "**-ful**",
+              "with, full of · adj"
+            ],
+            [
+              "**-less**",
+              "without · adj"
+            ],
+            [
+              "**-able**",
+              "can be done · adj"
+            ],
+            [
+              "**-ly**",
+              "how something is done · adv"
+            ]
+          ]
+        }
       }
     ]
   },
   "blocks": [
     {
-      "id": "sfx_people",
-      "title": "People: -er / -or / -ist",
+      "id": "sfx_jobs",
+      "title": "Suffix → job",
+      "check": {
+        "sequence": [
+          "match"
+        ]
+      },
       "items": [
         {
-          "en": "Our English teacher comes from London.",
-          "cz": "Náš učitel angličtiny pochází z Londýna.",
-          "gap": "Our English ____ comes from London.",
+          "en": "-er / -or",
+          "cz": "person or thing that does the action · noun",
+          "lemma": "-er / -or",
+          "use": false
+        },
+        {
+          "en": "-tion",
+          "cz": "turns a word into a noun · noun",
+          "lemma": "-tion",
+          "use": false
+        },
+        {
+          "en": "-ment",
+          "cz": "turns a word into a noun · noun",
+          "lemma": "-ment",
+          "use": false
+        },
+        {
+          "en": "-ness",
+          "cz": "turns a word into a noun · noun",
+          "lemma": "-ness",
+          "use": false
+        },
+        {
+          "en": "-ful",
+          "cz": "with, full of · adj",
+          "lemma": "-ful",
+          "use": false
+        },
+        {
+          "en": "-less",
+          "cz": "without · adj",
+          "lemma": "-less",
+          "use": false
+        },
+        {
+          "en": "-able",
+          "cz": "can be done · adj",
+          "lemma": "-able",
+          "use": false
+        },
+        {
+          "en": "-ly",
+          "cz": "how something is done · adv",
+          "lemma": "-ly",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "sfx_quiz",
+      "title": "Choose the form",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "My sister works as a teacher in a school.",
+          "gap": "My sister works as a ____ in a school.",
           "root": "TEACH",
           "gap_answer": "teacher",
           "quiz_options": [
             "teacher",
             "teaching",
-            "teachor",
-            "teecher"
+            "teachable"
           ],
-          "explanation": "The person who teaches: teach + -er.",
-          "explanation_cz": "Osoba, která učí: teach + -er."
+          "type": false,
+          "use": false,
+          "explanation": "The job is a person: **teach** + **-er** → **teacher**.",
+          "explanation_cz": "Jde o osobu: **teach** + **-er** → **teacher**."
         },
         {
-          "en": "The bus driver waited for us.",
-          "cz": "Řidič autobusu na nás počkal.",
-          "gap": "The bus ____ waited for us.",
-          "root": "DRIVE",
-          "gap_answer": "driver",
+          "en": "There was an improvement in salaries.",
+          "gap": "There was an ____ in salaries.",
+          "root": "IMPROVE",
+          "gap_answer": "improvement",
           "quiz_options": [
-            "driver",
-            "driving",
-            "drivor",
-            "driwer"
+            "improvement",
+            "improver",
+            "improving"
           ],
-          "explanation": "The person who drives: drive + -er (the e is already there).",
-          "explanation_cz": "Osoba, která řídí: drive + -er."
+          "type": false,
+          "use": false,
+          "explanation": "The result of getting better: **improve** + **-ment**.",
+          "explanation_cz": "Výsledek zlepšení: **improve** + **-ment**."
         },
         {
-          "en": "She wants to be a singer.",
-          "cz": "Chce být zpěvačkou.",
-          "gap": "She wants to be a ____.",
-          "root": "SING",
-          "gap_answer": "singer",
-          "quiz_options": [
-            "singer",
-            "singing",
-            "singor",
-            "singger"
-          ],
-          "explanation": "The person who sings: sing + -er.",
-          "explanation_cz": "Osoba, která zpívá: sing + -er."
-        },
-        {
-          "en": "He is a very good dancer.",
-          "cz": "Je velmi dobrý tanečník.",
-          "gap": "He is a very good ____.",
-          "root": "DANCE",
-          "gap_answer": "dancer",
-          "quiz_options": [
-            "dancer",
-            "dancing",
-            "dancor",
-            "danser"
-          ],
-          "explanation": "The person who dances: dance + -er.",
-          "explanation_cz": "Osoba, která tančí: dance + -er."
-        },
-        {
-          "en": "Every worker in the factory gets a break at noon.",
-          "cz": "Každý dělník v továrně má v poledne přestávku.",
-          "gap": "Every ____ in the factory gets a break at noon.",
-          "root": "WORK",
-          "gap_answer": "worker",
-          "quiz_options": [
-            "worker",
-            "working",
-            "workor",
-            "worcer"
-          ],
-          "explanation": "The person who works: work + -er.",
-          "explanation_cz": "Osoba, která pracuje: work + -er."
-        },
-        {
-          "en": "The builder finished the wall in two days.",
-          "cz": "Stavitel dokončil zeď za dva dny.",
-          "gap": "The ____ finished the wall in two days.",
-          "root": "BUILD",
-          "gap_answer": "builder",
-          "quiz_options": [
-            "builder",
-            "building",
-            "buildor",
-            "bilder"
-          ],
-          "explanation": "The person who builds: build + -er. A building is the thing.",
-          "explanation_cz": "Osoba, která staví: build + -er. Building = budova."
-        },
-        {
-          "en": "Every visitor must sign at the entrance.",
-          "cz": "Každý návštěvník se musí u vchodu zapsat.",
-          "gap": "Every ____ must sign at the entrance.",
-          "root": "VISIT",
-          "gap_answer": "visitor",
-          "quiz_options": [
-            "visitor",
-            "visiting",
-            "visiter",
-            "vizitor"
-          ],
-          "explanation": "-or, not -er: visit → visitor.",
-          "explanation_cz": "Tady -or, ne -er: visit → visitor."
-        },
-        {
-          "en": "My favourite actor is in this film.",
-          "cz": "V tomto filmu hraje můj oblíbený herec.",
-          "gap": "My favourite ____ is in this film.",
-          "root": "ACT",
-          "gap_answer": "actor",
-          "quiz_options": [
-            "actor",
-            "acting",
-            "acter",
-            "aktor"
-          ],
-          "explanation": "-or: act → actor.",
-          "explanation_cz": "-or: act → actor (herec)."
-        },
-        {
-          "en": "The inventor of the telephone was Bell.",
-          "cz": "Vynálezcem telefonu byl Bell.",
-          "gap": "The ____ of the telephone was Bell.",
-          "root": "INVENT",
-          "gap_answer": "inventor",
-          "quiz_options": [
-            "inventor",
-            "invention",
-            "inventer",
-            "inwentor"
-          ],
-          "explanation": "The person is the inventor; the thing invented is the invention.",
-          "explanation_cz": "Osoba = inventor; věc = invention (vynález)."
-        },
-        {
-          "en": "The artist painted the old bridge.",
-          "cz": "Umělec namaloval starý most.",
-          "gap": "The ____ painted the old bridge.",
-          "root": "ART",
-          "gap_answer": "artist",
-          "quiz_options": [
-            "artist",
-            "artistic",
-            "artest",
-            "artis"
-          ],
-          "explanation": "-ist = the person: art → artist.",
-          "explanation_cz": "-ist = osoba: art → artist (umělec)."
-        },
-        {
-          "en": "A scientist works in this laboratory.",
-          "cz": "V této laboratoři pracuje vědec.",
-          "gap": "A ____ works in this laboratory.",
-          "root": "SCIENCE",
-          "gap_answer": "scientist",
-          "quiz_options": [
-            "scientist",
-            "scientific",
-            "sientist",
-            "scientest"
-          ],
-          "explanation": "-ist = the person: science → scientist.",
-          "explanation_cz": "-ist = osoba: science → scientist (vědec)."
-        },
-        {
-          "en": "A tourist asked me the way to the castle.",
-          "cz": "Turista se mě zeptal na cestu k hradu.",
-          "gap": "A ____ asked me the way to the castle.",
-          "root": "TOUR",
-          "gap_answer": "tourist",
-          "quiz_options": [
-            "tourist",
-            "touring",
-            "turist",
-            "tourest"
-          ],
-          "explanation": "-ist = the person: tour → tourist.",
-          "explanation_cz": "-ist = osoba: tour → tourist (turista)."
-        }
-      ]
-    },
-    {
-      "id": "sfx_tion",
-      "title": "Nouns: -tion / -sion",
-      "items": [
-        {
-          "en": "The office gives information about the town.",
-          "cz": "Kancelář podává informace o městě.",
-          "gap": "The office gives ____ about the town.",
-          "root": "INFORM",
-          "gap_answer": "information",
-          "quiz_options": [
-            "information",
-            "informed",
-            "informacion",
-            "informasion"
-          ],
-          "explanation": "Verb → noun: inform → information.",
-          "explanation_cz": "Sloveso → podstatné jméno: inform → information."
-        },
-        {
-          "en": "I got an invitation to the wedding.",
-          "cz": "Dostal jsem pozvánku na svatbu.",
-          "gap": "I got an ____ to the wedding.",
-          "root": "INVITE",
-          "gap_answer": "invitation",
-          "quiz_options": [
-            "invitation",
-            "invited",
-            "invitacion",
-            "invitasion"
-          ],
-          "explanation": "invite → invitation: the e goes, -ation comes.",
-          "explanation_cz": "invite → invitation: e zmizí, přidá se -ation."
-        },
-        {
-          "en": "A good education is important for children.",
-          "cz": "Dobré vzdělání je pro děti důležité.",
-          "gap": "A good ____ is important for children.",
-          "root": "EDUCATE",
-          "gap_answer": "education",
-          "quiz_options": [
-            "education",
-            "educated",
-            "educacion",
-            "educasion"
-          ],
-          "explanation": "educate → education.",
-          "explanation_cz": "educate → education (vzdělání)."
-        },
-        {
-          "en": "The celebration lasted all night.",
-          "cz": "Oslava trvala celou noc.",
-          "gap": "The ____ lasted all night.",
-          "root": "CELEBRATE",
-          "gap_answer": "celebration",
-          "quiz_options": [
-            "celebration",
-            "celebrated",
-            "celebracion",
-            "celebrasion"
-          ],
-          "explanation": "celebrate → celebration.",
-          "explanation_cz": "celebrate → celebration (oslava)."
-        },
-        {
-          "en": "It was a difficult decision.",
-          "cz": "Bylo to těžké rozhodnutí.",
-          "gap": "It was a difficult ____.",
-          "root": "DECIDE",
-          "gap_answer": "decision",
-          "quiz_options": [
-            "decision",
-            "decided",
-            "decission",
-            "decizion"
-          ],
-          "explanation": "Stem change: decide → decision, with -sion.",
-          "explanation_cz": "Změna kmene: decide → decision."
-        },
-        {
-          "en": "We had a long discussion about money.",
-          "cz": "Vedli jsme dlouhou diskusi o penězích.",
-          "gap": "We had a long ____ about money.",
-          "root": "DISCUSS",
-          "gap_answer": "discussion",
-          "quiz_options": [
-            "discussion",
-            "discussed",
-            "discusion",
-            "diskussion"
-          ],
-          "explanation": "discuss → discussion.",
-          "explanation_cz": "discuss → discussion (diskuse)."
-        },
-        {
-          "en": "Her translation of the letter was perfect.",
-          "cz": "Její překlad dopisu byl dokonalý.",
-          "gap": "Her ____ of the letter was perfect.",
-          "root": "TRANSLATE",
-          "gap_answer": "translation",
-          "quiz_options": [
-            "translation",
-            "translated",
-            "translacion",
-            "translasion"
-          ],
-          "explanation": "translate → translation.",
-          "explanation_cz": "translate → translation (překlad)."
-        },
-        {
-          "en": "Give the police a description of the man.",
-          "cz": "Podejte policii popis toho muže.",
-          "gap": "Give the police a ____ of the man.",
-          "root": "DESCRIBE",
-          "gap_answer": "description",
-          "quiz_options": [
-            "description",
-            "described",
-            "descripcion",
-            "discription"
-          ],
-          "explanation": "Big stem change: describe → description.",
-          "explanation_cz": "Velká změna kmene: describe → description."
-        },
-        {
-          "en": "I made a reservation for two people.",
-          "cz": "Udělal jsem rezervaci pro dva.",
-          "gap": "I made a ____ for two people.",
-          "root": "RESERVE",
-          "gap_answer": "reservation",
-          "quiz_options": [
-            "reservation",
-            "reserved",
-            "reservacion",
-            "rezervation"
-          ],
-          "explanation": "reserve → reservation.",
-          "explanation_cz": "reserve → reservation (rezervace)."
-        },
-        {
-          "en": "Air pollution is a big problem here.",
-          "cz": "Znečištění ovzduší je tu velký problém.",
-          "gap": "Air ____ is a big problem here.",
-          "root": "POLLUTE",
-          "gap_answer": "pollution",
-          "quiz_options": [
-            "pollution",
-            "polluted",
-            "polution",
-            "pollucion"
-          ],
-          "explanation": "pollute → pollution.",
-          "explanation_cz": "pollute → pollution (znečištění)."
-        },
-        {
-          "en": "You need permission to park here.",
-          "cz": "K parkování tady potřebujete povolení.",
-          "gap": "You need ____ to park here.",
-          "root": "PERMIT",
-          "gap_answer": "permission",
-          "quiz_options": [
-            "permission",
-            "permitted",
-            "permision",
-            "permition"
-          ],
-          "explanation": "Stem change: permit → permission.",
-          "explanation_cz": "Změna kmene: permit → permission (povolení)."
-        },
-        {
-          "en": "Grandfather had an operation on his knee.",
-          "cz": "Dědeček měl operaci kolena.",
-          "gap": "Grandfather had an ____ on his knee.",
-          "root": "OPERATE",
-          "gap_answer": "operation",
-          "quiz_options": [
-            "operation",
-            "operated",
-            "operacion",
-            "operasion"
-          ],
-          "explanation": "operate → operation.",
-          "explanation_cz": "operate → operation (operace)."
-        }
-      ]
-    },
-    {
-      "id": "sfx_ment_ness",
-      "title": "Nouns: -ment / -ness",
-      "items": [
-        {
-          "en": "The government changed the law.",
-          "cz": "Vláda změnila zákon.",
-          "gap": "The ____ changed the law.",
-          "root": "GOVERN",
-          "gap_answer": "government",
-          "quiz_options": [
-            "government",
-            "governed",
-            "goverment",
-            "governement"
-          ],
-          "explanation": "govern → government — don't lose the middle n.",
-          "explanation_cz": "govern → government — pozor na n uprostřed."
-        },
-        {
-          "en": "We watched the slow movement of the clouds.",
-          "cz": "Sledovali jsme pomalý pohyb mraků.",
-          "gap": "We watched the slow ____ of the clouds.",
-          "root": "MOVE",
-          "gap_answer": "movement",
-          "quiz_options": [
-            "movement",
-            "moving",
-            "movment",
-            "movemant"
-          ],
-          "explanation": "move → movement.",
-          "explanation_cz": "move → movement (pohyb)."
-        },
-        {
-          "en": "The development of the city centre took years.",
-          "cz": "Rozvoj centra města trval roky.",
-          "gap": "The ____ of the city centre took years.",
-          "root": "DEVELOP",
-          "gap_answer": "development",
-          "quiz_options": [
-            "development",
-            "developed",
-            "developement",
-            "developmant"
-          ],
-          "explanation": "develop → development.",
-          "explanation_cz": "develop → development (rozvoj)."
-        },
-        {
-          "en": "You can make the payment by card.",
-          "cz": "Platbu můžete provést kartou.",
-          "gap": "You can make the ____ by card.",
-          "root": "PAY",
-          "gap_answer": "payment",
-          "quiz_options": [
-            "payment",
-            "paid",
-            "payement",
-            "paiment"
-          ],
-          "explanation": "pay → payment.",
-          "explanation_cz": "pay → payment (platba)."
-        },
-        {
-          "en": "The camping equipment is in the car.",
-          "cz": "Kempinkové vybavení je v autě.",
-          "gap": "The camping ____ is in the car.",
-          "root": "EQUIP",
-          "gap_answer": "equipment",
-          "quiz_options": [
-            "equipment",
-            "equipped",
-            "equipement",
-            "equipmant"
-          ],
-          "explanation": "equip → equipment (uncountable — no plural).",
-          "explanation_cz": "equip → equipment (vybavení — nepočitatelné)."
-        },
-        {
-          "en": "She sang for pure enjoyment.",
-          "cz": "Zpívala pro čistou radost.",
-          "gap": "She sang for pure ____.",
-          "root": "ENJOY",
-          "gap_answer": "enjoyment",
-          "quiz_options": [
-            "enjoyment",
-            "enjoyed",
-            "injoyment",
-            "enjoyement"
-          ],
-          "explanation": "enjoy → enjoyment.",
-          "explanation_cz": "enjoy → enjoyment (radost, potěšení)."
-        },
-        {
-          "en": "There was sadness in his voice.",
-          "cz": "V jeho hlase byl smutek.",
-          "gap": "There was ____ in his voice.",
-          "root": "SAD",
-          "gap_answer": "sadness",
-          "quiz_options": [
-            "sadness",
-            "sad",
-            "sadnes",
-            "sadeness"
-          ],
-          "explanation": "Adjective → noun: sad → sadness.",
-          "explanation_cz": "Přídavné jméno → podstatné: sad → sadness (smutek)."
-        },
-        {
-          "en": "She missed school because of illness.",
-          "cz": "Chyběla ve škole kvůli nemoci.",
-          "gap": "She missed school because of ____.",
-          "root": "ILL",
-          "gap_answer": "illness",
-          "quiz_options": [
-            "illness",
-            "ill",
-            "ilness",
-            "illnes"
-          ],
-          "explanation": "ill → illness. After 'because of' you need a noun.",
-          "explanation_cz": "ill → illness (nemoc). Po 'because of' musí být podstatné jméno."
-        },
-        {
-          "en": "The room was in complete darkness.",
-          "cz": "Místnost byla v úplné tmě.",
-          "gap": "The room was in complete ____.",
-          "root": "DARK",
-          "gap_answer": "darkness",
-          "quiz_options": [
-            "darkness",
-            "dark",
-            "darknes",
-            "darkeness"
-          ],
-          "explanation": "dark → darkness.",
-          "explanation_cz": "dark → darkness (tma)."
-        },
-        {
-          "en": "Thank you for your kindness.",
-          "cz": "Děkuji za vaši laskavost.",
-          "gap": "Thank you for your ____.",
-          "root": "KIND",
-          "gap_answer": "kindness",
-          "quiz_options": [
-            "kindness",
-            "kind",
-            "kindnes",
-            "kindeness"
-          ],
-          "explanation": "kind → kindness.",
-          "explanation_cz": "kind → kindness (laskavost)."
-        },
-        {
-          "en": "Running is good for your fitness.",
-          "cz": "Běhání je dobré pro vaši kondici.",
-          "gap": "Running is good for your ____.",
-          "root": "FIT",
-          "gap_answer": "fitness",
-          "quiz_options": [
-            "fitness",
-            "fit",
-            "fitnes",
-            "fittness"
-          ],
-          "explanation": "fit → fitness.",
-          "explanation_cz": "fit → fitness (kondice)."
-        },
-        {
-          "en": "He thanked them with great politeness.",
-          "cz": "Poděkoval jim s velkou zdvořilostí.",
-          "gap": "He thanked them with great ____.",
-          "root": "POLITE",
-          "gap_answer": "politeness",
-          "quiz_options": [
-            "politeness",
-            "polite",
-            "politenes",
-            "politnes"
-          ],
-          "explanation": "polite → politeness. After 'with great' you need a noun.",
-          "explanation_cz": "polite → politeness (zdvořilost). Po 'with great' podstatné jméno."
-        }
-      ]
-    },
-    {
-      "id": "sfx_ful_less_y",
-      "title": "Adjectives: -ful / -less / -y",
-      "items": [
-        {
-          "en": "Be careful on the wet floor!",
-          "cz": "Na mokré podlaze buď opatrný!",
-          "gap": "Be ____ on the wet floor!",
-          "root": "CARE",
-          "gap_answer": "careful",
-          "quiz_options": [
-            "careful",
-            "careless",
-            "carefull",
-            "carfull"
-          ],
-          "explanation": "-ful = full of care. A warning asks for care, not the lack of it.",
-          "explanation_cz": "-ful = plný péče, opatrný. Varování žádá opatrnost."
-        },
-        {
-          "en": "This app is very useful for learning.",
-          "cz": "Tahle aplikace je pro učení velmi užitečná.",
-          "gap": "This app is very ____ for learning.",
-          "root": "USE",
-          "gap_answer": "useful",
-          "quiz_options": [
-            "useful",
-            "useless",
-            "usefull",
-            "usful"
-          ],
-          "explanation": "-ful = it helps; -less would mean it doesn't.",
-          "explanation_cz": "-ful = užitečný; -less by znamenal k ničemu."
-        },
-        {
-          "en": "She wore a colourful dress.",
-          "cz": "Měla na sobě barevné šaty.",
-          "gap": "She wore a ____ dress.",
-          "root": "COLOUR",
-          "gap_answer": "colourful",
-          "gap_accepts": [
-            "colorful"
-          ],
-          "quiz_options": [
-            "colourful",
-            "colourless",
-            "colourfull",
-            "colorfull"
-          ],
-          "explanation": "colour → colourful (US colorful — both accepted).",
-          "explanation_cz": "colour → colourful (barevný; americky colorful)."
-        },
-        {
-          "en": "The view from the tower is beautiful.",
-          "cz": "Výhled z věže je krásný.",
-          "gap": "The view from the tower is ____.",
-          "root": "BEAUTY",
-          "gap_answer": "beautiful",
-          "quiz_options": [
-            "beautiful",
-            "beautifully",
-            "beautifull",
-            "beutiful"
-          ],
-          "explanation": "beauty → beautiful: y → i, then -ful.",
-          "explanation_cz": "beauty → beautiful: y → i, pak -ful."
-        },
-        {
-          "en": "The journey home seemed endless.",
-          "cz": "Cesta domů se zdála nekonečná.",
-          "gap": "The journey home seemed ____.",
-          "root": "END",
-          "gap_answer": "endless",
-          "quiz_options": [
-            "endless",
-            "ending",
-            "endles",
-            "endlless"
-          ],
-          "explanation": "-less = without an end.",
-          "explanation_cz": "-less = bez konce, nekonečný."
-        },
-        {
-          "en": "The charity helps homeless people.",
-          "cz": "Charita pomáhá lidem bez domova.",
-          "gap": "The charity helps ____ people.",
-          "root": "HOME",
-          "gap_answer": "homeless",
-          "quiz_options": [
-            "homeless",
-            "homely",
-            "homeles",
-            "homless"
-          ],
-          "explanation": "-less = without a home.",
-          "explanation_cz": "-less = bez domova."
-        },
-        {
-          "en": "It was a sunny morning.",
-          "cz": "Bylo slunečné ráno.",
-          "gap": "It was a ____ morning.",
-          "root": "SUN",
-          "gap_answer": "sunny",
-          "quiz_options": [
-            "sunny",
-            "sun",
-            "suny",
-            "sunney"
-          ],
-          "explanation": "Noun → adjective with -y; the n doubles: sun → sunny.",
-          "explanation_cz": "-y dělá přídavné jméno; n se zdvojí: sun → sunny."
-        },
-        {
-          "en": "We stayed inside all the rainy weekend.",
-          "cz": "Celý deštivý víkend jsme zůstali uvnitř.",
-          "gap": "We stayed inside all the ____ weekend.",
-          "root": "RAIN",
-          "gap_answer": "rainy",
-          "quiz_options": [
-            "rainy",
-            "rain",
-            "rainny",
-            "rany"
-          ],
-          "explanation": "rain → rainy.",
-          "explanation_cz": "rain → rainy (deštivý)."
-        },
-        {
-          "en": "It is too windy for the boat trip.",
-          "cz": "Na výlet lodí je příliš větrno.",
-          "gap": "It is too ____ for the boat trip.",
-          "root": "WIND",
-          "gap_answer": "windy",
-          "quiz_options": [
-            "windy",
-            "wind",
-            "windi",
-            "windey"
-          ],
-          "explanation": "wind → windy.",
-          "explanation_cz": "wind → windy (větrný, větrno)."
-        },
-        {
-          "en": "My shoes are dirty from the garden.",
-          "cz": "Boty mám špinavé ze zahrady.",
-          "gap": "My shoes are ____ from the garden.",
-          "root": "DIRT",
-          "gap_answer": "dirty",
-          "quiz_options": [
-            "dirty",
-            "dirt",
-            "durty",
-            "dirtey"
-          ],
-          "explanation": "dirt → dirty.",
-          "explanation_cz": "dirt → dirty (špinavý)."
-        },
-        {
-          "en": "You were lucky to catch the train.",
-          "cz": "Měl jsi štěstí, že jsi stihl vlak.",
-          "gap": "You were ____ to catch the train.",
-          "root": "LUCK",
-          "gap_answer": "lucky",
-          "quiz_options": [
-            "lucky",
-            "luck",
-            "luckey",
-            "lucki"
-          ],
-          "explanation": "luck → lucky.",
-          "explanation_cz": "luck → lucky (mít štěstí)."
-        },
-        {
-          "en": "The baby looked sleepy after lunch.",
-          "cz": "Miminko vypadalo po obědě ospale.",
-          "gap": "The baby looked ____ after lunch.",
-          "root": "SLEEP",
-          "gap_answer": "sleepy",
-          "quiz_options": [
-            "sleepy",
-            "sleeping",
-            "slepy",
-            "sleapy"
-          ],
-          "explanation": "sleep → sleepy.",
-          "explanation_cz": "sleep → sleepy (ospalý)."
-        }
-      ]
-    },
-    {
-      "id": "sfx_able_ous_al",
-      "title": "Adjectives: -able / -ous / -al",
-      "items": [
-        {
-          "en": "This chair is really comfortable.",
-          "cz": "Tahle židle je opravdu pohodlná.",
-          "gap": "This chair is really ____.",
-          "root": "COMFORT",
-          "gap_answer": "comfortable",
-          "quiz_options": [
-            "comfortable",
-            "comfort",
-            "comfortible",
-            "comftable"
-          ],
-          "explanation": "comfort → comfortable.",
-          "explanation_cz": "comfort → comfortable (pohodlný)."
-        },
-        {
-          "en": "It was an enjoyable evening.",
-          "cz": "Byl to příjemný večer.",
-          "gap": "It was an ____ evening.",
-          "root": "ENJOY",
-          "gap_answer": "enjoyable",
-          "quiz_options": [
-            "enjoyable",
-            "enjoyment",
-            "enjoyible",
-            "injoyable"
-          ],
-          "explanation": "-able = you can enjoy it.",
-          "explanation_cz": "-able = dá se to užít, příjemný."
-        },
-        {
-          "en": "Is the water here drinkable?",
-          "cz": "Je zdejší voda pitná?",
-          "gap": "Is the water here ____?",
-          "root": "DRINK",
-          "gap_answer": "drinkable",
-          "quiz_options": [
-            "drinkable",
-            "drinking",
-            "drinkible",
-            "drinkeble"
-          ],
-          "explanation": "-able = you can drink it.",
-          "explanation_cz": "-able = dá se pít, pitná."
-        },
-        {
-          "en": "The jacket is washable at 30 degrees.",
-          "cz": "Bunda se dá prát na 30 stupňů.",
-          "gap": "The jacket is ____ at 30 degrees.",
-          "root": "WASH",
-          "gap_answer": "washable",
-          "quiz_options": [
-            "washable",
-            "washing",
-            "washible",
-            "washeble"
-          ],
-          "explanation": "-able = you can wash it.",
-          "explanation_cz": "-able = dá se prát."
-        },
-        {
-          "en": "The old house looks mysterious at night.",
-          "cz": "Starý dům vypadá v noci tajemně.",
-          "gap": "The old house looks ____ at night.",
-          "root": "MYSTERY",
-          "gap_answer": "mysterious",
-          "quiz_options": [
-            "mysterious",
-            "mystery",
-            "mysteriouse",
-            "misterious"
-          ],
-          "explanation": "mystery → mysterious: y → i, then -ous.",
-          "explanation_cz": "mystery → mysterious: y → i, pak -ous."
-        },
-        {
-          "en": "I always feel nervous before a test.",
-          "cz": "Před testem jsem vždycky nervózní.",
-          "gap": "I always feel ____ before a test.",
-          "root": "NERVE",
-          "gap_answer": "nervous",
-          "quiz_options": [
-            "nervous",
-            "nerve",
-            "nervouse",
-            "nervos"
-          ],
-          "explanation": "nerve → nervous.",
-          "explanation_cz": "nerve → nervous (nervózní)."
-        },
-        {
-          "en": "She comes from a very musical family.",
-          "cz": "Pochází z velmi muzikální rodiny.",
-          "gap": "She comes from a very ____ family.",
-          "root": "MUSIC",
-          "gap_answer": "musical",
-          "quiz_options": [
-            "musical",
-            "music",
-            "muzical",
-            "musicall"
-          ],
-          "explanation": "music → musical.",
-          "explanation_cz": "music → musical (muzikální)."
-        },
-        {
-          "en": "We cooked a traditional Czech dinner.",
-          "cz": "Uvařili jsme tradiční českou večeři.",
-          "gap": "We cooked a ____ Czech dinner.",
-          "root": "TRADITION",
-          "gap_answer": "traditional",
-          "quiz_options": [
-            "traditional",
-            "tradition",
-            "tradicional",
-            "traditionall"
-          ],
-          "explanation": "tradition → traditional.",
-          "explanation_cz": "tradition → traditional (tradiční)."
-        },
-        {
-          "en": "This is my personal opinion.",
-          "cz": "To je můj osobní názor.",
-          "gap": "This is my ____ opinion.",
-          "root": "PERSON",
-          "gap_answer": "personal",
-          "quiz_options": [
-            "personal",
-            "person",
-            "personall",
-            "persenal"
-          ],
-          "explanation": "person → personal.",
-          "explanation_cz": "person → personal (osobní)."
-        },
-        {
-          "en": "He is a professional football player.",
-          "cz": "Je profesionální fotbalista.",
-          "gap": "He is a ____ football player.",
-          "root": "PROFESSION",
-          "gap_answer": "professional",
-          "quiz_options": [
-            "professional",
-            "profession",
-            "profesional",
-            "proffessional"
-          ],
-          "explanation": "profession → professional.",
-          "explanation_cz": "profession → professional (profesionální)."
-        },
-        {
-          "en": "Her clothes are always fashionable.",
-          "cz": "Její oblečení je vždycky módní.",
-          "gap": "Her clothes are always ____.",
-          "root": "FASHION",
-          "gap_answer": "fashionable",
-          "quiz_options": [
-            "fashionable",
-            "fashion",
-            "fashionible",
-            "fashioneble"
-          ],
-          "explanation": "fashion → fashionable.",
-          "explanation_cz": "fashion → fashionable (módní)."
-        },
-        {
-          "en": "Some mushrooms here are poisonous.",
-          "cz": "Některé houby tady jsou jedovaté.",
-          "gap": "Some mushrooms here are ____.",
-          "root": "POISON",
-          "gap_answer": "poisonous",
-          "quiz_options": [
-            "poisonous",
-            "poison",
-            "poisonouse",
-            "poisonos"
-          ],
-          "explanation": "poison → poisonous.",
-          "explanation_cz": "poison → poisonous (jedovatý)."
-        }
-      ]
-    },
-    {
-      "id": "sfx_adverbs_mixed",
-      "title": "Adverbs -ly and mixed practice",
-      "items": [
-        {
-          "en": "She answered quickly.",
-          "cz": "Odpověděla rychle.",
-          "gap": "She answered ____.",
-          "root": "QUICK",
-          "gap_answer": "quickly",
-          "quiz_options": [
-            "quickly",
-            "quick",
-            "quickley",
-            "quicklly"
-          ],
-          "explanation": "Adverb describing the verb: quick → quickly.",
-          "explanation_cz": "Příslovce k slovesu: quick → quickly (rychle)."
-        },
-        {
-          "en": "Please close the door quietly.",
-          "cz": "Zavři prosím dveře potichu.",
-          "gap": "Please close the door ____.",
-          "root": "QUIET",
-          "gap_answer": "quietly",
-          "quiz_options": [
-            "quietly",
-            "quiet",
-            "quitely",
-            "quietley"
-          ],
-          "explanation": "quiet → quietly.",
-          "explanation_cz": "quiet → quietly (potichu)."
-        },
-        {
-          "en": "He played badly in the first half.",
-          "cz": "V prvním poločase hrál špatně.",
-          "gap": "He played ____ in the first half.",
-          "root": "BAD",
-          "gap_answer": "badly",
-          "quiz_options": [
-            "badly",
-            "bad",
-            "badley",
-            "badlly"
-          ],
-          "explanation": "bad → badly.",
-          "explanation_cz": "bad → badly (špatně)."
-        },
-        {
-          "en": "Read the instructions carefully.",
-          "cz": "Přečti si pokyny pečlivě.",
-          "gap": "Read the instructions ____.",
+          "en": "Please drive carefully — the roads are wet.",
+          "gap": "Please drive ____ — the roads are wet.",
           "root": "CARE",
           "gap_answer": "carefully",
           "quiz_options": [
             "carefully",
             "careful",
-            "carefuly",
-            "carefullly"
+            "careless"
           ],
-          "explanation": "Two steps: care → careful → carefully.",
-          "explanation_cz": "Dva kroky: care → careful → carefully (pečlivě)."
+          "type": false,
+          "use": false,
+          "explanation": "**Drive** needs how: the adverb **carefully**, not the adjective.",
+          "explanation_cz": "**Drive** chce způsob: příslovce **carefully**, ne přídavné jméno."
         },
         {
-          "en": "They lived happily for many years.",
-          "cz": "Žili šťastně mnoho let.",
-          "gap": "They lived ____ for many years.",
+          "en": "It's useless to argue with him — he never listens.",
+          "gap": "It's ____ to argue with him — he never listens.",
+          "root": "USE",
+          "gap_answer": "useless",
+          "quiz_options": [
+            "useless",
+            "useful",
+            "usefully"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "He never listens, so arguing has no use: **useless**.",
+          "explanation_cz": "Nikdy neposlouchá, takže hádka k ničemu: **useless**."
+        },
+        {
+          "en": "Thank you for your kindness.",
+          "gap": "Thank you for your ____.",
+          "root": "KIND",
+          "gap_answer": "kindness",
+          "quiz_options": [
+            "kindness",
+            "kindly",
+            "kinder"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "**Your** + a quality: **kind** + **-ness** → **kindness**.",
+          "explanation_cz": "**Your** + vlastnost: **kind** + **-ness** → **kindness**."
+        },
+        {
+          "en": "We need more information before we decide.",
+          "gap": "We need more ____ before we decide.",
+          "root": "INFORM",
+          "gap_answer": "information",
+          "quiz_options": [
+            "information",
+            "informative",
+            "informer"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "A noun for facts: **inform** → **information** (-tion).",
+          "explanation_cz": "Podstatné jméno pro fakta: **inform** → **information**."
+        },
+        {
+          "en": "My favourite actor is in this film.",
+          "gap": "My favourite ____ is in this film.",
+          "root": "ACT",
+          "gap_answer": "actor",
+          "quiz_options": [
+            "actor",
+            "action",
+            "active"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "The person who acts: **act** + **-or** → **actor**.",
+          "explanation_cz": "Osoba, která hraje: **act** + **-or** → **actor**."
+        },
+        {
+          "en": "Be careful with that glass. It is old.",
+          "gap": "Be ____ with that glass. It is old.",
+          "root": "CARE",
+          "gap_answer": "careful",
+          "quiz_options": [
+            "careful",
+            "careless",
+            "carefully"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "**Be** + adjective: **care** + **-ful**. Not the adverb.",
+          "explanation_cz": "**Be** + přídavné jméno: **care** + **-ful**. Ne příslovce."
+        },
+        {
+          "en": "The hotel room was clean and comfortable.",
+          "gap": "The hotel room was clean and ____.",
+          "root": "COMFORT",
+          "gap_answer": "comfortable",
+          "quiz_options": [
+            "comfortable",
+            "comfort",
+            "comfortably"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "**Clean and ____** needs an adjective: **comfort** + **-able**.",
+          "explanation_cz": "**Clean and ____** chce přídavné jméno: **comfort** + **-able**."
+        },
+        {
+          "en": "She is our new manager.",
+          "gap": "She is our new ____.",
+          "root": "MANAGE",
+          "gap_answer": "manager",
+          "quiz_options": [
+            "manager",
+            "management",
+            "manageable"
+          ],
+          "type": false,
+          "use": false,
+          "explanation": "**She** is a person: **manage** + **-er** → **manager**.",
+          "explanation_cz": "**She** je osoba: **manage** + **-er** → **manager**."
+        },
+        {
+          "en": "Work can bring you happiness.",
+          "gap": "Work can bring you ____.",
           "root": "HAPPY",
-          "gap_answer": "happily",
+          "gap_answer": "happiness",
           "quiz_options": [
+            "happiness",
             "happily",
-            "happy",
-            "happyly",
-            "hapily"
+            "happier"
           ],
-          "explanation": "y → i: happy → happily.",
-          "explanation_cz": "y → i: happy → happily (šťastně)."
+          "type": false,
+          "use": false,
+          "explanation": "A quality: **happy** → **happiness** (y → i, then **-ness**).",
+          "explanation_cz": "Vlastnost: **happy** → **happiness** (y → i, pak **-ness**)."
         },
         {
-          "en": "He shut the door angrily.",
-          "cz": "Vztekle zabouchl dveře.",
-          "gap": "He shut the door ____.",
-          "root": "ANGRY",
-          "gap_answer": "angrily",
+          "en": "She answered all the questions easily.",
+          "gap": "She answered all the questions ____.",
+          "root": "EASY",
+          "gap_answer": "easily",
           "quiz_options": [
-            "angrily",
-            "angry",
-            "angryly",
-            "angrilly"
+            "easily",
+            "easy",
+            "easier"
           ],
-          "explanation": "y → i: angry → angrily.",
-          "explanation_cz": "y → i: angry → angrily (vztekle)."
+          "type": false,
+          "use": false,
+          "explanation": "How she answered: **easy** → **easily** (y → i).",
+          "explanation_cz": "Jak odpověděla: **easy** → **easily** (y → i)."
+        }
+      ]
+    },
+    {
+      "id": "sfx_type",
+      "title": "Type the word",
+      "check": {
+        "sequence": []
+      },
+      "items": [
+        {
+          "en": "We need more information before we decide.",
+          "gap": "We need more ____ before we decide.",
+          "root": "INFORM",
+          "gap_answer": "information",
+          "use": false,
+          "explanation": "A noun for facts: **inform** → **information** (-tion).",
+          "explanation_cz": "Podstatné jméno pro fakta: **inform** → **information**."
         },
         {
-          "en": "Don't speak so loudly in the library.",
-          "cz": "Nemluv v knihovně tak nahlas.",
-          "gap": "Don't speak so ____ in the library.",
-          "root": "LOUD",
-          "gap_answer": "loudly",
-          "quiz_options": [
-            "loudly",
-            "loud",
-            "loudley",
-            "laudly"
-          ],
-          "explanation": "loud → loudly.",
-          "explanation_cz": "loud → loudly (nahlas)."
+          "en": "The hotel room was clean and comfortable.",
+          "gap": "The hotel room was clean and ____.",
+          "root": "COMFORT",
+          "gap_answer": "comfortable",
+          "use": false,
+          "explanation": "The room can be lived in easily: **comfort** + **-able**.",
+          "explanation_cz": "V pokoji se dá dobře bydlet: **comfort** + **-able**."
         },
         {
-          "en": "She smiled at us warmly.",
-          "cz": "Vřele se na nás usmála.",
-          "gap": "She smiled at us ____.",
-          "root": "WARM",
-          "gap_answer": "warmly",
-          "quiz_options": [
-            "warmly",
-            "warm",
-            "warmley",
-            "wormly"
-          ],
-          "explanation": "warm → warmly.",
-          "explanation_cz": "warm → warmly (vřele)."
+          "en": "Be careful with that glass. It is old.",
+          "gap": "Be ____ with that glass. It is old.",
+          "root": "CARE",
+          "gap_answer": "careful",
+          "use": false,
+          "explanation": "**Be** + adjective: **care** + **-ful** → **careful**.",
+          "explanation_cz": "**Be** + přídavné jméno: **care** + **-ful** → **careful**."
         },
         {
-          "en": "The mountains are snowy in January.",
-          "cz": "Hory jsou v lednu zasněžené.",
-          "gap": "The mountains are ____ in January.",
-          "root": "SNOW",
-          "gap_answer": "snowy",
-          "quiz_options": [
-            "snowy",
-            "snow",
-            "snowey",
-            "snovy"
+          "en": "My favourite actor is in this film.",
+          "gap": "My favourite ____ is in this film.",
+          "root": "ACT",
+          "gap_answer": "actor",
+          "gap_accepts": [
+            "actress"
           ],
-          "explanation": "Mixed practice: noun → adjective with -y.",
-          "explanation_cz": "Opakování: snow → snowy (zasněžený)."
+          "use": false,
+          "explanation": "The person who acts: **act** + **-or**. **Actress** is also fine.",
+          "explanation_cz": "Osoba, která hraje: **act** + **-or**. **Actress** také platí."
         },
         {
-          "en": "The farmer sells eggs at the market.",
-          "cz": "Farmář prodává na trhu vejce.",
-          "gap": "The ____ sells eggs at the market.",
-          "root": "FARM",
-          "gap_answer": "farmer",
-          "quiz_options": [
-            "farmer",
-            "farming",
-            "farmor",
-            "farmar"
-          ],
-          "explanation": "Mixed practice: the person again — farm → farmer.",
-          "explanation_cz": "Opakování: osoba — farm → farmer (farmář)."
+          "en": "She answered all the questions easily.",
+          "gap": "She answered all the questions ____.",
+          "root": "EASY",
+          "gap_answer": "easily",
+          "use": false,
+          "explanation": "How she answered: **easy** → **easily** (y → i).",
+          "explanation_cz": "Jak odpověděla: **easy** → **easily** (y → i)."
         },
         {
-          "en": "We went in the wrong direction.",
-          "cz": "Šli jsme špatným směrem.",
-          "gap": "We went in the wrong ____.",
-          "root": "DIRECT",
-          "gap_answer": "direction",
-          "quiz_options": [
-            "direction",
-            "directly",
-            "direccion",
-            "direktion"
-          ],
-          "explanation": "Mixed practice: direct → direction.",
-          "explanation_cz": "Opakování: direct → direction (směr)."
+          "en": "We need a helper for this job.",
+          "gap": "We need a ____ for this job.",
+          "root": "HELP",
+          "gap_answer": "helper",
+          "use": false,
+          "explanation": "A person for the job: **help** + **-er** → **helper**.",
+          "explanation_cz": "Osoba na tu práci: **help** + **-er** → **helper**."
         },
         {
-          "en": "The people in the village are very friendly.",
-          "cz": "Lidé ve vesnici jsou velmi přátelští.",
-          "gap": "The people in the village are very ____.",
-          "root": "FRIEND",
-          "gap_answer": "friendly",
-          "quiz_options": [
-            "friendly",
-            "friendship",
-            "freindly",
-            "frendly"
+          "en": "She is a very helpful colleague.",
+          "gap": "She is a very ____ colleague.",
+          "root": "HELP",
+          "gap_answer": "helpful",
+          "use": false,
+          "explanation": "**help** + **-ful** = with help.",
+          "explanation_cz": "**help** + **-ful** = s pomocí."
+        },
+        {
+          "en": "Without my phone I felt helpless.",
+          "gap": "Without my phone I felt ____.",
+          "root": "HELP",
+          "gap_answer": "helpless",
+          "use": false,
+          "explanation": "**help** + **-less** = without help.",
+          "explanation_cz": "**help** + **-less** = bez pomoci."
+        },
+        {
+          "en": "This map is useful in a new city.",
+          "gap": "This map is ____ in a new city.",
+          "root": "USE",
+          "gap_answer": "useful",
+          "use": false,
+          "explanation": "**use** + **-ful** = with use.",
+          "explanation_cz": "**use** + **-ful** = užitečný."
+        },
+        {
+          "en": "This old map is useless now.",
+          "gap": "This old map is ____ now.",
+          "root": "USE",
+          "gap_answer": "useless",
+          "use": false,
+          "explanation": "**use** + **-less** = without use.",
+          "explanation_cz": "**use** + **-less** = bez užitku."
+        },
+        {
+          "en": "Our manager starts work at eight.",
+          "gap": "Our ____ starts work at eight.",
+          "root": "MANAGE",
+          "gap_answer": "manager",
+          "use": false,
+          "explanation": "A person starts work: **manage** + **-er** → **manager**.",
+          "explanation_cz": "Do práce chodí osoba: **manage** + **-er** → **manager**."
+        },
+        {
+          "en": "She wants to study hotel management next year.",
+          "gap": "She wants to study hotel ____ next year.",
+          "root": "MANAGE",
+          "gap_answer": "management",
+          "use": false,
+          "explanation": "A subject you study: **manage** + **-ment** → **management**.",
+          "explanation_cz": "Obor ke studiu: **manage** + **-ment** → **management**."
+        }
+      ]
+    },
+    {
+      "id": "sfx_use",
+      "title": "Use it",
+      "check": {
+        "sequence": []
+      },
+      "items": [
+        {
+          "en": "Please drive carefully.",
+          "wrong": "Please drive careful.",
+          "accepts": [
+            "Please drive carefully."
           ],
-          "explanation": "Mixed practice: friend → friendly — an adjective, despite the -ly.",
-          "explanation_cz": "Opakování: friend → friendly (přátelský) — je to přídavné jméno, i když končí -ly."
+          "explanation": "**Drive** needs an adverb: **carefully**, not **careful**.",
+          "explanation_cz": "**Drive** chce příslovce: **carefully**, ne **careful**."
+        },
+        {
+          "en": "Be careful with that glass.",
+          "wrong": "Be carefully with that glass.",
+          "accepts": [
+            "Be careful with that glass."
+          ],
+          "explanation": "**Be** + adjective: **careful**, not the adverb **carefully**.",
+          "explanation_cz": "**Be** + přídavné jméno: **careful**, ne příslovce **carefully**."
+        },
+        {
+          "en": "My sister works as a teacher in a school.",
+          "wrong": "My sister works as a teaching in a school.",
+          "accepts": [
+            "My sister works as a teacher in a school.",
+            "My sister works as a teacher at a school."
+          ],
+          "explanation": "The job is a person: **teacher**, not **teaching**.",
+          "explanation_cz": "Povolání je osoba: **teacher**, ne **teaching**."
+        },
+        {
+          "en": "We need more information before we decide.",
+          "wrong": "We need more informative before we decide.",
+          "accepts": [
+            "We need more information before we decide."
+          ],
+          "explanation": "After **more** you need a noun: **information**, not the adjective **informative**.",
+          "explanation_cz": "Po **more** podstatné jméno: **information**, ne přídavné jméno **informative**."
+        },
+        {
+          "en": "Work can bring you happiness.",
+          "wrong": "Work can bring you happyness.",
+          "accepts": [
+            "Work can bring you happiness."
+          ],
+          "explanation": "**happy** → **happiness**: y → i, then **-ness**.",
+          "explanation_cz": "**happy** → **happiness**: y → i, pak **-ness**."
+        },
+        {
+          "en": "She did it easily.",
+          "wrong": "She did it easyly.",
+          "accepts": [
+            "She did it easily."
+          ],
+          "explanation": "**easy** → **easily**: y → i, then **-ly**.",
+          "explanation_cz": "**easy** → **easily**: y → i, pak **-ly**."
+        },
+        {
+          "en": "It is useless to talk. He does not listen.",
+          "wrong": "It is useful to talk. He does not listen.",
+          "accepts": [
+            "It is useless to talk. He does not listen.",
+            "It's useless to talk. He does not listen.",
+            "It is useless to talk. He doesn't listen.",
+            "It's useless to talk. He doesn't listen."
+          ],
+          "explanation": "He never listens, so arguing has no use: **useless**.",
+          "explanation_cz": "Nikdy neposlouchá, takže hádka k ničemu: **useless**."
+        },
+        {
+          "en": "She wants to be an actor.",
+          "wrong": "She wants to be an acting.",
+          "accepts": [
+            "She wants to be an actor.",
+            "She wants to be an actress."
+          ],
+          "explanation": "A person: **actor** / **actress**, not **acting**.",
+          "explanation_cz": "Osoba: **actor** / **actress**, ne **acting**."
+        },
+        {
+          "en": "She is very helpful at work.",
+          "wrong": "She is very helper at work.",
+          "accepts": [
+            "She is very helpful at work.",
+            "She's very helpful at work."
+          ],
+          "explanation": "**Very** + adjective: **helpful**, not the person-word **helper**.",
+          "explanation_cz": "**Very** + přídavné jméno: **helpful**, ne osoba **helper**."
+        },
+        {
+          "en": "She is our new manager.",
+          "wrong": "She is our new management.",
+          "accepts": [
+            "She is our new manager.",
+            "She's our new manager."
+          ],
+          "explanation": "**She** is a person: **manager**, not **management**.",
+          "explanation_cz": "**She** je osoba: **manager**, ne **management**."
+        },
+        {
+          "en": "Thank you for your kindness.",
+          "wrong": "Thank you for your kind.",
+          "accepts": [
+            "Thank you for your kindness."
+          ],
+          "explanation": "**Your** + a noun: **kindness**, not **kind**.",
+          "explanation_cz": "**Your** + podstatné jméno: **kindness**, ne **kind**."
+        },
+        {
+          "en": "He is a cook in a hotel.",
+          "wrong": "He is a cooker in a hotel.",
+          "accepts": [
+            "He is a cook in a hotel.",
+            "He's a cook in a hotel.",
+            "He is a cook at a hotel.",
+            "He's a cook at a hotel."
+          ],
+          "explanation": "A **cook** is a person. A **cooker** is a machine.",
+          "explanation_cz": "**Cook** je osoba. **Cooker** je sporák."
         }
       ]
     }

@@ -102,6 +102,14 @@ def choices_for(it: dict, siblings: list[dict], pack: dict | None = None):
 
 
 def check_pack(pid: str, pack: dict) -> None:
+    if pack.get("practice") in (
+        "match_sprint",
+        "type_sprint",
+        "grammar_match_sprint",
+        "grammar_type_sprint",
+        "use_sprint",
+    ):
+        return
     items = flat_items(pack)
     intro = pack.get("intro")
     cards = intro if isinstance(intro, list) else (intro or {}).get("cards") or []

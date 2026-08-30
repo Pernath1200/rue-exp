@@ -32,7 +32,7 @@ export function setSmokeContext(partial) {
     let line = "";
     if (en && ans && en !== ans) line = "EN: " + en + " · answer: " + ans;
     else if (en || ans) line = "EN: " + (en || ans);
-    el.textContent = line.slice(0, 160);
+    el.textContent = line.slice(0, 480);
   }
 }
 

@@ -115,4 +115,39 @@ renderTreePortrait(wcPay, {
 assert(!wcPay.innerHTML.includes("tp-cambium"),
   "edge-line never leaks into payoffs (girth itself still applies)");
 
+// 6. House wood (2026-08-30): a vocab house grows a bough only when covered.
+const emptyCrown = host();
+renderTreePortrait(emptyCrown, {
+  level: "B1", nodes: tree.nodes,
+  isFruit: () => false, progressState: () => "none",
+});
+assert(!emptyCrown.innerHTML.includes(">Home &amp; family</text>"),
+  "B1 with no vocab work does not name a Home branch");
+const homeCrown = host();
+renderTreePortrait(homeCrown, {
+  level: "B1", nodes: tree.nodes,
+  isFruit: (id) => id === "leaf_home_family",
+  progressState: (id) => (id === "leaf_home_family" ? "fruit" : "none"),
+});
+assert(homeCrown.innerHTML.includes(">Home &amp; family</text>"),
+  "covering Home & family grows and names that branch");
+
+const payWhole = host();
+renderTreePortrait(payWhole, {
+  level: "B1", nodes: tree.nodes,
+  isFruit: (id) => id === "leaf_home_family" || id === "a1_agreement",
+  progressState: (id) =>
+    id === "leaf_home_family" || id === "a1_agreement" ? "fruit" : "none",
+  justNow: "b1_phrasal_verbs",
+  highlight: ["verb_complementation", "trunk"],
+  focus: "roots",
+  focusLabel: "Phrasal verbs",
+});
+assert(payWhole.innerHTML.includes("tp-house"),
+  "grammar payoff still draws the crown (same plant, not roots-only)");
+assert(payWhole.innerHTML.includes(">Home &amp; family</text>"),
+  "previous Home fruit stays named on the grammar payoff tree");
+assert(payWhole.innerHTML.includes("Phrasal verbs"),
+  "new grammar unit is still labelled on its root");
+
 process.exit(failed ? 1 : 0);

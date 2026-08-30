@@ -30,7 +30,7 @@ import { setSmokeContext } from "./smoke-flags.js";
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };
 /* exported for engine tests only */
-export { isCorrect as _gradeGrammar, articleMatch as _articleMatch };
+export { isCorrect as _gradeGrammar, articleMatch as _articleMatch, gradeGrammarSentence };
 
 /**
  * Default questions per graded stage (Check quiz · Type · Use).
@@ -426,19 +426,50 @@ function pairPl(p) {
   return p.cz || p.pl || "";
 }
 
+function applyGradeFlags(pack) {
+  LENIENT_ARTICLES = !pack?.strict_articles;
+  LENIENT_POSSESSIVES = !pack?.strict_possessives;
+  LENIENT_DETERMINERS = !pack?.strict_determiners;
+  LENIENT_PLACE = !pack?.strict_place;
+  LENIENT_TIME = !pack?.strict_time;
+  // OPT-IN, not opt-out — see ifWhenMatch. Unreal conditionals must stay exact.
+  LENIENT_IF_WHEN = !!pack?.lenient_if_when;
+}
+
+/** Existing Use grader with this item's pack flags (articles, place, if/when). */
+function gradeGrammarSentence(typed, item) {
+  const prev = {
+    articles: LENIENT_ARTICLES,
+    possessives: LENIENT_POSSESSIVES,
+    determiners: LENIENT_DETERMINERS,
+    place: LENIENT_PLACE,
+    time: LENIENT_TIME,
+    ifWhen: LENIENT_IF_WHEN,
+  };
+  applyGradeFlags(item);
+  try {
+    return isCorrect(
+      typed,
+      { answer: item?.answer || item?.en, accepts: item?.accepts || [] },
+      "full_word",
+    );
+  } finally {
+    LENIENT_ARTICLES = prev.articles;
+    LENIENT_POSSESSIVES = prev.possessives;
+    LENIENT_DETERMINERS = prev.determiners;
+    LENIENT_PLACE = prev.place;
+    LENIENT_TIME = prev.time;
+    LENIENT_IF_WHEN = prev.ifWhen;
+  }
+}
+
 /**
  * @param {object} pack
  * @param {HTMLElement} root
  * @param {{ onExit: () => void }} opts
  */
 export function startPractice(rawPack, root, opts) {
-  LENIENT_ARTICLES = !rawPack?.strict_articles;
-  LENIENT_POSSESSIVES = !rawPack?.strict_possessives;
-  LENIENT_DETERMINERS = !rawPack?.strict_determiners;
-  LENIENT_PLACE = !rawPack?.strict_place;
-  LENIENT_TIME = !rawPack?.strict_time;
-  // OPT-IN, not opt-out — see ifWhenMatch. Unreal conditionals must stay exact.
-  LENIENT_IF_WHEN = !!rawPack?.lenient_if_when;
+  applyGradeFlags(rawPack);
   // RUE packs store blocks[].items[]; this ladder wants flat stage banks.
   const pack = adaptGrammarPack(rawPack);
   touchBlock(pack.id);
@@ -900,10 +931,16 @@ export function startPractice(rawPack, root, opts) {
     const last = state.introIndex >= cards.length - 1;
     const n = cards.length;
     const i = state.introIndex;
+    const sitting = typeof opts.nextSitting === "function" ? opts.nextSitting() : null;
 
     root.innerHTML = `
       ${ladderHtml()}
       <div class="practice-head"><h2>${esc(pack.title)}</h2></div>
+      ${
+        i === 0 && sitting
+          ? `<p class="practice-hint">This sitting continues into ${esc(sitting.label)}.</p>`
+          : ""
+      }
       <div class="intro-card">
         <p class="intro-kicker">Intro · ${i + 1} / ${n}</p>
         ${card.title ? `<h3>${esc(card.title)}</h3>` : ""}
@@ -2351,6 +2388,7 @@ export function startPractice(rawPack, root, opts) {
     const bCheck = best.check == null ? null : Math.round(best.check * 100);
     const bType = best.type == null ? null : Math.round(best.type * 100);
     const fruit = hasFruit(pack.id);
+    const sitting = typeof opts.nextSitting === "function" ? opts.nextSitting() : null;
     // Replay: still show the tree, but do not grow a new knot (James, 2026-08-29).
     if (fruit && !justFruitedThisRun && typeof opts.onFruit === "function") {
       opts.onFruit({ domain: "grammar", packId: pack.id, grow: false });
@@ -2361,9 +2399,14 @@ export function startPractice(rawPack, root, opts) {
       <div class="practice-head"><h2>${esc(pack.title)} · Done</h2></div>
       <p class="practice-prompt">${
         fruit
-          ? "Fruit earned. Back to map for the tree."
+          ? "Fruit earned."
           : "Ladder finished. Fruit needs Check, Type and Use all clear — retry the wrong items."
       }</p>
+      ${
+        sitting
+          ? `<p class="practice-hint">Next: ${esc(sitting.label)}</p>`
+          : ""
+      }
       <p class="score-line">
         ${bCheck != null ? `Check: ${bCheck} % · ` : ""}
         ${bType != null ? `Type: ${bType} % · ` : ""}
@@ -2374,9 +2417,13 @@ export function startPractice(rawPack, root, opts) {
         }
       </p>
       <p class="practice-hint">Progress stays in this browser · write in English</p>
-      <div class="nav">
-        <button type="button" class="btn" id="btn-retry">Practice again</button>
-        <button type="button" class="btn primary" id="btn-map">← Back to map</button>
+      <div class="practice-exit">
+        <div class="nav">
+          <button type="button" class="btn" id="btn-retry">Practice again</button>
+          <button type="button" class="btn primary" id="btn-map">${
+            sitting ? "Continue →" : "← Home"
+          }</button>
+        </div>
       </div>
     `;
     root.querySelector("#btn-retry")?.addEventListener("click", () => {

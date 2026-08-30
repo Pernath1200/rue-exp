@@ -4,7 +4,10 @@
  * First-learn fruit (tick payoff) — RUPL/RUE2 gates (2026-08-10):
  *   Grammar: Check + Type + Use each fully clear (ratio ≥ 1 or sticky cleanPass).
  *   Vocab: Match done + Quiz + Type + Sentence fully clear (same).
- * Soft PASS_RATIO / FRUIT_SOFT = reviews only — never first-fruit celebration.
+ *   Fat vocab leaves (James 2026-08-30): Quiz and Type each need
+ *   vocabCoverNeed(n) unique words (min(n, 36), 12-word rounds, no repeats)
+ *   before cleanPass. Match and Use stay one round of 12. Packs of ≤12
+ *   unchanged. Soft PASS_RATIO / FRUIT_SOFT = reviews only.
  * Unlimited retries: a later perfect retry stamps cleanPass via score 1/1.
  */
 
@@ -298,10 +301,37 @@ export function canEnterGrammarUse(blockId) {
 export function hasFruit(blockId) {
   const b = gBlock(blockId);
   if (!b) return false;
+  /* a1_finale: Whole A1 Use round cleaned. Does not fake Check/Type. */
+  if (b.finaleCleanPass) return true;
   if (!modeDone(b, "check") || !modeDone(b, "type") || !modeDone(b, "use")) {
     return false;
   }
   return grammarCheckClear(b) && grammarTypeClear(b) && grammarUseClear(b);
+}
+
+/**
+ * Fruit the A1 finale node only. Never call this on a teaching unit.
+ * Filtered runs must not reach here.
+ */
+export function completeFinale(blockId) {
+  const wasFruit = hasFruit(blockId);
+  const p = loadProgress();
+  const b = ensureGrammarBlock(p, blockId);
+  b.modes.use = true;
+  b.useCleanPass = true;
+  const prev = b.best.use;
+  if (prev == null || prev < 1) b.best.use = 1;
+  b.finaleCleanPass = true;
+  b.touchedAt = Date.now();
+  save(p);
+  const nowFruit = hasFruit(blockId);
+  const review = reviewTick(blockId, 1, nowFruit);
+  return {
+    wasFruit,
+    nowFruit,
+    justFruited: !wasFruit && nowFruit,
+    review,
+  };
 }
 
 export function grammarBest(blockId) {
@@ -315,8 +345,14 @@ export function grammarBest(blockId) {
 
 export function progressLabelGrammar(node) {
   if (node.status === "planned") return "planned";
+  if (node.fruit === false) return "check";
   if (hasFruit(node.id)) return "done";
   const b = gBlock(node.id);
+  /* Finale is one Use check, not a Check/Type/Use ladder. */
+  if (node.practice === "use_sprint") {
+    if (b && b.modes && Object.keys(b.modes).length) return "started";
+    return "live";
+  }
   if (!b || !b.modes) return "live";
   const done = ["intro", "check", "type", "use"].filter((m) => b.modes[m]);
   if (!done.length) return "live";
@@ -325,6 +361,7 @@ export function progressLabelGrammar(node) {
 
 export function nodeProgressStateGrammar(node) {
   if (node.status !== "live") return "planned";
+  if (node.fruit === false) return "live";
   if (hasFruit(node.id)) return "fruit";
   const b = gBlock(node.id);
   if (b && b.modes && Object.keys(b.modes).length) return "started";
@@ -345,6 +382,10 @@ function ensureVocabBlock(p, blockId, nodeId) {
       typeCleanPass: false,
       sentenceCleanPass: false,
       sentenceDone: false,
+      quizKeys: [],
+      typeKeys: [],
+      quizNeed: null,
+      typeNeed: null,
       touchedAt: Date.now(),
     };
   }
@@ -353,8 +394,27 @@ function ensureVocabBlock(p, blockId, nodeId) {
   if (b.quizCleanPass === undefined) b.quizCleanPass = false;
   if (b.typeCleanPass === undefined) b.typeCleanPass = false;
   if (b.sentenceCleanPass === undefined) b.sentenceCleanPass = false;
+  if (!Array.isArray(b.quizKeys)) b.quizKeys = [];
+  if (!Array.isArray(b.typeKeys)) b.typeKeys = [];
   if (nodeId) b.nodeId = nodeId;
   return b;
+}
+
+/** Unique words Quiz/Type must clear before fruit. Trunks of 12 stay 12. */
+export function vocabCoverNeed(n) {
+  const N = Number(n) || 0;
+  if (N <= 12) return Math.max(0, N);
+  return Math.min(N, 36);
+}
+
+export function vocabCoverage(blockId) {
+  const b = (loadProgress().vocab.blocks || {})[blockId] || {};
+  return {
+    quizKeys: Array.isArray(b.quizKeys) ? b.quizKeys : [],
+    typeKeys: Array.isArray(b.typeKeys) ? b.typeKeys : [],
+    quizCleared: vocabQuizClear(b),
+    typeCleared: vocabTypeClear(b),
+  };
 }
 
 export function touchVocabBlock(blockId, nodeId) {
@@ -397,11 +457,17 @@ export function completeVocabMode(blockId, mode, meta = {}) {
   }
   if (mode === "quiz" && ratio != null) {
     if (b.bestQuiz == null || ratio > b.bestQuiz) b.bestQuiz = ratio;
-    if (ratio >= 1) b.quizCleanPass = true;
+    if (Array.isArray(meta.coveredKeys)) b.quizKeys = meta.coveredKeys;
+    if (meta.need != null) b.quizNeed = meta.need;
+    if (ratio >= 1 && meta.coverageDone !== false) b.quizCleanPass = true;
+    if (meta.coverageDone === false) b.quizCleanPass = false;
   }
   if (mode === "type" && ratio != null) {
     if (b.bestType == null || ratio > b.bestType) b.bestType = ratio;
-    if (ratio >= 1) b.typeCleanPass = true;
+    if (Array.isArray(meta.coveredKeys)) b.typeKeys = meta.coveredKeys;
+    if (meta.need != null) b.typeNeed = meta.need;
+    if (ratio >= 1 && meta.coverageDone !== false) b.typeCleanPass = true;
+    if (meta.coverageDone === false) b.typeCleanPass = false;
   }
   if (mode === "sentence") {
     b.sentenceDone = true;
@@ -423,11 +489,13 @@ export function completeVocabMode(blockId, mode, meta = {}) {
 
 export function vocabQuizClear(b) {
   if (!b) return false;
+  if (b.quizNeed != null && (b.quizKeys || []).length < b.quizNeed) return false;
   return stageIsClear(b.bestQuiz, b.quizCleanPass);
 }
 
 export function vocabTypeClear(b) {
   if (!b) return false;
+  if (b.typeNeed != null && (b.typeKeys || []).length < b.typeNeed) return false;
   return stageIsClear(b.bestType, b.typeCleanPass);
 }
 
@@ -477,6 +545,7 @@ export function hasVocabFruit(node) {
 
 export function progressLabelVocab(node) {
   if (node.status === "planned") return "planned";
+  if (node.fruit === false) return "check";
   if (hasVocabFruit(node)) return "done";
   const p = loadProgress();
   let b = null;
@@ -495,6 +564,7 @@ export function progressLabelVocab(node) {
 
 export function nodeProgressStateVocab(node) {
   if (node.status !== "live") return "planned";
+  if (node.fruit === false) return "live";
   if (hasVocabFruit(node)) return "fruit";
   const p = loadProgress();
   for (const x of Object.values(p.vocab.blocks || {})) {

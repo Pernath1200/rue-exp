@@ -19,8 +19,12 @@
  * = same on that seat. Unlit slots stay as ghosts so the model is readable.
  * At most 6 slots per seat; empty live units do not steal lights from work
  * already done (A1 map slice, 2026-08-28). Fruit strengthens at remembered
- * then mastered (map only; strongest first). Navigation stays on the spine
- * list; clicks here only focus a unit.
+ * then mastered (map only; strongest first).
+ * Skeleton at this CEFR is always present: uncovered house-limbs and
+ * laterals stay faint and unfilled (James, 2026-08-30 — each completion
+ * is the same plant, plus this seat). Covered seats fill (started / fruit /
+ * remembered / mastered). Grammar payoff names its root but no longer
+ * crops the crown away. Navigation stays on the spine; clicks focus a unit.
  */
 
 /** @typedef {{ id: string, domain: string, tree_part?: string, root?: string, status?: string, foundation?: boolean, label?: string, codex_unit?: string, levels?: string[] }} TreeNode */
@@ -552,7 +556,11 @@ export function renderTreePortrait(container, opts) {
   above += '<path d="' + taperedPath(G.trunk, 0.22, m.trunk.ph, age.stem < 1) + '"/>';
   { const rx = G.trunkW * 0.66, ry = G.trunkW * 0.22;
     above += '<path d="M' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY + ry * 2.2) + ' ' + f1(cx + rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY - ry * 1.2) + ' ' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Z"/>'; }
-  if (!focusRoots) G.mains.forEach((Mn) => { if (Mn.g) above += '<path d="' + taperedPath(Mn.L, 0, Mn.M.ph, Mn.g < 0.98) + '"/>'; });
+  G.mains.forEach((Mn, mi) => {
+    if (!Mn.g) return;
+    const used = m.houses.some((H) => H.main === mi && houses[H.seat] && houses[H.seat].touched.length);
+    above += '<path d="' + taperedPath(Mn.L, 0, Mn.M.ph, Mn.g < 0.98) + '" opacity="' + (used ? 0.95 : GHOST) + '"/>';
+  });
   above += "</g>";
 
   // Living edge-line variant (?cambium=edge): the growth layer visible
@@ -591,27 +599,29 @@ export function renderTreePortrait(container, opts) {
 
   let canopy = "", labels = "";
   const labelList = [];
-  if (!focusRoots) G.houses.forEach((g) => {
+  G.houses.forEach((g) => {
     const house = houses[g.seat];
     const dim = house.state === "dim";
+    const grown = house.touched.length > 0;
     const active = house.state === "started" || house.state === "fruit";
     const hi = highlight.has(house.tree_part);
     const isNew = hi && animateGrowth;
     let origin = null;
     let s = "";
     let labelAt = null, labelSide = g.seatSide;
+    const woodOp = grown ? (dim ? 0.3 : 0.95) : GHOST;
     if (g.g > 0 && g.leaves.length >= 2) {
       // a real limb with twigs and leaf slots
       origin = g.L.P[0];
-      s += '<path class="lb" d="' + taperedPath(g.L, 0, g.H.ph) + '" opacity="' + (dim ? 0.3 : 0.95) + '"/>';
-      g.twigs.forEach((T) => { if (T) s += '<path class="hr" d="' + hairPath(T) + '" opacity="' + (dim ? 0.3 : 1) + '"/>'; });
+      s += '<path class="lb" d="' + taperedPath(g.L, 0, g.H.ph) + '" opacity="' + woodOp + '"/>';
+      g.twigs.forEach((T) => { if (T) s += '<path class="hr" d="' + hairPath(T) + '" opacity="' + (grown ? 1 : GHOST) + '"/>'; });
       g.leaves.forEach((lf, i) => {
-        const lit = i < house.leaves;
+        const lit = grown && i < house.leaves;
         const str = (i < house.fruitMastered ? " mastered" : i < house.fruitRemembered ? " remembered" : "");
         s += '<g class="leaf' + str + (isNew && lit && i === house.leaves - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(lf.p[0]) + ' ' + f1(lf.p[1]) + ') rotate(' + f1(lf.th / D2R) + ') scale(' + f1(lf.size) + ')"/></g>';
       });
       g.fruit.forEach((fr, i) => {
-        const lit = i < house.fruit;
+        const lit = grown && i < house.fruit;
         const str = (i < house.fruitMastered ? " mastered" : i < house.fruitRemembered ? " remembered" : lit ? " done" : "");
         s += '<g class="fruit' + str + (isNew && lit && i === house.fruit - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><circle cx="' + f1(fr.p[0]) + '" cy="' + f1(fr.p[1]) + '" r="' + f1(p.fruitR * (0.5 + 0.5 * age.leaf)) + '"/></g>';
       });
@@ -621,7 +631,7 @@ export function renderTreePortrait(container, opts) {
       let pt, th;
       if (g.g > 0) {
         origin = g.L.P[0];
-        s += '<path class="lb" d="' + taperedPath(g.L, 0, g.H.ph) + '" opacity="' + (dim ? 0.3 : 0.95) + '"/>';
+        s += '<path class="lb" d="' + taperedPath(g.L, 0, g.H.ph) + '" opacity="' + woodOp + '"/>';
         pt = g.L.tip(); th = g.L.ang(1);
         labelSide = g.side || g.seatSide;
       } else {
@@ -633,15 +643,15 @@ export function renderTreePortrait(container, opts) {
           pt = edgePoint(G.trunk, tt, g.seatSide, 0.5); th = G.trunk.ang(tt) + g.seatSide * 52 * D2R;
           origin = pt;
           const stalk = makeLimb(pt, th, leafSizeStem * 0.5, 0.3, 0, true, 0, 1);
-          s += '<path class="hr" d="' + hairPath(stalk) + '" opacity="' + (dim ? 0.3 : 1) + '"/>';
+          s += '<path class="hr" d="' + hairPath(stalk) + '" opacity="' + (grown ? 1 : GHOST) + '"/>';
           pt = stalk.tip(); th = stalk.ang(1);
         }
       }
       const lf = g.H.budLeaf, size = leafSizeStem * lf.sizeMul;
-      const lit = house.leaves > 0;
+      const lit = grown && house.leaves > 0;
       const budStr = (house.fruitRemembered > 0 ? " remembered" : "") + (house.fruitMastered > 0 ? " mastered" : "");
       s += '<g class="leaf' + budStr + (isNew && lit ? " tp-new" : "") + '" opacity="' + (lit ? 1 : GHOST) + '"><use href="#' + lid(lf.v) + '" transform="translate(' + f1(pt[0]) + ' ' + f1(pt[1]) + ') rotate(' + f1((th + lf.thJit) / D2R) + ') scale(' + f1(size) + ')"/></g>';
-      if (house.fruit > 0) {
+      if (grown && house.fruit > 0) {
         const d = dirUp(th + lf.thJit), n = [-d[1], d[0]];
         const fp = [pt[0] + d[0] * size * 0.3 + n[0] * size * 0.35 * labelSide, pt[1] + d[1] * size * 0.3 + n[1] * size * 0.35 * labelSide];
         const frStr = " done" + (house.fruitRemembered > 0 ? " remembered" : "") + (house.fruitMastered > 0 ? " mastered" : "");
@@ -653,7 +663,7 @@ export function renderTreePortrait(container, opts) {
     const o = origin || g.tip || [cx, soilY];
     canopy += '<g class="tp-house ' + house.state + (hi ? " tp-hi" : "") + '" data-part="' + house.tree_part + '" data-node="' + house.dataId + '" style="transform-origin:' + f1(o[0]) + 'px ' + f1(o[1]) + 'px">' + s + "<title>" + esc(house.label) + "</title></g>";
     const recentHouse = recent ? house.touched.some((n) => recent.has(n.id)) : true;
-    const showLabel = lvIdx >= 2 ? !dim : hi || (active && recentHouse);
+    const showLabel = grown && (lvIdx >= 2 ? true : hi || (active && recentHouse));
     if (showLabel && labelAt) labelList.push({ x: labelAt[0], y: labelAt[1], side: labelSide, active, house });
   });
   // Labels that would overprint (two houses on one shoot) stack downwards instead.
@@ -712,7 +722,8 @@ export function renderTreePortrait(container, opts) {
     }
     if (hiR && !R0.tap) hiRootTip = { x: end[0], y: end[1], side: Math.sign(end[0] - cx) || 1, seatLabel: seatInfo.label };
     if (hiR && R0.tap && !hiRootTip) hiRootTip = { x: end[0], y: end[1], side: 1, seatLabel: seatInfo.label };
-    let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : focusRoots ? 0.35 : dim ? 0.3 : 0.85) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
+    const filled = (seatInfo.touched && seatInfo.touched.length) || (seatInfo.fruited && seatInfo.fruited.length);
+    let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : filled ? 0.85 : dim ? 0.3 : GHOST) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
     s += '<path class="rt" d="' + taperedPath(R, 0.15, R0.ph) + '"/>';
     const forks = [];
     R0.forks.forEach((F0, k) => {
@@ -781,14 +792,6 @@ export function renderTreePortrait(container, opts) {
   const bb = G.bbox;
   let x0 = Math.min(bb.x0, rb.x0) - 150, x1 = Math.max(bb.x1, rb.x1) + 150;
   let y0 = Math.min(bb.y0, fb.y0) - 50, y1 = rb.y1 + 40;
-  if (focusRoots) {
-    // No canopy on screen: frame the trunk and the root system, not the crown's
-    // empty airspace.
-    const trunkTopY = G.trunk.tip()[1];
-    y0 = Math.max(0, trunkTopY - 70);
-    x0 = Math.min(rb.x0 - 60, cx - 170);
-    x1 = Math.max(rb.x1 + 60, cx + 170);
-  }
   x0 = Math.max(0, x0); x1 = Math.min(VB.w, x1); y0 = Math.max(0, y0); y1 = Math.min(VB.h, y1);
   const minW = VB.w / MAX_ZOOM, minH = VB.h / MAX_ZOOM;
   if (x1 - x0 < minW) { const mid = (x0 + x1) / 2; x0 = Math.max(0, mid - minW / 2); x1 = Math.min(VB.w, x0 + minW); x0 = x1 - minW; }
@@ -800,9 +803,7 @@ export function renderTreePortrait(container, opts) {
   // scale label type with the crop width. A1 (max zoom) is the anchor — its
   // look is unchanged. Map only: payoff frames its own crop and keeps
   // today's look.
-  const typeScale = focusRoots
-    ? 1
-    : Math.min(MAX_ZOOM, Math.max(1, (crop.w * MAX_ZOOM) / VB.w));
+  const typeScale = Math.min(MAX_ZOOM, Math.max(1, (crop.w * MAX_ZOOM) / VB.w));
 
   const sw = Math.max(0.8, p.twigWidth * 0.95);
   const css = [

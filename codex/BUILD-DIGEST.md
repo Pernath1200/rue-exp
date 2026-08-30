@@ -1,8 +1,273 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-30 · local (interactive) — vocab fruit needs 36 unique Quiz+Type
+
+James: 69-word leaves fruit after one dozen; A1 cannot clear until this is
+fixed. 2–3 rounds of MC and type-in, not the same words.
+
+- Need = min(pack, 36). Trunks of 12 unchanged. 23-word leaves = whole pack.
+- Quiz walks unseen 12s until the need. Type produces **those same words**.
+- Match and Use stay one round of 12. Review (already fruited) stays one 12.
+- Progress stores `quizKeys` / `typeKeys` / `quizNeed`. 12/36 is not a pass.
+- jsdom: 30-item pack, three Quiz rounds, 30 unique, 12/36 helper is false.
+
+Play: `#leaf_home_family` Ctrl+F5. After Quiz 12/12: **12 more →** not Type.
+
+---
+
+
+
 Format per entry: date/time UTC · lane (cloud/local) · what landed (counts +
 node ids) · gate results (lint errors, audit total vs baseline) · judgment
 calls & forks for James · anything to smoke-check.
+
+---
+
+## 2026-08-30 · local (interactive) — `a1_finale` Use on everything
+
+James lock: id `a1_finale` · hang Sentence · `G_SS-A1B1-01` · last on A1
+after `a1_grammar_type`. CZ → full English sentence. Did **not** tick
+INSPECTED. Did **not** invent a grader. Did **not** rebuild match/type/countries.
+
+- Pack `data/grammar/blocks/a1_finale.json` · `practice: "use_sprint"` · can fruit
+- Node last on A1. Do next does **not** skip it (unlike match/type).
+- Chrome in `js/vocab-sprint.js` (`startFinaleSprint`): Czech prompt, type
+  the sentence, 12, retry misses until that round is clean. Clock off by
+  default, optional on. Filter: Whole A1 · Grammar only · Vocab only · one
+  live A1 teaching unit.
+- Pool at runtime: live A1 teaching Use (grammar `cz`+`en`, skip `use: false`
+  and `ladder.use: false`; vocab `sentences[]`). Skip check-units.
+- Recap: Grammar / Vocab blocks, grouped by source unit, hash links
+  (`#a1_articles`, `#leaf_home_family`, …). First-try misses stay marked.
+- Fruit: Whole A1 + round cleaned → `finaleCleanPass` on **this node only**.
+  Filtered runs never fruit. Teaching knots stay dark.
+- Grade: existing Use (`gradeGrammarSentence` / `isCorrectAnswer`).
+- Play: `http://localhost:8097/#a1_finale` (Ctrl+F5).
+- jsdom: splash, clock Off, Whole A1 miss-then-retry recap with unit links
+  fruits `a1_finale` only; Grammar-only clean does not fruit.
+- Path label is **started / done**, not `1/4` (it is not a Check/Type/Use ladder).
+- Live splash on :8097 (headless Edge): **634** sentences, Whole A1 / Grammar only /
+  Vocab only / unit list (`a1_articles`, `leaf_home_family`), clock Off, Play.
+- `check_playable` 0 errors. `check_codex` pass (0 new hangs).
+  `verify_pack` this pack: 0 errors · 0 warnings.
+
+---
+
+## 2026-08-30 · local (interactive) — grammar type-in Practice + why
+
+James dropdowns (same as Which): explanation after every Check, right or
+wrong; English `explanation` only; Practice N replays in the cloze screen
+(no extra panel). Retire after 2 in a row. Unit link `Open {unit} →` `#src`.
+
+- Type items now carry `why` from the pack. After Check: explanation + unit
+  link (hidden again on Next).
+- Recap **Practice N forms** replays misses in the same gapped-English card.
+- Did **not** tick INSPECTED. Play: `http://localhost:8097/#a1_grammar_type`
+  (Ctrl+F5).
+- jsdom: miss `I am a student.` → why + `#a1_be_have` → Practice 1 form
+  replays the same gap.
+
+---
+
+## 2026-08-30 · local (interactive) — Which is correct? Practice + why
+
+James dropdowns: Practice N same 3-choice quiz; explanation after every tap;
+unit link under the explanation; retire after 2 in a row.
+
+- Recap: **Practice N sentences** = this round’s misses + leftover trouble, max 12, untimed.
+- After each tap: teaching-pack `explanation` + `Open Can / can't →` (`#a1_can`).
+- Trouble key unchanged (`rue-exp-sprint-trouble:a1_grammar_match`) — grammar type-in still reads it.
+- Question-bank expansion **not** this step.
+
+Play: `#a1_grammar_match` Ctrl+F5 (`?v=2026-08-30-gmatch3`).
+
+---
+
+## 2026-08-30 · local (interactive) — Which is correct? P0 round 2
+
+James: good unit for a general grammar-fix exercise; 8 more ambiguous chips.
+
+Filter classes (not one-off sentences):
+
+- Short answers: *Yes, I can.* / *Yes, I do* / *Yes, I am* — drop the item.
+- Present/past twins: *likes/liked*, *speak/spoke*, *watches/watched* — keep agreement / -ing wrongs.
+- Dummy *there* vs *it/they*: *There is a car* keeps *Is* / *There are*; *They are two books* drops the item.
+- Polarity: *There are* vs *There aren't* — keep *is* / *isn't*.
+
+Re-smoke `#a1_grammar_match` (Ctrl+F5, `?v=2026-08-30-gmatch2`).
+
+---
+
+## 2026-08-30 · local (interactive) — `a1_grammar_type` cloze check
+
+James lock: id `a1_grammar_type` · hang Sentence · `G_SS-A1B1-01` · after
+`a1_grammar_match`. Medium A1 grammar check. Cloze, not Use. Did **not**
+build `a1_finale` or `leaf_countries_a1`. Did **not** tick INSPECTED. Did
+**not** invent a second grammar-match unit.
+
+- Pack `data/grammar/blocks/a1_grammar_type.json` · `practice: "grammar_type_sprint"` · `fruit: false`
+- Node last on A1 after Which is correct?. Do next skips it.
+- Chrome in `js/vocab-sprint.js` (`startGrammarTypeSprint`): Czech + gapped
+  English, type the **form**, 12, recap, no clock. B11 bracket cues stay.
+- Grade: existing `_gradeGrammar` (contractions, if/when, empty Enter = dash).
+  Whole-sentence answers fail. `don't` / `do not` both pass.
+- Pool: smoked A1 grammar, `gap` + `gap_answer`. Skip diagram / whole
+  `a1_prepositions_place` (A0 bag in/under the table), `a1_word_classes`,
+  check-units. Runtime **433** clozes (Which is 210 — type-in keeps items
+  Which dropped as both-English: articles, who/what, and/but, to/for/with,
+  frequency; Czech is on screen here).
+- Trouble key shared with Which (`rue-exp-sprint-trouble:a1_grammar_match`):
+  match misses come first if that key exists.
+- Play: `http://localhost:8097/#a1_grammar_type` (Ctrl+F5).
+- jsdom: splash, no clock, 433 forms, Which-miss `I am a student.` first,
+  typing the whole sentence scores 0.
+- `verify_pack` this pack: 0 errors. `check_playable` 0 errors.
+  `check_codex` pass (0 new hangs).
+
+**Fork.** Articles / some-any stay in the type-in pool because Czech is the
+discriminator (Which had to drop them as English-only chips). If a prompt
+still feels A0 in play, cut that item, not the pack.
+
+---
+
+## 2026-08-30 · local (interactive) — countries: English capitals
+
+James: Czech writes *i am learning italian*. Nationalities/languages/countries are capitalised in English.
+
+- Intro card: Italian / German / Czech vs italský / německý / český. Note: *I am learning Italian, not italian.*
+- Quiz chips keep case (`sentenceChipKey`). *I speak Italian* vs *italian* vs *Italy*; same for French; *She speaks German* vs *germany* vs *german*.
+- Type/Use on this pack: `strict_capitals` — the word is right but lowercase is marked *Capital letter* and shown.
+- Ctrl+F5.
+
+---
+
+## 2026-08-30 · local (interactive) — countries Quiz = Which is correct?
+
+James: word MC is useless unless it tests Germany/German/Germans. Extra teaching (a German, a Pole) is worth it. Tree missing after Use 12/12 is a bug.
+
+- Two intro tables: a German / an Austrian / a Czech… then a Pole (not a Polish), He is British (not a British).
+- Quiz: 12 Which-is-correct? sentences. Match/Type stay the 30 words (`quiz_axis: sentence` skipped there). Sprint pool skips them too.
+- Fruit: `completeVocabMode` now gets `nodeId`. Fruit still needs Match walked + Quiz/Type/Use 12/12 — skip Match from the mode bar and the tree will not fire.
+- `verify_pack` 0. jsdom: tables → Match without sentence tiles → Quiz 3 chips. Ctrl+F5.
+
+---
+
+## 2026-08-30 · local (interactive) — countries leaf rebuilt 12+12+6
+
+James lock after intro smoke: four pages, more easy words.
+
+- 12 countries: CZ, SK, DE, PL, AT, America, Britain, Italy, Spain, France, Japan, Russia
+- 12 people/languages: Czech, Slovak, German, Polish, Austrian, American, British, English, Italian, Spanish, French, Russian. Japan = country only. English/British/American stay split. Austrian → speaks German.
+- 6 cities: Prague, Brno, Bratislava, Vienna, Berlin, London
+- Intro: Countries → People and languages → Cities → frames (I am / I am from / I speak)
+- 30 items · 12 Use. No city/country/language steal. No `V_*`. Did **not** tick INSPECTED.
+- `verify_pack` 0. jsdom 4 pages → Match.
+
+---
+
+## 2026-08-30 · local (interactive) — countries intro: page 1 is countries
+
+James: title Countries but tiles mixed Prague (city), Czech/German/English (person/language).
+
+- Page 1 pictures = country flags only: the Czech Republic, Slovakia, Germany, Poland, Austria, America, Britain. Title_cz `Země`.
+- Added item `the Czech Republic` / Česko so the CZ tile is a country, not *Czech*. Prague / Czech / German / English stay as drill items and page-2 frames.
+- Use +1: *I am from the Czech Republic* / *Jsem z Česka.*
+- Did **not** tick INSPECTED.
+
+---
+
+## 2026-08-30 · local (interactive) — A1 vocab leaf `leaf_countries_a1`
+
+James lock: node `leaf_countries_a1` · pack `data/vocab/blocks/a1_countries.json` · label Countries · leaf · parent trunk · house `knowledge_travel` (with Places) · live A1. No invented `V_*` / `G_*` (omitted `codex_unit`; Places also has none).
+
+- 15 items in two blocks: from (Prague, Slovakia, Germany, Poland, Austria, America, Britain) + people/languages (Czech, Slovak, German, Polish, Austrian, American, British, English). Merged nationality+language where English is the same word (`český / čeština` → Czech) so Match does not get two identical EN tiles.
+- Did not steal Places (`city`/`station`/`country`) or School (`language` as a subject). `I speak Czech` is the language frame here.
+- Intro ARRAY: 10 tiles (flags + Prague + English) · frames `I am …` / `I am from …` / `I speak …` from `i_am_adj` / `i_am_from` / `i_speak`. Trap note: not *from Czech*; English = language, British = person.
+- Use bank 12. 1sg present / explicit 3sg subjects. `Jsem Čech / Češka` covers mixed-class gender.
+- Spine vocab-only step `EN_COUNTRIES_01` after Places. Path hand-placed after `leaf_places` (speak already taught). A1 live 57/60.
+- Gates: `verify_pack` this pack 0 errors. `check_playable` 0 errors. `check_codex` 0 new hangs. Did **not** tick INSPECTED. Did **not** start grammar type-in or the finale.
+- jsdom: intro page 1 tiles → page 2 frames → Match board. A1 vocab-match pool +15 (911).
+- Play: `http://localhost:8097/#leaf_countries_a1` (Ctrl+F5).
+
+---
+
+## 2026-08-30 · local (interactive) — A1 grammar · match title
+
+Splash h2 was the prompt (*Which is correct?*), so the unit was unnamed. Now **A1 grammar · match**, same pattern as *A1 vocab · match* / *A1 grammar · type*. Prompt stays on the play screen. Ctrl+F5.
+
+---
+
+## 2026-08-30 · local (interactive) — Which is correct? P0 ambiguous chips
+
+Smoke flags (3): two of three sentences could both be right.
+
+- `Can she drive?` — *Does she drive?* is English. Filter fronted Can/Do/Does when the aux agrees; keep *Do she* / *Are she*.
+- `Go home.` — *To go home.* reads as English without Czech. Sentence-initial *to* + verb is not a wrong. Item drops (only *Goes home.* left).
+- `I have a phone.` — *I had a phone.* is English. Filter present/past twins (have/had, go/went); keep *I has* / *I having*.
+
+No teaching-pack edits. Re-smoke `#a1_grammar_match`.
+
+---
+
+## 2026-08-30 · local (interactive) — revive `a1_grammar_match` as Which is correct?
+
+James: replace parked gap↔form match. Same id, status live, hang `G_SS-A1B1-01`.
+
+- Three full English sentences, tap the right one (B21). No Czech, no picture.
+- Clock off by default, optional 1/2/3 min. Recap. No fruit. Do next skips it.
+- Pool: smoked A1 grammar gaps. correct = `en`; two wrongs = gap filled by a
+  clearly impossible quiz chip. Skip `diagram` (place in/on/under). Skip if
+  two chips would both be real English (articles, who/what, and/but, to/for/with,
+  possessives, frequency, some/any).
+- Runtime pool: 223 Which items (place / articles / who-what / and-but / to-for-with
+  dropped as both-English; time at/on/in and form errors kept).
+- Did **not** build `a1_grammar_type` or `a1_finale`.
+- Play: `http://localhost:8097/#a1_grammar_match` (Ctrl+F5). Edge dump: splash,
+  clock Off selected, 223 sentences, Play. jsdom: 3 sentences, tap right → score 1.
+- `verify_pack` this pack: C10 0 (example table). `check_playable` 0 errors.
+  `check_codex` pass. Full-corpus verify still red on other units (`a1_word_classes`
+  cz, present-perfect sort items).
+
+---
+
+## 2026-08-30 · local (interactive) — type-in Practice error log
+
+James: original HTML error log → Practice N words. Locked: button on **match
+and type-in recap**; retire after **2 correct in a row**; list = this round’s
+misses + leftover trouble, max 12. Frame sentences stay off the type-in drill.
+
+---
+
+## 2026-08-30 · local (interactive) — `a1_vocab_type` level check
+
+James locked id `a1_vocab_type` (Codex `V_COR-A1B1-01`). A1 vocab TYPE-IN as a
+level check, not a teaching pack.
+
+- Pack `data/vocab/blocks/a1_vocab_type.json` · `practice: "type_sprint"` · `fruit: false`
+- Node after `a1_vocab_match` on the A1 path. Do next skips it.
+- Same runtime pool as match; drops frame sentences (no `.?!`, ≤3 tokens).
+  Keeps *ice cream* / *next to*. Trouble list shared with match.
+- Chrome in `js/vocab-sprint.js`: Czech prompt, type English, 12, recap, no clock.
+- Runtime pool: 896 match items → 671 type-in (frames dropped; ice cream / next to kept).
+- Play: `http://localhost:8097/#a1_vocab_type` (Ctrl+F5). Edge dump: splash, no clock, Play.
+- `verify_pack` on this pack: 0 errors. `check_playable` 0 errors. `check_codex` pass.
+
+Did **not** build grammar match or grammar type-in.
+
+---
+
+## 2026-08-30 · local (interactive) — A1/A2 vocab on the Telegram smoke rail
+
+James: grammar A1/A2 smoked; put the vocab units on the bot. Scope: **all 59
+live A1+A2 vocab** (leaves + trunk + `a1_vocab_match`), **A1 path then A2 path**.
+
+`build_smoke_next.py` now ranks leftover A1–B1 grammar, then those 59.
+`build_inspected_register.py` lists them under A1/A2 vocab so ticks persist.
+Pack-stem aliases (`a1_home_family` → `leaf_home_family`) go in
+`smoke-order.json` so either form on Telegram lands on the tree id.
+
+B1 vocab stays off the rail. After Obsidian Sync: `units to test` → slot 1
+`trunk_frames_a1`. Tick `trunk_frames_a1 tested`.
 
 ---
 

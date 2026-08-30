@@ -4,7 +4,7 @@
  */
 
 import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-30-sit2";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-30-match8";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-30-clue";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -12,7 +12,7 @@ import {
   startGrammarMatchSprint,
   startGrammarTypeSprint,
   startFinaleSprint,
-} from "./vocab-sprint.js?v=2026-08-30-finale";
+} from "./vocab-sprint.js?v=2026-08-30-review";
 import {
   loadProgress,
   recentNodeIds,
@@ -27,6 +27,7 @@ import {
   completeMode,
   touchVocabBlock,
   completeVocabMode,
+  vocabCoverage,
   refreshUnit,
   levelUnitStats,
   nodeTreeStrength,
@@ -37,7 +38,7 @@ import {
   FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
-} from "./progress.js";
+} from "./progress.js?v=2026-08-30-cover36";
 import {
   mountSmokeFlagsUI,
   getSmokeApi,
@@ -1561,12 +1562,17 @@ async function openNode(node, launch = {}) {
 
       const blockId = practiceBlock.id || pack.id || node.id;
       touchVocabBlock(blockId, node.id);
+      const cov = vocabCoverage(blockId);
       startVocabPractice(root, practiceBlock, {
         startMode: launch.review ? "type" : undefined,
         practice,
         packId: pack.id || node.id,
         packTitle: pack.title || node.label,
         packLevel: (node.levels && node.levels[0]) || pack.level || "?",
+        quizKeys: cov.quizKeys,
+        typeKeys: cov.typeKeys,
+        quizCleared: cov.quizCleared,
+        typeCleared: cov.typeCleared,
         // Pack-level, not block-level: practiceBlock is built from the pack's
         // BLOCK, so anything living at the top of the JSON has to be passed
         // through explicitly or the engine never sees it.

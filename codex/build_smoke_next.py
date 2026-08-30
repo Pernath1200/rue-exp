@@ -134,10 +134,24 @@ def main() -> int:
     aliases = dict(PARKED_ALIASES)
     aliases.update(vocab_pack_aliases(tree))
 
+    # Whole smoke rail (live, on path, in scope). Inspected units stay in
+    # `total` so "N down, M to go (of T)" rises when a unit is ticked.
+    # Never bake 53 — that was A1–B1 grammar only.
+    rail = [
+        u
+        for u in path
+        if u not in hold
+        and u in pos
+        and (by_id.get(u) or {}).get("status") == "live"
+        and (is_grammar(u) or is_vocab(u))
+    ]
+    rail_total = len(rail)
+
     remaining_line = (
         f"Remaining: **{len(todo)} units** — "
         f"grammar A1 {g_counts['A1']} · A2 {g_counts['A2']} · B1 {g_counts['B1']}; "
-        f"vocab A1 {v_counts['A1']} · A2 {v_counts['A2']}."
+        f"vocab A1 {v_counts['A1']} · A2 {v_counts['A2']} "
+        f"(rail {rail_total})."
     )
 
     doc = f"""# SMOKE NEXT — the five units to test first
@@ -179,6 +193,7 @@ home PC listener.
         payload = {
             "generated": stamp,
             "remaining": len(todo),
+            "total": rail_total,
             "aliases": aliases,
             "order": [
                 {
