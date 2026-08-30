@@ -7,6 +7,7 @@
   "practice": "frames",
   "note": "Embedded statement order after tell me / know / wonder. · Bank 8 · order-zone gaps 2026-07-26 · Match off 2026-07-26 · dressed 8→24 items 2026-08-16 (Patrik: \"ask him when is he\") · 2026-08-19: item 17 duplicated item 2 ('how much it costs') — replaced",
   "default_direction": "cz_to_en",
+  "use_mode": "correct",
   "check": {
     "sequence": [
       "quiz"
@@ -21,8 +22,12 @@
         {
           "en": "Can you tell me where the station is?",
           "cz": "Můžeš mi říct, kde je nádraží?",
-          "gap": "Can you tell me where ____ (station)?",
+          "gap": "Can you tell me where ____? (station / be)",
           "gap_answer": "the station is",
+          "quiz_options": [
+            "the station is",
+            "is the station"
+          ],
           "accepts": [
             "Can you tell me where the station is?"
           ],
@@ -30,13 +35,19 @@
             "the station is"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Can you tell me where is the station?"
         },
         {
           "en": "Do you know what time the train leaves?",
           "cz": "Víš, v kolik odjíždí vlak?",
           "gap": "Do you know what time ____ (train / leave)?",
           "gap_answer": "the train leaves",
+          "quiz_options": [
+            "the train leaves",
+            "does the train leave",
+            "the train leave"
+          ],
           "accepts": [
             "Do you know what time the train leaves?",
             "Do you know what time the train will leave?"
@@ -46,13 +57,19 @@
             "the train will leave"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Do you know what time does the train leave?"
         },
         {
           "en": "Could you tell me how much it costs?",
           "cz": "Mohl bys mi říct, kolik to stojí?",
           "gap": "Could you tell me how much ____ (it / cost)?",
           "gap_answer": "it costs",
+          "quiz_options": [
+            "it costs",
+            "does it cost",
+            "it cost"
+          ],
           "accepts": [
             "Could you tell me how much it costs?"
           ],
@@ -60,26 +77,40 @@
             "it costs"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Could you tell me how much does it cost?"
         },
         {
           "en": "Can you tell me whether the shop is open?",
           "cz": "Můžeš mi říct, jestli je obchod otevřený?",
-          "gap": "Can you tell me whether the shop ____ open?",
-          "gap_answer": "is",
+          "gap": "Can you tell me whether ____ open? (shop / be)",
+          "gap_answer": "the shop is",
+          "quiz_options": [
+            "the shop is",
+            "is the shop"
+          ],
           "accepts": [
             "Can you tell me whether the shop is open?",
             "Can you tell me if the shop is open?"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
           "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
-          "lemma": "whether"
+          "lemma": "whether",
+          "gap_accepts": [
+            "the shop is"
+          ],
+          "wrong": "Can you tell me whether is the shop open?"
         },
         {
           "en": "I wonder when the meeting starts.",
           "cz": "Zajímalo by mě, kdy schůzka začíná.",
           "gap": "I wonder when ____ (meeting / start).",
           "gap_answer": "the meeting starts",
+          "quiz_options": [
+            "the meeting starts",
+            "does the meeting start",
+            "the meeting start"
+          ],
           "accepts": [
             "I wonder when the meeting starts.",
             "I wonder when the meeting will start."
@@ -91,13 +122,18 @@
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
           "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
-          "lemma": "wonder"
+          "lemma": "wonder",
+          "wrong": "I wonder when does the meeting start."
         },
         {
           "en": "Could you tell me where the toilets are?",
           "cz": "Mohl bys mi říct, kde jsou toalety?",
-          "gap": "Could you tell me where ____ (toilets)?",
+          "gap": "Could you tell me where ____? (toilets / be)",
           "gap_answer": "the toilets are",
+          "quiz_options": [
+            "the toilets are",
+            "are the toilets"
+          ],
           "accepts": [
             "Could you tell me where the toilets are?"
           ],
@@ -105,41 +141,61 @@
             "the toilets are"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Could you tell me where are the toilets?"
         },
         {
           "en": "Do you know if she has a car?",
           "cz": "Víš, jestli má auto?",
-          "gap": "Do you know if she ____ a car?",
-          "gap_answer": "has",
+          "gap": "Do you know if ____ a car? (she / have)",
+          "gap_answer": "she has",
+          "quiz_options": [
+            "she has",
+            "does she have",
+            "has she"
+          ],
           "accepts": [
             "Do you know if she has a car?"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "gap_accepts": [
+            "she has"
+          ],
+          "wrong": "Do you know if does she have a car?"
         },
         {
           "en": "Can you tell me why he was late?",
           "cz": "Můžeš mi říct, proč měl zpoždění?",
-          "gap": "Can you tell me why he ____ late?",
-          "gap_answer": "was",
+          "gap": "Can you tell me why ____ late? (he)",
+          "gap_answer": "he was",
+          "quiz_options": [
+            "he was",
+            "was he"
+          ],
           "accepts": [
             "Can you tell me why he was late?",
             "Can you tell me why he is late?",
             "Can you tell me why he's late?"
           ],
           "gap_accepts": [
-            "was",
-            "is"
+            "he was",
+            "he is"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Can you tell me why was he late?"
         },
         {
           "en": "Do you know when the meeting starts?",
           "cz": "Víš, kdy začíná ta schůzka?",
           "gap": "Do you know when ____? (meeting / start)",
           "gap_answer": "the meeting starts",
+          "quiz_options": [
+            "the meeting starts",
+            "does the meeting start",
+            "the meeting start"
+          ],
           "accepts": [
             "Do you know when the meeting starts?"
           ],
@@ -147,13 +203,19 @@
             "the meeting starts"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Do you know when does the meeting start?"
         },
         {
           "en": "Can you tell me where he works?",
           "cz": "Můžeš mi říct, kde pracuje?",
           "gap": "Can you tell me where ____? (he / work)",
           "gap_answer": "he works",
+          "quiz_options": [
+            "he works",
+            "does he work",
+            "he work"
+          ],
           "accepts": [
             "Can you tell me where he works?",
             "Can you tell me where she works?"
@@ -162,28 +224,45 @@
             "he works"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Can you tell me where does he work?"
         },
         {
           "en": "Ask him when he is coming.",
           "cz": "Zeptej se ho, kdy přijde.",
-          "gap": "Ask him when ____. (he / come)",
+          "gap": "Ask him when ____. (he / coming)",
           "gap_answer": "he is coming",
+          "quiz_options": [
+            "he is coming",
+            "is he coming"
+          ],
           "accepts": [
             "Ask him when he is coming.",
-            "Ask him when he's coming."
+            "Ask him when he's coming.",
+            "Ask him when he comes.",
+            "Ask him when he will come.",
+            "Ask him when he'll come."
           ],
           "gap_accepts": [
-            "he is coming"
+            "he is coming",
+            "he's coming",
+            "he comes",
+            "he will come",
+            "he'll come"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Ask him when is he coming."
         },
         {
           "en": "I wonder how it is in other countries.",
           "cz": "Zajímalo by mě, jak to je v jiných zemích.",
           "gap": "I wonder how ____ in other countries. (it / be)",
           "gap_answer": "it is",
+          "quiz_options": [
+            "it is",
+            "is it"
+          ],
           "accepts": [
             "I wonder how it is in other countries.",
             "I wonder how it's in other countries."
@@ -193,13 +272,18 @@
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
           "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
-          "lemma": "wonder"
+          "lemma": "wonder",
+          "wrong": "I wonder how is it in other countries."
         },
         {
           "en": "Do you know if the shop is open?",
           "cz": "Víš, jestli je ten obchod otevřený?",
           "gap": "Do you know ____ open? (shop)",
           "gap_answer": "if the shop is",
+          "quiz_options": [
+            "if the shop is",
+            "if is the shop"
+          ],
           "accepts": [
             "Do you know if the shop is open?"
           ],
@@ -207,13 +291,19 @@
             "if the shop is"
           ],
           "explanation": "A yes/no question embeds with if or whether.",
-          "explanation_cz": "Zjišťovací otázka se uvozuje pomocí if nebo whether."
+          "explanation_cz": "Zjišťovací otázka se uvozuje pomocí if nebo whether.",
+          "wrong": "Do you know if is the shop open?"
         },
         {
           "en": "Could you tell me what time it starts?",
           "cz": "Můžete mi říct, v kolik to začíná?",
           "gap": "Could you tell me ____? (time / start)",
           "gap_answer": "what time it starts",
+          "quiz_options": [
+            "what time it starts",
+            "what time does it start",
+            "what time it start"
+          ],
           "accepts": [
             "Could you tell me what time it starts?"
           ],
@@ -221,13 +311,19 @@
             "what time it starts"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Could you tell me what time does it start?"
         },
         {
           "en": "I do not know why she left.",
           "cz": "Nevím, proč odešla.",
           "gap": "I do not know why ____. (she / leave)",
           "gap_answer": "she left",
+          "quiz_options": [
+            "she left",
+            "did she leave",
+            "she leave"
+          ],
           "accepts": [
             "I do not know why she left.",
             "I don't know why she left."
@@ -236,13 +332,19 @@
             "she left"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "I do not know why did she leave."
         },
         {
           "en": "I am not sure whether he got the email.",
           "cz": "Nejsem si jistý, jestli ten e-mail dostal.",
           "gap": "I am not sure whether ____ the email. (he / get)",
           "gap_answer": "he got",
+          "quiz_options": [
+            "he got",
+            "did he get",
+            "he get"
+          ],
           "accepts": [
             "I am not sure whether he got the email.",
             "I'm not sure whether he got the email."
@@ -252,13 +354,18 @@
           ],
           "explanation": "A yes/no question embeds with if or whether.",
           "explanation_cz": "Zjišťovací otázka se uvozuje pomocí if nebo whether.",
-          "lemma": "whether"
+          "lemma": "whether",
+          "wrong": "I am not sure whether did he get the email."
         },
         {
           "en": "Do you have any idea where the office is?",
           "cz": "Máš tušení, kde je ta kancelář?",
-          "gap": "Do you have any idea where ____? (office)",
+          "gap": "Do you have any idea where ____? (office / be)",
           "gap_answer": "the office is",
+          "quiz_options": [
+            "the office is",
+            "is the office"
+          ],
           "accepts": [
             "Do you have any idea where the office is?"
           ],
@@ -266,13 +373,19 @@
             "the office is"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "Do you have any idea where is the office?"
         },
         {
           "en": "Could you tell me how this machine works?",
           "cz": "Mohl byste mi říct, jak tenhle stroj funguje?",
           "gap": "Could you tell me how ____? (this machine / work)",
           "gap_answer": "this machine works",
+          "quiz_options": [
+            "this machine works",
+            "does this machine work",
+            "this machine work"
+          ],
           "accepts": [
             "Could you tell me how this machine works?"
           ],
@@ -280,18 +393,24 @@
             "this machine works"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Could you tell me how does this machine work?"
         },
         {
           "en": "I would like to know who is responsible.",
           "cz": "Chtěl bych vědět, kdo je zodpovědný.",
-          "gap": "I would like to know who ____ responsible. (be)",
-          "gap_answer": "is",
+          "gap": "I would like to know ____ responsible. (who / be)",
+          "gap_answer": "who is",
+          "quiz_options": [
+            "who is",
+            "is who",
+            "who does"
+          ],
           "accepts": [
             "I would like to know who is responsible."
           ],
           "gap_accepts": [
-            "is"
+            "who is"
           ],
           "explanation": "When who/what IS the subject, the order does not change: who is responsible.",
           "explanation_cz": "Když je who/what podmětem, pořadí se nemění: who is responsible."
@@ -301,6 +420,11 @@
           "cz": "Víš, co chce?",
           "gap": "Do you know what ____? (he / want)",
           "gap_answer": "he wants",
+          "quiz_options": [
+            "he wants",
+            "does he want",
+            "he want"
+          ],
           "accepts": [
             "Do you know what he wants?",
             "Do you know what she wants?"
@@ -309,13 +433,18 @@
             "he wants"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Do you know what does he want?"
         },
         {
           "en": "Ask her where she put the keys.",
           "cz": "Zeptej se jí, kam dala klíče.",
           "gap": "Ask her where ____ the keys. (she / put)",
           "gap_answer": "she put",
+          "quiz_options": [
+            "she put",
+            "did she put"
+          ],
           "accepts": [
             "Ask her where she put the keys."
           ],
@@ -323,29 +452,42 @@
             "she put"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Ask her where did she put the keys."
         },
         {
           "en": "I wonder if they will accept the offer.",
           "cz": "Zajímalo by mě, jestli tu nabídku přijmou.",
-          "gap": "I wonder ____ the offer. (they / accept)",
-          "gap_answer": "if they will accept",
+          "gap": "I wonder if ____ the offer. (they / accept)",
+          "gap_answer": "they will accept",
+          "quiz_options": [
+            "they will accept",
+            "will they accept",
+            "they accept"
+          ],
           "accepts": [
             "I wonder if they will accept the offer.",
             "I wonder if they'll accept the offer."
           ],
           "gap_accepts": [
-            "if they will accept"
+            "they will accept",
+            "they'll accept"
           ],
           "explanation": "Unlike an if-conditional, an embedded question keeps will: I wonder if they will accept.",
           "explanation_cz": "Na rozdíl od podmínky si vložená otázka will nechává: I wonder if they will accept.",
-          "lemma": "wonder"
+          "lemma": "wonder",
+          "wrong": "I wonder if will they accept the offer."
         },
         {
           "en": "Can you tell me when the next train leaves?",
           "cz": "Můžeš mi říct, kdy jede další vlak?",
           "gap": "Can you tell me when ____? (next train / leave)",
           "gap_answer": "the next train leaves",
+          "quiz_options": [
+            "the next train leaves",
+            "does the next train leave",
+            "the next train leave"
+          ],
           "accepts": [
             "Can you tell me when the next train leaves?"
           ],
@@ -353,13 +495,18 @@
             "the next train leaves"
           ],
           "explanation": "The do/does/did of the direct question disappears — the verb carries the ending instead.",
-          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso."
+          "explanation_cz": "Pomocné do/does/did z přímé otázky mizí — koncovku nese samotné sloveso.",
+          "wrong": "Can you tell me when does the next train leave?"
         },
         {
           "en": "No one knows what the plan is.",
           "cz": "Nikdo neví, jaký je plán.",
-          "gap": "No one knows what ____. (plan)",
+          "gap": "No one knows what ____. (plan / be)",
           "gap_answer": "the plan is",
+          "quiz_options": [
+            "the plan is",
+            "is the plan"
+          ],
           "accepts": [
             "No one knows what the plan is."
           ],
@@ -367,7 +514,8 @@
             "the plan is"
           ],
           "explanation": "After the question phrase: subject + verb (statement order).",
-          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě)."
+          "explanation_cz": "Po úvodu otázky: podmět + sloveso (pořadí jako ve větě).",
+          "wrong": "No one knows what is the plan."
         }
       ]
     }
@@ -375,25 +523,59 @@
   "intro": {
     "cards": [
       {
-        "title": "What they do",
-        "title_cz": "K čemu jsou",
+        "title": "Direct questions",
+        "title_cz": "Přímé otázky",
+        "text_first": true,
         "points": [
-          "Softer than a direct question",
-          "Shops, strangers, work"
+          "They ask someone for information.",
+          "Question form: the helper (**do** / **be**) before the subject."
         ],
         "table": {
           "headers": [
-            "Frame"
+            "Statement",
+            "Question form"
           ],
           "rows": [
             [
-              "Can you tell me…?"
+              "The station is here.",
+              "**Where is** the station?"
             ],
             [
-              "Do you know…?"
+              "He works here.",
+              "**Where does** he work?"
             ],
             [
-              "I wonder…"
+              "The shop is open.",
+              "**Is** the shop open?"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Indirect questions",
+        "title_cz": "Nepřímé otázky",
+        "text_first": true,
+        "points": [
+          "Still questions. They do **not** use question form.",
+          "After the frame: subject + verb (no helper)."
+        ],
+        "table": {
+          "headers": [
+            "Direct",
+            "Indirect"
+          ],
+          "rows": [
+            [
+              "**Where is** the station?",
+              "Can you tell me where the station **is**?"
+            ],
+            [
+              "**Where does** he work?",
+              "Can you tell me where he **works**?"
+            ],
+            [
+              "**Is** the shop open?",
+              "Do you know if the shop **is** open?"
             ]
           ]
         }

@@ -6,6 +6,23 @@ calls & forks for James · anything to smoke-check.
 
 ---
 
+## 2026-08-30 · local (interactive) — `b1_indirect_questions` Telegram-tested
+
+James: *okay so this unit is fairly good*. Telegram `b1_indirect_questions tested`.
+
+Rules moved in AUTHORING-RULES:
+
+- **C1** instance: form-change unit starts with the known form (direct questions + word order), then the new form
+- **B4** → confirmed: Quiz chips are the unit's error (question order), same words — not sibling clauses
+- **B6** instance: *he got* vs *did he get*, not *it costs*
+- **B8** instance: don't hide *if* in the gap when the point is the order after the frame
+- **B11** instance: NP + *be* cues `(plan / be)`, not `(plan)` — lint `verbcue`
+- **E7** broadened to B1 form packs: Use is `use_mode: correct`
+
+Play flags already in the pack: intro Direct → Indirect; authored question-order chips; Type cues; Use error-correction. Reconcile → inspected. Next tab: I10 prep only.
+
+---
+
 ## 2026-08-29 · local (interactive) — smoke ranking is now one writer
 
 Bot was rewriting a 5-line snapshot (and a baked 53-count), so a tick could resurrect tested units. `build_smoke_next.py --write` now also writes `TA/smoke-order.json` (full remaining list). `smoke_list.py` appends the log only, ranks json minus log, remaining = untested count. Vault copy is the live handler; `telegram_sweep_bot.py` on this machine loads that file each message.

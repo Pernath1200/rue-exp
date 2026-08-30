@@ -24,7 +24,8 @@ Candidates are for looking at, never for acting on unread.
 
 Weekend smoke-prep (2026-08-29) added D3 slash / teacher-note, F3 Use-leads,
 F2 Do/Does-in-Use before questions, C4 intro-not-in-bank, C11 Quiz word absent
-from intro, F4 unknown 's names. Still read-only. `/smoke-prep` runs this.
+from intro, F4 unknown 's names. 2026-08-30: B11 NP+be cue `(plan / be)`.
+Still read-only. `/smoke-prep` runs this.
 """
 import json
 import re
@@ -437,6 +438,25 @@ def lint_pack(uid):
                     if ow and tuple(sorted(ow)) == bag and ow != ga_words:
                         f["verbcue"].append(it)
                         break
+
+        # B11 — NP + be gap whose (cue) is the noun only
+        # b1_indirect_questions 2026-08-30: (plan) for "the plan is"
+        # "plan as clue is not enough - should have verb (be) as well"
+        cue_m = re.search(r"\(([^)]*)\)\s*[.?]?\s*$", gap)
+        ga_words = re.findall(r"[a-z']+", ga.lower())
+        if cue_m and ga_words and ga_words[-1] in ("is", "are", "was", "were"):
+            if 2 <= len(ga_words) <= 3:
+                cue = cue_m.group(1).lower()
+                if cue and not re.search(r"\b(be|is|are|was|were)\b", cue):
+                    nouns = [
+                        w for w in re.findall(r"[a-z]+", cue)
+                        if w not in (
+                            "he", "she", "it", "they", "we", "you", "i",
+                            "who", "what", "how",
+                        )
+                    ]
+                    if nouns:
+                        f["verbcue"].append(it)
 
         # A9 — Czech past does not pick present perfect  [EXACT]
         # a2_present_perfect 2026-08-29: Uklidil jsem kuchyň is also I cleaned.
@@ -1073,7 +1093,7 @@ LABELS = [
     ("cancant",     "EXACT  B8  a1_can statement gaps can/can't — Czech already picks the chip"),
     ("stemcue",     "EXACT  A11 many-pair form pack gap has no (stem) — Type is a vocab test"),
     ("longtable",   "EXACT  C35 pairs/mistakes intro table has >8 rows — split across two cards"),
-    ("verbcue",     "EXACT  B11 whole-VP gap has no (lemma) and the stem does not name the verb"),
+    ("verbcue",     "EXACT  B11 whole-VP gap has no (lemma), or NP+be cue is the noun only"),
     ("sortlabel",   "EXACT  B16 position-sort column is 'before verb' / 'before drink' — name the pattern"),
     ("sortbold",    "EXACT  C37 sentence-sort chip is 3+ words with no **taught form**"),
     ("patternchip", "EXACT  B18 Quiz chip is to+ing mashup (to swimming) — use the two real forms"),
