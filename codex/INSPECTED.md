@@ -8,20 +8,22 @@
 
 **Unless a unit has at least one tick it does not go in front of anyone.**
 
-James ticks on Telegram (`<unit_id> tested`). That appends `TA/smoke-done-log.md`; this file is generated from that log. Do not hand-tick the first box. A green audit is not a tick; a clean `check_playable` is not a tick; an agent's report is not a tick.
+James ticks on Telegram (`<unit_id> tested`). That appends `TA/smoke-done-log.md`; this file is generated from that log. Do not hand-tick the first box. A green audit is not a tick; a clean `check_playable` is not a tick; an agent's report is not a tick. Vocab ticks use the tree id (`leaf_home_family tested`); pack filenames (`a1_home_family tested`) alias to the same id.
 
 Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature tick with `<unit_id> untested` on Telegram.
 
 ---
 
-**53 inspected · 0 approved · 7 unseen** of 60 live units
+**Grammar: 53 inspected · 0 approved · 9 unseen** of 62 live units
 
-Of the 2 cloud-authored units, **2 have any tick**.
+**Vocab A1–A2: 1 inspected · 0 approved · 60 unseen** of 61 live units
+
+Of the 6 cloud-authored units, **3 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 20 inspected / 0 approved / 20 units
+## A1 — 20 inspected / 0 approved / 22 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
@@ -29,6 +31,8 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [x][ ] `a1_can` — Can / can't · 24 items
 - [x][ ] `a1_frequency` — Frequency · 24 items
+- [ ][ ] `a1_grammar_match` — Which is correct? · 0 items
+- [ ][ ] `a1_grammar_type` — A1 grammar · type · 0 items
 - [x][ ] `a1_imperatives` — Imperatives · 22 items
 - [x][ ] `a1_like_want_need` — Like / want / need · 24 items
 - [x][ ] `a1_object_pronouns` — Object pronouns · 31 items
@@ -95,3 +99,75 @@ Of the 2 cloud-authored units, **2 have any tick**.
 ## C1 — 0 inspected / 0 approved / 1 units
 
 - [ ][ ] `c1_word_formation` — Word formation (CAE Part 3) · 72 items
+
+---
+
+Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the rail.
+
+
+## A1 vocab — 1 inspected / 0 approved / 36 units
+
+- [x][ ] `trunk_frames_a1` — I am · I have · 12 items · **cloud**
+- [ ][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
+- [ ][ ] `trunk_verbs_daily_a1` — Core frames · Verbs · daily · 12 items
+- [ ][ ] `trunk_verbs_more_a1` — Core frames · Verbs · more · 12 items
+- [ ][ ] `leaf_home_family` — Home & Family · 69 items
+- [ ][ ] `leaf_freetime_a1` — Free time & feelings · 69 items
+- [ ][ ] `trunk_glue_questions_a1` — Core frames · Wh- questions · 12 items
+- [ ][ ] `trunk_verbs_say_a1` — Core frames · Verbs · say & think · 12 items
+- [ ][ ] `leaf_places` — Places · 69 items · seen?
+- [ ][ ] `leaf_countries_a1` — Countries · 44 items
+- [ ][ ] `leaf_food_a1` — Food & drink · 58 items
+- [ ][ ] `leaf_clothes_a1` — Clothes · 23 items
+- [ ][ ] `leaf_body_a1` — Body · 24 items
+- [ ][ ] `leaf_health_a1` — Health · 24 items
+- [ ][ ] `trunk_glue_pronouns_a1` — Core frames · Pronouns · this that · 12 items
+- [ ][ ] `trunk_can_like_want_a1` — Core frames · Can · like · want · 12 items
+- [ ][ ] `trunk_verbs_more2_a1` — Core frames · Verbs · more 2 · 12 items
+- [ ][ ] `leaf_work_a1` — Work · 30 items
+- [ ][ ] `leaf_school_a1` — School & study · 47 items
+- [ ][ ] `trunk_glue_modals_a1` — Core frames · Will · must · do · 12 items
+- [ ][ ] `trunk_prepositions_a1` — Core frames · Prepositions of place · 12 items
+- [ ][ ] `trunk_verbs_more3_a1` — Core frames · Verbs · more 3 · 12 items
+- [ ][ ] `trunk_there_time_a1` — Core frames · There is · time · 12 items
+- [ ][ ] `trunk_glue_quantity_a1` — Core frames · Some · any · every · 12 items
+- [ ][ ] `leaf_time_a1` — Time & numbers · 84 items
+- [ ][ ] `leaf_nature_a1` — Nature & weather · 36 items
+- [ ][ ] `leaf_shopping_a1` — Shopping & money · 34 items
+- [ ][ ] `leaf_animals_a1` — Animals · 21 items
+- [ ][ ] `trunk_glue_linkers_a1` — Core frames · And · but · because · 12 items
+- [ ][ ] `trunk_verbs_action_a1` — Core frames · Verbs · action · 12 items
+- [ ][ ] `leaf_tech_a1` — Tech & media · 24 items
+- [ ][ ] `leaf_colours_a1` — Colours · 12 items
+- [ ][ ] `trunk_adjectives_a1` — Core frames · Adjectives · 36 items
+- [ ][ ] `leaf_ideas_a1` — Ideas & things · 47 items
+- [ ][ ] `a1_vocab_match` — A1 vocab · match · 0 items
+- [ ][ ] `a1_vocab_type` — A1 vocab · type · 0 items
+
+## A2 vocab — 0 inspected / 0 approved / 25 units
+
+- [ ][ ] `leaf_routine_a2` — Routine & habits · 14 items
+- [ ][ ] `leaf_family_a2` — Family & people · 20 items
+- [ ][ ] `leaf_travel_a2` — Travel & holidays · 72 items
+- [ ][ ] `leaf_freetime_a2` — Free time · 32 items
+- [ ][ ] `leaf_feelings_a2` — Feelings · 25 items
+- [ ][ ] `leaf_work_a2` — Work · 33 items
+- [ ][ ] `leaf_society_a2` — Society · 27 items
+- [ ][ ] `leaf_describing_a2` — A2 word list · adjectives · 314 items
+- [ ][ ] `leaf_home_a2` — Home life · 39 items
+- [ ][ ] `leaf_food_a2` — Food & drink · 22 items
+- [ ][ ] `leaf_shopping_a2` — Shopping & money · 23 items · **cloud**
+- [ ][ ] `leaf_adverbs_a2` — Adverbs · 66 items
+- [ ][ ] `leaf_ideas_a2` — A2 word list · abstract · 92 items
+- [ ][ ] `leaf_verbs_a2` — A2 word list · verbs · 112 items
+- [ ][ ] `leaf_sports_a2` — Sport · 22 items · **cloud**
+- [ ][ ] `leaf_health_a2` — Health · 41 items
+- [ ][ ] `leaf_nature_a2` — Nature & weather · 18 items
+- [ ][ ] `leaf_tech_a2` — Tech & media · 35 items
+- [ ][ ] `leaf_school_a2` — School & learning · 34 items
+- [ ][ ] `leaf_clothes_a2` — Clothes · 12 items
+- [ ][ ] `leaf_media_a2` — Media & arts · 24 items · **cloud**
+- [ ][ ] `leaf_misc_a2` — A2 word list · general · 86 items
+- [ ][ ] `trunk_recycle_a2` — Core · recycle (A1) · 24 items
+- [ ][ ] `trunk_lexis_a2` — Core · high-freq A2 lexis · 24 items
+- [ ][ ] `trunk_chunks_a2` — Everyday chunks · 12 items
