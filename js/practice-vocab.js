@@ -131,6 +131,36 @@ function norm(s) {
     .trim();
 }
 
+/** Sentence-Quiz chip key: punctuation off, case KEPT.
+ *  norm() lowercases (via expandContractions), so Italian / italian would
+ *  collapse and the capital-letter contrast could not be a chip. */
+function sentenceChipKey(s) {
+  return String(s == null ? "" : s)
+    .replace(/[''`´]/g, "")
+    .replace(/[.,!?;:"()\-–—]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const CAP_SKIP = new Set([
+  "I", "He", "She", "They", "We", "My", "The", "A", "An",
+  "I'm", "I'll", "I've", "I'd",
+]);
+
+/** Proper names the model capitalises — country, nationality, city, language. */
+function contentCapitals(s) {
+  return (String(s).match(/[A-ZÀ-Ý][A-Za-zÀ-ÿ']*/g) || []).filter(
+    (w) => w.length > 1 && !CAP_SKIP.has(w),
+  );
+}
+
+function capitalsOk(typed, model) {
+  const want = contentCapitals(model);
+  if (!want.length) return true;
+  const got = String(typed == null ? "" : typed).match(/[A-Za-zÀ-ÿ']+/g) || [];
+  return want.every((w) => got.includes(w));
+}
+
 const ARTICLES = new Set(["a", "an", "the"]);
 const STARTS_VOWEL = /^[aeiou]/;
 
@@ -528,6 +558,11 @@ function isFrameItem(item) {
   return Boolean(item && item.gap && item.gap_answer);
 }
 
+/** Which-is-correct? Quiz (B21). Match and Type skip these. */
+function isSentenceQuiz(item) {
+  return item && item.quiz_axis === "sentence";
+}
+
 /**
  * Normalised Czech gloss, for detecting items that share a prompt.
  * Two items with the same Czech support (bohatý = rich AND wealthy) are both
@@ -594,6 +629,7 @@ export function startPractice(root, block, opts) {
    * they are passed through explicitly. */
   const strictDet = !!(opts.strictDeterminers || block.strict_determiners);
   STRICT_DETERMINERS = strictDet;
+  const strictCaps = !!(opts.strictCapitals || block.strict_capitals);
   const noSentence = ladderCfg ? ladderCfg.sentence === false : false;
   const focusStructures =
     Array.isArray(block.focus_structures) && block.focus_structures.length
@@ -614,6 +650,31 @@ export function startPractice(root, block, opts) {
   const sentenceTargets = new Set();
   for (const s of sentenceBank || []) {
     for (const l of s.lemmas || []) sentenceTargets.add(l);
+  }
+
+  const wordItems = (block.items || []).filter((it) => !isSentenceQuiz(it));
+  const sentenceQuizItems = (block.items || []).filter(isSentenceQuiz);
+  function quizList() {
+    return sentenceQuizItems.length ? sentenceQuizItems : wordItems.length ? wordItems : block.items || [];
+  }
+  function matchList() {
+    return wordItems.length ? wordItems : block.items || [];
+  }
+
+  /** Same job as grammar matchBoardSize (B9). Word chips stay 12.
+   *  Count a sentence by English word count, not a trailing period —
+   *  *Hello.* is a word, *They become friends.* is a sentence. */
+  function matchBoardSize(items) {
+    if (!items || !items.length) return DEFAULT_PASS;
+    let n = 0;
+    for (const it of items) {
+      const words = String(it.en || "")
+        .trim()
+        .split(/\s+/)
+        .filter(Boolean);
+      if (words.length >= 4) n += 1;
+    }
+    return n > items.length / 2 ? 8 : DEFAULT_PASS;
   }
 
   function orderOpts(items) {
@@ -890,11 +951,12 @@ export function startPractice(root, block, opts) {
     if (hasIntro) base.unshift(["intro", "Intro"]);
     const modes = base.map(([id, label], i) => [id, `${i + 1} · ${label}`]);
     const bankN = sentenceBank ? sentenceBank.length : 0;
+    const wordN = matchList().length;
     const metaBits = isFrames
       ? `${block.items.length} frames · ${packLevel} · trunk`
       : bankN
-        ? `${block.items.length} words · ${bankN} sentences · ${packLevel}`
-        : `${block.items.length} words · ${packLevel}`;
+        ? `${wordN} words · ${bankN} sentences · ${packLevel}`
+        : `${wordN} words · ${packLevel}`;
     return `
       <div class="practice-head">
         <div class="practice-title">${escapeHtml(block.title)}</div>
@@ -915,11 +977,17 @@ export function startPractice(root, block, opts) {
       </div>
       <div class="p-bar">
         <span id="p-status">${escapeHtml(statusText || "")}</span>
-        <span class="dir-static">${state.mode === "sentence" ? "Write in English" : "CZ → EN"}</span>
+        <span class="dir-static">${
+          state.mode === "sentence"
+            ? "Write in English"
+            : state.mode === "quiz" && sentenceQuizItems.length
+              ? "Which is correct?"
+              : "CZ → EN"
+        }</span>
       </div>
       <div id="p-stage" class="stage"></div>
       <div class="practice-exit">
-        <button type="button" class="btn-ghost" id="p-exit">← Back to map</button>
+        <button type="button" class="btn-ghost" id="p-exit">← Home</button>
       </div>
     `;
   }
@@ -952,12 +1020,13 @@ export function startPractice(root, block, opts) {
       en: it.en || "",
       cz: it.cz || "",
       gap: it.gap || "",
-      gap_answer: it.gap_answer || "",
+      gap_answer: it.gap_answer || it.en || "",
     });
   }
 
   function newMatch() {
-    const order = rotatedOrder("match", block.items, null);
+    const list = matchList();
+    const order = rotatedOrder("match", list, null);
     // Drop items whose Czech prompt duplicates one already on the board —
     // two identical tiles are unpairable by sight, and pairing is graded by
     // item id, so the visually-correct pairing is wrong half the time.
@@ -971,7 +1040,7 @@ export function startPractice(root, block, opts) {
     const seenGloss = new Set();
     const pool = [];
     for (const i of order) {
-      const item = block.items[i];
+      const item = list[i];
       const support = supportOf(item);
       const senses = czSenses(support);
       const keys = senses.length ? senses : [glossKey(support)].filter(Boolean);
@@ -979,9 +1048,21 @@ export function startPractice(root, block, opts) {
       for (const k of keys) seenGloss.add(k);
       pool.push(item);
     }
-    const left = pool.map((it, i) => ({ t: supportOf(it), id: i }));
+    const cap = matchBoardSize(list);
+    if (pool.length > cap) pool.splice(cap);
+    const left = pool.map((it, i) => ({
+      t: supportOf(it),
+      en: targetOf(it),
+      cz: supportOf(it),
+      id: i,
+    }));
     const right = shuffle(
-      pool.map((it, i) => ({ t: targetOf(it), id: i })),
+      pool.map((it, i) => ({
+        t: targetOf(it),
+        en: targetOf(it),
+        cz: supportOf(it),
+        id: i,
+      })),
     );
     state.match = {
       left,
@@ -992,19 +1073,33 @@ export function startPractice(root, block, opts) {
     };
   }
 
-  function renderMatch(stage) {
-    if (!state.match) newMatch();
+  /** English answers in left-column order — James smokes without Czech. */
+  function pushMatchSmoke() {
     const m = state.match;
-    const doneCount = m.doneIds.size;
+    const key = (m?.left || [])
+      .map((x) => x.en)
+      .filter(Boolean)
+      .join(" · ");
     setFlagContext({
       stage: "match",
       itemIndex: null,
-      en: "",
+      en: key,
       cz: "",
       gap: "",
       gap_answer: "",
       typed: "",
     });
+  }
+
+  function smokeToolbarOn() {
+    return document.getElementById("smoke-toolbar")?.hidden === false;
+  }
+
+  function renderMatch(stage) {
+    if (!state.match) newMatch();
+    const m = state.match;
+    const doneCount = m.doneIds.size;
+    pushMatchSmoke();
 
     if (doneCount === m.total) {
       reportMode("match");
@@ -1016,7 +1111,7 @@ export function startPractice(root, block, opts) {
           <div class="nav">
             <button type="button" class="btn" id="m-again">New set</button>
             <button type="button" class="btn primary" id="m-quiz">2 · Quiz →</button>
-            <button type="button" class="btn" id="m-map">← Map</button>
+            <button type="button" class="btn" id="m-map">← Home</button>
           </div>
         </div>`;
       stage.querySelector("#m-again").onclick = () => {
@@ -1029,7 +1124,7 @@ export function startPractice(root, block, opts) {
         opts.onExit();
       });
       bindEnterPrimary(stage);
-      return `Matched ${doneCount} of ${m.total}${deckLabel("match", block.items)}`;
+      return `Matched ${doneCount} of ${m.total}${deckLabel("match", matchList())}`;
     }
 
     const col = (arr, side) =>
@@ -1042,9 +1137,17 @@ export function startPractice(root, block, opts) {
         })
         .join("");
 
+    // Smoke-only: same hatch as grammar Match (James, 2026-08-30). Re-testing
+    // Quiz must not pay the match toll every time. Hidden unless the dev
+    // toolbar is up, so students still do the pairing.
     stage.innerHTML = `
-      <div class="match-hint">Click a word, then its pair · click again (or Esc) to deselect</div>
-      <div class="match"><div>${col(m.left, "L")}</div><div>${col(m.right, "R")}</div></div>`;
+      <div class="match-hint">Click a word, then its pair · click again (or Esc) to deselect${
+        smokeToolbarOn()
+          ? ` · <button type="button" class="link" id="m-skip">skip match (smoke) →</button>`
+          : ""
+      }</div>
+      <div class="match"><div class="match-col">${col(m.left, "L")}</div><div class="match-col">${col(m.right, "R")}</div></div>`;
+    stage.querySelector("#m-skip")?.addEventListener("click", () => setMode("quiz"));
 
     // Esc clears a mis-tapped token without needing to find it again.
     clearKey();
@@ -1110,12 +1213,12 @@ export function startPractice(root, block, opts) {
         }
       });
     });
-    return `Matched ${doneCount} of ${m.total}${deckLabel("match", block.items)}`;
+    return `Matched ${doneCount} of ${m.total}${deckLabel("match", matchList())}`;
   }
 
   /** @param {number[] | null} onlyIndices item indices to practice (retry wrong) */
   function newQuiz(onlyIndices) {
-    const list = block.items;
+    const list = quizList();
     const order = rotatedOrder("quiz", list, onlyIndices);
     state.quiz = {
       order,
@@ -1128,7 +1231,7 @@ export function startPractice(root, block, opts) {
   }
 
   function renderQuiz(stage) {
-    const list = block.items;
+    const list = quizList();
     if (!state.quiz) newQuiz();
     const q = state.quiz;
     const passLen = q.order.length;
@@ -1153,7 +1256,7 @@ export function startPractice(root, block, opts) {
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
                    <button type="button" class="btn" id="q-type">3 · Type →</button>
-                   <button type="button" class="btn" id="q-type-map">← Map</button>`
+                   <button type="button" class="btn" id="q-type-map">← Home</button>`
                 : `<button type="button" class="btn" id="q-again">Try full set</button>
                    <button type="button" class="btn primary" id="q-type">3 · Type →</button>`
             }
@@ -1197,9 +1300,19 @@ export function startPractice(root, block, opts) {
      * confusable set (the false friend's twin, the learner's error form);
      * fallback is other items' gap answers. */
     const frame = isFrameItem(it);
-    const correct = frame ? it.gap_answer : targetOf(it);
+    const sentence = isSentenceQuiz(it);
+    const correct = sentence
+      ? targetOf(it)
+      : frame
+        ? it.gap_answer
+        : targetOf(it);
     let others;
-    if (frame) {
+    if (sentence) {
+      const authored = Array.isArray(it.quiz_options)
+        ? it.quiz_options.filter((o) => o && sentenceChipKey(o) !== sentenceChipKey(correct))
+        : [];
+      others = [...new Set(authored)].slice(0, 3);
+    } else if (frame) {
       const authored = Array.isArray(it.quiz_options)
         ? [...new Set(it.quiz_options.filter((o) => o && o !== correct))]
         : [];
@@ -1237,14 +1350,27 @@ export function startPractice(root, block, opts) {
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
-        <div class="prompt">${sw(supportOf(it))}${escapeHtml(supportOf(it))}${gb(supportOf(it))}</div>
+        <div class="prompt">${
+          sentence
+            ? "Which is correct?"
+            : `${sw(supportOf(it))}${escapeHtml(supportOf(it))}${gb(supportOf(it))}`
+        }</div>
+        ${
+          sentence && supportOf(it)
+            ? `<div class="sub">${escapeHtml(supportOf(it))}</div>`
+            : ""
+        }
         ${frame ? `<div class="prompt prompt-gap">${escapeHtml(it.gap)}</div>` : ""}
-        <div class="sub">Choose the ${frame ? "missing word" : "English"} · keys 1–4 · then <strong>Enter</strong> = next (always)</div>
+        <div class="sub">${
+          sentence
+            ? "Tap the English sentence · keys 1–3 · then <strong>Enter</strong> = next"
+            : `Choose the ${frame ? "missing word" : "English"} · keys 1–4 · then <strong>Enter</strong> = next (always)`
+        }</div>
         <div class="opts">
           ${opts
             .map(
               (o, i) =>
-                `<button type="button" class="opt" data-i="${i}"><span class="knum">${i + 1}</span>${sw(o)}${escapeHtml(o)}${gb(o)}</button>`,
+                `<button type="button" class="opt" data-i="${i}"><span class="knum">${i + 1}</span>${sentence ? "" : sw(o)}${escapeHtml(o)}${sentence ? "" : gb(o)}</button>`,
             )
             .join("")}
         </div>
@@ -1264,12 +1390,15 @@ export function startPractice(root, block, opts) {
       if (q.answered) return;
       q.answered = true;
       const buttons = [...stage.querySelectorAll(".opt")];
-      if (opts[i] === correct) {
+      const chipEq = sentence
+        ? (a, b) => sentenceChipKey(a) === sentenceChipKey(b)
+        : (a, b) => norm(a) === norm(b);
+      if (chipEq(opts[i], correct)) {
         buttons[i].classList.add("correct");
         q.score++;
       } else {
         buttons[i].classList.add("wrong");
-        const ci = opts.indexOf(correct);
+        const ci = opts.findIndex((o) => chipEq(o, correct));
         if (ci >= 0) buttons[ci].classList.add("correct");
         if (!q.wrong.includes(itemIndex)) q.wrong.push(itemIndex);
       }
@@ -1319,12 +1448,12 @@ export function startPractice(root, block, opts) {
     // Capture so numbers win even if a button has focus
     document.addEventListener("keydown", state.keyHandler, true);
 
-    return `${q.retryPass ? "Retry" : "Question"} ${q.pos + 1} of ${passLen} · score ${q.score}${q.retryPass ? "" : deckLabel("quiz", block.items)}`;
+    return `${q.retryPass ? "Retry" : "Question"} ${q.pos + 1} of ${passLen} · score ${q.score}${q.retryPass ? "" : deckLabel("quiz", list)}`;
   }
 
   /** @param {number[] | null} onlyIndices item indices to practice (retry wrong) */
   function newType(onlyIndices) {
-    const list = block.items;
+    const list = matchList();
     const order = rotatedOrder("type", list, onlyIndices);
     state.typ = {
       order,
@@ -1338,7 +1467,7 @@ export function startPractice(root, block, opts) {
   }
 
   function renderType(stage) {
-    const list = block.items;
+    const list = matchList();
     if (!state.typ) newType();
     const t = state.typ;
     const passLen = t.order.length;
@@ -1371,13 +1500,13 @@ export function startPractice(root, block, opts) {
               noSentence
                 ? wrongN > 0
                   ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
-                     <button type="button" class="btn" id="t-sent-map">← Map</button>`
+                     <button type="button" class="btn" id="t-sent-map">← Home</button>`
                   : `<button type="button" class="btn" id="t-again">Try full set</button>
-                     <button type="button" class="btn primary" id="t-sent-map">← Map</button>`
+                     <button type="button" class="btn primary" id="t-sent-map">← Home</button>`
                 : wrongN > 0
                   ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
                      <button type="button" class="btn" id="t-sent">4 · Use →</button>
-                     <button type="button" class="btn" id="t-sent-map">← Map</button>`
+                     <button type="button" class="btn" id="t-sent-map">← Home</button>`
                   : `<button type="button" class="btn" id="t-again">Try full set</button>
                      <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
             }
@@ -1477,6 +1606,14 @@ export function startPractice(root, block, opts) {
         isCorrectAnswer(inp.value, it, alt, { forGap: frame }),
       );
       if (isCorrectAnswer(inp.value, it, answer, { forGap: frame }) || alsoRight) {
+        if (strictCaps && !capitalsOk(inp.value, answer)) {
+          t.answered = true;
+          t.missedThis = true;
+          fb.innerHTML = `✗ Capital letter: <span class="reveal">${escapeHtml(answer)}</span>`;
+          fb.className = "fb bad";
+          afterGrade();
+          return;
+        }
         t.answered = true;
         t.missedThis = false;
         t.score++;
@@ -1554,7 +1691,7 @@ export function startPractice(root, block, opts) {
       else grade();
     });
 
-    return `${passLabel} ${t.pos + 1} / ${passLen} · score ${t.score}${t.retryPass ? "" : deckLabel("type", block.items)}`;
+    return `${passLabel} ${t.pos + 1} / ${passLen} · score ${t.score}${t.retryPass ? "" : deckLabel("type", list)}`;
   }
 
   // ---- 4 · Use / sentence (model bank / trunk frames) ----
@@ -1603,8 +1740,8 @@ export function startPractice(root, block, opts) {
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="fs-retry">Retry wrong (${wrongN})</button>
-                   <button type="button" class="btn" id="fs-map">Back to map →</button>`
-                : `<button type="button" class="btn primary" id="fs-map">Back to map →</button>
+                   <button type="button" class="btn" id="fs-map">← Home</button>`
+                : `<button type="button" class="btn primary" id="fs-map">← Home</button>
                    <button type="button" class="btn" id="fs-match">1 · Match</button>`
             }
           </div>
@@ -1691,9 +1828,15 @@ export function startPractice(root, block, opts) {
       t.answered = true;
       t.missedThis = false;
       if (isCorrectAnswer(inp.value, it, it.en)) {
-        t.score++;
-        fb.textContent = "✓ Correct";
-        fb.className = "fb good";
+        if (strictCaps && !capitalsOk(inp.value, it.en)) {
+          t.missedThis = true;
+          fb.innerHTML = `✗ Capital letter: <span class="reveal">${escapeHtml(it.en)}</span>`;
+          fb.className = "fb bad";
+        } else {
+          t.score++;
+          fb.textContent = "✓ Correct";
+          fb.className = "fb good";
+        }
       } else {
         t.missedThis = true;
         fb.innerHTML = `✗ Answer: <span class="reveal">${escapeHtml(it.en)}</span>`;
@@ -1762,7 +1905,7 @@ export function startPractice(root, block, opts) {
         <div class="nav" style="margin-top:1rem">
           <button type="button" class="btn primary" id="soon-type">3 · Type</button>
           <button type="button" class="btn" id="soon-match">1 · Match</button>
-          <button type="button" class="btn" id="soon-map">← Map</button>
+          <button type="button" class="btn" id="soon-map">← Home</button>
         </div>
       </div>`;
     stage.querySelector("#soon-type").onclick = () => setMode("type");

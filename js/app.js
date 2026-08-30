@@ -3,9 +3,16 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-30-pfxuse";
-import { startPractice as startVocabPractice } from "./practice-vocab.js";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-30-sit2";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-30-match8";
 import { startWordFormationDrill } from "./exam-drill.js";
+import {
+  startVocabSprint,
+  startVocabTypeSprint,
+  startGrammarMatchSprint,
+  startGrammarTypeSprint,
+  startFinaleSprint,
+} from "./vocab-sprint.js?v=2026-08-30-finale";
 import {
   loadProgress,
   recentNodeIds,
@@ -278,6 +285,46 @@ function isFruit(node) {
   return node.domain === "grammar" ? hasFruit(node.id) : hasVocabFruit(node);
 }
 
+/**
+ * Prototype (James, 2026-08-30): one path row, one sitting.
+ * Grammar then vocab back to back. Both packs and both tree knots stay.
+ */
+const CHAINED_SITTINGS = {
+  a1_be_have: "trunk_frames_a1",
+};
+
+function chainVocabId(grammarId) {
+  return CHAINED_SITTINGS[grammarId] || null;
+}
+
+function chainGrammarId(vocabId) {
+  for (const [g, v] of Object.entries(CHAINED_SITTINGS)) {
+    if (v === vocabId) return g;
+  }
+  return null;
+}
+
+function chainVocabNode(grammarId) {
+  const id = chainVocabId(grammarId);
+  return id ? nodeById(id) : null;
+}
+
+function sittingBothFruit(grammarId) {
+  const g = nodeById(grammarId);
+  const v = chainVocabNode(grammarId);
+  return Boolean(g && v && isFruit(g) && isFruit(v));
+}
+
+/** Remaining half of a chained sitting, or null if the sitting is done. */
+function sittingRemaining(grammarId) {
+  if (!chainVocabId(grammarId)) return null;
+  const g = nodeById(grammarId);
+  const v = chainVocabNode(grammarId);
+  if (g && !isFruit(g)) return g;
+  if (v && !isFruit(v)) return v;
+  return null;
+}
+
 function progressLabel(node) {
   return node.domain === "grammar"
     ? progressLabelGrammar(node)
@@ -339,6 +386,7 @@ function showMap(opts = {}) {
   if (STATE.lastPlayedLevel) STATE.level = STATE.lastPlayedLevel;
   if (!opts.fromHash) setUnitHash(null);
   renderAll();
+  if (opts.skipScroll) return;
   // Land on "what's next" — after a review launch, that means the review
   // card (finish the day's queue), falling through to up-next once empty.
   requestAnimationFrame(() => {
@@ -352,6 +400,16 @@ function showMap(opts = {}) {
     target?.classList.add("is-focus-target");
     setTimeout(() => target?.classList.remove("is-focus-target"), 1600);
   });
+}
+
+/** Clean home: Do next + actions. No leftover unit card (James, 2026-08-30). */
+function goHome() {
+  STATE.selectedId = null;
+  STATE._userPickedUnit = false;
+  STATE.homePanel = null;
+  STATE.cameFromReview = false;
+  showMap({ skipScroll: true });
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function showPractice(domain) {
@@ -535,13 +593,13 @@ function showFruitPayoff({ before, after, kind = "learned", grow = true, level: 
         level,
         nodes: STATE.tree.nodes || [],
         isFruit: (id) => { const n = nodeById(id); return n ? isFruit(n) : false; },
-        progressState: (id) => { const n = nodeById(id); return n ? progressState(n) : "planned"; },
+        progressState: (id) => { const n = nodeById(id); return n ? nodeTreeStrength(n) : "none"; },
         highlight: parts,
         justNow: grow ? nodeId : null,
         animateGrowth: grow,
-        /* Grammar lives below ground: its payoff shows trunk + roots only, the
-         * unit's root grown and labelled — no branches, no crown labels
-         * (James, 2026-08-24, Articles 2 smoke). Vocab payoffs keep the crown. */
+        /* Same accumulating plant as the Map (James, 2026-08-30): previous
+         * work stays filled; future seats stay faint and empty. Grammar still
+         * names and glows its root; the crown is no longer cut off. */
         focus: unit.domain === "grammar" ? "roots" : undefined,
         focusLabel: unit.domain === "grammar" ? unit.label || "" : "",
       });
@@ -600,10 +658,8 @@ function showFruitPayoff({ before, after, kind = "learned", grow = true, level: 
     void startDoNext();
   });
   root.querySelector("#payoff-home")?.addEventListener("click", () => {
-    leaveToMap();
-    STATE.homePanel = null;
-    renderHomeChrome();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    clearFruitPayoffKeys();
+    goHome();
   });
   root.querySelector("#payoff-review")?.addEventListener("click", () => {
     leaveToMap();
@@ -670,9 +726,33 @@ function spineNext() {
     ...(STATE.spine?.steps_a2 || []),
   ];
   for (const nid of order) {
+    if (chainGrammarId(nid)) continue;
     const node = nodeById(nid);
     if (!node || !node.levels?.includes(STATE.level)) continue;
     if (node.status !== "live" || !node.content) continue;
+    if (node.fruit === false) continue;
+    const chained = chainVocabId(nid);
+    if (chained) {
+      if (sittingBothFruit(nid)) continue;
+      const half = sittingRemaining(nid);
+      if (!half) continue;
+      const step =
+        steps.find((s) => {
+          const g = s.grammar || s.rue2 || s.RUE2 || {};
+          const v = s.vocab || s.rue3 || s.RUE3 || {};
+          return g.node_id === nid || v.node_id === nid;
+        }) || { id: node.unit_id || "", case_tags: node.case_tags || [] };
+      return {
+        step,
+        node: half,
+        side: half.domain === "grammar" ? "grammar" : "vocab",
+        pair: {
+          node_id: chained,
+          label: chainVocabNode(nid)?.label || chained,
+        },
+        displayNode: node,
+      };
+    }
     if (isFruit(node)) continue;
     const step =
       steps.find((s) => {
@@ -685,7 +765,7 @@ function spineNext() {
     const pair = pairId
       ? { node_id: pairId, label: nodeById(pairId)?.label || pairId }
       : null;
-    return { step, node, side, pair };
+    return { step, node, side, pair, displayNode: node };
   }
   return null;
 }
@@ -756,7 +836,8 @@ function renderHomeChrome() {
     if (!hit) {
       line.textContent = "Path complete for now.";
     } else {
-      line.innerHTML = `Do next: <strong>${escapeHtml(hit.node.label)}</strong>`;
+      const nextLabel = (hit.displayNode || hit.node).label;
+      line.innerHTML = `Do next: <strong>${escapeHtml(nextLabel)}</strong>`;
     }
   }
   const revHint = document.getElementById("home-review-hint");
@@ -1057,7 +1138,7 @@ async function startExamDrillFor(level) {
       title: tier?.label || `Word formation (${level})`,
       packs,
       root,
-      onExit: () => showMap(),
+      onExit: () => goHome(),
     });
   } catch (e) {
     console.warn(e);
@@ -1150,6 +1231,7 @@ function renderPath() {
   const order = pathOrderForLevel(STATE.level);
   let n = 0;
   for (const id of order) {
+    if (chainGrammarId(id)) continue;
     const node = nodeById(id);
     if (!node || !node.levels?.includes(STATE.level)) continue;
     n += 1;
@@ -1158,12 +1240,18 @@ function renderPath() {
     btn.type = "button";
     btn.className = "path-item";
     if (node.status !== "live") btn.classList.add("is-coming");
-    btn.setAttribute(
-      "aria-pressed",
-      STATE.selectedId === node.id ? "true" : "false",
-    );
-    const st = progressState(node);
+    const vocabHalf = chainVocabNode(id);
+    const selected =
+      STATE.selectedId === node.id ||
+      (vocabHalf && STATE.selectedId === vocabHalf.id);
+    btn.setAttribute("aria-pressed", selected ? "true" : "false");
+    const bothDone = vocabHalf ? sittingBothFruit(id) : progressState(node) === "fruit";
+    const st = bothDone ? "fruit" : progressState(node);
     let label = progressLabel(node);
+    if (vocabHalf) {
+      if (bothDone) label = "done";
+      else if (isFruit(node) && !isFruit(vocabHalf)) label = "words";
+    }
     if (node.status === "coming") label = "coming";
     else if (node.status === "planned") label = "planned";
     else if (node.status === "parked") label = "parked";
@@ -1172,8 +1260,9 @@ function renderPath() {
     else if (node.status !== "live" || st === "planned")
       statusCls += " is-planned";
     else statusCls += " is-live";
-    const dtag =
-      node.domain === "grammar"
+    const dtag = vocabHalf
+      ? `<span class="domain-tag g">gram</span> <span class="domain-tag v">vocab</span>`
+      : node.domain === "grammar"
         ? `<span class="domain-tag g">gram</span>`
         : `<span class="domain-tag v">vocab</span>`;
 
@@ -1221,6 +1310,7 @@ function renderDetail() {
   const partner = node.partner_id ? nodeById(node.partner_id) : null;
 
   box.innerHTML = `
+    <button type="button" class="btn-ghost" id="btn-detail-back">← Home</button>
     <div>${pills.join("")}</div>
     <p class="practice-prompt" style="margin-top:0.5rem">${escapeHtml(node.label)}</p>
     ${
@@ -1231,6 +1321,7 @@ function renderDetail() {
     }
     <div class="node-actions" id="node-actions"></div>
   `;
+  box.querySelector("#btn-detail-back")?.addEventListener("click", () => goHome());
   box.querySelector("#btn-detail-partner")?.addEventListener("click", () => {
     if (partner) focusNodeOnMap(partner);
   });
@@ -1239,8 +1330,10 @@ function renderDetail() {
     const go = document.createElement("button");
     go.type = "button";
     go.className = "btn";
-    go.textContent = "Practice →";
-    go.addEventListener("click", () => openNode(node));
+    const remaining = chainVocabId(node.id) ? sittingRemaining(node.id) : null;
+    go.textContent =
+      remaining && remaining.id !== node.id ? "Continue →" : "Practice →";
+    go.addEventListener("click", () => openNode(remaining || node));
     actions.appendChild(go);
   } else {
     const wait = document.createElement("button");
@@ -1268,14 +1361,85 @@ async function openNode(node, launch = {}) {
     const pack = await loadJson(`./data/${node.content}`);
     showPractice(node.domain);
     const root = document.getElementById("practice-root");
+    if (typeof root._RUE2UnbindKeys === "function") {
+      try {
+        root._RUE2UnbindKeys();
+      } catch {
+        /* */
+      }
+      root._RUE2UnbindKeys = null;
+    }
+    if (typeof root._RUEVocabUnbind === "function") {
+      try {
+        root._RUEVocabUnbind();
+      } catch {
+        /* */
+      }
+      root._RUEVocabUnbind = null;
+    }
     root.innerHTML = "";
 
     STATE.lastPlayedLevel = levelOfNode(node);
 
-    if (node.domain === "grammar") {
+    if (
+      pack.practice === "grammar_match_sprint" ||
+      node.practice === "grammar_match_sprint"
+    ) {
+      startGrammarMatchSprint({
+        root,
+        node,
+        loadJson,
+        tree: STATE.tree,
+        onExit: () => {
+          if (maybeShowFruitPayoff()) return;
+          goHome();
+        },
+      });
+    } else if (
+      pack.practice === "grammar_type_sprint" ||
+      node.practice === "grammar_type_sprint"
+    ) {
+      startGrammarTypeSprint({
+        root,
+        node,
+        loadJson,
+        tree: STATE.tree,
+        onExit: () => {
+          if (maybeShowFruitPayoff()) return;
+          goHome();
+        },
+      });
+    } else if (
+      pack.practice === "use_sprint" ||
+      node.practice === "use_sprint"
+    ) {
+      let statsBefore = levelUnitStats(
+        levelOfNode(node),
+        STATE.tree?.nodes || [],
+      );
+      startFinaleSprint({
+        root,
+        node,
+        loadJson,
+        tree: STATE.tree,
+        onFruit: (meta = {}) => {
+          queueFruitPayoff(node.id, statsBefore, {
+            grow: meta.grow !== false,
+          });
+        },
+        onExit: () => {
+          if (maybeShowFruitPayoff()) return;
+          goHome();
+        },
+      });
+    } else if (node.domain === "grammar") {
       let statsBefore = null;
       startGrammarPractice(pack, root, {
         startStage: launch.review ? "type" : undefined,
+        nextSitting: () => {
+          if (launch.review) return null;
+          return chainVocabNode(node.id);
+        },
         onBeforeProgress: () => {
           statsBefore = levelUnitStats(levelOfNode(node), STATE.tree?.nodes || []);
         },
@@ -1298,10 +1462,46 @@ async function openNode(node, launch = {}) {
           if (node.unit_id) {
             refreshUnit(node.unit_id, node.id, node.partner_id);
           }
+          if (!launch.review) {
+            const nextHalf = chainVocabNode(node.id);
+            if (nextHalf) {
+              STATE.pendingFruitPayoff = null;
+              void openNode(nextHalf);
+              return;
+            }
+          }
           if (maybeShowFruitPayoff()) return;
-          showMap();
+          goHome();
         },
         onOpenReference: (tabId) => openReference(tabId),
+      });
+    } else if (
+      pack.practice === "match_sprint" ||
+      node.practice === "match_sprint"
+    ) {
+      startVocabSprint({
+        root,
+        node,
+        loadJson,
+        tree: STATE.tree,
+        onExit: () => {
+          if (maybeShowFruitPayoff()) return;
+          goHome();
+        },
+      });
+    } else if (
+      pack.practice === "type_sprint" ||
+      node.practice === "type_sprint"
+    ) {
+      startVocabTypeSprint({
+        root,
+        node,
+        loadJson,
+        tree: STATE.tree,
+        onExit: () => {
+          if (maybeShowFruitPayoff()) return;
+          goHome();
+        },
       });
     } else {
       // Vocab: pack may be multi-block; use first block or whole pack as RUE3 does
@@ -1372,13 +1572,17 @@ async function openNode(node, launch = {}) {
         // through explicitly or the engine never sees it.
         ladder: pack.ladder || null,
         strictDeterminers: !!pack.strict_determiners,
+        strictCapitals: !!pack.strict_capitals,
         senseMap: STATE.senseMap,
         onTouch: () => touchVocabBlock(blockId, node.id),
         onModeComplete: (mode, meta) => {
           const nodes = STATE.tree?.nodes || [];
           const statsBefore = levelUnitStats(levelOfNode(node), nodes);
           const wasFruit = hasVocabFruit(node);
-          const r = completeVocabMode(blockId, mode, meta || {});
+          const r = completeVocabMode(blockId, mode, {
+            ...(meta || {}),
+            nodeId: node.id,
+          });
           const nowFruit = hasVocabFruit(node);
           if ((r && r.justFruited) || (!wasFruit && nowFruit)) {
             queueFruitPayoff(node.id, statsBefore);
@@ -1389,7 +1593,7 @@ async function openNode(node, launch = {}) {
             refreshUnit(node.unit_id, node.partner_id, node.id);
           }
           if (maybeShowFruitPayoff()) return;
-          showMap();
+          goHome();
         },
       });
     }
@@ -1563,16 +1767,15 @@ async function boot() {
     watchAutoTranslate();
 
     document.getElementById("btn-practice-back")?.addEventListener("click", () => {
-      showMap();
+      if (maybeShowFruitPayoff()) return;
+      goHome();
     });
 
     /* The RUE brand is a Home button. Martina finished a stage in class and
      * could not see how to leave the page (2026-08-18) — every terminal
      * screen now has an always-visible way home, top-left, from any state. */
     document.getElementById("brand-home")?.addEventListener("click", () => {
-      STATE.homePanel = null;
-      showMap();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      goHome();
     });
 
     if (IS_DEV_HOST) {

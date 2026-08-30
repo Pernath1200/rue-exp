@@ -14,25 +14,26 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**Grammar: 53 inspected · 0 approved · 9 unseen** of 62 live units
+**Grammar: 55 inspected · 0 approved · 8 unseen** of 63 live units
 
-**Vocab A1–A2: 1 inspected · 0 approved · 60 unseen** of 61 live units
+**Vocab A1–A2: 4 inspected · 0 approved · 57 unseen** of 61 live units
 
 Of the 6 cloud-authored units, **3 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 20 inspected / 0 approved / 22 units
+## A1 — 22 inspected / 0 approved / 23 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
 - [x][ ] `a1_and_but_because` — And / but / because · 24 items
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [x][ ] `a1_can` — Can / can't · 24 items
+- [ ][ ] `a1_finale` — A1 finale · 0 items
 - [x][ ] `a1_frequency` — Frequency · 24 items
-- [ ][ ] `a1_grammar_match` — Which is correct? · 0 items
-- [ ][ ] `a1_grammar_type` — A1 grammar · type · 0 items
+- [x][ ] `a1_grammar_match` — Which is correct? · 0 items
+- [x][ ] `a1_grammar_type` — A1 grammar · type · 0 items
 - [x][ ] `a1_imperatives` — Imperatives · 22 items
 - [x][ ] `a1_like_want_need` — Like / want / need · 24 items
 - [x][ ] `a1_object_pronouns` — Object pronouns · 31 items
@@ -105,12 +106,12 @@ Of the 6 cloud-authored units, **3 have any tick**.
 Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the rail.
 
 
-## A1 vocab — 1 inspected / 0 approved / 36 units
+## A1 vocab — 4 inspected / 0 approved / 36 units
 
 - [x][ ] `trunk_frames_a1` — I am · I have · 12 items · **cloud**
-- [ ][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
-- [ ][ ] `trunk_verbs_daily_a1` — Core frames · Verbs · daily · 12 items
-- [ ][ ] `trunk_verbs_more_a1` — Core frames · Verbs · more · 12 items
+- [x][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
+- [x][ ] `trunk_verbs_daily_a1` — Core frames · Verbs · daily · 12 items
+- [x][ ] `trunk_verbs_more_a1` — Core frames · Verbs · more · 12 items
 - [ ][ ] `leaf_home_family` — Home & Family · 69 items
 - [ ][ ] `leaf_freetime_a1` — Free time & feelings · 69 items
 - [ ][ ] `trunk_glue_questions_a1` — Core frames · Wh- questions · 12 items
