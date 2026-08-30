@@ -18,7 +18,7 @@ import {
   grammarBest,
 } from "./progress.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
-import { introDiagram } from "./intro-visuals.js?v=2026-08-29-tfw";
+import { introDiagram } from "./intro-visuals.js?v=2026-08-30-certscale";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";
@@ -756,15 +756,53 @@ export function startPractice(rawPack, root, opts) {
 
     const diagramBlock = () => {
       let html = "";
+      const cells = [];
       if (card.diagram) {
-        const svgMarkup = introDiagram(card.diagram, card.labels || []);
-        if (svgMarkup) {
-          html +=
-            card.diagram === "articles_map"
-              ? svgMarkup
-              : `<div class="intro-scene-wrap">${svgMarkup}</div>`;
-        } else if (card.diagram_fallback)
-          html += `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
+        cells.push({
+          diagram: card.diagram,
+          caption: card.diagram_caption || "",
+          labels: card.labels || [],
+        });
+      }
+      if (Array.isArray(card.diagrams)) {
+        for (const d of card.diagrams) {
+          if (!d) continue;
+          if (typeof d === "string") {
+            cells.push({ diagram: d, caption: "", labels: [] });
+          } else if (d.diagram) {
+            cells.push({
+              diagram: d.diagram,
+              caption: d.caption || "",
+              labels: d.labels || [],
+            });
+          }
+        }
+      }
+      const one = (cell, small) => {
+        const svgMarkup = introDiagram(cell.diagram, cell.labels || []);
+        if (!svgMarkup) {
+          if (card.diagram_fallback)
+            return `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
+          return "";
+        }
+        if (cell.diagram === "articles_map") return svgMarkup;
+        const wrap = small
+          ? "intro-scene-wrap intro-scene-wrap-sm"
+          : "intro-scene-wrap";
+        const pic = `<div class="${wrap}">${svgMarkup}</div>`;
+        if (!cell.caption && !small) return pic;
+        const cap = cell.caption
+          ? `<figcaption>${escMd(cell.caption)}</figcaption>`
+          : "";
+        return `<figure class="intro-diagram-cell">${pic}${cap}</figure>`;
+      };
+      if (cells.length > 1) {
+        const n = Math.min(cells.length, 4);
+        html += `<div class="intro-diagram-grid cols-${n}">`;
+        html += cells.map((c) => one(c, true)).join("");
+        html += `</div>`;
+      } else if (cells.length === 1) {
+        html += one(cells[0], false);
       }
       if (card.svg && String(card.svg).trim().startsWith("<svg")) {
         html += `<div class="intro-scene-wrap">${card.svg}</div>`;
@@ -1013,6 +1051,11 @@ export function startPractice(rawPack, root, opts) {
                 : ""
             }`
       }</p>
+      ${
+        pack.sort_rule
+          ? `<p class="sb-rule">${esc(pack.sort_rule)}</p>`
+          : ""
+      }
       <div class="sb-pool" id="sb-pool">${poolIdx
         .map((i) => chip(i, false))
         .join("")}</div>

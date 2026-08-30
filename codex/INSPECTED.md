@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**42 inspected · 0 approved · 18 unseen** of 60 live units
+**46 inspected · 0 approved · 14 unseen** of 60 live units
 
 Of the 2 cloud-authored units, **2 have any tick**.
 
@@ -44,7 +44,7 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 13 inspected / 0 approved / 17 units
+## A2 — 16 inspected / 0 approved / 17 units
 
 - [x][ ] `a2_modals_must_should` — Must / should · 46 items · **cloud** · seen?
 - [x][ ] `a2_adverbs_order` — Adverb position · 43 items
@@ -55,16 +55,16 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [x][ ] `a2_first_conditional` — First conditional · 54 items · seen?
 - [x][ ] `a2_past_continuous` — Past continuous · 49 items
 - [x][ ] `a2_past_simple` — Past simple · 79 items
-- [ ][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
+- [x][ ] `a2_prepositions_movement` — Prepositions of movement · 48 items · seen?
 - [x][ ] `a2_present_continuous` — Present continuous · 48 items
-- [ ][ ] `a2_present_perfect` — Present perfect · 55 items
+- [x][ ] `a2_present_perfect` — Present perfect · 55 items
 - [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items · seen?
-- [ ][ ] `a2_some_any_no` — Some / any 2 · 29 items
+- [x][ ] `a2_some_any_no` — Some / any 2 · 29 items
 - [x][ ] `a2_used_to` — Used to · 32 items
 - [ ][ ] `a2_verb_patterns` — Verb patterns 1 (to / -ing) · 36 items
 - [x][ ] `a2_will_going_to` — Will / going to · 8 items
 
-## B1 — 9 inspected / 0 approved / 16 units
+## B1 — 10 inspected / 0 approved / 16 units
 
 - [x][ ] `b1_articles_advanced` — Articles 2 · 48 items · seen?
 - [x][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 12 items
@@ -72,7 +72,7 @@ Of the 2 cloud-authored units, **2 have any tick**.
 - [ ][ ] `b1_indirect_questions` — Indirect questions · 24 items
 - [x][ ] `b1_it_subject` — Introductory it · 46 items · seen?
 - [x][ ] `b1_linkers` — Linkers (although / so) · 60 items
-- [ ][ ] `b1_modals_speculation` — Might / may / must (guess) · 48 items · seen?
+- [x][ ] `b1_modals_speculation` — Might / may / could / must (guess) · 48 items
 - [x][ ] `b1_passives` — Passive (form of be) · 48 items · seen?
 - [ ][ ] `b1_phrasal_verbs` — Phrasal verbs (frames) · 72 items · seen?
 - [ ][ ] `b1_prefixes` — Prefixes — the basics · 72 items

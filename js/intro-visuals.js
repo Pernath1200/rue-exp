@@ -71,6 +71,33 @@ function labelBlock(cx, cy, text, width, { size = 11, fill = TEXT, maxLines = 2 
   return f.lines.map((l, i) => label(cx, y0 + i * lh, l, { size: f.size, fill })).join("");
 }
 
+/** Certainty axis — not a timeline.
+ *  labels: [axisTitle, degree1, modal1, degree2, modal2, ...]
+ *  Degree sits above the dot, modal below. Arrow = more sure. */
+function certainty_scale(labels) {
+  const title = labels[0] || "how sure";
+  const pairs = [];
+  for (let i = 1; i + 1 < labels.length && pairs.length < 5; i += 2) {
+    pairs.push([labels[i], labels[i + 1]]);
+  }
+  if (pairs.length < 2) return "";
+  const x0 = 36;
+  const x1 = 284;
+  const y = 86;
+  const step = (x1 - x0) / (pairs.length - 1);
+  let inner = label(160, 20, title, { size: 13, fill: ACCENT });
+  inner += `<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="${MUTED}" stroke-width="2"/>`;
+  inner += `<polygon points="${x1},${y} ${x1 - 8},${y - 5} ${x1 - 8},${y + 5}" fill="${MUTED}"/>`;
+  pairs.forEach(([deg, modal], i) => {
+    const x = x0 + step * i;
+    const r = 5 + i * 1.5;
+    inner += labelBlock(x, 52, deg, 78, { size: 11, fill: MUTED, maxLines: 2 });
+    inner += `<circle cx="${x}" cy="${y}" r="${r}" fill="${ACCENT}"/>`;
+    inner += label(x, 116, modal);
+  });
+  return svg(inner, 320, 150);
+}
+
 /** Horizontal axis with graded stops — degree, intensity, frequency. */
 function scale(labels) {
   const pts = labels.slice(0, 5);
@@ -410,6 +437,179 @@ function placeInOnAt() {
   );
 }
 
+/* Movement prepositions — same ball and box as place, plus an arrow
+ * (a2_prepositions_movement, James 2026-08-29: position is visual; many
+ * small scenes, not one giant picture per page). Caption lives outside
+ * the SVG so the grid can shrink these. */
+function mBall(cx, cy) {
+  return `<circle cx="${cx}" cy="${cy}" r="13" fill="${ACCENT}" stroke="${MUTED}" stroke-width="2"/>`;
+}
+function mArrow(x1, y1, x2, y2, { dashed = false } = {}) {
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const len = Math.hypot(dx, dy) || 1;
+  const ux = dx / len;
+  const uy = dy / len;
+  const head = 12;
+  const spread = 5.8;
+  const bx = x2 - ux * head;
+  const by = y2 - uy * head;
+  const px = -uy * spread;
+  const py = ux * spread;
+  const dash = dashed ? ` stroke-dasharray="5 4"` : "";
+  return (
+    `<line x1="${x1}" y1="${y1}" x2="${bx}" y2="${by}" fill="none" stroke="${ACCENT}" stroke-width="2.6" stroke-linecap="round"${dash}/>` +
+    `<polygon points="${x2},${y2} ${bx + px},${by + py} ${bx - px},${by - py}" fill="${ACCENT}"/>`
+  );
+}
+function mArc(x1, y1, cx, cy, x2, y2) {
+  const dx = x2 - cx;
+  const dy = y2 - cy;
+  const len = Math.hypot(dx, dy) || 1;
+  const ux = dx / len;
+  const uy = dy / len;
+  const head = 12;
+  const spread = 5.8;
+  const bx = x2 - ux * head;
+  const by = y2 - uy * head;
+  const px = -uy * spread;
+  const py = ux * spread;
+  return (
+    `<path d="M${x1} ${y1} Q${cx} ${cy} ${bx} ${by}" fill="none" stroke="${ACCENT}" stroke-width="2.6" stroke-linecap="round"/>` +
+    `<polygon points="${x2},${y2} ${bx + px},${by + py} ${bx - px},${by - py}" fill="${ACCENT}"/>`
+  );
+}
+function mScene(inner) {
+  return svg(inner, 220, 150);
+}
+
+function moveTo() {
+  return mScene(
+    pBox(132, 48, 68, 54) + mBall(38, 76) + mArrow(56, 76, 124, 76),
+  );
+}
+function moveInto() {
+  return mScene(
+    pOpenBox(118, 42, 78, 68) +
+      mBall(132, 92) +
+      mArrow(36, 92, 114, 92),
+  );
+}
+function moveOnto() {
+  return mScene(
+    pBox(78, 92, 90, 36) +
+      mBall(123, 79) +
+      mArc(28, 118, 62, 40, 123, 79),
+  );
+}
+function moveFrom() {
+  return mScene(
+    pBox(18, 48, 68, 54) + mBall(176, 76) + mArrow(94, 76, 158, 76),
+  );
+}
+function moveOutOf() {
+  return mScene(
+    pOpenBox(18, 42, 78, 68) +
+      mBall(176, 92) +
+      mArrow(70, 92, 158, 92),
+  );
+}
+function moveOff() {
+  return mScene(
+    pBox(28, 92, 86, 36) +
+      mBall(176, 79) +
+      mArc(72, 79, 128, 28, 176, 79),
+  );
+}
+function moveAcross() {
+  const road =
+    `<rect x="18" y="62" width="184" height="30" rx="4" fill="${SURFACE}" stroke="${MUTED}" stroke-width="2"/>` +
+    `<line x1="30" y1="77" x2="190" y2="77" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="8 6"/>`;
+  return mScene(road + mBall(110, 36) + mArrow(110, 52, 110, 118));
+}
+function moveAlong() {
+  const road =
+    `<rect x="18" y="62" width="184" height="30" rx="4" fill="${SURFACE}" stroke="${MUTED}" stroke-width="2"/>` +
+    `<line x1="30" y1="77" x2="190" y2="77" stroke="${MUTED}" stroke-width="1.5" stroke-dasharray="8 6"/>`;
+  return mScene(road + mBall(92, 77) + mArrow(110, 77, 188, 77));
+}
+function moveThrough() {
+  const tunnel =
+    `<path d="M52 118 L52 78 Q110 18 168 78 L168 118" fill="none" stroke="${ACCENT}" stroke-width="3" stroke-linejoin="round"/>`;
+  return mScene(tunnel + mBall(110, 86) + mArrow(58, 86, 96, 86) + mArrow(126, 86, 174, 86));
+}
+function movePast() {
+  return mScene(
+    pBox(86, 32, 52, 70) +
+      mBall(38, 102) +
+      mArrow(54, 102, 192, 102),
+  );
+}
+function moveOver() {
+  return mScene(
+    pBox(74, 92, 72, 32) +
+      `<path d="M28 112 A 82 64 0 0 1 176 112" fill="none" stroke="${ACCENT}" stroke-width="2.6" stroke-linecap="round"/>` +
+      mBall(102, 64) +
+      mArrow(176, 112, 204, 112),
+  );
+}
+function moveUnderGoing() {
+  return mScene(
+    pBox(70, 28, 80, 40) +
+      mBall(110, 118) +
+      mArrow(28, 118, 192, 118),
+  );
+}
+function pStairs() {
+  return `<path d="M32 122 H72 V100 H104 V78 H136 V56 H176 V122 Z" fill="${SURFACE}" stroke="${ACCENT}" stroke-width="2.5" stroke-linejoin="round"/>`;
+}
+function moveUp() {
+  return mScene(pStairs() + mBall(88, 86) + mArrow(104, 72, 154, 40));
+}
+function moveDown() {
+  return mScene(pStairs() + mBall(152, 42) + mArrow(136, 56, 86, 92));
+}
+function moveAround() {
+  return mScene(
+    pBox(88, 56, 44, 34) +
+      `<circle cx="110" cy="73" r="48" fill="none" stroke="${ACCENT}" stroke-width="2.2" stroke-dasharray="5 4"/>` +
+      mBall(110, 121) +
+      mArrow(124, 118, 152, 102),
+  );
+}
+function moveBetween() {
+  return mScene(
+    pBox(16, 18, 56, 100) +
+      pBox(148, 18, 56, 100) +
+      mBall(110, 48) +
+      mArrow(110, 64, 110, 112),
+  );
+}
+function moveTowards() {
+  return mScene(
+    pBox(168, 48, 42, 50) + mBall(24, 74) + mArrow(42, 74, 128, 74),
+  );
+}
+function pBus(x, y) {
+  return (
+    `<rect x="${x}" y="${y}" width="96" height="38" rx="9" fill="${SURFACE}" stroke="${ACCENT}" stroke-width="2.5"/>` +
+    `<rect x="${x + 12}" y="${y + 8}" width="20" height="14" rx="2" fill="none" stroke="${MUTED}" stroke-width="1.5"/>` +
+    `<rect x="${x + 40}" y="${y + 8}" width="20" height="14" rx="2" fill="none" stroke="${MUTED}" stroke-width="1.5"/>` +
+    `<circle cx="${x + 24}" cy="${y + 38}" r="7" fill="${SURFACE}" stroke="${ACCENT}" stroke-width="2"/>` +
+    `<circle cx="${x + 74}" cy="${y + 38}" r="7" fill="${SURFACE}" stroke="${ACCENT}" stroke-width="2"/>`
+  );
+}
+function moveOnBus() {
+  return mScene(
+    pBus(108, 62) + mBall(36, 92) + mArrow(54, 88, 112, 72),
+  );
+}
+function moveOffBus() {
+  return mScene(
+    pBus(16, 62) + mBall(176, 88) + mArrow(118, 72, 160, 84),
+  );
+}
+
 /** to / for / with — three relations (a1_to_for_with, James 2026-08-29).
  *  to   = movement toward (arrow). for = intended for someone (thing tagged
  *  to a person — not a second arrow, or it collapses into to). with = together
@@ -520,7 +720,7 @@ function time_now(labels) {
 }
 
 const SCHEMATICS = {
-  scale, need_scale, circles, branch, cycle, contrast,
+  scale, certainty_scale, need_scale, circles, branch, cycle, contrast,
   hub_spokes, boxes_row, timelines, decision_flow, pp_vs_past, time_now,
   in: placeIn,
   on: placeOn,
@@ -531,6 +731,25 @@ const SCHEMATICS = {
   "in front of": placeInFrontOf,
   "in-on-at": placeInOnAt,
   "to-for-with": toForWith,
+  "move-to": moveTo,
+  "move-into": moveInto,
+  "move-onto": moveOnto,
+  "move-from": moveFrom,
+  "move-out-of": moveOutOf,
+  "move-off": moveOff,
+  "move-across": moveAcross,
+  "move-along": moveAlong,
+  "move-through": moveThrough,
+  "move-past": movePast,
+  "move-over": moveOver,
+  "move-under": moveUnderGoing,
+  "move-up": moveUp,
+  "move-down": moveDown,
+  "move-around": moveAround,
+  "move-between": moveBetween,
+  "move-towards": moveTowards,
+  "move-on-bus": moveOnBus,
+  "move-off-bus": moveOffBus,
 };
 
 /** A1 articles decision map — HTML flowchart, not SVG (James, 2026-08-04).

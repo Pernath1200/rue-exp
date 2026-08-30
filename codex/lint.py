@@ -321,7 +321,8 @@ def lint_pack(uid):
                          "timesort", "aweek", "baddiagram", "notbullet",
                          "verbcue", "thirdform", "ppcuz", "ppsort",
                          "stemcue", "longtable", "plusminus",
-                         "sortlabel", "sortbold", "patternchip", "bothsort")}
+                         "sortlabel", "sortbold", "patternchip", "bothsort",
+                         "parencue", "practisenote")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -587,6 +588,25 @@ def lint_pack(uid):
                     {"cz": "%dx in bank, absent from intro" % n, "en": w}
                 )
 
+    # B19 — (maybe)/(sure)/(impossible) is not a verb lemma  [EXACT]
+    # b1_modals_speculation 2026-08-30: fallback offered "impossibles".
+    _paren_cue = re.compile(
+        r"\((maybe not|maybe|sure|impossible|possible|certain)\)\s*$", re.I
+    )
+    for it in items:
+        gap = str(it.get("gap") or "")
+        m = _paren_cue.search(gap)
+        if not m:
+            continue
+        opts = it.get("quiz_options")
+        if isinstance(opts, list) and len(opts) >= 2:
+            continue
+        f["parencue"].append({
+            "cz": str(it.get("cz") or "")[:40],
+            "en": "%s  ·  cue (%s) needs authored chips" % (
+                gap[:48], m.group(1).lower()),
+        })
+
     # C15 — teacher-course word "chunk(s)" on an A1 card  [EXACT]
     if str(d.get("level", "")).upper() == "A1":
         for i, c in enumerate(intro_cards(d)):
@@ -836,6 +856,13 @@ def lint_pack(uid):
                 "cz": "card %d · %s" % (i, title or title_cz),
                 "en": "Remember/Pamatuj recap — cut it (C17)",
             })
+        if re.search(r"what you practise", title, re.I) or re.search(
+            r"^co nácvičuješ", title_cz, re.I
+        ):
+            f["practisenote"].append({
+                "cz": "card %d · %s" % (i, title or title_cz),
+                "en": "What you practise recap — cut it (C20)",
+            })
 
     # C30 — "Not:" bullets under the IS table  [EXACT]
     # a1_imperatives 2026-08-29: shape table was good; the four Not: lines
@@ -914,20 +941,37 @@ def lint_pack(uid):
     # a1_prepositions_time 2026-08-29: in-on-at-scale was not a schematic.
     # C10 still green (the field is non-empty). Inline svg without a key is fine.
     DIAGRAM_KEYS = {
-        "scale", "need_scale", "circles", "branch", "cycle", "contrast",
+        "scale", "certainty_scale", "need_scale", "circles", "branch", "cycle", "contrast",
         "hub_spokes", "boxes_row", "timelines", "decision_flow", "pp_vs_past",
         "time_now", "in", "on", "under", "at", "next to", "behind",
         "in front of", "in-on-at", "to-for-with", "articles_map",
+        "move-to", "move-into", "move-onto", "move-from", "move-out-of",
+        "move-off", "move-across", "move-along", "move-through", "move-past",
+        "move-over", "move-under", "move-up", "move-down", "move-around",
+        "move-between", "move-towards", "move-on-bus", "move-off-bus",
     }
     for i, c in enumerate(intro_cards(d)):
-        name = str(c.get("diagram") or "").strip()
         has_svg = bool(str(c.get("svg") or "").strip())
-        if name and name not in DIAGRAM_KEYS and not has_svg:
-            f["baddiagram"].append({
-                "cz": "card %d · %s" % (i, c.get("title", "")),
-                "en": "diagram %r is not in intro-visuals.js (blank picture)"
-                % name,
-            })
+        names = []
+        one = str(c.get("diagram") or "").strip()
+        if one:
+            names.append(one)
+        for dgm in c.get("diagrams") or []:
+            if isinstance(dgm, str):
+                n = dgm.strip()
+            elif isinstance(dgm, dict):
+                n = str(dgm.get("diagram") or "").strip()
+            else:
+                n = ""
+            if n:
+                names.append(n)
+        for name in names:
+            if name and name not in DIAGRAM_KEYS and not has_svg:
+                f["baddiagram"].append({
+                    "cz": "card %d · %s" % (i, c.get("title", "")),
+                    "en": "diagram %r is not in intro-visuals.js (blank picture)"
+                    % name,
+                })
 
     # C4 — cards promise connectors the bank barely drills  [EXACT]
     cardtext = json.dumps(d.get("intro", {}), ensure_ascii=False).lower()
@@ -1034,6 +1078,8 @@ LABELS = [
     ("sortbold",    "EXACT  C37 sentence-sort chip is 3+ words with no **taught form**"),
     ("patternchip", "EXACT  B18 Quiz chip is to+ing mashup (to swimming) — use the two real forms"),
     ("bothsort",    "EXACT  B13 sort chip takes both to and -ing (try/like) — cannot pick a bin"),
+    ("parencue",    "EXACT  B19 (maybe)/(sure)/(impossible) cue has no authored quiz_options"),
+    ("practisenote","EXACT  C20 intro has a What you practise recap card — cut it"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
