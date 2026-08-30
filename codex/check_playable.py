@@ -67,8 +67,9 @@ def accepted_keys(it: dict) -> set[str]:
     return out
 
 
-def choices_for(it: dict, siblings: list[dict]):
-    answer = it.get("gap_answer")
+def choices_for(it: dict, siblings: list[dict], pack: dict | None = None):
+    sentence = (pack or {}).get("quiz_axis") == "sentence"
+    answer = it.get("en") if sentence else it.get("gap_answer")
     if not key(answer):
         return None
     qo = it.get("quiz_options")
@@ -114,6 +115,10 @@ def check_pack(pid: str, pack: dict) -> None:
     # exists for.
     if pack.get("kind") == "word_formation":
         for i, it in enumerate(items):
+            # Match / open-Use rows are not clozes. A missing root on a gap
+            # still renders as an unanswerable bare cloze.
+            if not (it.get("gap") and it.get("gap_answer")):
+                continue
             if not str(it.get("root") or "").strip():
                 errors.append(
                     f"{pid} item {i}: word_formation item has no `root` — "
@@ -142,7 +147,11 @@ def check_pack(pid: str, pack: dict) -> None:
     pairs_n = len([it for it in items if it.get("en") and it.get("cz")])
     match_n = pairs_n if wants_check("match") else 0
     use_n = pairs_n if wants("use") else 0
-    type_n = len(with_gap) if wants("type") else 0
+    type_n = (
+        len([it for it in with_gap if it.get("type") is not False])
+        if wants("type")
+        else 0
+    )
     order_n = len(orderable) if wants_check("order_click") else 0
     sort_n = (
         len([it for it in items if it.get("bin") and it.get("en")])
@@ -153,18 +162,19 @@ def check_pack(pid: str, pack: dict) -> None:
     quiz_n = 0
     if wants_check("quiz"):
         for i, it in enumerate(with_gap):
-            ch = choices_for(it, [s for s in with_gap if s is not it])
+            ch = choices_for(it, [s for s in with_gap if s is not it], pack)
             if ch is None:
                 continue
             quiz_n += 1
             # single-answer check: no NON-answer option may also be accepted
+            sentence = pack.get("quiz_axis") == "sentence"
             acc = accepted_keys(it)
-            ans_k = key(it.get("gap_answer"))
+            ans_k = key(it.get("en") if sentence else it.get("gap_answer"))
             extra = [o for o in ch if key(o) != ans_k and key(o) in acc]
             if extra:
                 errors.append(
                     f"{pid} quiz item {i}: {len(extra) + 1} correct options "
-                    f"({it.get('gap_answer')!r} + {extra!r})"
+                    f"({(it.get('en') if sentence else it.get('gap_answer'))!r} + {extra!r})"
                 )
 
     # Stages the engine actually implements. A pack asking for anything else

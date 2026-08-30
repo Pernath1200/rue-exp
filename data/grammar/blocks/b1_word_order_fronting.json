@@ -5,1089 +5,348 @@
   "tree_node": "b1_word_order_fronting",
   "codex_unit": "G_SS-B1B2-01",
   "practice": "frames",
-  "note": "Fronted phrase + no inversion - the B1 repair rung between a1_word_order (SVO) and c1_clefts_fronting (deliberate fronting). Built 2026-08-20 from Tomas's error log ('for me is it'); the same fault is general Czech transfer. Three strands x 12: adverbial opener + real subject, opener + it/there in the subject seat, opener that is a whole clause. Order_click is the point; quiz distractors are the inverted and subject-dropped forms students actually produce.",
+  "note": "B1 repair after a1_word_order. English order is fixed: subject first, SVO, place before time at the end. Czech inversion is the error (Important for me is… / Very long was… / In Prague live… / This email sent Petr). Dummy it stays in b1_it_subject; clause openers out; fronted adverbials are not the target. Fronted time accepted as an alternate, not taught. Check: sort Correct/Needs repair then Quiz. No Type (cloze cannot force the subject). Quiz: which sentence is correct. Use: error-correction (use_mode: correct). Spec_Word-Order_B1_G_SS_2026-08-30 · rewrite 2026-08-30.",
   "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "quiz_axis": "sentence",
+  "ladder": {
+    "type": false
+  },
   "check": {
     "sequence": [
-      "order_click",
+      "sort_bins",
       "quiz"
     ]
   },
   "quality": "good_draft",
+  "bins": [
+    "Correct",
+    "Needs repair"
+  ],
+  "bin_captions": {
+    "Correct": "subject before the verb",
+    "Needs repair": "verb or description first"
+  },
+  "sort_cz": false,
+  "sort_rule": "Subject first. A verb or a description at the front needs repair.",
   "blocks": [
     {
-      "id": "b1_wof_adverbial",
-      "title": "Opener + subject + verb",
+      "id": "b1_wo_sort",
+      "title": "Correct or needs repair",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
       "items": [
         {
-          "en": "In Prague, we have a small office.",
-          "cz": "V Praze máme malou kancelář.",
-          "tokens": [
-            "In",
-            "Prague",
-            "we",
-            "have",
-            "a",
-            "small",
-            "office"
-          ],
-          "accepts": [
-            "In Prague, we have a small office."
-          ],
-          "gap": "In Prague, ____ a small office.",
-          "gap_answer": "we have",
-          "gap_accepts": [
-            "we have"
-          ],
-          "quiz_options": [
-            "we have",
-            "have we",
-            "have"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: we have.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: we have."
+          "en": "**I** drink coffee every morning.",
+          "cz": "Každé ráno piju kávu.",
+          "bin": "Correct",
+          "use": false
         },
         {
-          "en": "Every morning, I read the news.",
-          "cz": "Každé ráno čtu zprávy.",
-          "tokens": [
-            "Every",
-            "morning",
-            "I",
-            "read",
-            "the",
-            "news"
-          ],
-          "accepts": [
-            "Every morning, I read the news."
-          ],
-          "gap": "Every morning, ____ the news.",
-          "gap_answer": "I read",
-          "gap_accepts": [
-            "I read"
-          ],
-          "quiz_options": [
-            "I read",
-            "read I",
-            "read"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: I read.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: I read."
+          "en": "**My colleague** sent the report yesterday.",
+          "cz": "Můj kolega včera poslal tu zprávu.",
+          "bin": "Correct",
+          "use": false
         },
         {
-          "en": "At the weekend, we go cycling.",
-          "cz": "O víkendu jezdíme na kole.",
-          "tokens": [
-            "At",
-            "the",
-            "weekend",
-            "we",
-            "go",
-            "cycling"
-          ],
-          "accepts": [
-            "At the weekend, we go cycling."
-          ],
-          "gap": "At the weekend, ____ cycling.",
-          "gap_answer": "we go",
-          "gap_accepts": [
-            "we go"
-          ],
-          "quiz_options": [
-            "we go",
-            "go we",
-            "go"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: we go.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: we go."
+          "en": "**We** moved to Brno two years ago.",
+          "cz": "Před dvěma lety jsme se přestěhovali do Brna.",
+          "bin": "Correct",
+          "use": false
         },
         {
-          "en": "After work, he goes to the gym.",
-          "cz": "Po práci chodí do posilovny.",
-          "tokens": [
-            "After",
-            "work",
-            "he",
-            "goes",
-            "to",
-            "the",
-            "gym"
-          ],
-          "accepts": [
-            "After work, he goes to the gym."
-          ],
-          "gap": "After work, ____ to the gym.",
-          "gap_answer": "he goes",
-          "gap_accepts": [
-            "he goes"
-          ],
-          "quiz_options": [
-            "he goes",
-            "goes he",
-            "goes"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: he goes.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: he goes."
+          "en": "**The new system** works well.",
+          "cz": "Nový systém funguje dobře.",
+          "bin": "Correct",
+          "use": false
         },
         {
-          "en": "In summer, they travel to Italy.",
-          "cz": "V létě jezdí do Itálie.",
-          "tokens": [
-            "In",
-            "summer",
-            "they",
-            "travel",
-            "to",
-            "Italy"
-          ],
-          "accepts": [
-            "In summer, they travel to Italy."
-          ],
-          "gap": "In summer, ____ to Italy.",
-          "gap_answer": "they travel",
-          "gap_accepts": [
-            "they travel"
-          ],
-          "quiz_options": [
-            "they travel",
-            "travel they",
-            "travel"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: they travel.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: they travel."
+          "en": "Important to me is **English**.",
+          "cz": "Důležitá je pro mě angličtina.",
+          "bin": "Needs repair",
+          "use": false
         },
         {
-          "en": "On Monday, I have a meeting.",
-          "cz": "V pondělí mám schůzku.",
-          "tokens": [
-            "On",
-            "Monday",
-            "I",
-            "have",
-            "a",
-            "meeting"
-          ],
-          "accepts": [
-            "On Monday, I have a meeting."
-          ],
-          "gap": "On Monday, ____ a meeting.",
-          "gap_answer": "I have",
-          "gap_accepts": [
-            "I have"
-          ],
-          "quiz_options": [
-            "I have",
-            "have I",
-            "have"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: I have.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: I have."
+          "en": "Very good was the **meeting**.",
+          "cz": "Ta schůzka byla velmi dobrá.",
+          "bin": "Needs repair",
+          "use": false
         },
         {
-          "en": "At home, we speak Czech.",
-          "cz": "Doma mluvíme česky.",
-          "tokens": [
-            "At",
-            "home",
-            "we",
-            "speak",
-            "Czech"
-          ],
-          "accepts": [
-            "At home, we speak Czech."
-          ],
-          "gap": "At home, ____ Czech.",
-          "gap_answer": "we speak",
-          "gap_accepts": [
-            "we speak"
-          ],
-          "quiz_options": [
-            "we speak",
-            "speak we",
-            "speak"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: we speak.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: we speak."
+          "en": "In Prague live many **people**.",
+          "cz": "V Praze žije mnoho lidí.",
+          "bin": "Needs repair",
+          "use": false
         },
         {
-          "en": "At work, I write a lot of emails.",
-          "cz": "V práci píšu hodně e-mailů.",
-          "tokens": [
-            "At",
-            "work",
-            "I",
-            "write",
-            "a",
-            "lot",
-            "of",
-            "emails"
-          ],
-          "accepts": [
-            "At work, I write a lot of emails."
-          ],
-          "gap": "At work, ____ a lot of emails.",
-          "gap_answer": "I write",
-          "gap_accepts": [
-            "I write"
-          ],
-          "quiz_options": [
-            "I write",
-            "write I",
-            "write"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: I write.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: I write."
-        },
-        {
-          "en": "Last year, we bought a new car.",
-          "cz": "Loni jsme koupili nové auto.",
-          "tokens": [
-            "Last",
-            "year",
-            "we",
-            "bought",
-            "a",
-            "new",
-            "car"
-          ],
-          "accepts": [
-            "Last year, we bought a new car."
-          ],
-          "gap": "Last year, ____ a new car.",
-          "gap_answer": "we bought",
-          "gap_accepts": [
-            "we bought"
-          ],
-          "quiz_options": [
-            "we bought",
-            "bought we",
-            "bought"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: we bought.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: we bought."
-        },
-        {
-          "en": "Yesterday, I went to Brno.",
-          "cz": "Včera jsem jel do Brna.",
-          "tokens": [
-            "Yesterday",
-            "I",
-            "went",
-            "to",
-            "Brno"
-          ],
-          "accepts": [
-            "Yesterday, I went to Brno."
-          ],
-          "gap": "Yesterday, ____ to Brno.",
-          "gap_answer": "I went",
-          "gap_accepts": [
-            "I went"
-          ],
-          "quiz_options": [
-            "I went",
-            "went I",
-            "went"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: I went.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: I went."
-        },
-        {
-          "en": "Before breakfast, she checks her phone.",
-          "cz": "Před snídaní si kontroluje telefon.",
-          "tokens": [
-            "Before",
-            "breakfast",
-            "she",
-            "checks",
-            "her",
-            "phone"
-          ],
-          "accepts": [
-            "Before breakfast, she checks her phone."
-          ],
-          "gap": "Before breakfast, ____ her phone.",
-          "gap_answer": "she checks",
-          "gap_accepts": [
-            "she checks"
-          ],
-          "quiz_options": [
-            "she checks",
-            "checks she",
-            "checks"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: she checks.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: she checks."
-        },
-        {
-          "en": "Every summer, my family goes to the mountains.",
-          "cz": "Každé léto jezdí moje rodina na hory.",
-          "tokens": [
-            "Every",
-            "summer",
-            "my",
-            "family",
-            "goes",
-            "to",
-            "the",
-            "mountains"
-          ],
-          "accepts": [
-            "Every summer, my family goes to the mountains."
-          ],
-          "gap": "Every summer, ____ to the mountains.",
-          "gap_answer": "my family goes",
-          "gap_accepts": [
-            "my family goes"
-          ],
-          "quiz_options": [
-            "my family goes",
-            "goes my family",
-            "goes"
-          ],
-          "explanation": "The phrase at the front is only scenery. The subject still comes before the verb: my family goes.",
-          "explanation_cz": "Fraze na zacatku je jen kulisa. Podmet stale stoji pred slovesem: my family goes."
+          "en": "This problem solved **my team** last week.",
+          "cz": "Tenhle problém vyřešil minulý týden můj tým.",
+          "bin": "Needs repair",
+          "use": false
         }
       ]
     },
     {
-      "id": "b1_wof_subject_seat",
-      "title": "Opener + it / there",
+      "id": "b1_wo_practice",
+      "title": "Subject first",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
-          "en": "For me, it is difficult to speak English.",
-          "cz": "Pro mě je těžké mluvit anglicky.",
-          "tokens": [
-            "For",
-            "me",
-            "it",
-            "is",
-            "difficult",
-            "to",
-            "speak",
+          "en": "English is important to me.",
+          "cz": "Důležitá je pro mě angličtina.",
+          "gap": "____ is important to me. (English)",
+          "gap_answer": "English",
+          "gap_accepts": [
             "English"
           ],
-          "accepts": [
-            "For me, it is difficult to speak English.",
-            "For me, it's difficult to speak English."
-          ],
-          "gap": "For me, ____ difficult to speak English.",
-          "gap_answer": "it is",
-          "gap_accepts": [
-            "it is",
-            "it's"
-          ],
           "quiz_options": [
-            "it is",
-            "is it",
-            "there is"
+            "English is important to me.",
+            "Important to me is English.",
+            "To me is important English."
           ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "accepts": [
+            "English is important to me.",
+            "English is important for me."
+          ],
+          "wrong": "Important to me is English.",
+          "explanation": "The thing that is important is the subject: **English is**. Not *Important to me is English.",
+          "explanation_cz": "Podmět je věc, která je důležitá: **English is**. Ne *Important to me is English."
         },
         {
-          "en": "For me, it is easy to read English.",
-          "cz": "Pro mě je snadné číst anglicky.",
-          "tokens": [
-            "For",
-            "me",
-            "it",
-            "is",
-            "easy",
-            "to",
-            "read",
-            "English"
+          "en": "I drink coffee in the morning.",
+          "cz": "Kávu piju ráno.",
+          "gap": "I drink ____ in the morning. (coffee)",
+          "gap_answer": "coffee",
+          "quiz_options": [
+            "I drink coffee in the morning.",
+            "Coffee I drink in the morning.",
+            "I in the morning drink coffee."
           ],
           "accepts": [
-            "For me, it is easy to read English.",
-            "For me, it's easy to read English."
+            "I drink coffee in the morning."
           ],
-          "gap": "For me, ____ easy to read English.",
-          "gap_answer": "it is",
-          "gap_accepts": [
-            "it is",
-            "it's"
-          ],
-          "quiz_options": [
-            "it is",
-            "is it",
-            "there is"
-          ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "explanation": "The object **coffee** sits after the verb. Czech *Kávu piju* puts the object first.",
+          "explanation_cz": "Předmět **coffee** stojí za slovesem. Česky *Kávu piju* dává předmět dopředu."
         },
         {
-          "en": "In winter, it is dark at four.",
-          "cz": "V zimě je ve čtyři tma.",
-          "tokens": [
-            "In",
-            "winter",
-            "it",
-            "is",
-            "dark",
-            "at",
-            "four"
+          "en": "Petr sent this email.",
+          "cz": "Tento e-mail poslal Petr.",
+          "gap": "____ sent this email. (Petr)",
+          "gap_answer": "Petr",
+          "quiz_options": [
+            "Petr sent this email.",
+            "This email sent Petr.",
+            "Sent Petr this email."
           ],
           "accepts": [
-            "In winter, it is dark at four.",
-            "In winter, it's dark at four."
+            "Petr sent this email."
           ],
-          "gap": "In winter, ____ dark at four.",
-          "gap_answer": "it is",
-          "gap_accepts": [
-            "it is",
-            "it's"
-          ],
-          "quiz_options": [
-            "it is",
-            "is it",
-            "there is"
-          ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "wrong": "This email sent Petr.",
+          "explanation": "**Petr** did the sending, so **Petr** comes first. *This email sent Petr* makes the email the actor.",
+          "explanation_cz": "**Petr** poslal ten e-mail, proto je **Petr** první. *This email sent Petr* z e-mailu dělá činitele."
         },
         {
-          "en": "In January, it is often cold in Prague.",
-          "cz": "V lednu bývá v Praze často zima.",
-          "tokens": [
-            "In",
-            "January",
-            "it",
-            "is",
-            "often",
-            "cold",
-            "in",
-            "Prague"
-          ],
-          "accepts": [
-            "In January, it is often cold in Prague.",
-            "In January, it's often cold in Prague."
-          ],
-          "gap": "In January, ____ often cold in Prague.",
-          "gap_answer": "it is",
+          "en": "Many people live in Prague.",
+          "cz": "V Praze žije mnoho lidí.",
+          "gap": "____ live in Prague. (people)",
+          "gap_answer": "Many people",
           "gap_accepts": [
-            "it is",
-            "it's"
+            "Many people",
+            "many people"
           ],
           "quiz_options": [
-            "it is",
-            "is it",
-            "there is"
+            "Many people live in Prague.",
+            "In Prague live many people.",
+            "Live many people in Prague."
           ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "accepts": [
+            "Many people live in Prague."
+          ],
+          "wrong": "In Prague live many people.",
+          "explanation": "**Many people** is the subject. Place follows the verb: live **in Prague**.",
+          "explanation_cz": "**Many people** je podmět. Místo jde za sloveso: live **in Prague**."
         },
         {
-          "en": "After the meeting, there is always a lot of work.",
-          "cz": "Po schůzce je vždycky spousta práce.",
-          "tokens": [
-            "After",
-            "the",
-            "meeting",
-            "there",
-            "is",
-            "always",
-            "a",
-            "lot",
-            "of",
-            "work"
-          ],
-          "accepts": [
-            "After the meeting, there is always a lot of work."
-          ],
-          "gap": "After the meeting, ____ always a lot of work.",
-          "gap_answer": "there is",
+          "en": "My team solved this problem last week.",
+          "cz": "Tenhle problém vyřešil minulý týden můj tým.",
+          "gap": "____ solved this problem last week. (team)",
+          "gap_answer": "My team",
           "gap_accepts": [
-            "there is",
-            "there's"
+            "My team",
+            "my team"
           ],
           "quiz_options": [
-            "there is",
-            "is there",
-            "it is"
+            "My team solved this problem last week.",
+            "This problem solved my team last week.",
+            "Solved my team this problem last week."
           ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is there is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to there is - nikdy samotne sloveso."
+          "accepts": [
+            "My team solved this problem last week."
+          ],
+          "wrong": "This problem solved my team last week.",
+          "explanation": "**My team** solved it. The problem is the object, not the subject.",
+          "explanation_cz": "Vyřešil to **my team**. Problém je předmět, ne podmět."
         },
         {
-          "en": "In our office, there are ten people.",
-          "cz": "V naší kanceláři je deset lidí.",
-          "tokens": [
-            "In",
-            "our",
-            "office",
-            "there",
-            "are",
-            "ten",
-            "people"
-          ],
-          "accepts": [
-            "In our office, there are ten people."
-          ],
-          "gap": "In our office, ____ ten people.",
-          "gap_answer": "there are",
+          "en": "The meeting was very long.",
+          "cz": "Velmi dlouhá byla ta schůzka.",
+          "gap": "____ was very long. (meeting)",
+          "gap_answer": "The meeting",
           "gap_accepts": [
-            "there are"
+            "The meeting",
+            "the meeting"
           ],
           "quiz_options": [
-            "there are",
-            "are there",
-            "it is"
+            "The meeting was very long.",
+            "Very long was the meeting.",
+            "Was very long the meeting."
           ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is there are - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to there are - nikdy samotne sloveso."
+          "accepts": [
+            "The meeting was very long."
+          ],
+          "wrong": "Very long was the meeting.",
+          "explanation": "Descriptions follow **be**: **The meeting was** very long. Not *Very long was…",
+          "explanation_cz": "Popis jde za **be**: **The meeting was** very long. Ne *Very long was…"
         },
         {
-          "en": "For my wife, it is important to have time for the family.",
-          "cz": "Pro moji ženu je důležité mít čas na rodinu.",
-          "tokens": [
-            "For",
-            "my",
-            "wife",
-            "it",
-            "is",
-            "important",
-            "to",
-            "have",
-            "time",
-            "for",
-            "the",
-            "family"
+          "en": "I check my email every day.",
+          "cz": "Každý den kontroluju e-mail.",
+          "gap": "I ____ my email every day. (check)",
+          "gap_answer": "check",
+          "quiz_options": [
+            "I check my email every day.",
+            "I every day check my email.",
+            "Every day check I my email."
           ],
           "accepts": [
-            "For my wife, it is important to have time for the family.",
-            "For my wife, it's important to have time for the family."
+            "I check my email every day."
           ],
-          "gap": "For my wife, ____ important to have time for the family.",
-          "gap_answer": "it is",
-          "gap_accepts": [
-            "it is",
-            "it's"
-          ],
-          "quiz_options": [
-            "it is",
-            "is it",
-            "there is"
-          ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "wrong": "I every day check my email.",
+          "explanation": "Do not put **every day** between subject and verb. **I check**, then the object, then the time.",
+          "explanation_cz": "**every day** nestrkejte mezi podmět a sloveso. **I check**, pak předmět, pak čas."
         },
         {
-          "en": "On Fridays, it is quiet in the office.",
-          "cz": "V pátek je v kanceláři klid.",
-          "tokens": [
-            "On",
-            "Fridays",
-            "it",
-            "is",
-            "quiet",
-            "in",
-            "the",
-            "office"
+          "en": "I worked in Vienna last year.",
+          "cz": "Loni jsem pracoval ve Vídni.",
+          "gap": "I worked ____. (Vienna / last year)",
+          "gap_answer": "in Vienna last year",
+          "quiz_options": [
+            "I worked in Vienna last year.",
+            "I worked last year in Vienna.",
+            "I last year worked in Vienna."
           ],
           "accepts": [
-            "On Fridays, it is quiet in the office.",
-            "On Fridays, it's quiet in the office."
+            "I worked in Vienna last year."
           ],
-          "gap": "On Fridays, ____ quiet in the office.",
-          "gap_answer": "it is",
-          "gap_accepts": [
-            "it is",
-            "it's"
-          ],
-          "quiz_options": [
-            "it is",
-            "is it",
-            "there is"
-          ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "wrong": "I worked last year in Vienna.",
+          "explanation": "Place before time at the end: **in Vienna last year**. Not *last year in Vienna.",
+          "explanation_cz": "Místo před časem na konci: **in Vienna last year**. Ne *last year in Vienna."
         },
         {
-          "en": "For our clients, it is necessary to have good English.",
-          "cz": "Pro naše klienty je nutné mít dobrou angličtinu.",
-          "tokens": [
-            "For",
-            "our",
-            "clients",
-            "it",
-            "is",
-            "necessary",
-            "to",
-            "have",
-            "good",
-            "English"
+          "en": "I like black coffee very much.",
+          "cz": "Černou kávu mám moc rád.",
+          "gap": "I like ____. (coffee)",
+          "gap_answer": "black coffee very much",
+          "quiz_options": [
+            "I like black coffee very much.",
+            "I like very much black coffee.",
+            "Very much I like black coffee."
           ],
           "accepts": [
-            "For our clients, it is necessary to have good English.",
-            "For our clients, it's necessary to have good English."
+            "I like black coffee very much.",
+            "I really like black coffee."
           ],
-          "gap": "For our clients, ____ necessary to have good English.",
-          "gap_answer": "it is",
-          "gap_accepts": [
-            "it is",
-            "it's"
-          ],
-          "quiz_options": [
-            "it is",
-            "there is",
-            "is it"
-          ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it is - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it is - nikdy samotne sloveso."
+          "wrong": "I like very much black coffee.",
+          "explanation": "**like** + the object + **very much**. Not *like very much black coffee.",
+          "explanation_cz": "**like** + předmět + **very much**. Ne *like very much black coffee."
         },
         {
-          "en": "At the airport, it was very busy.",
-          "cz": "Na letišti bylo hodně rušno.",
-          "tokens": [
-            "At",
-            "the",
-            "airport",
-            "it",
-            "was",
-            "very",
-            "busy"
-          ],
-          "accepts": [
-            "At the airport, it was very busy."
-          ],
-          "gap": "At the airport, ____ very busy.",
-          "gap_answer": "it was",
+          "en": "Twenty people work in our office.",
+          "cz": "V naší kanceláři pracuje dvacet lidí.",
+          "gap": "____ work in our office. (people)",
+          "gap_answer": "Twenty people",
           "gap_accepts": [
-            "it was"
+            "Twenty people",
+            "twenty people"
           ],
           "quiz_options": [
-            "it was",
-            "was it",
-            "there was"
+            "Twenty people work in our office.",
+            "In our office work twenty people.",
+            "Work twenty people in our office."
           ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it was - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it was - nikdy samotne sloveso."
+          "accepts": [
+            "Twenty people work in our office."
+          ],
+          "wrong": "In our office work twenty people.",
+          "explanation": "**Twenty people** is the subject. Do not put the place before the subject.",
+          "explanation_cz": "**Twenty people** je podmět. Místo nedejte před podmět."
         },
         {
-          "en": "In the mountains, it was very cold.",
-          "cz": "Na horách byla velká zima.",
-          "tokens": [
-            "In",
-            "the",
-            "mountains",
-            "it",
-            "was",
-            "very",
-            "cold"
-          ],
-          "accepts": [
-            "In the mountains, it was very cold."
-          ],
-          "gap": "In the mountains, ____ very cold.",
-          "gap_answer": "it was",
+          "en": "Our boss signed this contract yesterday.",
+          "cz": "Včera tu smlouvu podepsal náš šéf.",
+          "gap": "____ signed this contract yesterday. (boss)",
+          "gap_answer": "Our boss",
           "gap_accepts": [
-            "it was"
+            "Our boss",
+            "our boss"
           ],
           "quiz_options": [
-            "it was",
-            "was it",
-            "there was"
+            "Our boss signed this contract yesterday.",
+            "This contract signed our boss yesterday.",
+            "Signed our boss this contract yesterday."
           ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it was - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it was - nikdy samotne sloveso."
+          "accepts": [
+            "Our boss signed this contract yesterday.",
+            "Yesterday our boss signed this contract."
+          ],
+          "wrong": "This contract signed our boss yesterday.",
+          "explanation": "**Our boss** signed the contract. The contract is the object. *Yesterday our boss signed…* is also fine — the subject still comes next.",
+          "explanation_cz": "**Our boss** smlouvu podepsal. Smlouva je předmět. *Yesterday our boss signed…* je taky v pořádku — podmět jde hned za tím."
         },
         {
-          "en": "For me, it was a very good experience.",
-          "cz": "Pro mě to byla moc dobrá zkušenost.",
-          "tokens": [
-            "For",
-            "me",
-            "it",
-            "was",
-            "a",
-            "very",
-            "good",
-            "experience"
-          ],
-          "accepts": [
-            "For me, it was a very good experience."
-          ],
-          "gap": "For me, ____ a very good experience.",
-          "gap_answer": "it was",
+          "en": "The meeting was very interesting.",
+          "cz": "Velmi zajímavá byla ta schůzka.",
+          "gap": "____ was very interesting. (meeting)",
+          "gap_answer": "The meeting",
           "gap_accepts": [
-            "it was"
+            "The meeting",
+            "the meeting"
           ],
           "quiz_options": [
-            "it was",
-            "was it",
-            "there was"
-          ],
-          "explanation": "English needs something in the subject seat. After the fronted phrase that is it was - never the bare verb.",
-          "explanation_cz": "Anglictina musi mit obsazene misto podmetu. Po uvodni frazi je to it was - nikdy samotne sloveso."
-        }
-      ]
-    },
-    {
-      "id": "b1_wof_clause",
-      "title": "Opener that is a clause",
-      "items": [
-        {
-          "en": "When our second son was born, we moved to a bigger flat.",
-          "cz": "Když se nám narodil druhý syn, přestěhovali jsme se do většího bytu.",
-          "tokens": [
-            "When",
-            "our",
-            "second",
-            "son",
-            "was",
-            "born",
-            "we",
-            "moved",
-            "to",
-            "a",
-            "bigger",
-            "flat"
+            "The meeting was very interesting.",
+            "Very interesting was the meeting.",
+            "Was very interesting the meeting."
           ],
           "accepts": [
-            "When our second son was born, we moved to a bigger flat."
+            "The meeting was very interesting."
           ],
-          "gap": "When our second son was born, ____ to a bigger flat.",
-          "gap_answer": "we moved",
-          "gap_accepts": [
-            "we moved"
-          ],
-          "quiz_options": [
-            "we moved",
-            "moved we",
-            "moved"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: we moved.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: we moved."
+          "wrong": "Very interesting was the meeting.",
+          "explanation": "**The meeting was** very interesting. The description does not open the sentence.",
+          "explanation_cz": "**The meeting was** very interesting. Popis větu nezačíná."
         },
         {
-          "en": "Because the weather was bad, we stayed at home.",
-          "cz": "Protože bylo špatné počasí, zůstali jsme doma.",
-          "tokens": [
-            "Because",
-            "the",
-            "weather",
-            "was",
-            "bad",
-            "we",
-            "stayed",
-            "at",
-            "home"
+          "en": "We met at the office on Monday.",
+          "cz": "V pondělí jsme se sešli v kanceláři.",
+          "gap": "We met ____. (office / Monday)",
+          "gap_answer": "at the office on Monday",
+          "quiz_options": [
+            "We met at the office on Monday.",
+            "We met on Monday at the office.",
+            "We on Monday met at the office."
           ],
           "accepts": [
-            "Because the weather was bad, we stayed at home."
+            "We met at the office on Monday."
           ],
-          "gap": "Because the weather was bad, ____ at home.",
-          "gap_answer": "we stayed",
-          "gap_accepts": [
-            "we stayed"
-          ],
-          "quiz_options": [
-            "we stayed",
-            "stayed we",
-            "stayed"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: we stayed.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: we stayed."
-        },
-        {
-          "en": "If you have time, we can meet on Thursday.",
-          "cz": "Pokud máš čas, můžeme se sejít ve čtvrtek.",
-          "tokens": [
-            "If",
-            "you",
-            "have",
-            "time",
-            "we",
-            "can",
-            "meet",
-            "on",
-            "Thursday"
-          ],
-          "accepts": [
-            "If you have time, we can meet on Thursday."
-          ],
-          "gap": "If you have time, ____ meet on Thursday.",
-          "gap_answer": "we can",
-          "gap_accepts": [
-            "we can"
-          ],
-          "quiz_options": [
-            "we can",
-            "can we",
-            "can"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: we can.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: we can."
-        },
-        {
-          "en": "When I finish work, I go straight home.",
-          "cz": "Když skončím v práci, jdu rovnou domů.",
-          "tokens": [
-            "When",
-            "I",
-            "finish",
-            "work",
-            "I",
-            "go",
-            "straight",
-            "home"
-          ],
-          "accepts": [
-            "When I finish work, I go straight home."
-          ],
-          "gap": "When I finish work, ____ straight home.",
-          "gap_answer": "I go",
-          "gap_accepts": [
-            "I go"
-          ],
-          "quiz_options": [
-            "I go",
-            "go I",
-            "go"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: I go.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: I go."
-        },
-        {
-          "en": "After the meeting finished, everyone went home.",
-          "cz": "Když schůzka skončila, všichni šli domů.",
-          "tokens": [
-            "After",
-            "the",
-            "meeting",
-            "finished",
-            "everyone",
-            "went",
-            "home"
-          ],
-          "accepts": [
-            "After the meeting finished, everyone went home."
-          ],
-          "gap": "After the meeting finished, ____ home.",
-          "gap_answer": "everyone went",
-          "gap_accepts": [
-            "everyone went"
-          ],
-          "quiz_options": [
-            "everyone went",
-            "went everyone",
-            "went"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: everyone went.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: everyone went."
-        },
-        {
-          "en": "Although it was late, he answered my email.",
-          "cz": "Přestože bylo pozdě, odpověděl na můj e-mail.",
-          "tokens": [
-            "Although",
-            "it",
-            "was",
-            "late",
-            "he",
-            "answered",
-            "my",
-            "email"
-          ],
-          "accepts": [
-            "Although it was late, he answered my email."
-          ],
-          "gap": "Although it was late, ____ my email.",
-          "gap_answer": "he answered",
-          "gap_accepts": [
-            "he answered"
-          ],
-          "quiz_options": [
-            "he answered",
-            "answered he",
-            "answered"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: he answered.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: he answered."
-        },
-        {
-          "en": "While we were grilling, it started to rain.",
-          "cz": "Když jsme grilovali, začalo pršet.",
-          "tokens": [
-            "While",
-            "we",
-            "were",
-            "grilling",
-            "it",
-            "started",
-            "to",
-            "rain"
-          ],
-          "accepts": [
-            "While we were grilling, it started to rain."
-          ],
-          "gap": "While we were grilling, ____ to rain.",
-          "gap_answer": "it started",
-          "gap_accepts": [
-            "it started"
-          ],
-          "quiz_options": [
-            "it started",
-            "started it",
-            "started"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: it started.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: it started."
-        },
-        {
-          "en": "Before we bought the house, we lived in a flat.",
-          "cz": "Než jsme koupili dům, bydleli jsme v bytě.",
-          "tokens": [
-            "Before",
-            "we",
-            "bought",
-            "the",
-            "house",
-            "we",
-            "lived",
-            "in",
-            "a",
-            "flat"
-          ],
-          "accepts": [
-            "Before we bought the house, we lived in a flat."
-          ],
-          "gap": "Before we bought the house, ____ in a flat.",
-          "gap_answer": "we lived",
-          "gap_accepts": [
-            "we lived"
-          ],
-          "quiz_options": [
-            "we lived",
-            "lived we",
-            "lived"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: we lived.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: we lived."
-        },
-        {
-          "en": "When the train arrived, the platform was full.",
-          "cz": "Když přijel vlak, nástupiště bylo plné.",
-          "tokens": [
-            "When",
-            "the",
-            "train",
-            "arrived",
-            "the",
-            "platform",
-            "was",
-            "full"
-          ],
-          "accepts": [
-            "When the train arrived, the platform was full."
-          ],
-          "gap": "When the train arrived, ____ full.",
-          "gap_answer": "the platform was",
-          "gap_accepts": [
-            "the platform was"
-          ],
-          "quiz_options": [
-            "the platform was",
-            "was the platform",
-            "was full the platform"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: the platform was.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: the platform was."
-        },
-        {
-          "en": "Since he started cycling, he feels much better.",
-          "cz": "Od té doby, co začal jezdit na kole, se cítí mnohem líp.",
-          "tokens": [
-            "Since",
-            "he",
-            "started",
-            "cycling",
-            "he",
-            "feels",
-            "much",
-            "better"
-          ],
-          "accepts": [
-            "Since he started cycling, he feels much better."
-          ],
-          "gap": "Since he started cycling, ____ much better.",
-          "gap_answer": "he feels",
-          "gap_accepts": [
-            "he feels"
-          ],
-          "quiz_options": [
-            "he feels",
-            "feels he",
-            "feels"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: he feels.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: he feels."
-        },
-        {
-          "en": "As soon as I get the invoice, I will send it.",
-          "cz": "Jakmile dostanu fakturu, pošlu ji.",
-          "tokens": [
-            "As",
-            "soon",
-            "as",
-            "I",
-            "get",
-            "the",
-            "invoice",
-            "I",
-            "will",
-            "send",
-            "it"
-          ],
-          "accepts": [
-            "As soon as I get the invoice, I will send it.",
-            "As soon as I get the invoice, i'll send it."
-          ],
-          "gap": "As soon as I get the invoice, ____ send it.",
-          "gap_answer": "I will",
-          "gap_accepts": [
-            "I will"
-          ],
-          "quiz_options": [
-            "I will",
-            "will I",
-            "will"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: I will.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: I will."
-        },
-        {
-          "en": "When we were in the mountains, the weather was very difficult.",
-          "cz": "Když jsme byli na horách, počasí bylo velmi náročné.",
-          "tokens": [
-            "When",
-            "we",
-            "were",
-            "in",
-            "the",
-            "mountains",
-            "the",
-            "weather",
-            "was",
-            "very",
-            "difficult"
-          ],
-          "accepts": [
-            "When we were in the mountains, the weather was very difficult."
-          ],
-          "gap": "When we were in the mountains, ____ very difficult.",
-          "gap_answer": "the weather was",
-          "gap_accepts": [
-            "the weather was"
-          ],
-          "quiz_options": [
-            "the weather was",
-            "was the weather",
-            "very difficult was the weather"
-          ],
-          "explanation": "Both halves keep subject before verb - the opening clause as well as the main one: the weather was.",
-          "explanation_cz": "Obe casti si drzi poradi podmet-sloveso, uvodni veta stejne jako hlavni: the weather was."
+          "wrong": "We met on Monday at the office.",
+          "explanation": "Place before time at the end: **at the office on Monday**.",
+          "explanation_cz": "Místo před časem na konci: **at the office on Monday**."
         }
       ]
     }
@@ -1095,186 +354,163 @@
   "intro": {
     "cards": [
       {
-        "title": "What it is",
-        "title_cz": "Co to je",
-        "table": {
-          "headers": [
-            "Fronted phrase",
-            "Subject",
-            "Verb",
-            "Rest"
-          ],
-          "rows": [
-            [
-              "In Prague,",
-              "we",
-              "have",
-              "a small office"
-            ],
-            [
-              "Yesterday,",
-              "I",
-              "went",
-              "to Brno"
-            ],
-            [
-              "For me,",
-              "it",
-              "is",
-              "difficult"
-            ]
-          ]
-        },
-        "points": [
-          "A comma after a longer opener is normal",
-          "Everything after the comma is an ordinary sentence",
-          "English lets you put a phrase at the front of a sentence - a time, a",
-          "place, a point of view.",
-          "What it never does is swap the subject and the verb because of it.",
-          "The subject-verb core stays exactly as it was."
-        ]
-      },
-      {
-        "title": "Why Czech pushes the other way",
-        "title_cz": "Proč čeština tlačí opačně",
-        "table": {
-          "headers": [
-            "Remember"
-          ],
-          "rows": [
-            [
-              "Czech puts the verb straight after the fronted phrase"
-            ],
-            [
-              "*Pro mě je to těžké.* Copy that rhythm into English and you get \"For"
-            ],
-            [
-              "me is it difficult\" - the commonest Czech word-order fault there is."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "The subject seat",
-        "title_cz": "Místo podmětu",
-        "table": {
-          "headers": [
-            "Avoid",
-            "Say"
-          ],
-          "rows": [
-            [
-              "For me is it difficult.",
-              "For me, **it is** difficult."
-            ],
-            [
-              "There is necessary to have good English.",
-              "**It is** necessary to have good English."
-            ],
-            [
-              "After the meeting is a lot of work.",
-              "After the meeting, **there is** a lot of work."
-            ]
-          ]
-        },
-        "points": [
-          "See **It as subject** for the full it / there drill",
-          "After the opener something must sit in the subject seat.",
-          "When there is no real subject, English uses **it** - or **there** when you are saying",
-          "that something exists."
-        ]
-      },
-      {
-        "title": "Openers that are clauses",
-        "title_cz": "Úvodní věty",
-        "table": {
-          "headers": [
-            "Avoid",
-            "Say"
-          ],
-          "rows": [
-            [
-              "When born our second son, we moved.",
-              "When **our second son was born**, we moved."
-            ],
-            [
-              "Very difficult was the weather.",
-              "**The weather was** very difficult."
-            ]
-          ]
-        },
-        "points": [
-          "The same rule holds when the opener is a whole clause.",
-          "Both halves keep subject before verb - including the opener itself."
-        ]
-      },
-      {
-        "title": "The safer sentence",
-        "title_cz": "Bezpečnější věta",
-        "points": [
-          "Fronting is optional.",
-          "If the opener is short and you are unsure, put it back where it came",
-          "from - the plain order is always available and often the better sentence."
+        "title": "Word order 2",
+        "title_cz": "Pořádek slov ve větě",
+        "diagram": "boxes_row",
+        "labels": [
+          "Subject",
+          "Verb",
+          "Object",
+          "I",
+          "drink",
+          "coffee"
         ],
         "table": {
           "headers": [
-            "",
-            ""
+            "Czech",
+            "English"
           ],
           "rows": [
             [
-              "For me, it is difficult.",
-              "**It is difficult for me.**"
+              "Kávu piju ráno.",
+              "**I** drink coffee every morning."
             ],
             [
-              "In Prague, we have an office.",
-              "**We have an office in Prague.**"
+              "Ráno piju kávu.",
+              "**I** drink coffee every morning."
+            ],
+            [
+              "Piju ráno kávu.",
+              "**I** drink coffee every morning."
             ]
           ]
-        }
+        },
+        "points": [
+          "English has one neutral order.",
+          "Czech can move the same words."
+        ]
       },
       {
-        "title": "The exception, for later",
-        "title_cz": "Výjimka, na později",
+        "title": "The subject comes first",
+        "title_cz": "Podmět je první",
+        "diagram": "boxes_row",
+        "labels": [
+          "Subject",
+          "be",
+          "description",
+          "English",
+          "is",
+          "important"
+        ],
         "table": {
           "headers": [
-            "Remember"
+            "Not",
+            "Say"
           ],
           "rows": [
             [
-              "English does invert after a fronted phrase in a small set of formal patterns - *Never"
+              "~~Important to me is English.~~",
+              "**English** is important to me."
             ],
             [
-              "have I seen...*, *Not only did she...*."
-            ],
-            [
-              "That is a deliberate B2/C1 effect with its own rules, not the everyday case"
-            ],
-            [
-              "here."
-            ],
-            [
-              "See **Inversion**."
+              "~~Very long was the meeting.~~",
+              "**The meeting** was very long."
             ]
           ]
-        }
+        },
+        "points": [
+          "Fill the **subject** slot before the verb.",
+          "A description after **be** does not open the sentence."
+        ]
       },
       {
-        "title": "Practice focus",
-        "title_cz": "Nácvik",
+        "title": "Place and time",
+        "title_cz": "Místo a čas",
         "table": {
           "headers": [
-            "",
-            ""
+            "Subject",
+            "Verb",
+            "Place",
+            "Time"
           ],
           "rows": [
             [
-              "Order",
-              "click the words into a correct English sentence."
+              "I",
+              "worked",
+              "in Vienna",
+              "last year"
             ],
             [
-              "Quiz and Type",
-              "supply what follows the opener - subject + verb, in that order."
+              "We",
+              "met",
+              "at the office",
+              "on Monday"
+            ]
+          ]
+        },
+        "points": [
+          "Place and time go last.",
+          "If both appear, put **place** before **time**.",
+          "A time word first is fine if the **subject** is next."
+        ]
+      },
+      {
+        "title": "Order changes the meaning",
+        "title_cz": "Pořadí mění význam",
+        "diagram": "contrast",
+        "labels": [
+          "Petr sent this",
+          "This sent Petr"
+        ],
+        "table": {
+          "headers": [
+            "Sentence",
+            "Who did it"
+          ],
+          "rows": [
+            [
+              "**Petr** sent this email.",
+              "Petr"
+            ],
+            [
+              "~~This email sent Petr.~~",
+              "the email — wrong"
+            ]
+          ]
+        },
+        "points": [
+          "Czech marks the actor with an ending.",
+          "English marks the actor by **order**."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "headers": [
+            "Not",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~Important to me is English.~~",
+              "**English** is important to me."
+            ],
+            [
+              "~~Very good was the meeting.~~",
+              "**The meeting** was very good."
+            ],
+            [
+              "~~In Prague live many people.~~",
+              "**Many people** live in Prague."
+            ],
+            [
+              "~~This problem solved my team.~~",
+              "**My team** solved this problem."
+            ],
+            [
+              "~~I like very much black coffee.~~",
+              "I like **black coffee** very much."
             ]
           ]
         }

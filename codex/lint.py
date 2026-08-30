@@ -25,7 +25,8 @@ Candidates are for looking at, never for acting on unread.
 Weekend smoke-prep (2026-08-29) added D3 slash / teacher-note, F3 Use-leads,
 F2 Do/Does-in-Use before questions, C4 intro-not-in-bank, C11 Quiz word absent
 from intro, F4 unknown 's names. 2026-08-30: B11 NP+be cue `(plan / be)`.
-Still read-only. `/smoke-prep` runs this.
+B20 sentence-sort omits Czech · B21 word-order Quiz is Which is correct? ·
+E8 word-order skips Type. Still read-only. `/smoke-prep` runs this.
 """
 import json
 import re
@@ -323,7 +324,8 @@ def lint_pack(uid):
                          "verbcue", "thirdform", "ppcuz", "ppsort",
                          "stemcue", "longtable", "plusminus",
                          "sortlabel", "sortbold", "patternchip", "bothsort",
-                         "parencue", "practisenote")}
+                         "parencue", "practisenote", "sortcz", "sentquiz",
+                         "wordordertype")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -814,6 +816,35 @@ def lint_pack(uid):
             if len(en.split()) >= 3 and "**" not in en:
                 f["sortbold"].append(it)
 
+    # B20 — full-sentence sort chips still carry Czech  [EXACT]
+    # b1_word_order_fronting 2026-08-30: EN+CZ overflowed the column.
+    # Short word/phrase sorts (always drink / used to live) may keep Czech.
+    if d.get("sort_cz") is not False:
+        for it in sort_items:
+            en_plain = re.sub(r"[*_]+", " ", str(it.get("en") or ""))
+            if len(en_plain.split()) >= 6 and str(it.get("cz") or "").strip():
+                f["sortcz"].append(it)
+
+    # B21 — word-order Quiz is still a gapped fragment  [EXACT]
+    # b1_word_order_fronting 2026-08-30: "which is correct?" with full sentences.
+    if "word_order" in uid and uid != "a1_word_order":
+        seq = (d.get("check") or {}).get("sequence") or []
+        if (not seq or "quiz" in seq) and d.get("quiz_axis") != "sentence":
+            f["sentquiz"].append({
+                "cz": uid,
+                "en": "word-order Quiz is Which is correct? (quiz_axis: sentence)",
+            })
+
+    # E8 — word-order sentence Quiz still has Type  [EXACT]
+    # b1_word_order_fronting 2026-08-30: cloze cannot force the subject.
+    if d.get("quiz_axis") == "sentence":
+        if (d.get("ladder") or {}).get("type") is not False:
+            if any(it.get("gap") and it.get("type") is not False for it in items):
+                f["wordordertype"].append({
+                    "cz": uid,
+                    "en": "word-order Type cloze cannot force the subject — skip Type",
+                })
+
     # C26 — don't call the target "small words"  [EXACT]
     # a1_to_for_with 2026-08-29: "Three small words" — a, if, no are small too.
     if str(d.get("level", "")).upper() == "A1":
@@ -1100,6 +1131,9 @@ LABELS = [
     ("bothsort",    "EXACT  B13 sort chip takes both to and -ing (try/like) — cannot pick a bin"),
     ("parencue",    "EXACT  B19 (maybe)/(sure)/(impossible) cue has no authored quiz_options"),
     ("practisenote","EXACT  C20 intro has a What you practise recap card — cut it"),
+    ("sortcz",      "EXACT  B20 sentence-sort chip still has Czech — omit cz (sort_cz: false)"),
+    ("sentquiz",    "EXACT  B21 word-order Quiz is a gap, not Which is correct? with full sentences"),
+    ("wordordertype","EXACT  E8  word-order sentence Quiz still has Type — skip Type"),
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),

@@ -1221,7 +1221,8 @@ function gapPrompt(it, pack) {
 const COMPOUND_ANSWER = /^(any|some|no|every)(body|one|thing|where)$/;
 
 function choicesFor(it, siblings, pack) {
-  const answer = it.gap_answer;
+  const sentenceMode = pack && String(pack.quiz_axis) === "sentence";
+  const answer = sentenceMode ? it.en : it.gap_answer;
   if (!key(answer)) return null;
   const answerIsCompound = COMPOUND_ANSWER.test(key(answer));
 
@@ -1389,6 +1390,16 @@ export function adaptGrammarPack(pack) {
               _block: it._block,
             };
           }
+          /* Prefix/suffix job board: lemma is the affix, cz is the meaning
+           * card. `en` can be a legal sentence for the audit pool. */
+          if (it.lemma && !it.gap) {
+            return {
+              en: it.lemma,
+              cz: String(it.cz || ""),
+              structures: it.structures,
+              _block: it._block,
+            };
+          }
           return {
             en: it.en,
             cz: it.cz,
@@ -1402,6 +1413,7 @@ export function adaptGrammarPack(pack) {
     ? withGap
         .filter((it) => blockAllows(it, "quiz"))
         .map((it) => {
+          const sentenceMode = String(pack.quiz_axis) === "sentence";
           const choices = choicesFor(
             it,
             withGap.filter((s) => s !== it),
@@ -1409,7 +1421,9 @@ export function adaptGrammarPack(pack) {
           );
           if (!choices) return null;
           let quizAnswer = it.gap_answer;
-          if (String(pack.quiz_axis) === "articles") {
+          if (sentenceMode) {
+            quizAnswer = it.en;
+          } else if (String(pack.quiz_axis) === "articles") {
             const raw = String(it.gap_answer || "").trim();
             const al = raw.toLowerCase();
             const np = /^(a|an|the)\s+(.+)$/i.exec(raw);
@@ -1417,10 +1431,12 @@ export function adaptGrammarPack(pack) {
             else if (np) quizAnswer = np[1].toLowerCase() + " " + np[2];
           }
           return {
-            prompt: gapPrompt(it, pack),
+            prompt: sentenceMode
+              ? (it.quiz_prompt || "Which is correct?")
+              : gapPrompt(it, pack),
             answer: quizAnswer,
             choices,
-            accepts: it.gap_accepts || [],
+            accepts: sentenceMode ? [] : (it.gap_accepts || []),
             cz: it.cz,
             diagram: it.diagram || "",
             // Word-formation packs (2026-08-18): the capitalised root cue IS
@@ -1446,7 +1462,9 @@ export function adaptGrammarPack(pack) {
         .filter((it) => it.bin && it.en && blockAllows(it, "sort_bins"))
         .map((it) => ({
           en: it.en,
-          cz: it.cz,
+          /* Sentence-sort chips (b1_word_order_fronting): Czech on the
+           * same line overflows the column. Pack sets sort_cz: false. */
+          cz: pack.sort_cz === false ? "" : it.cz,
           bin: it.bin,
           explanation: it.explanation,
           explanation_cz: it.explanation_cz,
@@ -1483,20 +1501,22 @@ export function adaptGrammarPack(pack) {
 
   // Type: produce the missing form. Czech rides along as the hint so the
   // stage stays CZ→EN rather than a bare cloze.
-  const type_items = (wants("type") ? withGap : []).map((it) => ({
-    prompt: gapPrompt(it, pack),
-    hint: it.cz,
-    answer: it.gap_answer,
-    accepts: relativeTypeAccepts(it, pack),
-    zero_article: !!it.zero_article,
-    cz: it.cz,
-    diagram: it.diagram || "",
-    root: it.root,
-    explanation: it.explanation,
-    explanation_cz: it.explanation_cz,
-    structures: it.structures,
-    _block: it._block,
-  }));
+  const type_items = (wants("type") ? withGap : [])
+    .filter((it) => it.type !== false)
+    .map((it) => ({
+      prompt: gapPrompt(it, pack),
+      hint: it.cz,
+      answer: it.gap_answer,
+      accepts: relativeTypeAccepts(it, pack),
+      zero_article: !!it.zero_article,
+      cz: it.cz,
+      diagram: it.diagram || "",
+      root: it.root,
+      explanation: it.explanation,
+      explanation_cz: it.explanation_cz,
+      structures: it.structures,
+      _block: it._block,
+    }));
 
   // Use: whole-sentence production from the Czech. zero_article items (no
   // typed answer exists — the teaching point is the absent word) belong here
@@ -1511,8 +1531,51 @@ export function adaptGrammarPack(pack) {
   const fixMode = pack.use_mode === "correct";
   const voiceMode = pack.use_mode === "voice";
   const joinMode = pack.use_mode === "join";
+  const openMode = pack.use_mode === "open";
+  const rewriteMode = pack.use_mode === "rewrite";
   const use_items = !(wants("use") ? items : []).length
     ? []
+    : openMode
+      ? items
+          .filter(
+            (it) =>
+              it.use !== false &&
+              it.en &&
+              (it.use_prompt || it.prompt),
+          )
+          .map((it) => ({
+            prompt: it.use_prompt || it.prompt,
+            sample: it.en,
+            answer: it.en,
+            accepts: it.accepts || [],
+            open: true,
+            hint: it.cz || "",
+            cz: it.cz || "",
+            targets: it.targets || it.lemmas || [],
+            explanation: it.explanation,
+            explanation_cz: it.explanation_cz,
+            structures: it.structures,
+            _block: it._block,
+          }))
+    : rewriteMode
+      ? items
+          .filter((it) => it.en && it.rewrite && it.use !== false)
+          .map((it) => ({
+            prompt: it.rewrite,
+            wrong: "",
+            answer: it.en,
+            accepts: it.accepts || [],
+            hint:
+              pack.use_hint ||
+              "Change one word so the sentence means the opposite.",
+            no_prefix: it.no_prefix || [],
+            cz: it.cz || "",
+            diagram: it.diagram || "",
+            explanation: it.explanation,
+            explanation_cz: it.explanation_cz,
+            structures: it.structures,
+            _block: it._block,
+          }))
     : joinMode
       ? items
           .filter((it) => it.en && it.join)

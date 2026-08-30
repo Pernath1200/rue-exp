@@ -5,10 +5,12 @@
  "levels": [
   "A1",
   "A2",
-  "B1"
+  "B1",
+  "B2",
+  "C1"
  ],
  "levels_locked": [],
- "levels_locked_note": "B2 and C1 HIDDEN 2026-08-26 (James): rail off. 2026-08-29: auto B2/C1 banks stubbed (node parked, title kept). Live exceptions: second/third conditional, present perfect continuous, past perfect, word formation B2+C1, clear claims. P-b2c1-stub. Restore the rail by putting \"B2\",\"C1\" back in `levels`. Do not refill stubs from auto.",
+ "levels_locked_note": "All CEFR levels open for browse. Practice when status is live + pack exists.",
  "default_direction": "cz_to_en",
  "path_order": [
   "a1_word_classes",
@@ -204,32 +206,32 @@
    "coming": 0
   },
   "A2": {
-   "total": 50,
-   "grammar": 25,
+   "total": 51,
+   "grammar": 26,
    "vocab": 25,
-   "live": 41,
+   "live": 42,
    "coming": 9
   },
   "B1": {
    "total": 27,
    "grammar": 17,
    "vocab": 10,
-   "live": 26,
-   "coming": 1
+   "live": 25,
+   "coming": 2
   },
   "B2": {
    "total": 29,
    "grammar": 25,
    "vocab": 4,
-   "live": 28,
-   "coming": 1
+   "live": 9,
+   "coming": 20
   },
   "C1": {
    "total": 23,
    "grammar": 23,
    "vocab": 0,
-   "live": 22,
-   "coming": 1
+   "live": 1,
+   "coming": 22
   }
  },
  "show_full_canopy_ids": {
@@ -335,6 +337,7 @@
    "c1_spoken_vs_written",
    "c1_error_patterns",
    "c1_word_formation",
+   "b1_used_to",
    "a2_articles",
    "a2_simple_vs_continuous",
    "a2_for_since",
@@ -2154,28 +2157,6 @@
    ]
   },
   {
-   "id": "b1_used_to",
-   "domain": "grammar",
-   "label": "Used to",
-   "kind": "topic",
-   "root": "verb_phrase",
-   "tree_part": "verb_phrase",
-   "codex_unit": "G_VP-B1B2-01",
-   "levels": [
-    "B1"
-   ],
-   "status": "parked",
-   "foundation": false,
-   "content": "grammar/blocks/b1_used_to.json",
-   "practice": "grammar",
-   "note": "PARKED 2026-08-29 — live copy is a2_used_to. Do not edit.",
-   "related": [
-    "a2_used_to",
-    "a2_past_simple",
-    "b2_be_get_used_to"
-   ]
-  },
-  {
    "id": "trunk_core_b1",
    "domain": "vocab",
    "label": "Core · B1 frames",
@@ -2304,7 +2285,7 @@
    "foundation": false,
    "content": "grammar/blocks/b1_word_order_fronting.json",
    "practice": "grammar",
-   "note": "Fronted phrase, no inversion - subject stays before the verb; it/there fill the subject seat. B1 repair rung.",
+   "note": "English order is fixed. Subject first; place before time at the end. Czech inversion is the error. Dummy it stays in b1_it_subject.",
    "related": [
     "a1_word_order",
     "b1_it_subject",
@@ -2470,7 +2451,7 @@
   {
    "id": "b1_prefixes",
    "domain": "grammar",
-   "label": "Prefixes — the basics",
+   "label": "Prefixes",
    "kind": "topic",
    "root": "word_craft",
    "tree_part": "word_craft",
@@ -2482,7 +2463,7 @@
    "foundation": false,
    "content": "grammar/blocks/b1_prefixes.json",
    "practice": "grammar",
-   "note": "B1 affix tranche: un- (adj + verbs), in-/im-, dis-, re-, choose-the-prefix review · Czech glosses · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B1B2-01 · 2026-08-29",
+   "note": "B1 affix tranche: core 8 un-/dis-/in-(im-/il-/ir-)/re-/pre-/over-/under-/mis- · Spec_Prefixes_B1 2026-08-30 · Hang: Word craft · V_WFM-B1B2-01",
    "exam": "word_formation"
   },
   {
@@ -3072,7 +3053,7 @@
    "foundation": false,
    "content": "grammar/blocks/b2_preposition_ing.json",
    "practice": "grammar",
-   "note": "adjective/verb + preposition + -ing · plain prepositions + -ing · `to` preposition vs infinitive marker · 4 strands x 12 · built 2026-08-07 · PARKED 2026-08-24, mirrored from nodes-grammar.json. NB status is DUPLICATED across tree.json and nodes-grammar.json and nothing keeps them in sync — the app reads tree.json, the codex scripts read nodes-grammar.json, so a change to one alone silently does nothing where it matters.",
+   "note": "adjective/verb + preposition + -ing · plain prepositions + -ing · `to` preposition vs infinitive marker · 4 strands x 12 · built 2026-08-07 · PARKED 2026-08-24 (James): duplicate teaching. The RULE (after a preposition, -ing) is one exceptionless line, now taught on slide 4 of b1_verb_patterns_advanced. The COLLOCATIONS are b1_dependent_prepositions' ground — 13 of the 27 this unit claimed to add are already drilled there, 19 slots earlier and a level lower, and that unit gaps the PREPOSITION while this one gaps the verb form. Its own vocabulary is 84% A1, so it was never a B2 unit. A real B2 dependent-prepositions unit is wanted here — revision plus ~16 genuinely new B2/C1 collocations (accuse of, blame for, cope with, opposed to, satisfied with, consistent with, anxious about ...) — but NOTHING IS TO BE BUILT without careful planning first (his standing instruction). Left in path_order so indices do not shift.",
    "related": [
     "b1_dependent_prepositions"
    ]
@@ -3699,6 +3680,28 @@
    "practice": "grammar",
    "note": "CAE Part 3: rarer suffixes, shifted stems, assimilating negatives · roots from Ready for C1 families, original sentences · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B2C1-01 · 2026-08-29",
    "exam": "word_formation"
+  },
+  {
+   "id": "b1_used_to",
+   "domain": "grammar",
+   "label": "Used to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "codex_unit": "G_VP-B1B2-01",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_used_to.json",
+   "practice": "grammar",
+   "note": "PARKED 2026-08-29 — live copy is a2_used_to. Do not edit.",
+   "related": [
+    "a2_used_to",
+    "a2_past_simple",
+    "b2_be_get_used_to"
+   ]
   },
   {
    "id": "a2_articles",
