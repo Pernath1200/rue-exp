@@ -16,7 +16,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 **Grammar: 55 inspected · 0 approved · 8 unseen** of 63 live units
 
-**Vocab A1–A2: 9 inspected · 0 approved · 54 unseen** of 63 live units
+**Vocab A1–A2: 13 inspected · 0 approved · 50 unseen** of 63 live units
 
 Of the 6 cloud-authored units, **3 have any tick**.
 
@@ -106,7 +106,7 @@ Of the 6 cloud-authored units, **3 have any tick**.
 Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the rail.
 
 
-## A1 vocab — 9 inspected / 0 approved / 38 units
+## A1 vocab — 13 inspected / 0 approved / 38 units
 
 - [x][ ] `trunk_frames_a1` — I am · I have · 12 items · **cloud**
 - [x][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
@@ -117,10 +117,10 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [x][ ] `leaf_feelings_a1` — Feelings · 17 items
 - [x][ ] `trunk_glue_questions_a1` — Question words · 16 items
 - [x][ ] `trunk_verbs_say_a1` — Core frames · Verbs · say & think · 16 items · seen?
-- [ ][ ] `leaf_places` — Places · 60 items · seen?
-- [ ][ ] `leaf_countries_a1` — Countries · 44 items
-- [ ][ ] `leaf_food_a1` — Food & drink · 58 items
-- [ ][ ] `leaf_clothes_a1` — Clothes · 23 items
+- [x][ ] `leaf_places` — Places · 60 items · seen?
+- [x][ ] `leaf_countries_a1` — Countries · 44 items
+- [x][ ] `leaf_food_a1` — Food & drink · 58 items
+- [x][ ] `leaf_clothes_a1` — Clothes · 23 items
 - [ ][ ] `leaf_body_a1` — Body · 24 items
 - [ ][ ] `leaf_health_a1` — Health · 24 items
 - [ ][ ] `trunk_glue_pronouns_a1` — Core frames · Pronouns · this that · 12 items

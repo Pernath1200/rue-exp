@@ -1,5 +1,30 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-31 · local (interactive) — `leaf_food_a1` Telegram-tested
+
+James: *so this is done*. Telegram `leaf_food_a1 tested` (12:29). Home bot replied `of 53` and did not append this vault; wrote the log line (same as feelings). Places 12:27 and Clothes 12:31 were already in the log.
+
+- New class **F5** (`observed`): Use may not demand *have breakfast* until intro showed the collocation. A5 still accepts *eat*. No lint — not EXACT; `lint.py` is grammar-only.
+- Reconcile → `[x][ ]`. Vocab A1–A2: 12 inspected. Did **not** hand-tick.
+
+Phone `of 53` is the home bot. Real Top 5: Countries → Body → Health → Pronouns → Can/like/want. Remaining 51 (of 118).
+
+Play next: `#leaf_countries_a1` Ctrl+F5. New tab.
+
+---
+
+## 2026-08-31 · local (interactive) — Countries tree after Use
+
+James: no tree at the end of Countries. Type 24/30 leftover and smoke-skip Match were holding fruit.
+
+- Type fruit: 24/30 is enough (leftover after two 12s). 23-word packs still whole-pack; 36 still 36.
+- Smoke skip Match stamps Match walked; Use then shows the tree.
+- Cache `?v=2026-08-31-usetree2`. Did **not** tick INSPECTED.
+
+Play: `#leaf_countries_a1` Ctrl+F5. Finish Use → tree.
+
+---
+
 ## 2026-08-31 · local (interactive) — `leaf_places` Telegram-tested
 
 James: *okay this is done*. Telegram `leaf_places tested` (12:27).
@@ -8,7 +33,7 @@ James: *okay this is done*. Telegram `leaf_places tested` (12:27).
 - **C18** → `confirmed` (*Czech is not English* on Question words, leftover in the same sit).
 - Dual *země / venkov* was D3. Did **not** hand-tick.
 
-Phone still says `of 53` (stale total). Reconcile from the vault log.
+Home bot answered the Telegram tick (`of 53`); this vault log did not have the line. Wrote `leaf_places tested` (12:27) the same way Feelings was logged. Reconcile → `[x][ ]`. `leaf_clothes_a1` was already in the log at 12:31 — also `[x][ ]`. Did **not** hand-tick.
 
 Play next: `#leaf_countries_a1` Ctrl+F5. New tab.
 
@@ -21,8 +46,8 @@ James: finished Use, no tree.
 - Fruit was waiting for Match 23/23. The leftover *bota* pair (22/23) plus Type offering Use after 12/23 let the ladder look done.
 - Match fruit is one board of 12 (the 2026-08-30 lock). Extra boards still walk the deck.
 - Use done shows the tree immediately when the gates are clear. If Quiz/Type are short, it says **The tree needs Quiz 12/23** and that button is primary.
-- Type leftover: Use is primary only after two rounds (24/30 still; 12/23 is not a leftover).
-- Cache `?v=2026-08-31-usetree`. Did **not** tick INSPECTED.
+- Type leftover: Use is primary only after two rounds (24/30 still; 12/23 is not a leftover). 24/30 Type can fruit (Countries); 12/23 cannot.
+- Cache `?v=2026-08-31-usetree2`. Did **not** tick INSPECTED.
 
 Play: `#leaf_clothes_a1` Ctrl+F5. If Use already done, leftover Quiz/Type still take the tree; finishing them should grow it.
 
