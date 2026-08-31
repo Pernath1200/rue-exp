@@ -16,7 +16,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 **Grammar: 55 inspected · 0 approved · 8 unseen** of 63 live units
 
-**Vocab A1–A2: 7 inspected · 0 approved · 56 unseen** of 63 live units
+**Vocab A1–A2: 9 inspected · 0 approved · 54 unseen** of 63 live units
 
 Of the 6 cloud-authored units, **3 have any tick**.
 
@@ -106,7 +106,7 @@ Of the 6 cloud-authored units, **3 have any tick**.
 Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the rail.
 
 
-## A1 vocab — 7 inspected / 0 approved / 38 units
+## A1 vocab — 9 inspected / 0 approved / 38 units
 
 - [x][ ] `trunk_frames_a1` — I am · I have · 12 items · **cloud**
 - [x][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
@@ -114,9 +114,9 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [x][ ] `trunk_verbs_more_a1` — Core frames · Verbs · more · 12 items
 - [x][ ] `leaf_home_family` — Home & Family · 60 items
 - [x][ ] `leaf_freetime_a1` — Free time · 35 items
-- [ ][ ] `leaf_feelings_a1` — Feelings · 17 items
+- [x][ ] `leaf_feelings_a1` — Feelings · 17 items
 - [x][ ] `trunk_glue_questions_a1` — Question words · 16 items
-- [ ][ ] `trunk_verbs_say_a1` — Core frames · Verbs · say & think · 12 items
+- [x][ ] `trunk_verbs_say_a1` — Core frames · Verbs · say & think · 16 items · seen?
 - [ ][ ] `leaf_places` — Places · 60 items · seen?
 - [ ][ ] `leaf_countries_a1` — Countries · 44 items
 - [ ][ ] `leaf_food_a1` — Food & drink · 58 items

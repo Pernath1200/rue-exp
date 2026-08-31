@@ -1,5 +1,184 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-31 · local (interactive) — `leaf_places` Telegram-tested
+
+James: *okay this is done*. Telegram `leaf_places tested` (12:27).
+
+- New class **A12** (`observed`): vocab homonyms cue the sense on the ambiguous side. Places: *bike (bicycle)*, *square (place)*, *station (train)*, *country (nation)* / *země (stát)*. No lint — not EXACT without a homonym list.
+- **C18** → `confirmed` (*Czech is not English* on Question words, leftover in the same sit).
+- Dual *země / venkov* was D3. Did **not** hand-tick.
+
+Phone still says `of 53` (stale total). Reconcile from the vault log.
+
+Play next: `#leaf_countries_a1` Ctrl+F5. New tab.
+
+---
+
+## 2026-08-31 · local (interactive) — Clothes Use, no tree
+
+James: finished Use, no tree.
+
+- Fruit was waiting for Match 23/23. The leftover *bota* pair (22/23) plus Type offering Use after 12/23 let the ladder look done.
+- Match fruit is one board of 12 (the 2026-08-30 lock). Extra boards still walk the deck.
+- Use done shows the tree immediately when the gates are clear. If Quiz/Type are short, it says **The tree needs Quiz 12/23** and that button is primary.
+- Type leftover: Use is primary only after two rounds (24/30 still; 12/23 is not a leftover).
+- Cache `?v=2026-08-31-usetree`. Did **not** tick INSPECTED.
+
+Play: `#leaf_clothes_a1` Ctrl+F5. If Use already done, leftover Quiz/Type still take the tree; finishing them should grow it.
+
+---
+
+## 2026-08-31 · local (interactive) — `trunk_verbs_say_a1` Telegram-tested
+
+James: *so this is done*. Telegram `trunk_verbs_say_a1 tested` (11:40).
+
+- New class **C52** (`observed`): say/tell and look/see each get an intro page plus Quiz/Type/Use items whose chips are the pair. Not a frames-page note. C11 is the other direction.
+- No lint yet — `lint.py` is grammar-only; a pair registry would be EXACT later.
+- Reconcile → `[x][ ]`. Did **not** hand-tick.
+
+Phone still says `0 down, 53 to go (of 53)` — stale total; the tick is in the vault log and the Top 5 after it is Places → Countries → Food → Clothes → Body.
+
+Play next: `#leaf_places` Ctrl+F5. New tab.
+
+---
+
+## 2026-08-31 · local (interactive) — Countries Use: brother → friend
+
+James: *My brother is Slovak* is weird — if your brother is Slovak, you would be too.
+
+- Use: *My friend is Slovak.* / *Můj kamarád je Slovák.* Mother *from Slovakia* stays (origin of a parent is mixed-family, fine).
+- E6 confirmed with this example. Did **not** tick INSPECTED.
+
+Play: `#leaf_countries_a1` · Use. Ctrl+F5.
+
+---
+
+## 2026-08-31 · local (interactive) — Countries Type clue capitals restored
+
+James: clues in small letters is the opposite of strict capitalisation. Strict = grade `czech` wrong, not rewrite `C____` as `c____`.
+
+- Type clue shows the model's first letter again (`t__ C____ R_______`).
+- Lowercase still *Capital letter*. Cache `?v=2026-08-31-capclue`. Did **not** tick INSPECTED.
+
+Play: `#leaf_countries_a1` Ctrl+F5.
+
+---
+
+## 2026-08-31 · local (interactive) — Clothes Match 3 of 2
+
+James on Clothes: *Match 2 of 2 done · 22 / 23 words* and a button **Match 3 of 2**.
+
+- *shoe* / *boot* both strip to *bota*, so they cannot share a board. Unlucky shuffle left both for board 2, which then held 10 and stranded 1.
+- Round labels use leftover words, not `ceil(23/12)`. Extra board is **3 of 3**; subline is not All clear while a word remains.
+- New packs start with one of the pair on board 1, so first-learn is 12+11.
+- Cache `?v=2026-08-31-match3`. `scripts/_test_match_round_label.js`. Did **not** tick INSPECTED.
+
+Play: `#leaf_clothes_a1` Ctrl+F5 · Match. If you are on 22/23, the leftover is one pair (the other *bota*).
+
+---
+
+## 2026-08-31 · local (interactive) — Food P0 have breakfast
+
+James smoking Food: good unit. P0 *Snídám doma.* → **I have breakfast at home.** Note: *have breakfast hasn't been taught as a verb*.
+
+It hasn't. The pack teaches *breakfast* as a noun (*snídaně*). Czech *snídat* is a verb; English is the collocation **have breakfast** (A5 also **eat breakfast**, already in `accepts`). Grading already took the typed line (period stripped). Production was leading (F3/F5).
+
+- Meals intro: note **have breakfast / have lunch / have dinner** (**eat** also fine).
+- Use: same two meal sentences. Explanation on both. Dinner is the same class (*Večeříme v sedm*).
+- F5 `observed` in AUTHORING-RULES. Did **not** tick INSPECTED.
+
+Play: `#leaf_food_a1` Ctrl+F5. Intro page 1, then Sentence 1.
+
+---
+
+## 2026-08-31 · local (interactive) — Countries Type hub → Use
+
+James: two Type sets still didn't offer Use (Enter started another Type round). 30 words = 12+12+6; after 24 the leftover 6 hid Use.
+
+- Type hub always offers **Use** once a set is done (not only at 30/30). After a short leftover (<12 words), Use is the primary button.
+- Cache `?v=2026-08-31-typeuse`. jsdom: 24/30 → Use stage. Fruit still wants 30 Type words (last 6 later). Did **not** tick INSPECTED.
+
+Play: `#leaf_countries_a1` Ctrl+F5. After the second Type set, **Use →** is the blue button.
+
+---
+
+## 2026-08-31 · local (interactive) — Countries Type repeat + capital P0
+
+James smoking Countries. Type round 2 was the same 12 words. P0: *Czech* / *český / čeština* must be strict about capitalisation.
+
+- Type was counting the 14 Which-is-correct? sentences (`quiz_axis: sentence`) as its cover deck. Word keys never matched those sentence keys, so coverage stayed **0/14** and round 2 resampled the same pool. Type now covers the **30 words** (3 rounds, 12+12+6, no repeats). Quiz stays the 14 Which items.
+- `strict_capitals`: lowercase *czech* is *Capital letter*. Fat Type clue no longer gifts the capital (`c____`, not `C____`). Accepts variants (*Czechia*) check the form that matched.
+- Cache `practice-vocab.js?v=2026-08-31-typecap`. jsdom: lowercase *czech* fails; round 2 has no overlap with round 1. Did **not** tick INSPECTED.
+
+Play: `#leaf_countries_a1` Ctrl+F5. Type hub should read 12/30 after the first set.
+
+---
+
+## 2026-08-31 · local (interactive) — `trunk_verbs_say_a1` say/tell + look/see
+
+James: short unit is good; say vs tell and look vs see each need an intro page, plus a few Quiz / Type / Use items.
+
+Dropdowns: pattern only (tell + person, say + the words; never *I say him*). look / see only (look at vs no at; watch and listen stay off the page — already Free time). Add 4 frames, chip the pairs.
+
+- Intro 2 → 4: pictures · **say and tell** · **look and see** · frames. Contrast schematic + table on each pair page. Frames note (the buried trap) cut — the pages teach it. C17, no recap.
+- 12 → 16 frames. Extra: *I say yes.* · *I tell you my name.* · *I see the clock.* · *I look at my friend.* (same objects as the originals, swapped). Pool-legal. Match 8+8.
+- `quiz_options` on the eight contrast items are the pair only (`say`/`tell`, `look`/`see`). Type and Use are the same 16. Did **not** tick INSPECTED.
+
+Play: `#trunk_verbs_say_a1` Ctrl+F5. Intro pages 2–3, then Quiz chips.
+
+---
+
+## 2026-08-31 · local (interactive) — Places P0 cues + questions intro title
+
+James smoking Places; one leftover from Question words.
+
+- **`trunk_glue_questions_a1` intro:** *Czech is not English* → *Czech and English questions are different* / *České a anglické otázky jsou jiné*. Same Not/Say table.
+- **`a1_places` cues** (parens strip on grade, so Type still takes the bare word):
+  - *bike (bicycle)* · accepts *bicycle* — not a motorbike. Czech *kolo* unchanged.
+  - *square (place)* · accepts *town square* / *city square* — náměstí, not the shape.
+  - *station (train)* · accepts *train station* / *railway station* — *nádraží* is the train one. Flag sat on Quiz *leave* (item 42); the note was station.
+  - *country (nation)* / *země (stát)* — dropped the *venkov* slash (A2 Travel already has *countryside*). Globe tile was already the nation sense.
+- Intro tiles copied the new glosses. Did **not** tick INSPECTED.
+
+Play: `#leaf_places` Ctrl+F5.
+
+---
+
+## 2026-08-31 · local (interactive) — Telegram listener on this laptop
+
+James: tired of going to the home PC to unstick the bot.
+
+- Enabled `TelegramSweepBot` here (`pythonw …\reminders\telegram_sweep_bot.py`). Log: `listener started` 11:08.
+- Loads vault `TA/smoke_list.py` every message. `units to test` = Verbs · say … Snapshot 10:57 · 63 down, 55 to go (of 118). Feelings already logged.
+- Do not patch the home PC. If it still polls, 409 until this long-poll holds.
+
+Phone: `units to test`.
+
+---
+
+## 2026-08-31 · local (interactive) — `leaf_feelings_a1` done
+
+James: *okay so this is done* (tree Inner life lit). Not on the Telegram list he can see — home bot ranking predates the Feelings split.
+
+- Logged `leaf_feelings_a1 tested` (10:57) — same line the bot would write. Reconcile → `[x][ ]`.
+- Vault Top 5 now: `trunk_verbs_say_a1`, Places, Countries, Food, Clothes.
+- Telegram: send `leaf_feelings_a1 tested` anyway if he wants the bot to echo it; then `units to test` after Obsidian Sync. `a1_feelings tested` aliases. If it still says `of 53`, home listener is stale.
+
+Play next: `#trunk_verbs_say_a1` Ctrl+F5.
+
+---
+
+## 2026-08-31 · local (interactive) — Feelings Quiz 24 = 12+12
+
+James: pad Quiz to two rounds of 12; recycle a few words.
+
+- `sentences[]` 17 → 24. Recycle: happy, sad, funny, angry, busy, great, bored.
+- Quiz/Type coverNeed 24 → two passes of 12. Match still 17 words (9+8).
+
+Play: `#leaf_feelings_a1` Ctrl+F5 → Quiz.
+
+---
+
 ## 2026-08-31 · local (interactive) — `trunk_glue_questions_a1` Telegram-tested
 
 James: *this one counts as done, supposing that you fix the bugs mentioned above*. Telegram `trunk_glue_questions_a1 tested` (10:41).

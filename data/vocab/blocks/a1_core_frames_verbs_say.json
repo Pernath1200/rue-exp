@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "trunk_verbs_say_a1",
   "practice": "frames",
-  "note": "P4 core verbs — communication and mind. Gap on the verb.",
+  "note": "P4 core verbs — communication and mind. Gap on the verb. 2026-08-31 (James, smoke): say vs tell and look vs see each get an intro page; four extra frames drill the pairs; Quiz chips are the pair.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
     "say",
@@ -30,20 +30,52 @@
           "cz": "Říkám ahoj. / Zdravím.",
           "gap": "I ____ hello.",
           "gap_answer": "say",
+          "quiz_options": ["say", "tell"],
           "accepts": [
             "I say hello",
             "I say hello."
-          ]
+          ],
+          "explanation": "**say** + the words. Not **tell hello**.",
+          "explanation_cz": "**say** + slova. Ne **tell hello**."
+        },
+        {
+          "en": "I say yes.",
+          "cz": "Říkám ano.",
+          "gap": "I ____ yes.",
+          "gap_answer": "say",
+          "quiz_options": ["say", "tell"],
+          "accepts": [
+            "I say yes",
+            "I say yes."
+          ],
+          "explanation": "**say** + the words. Not **tell yes**.",
+          "explanation_cz": "**say** + slova. Ne **tell yes**."
         },
         {
           "en": "I tell my brother about the film.",
           "cz": "Vyprávím bratrovi o tom filmu.",
           "gap": "I ____ my brother about the film.",
           "gap_answer": "tell",
+          "quiz_options": ["tell", "say"],
           "accepts": [
             "I tell my brother about the film",
             "I tell my brother about the film."
-          ]
+          ],
+          "explanation": "**tell** + a person. **tell my brother**. Not **say him**.",
+          "explanation_cz": "**tell** + osoba. Ne **say him**."
+        },
+        {
+          "en": "I tell you my name.",
+          "cz": "Říkám ti své jméno.",
+          "gap": "I ____ you my name.",
+          "gap_answer": "tell",
+          "quiz_options": ["tell", "say"],
+          "accepts": [
+            "I tell you my name",
+            "I tell you my name."
+          ],
+          "explanation": "**tell** + a person. **I tell you** my name. Not **I say you**.",
+          "explanation_cz": "**tell** + osoba. Ne **I say you**."
         },
         {
           "en": "I ask my teacher.",
@@ -123,20 +155,52 @@
           "cz": "Vidím svého kamaráda.",
           "gap": "I ____ my friend.",
           "gap_answer": "see",
+          "quiz_options": ["see", "look"],
           "accepts": [
             "I see my friend",
             "I see my friend."
-          ]
+          ],
+          "explanation": "**see** + a thing. No **at**. Not **look my friend**.",
+          "explanation_cz": "**see** + věc. Bez **at**. Ne **look my friend**."
+        },
+        {
+          "en": "I see the clock.",
+          "cz": "Vidím hodiny.",
+          "gap": "I ____ the clock.",
+          "gap_answer": "see",
+          "quiz_options": ["see", "look"],
+          "accepts": [
+            "I see the clock",
+            "I see the clock."
+          ],
+          "explanation": "**see** + a thing. No **at**. Not **look the clock**.",
+          "explanation_cz": "**see** + věc. Bez **at**. Ne **look the clock**."
         },
         {
           "en": "I look at the clock.",
           "cz": "Dívám se na hodiny.",
           "gap": "I ____ at the clock.",
           "gap_answer": "look",
+          "quiz_options": ["look", "see"],
           "accepts": [
             "I look at the clock",
             "I look at the clock."
-          ]
+          ],
+          "explanation": "**look at** + a thing. Not **see at**.",
+          "explanation_cz": "**look at** + věc. Ne **see at**."
+        },
+        {
+          "en": "I look at my friend.",
+          "cz": "Dívám se na svého kamaráda.",
+          "gap": "I ____ at my friend.",
+          "gap_answer": "look",
+          "quiz_options": ["look", "see"],
+          "accepts": [
+            "I look at my friend",
+            "I look at my friend."
+          ],
+          "explanation": "**look at** + a thing. Not **see at**.",
+          "explanation_cz": "**look at** + věc. Ne **see at**."
         },
         {
           "en": "I hear music.",
@@ -221,17 +285,45 @@
       "body_cz": "Šest sloves o mluvení, šest o hlavě a smyslech. Věta začíná I a doplňujete sloveso."
     },
     {
+      "title": "say and tell",
+      "title_cz": "say a tell",
+      "diagram": "contrast",
+      "labels": ["say", "tell", "the words", "a person"],
+      "table": {
+        "headers": ["verb", "after it", "example"],
+        "rows": [
+          ["say", "the words", "I say hello"],
+          ["tell", "a person", "I tell my brother"]
+        ]
+      },
+      "note": "Never ~~I say him~~. **tell** needs a person.",
+      "note_cz": "Po **tell** je osoba. Nikdy ~~I say him~~."
+    },
+    {
+      "title": "look and see",
+      "title_cz": "look a see",
+      "diagram": "contrast",
+      "labels": ["look", "see", "look at", "no at"],
+      "table": {
+        "headers": ["verb", "after it", "example"],
+        "rows": [
+          ["look", "at", "I look at the clock"],
+          ["see", "no at", "I see my friend"]
+        ]
+      },
+      "note": "Never ~~I look the clock~~. It is **look at**.",
+      "note_cz": "Po **look** je **at**. Po **see** ne."
+    },
+    {
       "title": "You will use these verbs in",
       "title_cz": "Tato slovesa použijete ve větách",
       "frames": [
-        "I say hello.",
-        "I tell my brother about the film.",
-        "I ask my teacher.",
-        "I speak English.",
-        "I hear music."
-      ],
-      "note": "tell always needs a person after it: I tell my brother. say does not: I say hello. Never I say him.",
-      "note_cz": "Pozor: po tell musí být osoba (I tell my brother), po say ne (I say hello)."
+        "I **say** hello.",
+        "I **tell** my brother about the film.",
+        "I **speak** English.",
+        "I **look at** the clock.",
+        "I **see** my friend."
+      ]
     }
   ]
 }
