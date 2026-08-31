@@ -16,7 +16,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 **Grammar: 55 inspected · 0 approved · 8 unseen** of 63 live units
 
-**Vocab A1–A2: 4 inspected · 0 approved · 57 unseen** of 61 live units
+**Vocab A1–A2: 6 inspected · 0 approved · 57 unseen** of 63 live units
 
 Of the 6 cloud-authored units, **3 have any tick**.
 
@@ -30,7 +30,7 @@ Of the 6 cloud-authored units, **3 have any tick**.
 - [x][ ] `a1_and_but_because` — And / but / because · 24 items
 - [x][ ] `a1_articles` — Articles 1 · 32 items · seen?
 - [x][ ] `a1_can` — Can / can't · 24 items
-- [ ][ ] `a1_finale` — A1 finale · 0 items
+- [ ][ ] `a1_finale` — A1 review · 0 items
 - [x][ ] `a1_frequency` — Frequency · 24 items
 - [x][ ] `a1_grammar_match` — Which is correct? · 0 items
 - [x][ ] `a1_grammar_type` — A1 grammar · type · 0 items
@@ -106,17 +106,18 @@ Of the 6 cloud-authored units, **3 have any tick**.
 Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the rail.
 
 
-## A1 vocab — 4 inspected / 0 approved / 36 units
+## A1 vocab — 6 inspected / 0 approved / 38 units
 
 - [x][ ] `trunk_frames_a1` — I am · I have · 12 items · **cloud**
 - [x][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
 - [x][ ] `trunk_verbs_daily_a1` — Core frames · Verbs · daily · 12 items
 - [x][ ] `trunk_verbs_more_a1` — Core frames · Verbs · more · 12 items
-- [ ][ ] `leaf_home_family` — Home & Family · 69 items
-- [ ][ ] `leaf_freetime_a1` — Free time & feelings · 69 items
+- [x][ ] `leaf_home_family` — Home & Family · 60 items
+- [x][ ] `leaf_freetime_a1` — Free time · 35 items
+- [ ][ ] `leaf_feelings_a1` — Feelings · 18 items
 - [ ][ ] `trunk_glue_questions_a1` — Core frames · Wh- questions · 12 items
 - [ ][ ] `trunk_verbs_say_a1` — Core frames · Verbs · say & think · 12 items
-- [ ][ ] `leaf_places` — Places · 69 items · seen?
+- [ ][ ] `leaf_places` — Places · 60 items · seen?
 - [ ][ ] `leaf_countries_a1` — Countries · 44 items
 - [ ][ ] `leaf_food_a1` — Food & drink · 58 items
 - [ ][ ] `leaf_clothes_a1` — Clothes · 23 items
@@ -132,7 +133,8 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [ ][ ] `trunk_verbs_more3_a1` — Core frames · Verbs · more 3 · 12 items
 - [ ][ ] `trunk_there_time_a1` — Core frames · There is · time · 12 items
 - [ ][ ] `trunk_glue_quantity_a1` — Core frames · Some · any · every · 12 items
-- [ ][ ] `leaf_time_a1` — Time & numbers · 84 items
+- [ ][ ] `leaf_time_a1` — Numbers / time 1 · 36 items
+- [ ][ ] `leaf_time_2_a1` — Numbers / time 2 · 60 items
 - [ ][ ] `leaf_nature_a1` — Nature & weather · 36 items
 - [ ][ ] `leaf_shopping_a1` — Shopping & money · 34 items
 - [ ][ ] `leaf_animals_a1` — Animals · 21 items
@@ -140,7 +142,7 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [ ][ ] `trunk_verbs_action_a1` — Core frames · Verbs · action · 12 items
 - [ ][ ] `leaf_tech_a1` — Tech & media · 24 items
 - [ ][ ] `leaf_colours_a1` — Colours · 12 items
-- [ ][ ] `trunk_adjectives_a1` — Core frames · Adjectives · 36 items
+- [ ][ ] `trunk_adjectives_a1` — Core frames · Adjectives · 48 items
 - [ ][ ] `leaf_ideas_a1` — Ideas & things · 47 items
 - [ ][ ] `a1_vocab_match` — A1 vocab · match · 0 items
 - [ ][ ] `a1_vocab_type` — A1 vocab · type · 0 items
@@ -149,8 +151,8 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 
 - [ ][ ] `leaf_routine_a2` — Routine & habits · 14 items
 - [ ][ ] `leaf_family_a2` — Family & people · 20 items
-- [ ][ ] `leaf_travel_a2` — Travel & holidays · 72 items
-- [ ][ ] `leaf_freetime_a2` — Free time · 32 items
+- [ ][ ] `leaf_travel_a2` — Travel & holidays · 75 items
+- [ ][ ] `leaf_freetime_a2` — Free time · 33 items
 - [ ][ ] `leaf_feelings_a2` — Feelings · 25 items
 - [ ][ ] `leaf_work_a2` — Work · 33 items
 - [ ][ ] `leaf_society_a2` — Society · 27 items
@@ -165,7 +167,7 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [ ][ ] `leaf_health_a2` — Health · 41 items
 - [ ][ ] `leaf_nature_a2` — Nature & weather · 18 items
 - [ ][ ] `leaf_tech_a2` — Tech & media · 35 items
-- [ ][ ] `leaf_school_a2` — School & learning · 34 items
+- [ ][ ] `leaf_school_a2` — School & learning · 35 items
 - [ ][ ] `leaf_clothes_a2` — Clothes · 12 items
 - [ ][ ] `leaf_media_a2` — Media & arts · 24 items · **cloud**
 - [ ][ ] `leaf_misc_a2` — A2 word list · general · 86 items

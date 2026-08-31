@@ -45,24 +45,27 @@ labs at all. Register new nodes there, never elsewhere.
 
 ## Vocab intros — picture-led (James, 2026-08-07)
 
-Going straight into Match is too abrupt. Every live vocab unit gets a **two-page
-intro**, authored into the pack as `intro: [ page1, page2 ]` (a flat ARRAY —
-grammar packs use `intro.cards`, vocab does not).
+Going straight into Match is too abrupt. Every live vocab unit gets a
+**picture-led intro**, authored into the pack as `intro: [ ...pages ]` (a flat
+ARRAY — grammar packs use `intro.cards`, vocab does not).
 
-**Page 1 — meaning through a picture. Page 2 — the frames** the words live in,
-plus at most one trap.
+**Picture pages — every new word (C49).** One board of 8–12 tiles per theme,
+as many pages as the unit needs, then a frames page. A 35-word unit with one
+board of 12 is not an intro (`leaf_freetime_a1` 2026-08-31). Templates:
+`a1_home_family` (several boards), `a1_freetime` (three boards + frames).
+
+**Last page — the frames** the words live in, plus at most one trap.
 
 ```jsonc
 "intro": [
-  { "title": "Your family and your home",
-    "title_cz": "Vaše rodina a váš domov",     // see the Czech ladder below
-    "pictures": [                                // emoji OR swatch, 8-12 tiles
+  { "title": "Family",
+    "title_cz": "Rodina",
+    "pictures": [                                // emoji OR swatch, 8-12 per page
       { "icon": "👩", "en": "mother", "cz": "matka" },
       { "swatch": "#e04a4a", "en": "red", "cz": "červená" }
     ],
     "diagram": "branch",                         // abstract sets INSTEAD of pictures
-    "labels": ["idea", "thing", "place"],        // the schematic's labels
-    "body": "One or two lines. Never a wall." },
+    "labels": ["idea", "thing", "place"] },       // the schematic's labels
   { "title": "You will use these words in",
     "frames": ["This is a …", "I have a …"],     // from the items' use[] carriers
     "note": "home ≠ house: home = domov, house = dům.",
@@ -83,8 +86,8 @@ plus at most one trap.
   Match into pairing identical images.
 - **Frames come from the items' `use[]` carrier ids** — use the real carrier
   wording (`this_is_a` → "This is a …"); don't invent frames.
-- Templates to copy: `a1_home_family` (emoji), `a1_colours` (swatches),
-  `a1_ideas` (schematic).
+- Templates to copy: `a1_home_family` / `a1_freetime` (emoji, every word),
+  `a1_colours` (swatches), `a1_ideas` (schematic).
 - Order: **all live A1 vocab units first, then A2.** B1 only after James
   reviews the A1/A2 set.
 

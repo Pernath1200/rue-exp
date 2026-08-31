@@ -1,5 +1,50 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-31 · local (interactive) — `leaf_freetime_a1` Telegram-tested · C49
+
+James: *okay so this one is tested*. Telegram `leaf_freetime_a1 tested` (10:13). Vault log lagged; line appended, then reconcile.
+
+- **C49** (observed): vocab intro shows **every new word**, not a 12-tile sample. One picture page per theme, then frames. Play flag was *"only two pages / one page of words, whereas over 30 new words are introduced"*. Pack already rewritten (Sport / Music, films, going out / What you do / frames).
+- Reconcile → `leaf_freetime_a1` inspected. Top 5: `leaf_feelings_a1`, `trunk_glue_questions_a1`, `trunk_verbs_say_a1`, `leaf_places`, `leaf_countries_a1`. Remaining 57 (vocab A1 32 · A2 25).
+- Telegram's reply skipped Feelings and still said `of 53` — home bot is stale. After Obsidian Sync: `units to test`.
+- Next: `#leaf_feelings_a1` (18). Its intro is still 12 of 18 tiles — same C49 hole. Expand before play if James wants; otherwise he will flag it.
+
+Play: `#leaf_feelings_a1` Ctrl+F5. No I10 on vocab.
+
+---
+
+## 2026-08-31 · local (interactive) — A1 Feelings split from Free time
+
+James lock: `leaf_feelings_a1` / `V_THM-A1B1-12` / hang `inner_life_belief`. Frequency pair stays `leaf_freetime_a1`. Did **not** tick INSPECTED. Did **not** start Time 2 or A2 coming.
+
+- Node `leaf_feelings_a1` in `data/nodes-vocab.json`, stamp `V_THM-A1B1-12`, hang `inner_life_belief` (with `leaf_feelings_a2`). Did **not** retag A2 Feelings (`V_THM-A1B1-09`). Snapshot `codex/codex-units.json` refreshed with 11/12.
+- Pack `data/vocab/blocks/a1_feelings.json` — 18 locked items, 2-page intro (12 emoji tiles + frames `I am …` / `He is …` / `It is …`), 12 Use. Not *boring / interesting / interested* (A2 *-ed/-ing*). Not *sorry* (social).
+- `leaf_freetime_a1` — 69 → 35 (hobbies / verbs / more). Title **Free time**. Intro + Use rebuilt. Cut *My mother is happy* / *The book is boring* / favourite-film Use.
+- Describe dump → `trunk_adjectives_a1` (no new node): dangerous, fantastic, modern, perfect, popular, pretty, quick, quiet, common, complete, correct, similar. 36 → 48. `quick` no longer a twin of `fast`.
+- Spine `EN_FEELINGS_01` vocab-only immediately after Frequency · Free time. A1 path 60.
+- Carrier relexify (untaught after the fold, packs **not** smoked): clothes *pretty dress* → *a dress*; school/work *interesting* → *great*; modals *not dangerous* → *not a book*; quantity *are correct* → *are here*. Left smoked `a1_frequency` (happy/angry/busy/bored as be+adj complements — partner no longer legalizes them) and smoked `a1_imperatives` (*Be quiet*).
+- `verify_pack` on the three packs **0**. `check_playable` **0**. `check_codex` **0** new hangs.
+
+Play: `#leaf_feelings_a1` · `#leaf_freetime_a1` (after Home). Ctrl+F5.
+
+---
+
+## 2026-08-30 · local (interactive) — Time 1 / Time 2 split
+
+James: 84 words is too many; A1 spare → vocab Time 2. Id `leaf_time_2_a1`.
+Calendar + last/next week + once a week. Path straight after Time 1.
+
+- Time 1 `leaf_time_a1` / `a1_time_numbers.json` — 36 numbers, 4 intro pages, 12 Use.
+- Time 2 `a1_time_2.json` — 60 items (48 calendar + 12 last/next/a week). 6 intro pages (days table, months table, parts pictures, Not/Say *the next week*, Not/Say *in week*). `strict_capitals`. 12 Use, no past (*last year* is Match/Type only).
+- Spine `EN_TIME_2_01` vocab-only. Partner of prep-time stays Time 1. No `V_*`.
+- `verify_pack` both 0 errors. `check_codex` 0 new hangs.
+
+Play: `#leaf_time_a1` then `#leaf_time_2_a1` (Ctrl+F5).
+
+---
+
+
+
 ## 2026-08-30 · local (interactive) — vocab fruit needs 36 unique Quiz+Type
 
 James: 69-word leaves fruit after one dozen; A1 cannot clear until this is
