@@ -4,7 +4,7 @@
   "level": "A1",
   "tree_node": "trunk_glue_questions_a1",
   "practice": "frames",
-  "note": "P6 function glue — question words. Gap on the wh- word (or how much/many head).",
+  "note": "P6 function glue — question words. Gap on the question word (How old / How much / How many / What time are the gap, not old/much/many/time). Quiz chips are question words only. · 2026-08-31 smoke: B8 gap the Q-word; B6 chips stay on that axis.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
     "what",
@@ -28,38 +28,48 @@
           "cz": "Jak se jmenuješ?",
           "gap": "____ is your name?",
           "gap_answer": "What",
+          "quiz_options": ["What", "How", "Who", "Where"],
           "accepts": [
             "What is your name",
             "What's your name?",
             "What are you called?",
             "What are you called"
-          ]
+          ],
+          "explanation": "Czech *jak se jmenuješ* → **What** is your name? Not *How*.",
+          "explanation_cz": "Česky *jak se jmenuješ* → **What** is your name? Ne *How*."
         },
         {
           "en": "Where are you from?",
           "cz": "Odkud jsi?",
           "gap": "____ are you from?",
           "gap_answer": "Where",
+          "quiz_options": ["Where", "When", "What", "Who"],
           "accepts": [
             "Where are you from",
             "Where are you from?"
-          ]
+          ],
+          "explanation": "**Where** … **from**. Czech *odkud* needs **from** at the end.",
+          "explanation_cz": "**Where** … **from**. Česky *odkud* — v angličtině **from** na konci."
         },
         {
           "en": "When is the meeting?",
           "cz": "Kdy je schůzka?",
           "gap": "____ is the meeting?",
           "gap_answer": "When",
+          "quiz_options": ["When", "Where", "What", "Why"],
           "accepts": [
             "When is the meeting",
             "When is the meeting?"
-          ]
+          ],
+          "explanation": "**When** → a time.",
+          "explanation_cz": "**When** → čas."
         },
         {
           "en": "Who is that man?",
           "cz": "Kdo je ten muž?",
           "gap": "____ is that man?",
           "gap_answer": "Who",
+          "quiz_options": ["Who", "What", "Where", "How"],
           "accepts": [
             "Who is that man",
             "Who is that man?",
@@ -67,87 +77,174 @@
             "Who is this man",
             "Who is the man?",
             "Who is the man"
-          ]
+          ],
+          "explanation": "**Who** → a person.",
+          "explanation_cz": "**Who** → osoba."
         },
         {
           "en": "Why are you tired?",
           "cz": "Proč jsi unavený?",
           "gap": "____ are you tired?",
           "gap_answer": "Why",
+          "quiz_options": ["Why", "How", "What", "Where"],
           "accepts": [
             "Why are you tired",
             "Why are you tired?"
-          ]
+          ],
+          "explanation": "**Why** → a reason.",
+          "explanation_cz": "**Why** → důvod."
         },
         {
           "en": "How are you?",
           "cz": "Jak se máš?",
           "gap": "____ are you?",
           "gap_answer": "How",
+          "quiz_options": ["How", "How old", "What", "Who"],
           "accepts": [
             "How are you",
             "How are you?"
-          ]
+          ],
+          "explanation": "**How** are you? = Jak se máš? Not **How old**.",
+          "explanation_cz": "**How** are you? = Jak se máš? Ne **How old**."
         },
         {
           "en": "How old are you?",
           "cz": "Kolik ti je let?",
-          "gap": "How ____ are you?",
-          "gap_answer": "old",
+          "gap": "____ are you?",
+          "gap_answer": "How old",
+          "quiz_options": ["How old", "How", "How many", "What time"],
           "accepts": [
             "How old are you",
             "How old are you?"
-          ]
+          ],
+          "explanation": "**How old** → age. Both words. Not *old* alone, not **How**.",
+          "explanation_cz": "**How old** → věk. Obě slova. Ne jen *old*, ne **How**."
         },
         {
           "en": "How much is this?",
           "cz": "Kolik to stojí?",
-          "gap": "How ____ is this?",
-          "gap_answer": "much",
+          "gap": "____ is this?",
+          "gap_answer": "How much",
+          "quiz_options": ["How much", "How many", "What", "How"],
           "accepts": [
             "How much is this",
-            "How much is this?"
-          ]
+            "How much is this?",
+            "How much is it",
+            "How much is it?",
+            "How much is that",
+            "How much is that?",
+            "How much does this cost",
+            "How much does this cost?",
+            "How much does it cost",
+            "How much does it cost?"
+          ],
+          "explanation": "**How much** → this / money. Not **How many**.",
+          "explanation_cz": "**How much** → this / money. Ne **How many**."
         },
         {
           "en": "How many children do you have?",
           "cz": "Kolik máš dětí?",
-          "gap": "How ____ children do you have?",
-          "gap_answer": "many",
+          "gap": "____ children do you have?",
+          "gap_answer": "How many",
+          "quiz_options": ["How many", "How much", "How old", "What"],
           "accepts": [
             "How many children do you have",
             "How many children do you have?"
-          ]
+          ],
+          "explanation": "**How many** → children. Not **How much**.",
+          "explanation_cz": "**How many** → children. Ne **How much**."
         },
         {
           "en": "Which one do you like?",
           "cz": "Který se ti líbí?",
           "gap": "____ one do you like?",
           "gap_answer": "Which",
+          "quiz_options": ["Which", "What", "Who", "Where"],
           "accepts": [
             "Which one do you like",
             "Which one do you like?"
-          ]
+          ],
+          "explanation": "**Which** → a choice.",
+          "explanation_cz": "**Which** → výběr."
         },
         {
           "en": "What time is it?",
           "cz": "Kolik je hodin?",
-          "gap": "What ____ is it?",
-          "gap_answer": "time",
+          "gap": "____ is it?",
+          "gap_answer": "What time",
+          "quiz_options": ["What time", "How many", "What", "How much"],
           "accepts": [
             "What time is it",
             "What time is it?"
-          ]
+          ],
+          "explanation": "**What time** → the clock. Not *time* alone, not **How many** hours.",
+          "explanation_cz": "**What time** → hodiny. Ne jen *time*, ne **How many** hours."
         },
         {
           "en": "Where is the bathroom?",
           "cz": "Kde je koupelna?",
           "gap": "____ is the bathroom?",
           "gap_answer": "Where",
+          "quiz_options": ["Where", "What", "When", "Who"],
           "accepts": [
             "Where is the bathroom",
             "Where is the bathroom?"
-          ]
+          ],
+          "explanation": "**Where** → a place.",
+          "explanation_cz": "**Where** → místo."
+        },
+        {
+          "en": "What do you need?",
+          "cz": "Co potřebuješ?",
+          "gap": "____ do you need?",
+          "gap_answer": "What",
+          "quiz_options": ["What", "Who", "Where", "How"],
+          "accepts": [
+            "What do you need",
+            "What do you need?"
+          ],
+          "explanation": "**What** → a thing. **What do** you need?",
+          "explanation_cz": "**What** → věc. **What do** you need?"
+        },
+        {
+          "en": "Where do you live?",
+          "cz": "Kde bydlíš?",
+          "gap": "____ do you live?",
+          "gap_answer": "Where",
+          "quiz_options": ["Where", "When", "What", "How"],
+          "accepts": [
+            "Where do you live",
+            "Where do you live?"
+          ],
+          "explanation": "**Where** → a place. **Where do** you live?",
+          "explanation_cz": "**Where** → místo. **Where do** you live?"
+        },
+        {
+          "en": "How many books do you have?",
+          "cz": "Kolik máš knih?",
+          "gap": "____ books do you have?",
+          "gap_answer": "How many",
+          "quiz_options": ["How many", "How much", "How old", "What"],
+          "accepts": [
+            "How many books do you have",
+            "How many books do you have?"
+          ],
+          "explanation": "**How many** → books. Not **How much**.",
+          "explanation_cz": "**How many** → books. Ne **How much**."
+        },
+        {
+          "en": "How is your mother?",
+          "cz": "Jak se má tvoje matka?",
+          "gap": "____ is your mother?",
+          "gap_answer": "How",
+          "quiz_options": ["How", "Who", "What", "Where"],
+          "accepts": [
+            "How is your mother",
+            "How is your mother?",
+            "How's your mother?"
+          ],
+          "explanation": "**How** is your mother? = feeling / state. Not **Who**.",
+          "explanation_cz": "**How** is your mother? = jak se má. Ne **Who**."
         }
       ]
     }
@@ -164,27 +261,50 @@
           ["where", "a place", "kde"],
           ["when", "a time", "kdy"],
           ["why", "a reason", "proč"],
-          ["how", "How are you?", "jak"],
-          ["which", "a choice", "který"],
-          ["how old", "age", "kolik let"],
-          ["how much", "this / money", "kolik"],
-          ["how many", "children", "kolik"],
-          ["what time", "the clock", "kolik hodin"]
+          ["how", "a feeling / state", "jak"],
+          ["which", "a choice", "který"]
         ]
       }
     },
     {
-      "title": "You will use these words in",
+      "title": "How old, how much, how many",
+      "title_cz": "How old, how much, how many",
+      "table": {
+        "headers": ["English", "asks for", "example"],
+        "rows": [
+          ["How old", "age", "How old are you?"],
+          ["How much", "this / money", "How much is this?"],
+          ["How many", "children", "How many children…?"],
+          ["What time", "the clock", "What time is it?"]
+        ]
+      },
+      "note": "The question is **both words**. Czech **Kolik** is all four.",
+      "note_cz": "Otázka jsou **obě slova**. Kolik = How old / How much / How many / What time."
+    },
+    {
+      "title": "Czech is not English",
+      "title_cz": "Česky to není stejně",
+      "table": {
+        "headers": ["not this", "English", "Czech"],
+        "rows": [
+          ["How is your name?", "What is your name?", "Jak se jmenuješ?"],
+          ["Where are you?", "Where are you from?", "Odkud jsi?"],
+          ["How many years?", "How old are you?", "Kolik ti je let?"],
+          ["How many hours?", "What time is it?", "Kolik je hodin?"]
+        ]
+      }
+    },
+    {
+      "title": "You will use these",
       "title_cz": "Tato slova použijete ve větách",
       "frames": [
-        "**What** is your name?",
-        "**Where** are you from?",
-        "**When** is the meeting?",
-        "**How much** is this?",
-        "**How many** children do you have?"
-      ],
-      "note": "Czech **Kolik** is two English questions: **how much** (this, money) and **how many** (children).",
-      "note_cz": "Pozor: Kolik = how much i how many. how many = children, how much = money / this."
+        "**What** is your name? · *Jak se jmenuješ?*",
+        "**Where** are you from? · *Odkud jsi?*",
+        "**How old** are you? · *Kolik ti je let?*",
+        "**How much** is this? · *Kolik to stojí?*",
+        "**How many** children do you have? · *Kolik máš dětí?*",
+        "**What time** is it? · *Kolik je hodin?*"
+      ]
     }
   ]
 }

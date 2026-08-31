@@ -46,9 +46,9 @@ Hold is only `a1_finale`. Rebuild Top 5 after Home tick. Play this order:
 
 1. `#leaf_home_family` — **ticked 2026-08-31**
 2. `#leaf_freetime_a1` — **ticked 2026-08-31** · C49 intro
-3. `#leaf_feelings_a1` — **now** · 18
-4. `#trunk_glue_questions_a1` — glue
-5. `#trunk_verbs_say_a1`
+3. `#leaf_feelings_a1` — **ticked 2026-08-31**
+4. `#trunk_glue_questions_a1` — **ticked 2026-08-31** · Question words
+5. `#trunk_verbs_say_a1` — **now**
 6. `#leaf_places` — 60, Ctrl+F5
 7. `#leaf_countries_a1`
 8. `#leaf_food_a1` — 58

@@ -1,5 +1,79 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-31 · local (interactive) — `trunk_glue_questions_a1` Telegram-tested
+
+James: *this one counts as done, supposing that you fix the bugs mentioned above*. Telegram `trunk_glue_questions_a1 tested` (10:41).
+
+Flags from the sit, all in the pack:
+
+- **C50** title *Question words* (not Glue · wh-). **C51** how → a feeling / state. **C20** no *there is no picture*.
+- **B8** gap How old / How much / How many / What time; chips are question words.
+- **B9** 16 frames → Match 8+8. Engine leftover now covers `boardCap`, not `n ≤ 12`.
+- **A5** *Kolik to stojí?* accepts *How much is it?*
+- Intro 4 pages. Reconcile. Did **not** hand-tick.
+
+Next: `#trunk_verbs_say_a1` Ctrl+F5. New tab.
+
+---
+
+## 2026-08-31 · local (interactive) — remaining A1 leaf intros show every word
+
+James: most remaining vocab still had one picture page of 12, then Match. Expand remaining A1 leaves before he smokes them. Did **not** add a lint. Did **not** touch glue trunks, Time 2, Countries, or 12-word concrete trunks.
+
+- Picture boards (8–12 tiles, then frames kept): Places 60, Food 58, School 47, Nature 36, Shopping 34, Work 30, Body/Health/Tech 24, Clothes 23, Animals 21, Adjectives 48.
+- Ideas: schematic kept, then four English/Czech tables (47 words). No stretched emoji.
+- `verify_pack` on the 13 packs **0**. `check_playable` **0**. Did **not** tick INSPECTED.
+
+Play: `#leaf_places` Ctrl+F5 (and the others when you reach them).
+
+---
+
+## 2026-08-31 · local (interactive) — Feelings Quiz sentence gaps (B22)
+
+James: Quiz was 1–1 (*vtipný* → funny/sad/happy). Match already does that. Want **translation sentence gap-fills**.
+
+- Pack `quiz_mode: "sentence_gap"`. Quiz/Type from `sentences[]`: Czech sentence + English `____`, chips are the lemmas. Match stays 1–1 words.
+- Five Use sentences added so all 17 words have a gap (*hot, free, fine, amazing, wonderful*).
+- Other leaves unchanged until replayed. Cache `?v=2026-08-31-sentgap`.
+
+Play: `#leaf_feelings_a1` Ctrl+F5 → Quiz.
+
+---
+
+## 2026-08-31 · local (interactive) — `trunk_glue_questions_a1` second Match board
+
+James: matching okay; wants another page of 8. Sentence boards are 8; 12 items marked all-covered after one board (`length <= 12`).
+
+- 16 frames so Match is **8 + 8**. New: *What do you need?*, *Where do you live?*, *How many books do you have?*, *How is your mother?* (pool-legal). Did **not** tick INSPECTED.
+
+Play: `#trunk_glue_questions_a1` Ctrl+F5 · Match.
+
+---
+
+## 2026-08-31 · local (interactive) — Feelings Match 18/17 leftover skip
+
+James: one board of 9 then *Match 2 of 2 done · 18 / 17 words*. Stale *well* key from the 18-word pack plus matchCleared skipped the leftover 8.
+
+- Ghost keys dropped; if saved `matchNeed` ≠ live size (18 ≠ 17), Match coverage resets so first-learn is 9 then 8.
+- Round labels use the board cap, not 12. Cache `?v=2026-08-31-match9b`.
+- `scripts/_test_match_leftover.js` — stale 18-key pass must offer board 2.
+
+Play: `#leaf_feelings_a1` Ctrl+F5.
+
+---
+
+## 2026-08-31 · local (interactive) — `trunk_glue_questions_a1` Q-word gaps + intro
+
+James: gapped word and chips must be question words. Three P0 Quiz flags: *How old* gapped *old*, *How many* gapped *many*, *What time* gapped *time*. Same class on *How much* → *much*. Intro still thin.
+
+- **B8 / B6:** gap is the question word. *How old / How much / How many / What time* (not *old / much / many / time*). Authored `quiz_options` are question words only, including the Kolik cousins and *How* vs *How old* on *____ are you?*
+- Intro 4 pages: six+which · two-word Q-words · Not/Say (Jak→What, odkud→from, Kolik let / hodin) · frames with Czech (C48).
+- `verify_pack` 0. Did **not** tick INSPECTED.
+
+Play: `#trunk_glue_questions_a1` Ctrl+F5.
+
+---
+
 ## 2026-08-31 · local (interactive) — `trunk_glue_questions_a1` intro rename + table
 
 James smoking glue questions. *"terrible name / questions about glue?? / why not Question Words"* · page 1 was teacher talk (*There is no picture here*) and no table.
@@ -20,6 +94,7 @@ James smoking `#leaf_feelings_a1`. Words good for A1. Three calls: intro was one
 - **Intro (C49):** three pages — How you feel (9) / How things are (8) / frames. Every remaining word is tiled. Traps: *bored ≠ boring*, *free = volný (time) not zdarma*.
 - **Match (B9):** vocab + grammar `matchBoardSize` even-splits packs of 13–18 (18 → 9+9, 17 → 9+8). 12-word trunks stay 12. Bigger packs stay 12s. Quiz/Type stay 12. Cache `?v=2026-08-31-match9`.
 - ***well*:** dropped from Feelings (17 items). Manner *well* already on `leaf_adverbs_a2` (*My daughter sings well*). Intro there now names *well* on the how-row and traps *He sings good* / *I am well = healthy*. Did not add a replacement, so Match is **9+8** not 9+9.
+- *wonderful* Czech is *nádherný* only (was *nádherný / úžasný*) so Match does not drop it as a twin of *amazing*.
 - Did **not** tick INSPECTED.
 
 Play: `#leaf_feelings_a1` Ctrl+F5.
