@@ -30,9 +30,9 @@ The linked page was often a **dud**. Auto-built units went out unchecked. James 
 
 Usable = James would send a student that link. Not perfect. Not a new engine.
 
-**Next job:** smoke **vocab A1–B1** (grammar A1–B1 already walked; okay to link). Path order. I10-style prep, play, Telegram tick. New unit ideas go in `codex/UNIT-SUGGESTIONS.md` — **no new node ids** until James asks Codex-first.
+**Next job:** smoke **A1 vocab** from the path (grammar A1–B1 already walked; okay to link). Next play: `#leaf_home_family`. No I10 on vocab. Telegram tick. Time 2 + Feelings are live (`leaf_time_2_a1`, `leaf_feelings_a1`). **No new node ids** until James asks.
 
-**Circle (later, not this smoke):** ~60 units per level, A1–C2 = 360. Live now: A1 53 (−7) · A2 42 (−18; 9 coming grammar already have ids) · B1 25 (−35) · B2 9 · C1 1 · **C2 does not exist yet**. Filling spaces is after usable existing packs.
+**Circle:** ~60 units per level, A1–C2 = 360. Live now: A1 60 · A2 42 (−18; 9 coming grammar already have ids) · B1 25 (−35) · B2 9 · C1 1 · **C2 does not exist yet**. Be/have + core frames is one sitting.
 
 **Level pass (later, not this smoke):** one unit per level in Clozemaster shape — Type/cloze pooled from earlier units — **plus a Use test**. Cloze alone is not enough. Score above x% → fruit that level’s tree without walking every unit. Today’s Exam Practice (`exam-drill.js`) is word-formation reps only: no fruit, not a level gate.
 

@@ -676,6 +676,7 @@ export function startPractice(root, block, opts) {
 
   const quizCovered = new Set(opts.quizKeys || []);
   const typeCovered = new Set(opts.typeKeys || []);
+  const matchCovered = new Set(opts.matchKeys || []);
 
   function coverNeed() {
     return vocabCoverNeed(quizList().length);
@@ -687,6 +688,21 @@ export function startPractice(root, block, opts) {
 
   function coverRoundAt(have) {
     return Math.max(0, Math.ceil(have / DEFAULT_PASS));
+  }
+
+  function matchCoverNeed() {
+    return matchList().length;
+  }
+
+  function moreBoardsLine(have, need, boardCap, kind) {
+    const total = Math.max(1, Math.ceil(need / boardCap));
+    const done = Math.max(0, Math.ceil(have / boardCap));
+    const left = Math.max(0, total - done);
+    if (!left) return kind === "match" ? "All clear · next: Quiz" : "All clear · next: Type";
+    const unit = kind === "match" ? "match" : "quiz";
+    const units = kind === "match" ? "matches" : "quizzes";
+    if (left === 1) return `Complete 1 more ${unit} to continue`;
+    return `Complete ${left} more ${units} to continue`;
   }
 
   function moreQuizzesLine(have, need) {
@@ -717,7 +733,9 @@ export function startPractice(root, block, opts) {
     return quizzed.length ? quizzed : all;
   }
 
-  /** Same job as grammar matchBoardSize (B9). Word chips stay 12.
+  /** Same job as grammar matchBoardSize (B9). Word chips stay 12, except
+   *  packs of 13–18 split evenly (18 → 9+9, 17 → 9+8) so the leftover
+   *  board is not a short six. (James, 2026-08-31, Feelings.)
    *  Count a sentence by English word count, not a trailing period —
    *  *Hello.* is a word, *They become friends.* is a sentence. */
   function matchBoardSize(items) {
@@ -730,7 +748,10 @@ export function startPractice(root, block, opts) {
         .filter(Boolean);
       if (words.length >= 4) n += 1;
     }
-    return n > items.length / 2 ? 8 : DEFAULT_PASS;
+    if (n > items.length / 2) return 8;
+    const N = items.length;
+    if (N > DEFAULT_PASS && N <= 18) return Math.ceil(N / 2);
+    return DEFAULT_PASS;
   }
 
   function orderOpts(items) {
@@ -848,7 +869,7 @@ export function startPractice(root, block, opts) {
 
   markKeysSeen("quiz", [...quizCovered], quizList());
   markKeysSeen("type", [...typeCovered], matchList());
-  markKeysSeen("match", [...quizCovered], matchList());
+  markKeysSeen("match", [...matchCovered], matchList());
 
   /** "· deck 24/36" coverage suffix for decks bigger than one pass. */
   function deckLabel(mode, items) {
@@ -1095,7 +1116,13 @@ export function startPractice(root, block, opts) {
 
   function newMatch() {
     const list = matchList();
-    const order = rotatedOrder("match", list, null);
+    const need = matchCoverNeed();
+    let order;
+    if (!opts.matchCleared && matchCovered.size < need) {
+      order = pickUnseen(list, matchCovered, list.length);
+    } else {
+      order = rotatedOrder("match", list, null);
+    }
     // Drop items whose Czech prompt duplicates one already on the board —
     // two identical tiles are unpairable by sight, and pairing is graded by
     // item id, so the visually-correct pairing is wrong half the time.
@@ -1139,6 +1166,7 @@ export function startPractice(root, block, opts) {
       sel: null,
       doneIds: new Set(),
       total: pool.length,
+      roundKeys: pool.map((it) => itemDeckKey(it)),
     };
   }
 
@@ -1171,22 +1199,61 @@ export function startPractice(root, block, opts) {
     pushMatchSmoke();
 
     if (doneCount === m.total) {
-      reportMode("match");
+      const list = matchList();
+      const need = matchCoverNeed();
+      const boardCap = matchBoardSize(list);
+      if (!opts.matchCleared) {
+        if (list.length <= DEFAULT_PASS) {
+          for (const it of list) matchCovered.add(itemDeckKey(it));
+        } else {
+          for (const k of m.roundKeys || []) matchCovered.add(k);
+        }
+        markKeysSeen("match", [...matchCovered], list);
+      }
+      const have = matchCovered.size;
+      const done = opts.matchCleared || have >= need;
+      reportMode("match", {
+        coverageDone: done,
+        coveredKeys: [...matchCovered],
+        need,
+      });
+      const more = !opts.matchCleared && have < need;
+      const roundN = coverRoundAt(have);
+      const roundTotal = coverRoundTotal(need);
+      const title =
+        need > DEFAULT_PASS
+          ? `Match ${Math.max(1, roundN)} of ${roundTotal} done`
+          : "Match · Done";
+      const sub = more
+        ? moreBoardsLine(have, need, boardCap, "match")
+        : "Next: Quiz · Enter continues";
       stage.innerHTML = `
         <div class="q">
-          <div class="prompt">Match · Done</div>
-          <div class="scoreline">${doneCount} / ${m.total}</div>
-          <div class="sub">Next: Quiz · Enter continues</div>
+          <div class="prompt">${title}</div>
+          <div class="scoreline">${doneCount} / ${m.total}${need > DEFAULT_PASS ? ` · ${have} / ${need} words` : ""}</div>
+          <div class="sub">${sub}</div>
           <div class="nav">
-            <button type="button" class="btn" id="m-again">New set</button>
-            <button type="button" class="btn primary" id="m-quiz">2 · Quiz →</button>
-            <button type="button" class="btn" id="m-map">← Home</button>
+            ${
+              more
+                ? `<button type="button" class="btn primary" id="m-more">Match ${roundN + 1} of ${roundTotal} →</button>
+                   <button type="button" class="btn" id="m-quiz">2 · Quiz →</button>`
+                : `<button type="button" class="btn" id="m-again">New set</button>
+                   <button type="button" class="btn primary" id="m-quiz">2 · Quiz →</button>
+                   <button type="button" class="btn" id="m-map">← Home</button>`
+            }
           </div>
         </div>`;
-      stage.querySelector("#m-again").onclick = () => {
+      stage.querySelector("#m-more")?.addEventListener("click", () => {
         newMatch();
         render();
-      };
+      });
+      const againBtn = stage.querySelector("#m-again");
+      if (againBtn) {
+        againBtn.onclick = () => {
+          newMatch();
+          render();
+        };
+      }
       stage.querySelector("#m-quiz").onclick = () => setMode("quiz");
       stage.querySelector("#m-map")?.addEventListener("click", () => {
         clearKey();

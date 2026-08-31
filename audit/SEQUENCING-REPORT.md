@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**320 unknown word types** across 42 live units (of 136).
+**331 unknown word types** across 43 live units (of 138).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -11,18 +11,19 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **trunk_verbs_more_a1** (A1 vocab): together, dogs
 - **a1_agreement** (A1 grammar): dogs×2, football, tennis
 - **a1_possessives** (A1 grammar): dog×2, job, coffee, school, tickets, passport, blue, new
-- **a1_frequency** (A1 grammar): coffee×2, meat×2, lunch, tea
+- **a1_frequency** (A1 grammar): coffee×2, meat×2, busy×2, lunch, tea, happy, angry, bored
 - **a1_object_pronouns** (A1 grammar): calls×2, want
 - **a1_like_want_need** (A1 grammar): pizza, new, money
 - **a1_can** (A1 grammar): now
 - **a1_prepositions_place** (A1 grammar): ball×6, box×6, cat, picture, honza, dog
-- **a1_there_is** (A1 grammar): cat, dog
+- **a1_there_is** (A1 grammar): cat, university, dog
 - **a1_some_any** (A1 grammar): money×2
-- **a1_prepositions_time** (A1 grammar): born×2
+- **a1_prepositions_time** (A1 grammar): morning×3, night×2, weekend×2, born×2, afternoon
 - **a1_to_for_with** (A1 grammar): wait×2, give
-- **a1_imperatives** (A1 grammar): careful, worry, touch
-- **a2_modals_must_should** (A2 grammar): seatbelt, smoke, touch, worry, apologise, save, shout, skip, anything, recycle, outside
-- **a2_comparatives** (A2 grammar): last×2, app, motorway
+- **a1_imperatives** (A1 grammar): quiet, careful, worry, touch
+- **a2_modals_must_should** (A2 grammar): seatbelt, smoke, touch, mum, worry, apologise, save, shout, skip, anything, recycle, outside
+- **a2_comparatives** (A2 grammar): app, motorway
+- **leaf_describing_a2** (A2 vocab): neighbour
 - **a2_countable** (A2 grammar): coin
 - **a2_quantifiers** (A2 grammar): seats, invited, effort, disagreed, noise, patience, else
 - **a2_first_conditional** (A2 grammar): until×2, link

@@ -31,6 +31,7 @@ import re
 from pathlib import Path
 
 from smoke_ticks import merge_ticks, ticks_from_done_log
+from tree_path import teaching_path
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "codex" / "INSPECTED.md"
@@ -114,12 +115,9 @@ def main():
     tree = json.loads((ROOT / "data/tree.json").read_text(encoding="utf-8"))
     by_id = {n["id"]: n for n in (tree.get("nodes") or []) if n.get("id")}
 
-    seen, path = set(), []
-    for key in ("path_order", "path_order_a2", "path_order_b1"):
-        for u in tree.get(key, []):
-            if u not in seen:
-                seen.add(u)
-                path.append(u)
+    # Sitting halves (sitting_of) are not circle slots but they are smoked
+    # packs — walk the teaching path so trunk_frames_a1 keeps its tick.
+    path = teaching_path(tree)
 
     grammar_rows = []
     for p in sorted(glob.glob(str(ROOT / "data/grammar/blocks/*.json"))):

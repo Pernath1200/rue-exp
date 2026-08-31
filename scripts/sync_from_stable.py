@@ -167,7 +167,7 @@ def content_vocab(n: dict) -> str | None:
     return "vocab/blocks/" + Path(c).name
 
 
-def node_from_grammar(n: dict, partner: str | None) -> dict:
+def node_from_grammar(n: dict, partner: str | None, sitting_vocab: str | None = None) -> dict:
     out = {
         "id": n["id"],
         "domain": "grammar",
@@ -184,6 +184,7 @@ def node_from_grammar(n: dict, partner: str | None) -> dict:
         "fruit": n.get("fruit"),
         "note": n.get("note"),
         "partner_id": partner,
+        "sitting_vocab": sitting_vocab,
         "related": n.get("related"),
         # Exam Practice tag (word_formation) — was dropped on rebuild until 2026-08-23.
         "exam": n.get("exam"),
@@ -191,7 +192,7 @@ def node_from_grammar(n: dict, partner: str | None) -> dict:
     return {k: v for k, v in out.items() if v is not None and v != []}
 
 
-def node_from_vocab(n: dict, partner: str | None) -> dict:
+def node_from_vocab(n: dict, partner: str | None, sitting_of: str | None = None) -> dict:
     out = {
         "id": n["id"],
         "domain": "vocab",
@@ -207,6 +208,7 @@ def node_from_vocab(n: dict, partner: str | None) -> dict:
         "fruit": n.get("fruit"),
         "note": n.get("note"),
         "partner_id": partner,
+        "sitting_of": sitting_of,
     }
     return {k: v for k, v in out.items() if v is not None and v != []}
 
@@ -222,30 +224,39 @@ def dedupe(ids: list[str]) -> list[str]:
     return out
 
 
-def path_from_steps(steps: list[dict], *, include_non_live: bool = True) -> tuple[list[str], dict[str, str], dict[str, str]]:
-    """Build path ids from spine steps. Returns path, g2v, v2g partners."""
+def path_from_steps(
+    steps: list[dict], *, include_non_live: bool = True
+) -> tuple[list[str], dict[str, str], dict[str, str], dict[str, str]]:
+    """Build path ids from spine steps.
+
+    Returns path, g2v, v2g partners, and chained grammar→vocab sittings.
+    A `chain: true` step is one circle slot (grammar on the path); the vocab
+    half stays a pack + tree knot via sitting_vocab / sitting_of.
+    """
     path: list[str] = []
     g2v: dict[str, str] = {}
     v2g: dict[str, str] = {}
+    chained: dict[str, str] = {}
     for step in steps:
         gs, vs = side(step, "grammar"), side(step, "vocab")
         gid, gstat = gs.get("node_id"), gs.get("status")
         vid, vstat = vs.get("node_id"), vs.get("status")
-        if gid and gstat not in (None, "skip"):
+        chain = bool(step.get("chain"))
+        grammar_on = bool(gid and gstat not in (None, "skip"))
+        vocab_on = bool(vid and vstat not in (None, "skip"))
+        if grammar_on:
             if include_non_live or gstat == "live":
                 path.append(gid)
-        if vid and vstat not in (None, "skip"):
+        if vocab_on:
             if include_non_live or vstat == "live":
-                path.append(vid)
-        if (
-            gid
-            and vid
-            and gstat not in (None, "skip")
-            and vstat not in (None, "skip")
-        ):
+                if not (chain and grammar_on):
+                    path.append(vid)
+        if grammar_on and vocab_on:
             g2v[gid] = vid
             v2g[vid] = gid
-    return dedupe(path), g2v, v2g
+            if chain:
+                chained[gid] = vid
+    return dedupe(path), g2v, v2g, chained
 
 
 def nodes_for_level(nodes: list[dict], level: str) -> list[dict]:
@@ -261,14 +272,17 @@ def build_tree(spine: dict):
     v_by_id = {n["id"]: n for n in v_tree.get("nodes", [])}
 
     # --- A1 path from spine.steps ---
-    path_a1, g2v, v2g = path_from_steps(spine.get("steps") or [], include_non_live=True)
+    path_a1, g2v, v2g, chained = path_from_steps(
+        spine.get("steps") or [], include_non_live=True
+    )
 
     # --- A2 path from spine.steps_a2 ---
-    path_a2, g2v_a2, v2g_a2 = path_from_steps(
+    path_a2, g2v_a2, v2g_a2, chained_a2 = path_from_steps(
         spine.get("steps_a2") or [], include_non_live=True
     )
     g2v.update(g2v_a2)
     v2g.update(v2g_a2)
+    chained.update(chained_a2)
 
     # Append any A2 grammar/vocab not yet on path_a2 (full catalogue)
     for nid in g_tree.get("path_order_a2") or []:
@@ -343,7 +357,9 @@ def build_tree(spine: dict):
                 print(f"  WARN missing grammar: {nid}")
             return
         seen.add(nid)
-        nodes.append(node_from_grammar(g_by_id[nid], g2v.get(nid)))
+        nodes.append(
+            node_from_grammar(g_by_id[nid], g2v.get(nid), chained.get(nid))
+        )
 
     def add_v(nid: str):
         if nid in seen or nid not in v_by_id:
@@ -351,12 +367,17 @@ def build_tree(spine: dict):
                 print(f"  WARN missing vocab: {nid}")
             return
         seen.add(nid)
-        nodes.append(node_from_vocab(v_by_id[nid], v2g.get(nid)))
+        parent = v2g.get(nid)
+        sitting_of = parent if parent and chained.get(parent) == nid else None
+        nodes.append(node_from_vocab(v_by_id[nid], parent, sitting_of))
 
     for path in (path_a1, path_a2, path_b1, path_b2, path_c1):
         for nid in path:
             if nid in g_by_id:
                 add_g(nid)
+                vid = chained.get(nid)
+                if vid:
+                    add_v(vid)
             elif nid in v_by_id:
                 add_v(nid)
 
@@ -381,7 +402,11 @@ def build_tree(spine: dict):
     all_v = [n["id"] for n in nodes if n.get("domain") == "vocab"]
 
     def count_level(level: str) -> dict:
-        nn = [n for n in nodes if level in (n.get("levels") or [])]
+        nn = [
+            n
+            for n in nodes
+            if level in (n.get("levels") or []) and not n.get("sitting_of")
+        ]
         return {
             "total": len(nn),
             "grammar": sum(1 for n in nn if n.get("domain") == "grammar"),
@@ -407,7 +432,7 @@ def build_tree(spine: dict):
         "path_order_b1": path_b1,
         "path_order_b2": path_b2,
         "path_order_c1": path_c1,
-        "path_order_note": "A1/A2 zigzag spines · B1 G path + all B1 vocab · B2/C1 grammar spines (+ higher vocab). Topics list uses per-level path.",
+        "path_order_note": "A1/A2 zigzag spines · B1 G path + all B1 vocab · B2/C1 grammar spines (+ higher vocab). Topics list uses per-level path. Chained sitting halves (sitting_of) are not circle slots.",
         "spine": "data/spine.json",
         "level_stats": {
             lv: count_level(lv) for lv in ["A1", "A2", "B1", "B2", "C1"]

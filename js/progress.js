@@ -384,8 +384,11 @@ function ensureVocabBlock(p, blockId, nodeId) {
       sentenceDone: false,
       quizKeys: [],
       typeKeys: [],
+      matchKeys: [],
       quizNeed: null,
       typeNeed: null,
+      matchNeed: null,
+      matchCleanPass: false,
       touchedAt: Date.now(),
     };
   }
@@ -394,8 +397,10 @@ function ensureVocabBlock(p, blockId, nodeId) {
   if (b.quizCleanPass === undefined) b.quizCleanPass = false;
   if (b.typeCleanPass === undefined) b.typeCleanPass = false;
   if (b.sentenceCleanPass === undefined) b.sentenceCleanPass = false;
+  if (b.matchCleanPass === undefined) b.matchCleanPass = false;
   if (!Array.isArray(b.quizKeys)) b.quizKeys = [];
   if (!Array.isArray(b.typeKeys)) b.typeKeys = [];
+  if (!Array.isArray(b.matchKeys)) b.matchKeys = [];
   if (nodeId) b.nodeId = nodeId;
   return b;
 }
@@ -412,8 +417,10 @@ export function vocabCoverage(blockId) {
   return {
     quizKeys: Array.isArray(b.quizKeys) ? b.quizKeys : [],
     typeKeys: Array.isArray(b.typeKeys) ? b.typeKeys : [],
+    matchKeys: Array.isArray(b.matchKeys) ? b.matchKeys : [],
     quizCleared: vocabQuizClear(b),
     typeCleared: vocabTypeClear(b),
+    matchCleared: vocabMatchClear(b),
   };
 }
 
@@ -455,6 +462,12 @@ export function completeVocabMode(blockId, mode, meta = {}) {
   if (meta.score != null && meta.total > 0) {
     ratio = meta.score / meta.total;
   }
+  if (mode === "match") {
+    if (Array.isArray(meta.coveredKeys)) b.matchKeys = meta.coveredKeys;
+    if (meta.need != null) b.matchNeed = meta.need;
+    if (meta.coverageDone === true) b.matchCleanPass = true;
+    if (meta.coverageDone === false) b.matchCleanPass = false;
+  }
   if (mode === "quiz" && ratio != null) {
     if (b.bestQuiz == null || ratio > b.bestQuiz) b.bestQuiz = ratio;
     if (Array.isArray(meta.coveredKeys)) b.quizKeys = meta.coveredKeys;
@@ -485,6 +498,15 @@ export function completeVocabMode(blockId, mode, meta = {}) {
     justFruited: !wasFruit && nowFruit,
     review,
   };
+}
+
+export function vocabMatchClear(b) {
+  if (!b) return false;
+  if (b.matchNeed != null) {
+    if ((b.matchKeys || []).length < b.matchNeed) return false;
+    return !!b.matchCleanPass || !!b.modes?.match;
+  }
+  return !!b.modes?.match;
 }
 
 export function vocabQuizClear(b) {
@@ -519,7 +541,12 @@ export function blockHasFruit(b) {
   if (!b || !b.modes) return false;
   const m = b.modes;
   if (!(m.match && m.quiz && m.type && m.sentence)) return false;
-  return vocabQuizClear(b) && vocabTypeClear(b) && vocabSentenceClear(b);
+  return (
+    vocabMatchClear(b) &&
+    vocabQuizClear(b) &&
+    vocabTypeClear(b) &&
+    vocabSentenceClear(b)
+  );
 }
 
 export function vocabBlockFruit(blockId) {
@@ -762,6 +789,7 @@ export function getNodeReview(nodeId) {
 /**
  * Three-meter stats for a CEFR level (RUE2 model).
  * Unit grain = live practice nodes (grammar topics + vocab trunk/leaf) on that level.
+ * Chained sitting halves (`sitting_of`) are not circle slots.
  * Learned = fruit (ladder + score bar). Remembered = ≥1 successful review.
  * Mastered = ≥ MASTERY_REPS. Review meters stay honest zeros until SRS writes.
  *
@@ -777,7 +805,8 @@ export function levelUnitStats(level, nodes) {
       n.status === "live" &&
       n.content &&
       Array.isArray(n.levels) &&
-      n.levels.includes(level),
+      n.levels.includes(level) &&
+      !n.sitting_of,
   );
   let learned = 0;
   let remembered = 0;

@@ -32,6 +32,7 @@ from datetime import datetime
 from pathlib import Path
 
 from smoke_ticks import ALIASES as PARKED_ALIASES, vocab_pack_aliases
+from tree_path import teaching_path
 
 ROOT = Path(__file__).resolve().parents[1]
 VAULT = Path.home() / "Documents" / "original" / "TA"
@@ -70,15 +71,15 @@ def main() -> int:
     # (`I am · I have` became `I am`).
     labels = {uid: (n.get("label") or uid) for uid, n in by_id.items()}
 
-    seen, path = set(), []
-    for key in ("path_order", "path_order_a2", "path_order_b1"):
-        for u in tree.get(key, []):
-            if u not in seen:
-                seen.add(u)
-                path.append(u)
+    later = set(tree.get("path_order_b2") or []) | set(tree.get("path_order_c1") or [])
+    path = []
+    for u in teaching_path(tree):
+        if u in later:
+            break
+        path.append(u)
     pos = {u: i for i, u in enumerate(path)}
 
-    # James, 2026-08-30: do not start a1_finale unless he asks.
+    # Finale last — after A1 vocab. Feelings is live; do not hold Free time.
     hold = {"a1_finale"}
 
     def is_live_on_path(u: str) -> bool:

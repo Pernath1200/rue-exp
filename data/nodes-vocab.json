@@ -12,7 +12,7 @@
       "parent": "trunk",
       "status": "live",
       "content": "blocks/a1_core_frames_be_have.json",
-      "note": "I am · you are · this is · I have — the first sentence shapes"
+      "note": "I am · you are · this is · I have — the first sentence shapes. Sitting half of a1_be_have (not an A1 circle slot)."
     },
     {
       "id": "trunk_prepositions_a1",
@@ -120,7 +120,7 @@
     },
     {
       "id": "trunk_glue_questions_a1",
-      "label": "Wh- questions",
+      "label": "Question words",
       "kind": "trunk",
       "tree_part": "trunk",
       "levels": [
@@ -277,7 +277,7 @@
     },
     {
       "id": "leaf_time_a1",
-      "label": "Time & numbers",
+      "label": "Numbers / time 1",
       "kind": "leaf",
       "tree_part": "trunk",
       "levels": [
@@ -286,7 +286,20 @@
       "parent": "trunk",
       "status": "live",
       "content": "blocks/a1_time_numbers.json",
-      "note": "numbers · days · months · parts of the day"
+      "note": "Time 1 — one–ten, teens, tens, ordinals. Split 2026-08-30."
+    },
+    {
+      "id": "leaf_time_2_a1",
+      "label": "Numbers / time 2",
+      "kind": "leaf",
+      "tree_part": "trunk",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_time_2.json",
+      "note": "Time 2 — days, months, clock words, last/next week, once a week. No V_*. Split 2026-08-30 (James)."
     },
     {
       "id": "leaf_freetime_a1",
@@ -299,7 +312,21 @@
       "parent": "trunk",
       "status": "live",
       "content": "blocks/a1_freetime.json",
-      "note": "sport · hobbies · how you spend your free time"
+      "note": "sport · hobbies · how you spend your free time · feelings split to leaf_feelings_a1 2026-08-31"
+    },
+    {
+      "id": "leaf_feelings_a1",
+      "label": "Feelings",
+      "kind": "leaf",
+      "tree_part": "inner_life_belief",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_feelings.json",
+      "codex_unit": "V_THM-A1B1-12",
+      "note": "A1 Feelings/States · split from leaf_freetime_a1 2026-08-31 · hang inner_life_belief with leaf_feelings_a2 · V_THM-A1B1-12"
     },
     {
       "id": "leaf_work_a1",

@@ -26,7 +26,8 @@
     {
       "id": "EN_BE_01",
       "title": "Be & have · Core frames",
-      "note": "Teach be/have, then spend on core frames vocab.",
+      "note": "One sitting: grammar then core-frames vocab. Vocab half is not an A1 circle slot.",
+      "chain": true,
       "grammar": {
         "node_id": "a1_be_have",
         "label": "Be & have",
@@ -109,6 +110,20 @@
       }
     },
     {
+      "id": "EN_FEELINGS_01",
+      "title": "Feelings",
+      "note": "Vocab-only A1 leaf — split from Free time 2026-08-31. Hang inner_life_belief. Frequency pair stays leaf_freetime_a1.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_feelings_a1",
+        "label": "Feelings",
+        "status": "live"
+      }
+    },
+    {
       "id": "EN_QN_01",
       "title": "Questions & negatives",
       "grammar": {
@@ -118,7 +133,7 @@
       },
       "vocab": {
         "node_id": "trunk_glue_questions_a1",
-        "label": "Wh- questions",
+        "label": "Question words",
         "status": "live"
       }
     },
@@ -370,7 +385,21 @@
       },
       "vocab": {
         "node_id": "leaf_time_a1",
-        "label": "Time & numbers",
+        "label": "Numbers / time 1",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_TIME_2_01",
+      "title": "Numbers / time 2",
+      "note": "Vocab-only A1 leaf — days, months, last/next week, once a week. After Time 1 numbers. Not in/on/at.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_time_2_a1",
+        "label": "Numbers / time 2",
         "status": "live"
       }
     },

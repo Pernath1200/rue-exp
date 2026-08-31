@@ -3,7 +3,7 @@
   "title": "Home & Family",
   "level": "A1",
   "tree_node": "leaf_home_family",
-  "note": "Home & family leaf. P1 Oxford fill: relatives + home extras. Cars/personal sets excluded. · carriers via use[] · picture-led intro added 2026-08-07 (template) · Use sentence bank added 2026-08-07 (TEMPLATE — Czech needs James/review pass)",
+  "note": "Home & family leaf. P1 Oxford fill: relatives + home extras. Cars/personal sets excluded. · carriers via use[] · picture-led intro added 2026-08-07 (template) · Use sentence bank added 2026-08-07 (TEMPLATE — Czech needs James/review pass) · 2026-08-31 cap 60: mum/dad/adult/apartment/upstairs/downstairs/sofa/stairs/neighbour → A2 (already there or informal of mother/father).",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -133,15 +133,6 @@
             "he_is_a",
             "this_is_a",
             "he_is_my"
-          ]
-        },
-        {
-          "en": "neighbour",
-          "cz": "soused",
-          "use": [
-            "he_is_my",
-            "he_is_a",
-            "this_is_a"
           ]
         },
         {
@@ -295,14 +286,6 @@
             "this_is_a",
             "i_go_to"
           ]
-        },
-        {
-          "en": "stairs",
-          "cz": "schody",
-          "use": [
-            "this_is_a",
-            "where_is_the"
-          ]
         }
       ]
     },
@@ -331,15 +314,6 @@
         {
           "en": "bed",
           "cz": "postel",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "sofa",
-          "cz": "pohovka",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -416,24 +390,6 @@
       "id": "family_relatives",
       "title": "Family · relatives",
       "items": [
-        {
-          "en": "mum",
-          "cz": "máma",
-          "use": [
-            "i_am_a",
-            "he_is_a",
-            "this_is_a"
-          ]
-        },
-        {
-          "en": "dad",
-          "cz": "táta",
-          "use": [
-            "i_am_a",
-            "he_is_a",
-            "this_is_a"
-          ]
-        },
         {
           "en": "parent",
           "cz": "rodič",
@@ -514,15 +470,6 @@
             "i_have_a",
             "i_need_a"
           ]
-        },
-        {
-          "en": "adult",
-          "cz": "dospělý",
-          "use": [
-            "i_am_a",
-            "he_is_a",
-            "this_is_a"
-          ]
         }
       ]
     },
@@ -530,16 +477,6 @@
       "id": "home_more",
       "title": "Home · more",
       "items": [
-        {
-          "en": "apartment",
-          "cz": "byt (americky)",
-          "use": [
-            "this_is_a",
-            "where_is_the",
-            "i_have_a",
-            "i_go_to"
-          ]
-        },
         {
           "en": "floor",
           "cz": "podlaha / patro",
@@ -618,16 +555,6 @@
             "the_is_long",
             "this_is_a"
           ]
-        },
-        {
-          "en": "upstairs",
-          "cz": "nahoře / do patra",
-          "use": []
-        },
-        {
-          "en": "downstairs",
-          "cz": "dole / dolů",
-          "use": []
         }
       ]
     }
@@ -637,110 +564,337 @@
       "title": "Family",
       "title_cz": "Rodina",
       "pictures": [
-        { "icon": "👨", "en": "father", "cz": "otec" },
-        { "icon": "👩", "en": "mother", "cz": "matka" },
-        { "icon": "👨‍👩‍👧", "en": "parents", "cz": "rodiče" },
-        { "icon": "👦", "en": "brother", "cz": "bratr" },
-        { "icon": "👧", "en": "sister", "cz": "sestra" },
-        { "icon": "🧒", "en": "son", "cz": "syn" },
-        { "icon": "👧", "en": "daughter", "cz": "dcera" },
-        { "icon": "🧒", "en": "child", "cz": "dítě" },
-        { "icon": "👫", "en": "children", "cz": "děti" },
-        { "icon": "👶", "en": "baby", "cz": "miminko" },
-        { "icon": "🤵", "en": "husband", "cz": "manžel" },
-        { "icon": "👰", "en": "wife", "cz": "manželka" }
+        {
+          "icon": "👨",
+          "en": "father",
+          "cz": "otec"
+        },
+        {
+          "icon": "👩",
+          "en": "mother",
+          "cz": "matka"
+        },
+        {
+          "icon": "👨‍👩‍👧",
+          "en": "parents",
+          "cz": "rodiče"
+        },
+        {
+          "icon": "👦",
+          "en": "brother",
+          "cz": "bratr"
+        },
+        {
+          "icon": "👧",
+          "en": "sister",
+          "cz": "sestra"
+        },
+        {
+          "icon": "🧒",
+          "en": "son",
+          "cz": "syn"
+        },
+        {
+          "icon": "👧",
+          "en": "daughter",
+          "cz": "dcera"
+        },
+        {
+          "icon": "🧒",
+          "en": "child",
+          "cz": "dítě"
+        },
+        {
+          "icon": "👫",
+          "en": "children",
+          "cz": "děti"
+        },
+        {
+          "icon": "👶",
+          "en": "baby",
+          "cz": "miminko"
+        },
+        {
+          "icon": "🤵",
+          "en": "husband",
+          "cz": "manžel"
+        },
+        {
+          "icon": "👰",
+          "en": "wife",
+          "cz": "manželka"
+        }
       ]
     },
     {
       "title": "Relatives",
       "title_cz": "Příbuzní",
       "pictures": [
-        { "icon": "👨", "en": "dad", "cz": "táta" },
-        { "icon": "👩", "en": "mum", "cz": "máma" },
-        { "icon": "👤", "en": "parent", "cz": "rodič" },
-        { "icon": "👨", "en": "uncle", "cz": "strýc" },
-        { "icon": "👩", "en": "aunt", "cz": "teta" },
-        { "icon": "🧑", "en": "cousin", "cz": "bratranec / sestřenice" },
-        { "icon": "👴", "en": "grandfather", "cz": "dědeček" },
-        { "icon": "👵", "en": "grandmother", "cz": "babička" },
-        { "icon": "👴", "en": "grandparent", "cz": "prarodič" },
-        { "icon": "👦", "en": "boyfriend", "cz": "přítel (kluk)" },
-        { "icon": "👧", "en": "girlfriend", "cz": "přítelkyně" },
-        { "icon": "🧑", "en": "adult", "cz": "dospělý" }
-      ],
-      "note": "**mum** and **dad** = mother and father, informal.",
-      "note_cz": "mum / dad = matka / otec, neformálně."
+        {
+          "icon": "👤",
+          "en": "parent",
+          "cz": "rodič"
+        },
+        {
+          "icon": "👨",
+          "en": "uncle",
+          "cz": "strýc"
+        },
+        {
+          "icon": "👩",
+          "en": "aunt",
+          "cz": "teta"
+        },
+        {
+          "icon": "🧑",
+          "en": "cousin",
+          "cz": "bratranec / sestřenice"
+        },
+        {
+          "icon": "👴",
+          "en": "grandfather",
+          "cz": "dědeček"
+        },
+        {
+          "icon": "👵",
+          "en": "grandmother",
+          "cz": "babička"
+        },
+        {
+          "icon": "👴",
+          "en": "grandparent",
+          "cz": "prarodič"
+        },
+        {
+          "icon": "👦",
+          "en": "boyfriend",
+          "cz": "přítel (kluk)"
+        },
+        {
+          "icon": "👧",
+          "en": "girlfriend",
+          "cz": "přítelkyně"
+        }
+      ]
     },
     {
       "title": "People",
       "title_cz": "Lidé",
       "pictures": [
-        { "icon": "👨‍👩‍👧‍👦", "en": "family", "cz": "rodina" },
-        { "icon": "🤝", "en": "friend", "cz": "přítel / kamarád" },
-        { "icon": "🏠", "en": "neighbour", "cz": "soused" },
-        { "icon": "👨", "en": "man", "cz": "muž" },
-        { "icon": "👩", "en": "woman", "cz": "žena" },
-        { "icon": "👦", "en": "boy", "cz": "chlapec" },
-        { "icon": "👧", "en": "girl", "cz": "dívka" },
-        { "icon": "👥", "en": "people", "cz": "lidé" },
-        { "icon": "📛", "en": "name", "cz": "jméno" },
-        { "icon": "🔢", "en": "age", "cz": "věk" }
+        {
+          "icon": "👨‍👩‍👧‍👦",
+          "en": "family",
+          "cz": "rodina"
+        },
+        {
+          "icon": "🤝",
+          "en": "friend",
+          "cz": "přítel / kamarád"
+        },
+        {
+          "icon": "👨",
+          "en": "man",
+          "cz": "muž"
+        },
+        {
+          "icon": "👩",
+          "en": "woman",
+          "cz": "žena"
+        },
+        {
+          "icon": "👦",
+          "en": "boy",
+          "cz": "chlapec"
+        },
+        {
+          "icon": "👧",
+          "en": "girl",
+          "cz": "dívka"
+        },
+        {
+          "icon": "👥",
+          "en": "people",
+          "cz": "lidé"
+        },
+        {
+          "icon": "📛",
+          "en": "name",
+          "cz": "jméno"
+        },
+        {
+          "icon": "🔢",
+          "en": "age",
+          "cz": "věk"
+        }
       ]
     },
     {
       "title": "The house",
       "title_cz": "Dům",
       "pictures": [
-        { "icon": "🏠", "en": "house", "cz": "dům" },
-        { "icon": "🏢", "en": "flat", "cz": "byt" },
-        { "icon": "🏡", "en": "home", "cz": "domov" },
-        { "icon": "🚪", "en": "room", "cz": "místnost / pokoj" },
-        { "icon": "🍳", "en": "kitchen", "cz": "kuchyně" },
-        { "icon": "🚿", "en": "bathroom", "cz": "koupelna" },
-        { "icon": "🛏️", "en": "bedroom", "cz": "ložnice" },
-        { "icon": "🛋️", "en": "living room", "cz": "obývací pokoj" },
-        { "icon": "🚪", "en": "door", "cz": "dveře" },
-        { "icon": "🪟", "en": "window", "cz": "okno" },
-        { "icon": "🌳", "en": "garden", "cz": "zahrada" },
-        { "icon": "🪜", "en": "stairs", "cz": "schody" }
+        {
+          "icon": "🏠",
+          "en": "house",
+          "cz": "dům"
+        },
+        {
+          "icon": "🏢",
+          "en": "flat",
+          "cz": "byt"
+        },
+        {
+          "icon": "🏡",
+          "en": "home",
+          "cz": "domov"
+        },
+        {
+          "icon": "🚪",
+          "en": "room",
+          "cz": "místnost / pokoj"
+        },
+        {
+          "icon": "🍳",
+          "en": "kitchen",
+          "cz": "kuchyně"
+        },
+        {
+          "icon": "🚿",
+          "en": "bathroom",
+          "cz": "koupelna"
+        },
+        {
+          "icon": "🛏️",
+          "en": "bedroom",
+          "cz": "ložnice"
+        },
+        {
+          "icon": "🛋️",
+          "en": "living room",
+          "cz": "obývací pokoj"
+        },
+        {
+          "icon": "🚪",
+          "en": "door",
+          "cz": "dveře"
+        },
+        {
+          "icon": "🪟",
+          "en": "window",
+          "cz": "okno"
+        },
+        {
+          "icon": "🌳",
+          "en": "garden",
+          "cz": "zahrada"
+        }
       ]
     },
     {
       "title": "Things in the house",
       "title_cz": "Věci v domě",
       "pictures": [
-        { "icon": "🪵", "en": "table", "cz": "stůl" },
-        { "icon": "🪑", "en": "chair", "cz": "židle" },
-        { "icon": "🛏️", "en": "bed", "cz": "postel" },
-        { "icon": "🛋️", "en": "sofa", "cz": "pohovka" },
-        { "icon": "💡", "en": "lamp", "cz": "lampa" },
-        { "icon": "❄️", "en": "fridge", "cz": "lednice" },
-        { "icon": "🔑", "en": "key", "cz": "klíč" },
-        { "icon": "📖", "en": "book", "cz": "kniha" },
-        { "icon": "☕", "en": "cup", "cz": "hrnek / šálek" },
-        { "icon": "🍽️", "en": "plate", "cz": "talíř" },
-        { "icon": "👜", "en": "bag", "cz": "taška" }
+        {
+          "icon": "🪵",
+          "en": "table",
+          "cz": "stůl"
+        },
+        {
+          "icon": "🪑",
+          "en": "chair",
+          "cz": "židle"
+        },
+        {
+          "icon": "🛏️",
+          "en": "bed",
+          "cz": "postel"
+        },
+        {
+          "icon": "💡",
+          "en": "lamp",
+          "cz": "lampa"
+        },
+        {
+          "icon": "❄️",
+          "en": "fridge",
+          "cz": "lednice"
+        },
+        {
+          "icon": "🔑",
+          "en": "key",
+          "cz": "klíč"
+        },
+        {
+          "icon": "📖",
+          "en": "book",
+          "cz": "kniha"
+        },
+        {
+          "icon": "☕",
+          "en": "cup",
+          "cz": "hrnek / šálek"
+        },
+        {
+          "icon": "🍽️",
+          "en": "plate",
+          "cz": "talíř"
+        },
+        {
+          "icon": "👜",
+          "en": "bag",
+          "cz": "taška"
+        }
       ]
     },
     {
       "title": "More of the house",
       "title_cz": "Ještě o domě",
       "pictures": [
-        { "icon": "🏢", "en": "apartment", "cz": "byt (americky)" },
-        { "icon": "🟫", "en": "floor", "cz": "podlaha / patro" },
-        { "icon": "🧱", "en": "wall", "cz": "zeď" },
-        { "icon": "🛁", "en": "bath", "cz": "vana" },
-        { "icon": "🚿", "en": "shower", "cz": "sprcha" },
-        { "icon": "🚽", "en": "toilet", "cz": "záchod" },
-        { "icon": "🖥️", "en": "desk", "cz": "psací stůl" },
-        { "icon": "🕐", "en": "clock", "cz": "hodiny (na zdi)" },
-        { "icon": "📫", "en": "address", "cz": "adresa" },
-        { "icon": "🎂", "en": "birthday", "cz": "narozeniny" },
-        { "icon": "⬆️", "en": "upstairs", "cz": "nahoře / do patra" },
-        { "icon": "⬇️", "en": "downstairs", "cz": "dole / dolů" }
-      ],
-      "note": "**apartment** = **flat**. American English.",
-      "note_cz": "apartment = flat (byt)."
+        {
+          "icon": "🟫",
+          "en": "floor",
+          "cz": "podlaha / patro"
+        },
+        {
+          "icon": "🧱",
+          "en": "wall",
+          "cz": "zeď"
+        },
+        {
+          "icon": "🛁",
+          "en": "bath",
+          "cz": "vana"
+        },
+        {
+          "icon": "🚿",
+          "en": "shower",
+          "cz": "sprcha"
+        },
+        {
+          "icon": "🚽",
+          "en": "toilet",
+          "cz": "záchod"
+        },
+        {
+          "icon": "🖥️",
+          "en": "desk",
+          "cz": "psací stůl"
+        },
+        {
+          "icon": "🕐",
+          "en": "clock",
+          "cz": "hodiny (na zdi)"
+        },
+        {
+          "icon": "📫",
+          "en": "address",
+          "cz": "adresa"
+        },
+        {
+          "icon": "🎂",
+          "en": "birthday",
+          "cz": "narozeniny"
+        }
+      ]
     },
     {
       "title": "You will use these words in",

@@ -1,5 +1,31 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-31 · local (interactive) — `trunk_glue_questions_a1` intro rename + table
+
+James smoking glue questions. *"terrible name / questions about glue?? / why not Question Words"* · page 1 was teacher talk (*There is no picture here*) and no table.
+
+- Student title **Question words** / **Tázací slova** (pack, block, node, spine, tree). Id stays `trunk_glue_questions_a1`. Later grammar `a1_question_words` already uses the same English name — flag if the map collision bothers.
+- Intro page 1: closed-class table (who…what time, 11 rows). No `body`. C14 / C10 / C20 / C49.
+- Page 2: frames + Kolik = how much / how many. Unchanged job.
+- Did **not** tick INSPECTED.
+
+Play: `#trunk_glue_questions_a1` Ctrl+F5.
+
+---
+
+## 2026-08-31 · local (interactive) — Feelings smoke: intro + Match 9+8 + drop *well*
+
+James smoking `#leaf_feelings_a1`. Words good for A1. Three calls: intro was one picture page of 12/18; Match was 12+6; *well* is an adverb.
+
+- **Intro (C49):** three pages — How you feel (9) / How things are (8) / frames. Every remaining word is tiled. Traps: *bored ≠ boring*, *free = volný (time) not zdarma*.
+- **Match (B9):** vocab + grammar `matchBoardSize` even-splits packs of 13–18 (18 → 9+9, 17 → 9+8). 12-word trunks stay 12. Bigger packs stay 12s. Quiz/Type stay 12. Cache `?v=2026-08-31-match9`.
+- ***well*:** dropped from Feelings (17 items). Manner *well* already on `leaf_adverbs_a2` (*My daughter sings well*). Intro there now names *well* on the how-row and traps *He sings good* / *I am well = healthy*. Did not add a replacement, so Match is **9+8** not 9+9.
+- Did **not** tick INSPECTED.
+
+Play: `#leaf_feelings_a1` Ctrl+F5.
+
+---
+
 ## 2026-08-31 · local (interactive) — `leaf_freetime_a1` Telegram-tested · C49
 
 James: *okay so this one is tested*. Telegram `leaf_freetime_a1 tested` (10:13). Vault log lagged; line appended, then reconcile.

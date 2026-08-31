@@ -33,6 +33,8 @@ import re
 import sys
 from pathlib import Path
 
+from tree_path import teaching_path
+
 ROOT = Path(__file__).resolve().parent.parent
 
 # --- shared patterns ---------------------------------------------------------
@@ -184,17 +186,8 @@ def tree_index():
     if _TREE_IDX is None:
         t = json.loads((ROOT / "data/tree.json").read_text(encoding="utf-8"))
         nodes = t.get("nodes") or []
-        path = []
-        for k in (
-            "path_order",
-            "path_order_a2",
-            "path_order_b1",
-            "path_order_b2",
-            "path_order_c1",
-        ):
-            path.extend(t.get(k) or [])
         _TREE_IDX = {
-            "path": path,
+            "path": teaching_path(t),
             "by_id": {n["id"]: n for n in nodes if isinstance(n, dict) and n.get("id")},
         }
     return _TREE_IDX

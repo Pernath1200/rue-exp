@@ -17,6 +17,7 @@ const {
   nodeProgressStateGrammar,
   nodeProgressStateVocab,
   nodeTreeStrength,
+  levelUnitStats,
   ProgressStore,
   importProgressPayload,
   loadProgress,
@@ -200,6 +201,28 @@ const payoffPaint = renderTreePortrait(host, {
 const homePay = payoffPaint.houses.find((H) => H.tree_part === "home_family");
 assert(homePay.fruitMastered === 0, "payoff path does not paint mastery");
 assert(homePay.fruit === 3, "payoff still shows learned fruit");
+
+assert(
+  levelUnitStats("A1", [
+    {
+      id: "a1_be_have",
+      status: "live",
+      content: "g.json",
+      levels: ["A1"],
+      domain: "grammar",
+      sitting_vocab: "trunk_frames_a1",
+    },
+    {
+      id: "trunk_frames_a1",
+      status: "live",
+      content: "v.json",
+      levels: ["A1"],
+      domain: "vocab",
+      sitting_of: "a1_be_have",
+    },
+  ]).total === 1,
+  "sitting half is not an A1 circle slot",
+);
 
 if (failed) {
   console.error(`\n${failed} failed`);

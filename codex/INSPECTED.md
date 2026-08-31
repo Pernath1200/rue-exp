@@ -114,8 +114,8 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [x][ ] `trunk_verbs_more_a1` — Core frames · Verbs · more · 12 items
 - [x][ ] `leaf_home_family` — Home & Family · 60 items
 - [x][ ] `leaf_freetime_a1` — Free time · 35 items
-- [ ][ ] `leaf_feelings_a1` — Feelings · 18 items
-- [ ][ ] `trunk_glue_questions_a1` — Core frames · Wh- questions · 12 items
+- [ ][ ] `leaf_feelings_a1` — Feelings · 17 items
+- [ ][ ] `trunk_glue_questions_a1` — Question words · 12 items
 - [ ][ ] `trunk_verbs_say_a1` — Core frames · Verbs · say & think · 12 items
 - [ ][ ] `leaf_places` — Places · 60 items · seen?
 - [ ][ ] `leaf_countries_a1` — Countries · 44 items

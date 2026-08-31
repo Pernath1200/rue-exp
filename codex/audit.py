@@ -30,6 +30,8 @@ import re
 import sys
 from pathlib import Path
 
+from tree_path import teaching_path as full_path
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 AUDIT_DIR = ROOT / "audit"
@@ -165,18 +167,6 @@ def proper_tokens(text: str) -> set[str]:
         for w in words[1:]:
             if w[0].isupper():
                 out.update(tokens_of(w))
-    return out
-
-
-def full_path(tree: dict) -> list[str]:
-    seen: set[str] = set()
-    out: list[str] = []
-    for key in ("path_order", "path_order_a2", "path_order_b1",
-                "path_order_b2", "path_order_c1"):
-        for nid in tree.get(key) or []:
-            if nid not in seen:
-                seen.add(nid)
-                out.append(nid)
     return out
 
 

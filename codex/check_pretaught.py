@@ -33,6 +33,8 @@ import re
 import sys
 from pathlib import Path
 
+from tree_path import teaching_path
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 AUDIT_DIR = ROOT / "audit"
@@ -72,7 +74,12 @@ def sentences(pack: dict) -> list[str]:
 def main() -> int:
     tree = json.loads((DATA / "tree.json").read_text(encoding="utf-8"))
     by = {n["id"]: n for n in tree["nodes"]}
-    path = tree["path_order"]
+    later = set(tree.get("path_order_a2") or [])
+    path = []
+    for nid in teaching_path(tree):
+        if nid in later:
+            break
+        path.append(nid)
 
     cache: dict[str, list[str]] = {}
     for nid in path:

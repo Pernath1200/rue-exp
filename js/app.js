@@ -3,8 +3,8 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-30-sit2";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-30-clue";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-31-match9";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-31-match9";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -38,7 +38,7 @@ import {
   FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
-} from "./progress.js?v=2026-08-30-cover36";
+} from "./progress.js?v=2026-08-31-matchall";
 import {
   mountSmokeFlagsUI,
   getSmokeApi,
@@ -287,22 +287,16 @@ function isFruit(node) {
 }
 
 /**
- * Prototype (James, 2026-08-30): one path row, one sitting.
- * Grammar then vocab back to back. Both packs and both tree knots stay.
+ * One path row, one sitting (James, 2026-08-30).
+ * Grammar then vocab back to back. Both packs and both tree knots stay;
+ * the vocab half is sitting_of the grammar unit, not an A1 circle slot.
  */
-const CHAINED_SITTINGS = {
-  a1_be_have: "trunk_frames_a1",
-};
-
 function chainVocabId(grammarId) {
-  return CHAINED_SITTINGS[grammarId] || null;
+  return nodeById(grammarId)?.sitting_vocab || null;
 }
 
 function chainGrammarId(vocabId) {
-  for (const [g, v] of Object.entries(CHAINED_SITTINGS)) {
-    if (v === vocabId) return g;
-  }
-  return null;
+  return nodeById(vocabId)?.sitting_of || null;
 }
 
 function chainVocabNode(grammarId) {
@@ -1571,8 +1565,10 @@ async function openNode(node, launch = {}) {
         packLevel: (node.levels && node.levels[0]) || pack.level || "?",
         quizKeys: cov.quizKeys,
         typeKeys: cov.typeKeys,
+        matchKeys: cov.matchKeys,
         quizCleared: cov.quizCleared,
         typeCleared: cov.typeCleared,
+        matchCleared: cov.matchCleared,
         // Pack-level, not block-level: practiceBlock is built from the pack's
         // BLOCK, so anything living at the top of the JSON has to be passed
         // through explicitly or the engine never sees it.

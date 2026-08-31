@@ -115,4 +115,4 @@ now     a1_finale               live (Use on everything, after cloze)
 
 Id `a1_vocab_type` is locked. Frame sentences are dropped on type-in.
 
-**A1 circle:** 59 live / 60. Remaining: one spare. Countries leaf is `leaf_countries_a1` (live). Fold mine/yours, very/really, or, weather/transport.
+**A1 circle:** 58 live / 60. Both spares locked (waiting on Codex): vocab Time 2, Feelings. Be/have + core frames is one sitting. Countries leaf is `leaf_countries_a1` (live). Home/Family and Places stay combined.

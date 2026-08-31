@@ -996,7 +996,8 @@ export function startPractice(rawPack, root, opts) {
    * 2026-08-29 a1_some_any: char-avg > 24 missed A1 sentences
    * ("I have some coffee." is 20 chars, pack avg 23) and still painted 12.
    * Count as a sentence if it has a .?! or four-plus words — short phrases
-   * and single words stay at 12. */
+   * and single words stay at 12. Word packs of 13–18 split evenly
+   * (James, 2026-08-31, Feelings: leftover six is harder to scan than 9+9). */
   function matchBoardSize(pairs) {
     if (!pairs.length) return DEFAULT_PASS;
     const isSentence = (s) => {
@@ -1008,7 +1009,10 @@ export function startPractice(rawPack, root, opts) {
     for (const p of pairs) {
       if (isSentence(p.en || p.prompt || "")) n += 1;
     }
-    return n > pairs.length / 2 ? 8 : DEFAULT_PASS;
+    if (n > pairs.length / 2) return 8;
+    const N = pairs.length;
+    if (N > DEFAULT_PASS && N <= 18) return Math.ceil(N / 2);
+    return DEFAULT_PASS;
   }
 
 
