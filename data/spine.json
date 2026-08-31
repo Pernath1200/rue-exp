@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "English zigzag spines · RUE2 ↔ RUE3",
-  "note": "A1 steps + A2 steps_a2 zigzag. B1+ paths built in sync from lab path_order_* + full vocab catalogue. Soft path; all levels open. | 2026-08-07: 12 orphaned live A1 vocab units routed into the path.",
+  "note": "A1 steps + A2 steps_a2 zigzag. B1+ paths built in sync from lab path_order_* + full vocab catalogue. Soft path; all levels open. | 2026-08-07: 12 orphaned live A1 vocab units routed into the path. | 2026-08-31: 6 vocab-labelled grammar duplicates retired (content grafted into their grammar twins); 7 oversized A1 units split to a 36-word cap; 4 orphaned grammar steps re-paired with split halves.",
   "urls": {
     "rue2_lab": "rue-auto/grammar",
     "rue3_lab": "rue3-exp",
@@ -83,7 +83,7 @@
     },
     {
       "id": "EN_AGR_01",
-      "title": "Agreement · Home & family",
+      "title": "Agreement · Family",
       "grammar": {
         "node_id": "a1_agreement",
         "label": "Subject–verb agreement",
@@ -91,7 +91,7 @@
       },
       "vocab": {
         "node_id": "leaf_home_family",
-        "label": "Home & Family",
+        "label": "Family",
         "status": "live"
       }
     },
@@ -153,7 +153,7 @@
     },
     {
       "id": "EN_QW_01",
-      "title": "Question words · Places",
+      "title": "Question words · Places (town)",
       "grammar": {
         "node_id": "a1_question_words",
         "label": "Question words",
@@ -161,7 +161,7 @@
       },
       "vocab": {
         "node_id": "leaf_places",
-        "label": "Places",
+        "label": "Places · town",
         "status": "live"
       }
     },
@@ -189,7 +189,7 @@
       },
       "vocab": {
         "node_id": "leaf_food_a1",
-        "label": "Food & drink",
+        "label": "Food · eating",
         "status": "live"
       }
     },
@@ -232,20 +232,6 @@
       "vocab": {
         "node_id": "leaf_health_a1",
         "label": "Health",
-        "status": "live"
-      }
-    },
-    {
-      "id": "EN_PRON_02",
-      "title": "Pronouns",
-      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
-      "grammar": {
-        "node_id": null,
-        "status": "skip"
-      },
-      "vocab": {
-        "node_id": "trunk_glue_pronouns_a1",
-        "label": "Pronouns",
         "status": "live"
       }
     },
@@ -293,7 +279,7 @@
     },
     {
       "id": "EN_SCHOOL_01",
-      "title": "School",
+      "title": "School · place & tools",
       "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
       "grammar": {
         "node_id": null,
@@ -301,37 +287,25 @@
       },
       "vocab": {
         "node_id": "leaf_school_a1",
-        "label": "School",
-        "status": "live"
-      }
-    },
-    {
-      "id": "EN_MODALS_01",
-      "title": "Will · must",
-      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
-      "grammar": {
-        "node_id": null,
-        "status": "skip"
-      },
-      "vocab": {
-        "node_id": "trunk_glue_modals_a1",
-        "label": "Will · must",
+        "label": "School · place & tools",
         "status": "live"
       }
     },
     {
       "id": "EN_PREP_P_01",
-      "title": "Prepositions of place · Prep trunk",
+      "title": "Prepositions of place · Getting around",
       "grammar": {
         "node_id": "a1_prepositions_place",
         "label": "Prepositions of place",
         "status": "live"
       },
       "vocab": {
-        "node_id": "trunk_prepositions_a1",
-        "label": "Prepositions",
+        "node_id": "leaf_places_2_a1",
+        "label": "Places · getting around",
         "status": "live"
-      }
+      },
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
+      "chain": true
     },
     {
       "id": "EN_VERBS_MORE_03",
@@ -349,31 +323,35 @@
     },
     {
       "id": "EN_THERE_01",
-      "title": "There is/are · There·time trunk",
+      "title": "There is/are · Home",
       "grammar": {
         "node_id": "a1_there_is",
         "label": "There is / there are",
         "status": "live"
       },
       "vocab": {
-        "node_id": "trunk_there_time_a1",
-        "label": "There · time",
+        "node_id": "leaf_home_a1",
+        "label": "Home",
         "status": "live"
-      }
+      },
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
+      "chain": true
     },
     {
       "id": "EN_SOME_01",
-      "title": "Some / any 1 · Quantity glue",
+      "title": "Some / any 1 · Drinks & kitchen",
       "grammar": {
         "node_id": "a1_some_any",
         "label": "Some / any 1",
         "status": "live"
       },
       "vocab": {
-        "node_id": "trunk_glue_quantity_a1",
-        "label": "Some · any",
+        "node_id": "leaf_food_2_a1",
+        "label": "Food · drinks & kitchen",
         "status": "live"
-      }
+      },
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
+      "chain": true
     },
     {
       "id": "EN_PREP_T_01",
@@ -400,6 +378,20 @@
       "vocab": {
         "node_id": "leaf_time_2_a1",
         "label": "Numbers / time 2",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_TIME_3_01",
+      "title": "Numbers / time 3",
+      "note": "Second half of the split unit · 36-word cap 2026-08-31.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_time_3_a1",
+        "label": "Numbers / time 3",
         "status": "live"
       }
     },
@@ -447,17 +439,19 @@
     },
     {
       "id": "EN_LINK_01",
-      "title": "And / but / because · Linkers",
+      "title": "And / but / because · School text",
       "grammar": {
         "node_id": "a1_and_but_because",
         "label": "And / but / because",
         "status": "live"
       },
       "vocab": {
-        "node_id": "trunk_glue_linkers_a1",
-        "label": "And · but",
+        "node_id": "leaf_school_2_a1",
+        "label": "School · subjects & text",
         "status": "live"
-      }
+      },
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
+      "chain": true
     },
     {
       "id": "EN_IMP_01",
@@ -515,6 +509,20 @@
       }
     },
     {
+      "id": "EN_ADJ_TRUNK_02",
+      "title": "Adjectives trunk 2",
+      "note": "Second half of the split unit · 36-word cap 2026-08-31.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_adjectives2_a1",
+        "label": "Adjectives 2",
+        "status": "live"
+      }
+    },
+    {
       "id": "EN_IDEAS_01",
       "title": "Ideas",
       "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
@@ -524,7 +532,7 @@
       },
       "vocab": {
         "node_id": "leaf_ideas_a1",
-        "label": "Ideas",
+        "label": "Ideas · things & people",
         "status": "live"
       }
     },
@@ -793,6 +801,20 @@
       "vocab": {
         "node_id": "leaf_ideas_a2",
         "label": "Abstract list",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_IDEAS_2",
+      "title": "Ideas · work & time (vocab)",
+      "note": "Moved A1 → A2 2026-08-31 (A1 hard cap 60 units); sits beside leaf_ideas_a2.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_ideas_2_a2",
+        "label": "Ideas · work & time",
         "status": "live"
       }
     },

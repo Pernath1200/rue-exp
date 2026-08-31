@@ -16,7 +16,7 @@ import { expandContractions } from "./contractions.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
 import { setSmokeContext } from "./smoke-flags.js";
-import { vocabCoverNeed, vocabCoveredEnough } from "./progress.js?v=2026-08-31-usetree2";
+import { vocabCoverNeed, vocabCoveredEnough } from "./progress.js?v=2026-08-31-adopt";
 
 /**
  * Default questions per stage (Match board · Quiz · Type · Use).
@@ -127,6 +127,7 @@ function passOrder(listLen, onlyIndices, opts) {
 function norm(s) {
   return expandContractions(s)
     .replace(/[''`´]/g, "")
+    .replace(/\bo\s*clock\b/gi, "oclock")
     .replace(/[.,!?;:"()\-–—]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -594,13 +595,14 @@ function sentenceToFrame(s) {
   for (const raw of lemmas) {
     const form = lemmaBare(raw);
     if (!form) continue;
-    const re = new RegExp(
-      "\\b" + form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b",
-      "i",
-    );
+    /* \b fails at accented edges (é in café is not \w), so the lemma never
+     * matched and the frame silently gapped the wrong word — bound by the
+     * letter class instead (James, 2026-08-31). */
+    const esc = form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const re = new RegExp(`(^|[^A-Za-zÀ-ž])(${esc})(?![A-Za-zÀ-ž])`, "i");
     if (!re.test(gap)) continue;
     answer = form;
-    gap = gap.replace(re, "____");
+    gap = gap.replace(re, "$1____");
     break;
   }
   if (!answer || !gap.includes("____")) return null;
@@ -620,10 +622,39 @@ function sentenceToFrame(s) {
 function typeLetterClue(answer) {
   const raw = String(answer || "").trim();
   if (!raw) return "";
-  const letters = (raw.match(/[A-Za-zÀ-ž]/g) || []).length;
-  const pat = raw.replace(/[A-Za-zÀ-ž]+/g, (word) =>
-    word[0] + "_".repeat(Math.max(0, word.length - 1)),
-  );
+  /* A paren gloss is a sense hint, shown but never required — accepts()
+   * strips it — so it stays readable and out of the letter count:
+   * "short (height)" → "s____ (height) · 5 letters" (James, 2026-08-31). */
+  let depth = 0;
+  let pat = "";
+  let letters = 0;
+  let word = "";
+  const flush = () => {
+    if (!word) return;
+    pat += word[0] + "_".repeat(word.length - 1);
+    letters += word.length;
+    word = "";
+  };
+  for (const ch of raw) {
+    if (ch === "(") {
+      flush();
+      depth++;
+      pat += ch;
+      continue;
+    }
+    if (ch === ")") {
+      depth = Math.max(0, depth - 1);
+      pat += ch;
+      continue;
+    }
+    if (depth === 0 && /[A-Za-zÀ-ž]/.test(ch)) {
+      word += ch;
+      continue;
+    }
+    flush();
+    pat += ch;
+  }
+  flush();
   if (letters < 2) return "";
   return `${pat} · ${letters} letter${letters === 1 ? "" : "s"}`;
 }
@@ -759,8 +790,12 @@ export function startPractice(root, block, opts) {
         : [];
 
   function getSentenceItems() {
-    if (isFrames) return block.items;
+    /* An authored bank wins even on a frames pack. Without this, Use on a
+     * frames pack replays block.items — the same prompts Type just used —
+     * so an added sentences[] was dead weight (James, 2026-08-31,
+     * Adjectives 2: "these sentences are all a bit simple"). */
     if (sentenceBank) return sentenceBank;
+    if (isFrames) return block.items;
     return null;
   }
 
@@ -872,24 +907,43 @@ export function startPractice(root, block, opts) {
   } else {
     typeCleared = typeCleared && typeCovered.size >= typeNeedNow;
   }
+  /* A finished unit must never be un-finished by a pack rewrite. Work was
+   * rebuilt under its own tree on 2026-08-31 — 30 words → 32, and
+   * `quiz_mode: sentence_gap` moved Quiz and Type onto sentence frames, so
+   * every remembered key was a ghost and the unit dropped to 0/32 · 0/32 ·
+   * 0/12. Twenty more A1 packs gained the same line the same day. A block
+   * that already has its tree adopts whatever the deck is now; the new
+   * material comes due through review, not by demoting a unit James has
+   * already walked. (James, 2026-08-31: "it's about the 6th time in total
+   * I've been through this unit".) */
+  const adoptDeck = Boolean(opts.wasFruit);
+  if (adoptDeck) {
+    for (const it of matchList()) matchCovered.add(itemDeckKey(it));
+    for (const it of quizList()) quizCovered.add(itemDeckKey(it));
+    for (const it of typeSourceList()) typeCovered.add(itemDeckKey(it));
+    matchCleared = true;
+    quizCleared = true;
+    typeCleared = true;
+  }
   if (typeof opts.onModeComplete === "function") {
-    if (matchDeckChanged) {
+    // Adoption is persisted too, or the tree is re-taken on every open.
+    if (matchDeckChanged || adoptDeck) {
       opts.onModeComplete("match", {
-        coverageDone: false,
+        coverageDone: adoptDeck,
         coveredKeys: [...matchCovered],
         need: matchNeedNow,
       });
     }
-    if (quizDeckChanged) {
+    if (quizDeckChanged || adoptDeck) {
       opts.onModeComplete("quiz", {
-        coverageDone: false,
+        coverageDone: adoptDeck,
         coveredKeys: [...quizCovered],
         need: quizNeedNow,
       });
     }
-    if (typeDeckChanged) {
+    if (typeDeckChanged || adoptDeck) {
       opts.onModeComplete("type", {
-        coverageDone: false,
+        coverageDone: adoptDeck,
         coveredKeys: [...typeCovered],
         need: typeNeedNow,
       });
@@ -963,8 +1017,10 @@ export function startPractice(root, block, opts) {
 
   function canOpenMode(id) {
     if (id === "intro" || id === "match" || id === "quiz") return true;
-    if (id === "type") return quizFruitReady();
-    if (id === "sentence") return quizFruitReady() && typeFruitReady();
+    if (id === "type") return !typeTiedToQuiz() || quizFruitReady();
+    if (id === "sentence") {
+      return typeFruitReady() && (!typeTiedToQuiz() || quizFruitReady());
+    }
     return true;
   }
 
@@ -1179,6 +1235,7 @@ export function startPractice(root, block, opts) {
   };
   /** Track first completion for optional UI; scores always update bests. */
   const reported = { match: false, quiz: false, type: false, sentence: false };
+  let payoffShown = false;
 
   function setFlagContext(partial) {
     state.flagContext = { ...state.flagContext, ...partial };
@@ -1505,7 +1562,7 @@ export function startPractice(root, block, opts) {
       stage.innerHTML = `
         <div class="q">
           <div class="prompt">${title}</div>
-          <div class="scoreline">${doneCount} / ${m.total}${need > DEFAULT_PASS ? ` · ${have} / ${need} words` : ""}</div>
+          <div class="scoreline">${need > DEFAULT_PASS ? `${have} / ${need} words` : `${doneCount} / ${m.total}`}</div>
           <div class="sub">${sub}</div>
           <div class="nav">
             ${
@@ -2001,7 +2058,10 @@ export function startPractice(root, block, opts) {
       const typeCap = tied ? Math.min(need, Math.max(quizHave, 0)) : need;
       const more = wrongN === 0 && !typeCleared && have < typeCap;
       const quizFirst = tied && wrongN === 0 && !typeCleared && !quizFruitReady();
-      const canUse = wrongN === 0 && quizFruitReady() && typeFruitReady();
+      const canUse =
+        wrongN === 0 &&
+        typeFruitReady() &&
+        (!tied || quizFruitReady());
       const leftWords = Math.max(0, typeCap - have);
       const shortLeftover =
         more &&
@@ -2124,9 +2184,7 @@ export function startPractice(root, block, opts) {
       : "Write in English · Enter = check / next";
     const passLabel = t.retryPass ? "retry" : "set";
     const clue =
-      !frame && typeSourceList().length > DEFAULT_PASS
-        ? typeLetterClue(answer)
-        : "";
+      typeSourceList().length > DEFAULT_PASS ? typeLetterClue(answer) : "";
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
@@ -2299,7 +2357,11 @@ export function startPractice(root, block, opts) {
       // perfect retry stamps 1/1 cleanPass. Never fruit on partial Use.
       if (!t.retryPass) reportMode("sentence", { score: t.score, total: passLen });
       else if (wrongN === 0) reportMode("sentence", { score: 1, total: 1 });
-      const blockers = wrongN === 0 ? fruitBlockers() : [];
+      /* Say what is holding the tree even on a round with wrongs. Fruit
+       * still needs a clean Use, but a screen that only says "3 to retry"
+       * hides the fact that Match is also short — you retry, fruit anyway
+       * fails, and nothing ever told you why (James, 2026-08-31). */
+      const blockers = fruitBlockers();
       const leftMode = wrongN === 0 ? leftoverMode() : null;
       if (
         wrongN === 0 &&
@@ -2307,6 +2369,7 @@ export function startPractice(root, block, opts) {
         typeof opts.onFruitNow === "function" &&
         opts.onFruitNow()
       ) {
+        payoffShown = true;
         return `Done · ${t.score}/${passLen}`;
       }
       const leftLabel =
@@ -2323,7 +2386,11 @@ export function startPractice(root, block, opts) {
           <div class="scoreline">${t.score} / ${passLen}</div>
           <div class="sub">${
             wrongN > 0
-              ? `${wrongN} to retry`
+              ? `${wrongN} to retry${
+                  blockers.length
+                    ? ` · then the tree needs ${blockers.join(" · ")}`
+                    : " · then the tree"
+                }`
               : blockers.length
                 ? `The tree needs ${blockers.join(" · ")}`
                 : "On the tree · next: Home"
@@ -2544,10 +2611,10 @@ export function startPractice(root, block, opts) {
   function introSection(sec) {
     const table = sec.table
       ? `<table class="intro-table"><thead><tr>${(sec.table.headers || [])
-          .map((h) => `<th>${escapeHtml(h)}</th>`)
+          .map((h) => `<th>${escMd(h)}</th>`)
           .join("")}</tr></thead><tbody>${(sec.table.rows || [])
           .map(
-            (r) => `<tr>${r.map((c) => `<td>${escapeHtml(c)}</td>`).join("")}</tr>`,
+            (r) => `<tr>${r.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
           )
           .join("")}</tbody></table>`
       : "";
@@ -2613,6 +2680,7 @@ export function startPractice(root, block, opts) {
   }
 
   function render() {
+    if (payoffShown) return;
     clearKey();
     root.innerHTML = renderChrome("…");
     wireChrome();
@@ -2623,6 +2691,7 @@ export function startPractice(root, block, opts) {
     else if (state.mode === "quiz") status = renderQuiz(stage);
     else if (state.mode === "type") status = renderType(stage);
     else status = renderSentence(stage);
+    if (payoffShown) return;
     const st = root.querySelector("#p-status");
     if (st) st.textContent = status || "";
   }

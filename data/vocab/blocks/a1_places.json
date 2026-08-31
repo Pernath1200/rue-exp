@@ -1,10 +1,11 @@
 {
   "id": "a1_places",
-  "title": "Places",
+  "title": "Places · town",
   "level": "A1",
   "tree_node": "leaf_places",
-  "note": "Places leaf. P1 Oxford fill: travel + town culture. Directions thinned of pure grammar. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07 · 2026-08-20 (James, smoke): \"it's saying pred is not before\". Bare před/za gave no way to know whether the place or the time sense was wanted — a1_time_numbers already marks před (časem) → ago, but the spatial pair was unmarked. Cues now say (místem), and před also accepts before, which the app teaches nowhere. · 2026-08-31 cap 60: journey/tourist/passport/vacation/flight/bicycle/policeman/university/theatre → A2.",
+  "note": "Places leaf. P1 Oxford fill: travel + town culture. Directions thinned of pure grammar. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07 · 2026-08-20 (James, smoke): \"it's saying pred is not before\". Bare před/za gave no way to know whether the place or the time sense was wanted — a1_time_numbers already marks před (časem) → ago, but the spatial pair was unmarked. Cues now say (místem), and před also accepts before, which the app teaches nowhere. · 2026-08-31 cap 60: journey/tourist/passport/vacation/flight/bicycle/policeman/university/theatre → A2. · 2026-08-31 sentence_gap flip: café → cafe (engine \\b regex cannot gap a word ending in é); café kept as item accept. · split 2026-08-31 (James: 36-word cap = 3 rounds) → second half is a1_places_2. · 2026-08-31 intro split fix: split copied the item blocks but left the pre-split intro (all groups) in both halves; intro now shows only this half's words.",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "places_town",
@@ -39,6 +40,9 @@
         {
           "en": "centre",
           "cz": "centrum",
+          "accepts": [
+            "center"
+          ],
           "use": [
             "where_is_the",
             "this_is_a",
@@ -114,6 +118,9 @@
         {
           "en": "shop",
           "cz": "obchod",
+          "accepts": [
+            "store"
+          ],
           "use": [
             "i_go_to",
             "this_is_a",
@@ -180,8 +187,11 @@
           ]
         },
         {
-          "en": "café",
+          "en": "cafe",
           "cz": "kavárna",
+          "accepts": [
+            "café"
+          ],
           "use": [
             "i_go_to",
             "this_is_a",
@@ -195,263 +205,6 @@
             "where_is_the",
             "this_is_a",
             "i_go_to"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "places_transport",
-      "title": "Places · transport",
-      "items": [
-        {
-          "en": "bus",
-          "cz": "autobus",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "train",
-          "cz": "vlak",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "car",
-          "cz": "auto",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "taxi",
-          "cz": "taxi",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "metro",
-          "cz": "metro",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "tram",
-          "cz": "tramvaj",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "bike (bicycle)",
-          "cz": "kolo",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ],
-          "accepts": [
-            "bicycle"
-          ]
-        },
-        {
-          "en": "plane",
-          "cz": "letadlo",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "airport",
-          "cz": "letiště",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_go_to"
-          ]
-        },
-        {
-          "en": "go",
-          "cz": "jít / jet",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "walk",
-          "cz": "jít pěšky",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "take (the bus)",
-          "cz": "vzít si / jet (autobusem)",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "places_directions",
-      "title": "Places · directions",
-      "items": [
-        {
-          "en": "left",
-          "cz": "vlevo",
-          "use": []
-        },
-        {
-          "en": "right",
-          "cz": "vpravo",
-          "use": []
-        },
-        {
-          "en": "straight",
-          "cz": "rovně",
-          "use": []
-        },
-        {
-          "en": "next to",
-          "cz": "vedle",
-          "use": []
-        },
-        {
-          "en": "opposite",
-          "cz": "naproti",
-          "use": []
-        },
-        {
-          "en": "between",
-          "cz": "mezi",
-          "use": []
-        },
-        {
-          "en": "behind",
-          "cz": "za (místem)",
-          "use": [],
-          "accepts": [
-            "behind"
-          ]
-        },
-        {
-          "en": "in front of",
-          "cz": "před (místem)",
-          "use": [],
-          "accepts": [
-            "in front of",
-            "before"
-          ]
-        },
-        {
-          "en": "come",
-          "cz": "přijít",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "leave",
-          "cz": "odejít",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "arrive",
-          "cz": "přijet / dorazit",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "stop (verb)",
-          "cz": "zastavit",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "places_travel",
-      "title": "Places · travel",
-      "items": [
-        {
-          "en": "village",
-          "cz": "vesnice",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_go_to"
-          ]
-        },
-        {
-          "en": "country (nation)",
-          "cz": "země (stát)",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_go_to"
-          ]
-        },
-        {
-          "en": "road",
-          "cz": "silnice / cesta",
-          "use": [
-            "where_is_the",
-            "this_is_a"
-          ]
-        },
-        {
-          "en": "boat",
-          "cz": "loď",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "trip",
-          "cz": "výlet / cesta",
-          "use": [
-            "have_a_good",
-            "the_is_long",
-            "this_is_a"
-          ]
-        },
-        {
-          "en": "traffic",
-          "cz": "doprava / provoz",
-          "use": [
-            "is_important",
-            "lets_talk_about"
           ]
         }
       ]
@@ -523,6 +276,9 @@
         {
           "en": "pool",
           "cz": "bazén",
+          "accepts": [
+            "swimming pool"
+          ],
           "use": [
             "where_is_the",
             "this_is_a",
@@ -647,181 +403,13 @@
         },
         {
           "icon": "☕",
-          "en": "café",
+          "en": "cafe",
           "cz": "kavárna"
         },
         {
           "icon": "🏨",
           "en": "hotel",
           "cz": "hotel"
-        }
-      ]
-    },
-    {
-      "title": "Transport",
-      "title_cz": "Doprava",
-      "pictures": [
-        {
-          "icon": "🚌",
-          "en": "bus",
-          "cz": "autobus"
-        },
-        {
-          "icon": "🚆",
-          "en": "train",
-          "cz": "vlak"
-        },
-        {
-          "icon": "🚗",
-          "en": "car",
-          "cz": "auto"
-        },
-        {
-          "icon": "🚕",
-          "en": "taxi",
-          "cz": "taxi"
-        },
-        {
-          "icon": "🚇",
-          "en": "metro",
-          "cz": "metro"
-        },
-        {
-          "icon": "🚊",
-          "en": "tram",
-          "cz": "tramvaj"
-        },
-        {
-          "icon": "🚲",
-          "en": "bike (bicycle)",
-          "cz": "kolo"
-        },
-        {
-          "icon": "✈️",
-          "en": "plane",
-          "cz": "letadlo"
-        },
-        {
-          "icon": "🛫",
-          "en": "airport",
-          "cz": "letiště"
-        },
-        {
-          "icon": "🚶",
-          "en": "go",
-          "cz": "jít / jet"
-        },
-        {
-          "icon": "🚶‍♂️",
-          "en": "walk",
-          "cz": "jít pěšky"
-        },
-        {
-          "icon": "🎫",
-          "en": "take (the bus)",
-          "cz": "vzít si / jet (autobusem)"
-        }
-      ]
-    },
-    {
-      "title": "Directions",
-      "title_cz": "Směry",
-      "pictures": [
-        {
-          "icon": "⬅️",
-          "en": "left",
-          "cz": "vlevo"
-        },
-        {
-          "icon": "➡️",
-          "en": "right",
-          "cz": "vpravo"
-        },
-        {
-          "icon": "⬆️",
-          "en": "straight",
-          "cz": "rovně"
-        },
-        {
-          "icon": "↔️",
-          "en": "next to",
-          "cz": "vedle"
-        },
-        {
-          "icon": "🔃",
-          "en": "opposite",
-          "cz": "naproti"
-        },
-        {
-          "icon": "⏸️",
-          "en": "between",
-          "cz": "mezi"
-        },
-        {
-          "icon": "🔙",
-          "en": "behind",
-          "cz": "za (místem)"
-        },
-        {
-          "icon": "👀",
-          "en": "in front of",
-          "cz": "před (místem)"
-        },
-        {
-          "icon": "👋",
-          "en": "come",
-          "cz": "přijít"
-        },
-        {
-          "icon": "🚪",
-          "en": "leave",
-          "cz": "odejít"
-        },
-        {
-          "icon": "🏁",
-          "en": "arrive",
-          "cz": "přijet / dorazit"
-        },
-        {
-          "icon": "🛑",
-          "en": "stop (verb)",
-          "cz": "zastavit"
-        }
-      ]
-    },
-    {
-      "title": "Travel",
-      "title_cz": "Cestování",
-      "pictures": [
-        {
-          "icon": "🏡",
-          "en": "village",
-          "cz": "vesnice"
-        },
-        {
-          "icon": "🌍",
-          "en": "country (nation)",
-          "cz": "země (stát)"
-        },
-        {
-          "icon": "🛣️",
-          "en": "road",
-          "cz": "silnice / cesta"
-        },
-        {
-          "icon": "⛵",
-          "en": "boat",
-          "cz": "loď"
-        },
-        {
-          "icon": "🧳",
-          "en": "trip",
-          "cz": "výlet / cesta"
-        },
-        {
-          "icon": "🚦",
-          "en": "traffic",
-          "cz": "doprava / provoz"
         }
       ]
     },
@@ -906,8 +494,7 @@
       "en": "I go to school by bus.",
       "cz": "Jezdím do školy autobusem.",
       "lemmas": [
-        "school",
-        "bus"
+        "school"
       ],
       "accepts": [
         "I go to school by bus"
@@ -953,7 +540,6 @@
       "cz": "Park je za muzeem.",
       "lemmas": [
         "park",
-        "behind",
         "museum"
       ],
       "accepts": [
@@ -961,16 +547,15 @@
       ]
     },
     {
-      "en": "The café is next to the cinema.",
+      "en": "The cafe is next to the cinema.",
       "cz": "Kavárna je vedle kina.",
       "lemmas": [
-        "café",
-        "next to",
+        "cafe",
         "cinema"
       ],
       "accepts": [
-        "The café is next to the cinema",
-        "The cafe is next to the cinema"
+        "The cafe is next to the cinema",
+        "The café is next to the cinema"
       ]
     },
     {
@@ -984,49 +569,392 @@
       ]
     },
     {
-      "en": "I go to work by train.",
-      "cz": "Jezdím do práce vlakem.",
+      "en": "Prague is a big city.",
+      "cz": "Praha je velké město.",
       "lemmas": [
-        "train",
-        "take (the bus)"
+        "city"
       ],
       "accepts": [
-        "I go to work by train",
-        "I take the train to work"
+        "Prague is a big city"
       ]
     },
     {
-      "en": "I need a taxi to the airport.",
-      "cz": "Potřebuji taxi na letiště.",
+      "en": "We live in a small town.",
+      "cz": "Bydlíme v malém městě.",
       "lemmas": [
-        "taxi",
-        "airport"
+        "town"
       ],
       "accepts": [
-        "I need a taxi to the airport"
+        "We live in a small town"
       ]
     },
     {
-      "en": "Go straight and then left.",
-      "cz": "Jděte rovně a pak doleva.",
+      "en": "Our house is on a quiet street.",
+      "cz": "Náš dům je v tiché ulici.",
       "lemmas": [
-        "straight",
-        "left",
-        "go"
+        "street"
       ],
       "accepts": [
-        "Go straight and then left",
-        "Go straight then left"
+        "Our house is on a quiet street",
+        "Our house is in a quiet street"
       ]
     },
     {
-      "en": "Have a good trip!",
-      "cz": "Šťastnou cestu!",
+      "en": "The hotel is in the centre of the town.",
+      "cz": "Hotel je v centru města.",
       "lemmas": [
-        "trip"
+        "centre",
+        "hotel"
       ],
       "accepts": [
-        "Have a good trip"
+        "The hotel is in the centre of the town",
+        "The hotel is in the center of the town",
+        "The hotel is in the centre of town"
+      ]
+    },
+    {
+      "en": "There is a big market on the square.",
+      "cz": "Na náměstí je velký trh.",
+      "lemmas": [
+        "square (place)",
+        "market"
+      ],
+      "accepts": [
+        "There is a big market on the square",
+        "There is a big market in the square"
+      ]
+    },
+    {
+      "en": "Can you show me the way to the station?",
+      "cz": "Můžeš mi ukázat cestu na nádraží?",
+      "lemmas": [
+        "way",
+        "station (train)"
+      ],
+      "accepts": [
+        "Can you show me the way to the station",
+        "Could you show me the way to the station"
+      ]
+    },
+    {
+      "en": "The shop is on the corner of the street.",
+      "cz": "Obchod je na rohu ulice.",
+      "lemmas": [
+        "corner",
+        "shop"
+      ],
+      "accepts": [
+        "The shop is on the corner of the street",
+        "The shop is at the corner of the street"
+      ]
+    },
+    {
+      "en": "The bus stops here every morning.",
+      "cz": "Autobus tady zastavuje každé ráno.",
+      "lemmas": [
+        "here"
+      ],
+      "accepts": [
+        "The bus stops here every morning",
+        "Every morning the bus stops here"
+      ]
+    },
+    {
+      "en": "Look, the museum is over there.",
+      "cz": "Podívej, muzeum je tamhle.",
+      "lemmas": [
+        "there",
+        "museum"
+      ],
+      "accepts": [
+        "Look, the museum is over there",
+        "Look the museum is over there",
+        "The museum is over there"
+      ]
+    },
+    {
+      "en": "The school is very near our house.",
+      "cz": "Škola je velmi blízko našeho domu.",
+      "lemmas": [
+        "near",
+        "school"
+      ],
+      "accepts": [
+        "The school is very near our house",
+        "The school is very close to our house"
+      ]
+    },
+    {
+      "en": "I buy bread in this small shop.",
+      "cz": "Kupuji chleba v tomto malém obchodě.",
+      "lemmas": [
+        "shop"
+      ],
+      "accepts": [
+        "I buy bread in this small shop",
+        "I buy bread at this small shop"
+      ]
+    },
+    {
+      "en": "The post office is open until five o'clock.",
+      "cz": "Pošta je otevřená do pěti hodin.",
+      "lemmas": [
+        "post office"
+      ],
+      "accepts": [
+        "The post office is open until five o'clock",
+        "The post office is open till five o'clock",
+        "The post office is open until five"
+      ]
+    },
+    {
+      "en": "This restaurant has very good pizza.",
+      "cz": "Tato restaurace má velmi dobrou pizzu.",
+      "lemmas": [
+        "restaurant"
+      ],
+      "accepts": [
+        "This restaurant has very good pizza",
+        "This restaurant has got very good pizza"
+      ]
+    },
+    {
+      "en": "Our hotel is near the beach.",
+      "cz": "Náš hotel je blízko pláže.",
+      "lemmas": [
+        "hotel",
+        "beach"
+      ],
+      "accepts": [
+        "Our hotel is near the beach",
+        "Our hotel is close to the beach"
+      ]
+    },
+    {
+      "en": "I go to the centre by metro.",
+      "cz": "Do centra jezdím metrem.",
+      "lemmas": [
+        "centre"
+      ],
+      "accepts": [
+        "I go to the centre by metro",
+        "I go to the center by metro",
+        "I take the metro to the centre"
+      ]
+    },
+    {
+      "en": "The red tram goes to the station.",
+      "cz": "Červená tramvaj jede na nádraží.",
+      "lemmas": [
+        "station (train)"
+      ],
+      "accepts": [
+        "The red tram goes to the station",
+        "The red tram goes to the train station"
+      ]
+    },
+    {
+      "en": "In summer I go to school by bike.",
+      "cz": "V létě jezdím do školy na kole.",
+      "lemmas": [
+        "school"
+      ],
+      "accepts": [
+        "In summer I go to school by bike",
+        "I go to school by bike in summer",
+        "In summer I go to school by bicycle"
+      ]
+    },
+    {
+      "en": "The airport is far from the city.",
+      "cz": "Letiště je daleko od města.",
+      "lemmas": [
+        "city"
+      ],
+      "accepts": [
+        "The airport is far from the city",
+        "The airport is a long way from the city"
+      ]
+    },
+    {
+      "en": "I walk to school with my sister.",
+      "cz": "Do školy chodím pěšky se sestrou.",
+      "lemmas": [
+        "school"
+      ],
+      "accepts": [
+        "I walk to school with my sister",
+        "I go to school on foot with my sister"
+      ]
+    },
+    {
+      "en": "Turn left at the bank.",
+      "cz": "U banky zahněte doleva.",
+      "lemmas": [
+        "bank"
+      ],
+      "accepts": [
+        "Turn left at the bank",
+        "At the bank turn left"
+      ]
+    },
+    {
+      "en": "The hotel is on the right.",
+      "cz": "Hotel je napravo.",
+      "lemmas": [
+        "hotel"
+      ],
+      "accepts": [
+        "The hotel is on the right",
+        "The hotel is on the right side"
+      ]
+    },
+    {
+      "en": "The bank is next to the post office.",
+      "cz": "Banka je vedle pošty.",
+      "lemmas": [
+        "post office"
+      ],
+      "accepts": [
+        "The bank is next to the post office",
+        "The bank is beside the post office"
+      ]
+    },
+    {
+      "en": "The cafe is opposite the school.",
+      "cz": "Kavárna je naproti škole.",
+      "lemmas": [
+        "cafe"
+      ],
+      "accepts": [
+        "The cafe is opposite the school",
+        "The café is opposite the school"
+      ]
+    },
+    {
+      "en": "The park is between the school and the river.",
+      "cz": "Park je mezi školou a řekou.",
+      "lemmas": [
+        "park"
+      ],
+      "accepts": [
+        "The park is between the school and the river"
+      ]
+    },
+    {
+      "en": "We arrive at the hotel in the evening.",
+      "cz": "Večer přijedeme do hotelu.",
+      "lemmas": [
+        "hotel"
+      ],
+      "accepts": [
+        "We arrive at the hotel in the evening",
+        "In the evening we arrive at the hotel"
+      ]
+    },
+    {
+      "en": "There is a lot of traffic in the city centre.",
+      "cz": "V centru města je velký provoz.",
+      "lemmas": [
+        "city"
+      ],
+      "accepts": [
+        "There is a lot of traffic in the city centre",
+        "There is a lot of traffic in the city center",
+        "There is a lot of traffic in the centre of the city"
+      ]
+    },
+    {
+      "en": "We go to the museum on Sunday afternoon.",
+      "cz": "V neděli odpoledne jdeme do muzea.",
+      "lemmas": [
+        "museum"
+      ],
+      "accepts": [
+        "We go to the museum on Sunday afternoon",
+        "On Sunday afternoon we go to the museum"
+      ]
+    },
+    {
+      "en": "I read books in the library after school.",
+      "cz": "Po škole čtu knihy v knihovně.",
+      "lemmas": [
+        "library",
+        "school"
+      ],
+      "accepts": [
+        "I read books in the library after school",
+        "After school I read books in the library"
+      ]
+    },
+    {
+      "en": "We buy fruit at the market on Saturday.",
+      "cz": "V sobotu kupujeme ovoce na trhu.",
+      "lemmas": [
+        "market"
+      ],
+      "accepts": [
+        "We buy fruit at the market on Saturday",
+        "On Saturday we buy fruit at the market"
+      ]
+    },
+    {
+      "en": "My uncle has a farm with many animals.",
+      "cz": "Můj strýc má farmu s mnoha zvířaty.",
+      "lemmas": [
+        "farm"
+      ],
+      "accepts": [
+        "My uncle has a farm with many animals",
+        "My uncle has got a farm with many animals",
+        "My uncle has a farm with a lot of animals"
+      ]
+    },
+    {
+      "en": "The children play on the beach all day.",
+      "cz": "Děti si celý den hrají na pláži.",
+      "lemmas": [
+        "beach"
+      ],
+      "accepts": [
+        "The children play on the beach all day",
+        "The children play at the beach all day"
+      ]
+    },
+    {
+      "en": "Our school is in an old building.",
+      "cz": "Naše škola je ve staré budově.",
+      "lemmas": [
+        "building",
+        "school"
+      ],
+      "accepts": [
+        "Our school is in an old building"
+      ]
+    },
+    {
+      "en": "We swim in the pool every Saturday.",
+      "cz": "Každou sobotu plaveme v bazénu.",
+      "lemmas": [
+        "pool"
+      ],
+      "accepts": [
+        "We swim in the pool every Saturday",
+        "Every Saturday we swim in the pool",
+        "We swim in the swimming pool every Saturday"
+      ]
+    },
+    {
+      "en": "Call the police, please!",
+      "cz": "Zavolejte policii, prosím!",
+      "lemmas": [
+        "police"
+      ],
+      "accepts": [
+        "Call the police, please",
+        "Call the police please",
+        "Please call the police",
+        "Call the police"
       ]
     }
   ]

@@ -2075,6 +2075,156 @@ button.link:hover {
 }
 
 /* Articles decision map (intro) — ported from rue2-grok-v1.0, 2026-08-28 */
+/* Calendars — intro diagrams week_strip / year_grid (a1_time_3, 2026-08-31).
+   HTML rather than SVG so the Czech cell text wraps instead of shrinking. */
+.calendar {
+  width: 100%;
+  margin: 0.55rem 0 0.3rem;
+}
+.cal-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.3rem;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+@media (max-width: 520px) {
+  .cal-strip {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .cal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.cal-day {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+.cal-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  min-width: 0;
+  padding: 0.4rem 0.25rem;
+  border-radius: 9px;
+  border: 1px solid rgba(160, 160, 160, 0.28);
+  background: rgba(255, 255, 255, 0.02);
+  text-align: center;
+}
+.cal-en {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.cal-cz {
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+.cal-day .is-weekend,
+.cal-cell.is-weekend {
+  background: rgba(255, 255, 255, 0.07);
+}
+.cal-day.is-weekend .cal-cell {
+  background: rgba(255, 255, 255, 0.07);
+}
+.cal-day.is-today .cal-cell {
+  border-color: var(--vocab-accent);
+  box-shadow: 0 0 0 1px var(--vocab-accent) inset;
+}
+.cal-day.is-tomorrow .cal-cell {
+  border-color: var(--accent-border);
+}
+.cal-tag {
+  display: block;
+  min-height: 0.9rem;
+  font-size: 0.6rem;
+  line-height: 1;
+  text-align: center;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.cal-tag strong {
+  color: var(--vocab-accent);
+  font-weight: 600;
+}
+.cal-tag-empty {
+  visibility: hidden;
+}
+.cal-span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.4rem;
+}
+.cal-span-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(160, 160, 160, 0.35);
+}
+.cal-span-label {
+  font-size: 0.72rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+.cal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 0.55rem;
+  margin-top: 0.45rem;
+}
+.cal-chip {
+  font-size: 0.72rem;
+  color: var(--text);
+}
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem 0.7rem;
+  margin-top: 0.45rem;
+}
+.cal-key {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.7rem;
+  color: var(--text);
+}
+.cal-key i {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 3px;
+  border: 1px solid rgba(160, 160, 160, 0.35);
+}
+.season-winter {
+  background: rgba(120, 170, 220, 0.14);
+}
+.season-spring {
+  background: rgba(120, 200, 140, 0.14);
+}
+.season-summer {
+  background: rgba(230, 190, 90, 0.14);
+}
+.season-autumn {
+  background: rgba(215, 130, 80, 0.14);
+}
+.cal-cell.is-now {
+  border-color: var(--vocab-accent);
+  box-shadow: 0 0 0 1px var(--vocab-accent) inset;
+}
+
 .articles-map {
   margin: 0.55rem 0 0.85rem;
   padding: 0.75rem 0.7rem 0.65rem;

@@ -5,6 +5,7 @@
   "tree_node": "leaf_clothes_a1",
   "note": "P2 Oxford A1 clothes + wear. British trousers/t-shirt. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "clothes_basic",
@@ -42,6 +43,9 @@
         {
           "en": "sweater",
           "cz": "svetr",
+          "accepts": [
+            "jumper"
+          ],
           "use": [
             "this_is_a",
             "i_have_a",
@@ -92,6 +96,9 @@
         {
           "en": "trousers",
           "cz": "kalhoty",
+          "accepts": [
+            "pants"
+          ],
           "use": [
             "this_is_a",
             "i_have_a",
@@ -112,6 +119,9 @@
         {
           "en": "hat",
           "cz": "klobouk / čepice",
+          "accepts": [
+            "cap"
+          ],
           "use": [
             "this_is_a",
             "i_have_a",
@@ -394,13 +404,13 @@
       ]
     },
     {
-      "en": "My father needs a shirt.",
-      "cz": "Můj otec potřebuje košili.",
+      "en": "My father needs a white shirt.",
+      "cz": "Můj otec potřebuje bílou košili.",
       "lemmas": [
         "shirt"
       ],
       "accepts": [
-        "My father needs a shirt"
+        "My father needs a white shirt"
       ]
     },
     {
@@ -436,13 +446,14 @@
       ]
     },
     {
-      "en": "My sister has a dress.",
-      "cz": "Moje sestra má šaty.",
+      "en": "My sister has a new red dress.",
+      "cz": "Moje sestra má nové červené šaty.",
       "lemmas": [
         "dress"
       ],
       "accepts": [
-        "My sister has a dress"
+        "My sister has a new red dress",
+        "My sister has got a new red dress"
       ]
     },
     {
@@ -452,7 +463,8 @@
         "trousers"
       ],
       "accepts": [
-        "I do not like these trousers"
+        "I do not like these trousers",
+        "I do not like these pants"
       ]
     },
     {
@@ -477,13 +489,14 @@
       ]
     },
     {
-      "en": "My grandfather wears a hat.",
-      "cz": "Můj dědeček nosí klobouk.",
+      "en": "My grandfather wears a black hat.",
+      "cz": "Můj dědeček nosí černý klobouk.",
       "lemmas": [
         "hat"
       ],
       "accepts": [
-        "My grandfather wears a hat"
+        "My grandfather wears a black hat",
+        "My grandfather wears a black cap"
       ]
     },
     {
@@ -494,18 +507,142 @@
       ],
       "accepts": [
         "My brother wears a suit at work",
-        "My brother wears a suit to work",
-        "My brother wears a suit to work."
+        "My brother wears a suit to work"
       ]
     },
     {
-      "en": "I need an umbrella.",
-      "cz": "Potřebuji deštník.",
+      "en": "I need an umbrella today.",
+      "cz": "Dnes potřebuji deštník.",
       "lemmas": [
         "umbrella"
       ],
       "accepts": [
-        "I need an umbrella"
+        "I need an umbrella today",
+        "Today I need an umbrella"
+      ]
+    },
+    {
+      "en": "My grandmother has a green sweater.",
+      "cz": "Moje babička má zelený svetr.",
+      "lemmas": [
+        "sweater"
+      ],
+      "accepts": [
+        "My grandmother has a green sweater",
+        "My grandmother has got a green sweater",
+        "My grandmother has a green jumper"
+      ]
+    },
+    {
+      "en": "She wears a long blue skirt.",
+      "cz": "Nosí dlouhou modrou sukni.",
+      "lemmas": [
+        "skirt"
+      ],
+      "accepts": [
+        "She wears a long blue skirt",
+        "She is wearing a long blue skirt"
+      ]
+    },
+    {
+      "en": "I wear a warm coat in winter.",
+      "cz": "V zimě nosím teplý kabát.",
+      "lemmas": [
+        "wear",
+        "coat"
+      ],
+      "accepts": [
+        "I wear a warm coat in winter",
+        "In winter I wear a warm coat",
+        "I wear a warm coat in the winter"
+      ]
+    },
+    {
+      "en": "My right shoe is under the bed.",
+      "cz": "Moje pravá bota je pod postelí.",
+      "lemmas": [
+        "shoe"
+      ],
+      "accepts": [
+        "My right shoe is under the bed",
+        "My right boot is under the bed"
+      ]
+    },
+    {
+      "en": "My left boot is old and dirty.",
+      "cz": "Moje levá bota je stará a špinavá.",
+      "lemmas": [
+        "boot"
+      ],
+      "accepts": [
+        "My left boot is old and dirty",
+        "My left shoe is old and dirty"
+      ]
+    },
+    {
+      "en": "There is a red sock on the floor.",
+      "cz": "Na podlaze je červená ponožka.",
+      "lemmas": [
+        "sock"
+      ],
+      "accepts": [
+        "There is a red sock on the floor",
+        "A red sock is on the floor"
+      ]
+    },
+    {
+      "en": "My father has a new watch.",
+      "cz": "Můj otec má nové hodinky.",
+      "lemmas": [
+        "watch (wrist)"
+      ],
+      "accepts": [
+        "My father has a new watch",
+        "My father has got a new watch"
+      ]
+    },
+    {
+      "en": "My teacher wears a red tie.",
+      "cz": "Můj učitel nosí červenou kravatu.",
+      "lemmas": [
+        "tie"
+      ],
+      "accepts": [
+        "My teacher wears a red tie"
+      ]
+    },
+    {
+      "en": "She has a long red scarf.",
+      "cz": "Má dlouhou červenou šálu.",
+      "lemmas": [
+        "scarf"
+      ],
+      "accepts": [
+        "She has a long red scarf",
+        "She has got a long red scarf"
+      ]
+    },
+    {
+      "en": "I have only one glove.",
+      "cz": "Mám jen jednu rukavici.",
+      "lemmas": [
+        "glove"
+      ],
+      "accepts": [
+        "I have only one glove",
+        "I only have one glove"
+      ]
+    },
+    {
+      "en": "I have my phone in my pocket.",
+      "cz": "Mám telefon v kapse.",
+      "lemmas": [
+        "pocket"
+      ],
+      "accepts": [
+        "I have my phone in my pocket",
+        "I have a phone in my pocket",
+        "My phone is in my pocket"
       ]
     }
   ]

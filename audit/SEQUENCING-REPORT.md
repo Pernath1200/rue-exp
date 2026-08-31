@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**331 unknown word types** across 43 live units (of 138).
+**589 unknown word types** across 61 live units (of 138).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -10,17 +10,35 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **a1_present_simple** (A1 grammar): day×5, coffee×4, school×2, everybody×2, near, tea, football, bus, films, books, lunch, morning, everyone, somebody, hard, nobody
 - **trunk_verbs_more_a1** (A1 vocab): together, dogs
 - **a1_agreement** (A1 grammar): dogs×2, football, tennis
+- **leaf_home_family** (A1 vocab): big×7, small×5, little×3, school×3, dinner×3, old×3, now×2, blue×2, white×2, city×2, dog×2, morning×2, red, coat, football, day, sings, well, cooks, hospital, best, near, newspaper, shop, bike, cat, centre, want, close, cold, flowers, read, milk, cheese, find, reading, tea, favourite, stays, cakes, green, farm, years, tall, funny, picture, warm, quick, next, homework, look, time, new, cake
 - **a1_possessives** (A1 grammar): dog×2, job, coffee, school, tickets, passport, blue, new
 - **a1_frequency** (A1 grammar): coffee×2, meat×2, busy×2, lunch, tea, happy, angry, bored
+- **leaf_freetime_a1** (A1 vocab): favourite×3, dinner×2, morning×2, pictures×2, sea, together, tickets, park, starts, radio, email, summer, want, night, happy, new, beach, players, cat, school
+- **leaf_places** (A1 vocab): small×5, big×4, morning×3, buy×2, summer×2, river×2, quiet, bread, until, pizza, wait, blue, red, far, turn, tree, long, lot, afternoon, fruit, animals, day, swim, call
+- **leaf_countries_a1** (A1 vocab): capital×2, little, winter, want, summer, far, big, learning
+- **leaf_food_a1** (A1 vocab): big×5, small×3, want×3, green×2, red×2, black, pizza, together, lot, little, buy, morning, put, cuts, horse, hand, dark, warm, night, afternoon, orange, cold, day, give, clean, puts, week, cat, new
+- **leaf_clothes_a1** (A1 vocab): red×4, new×2, long×2, white, black, today, green, blue, warm, winter, dirty
 - **a1_object_pronouns** (A1 grammar): calls×2, want
+- **leaf_body_a1** (A1 vocab): something, small, new, cat, sits, strong, dark, red, sun, little, long
+- **leaf_health_a1** (A1 vocab): today×2, big×2, important, strong, loud, full, high, bad, night, now, morning, yellow, long, year
 - **a1_like_want_need** (A1 grammar): pizza, new, money
 - **a1_can** (A1 grammar): now
+- **leaf_work_a1** (A1 vocab): new×3, small×3, big×2, lot, today, famous, best, cows, late, long
+- **leaf_school_a1** (A1 vocab): difficult×4, lot×2, new×2, long×2, pictures×2, today, red, maths, big, give, rivers, beautiful, small, notebook, mum, interesting, dogs
 - **a1_prepositions_place** (A1 grammar): ball×6, box×6, cat, picture, honza, dog
 - **a1_there_is** (A1 grammar): cat, university, dog
 - **a1_some_any** (A1 grammar): money×2
 - **a1_prepositions_time** (A1 grammar): morning×3, night×2, weekend×2, born×2, afternoon
+- **leaf_time_a1** (A1 vocab): years×4, minutes×4, big×2, today×2, year×2, long×2, days, week, months, little, costs, crowns, hour, month
+- **leaf_time_2_a1** (A1 vocab): beautiful×2, past×2, new×2, clean, well, piano, big, outside, wait, snows, spring, ends, trees, dark, christmas, bought, rained, moved
+- **leaf_nature_a1** (A1 vocab): big×2, small×2, strong, blue, red, long, clean, high, full
 - **a1_to_for_with** (A1 grammar): wait×2, give
+- **leaf_shopping_a1** (A1 vocab): new, special, long, small
+- **leaf_animals_a1** (A1 vocab): big×2, green×2, black, long, little, small, white
 - **a1_imperatives** (A1 grammar): quiet, careful, worry, touch
+- **leaf_tech_a1** (A1 vocab): new, big
+- **leaf_colours_a1** (A1 vocab): new, little
+- **leaf_ideas_a1** (A1 vocab): picnic, club, loud, outside
 - **a2_modals_must_should** (A2 grammar): seatbelt, smoke, touch, mum, worry, apologise, save, shout, skip, anything, recycle, outside
 - **a2_comparatives** (A2 grammar): app, motorway
 - **leaf_describing_a2** (A2 vocab): neighbour

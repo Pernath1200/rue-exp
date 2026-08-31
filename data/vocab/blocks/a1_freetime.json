@@ -5,6 +5,7 @@
   "tree_node": "leaf_freetime_a1",
   "note": "Free time leaf. Hobbies / verbs / more. Feelings split to leaf_feelings_a1 2026-08-31. Describe dump folded into trunk_adjectives_a1. · carriers via use[] · 4-page intro (sport / music-films-going out / verbs / frames) covers all 35 words",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "freetime_hobbies",
@@ -58,6 +59,7 @@
         {
           "en": "film",
           "cz": "film",
+          "accepts": ["movie"],
           "use": ["this_is_a", "i_have_a", "i_need_a"]
         },
         {
@@ -68,6 +70,7 @@
         {
           "en": "holiday",
           "cz": "dovolená / svátek",
+          "accepts": ["vacation"],
           "use": ["have_a_good", "the_is_long", "this_is_a"]
         }
       ]
@@ -165,6 +168,7 @@
         {
           "en": "movie",
           "cz": "film (hl. am.)",
+          "accepts": ["film"],
           "use": ["this_is_a", "i_have_a", "i_need_a"]
         },
         {
@@ -275,16 +279,16 @@
       "accepts": ["My father likes football"]
     },
     {
-      "en": "Swimming is fun.",
-      "cz": "Plavání je zábava.",
+      "en": "Swimming in the sea is fun.",
+      "cz": "Plavání v moři je zábava.",
       "lemmas": ["swimming", "fun"],
-      "accepts": ["Swimming is fun"]
+      "accepts": ["Swimming in the sea is fun"]
     },
     {
-      "en": "I go to the gym.",
-      "cz": "Chodím do posilovny.",
+      "en": "I go to the gym after work.",
+      "cz": "Po práci chodím do posilovny.",
       "lemmas": ["gym"],
-      "accepts": ["I go to the gym"]
+      "accepts": ["I go to the gym after work", "After work I go to the gym"]
     },
     {
       "en": "My sister listens to music.",
@@ -293,22 +297,22 @@
       "accepts": ["My sister listens to music"]
     },
     {
-      "en": "My brother reads books.",
-      "cz": "Můj bratr čte knihy.",
+      "en": "I read a book in bed.",
+      "cz": "Čtu si v posteli knihu.",
       "lemmas": ["read"],
-      "accepts": ["My brother reads books"]
+      "accepts": ["I read a book in bed", "I read books in bed"]
     },
     {
-      "en": "My mother cooks in the kitchen.",
-      "cz": "Moje matka vaří v kuchyni.",
+      "en": "We cook dinner together.",
+      "cz": "Vaříme spolu večeři.",
       "lemmas": ["cook"],
-      "accepts": ["My mother cooks in the kitchen"]
+      "accepts": ["We cook dinner together", "We cook the dinner together"]
     },
     {
-      "en": "This is my hobby.",
-      "cz": "To je můj koníček.",
+      "en": "Cooking is my favourite hobby.",
+      "cz": "Vaření je můj oblíbený koníček.",
       "lemmas": ["hobby"],
-      "accepts": ["This is my hobby"]
+      "accepts": ["Cooking is my favourite hobby", "Cooking is my favorite hobby"]
     },
     {
       "en": "The party is at our house.",
@@ -323,22 +327,160 @@
       "accepts": ["I watch films at home", "I watch movies at home"]
     },
     {
-      "en": "I play football.",
-      "cz": "Hraju fotbal.",
+      "en": "I play football with my friends.",
+      "cz": "Hraju fotbal s kamarády.",
       "lemmas": ["play", "football"],
-      "accepts": ["I play football"]
+      "accepts": ["I play football with my friends"]
     },
     {
-      "en": "This is a concert.",
-      "cz": "Tohle je koncert.",
+      "en": "We have tickets for the concert.",
+      "cz": "Máme lístky na koncert.",
       "lemmas": ["concert"],
-      "accepts": ["This is a concert"]
+      "accepts": ["We have tickets for the concert", "We have got tickets for the concert", "We have tickets to the concert"]
     },
     {
-      "en": "I play the guitar.",
-      "cz": "Hraju na kytaru.",
+      "en": "I play the guitar every evening.",
+      "cz": "Každý večer hraju na kytaru.",
       "lemmas": ["guitar"],
-      "accepts": ["I play the guitar"]
+      "accepts": ["I play the guitar every evening", "Every evening I play the guitar"]
+    },
+    {
+      "en": "My favourite sport is tennis.",
+      "cz": "Můj oblíbený sport je tenis.",
+      "lemmas": ["sport", "tennis"],
+      "accepts": ["My favourite sport is tennis", "My favorite sport is tennis", "Tennis is my favourite sport"]
+    },
+    {
+      "en": "We play tennis in the park.",
+      "cz": "Hrajeme tenis v parku.",
+      "lemmas": ["tennis"],
+      "accepts": ["We play tennis in the park", "We play tennis at the park"]
+    },
+    {
+      "en": "I go running in the morning.",
+      "cz": "Ráno chodím běhat.",
+      "lemmas": ["running"],
+      "accepts": ["I go running in the morning", "In the morning I go running"]
+    },
+    {
+      "en": "This is my favourite song.",
+      "cz": "To je moje oblíbená píseň.",
+      "lemmas": ["song"],
+      "accepts": ["This is my favourite song", "This is my favorite song", "It is my favourite song"]
+    },
+    {
+      "en": "The film starts at seven.",
+      "cz": "Film začíná v sedm.",
+      "lemmas": ["film"],
+      "accepts": ["The film starts at seven", "The movie starts at seven"]
+    },
+    {
+      "en": "We are on holiday in Italy.",
+      "cz": "Jsme na dovolené v Itálii.",
+      "lemmas": ["holiday"],
+      "accepts": ["We are on holiday in Italy", "We are on a holiday in Italy", "We are on vacation in Italy"]
+    },
+    {
+      "en": "I listen to the radio in the car.",
+      "cz": "V autě poslouchám rádio.",
+      "lemmas": ["listen (to)"],
+      "accepts": ["I listen to the radio in the car", "In the car I listen to the radio"]
+    },
+    {
+      "en": "I write an email to my friend.",
+      "cz": "Píšu e-mail kamarádovi.",
+      "lemmas": ["write"],
+      "accepts": ["I write an email to my friend", "I write my friend an email"]
+    },
+    {
+      "en": "We travel to Spain every summer.",
+      "cz": "Každé léto cestujeme do Španělska.",
+      "lemmas": ["travel"],
+      "accepts": ["We travel to Spain every summer", "Every summer we travel to Spain"]
+    },
+    {
+      "en": "I want to visit my grandmother on Sunday.",
+      "cz": "V neděli chci navštívit babičku.",
+      "lemmas": ["visit"],
+      "accepts": ["I want to visit my grandmother on Sunday", "I want to visit my grandma on Sunday", "On Sunday I want to visit my grandmother"]
+    },
+    {
+      "en": "I relax at home in the evening.",
+      "cz": "Večer doma odpočívám.",
+      "lemmas": ["relax"],
+      "accepts": ["I relax at home in the evening", "In the evening I relax at home"]
+    },
+    {
+      "en": "We dance at the party all night.",
+      "cz": "Na oslavě tančíme celou noc.",
+      "lemmas": ["dance", "party"],
+      "accepts": ["We dance at the party all night", "We dance all night at the party"]
+    },
+    {
+      "en": "The children sing a happy song.",
+      "cz": "Děti zpívají veselou písničku.",
+      "lemmas": ["sing", "song"],
+      "accepts": ["The children sing a happy song", "The kids sing a happy song"]
+    },
+    {
+      "en": "We play a new game after dinner.",
+      "cz": "Po večeři hrajeme novou hru.",
+      "lemmas": ["game"],
+      "accepts": ["We play a new game after dinner", "After dinner we play a new game"]
+    },
+    {
+      "en": "We have fun at the beach.",
+      "cz": "Na pláži se bavíme.",
+      "lemmas": ["fun"],
+      "accepts": ["We have fun at the beach", "We have fun on the beach"]
+    },
+    {
+      "en": "My friend plays in a band.",
+      "cz": "Můj kamarád hraje v kapele.",
+      "lemmas": ["band"],
+      "accepts": ["My friend plays in a band", "My friend is in a band"]
+    },
+    {
+      "en": "We watch a movie every Friday.",
+      "cz": "Každý pátek se díváme na film.",
+      "lemmas": ["movie"],
+      "accepts": ["We watch a movie every Friday", "We watch a film every Friday", "Every Friday we watch a movie"]
+    },
+    {
+      "en": "My mother loves dancing.",
+      "cz": "Moje maminka miluje tanec.",
+      "lemmas": ["dancing"],
+      "accepts": ["My mother loves dancing", "My mum loves dancing"]
+    },
+    {
+      "en": "I do exercise in the morning.",
+      "cz": "Ráno cvičím.",
+      "lemmas": ["exercise"],
+      "accepts": ["I do exercise in the morning", "I exercise in the morning", "In the morning I do exercise"]
+    },
+    {
+      "en": "Our team has eleven players.",
+      "cz": "Náš tým má jedenáct hráčů.",
+      "lemmas": ["team"],
+      "accepts": ["Our team has eleven players", "Our team has got eleven players"]
+    },
+    {
+      "en": "The football match is on Saturday.",
+      "cz": "Fotbalový zápas je v sobotu.",
+      "lemmas": ["match", "football"],
+      "accepts": ["The football match is on Saturday", "The football game is on Saturday"]
+    },
+    {
+      "en": "I draw pictures of my cat.",
+      "cz": "Kreslím obrázky své kočky.",
+      "lemmas": ["draw"],
+      "accepts": ["I draw pictures of my cat", "I draw my cat"]
+    },
+    {
+      "en": "The children paint pictures at school.",
+      "cz": "Děti malují obrázky ve škole.",
+      "lemmas": ["paint"],
+      "accepts": ["The children paint pictures at school", "The children paint pictures in school", "The kids paint pictures at school"]
     }
   ]
 }

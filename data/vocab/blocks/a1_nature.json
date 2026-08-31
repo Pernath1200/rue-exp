@@ -5,6 +5,7 @@
   "tree_node": "leaf_nature_a1",
   "note": "P3 Oxford A1 nature, weather, seasons. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "nature_world",
@@ -249,6 +250,9 @@
         {
           "en": "autumn",
           "cz": "podzim",
+          "accepts": [
+            "fall"
+          ],
           "use": [
             "i_like_bare",
             "is_fun",
@@ -547,14 +551,15 @@
   ],
   "sentences": [
     {
-      "en": "It is raining.",
-      "cz": "Prší.",
+      "en": "I do not like rain and wind.",
+      "cz": "Nemám rád déšť a vítr.",
       "lemmas": [
-        "rain"
+        "rain",
+        "wind"
       ],
       "accepts": [
-        "It is raining",
-        "It's raining"
+        "I do not like rain and wind",
+        "I do not like rain or wind"
       ]
     },
     {
@@ -570,13 +575,14 @@
       ]
     },
     {
-      "en": "The sun is hot.",
-      "cz": "Slunce je horké.",
+      "en": "The sun is very hot today.",
+      "cz": "Slunce je dnes velmi horké.",
       "lemmas": [
         "sun"
       ],
       "accepts": [
-        "The sun is hot"
+        "The sun is very hot today",
+        "Today the sun is very hot"
       ]
     },
     {
@@ -591,23 +597,24 @@
       ]
     },
     {
-      "en": "The wind is cold.",
-      "cz": "Vítr je studený.",
+      "en": "The wind is cold and strong.",
+      "cz": "Vítr je studený a silný.",
       "lemmas": [
         "wind"
       ],
       "accepts": [
-        "The wind is cold"
+        "The wind is cold and strong",
+        "The wind is strong and cold"
       ]
     },
     {
-      "en": "Look at the sky.",
-      "cz": "Podívej se na oblohu.",
+      "en": "Look at the blue sky.",
+      "cz": "Podívej se na modrou oblohu.",
       "lemmas": [
         "sky"
       ],
       "accepts": [
-        "Look at the sky"
+        "Look at the blue sky"
       ]
     },
     {
@@ -622,23 +629,25 @@
       ]
     },
     {
-      "en": "We swim in the river.",
-      "cz": "Plaveme v řece.",
+      "en": "We swim in the river in summer.",
+      "cz": "V létě plaveme v řece.",
       "lemmas": [
         "river"
       ],
       "accepts": [
-        "We swim in the river"
+        "We swim in the river in summer",
+        "In summer we swim in the river"
       ]
     },
     {
-      "en": "The flowers are in the garden.",
-      "cz": "Květiny jsou na zahradě.",
+      "en": "There is a red flower in the garden.",
+      "cz": "Na zahradě je červená květina.",
       "lemmas": [
         "flower"
       ],
       "accepts": [
-        "The flowers are in the garden"
+        "There is a red flower in the garden",
+        "A red flower is in the garden"
       ]
     },
     {
@@ -666,26 +675,284 @@
       ]
     },
     {
-      "en": "I see many stars tonight.",
-      "cz": "Dnes večer vidím hodně hvězd.",
+      "en": "I can see a big star in the sky.",
+      "cz": "Vidím na obloze velkou hvězdu.",
       "lemmas": [
         "star"
       ],
       "accepts": [
-        "I see many stars tonight",
-        "Tonight I see many stars",
-        "I can see many stars tonight"
+        "I can see a big star in the sky",
+        "I see a big star in the sky"
       ]
     },
     {
-      "en": "The field is dry.",
-      "cz": "Pole je suché.",
+      "en": "The field is dry in summer.",
+      "cz": "Pole je v létě suché.",
       "lemmas": [
         "field",
         "dry"
       ],
       "accepts": [
-        "The field is dry"
+        "The field is dry in summer",
+        "In summer the field is dry"
+      ]
+    },
+    {
+      "en": "I like nature and long walks.",
+      "cz": "Mám rád přírodu a dlouhé procházky.",
+      "lemmas": [
+        "nature"
+      ],
+      "accepts": [
+        "I like nature and long walks"
+      ]
+    },
+    {
+      "en": "There is a big cloud in the sky.",
+      "cz": "Na obloze je velký mrak.",
+      "lemmas": [
+        "cloud",
+        "sky"
+      ],
+      "accepts": [
+        "There is a big cloud in the sky",
+        "A big cloud is in the sky"
+      ]
+    },
+    {
+      "en": "The air is clean in the mountains.",
+      "cz": "Vzduch je v horách čistý.",
+      "lemmas": [
+        "air"
+      ],
+      "accepts": [
+        "The air is clean in the mountains",
+        "In the mountains the air is clean"
+      ]
+    },
+    {
+      "en": "There is an old tree in the garden.",
+      "cz": "Na zahradě je starý strom.",
+      "lemmas": [
+        "tree"
+      ],
+      "accepts": [
+        "There is an old tree in the garden",
+        "An old tree is in the garden"
+      ]
+    },
+    {
+      "en": "This plant needs water and sun.",
+      "cz": "Tato rostlina potřebuje vodu a slunce.",
+      "lemmas": [
+        "plant",
+        "sun"
+      ],
+      "accepts": [
+        "This plant needs water and sun"
+      ]
+    },
+    {
+      "en": "That mountain is very high.",
+      "cz": "Ta hora je velmi vysoká.",
+      "lemmas": [
+        "mountain"
+      ],
+      "accepts": [
+        "That mountain is very high",
+        "This mountain is very high"
+      ]
+    },
+    {
+      "en": "Our house is on a small hill.",
+      "cz": "Náš dům je na malém kopci.",
+      "lemmas": [
+        "hill"
+      ],
+      "accepts": [
+        "Our house is on a small hill"
+      ]
+    },
+    {
+      "en": "The sea is warm in August.",
+      "cz": "Moře je v srpnu teplé.",
+      "lemmas": [
+        "sea",
+        "warm"
+      ],
+      "accepts": [
+        "The sea is warm in August",
+        "In August the sea is warm"
+      ]
+    },
+    {
+      "en": "The water in the lake is cold.",
+      "cz": "Voda v jezeře je studená.",
+      "lemmas": [
+        "lake"
+      ],
+      "accepts": [
+        "The water in the lake is cold"
+      ]
+    },
+    {
+      "en": "They live on a small island.",
+      "cz": "Žijí na malém ostrově.",
+      "lemmas": [
+        "island"
+      ],
+      "accepts": [
+        "They live on a small island"
+      ]
+    },
+    {
+      "en": "The farmer has a lot of land.",
+      "cz": "Farmář má hodně půdy.",
+      "lemmas": [
+        "land"
+      ],
+      "accepts": [
+        "The farmer has a lot of land",
+        "The farmer has got a lot of land"
+      ]
+    },
+    {
+      "en": "I want to see the world.",
+      "cz": "Chci vidět svět.",
+      "lemmas": [
+        "world"
+      ],
+      "accepts": [
+        "I want to see the world"
+      ]
+    },
+    {
+      "en": "The earth goes around the sun.",
+      "cz": "Země obíhá kolem Slunce.",
+      "lemmas": [
+        "earth",
+        "sun"
+      ],
+      "accepts": [
+        "The earth goes around the sun",
+        "The earth moves around the sun"
+      ]
+    },
+    {
+      "en": "There is no air in space.",
+      "cz": "Ve vesmíru není vzduch.",
+      "lemmas": [
+        "space",
+        "air"
+      ],
+      "accepts": [
+        "There is no air in space",
+        "In space there is no air"
+      ]
+    },
+    {
+      "en": "In spring the garden is full of flowers.",
+      "cz": "Na jaře je zahrada plná květin.",
+      "lemmas": [
+        "spring"
+      ],
+      "accepts": [
+        "In spring the garden is full of flowers",
+        "The garden is full of flowers in spring"
+      ]
+    },
+    {
+      "en": "In autumn the days are short.",
+      "cz": "Na podzim jsou dny krátké.",
+      "lemmas": [
+        "autumn"
+      ],
+      "accepts": [
+        "In autumn the days are short",
+        "The days are short in autumn",
+        "In fall the days are short",
+        "The days are short in fall"
+      ]
+    },
+    {
+      "en": "The water is warm today.",
+      "cz": "Voda je dnes teplá.",
+      "lemmas": [
+        "warm"
+      ],
+      "accepts": [
+        "The water is warm today",
+        "Today the water is warm"
+      ]
+    },
+    {
+      "en": "The evenings are cool in autumn.",
+      "cz": "Večery jsou na podzim chladné.",
+      "lemmas": [
+        "cool",
+        "autumn"
+      ],
+      "accepts": [
+        "The evenings are cool in autumn",
+        "In autumn the evenings are cool"
+      ]
+    },
+    {
+      "en": "My hair is dry now.",
+      "cz": "Moje vlasy jsou teď suché.",
+      "lemmas": [
+        "dry"
+      ],
+      "accepts": [
+        "My hair is dry now",
+        "Now my hair is dry"
+      ]
+    },
+    {
+      "en": "My shoes are wet from the rain.",
+      "cz": "Moje boty jsou mokré od deště.",
+      "lemmas": [
+        "wet",
+        "rain"
+      ],
+      "accepts": [
+        "My shoes are wet from the rain"
+      ]
+    },
+    {
+      "en": "In winter it is dark at five o'clock.",
+      "cz": "V zimě je v pět hodin tma.",
+      "lemmas": [
+        "dark",
+        "winter"
+      ],
+      "accepts": [
+        "In winter it is dark at five o'clock",
+        "In winter it is dark at five",
+        "It is dark at five o'clock in winter"
+      ]
+    },
+    {
+      "en": "In summer it is light at nine o'clock.",
+      "cz": "V létě je v devět hodin světlo.",
+      "lemmas": [
+        "light"
+      ],
+      "accepts": [
+        "In summer it is light at nine o'clock",
+        "In summer it is light at nine",
+        "It is light at nine o'clock in summer"
+      ]
+    },
+    {
+      "en": "We sit by the fire in the evening.",
+      "cz": "Večer sedíme u ohně.",
+      "lemmas": [
+        "fire"
+      ],
+      "accepts": [
+        "We sit by the fire in the evening",
+        "In the evening we sit by the fire"
       ]
     }
   ]

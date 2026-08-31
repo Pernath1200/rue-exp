@@ -5,6 +5,7 @@
   "tree_node": "leaf_time_a1",
   "note": "Time 1 — numbers. Split from 84-word Time & numbers 2026-08-30 (James). Calendar / last week / once a week → leaf_time_2_a1.",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "time_numbers",
@@ -429,24 +430,24 @@
       ]
     },
     {
-      "en": "I have two bags.",
-      "cz": "Mám dvě tašky.",
+      "en": "I have two big bags.",
+      "cz": "Mám dvě velké tašky.",
       "lemmas": [
         "two"
       ],
       "accepts": [
-        "I have two bags"
+        "I have two big bags"
       ]
     },
     {
-      "en": "She is the first.",
-      "cz": "Ona je první.",
+      "en": "She is the first in her class.",
+      "cz": "Je první ve své třídě.",
       "lemmas": [
         "first"
       ],
       "accepts": [
-        "She is the first",
-        "She is first"
+        "She is the first in her class",
+        "She is first in her class"
       ]
     },
     {
@@ -463,65 +464,69 @@
       ]
     },
     {
-      "en": "We have five chairs.",
-      "cz": "Máme pět židlí.",
+      "en": "We have five chairs in the kitchen.",
+      "cz": "V kuchyni máme pět židlí.",
       "lemmas": [
         "five"
       ],
       "accepts": [
-        "We have five chairs"
+        "We have five chairs in the kitchen",
+        "There are five chairs in the kitchen"
       ]
     },
     {
-      "en": "I need a number.",
-      "cz": "Potřebuji číslo.",
+      "en": "I need your phone number.",
+      "cz": "Potřebuji tvoje telefonní číslo.",
       "lemmas": [
         "number"
       ],
       "accepts": [
-        "I need a number"
+        "I need your phone number",
+        "I need your number",
+        "I need your telephone number"
       ]
     },
     {
-      "en": "There are ten books.",
-      "cz": "Je tam deset knih.",
+      "en": "There are ten books on the table.",
+      "cz": "Na stole je deset knih.",
       "lemmas": [
         "ten"
       ],
       "accepts": [
-        "There are ten books"
+        "There are ten books on the table"
       ]
     },
     {
-      "en": "There are twenty books.",
-      "cz": "Je tam dvacet knih.",
+      "en": "There are twenty students in my class.",
+      "cz": "V mé třídě je dvacet studentů.",
       "lemmas": [
         "twenty"
       ],
       "accepts": [
-        "There are twenty books",
-        "There are 20 books"
+        "There are twenty students in my class",
+        "There are 20 students in my class"
       ]
     },
     {
-      "en": "One hundred people.",
-      "cz": "Sto lidí.",
+      "en": "A hundred people live in our village.",
+      "cz": "V naší vesnici žije sto lidí.",
       "lemmas": [
         "hundred"
       ],
       "accepts": [
-        "One hundred people",
-        "A hundred people"
+        "A hundred people live in our village",
+        "One hundred people live in our village"
       ]
     },
     {
-      "en": "This is my second bag.",
-      "cz": "Tohle je moje druhá taška.",
+      "en": "This is my second coffee today.",
+      "cz": "To je dnes moje druhá káva.",
       "lemmas": [
         "second (ordinal)"
       ],
       "accepts": [
-        "This is my second bag"
+        "This is my second coffee today",
+        "It is my second coffee today"
       ]
     },
     {
@@ -532,6 +537,280 @@
       ],
       "accepts": [
         "I have three brothers"
+      ]
+    },
+    {
+      "en": "I have only one sister.",
+      "cz": "Mám jen jednu sestru.",
+      "lemmas": [
+        "one"
+      ],
+      "accepts": [
+        "I have only one sister",
+        "I only have one sister",
+        "I have just one sister"
+      ]
+    },
+    {
+      "en": "There are four rooms in our flat.",
+      "cz": "V našem bytě jsou čtyři pokoje.",
+      "lemmas": [
+        "four"
+      ],
+      "accepts": [
+        "There are four rooms in our flat",
+        "There are four rooms in our apartment",
+        "Our flat has four rooms"
+      ]
+    },
+    {
+      "en": "We eat dinner at six.",
+      "cz": "Večeříme v šest.",
+      "lemmas": [
+        "six"
+      ],
+      "accepts": [
+        "We eat dinner at six",
+        "We have dinner at six",
+        "We eat dinner at six o'clock"
+      ]
+    },
+    {
+      "en": "There are seven days in a week.",
+      "cz": "Týden má sedm dní.",
+      "lemmas": [
+        "seven"
+      ],
+      "accepts": [
+        "There are seven days in a week",
+        "A week has seven days"
+      ]
+    },
+    {
+      "en": "My son is eleven years old.",
+      "cz": "Mému synovi je jedenáct let.",
+      "lemmas": [
+        "eleven"
+      ],
+      "accepts": [
+        "My son is eleven years old",
+        "My son is eleven"
+      ]
+    },
+    {
+      "en": "There are twelve months in a year.",
+      "cz": "Rok má dvanáct měsíců.",
+      "lemmas": [
+        "twelve"
+      ],
+      "accepts": [
+        "There are twelve months in a year",
+        "A year has twelve months"
+      ]
+    },
+    {
+      "en": "My little sister is fourteen.",
+      "cz": "Mojí mladší sestře je čtrnáct.",
+      "lemmas": [
+        "fourteen"
+      ],
+      "accepts": [
+        "My little sister is fourteen",
+        "My little sister is fourteen years old",
+        "My younger sister is fourteen"
+      ]
+    },
+    {
+      "en": "The bus comes in fifteen minutes.",
+      "cz": "Autobus přijede za patnáct minut.",
+      "lemmas": [
+        "fifteen"
+      ],
+      "accepts": [
+        "The bus comes in fifteen minutes",
+        "The bus is coming in fifteen minutes",
+        "The bus arrives in fifteen minutes"
+      ]
+    },
+    {
+      "en": "She is sixteen today.",
+      "cz": "Dnes jí je šestnáct.",
+      "lemmas": [
+        "sixteen"
+      ],
+      "accepts": [
+        "She is sixteen today",
+        "She is sixteen years old today",
+        "Today she is sixteen"
+      ]
+    },
+    {
+      "en": "My cousin is seventeen.",
+      "cz": "Mému bratranci je sedmnáct.",
+      "lemmas": [
+        "seventeen"
+      ],
+      "accepts": [
+        "My cousin is seventeen",
+        "My cousin is seventeen years old"
+      ]
+    },
+    {
+      "en": "You can drive at eighteen.",
+      "cz": "Řídit můžeš od osmnácti let.",
+      "lemmas": [
+        "eighteen"
+      ],
+      "accepts": [
+        "You can drive at eighteen",
+        "You can drive when you are eighteen"
+      ]
+    },
+    {
+      "en": "Her big brother is nineteen.",
+      "cz": "Jejímu staršímu bratrovi je devatenáct.",
+      "lemmas": [
+        "nineteen"
+      ],
+      "accepts": [
+        "Her big brother is nineteen",
+        "Her older brother is nineteen",
+        "Her big brother is nineteen years old"
+      ]
+    },
+    {
+      "en": "The lesson is thirty minutes long.",
+      "cz": "Lekce trvá třicet minut.",
+      "lemmas": [
+        "thirty"
+      ],
+      "accepts": [
+        "The lesson is thirty minutes long",
+        "The lesson is thirty minutes"
+      ]
+    },
+    {
+      "en": "This city is a thousand years old.",
+      "cz": "Toto město je tisíc let staré.",
+      "lemmas": [
+        "thousand"
+      ],
+      "accepts": [
+        "This city is a thousand years old",
+        "This city is one thousand years old",
+        "This town is a thousand years old"
+      ]
+    },
+    {
+      "en": "Prague has more than a million people.",
+      "cz": "Praha má víc než milion lidí.",
+      "lemmas": [
+        "million"
+      ],
+      "accepts": [
+        "Prague has more than a million people",
+        "Prague has over a million people",
+        "Prague has more than one million people"
+      ]
+    },
+    {
+      "en": "The ticket costs forty crowns.",
+      "cz": "Lístek stojí čtyřicet korun.",
+      "lemmas": [
+        "forty"
+      ],
+      "accepts": [
+        "The ticket costs forty crowns",
+        "The ticket is forty crowns"
+      ]
+    },
+    {
+      "en": "My uncle is fifty years old.",
+      "cz": "Mému strýci je padesát let.",
+      "lemmas": [
+        "fifty"
+      ],
+      "accepts": [
+        "My uncle is fifty years old",
+        "My uncle is fifty"
+      ]
+    },
+    {
+      "en": "An hour has sixty minutes.",
+      "cz": "Hodina má šedesát minut.",
+      "lemmas": [
+        "sixty"
+      ],
+      "accepts": [
+        "An hour has sixty minutes",
+        "There are sixty minutes in an hour"
+      ]
+    },
+    {
+      "en": "My grandmother is seventy years old.",
+      "cz": "Mojí babičce je sedmdesát let.",
+      "lemmas": [
+        "seventy"
+      ],
+      "accepts": [
+        "My grandmother is seventy years old",
+        "My grandmother is seventy",
+        "My grandma is seventy years old"
+      ]
+    },
+    {
+      "en": "The book has eighty pages.",
+      "cz": "Ta kniha má osmdesát stran.",
+      "lemmas": [
+        "eighty"
+      ],
+      "accepts": [
+        "The book has eighty pages",
+        "The book has got eighty pages"
+      ]
+    },
+    {
+      "en": "The film is ninety minutes long.",
+      "cz": "Film trvá devadesát minut.",
+      "lemmas": [
+        "ninety"
+      ],
+      "accepts": [
+        "The film is ninety minutes long",
+        "The movie is ninety minutes long",
+        "The film is ninety minutes"
+      ]
+    },
+    {
+      "en": "March is the third month of the year.",
+      "cz": "Březen je třetí měsíc v roce.",
+      "lemmas": [
+        "third"
+      ],
+      "accepts": [
+        "March is the third month of the year",
+        "March is the third month"
+      ]
+    },
+    {
+      "en": "He is the fourth child in the family.",
+      "cz": "Je čtvrté dítě v rodině.",
+      "lemmas": [
+        "fourth"
+      ],
+      "accepts": [
+        "He is the fourth child in the family",
+        "He is the fourth child"
+      ]
+    },
+    {
+      "en": "My office is on the fifth floor.",
+      "cz": "Moje kancelář je v pátém patře.",
+      "lemmas": [
+        "fifth"
+      ],
+      "accepts": [
+        "My office is on the fifth floor"
       ]
     }
   ]

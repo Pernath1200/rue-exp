@@ -5,6 +5,7 @@
   "tree_node": "leaf_work_a1",
   "note": "A1 work · jobs + workplace · richer carriers · fruit = Word · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "work_jobs",
@@ -288,6 +289,24 @@
             "i_have_a",
             "i_need_a"
           ]
+        },
+        {
+          "en": "artist",
+          "cz": "umělec / výtvarník",
+          "use": [
+            "i_am_a",
+            "he_is_a",
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "painter",
+          "cz": "malíř",
+          "use": [
+            "i_am_a",
+            "he_is_a",
+            "this_is_a"
+          ]
         }
       ]
     }
@@ -458,6 +477,16 @@
           "icon": "🎙️",
           "en": "interview",
           "cz": "pohovor / rozhovor"
+        },
+        {
+          "icon": "🎨",
+          "en": "artist",
+          "cz": "umělec"
+        },
+        {
+          "icon": "🖌️",
+          "en": "painter",
+          "cz": "malíř"
         }
       ]
     },
@@ -476,45 +505,47 @@
   ],
   "sentences": [
     {
-      "en": "I need a job.",
-      "cz": "Potřebuji práci.",
+      "en": "I need a new job.",
+      "cz": "Potřebuji novou práci.",
       "lemmas": [
         "job"
       ],
       "accepts": [
-        "I need a job",
-        "I need work"
+        "I need a new job"
       ]
     },
     {
-      "en": "My work is great.",
-      "cz": "Moje práce je skvělá.",
+      "en": "I have a lot of work today.",
+      "cz": "Mám dnes hodně práce.",
       "lemmas": [
         "work (noun)"
       ],
       "accepts": [
-        "My work is great",
-        "My job is great"
+        "I have a lot of work today",
+        "Today I have a lot of work",
+        "I have got a lot of work today"
       ]
     },
     {
-      "en": "My sister is a teacher.",
-      "cz": "Moje sestra je učitelka.",
+      "en": "My sister is an English teacher.",
+      "cz": "Moje sestra je učitelka angličtiny.",
       "lemmas": [
         "teacher"
       ],
       "accepts": [
-        "My sister is a teacher"
+        "My sister is an English teacher",
+        "My sister is a teacher of English"
       ]
     },
     {
-      "en": "My brother is a waiter.",
-      "cz": "Můj bratr je číšník.",
+      "en": "My brother is a waiter in a small restaurant.",
+      "cz": "Můj bratr je číšník v malé restauraci.",
       "lemmas": [
         "waiter"
       ],
       "accepts": [
-        "My brother is a waiter"
+        "My brother is a waiter in a small restaurant",
+        "My brother works as a waiter in a small restaurant"
       ]
     },
     {
@@ -551,34 +582,36 @@
       ]
     },
     {
-      "en": "This is my colleague.",
-      "cz": "To je můj kolega.",
+      "en": "This is my new colleague.",
+      "cz": "To je můj nový kolega.",
       "lemmas": [
         "colleague"
       ],
       "accepts": [
-        "This is my colleague"
+        "This is my new colleague"
       ]
     },
     {
-      "en": "I work for a company.",
-      "cz": "Pracuji pro firmu.",
+      "en": "I work for a big company.",
+      "cz": "Pracuji pro velkou firmu.",
       "lemmas": [
         "company",
         "work (verb)"
       ],
       "accepts": [
-        "I work for a company"
+        "I work for a big company",
+        "I work in a big company"
       ]
     },
     {
-      "en": "I need a break.",
-      "cz": "Potřebuji přestávku.",
+      "en": "I need a short break.",
+      "cz": "Potřebuji krátkou přestávku.",
       "lemmas": [
         "break (rest)"
       ],
       "accepts": [
-        "I need a break"
+        "I need a short break",
+        "I need a little break"
       ]
     },
     {
@@ -592,13 +625,16 @@
       ]
     },
     {
-      "en": "I have an interview.",
-      "cz": "Mám pohovor.",
+      "en": "I have a job interview on Monday.",
+      "cz": "V pondělí mám pracovní pohovor.",
       "lemmas": [
-        "interview"
+        "interview",
+        "job"
       ],
       "accepts": [
-        "I have an interview"
+        "I have a job interview on Monday",
+        "On Monday I have a job interview",
+        "I have got a job interview on Monday"
       ]
     },
     {
@@ -611,6 +647,213 @@
       "accepts": [
         "I start work at seven",
         "I start working at seven"
+      ]
+    },
+    {
+      "en": "My son is a student in Prague.",
+      "cz": "Můj syn je studentem v Praze.",
+      "lemmas": [
+        "student"
+      ],
+      "accepts": [
+        "My son is a student in Prague"
+      ]
+    },
+    {
+      "en": "My uncle is an engineer in a big company.",
+      "cz": "Můj strýc je inženýr ve velké firmě.",
+      "lemmas": [
+        "engineer",
+        "company"
+      ],
+      "accepts": [
+        "My uncle is an engineer in a big company",
+        "My uncle is an engineer at a big company"
+      ]
+    },
+    {
+      "en": "Our office is small but nice.",
+      "cz": "Naše kancelář je malá, ale hezká.",
+      "lemmas": [
+        "office"
+      ],
+      "accepts": [
+        "Our office is small but nice"
+      ]
+    },
+    {
+      "en": "We have a meeting at ten o'clock.",
+      "cz": "V deset hodin máme schůzku.",
+      "lemmas": [
+        "meeting"
+      ],
+      "accepts": [
+        "We have a meeting at ten o'clock",
+        "We have a meeting at ten",
+        "At ten o'clock we have a meeting"
+      ]
+    },
+    {
+      "en": "I work in a hospital.",
+      "cz": "Pracuji v nemocnici.",
+      "lemmas": [
+        "work (verb)"
+      ],
+      "accepts": [
+        "I work in a hospital",
+        "I work at a hospital"
+      ]
+    },
+    {
+      "en": "I finish work at five o'clock.",
+      "cz": "Končím práci v pět hodin.",
+      "lemmas": [
+        "finish (work)",
+        "work (noun)"
+      ],
+      "accepts": [
+        "I finish work at five o'clock",
+        "I finish work at five",
+        "I finish working at five o'clock"
+      ]
+    },
+    {
+      "en": "He is a famous actor from America.",
+      "cz": "Je to slavný herec z Ameriky.",
+      "lemmas": [
+        "actor"
+      ],
+      "accepts": [
+        "He is a famous actor from America"
+      ]
+    },
+    {
+      "en": "My sister wants to be an actress.",
+      "cz": "Moje sestra chce být herečkou.",
+      "lemmas": [
+        "actress"
+      ],
+      "accepts": [
+        "My sister wants to be an actress"
+      ]
+    },
+    {
+      "en": "She is a very good dancer.",
+      "cz": "Je to velmi dobrá tanečnice.",
+      "lemmas": [
+        "dancer"
+      ],
+      "accepts": [
+        "She is a very good dancer"
+      ]
+    },
+    {
+      "en": "My favourite singer is from England.",
+      "cz": "Můj oblíbený zpěvák je z Anglie.",
+      "lemmas": [
+        "singer"
+      ],
+      "accepts": [
+        "My favourite singer is from England",
+        "My favorite singer is from England"
+      ]
+    },
+    {
+      "en": "He is the best player in our team.",
+      "cz": "Je to nejlepší hráč v našem týmu.",
+      "lemmas": [
+        "player"
+      ],
+      "accepts": [
+        "He is the best player in our team",
+        "He is the best player on our team"
+      ]
+    },
+    {
+      "en": "The farmer has ten cows.",
+      "cz": "Farmář má deset krav.",
+      "lemmas": [
+        "farmer"
+      ],
+      "accepts": [
+        "The farmer has ten cows",
+        "The farmer has got ten cows"
+      ]
+    },
+    {
+      "en": "He is a good worker and he is never late.",
+      "cz": "Je dobrý pracovník a nikdy nechodí pozdě.",
+      "lemmas": [
+        "worker"
+      ],
+      "accepts": [
+        "He is a good worker and he is never late",
+        "He is a good worker and is never late"
+      ]
+    },
+    {
+      "en": "The writer has a new book.",
+      "cz": "Ten spisovatel má novou knihu.",
+      "lemmas": [
+        "writer"
+      ],
+      "accepts": [
+        "The writer has a new book",
+        "The writer has got a new book"
+      ]
+    },
+    {
+      "en": "This is my business partner.",
+      "cz": "To je můj obchodní partner.",
+      "lemmas": [
+        "partner",
+        "business"
+      ],
+      "accepts": [
+        "This is my business partner"
+      ]
+    },
+    {
+      "en": "She has a long career in music.",
+      "cz": "Má dlouhou kariéru v hudbě.",
+      "lemmas": [
+        "career"
+      ],
+      "accepts": [
+        "She has a long career in music",
+        "She has got a long career in music"
+      ]
+    },
+    {
+      "en": "My parents have a small business.",
+      "cz": "Moji rodiče mají malý podnik.",
+      "lemmas": [
+        "business"
+      ],
+      "accepts": [
+        "My parents have a small business",
+        "My parents have got a small business",
+        "My parents have a small company"
+      ]
+    },
+    {
+      "en": "My sister is an artist.",
+      "cz": "Moje sestra je umělkyně.",
+      "lemmas": [
+        "artist"
+      ],
+      "accepts": [
+        "My sister is an artist"
+      ]
+    },
+    {
+      "en": "He is a painter.",
+      "cz": "On je malíř.",
+      "lemmas": [
+        "painter"
+      ],
+      "accepts": [
+        "He is a painter"
       ]
     }
   ]

@@ -5,7 +5,7 @@
   "tree_node": "a1_prepositions_place",
   "codex_unit": "G_PP-A1B1-01",
   "practice": "frames",
-  "note": "Basic place prepositions. diagram keys match RUE3 practice engine. · names diversified (Martin/Anna pool) · re-lexified onto pool-legal props (book/bag) 2026-08-07 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded.",
+  "note": "Basic place prepositions. diagram keys match RUE3 practice engine. · names diversified (Martin/Anna pool) · re-lexified onto pool-legal props (book/bag) 2026-08-07 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=unrated); auto-authored bank superseded. · folded in from retired core_frames vocab trunk 2026-08-31 (above · between · opposite · near · by)",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -344,6 +344,86 @@
           "explanation": "in = inside an area / longer period.",
           "explanation_cz": "in = uvnitř prostoru / delší období.",
           "diagram": "in"
+        },
+        {
+          "en": "The book is above the bag.",
+          "cz": "Kniha je nad taškou.",
+          "gap": "The book is ____ the bag.",
+          "gap_answer": "above",
+          "gap_accepts": [
+            "over"
+          ],
+          "diagram": "above",
+          "accepts": [
+            "The book's above the bag.",
+            "The book is over the bag.",
+            "The book's over the bag."
+          ],
+          "explanation": "**above** = higher than it, not touching. Czech *nad*.",
+          "explanation_cz": "**above** = nad (výš, nedotýká se). Také *over*."
+        },
+        {
+          "en": "The book is between the bags.",
+          "cz": "Kniha je mezi taškami.",
+          "gap": "The book is ____ the bags.",
+          "gap_answer": "between",
+          "diagram": "between",
+          "accepts": [
+            "The book's between the bags."
+          ],
+          "explanation": "**between** = with one thing on each side. Czech *mezi*.",
+          "explanation_cz": "**between** = mezi (po obou stranách)."
+        },
+        {
+          "en": "The book is opposite the bag.",
+          "cz": "Kniha je naproti tašce.",
+          "gap": "The book is ____ the bag.",
+          "gap_answer": "opposite",
+          "gap_accepts": [
+            "across from"
+          ],
+          "diagram": "opposite",
+          "accepts": [
+            "The book's opposite the bag.",
+            "The book is across from the bag.",
+            "The book's across from the bag."
+          ],
+          "explanation": "**opposite** = facing it, across a space. Czech *naproti*.",
+          "explanation_cz": "**opposite** = naproti (čelem k)."
+        },
+        {
+          "en": "The book is near the bag.",
+          "cz": "Kniha je blízko tašky.",
+          "gap": "The book is ____ the bag.",
+          "gap_answer": "near",
+          "gap_accepts": [
+            "close to"
+          ],
+          "diagram": "near",
+          "accepts": [
+            "The book's near the bag.",
+            "The book is close to the bag.",
+            "The book's close to the bag."
+          ],
+          "explanation": "**near** = close to it. Czech *blízko*. Also *close to*.",
+          "explanation_cz": "**near** = blízko. Také *close to*."
+        },
+        {
+          "en": "The lamp is by the window.",
+          "cz": "Lampa je u okna.",
+          "gap": "The lamp is ____ the window.",
+          "gap_answer": "by",
+          "gap_accepts": [
+            "near",
+            "beside"
+          ],
+          "accepts": [
+            "The lamp is by the window",
+            "The lamp is near the window."
+          ],
+          "explanation": "**by** = next to it. Czech *u*. **near** and **beside** also work.",
+          "explanation_cz": "**by** = u, vedle. Také **near** / **beside**.",
+          "diagram": "by"
         }
       ]
     }

@@ -142,6 +142,46 @@ function migrateLegacyFruitClear(p) {
   return true;
 }
 
+/**
+ * One-time: give Work its tree back (2026-08-31).
+ *
+ * a1_work was rebuilt under its own finished unit the same day — 30 words →
+ * 32, 13 sentences → 32, and `quiz_mode: sentence_gap`, which moves Quiz and
+ * Type off the word deck and onto sentence frames. Every remembered key was
+ * a ghost, so opening the unit zeroed Quiz, Type and Match, and a full redo
+ * of Quiz + Type + Use could not reach the tree. James had walked this unit
+ * six times by then.
+ *
+ * The stale needs are dropped rather than refilled: progress.js cannot read
+ * the pack, so it cannot know the live deck. The first open re-adopts the
+ * real keys via the wasFruit path in practice-vocab (`adoptDeck`).
+ *
+ * Runs once per progress blob (`workRewriteRestore: 1`). Only touches a unit
+ * that had already reached 4/4 — it cannot hand out a unit nobody played.
+ */
+function restoreWorkAfterRewrite(p) {
+  if (!p || p.workRewriteRestore === 1) return false;
+  p.workRewriteRestore = 1;
+  const b = p.vocab?.blocks?.a1_work;
+  if (!b || !b.modes) return true;
+  if (!(b.modes.match && b.modes.quiz && b.modes.type && b.modes.sentence)) {
+    return true;
+  }
+  b.nodeId = b.nodeId || "leaf_work_a1";
+  b.matchCleanPass = true;
+  b.quizCleanPass = true;
+  b.typeCleanPass = true;
+  b.sentenceCleanPass = true;
+  b.sentenceDone = true;
+  for (const k of ["bestQuiz", "bestType", "bestSentence"]) {
+    if (b[k] == null || b[k] < 1) b[k] = 1;
+  }
+  delete b.quizNeed;
+  delete b.typeNeed;
+  delete b.matchNeed;
+  return true;
+}
+
 export function loadProgress() {
   try {
     const raw = ProgressStore.read();
@@ -155,7 +195,9 @@ export function loadProgress() {
     if (!d.units) d.units = {};
     if (!d.nodes) d.nodes = {};
     if (!Array.isArray(d.unlocked)) d.unlocked = ["A1", "A2", "B1", "B2", "C1"];
-    if (migrateLegacyFruitClear(d)) {
+    let dirty = migrateLegacyFruitClear(d);
+    dirty = restoreWorkAfterRewrite(d) || dirty;
+    if (dirty) {
       ProgressStore.write(JSON.stringify(d));
     }
     return d;
@@ -306,6 +348,11 @@ export function hasFruit(blockId) {
   if (!b) return false;
   /* a1_finale: Whole A1 Use round cleaned. Does not fake Check/Type. */
   if (b.finaleCleanPass) return true;
+  /* End-of-unit check: one whole-set round played through is the bar —
+   * these check material learned in the units above them, so they have no
+   * Check/Type/Use ladder to walk. NOT `checkCleanPass`, which is a
+   * teaching unit's Check stage (James, 2026-08-31). */
+  if (b.checkRoundPass) return true;
   if (!modeDone(b, "check") || !modeDone(b, "type") || !modeDone(b, "use")) {
     return false;
   }
@@ -337,6 +384,37 @@ export function completeFinale(blockId) {
   };
 }
 
+/**
+ * Fruit an end-of-unit check (`fruit: false` node) off one completed round.
+ * Stored grammar-side whatever the node's domain, so a1_vocab_match and
+ * a1_grammar_match read back the same way. Filtered runs must not reach
+ * here — a topic subset is not the check. (James, 2026-08-31: "to get the
+ * fruit, you only have to do one round of it".)
+ */
+export function completeCheckRound(nodeId) {
+  const wasFruit = hasFruit(nodeId);
+  const p = loadProgress();
+  const b = ensureGrammarBlock(p, nodeId);
+  b.checkRoundPass = true;
+  b.touchedAt = Date.now();
+  save(p);
+  const nowFruit = hasFruit(nodeId);
+  const review = reviewTick(nodeId, 1, nowFruit);
+  return {
+    wasFruit,
+    nowFruit,
+    justFruited: !wasFruit && nowFruit,
+    review,
+  };
+}
+
+/** Fruit for one node, whichever side stores it. */
+export function nodeHasFruit(node) {
+  if (!node) return false;
+  if (node.fruit === false) return hasFruit(node.id);
+  return node.domain === "vocab" ? hasVocabFruit(node) : hasFruit(node.id);
+}
+
 export function grammarBest(blockId) {
   const b = gBlock(blockId);
   return {
@@ -348,7 +426,7 @@ export function grammarBest(blockId) {
 
 export function progressLabelGrammar(node) {
   if (node.status === "planned") return "planned";
-  if (node.fruit === false) return "check";
+  if (node.fruit === false) return hasFruit(node.id) ? "done" : "check";
   if (hasFruit(node.id)) return "done";
   const b = gBlock(node.id);
   /* Finale is one Use check, not a Check/Type/Use ladder. */
@@ -364,7 +442,7 @@ export function progressLabelGrammar(node) {
 
 export function nodeProgressStateGrammar(node) {
   if (node.status !== "live") return "planned";
-  if (node.fruit === false) return "live";
+  if (node.fruit === false) return hasFruit(node.id) ? "fruit" : "live";
   if (hasFruit(node.id)) return "fruit";
   const b = gBlock(node.id);
   if (b && b.modes && Object.keys(b.modes).length) return "started";
@@ -416,23 +494,19 @@ export function vocabCoverNeed(n) {
 }
 
 /**
- * Quiz/Type fruit: unique keys up to need, except a leftover shorter than a
- * round after two full 12s (25–35 words). 24/30 then Use still gets the tree
- * (James, Countries 2026-08-31). 23-word packs stay whole-pack. 36 still 36.
+ * Quiz/Type fruit: every unique key up to need, no exemptions.
+ *
+ * Until 2026-08-31 a leftover shorter than a round after two full 12s
+ * (25–35 words) counted as covered — 24/30 still got the tree (James,
+ * Countries). The 36-cap split then dropped 15 decks into that band, so the
+ * last 6–11 words of each were never quizzed or typed. Carve-out removed
+ * (James: "if max words is 36, there's no reason not to do all 3 sets").
  */
 export function vocabCoveredEnough(have, need) {
   const H = Array.isArray(have) ? have.length : Number(have) || 0;
   const N = Number(need);
   if (need == null || !Number.isFinite(N) || N <= 0) return true;
-  if (H >= N) return true;
-  if (
-    N > VOCAB_PASS * 2 &&
-    H >= VOCAB_PASS * 2 &&
-    N - VOCAB_PASS * 2 < VOCAB_PASS
-  ) {
-    return true;
-  }
-  return false;
+  return H >= N;
 }
 
 export function vocabCoverage(blockId) {
@@ -447,6 +521,9 @@ export function vocabCoverage(blockId) {
     quizCleared: vocabQuizClear(b),
     typeCleared: vocabTypeClear(b),
     matchCleared: vocabMatchClear(b),
+    /** Already has its tree — practice adopts the live deck instead of
+     *  demoting the unit when the pack has been rewritten underneath it. */
+    fruited: blockHasFruit(b),
   };
 }
 
@@ -608,7 +685,7 @@ export function hasVocabFruit(node) {
 
 export function progressLabelVocab(node) {
   if (node.status === "planned") return "planned";
-  if (node.fruit === false) return "check";
+  if (node.fruit === false) return hasFruit(node.id) ? "done" : "check";
   if (hasVocabFruit(node)) return "done";
   const p = loadProgress();
   let b = null;
@@ -627,7 +704,7 @@ export function progressLabelVocab(node) {
 
 export function nodeProgressStateVocab(node) {
   if (node.status !== "live") return "planned";
-  if (node.fruit === false) return "live";
+  if (node.fruit === false) return hasFruit(node.id) ? "fruit" : "live";
   if (hasVocabFruit(node)) return "fruit";
   const p = loadProgress();
   for (const x of Object.values(p.vocab.blocks || {})) {
@@ -849,8 +926,10 @@ export function levelUnitStats(level, nodes) {
   let mastered = 0;
   let partial = 0;
   for (const n of list) {
-    const fruited =
-      n.domain === "vocab" ? hasVocabFruit(n) : hasFruit(n.id);
+    /* End-of-unit checks count towards the level like any other unit —
+     * A1 reads 60, not an awkward 56 — and fruit off one round through
+     * nodeHasFruit (James, 2026-08-31). */
+    const fruited = nodeHasFruit(n);
     const started =
       n.domain === "vocab"
         ? nodeProgressStateVocab(n) === "started"

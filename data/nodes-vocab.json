@@ -15,19 +15,6 @@
       "note": "I am · you are · this is · I have — the first sentence shapes. Sitting half of a1_be_have (not an A1 circle slot)."
     },
     {
-      "id": "trunk_prepositions_a1",
-      "label": "Prepositions",
-      "kind": "trunk",
-      "tree_part": "trunk",
-      "levels": [
-        "A1"
-      ],
-      "parent": "trunk",
-      "status": "live",
-      "content": "blocks/a1_core_frames_prepositions.json",
-      "note": "in · on · under · behind · next to — where things are"
-    },
-    {
       "id": "trunk_adjectives_a1",
       "label": "Adjectives",
       "kind": "trunk",
@@ -41,6 +28,19 @@
       "note": "big · small · good · bad — describing with is / are"
     },
     {
+      "id": "trunk_adjectives2_a1",
+      "label": "Adjectives 2",
+      "kind": "trunk",
+      "tree_part": "trunk",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_core_frames_adjectives2.json",
+      "note": "Second half of trunk_adjectives_a1 · split 2026-08-31 (36-word cap)."
+    },
+    {
       "id": "trunk_can_like_want_a1",
       "label": "Can · like · want",
       "kind": "trunk",
@@ -52,19 +52,6 @@
       "status": "live",
       "content": "blocks/a1_core_frames_can_like_want.json",
       "note": "I can · I like · I want — ability and preference"
-    },
-    {
-      "id": "trunk_there_time_a1",
-      "label": "There · time",
-      "kind": "trunk",
-      "tree_part": "trunk",
-      "levels": [
-        "A1"
-      ],
-      "parent": "trunk",
-      "status": "live",
-      "content": "blocks/a1_core_frames_there_time.json",
-      "note": "there is / there are · telling the time"
     },
     {
       "id": "trunk_verbs_daily_a1",
@@ -132,45 +119,6 @@
       "note": "what · where · when · who · why · how — asking questions"
     },
     {
-      "id": "trunk_glue_quantity_a1",
-      "label": "Some · any",
-      "kind": "trunk",
-      "tree_part": "trunk",
-      "levels": [
-        "A1"
-      ],
-      "parent": "trunk",
-      "status": "live",
-      "content": "blocks/a1_core_frames_glue_quantity.json",
-      "note": "some · any · no · every — how much and how many"
-    },
-    {
-      "id": "trunk_glue_linkers_a1",
-      "label": "And · but",
-      "kind": "trunk",
-      "tree_part": "trunk",
-      "levels": [
-        "A1"
-      ],
-      "parent": "trunk",
-      "status": "live",
-      "content": "blocks/a1_core_frames_glue_linkers.json",
-      "note": "and · but · or · because — joining sentences"
-    },
-    {
-      "id": "trunk_glue_modals_a1",
-      "label": "Will · must",
-      "kind": "trunk",
-      "tree_part": "trunk",
-      "levels": [
-        "A1"
-      ],
-      "parent": "trunk",
-      "status": "live",
-      "content": "blocks/a1_core_frames_glue_modals.json",
-      "note": "will · would like · must · should · can't"
-    },
-    {
       "id": "trunk_verbs_more_a1",
       "label": "Verbs · more",
       "kind": "trunk",
@@ -211,21 +159,8 @@
       "note": "believe · hope · mean · miss · prepare · share"
     },
     {
-      "id": "trunk_glue_pronouns_a1",
-      "label": "Pronouns",
-      "kind": "trunk",
-      "tree_part": "trunk",
-      "levels": [
-        "A1"
-      ],
-      "parent": "trunk",
-      "status": "live",
-      "content": "blocks/a1_core_frames_glue_pronouns.json",
-      "note": "me · him · her · us · them · this · that"
-    },
-    {
       "id": "leaf_home_family",
-      "label": "Home & Family",
+      "label": "Family",
       "kind": "leaf",
       "tree_part": "home_family",
       "levels": [
@@ -237,8 +172,21 @@
       "note": "family members · rooms · things around the house"
     },
     {
+      "id": "leaf_home_a1",
+      "label": "Home",
+      "kind": "leaf",
+      "tree_part": "home_family",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_home.json",
+      "note": "Second half of leaf_home_family · split 2026-08-31 (36-word cap)."
+    },
+    {
       "id": "leaf_places",
-      "label": "Places",
+      "label": "Places · town",
       "kind": "leaf",
       "tree_part": "knowledge_travel",
       "levels": [
@@ -248,6 +196,19 @@
       "status": "live",
       "content": "blocks/a1_places.json",
       "note": "town · transport · directions · travel"
+    },
+    {
+      "id": "leaf_places_2_a1",
+      "label": "Places · getting around",
+      "kind": "leaf",
+      "tree_part": "knowledge_travel",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_places_2.json",
+      "note": "Second half of leaf_places · split 2026-08-31 (36-word cap)."
     },
     {
       "id": "leaf_countries_a1",
@@ -264,7 +225,7 @@
     },
     {
       "id": "leaf_food_a1",
-      "label": "Food & drink",
+      "label": "Food · eating",
       "kind": "leaf",
       "tree_part": "home_family",
       "levels": [
@@ -274,6 +235,19 @@
       "status": "live",
       "content": "blocks/a1_food.json",
       "note": "meals · food · fruit and vegetables · drinks"
+    },
+    {
+      "id": "leaf_food_2_a1",
+      "label": "Food · drinks & kitchen",
+      "kind": "leaf",
+      "tree_part": "home_family",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_food_2.json",
+      "note": "Second half of leaf_food_a1 · split 2026-08-31 (36-word cap)."
     },
     {
       "id": "leaf_time_a1",
@@ -300,6 +274,19 @@
       "status": "live",
       "content": "blocks/a1_time_2.json",
       "note": "Time 2 — days, months, clock words, last/next week, once a week. No V_*. Split 2026-08-30 (James)."
+    },
+    {
+      "id": "leaf_time_3_a1",
+      "label": "Numbers / time 3",
+      "kind": "leaf",
+      "tree_part": "trunk",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_time_3.json",
+      "note": "Second half of leaf_time_2_a1 · split 2026-08-31 (36-word cap)."
     },
     {
       "id": "leaf_freetime_a1",
@@ -409,7 +396,7 @@
     },
     {
       "id": "leaf_school_a1",
-      "label": "School",
+      "label": "School · place & tools",
       "kind": "leaf",
       "tree_part": "knowledge_travel",
       "levels": [
@@ -419,6 +406,19 @@
       "status": "live",
       "content": "blocks/a1_school.json",
       "note": "classroom · subjects · studying"
+    },
+    {
+      "id": "leaf_school_2_a1",
+      "label": "School · subjects & text",
+      "kind": "leaf",
+      "tree_part": "knowledge_travel",
+      "levels": [
+        "A1"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a1_school_2.json",
+      "note": "Second half of leaf_school_a1 · split 2026-08-31 (36-word cap)."
     },
     {
       "id": "leaf_tech_a1",
@@ -462,7 +462,7 @@
     },
     {
       "id": "leaf_ideas_a1",
-      "label": "Ideas",
+      "label": "Ideas · things & people",
       "kind": "leaf",
       "tree_part": "trunk",
       "levels": [
@@ -771,6 +771,19 @@
       "codex_unit": "V_COR-A1B1-01",
       "note": "Live · A2 · V_COR-A1B1-01 · 8×12ish · Oxford fill",
       "list": true
+    },
+    {
+      "id": "leaf_ideas_2_a2",
+      "label": "A2 word list · abstract 2",
+      "kind": "leaf",
+      "tree_part": "trunk",
+      "levels": [
+        "A2"
+      ],
+      "parent": "trunk",
+      "status": "live",
+      "content": "blocks/a2_ideas_2.json",
+      "note": "Abstract / general nouns moved A1 → A2 2026-08-31 (James: A1 hard cap 60 units). 9 of its 23 words were already taught in A2 domain leaves (product a2_shopping, project a2_school, situation/success/interest a2_ideas, skill a2_work, culture a2_society, capital a2_travel, past a2_describing) — the move removes that duplication. Was the second half of a1_ideas."
     },
     {
       "id": "leaf_society_a2",

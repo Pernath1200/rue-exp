@@ -6,6 +6,7 @@
   "codex_unit": "V_THM-A1B1-06",
   "note": "P3 Oxford A1 shopping/money + exp fill (discount/queue/wallet). Sentence = fruit. Codex V_THM-A1B1-06. · carriers via use[] · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "shop_money",
@@ -260,6 +261,9 @@
         {
           "en": "queue",
           "cz": "fronta",
+          "accepts": [
+            "line"
+          ],
           "use": [
             "this_is_a",
             "there_is_a",
@@ -522,29 +526,30 @@
         "I have a …",
         "It is …"
       ],
-      "note": "Czech peněženka is two words in English: a wallet is flat, for notes and cards; a purse is small, mostly for coins.",
-      "note_cz": "peněženka = wallet (plochá, na bankovky a karty) i purse (malá, hlavně na mince)."
+      "note": "**buy** takes the thing: I **buy** bread. **shop** goes with **for**: We **shop for** food on Saturday.",
+      "note_cz": "buy = koupit (jednu věc). shop for = nakupovat (chodit po obchodech). Po shop následuje for."
     }
   ],
   "sentences": [
     {
-      "en": "I need money.",
-      "cz": "Potřebuji peníze.",
+      "en": "I need money for the bus.",
+      "cz": "Potřebuji peníze na autobus.",
       "lemmas": [
         "money"
       ],
       "accepts": [
-        "I need money"
+        "I need money for the bus"
       ]
     },
     {
-      "en": "The price is good.",
-      "cz": "Cena je dobrá.",
+      "en": "The price is very good.",
+      "cz": "Cena je velmi dobrá.",
       "lemmas": [
         "price"
       ],
       "accepts": [
-        "The price is good"
+        "The price is very good",
+        "The price is really good"
       ]
     },
     {
@@ -570,13 +575,13 @@
       ]
     },
     {
-      "en": "We need to buy food.",
-      "cz": "Potřebujeme koupit jídlo.",
+      "en": "We need to buy food for the weekend.",
+      "cz": "Potřebujeme koupit jídlo na víkend.",
       "lemmas": [
         "buy"
       ],
       "accepts": [
-        "We need to buy food"
+        "We need to buy food for the weekend"
       ]
     },
     {
@@ -604,23 +609,26 @@
       ]
     },
     {
-      "en": "I need a receipt.",
-      "cz": "Potřebuji účtenku.",
+      "en": "I need a receipt, please.",
+      "cz": "Potřebuji účtenku, prosím.",
       "lemmas": [
         "receipt"
       ],
       "accepts": [
+        "I need a receipt, please",
+        "I need a receipt please",
         "I need a receipt"
       ]
     },
     {
-      "en": "The shop is closed.",
-      "cz": "Obchod je zavřený.",
+      "en": "The shop is closed on Sunday.",
+      "cz": "Obchod je v neděli zavřený.",
       "lemmas": [
         "closed"
       ],
       "accepts": [
-        "The shop is closed"
+        "The shop is closed on Sunday",
+        "The shop is closed on Sundays"
       ]
     },
     {
@@ -656,23 +664,257 @@
       ]
     },
     {
-      "en": "We have a discount.",
-      "cz": "Máme slevu.",
+      "en": "We have a discount today.",
+      "cz": "Dnes máme slevu.",
       "lemmas": [
         "discount"
       ],
       "accepts": [
-        "We have a discount"
+        "We have a discount today",
+        "Today we have a discount",
+        "We have got a discount today"
       ]
     },
     {
-      "en": "The bus is free.",
-      "cz": "Autobus je zdarma.",
+      "en": "The bus is free for children.",
+      "cz": "Autobus je pro děti zdarma.",
       "lemmas": [
         "free (no cost)"
       ],
       "accepts": [
-        "The bus is free"
+        "The bus is free for children",
+        "The bus is free for kids"
+      ]
+    },
+    {
+      "en": "How much does it cost?",
+      "cz": "Kolik to stojí?",
+      "lemmas": [
+        "cost"
+      ],
+      "accepts": [
+        "How much does it cost",
+        "How much does this cost"
+      ]
+    },
+    {
+      "en": "They sell fruit at the market.",
+      "cz": "Na trhu prodávají ovoce.",
+      "lemmas": [
+        "sell"
+      ],
+      "accepts": [
+        "They sell fruit at the market",
+        "They sell fruit in the market"
+      ]
+    },
+    {
+      "en": "It costs one pound.",
+      "cz": "Stojí to jednu libru.",
+      "lemmas": [
+        "pound"
+      ],
+      "accepts": [
+        "It costs one pound",
+        "It costs a pound",
+        "It is one pound"
+      ]
+    },
+    {
+      "en": "The coffee costs one euro.",
+      "cz": "Káva stojí jedno euro.",
+      "lemmas": [
+        "euro"
+      ],
+      "accepts": [
+        "The coffee costs one euro",
+        "Coffee costs one euro",
+        "The coffee is one euro"
+      ]
+    },
+    {
+      "en": "The water costs one dollar.",
+      "cz": "Voda stojí jeden dolar.",
+      "lemmas": [
+        "dollar"
+      ],
+      "accepts": [
+        "The water costs one dollar",
+        "Water costs one dollar",
+        "The water is one dollar"
+      ]
+    },
+    {
+      "en": "I have one cent in my wallet.",
+      "cz": "Mám v peněžence jeden cent.",
+      "lemmas": [
+        "cent",
+        "wallet"
+      ],
+      "accepts": [
+        "I have one cent in my wallet",
+        "I have got one cent in my wallet"
+      ]
+    },
+    {
+      "en": "I go shopping with my mother.",
+      "cz": "Chodím nakupovat s maminkou.",
+      "lemmas": [
+        "shopping"
+      ],
+      "accepts": [
+        "I go shopping with my mother",
+        "I go shopping with my mum"
+      ]
+    },
+    {
+      "en": "We shop for food on Saturday.",
+      "cz": "V sobotu nakupujeme jídlo.",
+      "lemmas": [
+        "shop (verb)"
+      ],
+      "accepts": [
+        "We shop for food on Saturday",
+        "We shop for food on Saturdays",
+        "On Saturday we shop for food"
+      ]
+    },
+    {
+      "en": "The customer pays at the counter.",
+      "cz": "Zákazník platí u pultu.",
+      "lemmas": [
+        "customer",
+        "counter"
+      ],
+      "accepts": [
+        "The customer pays at the counter"
+      ]
+    },
+    {
+      "en": "My new card is in my bag.",
+      "cz": "Moje nová karta je v tašce.",
+      "lemmas": [
+        "card"
+      ],
+      "accepts": [
+        "My new card is in my bag",
+        "My new card is in the bag"
+      ]
+    },
+    {
+      "en": "Here is your change.",
+      "cz": "Tady máte drobné.",
+      "lemmas": [
+        "change (money)"
+      ],
+      "accepts": [
+        "Here is your change",
+        "This is your change"
+      ]
+    },
+    {
+      "en": "The supermarket is open today.",
+      "cz": "Supermarket je dnes otevřený.",
+      "lemmas": [
+        "open"
+      ],
+      "accepts": [
+        "The supermarket is open today",
+        "Today the supermarket is open"
+      ]
+    },
+    {
+      "en": "There is a sale at the department store.",
+      "cz": "V obchodním domě je výprodej.",
+      "lemmas": [
+        "sale",
+        "department store"
+      ],
+      "accepts": [
+        "There is a sale at the department store",
+        "There is a sale in the department store"
+      ]
+    },
+    {
+      "en": "The shop has a special offer today.",
+      "cz": "Obchod má dnes speciální nabídku.",
+      "lemmas": [
+        "offer"
+      ],
+      "accepts": [
+        "The shop has a special offer today",
+        "The shop has got a special offer today",
+        "Today the shop has a special offer"
+      ]
+    },
+    {
+      "en": "I want a refund for these shoes.",
+      "cz": "Chci vrátit peníze za tyhle boty.",
+      "lemmas": [
+        "refund"
+      ],
+      "accepts": [
+        "I want a refund for these shoes",
+        "I would like a refund for these shoes",
+        "I want my money back for these shoes"
+      ]
+    },
+    {
+      "en": "There is a long queue at the checkout.",
+      "cz": "U pokladny je dlouhá fronta.",
+      "lemmas": [
+        "queue",
+        "checkout"
+      ],
+      "accepts": [
+        "There is a long queue at the checkout",
+        "There is a big queue at the checkout",
+        "There is a long line at the checkout"
+      ]
+    },
+    {
+      "en": "The man at the counter is very nice.",
+      "cz": "Ten pán u pultu je moc milý.",
+      "lemmas": [
+        "counter"
+      ],
+      "accepts": [
+        "The man at the counter is very nice",
+        "The man at the counter is really nice"
+      ]
+    },
+    {
+      "en": "She has a small purse in her bag.",
+      "cz": "Má v tašce malou peněženku.",
+      "lemmas": [
+        "purse"
+      ],
+      "accepts": [
+        "She has a small purse in her bag",
+        "She has got a small purse in her bag"
+      ]
+    },
+    {
+      "en": "I want to try on this T-shirt.",
+      "cz": "Chci si vyzkoušet tohle tričko.",
+      "lemmas": [
+        "try on"
+      ],
+      "accepts": [
+        "I want to try on this T-shirt",
+        "I want to try this T-shirt on"
+      ]
+    },
+    {
+      "en": "My mother works in a department store.",
+      "cz": "Moje maminka pracuje v obchodním domě.",
+      "lemmas": [
+        "department store"
+      ],
+      "accepts": [
+        "My mother works in a department store",
+        "My mum works in a department store",
+        "My mother works in the department store"
       ]
     }
   ]

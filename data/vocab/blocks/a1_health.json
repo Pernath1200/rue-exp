@@ -6,6 +6,7 @@
   "codex_unit": "V_THM-A1B1-07",
   "note": "A1 Health · V_THM-A1B1-07 · carriers on use[] · fruit = Word · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "health_feeling",
@@ -161,6 +162,9 @@
         {
           "en": "pill",
           "cz": "tableta / prášek",
+          "accepts": [
+            "tablet"
+          ],
           "use": [
             "this_is_a",
             "i_have_a",
@@ -357,126 +361,269 @@
   ],
   "sentences": [
     {
-      "en": "I have a headache.",
-      "cz": "Bolí mě hlava.",
+      "en": "Good food is important for your health.",
+      "cz": "Dobré jídlo je důležité pro tvoje zdraví.",
       "lemmas": [
-        "headache"
+        "health"
       ],
       "accepts": [
-        "I have a headache",
-        "My head hurts"
+        "Good food is important for your health",
+        "Good food is important for health"
       ]
     },
     {
-      "en": "I have a fever.",
-      "cz": "Mám horečku.",
-      "lemmas": [
-        "fever"
-      ],
-      "accepts": [
-        "I have a fever"
-      ]
-    },
-    {
-      "en": "I have a cough.",
-      "cz": "Mám kašel.",
-      "lemmas": [
-        "cough"
-      ],
-      "accepts": [
-        "I have a cough"
-      ]
-    },
-    {
-      "en": "I have flu.",
-      "cz": "Mám chřipku.",
-      "lemmas": [
-        "flu"
-      ],
-      "accepts": [
-        "I have flu",
-        "I have the flu"
-      ]
-    },
-    {
-      "en": "I need medicine.",
-      "cz": "Potřebuju léky.",
-      "lemmas": [
-        "medicine"
-      ],
-      "accepts": [
-        "I need medicine"
-      ]
-    },
-    {
-      "en": "My son is ill.",
-      "cz": "Můj syn je nemocný.",
-      "lemmas": [
-        "ill"
-      ],
-      "accepts": [
-        "My son is ill",
-        "My son is sick"
-      ]
-    },
-    {
-      "en": "My father is healthy.",
-      "cz": "Můj otec je zdravý.",
+      "en": "My father is healthy and strong.",
+      "cz": "Můj otec je zdravý a silný.",
       "lemmas": [
         "healthy"
       ],
       "accepts": [
-        "My father is healthy"
+        "My father is healthy and strong"
       ]
     },
     {
-      "en": "Where is the pharmacy?",
-      "cz": "Kde je lékárna?",
+      "en": "My son is ill, so he is not at school.",
+      "cz": "Můj syn je nemocný, tak není ve škole.",
       "lemmas": [
-        "pharmacy"
+        "ill"
       ],
       "accepts": [
-        "Where is the pharmacy"
+        "My son is ill, so he is not at school",
+        "My son is sick, so he is not at school"
       ]
     },
     {
-      "en": "Where is the hospital?",
-      "cz": "Kde je nemocnice?",
+      "en": "I feel sick today, so I am at home.",
+      "cz": "Je mi dnes špatně, tak jsem doma.",
       "lemmas": [
-        "hospital"
+        "sick"
       ],
       "accepts": [
-        "Where is the hospital"
+        "I feel sick today, so I am at home",
+        "I am sick today, so I am at home"
       ]
     },
     {
-      "en": "My brother is a doctor.",
-      "cz": "Můj bratr je doktor.",
+      "en": "I have a pain in my back.",
+      "cz": "Mám bolest v zádech.",
+      "lemmas": [
+        "pain"
+      ],
+      "accepts": [
+        "I have a pain in my back",
+        "My back hurts"
+      ]
+    },
+    {
+      "en": "My legs hurt after sport.",
+      "cz": "Po sportu mě bolí nohy.",
+      "lemmas": [
+        "hurt"
+      ],
+      "accepts": [
+        "My legs hurt after sport",
+        "After sport my legs hurt"
+      ]
+    },
+    {
+      "en": "I have a headache from the loud music.",
+      "cz": "Z té hlasité hudby mě bolí hlava.",
+      "lemmas": [
+        "headache"
+      ],
+      "accepts": [
+        "I have a headache from the loud music",
+        "My head hurts from the loud music"
+      ]
+    },
+    {
+      "en": "My stomach is full after a big lunch.",
+      "cz": "Po velkém obědě mám plný žaludek.",
+      "lemmas": [
+        "stomach"
+      ],
+      "accepts": [
+        "My stomach is full after a big lunch",
+        "After a big lunch my stomach is full"
+      ]
+    },
+    {
+      "en": "I have a high fever today.",
+      "cz": "Mám dnes vysokou horečku.",
+      "lemmas": [
+        "fever"
+      ],
+      "accepts": [
+        "I have a high fever today",
+        "I have got a high fever today"
+      ]
+    },
+    {
+      "en": "I have a bad cough at night.",
+      "cz": "V noci mám ošklivý kašel.",
+      "lemmas": [
+        "cough"
+      ],
+      "accepts": [
+        "I have a bad cough at night",
+        "At night I have a bad cough"
+      ]
+    },
+    {
+      "en": "I have a cold, so I drink hot tea.",
+      "cz": "Jsem nachlazený, tak piju horký čaj.",
+      "lemmas": [
+        "cold (illness)"
+      ],
+      "accepts": [
+        "I have a cold, so I drink hot tea",
+        "I have got a cold, so I drink hot tea"
+      ]
+    },
+    {
+      "en": "I have flu, so I am in bed.",
+      "cz": "Mám chřipku, tak jsem v posteli.",
+      "lemmas": [
+        "flu"
+      ],
+      "accepts": [
+        "I have flu, so I am in bed",
+        "I have the flu, so I am in bed"
+      ]
+    },
+    {
+      "en": "My brother is a doctor in Prague.",
+      "cz": "Můj bratr je doktor v Praze.",
       "lemmas": [
         "doctor"
       ],
       "accepts": [
-        "My brother is a doctor"
+        "My brother is a doctor in Prague"
       ]
     },
     {
-      "en": "My mother is a nurse.",
-      "cz": "Moje matka je zdravotní sestra.",
+      "en": "My mother is a nurse at the hospital.",
+      "cz": "Moje matka je zdravotní sestra v nemocnici.",
       "lemmas": [
+        "nurse",
+        "hospital"
+      ],
+      "accepts": [
+        "My mother is a nurse at the hospital",
+        "My mother is a nurse in the hospital"
+      ]
+    },
+    {
+      "en": "The doctor is with a patient now.",
+      "cz": "Doktor je teď u pacienta.",
+      "lemmas": [
+        "patient",
+        "doctor"
+      ],
+      "accepts": [
+        "The doctor is with a patient now",
+        "The doctor is now with a patient"
+      ]
+    },
+    {
+      "en": "Excuse me, where is the hospital?",
+      "cz": "Promiňte, kde je nemocnice?",
+      "lemmas": [
+        "hospital"
+      ],
+      "accepts": [
+        "Excuse me, where is the hospital",
+        "Sorry, where is the hospital"
+      ]
+    },
+    {
+      "en": "Where is the nearest pharmacy?",
+      "cz": "Kde je nejbližší lékárna?",
+      "lemmas": [
+        "pharmacy"
+      ],
+      "accepts": [
+        "Where is the nearest pharmacy"
+      ]
+    },
+    {
+      "en": "I need medicine for my cough.",
+      "cz": "Potřebuju lék na kašel.",
+      "lemmas": [
+        "medicine",
+        "cough"
+      ],
+      "accepts": [
+        "I need medicine for my cough",
+        "I need some medicine for my cough"
+      ]
+    },
+    {
+      "en": "I take one pill every morning.",
+      "cz": "Beru jednu tabletu každé ráno.",
+      "lemmas": [
+        "pill"
+      ],
+      "accepts": [
+        "I take one pill every morning",
+        "Every morning I take one pill"
+      ]
+    },
+    {
+      "en": "I have an appointment with the dentist at ten o'clock.",
+      "cz": "Mám termín u zubaře v deset hodin.",
+      "lemmas": [
+        "appointment",
+        "dentist"
+      ],
+      "accepts": [
+        "I have an appointment with the dentist at ten o'clock",
+        "I have an appointment at the dentist at ten o'clock",
+        "I have an appointment with the dentist at ten"
+      ]
+    },
+    {
+      "en": "The ambulance is big and yellow.",
+      "cz": "Sanitka je velká a žlutá.",
+      "lemmas": [
+        "ambulance"
+      ],
+      "accepts": [
+        "The ambulance is big and yellow"
+      ]
+    },
+    {
+      "en": "The nurse takes my temperature.",
+      "cz": "Sestra mi měří teplotu.",
+      "lemmas": [
+        "temperature",
         "nurse"
       ],
       "accepts": [
-        "My mother is a nurse"
+        "The nurse takes my temperature",
+        "The nurse is taking my temperature"
       ]
     },
     {
-      "en": "We need to rest.",
-      "cz": "Potřebujeme si odpočinout.",
+      "en": "We need to rest after the long walk.",
+      "cz": "Po dlouhé procházce si potřebujeme odpočinout.",
       "lemmas": [
         "rest (verb)"
       ],
       "accepts": [
-        "We need to rest"
+        "We need to rest after the long walk",
+        "After the long walk we need to rest"
+      ]
+    },
+    {
+      "en": "I go to the dentist two times a year.",
+      "cz": "Chodím k zubaři dvakrát za rok.",
+      "lemmas": [
+        "dentist"
+      ],
+      "accepts": [
+        "I go to the dentist two times a year",
+        "I go to the dentist twice a year"
       ]
     }
   ]

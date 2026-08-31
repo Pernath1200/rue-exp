@@ -200,11 +200,7 @@ const more = document.getElementById("t-more");
 const useBtn = document.getElementById("t-sent");
 assert(more, "Type 2 offered after 12/23");
 assert(more.classList.contains("primary"), "Type 2 is primary after 12/23");
-assert(useBtn, "Use available after 12/23");
-assert(
-  !useBtn.classList.contains("primary"),
-  "Use is not primary after only one Type round of 23",
-);
+assert(!useBtn, "Use locked until Type 23/23");
 
 if (failed) {
   console.error(`${failed} failed`);

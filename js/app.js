@@ -4,7 +4,7 @@
  */
 
 import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-31-match9";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-31-usetree2";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-31-adopt";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -30,6 +30,7 @@ import {
   vocabCoverage,
   refreshUnit,
   levelUnitStats,
+  nodeHasFruit,
   nodeTreeStrength,
   reviewDueList,
   backfillReview,
@@ -38,7 +39,7 @@ import {
   FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
-} from "./progress.js?v=2026-08-31-usetree2";
+} from "./progress.js?v=2026-08-31-adopt";
 import {
   mountSmokeFlagsUI,
   getSmokeApi,
@@ -283,7 +284,10 @@ function bindHashRouting() {
 
 function isFruit(node) {
   if (!node || node.status !== "live") return false;
-  return node.domain === "grammar" ? hasFruit(node.id) : hasVocabFruit(node);
+  /* nodeHasFruit, not the domain branch: an end-of-unit check banks its
+   * round grammar-side whatever its domain, so a1_vocab_match would have
+   * read unfruited for ever and Do next would keep offering it. */
+  return nodeHasFruit(node);
 }
 
 /**
@@ -725,7 +729,10 @@ function spineNext() {
     const node = nodeById(nid);
     if (!node || !node.levels?.includes(STATE.level)) continue;
     if (node.status !== "live" || !node.content) continue;
-    if (node.fruit === false) continue;
+    /* End-of-unit checks used to be skipped here because nothing could ever
+     * fruit them — which left the path saying "complete" with the revision
+     * units and the level test still to do. They fruit off one round now, so
+     * isFruit below decides, same as any unit (James, 2026-08-31). */
     const chained = chainVocabId(nid);
     if (chained) {
       if (sittingBothFruit(nid)) continue;
@@ -1375,6 +1382,12 @@ async function openNode(node, launch = {}) {
     root.innerHTML = "";
 
     STATE.lastPlayedLevel = levelOfNode(node);
+    /* Snapshot before any sprint writes fruit, so the payoff can animate the
+     * meter growing rather than comparing against the new total. */
+    const sprintStatsBefore = levelUnitStats(
+      levelOfNode(node),
+      STATE.tree?.nodes || [],
+    );
 
     if (
       pack.practice === "grammar_match_sprint" ||
@@ -1385,6 +1398,14 @@ async function openNode(node, launch = {}) {
         node,
         loadJson,
         tree: STATE.tree,
+        // End-of-unit checks fruit off one whole round (James, 2026-08-31).
+        onFruit: (meta = {}) => {
+          queueFruitPayoff(
+            node.id,
+            meta.grow === false ? null : sprintStatsBefore,
+            { grow: meta.grow !== false },
+          );
+        },
         onExit: () => {
           if (maybeShowFruitPayoff()) return;
           goHome();
@@ -1399,6 +1420,14 @@ async function openNode(node, launch = {}) {
         node,
         loadJson,
         tree: STATE.tree,
+        // End-of-unit checks fruit off one whole round (James, 2026-08-31).
+        onFruit: (meta = {}) => {
+          queueFruitPayoff(
+            node.id,
+            meta.grow === false ? null : sprintStatsBefore,
+            { grow: meta.grow !== false },
+          );
+        },
         onExit: () => {
           if (maybeShowFruitPayoff()) return;
           goHome();
@@ -1479,6 +1508,14 @@ async function openNode(node, launch = {}) {
         node,
         loadJson,
         tree: STATE.tree,
+        // End-of-unit checks fruit off one whole round (James, 2026-08-31).
+        onFruit: (meta = {}) => {
+          queueFruitPayoff(
+            node.id,
+            meta.grow === false ? null : sprintStatsBefore,
+            { grow: meta.grow !== false },
+          );
+        },
         onExit: () => {
           if (maybeShowFruitPayoff()) return;
           goHome();
@@ -1493,6 +1530,14 @@ async function openNode(node, launch = {}) {
         node,
         loadJson,
         tree: STATE.tree,
+        // End-of-unit checks fruit off one whole round (James, 2026-08-31).
+        onFruit: (meta = {}) => {
+          queueFruitPayoff(
+            node.id,
+            meta.grow === false ? null : sprintStatsBefore,
+            { grow: meta.grow !== false },
+          );
+        },
         onExit: () => {
           if (maybeShowFruitPayoff()) return;
           goHome();
@@ -1573,6 +1618,9 @@ async function openNode(node, launch = {}) {
         quizCleared: cov.quizCleared,
         typeCleared: cov.typeCleared,
         matchCleared: cov.matchCleared,
+        // Already fruited: practice adopts the live deck rather than letting
+        // a rewritten pack demote a finished unit (James, 2026-08-31).
+        wasFruit: cov.fruited,
         // Pack-level, not block-level: practiceBlock is built from the pack's
         // BLOCK, so anything living at the top of the JSON has to be passed
         // through explicitly or the engine never sees it.

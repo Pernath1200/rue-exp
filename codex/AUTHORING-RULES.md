@@ -293,6 +293,18 @@ scaled today — but it fails in a specific and dangerous way.
 
 ---
 
+## J · Placement
+
+Added 2026-08-31. Which tree a unit sits in is an authoring decision, not a filing detail —
+it picks which intro rules apply and whether progress is even readable.
+
+| ID | Rule | From | State |
+|---|---|---|---|
+| **J1** | A unit whose teaching point is a **form** is a grammar unit: registered in `nodes-grammar.json`, filed in `data/grammar/blocks/`, built to the C rules. A form pack parked in the vocab tree faces none of them — no C9 walltext gate, no C10 table-per-card, no `lint.py` — so its intro drifts back to a prose page 1 that no check ever reads. Recycling earlier grammar into a trunk is fine (F1); dressing it as vocab is not. | `trunk_glue_pronouns_a1` 2026-08-31: object pronouns, possessives and this/that sat in the vocab tree with a four-line prose page 1 — *"this is grammar not vocab / should be labelled as such / doesn't follow the rules for grammar units"*. Moved vocab→grammar; intro rebuilt to C9/C10/C13/C14/C32. | `observed` |
+| **J2** | A grammar pack's **filename, its `id`, and its node id are one string**. `build_inspected_register.py` globs `data/grammar/blocks/*.json` and keys on the filename stem, so a mismatch silently drops the unit from the register. Worse, `practice-grammar.js` writes progress under `pack.id` while `app.js` reads fruit off `node.id` — a mismatched pack banks fruit the tree can never show. | `trunk_glue_pronouns_a1` 2026-08-31: moved in keeping its vocab-era name `a1_core_frames_glue_pronouns`; the register rebuild dropped it (64 live units, 63 rows) and its fruit would have been written to a key nothing reads. Renamed file, `id` and `blocks[0].id` to the node id. | `observed` |
+
+---
+
 ## Known gap
 
 **Nobody can check the Czech.** James does not read it; scripts cannot; agents should not be

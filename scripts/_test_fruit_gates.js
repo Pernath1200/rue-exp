@@ -158,7 +158,8 @@ assert(
   "Match 11/23 does not fruit",
 );
 
-// Countries: Type 24/30 + Match skip/one board + Use 12/12 → tree
+// Countries: Type must walk all 30 — the 25–35 short-tail exemption was
+// removed 2026-08-31 (James), so 24/30 no longer fruits, 30/30 does.
 store.clear();
 const keys30 = Array.from({ length: 30 }, (_, i) => `c${i}‖k${i}`);
 const keys14 = keys30.slice(0, 14);
@@ -183,8 +184,19 @@ completeVocabMode("v_countries", "type", {
 });
 completeVocabMode("v_countries", "sentence", { score: 12, total: 12 });
 assert(
+  blockHasFruit(loadProgress().vocab.blocks.v_countries) === false,
+  "Countries Type 24/30 does not fruit",
+);
+completeVocabMode("v_countries", "type", {
+  score: 6,
+  total: 6,
+  coveredKeys: keys30,
+  need: 30,
+  coverageDone: true,
+});
+assert(
   blockHasFruit(loadProgress().vocab.blocks.v_countries) === true,
-  "Countries Type 24/30 + Match skip fruits after Use",
+  "Countries Type 30/30 + Match skip fruits after Use",
 );
 
 store.clear();

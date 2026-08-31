@@ -5,6 +5,7 @@
   "tree_node": "leaf_tech_a1",
   "note": "P3 Oxford A1 tech/media. Phone/computer also appear in Work/Home — OK for domain practice. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "tech_devices",
@@ -40,8 +41,11 @@
           ]
         },
         {
-          "en": "mobile",
+          "en": "mobile phone",
           "cz": "mobil",
+          "accepts": [
+            "mobile"
+          ],
           "use": [
             "this_is_a",
             "i_have_a",
@@ -70,7 +74,7 @@
         },
         {
           "en": "TV",
-          "cz": "televize (TV)",
+          "cz": "televize",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -91,24 +95,6 @@
         {
           "en": "video",
           "cz": "video",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "DVD",
-          "cz": "DVD",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
-          "en": "CD",
-          "cz": "CD",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -165,15 +151,6 @@
             "i_have_a",
             "i_need_a",
             "where_is_the"
-          ]
-        },
-        {
-          "en": "blog",
-          "cz": "blog",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
           ]
         },
         {
@@ -245,7 +222,7 @@
   ],
   "intro": [
     {
-      "title": "Machines",
+      "title": "Machines and devices",
       "title_cz": "Přístroje",
       "pictures": [
         {
@@ -265,7 +242,7 @@
         },
         {
           "icon": "📱",
-          "en": "mobile",
+          "en": "mobile phone",
           "cz": "mobil"
         },
         {
@@ -281,7 +258,7 @@
         {
           "icon": "📺",
           "en": "TV",
-          "cz": "televize (TV)"
+          "cz": "televize"
         },
         {
           "icon": "📻",
@@ -292,16 +269,6 @@
           "icon": "📹",
           "en": "video",
           "cz": "video"
-        },
-        {
-          "icon": "📀",
-          "en": "DVD",
-          "cz": "DVD"
-        },
-        {
-          "icon": "💿",
-          "en": "CD",
-          "cz": "CD"
         },
         {
           "icon": "🖥️",
@@ -333,11 +300,6 @@
           "icon": "📧",
           "en": "email",
           "cz": "e-mail"
-        },
-        {
-          "icon": "✍️",
-          "en": "blog",
-          "cz": "blog"
         },
         {
           "icon": "📷",
@@ -390,13 +352,13 @@
   ],
   "sentences": [
     {
-      "en": "This is my computer.",
-      "cz": "To je můj počítač.",
+      "en": "This is my new computer.",
+      "cz": "To je můj nový počítač.",
       "lemmas": [
         "computer"
       ],
       "accepts": [
-        "This is my computer"
+        "This is my new computer"
       ]
     },
     {
@@ -416,17 +378,23 @@
         "mobile"
       ],
       "accepts": [
-        "My mobile is on the table"
+        "My mobile is on the table",
+        "My phone is on the table"
+      ],
+      "gap_accepts": [
+        "phone",
+        "mobile phone"
       ]
     },
     {
-      "en": "I need a camera.",
-      "cz": "Potřebuji fotoaparát.",
+      "en": "I need a camera for my holiday.",
+      "cz": "Potřebuji fotoaparát na dovolenou.",
       "lemmas": [
         "camera"
       ],
       "accepts": [
-        "I need a camera"
+        "I need a camera for my holiday",
+        "I need a camera for my vacation"
       ]
     },
     {
@@ -440,14 +408,14 @@
       ]
     },
     {
-      "en": "I listen to the radio.",
-      "cz": "Poslouchám rádio.",
+      "en": "I listen to the radio in the morning.",
+      "cz": "Ráno poslouchám rádio.",
       "lemmas": [
         "radio"
       ],
       "accepts": [
-        "I listen to the radio",
-        "I am listening to the radio"
+        "I listen to the radio in the morning",
+        "In the morning I listen to the radio"
       ]
     },
     {
@@ -461,14 +429,15 @@
       ]
     },
     {
-      "en": "We do not have internet.",
-      "cz": "Nemáme internet.",
+      "en": "We do not have internet at home.",
+      "cz": "Doma nemáme internet.",
       "lemmas": [
         "internet"
       ],
       "accepts": [
-        "We do not have internet",
-        "We have no internet"
+        "We do not have internet at home",
+        "We have no internet at home",
+        "At home we do not have internet"
       ]
     },
     {
@@ -513,14 +482,14 @@
       ]
     },
     {
-      "en": "I watch the news.",
-      "cz": "Dívám se na zprávy.",
+      "en": "I watch the news every evening.",
+      "cz": "Každý večer se dívám na zprávy.",
       "lemmas": [
         "news"
       ],
       "accepts": [
-        "I watch the news",
-        "I am watching the news"
+        "I watch the news every evening",
+        "Every evening I watch the news"
       ]
     },
     {
@@ -531,6 +500,92 @@
       ],
       "accepts": [
         "My father reads the newspaper"
+      ]
+    },
+    {
+      "en": "Answer the telephone, please.",
+      "cz": "Zvedni telefon, prosím.",
+      "lemmas": [
+        "telephone"
+      ],
+      "accepts": [
+        "Answer the telephone, please",
+        "Answer the telephone please",
+        "Answer the telephone",
+        "Please answer the telephone"
+      ]
+    },
+    {
+      "en": "We watch TV in the evening.",
+      "cz": "Večer se díváme na televizi.",
+      "lemmas": [
+        "TV"
+      ],
+      "accepts": [
+        "We watch TV in the evening",
+        "In the evening we watch TV",
+        "We watch television in the evening",
+        "In the evening we watch television"
+      ]
+    },
+    {
+      "en": "I watch a funny video on my phone.",
+      "cz": "Dívám se na vtipné video na telefonu.",
+      "lemmas": [
+        "video",
+        "phone"
+      ],
+      "accepts": [
+        "I watch a funny video on my phone",
+        "I am watching a funny video on my phone"
+      ]
+    },
+    {
+      "en": "My brother plays games online.",
+      "cz": "Můj bratr hraje hry online.",
+      "lemmas": [
+        "online"
+      ],
+      "accepts": [
+        "My brother plays games online",
+        "My brother plays online games"
+      ]
+    },
+    {
+      "en": "This is an old photograph of my grandfather.",
+      "cz": "To je stará fotografie mého dědečka.",
+      "lemmas": [
+        "photograph"
+      ],
+      "accepts": [
+        "This is an old photograph of my grandfather",
+        "It is an old photograph of my grandfather",
+        "This is an old photo of my grandfather"
+      ],
+      "gap_accepts": [
+        "photo"
+      ]
+    },
+    {
+      "en": "There is a big picture on the wall.",
+      "cz": "Na zdi je velký obraz.",
+      "lemmas": [
+        "picture"
+      ],
+      "accepts": [
+        "There is a big picture on the wall",
+        "A big picture is on the wall"
+      ]
+    },
+    {
+      "en": "I read a magazine on the train.",
+      "cz": "Ve vlaku si čtu časopis.",
+      "lemmas": [
+        "magazine"
+      ],
+      "accepts": [
+        "I read a magazine on the train",
+        "I am reading a magazine on the train"
       ]
     }
   ]

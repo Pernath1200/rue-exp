@@ -422,6 +422,25 @@ function placeBehind() {
 function placeInFrontOf() {
   return svg(pBox(66, 46, 88, 48) + pBall(110, 102), 220, 150);
 }
+function pDash(x1, y1, x2, y2) {
+  return `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${MUTED}" stroke-width="2" stroke-dasharray="5 5"/>`;
+}
+/* above · between · opposite · near — ported from practice-vocab diagramSvg
+ * when the four folded in from the retired core_frames prepositions trunk
+ * (James 2026-08-31). Same reason as the block above: the grammar pack names
+ * the key, introDiagram has to know it or the item renders blank. */
+function placeAbove() {
+  return svg(pBox(70, 94, 80, 32) + pBall(110, 44), 220, 150);
+}
+function placeBetween() {
+  return svg(pBox(22, 70, 46, 45) + pBox(152, 70, 46, 45) + pBall(110, 92), 220, 150);
+}
+function placeOpposite() {
+  return svg(pBox(22, 70, 46, 45) + pBox(152, 70, 46, 45) + pDash(72, 92, 148, 92), 220, 150);
+}
+function placeNear() {
+  return svg(pBox(40, 70, 54, 45) + pBall(170, 92) + pDash(98, 92, 150, 92), 220, 150);
+}
 function pMap(x, y, w, h, dotX, dotY) {
   const x2 = x + w, y2 = y + h;
   const streets =
@@ -752,6 +771,11 @@ const SCHEMATICS = {
   "next to": placeNextTo,
   behind: placeBehind,
   "in front of": placeInFrontOf,
+  above: placeAbove,
+  between: placeBetween,
+  opposite: placeOpposite,
+  near: placeNear,
+  by: placeNear,
   "in-on-at": placeInOnAt,
   "to-for-with": toForWith,
   "move-to": moveTo,
@@ -816,8 +840,163 @@ function articlesMapHtml() {
     </div>`;
 }
 
+/* ---- Calendars (HTML, not SVG) --------------------------------------------
+ * Days and months are a grid of two-language text cells. SVG would mean
+ * per-cell font-shrinking to fit "čtvrtek" and "listopad" (the wrapFit
+ * problem from b1_articles_advanced), so these follow the articles_map
+ * precedent and return HTML that CSS grid lays out.
+ *
+ * No target-language text lives in here — the forks (rupl, rucz, rufr…)
+ * share this file. Every visible word comes from the pack's labels as
+ * "en · cz" pairs.
+ */
+
+/** Split a pack label "english · czech" into its two halves. */
+function pair(labelText) {
+  const [en, ...rest] = String(labelText || "").split(" · ");
+  return { en: (en || "").trim(), cz: rest.join(" · ").trim() };
+}
+
+/** Find a caption chip by its English side, e.g. chip(chips, "today"). */
+function chip(chips, en) {
+  return chips.find((c) => c.en.toLowerCase() === String(en).toLowerCase()) || null;
+}
+
+function cell(cls, front, back) {
+  return `<div class="cal-cell${cls ? " " + cls : ""}">
+      <span class="cal-en">${esc(front)}</span>
+      ${back ? `<span class="cal-cz">${esc(back)}</span>` : ""}
+    </div>`;
+}
+
+function chipRow(chips) {
+  if (!chips.length) return "";
+  return `<div class="cal-chips">${chips
+    .map(
+      (c) =>
+        `<span class="cal-chip"><strong>${esc(c.en)}</strong>${
+          c.cz ? ` <span class="cal-cz">${esc(c.cz)}</span>` : ""
+        }</span>`,
+    )
+    .join("")}</div>`;
+}
+
+/**
+ * Week strip — seven day cells, weekend shaded, the real current day tagged.
+ * labels: [7 days Mon-first as "en · cz", then caption chips as "en · cz"].
+ * Chips named today/tomorrow become cell tags instead of sitting in the row;
+ * a chip named week becomes the span caption under the strip.
+ */
+function week_strip(labels) {
+  const all = (labels || []).map(pair);
+  const days = all.slice(0, 7);
+  if (days.length < 7) return "";
+  const chips = all.slice(7).filter((c) => c.en);
+  const today = chip(chips, "today");
+  const tomorrow = chip(chips, "tomorrow");
+  const week = chip(chips, "week");
+  const rest = chips.filter((c) => c !== today && c !== tomorrow && c !== week);
+
+  // getDay() is 0=Sunday; the strip is Monday-first.
+  let todayIdx = -1;
+  try {
+    todayIdx = (new Date().getDay() + 6) % 7;
+  } catch {
+    todayIdx = -1;
+  }
+  const tomorrowIdx = todayIdx < 0 ? -1 : (todayIdx + 1) % 7;
+
+  const cells = days
+    .map((d, i) => {
+      const cls = [];
+      if (i >= 5) cls.push("is-weekend");
+      if (today && i === todayIdx) cls.push("is-today");
+      if (tomorrow && i === tomorrowIdx) cls.push("is-tomorrow");
+      const tag =
+        today && i === todayIdx
+          ? today
+          : tomorrow && i === tomorrowIdx
+            ? tomorrow
+            : null;
+      return `<div class="cal-day ${cls.join(" ")}">
+          ${tag ? `<span class="cal-tag"><strong>${esc(tag.en)}</strong>${tag.cz ? ` ${esc(tag.cz)}` : ""}</span>` : `<span class="cal-tag cal-tag-empty"></span>`}
+          ${cell("", d.en, d.cz)}
+        </div>`;
+    })
+    .join("");
+
+  return `<div class="calendar cal-week" role="img" aria-label="A week from ${esc(days[0].en)} to ${esc(days[6].en)}">
+      <div class="cal-strip">${cells}</div>
+      ${
+        week
+          ? `<div class="cal-span"><span class="cal-span-line"></span><span class="cal-span-label"><strong>${esc(week.en)}</strong>${week.cz ? ` <span class="cal-cz">${esc(week.cz)}</span>` : ""}</span><span class="cal-span-line"></span></div>`
+          : ""
+      }
+      ${chipRow(rest)}
+    </div>`;
+}
+
+/** Which season a month sits in, by its position in the year (0 = January). */
+const SEASON_OF_MONTH = [
+  "winter", "winter", "spring", "spring", "spring", "summer",
+  "summer", "summer", "autumn", "autumn", "autumn", "winter",
+];
+
+/**
+ * Year grid — twelve month cells, three across, shaded by season.
+ * labels: [12 months Jan-first as "en · cz", then caption chips as "en · cz"].
+ * Chips named winter/spring/summer/autumn become the season legend; the rest
+ * (typically year) sit under the grid. The real current month is ringed.
+ */
+function year_grid(labels) {
+  const all = (labels || []).map(pair);
+  const months = all.slice(0, 12);
+  if (months.length < 12) return "";
+  const chips = all.slice(12).filter((c) => c.en);
+  const seasons = ["winter", "spring", "summer", "autumn"]
+    .map((s) => ({ key: s, label: chip(chips, s) }))
+    .filter((s) => s.label);
+  const rest = chips.filter((c) => !seasons.some((s) => s.label === c));
+
+  let nowIdx = -1;
+  try {
+    nowIdx = new Date().getMonth();
+  } catch {
+    nowIdx = -1;
+  }
+
+  const cells = months
+    .map((m, i) => {
+      const cls = `season-${SEASON_OF_MONTH[i]}${i === nowIdx ? " is-now" : ""}`;
+      return cell(cls, m.en, m.cz);
+    })
+    .join("");
+
+  return `<div class="calendar cal-year" role="img" aria-label="The twelve months from ${esc(months[0].en)} to ${esc(months[11].en)}">
+      <div class="cal-grid">${cells}</div>
+      ${
+        seasons.length
+          ? `<div class="cal-legend">${seasons
+              .map(
+                (s) =>
+                  `<span class="cal-key season-${s.key}"><i></i><strong>${esc(s.label.en)}</strong>${s.label.cz ? ` <span class="cal-cz">${esc(s.label.cz)}</span>` : ""}</span>`,
+              )
+              .join("")}</div>`
+          : ""
+      }
+      ${chipRow(rest)}
+    </div>`;
+}
+
+/** Schematics that draw HTML rather than SVG (grids of two-language text). */
+const HTML_SCHEMATICS = {
+  articles_map: articlesMapHtml,
+  week_strip,
+  year_grid,
+};
+
 /** Names a pack may use in `diagram`. */
-export const DIAGRAM_KEYS = Object.keys(SCHEMATICS).concat("articles_map");
+export const DIAGRAM_KEYS = Object.keys(SCHEMATICS).concat(Object.keys(HTML_SCHEMATICS));
 
 /**
  * @param {string} name schematic id
@@ -825,7 +1004,8 @@ export const DIAGRAM_KEYS = Object.keys(SCHEMATICS).concat("articles_map");
  * @returns {string} SVG markup, or "" if the name is unknown
  */
 export function introDiagram(name, labels) {
-  if (name === "articles_map") return articlesMapHtml();
+  const html = HTML_SCHEMATICS[name];
+  if (html) return html(Array.isArray(labels) ? labels.map((l) => String(l)) : []);
   const fn = SCHEMATICS[name];
   if (!fn) return "";
   return fn(Array.isArray(labels) ? labels.map((l) => String(l)) : []);

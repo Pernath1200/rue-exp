@@ -14,16 +14,16 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**Grammar: 55 inspected · 0 approved · 8 unseen** of 63 live units
+**Grammar: 55 inspected · 0 approved · 9 unseen** of 64 live units
 
-**Vocab A1–A2: 13 inspected · 0 approved · 50 unseen** of 63 live units
+**Vocab A1–A2: 15 inspected · 0 approved · 47 unseen** of 62 live units
 
 Of the 6 cloud-authored units, **3 have any tick**.
 
 `cloud` = written by the August auto-build, never read by anyone. `seen?` = the pack note mentions a James smoke, so it may be part-inspected — evidence, not a tick.
 
 
-## A1 — 22 inspected / 0 approved / 23 units
+## A1 — 22 inspected / 0 approved / 24 units
 
 - [x][ ] `a1_be_have` — Be / have · 31 items · **cloud** · seen?
 - [x][ ] `a1_agreement` — Subject–verb agreement · 28 items
@@ -48,6 +48,7 @@ Of the 6 cloud-authored units, **3 have any tick**.
 - [x][ ] `a1_to_for_with` — To / for / with · 24 items
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
+- [ ][ ] `trunk_glue_pronouns_a1` — me · my · this & that · 12 items
 
 ## A2 — 17 inspected / 0 approved / 17 units
 
@@ -106,7 +107,7 @@ Of the 6 cloud-authored units, **3 have any tick**.
 Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the rail.
 
 
-## A1 vocab — 13 inspected / 0 approved / 38 units
+## A1 vocab — 15 inspected / 0 approved / 37 units
 
 - [x][ ] `trunk_frames_a1` — I am · I have · 12 items · **cloud**
 - [x][ ] `trunk_social_a1` — Core frames · Social chunks · 12 items · seen?
@@ -121,26 +122,25 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [x][ ] `leaf_countries_a1` — Countries · 44 items
 - [x][ ] `leaf_food_a1` — Food & drink · 58 items
 - [x][ ] `leaf_clothes_a1` — Clothes · 23 items
-- [ ][ ] `leaf_body_a1` — Body · 24 items
-- [ ][ ] `leaf_health_a1` — Health · 24 items
-- [ ][ ] `trunk_glue_pronouns_a1` — Core frames · Pronouns · this that · 12 items
-- [ ][ ] `trunk_can_like_want_a1` — Core frames · Can · like · want · 12 items
-- [ ][ ] `trunk_verbs_more2_a1` — Core frames · Verbs · more 2 · 12 items
+- [x][ ] `leaf_body_a1` — Body · 24 items
+- [x][ ] `leaf_health_a1` — Health · 24 items
+- [ ][ ] `trunk_can_like_want_a1` — Can · like · want · 12 items
+- [ ][ ] `trunk_verbs_more2_a1` — Verbs · more 2 · 12 items
 - [ ][ ] `leaf_work_a1` — Work · 30 items
 - [ ][ ] `leaf_school_a1` — School & study · 47 items
-- [ ][ ] `trunk_glue_modals_a1` — Core frames · Will · must · do · 12 items
+- [ ][ ] `trunk_glue_modals_a1` — Will · must · do · 12 items
 - [ ][ ] `trunk_prepositions_a1` — Core frames · Prepositions of place · 12 items
 - [ ][ ] `trunk_verbs_more3_a1` — Core frames · Verbs · more 3 · 12 items
 - [ ][ ] `trunk_there_time_a1` — Core frames · There is · time · 12 items
-- [ ][ ] `trunk_glue_quantity_a1` — Core frames · Some · any · every · 12 items
+- [ ][ ] `trunk_glue_quantity_a1` — Some · any · every · 12 items
 - [ ][ ] `leaf_time_a1` — Numbers / time 1 · 36 items
 - [ ][ ] `leaf_time_2_a1` — Numbers / time 2 · 60 items
 - [ ][ ] `leaf_nature_a1` — Nature & weather · 36 items
 - [ ][ ] `leaf_shopping_a1` — Shopping & money · 34 items
 - [ ][ ] `leaf_animals_a1` — Animals · 21 items
-- [ ][ ] `trunk_glue_linkers_a1` — Core frames · And · but · because · 12 items
+- [ ][ ] `trunk_glue_linkers_a1` — And · but · because · 12 items
 - [ ][ ] `trunk_verbs_action_a1` — Core frames · Verbs · action · 12 items
-- [ ][ ] `leaf_tech_a1` — Tech & media · 24 items
+- [ ][ ] `leaf_tech_a1` — Tech & media · 22 items
 - [ ][ ] `leaf_colours_a1` — Colours · 12 items
 - [ ][ ] `trunk_adjectives_a1` — Core frames · Adjectives · 48 items
 - [ ][ ] `leaf_ideas_a1` — Ideas & things · 47 items

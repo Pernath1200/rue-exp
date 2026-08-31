@@ -5,6 +5,7 @@
   "tree_node": "leaf_body_a1",
   "note": "P2 Oxford A1 body parts. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "body_parts",
@@ -191,6 +192,9 @@
         {
           "en": "short (height)",
           "cz": "malý / nízký",
+          "accepts": [
+            "small"
+          ],
           "use": [
             "i_am_adj",
             "he_is_adj"
@@ -355,13 +359,14 @@
   ],
   "sentences": [
     {
-      "en": "This is my body.",
-      "cz": "To je moje tělo.",
+      "en": "Sport is good for the body.",
+      "cz": "Sport je dobrý pro tělo.",
       "lemmas": [
         "body"
       ],
       "accepts": [
-        "This is my body"
+        "Sport is good for the body",
+        "Sport is good for your body"
       ]
     },
     {
@@ -371,17 +376,19 @@
         "head"
       ],
       "accepts": [
-        "I have a hat on my head"
+        "I have a hat on my head",
+        "I have a cap on my head"
       ]
     },
     {
-      "en": "This is my face.",
-      "cz": "To je můj obličej.",
+      "en": "She has a nice face.",
+      "cz": "Má hezký obličej.",
       "lemmas": [
         "face"
       ],
       "accepts": [
-        "This is my face"
+        "She has a nice face",
+        "She has got a nice face"
       ]
     },
     {
@@ -397,44 +404,46 @@
       ]
     },
     {
-      "en": "I have two eyes.",
-      "cz": "Mám dvě oči.",
+      "en": "I have something in my eye.",
+      "cz": "Mám něco v oku.",
       "lemmas": [
         "eye"
       ],
       "accepts": [
-        "I have two eyes"
+        "I have something in my eye"
       ]
     },
     {
-      "en": "I hear with my ears.",
-      "cz": "Slyším ušima.",
+      "en": "I hear with my left ear.",
+      "cz": "Slyším levým uchem.",
       "lemmas": [
         "ear"
       ],
       "accepts": [
-        "I hear with my ears"
+        "I hear with my left ear",
+        "I can hear with my left ear"
       ]
     },
     {
-      "en": "I have a nose and a mouth.",
-      "cz": "Mám nos a ústa.",
+      "en": "She has a small nose.",
+      "cz": "Má malý nos.",
       "lemmas": [
-        "nose",
-        "mouth"
+        "nose"
       ],
       "accepts": [
-        "I have a nose and a mouth"
+        "She has a small nose",
+        "She has got a small nose"
       ]
     },
     {
-      "en": "The child has a tooth.",
-      "cz": "Dítě má zub.",
+      "en": "The child has a new tooth.",
+      "cz": "Dítě má nový zub.",
       "lemmas": [
         "tooth"
       ],
       "accepts": [
-        "The child has a tooth"
+        "The child has a new tooth",
+        "The child has got a new tooth"
       ]
     },
     {
@@ -469,13 +478,145 @@
       ]
     },
     {
-      "en": "My father is tall.",
-      "cz": "Můj otec je vysoký.",
+      "en": "My father is very tall.",
+      "cz": "Můj otec je velmi vysoký.",
       "lemmas": [
         "tall"
       ],
       "accepts": [
-        "My father is tall"
+        "My father is very tall"
+      ]
+    },
+    {
+      "en": "Open your mouth, please.",
+      "cz": "Otevři ústa, prosím.",
+      "lemmas": [
+        "mouth"
+      ],
+      "accepts": [
+        "Open your mouth, please",
+        "Open your mouth please",
+        "Open your mouth"
+      ]
+    },
+    {
+      "en": "I have a book under my arm.",
+      "cz": "Mám knihu pod paží.",
+      "lemmas": [
+        "arm"
+      ],
+      "accepts": [
+        "I have a book under my arm"
+      ]
+    },
+    {
+      "en": "I have a sock on my foot.",
+      "cz": "Mám na noze ponožku.",
+      "lemmas": [
+        "foot"
+      ],
+      "accepts": [
+        "I have a sock on my foot"
+      ]
+    },
+    {
+      "en": "This is my finger.",
+      "cz": "To je můj prst.",
+      "lemmas": [
+        "finger"
+      ],
+      "accepts": [
+        "This is my finger"
+      ]
+    },
+    {
+      "en": "I have a scarf around my neck.",
+      "cz": "Mám kolem krku šálu.",
+      "lemmas": [
+        "neck"
+      ],
+      "accepts": [
+        "I have a scarf around my neck",
+        "I have a scarf on my neck"
+      ]
+    },
+    {
+      "en": "I have a bag on my shoulder.",
+      "cz": "Mám na rameni tašku.",
+      "lemmas": [
+        "shoulder"
+      ],
+      "accepts": [
+        "I have a bag on my shoulder"
+      ]
+    },
+    {
+      "en": "The cat sits on my knee.",
+      "cz": "Kočka mi sedí na koleni.",
+      "lemmas": [
+        "knee"
+      ],
+      "accepts": [
+        "The cat sits on my knee",
+        "The cat is sitting on my knee"
+      ]
+    },
+    {
+      "en": "My grandmother has a strong heart.",
+      "cz": "Moje babička má silné srdce.",
+      "lemmas": [
+        "heart"
+      ],
+      "accepts": [
+        "My grandmother has a strong heart",
+        "My grandmother has got a strong heart"
+      ]
+    },
+    {
+      "en": "Blood is dark red.",
+      "cz": "Krev je tmavě červená.",
+      "lemmas": [
+        "blood"
+      ],
+      "accepts": [
+        "Blood is dark red"
+      ]
+    },
+    {
+      "en": "The sun is good for my skin.",
+      "cz": "Slunce je dobré pro moji kůži.",
+      "lemmas": [
+        "skin"
+      ],
+      "accepts": [
+        "The sun is good for my skin"
+      ]
+    },
+    {
+      "en": "My little brother is short.",
+      "cz": "Můj mladší bratr je malý.",
+      "lemmas": [
+        "short (height)"
+      ],
+      "accepts": [
+        "My little brother is short",
+        "My little brother is small",
+        "My younger brother is short",
+        "My younger brother is small"
+      ]
+    },
+    {
+      "en": "Her hair is long and blonde.",
+      "cz": "Má dlouhé blond vlasy.",
+      "lemmas": [
+        "blonde",
+        "hair"
+      ],
+      "accepts": [
+        "Her hair is long and blonde",
+        "Her hair is long and blond",
+        "She has long blonde hair",
+        "She has long blond hair"
       ]
     }
   ]

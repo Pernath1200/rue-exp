@@ -301,7 +301,10 @@ for (let i = 0; i < 12; i++) {
 const hub1 = root.textContent;
 assert(/12 \/ 30 words/.test(hub1), `Type hub 12/30 (${hub1.slice(0, 220)})`);
 assert(/Type 1 of 3 done/.test(hub1), "three Type rounds for 30 words");
-assert(document.getElementById("t-sent"), "Use available after first Type set");
+assert(
+  !document.getElementById("t-sent"),
+  "Use locked until Type fruit-coverage (not after 12/30)",
+);
 assert(
   document.getElementById("t-more")?.classList.contains("primary"),
   "Type 2 is primary after 12/30",
@@ -329,15 +332,39 @@ assert(overlap.length === 0, `round 2 repeats round 1: ${overlap.join(", ")}`);
 const hub2 = root.textContent;
 assert(/24 \/ 30 words/.test(hub2), `Type hub 24/30 (${hub2.slice(0, 220)})`);
 const last2 = typeReports[typeReports.length - 1];
-assert(last2 && last2.coverageDone === true, "24/30 is enough Type for the tree");
+// Short-tail exemption removed 2026-08-31 (James): the 6-word round 3 is
+// no longer skippable, so 24/30 does not fruit and Use stays locked.
+assert(last2 && last2.coverageDone === false, "24/30 does not clear Type");
+assert(!document.getElementById("t-sent"), "Use locked after 24/30 leftover");
+assert(
+  document.getElementById("t-more")?.classList.contains("primary"),
+  "Type 3 is primary after 24/30",
+);
+
+document.getElementById("t-more").click();
+await new Promise((r) => setTimeout(r, 20));
+const round3 = [];
+for (let i = 0; i < 6; i++) {
+  const ans = liveEn();
+  assert(ans, `round 3 item ${i} has EN`);
+  round3.push(ans);
+  typeIn(ans);
+  typeNext();
+}
+const overlap3 = round3.filter((a) => round1.includes(a) || round2.includes(a));
+assert(overlap3.length === 0, `round 3 repeats: ${overlap3.join(", ")}`);
+const hub3 = root.textContent;
+assert(/30 \/ 30 words/.test(hub3), `Type hub 30/30 (${hub3.slice(0, 220)})`);
+const last3 = typeReports[typeReports.length - 1];
+assert(last3 && last3.coverageDone === true, "30/30 clears Type");
 const useBtn = document.getElementById("t-sent");
-assert(useBtn, "Use on Type hub after two sets");
-assert(useBtn.classList.contains("primary"), "Use is primary after 24/30 leftover");
+assert(useBtn, "Use on Type hub after all three sets");
+assert(useBtn.classList.contains("primary"), "Use is primary at 30/30");
 useBtn.click();
 await new Promise((r) => setTimeout(r, 20));
 assert(
   document.querySelector("textarea#ti") || /write in English/i.test(root.textContent),
-  `Use stage after two Type sets (${root.textContent.slice(0, 180)})`,
+  `Use stage after three Type sets (${root.textContent.slice(0, 180)})`,
 );
 
 if (failed) {

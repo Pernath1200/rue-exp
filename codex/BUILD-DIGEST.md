@@ -1,5 +1,18 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-08-31 · local (interactive) — Clothes Next skipped the tree
+
+James: redid Quiz, Type, Use, Next each time, still no tree. Next must not leave a stage unfinished.
+
+- Quiz hub: no Type until Quiz fruit-coverage (23/23 on Clothes).
+- Type hub: no Use until Type fruit-coverage. Mode bar Type/Use are disabled the same way.
+- Enter follows the only remaining button. Home still exists; the unit is not done.
+- Cache `?v=2026-08-31-gate`. Did **not** tick INSPECTED.
+
+Play: `#leaf_clothes_a1` Ctrl+F5. Quiz until 23/23, Type until 23/23, then Use → tree.
+
+---
+
 ## 2026-08-31 · local (interactive) — `leaf_food_a1` Telegram-tested
 
 James: *so this is done*. Telegram `leaf_food_a1 tested` (12:29). Home bot replied `of 53` and did not append this vault; wrote the log line (same as feelings). Places 12:27 and Clothes 12:31 were already in the log.

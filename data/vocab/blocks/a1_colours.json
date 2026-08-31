@@ -5,6 +5,7 @@
   "tree_node": "leaf_colours_a1",
   "note": "P2 Oxford A1 colours. British grey/colour spelling in related packs; these are colour names. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07 (template)",
   "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
   "blocks": [
     {
       "id": "colours_basic",
@@ -74,6 +75,9 @@
         {
           "en": "grey",
           "cz": "šedý / šedá",
+          "accepts": [
+            "gray"
+          ],
           "use": [
             "it_is",
             "the_bag_is"
@@ -175,8 +179,7 @@
         "It is …",
         "The bag is …"
       ],
-      "note": "English colour words never change: a red car, red cars, the car is red.",
-      "note_cz": "Anglická přídavná jména se nemění — žádné koncovky."
+      "note": "English colour words never change: a red car, red cars, the car is red."
     }
   ],
   "sentences": [
@@ -191,13 +194,13 @@
       ]
     },
     {
-      "en": "The apple is red.",
-      "cz": "Jablko je červené.",
+      "en": "My new car is red.",
+      "cz": "Moje nové auto je červené.",
       "lemmas": [
         "red"
       ],
       "accepts": [
-        "The apple is red"
+        "My new car is red"
       ]
     },
     {
@@ -211,13 +214,15 @@
       ]
     },
     {
-      "en": "The tree is green.",
-      "cz": "Strom je zelený.",
+      "en": "The tree is green in summer.",
+      "cz": "Strom je v létě zelený.",
       "lemmas": [
         "green"
       ],
       "accepts": [
-        "The tree is green"
+        "The tree is green in summer",
+        "In summer the tree is green",
+        "The tree is green in the summer"
       ]
     },
     {
@@ -231,13 +236,14 @@
       ]
     },
     {
-      "en": "My cat is black.",
-      "cz": "Moje kočka je černá.",
+      "en": "My little cat is black.",
+      "cz": "Moje malá kočka je černá.",
       "lemmas": [
         "black"
       ],
       "accepts": [
-        "My cat is black"
+        "My little cat is black",
+        "My small cat is black"
       ]
     },
     {
@@ -258,8 +264,7 @@
       ],
       "accepts": [
         "Her hair is brown",
-        "His hair is brown.",
-        "His hair is brown"
+        "She has brown hair"
       ]
     },
     {
@@ -269,27 +274,30 @@
         "grey"
       ],
       "accepts": [
-        "The clouds are grey"
+        "The clouds are grey",
+        "The clouds are gray"
       ]
     },
     {
-      "en": "The bag is pink.",
-      "cz": "Ta taška je růžová.",
+      "en": "Her school bag is pink.",
+      "cz": "Její školní taška je růžová.",
       "lemmas": [
         "pink"
       ],
       "accepts": [
-        "The bag is pink"
+        "Her school bag is pink",
+        "Her schoolbag is pink"
       ]
     },
     {
-      "en": "I have a purple pen.",
-      "cz": "Mám fialové pero.",
+      "en": "I have a purple pen in my bag.",
+      "cz": "V tašce mám fialové pero.",
       "lemmas": [
         "purple"
       ],
       "accepts": [
-        "I have a purple pen"
+        "I have a purple pen in my bag",
+        "In my bag I have a purple pen"
       ]
     },
     {
@@ -299,9 +307,7 @@
         "orange"
       ],
       "accepts": [
-        "Her dress is orange",
-        "His dress is orange.",
-        "His dress is orange"
+        "Her dress is orange"
       ]
     }
   ]

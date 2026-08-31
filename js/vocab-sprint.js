@@ -15,7 +15,12 @@ import { expandContractions } from "./contractions.js";
 import { canonSynonyms } from "./synonyms.js";
 import { _gradeGrammar, gradeGrammarSentence } from "./practice-grammar.js";
 import { isCorrectAnswer } from "./practice-vocab.js";
-import { touchBlock, completeMode, completeFinale } from "./progress.js?v=2026-08-30-review";
+import {
+  touchBlock,
+  completeMode,
+  completeFinale,
+  completeCheckRound,
+} from "./progress.js?v=2026-08-31-adopt";
 
 const BOARD_SIZE = 6;
 const TYPE_SIZE = 12;
@@ -541,8 +546,21 @@ export function startVocabSprint({
   loadJson,
   tree,
   onExit,
+  onFruit,
 }) {
   const selfId = node?.id || "a1_vocab_match";
+
+  /* One whole-set round through the check is the bar — it checks material
+   * learned in the units above it, so there is no ladder to walk. A topic
+   * filter is a subset, not the check, so it never fruits.
+   * (James, 2026-08-31: "you only have to do one round of it".) */
+  function fruitCheckRound(whole) {
+    if (!whole) return;
+    const r = completeCheckRound(selfId);
+    if (r.justFruited) onFruit?.({ grow: true });
+    else if (r.nowFruit) onFruit?.({ grow: false });
+  }
+
   let vocab = [];
   let topic = ALL;
   try {
@@ -725,6 +743,7 @@ export function startVocabSprint({
     if (rafId) cancelAnimationFrame(rafId);
     rafId = 0;
     sfx.end();
+    fruitCheckRound(topic === ALL);
     const best = readBest(topic, minutes);
     if (score > best) writeBest(topic, minutes, score);
     const newBest = Math.max(best, score);
@@ -882,7 +901,7 @@ export function startVocabSprint({
     root.innerHTML = `
       <div class="sprint">
         <div class="practice-head"><h2>A1 vocab · match</h2></div>
-        <p class="home-hint">Check, not a lesson. No fruit — this is matching, not Use.</p>
+        <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
           <p class="lede">Six pairs at a time, from the A1 words in the app. Tap English, then Czech. Beat the clock.</p>
@@ -1067,8 +1086,21 @@ export function startVocabTypeSprint({
   loadJson,
   tree,
   onExit,
+  onFruit,
 }) {
   const selfId = node?.id || "a1_vocab_type";
+
+  /* One whole-set round through the check is the bar — it checks material
+   * learned in the units above it, so there is no ladder to walk. A topic
+   * filter is a subset, not the check, so it never fruits.
+   * (James, 2026-08-31: "you only have to do one round of it".) */
+  function fruitCheckRound(whole) {
+    if (!whole) return;
+    const r = completeCheckRound(selfId);
+    if (r.justFruited) onFruit?.({ grow: true });
+    else if (r.nowFruit) onFruit?.({ grow: false });
+  }
+
   let vocab = [];
   let topic = ALL;
   try {
@@ -1225,6 +1257,7 @@ export function startVocabTypeSprint({
 
   function showResults() {
     sfx.end();
+    fruitCheckRound(topic === ALL);
     const best = readTypeBest(topic);
     if (score > best) writeTypeBest(topic, score);
     const newBest = Math.max(best, score);
@@ -1371,7 +1404,7 @@ export function startVocabTypeSprint({
     root.innerHTML = `
       <div class="sprint sprint-type">
         <div class="practice-head"><h2>A1 vocab · type</h2></div>
-        <p class="home-hint">Check, not a lesson. No fruit — this is typing, not Use.</p>
+        <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
           <p class="lede">Czech on the screen, type the English. Twelve A1 words at a time. No clock. Misses come first next time.</p>
@@ -2206,8 +2239,21 @@ export function startGrammarMatchSprint({
   loadJson,
   tree,
   onExit,
+  onFruit,
 }) {
   const selfId = node?.id || "a1_grammar_match";
+
+  /* One whole-set round through the check is the bar — it checks material
+   * learned in the units above it, so there is no ladder to walk. A topic
+   * filter is a subset, not the check, so it never fruits.
+   * (James, 2026-08-31: "you only have to do one round of it".) */
+  function fruitCheckRound(whole) {
+    if (!whole) return;
+    const r = completeCheckRound(selfId);
+    if (r.justFruited) onFruit?.({ grow: true });
+    else if (r.nowFruit) onFruit?.({ grow: false });
+  }
+
   let vocab = [];
   let minutes = 0;
   try {
@@ -2423,6 +2469,7 @@ export function startGrammarMatchSprint({
     if (rafId) cancelAnimationFrame(rafId);
     rafId = 0;
     sfx.end();
+    fruitCheckRound(origin !== "practice");
     if (origin !== "practice") {
       for (const w of round) {
         if (w.ok !== true) gMarkTrouble(w.id);
@@ -2639,7 +2686,7 @@ export function startGrammarMatchSprint({
     root.innerHTML = `
       <div class="sprint sprint-which">
         <div class="practice-head"><h2>${esc(G_MATCH_TITLE)}</h2></div>
-        <p class="home-hint">Check, not a lesson. No fruit — tap the good sentence, not Use.</p>
+        <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
           <p class="lede">Which is correct? Three English sentences. Tap the right one. Twelve from A1 grammar. Clock off unless you turn it on.</p>
@@ -2785,8 +2832,21 @@ export function startGrammarTypeSprint({
   loadJson,
   tree,
   onExit,
+  onFruit,
 }) {
   const selfId = node?.id || "a1_grammar_type";
+
+  /* One whole-set round through the check is the bar — it checks material
+   * learned in the units above it, so there is no ladder to walk. A topic
+   * filter is a subset, not the check, so it never fruits.
+   * (James, 2026-08-31: "you only have to do one round of it".) */
+  function fruitCheckRound(whole) {
+    if (!whole) return;
+    const r = completeCheckRound(selfId);
+    if (r.justFruited) onFruit?.({ grow: true });
+    else if (r.nowFruit) onFruit?.({ grow: false });
+  }
+
   let vocab = [];
   let whichPool = [];
   let topic = ALL;
@@ -2957,6 +3017,7 @@ export function startGrammarTypeSprint({
 
   function showResults() {
     sfx.end();
+    fruitCheckRound(topic === ALL && origin !== "practice");
     const leftover = leftoverList();
     screen = "results";
     const hero = root.querySelector("#sprint-final");
@@ -3103,7 +3164,7 @@ export function startGrammarTypeSprint({
     root.innerHTML = `
       <div class="sprint sprint-type sprint-grammar">
         <div class="practice-head"><h2>A1 grammar · type</h2></div>
-        <p class="home-hint">Check, not a lesson. No fruit — type the form, not Use.</p>
+        <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
           <p class="lede">Czech and a gapped English sentence. Type the missing form, not the whole sentence. Twelve from A1 grammar. No clock. Misses from Which is correct? come first.</p>
