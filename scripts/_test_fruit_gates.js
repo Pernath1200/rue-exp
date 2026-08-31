@@ -97,6 +97,118 @@ completeVocabMode("v1", "sentence", { score: 12, total: 12 });
 const b = loadProgress().vocab.blocks.v1;
 assert(blockHasFruit(b) === true, "vocab clear quiz+type+sentence → fruit");
 
+// Fat leaf: Match fruit is one board of 12, not the leftover 23rd word.
+store.clear();
+const keys23 = Array.from({ length: 23 }, (_, i) => `w${i}‖c${i}`);
+completeVocabMode("v_clothes", "match", {
+  nodeId: "leaf_clothes_a1",
+  coveredKeys: keys23.slice(0, 12),
+  need: 23,
+  coverageDone: false,
+});
+completeVocabMode("v_clothes", "quiz", {
+  nodeId: "leaf_clothes_a1",
+  score: 1,
+  total: 1,
+  coveredKeys: keys23,
+  need: 23,
+  coverageDone: true,
+});
+completeVocabMode("v_clothes", "type", {
+  nodeId: "leaf_clothes_a1",
+  score: 1,
+  total: 1,
+  coveredKeys: keys23,
+  need: 23,
+  coverageDone: true,
+});
+completeVocabMode("v_clothes", "sentence", {
+  nodeId: "leaf_clothes_a1",
+  score: 12,
+  total: 12,
+});
+assert(
+  blockHasFruit(loadProgress().vocab.blocks.v_clothes) === true,
+  "clothes Match 12/23 still fruits once Quiz/Type/Use are clear",
+);
+
+store.clear();
+completeVocabMode("v_short", "match", {
+  coveredKeys: keys23.slice(0, 11),
+  need: 23,
+  coverageDone: false,
+});
+completeVocabMode("v_short", "quiz", {
+  score: 1,
+  total: 1,
+  coveredKeys: keys23,
+  need: 23,
+  coverageDone: true,
+});
+completeVocabMode("v_short", "type", {
+  score: 1,
+  total: 1,
+  coveredKeys: keys23,
+  need: 23,
+  coverageDone: true,
+});
+completeVocabMode("v_short", "sentence", { score: 12, total: 12 });
+assert(
+  blockHasFruit(loadProgress().vocab.blocks.v_short) === false,
+  "Match 11/23 does not fruit",
+);
+
+// Countries: Type 24/30 + Match skip/one board + Use 12/12 → tree
+store.clear();
+const keys30 = Array.from({ length: 30 }, (_, i) => `c${i}‖k${i}`);
+const keys14 = keys30.slice(0, 14);
+completeVocabMode("v_countries", "match", {
+  coverageDone: true,
+  coveredKeys: [],
+  need: 12,
+});
+completeVocabMode("v_countries", "quiz", {
+  score: 12,
+  total: 12,
+  coveredKeys: keys14,
+  need: 14,
+  coverageDone: true,
+});
+completeVocabMode("v_countries", "type", {
+  score: 12,
+  total: 12,
+  coveredKeys: keys30.slice(0, 24),
+  need: 30,
+  coverageDone: true,
+});
+completeVocabMode("v_countries", "sentence", { score: 12, total: 12 });
+assert(
+  blockHasFruit(loadProgress().vocab.blocks.v_countries) === true,
+  "Countries Type 24/30 + Match skip fruits after Use",
+);
+
+store.clear();
+completeVocabMode("v_36", "match");
+completeVocabMode("v_36", "quiz", {
+  score: 1,
+  total: 1,
+  coveredKeys: keys30.slice(0, 24),
+  need: 36,
+  coverageDone: false,
+});
+completeVocabMode("v_36", "type", {
+  score: 1,
+  total: 1,
+  coveredKeys: keys30.slice(0, 24),
+  need: 36,
+  coverageDone: false,
+});
+completeVocabMode("v_36", "sentence", { score: 12, total: 12 });
+assert(
+  blockHasFruit(loadProgress().vocab.blocks.v_36) === false,
+  "24/36 Quiz+Type does not fruit",
+);
+
 // Fresh vocab quiz open
 store.clear();
 completeVocabMode("v2", "match");

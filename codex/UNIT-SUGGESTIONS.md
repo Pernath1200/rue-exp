@@ -32,6 +32,7 @@ YYYY-MM-DD  level  working title
 ---
 
 - **A1 vocab cap 60** (James 2026-08-31): five Match boards of 12. Over 60 → cut to A2 counterpart, do not add an A1 node. Applied: Home & Family 69→60; Places 69→60. Time 2 stays 60. Food 58 stays.
+- **Thicker question banks** (James 2026-08-31): later, raise how many Quiz/Use sentences a unit has (today ~12). Must be done **carefully — no duds** (A0, natural Czech, a sentence a teacher has heard). Not auto-fill. Not this sitting; after A1 vocab smoke.
 
 ## During vocab smoke
 

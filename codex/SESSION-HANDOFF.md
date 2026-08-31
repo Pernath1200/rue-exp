@@ -1,6 +1,6 @@
-# Session handoff — 2026-08-31 (A1 beta close)
+# Session handoff — 2026-08-31 evening (Claude until Grok renews)
 
-Open this file in a **new rue-exp overseer tab**. Do not use `codex/HANDOFF.md` (Claude kill switch). Folder: `C:\Users\ADMIN\documents\projects\rue-exp`.
+Grok credits ran out. Continue here. Do **not** open `codex/HANDOFF.md` (that is the Claude **kill switch**). Folder: `C:\Users\ADMIN\documents\projects\rue-exp`.
 
 Paste:
 
@@ -9,9 +9,11 @@ Rue-exp overseer. James oversees other tabs from here. Do not rewrite packs unle
 
 Read first: AGENTS.md · this file (codex/SESSION-HANDOFF.md) · PLAN.md · UNIT-SUGGESTIONS.md · LEVEL-CHECKS.md · WORKING-SYSTEM.md · AUTHORING-RULES.md (I10 = lint.py seconds, grammar only; I8 after flags; I6 after Telegram tick).
 
-Job today: finish A1 beta by smoking remaining A1 vocab, then rest. Students still on rue2/rue3. Inspected ≠ approved. Do not start A2 coming grammar.
+Job: finish A1 beta by smoking remaining A1 vocab, then rest. Students still on rue2/rue3. Inspected ≠ approved. Do not start A2 coming grammar.
 
 Answer “what next”, give paste prompts, keep docs honest. One worker tab per job. Recount A1 from tree.json path_order (60 live). Do not spend the hour on extra scripts or doc sweeps.
+
+Grok tab ran out of credits 2026-08-31 evening; this is the Claude continue. A worker tab may still be saving JS — do not revert js/practice-vocab.js / js/progress.js / js/app.js / index.html if they change under you.
 ```
 
 ---
@@ -22,105 +24,99 @@ Answer “what next”, give paste prompts, keep docs honest. One worker tab per
 |--|--|
 | App | rue-exp · **8097** · progress **`rue-exp-progress`** |
 | Students | Still rue2 / rue3 until James promotes |
-| Bar | Usable, not perfect. Sniper → neighbour → tree |
-| Circle | **A1 60 / 60 live** on `path_order` (recounted 2026-08-31). `trunk_frames_a1` is `sitting_of` `a1_be_have` (teaching path 61, not a 61st slot) |
+| Bar | Usable, not perfect |
+| Circle | **A1 60 / 60 live** on `path_order`. `trunk_frames_a1` is `sitting_of` `a1_be_have` (not a 61st slot) |
 
 ## Do not
 
-- Invent node ids · hand-tick INSPECTED · start `codex/A2-COMING.md`
-- Split Home/Family or Places (cap 60 instead)
-- Raise sequencing baseline · push from auto · promote Pages · touch `codex/HANDOFF.md`
+- Invent node ids · hand-tick INSPECTED · start `codex/A2-COMING.md` · touch `codex/HANDOFF.md`
+- Split Home/Family or Places · raise sequencing baseline · promote Pages
+- Batch-refill Quiz/Use banks (parked — see UNIT-SUGGESTIONS)
 
 ## Now (James)
 
-1. **Ctrl+F5** → play `#leaf_feelings_a1` (18). Intro is 12 of 18 tiles — C49.
-2. Telegram **`leaf_time_a1 tested`** — played to fruit; log still lacks the tick.
-3. Then path order below. No I10 on vocab. Skip Match on glue trunks if dud. ~6/hour.
-4. Telegram `<id> tested` after each. Inspected ≠ approved. After this tick send `units to test` if Telegram still skips Feelings (`of 53` is stale).
+Ctrl+F5. No I10 on vocab. Skip Match on glue if dud. Telegram `<id> tested`. ~4–5/hour (last sit: 5, a bit over an hour).
 
-http://localhost:8097/#leaf_feelings_a1
+**Play next:**
+
+http://localhost:8097/#leaf_body_a1  
+http://localhost:8097/#leaf_health_a1  
+http://localhost:8097/#trunk_glue_pronouns_a1  
+http://localhost:8097/#trunk_can_like_want_a1  
+http://localhost:8097/#trunk_verbs_more2_a1  
+
+**25 A1 vocab still to smoke** (then A2 vocab — stop, not this phase). Finale held until A1 vocab is done.
+
+If Telegram says `of 53` and no `Snapshot …`: home listener is stale. Good: `N down, M to go (of 118). Snapshot …`. After ticks: `py -X utf8 codex/reconcile_inspected.py`. If the vault log misses a tick he screenshotted, append the log line then reconcile. Do not hand-edit INSPECTED.
+
+`leaf_time_a1` was fruited in the app earlier; Telegram tick may still be missing — send `leaf_time_a1 tested` when he reaches it.
+
+## Ticked this sitting (2026-08-31)
+
+Home, Free time, Feelings, Questions, Say, Places, Food, Countries, Clothes. Plus earlier: frames, social, daily, more.
+
+INSPECTED: vocab A1 **13 inspected / 0 approved**. Grammar A1–B1 55 inspected. Finale not. Inspected ≠ approved.
 
 ## Remaining A1 vocab (play order)
 
-Hold is only `a1_finale`. Rebuild Top 5 after Home tick. Play this order:
+1. `#leaf_body_a1` — **now** · 24
+2. `#leaf_health_a1` — 24
+3. `#trunk_glue_pronouns_a1` — glue
+4. `#trunk_can_like_want_a1`
+5. `#trunk_verbs_more2_a1`
+6. `#leaf_work_a1` — 30
+7. `#leaf_school_a1` — 47
+8. `#trunk_glue_modals_a1` — glue
+9. `#trunk_prepositions_a1`
+10. `#trunk_verbs_more3_a1`
+11. `#trunk_there_time_a1`
+12. `#trunk_glue_quantity_a1` — glue
+13. `#leaf_time_a1` — 36 · done in app; **tick Telegram**
+14. `#leaf_time_2_a1` — 60
+15. `#leaf_nature_a1` — 36
+16. `#leaf_shopping_a1` — 34
+17. `#leaf_animals_a1` — 21
+18. `#trunk_glue_linkers_a1` — glue
+19. `#trunk_verbs_action_a1`
+20. `#leaf_tech_a1` — 24
+21. `#leaf_colours_a1` — 12
+22. `#trunk_adjectives_a1` — 48
+23. `#leaf_ideas_a1` — 47
+24. `#a1_vocab_match`
+25. `#a1_vocab_type`
+26. `#a1_finale` — last; bot holds it until vocab is done
 
-1. `#leaf_home_family` — **ticked 2026-08-31**
-2. `#leaf_freetime_a1` — **ticked 2026-08-31** · C49 intro
-3. `#leaf_feelings_a1` — **ticked 2026-08-31**
-4. `#trunk_glue_questions_a1` — **ticked 2026-08-31** · Question words
-5. `#trunk_verbs_say_a1` — **ticked 2026-08-31** · C52 say/tell + look/see
-6. `#leaf_places` — **now** · 60, Ctrl+F5
-7. `#leaf_countries_a1`
-8. `#leaf_food_a1` — 58
-9. `#leaf_clothes_a1`
-10. `#leaf_body_a1`
-11. `#leaf_health_a1`
-12. `#trunk_glue_pronouns_a1` — glue
-13. `#trunk_can_like_want_a1`
-14. `#trunk_verbs_more2_a1`
-15. `#leaf_work_a1`
-16. `#leaf_school_a1`
-17. `#trunk_glue_modals_a1` — glue
-18. `#trunk_prepositions_a1`
-19. `#trunk_verbs_more3_a1`
-20. `#trunk_there_time_a1`
-21. `#trunk_glue_quantity_a1` — glue
-22. `#leaf_time_a1` — done in app; **tick Telegram**
-23. `#leaf_time_2_a1` — 60, live
-24. `#leaf_nature_a1`
-25. `#leaf_shopping_a1`
-26. `#leaf_animals_a1`
-27. `#trunk_glue_linkers_a1` — glue
-28. `#trunk_verbs_action_a1`
-29. `#leaf_tech_a1`
-30. `#leaf_colours_a1`
-31. `#trunk_adjectives_a1`
-32. `#leaf_ideas_a1`
-33. `#a1_vocab_match`
-34. `#a1_vocab_type`
-35. `#a1_finale` — last; keep held on the bot until vocab is done
+After vocab type, Telegram will offer **A2 vocab**. Stop.
 
-After 34, Telegram will offer **A2 vocab**. Stop. Not today.
-
-Grammar A1 teaching + Which + cloze: inspected. Finale not. Vocab ticked: frames, social, daily, more.
-
-If Telegram says `of 53`: home listener is stale. Trampoline + restart. Good: `N down, M to go (of T). Snapshot …`
-
-## Locks
+## Recent smoke lessons (already in AUTHORING-RULES)
 
 | | |
 |--|--|
-| Cap 60 | Five Match boards of 12. Over 60 → cut to A2 counterpart, no new A1 node |
-| Home cut | mum, dad, adult, apartment, upstairs, downstairs, sofa, stairs, neighbour |
-| Places cut | journey, tourist, passport, vacation, flight, bicycle, policeman, university, theatre |
-| Combined | Home+Family, Places+transport |
-| Not A1 nodes | mine/yours, or, weather, relatives, grammar Time 2 (`once a week`) |
+| **C49** | Intro shows **every new word**, themed boards of 8–12, then frames. Applied to remaining A1 leaves (Places … Ideas). Glue trunks not batched. Lint not added. |
+| **C50** | Student title names the class, not *Glue · …* |
+| **C52** | say/tell and look/see each get an intro page + Quiz/Type/Use items |
+| **B22** | Feelings Quiz is sentence-gap from `sentences[]`, not 1–1 meaning chips. Other leaves unchanged until replayed |
+| **B9** | Packs of 13–18 Match even-split (9+8). Engine. |
 
-## Git — dirty sitting, not committed
+I8 only after he flags. Vocab has no I10.
 
-Last push: `2231ca9`. Working tree has Time 2, Feelings, cap-60 cuts, tree/spine, adjectives, docs. Do **not** commit `--help`, `node_modules`, `.grok`. Ask before push.
+## Parked (not now)
 
-## Worker pastes (only when needed)
+Thicker Quiz/Use banks — more sentences per unit, **no duds**, not auto-fill. UNIT-SUGGESTIONS + PLAN later list.
 
-**Rebuild bot ranking** (30s — Feelings is live, stop holding Free time):
+## Locks
 
-```
-In rue-exp: in codex/build_smoke_next.py set hold to only a1_finale (drop leaf_freetime_a1).
-Then: py -X utf8 codex/reconcile_inspected.py
-That rebuilds INSPECTED from the Telegram log (item counts: Home/Places 60, Time 1 36, add leaf_time_2_a1) and writes vault Top 5.
-Do not tick INSPECTED by hand. Do not start A2. Do not rewrite packs.
-```
+Cap 60 · Home/Places cuts as before · combined Home+Family, Places+transport · not A1 nodes: mine/yours, or, weather, relatives, grammar Time 2 (`once a week`).
 
-**I8 only after James flags.** Vocab has no I10.
+## Git
 
-**After Telegram `<id> tested`:**
+`main`, origin `Pernath1200/rue-exp`. Do **not** commit `--help`, `node_modules`, `.grok`.
+
+A worker tab was still open when Grok pushed. If `js/practice-vocab.js` / `progress.js` / `app.js` / `index.html` or `scripts/_test_*.js` change after that push, they are that tab — do not revert.
+
+## After Telegram `<id> tested`
 
 ```
 In rue-exp: py -X utf8 codex/reconcile_inspected.py
 Do not tick INSPECTED by hand. If he flagged, I8 that unit in a new tab.
 ```
-
-## Stale (do not spend the hour fixing)
-
-- `codex/LEVEL-CHECKS.md` last line still says 58/60 (both spares landed).
-- Vault Top 5 rebuilt 10:14 (Free time → Feelings). Home listener still needs Sync + `units to test`; if it says `of 53`, trampoline + restart.

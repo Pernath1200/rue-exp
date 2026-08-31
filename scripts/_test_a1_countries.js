@@ -105,6 +105,11 @@ assert(
   "lowercase italian is a chip",
 );
 assert(pack.strict_capitals === true, "strict_capitals");
+const slovakUse = pack.sentences.find((s) => (s.lemmas || []).includes("Slovak"));
+assert(
+  slovakUse && /friend/i.test(slovakUse.en) && !/brother/i.test(slovakUse.en),
+  `Slovak Use is a friend (${slovakUse && slovakUse.en})`,
+);
 assert(
   items.every((it) => !it.icon && !it.swatch),
   "icon/swatch on a drill item",
@@ -172,8 +177,171 @@ assert(/Which is correct\?/.test(root.textContent), "quiz prompt");
 const opts = [...root.querySelectorAll(".opt")];
 assert(opts.length === 3, `quiz chips ${opts.length}`);
 
+function ensureSmokeLive() {
+  if (document.getElementById("smoke-live")) return;
+  const s = document.createElement("span");
+  s.id = "smoke-live";
+  document.body.appendChild(s);
+}
+
+function liveEn() {
+  const live = document.getElementById("smoke-live")?.textContent || "";
+  const m = live.match(/EN: (.+)$/);
+  return (m ? m[1] : "").trim();
+}
+
+function typeIn(text) {
+  const inp = document.getElementById("ti");
+  inp.value = text;
+  inp.dispatchEvent(new window.Event("input", { bubbles: true }));
+  document.getElementById("chk").click();
+}
+
+function typeNext() {
+  document.getElementById("chk").click();
+}
+
+ensureSmokeLive();
+
+// --- P0: lowercase Czech is Capital letter, clue does not gift C____ ---
+if (typeof root._RUEVocabUnbind === "function") root._RUEVocabUnbind();
+const czechItem = words.find((it) => it.en === "Czech");
+startPractice(
+  root,
+  {
+    id: pack.id,
+    title: pack.title,
+    items: [czechItem],
+    intro: [],
+    strict_capitals: true,
+  },
+  {
+    packId: pack.id,
+    packTitle: pack.title,
+    packLevel: pack.level,
+    startMode: "type",
+    strictCapitals: true,
+    onExit() {},
+  },
+);
+await new Promise((r) => setTimeout(r, 20));
+assert(liveEn() === "Czech", `Czech item (${liveEn()})`);
+typeIn("czech");
+const fbLow = document.getElementById("tfb")?.textContent || "";
+assert(/Capital letter/.test(fbLow), `lowercase czech must fail (${fbLow})`);
+assert(/Czech/.test(fbLow), "show the capitalised form");
+
+if (typeof root._RUEVocabUnbind === "function") root._RUEVocabUnbind();
+startPractice(
+  root,
+  {
+    id: pack.id,
+    title: pack.title,
+    items: [czechItem],
+    intro: [],
+    strict_capitals: true,
+  },
+  {
+    packId: pack.id,
+    packTitle: pack.title,
+    packLevel: pack.level,
+    startMode: "type",
+    strictCapitals: true,
+    onExit() {},
+  },
+);
+await new Promise((r) => setTimeout(r, 20));
+typeIn("Czech");
+const fbOk = document.getElementById("tfb")?.textContent || "";
+assert(/Correct/.test(fbOk) && !/Capital letter/.test(fbOk), `Czech passes (${fbOk})`);
+
+// --- Type round 2 must not repeat round 1 (30 words, not the 14 Which items) ---
+if (typeof root._RUEVocabUnbind === "function") root._RUEVocabUnbind();
+const typeReports = [];
+startPractice(
+  root,
+  {
+    id: pack.id,
+    title: pack.title,
+    items,
+    sentences: pack.sentences,
+    intro: [],
+    strict_capitals: true,
+  },
+  {
+    packId: pack.id,
+    packTitle: pack.title,
+    packLevel: pack.level,
+    startMode: "type",
+    strictCapitals: true,
+    onExit() {},
+    onModeComplete(mode, meta) {
+      if (mode === "type") typeReports.push(meta);
+    },
+  },
+);
+await new Promise((r) => setTimeout(r, 20));
+
+const round1 = [];
+for (let i = 0; i < 12; i++) {
+  const ans = liveEn();
+  assert(ans, `round 1 item ${i} has EN`);
+  const clue = document.querySelector(".type-clue")?.textContent || "";
+  assert(clue, `type clue on fat Type (${ans})`);
+  if (/[A-Z]/.test(ans)) {
+    assert(/[A-Z]/.test(clue), `clue keeps capitals for ${ans} (${clue})`);
+  }
+  round1.push(ans);
+  typeIn(ans);
+  const fb = document.getElementById("tfb")?.textContent || "";
+  assert(/Correct/.test(fb), `round 1 ${ans} (${fb})`);
+  typeNext();
+}
+
+const hub1 = root.textContent;
+assert(/12 \/ 30 words/.test(hub1), `Type hub 12/30 (${hub1.slice(0, 220)})`);
+assert(/Type 1 of 3 done/.test(hub1), "three Type rounds for 30 words");
+assert(document.getElementById("t-sent"), "Use available after first Type set");
+assert(
+  document.getElementById("t-more")?.classList.contains("primary"),
+  "Type 2 is primary after 12/30",
+);
+const last1 = typeReports[typeReports.length - 1];
+assert(last1 && last1.need === 30, `type need 30, got ${last1 && last1.need}`);
+assert(
+  last1 && (last1.coveredKeys || []).length === 12,
+  `stored 12 type keys, got ${last1 && (last1.coveredKeys || []).length}`,
+);
+assert(last1 && last1.coverageDone === false, "12/30 does not clear Type");
+
+document.getElementById("t-more").click();
+await new Promise((r) => setTimeout(r, 20));
+const round2 = [];
+for (let i = 0; i < 12; i++) {
+  const ans = liveEn();
+  assert(ans, `round 2 item ${i} has EN`);
+  round2.push(ans);
+  typeIn(ans);
+  typeNext();
+}
+const overlap = round2.filter((a) => round1.includes(a));
+assert(overlap.length === 0, `round 2 repeats round 1: ${overlap.join(", ")}`);
+const hub2 = root.textContent;
+assert(/24 \/ 30 words/.test(hub2), `Type hub 24/30 (${hub2.slice(0, 220)})`);
+const last2 = typeReports[typeReports.length - 1];
+assert(last2 && last2.coverageDone === true, "24/30 is enough Type for the tree");
+const useBtn = document.getElementById("t-sent");
+assert(useBtn, "Use on Type hub after two sets");
+assert(useBtn.classList.contains("primary"), "Use is primary after 24/30 leftover");
+useBtn.click();
+await new Promise((r) => setTimeout(r, 20));
+assert(
+  document.querySelector("textarea#ti") || /write in English/i.test(root.textContent),
+  `Use stage after two Type sets (${root.textContent.slice(0, 180)})`,
+);
+
 if (failed) {
   console.error(`${failed} failed`);
   process.exit(1);
 }
-console.log("ok  countries  30 words  14 which  7-page intro");
+console.log("ok  countries  30 words  14 which  7-page intro  type 30 unique");

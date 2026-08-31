@@ -1436,6 +1436,11 @@ button.link:hover {
   color: var(--text);
 }
 
+.mode:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .mode.active {
   background: var(--accent-dim);
   border-color: var(--accent);

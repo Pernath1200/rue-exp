@@ -6,7 +6,8 @@
  *   Vocab: Match done + Quiz + Type + Sentence fully clear (same).
  *   Fat vocab leaves (James 2026-08-30): Quiz and Type each need
  *   vocabCoverNeed(n) unique words (min(n, 36), 12-word rounds, no repeats)
- *   before cleanPass. Match and Use stay one round of 12. Packs of ≤12
+ *   before cleanPass. Match and Use stay one round of 12 — extra Match
+ *   boards walk the deck, they do not hold the tree. Packs of ≤12
  *   unchanged. Soft PASS_RATIO / FRUIT_SOFT = reviews only.
  * Unlimited retries: a later perfect retry stamps cleanPass via score 1/1.
  */
@@ -66,6 +67,8 @@ export const ProgressStore = {
 
 export const PASS_RATIO = 0.8;
 export const FRUIT_SOFT = 0.75;
+/** First-learn pass size. Match fruit is one pass; Quiz/Type walk up to 36. */
+export const VOCAB_PASS = 12;
 /** Successful spaced reviews needed for “Mastered” (RUE2 sibling). */
 export const MASTERY_REPS = 4;
 
@@ -408,8 +411,28 @@ function ensureVocabBlock(p, blockId, nodeId) {
 /** Unique words Quiz/Type must clear before fruit. Trunks of 12 stay 12. */
 export function vocabCoverNeed(n) {
   const N = Number(n) || 0;
-  if (N <= 12) return Math.max(0, N);
+  if (N <= VOCAB_PASS) return Math.max(0, N);
   return Math.min(N, 36);
+}
+
+/**
+ * Quiz/Type fruit: unique keys up to need, except a leftover shorter than a
+ * round after two full 12s (25–35 words). 24/30 then Use still gets the tree
+ * (James, Countries 2026-08-31). 23-word packs stay whole-pack. 36 still 36.
+ */
+export function vocabCoveredEnough(have, need) {
+  const H = Array.isArray(have) ? have.length : Number(have) || 0;
+  const N = Number(need);
+  if (need == null || !Number.isFinite(N) || N <= 0) return true;
+  if (H >= N) return true;
+  if (
+    N > VOCAB_PASS * 2 &&
+    H >= VOCAB_PASS * 2 &&
+    N - VOCAB_PASS * 2 < VOCAB_PASS
+  ) {
+    return true;
+  }
+  return false;
 }
 
 export function vocabCoverage(blockId) {
@@ -418,6 +441,9 @@ export function vocabCoverage(blockId) {
     quizKeys: Array.isArray(b.quizKeys) ? b.quizKeys : [],
     typeKeys: Array.isArray(b.typeKeys) ? b.typeKeys : [],
     matchKeys: Array.isArray(b.matchKeys) ? b.matchKeys : [],
+    quizNeed: b.quizNeed,
+    typeNeed: b.typeNeed,
+    matchNeed: b.matchNeed,
     quizCleared: vocabQuizClear(b),
     typeCleared: vocabTypeClear(b),
     matchCleared: vocabMatchClear(b),
@@ -468,18 +494,22 @@ export function completeVocabMode(blockId, mode, meta = {}) {
     if (meta.coverageDone === true) b.matchCleanPass = true;
     if (meta.coverageDone === false) b.matchCleanPass = false;
   }
-  if (mode === "quiz" && ratio != null) {
-    if (b.bestQuiz == null || ratio > b.bestQuiz) b.bestQuiz = ratio;
+  if (mode === "quiz") {
+    if (ratio != null) {
+      if (b.bestQuiz == null || ratio > b.bestQuiz) b.bestQuiz = ratio;
+      if (ratio >= 1 && meta.coverageDone !== false) b.quizCleanPass = true;
+    }
     if (Array.isArray(meta.coveredKeys)) b.quizKeys = meta.coveredKeys;
     if (meta.need != null) b.quizNeed = meta.need;
-    if (ratio >= 1 && meta.coverageDone !== false) b.quizCleanPass = true;
     if (meta.coverageDone === false) b.quizCleanPass = false;
   }
-  if (mode === "type" && ratio != null) {
-    if (b.bestType == null || ratio > b.bestType) b.bestType = ratio;
+  if (mode === "type") {
+    if (ratio != null) {
+      if (b.bestType == null || ratio > b.bestType) b.bestType = ratio;
+      if (ratio >= 1 && meta.coverageDone !== false) b.typeCleanPass = true;
+    }
     if (Array.isArray(meta.coveredKeys)) b.typeKeys = meta.coveredKeys;
     if (meta.need != null) b.typeNeed = meta.need;
-    if (ratio >= 1 && meta.coverageDone !== false) b.typeCleanPass = true;
     if (meta.coverageDone === false) b.typeCleanPass = false;
   }
   if (mode === "sentence") {
@@ -502,22 +532,28 @@ export function completeVocabMode(blockId, mode, meta = {}) {
 
 export function vocabMatchClear(b) {
   if (!b) return false;
-  if (b.matchNeed != null) {
-    if ((b.matchKeys || []).length < b.matchNeed) return false;
-    return !!b.matchCleanPass || !!b.modes?.match;
-  }
-  return !!b.modes?.match;
+  if (!b.modes?.match) return false;
+  // Smoke skip stamps matchCleanPass with no keys. One board of 12 is enough.
+  if (b.matchCleanPass) return true;
+  if (b.matchNeed == null) return true;
+  const fruitNeed = Math.min(Number(b.matchNeed) || 0, VOCAB_PASS);
+  if (fruitNeed <= 0) return true;
+  return (b.matchKeys || []).length >= fruitNeed;
 }
 
 export function vocabQuizClear(b) {
   if (!b) return false;
-  if (b.quizNeed != null && (b.quizKeys || []).length < b.quizNeed) return false;
+  if (b.quizNeed != null && !vocabCoveredEnough(b.quizKeys, b.quizNeed)) {
+    return false;
+  }
   return stageIsClear(b.bestQuiz, b.quizCleanPass);
 }
 
 export function vocabTypeClear(b) {
   if (!b) return false;
-  if (b.typeNeed != null && (b.typeKeys || []).length < b.typeNeed) return false;
+  if (b.typeNeed != null && !vocabCoveredEnough(b.typeKeys, b.typeNeed)) {
+    return false;
+  }
   return stageIsClear(b.bestType, b.typeCleanPass);
 }
 

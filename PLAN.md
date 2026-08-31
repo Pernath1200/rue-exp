@@ -33,7 +33,7 @@ Smoke **A1 vocab in path order**. No I10. Ctrl+F5. Telegram `<id> tested`. Skip 
 
 Feelings split is live: `#leaf_feelings_a1` after `#leaf_freetime_a1`. Time 1 + Time 2 are live — smoke both.
 
-Start: `#leaf_freetime_a1`. Then Feelings. End: `#a1_vocab_match` → `#a1_vocab_type` → `#a1_finale`. Home & family ticked. Grammar match/type already ticked.
+Start: `#leaf_freetime_a1`. Then Feelings. Places ticked 12:27. Next: `#leaf_countries_a1`. End: `#a1_vocab_match` → `#a1_vocab_type` → `#a1_finale`. Home & family ticked. Grammar match/type already ticked.
 
 Do not start A2 coming.
 
@@ -48,4 +48,4 @@ Do not start A2 coming.
 
 ## Explicitly later
 
-Search · related UI · error log · enjoyability pass · B1 vocab extension · grammar Time 2 (`once a week`, no node yet) · dep-prep 2/3 · Pages.
+Search · related UI · error log · enjoyability pass · B1 vocab extension · grammar Time 2 (`once a week`, no node yet) · dep-prep 2/3 · Pages · thicker Quiz/Use banks (no duds — not auto-fill).

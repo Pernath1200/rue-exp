@@ -6,12 +6,13 @@ remaining list, not five lines) minus `smoke-done-log.md`.
 Rebuild: `py -X utf8 codex\build_smoke_next.py --write` then
 `py -X utf8 codex\reconcile_inspected.py`.
 
-**Laptop is the only writer of that file.** The Telegram bot on the home PC
-must only append `TA/smoke-done-log.md` and re-read Top 5. If it rewrites
-the ranking, the two machines fight.
+**This laptop is the listener** (`TelegramSweepBot` on `ADMIN\reminders`).
+It loads `TA/smoke_list.py` every message. Do not go to the home PC to
+patch the bot. If two machines poll, Telegram 409s — this one should win
+while it is running.
 
-Canonical bot handler: `codex/smoke_list.py` — copy onto
-`C:\Users\james\reminders\smoke_list.py` and restart the listener.
+The bot only appends `TA/smoke-done-log.md` and re-reads the ranking. If it
+rewrites `smoke-next.md`, the two writers fight.
 
 Tick: `<unit_id> tested`. Parked ids alias (`b1_used_to` → `a2_used_to`).
 Vocab ticks use the **tree id** (`leaf_home_family tested`). Pack filenames
@@ -22,8 +23,6 @@ Rail (2026-08-30): leftover A1–B1 grammar, then **A1 vocab then A2 vocab**
 in path order (leaves, trunk, and `a1_vocab_match` + `a1_vocab_type`). B1 vocab stays off.
 
 The count line is `N down, M to go (of T)`. `T` is the whole current rail
-in `smoke-order.json` (`total`), not a baked 53. If Telegram still says
-`of 53`, the home listener is the old handler — copy `codex/smoke_list.py`
-onto `reminders\smoke_list.py` (or the trampoline) and restart.
-
-If Telegram's Top 5 is not this ranking, the home bot is stale.
+in `smoke-order.json` (`total`), never a baked 53. Good reply includes
+`Snapshot YYYY-MM-DD HH:MM`. If the phone still says `of 53`, this laptop's
+listener is down — re-enable `TelegramSweepBot`. Do not patch the home PC.

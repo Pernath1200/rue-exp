@@ -4,7 +4,7 @@
  */
 
 import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-31-match9";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-31-match9";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-31-usetree2";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -38,7 +38,7 @@ import {
   FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
-} from "./progress.js?v=2026-08-31-matchall";
+} from "./progress.js?v=2026-08-31-usetree2";
 import {
   mountSmokeFlagsUI,
   getSmokeApi,
@@ -1553,6 +1553,7 @@ async function openNode(node, launch = {}) {
       if (!practiceBlock.focus_structures) {
         practiceBlock.focus_structures = focusStructures;
       }
+      if (pack.quiz_mode) practiceBlock.quiz_mode = pack.quiz_mode;
 
       const blockId = practiceBlock.id || pack.id || node.id;
       touchVocabBlock(blockId, node.id);
@@ -1566,6 +1567,9 @@ async function openNode(node, launch = {}) {
         quizKeys: cov.quizKeys,
         typeKeys: cov.typeKeys,
         matchKeys: cov.matchKeys,
+        quizNeed: cov.quizNeed,
+        typeNeed: cov.typeNeed,
+        matchNeed: cov.matchNeed,
         quizCleared: cov.quizCleared,
         typeCleared: cov.typeCleared,
         matchCleared: cov.matchCleared,
@@ -1590,6 +1594,7 @@ async function openNode(node, launch = {}) {
             queueFruitPayoff(node.id, statsBefore);
           }
         },
+        onFruitNow: () => maybeShowFruitPayoff(),
         onExit: () => {
           if (node.unit_id) {
             refreshUnit(node.unit_id, node.partner_id, node.id);

@@ -55,11 +55,15 @@
           ]
         },
         {
-          "en": "square",
+          "en": "square (place)",
           "cz": "náměstí",
           "use": [
             "where_is_the",
             "this_is_a"
+          ],
+          "accepts": [
+            "town square",
+            "city square"
           ]
         },
         {
@@ -136,12 +140,16 @@
           ]
         },
         {
-          "en": "station",
+          "en": "station (train)",
           "cz": "nádraží",
           "use": [
             "where_is_the",
             "this_is_a",
             "i_go_to"
+          ],
+          "accepts": [
+            "train station",
+            "railway station"
           ]
         },
         {
@@ -250,12 +258,15 @@
           ]
         },
         {
-          "en": "bike",
+          "en": "bike (bicycle)",
           "cz": "kolo",
           "use": [
             "this_is_a",
             "i_have_a",
             "i_need_a"
+          ],
+          "accepts": [
+            "bicycle"
           ]
         },
         {
@@ -401,8 +412,8 @@
           ]
         },
         {
-          "en": "country",
-          "cz": "země / venkov",
+          "en": "country (nation)",
+          "cz": "země (stát)",
           "use": [
             "where_is_the",
             "this_is_a",
@@ -530,8 +541,8 @@
   ],
   "intro": [
     {
-      "title": "Places",
-      "title_cz": "Místa",
+      "title": "Town",
+      "title_cz": "Město",
       "pictures": [
         {
           "icon": "🏙️",
@@ -539,9 +550,29 @@
           "cz": "město (velké)"
         },
         {
+          "icon": "🏘️",
+          "en": "town",
+          "cz": "město"
+        },
+        {
+          "icon": "🛣️",
+          "en": "street",
+          "cz": "ulice"
+        },
+        {
+          "icon": "🎯",
+          "en": "centre",
+          "cz": "centrum"
+        },
+        {
           "icon": "🏞️",
           "en": "park",
           "cz": "park"
+        },
+        {
+          "icon": "⛲",
+          "en": "square (place)",
+          "cz": "náměstí"
         },
         {
           "icon": "🗺️",
@@ -549,9 +580,45 @@
           "cz": "mapa"
         },
         {
+          "icon": "🛤️",
+          "en": "way",
+          "cz": "cesta (kudy jít)"
+        },
+        {
+          "icon": "📐",
+          "en": "corner",
+          "cz": "roh"
+        },
+        {
+          "icon": "📍",
+          "en": "here",
+          "cz": "tady"
+        },
+        {
+          "icon": "➡️",
+          "en": "there",
+          "cz": "tam"
+        },
+        {
+          "icon": "📏",
+          "en": "near",
+          "cz": "blízko"
+        }
+      ]
+    },
+    {
+      "title": "Everyday places",
+      "title_cz": "Každodenní místa",
+      "pictures": [
+        {
           "icon": "🏪",
           "en": "shop",
           "cz": "obchod"
+        },
+        {
+          "icon": "🛒",
+          "en": "supermarket",
+          "cz": "supermarket"
         },
         {
           "icon": "🏫",
@@ -559,20 +626,41 @@
           "cz": "škola"
         },
         {
+          "icon": "🚉",
+          "en": "station (train)",
+          "cz": "nádraží"
+        },
+        {
           "icon": "🏦",
           "en": "bank",
           "cz": "banka"
         },
         {
-          "icon": "🏨",
-          "en": "hotel",
-          "cz": "hotel"
+          "icon": "🏤",
+          "en": "post office",
+          "cz": "pošta"
+        },
+        {
+          "icon": "🍽️",
+          "en": "restaurant",
+          "cz": "restaurace"
         },
         {
           "icon": "☕",
           "en": "café",
           "cz": "kavárna"
         },
+        {
+          "icon": "🏨",
+          "en": "hotel",
+          "cz": "hotel"
+        }
+      ]
+    },
+    {
+      "title": "Transport",
+      "title_cz": "Doprava",
+      "pictures": [
         {
           "icon": "🚌",
           "en": "bus",
@@ -584,17 +672,209 @@
           "cz": "vlak"
         },
         {
+          "icon": "🚗",
+          "en": "car",
+          "cz": "auto"
+        },
+        {
+          "icon": "🚕",
+          "en": "taxi",
+          "cz": "taxi"
+        },
+        {
+          "icon": "🚇",
+          "en": "metro",
+          "cz": "metro"
+        },
+        {
+          "icon": "🚊",
+          "en": "tram",
+          "cz": "tramvaj"
+        },
+        {
+          "icon": "🚲",
+          "en": "bike (bicycle)",
+          "cz": "kolo"
+        },
+        {
           "icon": "✈️",
           "en": "plane",
           "cz": "letadlo"
         },
         {
+          "icon": "🛫",
+          "en": "airport",
+          "cz": "letiště"
+        },
+        {
+          "icon": "🚶",
+          "en": "go",
+          "cz": "jít / jet"
+        },
+        {
+          "icon": "🚶‍♂️",
+          "en": "walk",
+          "cz": "jít pěšky"
+        },
+        {
+          "icon": "🎫",
+          "en": "take (the bus)",
+          "cz": "vzít si / jet (autobusem)"
+        }
+      ]
+    },
+    {
+      "title": "Directions",
+      "title_cz": "Směry",
+      "pictures": [
+        {
+          "icon": "⬅️",
+          "en": "left",
+          "cz": "vlevo"
+        },
+        {
+          "icon": "➡️",
+          "en": "right",
+          "cz": "vpravo"
+        },
+        {
+          "icon": "⬆️",
+          "en": "straight",
+          "cz": "rovně"
+        },
+        {
+          "icon": "↔️",
+          "en": "next to",
+          "cz": "vedle"
+        },
+        {
+          "icon": "🔃",
+          "en": "opposite",
+          "cz": "naproti"
+        },
+        {
+          "icon": "⏸️",
+          "en": "between",
+          "cz": "mezi"
+        },
+        {
+          "icon": "🔙",
+          "en": "behind",
+          "cz": "za (místem)"
+        },
+        {
+          "icon": "👀",
+          "en": "in front of",
+          "cz": "před (místem)"
+        },
+        {
+          "icon": "👋",
+          "en": "come",
+          "cz": "přijít"
+        },
+        {
+          "icon": "🚪",
+          "en": "leave",
+          "cz": "odejít"
+        },
+        {
+          "icon": "🏁",
+          "en": "arrive",
+          "cz": "přijet / dorazit"
+        },
+        {
+          "icon": "🛑",
+          "en": "stop (verb)",
+          "cz": "zastavit"
+        }
+      ]
+    },
+    {
+      "title": "Travel",
+      "title_cz": "Cestování",
+      "pictures": [
+        {
+          "icon": "🏡",
+          "en": "village",
+          "cz": "vesnice"
+        },
+        {
+          "icon": "🌍",
+          "en": "country (nation)",
+          "cz": "země (stát)"
+        },
+        {
+          "icon": "🛣️",
+          "en": "road",
+          "cz": "silnice / cesta"
+        },
+        {
+          "icon": "⛵",
+          "en": "boat",
+          "cz": "loď"
+        },
+        {
+          "icon": "🧳",
+          "en": "trip",
+          "cz": "výlet / cesta"
+        },
+        {
+          "icon": "🚦",
+          "en": "traffic",
+          "cz": "doprava / provoz"
+        }
+      ]
+    },
+    {
+      "title": "Going out",
+      "title_cz": "Kam jít ven",
+      "pictures": [
+        {
           "icon": "🏛️",
           "en": "museum",
           "cz": "muzeum"
+        },
+        {
+          "icon": "🎬",
+          "en": "cinema",
+          "cz": "kino"
+        },
+        {
+          "icon": "📚",
+          "en": "library",
+          "cz": "knihovna"
+        },
+        {
+          "icon": "🧺",
+          "en": "market",
+          "cz": "trh"
+        },
+        {
+          "icon": "🚜",
+          "en": "farm",
+          "cz": "farma"
+        },
+        {
+          "icon": "🏖️",
+          "en": "beach",
+          "cz": "pláž"
+        },
+        {
+          "icon": "🏢",
+          "en": "building",
+          "cz": "budova"
+        },
+        {
+          "icon": "🏊",
+          "en": "pool",
+          "cz": "bazén"
+        },
+        {
+          "icon": "👮",
+          "en": "police",
+          "cz": "policie"
         }
-      ],
-      "body": "Sixty words: the town, everyday places, transport, directions, travel, and where you go out. Five boards."
+      ]
     },
     {
       "title": "You will use these words in",
@@ -614,7 +894,7 @@
       "en": "Where is the station?",
       "cz": "Kde je nádraží?",
       "lemmas": [
-        "station"
+        "station (train)"
       ],
       "accepts": [
         "Where is the station",

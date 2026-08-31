@@ -16,7 +16,7 @@ import { expandContractions } from "./contractions.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
 import { setSmokeContext } from "./smoke-flags.js";
-import { vocabCoverNeed } from "./progress.js";
+import { vocabCoverNeed, vocabCoveredEnough } from "./progress.js?v=2026-08-31-usetree2";
 
 /**
  * Default questions per stage (Match board · Quiz · Type · Use).
@@ -155,11 +155,26 @@ function contentCapitals(s) {
   );
 }
 
+function capModelList(model) {
+  if (model == null) return [];
+  return Array.isArray(model) ? model.filter(Boolean) : [model];
+}
+
+/** Proper names in the matched form must keep their capitals.
+ *  Check the accept that matches what they typed (Czechia vs the Czech Republic),
+ *  not only the preferred model. */
 function capitalsOk(typed, model) {
-  const want = contentCapitals(model);
-  if (!want.length) return true;
+  const models = capModelList(model);
+  if (!models.length) return true;
+  const userN = norm(typed);
+  const matching = models.filter((m) => norm(m) === userN);
+  const check = matching.length ? matching : models;
   const got = String(typed == null ? "" : typed).match(/[A-Za-zÀ-ÿ']+/g) || [];
-  return want.every((w) => got.includes(w));
+  return check.some((m) => {
+    const want = contentCapitals(m);
+    if (!want.length) return true;
+    return want.every((w) => got.includes(w));
+  });
 }
 
 const ARTICLES = new Set(["a", "an", "the"]);
@@ -559,7 +574,49 @@ function isFrameItem(item) {
   return Boolean(item && item.gap && item.gap_answer);
 }
 
-/** First letter + blanks, and letter count. Fat vocab Type only. */
+/** "free (time)" → "free" so a Use lemma can be gapped in the English. */
+function lemmaBare(s) {
+  return String(s || "")
+    .replace(/\s*\([^)]*\)\s*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** Leaf Use sentence → Quiz/Type frame (Czech sentence + English gap). */
+function sentenceToFrame(s) {
+  if (!s || typeof s !== "object") return null;
+  const en = String(s.en || "").trim();
+  const cz = String(s.cz || "").trim();
+  const lemmas = Array.isArray(s.lemmas) ? s.lemmas : [];
+  if (!en || !cz || !lemmas.length) return null;
+  let gap = en;
+  let answer = "";
+  for (const raw of lemmas) {
+    const form = lemmaBare(raw);
+    if (!form) continue;
+    const re = new RegExp(
+      "\\b" + form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "\\b",
+      "i",
+    );
+    if (!re.test(gap)) continue;
+    answer = form;
+    gap = gap.replace(re, "____");
+    break;
+  }
+  if (!answer || !gap.includes("____")) return null;
+  return {
+    en,
+    cz,
+    gap,
+    gap_answer: answer,
+    lemmas,
+    accepts: s.accepts,
+  };
+}
+
+/** First letter + blanks, and letter count. Fat vocab Type only.
+ *  Keep the model's capital on the revealed letter — strict_capitals grades
+ *  the typed form, it does not rewrite the clue (James, 2026-08-31). */
 function typeLetterClue(answer) {
   const raw = String(answer || "").trim();
   if (!raw) return "";
@@ -599,6 +656,56 @@ function czSenses(cz) {
     .split("/")
     .map((p) => glossKey(p.replace(/\([^)]*\)/g, " ")))
     .filter(Boolean);
+}
+
+function matchSenseKeys(item) {
+  const support = supportOf(item);
+  const senses = czSenses(support);
+  return senses.length ? senses : [glossKey(support)].filter(Boolean);
+}
+
+/** One member of each Czech-sense group first, so a pair like shoe/boot
+ *  (both *bota*) is split across boards instead of both landing leftover. */
+function spreadMatchOrder(list, order) {
+  const items = [];
+  for (const i of order) {
+    const it = list[i];
+    if (it) items.push({ i, it });
+  }
+  if (items.length < 2) return order;
+  const parent = items.map((_, idx) => idx);
+  const find = (a) => (parent[a] === a ? a : (parent[a] = find(parent[a])));
+  const keyAt = new Map();
+  items.forEach((x, idx) => {
+    for (const k of matchSenseKeys(x.it)) {
+      if (keyAt.has(k)) {
+        const a = find(keyAt.get(k));
+        const b = find(idx);
+        if (a !== b) parent[b] = a;
+      } else {
+        keyAt.set(k, idx);
+      }
+    }
+  });
+  const groups = new Map();
+  items.forEach((x, idx) => {
+    const r = find(idx);
+    if (!groups.has(r)) groups.set(r, []);
+    groups.get(r).push(x.i);
+  });
+  const reps = [];
+  const rest = [];
+  for (const g of groups.values()) {
+    if (g.length > 1) {
+      reps.push(g[0]);
+      rest.push(...g.slice(1));
+    } else {
+      rest.push(g[0]);
+    }
+  }
+  const pos = new Map(order.map((i, p) => [i, p]));
+  rest.sort((a, b) => (pos.get(a) ?? 0) - (pos.get(b) ?? 0));
+  return [...reps, ...rest];
 }
 
 /**
@@ -667,8 +774,15 @@ export function startPractice(root, block, opts) {
 
   const wordItems = (block.items || []).filter((it) => !isSentenceQuiz(it));
   const sentenceQuizItems = (block.items || []).filter(isSentenceQuiz);
+  const quizMode = block.quiz_mode || opts.quiz_mode || "";
+  const sentenceFrames =
+    quizMode === "sentence_gap"
+      ? (sentenceBank || []).map(sentenceToFrame).filter(Boolean)
+      : [];
   function quizList() {
-    return sentenceQuizItems.length ? sentenceQuizItems : wordItems.length ? wordItems : block.items || [];
+    if (sentenceQuizItems.length) return sentenceQuizItems;
+    if (sentenceFrames.length) return sentenceFrames;
+    return wordItems.length ? wordItems : block.items || [];
   }
   function matchList() {
     return wordItems.length ? wordItems : block.items || [];
@@ -677,9 +791,46 @@ export function startPractice(root, block, opts) {
   const quizCovered = new Set(opts.quizKeys || []);
   const typeCovered = new Set(opts.typeKeys || []);
   const matchCovered = new Set(opts.matchKeys || []);
+  let matchCleared = !!opts.matchCleared;
+  let quizCleared = !!opts.quizCleared;
+  let typeCleared = !!opts.typeCleared;
 
-  function coverNeed() {
+  /** Drop keys for lemmas the pack no longer has (Feelings dropped *well*
+   *  and the leftover key made Match read 18/17 and skip the second board).
+   *  If the saved deck is a different size, first-learn starts over. */
+  function pruneCovered(covered, list) {
+    const live = new Set((list || []).map(itemDeckKey));
+    let ghosts = 0;
+    for (const k of [...covered]) {
+      if (live.has(k)) continue;
+      covered.delete(k);
+      ghosts += 1;
+    }
+    return ghosts;
+  }
+  function deckChanged(storedNeed, liveNeed, ghosts) {
+    if (ghosts) return true;
+    if (storedNeed == null || liveNeed == null) return false;
+    return Number(storedNeed) !== Number(liveNeed);
+  }
+
+  function typeSourceList() {
+    return sentenceFrames.length ? sentenceFrames : matchList();
+  }
+
+  /** Word Quiz and sentence-gap Quiz share Type's keys. Which-is-correct?
+   *  (`quiz_axis: sentence`) is a different deck — Type must cover the words
+   *  itself or round 2 redraws the same 12 (James, 2026-08-31, Countries). */
+  function typeTiedToQuiz() {
+    return sentenceQuizItems.length === 0;
+  }
+
+  function quizCoverNeed() {
     return vocabCoverNeed(quizList().length);
+  }
+
+  function typeCoverNeed() {
+    return vocabCoverNeed(typeSourceList().length);
   }
 
   function coverRoundTotal(need) {
@@ -694,15 +845,127 @@ export function startPractice(root, block, opts) {
     return matchList().length;
   }
 
+  const matchGhosts = pruneCovered(matchCovered, matchList());
+  const quizGhosts = pruneCovered(quizCovered, quizList());
+  const typeGhosts = pruneCovered(typeCovered, typeSourceList());
+  const matchNeedNow = matchCoverNeed();
+  const quizNeedNow = quizCoverNeed();
+  const typeNeedNow = typeCoverNeed();
+  const matchDeckChanged = deckChanged(opts.matchNeed, matchNeedNow, matchGhosts);
+  const quizDeckChanged = deckChanged(opts.quizNeed, quizNeedNow, quizGhosts);
+  const typeDeckChanged = deckChanged(opts.typeNeed, typeNeedNow, typeGhosts);
+  if (matchDeckChanged) {
+    matchCovered.clear();
+    matchCleared = false;
+  } else {
+    matchCleared = matchCleared && matchCovered.size >= matchNeedNow;
+  }
+  if (quizDeckChanged) {
+    quizCovered.clear();
+    quizCleared = false;
+  } else {
+    quizCleared = quizCleared && quizCovered.size >= quizNeedNow;
+  }
+  if (typeDeckChanged) {
+    typeCovered.clear();
+    typeCleared = false;
+  } else {
+    typeCleared = typeCleared && typeCovered.size >= typeNeedNow;
+  }
+  if (typeof opts.onModeComplete === "function") {
+    if (matchDeckChanged) {
+      opts.onModeComplete("match", {
+        coverageDone: false,
+        coveredKeys: [...matchCovered],
+        need: matchNeedNow,
+      });
+    }
+    if (quizDeckChanged) {
+      opts.onModeComplete("quiz", {
+        coverageDone: false,
+        coveredKeys: [...quizCovered],
+        need: quizNeedNow,
+      });
+    }
+    if (typeDeckChanged) {
+      opts.onModeComplete("type", {
+        coverageDone: false,
+        coveredKeys: [...typeCovered],
+        need: typeNeedNow,
+      });
+    }
+  }
+
+  /** Naive ceil(need/cap) is 2 for 23 words, but a Czech-sense collision
+   *  can leave 1 word after two boards — never print "Match 3 of 2". */
+  function leftoverRounds(have, need, cap) {
+    const size = Math.max(1, cap || DEFAULT_PASS);
+    const remaining = Math.max(0, need - have);
+    const planned = Math.max(1, Math.ceil(need / size));
+    const roundN = Math.max(1, Math.ceil(Math.max(have, 1) / size));
+    if (!remaining) {
+      const n = Math.max(roundN, planned);
+      return { roundN: n, roundTotal: n };
+    }
+    const boardsLeft = Math.max(1, Math.ceil(remaining / size));
+    return { roundN, roundTotal: Math.max(planned, roundN + boardsLeft) };
+  }
+
   function moreBoardsLine(have, need, boardCap, kind) {
-    const total = Math.max(1, Math.ceil(need / boardCap));
-    const done = Math.max(0, Math.ceil(have / boardCap));
-    const left = Math.max(0, total - done);
-    if (!left) return kind === "match" ? "All clear · next: Quiz" : "All clear · next: Type";
+    const remaining = Math.max(0, need - have);
+    if (!remaining) {
+      return kind === "match" ? "All clear · next: Quiz" : "All clear · next: Type";
+    }
+    const { roundN, roundTotal } = leftoverRounds(have, need, boardCap);
+    const left = Math.max(1, roundTotal - roundN);
     const unit = kind === "match" ? "match" : "quiz";
     const units = kind === "match" ? "matches" : "quizzes";
     if (left === 1) return `Complete 1 more ${unit} to continue`;
     return `Complete ${left} more ${units} to continue`;
+  }
+
+  function matchFruitNeed() {
+    return Math.min(matchCoverNeed(), DEFAULT_PASS);
+  }
+
+  /** What's still holding the tree after Use. Match fruit is one board. */
+  function fruitBlockers() {
+    const bits = [];
+    const mNeed = matchFruitNeed();
+    if (matchCovered.size < mNeed && !matchCleared) {
+      bits.push(`Match ${matchCovered.size}/${mNeed}`);
+    }
+    const qNeed = quizCoverNeed();
+    if (!vocabCoveredEnough([...quizCovered], qNeed)) {
+      bits.push(`Quiz ${quizCovered.size}/${qNeed}`);
+    }
+    const tNeed = typeCoverNeed();
+    if (!vocabCoveredEnough([...typeCovered], tNeed)) {
+      bits.push(`Type ${typeCovered.size}/${tNeed}`);
+    }
+    return bits;
+  }
+
+  function leftoverMode() {
+    if (matchCovered.size < matchFruitNeed() && !matchCleared) return "match";
+    if (!quizFruitReady()) return "quiz";
+    if (!typeFruitReady()) return "type";
+    return null;
+  }
+
+  function quizFruitReady() {
+    return vocabCoveredEnough([...quizCovered], quizCoverNeed());
+  }
+
+  function typeFruitReady() {
+    return vocabCoveredEnough([...typeCovered], typeCoverNeed());
+  }
+
+  function canOpenMode(id) {
+    if (id === "intro" || id === "match" || id === "quiz") return true;
+    if (id === "type") return quizFruitReady();
+    if (id === "sentence") return quizFruitReady() && typeFruitReady();
+    return true;
   }
 
   function moreQuizzesLine(have, need) {
@@ -725,10 +988,11 @@ export function startPractice(root, block, opts) {
     return [...shuffle(prefer), ...shuffle(rest)].slice(0, n);
   }
 
-  /** First-learn Type only produces words already quizzed. Review uses the pack. */
+  /** First-learn Type on a shared deck only produces words already quizzed.
+   *  Which-is-correct? Quiz does not share keys — use the full word list. */
   function typeList() {
-    const all = matchList();
-    if (opts.typeCleared) return all;
+    const all = typeSourceList();
+    if (typeCleared || !typeTiedToQuiz()) return all;
     const quizzed = all.filter((it) => quizCovered.has(itemDeckKey(it)));
     return quizzed.length ? quizzed : all;
   }
@@ -868,7 +1132,7 @@ export function startPractice(root, block, opts) {
   }
 
   markKeysSeen("quiz", [...quizCovered], quizList());
-  markKeysSeen("type", [...typeCovered], matchList());
+  markKeysSeen("type", [...typeCovered], typeSourceList());
   markKeysSeen("match", [...matchCovered], matchList());
 
   /** "· deck 24/36" coverage suffix for decks bigger than one pass. */
@@ -1021,6 +1285,7 @@ export function startPractice(root, block, opts) {
   }
 
   function setMode(m) {
+    if (!canOpenMode(m)) return;
     clearKey();
     state.mode = m;
     if (m === "intro") state.introPage = 0;
@@ -1059,10 +1324,17 @@ export function startPractice(root, block, opts) {
       </div>
       <div class="modes">
         ${modes
-          .map(
-            ([id, label]) =>
-              `<button type="button" class="mode ${state.mode === id ? "active" : ""}" data-mode="${id}">${label}</button>`,
-          )
+          .map(([id, label]) => {
+            const open = canOpenMode(id);
+            const cls = `mode${state.mode === id ? " active" : ""}`;
+            const dis = open ? "" : " disabled";
+            const title = open
+              ? ""
+              : id === "type"
+                ? ' title="Finish Quiz first"'
+                : ' title="Finish Quiz and Type first"';
+            return `<button type="button" class="${cls}" data-mode="${id}"${dis}${title}>${label}</button>`;
+          })
           .join("")}
       </div>
       <div class="p-bar">
@@ -1084,7 +1356,10 @@ export function startPractice(root, block, opts) {
 
   function wireChrome() {
     root.querySelectorAll(".mode").forEach((btn) => {
-      btn.addEventListener("click", () => setMode(btn.dataset.mode));
+      btn.addEventListener("click", () => {
+        if (btn.disabled) return;
+        setMode(btn.dataset.mode);
+      });
     });
     root.querySelector("#p-exit").addEventListener("click", () => {
       clearKey();
@@ -1118,11 +1393,12 @@ export function startPractice(root, block, opts) {
     const list = matchList();
     const need = matchCoverNeed();
     let order;
-    if (!opts.matchCleared && matchCovered.size < need) {
+    if (!matchCleared && matchCovered.size < need) {
       order = pickUnseen(list, matchCovered, list.length);
     } else {
       order = rotatedOrder("match", list, null);
     }
+    order = spreadMatchOrder(list, order);
     // Drop items whose Czech prompt duplicates one already on the board —
     // two identical tiles are unpairable by sight, and pairing is graded by
     // item id, so the visually-correct pairing is wrong half the time.
@@ -1137,9 +1413,8 @@ export function startPractice(root, block, opts) {
     const pool = [];
     for (const i of order) {
       const item = list[i];
-      const support = supportOf(item);
-      const senses = czSenses(support);
-      const keys = senses.length ? senses : [glossKey(support)].filter(Boolean);
+      if (!item) continue;
+      const keys = matchSenseKeys(item);
       if (keys.some((k) => seenGloss.has(k))) continue;
       for (const k of keys) seenGloss.add(k);
       pool.push(item);
@@ -1202,8 +1477,8 @@ export function startPractice(root, block, opts) {
       const list = matchList();
       const need = matchCoverNeed();
       const boardCap = matchBoardSize(list);
-      if (!opts.matchCleared) {
-        if (list.length <= DEFAULT_PASS) {
+      if (!matchCleared) {
+        if (list.length <= boardCap) {
           for (const it of list) matchCovered.add(itemDeckKey(it));
         } else {
           for (const k of m.roundKeys || []) matchCovered.add(k);
@@ -1211,19 +1486,19 @@ export function startPractice(root, block, opts) {
         markKeysSeen("match", [...matchCovered], list);
       }
       const have = matchCovered.size;
-      const done = opts.matchCleared || have >= need;
+      const done = matchCleared || have >= need;
       reportMode("match", {
         coverageDone: done,
         coveredKeys: [...matchCovered],
         need,
       });
-      const more = !opts.matchCleared && have < need;
-      const roundN = coverRoundAt(have);
-      const roundTotal = coverRoundTotal(need);
-      const title =
-        need > DEFAULT_PASS
-          ? `Match ${Math.max(1, roundN)} of ${roundTotal} done`
-          : "Match · Done";
+      const more = !matchCleared && have < need;
+      const { roundN, roundTotal } = leftoverRounds(have, need, boardCap);
+      const title = more
+        ? `Match ${roundN} of ${roundTotal} done`
+        : matchCleared || need <= boardCap
+          ? "Match · Done"
+          : `Match ${roundTotal} of ${roundTotal} done`;
       const sub = more
         ? moreBoardsLine(have, need, boardCap, "match")
         : "Next: Quiz · Enter continues";
@@ -1283,7 +1558,17 @@ export function startPractice(root, block, opts) {
           : ""
       }</div>
       <div class="match"><div class="match-col">${col(m.left, "L")}</div><div class="match-col">${col(m.right, "R")}</div></div>`;
-    stage.querySelector("#m-skip")?.addEventListener("click", () => setMode("quiz"));
+    stage.querySelector("#m-skip")?.addEventListener("click", () => {
+      // Smoke skip still counts as Match walked, or Use 12/12 never gets a tree
+      // (James, Countries 2026-08-31). Students do not see this control.
+      reportMode("match", {
+        coverageDone: true,
+        coveredKeys: [...matchCovered],
+        need: Math.min(DEFAULT_PASS, matchCoverNeed()),
+      });
+      matchCleared = true;
+      setMode("quiz");
+    });
 
     // Esc clears a mis-tapped token without needing to find it again.
     clearKey();
@@ -1360,7 +1645,7 @@ export function startPractice(root, block, opts) {
     let order;
     if (retry) {
       order = shuffle(onlyIndices.slice());
-    } else if (!opts.quizCleared && quizCovered.size < coverNeed()) {
+    } else if (!quizCleared && quizCovered.size < quizCoverNeed()) {
       order = pickUnseen(list, quizCovered, DEFAULT_PASS);
     } else {
       order = rotatedOrder("quiz", list, null);
@@ -1384,14 +1669,14 @@ export function startPractice(root, block, opts) {
 
     if (q.pos >= q.order.length) {
       const wrongN = q.wrong.length;
-      const need = coverNeed();
+      const need = quizCoverNeed();
       if (wrongN === 0) {
-        if (!opts.quizCleared) {
+        if (!quizCleared) {
           for (const k of q.roundKeys || []) quizCovered.add(k);
           markKeysSeen("quiz", q.roundKeys || [], quizList());
           markKeysSeen("match", q.roundKeys || [], matchList());
         }
-        const done = opts.quizCleared || quizCovered.size >= need;
+        const done = quizCleared || quizFruitReady();
         reportMode("quiz", {
           score: q.retryPass ? 1 : q.score,
           total: q.retryPass ? 1 : passLen,
@@ -1403,24 +1688,27 @@ export function startPractice(root, block, opts) {
         reportMode("quiz", {
           score: q.score,
           total: passLen,
-          coverageDone: opts.quizCleared || quizCovered.size >= need,
+          coverageDone: quizCleared || quizFruitReady(),
           coveredKeys: [...quizCovered],
           need,
         });
       }
       const have = quizCovered.size;
       const moreN = Math.min(DEFAULT_PASS, Math.max(0, need - have));
-      const more = wrongN === 0 && !opts.quizCleared && have < need;
+      const more = wrongN === 0 && !quizCleared && have < need;
+      const canType = wrongN === 0 && quizFruitReady();
       const roundN = coverRoundAt(have);
       const roundTotal = coverRoundTotal(need);
       const title = need > DEFAULT_PASS && wrongN === 0
         ? `Quiz ${roundN} of ${roundTotal} done`
         : "Quiz done";
       const sub = wrongN > 0
-        ? `${wrongN} to retry · or go to Type`
-        : more
+        ? `${wrongN} to retry`
+        : !canType
           ? moreQuizzesLine(have, need)
-          : "All clear · next: Type";
+          : more
+            ? moreQuizzesLine(have, need)
+            : "All clear · next: Type";
       stage.innerHTML = `
         <div class="q">
           <div class="prompt">${title}</div>
@@ -1430,13 +1718,14 @@ export function startPractice(root, block, opts) {
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="q-retry">Retry wrong (${wrongN})</button>
-                   <button type="button" class="btn" id="q-type">3 · Type →</button>
                    <button type="button" class="btn" id="q-type-map">← Home</button>`
-                : more
-                  ? `<button type="button" class="btn primary" id="q-more">Quiz ${roundN + 1} of ${roundTotal} →</button>
-                     <button type="button" class="btn" id="q-type">3 · Type →</button>`
-                  : `<button type="button" class="btn" id="q-again">Try full set</button>
-                     <button type="button" class="btn primary" id="q-type">3 · Type →</button>`
+                : !canType
+                  ? `<button type="button" class="btn primary" id="q-more">Quiz ${roundN + 1} of ${roundTotal} →</button>`
+                  : more
+                    ? `<button type="button" class="btn primary" id="q-type">3 · Type →</button>
+                       <button type="button" class="btn" id="q-more">Quiz ${roundN + 1} of ${roundTotal} →</button>`
+                    : `<button type="button" class="btn" id="q-again">Try full set</button>
+                       <button type="button" class="btn primary" id="q-type">3 · Type →</button>`
             }
           </div>
           ${
@@ -1459,7 +1748,7 @@ export function startPractice(root, block, opts) {
           render();
         };
       }
-      stage.querySelector("#q-type").onclick = () => setMode("type");
+      stage.querySelector("#q-type")?.addEventListener("click", () => setMode("type"));
       stage.querySelector("#q-type-map")?.addEventListener("click", () => {
         clearKey();
         opts.onExit();
@@ -1646,7 +1935,7 @@ export function startPractice(root, block, opts) {
     let order;
     if (retry) {
       order = shuffle(onlyIndices.slice());
-    } else if (!opts.typeCleared && typeCovered.size < coverNeed()) {
+    } else if (!typeCleared && typeCovered.size < typeCoverNeed()) {
       order = pickUnseen(list, typeCovered, DEFAULT_PASS);
     } else {
       order = rotatedOrder("type", list, null);
@@ -1671,17 +1960,20 @@ export function startPractice(root, block, opts) {
 
     if (t.pos >= t.order.length) {
       const wrongN = t.wrong.length;
-      const need = coverNeed();
+      const need = typeCoverNeed();
+      const quizNeed = quizCoverNeed();
+      const tied = typeTiedToQuiz();
       if (wrongN === 0) {
-        if (!opts.typeCleared) {
+        if (!typeCleared) {
           for (const k of t.roundKeys || []) {
-            if (quizCovered.has(k)) typeCovered.add(k);
+            if (!tied || quizCovered.has(k)) typeCovered.add(k);
           }
-          markKeysSeen("type", t.roundKeys || [], matchList());
+          markKeysSeen("type", t.roundKeys || [], typeSourceList());
         }
+        const typeEnough = vocabCoveredEnough([...typeCovered], need);
+        const quizEnough = vocabCoveredEnough([...quizCovered], quizNeed);
         const done =
-          opts.typeCleared ||
-          (quizCovered.size >= need && typeCovered.size >= need);
+          typeCleared || (tied ? quizEnough && typeEnough : typeEnough);
         reportMode("type", {
           score: t.retryPass ? 1 : t.score,
           total: t.retryPass ? 1 : passLen,
@@ -1690,42 +1982,65 @@ export function startPractice(root, block, opts) {
           need,
         });
       } else if (!t.retryPass) {
+        const typeEnough = vocabCoveredEnough([...typeCovered], need);
+        const quizEnough = vocabCoveredEnough([...quizCovered], quizNeed);
         reportMode("type", {
           score: t.score,
           total: passLen,
           coverageDone:
-            opts.typeCleared ||
-            (quizCovered.size >= need && typeCovered.size >= need),
+            typeCleared || (tied ? quizEnough && typeEnough : typeEnough),
           coveredKeys: [...typeCovered],
           need,
         });
       }
-      if (noSentence && wrongN === 0 && (opts.typeCleared || typeCovered.size >= need)) {
+      if (noSentence && wrongN === 0 && (typeCleared || vocabCoveredEnough([...typeCovered], need))) {
         reportMode("sentence", { score: 1, total: 1 });
       }
       const have = typeCovered.size;
       const quizHave = quizCovered.size;
-      const typeCap = Math.min(need, Math.max(quizHave, 0));
-      const more = wrongN === 0 && !opts.typeCleared && have < typeCap;
-      const quizFirst = wrongN === 0 && !opts.typeCleared && quizHave < need;
-      const moreN = Math.min(DEFAULT_PASS, Math.max(0, typeCap - have));
+      const typeCap = tied ? Math.min(need, Math.max(quizHave, 0)) : need;
+      const more = wrongN === 0 && !typeCleared && have < typeCap;
+      const quizFirst = tied && wrongN === 0 && !typeCleared && !quizFruitReady();
+      const canUse = wrongN === 0 && quizFruitReady() && typeFruitReady();
+      const leftWords = Math.max(0, typeCap - have);
+      const shortLeftover =
+        more &&
+        !noSentence &&
+        leftWords > 0 &&
+        leftWords < DEFAULT_PASS &&
+        have >= DEFAULT_PASS * 2 &&
+        canUse;
+      const moreN = Math.min(DEFAULT_PASS, leftWords);
       const roundN = coverRoundAt(have);
       const roundTotal = coverRoundTotal(need);
       const typeLeft = Math.max(0, roundTotal - roundN);
+      const useBtn = (primary) =>
+        noSentence
+          ? ""
+          : `<button type="button" class="btn${primary ? " primary" : ""}" id="t-sent">Use →</button>`;
+      const moreBtn = more
+        ? `<button type="button" class="btn${shortLeftover || noSentence ? "" : " primary"}" id="t-more">Type ${roundN + 1} of ${roundTotal}${shortLeftover ? ` · ${leftWords} words` : ""} →</button>`
+        : "";
       const title = need > DEFAULT_PASS && wrongN === 0
         ? `Type ${roundN} of ${roundTotal} done`
         : "Type done";
       const sub = wrongN > 0
         ? `${wrongN} to retry`
-        : more
-          ? typeLeft === 1
-            ? "Complete 1 more type-in to continue"
-            : `Complete ${typeLeft} more type-ins to continue`
-          : quizFirst
-            ? `All clear · Quiz ${quizHave} / ${need} first`
-            : noSentence
-              ? "All clear · unit done"
-              : "All clear · next: Use";
+        : quizFirst
+          ? `Quiz ${quizHave} / ${need} first`
+          : more && shortLeftover
+            ? `All clear · next: Use · ${leftWords} words left`
+            : more && !canUse
+              ? typeLeft === 1
+                ? `${moreN} more words`
+                : `${typeLeft} more type-ins`
+              : more
+                ? typeLeft === 1
+                  ? `${moreN} more words · or Use`
+                  : `${typeLeft} more type-ins · or Use`
+                : noSentence
+                  ? "All clear · unit done"
+                  : "All clear · next: Use";
       stage.innerHTML = `
         <div class="q">
           <div class="prompt">${title}</div>
@@ -1735,17 +2050,27 @@ export function startPractice(root, block, opts) {
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="t-retry">Retry wrong (${wrongN})</button>
-                   ${noSentence ? `<button type="button" class="btn" id="t-sent-map">← Home</button>` : `<button type="button" class="btn" id="t-sent">4 · Use →</button>`}`
-                : more
-                  ? `<button type="button" class="btn primary" id="t-more">Type ${roundN + 1} of ${roundTotal} →</button>
-                     <button type="button" class="btn" id="t-quiz">Quiz →</button>`
-                  : quizFirst
-                    ? `<button type="button" class="btn primary" id="t-quiz">Quiz · ${Math.min(DEFAULT_PASS, need - quizHave)} more →</button>`
-                    : noSentence
-                      ? `<button type="button" class="btn" id="t-again">Try full set</button>
-                         <button type="button" class="btn primary" id="t-sent-map">← Home</button>`
-                      : `<button type="button" class="btn" id="t-again">Try full set</button>
-                         <button type="button" class="btn primary" id="t-sent">4 · Use →</button>`
+                   <button type="button" class="btn" id="t-sent-map">← Home</button>`
+                : quizFirst
+                  ? `<button type="button" class="btn primary" id="t-quiz">Quiz · ${Math.min(DEFAULT_PASS, need - quizHave)} more →</button>`
+                  : more && noSentence
+                    ? `${moreBtn}
+                       <button type="button" class="btn" id="t-sent-map">← Home</button>`
+                    : more && shortLeftover
+                      ? `${useBtn(true)}
+                         ${moreBtn}`
+                      : more && !canUse
+                        ? moreBtn
+                        : more
+                          ? `${moreBtn}
+                             ${useBtn(false)}`
+                          : noSentence
+                            ? `<button type="button" class="btn" id="t-again">Try full set</button>
+                               <button type="button" class="btn primary" id="t-sent-map">← Home</button>`
+                            : canUse
+                              ? `<button type="button" class="btn" id="t-again">Try full set</button>
+                                 ${useBtn(true)}`
+                              : moreBtn || `<button type="button" class="btn primary" id="t-more">Type ${roundN + 1} of ${roundTotal} →</button>`
             }
           </div>
           ${
@@ -1799,7 +2124,9 @@ export function startPractice(root, block, opts) {
       : "Write in English · Enter = check / next";
     const passLabel = t.retryPass ? "retry" : "set";
     const clue =
-      !frame && quizList().length > DEFAULT_PASS ? typeLetterClue(answer) : "";
+      !frame && typeSourceList().length > DEFAULT_PASS
+        ? typeLetterClue(answer)
+        : "";
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
@@ -1851,7 +2178,7 @@ export function startPractice(root, block, opts) {
         isCorrectAnswer(inp.value, it, alt, { forGap: frame }),
       );
       if (isCorrectAnswer(inp.value, it, answer, { forGap: frame }) || alsoRight) {
-        if (strictCaps && !capitalsOk(inp.value, answer)) {
+        if (strictCaps && !capitalsOk(inp.value, [answer, ...(it.accepts || [])])) {
           t.answered = true;
           t.missedThis = true;
           fb.innerHTML = `✗ Capital letter: <span class="reveal">${escapeHtml(answer)}</span>`;
@@ -1972,6 +2299,24 @@ export function startPractice(root, block, opts) {
       // perfect retry stamps 1/1 cleanPass. Never fruit on partial Use.
       if (!t.retryPass) reportMode("sentence", { score: t.score, total: passLen });
       else if (wrongN === 0) reportMode("sentence", { score: 1, total: 1 });
+      const blockers = wrongN === 0 ? fruitBlockers() : [];
+      const leftMode = wrongN === 0 ? leftoverMode() : null;
+      if (
+        wrongN === 0 &&
+        !blockers.length &&
+        typeof opts.onFruitNow === "function" &&
+        opts.onFruitNow()
+      ) {
+        return `Done · ${t.score}/${passLen}`;
+      }
+      const leftLabel =
+        leftMode === "match"
+          ? "1 · Match →"
+          : leftMode === "quiz"
+            ? "2 · Quiz →"
+            : leftMode === "type"
+              ? "3 · Type →"
+              : "";
       stage.innerHTML = `
         <div class="q">
           <div class="prompt">Stage done</div>
@@ -1979,15 +2324,20 @@ export function startPractice(root, block, opts) {
           <div class="sub">${
             wrongN > 0
               ? `${wrongN} to retry`
-              : doneSub
+              : blockers.length
+                ? `The tree needs ${blockers.join(" · ")}`
+                : "On the tree · next: Home"
           }${t.retryPass ? " (retry pass)" : ""}</div>
           <div class="nav">
             ${
               wrongN > 0
                 ? `<button type="button" class="btn primary" id="fs-retry">Retry wrong (${wrongN})</button>
                    <button type="button" class="btn" id="fs-map">← Home</button>`
-                : `<button type="button" class="btn primary" id="fs-map">← Home</button>
-                   <button type="button" class="btn" id="fs-match">1 · Match</button>`
+                : blockers.length
+                  ? `<button type="button" class="btn primary" id="fs-left">${leftLabel}</button>
+                     <button type="button" class="btn" id="fs-map">← Home</button>`
+                  : `<button type="button" class="btn primary" id="fs-map">← Home</button>
+                     <button type="button" class="btn" id="fs-match">1 · Match</button>`
             }
           </div>
           <button type="button" class="link" id="fs-again">Try full set</button>
@@ -2003,6 +2353,9 @@ export function startPractice(root, block, opts) {
         clearKey();
         opts.onExit();
       };
+      stage.querySelector("#fs-left")?.addEventListener("click", () => {
+        if (leftMode) setMode(leftMode);
+      });
       stage.querySelector("#fs-match")?.addEventListener("click", () => setMode("match"));
       const again = stage.querySelector("#fs-again");
       if (again) {
@@ -2073,7 +2426,7 @@ export function startPractice(root, block, opts) {
       t.answered = true;
       t.missedThis = false;
       if (isCorrectAnswer(inp.value, it, it.en)) {
-        if (strictCaps && !capitalsOk(inp.value, it.en)) {
+        if (strictCaps && !capitalsOk(inp.value, [it.en, ...(it.accepts || [])])) {
           t.missedThis = true;
           fb.innerHTML = `✗ Capital letter: <span class="reveal">${escapeHtml(it.en)}</span>`;
           fb.className = "fb bad";
