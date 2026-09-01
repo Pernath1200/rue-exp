@@ -16,7 +16,6 @@ import {
 import {
   loadProgress,
   recentNodeIds,
-  isLevelUnlocked,
   hasFruit,
   progressLabelGrammar,
   nodeProgressStateGrammar,
@@ -58,6 +57,16 @@ import { setSynonymMap } from "./synonyms.js";
 const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
   location.hostname,
 );
+
+/* Shadow gate (James, 2026-09-01): only A1 is class-tested; everything
+ * above it is full of untested bugs. Levels not listed here render greyed
+ * on the rail and cannot be opened — not by rail, path, exam drill, or
+ * deep link. Widen this list level by level as testing catches up. */
+const LIVE_LEVELS = ["A1"];
+
+function isShadowLevel(lv) {
+  return !!lv && !LIVE_LEVELS.includes(lv);
+}
 
 const STATE = {
   level: "A1",
@@ -252,8 +261,13 @@ async function openNodeFromHash({ replace = true } = {}) {
   // whose content is built still opens by hash — the map keeps hiding it.
   // b2_preposition_ing was built and parked, and its link dead-ended
   // (James, 2026-08-24 smoke flag).
+  // Shadow levels beat even teacher links: those units are untested, so a
+  // hash into one shows the dead-link notice instead (James, 2026-09-01).
   const openable =
-    node && node.content && (node.status === "live" || node.status === "parked");
+    node &&
+    node.content &&
+    (node.status === "live" || node.status === "parked") &&
+    !isShadowLevel(levelOfNode(node));
   if (!openable) {
     // A real click on a bad link — say so instead of silently showing the map.
     if (STATE.view === "practice") showMap({ fromHash: true });
@@ -382,7 +396,8 @@ function showMap(opts = {}) {
   document.getElementById("view-map").hidden = false;
   document.getElementById("view-practice").hidden = true;
   document.body.classList.remove("domain-grammar", "domain-vocab");
-  if (STATE.lastPlayedLevel) STATE.level = STATE.lastPlayedLevel;
+  if (STATE.lastPlayedLevel && !isShadowLevel(STATE.lastPlayedLevel))
+    STATE.level = STATE.lastPlayedLevel;
   if (!opts.fromHash) setUnitHash(null);
   renderAll();
   if (opts.skipScroll) return;
@@ -804,10 +819,15 @@ function renderRail() {
     const btn = document.createElement("button");
     btn.type = "button";
     btn.className = "level-btn";
-    // rue-exp: all levels unlocked for browse; live units practiceable
-    void isLevelUnlocked(lv);
     btn.setAttribute("aria-pressed", lv === STATE.level ? "true" : "false");
     btn.textContent = lv;
+    if (isShadowLevel(lv)) {
+      btn.classList.add("is-locked");
+      btn.disabled = true;
+      btn.title = "In testing — not open yet";
+      rail.appendChild(btn);
+      continue;
+    }
     btn.addEventListener("click", () => {
       STATE.level = lv;
       STATE.selectedId = null;
@@ -833,7 +853,12 @@ const HOWTO_KEY = "rue-exp-howto-seen";
 function renderHomeChrome() {
   const line = document.getElementById("home-next-line");
   const hit = spineNext();
-  const due = typeof reviewDueList === "function" ? reviewDueList(STATE.tree?.nodes || []) : [];
+  const due =
+    typeof reviewDueList === "function"
+      ? reviewDueList(
+          (STATE.tree?.nodes || []).filter((n) => !isShadowLevel(levelOfNode(n))),
+        )
+      : [];
   if (line) {
     if (!hit) {
       line.textContent = "Path complete for now.";
@@ -864,6 +889,14 @@ function renderHomeChrome() {
   const more = document.getElementById("panel-more");
   const tables = document.getElementById("tables-card");
   const exam = document.getElementById("exam-card");
+  /* All exam tiers are B1–C1; while those levels are shadow the whole
+   * button goes, not just its drills — an empty panel reads as broken. */
+  const examBtn = document.getElementById("btn-home-exam");
+  if (examBtn) {
+    examBtn.hidden = !EXAM_TIERS.some(
+      (t) => !isShadowLevel(t.level) && examDrillNodes(t.level).length,
+    );
+  }
   if (review) review.hidden = STATE.homePanel !== "review";
   if (more) more.hidden = STATE.homePanel !== "more";
   if (tables) tables.hidden = STATE.homePanel !== "tables";
@@ -1070,7 +1103,9 @@ const EXAM_TIERS = [
 function renderExamPanel() {
   const host = document.getElementById("exam-host");
   if (!host) return;
-  const tiers = EXAM_TIERS.filter((t) => examDrillNodes(t.level).length);
+  const tiers = EXAM_TIERS.filter(
+    (t) => !isShadowLevel(t.level) && examDrillNodes(t.level).length,
+  );
   const linksHtml = (level) =>
     examDrillNodes(level)
       .map(
@@ -1125,6 +1160,7 @@ function renderExamPanel() {
 }
 
 async function startExamDrillFor(level) {
+  if (isShadowLevel(level)) return;
   const nodes = examDrillNodes(level);
   if (!nodes.length) return;
   const tier = EXAM_TIERS.find((t) => t.level === level);
@@ -1354,6 +1390,7 @@ function renderDetail() {
 
 async function openNode(node, launch = {}) {
   if (node.status !== "live" || !node.content) return;
+  if (isShadowLevel(levelOfNode(node))) return;
   STATE.cameFromReview = !!launch.review;
   const lv = levelOfNode(node);
   if (lv) STATE.level = lv;
@@ -1712,7 +1749,7 @@ function renderReview() {
   const list = document.getElementById("review-list");
   if (!card || !list || !STATE.tree) return;
   const live = (STATE.tree.nodes || []).filter(
-    (n) => n.status === "live" && n.content,
+    (n) => n.status === "live" && n.content && !isShadowLevel(levelOfNode(n)),
   );
   const due = reviewDueList(live);
   if (!due.length) {
