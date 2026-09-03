@@ -3,8 +3,8 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-02-indmap2";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-02-typeclue";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-03-nosmoke";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-nosmoke";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -12,7 +12,7 @@ import {
   startGrammarMatchSprint,
   startGrammarTypeSprint,
   startFinaleSprint,
-} from "./vocab-sprint.js?v=2026-09-02-a2finale";
+} from "./vocab-sprint.js?v=2026-09-03-nosmoke";
 import {
   loadProgress,
   lastCompletedNodeId,
@@ -45,18 +45,30 @@ import {
   updateFlagsBadge,
   addFlag,
   loadFlags,
-} from "./smoke-flags.js";
+} from "./smoke-flags.js?v=2026-09-03-nosmoke";
 import { renderTreePortrait, unitSeatPart } from "./tree-portrait.js?v=2026-09-02-nocircles";
 import { initReference, renderReference } from "./reference.js";
 import { setSynonymMap } from "./synonyms.js";
 
 /* Smoke flagging is a REVIEW tool, not a student feature (James, 2026-08-10).
- * Gated on hostname, so it is automatic when serving on :8097 and cannot
- * appear on GitHub Pages — no unlock button to leave switched on by accident.
- * Restores the chrome removed in 7ec4bd1 alongside Author unlock. */
+ * Never auto-show on localhost: class on :8097 leaked Flag / Flagged and the
+ * EN answer key (2026-09-03). Opt-in: ?smoke=1 (this tab only). Never on Pages. */
 const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
   location.hostname,
 );
+const SMOKE_SESSION_KEY = "rue-exp-smoke";
+
+function smokeChromeOn() {
+  if (!IS_DEV_HOST) return false;
+  try {
+    const q = new URLSearchParams(location.search).get("smoke");
+    if (q === "1" || q === "true") sessionStorage.setItem(SMOKE_SESSION_KEY, "1");
+    if (q === "0" || q === "off") sessionStorage.removeItem(SMOKE_SESSION_KEY);
+    return sessionStorage.getItem(SMOKE_SESSION_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
 
 /* Shadow gate (James, 2026-09-01): levels not listed here render greyed
  * on the rail and cannot be opened — not by rail, path, exam drill, or
@@ -1894,7 +1906,7 @@ async function boot() {
       goHome();
     });
 
-    if (IS_DEV_HOST) {
+    if (smokeChromeOn()) {
       mountSmokeFlagsUI(document.getElementById("smoke-flags-host"));
       const bar = document.getElementById("smoke-toolbar");
       if (bar) bar.hidden = false;

@@ -25,7 +25,7 @@ import { expandContractions } from "./contractions.js";
 import { adaptGrammarPack } from "./pack-adapt.js?v=2026-09-01-matchen";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
-import { setSmokeContext } from "./smoke-flags.js";
+import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-nosmoke";
 
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };

@@ -17,7 +17,7 @@ import { canonSynonyms } from "./synonyms.js";
 import { expandContractions } from "./contractions.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
-import { setSmokeContext } from "./smoke-flags.js";
+import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-nosmoke";
 import { vocabCoverNeed, vocabCoveredEnough } from "./progress.js?v=2026-09-02-matchall";
 
 /**

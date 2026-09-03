@@ -27,12 +27,17 @@ export function setSmokeContext(partial) {
   // separate lane (codex/CZECH-REVIEW.md), not part of his tick.
   const el = document.getElementById("smoke-live");
   if (el) {
-    const en = String(liveContext.en || "");
-    const ans = String(liveContext.gap_answer || "");
-    let line = "";
-    if (en && ans && en !== ans) line = "EN: " + en + " · answer: " + ans;
-    else if (en || ans) line = "EN: " + (en || ans);
-    el.textContent = line.slice(0, 480);
+    const bar = document.getElementById("smoke-toolbar");
+    if (!bar || bar.hidden) {
+      el.textContent = "";
+    } else {
+      const en = String(liveContext.en || "");
+      const ans = String(liveContext.gap_answer || "");
+      let line = "";
+      if (en && ans && en !== ans) line = "EN: " + en + " · answer: " + ans;
+      else if (en || ans) line = "EN: " + (en || ans);
+      el.textContent = line.slice(0, 480);
+    }
   }
 }
 

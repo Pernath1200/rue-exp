@@ -1130,7 +1130,11 @@ button.m.wrong {
   color: var(--wrong);
 }
 
-/* Smoke flags (RUE2 model) */
+/* Smoke flags (RUE2 model). display:flex must not override [hidden] —
+ * that leaked Flag / the EN key on Pages and in class (James, 2026-09-03). */
+.smoke-toolbar[hidden] {
+  display: none !important;
+}
 .smoke-toolbar {
   display: flex;
   flex-wrap: wrap;
