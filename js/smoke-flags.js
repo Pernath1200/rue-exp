@@ -28,7 +28,12 @@ export function setSmokeContext(partial) {
   const el = document.getElementById("smoke-live");
   if (el) {
     const bar = document.getElementById("smoke-toolbar");
-    if (!bar || bar.hidden) {
+    if (
+      !bar ||
+      bar.hidden ||
+      bar.classList.contains("smoke-toolbar-flags-only") ||
+      el.hidden
+    ) {
       el.textContent = "";
     } else {
       const en = String(liveContext.en || "");

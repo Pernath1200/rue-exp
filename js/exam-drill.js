@@ -20,7 +20,7 @@
 
 import { _gradeGrammar } from "./practice-grammar.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
-import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-nosmoke";
+import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-checkflag";
 import {
   diagnose,
   invites,

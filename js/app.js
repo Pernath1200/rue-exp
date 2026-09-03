@@ -3,8 +3,8 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-03-nosmoke";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-nosmoke";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-03-checkflag";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-checkflag";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -12,7 +12,7 @@ import {
   startGrammarMatchSprint,
   startGrammarTypeSprint,
   startFinaleSprint,
-} from "./vocab-sprint.js?v=2026-09-03-nosmoke";
+} from "./vocab-sprint.js?v=2026-09-03-checkflag";
 import {
   loadProgress,
   lastCompletedNodeId,
@@ -45,18 +45,25 @@ import {
   updateFlagsBadge,
   addFlag,
   loadFlags,
-} from "./smoke-flags.js?v=2026-09-03-nosmoke";
+} from "./smoke-flags.js?v=2026-09-03-checkflag";
 import { renderTreePortrait, unitSeatPart } from "./tree-portrait.js?v=2026-09-02-nocircles";
 import { initReference, renderReference } from "./reference.js";
 import { setSynonymMap } from "./synonyms.js";
 
 /* Smoke flagging is a REVIEW tool, not a student feature (James, 2026-08-10).
- * Never auto-show on localhost: class on :8097 leaked Flag / Flagged and the
- * EN answer key (2026-09-03). Opt-in: ?smoke=1 (this tab only). Never on Pages. */
+ * Teaching units: Flag + EN key only with ?smoke=1 (class leak 2026-09-03).
+ * End-of-level checks: Flag / Flagged on localhost, no answer key. Never on Pages. */
 const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
   location.hostname,
 );
 const SMOKE_SESSION_KEY = "rue-exp-smoke";
+const LEVEL_CHECK_PRACTICE = new Set([
+  "match_sprint",
+  "type_sprint",
+  "grammar_match_sprint",
+  "grammar_type_sprint",
+  "use_sprint",
+]);
 
 function smokeChromeOn() {
   if (!IS_DEV_HOST) return false;
@@ -68,6 +75,25 @@ function smokeChromeOn() {
   } catch {
     return false;
   }
+}
+
+function applySmokeChrome({ check = false } = {}) {
+  if (!IS_DEV_HOST) return;
+  const bar = document.getElementById("smoke-toolbar");
+  if (!bar) return;
+  const full = smokeChromeOn();
+  const on = full || check;
+  bar.hidden = !on;
+  bar.classList.toggle("smoke-toolbar-flags-only", on && !full);
+  const live = document.getElementById("smoke-live");
+  if (live) {
+    live.hidden = !full;
+    if (!full) live.textContent = "";
+  }
+  bar.querySelectorAll(".smoke-toolbar-hint").forEach((el) => {
+    if (el.id === "smoke-live") return;
+    el.hidden = !full;
+  });
 }
 
 /* Shadow gate (James, 2026-09-01): levels not listed here render greyed
@@ -438,7 +464,7 @@ function goHome() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function showPractice(domain) {
+function showPractice(domain, opts = {}) {
   STATE.view = "practice";
   clearFruitPayoffKeys();
   STATE.pendingFruitPayoff = null;
@@ -448,6 +474,11 @@ function showPractice(domain) {
   document.body.classList.add(
     domain === "grammar" ? "domain-grammar" : "domain-vocab",
   );
+  const node = nodeById(STATE.selectedId);
+  const check =
+    opts.check === true ||
+    (opts.check !== false && LEVEL_CHECK_PRACTICE.has(node?.practice));
+  applySmokeChrome({ check });
 }
 
 function escapeXml(s) {
@@ -1182,7 +1213,7 @@ async function startExamDrillFor(level) {
     const packs = [];
     for (const n of nodes) packs.push(await loadJson(`./data/${n.content}`));
     STATE.lastPlayedLevel = level;
-    showPractice("grammar");
+    showPractice("grammar", { check: false });
     const root = document.getElementById("practice-root");
     root.innerHTML = "";
     startWordFormationDrill({
@@ -1906,10 +1937,8 @@ async function boot() {
       goHome();
     });
 
-    if (smokeChromeOn()) {
+    if (IS_DEV_HOST) {
       mountSmokeFlagsUI(document.getElementById("smoke-flags-host"));
-      const bar = document.getElementById("smoke-toolbar");
-      if (bar) bar.hidden = false;
       document.getElementById("p-flag")?.addEventListener("click", () => {
         // Capture whatever the student typed before the panel steals focus.
         const el = document.querySelector(
