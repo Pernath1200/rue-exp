@@ -22,8 +22,8 @@ let liveContext = {};
 export function setSmokeContext(partial) {
   liveContext = { ...liveContext, ...partial };
   // Live EN mirror in the smoke toolbar — James smokes without reading Czech
-  // (2026-08-25): every practice screen shows the item's English and expected
-  // answer, so cz-cued stages never block the pass. Czech VERIFICATION is a
+  // (2026-08-25): localhost practice shows the item's English and expected
+  // answer. Pages / class never unhide the bar. Czech VERIFICATION is a
   // separate lane (codex/CZECH-REVIEW.md), not part of his tick.
   const el = document.getElementById("smoke-live");
   if (el) {

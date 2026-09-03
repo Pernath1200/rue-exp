@@ -1880,7 +1880,21 @@ button.link:hover {
   border-color: var(--accent-border, rgba(86, 156, 214, 0.45));
   background: linear-gradient(180deg, rgba(86, 156, 214, 0.12), var(--surface) 70%);
 }
-.home-next-line { margin: 0 0 0.75rem; font-size: 0.95rem; }
+.home-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 0.75rem;
+  margin: 0 0 0.75rem;
+}
+.home-next-line { margin: 0; font-size: 0.95rem; }
+.home-progress-line {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
 .home-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; }
 .home-btn {
   font-family: inherit;
@@ -1907,9 +1921,7 @@ button.link:hover {
 
 /* Progress download / import (backup; localhost ↔ Pages) */
 .progress-transfer {
-  margin-top: 0.85rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(86, 156, 214, 0.25);
+  margin-top: 0.35rem;
 }
 .progress-transfer-actions {
   display: flex;
@@ -3102,6 +3114,9 @@ button.sprint-tile.gone {
 .sprint-type-card .prompt {
   margin: 0.2rem 0 0.15rem;
   font-size: clamp(1.45rem, 4vw, 1.85rem);
+}
+.sprint-type-card .type-clue {
+  margin: 0.1rem 0 0;
 }
 .sprint-recap-list.type-recap li {
   display: grid;

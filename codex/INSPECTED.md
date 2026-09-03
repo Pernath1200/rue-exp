@@ -16,7 +16,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 **Grammar: 66 inspected · 0 approved · 13 unseen** of 79 live units
 
-**Vocab A1–A2: 28 inspected · 0 approved · 37 unseen** of 65 live units
+**Vocab A1–A2: 29 inspected · 0 approved · 36 unseen** of 65 live units
 
 Of the 6 cloud-authored units, **4 have any tick**.
 
@@ -138,7 +138,7 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [x][ ] `leaf_food_a1` — Food · eating · 35 items
 - [x][ ] `leaf_clothes_a1` — Clothes · 23 items
 - [x][ ] `leaf_body_a1` — Body · 24 items
-- [x][ ] `leaf_health_a1` — Health · 24 items
+- [x][ ] `leaf_health_a1` — Health · 25 items
 - [ ][ ] `trunk_can_like_want_a1` — Can · like · want · 12 items
 - [ ][ ] `trunk_verbs_more2_a1` — Verbs · more 2 · 12 items
 - [ ][ ] `leaf_work_a1` — Work · 32 items
@@ -163,32 +163,32 @@ Vocab A1–A2 is on the Telegram smoke rail (path order). B1 vocab stays off the
 - [ ][ ] `a1_vocab_match` — A1 vocab · match · 0 items
 - [ ][ ] `a1_vocab_type` — A1 vocab · type · 0 items
 
-## A2 vocab — 13 inspected / 0 approved / 27 units
+## A2 vocab — 14 inspected / 0 approved / 27 units
 
 - [x][ ] `leaf_routine_a2` — Routine & habits · 15 items
 - [x][ ] `leaf_family_a2` — Family & people · 25 items
-- [x][ ] `leaf_travel_a2` — Travel & holidays · 36 items
-- [x][ ] `leaf_transport_a2` — Transport · 36 items
-- [x][ ] `leaf_freetime_a2` — Free time · 33 items
-- [x][ ] `leaf_feelings_a2` — Feelings · 29 items
-- [x][ ] `leaf_work_a2` — Work · 33 items
-- [x][ ] `leaf_society_a2` — Society · 30 items
-- [x][ ] `leaf_appearance_a2` — Describing people · 36 items
-- [x][ ] `leaf_personality_a2` — Personality · 36 items
+- [x][ ] `leaf_travel_a2` — Travel & holidays · 28 items
+- [x][ ] `leaf_transport_a2` — Transport · 35 items
+- [x][ ] `leaf_freetime_a2` — Free time · 31 items
+- [x][ ] `leaf_feelings_a2` — Feelings · 15 items
+- [x][ ] `leaf_work_a2` — Work · 24 items
+- [x][ ] `leaf_society_a2` — Society · 29 items
+- [x][ ] `leaf_appearance_a2` — Describing people · 33 items
+- [x][ ] `leaf_personality_a2` — Personality · 35 items
 - [x][ ] `leaf_home_a2` — Home life · 38 items
 - [x][ ] `leaf_food_a2` — Food & drink · 23 items
-- [x][ ] `leaf_shopping_a2` — Shopping & money · 24 items · **cloud**
-- [ ][ ] `leaf_adverbs_a2` — Adverbs · 66 items
-- [ ][ ] `leaf_ideas_a2` — A2 word list · abstract · 92 items
-- [ ][ ] `leaf_verbs_a2` — A2 word list · verbs · 112 items
-- [ ][ ] `leaf_town_a2` — Town, directions & services · 36 items
-- [ ][ ] `leaf_sports_a2` — Sport · 26 items · **cloud**
-- [ ][ ] `leaf_health_a2` — Health · 41 items
+- [x][ ] `leaf_shopping_a2` — Shopping & money · 21 items · **cloud**
+- [x][ ] `leaf_adverbs_a2` — Adverbs · 12 items
+- [ ][ ] `leaf_ideas_a2` — A2 word list · abstract · 78 items
+- [ ][ ] `leaf_verbs_a2` — A2 word list · verbs · 92 items
+- [ ][ ] `leaf_town_a2` — Town, directions & services · 34 items
+- [ ][ ] `leaf_sports_a2` — Sport · 22 items · **cloud**
+- [ ][ ] `leaf_health_a2` — Health · 36 items
 - [ ][ ] `leaf_nature_a2` — Nature & weather · 23 items
-- [ ][ ] `leaf_tech_a2` — Tech & media · 35 items
-- [ ][ ] `leaf_school_a2` — School & learning · 35 items
-- [ ][ ] `leaf_clothes_a2` — Clothes · 13 items
+- [ ][ ] `leaf_tech_a2` — Tech & media · 33 items
+- [ ][ ] `leaf_school_a2` — School & learning · 29 items
+- [ ][ ] `leaf_clothes_a2` — Clothes · 7 items
 - [ ][ ] `leaf_things_a2` — Describing things · 36 items
-- [ ][ ] `leaf_media_a2` — Media & arts · 28 items · **cloud**
+- [ ][ ] `leaf_media_a2` — Media & arts · 20 items · **cloud**
 - [ ][ ] `a2_vocab_match` — A2 vocab · match · 0 items
 - [ ][ ] `a2_vocab_type` — A2 vocab · type · 0 items

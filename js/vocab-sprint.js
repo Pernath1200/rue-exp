@@ -1,7 +1,8 @@
 /**
  * Level checks — not teaching packs. A1 and A2 share this file.
  * Vocab match: six EN↔CZ pairs, deal the next board, clock on.
- * Vocab type-in: Czech prompt, type English, 12 at a time, no clock, recap.
+ * Vocab type-in: Czech prompt, first-letter + length clue, type English,
+ *   12 at a time, no clock, recap.
  * Grammar which: three full English sentences, tap the right one.
  *   Clock off by default, optional on. Recap. No Use, no fruit.
  * Finale: CZ → full English sentence. Retry until the round is clean.
@@ -17,7 +18,7 @@ import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-flagon";
 import { expandContractions } from "./contractions.js";
 import { canonSynonyms } from "./synonyms.js";
 import { _gradeGrammar, gradeGrammarSentence } from "./practice-grammar.js";
-import { isCorrectAnswer } from "./practice-vocab.js";
+import { isCorrectAnswer, typeLetterClue } from "./practice-vocab.js?v=2026-09-03-quizform";
 import {
   touchBlock,
   completeMode,
@@ -376,6 +377,13 @@ function writeTypeBest(topic, value) {
   writeJson(ACTIVE.typeBest, map);
 }
 
+function paintLetterClue(el, answer) {
+  if (!el) return;
+  const clue = typeLetterClue(answer);
+  el.textContent = clue;
+  el.hidden = !clue;
+}
+
 function practicePanelHtml() {
   return `
         <div id="sprint-practice" hidden>
@@ -383,6 +391,7 @@ function practicePanelHtml() {
           <div class="sprint-type-card">
             <p class="sub">Write in English · Enter = check / next</p>
             <p class="prompt" id="pr-prompt"></p>
+            <div class="type-clue" id="pr-clue" hidden></div>
             <input class="type-in" id="pr-input" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here…" lang="en" aria-label="English" />
             <div class="fb" id="pr-fb"></div>
             <div class="sprint-actions">
@@ -451,6 +460,7 @@ function bindPractice({ root, getTypePool, sfx, smoke, onFinish }) {
     if (!w || !prompt || !inp || !fb || !chk) return;
     answered = false;
     prompt.textContent = w.cz;
+    paintLetterClue(root.querySelector("#pr-clue"), w.en);
     inp.value = "";
     inp.disabled = false;
     fb.textContent = "";
@@ -1263,6 +1273,7 @@ export function startVocabTypeSprint({
     answered = false;
     typedNow = "";
     prompt.textContent = w.cz;
+    paintLetterClue(root.querySelector("#sprint-clue"), w.en);
     inp.value = "";
     inp.disabled = false;
     fb.textContent = "";
@@ -1471,6 +1482,7 @@ export function startVocabTypeSprint({
           <div class="sprint-type-card">
             <p class="sub">Write in English · Enter = check / next</p>
             <p class="prompt" id="sprint-prompt"></p>
+            <div class="type-clue" id="sprint-clue" hidden></div>
             <input class="type-in" id="ti" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="type here…" lang="en" aria-label="English" />
             <div class="fb" id="tfb"></div>
             <div class="sprint-actions">
@@ -1870,6 +1882,150 @@ export function fillGrammarGap(gap, chip) {
   return out || null;
 }
 
+/**
+ * Type stem cues `(just/take)` and extra clauses (`I am not now`) stay on
+ * Quiz/Type. Which is three full sentences the same shape as `en`
+ * (James, a2_grammar_match 2026-09-03).
+ */
+export function whichGap(gap) {
+  let g = String(gap || "").trim();
+  g = g.replace(/(?:\s*\([^)]*\))+\s*$/g, "").trim();
+  if (!GAP_MARK.test(g)) return g;
+  if (!/[.?!]/.test(g)) return g;
+  const parts = [];
+  let buf = "";
+  for (const ch of g) {
+    buf += ch;
+    if (ch === "." || ch === "?" || ch === "!") {
+      const piece = buf.trim();
+      if (piece) parts.push(piece);
+      buf = "";
+    }
+  }
+  const tail = buf.trim();
+  if (tail) parts.push(tail);
+  const keep = parts.filter((p) => GAP_MARK.test(p));
+  return keep.length ? keep.join(" ") : g;
+}
+
+/** Irregular participles that are not also the past (*taken* ≠ *took*). */
+const IRREG_PP_NOT_PAST = new Set([
+  "taken",
+  "gone",
+  "seen",
+  "eaten",
+  "written",
+  "done",
+  "been",
+  "given",
+  "spoken",
+  "driven",
+  "broken",
+  "chosen",
+  "forgotten",
+  "known",
+  "shown",
+  "worn",
+  "grown",
+  "flown",
+  "thrown",
+  "rung",
+  "sung",
+  "drunk",
+  "swum",
+  "come",
+  "become",
+  "run",
+]);
+
+function isUsedToForm(s) {
+  const k = formKey(s);
+  return /\bused to\b/.test(k) || /\buse to\b/.test(k);
+}
+
+function isUsedToFormError(chip) {
+  const kc = formKey(chip);
+  if (/\bused to\s+[a-z]+ing\b/.test(kc)) return true;
+  if (/\bdidn'?t used to\b/.test(kc) || /\bdid not used to\b/.test(kc)) {
+    return true;
+  }
+  if (/^use to\b/.test(kc)) return true;
+  return false;
+}
+
+function isBareParticipleFragment(chip) {
+  const kc = formKey(chip);
+  if (/^(have|has|had|was|were|is|are|am)\b/.test(kc)) return false;
+  const words = kc.split(/\s+/).filter(Boolean);
+  const last = words[words.length - 1] || "";
+  return IRREG_PP_NOT_PAST.has(last);
+}
+
+/** more carefully ↔ carefully ↔ most carefully. Not *carefuler* / *more longer*. */
+function isDegreeTwin(ans, chip) {
+  const ka = formKey(ans);
+  const kc = formKey(chip);
+  const moreMost = (s) => {
+    const m = s.match(/^(more|most|less|least)\s+(.+)$/);
+    return m ? { deg: m[1], base: m[2] } : null;
+  };
+  const a = moreMost(ka);
+  const c = moreMost(kc);
+  if (a && !c && a.base === kc) return true;
+  if (c && !a && c.base === ka) {
+    if (/(er|est)$/.test(ka) || /^(better|worse|further|farther)$/.test(ka)) {
+      return false;
+    }
+    return true;
+  }
+  if (a && c && a.base === c.base && a.deg !== c.deg) return true;
+  const stem = (s) => s.replace(/(er|est)$/, "");
+  if (
+    /(er)$/.test(ka) &&
+    /(est)$/.test(kc) &&
+    stem(ka) === stem(kc) &&
+    ka.length > 3
+  ) {
+    return true;
+  }
+  if (
+    /(est)$/.test(ka) &&
+    /(er)$/.test(kc) &&
+    stem(ka) === stem(kc) &&
+    ka.length > 3
+  ) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * True = do not use as a Which distractor: still real English without Czech,
+ * or a chip that cannot sit in this frame (*too a few cars*).
+ */
+function whichChipIsRealEnglish(ans, chip, gap) {
+  const g = whichGap(gap);
+  const kc = formKey(chip);
+  if (/\btoo\s+(_{2,}|\u2026|\.{3})/i.test(g)) {
+    if (/^a\s+(few|little)\b/.test(kc)) return true;
+    if (/^(lots of|a lot of)\b/.test(kc)) return true;
+  }
+  if (isDegreeTwin(ans, chip)) return true;
+  if (isUsedToForm(ans)) return !isUsedToFormError(chip);
+  const ka = formKey(ans);
+  /* Present/past perfect VP (*has already finished*), not bare *have*. */
+  if (/^(have|has|had)\s+/.test(ka)) {
+    if (isBareParticipleFragment(chip)) return false;
+    if (/^(have|has|had)\b/.test(kc)) {
+      const auxA = ka.match(/^(have|has|had)/)[1];
+      const auxC = kc.match(/^(have|has|had)/)[1];
+      if (auxA !== auxC) return false;
+    }
+    return true;
+  }
+  return false;
+}
+
 function isQuestionOrNeg(gap) {
   const s = String(gap || "");
   if (/\?/.test(s)) return true;
@@ -2042,13 +2198,19 @@ export function whichItemFromPackItem(it, meta = {}) {
   if (!GAP_MARK.test(gap)) return null;
   if ((gap.match(GAP_MARK) || []).length !== 1) return null;
   if (opts.length < 3) return null;
+  const gapForWhich = whichGap(gap);
+  if (!GAP_MARK.test(gapForWhich)) return null;
+  if ((gapForWhich.match(GAP_MARK) || []).length !== 1) return null;
   const wrongs = [];
   const seen = new Set([sentKey(en)]);
   for (const chip of opts) {
     if (formKey(chip) === formKey(ans)) continue;
     if (chipIsPossibleEnglish(ans, chip, gap, corpus)) continue;
-    const sent = fillGrammarGap(gap, chip);
+    if (whichChipIsRealEnglish(ans, chip, gap)) continue;
+    const sent = fillGrammarGap(gapForWhich, chip);
     if (!sent || seen.has(sentKey(sent))) continue;
+    if (sentKey(sent) === sentKey(en)) continue;
+    if (corpus && corpus.has(sentKey(sent))) continue;
     seen.add(sentKey(sent));
     wrongs.push(sent);
   }

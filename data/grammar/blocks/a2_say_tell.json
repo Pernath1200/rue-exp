@@ -17,19 +17,18 @@
   "bins": [
     "say",
     "tell",
-    "speak",
-    "talk"
+    "speak"
   ],
   "bin_captions": {
-    "say": "say hello · say that",
-    "tell": "tell her · tell me the news",
-    "speak": "speak English",
-    "talk": "talk to · talk about"
+    "say": "the words",
+    "tell": "a person",
+    "speak": "a language"
   },
+  "sort_cz": false,
   "blocks": [
     {
       "id": "sort",
-      "title": "say · tell · speak · talk",
+      "title": "say · tell · speak",
       "use": false,
       "check": {
         "sequence": [
@@ -37,14 +36,12 @@
         ]
       },
       "items": [
-        { "en": "____ hello", "cz": "říct ahoj", "bin": "say", "use": false },
-        { "en": "____ that she is tired", "cz": "říct, že je unavená", "bin": "say", "use": false },
-        { "en": "____ him", "cz": "říct mu", "bin": "tell", "use": false },
-        { "en": "____ her the news", "cz": "říct jí tu novinu", "bin": "tell", "use": false },
-        { "en": "____ English", "cz": "mluvit anglicky", "bin": "speak", "use": false },
-        { "en": "____ Czech", "cz": "mluvit česky", "bin": "speak", "use": false },
-        { "en": "____ to my boss", "cz": "mluvit s šéfem", "bin": "talk", "use": false },
-        { "en": "____ about the film", "cz": "mluvit o filmu", "bin": "talk", "use": false }
+        { "en": "hello", "cz": "říct ahoj", "bin": "say", "use": false },
+        { "en": "that she was tired", "cz": "říct, že je unavená", "bin": "say", "use": false },
+        { "en": "him", "cz": "říct mu", "bin": "tell", "use": false },
+        { "en": "her the news", "cz": "říct jí tu novinu", "bin": "tell", "use": false },
+        { "en": "English", "cz": "mluvit anglicky", "bin": "speak", "use": false },
+        { "en": "Czech", "cz": "mluvit česky", "bin": "speak", "use": false }
       ]
     },
     {
@@ -57,81 +54,101 @@
       },
       "items": [
         {
-          "en": "She told me the news.",
-          "cz": "Řekla mi tu novinu.",
-          "gap": "She ____ me the news.",
+          "en": "She told me the news yesterday.",
+          "cz": "Včera mi řekla tu novinu.",
+          "gap": "She ____ me the news yesterday.",
           "gap_answer": "told",
           "quiz_options": ["told", "said", "spoke", "talked"],
-          "accepts": ["She told me the news."],
-          "wrong": "She said me the news.",
+          "accepts": ["She told me the news yesterday."],
+          "wrong": "She said me the news yesterday.",
           "explanation": "**tell** + person. **told me**. Not *said me*.",
           "explanation_cz": "**tell** + osoba. **told me**. Ne *said me*."
         },
         {
-          "en": "He said hello.",
-          "cz": "Řekl ahoj.",
-          "gap": "He ____ hello.",
+          "en": "He said hello yesterday.",
+          "cz": "Včera řekl ahoj.",
+          "gap": "He ____ hello yesterday.",
           "gap_answer": "said",
           "quiz_options": ["said", "told", "spoke", "talked"],
-          "accepts": ["He said hello."],
-          "wrong": "He told hello.",
+          "accepts": ["He said hello yesterday."],
+          "wrong": "He told hello yesterday.",
           "explanation": "**say** + the words. No person after it.",
           "explanation_cz": "**say** + ta slova. Bez osoby."
         },
         {
-          "en": "She said that she is tired.",
-          "cz": "Řekla, že je unavená.",
-          "gap": "She ____ that she is tired.",
+          "en": "Yesterday she said that she was tired.",
+          "cz": "Včera řekla, že je unavená.",
+          "gap": "Yesterday she ____ that she was tired.",
           "gap_answer": "said",
           "quiz_options": ["said", "told", "spoke", "talked"],
-          "accepts": ["She said that she is tired.", "She said she is tired."],
-          "wrong": "She told that she is tired.",
-          "explanation": "**say that**. No person. (No backshift here.)",
-          "explanation_cz": "**say that**. Bez osoby. (Bez posunu času.)"
+          "accepts": [
+            "Yesterday she said that she was tired.",
+            "Yesterday she said she was tired.",
+            "She said that she was tired yesterday.",
+            "She said she was tired yesterday."
+          ],
+          "wrong": "Yesterday she told that she was tired.",
+          "explanation": "**say that**. No person.",
+          "explanation_cz": "**say that**. Bez osoby."
         },
         {
-          "en": "She told him that she is tired.",
-          "cz": "Řekla mu, že je unavená.",
-          "gap": "She ____ him that she is tired.",
+          "en": "Yesterday she told him that she was tired.",
+          "cz": "Včera mu řekla, že je unavená.",
+          "gap": "Yesterday she ____ him that she was tired.",
           "gap_answer": "told",
           "quiz_options": ["told", "said", "spoke", "talked"],
-          "accepts": ["She told him that she is tired.", "She told him she is tired."],
-          "wrong": "She said him that she is tired.",
+          "accepts": [
+            "Yesterday she told him that she was tired.",
+            "Yesterday she told him she was tired.",
+            "She told him that she was tired yesterday.",
+            "She told him she was tired yesterday."
+          ],
+          "wrong": "Yesterday she said him that she was tired.",
           "explanation": "**tell** + person + **that**. **told him that**.",
           "explanation_cz": "**tell** + osoba + **that**."
         },
         {
-          "en": "He speaks English.",
-          "cz": "Mluví anglicky.",
-          "gap": "He ____ English.",
+          "en": "He speaks English every day.",
+          "cz": "Každý den mluví anglicky.",
+          "gap": "He ____ English every day.",
           "gap_answer": "speaks",
           "quiz_options": ["speaks", "says", "tells", "talks"],
-          "accepts": ["He speaks English."],
-          "wrong": "He talks English.",
+          "accepts": ["He speaks English every day."],
+          "wrong": "He talks English every day.",
           "explanation": "**speak** + a language.",
           "explanation_cz": "**speak** + jazyk."
-        },
-        {
-          "en": "We talk about the film.",
-          "cz": "Mluvíme o filmu.",
-          "gap": "We ____ about the film.",
-          "gap_answer": "talk",
-          "quiz_options": ["talk", "say", "tell", "speak"],
-          "accepts": ["We talk about the film.", "We're talking about the film.", "We are talking about the film."],
-          "wrong": "We say about the film.",
-          "explanation": "**talk about**. Not *say about*.",
-          "explanation_cz": "**talk about**. Ne *say about*."
         },
         {
           "en": "I need to talk to my boss.",
           "cz": "Musím si promluvit se šéfem.",
           "gap": "I need to ____ to my boss.",
           "gap_answer": "talk",
-          "quiz_options": ["talk", "say", "tell", "speak"],
-          "accepts": ["I need to talk to my boss."],
+          "quiz_options": ["talk", "say", "tell", "said"],
+          "gap_accepts": ["talk", "speak"],
+          "accepts": [
+            "I need to talk to my boss.",
+            "I need to speak to my boss."
+          ],
           "wrong": "I need to say to my boss.",
           "explanation": "**talk to** a person (a conversation).",
           "explanation_cz": "**talk to** osoba (rozhovor)."
+        },
+        {
+          "en": "Yesterday we talked about the film.",
+          "cz": "Včera jsme mluvili o filmu.",
+          "gap": "Yesterday we ____ about the film.",
+          "gap_answer": "talked",
+          "quiz_options": ["talked", "said", "told", "say"],
+          "gap_accepts": ["talked", "spoke"],
+          "accepts": [
+            "Yesterday we talked about the film.",
+            "Yesterday we spoke about the film.",
+            "We talked about the film yesterday.",
+            "We spoke about the film yesterday."
+          ],
+          "wrong": "Yesterday we said about the film.",
+          "explanation": "**talked about** / **spoke about**. Not *said about*.",
+          "explanation_cz": "**talked about** / **spoke about**. Ne *said about*."
         },
         {
           "en": "Say it in English.",
@@ -145,14 +162,19 @@
           "explanation_cz": "**Say** ta slova. *Tell* chce osobu."
         },
         {
-          "en": "He said that he is tired.",
-          "cz": "Řekl, že je unavený.",
-          "gap": "He ____ that he is tired.",
+          "en": "Yesterday he said that he was tired.",
+          "cz": "Včera řekl, že je unavený.",
+          "gap": "Yesterday he ____ that he was tired.",
           "gap_answer": "said",
           "quiz_options": ["said", "told", "spoke", "talked"],
-          "accepts": ["He said that he is tired.", "He said he is tired."],
-          "wrong": "He told that he is tired.",
-          "explanation": "No person → **said that**. Not *told that*. (Keep *is* — no backshift.)",
+          "accepts": [
+            "Yesterday he said that he was tired.",
+            "Yesterday he said he was tired.",
+            "He said that he was tired yesterday.",
+            "He said he was tired yesterday."
+          ],
+          "wrong": "Yesterday he told that he was tired.",
+          "explanation": "No person → **said that**. Not *told that*.",
           "explanation_cz": "Bez osoby → **said that**. Ne *told that*."
         }
       ]
@@ -165,17 +187,50 @@
         "title_cz": "say / tell / speak / talk",
         "text_first": true,
         "points": [
-          "Czech *říct* and *mluvit* split into four English verbs.",
-          "**tell** needs a person. **say** is the words.",
-          "**speak** is a language. **talk** is a conversation."
+          "Czech *říct* is two English verbs: **say** and **tell**.",
+          "**tell** needs a person. **say** is the words — not *say me*.",
+          "**say** → **said**. **tell** → **told**."
         ],
         "table": {
-          "headers": ["", "Say"],
+          "headers": [
+            "now",
+            "past"
+          ],
           "rows": [
-            ["person", "**tell** her the news"],
-            ["the words", "**say** hello · **say** that…"],
-            ["a language", "**speak** English"],
-            ["a conversation", "**talk** to · **talk** about"]
+            [
+              "**say** hello",
+              "He **said** hello."
+            ],
+            [
+              "**tell** her the news",
+              "She **told** me the news."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "speak / talk",
+        "title_cz": "mluvit",
+        "text_first": true,
+        "points": [
+          "Czech *mluvit* is **speak** and **talk**.",
+          "**speak** a language. **talk** to someone, or about something.",
+          "**speak** → **spoke**. **talk** → **talked**."
+        ],
+        "table": {
+          "headers": [
+            "now",
+            "past"
+          ],
+          "rows": [
+            [
+              "He **speaks** English.",
+              "He **spoke** English yesterday."
+            ],
+            [
+              "I **talk** to my boss.",
+              "We **talked** yesterday."
+            ]
           ]
         }
       },
@@ -184,14 +239,14 @@
         "title_cz": "say that · tell her that",
         "text_first": true,
         "points": [
-          "You can report words **now**, with **is** — no time shift.",
-          "Time shift (*was*) is a later unit."
+          "**say that** — no person. **tell** + person + **that**.",
+          "Not *say me*. Not *tell that*."
         ],
         "table": {
           "headers": ["Not", "Say"],
           "rows": [
             ["*She said me the news.*", "She **told** me the news."],
-            ["*He told that he is tired.*", "He **said** that he is tired."]
+            ["*He told that he was tired.*", "He **said** that he was tired."]
           ]
         }
       }

@@ -62,6 +62,10 @@ const {
   CLEAR_AT,
 } = await import(pathToFileURL(join(ROOT, "js/vocab-sprint.js")).href);
 
+const { typeLetterClue } = await import(
+  pathToFileURL(join(ROOT, "js/practice-vocab.js")).href
+);
+
 const { hasFruit, completeFinale, completeMode, progressLabelGrammar } =
   await import(pathToFileURL(join(ROOT, "js/progress.js")).href);
 
@@ -150,6 +154,11 @@ assert(isTypeInPrompt("in front of"), "keep 3 tokens");
 assert(!isTypeInPrompt("I am a student."), "drop framed sentence");
 assert(!isTypeInPrompt("How are you?"), "drop question");
 assert(!isTypeInPrompt("I have a cat"), "drop 4-token sentence");
+
+assert(typeLetterClue("mother") === "m_____ · 6 letters", "clue mother");
+assert(typeLetterClue("ice cream") === "i__ c____ · 8 letters", "clue ice cream");
+assert(typeLetterClue("Czech") === "C____ · 5 letters", "clue keeps capital");
+assert(typeLetterClue("a") === "", "one-letter word has no clue");
 
 const typePool = filterTypeInPool(pool);
 assert(typePool.length >= 100, `type pool ${typePool.length} too small`);
@@ -248,6 +257,14 @@ const prompt = typeRoot.querySelector("#sprint-prompt");
 const inp = typeRoot.querySelector("#ti");
 assert(prompt && inp, "type prompt/input missing");
 assert(prompt.textContent === troubleWord.cz, "trouble word should come first");
+{
+  const clueEl = typeRoot.querySelector("#sprint-clue");
+  const want = typeLetterClue(troubleWord.en);
+  assert(clueEl && !clueEl.hidden, "type-in letter clue missing");
+  assert(clueEl.textContent === want, `type-in clue ${clueEl.textContent} want ${want}`);
+  assert(/^[A-Za-zÀ-ž]/.test(want), "clue starts with first letter");
+  assert(/\d+/.test(want), "clue has letter count");
+}
 inp.value = troubleWord.en;
 typeRoot.querySelector("#chk").click();
 await new Promise((r) => setTimeout(r, 20));
@@ -329,6 +346,20 @@ localStorage.removeItem(TROUBLE_KEY);
   const prPrompt = prRoot.querySelector("#pr-prompt");
   assert(prPrompt && prPrompt.textContent, "practice Czech prompt");
   const hit = typePool.find((w) => w.cz === prPrompt.textContent);
+  {
+    const clueEl = prRoot.querySelector("#pr-clue");
+    const wants = new Set(
+      typePool
+        .filter((w) => w.cz === prPrompt.textContent)
+        .map((w) => typeLetterClue(w.en))
+        .filter(Boolean),
+    );
+    assert(clueEl && !clueEl.hidden, "practice letter clue missing");
+    assert(
+      wants.has(clueEl.textContent),
+      `practice clue ${clueEl.textContent} not in ${[...wants].join(" | ")}`,
+    );
+  }
   prRoot.querySelector("#pr-input").value = hit ? hit.en : "zzzz";
   prRoot.querySelector("#pr-check").click();
   await new Promise((r) => setTimeout(r, 10));
@@ -607,6 +638,148 @@ assert(
     { src: "a1_there_is", corpus: new Set() },
   );
   assert(!books, "They are two books — skip");
+}
+
+{
+  const taken = whichItemFromPackItem(
+    {
+      en: "She has just taken my bag.",
+      gap: "She ____ my bag. (just/take)",
+      gap_answer: "has just taken",
+      quiz_options: [
+        "has just taken",
+        "took",
+        "just taken",
+        "have just taken",
+      ],
+    },
+    { src: "a2_present_perfect", corpus: new Set() },
+  );
+  assert(taken, "just taken Which kept");
+  assert(
+    taken.wrongs.every((w) => !/\(/.test(w)),
+    "Which leaked (just/take)",
+  );
+  assert(
+    !taken.wrongs.some((w) => /\btook\b/i.test(w)),
+    "She took my bag leaked as a wrong",
+  );
+  assert(
+    taken.wrongs.includes("She just taken my bag."),
+    "missing She just taken",
+  );
+  assert(
+    taken.wrongs.includes("She have just taken my bag."),
+    "missing She have just taken",
+  );
+}
+{
+  const either = whichItemFromPackItem(
+    {
+      en: "They don't like tea either.",
+      gap: "They don't like tea ____. (either)",
+      gap_answer: "either",
+      quiz_options: ["either", "too", "also"],
+    },
+    { src: "a2_adverbs_order", corpus: new Set() },
+  );
+  assert(either, "either Which kept");
+  assert(
+    either.wrongs.every((w) => !/\(/.test(w)),
+    "either leaked (either)",
+  );
+  assert(
+    either.wrongs.includes("They don't like tea too."),
+    "missing tea too",
+  );
+  assert(
+    either.wrongs.includes("They don't like tea also."),
+    "missing tea also",
+  );
+}
+{
+  const quiet = whichItemFromPackItem(
+    {
+      en: "I used to be quiet.",
+      gap: "I ____ quiet. I am not now. (be)",
+      gap_answer: "used to be",
+      quiz_options: ["used to be", "was", "was being", "used to being"],
+    },
+    { src: "a2_used_to", corpus: new Set() },
+  );
+  assert(!quiet, "used to be quiet — one form error, skip");
+}
+{
+  const cook = whichItemFromPackItem(
+    {
+      en: "She used to cook.",
+      gap: "She ____. She doesn't now. (cook)",
+      gap_answer: "used to cook",
+      quiz_options: [
+        "used to cook",
+        "cooked",
+        "used to cooking",
+        "use to cook",
+      ],
+    },
+    { src: "a2_used_to", corpus: new Set() },
+  );
+  assert(cook, "used to cook with two form errors");
+  assert(
+    cook.wrongs.every((w) => !/\(/.test(w) && !/doesn't now/i.test(w)),
+    "used to cook leaked extra clause",
+  );
+  assert(
+    cook.wrongs.includes("She used to cooking."),
+    "missing used to cooking",
+  );
+  assert(cook.wrongs.includes("She use to cook."), "missing use to cook");
+}
+{
+  const careful = whichItemFromPackItem(
+    {
+      en: "Please write more carefully.",
+      gap: "Please write ____.",
+      gap_answer: "more carefully",
+      quiz_options: [
+        "more carefully",
+        "carefuler",
+        "most carefully",
+        "carefully",
+      ],
+    },
+    { src: "a2_comparatives", corpus: new Set() },
+  );
+  assert(!careful, "more carefully — carefully is English, skip");
+}
+{
+  const cars = whichItemFromPackItem(
+    {
+      en: "There are too many cars.",
+      gap: "There are too ____ cars.",
+      gap_answer: "many",
+      quiz_options: ["many", "much", "a few", "a little"],
+    },
+    { src: "a2_quantifiers", corpus: new Set() },
+  );
+  assert(!cars, "too many cars — a few doesn't fit, skip");
+}
+{
+  const finished = whichItemFromPackItem(
+    {
+      en: "She has already finished.",
+      gap: "She ____. (already/finish)",
+      gap_answer: "has already finished",
+      quiz_options: [
+        "has already finished",
+        "finished",
+        "already finished",
+        "have already finished",
+      ],
+    },
+    { src: "a2_present_perfect", corpus: new Set() },
+  );
+  assert(!finished, "already finished — past simple is English, skip");
 }
 
 const gPool = await loadA1GrammarWhich(tree, loadJson, "a1_grammar_match");
@@ -1063,7 +1236,10 @@ gtRoot.querySelector("#chk").click();
 await new Promise((r) => setTimeout(r, 15));
 for (let n = 1; n < 12; n++) {
   const prompt = gtRoot.querySelector("#sprint-prompt")?.textContent;
-  const hit = gtPool.find((w) => w.prompt === prompt);
+  const cz = gtRoot.querySelector("#sprint-cz")?.textContent;
+  const hit =
+    gtPool.find((w) => w.prompt === prompt && w.cz === cz) ||
+    gtPool.find((w) => w.prompt === prompt);
   const inp = gtRoot.querySelector("#ti");
   if (inp) inp.value = hit ? hit.answer : "ok";
   gtRoot.querySelector("#chk")?.click();
@@ -1404,6 +1580,23 @@ assert(
   a2tRoot.querySelector("#sprint-btn-play"),
   "a2 type Play missing",
 );
+a2tRoot.querySelector("#sprint-btn-play").click();
+await new Promise((r) => setTimeout(r, 50));
+{
+  const clueEl = a2tRoot.querySelector("#sprint-clue");
+  const cz = a2tRoot.querySelector("#sprint-prompt")?.textContent;
+  const wants = new Set(
+    a2typePool
+      .filter((w) => w.cz === cz)
+      .map((w) => typeLetterClue(w.en))
+      .filter(Boolean),
+  );
+  assert(clueEl && !clueEl.hidden, "a2 type-in letter clue missing");
+  assert(
+    wants.has(clueEl.textContent),
+    `a2 type-in clue ${clueEl?.textContent} not in ${[...wants].join(" | ")}`,
+  );
+}
 if (typeof a2tRoot._RUE2UnbindKeys === "function") a2tRoot._RUE2UnbindKeys();
 a2tRoot.remove();
 
@@ -1431,6 +1624,38 @@ assert(
   a2which.some((w) => w.src === "a2_too_enough"),
   "a2 which missing too/enough",
 );
+assert(
+  !a2which.some((w) => w.en === "I used to be quiet."),
+  "used to be quiet still in Which",
+);
+assert(
+  !a2which.some((w) => w.en === "Please write more carefully."),
+  "more carefully still in Which",
+);
+assert(
+  !a2which.some((w) => w.en === "There are too many cars."),
+  "too many cars still in Which",
+);
+{
+  const takenLive = a2which.find((w) => w.en === "She has just taken my bag.");
+  assert(takenLive, "just taken dropped from A2 Which pool");
+  assert(
+    takenLive.wrongs.every((s) => !/\(/.test(s)),
+    "live Which leaked a Type cue",
+  );
+  assert(
+    !takenLive.wrongs.some((s) => /\btook\b/i.test(s)),
+    "live Which kept She took my bag",
+  );
+}
+{
+  const eitherLive = a2which.find((w) => w.en === "They don't like tea either.");
+  assert(eitherLive, "either dropped from A2 Which pool");
+  assert(
+    eitherLive.wrongs.every((s) => !/\(/.test(s)),
+    "live either leaked (either)",
+  );
+}
 
 const a2gRoot = document.createElement("div");
 document.body.appendChild(a2gRoot);

@@ -48,6 +48,7 @@ PARENS_RE = re.compile(r"\([^)]*\)")
 #
 # Extend freely — one line each, and the grader picks it up on regeneration.
 SYNONYM_GROUPS = [
+    ["realise", "realize"],   # BrE headword; AmE spelling accepted
     ["phone", "telephone"],
     ["shop", "store"],
     ["film", "movie"],

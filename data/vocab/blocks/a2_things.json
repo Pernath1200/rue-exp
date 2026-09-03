@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_things_a2",
   "codex_unit": "V_COR-A1B1-01",
-  "note": "ROUGH STUB 2026-09-01. Size, shape, empty/full, material. A1 already has big, small, long, short, clean, dirty, full, hard, large. 36 words. quiz_mode sentence_gap. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
+  "note": "ROUGH STUB 2026-09-01. Size, shape, empty/full, material. A1 already has big, small, long, short, clean, dirty, full, hard, large. 36 words. quiz_mode sentence_gap. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames · F9 2026-09-03 (James smoke): recycle card had two 'velký' tiles — `large` dropped (taught in no live pack) and `short` re-glossed krátký, which also cleared a second duplicate (small/short were both malý). `wet (not dry)`/`dry (not wet)` unmarked — the (…) mark is for homonyms and mokrý/suchý share nothing; light (not heavy) keeps its mark. Seven U+1FAxx icons swapped for pre-Emoji-12 ones — Segoe UI Emoji on Win10 has no glyph and they rendered as tofu. · F9 2026-09-03 (James smoke): wet/dry dropped from Match — a1_nature already teaches both with the same gloss (mokrý/suchý), so first theme owns them. They stay as recycling in the You already know card and in sentences[10]/[20]. 36 -> 34 words.",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "blocks": [
@@ -114,22 +114,6 @@
         {
           "en": "empty",
           "cz": "prázdný",
-          "use": [
-            "it_is",
-            "the_bag_is"
-          ]
-        },
-        {
-          "en": "wet (not dry)",
-          "cz": "mokrý",
-          "use": [
-            "it_is",
-            "the_bag_is"
-          ]
-        },
-        {
-          "en": "dry (not wet)",
-          "cz": "suchý",
           "use": [
             "it_is",
             "the_bag_is"
@@ -328,7 +312,7 @@
         },
         {
           "en": "short",
-          "cz": "malý",
+          "cz": "krátký",
           "icon": "📐"
         },
         {
@@ -349,12 +333,17 @@
         {
           "en": "hard",
           "cz": "tvrdý",
-          "icon": "🪨"
+          "icon": "💎"
         },
         {
-          "en": "large",
-          "cz": "velký (rozsáhlý)",
-          "icon": "🦏"
+          "icon": "💧",
+          "en": "wet",
+          "cz": "mokrý"
+        },
+        {
+          "icon": "🌵",
+          "en": "dry",
+          "cz": "suchý"
         }
       ],
       "note": "Not new — you met these before. You will see them again here.",
@@ -431,19 +420,9 @@
       "title_cz": "Jaké to je",
       "pictures": [
         {
-          "icon": "🫙",
+          "icon": "🍽️",
           "en": "empty",
           "cz": "prázdný"
-        },
-        {
-          "icon": "💧",
-          "en": "wet (not dry)",
-          "cz": "mokrý"
-        },
-        {
-          "icon": "🌵",
-          "en": "dry (not wet)",
-          "cz": "suchý"
         },
         {
           "icon": "🧸",
@@ -451,7 +430,7 @@
           "cz": "měkký"
         },
         {
-          "icon": "🪞",
+          "icon": "🥚",
           "en": "smooth",
           "cz": "hladký"
         },
@@ -481,7 +460,7 @@
           "cz": "těžký"
         },
         {
-          "icon": "🪶",
+          "icon": "🎈",
           "en": "light (not heavy)",
           "cz": "lehký"
         },
@@ -497,7 +476,7 @@
       "title_cz": "Z čeho to je",
       "pictures": [
         {
-          "icon": "🪵",
+          "icon": "🌳",
           "en": "wooden",
           "cz": "dřevěný"
         },
@@ -512,7 +491,7 @@
           "cz": "plast"
         },
         {
-          "icon": "🪟",
+          "icon": "🥛",
           "en": "glass (material)",
           "cz": "sklo"
         },
@@ -547,7 +526,7 @@
           "cz": "kůže"
         },
         {
-          "icon": "🪨",
+          "icon": "🗿",
           "en": "stone (material)",
           "cz": "kámen"
         },

@@ -1,11 +1,11 @@
 {
   "id": "a2_reflexives",
-  "title": "Reflexives & -self",
+  "title": "Reflexives 1",
   "level": "A2",
   "tree_node": "a2_reflexives",
   "codex_unit": "G_NP-A1B1-01",
   "practice": "frames",
-  "note": "ROUGH STUB 2026-09-01. myself only when subject = object (hurt himself). Czech se does not always want -self: feel good, happen to me. Not by myself / emphasis (B1). Sort need -self / don't. Use = correct.",
+  "note": "ROUGH STUB 2026-09-01. myself only when subject = object (hurt himself). Czech se does not always want -self: feel good, happen to me. Not by myself / emphasis (B1). Sort need -self / don't. Use = correct. · F9 2026-09-03 (James smoke): sort split into three bins by REASON (-self / nothing / to·for + me); captions carry the test instead of naming pool members; sort_rule added. Intro no longer prints the sort's answer key — it teaches on dry/introduce/look after yourself, sit/hurry/stand, listen/wait/speak to·for me. Use: He hurt him / They enjoyed them / She cut her are VALID English with another meaning (James), so those three left the Use stage and three 1st/2nd-person items joined it, where the non-reflexive really is ungrammatical.",
   "default_direction": "cz_to_en",
   "use_mode": "correct",
   "check": {
@@ -15,17 +15,19 @@
     ]
   },
   "bins": [
-    "need_self",
-    "dont"
+    "-self",
+    "nothing",
+    "to / for + me"
   ],
   "bin_captions": {
-    "need_self": "hurt himself",
-    "dont": "feel good · happen to me"
+    "-self": "the same person, both sides",
+    "nothing": "the verb stands alone",
+    "to / for + me": "a preposition, then me / you / him"
   },
   "blocks": [
     {
       "id": "sort",
-      "title": "Need -self, or not?",
+      "title": "Why no -self?",
       "use": false,
       "check": {
         "sequence": [
@@ -33,14 +35,54 @@
         ]
       },
       "items": [
-        { "en": "hurt himself", "cz": "zranil se", "bin": "need_self", "use": false },
-        { "en": "enjoy ourselves", "cz": "bavit se", "bin": "need_self", "use": false },
-        { "en": "wash yourself", "cz": "umýt se", "bin": "need_self", "use": false },
-        { "en": "cut myself", "cz": "říznout se", "bin": "need_self", "use": false },
-        { "en": "feel good", "cz": "cítit se dobře", "bin": "dont", "use": false },
-        { "en": "happen to me", "cz": "stát se mi", "bin": "dont", "use": false },
-        { "en": "relax", "cz": "uvolnit se", "bin": "dont", "use": false },
-        { "en": "meet at five", "cz": "sejít se v pět", "bin": "dont", "use": false }
+        {
+          "en": "hurt himself",
+          "cz": "zranil se",
+          "bin": "-self",
+          "use": false
+        },
+        {
+          "en": "enjoy ourselves",
+          "cz": "bavit se",
+          "bin": "-self",
+          "use": false
+        },
+        {
+          "en": "wash yourself",
+          "cz": "umýt se",
+          "bin": "-self",
+          "use": false
+        },
+        {
+          "en": "cut myself",
+          "cz": "říznout se",
+          "bin": "-self",
+          "use": false
+        },
+        {
+          "en": "feel good",
+          "cz": "cítit se dobře",
+          "bin": "nothing",
+          "use": false
+        },
+        {
+          "en": "happen to me",
+          "cz": "stát se mi",
+          "bin": "to / for + me",
+          "use": false
+        },
+        {
+          "en": "relax",
+          "cz": "uvolnit se",
+          "bin": "nothing",
+          "use": false
+        },
+        {
+          "en": "meet at five",
+          "cz": "sejít se v pět",
+          "bin": "nothing",
+          "use": false
+        }
       ]
     },
     {
@@ -57,30 +99,54 @@
           "cz": "Zranil se.",
           "gap": "He hurt ____.",
           "gap_answer": "himself",
-          "quiz_options": ["himself", "him", "he", "—"],
-          "accepts": ["He hurt himself."],
+          "quiz_options": [
+            "himself",
+            "him",
+            "he",
+            "—"
+          ],
+          "accepts": [
+            "He hurt himself."
+          ],
           "wrong": "He hurt him.",
-          "explanation": "He and the person hurt are the same → **himself**. *him* is someone else.",
-          "explanation_cz": "Stejná osoba → **himself**. *him* je někdo jiný."
+          "explanation": "He and the person hurt are the same → **himself**. *him* is someone else. Both are real English — *him* is another person.",
+          "explanation_cz": "Stejná osoba → **himself**. *him* je někdo jiný.",
+          "use": false
         },
         {
           "en": "They enjoyed themselves.",
           "cz": "Bavili se.",
           "gap": "They enjoyed ____.",
           "gap_answer": "themselves",
-          "quiz_options": ["themselves", "them", "they", "—"],
-          "accepts": ["They enjoyed themselves."],
+          "quiz_options": [
+            "themselves",
+            "them",
+            "they",
+            "—"
+          ],
+          "accepts": [
+            "They enjoyed themselves."
+          ],
           "wrong": "They enjoyed them.",
-          "explanation": "**enjoy yourself / ourselves**. English wants **-self** here.",
-          "explanation_cz": "**enjoy yourself / ourselves**."
+          "explanation": "**enjoy yourself / ourselves**. English wants **-self** here. Both are real English — *him* is another person.",
+          "explanation_cz": "**enjoy yourself / ourselves**.",
+          "use": false
         },
         {
           "en": "She feels good.",
           "cz": "Cítí se dobře.",
           "gap": "She feels ____.",
           "gap_answer": "good",
-          "quiz_options": ["good", "herself", "her", "well"],
-          "accepts": ["She feels good.", "She feels well."],
+          "quiz_options": [
+            "good",
+            "herself",
+            "her",
+            "well"
+          ],
+          "accepts": [
+            "She feels good.",
+            "She feels well."
+          ],
           "wrong": "She feels herself good.",
           "explanation": "**feel good** — no **-self**. Czech *cítit se* does not copy.",
           "explanation_cz": "**feel good** — bez **-self**. Česky *cítit se* se nekopíruje."
@@ -90,8 +156,15 @@
           "cz": "Stalo se mi to včera.",
           "gap": "It happened ____ me yesterday.",
           "gap_answer": "to",
-          "quiz_options": ["to", "—", "myself", "for"],
-          "accepts": ["It happened to me yesterday."],
+          "quiz_options": [
+            "to",
+            "—",
+            "myself",
+            "for"
+          ],
+          "accepts": [
+            "It happened to me yesterday."
+          ],
           "wrong": "It happened me yesterday.",
           "explanation": "**happen to me**. Not *happen me*, not *happen myself*.",
           "explanation_cz": "**happen to me**. Ne *happen me*."
@@ -101,8 +174,15 @@
           "cz": "Umyj se.",
           "gap": "Wash ____.",
           "gap_answer": "yourself",
-          "quiz_options": ["yourself", "you", "your", "—"],
-          "accepts": ["Wash yourself."],
+          "quiz_options": [
+            "yourself",
+            "you",
+            "your",
+            "—"
+          ],
+          "accepts": [
+            "Wash yourself."
+          ],
           "wrong": "Wash you.",
           "explanation": "You wash you → **yourself**.",
           "explanation_cz": "**yourself**."
@@ -113,9 +193,20 @@
           "gap": "They met ____ at five.",
           "gap_answer": "—",
           "zero_article": true,
-          "quiz_options": ["—", "themselves", "them", "each"],
-          "gap_accepts": ["—", "–", "-"],
-          "accepts": ["They met at five."],
+          "quiz_options": [
+            "—",
+            "themselves",
+            "them",
+            "each"
+          ],
+          "gap_accepts": [
+            "—",
+            "–",
+            "-"
+          ],
+          "accepts": [
+            "They met at five."
+          ],
           "wrong": "They met themselves at five.",
           "explanation": "**meet** has no **-self** here. (They met each other is later.)",
           "explanation_cz": "**meet** tady bez **-self**."
@@ -125,22 +216,91 @@
           "cz": "Řízla se.",
           "gap": "She cut ____.",
           "gap_answer": "herself",
-          "quiz_options": ["herself", "her", "she", "—"],
-          "accepts": ["She cut herself."],
+          "quiz_options": [
+            "herself",
+            "her",
+            "she",
+            "—"
+          ],
+          "accepts": [
+            "She cut herself."
+          ],
           "wrong": "She cut her.",
-          "explanation": "Same person → **herself**.",
-          "explanation_cz": "Stejná osoba → **herself**."
+          "explanation": "Same person → **herself**. Both are real English — *him* is another person.",
+          "explanation_cz": "Stejná osoba → **herself**.",
+          "use": false
         },
         {
           "en": "He is relaxing.",
           "cz": "Odpočívá. / Uvolňuje se.",
           "gap": "He is ____.",
           "gap_answer": "relaxing",
-          "quiz_options": ["relaxing", "relaxing himself", "relax", "himself"],
-          "accepts": ["He is relaxing."],
+          "quiz_options": [
+            "relaxing",
+            "relaxing himself",
+            "relax",
+            "himself"
+          ],
+          "accepts": [
+            "He is relaxing."
+          ],
           "wrong": "He is relaxing himself.",
           "explanation": "**relax** — no **-self**.",
           "explanation_cz": "**relax** — bez **-self**."
+        },
+        {
+          "en": "Help yourself.",
+          "cz": "Posluž si.",
+          "gap": "Help ____.",
+          "gap_answer": "yourself",
+          "quiz_options": [
+            "yourself",
+            "you",
+            "your",
+            "—"
+          ],
+          "accepts": [
+            "Help yourself."
+          ],
+          "wrong": "Help you.",
+          "explanation": "**Help yourself.** *Help you* is not English.",
+          "explanation_cz": "**Help yourself.** *Help you* není angličtina."
+        },
+        {
+          "en": "Behave yourself.",
+          "cz": "Chovej se slušně.",
+          "gap": "Behave ____.",
+          "gap_answer": "yourself",
+          "quiz_options": [
+            "yourself",
+            "you",
+            "well",
+            "—"
+          ],
+          "accepts": [
+            "Behave yourself."
+          ],
+          "wrong": "Behave you.",
+          "explanation": "**Behave yourself.** *Behave you* is not English.",
+          "explanation_cz": "**Behave yourself.** *Behave you* není angličtina."
+        },
+        {
+          "en": "I taught myself.",
+          "cz": "Naučil jsem se sám.",
+          "gap": "I taught ____.",
+          "gap_answer": "myself",
+          "quiz_options": [
+            "myself",
+            "me",
+            "my",
+            "—"
+          ],
+          "accepts": [
+            "I taught myself."
+          ],
+          "wrong": "I taught me.",
+          "explanation": "**I taught myself.** *I taught me* is not English — I and me are one person.",
+          "explanation_cz": "**I taught myself.** *I taught me* není angličtina."
         }
       ]
     }
@@ -153,15 +313,31 @@
         "text_first": true,
         "points": [
           "**-self** when the person does it to the **same** person.",
-          "**He hurt himself.** The hurter and the hurt are one.",
+          "**She dried herself.** The drier and the dried are one.",
           "Czech *se* is much wider. Do not copy it."
         ],
         "table": {
-          "headers": ["Need -self", "No -self"],
+          "headers": [
+            "-self",
+            "nothing",
+            "to / for + me"
+          ],
           "rows": [
-            ["hurt **himself**", "**feel** good"],
-            ["enjoy **ourselves**", "it **happened to me**"],
-            ["wash **yourself**", "**meet** at five"]
+            [
+              "dry **yourself**",
+              "**sit down**",
+              "listen **to me**"
+            ],
+            [
+              "introduce **yourself**",
+              "**hurry** up",
+              "wait **for me**"
+            ],
+            [
+              "look after **yourself**",
+              "**stand** up",
+              "speak **to me**"
+            ]
           ]
         }
       },
@@ -170,16 +346,26 @@
         "title_cz": "Ne české se",
         "text_first": true,
         "points": [
-          "Not *I feel myself good.* Not *It happened me.*"
+          "Not *I hurry myself.* Not *She sat herself down.*"
         ],
         "table": {
-          "headers": ["Not", "Say"],
+          "headers": [
+            "Not",
+            "Say"
+          ],
           "rows": [
-            ["*She feels herself good.*", "She **feels good**."],
-            ["*It happened me.*", "It **happened to me**."]
+            [
+              "*I hurry myself.*",
+              "I **hurry up**."
+            ],
+            [
+              "*She sat herself down.*",
+              "She **sat down**."
+            ]
           ]
         }
       }
     ]
-  }
+  },
+  "sort_rule": "Ask who receives the action. The same person who does it → -self. Nobody at all → nothing. Someone after a preposition → to / for + me. Czech se is not a guide."
 }

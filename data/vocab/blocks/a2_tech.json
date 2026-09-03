@@ -1,10 +1,10 @@
 {
   "id": "a2_tech",
-  "title": "Tech & media",
+  "title": "Tech 2",
   "level": "A2",
   "tree_node": "leaf_tech_a2",
   "codex_unit": "V_COR-A1B1-01",
-  "note": "Tech A2 · COR · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
+  "note": "Tech A2 · COR · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames - F9 2026-09-03: engine/electricity/gas moved in from the a2_ideas dump (33 to 36).",
   "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
@@ -109,6 +109,14 @@
             "i_need_bare",
             "is_important"
           ]
+        },
+        {
+          "en": "engine",
+          "cz": "motor",
+          "use": [
+            "the_is",
+            "this_is_a"
+          ]
         }
       ]
     },
@@ -157,7 +165,10 @@
         },
         {
           "en": "program",
-          "cz": "program",
+          "cz": "program (počítačový)",
+          "accepts": [
+            "programme"
+          ],
           "use": [
             "this_is_a",
             "i_have_a",
@@ -216,6 +227,14 @@
             "is_important",
             "lets_talk_about"
           ]
+        },
+        {
+          "en": "electricity",
+          "cz": "elektřina",
+          "use": [
+            "the_is",
+            "is_important"
+          ]
         }
       ]
     },
@@ -252,7 +271,7 @@
         },
         {
           "en": "print",
-          "cz": "tisknout",
+          "cz": "tisknout / vytisknout",
           "use": [
             "i_want_to",
             "we_need_to",
@@ -307,7 +326,7 @@
         },
         {
           "en": "record",
-          "cz": "nahrávka / rekord",
+          "cz": "rekord",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -321,6 +340,14 @@
             "this_is_a",
             "i_have_a",
             "i_need_a"
+          ]
+        },
+        {
+          "en": "gas",
+          "cz": "plyn / benzín (amer.)",
+          "use": [
+            "the_is",
+            "this_is_a"
           ]
         }
       ]
@@ -349,7 +376,7 @@
         {
           "en": "photo",
           "cz": "fotka",
-          "icon": "📷"
+          "icon": "🏞️"
         }
       ],
       "note": "Not new — you met these before. You will see them again here.",
@@ -405,7 +432,7 @@
           "cz": "stránka"
         },
         {
-          "icon": "🕸️",
+          "icon": "📶",
           "en": "network",
           "cz": "síť"
         },
@@ -456,7 +483,7 @@
           "cz": "technologie"
         },
         {
-          "icon": "💻",
+          "icon": "🔣",
           "en": "code",
           "cz": "kód"
         },
@@ -497,7 +524,7 @@
           "cz": "kopie"
         },
         {
-          "icon": "🖨️",
+          "icon": "🧾",
           "en": "print",
           "cz": "tisknout"
         },
@@ -527,9 +554,9 @@
           "cz": "nahrávka"
         },
         {
-          "icon": "🔴",
+          "icon": "🏆",
           "en": "record",
-          "cz": "nahrávka"
+          "cz": "rekord"
         },
         {
           "icon": "🕸️",
@@ -726,7 +753,8 @@
         "program"
       ],
       "accepts": [
-        "I need a new program"
+        "I need a new program",
+        "I need a new programme"
       ]
     },
     {
@@ -880,12 +908,13 @@
       ]
     },
     {
-      "en": "My brother has a new record.",
-      "cz": "Můj bratr má nový rekord.",
+      "en": "My brother has a new world record.",
+      "cz": "Můj bratr má nový světový rekord.",
       "lemmas": [
         "record"
       ],
       "accepts": [
+        "My brother has a new world record",
         "My brother has a new record"
       ]
     },
@@ -897,6 +926,36 @@
       ],
       "accepts": [
         "The web is very big"
+      ]
+    },
+    {
+      "en": "The engine is broken.",
+      "cz": "Motor je rozbitý.",
+      "lemmas": [
+        "engine"
+      ],
+      "accepts": [
+        "The engine is broken"
+      ]
+    },
+    {
+      "en": "Electricity is expensive.",
+      "cz": "Elektřina je drahá.",
+      "lemmas": [
+        "electricity"
+      ],
+      "accepts": [
+        "Electricity is expensive"
+      ]
+    },
+    {
+      "en": "The gas is very cheap.",
+      "cz": "Plyn je velmi levný.",
+      "lemmas": [
+        "gas"
+      ],
+      "accepts": [
+        "The gas is very cheap"
       ]
     }
   ]

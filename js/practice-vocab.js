@@ -615,13 +615,17 @@ function sentenceToFrame(s) {
     gap_answer: answer,
     lemmas,
     accepts: s.accepts,
+    /* Authored confusables (the adjective twin on adverb frames — CZ names
+     * the meaning, the form is the test; James, 2026-09-03, adverbs). */
+    quiz_options: Array.isArray(s.quiz_options) ? s.quiz_options : undefined,
   };
 }
 
 /** First letter + blanks, and letter count.
  *  Was fat-deck only (>12). A2 36-word leaves still had 12 Type items, so
- *  the clue never appeared (James, 2026-09-02, transport). Always show it. */
-function typeLetterClue(answer) {
+ *  the clue never appeared (James, 2026-09-02, transport). Always show it.
+ *  Vocab level-check type-in reuses this (James, 2026-09-03). */
+export function typeLetterClue(answer) {
   const raw = String(answer || "").trim();
   if (!raw) return "";
   /* A paren gloss is a sense hint, shown but never required — accepts()

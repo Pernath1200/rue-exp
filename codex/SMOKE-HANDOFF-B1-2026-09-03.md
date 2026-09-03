@@ -1,7 +1,7 @@
 # Handoff — B1 smoke (written 2026-09-02, for the next sitting)
 
 Give this file to a **new tab**. Do **not** open `codex/HANDOFF.md` (Claude kill switch).
-Finish the A2 rail first — `codex/SMOKE-HANDOFF-A2-GRAMMAR-2026-09-02.md` is a separate tab.
+Finish the A2 rail first — `codex/SMOKE-HANDOFF-A2-GRAMMAR-2026-09-03.md` is a separate tab.
 
 Paste:
 

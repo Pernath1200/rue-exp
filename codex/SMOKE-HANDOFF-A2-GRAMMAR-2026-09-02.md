@@ -1,5 +1,7 @@
 # Handoff — A2 grammar smoke (2026-09-02, end of hour)
 
+**Superseded 2026-09-03.** New tab: `codex/SMOKE-HANDOFF-A2-GRAMMAR-2026-09-03.md`.
+
 Give this file to a **new tab**. Do **not** open `codex/HANDOFF.md` (Claude kill switch). Do not continue the long thread.
 
 Paste:
@@ -34,13 +36,13 @@ Job: A2 grammar smoke from the path. Next play is in this file. Hour ended 2026-
 
 ## Now
 
-**Next grammar:** http://localhost:8097/#a2_say_tell
+**Next grammar:** http://localhost:8097/#a2_reflexives
 
 Then path order, skipping already-ticked grammar:
 
-`reflexives` → `indirect_questions`
+`indirect_questions`
 
-Telegram Top 5 is the **A2 zigzag**. For this tab, ignore leaf_* and play the next **a2_** grammar hash. Tick: `a2_say_tell tested`.
+Telegram Top 5 is the **A2 zigzag**. For this tab, ignore leaf_* and play the next **a2_** grammar hash. Tick: `a2_reflexives tested`.
 
 Tree label is **a / the / nothing** (not *Articles at A2*). If Telegram still says the old title, the snapshot is stale — `units to test` after rebuild.
 
@@ -95,6 +97,7 @@ Smoother next hour: **card 0 pre-flight** for C14 title, C55 set, C11 sort contr
 | `leaf_personality_a2` | Vocab, mixed into this tab. LEARNED. C56: diagram page *What they are like* cut. |
 | `a2_articles` | LEARNED. Good little unit, **bank thin** — added 5 (cats / books / water / work / the sky). Logic tree `articles_map`. Sort = situation chips, not *a dog*. Coffee out (*a coffee* = a cup). Type: Enter = no article. Slogan title cut. |
 | `a2_indefinite_pronouns` | LEARNED. Map = some/any/no polarity (not person vs thing). Sort = positive / question-negative / zero. Flags: -one/-body both; questions accept someone; stems forced person (*answered the phone*, *came to the party*). |
+| `a2_say_tell` | LEARNED. C52 two pair pages. Sort = say/tell/speak only (*speak to* = *talk to*). *talk about* / *speak about* both. **A13** *said that she was*. Intro now/past. Stems lock tense (*yesterday* / *every day*). |
 
 Older A2 grammar (present continuous, agreement, past simple, past continuous, used to, present perfect, will/going to, modals, comparatives, -ed/-ing, countable, quantifiers, some/any, adverbs, first conditional, verb patterns, movement) was already `[x]` from earlier smokes. **Replay only if James asks.**
 

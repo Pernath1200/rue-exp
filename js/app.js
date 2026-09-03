@@ -4,7 +4,7 @@
  */
 
 import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-03-flagon";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-flagon";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-quizform";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -12,7 +12,7 @@ import {
   startGrammarMatchSprint,
   startGrammarTypeSprint,
   startFinaleSprint,
-} from "./vocab-sprint.js?v=2026-09-03-flagon";
+} from "./vocab-sprint.js?v=2026-09-03-whichdud";
 import {
   loadProgress,
   lastCompletedNodeId,
@@ -33,9 +33,6 @@ import {
   nodeTreeStrength,
   reviewDueList,
   backfillReview,
-  PASS_RATIO,
-  MASTERY_REPS,
-  FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
 } from "./progress.js?v=2026-09-02-treelabel";
@@ -50,41 +47,24 @@ import { renderTreePortrait, unitSeatPart } from "./tree-portrait.js?v=2026-09-0
 import { initReference, renderReference } from "./reference.js";
 import { setSynonymMap } from "./synonyms.js";
 
-/* Smoke flagging is a REVIEW tool, not a student feature (James, 2026-08-10).
- * Localhost: Flag / Flagged on every practice screen. The EN answer key only
- * with ?smoke=1 (class leak 2026-09-03). Never on Pages. */
+/* Smoke apparatus (Flag, EN answers, skip-match) is a review tool, not a
+ * student feature (James, 2026-08-10 / 2026-09-03). Localhost is always the
+ * build machine — full chrome on. Pages / class: never. [hidden] must stay
+ * display:none !important so flex cannot leak the bar. */
 const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
   location.hostname,
 );
-const SMOKE_SESSION_KEY = "rue-exp-smoke";
-
-function smokeChromeOn() {
-  if (!IS_DEV_HOST) return false;
-  try {
-    const q = new URLSearchParams(location.search).get("smoke");
-    if (q === "1" || q === "true") sessionStorage.setItem(SMOKE_SESSION_KEY, "1");
-    if (q === "0" || q === "off") sessionStorage.removeItem(SMOKE_SESSION_KEY);
-    return sessionStorage.getItem(SMOKE_SESSION_KEY) === "1";
-  } catch {
-    return false;
-  }
-}
 
 function applySmokeChrome() {
   if (!IS_DEV_HOST) return;
   const bar = document.getElementById("smoke-toolbar");
   if (!bar) return;
-  const full = smokeChromeOn();
   bar.hidden = false;
-  bar.classList.toggle("smoke-toolbar-flags-only", !full);
+  bar.classList.remove("smoke-toolbar-flags-only");
   const live = document.getElementById("smoke-live");
-  if (live) {
-    live.hidden = !full;
-    if (!full) live.textContent = "";
-  }
+  if (live) live.hidden = false;
   bar.querySelectorAll(".smoke-toolbar-hint").forEach((el) => {
-    if (el.id === "smoke-live") return;
-    el.hidden = !full;
+    el.hidden = false;
   });
 }
 
@@ -910,13 +890,22 @@ function renderHomeChrome() {
       revHint.textContent = "";
     }
   }
+  const stats = levelUnitStats(STATE.level, STATE.tree?.nodes || []);
+  const progLine = document.getElementById("home-progress-line");
+  if (progLine) {
+    if (stats?.total) {
+      progLine.hidden = false;
+      progLine.textContent = `${STATE.level} · ${stats.learned}/${stats.total}`;
+    } else {
+      progLine.hidden = true;
+      progLine.textContent = "";
+    }
+  }
   const progMeta = document.getElementById("progress-summary-meta");
   if (progMeta) {
-    const s = levelUnitStats(STATE.level, STATE.tree?.nodes || []);
-    if (s?.total) {
-      const pct = Math.round((100 * (s.learned || 0)) / s.total);
-      progMeta.textContent = `· ${pct}%`;
-    }
+    progMeta.textContent = stats?.total
+      ? `· ${stats.learned}/${stats.total}`
+      : "";
   }
   const review = document.getElementById("review-card");
   const more = document.getElementById("panel-more");
@@ -1780,11 +1769,7 @@ function renderLevelMeters() {
         <div class="meter-count"><span class="meter-pct">${p}%</span> <span class="meter-frac">${n}/${t}</span></div>
       </div>`;
   };
-  const reviewLive = s.remembered > 0 || s.mastered > 0;
   const learnedPct = pct(s.learned);
-  const scoreBar = Math.round(
-    (level === "A1" ? Math.min(PASS_RATIO, FRUIT_SOFT) : PASS_RATIO) * 100,
-  );
   el.innerHTML = `
     <div class="meters-head">
       <span class="meters-title">${escapeHtml(level)} progress</span>
@@ -1792,10 +1777,7 @@ function renderLevelMeters() {
     </div>
     ${bar(s.learned, "learned")}
     ${bar(s.remembered, "remembered")}
-    ${bar(s.mastered, "mastered")}
-    <p class="meters-hint">
-      Learned = finished once · Remembered / Mastered = kept fresh over spaced reviews.
-    </p>`;
+    ${bar(s.mastered, "mastered")}`;
 }
 
 /** Due reviews, path order, capped display. Hidden when nothing is due. */

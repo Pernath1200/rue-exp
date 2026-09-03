@@ -37,6 +37,7 @@ A2 must be smoked and live before B1 unlocks. No A1/A2 re-smoke.
 | `parked-stop-to-ing.json` | `b1_verb_patterns_advanced` — both shapes, different meaning |
 | `parked-stressed-stressful.json` | `leaf_feelings_b1` — cause form not -ing |
 | `parked-once-a-week.json` | `b1_prepositions_time_2` |
+| `parked-a2-adverb-clusters.json` | `b1_degree_adverbs` · `b1_modals_speculation` · `b1_comparison_2` · `b1_linkers` / `trunk_opinions_b1`. Cut from `leaf_adverbs_a2` 2026-09-03 (manner-only). Do not invent an adverb unit. |
 
 ---
 
@@ -213,7 +214,9 @@ Present perfect family front-loaded per the course doc (weeks 1–4 priority).
 
 ## In-place (no new id)
 
-- `b1_degree_adverbs` thicken 12 → ~36, fold in so / such
+- `b1_degree_adverbs` thicken 12 → ~36, fold in so / such **and** `parked-a2-adverb-clusters.json` (almost / nearly / completely / extremely / rather / hardly…)
+- `b1_modals_speculation` fold how-sure words from that file (perhaps / probably / certainly / definitely)
+- `b1_comparison_2` fold **least** from that file (`less` already at A2 comparatives)
 - `trunk_abstract_b1` thicken 24 → 36 + sentences + practice mode
 - `trunk_chunks_b1` thicken 24 → 36
 - `b1_word_order_fronting` — check 21 items is enough

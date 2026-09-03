@@ -100,7 +100,7 @@ A1: only unlock `LIVE_LEVELS` to `["A1","A2"]`. No A1 re-smoke.
 | `leaf_home_a2` | Home life | 39 | **James cuts 3** to 36 |
 | `leaf_food_a2` | Food & drink | 23 | play · filled *fresh, serve*; dropped *soap* (was a soup trap) |
 | `leaf_shopping_a2` | Shopping & money | 24 | play · filled *save* |
-| `leaf_adverbs_a2` | Adverbs (list) | 66 | **cut to 36 later**. Formation is on `a2_adverbs_order`. Not this sitting |
+| `leaf_adverbs_a2` | Adverbs (manner) | 12 | **manner only 2026-09-03**. Formation/position stay on `a2_adverbs_order`. Soak: less/least → comparatives path (`b1_comparison_2` for least); somewhere-set already `a2_quantifiers`; degree → `b1_degree_adverbs`; probability → `b1_modals_speculation` |
 | `leaf_ideas_a2` | Ideas | 92+23 | **merge `ideas_2`, cut to 36 later**. Not this sitting |
 | `leaf_sports_a2` | Sport | 26 | play · filled *compete, beat, catch, throw* |
 | `leaf_health_a2` | Health | 41 | **James cuts 5** to 36 |
@@ -149,7 +149,7 @@ Engine today is A1-hardcoded in `js/vocab-sprint.js` (`loadA1VocabPool`, `SMOKED
 | `leaf_ideas_a2` | 92 abstract nouns | **Keep.** Merge, cut to 36 later. Not this sitting. |
 | `leaf_verbs_a2` | 112-verb POS list | **Keep.** Cut to 36 later. Not this sitting. |
 | `leaf_travel_a2` | 75 holidays (real theme) | **Keep.** Cut to 36 later. Transport already took 25. |
-| `leaf_adverbs_a2` | 66-adverb list | **Keep.** Cut to 36 later. Formation stays on `a2_adverbs_order`. |
+| `leaf_adverbs_a2` | Manner (how you do it) · 12 | **Done 2026-09-03.** Not a mixed adverb dump. |
 | `trunk_recycle_a2` / `lexis` / `chunks` | A1 frames reused / high-freq frames / 12 phrases | **Topics only.** Not sittings. |
 
 ---
@@ -195,7 +195,7 @@ Zigzag. New grammar **bold**. New vocab *italic*. Checks last.
 35. **`a2_indefinite_pronouns`**
 36. `leaf_shopping_a2`
 37. `a2_adverbs_order` · + formation
-38. `leaf_adverbs_a2` · cut to 36
+38. `leaf_adverbs_a2` · manner 12
 39. `a2_first_conditional`
 40. `leaf_ideas_a2` · merge + cut to 36
 41. `a2_verb_patterns`
@@ -256,7 +256,7 @@ Coming nine already have ids.
 
 1. Stamp the 14 ids. Unlock A2. Sentence-gap batch. Sprint engine takes a level.
 2. Smoke the 15 leaves that already fit 36 (skip tested grammar except the two REPLAYs + the two light adds).
-3. Cut travel / adverbs / ideas / verbs / home / health to 36 as you reach them.
+3. Cut ideas / verbs / home / health to 36 as you reach them. Travel and adverbs already cut.
 4. Write new grammar **in path order** (first missing: `a2_simple_vs_continuous` then `a2_arrangements`). One pack → lint → play → tick.
 5. Author the five new vocab themes when their slot comes (36 words, picture or schematic, Use bank, sentence-gap).
 6. Checks last — they pool whatever is already smoked; they can go live as soon as the engine is generalised, and thicken as more units tick.

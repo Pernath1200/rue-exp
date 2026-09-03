@@ -1,11 +1,11 @@
 {
   "id": "a2_indirect_questions",
-  "title": "Indirect questions",
+  "title": "Indirect questions 1",
   "level": "A2",
   "tree_node": "a2_indirect_questions",
   "codex_unit": "G_SS-A1B1-01",
   "practice": "frames",
-  "note": "ROUGH STUB 2026-09-01. Do you know where the station is? Statement order after know / tell me. No backshift. Not if/whether as the whole unit. B1 pack stays. Sort correct / needs repair. Use = correct.",
+  "note": "ROUGH STUB 2026-09-01. Do you know where the station is? Statement order after know / tell me. No backshift. Not if/whether as the whole unit. B1 pack stays. Sort correct / needs repair. Use = correct. · F9 2026-09-03 (James smoke): was the thinnest A2 grammar pack — quiz 7 vs a median of 20. +7 quiz, +2 sort pairs, still word-order-only and no backshift. Fills the gaps: did-insertion in the past (absent before), who / why / what + does, how long, and the Could you tell me / Do you remember openers. sort_rule added.",
   "default_direction": "cz_to_en",
   "use_mode": "correct",
   "check": {
@@ -66,6 +66,30 @@
         {
           "en": "Can you tell me how much is this?",
           "cz": "Můžeš mi říct, kolik to stojí?",
+          "bin": "needs_repair",
+          "use": false
+        },
+        {
+          "en": "Do you know where she went?",
+          "cz": "Víš, kam šla?",
+          "bin": "correct",
+          "use": false
+        },
+        {
+          "en": "Do you know where did she go?",
+          "cz": "Víš, kam šla?",
+          "bin": "needs_repair",
+          "use": false
+        },
+        {
+          "en": "Do you know who that woman is?",
+          "cz": "Víš, kdo je ta žena?",
+          "bin": "correct",
+          "use": false
+        },
+        {
+          "en": "Do you know who is that woman?",
+          "cz": "Víš, kdo je ta žena?",
           "bin": "needs_repair",
           "use": false
         }
@@ -207,6 +231,134 @@
           "wrong": "Do you know if is she at home?",
           "explanation": "After **if**: **she is at home**. Not *is she*.",
           "explanation_cz": "Po **if**: **she is at home**. Ne *is she*."
+        },
+        {
+          "en": "Do you know who that woman is?",
+          "cz": "Víš, kdo je ta žena?",
+          "gap": "Do you know who ____?",
+          "gap_answer": "that woman is",
+          "quiz_options": [
+            "that woman is",
+            "is that woman",
+            "that woman",
+            "is woman"
+          ],
+          "accepts": [
+            "Do you know who that woman is?"
+          ],
+          "wrong": "Do you know who is that woman?",
+          "explanation": "After **who**: **that woman is** — statement order. Not *who is that woman*.",
+          "explanation_cz": "Po **who**: **that woman is**. Ne *who is that woman*."
+        },
+        {
+          "en": "I don't know why she is late.",
+          "cz": "Nevím, proč má zpoždění.",
+          "gap": "I don't know why ____.",
+          "gap_answer": "she is late",
+          "quiz_options": [
+            "she is late",
+            "is she late",
+            "she late",
+            "is late she"
+          ],
+          "accepts": [
+            "I don't know why she is late.",
+            "I do not know why she is late."
+          ],
+          "wrong": "I don't know why is she late.",
+          "explanation": "**why she is late** — the subject comes before **is**.",
+          "explanation_cz": "**why she is late** — podmět je před **is**."
+        },
+        {
+          "en": "Can you tell me what this word means?",
+          "cz": "Můžeš mi říct, co to slovo znamená?",
+          "gap": "Can you tell me what ____?",
+          "gap_answer": "this word means",
+          "quiz_options": [
+            "this word means",
+            "does this word mean",
+            "this word mean",
+            "means this word"
+          ],
+          "accepts": [
+            "Can you tell me what this word means?"
+          ],
+          "wrong": "Can you tell me what does this word mean?",
+          "explanation": "**what this word means** — no **does** inside.",
+          "explanation_cz": "**what this word means** — uvnitř žádné **does**."
+        },
+        {
+          "en": "Do you know where she went?",
+          "cz": "Víš, kam šla?",
+          "gap": "Do you know where ____?",
+          "gap_answer": "she went",
+          "quiz_options": [
+            "she went",
+            "did she go",
+            "she go",
+            "went she"
+          ],
+          "accepts": [
+            "Do you know where she went?"
+          ],
+          "wrong": "Do you know where did she go?",
+          "explanation": "**where she went** — no **did** inside. The past is already in **went**.",
+          "explanation_cz": "**where she went** — uvnitř žádné **did**. Minulost je už ve **went**."
+        },
+        {
+          "en": "Could you tell me how long the film is?",
+          "cz": "Mohl byste mi říct, jak dlouhý je ten film?",
+          "gap": "Could you tell me how long ____?",
+          "gap_answer": "the film is",
+          "quiz_options": [
+            "the film is",
+            "is the film",
+            "the film",
+            "is film"
+          ],
+          "accepts": [
+            "Could you tell me how long the film is?"
+          ],
+          "wrong": "Could you tell me how long is the film?",
+          "explanation": "**how long the film is**. Not *how long is the film*.",
+          "explanation_cz": "**how long the film is**. Ne *how long is the film*."
+        },
+        {
+          "en": "I don't know if he works here.",
+          "cz": "Nevím, jestli tady pracuje.",
+          "gap": "I don't know if ____.",
+          "gap_answer": "he works here",
+          "quiz_options": [
+            "he works here",
+            "does he work here",
+            "he work here",
+            "works he here"
+          ],
+          "accepts": [
+            "I don't know if he works here.",
+            "I do not know if he works here."
+          ],
+          "wrong": "I don't know if does he work here.",
+          "explanation": "After **if**: **he works here** — no **does**.",
+          "explanation_cz": "Po **if**: **he works here** — žádné **does**."
+        },
+        {
+          "en": "Do you remember what he said?",
+          "cz": "Pamatuješ si, co řekl?",
+          "gap": "Do you remember what ____?",
+          "gap_answer": "he said",
+          "quiz_options": [
+            "he said",
+            "did he say",
+            "he say",
+            "said he"
+          ],
+          "accepts": [
+            "Do you remember what he said?"
+          ],
+          "wrong": "Do you remember what did he say?",
+          "explanation": "**what he said** — no **did** inside.",
+          "explanation_cz": "**what he said** — uvnitř žádné **did**."
         }
       ]
     }
@@ -265,5 +417,6 @@
       }
     ]
   },
-  "sort_cz": false
+  "sort_cz": false,
+  "sort_rule": "Inside the question, keep statement order: subject, then verb. No does, no did, and no swapping."
 }
