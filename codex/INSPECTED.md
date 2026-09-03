@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**Grammar: 65 inspected · 0 approved · 14 unseen** of 79 live units
+**Grammar: 66 inspected · 0 approved · 13 unseen** of 79 live units
 
 **Vocab A1–A2: 28 inspected · 0 approved · 37 unseen** of 65 live units
 
@@ -49,7 +49,7 @@ Of the 6 cloud-authored units, **4 have any tick**.
 - [x][ ] `a1_word_classes` — Word classes · 16 items
 - [x][ ] `a1_word_order` — Word order 1 · 26 items
 
-## A2 — 27 inspected / 0 approved / 33 units
+## A2 — 28 inspected / 0 approved / 33 units
 
 - [x][ ] `a2_modals_must_should` — Must / should · 46 items · **cloud** · seen?
 - [x][ ] `a2_adverbs_order` — Adverb position · 43 items
@@ -77,7 +77,7 @@ Of the 6 cloud-authored units, **4 have any tick**.
 - [x][ ] `a2_present_perfect` — Present perfect · 55 items
 - [x][ ] `a2_quantifiers` — Much / many / a lot · 52 items · seen?
 - [ ][ ] `a2_reflexives` — Reflexives & -self · 16 items
-- [ ][ ] `a2_say_tell` — Say / tell / speak / talk · 17 items
+- [x][ ] `a2_say_tell` — Say / tell / speak / talk · 15 items
 - [x][ ] `a2_simple_vs_continuous` — Present simple vs continuous · 25 items
 - [x][ ] `a2_some_any_no` — Some / any 2 · 29 items
 - [x][ ] `a2_too_enough` — Too / enough · 17 items
