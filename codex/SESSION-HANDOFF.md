@@ -1,5 +1,7 @@
 # Session handoff — 2026-08-31 evening (Claude until Grok renews)
 
+**Superseded for A2 grammar smoke:** use `codex/SMOKE-HANDOFF-A2-GRAMMAR-2026-09-02.md` (new tab, 2026-09-02). This file is the A1-vocab evening continue.
+
 Grok credits ran out. Continue here. Do **not** open `codex/HANDOFF.md` (that is the Claude **kill switch**). Folder: `C:\Users\ADMIN\documents\projects\rue-exp`.
 
 Paste:

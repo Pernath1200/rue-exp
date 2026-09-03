@@ -8,7 +8,7 @@ Sources:
 
 Builds:
   - path_order      from spine.json steps (A1 zigzag)
-  - path_order_a2   from spine.json steps_a2 (A2 zigzag) + leftover A2 vocab
+  - path_order_a2   from spine.json steps_a2 (A2 zigzag; 60 locked 2026-09-01)
   - path_order_b1   grammar path_order_b1 interleaved with B1 vocab nodes
   - path_order_b2 / path_order_c1 from lab grammar paths (+ any higher vocab)
 
@@ -284,16 +284,9 @@ def build_tree(spine: dict):
     v2g.update(v2g_a2)
     chained.update(chained_a2)
 
-    # Append any A2 grammar/vocab not yet on path_a2 (full catalogue)
+    # A2 circle is spine steps_a2 (60 locked 2026-09-01). Off-circle A2
+    # nodes (dead dumps, Topics-only trunks) stay in the catalogue.
     for nid in g_tree.get("path_order_a2") or []:
-        if nid not in path_a2:
-            path_a2.append(nid)
-    a2_v = [
-        n["id"]
-        for n in v_tree.get("nodes", [])
-        if "A2" in (n.get("levels") or [])
-    ]
-    for nid in a2_v:
         if nid not in path_a2:
             path_a2.append(nid)
     path_a2 = dedupe(path_a2)

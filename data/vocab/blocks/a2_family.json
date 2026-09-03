@@ -4,7 +4,8 @@
   "level": "A2",
   "tree_node": "leaf_family_a2",
   "codex_unit": "V_THM-A1B1-04",
-  "note": "V_THM-A1B1-04 family A2 · carriers via use[]",
+  "note": "V_THM-A1B1-04 family A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -176,19 +177,69 @@
             "this_is_a",
             "i_see_a"
           ]
+        },
+        {
+          "en": "marry",
+          "cz": "oženit se / vdát se",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "invite",
+          "cz": "pozvat",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "celebrate",
+          "cz": "slavit",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "behave",
+          "cz": "chovat se",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "argue",
+          "cz": "hádat se",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
         }
       ]
     }
   ],
   "intro": [
     {
-      "title": "People, and the groups they make",
-      "title_cz": "Lidé a skupiny, které tvoří",
+      "title": "People",
+      "title_cz": "Lidé",
       "pictures": [
         {
           "icon": "🧑",
           "en": "adult",
           "cz": "dospělý"
+        },
+        {
+          "icon": "💍",
+          "en": "single",
+          "cz": "svobodný"
+        },
+        {
+          "icon": "💑",
+          "en": "couple",
+          "cz": "pár"
         },
         {
           "icon": "🧒",
@@ -206,9 +257,19 @@
           "cz": "dáma"
         },
         {
-          "icon": "💑",
-          "en": "couple",
-          "cz": "pár"
+          "icon": "🎩",
+          "en": "sir",
+          "cz": "pane"
+        },
+        {
+          "icon": "🧳",
+          "en": "guest",
+          "cz": "host"
+        },
+        {
+          "icon": "🔑",
+          "en": "owner",
+          "cz": "majitel"
         },
         {
           "icon": "🤝",
@@ -224,6 +285,42 @@
           "icon": "👶",
           "en": "birth",
           "cz": "narození"
+        }
+      ]
+    },
+    {
+      "title": "Groups, and what a person is like",
+      "title_cz": "Skupiny a povaha",
+      "pictures": [
+        {
+          "icon": "🧭",
+          "en": "behaviour",
+          "cz": "chování"
+        },
+        {
+          "icon": "🎭",
+          "en": "character",
+          "cz": "povaha"
+        },
+        {
+          "icon": "💎",
+          "en": "personality",
+          "cz": "osobnost"
+        },
+        {
+          "icon": "🌳",
+          "en": "background",
+          "cz": "původ"
+        },
+        {
+          "icon": "🏘️",
+          "en": "community",
+          "cz": "komunita"
+        },
+        {
+          "icon": "🌍",
+          "en": "society",
+          "cz": "společnost"
         },
         {
           "icon": "👥",
@@ -235,11 +332,42 @@
           "en": "audience",
           "cz": "publikum"
         }
-      ],
-      "body": "20 words for people: the people themselves (adult, kid, guy, lady), what joins them (couple, relationship, wedding), and the groups they stand in (crowd, audience, community, society).\nkid and guy are the everyday spoken words — child and man are the ones you write."
+      ]
+    },
+    {
+      "title": "What people do",
+      "title_cz": "Co lidé dělají",
+      "pictures": [
+        {
+          "icon": "👰",
+          "en": "marry",
+          "cz": "oženit se"
+        },
+        {
+          "icon": "📩",
+          "en": "invite",
+          "cz": "pozvat"
+        },
+        {
+          "icon": "🎉",
+          "en": "celebrate",
+          "cz": "slavit"
+        },
+        {
+          "icon": "😇",
+          "en": "behave",
+          "cz": "chovat se"
+        },
+        {
+          "icon": "💢",
+          "en": "argue",
+          "cz": "hádat se"
+        }
+      ]
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
         "This is a …",
         "He is a …",
@@ -247,8 +375,8 @@
         "I see a …",
         "Let's talk about …"
       ],
-      "note": "character is two things in English: what a person is like, and a person in a book or a film. personality is only the first one.",
-      "note_cz": "Pozor: character = povaha i postava. personality = jen povaha."
+      "note": "character is two things in English: what a person is like, and a person in a book or a film. personality is only the first one. kid and guy are the spoken words — child and man are the ones you write.",
+      "note_cz": "character = povaha i postava. personality = jen povaha. kid / guy jsou mluvené."
     }
   ],
   "sentences": [
@@ -284,13 +412,16 @@
       ]
     },
     {
-      "en": "My sister has two kids.",
-      "cz": "Moje sestra má dvě děti.",
+      "en": "My sister has a kid.",
+      "cz": "Moje sestra má dítě.",
       "lemmas": [
         "kid"
       ],
       "accepts": [
-        "My sister has two kids"
+        "My sister has a kid",
+        "My sister has a child",
+        "My sister has two kids",
+        "My sister has two children"
       ]
     },
     {
@@ -404,6 +535,118 @@
       "accepts": [
         "Family is important in our society",
         "The family is important in our society"
+      ]
+    },
+    {
+      "en": "They want to marry next year.",
+      "cz": "Chtějí se příští rok vzít.",
+      "lemmas": [
+        "marry"
+      ],
+      "accepts": [
+        "They want to marry next year"
+      ]
+    },
+    {
+      "en": "We want to invite our friends.",
+      "cz": "Chceme pozvat naše kamarády.",
+      "lemmas": [
+        "invite"
+      ],
+      "accepts": [
+        "We want to invite our friends"
+      ]
+    },
+    {
+      "en": "They celebrate every year.",
+      "cz": "Slaví každý rok.",
+      "lemmas": [
+        "celebrate"
+      ],
+      "accepts": [
+        "They celebrate every year"
+      ]
+    },
+    {
+      "en": "The children must behave.",
+      "cz": "Děti se musí chovat slušně.",
+      "lemmas": [
+        "behave"
+      ],
+      "accepts": [
+        "The children must behave",
+        "Children must behave"
+      ]
+    },
+    {
+      "en": "They argue every evening.",
+      "cz": "Hádají se každý večer.",
+      "lemmas": [
+        "argue"
+      ],
+      "accepts": [
+        "They argue every evening"
+      ]
+    },
+    {
+      "en": "Yes, sir.",
+      "cz": "Ano, pane.",
+      "lemmas": [
+        "sir"
+      ],
+      "accepts": [
+        "Yes, sir"
+      ]
+    },
+    {
+      "en": "The birth was in June.",
+      "cz": "Narození bylo v červnu.",
+      "lemmas": [
+        "birth"
+      ],
+      "accepts": [
+        "The birth was in June"
+      ]
+    },
+    {
+      "en": "He has a good background.",
+      "cz": "Má dobrý původ.",
+      "lemmas": [
+        "background"
+      ],
+      "accepts": [
+        "He has a good background"
+      ]
+    },
+    {
+      "en": "This is our community.",
+      "cz": "Tohle je naše komunita.",
+      "lemmas": [
+        "community"
+      ],
+      "accepts": [
+        "This is our community"
+      ]
+    },
+    {
+      "en": "There is a crowd.",
+      "cz": "Je tu dav.",
+      "lemmas": [
+        "crowd"
+      ],
+      "accepts": [
+        "There is a crowd",
+        "There's a crowd"
+      ]
+    },
+    {
+      "en": "The audience is quiet.",
+      "cz": "Publikum je tiché.",
+      "lemmas": [
+        "audience"
+      ],
+      "accepts": [
+        "The audience is quiet"
       ]
     }
   ]

@@ -115,4 +115,14 @@ now     a1_finale               live (Use on everything, after cloze)
 
 Id `a1_vocab_type` is locked. Frame sentences are dropped on type-in.
 
-**A1 circle:** 58 live / 60. Both spares locked (waiting on Codex): vocab Time 2, Feelings. Be/have + core frames is one sitting. Countries leaf is `leaf_countries_a1` (live). Home/Family and Places stay combined.
+**A1 circle:** 60 live. Checks are last on the path.
+
+---
+
+## 5. A2 — same five, not built yet
+
+Clone this file. Proposed ids (stamp with the A2 roster in `A2-PLAN.md`):
+
+`a2_vocab_match` · `a2_vocab_type` · `a2_grammar_match` · `a2_grammar_type` · `a2_finale`
+
+Pool = A2 packs at runtime. Same fruit / Do-next rules as A1. Engine (`js/vocab-sprint.js`) is A1-hardcoded today — generalise to a level, do not fork a second sprint file.

@@ -1,0 +1,368 @@
+{
+ "id": "b1_past_modals",
+ "title": "Had to / was able to / managed to",
+ "level": "B1",
+ "tree_node": "b1_past_modals",
+ "codex_unit": "G_VP-B1B2-01",
+ "practice": "frames",
+ "quality": "draft",
+ "note": "a2_could_able gave past ability COULD. This is the rest: had to for past obligation (must has no past), and was able to / managed to for a single occasion that succeeded, where could does not work. Czech musel jsem -> *I must yesterday. Czech podarilo se mi is the managed to slot. First draft 2026-09-02, rough - thicken after smoke.",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "intro": {
+  "cards": [
+   {
+    "title": "Had to / was able to / managed to",
+    "title_cz": "Musel jsem / dokázal jsem / podařilo se mi",
+    "text_first": true,
+    "points": [
+     "These are the **modal verbs** you already know, in the past.",
+     "**must** has no past form at all. It borrows **had to**."
+    ],
+    "table": {
+     "headers": [
+      "You know",
+      "In the past"
+     ],
+     "rows": [
+      [
+       "**must**",
+       "**had to**"
+      ],
+      [
+       "**have to**",
+       "**had to**"
+      ],
+      [
+       "**can**",
+       "**could** · **was able** to"
+      ],
+      [
+       "**should**",
+       "*(no past form — B2)*"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "I **had to** work last Saturday.",
+      "cz": "Musel jsem v sobotu pracovat."
+     },
+     {
+      "en": "She **managed to** finish before six.",
+      "cz": "Podařilo se jí skončit před šestou."
+     }
+    ]
+   },
+   {
+    "title": "The three past forms",
+    "title_cz": "Tři minulé tvary",
+    "points": [
+     "**managed to** adds the idea that it took effort."
+    ],
+    "table": {
+     "headers": [
+      "Form",
+      "Job"
+     ],
+     "rows": [
+      [
+       "**had to** + verb",
+       "you were obliged to do it"
+      ],
+      [
+       "**was /** were able to",
+       "you could, and on this occasion you did"
+      ],
+      [
+       "**managed to**",
+       "it was hard, and you did it"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "could, or was able to?",
+    "title_cz": "could, nebo was able to?",
+    "points": [
+     "For a **single** success, **could** is wrong. Use was able to or managed to."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Which"
+     ],
+     "rows": [
+      [
+       "I **could** swim when I was six.",
+       "a general ability, over years"
+      ],
+      [
+       "I **was able** to swim to the boat.",
+       "one occasion, and it worked"
+      ],
+      [
+       "I **managed to** swim to the boat.",
+       "one occasion, and it was hard"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Negatives and questions",
+    "title_cz": "Zápor a otázky",
+    "points": [
+     "**didn't have** to means it was not necessary — not that it was forbidden."
+    ],
+    "table": {
+     "headers": [
+      "Shape",
+      "Example"
+     ],
+     "rows": [
+      [
+       "negative",
+       "I **didn't have** to pay."
+      ],
+      [
+       "negative",
+       "We **weren't able** to open it."
+      ],
+      [
+       "question",
+       "**Did** you **have to** wait?"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "text_first": true,
+    "points": [
+     "**must** cannot go in the past. Say **had to**."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "~~I must work last Saturday.~~",
+       "I **had to** work last Saturday."
+      ],
+      [
+       "~~I could pass the exam yesterday.~~",
+       "I **managed to** pass the exam yesterday."
+      ],
+      [
+       "~~We didn't able to open it.~~",
+       "We **weren't able** to open it."
+      ],
+      [
+       "~~Did you must wait?~~",
+       "**Did** you **have to** wait?"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "b1_past_modals_main",
+   "title": "Had to / was able to / managed to · B1",
+   "items": [
+    {
+     "en": "I had to work last Saturday.",
+     "cz": "Musel jsem v sobotu pracovat.",
+     "gap": "I ____ work last Saturday. (must)",
+     "gap_answer": "had to",
+     "quiz_options": [
+      "had to",
+      "must",
+      "must to",
+      "have to"
+     ],
+     "accepts": [
+      "I had to work last Saturday."
+     ],
+     "wrong": "I must work last Saturday.",
+     "explanation": "**must** has no past. The past of must is **had to**.",
+     "explanation_cz": "**must** nemá minulý čas. Minulý čas od must je **had to**."
+    },
+    {
+     "en": "She managed to finish before six.",
+     "cz": "Podařilo se jí skončit před šestou.",
+     "gap": "She ____ finish before six. (manage)",
+     "gap_answer": "managed to",
+     "quiz_options": [
+      "managed to",
+      "could",
+      "can",
+      "was able"
+     ],
+     "accepts": [
+      "She managed to finish before six."
+     ],
+     "wrong": "She could finish before six.",
+     "explanation": "One occasion, and it was an effort: **managed to** finish.",
+     "explanation_cz": "Jedna příležitost a stálo to úsilí: **managed to** finish."
+    },
+    {
+     "en": "We weren't able to open the door.",
+     "cz": "Nedokázali jsme otevřít dveře.",
+     "gap": "We ____ to open the door. (not / be able)",
+     "gap_answer": "weren't able",
+     "gap_accepts": [
+      "were not able"
+     ],
+     "quiz_options": [
+      "weren't able",
+      "didn't able",
+      "couldn't able",
+      "not able"
+     ],
+     "accepts": [
+      "We weren't able to open the door.",
+      "We were not able to open the door."
+     ],
+     "wrong": "We didn't able to open the door.",
+     "explanation": "**be able to** keeps the be verb: weren't **able to**.",
+     "explanation_cz": "**be able to** si drží sloveso be: weren't **able to**."
+    },
+    {
+     "en": "Did you have to wait long?",
+     "cz": "Musel jsi dlouho čekat?",
+     "gap": "____ wait long? (you / have to)",
+     "gap_answer": "Did you have to",
+     "quiz_options": [
+      "Did you have to",
+      "Did you must",
+      "Had you to must",
+      "Must you"
+     ],
+     "accepts": [
+      "Did you have to wait long?"
+     ],
+     "wrong": "Did you must wait long?",
+     "explanation": "Questions with **have to** use **did**: Did you have to wait.",
+     "explanation_cz": "Otázky s **have to** používají **did**: Did you have to wait."
+    },
+    {
+     "en": "I didn't have to pay for the ticket.",
+     "cz": "Nemusel jsem za lístek platit.",
+     "gap": "I ____ pay for the ticket. (not / have to)",
+     "gap_answer": "didn't have to",
+     "gap_accepts": [
+      "did not have to"
+     ],
+     "quiz_options": [
+      "didn't have to",
+      "mustn't",
+      "hadn't to",
+      "didn't must"
+     ],
+     "accepts": [
+      "I didn't have to pay for the ticket.",
+      "I did not have to pay for the ticket."
+     ],
+     "explanation": "**didn't have to** = it was not necessary. **mustn't** would mean it was forbidden.",
+     "explanation_cz": "**didn't have to** = nebylo to nutné. **mustn't** by znamenalo, že to bylo zakázáno."
+    },
+    {
+     "en": "He was able to fix the car himself.",
+     "cz": "Dokázal to auto opravit sám.",
+     "gap": "He ____ fix the car himself. (be able)",
+     "gap_answer": "was able to",
+     "quiz_options": [
+      "was able to",
+      "could to",
+      "can",
+      "was can"
+     ],
+     "accepts": [
+      "He was able to fix the car himself."
+     ],
+     "explanation": "**he** takes **was able to**, one job that he completed.",
+     "explanation_cz": "**he** má **was able to**, jedna věc, kterou dotáhl."
+    },
+    {
+     "en": "They had to leave early.",
+     "cz": "Museli odejít brzy.",
+     "gap": "They ____ leave early. (must)",
+     "gap_answer": "had to",
+     "quiz_options": [
+      "had to",
+      "must",
+      "musted",
+      "have to"
+     ],
+     "accepts": [
+      "They had to leave early."
+     ],
+     "explanation": "Past obligation for **they**: had to leave.",
+     "explanation_cz": "Minulá povinnost pro **they**: had to leave."
+    },
+    {
+     "en": "I managed to get a ticket at the last minute.",
+     "cz": "Na poslední chvíli se mi podařilo sehnat lístek.",
+     "gap": "I ____ get a ticket at the last minute. (manage)",
+     "gap_answer": "managed to",
+     "quiz_options": [
+      "managed to",
+      "could",
+      "was managing",
+      "manage to"
+     ],
+     "accepts": [
+      "I managed to get a ticket at the last minute."
+     ],
+     "explanation": "It was difficult and it worked: **managed to** get.",
+     "explanation_cz": "Bylo to těžké a povedlo se: **managed to** get."
+    },
+    {
+     "en": "She had to take the bus because her car broke down.",
+     "cz": "Musela jet autobusem, protože se jí porouchalo auto.",
+     "gap": "She ____ take the bus. (must)",
+     "gap_answer": "had to",
+     "quiz_options": [
+      "had to",
+      "must",
+      "must to",
+      "was must"
+     ],
+     "accepts": [
+      "She had to take the bus because her car broke down."
+     ],
+     "wrong": "She must take the bus because her car broke down.",
+     "explanation": "**she** + past obligation: had to take.",
+     "explanation_cz": "**she** + minulá povinnost: had to take."
+    },
+    {
+     "en": "We were able to find a hotel near the station.",
+     "cz": "Podařilo se nám najít hotel blízko nádraží.",
+     "gap": "We ____ find a hotel near the station. (be able)",
+     "gap_answer": "were able to",
+     "quiz_options": [
+      "were able to",
+      "could to",
+      "was able to",
+      "can"
+     ],
+     "accepts": [
+      "We were able to find a hotel near the station."
+     ],
+     "explanation": "**we** takes **were able to** for a single search that succeeded.",
+     "explanation_cz": "**we** má **were able to** pro jedno hledání, které vyšlo."
+    }
+   ]
+  }
+ ]
+}

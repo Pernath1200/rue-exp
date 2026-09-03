@@ -1,67 +1,103 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**589 unknown word types** across 61 live units (of 138).
+**783 unknown word types** across 97 live units (of 159).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
 - **a1_be_have** (A1 grammar): cold×2, home, right, today, dog, children, bike, old, ready, happy, school, hungry, thirsty, hot
 - **a1_word_order** (A1 grammar): dogs×2, books
-- **a1_articles** (A1 grammar): dog×3, book×2, school×2, window×2, cat×2, ticket×2, sun×2, moon×2, engineer, patrik, nurse, artist, new, day, old, wait, hour, umbrella, university, small, table, big, blue, open, black, expensive, red, hot, today, bright, like, dogs, books, tickets, cats, likes, music, help, want
+- **a1_articles** (A1 grammar): dog×3, book×2, school×2, window×2, cat×2, ticket×2, sun×2, moon×2, engineer, patrik, nurse, artist, new, day, old, wait, hour, umbrella, university, small, table, big, blue, open, black, expensive, red, hot, today, bright, like, dogs, books, tickets, cats, drink, water, likes, music, help, want, milk
 - **a1_present_simple** (A1 grammar): day×5, coffee×4, school×2, everybody×2, near, tea, football, bus, films, books, lunch, morning, everyone, somebody, hard, nobody
 - **trunk_verbs_more_a1** (A1 vocab): together, dogs
-- **a1_agreement** (A1 grammar): dogs×2, football, tennis
-- **leaf_home_family** (A1 vocab): big×7, small×5, little×3, school×3, dinner×3, old×3, now×2, blue×2, white×2, city×2, dog×2, morning×2, red, coat, football, day, sings, well, cooks, hospital, best, near, newspaper, shop, bike, cat, centre, want, close, cold, flowers, read, milk, cheese, find, reading, tea, favourite, stays, cakes, green, farm, years, tall, funny, picture, warm, quick, next, homework, look, time, new, cake
-- **a1_possessives** (A1 grammar): dog×2, job, coffee, school, tickets, passport, blue, new
-- **a1_frequency** (A1 grammar): coffee×2, meat×2, busy×2, lunch, tea, happy, angry, bored
-- **leaf_freetime_a1** (A1 vocab): favourite×3, dinner×2, morning×2, pictures×2, sea, together, tickets, park, starts, radio, email, summer, want, night, happy, new, beach, players, cat, school
-- **leaf_places** (A1 vocab): small×5, big×4, morning×3, buy×2, summer×2, river×2, quiet, bread, until, pizza, wait, blue, red, far, turn, tree, long, lot, afternoon, fruit, animals, day, swim, call
-- **leaf_countries_a1** (A1 vocab): capital×2, little, winter, want, summer, far, big, learning
-- **leaf_food_a1** (A1 vocab): big×5, small×3, want×3, green×2, red×2, black, pizza, together, lot, little, buy, morning, put, cuts, horse, hand, dark, warm, night, afternoon, orange, cold, day, give, clean, puts, week, cat, new
-- **leaf_clothes_a1** (A1 vocab): red×4, new×2, long×2, white, black, today, green, blue, warm, winter, dirty
+- **a1_agreement** (A1 grammar): dogs×2, books×2, football, tennis, book
+- **leaf_home_family** (A1 vocab): little×3, old×3, small×2, school×2, big×2, garden×2, red, football, day, sings, well, now, bed, cooks, dinner, hospital, best, near, newspaper, shop, blue, bike, white, cat, city, dog, stays, home, cakes, green, farm, years, tall, funny
+- **a1_possessives** (A1 grammar): book×2, dog×2, books, job, coffee, school, tickets, passport, blue, desk, new
+- **a1_frequency** (A1 grammar): coffee×2, meat×2, busy×2, lunch, home, tea, happy, angry, bored, books
+- **leaf_freetime_a1** (A1 vocab): favourite×3, dinner×2, home×2, morning×2, pictures×2, sea, book, bed, together, tickets, park, starts, radio, email, summer, want, night, happy, new, beach, players, cat, school
+- **leaf_feelings_a1** (A1 vocab): home
+- **a1_questions_negatives** (A1 grammar): home×2
+- **trunk_glue_questions_a1** (A1 vocab): bathroom, books
+- **trunk_verbs_say_a1** (A1 vocab): clock×2, keys
+- **leaf_places** (A1 vocab): bus×2, next×2, big×2, small×2, buy×2, behind, quiet, morning, bread, until, pizza, metro, red, tram, summer, bike, airport, far, walk, turn, left, right, opposite, river, arrive, lot, traffic, afternoon, books, fruit, animals, day, swim, call
+- **leaf_countries_a1** (A1 vocab): capital×2, little, winter, want, summer, far, big, country, learning, home
+- **leaf_food_a1** (A1 vocab): big×5, want×3, kitchen×2, table×2, delicious×2, small×2, home, pizza, together, lot, green, little, coffee, buy, red, morning, put, cuts, horse, hand, dark, sandwich, pepper, dish, spoon, oven
+- **leaf_clothes_a1** (A1 vocab): red×4, new×2, long×2, bedroom, white, home, chair, black, today, green, blue, warm, winter, right, bed, left, dirty, floor
 - **a1_object_pronouns** (A1 grammar): calls×2, want
-- **leaf_body_a1** (A1 vocab): something, small, new, cat, sits, strong, dark, red, sun, little, long
-- **leaf_health_a1** (A1 vocab): today×2, big×2, important, strong, loud, full, high, bad, night, now, morning, yellow, long, year
-- **a1_like_want_need** (A1 grammar): pizza, new, money
-- **a1_can** (A1 grammar): now
-- **leaf_work_a1** (A1 vocab): new×3, small×3, big×2, lot, today, famous, best, cows, late, long
-- **leaf_school_a1** (A1 vocab): difficult×4, lot×2, new×2, long×2, pictures×2, today, red, maths, big, give, rivers, beautiful, small, notebook, mum, interesting, dogs
-- **a1_prepositions_place** (A1 grammar): ball×6, box×6, cat, picture, honza, dog
-- **a1_there_is** (A1 grammar): cat, university, dog
-- **a1_some_any** (A1 grammar): money×2
+- **leaf_body_a1** (A1 vocab): book×2, something, left, small, new, table, cat, sits, strong, dark, red, sun, little, long
+- **leaf_health_a1** (A1 vocab): today×2, big×2, important, strong, home, loud, full, high, bad, night, tea, bed, now, take, morning, yellow, takes, long, walk, year
+- **a1_like_want_need** (A1 grammar): pizza, new, money, home
+- **trunk_verbs_more2_a1** (A1 vocab): home
+- **a1_can** (A1 grammar): window, now
+- **leaf_work_a1** (A1 vocab): new×3, small×3, big×2, lot, today, bus, famous, best, cows, late, book, long
+- **leaf_school_a1** (A1 vocab): difficult×3, lot, today, new, red, right, history, floor, maths, big, books, long, give, information, text
+- **a1_prepositions_place** (A1 grammar): ball×6, box×6, book×5, table×2, chair×2, home×2, garden×2, keys, cat, milk, fridge, door, flat, picture, wall, honza, bed, dog, lamp, window
+- **leaf_places_2_a1** (A1 vocab): morning×3, small×3, big×2, summer×2, river×2, wait, blue, red, far, turn, garden, tree, home, long, lot
+- **trunk_verbs_more3_a1** (A1 vocab): flat
+- **a1_there_is** (A1 grammar): cat, problem, problems, university, dog, milk
+- **leaf_home_a1** (A1 vocab): big×5, small×3, morning×2, white, now, close, flowers, milk, blue, dog, picture, warm, quick, new
+- **a1_some_any** (A1 grammar): money×2, ideas
+- **leaf_food_2_a1** (A1 vocab): black, warm, night, green, afternoon, orange, red, day, give, clean, puts, week, cat, small, big, new
 - **a1_prepositions_time** (A1 grammar): morning×3, night×2, weekend×2, born×2, afternoon
 - **leaf_time_a1** (A1 vocab): years×4, minutes×4, big×2, today×2, year×2, long×2, days, week, months, little, costs, crowns, hour, month
-- **leaf_time_2_a1** (A1 vocab): beautiful×2, past×2, new×2, clean, well, piano, big, outside, wait, snows, spring, ends, trees, dark, christmas, bought, rained, moved
-- **leaf_nature_a1** (A1 vocab): big×2, small×2, strong, blue, red, long, clean, high, full
+- **leaf_time_2_a1** (A1 vocab): beautiful×2, well, piano, big, outside, wait, snows, month, spring, ends, trees, dark, christmas, last
+- **leaf_time_3_a1** (A1 vocab): past×2, clean, bought, rained, lot, new
+- **leaf_nature_a1** (A1 vocab): big×2, small×2, strong, blue, red, long, clean, high, lot, full
 - **a1_to_for_with** (A1 grammar): wait×2, give
 - **leaf_shopping_a1** (A1 vocab): new, special, long, small
 - **leaf_animals_a1** (A1 vocab): big×2, green×2, black, long, little, small, white
+- **leaf_school_2_a1** (A1 vocab): pictures×2, beautiful, small, notebook, mum, long, interesting, new, difficult, lot
 - **a1_imperatives** (A1 grammar): quiet, careful, worry, touch
 - **leaf_tech_a1** (A1 vocab): new, big
 - **leaf_colours_a1** (A1 vocab): new, little
-- **leaf_ideas_a1** (A1 vocab): picnic, club, loud, outside
+- **leaf_ideas_a1** (A1 vocab): picnic, club, interesting
+- **a2_agreement** (A2 grammar): lot
+- **a2_past_simple** (A2 grammar): going
+- **leaf_transport_a2** (A2 vocab): slow
 - **a2_modals_must_should** (A2 grammar): seatbelt, smoke, touch, mum, worry, apologise, save, shout, skip, anything, recycle, outside
-- **a2_comparatives** (A2 grammar): app, motorway
-- **leaf_describing_a2** (A2 vocab): neighbour
+- **a2_have_to** (A2 grammar): seatbelt×2, law×2, optional×2, zone×2, anyone×2, secret×2, something, informal
+- **a2_could_able** (A2 grammar): little, ride
+- **leaf_society_a2** (A2 vocab): interesting
+- **a2_comparatives** (A2 grammar): app, expected, alone
+- **a2_ed_ing_adjectives** (A2 grammar): loud, rule, situation
+- **leaf_home_a2** (A2 vocab): soft, high
 - **a2_countable** (A2 grammar): coin
-- **a2_quantifiers** (A2 grammar): seats, invited, effort, disagreed, noise, patience, else
+- **a2_articles** (A2 grammar): moon
+- **a2_quantifiers** (A2 grammar): effort, disagreed, noise, patience, else
+- **leaf_adverbs_a2** (A2 vocab): cannot
 - **a2_first_conditional** (A2 grammar): until×2, link
-- **a2_prepositions_movement** (A2 grammar): ball×3, path×2, box, climbed, fence, rolled, without, boxes, moved
-- **b1_present_perfect_vs_past** (B1 grammar): since×3, client×2, until, noon
-- **b1_passives** (B1 grammar): guard, noon, package, automatically, invoice
-- **b1_modals_speculation** (B1 grammar): bug, misread
-- **trunk_chunks_b1** (B1 vocab): favour, responsibility, wifi, accent, priority
-- **b1_articles_advanced** (B1 grammar): east, hate, access, mount
-- **b1_it_subject** (B1 grammar): practise, guess, patience, grammar
-- **b1_suffixes** (B1 grammar): without
-- **b1_relative_clauses** (B1 grammar): enough, practise, treated, designed, nearby, discussed, hired, laugh, path, muddy, born
+- **leaf_ideas_a2** (A2 vocab): high×2, slow, quick, strange, clear
+- **leaf_verbs_a2** (A2 vocab): heavy
+- **a2_prepositions_movement** (A2 grammar): ball×3, jumped×2, path×2, box, climbed, fence, cycled, rolled, without, boxes, moved
+- **leaf_town_a2** (A2 vocab): turn, cross
+- **leaf_sports_a2** (A2 vocab): ball×2, high
+- **leaf_nature_a2** (A2 vocab): bright, high
+- **leaf_tech_a2** (A2 vocab): slow
+- **leaf_clothes_a2** (A2 vocab): cannot
+- **leaf_things_a2** (A2 vocab): box
+- **a2_reflexives** (A2 grammar): cut×2, ourselves, myself, happen, happened
+- **b1_present_perfect_vs_past** (B1 grammar): far×3, client×2, until, noon
+- **leaf_self_b1** (B1 vocab): terrible, apologise
+- **leaf_knowledge_b1** (B1 vocab): cannot
+- **b1_modals_speculation** (B1 grammar): true, bug, misread
+- **b1_passives** (B1 grammar): guard, noon, package, rules, automatically, invoice
 - **b1_reported_speech** (B1 grammar): patrik, ond, ej
-- **b1_linkers** (B1 grammar): whispered, careless, hurried, apologised
-- **b1_verb_patterns_advanced** (B1 grammar): advised, warned, noon, blocking, apologised, without
-- **b1_dependent_prepositions** (B1 grammar): villas, discussed
-- **b2_present_perfect_continuous** (B2 grammar): kilometres×2, since×2, dust, quiz, halfway, episode, inbox, ticked, mess
+- **b1_relative_clauses** (B1 grammar): caf×2, practise, treated, designed, safe, nearby, discussed, rules, clear, laugh, path, muddy, born, simple
+- **b1_articles_advanced** (B1 grammar): east, loud, hate, noisy, access, mount
+- **b1_it_subject** (B1 grammar): practise, matter, guess, alone, grammar
+- **b1_linkers** (B1 grammar): rich, slow, careless, hurried, none
+- **b1_verb_patterns_advanced** (B1 grammar): moment, advised, noon, powerful, without
+- **trunk_chunks_b1** (B1 vocab): favour, wifi, priority
+- **b1_phrasal_verbs** (B1 grammar): bottom
+- **b1_dependent_prepositions** (B1 grammar): villas, future, discussed
+- **b1_suffixes** (B1 grammar): without
+- **b1_prefixes** (B1 grammar): fell, asleep, none, terrible
+- **b2_present_perfect_continuous** (B2 grammar): kilometres×2, whole, dust, quiz, halfway, episode, inbox, ticked, mess
 - **b2_past_perfect** (B2 grammar): recognise, thieves
-- **b2_second_conditional** (B2 grammar): practised×2, lottery, happen, everyone, truth, pizza
+- **b2_delexical_collocations** (B2 vocab): local
+- **b2_second_conditional** (B2 grammar): practised×2, lottery, rich, happen, simple, truth, shocked, pizza
 - **b2_third_conditional** (B2 grammar): practised, crashed, truth, sunrise, realised, pizza, invoice, dawn, battery
-- **b2_clear_claims** (B2 grammar): impact, teenagers, hate, ruins, sum, ban, nobody, anymore, conclusion
-- **b2_word_formation** (B2 grammar): since×4, nobody×2, without×2, committee, incredibly, rally, trade, attempt, terribly, lunchtime, resignation, eclipse, injection
-- **c1_word_formation** (C1 grammar): until×2, led×2, blamed×2, fuel, trial, worldwide, statue, debate, involvement, convinced, nobody, instant, cuts, genetic, spread, crew, measured, trench, diving, grip, everyone's, measure, doorway, cruised, kilometres, crisis, unmarked, shelter, survives, donors, guarded, struck, astonishing, judge, dismissed, exile, shook, inquiry, safety, campaign, aims, within, decade, roadworks, drummed, scandal, exposed, ministry, investigating, hikers, minor, lifelong, feud, everyone, paused, overnight, fleet, volunteering, grant, marine, nations, shot, viral, among, thrived, firms, boilers, ruined, outbreak, worsened, tolerate, corridors, memo, false, auditors, forever, plot, coincidences, proved
+- **b2_false_friends** (B2 vocab): local
+- **b2_fixed_phrases** (B2 vocab): while, positive, invitation
+- **b2_clear_claims** (B2 grammar): personally×2, social×2, negative, impact, teenagers, hate, ruins, sum, view, ban, anymore, conclusion
+- **b2_word_formation** (B2 grammar): final×3, without×2, injured, committee, rule, alone, incredibly, brilliantly, slow, rally, trade, attempt, impressive, shocked, excellent, bottom, terribly, lunchtime, resignation, eclipse, injection, quick, sides, welcomed, doubled, local
+- **c1_word_formation** (C1 grammar): final×2, until×2, local×2, doubled×2, led×2, blamed×2, several×2, fuel, trial, worldwide, debate, involvement, convinced, midnight, obvious, instant, genetic, spread, crew, measured, trench, diving, grip, measure, doorway, cruised, kilometres, crisis, pure, unmarked, shelter, survives, donors, sudden, guarded, struck, astonishing, judge, dismissed, religious, exile, shook, silent, inquiry, safety, campaign, aims, within, decade, roadworks, drummed, scandal, exposed, ministry, investigating, hikers, minor, lifelong, feud, paused, overnight, fleet, volunteering, grant, marine, nations, certain, shot, viral, falling, among, thrived, firms, boilers, simple, dates, ruined, outbreak, worsened, tolerate, corridors, memo, false, immediate, auditors, fall, forever, cigarettes, plot, coincidences, proved

@@ -3,8 +3,8 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-08-31-match9";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-08-31-adopt";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-02-indmap2";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-02-typeclue";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -12,10 +12,10 @@ import {
   startGrammarMatchSprint,
   startGrammarTypeSprint,
   startFinaleSprint,
-} from "./vocab-sprint.js?v=2026-08-30-review";
+} from "./vocab-sprint.js?v=2026-09-02-a2finale";
 import {
   loadProgress,
-  recentNodeIds,
+  lastCompletedNodeId,
   hasFruit,
   progressLabelGrammar,
   nodeProgressStateGrammar,
@@ -38,7 +38,7 @@ import {
   FRUIT_SOFT,
   downloadProgressFile,
   importProgressPayload,
-} from "./progress.js?v=2026-08-31-adopt";
+} from "./progress.js?v=2026-09-02-treelabel";
 import {
   mountSmokeFlagsUI,
   getSmokeApi,
@@ -46,7 +46,7 @@ import {
   addFlag,
   loadFlags,
 } from "./smoke-flags.js";
-import { renderTreePortrait } from "./tree-portrait.js?v=2026-08-29-replay";
+import { renderTreePortrait, unitSeatPart } from "./tree-portrait.js?v=2026-09-02-nocircles";
 import { initReference, renderReference } from "./reference.js";
 import { setSynonymMap } from "./synonyms.js";
 
@@ -58,11 +58,11 @@ const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
   location.hostname,
 );
 
-/* Shadow gate (James, 2026-09-01): only A1 is class-tested; everything
- * above it is full of untested bugs. Levels not listed here render greyed
+/* Shadow gate (James, 2026-09-01): levels not listed here render greyed
  * on the rail and cannot be opened — not by rail, path, exam drill, or
- * deep link. Widen this list level by level as testing catches up. */
-const LIVE_LEVELS = ["A1"];
+ * deep link. Widen this list level by level as testing catches up.
+ * A2 opened 2026-09-01 after A1 smoke. */
+const LIVE_LEVELS = ["A1", "A2"];
 
 function isShadowLevel(lv) {
   return !!lv && !LIVE_LEVELS.includes(lv);
@@ -600,7 +600,7 @@ function showFruitPayoff({ before, after, kind = "learned", grow = true, level: 
   const treeHost = root.querySelector("#payoff-tree");
   const unit = nodeById(nodeId);
   if (treeHost && unit && STATE.tree) {
-    const seat = unit.domain === "grammar" ? unit.root || unit.tree_part : unit.tree_part || "trunk";
+    const seat = unitSeatPart(unit);
     const parts = seat && seat !== "trunk" ? [seat, "trunk"] : ["trunk"];
     try {
       renderTreePortrait(treeHost, {
@@ -613,9 +613,11 @@ function showFruitPayoff({ before, after, kind = "learned", grow = true, level: 
         animateGrowth: grow,
         /* Same accumulating plant as the Map (James, 2026-08-30): previous
          * work stays filled; future seats stay faint and empty. Grammar still
-         * names and glows its root; the crown is no longer cut off. */
+         * names and glows its root; the crown is no longer cut off.
+         * Only this unit is labelled (James, 2026-09-02). */
         focus: unit.domain === "grammar" ? "roots" : undefined,
-        focusLabel: unit.domain === "grammar" ? unit.label || "" : "",
+        focusLabel: unit.label || "",
+        lastDone: { id: unit.id, label: unit.label || "", part: seat },
       });
       root.querySelector(".fruit-payoff")?.classList.add("fruit-payoff--tree");
       /* Put the tree on screen BEFORE it grows. The CSS animations are held
@@ -1193,6 +1195,15 @@ function mapTreeLevel() {
   return lvls.includes(STATE.level) ? STATE.level : lvls[0] || "A1";
 }
 
+/** Last first-fruit unit the portrait may name. One nameplate, then hover. */
+function lastDoneForTree(level) {
+  const nodes = STATE.tree?.nodes || [];
+  const id = lastCompletedNodeId(nodes, level);
+  const unit = id && nodeById(id);
+  if (!unit) return null;
+  return { id: unit.id, label: unit.label || "", part: unitSeatPart(unit) };
+}
+
 /** Crop easing (James polish apply, 2026-08-29): when the rail changes the
  *  viewed age, glide the viewBox from the old crop to the new one — the
  *  zoom-out itself is the growth moment. Never cut. Same-crop re-renders
@@ -1248,7 +1259,7 @@ function renderRoots() {
         const n = nodeById(id);
         return n ? nodeTreeStrength(n) : "none";
       },
-      recent: recentNodeIds(),
+      lastDone: lastDoneForTree(mapTreeLevel()),
       onSelect: (node) => focusNodeOnMap(node),
     });
     easeMapViewBox(portrait);
@@ -1588,6 +1599,9 @@ async function openNode(node, launch = {}) {
           : undefined;
       // Pack-level authored sentence bank; frames use items.
       const packSentences = Array.isArray(pack.sentences) ? pack.sentences : [];
+      const packUseSentences = Array.isArray(pack.use_sentences)
+        ? pack.use_sentences
+        : [];
       const focusStructures = Array.isArray(pack.focus_structures)
         ? pack.focus_structures
         : pack.teaches_structures || [];
@@ -1604,6 +1618,7 @@ async function openNode(node, launch = {}) {
           title: pack.title || node.label,
           items: pack.blocks.flatMap((b) => b.items || []),
           sentences: packSentences,
+          use_sentences: packUseSentences,
           intro: pack.intro || null,
           focus_structures: focusStructures,
           teaches_structures: pack.teaches_structures || [],
@@ -1616,6 +1631,9 @@ async function openNode(node, launch = {}) {
           sentences: packSentences.length
             ? packSentences
             : pack.blocks[0].sentences || [],
+          use_sentences: packUseSentences.length
+            ? packUseSentences
+            : pack.blocks[0].use_sentences || [],
           intro: pack.intro || null,
           focus_structures: focusStructures,
           teaches_structures: pack.teaches_structures || [],
@@ -1625,6 +1643,7 @@ async function openNode(node, launch = {}) {
         practiceBlock = {
           ...practiceBlock,
           sentences: packSentences,
+          use_sentences: packUseSentences,
           focus_structures: focusStructures,
         };
       }
@@ -1632,10 +1651,15 @@ async function openNode(node, launch = {}) {
         practiceBlock.practice = "frames";
       }
       if (!practiceBlock.sentences) practiceBlock.sentences = packSentences;
+      if (!practiceBlock.use_sentences) {
+        practiceBlock.use_sentences = packUseSentences;
+      }
       if (!practiceBlock.focus_structures) {
         practiceBlock.focus_structures = focusStructures;
       }
       if (pack.quiz_mode) practiceBlock.quiz_mode = pack.quiz_mode;
+      if (pack.use_mode) practiceBlock.use_mode = pack.use_mode;
+      if (pack.use_hint) practiceBlock.use_hint = pack.use_hint;
 
       const blockId = practiceBlock.id || pack.id || node.id;
       touchVocabBlock(blockId, node.id);

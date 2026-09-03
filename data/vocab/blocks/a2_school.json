@@ -4,7 +4,8 @@
   "level": "A2",
   "tree_node": "leaf_school_a2",
   "codex_unit": "V_THM-A1B1-02",
-  "note": "Study A2 · THM work/study · carriers via use[]",
+  "note": "Study A2 · THM work/study · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -340,16 +341,97 @@
   ],
   "intro": [
     {
-      "title": "Subjects, and what happens in your head",
-      "title_cz": "Předměty a co se děje v hlavě",
+      "title": "Study and the course",
+      "title_cz": "Studium a kurz",
       "pictures": [
+        {
+          "icon": "🎓",
+          "en": "degree",
+          "cz": "titul"
+        },
+        {
+          "icon": "🏫",
+          "en": "education",
+          "cz": "vzdělání"
+        },
+        {
+          "icon": "📘",
+          "en": "learning",
+          "cz": "učení"
+        },
+        {
+          "icon": "🅰️",
+          "en": "mark",
+          "cz": "známka"
+        },
+        {
+          "icon": "📝",
+          "en": "essay",
+          "cz": "esej"
+        },
+        {
+          "icon": "🎤",
+          "en": "lecture",
+          "cz": "přednáška"
+        },
+        {
+          "icon": "👨‍🏫",
+          "en": "professor",
+          "cz": "profesor"
+        },
+        {
+          "icon": "🧑‍🎓",
+          "en": "student",
+          "cz": "student"
+        },
+        {
+          "icon": "📚",
+          "en": "subject",
+          "cz": "předmět"
+        },
+        {
+          "icon": "📅",
+          "en": "term",
+          "cz": "semestr"
+        },
+        {
+          "icon": "🧩",
+          "en": "project",
+          "cz": "projekt"
+        },
+        {
+          "icon": "🔬",
+          "en": "research",
+          "cz": "výzkum"
+        }
+      ]
+    },
+    {
+      "title": "Subjects and the lab",
+      "title_cz": "Předměty a laboratoř",
+      "pictures": [
+        {
+          "icon": "👩‍🔬",
+          "en": "researcher",
+          "cz": "výzkumník"
+        },
+        {
+          "icon": "🧪",
+          "en": "experiment",
+          "cz": "experiment"
+        },
+        {
+          "icon": "🧫",
+          "en": "lab",
+          "cz": "laboratoř"
+        },
         {
           "icon": "🧬",
           "en": "biology",
           "cz": "biologie"
         },
         {
-          "icon": "🧪",
+          "icon": "⚗️",
           "en": "chemistry",
           "cz": "chemie"
         },
@@ -364,19 +446,19 @@
           "cz": "matematika"
         },
         {
-          "icon": "📜",
-          "en": "history",
-          "cz": "dějepis / historie"
+          "icon": "🔢",
+          "en": "maths",
+          "cz": "matika"
         },
         {
-          "icon": "🗺️",
+          "icon": "🏺",
+          "en": "history",
+          "cz": "dějepis"
+        },
+        {
+          "icon": "🌍",
           "en": "geography",
           "cz": "zeměpis"
-        },
-        {
-          "icon": "🔬",
-          "en": "lab",
-          "cz": "laboratoř"
         },
         {
           "icon": "📚",
@@ -384,31 +466,76 @@
           "cz": "knihovna"
         },
         {
-          "icon": "📖",
+          "icon": "📔",
           "en": "dictionary",
           "cz": "slovník"
-        },
-        {
-          "icon": "🎓",
-          "en": "degree",
-          "cz": "titul / stupeň"
-        },
-        {
-          "icon": "📝",
-          "en": "essay",
-          "cz": "esej / sloh"
-        },
-        {
-          "icon": "👨‍🏫",
-          "en": "professor",
-          "cz": "profesor"
         }
-      ],
-      "body": "34 words for school after A1: the subjects with names of their own, the places you study them in — lab, library — and the words for what happens in your head: memory, mind, thought, knowledge, understanding.\nThose last five have no picture, because nobody has ever seen one.",
-      "body_cz": "Předměty, místa a slova pro myšlení."
+      ]
+    },
+    {
+      "title": "In your head, and university",
+      "title_cz": "V hlavě a na univerzitě",
+      "pictures": [
+        {
+          "icon": "📋",
+          "en": "instruction",
+          "cz": "instrukce"
+        },
+        {
+          "icon": "👋",
+          "en": "introduction",
+          "cz": "úvod"
+        },
+        {
+          "icon": "💡",
+          "en": "explanation",
+          "cz": "vysvětlení"
+        },
+        {
+          "icon": "🧠",
+          "en": "understanding",
+          "cz": "porozumění"
+        },
+        {
+          "icon": "🧩",
+          "en": "memory",
+          "cz": "paměť"
+        },
+        {
+          "icon": "💭",
+          "en": "mind",
+          "cz": "mysl"
+        },
+        {
+          "icon": "💡",
+          "en": "thought",
+          "cz": "myšlenka"
+        },
+        {
+          "icon": "🤔",
+          "en": "thinking",
+          "cz": "přemýšlení"
+        },
+        {
+          "icon": "📖",
+          "en": "knowledge",
+          "cz": "znalosti"
+        },
+        {
+          "icon": "👩‍🏫",
+          "en": "teaching",
+          "cz": "výuka"
+        },
+        {
+          "icon": "🏛️",
+          "en": "university",
+          "cz": "univerzita"
+        }
+      ]
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
         "This is a …",
         "I have a …",
@@ -416,8 +543,8 @@
         "Let's talk about …",
         "Where is the …?"
       ],
-      "note": "maths is the short British word for mathematics — one subject, two entries in this unit. American English shortens it to math, with no s.",
-      "note_cz": "maths = matika (brit.), mathematics = matematika; americky math."
+      "note": "maths is the short British word for mathematics. American English shortens it to math, with no s.",
+      "note_cz": "maths = mathematics (britsky). Americky math, bez s."
     }
   ],
   "sentences": [
@@ -502,13 +629,13 @@
       ]
     },
     {
-      "en": "We have four subjects today.",
-      "cz": "Dnes máme čtyři předměty.",
+      "en": "This is my subject.",
+      "cz": "Tohle je můj předmět.",
       "lemmas": [
         "subject"
       ],
       "accepts": [
-        "We have four subjects today"
+        "This is my subject"
       ]
     },
     {
@@ -662,13 +789,13 @@
       ]
     },
     {
-      "en": "I need instructions.",
-      "cz": "Potřebuji instrukce.",
+      "en": "Read the instruction.",
+      "cz": "Přečtěte si instrukci.",
       "lemmas": [
         "instruction"
       ],
       "accepts": [
-        "I need instructions"
+        "Read the instruction"
       ]
     },
     {
@@ -761,6 +888,16 @@
       ],
       "accepts": [
         "Teaching is a good profession"
+      ]
+    },
+    {
+      "en": "This is a university.",
+      "cz": "Tohle je univerzita.",
+      "lemmas": [
+        "university"
+      ],
+      "accepts": [
+        "This is a university"
       ]
     }
   ]

@@ -271,7 +271,12 @@ def lint_pack(path: Path) -> None:
             if not isinstance(it, dict):
                 err(f"{pid} {w}: item is not an object")
                 continue
-            for f in ("en",) if wf else ("en", "cz"):
+            # Sort rows carry `bin`: the learner drops an English chip into a
+            # bucket, so there is no Czech side to render and no gloss to
+            # write. Same exemption as word_formation above (James,
+            # 2026-08-31 — 27 of 31 "missing cz" errors were sort rows).
+            sortable = isinstance(it.get("bin"), str) and it["bin"].strip()
+            for f in ("en",) if (wf or sortable) else ("en", "cz"):
                 if not isinstance(it.get(f), str) or not it[f].strip():
                     err(f"{pid} {w}: `{f}` missing or empty")
             if wf:

@@ -1,0 +1,275 @@
+{
+  "id": "a2_indefinite_pronouns",
+  "title": "Someone / anybody / nobody / else",
+  "level": "A2",
+  "tree_node": "a2_indefinite_pronouns",
+  "codex_unit": "G_NP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. Person compounds. else. Czech double negative Nobody didn't / I didn't see nobody. Thing compounds stay in some/any 2. Sort person/thing. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "positive",
+    "question / negative",
+    "zero"
+  ],
+  "bin_captions": {
+    "positive": "a person/thing is there",
+    "question / negative": "Did you…? · I didn't…",
+    "zero": "no person · no thing"
+  },
+  "sort_cz": false,
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Positive, question, or zero?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        { "en": "someone", "cz": "někdo", "bin": "positive", "use": false },
+        { "en": "something", "cz": "něco", "bin": "positive", "use": false },
+        { "en": "somebody", "cz": "někdo", "bin": "positive", "use": false },
+        { "en": "anybody", "cz": "kdokoli", "bin": "question / negative", "use": false },
+        { "en": "anyone", "cz": "kdokoli", "bin": "question / negative", "use": false },
+        { "en": "anything", "cz": "cokoli", "bin": "question / negative", "use": false },
+        { "en": "nobody", "cz": "nikdo", "bin": "zero", "use": false },
+        { "en": "nothing", "cz": "nic", "bin": "zero", "use": false }
+      ]
+    },
+    {
+      "id": "indefinite_pronouns_a2",
+      "title": "someone / anybody / nobody",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "Someone is at the door.",
+          "cz": "Někdo je u dveří.",
+          "gap": "____ is at the door.",
+          "gap_answer": "Someone",
+          "quiz_options": ["Someone", "Anyone", "Something", "Nothing"],
+          "gap_accepts": ["Someone", "Somebody"],
+          "accepts": ["Someone is at the door.", "Somebody is at the door."],
+          "wrong": "Anyone is at the door.",
+          "explanation": "A real person, plus sentence → **someone**. Not *anyone*.",
+          "explanation_cz": "Kladná věta → **someone**. Ne *anyone*."
+        },
+        {
+          "en": "Is anyone at home?",
+          "cz": "Je někdo doma?",
+          "gap": "Is ____ at home?",
+          "gap_answer": "anyone",
+          "quiz_options": ["anyone", "anything", "nobody", "nothing"],
+          "gap_accepts": ["anyone", "anybody", "someone", "somebody"],
+          "accepts": [
+            "Is anyone at home?",
+            "Is anybody at home?",
+            "Is someone at home?",
+            "Is somebody at home?"
+          ],
+          "wrong": "Anybody is at home?",
+          "explanation": "A question → **anyone** / **anybody**. **someone** is also fine here.",
+          "explanation_cz": "Otázka → **anyone** / **anybody**. **someone** taky jde."
+        },
+        {
+          "en": "Nobody answered the phone.",
+          "cz": "Nikdo nezvedl telefon.",
+          "gap": "____ answered the phone.",
+          "gap_answer": "Nobody",
+          "quiz_options": ["Nobody", "Anybody", "Someone", "Nothing"],
+          "gap_accepts": ["Nobody", "No one", "No-one"],
+          "accepts": [
+            "Nobody answered the phone.",
+            "No one answered the phone.",
+            "No-one answered the phone.",
+            "Nobody answered.",
+            "No one answered."
+          ],
+          "wrong": "Nobody didn't answer the phone.",
+          "explanation": "**Nobody** = no person. The verb stays plus: **answered**, not *didn't*.",
+          "explanation_cz": "**Nobody** = žádná osoba. Sloveso zůstává kladné."
+        },
+        {
+          "en": "She didn't see anybody.",
+          "cz": "Nikoho neviděla.",
+          "gap": "She didn't see ____.",
+          "gap_answer": "anybody",
+          "quiz_options": ["anybody", "nobody", "somebody", "anything"],
+          "gap_accepts": ["anybody", "anyone"],
+          "accepts": [
+            "She didn't see anybody.",
+            "She didn't see anyone.",
+            "She did not see anybody.",
+            "She did not see anyone."
+          ],
+          "wrong": "She didn't see nobody.",
+          "explanation": "After **didn't** → **anybody** / **anyone**. Not *nobody* (two negatives).",
+          "explanation_cz": "Po **didn't** → **anybody**. Ne *nobody* (dvojí zápor)."
+        },
+        {
+          "en": "Nobody said anything.",
+          "cz": "Nikdo nic neřekl.",
+          "gap": "Nobody said ____.",
+          "gap_answer": "anything",
+          "quiz_options": ["anything", "nothing", "something", "anybody"],
+          "accepts": ["Nobody said anything."],
+          "wrong": "Nobody said nothing.",
+          "explanation": "**Nobody** … **anything**. Not *nobody … nothing*.",
+          "explanation_cz": "**Nobody** … **anything**. Ne *nobody … nothing*."
+        },
+        {
+          "en": "Everyone in the class is here.",
+          "cz": "Všichni ve třídě jsou tady.",
+          "gap": "____ in the class is here.",
+          "gap_answer": "Everyone",
+          "quiz_options": ["Everyone", "Anyone", "Someone", "Everything"],
+          "gap_accepts": ["Everyone", "Everybody"],
+          "accepts": [
+            "Everyone in the class is here.",
+            "Everybody in the class is here."
+          ],
+          "wrong": "Anyone in the class is here.",
+          "use": false,
+          "explanation": "All the people → **everyone** / **everybody**. Verb is **is**.",
+          "explanation_cz": "Všichni → **everyone**. Sloveso **is**."
+        },
+        {
+          "en": "I need to talk to someone else.",
+          "cz": "Musím mluvit s někým jiným.",
+          "gap": "I need to talk to someone ____.",
+          "gap_answer": "else",
+          "quiz_options": ["else", "other", "another", "more"],
+          "accepts": ["I need to talk to someone else."],
+          "wrong": "I need to talk to someone other.",
+          "explanation": "**someone else** = a different person. Not *other*.",
+          "explanation_cz": "**someone else** = někdo jiný. Ne *other*."
+        },
+        {
+          "en": "Would you like anything else?",
+          "cz": "Dáte si ještě něco?",
+          "gap": "Would you like anything ____?",
+          "gap_answer": "else",
+          "quiz_options": ["else", "more", "other", "another"],
+          "accepts": ["Would you like anything else?"],
+          "wrong": "Would you like anything more?",
+          "explanation": "**anything else** = something different / more things.",
+          "explanation_cz": "**anything else** = ještě něco jiného."
+        },
+        {
+          "en": "Is anyone else coming?",
+          "cz": "Jde ještě někdo?",
+          "gap": "Is anyone ____ coming?",
+          "gap_answer": "else",
+          "quiz_options": ["else", "other", "more", "another"],
+          "accepts": [
+            "Is anyone else coming?",
+            "Is anybody else coming?",
+            "Is someone else coming?"
+          ],
+          "wrong": "Is anyone other coming?",
+          "explanation": "**anyone else** = a different person. **else** after the compound.",
+          "explanation_cz": "**anyone else** = ještě někdo jiný."
+        },
+        {
+          "en": "Nobody came to the party.",
+          "cz": "Nikdo nepřišel na večírek.",
+          "gap": "____ came to the party.",
+          "gap_answer": "Nobody",
+          "quiz_options": ["Nobody", "Anybody", "Someone", "Nothing"],
+          "gap_accepts": ["Nobody", "No one", "No-one"],
+          "accepts": [
+            "Nobody came to the party.",
+            "No one came to the party.",
+            "No-one came to the party.",
+            "Nobody came.",
+            "No one came."
+          ],
+          "wrong": "Nobody didn't come to the party.",
+          "explanation": "**Nobody came.** Not *Nobody didn't come* — one negative only.",
+          "explanation_cz": "**Nobody came.** Ne *Nobody didn't come* — jen jeden zápor."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Someone / anybody / nobody / else",
+        "title_cz": "někdo · něco · nikdo · else",
+        "diagram": "indefinite_map",
+        "points": [
+          "You already know **some** in positives, **any** in questions and negatives.",
+          "These words are that idea, with **no noun** after them.",
+          "**someone** = **somebody**. Person or thing is the table below."
+        ],
+        "table": {
+          "headers": ["Person", "Thing"],
+          "rows": [
+            ["**someone** / somebody", "**something**"],
+            ["**anyone** / anybody", "**anything**"],
+            ["**nobody** / no one", "**nothing**"],
+            ["**everyone** / everybody", "**everything**"]
+          ]
+        }
+      },
+      {
+        "title": "One negative only",
+        "title_cz": "Jen jeden zápor",
+        "text_first": true,
+        "points": [
+          "Czech *nikdo nic neřekl* has two or three negatives. English wants **one**."
+        ],
+        "table": {
+          "headers": ["Not", "Say"],
+          "rows": [
+            ["*I didn't see nobody.*", "I didn't see **anybody**."],
+            ["*Nobody didn't come.*", "**Nobody came.**"],
+            ["*Nobody said nothing.*", "Nobody said **anything**."]
+          ]
+        }
+      },
+      {
+        "title": "else",
+        "title_cz": "else",
+        "text_first": true,
+        "points": [
+          "**else** sits after these words. A different person or thing.",
+          "**someone else** = a different person. **anything else?** = more / different."
+        ],
+        "table": {
+          "headers": [
+            "Say",
+            "Means"
+          ],
+          "rows": [
+            [
+              "someone **else**",
+              "a different person"
+            ],
+            [
+              "anyone **else**?",
+              "a different person (question)"
+            ],
+            [
+              "anything **else**?",
+              "more / different things"
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

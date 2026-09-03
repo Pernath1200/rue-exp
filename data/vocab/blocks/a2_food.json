@@ -4,7 +4,8 @@
   "level": "A2",
   "tree_node": "leaf_food_a2",
   "codex_unit": "V_THM-A1B1-05",
-  "note": "V_THM-A1B1-05 food A2 · carriers via use[]",
+  "note": "V_THM-A1B1-05 food A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -206,12 +207,19 @@
           ]
         },
         {
-          "en": "soap",
-          "cz": "mýdlo",
+          "en": "fresh",
+          "cz": "čerstvý",
           "use": [
-            "i_like_bare",
-            "i_need_bare",
-            "i_have_bare"
+            "it_is",
+            "i_like_bare"
+          ]
+        },
+        {
+          "en": "serve",
+          "cz": "podávat (jídlo)",
+          "use": [
+            "i_want_to",
+            "we_need_to"
           ]
         }
       ]
@@ -219,23 +227,33 @@
   ],
   "intro": [
     {
-      "title": "Food, cooking and eating out",
-      "title_cz": "Jídlo, vaření a restaurace",
+      "title": "Food on the table",
+      "title_cz": "Jídlo na stole",
       "pictures": [
         {
-          "icon": "🍋",
-          "en": "lemon",
-          "cz": "citron"
+          "icon": "📋",
+          "en": "recipe",
+          "cz": "recept (kuchařský)"
         },
         {
-          "icon": "🥜",
-          "en": "nut",
-          "cz": "ořech"
+          "icon": "🍅",
+          "en": "sauce",
+          "cz": "omáčka"
+        },
+        {
+          "icon": "🫒",
+          "en": "oil",
+          "cz": "olej"
         },
         {
           "icon": "🥩",
           "en": "beef",
           "cz": "hovězí"
+        },
+        {
+          "icon": "🫘",
+          "en": "beans",
+          "cz": "fazole"
         },
         {
           "icon": "🍪",
@@ -248,14 +266,45 @@
           "cz": "hranolek"
         },
         {
-          "icon": "🍬",
-          "en": "sweet",
-          "cz": "sladký / bonbon"
+          "icon": "🍋",
+          "en": "lemon",
+          "cz": "citron"
         },
         {
-          "icon": "🌶",
-          "en": "spicy",
-          "cz": "pálivý"
+          "icon": "🥜",
+          "en": "nut",
+          "cz": "ořech"
+        },
+        {
+          "icon": "🍓",
+          "en": "jam",
+          "cz": "džem"
+        },
+        {
+          "icon": "🥛",
+          "en": "cream",
+          "cz": "smetana"
+        },
+        {
+          "icon": "🔥",
+          "en": "grill",
+          "cz": "gril"
+        }
+      ]
+    },
+    {
+      "title": "Cooking and eating out",
+      "title_cz": "Vaření a restaurace",
+      "pictures": [
+        {
+          "icon": "🍲",
+          "en": "boil",
+          "cz": "vařit (ve vodě)"
+        },
+        {
+          "icon": "🍞",
+          "en": "bake",
+          "cz": "péct"
         },
         {
           "icon": "🍳",
@@ -268,9 +317,24 @@
           "cz": "šéfkuchař"
         },
         {
-          "icon": "🥗",
+          "icon": "👅",
+          "en": "taste",
+          "cz": "chuť"
+        },
+        {
+          "icon": "🍬",
+          "en": "sweet",
+          "cz": "sladký"
+        },
+        {
+          "icon": "🌶️",
+          "en": "spicy",
+          "cz": "pálivý"
+        },
+        {
+          "icon": "🥬",
           "en": "vegetarian",
-          "cz": "vegetarián / vegetariánský"
+          "cz": "vegetarián"
         },
         {
           "icon": "🍺",
@@ -278,23 +342,28 @@
           "cz": "hospoda"
         },
         {
-          "icon": "🧼",
-          "en": "soap",
-          "cz": "mýdlo"
+          "icon": "🥗",
+          "en": "fresh",
+          "cz": "čerstvý"
+        },
+        {
+          "icon": "🍽️",
+          "en": "serve",
+          "cz": "podávat (jídlo)"
         }
-      ],
-      "body": "22 words: things you eat, three ways to cook them (boil, bake, fry), and where you eat out.\nsoap is not food. It is in this unit because it is one letter away from soup — see the next page."
+      ]
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
         "This is a …",
         "I like …",
         "I need …",
         "I want to …"
       ],
-      "note": "soap is mýdlo, not soup. They differ by one letter and mean nothing alike: I need soap ≠ I want soup.",
-      "note_cz": "Pozor: soap = mýdlo, soup = polévka."
+      "note": "serve here is food: They serve soup. Not serve as work for a country.",
+      "note_cz": "serve = podávat jídlo, ne sloužit zemi."
     }
   ],
   "sentences": [
@@ -349,25 +418,27 @@
       ]
     },
     {
-      "en": "The children are eating biscuits.",
-      "cz": "Děti jedí sušenky.",
+      "en": "I would like a biscuit with tea.",
+      "cz": "Chci sušenku k čaji.",
       "lemmas": [
         "biscuit"
       ],
       "accepts": [
-        "The children are eating biscuits",
-        "The children are eating cookies"
+        "I would like a biscuit with tea",
+        "I'd like a biscuit with tea",
+        "I want a biscuit with tea"
       ]
     },
     {
-      "en": "I want fish and chips.",
-      "cz": "Chci rybu a hranolky.",
+      "en": "I would like a chip with the fish.",
+      "cz": "Chci hranolek k rybě.",
       "lemmas": [
         "chip"
       ],
       "accepts": [
-        "I want fish and chips",
-        "I want fish and crisps"
+        "I would like a chip with the fish",
+        "I'd like a chip with the fish",
+        "I want a chip with the fish"
       ]
     },
     {
@@ -381,13 +452,15 @@
       ]
     },
     {
-      "en": "I eat nuts every day.",
-      "cz": "Jím ořechy každý den.",
+      "en": "This cake has a nut.",
+      "cz": "Tenhle dort má ořech.",
       "lemmas": [
         "nut"
       ],
       "accepts": [
-        "I eat nuts every day"
+        "This cake has a nut",
+        "There is a nut in this cake",
+        "There's a nut in this cake"
       ]
     },
     {
@@ -435,23 +508,23 @@
       ]
     },
     {
-      "en": "My mother bakes bread.",
-      "cz": "Moje matka peče chleba.",
+      "en": "I want to bake a cake.",
+      "cz": "Chci upéct dort.",
       "lemmas": [
         "bake"
       ],
       "accepts": [
-        "My mother bakes bread"
+        "I want to bake a cake"
       ]
     },
     {
-      "en": "My father is frying eggs.",
-      "cz": "Můj otec smaží vejce.",
+      "en": "I want to fry an egg.",
+      "cz": "Chci usmažit vajíčko.",
       "lemmas": [
         "fry"
       ],
       "accepts": [
-        "My father is frying eggs"
+        "I want to fry an egg"
       ]
     },
     {
@@ -515,13 +588,23 @@
       ]
     },
     {
-      "en": "I need soap for the bathroom.",
-      "cz": "Potřebuji mýdlo do koupelny.",
+      "en": "This bread is fresh.",
+      "cz": "Tenhle chleba je čerstvý.",
       "lemmas": [
-        "soap"
+        "fresh"
       ],
       "accepts": [
-        "I need soap for the bathroom"
+        "This bread is fresh"
+      ]
+    },
+    {
+      "en": "They serve soup here.",
+      "cz": "Tady podávají polévku.",
+      "lemmas": [
+        "serve"
+      ],
+      "accepts": [
+        "They serve soup here"
       ]
     }
   ]

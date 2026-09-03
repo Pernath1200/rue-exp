@@ -52,7 +52,13 @@ Vocab is **above soil**: trunk + 12 houses.
 - Level rail sets **how big** the plant can be (A1 sapling → B1 thicker).
 - **Filled** = started / fruit / remembered (≥1 review) / mastered (≥4). Strongest first. Cap 6 slots; empty units do not steal lights.
 - **Faint** = not done yet (ghost wood, unfilled). Future seats stay visible.
+- **Review paint (2026-09-02):** not a due-now glow. After a successful review the **wood** of that unit’s seat darkens; mastered darker still. Fruit/knots stay the brighter green ladder.
+  - Vocab house → that house’s limb (`#3d72b0` remembered · `#2a5388` mastered). One reviewed unit darkens the whole bough (limb is shared).
+  - Grammar → that root, same blues.
+  - Trunk-glue vocab → the trunk. House reviews do **not** darken the trunk.
+  - Trunk **girth** also takes a small saturating bonus from trunk-glue + word-craft ranks (started 0.5 · learned 1 · remembered 1.6 · mastered 2). Early reviews show most; never a whole age step. Not a ring per sentence.
 - Each completion is **the same plant plus this seat**. Grammar payoff **names and glows its root** but must still show the crown and previous greens. Do not crop to roots-only.
+- **Labels (James, 2026-09-02):** only the **last completed unit** keeps a nameplate (its unit title, on that seat). Other house/root names are **hover-only**, not permanent. Payoff still shows the unit just finished, then the map keeps that one name until the next fruit.
 - Map and payoff read the **same store**. Payoff is not a second tree.
 - Meters (More → Progress) stay Learned / Remembered / Mastered numbers. Do not force them to look like the drawing.
 
@@ -81,7 +87,7 @@ Read `docs/TREE-THREAD.md` first. It is the lock file.
 ## Job
 
 1. Hang gate already exists (`codex/check_codex.py`). Keep it green. Do not retag anything unless James types **apply**.
-2. Portrait: one accumulating plant. Filled = done. Faint = not yet. Level caps size. Grammar payoff must show the same plant (crown included), with the new root labelled/glowing.
+2. Portrait: one accumulating plant. Filled = done. Faint = not yet. Level caps size. Grammar payoff must show the same plant (crown included), with the new root labelled/glowing. Permanent labels: last completed unit only; other seats name themselves on hover.
 3. If you would invent a visual rule (1:1 knots, new colours, 7th root, roots-only crop), ask James first.
 
 ## Do not revert

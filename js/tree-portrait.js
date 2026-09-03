@@ -18,13 +18,18 @@
  * Lighting: leaf lit = unit started/done, fruit lit = unit done, root knot lit
  * = same on that seat. Unlit slots stay as ghosts so the model is readable.
  * At most 6 slots per seat; empty live units do not steal lights from work
- * already done (A1 map slice, 2026-08-28). Fruit strengthens at remembered
- * then mastered (map only; strongest first).
+ * already done (A1 map slice, 2026-08-28). Fruit/knots go brighter at
+ * remembered then mastered (strongest first). Seat wood (house limb, root,
+ * trunk) goes a shade darker at remembered, darker again at mastered
+ * (James, 2026-09-02). Trunk girth also takes a small saturating bonus from
+ * trunk-glue reviews plus word-craft (basic words thickening the stem).
  * Skeleton at this CEFR is always present: uncovered house-limbs and
  * laterals stay faint and unfilled (James, 2026-08-30 — each completion
  * is the same plant, plus this seat). Covered seats fill (started / fruit /
  * remembered / mastered). Grammar payoff names its root but no longer
- * crops the crown away. Navigation stays on the spine; clicks focus a unit.
+ * crops the crown away. Permanent labels: only the last completed unit
+ * (James, 2026-09-02). Other seats name themselves on hover. Navigation
+ * stays on the spine; clicks focus a unit.
  */
 
 /** @typedef {{ id: string, domain: string, tree_part?: string, root?: string, status?: string, foundation?: boolean, label?: string, codex_unit?: string, levels?: string[] }} TreeNode */
@@ -60,6 +65,38 @@ const HOUSES_R = [
 const HOUSES = HOUSES_L.concat(HOUSES_R);
 const BRANCH_UNIT = /^V_(SEL|MON|COM|HOM|CRE|WRK|PAR|CHA|KNO|PUB|CMT|INN)-/;
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
+const ROOT_PARTS = new Set(["tap_root"].concat(LATERALS.map((L) => L.tree_part)));
+
+/** Seat the portrait names / lights for a tree node. word_craft rides the trunk. */
+export function unitSeatPart(unit) {
+  if (!unit) return "";
+  const raw = unit.domain === "grammar"
+    ? (unit.root || unit.tree_part || "")
+    : (unit.tree_part || "trunk");
+  if (raw === "word_craft") return "trunk";
+  return raw;
+}
+
+function resolveLastDone(opts, nodes) {
+  const given = opts.lastDone;
+  if (given && given.part) {
+    const part = given.part === "word_craft" ? "trunk" : given.part;
+    return { id: given.id || "", label: given.label || "", part };
+  }
+  const id = opts.justNow;
+  if (!id) return null;
+  const n = (nodes || []).find((x) => x.id === id);
+  if (n) {
+    return { id: n.id, label: opts.focusLabel || n.label || "", part: unitSeatPart(n) };
+  }
+  const hi = opts.highlight;
+  let part = "trunk";
+  if (Array.isArray(hi)) {
+    part = hi.find((p) => p && p !== "trunk") || hi[0] || "trunk";
+  }
+  if (part === "word_craft") part = "trunk";
+  return { id, label: opts.focusLabel || "", part };
+}
 
 // ---------------------------------------------------------------------------
 // The one tree (full size) and its ages
@@ -85,7 +122,8 @@ const AGES = {
 };
 
 const C = {
-  wood: "#569cd6", leaf: "#4db6c7", fruit: "#22c55e",
+  wood: "#569cd6", woodRemembered: "#3d72b0", woodMastered: "#2a5388",
+  leaf: "#4db6c7", fruit: "#22c55e",
   fruitRemembered: "#4ade80", fruitMastered: "#86efac",
   knotBg: "#0c1014",
   label: "#d4b070", labelDim: "#8a8a8a", muted: "#7a7a7a",
@@ -434,13 +472,23 @@ export function litSlots(live, count) {
   return Math.min(6, count);
 }
 
-/** Cambium girth bonus (James, 2026-08-29): word-craft reps thicken the
- *  trunk with diminishing returns — rings, not a meter. repSum is the
- *  weighted rank sum of word_craft packs at or below the viewed level
- *  (started 0.5 · learned 1 · remembered 1.6 · mastered 2). Saturating:
+/** Cambium girth bonus (James, 2026-08-29): reviews thicken the trunk with
+ *  diminishing returns — rings, not a meter. repSum is the weighted rank
+ *  sum of word_craft packs plus trunk-glue units at or below the viewed
+ *  level (started 0.5 · learned 1 · remembered 1.6 · mastered 2). Saturating:
  *  early work shows most; hard cap well under one age step. */
 export function cambiumGirthBonus(repSum) {
   return repSum > 0 ? 0.14 * (repSum / (repSum + 3)) : 0;
+}
+
+const RANK_WEIGHT = [0, 0.5, 1, 1.6, 2];
+
+/** Seat wood class: remembered darkens the limb/root; mastered darker still.
+ *  Fruit/knots stay on the brighter-green ladder. */
+export function woodMark(seat) {
+  if (seat && seat.mastered && seat.mastered.length) return "wood-mastered";
+  if (seat && seat.remembered && seat.remembered.length) return "wood-remembered";
+  return "";
 }
 
 // ---------------------------------------------------------------------------
@@ -455,6 +503,7 @@ export function cambiumGirthBonus(repSum) {
  * @param {(id: string) => string} opts.progressState  "fruit" | "started" | other
  * @param {(node: TreeNode) => void} [opts.onSelect]
  * @param {string} [opts.level]
+ * @param {{ id?: string, label?: string, part?: string }} [opts.lastDone]
  */
 export function renderTreePortrait(container, opts) {
   const nodes = opts.nodes || [];
@@ -468,20 +517,15 @@ export function renderTreePortrait(container, opts) {
   const highlight = new Set(opts.highlight || []);
   const justNow = opts.justNow || null;
   const animateGrowth = opts.animateGrowth !== false && Boolean(justNow);
-  // Node ids with recent activity (Set) — when provided, sapling-age house
-  // labels only name houses with recent growth instead of any activity ever.
-  const recent = opts.recent || null;
-  /* focus:"roots" — the grammar payoff view (James, 2026-08-24): grammar lives
-   * below ground, so finishing a grammar unit shows trunk + roots ONLY — no
-   * limbs, no crown labels — with the unit's root emphasised, growing, and
-   * labelled (focusLabel), and the trunk pulsing slightly thicker. The map
-   * portrait and vocab payoffs are unchanged. */
+  /* focus:"roots" — grammar payoff emphasises the unit's root (glow + name).
+   * Crown stays (James, 2026-08-30). Permanent nameplates are only the last
+   * completed unit; other seats name themselves on hover (James, 2026-09-02). */
   const focusRoots = opts.focus === "roots";
   // Map render vs payoff render: payoffs pass focus:"roots" (grammar) or
-  // justNow (vocab). Map-only dressing (root names, apex bud) keys off this
-  // so the payoff look stays exactly as it was (James, 2026-08-29).
+  // justNow (vocab). Map-only dressing (apex bud, cambium edge) keys off this.
   const mapOnly = !focusRoots && !opts.justNow;
   const focusLabel = opts.focusLabel || "";
+  const lastDone = resolveLastDone(opts, nodes);
   const m = buildModel();
   const p = m.p;
   const cx = VB.cx, soilY = VB.soil;
@@ -545,14 +589,21 @@ export function renderTreePortrait(container, opts) {
   const wcRanks = (byPart.word_craft || [])
     .filter((n) => n.status === "live" && atLevel(n))
     .map((n) => rankOf(stateOf(n)));
-  const wcSum = wcRanks.reduce((a, r) => a + [0, 0.5, 1, 1.6, 2][r], 0);
+  const glueRanks = (byPart.trunk || [])
+    .filter((n) => n.status === "live" && atLevel(n))
+    .map((n) => rankOf(stateOf(n)));
+  const wcSum = wcRanks.reduce((a, r) => a + RANK_WEIGHT[r], 0);
+  const glueSum = glueRanks.reduce((a, r) => a + RANK_WEIGHT[r], 0);
+  const lifeSum = wcSum + glueSum;
   const cambiumStyle = opts.cambium || "";
 
-  const G = layout(m, age, cambiumGirthBonus(wcSum));
+  const G = layout(m, age, cambiumGirthBonus(lifeSum));
   const lid = (v) => "lf-" + level + "-" + v;
   const leafSizeStem = p.leafSize * (0.45 + 0.55 * age.leaf) * 0.8;
 
-  let above = '<g id="trunk" class="lb' + (highlight.has("trunk") ? " tp-hi-trunk" : "") + '" style="transform-origin:' + cx + 'px ' + soilY + 'px" opacity="' + (trunk.state === "dim" ? 0.5 : 0.95) + '">';
+  const glueSeat = seat(byPart.trunk || []);
+  const trunkWood = woodMark(glueSeat);
+  let above = '<g id="trunk" class="lb' + (trunkWood ? " " + trunkWood : "") + (highlight.has("trunk") ? " tp-hi-trunk" : "") + '" style="transform-origin:' + cx + 'px ' + soilY + 'px" opacity="' + (trunk.state === "dim" ? 0.5 : 0.95) + '">';
   above += '<path d="' + taperedPath(G.trunk, 0.22, m.trunk.ph, age.stem < 1) + '"/>';
   { const rx = G.trunkW * 0.66, ry = G.trunkW * 0.22;
     above += '<path d="M' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY + ry * 2.2) + ' ' + f1(cx + rx) + ',' + f1(soilY - 2) + 'Q' + cx + ',' + f1(soilY - ry * 1.2) + ' ' + f1(cx - rx) + ',' + f1(soilY - 2) + 'Z"/>'; }
@@ -598,12 +649,12 @@ export function renderTreePortrait(container, opts) {
   }
 
   let canopy = "", labels = "";
-  const labelList = [];
+  const hoverList = [];
+  let houseFocus = null;
   G.houses.forEach((g) => {
     const house = houses[g.seat];
     const dim = house.state === "dim";
     const grown = house.touched.length > 0;
-    const active = house.state === "started" || house.state === "fruit";
     const hi = highlight.has(house.tree_part);
     const isNew = hi && animateGrowth;
     let origin = null;
@@ -661,23 +712,15 @@ export function renderTreePortrait(container, opts) {
       labelAt = [pt[0] + d[0] * size * 0.5 + labelSide * (size * 0.5 + 6), pt[1] + d[1] * size * 0.5 + 4];
     }
     const o = origin || g.tip || [cx, soilY];
-    canopy += '<g class="tp-house ' + house.state + (hi ? " tp-hi" : "") + '" data-part="' + house.tree_part + '" data-node="' + house.dataId + '" style="transform-origin:' + f1(o[0]) + 'px ' + f1(o[1]) + 'px">' + s + "<title>" + esc(house.label) + "</title></g>";
-    const recentHouse = recent ? house.touched.some((n) => recent.has(n.id)) : true;
-    const showLabel = grown && (lvIdx >= 2 ? true : hi || (active && recentHouse));
-    if (showLabel && labelAt) labelList.push({ x: labelAt[0], y: labelAt[1], side: labelSide, active, house });
-  });
-  // Labels that would overprint (two houses on one shoot) stack downwards instead.
-  labelList.sort((a, b) => a.y - b.y);
-  const placed = [];
-  const span = (l) => { const w = 6.2 * l.house.label.length; return l.side < 0 ? [l.x - w, l.x] : [l.x, l.x + w]; };
-  labelList.forEach((l) => {
-    const [a0, a1] = span(l);
-    for (const q of placed) {
-      const [b0, b1] = span(q);
-      if (a0 < b1 + 4 && b0 < a1 + 4 && l.y - q.y < 13) l.y = q.y + 13;
+    const houseWood = woodMark(house);
+    const named = !!(lastDone && lastDone.part === house.tree_part && lastDone.label);
+    canopy += '<g class="tp-house ' + house.state + (houseWood ? " " + houseWood : "") + (hi ? " tp-hi" : "") + (named ? " tp-named" : "") + '" data-part="' + house.tree_part + '" data-node="' + house.dataId + '" style="transform-origin:' + f1(o[0]) + 'px ' + f1(o[1]) + 'px">' + s + "</g>";
+    if (labelAt) {
+      hoverList.push({ x: labelAt[0], y: labelAt[1], side: labelSide, part: house.tree_part, text: house.label, kind: "house", skip: named });
+      if (named) {
+        houseFocus = { x: labelAt[0], y: labelAt[1], side: labelSide, text: lastDone.label, dataId: lastDone.id, part: lastDone.part, kind: "house" };
+      }
     }
-    placed.push(l);
-    labels += '<text class="tp-house-label" x="' + f1(l.x) + '" y="' + f1(l.y) + '" text-anchor="' + (l.side < 0 ? "end" : "start") + '" fill="' + (l.active ? C.label : C.labelDim) + '" opacity="' + (l.active ? 0.95 : 0.75) + '" data-node="' + l.house.dataId + '" style="cursor:' + (l.house.dataId ? "pointer" : "default") + '">' + esc(l.house.label) + "</text>";
   });
 
   // ---- roots mirror the crown at this age ----
@@ -692,7 +735,8 @@ export function renderTreePortrait(container, opts) {
   const rootSeats = laterals.concat([tap]);
   let roots = "";
   let hiRootTip = null; // tip of the highlighted lateral, for the focus label
-  const rootLabelSpots = []; // map-only: every seat wears its name at its tip
+  const rootTips = {};
+  const rootHoverSpots = [];
   m.roots.forEach((R0, i) => {
     const seatInfo = rootSeats[i];
     // Roots age too: a sapling is a tap root with thin fibrous laterals; the
@@ -715,15 +759,24 @@ export function renderTreePortrait(container, opts) {
       ang: (t) => { const v = bezTan(P, t); return Math.atan2(v[0], v[1]); }, w: (t) => w0 * (1 - (1 - p.taper * 0.8) * t), tip: () => end };
     track(end);
     const dim = seatInfo.state === "dim";
-    if (mapOnly) {
-      const lblSide = R0.tap ? 1 : Math.sign(end[0] - cx) || 1;
-      rootLabelSpots.push({ x: end[0] + lblSide * (R0.tap ? 10 : 14), y: end[1] + (R0.tap ? 8 : 12), side: lblSide, dim, label: seatInfo.label, dataId: seatInfo.dataId });
-      track([end[0] + lblSide * (6.8 * seatInfo.label.length + 16), end[1] + 16]);
-    }
+    const lblSide = R0.tap ? 1 : Math.sign(end[0] - cx) || 1;
+    rootTips[seatInfo.tree_part] = { x: end[0], y: end[1], side: lblSide };
+    const namedRoot = !!(lastDone && lastDone.part === seatInfo.tree_part && lastDone.label);
+    rootHoverSpots.push({
+      x: end[0] + lblSide * (R0.tap ? 10 : 14),
+      y: end[1] + (R0.tap ? 8 : 12),
+      side: lblSide,
+      part: seatInfo.tree_part,
+      text: seatInfo.label,
+      kind: "root",
+      skip: namedRoot,
+    });
+    track([end[0] + lblSide * (6.8 * seatInfo.label.length + 16), end[1] + 16]);
     if (hiR && !R0.tap) hiRootTip = { x: end[0], y: end[1], side: Math.sign(end[0] - cx) || 1, seatLabel: seatInfo.label };
     if (hiR && R0.tap && !hiRootTip) hiRootTip = { x: end[0], y: end[1], side: 1, seatLabel: seatInfo.label };
     const filled = (seatInfo.touched && seatInfo.touched.length) || (seatInfo.fruited && seatInfo.fruited.length);
-    let s = '<g class="tp-lateral ' + seatInfo.state + (hiR ? " tp-hi" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : filled ? 0.85 : dim ? 0.3 : GHOST) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
+    const rootWood = woodMark(seatInfo);
+    let s = '<g class="tp-lateral ' + seatInfo.state + (rootWood ? " " + rootWood : "") + (hiR ? " tp-hi" : "") + (namedRoot ? " tp-named" : "") + '" data-part="' + seatInfo.tree_part + '" data-node="' + seatInfo.dataId + '" opacity="' + (hiR ? 1 : filled ? 0.85 : dim ? 0.3 : GHOST) + '" style="transform-origin:' + f1(start[0]) + 'px ' + f1(start[1]) + 'px">';
     s += '<path class="rt" d="' + taperedPath(R, 0.15, R0.ph) + '"/>';
     const forks = [];
     R0.forks.forEach((F0, k) => {
@@ -749,31 +802,61 @@ export function renderTreePortrait(container, opts) {
       const q = R.at(t);
       const lit = k < seatInfo.knots, fruited = k < seatInfo.knotsFruit;
       const rem = k < (seatInfo.knotsRemembered || 0), mas = k < (seatInfo.knotsMastered || 0);
-      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (rem ? " remembered" : "") + (mas ? " mastered" : "") + (hiR && animateGrowth && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"><title>' + esc(seatInfo.label) + ' - ' + Math.round(seatInfo.fill * 100) + '%</title></circle></g>';
+      s += '<g class="knot' + (lit ? " lit" : "") + (fruited ? " done" : "") + (rem ? " remembered" : "") + (mas ? " mastered" : "") + (hiR && animateGrowth && lit && k === seatInfo.knots - 1 ? " tp-new" : "") + '" opacity="' + (lit ? 1 : 0.2 + 0.25 * rg) + '"><circle class="tp-knot" data-node="' + seatInfo.dataId + '" cx="' + f1(q[0]) + '" cy="' + f1(q[1]) + '" r="' + f1(kr) + '" style="cursor:' + (seatInfo.dataId ? "pointer" : "default") + '"/></g>';
     }
     roots += s + "</g>";
   });
-  // The grown root gets its name written next to its tip — below ground the
-  // roots are otherwise anonymous, and this payoff is about exactly one of them.
-  if (focusRoots && hiRootTip) {
-    const t = focusLabel || hiRootTip.seatLabel;
-    const lx = hiRootTip.x + hiRootTip.side * 16, ly = hiRootTip.y + 5;
-    // Leader from label to its root — at sapling age the laterals bunch and
-    // the emphasised one is otherwise unfindable (James, 2026-08-25).
-    roots += '<line x1="' + f1(hiRootTip.x + hiRootTip.side * 3) + '" y1="' + f1(hiRootTip.y + 1) + '" x2="' + f1(lx - hiRootTip.side * 3) + '" y2="' + f1(ly - 4) + '" stroke="#d4b070" stroke-width="0.8" opacity="0.55"/>';
-    roots += '<text class="tp-root-label" x="' + f1(lx) + '" y="' + f1(ly) + '" text-anchor="' + (hiRootTip.side < 0 ? "end" : "start") + '">' + esc(t) + "</text>";
-    track([lx + hiRootTip.side * (6.8 * t.length + 10), ly]);
+
+  // One permanent nameplate: the unit just finished (payoff) or last completed (map).
+  let rootFocus = null;
+  if (lastDone && lastDone.label && ROOT_PARTS.has(lastDone.part)) {
+    const tip = (focusRoots && hiRootTip) ? hiRootTip : rootTips[lastDone.part];
+    if (tip) {
+      rootFocus = {
+        kind: "root",
+        x: tip.x + tip.side * 16,
+        y: tip.y + 5,
+        side: tip.side,
+        text: focusLabel || lastDone.label,
+        dataId: lastDone.id,
+        part: lastDone.part,
+        tip,
+      };
+      track([rootFocus.x + tip.side * (6.8 * rootFocus.text.length + 10), rootFocus.y]);
+    }
+  }
+  let trunkFocus = null;
+  if (lastDone && lastDone.label && lastDone.part === "trunk") {
+    trunkFocus = {
+      kind: "trunk",
+      x: cx + G.trunkW * 0.9 + 8,
+      y: soilY - 8,
+      side: 1,
+      text: lastDone.label,
+      dataId: lastDone.id,
+      part: "trunk",
+    };
   }
 
-  // Map only: every seat wears its name at its tip — a ghost seat keeps a
-  // readable name (muted, 0.55) so "future" is something the student can aim
-  // at; awake seats take the label gold. Payoff keeps its single focus label
-  // (James polish apply, 2026-08-29).
-  if (mapOnly) {
-    rootLabelSpots.forEach((L) => {
-      roots += '<text class="tp-root-label" x="' + f1(L.x) + '" y="' + f1(L.y) + '" text-anchor="' + (L.side < 0 ? "end" : "start") + '"' + (L.dim ? ' fill="' + C.muted + '" opacity="0.55"' : ' opacity="0.9"') + ' data-node="' + L.dataId + '" style="cursor:' + (L.dataId ? "pointer" : "default") + '">' + esc(L.label) + "</text>";
-    });
-  }
+  const emitHover = (l) => {
+    if (!l || l.skip || !l.text) return;
+    const cls = l.kind === "root" ? "tp-hover-name tp-root-label" : "tp-hover-name tp-house-label";
+    labels += '<text class="' + cls + '" data-part="' + l.part + '" x="' + f1(l.x) + '" y="' + f1(l.y) + '" text-anchor="' + (l.side < 0 ? "end" : "start") + '" fill="' + C.label + '">' + esc(l.text) + "</text>";
+  };
+  hoverList.forEach(emitHover);
+  rootHoverSpots.forEach(emitHover);
+
+  const emitFocus = (l) => {
+    if (!l || !l.text) return;
+    const cls = l.kind === "house" ? "tp-focus-label tp-house-label" : "tp-focus-label tp-root-label";
+    if (l.kind === "root" && l.tip) {
+      labels += '<line class="tp-focus-leader" x1="' + f1(l.tip.x + l.tip.side * 3) + '" y1="' + f1(l.tip.y + 1) + '" x2="' + f1(l.x - l.tip.side * 3) + '" y2="' + f1(l.y - 4) + '" stroke="#d4b070" stroke-width="0.8" opacity="0.55"/>';
+    }
+    labels += '<text class="' + cls + '" data-part="' + l.part + '" data-node="' + (l.dataId || "") + '" x="' + f1(l.x) + '" y="' + f1(l.y) + '" text-anchor="' + (l.side < 0 ? "end" : "start") + '" fill="' + C.label + '" style="cursor:' + (l.dataId ? "pointer" : "default") + '">' + esc(l.text) + "</text>";
+  };
+  emitFocus(houseFocus);
+  emitFocus(rootFocus);
+  emitFocus(trunkFocus);
 
   // ---- soil ----
   let soil = "";
@@ -810,14 +893,16 @@ export function renderTreePortrait(container, opts) {
     ".lb{fill:" + C.wood + ";stroke:none}",
     ".hr{fill:none;stroke:" + C.leaf + ";stroke-width:" + p.twigWidth + ";stroke-linecap:round;stroke-linejoin:round}",
     ".rt{fill:" + C.wood + ";stroke:none}",
+    ".wood-remembered.lb,.wood-remembered .lb,.wood-remembered .rt{fill:" + C.woodRemembered + "}",
+    ".wood-mastered.lb,.wood-mastered .lb,.wood-mastered .rt{fill:" + C.woodMastered + "}",
     ".rh{fill:none;stroke:" + C.wood + ";stroke-width:" + p.twigWidth + ";stroke-linecap:round}",
     ".sl{fill:none;stroke:rgba(208,144,80,0.65);stroke-width:1.2;stroke-linecap:round}",
     ".leaf use,.leader .lf{fill:none;stroke:" + C.leaf + ";stroke-width:" + sw + ";stroke-linejoin:round;stroke-linecap:round}",
     ".leader .lf{opacity:0.7}",
-    ".fruit circle{fill:none;stroke:" + C.leaf + ";stroke-width:" + sw + "}",
-    ".fruit.done circle{fill:" + C.fruit + ";stroke:" + C.fruit + ";filter:drop-shadow(0 0 2.5px " + C.fruit + ")}",
-    ".fruit.remembered circle{fill:" + C.fruitRemembered + ";stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 5px " + C.fruitRemembered + ")}",
-    ".fruit.mastered circle{fill:" + C.fruitMastered + ";stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 8px " + C.fruitMastered + ") drop-shadow(0 0 14px " + C.fruit + ")}",
+    ".fruit > circle{fill:none;stroke:" + C.leaf + ";stroke-width:" + sw + "}",
+    ".fruit.done > circle{fill:" + C.fruit + ";stroke:" + C.fruit + ";filter:drop-shadow(0 0 2.5px " + C.fruit + ")}",
+    ".fruit.remembered > circle{fill:" + C.fruitRemembered + ";stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 5px " + C.fruitRemembered + ")}",
+    ".fruit.mastered > circle{fill:" + C.fruitMastered + ";stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 8px " + C.fruitMastered + ") drop-shadow(0 0 14px " + C.fruit + ")}",
     ".leaf.remembered use{stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 3px " + C.fruitRemembered + ")}",
     ".leaf.mastered use{stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 6px " + C.fruitMastered + ")}",
     ".knot circle{fill:" + C.knotBg + ";stroke:" + C.wood + ";stroke-width:" + sw + "}",
@@ -826,6 +911,10 @@ export function renderTreePortrait(container, opts) {
     ".knot.remembered circle{fill:" + C.fruitRemembered + ";stroke:" + C.fruitRemembered + ";filter:drop-shadow(0 0 4px " + C.fruitRemembered + ")}",
     ".knot.mastered circle{fill:" + C.fruitMastered + ";stroke:" + C.fruitMastered + ";filter:drop-shadow(0 0 7px " + C.fruitMastered + ")}",
     ".tp-house-label{font:" + f1(11 * typeScale) + "px 'Segoe UI',system-ui,sans-serif;paint-order:stroke;stroke:" + C.sky + ";stroke-width:" + f1(3 * typeScale) + "px;stroke-linejoin:round}",
+    ".tp-hover-name{opacity:0;pointer-events:none;transition:opacity .15s ease}",
+    ".tp-hover-name.is-on{opacity:.92}",
+    ".tp-focus-label{opacity:.95}",
+    ".tp-focus-leader{pointer-events:none}",
     // payoff: the practised part grows in from its base and glows; the trunk pulses;
     // the newest lit slot fades in. transform-box:view-box makes the origin above user units.
     // Animations are held until the host adds .tp-run to the svg, so the growth
@@ -849,7 +938,8 @@ export function renderTreePortrait(container, opts) {
     "@keyframes tpLight{from{opacity:.25;transform:scale(.6)}to{opacity:1;transform:scale(1)}}",
     ".tp-new{transform-box:fill-box;transform-origin:center}",
     "@media (prefers-reduced-motion:reduce){.tp-hi,.tp-run .tp-hi,.tp-hi-trunk,.tp-run .tp-hi-trunk," +
-      ".tp-new,.tp-run .tp-new{animation:none;transform:none;opacity:1}}",
+      ".tp-new,.tp-run .tp-new{animation:none;transform:none;opacity:1}" +
+      ".tp-hover-name{transition:none}}",
   ].join("\n");
   const defs = "<defs>" + LEAF_D.map((d, i) => '<path id="' + lid(i) + '" d="' + d + '" vector-effect="non-scaling-stroke"/>').join("") +
     '<linearGradient id="tpSoilGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="' + C.soilTop + '"/><stop offset="100%" stop-color="' + C.soil + '"/></linearGradient>' +
@@ -876,7 +966,7 @@ export function renderTreePortrait(container, opts) {
 
   container.innerHTML = svg;
 
-  if (typeof opts.onSelect === "function") {
+  if (typeof opts.onSelect === "function" && typeof container.querySelectorAll === "function") {
     container.querySelectorAll("[data-node]").forEach((el) => {
       const id = el.getAttribute("data-node");
       if (!id) return;
@@ -886,7 +976,42 @@ export function renderTreePortrait(container, opts) {
       });
     });
   }
+  wirePartHover(container);
 
   return { laterals, houses, trunk, tap, level,
-           cambium: { sum: wcSum, bonus: cambiumGirthBonus(wcSum) } };
+           cambium: { sum: lifeSum, bonus: cambiumGirthBonus(lifeSum), wordCraft: wcSum, glue: glueSum } };
+}
+
+/** Hover a house or root → its part name. The last-completed unit stays labelled. */
+function wirePartHover(container) {
+  if (!container || typeof container.querySelector !== "function") return;
+  const svg = container.querySelector("svg");
+  if (!svg || typeof svg.querySelectorAll !== "function") return;
+  const names = new Map();
+  svg.querySelectorAll(".tp-hover-name[data-part]").forEach((el) => {
+    names.set(el.getAttribute("data-part"), el);
+  });
+  if (!names.size) return;
+  const focusPart = (svg.querySelector(".tp-focus-label") || {}).getAttribute
+    ? (svg.querySelector(".tp-focus-label").getAttribute("data-part") || "")
+    : "";
+  let on = null;
+  const setOn = (part) => {
+    if (part === on) return;
+    if (on && names.get(on)) names.get(on).classList.remove("is-on");
+    on = null;
+    if (part && part !== focusPart && names.get(part)) {
+      names.get(part).classList.add("is-on");
+      on = part;
+    }
+  };
+  svg.addEventListener("pointerover", (e) => {
+    const g = e.target && e.target.closest && e.target.closest("[data-part]");
+    setOn(g ? g.getAttribute("data-part") : "");
+  });
+  svg.addEventListener("pointerout", (e) => {
+    const to = e.relatedTarget;
+    if (to && svg.contains(to) && to.closest && to.closest("[data-part]")) return;
+    setOn("");
+  });
 }

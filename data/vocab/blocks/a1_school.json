@@ -3,7 +3,7 @@
   "title": "School · place & tools",
   "level": "A1",
   "tree_node": "leaf_school_a1",
-  "note": "P3 Oxford A1 school/study. Overlap with Work (teacher/student) kept light. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07 · split 2026-08-31 (James: 36-word cap = 3 rounds) → second half is a1_school_2. · 2026-08-31 intro split fix: split copied the item blocks but left the pre-split intro (all groups) in both halves; intro now shows only this half's words.",
+  "note": "P3 Oxford A1 school/study. Overlap with Work (teacher/student) kept light. Sentence = fruit. · carriers via use[] · picture-led intro added 2026-08-07 · split 2026-08-31 (James: 36-word cap = 3 rounds) → second half is a1_school_2. · 2026-08-31 intro split fix: split copied the item blocks but left the pre-split intro (all groups) in both halves; intro now shows only this half's words. · learn/study/teach pages added 2026-09-01 (James, Tomáš lesson: učit vs učit se) · sentences: study-for-exam replaces the dropped 'My sister studies science' (lemma could not match 'studies'), + learn/teach minimal pairs.",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "blocks": [
@@ -375,6 +375,70 @@
       ]
     },
     {
+      "title": "learn and study",
+      "title_cz": "learn a study",
+      "diagram": "contrast",
+      "labels": [
+        "learn",
+        "study",
+        "you get it",
+        "you do the work"
+      ],
+      "table": {
+        "headers": [
+          "verb",
+          "what it means",
+          "example"
+        ],
+        "rows": [
+          [
+            "learn",
+            "it goes in your head",
+            "I learn English."
+          ],
+          [
+            "study",
+            "you sit and work",
+            "I study every evening."
+          ]
+        ]
+      },
+      "note": "Both words are *učit se*. **study** is the work. **learn** is the result. I **study** every evening, and I **learn** a lot.",
+      "note_cz": "Obojí je *učit se*. **study** = ta práce. **learn** = výsledek."
+    },
+    {
+      "title": "learn and teach",
+      "title_cz": "učit se a učit",
+      "diagram": "contrast",
+      "labels": [
+        "learn",
+        "teach",
+        "I get it",
+        "I give it"
+      ],
+      "table": {
+        "headers": [
+          "Czech",
+          "English",
+          "example"
+        ],
+        "rows": [
+          [
+            "učit se",
+            "learn",
+            "I learn English."
+          ],
+          [
+            "učit někoho",
+            "teach",
+            "I teach him English."
+          ]
+        ]
+      },
+      "note": "The student **learns**. The teacher **teaches**. Never ~~I learn him~~ → **I teach him**.",
+      "note_cz": "*Učit se* = **learn**. *Učit někoho* = **teach**. Nikdy ~~I learn him~~ → **I teach him**."
+    },
+    {
       "title": "You will use these words in",
       "frames": [
         "This is a …",
@@ -383,8 +447,8 @@
         "I want to …",
         "Let's talk about …"
       ],
-      "note": "Czech učit se is two verbs in English: learn is getting the knowledge (I learn English), study is doing the work (I study every evening). **learn** is getting the knowledge: I **learn** English. **study** is the work you do to learn it: I **study** every evening.",
-      "note_cz": "learn = naučit se (výsledek). study = studovat, učit se (činnost). I learn English. / I study every evening."
+      "note": "**learn** and **study** are both *učit se*. **teach** is *učit někoho*.",
+      "note_cz": "learn a study = učit se. teach = učit někoho."
     }
   ],
   "sentences": [
@@ -509,13 +573,14 @@
       ]
     },
     {
-      "en": "My sister studies science.",
-      "cz": "Moje sestra studuje přírodní vědy.",
+      "en": "I study for the exam every evening.",
+      "cz": "Každý večer se učím na zkoušku.",
       "lemmas": [
         "study"
       ],
       "accepts": [
-        "My sister studies science"
+        "I study for the exam every evening",
+        "Every evening I study for the exam"
       ]
     },
     {
@@ -700,6 +765,47 @@
       "accepts": [
         "Read the text on page five",
         "Read the text on page 5"
+      ]
+    },
+    {
+      "en": "I learn English at school.",
+      "cz": "Ve škole se učím anglicky.",
+      "lemmas": [
+        "learn"
+      ],
+      "accepts": [
+        "I learn English at school",
+        "At school I learn English"
+      ]
+    },
+    {
+      "en": "I want to teach English.",
+      "cz": "Chci učit angličtinu.",
+      "lemmas": [
+        "teach"
+      ],
+      "accepts": [
+        "I want to teach English"
+      ]
+    },
+    {
+      "en": "I teach him how to do his job.",
+      "cz": "Učím ho, jak dělat jeho práci.",
+      "lemmas": [
+        "teach"
+      ],
+      "accepts": [
+        "I teach him how to do his job"
+      ]
+    },
+    {
+      "en": "My brother teaches me English.",
+      "cz": "Můj bratr mě učí anglicky.",
+      "lemmas": [
+        "teaches"
+      ],
+      "accepts": [
+        "My brother teaches me English"
       ]
     }
   ]

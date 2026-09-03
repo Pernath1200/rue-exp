@@ -1,1977 +1,2401 @@
 {
-  "frozen_from": "rue-auto/grammar data/tree.json snapshot 2026-08-06 (lab FROZEN)",
-  "nodes": [
-    {
-      "id": "a1_word_classes",
-      "label": "Word classes",
-      "kind": "topic",
-      "root": "tap_root",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_word_classes.json",
-      "note": "noun · verb · adjective · pronoun · one / more than one — metalanguage for the path"
-    },
-    {
-      "id": "a1_be_have",
-      "label": "Be / have",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_be_have.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "am/is/are · have/has · identity & possession"
-    },
-    {
-      "id": "a1_present_simple",
-      "label": "Present simple",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_present_simple.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "I work / she works · -s · don’t / doesn’t"
-    },
-    {
-      "id": "a1_agreement",
-      "label": "Subject–verb agreement",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "codex_unit": "G_SS-A1B1-01",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_agreement.json",
-      "note": "Present simple agreement · he works / they work · Hang: Sentence · G_SS-A1B1-01 · 2026-08-29",
-      "related": [
-        "a1_present_simple",
-        "a1_questions_negatives"
-      ]
-    },
-    {
-      "id": "a1_frequency",
-      "label": "Frequency",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "codex_unit": "G_SS-A1B1-01",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_frequency.json",
-      "note": "always · usually · often · sometimes · never · before verb / after be · Hang: Sentence · G_SS-A1B1-01 with a2_adverbs_order · 2026-08-29",
-      "related": [
-        "a1_present_simple",
-        "a2_adverbs_order"
-      ]
-    },
-    {
-      "id": "a1_word_order",
-      "label": "Word order 1",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_word_order.json",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "SVO statements · basic sentence shape",
-      "related": [
-        "b1_word_order_fronting"
-      ]
-    },
-    {
-      "id": "a1_questions_negatives",
-      "label": "Questions & negatives",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_questions_negatives.json",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "do/does · be questions · not / don’t / doesn’t"
-    },
-    {
-      "id": "a1_question_words",
-      "label": "Question words",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "foundation": true,
-      "content": "blocks/a1_question_words.json",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "who · what · where · when · why · how · after do/does/be questions"
-    },
-    {
-      "id": "a1_articles",
-      "label": "Articles 1",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_articles.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "a/an/the · singular countable NEVER bare · a/an first, the next"
-    },
-    {
-      "id": "a1_possessives",
-      "label": "Possessives (my / your / 's)",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_possessives.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "my/your/his/her/our/their · name's · before noun · not mine/yours yet"
-    },
-    {
-      "id": "a1_object_pronouns",
-      "label": "Object pronouns",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_object_pronouns.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "I/me he/him pairs · then sentences subject vs object · after verb"
-    },
-    {
-      "id": "a1_and_but_because",
-      "label": "And / but / because",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_and_but_because.json",
-      "codex_unit": "G_CL-A1B1-01",
-      "note": "basic linkers · add / contrast / why"
-    },
-    {
-      "id": "a1_imperatives",
-      "label": "Imperatives",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_imperatives.json",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "Open… · Don't… · base verb · no subject · please optional"
-    },
-    {
-      "id": "a1_like_want_need",
-      "label": "Like / want / need",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_like_want_need.json",
-      "codex_unit": "G_VC-A1B1-01",
-      "note": "verb + noun · light want to"
-    },
-    {
-      "id": "a1_prepositions_place",
-      "label": "Prepositions of place",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_prepositions_place.json",
-      "codex_unit": "G_PP-A1B1-01",
-      "note": "in · on · under · next to · basic place"
-    },
-    {
-      "id": "a1_there_is",
-      "label": "There is / there are",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_there_is.json",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "There is/are · is/are · Is there…? · not place-there · after be + a/an"
-    },
-    {
-      "id": "a1_some_any",
-      "label": "Some / any 1",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_some_any.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "some in + · any in −/? · offers some · with have and there is"
-    },
-    {
-      "id": "a1_can",
-      "label": "Can / can't",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_can.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "can / can't · no -s · Can you…? · light permission · not must/should"
-    },
-    {
-      "id": "a1_prepositions_time",
-      "label": "Prepositions of time",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_prepositions_time.json",
-      "codex_unit": "G_PP-A1B1-01",
-      "note": "at / on / in for time · clock · days · months · not place"
-    },
-    {
-      "id": "a1_to_for_with",
-      "label": "To / for / with",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_to_for_with.json",
-      "codex_unit": "G_PP-A1B1-01",
-      "note": "to direction/recipient · for purpose/benefit · with company · first dependent-prep step"
-    },
-    {
-      "id": "a2_present_continuous",
-      "label": "Present continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_present_continuous.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "I am working / she is working · now · be + -ing",
-      "related": [
-        "a1_present_simple",
-        "a1_be_have"
-      ]
-    },
-    {
-      "id": "a2_agreement",
-      "label": "Subject–verb agreement (A2)",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "codex_unit": "G_SS-A1B1-01",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_agreement.json",
-      "note": "do/does · was/were · there is/are · everybody · 2026-08-05 · Hang: Sentence · G_SS-A1B1-01 · 2026-08-29",
-      "related": [
-        "a1_agreement",
-        "a2_present_continuous",
-        "a1_questions_negatives"
-      ]
-    },
-    {
-      "id": "a2_past_simple",
-      "label": "Past simple",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_past_simple.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "I worked / went · regular -ed + high-frequency irregular · didn't / Did",
-      "related": [
-        "a1_present_simple"
-      ]
-    },
-    {
-      "id": "a2_will_going_to",
-      "label": "Will / going to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_will_going_to.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "future thin slice · will offers/promises · going to plans/evidence",
-      "related": [
-        "a1_present_simple"
-      ]
-    },
-    {
-      "id": "a2_past_continuous",
-      "label": "Past continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_past_continuous.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "was/were + -ing · past in progress",
-      "related": [
-        "a2_past_simple",
-        "a2_used_to"
-      ]
-    },
-    {
-      "id": "a2_used_to",
-      "label": "Used to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_used_to.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "past habit no longer true · moved from B1 2026-08-29 (James)",
-      "related": [
-        "a2_past_simple",
-        "a2_past_continuous",
-        "b2_be_get_used_to"
-      ]
-    },
-    {
-      "id": "a2_present_perfect",
-      "label": "Present perfect",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_present_perfect.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "note": "have/has + past participle · just/already/ever/never/for/since · thin A2 CEFR",
-      "related": [
-        "a2_past_simple"
-      ]
-    },
-    {
-      "id": "a2_modals_must_should",
-      "label": "Must / should",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_modals_must_should.json",
-      "codex_unit": "G_VP-A1B1-01",
-      "note": "must obligation · should advice · + base · no have to yet",
-      "related": [
-        "a1_can"
-      ]
-    },
-    {
-      "id": "a2_comparatives",
-      "label": "Comparatives",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_comparatives.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "bigger / more … than · the -est / the most",
-      "related": [
-        "a1_word_classes"
-      ]
-    },
-    {
-      "id": "a2_quantifiers",
-      "label": "Much / many / a lot",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_quantifiers.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "many + plural · much + uncountable · after countable/uncountable",
-      "related": [
-        "a2_countable",
-        "a1_some_any"
-      ]
-    },
-    {
-      "id": "a2_countable",
-      "label": "Countable and uncountable nouns",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_countable.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "countable vs uncountable nouns · a/an · some · advice/information",
-      "related": [
-        "a1_articles",
-        "a1_some_any",
-        "a2_quantifiers"
-      ]
-    },
-    {
-      "id": "a2_adverbs_order",
-      "label": "Adverb position",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_adverbs_order.json",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "always/also/still before verb · after be · too/either · manner",
-      "related": [
-        "a1_frequency",
-        "a1_word_order"
-      ]
-    },
-    {
-      "id": "a2_ed_ing_adjectives",
-      "label": "-ed / -ing adjectives",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_ed_ing_adjectives.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "bored/boring · interested/interesting · feeling vs cause",
-      "related": [
-        "a1_word_classes",
-        "a2_comparatives"
-      ]
-    },
-    {
-      "id": "a2_first_conditional",
-      "label": "First conditional",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_first_conditional.json",
-      "codex_unit": "G_CL-A1B1-01",
-      "note": "If/when + present, will + base · light zero",
-      "related": [
-        "a1_and_but_because",
-        "b2_second_conditional"
-      ]
-    },
-    {
-      "id": "a2_verb_patterns",
-      "label": "Verb patterns 1 (to / -ing)",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_verb_patterns.json",
-      "codex_unit": "G_VC-A1B1-01",
-      "note": "like/enjoy + -ing · want/need/decide + to · would like to",
-      "related": [
-        "a1_like_want_need"
-      ]
-    },
-    {
-      "id": "a2_prepositions_movement",
-      "label": "Prepositions of movement",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "content": "blocks/a2_prepositions_movement.json",
-      "codex_unit": "G_PP-A1B1-01",
-      "note": "to/into/onto/from · across/through · get on/off",
-      "related": [
-        "a1_prepositions_place"
-      ]
-    },
-    {
-      "id": "b1_present_perfect_vs_past",
-      "label": "Present perfect vs past",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_present_perfect_vs_past.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "related": [
-        "a2_present_perfect",
-        "a2_past_simple"
-      ],
-      "note": "finished time vs life/result now · demo priority",
-      "demo_priority": true
-    },
-    {
-      "id": "b2_present_perfect_continuous",
-      "label": "Present perfect simple vs continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "content": "blocks/b2_present_perfect_continuous.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "related": [
-        "b1_present_perfect_vs_past",
-        "a2_present_perfect",
-        "a2_present_continuous"
-      ],
-      "note": "result/count/complete vs process/duration · B2 (moved from B1)",
-      "demo_priority": false
-    },
-    {
-      "id": "b2_past_perfect",
-      "label": "Past perfect",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "content": "blocks/b2_past_perfect.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "related": [
-        "a2_past_simple",
-        "a2_present_perfect",
-        "b1_present_perfect_vs_past"
-      ],
-      "note": "had + past participle · earlier past · B2 (moved from B1)",
-      "demo_priority": false
-    },
-    {
-      "id": "b1_used_to",
-      "label": "Used to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B1"
-      ],
-      "status": "parked",
-      "content": "blocks/b1_used_to.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "related": [
-        "a2_used_to",
-        "a2_past_simple",
-        "b2_be_get_used_to"
-      ],
-      "note": "PARKED 2026-08-29 — live copy is a2_used_to. Do not edit."
-    },
-    {
-      "id": "b1_passives",
-      "label": "Passive (form of be)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_passives.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "related": [
-        "a2_past_simple"
-      ],
-      "note": "be agreement in simple passive frames · present/past",
-      "demo_priority": false
-    },
-    {
-      "id": "b1_modals_speculation",
-      "label": "Modals (might / may / could / must)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_modals_speculation.json",
-      "codex_unit": "G_VP-B1B2-01",
-      "related": [
-        "a2_modals_must_should"
-      ],
-      "note": "possibility vs deduction"
-    },
-    {
-      "id": "b1_articles_advanced",
-      "label": "Articles 2",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_articles_advanced.json",
-      "codex_unit": "G_NP-B1B2-01",
-      "related": [
-        "a1_articles",
-        "b2_articles_correction"
-      ],
-      "note": "the / zero / a · institutions"
-    },
-    {
-      "id": "b1_it_subject",
-      "label": "It as subject",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_it_subject.json",
-      "codex_unit": "G_SS-B1B2-01",
-      "related": [
-        "a1_word_order",
-        "b1_word_order_fronting"
-      ],
-      "note": "It is + adj + to · weather/time"
-    },
-    {
-      "id": "b1_word_order_fronting",
-      "label": "Word order 2",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_word_order_fronting.json",
-      "codex_unit": "G_SS-B1B2-01",
-      "note": "English order is fixed. Subject first; place before time at the end. Czech inversion is the error. Dummy it stays in b1_it_subject.",
-      "related": [
-        "a1_word_order",
-        "b1_it_subject",
-        "a2_adverbs_order",
-        "c1_clefts_fronting"
-      ]
-    },
-    {
-      "id": "b2_second_conditional",
-      "label": "Second conditional",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "content": "blocks/b2_second_conditional.json",
-      "codex_unit": "G_CL-B1B2-01",
-      "related": [
-        "a2_first_conditional",
-        "b2_third_conditional",
-        "b2_mixed_conditionals"
-      ],
-      "note": "If + past, would + base · absorb if-alternatives lightly (unless / as long as / provided) · B2 contrast after A2 first",
-      "demo_priority": false
-    },
-    {
-      "id": "b1_relative_clauses",
-      "label": "Relative clauses",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_relative_clauses.json",
-      "codex_unit": "G_CL-B1B2-01",
-      "related": [
-        "a1_word_order",
-        "a1_question_words"
-      ],
-      "note": "who / which / that"
-    },
-    {
-      "id": "b1_reported_speech",
-      "label": "Reported speech",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_reported_speech.json",
-      "codex_unit": "G_CL-B1B2-01",
-      "related": [
-        "a2_past_simple",
-        "a1_questions_negatives",
-        "b1_indirect_questions"
-      ],
-      "note": "backshift · said/told"
-    },
-    {
-      "id": "b1_indirect_questions",
-      "label": "Indirect questions",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_indirect_questions.json",
-      "codex_unit": "G_SS-B1B2-01",
-      "note": "tell me / know / wonder · statement order inside",
-      "related": [
-        "b1_reported_speech",
-        "a1_question_words",
-        "a1_word_order"
-      ]
-    },
-    {
-      "id": "b1_linkers",
-      "label": "Linking words",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_linkers.json",
-      "codex_unit": "G_CL-B1B2-01",
-      "related": [
-        "a1_and_but_because"
-      ],
-      "note": "contrast · result · reason"
-    },
-    {
-      "id": "b1_verb_patterns_advanced",
-      "label": "Verb patterns 2",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_verb_patterns_advanced.json",
-      "codex_unit": "G_VC-B1B2-01",
-      "related": [
-        "a2_verb_patterns"
-      ],
-      "note": "want sb to · stop/remember · make/let"
-    },
-    {
-      "id": "b1_dependent_prepositions",
-      "label": "Dependent prepositions 1",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_dependent_prepositions.json",
-      "codex_unit": "G_PP-B1B2-01",
-      "related": [
-        "a1_prepositions_place",
-        "a1_prepositions_time",
-        "a1_to_for_with",
-        "a2_prepositions_movement",
-        "b1_phrasal_verbs"
-      ],
-      "note": "Dependent prepositions 1 (B1) · four hard pairs + discuss. Units 2 (B2) and 3 (C1) planned, not built."
-    },
-    {
-      "id": "b2_third_conditional",
-      "label": "Third conditional",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "content": "blocks/b2_third_conditional.json",
-      "codex_unit": "G_CL-B1B2-01",
-      "related": [
-        "b2_second_conditional",
-        "b2_past_perfect"
-      ],
-      "note": "If + had + past participle, would have + past participle · B2 (moved from B1)",
-      "demo_priority": false
-    },
-    {
-      "id": "b1_phrasal_verbs",
-      "label": "Phrasal verbs 1",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "content": "blocks/b1_phrasal_verbs.json",
-      "codex_unit": "G_VC-B1B2-01",
-      "related": [
-        "b1_verb_patterns_advanced",
-        "b1_dependent_prepositions"
-      ],
-      "note": "frames rewrite 2026-08-30: 12-verb bank · separable/inseparable · demo priority",
-      "demo_priority": true
-    },
-    {
-      "id": "b2_narrative_tenses",
-      "label": "Narrative tenses",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_narrative_tenses.json",
-      "note": "mixed past simple/continuous/perfect · first draft 2026-08-06",
-      "related": [
-        "a2_past_simple",
-        "a2_past_continuous",
-        "b2_past_perfect"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "b2_future_in_the_past",
-      "label": "Future in the past",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_future_in_the_past.json",
-      "note": "Map only · content folded into b2_future_forms · thin shell kept for repair links",
-      "related": [
-        "b2_future_forms",
-        "a2_will_going_to",
-        "b1_reported_speech"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "b2_mixed_conditionals",
-      "label": "Mixed conditionals",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_mixed_conditionals.json",
-      "note": "Mixed 2nd/3rd · also unless / provided that / as long as / in case (no separate if-alternatives unit) · first draft 2026-08-06",
-      "related": [
-        "b2_second_conditional",
-        "b2_third_conditional"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_wish_if_only",
-      "label": "Wish / if only",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_wish_if_only.json",
-      "note": "wish + past / PP / would · first draft 2026-08-06",
-      "related": [
-        "b2_second_conditional",
-        "b2_third_conditional"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_passives_advanced",
-      "label": "Passives advanced",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_passives_advanced.json",
-      "note": "forms review + get-passive · thin shell 2026-08-05",
-      "related": [
-        "b1_passives"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "b2_causative",
-      "label": "Causative (have/get done)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_causative.json",
-      "note": "have/get something done · first draft 2026-08-06",
-      "related": [
-        "b1_passives",
-        "b2_passives_advanced"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "b2_reported_speech_advanced",
-      "label": "Reported speech advanced",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_reported_speech_advanced.json",
-      "note": "reporting verbs · 4 strands x 12 · built to live 2026-08-06 (cloud run 7)",
-      "related": [
-        "b1_reported_speech"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_relative_clauses_advanced",
-      "label": "Relative clauses advanced",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_relative_clauses_advanced.json",
-      "note": "whose/whom, preposition + which, non-defining, reduced · 4 strands x 12 · built to live 2026-08-06 (cloud run 7)",
-      "related": [
-        "b1_relative_clauses"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_participle_clauses",
-      "label": "Participle clauses",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_participle_clauses.json",
-      "note": "-ing time/reason (incl. Not + -ing) · past participle clauses · Having / Having been + past participle · 4 strands x 12 · built to live 2026-08-07 (cloud run 8)",
-      "related": [
-        "b2_relative_clauses_advanced"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_inversion",
-      "label": "Inversion",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_inversion.json",
-      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-      "related": [
-        "c1_inversion_emphasis"
-      ],
-      "codex_unit": "G_SS-B1B2-01"
-    },
-    {
-      "id": "b2_cleft_sentences",
-      "label": "Cleft sentences",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_cleft_sentences.json",
-      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-      "related": [
-        "c1_clefts_fronting"
-      ],
-      "codex_unit": "G_SS-B1B2-01"
-    },
-    {
-      "id": "b2_modal_perfect",
-      "label": "Modals (meanings + perfect)",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_modal_perfect.json",
-      "note": "Mega unit: ability/permission/obligation/advice/possibility/deduction + perfect modals + semi-modals (have to, need to, ought to, be allowed to, make/let) · expand from first draft 2026-08-06",
-      "related": [
-        "b1_modals_speculation",
-        "a2_modals_must_should",
-        "b1_verb_patterns_advanced"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "b2_articles_genericity",
-      "label": "Articles / genericity",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_articles_genericity.json",
-      "note": "zero article for general statements (plural + uncountable) · `the` + adjective/nationality/unique nouns · generic vs specific minimal pairs · 4 strands x 12 · built 2026-08-07",
-      "related": [
-        "b1_articles_advanced",
-        "a1_articles",
-        "b2_articles_correction"
-      ],
-      "codex_unit": "G_NP-B1B2-01"
-    },
-    {
-      "id": "b2_articles_correction",
-      "label": "Articles: the mixed cases",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_articles_correction.json",
-      "note": "error-correction sheet from Václav's lesson turned into 28 gap items · first mention vs known · the forced by of/superlative/date · names · institutions · generic zero · built 2026-08-22",
-      "related": [
-        "b2_articles_genericity",
-        "b1_articles_advanced"
-      ],
-      "codex_unit": "G_NP-B1B2-01"
-    },
-    {
-      "id": "b2_quantifiers_advanced",
-      "label": "Quantifiers advanced",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_quantifiers_advanced.json",
-      "note": "few/a few vs little/a little · quantifier + `of` · both/neither/either and verb agreement · each vs every, no and any · 4 strands x 12 · built 2026-08-07",
-      "related": [
-        "a2_quantifiers"
-      ],
-      "codex_unit": "G_NP-B1B2-01"
-    },
-    {
-      "id": "b2_discourse_markers",
-      "label": "Discourse markers B2",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_discourse_markers.json",
-      "note": "however / therefore / moreover… · contrast · result · addition · marker grammar (adverb vs conjunction vs preposition) · 48 items · built to live 2026-08-07 (cloud run 10)",
-      "related": [
-        "b1_linkers"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_clear_claims",
-      "label": "Clear claims",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "content": "blocks/b2_clear_claims.json",
-      "note": "Pilot writing logic — not on B2 path · shaded / not class spine · 2026-08-06",
-      "related": [
-        "b2_discourse_markers",
-        "b1_linkers"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "b2_emphasis_fronting",
-      "label": "Emphasis & fronting",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_emphasis_fronting.json",
-      "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
-      "related": [
-        "c1_clefts_fronting",
-        "c1_inversion_emphasis"
-      ],
-      "codex_unit": "G_SS-B1B2-01"
-    },
-    {
-      "id": "b2_gerunds_infinitives_advanced",
-      "label": "Gerunds & infinitives advanced",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_gerunds_infinitives_advanced.json",
-      "note": "stop/go on · remember/forget · try/mean/need · choose-the-verb strand teaches remember, forget, regret, mean · 4 strands x 12 · built to live 2026-08-07 (cloud run 8)",
-      "related": [
-        "b1_verb_patterns_advanced",
-        "a2_verb_patterns"
-      ],
-      "codex_unit": "G_VC-B1B2-01"
-    },
-    {
-      "id": "b2_preposition_ing",
-      "label": "Preposition + -ing",
-      "kind": "topic",
-      "root": "prepositions_particles",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_preposition_ing.json",
-      "note": "adjective/verb + preposition + -ing · plain prepositions + -ing · `to` preposition vs infinitive marker · 4 strands x 12 · built 2026-08-07 · PARKED 2026-08-24 (James): duplicate teaching. The RULE (after a preposition, -ing) is one exceptionless line, now taught on slide 4 of b1_verb_patterns_advanced. The COLLOCATIONS are b1_dependent_prepositions' ground — 13 of the 27 this unit claimed to add are already drilled there, 19 slots earlier and a level lower, and that unit gaps the PREPOSITION while this one gaps the verb form. Its own vocabulary is 84% A1, so it was never a B2 unit. A real B2 dependent-prepositions unit is wanted here — revision plus ~16 genuinely new B2/C1 collocations (accuse of, blame for, cope with, opposed to, satisfied with, consistent with, anxious about ...) — but NOTHING IS TO BE BUILT without careful planning first (his standing instruction). Left in path_order so indices do not shift.",
-      "related": [
-        "b1_dependent_prepositions"
-      ],
-      "codex_unit": "G_PP-B1B2-01"
-    },
-    {
-      "id": "b2_hypothetical_past",
-      "label": "Hypothetical past",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_hypothetical_past.json",
-      "note": "I'd rather / it's time / as if · thin shell 2026-08-05",
-      "related": [
-        "b2_wish_if_only",
-        "b2_second_conditional"
-      ],
-      "codex_unit": "G_CL-B1B2-01"
-    },
-    {
-      "id": "c1_nominalisation",
-      "label": "Nominalisation",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_nominalisation.json",
-      "note": "verb → noun across the productive endings (-ion, -ment, -al, -ure, -ance, -y) plus the irregulars loss/growth/choice · adjective → noun and the -ness over-generalisation trap · the preposition the nominalisation demands (of / to / in / for / on / between / that) · the register move from finite clause to noun phrase, and when not to make it · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 13)",
-      "codex_unit": "G_NP-B2C1-01",
-      "related": [
-        "c1_complex_noun_phrases",
-        "c1_register",
-        "c1_advanced_passive"
-      ]
-    },
-    {
-      "id": "c1_advanced_passive",
-      "label": "Advanced passives & reporting passives",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_advanced_passive.json",
-      "note": "Impersonal It is said / was announced / has been suggested + that-clause · raised subject with the to-infinitive carrying the time (to be / to have been / to be doing / to have been doing) · the passive across every tense, aspect, modal and non-finite form · get-passive register and the by-agent, including passives of ditransitives · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 13)",
-      "related": [
-        "b2_passives_advanced",
-        "b2_causative",
-        "c1_reporting_complementation"
-      ],
-      "codex_unit": "G_VP-B2C1-01"
-    },
-    {
-      "id": "c1_subjunctive",
-      "label": "Subjunctive & formal unreal",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_subjunctive.json",
-      "note": "essential/important that + base · were to · elaborate wish/if only/would rather · thin shell · pairs with B2 wish/hypothetical 2026-08-06",
-      "related": [
-        "b2_wish_if_only",
-        "b2_hypothetical_past",
-        "c1_advanced_modality",
-        "c1_inversion_emphasis"
-      ],
-      "codex_unit": "G_CL-B2C1-01"
-    },
-    {
-      "id": "c1_complex_noun_phrases",
-      "label": "Complex noun phrases",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_complex_noun_phrases.json",
-      "note": "stacked pre/post-modification · built to live 2026-08-07 (cloud run 14)",
-      "related": [
-        "c1_nominalisation",
-        "c1_article_nuance"
-      ],
-      "codex_unit": "G_NP-B2C1-01"
-    },
-    {
-      "id": "c1_hedging_stance",
-      "label": "Hedging & stance",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_hedging_stance.json",
-      "note": "Map-only · content folded into c1_advanced_modality (path) · thin shell kept for repair 2026-08-06",
-      "codex_unit": "G_VP-B2C1-01",
-      "related": [
-        "c1_advanced_modality",
-        "c1_register"
-      ]
-    },
-    {
-      "id": "b1_degree_adverbs",
-      "label": "Degree adverbs",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_degree_adverbs.json",
-      "codex_unit": "G_SS-B1B2-01",
-      "note": "scale (a bit/quite/very/extremely) + too/enough. Not so/such, not extreme adjectives. Hang: Sentence · G_SS-B1B2-01 with a2_adverbs_order · 2026-08-28",
-      "related": [
-        "a2_adverbs_order"
-      ]
-    },
-    {
-      "id": "a2_some_any_no",
-      "label": "Some / any 2",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/a2_some_any_no.json",
-      "codex_unit": "G_NP-A1B1-01",
-      "note": "žádný = no / not…any, one negation · free-choice any · compounds · split from a1_some_any 2026-08-16",
-      "related": [
-        "a1_some_any",
-        "a2_quantifiers"
-      ]
-    },
-    {
-      "id": "b2_word_formation",
-      "label": "Word formation (FCE Part 3)",
-      "kind": "topic",
-      "root": "word_craft",
-      "tree_part": "word_craft",
-      "codex_unit": "V_WFM-B2C1-01",
-      "levels": [
-        "B2"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b2_word_formation.json",
-      "note": "FCE Part 3: sentence gap + capitalised root, whole derived word typed · EN-only cues · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B2C1-01 · 2026-08-29",
-      "exam": "word_formation"
-    },
-    {
-      "id": "c1_word_formation",
-      "label": "Word formation (CAE Part 3)",
-      "kind": "topic",
-      "root": "word_craft",
-      "tree_part": "word_craft",
-      "codex_unit": "V_WFM-B2C1-01",
-      "levels": [
-        "C1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/c1_word_formation.json",
-      "note": "CAE Part 3: rarer suffixes, shifted stems, assimilating negatives · roots from Ready for C1 families, original sentences · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B2C1-01 · 2026-08-29",
-      "exam": "word_formation"
-    },
-    {
-      "id": "b1_suffixes",
-      "label": "Suffixes — the basics",
-      "kind": "topic",
-      "root": "word_craft",
-      "tree_part": "word_craft",
-      "codex_unit": "V_WFM-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_suffixes.json",
-      "note": "B1 affix tranche: -er/-or/-ist, -tion/-sion, -ment/-ness, -ful/-less/-y, -able/-ous/-al, -ly · Czech glosses · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B1B2-01 · 2026-08-29",
-      "exam": "word_formation"
-    },
-    {
-      "id": "b1_prefixes",
-      "label": "Prefixes",
-      "kind": "topic",
-      "root": "word_craft",
-      "tree_part": "word_craft",
-      "codex_unit": "V_WFM-B1B2-01",
-      "levels": [
-        "B1"
-      ],
-      "status": "live",
-      "foundation": false,
-      "content": "grammar/blocks/b1_prefixes.json",
-      "note": "B1 affix tranche: core 8 un-/dis-/in-(im-/il-/ir-)/re-/pre-/over-/under-/mis- · Spec_Prefixes_B1 2026-08-30 · Hang: Word craft · V_WFM-B1B2-01",
-      "exam": "word_formation"
-    },
-    {
-      "id": "c1_inversion_emphasis",
-      "label": "Inversion & inverted conditionals",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_inversion_emphasis.json",
-      "note": "Negative/limiting adverbials (Never have I…, Not only…, Under no circumstances…) · Only… / Not until… · inverted conditionals (Had I known…, Were I to…, Should you…) · so/such · 4 strands x 12 = 48 items · built to live 2026-08-07 (cloud run 11)",
-      "related": [
-        "b2_inversion",
-        "c1_clefts_fronting",
-        "c1_subjunctive",
-        "a1_word_order"
-      ],
-      "codex_unit": "G_SS-B2C1-01"
-    },
-    {
-      "id": "c1_discourse_grammar",
-      "label": "Discourse grammar",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_discourse_grammar.json",
-      "note": "cohesion beyond linkers: demonstrative reference (this/these/such a), summary (shell) nouns, topic-announcing frames, parallel reference (former/latter, the same, likewise, respectively) · 48 items · built to live 2026-08-07 (cloud run 15)",
-      "related": [
-        "b2_discourse_markers",
-        "b1_linkers",
-        "b2_relative_clauses_advanced",
-        "c1_ellipsis_substitution"
-      ],
-      "codex_unit": "G_CL-B2C1-01"
-    },
-    {
-      "id": "c1_register",
-      "label": "Register: formal vs informal",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_register.json",
-      "note": "register choice: phrasal vs Latinate verb, formal prepositional phrases, fixed correspondence frames, formal degree adverbs · 48 items · built to live 2026-08-07 (cloud run 15)",
-      "codex_unit": "G_SS-B2C1-01"
-    },
-    {
-      "id": "c1_ellipsis_substitution",
-      "label": "Ellipsis & substitution",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_ellipsis_substitution.json",
-      "note": "Systematic so/neither, one/ones, VP ellipsis · advanced cohesion · built to live 2026-08-07 (cloud run 14)",
-      "codex_unit": "G_SS-B2C1-01"
-    },
-    {
-      "id": "c1_advanced_modality",
-      "label": "Modality, hedging & stance",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_advanced_modality.json",
-      "note": "Fine modal distinctions + hedging/stance (appear/tend/likely/somewhat) · merged hedging into this path unit 2026-08-06 · B2 modals mega is foundation",
-      "related": [
-        "c1_hedging_stance",
-        "b2_modal_perfect",
-        "c1_subjunctive",
-        "b1_modals_speculation"
-      ],
-      "codex_unit": "G_VP-B2C1-01"
-    },
-    {
-      "id": "c1_participle_absolute",
-      "label": "Participle & absolute constructions",
-      "kind": "topic",
-      "root": "clause_linking",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_participle_absolute.json",
-      "note": "Present participle as condensed adverbial (same-subject rule, Not + -ing) · perfect participle Having + PP and passive Having been + PP · past participle clauses and reduced relatives (active -ing vs passive -ed) · absolute constructions and with + noun · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 12)",
-      "related": [
-        "b2_participle_clauses",
-        "b2_relative_clauses_advanced",
-        "c1_nominalisation"
-      ],
-      "codex_unit": "G_CL-B2C1-01"
-    },
-    {
-      "id": "c1_comparative_advanced",
-      "label": "Comparative structures advanced",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_comparative_advanced.json",
-      "note": "Live · advanced comparison: scaling the comparative and the equative · the … the and doubled comparatives · as … as in full · fewer/less, two-of-a-kind, than/then, prefer to vs would rather than · 48 items · cloud run 17",
-      "related": [
-        "a2_comparatives"
-      ],
-      "codex_unit": "G_NP-B2C1-01"
-    },
-    {
-      "id": "c1_article_nuance",
-      "label": "Article nuance",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_article_nuance.json",
-      "note": "Live · the two SINGULAR generics (a + singular as a rule about any member, the + singular as the species) and where the definite singular stops being generic · article-free phrases: by car / on foot, in person, by hand, on average, in detail, in charge of, on behalf of, side by side, face to face, step by step · abstract nouns going countable: business/a business, experience/an experience, success/a success, difficulty/a difficulty · the forced by structure: that-clause and relative post-modification, the number of vs a number of · scoped around b1_articles_advanced and b2_articles_genericity · 48 items · cloud run 18",
-      "related": [
-        "b2_articles_genericity",
-        "b1_articles_advanced",
-        "b2_articles_correction"
-      ],
-      "codex_unit": "G_NP-B2C1-01"
-    },
-    {
-      "id": "c1_time_aspect_edge",
-      "label": "Future & aspect edge cases",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_time_aspect_edge.json",
-      "note": "Future perfect continuous · finer aspect · future-in-the-past precision · be to · always-ing · 4 strands x 12 = 48 items · built to live 2026-08-07 (cloud run 11) · pairs with narrative mastery 2026-08-06",
-      "related": [
-        "c1_narrative_mastery",
-        "b2_future_forms",
-        "b2_future_in_the_past",
-        "b2_present_perfect_continuous"
-      ],
-      "codex_unit": "G_VP-B2C1-01"
-    },
-    {
-      "id": "c1_spoken_vs_written",
-      "label": "Spoken grammar vs written",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_spoken_vs_written.json",
-      "note": "heads (left dislocation) and tails (right dislocation), both drilled on the stand-in pronoun's agreement · question tags: the built system, then the cases that are not built (aren't I / am I, will you, would you, there, never / no one / hardly, someone + they, used to, I think) · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 19)",
-      "related": [
-        "c1_register"
-      ],
-      "codex_unit": "G_SS-B2C1-01"
-    },
-    {
-      "id": "c1_error_patterns",
-      "label": "Error patterns at C1",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_error_patterns.json",
-      "note": "fossilisation: articles/preps/tense · thin shell 2026-08-05",
-      "codex_unit": "G_SS-B2C1-01"
-    },
-    {
-      "id": "b2_future_forms",
-      "label": "Future forms review",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_future_forms.json",
-      "note": "Choice unit: will / going to / PC·PS future / fut cont / fut perfect / time clauses + future-in-the-past · thin shell 2026-08-06",
-      "related": [
-        "a2_will_going_to",
-        "b2_future_in_the_past",
-        "b1_reported_speech"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "b2_be_get_used_to",
-      "label": "Be used to / get used to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "B2"
-      ],
-      "status": "parked",
-      "content": "blocks/b2_be_get_used_to.json",
-      "note": "Contrast with used to (past habit) · be/get used to + -ing/noun · thin shell 2026-08-06",
-      "related": [
-        "a2_used_to",
-        "a2_past_simple"
-      ],
-      "codex_unit": "G_VP-B1B2-01"
-    },
-    {
-      "id": "c1_narrative_mastery",
-      "label": "Narrative tenses mastery",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_narrative_mastery.json",
-      "note": "Nuanced past combinations · scene/flashback/background · sequence layers · process vs result · narrative frame · used to / would and when to LEAVE OUT past perfect · 48 items · first C1 unit, built to live 2026-08-07 (cloud run 10)",
-      "related": [
-        "b2_narrative_tenses",
-        "b2_past_perfect",
-        "a2_past_continuous",
-        "c1_time_aspect_edge"
-      ],
-      "codex_unit": "G_VP-B2C1-01"
-    },
-    {
-      "id": "c1_clefts_fronting",
-      "label": "Clefts & fronting",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_clefts_fronting.json",
-      "note": "It-clefts · wh-clefts · the reason (why)… is that… and All (that)… is… · fronting without inversion · emphatic do · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 12)",
-      "related": [
-        "b2_cleft_sentences",
-        "b2_emphasis_fronting",
-        "c1_inversion_emphasis",
-        "b1_it_subject",
-        "b1_word_order_fronting"
-      ],
-      "codex_unit": "G_SS-B2C1-01"
-    },
-    {
-      "id": "c1_reporting_complementation",
-      "label": "Reporting verbs & complementation",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "C1"
-      ],
-      "status": "parked",
-      "content": "blocks/c1_reporting_complementation.json",
-      "note": "Reporting verbs + that/to-inf/-ing/object patterns · built to live 2026-08-08",
-      "related": [
-        "b2_reported_speech_advanced",
-        "b1_reported_speech",
-        "b2_gerunds_infinitives_advanced",
-        "c1_subjunctive"
-      ],
-      "codex_unit": "G_VC-B2C1-01"
-    },
-    {
-      "id": "a1_grammar_match",
-      "label": "Which is correct?",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_grammar_match.json",
-      "practice": "grammar_match_sprint",
-      "fruit": false,
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "Level check · Which is correct? · three English sentences · smoked A1 grammar · no Use · no fruit · Do next skips it (LEVEL-CHECKS §2)"
-    },
-    {
-      "id": "a1_grammar_type",
-      "label": "A1 grammar · type",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_grammar_type.json",
-      "practice": "grammar_type_sprint",
-      "fruit": false,
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "Level check · cloze type-in · Czech + gapped English · smoked A1 grammar · no Use · no fruit · Do next skips it (LEVEL-CHECKS §3)"
-    },
-    {
-      "id": "a1_finale",
-      "label": "A1 review",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "tree_part": "sentence_syntax",
-      "levels": [
-        "A1"
-      ],
-      "status": "live",
-      "content": "blocks/a1_finale.json",
-      "practice": "use_sprint",
-      "codex_unit": "G_SS-A1B1-01",
-      "note": "Level check · public title A1 review · CZ → English sentence · fruit this node only on Whole A1 clean · Do next does not skip it (LEVEL-CHECKS §4)"
-    },
-    {
-      "id": "a2_articles",
-      "label": "Articles at A2 — the vs zero",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "Second pass at articles between a1_articles and b1_articles_advanced — the vs zero with plurals and abstract nouns (*I like the dogs*, *The life is hard*). Highest-frequency Czech-L1 error.",
-      "codex_unit": "G_NP-A1B1-01"
-    },
-    {
-      "id": "a2_simple_vs_continuous",
-      "label": "Present simple vs continuous",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "Contrast unit — both forms are taught separately (a1_present_simple, a2_present_continuous) and never against each other. Czech has no progressive aspect, so the contrast is the error site.",
-      "codex_unit": "G_VP-A1B1-01"
-    },
-    {
-      "id": "a2_for_since",
-      "label": "For / since + duration",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "*I live here five years* — Czech uses present tense for continuing states. Pairs with a2_present_perfect.",
-      "codex_unit": "G_VP-A1B1-01"
-    },
-    {
-      "id": "a2_have_to",
-      "label": "Have to / don't have to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "Gap beside a2_modals_must_should. *mustn't* vs *don't have to* is a meaning reversal, not a register slip.",
-      "codex_unit": "G_VP-A1B1-01"
-    },
-    {
-      "id": "a2_past_questions",
-      "label": "Past questions & negatives",
-      "kind": "topic",
-      "root": "sentence_syntax",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "*Where did you went?* — do-support collapses in the past. Extends a1_questions_negatives.",
-      "codex_unit": "G_SS-A1B1-01"
-    },
-    {
-      "id": "a2_could_able",
-      "label": "Can / could / be able to",
-      "kind": "topic",
-      "root": "verb_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "Extends a1_can to past ability and polite / possibility uses.",
-      "codex_unit": "G_VP-A1B1-01"
-    },
-    {
-      "id": "a2_reflexives",
-      "label": "Reflexive verbs & -self",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "*I feel myself good*, *It happened me* — Czech se-verbs mis-map onto English. No equivalent unit anywhere in the app.",
-      "codex_unit": "G_NP-A1B1-01"
-    },
-    {
-      "id": "a2_say_tell",
-      "label": "Say / tell / speak / talk",
-      "kind": "topic",
-      "root": "verb_complementation",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "říct vs mluvit split differently in English. Survives untreated to C1.",
-      "codex_unit": "G_VC-A1B1-01"
-    },
-    {
-      "id": "a2_too_enough",
-      "label": "Too / enough",
-      "kind": "topic",
-      "root": "noun_phrase",
-      "levels": [
-        "A2"
-      ],
-      "status": "coming",
-      "note": "Absent at every level. Both meaning and position go wrong.",
-      "codex_unit": "G_NP-A1B1-01"
-    }
-  ],
-  "path_order_a2": [
+ "frozen_from": "rue-auto/grammar data/tree.json snapshot 2026-08-06 (lab FROZEN)",
+ "nodes": [
+  {
+   "id": "a1_word_classes",
+   "label": "Word classes",
+   "kind": "topic",
+   "root": "tap_root",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_word_classes.json",
+   "note": "noun · verb · adjective · pronoun · one / more than one — metalanguage for the path"
+  },
+  {
+   "id": "a1_be_have",
+   "label": "Be / have",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_be_have.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "am/is/are · have/has · identity & possession"
+  },
+  {
+   "id": "a1_present_simple",
+   "label": "Present simple",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_present_simple.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "I work / she works · -s · don’t / doesn’t"
+  },
+  {
+   "id": "a1_agreement",
+   "label": "Subject–verb agreement",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_agreement.json",
+   "note": "Present simple agreement · he works / they work · Hang: Sentence · G_SS-A1B1-01 · 2026-08-29",
+   "related": [
+    "a1_present_simple",
+    "a1_questions_negatives"
+   ]
+  },
+  {
+   "id": "a1_frequency",
+   "label": "Frequency",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_frequency.json",
+   "note": "always · usually · often · sometimes · never · before verb / after be · Hang: Sentence · G_SS-A1B1-01 with a2_adverbs_order · 2026-08-29",
+   "related": [
+    "a1_present_simple",
+    "a2_adverbs_order"
+   ]
+  },
+  {
+   "id": "a1_word_order",
+   "label": "Word order 1",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_word_order.json",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "SVO statements · basic sentence shape",
+   "related": [
+    "b1_word_order_fronting"
+   ]
+  },
+  {
+   "id": "a1_questions_negatives",
+   "label": "Questions & negatives",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_questions_negatives.json",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "do/does · be questions · not / don’t / doesn’t"
+  },
+  {
+   "id": "a1_question_words",
+   "label": "Question words",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "foundation": true,
+   "content": "blocks/a1_question_words.json",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "who · what · where · when · why · how · after do/does/be questions"
+  },
+  {
+   "id": "a1_articles",
+   "label": "Articles 1",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_articles.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "a/an/the · singular countable NEVER bare · a/an first, the next"
+  },
+  {
+   "id": "a1_possessives",
+   "label": "Possessives (my / your / 's)",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_possessives.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "my/your/his/her/our/their · name's · before noun · not mine/yours yet"
+  },
+  {
+   "id": "a1_object_pronouns",
+   "label": "Object pronouns",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_object_pronouns.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "I/me he/him pairs · then sentences subject vs object · after verb"
+  },
+  {
+   "id": "a1_and_but_because",
+   "label": "And / but / because",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_and_but_because.json",
+   "codex_unit": "G_CL-A1B1-01",
+   "note": "basic linkers · add / contrast / why"
+  },
+  {
+   "id": "a1_imperatives",
+   "label": "Imperatives",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_imperatives.json",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Open… · Don't… · base verb · no subject · please optional"
+  },
+  {
+   "id": "a1_like_want_need",
+   "label": "Like / want / need",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_like_want_need.json",
+   "codex_unit": "G_VC-A1B1-01",
+   "note": "verb + noun · light want to"
+  },
+  {
+   "id": "a1_prepositions_place",
+   "label": "Prepositions of place",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_prepositions_place.json",
+   "codex_unit": "G_PP-A1B1-01",
+   "note": "in · on · under · next to · basic place"
+  },
+  {
+   "id": "a1_there_is",
+   "label": "There is / there are",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_there_is.json",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "There is/are · is/are · Is there…? · not place-there · after be + a/an"
+  },
+  {
+   "id": "a1_some_any",
+   "label": "Some / any 1",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_some_any.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "some in + · any in −/? · offers some · with have and there is"
+  },
+  {
+   "id": "a1_can",
+   "label": "Can / can't",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_can.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "can / can't · no -s · Can you…? · light permission · not must/should"
+  },
+  {
+   "id": "a1_prepositions_time",
+   "label": "Prepositions of time",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_prepositions_time.json",
+   "codex_unit": "G_PP-A1B1-01",
+   "note": "at / on / in for time · clock · days · months · not place"
+  },
+  {
+   "id": "a1_to_for_with",
+   "label": "To / for / with",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_to_for_with.json",
+   "codex_unit": "G_PP-A1B1-01",
+   "note": "to direction/recipient · for purpose/benefit · with company · first dependent-prep step"
+  },
+  {
+   "id": "a2_present_continuous",
+   "label": "Present continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_present_continuous.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "I am working / she is working · now · be + -ing",
+   "related": [
+    "a1_present_simple",
+    "a1_be_have"
+   ]
+  },
+  {
+   "id": "a2_agreement",
+   "label": "Subject–verb agreement (A2)",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "codex_unit": "G_SS-A1B1-01",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_agreement.json",
+   "note": "do/does · was/were · there is/are · everybody · 2026-08-05 · Hang: Sentence · G_SS-A1B1-01 · 2026-08-29",
+   "related": [
+    "a1_agreement",
     "a2_present_continuous",
-    "a2_agreement",
+    "a1_questions_negatives"
+   ]
+  },
+  {
+   "id": "a2_past_simple",
+   "label": "Past simple",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_past_simple.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "I worked / went · regular -ed + high-frequency irregular · didn't / Did",
+   "related": [
+    "a1_present_simple"
+   ]
+  },
+  {
+   "id": "a2_will_going_to",
+   "label": "Will / going to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_will_going_to.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "future thin slice · will offers/promises · going to plans/evidence",
+   "related": [
+    "a1_present_simple"
+   ]
+  },
+  {
+   "id": "a2_past_continuous",
+   "label": "Past continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_past_continuous.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "was/were + -ing · past in progress",
+   "related": [
+    "a2_past_simple",
+    "a2_used_to"
+   ]
+  },
+  {
+   "id": "a2_used_to",
+   "label": "Used to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_used_to.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "past habit no longer true · moved from B1 2026-08-29 (James)",
+   "related": [
     "a2_past_simple",
     "a2_past_continuous",
-    "a2_used_to",
-    "a2_present_perfect",
-    "a2_will_going_to",
-    "a2_modals_must_should",
-    "a2_comparatives",
-    "a2_ed_ing_adjectives",
+    "b1_be_used_to"
+   ]
+  },
+  {
+   "id": "a2_present_perfect",
+   "label": "Present perfect",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_present_perfect.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "note": "have/has + past participle · just/already/ever/never/for/since · thin A2 CEFR",
+   "related": [
+    "a2_past_simple"
+   ]
+  },
+  {
+   "id": "a2_modals_must_should",
+   "label": "Must / should",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_modals_must_should.json",
+   "codex_unit": "G_VP-A1B1-01",
+   "note": "must obligation · should advice · + base · no have to yet",
+   "related": [
+    "a1_can"
+   ]
+  },
+  {
+   "id": "a2_comparatives",
+   "label": "Comparatives",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_comparatives.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "bigger / more … than · the -est / the most",
+   "related": [
+    "a1_word_classes"
+   ]
+  },
+  {
+   "id": "a2_quantifiers",
+   "label": "Much / many / a lot",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_quantifiers.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "many + plural · much + uncountable · after countable/uncountable",
+   "related": [
     "a2_countable",
-    "a2_quantifiers",
-    "a2_some_any_no",
-    "a2_adverbs_order",
-    "a2_first_conditional",
-    "a2_verb_patterns",
-    "a2_prepositions_movement"
-  ],
-  "path_order_b1": [
+    "a1_some_any"
+   ]
+  },
+  {
+   "id": "a2_countable",
+   "label": "Countable and uncountable nouns",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_countable.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "countable vs uncountable nouns · a/an · some · advice/information",
+   "related": [
+    "a1_articles",
+    "a1_some_any",
+    "a2_quantifiers"
+   ]
+  },
+  {
+   "id": "a2_adverbs_order",
+   "label": "Adverb position",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_adverbs_order.json",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "always/also/still before verb · after be · too/either · manner",
+   "related": [
+    "a1_frequency",
+    "a1_word_order"
+   ]
+  },
+  {
+   "id": "a2_ed_ing_adjectives",
+   "label": "-ed / -ing adjectives",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_ed_ing_adjectives.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "bored/boring · interested/interesting · feeling vs cause",
+   "related": [
+    "a1_word_classes",
+    "a2_comparatives"
+   ]
+  },
+  {
+   "id": "a2_first_conditional",
+   "label": "First conditional",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_first_conditional.json",
+   "codex_unit": "G_CL-A1B1-01",
+   "note": "If/when + present, will + base · light zero",
+   "related": [
+    "a1_and_but_because",
+    "b2_second_conditional"
+   ]
+  },
+  {
+   "id": "a2_verb_patterns",
+   "label": "Verb patterns 1 (to / -ing)",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_verb_patterns.json",
+   "codex_unit": "G_VC-A1B1-01",
+   "note": "like/enjoy + -ing · want/need/decide + to · would like to",
+   "related": [
+    "a1_like_want_need"
+   ]
+  },
+  {
+   "id": "a2_prepositions_movement",
+   "label": "Prepositions of movement",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_prepositions_movement.json",
+   "codex_unit": "G_PP-A1B1-01",
+   "note": "to/into/onto/from · across/through · get on/off",
+   "related": [
+    "a1_prepositions_place"
+   ]
+  },
+  {
+   "id": "b1_present_perfect_vs_past",
+   "label": "Present perfect vs past",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_present_perfect_vs_past.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "related": [
+    "a2_present_perfect",
+    "a2_past_simple"
+   ],
+   "note": "finished time vs life/result now · demo priority",
+   "demo_priority": true
+  },
+  {
+   "id": "b2_present_perfect_continuous",
+   "label": "Present perfect simple vs continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "blocks/b2_present_perfect_continuous.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "related": [
     "b1_present_perfect_vs_past",
-    "b1_passives",
-    "b1_modals_speculation",
-    "b1_articles_advanced",
+    "a2_present_perfect",
+    "a2_present_continuous"
+   ],
+   "note": "result/count/complete vs process/duration · B2 (moved from B1)",
+   "demo_priority": false
+  },
+  {
+   "id": "b2_past_perfect",
+   "label": "Past perfect",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "blocks/b2_past_perfect.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "related": [
+    "a2_past_simple",
+    "a2_present_perfect",
+    "b1_present_perfect_vs_past"
+   ],
+   "note": "had + past participle · earlier past · B2 (moved from B1)",
+   "demo_priority": false
+  },
+  {
+   "id": "b1_used_to",
+   "label": "Would for past habits",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "content": "blocks/b1_used_to.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "related": [
+    "a2_used_to",
+    "b1_be_used_to",
+    "a2_past_simple"
+   ],
+   "note": "RESCOPED 2026-09-02 (was PARKED as a duplicate of a2_used_to). B1 teaches WOULD for repeated past actions: We would go to the lake every summer. USED TO stays at a2_used_to - the A2 plan locked it whole there, questions and negatives included. Do not re-teach used to here. The trap: would does NOT work with states (*I would have a dog / *I would be a teacher) - only used to does."
+  },
+  {
+   "id": "b1_passives",
+   "label": "Passive (form of be)",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_passives.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "related": [
+    "a2_past_simple"
+   ],
+   "note": "be agreement in simple passive frames · present/past",
+   "demo_priority": false
+  },
+  {
+   "id": "b1_modals_speculation",
+   "label": "Modals (might / may / could / must)",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_modals_speculation.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "related": [
+    "a2_modals_must_should"
+   ],
+   "note": "possibility vs deduction"
+  },
+  {
+   "id": "b1_articles_advanced",
+   "label": "Articles 2",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_articles_advanced.json",
+   "codex_unit": "G_NP-B1B2-01",
+   "related": [
+    "a1_articles",
+    "b2_articles_correction"
+   ],
+   "note": "the / zero / a · institutions"
+  },
+  {
+   "id": "b1_it_subject",
+   "label": "It as subject",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_it_subject.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "related": [
+    "a1_word_order",
+    "b1_word_order_fronting"
+   ],
+   "note": "It is + adj + to · weather/time"
+  },
+  {
+   "id": "b1_word_order_fronting",
+   "label": "Word order 2",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_word_order_fronting.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "English order is fixed. Subject first; place before time at the end. Czech inversion is the error. Dummy it stays in b1_it_subject.",
+   "related": [
+    "a1_word_order",
     "b1_it_subject",
-    "b1_word_order_fronting",
-    "b1_suffixes",
-    "b1_relative_clauses",
-    "b1_reported_speech",
-    "b1_indirect_questions",
-    "b1_linkers",
-    "b1_degree_adverbs",
-    "b1_prefixes",
-    "b1_verb_patterns_advanced",
-    "b1_phrasal_verbs",
-    "b1_dependent_prepositions"
-  ],
-  "path_order_b2": [
-    "b2_present_perfect_continuous",
-    "b2_past_perfect",
-    "b2_narrative_tenses",
-    "b2_future_forms",
-    "b2_future_in_the_past",
-    "b2_be_get_used_to",
-    "b2_second_conditional",
+    "a2_adverbs_order",
+    "c1_clefts_fronting"
+   ]
+  },
+  {
+   "id": "b2_second_conditional",
+   "label": "Second conditional",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "blocks/b2_second_conditional.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "related": [
+    "a2_first_conditional",
     "b2_third_conditional",
-    "b2_mixed_conditionals",
+    "b2_mixed_conditionals"
+   ],
+   "note": "If + past, would + base · absorb if-alternatives lightly (unless / as long as / provided) · B2 contrast after A2 first",
+   "demo_priority": false
+  },
+  {
+   "id": "b1_relative_clauses",
+   "label": "Relative clauses",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_relative_clauses.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "related": [
+    "a1_word_order",
+    "a1_question_words"
+   ],
+   "note": "who / which / that"
+  },
+  {
+   "id": "b1_reported_speech",
+   "label": "Reported speech",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_reported_speech.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "related": [
+    "a2_past_simple",
+    "a1_questions_negatives",
+    "b1_indirect_questions"
+   ],
+   "note": "backshift · said/told"
+  },
+  {
+   "id": "b1_indirect_questions",
+   "label": "Indirect questions",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_indirect_questions.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "tell me / know / wonder · statement order inside",
+   "related": [
+    "b1_reported_speech",
+    "a1_question_words",
+    "a1_word_order"
+   ]
+  },
+  {
+   "id": "b1_linkers",
+   "label": "Linking words",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_linkers.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "related": [
+    "a1_and_but_because"
+   ],
+   "note": "contrast · result · reason"
+  },
+  {
+   "id": "b1_verb_patterns_advanced",
+   "label": "Verb patterns 2",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_verb_patterns_advanced.json",
+   "codex_unit": "G_VC-B1B2-01",
+   "related": [
+    "a2_verb_patterns"
+   ],
+   "note": "want sb to · stop/remember · make/let"
+  },
+  {
+   "id": "b1_dependent_prepositions",
+   "label": "Dependent prepositions 1",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_dependent_prepositions.json",
+   "codex_unit": "G_PP-B1B2-01",
+   "related": [
+    "a1_prepositions_place",
+    "a1_prepositions_time",
+    "a1_to_for_with",
+    "a2_prepositions_movement",
+    "b1_phrasal_verbs"
+   ],
+   "note": "Dependent prepositions 1 (B1) · four hard pairs + discuss. Units 2 (B2) and 3 (C1) planned, not built."
+  },
+  {
+   "id": "b2_third_conditional",
+   "label": "Third conditional",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "blocks/b2_third_conditional.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "related": [
+    "b2_second_conditional",
+    "b2_past_perfect"
+   ],
+   "note": "If + had + past participle, would have + past participle · B2 (moved from B1)",
+   "demo_priority": false
+  },
+  {
+   "id": "b1_phrasal_verbs",
+   "label": "Phrasal verbs 1",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "content": "blocks/b1_phrasal_verbs.json",
+   "codex_unit": "G_VC-B1B2-01",
+   "related": [
+    "b1_verb_patterns_advanced",
+    "b1_dependent_prepositions"
+   ],
+   "note": "frames rewrite 2026-08-30: 12-verb bank · separable/inseparable · demo priority",
+   "demo_priority": true
+  },
+  {
+   "id": "b2_narrative_tenses",
+   "label": "Narrative tenses",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_narrative_tenses.json",
+   "note": "mixed past simple/continuous/perfect · first draft 2026-08-06",
+   "related": [
+    "a2_past_simple",
+    "a2_past_continuous",
+    "b2_past_perfect"
+   ],
+   "codex_unit": "G_VP-B1B2-01"
+  },
+  {
+   "id": "b2_future_in_the_past",
+   "label": "Future in the past",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_future_in_the_past.json",
+   "note": "Map only · content folded into b2_future_forms · thin shell kept for repair links",
+   "related": [
+    "b2_future_forms",
+    "a2_will_going_to",
+    "b1_reported_speech"
+   ],
+   "codex_unit": "G_VP-B1B2-01"
+  },
+  {
+   "id": "b2_mixed_conditionals",
+   "label": "Mixed conditionals",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_mixed_conditionals.json",
+   "note": "Mixed 2nd/3rd · also unless / provided that / as long as / in case (no separate if-alternatives unit) · first draft 2026-08-06",
+   "related": [
+    "b2_second_conditional",
+    "b2_third_conditional"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_wish_if_only",
+   "label": "Wish / if only",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_wish_if_only.json",
+   "note": "wish + past / PP / would · first draft 2026-08-06",
+   "related": [
+    "b2_second_conditional",
+    "b2_third_conditional"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_passives_advanced",
+   "label": "Passives advanced",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_passives_advanced.json",
+   "note": "forms review + get-passive · thin shell 2026-08-05",
+   "related": [
+    "b1_passives"
+   ],
+   "codex_unit": "G_VP-B1B2-01"
+  },
+  {
+   "id": "b2_causative",
+   "label": "Causative (have/get done)",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_causative.json",
+   "note": "have/get something done · first draft 2026-08-06",
+   "related": [
+    "b1_passives",
+    "b2_passives_advanced"
+   ],
+   "codex_unit": "G_VP-B1B2-01"
+  },
+  {
+   "id": "b2_reported_speech_advanced",
+   "label": "Reported speech advanced",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_reported_speech_advanced.json",
+   "note": "reporting verbs · 4 strands x 12 · built to live 2026-08-06 (cloud run 7)",
+   "related": [
+    "b1_reported_speech"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_relative_clauses_advanced",
+   "label": "Relative clauses advanced",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_relative_clauses_advanced.json",
+   "note": "whose/whom, preposition + which, non-defining, reduced · 4 strands x 12 · built to live 2026-08-06 (cloud run 7)",
+   "related": [
+    "b1_relative_clauses"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_participle_clauses",
+   "label": "Participle clauses",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_participle_clauses.json",
+   "note": "-ing time/reason (incl. Not + -ing) · past participle clauses · Having / Having been + past participle · 4 strands x 12 · built to live 2026-08-07 (cloud run 8)",
+   "related": [
+    "b2_relative_clauses_advanced"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_inversion",
+   "label": "Inversion",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_inversion.json",
+   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+   "related": [
+    "c1_inversion_emphasis"
+   ],
+   "codex_unit": "G_SS-B1B2-01"
+  },
+  {
+   "id": "b2_cleft_sentences",
+   "label": "Cleft sentences",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_cleft_sentences.json",
+   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+   "related": [
+    "c1_clefts_fronting"
+   ],
+   "codex_unit": "G_SS-B1B2-01"
+  },
+  {
+   "id": "b2_modal_perfect",
+   "label": "Modals (meanings + perfect)",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_modal_perfect.json",
+   "note": "Mega unit: ability/permission/obligation/advice/possibility/deduction + perfect modals + semi-modals (have to, need to, ought to, be allowed to, make/let) · expand from first draft 2026-08-06",
+   "related": [
+    "b1_modals_speculation",
+    "a2_modals_must_should",
+    "b1_verb_patterns_advanced"
+   ],
+   "codex_unit": "G_VP-B1B2-01"
+  },
+  {
+   "id": "b2_articles_genericity",
+   "label": "Articles / genericity",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_articles_genericity.json",
+   "note": "zero article for general statements (plural + uncountable) · `the` + adjective/nationality/unique nouns · generic vs specific minimal pairs · 4 strands x 12 · built 2026-08-07",
+   "related": [
+    "b1_articles_advanced",
+    "a1_articles",
+    "b2_articles_correction"
+   ],
+   "codex_unit": "G_NP-B1B2-01"
+  },
+  {
+   "id": "b2_articles_correction",
+   "label": "Articles: the mixed cases",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_articles_correction.json",
+   "note": "error-correction sheet from Václav's lesson turned into 28 gap items · first mention vs known · the forced by of/superlative/date · names · institutions · generic zero · built 2026-08-22",
+   "related": [
+    "b2_articles_genericity",
+    "b1_articles_advanced"
+   ],
+   "codex_unit": "G_NP-B1B2-01"
+  },
+  {
+   "id": "b2_quantifiers_advanced",
+   "label": "Quantifiers advanced",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_quantifiers_advanced.json",
+   "note": "few/a few vs little/a little · quantifier + `of` · both/neither/either and verb agreement · each vs every, no and any · 4 strands x 12 · built 2026-08-07",
+   "related": [
+    "a2_quantifiers"
+   ],
+   "codex_unit": "G_NP-B1B2-01"
+  },
+  {
+   "id": "b2_discourse_markers",
+   "label": "Discourse markers B2",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_discourse_markers.json",
+   "note": "however / therefore / moreover… · contrast · result · addition · marker grammar (adverb vs conjunction vs preposition) · 48 items · built to live 2026-08-07 (cloud run 10)",
+   "related": [
+    "b1_linkers"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_clear_claims",
+   "label": "Clear claims",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "content": "blocks/b2_clear_claims.json",
+   "note": "Pilot writing logic — not on B2 path · shaded / not class spine · 2026-08-06",
+   "related": [
+    "b2_discourse_markers",
+    "b1_linkers"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "b2_emphasis_fronting",
+   "label": "Emphasis & fronting",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_emphasis_fronting.json",
+   "note": "Map-only C1 · absorbed into path unit(s) 2026-08-06 · thin shell kept for repair",
+   "related": [
+    "c1_clefts_fronting",
+    "c1_inversion_emphasis"
+   ],
+   "codex_unit": "G_SS-B1B2-01"
+  },
+  {
+   "id": "b2_gerunds_infinitives_advanced",
+   "label": "Gerunds & infinitives advanced",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_gerunds_infinitives_advanced.json",
+   "note": "stop/go on · remember/forget · try/mean/need · choose-the-verb strand teaches remember, forget, regret, mean · 4 strands x 12 · built to live 2026-08-07 (cloud run 8)",
+   "related": [
+    "b1_verb_patterns_advanced",
+    "a2_verb_patterns"
+   ],
+   "codex_unit": "G_VC-B1B2-01"
+  },
+  {
+   "id": "b2_preposition_ing",
+   "label": "Preposition + -ing",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_preposition_ing.json",
+   "note": "adjective/verb + preposition + -ing · plain prepositions + -ing · `to` preposition vs infinitive marker · 4 strands x 12 · built 2026-08-07 · PARKED 2026-08-24 (James): duplicate teaching. The RULE (after a preposition, -ing) is one exceptionless line, now taught on slide 4 of b1_verb_patterns_advanced. The COLLOCATIONS are b1_dependent_prepositions' ground — 13 of the 27 this unit claimed to add are already drilled there, 19 slots earlier and a level lower, and that unit gaps the PREPOSITION while this one gaps the verb form. Its own vocabulary is 84% A1, so it was never a B2 unit. A real B2 dependent-prepositions unit is wanted here — revision plus ~16 genuinely new B2/C1 collocations (accuse of, blame for, cope with, opposed to, satisfied with, consistent with, anxious about ...) — but NOTHING IS TO BE BUILT without careful planning first (his standing instruction). Left in path_order so indices do not shift.",
+   "related": [
+    "b1_dependent_prepositions"
+   ],
+   "codex_unit": "G_PP-B1B2-01"
+  },
+  {
+   "id": "b2_hypothetical_past",
+   "label": "Hypothetical past",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_hypothetical_past.json",
+   "note": "I'd rather / it's time / as if · thin shell 2026-08-05",
+   "related": [
     "b2_wish_if_only",
-    "b2_hypothetical_past",
-    "b2_modal_perfect",
+    "b2_second_conditional"
+   ],
+   "codex_unit": "G_CL-B1B2-01"
+  },
+  {
+   "id": "c1_nominalisation",
+   "label": "Nominalisation",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_nominalisation.json",
+   "note": "verb → noun across the productive endings (-ion, -ment, -al, -ure, -ance, -y) plus the irregulars loss/growth/choice · adjective → noun and the -ness over-generalisation trap · the preposition the nominalisation demands (of / to / in / for / on / between / that) · the register move from finite clause to noun phrase, and when not to make it · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 13)",
+   "codex_unit": "G_NP-B2C1-01",
+   "related": [
+    "c1_complex_noun_phrases",
+    "c1_register",
+    "c1_advanced_passive"
+   ]
+  },
+  {
+   "id": "c1_advanced_passive",
+   "label": "Advanced passives & reporting passives",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_advanced_passive.json",
+   "note": "Impersonal It is said / was announced / has been suggested + that-clause · raised subject with the to-infinitive carrying the time (to be / to have been / to be doing / to have been doing) · the passive across every tense, aspect, modal and non-finite form · get-passive register and the by-agent, including passives of ditransitives · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 13)",
+   "related": [
     "b2_passives_advanced",
     "b2_causative",
-    "b2_reported_speech_advanced",
-    "b2_relative_clauses_advanced",
-    "b2_participle_clauses",
-    "b2_gerunds_infinitives_advanced",
-    "b2_preposition_ing",
-    "b2_articles_genericity",
-    "b2_articles_correction",
-    "b2_quantifiers_advanced",
-    "b2_discourse_markers",
-    "b2_clear_claims",
-    "b2_word_formation"
-  ],
-  "path_order_c1": [
-    "c1_narrative_mastery",
-    "c1_time_aspect_edge",
+    "c1_reporting_complementation"
+   ],
+   "codex_unit": "G_VP-B2C1-01"
+  },
+  {
+   "id": "c1_subjunctive",
+   "label": "Subjunctive & formal unreal",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_subjunctive.json",
+   "note": "essential/important that + base · were to · elaborate wish/if only/would rather · thin shell · pairs with B2 wish/hypothetical 2026-08-06",
+   "related": [
+    "b2_wish_if_only",
+    "b2_hypothetical_past",
+    "c1_advanced_modality",
+    "c1_inversion_emphasis"
+   ],
+   "codex_unit": "G_CL-B2C1-01"
+  },
+  {
+   "id": "c1_complex_noun_phrases",
+   "label": "Complex noun phrases",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_complex_noun_phrases.json",
+   "note": "stacked pre/post-modification · built to live 2026-08-07 (cloud run 14)",
+   "related": [
+    "c1_nominalisation",
+    "c1_article_nuance"
+   ],
+   "codex_unit": "G_NP-B2C1-01"
+  },
+  {
+   "id": "c1_hedging_stance",
+   "label": "Hedging & stance",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_hedging_stance.json",
+   "note": "Map-only · content folded into c1_advanced_modality (path) · thin shell kept for repair 2026-08-06",
+   "codex_unit": "G_VP-B2C1-01",
+   "related": [
+    "c1_advanced_modality",
+    "c1_register"
+   ]
+  },
+  {
+   "id": "b1_degree_adverbs",
+   "label": "Degree adverbs",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b1_degree_adverbs.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "scale (a bit/quite/very/extremely) + too/enough. Not so/such, not extreme adjectives. Hang: Sentence · G_SS-B1B2-01 with a2_adverbs_order · 2026-08-28",
+   "related": [
+    "a2_adverbs_order"
+   ]
+  },
+  {
+   "id": "a2_some_any_no",
+   "label": "Some / any 2",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/a2_some_any_no.json",
+   "codex_unit": "G_NP-A1B1-01",
+   "note": "žádný = no / not…any, one negation · free-choice any · compounds · split from a1_some_any 2026-08-16",
+   "related": [
+    "a1_some_any",
+    "a2_quantifiers"
+   ]
+  },
+  {
+   "id": "b2_word_formation",
+   "label": "Word formation (FCE Part 3)",
+   "kind": "topic",
+   "root": "word_craft",
+   "tree_part": "word_craft",
+   "codex_unit": "V_WFM-B2C1-01",
+   "levels": [
+    "B2"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b2_word_formation.json",
+   "note": "FCE Part 3: sentence gap + capitalised root, whole derived word typed · EN-only cues · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B2C1-01 · 2026-08-29",
+   "exam": "word_formation"
+  },
+  {
+   "id": "c1_word_formation",
+   "label": "Word formation (CAE Part 3)",
+   "kind": "topic",
+   "root": "word_craft",
+   "tree_part": "word_craft",
+   "codex_unit": "V_WFM-B2C1-01",
+   "levels": [
+    "C1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/c1_word_formation.json",
+   "note": "CAE Part 3: rarer suffixes, shifted stems, assimilating negatives · roots from Ready for C1 families, original sentences · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B2C1-01 · 2026-08-29",
+   "exam": "word_formation"
+  },
+  {
+   "id": "b1_suffixes",
+   "label": "Suffixes — the basics",
+   "kind": "topic",
+   "root": "word_craft",
+   "tree_part": "word_craft",
+   "codex_unit": "V_WFM-B1B2-01",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b1_suffixes.json",
+   "note": "B1 affix tranche: -er/-or/-ist, -tion/-sion, -ment/-ness, -ful/-less/-y, -able/-ous/-al, -ly · Czech glosses · built 2026-08-18 · Hang: Word craft (cambium — growth layer, off Forms) · V_WFM-B1B2-01 · 2026-08-29",
+   "exam": "word_formation"
+  },
+  {
+   "id": "b1_prefixes",
+   "label": "Prefixes",
+   "kind": "topic",
+   "root": "word_craft",
+   "tree_part": "word_craft",
+   "codex_unit": "V_WFM-B1B2-01",
+   "levels": [
+    "B1"
+   ],
+   "status": "live",
+   "foundation": false,
+   "content": "grammar/blocks/b1_prefixes.json",
+   "note": "B1 affix tranche: core 8 un-/dis-/in-(im-/il-/ir-)/re-/pre-/over-/under-/mis- · Spec_Prefixes_B1 2026-08-30 · Hang: Word craft · V_WFM-B1B2-01",
+   "exam": "word_formation"
+  },
+  {
+   "id": "c1_inversion_emphasis",
+   "label": "Inversion & inverted conditionals",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_inversion_emphasis.json",
+   "note": "Negative/limiting adverbials (Never have I…, Not only…, Under no circumstances…) · Only… / Not until… · inverted conditionals (Had I known…, Were I to…, Should you…) · so/such · 4 strands x 12 = 48 items · built to live 2026-08-07 (cloud run 11)",
+   "related": [
     "b2_inversion",
-    "c1_inversion_emphasis",
+    "c1_clefts_fronting",
+    "c1_subjunctive",
+    "a1_word_order"
+   ],
+   "codex_unit": "G_SS-B2C1-01"
+  },
+  {
+   "id": "c1_discourse_grammar",
+   "label": "Discourse grammar",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_discourse_grammar.json",
+   "note": "cohesion beyond linkers: demonstrative reference (this/these/such a), summary (shell) nouns, topic-announcing frames, parallel reference (former/latter, the same, likewise, respectively) · 48 items · built to live 2026-08-07 (cloud run 15)",
+   "related": [
+    "b2_discourse_markers",
+    "b1_linkers",
+    "b2_relative_clauses_advanced",
+    "c1_ellipsis_substitution"
+   ],
+   "codex_unit": "G_CL-B2C1-01"
+  },
+  {
+   "id": "c1_register",
+   "label": "Register: formal vs informal",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_register.json",
+   "note": "register choice: phrasal vs Latinate verb, formal prepositional phrases, fixed correspondence frames, formal degree adverbs · 48 items · built to live 2026-08-07 (cloud run 15)",
+   "codex_unit": "G_SS-B2C1-01"
+  },
+  {
+   "id": "c1_ellipsis_substitution",
+   "label": "Ellipsis & substitution",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_ellipsis_substitution.json",
+   "note": "Systematic so/neither, one/ones, VP ellipsis · advanced cohesion · built to live 2026-08-07 (cloud run 14)",
+   "codex_unit": "G_SS-B2C1-01"
+  },
+  {
+   "id": "c1_advanced_modality",
+   "label": "Modality, hedging & stance",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_advanced_modality.json",
+   "note": "Fine modal distinctions + hedging/stance (appear/tend/likely/somewhat) · merged hedging into this path unit 2026-08-06 · B2 modals mega is foundation",
+   "related": [
+    "c1_hedging_stance",
+    "b2_modal_perfect",
+    "c1_subjunctive",
+    "b1_modals_speculation"
+   ],
+   "codex_unit": "G_VP-B2C1-01"
+  },
+  {
+   "id": "c1_participle_absolute",
+   "label": "Participle & absolute constructions",
+   "kind": "topic",
+   "root": "clause_linking",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_participle_absolute.json",
+   "note": "Present participle as condensed adverbial (same-subject rule, Not + -ing) · perfect participle Having + PP and passive Having been + PP · past participle clauses and reduced relatives (active -ing vs passive -ed) · absolute constructions and with + noun · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 12)",
+   "related": [
+    "b2_participle_clauses",
+    "b2_relative_clauses_advanced",
+    "c1_nominalisation"
+   ],
+   "codex_unit": "G_CL-B2C1-01"
+  },
+  {
+   "id": "c1_comparative_advanced",
+   "label": "Comparative structures advanced",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_comparative_advanced.json",
+   "note": "Live · advanced comparison: scaling the comparative and the equative · the … the and doubled comparatives · as … as in full · fewer/less, two-of-a-kind, than/then, prefer to vs would rather than · 48 items · cloud run 17",
+   "related": [
+    "a2_comparatives"
+   ],
+   "codex_unit": "G_NP-B2C1-01"
+  },
+  {
+   "id": "c1_article_nuance",
+   "label": "Article nuance",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_article_nuance.json",
+   "note": "Live · the two SINGULAR generics (a + singular as a rule about any member, the + singular as the species) and where the definite singular stops being generic · article-free phrases: by car / on foot, in person, by hand, on average, in detail, in charge of, on behalf of, side by side, face to face, step by step · abstract nouns going countable: business/a business, experience/an experience, success/a success, difficulty/a difficulty · the forced by structure: that-clause and relative post-modification, the number of vs a number of · scoped around b1_articles_advanced and b2_articles_genericity · 48 items · cloud run 18",
+   "related": [
+    "b2_articles_genericity",
+    "b1_articles_advanced",
+    "b2_articles_correction"
+   ],
+   "codex_unit": "G_NP-B2C1-01"
+  },
+  {
+   "id": "c1_time_aspect_edge",
+   "label": "Future & aspect edge cases",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_time_aspect_edge.json",
+   "note": "Future perfect continuous · finer aspect · future-in-the-past precision · be to · always-ing · 4 strands x 12 = 48 items · built to live 2026-08-07 (cloud run 11) · pairs with narrative mastery 2026-08-06",
+   "related": [
+    "c1_narrative_mastery",
+    "b2_future_forms",
+    "b2_future_in_the_past",
+    "b2_present_perfect_continuous"
+   ],
+   "codex_unit": "G_VP-B2C1-01"
+  },
+  {
+   "id": "c1_spoken_vs_written",
+   "label": "Spoken grammar vs written",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_spoken_vs_written.json",
+   "note": "heads (left dislocation) and tails (right dislocation), both drilled on the stand-in pronoun's agreement · question tags: the built system, then the cases that are not built (aren't I / am I, will you, would you, there, never / no one / hardly, someone + they, used to, I think) · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 19)",
+   "related": [
+    "c1_register"
+   ],
+   "codex_unit": "G_SS-B2C1-01"
+  },
+  {
+   "id": "c1_error_patterns",
+   "label": "Error patterns at C1",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_error_patterns.json",
+   "note": "fossilisation: articles/preps/tense · thin shell 2026-08-05",
+   "codex_unit": "G_SS-B2C1-01"
+  },
+  {
+   "id": "b2_future_forms",
+   "label": "Future forms review",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B2"
+   ],
+   "status": "parked",
+   "content": "blocks/b2_future_forms.json",
+   "note": "Choice unit: will / going to / PC·PS future / fut cont / fut perfect / time clauses + future-in-the-past · thin shell 2026-08-06",
+   "related": [
+    "a2_will_going_to",
+    "b2_future_in_the_past",
+    "b1_reported_speech"
+   ],
+   "codex_unit": "G_VP-B1B2-01"
+  },
+  {
+   "id": "b1_be_used_to",
+   "label": "Be used to / get used to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "content": "grammar/blocks/b1_be_used_to.json",
+   "note": "PULLED FORWARD 2026-09-02 from B2 (was b2_be_get_used_to, parked). be/get used to + -ing = zvyknout si. Two traps: the -ing (*I am used to work here) and be vs get (a state you are already in vs the change into it). Keep clear of b1_used_to, which is now WOULD for past habits. Bank was emptied 2026-08-29 (auto-authored, James removed it) - do NOT refill from auto, rebuild by hand.",
+   "related": [
+    "b1_used_to",
+    "a2_used_to"
+   ],
+   "codex_unit": "G_VP-B1B2-01",
+   "tree_part": "verb_phrase"
+  },
+  {
+   "id": "c1_narrative_mastery",
+   "label": "Narrative tenses mastery",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_narrative_mastery.json",
+   "note": "Nuanced past combinations · scene/flashback/background · sequence layers · process vs result · narrative frame · used to / would and when to LEAVE OUT past perfect · 48 items · first C1 unit, built to live 2026-08-07 (cloud run 10)",
+   "related": [
+    "b2_narrative_tenses",
+    "b2_past_perfect",
+    "a2_past_continuous",
+    "c1_time_aspect_edge"
+   ],
+   "codex_unit": "G_VP-B2C1-01"
+  },
+  {
+   "id": "c1_clefts_fronting",
+   "label": "Clefts & fronting",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_clefts_fronting.json",
+   "note": "It-clefts · wh-clefts · the reason (why)… is that… and All (that)… is… · fronting without inversion · emphatic do · 4 strands x 12 · 48 items · built to live 2026-08-07 (cloud run 12)",
+   "related": [
     "b2_cleft_sentences",
     "b2_emphasis_fronting",
-    "c1_clefts_fronting",
-    "c1_participle_absolute",
-    "c1_advanced_passive",
-    "c1_nominalisation",
-    "c1_complex_noun_phrases",
-    "c1_ellipsis_substitution",
-    "c1_discourse_grammar",
-    "c1_register",
-    "c1_advanced_modality",
-    "c1_hedging_stance",
-    "c1_subjunctive",
-    "c1_reporting_complementation",
-    "c1_comparative_advanced",
-    "c1_article_nuance",
-    "c1_spoken_vs_written",
-    "c1_error_patterns",
-    "c1_word_formation"
-  ],
-  "roots": [
-    {
-      "id": "verb_phrase",
-      "label": "Verb phrase",
-      "short": "VP",
-      "codex_root": "verb_phrase"
-    },
-    {
-      "id": "noun_phrase",
-      "label": "Noun phrase",
-      "short": "NP",
-      "codex_root": "noun_phrase"
-    },
-    {
-      "id": "sentence_syntax",
-      "label": "Sentence syntax",
-      "short": "SS",
-      "codex_root": "sentence_syntax"
-    },
-    {
-      "id": "clause_linking",
-      "label": "Clause linking",
-      "short": "CL",
-      "codex_root": "clause_linking"
-    },
-    {
-      "id": "verb_complementation",
-      "label": "Verb patterns",
-      "short": "VC",
-      "codex_root": "verb_complementation"
-    },
-    {
-      "id": "prepositions_particles",
-      "label": "Prepositions",
-      "short": "PP",
-      "codex_root": "prepositions_particles"
-    }
-  ],
-  "tap_root": {
-    "id": "tap_root",
-    "label": "Tap root",
-    "note": "Foundation spike. Thickens from foundation topics (sentence machinery), not every lateral knot."
+    "c1_inversion_emphasis",
+    "b1_it_subject",
+    "b1_word_order_fronting"
+   ],
+   "codex_unit": "G_SS-B2C1-01"
+  },
+  {
+   "id": "c1_reporting_complementation",
+   "label": "Reporting verbs & complementation",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "C1"
+   ],
+   "status": "parked",
+   "content": "blocks/c1_reporting_complementation.json",
+   "note": "Reporting verbs + that/to-inf/-ing/object patterns · built to live 2026-08-08",
+   "related": [
+    "b2_reported_speech_advanced",
+    "b1_reported_speech",
+    "b2_gerunds_infinitives_advanced",
+    "c1_subjunctive"
+   ],
+   "codex_unit": "G_VC-B2C1-01"
+  },
+  {
+   "id": "a1_grammar_match",
+   "label": "Which is correct?",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_grammar_match.json",
+   "practice": "grammar_match_sprint",
+   "fruit": false,
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Level check · Which is correct? · three English sentences · smoked A1 grammar · no Use · no fruit · Do next skips it (LEVEL-CHECKS §2)"
+  },
+  {
+   "id": "a1_grammar_type",
+   "label": "A1 grammar · type",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_grammar_type.json",
+   "practice": "grammar_type_sprint",
+   "fruit": false,
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Level check · cloze type-in · Czech + gapped English · smoked A1 grammar · no Use · no fruit · Do next skips it (LEVEL-CHECKS §3)"
+  },
+  {
+   "id": "a1_finale",
+   "label": "A1 review",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "A1"
+   ],
+   "status": "live",
+   "content": "blocks/a1_finale.json",
+   "practice": "use_sprint",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Level check · public title A1 review · CZ → English sentence · fruit this node only on Whole A1 clean · Do next does not skip it (LEVEL-CHECKS §4)"
+  },
+  {
+   "id": "a2_grammar_match",
+   "label": "Which is correct?",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_grammar_match.json",
+   "practice": "grammar_match_sprint",
+   "fruit": false,
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Level check · Which is correct? · live A2 teaching grammar · no Use · no fruit"
+  },
+  {
+   "id": "a2_grammar_type",
+   "label": "A2 grammar · type",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_grammar_type.json",
+   "practice": "grammar_type_sprint",
+   "fruit": false,
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Level check · cloze type-in · live A2 teaching grammar · no Use · no fruit"
+  },
+  {
+   "id": "a2_finale",
+   "label": "A2 review",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_finale.json",
+   "practice": "use_sprint",
+   "codex_unit": "G_SS-A1B1-01",
+   "note": "Level check · public title A2 review · CZ → English sentence · fruit this node only on Whole A2 clean · Do next does not skip it"
+  },
+  {
+   "id": "a2_indefinite_pronouns",
+   "label": "Someone / anybody / nobody / else",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_indefinite_pronouns.json",
+   "note": "Person-compounds + else + Czech Nobody didn't. Thing-compounds already in a2_some_any_no.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "a2_possessive_pronouns",
+   "label": "Mine / yours / his / hers",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_possessive_pronouns.json",
+   "note": "Pronoun forms mine/yours/hers/ours/theirs + of mine. A1 possessives is my/your/'s only.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "a2_articles",
+   "label": "a / the / nothing",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_articles.json",
+   "note": "Second pass at articles between a1_articles and b1_articles_advanced — the vs zero with plurals and abstract nouns (*I like the dogs*, *The life is hard*). Highest-frequency Czech-L1 error.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "a2_simple_vs_continuous",
+   "label": "Present simple vs continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_simple_vs_continuous.json",
+   "note": "Contrast unit — both forms are taught separately (a1_present_simple, a2_present_continuous) and never against each other. Czech has no progressive aspect, so the contrast is the error site.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_arrangements",
+   "label": "Arrangements & timetables",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_arrangements.json",
+   "note": "Present continuous for a diary plan + present simple for a timetable. Not will/going to. Not every-day vs now.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_for_since",
+   "label": "For / since + duration",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_for_since.json",
+   "note": "*I live here five years* — Czech uses present tense for continuing states. Pairs with a2_present_perfect.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_have_to",
+   "label": "Have to / don't have to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_have_to.json",
+   "note": "Gap beside a2_modals_must_should. *mustn't* vs *don't have to* is a meaning reversal, not a register slip.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_indirect_questions",
+   "label": "Indirect questions (A2)",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_indirect_questions.json",
+   "note": "Word order only: Do you know where the station is? No backshift. B1 pack stays for if/whether and more verbs.",
+   "codex_unit": "G_SS-A1B1-01"
+  },
+  {
+   "id": "a2_past_questions",
+   "label": "Past questions & negatives",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_past_questions.json",
+   "note": "*Where did you went?* — do-support collapses in the past. Extends a1_questions_negatives.",
+   "codex_unit": "G_SS-A1B1-01"
+  },
+  {
+   "id": "a2_could_able",
+   "label": "Can / could (past ability)",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_could_able.json",
+   "note": "could = past of can (ability). was able to → B1. Requests → chunks. Not speculation.",
+   "codex_unit": "G_VP-A1B1-01"
+  },
+  {
+   "id": "a2_reflexives",
+   "label": "Reflexive verbs & -self",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_reflexives.json",
+   "note": "*I feel myself good*, *It happened me* — Czech se-verbs mis-map onto English. No equivalent unit anywhere in the app.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "a2_say_tell",
+   "label": "Say / tell / speak / talk",
+   "kind": "topic",
+   "root": "verb_complementation",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_say_tell.json",
+   "note": "říct vs mluvit split differently in English. Survives untreated to C1.",
+   "codex_unit": "G_VC-A1B1-01"
+  },
+  {
+   "id": "a2_too_enough",
+   "label": "Too / enough",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "levels": [
+    "A2"
+   ],
+   "status": "live",
+   "content": "blocks/a2_too_enough.json",
+   "note": "Absent at every level. Both meaning and position go wrong.",
+   "codex_unit": "G_NP-A1B1-01"
+  },
+  {
+   "id": "b1_present_perfect_continuous",
+   "label": "Present perfect continuous",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_present_perfect_continuous.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. How long have you been -ing? Action started in the past, still going. Czech uses a present tense with uz (Ucim se anglicky pet let) -> *I learn English for five years. Recycles for/since from a2_for_since - no separate B1 for/since unit. Not the simple/past contrast (b1_present_perfect_vs_past)."
+  },
+  {
+   "id": "b1_past_perfect",
+   "label": "Past perfect",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_past_perfect.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Past before past. When I arrived, the film had already started. Czech has one past tense, so students use past simple twice and lose the order. Not narrative tenses (b2_narrative_tenses), not past perfect continuous (B2)."
+  },
+  {
+   "id": "b1_past_continuous_2",
+   "label": "Past continuous 2",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_past_continuous_2.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Questions, negatives and the when/while contrast. a2_past_continuous did in-progress and background only and is marked skip. Rule C33: the usual job is an interrupted action (was -ing when + past simple), not clock-time snapshots."
+  },
+  {
+   "id": "b1_past_modals",
+   "label": "Had to / was able to / managed to",
+   "kind": "topic",
+   "root": "verb_phrase",
+   "tree_part": "verb_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_past_modals.json",
+   "codex_unit": "G_VP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. a2_could_able gave past ability could. This is the rest: had to (past obligation), and the one-occasion success was able to / managed to where could does not work. Trap: *I could pass the exam for a single completed success."
+  },
+  {
+   "id": "b1_agreement_tricky",
+   "label": "Agreement 2 - everybody, news, police",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_agreement_tricky.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Above a1_agreement / a2_agreement. everybody/everyone/nobody take a singular verb; news, information, advice are uncountable singular; people and police are plural. Czech policie is singular -> *The police is coming. Czech noviny is plural -> *The news are bad."
+  },
+  {
+   "id": "b1_reported_speech_2",
+   "label": "Reported speech 2 - questions & commands",
+   "kind": "topic",
+   "root": "clause_linking",
+   "tree_part": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_reported_speech_2.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. b1_reported_speech already carries statements, backshift, said/told and if/wh. This unit is the word order in reported questions (*He asked me where did I live) and ask/tell + object + to-infinitive for commands and requests."
+  },
+  {
+   "id": "b1_question_tags",
+   "label": "Question tags",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_question_tags.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Positive sentence -> negative tag, and the reverse. The tag repeats the auxiliary. Czech uses one invariant tag (ze jo? / vid?) -> *You are coming, no? / *You like it, yes?"
+  },
+  {
+   "id": "b1_relative_clauses_2",
+   "label": "Relative clauses 2 - non-defining",
+   "kind": "topic",
+   "root": "clause_linking",
+   "tree_part": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_relative_clauses_2.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. THE comma rule, and it is the single biggest Czech interference target at B1: Czech puts a comma before every relative clause, so students write *The man, who lives next door, is a doctor when the clause is defining and takes none. Contrast pack with b1_relative_clauses (defining + omission). Also: no that in a non-defining clause."
+  },
+  {
+   "id": "b1_second_conditional",
+   "label": "Second conditional",
+   "kind": "topic",
+   "root": "clause_linking",
+   "tree_part": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_second_conditional.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Unreal or unlikely present: If I had more time, I would learn Italian. Czech kdybych + conditional. The trap is would in the if-clause (*If I would have more time), which Czech word-for-word produces. a2_first_conditional is the real-possibility one. Third and mixed stay B2."
+  },
+  {
+   "id": "b1_wishes",
+   "label": "I wish + past",
+   "kind": "topic",
+   "root": "clause_linking",
+   "tree_part": "clause_linking",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_wishes.json",
+   "codex_unit": "G_CL-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Past form, present meaning: I wish I had more time. Czech Kez bych. Trap: *I wish I have. Same backward-shift as the second conditional, so it plays right after it. wish + past perfect (regret about the past) is B2 - b2_wish_if_only."
+  },
+  {
+   "id": "b1_comparison_2",
+   "label": "As...as, less, much + comparative",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_comparison_2.json",
+   "codex_unit": "G_NP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. PULLED FORWARD from B2 (2026-09-02 dropdown) - the tree files this at B2.comparatives.advanced but as...as is common well below that. Builds on a2_comparatives / a2_superlatives. Czech tak...jako -> *as tall like me. Also the modifier slot: much / a bit / far + comparative."
+  },
+  {
+   "id": "b1_reflexives_2",
+   "label": "By myself / emphasis",
+   "kind": "topic",
+   "root": "noun_phrase",
+   "tree_part": "noun_phrase",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_reflexives_2.json",
+   "codex_unit": "G_NP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. The half a2_reflexives handed forward in writing. A2 kept only the interference core (*I feel myself good, *It happened me). This is by myself / on my own for alone, and the emphatic I did it myself. Trap: *I live alone myself, and by myself vs each other."
+  },
+  {
+   "id": "b1_cause_concession",
+   "label": "Because of / despite / in spite of",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "tree_part": "prepositions_particles",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_cause_concession.json",
+   "codex_unit": "G_PP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. Preposition + NOUN, which is what separates this from b1_linkers (although / however take a clause or a sentence). Traps: *despite of, *in spite the rain, and *because of it was raining. thanks to for a positive cause. Pairs with b1_linkers - play it straight after."
+  },
+  {
+   "id": "b1_prepositions_time_2",
+   "label": "Prepositions of time 2",
+   "kind": "topic",
+   "root": "prepositions_particles",
+   "tree_part": "prepositions_particles",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_prepositions_time_2.json",
+   "codex_unit": "G_PP-B1B2-01",
+   "note": "ROUGH STUB 2026-09-02. From codex/parked-once-a-week.json (Patrik, a1_prepositions_time smoke 2026-08-29: *3 times in week). once / twice / three times A WEEK is a zero-preposition pattern, NOT a fourth box next to at/on/in. Also every + period. Cards already drafted in the parked file - lift them, do not re-invent."
+  },
+  {
+   "id": "b1_grammar_match",
+   "label": "B1 grammar · match",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_grammar_match.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "STUB. Easy grammar check ×12 - which is correct. Pool is smoked B1 grammar units at runtime, not a new bank. No fruit. Does not depend on the vocab sprint engine."
+  },
+  {
+   "id": "b1_grammar_type",
+   "label": "B1 grammar · type",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_grammar_type.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "STUB. Medium cloze type-in ×12. Pool is smoked B1 grammar units at runtime. No fruit."
+  },
+  {
+   "id": "b1_finale",
+   "label": "B1 review",
+   "kind": "topic",
+   "root": "sentence_syntax",
+   "tree_part": "sentence_syntax",
+   "levels": [
+    "B1"
+   ],
+   "status": "parked",
+   "foundation": false,
+   "content": "grammar/blocks/b1_finale.json",
+   "codex_unit": "G_SS-B1B2-01",
+   "note": "STUB. Use on everything. Whole-B1 fruits THIS node only. Does NOT skip - last on the path. Clone of a2_finale / a1_finale."
   }
+ ],
+ "path_order_a2": [
+  "a2_present_continuous",
+  "a2_simple_vs_continuous",
+  "a2_agreement",
+  "a2_possessive_pronouns",
+  "a2_past_simple",
+  "a2_past_questions",
+  "a2_past_continuous",
+  "a2_used_to",
+  "a2_present_perfect",
+  "a2_for_since",
+  "a2_will_going_to",
+  "a2_arrangements",
+  "a2_modals_must_should",
+  "a2_have_to",
+  "a2_could_able",
+  "a2_comparatives",
+  "a2_too_enough",
+  "a2_ed_ing_adjectives",
+  "a2_countable",
+  "a2_articles",
+  "a2_quantifiers",
+  "a2_some_any_no",
+  "a2_indefinite_pronouns",
+  "a2_adverbs_order",
+  "a2_first_conditional",
+  "a2_verb_patterns",
+  "a2_say_tell",
+  "a2_prepositions_movement",
+  "a2_reflexives",
+  "a2_indirect_questions",
+  "a2_grammar_match",
+  "a2_grammar_type",
+  "a2_finale"
+ ],
+ "path_order_b1": [
+  "b1_present_perfect_vs_past",
+  "leaf_self_b1",
+  "b1_present_perfect_continuous",
+  "trunk_abstract_b1",
+  "b1_past_perfect",
+  "b1_past_continuous_2",
+  "leaf_travel_b1",
+  "b1_used_to",
+  "b1_be_used_to",
+  "leaf_knowledge_b1",
+  "b1_past_modals",
+  "b1_modals_speculation",
+  "leaf_work_b1",
+  "b1_passives",
+  "leaf_news_b1",
+  "b1_agreement_tricky",
+  "leaf_communication_b1",
+  "b1_reported_speech",
+  "b1_reported_speech_2",
+  "b1_indirect_questions",
+  "leaf_personality_b1",
+  "b1_question_tags",
+  "b1_relative_clauses",
+  "b1_relative_clauses_2",
+  "leaf_relationships_b1",
+  "b1_second_conditional",
+  "b1_wishes",
+  "leaf_feelings_b1",
+  "b1_articles_advanced",
+  "b1_comparison_2",
+  "b1_degree_adverbs",
+  "leaf_money_b1",
+  "b1_it_subject",
+  "b1_word_order_fronting",
+  "leaf_home_b1",
+  "b1_reflexives_2",
+  "leaf_crime_b1",
+  "b1_linkers",
+  "b1_cause_concession",
+  "leaf_environment_b1",
+  "leaf_technology_b1",
+  "b1_verb_patterns_advanced",
+  "trunk_chunks_b1",
+  "leaf_get_b1",
+  "b1_phrasal_verbs",
+  "leaf_phrasal_1_b1",
+  "leaf_phrasal_2_b1",
+  "b1_dependent_prepositions",
+  "b1_prepositions_time_2",
+  "b1_suffixes",
+  "b1_prefixes",
+  "leaf_word_families_b1",
+  "leaf_false_friends_b1",
+  "leaf_confusables_b1",
+  "trunk_opinions_b1",
+  "b1_vocab_match",
+  "b1_vocab_type",
+  "b1_grammar_match",
+  "b1_grammar_type",
+  "b1_finale"
+ ],
+ "path_order_b2": [
+  "b2_present_perfect_continuous",
+  "b2_past_perfect",
+  "b2_narrative_tenses",
+  "b2_future_forms",
+  "b2_future_in_the_past",
+  "b2_be_get_used_to",
+  "b2_second_conditional",
+  "b2_third_conditional",
+  "b2_mixed_conditionals",
+  "b2_wish_if_only",
+  "b2_hypothetical_past",
+  "b2_modal_perfect",
+  "b2_passives_advanced",
+  "b2_causative",
+  "b2_reported_speech_advanced",
+  "b2_relative_clauses_advanced",
+  "b2_participle_clauses",
+  "b2_gerunds_infinitives_advanced",
+  "b2_preposition_ing",
+  "b2_articles_genericity",
+  "b2_articles_correction",
+  "b2_quantifiers_advanced",
+  "b2_discourse_markers",
+  "b2_clear_claims",
+  "b2_word_formation"
+ ],
+ "path_order_c1": [
+  "c1_narrative_mastery",
+  "c1_time_aspect_edge",
+  "b2_inversion",
+  "c1_inversion_emphasis",
+  "b2_cleft_sentences",
+  "b2_emphasis_fronting",
+  "c1_clefts_fronting",
+  "c1_participle_absolute",
+  "c1_advanced_passive",
+  "c1_nominalisation",
+  "c1_complex_noun_phrases",
+  "c1_ellipsis_substitution",
+  "c1_discourse_grammar",
+  "c1_register",
+  "c1_advanced_modality",
+  "c1_hedging_stance",
+  "c1_subjunctive",
+  "c1_reporting_complementation",
+  "c1_comparative_advanced",
+  "c1_article_nuance",
+  "c1_spoken_vs_written",
+  "c1_error_patterns",
+  "c1_word_formation"
+ ],
+ "roots": [
+  {
+   "id": "verb_phrase",
+   "label": "Verb phrase",
+   "short": "VP",
+   "codex_root": "verb_phrase"
+  },
+  {
+   "id": "noun_phrase",
+   "label": "Noun phrase",
+   "short": "NP",
+   "codex_root": "noun_phrase"
+  },
+  {
+   "id": "sentence_syntax",
+   "label": "Sentence syntax",
+   "short": "SS",
+   "codex_root": "sentence_syntax"
+  },
+  {
+   "id": "clause_linking",
+   "label": "Clause linking",
+   "short": "CL",
+   "codex_root": "clause_linking"
+  },
+  {
+   "id": "verb_complementation",
+   "label": "Verb patterns",
+   "short": "VC",
+   "codex_root": "verb_complementation"
+  },
+  {
+   "id": "prepositions_particles",
+   "label": "Prepositions",
+   "short": "PP",
+   "codex_root": "prepositions_particles"
+  }
+ ],
+ "tap_root": {
+  "id": "tap_root",
+  "label": "Tap root",
+  "note": "Foundation spike. Thickens from foundation topics (sentence machinery), not every lateral knot."
+ }
 }

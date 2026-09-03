@@ -19,8 +19,9 @@ Vocab ticks use the **tree id** (`leaf_home_family tested`). Pack filenames
 (`a1_home_family tested`) alias to the same id.
 Undo: `<unit_id> untested`. Ask: `units to test`.
 
-Rail (2026-08-30): leftover A1–B1 grammar, then **A1 vocab then A2 vocab**
-in path order (leaves, trunk, and `a1_vocab_match` + `a1_vocab_type`). B1 vocab stays off.
+Rail (2026-09-02): **A2 only**, `path_order_a2` from the top
+(`a2_present_continuous`) down, grammar + vocab zigzag. Hide ticked.
+A1 and B1+ stay off.
 
 The count line is `N down, M to go (of T)`. `T` is the whole current rail
 in `smoke-order.json` (`total`), never a baked 53. Good reply includes

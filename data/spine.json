@@ -1,7 +1,7 @@
 {
   "version": 2,
   "title": "English zigzag spines · RUE2 ↔ RUE3",
-  "note": "A1 steps + A2 steps_a2 zigzag. B1+ paths built in sync from lab path_order_* + full vocab catalogue. Soft path; all levels open. | 2026-08-07: 12 orphaned live A1 vocab units routed into the path. | 2026-08-31: 6 vocab-labelled grammar duplicates retired (content grafted into their grammar twins); 7 oversized A1 units split to a 36-word cap; 4 orphaned grammar steps re-paired with split halves.",
+  "note": "A1 steps + A2 steps_a2 zigzag. B1+ paths built in sync from lab path_order_* + full vocab catalogue. Soft path; all levels open. | 2026-08-07: 12 orphaned live A1 vocab units routed into the path. | 2026-08-31: 6 vocab-labelled grammar duplicates retired (content grafted into their grammar twins); 7 oversized A1 units split to a 36-word cap; 4 orphaned grammar steps re-paired with split halves. | 2026-09-02: A2 rail = locked 60 (A2-PLAN zigzag). Dead dumps parked. Topics-only trunks off the circle.",
   "urls": {
     "rue2_lab": "rue-auto/grammar",
     "rue3_lab": "rue3-exp",
@@ -304,8 +304,7 @@
         "label": "Places · getting around",
         "status": "live"
       },
-      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
-      "chain": true
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot."
     },
     {
       "id": "EN_VERBS_MORE_03",
@@ -334,8 +333,7 @@
         "label": "Home",
         "status": "live"
       },
-      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
-      "chain": true
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot."
     },
     {
       "id": "EN_SOME_01",
@@ -350,8 +348,7 @@
         "label": "Food · drinks & kitchen",
         "status": "live"
       },
-      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
-      "chain": true
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot."
     },
     {
       "id": "EN_PREP_T_01",
@@ -450,8 +447,7 @@
         "label": "School · subjects & text",
         "status": "live"
       },
-      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot.",
-      "chain": true
+      "note": "Vocab half re-paired 2026-08-31: the duplicate glue trunk retired, a split leaf takes the slot."
     },
     {
       "id": "EN_IMP_01",
@@ -609,8 +605,8 @@
   ],
   "steps_a2": [
     {
-      "id": "EN_A2_PC_01",
-      "title": "Present continuous · Routine",
+      "id": "EN_A2_01",
+      "title": "Present continuous · Routine & habits",
       "grammar": {
         "node_id": "a2_present_continuous",
         "label": "Present continuous",
@@ -623,11 +619,23 @@
       }
     },
     {
-      "id": "EN_A2_AGR_01",
-      "title": "Agreement · Family",
+      "id": "EN_A2_02",
+      "title": "Present simple vs continuous",
+      "grammar": {
+        "node_id": "a2_simple_vs_continuous",
+        "label": "Present simple vs continuous",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_04",
+      "title": "Subject–verb agreement (A2) · Family & people",
       "grammar": {
         "node_id": "a2_agreement",
-        "label": "Agreement",
+        "label": "Subject–verb agreement (A2)",
         "status": "live"
       },
       "vocab": {
@@ -637,11 +645,35 @@
       }
     },
     {
-      "id": "EN_A2_PS_01",
-      "title": "Past simple · Travel",
+      "id": "EN_A2_05",
+      "title": "Mine / yours / his / hers",
+      "grammar": {
+        "node_id": "a2_possessive_pronouns",
+        "label": "Mine / yours / his / hers",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_06",
+      "title": "Past simple",
       "grammar": {
         "node_id": "a2_past_simple",
         "label": "Past simple",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_07",
+      "title": "Past questions & negatives · Travel & holidays",
+      "grammar": {
+        "node_id": "a2_past_questions",
+        "label": "Past questions & negatives",
         "status": "live"
       },
       "vocab": {
@@ -651,7 +683,19 @@
       }
     },
     {
-      "id": "EN_A2_PCN_01",
+      "id": "EN_A2_08",
+      "title": "Transport",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_transport_a2",
+        "label": "Transport",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_09",
       "title": "Past continuous · Free time",
       "grammar": {
         "node_id": "a2_past_continuous",
@@ -665,25 +709,35 @@
       }
     },
     {
-      "id": "EN_A2_USEDTO_01",
+      "id": "EN_A2_10",
       "title": "Used to",
-      "note": "Moved from B1 2026-08-29 (James: used to is A2). Grammar only.",
       "grammar": {
         "node_id": "a2_used_to",
         "label": "Used to",
         "status": "live"
       },
       "vocab": {
-        "node_id": null,
         "status": "skip"
       }
     },
     {
-      "id": "EN_A2_PP_01",
-      "title": "Present perfect · Feelings",
+      "id": "EN_A2_11",
+      "title": "Present perfect",
       "grammar": {
         "node_id": "a2_present_perfect",
         "label": "Present perfect",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_12",
+      "title": "For / since + duration · Feelings",
+      "grammar": {
+        "node_id": "a2_for_since",
+        "label": "For / since + duration",
         "status": "live"
       },
       "vocab": {
@@ -693,7 +747,7 @@
       }
     },
     {
-      "id": "EN_A2_FUT_01",
+      "id": "EN_A2_13",
       "title": "Will / going to · Work",
       "grammar": {
         "node_id": "a2_will_going_to",
@@ -707,11 +761,47 @@
       }
     },
     {
-      "id": "EN_A2_MOD_01",
-      "title": "Must / should · Society",
+      "id": "EN_A2_03",
+      "title": "Arrangements & timetables",
+      "grammar": {
+        "node_id": "a2_arrangements",
+        "label": "Arrangements & timetables",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_14",
+      "title": "Must / should",
       "grammar": {
         "node_id": "a2_modals_must_should",
-        "label": "Modals must/should",
+        "label": "Must / should",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_15",
+      "title": "Have to / don't have to",
+      "grammar": {
+        "node_id": "a2_have_to",
+        "label": "Have to / don't have to",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_16",
+      "title": "Can / could (past ability) · Society",
+      "grammar": {
+        "node_id": "a2_could_able",
+        "label": "Can / could (past ability)",
         "status": "live"
       },
       "vocab": {
@@ -721,25 +811,49 @@
       }
     },
     {
-      "id": "EN_A2_COMP_01",
-      "title": "Comparatives · Describing",
+      "id": "EN_A2_17",
+      "title": "Comparatives",
       "grammar": {
         "node_id": "a2_comparatives",
         "label": "Comparatives",
         "status": "live"
       },
       "vocab": {
-        "node_id": "leaf_describing_a2",
-        "label": "Adjectives list",
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_18",
+      "title": "Too / enough · Describing people",
+      "grammar": {
+        "node_id": "a2_too_enough",
+        "label": "Too / enough",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_appearance_a2",
+        "label": "Describing people",
         "status": "live"
       }
     },
     {
-      "id": "EN_A2_EDING_01",
-      "title": "-ed / -ing adjectives · Home",
+      "id": "EN_A2_19",
+      "title": "Personality",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_personality_a2",
+        "label": "Personality",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_20",
+      "title": "-ed / -ing adjectives · Home life",
       "grammar": {
         "node_id": "a2_ed_ing_adjectives",
-        "label": "-ed/-ing adjectives",
+        "label": "-ed / -ing adjectives",
         "status": "live"
       },
       "vocab": {
@@ -749,11 +863,23 @@
       }
     },
     {
-      "id": "EN_A2_COUNT_01",
-      "title": "Countable · Food",
+      "id": "EN_A2_21",
+      "title": "Countable and uncountable nouns",
       "grammar": {
         "node_id": "a2_countable",
-        "label": "Countable/uncountable",
+        "label": "Countable and uncountable nouns",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_22",
+      "title": "a / the / nothing · Food & drink",
+      "grammar": {
+        "node_id": "a2_articles",
+        "label": "a / the / nothing",
         "status": "live"
       },
       "vocab": {
@@ -763,11 +889,35 @@
       }
     },
     {
-      "id": "EN_A2_QUANT_01",
-      "title": "Quantifiers · Shopping",
+      "id": "EN_A2_23",
+      "title": "Much / many / a lot",
       "grammar": {
         "node_id": "a2_quantifiers",
-        "label": "Quantifiers",
+        "label": "Much / many / a lot",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_24",
+      "title": "Some / any 2",
+      "grammar": {
+        "node_id": "a2_some_any_no",
+        "label": "Some / any 2",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_25",
+      "title": "Someone / anybody / nobody / else · Shopping & money",
+      "grammar": {
+        "node_id": "a2_indefinite_pronouns",
+        "label": "Someone / anybody / nobody / else",
         "status": "live"
       },
       "vocab": {
@@ -777,11 +927,11 @@
       }
     },
     {
-      "id": "EN_A2_ADV_01",
-      "title": "Adverb order · Adverbs",
+      "id": "EN_A2_26",
+      "title": "Adverb position · Adverbs",
       "grammar": {
         "node_id": "a2_adverbs_order",
-        "label": "Adverb order",
+        "label": "Adverb position",
         "status": "live"
       },
       "vocab": {
@@ -791,8 +941,8 @@
       }
     },
     {
-      "id": "EN_A2_COND_01",
-      "title": "First conditional · Ideas",
+      "id": "EN_A2_27",
+      "title": "First conditional · A2 word list · abstract",
       "grammar": {
         "node_id": "a2_first_conditional",
         "label": "First conditional",
@@ -800,45 +950,55 @@
       },
       "vocab": {
         "node_id": "leaf_ideas_a2",
-        "label": "Abstract list",
+        "label": "A2 word list · abstract",
         "status": "live"
       }
     },
     {
-      "id": "EN_A2_V_IDEAS_2",
-      "title": "Ideas · work & time (vocab)",
-      "note": "Moved A1 → A2 2026-08-31 (A1 hard cap 60 units); sits beside leaf_ideas_a2.",
-      "grammar": {
-        "node_id": null,
-        "status": "skip"
-      },
-      "vocab": {
-        "node_id": "leaf_ideas_2_a2",
-        "label": "Ideas · work & time",
-        "status": "live"
-      }
-    },
-    {
-      "id": "EN_A2_VP_01",
-      "title": "Verb patterns · Verbs list",
+      "id": "EN_A2_28",
+      "title": "Verb patterns 1 (to / -ing)",
       "grammar": {
         "node_id": "a2_verb_patterns",
-        "label": "Verb patterns",
+        "label": "Verb patterns 1 (to / -ing)",
+        "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_29",
+      "title": "Say / tell / speak / talk · A2 word list · verbs",
+      "grammar": {
+        "node_id": "a2_say_tell",
+        "label": "Say / tell / speak / talk",
         "status": "live"
       },
       "vocab": {
         "node_id": "leaf_verbs_a2",
-        "label": "Verbs list",
+        "label": "A2 word list · verbs",
         "status": "live"
       }
     },
     {
-      "id": "EN_A2_PREP_01",
-      "title": "Prep movement · Sport",
+      "id": "EN_A2_30",
+      "title": "Prepositions of movement · Town, directions & services",
       "grammar": {
         "node_id": "a2_prepositions_movement",
         "label": "Prepositions of movement",
         "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_town_a2",
+        "label": "Town, directions & services",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_31",
+      "title": "Sport",
+      "grammar": {
+        "status": "skip"
       },
       "vocab": {
         "node_id": "leaf_sports_a2",
@@ -847,8 +1007,8 @@
       }
     },
     {
-      "id": "EN_A2_V_HEALTH",
-      "title": "Health (vocab)",
+      "id": "EN_A2_32",
+      "title": "Health",
       "grammar": {
         "status": "skip"
       },
@@ -859,8 +1019,8 @@
       }
     },
     {
-      "id": "EN_A2_V_NATURE",
-      "title": "Nature (vocab)",
+      "id": "EN_A2_33",
+      "title": "Nature & weather",
       "grammar": {
         "status": "skip"
       },
@@ -871,8 +1031,8 @@
       }
     },
     {
-      "id": "EN_A2_V_TECH",
-      "title": "Tech (vocab)",
+      "id": "EN_A2_34",
+      "title": "Tech & media",
       "grammar": {
         "status": "skip"
       },
@@ -883,8 +1043,8 @@
       }
     },
     {
-      "id": "EN_A2_V_SCHOOL",
-      "title": "School (vocab)",
+      "id": "EN_A2_35",
+      "title": "School & learning",
       "grammar": {
         "status": "skip"
       },
@@ -895,8 +1055,8 @@
       }
     },
     {
-      "id": "EN_A2_V_CLOTHES",
-      "title": "Clothes (vocab)",
+      "id": "EN_A2_36",
+      "title": "Clothes",
       "grammar": {
         "status": "skip"
       },
@@ -907,8 +1067,20 @@
       }
     },
     {
-      "id": "EN_A2_V_MEDIA",
-      "title": "Media (vocab)",
+      "id": "EN_A2_37",
+      "title": "Describing things",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_things_a2",
+        "label": "Describing things",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_38",
+      "title": "Media & arts",
       "grammar": {
         "status": "skip"
       },
@@ -919,51 +1091,77 @@
       }
     },
     {
-      "id": "EN_A2_V_MISC",
-      "title": "General list (vocab)",
+      "id": "EN_A2_39",
+      "title": "Reflexive verbs & -self",
       "grammar": {
-        "status": "skip"
+        "node_id": "a2_reflexives",
+        "label": "Reflexive verbs & -self",
+        "status": "live"
       },
       "vocab": {
-        "node_id": "leaf_misc_a2",
-        "label": "General list",
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_40",
+      "title": "Indirect questions (A2) · A2 vocab · match",
+      "grammar": {
+        "node_id": "a2_indirect_questions",
+        "label": "Indirect questions (A2)",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "a2_vocab_match",
+        "label": "A2 vocab · match",
         "status": "live"
       }
     },
     {
-      "id": "EN_A2_T_RECYCLE",
-      "title": "Core recycle (trunk)",
+      "id": "EN_A2_41",
+      "title": "A2 vocab · type",
       "grammar": {
         "status": "skip"
       },
       "vocab": {
-        "node_id": "trunk_recycle_a2",
-        "label": "Core · recycle",
+        "node_id": "a2_vocab_type",
+        "label": "A2 vocab · type",
         "status": "live"
       }
     },
     {
-      "id": "EN_A2_T_LEXIS",
-      "title": "Core lexis (trunk)",
+      "id": "EN_A2_42",
+      "title": "Which is correct?",
       "grammar": {
-        "status": "skip"
+        "node_id": "a2_grammar_match",
+        "label": "Which is correct?",
+        "status": "live"
       },
       "vocab": {
-        "node_id": "trunk_lexis_a2",
-        "label": "Core · A2 lexis",
-        "status": "live"
+        "status": "skip"
       }
     },
     {
-      "id": "EN_A2_T_CHUNKS",
-      "title": "Everyday chunks (trunk)",
+      "id": "EN_A2_43",
+      "title": "A2 grammar · type",
       "grammar": {
-        "status": "skip"
+        "node_id": "a2_grammar_type",
+        "label": "A2 grammar · type",
+        "status": "live"
       },
       "vocab": {
-        "node_id": "trunk_chunks_a2",
-        "label": "Everyday chunks",
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_44",
+      "title": "A2 review",
+      "grammar": {
+        "node_id": "a2_finale",
+        "label": "A2 review",
         "status": "live"
+      },
+      "vocab": {
+        "status": "skip"
       }
     }
   ]

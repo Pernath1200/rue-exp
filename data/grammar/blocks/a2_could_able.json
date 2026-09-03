@@ -1,0 +1,377 @@
+{
+  "id": "a2_could_able",
+  "title": "Can / could (past ability)",
+  "level": "A2",
+  "tree_node": "a2_could_able",
+  "codex_unit": "G_VP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. could = past of can (ability). Not maybe (B1). Not requests (chunks). Not was able to (B1). Sort now / past. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "now",
+    "past"
+  ],
+  "bin_captions": {
+    "now": "can",
+    "past": "could · when I was little"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Now or when you were little?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I can swim.",
+          "cz": "Umím plavat.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "He could swim when he was five.",
+          "cz": "Když mu bylo pět, už plaval.",
+          "bin": "past",
+          "use": false
+        },
+        {
+          "en": "She can drive.",
+          "cz": "Umí řídit.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "She could drive at seventeen.",
+          "cz": "V sedmnácti už uměla řídit.",
+          "bin": "past",
+          "use": false
+        },
+        {
+          "en": "He can speak English.",
+          "cz": "Umí anglicky.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "He could walk at one.",
+          "cz": "V roce už chodil.",
+          "bin": "past",
+          "use": false
+        },
+        {
+          "en": "They can cook.",
+          "cz": "Umí vařit.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "They could read before school.",
+          "cz": "Četli, ještě než šli do školy.",
+          "bin": "past",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "could_able_a2",
+      "title": "can or could?",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I can swim.",
+          "cz": "Umím plavat.",
+          "gap": "I ____ swim.",
+          "gap_answer": "can",
+          "quiz_options": [
+            "can",
+            "could",
+            "can't",
+            "am"
+          ],
+          "accepts": [
+            "I can swim."
+          ],
+          "wrong": "I could swim.",
+          "explanation": "Now → **can**. No past time.",
+          "explanation_cz": "Teď → **can**. Bez minulosti."
+        },
+        {
+          "en": "He could swim when he was five.",
+          "cz": "Když mu bylo pět, už plaval.",
+          "gap": "He ____ swim when he was five.",
+          "gap_answer": "could",
+          "quiz_options": [
+            "could",
+            "can",
+            "can't",
+            "was"
+          ],
+          "accepts": [
+            "He could swim when he was five."
+          ],
+          "wrong": "He can swim when he was five.",
+          "explanation": "when he was five → **could**. Past of *can*.",
+          "explanation_cz": "when he was five → **could**. Minulost od *can*."
+        },
+        {
+          "en": "She can drive.",
+          "cz": "Umí řídit.",
+          "gap": "She ____ drive.",
+          "gap_answer": "can",
+          "quiz_options": [
+            "can",
+            "could",
+            "can't",
+            "is"
+          ],
+          "accepts": [
+            "She can drive."
+          ],
+          "wrong": "She could drive.",
+          "explanation": "Now → **can**.",
+          "explanation_cz": "Teď → **can**."
+        },
+        {
+          "en": "She could drive at seventeen.",
+          "cz": "V sedmnácti už uměla řídit.",
+          "gap": "She ____ drive at seventeen.",
+          "gap_answer": "could",
+          "quiz_options": [
+            "could",
+            "can",
+            "can't",
+            "was"
+          ],
+          "accepts": [
+            "She could drive at seventeen."
+          ],
+          "wrong": "She can drive at seventeen.",
+          "explanation": "at seventeen (past) → **could**.",
+          "explanation_cz": "v sedmnácti (minulost) → **could**."
+        },
+        {
+          "en": "He could walk when he was one.",
+          "cz": "Když mu byl rok, už chodil.",
+          "gap": "He ____ walk when he was one.",
+          "gap_answer": "could",
+          "quiz_options": [
+            "could",
+            "can",
+            "can't",
+            "was"
+          ],
+          "accepts": [
+            "He could walk when he was one."
+          ],
+          "wrong": "He can walk when he was one.",
+          "explanation": "when he was one → **could**.",
+          "explanation_cz": "when he was one → **could**."
+        },
+        {
+          "en": "They can cook.",
+          "cz": "Umí vařit.",
+          "gap": "They ____ cook.",
+          "gap_answer": "can",
+          "quiz_options": [
+            "can",
+            "could",
+            "can't",
+            "are"
+          ],
+          "accepts": [
+            "They can cook."
+          ],
+          "wrong": "They could cook.",
+          "explanation": "Now → **can**.",
+          "explanation_cz": "Teď → **can**."
+        },
+        {
+          "en": "They could read before school.",
+          "cz": "Četli, ještě než šli do školy.",
+          "gap": "They ____ read before school.",
+          "gap_answer": "could",
+          "quiz_options": [
+            "could",
+            "can",
+            "can't",
+            "were"
+          ],
+          "accepts": [
+            "They could read before school."
+          ],
+          "wrong": "They can read before school.",
+          "explanation": "before school (past) → **could**.",
+          "explanation_cz": "před školou (minulost) → **could**."
+        },
+        {
+          "en": "Could she swim when she was little?",
+          "cz": "Uměla v dětství plavat?",
+          "gap": "____ she swim when she was little?",
+          "gap_answer": "Could",
+          "quiz_options": [
+            "Could",
+            "Can",
+            "Do",
+            "Does"
+          ],
+          "accepts": [
+            "Could she swim when she was little?"
+          ],
+          "wrong": "Can she swim when she was little?",
+          "explanation": "when she was little → **Could**. Ability, not a request.",
+          "explanation_cz": "when she was little → **Could**. Schopnost, ne prosba."
+        },
+        {
+          "en": "She will be able to drive next year.",
+          "cz": "Příští rok bude moct řídit.",
+          "gap": "She ____ drive next year.",
+          "gap_answer": "will be able to",
+          "quiz_options": [
+            "will be able to",
+            "can",
+            "could",
+            "will can"
+          ],
+          "accepts": [
+            "She will be able to drive next year.",
+            "She'll be able to drive next year."
+          ],
+          "wrong": "She will can drive next year.",
+          "explanation": "**can** has no future form. Say **will be able to**. Not *will can*.",
+          "explanation_cz": "**can** nemá budoucí tvar. Řekněte **will be able to**. Ne *will can*."
+        },
+        {
+          "en": "I will be able to come on Friday.",
+          "cz": "V pátek budu moct přijít.",
+          "gap": "I ____ come on Friday.",
+          "gap_answer": "will be able to",
+          "quiz_options": [
+            "will be able to",
+            "can",
+            "could",
+            "will can"
+          ],
+          "accepts": [
+            "I will be able to come on Friday.",
+            "I'll be able to come on Friday."
+          ],
+          "wrong": "I will can come on Friday.",
+          "explanation": "Friday is later → **will be able to**. Not *will can*.",
+          "explanation_cz": "Pátek je později → **will be able to**. Ne *will can*."
+        },
+        {
+          "en": "He couldn't ride a bike at five.",
+          "cz": "V pěti ještě nejezdil na kole.",
+          "gap": "He ____ ride a bike at five.",
+          "gap_answer": "couldn't",
+          "quiz_options": [
+            "couldn't",
+            "can't",
+            "could",
+            "can"
+          ],
+          "accepts": [
+            "He couldn't ride a bike at five.",
+            "He could not ride a bike at five."
+          ],
+          "wrong": "He can't ride a bike at five.",
+          "explanation": "at five → **couldn't**.",
+          "explanation_cz": "v pěti → **couldn't**."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Can / could (past ability)",
+        "title_cz": "can / could (minulá schopnost)",
+        "text_first": true,
+        "ref": {
+          "tab": "modals",
+          "label": "Full table · all modal verbs"
+        },
+        "points": [
+          "**can** and **could** are modal verbs. They sit in front of a verb.",
+          "You already know **can** / **must** / **should** / **have to**.",
+          "**could** is **can** in the past (ability then)."
+        ],
+        "table": {
+          "headers": [
+            "Now",
+            "Past"
+          ],
+          "rows": [
+            [
+              "I **can** swim.",
+              "I **could** swim when I was five."
+            ],
+            [
+              "She **can** drive.",
+              "She **could** drive at seventeen."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Not a request, not maybe",
+        "title_cz": "Ne prosba, ne možná",
+        "text_first": true,
+        "points": [
+          "*Could you help me?* is a polite request. Not this unit.",
+          "*She could be at home* = maybe. That is later.",
+          "Here **could** only means past ability."
+        ],
+        "table": {
+          "headers": [
+            "Not",
+            "Say"
+          ],
+          "rows": [
+            [
+              "*He can swim when he was little.*",
+              "He **could** swim when he was little."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "can has no future",
+        "title_cz": "can nemá budoucnost",
+        "text_first": true,
+        "points": [
+          "Not *I will can come.*",
+          "Use **will be able to**."
+        ],
+        "table": {
+          "headers": [
+            "Not",
+            "Say"
+          ],
+          "rows": [
+            [
+              "*She will can drive.*",
+              "She **will be able to** drive."
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "sort_cz": false
+}

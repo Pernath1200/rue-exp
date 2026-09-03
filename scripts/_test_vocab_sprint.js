@@ -37,9 +37,13 @@ const {
   startGrammarTypeSprint,
   startFinaleSprint,
   loadA1VocabPool,
+  loadVocabPool,
   loadA1UsePool,
+  loadUsePool,
   loadA1GrammarWhich,
   loadA1GrammarGaps,
+  loadGrammarWhich,
+  loadGrammarGaps,
   filterFinalePool,
   gradeFinale,
   whichItemFromPackItem,
@@ -1310,6 +1314,216 @@ async function answerFinale(root, typed) {
   fRoot.remove();
   localStorage.removeItem("rue-exp-sprint-topic:a1_finale");
 }
+
+const a2Match = tree.nodes.find((n) => n.id === "a2_vocab_match");
+const a2Type = tree.nodes.find((n) => n.id === "a2_vocab_type");
+assert(a2Match && a2Match.practice === "match_sprint", "a2 match tree practice");
+assert(a2Type && a2Type.practice === "type_sprint", "a2 type tree practice");
+assert(a2Match.fruit === false && a2Type.fruit === false, "a2 checks fruit false");
+const a2mI = tree.path_order_a2.indexOf("a2_vocab_match");
+const a2tI = tree.path_order_a2.indexOf("a2_vocab_type");
+assert(a2mI >= 0 && a2mI === a2tI - 1, "a2 type immediately after a2 match");
+
+const a2pool = await loadVocabPool(tree, loadJson, "a2_vocab_match", "A2");
+assert(a2pool.length >= 200, `a2 pool ${a2pool.length} too small`);
+assert(
+  !a2pool.some(
+    (w) =>
+      w.src === "a2_vocab_match" ||
+      w.src === "a2_vocab_type" ||
+      w.src === "trunk_recycle_a2" ||
+      w.src === "trunk_lexis_a2" ||
+      w.src === "trunk_chunks_a2" ||
+      w.src === "leaf_describing_a2",
+  ),
+  "a2 pool includes a check, trunk, or parked dump",
+);
+assert(
+  a2pool.some((w) => w.src === "leaf_routine_a2"),
+  "a2 pool missing routine",
+);
+assert(
+  a2pool.some((w) => w.src === "leaf_appearance_a2"),
+  "a2 pool missing appearance",
+);
+const a2keys = new Set(
+  a2pool.map((w) => w.en.toLowerCase() + "‖" + w.cz.toLowerCase()),
+);
+assert(a2keys.size === a2pool.length, "a2 pool not unique");
+
+const a2typePool = filterTypeInPool(a2pool);
+assert(a2typePool.length >= 100, `a2 type pool ${a2typePool.length} too small`);
+assert(
+  !a2typePool.some((w) => /[.?!]/.test(w.en)),
+  "a2 type pool kept punctuation sentence",
+);
+
+const a2root = document.createElement("div");
+document.body.appendChild(a2root);
+startVocabSprint({
+  root: a2root,
+  node: a2Match,
+  loadJson,
+  tree,
+  onExit() {},
+});
+await new Promise((r) => setTimeout(r, 80));
+assert(
+  /A2 vocab · match/.test(a2root.textContent),
+  "a2 match title missing",
+);
+assert(
+  /Whole A2/.test(a2root.innerHTML),
+  "a2 match missing Whole A2",
+);
+assert(/words in the pool/.test(a2root.textContent), "a2 pool count missing");
+const a2play = a2root.querySelector("#sprint-btn-play");
+assert(a2play, "a2 Play button missing");
+a2play.click();
+await new Promise((r) => setTimeout(r, 50));
+const a2tiles = [...a2root.querySelectorAll(".sprint-tile")];
+assert(a2tiles.length === 12, `a2 board ${a2tiles.length} want 12`);
+if (typeof a2root._RUE2UnbindKeys === "function") a2root._RUE2UnbindKeys();
+a2root.remove();
+
+const a2tRoot = document.createElement("div");
+document.body.appendChild(a2tRoot);
+startVocabTypeSprint({
+  root: a2tRoot,
+  node: a2Type,
+  loadJson,
+  tree,
+  onExit() {},
+});
+await new Promise((r) => setTimeout(r, 80));
+assert(
+  /A2 vocab · type/.test(a2tRoot.textContent),
+  "a2 type title missing",
+);
+assert(
+  a2tRoot.querySelector("#sprint-btn-play"),
+  "a2 type Play missing",
+);
+if (typeof a2tRoot._RUE2UnbindKeys === "function") a2tRoot._RUE2UnbindKeys();
+a2tRoot.remove();
+
+const a2gMatch = tree.nodes.find((n) => n.id === "a2_grammar_match");
+const a2gType = tree.nodes.find((n) => n.id === "a2_grammar_type");
+assert(a2gMatch && a2gMatch.practice === "grammar_match_sprint", "a2 g-match practice");
+assert(a2gType && a2gType.practice === "grammar_type_sprint", "a2 g-type practice");
+const a2gmI = tree.path_order_a2.indexOf("a2_grammar_match");
+const a2gtI = tree.path_order_a2.indexOf("a2_grammar_type");
+assert(a2gmI >= 0 && a2gmI === a2gtI - 1, "a2 grammar type after match");
+
+const a2which = await loadGrammarWhich(tree, loadJson, "a2_grammar_match", "A2");
+const a2gaps = await loadGrammarGaps(tree, loadJson, "a2_grammar_type", "A2");
+assert(a2which.length >= 200, `a2 which ${a2which.length} too small`);
+assert(a2gaps.length >= 200, `a2 gaps ${a2gaps.length} too small`);
+assert(
+  !a2which.some((w) => w.src === "a2_grammar_match" || w.src === "a2_finale"),
+  "a2 which includes a check",
+);
+assert(
+  a2which.some((w) => w.src === "a2_present_continuous"),
+  "a2 which missing present continuous",
+);
+assert(
+  a2which.some((w) => w.src === "a2_too_enough"),
+  "a2 which missing too/enough",
+);
+
+const a2gRoot = document.createElement("div");
+document.body.appendChild(a2gRoot);
+startGrammarMatchSprint({
+  root: a2gRoot,
+  node: a2gMatch,
+  loadJson,
+  tree,
+  onExit() {},
+});
+await new Promise((r) => setTimeout(r, 80));
+assert(/Which is correct\?/.test(a2gRoot.textContent), "a2 which title");
+assert(/Whole A2|from A2 grammar/.test(a2gRoot.innerHTML + a2gRoot.textContent), "a2 which copy");
+assert(/sentences in the pool/.test(a2gRoot.textContent), "a2 which pool count");
+const a2gPlay = a2gRoot.querySelector("#sprint-btn-play");
+assert(a2gPlay, "a2 which Play");
+a2gPlay.click();
+await new Promise((r) => setTimeout(r, 50));
+assert(
+  a2gRoot.querySelectorAll("#choices button").length === 3,
+  "a2 which 3 sentences",
+);
+if (typeof a2gRoot._RUE2UnbindKeys === "function") a2gRoot._RUE2UnbindKeys();
+a2gRoot.remove();
+
+const a2gtRoot = document.createElement("div");
+document.body.appendChild(a2gtRoot);
+startGrammarTypeSprint({
+  root: a2gtRoot,
+  node: a2gType,
+  loadJson,
+  tree,
+  onExit() {},
+});
+await new Promise((r) => setTimeout(r, 80));
+assert(/A2 grammar · type/.test(a2gtRoot.textContent), "a2 g-type title");
+assert(a2gtRoot.querySelector("#sprint-btn-play"), "a2 g-type Play");
+if (typeof a2gtRoot._RUE2UnbindKeys === "function") a2gtRoot._RUE2UnbindKeys();
+a2gtRoot.remove();
+
+const a2fin = tree.nodes.find((n) => n.id === "a2_finale");
+assert(a2fin && a2fin.practice === "use_sprint", "a2 finale practice");
+assert(
+  tree.path_order_a2[tree.path_order_a2.length - 1] === "a2_finale",
+  "a2 finale last on path",
+);
+const a2use = await loadUsePool(tree, loadJson, "a2_finale", "A2");
+assert(a2use.length >= 100, `a2 finale pool ${a2use.length} too small`);
+assert(
+  a2use.some((w) => w.kind === "grammar") &&
+    a2use.some((w) => w.kind === "vocab"),
+  "a2 finale missing grammar or vocab",
+);
+assert(
+  !a2use.some(
+    (w) =>
+      w.src === "a2_finale" ||
+      w.src === "trunk_recycle_a2" ||
+      w.src === "trunk_chunks_a2" ||
+      w.src === "leaf_describing_a2",
+  ),
+  "a2 finale includes a check, trunk, or parked dump",
+);
+assert(
+  a2use.some((w) => w.src === "a2_present_continuous"),
+  "a2 finale missing present continuous",
+);
+assert(
+  a2use.some((w) => w.src === "leaf_routine_a2"),
+  "a2 finale missing routine",
+);
+
+const a2fRoot = document.createElement("div");
+document.body.appendChild(a2fRoot);
+startFinaleSprint({
+  root: a2fRoot,
+  node: a2fin,
+  loadJson,
+  tree,
+  onExit() {},
+});
+await new Promise((r) => setTimeout(r, 80));
+assert(/A2 review/.test(a2fRoot.textContent), "a2 finale title");
+const a2fSel = a2fRoot.querySelector("#sprint-topic");
+const a2fOpts = [...(a2fSel?.options || [])].map((o) => o.value);
+assert(a2fOpts.includes("__all__"), "Whole A2 missing");
+assert(
+  [...(a2fSel?.options || [])].some((o) => o.textContent === "Whole A2"),
+  "Whole A2 label",
+);
+assert(a2fRoot.querySelector("#sprint-btn-play"), "a2 finale Play");
+if (typeof a2fRoot._RUE2UnbindKeys === "function") a2fRoot._RUE2UnbindKeys();
+a2fRoot.remove();
 
 if (failed) {
   console.error(failed, "failed");

@@ -1,0 +1,239 @@
+{
+  "id": "a2_possessive_pronouns",
+  "title": "Mine / yours / his / hers",
+  "level": "A2",
+  "tree_node": "a2_possessive_pronouns",
+  "codex_unit": "G_NP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. my book vs mine. Czech moje is both. a friend of mine. his is the same in both jobs. Not 's (A1). Sort: before a noun / alone. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "before_noun",
+    "alone"
+  ],
+  "bin_captions": {
+    "before_noun": "my book",
+    "alone": "mine"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Before a noun, or alone?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        { "en": "my book", "cz": "moje kniha", "bin": "before_noun", "use": false },
+        { "en": "mine", "cz": "moje", "bin": "alone", "use": false },
+        { "en": "your bag", "cz": "tvoje taška", "bin": "before_noun", "use": false },
+        { "en": "yours", "cz": "tvoje", "bin": "alone", "use": false },
+        { "en": "her phone", "cz": "její telefon", "bin": "before_noun", "use": false },
+        { "en": "hers", "cz": "její", "bin": "alone", "use": false },
+        { "en": "our house", "cz": "náš dům", "bin": "before_noun", "use": false },
+        { "en": "ours", "cz": "naše", "bin": "alone", "use": false },
+        { "en": "their car", "cz": "jejich auto", "bin": "before_noun", "use": false },
+        { "en": "theirs", "cz": "jejich", "bin": "alone", "use": false }
+      ]
+    },
+    {
+      "id": "possessive_pronouns_a2",
+      "title": "Mine / yours / his / hers",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "This book is mine.",
+          "cz": "Tato kniha je moje.",
+          "gap": "This book is ____.",
+          "gap_answer": "mine",
+          "quiz_options": ["mine", "my", "me", "I"],
+          "accepts": ["This book is mine."],
+          "wrong": "This book is my.",
+          "explanation": "No noun after it → **mine**. Not *my*.",
+          "explanation_cz": "Za tím nic není → **mine**. Ne *my*."
+        },
+        {
+          "en": "This is my book.",
+          "cz": "Tohle je moje kniha.",
+          "gap": "This is ____ book.",
+          "gap_answer": "my",
+          "quiz_options": ["my", "mine", "me", "I"],
+          "accepts": ["This is my book."],
+          "wrong": "This is mine book.",
+          "explanation": "A noun (**book**) → **my**. Not *mine book*.",
+          "explanation_cz": "Podstatné jméno (**book**) → **my**. Ne *mine book*."
+        },
+        {
+          "en": "Is this bag yours?",
+          "cz": "Je tohle tvoje taška?",
+          "gap": "Is this bag ____?",
+          "gap_answer": "yours",
+          "quiz_options": ["yours", "your", "you", "yours bag"],
+          "accepts": ["Is this bag yours?"],
+          "wrong": "Is this bag your?",
+          "explanation": "Alone → **yours**. Not *your*.",
+          "explanation_cz": "Samo → **yours**. Ne *your*."
+        },
+        {
+          "en": "That is her phone.",
+          "cz": "To je její telefon.",
+          "gap": "That is ____ phone.",
+          "gap_answer": "her",
+          "quiz_options": ["her", "hers", "she", "she's"],
+          "accepts": ["That is her phone."],
+          "wrong": "That is hers phone.",
+          "explanation": "A noun → **her**. Not *hers phone*.",
+          "explanation_cz": "Podstatné jméno → **her**. Ne *hers phone*."
+        },
+        {
+          "en": "That phone is hers.",
+          "cz": "Ten telefon je její.",
+          "gap": "That phone is ____.",
+          "gap_answer": "hers",
+          "quiz_options": ["hers", "her", "she", "she's"],
+          "accepts": ["That phone is hers."],
+          "wrong": "That phone is her.",
+          "explanation": "Alone → **hers**. Not *her*.",
+          "explanation_cz": "Samo → **hers**. Ne *her*."
+        },
+        {
+          "en": "This house is ours.",
+          "cz": "Tenhle dům je náš.",
+          "gap": "This house is ____.",
+          "gap_answer": "ours",
+          "quiz_options": ["ours", "our", "us", "we"],
+          "accepts": ["This house is ours."],
+          "wrong": "This house is our.",
+          "explanation": "Alone → **ours**.",
+          "explanation_cz": "Samo → **ours**."
+        },
+        {
+          "en": "That car is theirs.",
+          "cz": "To auto je jejich.",
+          "gap": "That car is ____.",
+          "gap_answer": "theirs",
+          "quiz_options": ["theirs", "their", "them", "they"],
+          "accepts": ["That car is theirs."],
+          "wrong": "That car is their.",
+          "explanation": "Alone → **theirs**. Not *their*.",
+          "explanation_cz": "Samo → **theirs**. Ne *their*."
+        },
+        {
+          "en": "This key is his.",
+          "cz": "Tenhle klíč je jeho.",
+          "gap": "This key is ____.",
+          "gap_answer": "his",
+          "quiz_options": ["his", "him", "he", "he's"],
+          "accepts": ["This key is his."],
+          "wrong": "This key is him.",
+          "explanation": "**his** is the same before a noun and alone. Not *him*.",
+          "explanation_cz": "**his** je stejné před podstatným jménem i samo. Ne *him*."
+        },
+        {
+          "en": "She is a friend of mine.",
+          "cz": "Je to moje kamarádka.",
+          "gap": "She is a friend of ____.",
+          "gap_answer": "mine",
+          "quiz_options": ["mine", "me", "my", "I"],
+          "accepts": ["She is a friend of mine."],
+          "wrong": "She is a friend of me.",
+          "explanation": "**of mine** — not *of me*, not *of my*.",
+          "explanation_cz": "**of mine** — ne *of me*, ne *of my*."
+        },
+        {
+          "en": "He is a colleague of hers.",
+          "cz": "Je to její kolega.",
+          "gap": "He is a colleague of ____.",
+          "gap_answer": "hers",
+          "quiz_options": ["hers", "her", "she", "him"],
+          "accepts": ["He is a colleague of hers."],
+          "wrong": "He is a colleague of her.",
+          "explanation": "**of hers**. Same pattern as *of mine*.",
+          "explanation_cz": "**of hers**. Stejně jako *of mine*."
+        },
+        {
+          "en": "Is this yours?",
+          "cz": "Je to tvoje?",
+          "gap": "Is this ____?",
+          "gap_answer": "yours",
+          "quiz_options": ["yours", "your", "you", "yours?"],
+          "accepts": ["Is this yours?"],
+          "wrong": "Is this your?",
+          "explanation": "No noun → **yours**.",
+          "explanation_cz": "Bez podstatného jména → **yours**."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Mine / yours / his / hers",
+        "title_cz": "Mine / yours / his / hers",
+        "text_first": true,
+        "points": [
+          "**my** needs a noun: **my book**.",
+          "**mine** has no noun: **This book is mine.**",
+          "Both say whose it is. English changes the word.",
+          "Czech *moje* does both jobs. English does not."
+        ],
+        "table": {
+          "headers": ["Before a noun", "Alone"],
+          "rows": [
+            ["**my** book", "**mine**"],
+            ["**your** bag", "**yours**"],
+            ["**his** key", "**his**"],
+            ["**her** phone", "**hers**"],
+            ["**our** house", "**ours**"],
+            ["**their** car", "**theirs**"]
+          ]
+        }
+      },
+      {
+        "title": "his does not change",
+        "title_cz": "his se nemění",
+        "text_first": true,
+        "points": [
+          "**his** book and **This is his** — same word.",
+          "The others change: her → **hers**, my → **mine**."
+        ],
+        "table": {
+          "headers": ["Before a noun", "Alone"],
+          "rows": [
+            ["**his** key", "**his**"],
+            ["**her** phone", "**hers**"]
+          ]
+        }
+      },
+      {
+        "title": "a friend of mine",
+        "title_cz": "a friend of mine",
+        "text_first": true,
+        "points": [
+          "After **of**, use the alone form.",
+          "Not *a friend of me*. Not *a friend of my*."
+        ],
+        "table": {
+          "headers": ["Not", "Say"],
+          "rows": [
+            ["*a friend of me*", "a friend of **mine**"],
+            ["*a colleague of her*", "a colleague of **hers**"]
+          ]
+        }
+      }
+    ]
+  }
+}

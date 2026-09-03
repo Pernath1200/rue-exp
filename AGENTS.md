@@ -64,8 +64,8 @@ board of 12 is not an intro (`leaf_freetime_a1` 2026-08-31). Templates:
       { "icon": "👩", "en": "mother", "cz": "matka" },
       { "swatch": "#e04a4a", "en": "red", "cz": "červená" }
     ],
-    "diagram": "branch",                         // abstract sets INSTEAD of pictures
-    "labels": ["idea", "thing", "place"] },       // the schematic's labels
+    "diagram": "branch",                         // GRAMMAR only — not vocab (C56)
+    "labels": ["idea", "thing", "place"] },
   { "title": "You will use these words in",
     "frames": ["This is a …", "I have a …"],     // from the items' use[] carriers
     "note": "home ≠ house: home = domov, house = dům.",
@@ -75,19 +75,20 @@ board of 12 is not an intro (`leaf_freetime_a1` 2026-08-31). Templates:
 
 - **Czech ladder:** A1/A2 Czech on tiles and notes is fine · B1 a little ·
   **B2/C1 minimal**.
-- **Pictures**: emoji, colour swatches, or a schematic from
-  `js/intro-visuals.js` (`scale · circles · branch · cycle · contrast`).
-  Abstract sets (Ideas, Feelings, Society) take a **schematic**, never
-  stretched emoji. **No photo or image files** — nothing external, nothing
-  licensed. Need a new schematic? Propose it in the digest; it goes in
-  `intro-visuals.js`, never inside a pack.
+- **Pictures**: emoji or colour swatches. **No photo or image files** —
+  nothing external, nothing licensed.
+- **Diagram-only pages are grammar (C56).** Vocab does not get a
+  `contrast` / `scale` / `branch` page as intro page 1. Abstract sets
+  (Ideas, Feelings, Society): picture tiles if a glyph is honest, else a
+  word table, then frames — not a schematic. New schematics still go in
+  `intro-visuals.js`, for grammar.
 - **Pictures are intro-only.** Never put `icon`/`swatch` on drill items — the
   chip renders beside BOTH the English and the Czech tile, which would turn
   Match into pairing identical images.
 - **Frames come from the items' `use[]` carrier ids** — use the real carrier
   wording (`this_is_a` → "This is a …"); don't invent frames.
 - Templates to copy: `a1_home_family` / `a1_freetime` (emoji, every word),
-  `a1_colours` (swatches), `a1_ideas` (schematic).
+  `a1_colours` (swatches). Not `a1_ideas` schematic — that is grammar-shaped (C56).
 - Order: **all live A1 vocab units first, then A2.** B1 only after James
   reviews the A1/A2 set.
 

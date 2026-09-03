@@ -657,6 +657,20 @@ a.today-link:hover {
   margin: 0 0 0.15rem;
 }
 
+.rw-u {
+  font-style: normal;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.rw-clue {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  margin: 0.45rem 0 0;
+}
+
 .practice-prompt--wrong {
   color: var(--wrong);
 }
@@ -1393,13 +1407,16 @@ button.link:hover {
   background: #0a0a0a;
 }
 .tree-portrait-svg .tp-knot:hover,
-.tree-portrait-svg .tp-house-label:hover {
+.tree-portrait-svg .tp-focus-label:hover {
   filter: brightness(1.15);
 }
 .tree-portrait-svg text {
   pointer-events: none;
 }
-.tree-portrait-svg .tp-house-label[data-node]:not([data-node=""]) {
+.tree-portrait-svg .tp-hover-name {
+  pointer-events: none;
+}
+.tree-portrait-svg .tp-focus-label[data-node]:not([data-node=""]) {
   pointer-events: auto;
 }
 .tree-portrait-svg .tp-knot[data-node]:not([data-node=""]) {

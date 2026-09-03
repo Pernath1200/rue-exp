@@ -4,7 +4,10 @@
   "level": "A2",
   "tree_node": "leaf_routine_a2",
   "codex_unit": "V_THM-A1B1-08",
-  "note": "V_THM-A1B1-08 routine A2 · carriers via use[]",
+  "note": "V_THM-A1B1-08 routine A2 · quiz_mode sentence_gap · Use rewrite (underlined paraphrase + letter clue). bit cut 2026-09-02.",
+  "quiz_mode": "sentence_gap",
+  "use_mode": "rewrite",
+  "use_hint": "Rewrite the sentence. Replace the underlined words.",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -29,8 +32,8 @@
           ]
         },
         {
-          "en": "schedule",
-          "cz": "rozvrh / plán",
+          "en": "schedule (plan)",
+          "cz": "rozvrh",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -38,8 +41,8 @@
           ]
         },
         {
-          "en": "timetable",
-          "cz": "jízdní řád / rozvrh",
+          "en": "timetable (bus)",
+          "cz": "jízdní řád",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -48,11 +51,11 @@
         },
         {
           "en": "daily",
-          "cz": "denní / denně",
+          "cz": "denní",
           "use": []
         },
         {
-          "en": "everyday",
+          "en": "everyday (ordinary)",
           "cz": "každodenní",
           "use": [
             "it_is"
@@ -80,22 +83,17 @@
         },
         {
           "en": "already",
-          "cz": "už / již (v kladné větě)",
+          "cz": "už",
           "use": []
         },
         {
           "en": "yet",
-          "cz": "ještě (v otázce a v záporu)",
+          "cz": "ještě",
           "use": []
         },
         {
           "en": "still",
           "cz": "stále",
-          "use": []
-        },
-        {
-          "en": "bit",
-          "cz": "trochu / kousek",
           "use": []
         },
         {
@@ -115,184 +113,449 @@
             "i_have_a",
             "i_need_a"
           ]
+        },
+        {
+          "en": "normally",
+          "cz": "normálně",
+          "use": []
+        },
+        {
+          "en": "routine",
+          "cz": "rutina",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
         }
       ]
     }
   ],
   "intro": [
     {
-      "title": "How often, not what",
-      "title_cz": "Jak často, ne co",
-      "diagram": "cycle",
-      "labels": [
-        "daily",
-        "regular",
-        "usual",
-        "habit"
+      "title": "Routine & habits",
+      "title_cz": "Rutiny a zvyky",
+      "pictures": [
+        {
+          "icon": "⏰",
+          "en": "alarm",
+          "cz": "budík"
+        },
+        {
+          "icon": "📓",
+          "en": "diary",
+          "cz": "deník"
+        },
+        {
+          "icon": "📅",
+          "en": "schedule",
+          "cz": "rozvrh"
+        },
+        {
+          "icon": "🚌",
+          "en": "timetable",
+          "cz": "jízdní řád"
+        },
+        {
+          "icon": "🔁",
+          "en": "habit",
+          "cz": "zvyk"
+        },
+        {
+          "icon": "🏃",
+          "en": "lifestyle",
+          "cz": "životní styl"
+        },
+        {
+          "icon": "🔄",
+          "en": "routine",
+          "cz": "rutina"
+        }
+      ]
+    },
+    {
+      "title": "How often, how ordinary",
+      "title_cz": "Jak často, jak běžné",
+      "table": {
+        "headers": [
+          "word",
+          "Czech",
+          "example"
+        ],
+        "rows": [
+          [
+            "**daily**",
+            "denní",
+            "my **daily** plan"
+          ],
+          [
+            "**everyday**",
+            "každodenní",
+            "an **everyday** problem"
+          ],
+          [
+            "**regular**",
+            "pravidelný",
+            "a **regular** meeting"
+          ],
+          [
+            "**usual**",
+            "obvyklý",
+            "the **usual** time"
+          ],
+          [
+            "**normally**",
+            "normálně",
+            "I **normally** walk"
+          ]
+        ]
+      },
+      "note": "**everyday** (one word) = ordinary. **every day** (two words) = each day.",
+      "note_cz": "everyday = obyčejný. every day = každý den."
+    },
+    {
+      "title": "already, yet, still",
+      "title_cz": "už, ještě, stále",
+      "tables": [
+        {
+          "headers": [
+            "word",
+            "in this sentence",
+            "example"
+          ],
+          "rows": [
+            [
+              "**already**",
+              "positives",
+              "I am **already** at work"
+            ],
+            [
+              "**yet**",
+              "negatives / questions",
+              "The bus is not here **yet**"
+            ],
+            [
+              "**still**",
+              "it continues",
+              "She is **still** at work"
+            ]
+          ]
+        },
+        {
+          "headers": [
+            "Don't say",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~I am yet at work~~",
+              "I am **already** at work"
+            ],
+            [
+              "~~The bus is not already here~~",
+              "The bus is not here **yet**"
+            ]
+          ]
+        }
       ],
-      "body": "These words do not name a thing you can point at. They say how often something happens, and how ordinary it is.\nA habit is the whole loop: the same thing, at the usual time, every day.",
-      "body_cz": "Slova o tom, jak často se něco děje — ne o věcech."
+      "note": "Czech **už** is two English words: **already** in a + sentence, **yet** in − or ?.",
+      "note_cz": "už = already (v + větě), yet (v − a v otázce)."
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
-        "This is a …",
-        "I have a …",
-        "I need a …",
-        "It is …"
-      ],
-      "note": "Czech už is two English words. already goes in a statement: I am already at work. yet goes in a question or a negative: Are you ready? — Not yet.",
-      "note_cz": "Pozor: už = already (v kladné větě) i yet (v otázce a v záporu)."
+        "This is a … · *Tohle je …*",
+        "I have a … · *Mám …*",
+        "I need a … · *Potřebuji …*",
+        "It is … · *Je to …*",
+        "I am already … · *Už jsem …*",
+        "… not … yet · *… ještě ne…*",
+        "I normally … · *Normálně …*"
+      ]
     }
   ],
   "sentences": [
     {
-      "en": "I have a good habit.",
-      "cz": "Mám dobrý zvyk.",
+      "en": "I have a bad habit: I play on my phone in bed.",
+      "cz": "Mám špatný zvyk: v posteli hraju na telefonu.",
       "lemmas": [
         "habit"
       ],
       "accepts": [
-        "I have a good habit"
+        "I have a bad habit: I play on my phone in bed",
+        "I have a bad habit I play on my phone in bed"
       ]
     },
     {
-      "en": "A healthy lifestyle is important.",
-      "cz": "Zdravý životní styl je důležitý.",
+      "en": "My father has a healthy lifestyle because he walks to work every day.",
+      "cz": "Můj otec má zdravý životní styl, protože každý den chodí do práce pěšky.",
       "lemmas": [
         "lifestyle"
       ],
       "accepts": [
-        "A healthy lifestyle is important",
-        "Healthy lifestyle is important"
+        "My father has a healthy lifestyle because he walks to work every day"
       ]
     },
     {
-      "en": "I need a new schedule.",
-      "cz": "Potřebuji nový rozvrh.",
+      "en": "I need a new schedule because I start work at eight now.",
+      "cz": "Potřebuji nový rozvrh, protože teď začínám pracovat v osm.",
       "lemmas": [
         "schedule"
       ],
       "accepts": [
-        "I need a new schedule"
+        "I need a new schedule because I start work at eight now",
+        "I need a new schedule because I start work at 8 now"
       ]
     },
     {
-      "en": "This is the bus timetable.",
-      "cz": "To je jízdní řád autobusu.",
+      "en": "Look at the bus timetable before you go to the station.",
+      "cz": "Podívej se na jízdní řád autobusu, než půjdeš na nádraží.",
       "lemmas": [
         "timetable"
       ],
       "accepts": [
-        "This is the bus timetable",
-        "That is the bus timetable"
+        "Look at the bus timetable before you go to the station"
       ]
     },
     {
-      "en": "This is my daily routine.",
-      "cz": "To je moje denní rutina.",
+      "en": "I write my daily plan in the morning before I go to work.",
+      "cz": "Ráno si píšu denní plán, než jdu do práce.",
       "lemmas": [
         "daily"
       ],
       "accepts": [
-        "This is my daily routine",
-        "That is my daily routine"
+        "I write my daily plan in the morning before I go to work"
       ]
     },
     {
-      "en": "It is an everyday problem.",
-      "cz": "Je to každodenní problém.",
+      "en": "An everyday problem at work is that the bus is late.",
+      "cz": "Každodenní problém v práci je, že autobus má zpoždění.",
       "lemmas": [
         "everyday"
       ],
       "accepts": [
-        "It is an everyday problem",
-        "This is an everyday problem"
+        "An everyday problem at work is that the bus is late"
       ]
     },
     {
-      "en": "It is a regular meeting.",
-      "cz": "Je to pravidelná schůzka.",
+      "en": "We have a regular meeting on Monday morning at work.",
+      "cz": "V práci máme v pondělí ráno pravidelnou schůzku.",
       "lemmas": [
         "regular"
       ],
       "accepts": [
-        "It is a regular meeting",
-        "This is a regular meeting"
+        "We have a regular meeting on Monday morning at work"
       ]
     },
     {
-      "en": "This is not the usual time.",
-      "cz": "To není obvyklý čas.",
+      "en": "This is not the usual time — I usually get up at seven.",
+      "cz": "To není obvyklý čas — obvykle vstávám v sedm.",
       "lemmas": [
         "usual"
       ],
       "accepts": [
-        "This is not the usual time",
-        "That is not the usual time"
+        "This is not the usual time — I usually get up at seven",
+        "This is not the usual time. I usually get up at seven",
+        "This is not the usual time I usually get up at seven"
       ]
     },
     {
-      "en": "My brother is already here.",
-      "cz": "Můj bratr už je tady.",
+      "en": "My brother is already at work when I get up.",
+      "cz": "Můj bratr už je v práci, když vstávám.",
       "lemmas": [
         "already"
       ],
       "accepts": [
-        "My brother is already here"
+        "My brother is already at work when I get up"
       ]
     },
     {
-      "en": "The bus is not here yet.",
-      "cz": "Autobus tu ještě není.",
+      "en": "The bus is not here yet, so I wait at the station.",
+      "cz": "Autobus tu ještě není, takže čekám na nádraží.",
       "lemmas": [
         "yet"
       ],
+      "accepts": [
+        "The bus is not here yet, so I wait at the station",
+        "The bus isn't here yet, so I wait at the station"
+      ]
+    },
+    {
+      "en": "My mother is still at work at seven in the evening.",
+      "cz": "Moje matka je v sedm večer stále v práci.",
+      "lemmas": [
+        "still"
+      ],
+      "accepts": [
+        "My mother is still at work at seven in the evening"
+      ]
+    },
+    {
+      "en": "I need my alarm because I get up at six every day.",
+      "cz": "Potřebuji budík, protože každý den vstávám v šest.",
+      "lemmas": [
+        "alarm"
+      ],
+      "accepts": [
+        "I need my alarm because I get up at six every day"
+      ]
+    },
+    {
+      "en": "I write in my diary every evening before I go to bed.",
+      "cz": "Každý večer si píšu do deníku, než jdu spát.",
+      "lemmas": [
+        "diary"
+      ],
+      "accepts": [
+        "I write in my diary every evening before I go to bed"
+      ]
+    },
+    {
+      "en": "I normally walk to work, but today I take the bus.",
+      "cz": "Normálně chodím do práce pěšky, ale dnes jedu autobusem.",
+      "lemmas": [
+        "normally"
+      ],
+      "accepts": [
+        "I normally walk to work, but today I take the bus"
+      ]
+    },
+    {
+      "en": "My morning routine is short: I get up, I eat, and I go to work.",
+      "cz": "Moje ranní rutina je krátká: vstávám, jím a jdu do práce.",
+      "lemmas": [
+        "routine"
+      ],
+      "accepts": [
+        "My morning routine is short: I get up, I eat, and I go to work",
+        "My morning routine is short I get up I eat and I go to work"
+      ]
+    }
+  ],
+  "use_sentences": [
+    {
+      "lemma": "everyday",
+      "prompt": "These are my normal clothes.",
+      "underline": "normal",
+      "en": "These are my everyday clothes.",
+      "lemmas": ["everyday"],
+      "accepts": ["These are my everyday clothes"],
+      "reject": ["every day"],
+      "trap_note": "everyday (one word) = adjective; every day (two words) = each day."
+    },
+    {
+      "lemma": "lifestyle",
+      "prompt": "She has a healthy way of living.",
+      "underline": "way of living",
+      "en": "She has a healthy lifestyle.",
+      "lemmas": ["lifestyle"],
+      "accepts": ["She has a healthy lifestyle"]
+    },
+    {
+      "lemma": "timetable",
+      "prompt": "I looked at the list of bus times at the station.",
+      "underline": "list of bus times",
+      "en": "I looked at the timetable at the station.",
+      "lemmas": ["timetable"],
+      "accepts": [
+        "I looked at the timetable at the station",
+        "I looked at the bus timetable at the station"
+      ]
+    },
+    {
+      "lemma": "routine",
+      "prompt": "His daily way of doing things never changes.",
+      "underline": "way of doing things",
+      "en": "His daily routine never changes.",
+      "lemmas": ["routine"],
+      "accepts": ["His daily routine never changes"]
+    },
+    {
+      "lemma": "habit",
+      "prompt": "Playing on my phone in bed is a bad thing I always do.",
+      "underline": "thing I always do",
+      "en": "Playing on my phone in bed is a bad habit.",
+      "lemmas": ["habit"],
+      "accepts": ["Playing on my phone in bed is a bad habit"]
+    },
+    {
+      "lemma": "still",
+      "prompt": "She lives in Prague, as she did before.",
+      "underline": "as she did before",
+      "en": "She still lives in Prague.",
+      "lemmas": ["still"],
+      "accepts": [
+        "She still lives in Prague",
+        "She lives in Prague still"
+      ]
+    },
+    {
+      "lemma": "already",
+      "prompt": "I am at work earlier than I expected.",
+      "underline": "earlier than I expected",
+      "en": "I am already at work.",
+      "lemmas": ["already"],
+      "accepts": [
+        "I am already at work",
+        "I'm already at work",
+        "I am at work already",
+        "I'm at work already"
+      ]
+    },
+    {
+      "lemma": "yet",
+      "prompt": "The bus is not here, though I expected it.",
+      "underline": "though I expected it",
+      "en": "The bus is not here yet.",
+      "lemmas": ["yet"],
       "accepts": [
         "The bus is not here yet",
         "The bus isn't here yet"
       ]
     },
     {
-      "en": "My mother is still at work.",
-      "cz": "Moje matka je stále v práci.",
-      "lemmas": [
-        "still"
-      ],
+      "lemma": "normally",
+      "prompt": "He walks to work on most days.",
+      "underline": "on most days",
+      "en": "He normally walks to work.",
+      "lemmas": ["normally"],
       "accepts": [
-        "My mother is still at work"
+        "He normally walks to work",
+        "He walks to work normally"
       ]
     },
     {
-      "en": "It is a bit cold.",
-      "cz": "Je trochu zima.",
-      "lemmas": [
-        "bit"
-      ],
+      "lemma": "regular",
+      "prompt": "We have a normal meeting on Monday.",
+      "underline": "normal",
+      "en": "We have a regular meeting on Monday.",
+      "lemmas": ["regular"],
       "accepts": [
-        "It is a bit cold"
+        "We have a regular meeting on Monday",
+        "We have a regular Monday meeting",
+        "We have a regular meeting"
       ]
     },
     {
-      "en": "This is my alarm.",
-      "cz": "To je můj budík.",
-      "lemmas": [
-        "alarm"
-      ],
+      "lemma": "usual",
+      "prompt": "This is not the normal time.",
+      "underline": "normal",
+      "en": "This is not the usual time.",
+      "lemmas": ["usual"],
       "accepts": [
-        "This is my alarm",
-        "That is my alarm"
+        "This is not the usual time",
+        "That is not the usual time"
       ]
     },
     {
-      "en": "I write in my diary every day.",
-      "cz": "Každý den si píšu do deníku.",
-      "lemmas": [
-        "diary"
-      ],
+      "lemma": "alarm",
+      "prompt": "I get up at six, so I need my morning clock.",
+      "underline": "morning clock",
+      "en": "I get up at six, so I need my alarm.",
+      "lemmas": ["alarm"],
       "accepts": [
-        "I write in my diary every day",
-        "Every day I write in my diary"
+        "I get up at six, so I need my alarm",
+        "I get up at six so I need my alarm"
       ]
     }
   ]

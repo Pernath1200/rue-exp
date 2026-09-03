@@ -5,51 +5,91 @@
   "tree_node": "a2_past_simple",
   "codex_unit": "G_VP-A1B1-01",
   "practice": "frames",
-  "note": "Finished past. Regular -ed + high-frequency irregulars. Match is work→worked. Quiz/Type gap the past form, or work/go after didn't/Did (B8). Not present perfect. · 2026-08-29 smoke: C29 timeline vs I work / I'm working; C31 no base; C32 ~~strike~~ mistakes; A5 eat/have breakfast; D3 Ne, nepracoval; F3 trip is partner (kept).",
+  "note": "Finished past. Regular -ed + high-frequency irregulars. Check is sort (finished / every day / now), not work→worked (B12). Quiz/Type gap the past form, or work/go after didn't/Did (B8). Not present perfect. · 2026-08-29 smoke: C29 timeline vs I work / I'm working; C31 no base; C32 ~~strike~~ mistakes; A5 eat/have breakfast; D3 Ne, nepracoval; F3 trip is partner (kept). · 2026-09-01: sort not form-match; split irregular cards. · 2026-09-01: A2 irregulars = go/have/see/come/make/get + be. Rest are not a B1 dump; V3 three-forms live with present perfect. · 2026-09-01: Use = correct (past / didn't+base / Did+base errors).",
   "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "sort_cz": false,
+  "bins": [
+    "finished",
+    "habit",
+    "now"
+  ],
+  "bin_captions": {
+    "finished": "yesterday · finished",
+    "habit": "every day",
+    "now": "now · a short time"
+  },
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
     ]
   },
   "blocks": [
     {
-      "id": "past_simple_forms",
-      "title": "Past simple · forms",
+      "id": "past_simple_sort",
+      "title": "Finished, every day, or now?",
+      "use": false,
       "check": {
         "sequence": [
-          "match"
+          "sort_bins"
         ]
       },
       "items": [
-        { "en": "work", "cz": "worked", "use": false },
-        { "en": "live", "cz": "lived", "use": false },
-        { "en": "play", "cz": "played", "use": false },
-        { "en": "watch", "cz": "watched", "use": false },
-        { "en": "study", "cz": "studied", "use": false },
-        { "en": "visit", "cz": "visited", "use": false },
-        { "en": "finish", "cz": "finished", "use": false },
-        { "en": "clean", "cz": "cleaned", "use": false },
-        { "en": "cook", "cz": "cooked", "use": false },
-        { "en": "start", "cz": "started", "use": false },
-        { "en": "walk", "cz": "walked", "use": false },
-        { "en": "go", "cz": "went", "use": false },
-        { "en": "have", "cz": "had", "use": false },
-        { "en": "see", "cz": "saw", "use": false },
-        { "en": "come", "cz": "came", "use": false },
-        { "en": "make", "cz": "made", "use": false },
-        { "en": "get", "cz": "got", "use": false },
-        { "en": "say", "cz": "said", "use": false },
-        { "en": "take", "cz": "took", "use": false },
-        { "en": "buy", "cz": "bought", "use": false },
-        { "en": "write", "cz": "wrote", "use": false },
-        { "en": "drink", "cz": "drank", "use": false },
-        { "en": "meet", "cz": "met", "use": false },
-        { "en": "leave", "cz": "left", "use": false },
-        { "en": "find", "cz": "found", "use": false },
-        { "en": "tell", "cz": "told", "use": false },
-        { "en": "wake", "cz": "woke", "use": false }
+        {
+          "en": "I **worked** yesterday.",
+          "cz": "Včera jsem pracoval.",
+          "bin": "finished",
+          "use": false
+        },
+        {
+          "en": "I **work** every day.",
+          "cz": "Pracuju každý den.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "I'm **working** now.",
+          "cz": "Teď pracuju.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "We **played** yesterday.",
+          "cz": "Včera jsme hráli.",
+          "bin": "finished",
+          "use": false
+        },
+        {
+          "en": "We **play** on Sundays.",
+          "cz": "V neděli hrajeme.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "We are **playing** now.",
+          "cz": "Teď hrajeme.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "He **went** home yesterday.",
+          "cz": "Včera šel domů.",
+          "bin": "finished",
+          "use": false
+        },
+        {
+          "en": "He **goes** home at five.",
+          "cz": "Chodí domů v pět.",
+          "bin": "habit",
+          "use": false
+        },
+        {
+          "en": "He is **going** home now.",
+          "cz": "Teď jde domů.",
+          "bin": "now",
+          "use": false
+        }
       ]
     },
     {
@@ -64,114 +104,186 @@
         {
           "en": "I worked yesterday.",
           "cz": "Včera jsem pracoval.",
-          "gap": "I ____ yesterday.",
+          "gap": "I ____ yesterday. (work)",
           "gap_answer": "worked",
-          "quiz_options": ["worked", "work", "working", "works"],
-          "accepts": ["I worked yesterday."],
-          "explanation": "work → **worked**.",
-          "explanation_cz": "work → **worked**."
-        },
-        {
-          "en": "She lived in Brno.",
-          "cz": "Bydlela v Brně.",
-          "gap": "She ____ in Brno.",
-          "gap_answer": "lived",
-          "quiz_options": ["lived", "live", "living", "lives"],
-          "accepts": ["She lived in Brno."],
-          "explanation": "live → **lived**.",
-          "explanation_cz": "live → **lived**."
-        },
-        {
-          "en": "We played football.",
-          "cz": "Hráli jsme fotbal.",
-          "gap": "We ____ football.",
-          "gap_answer": "played",
-          "quiz_options": ["played", "play", "playing", "plays"],
+          "quiz_options": [
+            "worked",
+            "work",
+            "working",
+            "works"
+          ],
           "accepts": [
-            "We played football.",
-            "We played soccer."
+            "I worked yesterday."
+          ],
+          "explanation": "work → **worked**.",
+          "explanation_cz": "work → **worked**.",
+          "wrong": "I work yesterday."
+        },
+        {
+          "en": "She lived in Brno last year.",
+          "cz": "Loni bydlela v Brně.",
+          "gap": "She ____ in Brno last year. (live)",
+          "gap_answer": "lived",
+          "quiz_options": [
+            "lived",
+            "live",
+            "living",
+            "lives"
+          ],
+          "accepts": [
+            "She lived in Brno last year."
+          ],
+          "explanation": "live → **lived**.",
+          "explanation_cz": "live → **lived**.",
+          "wrong": "She live in Brno last year."
+        },
+        {
+          "en": "We played football yesterday.",
+          "cz": "Včera jsme hráli fotbal.",
+          "gap": "We ____ football yesterday. (play)",
+          "gap_answer": "played",
+          "quiz_options": [
+            "played",
+            "play",
+            "playing",
+            "plays"
+          ],
+          "accepts": [
+            "We played football yesterday.",
+            "We played soccer yesterday."
           ],
           "explanation": "play → **played**.",
-          "explanation_cz": "play → **played**."
+          "explanation_cz": "play → **played**.",
+          "wrong": "We play football yesterday."
         },
         {
-          "en": "He watched a film.",
-          "cz": "Díval se na film.",
-          "gap": "He ____ a film.",
+          "en": "He watched a film last week.",
+          "cz": "Minulý týden se díval na film.",
+          "gap": "He ____ a film last week. (watch)",
           "gap_answer": "watched",
-          "quiz_options": ["watched", "watch", "watching", "watches"],
+          "quiz_options": [
+            "watched",
+            "watch",
+            "watching",
+            "watches"
+          ],
           "accepts": [
-            "He watched a film.",
-            "He watched a movie.",
-            "He watched the film.",
-            "He watched the movie."
+            "He watched a film last week.",
+            "He watched a movie last week.",
+            "He watched the film last week.",
+            "He watched the movie last week."
           ],
           "explanation": "watch → **watched**.",
-          "explanation_cz": "watch → **watched**."
+          "explanation_cz": "watch → **watched**.",
+          "wrong": "He watch a film last week."
         },
         {
-          "en": "They studied English.",
-          "cz": "Učili se angličtinu.",
-          "gap": "They ____ English.",
+          "en": "They studied English last year.",
+          "cz": "Loni se učili angličtinu.",
+          "gap": "They ____ English last year. (study)",
           "gap_answer": "studied",
-          "quiz_options": ["studied", "study", "studying", "studies"],
-          "accepts": ["They studied English."],
-          "explanation": "study → **studied** (y → i + ed).",
-          "explanation_cz": "study → **studied** (y → i + ed)."
-        },
-        {
-          "en": "I went to school.",
-          "cz": "Šel jsem do školy.",
-          "gap": "I ____ to school.",
-          "gap_answer": "went",
-          "quiz_options": ["went", "go", "goed", "going"],
-          "accepts": ["I went to school."],
-          "explanation": "go → **went**, not *goed.",
-          "explanation_cz": "go → **went**, ne *goed."
-        },
-        {
-          "en": "She went home.",
-          "cz": "Šla domů.",
-          "gap": "She ____ home.",
-          "gap_answer": "went",
-          "quiz_options": ["went", "go", "goed", "going"],
-          "accepts": ["She went home."],
-          "explanation": "go → **went**, not *goed.",
-          "explanation_cz": "go → **went**, ne *goed."
-        },
-        {
-          "en": "He had a coffee.",
-          "cz": "Dal si kávu.",
-          "gap": "He ____ a coffee.",
-          "gap_answer": "had",
-          "quiz_options": ["had", "have", "haved", "having"],
+          "quiz_options": [
+            "studied",
+            "study",
+            "studying",
+            "studies"
+          ],
           "accepts": [
-            "He had a coffee.",
-            "He had coffee."
+            "They studied English last year."
+          ],
+          "explanation": "study → **studied** (y → i + ed).",
+          "explanation_cz": "study → **studied** (y → i + ed).",
+          "wrong": "They study English last year."
+        },
+        {
+          "en": "I went to school yesterday.",
+          "cz": "Včera jsem šel do školy.",
+          "gap": "I ____ to school yesterday. (go)",
+          "gap_answer": "went",
+          "quiz_options": [
+            "went",
+            "go",
+            "goed",
+            "going"
+          ],
+          "accepts": [
+            "I went to school yesterday."
+          ],
+          "explanation": "go → **went**, not *goed.",
+          "explanation_cz": "go → **went**, ne *goed.",
+          "wrong": "I goed to school yesterday."
+        },
+        {
+          "en": "She went home yesterday.",
+          "cz": "Včera šla domů.",
+          "gap": "She ____ home yesterday. (go)",
+          "gap_answer": "went",
+          "quiz_options": [
+            "went",
+            "go",
+            "goed",
+            "going"
+          ],
+          "accepts": [
+            "She went home yesterday."
+          ],
+          "explanation": "go → **went**, not *goed.",
+          "explanation_cz": "go → **went**, ne *goed.",
+          "wrong": "She goed home yesterday."
+        },
+        {
+          "en": "He had a coffee yesterday.",
+          "cz": "Včera si dal kávu.",
+          "gap": "He ____ a coffee yesterday. (have)",
+          "gap_answer": "had",
+          "quiz_options": [
+            "had",
+            "have",
+            "haved",
+            "having"
+          ],
+          "accepts": [
+            "He had a coffee yesterday.",
+            "He had coffee yesterday."
           ],
           "explanation": "have → **had**, not *haved.",
-          "explanation_cz": "have → **had**, ne *haved."
+          "explanation_cz": "have → **had**, ne *haved.",
+          "wrong": "He have a coffee yesterday."
         },
         {
-          "en": "We had lunch at home.",
-          "cz": "Obědvali jsme doma.",
-          "gap": "We ____ lunch at home.",
+          "en": "We had lunch at home yesterday.",
+          "cz": "Včera jsme obědvali doma.",
+          "gap": "We ____ lunch at home yesterday. (have)",
           "gap_answer": "had",
-          "gap_accepts": ["ate", "had"],
-          "quiz_options": ["had", "have", "haved", "having"],
+          "gap_accepts": [
+            "ate",
+            "had"
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "haved",
+            "having"
+          ],
           "accepts": [
-            "We had lunch at home.",
-            "We ate lunch at home."
+            "We had lunch at home yesterday.",
+            "We ate lunch at home yesterday."
           ],
           "explanation": "have lunch or eat lunch → **had** / **ate**.",
-          "explanation_cz": "have lunch nebo eat lunch → **had** / **ate**."
+          "explanation_cz": "have lunch nebo eat lunch → **had** / **ate**.",
+          "wrong": "We have lunch at home yesterday."
         },
         {
           "en": "I saw a film yesterday.",
           "cz": "Včera jsem viděl film.",
-          "gap": "I ____ a film yesterday.",
+          "gap": "I ____ a film yesterday. (see)",
           "gap_answer": "saw",
-          "quiz_options": ["saw", "see", "seed", "seeing"],
+          "quiz_options": [
+            "saw",
+            "see",
+            "seed",
+            "seeing"
+          ],
           "accepts": [
             "I saw a film yesterday.",
             "I saw a movie yesterday.",
@@ -179,303 +291,331 @@
             "I saw the movie yesterday."
           ],
           "explanation": "see → **saw**, not *seed.",
-          "explanation_cz": "see → **saw**, ne *seed."
+          "explanation_cz": "see → **saw**, ne *seed.",
+          "wrong": "I see a film yesterday."
         },
         {
-          "en": "She came late.",
-          "cz": "Přišla pozdě.",
-          "gap": "She ____ late.",
+          "en": "She came late yesterday.",
+          "cz": "Včera přišla pozdě.",
+          "gap": "She ____ late yesterday. (come)",
           "gap_answer": "came",
-          "quiz_options": ["came", "come", "comed", "coming"],
-          "accepts": ["She came late."],
-          "explanation": "come → **came**, not *comed.",
-          "explanation_cz": "come → **came**, ne *comed."
-        },
-        {
-          "en": "He made tea.",
-          "cz": "Udělal čaj.",
-          "gap": "He ____ tea.",
-          "gap_answer": "made",
-          "quiz_options": ["made", "make", "maked", "making"],
-          "accepts": ["He made tea."],
-          "explanation": "make → **made**, not *maked.",
-          "explanation_cz": "make → **made**, ne *maked."
-        },
-        {
-          "en": "I got up at seven.",
-          "cz": "Vstal jsem v sedm.",
-          "gap": "I ____ up at seven.",
-          "gap_answer": "got",
-          "quiz_options": ["got", "get", "getted", "getting"],
+          "quiz_options": [
+            "came",
+            "come",
+            "comed",
+            "coming"
+          ],
           "accepts": [
-            "I got up at seven.",
-            "I got up at 7.",
-            "I got up at seven o'clock."
+            "She came late yesterday."
+          ],
+          "explanation": "come → **came**, not *comed.",
+          "explanation_cz": "come → **came**, ne *comed.",
+          "wrong": "She come late yesterday."
+        },
+        {
+          "en": "He made tea yesterday.",
+          "cz": "Včera udělal čaj.",
+          "gap": "He ____ tea yesterday. (make)",
+          "gap_answer": "made",
+          "quiz_options": [
+            "made",
+            "make",
+            "maked",
+            "making"
+          ],
+          "accepts": [
+            "He made tea yesterday."
+          ],
+          "explanation": "make → **made**, not *maked.",
+          "explanation_cz": "make → **made**, ne *maked.",
+          "wrong": "He make tea yesterday."
+        },
+        {
+          "en": "I got up at seven yesterday.",
+          "cz": "Včera jsem vstal v sedm.",
+          "gap": "I ____ up at seven yesterday. (get)",
+          "gap_answer": "got",
+          "quiz_options": [
+            "got",
+            "get",
+            "getted",
+            "getting"
+          ],
+          "accepts": [
+            "I got up at seven yesterday.",
+            "I got up at 7 yesterday.",
+            "I got up at seven o'clock yesterday."
           ],
           "explanation": "get → **got**, not *getted.",
-          "explanation_cz": "get → **got**, ne *getted."
-        },
-        {
-          "en": "She said hello.",
-          "cz": "Řekla ahoj.",
-          "gap": "She ____ hello.",
-          "gap_answer": "said",
-          "quiz_options": ["said", "say", "sayed", "saying"],
-          "accepts": ["She said hello."],
-          "explanation": "say → **said**, not *sayed.",
-          "explanation_cz": "say → **said**, ne *sayed."
-        },
-        {
-          "en": "We took a bus.",
-          "cz": "Jeli jsme autobusem.",
-          "gap": "We ____ a bus.",
-          "gap_answer": "took",
-          "quiz_options": ["took", "take", "taked", "taking"],
-          "accepts": ["We took a bus."],
-          "explanation": "take → **took**, not *taked.",
-          "explanation_cz": "take → **took**, ne *taked."
+          "explanation_cz": "get → **got**, ne *getted.",
+          "wrong": "I get up at seven yesterday."
         },
         {
           "en": "I was tired yesterday.",
           "cz": "Včera jsem byl unavený.",
-          "gap": "I ____ tired yesterday.",
+          "gap": "I ____ tired yesterday. (be)",
           "gap_answer": "was",
-          "quiz_options": ["was", "were", "is", "didn't"],
-          "accepts": ["I was tired yesterday."],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "didn't"
+          ],
+          "accepts": [
+            "I was tired yesterday."
+          ],
           "explanation": "I/he/she → **was**. Not *didn't be*.",
-          "explanation_cz": "I/he/she → **was**. Ne *didn't be*."
+          "explanation_cz": "I/he/she → **was**. Ne *didn't be*.",
+          "wrong": "I am tired yesterday."
         },
         {
-          "en": "She was at home.",
-          "cz": "Byla doma.",
-          "gap": "She ____ at home.",
+          "en": "She was at home last week.",
+          "cz": "Minulý týden byla doma.",
+          "gap": "She ____ at home last week. (be)",
           "gap_answer": "was",
-          "quiz_options": ["was", "were", "is", "didn't"],
-          "accepts": ["She was at home."],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "didn't"
+          ],
+          "accepts": [
+            "She was at home last week."
+          ],
           "explanation": "she → **was**. Not *didn't be*.",
-          "explanation_cz": "she → **was**. Ne *didn't be*."
+          "explanation_cz": "she → **was**. Ne *didn't be*.",
+          "wrong": "She were at home last week."
         },
         {
-          "en": "We were happy.",
-          "cz": "Byli jsme šťastní.",
-          "gap": "We ____ happy.",
+          "en": "We were happy last year.",
+          "cz": "Loni jsme byli šťastní.",
+          "gap": "We ____ happy last year. (be)",
           "gap_answer": "were",
-          "quiz_options": ["were", "was", "are", "didn't"],
-          "accepts": ["We were happy."],
+          "quiz_options": [
+            "were",
+            "was",
+            "are",
+            "didn't"
+          ],
+          "accepts": [
+            "We were happy last year."
+          ],
           "explanation": "we/they/you → **were**. Not *didn't be*.",
-          "explanation_cz": "we/they/you → **were**. Ne *didn't be*."
+          "explanation_cz": "we/they/you → **were**. Ne *didn't be*.",
+          "wrong": "We was happy last year."
         },
         {
-          "en": "They were in Prague.",
-          "cz": "Byli v Praze.",
-          "gap": "They ____ in Prague.",
+          "en": "They were in Prague in 2019.",
+          "cz": "V roce 2019 byli v Praze.",
+          "gap": "They ____ in Prague in 2019. (be)",
           "gap_answer": "were",
-          "quiz_options": ["were", "was", "are", "didn't"],
-          "accepts": ["They were in Prague."],
+          "quiz_options": [
+            "were",
+            "was",
+            "are",
+            "didn't"
+          ],
+          "accepts": [
+            "They were in Prague in 2019."
+          ],
           "explanation": "they → **were**. Not *didn't be*.",
-          "explanation_cz": "they → **were**. Ne *didn't be*."
+          "explanation_cz": "they → **were**. Ne *didn't be*.",
+          "wrong": "They was in Prague in 2019."
         },
         {
           "en": "I didn't work yesterday.",
           "cz": "Včera jsem nepracoval.",
-          "gap": "I didn't ____ yesterday.",
+          "gap": "I didn't ____ yesterday. (work)",
           "gap_answer": "work",
-          "quiz_options": ["work", "worked", "working", "works"],
+          "quiz_options": [
+            "work",
+            "worked",
+            "working",
+            "works"
+          ],
           "accepts": [
             "I didn't work yesterday.",
             "I did not work yesterday."
           ],
           "explanation": "After **didn't**: **work**, not *worked.",
-          "explanation_cz": "Po **didn't**: **work**, ne *worked."
+          "explanation_cz": "Po **didn't**: **work**, ne *worked.",
+          "wrong": "I didn't worked yesterday."
         },
         {
           "en": "She didn't go to school.",
           "cz": "Nešla do školy.",
-          "gap": "She didn't ____ to school.",
+          "gap": "She didn't ____ to school. (go)",
           "gap_answer": "go",
-          "quiz_options": ["go", "went", "going", "goed"],
+          "quiz_options": [
+            "go",
+            "went",
+            "going",
+            "goed"
+          ],
           "accepts": [
             "She didn't go to school.",
             "She did not go to school."
           ],
           "explanation": "After **didn't**: **go**, not *went.",
-          "explanation_cz": "Po **didn't**: **go**, ne *went."
+          "explanation_cz": "Po **didn't**: **go**, ne *went.",
+          "wrong": "She didn't went to school."
         },
         {
           "en": "We didn't see him.",
           "cz": "Neviděli jsme ho.",
-          "gap": "We didn't ____ him.",
+          "gap": "We didn't ____ him. (see)",
           "gap_answer": "see",
-          "quiz_options": ["see", "saw", "seeing", "seed"],
+          "quiz_options": [
+            "see",
+            "saw",
+            "seeing",
+            "seed"
+          ],
           "accepts": [
             "We didn't see him.",
             "We did not see him."
           ],
           "explanation": "After **didn't**: **see**, not *saw.",
-          "explanation_cz": "Po **didn't**: **see**, ne *saw."
+          "explanation_cz": "Po **didn't**: **see**, ne *saw.",
+          "wrong": "We didn't saw him."
         },
         {
           "en": "Did you work yesterday?",
           "cz": "Pracoval jsi včera?",
-          "gap": "Did you ____ yesterday?",
+          "gap": "Did you ____ yesterday? (work)",
           "gap_answer": "work",
-          "quiz_options": ["work", "worked", "working", "works"],
-          "accepts": ["Did you work yesterday?"],
+          "quiz_options": [
+            "work",
+            "worked",
+            "working",
+            "works"
+          ],
+          "accepts": [
+            "Did you work yesterday?"
+          ],
           "explanation": "After **Did**: **work**, not *worked.",
-          "explanation_cz": "Po **Did**: **work**, ne *worked."
+          "explanation_cz": "Po **Did**: **work**, ne *worked.",
+          "wrong": "Did you worked yesterday?"
         },
         {
           "en": "Did she go home?",
           "cz": "Šla domů?",
-          "gap": "Did she ____ home?",
+          "gap": "Did she ____ home? (go)",
           "gap_answer": "go",
-          "quiz_options": ["go", "went", "going", "goed"],
-          "accepts": ["Did she go home?"],
+          "quiz_options": [
+            "go",
+            "went",
+            "going",
+            "goed"
+          ],
+          "accepts": [
+            "Did she go home?"
+          ],
           "explanation": "After **Did**: **go**, not *went.",
-          "explanation_cz": "Po **Did**: **go**, ne *went."
+          "explanation_cz": "Po **Did**: **go**, ne *went.",
+          "wrong": "Did she went home?"
         },
         {
-          "en": "I visited Prague in June.",
-          "cz": "V červnu jsem navštívil Prahu.",
-          "gap": "I ____ Prague in June.",
+          "en": "I visited Prague in 2019.",
+          "cz": "V roce 2019 jsem navštívil Prahu.",
+          "gap": "I ____ Prague in 2019. (visit)",
           "gap_answer": "visited",
-          "quiz_options": ["visited", "visit", "visiting", "visits"],
-          "accepts": ["I visited Prague in June."],
+          "quiz_options": [
+            "visited",
+            "visit",
+            "visiting",
+            "visits"
+          ],
+          "accepts": [
+            "I visited Prague in 2019."
+          ],
           "explanation": "visit → **visited**.",
-          "explanation_cz": "visit → **visited**."
+          "explanation_cz": "visit → **visited**.",
+          "wrong": "I visit Prague in 2019."
         },
         {
-          "en": "She finished work at six.",
-          "cz": "Dokončila práci v šest.",
-          "gap": "She ____ work at six.",
+          "en": "She finished work at six yesterday.",
+          "cz": "Včera dokončila práci v šest.",
+          "gap": "She ____ work at six yesterday. (finish)",
           "gap_answer": "finished",
-          "quiz_options": ["finished", "finish", "finishing", "finishes"],
-          "accepts": ["She finished work at six."],
+          "quiz_options": [
+            "finished",
+            "finish",
+            "finishing",
+            "finishes"
+          ],
+          "accepts": [
+            "She finished work at six yesterday."
+          ],
           "explanation": "finish → **finished**.",
-          "explanation_cz": "finish → **finished**."
+          "explanation_cz": "finish → **finished**.",
+          "wrong": "She finish work at six yesterday."
         },
         {
-          "en": "We cleaned the kitchen.",
-          "cz": "Uklidili jsme kuchyň.",
-          "gap": "We ____ the kitchen.",
+          "en": "We cleaned the kitchen yesterday.",
+          "cz": "Včera jsme uklidili kuchyň.",
+          "gap": "We ____ the kitchen yesterday. (clean)",
           "gap_answer": "cleaned",
-          "quiz_options": ["cleaned", "clean", "cleaning", "cleans"],
-          "accepts": ["We cleaned the kitchen."],
+          "quiz_options": [
+            "cleaned",
+            "clean",
+            "cleaning",
+            "cleans"
+          ],
+          "accepts": [
+            "We cleaned the kitchen yesterday."
+          ],
           "explanation": "clean → **cleaned**.",
-          "explanation_cz": "clean → **cleaned**."
+          "explanation_cz": "clean → **cleaned**.",
+          "wrong": "We clean the kitchen yesterday."
         },
         {
           "en": "He cooked dinner yesterday.",
           "cz": "Včera uvařil večeři.",
-          "gap": "He ____ dinner yesterday.",
+          "gap": "He ____ dinner yesterday. (cook)",
           "gap_answer": "cooked",
-          "quiz_options": ["cooked", "cook", "cooking", "cooks"],
-          "accepts": ["He cooked dinner yesterday."],
+          "quiz_options": [
+            "cooked",
+            "cook",
+            "cooking",
+            "cooks"
+          ],
+          "accepts": [
+            "He cooked dinner yesterday."
+          ],
           "explanation": "cook → **cooked**.",
-          "explanation_cz": "cook → **cooked**."
+          "explanation_cz": "cook → **cooked**.",
+          "wrong": "He cook dinner yesterday."
         },
         {
-          "en": "They started the course in May.",
-          "cz": "Kurz začali v květnu.",
-          "gap": "They ____ the course in May.",
+          "en": "They started the course last year.",
+          "cz": "Loni začali kurz.",
+          "gap": "They ____ the course last year. (start)",
           "gap_answer": "started",
-          "quiz_options": ["started", "start", "starting", "starts"],
-          "accepts": ["They started the course in May."],
+          "quiz_options": [
+            "started",
+            "start",
+            "starting",
+            "starts"
+          ],
+          "accepts": [
+            "They started the course last year."
+          ],
           "explanation": "start → **started**.",
-          "explanation_cz": "start → **started**."
-        },
-        {
-          "en": "I bought a new phone.",
-          "cz": "Koupil jsem nový telefon.",
-          "gap": "I ____ a new phone.",
-          "gap_answer": "bought",
-          "quiz_options": ["bought", "buy", "buyed", "buying"],
-          "accepts": ["I bought a new phone."],
-          "explanation": "buy → **bought**, not *buyed.",
-          "explanation_cz": "buy → **bought**, ne *buyed."
-        },
-        {
-          "en": "She wrote an email.",
-          "cz": "Napsala e-mail.",
-          "gap": "She ____ an email.",
-          "gap_answer": "wrote",
-          "quiz_options": ["wrote", "write", "writed", "writing"],
-          "accepts": [
-            "She wrote an email.",
-            "She wrote an e-mail."
-          ],
-          "explanation": "write → **wrote**, not *writed.",
-          "explanation_cz": "write → **wrote**, ne *writed."
-        },
-        {
-          "en": "He drank coffee.",
-          "cz": "Vypil kávu.",
-          "gap": "He ____ coffee.",
-          "gap_answer": "drank",
-          "quiz_options": ["drank", "drink", "drinked", "drinking"],
-          "accepts": ["He drank coffee."],
-          "explanation": "drink → **drank**, not *drinked.",
-          "explanation_cz": "drink → **drank**, ne *drinked."
-        },
-        {
-          "en": "We met at the station.",
-          "cz": "Sešli jsme se na nádraží.",
-          "gap": "We ____ at the station.",
-          "gap_answer": "met",
-          "quiz_options": ["met", "meet", "meeted", "meeting"],
-          "accepts": ["We met at the station."],
-          "explanation": "meet → **met**, not *meeted.",
-          "explanation_cz": "meet → **met**, ne *meeted."
-        },
-        {
-          "en": "I left home at seven.",
-          "cz": "Odešel jsem z domova v sedm.",
-          "gap": "I ____ home at seven.",
-          "gap_answer": "left",
-          "quiz_options": ["left", "leave", "leaved", "leaving"],
-          "accepts": ["I left home at seven."],
-          "explanation": "leave → **left**, not *leaved.",
-          "explanation_cz": "leave → **left**, ne *leaved."
-        },
-        {
-          "en": "She found her keys.",
-          "cz": "Našla klíče.",
-          "gap": "She ____ her keys.",
-          "gap_answer": "found",
-          "quiz_options": ["found", "find", "finded", "finding"],
-          "accepts": ["She found her keys."],
-          "explanation": "find → **found**, not *finded.",
-          "explanation_cz": "find → **found**, ne *finded."
-        },
-        {
-          "en": "He told me a story.",
-          "cz": "Řekl mi příběh.",
-          "gap": "He ____ me a story.",
-          "gap_answer": "told",
-          "quiz_options": ["told", "tell", "telled", "telling"],
-          "accepts": ["He told me a story."],
-          "explanation": "tell → **told**, not *telled.",
-          "explanation_cz": "tell → **told**, ne *telled."
-        },
-        {
-          "en": "I didn't buy a book.",
-          "cz": "Nekoupil jsem knihu.",
-          "gap": "I didn't ____ a book.",
-          "gap_answer": "buy",
-          "quiz_options": ["buy", "bought", "buying", "buyed"],
-          "accepts": [
-            "I didn't buy a book.",
-            "I did not buy a book."
-          ],
-          "explanation": "After **didn't**: **buy**, not *bought.",
-          "explanation_cz": "Po **didn't**: **buy**, ne *bought."
+          "explanation_cz": "start → **started**.",
+          "wrong": "They start the course last year."
         },
         {
           "en": "They didn't like the film.",
           "cz": "Film se jim nelíbil.",
-          "gap": "They didn't ____ the film.",
+          "gap": "They didn't ____ the film. (like)",
           "gap_answer": "like",
-          "quiz_options": ["like", "liked", "liking", "likes"],
+          "quiz_options": [
+            "like",
+            "liked",
+            "liking",
+            "likes"
+          ],
           "accepts": [
             "They didn't like the film.",
             "They did not like the film.",
@@ -483,75 +623,132 @@
             "They did not like the movie."
           ],
           "explanation": "After **didn't**: **like**, not *liked.",
-          "explanation_cz": "Po **didn't**: **like**, ne *liked."
+          "explanation_cz": "Po **didn't**: **like**, ne *liked.",
+          "wrong": "They didn't liked the film."
         },
         {
           "en": "Did he call you?",
           "cz": "Volal ti?",
-          "gap": "Did he ____ you?",
+          "gap": "Did he ____ you? (call)",
           "gap_answer": "call",
-          "quiz_options": ["call", "called", "calling", "calls"],
-          "accepts": ["Did he call you?"],
+          "quiz_options": [
+            "call",
+            "called",
+            "calling",
+            "calls"
+          ],
+          "accepts": [
+            "Did he call you?"
+          ],
           "explanation": "After **Did**: **call**, not *called.",
-          "explanation_cz": "Po **Did**: **call**, ne *called."
+          "explanation_cz": "Po **Did**: **call**, ne *called.",
+          "wrong": "Did he called you?"
         },
         {
           "en": "Did they arrive on time?",
           "cz": "Přijeli včas?",
-          "gap": "Did they ____ on time?",
+          "gap": "Did they ____ on time? (arrive)",
           "gap_answer": "arrive",
-          "quiz_options": ["arrive", "arrived", "arriving", "arrives"],
-          "accepts": ["Did they arrive on time?"],
+          "quiz_options": [
+            "arrive",
+            "arrived",
+            "arriving",
+            "arrives"
+          ],
+          "accepts": [
+            "Did they arrive on time?"
+          ],
           "explanation": "After **Did**: **arrive**, not *arrived.",
-          "explanation_cz": "Po **Did**: **arrive**, ne *arrived."
+          "explanation_cz": "Po **Did**: **arrive**, ne *arrived.",
+          "wrong": "Did they arrived on time?"
         },
         {
           "en": "Where did you go?",
           "cz": "Kam jsi šel?",
-          "gap": "Where did you ____?",
+          "gap": "Where did you ____? (go)",
           "gap_answer": "go",
-          "quiz_options": ["go", "went", "going", "goed"],
-          "accepts": ["Where did you go?"],
+          "quiz_options": [
+            "go",
+            "went",
+            "going",
+            "goed"
+          ],
+          "accepts": [
+            "Where did you go?"
+          ],
           "explanation": "After **did**: **go**, not *went.",
-          "explanation_cz": "Po **did**: **go**, ne *went."
+          "explanation_cz": "Po **did**: **go**, ne *went.",
+          "wrong": "Where did you went?"
         },
         {
-          "en": "What did she say?",
-          "cz": "Co řekla?",
-          "gap": "What did she ____?",
-          "gap_answer": "say",
-          "quiz_options": ["say", "said", "saying", "sayed"],
-          "accepts": ["What did she say?"],
-          "explanation": "After **did**: **say**, not *said.",
-          "explanation_cz": "Po **did**: **say**, ne *said."
+          "en": "What did she see?",
+          "cz": "Co viděla?",
+          "gap": "What did she ____? (see)",
+          "gap_answer": "see",
+          "quiz_options": [
+            "see",
+            "saw",
+            "seeing",
+            "seed"
+          ],
+          "accepts": [
+            "What did she see?"
+          ],
+          "explanation": "After **did**: **see**, not *saw.",
+          "explanation_cz": "Po **did**: **see**, ne *saw.",
+          "wrong": "What did she saw?"
         },
         {
-          "en": "I was in the office all day.",
-          "cz": "Byl jsem celý den v kanceláři.",
-          "gap": "I ____ in the office all day.",
+          "en": "I was in the office all day yesterday.",
+          "cz": "Včera jsem byl celý den v kanceláři.",
+          "gap": "I ____ in the office all day yesterday. (be)",
           "gap_answer": "was",
-          "quiz_options": ["was", "were", "is", "didn't"],
-          "accepts": ["I was in the office all day."],
+          "quiz_options": [
+            "was",
+            "were",
+            "is",
+            "didn't"
+          ],
+          "accepts": [
+            "I was in the office all day yesterday."
+          ],
           "explanation": "I → **was** (be in the past).",
-          "explanation_cz": "I → **was** (be v minulosti)."
+          "explanation_cz": "I → **was** (be v minulosti).",
+          "wrong": "I am in the office all day yesterday."
         },
         {
-          "en": "They were tired after the trip.",
-          "cz": "Po výletu byli unavení.",
-          "gap": "They ____ tired after the trip.",
+          "en": "They were tired after the trip last week.",
+          "cz": "Minulý týden byli po výletu unavení.",
+          "gap": "They ____ tired after the trip last week. (be)",
           "gap_answer": "were",
-          "quiz_options": ["were", "was", "are", "didn't"],
-          "accepts": ["They were tired after the trip."],
+          "quiz_options": [
+            "were",
+            "was",
+            "are",
+            "didn't"
+          ],
+          "accepts": [
+            "They were tired after the trip last week."
+          ],
           "explanation": "they → **were** (be in the past).",
-          "explanation_cz": "they → **were** (be v minulosti)."
+          "explanation_cz": "they → **were** (be v minulosti).",
+          "wrong": "They was tired after the trip last week."
         },
         {
           "en": "He didn't eat breakfast.",
           "cz": "Nesnídal.",
-          "gap": "He didn't ____ breakfast.",
+          "gap": "He didn't ____ breakfast. (eat)",
           "gap_answer": "eat",
-          "gap_accepts": ["eat", "have"],
-          "quiz_options": ["eat", "ate", "eating", "eated"],
+          "gap_accepts": [
+            "eat",
+            "have"
+          ],
+          "quiz_options": [
+            "eat",
+            "ate",
+            "eating",
+            "eated"
+          ],
           "accepts": [
             "He didn't eat breakfast.",
             "He did not eat breakfast.",
@@ -559,91 +756,113 @@
             "He did not have breakfast."
           ],
           "explanation": "After **didn't**: **eat** or **have**, not *ate.",
-          "explanation_cz": "Po **didn't**: **eat** nebo **have**, ne *ate."
+          "explanation_cz": "Po **didn't**: **eat** nebo **have**, ne *ate.",
+          "wrong": "He didn't ate breakfast."
         },
         {
-          "en": "We walked to the park.",
-          "cz": "Šli jsme pěšky do parku.",
-          "gap": "We ____ to the park.",
+          "en": "We walked to the park yesterday.",
+          "cz": "Včera jsme šli pěšky do parku.",
+          "gap": "We ____ to the park yesterday. (walk)",
           "gap_answer": "walked",
-          "quiz_options": ["walked", "walk", "walking", "walks"],
-          "accepts": ["We walked to the park."],
-          "explanation": "walk → **walked**.",
-          "explanation_cz": "walk → **walked**."
-        },
-        {
-          "en": "She read two books in May.",
-          "cz": "V květnu přečetla dvě knihy.",
-          "gap": "She ____ two books in May.",
-          "gap_answer": "read",
-          "quiz_options": ["read", "reads", "reading", "readed"],
-          "accepts": ["She read two books in May."],
-          "explanation": "read → **read** (same letters). Not *readed.",
-          "explanation_cz": "read → **read** (stejná písmena). Ne *readed."
-        },
-        {
-          "en": "I woke up late.",
-          "cz": "Probudil jsem se pozdě.",
-          "gap": "I ____ up late.",
-          "gap_answer": "woke",
-          "quiz_options": ["woke", "wake", "waked", "waking"],
-          "accepts": ["I woke up late."],
-          "explanation": "wake → **woke**, not *waked.",
-          "explanation_cz": "wake → **woke**, ne *waked."
-        },
-        {
-          "en": "Yes, I did.",
-          "cz": "Ano, pracoval.",
-          "use": false,
-          "gap": "Yes, I ____.",
-          "gap_answer": "did",
-          "quiz_options": ["did", "do", "was", "didn't"],
-          "accepts": ["Yes, I did."],
-          "explanation": "Short answer: Yes, I **did**.",
-          "explanation_cz": "Krátká odpověď: Yes, I **did**."
-        },
-        {
-          "en": "No, I didn't.",
-          "cz": "Ne, nepracoval.",
-          "use": false,
-          "gap": "No, I ____.",
-          "gap_answer": "didn't",
-          "gap_accepts": ["did not", "didn't"],
-          "quiz_options": ["didn't", "don't", "wasn't", "did"],
-          "accepts": [
-            "No, I didn't.",
-            "No, I did not."
+          "quiz_options": [
+            "walked",
+            "walk",
+            "walking",
+            "walks"
           ],
-          "explanation": "Short answer: No, I **didn't**.",
-          "explanation_cz": "Krátká odpověď: No, I **didn't**."
+          "accepts": [
+            "We walked to the park yesterday."
+          ],
+          "explanation": "walk → **walked**.",
+          "explanation_cz": "walk → **walked**.",
+          "wrong": "We walk to the park yesterday."
+        },
+        {
+          "en": "Did you work yesterday? Yes, I did.",
+          "cz": "Pracoval jsi včera? — Ano.",
+          "use": false,
+          "gap": "Did you work yesterday? Yes, I ____.",
+          "gap_answer": "did",
+          "quiz_options": [
+            "did",
+            "do",
+            "was",
+            "didn't"
+          ],
+          "accepts": [
+            "Did you work yesterday? Yes, I did."
+          ],
+          "explanation": "Short answer after **Did**: Yes, I **did**.",
+          "explanation_cz": "Krátká odpověď po **Did**: Yes, I **did**."
+        },
+        {
+          "en": "Did you work yesterday? No, I didn't.",
+          "cz": "Pracoval jsi včera? — Ne.",
+          "use": false,
+          "gap": "Did you work yesterday? No, I ____.",
+          "gap_answer": "didn't",
+          "gap_accepts": [
+            "did not",
+            "didn't"
+          ],
+          "quiz_options": [
+            "didn't",
+            "don't",
+            "wasn't",
+            "did"
+          ],
+          "accepts": [
+            "Did you work yesterday? No, I didn't.",
+            "Did you work yesterday? No, I did not."
+          ],
+          "explanation": "Short answer after **Did**: No, I **didn't**.",
+          "explanation_cz": "Krátká odpověď po **Did**: No, I **didn't**."
         },
         {
           "en": "I wasn't tired yesterday.",
           "cz": "Včera jsem nebyl unavený.",
-          "gap": "I ____ tired yesterday. (no)",
+          "gap": "I ____ tired yesterday. (be / no)",
           "gap_answer": "wasn't",
-          "gap_accepts": ["was not", "wasn't"],
-          "quiz_options": ["wasn't", "didn't", "was", "weren't"],
+          "gap_accepts": [
+            "was not",
+            "wasn't"
+          ],
+          "quiz_options": [
+            "wasn't",
+            "didn't",
+            "was",
+            "weren't"
+          ],
           "accepts": [
             "I wasn't tired yesterday.",
             "I was not tired yesterday."
           ],
           "explanation": "I/he/she → **wasn't**. Not *didn't be*.",
-          "explanation_cz": "I/he/she → **wasn't**. Ne *didn't be*."
+          "explanation_cz": "I/he/she → **wasn't**. Ne *didn't be*.",
+          "wrong": "I didn't be tired yesterday."
         },
         {
-          "en": "They weren't at home.",
-          "cz": "Nebyli doma.",
-          "gap": "They ____ at home. (no)",
+          "en": "They weren't at home yesterday.",
+          "cz": "Včera nebyli doma.",
+          "gap": "They ____ at home yesterday. (be / no)",
           "gap_answer": "weren't",
-          "gap_accepts": ["were not", "weren't"],
-          "quiz_options": ["weren't", "didn't", "were", "wasn't"],
+          "gap_accepts": [
+            "were not",
+            "weren't"
+          ],
+          "quiz_options": [
+            "weren't",
+            "didn't",
+            "were",
+            "wasn't"
+          ],
           "accepts": [
-            "They weren't at home.",
-            "They were not at home."
+            "They weren't at home yesterday.",
+            "They were not at home yesterday."
           ],
           "explanation": "they → **weren't**. Not *didn't be*.",
-          "explanation_cz": "they → **weren't**. Ne *didn't be*."
+          "explanation_cz": "they → **weren't**. Ne *didn't be*.",
+          "wrong": "They didn't be at home yesterday."
         }
       ]
     }
@@ -659,15 +878,35 @@
           "Same form for I / you / he (except **be**).",
           "After **didn't** / **Did**: **work**, not *worked."
         ],
-        "svg": "<svg viewBox=\"0 0 520 190\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"88\" x2=\"500\" y2=\"88\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,88 490,83 490,93\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"90\" cy=\"88\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"90\" y=\"58\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">yesterday</text>\n  <text x=\"90\" y=\"122\" font-size=\"16\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I worked</text>\n  <text x=\"90\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple</text>\n  <circle cx=\"260\" cy=\"88\" r=\"6\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"260\" y=\"58\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">every day</text>\n  <text x=\"260\" y=\"122\" font-size=\"16\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I work</text>\n  <text x=\"260\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present simple</text>\n  <circle cx=\"430\" cy=\"88\" r=\"6\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"430\" y=\"58\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">now</text>\n  <text x=\"430\" y=\"122\" font-size=\"16\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I'm working</text>\n  <text x=\"430\" y=\"144\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present continuous</text>\n</svg>",
+        "svg": "<svg viewBox=\"0 0 560 210\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"280\" y=\"22\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <line x1=\"280\" y1=\"28\" x2=\"280\" y2=\"185\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <line x1=\"40\" y1=\"88\" x2=\"520\" y2=\"88\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"520,88 510,83 510,93\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"130\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"168\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"206\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"244\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"280\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"316\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"354\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"392\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"430\" cy=\"88\" r=\"4\" fill=\"var(--muted, #a0a0a0)\"/>\n  <circle cx=\"80\" cy=\"88\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"80\" y=\"48\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">yesterday</text>\n  <text x=\"80\" y=\"68\" font-size=\"15\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I worked</text>\n  <text x=\"80\" y=\"112\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">finished</text>\n  <text x=\"280\" y=\"58\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">every day</text>\n  <text x=\"280\" y=\"112\" font-size=\"15\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I work</text>\n  <rect x=\"228\" y=\"122\" width=\"104\" height=\"16\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"280\" y=\"160\" font-size=\"15\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I'm working</text>\n  <text x=\"280\" y=\"178\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">now · a short time</text>\n</svg>",
         "table": {
           "caption": "shape",
-          "headers": ["", "Form", "Example"],
+          "headers": [
+            "",
+            "Form",
+            "Example"
+          ],
           "rows": [
-            ["+", "work → **worked**", "I **worked** yesterday."],
-            ["+", "go → **went**", "I **went** home."],
-            ["−", "**didn't** + work", "I **didn't** work."],
-            ["?", "**Did** you work?", "**Did** you work?"]
+            [
+              "+",
+              "work → **worked**",
+              "I **worked** yesterday."
+            ],
+            [
+              "+",
+              "go → **went**",
+              "I **went** home."
+            ],
+            [
+              "−",
+              "**didn't** + work",
+              "I **didn't** work."
+            ],
+            [
+              "?",
+              "**Did** you work?",
+              "**Did** you work?"
+            ]
           ]
         }
       },
@@ -681,13 +920,37 @@
         ],
         "table": {
           "caption": "regular",
-          "headers": ["every day", "yesterday", "Example"],
+          "headers": [
+            "every day",
+            "yesterday",
+            "Example"
+          ],
           "rows": [
-            ["work", "**worked**", "I **worked** yesterday."],
-            ["live", "**lived**", "She **lived** in Brno."],
-            ["play", "**played**", "We **played** football."],
-            ["watch", "**watched**", "He **watched** a film."],
-            ["study", "**studied**", "They **studied** English."]
+            [
+              "work",
+              "**worked**",
+              "I **worked** yesterday."
+            ],
+            [
+              "live",
+              "**lived**",
+              "She **lived** in Brno."
+            ],
+            [
+              "play",
+              "**played**",
+              "We **played** football."
+            ],
+            [
+              "watch",
+              "**watched**",
+              "He **watched** a film."
+            ],
+            [
+              "study",
+              "**studied**",
+              "They **studied** English."
+            ]
           ]
         }
       },
@@ -701,46 +964,47 @@
         ],
         "table": {
           "caption": "must know",
-          "headers": ["every day", "yesterday"],
+          "headers": [
+            "every day",
+            "yesterday"
+          ],
           "rows": [
-            ["go", "**went**"],
-            ["have", "**had**"],
-            ["see", "**saw**"],
-            ["come", "**came**"],
-            ["make", "**made**"],
-            ["get", "**got**"],
-            ["say", "**said**"],
-            ["take", "**took**"]
+            [
+              "go",
+              "**went**"
+            ],
+            [
+              "have",
+              "**had**"
+            ],
+            [
+              "see",
+              "**saw**"
+            ],
+            [
+              "come",
+              "**came**"
+            ],
+            [
+              "make",
+              "**made**"
+            ],
+            [
+              "get",
+              "**got**"
+            ]
           ]
         },
         "examples": [
-          { "en": "I **went** to school.", "cz": "Šel jsem do školy." },
-          { "en": "She **saw** a film.", "cz": "Viděla film." }
+          {
+            "en": "I **went** to school.",
+            "cz": "Šel jsem do školy."
+          },
+          {
+            "en": "She **saw** a film.",
+            "cz": "Viděla film."
+          }
         ]
-      },
-      {
-        "title": "More irregulars",
-        "title_cz": "Další nepravidelná",
-        "text_first": true,
-        "points": [
-          "**read** → **read** (same letters).",
-          "After **didn't** / **Did**: **buy**, not *bought."
-        ],
-        "table": {
-          "caption": "past",
-          "headers": ["every day", "yesterday"],
-          "rows": [
-            ["buy", "**bought**"],
-            ["write", "**wrote**"],
-            ["drink", "**drank**"],
-            ["meet", "**met**"],
-            ["leave", "**left**"],
-            ["find", "**found**"],
-            ["tell", "**told**"],
-            ["read", "**read**"],
-            ["wake", "**woke**"]
-          ]
-        }
       },
       {
         "title": "Be in the past",
@@ -752,15 +1016,33 @@
         ],
         "table": {
           "caption": "be",
-          "headers": ["Person", "Past", "Negative"],
+          "headers": [
+            "Person",
+            "Past",
+            "Negative"
+          ],
           "rows": [
-            ["I / he / she / it", "**was**", "**wasn't**"],
-            ["you / we / they", "**were**", "**weren't**"]
+            [
+              "I / he / she / it",
+              "**was**",
+              "**wasn't**"
+            ],
+            [
+              "you / we / they",
+              "**were**",
+              "**weren't**"
+            ]
           ]
         },
         "examples": [
-          { "en": "I **was** tired yesterday.", "cz": "Včera jsem byl unavený." },
-          { "en": "We **were** happy.", "cz": "Byli jsme šťastní." }
+          {
+            "en": "I **was** tired yesterday.",
+            "cz": "Včera jsem byl unavený."
+          },
+          {
+            "en": "We **were** happy.",
+            "cz": "Byli jsme šťastní."
+          }
         ]
       },
       {
@@ -773,16 +1055,34 @@
         ],
         "table": {
           "caption": "−",
-          "headers": ["Wrong", "Right"],
+          "headers": [
+            "Wrong",
+            "Right"
+          ],
           "rows": [
-            ["~~I didn't went~~", "I **didn't go**"],
-            ["~~She didn't worked~~", "She **didn't work**"],
-            ["~~We didn't saw~~", "We **didn't see**"]
+            [
+              "~~I didn't went~~",
+              "I **didn't go**"
+            ],
+            [
+              "~~She didn't worked~~",
+              "She **didn't work**"
+            ],
+            [
+              "~~We didn't saw~~",
+              "We **didn't see**"
+            ]
           ]
         },
         "examples": [
-          { "en": "I **didn't** work yesterday.", "cz": "Včera jsem nepracoval." },
-          { "en": "She **didn't** go to school.", "cz": "Nešla do školy." }
+          {
+            "en": "I **didn't** work yesterday.",
+            "cz": "Včera jsem nepracoval."
+          },
+          {
+            "en": "She **didn't** go to school.",
+            "cz": "Nešla do školy."
+          }
         ]
       },
       {
@@ -795,10 +1095,19 @@
         ],
         "table": {
           "caption": "?",
-          "headers": ["Question", "Short answer"],
+          "headers": [
+            "Question",
+            "Short answer"
+          ],
           "rows": [
-            ["**Did** you work yesterday?", "Yes, I **did**. / No, I **didn't**."],
-            ["**Did** she go home?", "Yes, she **did**. / No, she **didn't**."]
+            [
+              "**Did** you work yesterday?",
+              "Yes, I **did**. / No, I **didn't**."
+            ],
+            [
+              "**Did** she go home?",
+              "Yes, she **did**. / No, she **didn't**."
+            ]
           ]
         }
       },
@@ -810,12 +1119,27 @@
           "Finished time → past simple, not present."
         ],
         "table": {
-          "headers": ["Wrong", "Right"],
+          "headers": [
+            "Wrong",
+            "Right"
+          ],
           "rows": [
-            ["~~I work yesterday~~", "I **worked** yesterday"],
-            ["~~I goed home~~", "I **went** home"],
-            ["~~I didn't went~~", "I **didn't go**"],
-            ["~~Did she went?~~", "**Did** she **go**?"]
+            [
+              "~~I work yesterday~~",
+              "I **worked** yesterday"
+            ],
+            [
+              "~~I goed home~~",
+              "I **went** home"
+            ],
+            [
+              "~~I didn't went~~",
+              "I **didn't go**"
+            ],
+            [
+              "~~Did she went?~~",
+              "**Did** she **go**?"
+            ]
           ]
         }
       }

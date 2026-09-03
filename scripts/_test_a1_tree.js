@@ -12,6 +12,7 @@ globalThis.localStorage = {
 const {
   completeMode,
   completeVocabMode,
+  lastCompletedNodeId,
   hasFruit,
   hasVocabFruit,
   nodeProgressStateGrammar,
@@ -23,7 +24,7 @@ const {
   loadProgress,
   resetAllProgress,
 } = await import("../js/progress.js");
-const { litSlots, renderTreePortrait } = await import("../js/tree-portrait.js");
+const { litSlots, renderTreePortrait, woodMark, cambiumGirthBonus } = await import("../js/tree-portrait.js");
 
 let failed = 0;
 function assert(cond, msg) {
@@ -45,6 +46,12 @@ function fruitVocab(id) {
   completeVocabMode(id, "type", { nodeId: id, score: 1, total: 1 });
   completeVocabMode(id, "sentence", { nodeId: id, score: 1, total: 1 });
 }
+
+assert(woodMark({ remembered: [], mastered: [] }) === "", "no reviews → no wood mark");
+assert(woodMark({ remembered: [{ id: "a" }], mastered: [] }) === "wood-remembered", "≥1 review darkens wood");
+assert(woodMark({ remembered: [{ id: "a" }], mastered: [{ id: "b" }] }) === "wood-mastered", "mastered outranks remembered");
+assert(cambiumGirthBonus(0) === 0, "no trunk life → no girth bonus");
+assert(cambiumGirthBonus(2) > 0 && cambiumGirthBonus(2) < 0.14, "girth bonus saturates under one age step");
 
 assert(litSlots([], 3) === 0, "no live units → no lights");
 assert(litSlots([{ id: "a" }], 0) === 0, "no work → no lights");
@@ -110,6 +117,15 @@ const nodes = [
     root: "verb_phrase",
     tree_part: "verb_phrase",
   },
+  {
+    id: "trunk_glue_a1",
+    domain: "vocab",
+    status: "live",
+    content: "v/t.json",
+    levels: ["A1"],
+    tree_part: "trunk",
+    codex_unit: "V_TRUNK-A1-01",
+  },
   ...homeNodes,
 ];
 
@@ -118,6 +134,7 @@ fruitGrammar("a2_verbs");
 fruitVocab("home_0");
 fruitVocab("home_1");
 fruitVocab("home_2");
+fruitVocab("trunk_glue_a1");
 
 function isFruit(n) {
   return n.domain === "vocab" ? hasVocabFruit(n) : hasFruit(n.id);
@@ -182,9 +199,33 @@ assert(home2.fruitRemembered === 2, "remembered+mastered fill first (strongest f
 assert(home2.fruitMastered === 1, "one mastered home unit → one strongest fruit");
 assert(/fruit[^"]*mastered/.test(host.innerHTML), "SVG paints mastered fruit");
 assert(/fruit[^"]*remembered/.test(host.innerHTML), "SVG paints remembered fruit");
+assert(
+  /class="tp-house fruit wood-mastered" data-part="home_family"/.test(host.innerHTML),
+  "home house wood darkens at mastered",
+);
 const verbs2 = strengthPaint.laterals.find((L) => L.tree_part === "verb_phrase");
 assert(verbs2.knotsMastered === 1, "mastered Verbs knot");
 assert(/knot[^"]*mastered/.test(host.innerHTML), "SVG paints mastered knot");
+assert(
+  /class="tp-lateral fruit wood-mastered" data-part="verb_phrase"/.test(host.innerHTML),
+  "Verbs root wood darkens at mastered",
+);
+setReps("trunk_glue_a1", 1);
+const gluePaint = renderTreePortrait(host, {
+  level: "A1",
+  nodes,
+  isFruit: (id) => {
+    const n = nodes.find((x) => x.id === id);
+    return n ? isFruit(n) : false;
+  },
+  progressState: (id) => {
+    const n = nodes.find((x) => x.id === id);
+    return n ? nodeTreeStrength(n) : "none";
+  },
+});
+assert(gluePaint.cambium.glue > 0, "trunk-glue reviews feed girth sum");
+assert(gluePaint.cambium.bonus > 0, "trunk life thickens the stem a little");
+assert(/id="trunk" class="lb wood-remembered"/.test(host.innerHTML), "trunk wood darkens from glue reviews, not from houses");
 
 const payoffPaint = renderTreePortrait(host, {
   level: "A1",
@@ -223,6 +264,29 @@ assert(
   ]).total === 1,
   "sitting half is not an A1 circle slot",
 );
+
+assert(
+  lastCompletedNodeId(nodes) === "trunk_glue_a1",
+  "last completed stamp follows the last first-fruit",
+);
+fruitVocab("home_3");
+assert(
+  lastCompletedNodeId(nodes) === "home_3",
+  "a newer fruit replaces the last-completed stamp",
+);
+assert(
+  lastCompletedNodeId(nodes, "A1") === "home_3",
+  "A1 view keeps an A1 last-completed unit",
+);
+{
+  const p = loadProgress();
+  p.lastCompletedId = "a2_verbs";
+  ProgressStore.write(JSON.stringify(p));
+  assert(
+    lastCompletedNodeId(nodes, "A1") !== "a2_verbs",
+    "A1 view does not keep an A2 last-completed stamp",
+  );
+}
 
 if (failed) {
   console.error(`\n${failed} failed`);

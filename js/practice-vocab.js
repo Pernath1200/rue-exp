@@ -7,7 +7,9 @@
  * Each stage stops with score (e.g. 11/12) + retry wrongs before next.
  * Sentence mode:
  *   - trunk frames (practice: "frames") → model production from items
- *   - leaf packs with pack.sentences[] → same grading UI (authored translations)
+ *   - leaf packs with pack.sentences[] → Quiz/Type gaps
+ *   - Use: CZ→EN (default) · use_sentences[] frames · use_mode "rewrite"
+ *     (paraphrase: underlined prompt + letter clue, type the sentence)
  *   - no bank → "Coming soon" placeholder (no free-write)
  */
 
@@ -16,7 +18,7 @@ import { expandContractions } from "./contractions.js";
 import { introDiagram } from "./intro-visuals.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
 import { setSmokeContext } from "./smoke-flags.js";
-import { vocabCoverNeed, vocabCoveredEnough } from "./progress.js?v=2026-08-31-adopt";
+import { vocabCoverNeed, vocabCoveredEnough } from "./progress.js?v=2026-09-02-matchall";
 
 /**
  * Default questions per stage (Match board · Quiz · Type · Use).
@@ -616,9 +618,9 @@ function sentenceToFrame(s) {
   };
 }
 
-/** First letter + blanks, and letter count. Fat vocab Type only.
- *  Keep the model's capital on the revealed letter — strict_capitals grades
- *  the typed form, it does not rewrite the clue (James, 2026-08-31). */
+/** First letter + blanks, and letter count.
+ *  Was fat-deck only (>12). A2 36-word leaves still had 12 Type items, so
+ *  the clue never appeared (James, 2026-09-02, transport). Always show it. */
 function typeLetterClue(answer) {
   const raw = String(answer || "").trim();
   if (!raw) return "";
@@ -657,6 +659,39 @@ function typeLetterClue(answer) {
   flush();
   if (letters < 2) return "";
   return `${pat} · ${letters} letter${letters === 1 ? "" : "s"}`;
+}
+
+/** Use rewrite clue: r______ (7). Hidden target, Type-style length. */
+function rewriteLetterClue(lemma) {
+  const w = lemmaBare(lemma);
+  if (w.length < 2) return "";
+  return `${w[0]}${"_".repeat(w.length - 1)} (${w.length})`;
+}
+
+function markUnderline(prompt, span) {
+  const p = String(prompt || "");
+  const u = String(span || "").trim();
+  if (!p) return "";
+  if (!u) return escapeHtml(p);
+  const idx = p.toLowerCase().indexOf(u.toLowerCase());
+  if (idx < 0) return escapeHtml(p);
+  return `${escapeHtml(p.slice(0, idx))}<u class="rw-u">${escapeHtml(
+    p.slice(idx, idx + u.length),
+  )}</u>${escapeHtml(p.slice(idx + u.length))}`;
+}
+
+function rewriteHintFrame(it) {
+  const en = String(it.en || "");
+  const lemma = lemmaBare(it.lemma);
+  if (!en || !lemma) return "";
+  const esc = lemma.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(`(^|[^A-Za-zÀ-ž])(${esc})(?![A-Za-zÀ-ž])`, "i");
+  if (!re.test(en)) return "";
+  return en.replace(re, "$1____");
+}
+
+function isRewriteItem(it) {
+  return Boolean(it && it.prompt && it.underline && it.en);
 }
 
 /** Which-is-correct? Quiz (B21). Match and Type skip these. */
@@ -766,6 +801,11 @@ export function startPractice(root, block, opts) {
     Array.isArray(block.sentences) && block.sentences.length
       ? block.sentences
       : null;
+  /** A2+ Use bank (E10). Quiz/Type keep sentences[]. Absent → Use translates. */
+  const useBank =
+    Array.isArray(block.use_sentences) && block.use_sentences.length
+      ? block.use_sentences
+      : null;
   /** Optional read-first stage (concept packs). */
   const hasIntro = Array.isArray(block.intro) && block.intro.length > 0;
   /* Frames packs draw Use from block.items, the same list Type just used, so
@@ -790,6 +830,9 @@ export function startPractice(root, block, opts) {
         : [];
 
   function getSentenceItems() {
+    /* E10: Use prefers use_sentences[] when authored. Quiz/Type still read
+     * sentences[] via sentenceToFrame. */
+    if (useBank) return useBank;
     /* An authored bank wins even on a frames pack. Without this, Use on a
      * frames pack replays block.items — the same prompts Type just used —
      * so an added sentences[] was dead weight (James, 2026-08-31,
@@ -803,7 +846,8 @@ export function startPractice(root, block, opts) {
   // so a big deck cannot reach Use before its targets have surfaced
   // (guaranteed exposure, not probabilistic — the "Ile masz lat?" lesson).
   const sentenceTargets = new Set();
-  for (const s of sentenceBank || []) {
+  for (const s of useBank || sentenceBank || []) {
+    if (s.lemma) sentenceTargets.add(s.lemma);
     for (const l of s.lemmas || []) sentenceTargets.add(l);
   }
 
@@ -925,9 +969,19 @@ export function startPractice(root, block, opts) {
     quizCleared = true;
     typeCleared = true;
   }
+  /* Stale 12+12+1 progress: do not open a board of one pair. Replay the
+   * even split (James, 2026-09-02, family). Skip if the tree is already on. */
+  let shortLeftoverReset = false;
+  if (!adoptDeck && !matchCleared && matchList().length > 18) {
+    const leftN = matchList().filter((it) => !matchCovered.has(itemDeckKey(it))).length;
+    if (leftN > 0 && leftN < 8) {
+      matchCovered.clear();
+      shortLeftoverReset = true;
+    }
+  }
   if (typeof opts.onModeComplete === "function") {
     // Adoption is persisted too, or the tree is re-taken on every open.
-    if (matchDeckChanged || adoptDeck) {
+    if (matchDeckChanged || adoptDeck || shortLeftoverReset) {
       opts.onModeComplete("match", {
         coverageDone: adoptDeck,
         coveredKeys: [...matchCovered],
@@ -979,10 +1033,10 @@ export function startPractice(root, block, opts) {
   }
 
   function matchFruitNeed() {
-    return Math.min(matchCoverNeed(), DEFAULT_PASS);
+    return matchCoverNeed();
   }
 
-  /** What's still holding the tree after Use. Match fruit is one board. */
+  /** What's still holding the tree after Use. Match must cover every word. */
   function fruitBlockers() {
     const bits = [];
     const mNeed = matchFruitNeed();
@@ -1016,7 +1070,10 @@ export function startPractice(root, block, opts) {
   }
 
   function canOpenMode(id) {
-    if (id === "intro" || id === "match" || id === "quiz") return true;
+    if (id === "intro" || id === "match") return true;
+    if (id === "quiz") {
+      return matchCleared || matchCovered.size >= matchCoverNeed();
+    }
     if (id === "type") return !typeTiedToQuiz() || quizFruitReady();
     if (id === "sentence") {
       return typeFruitReady() && (!typeTiedToQuiz() || quizFruitReady());
@@ -1056,6 +1113,8 @@ export function startPractice(root, block, opts) {
   /** Same job as grammar matchBoardSize (B9). Word chips stay 12, except
    *  packs of 13–18 split evenly (18 → 9+9, 17 → 9+8) so the leftover
    *  board is not a short six. (James, 2026-08-31, Feelings.)
+   *  Bigger packs stay 12s unless the last board would be under 8
+   *  (25 → 9+8+8, not 12+12+1 — James, 2026-09-02, family).
    *  Count a sentence by English word count, not a trailing period —
    *  *Hello.* is a word, *They become friends.* is a sentence. */
   function matchBoardSize(items) {
@@ -1070,8 +1129,11 @@ export function startPractice(root, block, opts) {
     }
     if (n > items.length / 2) return 8;
     const N = items.length;
-    if (N > DEFAULT_PASS && N <= 18) return Math.ceil(N / 2);
-    return DEFAULT_PASS;
+    if (N <= DEFAULT_PASS) return DEFAULT_PASS;
+    if (N <= 18) return Math.ceil(N / 2);
+    const leftover = N % DEFAULT_PASS;
+    if (leftover === 0 || leftover >= 8) return DEFAULT_PASS;
+    return Math.ceil(N / Math.ceil(N / DEFAULT_PASS));
   }
 
   function orderOpts(items) {
@@ -1387,9 +1449,11 @@ export function startPractice(root, block, opts) {
             const dis = open ? "" : " disabled";
             const title = open
               ? ""
-              : id === "type"
-                ? ' title="Finish Quiz first"'
-                : ' title="Finish Quiz and Type first"';
+              : id === "quiz"
+                ? ' title="Finish Match first"'
+                : id === "type"
+                  ? ' title="Finish Quiz first"'
+                  : ' title="Finish Quiz and Type first"';
             return `<button type="button" class="${cls}" data-mode="${id}"${dis}${title}>${label}</button>`;
           })
           .join("")}
@@ -1476,7 +1540,8 @@ export function startPractice(root, block, opts) {
       for (const k of keys) seenGloss.add(k);
       pool.push(item);
     }
-    const cap = matchBoardSize(list);
+    const uncovered = list.filter((it) => !matchCovered.has(itemDeckKey(it)));
+    const cap = matchBoardSize(uncovered.length ? uncovered : list);
     if (pool.length > cap) pool.splice(cap);
     const left = pool.map((it, i) => ({
       t: supportOf(it),
@@ -1543,13 +1608,25 @@ export function startPractice(root, block, opts) {
         markKeysSeen("match", [...matchCovered], list);
       }
       const have = matchCovered.size;
+      /* Match covers every word before Quiz (James, 2026-09-02, family
+       * 12/25). Skip still stamps walked. Do not mark the stage clear
+       * after one board. */
       const done = matchCleared || have >= need;
+      if (done) matchCleared = true;
       reportMode("match", {
         coverageDone: done,
         coveredKeys: [...matchCovered],
         need,
       });
-      const more = !matchCleared && have < need;
+      if (
+        done &&
+        typeof opts.onFruitNow === "function" &&
+        fruitBlockers().length === 0 &&
+        opts.onFruitNow()
+      ) {
+        return `Matched ${doneCount} of ${m.total}`;
+      }
+      const more = !done;
       const { roundN, roundTotal } = leftoverRounds(have, need, boardCap);
       const title = more
         ? `Match ${roundN} of ${roundTotal} done`
@@ -1741,6 +1818,14 @@ export function startPractice(root, block, opts) {
           coveredKeys: [...quizCovered],
           need,
         });
+        if (
+          wrongN === 0 &&
+          typeof opts.onFruitNow === "function" &&
+          fruitBlockers().length === 0 &&
+          opts.onFruitNow()
+        ) {
+          return `Quiz ${q.score}/${passLen}`;
+        }
       } else if (!q.retryPass) {
         reportMode("quiz", {
           score: q.score,
@@ -2038,6 +2123,14 @@ export function startPractice(root, block, opts) {
           coveredKeys: [...typeCovered],
           need,
         });
+        if (
+          wrongN === 0 &&
+          typeof opts.onFruitNow === "function" &&
+          fruitBlockers().length === 0 &&
+          opts.onFruitNow()
+        ) {
+          return `Type ${t.score}/${passLen}`;
+        }
       } else if (!t.retryPass) {
         const typeEnough = vocabCoveredEnough([...typeCovered], need);
         const quizEnough = vocabCoveredEnough([...quizCovered], quizNeed);
@@ -2183,8 +2276,7 @@ export function startPractice(root, block, opts) {
       ? "Fill the missing English word · Enter = check / next"
       : "Write in English · Enter = check / next";
     const passLabel = t.retryPass ? "retry" : "set";
-    const clue =
-      typeSourceList().length > DEFAULT_PASS ? typeLetterClue(answer) : "";
+    const clue = typeLetterClue(answer);
     stage.innerHTML = `
       <div class="q">
         ${diagramBlock(it)}
@@ -2349,7 +2441,11 @@ export function startPractice(root, block, opts) {
     const passLen = t.order.length;
     const doneSub = isFrames
       ? "Full English sentences from the prompt — core frames."
-      : "Short translations into English · patterns from earlier units.";
+      : useBank && useBank.some(isRewriteItem)
+        ? "Rewrite the sentence with a word from this unit."
+        : useBank
+          ? "Write a full sentence with the new word."
+          : "Short translations into English · patterns from earlier units.";
 
     if (t.pos >= t.order.length) {
       const wrongN = t.wrong.length;
@@ -2440,17 +2536,40 @@ export function startPractice(root, block, opts) {
     const itemIndex = t.order[t.pos];
     const it = list[itemIndex];
     flagItem(it, itemIndex, "sentence");
+    const rewriteUse = isRewriteItem(it);
+    const frameUse = Boolean(it.frame) && !rewriteUse;
+    const frameHint = rewriteUse
+      ? rewriteHintFrame(it)
+      : it.frame || it.gap || "";
+    const letterClue = rewriteUse ? rewriteLetterClue(it.lemma) : "";
+    const rewriteTask =
+      (block.use_hint ||
+        "Rewrite the sentence. Replace the underlined words.") +
+      " Enter = check / next";
+    /* Rewrite: English prompt, target hidden, Type-style blank.
+     * Frame Use: do not print the English lemma (B15).
+     * Default: CZ→EN translation. */
+    const promptHtml = rewriteUse
+      ? `<p class="fix-label">Rewrite</p>
+        <div class="prompt" style="font-size:1.15rem">${markUnderline(it.prompt, it.underline)}</div>
+        ${letterClue ? `<div class="rw-clue">${escapeHtml(letterClue)}</div>` : ""}
+        <div class="sub">${escapeHtml(rewriteTask)}</div>`
+      : frameUse
+        ? `<div class="prompt" style="font-size:1.2rem">${escapeHtml(it.frame)}</div>
+        ${it.cz ? `<div class="sub" style="font-size:1.05rem;margin-top:0.45rem">${escapeHtml(it.cz)}</div>` : ""}
+        <div class="sub">Write the sentence · Enter = check / next</div>`
+        : `<div class="prompt" style="font-size:1.2rem">${escapeHtml(it.cz)}</div>
+        <div class="sub">Translate into English · Enter = check / next</div>`;
     stage.innerHTML = `
       <div class="q">
         <div class="sub">Sentence <strong>${t.pos + 1}</strong> of <strong>${passLen}</strong>${t.retryPass ? " (retry)" : ""} · write in English</div>
         ${diagramBlock(it)}
         ${structureHint(it)}
-        <div class="prompt" style="font-size:1.2rem">${escapeHtml(it.cz)}</div>
-        <div class="sub">Translate into English · Enter = check / next</div>
-        <textarea class="type-in type-area" id="ti" rows="2" autocomplete="off" spellcheck="false" placeholder="write the English sentence…"></textarea>
+        ${promptHtml}
+        <textarea class="type-in type-area" id="ti" rows="2" autocomplete="off" spellcheck="false" placeholder="${rewriteUse ? "type the new sentence…" : "write the English sentence…"}"></textarea>
         <div class="fb" id="tfb"></div>
         <div class="nav"><button type="button" class="btn primary" id="chk">Check</button></div>
-        ${it.gap ? `<button type="button" class="link" id="hint">Hint · frame</button> · ` : ""}
+        ${frameHint ? `<button type="button" class="link" id="hint">Hint · frame</button> · ` : ""}
         <button type="button" class="link" id="skip">Show answer</button>
       </div>`;
 
@@ -2461,7 +2580,7 @@ export function startPractice(root, block, opts) {
     // Scaffold hint for chunk sentences: shows the gap frame, no penalty.
     // "Show answer" stays the give-up; this is the rung below it.
     stage.querySelector("#hint")?.addEventListener("click", () => {
-      fb.textContent = `Frame: ${it.gap}`;
+      fb.textContent = `Frame: ${frameHint}`;
       fb.className = "fb near";
       inp.focus();
     });
@@ -2504,7 +2623,13 @@ export function startPractice(root, block, opts) {
         }
       } else {
         t.missedThis = true;
-        fb.innerHTML = `✗ Answer: <span class="reveal">${escapeHtml(it.en)}</span>`;
+        const typedN = norm(inp.value);
+        const trap =
+          rewriteUse &&
+          Array.isArray(it.reject) &&
+          it.reject.some((r) => typedN.includes(norm(r)));
+        const trapNote = trap && it.trap_note ? ` ${escapeHtml(it.trap_note)}` : "";
+        fb.innerHTML = `✗ Answer: <span class="reveal">${escapeHtml(it.en)}</span>${trapNote}`;
         fb.className = "fb bad";
         const s = document.createElement("button");
         s.type = "button";
@@ -2608,16 +2733,23 @@ export function startPractice(root, block, opts) {
     return tiles ? `<div class="pic-grid">${tiles}</div>` : "";
   }
 
+  function introTableHtml(t) {
+    if (!t || !Array.isArray(t.rows)) return "";
+    return `<table class="intro-table"><thead><tr>${(t.headers || [])
+      .map((h) => `<th>${escMd(h)}</th>`)
+      .join("")}</tr></thead><tbody>${(t.rows || [])
+      .map(
+        (r) => `<tr>${r.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
+      )
+      .join("")}</tbody></table>`;
+  }
+
   function introSection(sec) {
-    const table = sec.table
-      ? `<table class="intro-table"><thead><tr>${(sec.table.headers || [])
-          .map((h) => `<th>${escMd(h)}</th>`)
-          .join("")}</tr></thead><tbody>${(sec.table.rows || [])
-          .map(
-            (r) => `<tr>${r.map((c) => `<td>${escMd(c)}</td>`).join("")}</tr>`,
-          )
-          .join("")}</tbody></table>`
-      : "";
+    const tableList = [
+      ...(sec.table ? [sec.table] : []),
+      ...((Array.isArray(sec.tables) && sec.tables) || []),
+    ];
+    const table = tableList.map(introTableHtml).join("");
     const pics = Array.isArray(sec.pictures) ? pictureGrid(sec.pictures) : "";
     const diagram = sec.diagram
       ? `<div class="intro-diagram">${introDiagram(sec.diagram, sec.labels)}</div>`

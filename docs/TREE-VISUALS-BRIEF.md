@@ -40,12 +40,14 @@ Per-level crop zooms the young tree (A1 at most 2.2×) so growth stays visible.
 ## Palette (locked hexes)
 
 ```
-wood      #569cd6   (blue — trunk, roots, unlit knot stroke)
-leaf/cyan #4db6c7   (leaves, unfilled fruit outline, "started")
-learned   #22c55e   (green fruit/knot fill + small glow)
-remembered#4ade80   (brighter green + glow)
-mastered  #86efac   (fullest green + strong double glow)
-label     #d4b070   (gold — active labels)  dim #8a8a8a  muted #7a7a7a
+wood           #569cd6   (blue — trunk, roots, unlit knot stroke)
+wood remembered#3d72b0   (seat limb/root after ≥1 review)
+wood mastered  #2a5388   (seat limb/root after ≥4 reviews)
+leaf/cyan      #4db6c7   (leaves, unfilled fruit outline, "started")
+learned        #22c55e   (green fruit/knot fill + small glow)
+remembered     #4ade80   (brighter green + glow)
+mastered       #86efac   (fullest green + strong double glow)
+label          #d4b070   (gold — active labels)  dim #8a8a8a  muted #7a7a7a
 sky #0a0a0a   soil #0c1014   soil-top #121820   knot bg #0c1014
 ghost opacity 0.3
 ```
@@ -58,6 +60,10 @@ ghost opacity 0.3
 - Ladder per slot, **strongest first**: started (cyan outline) → learned
   (green fill) → remembered (brighter + glow, ≥1 successful review) →
   mastered (fullest + stronger glow, ≥4).
+- **Wood is a second channel** (James, 2026-09-02): fruit/knots stay the
+  brighter greens. The seat’s bark goes darker at remembered, darker again
+  at mastered (house limb or that root). Shared trunk darkens/thickens only
+  from trunk-glue + word-craft reviews, saturating — not from every house.
 - Seats with no live material at the viewed level render as **ghosts**
   (opacity 0.3), still present so the skeleton stays whole.
 - Lights show work **at or below** the viewed level. Progress never shrinks

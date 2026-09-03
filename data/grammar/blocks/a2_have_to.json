@@ -1,0 +1,363 @@
+{
+  "id": "a2_have_to",
+  "title": "Have to / don't have to",
+  "level": "A2",
+  "tree_node": "a2_have_to",
+  "codex_unit": "G_VP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. have to = outside obligation. don't have to = not necessary. mustn't = don't do it. Czech nemusíš vs nesmíš. Not a must/should repeat. Sort two bins. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "I want this",
+    "a rule",
+    "not necessary",
+    "don't do it"
+  ],
+  "bin_captions": {
+    "I want this": "try this · I want you to",
+    "a rule": "the law / a boss",
+    "not necessary": "optional · free",
+    "don't do it": "not allowed"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Which job?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "You **must** try this cake. It's very good.",
+          "cz": "Tenhle dort musíš ochutnat. Je výborný.",
+          "bin": "I want this",
+          "use": false
+        },
+        {
+          "en": "We **must** talk tonight. I need to tell you something.",
+          "cz": "Musíme si dnes večer promluvit.",
+          "bin": "I want this",
+          "use": false
+        },
+        {
+          "en": "You **have to** wear a seatbelt. It's the law.",
+          "cz": "Musíš mít pás. Je to zákon.",
+          "bin": "a rule",
+          "use": false
+        },
+        {
+          "en": "I **have to** work tomorrow. My boss said so.",
+          "cz": "Zítra musím pracovat. Řekl to šéf.",
+          "bin": "a rule",
+          "use": false
+        },
+        {
+          "en": "You **don't have to** pay. It's free.",
+          "cz": "Nemusíš platit. Je to zdarma.",
+          "bin": "not necessary",
+          "use": false
+        },
+        {
+          "en": "She **doesn't have to** come. It's optional.",
+          "cz": "Nemusí přijít. Je to dobrovolné.",
+          "bin": "not necessary",
+          "use": false
+        },
+        {
+          "en": "You **mustn't** park here. It's a no-parking zone.",
+          "cz": "Tady nesmíš parkovat.",
+          "bin": "don't do it",
+          "use": false
+        },
+        {
+          "en": "She **mustn't** tell anyone. It's a secret.",
+          "cz": "Nesmí to nikomu říct. Je to tajemství.",
+          "bin": "don't do it",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "have_to_a2",
+      "title": "have to · don't have to · mustn't",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "You have to wear a seatbelt. It's the law.",
+          "cz": "Musíš mít pás. Je to zákon.",
+          "gap": "You ____ wear a seatbelt. It's the law. (have to)",
+          "gap_answer": "have to",
+          "quiz_options": [
+            "have to",
+            "don't have to",
+            "mustn't",
+            "should"
+          ],
+          "accepts": [
+            "You have to wear a seatbelt. It's the law.",
+            "You have to wear a seat belt. It's the law."
+          ],
+          "wrong": "You don't have to wear a seatbelt. It's the law.",
+          "explanation": "The law → **have to**. Obligation from outside.",
+          "explanation_cz": "Zákon → **have to**. Povinnost zvenku."
+        },
+        {
+          "en": "You don't have to come. It's optional.",
+          "cz": "Nemusíš přijít. Je to dobrovolné.",
+          "gap": "You ____ come. It's optional.",
+          "gap_answer": "don't have to",
+          "quiz_options": [
+            "don't have to",
+            "mustn't",
+            "have to",
+            "must"
+          ],
+          "accepts": [
+            "You don't have to come. It's optional.",
+            "You do not have to come. It's optional."
+          ],
+          "wrong": "You mustn't come. It's optional.",
+          "explanation": "Optional → **don't have to**. Not *mustn't*.",
+          "explanation_cz": "Dobrovolné → **don't have to**. Ne *mustn't*."
+        },
+        {
+          "en": "You mustn't park here. It's a no-parking zone.",
+          "cz": "Tady nesmíš parkovat.",
+          "gap": "You ____ park here. It's a no-parking zone.",
+          "gap_answer": "mustn't",
+          "quiz_options": [
+            "mustn't",
+            "don't have to",
+            "have to",
+            "must"
+          ],
+          "accepts": [
+            "You mustn't park here. It's a no-parking zone.",
+            "You must not park here. It's a no-parking zone."
+          ],
+          "wrong": "You don't have to park here. It's a no-parking zone.",
+          "explanation": "A ban → **mustn't**. Not *don't have to*.",
+          "explanation_cz": "Zákaz → **mustn't**. Ne *don't have to*."
+        },
+        {
+          "en": "I have to work tomorrow. My boss said so.",
+          "cz": "Zítra musím pracovat. Řekl to šéf.",
+          "gap": "I ____ work tomorrow. My boss said so.",
+          "gap_answer": "have to",
+          "quiz_options": [
+            "have to",
+            "don't have to",
+            "mustn't",
+            "can"
+          ],
+          "accepts": [
+            "I have to work tomorrow. My boss said so."
+          ],
+          "wrong": "I don't have to work tomorrow. My boss said so.",
+          "explanation": "The boss → **have to**.",
+          "explanation_cz": "Šéf → **have to**."
+        },
+        {
+          "en": "She doesn't have to pay. It's free.",
+          "cz": "Nemusí platit. Je to zdarma.",
+          "gap": "She ____ pay. It's free.",
+          "gap_answer": "doesn't have to",
+          "quiz_options": [
+            "doesn't have to",
+            "mustn't",
+            "has to",
+            "must"
+          ],
+          "accepts": [
+            "She doesn't have to pay. It's free.",
+            "She does not have to pay. It's free."
+          ],
+          "wrong": "She mustn't pay. It's free.",
+          "explanation": "Free → **doesn't have to**. Czech *nemusí*, not *nesmí*.",
+          "explanation_cz": "Zdarma → **doesn't have to**. Česky *nemusí*, ne *nesmí*."
+        },
+        {
+          "en": "She mustn't tell anyone. It's a secret.",
+          "cz": "Nesmí to nikomu říct. Je to tajemství.",
+          "gap": "She ____ tell anyone. It's a secret.",
+          "gap_answer": "mustn't",
+          "quiz_options": [
+            "mustn't",
+            "doesn't have to",
+            "has to",
+            "must"
+          ],
+          "accepts": [
+            "She mustn't tell anyone. It's a secret.",
+            "She must not tell anyone. It's a secret."
+          ],
+          "wrong": "She doesn't have to tell anyone. It's a secret.",
+          "explanation": "A secret → **mustn't**.",
+          "explanation_cz": "Tajemství → **mustn't**."
+        },
+        {
+          "en": "We don't have to wear a tie. The office is informal.",
+          "cz": "Nemusíme mít kravatu.",
+          "gap": "We ____ wear a tie. The office is informal.",
+          "gap_answer": "don't have to",
+          "quiz_options": [
+            "don't have to",
+            "mustn't",
+            "have to",
+            "must"
+          ],
+          "accepts": [
+            "We don't have to wear a tie. The office is informal.",
+            "We do not have to wear a tie. The office is informal."
+          ],
+          "wrong": "We mustn't wear a tie. The office is informal.",
+          "explanation": "Informal → **don't have to**.",
+          "explanation_cz": "Neformální → **don't have to**."
+        },
+        {
+          "en": "We mustn't be late. The door closes at nine.",
+          "cz": "Nesmíme přijít pozdě. Dveře se zavírají v devět.",
+          "gap": "We ____ be late. The door closes at nine.",
+          "gap_answer": "mustn't",
+          "quiz_options": [
+            "mustn't",
+            "don't have to",
+            "have to",
+            "must"
+          ],
+          "accepts": [
+            "We mustn't be late. The door closes at nine.",
+            "We must not be late. The door closes at nine."
+          ],
+          "wrong": "We don't have to be late. The door closes at nine.",
+          "explanation": "The door closes → **mustn't** be late.",
+          "explanation_cz": "Dveře se zavírají → **mustn't** be late."
+        },
+        {
+          "en": "You don't have to pay.",
+          "cz": "Nemusíš platit. Vstup je volný.",
+          "gap": "You ____ pay. Entry is free.",
+          "gap_answer": "don't have to",
+          "quiz_options": [
+            "don't have to",
+            "mustn't",
+            "have to",
+            "must"
+          ],
+          "accepts": [
+            "You don't have to pay.",
+            "You do not have to pay."
+          ],
+          "wrong": "You mustn't pay.",
+          "explanation": "Free entry → **don't have to pay**. *mustn't pay* means it is banned.",
+          "explanation_cz": "Vstup volný → **don't have to pay**. *mustn't pay* = platí se nesmí."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Have to / don't have to",
+        "title_cz": "musím / nemusím",
+        "text_first": true,
+        "ref": {
+          "tab": "modals",
+          "label": "Full table · all modal verbs"
+        },
+        "points": [
+          "You already know **can** / **must** / **should**. They sit in front of a verb.",
+          "**have to** is in that set. It is a lot like **must**.",
+          "It often comes from **outside**: the law, a boss, a rule."
+        ],
+        "table": {
+          "headers": [
+            "must",
+            "have to"
+          ],
+          "rows": [
+            [
+              "I **must** go.",
+              "I **have to** go."
+            ],
+            [
+              "He **must** go.",
+              "He **has to** go."
+            ],
+            [
+              "Must you go?",
+              "**Do** you **have to** go?"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "must vs have to",
+        "title_cz": "musím: must nebo have to",
+        "text_first": true,
+        "points": [
+          "Czech *musím* is both. In the plus they are close.",
+          "**must** = the speaker wants this.",
+          "**have to** = a rule outside you (the law, a boss)."
+        ],
+        "table": {
+          "headers": [
+            "Job",
+            "Say"
+          ],
+          "rows": [
+            [
+              "I want this",
+              "You **must** try this cake. It's very good."
+            ],
+            [
+              "a rule",
+              "You **have to** wear a seatbelt. It's the law."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "don't have to ≠ mustn't",
+        "title_cz": "nemusíš ≠ nesmíš",
+        "text_first": true,
+        "points": [
+          "Czech *nemusíš* and *nesmíš* look similar. English reverses the meaning.",
+          "**don't have to** = not necessary. You can if you want.",
+          "**mustn't** = don't do it. A ban."
+        ],
+        "table": {
+          "headers": [
+            "Czech",
+            "English"
+          ],
+          "rows": [
+            [
+              "*nemusíš platit*",
+              "You **don't have to** pay"
+            ],
+            [
+              "*nesmíš platit*",
+              "You **mustn't** pay"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "sort_cz": false
+}

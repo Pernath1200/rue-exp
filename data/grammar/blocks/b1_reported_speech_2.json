@@ -1,0 +1,368 @@
+{
+ "id": "b1_reported_speech_2",
+ "title": "Reported speech 2 — questions & commands",
+ "level": "B1",
+ "tree_node": "b1_reported_speech_2",
+ "codex_unit": "G_CL-B1B2-01",
+ "practice": "frames",
+ "quality": "draft",
+ "note": "b1_reported_speech already carries statements, backshift, said/told and if/wh. This unit is the two things it does not drill: the WORD ORDER of a reported question (*He asked me where did I live) and ask/tell + object + to-infinitive for commands and requests. Backshift itself is recycled, not re-taught (F1). First draft 2026-09-02, rough - thicken after smoke.",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "intro": {
+  "cards": [
+   {
+    "title": "Reported questions and commands",
+    "title_cz": "Nepřímé otázky a příkazy",
+    "points": [
+     "A reported question is no longer a question. It takes statement order."
+    ],
+    "table": {
+     "headers": [
+      "Direct",
+      "Reported"
+     ],
+     "rows": [
+      [
+       "\"Where do you live?\"",
+       "He asked me where I **lived**."
+      ],
+      [
+       "\"Do you want coffee?\"",
+       "She asked **if** I wanted coffee."
+      ],
+      [
+       "\"Wait outside.\"",
+       "He told me **to wait** outside."
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "He asked me where I **lived**.",
+      "cz": "Zeptal se mě, kde bydlím."
+     },
+     {
+      "en": "He told me **to wait** outside.",
+      "cz": "Řekl mi, abych čekal venku."
+     }
+    ]
+   },
+   {
+    "title": "No did, no inversion",
+    "title_cz": "Žádné did, žádná inverze",
+    "points": [
+     "The subject comes **before** the verb, exactly as in a normal sentence.",
+     "There is no question mark."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "*where did I live*",
+       "where **I lived**"
+      ],
+      [
+       "*what is he doing*",
+       "what **he was** doing"
+      ],
+      [
+       "*where is the station*",
+       "where **the station** was"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "if or whether",
+    "title_cz": "if nebo whether",
+    "points": [
+     "Czech **jestli** is this **if**."
+    ],
+    "table": {
+     "headers": [
+      "Direct question",
+      "Reported"
+     ],
+     "rows": [
+      [
+       "starts with a question word",
+       "keep the word: **where** / **what** / **when**"
+      ],
+      [
+       "starts with do / are / can",
+       "use **if** or **whether**"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "She asked **if** I was ready.",
+      "cz": "Zeptala se, jestli jsem připravený."
+     }
+    ]
+   },
+   {
+    "title": "Commands and requests",
+    "title_cz": "Příkazy a prosby",
+    "points": [
+     "Both verbs need a person after them: told **me**, asked **me**."
+    ],
+    "table": {
+     "headers": [
+      "Verb",
+      "Pattern",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**tell**",
+       "tell + someone + **to**",
+       "He told me **to wait**."
+      ],
+      [
+       "**ask**",
+       "ask + someone + **to**",
+       "She asked me **to help**."
+      ],
+      [
+       "negative",
+       "+ **not to**",
+       "He told me **not to** worry."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "text_first": true,
+    "points": [
+     "A reported question uses statement order, and **tell /** ask need a person."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "~~He asked me where did I live.~~",
+       "He asked me where **I lived**."
+      ],
+      [
+       "~~She asked me what am I doing.~~",
+       "She asked me what **I was** doing."
+      ],
+      [
+       "~~He said me to wait.~~",
+       "He **told** me to wait."
+      ],
+      [
+       "~~She asked me help her.~~",
+       "She asked me **to help** her."
+      ],
+      [
+       "~~He told me don't worry.~~",
+       "He told me **not to** worry."
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "b1_reported_speech_2_main",
+   "title": "Reported speech 2 — questions & commands · B1",
+   "items": [
+    {
+     "en": "He asked me where I lived.",
+     "cz": "Zeptal se mě, kde bydlím.",
+     "gap": "He asked me where ____. (I / live)",
+     "gap_answer": "I lived",
+     "quiz_options": [
+      "I lived",
+      "did I live",
+      "do I live",
+      "lived I"
+     ],
+     "accepts": [
+      "He asked me where I lived."
+     ],
+     "wrong": "He asked me where did I live.",
+     "explanation": "Statement order after **where**: subject **I** then the verb **lived**. No did.",
+     "explanation_cz": "Po **where** je pořádek jako ve větě oznamovací: podmět **I**, pak sloveso **lived**. Žádné did."
+    },
+    {
+     "en": "She asked if I wanted coffee.",
+     "cz": "Zeptala se, jestli chci kávu.",
+     "gap": "She asked ____ I wanted coffee. (if / what)",
+     "gap_answer": "if",
+     "quiz_options": [
+      "if",
+      "that",
+      "do",
+      "what"
+     ],
+     "accepts": [
+      "She asked if I wanted coffee."
+     ],
+     "explanation": "The direct question had no question word, so it takes **if**.",
+     "explanation_cz": "Přímá otázka neměla tázací slovo, takže se použije **if**."
+    },
+    {
+     "en": "He told me to wait outside.",
+     "cz": "Řekl mi, abych čekal venku.",
+     "gap": "He told me ____ outside. (wait)",
+     "gap_answer": "to wait",
+     "quiz_options": [
+      "to wait",
+      "wait",
+      "waiting",
+      "that wait"
+     ],
+     "accepts": [
+      "He told me to wait outside."
+     ],
+     "wrong": "He said me to wait outside.",
+     "explanation": "**tell** + me + **to wait**. The to-infinitive carries the command.",
+     "explanation_cz": "**tell** + me + **to wait**. Příkaz nese infinitiv s to."
+    },
+    {
+     "en": "She asked me what I was doing.",
+     "cz": "Zeptala se mě, co dělám.",
+     "gap": "She asked me what ____. (I / do)",
+     "gap_answer": "I was doing",
+     "quiz_options": [
+      "I was doing",
+      "was I doing",
+      "am I doing",
+      "did I do"
+     ],
+     "accepts": [
+      "She asked me what I was doing."
+     ],
+     "wrong": "She asked me what was I doing.",
+     "explanation": "Statement order after **what**: I was doing.",
+     "explanation_cz": "Po **what** pořádek oznamovací věty: I was doing."
+    },
+    {
+     "en": "She asked me to help her.",
+     "cz": "Poprosila mě, abych jí pomohl.",
+     "gap": "She asked me ____ her. (help)",
+     "gap_answer": "to help",
+     "quiz_options": [
+      "to help",
+      "help",
+      "helping",
+      "for help"
+     ],
+     "accepts": [
+      "She asked me to help her."
+     ],
+     "wrong": "She asked me help her.",
+     "explanation": "**ask** + me + **to help**. A request takes the same pattern as a command.",
+     "explanation_cz": "**ask** + me + **to help**. Prosba má stejný vzorec jako příkaz."
+    },
+    {
+     "en": "He told me not to worry.",
+     "cz": "Řekl mi, ať se nebojím.",
+     "gap": "He told me ____ worry. (not)",
+     "gap_answer": "not to",
+     "quiz_options": [
+      "not to",
+      "don't",
+      "to not",
+      "no to"
+     ],
+     "accepts": [
+      "He told me not to worry."
+     ],
+     "wrong": "He told me don't worry.",
+     "explanation": "Negative command: **not to** + the plain verb.",
+     "explanation_cz": "Záporný příkaz: **not to** + základní tvar slovesa."
+    },
+    {
+     "en": "I asked her where the station was.",
+     "cz": "Zeptal jsem se jí, kde je nádraží.",
+     "gap": "I asked her where ____. (the station / be)",
+     "gap_answer": "the station was",
+     "quiz_options": [
+      "the station was",
+      "was the station",
+      "is the station",
+      "did the station be"
+     ],
+     "accepts": [
+      "I asked her where the station was."
+     ],
+     "wrong": "I asked her where was the station.",
+     "explanation": "Subject **the station** comes before the verb **was**.",
+     "explanation_cz": "Podmět **the station** stojí před slovesem **was**."
+    },
+    {
+     "en": "They asked if we could come earlier.",
+     "cz": "Zeptali se, jestli můžeme přijít dřív.",
+     "gap": "They asked ____ we could come earlier. (if / that)",
+     "gap_answer": "if",
+     "quiz_options": [
+      "if",
+      "that",
+      "do",
+      "could"
+     ],
+     "accepts": [
+      "They asked if we could come earlier."
+     ],
+     "explanation": "No question word in the original, so **if**. *can* has moved back to **could**.",
+     "explanation_cz": "V původní otázce nebylo tázací slovo, takže **if**. *can* se posunulo na **could**."
+    },
+    {
+     "en": "The teacher told us to open our books.",
+     "cz": "Učitel nám řekl, ať si otevřeme knihy.",
+     "gap": "The teacher told us ____ our books. (open)",
+     "gap_answer": "to open",
+     "quiz_options": [
+      "to open",
+      "open",
+      "opening",
+      "that open"
+     ],
+     "accepts": [
+      "The teacher told us to open our books."
+     ],
+     "wrong": "The teacher said us to open our books.",
+     "explanation": "**tell** + us + **to open**.",
+     "explanation_cz": "**tell** + us + **to open**."
+    },
+    {
+     "en": "He asked me when I had arrived.",
+     "cz": "Zeptal se mě, kdy jsem přijel.",
+     "gap": "He asked me when ____. (I / arrive)",
+     "gap_answer": "I had arrived",
+     "quiz_options": [
+      "I had arrived",
+      "did I arrive",
+      "had I arrived",
+      "I arrive"
+     ],
+     "accepts": [
+      "He asked me when I had arrived."
+     ],
+     "wrong": "He asked me when did I arrive.",
+     "explanation": "Statement order, and the past simple has moved back to **had arrived**.",
+     "explanation_cz": "Pořádek oznamovací věty a minulý čas se posunul na **had arrived**."
+    }
+   ]
+  }
+ ]
+}

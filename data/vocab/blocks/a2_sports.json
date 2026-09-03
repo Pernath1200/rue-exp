@@ -4,7 +4,8 @@
   "level": "A2",
   "tree_node": "leaf_sports_a2",
   "codex_unit": "V_THM-A1B1-09",
-  "note": "V_THM-A1B1-09 sport slice · carriers via use[] · Use sentence bank added 2026-08-08 (cloud run 30)",
+  "note": "V_THM-A1B1-09 sport slice · carriers via use[] · Use sentence bank added 2026-08-08 (cloud run 30) · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -208,19 +209,51 @@
             "i_have_a",
             "i_need_a"
           ]
+        },
+        {
+          "en": "compete",
+          "cz": "soutěžit",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "beat",
+          "cz": "porazit",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "catch",
+          "cz": "chytit",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "throw",
+          "cz": "házet",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
         }
       ]
     }
   ],
   "intro": [
     {
-      "title": "Sports, players and places",
-      "title_cz": "Sporty, sportovci a místa",
+      "title": "The sports",
+      "title_cz": "Sporty",
       "pictures": [
         {
-          "icon": "⚽",
-          "en": "football",
-          "cz": "fotbal"
+          "icon": "⚾",
+          "en": "baseball",
+          "cz": "baseball"
         },
         {
           "icon": "🏀",
@@ -228,14 +261,14 @@
           "cz": "basketbal"
         },
         {
-          "icon": "⚾",
-          "en": "baseball",
-          "cz": "baseball"
+          "icon": "⚽",
+          "en": "football",
+          "cz": "fotbal"
         },
         {
-          "icon": "🏒",
-          "en": "hockey",
-          "cz": "hokej"
+          "icon": "🥅",
+          "en": "soccer",
+          "cz": "fotbal (amer.)"
         },
         {
           "icon": "⛳",
@@ -243,7 +276,12 @@
           "cz": "golf"
         },
         {
-          "icon": "🎿",
+          "icon": "🏒",
+          "en": "hockey",
+          "cz": "hokej"
+        },
+        {
+          "icon": "⛷️",
           "en": "skiing",
           "cz": "lyžování"
         },
@@ -261,27 +299,104 @@
           "icon": "🚴",
           "en": "cycling",
           "cz": "cyklistika"
+        }
+      ]
+    },
+    {
+      "title": "People, places, kit",
+      "title_cz": "Lidé, místa, věci",
+      "pictures": [
+        {
+          "icon": "🏃",
+          "en": "athlete",
+          "cz": "atlet"
         },
+        {
+          "icon": "🚲",
+          "en": "cycle",
+          "cz": "kolo"
+        },
+        {
+          "icon": "🏃‍♀️",
+          "en": "runner",
+          "cz": "běžec"
+        },
+        {
+          "icon": "👟",
+          "en": "trainer",
+          "cz": "trenér"
+        },
+        {
+          "icon": "🏟️",
+          "en": "stadium",
+          "cz": "stadion"
+        },
+        {
+          "icon": "🆚",
+          "en": "match",
+          "cz": "zápas"
+        },
+        {
+          "icon": "🏉",
+          "en": "team",
+          "cz": "tým"
+        },
+        {
+          "icon": "🎿",
+          "en": "ski",
+          "cz": "lyže"
+        }
+      ]
+    },
+    {
+      "title": "What you do in a game",
+      "title_cz": "Co v zápase děláte",
+      "pictures": [
         {
           "icon": "🏊",
           "en": "swim",
           "cz": "plavat"
         },
         {
-          "icon": "🏃",
-          "en": "runner",
-          "cz": "běžec"
+          "icon": "🏇",
+          "en": "ride",
+          "cz": "jet (na)"
         },
         {
-          "icon": "🏟",
-          "en": "stadium",
-          "cz": "stadion"
+          "icon": "🛤️",
+          "en": "track",
+          "cz": "dráha"
+        },
+        {
+          "icon": "🦘",
+          "en": "jump",
+          "cz": "skok"
+        },
+        {
+          "icon": "🏅",
+          "en": "compete",
+          "cz": "soutěžit"
+        },
+        {
+          "icon": "👊",
+          "en": "beat",
+          "cz": "porazit"
+        },
+        {
+          "icon": "🧤",
+          "en": "catch",
+          "cz": "chytit"
+        },
+        {
+          "icon": "⚾",
+          "en": "throw",
+          "cz": "házet"
         }
-      ],
-      "body": "22 words: ten sports, the people who do them (athlete, runner, trainer), the two places they happen (stadium, track), and the verbs — swim, ride, jump, cycle.\nThe sport names ending in -ing are the activity: skiing is the sport, ski is the thing on your foot."
+      ]
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
         "I like …",
         "I enjoy …",
@@ -289,8 +404,8 @@
         "This is a …",
         "I want to …"
       ],
-      "note": "football and soccer are the same game, but not in the same place. In Britain it is football. In the USA football is a different game, so the one you know is called soccer there.",
-      "note_cz": "Pozor: v Británii fotbal = football, v USA = soccer."
+      "note": "In Britain it is football. In the USA football is a different game, so the one you know is soccer there.",
+      "note_cz": "V Británii football. V USA je to soccer — football je jiná hra."
     }
   ],
   "sentences": [
@@ -509,13 +624,53 @@
       ]
     },
     {
-      "en": "I need new skis.",
-      "cz": "Potřebuji nové lyže.",
+      "en": "I want to ski.",
+      "cz": "Chci lyžovat.",
       "lemmas": [
         "ski"
       ],
       "accepts": [
-        "I need new skis"
+        "I want to ski"
+      ]
+    },
+    {
+      "en": "They compete every year.",
+      "cz": "Soutěží každý rok.",
+      "lemmas": [
+        "compete"
+      ],
+      "accepts": [
+        "They compete every year"
+      ]
+    },
+    {
+      "en": "Our team can beat them.",
+      "cz": "Náš tým je může porazit.",
+      "lemmas": [
+        "beat"
+      ],
+      "accepts": [
+        "Our team can beat them"
+      ]
+    },
+    {
+      "en": "I can catch the ball.",
+      "cz": "Umím chytit míč.",
+      "lemmas": [
+        "catch"
+      ],
+      "accepts": [
+        "I can catch the ball"
+      ]
+    },
+    {
+      "en": "Throw the ball to me.",
+      "cz": "Hoď mi míč.",
+      "lemmas": [
+        "throw"
+      ],
+      "accepts": [
+        "Throw the ball to me"
       ]
     }
   ]

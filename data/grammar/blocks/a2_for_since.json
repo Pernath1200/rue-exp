@@ -1,0 +1,300 @@
+{
+  "id": "a2_for_since",
+  "title": "For / since",
+  "level": "A2",
+  "tree_node": "a2_for_since",
+  "codex_unit": "G_VP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. for = period, since = point. Czech I live here five years. Not PP vs past (B1). a2_present_perfect already uses for as a tense cue — this unit owns which word. Sort period/point. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "period",
+    "point"
+  ],
+  "bin_captions": {
+    "period": "how long → for",
+    "point": "from when → since"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "How long, or from when?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "two years",
+          "cz": "dva roky",
+          "bin": "period",
+          "use": false
+        },
+        {
+          "en": "a long time",
+          "cz": "dlouho",
+          "bin": "period",
+          "use": false
+        },
+        {
+          "en": "three days",
+          "cz": "tři dny",
+          "bin": "period",
+          "use": false
+        },
+        {
+          "en": "a week",
+          "cz": "týden",
+          "bin": "period",
+          "use": false
+        },
+        {
+          "en": "2019",
+          "cz": "2019",
+          "bin": "point",
+          "use": false
+        },
+        {
+          "en": "Monday",
+          "cz": "pondělí",
+          "bin": "point",
+          "use": false
+        },
+        {
+          "en": "last year",
+          "cz": "loni",
+          "bin": "point",
+          "use": false
+        },
+        {
+          "en": "ten o'clock",
+          "cz": "deset hodin",
+          "bin": "point",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "for_since_a2",
+      "title": "for or since?",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I have lived here for two years.",
+          "cz": "Bydlím tady dva roky.",
+          "gap": "I have lived here ____ two years.",
+          "gap_answer": "for",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "I have lived here for two years.",
+            "I've lived here for two years."
+          ],
+          "wrong": "I have lived here since two years.",
+          "explanation": "**two years** = how long → **for**.",
+          "explanation_cz": "**two years** = jak dlouho → **for**."
+        },
+        {
+          "en": "I have lived here since 2019.",
+          "cz": "Bydlím tady od roku 2019.",
+          "gap": "I have lived here ____ 2019.",
+          "gap_answer": "since",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "I have lived here since 2019.",
+            "I've lived here since 2019."
+          ],
+          "wrong": "I have lived here for 2019.",
+          "explanation": "**2019** = a point → **since**.",
+          "explanation_cz": "**2019** = bod → **since**."
+        },
+        {
+          "en": "She has worked here for a long time.",
+          "cz": "Pracuje tady dlouho.",
+          "gap": "She has worked here ____ a long time.",
+          "gap_answer": "for",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "She has worked here for a long time.",
+            "She's worked here for a long time."
+          ],
+          "wrong": "She has worked here since a long time.",
+          "explanation": "**a long time** = how long → **for**.",
+          "explanation_cz": "**a long time** = jak dlouho → **for**."
+        },
+        {
+          "en": "She has worked here since Monday.",
+          "cz": "Pracuje tady od pondělí.",
+          "gap": "She has worked here ____ Monday.",
+          "gap_answer": "since",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "She has worked here since Monday.",
+            "She's worked here since Monday."
+          ],
+          "wrong": "She has worked here for Monday.",
+          "explanation": "**Monday** = a point → **since**.",
+          "explanation_cz": "**Monday** = bod → **since**."
+        },
+        {
+          "en": "We have been here for three days.",
+          "cz": "Jsme tady tři dny.",
+          "gap": "We have been here ____ three days.",
+          "gap_answer": "for",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "We have been here for three days.",
+            "We've been here for three days."
+          ],
+          "wrong": "We have been here since three days.",
+          "explanation": "**three days** → **for**.",
+          "explanation_cz": "**three days** → **for**."
+        },
+        {
+          "en": "We have been here since ten o'clock.",
+          "cz": "Jsme tady od deseti.",
+          "gap": "We have been here ____ ten o'clock.",
+          "gap_answer": "since",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "We have been here since ten o'clock.",
+            "We've been here since ten o'clock."
+          ],
+          "wrong": "We have been here for ten o'clock.",
+          "explanation": "**ten o'clock** = a point → **since**.",
+          "explanation_cz": "**ten o'clock** = bod → **since**."
+        },
+        {
+          "en": "He has known her for a week.",
+          "cz": "Zná ji týden.",
+          "gap": "He has known her ____ a week.",
+          "gap_answer": "for",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "He has known her for a week.",
+            "He's known her for a week."
+          ],
+          "wrong": "He has known her since a week.",
+          "explanation": "**a week** → **for**.",
+          "explanation_cz": "**a week** → **for**."
+        },
+        {
+          "en": "He has known her since last year.",
+          "cz": "Zná ji od loňska.",
+          "gap": "He has known her ____ last year.",
+          "gap_answer": "since",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "He has known her since last year.",
+            "He's known her since last year."
+          ],
+          "wrong": "He has known her for last year.",
+          "explanation": "**last year** = a point → **since**.",
+          "explanation_cz": "**last year** = bod → **since**."
+        },
+        {
+          "en": "I have lived here for five years.",
+          "cz": "Bydlím tady pět let.",
+          "gap": "I have lived here ____ five years.",
+          "gap_answer": "for",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "I have lived here for five years.",
+            "I've lived here for five years."
+          ],
+          "wrong": "I have lived here since five years.",
+          "explanation": "**five years** = how long → **for**. Not *since*.",
+          "explanation_cz": "**five years** = jak dlouho → **for**. Ne *since*."
+        },
+        {
+          "en": "I have lived here since 2020.",
+          "cz": "Bydlím tady od roku 2020.",
+          "gap": "I have lived here ____ 2020.",
+          "gap_answer": "since",
+          "quiz_options": [
+            "for",
+            "since"
+          ],
+          "accepts": [
+            "I have lived here since 2020.",
+            "I've lived here since 2020."
+          ],
+          "wrong": "I have lived here for 2020.",
+          "explanation": "**2020** = a point → **since**. Not *for*.",
+          "explanation_cz": "**2020** = bod → **since**. Ne *for*."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "For / since",
+        "title_cz": "jak dlouho · od kdy",
+        "text_first": true,
+        "points": [
+          "**for** and **since** say how long something has been true.",
+          "**for** is a period — beginning and ending: **for two years**.",
+          "**since** is a point — from then: **since 2019**.",
+          "Czech often uses present and no word: *Bydlím tady pět let.*"
+        ],
+        "svg": "<svg viewBox=\"0 0 520 230\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"440\" y=\"18\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <line x1=\"440\" y1=\"24\" x2=\"440\" y2=\"210\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <line x1=\"40\" y1=\"78\" x2=\"500\" y2=\"78\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <rect x=\"108\" y=\"70\" width=\"332\" height=\"16\" rx=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <circle cx=\"108\" cy=\"78\" r=\"6\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <circle cx=\"440\" cy=\"78\" r=\"6\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"274\" y=\"58\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">for two years</text>\n  <text x=\"108\" y=\"108\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">beginning</text>\n  <text x=\"440\" y=\"108\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">ending</text>\n  <line x1=\"40\" y1=\"168\" x2=\"500\" y2=\"168\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"108\" y1=\"168\" x2=\"432\" y2=\"168\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"3\"/>\n  <polygon points=\"440,168 428,163 428,173\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <circle cx=\"108\" cy=\"168\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"108\" y=\"148\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">since 2019</text>\n  <text x=\"108\" y=\"198\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">a point</text>\n  <text x=\"274\" y=\"198\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">from then → now</text>\n</svg>",
+        "table": {
+          "headers": [
+            "",
+            "Say"
+          ],
+          "rows": [
+            [
+              "how long (two years, a week)",
+              "**for** two years"
+            ],
+            [
+              "from when (2019, Monday)",
+              "**since** 2019"
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

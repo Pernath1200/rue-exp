@@ -1,0 +1,269 @@
+{
+  "id": "a2_indirect_questions",
+  "title": "Indirect questions",
+  "level": "A2",
+  "tree_node": "a2_indirect_questions",
+  "codex_unit": "G_SS-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. Do you know where the station is? Statement order after know / tell me. No backshift. Not if/whether as the whole unit. B1 pack stays. Sort correct / needs repair. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "correct",
+    "needs_repair"
+  ],
+  "bin_captions": {
+    "correct": "where the station is",
+    "needs_repair": "where is the station"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Correct or needs repair?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "Do you know where the station is?",
+          "cz": "Víš, kde je nádraží?",
+          "bin": "correct",
+          "use": false
+        },
+        {
+          "en": "Do you know where is the station?",
+          "cz": "Víš, kde je nádraží?",
+          "bin": "needs_repair",
+          "use": false
+        },
+        {
+          "en": "I don't know what time it is.",
+          "cz": "Nevím, kolik je hodin.",
+          "bin": "correct",
+          "use": false
+        },
+        {
+          "en": "I don't know what time is it.",
+          "cz": "Nevím, kolik je hodin.",
+          "bin": "needs_repair",
+          "use": false
+        },
+        {
+          "en": "Can you tell me how much this is?",
+          "cz": "Můžeš mi říct, kolik to stojí?",
+          "bin": "correct",
+          "use": false
+        },
+        {
+          "en": "Can you tell me how much is this?",
+          "cz": "Můžeš mi říct, kolik to stojí?",
+          "bin": "needs_repair",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "indirect_questions_a2",
+      "title": "where the station is",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "Do you know where the station is?",
+          "cz": "Víš, kde je nádraží?",
+          "gap": "Do you know where ____?",
+          "gap_answer": "the station is",
+          "quiz_options": [
+            "the station is",
+            "is the station",
+            "the station",
+            "is station"
+          ],
+          "accepts": [
+            "Do you know where the station is?"
+          ],
+          "wrong": "Do you know where is the station?",
+          "explanation": "After **know**: **where the station is** — statement order. Not *where is*.",
+          "explanation_cz": "Po **know**: **where the station is**. Ne *where is*."
+        },
+        {
+          "en": "I don't know where he lives.",
+          "cz": "Nevím, kde bydlí.",
+          "gap": "I don't know where ____.",
+          "gap_answer": "he lives",
+          "quiz_options": [
+            "he lives",
+            "does he live",
+            "lives he",
+            "he live"
+          ],
+          "accepts": [
+            "I don't know where he lives.",
+            "I do not know where he lives."
+          ],
+          "wrong": "I don't know where does he live.",
+          "explanation": "**where he lives** — no **does** inside.",
+          "explanation_cz": "**where he lives** — uvnitř žádné **does**."
+        },
+        {
+          "en": "Can you tell me what time it is?",
+          "cz": "Můžeš mi říct, kolik je hodin?",
+          "gap": "Can you tell me what time ____?",
+          "gap_answer": "it is",
+          "quiz_options": [
+            "it is",
+            "is it",
+            "it",
+            "is"
+          ],
+          "accepts": [
+            "Can you tell me what time it is?"
+          ],
+          "wrong": "Can you tell me what time is it?",
+          "explanation": "**what time it is**. Not *is it*.",
+          "explanation_cz": "**what time it is**. Ne *is it*."
+        },
+        {
+          "en": "Do you know how much this costs?",
+          "cz": "Víš, kolik to stojí?",
+          "gap": "Do you know how much ____?",
+          "gap_answer": "this costs",
+          "quiz_options": [
+            "this costs",
+            "does this cost",
+            "this cost",
+            "costs this"
+          ],
+          "accepts": [
+            "Do you know how much this costs?"
+          ],
+          "wrong": "Do you know how much does this cost?",
+          "explanation": "**how much this costs** — statement order.",
+          "explanation_cz": "**how much this costs**."
+        },
+        {
+          "en": "She asked where the toilet is.",
+          "cz": "Zeptala se, kde je záchod.",
+          "gap": "She asked where ____.",
+          "gap_answer": "the toilet is",
+          "quiz_options": [
+            "the toilet is",
+            "is the toilet",
+            "the toilet",
+            "is toilet"
+          ],
+          "accepts": [
+            "She asked where the toilet is."
+          ],
+          "wrong": "She asked where is the toilet.",
+          "explanation": "Keep **is** (no backshift). Order: **where the toilet is**.",
+          "explanation_cz": "Zůstává **is**. Pořadí: **where the toilet is**."
+        },
+        {
+          "en": "I don't know when the shop opens.",
+          "cz": "Nevím, kdy obchod otevírá.",
+          "gap": "I don't know when ____.",
+          "gap_answer": "the shop opens",
+          "quiz_options": [
+            "the shop opens",
+            "does the shop open",
+            "opens the shop",
+            "the shop open"
+          ],
+          "accepts": [
+            "I don't know when the shop opens.",
+            "I do not know when the shop opens."
+          ],
+          "wrong": "I don't know when does the shop open.",
+          "explanation": "**when the shop opens**.",
+          "explanation_cz": "**when the shop opens**."
+        },
+        {
+          "en": "Do you know if she is at home?",
+          "cz": "Víš, jestli je doma?",
+          "gap": "Do you know if ____?",
+          "gap_answer": "she is at home",
+          "quiz_options": [
+            "she is at home",
+            "is she at home",
+            "she at home",
+            "is she"
+          ],
+          "accepts": [
+            "Do you know if she is at home?"
+          ],
+          "wrong": "Do you know if is she at home?",
+          "explanation": "After **if**: **she is at home**. Not *is she*.",
+          "explanation_cz": "Po **if**: **she is at home**. Ne *is she*."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Indirect questions",
+        "title_cz": "Nepřímé otázky",
+        "text_first": true,
+        "points": [
+          "A normal question: **Where is the station?**",
+          "After **Do you know** / **I don't know**, the inside is a statement.",
+          "**where the station is** — not *where is the station*."
+        ],
+        "table": {
+          "headers": [
+            "Direct",
+            "After know / tell me"
+          ],
+          "rows": [
+            [
+              "Where **is** the station?",
+              "Do you know where the station **is**?"
+            ],
+            [
+              "What time **is** it?",
+              "I don't know what time it **is**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Not Czech order",
+        "title_cz": "Ne český slovosled",
+        "text_first": true,
+        "points": [
+          "Czech keeps question order inside: *kde je nádraží*. English does not."
+        ],
+        "table": {
+          "headers": [
+            "Not",
+            "Say"
+          ],
+          "rows": [
+            [
+              "*Do you know where is the station?*",
+              "Do you know where the station **is**?"
+            ],
+            [
+              "*I don't know what time is it.*",
+              "I don't know what time it **is**."
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "sort_cz": false
+}

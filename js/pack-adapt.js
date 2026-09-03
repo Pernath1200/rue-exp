@@ -1408,7 +1408,7 @@ export function adaptGrammarPack(pack) {
             };
           }
           return {
-            en: it.en,
+            en: it.match_en || it.en,
             cz: it.cz,
             structures: it.structures,
             _block: it._block,

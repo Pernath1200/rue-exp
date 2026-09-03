@@ -418,6 +418,20 @@ def lint_pack(uid):
                     rest, re.I):
                 f["verbcue"].append(it)
 
+        # B11 — present continuous: I ____ to open the door. → am trying
+        # 2026-09-01: "should have verb in brackets (try)". Aux-only questions
+        # (____ you working?) already name the verb on the stem.
+        if uid == "a2_present_continuous" and ga:
+            if re.fullmatch(r"(Are|Is|are|is)", ga):
+                if not re.search(r"\w+ing", gap, re.I):
+                    f["verbcue"].append(it)
+            else:
+                cue = re.search(r"\(([^)]*)\)", gap)
+                cue_words = re.findall(r"[a-z]+", cue.group(1).lower()) if cue else []
+                has_verb_cue = any(w not in ("no", "not") for w in cue_words)
+                if not has_verb_cue and not re.search(r"\w+ing", gap, re.I):
+                    f["verbcue"].append(it)
+
         # B11 — present perfect whole VP (have just finished) with no (just/finish)
         # a2_present_perfect 2026-08-29: I ____. → have just finished.
         if uid == "a2_present_perfect":
@@ -1011,6 +1025,7 @@ def lint_pack(uid):
         "hub_spokes", "boxes_row", "timelines", "decision_flow", "pp_vs_past",
         "time_now", "in", "on", "under", "at", "next to", "behind",
         "in front of", "in-on-at", "to-for-with", "articles_map",
+        "indefinite_map",
         "move-to", "move-into", "move-onto", "move-from", "move-out-of",
         "move-off", "move-across", "move-along", "move-through", "move-past",
         "move-over", "move-under", "move-up", "move-down", "move-around",

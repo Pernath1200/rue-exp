@@ -988,9 +988,50 @@ function year_grid(labels) {
     </div>`;
 }
 
+/** Someone / something decision map — same HTML family as articles_map. */
+function indefiniteMapHtml() {
+  return `
+    <div class="articles-map" role="img" aria-label="some- in positives, any- in questions and negatives, no- for zero">
+      <div class="am-ask">
+        <span class="am-kicker">Ask yourself</span>
+        <span class="am-q">Is this a positive sentence?</span>
+      </div>
+      <div class="am-split">
+        <div class="am-branch am-yes">
+          <span class="am-label am-label-yes">Yes</span>
+          <div class="am-box am-box-the">
+            <div class="am-head">someone / something</div>
+            <p class="am-rule">The same job as <strong>some</strong>.</p>
+            <p class="am-ex"><strong>Someone</strong> is here.</p>
+          </div>
+        </div>
+        <div class="am-branch am-no">
+          <span class="am-label am-label-no">No</span>
+          <div class="am-ask am-ask-sm">
+            <span class="am-q">Question, or zero people / things?</span>
+          </div>
+          <div class="am-leaves">
+            <div class="am-box am-box-a">
+              <span class="am-leaf-tag">questions · negatives</span>
+              <div class="am-head">anybody / anything</div>
+              <p class="am-ex">I didn't see <strong>anybody</strong>.</p>
+            </div>
+            <div class="am-box am-box-zero">
+              <span class="am-leaf-tag">zero</span>
+              <div class="am-head">nobody / nothing</div>
+              <p class="am-ex"><strong>Nobody</strong> came.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="am-foot">One negative only. They stand alone — no noun after them.</p>
+    </div>`;
+}
+
 /** Schematics that draw HTML rather than SVG (grids of two-language text). */
 const HTML_SCHEMATICS = {
   articles_map: articlesMapHtml,
+  indefinite_map: indefiniteMapHtml,
   week_strip,
   year_grid,
 };

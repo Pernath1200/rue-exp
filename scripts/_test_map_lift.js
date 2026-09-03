@@ -54,17 +54,18 @@ const verbs = p.laterals.find((L) => L.tree_part === "verb_phrase");
 assert(verbs.knots === 1, "1 started of 30 live → exactly 1 lit slot");
 assert(litSlots(synth, 1) === 1, "litSlots floor holds at 1/30");
 
-// 4. Map dressing (polish, 2026-08-29): seats wear their names on the map,
-//    the growing tip carries the apex bud — and neither leaks into payoffs.
+// 4. Map dressing: part names live as hover-only; apex bud is map-only.
 const mapHost = host();
 renderTreePortrait(mapHost, {
   level: "A1", nodes: tree.nodes,
   isFruit: () => false, progressState: () => "none",
 });
-assert(mapHost.innerHTML.includes(">Linking</text>"),
-  "map names every root seat (Linking labelled)");
-assert(mapHost.innerHTML.includes(">Foundation</text>"),
-  "tap root labelled Foundation");
+assert(/tp-hover-name[^>]*>Linking</.test(mapHost.innerHTML),
+  "map keeps Linking as a hover name");
+assert(/tp-hover-name[^>]*>Foundation</.test(mapHost.innerHTML),
+  "tap root hover-name is Foundation");
+assert(!mapHost.innerHTML.includes('class="tp-focus-label'),
+  "empty map has no permanent unit label");
 assert(mapHost.innerHTML.includes("tp-bud"),
   "apex bud on the growing map tree");
 const payHost = host();
@@ -73,8 +74,8 @@ renderTreePortrait(payHost, {
   isFruit: () => false, progressState: () => "none",
   justNow: "leaf_home_family", highlight: ["home_family", "trunk"],
 });
-assert(!payHost.innerHTML.includes(">Linking</text>"),
-  "payoff stays unlabelled below ground");
+assert(!/tp-focus-label[^>]*>Linking</.test(payHost.innerHTML),
+  "payoff does not permanently label other roots");
 assert(!payHost.innerHTML.includes("tp-bud"), "payoff carries no bud");
 
 // 5. Cambium (2026-08-29): word-craft reps thicken the trunk — saturating,
@@ -121,16 +122,31 @@ renderTreePortrait(emptyCrown, {
   level: "B1", nodes: tree.nodes,
   isFruit: () => false, progressState: () => "none",
 });
-assert(!emptyCrown.innerHTML.includes(">Home &amp; family</text>"),
-  "B1 with no vocab work does not name a Home branch");
+assert(/tp-hover-name[^>]*>Home &amp; family</.test(emptyCrown.innerHTML),
+  "B1 still hover-names Home (part name, not a unit plate)");
+assert(!emptyCrown.innerHTML.includes('class="tp-focus-label'),
+  "B1 with no vocab work has no permanent Home label");
 const homeCrown = host();
 renderTreePortrait(homeCrown, {
   level: "B1", nodes: tree.nodes,
   isFruit: (id) => id === "leaf_home_family",
   progressState: (id) => (id === "leaf_home_family" ? "fruit" : "none"),
 });
-assert(homeCrown.innerHTML.includes(">Home &amp; family</text>"),
-  "covering Home & family grows and names that branch");
+assert(/data-part="home_family"/.test(homeCrown.innerHTML),
+  "covering Home & family still grows that branch");
+assert(!homeCrown.innerHTML.includes('class="tp-focus-label'),
+  "covering a house does not permanently name it without lastDone");
+const homeNamed = host();
+renderTreePortrait(homeNamed, {
+  level: "B1", nodes: tree.nodes,
+  isFruit: (id) => id === "leaf_home_family",
+  progressState: (id) => (id === "leaf_home_family" ? "fruit" : "none"),
+  lastDone: { id: "leaf_home_family", label: "Family", part: "home_family" },
+});
+assert(/tp-focus-label[^>]*>Family</.test(homeNamed.innerHTML),
+  "last completed vocab unit keeps its own name");
+assert(!/tp-focus-label[^>]*>Home/.test(homeNamed.innerHTML),
+  "last-done plate is the unit name, not every house name");
 
 const payWhole = host();
 renderTreePortrait(payWhole, {
@@ -145,9 +161,28 @@ renderTreePortrait(payWhole, {
 });
 assert(payWhole.innerHTML.includes("tp-house"),
   "grammar payoff still draws the crown (same plant, not roots-only)");
-assert(payWhole.innerHTML.includes(">Home &amp; family</text>"),
-  "previous Home fruit stays named on the grammar payoff tree");
-assert(payWhole.innerHTML.includes("Phrasal verbs"),
+assert(!/tp-focus-label[^>]*>Home/.test(payWhole.innerHTML),
+  "previous Home fruit is not permanently labelled on the grammar payoff");
+assert(/tp-focus-label[^>]*>Phrasal verbs</.test(payWhole.innerHTML),
   "new grammar unit is still labelled on its root");
+assert((payWhole.innerHTML.match(/class="tp-focus-label/g) || []).length === 1,
+  "payoff carries exactly one permanent unit label");
+
+const { JSDOM } = await import("jsdom");
+const dom = new JSDOM("<!doctype html><div id='h'></div>");
+const el = dom.window.document.getElementById("h");
+renderTreePortrait(el, {
+  level: "A2", nodes: tree.nodes,
+  isFruit: () => false, progressState: () => "none",
+});
+const svg = el.querySelector("svg");
+const house = el.querySelector(".tp-house[data-part='home_family']");
+const name = el.querySelector(".tp-hover-name[data-part='home_family']");
+assert(!!house && !!name, "house seat and hover name exist in the live DOM");
+assert(!name.classList.contains("is-on"), "part name starts hidden");
+house.dispatchEvent(new dom.window.Event("pointerover", { bubbles: true }));
+assert(name.classList.contains("is-on"), "hovering a house reveals its part name");
+svg.dispatchEvent(new dom.window.Event("pointerout", { bubbles: true }));
+assert(!name.classList.contains("is-on"), "leaving the tree hides the part name");
 
 process.exit(failed ? 1 : 0);

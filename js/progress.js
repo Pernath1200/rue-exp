@@ -535,9 +535,9 @@ export function touchVocabBlock(blockId, nodeId) {
 }
 
 /**
- * Node ids with activity inside the window (default 24h). The map portrait
- * uses this so house labels name recent growth, then fade — an old completed
- * unit must not keep a permanent nameplate (James, 2026-08-25).
+ * Node ids with activity inside the window (default 24h). Kept for callers
+ * that still want a recency set; the portrait no longer names every recent
+ * house (James, 2026-09-02: last completed unit only).
  */
 export function recentNodeIds(withinMs = 24 * 60 * 60 * 1000) {
   const p = loadProgress();
@@ -550,6 +550,67 @@ export function recentNodeIds(withinMs = 24 * 60 * 60 * 1000) {
     if ((b.touchedAt || 0) >= cutoff) ids.add(b.nodeId || id);
   }
   return ids;
+}
+
+const CEFR = ["A1", "A2", "B1", "B2", "C1"];
+
+function nodeInView(node, level) {
+  const lvIdx = CEFR.indexOf(level);
+  if (lvIdx < 0) return true;
+  return (node.levels || []).some(
+    (l) => CEFR.indexOf(l) >= 0 && CEFR.indexOf(l) <= lvIdx,
+  );
+}
+
+function blockTouchedAt(p, node) {
+  if (!node) return 0;
+  if (node.domain === "grammar") {
+    return (p.grammar && p.grammar.blocks && p.grammar.blocks[node.id] && p.grammar.blocks[node.id].touchedAt) || 0;
+  }
+  let t = 0;
+  for (const [id, b] of Object.entries((p.vocab && p.vocab.blocks) || {})) {
+    if (b && (b.nodeId === node.id || id === node.id) && (b.touchedAt || 0) > t) {
+      t = b.touchedAt;
+    }
+  }
+  return t;
+}
+
+/**
+ * The unit whose name stays on the tree: last first-fruit, not last review.
+ * Prefers the stamp written at fruit; falls back to newest learnedAt among
+ * eligible live teaching nodes (skips sitting halves and fruit:false checks).
+ */
+export function lastCompletedNodeId(nodes, level) {
+  const p = loadProgress();
+  const list = nodes || [];
+  const eligible = (node) =>
+    !!node &&
+    node.status === "live" &&
+    !node.sitting_of &&
+    node.fruit !== false &&
+    nodeHasFruit(node) &&
+    nodeInView(node, level);
+
+  const stamped = p.lastCompletedId
+    ? list.find((n) => n && n.id === p.lastCompletedId)
+    : null;
+  if (eligible(stamped)) return stamped.id;
+
+  let bestId = null;
+  let bestT = -1;
+  for (const node of list) {
+    if (!eligible(node)) continue;
+    const rev = (p.nodes && p.nodes[node.id]) || {};
+    let t = rev.learnedAt ? Date.parse(rev.learnedAt) : 0;
+    if (!Number.isFinite(t)) t = 0;
+    if (!t) t = blockTouchedAt(p, node) || 0;
+    if (t >= bestT) {
+      bestT = t;
+      bestId = node.id;
+    }
+  }
+  return bestId;
 }
 
 /**
@@ -610,10 +671,10 @@ export function completeVocabMode(blockId, mode, meta = {}) {
 export function vocabMatchClear(b) {
   if (!b) return false;
   if (!b.modes?.match) return false;
-  // Smoke skip stamps matchCleanPass with no keys. One board of 12 is enough.
+  // Smoke skip stamps matchCleanPass with no keys.
   if (b.matchCleanPass) return true;
   if (b.matchNeed == null) return true;
-  const fruitNeed = Math.min(Number(b.matchNeed) || 0, VOCAB_PASS);
+  const fruitNeed = Number(b.matchNeed) || 0;
   if (fruitNeed <= 0) return true;
   return (b.matchKeys || []).length >= fruitNeed;
 }
@@ -812,6 +873,7 @@ function reviewTick(nodeId, ratio, fruited) {
   if (fruited && !n.learnedAt) {
     n.learnedAt = new Date(now).toISOString();
     n.nextDueAt = new Date(now + REVIEW_INTERVALS_DAYS[0] * DAY_MS).toISOString();
+    p.lastCompletedId = nodeId;
     save(p);
     return null;
   }
@@ -1226,6 +1288,9 @@ export function importProgressPayload(raw) {
     units: body.units && typeof body.units === "object" ? body.units : {},
     nodes: body.nodes && typeof body.nodes === "object" ? body.nodes : {},
   };
+  if (typeof body.lastCompletedId === "string" && body.lastCompletedId) {
+    normalized.lastCompletedId = body.lastCompletedId;
+  }
   if (!normalized.unlocked.includes("A1")) {
     normalized.unlocked = ["A1", ...normalized.unlocked];
   }

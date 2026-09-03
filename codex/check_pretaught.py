@@ -59,6 +59,24 @@ FEATURES: dict[str, tuple[str, set[str]]] = {
 }
 
 
+def chunk_waivers(pack: dict) -> set[str]:
+    """Feature unit ids this pack presents as fixed chunks.
+
+    A pack early on the path may legitimately use `a` or `my` inside a phrase
+    the learner memorises whole — "I am a student" — with the rule itself
+    arriving later. That is a teaching choice, not a sequencing bug, and the
+    grader stays strict either way: dropping the article is the Czech-L1 error
+    the app exists to fix, so it is still marked wrong. Declaring the feature
+    here says "chunk now, rule later" and takes the pack out of the count.
+    (James, 2026-08-31.)
+
+    Waived sentences are still reported, so a waiver cannot hide a growing
+    problem — it only stops it failing the ratchet.
+    """
+    raw = pack.get("chunk_features")
+    return {str(x) for x in raw} if isinstance(raw, list) else set()
+
+
 def sentences(pack: dict) -> list[str]:
     out = []
     for b in pack.get("blocks") or []:
@@ -82,29 +100,47 @@ def main() -> int:
         path.append(nid)
 
     cache: dict[str, list[str]] = {}
+    waived_by: dict[str, set[str]] = {}
     for nid in path:
         n = by.get(nid)
         if not n or n.get("status") != "live" or not n.get("content"):
             continue
         f = DATA / n["content"]
         if f.is_file():
-            cache[nid] = sentences(json.loads(f.read_text(encoding="utf-8")))
+            pack = json.loads(f.read_text(encoding="utf-8"))
+            cache[nid] = sentences(pack)
+            waived_by[nid] = chunk_waivers(pack)
 
     rows = []
     total = 0
+    waived_total = 0
+    waived_rows = []
     for unit, (label, markers) in FEATURES.items():
         if unit not in path:
             continue
         pos = path.index(unit)
         owed = 0
+        waived = 0
+        waived_packs = set()
         first = None
         for k, nid in enumerate(path[:pos]):
+            hit = 0
             for s in cache.get(nid, []):
                 if markers & {w.lower() for w in W.findall(s)}:
-                    owed += 1
-                    if first is None:
+                    hit += 1
+                    if unit not in waived_by.get(nid, set()) and first is None:
                         first = (k + 1, nid, s)
+            if not hit:
+                continue
+            if unit in waived_by.get(nid, set()):
+                waived += hit
+                waived_packs.add(nid)
+            else:
+                owed += hit
         total += owed
+        waived_total += waived
+        if waived:
+            waived_rows.append((waived, label, sorted(waived_packs)))
         rows.append((owed, pos + 1, unit, label, first))
 
     rows.sort(reverse=True)
@@ -114,6 +150,13 @@ def main() -> int:
         print(f"  {label:<22}{pos:>8}{str(fp):>8}{owed:>7}")
         if first and owed >= 20:
             print(f'      first demanded by {first[1]}: "{first[2]}"')
+
+    if waived_rows:
+        waived_rows.sort(reverse=True)
+        print()
+        print("chunk-taught (declared, not counted):")
+        for n, label, packs in waived_rows:
+            print(f"  {label:<22}{n:>7}   {', '.join(packs)}")
 
     AUDIT_DIR.mkdir(exist_ok=True)
     prev = None

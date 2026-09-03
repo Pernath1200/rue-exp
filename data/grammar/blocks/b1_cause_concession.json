@@ -1,0 +1,331 @@
+{
+ "id": "b1_cause_concession",
+ "title": "Because of / despite / in spite of",
+ "level": "B1",
+ "tree_node": "b1_cause_concession",
+ "codex_unit": "G_PP-B1B2-01",
+ "practice": "frames",
+ "quality": "draft",
+ "note": "Preposition + NOUN, which is exactly what separates this from b1_linkers (although / however take a clause or a sentence) - b1_linkers plays immediately before, so the pair is a contrast. Traps: *despite of, *in spite the rain, and *because of it was raining. thanks to for a cause with a good result. First draft 2026-09-02, rough - thicken after smoke.",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "intro": {
+  "cards": [
+   {
+    "title": "Because of / despite / in spite of",
+    "title_cz": "Because of / despite / in spite of — + podstatné jméno",
+    "points": [
+     "You already know **although /** however / so — those take a whole sentence.",
+     "All four of these are followed by a **noun** instead."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Takes",
+      "Meaning"
+     ],
+     "rows": [
+      [
+       "**because of**",
+       "a noun",
+       "this is why"
+      ],
+      [
+       "**despite**",
+       "a noun",
+       "this did not stop it"
+      ],
+      [
+       "**in spite** of",
+       "a noun",
+       "the same as despite"
+      ],
+      [
+       "**thanks to**",
+       "a noun",
+       "why, and it turned out well"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "We stayed in **because of** the rain.",
+      "cz": "Zůstali jsme doma kvůli dešti."
+     },
+     {
+      "en": "**Despite** the rain, we walked home.",
+      "cz": "Navzdory dešti jsme šli domů."
+     }
+    ]
+   },
+   {
+    "title": "Noun or clause?",
+    "title_cz": "Podstatné jméno, nebo věta?",
+    "points": [
+     "If a subject and a verb follow, you need the right-hand word."
+    ],
+    "table": {
+     "headers": [
+      "Takes a noun",
+      "Takes a clause"
+     ],
+     "rows": [
+      [
+       "**because of** the rain",
+       "**because** it was raining"
+      ],
+      [
+       "**despite** the rain",
+       "**although** it was raining"
+      ],
+      [
+       "**in spite** of the rain",
+       "**even though** it was raining"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "despite has no of",
+    "title_cz": "despite nemá of",
+    "points": [
+     "**despite** = **in spite** of. One has the *of*, the other does not."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "*despite of the rain*",
+       "**despite** the rain"
+      ],
+      [
+       "*in spite the rain*",
+       "**in spite** of the rain"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "text_first": true,
+    "points": [
+     "Count the words after it: a noun, or a subject and a verb?"
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "~~Despite of the rain, we walked home.~~",
+       "**Despite** the rain, we walked home."
+      ],
+      [
+       "~~In spite the rain, we walked home.~~",
+       "**In spite** of the rain, we walked home."
+      ],
+      [
+       "~~Because of it was raining, we stayed in.~~",
+       "**Because** it was raining, we stayed in."
+      ],
+      [
+       "~~Thanks for your help, I finished early.~~",
+       "**Thanks to** your help, I finished early."
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "b1_cause_concession_main",
+   "title": "Because of / despite / in spite of · B1",
+   "items": [
+    {
+     "en": "We stayed in because of the rain.",
+     "cz": "Zůstali jsme doma kvůli dešti.",
+     "gap": "We stayed in ____ the rain. (because of / because)",
+     "gap_answer": "because of",
+     "quiz_options": [
+      "because of",
+      "because",
+      "despite",
+      "for"
+     ],
+     "accepts": [
+      "We stayed in because of the rain."
+     ],
+     "explanation": "**the rain** is a noun, so **because of**.",
+     "explanation_cz": "**the rain** je podstatné jméno, takže **because of**."
+    },
+    {
+     "en": "Despite the rain, we walked home.",
+     "cz": "Navzdory dešti jsme šli domů.",
+     "gap": "____ the rain, we walked home. (despite / despite of)",
+     "gap_answer": "Despite",
+     "quiz_options": [
+      "Despite",
+      "Despite of",
+      "Although",
+      "However"
+     ],
+     "accepts": [
+      "Despite the rain, we walked home."
+     ],
+     "wrong": "Despite of the rain, we walked home.",
+     "explanation": "**despite** takes no *of*.",
+     "explanation_cz": "**despite** nemá *of*."
+    },
+    {
+     "en": "In spite of the traffic, we arrived on time.",
+     "cz": "Navzdory provozu jsme dorazili včas.",
+     "gap": "____ the traffic, we arrived on time. (in spite of / in spite)",
+     "gap_answer": "In spite of",
+     "quiz_options": [
+      "In spite of",
+      "In spite",
+      "Despite of",
+      "Although"
+     ],
+     "accepts": [
+      "In spite of the traffic, we arrived on time."
+     ],
+     "wrong": "In spite the traffic, we arrived on time.",
+     "explanation": "**in spite of** always keeps the *of*.",
+     "explanation_cz": "**in spite of** si vždycky drží *of*."
+    },
+    {
+     "en": "Thanks to your help, I finished early.",
+     "cz": "Díky tvé pomoci jsem skončil brzy.",
+     "gap": "____ your help, I finished early. (thanks to / thanks for)",
+     "gap_answer": "Thanks to",
+     "quiz_options": [
+      "Thanks to",
+      "Thanks for",
+      "Because",
+      "Despite"
+     ],
+     "accepts": [
+      "Thanks to your help, I finished early."
+     ],
+     "explanation": "**thanks to** + noun gives a cause with a good result. *thanks for* is what you say to a person.",
+     "explanation_cz": "**thanks to** + podstatné jméno dává příčinu s dobrým koncem. *thanks for* říkáš člověku."
+    },
+    {
+     "en": "Because it was raining, we stayed in.",
+     "cz": "Protože pršelo, zůstali jsme doma.",
+     "gap": "____ it was raining, we stayed in. (because / because of)",
+     "gap_answer": "Because",
+     "quiz_options": [
+      "Because",
+      "Because of",
+      "Despite",
+      "In spite of"
+     ],
+     "accepts": [
+      "Because it was raining, we stayed in."
+     ],
+     "wrong": "Because of it was raining, we stayed in.",
+     "explanation": "A subject and a verb follow, so plain **because**.",
+     "explanation_cz": "Následuje podmět a sloveso, takže samotné **because**."
+    },
+    {
+     "en": "The match was cancelled because of the snow.",
+     "cz": "Zápas byl zrušen kvůli sněhu.",
+     "gap": "The match was cancelled ____ the snow. (because of / because)",
+     "gap_answer": "because of",
+     "quiz_options": [
+      "because of",
+      "because",
+      "despite",
+      "thanks to"
+     ],
+     "accepts": [
+      "The match was cancelled because of the snow."
+     ],
+     "explanation": "**the snow** is a noun: because of.",
+     "explanation_cz": "**the snow** je podstatné jméno: because of."
+    },
+    {
+     "en": "Despite his age, he still works full time.",
+     "cz": "Navzdory svému věku pořád pracuje na plný úvazek.",
+     "gap": "____ his age, he still works full time. (despite / although)",
+     "gap_answer": "Despite",
+     "quiz_options": [
+      "Despite",
+      "Although",
+      "Despite of",
+      "However"
+     ],
+     "accepts": [
+      "Despite his age, he still works full time."
+     ],
+     "explanation": "**his age** is a noun, so despite. *although* would need a clause.",
+     "explanation_cz": "**his age** je podstatné jméno, takže despite. *although* by potřebovalo větu."
+    },
+    {
+     "en": "Although it was cold, we sat outside.",
+     "cz": "I když byla zima, seděli jsme venku.",
+     "gap": "____ it was cold, we sat outside. (although / despite)",
+     "gap_answer": "Although",
+     "quiz_options": [
+      "Although",
+      "Despite",
+      "In spite of",
+      "Because of"
+     ],
+     "accepts": [
+      "Although it was cold, we sat outside."
+     ],
+     "explanation": "A subject and a verb follow, so **although**, not despite.",
+     "explanation_cz": "Následuje podmět a sloveso, takže **although**, ne despite."
+    },
+    {
+     "en": "Thanks to the new road, the journey is shorter.",
+     "cz": "Díky nové silnici je cesta kratší.",
+     "gap": "____ the new road, the journey is shorter. (thanks to / because)",
+     "gap_answer": "Thanks to",
+     "quiz_options": [
+      "Thanks to",
+      "Because",
+      "Despite",
+      "Thanks for"
+     ],
+     "accepts": [
+      "Thanks to the new road, the journey is shorter."
+     ],
+     "explanation": "A cause with a good result: **thanks to** + noun.",
+     "explanation_cz": "Příčina s dobrým koncem: **thanks to** + podstatné jméno."
+    },
+    {
+     "en": "In spite of the noise, I slept well.",
+     "cz": "Navzdory hluku jsem se dobře vyspal.",
+     "gap": "____ the noise, I slept well. (in spite of / despite of)",
+     "gap_answer": "In spite of",
+     "quiz_options": [
+      "In spite of",
+      "Despite of",
+      "In spite",
+      "Although"
+     ],
+     "accepts": [
+      "In spite of the noise, I slept well."
+     ],
+     "explanation": "**in spite of** is the three-word form. *despite of* does not exist.",
+     "explanation_cz": "**in spite of** je tříslovný tvar. *despite of* neexistuje."
+    }
+   ]
+  }
+ ]
+}

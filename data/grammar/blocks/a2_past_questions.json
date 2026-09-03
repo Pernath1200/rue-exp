@@ -1,0 +1,220 @@
+{
+  "id": "a2_past_questions",
+  "title": "Past questions & negatives",
+  "level": "A2",
+  "tree_node": "a2_past_questions",
+  "codex_unit": "G_SS-A1B1-01",
+  "practice": "frames",
+  "note": "did + base. Not did you went / I didn't went. Also missing did: Where you went? Not present do/does. Not past continuous. Sort correct / needs repair. Quiz gaps the base after did. · Smoked 2026-09-02: quality ok, bank thin (more questions later if wanted). Card 0 title = unit name (C14).",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "correct",
+    "needs_repair"
+  ],
+  "bin_captions": {
+    "correct": "good English",
+    "needs_repair": "fix this"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Correct or needs repair?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        { "en": "Where did you go?", "cz": "Kam jsi šel?", "bin": "correct", "use": false },
+        { "en": "Where did you went?", "cz": "Kam jsi šel?", "bin": "needs_repair", "use": false },
+        { "en": "I didn't see it.", "cz": "Neviděl jsem to.", "bin": "correct", "use": false },
+        { "en": "I didn't saw it.", "cz": "Neviděl jsem to.", "bin": "needs_repair", "use": false },
+        { "en": "Did she come?", "cz": "Přišla?", "bin": "correct", "use": false },
+        { "en": "Did she came?", "cz": "Přišla?", "bin": "needs_repair", "use": false },
+        { "en": "They didn't have time.", "cz": "Neměli čas.", "bin": "correct", "use": false },
+        { "en": "Where you went yesterday?", "cz": "Kam jsi včera šel?", "bin": "needs_repair", "use": false }
+      ]
+    },
+    {
+      "id": "past_questions_a2",
+      "title": "did + base",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "Where did you go?",
+          "cz": "Kam jsi šel? / Kam jsi šla?",
+          "gap": "Where did you ____?",
+          "gap_answer": "go",
+          "quiz_options": ["go", "went", "going", "to go"],
+          "accepts": ["Where did you go?"],
+          "wrong": "Where did you went?",
+          "explanation": "After **did** → base **go**. Not *went*.",
+          "explanation_cz": "Po **did** → základ **go**. Ne *went*."
+        },
+        {
+          "en": "What did she see?",
+          "cz": "Co viděla?",
+          "gap": "What did she ____?",
+          "gap_answer": "see",
+          "quiz_options": ["see", "saw", "seen", "seeing"],
+          "accepts": ["What did she see?"],
+          "wrong": "What did she saw?",
+          "explanation": "After **did** → **see**. Not *saw*.",
+          "explanation_cz": "Po **did** → **see**. Ne *saw*."
+        },
+        {
+          "en": "Did they come?",
+          "cz": "Přišli?",
+          "gap": "Did they ____?",
+          "gap_answer": "come",
+          "quiz_options": ["come", "came", "coming", "to come"],
+          "accepts": ["Did they come?"],
+          "wrong": "Did they came?",
+          "explanation": "**Did** + **come**. Not *came*.",
+          "explanation_cz": "**Did** + **come**. Ne *came*."
+        },
+        {
+          "en": "When did he leave?",
+          "cz": "Kdy odešel?",
+          "gap": "When did he ____?",
+          "gap_answer": "leave",
+          "quiz_options": ["leave", "left", "leaving", "leaves"],
+          "accepts": ["When did he leave?"],
+          "wrong": "When did he left?",
+          "explanation": "After **did** → **leave**. Not *left*.",
+          "explanation_cz": "Po **did** → **leave**. Ne *left*."
+        },
+        {
+          "en": "I didn't go.",
+          "cz": "Nešel jsem. / Nešla jsem.",
+          "gap": "I didn't ____.",
+          "gap_answer": "go",
+          "quiz_options": ["go", "went", "going", "gone"],
+          "accepts": ["I didn't go.", "I did not go."],
+          "wrong": "I didn't went.",
+          "explanation": "After **didn't** → **go**. Not *went*.",
+          "explanation_cz": "Po **didn't** → **go**. Ne *went*."
+        },
+        {
+          "en": "She didn't see it.",
+          "cz": "Ona to neviděla.",
+          "gap": "She didn't ____ it.",
+          "gap_answer": "see",
+          "quiz_options": ["see", "saw", "seen", "sees"],
+          "accepts": ["She didn't see it.", "She did not see it."],
+          "wrong": "She didn't saw it.",
+          "explanation": "After **didn't** → **see**.",
+          "explanation_cz": "Po **didn't** → **see**."
+        },
+        {
+          "en": "We didn't have time.",
+          "cz": "Neměli jsme čas.",
+          "gap": "We didn't ____ time.",
+          "gap_answer": "have",
+          "quiz_options": ["have", "had", "has", "having"],
+          "accepts": ["We didn't have time.", "We did not have time."],
+          "wrong": "We didn't had time.",
+          "explanation": "After **didn't** → **have**. Not *had*.",
+          "explanation_cz": "Po **didn't** → **have**. Ne *had*."
+        },
+        {
+          "en": "He didn't work yesterday.",
+          "cz": "Včera nepracoval.",
+          "gap": "He didn't ____ yesterday.",
+          "gap_answer": "work",
+          "quiz_options": ["work", "worked", "working", "works"],
+          "accepts": ["He didn't work yesterday.", "He did not work yesterday."],
+          "wrong": "He didn't worked yesterday.",
+          "explanation": "Regular verbs too: after **didn't** → **work**, not *worked*.",
+          "explanation_cz": "I pravidelná: po **didn't** → **work**, ne *worked*."
+        },
+        {
+          "en": "Where did you go yesterday?",
+          "cz": "Kam jsi včera šel? / Kam jsi včera šla?",
+          "gap": "Where ____ yesterday? (you / go)",
+          "gap_answer": "did you go",
+          "quiz_options": ["did you go", "you went", "did you went", "you go"],
+          "accepts": ["Where did you go yesterday?"],
+          "wrong": "Where you went yesterday?",
+          "explanation": "Need **did**. Not *Where you went?*",
+          "explanation_cz": "Musí tam být **did**. Ne *Where you went?*"
+        },
+        {
+          "en": "What did she say?",
+          "cz": "Co řekla?",
+          "gap": "What did she ____?",
+          "gap_answer": "say",
+          "quiz_options": ["say", "said", "saying", "says"],
+          "accepts": ["What did she say?"],
+          "wrong": "What did she said?",
+          "explanation": "After **did** → **say**. Not *said*.",
+          "explanation_cz": "Po **did** → **say**. Ne *said*."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Past questions & negatives",
+        "title_cz": "Minulé otázky a zápor",
+        "points": [
+          "You know **I went** / **I saw** / **I worked**.",
+          "In a question or with **not**, **did** takes the past. The verb goes back to the **base**.",
+          "Czech has no extra word here: *Kam jsi šel?*"
+        ],
+        "table": {
+          "headers": ["+", "Question / no"],
+          "rows": [
+            ["I **went**.", "Where **did** you **go**?"],
+            ["She **saw** it.", "She **didn't see** it."]
+          ]
+        }
+      },
+      {
+        "title": "Not the past form twice",
+        "title_cz": "Minulost jen jednou",
+        "text_first": true,
+        "points": [
+          "**did** is already past. Do not add *went / saw / had*.",
+          "Same after **didn't**."
+        ],
+        "table": {
+          "headers": ["Not", "Say"],
+          "rows": [
+            ["*Where did you went?*", "Where **did** you **go**?"],
+            ["*I didn't saw it.*", "I **didn't see** it."],
+            ["*Did she came?*", "**Did** she **come**?"]
+          ]
+        }
+      },
+      {
+        "title": "Don't drop did",
+        "title_cz": "did nesmí chybět",
+        "text_first": true,
+        "points": [
+          "Not *Where you went yesterday?*",
+          "English wants **did** in the question."
+        ],
+        "table": {
+          "headers": ["Not", "Say"],
+          "rows": [
+            ["*Where you went?*", "Where **did** you **go**?"]
+          ]
+        }
+      }
+    ]
+  }
+}

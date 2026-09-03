@@ -1,0 +1,330 @@
+{
+ "id": "b1_question_tags",
+ "title": "Question tags",
+ "level": "B1",
+ "tree_node": "b1_question_tags",
+ "codex_unit": "G_SS-B1B2-01",
+ "practice": "frames",
+ "quality": "draft",
+ "note": "Positive sentence -> negative tag and the reverse; the tag repeats the auxiliary. Czech has one invariant tag (ze jo? / vid? / ze ne?) so students produce *You are coming, no? and *You like it, yes?. Where the sentence has no auxiliary, the tag supplies do/does/did. First draft 2026-09-02, rough - thicken after smoke.",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "intro": {
+  "cards": [
+   {
+    "title": "Question tags",
+    "title_cz": "Tázací dovětky",
+    "points": [
+     "Czech uses one little tag for everything. English changes it to match the sentence."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Tag"
+     ],
+     "rows": [
+      [
+       "positive →",
+       "**negative** tag"
+      ],
+      [
+       "negative →",
+       "**positive** tag"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "You're coming, **aren't you**?",
+      "cz": "Přijdeš, že jo?"
+     },
+     {
+      "en": "She doesn't drive, **does she**?",
+      "cz": "Ona neřídí, že ne?"
+     }
+    ]
+   },
+   {
+    "title": "The tag copies the auxiliary",
+    "title_cz": "Dovětek kopíruje pomocné sloveso",
+    "points": [
+     "Find the auxiliary in the sentence and reuse it."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Auxiliary",
+      "Tag"
+     ],
+     "rows": [
+      [
+       "You **are** coming",
+       "are",
+       "aren't you?"
+      ],
+      [
+       "She **has** left",
+       "has",
+       "hasn't she?"
+      ],
+      [
+       "They **can** swim",
+       "can",
+       "can't they?"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "When there is no auxiliary",
+    "title_cz": "Když tam pomocné sloveso není",
+    "points": [
+     "The tag brings in **do /** does / did, just as a question would."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Tag",
+      "Why"
+     ],
+     "rows": [
+      [
+       "You **like** coffee",
+       "don't you?",
+       "present simple → do"
+      ],
+      [
+       "He **works** here",
+       "doesn't he?",
+       "third person → does"
+      ],
+      [
+       "They **went** home",
+       "didn't they?",
+       "past simple → did"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "text_first": true,
+    "points": [
+     "The tag flips the sentence: positive to negative, negative to positive."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "~~You are coming, no?~~",
+       "You are coming, **aren't you**?"
+      ],
+      [
+       "~~You like it, yes?~~",
+       "You like it, **don't you**?"
+      ],
+      [
+       "~~She doesn't drive, doesn't she?~~",
+       "She doesn't drive, **does she**?"
+      ],
+      [
+       "~~They went home, didn't they went?~~",
+       "They went home, **didn't they**?"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "b1_question_tags_main",
+   "title": "Question tags · B1",
+   "items": [
+    {
+     "en": "You're coming, aren't you?",
+     "cz": "Přijdeš, že jo?",
+     "gap": "You're coming, ____? (tag)",
+     "gap_answer": "aren't you",
+     "quiz_options": [
+      "aren't you",
+      "isn't it",
+      "no",
+      "don't you"
+     ],
+     "accepts": [
+      "You're coming, aren't you?"
+     ],
+     "wrong": "You're coming, no?",
+     "explanation": "Positive sentence with **are**, so a negative tag with the same verb: aren't you.",
+     "explanation_cz": "Kladná věta s **are**, takže záporný dovětek se stejným slovesem: aren't you."
+    },
+    {
+     "en": "She doesn't drive, does she?",
+     "cz": "Ona neřídí, že ne?",
+     "gap": "She doesn't drive, ____? (tag)",
+     "gap_answer": "does she",
+     "quiz_options": [
+      "does she",
+      "doesn't she",
+      "is she",
+      "do she"
+     ],
+     "accepts": [
+      "She doesn't drive, does she?"
+     ],
+     "wrong": "She doesn't drive, doesn't she?",
+     "explanation": "Negative sentence, so the tag is positive: **does she**.",
+     "explanation_cz": "Záporná věta, takže dovětek je kladný: **does she**."
+    },
+    {
+     "en": "They went home, didn't they?",
+     "cz": "Šli domů, že jo?",
+     "gap": "They went home, ____? (tag)",
+     "gap_answer": "didn't they",
+     "quiz_options": [
+      "didn't they",
+      "weren't they",
+      "haven't they",
+      "don't they"
+     ],
+     "accepts": [
+      "They went home, didn't they?"
+     ],
+     "explanation": "Past simple with no auxiliary, so the tag supplies **did**: didn't they.",
+     "explanation_cz": "Minulý čas bez pomocného slovesa, takže dovětek dodá **did**: didn't they."
+    },
+    {
+     "en": "You like coffee, don't you?",
+     "cz": "Máš rád kávu, že jo?",
+     "gap": "You like coffee, ____? (tag)",
+     "gap_answer": "don't you",
+     "quiz_options": [
+      "don't you",
+      "aren't you",
+      "yes",
+      "doesn't you"
+     ],
+     "accepts": [
+      "You like coffee, don't you?"
+     ],
+     "wrong": "You like coffee, yes?",
+     "explanation": "Present simple with **you**, so the tag is **don't you**.",
+     "explanation_cz": "Přítomný prostý s **you**, takže dovětek je **don't you**."
+    },
+    {
+     "en": "He works here, doesn't he?",
+     "cz": "Pracuje tady, že jo?",
+     "gap": "He works here, ____? (tag)",
+     "gap_answer": "doesn't he",
+     "quiz_options": [
+      "doesn't he",
+      "don't he",
+      "isn't he",
+      "does he"
+     ],
+     "accepts": [
+      "He works here, doesn't he?"
+     ],
+     "explanation": "Third person present simple, so **doesn't he**.",
+     "explanation_cz": "Třetí osoba přítomného prostého, takže **doesn't he**."
+    },
+    {
+     "en": "She has left already, hasn't she?",
+     "cz": "Už odešla, že jo?",
+     "gap": "She has left already, ____? (tag)",
+     "gap_answer": "hasn't she",
+     "quiz_options": [
+      "hasn't she",
+      "isn't she",
+      "doesn't she",
+      "didn't she"
+     ],
+     "accepts": [
+      "She has left already, hasn't she?"
+     ],
+     "explanation": "The auxiliary is **has**, so the tag reuses it: hasn't she.",
+     "explanation_cz": "Pomocné sloveso je **has**, takže ho dovětek zopakuje: hasn't she."
+    },
+    {
+     "en": "They can swim, can't they?",
+     "cz": "Umí plavat, že jo?",
+     "gap": "They can swim, ____? (tag)",
+     "gap_answer": "can't they",
+     "quiz_options": [
+      "can't they",
+      "don't they",
+      "aren't they",
+      "can they"
+     ],
+     "accepts": [
+      "They can swim, can't they?"
+     ],
+     "explanation": "**can** is the auxiliary, so the negative tag is can't they.",
+     "explanation_cz": "**can** je pomocné sloveso, takže záporný dovětek je can't they."
+    },
+    {
+     "en": "It isn't very expensive, is it?",
+     "cz": "Není to moc drahé, že ne?",
+     "gap": "It isn't very expensive, ____? (tag)",
+     "gap_answer": "is it",
+     "quiz_options": [
+      "is it",
+      "isn't it",
+      "does it",
+      "it is"
+     ],
+     "accepts": [
+      "It isn't very expensive, is it?"
+     ],
+     "wrong": "It isn't very expensive, isn't it?",
+     "explanation": "Negative sentence takes a positive tag: **is it**.",
+     "explanation_cz": "Záporná věta má kladný dovětek: **is it**."
+    },
+    {
+     "en": "You didn't call her, did you?",
+     "cz": "Nevolal jsi jí, že ne?",
+     "gap": "You didn't call her, ____? (tag)",
+     "gap_answer": "did you",
+     "quiz_options": [
+      "did you",
+      "didn't you",
+      "do you",
+      "you did"
+     ],
+     "accepts": [
+      "You didn't call her, did you?"
+     ],
+     "explanation": "Negative past, so a positive tag with **did**.",
+     "explanation_cz": "Záporná minulost, takže kladný dovětek s **did**."
+    },
+    {
+     "en": "We're late, aren't we?",
+     "cz": "Jdeme pozdě, že jo?",
+     "gap": "We're late, ____? (tag)",
+     "gap_answer": "aren't we",
+     "quiz_options": [
+      "aren't we",
+      "are we",
+      "don't we",
+      "isn't it"
+     ],
+     "accepts": [
+      "We're late, aren't we?"
+     ],
+     "explanation": "**we're** is we are, so the tag is aren't we.",
+     "explanation_cz": "**we're** je we are, takže dovětek je aren't we."
+    }
+   ]
+  }
+ ]
+}

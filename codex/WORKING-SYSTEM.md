@@ -30,7 +30,7 @@ The linked page was often a **dud**. Auto-built units went out unchecked. James 
 
 Usable = James would send a student that link. Not perfect. Not a new engine.
 
-**Next job:** smoke **A1 vocab** from the path (grammar A1–B1 already walked; okay to link). Next play: `#leaf_places`. No I10 on vocab. Telegram tick. Time 2 + Feelings + say/think are live. **No new node ids** until James asks.
+**Next job:** A2 **grammar** smoke from the path. Handoff: `codex/SMOKE-HANDOFF-A2-GRAMMAR-2026-09-02.md`. Next play: `#a2_say_tell`. Telegram `a2_say_tell tested`. Vocab zigzag is a different tab. **No new node ids** until James asks.
 
 **Circle:** ~60 units per level, A1–C2 = 360. Live now: A1 60 · A2 42 (−18; 9 coming grammar already have ids) · B1 25 (−35) · B2 9 · C1 1 · **C2 does not exist yet**. Be/have + core frames is one sitting.
 

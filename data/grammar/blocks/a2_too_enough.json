@@ -1,0 +1,211 @@
+{
+  "id": "a2_too_enough",
+  "title": "Too / enough",
+  "level": "A2",
+  "tree_node": "a2_too_enough",
+  "codex_unit": "G_NP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. too + adj. adj + enough. enough + noun. Not very/quite. Sort too X / X enough. Use = correct. I'm enough old / too much expensive.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "too",
+    "enough"
+  ],
+  "bin_captions": {
+    "too": "too tired · more than is good",
+    "enough": "old enough · as much as you need"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "too, or enough?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        { "en": "too tired", "cz": "moc unavený", "bin": "too", "use": false },
+        { "en": "old enough", "cz": "dost starý", "bin": "enough", "use": false },
+        { "en": "too small", "cz": "moc malý", "bin": "too", "use": false },
+        { "en": "big enough", "cz": "dost velký", "bin": "enough", "use": false },
+        { "en": "too expensive", "cz": "moc drahý", "bin": "too", "use": false },
+        { "en": "enough money", "cz": "dost peněz", "bin": "enough", "use": false },
+        { "en": "too late", "cz": "moc pozdě", "bin": "too", "use": false },
+        { "en": "warm enough", "cz": "dost teplo", "bin": "enough", "use": false }
+      ]
+    },
+    {
+      "id": "too_enough_a2",
+      "title": "too / enough",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "She is too tired to work.",
+          "cz": "Je moc unavená na práci.",
+          "gap": "She is ____ to work.",
+          "gap_answer": "too tired",
+          "quiz_options": ["too tired", "tired enough", "enough tired", "too much tired"],
+          "accepts": ["She is too tired to work.", "She's too tired to work."],
+          "wrong": "She is too much tired to work.",
+          "explanation": "**too** + adjective. More than is good. Not *enough tired*.",
+          "explanation_cz": "**too** + přídavné jméno. Moc. Ne *enough tired*."
+        },
+        {
+          "en": "She is old enough to drive.",
+          "cz": "Je dost stará na to, aby řídila.",
+          "gap": "She is ____ to drive.",
+          "gap_answer": "old enough",
+          "quiz_options": ["old enough", "too old", "enough old", "old too"],
+          "accepts": ["She is old enough to drive.", "She's old enough to drive."],
+          "wrong": "She is enough old to drive.",
+          "explanation": "adjective + **enough**: **old enough**. Not *enough old*. Not *too old* (that is past the need).",
+          "explanation_cz": "přídavné jméno + **enough**: **old enough**. Ne *enough old*."
+        },
+        {
+          "en": "This bag is too small.",
+          "cz": "Ta taška je moc malá.",
+          "gap": "This bag is ____.",
+          "gap_answer": "too small",
+          "quiz_options": ["too small", "small enough", "enough small", "too much small"],
+          "accepts": ["This bag is too small."],
+          "wrong": "This bag is too much small.",
+          "explanation": "**too small**. Not *too much small* and not *very* (that is only 'very').",
+          "explanation_cz": "**too small**. Ne *too much small*."
+        },
+        {
+          "en": "This room is big enough.",
+          "cz": "Ten pokoj je dost velký.",
+          "gap": "This room is ____.",
+          "gap_answer": "big enough",
+          "quiz_options": ["big enough", "enough big", "too big", "big too"],
+          "accepts": ["This room is big enough."],
+          "wrong": "This room is enough big.",
+          "explanation": "**big enough** — *enough* after the adjective.",
+          "explanation_cz": "**big enough** — *enough* za přídavným jménem."
+        },
+        {
+          "en": "This coat is too expensive.",
+          "cz": "Ten kabát je moc drahý.",
+          "gap": "This coat is ____.",
+          "gap_answer": "too expensive",
+          "quiz_options": ["too expensive", "expensive enough", "too much expensive", "enough expensive"],
+          "accepts": ["This coat is too expensive."],
+          "wrong": "This coat is too much expensive.",
+          "explanation": "**too expensive**. Not *too much expensive* (Czech *moc*).",
+          "explanation_cz": "**too expensive**. Ne *too much expensive* (česky *moc*)."
+        },
+        {
+          "en": "We have enough money.",
+          "cz": "Máme dost peněz.",
+          "gap": "We have ____.",
+          "gap_answer": "enough money",
+          "quiz_options": ["enough money", "money enough", "too money", "too much money"],
+          "accepts": ["We have enough money."],
+          "wrong": "We have money enough.",
+          "explanation": "**enough** + noun: **enough money**. (Not *money enough* here.)",
+          "explanation_cz": "**enough** + podstatné jméno: **enough money**."
+        },
+        {
+          "en": "It is too late to call.",
+          "cz": "Je moc pozdě volat.",
+          "gap": "It is ____ to call.",
+          "gap_answer": "too late",
+          "quiz_options": ["too late", "late enough", "enough late", "too much late"],
+          "accepts": ["It is too late to call.", "It's too late to call."],
+          "wrong": "It is too much late to call.",
+          "explanation": "**too late**.",
+          "explanation_cz": "**too late**."
+        },
+        {
+          "en": "The water is warm enough.",
+          "cz": "Voda je dost teplá.",
+          "gap": "The water is ____.",
+          "gap_answer": "warm enough",
+          "quiz_options": ["warm enough", "too warm", "enough warm", "warm too"],
+          "accepts": ["The water is warm enough."],
+          "wrong": "The water is enough warm.",
+          "explanation": "**warm enough** — adjective then **enough**. Not *enough warm*.",
+          "explanation_cz": "**warm enough** — přídavné jméno a pak **enough**. Ne *enough warm*."
+        },
+        {
+          "en": "He is not old enough to drive.",
+          "cz": "Není dost starý na řízení.",
+          "gap": "He is not ____ to drive.",
+          "gap_answer": "old enough",
+          "quiz_options": ["old enough", "too old", "enough old", "old too"],
+          "accepts": [
+            "He is not old enough to drive.",
+            "He's not old enough to drive.",
+            "He isn't old enough to drive."
+          ],
+          "wrong": "He is not enough old to drive.",
+          "explanation": "**not old enough**. Not *enough old*. Not *too old* (that is past the need).",
+          "explanation_cz": "**not old enough**. Ne *enough old*."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Too / enough",
+        "title_cz": "too / enough",
+        "text_first": true,
+        "diagram": "need_scale",
+        "labels": [
+          "not enough",
+          "enough",
+          "too"
+        ],
+        "points": [
+          "**too** = more than is good. **enough** = as much as you need.",
+          "The line is **how much**, against a **need** — not a timeline."
+        ]
+      },
+      {
+        "title": "too tired · old enough",
+        "title_cz": "too tired · old enough",
+        "text_first": true,
+        "points": [
+          "They do not sit in the same place."
+        ],
+        "table": {
+          "headers": ["", "Place"],
+          "rows": [
+            ["**too** tired", "**too** + adjective"],
+            ["old **enough**", "adjective + **enough**"],
+            ["**enough** money", "**enough** + noun"]
+          ]
+        }
+      },
+      {
+        "title": "Not Czech word order",
+        "title_cz": "Ne český slovosled",
+        "text_first": true,
+        "points": [
+          "Not *enough old*. Not *too much expensive*."
+        ],
+        "table": {
+          "headers": ["Not", "Say"],
+          "rows": [
+            ["*I'm enough old to drive.*", "I'm **old enough** to drive."],
+            ["*It's too much expensive.*", "It's **too expensive**."]
+          ]
+        }
+      }
+    ]
+  }
+}

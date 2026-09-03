@@ -1,11 +1,14 @@
 /**
- * A1 level checks — not teaching packs.
+ * Level checks — not teaching packs. A1 and A2 share this file.
  * Vocab match: six EN↔CZ pairs, deal the next board, clock on.
  * Vocab type-in: Czech prompt, type English, 12 at a time, no clock, recap.
  * Grammar which: three full English sentences, tap the right one.
  *   Clock off by default, optional on. Recap. No Use, no fruit.
- * A1 finale: CZ → full English sentence. Retry until the round is clean.
- *   Whole A1 fruits this node only. Filtered runs never fruit.
+ * Finale: CZ → full English sentence. Retry until the round is clean.
+ *   Whole-level run fruits this node only. Filtered runs never fruit.
+ *
+ * Vocab pool = live vocab packs at that level (runtime). A2 Topics-only
+ * trunks stay off the check. Do not fork a second sprint file.
  *
  * Vocab behaviour from Desktop `vocab game (2).html` (Martin). Chrome is RUE.
  */
@@ -36,12 +39,30 @@ const CHECK_PRACTICES = new Set([
   "grammar_type_sprint",
   "use_sprint",
 ]);
-const TROUBLE_KEY = "rue-exp-sprint-trouble:a1_vocab_match";
-const BEST_KEY = "rue-exp-sprint-best:a1_vocab_match";
-const TYPE_BEST_KEY = "rue-exp-sprint-best:a1_vocab_type";
-const TOPIC_KEY = "rue-exp-sprint-topic:a1_vocab_match";
-const MINUTES_KEY = "rue-exp-sprint-minutes:a1_vocab_match";
 const ALL = "__all__";
+
+function levelFromNode(node, fallback = "A1") {
+  const raw = (node?.levels && node.levels[0]) || node?.level || fallback;
+  return String(raw).toUpperCase();
+}
+
+function sprintKeys(level) {
+  const lv = String(level || "A1").toLowerCase();
+  return {
+    trouble: `rue-exp-sprint-trouble:${lv}_vocab_match`,
+    best: `rue-exp-sprint-best:${lv}_vocab_match`,
+    typeBest: `rue-exp-sprint-best:${lv}_vocab_type`,
+    topic: `rue-exp-sprint-topic:${lv}_vocab_match`,
+    minutes: `rue-exp-sprint-minutes:${lv}_vocab_match`,
+  };
+}
+
+/** Default A1 so tests that call markTrouble without a sprint keep the old keys. */
+let ACTIVE = sprintKeys("A1");
+
+function activateSprintKeys(level) {
+  ACTIVE = sprintKeys(level);
+}
 
 function shuffle(items) {
   const next = items.slice();
@@ -88,26 +109,26 @@ function writeJson(key, value) {
 }
 
 function readBest(topic, minutes) {
-  const map = readJson(BEST_KEY, {}) || {};
+  const map = readJson(ACTIVE.best, {}) || {};
   const k = `${topic || ALL}:${minutes || 1}`;
   const n = parseInt(map[k] || 0, 10);
   return Number.isFinite(n) ? n : 0;
 }
 
 function writeBest(topic, minutes, value) {
-  const map = readJson(BEST_KEY, {}) || {};
+  const map = readJson(ACTIVE.best, {}) || {};
   const k = `${topic || ALL}:${minutes || 1}`;
   map[k] = value;
-  writeJson(BEST_KEY, map);
+  writeJson(ACTIVE.best, map);
 }
 
 function readTrouble() {
-  const raw = readJson(TROUBLE_KEY, {}) || {};
+  const raw = readJson(ACTIVE.trouble, {}) || {};
   return raw && typeof raw === "object" ? raw : {};
 }
 
 function writeTrouble(map) {
-  writeJson(TROUBLE_KEY, map);
+  writeJson(ACTIVE.trouble, map);
 }
 
 function markTrouble(id) {
@@ -150,26 +171,33 @@ export function buildPracticeList(typePool, extraIds) {
 
 export { markTrouble, creditTrouble, readTrouble, CLEAR_AT };
 
-let poolCache = null;
+const poolCacheByLevel = Object.create(null);
 
 function itemKey(en, cz) {
   return `${String(en || "").trim().toLowerCase()}‖${String(cz || "").trim().toLowerCase()}`;
 }
 
+function isVocabPoolNode(n, selfId, level) {
+  if (n.domain !== "vocab") return false;
+  if (n.status !== "live") return false;
+  if (!n.content) return false;
+  if (n.id === selfId) return false;
+  if (!(n.levels || []).includes(level)) return false;
+  if (CHECK_PRACTICES.has(n.practice)) return false;
+  /* A2 Topics-only trunks (recycle / lexis / chunks) stay off the check. */
+  if (level !== "A1" && n.kind === "trunk") return false;
+  return true;
+}
+
 /**
- * Live A1 vocab items, excluding the check node itself.
+ * Live vocab items at `level`, excluding the check node itself.
  * Deduped on en+cz. Topic = source node label.
  */
-export async function loadA1VocabPool(tree, loadJson, selfId) {
-  if (poolCache) return poolCache;
-  const nodes = (tree?.nodes || []).filter(
-    (n) =>
-      n.domain === "vocab" &&
-      n.status === "live" &&
-      n.content &&
-      n.id !== selfId &&
-      (n.levels || []).includes("A1") &&
-      !CHECK_PRACTICES.has(n.practice),
+export async function loadVocabPool(tree, loadJson, selfId, level) {
+  const lv = String(level || "A1").toUpperCase();
+  if (poolCacheByLevel[lv]) return poolCacheByLevel[lv];
+  const nodes = (tree?.nodes || []).filter((n) =>
+    isVocabPoolNode(n, selfId, lv),
   );
   const seen = new Set();
   const out = [];
@@ -205,8 +233,13 @@ export async function loadA1VocabPool(tree, loadJson, selfId) {
       });
     }
   }
-  poolCache = out;
+  poolCacheByLevel[lv] = out;
   return out;
+}
+
+/** A1 alias — tests and older call sites. */
+export async function loadA1VocabPool(tree, loadJson, selfId) {
+  return loadVocabPool(tree, loadJson, selfId, "A1");
 }
 
 /**
@@ -332,15 +365,15 @@ export function gradeTypeIn(typed, item, pool) {
 }
 
 function readTypeBest(topic) {
-  const map = readJson(TYPE_BEST_KEY, {}) || {};
+  const map = readJson(ACTIVE.typeBest, {}) || {};
   const n = parseInt(map[topic || ALL] || 0, 10);
   return Number.isFinite(n) ? n : 0;
 }
 
 function writeTypeBest(topic, value) {
-  const map = readJson(TYPE_BEST_KEY, {}) || {};
+  const map = readJson(ACTIVE.typeBest, {}) || {};
   map[topic || ALL] = value;
-  writeJson(TYPE_BEST_KEY, map);
+  writeJson(ACTIVE.typeBest, map);
 }
 
 function practicePanelHtml() {
@@ -548,7 +581,10 @@ export function startVocabSprint({
   onExit,
   onFruit,
 }) {
-  const selfId = node?.id || "a1_vocab_match";
+  const level = levelFromNode(node);
+  activateSprintKeys(level);
+  const selfId = node?.id || `${level.toLowerCase()}_vocab_match`;
+  const title = node?.label || `${level} vocab · match`;
 
   /* One whole-set round through the check is the bar — it checks material
    * learned in the units above it, so there is no ladder to walk. A topic
@@ -564,14 +600,14 @@ export function startVocabSprint({
   let vocab = [];
   let topic = ALL;
   try {
-    const saved = localStorage.getItem(TOPIC_KEY);
+    const saved = localStorage.getItem(ACTIVE.topic);
     if (saved) topic = saved;
   } catch {
     /* */
   }
   let minutes = 1;
   try {
-    const savedM = parseInt(localStorage.getItem(MINUTES_KEY) || "1", 10);
+    const savedM = parseInt(localStorage.getItem(ACTIVE.minutes) || "1", 10);
     if (savedM === 2 || savedM === 3) minutes = savedM;
   } catch {
     /* */
@@ -774,7 +810,7 @@ export function startVocabSprint({
     );
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || "A1 vocab · match",
+      packTitle: title,
       stage: "sprint",
       checkPhase: "results",
       itemIndex: score,
@@ -824,7 +860,7 @@ export function startVocabSprint({
     rafId = requestAnimationFrame(loop);
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || "A1 vocab · match",
+      packTitle: title,
       stage: "sprint",
       checkPhase: "match",
       itemIndex: 0,
@@ -889,7 +925,7 @@ export function startVocabSprint({
   }
 
   function renderShell() {
-    const topicOpts = [`<option value="${ALL}">Whole A1</option>`]
+    const topicOpts = [`<option value="${ALL}">Whole ${esc(level)}</option>`]
       .concat(
         topicsOf(vocab).map(
           (t) =>
@@ -900,11 +936,11 @@ export function startVocabSprint({
     const best = readBest(topic, minutes);
     root.innerHTML = `
       <div class="sprint">
-        <div class="practice-head"><h2>A1 vocab · match</h2></div>
+        <div class="practice-head"><h2>${esc(title)}</h2></div>
         <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
-          <p class="lede">Six pairs at a time, from the A1 words in the app. Tap English, then Czech. Beat the clock.</p>
+          <p class="lede">Six pairs at a time, from the ${esc(level)} words in the app. Tap English, then Czech. Beat the clock.</p>
           <div class="sprint-actions">
             <label class="sprint-field">Word set
               <select id="sprint-topic">${topicOpts}</select>
@@ -958,7 +994,7 @@ export function startVocabSprint({
     root.querySelector("#sprint-topic")?.addEventListener("change", (e) => {
       topic = e.target.value || ALL;
       try {
-        localStorage.setItem(TOPIC_KEY, topic);
+        localStorage.setItem(ACTIVE.topic, topic);
       } catch {
         /* */
       }
@@ -974,7 +1010,7 @@ export function startVocabSprint({
       minutes = parseInt(e.target.value, 10) || 1;
       roundMs = minutes * 60000;
       try {
-        localStorage.setItem(MINUTES_KEY, String(minutes));
+        localStorage.setItem(ACTIVE.minutes, String(minutes));
       } catch {
         /* */
       }
@@ -993,7 +1029,7 @@ export function startVocabSprint({
       smoke(phase, extra = {}) {
         setSmokeContext({
           packId: selfId,
-          packTitle: node?.label || "A1 vocab · match",
+          packTitle: title,
           stage: "type",
           checkPhase: phase,
           itemIndex: 0,
@@ -1064,15 +1100,15 @@ export function startVocabSprint({
   document.addEventListener("keydown", onPracticeKey, true);
   root._RUE2UnbindKeys = teardown;
 
-  root.innerHTML = `<p class="home-hint">Loading A1 words…</p>`;
-  loadA1VocabPool(tree, loadJson, selfId)
+  root.innerHTML = `<p class="home-hint">Loading ${esc(level)} words…</p>`;
+  loadVocabPool(tree, loadJson, selfId, level)
     .then((list) => {
       vocab = list;
       if (topic !== ALL && !topicsOf(vocab).includes(topic)) topic = ALL;
       renderShell();
     })
     .catch((e) => {
-      root.innerHTML = `<p class="home-hint">Could not load the A1 word pool. ${esc(
+      root.innerHTML = `<p class="home-hint">Could not load the ${esc(level)} word pool. ${esc(
         e.message || e,
       )}</p>`;
     });
@@ -1088,7 +1124,10 @@ export function startVocabTypeSprint({
   onExit,
   onFruit,
 }) {
-  const selfId = node?.id || "a1_vocab_type";
+  const level = levelFromNode(node);
+  activateSprintKeys(level);
+  const selfId = node?.id || `${level.toLowerCase()}_vocab_type`;
+  const title = node?.label || `${level} vocab · type`;
 
   /* One whole-set round through the check is the bar — it checks material
    * learned in the units above it, so there is no ladder to walk. A topic
@@ -1104,7 +1143,7 @@ export function startVocabTypeSprint({
   let vocab = [];
   let topic = ALL;
   try {
-    const saved = localStorage.getItem(TOPIC_KEY);
+    const saved = localStorage.getItem(ACTIVE.topic);
     if (saved) topic = saved;
   } catch {
     /* */
@@ -1191,7 +1230,7 @@ export function startVocabTypeSprint({
     const w = current();
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || "A1 vocab · type",
+      packTitle: title,
       stage: "type",
       checkPhase: phase,
       itemIndex: idx,
@@ -1392,7 +1431,7 @@ export function startVocabTypeSprint({
   }
 
   function renderShell() {
-    const topicOpts = [`<option value="${ALL}">Whole A1</option>`]
+    const topicOpts = [`<option value="${ALL}">Whole ${esc(level)}</option>`]
       .concat(
         topicsOf(vocab).map(
           (t) =>
@@ -1403,11 +1442,11 @@ export function startVocabTypeSprint({
     const best = readTypeBest(topic);
     root.innerHTML = `
       <div class="sprint sprint-type">
-        <div class="practice-head"><h2>A1 vocab · type</h2></div>
+        <div class="practice-head"><h2>${esc(title)}</h2></div>
         <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
-          <p class="lede">Czech on the screen, type the English. Twelve A1 words at a time. No clock. Misses come first next time.</p>
+          <p class="lede">Czech on the screen, type the English. Twelve ${esc(level)} words at a time. No clock. Misses come first next time.</p>
           <div class="sprint-actions">
             <label class="sprint-field">Word set
               <select id="sprint-topic">${topicOpts}</select>
@@ -1460,7 +1499,7 @@ export function startVocabTypeSprint({
     root.querySelector("#sprint-topic")?.addEventListener("change", (e) => {
       topic = e.target.value || ALL;
       try {
-        localStorage.setItem(TOPIC_KEY, topic);
+        localStorage.setItem(ACTIVE.topic, topic);
       } catch {
         /* */
       }
@@ -1533,15 +1572,15 @@ export function startVocabTypeSprint({
   document.addEventListener("keydown", onKeydown, true);
   root._RUE2UnbindKeys = teardown;
 
-  root.innerHTML = `<p class="home-hint">Loading A1 words…</p>`;
-  loadA1VocabPool(tree, loadJson, selfId)
+  root.innerHTML = `<p class="home-hint">Loading ${esc(level)} words…</p>`;
+  loadVocabPool(tree, loadJson, selfId, level)
     .then((list) => {
       vocab = filterTypeInPool(list);
       if (topic !== ALL && !topicsOf(vocab).includes(topic)) topic = ALL;
       renderShell();
     })
     .catch((e) => {
-      root.innerHTML = `<p class="home-hint">Could not load the A1 word pool. ${esc(
+      root.innerHTML = `<p class="home-hint">Could not load the ${esc(level)} word pool. ${esc(
         e.message || e,
       )}</p>`;
     });
@@ -1549,10 +1588,25 @@ export function startVocabTypeSprint({
   void onExit;
 }
 
-const G_TROUBLE_KEY = "rue-exp-sprint-trouble:a1_grammar_match";
-const G_BEST_KEY = "rue-exp-sprint-best:a1_grammar_match";
-const G_MINUTES_KEY = "rue-exp-sprint-minutes:a1_grammar_match";
 const GAP_MARK = /_{2,}|\u2026|\.{3}/;
+
+function gKeys(level) {
+  const lv = String(level || "A1").toLowerCase();
+  return {
+    trouble: `rue-exp-sprint-trouble:${lv}_grammar_match`,
+    best: `rue-exp-sprint-best:${lv}_grammar_match`,
+    minutes: `rue-exp-sprint-minutes:${lv}_grammar_match`,
+    typeBest: `rue-exp-sprint-best:${lv}_grammar_type`,
+    typeTopic: `rue-exp-sprint-topic:${lv}_grammar_type`,
+  };
+}
+
+/** Default A1 so tests that grade without a sprint keep the old keys. */
+let G_ACTIVE = gKeys("A1");
+
+function activateGKeys(level) {
+  G_ACTIVE = gKeys(level);
+}
 
 /** Smoked A1 grammar (INSPECTED.md, 2026-08-30). Runtime pool source. */
 const SMOKED_A1_GRAMMAR = new Set([
@@ -1698,26 +1752,26 @@ const IT_THEY_CHIPS = new Set([
 ]);
 
 function gReadBest(minutes) {
-  const map = readJson(G_BEST_KEY, {}) || {};
+  const map = readJson(G_ACTIVE.best, {}) || {};
   const n = parseInt(map[String(minutes || 0)] || 0, 10);
   return Number.isFinite(n) ? n : 0;
 }
 
 function gWriteBest(minutes, value) {
-  const map = readJson(G_BEST_KEY, {}) || {};
+  const map = readJson(G_ACTIVE.best, {}) || {};
   map[String(minutes || 0)] = value;
-  writeJson(G_BEST_KEY, map);
+  writeJson(G_ACTIVE.best, map);
 }
 
 function gReadTrouble() {
-  const raw = readJson(G_TROUBLE_KEY, {}) || {};
+  const raw = readJson(G_ACTIVE.trouble, {}) || {};
   return raw && typeof raw === "object" ? raw : {};
 }
 
 function gMarkTrouble(id) {
   const t = gReadTrouble();
   t[String(id)] = 0;
-  writeJson(G_TROUBLE_KEY, t);
+  writeJson(G_ACTIVE.trouble, t);
 }
 
 function gCreditTrouble(id) {
@@ -1726,7 +1780,7 @@ function gCreditTrouble(id) {
   if (!(k in t)) return;
   t[k] = (t[k] || 0) + 1;
   if (t[k] >= CLEAR_AT) delete t[k];
-  writeJson(G_TROUBLE_KEY, t);
+  writeJson(G_ACTIVE.trouble, t);
 }
 
 /** This round’s misses plus leftover trouble, max 12. */
@@ -2008,24 +2062,31 @@ export function whichItemFromPackItem(it, meta = {}) {
   };
 }
 
-let grammarPoolCache = null;
+const grammarPoolCacheByLevel = Object.create(null);
+
+function isGrammarPoolNode(n, selfId, level) {
+  if (n.domain !== "grammar") return false;
+  if (n.status !== "live" || !n.content) return false;
+  if (n.id === selfId) return false;
+  if (!(n.levels || []).includes(level)) return false;
+  if (CHECK_G_PRACTICES.has(n.practice)) return false;
+  if (n.fruit === false) return false;
+  /* A1 keeps the smoked list (untested live packs stay out). A2+ uses every
+   * live teaching pack at that level. */
+  if (level === "A1" && !SMOKED_A1_GRAMMAR.has(n.id)) return false;
+  return true;
+}
 
 /**
- * Smoked A1 grammar as Which-is-correct? items.
+ * Live teaching grammar at `level` as Which-is-correct? items.
  * correct = en; two wrongs = gap filled by a clearly impossible quiz chip.
  * Skip diagram (place in/on/under). Skip if two chips would both be English.
  */
-export async function loadA1GrammarWhich(tree, loadJson, selfId) {
-  if (grammarPoolCache) return grammarPoolCache;
-  const nodes = (tree?.nodes || []).filter(
-    (n) =>
-      n.domain === "grammar" &&
-      n.status === "live" &&
-      n.content &&
-      n.id !== selfId &&
-      SMOKED_A1_GRAMMAR.has(n.id) &&
-      !CHECK_G_PRACTICES.has(n.practice) &&
-      n.fruit !== false,
+export async function loadGrammarWhich(tree, loadJson, selfId, level) {
+  const lv = String(level || "A1").toUpperCase();
+  if (grammarPoolCacheByLevel[lv]) return grammarPoolCacheByLevel[lv];
+  const nodes = (tree?.nodes || []).filter((n) =>
+    isGrammarPoolNode(n, selfId, lv),
   );
   const packs = [];
   const corpus = new Set();
@@ -2064,8 +2125,13 @@ export async function loadA1GrammarWhich(tree, loadJson, selfId) {
       }
     }
   }
-  grammarPoolCache = out;
+  grammarPoolCacheByLevel[lv] = out;
   return out;
+}
+
+/** A1 alias — tests and older call sites. */
+export async function loadA1GrammarWhich(tree, loadJson, selfId) {
+  return loadGrammarWhich(tree, loadJson, selfId, "A1");
 }
 
 /**
@@ -2103,25 +2169,18 @@ export function typeItemFromPackItem(it, meta = {}) {
   };
 }
 
-let grammarGapCache = null;
+const grammarGapCacheByLevel = Object.create(null);
 
 /**
- * Smoked A1 grammar as Type clozes: Czech + gapped English, type the form.
+ * Teaching grammar at `level` as Type clozes: Czech + gapped English.
  * Same source packs as Which is correct?. Skip diagram/place, word-classes,
  * check-units. B11 bracket cues on the gap are kept.
  */
-export async function loadA1GrammarGaps(tree, loadJson, selfId) {
-  if (grammarGapCache) return grammarGapCache;
+export async function loadGrammarGaps(tree, loadJson, selfId, level) {
+  const lv = String(level || "A1").toUpperCase();
+  if (grammarGapCacheByLevel[lv]) return grammarGapCacheByLevel[lv];
   const nodes = (tree?.nodes || []).filter(
-    (n) =>
-      n.domain === "grammar" &&
-      n.status === "live" &&
-      n.content &&
-      n.id !== selfId &&
-      SMOKED_A1_GRAMMAR.has(n.id) &&
-      !CHECK_G_PRACTICES.has(n.practice) &&
-      n.fruit !== false &&
-      !SKIP_TYPE_SRC.has(n.id),
+    (n) => isGrammarPoolNode(n, selfId, lv) && !SKIP_TYPE_SRC.has(n.id),
   );
   const out = [];
   const seen = new Set();
@@ -2146,23 +2205,25 @@ export async function loadA1GrammarGaps(tree, loadJson, selfId) {
       }
     }
   }
-  grammarGapCache = out;
+  grammarGapCacheByLevel[lv] = out;
   return out;
 }
 
-const G_TYPE_BEST_KEY = "rue-exp-sprint-best:a1_grammar_type";
-const G_TYPE_TOPIC_KEY = "rue-exp-sprint-topic:a1_grammar_type";
+/** A1 alias — tests and older call sites. */
+export async function loadA1GrammarGaps(tree, loadJson, selfId) {
+  return loadGrammarGaps(tree, loadJson, selfId, "A1");
+}
 
 function gTypeReadBest(topic) {
-  const map = readJson(G_TYPE_BEST_KEY, {}) || {};
+  const map = readJson(G_ACTIVE.typeBest, {}) || {};
   const n = parseInt(map[topic || ALL] || 0, 10);
   return Number.isFinite(n) ? n : 0;
 }
 
 function gTypeWriteBest(topic, value) {
-  const map = readJson(G_TYPE_BEST_KEY, {}) || {};
+  const map = readJson(G_ACTIVE.typeBest, {}) || {};
   map[topic || ALL] = value;
-  writeJson(G_TYPE_BEST_KEY, map);
+  writeJson(G_ACTIVE.typeBest, map);
 }
 
 /** Existing grammar Type grader (contractions, if/when, zero article). */
@@ -2241,7 +2302,13 @@ export function startGrammarMatchSprint({
   onExit,
   onFruit,
 }) {
-  const selfId = node?.id || "a1_grammar_match";
+  const level = levelFromNode(node);
+  activateGKeys(level);
+  const selfId = node?.id || `${level.toLowerCase()}_grammar_match`;
+  const title =
+    level === "A1"
+      ? G_MATCH_TITLE
+      : node?.label || `${level} grammar · match`;
 
   /* One whole-set round through the check is the bar — it checks material
    * learned in the units above it, so there is no ladder to walk. A topic
@@ -2257,7 +2324,7 @@ export function startGrammarMatchSprint({
   let vocab = [];
   let minutes = 0;
   try {
-    const savedM = parseInt(localStorage.getItem(G_MINUTES_KEY) || "0", 10);
+    const savedM = parseInt(localStorage.getItem(G_ACTIVE.minutes) || "0", 10);
     if (savedM === 0 || savedM === 1 || savedM === 2 || savedM === 3) {
       minutes = savedM;
     }
@@ -2399,7 +2466,7 @@ export function startGrammarMatchSprint({
     const w = current();
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || G_MATCH_TITLE,
+      packTitle: title,
       stage: "sprint",
       checkPhase: phase,
       itemIndex: idx,
@@ -2685,11 +2752,11 @@ export function startGrammarMatchSprint({
       `<option value="${v}"${minutes === v ? " selected" : ""}>${label}</option>`;
     root.innerHTML = `
       <div class="sprint sprint-which">
-        <div class="practice-head"><h2>${esc(G_MATCH_TITLE)}</h2></div>
+        <div class="practice-head"><h2>${esc(title)}</h2></div>
         <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
-          <p class="lede">Which is correct? Three English sentences. Tap the right one. Twelve from A1 grammar. Clock off unless you turn it on.</p>
+          <p class="lede">Which is correct? Three English sentences. Tap the right one. Twelve from ${esc(level)} grammar. Clock off unless you turn it on.</p>
           <div class="sprint-actions">
             <label class="sprint-field">Time
               <select id="sprint-minutes">
@@ -2757,7 +2824,7 @@ export function startGrammarMatchSprint({
       }
       roundMs = minutes * 60000;
       try {
-        localStorage.setItem(G_MINUTES_KEY, String(minutes));
+        localStorage.setItem(G_ACTIVE.minutes, String(minutes));
       } catch {
         /* */
       }
@@ -2775,7 +2842,7 @@ export function startGrammarMatchSprint({
     root.querySelector("#chk")?.addEventListener("click", goNext);
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || G_MATCH_TITLE,
+      packTitle: title,
       stage: "sprint",
       checkPhase: "start",
       itemIndex: 0,
@@ -2796,14 +2863,14 @@ export function startGrammarMatchSprint({
   document.addEventListener("keydown", onKeydown, true);
   root._RUE2UnbindKeys = teardown;
 
-  root.innerHTML = `<p class="home-hint">Loading A1 grammar…</p>`;
-  loadA1GrammarWhich(tree, loadJson, selfId)
+  root.innerHTML = `<p class="home-hint">Loading ${esc(level)} grammar…</p>`;
+  loadGrammarWhich(tree, loadJson, selfId, level)
     .then((list) => {
       vocab = list;
       renderShell();
     })
     .catch((e) => {
-      root.innerHTML = `<p class="home-hint">Could not load the A1 grammar pool. ${esc(
+      root.innerHTML = `<p class="home-hint">Could not load the ${esc(level)} grammar pool. ${esc(
         e.message || e,
       )}</p>`;
     });
@@ -2834,7 +2901,14 @@ export function startGrammarTypeSprint({
   onExit,
   onFruit,
 }) {
-  const selfId = node?.id || "a1_grammar_type";
+  const level = levelFromNode(node);
+  activateGKeys(level);
+  const selfId = node?.id || `${level.toLowerCase()}_grammar_type`;
+  const title =
+    level === "A1"
+      ? "A1 grammar · type"
+      : node?.label || `${level} grammar · type`;
+  const matchId = `${level.toLowerCase()}_grammar_match`;
 
   /* One whole-set round through the check is the bar — it checks material
    * learned in the units above it, so there is no ladder to walk. A topic
@@ -2851,7 +2925,7 @@ export function startGrammarTypeSprint({
   let whichPool = [];
   let topic = ALL;
   try {
-    const saved = localStorage.getItem(G_TYPE_TOPIC_KEY);
+    const saved = localStorage.getItem(G_ACTIVE.typeTopic);
     if (saved) topic = saved;
   } catch {
     /* */
@@ -2947,7 +3021,7 @@ export function startGrammarTypeSprint({
     const w = extra.word || current();
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || "A1 grammar · type",
+      packTitle: title,
       stage: "type",
       checkPhase: phase,
       itemIndex: idx,
@@ -3152,7 +3226,7 @@ export function startGrammarTypeSprint({
   }
 
   function renderShell() {
-    const topicOpts = [`<option value="${ALL}">Whole A1</option>`]
+    const topicOpts = [`<option value="${ALL}">Whole ${esc(level)}</option>`]
       .concat(
         topicsOf(vocab).map(
           (t) =>
@@ -3163,11 +3237,11 @@ export function startGrammarTypeSprint({
     const best = gTypeReadBest(topic);
     root.innerHTML = `
       <div class="sprint sprint-type sprint-grammar">
-        <div class="practice-head"><h2>A1 grammar · type</h2></div>
+        <div class="practice-head"><h2>${esc(title)}</h2></div>
         <p class="home-hint">Check, not a lesson — one full round fruits it.</p>
 
         <div id="sprint-start">
-          <p class="lede">Czech and a gapped English sentence. Type the missing form, not the whole sentence. Twelve from A1 grammar. No clock. Misses from Which is correct? come first.</p>
+          <p class="lede">Czech and a gapped English sentence. Type the missing form, not the whole sentence. Twelve from ${esc(level)} grammar. No clock. Misses from Which is correct? come first.</p>
           <div class="sprint-actions">
             <label class="sprint-field">Set
               <select id="sprint-topic">${topicOpts}</select>
@@ -3224,7 +3298,7 @@ export function startGrammarTypeSprint({
     root.querySelector("#sprint-topic")?.addEventListener("change", (e) => {
       topic = e.target.value || ALL;
       try {
-        localStorage.setItem(G_TYPE_TOPIC_KEY, topic);
+        localStorage.setItem(G_ACTIVE.typeTopic, topic);
       } catch {
         /* */
       }
@@ -3256,10 +3330,10 @@ export function startGrammarTypeSprint({
   document.addEventListener("keydown", onKeydown, true);
   root._RUE2UnbindKeys = teardown;
 
-  root.innerHTML = `<p class="home-hint">Loading A1 grammar…</p>`;
+  root.innerHTML = `<p class="home-hint">Loading ${esc(level)} grammar…</p>`;
   Promise.all([
-    loadA1GrammarGaps(tree, loadJson, selfId),
-    loadA1GrammarWhich(tree, loadJson, "a1_grammar_match"),
+    loadGrammarGaps(tree, loadJson, selfId, level),
+    loadGrammarWhich(tree, loadJson, matchId, level),
   ])
     .then(([list, which]) => {
       vocab = list;
@@ -3268,7 +3342,7 @@ export function startGrammarTypeSprint({
       renderShell();
     })
     .catch((e) => {
-      root.innerHTML = `<p class="home-hint">Could not load the A1 grammar pool. ${esc(
+      root.innerHTML = `<p class="home-hint">Could not load the ${esc(level)} grammar pool. ${esc(
         e.message || e,
       )}</p>`;
     });
@@ -3278,21 +3352,43 @@ export function startGrammarTypeSprint({
 
 const FINALE_SIZE = 12;
 const FINALE_TITLE = "A1 review";
-const FINALE_BEST_KEY = "rue-exp-sprint-best:a1_finale";
-const FINALE_TOPIC_KEY = "rue-exp-sprint-topic:a1_finale";
-const FINALE_MINUTES_KEY = "rue-exp-sprint-minutes:a1_finale";
 const GRAMMAR_FILTER = "__grammar__";
 const VOCAB_FILTER = "__vocab__";
-const SKIP_USE_MODES = new Set(["correct", "voice", "join", "rewrite"]);
+const SKIP_USE_MODES = new Set(["voice", "join", "rewrite"]);
 const SKIP_CHECK_IDS = new Set([
   "a1_vocab_match",
   "a1_vocab_type",
   "a1_grammar_match",
   "a1_grammar_type",
   "a1_finale",
+  "a2_vocab_match",
+  "a2_vocab_type",
+  "a2_grammar_match",
+  "a2_grammar_type",
+  "a2_finale",
+  "b1_vocab_match",
+  "b1_vocab_type",
+  "b1_grammar_match",
+  "b1_grammar_type",
+  "b1_finale",
 ]);
 
-let usePoolCache = null;
+function fKeys(level) {
+  const lv = String(level || "A1").toLowerCase();
+  return {
+    best: `rue-exp-sprint-best:${lv}_finale`,
+    topic: `rue-exp-sprint-topic:${lv}_finale`,
+    minutes: `rue-exp-sprint-minutes:${lv}_finale`,
+  };
+}
+
+let F_ACTIVE = fKeys("A1");
+
+function activateFKeys(level) {
+  F_ACTIVE = fKeys(level);
+}
+
+const usePoolCacheByLevel = Object.create(null);
 
 function packGradeFlags(pack) {
   return {
@@ -3315,20 +3411,32 @@ function isCheckUnit(n, selfId) {
   return false;
 }
 
-function isLiveA1Teaching(n, selfId) {
+function isLiveTeaching(n, selfId, level) {
   if (!n || !n.content) return false;
   if (n.status !== "live") return false;
-  if (!(n.levels || []).includes("A1")) return false;
-  return !isCheckUnit(n, selfId);
+  if (!(n.levels || []).includes(level)) return false;
+  if (isCheckUnit(n, selfId)) return false;
+  /* A2+ Topics-only trunks stay off the check. A1 trunks stay in. */
+  if (level !== "A1" && n.kind === "trunk") return false;
+  return true;
+}
+
+function isLiveA1Teaching(n, selfId) {
+  return isLiveTeaching(n, selfId, "A1");
 }
 
 /**
- * Live A1 Use sentences: grammar items with cz+en (skip use: false),
- * vocab sentences[]. Check-units stay out of the pool.
+ * Live teaching Use sentences at `level`: grammar items with cz+en
+ * (skip use: false), vocab sentences[]. Check-units stay out.
+ * Error-correction packs (`use_mode: correct`) still contribute the
+ * correct English sentence.
  */
-export async function loadA1UsePool(tree, loadJson, selfId) {
-  if (usePoolCache) return usePoolCache;
-  const nodes = (tree?.nodes || []).filter((n) => isLiveA1Teaching(n, selfId));
+export async function loadUsePool(tree, loadJson, selfId, level) {
+  const lv = String(level || "A1").toUpperCase();
+  if (usePoolCacheByLevel[lv]) return usePoolCacheByLevel[lv];
+  const nodes = (tree?.nodes || []).filter((n) =>
+    isLiveTeaching(n, selfId, lv),
+  );
   const out = [];
   const seen = new Set();
   for (const n of nodes) {
@@ -3390,8 +3498,13 @@ export async function loadA1UsePool(tree, loadJson, selfId) {
       }
     }
   }
-  usePoolCache = out;
+  usePoolCacheByLevel[lv] = out;
   return out;
+}
+
+/** A1 alias — tests and older call sites. */
+export async function loadA1UsePool(tree, loadJson, selfId) {
+  return loadUsePool(tree, loadJson, selfId, "A1");
 }
 
 export function filterFinalePool(list, topic) {
@@ -3412,15 +3525,15 @@ export function gradeFinale(typed, item) {
 }
 
 function finaleReadBest(topic) {
-  const map = readJson(FINALE_BEST_KEY, {}) || {};
+  const map = readJson(F_ACTIVE.best, {}) || {};
   const n = parseInt(map[topic || ALL] || 0, 10);
   return Number.isFinite(n) ? n : 0;
 }
 
 function finaleWriteBest(topic, value) {
-  const map = readJson(FINALE_BEST_KEY, {}) || {};
+  const map = readJson(F_ACTIVE.best, {}) || {};
   map[topic || ALL] = value;
-  writeJson(FINALE_BEST_KEY, map);
+  writeJson(F_ACTIVE.best, map);
 }
 
 function unitsOf(list, kind) {
@@ -3462,18 +3575,21 @@ export function startFinaleSprint({
   onExit,
   onFruit,
 }) {
-  const selfId = node?.id || "a1_finale";
+  const level = levelFromNode(node);
+  activateFKeys(level);
+  const selfId = node?.id || `${level.toLowerCase()}_finale`;
+  const title = node?.label || (level === "A1" ? FINALE_TITLE : `${level} review`);
   let pool = [];
   let topic = ALL;
   try {
-    const saved = localStorage.getItem(FINALE_TOPIC_KEY);
+    const saved = localStorage.getItem(F_ACTIVE.topic);
     if (saved) topic = saved;
   } catch {
     /* */
   }
   let minutes = 0;
   try {
-    const savedM = parseInt(localStorage.getItem(FINALE_MINUTES_KEY) || "0", 10);
+    const savedM = parseInt(localStorage.getItem(F_ACTIVE.minutes) || "0", 10);
     if (savedM === 0 || savedM === 1 || savedM === 2 || savedM === 3) {
       minutes = savedM;
     }
@@ -3501,7 +3617,7 @@ export function startFinaleSprint({
     return filterFinalePool(pool, topic);
   }
 
-  function isWholeA1() {
+  function isWholeLevel() {
     return topic === ALL;
   }
 
@@ -3563,7 +3679,7 @@ export function startFinaleSprint({
     const w = extra.word || current();
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || FINALE_TITLE,
+      packTitle: title,
       stage: "use",
       checkPhase: phase,
       itemIndex: idx,
@@ -3651,7 +3767,7 @@ export function startFinaleSprint({
   }
 
   function maybeFruitThisNode() {
-    if (!isWholeA1() || !cleaned) return;
+    if (!isWholeLevel() || !cleaned) return;
     const r = completeFinale(selfId);
     if (r.justFruited) onFruit?.({ grow: true });
     else if (r.nowFruit) onFruit?.({ grow: false });
@@ -3861,7 +3977,7 @@ export function startFinaleSprint({
         label,
       )}</option>`;
     return (
-      opt(ALL, "Whole A1") +
+      opt(ALL, "Whole " + level) +
       opt(GRAMMAR_FILTER, "Grammar only") +
       opt(VOCAB_FILTER, "Vocab only") +
       `<optgroup label="Grammar">` +
@@ -3885,7 +4001,7 @@ export function startFinaleSprint({
       `<option value="${v}"${minutes === v ? " selected" : ""}>${label}</option>`;
     root.innerHTML = `
       <div class="sprint sprint-type sprint-finale">
-        <div class="practice-head"><h2>${esc(node?.label || FINALE_TITLE)}</h2></div>
+        <div class="practice-head"><h2>${esc(title)}</h2></div>
 
         <div id="sprint-start">
           <div class="sprint-actions">
@@ -3950,7 +4066,7 @@ export function startFinaleSprint({
     root.querySelector("#sprint-topic")?.addEventListener("change", (e) => {
       topic = e.target.value || ALL;
       try {
-        localStorage.setItem(FINALE_TOPIC_KEY, topic);
+        localStorage.setItem(F_ACTIVE.topic, topic);
       } catch {
         /* */
       }
@@ -3969,7 +4085,7 @@ export function startFinaleSprint({
       }
       roundMs = minutes * 60000;
       try {
-        localStorage.setItem(FINALE_MINUTES_KEY, String(minutes));
+        localStorage.setItem(F_ACTIVE.minutes, String(minutes));
       } catch {
         /* */
       }
@@ -3986,7 +4102,7 @@ export function startFinaleSprint({
     });
     setSmokeContext({
       packId: selfId,
-      packTitle: node?.label || FINALE_TITLE,
+      packTitle: title,
       stage: "use",
       checkPhase: "start",
       itemIndex: 0,
@@ -4008,7 +4124,7 @@ export function startFinaleSprint({
   root._RUE2UnbindKeys = teardown;
 
   root.innerHTML = `<p class="home-hint">Loading…</p>`;
-  loadA1UsePool(tree, loadJson, selfId)
+  loadUsePool(tree, loadJson, selfId, level)
     .then((list) => {
       pool = list;
       renderShell();

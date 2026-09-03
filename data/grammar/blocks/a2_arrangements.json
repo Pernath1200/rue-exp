@@ -1,0 +1,363 @@
+{
+  "id": "a2_arrangements",
+  "title": "Arrangements & timetables",
+  "level": "A2",
+  "tree_node": "a2_arrangements",
+  "codex_unit": "G_VP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. Present continuous for a diary plan (I'm seeing her tomorrow). Present simple for a timetable (The train leaves at six). Not will / going to. Not every day vs now (a2_simple_vs_continuous). Sort arrangement / timetable. Use = correct.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "arrangement",
+    "timetable"
+  ],
+  "bin_captions": {
+    "arrangement": "people · a diary",
+    "timetable": "a clock · a schedule"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Diary or timetable?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I am seeing her tomorrow.",
+          "cz": "Zítra se s ní vidím.",
+          "bin": "arrangement",
+          "use": false
+        },
+        {
+          "en": "We are meeting at five.",
+          "cz": "Sejdeme se v pět.",
+          "bin": "arrangement",
+          "use": false
+        },
+        {
+          "en": "She is coming on Friday.",
+          "cz": "V pátek přijede.",
+          "bin": "arrangement",
+          "use": false
+        },
+        {
+          "en": "They are having lunch at one.",
+          "cz": "V jednu obědvají.",
+          "bin": "arrangement",
+          "use": false
+        },
+        {
+          "en": "The train leaves at six.",
+          "cz": "Vlak odjíždí v šest.",
+          "bin": "timetable",
+          "use": false
+        },
+        {
+          "en": "The shop opens at nine.",
+          "cz": "Obchod otevírá v devět.",
+          "bin": "timetable",
+          "use": false
+        },
+        {
+          "en": "The film starts at eight.",
+          "cz": "Film začíná v osm.",
+          "bin": "timetable",
+          "use": false
+        },
+        {
+          "en": "The bus arrives at ten.",
+          "cz": "Autobus přijíždí v deset.",
+          "bin": "timetable",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "arrangements_a2",
+      "title": "Arrangements & timetables",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I am seeing her tomorrow.",
+          "cz": "Zítra se s ní vidím.",
+          "gap": "I ____ her tomorrow. (see)",
+          "gap_answer": "am seeing",
+          "quiz_options": [
+            "am seeing",
+            "see",
+            "will see",
+            "am see"
+          ],
+          "accepts": [
+            "I am seeing her tomorrow.",
+            "I'm seeing her tomorrow."
+          ],
+          "wrong": "I see her tomorrow.",
+          "explanation": "A plan in the diary → **am seeing**. Not *see* and not *will see*.",
+          "explanation_cz": "Plán v diáři → **am seeing**. Ne *see* a ne *will see*."
+        },
+        {
+          "en": "We are meeting at five.",
+          "cz": "Sejdeme se v pět.",
+          "gap": "We ____ at five. (meet)",
+          "gap_answer": "are meeting",
+          "quiz_options": [
+            "are meeting",
+            "meet",
+            "will meet",
+            "are meet"
+          ],
+          "accepts": [
+            "We are meeting at five.",
+            "We're meeting at five."
+          ],
+          "wrong": "We meet at five.",
+          "explanation": "We decided → **are meeting**.",
+          "explanation_cz": "Domluva → **are meeting**."
+        },
+        {
+          "en": "She is coming on Friday.",
+          "cz": "V pátek přijede.",
+          "gap": "She ____ on Friday. (come)",
+          "gap_answer": "is coming",
+          "quiz_options": [
+            "is coming",
+            "comes",
+            "will come",
+            "is come"
+          ],
+          "accepts": [
+            "She is coming on Friday.",
+            "She's coming on Friday."
+          ],
+          "wrong": "She comes on Friday.",
+          "explanation": "Her plan → **is coming**. Not *comes* (that is a timetable).",
+          "explanation_cz": "Její plán → **is coming**. Ne *comes* (to je jízdní řád)."
+        },
+        {
+          "en": "They are having lunch at one.",
+          "cz": "V jednu obědvají.",
+          "gap": "They ____ lunch at one. (have)",
+          "gap_answer": "are having",
+          "quiz_options": [
+            "are having",
+            "have",
+            "will have",
+            "are have"
+          ],
+          "accepts": [
+            "They are having lunch at one.",
+            "They're having lunch at one."
+          ],
+          "wrong": "They have lunch at one.",
+          "explanation": "This lunch is a plan → **are having**. (Every day at one would be *have*.)",
+          "explanation_cz": "Tenhle oběd je plán → **are having**."
+        },
+        {
+          "en": "The train leaves at six.",
+          "cz": "Vlak odjíždí v šest.",
+          "gap": "The train ____ at six. (leave)",
+          "gap_answer": "leaves",
+          "quiz_options": [
+            "leaves",
+            "is leaving",
+            "will leave",
+            "leave"
+          ],
+          "accepts": [
+            "The train leaves at six."
+          ],
+          "wrong": "The train is leaving at six.",
+          "explanation": "A timetable → **leaves**. Not *is leaving*.",
+          "explanation_cz": "Jízdní řád → **leaves**. Ne *is leaving*."
+        },
+        {
+          "en": "The shop opens at nine.",
+          "cz": "Obchod otevírá v devět.",
+          "gap": "The shop ____ at nine. (open)",
+          "gap_answer": "opens",
+          "quiz_options": [
+            "opens",
+            "is opening",
+            "will open",
+            "open"
+          ],
+          "accepts": [
+            "The shop opens at nine."
+          ],
+          "wrong": "The shop is opening at nine.",
+          "explanation": "Opening hours → **opens**.",
+          "explanation_cz": "Otevírací doba → **opens**."
+        },
+        {
+          "en": "The film starts at eight.",
+          "cz": "Film začíná v osm.",
+          "gap": "The film ____ at eight. (start)",
+          "gap_answer": "starts",
+          "quiz_options": [
+            "starts",
+            "is starting",
+            "will start",
+            "start"
+          ],
+          "accepts": [
+            "The film starts at eight."
+          ],
+          "wrong": "The film is starting at eight.",
+          "explanation": "A programme → **starts**.",
+          "explanation_cz": "Program → **starts**."
+        },
+        {
+          "en": "The bus arrives at ten.",
+          "cz": "Autobus přijíždí v deset.",
+          "gap": "The bus ____ at ten. (arrive)",
+          "gap_answer": "arrives",
+          "quiz_options": [
+            "arrives",
+            "is arriving",
+            "will arrive",
+            "arrive"
+          ],
+          "accepts": [
+            "The bus arrives at ten."
+          ],
+          "wrong": "The bus is arriving at ten.",
+          "explanation": "A timetable → **arrives**.",
+          "explanation_cz": "Jízdní řád → **arrives**."
+        },
+        {
+          "en": "Are you seeing her tomorrow?",
+          "cz": "Uvidíš se s ní zítra?",
+          "gap": "____ you seeing her tomorrow?",
+          "gap_answer": "Are",
+          "quiz_options": [
+            "Are",
+            "Do",
+            "Will",
+            "Is"
+          ],
+          "accepts": [
+            "Are you seeing her tomorrow?"
+          ],
+          "wrong": "Do you seeing her tomorrow?",
+          "explanation": "A plan → **Are** you seeing. Not *Do* and not *Will*.",
+          "explanation_cz": "Plán → **Are** you seeing. Ne *Do* a ne *Will*."
+        },
+        {
+          "en": "What time does the train leave?",
+          "cz": "V kolik vlak odjíždí?",
+          "gap": "What time ____ the train leave?",
+          "gap_answer": "does",
+          "quiz_options": [
+            "does",
+            "is",
+            "do",
+            "will"
+          ],
+          "accepts": [
+            "What time does the train leave?"
+          ],
+          "wrong": "What time is the train leave?",
+          "explanation": "A timetable question → **does** … leave. Not *is leaving*.",
+          "explanation_cz": "Otázka na jízdní řád → **does** … leave."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "A plan in the diary",
+        "title_cz": "Plán v diáři",
+        "points": [
+          "You already know **I am working** for *now*.",
+          "The same form can be a **plan** — a time already in the diary.",
+          "Czech often uses present: *Zítra se s ní vidím*."
+        ],
+        "table": {
+          "headers": [
+            "When",
+            "Say"
+          ],
+          "rows": [
+            [
+              "now",
+              "I **am working**"
+            ],
+            [
+              "tomorrow · Friday · at five (a plan)",
+              "I **am seeing** her"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "A timetable stays simple",
+        "title_cz": "Jízdní řád zůstává v simple",
+        "text_first": true,
+        "points": [
+          "Trains, shops, films — a **clock**, not a person's diary.",
+          "**The train leaves at six.** Not *is leaving*.",
+          "Czech present again: *Vlak odjíždí v šest*."
+        ],
+        "table": {
+          "headers": [
+            "Diary (people)",
+            "Timetable (clock)"
+          ],
+          "rows": [
+            [
+              "I **am seeing** her tomorrow.",
+              "The train **leaves** at six."
+            ],
+            [
+              "We **are meeting** at five.",
+              "The shop **opens** at nine."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Not will",
+        "title_cz": "Ne will",
+        "points": [
+          "**will** is a decision now, or a promise. Later unit.",
+          "A diary plan is **am seeing**, not *will see*.",
+          "A timetable is **leaves**, not *will leave*."
+        ],
+        "table": {
+          "headers": [
+            "Not",
+            "Say"
+          ],
+          "rows": [
+            [
+              "*I will see her tomorrow* (if it is already a plan)",
+              "I **am seeing** her tomorrow"
+            ],
+            [
+              "*The train will leave at six* (if it is the timetable)",
+              "The train **leaves** at six"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "sort_cz": false
+}

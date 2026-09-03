@@ -18,11 +18,11 @@ import {
   grammarBest,
 } from "./progress.js";
 import { attachExplain } from "./explain.js?v=2026-08-28-dep-quiz";
-import { introDiagram } from "./intro-visuals.js?v=2026-08-30-pfx";
+import { introDiagram } from "./intro-visuals.js?v=2026-09-02-indmap2";
 import { canonSynonyms } from "./synonyms.js";
 import { articleVariants, placeVariants, determinerMatch } from "./practice-vocab.js";
 import { expandContractions } from "./contractions.js";
-import { adaptGrammarPack } from "./pack-adapt.js?v=2026-08-30-rsquiz";
+import { adaptGrammarPack } from "./pack-adapt.js?v=2026-09-01-matchen";
 /* Real again (2026-08-10). The no-op stub left by 7ec4bd1 meant every call
  * site below kept computing item context and throwing it away. */
 import { setSmokeContext } from "./smoke-flags.js";
@@ -816,7 +816,8 @@ export function startPractice(rawPack, root, opts) {
             return `<p class="intro-fallback">${escMd(card.diagram_fallback)}</p>`;
           return "";
         }
-        if (cell.diagram === "articles_map") return svgMarkup;
+        if (cell.diagram === "articles_map" || cell.diagram === "indefinite_map")
+          return svgMarkup;
         const wrap = small
           ? "intro-scene-wrap intro-scene-wrap-sm"
           : "intro-scene-wrap";
@@ -2238,6 +2239,11 @@ export function startPractice(rawPack, root, opts) {
                 ? "type the corrected sentence…"
                 : joinHint
                   ? "type one sentence…"
+                : kind === "type" &&
+                    (item.zero_article ||
+                      item.answer === "—" ||
+                      (item.accepts || []).includes("—"))
+                  ? "Enter = no article"
                 : voicePlaceholder || "type in English…"
           }" lang="en" />
           <button type="button" class="btn primary" id="btn-submit">Check</button>
@@ -2264,7 +2270,10 @@ export function startPractice(rawPack, root, opts) {
               ? `<p class="practice-hint gap-hint">Only the <strong>ending</strong></p>`
               : isRoot
                 ? `<p class="practice-hint gap-hint">The <strong>whole word</strong> formed from the word in capitals</p>`
-                : kind === "type" && pack.quiz_axis === "articles"
+                : kind === "type" &&
+                    (item.zero_article ||
+                      item.answer === "—" ||
+                      (item.accepts || []).includes("—"))
                   ? `<p class="practice-hint">No article? leave empty and press <strong>Enter</strong>.</p>`
                   : ""
           }

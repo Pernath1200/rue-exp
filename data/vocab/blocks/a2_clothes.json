@@ -4,7 +4,8 @@
   "level": "A2",
   "tree_node": "leaf_clothes_a2",
   "codex_unit": "V_THM-A1B1-01",
-  "note": "Clothes A2 · carriers via use[]",
+  "note": "Clothes A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -126,39 +127,78 @@
             "i_need_a",
             "i_wear"
           ]
+        },
+        {
+          "en": "formal",
+          "cz": "formální",
+          "use": [
+            "it_is",
+            "i_am_adj"
+          ]
         }
       ]
     }
   ],
   "intro": [
     {
-      "title": "Smart or casual, and what you put on top",
-      "title_cz": "Elegantně, nebo neformálně",
+      "title": "How you dress",
+      "title_cz": "Jak se oblékáte",
       "pictures": [
         {
-          "icon": "👚",
+          "icon": "👗",
+          "en": "fashion",
+          "cz": "móda"
+        },
+        {
+          "icon": "👕",
           "en": "clothing",
           "cz": "oblečení"
         },
         {
-          "icon": "🤵",
-          "en": "smart",
-          "cz": "elegantní / chytrý"
-        },
-        {
-          "icon": "👕",
-          "en": "casual",
-          "cz": "neformální"
-        },
-        {
-          "icon": "👮",
+          "icon": "💂",
           "en": "uniform",
           "cz": "uniforma"
         },
         {
+          "icon": "👔",
+          "en": "smart",
+          "cz": "elegantní"
+        },
+        {
+          "icon": "🧢",
+          "en": "casual",
+          "cz": "neformální"
+        },
+        {
+          "icon": "🤵",
+          "en": "formal",
+          "cz": "formální"
+        },
+        {
+          "icon": "💎",
+          "en": "jewellery",
+          "cz": "šperky"
+        },
+        {
+          "icon": "💍",
+          "en": "ring",
+          "cz": "prsten"
+        }
+      ]
+    },
+    {
+      "title": "What you put on",
+      "title_cz": "Co si berete na sebe",
+      "pictures": [
+        {
           "icon": "👖",
           "en": "pants",
           "cz": "kalhoty (amer.)"
+        },
+        {
+          "icon": "🧶",
+          "en": "jumper",
+          "cz": "svetr"
         },
         {
           "icon": "🧤",
@@ -166,21 +206,20 @@
           "cz": "rukavice"
         },
         {
-          "icon": "💍",
-          "en": "ring",
-          "cz": "prsten"
+          "icon": "🎗️",
+          "en": "belt",
+          "cz": "pásek"
         },
         {
-          "icon": "💎",
-          "en": "jewellery",
-          "cz": "šperky"
+          "icon": "🔘",
+          "en": "button",
+          "cz": "knoflík"
         }
-      ],
-      "body": "12 words on top of the A1 clothes unit. A1 gave you the garments; this unit gives you how they are worn — smart or casual — plus jewellery and the small parts.\nFour of the twelve have no honest picture: fashion, jumper, belt and button. jumper is the British word for the sweater you met at A1.",
-      "body_cz": "A1 dalo kusy oblečení, A2 přidává styl a doplňky."
+      ]
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
         "I wear …",
         "This is a …",
@@ -188,8 +227,8 @@
         "I need a …",
         "Let's talk about …"
       ],
-      "note": "pants is the dangerous one. In American English pants = trousers. In British English pants is underwear — so I like your pants means two very different things.",
-      "note_cz": "pants = kalhoty (amer.), ale spodní prádlo (brit.). Brit. kalhoty = trousers."
+      "note": "pants is the dangerous one. In American English pants = trousers. In British English pants is underwear.",
+      "note_cz": "pants v USA = kalhoty. V Británii = spodní prádlo."
     }
   ],
   "sentences": [
@@ -314,6 +353,16 @@
       ],
       "accepts": [
         "This button is broken"
+      ]
+    },
+    {
+      "en": "This is a formal shirt.",
+      "cz": "Tohle je formální košile.",
+      "lemmas": [
+        "formal"
+      ],
+      "accepts": [
+        "This is a formal shirt"
       ]
     }
   ]

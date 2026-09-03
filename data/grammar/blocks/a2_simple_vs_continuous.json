@@ -1,0 +1,474 @@
+{
+  "id": "a2_simple_vs_continuous",
+  "title": "Present simple vs continuous",
+  "level": "A2",
+  "tree_node": "a2_simple_vs_continuous",
+  "codex_unit": "G_VP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. Same verb, two jobs: every day vs now (this moment only). Czech pije is both. Not arrangements (a2_arrangements). Not this week. Statives: one card + two Type items. Sort every day/now. Use = correct. Includes 3 questions.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "every_day",
+    "now"
+  ],
+  "bin_captions": {
+    "every_day": "habit · always",
+    "now": "this moment · a short time"
+  },
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "Every day or now?",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I work here every day.",
+          "cz": "Pracuju tady každý den.",
+          "bin": "every_day",
+          "use": false
+        },
+        {
+          "en": "I am working now.",
+          "cz": "Teď pracuju.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "She drinks coffee in the morning.",
+          "cz": "Ráno pije kávu.",
+          "bin": "every_day",
+          "use": false
+        },
+        {
+          "en": "She is drinking coffee now.",
+          "cz": "Teď pije kávu.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "He reads in the evening.",
+          "cz": "Večer čte.",
+          "bin": "every_day",
+          "use": false
+        },
+        {
+          "en": "He is reading a book.",
+          "cz": "Teď čte knihu.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "We play football on Sundays.",
+          "cz": "V neděli hrajeme fotbal.",
+          "bin": "every_day",
+          "use": false
+        },
+        {
+          "en": "We are playing football now.",
+          "cz": "Teď hrajeme fotbal.",
+          "bin": "now",
+          "use": false
+        },
+        {
+          "en": "Do you work here every day?",
+          "cz": "Pracuješ tady každý den?",
+          "bin": "every_day",
+          "use": false
+        },
+        {
+          "en": "Are you working now?",
+          "cz": "Pracuješ teď?",
+          "bin": "now",
+          "use": false
+        }
+      ]
+    },
+    {
+      "id": "simple_vs_continuous_a2",
+      "title": "Simple or continuous?",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I work here every day.",
+          "cz": "Pracuju tady každý den.",
+          "gap": "I ____ here every day. (work)",
+          "gap_answer": "work",
+          "quiz_options": [
+            "work",
+            "am working",
+            "working",
+            "works"
+          ],
+          "accepts": [
+            "I work here every day."
+          ],
+          "wrong": "I am working here every day.",
+          "explanation": "Every day → **work**. Not *am working*.",
+          "explanation_cz": "Každý den → **work**. Ne *am working*."
+        },
+        {
+          "en": "Look! I am working now.",
+          "cz": "Koukni! Teď pracuju.",
+          "gap": "Look! I ____ now. (work)",
+          "gap_answer": "am working",
+          "quiz_options": [
+            "am working",
+            "work",
+            "working",
+            "am work"
+          ],
+          "accepts": [
+            "Look! I am working now.",
+            "Look! I'm working now."
+          ],
+          "wrong": "Look! I work now.",
+          "explanation": "Now → **am working**. Not *work*.",
+          "explanation_cz": "Teď → **am working**. Ne *work*."
+        },
+        {
+          "en": "She drinks coffee every morning.",
+          "cz": "Každé ráno pije kávu.",
+          "gap": "She ____ coffee every morning. (drink)",
+          "gap_answer": "drinks",
+          "quiz_options": [
+            "drinks",
+            "is drinking",
+            "drink",
+            "drinking"
+          ],
+          "accepts": [
+            "She drinks coffee every morning."
+          ],
+          "wrong": "She is drinking coffee every morning.",
+          "explanation": "Every morning (habit) → **drinks**. she → **-s**.",
+          "explanation_cz": "Každé ráno (zvyk) → **drinks**. she → **-s**."
+        },
+        {
+          "en": "Look! She is drinking coffee now.",
+          "cz": "Koukni! Teď pije kávu.",
+          "gap": "Look! She ____ coffee now. (drink)",
+          "gap_answer": "is drinking",
+          "quiz_options": [
+            "is drinking",
+            "drinks",
+            "drinking",
+            "is drink"
+          ],
+          "accepts": [
+            "Look! She is drinking coffee now.",
+            "Look! She's drinking coffee now."
+          ],
+          "wrong": "Look! She drinks coffee now.",
+          "explanation": "Now → **is drinking**. Czech *pije* is both.",
+          "explanation_cz": "Teď → **is drinking**. Česky *pije* je obojí."
+        },
+        {
+          "en": "He reads every evening.",
+          "cz": "Každý večer čte.",
+          "gap": "He ____ every evening. (read)",
+          "gap_answer": "reads",
+          "quiz_options": [
+            "reads",
+            "is reading",
+            "read",
+            "reading"
+          ],
+          "accepts": [
+            "He reads every evening."
+          ],
+          "wrong": "He is reading every evening.",
+          "explanation": "Every evening → **reads**.",
+          "explanation_cz": "Každý večer → **reads**."
+        },
+        {
+          "en": "Look! He is reading a book.",
+          "cz": "Koukni! Teď čte knihu.",
+          "gap": "Look! He ____ a book. (read)",
+          "gap_answer": "is reading",
+          "quiz_options": [
+            "is reading",
+            "reads",
+            "reading",
+            "is read"
+          ],
+          "accepts": [
+            "Look! He is reading a book.",
+            "Look! He's reading a book."
+          ],
+          "wrong": "Look! He reads a book.",
+          "explanation": "Now → **is reading**. Not *reads*.",
+          "explanation_cz": "Teď → **is reading**. Ne *reads*."
+        },
+        {
+          "en": "We play football every Sunday.",
+          "cz": "Každou neděli hrajeme fotbal.",
+          "gap": "We ____ football every Sunday. (play)",
+          "gap_answer": "play",
+          "quiz_options": [
+            "play",
+            "are playing",
+            "playing",
+            "plays"
+          ],
+          "accepts": [
+            "We play football every Sunday."
+          ],
+          "wrong": "We are playing football every Sunday.",
+          "explanation": "Every Sunday → **play**. Not *are playing*.",
+          "explanation_cz": "Každou neděli → **play**. Ne *are playing*."
+        },
+        {
+          "en": "Look! We are playing football now.",
+          "cz": "Koukni! Teď hrajeme fotbal.",
+          "gap": "Look! We ____ football now. (play)",
+          "gap_answer": "are playing",
+          "quiz_options": [
+            "are playing",
+            "play",
+            "playing",
+            "are play"
+          ],
+          "accepts": [
+            "Look! We are playing football now.",
+            "Look! We're playing football now."
+          ],
+          "wrong": "Look! We play football now.",
+          "explanation": "Now → **are playing**.",
+          "explanation_cz": "Teď → **are playing**."
+        },
+        {
+          "en": "They live in Brno. That's their home.",
+          "cz": "Bydlí v Brně. To je jejich domov.",
+          "use": false,
+          "gap": "They ____ in Brno. That's their home. (live)",
+          "gap_answer": "live",
+          "quiz_options": [
+            "live",
+            "are living",
+            "living",
+            "lives"
+          ],
+          "accepts": [
+            "They live in Brno. That's their home."
+          ],
+          "wrong": "They are living in Brno. That's their home.",
+          "explanation": "A home → **live**. Not a short time.",
+          "explanation_cz": "Domov → **live**. Ne na chvíli."
+        },
+        {
+          "en": "Look! They are watching TV now.",
+          "cz": "Koukni! Teď se dívají na televizi.",
+          "gap": "Look! They ____ TV now. (watch)",
+          "gap_answer": "are watching",
+          "quiz_options": [
+            "are watching",
+            "watch",
+            "watching",
+            "are watch"
+          ],
+          "accepts": [
+            "Look! They are watching TV now.",
+            "Look! They're watching TV now.",
+            "Look! They are watching television now.",
+            "Look! They're watching television now."
+          ],
+          "wrong": "Look! They watch TV now.",
+          "explanation": "Now → **are watching**.",
+          "explanation_cz": "Teď → **are watching**."
+        },
+        {
+          "en": "Do you work here every day?",
+          "cz": "Pracuješ tady každý den?",
+          "gap": "____ you work here every day?",
+          "gap_answer": "Do",
+          "quiz_options": [
+            "Do",
+            "Are",
+            "Does",
+            "Is"
+          ],
+          "accepts": [
+            "Do you work here every day?"
+          ],
+          "wrong": "Are you work here every day?",
+          "explanation": "Every day → **Do** you work. Not *Are*.",
+          "explanation_cz": "Každý den → **Do** you work. Ne *Are*."
+        },
+        {
+          "en": "Are you working now?",
+          "cz": "Pracuješ teď?",
+          "gap": "____ you working now?",
+          "gap_answer": "Are",
+          "quiz_options": [
+            "Are",
+            "Do",
+            "Is",
+            "Does"
+          ],
+          "accepts": [
+            "Are you working now?"
+          ],
+          "wrong": "Do you working now?",
+          "explanation": "Now → **Are** you working. Not *Do*.",
+          "explanation_cz": "Teď → **Are** you working. Ne *Do*."
+        },
+        {
+          "en": "Is she drinking coffee now?",
+          "cz": "Pije teď kávu?",
+          "gap": "____ she drinking coffee now?",
+          "gap_answer": "Is",
+          "quiz_options": [
+            "Is",
+            "Does",
+            "Do",
+            "Are"
+          ],
+          "accepts": [
+            "Is she drinking coffee now?"
+          ],
+          "wrong": "Does she drinking coffee now?",
+          "explanation": "Now → **Is** she drinking. Not *Does*.",
+          "explanation_cz": "Teď → **Is** she drinking. Ne *Does*."
+        },
+        {
+          "en": "I know the answer.",
+          "cz": "Znám tu odpověď.",
+          "gap": "I ____ the answer. (know)",
+          "gap_answer": "know",
+          "quiz_options": [
+            "know",
+            "am knowing",
+            "knowing",
+            "knows"
+          ],
+          "accepts": [
+            "I know the answer."
+          ],
+          "wrong": "I am knowing the answer.",
+          "explanation": "**know** has no -ing here. Not a short action.",
+          "explanation_cz": "**know** tady nemá -ing. Není to krátká činnost."
+        },
+        {
+          "en": "She likes coffee.",
+          "cz": "Má ráda kávu.",
+          "gap": "She ____ coffee. (like)",
+          "gap_answer": "likes",
+          "quiz_options": [
+            "likes",
+            "is liking",
+            "like",
+            "liking"
+          ],
+          "accepts": [
+            "She likes coffee."
+          ],
+          "wrong": "She is liking coffee.",
+          "explanation": "**likes** — no -ing. like / want / know stay simple.",
+          "explanation_cz": "**likes** — bez -ing. like / want / know zůstávají v simple."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "Present simple vs continuous",
+        "title_cz": "Přítomný prostý a průběhový",
+        "points": [
+          "**Aspect** (aspekt) is not *when*. It is how you look at something.",
+          "**Simple**: a habit, or something that is true.",
+          "**Continuous**: now, for a short time. It will stop.",
+          "Czech *pije* is both. English is not."
+        ],
+        "table": {
+          "headers": [
+            "Aspect",
+            "Meaning",
+            "Say"
+          ],
+          "rows": [
+            [
+              "**simple**",
+              "habit · a fact",
+              "I **work**"
+            ],
+            [
+              "**continuous**",
+              "now · a short time",
+              "I **am working**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Same verb",
+        "title_cz": "Stejné sloveso",
+        "text_first": true,
+        "points": [
+          "Keep the **same** verb. Change the **form**.",
+          "she / he → **-s** in simple: **drinks**.",
+          "now → **be** + **-ing**: **is drinking**."
+        ],
+        "table": {
+          "headers": [
+            "every day",
+            "now"
+          ],
+          "rows": [
+            [
+              "She **drinks** coffee every morning.",
+              "Look! She **is drinking** coffee."
+            ],
+            [
+              "We **play** every Sunday.",
+              "Look! We **are playing** now."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Some verbs stay simple",
+        "title_cz": "Některá slovesa zůstávají v simple",
+        "text_first": true,
+        "points": [
+          "**know, like, want, have** (got) — not a short action.",
+          "Not *I am knowing*. Not *she is liking*.",
+          "That is still **present simple** — the form you already know."
+        ],
+        "table": {
+          "headers": [
+            "Not",
+            "Say"
+          ],
+          "rows": [
+            [
+              "*I am knowing*",
+              "I **know**"
+            ],
+            [
+              "*She is liking coffee*",
+              "She **likes** coffee"
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "sort_cz": false
+}

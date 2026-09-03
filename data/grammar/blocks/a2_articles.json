@@ -1,0 +1,261 @@
+{
+  "id": "a2_articles",
+  "title": "a / the / nothing",
+  "level": "A2",
+  "tree_node": "a2_articles",
+  "codex_unit": "G_NP-A1B1-01",
+  "practice": "frames",
+  "note": "ROUGH STUB 2026-09-01. Generic plurals and abstracts: I like dogs, Life is hard. Not a/an as the lesson (A1). Not B2 genericity. Sort a-an / the / zero. Use = correct. Zero gap uses — like a1_articles.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "a / an",
+    "the",
+    "nothing"
+  ],
+  "bin_captions": {
+    "a / an": "one thing · first time",
+    "the": "this one / the only one",
+    "nothing": "a group / an idea"
+  },
+  "sort_cz": false,
+  "blocks": [
+    {
+      "id": "sort",
+      "title": "a · the · nothing",
+      "use": false,
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        { "en": "dog (first time)", "cz": "jeden pes", "bin": "a / an", "use": false },
+        { "en": "apple (first time)", "cz": "jedno jablko", "bin": "a / an", "use": false },
+        { "en": "sun (only one)", "cz": "to jediné slunce", "bin": "the", "use": false },
+        { "en": "moon (only one)", "cz": "ten na obloze", "bin": "the", "use": false },
+        { "en": "dogs (in general)", "cz": "psi obecně", "bin": "nothing", "use": false },
+        { "en": "music (in general)", "cz": "hudba", "bin": "nothing", "use": false },
+        { "en": "life (the idea)", "cz": "život jako takový", "bin": "nothing", "use": false },
+        { "en": "door (this one)", "cz": "tyhle dveře", "bin": "the", "use": false },
+        { "en": "bread (as food)", "cz": "chleba jako jídlo", "bin": "nothing", "use": false }
+      ]
+    },
+    {
+      "id": "articles_a2",
+      "title": "the vs zero",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "They like dogs.",
+          "cz": "Mají rádi psy.",
+          "gap": "They like ____ dogs.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["They like dogs."],
+          "wrong": "They like the dogs.",
+          "explanation": "Dogs in general → no article. Not *the dogs* (that is some specific dogs).",
+          "explanation_cz": "Psi obecně → bez členu. Ne *the dogs*."
+        },
+        {
+          "en": "Life is hard.",
+          "cz": "Život je těžký.",
+          "gap": "____ life is hard.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["Life is hard."],
+          "wrong": "The life is hard.",
+          "explanation": "The idea **life** → no article. Not *The life*.",
+          "explanation_cz": "Život jako takový → bez členu. Ne *The life*."
+        },
+        {
+          "en": "She likes music.",
+          "cz": "Má ráda hudbu.",
+          "gap": "She likes ____ music.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["She likes music."],
+          "wrong": "She likes the music.",
+          "explanation": "Music in general → no article.",
+          "explanation_cz": "Hudba obecně → bez členu."
+        },
+        {
+          "en": "The sun is hot.",
+          "cz": "Slunce je horké.",
+          "gap": "____ sun is hot.",
+          "gap_answer": "The",
+          "quiz_options": ["The", "A", "An", "—"],
+          "accepts": ["The sun is hot."],
+          "wrong": "Sun is hot.",
+          "explanation": "There is one sun → **the sun**.",
+          "explanation_cz": "Je jen jedno slunce → **the sun**."
+        },
+        {
+          "en": "They like bread.",
+          "cz": "Mají rádi chleba.",
+          "gap": "They like ____ bread.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["They like bread."],
+          "wrong": "They like the bread.",
+          "explanation": "Bread as food in general → no article. Not *a bread* (that is one loaf).",
+          "explanation_cz": "Chleba obecně → bez členu. Ne *a bread*."
+        },
+        {
+          "en": "They have a dog.",
+          "cz": "Mají psa.",
+          "gap": "They have ____ dog.",
+          "gap_answer": "a",
+          "quiz_options": ["a", "an", "the", "—"],
+          "accepts": ["They have a dog."],
+          "wrong": "They have dog.",
+          "explanation": "One dog, first time → **a**. This is A1, here as a contrast.",
+          "explanation_cz": "Jeden pes → **a**."
+        },
+        {
+          "en": "Close the door.",
+          "cz": "Zavři ty dveře.",
+          "gap": "Close ____ door.",
+          "gap_answer": "the",
+          "quiz_options": ["the", "a", "an", "—"],
+          "accepts": ["Close the door."],
+          "wrong": "Close door.",
+          "explanation": "We both know which door → **the**.",
+          "explanation_cz": "Oba víme které dveře → **the**."
+        },
+        {
+          "en": "Children need sleep.",
+          "cz": "Děti potřebují spánek.",
+          "gap": "Children need ____ sleep.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["Children need sleep."],
+          "wrong": "Children need the sleep.",
+          "explanation": "Sleep as an idea → no article.",
+          "explanation_cz": "Spánek jako takový → bez členu."
+        },
+        {
+          "en": "He likes cats.",
+          "cz": "Má rád kočky.",
+          "gap": "He likes ____ cats.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["He likes cats."],
+          "wrong": "He likes the cats.",
+          "explanation": "Cats in general → no article. Not *the cats*.",
+          "explanation_cz": "Kočky obecně → bez členu. Ne *the cats*."
+        },
+        {
+          "en": "I like books.",
+          "cz": "Mám rád knihy.",
+          "gap": "I like ____ books.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["I like books."],
+          "wrong": "I like the books.",
+          "explanation": "Books in general → no article.",
+          "explanation_cz": "Knihy obecně → bez členu."
+        },
+        {
+          "en": "I drink water.",
+          "cz": "Piju vodu.",
+          "gap": "I drink ____ water.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["I drink water."],
+          "wrong": "I drink the water.",
+          "explanation": "**water** as a drink in general → no article. Not *a water*.",
+          "explanation_cz": "Voda obecně → bez členu. Ne *a water*."
+        },
+        {
+          "en": "Work is hard.",
+          "cz": "Práce je těžká.",
+          "gap": "____ work is hard.",
+          "gap_answer": "—",
+          "zero_article": true,
+          "quiz_options": ["a", "an", "the", "—"],
+          "gap_accepts": ["—", "–", "-", "no article"],
+          "accepts": ["Work is hard."],
+          "wrong": "The work is hard.",
+          "explanation": "The idea **work** → no article. Not *The work*.",
+          "explanation_cz": "Práce jako taková → bez členu. Ne *The work*."
+        },
+        {
+          "en": "The sky is blue.",
+          "cz": "Obloha je modrá.",
+          "gap": "____ sky is blue.",
+          "gap_answer": "The",
+          "quiz_options": ["The", "A", "An", "—"],
+          "accepts": ["The sky is blue."],
+          "wrong": "Sky is blue.",
+          "explanation": "There is one sky → **the sky**.",
+          "explanation_cz": "Je jen jedna obloha → **the sky**."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "a / the / nothing",
+        "title_cz": "a / the / nic",
+        "diagram": "articles_map",
+        "points": [
+          "You know **a / an** (one thing) and **the** (this one).",
+          "English also uses **nothing** — no article — for a whole group, or an idea.",
+          "Czech has no article, so *the* appears where English wants zero."
+        ],
+        "table": {
+          "headers": ["", "Say"],
+          "rows": [
+            ["one dog", "**a** dog"],
+            ["this door / the only sun", "**the** door · **the** sun"],
+            ["dogs / music / life (in general)", "**dogs** · **music** · **life**"]
+          ]
+        }
+      },
+      {
+        "title": "A group, or an idea",
+        "title_cz": "Skupina, nebo idea",
+        "text_first": true,
+        "points": [
+          "*I like the dogs* = some specific dogs. For the animal in general: **I like dogs.**",
+          "*The life is hard* is not English. **Life is hard.**"
+        ],
+        "table": {
+          "headers": ["Not", "Say"],
+          "rows": [
+            ["*I like the dogs.*", "I like **dogs**."],
+            ["*The life is hard.*", "**Life** is hard."]
+          ]
+        }
+      }
+    ]
+  }
+}

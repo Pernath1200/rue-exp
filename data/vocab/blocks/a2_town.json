@@ -1,0 +1,881 @@
+{
+  "id": "a2_town",
+  "title": "Town, directions & services",
+  "level": "A2",
+  "tree_node": "leaf_town_a2",
+  "codex_unit": "V_THM-A1B1-03",
+  "note": "ROUGH STUB 2026-09-01. A1 Places already has left, right, straight, opposite, next to, bank, post office. This unit: go past, street furniture, town services. chemist may move off a2_health. 36 words.",
+  "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
+  "blocks": [
+    {
+      "id": "town_directions",
+      "title": "Getting there",
+      "items": [
+        {
+          "en": "past",
+          "cz": "kolem / okolo",
+          "use": [
+            "go_past"
+          ]
+        },
+        {
+          "en": "along",
+          "cz": "po / podél",
+          "use": [
+            "go_along"
+          ]
+        },
+        {
+          "en": "across",
+          "cz": "přes",
+          "use": [
+            "go_across"
+          ]
+        },
+        {
+          "en": "roundabout",
+          "cz": "kruhový objezd",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "traffic lights",
+          "cz": "semafor",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "crossing",
+          "cz": "přechod",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "pavement",
+          "cz": "chodník",
+          "use": [
+            "this_is_a",
+            "on_the"
+          ]
+        },
+        {
+          "en": "crossroads",
+          "cz": "křižovatka",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "junction",
+          "cz": "křižovatka / napojení",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "signpost",
+          "cz": "rozcestník / značka",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "one-way",
+          "cz": "jednosměrka",
+          "use": [
+            "it_is"
+          ]
+        },
+        {
+          "en": "pedestrian",
+          "cz": "chodec",
+          "use": [
+            "this_is_a"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "town_services",
+      "title": "Services",
+      "items": [
+        {
+          "en": "chemist",
+          "cz": "lékárna",
+          "use": [
+            "this_is_a",
+            "go_to",
+            "at_the"
+          ]
+        },
+        {
+          "en": "car park",
+          "cz": "parkoviště",
+          "use": [
+            "this_is_a",
+            "in_the"
+          ]
+        },
+        {
+          "en": "cashpoint",
+          "cz": "bankomat",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "town hall",
+          "cz": "radnice",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "department store",
+          "cz": "obchodní dům",
+          "use": [
+            "this_is_a",
+            "in_the"
+          ]
+        },
+        {
+          "en": "shopping centre",
+          "cz": "nákupní centrum",
+          "use": [
+            "this_is_a",
+            "in_the"
+          ]
+        },
+        {
+          "en": "bus stop",
+          "cz": "zastávka",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "fire station",
+          "cz": "hasičská stanice",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "police station",
+          "cz": "policejní stanice",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "taxi rank",
+          "cz": "stanoviště taxi",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "gallery",
+          "cz": "galerie",
+          "use": [
+            "this_is_a",
+            "in_the"
+          ]
+        },
+        {
+          "en": "cathedral",
+          "cz": "katedrála",
+          "use": [
+            "this_is_a"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "town_more",
+      "title": "In town",
+      "items": [
+        {
+          "en": "stadium",
+          "cz": "stadion",
+          "use": [
+            "this_is_a",
+            "at_the"
+          ]
+        },
+        {
+          "en": "fountain",
+          "cz": "fontána",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "statue",
+          "cz": "socha",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "canal",
+          "cz": "kanál / průplav",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "suburb",
+          "cz": "předměstí",
+          "use": [
+            "in_the"
+          ]
+        },
+        {
+          "en": "outskirts",
+          "cz": "okraj města",
+          "use": [
+            "on_the"
+          ]
+        },
+        {
+          "en": "block of flats",
+          "cz": "panelák / bytovka",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "neighbourhood",
+          "cz": "čtvrť / okolí",
+          "use": [
+            "in_the"
+          ]
+        },
+        {
+          "en": "underpass",
+          "cz": "podchod",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "bench",
+          "cz": "lavička",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "litter bin",
+          "cz": "koš (na odpadky)",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "playground",
+          "cz": "hřiště",
+          "use": [
+            "this_is_a",
+            "in_the"
+          ]
+        }
+      ]
+    }
+  ],
+  "intro": [
+    {
+      "title": "Getting there",
+      "title_cz": "Jak se tam dostat",
+      "pictures": [
+        {
+          "icon": "➡️",
+          "en": "past",
+          "cz": "kolem"
+        },
+        {
+          "icon": "➡️",
+          "en": "along",
+          "cz": "podél"
+        },
+        {
+          "icon": "↔️",
+          "en": "across",
+          "cz": "přes"
+        },
+        {
+          "icon": "🔵",
+          "en": "roundabout",
+          "cz": "kruhový objezd"
+        },
+        {
+          "icon": "🚦",
+          "en": "traffic lights",
+          "cz": "semafor"
+        },
+        {
+          "icon": "🚶",
+          "en": "crossing",
+          "cz": "přechod"
+        },
+        {
+          "icon": "🛤️",
+          "en": "pavement",
+          "cz": "chodník"
+        },
+        {
+          "icon": "➕",
+          "en": "crossroads",
+          "cz": "křižovatka"
+        },
+        {
+          "icon": "🔀",
+          "en": "junction",
+          "cz": "napojení"
+        },
+        {
+          "icon": "🪧",
+          "en": "signpost",
+          "cz": "značka"
+        },
+        {
+          "icon": "➡️",
+          "en": "one-way",
+          "cz": "jednosměrka"
+        },
+        {
+          "icon": "🚶",
+          "en": "pedestrian",
+          "cz": "chodec"
+        }
+      ],
+      "body": "You already know left, right, straight, opposite. This board is the extra street language: go past, traffic lights, pavement.",
+      "body_cz": "left, right, straight, opposite už znáte. Tady: go past, semafor, chodník."
+    },
+    {
+      "title": "Services",
+      "title_cz": "Služby",
+      "pictures": [
+        {
+          "icon": "💊",
+          "en": "chemist",
+          "cz": "lékárna"
+        },
+        {
+          "icon": "🅿️",
+          "en": "car park",
+          "cz": "parkoviště"
+        },
+        {
+          "icon": "🏧",
+          "en": "cashpoint",
+          "cz": "bankomat"
+        },
+        {
+          "icon": "🏛️",
+          "en": "town hall",
+          "cz": "radnice"
+        },
+        {
+          "icon": "🏬",
+          "en": "department store",
+          "cz": "obchodní dům"
+        },
+        {
+          "icon": "🛍️",
+          "en": "shopping centre",
+          "cz": "nákupní centrum"
+        },
+        {
+          "icon": "🚏",
+          "en": "bus stop",
+          "cz": "zastávka"
+        },
+        {
+          "icon": "🚒",
+          "en": "fire station",
+          "cz": "hasiči"
+        },
+        {
+          "icon": "🚓",
+          "en": "police station",
+          "cz": "policie"
+        },
+        {
+          "icon": "🚕",
+          "en": "taxi rank",
+          "cz": "stanoviště taxi"
+        },
+        {
+          "icon": "🖼️",
+          "en": "gallery",
+          "cz": "galerie"
+        },
+        {
+          "icon": "⛪",
+          "en": "cathedral",
+          "cz": "katedrála"
+        }
+      ]
+    },
+    {
+      "title": "In town",
+      "title_cz": "Ve městě",
+      "pictures": [
+        {
+          "icon": "🏟️",
+          "en": "stadium",
+          "cz": "stadion"
+        },
+        {
+          "icon": "⛲",
+          "en": "fountain",
+          "cz": "fontána"
+        },
+        {
+          "icon": "🗿",
+          "en": "statue",
+          "cz": "socha"
+        },
+        {
+          "icon": "🚤",
+          "en": "canal",
+          "cz": "kanál"
+        },
+        {
+          "icon": "🏘️",
+          "en": "suburb",
+          "cz": "předměstí"
+        },
+        {
+          "icon": "🗺️",
+          "en": "outskirts",
+          "cz": "okraj města"
+        },
+        {
+          "icon": "🏢",
+          "en": "block of flats",
+          "cz": "bytovka"
+        },
+        {
+          "icon": "🏡",
+          "en": "neighbourhood",
+          "cz": "čtvrť"
+        },
+        {
+          "icon": "⬇️",
+          "en": "underpass",
+          "cz": "podchod"
+        },
+        {
+          "icon": "🪑",
+          "en": "bench",
+          "cz": "lavička"
+        },
+        {
+          "icon": "🗑️",
+          "en": "litter bin",
+          "cz": "koš"
+        },
+        {
+          "icon": "🛝",
+          "en": "playground",
+          "cz": "hřiště"
+        }
+      ]
+    },
+    {
+      "title": "You will use these words in",
+      "frames": [
+        "Go past the …",
+        "Turn left at the …",
+        "This is a …",
+        "The chemist is opposite the …"
+      ],
+      "note": "chemist = lékárna (British). pavement = chodník, not the road. A1 already has opposite / left / right.",
+      "note_cz": "chemist = lékárna. pavement = chodník. opposite / left / right už znáte."
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Go past the bank and turn left.",
+      "cz": "Jděte kolem banky a zahněte doleva.",
+      "lemmas": [
+        "past"
+      ],
+      "accepts": [
+        "Go past the bank and turn left"
+      ]
+    },
+    {
+      "en": "The chemist is opposite the post office.",
+      "cz": "Lékárna je naproti poště.",
+      "lemmas": [
+        "chemist"
+      ],
+      "accepts": [
+        "The chemist is opposite the post office"
+      ]
+    },
+    {
+      "en": "Wait at the traffic lights.",
+      "cz": "Počkejte na semaforu.",
+      "lemmas": [
+        "traffic lights"
+      ],
+      "accepts": [
+        "Wait at the traffic lights"
+      ]
+    },
+    {
+      "en": "There is a roundabout near the station.",
+      "cz": "U nádraží je kruhový objezd.",
+      "lemmas": [
+        "roundabout"
+      ],
+      "accepts": [
+        "There is a roundabout near the station",
+        "There's a roundabout near the station"
+      ]
+    },
+    {
+      "en": "Walk on the pavement.",
+      "cz": "Choďte po chodníku.",
+      "lemmas": [
+        "pavement"
+      ],
+      "accepts": [
+        "Walk on the pavement"
+      ]
+    },
+    {
+      "en": "The car park is behind the supermarket.",
+      "cz": "Parkoviště je za supermarketem.",
+      "lemmas": [
+        "car park"
+      ],
+      "accepts": [
+        "The car park is behind the supermarket"
+      ]
+    },
+    {
+      "en": "I need a cashpoint.",
+      "cz": "Potřebuju bankomat.",
+      "lemmas": [
+        "cashpoint"
+      ],
+      "accepts": [
+        "I need a cashpoint"
+      ]
+    },
+    {
+      "en": "The bus stop is on the corner.",
+      "cz": "Zastávka je na rohu.",
+      "lemmas": [
+        "bus stop"
+      ],
+      "accepts": [
+        "The bus stop is on the corner"
+      ]
+    },
+    {
+      "en": "They live in a suburb of Prague.",
+      "cz": "Bydlí na předměstí Prahy.",
+      "lemmas": [
+        "suburb"
+      ],
+      "accepts": [
+        "They live in a suburb of Prague"
+      ]
+    },
+    {
+      "en": "There is a statue in the square.",
+      "cz": "Na náměstí je socha.",
+      "lemmas": [
+        "statue"
+      ],
+      "accepts": [
+        "There is a statue in the square",
+        "There's a statue in the square"
+      ]
+    },
+    {
+      "en": "Cross at the crossing.",
+      "cz": "Přejděte na přechodu.",
+      "lemmas": [
+        "crossing"
+      ],
+      "accepts": [
+        "Cross at the crossing"
+      ]
+    },
+    {
+      "en": "The town hall is in the centre.",
+      "cz": "Radnice je v centru.",
+      "lemmas": [
+        "town hall"
+      ],
+      "accepts": [
+        "The town hall is in the centre",
+        "The town hall is in the center"
+      ]
+    },
+    {
+      "en": "Go along this street.",
+      "cz": "Jděte po téhle ulici.",
+      "lemmas": [
+        "along"
+      ],
+      "accepts": [
+        "Go along this street"
+      ]
+    },
+    {
+      "en": "Go across the road.",
+      "cz": "Jděte přes silnici.",
+      "lemmas": [
+        "across"
+      ],
+      "accepts": [
+        "Go across the road"
+      ]
+    },
+    {
+      "en": "Turn left at the crossroads.",
+      "cz": "Na křižovatce zahněte doleva.",
+      "lemmas": [
+        "crossroads"
+      ],
+      "accepts": [
+        "Turn left at the crossroads"
+      ]
+    },
+    {
+      "en": "The junction is busy.",
+      "cz": "To napojení je rušné.",
+      "lemmas": [
+        "junction"
+      ],
+      "accepts": [
+        "The junction is busy"
+      ]
+    },
+    {
+      "en": "Look at the signpost.",
+      "cz": "Podívejte se na značku.",
+      "lemmas": [
+        "signpost"
+      ],
+      "accepts": [
+        "Look at the signpost"
+      ]
+    },
+    {
+      "en": "This is a one-way street.",
+      "cz": "Tohle je jednosměrka.",
+      "lemmas": [
+        "one-way"
+      ],
+      "accepts": [
+        "This is a one-way street"
+      ]
+    },
+    {
+      "en": "The pedestrian is waiting.",
+      "cz": "Ten chodec čeká.",
+      "lemmas": [
+        "pedestrian"
+      ],
+      "accepts": [
+        "The pedestrian is waiting"
+      ]
+    },
+    {
+      "en": "Where is the department store?",
+      "cz": "Kde je obchodní dům?",
+      "lemmas": [
+        "department store"
+      ],
+      "accepts": [
+        "Where is the department store"
+      ]
+    },
+    {
+      "en": "Where is the shopping centre?",
+      "cz": "Kde je nákupní centrum?",
+      "lemmas": [
+        "shopping centre"
+      ],
+      "accepts": [
+        "Where is the shopping centre"
+      ]
+    },
+    {
+      "en": "Where is the fire station?",
+      "cz": "Kde je hasičská stanice?",
+      "lemmas": [
+        "fire station"
+      ],
+      "accepts": [
+        "Where is the fire station"
+      ]
+    },
+    {
+      "en": "Where is the police station?",
+      "cz": "Kde je policejní stanice?",
+      "lemmas": [
+        "police station"
+      ],
+      "accepts": [
+        "Where is the police station"
+      ]
+    },
+    {
+      "en": "Where is the taxi rank?",
+      "cz": "Kde je stanoviště taxi?",
+      "lemmas": [
+        "taxi rank"
+      ],
+      "accepts": [
+        "Where is the taxi rank"
+      ]
+    },
+    {
+      "en": "The gallery is closed.",
+      "cz": "Galerie je zavřená.",
+      "lemmas": [
+        "gallery"
+      ],
+      "accepts": [
+        "The gallery is closed"
+      ]
+    },
+    {
+      "en": "The cathedral is old.",
+      "cz": "Ta katedrála je stará.",
+      "lemmas": [
+        "cathedral"
+      ],
+      "accepts": [
+        "The cathedral is old"
+      ]
+    },
+    {
+      "en": "The stadium is big.",
+      "cz": "Ten stadion je velký.",
+      "lemmas": [
+        "stadium"
+      ],
+      "accepts": [
+        "The stadium is big"
+      ]
+    },
+    {
+      "en": "There is a fountain.",
+      "cz": "Je tu fontána.",
+      "lemmas": [
+        "fountain"
+      ],
+      "accepts": [
+        "There is a fountain",
+        "There's a fountain"
+      ]
+    },
+    {
+      "en": "There is a canal.",
+      "cz": "Je tu kanál.",
+      "lemmas": [
+        "canal"
+      ],
+      "accepts": [
+        "There is a canal",
+        "There's a canal"
+      ]
+    },
+    {
+      "en": "They live on the outskirts.",
+      "cz": "Bydlí na okraji města.",
+      "lemmas": [
+        "outskirts"
+      ],
+      "accepts": [
+        "They live on the outskirts"
+      ]
+    },
+    {
+      "en": "This is a block of flats.",
+      "cz": "Tohle je panelák.",
+      "lemmas": [
+        "block of flats"
+      ],
+      "accepts": [
+        "This is a block of flats"
+      ]
+    },
+    {
+      "en": "This is a quiet neighbourhood.",
+      "cz": "Tohle je tichá čtvrť.",
+      "lemmas": [
+        "neighbourhood"
+      ],
+      "accepts": [
+        "This is a quiet neighbourhood"
+      ]
+    },
+    {
+      "en": "Use the underpass.",
+      "cz": "Použijte podchod.",
+      "lemmas": [
+        "underpass"
+      ],
+      "accepts": [
+        "Use the underpass"
+      ]
+    },
+    {
+      "en": "Sit on the bench.",
+      "cz": "Sedněte si na lavičku.",
+      "lemmas": [
+        "bench"
+      ],
+      "accepts": [
+        "Sit on the bench"
+      ]
+    },
+    {
+      "en": "Put it in the litter bin.",
+      "cz": "Dejte to do koše.",
+      "lemmas": [
+        "litter bin"
+      ],
+      "accepts": [
+        "Put it in the litter bin"
+      ]
+    },
+    {
+      "en": "The children are in the playground.",
+      "cz": "Děti jsou na hřišti.",
+      "lemmas": [
+        "playground"
+      ],
+      "accepts": [
+        "The children are in the playground"
+      ]
+    }
+  ]
+}

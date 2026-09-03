@@ -4,7 +4,8 @@
   "level": "A2",
   "tree_node": "leaf_society_a2",
   "codex_unit": "V_COR-A1B1-01",
-  "note": "Public life seed A2 · COR · carriers via use[]",
+  "note": "Public life seed A2 · COR · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
     {
@@ -245,27 +246,206 @@
             "is_important",
             "lets_talk_about"
           ]
+        },
+        {
+          "en": "steal",
+          "cz": "krást",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "national",
+          "cz": "národní",
+          "use": [
+            "it_is",
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "public",
+          "cz": "veřejný",
+          "use": [
+            "it_is",
+            "lets_talk_about"
+          ]
         }
       ]
     }
   ],
   "intro": [
     {
+      "title": "Law and crime",
+      "title_cz": "Zákon a zločin",
+      "pictures": [
+        {
+          "icon": "🏛️",
+          "en": "government",
+          "cz": "vláda"
+        },
+        {
+          "icon": "🗽",
+          "en": "president",
+          "cz": "prezident"
+        },
+        {
+          "icon": "⚖️",
+          "en": "law",
+          "cz": "zákon"
+        },
+        {
+          "icon": "💼",
+          "en": "lawyer",
+          "cz": "právník"
+        },
+        {
+          "icon": "🚨",
+          "en": "crime",
+          "cz": "zločin"
+        },
+        {
+          "icon": "🦹",
+          "en": "criminal",
+          "cz": "zločinec"
+        },
+        {
+          "icon": "🔒",
+          "en": "prison",
+          "cz": "vězení"
+        },
+        {
+          "icon": "🥷",
+          "en": "thief",
+          "cz": "zloděj"
+        },
+        {
+          "icon": "👮",
+          "en": "police",
+          "cz": "policie"
+        },
+        {
+          "icon": "🕵️",
+          "en": "detective",
+          "cz": "detektiv"
+        },
+        {
+          "icon": "🖐️",
+          "en": "steal",
+          "cz": "krást"
+        },
+        {
+          "icon": "🔫",
+          "en": "gun",
+          "cz": "zbraň"
+        }
+      ]
+    },
+    {
+      "title": "Army and the state",
+      "title_cz": "Armáda a stát",
+      "pictures": [
+        {
+          "icon": "🪖",
+          "en": "soldier",
+          "cz": "voják"
+        },
+        {
+          "icon": "🎖️",
+          "en": "army",
+          "cz": "armáda"
+        },
+        {
+          "icon": "⚔️",
+          "en": "war",
+          "cz": "válka"
+        },
+        {
+          "icon": "☮️",
+          "en": "peace",
+          "cz": "mír"
+        },
+        {
+          "icon": "💥",
+          "en": "attack",
+          "cz": "útok"
+        },
+        {
+          "icon": "🥊",
+          "en": "fight",
+          "cz": "rvačka"
+        },
+        {
+          "icon": "👑",
+          "en": "king",
+          "cz": "král"
+        },
+        {
+          "icon": "👸",
+          "en": "queen",
+          "cz": "královna"
+        },
+        {
+          "icon": "🗺️",
+          "en": "state",
+          "cz": "stát"
+        }
+      ]
+    },
+    {
       "title": "Public life",
       "title_cz": "Veřejný život",
-      "diagram": "branch",
-      "labels": [
-        "state",
-        "government",
-        "law",
-        "war",
-        "religion"
-      ],
-      "body": "27 words for the life a country has together: who runs it (government, president, state), the law and the people around it (law, lawyer, crime, criminal, police, prison, thief), war and peace (army, soldier, gun, attack, war, peace), and what people believe and keep (church, god, religion, tradition, culture).",
-      "body_cz": "Slova o veřejném životě: stát, zákon, válka, víra."
+      "pictures": [
+        {
+          "icon": "⛪",
+          "en": "church",
+          "cz": "kostel"
+        },
+        {
+          "icon": "✨",
+          "en": "god",
+          "cz": "bůh"
+        },
+        {
+          "icon": "🙏",
+          "en": "religion",
+          "cz": "náboženství"
+        },
+        {
+          "icon": "🕯️",
+          "en": "tradition",
+          "cz": "tradice"
+        },
+        {
+          "icon": "🎭",
+          "en": "culture",
+          "cz": "kultura"
+        },
+        {
+          "icon": "👥",
+          "en": "population",
+          "cz": "obyvatelstvo"
+        },
+        {
+          "icon": "💝",
+          "en": "charity",
+          "cz": "charita"
+        },
+        {
+          "icon": "🏴",
+          "en": "national",
+          "cz": "národní"
+        },
+        {
+          "icon": "📢",
+          "en": "public",
+          "cz": "veřejný"
+        }
+      ]
     },
     {
       "title": "You will use these words in",
+      "title_cz": "V jakých větách je uslyšíte",
       "frames": [
         "This is a …",
         "He is a …",
@@ -274,7 +454,7 @@
         "… is important"
       ],
       "note": "police is plural in English: The police are here — never The police is. One of them is a police officer.",
-      "note_cz": "police je v angličtině množné číslo (are). Jeden člověk = a police officer."
+      "note_cz": "police je v angličtině množné: The police are here."
     }
   ],
   "sentences": [
@@ -548,6 +728,37 @@
       ],
       "accepts": [
         "The state pays for schools"
+      ]
+    },
+    {
+      "en": "Do not steal from shops.",
+      "cz": "Nekraďte v obchodech.",
+      "lemmas": [
+        "steal"
+      ],
+      "accepts": [
+        "Do not steal from shops",
+        "Don't steal from shops"
+      ]
+    },
+    {
+      "en": "This is a national problem.",
+      "cz": "To je národní problém.",
+      "lemmas": [
+        "national"
+      ],
+      "accepts": [
+        "This is a national problem"
+      ]
+    },
+    {
+      "en": "This is a public park.",
+      "cz": "Tohle je veřejný park.",
+      "lemmas": [
+        "public"
+      ],
+      "accepts": [
+        "This is a public park"
       ]
     }
   ]

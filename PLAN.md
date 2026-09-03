@@ -1,19 +1,20 @@
 # rue-exp · plan pointer
 
-## Current phase (2026-08-30)
+## Current phase (2026-09-01)
 
-**A1–B1 units (and a few B2s) complete and usable — not perfect.**  
-The landing page was the dud. Packs and teaching, not shell.
+**A2 — 60 solid units.** A1 is smoked and shadow-gated; do not go back unless it blocks A2 (today that is only `LIVE_LEVELS`).
+Tick list + audit: `codex/A2-PLAN.md`. Nine missing grammar specs: `codex/A2-COMING.md`.
 
 Full definition: `codex/WORKING-SYSTEM.md`.
 
 | | |
 |--|--|
 | App | `rue-exp` · port **8097** · progress **`rue-exp-progress`** |
-| Students | Still on rue2 / rue3 until James promotes · he wants them **here** |
-| Grammar A1–B1 | 55 inspected · 0 approved · James: okay to link, more to test |
-| Vocab A1 | Path smoke from Home & Family · 4 trunks ticked · main hole |
-| B2 | A few live keep-list units, when James names them · no stub refill |
+| Students | Still on rue2 / rue3 until James promotes · A2 stays locked until smoked |
+| Grammar A1–B1 | 55 inspected · 0 approved · A2 grammar 17/17 already tested |
+| Vocab A1 | Smoked · done |
+| Vocab A2 | **0 inspected · this smoke** |
+| B2 | Keep-list only · **authoring blocked on `semantic-codex`** |
 | Codex | `../rue-codex` · never invent node ids |
 
 ## Source of law
@@ -27,25 +28,39 @@ Full definition: `codex/WORKING-SYSTEM.md`.
 | `codex/POLICY-LOCKS.md` | P-deploy · P-b1-vocab · P-engine · P-b2c1-stub |
 | `rue-codex/CODEX-FIRST.md` | Units hang on `G_*` / `V_*` |
 
-## Today (2026-08-31) — finish A1 beta, then rest
+## Now — A2 (60 locked 2026-09-01)
 
-Smoke **A1 vocab in path order**. No I10. Ctrl+F5. Telegram `<id> tested`. Skip Match on glue trunks if dud.
+Do not clear the A1 repair queue. Do not re-smoke A1.
 
-Feelings split is live: `#leaf_feelings_a1` after `#leaf_freetime_a1`. Time 1 + Time 2 are live — smoke both.
+Roster: `codex/A2-PLAN.md` — **30 grammar + 25 leaves + 5 checks = 60**. Vocab cap 36. Fourteen new ids need Codex stamps (4 grammar + 5 themes + 5 checks).
 
-Start: `#leaf_freetime_a1`. Then Feelings. Places ticked 12:27. Next: `#leaf_countries_a1`. End: `#a1_vocab_match` → `#a1_vocab_type` → `#a1_finale`. Home & family ticked. Grammar match/type already ticked.
+1. Stamp ids · unlock `LIVE_LEVELS` · sentence-gap on A2 leaves.
+2. Smoke leaves that already fit 36. Skip tested grammar except countable + will/going to.
+3. Write new grammar in path order (first: `a2_simple_vs_continuous`, then `a2_arrangements`).
+4. Cut dumps to 36 / author the five themes as you reach them. Checks last.
+5. Do not invent node ids. Do not hand-tick INSPECTED.
 
-Do not start A2 coming.
+## Ladder
+
+| Step | Target | Gate |
+|------|--------|------|
+| **A2** | 60 solid · this sitting | Unlock + smoke + coming grammar + five themes + five checks |
+| **B1** | After A2 | A2 smoked to usable bar |
+| **B2** | Open | **Blocked on `semantic-codex`** |
+
+**B2 is a different shape.** The picture changes: B2 leans on `../semantic-codex`, which needs real development before B2 authoring starts. Do not begin B2 packs to "get ahead" — they would be built on a codex that is still moving. Semantic-codex work is the prerequisite, not a parallel track.
 
 ## This phase
 
-1. **Smoke A1 vocab** (path order), then A2 vocab. Usable bar. Telegram tick. Suggestions → `codex/UNIT-SUGGESTIONS.md`.
-2. Grammar leftovers that are still duds (known: `b1_word_order_fronting`, reported-speech teaching).
-3. **A2 coming grammar (9)** — specs in `codex/A2-COMING.md`. First pack: `a2_articles`. No auto-fill. **Not tomorrow.**
-4. A few B2s when named.
-5. Level checks: `codex/LEVEL-CHECKS.md` (five A1 checks live, including finale).
-6. Do not hand-tick INSPECTED. Do not invent nodes.
+See `codex/A2-PLAN.md`. Short version:
+
+1. **Unlock A2** so units open.
+2. **Smoke live A2 vocab** (17 small leaves + 3 trunks). Grammar 17 already ticked — skip.
+3. **Nine coming grammar** — specs ready, no packs. First pack: `a2_articles`.
+4. **Eight splits** of describing / verbs / ideas / misc / travel so each sitting is ~60 words.
+5. In-place: countable redesign, will/going to thicken, `quiz_mode: sentence_gap` on A2 leaves.
+6. A2 level checks later (engine is A1-hardcoded). Do not invent nodes.
 
 ## Explicitly later
 
-Search · related UI · error log · enjoyability pass · B1 vocab extension · grammar Time 2 (`once a week`, no node yet) · dep-prep 2/3 · Pages · thicker Quiz/Use banks (no duds — not auto-fill).
+Search · related UI · error log · enjoyability pass · B1 vocab extension · grammar Time 2 (`once a week`, no node yet) · Countable 2 (loaf/slice) · dep-prep 2/3 · Pages · thicker Quiz/Use banks (no duds — not auto-fill) · A1 repair tail.

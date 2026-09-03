@@ -1,0 +1,332 @@
+{
+ "id": "b1_agreement_tricky",
+ "title": "Agreement 2 — everybody, news, police",
+ "level": "B1",
+ "tree_node": "b1_agreement_tricky",
+ "codex_unit": "G_SS-B1B2-01",
+ "practice": "frames",
+ "quality": "draft",
+ "note": "Above a1_agreement / a2_agreement. Three groups that trip Czech speakers: everybody/everyone/nobody take a singular verb; news / information / advice are uncountable singular; people and police are plural. Czech policie is singular (*The police is coming) and noviny is plural (*The news are bad) - the interference runs both ways. First draft 2026-09-02, rough - thicken after smoke.",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "intro": {
+  "cards": [
+   {
+    "title": "Agreement 2",
+    "title_cz": "Shoda 2 — everybody, news, police",
+    "points": [
+     "You already know that **he /** she / it takes the -s form.",
+     "These three groups are the ones where the verb does not follow the meaning."
+    ],
+    "table": {
+     "headers": [
+      "Subject",
+      "Verb"
+     ],
+     "rows": [
+      [
+       "everybody · everyone · nobody",
+       "**is /** has / knows *(singular)*"
+      ],
+      [
+       "news · information · advice",
+       "**is /** was *(singular)*"
+      ],
+      [
+       "people · police",
+       "**are /** were *(plural)*"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "Everybody **knows** the answer.",
+      "cz": "Všichni znají odpověď."
+     },
+     {
+      "en": "The police **are** coming.",
+      "cz": "Policie přijíždí."
+     }
+    ]
+   },
+   {
+    "title": "Words that look plural but are not",
+    "title_cz": "Slova, která vypadají množně, ale nejsou",
+    "points": [
+     "These have no plural. You cannot say *an information* or *two advices*."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Say",
+      "Czech"
+     ],
+     "rows": [
+      [
+       "**news**",
+       "The news **is** bad.",
+       "*zprávy* — plural in Czech"
+      ],
+      [
+       "**information**",
+       "The information **was** wrong.",
+       "*informace*"
+      ],
+      [
+       "**advice**",
+       "Her advice **was** useful.",
+       "*rada*"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Words that look singular but are not",
+    "title_cz": "Slova, která vypadají jednotně, ale nejsou",
+    "points": [
+     "**police** is always plural in English, whatever Czech does."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Say",
+      "Czech"
+     ],
+     "rows": [
+      [
+       "**police**",
+       "The police **are** here.",
+       "*policie* — singular in Czech"
+      ],
+      [
+       "**people**",
+       "People **are** waiting.",
+       "*lidé*"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "text_first": true,
+    "points": [
+     "Czech and English disagree about which of these are plural."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "~~Everybody know the answer.~~",
+       "Everybody **knows** the answer."
+      ],
+      [
+       "~~The news are bad today.~~",
+       "The news **is** bad today."
+      ],
+      [
+       "~~The police is coming.~~",
+       "The police **are** coming."
+      ],
+      [
+       "~~She gave me two advices.~~",
+       "She gave me **some advice**."
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "b1_agreement_tricky_main",
+   "title": "Agreement 2 — everybody, news, police · B1",
+   "items": [
+    {
+     "en": "Everybody knows the answer.",
+     "cz": "Všichni znají odpověď.",
+     "gap": "Everybody ____ the answer. (know)",
+     "gap_answer": "knows",
+     "quiz_options": [
+      "knows",
+      "know",
+      "are knowing",
+      "do know"
+     ],
+     "accepts": [
+      "Everybody knows the answer."
+     ],
+     "wrong": "Everybody know the answer.",
+     "explanation": "**everybody** takes a singular verb: knows.",
+     "explanation_cz": "**everybody** má sloveso v jednotném čísle: knows."
+    },
+    {
+     "en": "The news is bad today.",
+     "cz": "Zprávy jsou dnes špatné.",
+     "gap": "The news ____ bad today. (be)",
+     "gap_answer": "is",
+     "quiz_options": [
+      "is",
+      "are",
+      "were",
+      "have"
+     ],
+     "accepts": [
+      "The news is bad today."
+     ],
+     "wrong": "The news are bad today.",
+     "explanation": "**news** is uncountable and singular, in spite of the -s.",
+     "explanation_cz": "**news** je nepočitatelné a jednotné, i když končí na -s."
+    },
+    {
+     "en": "The police are coming.",
+     "cz": "Policie přijíždí.",
+     "gap": "The police ____ coming. (be)",
+     "gap_answer": "are",
+     "quiz_options": [
+      "are",
+      "is",
+      "was",
+      "has"
+     ],
+     "accepts": [
+      "The police are coming."
+     ],
+     "wrong": "The police is coming.",
+     "explanation": "**police** is always plural in English, even though Czech *policie* is singular.",
+     "explanation_cz": "**police** je v angličtině vždycky množné, i když české *policie* je jednotné."
+    },
+    {
+     "en": "Nobody was at home.",
+     "cz": "Nikdo nebyl doma.",
+     "gap": "Nobody ____ at home. (be)",
+     "gap_answer": "was",
+     "quiz_options": [
+      "was",
+      "were",
+      "are",
+      "have been"
+     ],
+     "accepts": [
+      "Nobody was at home."
+     ],
+     "explanation": "**nobody** is singular: was.",
+     "explanation_cz": "**nobody** je jednotné: was."
+    },
+    {
+     "en": "People are waiting outside.",
+     "cz": "Lidé čekají venku.",
+     "gap": "People ____ outside. (wait)",
+     "gap_answer": "are waiting",
+     "quiz_options": [
+      "are waiting",
+      "is waiting",
+      "waits",
+      "was waiting"
+     ],
+     "accepts": [
+      "People are waiting outside."
+     ],
+     "wrong": "People is waiting outside.",
+     "explanation": "**people** is a plural noun: are waiting.",
+     "explanation_cz": "**people** je množné podstatné jméno: are waiting."
+    },
+    {
+     "en": "The information was wrong.",
+     "cz": "Ta informace byla špatná.",
+     "gap": "The information ____ wrong. (be)",
+     "gap_answer": "was",
+     "quiz_options": [
+      "was",
+      "were",
+      "are",
+      "have been"
+     ],
+     "accepts": [
+      "The information was wrong."
+     ],
+     "wrong": "The informations were wrong.",
+     "explanation": "**information** is uncountable and singular: was.",
+     "explanation_cz": "**information** je nepočitatelné a jednotné: was."
+    },
+    {
+     "en": "Everyone has finished.",
+     "cz": "Všichni skončili.",
+     "gap": "Everyone ____ finished. (have)",
+     "gap_answer": "has",
+     "quiz_options": [
+      "has",
+      "have",
+      "are",
+      "is"
+     ],
+     "accepts": [
+      "Everyone has finished."
+     ],
+     "explanation": "**everyone** is singular, so **has** finished.",
+     "explanation_cz": "**everyone** je jednotné, takže **has** finished."
+    },
+    {
+     "en": "Her advice was very useful.",
+     "cz": "Její rada byla moc užitečná.",
+     "gap": "Her advice ____ very useful. (be)",
+     "gap_answer": "was",
+     "quiz_options": [
+      "was",
+      "were",
+      "are",
+      "have been"
+     ],
+     "accepts": [
+      "Her advice was very useful."
+     ],
+     "explanation": "**advice** is uncountable: was, and never *advices*.",
+     "explanation_cz": "**advice** je nepočitatelné: was, a nikdy *advices*."
+    },
+    {
+     "en": "Somebody has taken my coat.",
+     "cz": "Někdo mi vzal kabát.",
+     "gap": "Somebody ____ my coat. (take)",
+     "gap_answer": "has taken",
+     "quiz_options": [
+      "has taken",
+      "have taken",
+      "are taking",
+      "take"
+     ],
+     "accepts": [
+      "Somebody has taken my coat."
+     ],
+     "explanation": "**somebody** is singular: has taken.",
+     "explanation_cz": "**somebody** je jednotné: has taken."
+    },
+    {
+     "en": "The police were very helpful.",
+     "cz": "Policie byla moc ochotná.",
+     "gap": "The police ____ very helpful. (be)",
+     "gap_answer": "were",
+     "quiz_options": [
+      "were",
+      "was",
+      "is",
+      "has been"
+     ],
+     "accepts": [
+      "The police were very helpful."
+     ],
+     "wrong": "The police was very helpful.",
+     "explanation": "Plural **police** in the past: were.",
+     "explanation_cz": "Množné **police** v minulém čase: were."
+    }
+   ]
+  }
+ ]
+}

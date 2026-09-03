@@ -7,6 +7,7 @@
 #      A 5-line snapshot is how already-tested units resurrected.
 #   4. Remaining = how many of that order are still untested.
 #      Total = whole rail in smoke-order.json (`total`). Never a baked 53.
+#   6. Rail from 2026-09-02: A2 path_order_a2 only, zigzag, hide ticked.
 #   5. Parked ids alias (b1_used_to → a2_used_to). Pack-stem aliases
 #      (a1_home_family → leaf_home_family) live in smoke-order.json.
 #
