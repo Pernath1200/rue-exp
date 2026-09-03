@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_appearance_a2",
   "codex_unit": "V_THM-A1B1-04",
-  "note": "ROUGH STUB 2026-09-01. How people look. Not personality. A1 already has tall, short, young, old, hair, glasses, pretty. 36 words. quiz_mode sentence_gap. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
+  "note": "ROUGH STUB 2026-09-01. How people look. Not personality. A1 already has tall, short, young, old, hair, glasses, pretty. 36 words. quiz_mode sentence_gap. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames · F9 2026-09-03: casual/formal folded in from the retired leaf_clothes_a2 (33→35).",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "blocks": [
@@ -109,14 +109,6 @@
           "use": [
             "she_has",
             "he_has"
-          ]
-        },
-        {
-          "en": "dark (hair)",
-          "cz": "tmavý",
-          "use": [
-            "he_is",
-            "she_has"
           ]
         },
         {
@@ -280,6 +272,24 @@
             "he_has",
             "this_is_a"
           ]
+        },
+        {
+          "en": "casual",
+          "cz": "neformální",
+          "use": [
+            "this_is_a",
+            "i_have_a",
+            "i_need_a",
+            "i_wear"
+          ]
+        },
+        {
+          "en": "formal",
+          "cz": "formální",
+          "use": [
+            "it_is",
+            "i_am_adj"
+          ]
         }
       ]
     }
@@ -308,6 +318,11 @@
           "en": "hair",
           "cz": "vlasy",
           "icon": "💇"
+        },
+        {
+          "icon": "👩‍🦱",
+          "en": "dark",
+          "cz": "tmavý"
         }
       ],
       "note": "Not new — you met these before. You will see them again here.",
@@ -382,11 +397,6 @@
           "icon": "👱",
           "en": "fair hair",
           "cz": "světlé vlasy"
-        },
-        {
-          "icon": "👩‍🦱",
-          "en": "dark (hair)",
-          "cz": "tmavý"
         },
         {
           "icon": "🧡",
@@ -864,6 +874,26 @@
       ],
       "accepts": [
         "Her room is tidy"
+      ]
+    },
+    {
+      "en": "This is a casual shirt.",
+      "cz": "Tohle je neformální košile.",
+      "lemmas": [
+        "casual"
+      ],
+      "accepts": [
+        "This is a casual shirt"
+      ]
+    },
+    {
+      "en": "This is a formal shirt.",
+      "cz": "Tohle je formální košile.",
+      "lemmas": [
+        "formal"
+      ],
+      "accepts": [
+        "This is a formal shirt"
       ]
     }
   ]

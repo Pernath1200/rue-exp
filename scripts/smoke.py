@@ -213,6 +213,8 @@ def main() -> int:
     ok = step("playable ladders", lambda: run_gate("check_playable.py")) and ok
     ok = step("feature taught before needed",
               lambda: run_gate("check_pretaught.py")) and ok
+    ok = step("word introduced twice (A1+A2)",
+              lambda: run_gate("check_dupes.py")) and ok
     ok = step("js modules parse", check_js_loads) and ok
     ok = step("cache-buster vs shell", check_cache_buster) and ok
     ok = step("progress key (informational)", check_progress_key) and ok

@@ -1,10 +1,10 @@
 {
   "id": "a2_school",
-  "title": "School & learning",
+  "title": "School 3",
   "level": "A2",
   "tree_node": "leaf_school_a2",
   "codex_unit": "V_THM-A1B1-02",
-  "note": "Study A2 · THM work/study · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
+  "note": "Study A2 · THM work/study · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames · F9 2026-09-03: mathematics/maths merged to one tile (maths = matematika / matika); mathematics stays in the intro note · F9 2026-09-03: term sense-marked (school); lab glossed (= laboratory) with the short/full form in its sentence explanation · F9 2026-09-03: sentences[] rewritten for variety (no frame twice, 7-9 words, connectors, recycled A1/A2 vocab, mixed person and mood); grammar kept inside what the path teaches before slot 51",
   "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
@@ -76,13 +76,15 @@
           ]
         },
         {
-          "en": "term",
-          "cz": "semestr / pojem",
+          "en": "term (school)",
+          "cz": "semestr",
           "use": [
             "this_is_a",
             "i_have_a",
             "i_need_a"
-          ]
+          ],
+          "explanation": "A **term** is a part of the school year: *semestr*. A **term** is also a word with a special meaning in a subject: *pojem*.",
+          "explanation_cz": "**term** = část školního roku (*semestr*). Taky = *pojem / odborný výraz* v oboru."
         },
         {
           "en": "project",
@@ -127,7 +129,7 @@
           ]
         },
         {
-          "en": "lab",
+          "en": "lab (= laboratory)",
           "cz": "laboratoř",
           "use": [
             "where_is_the",
@@ -163,17 +165,8 @@
           ]
         },
         {
-          "en": "mathematics",
-          "cz": "matematika",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
           "en": "maths",
-          "cz": "matika",
+          "cz": "matematika / matika",
           "use": [
             "this_is_a",
             "i_have_a",
@@ -415,13 +408,8 @@
         },
         {
           "icon": "➗",
-          "en": "mathematics",
-          "cz": "matematika"
-        },
-        {
-          "icon": "🔢",
           "en": "maths",
-          "cz": "matika"
+          "cz": "matematika"
         }
       ]
     },
@@ -502,343 +490,355 @@
   ],
   "sentences": [
     {
-      "en": "My sister has a degree.",
-      "cz": "Moje sestra má titul.",
+      "en": "Anna worked hard and got her degree last year.",
+      "cz": "Anna tvrdě pracovala a loni získala titul.",
       "lemmas": [
         "degree"
       ],
       "accepts": [
-        "My sister has a degree"
+        "Anna worked hard and got her degree last year"
       ]
     },
     {
-      "en": "Education is very important.",
-      "cz": "Vzdělání je velmi důležité.",
+      "en": "A good education helps you find better work.",
+      "cz": "Dobré vzdělání ti pomůže najít lepší práci.",
       "lemmas": [
         "education"
       ],
       "accepts": [
-        "Education is very important"
+        "A good education helps you find better work"
       ]
     },
     {
-      "en": "Learning is fun.",
-      "cz": "Učení je zábava.",
+      "en": "Learning a new language takes time and practice.",
+      "cz": "Učení nového jazyka chce čas a praxi.",
       "lemmas": [
         "learning"
       ],
       "accepts": [
-        "Learning is fun"
+        "Learning a new language takes time and practice"
       ]
     },
     {
-      "en": "I have a good mark.",
-      "cz": "Mám dobrou známku.",
+      "en": "He got a good mark because he studied hard.",
+      "cz": "Dostal dobrou známku, protože se hodně učil.",
       "lemmas": [
         "mark"
       ],
       "accepts": [
-        "I have a good mark"
+        "He got a good mark because he studied hard"
       ]
     },
     {
-      "en": "This essay is very long.",
-      "cz": "Tahle esej je velmi dlouhá.",
+      "en": "I have to finish this essay before Friday.",
+      "cz": "Musím dokončit tuhle esej do pátku.",
       "lemmas": [
         "essay"
       ],
       "accepts": [
-        "This essay is very long"
+        "I have to finish this essay before Friday"
       ]
     },
     {
-      "en": "The lecture starts at ten.",
-      "cz": "Přednáška začíná v deset.",
+      "en": "The lecture starts at ten, so don't be late.",
+      "cz": "Přednáška začíná v deset, tak nepřijď pozdě.",
       "lemmas": [
         "lecture"
       ],
       "accepts": [
-        "The lecture starts at ten"
+        "The lecture starts at ten, so don't be late",
+        "The lecture starts at ten so don't be late",
+        "The lecture starts at ten, so do not be late",
+        "The lecture starts at ten so do not be late"
       ]
     },
     {
-      "en": "Our professor is very old.",
-      "cz": "Náš profesor je velmi starý.",
+      "en": "Our professor explains everything clearly and never gets angry.",
+      "cz": "Náš profesor všechno jasně vysvětluje a nikdy se nezlobí.",
       "lemmas": [
         "professor"
       ],
       "accepts": [
-        "Our professor is very old"
+        "Our professor explains everything clearly and never gets angry"
       ]
     },
     {
-      "en": "My brother is a student.",
-      "cz": "Můj bratr je student.",
+      "en": "My brother is a student, but he also works.",
+      "cz": "Můj bratr je student, ale taky pracuje.",
       "lemmas": [],
       "accepts": [
-        "My brother is a student"
+        "My brother is a student, but he also works",
+        "My brother is a student but he also works"
       ]
     },
     {
-      "en": "This is my subject.",
-      "cz": "Tohle je můj předmět.",
+      "en": "Which subject do you like most at school?",
+      "cz": "Který předmět máš ve škole nejraději?",
       "lemmas": [],
       "accepts": [
-        "This is my subject"
+        "Which subject do you like most at school"
       ]
     },
     {
-      "en": "This term is very short.",
-      "cz": "Tenhle semestr je velmi krátký.",
+      "en": "We have three exams at the end of term.",
+      "cz": "Na konci semestru máme tři zkoušky.",
       "lemmas": [
-        "term"
+        "term (school)"
       ],
       "accepts": [
-        "This term is very short"
+        "We have three exams at the end of term"
       ]
     },
     {
-      "en": "Our project is ready.",
-      "cz": "Náš projekt je hotový.",
+      "en": "Our project isn't finished yet, but we have time.",
+      "cz": "Náš projekt ještě není hotový, ale máme čas.",
       "lemmas": [
         "project"
       ],
       "accepts": [
-        "Our project is ready"
+        "Our project isn't finished yet, but we have time",
+        "Our project isn't finished yet but we have time",
+        "Our project is not finished yet, but we have time",
+        "Our project is not finished yet but we have time"
       ]
     },
     {
-      "en": "Research is very important.",
-      "cz": "Výzkum je velmi důležitý.",
+      "en": "Her research is about food and health.",
+      "cz": "Její výzkum je o jídle a zdraví.",
       "lemmas": [
         "research"
       ],
       "accepts": [
-        "Research is very important"
+        "Her research is about food and health"
       ]
     },
     {
-      "en": "My father is a researcher.",
-      "cz": "Můj otec je výzkumník.",
+      "en": "My father works as a researcher at the university.",
+      "cz": "Můj otec pracuje jako výzkumník na univerzitě.",
       "lemmas": [
         "researcher"
       ],
       "accepts": [
-        "My father is a researcher"
+        "My father works as a researcher at the university"
       ]
     },
     {
-      "en": "This experiment is very interesting.",
-      "cz": "Tenhle experiment je velmi zajímavý.",
+      "en": "The students did an experiment in the lab yesterday.",
+      "cz": "Studenti včera dělali experiment v laboratoři.",
       "lemmas": [
         "experiment"
       ],
       "accepts": [
-        "This experiment is very interesting"
+        "The students did an experiment in the lab yesterday"
       ]
     },
     {
-      "en": "Where is the lab?",
-      "cz": "Kde je laboratoř?",
+      "en": "Excuse me, where is the lab on this floor?",
+      "cz": "Promiňte, kde je v tomhle patře laboratoř?",
       "lemmas": [
-        "lab"
+        "lab (= laboratory)"
       ],
+      "explanation": "**lab** is the short word. The full word is **laboratory**. Both are correct; people say **lab**.",
+      "explanation_cz": "**lab** je zkrácené slovo. Celé slovo je **laboratory**. Obojí je správně, běžně se říká **lab**.",
       "accepts": [
-        "Where is the lab"
+        "Excuse me, where is the lab on this floor",
+        "Excuse me where is the lab on this floor"
       ]
     },
     {
-      "en": "My sister studies biology.",
-      "cz": "Moje sestra studuje biologii.",
+      "en": "My sister studies biology because she loves animals.",
+      "cz": "Moje sestra studuje biologii, protože miluje zvířata.",
       "lemmas": [
         "biology"
       ],
       "accepts": [
-        "My sister studies biology"
+        "My sister studies biology because she loves animals"
       ]
     },
     {
-      "en": "We have chemistry today.",
-      "cz": "Dnes máme chemii.",
+      "en": "We have chemistry on Monday and Thursday mornings.",
+      "cz": "Chemii máme v pondělí a ve čtvrtek ráno.",
       "lemmas": [
         "chemistry"
       ],
       "accepts": [
-        "We have chemistry today"
+        "We have chemistry on Monday and Thursday mornings"
       ]
     },
     {
-      "en": "Physics is not easy.",
-      "cz": "Fyzika není snadná.",
+      "en": "Physics was difficult, but our new teacher helps us.",
+      "cz": "Fyzika byla těžká, ale náš nový učitel nám pomáhá.",
       "lemmas": [
         "physics"
       ],
       "accepts": [
-        "Physics is not easy"
+        "Physics was difficult, but our new teacher helps us",
+        "Physics was difficult but our new teacher helps us"
       ]
     },
     {
-      "en": "Mathematics is very important.",
-      "cz": "Matematika je velmi důležitá.",
-      "lemmas": [
-        "mathematics"
-      ],
+      "en": "Maths helps us understand the world around us.",
+      "cz": "Matematika nám pomáhá rozumět světu kolem nás.",
+      "lemmas": [],
       "accepts": [
-        "Mathematics is very important"
+        "Maths helps us understand the world around us"
       ]
     },
     {
-      "en": "My son is good at maths.",
-      "cz": "Můj syn je dobrý v matice.",
+      "en": "My son is better at maths than at English.",
+      "cz": "Můj syn je lepší v matice než v angličtině.",
       "lemmas": [
         "maths"
       ],
       "accepts": [
-        "My son is good at maths"
+        "My son is better at maths than at English"
       ]
     },
     {
-      "en": "History is very interesting.",
-      "cz": "Dějepis je velmi zajímavý.",
+      "en": "We learned about the war in history yesterday.",
+      "cz": "Včera jsme se v dějepise učili o válce.",
       "lemmas": [],
       "accepts": [
-        "History is very interesting"
+        "We learned about the war in history yesterday"
       ]
     },
     {
-      "en": "This is a book about geography.",
-      "cz": "To je kniha o zeměpisu.",
+      "en": "Our geography teacher showed us a map of Europe.",
+      "cz": "Náš učitel zeměpisu nám ukázal mapu Evropy.",
       "lemmas": [],
       "accepts": [
-        "This is a book about geography"
+        "Our geography teacher showed us a map of Europe"
       ]
     },
     {
-      "en": "I go to the library every day.",
-      "cz": "Chodím každý den do knihovny.",
+      "en": "I go to the library when I need quiet.",
+      "cz": "Chodím do knihovny, když potřebuju klid.",
       "lemmas": [],
       "accepts": [
-        "I go to the library every day"
+        "I go to the library when I need quiet"
       ]
     },
     {
-      "en": "My dictionary is on the table.",
-      "cz": "Můj slovník je na stole.",
+      "en": "Is there a dictionary in this classroom?",
+      "cz": "Je v téhle třídě slovník?",
       "lemmas": [],
       "accepts": [
-        "My dictionary is on the table"
+        "Is there a dictionary in this classroom"
       ]
     },
     {
-      "en": "Read the instruction.",
-      "cz": "Přečtěte si instrukci.",
+      "en": "Read the instruction on the first page carefully.",
+      "cz": "Přečti si pozorně instrukci na první straně.",
       "lemmas": [
         "instruction"
       ],
       "accepts": [
-        "Read the instruction"
+        "Read the instruction on the first page carefully"
       ]
     },
     {
-      "en": "The introduction is very short.",
-      "cz": "Úvod je velmi krátký.",
+      "en": "Write a short introduction before you start the essay.",
+      "cz": "Než začneš esej, napiš krátký úvod.",
       "lemmas": [
         "introduction"
       ],
       "accepts": [
-        "The introduction is very short"
+        "Write a short introduction before you start the essay"
       ]
     },
     {
-      "en": "Your explanation is very good.",
-      "cz": "Tvoje vysvětlení je velmi dobré.",
+      "en": "Thanks for your explanation, now I understand the problem.",
+      "cz": "Díky za vysvětlení, teď tomu problému rozumím.",
       "lemmas": [
         "explanation"
       ],
       "accepts": [
-        "Your explanation is very good"
+        "Thanks for your explanation, now I understand the problem",
+        "Thanks for your explanation now I understand the problem"
       ]
     },
     {
-      "en": "Understanding is important.",
-      "cz": "Porozumění je důležité.",
+      "en": "Understanding is more important than remembering every word.",
+      "cz": "Porozumění je důležitější než pamatovat si každé slovo.",
       "lemmas": [
         "understanding"
       ],
       "accepts": [
-        "Understanding is important"
+        "Understanding is more important than remembering every word"
       ]
     },
     {
-      "en": "My grandmother has a good memory.",
-      "cz": "Moje babička má dobrou paměť.",
+      "en": "My grandmother has a good memory for old songs.",
+      "cz": "Moje babička má dobrou paměť na staré písničky.",
       "lemmas": [
         "memory"
       ],
       "accepts": [
-        "My grandmother has a good memory"
+        "My grandmother has a good memory for old songs"
       ]
     },
     {
-      "en": "My mind is tired.",
-      "cz": "Moje mysl je unavená.",
+      "en": "Take a break when your mind is tired.",
+      "cz": "Dej si pauzu, když je tvoje mysl unavená.",
       "lemmas": [
         "mind"
       ],
       "accepts": [
-        "My mind is tired"
+        "Take a break when your mind is tired"
       ]
     },
     {
-      "en": "That is a good thought.",
-      "cz": "To je dobrá myšlenka.",
+      "en": "Write down your thought before you forget it.",
+      "cz": "Zapiš si tu myšlenku, než ji zapomeneš.",
       "lemmas": [
         "thought"
       ],
       "accepts": [
-        "That is a good thought"
+        "Write down your thought before you forget it"
       ]
     },
     {
-      "en": "Thinking is hard work.",
-      "cz": "Přemýšlení je těžká práce.",
+      "en": "Thinking in English is difficult, but I'm getting better.",
+      "cz": "Přemýšlení v angličtině je těžké, ale zlepšuju se.",
       "lemmas": [
         "thinking"
       ],
       "accepts": [
-        "Thinking is hard work"
+        "Thinking in English is difficult, but I'm getting better",
+        "Thinking in English is difficult but I'm getting better",
+        "Thinking in English is difficult, but I am getting better",
+        "Thinking in English is difficult but I am getting better"
       ]
     },
     {
-      "en": "His knowledge is very good.",
-      "cz": "Jeho znalosti jsou velmi dobré.",
+      "en": "His knowledge of computers helped him find a job.",
+      "cz": "Jeho znalosti počítačů mu pomohly najít práci.",
       "lemmas": [
         "knowledge"
       ],
       "accepts": [
-        "His knowledge is very good",
-        "Her knowledge is very good.",
-        "Her knowledge is very good"
+        "His knowledge of computers helped him find a job"
       ]
     },
     {
-      "en": "Teaching is a good profession.",
-      "cz": "Učitelství je dobré povolání.",
+      "en": "Teaching is a good job, but it is tiring.",
+      "cz": "Výuka je dobrá práce, ale je únavná.",
       "lemmas": [
         "teaching"
       ],
       "accepts": [
-        "Teaching is a good profession"
+        "Teaching is a good job, but it is tiring",
+        "Teaching is a good job but it is tiring"
       ]
     },
     {
-      "en": "This is a university.",
-      "cz": "Tohle je univerzita.",
+      "en": "My daughter wants to study at a university abroad.",
+      "cz": "Moje dcera chce studovat na univerzitě v zahraničí.",
       "lemmas": [
         "university"
       ],
       "accepts": [
-        "This is a university"
+        "My daughter wants to study at a university abroad"
       ]
     }
   ]
