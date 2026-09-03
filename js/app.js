@@ -3,8 +3,8 @@
  * Stable siblings: RUE2 :8092 · RUE3 :8091. This app: :8097.
  */
 
-import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-03-checkflag";
-import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-checkflag";
+import { startGrammarPractice } from "./practice-grammar.js?v=2026-09-03-flagon";
+import { startPractice as startVocabPractice } from "./practice-vocab.js?v=2026-09-03-flagon";
 import { startWordFormationDrill } from "./exam-drill.js";
 import {
   startVocabSprint,
@@ -12,7 +12,7 @@ import {
   startGrammarMatchSprint,
   startGrammarTypeSprint,
   startFinaleSprint,
-} from "./vocab-sprint.js?v=2026-09-03-checkflag";
+} from "./vocab-sprint.js?v=2026-09-03-flagon";
 import {
   loadProgress,
   lastCompletedNodeId,
@@ -45,25 +45,18 @@ import {
   updateFlagsBadge,
   addFlag,
   loadFlags,
-} from "./smoke-flags.js?v=2026-09-03-checkflag";
+} from "./smoke-flags.js?v=2026-09-03-flagon";
 import { renderTreePortrait, unitSeatPart } from "./tree-portrait.js?v=2026-09-02-nocircles";
 import { initReference, renderReference } from "./reference.js";
 import { setSynonymMap } from "./synonyms.js";
 
 /* Smoke flagging is a REVIEW tool, not a student feature (James, 2026-08-10).
- * Teaching units: Flag + EN key only with ?smoke=1 (class leak 2026-09-03).
- * End-of-level checks: Flag / Flagged on localhost, no answer key. Never on Pages. */
+ * Localhost: Flag / Flagged on every practice screen. The EN answer key only
+ * with ?smoke=1 (class leak 2026-09-03). Never on Pages. */
 const IS_DEV_HOST = /^(localhost|127\.0\.0\.1|\[::1\]|)$/.test(
   location.hostname,
 );
 const SMOKE_SESSION_KEY = "rue-exp-smoke";
-const LEVEL_CHECK_PRACTICE = new Set([
-  "match_sprint",
-  "type_sprint",
-  "grammar_match_sprint",
-  "grammar_type_sprint",
-  "use_sprint",
-]);
 
 function smokeChromeOn() {
   if (!IS_DEV_HOST) return false;
@@ -77,14 +70,13 @@ function smokeChromeOn() {
   }
 }
 
-function applySmokeChrome({ check = false } = {}) {
+function applySmokeChrome() {
   if (!IS_DEV_HOST) return;
   const bar = document.getElementById("smoke-toolbar");
   if (!bar) return;
   const full = smokeChromeOn();
-  const on = full || check;
-  bar.hidden = !on;
-  bar.classList.toggle("smoke-toolbar-flags-only", on && !full);
+  bar.hidden = false;
+  bar.classList.toggle("smoke-toolbar-flags-only", !full);
   const live = document.getElementById("smoke-live");
   if (live) {
     live.hidden = !full;
@@ -464,7 +456,7 @@ function goHome() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-function showPractice(domain, opts = {}) {
+function showPractice(domain) {
   STATE.view = "practice";
   clearFruitPayoffKeys();
   STATE.pendingFruitPayoff = null;
@@ -474,11 +466,7 @@ function showPractice(domain, opts = {}) {
   document.body.classList.add(
     domain === "grammar" ? "domain-grammar" : "domain-vocab",
   );
-  const node = nodeById(STATE.selectedId);
-  const check =
-    opts.check === true ||
-    (opts.check !== false && LEVEL_CHECK_PRACTICE.has(node?.practice));
-  applySmokeChrome({ check });
+  applySmokeChrome();
 }
 
 function escapeXml(s) {
@@ -1213,7 +1201,7 @@ async function startExamDrillFor(level) {
     const packs = [];
     for (const n of nodes) packs.push(await loadJson(`./data/${n.content}`));
     STATE.lastPlayedLevel = level;
-    showPractice("grammar", { check: false });
+    showPractice("grammar");
     const root = document.getElementById("practice-root");
     root.innerHTML = "";
     startWordFormationDrill({

@@ -13,7 +13,7 @@
  * Vocab behaviour from Desktop `vocab game (2).html` (Martin). Chrome is RUE.
  */
 
-import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-checkflag";
+import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-flagon";
 import { expandContractions } from "./contractions.js";
 import { canonSynonyms } from "./synonyms.js";
 import { _gradeGrammar, gradeGrammarSentence } from "./practice-grammar.js";
