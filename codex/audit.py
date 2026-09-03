@@ -58,7 +58,10 @@ monday tuesday wednesday thursday friday saturday sunday
 january february march april may june july august september october november
 december english czech polish french german spanish
 prague brno vienna london ostrava italy naples pompeii sicily santorini europe british
+olomouc pilsen palmovka liberec pardubice shanghai warsaw rome berlin bratislava
+lysa labem cerny pocernice dolni
 anna martina tom tomas petr pavel jana eva jan david peter mary john freida mcfadden
+lucie tereza klara hana lenka marek jakub karel honza ondrej patrik vaclav martin homare
 """.split())
 
 SUFFIXES = ("ing", "ed", "es", "s", "er", "est", "ly", "d")
