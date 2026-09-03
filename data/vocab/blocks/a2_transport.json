@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_transport_a2",
   "codex_unit": "V_THM-A1B1-03",
-  "note": "ROUGH STUB 2026-09-01. Getting around. Split from travel 75. A1 already has bus, train, car, taxi, metro, tram, bike, plane, airport. Holidays stay on leaf_travel_a2. 36 words.",
+  "note": "ROUGH STUB 2026-09-01. Getting around. Split from travel 75. A1 already has bus, train, car, taxi, metro, tram, bike, plane, airport. Holidays stay on leaf_travel_a2. 36 words. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "blocks": [
@@ -79,14 +79,6 @@
           "use": [
             "this_is_a",
             "in_the"
-          ]
-        },
-        {
-          "en": "timetable",
-          "cz": "jízdní řád",
-          "use": [
-            "this_is_a",
-            "i_have_a"
           ]
         },
         {
@@ -300,6 +292,34 @@
   ],
   "intro": [
     {
+      "title": "You already know",
+      "title_cz": "Už znáš",
+      "pictures": [
+        {
+          "en": "timetable",
+          "cz": "jízdní řád",
+          "icon": "🚌"
+        },
+        {
+          "en": "station",
+          "cz": "nádraží",
+          "icon": "🚉"
+        },
+        {
+          "en": "train",
+          "cz": "vlak",
+          "icon": "🚆"
+        },
+        {
+          "en": "leave",
+          "cz": "odejít",
+          "icon": "🚪"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
       "title": "Air and rail",
       "title_cz": "Letadlo a vlak",
       "pictures": [
@@ -347,11 +367,6 @@
           "icon": "🚃",
           "en": "carriage",
           "cz": "vagon"
-        },
-        {
-          "icon": "📅",
-          "en": "timetable",
-          "cz": "jízdní řád"
         },
         {
           "icon": "🔗",
@@ -606,9 +621,7 @@
     {
       "en": "Look at the timetable.",
       "cz": "Podívejte se na jízdní řád.",
-      "lemmas": [
-        "timetable"
-      ],
+      "lemmas": [],
       "accepts": [
         "Look at the timetable"
       ]

@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_town_a2",
   "codex_unit": "V_THM-A1B1-03",
-  "note": "ROUGH STUB 2026-09-01. A1 Places already has left, right, straight, opposite, next to, bank, post office. This unit: go past, street furniture, town services. chemist may move off a2_health. 36 words. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked",
+  "note": "ROUGH STUB 2026-09-01. A1 Places already has left, right, straight, opposite, next to, bank, post office. This unit: go past, street furniture, town services. chemist may move off a2_health. 36 words. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (recycled tiles), then new words, then frames · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "blocks": [
@@ -284,26 +284,142 @@
   ],
   "intro": [
     {
-      "title": "Getting there",
-      "title_cz": "Jak se tam dostat",
+      "title": "You already know · 1",
+      "title_cz": "Už znáš · 1",
       "pictures": [
         {
-          "icon": "➡️",
-          "en": "past",
-          "cz": "kolem"
+          "en": "department store",
+          "cz": "obchodní dům",
+          "icon": "🏬"
         },
         {
-          "icon": "➡️",
-          "en": "along",
-          "cz": "podél"
+          "en": "gallery",
+          "cz": "galerie",
+          "icon": "🏛️"
         },
         {
-          "icon": "↔️",
-          "en": "across",
-          "cz": "přes"
+          "en": "street",
+          "cz": "ulice",
+          "icon": "🛣️"
         },
         {
-          "icon": "🔵",
+          "en": "centre",
+          "cz": "centrum",
+          "icon": "🎯"
+        },
+        {
+          "en": "square",
+          "cz": "náměstí",
+          "icon": "⛲"
+        },
+        {
+          "en": "corner",
+          "cz": "roh",
+          "icon": "📐"
+        },
+        {
+          "en": "supermarket",
+          "cz": "supermarket",
+          "icon": "🛒"
+        },
+        {
+          "en": "station",
+          "cz": "nádraží",
+          "icon": "🚉"
+        },
+        {
+          "en": "bank",
+          "cz": "banka",
+          "icon": "🏦"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
+      "title": "You already know · 2",
+      "title_cz": "Už znáš · 2",
+      "pictures": [
+        {
+          "en": "post office",
+          "cz": "pošta",
+          "icon": "🏤"
+        },
+        {
+          "en": "left",
+          "cz": "vlevo",
+          "icon": "⬅️"
+        },
+        {
+          "en": "opposite",
+          "cz": "naproti",
+          "icon": "🔃"
+        },
+        {
+          "en": "behind",
+          "cz": "za (místem)",
+          "icon": "🔙"
+        },
+        {
+          "en": "road",
+          "cz": "silnice",
+          "icon": "🛣️"
+        },
+        {
+          "en": "right",
+          "cz": "vpravo",
+          "icon": "➡️"
+        },
+        {
+          "en": "straight",
+          "cz": "rovně",
+          "icon": "⬆️"
+        },
+        {
+          "en": "next to",
+          "cz": "vedle",
+          "icon": "↔️"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
+      "title": "Getting there",
+      "title_cz": "Jak se tam dostat",
+      "table": {
+        "headers": [
+          "English",
+          "meaning",
+          "Czech"
+        ],
+        "rows": [
+          [
+            "go **past**",
+            "by it, then continue",
+            "kolem"
+          ],
+          [
+            "go **along**",
+            "stay on this street",
+            "podél"
+          ],
+          [
+            "go **across**",
+            "from one side to the other",
+            "přes"
+          ]
+        ]
+      },
+      "note": "You already have **left**, **right**, **straight**, **opposite**.",
+      "note_cz": "left, right, straight, opposite už znáte."
+    },
+    {
+      "title": "In the street",
+      "title_cz": "Na ulici",
+      "pictures": [
+        {
+          "icon": "🔄",
           "en": "roundabout",
           "cz": "kruhový objezd"
         },
@@ -313,12 +429,12 @@
           "cz": "semafor"
         },
         {
-          "icon": "🚶",
+          "icon": "🚸",
           "en": "crossing",
           "cz": "přechod"
         },
         {
-          "icon": "🛤️",
+          "icon": "👣",
           "en": "pavement",
           "cz": "chodník"
         },
@@ -333,7 +449,7 @@
           "cz": "napojení"
         },
         {
-          "icon": "🪧",
+          "icon": "📍",
           "en": "signpost",
           "cz": "značka"
         },
@@ -347,9 +463,7 @@
           "en": "pedestrian",
           "cz": "chodec"
         }
-      ],
-      "body": "You already know left, right, straight, opposite. This board is the extra street language: go past, traffic lights, pavement.",
-      "body_cz": "left, right, straight, opposite už znáte. Tady: go past, semafor, chodník."
+      ]
     },
     {
       "title": "Services",

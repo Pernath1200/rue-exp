@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_travel_a2",
   "codex_unit": "V_THM-A1B1-03",
-  "note": "V_THM-A1B1-03 holidays A2 · cut 75→36 2026-09-02 (transport overlap dropped; vacation accepted on holiday). quiz_mode sentence_gap · 36 sentences.",
+  "note": "V_THM-A1B1-03 holidays A2 · cut 75→36 2026-09-02 (transport overlap dropped; vacation accepted on holiday). quiz_mode sentence_gap · 36 sentences. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
@@ -12,25 +12,6 @@
       "id": "a2_travel_1",
       "title": "The trip",
       "items": [
-        {
-          "en": "holiday",
-          "cz": "dovolená",
-          "use": [
-            "have_a_good",
-            "i_like_pl",
-            "the_is_long"
-          ]
-        },
-        {
-          "en": "trip",
-          "cz": "výlet / cesta",
-          "use": [
-            "have_a_good",
-            "i_like_pl",
-            "the_is_long",
-            "this_is_a"
-          ]
-        },
         {
           "en": "journey",
           "cz": "cesta (delší)",
@@ -47,14 +28,6 @@
             "have_a_good",
             "i_like_pl",
             "this_is_a"
-          ]
-        },
-        {
-          "en": "travel (verb)",
-          "cz": "cestovat",
-          "use": [
-            "i_want_to",
-            "we_need_to"
           ]
         },
         {
@@ -196,15 +169,6 @@
           ]
         },
         {
-          "en": "map",
-          "cz": "mapa",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
           "en": "guide",
           "cz": "průvodce",
           "use": [
@@ -221,14 +185,6 @@
             "i_have_a",
             "i_need_a"
           ]
-        },
-        {
-          "en": "arrive",
-          "cz": "přijet / dorazit",
-          "use": [
-            "i_want_to",
-            "we_need_to"
-          ]
         }
       ]
     },
@@ -237,31 +193,11 @@
       "title": "Stay and see",
       "items": [
         {
-          "en": "hotel",
-          "cz": "hotel",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_have_a",
-            "i_go_to"
-          ]
-        },
-        {
           "en": "hostel",
           "cz": "hostel",
           "use": [
             "where_is_the",
             "this_is_a"
-          ]
-        },
-        {
-          "en": "beach",
-          "cz": "pláž",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_like_pl",
-            "i_go_to"
           ]
         },
         {
@@ -288,15 +224,6 @@
             "i_like_bare",
             "i_enjoy",
             "is_fun"
-          ]
-        },
-        {
-          "en": "airport",
-          "cz": "letiště",
-          "use": [
-            "where_is_the",
-            "this_is_a",
-            "i_go_to"
           ]
         },
         {
@@ -342,19 +269,57 @@
   ],
   "intro": [
     {
+      "title": "You already know",
+      "title_cz": "Už znáš",
+      "pictures": [
+        {
+          "en": "holiday",
+          "cz": "dovolená",
+          "icon": "🏖️"
+        },
+        {
+          "en": "trip",
+          "cz": "výlet",
+          "icon": "🧳"
+        },
+        {
+          "en": "travel",
+          "cz": "cestovat",
+          "icon": "✈️"
+        },
+        {
+          "en": "map",
+          "cz": "mapa",
+          "icon": "🗺️"
+        },
+        {
+          "en": "arrive",
+          "cz": "přijet",
+          "icon": "🏁"
+        },
+        {
+          "en": "hotel",
+          "cz": "hotel",
+          "icon": "🏨"
+        },
+        {
+          "en": "beach",
+          "cz": "pláž",
+          "icon": "🏖️"
+        },
+        {
+          "en": "airport",
+          "cz": "letiště",
+          "icon": "🛫"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
       "title": "The trip",
       "title_cz": "Cesta",
       "pictures": [
-        {
-          "icon": "😎",
-          "en": "holiday",
-          "cz": "dovolená"
-        },
-        {
-          "icon": "🚗",
-          "en": "trip",
-          "cz": "výlet"
-        },
         {
           "icon": "🛤️",
           "en": "journey",
@@ -364,11 +329,6 @@
           "icon": "🚌",
           "en": "tour",
           "cz": "prohlídka"
-        },
-        {
-          "icon": "🌍",
-          "en": "travel (verb)",
-          "cz": "cestovat"
         },
         {
           "icon": "📷",
@@ -452,11 +412,6 @@
           "cz": "zabalit (si)"
         },
         {
-          "icon": "🧭",
-          "en": "map",
-          "cz": "mapa"
-        },
-        {
           "icon": "🗣️",
           "en": "guide",
           "cz": "průvodce"
@@ -465,11 +420,6 @@
           "icon": "🎁",
           "en": "souvenir",
           "cz": "suvenýr"
-        },
-        {
-          "icon": "🛬",
-          "en": "arrive",
-          "cz": "přijet"
         }
       ]
     },
@@ -478,19 +428,9 @@
       "title_cz": "Kde bydlet a co vidět",
       "pictures": [
         {
-          "icon": "🏨",
-          "en": "hotel",
-          "cz": "hotel"
-        },
-        {
           "icon": "🛏️",
           "en": "hostel",
           "cz": "hostel"
-        },
-        {
-          "icon": "🏖️",
-          "en": "beach",
-          "cz": "pláž"
         },
         {
           "icon": "🌴",
@@ -506,11 +446,6 @@
           "icon": "🏕️",
           "en": "camping",
           "cz": "kempování"
-        },
-        {
-          "icon": "🛫",
-          "en": "airport",
-          "cz": "letiště"
         },
         {
           "icon": "🚧",
@@ -557,9 +492,7 @@
     {
       "en": "We are on holiday.",
       "cz": "Jsme na dovolené.",
-      "lemmas": [
-        "holiday"
-      ],
+      "lemmas": [],
       "accepts": [
         "We are on holiday",
         "We're on holiday",
@@ -570,9 +503,7 @@
     {
       "en": "This is a school trip.",
       "cz": "To je školní výlet.",
-      "lemmas": [
-        "trip"
-      ],
+      "lemmas": [],
       "accepts": [
         "This is a school trip"
       ]
@@ -590,9 +521,7 @@
     {
       "en": "We want to travel.",
       "cz": "Chceme cestovat.",
-      "lemmas": [
-        "travel (verb)"
-      ],
+      "lemmas": [],
       "accepts": [
         "We want to travel"
       ]
@@ -662,9 +591,7 @@
     {
       "en": "Where is the map?",
       "cz": "Kde je mapa?",
-      "lemmas": [
-        "map"
-      ],
+      "lemmas": [],
       "accepts": [
         "Where is the map"
       ]
@@ -672,9 +599,7 @@
     {
       "en": "We are at the airport.",
       "cz": "Jsme na letišti.",
-      "lemmas": [
-        "airport"
-      ],
+      "lemmas": [],
       "accepts": [
         "We are at the airport",
         "We're at the airport"
@@ -683,9 +608,7 @@
     {
       "en": "Our hotel is near the beach.",
       "cz": "Náš hotel je blízko pláže.",
-      "lemmas": [
-        "hotel"
-      ],
+      "lemmas": [],
       "accepts": [
         "Our hotel is near the beach"
       ]
@@ -693,9 +616,7 @@
     {
       "en": "I like the beach.",
       "cz": "Mám rád pláž.",
-      "lemmas": [
-        "beach"
-      ],
+      "lemmas": [],
       "accepts": [
         "I like the beach",
         "I like beach",
@@ -854,9 +775,7 @@
     {
       "en": "They arrive today.",
       "cz": "Přijíždějí dnes.",
-      "lemmas": [
-        "arrive"
-      ],
+      "lemmas": [],
       "accepts": [
         "They arrive today"
       ]

@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_freetime_a2",
   "codex_unit": "V_THM-A1B1-09",
-  "note": "V_THM-A1B1-09 free time A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "note": "V_THM-A1B1-09 free time A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
@@ -154,15 +154,6 @@
           ]
         },
         {
-          "en": "painter",
-          "cz": "malíř",
-          "use": [
-            "this_is_a",
-            "i_have_a",
-            "i_need_a"
-          ]
-        },
-        {
           "en": "drawing",
           "cz": "kresba",
           "use": []
@@ -188,15 +179,6 @@
         {
           "en": "festival",
           "cz": "festival",
-          "use": [
-            "have_a_good",
-            "the_is_long",
-            "this_is_a"
-          ]
-        },
-        {
-          "en": "party",
-          "cz": "večírek / párty",
           "use": [
             "have_a_good",
             "the_is_long",
@@ -322,6 +304,39 @@
   ],
   "intro": [
     {
+      "title": "You already know",
+      "title_cz": "Už znáš",
+      "pictures": [
+        {
+          "en": "painter",
+          "cz": "malíř",
+          "icon": "🖌️"
+        },
+        {
+          "en": "party",
+          "cz": "oslava",
+          "icon": "🎉"
+        },
+        {
+          "en": "music",
+          "cz": "hudba",
+          "icon": "🎵"
+        },
+        {
+          "en": "film",
+          "cz": "film",
+          "icon": "🎬"
+        },
+        {
+          "en": "guitar",
+          "cz": "kytara",
+          "icon": "🎸"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
       "title": "Stories and people",
       "title_cz": "Příběhy a lidé",
       "pictures": [
@@ -407,11 +422,6 @@
           "cz": "hudebník"
         },
         {
-          "icon": "🎨",
-          "en": "painter",
-          "cz": "malíř"
-        },
-        {
           "icon": "🖼️",
           "en": "drawing",
           "cz": "kresba"
@@ -430,11 +440,6 @@
           "icon": "🎏",
           "en": "festival",
           "cz": "festival"
-        },
-        {
-          "icon": "🎈",
-          "en": "party",
-          "cz": "večírek"
         },
         {
           "icon": "🃏",
@@ -674,9 +679,7 @@
     {
       "en": "This painter is famous.",
       "cz": "Tenhle malíř je slavný.",
-      "lemmas": [
-        "painter"
-      ],
+      "lemmas": [],
       "accepts": [
         "This painter is famous"
       ]
@@ -724,9 +727,7 @@
     {
       "en": "The party was on Saturday.",
       "cz": "Ten večírek byl v sobotu.",
-      "lemmas": [
-        "party"
-      ],
+      "lemmas": [],
       "accepts": [
         "The party was on Saturday"
       ]

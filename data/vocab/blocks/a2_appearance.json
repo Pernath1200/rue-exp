@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_appearance_a2",
   "codex_unit": "V_THM-A1B1-04",
-  "note": "ROUGH STUB 2026-09-01. How people look. Not personality. A1 already has tall, short, young, old, hair, glasses, pretty. 36 words. quiz_mode sentence_gap.",
+  "note": "ROUGH STUB 2026-09-01. How people look. Not personality. A1 already has tall, short, young, old, hair, glasses, pretty. 36 words. quiz_mode sentence_gap. · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "blocks": [
@@ -76,14 +76,6 @@
           ]
         },
         {
-          "en": "healthy",
-          "cz": "zdravý",
-          "use": [
-            "he_is",
-            "she_is"
-          ]
-        },
-        {
           "en": "male",
           "cz": "mužský",
           "use": [
@@ -120,19 +112,11 @@
           ]
         },
         {
-          "en": "dark",
+          "en": "dark (hair)",
           "cz": "tmavý",
           "use": [
             "he_is",
             "she_has"
-          ]
-        },
-        {
-          "en": "blonde",
-          "cz": "blond",
-          "use": [
-            "she_is",
-            "he_is"
           ]
         },
         {
@@ -172,13 +156,6 @@
           "use": [
             "he_has",
             "this_is_a"
-          ]
-        },
-        {
-          "en": "skin",
-          "cz": "pleť / kůže",
-          "use": [
-            "she_has"
           ]
         },
         {
@@ -309,6 +286,34 @@
   ],
   "intro": [
     {
+      "title": "You already know",
+      "title_cz": "Už znáš",
+      "pictures": [
+        {
+          "en": "healthy",
+          "cz": "zdravý",
+          "icon": "🥗"
+        },
+        {
+          "en": "blonde",
+          "cz": "blond",
+          "icon": "👱"
+        },
+        {
+          "en": "skin",
+          "cz": "kůže",
+          "icon": "🤚"
+        },
+        {
+          "en": "hair",
+          "cz": "vlasy",
+          "icon": "💇"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
       "title": "Body",
       "title_cz": "Postava",
       "pictures": [
@@ -353,11 +358,6 @@
           "cz": "slabý"
         },
         {
-          "icon": "💚",
-          "en": "healthy",
-          "cz": "zdravý"
-        },
-        {
           "icon": "♂️",
           "en": "male",
           "cz": "mužský"
@@ -385,13 +385,8 @@
         },
         {
           "icon": "👩‍🦱",
-          "en": "dark",
+          "en": "dark (hair)",
           "cz": "tmavý"
-        },
-        {
-          "icon": "👱‍♀️",
-          "en": "blonde",
-          "cz": "blond"
         },
         {
           "icon": "🧡",
@@ -417,11 +412,6 @@
           "icon": "👨",
           "en": "moustache",
           "cz": "knír"
-        },
-        {
-          "icon": "🧴",
-          "en": "skin",
-          "cz": "pleť"
         },
         {
           "icon": "👻",
@@ -717,9 +707,7 @@
     {
       "en": "He is healthy.",
       "cz": "Je zdravý.",
-      "lemmas": [
-        "healthy"
-      ],
+      "lemmas": [],
       "accepts": [
         "He is healthy"
       ]
@@ -757,9 +745,7 @@
     {
       "en": "He has dark hair.",
       "cz": "Má tmavé vlasy.",
-      "lemmas": [
-        "dark"
-      ],
+      "lemmas": [],
       "accepts": [
         "He has dark hair"
       ]
@@ -767,9 +753,7 @@
     {
       "en": "She is blonde.",
       "cz": "Je blond.",
-      "lemmas": [
-        "blonde"
-      ],
+      "lemmas": [],
       "accepts": [
         "She is blonde"
       ]
@@ -797,9 +781,7 @@
     {
       "en": "Her skin is soft.",
       "cz": "Její pleť je jemná.",
-      "lemmas": [
-        "skin"
-      ],
+      "lemmas": [],
       "accepts": [
         "Her skin is soft"
       ]

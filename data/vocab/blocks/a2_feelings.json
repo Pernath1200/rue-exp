@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_feelings_a2",
   "codex_unit": "V_THM-A1B1-09",
-  "note": "Feelings A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "note": "Feelings A2 · carriers via use[] · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
@@ -45,56 +45,8 @@
           ]
         },
         {
-          "en": "afraid",
-          "cz": "vyděšený / bát se",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "angry",
-          "cz": "naštvaný",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "bored",
-          "cz": "znuděný",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "calm",
-          "cz": "klidný",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "confident",
-          "cz": "sebevědomý",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
           "en": "embarrassed",
           "cz": "v rozpacích",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "excited",
-          "cz": "nadšený",
           "use": [
             "i_am_adj",
             "he_is_adj"
@@ -131,14 +83,6 @@
           ]
         },
         {
-          "en": "worried",
-          "cz": "ustaraný",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
           "en": "lonely",
           "cz": "osamělý",
           "use": [
@@ -149,62 +93,6 @@
         {
           "en": "confused",
           "cz": "zmatený",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "cheerful",
-          "cz": "veselý",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "serious",
-          "cz": "vážný",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "friendly",
-          "cz": "přátelský",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "kind",
-          "cz": "laskavý",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "polite",
-          "cz": "zdvořilý",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "rude",
-          "cz": "nezdvořilý",
-          "use": [
-            "i_am_adj",
-            "he_is_adj"
-          ]
-        },
-        {
-          "en": "honest",
-          "cz": "upřímný",
           "use": [
             "i_am_adj",
             "he_is_adj"
@@ -256,6 +144,39 @@
   ],
   "intro": [
     {
+      "title": "You already know",
+      "title_cz": "Už znáš",
+      "pictures": [
+        {
+          "en": "afraid",
+          "cz": "vystrašený",
+          "icon": "😨"
+        },
+        {
+          "en": "angry",
+          "cz": "naštvaný",
+          "icon": "😠"
+        },
+        {
+          "en": "bored",
+          "cz": "znuděný",
+          "icon": "🥱"
+        },
+        {
+          "en": "excited",
+          "cz": "nadšený",
+          "icon": "🤩"
+        },
+        {
+          "en": "worried",
+          "cz": "ustaraný",
+          "icon": "😟"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
       "title": "How you feel now",
       "title_cz": "Jak se cítíte teď",
       "pictures": [
@@ -263,31 +184,6 @@
           "icon": "😬",
           "en": "nervous",
           "cz": "nervózní"
-        },
-        {
-          "icon": "😨",
-          "en": "afraid",
-          "cz": "vyděšený"
-        },
-        {
-          "icon": "😠",
-          "en": "angry",
-          "cz": "naštvaný"
-        },
-        {
-          "icon": "🥱",
-          "en": "bored",
-          "cz": "znuděný"
-        },
-        {
-          "icon": "😟",
-          "en": "worried",
-          "cz": "ustaraný"
-        },
-        {
-          "icon": "🤩",
-          "en": "excited",
-          "cz": "nadšený"
         },
         {
           "icon": "😱",
@@ -368,57 +264,6 @@
       ]
     },
     {
-      "title": "What you are like",
-      "title_cz": "Jací jste",
-      "pictures": [
-        {
-          "icon": "😌",
-          "en": "calm",
-          "cz": "klidný"
-        },
-        {
-          "icon": "💪",
-          "en": "confident",
-          "cz": "sebevědomý"
-        },
-        {
-          "icon": "😄",
-          "en": "cheerful",
-          "cz": "veselý"
-        },
-        {
-          "icon": "😐",
-          "en": "serious",
-          "cz": "vážný"
-        },
-        {
-          "icon": "😊",
-          "en": "friendly",
-          "cz": "přátelský"
-        },
-        {
-          "icon": "💛",
-          "en": "kind",
-          "cz": "laskavý"
-        },
-        {
-          "icon": "🙇",
-          "en": "polite",
-          "cz": "zdvořilý"
-        },
-        {
-          "icon": "😤",
-          "en": "rude",
-          "cz": "nezdvořilý"
-        },
-        {
-          "icon": "🤝",
-          "en": "honest",
-          "cz": "upřímný"
-        }
-      ]
-    },
-    {
       "title": "You will use these words in",
       "title_cz": "V jakých větách je uslyšíte",
       "frames": [
@@ -475,9 +320,7 @@
     {
       "en": "My brother is afraid of dogs.",
       "cz": "Můj bratr se bojí psů.",
-      "lemmas": [
-        "afraid"
-      ],
+      "lemmas": [],
       "accepts": [
         "My brother is afraid of dogs"
       ]
@@ -485,9 +328,7 @@
     {
       "en": "My mother is angry.",
       "cz": "Moje matka je naštvaná.",
-      "lemmas": [
-        "angry"
-      ],
+      "lemmas": [],
       "accepts": [
         "My mother is angry"
       ]
@@ -495,9 +336,7 @@
     {
       "en": "The students are bored.",
       "cz": "Studenti se nudí.",
-      "lemmas": [
-        "bored"
-      ],
+      "lemmas": [],
       "accepts": [
         "The students are bored"
       ]
@@ -505,9 +344,7 @@
     {
       "en": "My grandfather is always calm.",
       "cz": "Můj dědeček je vždycky klidný.",
-      "lemmas": [
-        "calm"
-      ],
+      "lemmas": [],
       "accepts": [
         "My grandfather is always calm"
       ]
@@ -515,9 +352,7 @@
     {
       "en": "Hana is a confident teacher.",
       "cz": "Hana je sebevědomá učitelka.",
-      "lemmas": [
-        "confident"
-      ],
+      "lemmas": [],
       "accepts": [
         "Hana is a confident teacher"
       ]
@@ -536,9 +371,7 @@
     {
       "en": "My son is excited about the trip.",
       "cz": "Můj syn je nadšený z výletu.",
-      "lemmas": [
-        "excited"
-      ],
+      "lemmas": [],
       "accepts": [
         "My son is excited about the trip"
       ]
@@ -576,9 +409,7 @@
     {
       "en": "My mother is worried.",
       "cz": "Moje matka je ustaraná.",
-      "lemmas": [
-        "worried"
-      ],
+      "lemmas": [],
       "accepts": [
         "My mother is worried"
       ]
@@ -606,9 +437,7 @@
     {
       "en": "Our teacher is cheerful.",
       "cz": "Náš učitel je veselý.",
-      "lemmas": [
-        "cheerful"
-      ],
+      "lemmas": [],
       "accepts": [
         "Our teacher is cheerful"
       ]
@@ -616,9 +445,7 @@
     {
       "en": "This problem is serious.",
       "cz": "Tenhle problém je vážný.",
-      "lemmas": [
-        "serious"
-      ],
+      "lemmas": [],
       "accepts": [
         "This problem is serious"
       ]
@@ -626,9 +453,7 @@
     {
       "en": "The people here are friendly.",
       "cz": "Lidé jsou tady přátelští.",
-      "lemmas": [
-        "friendly"
-      ],
+      "lemmas": [],
       "accepts": [
         "The people here are friendly"
       ]
@@ -636,9 +461,7 @@
     {
       "en": "Your sister is very kind.",
       "cz": "Tvoje sestra je moc laskavá.",
-      "lemmas": [
-        "kind"
-      ],
+      "lemmas": [],
       "accepts": [
         "Your sister is very kind"
       ]
@@ -646,9 +469,7 @@
     {
       "en": "The waiter is polite.",
       "cz": "Číšník je zdvořilý.",
-      "lemmas": [
-        "polite"
-      ],
+      "lemmas": [],
       "accepts": [
         "The waiter is polite"
       ]
@@ -656,9 +477,7 @@
     {
       "en": "That man is rude.",
       "cz": "Ten muž je nezdvořilý.",
-      "lemmas": [
-        "rude"
-      ],
+      "lemmas": [],
       "accepts": [
         "That man is rude"
       ]
@@ -666,9 +485,7 @@
     {
       "en": "My friend is honest.",
       "cz": "Můj kamarád je upřímný.",
-      "lemmas": [
-        "honest"
-      ],
+      "lemmas": [],
       "accepts": [
         "My friend is honest"
       ]

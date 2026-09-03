@@ -4,7 +4,7 @@
   "level": "A2",
   "tree_node": "leaf_shopping_a2",
   "codex_unit": "V_THM-A1B1-06",
-  "note": "V_THM-A1B1-06 shopping A2 · carriers via use[] · retagged 2026-07-25 after smoke duds · Use sentence bank added 2026-08-08 (cloud run 30) · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap)",
+  "note": "V_THM-A1B1-06 shopping A2 · carriers via use[] · retagged 2026-07-25 after smoke duds · Use sentence bank added 2026-08-08 (cloud run 30) · quiz_mode sentence_gap (Match is 1-1; Quiz/Type are Czech sentence + English gap) · F7 2026-09-03: duplicate Match tiles dropped (first theme owns the word); homonyms sense-marked · F8 2026-09-03: intro starts with You already know (same-topic + F7 drops), then new words, then frames",
   "quiz_mode": "sentence_gap",
   "default_direction": "cz_to_en",
   "blocks": [
@@ -59,15 +59,6 @@
           ]
         },
         {
-          "en": "store",
-          "cz": "obchod (amer.)",
-          "use": [
-            "i_go_to",
-            "this_is_a",
-            "where_is_the"
-          ]
-        },
-        {
           "en": "bargain",
           "cz": "výhodná koupě",
           "use": [
@@ -83,16 +74,6 @@
             "this_is_a",
             "i_have_a",
             "i_need_a"
-          ]
-        },
-        {
-          "en": "cash",
-          "cz": "hotovost",
-          "use": [
-            "i_have_bare",
-            "i_need_bare",
-            "i_want_bare",
-            "i_like_bare"
           ]
         },
         {
@@ -191,14 +172,6 @@
           ]
         },
         {
-          "en": "size",
-          "cz": "velikost",
-          "use": [
-            "i_need_a",
-            "this_is_a"
-          ]
-        },
-        {
           "en": "fashion",
           "cz": "móda",
           "use": [
@@ -238,6 +211,59 @@
   ],
   "intro": [
     {
+      "title": "You already know",
+      "title_cz": "Už znáš",
+      "pictures": [
+        {
+          "en": "store",
+          "cz": "obchod (amer.)",
+          "icon": "•"
+        },
+        {
+          "en": "shop",
+          "cz": "obchod",
+          "icon": "🏪"
+        },
+        {
+          "en": "cash",
+          "cz": "hotovost",
+          "icon": "💵"
+        },
+        {
+          "en": "size",
+          "cz": "velikost",
+          "icon": "📏"
+        },
+        {
+          "en": "money",
+          "cz": "peníze",
+          "icon": "💰"
+        },
+        {
+          "en": "cheap",
+          "cz": "levný",
+          "icon": "🪙"
+        },
+        {
+          "en": "expensive",
+          "cz": "drahý",
+          "icon": "💎"
+        },
+        {
+          "en": "pay",
+          "cz": "platit",
+          "icon": "💳"
+        },
+        {
+          "en": "change",
+          "cz": "drobné",
+          "icon": "🪙"
+        }
+      ],
+      "note": "Not new — you met these before. You will see them again here.",
+      "note_cz": "Nejsou nové — už je znáte. Tady je potkáte znovu."
+    },
+    {
       "title": "Shops and paying",
       "title_cz": "Obchody a placení",
       "pictures": [
@@ -267,11 +293,6 @@
           "cz": "výrobek"
         },
         {
-          "icon": "🏪",
-          "en": "store",
-          "cz": "obchod (amer.)"
-        },
-        {
           "icon": "💸",
           "en": "bargain",
           "cz": "výhodná koupě"
@@ -280,11 +301,6 @@
           "icon": "💳",
           "en": "credit card",
           "cz": "kreditní karta"
-        },
-        {
-          "icon": "💵",
-          "en": "cash",
-          "cz": "hotovost"
         },
         {
           "icon": "🛒",
@@ -341,11 +357,6 @@
           "icon": "🧵",
           "en": "material",
           "cz": "materiál"
-        },
-        {
-          "icon": "📏",
-          "en": "size",
-          "cz": "velikost"
         },
         {
           "icon": "👗",
@@ -406,13 +417,14 @@
       ]
     },
     {
-      "en": "The store advertises the new product.",
+      "en": "The shop advertises the new product.",
       "cz": "Obchod inzeruje nový výrobek.",
       "lemmas": [
         "advertise",
         "product"
       ],
       "accepts": [
+        "The shop advertises the new product",
         "The store advertises the new product"
       ]
     },
@@ -427,14 +439,12 @@
       ]
     },
     {
-      "en": "Where is the store?",
+      "en": "Where is the shop?",
       "cz": "Kde je ten obchod?",
-      "lemmas": [
-        "store"
-      ],
+      "lemmas": [],
       "accepts": [
-        "Where is the store",
-        "Where is the shop"
+        "Where is the shop",
+        "Where is the store"
       ]
     },
     {
@@ -461,9 +471,7 @@
     {
       "en": "I have no cash today.",
       "cz": "Dnes nemám hotovost.",
-      "lemmas": [
-        "cash"
-      ],
+      "lemmas": [],
       "accepts": [
         "I have no cash today",
         "I do not have cash today",
@@ -511,12 +519,13 @@
       ]
     },
     {
-      "en": "Every item in this store is cheap.",
+      "en": "Every item in this shop is cheap.",
       "cz": "Každá položka v tomhle obchodě je levná.",
       "lemmas": [
         "item"
       ],
       "accepts": [
+        "Every item in this shop is cheap",
         "Every item in this store is cheap"
       ]
     },
@@ -574,9 +583,7 @@
     {
       "en": "What size do you need?",
       "cz": "Jakou velikost potřebujete?",
-      "lemmas": [
-        "size"
-      ],
+      "lemmas": [],
       "accepts": [
         "What size do you need"
       ]
