@@ -573,20 +573,41 @@ def lint_pack(uid):
         # the honest answer and the Czech picks neither. The item's own
         # distractor list usually offers the better answer as a wrong one.
         ans = (it.get("accepts") or [it.get("en", "")])[0]
-        if re.search(r"\b(had|hadn't)\b", ans, re.I):
+        # Narrative past perfect only. A conditional or a wish licenses `had` +
+        # participle on its own grammar and needs no story anchor ("If she had
+        # studied, she would have passed", "I wish I had studied") — the first
+        # version of this check put 46 false hits on b2_third_conditional. And
+        # `had` must actually govern a PARTICIPLE: second conditional's "If I
+        # had more time" is past simple possessive, not past perfect at all.
+        conditional = re.search(r"\bif\b|\bwould(n't)? have\b|\bwish\b|\bif only\b", ans, re.I)
+        pp = re.search(r"\b(had|hadn't)\b\s+"
+                       r"(you|i|he|she|it|we|they|[A-Z]\w+)?\s*"   # question inversion
+                       r"(\w+ly\s+)?(never\s+|ever\s+|already\s+|just\s+)*"
+                       r"(\w+(ed|en)\b|been|gone|done|seen|taken|given|come|left|lost|"
+                       r"met|paid|put|read|run|said|sent|set|sold|spent|told|won|written|"
+                       r"begun|broken|brought|bought|caught|chosen|drunk|driven|eaten|"
+                       r"fallen|felt|found|forgotten|got|heard|held|kept|known|made)\b",
+                       ans, re.I)
+        if pp and not conditional:
             # an anchor is a past-simple CLAUSE or an explicit past frame
             anchored = re.search(
                 r"\b(when|before|after|by the time|until|till|because|so|since)\s+"
                 r"\w+(\s+\w+)?\s+\w+|"                       # subordinate clause
                 r"\b(that|last|previous)\s+\w+|"             # "that trip"
-                r"\b(yesterday|ago|earlier|first)\b|"
+                r"\bby\s+(\w+\s+)?(o'clock|noon|midnight|then|\d)|"  # "by six o'clock"
+                r"\b(yesterday|ago|earlier|first|already)\b|"
                 r"\b(said|told|asked|knew|realised|realized|found out)\b",
                 ans, re.I)
-            # ...and a second past-simple verb somewhere outside the had-clause
+            # ...or a second past-simple verb outside the had-clause. Any -ed
+            # form counts, plus the common irregulars: a hand list missed
+            # "She showed me the book she had bought" (b2_past_perfect).
             outside = re.sub(r"\b(had|hadn't)\b.*?(?=[,.]|$)", "", ans, flags=re.I)
-            second = re.search(r"\b(was|were|got|came|arrived|called|went|left|"
-                               r"opened|saw|found|took|put|rang|couldn't|didn't|"
-                               r"walked|started|returned|moved)\b", outside, re.I)
+            second = re.search(r"\b\w+ed\b|"
+                               r"\b(was|were|got|came|arrived|went|left|saw|found|"
+                               r"took|put|rang|ran|sat|stood|told|said|gave|made|"
+                               r"knew|met|felt|kept|held|brought|bought|caught|"
+                               r"sent|spent|lost|won|wrote|read|drove|fell|"
+                               r"couldn't|didn't|wouldn't)\b", outside, re.I)
             if not anchored and not second:
                 f["ppanchor"].append(it)
 
