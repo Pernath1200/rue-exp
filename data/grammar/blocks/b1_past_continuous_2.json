@@ -6,7 +6,7 @@
  "codex_unit": "G_VP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "Questions, negatives and the when/while contrast above a2_past_continuous (which did in-progress and background only). C33: the usual job is an interrupted action - was -ing WHEN + past simple - not clock-time snapshots. Czech trap: no auxiliary in the question (*What you did doing), and while/when both come from kdyz. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "Questions, negatives and the when/while contrast above a2_past_continuous (which did in-progress and background only). C33: the usual job is an interrupted action - was -ing WHEN + past simple - not clock-time snapshots. Czech trap: no auxiliary in the question (*What you did doing), and while/when both come from kdyz. Thickened 12 -> 26 items 2026-09-04 (agent loop). Rules applied this pass: A4 the phone / the boss became my phone / our boss, so the item no longer demands an article the Czech does not carry; A0 forced the continuous on the two items whose Czech also reads as past simple (They weren't listening -> while I was talking; Were you waiting long -> Were you still waiting when I called); C11 the while card now carries the two-long-actions row that the new parallel item drills; B4/B6 every option list carries this unit's own errors - did + -ing, was/were agreement, subject-first order - and never a sibling verb. E9: the parallel-actions item has no `wrong`, because no honest single-error version of it exists. Remaining lint: vocablevel (grammar carriers are deliberately easy) and one useleadhi on `rang`, kept because *the phone rang* is the canonical interruption and F3 is scoped to A1.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -39,7 +39,7 @@
       ],
       [
        "Long action",
-       "**While** I was cooking, the phone rang."
+       "**While** I was cooking, my phone rang."
       ]
      ]
     },
@@ -85,7 +85,7 @@
     "title": "while and when",
     "title_cz": "while a when",
     "points": [
-     "Czech **když** covers both. In English the choice depends on which action follows it."
+     "Czech **když** covers both. The choice depends on the action that follows."
     ],
     "table": {
      "headers": [
@@ -97,12 +97,17 @@
       [
        "**while**",
        "the long action",
-       "**While** I was cooking, the phone rang."
+       "**While** I was cooking, my phone rang."
       ],
       [
        "**when**",
        "the short action",
-       "I was cooking **when** the phone rang."
+       "I was cooking **when** my phone rang."
+      ],
+      [
+       "**while**",
+       "two long actions at once",
+       "**While** I was reading, my sister was cooking."
       ]
      ]
     }
@@ -129,8 +134,8 @@
        "**Were** you working at six?"
       ],
       [
-       "~~While the phone rang, I was cooking.~~",
-       "**While** I was cooking, the phone rang."
+       "~~While my phone rang, I was cooking.~~",
+       "**While** I was cooking, my phone rang."
       ],
       [
        "~~I didn't sleeping.~~",
@@ -205,9 +210,9 @@
      "explanation_cz": "Zápor: **wasn't** + sleeping. Hovor přerušil spaní."
     },
     {
-     "en": "They weren't listening to me.",
-     "cz": "Neposlouchali mě.",
-     "gap": "They ____ to me. (not / listen)",
+     "en": "They weren't listening while I was talking.",
+     "cz": "Neposlouchali, když jsem mluvil.",
+     "gap": "They ____ while I was talking. (not / listen)",
      "gap_answer": "weren't listening",
      "gap_accepts": [
       "were not listening"
@@ -219,16 +224,17 @@
       "not listened"
      ],
      "accepts": [
-      "They weren't listening to me.",
-      "They were not listening to me."
+      "They weren't listening while I was talking.",
+      "They were not listening while I was talking."
      ],
-     "explanation": "**they** takes **weren't** + listening.",
-     "explanation_cz": "**they** má **weren't** + listening."
+     "explanation": "Two long actions running together, so both take **was /** were + -ing.",
+     "explanation_cz": "Dvě dlouhé akce běží zároveň, takže obě mají **was /** were + -ing.",
+     "wrong": "They didn't listening while I was talking."
     },
     {
-     "en": "While I was cooking, the phone rang.",
-     "cz": "Zatímco jsem vařil, zazvonil telefon.",
-     "gap": "____ I was cooking, the phone rang. (while / when)",
+     "en": "While I was cooking, my phone rang.",
+     "cz": "Zatímco jsem vařil, zazvonil mi telefon.",
+     "gap": "____ I was cooking, my phone rang. (while / when)",
      "gap_answer": "While",
      "quiz_options": [
       "While",
@@ -237,9 +243,9 @@
       "Until"
      ],
      "accepts": [
-      "While I was cooking, the phone rang."
+      "While I was cooking, my phone rang."
      ],
-     "wrong": "While the phone rang, I was cooking.",
+     "wrong": "While my phone rang, I was cooking.",
      "explanation": "**While** introduces the long action. The phone ringing is the short one.",
      "explanation_cz": "**While** uvádí tu dlouhou akci. Zvonění telefonu je ta krátká."
     },
@@ -279,9 +285,9 @@
      "explanation_cz": "**she** má **was**: What was she wearing."
     },
     {
-     "en": "Were you waiting long?",
-     "cz": "Čekal jsi dlouho?",
-     "gap": "____ long? (you / wait)",
+     "en": "Were you still waiting when I called?",
+     "cz": "Čekal jsi ještě, když jsem volal?",
+     "gap": "____ still waiting when I called? (you / wait)",
      "gap_answer": "Were you waiting",
      "quiz_options": [
       "Were you waiting",
@@ -290,10 +296,11 @@
       "You were waiting"
      ],
      "accepts": [
-      "Were you waiting long?"
+      "Were you still waiting when I called?"
      ],
-     "explanation": "**you** takes **were**: Were you waiting.",
-     "explanation_cz": "**you** má **were**: Were you waiting."
+     "explanation": "**you** takes **were**: Were you waiting. The call cut into the waiting.",
+     "explanation_cz": "**you** má **were**: Were you waiting. Hovor přerušil čekání.",
+     "wrong": "Was you still waiting when I called?"
     },
     {
      "en": "It wasn't raining when we left.",
@@ -351,9 +358,9 @@
      "explanation_cz": "**they** má **were**: Why were they laughing."
     },
     {
-     "en": "We weren't working when the boss came in.",
-     "cz": "Nepracovali jsme, když šéf přišel.",
-     "gap": "We ____ when the boss came in. (not / work)",
+     "en": "We weren't working when our boss came in.",
+     "cz": "Nepracovali jsme, když přišel náš šéf.",
+     "gap": "We ____ when our boss came in. (not / work)",
      "gap_answer": "weren't working",
      "gap_accepts": [
       "were not working"
@@ -365,11 +372,271 @@
       "not working"
      ],
      "accepts": [
-      "We weren't working when the boss came in.",
-      "We were not working when the boss came in."
+      "We weren't working when our boss came in.",
+      "We were not working when our boss came in."
      ],
      "explanation": "**we** takes **weren't** + working.",
-     "explanation_cz": "**we** má **weren't** + working."
+     "explanation_cz": "**we** má **weren't** + working.",
+     "wrong": "We didn't working when our boss came in."
+    },
+    {
+     "en": "Where were you going when I saw you?",
+     "cz": "Kam jsi šel, když jsem tě viděl?",
+     "gap": "Where ____ when I saw you? (you / go)",
+     "gap_answer": "were you going",
+     "quiz_options": [
+      "were you going",
+      "did you go",
+      "you were going",
+      "was you going"
+     ],
+     "accepts": [
+      "Where were you going when I saw you?"
+     ],
+     "wrong": "Where you were going when I saw you?",
+     "explanation": "After the question word the order is **were** + you + going. The subject comes second.",
+     "explanation_cz": "Po tázacím slově je pořadí **were** + you + going. Podmět je až druhý."
+    },
+    {
+     "en": "Who were you talking to when I came in?",
+     "cz": "S kým jsi mluvil, když jsem přišel?",
+     "gap": "Who ____ to when I came in? (you / talk)",
+     "gap_answer": "were you talking",
+     "quiz_options": [
+      "were you talking",
+      "did you talk",
+      "you were talking",
+      "was you talking"
+     ],
+     "accepts": [
+      "Who were you talking to when I came in?"
+     ],
+     "wrong": "Who did you talking to when I came in?",
+     "explanation": "**did** never stands with a **-ing** form. The question is **were** you talking.",
+     "explanation_cz": "**did** nikdy nestojí s tvarem na **-ing**. Otázka je **were** you talking."
+    },
+    {
+     "en": "She wasn't studying when her friends arrived.",
+     "cz": "Neučila se, když přišli její kamarádi.",
+     "gap": "She ____ when her friends arrived. (not / study)",
+     "gap_answer": "wasn't studying",
+     "gap_accepts": [
+      "was not studying"
+     ],
+     "quiz_options": [
+      "wasn't studying",
+      "didn't study",
+      "weren't studying",
+      "didn't studying"
+     ],
+     "accepts": [
+      "She wasn't studying when her friends arrived.",
+      "She was not studying when her friends arrived."
+     ],
+     "wrong": "She didn't studying when her friends arrived.",
+     "explanation": "Negative: **wasn't** + studying. **she** takes was, and **didn't** never meets a -ing form.",
+     "explanation_cz": "Zápor: **wasn't** + studying. **she** má was a **didn't** se s -ing tvarem nepotkává."
+    },
+    {
+     "en": "While we were waiting, it started to rain.",
+     "cz": "Zatímco jsme čekali, začalo pršet.",
+     "gap": "____ we were waiting, it started to rain. (while / when)",
+     "gap_answer": "While",
+     "quiz_options": [
+      "While",
+      "When",
+      "During",
+      "Until"
+     ],
+     "accepts": [
+      "While we were waiting, it started to rain."
+     ],
+     "wrong": "While it started to rain, we were waiting.",
+     "explanation": "**While** goes in front of the long action — the waiting, not the first drop of rain.",
+     "explanation_cz": "**While** stojí před dlouhou akcí — před čekáním, ne před začátkem deště."
+    },
+    {
+     "en": "Were they still working at six?",
+     "cz": "Pracovali ještě v šest?",
+     "gap": "____ still working at six? (they / work)",
+     "gap_answer": "Were they",
+     "quiz_options": [
+      "Were they",
+      "Was they",
+      "Did they",
+      "They were"
+     ],
+     "accepts": [
+      "Were they still working at six?"
+     ],
+     "wrong": "Was they still working at six?",
+     "explanation": "**they** takes **were**: Were they working. *still* says the work was in progress.",
+     "explanation_cz": "**they** má **were**: Were they working. *still* říká, že práce probíhala."
+    },
+    {
+     "en": "What were your children doing when you got home?",
+     "cz": "Co dělaly tvoje děti, když jsi přišel domů?",
+     "gap": "What ____ when you got home? (your children / do)",
+     "gap_answer": "were your children doing",
+     "quiz_options": [
+      "were your children doing",
+      "was your children doing",
+      "did your children do",
+      "your children were doing"
+     ],
+     "accepts": [
+      "What were your children doing when you got home?"
+     ],
+     "wrong": "What was your children doing when you got home?",
+     "explanation": "**children** is plural, so the question takes **were**, not was.",
+     "explanation_cz": "**children** je množné číslo, takže otázka má **were**, ne was."
+    },
+    {
+     "en": "They weren't playing football because it was raining.",
+     "cz": "Nehráli fotbal, protože pršelo.",
+     "gap": "They ____ football because it was raining. (not / play)",
+     "gap_answer": "weren't playing",
+     "gap_accepts": [
+      "were not playing"
+     ],
+     "quiz_options": [
+      "weren't playing",
+      "didn't play",
+      "wasn't playing",
+      "didn't playing"
+     ],
+     "accepts": [
+      "They weren't playing football because it was raining.",
+      "They were not playing football because it was raining."
+     ],
+     "wrong": "They didn't playing football because it was raining.",
+     "explanation": "**they** takes **weren't** + playing. The rain is the background that was going on.",
+     "explanation_cz": "**they** má **weren't** + playing. Déšť je pozadí, které zrovna probíhalo."
+    },
+    {
+     "en": "He was walking home when he met an old friend.",
+     "cz": "Šel domů, když potkal starého kamaráda.",
+     "gap": "He ____ home when he met an old friend. (walk)",
+     "gap_answer": "was walking",
+     "quiz_options": [
+      "was walking",
+      "walked",
+      "were walking",
+      "was walk"
+     ],
+     "accepts": [
+      "He was walking home when he met an old friend."
+     ],
+     "wrong": "He was walking home when he meet an old friend.",
+     "explanation": "The walk is the long action: **was walking**. Meeting the friend cuts into it, so it is past simple.",
+     "explanation_cz": "Cesta domů je dlouhá akce: **was walking**. Setkání ji přeruší, proto minulý čas prostý."
+    },
+    {
+     "en": "They were living in Brno when we visited them.",
+     "cz": "Bydleli v Brně, když jsme je navštívili.",
+     "gap": "They ____ in Brno when we visited them. (live)",
+     "gap_answer": "were living",
+     "quiz_options": [
+      "were living",
+      "was living",
+      "lived",
+      "were live"
+     ],
+     "accepts": [
+      "They were living in Brno when we visited them."
+     ],
+     "wrong": "They was living in Brno when we visited them.",
+     "explanation": "**they** takes **were** + living — the years in Brno are the background to the visit.",
+     "explanation_cz": "**they** má **were** + living — roky v Brně jsou pozadí k návštěvě."
+    },
+    {
+     "en": "While I was reading, my sister was cooking dinner.",
+     "cz": "Zatímco jsem četl, sestra vařila večeři.",
+     "gap": "While I was reading, my sister ____ dinner. (cook)",
+     "gap_answer": "was cooking",
+     "quiz_options": [
+      "was cooking",
+      "were cooking",
+      "cooked",
+      "was cook"
+     ],
+     "accepts": [
+      "While I was reading, my sister was cooking dinner."
+     ],
+     "explanation": "Two long actions running side by side: **while** + both in **was /** were + -ing.",
+     "explanation_cz": "Dvě dlouhé akce běží vedle sebe: **while** a obě ve tvaru **was /** were + -ing."
+    },
+    {
+     "en": "Was he driving to work when you called?",
+     "cz": "Jel do práce, když jsi volal?",
+     "gap": "____ to work when you called? (he / drive)",
+     "gap_answer": "Was he driving",
+     "quiz_options": [
+      "Was he driving",
+      "Did he driving",
+      "Were he driving",
+      "He was driving"
+     ],
+     "accepts": [
+      "Was he driving to work when you called?"
+     ],
+     "wrong": "Did he driving to work when you called?",
+     "explanation": "**he** takes **was**: Was he driving. **did** cannot stand with a -ing form.",
+     "explanation_cz": "**he** má **was**: Was he driving. **did** nemůže stát s -ing tvarem."
+    },
+    {
+     "en": "What were you doing when the film started?",
+     "cz": "Co jsi dělal, když ten film začal?",
+     "gap": "What ____ when the film started? (you / do)",
+     "gap_answer": "were you doing",
+     "quiz_options": [
+      "were you doing",
+      "did you doing",
+      "you were doing",
+      "was you doing"
+     ],
+     "accepts": [
+      "What were you doing when the film started?"
+     ],
+     "wrong": "What did you doing when the film started?",
+     "explanation": "**did** never meets a -ing form. The long action takes **were** you doing.",
+     "explanation_cz": "**did** se s -ing tvarem nepotkává. Dlouhá akce má **were** you doing."
+    },
+    {
+     "en": "She was working in Prague when we met her.",
+     "cz": "Pracovala v Praze, když jsme ji potkali.",
+     "gap": "She ____ in Prague when we met her. (work)",
+     "gap_answer": "was working",
+     "quiz_options": [
+      "was working",
+      "were working",
+      "worked",
+      "was work"
+     ],
+     "accepts": [
+      "She was working in Prague when we met her."
+     ],
+     "wrong": "She were working in Prague when we met her.",
+     "explanation": "**she** takes **was** + working. The job was going on when the meeting cut in.",
+     "explanation_cz": "**she** má **was** + working. Práce probíhala, když do ní vstoupilo setkání."
+    },
+    {
+     "en": "We were still eating when they arrived.",
+     "cz": "Ještě jsme jedli, když přišli.",
+     "gap": "We ____ when they arrived. (still / eat)",
+     "gap_answer": "were still eating",
+     "quiz_options": [
+      "were still eating",
+      "was still eating",
+      "still ate",
+      "were still ate"
+     ],
+     "accepts": [
+      "We were still eating when they arrived."
+     ],
+     "wrong": "We was still eating when they arrived.",
+     "explanation": "**we** takes **were**, and *still* puts the meal in progress: **were still eating**.",
+     "explanation_cz": "**we** má **were** a *still* říká, že jídlo probíhalo: **were still eating**."
     }
    ]
   }
