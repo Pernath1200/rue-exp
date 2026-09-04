@@ -31,6 +31,8 @@ Answers to the first run's queue. These are settled; do not re-ask them.
 | **A4 `the` demands** | Leave them where English forces the article on a known referent (*the film*, *the station*, *the police*, *drive on the left*). Do not strip `the`, do not accept article-free wordings no native writes. Where the Czech can carry a demonstrative naturally, adding one is the better fix. |
 | **`b1_used_to` A0** | Accept the *used to* twin on action items; the authored Quiz options are what force `would`. Do not cue the gap. |
 | **`b1_relative_clauses_2` "nothing"** | Mark those three items `type: false` — Quiz-only. The chip is the teaching point; nobody types "nothing" into a gap. **Do this on the next run that touches the unit.** |
+| **Intros on units James has played** | A `- [x][ ]` unit's intro **may** be restructured when a written rule is broken — an EXACT lint hit, or the card-count target. Merge cards that restate one row of another card's own table; cut a C17 recap. Say in the commit what moved, because he has a feel for these units and will notice. |
+| **Card count vs C11** | **C11 wins.** Every word the Quiz can ask must be named by a card, so a unit that absorbs a cluster earns more cards. The target is one *job* per card, never one word per card — `b1_degree_adverbs` at nine (low · middle · high-and-top · all-the-way · not-quite · too/enough · so/such · errors) is right, not a breach. Do not cut banked words to hit 4–6. |
 
 ## Order of work
 
@@ -104,7 +106,7 @@ a stale pool has caused real sequencing bugs both ways.
 | Grammar unit | **24–40 items** | 20 of 34 B1 grammar packs are 10–16 item stubs. Thickening them is the job, not an extra. |
 | Vocab leaf | **36 words max** | 36 is a ceiling, not a target (`B1-PLAN.md`). Cut dumps. |
 | Vocab leaf sentences | **one per lemma** | 17 of 28 leaves have 36 words and 8 sentences. |
-| Intro | 4–6 cards, one job per card | C9 no walltext · C10 a table or diagram on every card · C14 card 0 is the unit name + Czech |
+| Intro | 4–6 cards **guideline**, one job per card | C9 no walltext · C10 a table or diagram on every card · C14 card 0 is the unit name + Czech. C11 outranks the count: if the bank needs more jobs named, take more cards rather than cutting words. |
 
 ## Gate — before you finish the unit
 
