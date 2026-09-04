@@ -1,1300 +1,1718 @@
 {
-  "id": "b1_relative_clauses",
-  "title": "Relative clauses 1",
-  "level": "B1",
-  "tree_node": "b1_relative_clauses",
-  "codex_unit": "G_CL-B1B2-01",
-  "practice": "frames",
-  "note": "who/which/that + where/when/why · defining · omission page. · Bank 64 · full-pronoun expansion + that-rebalance 2026-07-27 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: intro 6 cards; Quiz chips who/which/that/what (how after the way); Type = same gap; Use = join two sentences.",
-  "default_direction": "cz_to_en",
-  "check": {
-    "sequence": [
-      "quiz"
-    ]
-  },
-  "quality": "good_draft",
-  "blocks": [
+ "id": "b1_relative_clauses",
+ "title": "Relative clauses 1",
+ "level": "B1",
+ "tree_node": "b1_relative_clauses",
+ "codex_unit": "G_CL-B1B2-01",
+ "practice": "frames",
+ "note": "who/which/that + where/when/why · defining · omission page. · Bank 64 · full-pronoun expansion + that-rebalance 2026-07-27 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: intro 6 cards; Quiz chips who/which/that/what (how after the way); Type = same gap; Use = join two sentences. · 2026-09-04 B1 loop: B3 all 66 gap items had no authored chips — each now offers the answer plus three relatives that are wrong for THIS head, never a form its own gap_accepts also accepts (that and which are both right on a thing head, so neither can be a distractor there); *what* is on the chips because it is the Czech co error the mistakes card already names. D1 four explanations covered all 66; each now says whether the head is a person, a thing, a place, a time or a reason, and which relative that rules out. A8 thirteen twins closed. C4 three bolded fragments now bold the taught word only (C13). C23 'in this pack' off the place/time/reason card.",
+ "default_direction": "cz_to_en",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "quality": "good_draft",
+ "blocks": [
+  {
+   "id": "b1_relative_clauses_main",
+   "title": "Relative clauses · B1",
+   "items": [
     {
-      "id": "b1_relative_clauses_main",
-      "title": "Relative clauses · B1",
-      "items": [
-        {
-          "en": "The man who called is my boss.",
-          "cz": "Muž, který volal, je můj šéf.",
-          "gap": "The man ____ called is my boss.",
-          "gap_answer": "who",
-          "accepts": [
-            "The man who called is my boss.",
-            "The man that called is my boss."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "The man called. He is my boss."
-        },
-        {
-          "en": "The book that I bought is useful.",
-          "cz": "Kniha, kterou jsem koupil, je užitečná.",
-          "gap": "The book ____ I bought is useful.",
-          "gap_answer": "which",
-          "accepts": [
-            "The book that I bought is useful.",
-            "The book which I bought is useful."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The book is useful. I bought it."
-        },
-        {
-          "en": "This is the flat which we rented.",
-          "cz": "Tohle je byt, který jsme si pronajali.",
-          "gap": "This is the flat ____ we rented.",
-          "gap_answer": "which",
-          "accepts": [
-            "This is the flat which we rented.",
-            "This is the flat that we rented."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "This is the flat. We rented it."
-        },
-        {
-          "en": "People who work nights need rest.",
-          "cz": "Lidé, kteří pracují v noci, potřebují odpočinek.",
-          "gap": "People ____ work nights need rest.",
-          "gap_answer": "who",
-          "accepts": [
-            "People who work nights need rest.",
-            "People that work nights need rest."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "People work nights. They need rest."
-        },
-        {
-          "en": "The film that we saw was long.",
-          "cz": "Film, který jsme viděli, byl dlouhý.",
-          "gap": "The film ____ we saw was long.",
-          "gap_answer": "which",
-          "accepts": [
-            "The film that we saw was long.",
-            "The film which we saw was long."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The film was long. We saw it."
-        },
-        {
-          "en": "She is the teacher who helped me.",
-          "cz": "Je to učitelka, která mi pomohla.",
-          "gap": "She is the teacher ____ helped me.",
-          "gap_answer": "who",
-          "accepts": [
-            "She is the teacher who helped me.",
-            "She is the teacher that helped me."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "She is the teacher. She helped me."
-        },
-        {
-          "en": "I know a café that opens early.",
-          "cz": "Znám kavárnu, která otevírá brzy.",
-          "gap": "I know a café ____ opens early.",
-          "gap_answer": "that",
-          "accepts": [
-            "I know a café that opens early.",
-            "I know a café which opens early."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "I know a café. It opens early."
-        },
-        {
-          "en": "The keys that are on the table are mine.",
-          "cz": "Klíče na stole jsou moje.",
-          "gap": "The keys ____ are on the table are mine.",
-          "gap_answer": "which",
-          "accepts": [
-            "The keys that are on the table are mine.",
-            "The keys which are on the table are mine."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The keys are on the table. They are mine."
-        },
-        {
-          "en": "Anyone who arrives late waits outside.",
-          "cz": "Kdokoli, kdo přijde pozdě, čeká venku.",
-          "gap": "Anyone ____ arrives late waits outside.",
-          "gap_answer": "who",
-          "accepts": [
-            "Anyone who arrives late waits outside.",
-            "Anyone that arrives late waits outside."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "Anyone arrives late. They wait outside."
-        },
-        {
-          "en": "The email which he sent was short.",
-          "cz": "Email, který poslal, byl krátký.",
-          "gap": "The email ____ he sent was short.",
-          "gap_answer": "which",
-          "accepts": [
-            "The email which he sent was short.",
-            "The email that he sent was short."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The email was short. He sent it."
-        },
-        {
-          "en": "This is the friend who I told you about.",
-          "cz": "Tohle je kamarád, o kterém jsem ti říkal.",
-          "gap": "This is the friend ____ I told you about.",
-          "gap_answer": "who",
-          "accepts": [
-            "This is the friend who I told you about.",
-            "This is the friend that I told you about.",
-            "This is the friend whom I told you about."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "This is the friend. I told you about him."
-        },
-        {
-          "en": "The bus that goes to Brno leaves at nine.",
-          "cz": "Autobus do Brna odjíždí v devět.",
-          "gap": "The bus ____ goes to Brno leaves at nine.",
-          "gap_answer": "which",
-          "accepts": [
-            "The bus that goes to Brno leaves at nine.",
-            "The bus which goes to Brno leaves at nine."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The bus goes to Brno. It leaves at nine."
-        },
-        {
-          "en": "The woman who works here is from Ostrava.",
-          "cz": "Žena, která tady pracuje, je z Ostravy.",
-          "gap": "The woman ____ works here is from Ostrava.",
-          "gap_answer": "who",
-          "accepts": [
-            "The woman who works here is from Ostrava.",
-            "The woman that works here is from Ostrava."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "The woman works here. She is from Ostrava."
-        },
-        {
-          "en": "I need a bag that is big enough.",
-          "cz": "Potřebuju tašku, která je dost velká.",
-          "gap": "I need a bag ____ is big enough.",
-          "gap_answer": "that",
-          "accepts": [
-            "I need a bag that is big enough.",
-            "I need a bag which is big enough."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "I need a bag. It is big enough."
-        },
-        {
-          "en": "The people who we met were kind.",
-          "cz": "Lidé, které jsme potkali, byli milí.",
-          "gap": "The people ____ we met were kind.",
-          "gap_answer": "who",
-          "accepts": [
-            "The people who we met were kind.",
-            "The people that we met were kind.",
-            "The people whom we met were kind."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "The people were kind. We met them."
-        },
-        {
-          "en": "Here is the file which you asked for.",
-          "cz": "Tady je soubor, o který jsi žádal.",
-          "gap": "Here is the file ____ you asked for.",
-          "gap_answer": "which",
-          "accepts": [
-            "Here is the file which you asked for.",
-            "Here is the file that you asked for."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "Here is the file. You asked for it."
-        },
-        {
-          "en": "Students who practise every day improve.",
-          "cz": "Studenti, kteří cvičí každý den, se zlepšují.",
-          "gap": "Students ____ practise every day improve.",
-          "gap_answer": "who",
-          "accepts": [
-            "Students who practise every day improve.",
-            "Students that practise every day improve."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "Students practise every day. They improve."
-        },
-        {
-          "en": "The shop that sells tools is closed.",
-          "cz": "Obchod s nářadím je zavřený.",
-          "gap": "The shop ____ sells tools is closed.",
-          "gap_answer": "which",
-          "accepts": [
-            "The shop that sells tools is closed.",
-            "The shop which sells tools is closed."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The shop sells tools. It is closed."
-        },
-        {
-          "en": "He is someone who never gives up.",
-          "cz": "Je to někdo, kdo se nikdy nevzdává.",
-          "gap": "He is someone ____ never gives up.",
-          "gap_answer": "who",
-          "accepts": [
-            "He is someone who never gives up.",
-            "He is someone that never gives up."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "He is someone. He never gives up."
-        },
-        {
-          "en": "The phone which I lost was new.",
-          "cz": "Telefon, který jsem ztratil, byl nový.",
-          "gap": "The phone ____ I lost was new.",
-          "gap_answer": "which",
-          "accepts": [
-            "The phone which I lost was new.",
-            "The phone that I lost was new."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The phone was new. I lost it."
-        },
-        {
-          "en": "The city that I love is Prague.",
-          "cz": "Město, které miluju, je Praha.",
-          "gap": "The city ____ I love is Prague.",
-          "gap_answer": "which",
-          "accepts": [
-            "The city that I love is Prague.",
-            "The city which I love is Prague."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The city is Prague. I love it."
-        },
-        {
-          "en": "She has a brother who lives in Berlin.",
-          "cz": "Má bratra, který bydlí v Berlíně.",
-          "gap": "She has a brother ____ lives in Berlin.",
-          "gap_answer": "who",
-          "accepts": [
-            "She has a brother who lives in Berlin.",
-            "She has a brother that lives in Berlin."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "She has a brother. He lives in Berlin."
-        },
-        {
-          "en": "This is the reason that I called.",
-          "cz": "Tohle je důvod, proč jsem volal.",
-          "gap": "This is the reason ____ I called.",
-          "gap_answer": "that",
-          "accepts": [
-            "This is the reason that I called.",
-            "This is the reason why I called."
-          ],
-          "gap_accepts": [
-            "that",
-            "why"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "This is the reason. I called."
-        },
-        {
-          "en": "The team which won was from Brno.",
-          "cz": "Tým, který vyhrál, byl z Brna.",
-          "gap": "The team ____ won was from Brno.",
-          "gap_answer": "which",
-          "accepts": [
-            "The team which won was from Brno.",
-            "The team that won was from Brno."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The team won. It was from Brno."
-        },
-        {
-          "en": "I like films that make me think.",
-          "cz": "Mám rád filmy, které mě nutí přemýšlet.",
-          "gap": "I like films ____ make me think.",
-          "gap_answer": "that",
-          "accepts": [
-            "I like films that make me think.",
-            "I like films which make me think."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "I like films. They make me think."
-        },
-        {
-          "en": "The doctor who treated me was great.",
-          "cz": "Doktor, který mě léčil, byl skvělý.",
-          "gap": "The doctor ____ treated me was great.",
-          "gap_answer": "who",
-          "accepts": [
-            "The doctor who treated me was great.",
-            "The doctor that treated me was great."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "The doctor treated me. He was great."
-        },
-        {
-          "en": "This is the train which stops in Pardubice.",
-          "cz": "Tohle je vlak, který staví v Pardubicích.",
-          "gap": "This is the train ____ stops in Pardubice.",
-          "gap_answer": "which",
-          "accepts": [
-            "This is the train which stops in Pardubice.",
-            "This is the train that stops in Pardubice."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "This is the train. It stops in Pardubice."
-        },
-        {
-          "en": "The laptop which she uses is old.",
-          "cz": "Notebook, který používá, je starý.",
-          "gap": "The laptop ____ she uses is old.",
-          "gap_answer": "which",
-          "accepts": [
-            "The laptop which she uses is old.",
-            "The laptop that she uses is old."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The laptop is old. She uses it."
-        },
-        {
-          "en": "People that work from home need good Wi‑Fi.",
-          "cz": "Lidé, kteří pracují z domova, potřebují dobré wi‑fi.",
-          "gap": "People ____ work from home need good Wi‑Fi.",
-          "gap_answer": "who",
-          "accepts": [
-            "People that work from home need good Wi‑Fi.",
-            "People who work from home need good Wi‑Fi."
-          ],
-          "gap_accepts": [
-            "that",
-            "who"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "People work from home. They need good Wi-Fi."
-        },
-        {
-          "en": "The song that you like is on now.",
-          "cz": "Píseň, kterou máš rád, právě hraje.",
-          "gap": "The song ____ you like is on now.",
-          "gap_answer": "that",
-          "accepts": [
-            "The song that you like is on now.",
-            "The song which you like is on now."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "The song is on now. You like it."
-        },
-        {
-          "en": "He is the engineer who designed the bridge.",
-          "cz": "Je to inženýr, který navrhl most.",
-          "gap": "He is the engineer ____ designed the bridge.",
-          "gap_answer": "who",
-          "accepts": [
-            "He is the engineer who designed the bridge.",
-            "He is the engineer that designed the bridge."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "He is the engineer. He designed the bridge."
-        },
-        {
-          "en": "I want a job that is interesting.",
-          "cz": "Chci práci, která je zajímavá.",
-          "gap": "I want a job ____ is interesting.",
-          "gap_answer": "which",
-          "accepts": [
-            "I want a job that is interesting.",
-            "I want a job which is interesting."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "I want a job. It is interesting."
-        },
-        {
-          "en": "The restaurant which we chose was full.",
-          "cz": "Restaurace, kterou jsme vybrali, byla plná.",
-          "gap": "The restaurant ____ we chose was full.",
-          "gap_answer": "which",
-          "accepts": [
-            "The restaurant which we chose was full.",
-            "The restaurant that we chose was full."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The restaurant was full. We chose it."
-        },
-        {
-          "en": "Anyone that needs help can ask.",
-          "cz": "Kdokoli, kdo potřebuje pomoc, se může zeptat.",
-          "gap": "Anyone ____ needs help can ask.",
-          "gap_answer": "who",
-          "accepts": [
-            "Anyone that needs help can ask.",
-            "Anyone who needs help can ask."
-          ],
-          "gap_accepts": [
-            "that",
-            "who"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "Anyone needs help. They can ask."
-        },
-        {
-          "en": "The bridge that was built in 2010 is still safe.",
-          "cz": "Most z roku 2010 je pořád bezpečný.",
-          "gap": "The bridge ____ was built in 2010 is still safe.",
-          "gap_answer": "that",
-          "accepts": [
-            "The bridge that was built in 2010 is still safe.",
-            "The bridge which was built in 2010 is still safe."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "The bridge was built in 2010. It is still safe."
-        },
-        {
-          "en": "She is a writer who lives nearby.",
-          "cz": "Je spisovatelka, která bydlí blízko.",
-          "gap": "She is a writer ____ lives nearby.",
-          "gap_answer": "who",
-          "accepts": [
-            "She is a writer who lives nearby.",
-            "She is a writer that lives nearby."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "She is a writer. She lives nearby."
-        },
-        {
-          "en": "The problem that we discussed is hard.",
-          "cz": "Problém, o kterém jsme mluvili, je těžký.",
-          "gap": "The problem ____ we discussed is hard.",
-          "gap_answer": "which",
-          "accepts": [
-            "The problem that we discussed is hard.",
-            "The problem which we discussed is hard."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The problem is hard. We discussed it."
-        },
-        {
-          "en": "I met a man who speaks five languages.",
-          "cz": "Potkal jsem muže, který mluví pěti jazyky.",
-          "gap": "I met a man ____ speaks five languages.",
-          "gap_answer": "who",
-          "accepts": [
-            "I met a man who speaks five languages.",
-            "I met a man that speaks five languages."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "I met a man. He speaks five languages."
-        },
-        {
-          "en": "The rules which apply here are clear.",
-          "cz": "Pravidla, která tady platí, jsou jasná.",
-          "gap": "The rules ____ apply here are clear.",
-          "gap_answer": "which",
-          "accepts": [
-            "The rules which apply here are clear.",
-            "The rules that apply here are clear."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The rules apply here. They are clear."
-        },
-        {
-          "en": "This is the only ticket that is left.",
-          "cz": "Tohle je jediný lístek, který zbývá.",
-          "gap": "This is the only ticket ____ is left.",
-          "gap_answer": "which",
-          "accepts": [
-            "This is the only ticket that is left.",
-            "This is the only ticket which is left."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "This is the only ticket. It is left."
-        },
-        {
-          "en": "The kids who played outside are hungry.",
-          "cz": "Děti, které si hrály venku, mají hlad.",
-          "gap": "The kids ____ played outside are hungry.",
-          "gap_answer": "who",
-          "accepts": [
-            "The kids who played outside are hungry.",
-            "The kids that played outside are hungry."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "The kids played outside. They are hungry."
-        },
-        {
-          "en": "I need shoes that fit well.",
-          "cz": "Potřebuju boty, které dobře sedí.",
-          "gap": "I need shoes ____ fit well.",
-          "gap_answer": "that",
-          "accepts": [
-            "I need shoes that fit well.",
-            "I need shoes which fit well."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "I need shoes. They fit well."
-        },
-        {
-          "en": "The company which hired him is German.",
-          "cz": "Firma, která ho přijala, je německá.",
-          "gap": "The company ____ hired him is German.",
-          "gap_answer": "which",
-          "accepts": [
-            "The company which hired him is German.",
-            "The company that hired him is German."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The company hired him. It is German."
-        },
-        {
-          "en": "He told a story that made us laugh.",
-          "cz": "Vyprávěl příběh, ze kterého jsme se smáli.",
-          "gap": "He told a story ____ made us laugh.",
-          "gap_answer": "which",
-          "accepts": [
-            "He told a story that made us laugh.",
-            "He told a story which made us laugh."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "He told a story. It made us laugh."
-        },
-        {
-          "en": "The path that leads to the river is muddy.",
-          "cz": "Cesta k řece je blátivá.",
-          "gap": "The path ____ leads to the river is muddy.",
-          "gap_answer": "which",
-          "accepts": [
-            "The path that leads to the river is muddy.",
-            "The path which leads to the river is muddy."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The path leads to the river. It is muddy."
-        },
-        {
-          "en": "She has friends who live in Spain.",
-          "cz": "Má přátele, kteří bydlí ve Španělsku.",
-          "gap": "She has friends ____ live in Spain.",
-          "gap_answer": "who",
-          "accepts": [
-            "She has friends who live in Spain.",
-            "She has friends that live in Spain."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "She has friends. They live in Spain."
-        },
-        {
-          "en": "The answer which she gave was correct.",
-          "cz": "Odpověď, kterou dala, byla správná.",
-          "gap": "The answer ____ she gave was correct.",
-          "gap_answer": "which",
-          "accepts": [
-            "The answer which she gave was correct.",
-            "The answer that she gave was correct."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "The answer was correct. She gave it."
-        },
-        {
-          "en": "He is the person who called yesterday.",
-          "cz": "To je ten, kdo včera volal.",
-          "gap": "He is the person ____ called yesterday.",
-          "gap_answer": "who",
-          "accepts": [
-            "He is the person who called yesterday.",
-            "He is the person that called yesterday."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "He is the person. He called yesterday."
-        },
-        {
-          "en": "I need someone who can drive.",
-          "cz": "Potřebuju někoho, kdo umí řídit.",
-          "gap": "I need someone ____ can drive.",
-          "gap_answer": "who",
-          "accepts": [
-            "I need someone who can drive.",
-            "I need someone that can drive."
-          ],
-          "gap_accepts": [
-            "who",
-            "that"
-          ],
-          "explanation": "who (or that) = people",
-          "explanation_cz": "who (nebo that) = osoby",
-          "join": "I need someone. They can drive."
-        },
-        {
-          "en": "This is the app which saves me time.",
-          "cz": "Tohle je aplikace, která mi šetří čas.",
-          "gap": "This is the app ____ saves me time.",
-          "gap_answer": "which",
-          "accepts": [
-            "This is the app which saves me time.",
-            "This is the app that saves me time."
-          ],
-          "gap_accepts": [
-            "which",
-            "that"
-          ],
-          "explanation": "which (or that) = things",
-          "explanation_cz": "which (nebo that) = věci",
-          "join": "This is the app. It saves me time."
-        },
-        {
-          "en": "She is looking for a flat that has a balcony.",
-          "cz": "Hledá byt, který má balkon.",
-          "gap": "She is looking for a flat ____ has a balcony.",
-          "gap_answer": "that",
-          "accepts": [
-            "She is looking for a flat that has a balcony.",
-            "She is looking for a flat which has a balcony."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "explanation": "that = people or things",
-          "explanation_cz": "that = osoby i věci",
-          "join": "She is looking for a flat. It has a balcony."
-        },
-        {
-          "en": "The town where I grew up is small.",
-          "cz": "Město, kde jsem vyrostl, je malé.",
-          "gap": "The town ____ I grew up is small.",
-          "gap_answer": "where",
-          "gap_accepts": [
-            "where"
-          ],
-          "accepts": [
-            "The town where I grew up is small."
-          ],
-          "explanation": "where = place. Not that.",
-          "explanation_cz": "where = místo. Ne that.",
-          "join": "The town is small. I grew up there."
-        },
-        {
-          "en": "This is the café where we first met.",
-          "cz": "Tohle je kavárna, kde jsme se poprvé potkali.",
-          "gap": "This is the café ____ we first met.",
-          "gap_answer": "where",
-          "gap_accepts": [
-            "where"
-          ],
-          "accepts": [
-            "This is the café where we first met."
-          ],
-          "explanation": "where = place. Not that.",
-          "explanation_cz": "where = místo. Ne that.",
-          "join": "This is the café. We first met there."
-        },
-        {
-          "en": "The office where she works is in the centre.",
-          "cz": "Kancelář, kde pracuje, je v centru.",
-          "gap": "The office ____ she works is in the centre.",
-          "gap_answer": "where",
-          "gap_accepts": [
-            "where"
-          ],
-          "accepts": [
-            "The office where she works is in the centre."
-          ],
-          "explanation": "where = place. Not that.",
-          "explanation_cz": "where = místo. Ne that.",
-          "join": "The office is in the centre. She works there."
-        },
-        {
-          "en": "I visited the village where my grandmother was born.",
-          "cz": "Navštívil jsem vesnici, kde se narodila moje babička.",
-          "gap": "I visited the village ____ my grandmother was born.",
-          "gap_answer": "where",
-          "gap_accepts": [
-            "where"
-          ],
-          "accepts": [
-            "I visited the village where my grandmother was born."
-          ],
-          "explanation": "where = place. Not that.",
-          "explanation_cz": "where = místo. Ne that.",
-          "join": "I visited the village. My grandmother was born there."
-        },
-        {
-          "en": "That is the hotel where we stayed.",
-          "cz": "To je hotel, kde jsme bydleli.",
-          "gap": "That is the hotel ____ we stayed.",
-          "gap_answer": "where",
-          "gap_accepts": [
-            "where"
-          ],
-          "accepts": [
-            "That is the hotel where we stayed."
-          ],
-          "explanation": "where = place. Not that.",
-          "explanation_cz": "where = místo. Ne that.",
-          "join": "That is the hotel. We stayed there."
-        },
-        {
-          "en": "The shop where I buy bread is closed today.",
-          "cz": "Obchod, kde kupuju chleba, je dnes zavřený.",
-          "gap": "The shop ____ I buy bread is closed today.",
-          "gap_answer": "where",
-          "gap_accepts": [
-            "where"
-          ],
-          "accepts": [
-            "The shop where I buy bread is closed today."
-          ],
-          "explanation": "where = place. Not that.",
-          "explanation_cz": "where = místo. Ne that.",
-          "join": "The shop is closed today. I buy bread there."
-        },
-        {
-          "en": "I remember the day when we met.",
-          "cz": "Pamatuju si den, kdy jsme se potkali.",
-          "gap": "I remember the day ____ we met.",
-          "gap_answer": "when",
-          "gap_accepts": [
-            "when",
-            "that"
-          ],
-          "accepts": [
-            "I remember the day when we met.",
-            "I remember the day that we met."
-          ],
-          "explanation": "when = time (or that)",
-          "explanation_cz": "when = čas (nebo that)",
-          "join": "I remember the day. We met then."
-        },
-        {
-          "en": "Summer is the time when I feel best.",
-          "cz": "Léto je období, kdy se cítím nejlíp.",
-          "gap": "Summer is the time ____ I feel best.",
-          "gap_answer": "when",
-          "gap_accepts": [
-            "when",
-            "that"
-          ],
-          "accepts": [
-            "Summer is the time when I feel best.",
-            "Summer is the time that I feel best."
-          ],
-          "explanation": "when = time (or that)",
-          "explanation_cz": "when = čas (nebo that)",
-          "join": "Summer is the time. I feel best then."
-        },
-        {
-          "en": "2019 was the year when everything changed.",
-          "cz": "Rok 2019 byl rok, kdy se všechno změnilo.",
-          "gap": "2019 was the year ____ everything changed.",
-          "gap_answer": "when",
-          "gap_accepts": [
-            "when",
-            "that"
-          ],
-          "accepts": [
-            "2019 was the year when everything changed.",
-            "2019 was the year that everything changed."
-          ],
-          "explanation": "when = time (or that)",
-          "explanation_cz": "when = čas (nebo that)",
-          "join": "2019 was the year. Everything changed then."
-        },
-        {
-          "en": "Friday is the day when we have meetings.",
-          "cz": "Pátek je den, kdy máme porady.",
-          "gap": "Friday is the day ____ we have meetings.",
-          "gap_answer": "when",
-          "gap_accepts": [
-            "when",
-            "that"
-          ],
-          "accepts": [
-            "Friday is the day when we have meetings.",
-            "Friday is the day that we have meetings."
-          ],
-          "explanation": "when = time (or that)",
-          "explanation_cz": "when = čas (nebo that)",
-          "join": "Friday is the day. We have meetings then."
-        },
-        {
-          "en": "I don't know the reason why she left.",
-          "cz": "Neznám důvod, proč odešla.",
-          "gap": "I don't know the reason ____ she left.",
-          "gap_answer": "why",
-          "gap_accepts": [
-            "why",
-            "that"
-          ],
-          "accepts": [
-            "I don't know the reason why she left.",
-            "I don't know the reason that she left."
-          ],
-          "explanation": "why = reason (or that)",
-          "explanation_cz": "why = důvod (nebo that)",
-          "join": "I don't know the reason. She left."
-        },
-        {
-          "en": "There is no reason why we should wait.",
-          "cz": "Není důvod, proč bychom měli čekat.",
-          "gap": "There is no reason ____ we should wait.",
-          "gap_answer": "why",
-          "gap_accepts": [
-            "why",
-            "that"
-          ],
-          "accepts": [
-            "There is no reason why we should wait.",
-            "There is no reason that we should wait."
-          ],
-          "explanation": "why = reason (or that)",
-          "explanation_cz": "why = důvod (nebo that)",
-          "join": "There is no reason. We should wait."
-        },
-        {
-          "en": "The reason why he failed is simple.",
-          "cz": "Důvod, proč neuspěl, je prostý.",
-          "gap": "The reason ____ he failed is simple.",
-          "gap_answer": "why",
-          "gap_accepts": [
-            "why",
-            "that"
-          ],
-          "accepts": [
-            "The reason why he failed is simple.",
-            "The reason that he failed is simple."
-          ],
-          "explanation": "why = reason (or that)",
-          "explanation_cz": "why = důvod (nebo that)",
-          "join": "The reason is simple. He failed."
-        },
-        {
-          "en": "This is the way that I did it.",
-          "cz": "Takhle jsem to udělal.",
-          "gap": "This is the way ____ I did it.",
-          "gap_answer": "that",
-          "accepts": [
-            "This is the way that I did it.",
-            "This is the way which I did it.",
-            "This is the way I did it."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "join": "This is the way. I did it.",
-          "explanation": "After the way, use that or nothing — not how.",
-          "explanation_cz": "Po the way: that, nebo nic — ne how."
-        },
-        {
-          "en": "I like the way she works.",
-          "cz": "Líbí se mi, jak pracuje.",
-          "gap": "I like the way ____ she works.",
-          "gap_answer": "that",
-          "accepts": [
-            "I like the way she works.",
-            "I like the way that she works.",
-            "I like the way which she works."
-          ],
-          "gap_accepts": [
-            "that",
-            "which"
-          ],
-          "join": "I like the way. She works.",
-          "explanation": "After the way, use that or nothing — not how.",
-          "explanation_cz": "Po the way: that, nebo nic — ne how."
-        }
-      ]
+     "en": "The man who called is my boss.",
+     "cz": "Muž, který volal, je můj šéf.",
+     "gap": "The man ____ called is my boss.",
+     "gap_answer": "who",
+     "accepts": [
+      "The man who called is my boss.",
+      "The man that called is my boss."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. The man who called is my boss.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. The man who called is my boss.",
+     "join": "The man called. He is my boss.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The book that I bought is useful.",
+     "cz": "Kniha, kterou jsem koupil, je užitečná.",
+     "gap": "The book ____ I bought is useful.",
+     "gap_answer": "which",
+     "accepts": [
+      "The book that I bought is useful.",
+      "The book which I bought is useful."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The book that I bought is useful.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The book that I bought is useful.",
+     "join": "The book is useful. I bought it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "This is the flat which we rented.",
+     "cz": "Tohle je byt, který jsme si pronajali.",
+     "gap": "This is the flat ____ we rented.",
+     "gap_answer": "which",
+     "accepts": [
+      "This is the flat which we rented.",
+      "This is the flat that we rented."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. This is the flat which we rented.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. This is the flat which we rented.",
+     "join": "This is the flat. We rented it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "People who work nights need rest.",
+     "cz": "Lidé, kteří pracují v noci, potřebují odpočinek.",
+     "gap": "People ____ work nights need rest.",
+     "gap_answer": "who",
+     "accepts": [
+      "People who work nights need rest.",
+      "People that work nights need rest."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. People who work nights need rest.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. People who work nights need rest.",
+     "join": "People work nights. They need rest.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The film that we saw was long.",
+     "cz": "Film, který jsme viděli, byl dlouhý.",
+     "gap": "The film ____ we saw was long.",
+     "gap_answer": "which",
+     "accepts": [
+      "The film that we saw was long.",
+      "The film which we saw was long."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The film that we saw was long.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The film that we saw was long.",
+     "join": "The film was long. We saw it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "She is the teacher who helped me.",
+     "cz": "Je to učitelka, která mi pomohla.",
+     "gap": "She is the teacher ____ helped me.",
+     "gap_answer": "who",
+     "accepts": [
+      "She is the teacher who helped me.",
+      "She is the teacher that helped me.",
+      "She's the teacher who helped me.",
+      "She's the teacher that helped me."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. She is the teacher who helped me.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. She is the teacher who helped me.",
+     "join": "She is the teacher. She helped me.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I know a café that opens early.",
+     "cz": "Znám kavárnu, která otevírá brzy.",
+     "gap": "I know a café ____ opens early.",
+     "gap_answer": "that",
+     "accepts": [
+      "I know a café that opens early.",
+      "I know a café which opens early."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. I know a café that opens early.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. I know a café that opens early.",
+     "join": "I know a café. It opens early.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The keys that are on the table are mine.",
+     "cz": "Klíče na stole jsou moje.",
+     "gap": "The keys ____ are on the table are mine.",
+     "gap_answer": "which",
+     "accepts": [
+      "The keys that are on the table are mine.",
+      "The keys which are on the table are mine."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The keys that are on the table are mine.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The keys that are on the table are mine.",
+     "join": "The keys are on the table. They are mine.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "Anyone who arrives late waits outside.",
+     "cz": "Kdokoli, kdo přijde pozdě, čeká venku.",
+     "gap": "Anyone ____ arrives late waits outside.",
+     "gap_answer": "who",
+     "accepts": [
+      "Anyone who arrives late waits outside.",
+      "Anyone that arrives late waits outside."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. Anyone who arrives late waits outside.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. Anyone who arrives late waits outside.",
+     "join": "Anyone arrives late. They wait outside.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The email which he sent was short.",
+     "cz": "Email, který poslal, byl krátký.",
+     "gap": "The email ____ he sent was short.",
+     "gap_answer": "which",
+     "accepts": [
+      "The email which he sent was short.",
+      "The email that he sent was short."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The email which he sent was short.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The email which he sent was short.",
+     "join": "The email was short. He sent it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "This is the friend who I told you about.",
+     "cz": "Tohle je kamarád, o kterém jsem ti říkal.",
+     "gap": "This is the friend ____ I told you about.",
+     "gap_answer": "who",
+     "accepts": [
+      "This is the friend who I told you about.",
+      "This is the friend that I told you about.",
+      "This is the friend whom I told you about."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. This is the friend who I told you about.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. This is the friend who I told you about.",
+     "join": "This is the friend. I told you about him.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The bus that goes to Brno leaves at nine.",
+     "cz": "Autobus do Brna odjíždí v devět.",
+     "gap": "The bus ____ goes to Brno leaves at nine.",
+     "gap_answer": "which",
+     "accepts": [
+      "The bus that goes to Brno leaves at nine.",
+      "The bus which goes to Brno leaves at nine."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The bus that goes to Brno leaves at nine.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The bus that goes to Brno leaves at nine.",
+     "join": "The bus goes to Brno. It leaves at nine.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The woman who works here is from Ostrava.",
+     "cz": "Žena, která tady pracuje, je z Ostravy.",
+     "gap": "The woman ____ works here is from Ostrava.",
+     "gap_answer": "who",
+     "accepts": [
+      "The woman who works here is from Ostrava.",
+      "The woman that works here is from Ostrava."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. The woman who works here is from Ostrava.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. The woman who works here is from Ostrava.",
+     "join": "The woman works here. She is from Ostrava.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I need a bag that is big enough.",
+     "cz": "Potřebuju tašku, která je dost velká.",
+     "gap": "I need a bag ____ is big enough.",
+     "gap_answer": "that",
+     "accepts": [
+      "I need a bag that is big enough.",
+      "I need a bag which is big enough.",
+      "I need a bag that's big enough."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. I need a bag that is big enough.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. I need a bag that is big enough.",
+     "join": "I need a bag. It is big enough.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The people who we met were kind.",
+     "cz": "Lidé, které jsme potkali, byli milí.",
+     "gap": "The people ____ we met were kind.",
+     "gap_answer": "who",
+     "accepts": [
+      "The people who we met were kind.",
+      "The people that we met were kind.",
+      "The people whom we met were kind."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. The people who we met were kind.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. The people who we met were kind.",
+     "join": "The people were kind. We met them.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "Here is the file which you asked for.",
+     "cz": "Tady je soubor, o který jsi žádal.",
+     "gap": "Here is the file ____ you asked for.",
+     "gap_answer": "which",
+     "accepts": [
+      "Here is the file which you asked for.",
+      "Here is the file that you asked for."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. Here is the file which you asked for.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. Here is the file which you asked for.",
+     "join": "Here is the file. You asked for it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "Students who practise every day improve.",
+     "cz": "Studenti, kteří cvičí každý den, se zlepšují.",
+     "gap": "Students ____ practise every day improve.",
+     "gap_answer": "who",
+     "accepts": [
+      "Students who practise every day improve.",
+      "Students that practise every day improve."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. Students who practise every day improve.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. Students who practise every day improve.",
+     "join": "Students practise every day. They improve.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The shop that sells tools is closed.",
+     "cz": "Obchod s nářadím je zavřený.",
+     "gap": "The shop ____ sells tools is closed.",
+     "gap_answer": "which",
+     "accepts": [
+      "The shop that sells tools is closed.",
+      "The shop which sells tools is closed."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The shop that sells tools is closed.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The shop that sells tools is closed.",
+     "join": "The shop sells tools. It is closed.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "He is someone who never gives up.",
+     "cz": "Je to někdo, kdo se nikdy nevzdává.",
+     "gap": "He is someone ____ never gives up.",
+     "gap_answer": "who",
+     "accepts": [
+      "He is someone who never gives up.",
+      "He is someone that never gives up.",
+      "He's someone who never gives up.",
+      "He's someone that never gives up."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. He is someone who never gives up.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. He is someone who never gives up.",
+     "join": "He is someone. He never gives up.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The phone which I lost was new.",
+     "cz": "Telefon, který jsem ztratil, byl nový.",
+     "gap": "The phone ____ I lost was new.",
+     "gap_answer": "which",
+     "accepts": [
+      "The phone which I lost was new.",
+      "The phone that I lost was new."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The phone which I lost was new.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The phone which I lost was new.",
+     "join": "The phone was new. I lost it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The city that I love is Prague.",
+     "cz": "Město, které miluju, je Praha.",
+     "gap": "The city ____ I love is Prague.",
+     "gap_answer": "which",
+     "accepts": [
+      "The city that I love is Prague.",
+      "The city which I love is Prague."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The city that I love is Prague.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The city that I love is Prague.",
+     "join": "The city is Prague. I love it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "She has a brother who lives in Berlin.",
+     "cz": "Má bratra, který bydlí v Berlíně.",
+     "gap": "She has a brother ____ lives in Berlin.",
+     "gap_answer": "who",
+     "accepts": [
+      "She has a brother who lives in Berlin.",
+      "She has a brother that lives in Berlin."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. She has a brother who lives in Berlin.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. She has a brother who lives in Berlin.",
+     "join": "She has a brother. He lives in Berlin.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "This is the reason that I called.",
+     "cz": "Tohle je důvod, proč jsem volal.",
+     "gap": "This is the reason ____ I called.",
+     "gap_answer": "that",
+     "accepts": [
+      "This is the reason that I called.",
+      "This is the reason why I called."
+     ],
+     "gap_accepts": [
+      "that",
+      "why"
+     ],
+     "explanation": "**why** follows *reason*. *that* also works here; *where* and *when* do not. This is the reason that I called.",
+     "explanation_cz": "**why** jde po slově *reason*. *that* tu funguje taky; *where* a *when* ne. This is the reason that I called.",
+     "join": "This is the reason. I called.",
+     "quiz_options": [
+      "that",
+      "where",
+      "when",
+      "who"
+     ]
+    },
+    {
+     "en": "The team which won was from Brno.",
+     "cz": "Tým, který vyhrál, byl z Brna.",
+     "gap": "The team ____ won was from Brno.",
+     "gap_answer": "which",
+     "accepts": [
+      "The team which won was from Brno.",
+      "The team that won was from Brno."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The team which won was from Brno.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The team which won was from Brno.",
+     "join": "The team won. It was from Brno.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I like films that make me think.",
+     "cz": "Mám rád filmy, které mě nutí přemýšlet.",
+     "gap": "I like films ____ make me think.",
+     "gap_answer": "that",
+     "accepts": [
+      "I like films that make me think.",
+      "I like films which make me think."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. I like films that make me think.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. I like films that make me think.",
+     "join": "I like films. They make me think.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The doctor who treated me was great.",
+     "cz": "Doktor, který mě léčil, byl skvělý.",
+     "gap": "The doctor ____ treated me was great.",
+     "gap_answer": "who",
+     "accepts": [
+      "The doctor who treated me was great.",
+      "The doctor that treated me was great."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. The doctor who treated me was great.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. The doctor who treated me was great.",
+     "join": "The doctor treated me. He was great.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "This is the train which stops in Pardubice.",
+     "cz": "Tohle je vlak, který staví v Pardubicích.",
+     "gap": "This is the train ____ stops in Pardubice.",
+     "gap_answer": "which",
+     "accepts": [
+      "This is the train which stops in Pardubice.",
+      "This is the train that stops in Pardubice."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. This is the train which stops in Pardubice.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. This is the train which stops in Pardubice.",
+     "join": "This is the train. It stops in Pardubice.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The laptop which she uses is old.",
+     "cz": "Notebook, který používá, je starý.",
+     "gap": "The laptop ____ she uses is old.",
+     "gap_answer": "which",
+     "accepts": [
+      "The laptop which she uses is old.",
+      "The laptop that she uses is old."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The laptop which she uses is old.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The laptop which she uses is old.",
+     "join": "The laptop is old. She uses it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "People that work from home need good Wi‑Fi.",
+     "cz": "Lidé, kteří pracují z domova, potřebují dobré wi‑fi.",
+     "gap": "People ____ work from home need good Wi‑Fi.",
+     "gap_answer": "who",
+     "accepts": [
+      "People that work from home need good Wi‑Fi.",
+      "People who work from home need good Wi‑Fi."
+     ],
+     "gap_accepts": [
+      "that",
+      "who"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. People that work from home need good Wi‑Fi.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. People that work from home need good Wi‑Fi.",
+     "join": "People work from home. They need good Wi-Fi.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The song that you like is on now.",
+     "cz": "Píseň, kterou máš rád, právě hraje.",
+     "gap": "The song ____ you like is on now.",
+     "gap_answer": "that",
+     "accepts": [
+      "The song that you like is on now.",
+      "The song which you like is on now."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The song that you like is on now.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The song that you like is on now.",
+     "join": "The song is on now. You like it.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "He is the engineer who designed the bridge.",
+     "cz": "Je to inženýr, který navrhl most.",
+     "gap": "He is the engineer ____ designed the bridge.",
+     "gap_answer": "who",
+     "accepts": [
+      "He is the engineer who designed the bridge.",
+      "He is the engineer that designed the bridge.",
+      "He's the engineer who designed the bridge.",
+      "He's the engineer that designed the bridge."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. He is the engineer who designed the bridge.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. He is the engineer who designed the bridge.",
+     "join": "He is the engineer. He designed the bridge.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I want a job that is interesting.",
+     "cz": "Chci práci, která je zajímavá.",
+     "gap": "I want a job ____ is interesting.",
+     "gap_answer": "which",
+     "accepts": [
+      "I want a job that is interesting.",
+      "I want a job which is interesting.",
+      "I want a job that's interesting."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. I want a job that is interesting.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. I want a job that is interesting.",
+     "join": "I want a job. It is interesting.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The restaurant which we chose was full.",
+     "cz": "Restaurace, kterou jsme vybrali, byla plná.",
+     "gap": "The restaurant ____ we chose was full.",
+     "gap_answer": "which",
+     "accepts": [
+      "The restaurant which we chose was full.",
+      "The restaurant that we chose was full."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The restaurant which we chose was full.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The restaurant which we chose was full.",
+     "join": "The restaurant was full. We chose it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "Anyone that needs help can ask.",
+     "cz": "Kdokoli, kdo potřebuje pomoc, se může zeptat.",
+     "gap": "Anyone ____ needs help can ask.",
+     "gap_answer": "who",
+     "accepts": [
+      "Anyone that needs help can ask.",
+      "Anyone who needs help can ask."
+     ],
+     "gap_accepts": [
+      "that",
+      "who"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. Anyone that needs help can ask.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. Anyone that needs help can ask.",
+     "join": "Anyone needs help. They can ask.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The bridge that was built in 2010 is still safe.",
+     "cz": "Most z roku 2010 je pořád bezpečný.",
+     "gap": "The bridge ____ was built in 2010 is still safe.",
+     "gap_answer": "that",
+     "accepts": [
+      "The bridge that was built in 2010 is still safe.",
+      "The bridge which was built in 2010 is still safe."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The bridge that was built in 2010 is still safe.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The bridge that was built in 2010 is still safe.",
+     "join": "The bridge was built in 2010. It is still safe.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "She is a writer who lives nearby.",
+     "cz": "Je spisovatelka, která bydlí blízko.",
+     "gap": "She is a writer ____ lives nearby.",
+     "gap_answer": "who",
+     "accepts": [
+      "She is a writer who lives nearby.",
+      "She is a writer that lives nearby.",
+      "She's a writer who lives nearby.",
+      "She's a writer that lives nearby."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. She is a writer who lives nearby.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. She is a writer who lives nearby.",
+     "join": "She is a writer. She lives nearby.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The problem that we discussed is hard.",
+     "cz": "Problém, o kterém jsme mluvili, je těžký.",
+     "gap": "The problem ____ we discussed is hard.",
+     "gap_answer": "which",
+     "accepts": [
+      "The problem that we discussed is hard.",
+      "The problem which we discussed is hard."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The problem that we discussed is hard.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The problem that we discussed is hard.",
+     "join": "The problem is hard. We discussed it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I met a man who speaks five languages.",
+     "cz": "Potkal jsem muže, který mluví pěti jazyky.",
+     "gap": "I met a man ____ speaks five languages.",
+     "gap_answer": "who",
+     "accepts": [
+      "I met a man who speaks five languages.",
+      "I met a man that speaks five languages."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. I met a man who speaks five languages.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. I met a man who speaks five languages.",
+     "join": "I met a man. He speaks five languages.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The rules which apply here are clear.",
+     "cz": "Pravidla, která tady platí, jsou jasná.",
+     "gap": "The rules ____ apply here are clear.",
+     "gap_answer": "which",
+     "accepts": [
+      "The rules which apply here are clear.",
+      "The rules that apply here are clear."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The rules which apply here are clear.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The rules which apply here are clear.",
+     "join": "The rules apply here. They are clear.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "This is the only ticket that is left.",
+     "cz": "Tohle je jediný lístek, který zbývá.",
+     "gap": "This is the only ticket ____ is left.",
+     "gap_answer": "which",
+     "accepts": [
+      "This is the only ticket that is left.",
+      "This is the only ticket which is left.",
+      "This is the only ticket that's left."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. This is the only ticket that is left.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. This is the only ticket that is left.",
+     "join": "This is the only ticket. It is left.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The kids who played outside are hungry.",
+     "cz": "Děti, které si hrály venku, mají hlad.",
+     "gap": "The kids ____ played outside are hungry.",
+     "gap_answer": "who",
+     "accepts": [
+      "The kids who played outside are hungry.",
+      "The kids that played outside are hungry."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. The kids who played outside are hungry.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. The kids who played outside are hungry.",
+     "join": "The kids played outside. They are hungry.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I need shoes that fit well.",
+     "cz": "Potřebuju boty, které dobře sedí.",
+     "gap": "I need shoes ____ fit well.",
+     "gap_answer": "that",
+     "accepts": [
+      "I need shoes that fit well.",
+      "I need shoes which fit well."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. I need shoes that fit well.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. I need shoes that fit well.",
+     "join": "I need shoes. They fit well.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The company which hired him is German.",
+     "cz": "Firma, která ho přijala, je německá.",
+     "gap": "The company ____ hired him is German.",
+     "gap_answer": "which",
+     "accepts": [
+      "The company which hired him is German.",
+      "The company that hired him is German."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The company which hired him is German.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The company which hired him is German.",
+     "join": "The company hired him. It is German.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "He told a story that made us laugh.",
+     "cz": "Vyprávěl příběh, ze kterého jsme se smáli.",
+     "gap": "He told a story ____ made us laugh.",
+     "gap_answer": "which",
+     "accepts": [
+      "He told a story that made us laugh.",
+      "He told a story which made us laugh."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. He told a story that made us laugh.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. He told a story that made us laugh.",
+     "join": "He told a story. It made us laugh.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The path that leads to the river is muddy.",
+     "cz": "Cesta k řece je blátivá.",
+     "gap": "The path ____ leads to the river is muddy.",
+     "gap_answer": "which",
+     "accepts": [
+      "The path that leads to the river is muddy.",
+      "The path which leads to the river is muddy."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The path that leads to the river is muddy.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The path that leads to the river is muddy.",
+     "join": "The path leads to the river. It is muddy.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "She has friends who live in Spain.",
+     "cz": "Má přátele, kteří bydlí ve Španělsku.",
+     "gap": "She has friends ____ live in Spain.",
+     "gap_answer": "who",
+     "accepts": [
+      "She has friends who live in Spain.",
+      "She has friends that live in Spain.",
+      "She's friends who live in Spain.",
+      "She's friends that live in Spain."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. She has friends who live in Spain.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. She has friends who live in Spain.",
+     "join": "She has friends. They live in Spain.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The answer which she gave was correct.",
+     "cz": "Odpověď, kterou dala, byla správná.",
+     "gap": "The answer ____ she gave was correct.",
+     "gap_answer": "which",
+     "accepts": [
+      "The answer which she gave was correct.",
+      "The answer that she gave was correct."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. The answer which she gave was correct.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. The answer which she gave was correct.",
+     "join": "The answer was correct. She gave it.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "He is the person who called yesterday.",
+     "cz": "To je ten, kdo včera volal.",
+     "gap": "He is the person ____ called yesterday.",
+     "gap_answer": "who",
+     "accepts": [
+      "He is the person who called yesterday.",
+      "He is the person that called yesterday.",
+      "He's the person who called yesterday.",
+      "He's the person that called yesterday."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. He is the person who called yesterday.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. He is the person who called yesterday.",
+     "join": "He is the person. He called yesterday.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I need someone who can drive.",
+     "cz": "Potřebuju někoho, kdo umí řídit.",
+     "gap": "I need someone ____ can drive.",
+     "gap_answer": "who",
+     "accepts": [
+      "I need someone who can drive.",
+      "I need someone that can drive."
+     ],
+     "gap_accepts": [
+      "who",
+      "that"
+     ],
+     "explanation": "The noun in front is a **person**, so **who** (or *that*). *which* is for things, and *what* is never a relative pronoun. I need someone who can drive.",
+     "explanation_cz": "Podstatné jméno před mezerou je **osoba**, proto **who** (nebo *that*). *which* je pro věci a *what* vztažné zájmeno není. I need someone who can drive.",
+     "join": "I need someone. They can drive.",
+     "quiz_options": [
+      "who",
+      "which",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "This is the app which saves me time.",
+     "cz": "Tohle je aplikace, která mi šetří čas.",
+     "gap": "This is the app ____ saves me time.",
+     "gap_answer": "which",
+     "accepts": [
+      "This is the app which saves me time.",
+      "This is the app that saves me time."
+     ],
+     "gap_accepts": [
+      "which",
+      "that"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. This is the app which saves me time.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. This is the app which saves me time.",
+     "join": "This is the app. It saves me time.",
+     "quiz_options": [
+      "which",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "She is looking for a flat that has a balcony.",
+     "cz": "Hledá byt, který má balkon.",
+     "gap": "She is looking for a flat ____ has a balcony.",
+     "gap_answer": "that",
+     "accepts": [
+      "She is looking for a flat that has a balcony.",
+      "She is looking for a flat which has a balcony.",
+      "She's looking for a flat that has a balcony.",
+      "She's looking for a flat which has a balcony."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. She is looking for a flat that has a balcony.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. She is looking for a flat that has a balcony.",
+     "join": "She is looking for a flat. It has a balcony.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "The town where I grew up is small.",
+     "cz": "Město, kde jsem vyrostl, je malé.",
+     "gap": "The town ____ I grew up is small.",
+     "gap_answer": "where",
+     "gap_accepts": [
+      "where"
+     ],
+     "accepts": [
+      "The town where I grew up is small."
+     ],
+     "explanation": "**where** stands for *in which* after a place. *which* alone will not do it, and do not add *in* or *at* after it. The town where I grew up is small.",
+     "explanation_cz": "**where** zastupuje *in which* po místě. Samotné *which* to nezvládne a *in* ani *at* se za ně nepřidává. The town where I grew up is small.",
+     "join": "The town is small. I grew up there.",
+     "quiz_options": [
+      "where",
+      "which",
+      "who",
+      "when"
+     ]
+    },
+    {
+     "en": "This is the café where we first met.",
+     "cz": "Tohle je kavárna, kde jsme se poprvé potkali.",
+     "gap": "This is the café ____ we first met.",
+     "gap_answer": "where",
+     "gap_accepts": [
+      "where"
+     ],
+     "accepts": [
+      "This is the café where we first met."
+     ],
+     "explanation": "**where** stands for *in which* after a place. *which* alone will not do it, and do not add *in* or *at* after it. This is the café where we first met.",
+     "explanation_cz": "**where** zastupuje *in which* po místě. Samotné *which* to nezvládne a *in* ani *at* se za ně nepřidává. This is the café where we first met.",
+     "join": "This is the café. We first met there.",
+     "quiz_options": [
+      "where",
+      "which",
+      "who",
+      "when"
+     ]
+    },
+    {
+     "en": "The office where she works is in the centre.",
+     "cz": "Kancelář, kde pracuje, je v centru.",
+     "gap": "The office ____ she works is in the centre.",
+     "gap_answer": "where",
+     "gap_accepts": [
+      "where"
+     ],
+     "accepts": [
+      "The office where she works is in the centre."
+     ],
+     "explanation": "**where** stands for *in which* after a place. *which* alone will not do it, and do not add *in* or *at* after it. The office where she works is in the centre.",
+     "explanation_cz": "**where** zastupuje *in which* po místě. Samotné *which* to nezvládne a *in* ani *at* se za ně nepřidává. The office where she works is in the centre.",
+     "join": "The office is in the centre. She works there.",
+     "quiz_options": [
+      "where",
+      "which",
+      "who",
+      "when"
+     ]
+    },
+    {
+     "en": "I visited the village where my grandmother was born.",
+     "cz": "Navštívil jsem vesnici, kde se narodila moje babička.",
+     "gap": "I visited the village ____ my grandmother was born.",
+     "gap_answer": "where",
+     "gap_accepts": [
+      "where"
+     ],
+     "accepts": [
+      "I visited the village where my grandmother was born."
+     ],
+     "explanation": "**where** stands for *in which* after a place. *which* alone will not do it, and do not add *in* or *at* after it. I visited the village where my grandmother was born.",
+     "explanation_cz": "**where** zastupuje *in which* po místě. Samotné *which* to nezvládne a *in* ani *at* se za ně nepřidává. I visited the village where my grandmother was born.",
+     "join": "I visited the village. My grandmother was born there.",
+     "quiz_options": [
+      "where",
+      "which",
+      "who",
+      "when"
+     ]
+    },
+    {
+     "en": "That is the hotel where we stayed.",
+     "cz": "To je hotel, kde jsme bydleli.",
+     "gap": "That is the hotel ____ we stayed.",
+     "gap_answer": "where",
+     "gap_accepts": [
+      "where"
+     ],
+     "accepts": [
+      "That is the hotel where we stayed.",
+      "That's the hotel where we stayed."
+     ],
+     "explanation": "**where** stands for *in which* after a place. *which* alone will not do it, and do not add *in* or *at* after it. That is the hotel where we stayed.",
+     "explanation_cz": "**where** zastupuje *in which* po místě. Samotné *which* to nezvládne a *in* ani *at* se za ně nepřidává. That is the hotel where we stayed.",
+     "join": "That is the hotel. We stayed there.",
+     "quiz_options": [
+      "where",
+      "which",
+      "who",
+      "when"
+     ]
+    },
+    {
+     "en": "The shop where I buy bread is closed today.",
+     "cz": "Obchod, kde kupuju chleba, je dnes zavřený.",
+     "gap": "The shop ____ I buy bread is closed today.",
+     "gap_answer": "where",
+     "gap_accepts": [
+      "where"
+     ],
+     "accepts": [
+      "The shop where I buy bread is closed today."
+     ],
+     "explanation": "**where** stands for *in which* after a place. *which* alone will not do it, and do not add *in* or *at* after it. The shop where I buy bread is closed today.",
+     "explanation_cz": "**where** zastupuje *in which* po místě. Samotné *which* to nezvládne a *in* ani *at* se za ně nepřidává. The shop where I buy bread is closed today.",
+     "join": "The shop is closed today. I buy bread there.",
+     "quiz_options": [
+      "where",
+      "which",
+      "who",
+      "when"
+     ]
+    },
+    {
+     "en": "I remember the day when we met.",
+     "cz": "Pamatuju si den, kdy jsme se potkali.",
+     "gap": "I remember the day ____ we met.",
+     "gap_answer": "when",
+     "gap_accepts": [
+      "when",
+      "that"
+     ],
+     "accepts": [
+      "I remember the day when we met.",
+      "I remember the day that we met."
+     ],
+     "explanation": "**when** follows a time word — day, year, time. *that* also works here; *which* does not. I remember the day when we met.",
+     "explanation_cz": "**when** jde po slově pro čas — day, year, time. *that* tu funguje taky; *which* ne. I remember the day when we met.",
+     "join": "I remember the day. We met then.",
+     "quiz_options": [
+      "when",
+      "where",
+      "who",
+      "which"
+     ]
+    },
+    {
+     "en": "Summer is the time when I feel best.",
+     "cz": "Léto je období, kdy se cítím nejlíp.",
+     "gap": "Summer is the time ____ I feel best.",
+     "gap_answer": "when",
+     "gap_accepts": [
+      "when",
+      "that"
+     ],
+     "accepts": [
+      "Summer is the time when I feel best.",
+      "Summer is the time that I feel best."
+     ],
+     "explanation": "**when** follows a time word — day, year, time. *that* also works here; *which* does not. Summer is the time when I feel best.",
+     "explanation_cz": "**when** jde po slově pro čas — day, year, time. *that* tu funguje taky; *which* ne. Summer is the time when I feel best.",
+     "join": "Summer is the time. I feel best then.",
+     "quiz_options": [
+      "when",
+      "where",
+      "who",
+      "which"
+     ]
+    },
+    {
+     "en": "2019 was the year when everything changed.",
+     "cz": "Rok 2019 byl rok, kdy se všechno změnilo.",
+     "gap": "2019 was the year ____ everything changed.",
+     "gap_answer": "when",
+     "gap_accepts": [
+      "when",
+      "that"
+     ],
+     "accepts": [
+      "2019 was the year when everything changed.",
+      "2019 was the year that everything changed."
+     ],
+     "explanation": "**when** follows a time word — day, year, time. *that* also works here; *which* does not. 2019 was the year when everything changed.",
+     "explanation_cz": "**when** jde po slově pro čas — day, year, time. *that* tu funguje taky; *which* ne. 2019 was the year when everything changed.",
+     "join": "2019 was the year. Everything changed then.",
+     "quiz_options": [
+      "when",
+      "where",
+      "who",
+      "which"
+     ]
+    },
+    {
+     "en": "Friday is the day when we have meetings.",
+     "cz": "Pátek je den, kdy máme porady.",
+     "gap": "Friday is the day ____ we have meetings.",
+     "gap_answer": "when",
+     "gap_accepts": [
+      "when",
+      "that"
+     ],
+     "accepts": [
+      "Friday is the day when we have meetings.",
+      "Friday is the day that we have meetings.",
+      "Friday is the day when we've meetings.",
+      "Friday is the day that we've meetings."
+     ],
+     "explanation": "**when** follows a time word — day, year, time. *that* also works here; *which* does not. Friday is the day when we have meetings.",
+     "explanation_cz": "**when** jde po slově pro čas — day, year, time. *that* tu funguje taky; *which* ne. Friday is the day when we have meetings.",
+     "join": "Friday is the day. We have meetings then.",
+     "quiz_options": [
+      "when",
+      "where",
+      "who",
+      "which"
+     ]
+    },
+    {
+     "en": "I don't know the reason why she left.",
+     "cz": "Neznám důvod, proč odešla.",
+     "gap": "I don't know the reason ____ she left.",
+     "gap_answer": "why",
+     "gap_accepts": [
+      "why",
+      "that"
+     ],
+     "accepts": [
+      "I don't know the reason why she left.",
+      "I don't know the reason that she left.",
+      "I do not know the reason why she left.",
+      "I do not know the reason that she left."
+     ],
+     "explanation": "**why** follows *reason*. *that* also works here; *where* and *when* do not. I don't know the reason why she left.",
+     "explanation_cz": "**why** jde po slově *reason*. *that* tu funguje taky; *where* a *when* ne. I don't know the reason why she left.",
+     "join": "I don't know the reason. She left.",
+     "quiz_options": [
+      "why",
+      "where",
+      "when",
+      "who"
+     ]
+    },
+    {
+     "en": "There is no reason why we should wait.",
+     "cz": "Není důvod, proč bychom měli čekat.",
+     "gap": "There is no reason ____ we should wait.",
+     "gap_answer": "why",
+     "gap_accepts": [
+      "why",
+      "that"
+     ],
+     "accepts": [
+      "There is no reason why we should wait.",
+      "There is no reason that we should wait."
+     ],
+     "explanation": "**why** follows *reason*. *that* also works here; *where* and *when* do not. There is no reason why we should wait.",
+     "explanation_cz": "**why** jde po slově *reason*. *that* tu funguje taky; *where* a *when* ne. There is no reason why we should wait.",
+     "join": "There is no reason. We should wait.",
+     "quiz_options": [
+      "why",
+      "where",
+      "when",
+      "who"
+     ]
+    },
+    {
+     "en": "The reason why he failed is simple.",
+     "cz": "Důvod, proč neuspěl, je prostý.",
+     "gap": "The reason ____ he failed is simple.",
+     "gap_answer": "why",
+     "gap_accepts": [
+      "why",
+      "that"
+     ],
+     "accepts": [
+      "The reason why he failed is simple.",
+      "The reason that he failed is simple."
+     ],
+     "explanation": "**why** follows *reason*. *that* also works here; *where* and *when* do not. The reason why he failed is simple.",
+     "explanation_cz": "**why** jde po slově *reason*. *that* tu funguje taky; *where* a *when* ne. The reason why he failed is simple.",
+     "join": "The reason is simple. He failed.",
+     "quiz_options": [
+      "why",
+      "where",
+      "when",
+      "who"
+     ]
+    },
+    {
+     "en": "This is the way that I did it.",
+     "cz": "Takhle jsem to udělal.",
+     "gap": "This is the way ____ I did it.",
+     "gap_answer": "that",
+     "accepts": [
+      "This is the way that I did it.",
+      "This is the way which I did it.",
+      "This is the way I did it."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "join": "This is the way. I did it.",
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. This is the way that I did it.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. This is the way that I did it.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
+    },
+    {
+     "en": "I like the way she works.",
+     "cz": "Líbí se mi, jak pracuje.",
+     "gap": "I like the way ____ she works.",
+     "gap_answer": "that",
+     "accepts": [
+      "I like the way she works.",
+      "I like the way that she works.",
+      "I like the way which she works."
+     ],
+     "gap_accepts": [
+      "that",
+      "which"
+     ],
+     "join": "I like the way. She works.",
+     "explanation": "The noun in front is a **thing**, so **which** or **that** — both are right. *who* is only for people. I like the way she works.",
+     "explanation_cz": "Podstatné jméno před mezerou je **věc**, proto **which** nebo **that** — obojí je správně. *who* je jen pro osoby. I like the way she works.",
+     "quiz_options": [
+      "that",
+      "who",
+      "what",
+      "where"
+     ]
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "title": "What they are",
-        "title_cz": "Co to jsou",
-        "table": {
-          "headers": [
-            "Two sentences",
-            "One sentence"
-          ],
-          "rows": [
-            [
-              "The man called. ~~He~~ is my boss.",
-              "The man **who called** is my boss."
-            ],
-            [
-              "The book is useful. I bought ~~it~~.",
-              "The book **which I bought** is useful."
-            ]
-          ]
-        },
-        "points": [
-          "They are attached to a noun",
-          "They say which person or which thing you mean",
-          "They come immediately after that noun"
-        ]
-      },
-      {
-        "title": "who / which / that",
-        "title_cz": "kdo / co",
-        "table": {
-          "headers": [
-            "People",
-            "Things"
-          ],
-          "rows": [
-            [
-              "the man **who** called",
-              "the book **which** I bought"
-            ],
-            [
-              "the man **that** called",
-              "the book **that** I bought"
-            ]
-          ]
-        },
-        "points": [
-          "who = people · which = things · that = both",
-          "který is people and things. English splits them."
-        ]
-      },
-      {
-        "title": "Two patterns",
-        "title_cz": "Dva vzory",
-        "table": {
-          "headers": [
-            "The noun does the action",
-            "Someone else does it"
-          ],
-          "rows": [
-            [
-              "The man **who called** is my boss.",
-              "The book **which I bought** is useful."
-            ],
-            [
-              "the man called",
-              "I bought the book"
-            ]
-          ]
-        },
-        "points": [
-          "Look at the word after who / which / that",
-          "A verb comes next → the noun does the action",
-          "I / you / we comes next → someone else does it"
-        ]
-      },
-      {
-        "title": "Leave it out",
-        "table": {
-          "headers": [
-            "Keep",
-            "Drop"
-          ],
-          "rows": [
-            [
-              "The man **who** called is my boss.",
-              "—"
-            ],
-            [
-              "The book **which** I bought is useful.",
-              "The book I bought is useful."
-            ]
-          ]
-        },
-        "points": [
-          "Drop it only when a new subject follows",
-          "Never drop it when a verb follows",
-          "Never keep the old object: bought it ✗"
-        ]
-      },
-      {
-        "title": "Place, time, reason",
-        "table": {
-          "headers": [
-            "Place",
-            "Time",
-            "Reason"
-          ],
-          "rows": [
-            [
-              "the café **where** we met",
-              "the day **when** we met",
-              "the reason **why** I left"
-            ],
-            [
-              "—",
-              "the day we met",
-              "the reason I left"
-            ]
-          ]
-        },
-        "points": [
-          "Do not add at or in after where",
-          "where does not drop in this pack"
-        ]
-      },
-      {
-        "title": "Typical mistakes",
-        "title_cz": "Časté chyby",
-        "table": {
-          "headers": [
-            "Wrong",
-            "Right"
-          ],
-          "rows": [
-            [
-              "the book **what** I bought",
-              "the book **that / which** I bought"
-            ],
-            [
-              "the man **which** called",
-              "the man **who** called"
-            ],
-            [
-              "the book which I bought **it**",
-              "the book which I bought"
-            ],
-            [
-              "the way **how** I did it",
-              "the way I did it"
-            ]
-          ]
-        },
-        "points": [
-          "After a noun, Czech co is that / which, not what",
-          "který splits: who for people, which for things"
-        ]
-      }
+   ]
+  }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "title": "What they are",
+    "title_cz": "Co to jsou",
+    "table": {
+     "headers": [
+      "Two sentences",
+      "One sentence"
+     ],
+     "rows": [
+      [
+       "The man called. ~~He~~ is my boss.",
+       "The man **who called** is my boss."
+      ],
+      [
+       "The book is useful. I bought ~~it~~.",
+       "The book **which** I bought is useful."
+      ]
+     ]
+    },
+    "points": [
+     "They are attached to a noun",
+     "They say which person or which thing you mean",
+     "They come immediately after that noun"
     ]
-  },
-  "quiz_axis": "relative",
-  "use_mode": "join"
+   },
+   {
+    "title": "who / which / that",
+    "title_cz": "kdo / co",
+    "table": {
+     "headers": [
+      "People",
+      "Things"
+     ],
+     "rows": [
+      [
+       "the man **who** called",
+       "the book **which** I bought"
+      ],
+      [
+       "the man **that** called",
+       "the book **that** I bought"
+      ]
+     ]
+    },
+    "points": [
+     "who = people · which = things · that = both",
+     "který is people and things. English splits them."
+    ]
+   },
+   {
+    "title": "Two patterns",
+    "title_cz": "Dva vzory",
+    "table": {
+     "headers": [
+      "The noun does the action",
+      "Someone else does it"
+     ],
+     "rows": [
+      [
+       "The man **who called** is my boss.",
+       "The book **which** I bought is useful."
+      ],
+      [
+       "the man called",
+       "I bought the book"
+      ]
+     ]
+    },
+    "points": [
+     "Look at the word after who / which / that",
+     "A verb comes next → the noun does the action",
+     "I / you / we comes next → someone else does it"
+    ]
+   },
+   {
+    "title": "Leave it out",
+    "table": {
+     "headers": [
+      "Keep",
+      "Drop"
+     ],
+     "rows": [
+      [
+       "The man **who** called is my boss.",
+       "—"
+      ],
+      [
+       "The book **which** I bought is useful.",
+       "The book I bought is useful."
+      ]
+     ]
+    },
+    "points": [
+     "Drop it only when a new subject follows",
+     "Never drop it when a verb follows",
+     "Never keep the old object: bought it ✗"
+    ]
+   },
+   {
+    "title": "Place, time, reason",
+    "table": {
+     "headers": [
+      "Place",
+      "Time",
+      "Reason"
+     ],
+     "rows": [
+      [
+       "the café **where** we met",
+       "the day **when** we met",
+       "the reason **why** I left"
+      ],
+      [
+       "—",
+       "the day we met",
+       "the reason I left"
+      ]
+     ]
+    },
+    "points": [
+     "Do not add at or in after where",
+     "where does not drop"
+    ]
+   },
+   {
+    "title": "Typical mistakes",
+    "title_cz": "Časté chyby",
+    "table": {
+     "headers": [
+      "Wrong",
+      "Right"
+     ],
+     "rows": [
+      [
+       "the book **what** I bought",
+       "the book **that** / **which** I bought"
+      ],
+      [
+       "the man **which** called",
+       "the man **who** called"
+      ],
+      [
+       "the book which I bought **it**",
+       "the book which I bought"
+      ],
+      [
+       "the way **how** I did it",
+       "the way I did it"
+      ]
+     ]
+    },
+    "points": [
+     "After a noun, Czech co is that / which, not what",
+     "který splits: who for people, which for things"
+    ]
+   }
+  ]
+ },
+ "quiz_axis": "relative",
+ "use_mode": "join"
 }
