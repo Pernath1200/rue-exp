@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**792 unknown word types** across 101 live units (of 190).
+**791 unknown word types** across 101 live units (of 190).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -78,7 +78,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **leaf_things_a2** (A2 vocab): box, ball
 - **a2_reflexives** (A2 grammar): ourselves, happen, happened
 - **b1_present_perfect_vs_past** (B1 grammar): far, until
-- **b1_modals_speculation** (B1 grammar): true, bug, misread
+- **b1_modals_speculation** (B1 grammar): true, misread
 - **b1_passives** (B1 grammar): guard, noon, bridge, everywhere, package, rules, automatically, invoice
 - **b1_agreement_tricky** (B1 grammar): outside, somebody
 - **b1_reported_speech** (B1 grammar): ond, ej
