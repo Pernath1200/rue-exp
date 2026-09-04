@@ -1,1173 +1,1430 @@
 {
-  "id": "b1_passives",
-  "title": "Passive (form of be)",
-  "level": "B1",
-  "tree_node": "b1_passives",
-  "codex_unit": "G_VP-B1B2-01",
-  "practice": "frames",
-  "note": "B1 · be agreement in passive frames · EVERY stem tense-forced (every/always/still vs yesterday/last/year) · will/must be · Match off · 2026-07-26 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: Quiz = form MC (correct be+pp · swapped number · be+lemma · bare pp). Type = fill that form. Use = active↔passive. Six inverted-question gaps rewritten as statements so the subject is never inside the gap (Were the lights turned / Was turned mix).",
-  "default_direction": "cz_to_en",
-  "check": {
-    "sequence": [
-      "quiz"
-    ]
-  },
-  "quality": "good_draft",
-  "use_mode": "voice",
-  "quiz_axis": "passive",
-  "blocks": [
+ "id": "b1_passives",
+ "title": "Passive (form of be)",
+ "level": "B1",
+ "tree_node": "b1_passives",
+ "codex_unit": "G_VP-B1B2-01",
+ "practice": "frames",
+ "note": "B1 · be agreement in passive frames · EVERY stem tense-forced (every/always/still vs yesterday/last/year) · will/must be · Match off · 2026-07-26 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: Quiz = form MC (correct be+pp · swapped number · be+lemma · bare pp). Type = fill that form. Use = active↔passive. Six inverted-question gaps rewritten as statements so the subject is never inside the gap (Were the lights turned / Was turned mix). · 2026-09-04 B1 loop: C20 the What-you-practise recap card cut (and the C4 it carried with it); B3 authored chips on all 48 items in the axis the note already specified — correct be+pp, swapped number, be+lemma, bare participle; D1 one explanation covered all 48 and each now names its own subject, its be form and its participle. A4's 31 candidates stand: a passive with a definite subject is where English forces `the`, and the Czech reflexive passive carries no demonstrative to add.",
+ "default_direction": "cz_to_en",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "quality": "good_draft",
+ "use_mode": "voice",
+ "quiz_axis": "passive",
+ "blocks": [
+  {
+   "id": "b1_passives_main",
+   "title": "Passive (form of be) · B1",
+   "items": [
     {
-      "id": "b1_passives_main",
-      "title": "Passive (form of be) · B1",
-      "items": [
-        {
-          "en": "English is spoken here these days.",
-          "cz": "Tady se teď mluví anglicky.",
-          "gap": "English ____ here these days. (speak)",
-          "gap_answer": "is spoken",
-          "gap_accepts": [
-            "is spoken",
-            "Is spoken"
-          ],
-          "accepts": [
-            "English is spoken here these days."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "speak",
-          "active": "People speak English here these days.",
-          "active_accepts": [
-            "People speak English here these days.",
-            "They speak English here these days."
-          ]
-        },
-        {
-          "en": "The house was built in 1990.",
-          "cz": "Dům byl postaven v roce 1990.",
-          "gap": "The house ____ in 1990. (build)",
-          "gap_answer": "was built",
-          "gap_accepts": [
-            "was built",
-            "Was built"
-          ],
-          "accepts": [
-            "The house was built in 1990."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "build",
-          "active": "Someone built the house in 1990.",
-          "active_accepts": [
-            "Someone built the house in 1990.",
-            "They built the house in 1990."
-          ]
-        },
-        {
-          "en": "The emails are sent every morning.",
-          "cz": "Emaily se posílají každé ráno.",
-          "gap": "The emails ____ every morning. (send)",
-          "gap_answer": "are sent",
-          "gap_accepts": [
-            "are sent",
-            "Are sent"
-          ],
-          "accepts": [
-            "The emails are sent every morning."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "send",
-          "active": "They send the emails every morning.",
-          "active_accepts": [
-            "They send the emails every morning."
-          ]
-        },
-        {
-          "en": "My bike was stolen yesterday.",
-          "cz": "Včera mi ukradli kolo.",
-          "gap": "My bike ____ yesterday. (steal)",
-          "gap_answer": "was stolen",
-          "gap_accepts": [
-            "was stolen",
-            "Was stolen"
-          ],
-          "accepts": [
-            "My bike was stolen yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "steal",
-          "active": "Someone stole my bike yesterday.",
-          "active_accepts": [
-            "Someone stole my bike yesterday.",
-            "They stole my bike yesterday."
-          ]
-        },
-        {
-          "en": "The room is cleaned every day.",
-          "cz": "Pokoj se uklízí každý den.",
-          "gap": "The room ____ every day. (clean)",
-          "gap_answer": "is cleaned",
-          "gap_accepts": [
-            "is cleaned",
-            "Is cleaned"
-          ],
-          "accepts": [
-            "The room is cleaned every day."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "clean",
-          "active": "Someone cleans the room every day.",
-          "active_accepts": [
-            "Someone cleans the room every day.",
-            "They clean the room every day."
-          ]
-        },
-        {
-          "en": "These phones are made in Asia now.",
-          "cz": "Tyhle telefony se teď vyrábějí v Asii.",
-          "gap": "These phones ____ in Asia now. (make)",
-          "gap_answer": "are made",
-          "gap_accepts": [
-            "are made",
-            "Are made"
-          ],
-          "accepts": [
-            "These phones are made in Asia now."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "make"
-        },
-        {
-          "en": "The door was opened by the guard yesterday morning.",
-          "cz": "Dveře včera ráno otevřel strážný.",
-          "gap": "The door ____ by the guard yesterday morning. (open)",
-          "gap_answer": "was opened",
-          "gap_accepts": [
-            "was opened",
-            "Was opened"
-          ],
-          "accepts": [
-            "The door was opened by the guard yesterday morning."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "open",
-          "active": "The guard opened the door yesterday morning.",
-          "active_accepts": [
-            "The guard opened the door yesterday morning."
-          ]
-        },
-        {
-          "en": "Lunch is served at noon every day.",
-          "cz": "Oběd se podává v poledne každý den.",
-          "gap": "Lunch ____ at noon every day. (serve)",
-          "gap_answer": "is served",
-          "gap_accepts": [
-            "is served",
-            "Is served"
-          ],
-          "accepts": [
-            "Lunch is served at noon every day."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "serve",
-          "active": "They serve lunch at noon every day.",
-          "active_accepts": [
-            "They serve lunch at noon every day."
-          ]
-        },
-        {
-          "en": "The windows were broken last night.",
-          "cz": "Okna byla včera v noci rozbitá.",
-          "gap": "The windows ____ last night. (break)",
-          "gap_answer": "were broken",
-          "gap_accepts": [
-            "were broken",
-            "Were broken"
-          ],
-          "accepts": [
-            "The windows were broken last night."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "break",
-          "active": "Someone broke the windows last night.",
-          "active_accepts": [
-            "Someone broke the windows last night.",
-            "They broke the windows last night."
-          ]
-        },
-        {
-          "en": "The report will be finished tomorrow.",
-          "cz": "Zpráva bude zítra hotová.",
-          "gap": "The report will ____ tomorrow. (finish)",
-          "gap_answer": "be finished",
-          "gap_accepts": [
-            "be finished",
-            "Be finished"
-          ],
-          "accepts": [
-            "The report will be finished tomorrow."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "finish"
-        },
-        {
-          "en": "Coffee is grown in Brazil these days.",
-          "cz": "Káva se v Brazílii pořád pěstuje.",
-          "gap": "Coffee ____ in Brazil these days. (grow)",
-          "gap_answer": "is grown",
-          "gap_accepts": [
-            "is grown",
-            "Is grown"
-          ],
-          "accepts": [
-            "Coffee is grown in Brazil these days."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "grow",
-          "active": "They grow coffee in Brazil these days.",
-          "active_accepts": [
-            "They grow coffee in Brazil these days.",
-            "People grow coffee in Brazil these days."
-          ]
-        },
-        {
-          "en": "The film was directed by her in 2019.",
-          "cz": "Ten film v roce 2019 režírovala ona.",
-          "gap": "The film ____ by her in 2019. (direct)",
-          "gap_answer": "was directed",
-          "gap_accepts": [
-            "was directed",
-            "Was directed"
-          ],
-          "accepts": [
-            "The film was directed by her in 2019."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "direct",
-          "active": "She directed the film in 2019.",
-          "active_accepts": [
-            "She directed the film in 2019."
-          ]
-        },
-        {
-          "en": "The cake was eaten quickly at the party yesterday.",
-          "cz": "Dort se včera na oslavě rychle snědl.",
-          "gap": "The cake ____ quickly at the party yesterday. (eat)",
-          "gap_answer": "was eaten",
-          "gap_accepts": [
-            "was eaten",
-            "Was eaten"
-          ],
-          "accepts": [
-            "The cake was eaten quickly at the party yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "eat",
-          "active": "They ate the cake quickly at the party yesterday.",
-          "active_accepts": [
-            "They ate the cake quickly at the party yesterday.",
-            "Someone ate the cake quickly at the party yesterday."
-          ]
-        },
-        {
-          "en": "Tickets are sold online every day.",
-          "cz": "Lístky se každý den prodávají online.",
-          "gap": "Tickets ____ online every day. (sell)",
-          "gap_answer": "are sold",
-          "gap_accepts": [
-            "are sold",
-            "Are sold"
-          ],
-          "accepts": [
-            "Tickets are sold online every day.",
-            "Tickets are sold every day online.",
-            "Every day tickets are sold online."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "sell",
-          "active": "They sell tickets online every day.",
-          "active_accepts": [
-            "They sell tickets online every day.",
-            "They sell tickets every day online.",
-            "Every day they sell tickets online."
-          ]
-        },
-        {
-          "en": "The road was closed last night.",
-          "cz": "Silnice byla včera v noci uzavřená.",
-          "gap": "The road ____ last night. (close)",
-          "gap_answer": "was closed",
-          "gap_accepts": [
-            "was closed",
-            "Was closed"
-          ],
-          "accepts": [
-            "The road was closed last night."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "close",
-          "active": "They closed the road last night.",
-          "active_accepts": [
-            "They closed the road last night.",
-            "Someone closed the road last night."
-          ]
-        },
-        {
-          "en": "Spanish is taught at this school every year.",
-          "cz": "Na této škole se španělština učí každý rok.",
-          "gap": "Spanish ____ at this school every year. (teach)",
-          "gap_answer": "is taught",
-          "gap_accepts": [
-            "is taught",
-            "Is taught"
-          ],
-          "accepts": [
-            "Spanish is taught at this school every year."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "teach"
-        },
-        {
-          "en": "The letters were posted yesterday.",
-          "cz": "Dopisy byly včera odeslány.",
-          "gap": "The letters ____ yesterday. (post)",
-          "gap_answer": "were posted",
-          "gap_accepts": [
-            "were posted",
-            "Were posted"
-          ],
-          "accepts": [
-            "The letters were posted yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "post",
-          "active": "They posted the letters yesterday.",
-          "active_accepts": [
-            "They posted the letters yesterday."
-          ]
-        },
-        {
-          "en": "The problem is solved now — we can continue.",
-          "cz": "Problém je teď vyřešený — můžeme pokračovat.",
-          "gap": "The problem ____ now — we can continue. (solve)",
-          "gap_answer": "is solved",
-          "gap_accepts": [
-            "is solved",
-            "Is solved"
-          ],
-          "accepts": [
-            "The problem is solved now — we can continue."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "solve"
-        },
-        {
-          "en": "A new bridge was opened in 2022.",
-          "cz": "Nový most byl otevřen v roce 2022.",
-          "gap": "A new bridge ____ in 2022. (open)",
-          "gap_answer": "was opened",
-          "gap_accepts": [
-            "was opened",
-            "Was opened"
-          ],
-          "accepts": [
-            "A new bridge was opened in 2022."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "open"
-        },
-        {
-          "en": "Mistakes are made every day.",
-          "cz": "Chyby se dělají každý den.",
-          "gap": "Mistakes ____ every day. (make)",
-          "gap_answer": "are made",
-          "gap_accepts": [
-            "are made",
-            "Are made"
-          ],
-          "accepts": [
-            "Mistakes are made every day."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "make"
-        },
-        {
-          "en": "The documents were signed yesterday morning.",
-          "cz": "Dokumenty byly včera ráno podepsány.",
-          "gap": "The documents ____ yesterday morning. (sign)",
-          "gap_answer": "were signed",
-          "gap_accepts": [
-            "were signed",
-            "Were signed"
-          ],
-          "accepts": [
-            "The documents were signed yesterday morning."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "sign"
-        },
-        {
-          "en": "This song is known everywhere these days.",
-          "cz": "Tuhle píseň teď znají všude.",
-          "gap": "This song ____ everywhere these days. (know)",
-          "gap_answer": "is known",
-          "gap_accepts": [
-            "is known",
-            "Is known"
-          ],
-          "accepts": [
-            "This song is known everywhere these days."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "know"
-        },
-        {
-          "en": "The meeting was cancelled yesterday.",
-          "cz": "Schůzka byla včera zrušena.",
-          "gap": "The meeting ____ yesterday. (cancel)",
-          "gap_answer": "was cancelled",
-          "gap_accepts": [
-            "was cancelled",
-            "Was cancelled"
-          ],
-          "accepts": [
-            "The meeting was cancelled yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "cancel",
-          "active": "Someone cancelled the meeting yesterday.",
-          "active_accepts": [
-            "Someone cancelled the meeting yesterday.",
-            "They cancelled the meeting yesterday."
-          ]
-        },
-        {
-          "en": "These chairs are made of wood now.",
-          "cz": "Tyhle židle se i teď dělají ze dřeva.",
-          "gap": "These chairs ____ of wood now. (make)",
-          "gap_answer": "are made",
-          "gap_accepts": [
-            "are made",
-            "Are made"
-          ],
-          "accepts": [
-            "These chairs are made of wood now."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "make",
-          "active": "They make these chairs of wood now.",
-          "active_accepts": [
-            "They make these chairs of wood now."
-          ]
-        },
-        {
-          "en": "The lights were turned off last night.",
-          "cz": "Světla byla včera v noci zhasnutá.",
-          "gap": "The lights ____ off last night. (turn)",
-          "gap_answer": "were turned",
-          "gap_accepts": [
-            "were turned",
-            "Were turned"
-          ],
-          "accepts": [
-            "The lights were turned off last night."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "turn",
-          "active": "Someone turned the lights off last night.",
-          "active_accepts": [
-            "Someone turned the lights off last night.",
-            "They turned the lights off last night.",
-            "Someone turned off the lights last night.",
-            "They turned off the lights last night."
-          ]
-        },
-        {
-          "en": "The book was written in 2015.",
-          "cz": "Kniha byla napsána v roce 2015.",
-          "gap": "The book ____ in 2015. (write)",
-          "gap_answer": "was written",
-          "gap_accepts": [
-            "was written",
-            "Was written"
-          ],
-          "accepts": [
-            "The book was written in 2015."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "write",
-          "active": "Someone wrote the book in 2015.",
-          "active_accepts": [
-            "Someone wrote the book in 2015.",
-            "They wrote the book in 2015."
-          ]
-        },
-        {
-          "en": "Dinner is prepared by the chef every evening.",
-          "cz": "Večeři připravuje šéfkuchař každý večer.",
-          "gap": "Dinner ____ by the chef every evening. (prepare)",
-          "gap_answer": "is prepared",
-          "gap_accepts": [
-            "is prepared",
-            "Is prepared"
-          ],
-          "accepts": [
-            "Dinner is prepared by the chef every evening."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "prepare"
-        },
-        {
-          "en": "The results will be published soon.",
-          "cz": "Výsledky brzy zveřejní.",
-          "gap": "The results will ____ soon. (publish)",
-          "gap_answer": "be published",
-          "gap_accepts": [
-            "be published",
-            "Be published"
-          ],
-          "accepts": [
-            "The results will be published soon."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "publish"
-        },
-        {
-          "en": "The glass was broken by accident yesterday.",
-          "cz": "Sklo se včera rozbilo náhodou.",
-          "gap": "The glass ____ by accident yesterday. (break)",
-          "gap_answer": "was broken",
-          "gap_accepts": [
-            "was broken",
-            "Was broken"
-          ],
-          "accepts": [
-            "The glass was broken by accident yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "break",
-          "active": "Someone broke the glass by accident yesterday.",
-          "active_accepts": [
-            "Someone broke the glass by accident yesterday."
-          ]
-        },
-        {
-          "en": "Applications are accepted online every day.",
-          "cz": "Přihlášky se každý den přijímají online.",
-          "gap": "Applications ____ online every day. (accept)",
-          "gap_answer": "are accepted",
-          "gap_accepts": [
-            "are accepted",
-            "Are accepted"
-          ],
-          "accepts": [
-            "Applications are accepted online every day."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "accept"
-        },
-        {
-          "en": "The story was told many times when we were children.",
-          "cz": "Příběh se vyprávěl mnohokrát, když jsme byli děti.",
-          "gap": "The story ____ many times when we were children. (tell)",
-          "gap_answer": "was told",
-          "gap_accepts": [
-            "was told",
-            "Was told"
-          ],
-          "accepts": [
-            "The story was told many times when we were children."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "tell"
-        },
-        {
-          "en": "This app is used by millions of people now.",
-          "cz": "Tuhle appku teď používají miliony lidí.",
-          "gap": "This app ____ by millions of people now. (use)",
-          "gap_answer": "is used",
-          "gap_accepts": [
-            "is used",
-            "Is used"
-          ],
-          "accepts": [
-            "This app is used by millions of people now."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "use"
-        },
-        {
-          "en": "The keys were found under the sofa yesterday morning.",
-          "cz": "Klíče se včera ráno našly pod pohovkou.",
-          "gap": "The keys ____ under the sofa yesterday morning. (find)",
-          "gap_answer": "were found",
-          "gap_accepts": [
-            "were found",
-            "Were found"
-          ],
-          "accepts": [
-            "The keys were found under the sofa yesterday morning."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "find",
-          "active": "Someone found the keys under the sofa yesterday morning.",
-          "active_accepts": [
-            "Someone found the keys under the sofa yesterday morning.",
-            "They found the keys under the sofa yesterday morning."
-          ]
-        },
-        {
-          "en": "English is needed for this job these days.",
-          "cz": "Na tuhle práci je teď potřeba angličtina.",
-          "gap": "English ____ for this job these days. (need)",
-          "gap_answer": "is needed",
-          "gap_accepts": [
-            "is needed",
-            "Is needed"
-          ],
-          "accepts": [
-            "English is needed for this job these days."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "need"
-        },
-        {
-          "en": "The decision was made yesterday.",
-          "cz": "Rozhodnutí padlo včera.",
-          "gap": "The decision ____ yesterday. (make)",
-          "gap_answer": "was made",
-          "gap_accepts": [
-            "was made",
-            "Was made"
-          ],
-          "accepts": [
-            "The decision was made yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "make"
-        },
-        {
-          "en": "Photos are taken here every day.",
-          "cz": "Tady se fotí každý den.",
-          "gap": "Photos ____ here every day. (take)",
-          "gap_answer": "are taken",
-          "gap_accepts": [
-            "are taken",
-            "Are taken"
-          ],
-          "accepts": [
-            "Photos are taken here every day."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "take"
-        },
-        {
-          "en": "The message was deleted a minute ago.",
-          "cz": "Zpráva byla smazána před minutou.",
-          "gap": "The message ____ a minute ago. (delete)",
-          "gap_answer": "was deleted",
-          "gap_accepts": [
-            "was deleted",
-            "Was deleted"
-          ],
-          "accepts": [
-            "The message was deleted a minute ago."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "delete"
-        },
-        {
-          "en": "The office is cleaned every night.",
-          "cz": "Kancelář se uklízí každou noc.",
-          "gap": "The office ____ every night. (clean)",
-          "gap_answer": "is cleaned",
-          "gap_accepts": [
-            "is cleaned",
-            "Is cleaned"
-          ],
-          "accepts": [
-            "The office is cleaned every night."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "clean",
-          "active": "They clean the office every night.",
-          "active_accepts": [
-            "They clean the office every night."
-          ]
-        },
-        {
-          "en": "The package was delivered yesterday.",
-          "cz": "Balík byl doručen včera.",
-          "gap": "The package ____ yesterday. (deliver)",
-          "gap_answer": "was delivered",
-          "gap_accepts": [
-            "was delivered",
-            "Was delivered"
-          ],
-          "accepts": [
-            "The package was delivered yesterday."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "deliver",
-          "active": "Someone delivered the package yesterday.",
-          "active_accepts": [
-            "Someone delivered the package yesterday.",
-            "They delivered the package yesterday."
-          ]
-        },
-        {
-          "en": "The rules are explained clearly every week.",
-          "cz": "Pravidla se každý týden jasně vysvětlují.",
-          "gap": "The rules ____ clearly every week. (explain)",
-          "gap_answer": "are explained",
-          "gap_accepts": [
-            "are explained",
-            "Are explained"
-          ],
-          "accepts": [
-            "The rules are explained clearly every week."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "explain"
-        },
-        {
-          "en": "The window was fixed last week.",
-          "cz": "Okno se opravilo minulý týden.",
-          "gap": "The window ____ last week. (fix)",
-          "gap_answer": "was fixed",
-          "gap_accepts": [
-            "was fixed",
-            "Was fixed"
-          ],
-          "accepts": [
-            "The window was fixed last week."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "fix"
-        },
-        {
-          "en": "Coffee is served with cake every afternoon.",
-          "cz": "Káva se podává s dortem každé odpoledne.",
-          "gap": "Coffee ____ with cake every afternoon. (serve)",
-          "gap_answer": "is served",
-          "gap_accepts": [
-            "is served",
-            "Is served"
-          ],
-          "accepts": [
-            "Coffee is served with cake every afternoon."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "serve"
-        },
-        {
-          "en": "The team was chosen carefully last year.",
-          "cz": "Tým byl pečlivě vybrán loni.",
-          "gap": "The team ____ carefully last year. (choose)",
-          "gap_answer": "was chosen",
-          "gap_accepts": [
-            "was chosen",
-            "Was chosen"
-          ],
-          "accepts": [
-            "The team was chosen carefully last year."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "choose"
-        },
-        {
-          "en": "Passports are checked at the border every time.",
-          "cz": "Pasy se na hranici kontrolují pokaždé.",
-          "gap": "Passports ____ at the border every time. (check)",
-          "gap_answer": "are checked",
-          "gap_accepts": [
-            "are checked",
-            "Are checked"
-          ],
-          "accepts": [
-            "Passports are checked at the border every time."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "check"
-        },
-        {
-          "en": "The song was recorded in Prague in 2018.",
-          "cz": "Píseň se nahrála v Praze v roce 2018.",
-          "gap": "The song ____ in Prague in 2018. (record)",
-          "gap_answer": "was recorded",
-          "gap_accepts": [
-            "was recorded",
-            "Was recorded"
-          ],
-          "accepts": [
-            "The song was recorded in Prague in 2018."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "record"
-        },
-        {
-          "en": "The form must be completed before you leave.",
-          "cz": "Formulář musíš vyplnit, než odejdeš.",
-          "gap": "The form must ____ before you leave. (complete)",
-          "gap_answer": "be completed",
-          "gap_accepts": [
-            "be completed",
-            "Be completed"
-          ],
-          "accepts": [
-            "The form must be completed before you leave."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "complete"
-        },
-        {
-          "en": "The files were saved automatically last night.",
-          "cz": "Soubory se včera v noci uložily automaticky.",
-          "gap": "The files ____ automatically last night. (save)",
-          "gap_answer": "were saved",
-          "gap_accepts": [
-            "were saved",
-            "Were saved"
-          ],
-          "accepts": [
-            "The files were saved automatically last night."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "save"
-        },
-        {
-          "en": "The invoice will be sent today.",
-          "cz": "Faktura bude odeslána dnes.",
-          "gap": "The invoice will ____ today. (send)",
-          "gap_answer": "be sent",
-          "gap_accepts": [
-            "be sent",
-            "Be sent"
-          ],
-          "accepts": [
-            "The invoice will be sent today."
-          ],
-          "explanation": "Passive: form of be agrees with the subject + past participle.",
-          "explanation_cz": "Pasivum: tvar be se shoduje s podmětem + příčestí.",
-          "lemma": "send"
-        }
-      ]
+     "en": "English is spoken here these days.",
+     "cz": "Tady se teď mluví anglicky.",
+     "gap": "English ____ here these days. (speak)",
+     "gap_answer": "is spoken",
+     "gap_accepts": [
+      "is spoken",
+      "Is spoken"
+     ],
+     "accepts": [
+      "English is spoken here these days."
+     ],
+     "explanation": "**English is spoken**: *speak* becomes the past participle **spoken**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**English is spoken**: z *speak* je příčestí minulé **spoken** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "speak",
+     "active": "People speak English here these days.",
+     "active_accepts": [
+      "People speak English here these days.",
+      "They speak English here these days."
+     ],
+     "quiz_options": [
+      "is spoken",
+      "are spoken",
+      "is speak",
+      "spoken"
+     ]
+    },
+    {
+     "en": "The house was built in 1990.",
+     "cz": "Dům byl postaven v roce 1990.",
+     "gap": "The house ____ in 1990. (build)",
+     "gap_answer": "was built",
+     "gap_accepts": [
+      "was built",
+      "Was built"
+     ],
+     "accepts": [
+      "The house was built in 1990."
+     ],
+     "explanation": "**The house was built**: past passive — **was** plus the past participle **built**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The house was built**: minulý trpný rod — **was** plus příčestí minulé **built**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "build",
+     "active": "Someone built the house in 1990.",
+     "active_accepts": [
+      "Someone built the house in 1990.",
+      "They built the house in 1990."
+     ],
+     "quiz_options": [
+      "was built",
+      "were built",
+      "was build",
+      "built"
+     ]
+    },
+    {
+     "en": "The emails are sent every morning.",
+     "cz": "Emaily se posílají každé ráno.",
+     "gap": "The emails ____ every morning. (send)",
+     "gap_answer": "are sent",
+     "gap_accepts": [
+      "are sent",
+      "Are sent"
+     ],
+     "accepts": [
+      "The emails are sent every morning."
+     ],
+     "explanation": "**The emails are sent**: *send* becomes the past participle **sent**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**The emails are sent**: z *send* je příčestí minulé **sent** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "send",
+     "active": "They send the emails every morning.",
+     "active_accepts": [
+      "They send the emails every morning."
+     ],
+     "quiz_options": [
+      "are sent",
+      "is sent",
+      "are send",
+      "sent"
+     ]
+    },
+    {
+     "en": "My bike was stolen yesterday.",
+     "cz": "Včera mi ukradli kolo.",
+     "gap": "My bike ____ yesterday. (steal)",
+     "gap_answer": "was stolen",
+     "gap_accepts": [
+      "was stolen",
+      "Was stolen"
+     ],
+     "accepts": [
+      "My bike was stolen yesterday."
+     ],
+     "explanation": "**My bike was stolen**: past passive — **was** plus the past participle **stolen**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**My bike was stolen**: minulý trpný rod — **was** plus příčestí minulé **stolen**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "steal",
+     "active": "Someone stole my bike yesterday.",
+     "active_accepts": [
+      "Someone stole my bike yesterday.",
+      "They stole my bike yesterday."
+     ],
+     "quiz_options": [
+      "was stolen",
+      "were stolen",
+      "was steal",
+      "stolen"
+     ]
+    },
+    {
+     "en": "The room is cleaned every day.",
+     "cz": "Pokoj se uklízí každý den.",
+     "gap": "The room ____ every day. (clean)",
+     "gap_answer": "is cleaned",
+     "gap_accepts": [
+      "is cleaned",
+      "Is cleaned"
+     ],
+     "accepts": [
+      "The room is cleaned every day."
+     ],
+     "explanation": "**The room is cleaned**: *clean* becomes the past participle **cleaned**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**The room is cleaned**: z *clean* je příčestí minulé **cleaned** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "clean",
+     "active": "Someone cleans the room every day.",
+     "active_accepts": [
+      "Someone cleans the room every day.",
+      "They clean the room every day."
+     ],
+     "quiz_options": [
+      "is cleaned",
+      "are cleaned",
+      "is clean",
+      "cleaned"
+     ]
+    },
+    {
+     "en": "These phones are made in Asia now.",
+     "cz": "Tyhle telefony se teď vyrábějí v Asii.",
+     "gap": "These phones ____ in Asia now. (make)",
+     "gap_answer": "are made",
+     "gap_accepts": [
+      "are made",
+      "Are made"
+     ],
+     "accepts": [
+      "These phones are made in Asia now."
+     ],
+     "explanation": "**These phones are made**: *make* becomes the past participle **made**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**These phones are made**: z *make* je příčestí minulé **made** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "make",
+     "quiz_options": [
+      "are made",
+      "is made",
+      "are make",
+      "made"
+     ]
+    },
+    {
+     "en": "The door was opened by the guard yesterday morning.",
+     "cz": "Dveře včera ráno otevřel strážný.",
+     "gap": "The door ____ by the guard yesterday morning. (open)",
+     "gap_answer": "was opened",
+     "gap_accepts": [
+      "was opened",
+      "Was opened"
+     ],
+     "accepts": [
+      "The door was opened by the guard yesterday morning."
+     ],
+     "explanation": "**The door was opened**: past passive — **was** plus the past participle **opened**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The door was opened**: minulý trpný rod — **was** plus příčestí minulé **opened**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "open",
+     "active": "The guard opened the door yesterday morning.",
+     "active_accepts": [
+      "The guard opened the door yesterday morning."
+     ],
+     "quiz_options": [
+      "was opened",
+      "were opened",
+      "was open",
+      "opened"
+     ]
+    },
+    {
+     "en": "Lunch is served at noon every day.",
+     "cz": "Oběd se podává v poledne každý den.",
+     "gap": "Lunch ____ at noon every day. (serve)",
+     "gap_answer": "is served",
+     "gap_accepts": [
+      "is served",
+      "Is served"
+     ],
+     "accepts": [
+      "Lunch is served at noon every day."
+     ],
+     "explanation": "**Lunch is served**: *serve* becomes the past participle **served**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Lunch is served**: z *serve* je příčestí minulé **served** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "serve",
+     "active": "They serve lunch at noon every day.",
+     "active_accepts": [
+      "They serve lunch at noon every day."
+     ],
+     "quiz_options": [
+      "is served",
+      "are served",
+      "is serve",
+      "served"
+     ]
+    },
+    {
+     "en": "The windows were broken last night.",
+     "cz": "Okna byla včera v noci rozbitá.",
+     "gap": "The windows ____ last night. (break)",
+     "gap_answer": "were broken",
+     "gap_accepts": [
+      "were broken",
+      "Were broken"
+     ],
+     "accepts": [
+      "The windows were broken last night."
+     ],
+     "explanation": "**The windows were broken**: past passive — **were** plus the past participle **broken**. The time word is finished, so **were**, not **are**.",
+     "explanation_cz": "**The windows were broken**: minulý trpný rod — **were** plus příčestí minulé **broken**. Časový údaj je uzavřený, proto **were**, ne **are**.",
+     "lemma": "break",
+     "active": "Someone broke the windows last night.",
+     "active_accepts": [
+      "Someone broke the windows last night.",
+      "They broke the windows last night."
+     ],
+     "quiz_options": [
+      "were broken",
+      "was broken",
+      "were break",
+      "broken"
+     ]
+    },
+    {
+     "en": "The report will be finished tomorrow.",
+     "cz": "Zpráva bude zítra hotová.",
+     "gap": "The report will ____ tomorrow. (finish)",
+     "gap_answer": "be finished",
+     "gap_accepts": [
+      "be finished",
+      "Be finished"
+     ],
+     "accepts": [
+      "The report will be finished tomorrow."
+     ],
+     "explanation": "After **will** the passive is **be** + past participle: **be finished**. Never *will is finished* — a modal is always followed by **be**.",
+     "explanation_cz": "Po **will** má trpný rod tvar **be** + příčestí minulé: **be finished**. Nikdy *will is finished* — po modálním slovese vždy **be**.",
+     "lemma": "finish",
+     "quiz_options": [
+      "be finished",
+      "is finished",
+      "be finish",
+      "finished"
+     ]
+    },
+    {
+     "en": "Coffee is grown in Brazil these days.",
+     "cz": "Káva se v Brazílii pořád pěstuje.",
+     "gap": "Coffee ____ in Brazil these days. (grow)",
+     "gap_answer": "is grown",
+     "gap_accepts": [
+      "is grown",
+      "Is grown"
+     ],
+     "accepts": [
+      "Coffee is grown in Brazil these days."
+     ],
+     "explanation": "**Coffee is grown**: *grow* becomes the past participle **grown**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Coffee is grown**: z *grow* je příčestí minulé **grown** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "grow",
+     "active": "They grow coffee in Brazil these days.",
+     "active_accepts": [
+      "They grow coffee in Brazil these days.",
+      "People grow coffee in Brazil these days."
+     ],
+     "quiz_options": [
+      "is grown",
+      "are grown",
+      "is grow",
+      "grown"
+     ]
+    },
+    {
+     "en": "The film was directed by her in 2019.",
+     "cz": "Ten film v roce 2019 režírovala ona.",
+     "gap": "The film ____ by her in 2019. (direct)",
+     "gap_answer": "was directed",
+     "gap_accepts": [
+      "was directed",
+      "Was directed"
+     ],
+     "accepts": [
+      "The film was directed by her in 2019."
+     ],
+     "explanation": "**The film was directed**: past passive — **was** plus the past participle **directed**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The film was directed**: minulý trpný rod — **was** plus příčestí minulé **directed**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "direct",
+     "active": "She directed the film in 2019.",
+     "active_accepts": [
+      "She directed the film in 2019."
+     ],
+     "quiz_options": [
+      "was directed",
+      "were directed",
+      "was direct",
+      "directed"
+     ]
+    },
+    {
+     "en": "The cake was eaten quickly at the party yesterday.",
+     "cz": "Dort se včera na oslavě rychle snědl.",
+     "gap": "The cake ____ quickly at the party yesterday. (eat)",
+     "gap_answer": "was eaten",
+     "gap_accepts": [
+      "was eaten",
+      "Was eaten"
+     ],
+     "accepts": [
+      "The cake was eaten quickly at the party yesterday."
+     ],
+     "explanation": "**The cake was eaten**: past passive — **was** plus the past participle **eaten**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The cake was eaten**: minulý trpný rod — **was** plus příčestí minulé **eaten**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "eat",
+     "active": "They ate the cake quickly at the party yesterday.",
+     "active_accepts": [
+      "They ate the cake quickly at the party yesterday.",
+      "Someone ate the cake quickly at the party yesterday."
+     ],
+     "quiz_options": [
+      "was eaten",
+      "were eaten",
+      "was eat",
+      "eaten"
+     ]
+    },
+    {
+     "en": "Tickets are sold online every day.",
+     "cz": "Lístky se každý den prodávají online.",
+     "gap": "Tickets ____ online every day. (sell)",
+     "gap_answer": "are sold",
+     "gap_accepts": [
+      "are sold",
+      "Are sold"
+     ],
+     "accepts": [
+      "Tickets are sold online every day.",
+      "Tickets are sold every day online.",
+      "Every day tickets are sold online."
+     ],
+     "explanation": "**Tickets are sold**: *sell* becomes the past participle **sold**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Tickets are sold**: z *sell* je příčestí minulé **sold** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "sell",
+     "active": "They sell tickets online every day.",
+     "active_accepts": [
+      "They sell tickets online every day.",
+      "They sell tickets every day online.",
+      "Every day they sell tickets online."
+     ],
+     "quiz_options": [
+      "are sold",
+      "is sold",
+      "are sell",
+      "sold"
+     ]
+    },
+    {
+     "en": "The road was closed last night.",
+     "cz": "Silnice byla včera v noci uzavřená.",
+     "gap": "The road ____ last night. (close)",
+     "gap_answer": "was closed",
+     "gap_accepts": [
+      "was closed",
+      "Was closed"
+     ],
+     "accepts": [
+      "The road was closed last night."
+     ],
+     "explanation": "**The road was closed**: past passive — **was** plus the past participle **closed**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The road was closed**: minulý trpný rod — **was** plus příčestí minulé **closed**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "close",
+     "active": "They closed the road last night.",
+     "active_accepts": [
+      "They closed the road last night.",
+      "Someone closed the road last night."
+     ],
+     "quiz_options": [
+      "was closed",
+      "were closed",
+      "was close",
+      "closed"
+     ]
+    },
+    {
+     "en": "Spanish is taught at this school every year.",
+     "cz": "Na této škole se španělština učí každý rok.",
+     "gap": "Spanish ____ at this school every year. (teach)",
+     "gap_answer": "is taught",
+     "gap_accepts": [
+      "is taught",
+      "Is taught"
+     ],
+     "accepts": [
+      "Spanish is taught at this school every year."
+     ],
+     "explanation": "**Spanish is taught**: *teach* becomes the past participle **taught**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Spanish is taught**: z *teach* je příčestí minulé **taught** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "teach",
+     "quiz_options": [
+      "is taught",
+      "are taught",
+      "is teach",
+      "taught"
+     ]
+    },
+    {
+     "en": "The letters were posted yesterday.",
+     "cz": "Dopisy byly včera odeslány.",
+     "gap": "The letters ____ yesterday. (post)",
+     "gap_answer": "were posted",
+     "gap_accepts": [
+      "were posted",
+      "Were posted"
+     ],
+     "accepts": [
+      "The letters were posted yesterday."
+     ],
+     "explanation": "**The letters were posted**: past passive — **were** plus the past participle **posted**. The time word is finished, so **were**, not **are**.",
+     "explanation_cz": "**The letters were posted**: minulý trpný rod — **were** plus příčestí minulé **posted**. Časový údaj je uzavřený, proto **were**, ne **are**.",
+     "lemma": "post",
+     "active": "They posted the letters yesterday.",
+     "active_accepts": [
+      "They posted the letters yesterday."
+     ],
+     "quiz_options": [
+      "were posted",
+      "was posted",
+      "were post",
+      "posted"
+     ]
+    },
+    {
+     "en": "The problem is solved now — we can continue.",
+     "cz": "Problém je teď vyřešený — můžeme pokračovat.",
+     "gap": "The problem ____ now — we can continue. (solve)",
+     "gap_answer": "is solved",
+     "gap_accepts": [
+      "is solved",
+      "Is solved"
+     ],
+     "accepts": [
+      "The problem is solved now — we can continue."
+     ],
+     "explanation": "**The problem is solved**: *solve* becomes the past participle **solved**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**The problem is solved**: z *solve* je příčestí minulé **solved** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "solve",
+     "quiz_options": [
+      "is solved",
+      "are solved",
+      "is solve",
+      "solved"
+     ]
+    },
+    {
+     "en": "A new bridge was opened in 2022.",
+     "cz": "Nový most byl otevřen v roce 2022.",
+     "gap": "A new bridge ____ in 2022. (open)",
+     "gap_answer": "was opened",
+     "gap_accepts": [
+      "was opened",
+      "Was opened"
+     ],
+     "accepts": [
+      "A new bridge was opened in 2022."
+     ],
+     "explanation": "**A new bridge was opened**: past passive — **was** plus the past participle **opened**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**A new bridge was opened**: minulý trpný rod — **was** plus příčestí minulé **opened**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "open",
+     "quiz_options": [
+      "was opened",
+      "were opened",
+      "was open",
+      "opened"
+     ]
+    },
+    {
+     "en": "Mistakes are made every day.",
+     "cz": "Chyby se dělají každý den.",
+     "gap": "Mistakes ____ every day. (make)",
+     "gap_answer": "are made",
+     "gap_accepts": [
+      "are made",
+      "Are made"
+     ],
+     "accepts": [
+      "Mistakes are made every day."
+     ],
+     "explanation": "**Mistakes are made**: *make* becomes the past participle **made**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Mistakes are made**: z *make* je příčestí minulé **made** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "make",
+     "quiz_options": [
+      "are made",
+      "is made",
+      "are make",
+      "made"
+     ]
+    },
+    {
+     "en": "The documents were signed yesterday morning.",
+     "cz": "Dokumenty byly včera ráno podepsány.",
+     "gap": "The documents ____ yesterday morning. (sign)",
+     "gap_answer": "were signed",
+     "gap_accepts": [
+      "were signed",
+      "Were signed"
+     ],
+     "accepts": [
+      "The documents were signed yesterday morning."
+     ],
+     "explanation": "**The documents were signed**: past passive — **were** plus the past participle **signed**. The time word is finished, so **were**, not **are**.",
+     "explanation_cz": "**The documents were signed**: minulý trpný rod — **were** plus příčestí minulé **signed**. Časový údaj je uzavřený, proto **were**, ne **are**.",
+     "lemma": "sign",
+     "quiz_options": [
+      "were signed",
+      "was signed",
+      "were sign",
+      "signed"
+     ]
+    },
+    {
+     "en": "This song is known everywhere these days.",
+     "cz": "Tuhle píseň teď znají všude.",
+     "gap": "This song ____ everywhere these days. (know)",
+     "gap_answer": "is known",
+     "gap_accepts": [
+      "is known",
+      "Is known"
+     ],
+     "accepts": [
+      "This song is known everywhere these days."
+     ],
+     "explanation": "**This song is known**: *know* becomes the past participle **known**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**This song is known**: z *know* je příčestí minulé **known** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "know",
+     "quiz_options": [
+      "is known",
+      "are known",
+      "is know",
+      "known"
+     ]
+    },
+    {
+     "en": "The meeting was cancelled yesterday.",
+     "cz": "Schůzka byla včera zrušena.",
+     "gap": "The meeting ____ yesterday. (cancel)",
+     "gap_answer": "was cancelled",
+     "gap_accepts": [
+      "was cancelled",
+      "Was cancelled"
+     ],
+     "accepts": [
+      "The meeting was cancelled yesterday."
+     ],
+     "explanation": "**The meeting was cancelled**: past passive — **was** plus the past participle **cancelled**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The meeting was cancelled**: minulý trpný rod — **was** plus příčestí minulé **cancelled**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "cancel",
+     "active": "Someone cancelled the meeting yesterday.",
+     "active_accepts": [
+      "Someone cancelled the meeting yesterday.",
+      "They cancelled the meeting yesterday."
+     ],
+     "quiz_options": [
+      "was cancelled",
+      "were cancelled",
+      "was cancel",
+      "cancelled"
+     ]
+    },
+    {
+     "en": "These chairs are made of wood now.",
+     "cz": "Tyhle židle se i teď dělají ze dřeva.",
+     "gap": "These chairs ____ of wood now. (make)",
+     "gap_answer": "are made",
+     "gap_accepts": [
+      "are made",
+      "Are made"
+     ],
+     "accepts": [
+      "These chairs are made of wood now."
+     ],
+     "explanation": "**These chairs are made**: *make* becomes the past participle **made**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**These chairs are made**: z *make* je příčestí minulé **made** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "make",
+     "active": "They make these chairs of wood now.",
+     "active_accepts": [
+      "They make these chairs of wood now."
+     ],
+     "quiz_options": [
+      "are made",
+      "is made",
+      "are make",
+      "made"
+     ]
+    },
+    {
+     "en": "The lights were turned off last night.",
+     "cz": "Světla byla včera v noci zhasnutá.",
+     "gap": "The lights ____ off last night. (turn)",
+     "gap_answer": "were turned",
+     "gap_accepts": [
+      "were turned",
+      "Were turned"
+     ],
+     "accepts": [
+      "The lights were turned off last night."
+     ],
+     "explanation": "**The lights were turned**: past passive — **were** plus the past participle **turned**. The time word is finished, so **were**, not **are**.",
+     "explanation_cz": "**The lights were turned**: minulý trpný rod — **were** plus příčestí minulé **turned**. Časový údaj je uzavřený, proto **were**, ne **are**.",
+     "lemma": "turn",
+     "active": "Someone turned the lights off last night.",
+     "active_accepts": [
+      "Someone turned the lights off last night.",
+      "They turned the lights off last night.",
+      "Someone turned off the lights last night.",
+      "They turned off the lights last night."
+     ],
+     "quiz_options": [
+      "were turned",
+      "was turned",
+      "were turn",
+      "turned"
+     ]
+    },
+    {
+     "en": "The book was written in 2015.",
+     "cz": "Kniha byla napsána v roce 2015.",
+     "gap": "The book ____ in 2015. (write)",
+     "gap_answer": "was written",
+     "gap_accepts": [
+      "was written",
+      "Was written"
+     ],
+     "accepts": [
+      "The book was written in 2015."
+     ],
+     "explanation": "**The book was written**: past passive — **was** plus the past participle **written**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The book was written**: minulý trpný rod — **was** plus příčestí minulé **written**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "write",
+     "active": "Someone wrote the book in 2015.",
+     "active_accepts": [
+      "Someone wrote the book in 2015.",
+      "They wrote the book in 2015."
+     ],
+     "quiz_options": [
+      "was written",
+      "were written",
+      "was write",
+      "written"
+     ]
+    },
+    {
+     "en": "Dinner is prepared by the chef every evening.",
+     "cz": "Večeři připravuje šéfkuchař každý večer.",
+     "gap": "Dinner ____ by the chef every evening. (prepare)",
+     "gap_answer": "is prepared",
+     "gap_accepts": [
+      "is prepared",
+      "Is prepared"
+     ],
+     "accepts": [
+      "Dinner is prepared by the chef every evening."
+     ],
+     "explanation": "**Dinner is prepared**: *prepare* becomes the past participle **prepared**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Dinner is prepared**: z *prepare* je příčestí minulé **prepared** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "prepare",
+     "quiz_options": [
+      "is prepared",
+      "are prepared",
+      "is prepare",
+      "prepared"
+     ]
+    },
+    {
+     "en": "The results will be published soon.",
+     "cz": "Výsledky brzy zveřejní.",
+     "gap": "The results will ____ soon. (publish)",
+     "gap_answer": "be published",
+     "gap_accepts": [
+      "be published",
+      "Be published"
+     ],
+     "accepts": [
+      "The results will be published soon."
+     ],
+     "explanation": "After **will** the passive is **be** + past participle: **be published**. Never *will is published* — a modal is always followed by **be**.",
+     "explanation_cz": "Po **will** má trpný rod tvar **be** + příčestí minulé: **be published**. Nikdy *will is published* — po modálním slovese vždy **be**.",
+     "lemma": "publish",
+     "quiz_options": [
+      "be published",
+      "is published",
+      "be publish",
+      "published"
+     ]
+    },
+    {
+     "en": "The glass was broken by accident yesterday.",
+     "cz": "Sklo se včera rozbilo náhodou.",
+     "gap": "The glass ____ by accident yesterday. (break)",
+     "gap_answer": "was broken",
+     "gap_accepts": [
+      "was broken",
+      "Was broken"
+     ],
+     "accepts": [
+      "The glass was broken by accident yesterday."
+     ],
+     "explanation": "**The glass was broken**: past passive — **was** plus the past participle **broken**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The glass was broken**: minulý trpný rod — **was** plus příčestí minulé **broken**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "break",
+     "active": "Someone broke the glass by accident yesterday.",
+     "active_accepts": [
+      "Someone broke the glass by accident yesterday."
+     ],
+     "quiz_options": [
+      "was broken",
+      "were broken",
+      "was break",
+      "broken"
+     ]
+    },
+    {
+     "en": "Applications are accepted online every day.",
+     "cz": "Přihlášky se každý den přijímají online.",
+     "gap": "Applications ____ online every day. (accept)",
+     "gap_answer": "are accepted",
+     "gap_accepts": [
+      "are accepted",
+      "Are accepted"
+     ],
+     "accepts": [
+      "Applications are accepted online every day."
+     ],
+     "explanation": "**Applications are accepted**: *accept* becomes the past participle **accepted**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Applications are accepted**: z *accept* je příčestí minulé **accepted** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "accept",
+     "quiz_options": [
+      "are accepted",
+      "is accepted",
+      "are accept",
+      "accepted"
+     ]
+    },
+    {
+     "en": "The story was told many times when we were children.",
+     "cz": "Příběh se vyprávěl mnohokrát, když jsme byli děti.",
+     "gap": "The story ____ many times when we were children. (tell)",
+     "gap_answer": "was told",
+     "gap_accepts": [
+      "was told",
+      "Was told"
+     ],
+     "accepts": [
+      "The story was told many times when we were children."
+     ],
+     "explanation": "**The story was told**: past passive — **was** plus the past participle **told**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The story was told**: minulý trpný rod — **was** plus příčestí minulé **told**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "tell",
+     "quiz_options": [
+      "was told",
+      "were told",
+      "was tell",
+      "told"
+     ]
+    },
+    {
+     "en": "This app is used by millions of people now.",
+     "cz": "Tuhle appku teď používají miliony lidí.",
+     "gap": "This app ____ by millions of people now. (use)",
+     "gap_answer": "is used",
+     "gap_accepts": [
+      "is used",
+      "Is used"
+     ],
+     "accepts": [
+      "This app is used by millions of people now."
+     ],
+     "explanation": "**This app is used**: *use* becomes the past participle **used**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**This app is used**: z *use* je příčestí minulé **used** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "use",
+     "quiz_options": [
+      "is used",
+      "are used",
+      "is use",
+      "used"
+     ]
+    },
+    {
+     "en": "The keys were found under the sofa yesterday morning.",
+     "cz": "Klíče se včera ráno našly pod pohovkou.",
+     "gap": "The keys ____ under the sofa yesterday morning. (find)",
+     "gap_answer": "were found",
+     "gap_accepts": [
+      "were found",
+      "Were found"
+     ],
+     "accepts": [
+      "The keys were found under the sofa yesterday morning."
+     ],
+     "explanation": "**The keys were found**: past passive — **were** plus the past participle **found**. The time word is finished, so **were**, not **are**.",
+     "explanation_cz": "**The keys were found**: minulý trpný rod — **were** plus příčestí minulé **found**. Časový údaj je uzavřený, proto **were**, ne **are**.",
+     "lemma": "find",
+     "active": "Someone found the keys under the sofa yesterday morning.",
+     "active_accepts": [
+      "Someone found the keys under the sofa yesterday morning.",
+      "They found the keys under the sofa yesterday morning."
+     ],
+     "quiz_options": [
+      "were found",
+      "was found",
+      "were find",
+      "found"
+     ]
+    },
+    {
+     "en": "English is needed for this job these days.",
+     "cz": "Na tuhle práci je teď potřeba angličtina.",
+     "gap": "English ____ for this job these days. (need)",
+     "gap_answer": "is needed",
+     "gap_accepts": [
+      "is needed",
+      "Is needed"
+     ],
+     "accepts": [
+      "English is needed for this job these days."
+     ],
+     "explanation": "**English is needed**: *need* becomes the past participle **needed**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**English is needed**: z *need* je příčestí minulé **needed** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "need",
+     "quiz_options": [
+      "is needed",
+      "are needed",
+      "is need",
+      "needed"
+     ]
+    },
+    {
+     "en": "The decision was made yesterday.",
+     "cz": "Rozhodnutí padlo včera.",
+     "gap": "The decision ____ yesterday. (make)",
+     "gap_answer": "was made",
+     "gap_accepts": [
+      "was made",
+      "Was made"
+     ],
+     "accepts": [
+      "The decision was made yesterday."
+     ],
+     "explanation": "**The decision was made**: past passive — **was** plus the past participle **made**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The decision was made**: minulý trpný rod — **was** plus příčestí minulé **made**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "make",
+     "quiz_options": [
+      "was made",
+      "were made",
+      "was make",
+      "made"
+     ]
+    },
+    {
+     "en": "Photos are taken here every day.",
+     "cz": "Tady se fotí každý den.",
+     "gap": "Photos ____ here every day. (take)",
+     "gap_answer": "are taken",
+     "gap_accepts": [
+      "are taken",
+      "Are taken"
+     ],
+     "accepts": [
+      "Photos are taken here every day."
+     ],
+     "explanation": "**Photos are taken**: *take* becomes the past participle **taken**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Photos are taken**: z *take* je příčestí minulé **taken** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "take",
+     "quiz_options": [
+      "are taken",
+      "is taken",
+      "are take",
+      "taken"
+     ]
+    },
+    {
+     "en": "The message was deleted a minute ago.",
+     "cz": "Zpráva byla smazána před minutou.",
+     "gap": "The message ____ a minute ago. (delete)",
+     "gap_answer": "was deleted",
+     "gap_accepts": [
+      "was deleted",
+      "Was deleted"
+     ],
+     "accepts": [
+      "The message was deleted a minute ago."
+     ],
+     "explanation": "**The message was deleted**: past passive — **was** plus the past participle **deleted**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The message was deleted**: minulý trpný rod — **was** plus příčestí minulé **deleted**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "delete",
+     "quiz_options": [
+      "was deleted",
+      "were deleted",
+      "was delete",
+      "deleted"
+     ]
+    },
+    {
+     "en": "The office is cleaned every night.",
+     "cz": "Kancelář se uklízí každou noc.",
+     "gap": "The office ____ every night. (clean)",
+     "gap_answer": "is cleaned",
+     "gap_accepts": [
+      "is cleaned",
+      "Is cleaned"
+     ],
+     "accepts": [
+      "The office is cleaned every night."
+     ],
+     "explanation": "**The office is cleaned**: *clean* becomes the past participle **cleaned**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**The office is cleaned**: z *clean* je příčestí minulé **cleaned** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "clean",
+     "active": "They clean the office every night.",
+     "active_accepts": [
+      "They clean the office every night."
+     ],
+     "quiz_options": [
+      "is cleaned",
+      "are cleaned",
+      "is clean",
+      "cleaned"
+     ]
+    },
+    {
+     "en": "The package was delivered yesterday.",
+     "cz": "Balík byl doručen včera.",
+     "gap": "The package ____ yesterday. (deliver)",
+     "gap_answer": "was delivered",
+     "gap_accepts": [
+      "was delivered",
+      "Was delivered"
+     ],
+     "accepts": [
+      "The package was delivered yesterday."
+     ],
+     "explanation": "**The package was delivered**: past passive — **was** plus the past participle **delivered**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The package was delivered**: minulý trpný rod — **was** plus příčestí minulé **delivered**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "deliver",
+     "active": "Someone delivered the package yesterday.",
+     "active_accepts": [
+      "Someone delivered the package yesterday.",
+      "They delivered the package yesterday."
+     ],
+     "quiz_options": [
+      "was delivered",
+      "were delivered",
+      "was deliver",
+      "delivered"
+     ]
+    },
+    {
+     "en": "The rules are explained clearly every week.",
+     "cz": "Pravidla se každý týden jasně vysvětlují.",
+     "gap": "The rules ____ clearly every week. (explain)",
+     "gap_answer": "are explained",
+     "gap_accepts": [
+      "are explained",
+      "Are explained"
+     ],
+     "accepts": [
+      "The rules are explained clearly every week."
+     ],
+     "explanation": "**The rules are explained**: *explain* becomes the past participle **explained**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**The rules are explained**: z *explain* je příčestí minulé **explained** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "explain",
+     "quiz_options": [
+      "are explained",
+      "is explained",
+      "are explain",
+      "explained"
+     ]
+    },
+    {
+     "en": "The window was fixed last week.",
+     "cz": "Okno se opravilo minulý týden.",
+     "gap": "The window ____ last week. (fix)",
+     "gap_answer": "was fixed",
+     "gap_accepts": [
+      "was fixed",
+      "Was fixed"
+     ],
+     "accepts": [
+      "The window was fixed last week."
+     ],
+     "explanation": "**The window was fixed**: past passive — **was** plus the past participle **fixed**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The window was fixed**: minulý trpný rod — **was** plus příčestí minulé **fixed**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "fix",
+     "quiz_options": [
+      "was fixed",
+      "were fixed",
+      "was fix",
+      "fixed"
+     ]
+    },
+    {
+     "en": "Coffee is served with cake every afternoon.",
+     "cz": "Káva se podává s dortem každé odpoledne.",
+     "gap": "Coffee ____ with cake every afternoon. (serve)",
+     "gap_answer": "is served",
+     "gap_accepts": [
+      "is served",
+      "Is served"
+     ],
+     "accepts": [
+      "Coffee is served with cake every afternoon."
+     ],
+     "explanation": "**Coffee is served**: *serve* becomes the past participle **served**, and **is** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Coffee is served**: z *serve* je příčestí minulé **served** a **is** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "serve",
+     "quiz_options": [
+      "is served",
+      "are served",
+      "is serve",
+      "served"
+     ]
+    },
+    {
+     "en": "The team was chosen carefully last year.",
+     "cz": "Tým byl pečlivě vybrán loni.",
+     "gap": "The team ____ carefully last year. (choose)",
+     "gap_answer": "was chosen",
+     "gap_accepts": [
+      "was chosen",
+      "Was chosen"
+     ],
+     "accepts": [
+      "The team was chosen carefully last year."
+     ],
+     "explanation": "**The team was chosen**: past passive — **was** plus the past participle **chosen**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The team was chosen**: minulý trpný rod — **was** plus příčestí minulé **chosen**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "choose",
+     "quiz_options": [
+      "was chosen",
+      "were chosen",
+      "was choose",
+      "chosen"
+     ]
+    },
+    {
+     "en": "Passports are checked at the border every time.",
+     "cz": "Pasy se na hranici kontrolují pokaždé.",
+     "gap": "Passports ____ at the border every time. (check)",
+     "gap_answer": "are checked",
+     "gap_accepts": [
+      "are checked",
+      "Are checked"
+     ],
+     "accepts": [
+      "Passports are checked at the border every time."
+     ],
+     "explanation": "**Passports are checked**: *check* becomes the past participle **checked**, and **are** agrees with the subject. English does not name who does it.",
+     "explanation_cz": "**Passports are checked**: z *check* je příčestí minulé **checked** a **are** se shoduje s podmětem. Angličtina neříká, kdo to dělá.",
+     "lemma": "check",
+     "quiz_options": [
+      "are checked",
+      "is checked",
+      "are check",
+      "checked"
+     ]
+    },
+    {
+     "en": "The song was recorded in Prague in 2018.",
+     "cz": "Píseň se nahrála v Praze v roce 2018.",
+     "gap": "The song ____ in Prague in 2018. (record)",
+     "gap_answer": "was recorded",
+     "gap_accepts": [
+      "was recorded",
+      "Was recorded"
+     ],
+     "accepts": [
+      "The song was recorded in Prague in 2018."
+     ],
+     "explanation": "**The song was recorded**: past passive — **was** plus the past participle **recorded**. The time word is finished, so **was**, not **is**.",
+     "explanation_cz": "**The song was recorded**: minulý trpný rod — **was** plus příčestí minulé **recorded**. Časový údaj je uzavřený, proto **was**, ne **is**.",
+     "lemma": "record",
+     "quiz_options": [
+      "was recorded",
+      "were recorded",
+      "was record",
+      "recorded"
+     ]
+    },
+    {
+     "en": "The form must be completed before you leave.",
+     "cz": "Formulář musíš vyplnit, než odejdeš.",
+     "gap": "The form must ____ before you leave. (complete)",
+     "gap_answer": "be completed",
+     "gap_accepts": [
+      "be completed",
+      "Be completed"
+     ],
+     "accepts": [
+      "The form must be completed before you leave."
+     ],
+     "explanation": "After **must** the passive is **be** + past participle: **be completed**. Never *must is completed* — a modal is always followed by **be**.",
+     "explanation_cz": "Po **must** má trpný rod tvar **be** + příčestí minulé: **be completed**. Nikdy *must is completed* — po modálním slovese vždy **be**.",
+     "lemma": "complete",
+     "quiz_options": [
+      "be completed",
+      "is completed",
+      "be complete",
+      "completed"
+     ]
+    },
+    {
+     "en": "The files were saved automatically last night.",
+     "cz": "Soubory se včera v noci uložily automaticky.",
+     "gap": "The files ____ automatically last night. (save)",
+     "gap_answer": "were saved",
+     "gap_accepts": [
+      "were saved",
+      "Were saved"
+     ],
+     "accepts": [
+      "The files were saved automatically last night."
+     ],
+     "explanation": "**The files were saved**: past passive — **were** plus the past participle **saved**. The time word is finished, so **were**, not **are**.",
+     "explanation_cz": "**The files were saved**: minulý trpný rod — **were** plus příčestí minulé **saved**. Časový údaj je uzavřený, proto **were**, ne **are**.",
+     "lemma": "save",
+     "quiz_options": [
+      "were saved",
+      "was saved",
+      "were save",
+      "saved"
+     ]
+    },
+    {
+     "en": "The invoice will be sent today.",
+     "cz": "Faktura bude odeslána dnes.",
+     "gap": "The invoice will ____ today. (send)",
+     "gap_answer": "be sent",
+     "gap_accepts": [
+      "be sent",
+      "Be sent"
+     ],
+     "accepts": [
+      "The invoice will be sent today."
+     ],
+     "explanation": "After **will** the passive is **be** + past participle: **be sent**. Never *will is sent* — a modal is always followed by **be**.",
+     "explanation_cz": "Po **will** má trpný rod tvar **be** + příčestí minulé: **be sent**. Nikdy *will is sent* — po modálním slovese vždy **be**.",
+     "lemma": "send",
+     "quiz_options": [
+      "be sent",
+      "is sent",
+      "be send",
+      "sent"
+     ]
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "title": "What is the passive?",
-        "table": {
-          "headers": [
-            "",
-            "Subject",
-            "Verb",
-            "Object"
-          ],
-          "rows": [
-            [
-              "Active",
-              "Someone",
-              "built",
-              "this house"
-            ],
-            [
-              "Passive",
-              "This house",
-              "was built",
-              "(by someone)"
-            ]
-          ]
-        },
-        "points": [
-          "In the **active**, the subject **does** the action.",
-          "In the **passive**, the subject **receives** the action."
-        ]
-      },
-      {
-        "title": "Subject and object",
-        "table": {
-          "headers": [
-            "",
-            "Doer",
-            "Thing"
-          ],
-          "rows": [
-            [
-              "Active",
-              "**Someone** built",
-              "this house"
-            ],
-            [
-              "Passive",
-              "(by someone)",
-              "**This house** was built"
-            ]
-          ]
-        },
-        "points": [
-          "Passive: the thing is the new subject",
-          "The old doer can go, or come back as **by someone**"
-        ]
-      },
-      {
-        "title": "When and why we use it",
-        "title_cz": "Kdy a proč ho používáme",
-        "table": {
-          "headers": [
-            "Why",
-            "Example"
-          ],
-          "rows": [
-            [
-              "unknown",
-              "My bike was **stolen**."
-            ],
-            [
-              "obvious",
-              "English **is spoken** here."
-            ],
-            [
-              "process",
-              "These phones **are made** in Asia."
-            ],
-            [
-              "result first",
-              "The documents **were signed** yesterday."
-            ]
-          ]
-        },
-        "points": [
-          "Skip the doer when it would only be *someone / they / people*"
-        ]
-      },
-      {
-        "title": "Form",
-        "table": {
-          "headers": [
-            "",
-            "be",
-            "Example"
-          ],
-          "rows": [
-            [
-              "Present · singular",
-              "**is**",
-              "English **is spoken** here."
-            ],
-            [
-              "Present · plural",
-              "**are**",
-              "These phones **are made** in Asia."
-            ],
-            [
-              "Past · singular",
-              "**was**",
-              "The house **was built** in 1990."
-            ],
-            [
-              "Past · plural",
-              "**were**",
-              "The documents **were signed**."
-            ]
-          ]
-        },
-        "points": [
-          "**Past participle** = the form after *have*: *have **built***, *have **spoken***. Here it comes after *be*.",
-          "built, spoken, made, signed, grown…",
-          "Not now: *has been done* · *is being built* (later)",
-          "Passive = **be** + **past participle**."
-        ]
-      },
-      {
-        "title": "by + agent (optional)",
-        "title_cz": "by + činitel (volitelné)",
-        "table": {
-          "headers": [
-            "by",
-            "Example"
-          ],
-          "rows": [
-            [
-              "needed",
-              "The film was directed **by her**."
-            ],
-            [
-              "skip",
-              "English is spoken here."
-            ]
-          ]
-        },
-        "points": [
-          "Most passives have no *by*",
-          "If you always add *by someone*, you often don't need the passive"
-        ]
-      },
-      {
-        "title": "Czech comparison",
-        "title_cz": "Srovnání s češtinou",
-        "table": {
-          "caption": "Rough pairs (idea, not 1:1)",
-          "headers": [
-            "English passive",
-            "Czech idea"
-          ],
-          "rows": [
-            [
-              "English is spoken here.",
-              "Tady se mluví anglicky."
-            ],
-            [
-              "The house was built in 1990.",
-              "Dům byl postaven v roce 1990."
-            ],
-            [
-              "My bike was stolen.",
-              "Ukradli mi kolo. / Kolo mi ukradli."
-            ],
-            [
-              "These phones are made in Asia.",
-              "Tyhle telefony se vyrábějí v Asii."
-            ]
-          ]
-        },
-        "points": [
-          "se often ≈ English passive (process / general)",
-          "byl/byla/bylo + příčestí ≈ was/were + past participle",
-          "Active Czech (ukradli mi…) can still be passive English when the bike is the topic",
-          "Czech often uses se / -no/-to / or a different word order where English prefers be +",
-          "past participle.",
-          "Don’t translate word-for-word — match the idea (thing affected first)."
-        ]
-      },
-      {
-        "title": "Active ↔ passive (same idea)",
-        "title_cz": "Činný ↔ trpný (stejná idea)",
-        "table": {
-          "headers": [
-            "Active",
-            "Passive"
-          ],
-          "rows": [
-            [
-              "They make these phones in Asia.",
-              "These phones are made in Asia."
-            ],
-            [
-              "Someone built the house in 1990.",
-              "The house was built in 1990."
-            ],
-            [
-              "People speak English here.",
-              "English is spoken here."
-            ]
-          ]
-        },
-        "points": [
-          "Object of the active becomes subject of the passive.",
-          "Be takes the tense; main verb becomes past participle."
-        ]
-      },
-      {
-        "title": "What you practise here",
-        "title_cz": "Co nácvičuješ tady",
-        "table": {
-          "headers": [
-            "Subject",
-            "Present be",
-            "Past be"
-          ],
-          "rows": [
-            [
-              "singular (it / the house / English)",
-              "is",
-              "was"
-            ],
-            [
-              "plural (they / phones / documents)",
-              "are",
-              "were"
-            ]
-          ]
-        },
-        "points": [
-          "1) Find the tense cue (every… / yesterday / in 2015 / still…)",
-          "2) Match number: singular is/was · plural are/were",
-          "Is the office cleaned every night? → Is (not Was)",
-          "The house ____ built in 1990. → was",
-          "will/must + ____ → be",
-          "Type **be + past participle**: *was cancelled*, *are made*. The base verb is in brackets."
-        ]
-      },
-      {
-        "title": "Questions",
-        "title_cz": "Otázky",
-        "table": {
-          "headers": [
-            "Statement",
-            "Question"
-          ],
-          "rows": [
-            [
-              "Coffee **is grown** in Brazil.",
-              "**Is** coffee grown in Brazil?"
-            ],
-            [
-              "The window **was fixed** last week.",
-              "**Was** the window fixed last week?"
-            ]
-          ]
-        },
-        "points": [
-          "**be** moves to the front"
-        ]
-      }
+   ]
+  }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "title": "What is the passive?",
+    "table": {
+     "headers": [
+      "",
+      "Subject",
+      "Verb",
+      "Object"
+     ],
+     "rows": [
+      [
+       "Active",
+       "Someone",
+       "built",
+       "this house"
+      ],
+      [
+       "Passive",
+       "This house",
+       "was built",
+       "(by someone)"
+      ]
+     ]
+    },
+    "points": [
+     "In the **active**, the subject **does** the action.",
+     "In the **passive**, the subject **receives** the action."
     ]
-  },
-  "demo_priority": false
+   },
+   {
+    "title": "Subject and object",
+    "table": {
+     "headers": [
+      "",
+      "Doer",
+      "Thing"
+     ],
+     "rows": [
+      [
+       "Active",
+       "**Someone** built",
+       "this house"
+      ],
+      [
+       "Passive",
+       "(by someone)",
+       "**This house** was built"
+      ]
+     ]
+    },
+    "points": [
+     "Passive: the thing is the new subject",
+     "The old doer can go, or come back as **by someone**"
+    ]
+   },
+   {
+    "title": "When and why we use it",
+    "title_cz": "Kdy a proč ho používáme",
+    "table": {
+     "headers": [
+      "Why",
+      "Example"
+     ],
+     "rows": [
+      [
+       "unknown",
+       "My bike was **stolen**."
+      ],
+      [
+       "obvious",
+       "English **is spoken** here."
+      ],
+      [
+       "process",
+       "These phones **are made** in Asia."
+      ],
+      [
+       "result first",
+       "The documents **were signed** yesterday."
+      ]
+     ]
+    },
+    "points": [
+     "Skip the doer when it would only be *someone / they / people*"
+    ]
+   },
+   {
+    "title": "Form",
+    "table": {
+     "headers": [
+      "",
+      "be",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Present · singular",
+       "**is**",
+       "English **is spoken** here."
+      ],
+      [
+       "Present · plural",
+       "**are**",
+       "These phones **are made** in Asia."
+      ],
+      [
+       "Past · singular",
+       "**was**",
+       "The house **was built** in 1990."
+      ],
+      [
+       "Past · plural",
+       "**were**",
+       "The documents **were signed**."
+      ]
+     ]
+    },
+    "points": [
+     "**Past participle** = the form after *have*: *have **built***, *have **spoken***. Here it comes after *be*.",
+     "built, spoken, made, signed, grown…",
+     "Not now: *has been done* · *is being built* (later)",
+     "Passive = **be** + **past participle**."
+    ]
+   },
+   {
+    "title": "by + agent (optional)",
+    "title_cz": "by + činitel (volitelné)",
+    "table": {
+     "headers": [
+      "by",
+      "Example"
+     ],
+     "rows": [
+      [
+       "needed",
+       "The film was directed **by her**."
+      ],
+      [
+       "skip",
+       "English is spoken here."
+      ]
+     ]
+    },
+    "points": [
+     "Most passives have no *by*",
+     "If you always add *by someone*, you often don't need the passive"
+    ]
+   },
+   {
+    "title": "Czech comparison",
+    "title_cz": "Srovnání s češtinou",
+    "table": {
+     "caption": "Rough pairs (idea, not 1:1)",
+     "headers": [
+      "English passive",
+      "Czech idea"
+     ],
+     "rows": [
+      [
+       "English is spoken here.",
+       "Tady se mluví anglicky."
+      ],
+      [
+       "The house was built in 1990.",
+       "Dům byl postaven v roce 1990."
+      ],
+      [
+       "My bike was stolen.",
+       "Ukradli mi kolo. / Kolo mi ukradli."
+      ],
+      [
+       "These phones are made in Asia.",
+       "Tyhle telefony se vyrábějí v Asii."
+      ]
+     ]
+    },
+    "points": [
+     "se often ≈ English passive (process / general)",
+     "byl/byla/bylo + příčestí ≈ was/were + past participle",
+     "Active Czech (ukradli mi…) can still be passive English when the bike is the topic",
+     "Czech often uses se / -no/-to / or a different word order where English prefers be +",
+     "past participle.",
+     "Don’t translate word-for-word — match the idea (thing affected first)."
+    ]
+   },
+   {
+    "title": "Active ↔ passive (same idea)",
+    "title_cz": "Činný ↔ trpný (stejná idea)",
+    "table": {
+     "headers": [
+      "Active",
+      "Passive"
+     ],
+     "rows": [
+      [
+       "They make these phones in Asia.",
+       "These phones are made in Asia."
+      ],
+      [
+       "Someone built the house in 1990.",
+       "The house was built in 1990."
+      ],
+      [
+       "People speak English here.",
+       "English is spoken here."
+      ]
+     ]
+    },
+    "points": [
+     "Object of the active becomes subject of the passive.",
+     "Be takes the tense; main verb becomes past participle."
+    ]
+   },
+   {
+    "title": "Questions",
+    "title_cz": "Otázky",
+    "table": {
+     "headers": [
+      "Statement",
+      "Question"
+     ],
+     "rows": [
+      [
+       "Coffee **is grown** in Brazil.",
+       "**Is** coffee grown in Brazil?"
+      ],
+      [
+       "The window **was fixed** last week.",
+       "**Was** the window fixed last week?"
+      ]
+     ]
+    },
+    "points": [
+     "**be** moves to the front"
+    ]
+   }
+  ]
+ },
+ "demo_priority": false
 }
