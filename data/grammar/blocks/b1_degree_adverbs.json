@@ -1,604 +1,1067 @@
 {
-  "id": "b1_degree_adverbs",
-  "title": "Degree adverbs (B1)",
-  "level": "B1",
-  "tree_node": "b1_degree_adverbs",
-  "codex_unit": "G_SS-B1B2-01",
-  "practice": "frames",
-  "note": "Two jobs: 0–100 scale (a bit / quite / very / really / extremely) and need (too / enough / far too). Czech ne moc = not very. Not so/such, not extreme adjectives. Bank 12 = one pass. Seeded from Martina's `not so much relaxing` 2026-08-16. Rebuilt 2026-08-28 after smoke: unit had been a coursebook lump.",
-  "default_direction": "cz_to_en",
-  "check": {
-    "sequence": [
-      "quiz"
-    ]
-  },
-  "quality": "good_draft",
-  "use_mode": "correct",
-  "intro": {
-    "cards": [
-      {
-        "title": "What they are",
-        "title_cz": "Co to jsou",
-        "text_first": true,
-        "diagram": "scale",
-        "labels": [
-          "0",
-          "a bit",
-          "quite",
-          "very",
-          "extremely"
-        ],
-        "points": [
-          "These are words like **a bit**, **quite**, **very**, **extremely**",
-          "They name how strong an adjective is, from 0 to 100",
-          "They sit before it: **a bit** tired, **very** tired"
-        ],
-        "table": {
-          "headers": [
-            "Place",
-            "Example"
-          ],
-          "rows": [
-            [
-              "low",
-              "**a bit** tired"
-            ],
-            [
-              "middle",
-              "**quite** tired"
-            ],
-            [
-              "high",
-              "**very** tired"
-            ],
-            [
-              "top",
-              "**extremely** difficult"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "a bit",
-        "title_cz": "a bit",
-        "text_first": true,
-        "diagram": "scale",
-        "labels": [
-          "0",
-          "a bit",
-          "quite",
-          "very",
-          "extremely"
-        ],
-        "points": [
-          "**a bit** = low on the scale",
-          "Before an adjective or adverb",
-          "**a little** sits at the same height"
-        ],
-        "table": {
-          "headers": [
-            "With",
-            "Example"
-          ],
-          "rows": [
-            [
-              "adjective",
-              "**a bit** tired"
-            ],
-            [
-              "adjective",
-              "**a bit** cold"
-            ],
-            [
-              "adverb",
-              "**a bit** late"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "quite",
-        "title_cz": "quite",
-        "text_first": true,
-        "diagram": "scale",
-        "labels": [
-          "0",
-          "a bit",
-          "quite",
-          "very",
-          "extremely"
-        ],
-        "points": [
-          "**quite** = middle of the scale",
-          "Weaker than **very**, stronger than **a bit**"
-        ],
-        "table": {
-          "headers": [
-            "With",
-            "Example"
-          ],
-          "rows": [
-            [
-              "adjective",
-              "**quite** tired"
-            ],
-            [
-              "adjective",
-              "**quite** heavy"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "very / really",
-        "title_cz": "very / really",
-        "text_first": true,
-        "diagram": "scale",
-        "labels": [
-          "0",
-          "a bit",
-          "quite",
-          "very",
-          "extremely"
-        ],
-        "points": [
-          "**very** and **really** are the same height: high",
-          "Not the top — that is **extremely**"
-        ],
-        "table": {
-          "headers": [
-            "Word",
-            "Example"
-          ],
-          "rows": [
-            [
-              "**very**",
-              "**very** tired"
-            ],
-            [
-              "**really**",
-              "**really** warm"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "extremely",
-        "title_cz": "extremely",
-        "text_first": true,
-        "diagram": "scale",
-        "labels": [
-          "0",
-          "a bit",
-          "quite",
-          "very",
-          "extremely"
-        ],
-        "points": [
-          "**extremely** = the top of the 0–100 scale",
-          "Still an ordinary adjective: difficult, important, cold"
-        ],
-        "table": {
-          "headers": [
-            "With",
-            "Example"
-          ],
-          "rows": [
-            [
-              "adjective",
-              "**extremely** difficult"
-            ],
-            [
-              "adjective",
-              "**extremely** important"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "too",
-        "title_cz": "too",
-        "diagram": "need_scale",
-        "labels": [
-          "not enough",
-          "enough",
-          "too"
-        ],
-        "points": [
-          "**too** is not a 0–100 tick — it is past the need",
-          "**very** cold describes · **too** cold to swim means swimming is off"
-        ],
-        "table": {
-          "headers": [
-            "Pattern",
-            "Example"
-          ],
-          "rows": [
-            [
-              "**too** + adjective + to",
-              "**too** cold to swim"
-            ],
-            [
-              "**too** + adverb + to",
-              "**too** fast to stop"
-            ],
-            [
-              "**far** / **way too**",
-              "**far too** expensive"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "enough",
-        "title_cz": "enough",
-        "diagram": "need_scale",
-        "labels": [
-          "not enough",
-          "enough",
-          "too"
-        ],
-        "points": [
-          "**enough** comes AFTER the adjective, not before",
-          "**not enough** = short of the need"
-        ],
-        "table": {
-          "headers": [
-            "Pattern",
-            "Example"
-          ],
-          "rows": [
-            [
-              "adjective + **enough**",
-              "big **enough**"
-            ],
-            [
-              "**enough** + to",
-              "old **enough** to drive"
-            ],
-            [
-              "**enough** + to",
-              "warm **enough** to swim"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Common errors",
-        "title_cz": "Časté chyby",
-        "diagram": "contrast",
-        "labels": [
-          "not very",
-          "not so much",
-          "+ adjective",
-          "not + adjective"
-        ],
-        "points": [
-          "Czech *ne moc* + adjective is **not very**",
-          "Never **not so much** + adjective"
-        ],
-        "table": {
-          "headers": [
-            "Wrong",
-            "Right"
-          ],
-          "rows": [
-            [
-              "~~not so much relaxing~~",
-              "**not very** relaxing"
-            ],
-            [
-              "~~enough big~~",
-              "big **enough**"
-            ],
-            [
-              "~~very too expensive~~",
-              "**far too** expensive"
-            ],
-            [
-              "~~very cold to swim~~",
-              "**too** cold to swim"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Remember",
-        "title_cz": "Pamatuj",
-        "diagram": "scale",
-        "labels": [
-          "0",
-          "a bit",
-          "quite",
-          "very",
-          "extremely"
-        ],
-        "points": [
-          "0–100 scale first · **too** / **enough** compare to a need"
-        ],
-        "table": {
-          "headers": [
-            "Place",
-            "Word"
-          ],
-          "rows": [
-            [
-              "low",
-              "**a bit**"
-            ],
-            [
-              "middle",
-              "**quite**"
-            ],
-            [
-              "high",
-              "**very** / **really**"
-            ],
-            [
-              "top",
-              "**extremely**"
-            ],
-            [
-              "past the need",
-              "**too** + to"
-            ],
-            [
-              "after the adjective",
-              "**enough**"
-            ]
-          ]
-        }
-      }
-    ]
-  },
-  "blocks": [
-    {
-      "id": "b1_degree_main",
-      "title": "Degree adverbs · B1",
-      "items": [
-        {
-          "en": "It's a bit cold.",
-          "cz": "Je trochu zima.",
-          "gap": "It's ____ cold. (low)",
-          "gap_answer": "a bit",
-          "accepts": [
-            "It's a bit cold.",
-            "It is a bit cold.",
-            "It's a little cold.",
-            "It is a little cold."
-          ],
-          "gap_accepts": [
-            "a bit",
-            "a little"
-          ],
-          "quiz_options": [
-            "a bit",
-            "quite",
-            "very",
-            "extremely"
-          ],
-          "explanation": "a bit = low on the scale.",
-          "explanation_cz": "a bit = nízko na stupnici."
-        },
-        {
-          "en": "We were quite tired after the walk.",
-          "cz": "Byli jsme po té procházce docela unavení.",
-          "gap": "We were ____ tired after the walk. (middle)",
-          "gap_answer": "quite",
-          "accepts": [
-            "We were quite tired after the walk."
-          ],
-          "quiz_options": [
-            "quite",
-            "a bit",
-            "very",
-            "extremely"
-          ],
-          "explanation": "quite = middle of the scale.",
-          "explanation_cz": "quite = uprostřed stupnice."
-        },
-        {
-          "en": "The exam was very hard.",
-          "cz": "Ta zkouška byla velmi těžká.",
-          "gap": "The exam was ____ hard. (high)",
-          "gap_answer": "very",
-          "accepts": [
-            "The exam was very hard.",
-            "The exam was really hard."
-          ],
-          "gap_accepts": [
-            "very",
-            "really"
-          ],
-          "quiz_options": [
-            "very",
-            "a bit",
-            "quite",
-            "enough"
-          ],
-          "explanation": "very = high on the scale. really sits here too.",
-          "explanation_cz": "very = vysoko na stupnici. really sem patří taky."
-        },
-        {
-          "en": "The water is warm enough to swim in.",
-          "cz": "Voda je dost teplá na koupání.",
-          "gap": "The water is warm ____ to swim in.",
-          "gap_answer": "enough",
-          "accepts": [
-            "The water is warm enough to swim in.",
-            "The water is warm enough to swim."
-          ],
-          "wrong": "The water is enough warm to swim in.",
-          "quiz_options": [
-            "enough",
-            "too",
-            "very",
-            "quite"
-          ],
-          "explanation": "enough after the adjective, then to: warm enough to swim in.",
-          "explanation_cz": "enough za přídavným jménem, pak to: warm enough to swim in."
-        },
-        {
-          "en": "The weather was extremely difficult for driving.",
-          "cz": "Počasí bylo na řízení extrémně náročné.",
-          "gap": "The weather was ____ difficult for driving. (top)",
-          "gap_answer": "extremely",
-          "accepts": [
-            "The weather was extremely difficult for driving."
-          ],
-          "quiz_options": [
-            "extremely",
-            "a bit",
-            "quite",
-            "very"
-          ],
-          "explanation": "extremely = the top of the 0–100 scale.",
-          "explanation_cz": "extremely = vrchol stupnice 0–100."
-        },
-        {
-          "en": "The trip was not very relaxing.",
-          "cz": "Výlet nebyl moc odpočinkový.",
-          "gap": "The trip was not ____ relaxing.",
-          "gap_answer": "very",
-          "accepts": [
-            "The trip was not very relaxing.",
-            "The trip was not really relaxing."
-          ],
-          "gap_accepts": [
-            "very",
-            "really"
-          ],
-          "wrong": "The trip was not so much relaxing.",
-          "quiz_options": [
-            "very",
-            "so much",
-            "much",
-            "too much"
-          ],
-          "explanation": "Czech *ne moc* = not very. Never *not so much relaxing*.",
-          "explanation_cz": "České *ne moc* = not very. Nikdy *not so much relaxing*."
-        },
-        {
-          "en": "The sea was too cold to swim in.",
-          "cz": "Moře bylo příliš studené na koupání.",
-          "gap": "The sea was ____ cold to swim in.",
-          "gap_answer": "too",
-          "accepts": [
-            "The sea was too cold to swim in."
-          ],
-          "wrong": "The sea was very cold to swim in.",
-          "quiz_options": [
-            "too",
-            "very",
-            "quite",
-            "a bit"
-          ],
-          "explanation": "too = past the need. *very cold* only describes.",
-          "explanation_cz": "too = za potřebou. *very cold* jen popisuje."
-        },
-        {
-          "en": "He drove too fast to stop.",
-          "cz": "Jel příliš rychle na to, aby zastavil.",
-          "gap": "He drove ____ fast to stop.",
-          "gap_answer": "too",
-          "accepts": [
-            "He drove too fast to stop."
-          ],
-          "wrong": "He drove very fast to stop.",
-          "quiz_options": [
-            "too",
-            "very",
-            "quite",
-            "a bit"
-          ],
-          "explanation": "too + adverb + to: too fast to stop.",
-          "explanation_cz": "too + příslovce + to: too fast to stop."
-        },
-        {
-          "en": "Our room was not big enough for four people.",
-          "cz": "Náš pokoj nebyl dost velký pro čtyři lidi.",
-          "gap": "Our room was not big ____ for four people.",
-          "gap_answer": "enough",
-          "accepts": [
-            "Our room was not big enough for four people.",
-            "Our room was not big enough for 4 people."
-          ],
-          "wrong": "Our room was not enough big for four people.",
-          "quiz_options": [
-            "enough",
-            "too",
-            "very",
-            "quite"
-          ],
-          "explanation": "enough comes AFTER the adjective: big enough.",
-          "explanation_cz": "enough stojí AŽ ZA přídavným jménem: big enough."
-        },
-        {
-          "en": "She's old enough to drive.",
-          "cz": "Je dost stará na to, aby řídila.",
-          "gap": "She's old ____ to drive.",
-          "gap_answer": "enough",
-          "accepts": [
-            "She's old enough to drive.",
-            "She is old enough to drive."
-          ],
-          "wrong": "She's enough old to drive.",
-          "quiz_options": [
-            "enough",
-            "too",
-            "very",
-            "quite"
-          ],
-          "explanation": "enough after the adjective, then to: old enough to drive.",
-          "explanation_cz": "enough za přídavným jménem, pak to: old enough to drive."
-        },
-        {
-          "en": "The tickets were far too expensive.",
-          "cz": "Lístky byly až příliš drahé.",
-          "gap": "The tickets were ____ too expensive.",
-          "gap_answer": "far",
-          "accepts": [
-            "The tickets were far too expensive.",
-            "The tickets were way too expensive.",
-            "The tickets were too expensive."
-          ],
-          "gap_accepts": [
-            "far",
-            "way"
-          ],
-          "wrong": "The tickets were very too expensive.",
-          "quiz_options": [
-            "far",
-            "very",
-            "really",
-            "quite"
-          ],
-          "explanation": "To strengthen too, use far/way. *very too* is impossible.",
-          "explanation_cz": "Pro zesílení too: far/way. *very too* nejde."
-        },
-        {
-          "en": "We arrived a bit late.",
-          "cz": "Přijeli jsme trochu pozdě.",
-          "gap": "We arrived ____ late. (low)",
-          "gap_answer": "a bit",
-          "accepts": [
-            "We arrived a bit late.",
-            "We arrived a little late."
-          ],
-          "gap_accepts": [
-            "a bit",
-            "a little"
-          ],
-          "quiz_options": [
-            "a bit",
-            "quite",
-            "very",
-            "extremely"
-          ],
-          "explanation": "a bit = low on the scale, with adverbs too.",
-          "explanation_cz": "a bit = nízko na stupnici, i u příslovcí."
-        }
-      ]
-    }
+ "id": "b1_degree_adverbs",
+ "title": "Degree adverbs (B1)",
+ "level": "B1",
+ "tree_node": "b1_degree_adverbs",
+ "codex_unit": "G_SS-B1B2-01",
+ "practice": "frames",
+ "note": "Two jobs: 0–100 scale (a bit / quite / very / really / extremely) and need (too / enough / far too). Czech ne moc = not very. Not so/such, not extreme adjectives. Bank 12 = one pass. Seeded from Martina's `not so much relaxing` 2026-08-16. Rebuilt 2026-08-28 after smoke: unit had been a coursebook lump. THICKENED 2026-09-04 by the B1 agent loop: 12 -> 27 items. The 12 were one pass over the scale with one item per word; the scale words now get three or four each, the too/enough pair gets six, and both take an adverb as well as an adjective (extremely well, quite slowly, well enough). C17 - the Remember recap card is cut. Intro merged 9 cards -> 6 (a bit + quite on one card, very + really + extremely on one), because cards 1-4 each restated one row of card 0's table. C4 - the Common errors bullet bolded `not so much`, which reads as a model sentence; it is a strike now (C32). A4 - the six article demands carry the Czech demonstrative that licenses `the` (Ta voda, To pocasi, Ten vylet, To more, Ty listky) or lost the article (after a long walk). F4/F3 - `It's` and `She's` are read by the lint as possessives of unknown names; the uncontracted form is in `en` and the contraction stays in `accepts`. SECOND PASS the same day, by the parallel run of the same loop: the 27-item version above drilled the six words the pack already had. B1-PLAN asks this unit to ALSO absorb so / such and the degree cluster parked in codex/parked-a2-adverb-clusters.json, so that is folded in here - a little, slightly, fairly, rather, hardly, completely, totally, perfectly, almost, nearly, particularly, plus so and such. 12 -> 39 items. Four of the 27 were dropped as repeats of a frame already covered (a third `quite`, a second `not very`, a third `too + for me`). `increasingly` was NOT folded in: it is a B2 register word and would be the only item here a B1 student could not produce; it stays parked. The intro went 6 -> 9 cards because the new words need naming (C11): low / middle / high-and-top / all-the-way (completely + totally + perfectly, where *very right* is the error) / not-quite (almost + nearly + hardly, with the no-second-negative rule) / too and enough / so and such / errors. The adverb items from the first pass (extremely well, quite slowly, well enough) are named on cards 0 and 6.",
+ "default_direction": "cz_to_en",
+ "check": {
+  "sequence": [
+   "quiz"
   ]
+ },
+ "quality": "good_draft",
+ "use_mode": "correct",
+ "intro": {
+  "cards": [
+   {
+    "title": "How strong? The 0–100 scale",
+    "title_cz": "Jak moc? Škála 0–100",
+    "points": [
+     "These words say how strong an adjective is.",
+     "They go in front of an adverb too: **quite** slowly."
+    ],
+    "table": {
+     "headers": [
+      "Place on the scale",
+      "Words"
+     ],
+     "rows": [
+      [
+       "low",
+       "**a bit** · **a little** · **slightly**"
+      ],
+      [
+       "middle",
+       "**fairly** · **quite** · **rather**"
+      ],
+      [
+       "high",
+       "**very** · **really**"
+      ],
+      [
+       "top",
+       "**extremely**"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Low: a bit · a little · slightly",
+    "title_cz": "Nízko: a bit · a little · slightly",
+    "points": [
+     "All three say *only a small amount*.",
+     "**slightly** is the one you use with a comparative."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**a bit**",
+       "It is **a bit** cold."
+      ],
+      [
+       "**a little**",
+       "I am **a little** tired."
+      ],
+      [
+       "**slightly**",
+       "**slightly** bigger"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Middle: fairly · quite · rather",
+    "title_cz": "Střed: fairly · quite · rather",
+    "points": [
+     "Stronger than *a bit*, weaker than *very*.",
+     "**rather** often carries a hint of surprise."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**fairly**",
+       "The exam was **fairly** easy."
+      ],
+      [
+       "**quite**",
+       "We walked **quite** slowly."
+      ],
+      [
+       "**rather**",
+       "It was **rather** cold for June."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "High and top: very · really · extremely",
+    "title_cz": "Vysoko a nahoře: very · really · extremely",
+    "points": [
+     "**very** and **really** are the same height.",
+     "**extremely** is the top. Nothing sits above it."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**very**",
+       "The exam was **very** hard."
+      ],
+      [
+       "**really**",
+       "The meeting was **really** useful."
+      ],
+      [
+       "**extremely**",
+       "Klara speaks English **extremely** well."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "All the way: completely · totally · perfectly",
+    "title_cz": "Úplně: completely · totally · perfectly",
+    "points": [
+     "Some adjectives are all or nothing: right, wrong, full.",
+     "Those take these words, not the 0–100 ones."
+    ],
+    "table": {
+     "headers": [
+      "Say this",
+      "Not this"
+     ],
+     "rows": [
+      [
+       "**completely** right",
+       "~~very right~~"
+      ],
+      [
+       "**totally** wrong",
+       "~~quite wrong~~"
+      ],
+      [
+       "**perfectly** happy",
+       "~~a bit perfectly happy~~"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Not quite: almost · nearly · hardly",
+    "title_cz": "Skoro: almost · nearly · hardly",
+    "points": [
+     "**almost** and **nearly** mean *close, but not there*.",
+     "**hardly** means *almost not*, so no second negative."
+    ],
+    "table": {
+     "headers": [
+      "Word",
+      "Example",
+      "Means"
+     ],
+     "rows": [
+      [
+       "**almost**",
+       "Dinner is **almost** ready.",
+       "one minute more"
+      ],
+      [
+       "**nearly**",
+       "We are **nearly** there.",
+       "the same"
+      ],
+      [
+       "**hardly**",
+       "I **hardly** know him.",
+       "almost not at all"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "too and enough",
+    "title_cz": "too a enough",
+    "points": [
+     "These two are not on the scale — they compare with a **need**.",
+     "**enough** goes after an adjective or adverb, but before a noun."
+    ],
+    "table": {
+     "headers": [
+      "Pattern",
+      "Example",
+      "Means"
+     ],
+     "rows": [
+      [
+       "**too** + adjective + to",
+       "**too** cold to swim",
+       "swimming is off"
+      ],
+      [
+       "**far too**",
+       "**far too** expensive",
+       "much more than we need"
+      ],
+      [
+       "adjective + **enough**",
+       "warm **enough** to swim",
+       "the need is met"
+      ],
+      [
+       "adverb + **enough**",
+       "well **enough**",
+       "the need is met"
+      ],
+      [
+       "**enough** + noun",
+       "**enough** time",
+       "the need is met"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "so and such",
+    "title_cz": "so a such",
+    "points": [
+     "**so** goes with an adjective on its own.",
+     "**such** goes with a noun, and takes **a** in the singular."
+    ],
+    "table": {
+     "headers": [
+      "Pattern",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**so** + adjective",
+       "The film was **so** good."
+      ],
+      [
+       "**so** + adjective + that",
+       "It was **so** cold that we went home."
+      ],
+      [
+       "**such a** + adjective + noun",
+       "It was **such a** good film."
+      ],
+      [
+       "**such** + plural or uncountable",
+       "They were **such** nice people."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common errors",
+    "title_cz": "Časté chyby",
+    "points": [
+     "Czech *ne moc* + adjective is **not very**, never ~~not so much~~."
+    ],
+    "table": {
+     "headers": [
+      "Wrong",
+      "Right"
+     ],
+     "rows": [
+      [
+       "~~not so much relaxing~~",
+       "**not very** relaxing"
+      ],
+      [
+       "~~enough big~~",
+       "big **enough**"
+      ],
+      [
+       "~~very too expensive~~",
+       "**far too** expensive"
+      ],
+      [
+       "~~very cold to swim~~",
+       "**too** cold to swim"
+      ],
+      [
+       "~~so a good film~~",
+       "**such a** good film"
+      ],
+      [
+       "~~I hardly not know him~~",
+       "I **hardly** know him"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "b1_degree_main",
+   "title": "Degree adverbs · B1",
+   "items": [
+    {
+     "en": "It is a bit cold.",
+     "cz": "Je trochu zima.",
+     "gap": "It is ____ cold. (low)",
+     "gap_answer": "a bit",
+     "accepts": [
+      "It is a bit cold.",
+      "It's a bit cold.",
+      "It is a little cold.",
+      "It's a little cold."
+     ],
+     "gap_accepts": [
+      "a bit",
+      "a little"
+     ],
+     "quiz_options": [
+      "a bit",
+      "quite",
+      "very",
+      "extremely"
+     ],
+     "explanation": "a bit = low on the scale.",
+     "explanation_cz": "a bit = nízko na stupnici."
+    },
+    {
+     "en": "We were quite tired after a long walk.",
+     "cz": "Byli jsme po dlouhé procházce docela unavení.",
+     "gap": "We were ____ tired after a long walk. (middle)",
+     "gap_answer": "quite",
+     "accepts": [
+      "We were quite tired after a long walk."
+     ],
+     "quiz_options": [
+      "quite",
+      "a bit",
+      "very",
+      "extremely"
+     ],
+     "explanation": "quite = middle of the scale.",
+     "explanation_cz": "quite = uprostřed stupnice."
+    },
+    {
+     "en": "The exam was very hard.",
+     "cz": "Ta zkouška byla velmi těžká.",
+     "gap": "The exam was ____ hard. (high)",
+     "gap_answer": "very",
+     "accepts": [
+      "The exam was very hard.",
+      "The exam was really hard."
+     ],
+     "gap_accepts": [
+      "very",
+      "really"
+     ],
+     "quiz_options": [
+      "very",
+      "a bit",
+      "quite",
+      "enough"
+     ],
+     "explanation": "very = high on the scale. really sits here too.",
+     "explanation_cz": "very = vysoko na stupnici. really sem patří taky."
+    },
+    {
+     "en": "The water is warm enough to swim in.",
+     "cz": "Ta voda je dost teplá na koupání.",
+     "gap": "The water is warm ____ to swim in.",
+     "gap_answer": "enough",
+     "accepts": [
+      "The water is warm enough to swim in.",
+      "The water is warm enough to swim."
+     ],
+     "wrong": "The water is enough warm to swim in.",
+     "quiz_options": [
+      "enough",
+      "too",
+      "very",
+      "quite"
+     ],
+     "explanation": "enough after the adjective, then to: warm enough to swim in.",
+     "explanation_cz": "enough za přídavným jménem, pak to: warm enough to swim in."
+    },
+    {
+     "en": "The weather was extremely difficult for driving.",
+     "cz": "To počasí bylo na řízení extrémně náročné.",
+     "gap": "The weather was ____ difficult for driving. (top)",
+     "gap_answer": "extremely",
+     "accepts": [
+      "The weather was extremely difficult for driving."
+     ],
+     "quiz_options": [
+      "extremely",
+      "a bit",
+      "quite",
+      "very"
+     ],
+     "explanation": "extremely = the top of the 0–100 scale.",
+     "explanation_cz": "extremely = vrchol stupnice 0–100."
+    },
+    {
+     "en": "The trip was not very relaxing.",
+     "cz": "Ten výlet nebyl moc odpočinkový.",
+     "gap": "The trip was not ____ relaxing.",
+     "gap_answer": "very",
+     "accepts": [
+      "The trip was not very relaxing.",
+      "The trip was not really relaxing."
+     ],
+     "gap_accepts": [
+      "very",
+      "really"
+     ],
+     "wrong": "The trip was not so much relaxing.",
+     "quiz_options": [
+      "very",
+      "so much",
+      "much",
+      "too much"
+     ],
+     "explanation": "Czech *ne moc* = not very. Never *not so much relaxing*.",
+     "explanation_cz": "České *ne moc* = not very. Nikdy *not so much relaxing*."
+    },
+    {
+     "en": "The sea was too cold to swim in.",
+     "cz": "To moře bylo příliš studené na koupání.",
+     "gap": "The sea was ____ cold to swim in.",
+     "gap_answer": "too",
+     "accepts": [
+      "The sea was too cold to swim in."
+     ],
+     "wrong": "The sea was very cold to swim in.",
+     "quiz_options": [
+      "too",
+      "very",
+      "quite",
+      "a bit"
+     ],
+     "explanation": "too = past the need. *very cold* only describes.",
+     "explanation_cz": "too = za potřebou. *very cold* jen popisuje."
+    },
+    {
+     "en": "He drove too fast to stop.",
+     "cz": "Jel příliš rychle na to, aby zastavil.",
+     "gap": "He drove ____ fast to stop.",
+     "gap_answer": "too",
+     "accepts": [
+      "He drove too fast to stop."
+     ],
+     "wrong": "He drove very fast to stop.",
+     "quiz_options": [
+      "too",
+      "very",
+      "quite",
+      "a bit"
+     ],
+     "explanation": "too + adverb + to: too fast to stop.",
+     "explanation_cz": "too + příslovce + to: too fast to stop."
+    },
+    {
+     "en": "Our room was not big enough for four people.",
+     "cz": "Náš pokoj nebyl dost velký pro čtyři lidi.",
+     "gap": "Our room was not big ____ for four people.",
+     "gap_answer": "enough",
+     "accepts": [
+      "Our room was not big enough for four people.",
+      "Our room was not big enough for 4 people."
+     ],
+     "wrong": "Our room was not enough big for four people.",
+     "quiz_options": [
+      "enough",
+      "too",
+      "very",
+      "quite"
+     ],
+     "explanation": "enough comes AFTER the adjective: big enough.",
+     "explanation_cz": "enough stojí AŽ ZA přídavným jménem: big enough."
+    },
+    {
+     "en": "She is old enough to drive.",
+     "cz": "Je dost stará na to, aby řídila.",
+     "gap": "She is old ____ to drive.",
+     "gap_answer": "enough",
+     "accepts": [
+      "She is old enough to drive.",
+      "She's old enough to drive."
+     ],
+     "wrong": "She is enough old to drive.",
+     "quiz_options": [
+      "enough",
+      "too",
+      "very",
+      "quite"
+     ],
+     "explanation": "enough after the adjective, then to: old enough to drive.",
+     "explanation_cz": "enough za přídavným jménem, pak to: old enough to drive."
+    },
+    {
+     "en": "The tickets were far too expensive.",
+     "cz": "Ty lístky byly až příliš drahé.",
+     "gap": "The tickets were ____ too expensive.",
+     "gap_answer": "far",
+     "accepts": [
+      "The tickets were far too expensive.",
+      "The tickets were way too expensive.",
+      "The tickets were too expensive."
+     ],
+     "gap_accepts": [
+      "far",
+      "way"
+     ],
+     "wrong": "The tickets were very too expensive.",
+     "quiz_options": [
+      "far",
+      "very",
+      "really",
+      "quite"
+     ],
+     "explanation": "To strengthen too, use far/way. *very too* is impossible.",
+     "explanation_cz": "Pro zesílení too: far/way. *very too* nejde."
+    },
+    {
+     "en": "We arrived a bit late.",
+     "cz": "Přijeli jsme trochu pozdě.",
+     "gap": "We arrived ____ late. (low)",
+     "gap_answer": "a bit",
+     "accepts": [
+      "We arrived a bit late.",
+      "We arrived a little late."
+     ],
+     "gap_accepts": [
+      "a bit",
+      "a little"
+     ],
+     "quiz_options": [
+      "a bit",
+      "quite",
+      "very",
+      "extremely"
+     ],
+     "explanation": "a bit = low on the scale, with adverbs too.",
+     "explanation_cz": "a bit = nízko na stupnici, i u příslovcí."
+    },
+    {
+     "en": "Honza was extremely tired after work.",
+     "cz": "Honza byl po práci extrémně unavený.",
+     "gap": "Honza was ____ tired after work. (top)",
+     "gap_answer": "extremely",
+     "accepts": [
+      "Honza was extremely tired after work."
+     ],
+     "quiz_options": [
+      "extremely",
+      "quite",
+      "a bit",
+      "enough"
+     ],
+     "explanation": "**extremely** is the top of the scale — above *very*, which is only high.",
+     "explanation_cz": "**extremely** je vrchol stupnice — nad *very*, které je jen vysoko."
+    },
+    {
+     "en": "This flat is a bit small for us.",
+     "cz": "Tenhle byt je pro nás trochu malý.",
+     "gap": "This flat is ____ small for us. (low)",
+     "gap_answer": "a bit",
+     "gap_accepts": [
+      "a bit",
+      "a little"
+     ],
+     "accepts": [
+      "This flat is a bit small for us.",
+      "This flat is a little small for us."
+     ],
+     "quiz_options": [
+      "a bit",
+      "quite",
+      "extremely",
+      "too"
+     ],
+     "explanation": "*trochu* is the bottom of the scale: **a bit** small. *a little* is the same height.",
+     "explanation_cz": "*trochu* je spodek stupnice: **a bit** small. *a little* je stejně vysoko."
+    },
+    {
+     "en": "The meeting was really useful.",
+     "cz": "Ta porada byla opravdu užitečná.",
+     "gap": "The meeting was ____ useful. (high)",
+     "gap_answer": "really",
+     "gap_accepts": [
+      "really",
+      "very"
+     ],
+     "accepts": [
+      "The meeting was really useful.",
+      "The meeting was very useful."
+     ],
+     "quiz_options": [
+      "really",
+      "a bit",
+      "enough",
+      "too"
+     ],
+     "explanation": "**really** and **very** are the same height, so either is right here.",
+     "explanation_cz": "**really** a **very** jsou stejně vysoko, takže tady je správně obojí."
+    },
+    {
+     "en": "Klara speaks English extremely well.",
+     "cz": "Klára mluví anglicky extrémně dobře.",
+     "gap": "Klara speaks English ____ well. (top)",
+     "gap_answer": "extremely",
+     "accepts": [
+      "Klara speaks English extremely well."
+     ],
+     "quiz_options": [
+      "extremely",
+      "a bit",
+      "enough",
+      "too"
+     ],
+     "explanation": "These words work in front of an adverb too: **extremely** well.",
+     "explanation_cz": "Tahle slova fungují i před příslovcem: **extremely** well."
+    },
+    {
+     "en": "We walked quite slowly.",
+     "cz": "Šli jsme docela pomalu.",
+     "gap": "We walked ____ slowly. (middle)",
+     "gap_answer": "quite",
+     "accepts": [
+      "We walked quite slowly."
+     ],
+     "quiz_options": [
+      "quite",
+      "enough",
+      "too",
+      "extremely"
+     ],
+     "explanation": "**quite** in front of an adverb: quite slowly, quite late, quite well.",
+     "explanation_cz": "**quite** před příslovcem: quite slowly, quite late, quite well."
+    },
+    {
+     "en": "The hotel was not very clean.",
+     "cz": "Ten hotel nebyl moc čistý.",
+     "gap": "The hotel was not ____ clean.",
+     "gap_answer": "very",
+     "gap_accepts": [
+      "very",
+      "really"
+     ],
+     "accepts": [
+      "The hotel was not very clean.",
+      "The hotel was not really clean."
+     ],
+     "wrong": "The hotel was not so much clean.",
+     "quiz_options": [
+      "very",
+      "so much",
+      "much",
+      "too much"
+     ],
+     "explanation": "Czech *ne moc* is **not very**. *Not so much* in front of an adjective is not English.",
+     "explanation_cz": "České *ne moc* je **not very**. *Not so much* před přídavným jménem není angličtina."
+    },
+    {
+     "en": "The box was too heavy to lift.",
+     "cz": "Ta krabice byla příliš těžká na zvednutí.",
+     "gap": "The box was ____ heavy to lift.",
+     "gap_answer": "too",
+     "accepts": [
+      "The box was too heavy to lift."
+     ],
+     "wrong": "The box was very heavy to lift.",
+     "quiz_options": [
+      "too",
+      "very",
+      "quite",
+      "extremely"
+     ],
+     "explanation": "**too** heavy to lift means it did not get lifted. *Very heavy* would only describe it.",
+     "explanation_cz": "**too** heavy to lift znamená, že se nezvedla. *Very heavy* by ji jen popsalo."
+    },
+    {
+     "en": "It was too late to call her.",
+     "cz": "Bylo příliš pozdě na to jí volat.",
+     "gap": "It was ____ late to call her.",
+     "gap_answer": "too",
+     "accepts": [
+      "It was too late to call her."
+     ],
+     "wrong": "It was very late to call her.",
+     "quiz_options": [
+      "too",
+      "very",
+      "quite",
+      "a bit"
+     ],
+     "explanation": "**too** late to call = the call did not happen. That is the *to* that follows **too**.",
+     "explanation_cz": "**too** late to call = k hovoru nedošlo. To je to *to*, které jde po **too**."
+    },
+    {
+     "en": "Is your coffee hot enough?",
+     "cz": "Je tvoje káva dost horká?",
+     "gap": "Is your coffee hot ____?",
+     "gap_answer": "enough",
+     "accepts": [
+      "Is your coffee hot enough?"
+     ],
+     "wrong": "Is your coffee enough hot?",
+     "quiz_options": [
+      "enough",
+      "too",
+      "very",
+      "quite"
+     ],
+     "explanation": "**enough** goes after the adjective, in a question as well: hot **enough**.",
+     "explanation_cz": "**enough** jde za přídavné jméno, i v otázce: hot **enough**."
+    },
+    {
+     "en": "Eva doesn't speak English well enough.",
+     "cz": "Eva nemluví dost dobře anglicky.",
+     "gap": "Eva doesn't speak English well ____.",
+     "gap_answer": "enough",
+     "accepts": [
+      "Eva doesn't speak English well enough.",
+      "Eva does not speak English well enough."
+     ],
+     "wrong": "Eva doesn't speak English enough well.",
+     "quiz_options": [
+      "enough",
+      "too",
+      "very",
+      "quite"
+     ],
+     "explanation": "**enough** follows an adverb the same way it follows an adjective: well **enough**.",
+     "explanation_cz": "**enough** jde za příslovce stejně jako za přídavné jméno: well **enough**."
+    },
+    {
+     "en": "The traffic was far too heavy this morning.",
+     "cz": "Ten provoz byl dnes ráno až příliš hustý.",
+     "gap": "The traffic was ____ too heavy this morning.",
+     "gap_answer": "far",
+     "gap_accepts": [
+      "far",
+      "way"
+     ],
+     "accepts": [
+      "The traffic was far too heavy this morning.",
+      "The traffic was way too heavy this morning."
+     ],
+     "wrong": "The traffic was very too heavy this morning.",
+     "quiz_options": [
+      "far",
+      "very",
+      "really",
+      "quite"
+     ],
+     "explanation": "To strengthen **too**, use **far** or **way**. *Very too* is impossible.",
+     "explanation_cz": "Pro zesílení **too** se používá **far** nebo **way**. *Very too* nejde."
+    },
+    {
+     "en": "I am a little tired.",
+     "cz": "Jsem trochu unavený.",
+     "gap": "I am ____ tired. (low)",
+     "gap_answer": "a little",
+     "quiz_options": [
+      "a little",
+      "extremely",
+      "too",
+      "enough"
+     ],
+     "accepts": [
+      "I am a little tired.",
+      "I'm a little tired."
+     ],
+     "wrong": "I am little tired.",
+     "explanation": "**a little** is the same height as *a bit*, and it keeps its **a**.",
+     "explanation_cz": "**a little** je stejně vysoko jako *a bit* a nechává si své **a**."
+    },
+    {
+     "en": "The second one is slightly bigger.",
+     "cz": "Ten druhý je o něco větší.",
+     "gap": "The second one is ____ bigger. (low)",
+     "gap_answer": "slightly",
+     "quiz_options": [
+      "slightly",
+      "extremely",
+      "too",
+      "enough"
+     ],
+     "accepts": [
+      "The second one is slightly bigger."
+     ],
+     "wrong": "The second one is slightly much bigger.",
+     "explanation": "**slightly** is the small-difference word, and it works in front of a comparative.",
+     "explanation_cz": "**slightly** je slovo pro malý rozdíl a funguje před druhým stupněm."
+    },
+    {
+     "en": "The exam was fairly easy.",
+     "cz": "Ta zkouška byla docela lehká.",
+     "gap": "The exam was ____ easy. (middle)",
+     "gap_answer": "fairly",
+     "quiz_options": [
+      "fairly",
+      "extremely",
+      "too",
+      "enough"
+     ],
+     "accepts": [
+      "The exam was fairly easy."
+     ],
+     "wrong": "The exam was fairly much easy.",
+     "explanation": "**fairly** sits in the middle, close to *quite*.",
+     "explanation_cz": "**fairly** je uprostřed, blízko k *quite*."
+    },
+    {
+     "en": "It was rather cold for June.",
+     "cz": "Na červen bylo dost chladno.",
+     "gap": "It was ____ cold for June. (middle)",
+     "gap_answer": "rather",
+     "quiz_options": [
+      "rather",
+      "extremely",
+      "enough",
+      "too"
+     ],
+     "accepts": [
+      "It was rather cold for June."
+     ],
+     "wrong": "It was rather much cold for June.",
+     "explanation": "**rather** is middle too, and it often carries a hint of surprise.",
+     "explanation_cz": "**rather** je taky uprostřed a často v sobě nese náznak překvapení."
+    },
+    {
+     "en": "I hardly know him.",
+     "cz": "Skoro ho neznám.",
+     "gap": "I ____ know him. (almost not)",
+     "gap_answer": "hardly",
+     "quiz_options": [
+      "hardly",
+      "almost",
+      "nearly",
+      "quite"
+     ],
+     "accepts": [
+      "I hardly know him."
+     ],
+     "wrong": "I hardly not know him.",
+     "explanation": "**hardly** already means *almost not*, so there is no second negative.",
+     "explanation_cz": "**hardly** už samo znamená *skoro ne*, takže tam není druhý zápor."
+    },
+    {
+     "en": "You are completely right.",
+     "cz": "Máš úplně pravdu.",
+     "gap": "You are ____ right. (100%)",
+     "gap_answer": "completely",
+     "quiz_options": [
+      "completely",
+      "a bit",
+      "quite",
+      "fairly"
+     ],
+     "accepts": [
+      "You are completely right.",
+      "You're completely right."
+     ],
+     "wrong": "You are very right.",
+     "explanation": "*right* is all or nothing, so it takes **completely**, not a 0–100 word.",
+     "explanation_cz": "*right* je všechno, nebo nic, takže má **completely**, ne slovo ze škály 0–100."
+    },
+    {
+     "en": "That is totally wrong.",
+     "cz": "To je úplně špatně.",
+     "gap": "That is ____ wrong. (100%)",
+     "gap_answer": "totally",
+     "quiz_options": [
+      "totally",
+      "a bit",
+      "quite",
+      "fairly"
+     ],
+     "accepts": [
+      "That is totally wrong.",
+      "That's totally wrong."
+     ],
+     "wrong": "That is very wrong.",
+     "explanation": "**totally** is the twin of *completely*, and *wrong* is another all-or-nothing word.",
+     "explanation_cz": "**totally** je dvojče k *completely* a *wrong* je další slovo typu všechno, nebo nic."
+    },
+    {
+     "en": "I am perfectly happy here.",
+     "cz": "Jsem tady úplně spokojený.",
+     "gap": "I am ____ happy here. (100%)",
+     "gap_answer": "perfectly",
+     "quiz_options": [
+      "perfectly",
+      "a bit",
+      "quite",
+      "too"
+     ],
+     "accepts": [
+      "I am perfectly happy here.",
+      "I'm perfectly happy here."
+     ],
+     "wrong": "I am perfectly much happy here.",
+     "explanation": "**perfectly** says nothing at all is missing.",
+     "explanation_cz": "**perfectly** říká, že vůbec nic nechybí."
+    },
+    {
+     "en": "Dinner is almost ready.",
+     "cz": "Večeře je skoro hotová.",
+     "gap": "Dinner is ____ ready. (not quite)",
+     "gap_answer": "almost",
+     "quiz_options": [
+      "almost",
+      "completely",
+      "very",
+      "too"
+     ],
+     "accepts": [
+      "Dinner is almost ready."
+     ],
+     "wrong": "Dinner is almost much ready.",
+     "explanation": "**almost** = not quite there. A minute more and it is ready.",
+     "explanation_cz": "**almost** = ještě to není. Ještě chvilku a je to."
+    },
+    {
+     "en": "We are nearly there.",
+     "cz": "Jsme skoro tam.",
+     "gap": "We are ____ there. (not quite)",
+     "gap_answer": "nearly",
+     "quiz_options": [
+      "nearly",
+      "completely",
+      "quite",
+      "too"
+     ],
+     "accepts": [
+      "We are nearly there.",
+      "We're nearly there."
+     ],
+     "wrong": "We are nearly much there.",
+     "explanation": "**nearly** and *almost* do the same job — close, but not arrived.",
+     "explanation_cz": "**nearly** a *almost* dělají totéž — blízko, ale ještě ne u cíle."
+    },
+    {
+     "en": "The food was not particularly good.",
+     "cz": "To jídlo nebylo nijak zvlášť dobré.",
+     "gap": "The food was not ____ good. (middle)",
+     "gap_answer": "particularly",
+     "quiz_options": [
+      "particularly",
+      "completely",
+      "too",
+      "enough"
+     ],
+     "accepts": [
+      "The food was not particularly good."
+     ],
+     "wrong": "The food was not so much good.",
+     "explanation": "**not particularly** is a polite way of saying not very. Never *not so much*.",
+     "explanation_cz": "**not particularly** je zdvořilý způsob, jak říct not very. Nikdy *not so much*."
+    },
+    {
+     "en": "The film was so good.",
+     "cz": "Ten film byl tak dobrý.",
+     "gap": "The film was ____ good. (so / such)",
+     "gap_answer": "so",
+     "quiz_options": [
+      "so",
+      "such",
+      "such a",
+      "very much"
+     ],
+     "accepts": [
+      "The film was so good."
+     ],
+     "wrong": "The film was such good.",
+     "explanation": "**so** goes straight in front of an adjective. *such* needs a noun after it.",
+     "explanation_cz": "**so** stojí přímo před přídavným jménem. *such* za sebou potřebuje podstatné jméno."
+    },
+    {
+     "en": "It was so cold that we went home.",
+     "cz": "Byla taková zima, že jsme šli domů.",
+     "gap": "It was ____ cold that we went home. (so / such)",
+     "gap_answer": "so",
+     "quiz_options": [
+      "so",
+      "such",
+      "such a",
+      "too"
+     ],
+     "accepts": [
+      "It was so cold that we went home."
+     ],
+     "wrong": "It was such cold that we went home.",
+     "explanation": "**so** + adjective + **that** + the result. The *that* half says what happened.",
+     "explanation_cz": "**so** + přídavné jméno + **that** + následek. Část s *that* říká, co se stalo."
+    },
+    {
+     "en": "It was such a good film.",
+     "cz": "Byl to tak dobrý film.",
+     "gap": "It was ____ good film. (so / such a)",
+     "gap_answer": "such a",
+     "quiz_options": [
+      "such a",
+      "so a",
+      "so",
+      "such"
+     ],
+     "accepts": [
+      "It was such a good film."
+     ],
+     "wrong": "It was so a good film.",
+     "explanation": "With a singular noun the phrase is **such a** + adjective + noun. *so a* is never English.",
+     "explanation_cz": "U podstatného jména v jednotném čísle je vazba **such a** + přídavné jméno + podstatné jméno. *so a* v angličtině neexistuje."
+    },
+    {
+     "en": "They were such nice people.",
+     "cz": "Byli to tak milí lidé.",
+     "gap": "They were ____ nice people. (so / such)",
+     "gap_answer": "such",
+     "quiz_options": [
+      "such",
+      "so",
+      "such a",
+      "very much"
+     ],
+     "accepts": [
+      "They were such nice people."
+     ],
+     "wrong": "They were so nice people.",
+     "explanation": "A plural noun takes **such** with no *a*.",
+     "explanation_cz": "Podstatné jméno v množném čísle má **such** bez *a*."
+    },
+    {
+     "en": "We had such bad weather.",
+     "cz": "Měli jsme tak špatné počasí.",
+     "gap": "We had ____ bad weather. (so / such)",
+     "gap_answer": "such",
+     "quiz_options": [
+      "such",
+      "so",
+      "such a",
+      "too"
+     ],
+     "accepts": [
+      "We had such bad weather."
+     ],
+     "wrong": "We had so bad weather.",
+     "explanation": "*weather* is uncountable, so it is **such** and no *a*.",
+     "explanation_cz": "*weather* je nepočitatelné, takže **such** a žádné *a*."
+    }
+   ]
+  }
+ ]
 }

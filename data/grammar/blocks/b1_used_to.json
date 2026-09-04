@@ -6,7 +6,7 @@
  "codex_unit": "G_VP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "RESCOPED 2026-09-02 from the parked duplicate of a2_used_to. WOULD for repeated past actions: We would go to the lake every summer. USED TO stays whole at a2_used_to - do not re-teach it. The one rule that matters: would does NOT work with states (*I would have a dog), only used to does. Items therefore contrast the two rather than drilling would alone. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "RESCOPED 2026-09-02 from the parked duplicate of a2_used_to. WOULD for repeated past actions: We would go swimming every summer. USED TO stays whole at a2_used_to - do not re-teach it. The one rule that matters: would does NOT work with states (*I would have a dog), only used to does. Items therefore contrast the two rather than drilling would alone. Thickened 11 -> 25 items 2026-09-04 (agent loop): 14 new, 8 would-actions and 6 used-to states, so the contrast is drilled from both sides. Rules applied this pass: A8 contraction twins closed (5 items - would + pronoun contracts to 'd); A4 the lake / in the park / in the snow rewritten onto sentences that need no article (go swimming, go skiing, play football); F3 stories / Christmas / quite / snowman swapped for taught words. A0 fork - Czech Kazde leto jsme jezdili is *would go*, *used to go* AND *went*, so on every would item the used to twin is in gap_accepts and accepts; the Quiz options are what force would, and they carry this unit's own errors (would to go, would went, used to going). State items stay determinate, because would is simply wrong there. Queued in DECISIONS.md. Remaining lint: vocablevel only.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -40,12 +40,12 @@
     },
     "examples": [
      {
-      "en": "We **would** go to the lake every summer.",
-      "cz": "Každé léto jsme jezdili k jezeru."
+      "en": "We **would** go swimming every summer.",
+      "cz": "Každé léto jsme chodili plavat."
      },
      {
-      "en": "My grandfather **would** tell us stories.",
-      "cz": "Dědeček nám vyprávěl příběhy."
+      "en": "My grandfather **would** tell us a story.",
+      "cz": "Dědeček nám vyprávěl příběh."
      }
     ]
    },
@@ -153,9 +153,9 @@
    "title": "Modal verbs 6: would (past habits)",
    "items": [
     {
-     "en": "We would go to the lake every summer.",
-     "cz": "Každé léto jsme jezdili k jezeru.",
-     "gap": "Every summer we ____ to the lake. (go)",
+     "en": "We would go swimming every summer.",
+     "cz": "Každé léto jsme chodili plavat.",
+     "gap": "Every summer we ____ swimming. (go)",
      "gap_answer": "would go",
      "quiz_options": [
       "would go",
@@ -164,16 +164,21 @@
       "would went"
      ],
      "accepts": [
-      "We would go to the lake every summer."
+      "We would go swimming every summer.",
+      "We used to go swimming every summer.",
+      "We'd go swimming every summer."
      ],
-     "wrong": "We would to go to the lake every summer.",
+     "wrong": "We would to go swimming every summer.",
      "explanation": "**would** + the plain verb **go**. *Every summer* makes it a repeated habit.",
-     "explanation_cz": "**would** + základní tvar **go**. *Every summer* z toho dělá opakovaný zvyk."
+     "explanation_cz": "**would** + základní tvar **go**. *Every summer* z toho dělá opakovaný zvyk.",
+     "gap_accepts": [
+      "used to go"
+     ]
     },
     {
-     "en": "My grandfather would tell us stories.",
-     "cz": "Dědeček nám vyprával příběhy.",
-     "gap": "My grandfather ____ us stories. (tell)",
+     "en": "My grandfather would tell us a story every evening.",
+     "cz": "Dědeček nám každý večer vyprávěl příběh.",
+     "gap": "My grandfather ____ us a story every evening. (tell)",
      "gap_answer": "would tell",
      "quiz_options": [
       "would tell",
@@ -182,10 +187,15 @@
       "was telling"
      ],
      "accepts": [
-      "My grandfather would tell us stories."
+      "My grandfather would tell us a story every evening.",
+      "My grandfather used to tell us a story every evening."
      ],
-     "explanation": "**tell** is an action he repeated, so **would** tell works.",
-     "explanation_cz": "**tell** je činnost, kterou opakoval, takže **would** tell funguje."
+     "explanation": "**would** takes the plain verb: would **tell**, never would told.",
+     "explanation_cz": "Po **would** je základní tvar: would **tell**, nikdy would told.",
+     "gap_accepts": [
+      "used to tell"
+     ],
+     "wrong": "My grandfather would told us a story every evening."
     },
     {
      "en": "I used to have a dog.",
@@ -235,15 +245,20 @@
       "am walking"
      ],
      "accepts": [
-      "When I was a child, I would walk to school."
+      "When I was a child, I would walk to school.",
+      "When I was a child, I used to walk to school.",
+      "When I was a child, I'd walk to school."
      ],
      "explanation": "*When I was a child* sets the frame, so **would** walk reads as a habit.",
-     "explanation_cz": "*When I was a child* dává rámec, takže **would** walk zní jako zvyk."
+     "explanation_cz": "*When I was a child* dává rámec, takže **would** walk zní jako zvyk.",
+     "gap_accepts": [
+      "used to walk"
+     ]
     },
     {
-     "en": "We would visit my aunt at Christmas.",
-     "cz": "O Vánocích jsme jezdili za tetou.",
-     "gap": "We ____ my aunt at Christmas. (visit)",
+     "en": "We would visit my aunt every Sunday.",
+     "cz": "Každou neděli jsme jezdili za tetou.",
+     "gap": "We ____ my aunt every Sunday. (visit)",
      "gap_answer": "would visit",
      "quiz_options": [
       "would visit",
@@ -252,15 +267,21 @@
       "would to visit"
      ],
      "accepts": [
-      "We would visit my aunt at Christmas."
+      "We would visit my aunt every Sunday.",
+      "We used to visit my aunt every Sunday.",
+      "We'd visit my aunt every Sunday."
      ],
      "explanation": "**visit** is a repeated action, so **would** visit is fine.",
-     "explanation_cz": "**visit** je opakovaná činnost, takže **would** visit je v pořádku."
+     "explanation_cz": "**visit** je opakovaná činnost, takže **would** visit je v pořádku.",
+     "gap_accepts": [
+      "used to visit"
+     ],
+     "wrong": "We would visited my aunt every Sunday."
     },
     {
-     "en": "I used to know him quite well.",
-     "cz": "Dřív jsem ho znal docela dobře.",
-     "gap": "I ____ him quite well. (know)",
+     "en": "I used to know him very well.",
+     "cz": "Dřív jsem ho znal moc dobře.",
+     "gap": "I ____ him very well. (know)",
      "gap_answer": "used to know",
      "quiz_options": [
       "used to know",
@@ -269,9 +290,9 @@
       "used to knowing"
      ],
      "accepts": [
-      "I used to know him quite well."
+      "I used to know him very well."
      ],
-     "wrong": "I would know him quite well.",
+     "wrong": "I would know him very well.",
      "explanation": "**know** is a state — **used to** only.",
      "explanation_cz": "**know** je stav — jen **used to**."
     },
@@ -287,10 +308,14 @@
       "was reading"
      ],
      "accepts": [
-      "My father would read to us every night."
+      "My father would read to us every night.",
+      "My father used to read to us every night."
      ],
      "explanation": "*Every night* plus the action **read** gives you **would** read.",
-     "explanation_cz": "*Every night* a činnost **read** dávají **would** read."
+     "explanation_cz": "*Every night* a činnost **read** dávají **would** read.",
+     "gap_accepts": [
+      "used to read"
+     ]
     },
     {
      "en": "They used to live in Ostrava.",
@@ -310,21 +335,27 @@
      "explanation_cz": "**live** popisuje stav, takže **used to** je tu ta bezpečná volba."
     },
     {
-     "en": "Every winter we would build a snowman.",
-     "cz": "Každou zimu jsme stavěli sněhuláka.",
-     "gap": "Every winter we ____ a snowman. (build)",
-     "gap_answer": "would build",
+     "en": "Every winter we would go skiing.",
+     "cz": "Každou zimu jsme jezdili lyžovat.",
+     "gap": "Every winter we ____ skiing. (go)",
+     "gap_answer": "would go",
      "quiz_options": [
-      "would build",
-      "would built",
-      "would to build",
-      "were building"
+      "would go",
+      "would went",
+      "would to go",
+      "were going"
      ],
      "accepts": [
-      "Every winter we would build a snowman."
+      "Every winter we would go skiing.",
+      "Every winter we used to go skiing.",
+      "Every winter we'd go skiing."
      ],
-     "explanation": "*Every winter* sets the repeat, **build** is an action: **would** build.",
-     "explanation_cz": "*Every winter* dává opakování, **build** je činnost: **would** build."
+     "explanation": "*Every winter* gives the repeat, and **go** stays plain: **would go**.",
+     "explanation_cz": "*Every winter* dává opakování a **go** zůstává základní: **would go**.",
+     "gap_accepts": [
+      "used to go"
+     ],
+     "wrong": "Every winter we would went skiing."
     },
     {
      "en": "I used to like coffee, but now I don't.",
@@ -338,11 +369,301 @@
       "used to liking"
      ],
      "accepts": [
-      "I used to like coffee, but now I don't."
+      "I used to like coffee, but now I don't.",
+      "I used to like coffee, but now I do not."
      ],
      "wrong": "I would like coffee, but now I don't.",
      "explanation": "**like** is a state. Note that *I would like* means something else entirely.",
      "explanation_cz": "**like** je stav. Pozor: *I would like* znamená něco úplně jiného."
+    },
+    {
+     "en": "When I was a student, I would work at weekends.",
+     "cz": "Když jsem studoval, o víkendech jsem pracoval.",
+     "gap": "When I was a student, I ____ at weekends. (work)",
+     "gap_answer": "would work",
+     "gap_accepts": [
+      "used to work"
+     ],
+     "quiz_options": [
+      "would work",
+      "would worked",
+      "would to work",
+      "was working"
+     ],
+     "accepts": [
+      "When I was a student, I would work at weekends.",
+      "When I was a student, I used to work at weekends.",
+      "When I was a student, I'd work at weekends."
+     ],
+     "wrong": "When I was a student, I would worked at weekends.",
+     "explanation": "*When I was a student* sets the frame, so **would** work reads as a repeated habit.",
+     "explanation_cz": "*When I was a student* dává rámec, takže **would** work zní jako opakovaný zvyk."
+    },
+    {
+     "en": "My mother would cook a big lunch every Sunday.",
+     "cz": "Máma každou neděli vařila velký oběd.",
+     "gap": "My mother ____ a big lunch every Sunday. (cook)",
+     "gap_answer": "would cook",
+     "gap_accepts": [
+      "used to cook"
+     ],
+     "quiz_options": [
+      "would cook",
+      "would cooked",
+      "would to cook",
+      "would cooking"
+     ],
+     "accepts": [
+      "My mother would cook a big lunch every Sunday.",
+      "My mother used to cook a big lunch every Sunday."
+     ],
+     "wrong": "My mother would cooking a big lunch every Sunday.",
+     "explanation": "**would** is followed by the plain verb **cook** — no -ing, no -ed.",
+     "explanation_cz": "Po **would** je základní tvar **cook** — žádné -ing ani -ed."
+    },
+    {
+     "en": "They would play football after school every day.",
+     "cz": "Po škole si každý den hráli fotbal.",
+     "gap": "They ____ football after school every day. (play)",
+     "gap_answer": "would play",
+     "gap_accepts": [
+      "used to play"
+     ],
+     "quiz_options": [
+      "would play",
+      "would played",
+      "used to playing",
+      "would to play"
+     ],
+     "accepts": [
+      "They would play football after school every day.",
+      "They used to play football after school every day.",
+      "They'd play football after school every day."
+     ],
+     "wrong": "They would to play football after school every day.",
+     "explanation": "There is no **to** after would: **would play**.",
+     "explanation_cz": "Po would není žádné **to**: **would play**."
+    },
+    {
+     "en": "He would drive us to school every morning.",
+     "cz": "Každé ráno nás vozil do školy.",
+     "gap": "He ____ us to school every morning. (drive)",
+     "gap_answer": "would drive",
+     "gap_accepts": [
+      "used to drive"
+     ],
+     "quiz_options": [
+      "would drive",
+      "would drove",
+      "would driving",
+      "was driving"
+     ],
+     "accepts": [
+      "He would drive us to school every morning.",
+      "He used to drive us to school every morning.",
+      "He'd drive us to school every morning."
+     ],
+     "wrong": "He would drove us to school every morning.",
+     "explanation": "**drive** stays plain after would: **would drive**, not would drove.",
+     "explanation_cz": "Po would zůstává **drive** v základním tvaru: **would drive**, ne would drove."
+    },
+    {
+     "en": "We would meet in a small cafe every Friday.",
+     "cz": "Každý pátek jsme se scházeli v malé kavárně.",
+     "gap": "We ____ in a small cafe every Friday. (meet)",
+     "gap_answer": "would meet",
+     "gap_accepts": [
+      "used to meet"
+     ],
+     "quiz_options": [
+      "would meet",
+      "would met",
+      "would to meet",
+      "were meeting"
+     ],
+     "accepts": [
+      "We would meet in a small cafe every Friday.",
+      "We used to meet in a small cafe every Friday.",
+      "We'd meet in a small cafe every Friday."
+     ],
+     "wrong": "We would met in a small cafe every Friday.",
+     "explanation": "*Every Friday* makes it a habit, and **meet** stays plain: **would meet**.",
+     "explanation_cz": "*Every Friday* z toho dělá zvyk a **meet** zůstává v základním tvaru: **would meet**."
+    },
+    {
+     "en": "After dinner we would go for a walk.",
+     "cz": "Po večeři jsme chodili na procházku.",
+     "gap": "After dinner we ____ for a walk. (go)",
+     "gap_answer": "would go",
+     "gap_accepts": [
+      "used to go"
+     ],
+     "quiz_options": [
+      "would go",
+      "would went",
+      "would to go",
+      "used to going"
+     ],
+     "accepts": [
+      "After dinner we would go for a walk.",
+      "After dinner we used to go for a walk.",
+      "After dinner we'd go for a walk."
+     ],
+     "wrong": "After dinner we would went for a walk.",
+     "explanation": "**go** keeps its plain form after would: **would go**.",
+     "explanation_cz": "**go** si po would drží základní tvar: **would go**."
+    },
+    {
+     "en": "When I was a child, my father would take me to work.",
+     "cz": "Když jsem byl malý, táta mě brával do práce.",
+     "gap": "When I was a child, my father ____ me to work. (take)",
+     "gap_answer": "would take",
+     "gap_accepts": [
+      "used to take"
+     ],
+     "quiz_options": [
+      "would take",
+      "would took",
+      "would taking",
+      "would to take"
+     ],
+     "accepts": [
+      "When I was a child, my father would take me to work.",
+      "When I was a child, my father used to take me to work."
+     ],
+     "wrong": "When I was a child, my father would took me to work.",
+     "explanation": "**take** stays plain: **would take**. The frame is *when I was a child*.",
+     "explanation_cz": "**take** zůstává základní: **would take**. Rámec je *when I was a child*."
+    },
+    {
+     "en": "My brother would help me with my homework.",
+     "cz": "Bratr mi pomáhal s úkoly.",
+     "gap": "My brother ____ me with my homework. (help)",
+     "gap_answer": "would help",
+     "gap_accepts": [
+      "used to help"
+     ],
+     "quiz_options": [
+      "would help",
+      "would helped",
+      "would to help",
+      "was helping"
+     ],
+     "accepts": [
+      "My brother would help me with my homework.",
+      "My brother used to help me with my homework."
+     ],
+     "wrong": "My brother would helped me with my homework.",
+     "explanation": "**help** is a repeated action, so **would help** — plain verb, no -ed.",
+     "explanation_cz": "**help** je opakovaná činnost, takže **would help** — základní tvar, žádné -ed."
+    },
+    {
+     "en": "I used to be afraid of dogs.",
+     "cz": "Dřív jsem se bál psů.",
+     "gap": "I ____ afraid of dogs. (be)",
+     "gap_answer": "used to be",
+     "quiz_options": [
+      "used to be",
+      "would be",
+      "used to being",
+      "was used to be"
+     ],
+     "accepts": [
+      "I used to be afraid of dogs."
+     ],
+     "wrong": "I would be afraid of dogs.",
+     "explanation": "Being afraid is a **state**, not something you did again and again — so **used to**, never would.",
+     "explanation_cz": "Strach je **stav**, ne něco, co jsi opakovaně dělal — proto **used to**, nikdy would."
+    },
+    {
+     "en": "She used to have long hair.",
+     "cz": "Dřív měla dlouhé vlasy.",
+     "gap": "She ____ long hair. (have)",
+     "gap_answer": "used to have",
+     "quiz_options": [
+      "used to have",
+      "would have",
+      "used to having",
+      "would had"
+     ],
+     "accepts": [
+      "She used to have long hair."
+     ],
+     "wrong": "She would have long hair.",
+     "explanation": "**have** is a state here — hair is not an action. Only **used to** works.",
+     "explanation_cz": "**have** je tady stav — vlasy nejsou činnost. Funguje jen **used to**."
+    },
+    {
+     "en": "She used to want to be a doctor.",
+     "cz": "Dřív chtěla být doktorka.",
+     "gap": "She ____ to be a doctor. (want)",
+     "gap_answer": "used to want",
+     "quiz_options": [
+      "used to want",
+      "would want",
+      "was wanting",
+      "used to wanting"
+     ],
+     "accepts": [
+      "She used to want to be a doctor."
+     ],
+     "wrong": "She would want to be a doctor.",
+     "explanation": "**want** is a state verb. States take **used to**, and never the -ing form.",
+     "explanation_cz": "**want** je stavové sloveso. Stavy mají **used to** a nikdy tvar na -ing."
+    },
+    {
+     "en": "He used to understand German.",
+     "cz": "Dřív uměl německy.",
+     "gap": "He ____ German. (understand)",
+     "gap_answer": "used to understand",
+     "quiz_options": [
+      "used to understand",
+      "would understand",
+      "was understanding",
+      "used to understanding"
+     ],
+     "accepts": [
+      "He used to understand German."
+     ],
+     "wrong": "He would understand German.",
+     "explanation": "**understand** is a state — you cannot repeat it like an action, so **used to**.",
+     "explanation_cz": "**understand** je stav — nedá se opakovat jako činnost, proto **used to**."
+    },
+    {
+     "en": "We used to have a small garden.",
+     "cz": "Dřív jsme měli malou zahradu.",
+     "gap": "We ____ a small garden. (have)",
+     "gap_answer": "used to have",
+     "quiz_options": [
+      "used to have",
+      "would have",
+      "would had",
+      "used to having"
+     ],
+     "accepts": [
+      "We used to have a small garden."
+     ],
+     "wrong": "We would have a small garden.",
+     "explanation": "Owning a garden is a **state**. *We would have* would mean something else entirely.",
+     "explanation_cz": "Vlastnit zahradu je **stav**. *We would have* by znamenalo něco úplně jiného."
+    },
+    {
+     "en": "She used to know my sister.",
+     "cz": "Dřív znala moji sestru.",
+     "gap": "She ____ my sister. (know)",
+     "gap_answer": "used to know",
+     "quiz_options": [
+      "used to know",
+      "would know",
+      "was knowing",
+      "used to knowing"
+     ],
+     "accepts": [
+      "She used to know my sister."
+     ],
+     "wrong": "She would know my sister.",
+     "explanation": "**know** is a state, so **used to know**. *She would know* is a guess about now.",
+     "explanation_cz": "**know** je stav, proto **used to know**. *She would know* je odhad o přítomnosti."
     }
    ]
   }

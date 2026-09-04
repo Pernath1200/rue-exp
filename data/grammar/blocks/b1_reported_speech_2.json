@@ -6,7 +6,7 @@
  "codex_unit": "G_CL-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "b1_reported_speech already carries statements, backshift, said/told and if/wh. This unit is the two things it does not drill: the WORD ORDER of a reported question (*He asked me where did I live) and ask/tell + object + to-infinitive for commands and requests. Backshift itself is recycled, not re-taught (F1). First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "b1_reported_speech already carries statements, backshift, said/told and if/wh. This unit is the two things it does not drill: the WORD ORDER of a reported question (*He asked me where did I live) and ask/tell + object + to-infinitive for commands and requests. Backshift itself is recycled, not re-taught (F1). Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new - wh- questions across where/what/when/why/how/who/what time, yes-no with if and the whether card 2 promises, ask/tell + object + to, and both negative commands (not to). Rules applied this pass: A8 twin closed on the had-arrived items; A4 both cleared (the station -> my bag, The teacher -> Our teacher, plus Czech demonstratives where the noun really is definite); F3 `earlier` swapped for `at six`. C4: the whether promised on card 2 now has an item, instead of a card promising a form the bank never drills. B4/B6: every option list carries this unit's own errors - did-inversion, aux-inversion, said + person, and the bare verb after ask/tell.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -292,27 +292,27 @@
      "explanation_cz": "Záporný příkaz: **not to** + základní tvar slovesa."
     },
     {
-     "en": "I asked her where the station was.",
-     "cz": "Zeptal jsem se jí, kde je nádraží.",
-     "gap": "I asked her where ____. (the station / be)",
-     "gap_answer": "the station was",
+     "en": "I asked her where my bag was.",
+     "cz": "Zeptal jsem se jí, kde mám tašku.",
+     "gap": "I asked her where ____. (my bag / be)",
+     "gap_answer": "my bag was",
      "quiz_options": [
-      "the station was",
-      "was the station",
-      "is the station",
-      "did the station be"
+      "my bag was",
+      "was my bag",
+      "is my bag",
+      "did my bag be"
      ],
      "accepts": [
-      "I asked her where the station was."
+      "I asked her where my bag was."
      ],
-     "wrong": "I asked her where was the station.",
-     "explanation": "Subject **the station** comes before the verb **was**.",
-     "explanation_cz": "Podmět **the station** stojí před slovesem **was**."
+     "wrong": "I asked her where was my bag.",
+     "explanation": "Statement order after **where**: the noun first, then the verb — **my bag was**.",
+     "explanation_cz": "Po **where** je pořádek jako v oznamovací větě: nejdřív podstatné jméno, pak sloveso — **my bag was**."
     },
     {
-     "en": "They asked if we could come earlier.",
-     "cz": "Zeptali se, jestli můžeme přijít dřív.",
-     "gap": "They asked ____ we could come earlier. (if / that)",
+     "en": "They asked if we could come at six.",
+     "cz": "Zeptali se, jestli můžeme přijít v šest.",
+     "gap": "They asked ____ we could come at six. (if / that)",
      "gap_answer": "if",
      "quiz_options": [
       "if",
@@ -321,15 +321,16 @@
       "could"
      ],
      "accepts": [
-      "They asked if we could come earlier."
+      "They asked if we could come at six."
      ],
      "explanation": "No question word in the original, so **if**. *can* has moved back to **could**.",
-     "explanation_cz": "V původní otázce nebylo tázací slovo, takže **if**. *can* se posunulo na **could**."
+     "explanation_cz": "V původní otázce nebylo tázací slovo, takže **if**. *can* se posunulo na **could**.",
+     "wrong": "They asked did we could come at six."
     },
     {
-     "en": "The teacher told us to open our books.",
-     "cz": "Učitel nám řekl, ať si otevřeme knihy.",
-     "gap": "The teacher told us ____ our books. (open)",
+     "en": "Our teacher told us to open our books.",
+     "cz": "Náš učitel nám řekl, ať si otevřeme knihy.",
+     "gap": "Our teacher told us ____ our books. (open)",
      "gap_answer": "to open",
      "quiz_options": [
       "to open",
@@ -338,9 +339,9 @@
       "that open"
      ],
      "accepts": [
-      "The teacher told us to open our books."
+      "Our teacher told us to open our books."
      ],
-     "wrong": "The teacher said us to open our books.",
+     "wrong": "Our teacher said us to open our books.",
      "explanation": "**tell** + us + **to open**.",
      "explanation_cz": "**tell** + us + **to open**."
     },
@@ -356,11 +357,286 @@
       "I arrive"
      ],
      "accepts": [
-      "He asked me when I had arrived."
+      "He asked me when I had arrived.",
+      "He asked me when I'd arrived."
      ],
      "wrong": "He asked me when did I arrive.",
      "explanation": "Statement order, and the past simple has moved back to **had arrived**.",
      "explanation_cz": "Pořádek oznamovací věty a minulý čas se posunul na **had arrived**."
+    },
+    {
+     "en": "She asked me why I was late.",
+     "cz": "Zeptala se mě, proč jdu pozdě.",
+     "gap": "She asked me why ____. (I / be)",
+     "gap_answer": "I was",
+     "quiz_options": [
+      "I was",
+      "was I",
+      "am I",
+      "did I be"
+     ],
+     "accepts": [
+      "She asked me why I was late."
+     ],
+     "wrong": "She asked me why was I late.",
+     "explanation": "After **why** the subject comes first: why **I was**. A reported question is not a question.",
+     "explanation_cz": "Po **why** stojí nejdřív podmět: why **I was**. Nepřímá otázka není otázka."
+    },
+    {
+     "en": "He asked us how we had found the flat.",
+     "cz": "Zeptal se nás, jak jsme ten byt našli.",
+     "gap": "He asked us how ____ the flat. (we / find)",
+     "gap_answer": "we had found",
+     "quiz_options": [
+      "we had found",
+      "had we found",
+      "did we find",
+      "we find"
+     ],
+     "accepts": [
+      "He asked us how we had found the flat.",
+      "He asked us how we'd found the flat."
+     ],
+     "wrong": "He asked us how did we find the flat.",
+     "explanation": "No **did** in a reported question, and the subject leads: how **we had found**.",
+     "explanation_cz": "V nepřímé otázce není **did** a vede podmět: how **we had found**."
+    },
+    {
+     "en": "I asked him who had called.",
+     "cz": "Zeptal jsem se ho, kdo volal.",
+     "gap": "I asked him who ____. (call)",
+     "gap_answer": "had called",
+     "quiz_options": [
+      "had called",
+      "did call",
+      "was calling",
+      "has called"
+     ],
+     "accepts": [
+      "I asked him who had called."
+     ],
+     "wrong": "I asked him who did call.",
+     "explanation": "When **who** is the subject there is nothing to invert — just **had called**.",
+     "explanation_cz": "Když je **who** podmět, není co obracet — prostě **had called**."
+    },
+    {
+     "en": "She asked me when the film started.",
+     "cz": "Zeptala se mě, kdy ten film začíná.",
+     "gap": "She asked me when ____. (the film / start)",
+     "gap_answer": "the film started",
+     "quiz_options": [
+      "the film started",
+      "did the film start",
+      "does the film start",
+      "started the film"
+     ],
+     "accepts": [
+      "She asked me when the film started."
+     ],
+     "wrong": "She asked me when did the film start.",
+     "explanation": "Statement order after **when**: **the film started**, with no did.",
+     "explanation_cz": "Po **when** je pořádek oznamovací věty: **the film started**, bez did."
+    },
+    {
+     "en": "He asked me if I had seen the film.",
+     "cz": "Zeptal se mě, jestli jsem ten film viděl.",
+     "gap": "He asked me ____ I had seen the film. (if / that)",
+     "gap_answer": "if",
+     "quiz_options": [
+      "if",
+      "that",
+      "do",
+      "did"
+     ],
+     "accepts": [
+      "He asked me if I had seen the film.",
+      "He asked me if I'd seen the film."
+     ],
+     "wrong": "He asked me did I see the film.",
+     "explanation": "A yes/no question is reported with **if**, and the tense steps back to *had seen*.",
+     "explanation_cz": "Zjišťovací otázka se převypráví s **if** a čas jde o krok zpět na *had seen*."
+    },
+    {
+     "en": "She asked whether I wanted to come.",
+     "cz": "Zeptala se, jestli chci přijít.",
+     "gap": "She asked ____ I wanted to come. (whether / that)",
+     "gap_answer": "whether",
+     "quiz_options": [
+      "whether",
+      "that",
+      "do",
+      "what"
+     ],
+     "accepts": [
+      "She asked whether I wanted to come.",
+      "She asked if I wanted to come."
+     ],
+     "wrong": "She asked whether did I want to come.",
+     "explanation": "**whether** is the slightly more formal twin of **if** — same job, same order after it.",
+     "explanation_cz": "**whether** je o něco formálnější dvojče **if** — stejná práce, stejný pořádek za ním."
+    },
+    {
+     "en": "He asked me what my name was.",
+     "cz": "Zeptal se mě, jak se jmenuju.",
+     "gap": "He asked me what ____. (my name / be)",
+     "gap_answer": "my name was",
+     "quiz_options": [
+      "my name was",
+      "was my name",
+      "is my name",
+      "did my name be"
+     ],
+     "accepts": [
+      "He asked me what my name was."
+     ],
+     "wrong": "He asked me what was my name.",
+     "explanation": "The noun goes before the verb: what **my name was**.",
+     "explanation_cz": "Podstatné jméno stojí před slovesem: what **my name was**."
+    },
+    {
+     "en": "She asked me if I could drive.",
+     "cz": "Zeptala se mě, jestli umím řídit.",
+     "gap": "She asked me ____ I could drive. (if / what)",
+     "gap_answer": "if",
+     "quiz_options": [
+      "if",
+      "what",
+      "do",
+      "could"
+     ],
+     "accepts": [
+      "She asked me if I could drive."
+     ],
+     "wrong": "She asked me could I drive.",
+     "explanation": "*Can you drive?* is reported with **if** and no inversion: if I **could** drive.",
+     "explanation_cz": "*Can you drive?* se převypráví s **if** a bez inverze: if I **could** drive."
+    },
+    {
+     "en": "He asked me where I had been.",
+     "cz": "Zeptal se mě, kde jsem byl.",
+     "gap": "He asked me where ____. (I / be)",
+     "gap_answer": "I had been",
+     "quiz_options": [
+      "I had been",
+      "had I been",
+      "was I",
+      "did I be"
+     ],
+     "accepts": [
+      "He asked me where I had been.",
+      "He asked me where I'd been."
+     ],
+     "wrong": "He asked me where had I been.",
+     "explanation": "Subject first, then the verb: where **I had been**.",
+     "explanation_cz": "Nejdřív podmět, pak sloveso: where **I had been**."
+    },
+    {
+     "en": "My boss asked me to work on Saturday.",
+     "cz": "Šéf mě požádal, abych pracoval v sobotu.",
+     "gap": "My boss asked me ____ on Saturday. (work)",
+     "gap_answer": "to work",
+     "quiz_options": [
+      "to work",
+      "work",
+      "working",
+      "that work"
+     ],
+     "accepts": [
+      "My boss asked me to work on Saturday."
+     ],
+     "wrong": "My boss asked me work on Saturday.",
+     "explanation": "**ask** + a person + **to** + verb: asked me **to work**.",
+     "explanation_cz": "**ask** + osoba + **to** + sloveso: asked me **to work**."
+    },
+    {
+     "en": "She told her children to be quiet.",
+     "cz": "Řekla svým dětem, ať jsou zticha.",
+     "gap": "She told her children ____ quiet. (be)",
+     "gap_answer": "to be",
+     "quiz_options": [
+      "to be",
+      "be",
+      "being",
+      "that be"
+     ],
+     "accepts": [
+      "She told her children to be quiet."
+     ],
+     "wrong": "She said her children to be quiet.",
+     "explanation": "**tell** needs a person and then **to**: told her children **to be**. *say* cannot take the person like this.",
+     "explanation_cz": "**tell** potřebuje osobu a pak **to**: told her children **to be**. *say* takhle osobu vzít nemůže."
+    },
+    {
+     "en": "She told me not to wait for her.",
+     "cz": "Řekla mi, ať na ni nečekám.",
+     "gap": "She told me ____ wait for her. (not)",
+     "gap_answer": "not to",
+     "quiz_options": [
+      "not to",
+      "don't",
+      "to not",
+      "no to"
+     ],
+     "accepts": [
+      "She told me not to wait for her."
+     ],
+     "wrong": "She told me don't wait for her.",
+     "explanation": "The negative command is **not to** + verb, never *don't* inside the report.",
+     "explanation_cz": "Záporný příkaz je **not to** + sloveso, nikdy *don't* uvnitř nepřímé řeči."
+    },
+    {
+     "en": "I asked them not to make so much noise.",
+     "cz": "Poprosil jsem je, ať nedělají takový hluk.",
+     "gap": "I asked them ____ make so much noise. (not)",
+     "gap_answer": "not to",
+     "quiz_options": [
+      "not to",
+      "don't",
+      "to not",
+      "not"
+     ],
+     "accepts": [
+      "I asked them not to make so much noise."
+     ],
+     "wrong": "I asked them don't make so much noise.",
+     "explanation": "Same shape with **ask**: asked them **not to** make.",
+     "explanation_cz": "Stejný tvar i s **ask**: asked them **not to** make."
+    },
+    {
+     "en": "They told us to come back at two.",
+     "cz": "Řekli nám, ať se vrátíme ve dvě.",
+     "gap": "They told us ____ back at two. (come)",
+     "gap_answer": "to come",
+     "quiz_options": [
+      "to come",
+      "come",
+      "coming",
+      "that come"
+     ],
+     "accepts": [
+      "They told us to come back at two."
+     ],
+     "wrong": "They said us to come back at two.",
+     "explanation": "**told** takes the person directly; *said* would need **to us**.",
+     "explanation_cz": "**told** bere osobu přímo; *said* by potřebovalo **to us**."
+    },
+    {
+     "en": "I asked her what time the train left.",
+     "cz": "Zeptal jsem se jí, v kolik ten vlak jede.",
+     "gap": "I asked her what time ____. (the train / leave)",
+     "gap_answer": "the train left",
+     "quiz_options": [
+      "the train left",
+      "did the train leave",
+      "does the train leave",
+      "left the train"
+     ],
+     "accepts": [
+      "I asked her what time the train left."
+     ],
+     "wrong": "I asked her what time did the train leave.",
+     "explanation": "**what time** behaves like any question word: the noun, then the verb.",
+     "explanation_cz": "**what time** se chová jako každé tázací slovo: nejdřív podstatné jméno, pak sloveso."
     }
    ]
   }

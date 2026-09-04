@@ -1,578 +1,1008 @@
 {
- "id": "b1_news",
- "title": "News & current affairs (B1)",
- "level": "B1",
- "tree_node": "leaf_news_b1",
- "codex_unit": "V_THM-A1B1-11",
- "quality": "draft",
- "note": "Course-doc theme, above leaf_society_a2. Basic news literacy: the headline, the report, who governs. Feeds trunk_opinions_b1 and the second-conditional discussion work. First draft 2026-09-02, rough - 36 words, thicken the Use bank after smoke.",
- "default_direction": "cz_to_en",
- "quiz_mode": "sentence_gap",
- "intro": [
-  {
-   "title": "In the news",
-   "title_cz": "Ve zprávách",
-   "pictures": [
+  "id": "b1_news",
+  "title": "News & current affairs (B1)",
+  "level": "B1",
+  "tree_node": "leaf_news_b1",
+  "codex_unit": "V_THM-A1B1-11",
+  "quality": "draft",
+  "note": "Course-doc theme, above leaf_society_a2. Basic news literacy: the headline, the report, who governs. Feeds trunk_opinions_b1 and the second-conditional discussion work. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 underlined paraphrases, not CZ→EN of the bank. F7: six tiles an earlier pack already owns were replaced with news lexis that is new here — article→broadcast, daily→coverage, abroad→scandal, agreement→vote, development→issue, peace→campaign. A12: four tiles are the same string in a different sense and are sense-marked instead — party (political), interview (in the news), report (a news story), fall (a drop). Pool-checked against everything taught before leaf_news_b1 — 0 unknown types.",
+  "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
+  "intro": [
     {
-     "icon": "📰",
-     "en": "headline",
-     "cz": "titulek"
+      "title": "In the news",
+      "title_cz": "Ve zprávách",
+      "pictures": [
+        {
+          "icon": "📰",
+          "en": "headline",
+          "cz": "titulek"
+        },
+        {
+          "icon": "📡",
+          "en": "broadcast",
+          "cz": "vysílat / vysílání"
+        },
+        {
+          "icon": "📻",
+          "en": "report (a news story)",
+          "cz": "reportáž"
+        },
+        {
+          "icon": "🎤",
+          "en": "interview (in the news)",
+          "cz": "rozhovor (v médiích)"
+        },
+        {
+          "icon": "📸",
+          "en": "journalist",
+          "cz": "novinář"
+        },
+        {
+          "icon": "📺",
+          "en": "channel",
+          "cz": "kanál"
+        },
+        {
+          "icon": "🗞️",
+          "en": "the press",
+          "cz": "tisk"
+        },
+        {
+          "icon": "📢",
+          "en": "announce",
+          "cz": "oznámit"
+        },
+        {
+          "icon": "🔎",
+          "en": "investigate",
+          "cz": "vyšetřovat"
+        },
+        {
+          "icon": "✍️",
+          "en": "editor",
+          "cz": "redaktor"
+        },
+        {
+          "icon": "🗞️",
+          "en": "coverage",
+          "cz": "zpravodajské pokrytí"
+        },
+        {
+          "icon": "💥",
+          "en": "scandal",
+          "cz": "skandál"
+        }
+      ]
     },
     {
-     "icon": "📝",
-     "en": "article",
-     "cz": "článek"
+      "title": "Who decides",
+      "title_cz": "Kdo rozhoduje",
+      "pictures": [
+        {
+          "icon": "🏛️",
+          "en": "government",
+          "cz": "vláda"
+        },
+        {
+          "icon": "🗳️",
+          "en": "election",
+          "cz": "volby"
+        },
+        {
+          "icon": "🧑‍⚖️",
+          "en": "politician",
+          "cz": "politik"
+        },
+        {
+          "icon": "📜",
+          "en": "law",
+          "cz": "zákon"
+        },
+        {
+          "icon": "🗳️",
+          "en": "vote",
+          "cz": "hlas / hlasovat"
+        },
+        {
+          "icon": "💬",
+          "en": "debate",
+          "cz": "debata"
+        },
+        {
+          "icon": "👥",
+          "en": "party (political)",
+          "cz": "strana (politická)"
+        },
+        {
+          "icon": "📊",
+          "en": "poll",
+          "cz": "průzkum"
+        },
+        {
+          "icon": "🚩",
+          "en": "protest",
+          "cz": "protest"
+        },
+        {
+          "icon": "💼",
+          "en": "minister",
+          "cz": "ministr"
+        },
+        {
+          "icon": "⚖️",
+          "en": "rights",
+          "cz": "práva"
+        },
+        {
+          "icon": "🌐",
+          "en": "international",
+          "cz": "mezinárodní"
+        }
+      ]
     },
     {
-     "icon": "📻",
-     "en": "report",
-     "cz": "reportáž"
+      "title": "What happens",
+      "title_cz": "Co se děje",
+      "pictures": [
+        {
+          "icon": "💥",
+          "en": "crisis",
+          "cz": "krize"
+        },
+        {
+          "icon": "📉",
+          "en": "economy",
+          "cz": "ekonomika"
+        },
+        {
+          "icon": "💰",
+          "en": "tax",
+          "cz": "daň"
+        },
+        {
+          "icon": "🏥",
+          "en": "health service",
+          "cz": "zdravotnictví"
+        },
+        {
+          "icon": "🎓",
+          "en": "education",
+          "cz": "školství"
+        },
+        {
+          "icon": "❓",
+          "en": "issue",
+          "cz": "téma / sporná otázka"
+        },
+        {
+          "icon": "🔥",
+          "en": "disaster",
+          "cz": "katastrofa"
+        },
+        {
+          "icon": "📣",
+          "en": "campaign",
+          "cz": "kampaň"
+        },
+        {
+          "icon": "⚔️",
+          "en": "conflict",
+          "cz": "konflikt"
+        },
+        {
+          "icon": "📈",
+          "en": "rise",
+          "cz": "růst"
+        },
+        {
+          "icon": "📉",
+          "en": "fall (a drop)",
+          "cz": "pokles"
+        },
+        {
+          "icon": "🚧",
+          "en": "reform",
+          "cz": "reforma"
+        }
+      ]
     },
     {
-     "icon": "🎤",
-     "en": "interview",
-     "cz": "rozhovor"
-    },
-    {
-     "icon": "📸",
-     "en": "journalist",
-     "cz": "novinář"
-    },
-    {
-     "icon": "📺",
-     "en": "channel",
-     "cz": "kanál"
-    },
-    {
-     "icon": "🗞️",
-     "en": "the press",
-     "cz": "tisk"
-    },
-    {
-     "icon": "📢",
-     "en": "announce",
-     "cz": "oznámit"
-    },
-    {
-     "icon": "🔎",
-     "en": "investigate",
-     "cz": "vyšetřovat"
-    },
-    {
-     "icon": "✍️",
-     "en": "editor",
-     "cz": "redaktor"
-    },
-    {
-     "icon": "📅",
-     "en": "daily",
-     "cz": "denní"
-    },
-    {
-     "icon": "🌍",
-     "en": "abroad",
-     "cz": "v zahraničí"
+      "title": "You will use these words in",
+      "title_cz": "Tato slova použiješ ve větách",
+      "frames": [
+        "I have a … · *Mám …*",
+        "I need a … · *Potřebuju …*",
+        "I want to … · *Chci …*",
+        "We need to … · *Musíme …*",
+        "Let's talk about … · *Pojďme mluvit o …*",
+        "… is important · *… je důležité*"
+      ]
     }
-   ]
-  },
-  {
-   "title": "Who decides",
-   "title_cz": "Kdo rozhoduje",
-   "pictures": [
+  ],
+  "blocks": [
     {
-     "icon": "🏛️",
-     "en": "government",
-     "cz": "vláda"
+      "id": "b1_news_1",
+      "title": "News · in the news",
+      "items": [
+        {
+          "en": "headline",
+          "cz": "titulek",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "broadcast",
+          "cz": "vysílat / vysílání",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "report (a news story)",
+          "cz": "reportáž",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "interview (in the news)",
+          "cz": "rozhovor (v médiích)",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "journalist",
+          "cz": "novinář",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "channel",
+          "cz": "kanál",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "the press",
+          "cz": "tisk",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "announce",
+          "cz": "oznámit",
+          "use": [
+            "i_want_to"
+          ]
+        },
+        {
+          "en": "investigate",
+          "cz": "vyšetřovat",
+          "use": [
+            "i_want_to"
+          ]
+        },
+        {
+          "en": "editor",
+          "cz": "redaktor",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "coverage",
+          "cz": "zpravodajské pokrytí",
+          "use": [
+            "it_is"
+          ]
+        },
+        {
+          "en": "scandal",
+          "cz": "skandál",
+          "use": [
+            "it_is"
+          ]
+        }
+      ]
     },
     {
-     "icon": "🗳️",
-     "en": "election",
-     "cz": "volby"
+      "id": "b1_news_2",
+      "title": "News · who decides",
+      "items": [
+        {
+          "en": "government",
+          "cz": "vláda",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "election",
+          "cz": "volby",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "politician",
+          "cz": "politik",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "law",
+          "cz": "zákon",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "vote",
+          "cz": "hlas / hlasovat",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "debate",
+          "cz": "debata",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "party (political)",
+          "cz": "strana (politická)",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "poll",
+          "cz": "průzkum",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "protest",
+          "cz": "protest",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "minister",
+          "cz": "ministr",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "rights",
+          "cz": "práva",
+          "use": [
+            "is_important"
+          ]
+        },
+        {
+          "en": "international",
+          "cz": "mezinárodní",
+          "use": [
+            "it_is"
+          ]
+        }
+      ]
     },
     {
-     "icon": "🧑‍⚖️",
-     "en": "politician",
-     "cz": "politik"
-    },
-    {
-     "icon": "📜",
-     "en": "law",
-     "cz": "zákon"
-    },
-    {
-     "icon": "🤝",
-     "en": "agreement",
-     "cz": "dohoda"
-    },
-    {
-     "icon": "💬",
-     "en": "debate",
-     "cz": "debata"
-    },
-    {
-     "icon": "👥",
-     "en": "party",
-     "cz": "strana"
-    },
-    {
-     "icon": "📊",
-     "en": "poll",
-     "cz": "průzkum"
-    },
-    {
-     "icon": "🚩",
-     "en": "protest",
-     "cz": "protest"
-    },
-    {
-     "icon": "💼",
-     "en": "minister",
-     "cz": "ministr"
-    },
-    {
-     "icon": "⚖️",
-     "en": "rights",
-     "cz": "práva"
-    },
-    {
-     "icon": "🌐",
-     "en": "international",
-     "cz": "mezinárodní"
+      "id": "b1_news_3",
+      "title": "News · what happens",
+      "items": [
+        {
+          "en": "crisis",
+          "cz": "krize",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "economy",
+          "cz": "ekonomika",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "tax",
+          "cz": "daň",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "health service",
+          "cz": "zdravotnictví",
+          "use": [
+            "is_important"
+          ]
+        },
+        {
+          "en": "education",
+          "cz": "školství",
+          "use": [
+            "is_important"
+          ]
+        },
+        {
+          "en": "issue",
+          "cz": "téma / sporná otázka",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "disaster",
+          "cz": "katastrofa",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "campaign",
+          "cz": "kampaň",
+          "use": [
+            "is_important"
+          ]
+        },
+        {
+          "en": "conflict",
+          "cz": "konflikt",
+          "use": [
+            "lets_talk_about"
+          ]
+        },
+        {
+          "en": "rise",
+          "cz": "růst",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "fall (a drop)",
+          "cz": "pokles",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "reform",
+          "cz": "reforma",
+          "use": [
+            "lets_talk_about"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "title": "What happens",
-   "title_cz": "Co se děje",
-   "pictures": [
+  ],
+  "sentences": [
     {
-     "icon": "💥",
-     "en": "crisis",
-     "cz": "krize"
+      "en": "I read the headline but not the article, because I was late for work.",
+      "cz": "Přečetl jsem titulek, ale ne článek, protože jsem měl zpoždění do práce.",
+      "lemmas": [
+        "headline"
+      ],
+      "accepts": [
+        "I read the headline but not the article, because I was late for work"
+      ]
     },
     {
-     "icon": "📉",
-     "en": "economy",
-     "cz": "ekonomika"
+      "en": "The government will announce a new law about taxes.",
+      "cz": "Vláda oznámí nový zákon o daních.",
+      "lemmas": [
+        "announce"
+      ],
+      "accepts": [
+        "The government will announce a new law about taxes",
+        "The government'll announce a new law about taxes"
+      ]
     },
     {
-     "icon": "💰",
-     "en": "tax",
-     "cz": "daň"
+      "en": "There is an election next year, but nobody knows who will win.",
+      "cz": "Příští rok jsou volby, ale nikdo neví, kdo vyhraje.",
+      "lemmas": [
+        "election"
+      ],
+      "accepts": [
+        "There is an election next year, but nobody knows who will win",
+        "There's an election next year, but nobody knows who will win"
+      ]
     },
     {
-     "icon": "🏥",
-     "en": "health service",
-     "cz": "zdravotnictví"
+      "en": "The economy is stronger than it was when my parents were young.",
+      "cz": "Ekonomika je silnější, než byla, když byli moji rodiče mladí.",
+      "lemmas": [
+        "economy"
+      ],
+      "accepts": [
+        "The economy is stronger than it was when my parents were young"
+      ]
     },
     {
-     "icon": "🎓",
-     "en": "education",
-     "cz": "školství"
+      "en": "She works as a journalist, but she started as a teacher.",
+      "cz": "Pracuje jako novinářka, ale začínala jako učitelka.",
+      "lemmas": [
+        "journalist"
+      ],
+      "accepts": [
+        "She works as a journalist, but she started as a teacher"
+      ]
     },
     {
-     "icon": "🏗️",
-     "en": "development",
-     "cz": "rozvoj"
+      "en": "Thousands of people joined the protest because the prices were too high.",
+      "cz": "Tisíce lidí se přidaly k protestu, protože byly ceny příliš vysoké.",
+      "lemmas": [
+        "protest"
+      ],
+      "accepts": [
+        "Thousands of people joined the protest because the prices were too high"
+      ]
     },
     {
-     "icon": "🔥",
-     "en": "disaster",
-     "cz": "katastrofa"
+      "en": "Education is more important now than it was fifty years ago.",
+      "cz": "Vzdělání je dnes důležitější, než bylo před padesáti lety.",
+      "lemmas": [
+        "education"
+      ],
+      "accepts": [
+        "Education is more important now than it was fifty years ago"
+      ]
     },
     {
-     "icon": "🕊️",
-     "en": "peace",
-     "cz": "mír"
+      "en": "The report on the accident was two pages long.",
+      "cz": "Reportáž o té nehodě byla na dvě stránky.",
+      "lemmas": [
+        "report (a news story)"
+      ],
+      "accepts": [
+        "The report on the accident was two pages long"
+      ]
     },
     {
-     "icon": "⚔️",
-     "en": "conflict",
-     "cz": "konflikt"
+      "en": "The minister gave an interview to a Czech journalist.",
+      "cz": "Ministr poskytl rozhovor českému novináři.",
+      "lemmas": [
+        "interview (in the news)"
+      ],
+      "accepts": [
+        "The minister gave an interview to a Czech journalist"
+      ]
     },
     {
-     "icon": "📈",
-     "en": "rise",
-     "cz": "růst"
+      "en": "This channel shows the news every hour.",
+      "cz": "Tenhle kanál dává zprávy každou hodinu.",
+      "lemmas": [
+        "channel"
+      ],
+      "accepts": [
+        "This channel shows the news every hour"
+      ]
     },
     {
-     "icon": "📉",
-     "en": "fall",
-     "cz": "pokles"
+      "en": "The press asked the same question three times.",
+      "cz": "Tisk se třikrát zeptal na tu samou otázku.",
+      "lemmas": [
+        "the press"
+      ],
+      "accepts": [
+        "The press asked the same question three times"
+      ]
     },
     {
-     "icon": "🚧",
-     "en": "reform",
-     "cz": "reforma"
+      "en": "The police will investigate the fire at the school.",
+      "cz": "Policie bude vyšetřovat ten požár ve škole.",
+      "lemmas": [
+        "investigate"
+      ],
+      "accepts": [
+        "The police will investigate the fire at the school"
+      ]
+    },
+    {
+      "en": "The editor did not print the story about the hospital.",
+      "cz": "Redaktor ten článek o nemocnici neotiskl.",
+      "lemmas": [
+        "editor"
+      ],
+      "accepts": [
+        "The editor did not print the story about the hospital",
+        "The editor didn't print the story about the hospital"
+      ]
+    },
+    {
+      "en": "The station will broadcast the game on Sunday evening.",
+      "cz": "Stanice odvysílá ten zápas v neděli večer.",
+      "lemmas": [
+        "broadcast"
+      ],
+      "accepts": [
+        "The station will broadcast the game on Sunday evening"
+      ]
+    },
+    {
+      "en": "The coverage of the election was better on the radio.",
+      "cz": "Zpravodajství o volbách bylo lepší v rádiu.",
+      "lemmas": [
+        "coverage"
+      ],
+      "accepts": [
+        "The coverage of the election was better on the radio"
+      ]
+    },
+    {
+      "en": "The scandal cost the minister his job.",
+      "cz": "Ten skandál stál ministra místo.",
+      "lemmas": [
+        "scandal"
+      ],
+      "accepts": [
+        "The scandal cost the minister his job"
+      ]
+    },
+    {
+      "en": "The government wants to spend more on schools.",
+      "cz": "Vláda chce dávat víc peněz do škol.",
+      "lemmas": [
+        "government"
+      ],
+      "accepts": [
+        "The government wants to spend more on schools"
+      ]
+    },
+    {
+      "en": "No politician answered the question about the new tax.",
+      "cz": "Žádný politik na otázku o nové dani neodpověděl.",
+      "lemmas": [
+        "politician"
+      ],
+      "accepts": [
+        "No politician answered the question about the new tax"
+      ]
+    },
+    {
+      "en": "The new law starts at the beginning of next year.",
+      "cz": "Nový zákon začne platit na začátku příštího roku.",
+      "lemmas": [
+        "law"
+      ],
+      "accepts": [
+        "The new law starts at the beginning of next year"
+      ]
+    },
+    {
+      "en": "The debate on the radio lasted more than an hour.",
+      "cz": "Debata v rádiu trvala víc než hodinu.",
+      "lemmas": [
+        "debate"
+      ],
+      "accepts": [
+        "The debate on the radio lasted more than an hour"
+      ]
+    },
+    {
+      "en": "Her party won the election in every big city.",
+      "cz": "Její strana vyhrála volby v každém velkém městě.",
+      "lemmas": [
+        "party (political)"
+      ],
+      "accepts": [
+        "Her party won the election in every big city"
+      ]
+    },
+    {
+      "en": "The poll says half the country wants a change.",
+      "cz": "Průzkum říká, že polovina země chce změnu.",
+      "lemmas": [
+        "poll"
+      ],
+      "accepts": [
+        "The poll says half the country wants a change"
+      ]
+    },
+    {
+      "en": "She gave her vote to the youngest candidate.",
+      "cz": "Svůj hlas dala nejmladšímu kandidátovi.",
+      "lemmas": [
+        "vote"
+      ],
+      "accepts": [
+        "She gave her vote to the youngest candidate"
+      ]
+    },
+    {
+      "en": "The minister for health spoke on the news last night.",
+      "cz": "Ministr zdravotnictví včera večer mluvil ve zprávách.",
+      "lemmas": [
+        "minister"
+      ],
+      "accepts": [
+        "The minister for health spoke on the news last night"
+      ]
+    },
+    {
+      "en": "Workers have rights, and the union explains them.",
+      "cz": "Zaměstnanci mají práva a odbory jim je vysvětlují.",
+      "lemmas": [
+        "rights"
+      ],
+      "accepts": [
+        "Workers have rights, and the union explains them"
+      ]
+    },
+    {
+      "en": "The company has international offices in six countries.",
+      "cz": "Ta firma má mezinárodní pobočky v šesti zemích.",
+      "lemmas": [
+        "international"
+      ],
+      "accepts": [
+        "The company has international offices in six countries"
+      ]
+    },
+    {
+      "en": "Her campaign lasted six weeks and cost a lot of money.",
+      "cz": "Její kampaň trvala šest týdnů a stála spoustu peněz.",
+      "lemmas": [
+        "campaign"
+      ],
+      "accepts": [
+        "Her campaign lasted six weeks and cost a lot of money"
+      ]
+    },
+    {
+      "en": "The crisis started when the biggest bank closed.",
+      "cz": "Krize začala, když zavřela největší banka.",
+      "lemmas": [
+        "crisis"
+      ],
+      "accepts": [
+        "The crisis started when the biggest bank closed"
+      ]
+    },
+    {
+      "en": "The tax on petrol went up again in January.",
+      "cz": "Daň z benzinu se v lednu zase zvýšila.",
+      "lemmas": [
+        "tax"
+      ],
+      "accepts": [
+        "The tax on petrol went up again in January"
+      ]
+    },
+    {
+      "en": "The health service needs more doctors and nurses.",
+      "cz": "Zdravotnictví potřebuje víc lékařů a sester.",
+      "lemmas": [
+        "health service"
+      ],
+      "accepts": [
+        "The health service needs more doctors and nurses"
+      ]
+    },
+    {
+      "en": "The storm was the worst disaster in the country for years.",
+      "cz": "Ta bouře byla nejhorší katastrofa v zemi za mnoho let.",
+      "lemmas": [
+        "disaster"
+      ],
+      "accepts": [
+        "The storm was the worst disaster in the country for years"
+      ]
+    },
+    {
+      "en": "The conflict between the two families lasted for years.",
+      "cz": "Konflikt mezi těmi dvěma rodinami trval roky.",
+      "lemmas": [
+        "conflict"
+      ],
+      "accepts": [
+        "The conflict between the two families lasted for years"
+      ]
+    },
+    {
+      "en": "There was a rise in prices after the summer.",
+      "cz": "Po létě přišel růst cen.",
+      "lemmas": [
+        "rise"
+      ],
+      "accepts": [
+        "There was a rise in prices after the summer"
+      ]
+    },
+    {
+      "en": "The fall in the number of students closed two schools.",
+      "cz": "Pokles počtu studentů zavřel dvě školy.",
+      "lemmas": [
+        "fall (a drop)"
+      ],
+      "accepts": [
+        "The fall in the number of students closed two schools"
+      ]
+    },
+    {
+      "en": "The reform of the schools will take many years.",
+      "cz": "Reforma školství bude trvat mnoho let.",
+      "lemmas": [
+        "reform"
+      ],
+      "accepts": [
+        "The reform of the schools will take many years"
+      ]
+    },
+    {
+      "en": "The biggest issue in this election is the health service.",
+      "cz": "Největší téma těchhle voleb je zdravotnictví.",
+      "lemmas": [
+        "issue"
+      ],
+      "accepts": [
+        "The biggest issue in this election is the health service"
+      ]
     }
-   ]
-  },
-  {
-   "title": "You will use these words in",
-   "title_cz": "Tato slova použiješ ve větách",
-   "frames": [
-    "I have a … · *Mám …*",
-    "I need a … · *Potřebuju …*",
-    "I want to … · *Chci …*",
-    "We need to … · *Musíme …*",
-    "Let's talk about … · *Pojďme mluvit o …*",
-    "… is important · *… je důležité*"
-   ]
-  }
- ],
- "blocks": [
-  {
-   "id": "b1_news_1",
-   "title": "News · in the news",
-   "items": [
+  ],
+  "use_mode": "rewrite",
+  "use_hint": "Rewrite the sentence. Replace the underlined words.",
+  "use_sentences": [
     {
-     "en": "headline",
-     "cz": "titulek",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "headline",
+      "prompt": "I only read the big words at the top of the page.",
+      "underline": "big words at the top of the page",
+      "en": "I only read the headline.",
+      "lemmas": [
+        "headline"
+      ],
+      "accepts": [
+        "I only read the headline"
+      ]
     },
     {
-     "en": "article",
-     "cz": "článek",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "announce",
+      "prompt": "The government will tell everyone about the new law.",
+      "underline": "tell everyone about",
+      "en": "The government will announce the new law.",
+      "lemmas": [
+        "announce"
+      ],
+      "accepts": [
+        "The government will announce the new law"
+      ]
     },
     {
-     "en": "report",
-     "cz": "reportáž",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "investigate",
+      "prompt": "The police will find out what caused the fire.",
+      "underline": "find out what caused",
+      "en": "The police will investigate the fire.",
+      "lemmas": [
+        "investigate"
+      ],
+      "accepts": [
+        "The police will investigate the fire"
+      ]
     },
     {
-     "en": "interview",
-     "cz": "rozhovor",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "editor",
+      "prompt": "The person who decides what the paper prints said no.",
+      "underline": "person who decides what the paper prints",
+      "en": "The editor said no.",
+      "lemmas": [
+        "editor"
+      ],
+      "accepts": [
+        "The editor said no"
+      ]
     },
     {
-     "en": "journalist",
-     "cz": "novinář",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "election",
+      "prompt": "People choose a new government next year.",
+      "underline": "People choose a new government",
+      "en": "There is an election next year.",
+      "lemmas": [
+        "election"
+      ],
+      "accepts": [
+        "There is an election next year"
+      ]
     },
     {
-     "en": "channel",
-     "cz": "kanál",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "poll",
+      "prompt": "The paper asked a thousand people what they think.",
+      "underline": "asked a thousand people what they think",
+      "en": "The paper did a poll.",
+      "lemmas": [
+        "poll"
+      ],
+      "accepts": [
+        "The paper did a poll"
+      ]
     },
     {
-     "en": "the press",
-     "cz": "tisk",
-     "use": [
-      "lets_talk_about"
-     ]
+      "lemma": "crisis",
+      "prompt": "The country is in very serious trouble with money.",
+      "underline": "in very serious trouble",
+      "en": "The country is in a crisis with money.",
+      "lemmas": [
+        "crisis"
+      ],
+      "accepts": [
+        "The country is in a crisis with money"
+      ]
     },
     {
-     "en": "announce",
-     "cz": "oznámit",
-     "use": [
-      "i_want_to"
-     ]
+      "lemma": "disaster",
+      "prompt": "The storm was the worst thing that has happened here for years.",
+      "underline": "worst thing that has happened here",
+      "en": "The storm was the worst disaster here for years.",
+      "lemmas": [
+        "disaster"
+      ],
+      "accepts": [
+        "The storm was the worst disaster here for years"
+      ]
     },
     {
-     "en": "investigate",
-     "cz": "vyšetřovat",
-     "use": [
-      "i_want_to"
-     ]
+      "lemma": "rise",
+      "prompt": "Prices went up after the summer.",
+      "underline": "went up",
+      "en": "There was a rise in prices after the summer.",
+      "lemmas": [
+        "rise"
+      ],
+      "accepts": [
+        "There was a rise in prices after the summer"
+      ]
     },
     {
-     "en": "editor",
-     "cz": "redaktor",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "reform",
+      "prompt": "The government will change the schools from the beginning.",
+      "underline": "change the schools from the beginning",
+      "en": "The government will reform the schools.",
+      "lemmas": [
+        "reform"
+      ],
+      "accepts": [
+        "The government will reform the schools"
+      ]
     },
     {
-     "en": "daily",
-     "cz": "denní",
-     "use": [
-      "it_is"
-     ]
+      "lemma": "scandal",
+      "prompt": "Everybody talked for weeks about what the minister did wrong.",
+      "underline": "what the minister did wrong",
+      "en": "Everybody talked for weeks about the scandal.",
+      "lemmas": [
+        "scandal"
+      ],
+      "accepts": [
+        "Everybody talked for weeks about the scandal"
+      ]
     },
     {
-     "en": "abroad",
-     "cz": "v zahraničí",
-     "use": [
-      "it_is"
-     ]
+      "lemma": "coverage",
+      "prompt": "The radio reported the election better than the paper.",
+      "underline": "reported the election better",
+      "en": "The radio coverage of the election was better than the paper.",
+      "lemmas": [
+        "coverage"
+      ],
+      "accepts": [
+        "The radio coverage of the election was better than the paper"
+      ]
     }
-   ]
-  },
-  {
-   "id": "b1_news_2",
-   "title": "News · who decides",
-   "items": [
-    {
-     "en": "government",
-     "cz": "vláda",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "election",
-     "cz": "volby",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "politician",
-     "cz": "politik",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "law",
-     "cz": "zákon",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "agreement",
-     "cz": "dohoda",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "debate",
-     "cz": "debata",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "party",
-     "cz": "strana",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "poll",
-     "cz": "průzkum",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "protest",
-     "cz": "protest",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "minister",
-     "cz": "ministr",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "rights",
-     "cz": "práva",
-     "use": [
-      "is_important"
-     ]
-    },
-    {
-     "en": "international",
-     "cz": "mezinárodní",
-     "use": [
-      "it_is"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "b1_news_3",
-   "title": "News · what happens",
-   "items": [
-    {
-     "en": "crisis",
-     "cz": "krize",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "economy",
-     "cz": "ekonomika",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "tax",
-     "cz": "daň",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "health service",
-     "cz": "zdravotnictví",
-     "use": [
-      "is_important"
-     ]
-    },
-    {
-     "en": "education",
-     "cz": "školství",
-     "use": [
-      "is_important"
-     ]
-    },
-    {
-     "en": "development",
-     "cz": "rozvoj",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "disaster",
-     "cz": "katastrofa",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "peace",
-     "cz": "mír",
-     "use": [
-      "is_important"
-     ]
-    },
-    {
-     "en": "conflict",
-     "cz": "konflikt",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
-     "en": "rise",
-     "cz": "růst",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "fall",
-     "cz": "pokles",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "reform",
-     "cz": "reforma",
-     "use": [
-      "lets_talk_about"
-     ]
-    }
-   ]
-  }
- ],
- "sentences": [
-  {
-   "en": "I read the headline but not the article, because I was late for work.",
-   "cz": "Přečetl jsem titulek, ale ne článek, protože jsem měl zpoždění do práce.",
-   "lemmas": [
-    "headline"
-   ],
-   "accepts": [
-    "I read the headline but not the article, because I was late for work"
-   ]
-  },
-  {
-   "en": "The government announced a new law which will change our taxes.",
-   "cz": "Vláda oznámila nový zákon, který změní naše daně.",
-   "lemmas": [
-    "announce"
-   ],
-   "accepts": [
-    "The government announced a new law which will change our taxes"
-   ]
-  },
-  {
-   "en": "There is an election next year, but nobody knows who will win.",
-   "cz": "Příští rok jsou volby, ale nikdo neví, kdo vyhraje.",
-   "lemmas": [
-    "election"
-   ],
-   "accepts": [
-    "There is an election next year, but nobody knows who will win",
-    "There's an election next year, but nobody knows who will win"
-   ]
-  },
-  {
-   "en": "The economy is stronger than it was when my parents were young.",
-   "cz": "Ekonomika je silnější, než byla, když byli moji rodiče mladí.",
-   "lemmas": [
-    "economy"
-   ],
-   "accepts": [
-    "The economy is stronger than it was when my parents were young"
-   ]
-  },
-  {
-   "en": "She works as a journalist, but she started as a teacher.",
-   "cz": "Pracuje jako novinářka, ale začínala jako učitelka.",
-   "lemmas": [
-    "journalist"
-   ],
-   "accepts": [
-    "She works as a journalist, but she started as a teacher"
-   ]
-  },
-  {
-   "en": "Thousands of people joined the protest because the prices were too high.",
-   "cz": "Tisíce lidí se přidaly k protestu, protože byly ceny příliš vysoké.",
-   "lemmas": [
-    "protest"
-   ],
-   "accepts": [
-    "Thousands of people joined the protest because the prices were too high"
-   ]
-  },
-  {
-   "en": "Education is more important now than it was fifty years ago.",
-   "cz": "Vzdělání je dnes důležitější, než bylo před padesáti lety.",
-   "lemmas": [
-    "education"
-   ],
-   "accepts": [
-    "Education is more important now than it was fifty years ago"
-   ]
-  },
-  {
-   "en": "They signed a peace agreement after they talked for a month.",
-   "cz": "Podepsali mírovou dohodu poté, co spolu měsíc jednali.",
-   "lemmas": [
-    "agreement"
-   ],
-   "accepts": [
-    "They signed a peace agreement after they talked for a month"
-   ]
-  }
- ]
+  ]
 }

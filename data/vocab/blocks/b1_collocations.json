@@ -5,7 +5,7 @@
   "tree_node": "trunk_chunks_b1",
   "codex_unit": "V_PHR-B1B2-01",
   "practice": "frames",
-  "note": "V_PHR-B1B2-01 · make/do/take/have + noun · strong adj–noun pairs · gap on collocation partner · not grammar · thickened 24->36 2026-09-04: 12 verb+object frames salvaged from b1_core_frames (retired; taught only `consider` that was new). Czech carried over verbatim from that pack - same unverified machine batch.",
+  "note": "V_PHR-B1B2-01 · make/do/take/have + noun · strong adj–noun pairs · gap on collocation partner · not grammar · thickened 24->36 2026-09-04: 12 verb+object frames salvaged from b1_core_frames (retired; taught only `consider` that was new). Czech carried over verbatim from that pack - same unverified machine batch. · 2026-09-04 B1 loop: this pack is `practice: frames`, and on a frames pack Use replays block.items — the same 36 prompts Type just used. E10: a 12-item use_mode rewrite bank now makes Use production of the collocation instead. D3: three cz strings were dual prompts joined with a slash (silný déšť / hustě prší, Nemám tušení / Netuším, Řídím / vedu) — one prompt each now. P-lemma: *favour* and *priority* were this live unit's only two audit violations — the gap holds the collocation partner, so the noun was exposed but not a target. Both are taught in place on the intro table, so both now carry an item-level lemma.",
   "default_direction": "cz_to_en",
   "seed_vocab": [
     "make",
@@ -62,7 +62,8 @@
           "accepts": [
             "Can you do me a favour?",
             "Can you do me a favor?"
-          ]
+          ],
+          "lemma": "favour"
         },
         {
           "en": "I do my homework in the evening.",
@@ -122,7 +123,7 @@
         },
         {
           "en": "I have no idea.",
-          "cz": "Nemám tušení. / Netuším.",
+          "cz": "Nemám tušení.",
           "gap": "I ____ no idea.",
           "gap_answer": "have",
           "accepts": [
@@ -153,7 +154,7 @@
       "items": [
         {
           "en": "There is heavy rain today.",
-          "cz": "Dnes je silný déšť. / Hustě prší.",
+          "cz": "Dnes je silný déšť.",
           "gap": "There is ____ rain today.",
           "gap_answer": "heavy",
           "accepts": [
@@ -189,7 +190,8 @@
           "gap_answer": "high",
           "accepts": [
             "This is a high priority"
-          ]
+          ],
+          "lemma": "priority"
         },
         {
           "en": "I need a clear answer.",
@@ -360,7 +362,7 @@
         },
         {
           "en": "I manage a small team.",
-          "cz": "Řídím / vedu malý tým.",
+          "cz": "Vedu malý tým.",
           "gap": "I ____ a small team.",
           "gap_answer": "manage",
           "accepts": [
@@ -584,6 +586,156 @@
       ],
       "note": "The whole phrase is the word. Learn make a decision, not make and decision.",
       "note_cz": "Slovem je celé spojení. Uč se make a decision, ne make a decision zvlášť."
+    }
+  ],
+  "use_mode": "rewrite",
+  "use_hint": "Rewrite the sentence. Replace the underlined words.",
+  "use_sentences": [
+    {
+      "lemma": "make",
+      "prompt": "I need to decide by Friday.",
+      "underline": "decide",
+      "en": "I need to make a decision by Friday.",
+      "lemmas": [
+        "make"
+      ],
+      "accepts": [
+        "I need to make a decision by Friday"
+      ]
+    },
+    {
+      "lemma": "do",
+      "prompt": "Can you help me with something?",
+      "underline": "help me with something",
+      "en": "Can you do me a favour?",
+      "lemmas": [
+        "do"
+      ],
+      "accepts": [
+        "Can you do me a favour?"
+      ]
+    },
+    {
+      "lemma": "take",
+      "prompt": "I stop for ten minutes at ten.",
+      "underline": "stop for ten minutes",
+      "en": "I take a break at ten.",
+      "lemmas": [
+        "take"
+      ],
+      "accepts": [
+        "I take a break at ten"
+      ]
+    },
+    {
+      "lemma": "have",
+      "prompt": "We meet the team on Monday.",
+      "underline": "meet the team",
+      "en": "We have a meeting on Monday.",
+      "lemmas": [
+        "have"
+      ],
+      "accepts": [
+        "We have a meeting on Monday"
+      ]
+    },
+    {
+      "lemma": "heavy",
+      "prompt": "It is raining hard today.",
+      "underline": "raining hard",
+      "en": "There is heavy rain today.",
+      "lemmas": [
+        "heavy"
+      ],
+      "accepts": [
+        "There is heavy rain today",
+        "There's heavy rain today"
+      ]
+    },
+    {
+      "lemma": "strong",
+      "prompt": "You can hear where she is from when she speaks.",
+      "underline": "You can hear where she is from",
+      "en": "She has a strong accent.",
+      "lemmas": [
+        "strong"
+      ],
+      "accepts": [
+        "She has a strong accent"
+      ]
+    },
+    {
+      "lemma": "close",
+      "prompt": "We tell each other everything.",
+      "underline": "tell each other everything",
+      "en": "We are close friends.",
+      "lemmas": [
+        "close"
+      ],
+      "accepts": [
+        "We are close friends",
+        "We're close friends"
+      ]
+    },
+    {
+      "lemma": "useful",
+      "prompt": "She told me something that really helped.",
+      "underline": "told me something that really helped",
+      "en": "She gave me useful advice.",
+      "lemmas": [
+        "useful"
+      ],
+      "accepts": [
+        "She gave me useful advice"
+      ]
+    },
+    {
+      "lemma": "face",
+      "prompt": "There is a big problem in front of us.",
+      "underline": "There is a big problem in front of us",
+      "en": "We face a big problem.",
+      "lemmas": [
+        "face"
+      ],
+      "accepts": [
+        "We face a big problem"
+      ]
+    },
+    {
+      "lemma": "improve",
+      "prompt": "We want our English to get better.",
+      "underline": "our English to get better",
+      "en": "We want to improve our English.",
+      "lemmas": [
+        "improve"
+      ],
+      "accepts": [
+        "We want to improve our English"
+      ]
+    },
+    {
+      "lemma": "manage",
+      "prompt": "I am the boss of a small team.",
+      "underline": "am the boss of",
+      "en": "I manage a small team.",
+      "lemmas": [
+        "manage"
+      ],
+      "accepts": [
+        "I manage a small team"
+      ]
+    },
+    {
+      "lemma": "prefer",
+      "prompt": "I like a clear plan more than the other kind.",
+      "underline": "like",
+      "en": "I prefer a clear plan.",
+      "lemmas": [
+        "prefer"
+      ],
+      "accepts": [
+        "I prefer a clear plan"
+      ]
     }
   ]
 }

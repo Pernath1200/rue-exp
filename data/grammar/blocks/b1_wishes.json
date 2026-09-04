@@ -6,7 +6,7 @@
  "codex_unit": "G_CL-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "Past form, present meaning: I wish I had more time. Czech Kez bych. Target error *I wish I have. Same backward shift as b1_second_conditional, which plays immediately before, so the shift is recycled rather than re-explained (F1). wish + past perfect (regret about the past) stays at B2 in b2_wish_if_only. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "Past form, present meaning: I wish I had more time. Czech Kez bych. Target error *I wish I have. Same backward shift as b1_second_conditional, which plays immediately before, so the shift is recycled rather than re-explained (F1). wish + past perfect (regret about the past) stays at B2 in b2_wish_if_only. Thickened 10 -> 25 items 2026-09-04 (agent loop). New this pass: the wish/hope contrast, which is a real Czech interference point (prát si covers both) and also the fix for a lint artefact - `wish` appeared in no gap_answer, so the taught lexicon did not contain the unit's own headword and all ten items read as F3 leads. Five items now gap wish / wishes / hope, and they have their own intro card (C11). Also new: wish + would for someone else's behaviour, which card 4 already listed as a mistake and the bank never drilled, and the negative step-back (didn't have to). A4 clean. `loud` and `closer` swapped for taught words, which also took three types off the audit. KNOWN LINT FALSE POSITIVE: the six remaining A8 flags want *I wish I'd more time* as the twin of `I wish I had more time`. Lexical had does not contract; do not add those accepts. Same lint gap as b1_past_modals and b1_second_conditional, queued in DECISIONS.md.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -48,6 +48,38 @@
       "cz": "Kéž bych uměl španělsky."
      }
     ]
+   },
+   {
+    "title": "wish or hope?",
+    "title_cz": "wish, nebo hope?",
+    "points": [
+     "**hope** looks forward to something that can really happen.",
+     "**wish** looks at something that is not true now."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "What it says"
+     ],
+     "rows": [
+      [
+       "I **hope** she comes tomorrow.",
+       "it can really happen"
+      ],
+      [
+       "I **wish** she lived here.",
+       "she does not, and I want her to"
+      ],
+      [
+       "I **hope** it stops raining.",
+       "it might stop"
+      ],
+      [
+       "I **wish** it wasn't raining.",
+       "it is raining, and I mind"
+      ]
+     ]
+    }
    },
    {
     "title": "The same step back as the if sentence",
@@ -175,9 +207,9 @@
      "explanation_cz": "**can** se po wish posune na **could**."
     },
     {
-     "en": "She wishes she lived closer to work.",
-     "cz": "Přeje si, aby bydlela blíž k práci.",
-     "gap": "She wishes she ____ closer to work. (live)",
+     "en": "She wishes she lived in Prague.",
+     "cz": "Přeje si, aby bydlela v Praze.",
+     "gap": "She wishes she ____ in Prague. (live)",
      "gap_answer": "lived",
      "quiz_options": [
       "lived",
@@ -186,10 +218,11 @@
       "will live"
      ],
      "accepts": [
-      "She wishes she lived closer to work."
+      "She wishes she lived in Prague."
      ],
      "explanation": "Past form **lived** for a present wish.",
-     "explanation_cz": "Minulý tvar **lived** pro přání o přítomnosti."
+     "explanation_cz": "Minulý tvar **lived** pro přání o přítomnosti.",
+     "wrong": "She wishes she lives in Prague."
     },
     {
      "en": "I wish I were taller.",
@@ -269,25 +302,26 @@
      "explanation_cz": "Minulý tvar **had** po wish, o bytě, který teď nemají."
     },
     {
-     "en": "I wish my neighbours weren't so loud.",
-     "cz": "Kéž by sousedi nebyli tak hluční.",
-     "gap": "I wish my neighbours ____ so loud. (not / be)",
-     "gap_answer": "weren't",
+     "en": "I wish my flat wasn't so small.",
+     "cz": "Kéž by můj byt nebyl tak malý.",
+     "gap": "I wish my flat ____ so small. (not / be)",
+     "gap_answer": "wasn't",
      "gap_accepts": [
-      "were not"
+      "was not"
      ],
      "quiz_options": [
-      "weren't",
-      "aren't",
+      "wasn't",
+      "isn't",
       "won't be",
-      "not are"
+      "not is"
      ],
      "accepts": [
-      "I wish my neighbours weren't so loud.",
-      "I wish my neighbours were not so loud."
+      "I wish my flat wasn't so small.",
+      "I wish my flat was not so small."
      ],
-     "explanation": "Plural subject, so **weren't** after wish.",
-     "explanation_cz": "Podmět v množném čísle, takže **weren't** po wish."
+     "explanation": "After **wish** the verb steps back: **wasn't**, not isn't.",
+     "explanation_cz": "Po **wish** jde sloveso o krok zpět: **wasn't**, ne isn't.",
+     "wrong": "I wish my flat isn't so small."
     },
     {
      "en": "He wishes he could come with us.",
@@ -323,6 +357,288 @@
      "wrong": "I wish I would have a car.",
      "explanation": "**had**, not would have. would after wish is for asking someone to change.",
      "explanation_cz": "**had**, ne would have. would po wish se používá, když chceš, aby někdo něco změnil."
+    },
+    {
+     "en": "I hope you feel better tomorrow.",
+     "cz": "Doufám, že ti bude zítra líp.",
+     "gap": "I ____ you feel better tomorrow. (wish / hope)",
+     "gap_answer": "hope",
+     "quiz_options": [
+      "hope",
+      "wish",
+      "hoped",
+      "would hope"
+     ],
+     "accepts": [
+      "I hope you feel better tomorrow."
+     ],
+     "wrong": "I wish you feel better tomorrow.",
+     "explanation": "**hope** looks forward to something that can really happen, and the verb after it stays normal.",
+     "explanation_cz": "**hope** se dívá dopředu na něco, co se opravdu může stát, a sloveso za ním zůstává normální."
+    },
+    {
+     "en": "I hope it doesn't rain tomorrow.",
+     "cz": "Doufám, že zítra nebude pršet.",
+     "gap": "I ____ it doesn't rain tomorrow. (wish / hope)",
+     "gap_answer": "hope",
+     "quiz_options": [
+      "hope",
+      "wish",
+      "hoping",
+      "would hope"
+     ],
+     "accepts": [
+      "I hope it doesn't rain tomorrow.",
+      "I hope it does not rain tomorrow."
+     ],
+     "wrong": "I wish it doesn't rain tomorrow.",
+     "explanation": "Tomorrow is still open, so this is **hope**. *wish* would need the past form and would mean it is hopeless.",
+     "explanation_cz": "Zítřek je pořád otevřený, takže je to **hope**. *wish* by potřebovalo minulý tvar a znamenalo by, že je to beznadějné."
+    },
+    {
+     "en": "I hope you have a good weekend.",
+     "cz": "Doufám, že si užiješ víkend.",
+     "gap": "I ____ you have a good weekend. (wish / hope)",
+     "gap_answer": "hope",
+     "quiz_options": [
+      "hope",
+      "wish",
+      "hoped",
+      "am hoping"
+     ],
+     "accepts": [
+      "I hope you have a good weekend.",
+      "I hope you've a good weekend."
+     ],
+     "wrong": "I wish you have a good weekend.",
+     "explanation": "A possible, ordinary future: **hope** + present. Not a wish about now.",
+     "explanation_cz": "Možná, běžná budoucnost: **hope** + přítomný čas. Není to přání o teď."
+    },
+    {
+     "en": "I wish I had more money.",
+     "cz": "Kéž bych měl víc peněz.",
+     "gap": "I ____ I had more money. (wish / hope)",
+     "gap_answer": "wish",
+     "quiz_options": [
+      "wish",
+      "hope",
+      "wished",
+      "would wish"
+     ],
+     "accepts": [
+      "I wish I had more money."
+     ],
+     "wrong": "I hope I had more money.",
+     "explanation": "It is not true now and cannot simply happen, so it is **wish** — and the verb steps back to *had*.",
+     "explanation_cz": "Teď to není pravda a nemůže se to prostě stát, takže je to **wish** — a sloveso jde zpět na *had*."
+    },
+    {
+     "en": "She wishes she had a garden.",
+     "cz": "Přeje si zahradu.",
+     "gap": "She ____ she had a garden. (wish / hope)",
+     "gap_answer": "wishes",
+     "quiz_options": [
+      "wishes",
+      "hopes",
+      "wish",
+      "is wishing"
+     ],
+     "accepts": [
+      "She wishes she had a garden."
+     ],
+     "wrong": "She hopes she had a garden.",
+     "explanation": "**wishes** with -s for she, and the past **had** after it. *hopes she had* is not English.",
+     "explanation_cz": "**wishes** s -s pro she a za tím minulé **had**. *hopes she had* není angličtina."
+    },
+    {
+     "en": "I wish I didn't have to work on Saturday.",
+     "cz": "Kéž bych nemusel v sobotu do práce.",
+     "gap": "I wish I ____ have to work on Saturday. (not / do)",
+     "gap_answer": "didn't",
+     "gap_accepts": [
+      "did not"
+     ],
+     "quiz_options": [
+      "didn't",
+      "don't",
+      "wouldn't",
+      "won't"
+     ],
+     "accepts": [
+      "I wish I didn't have to work on Saturday.",
+      "I wish I did not have to work on Saturday."
+     ],
+     "wrong": "I wish I don't have to work on Saturday.",
+     "explanation": "The negative steps back too: **didn't** have to, not don't.",
+     "explanation_cz": "I zápor jde o krok zpět: **didn't** have to, ne don't."
+    },
+    {
+     "en": "I wish they would listen to me.",
+     "cz": "Kéž by mě poslouchali.",
+     "gap": "I wish they ____ to me. (will / would)",
+     "gap_answer": "would listen",
+     "quiz_options": [
+      "would listen",
+      "will listen",
+      "would listened",
+      "listen"
+     ],
+     "accepts": [
+      "I wish they would listen to me.",
+      "I wish they'd listen to me."
+     ],
+     "wrong": "I wish they will listen to me.",
+     "explanation": "For someone else's behaviour that annoys you, **wish** takes **would** + plain verb.",
+     "explanation_cz": "Když jde o chování někoho jiného, co tě štve, má **wish** tvar **would** + základní sloveso."
+    },
+    {
+     "en": "I wish you would help me.",
+     "cz": "Kéž bys mi pomohl.",
+     "gap": "I wish you ____ me. (will / would)",
+     "gap_answer": "would help",
+     "quiz_options": [
+      "would help",
+      "will help",
+      "would helped",
+      "helped"
+     ],
+     "accepts": [
+      "I wish you would help me.",
+      "I wish you'd help me."
+     ],
+     "wrong": "I wish you will help me.",
+     "explanation": "**would help** — you could help and you are not. Never *will* after wish.",
+     "explanation_cz": "**would help** — pomoct bys mohl a nepomáháš. Po wish nikdy *will*."
+    },
+    {
+     "en": "He wishes he had more free time.",
+     "cz": "Přeje si mít víc volného času.",
+     "gap": "He wishes he ____ more free time. (have)",
+     "gap_answer": "had",
+     "quiz_options": [
+      "had",
+      "has",
+      "would have",
+      "will have"
+     ],
+     "accepts": [
+      "He wishes he had more free time."
+     ],
+     "wrong": "He wishes he has more free time.",
+     "explanation": "**wishes** + the past **had**, even though he means now.",
+     "explanation_cz": "**wishes** + minulé **had**, i když myslí teď."
+    },
+    {
+     "en": "We wish we could stay longer.",
+     "cz": "Kéž bychom mohli zůstat déle.",
+     "gap": "We wish we ____ stay longer. (can)",
+     "gap_answer": "could",
+     "quiz_options": [
+      "could",
+      "can",
+      "would can",
+      "will can"
+     ],
+     "accepts": [
+      "We wish we could stay longer."
+     ],
+     "wrong": "We wish we can stay longer.",
+     "explanation": "*can* steps back to **could** after wish — there is no *would can*.",
+     "explanation_cz": "*can* jde po wish zpět na **could** — žádné *would can* neexistuje."
+    },
+    {
+     "en": "She wishes she could drive.",
+     "cz": "Přeje si, aby uměla řídit.",
+     "gap": "She wishes she ____ drive. (can)",
+     "gap_answer": "could",
+     "quiz_options": [
+      "could",
+      "can",
+      "would can",
+      "cans"
+     ],
+     "accepts": [
+      "She wishes she could drive."
+     ],
+     "wrong": "She wishes she can drive.",
+     "explanation": "**could** is the step-back form of can, and it does not change for she.",
+     "explanation_cz": "**could** je krok zpět od can a pro she se nemění."
+    },
+    {
+     "en": "They wish they lived in a house.",
+     "cz": "Přejí si bydlet v domě.",
+     "gap": "They wish they ____ in a house. (live)",
+     "gap_answer": "lived",
+     "quiz_options": [
+      "lived",
+      "live",
+      "would live",
+      "will live"
+     ],
+     "accepts": [
+      "They wish they lived in a house."
+     ],
+     "wrong": "They wish they live in a house.",
+     "explanation": "**lived** is the past form doing present work: they live in a flat now.",
+     "explanation_cz": "**lived** je minulý tvar v přítomné roli: teď bydlí v bytě."
+    },
+    {
+     "en": "I wish my brother would call me.",
+     "cz": "Kéž by mi brácha zavolal.",
+     "gap": "I wish my brother ____ me. (will / would)",
+     "gap_answer": "would call",
+     "quiz_options": [
+      "would call",
+      "will call",
+      "would called",
+      "calls"
+     ],
+     "accepts": [
+      "I wish my brother would call me."
+     ],
+     "wrong": "I wish my brother will call me.",
+     "explanation": "Somebody else's behaviour again: **would call**.",
+     "explanation_cz": "Zase chování někoho jiného: **would call**."
+    },
+    {
+     "en": "I wish I didn't work at weekends.",
+     "cz": "Kéž bych o víkendech nepracoval.",
+     "gap": "I wish I ____ work at weekends. (not / do)",
+     "gap_answer": "didn't",
+     "gap_accepts": [
+      "did not"
+     ],
+     "quiz_options": [
+      "didn't",
+      "don't",
+      "wouldn't",
+      "am not"
+     ],
+     "accepts": [
+      "I wish I didn't work at weekends.",
+      "I wish I did not work at weekends."
+     ],
+     "wrong": "I wish I don't work at weekends.",
+     "explanation": "Step back in the negative: **didn't** work.",
+     "explanation_cz": "Krok zpět i v záporu: **didn't** work."
+    },
+    {
+     "en": "I wish I could help you.",
+     "cz": "Kéž bych ti mohl pomoct.",
+     "gap": "I wish I ____ help you. (can)",
+     "gap_answer": "could",
+     "quiz_options": [
+      "could",
+      "can",
+      "would can",
+      "will can"
+     ],
+     "accepts": [
+      "I wish I could help you."
+     ],
+     "wrong": "I wish I can help you.",
+     "explanation": "**could** after wish — the step back from *can*, meaning I cannot.",
+     "explanation_cz": "**could** po wish — krok zpět od *can*, znamená to, že nemůžu."
     }
    ]
   }

@@ -1,324 +1,605 @@
 {
- "id": "b1_comparison_2",
- "title": "Comparatives 2",
- "level": "B1",
- "tree_node": "b1_comparison_2",
- "codex_unit": "G_NP-B1B2-01",
- "practice": "frames",
- "quality": "draft",
- "note": "PULLED FORWARD from B2 (James dropdown 2026-09-02) - the tree files this at B2.comparatives.advanced, but as...as is common well below that. Builds on a2_comparatives / a2_superlatives. Czech tak...jako gives *as tall like me. Second job: the modifier slot before a comparative (much / far / a bit), where very is the target error. First draft 2026-09-02, rough - thicken after smoke.",
- "default_direction": "cz_to_en",
- "use_mode": "correct",
- "check": {
-  "sequence": [
-   "quiz"
-  ]
- },
- "intro": {
-  "cards": [
-   {
-    "title": "As tall as",
-    "title_cz": "Stejně vysoký jako",
-    "points": [
-     "You already know **-er /** more and **the -est** / the most.",
-     "These are the other ways to compare. Czech **tak… jako** becomes **as… as**, not *as… like*."
-    ],
-    "table": {
-     "headers": [
-      "Form",
-      "Means"
-     ],
-     "rows": [
-      [
-       "**as** + adjective + **as**",
-       "the two are equal"
-      ],
-      [
-       "**not as** + adjective + **as**",
-       "the first one is less"
-      ]
-     ]
-    },
-    "examples": [
-     {
-      "en": "She's **as tall** as her brother.",
-      "cz": "Je stejně vysoká jako její bratr."
-     },
-     {
-      "en": "This flat isn't **as expensive** as the other one.",
-      "cz": "Tenhle byt není tak drahý jako ten druhý."
-     }
+  "id": "b1_comparison_2",
+  "title": "Comparatives 2",
+  "level": "B1",
+  "tree_node": "b1_comparison_2",
+  "codex_unit": "G_NP-B1B2-01",
+  "practice": "frames",
+  "quality": "draft",
+  "note": "PULLED FORWARD from B2 (James dropdown 2026-09-02) - the tree files this at B2.comparatives.advanced, but as...as is common well below that. Builds on a2_comparatives / a2_superlatives. Czech tak...jako gives *as tall like me. Second job: the modifier slot before a comparative (much / far / a bit), where very is the target error. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, balanced across the four shapes - as ... as, not as ... as, less / the least, and the modifier slot (much / far / a bit) where *very better* and *more easier* are the target errors. Rules applied this pass: F4 was a false positive on She's / It's - the subject contraction moved out of `en` into accepts, which also cleared both F3 leads; A8 twins closed; A4 both cleared (The train -> A train, and the Czech demonstrative on `ta nejlevnejsi moznost`, where `the` is the taught form and not an accident); F3 `crowded` swapped for `expensive`. Every option list carries this unit's own errors - like for as, very before a comparative, more + -er, and least without the.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "quiz"
     ]
-   },
-   {
-    "title": "less and the least",
-    "title_cz": "less a the least",
-    "points": [
-     "**less** works with any adjective, but for short ones people usually say **not as**."
-    ],
-    "table": {
-     "headers": [
-      "Form",
-      "Example"
-     ],
-     "rows": [
-      [
-       "**less** + adjective",
-       "This one is **less** crowded."
-      ],
-      [
-       "**the least** + adjective",
-       "It's **the least** expensive."
-      ],
-      [
-       "shorter option",
-       "**not as** crowded — more common in speech"
+  },
+  "intro": {
+    "cards": [
+      {
+        "title": "As tall as",
+        "title_cz": "Stejně vysoký jako",
+        "points": [
+          "You already know **-er /** more and **the -est** / the most.",
+          "Czech **tak… jako** becomes **as… as**, not ~~as… like~~."
+        ],
+        "table": {
+          "headers": [
+            "Form",
+            "Means"
+          ],
+          "rows": [
+            [
+              "**as** + adjective + **as**",
+              "the two are equal"
+            ],
+            [
+              "**not as** + adjective + **as**",
+              "the first one is less"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "She's **as tall** as her brother.",
+            "cz": "Je stejně vysoká jako její bratr."
+          },
+          {
+            "en": "This flat isn't **as big** as ours.",
+            "cz": "Tenhle byt není tak velký jako náš."
+          }
+        ]
+      },
+      {
+        "title": "less and the least",
+        "title_cz": "less a the least",
+        "points": [
+          "**less** works with any adjective, but for short ones people usually say **not as**."
+        ],
+        "table": {
+          "headers": [
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**less** + adjective",
+              "This one is **less** crowded."
+            ],
+            [
+              "**the least** + adjective",
+              "It's **the least** expensive."
+            ],
+            [
+              "shorter option",
+              "**not as** crowded — more common in speech"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "much better, not very better",
+        "title_cz": "much better, ne very better",
+        "points": [
+          "**very** goes with a plain adjective: very good. Never with a comparative."
+        ],
+        "table": {
+          "headers": [
+            "Before a comparative",
+            "Not"
+          ],
+          "rows": [
+            [
+              "**much** better",
+              "*very better*"
+            ],
+            [
+              "**far** cheaper",
+              "*very cheaper*"
+            ],
+            [
+              "**a bit** longer",
+              "*very longer*"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "**as …** as for equal, and **much /** far / a bit before a comparative."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~She's as tall like her brother.~~",
+              "She's **as tall** as her brother."
+            ],
+            [
+              "~~It's not so expensive as the other one.~~",
+              "It's **not as** expensive as the other one."
+            ],
+            [
+              "~~This is very better.~~",
+              "This is **much** better."
+            ],
+            [
+              "~~He is more taller than me.~~",
+              "He is **much taller** than me."
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "b1_comparison_2_main",
+      "title": "As...as, less, much + comparative · B1",
+      "items": [
+        {
+          "en": "She is as tall as her brother.",
+          "cz": "Je stejně vysoká jako její bratr.",
+          "gap": "She is as tall ____ her brother. (as / like)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "like",
+            "than",
+            "so"
+          ],
+          "accepts": [
+            "She is as tall as her brother.",
+            "She's as tall as her brother."
+          ],
+          "wrong": "She is as tall like her brother.",
+          "explanation": "The pair is **as … as**. Czech *jako* is not *like* here.",
+          "explanation_cz": "Dvojice je **as … as**. České *jako* tady není *like*."
+        },
+        {
+          "en": "This flat isn't as expensive as the other one.",
+          "cz": "Tenhle byt není tak drahý jako ten druhý.",
+          "gap": "This flat isn't ____ expensive as the other one. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "more",
+            "such"
+          ],
+          "accepts": [
+            "This flat isn't as expensive as the other one.",
+            "This flat is not as expensive as the other one."
+          ],
+          "explanation": "Negative equal: **not as** … as.",
+          "explanation_cz": "Záporná rovnost: **not as** … as."
+        },
+        {
+          "en": "This one is much better.",
+          "cz": "Tenhle je mnohem lepší.",
+          "gap": "This one is ____ better. (much / very)",
+          "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "very",
+            "more",
+            "so"
+          ],
+          "accepts": [
+            "This one is much better."
+          ],
+          "wrong": "This one is very better.",
+          "explanation": "**much** goes before a comparative. **very** does not.",
+          "explanation_cz": "**much** stojí před 2. stupněm. **very** ne."
+        },
+        {
+          "en": "A train is far cheaper than a plane.",
+          "cz": "Vlak je mnohem levnější než letadlo.",
+          "gap": "A train is ____ cheaper than a plane. (far / very)",
+          "gap_answer": "far",
+          "quiz_options": [
+            "far",
+            "very",
+            "much more",
+            "so"
+          ],
+          "accepts": [
+            "A train is far cheaper than a plane."
+          ],
+          "explanation": "**far** + comparative, like much.",
+          "explanation_cz": "**far** + 2. stupeň, stejně jako much.",
+          "wrong": "A train is very cheaper than a plane."
+        },
+        {
+          "en": "My flat is less expensive than yours.",
+          "cz": "Můj byt je míň drahý než tvůj.",
+          "gap": "My flat is ____ expensive than yours. (less / least)",
+          "gap_answer": "less",
+          "quiz_options": [
+            "less",
+            "least",
+            "not as",
+            "fewer"
+          ],
+          "accepts": [
+            "My flat is less expensive than yours."
+          ],
+          "explanation": "**less** + adjective + than for the smaller amount.",
+          "explanation_cz": "**less** + přídavné jméno + than pro menší míru.",
+          "wrong": "My flat is least expensive than yours."
+        },
+        {
+          "en": "It is a bit longer than I expected.",
+          "cz": "Je to trochu delší, než jsem čekal.",
+          "gap": "It is ____ longer than I expected. (a bit / very)",
+          "gap_answer": "a bit",
+          "quiz_options": [
+            "a bit",
+            "very",
+            "much more",
+            "little"
+          ],
+          "accepts": [
+            "It is a bit longer than I expected.",
+            "It's a bit longer than I expected."
+          ],
+          "explanation": "**a bit** softens a comparative.",
+          "explanation_cz": "**a bit** zjemňuje 2. stupeň.",
+          "wrong": "It is very longer than I expected."
+        },
+        {
+          "en": "He isn't as fast as he used to be.",
+          "cz": "Není tak rychlý, jak býval.",
+          "gap": "He isn't ____ fast as he used to be. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "more",
+            "such"
+          ],
+          "accepts": [
+            "He isn't as fast as he used to be.",
+            "He is not as fast as he used to be."
+          ],
+          "explanation": "**not as** fast as — the standard negative equal.",
+          "explanation_cz": "**not as** fast as — běžná záporná rovnost."
+        },
+        {
+          "en": "This is the least expensive option.",
+          "cz": "Tohle je ta nejlevnější možnost.",
+          "gap": "This is ____ expensive option. (the least / less)",
+          "gap_answer": "the least",
+          "quiz_options": [
+            "the least",
+            "less",
+            "the less",
+            "least"
+          ],
+          "accepts": [
+            "This is the least expensive option."
+          ],
+          "explanation": "**the least** + adjective for the bottom of the group.",
+          "explanation_cz": "**the least** + přídavné jméno pro nejnižší ve skupině."
+        },
+        {
+          "en": "Prague is much bigger than Brno.",
+          "cz": "Praha je mnohem větší než Brno.",
+          "gap": "Prague is ____ bigger than Brno. (much / very)",
+          "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "very",
+            "more",
+            "too"
+          ],
+          "accepts": [
+            "Prague is much bigger than Brno."
+          ],
+          "wrong": "Prague is more bigger than Brno.",
+          "explanation": "**much** bigger. Never *very bigger*, never *more bigger*.",
+          "explanation_cz": "**much** bigger. Nikdy *very bigger*, nikdy *more bigger*."
+        },
+        {
+          "en": "Her new job is as good as the old one.",
+          "cz": "Její nová práce je stejně dobrá jako ta stará.",
+          "gap": "Her new job is ____ good as the old one. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "such",
+            "more"
+          ],
+          "accepts": [
+            "Her new job is as good as the old one."
+          ],
+          "explanation": "**as good as** — the two are equal.",
+          "explanation_cz": "**as good as** — obě jsou stejné."
+        },
+        {
+          "en": "This book is not as good as the film.",
+          "cz": "Ta kniha není tak dobrá jako ten film.",
+          "gap": "This book is not ____ good as the film. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "more",
+            "such"
+          ],
+          "accepts": [
+            "This book is not as good as the film.",
+            "This book isn't as good as the film."
+          ],
+          "wrong": "This book is not so good as the film.",
+          "explanation": "The equal frame is **as … as**, and the negative keeps both words: not **as** good **as**.",
+          "explanation_cz": "Vazba pro rovnost je **as … as** a zápor obě slova nechává: not **as** good **as**."
+        },
+        {
+          "en": "My new phone is much faster than the old one.",
+          "cz": "Můj nový telefon je mnohem rychlejší než ten starý.",
+          "gap": "My new phone is ____ faster than the old one. (much / very)",
+          "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "very",
+            "more",
+            "so"
+          ],
+          "accepts": [
+            "My new phone is much faster than the old one."
+          ],
+          "wrong": "My new phone is very faster than the old one.",
+          "explanation": "**much** goes in front of a comparative. *very* only goes with a plain adjective: very fast.",
+          "explanation_cz": "**much** stojí před druhým stupněm. *very* patří jen k prostému přídavnému jménu: very fast."
+        },
+        {
+          "en": "She is as old as my sister.",
+          "cz": "Je stejně stará jako moje sestra.",
+          "gap": "She is as old ____ my sister. (as / like)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "like",
+            "than",
+            "so"
+          ],
+          "accepts": [
+            "She is as old as my sister.",
+            "She's as old as my sister."
+          ],
+          "wrong": "She is as old like my sister.",
+          "explanation": "Czech *jako* is **as** here, not *like*. The frame is as + adjective + **as**.",
+          "explanation_cz": "České *jako* je tady **as**, ne *like*. Vazba je as + přídavné jméno + **as**."
+        },
+        {
+          "en": "This exam was much easier than the last one.",
+          "cz": "Ta zkouška byla mnohem lehčí než ta minulá.",
+          "gap": "This exam was ____ easier than the last one. (much / very)",
+          "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "very",
+            "more",
+            "too"
+          ],
+          "accepts": [
+            "This exam was much easier than the last one."
+          ],
+          "wrong": "This exam was more easier than the last one.",
+          "explanation": "One comparative is enough: **much easier**, never *more easier*.",
+          "explanation_cz": "Jeden druhý stupeň stačí: **much easier**, nikdy *more easier*."
+        },
+        {
+          "en": "Our flat is not as big as theirs.",
+          "cz": "Náš byt není tak velký jako jejich.",
+          "gap": "Our flat is not ____ big as theirs. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "such",
+            "more"
+          ],
+          "accepts": [
+            "Our flat is not as big as theirs.",
+            "Our flat isn't as big as theirs."
+          ],
+          "wrong": "Our flat is not so big as theirs.",
+          "explanation": "**not as … as** says the first one is less. *not so big as* is old-fashioned.",
+          "explanation_cz": "**not as … as** říká, že ten první je menší. *not so big as* je zastaralé."
+        },
+        {
+          "en": "He is not as young as he looks.",
+          "cz": "Není tak mladý, jak vypadá.",
+          "gap": "He is not ____ young as he looks. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "more",
+            "such"
+          ],
+          "accepts": [
+            "He is not as young as he looks.",
+            "He isn't as young as he looks."
+          ],
+          "wrong": "He is not as young like he looks.",
+          "explanation": "Both halves of the frame stay: not **as** young **as**.",
+          "explanation_cz": "Obě části vazby zůstávají: not **as** young **as**."
+        },
+        {
+          "en": "The second film was far better than the first.",
+          "cz": "Ten druhý film byl mnohem lepší než ten první.",
+          "gap": "The second film was ____ better than the first. (far / very)",
+          "gap_answer": "far",
+          "quiz_options": [
+            "far",
+            "very",
+            "more",
+            "too"
+          ],
+          "accepts": [
+            "The second film was far better than the first."
+          ],
+          "wrong": "The second film was very better than the first.",
+          "explanation": "**far** is another word for *much* in front of a comparative. *very better* is not English.",
+          "explanation_cz": "**far** je před druhým stupněm další slovo pro *much*. *very better* není angličtina."
+        },
+        {
+          "en": "My job is less interesting than yours.",
+          "cz": "Moje práce je míň zajímavá než tvoje.",
+          "gap": "My job is ____ interesting than yours. (less / least)",
+          "gap_answer": "less",
+          "quiz_options": [
+            "less",
+            "least",
+            "the least",
+            "fewer"
+          ],
+          "accepts": [
+            "My job is less interesting than yours."
+          ],
+          "wrong": "My job is least interesting than yours.",
+          "explanation": "**less** compares two things. *the least* is for the bottom of a whole group.",
+          "explanation_cz": "**less** porovnává dvě věci. *the least* je pro nejnižší z celé skupiny."
+        },
+        {
+          "en": "This hotel is a bit cheaper than the other one.",
+          "cz": "Tenhle hotel je trochu levnější než ten druhý.",
+          "gap": "This hotel is ____ cheaper than the other one. (a bit / very)",
+          "gap_answer": "a bit",
+          "quiz_options": [
+            "a bit",
+            "very",
+            "much more",
+            "little"
+          ],
+          "accepts": [
+            "This hotel is a bit cheaper than the other one."
+          ],
+          "wrong": "This hotel is very cheaper than the other one.",
+          "explanation": "**a bit** is the small-difference modifier. It sits in the same slot as much and far.",
+          "explanation_cz": "**a bit** je zesilovač pro malý rozdíl. Stojí na stejném místě jako much a far."
+        },
+        {
+          "en": "Their house is much older than ours.",
+          "cz": "Jejich dům je mnohem starší než náš.",
+          "gap": "Their house is ____ older than ours. (much / very)",
+          "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "very",
+            "more",
+            "so"
+          ],
+          "accepts": [
+            "Their house is much older than ours."
+          ],
+          "wrong": "Their house is very older than ours.",
+          "explanation": "**much older** — very never stands in front of a comparative.",
+          "explanation_cz": "**much older** — very před druhým stupněm nikdy nestojí."
+        },
+        {
+          "en": "I am not as tired as I was yesterday.",
+          "cz": "Nejsem tak unavený jako včera.",
+          "gap": "I am not ____ tired as I was yesterday. (as / so)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "so",
+            "such",
+            "more"
+          ],
+          "accepts": [
+            "I am not as tired as I was yesterday.",
+            "I'm not as tired as I was yesterday."
+          ],
+          "wrong": "I am not as tired like I was yesterday.",
+          "explanation": "The second **as** is the one Czech speakers drop or turn into *like*.",
+          "explanation_cz": "To druhé **as** je právě to, co Češi vynechávají nebo mění na *like*."
+        },
+        {
+          "en": "It was the least interesting film I have seen.",
+          "cz": "Byl to ten nejmíň zajímavý film, co jsem viděl.",
+          "gap": "It was ____ interesting film I have seen. (the least / less)",
+          "gap_answer": "the least",
+          "quiz_options": [
+            "the least",
+            "less",
+            "the less",
+            "least"
+          ],
+          "accepts": [
+            "It was the least interesting film I have seen.",
+            "It was the least interesting film I've seen."
+          ],
+          "wrong": "It was less interesting film I have seen.",
+          "explanation": "The bottom of a group takes **the least**, with *the*, exactly like the most.",
+          "explanation_cz": "Nejnižší ze skupiny má **the least**, se členem *the*, přesně jako the most."
+        },
+        {
+          "en": "The new office is much smaller than the old one.",
+          "cz": "Ta nová kancelář je mnohem menší než ta stará.",
+          "gap": "The new office is ____ smaller than the old one. (much / very)",
+          "gap_answer": "much",
+          "quiz_options": [
+            "much",
+            "very",
+            "more",
+            "too"
+          ],
+          "accepts": [
+            "The new office is much smaller than the old one."
+          ],
+          "wrong": "The new office is more smaller than the old one.",
+          "explanation": "**much smaller**: one comparative, one modifier, and never *more* with -er.",
+          "explanation_cz": "**much smaller**: jeden druhý stupeň, jeden zesilovač a nikdy *more* s -er."
+        },
+        {
+          "en": "Her English is as good as mine.",
+          "cz": "Její angličtina je stejně dobrá jako moje.",
+          "gap": "Her English is as good ____ mine. (as / like)",
+          "gap_answer": "as",
+          "quiz_options": [
+            "as",
+            "like",
+            "than",
+            "so"
+          ],
+          "accepts": [
+            "Her English is as good as mine."
+          ],
+          "wrong": "Her English is as good like mine.",
+          "explanation": "Equal means **as … as**, whatever the noun is.",
+          "explanation_cz": "Rovnost je **as … as**, ať je podstatné jméno jakékoli."
+        },
+        {
+          "en": "This is the least useful book on my desk.",
+          "cz": "Tohle je ta nejmíň užitečná kniha na mém stole.",
+          "gap": "This is ____ useful book on my desk. (the least / less)",
+          "gap_answer": "the least",
+          "quiz_options": [
+            "the least",
+            "less",
+            "the less",
+            "least"
+          ],
+          "accepts": [
+            "This is the least useful book on my desk."
+          ],
+          "wrong": "This is less useful book on my desk.",
+          "explanation": "**the least** picks the bottom one out of everything on the desk.",
+          "explanation_cz": "**the least** vybírá tu úplně nejnižší ze všeho na stole."
+        }
       ]
-     ]
     }
-   },
-   {
-    "title": "much better, not very better",
-    "title_cz": "much better, ne very better",
-    "points": [
-     "**very** goes with a plain adjective: very good. Never with a comparative."
-    ],
-    "table": {
-     "headers": [
-      "Before a comparative",
-      "Not"
-     ],
-     "rows": [
-      [
-       "**much** better",
-       "*very better*"
-      ],
-      [
-       "**far** cheaper",
-       "*very cheaper*"
-      ],
-      [
-       "**a bit** longer",
-       "*very longer*"
-      ]
-     ]
-    }
-   },
-   {
-    "title": "Common mistakes",
-    "title_cz": "Časté chyby",
-    "text_first": true,
-    "points": [
-     "**as …** as for equal, and **much /** far / a bit before a comparative."
-    ],
-    "table": {
-     "headers": [
-      "Not this",
-      "Say this"
-     ],
-     "rows": [
-      [
-       "~~She's as tall like her brother.~~",
-       "She's **as tall** as her brother."
-      ],
-      [
-       "~~It's not so expensive as the other one.~~",
-       "It's **not as** expensive as the other one."
-      ],
-      [
-       "~~This is very better.~~",
-       "This is **much** better."
-      ],
-      [
-       "~~He is more taller than me.~~",
-       "He is **much taller** than me."
-      ]
-     ]
-    }
-   }
   ]
- },
- "blocks": [
-  {
-   "id": "b1_comparison_2_main",
-   "title": "As...as, less, much + comparative · B1",
-   "items": [
-    {
-     "en": "She's as tall as her brother.",
-     "cz": "Je stejně vysoká jako její bratr.",
-     "gap": "She's as tall ____ her brother. (as / like)",
-     "gap_answer": "as",
-     "quiz_options": [
-      "as",
-      "like",
-      "than",
-      "so"
-     ],
-     "accepts": [
-      "She's as tall as her brother.",
-      "She is as tall as her brother."
-     ],
-     "wrong": "She's as tall like her brother.",
-     "explanation": "The pair is **as … as**. Czech *jako* is not *like* here.",
-     "explanation_cz": "Dvojice je **as … as**. České *jako* tady není *like*."
-    },
-    {
-     "en": "This flat isn't as expensive as the other one.",
-     "cz": "Tenhle byt není tak drahý jako ten druhý.",
-     "gap": "This flat isn't ____ expensive as the other one. (as / so)",
-     "gap_answer": "as",
-     "quiz_options": [
-      "as",
-      "so",
-      "more",
-      "such"
-     ],
-     "accepts": [
-      "This flat isn't as expensive as the other one.",
-      "This flat is not as expensive as the other one."
-     ],
-     "explanation": "Negative equal: **not as** … as.",
-     "explanation_cz": "Záporná rovnost: **not as** … as."
-    },
-    {
-     "en": "This one is much better.",
-     "cz": "Tenhle je mnohem lepší.",
-     "gap": "This one is ____ better. (much / very)",
-     "gap_answer": "much",
-     "quiz_options": [
-      "much",
-      "very",
-      "more",
-      "so"
-     ],
-     "accepts": [
-      "This one is much better."
-     ],
-     "wrong": "This one is very better.",
-     "explanation": "**much** goes before a comparative. **very** does not.",
-     "explanation_cz": "**much** stojí před 2. stupněm. **very** ne."
-    },
-    {
-     "en": "The train is far cheaper than the plane.",
-     "cz": "Vlak je mnohem levnější než letadlo.",
-     "gap": "The train is ____ cheaper than the plane. (far / very)",
-     "gap_answer": "far",
-     "quiz_options": [
-      "far",
-      "very",
-      "much more",
-      "so"
-     ],
-     "accepts": [
-      "The train is far cheaper than the plane."
-     ],
-     "explanation": "**far** + comparative, like much.",
-     "explanation_cz": "**far** + 2. stupeň, stejně jako much."
-    },
-    {
-     "en": "My flat is less crowded than yours.",
-     "cz": "Můj byt je míň přeplněný než tvůj.",
-     "gap": "My flat is ____ crowded than yours. (less / least)",
-     "gap_answer": "less",
-     "quiz_options": [
-      "less",
-      "least",
-      "not as",
-      "fewer"
-     ],
-     "accepts": [
-      "My flat is less crowded than yours."
-     ],
-     "explanation": "**less** + adjective + than for the smaller amount.",
-     "explanation_cz": "**less** + přídavné jméno + than pro menší míru."
-    },
-    {
-     "en": "It's a bit longer than I expected.",
-     "cz": "Je to trochu delší, než jsem čekal.",
-     "gap": "It's ____ longer than I expected. (a bit / very)",
-     "gap_answer": "a bit",
-     "quiz_options": [
-      "a bit",
-      "very",
-      "much more",
-      "little"
-     ],
-     "accepts": [
-      "It's a bit longer than I expected."
-     ],
-     "explanation": "**a bit** softens a comparative.",
-     "explanation_cz": "**a bit** zjemňuje 2. stupeň."
-    },
-    {
-     "en": "He isn't as fast as he used to be.",
-     "cz": "Není tak rychlý, jak býval.",
-     "gap": "He isn't ____ fast as he used to be. (as / so)",
-     "gap_answer": "as",
-     "quiz_options": [
-      "as",
-      "so",
-      "more",
-      "such"
-     ],
-     "accepts": [
-      "He isn't as fast as he used to be."
-     ],
-     "explanation": "**not as** fast as — the standard negative equal.",
-     "explanation_cz": "**not as** fast as — běžná záporná rovnost."
-    },
-    {
-     "en": "This is the least expensive option.",
-     "cz": "Tohle je nejlevnější možnost.",
-     "gap": "This is ____ expensive option. (the least / less)",
-     "gap_answer": "the least",
-     "quiz_options": [
-      "the least",
-      "less",
-      "the less",
-      "least"
-     ],
-     "accepts": [
-      "This is the least expensive option."
-     ],
-     "explanation": "**the least** + adjective for the bottom of the group.",
-     "explanation_cz": "**the least** + přídavné jméno pro nejnižší ve skupině."
-    },
-    {
-     "en": "Prague is much bigger than Brno.",
-     "cz": "Praha je mnohem větší než Brno.",
-     "gap": "Prague is ____ bigger than Brno. (much / very)",
-     "gap_answer": "much",
-     "quiz_options": [
-      "much",
-      "very",
-      "more",
-      "too"
-     ],
-     "accepts": [
-      "Prague is much bigger than Brno."
-     ],
-     "wrong": "Prague is more bigger than Brno.",
-     "explanation": "**much** bigger. Never *very bigger*, never *more bigger*.",
-     "explanation_cz": "**much** bigger. Nikdy *very bigger*, nikdy *more bigger*."
-    },
-    {
-     "en": "Her new job is as good as the old one.",
-     "cz": "Její nová práce je stejně dobrá jako ta stará.",
-     "gap": "Her new job is ____ good as the old one. (as / so)",
-     "gap_answer": "as",
-     "quiz_options": [
-      "as",
-      "so",
-      "such",
-      "more"
-     ],
-     "accepts": [
-      "Her new job is as good as the old one."
-     ],
-     "explanation": "**as good as** — the two are equal.",
-     "explanation_cz": "**as good as** — obě jsou stejné."
-    }
-   ]
-  }
- ]
 }

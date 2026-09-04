@@ -1,578 +1,1177 @@
 {
- "id": "b1_technology",
- "title": "Tech 3",
- "level": "B1",
- "tree_node": "leaf_technology_b1",
- "codex_unit": "V_COM-B1B2-01",
- "quality": "draft",
- "note": "Extended layer above leaf_tech_a2. Devices, accounts and what goes wrong with them. Hangs on communication, the same branch leaf_tech_a2 uses. First draft 2026-09-02, rough - 36 words, thicken the Use bank after smoke.",
- "default_direction": "cz_to_en",
- "quiz_mode": "sentence_gap",
- "intro": [
-  {
-   "title": "Devices",
-   "title_cz": "Zařízení",
-   "pictures": [
+  "id": "b1_technology",
+  "title": "Tech 3",
+  "level": "B1",
+  "tree_node": "leaf_technology_b1",
+  "codex_unit": "V_COM-B1B2-01",
+  "quality": "draft",
+  "note": "Extended layer above leaf_tech_a2. Devices, accounts and what goes wrong with them. First draft 2026-09-02. · 2026-09-04 B1 loop: only 15 of the 36 tiles were new against the pool at this slot. F7: seventeen same-sense repeats (device, screen, keyboard, charger, camera, printer, tablet, download, upload, delete, password, account, link, virus, error, warning, fix) moved to two **You already know** boards; the list was refilled with hardware, browser, subscription, notification, settings, stream, cable, plug, socket, screenshot, scan, wireless, touchscreen, folder, spam, scam and signal. A12: four tiles are the computer sense of a word the student already has — **mouse (computer)** against the animal, **speaker (for sound)** against the person, **save (a file)** against *ušetřit*, **block (a user)** against the city block — and an intro table puts the four pairs side by side. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · Pool-checked against everything taught before leaf_technology_b1 — 0 unknown types.",
+  "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
+  "intro": [
     {
-     "icon": "💻",
-     "en": "device",
-     "cz": "zařízení"
+      "title": "You already know · the things",
+      "title_cz": "Už znáš · věci",
+      "pictures": [
+        {
+          "icon": "📟",
+          "en": "device",
+          "cz": "zařízení"
+        },
+        {
+          "icon": "🖥️",
+          "en": "screen",
+          "cz": "obrazovka"
+        },
+        {
+          "icon": "⌨️",
+          "en": "keyboard",
+          "cz": "klávesnice"
+        },
+        {
+          "icon": "🔌",
+          "en": "charger",
+          "cz": "nabíječka"
+        },
+        {
+          "icon": "📷",
+          "en": "camera",
+          "cz": "fotoaparát"
+        },
+        {
+          "icon": "🖨️",
+          "en": "printer",
+          "cz": "tiskárna"
+        },
+        {
+          "icon": "📱",
+          "en": "tablet",
+          "cz": "tablet"
+        },
+        {
+          "icon": "⬇️",
+          "en": "download",
+          "cz": "stáhnout"
+        },
+        {
+          "icon": "⬆️",
+          "en": "upload",
+          "cz": "nahrát"
+        }
+      ]
     },
     {
-     "icon": "🖥️",
-     "en": "screen",
-     "cz": "obrazovka"
+      "title": "You already know · what you do with them",
+      "title_cz": "Už znáš · co s nimi děláš",
+      "pictures": [
+        {
+          "icon": "🗑️",
+          "en": "delete",
+          "cz": "smazat"
+        },
+        {
+          "icon": "🔑",
+          "en": "password",
+          "cz": "heslo"
+        },
+        {
+          "icon": "👤",
+          "en": "account",
+          "cz": "účet"
+        },
+        {
+          "icon": "🔗",
+          "en": "link",
+          "cz": "odkaz"
+        },
+        {
+          "icon": "🦠",
+          "en": "virus",
+          "cz": "virus"
+        },
+        {
+          "icon": "❗",
+          "en": "error",
+          "cz": "chyba"
+        },
+        {
+          "icon": "⚠️",
+          "en": "warning",
+          "cz": "varování"
+        },
+        {
+          "icon": "🔧",
+          "en": "fix",
+          "cz": "opravit"
+        }
+      ]
     },
     {
-     "icon": "⌨️",
-     "en": "keyboard",
-     "cz": "klávesnice"
+      "title": "Devices and parts",
+      "title_cz": "Zařízení a součástky",
+      "pictures": [
+        {
+          "icon": "🔋",
+          "en": "battery",
+          "cz": "baterie"
+        },
+        {
+          "icon": "🎧",
+          "en": "headphones",
+          "cz": "sluchátka"
+        },
+        {
+          "icon": "⌚",
+          "en": "smart watch",
+          "cz": "chytré hodinky"
+        },
+        {
+          "icon": "🖱️",
+          "en": "mouse (computer)",
+          "cz": "myš (počítačová)"
+        },
+        {
+          "icon": "🔊",
+          "en": "speaker (for sound)",
+          "cz": "reproduktor"
+        },
+        {
+          "icon": "🔌",
+          "en": "cable",
+          "cz": "kabel"
+        },
+        {
+          "icon": "🔌",
+          "en": "plug",
+          "cz": "zástrčka"
+        },
+        {
+          "icon": "🕳️",
+          "en": "socket",
+          "cz": "zásuvka"
+        },
+        {
+          "icon": "📱",
+          "en": "touchscreen",
+          "cz": "dotyková obrazovka"
+        },
+        {
+          "icon": "📶",
+          "en": "wireless",
+          "cz": "bezdrátový"
+        },
+        {
+          "icon": "🖥️",
+          "en": "hardware",
+          "cz": "hardware"
+        },
+        {
+          "icon": "📡",
+          "en": "signal",
+          "cz": "signál"
+        }
+      ]
     },
     {
-     "icon": "🔌",
-     "en": "charger",
-     "cz": "nabíječka"
+      "title": "Using it",
+      "title_cz": "Jak to používáš",
+      "pictures": [
+        {
+          "icon": "🔗",
+          "en": "connect",
+          "cz": "připojit se"
+        },
+        {
+          "icon": "⬇️",
+          "en": "install",
+          "cz": "nainstalovat"
+        },
+        {
+          "icon": "🔄",
+          "en": "update",
+          "cz": "aktualizace / aktualizovat"
+        },
+        {
+          "icon": "💾",
+          "en": "save (a file)",
+          "cz": "uložit (soubor)"
+        },
+        {
+          "icon": "🗄️",
+          "en": "back up",
+          "cz": "zazálohovat"
+        },
+        {
+          "icon": "📁",
+          "en": "folder",
+          "cz": "složka"
+        },
+        {
+          "icon": "🌐",
+          "en": "browser",
+          "cz": "prohlížeč"
+        },
+        {
+          "icon": "⚙️",
+          "en": "settings",
+          "cz": "nastavení"
+        },
+        {
+          "icon": "📸",
+          "en": "screenshot",
+          "cz": "snímek obrazovky"
+        },
+        {
+          "icon": "🖨️",
+          "en": "scan",
+          "cz": "naskenovat"
+        },
+        {
+          "icon": "▶️",
+          "en": "stream",
+          "cz": "streamovat"
+        },
+        {
+          "icon": "🔔",
+          "en": "notification",
+          "cz": "upozornění"
+        }
+      ]
     },
     {
-     "icon": "🔋",
-     "en": "battery",
-     "cz": "baterie"
+      "title": "Accounts, and when it goes wrong",
+      "title_cz": "Účty a když se to pokazí",
+      "pictures": [
+        {
+          "icon": "🧾",
+          "en": "subscription",
+          "cz": "předplatné"
+        },
+        {
+          "icon": "📎",
+          "en": "attachment",
+          "cz": "příloha"
+        },
+        {
+          "icon": "☁️",
+          "en": "the cloud",
+          "cz": "cloud"
+        },
+        {
+          "icon": "🐞",
+          "en": "bug",
+          "cz": "chyba v programu"
+        },
+        {
+          "icon": "💥",
+          "en": "crash",
+          "cz": "spadnout (o programu)"
+        },
+        {
+          "icon": "🐌",
+          "en": "slow",
+          "cz": "pomalý"
+        },
+        {
+          "icon": "🔁",
+          "en": "restart",
+          "cz": "restartovat"
+        },
+        {
+          "icon": "🚫",
+          "en": "offline",
+          "cz": "offline / bez připojení"
+        },
+        {
+          "icon": "🕶️",
+          "en": "hack",
+          "cz": "hacknout"
+        },
+        {
+          "icon": "📬",
+          "en": "spam",
+          "cz": "spam"
+        },
+        {
+          "icon": "🎣",
+          "en": "scam",
+          "cz": "podvod (na internetu)"
+        },
+        {
+          "icon": "⛔",
+          "en": "block (a user)",
+          "cz": "zablokovat (uživatele)"
+        }
+      ]
     },
     {
-     "icon": "🎧",
-     "en": "headphones",
-     "cz": "sluchátka"
+      "title": "Four words you already know in a new sense",
+      "title_cz": "Čtyři slova v novém významu",
+      "table": {
+        "headers": [
+          "you know it as",
+          "here it means"
+        ],
+        "rows": [
+          [
+            "mouse = myš (zvíře)",
+            "mouse = myš (počítačová)"
+          ],
+          [
+            "speaker = mluvčí",
+            "speaker = reproduktor"
+          ],
+          [
+            "save = ušetřit",
+            "save = uložit soubor"
+          ],
+          [
+            "block = blok (budov)",
+            "block = zablokovat uživatele"
+          ]
+        ]
+      }
     },
     {
-     "icon": "📷",
-     "en": "camera",
-     "cz": "fotoaparát"
-    },
-    {
-     "icon": "🖨️",
-     "en": "printer",
-     "cz": "tiskárna"
-    },
-    {
-     "icon": "📱",
-     "en": "tablet",
-     "cz": "tablet"
-    },
-    {
-     "icon": "⌚",
-     "en": "smart watch",
-     "cz": "chytré hodinky"
-    },
-    {
-     "icon": "🔊",
-     "en": "speaker",
-     "cz": "reproduktor"
-    },
-    {
-     "icon": "🖱️",
-     "en": "mouse",
-     "cz": "myš"
+      "title": "You will use these words in",
+      "title_cz": "Tato slova použiješ ve větách",
+      "frames": [
+        "I cannot … · *Nemůžu …*",
+        "You have to … before … · *Musíš …, než …*",
+        "The … is slow because … · *… je pomalý, protože …*",
+        "Please … your … · *Prosím, … svoje …*",
+        "The … does not work when … · *… nefunguje, když …*"
+      ],
+      "note": "**hack** is what a person does to a system; a **bug** is a mistake in the program itself. Neither is a **virus** — that is a program somebody wrote to do damage.",
+      "note_cz": "hack = útok člověka · bug = chyba v programu · virus = škodlivý program."
     }
-   ]
-  },
-  {
-   "title": "Using it",
-   "title_cz": "Používání",
-   "pictures": [
+  ],
+  "blocks": [
     {
-     "icon": "⬇️",
-     "en": "download",
-     "cz": "stáhnout"
+      "id": "b1_technology_1",
+      "title": "Technology · devices and parts",
+      "items": [
+        {
+          "en": "battery",
+          "cz": "baterie",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "headphones",
+          "cz": "sluchátka",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "smart watch",
+          "cz": "chytré hodinky",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "mouse (computer)",
+          "cz": "myš (počítačová)",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "speaker (for sound)",
+          "cz": "reproduktor",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "cable",
+          "cz": "kabel",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "plug",
+          "cz": "zástrčka",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "socket",
+          "cz": "zásuvka",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "touchscreen",
+          "cz": "dotyková obrazovka",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "wireless",
+          "cz": "bezdrátový",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "hardware",
+          "cz": "hardware",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "signal",
+          "cz": "signál",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        }
+      ]
     },
     {
-     "icon": "⬆️",
-     "en": "upload",
-     "cz": "nahrát"
+      "id": "b1_technology_2",
+      "title": "Technology · using it",
+      "items": [
+        {
+          "en": "connect",
+          "cz": "připojit se",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "install",
+          "cz": "nainstalovat",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "update",
+          "cz": "aktualizace / aktualizovat",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "save (a file)",
+          "cz": "uložit (soubor)",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "back up",
+          "cz": "zazálohovat",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "folder",
+          "cz": "složka",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "browser",
+          "cz": "prohlížeč",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "settings",
+          "cz": "nastavení",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "screenshot",
+          "cz": "snímek obrazovky",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "scan",
+          "cz": "naskenovat",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "stream",
+          "cz": "streamovat",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "notification",
+          "cz": "upozornění",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        }
+      ]
     },
     {
-     "icon": "💾",
-     "en": "save",
-     "cz": "uložit"
-    },
-    {
-     "icon": "🗑️",
-     "en": "delete",
-     "cz": "smazat"
-    },
-    {
-     "icon": "🔑",
-     "en": "password",
-     "cz": "heslo"
-    },
-    {
-     "icon": "👤",
-     "en": "account",
-     "cz": "účet"
-    },
-    {
-     "icon": "📶",
-     "en": "connect",
-     "cz": "připojit"
-    },
-    {
-     "icon": "🔄",
-     "en": "update",
-     "cz": "aktualizovat"
-    },
-    {
-     "icon": "📲",
-     "en": "install",
-     "cz": "nainstalovat"
-    },
-    {
-     "icon": "🔗",
-     "en": "link",
-     "cz": "odkaz"
-    },
-    {
-     "icon": "📎",
-     "en": "attachment",
-     "cz": "příloha"
-    },
-    {
-     "icon": "☁️",
-     "en": "the cloud",
-     "cz": "cloud"
+      "id": "b1_technology_3",
+      "title": "Technology · accounts and when it goes wrong",
+      "items": [
+        {
+          "en": "subscription",
+          "cz": "předplatné",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "attachment",
+          "cz": "příloha",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "the cloud",
+          "cz": "cloud",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "bug",
+          "cz": "chyba v programu",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "crash",
+          "cz": "spadnout (o programu)",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "slow",
+          "cz": "pomalý",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "restart",
+          "cz": "restartovat",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "offline",
+          "cz": "offline / bez připojení",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "hack",
+          "cz": "hacknout",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "spam",
+          "cz": "spam",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "scam",
+          "cz": "podvod (na internetu)",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        },
+        {
+          "en": "block (a user)",
+          "cz": "zablokovat (uživatele)",
+          "use": [
+            "this_is_a",
+            "i_have_a"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "title": "When it breaks",
-   "title_cz": "Když to nefunguje",
-   "pictures": [
+  ],
+  "sentences": [
     {
-     "icon": "🐛",
-     "en": "bug",
-     "cz": "chyba"
+      "en": "My laptop battery lasts four hours, but it was ten hours last year.",
+      "cz": "Baterie v mém notebooku vydrží čtyři hodiny, ale loni to bylo deset.",
+      "lemmas": [
+        "battery"
+      ],
+      "accepts": [
+        "My laptop battery lasts four hours, but it was ten hours last year"
+      ]
     },
     {
-     "icon": "💥",
-     "en": "crash",
-     "cz": "spadnout"
+      "en": "I wear headphones on the train so I can work.",
+      "cz": "Ve vlaku nosím sluchátka, abych mohl pracovat.",
+      "lemmas": [
+        "headphones"
+      ],
+      "accepts": [
+        "I wear headphones on the train so I can work"
+      ]
     },
     {
-     "icon": "🐌",
-     "en": "slow",
-     "cz": "pomalý"
+      "en": "His smart watch tells him when to stand up.",
+      "cz": "Jeho chytré hodinky mu řeknou, kdy má vstát.",
+      "lemmas": [
+        "smart watch"
+      ],
+      "accepts": [
+        "His smart watch tells him when to stand up"
+      ]
     },
     {
-     "icon": "🚫",
-     "en": "block",
-     "cz": "zablokovat"
+      "en": "The mouse stopped working after I dropped it.",
+      "cz": "Myš přestala fungovat, když mi spadla.",
+      "lemmas": [
+        "mouse (computer)"
+      ],
+      "accepts": [
+        "The mouse stopped working after I dropped it"
+      ]
     },
     {
-     "icon": "🦠",
-     "en": "virus",
-     "cz": "virus"
+      "en": "The speaker in the kitchen plays music all morning.",
+      "cz": "Reproduktor v kuchyni hraje hudbu celé dopoledne.",
+      "lemmas": [
+        "speaker (for sound)"
+      ],
+      "accepts": [
+        "The speaker in the kitchen plays music all morning"
+      ]
     },
     {
-     "icon": "🔒",
-     "en": "hack",
-     "cz": "hacknout"
+      "en": "The cable is too short for the table.",
+      "cz": "Ten kabel je na stůl moc krátký.",
+      "lemmas": [
+        "cable"
+      ],
+      "accepts": [
+        "The cable is too short for the table"
+      ]
     },
     {
-     "icon": "❌",
-     "en": "error",
-     "cz": "chyba"
+      "en": "The plug does not fit the socket in this hotel.",
+      "cz": "Ta zástrčka do zásuvky v tomhle hotelu nepasuje.",
+      "lemmas": [
+        "plug"
+      ],
+      "accepts": [
+        "The plug does not fit the socket in this hotel",
+        "The plug doesn't fit the socket in this hotel"
+      ]
     },
     {
-     "icon": "🔁",
-     "en": "restart",
-     "cz": "restartovat"
+      "en": "There is only one socket in this room.",
+      "cz": "V tomhle pokoji je jen jedna zásuvka.",
+      "lemmas": [
+        "socket"
+      ],
+      "accepts": [
+        "There is only one socket in this room",
+        "There's only one socket in this room"
+      ]
     },
     {
-     "icon": "📵",
-     "en": "offline",
-     "cz": "offline"
+      "en": "The touchscreen does not work when my hands are wet.",
+      "cz": "Dotyková obrazovka nefunguje, když mám mokré ruce.",
+      "lemmas": [
+        "touchscreen"
+      ],
+      "accepts": [
+        "The touchscreen does not work when my hands are wet",
+        "The touchscreen doesn't work when my hands are wet"
+      ]
     },
     {
-     "icon": "⚠️",
-     "en": "warning",
-     "cz": "varování"
+      "en": "A wireless keyboard is better on a small desk.",
+      "cz": "Na malý stůl je lepší bezdrátová klávesnice.",
+      "lemmas": [
+        "wireless"
+      ],
+      "accepts": [
+        "A wireless keyboard is better on a small desk"
+      ]
     },
     {
-     "icon": "🧯",
-     "en": "fix",
-     "cz": "opravit"
+      "en": "The hardware is fine; the problem is the program.",
+      "cz": "Hardware je v pořádku, problém je ten program.",
+      "lemmas": [
+        "hardware"
+      ],
+      "accepts": [
+        "The hardware is fine; the problem is the program"
+      ]
     },
     {
-     "icon": "🗄️",
-     "en": "back up",
-     "cz": "zálohovat"
+      "en": "The signal is bad in the office behind the station.",
+      "cz": "V kanceláři za nádražím je špatný signál.",
+      "lemmas": [
+        "signal"
+      ],
+      "accepts": [
+        "The signal is bad in the office behind the station"
+      ]
+    },
+    {
+      "en": "I cannot connect to the wifi in this room.",
+      "cz": "V tomhle pokoji se nemůžu připojit k wifi.",
+      "lemmas": [
+        "connect"
+      ],
+      "accepts": [
+        "I cannot connect to the wifi in this room",
+        "I can't connect to the wifi in this room"
+      ]
+    },
+    {
+      "en": "You have to install the app before the meeting.",
+      "cz": "Tu aplikaci si musíš nainstalovat před schůzkou.",
+      "lemmas": [
+        "install"
+      ],
+      "accepts": [
+        "You have to install the app before the meeting"
+      ]
+    },
+    {
+      "en": "The update took an hour and changed nothing.",
+      "cz": "Ta aktualizace trvala hodinu a nic nezměnila.",
+      "lemmas": [
+        "update"
+      ],
+      "accepts": [
+        "The update took an hour and changed nothing"
+      ]
+    },
+    {
+      "en": "Please save the file before you close the computer.",
+      "cz": "Ulož prosím ten soubor, než počítač vypneš.",
+      "lemmas": [
+        "save (a file)"
+      ],
+      "accepts": [
+        "Please save the file before you close the computer"
+      ]
+    },
+    {
+      "en": "Please back up your files before you leave the office.",
+      "cz": "Zazálohuj si prosím soubory, než odejdeš z kanceláře.",
+      "lemmas": [
+        "back up"
+      ],
+      "accepts": [
+        "Please back up your files before you leave the office"
+      ]
+    },
+    {
+      "en": "The photos are in a folder with the old reports.",
+      "cz": "Ty fotky jsou ve složce se starými zprávami.",
+      "lemmas": [
+        "folder"
+      ],
+      "accepts": [
+        "The photos are in a folder with the old reports"
+      ]
+    },
+    {
+      "en": "The browser is slow because I have thirty pages open.",
+      "cz": "Prohlížeč je pomalý, protože mám otevřených třicet stránek.",
+      "lemmas": [
+        "browser"
+      ],
+      "accepts": [
+        "The browser is slow because I have thirty pages open"
+      ]
+    },
+    {
+      "en": "You can change that in the settings of the app.",
+      "cz": "To můžeš změnit v nastavení té aplikace.",
+      "lemmas": [
+        "settings"
+      ],
+      "accepts": [
+        "You can change that in the settings of the app"
+      ]
+    },
+    {
+      "en": "Send me a screenshot and I will tell you what to do.",
+      "cz": "Pošli mi snímek obrazovky a já ti řeknu, co dělat.",
+      "lemmas": [
+        "screenshot"
+      ],
+      "accepts": [
+        "Send me a screenshot and I will tell you what to do",
+        "Send me a screenshot and I'll tell you what to do"
+      ]
+    },
+    {
+      "en": "I need to scan the paper and send it today.",
+      "cz": "Potřebuju ten papír naskenovat a dneska ho poslat.",
+      "lemmas": [
+        "scan"
+      ],
+      "accepts": [
+        "I need to scan the paper and send it today"
+      ]
+    },
+    {
+      "en": "We stream the football because the television is broken.",
+      "cz": "Fotbal streamujeme, protože televize je rozbitá.",
+      "lemmas": [
+        "stream"
+      ],
+      "accepts": [
+        "We stream the football because the television is broken"
+      ]
+    },
+    {
+      "en": "Every notification comes to my watch, and it is too much.",
+      "cz": "Každé upozornění mi chodí na hodinky a je toho moc.",
+      "lemmas": [
+        "notification"
+      ],
+      "accepts": [
+        "Every notification comes to my watch, and it is too much",
+        "Every notification comes to my watch, and it's too much"
+      ]
+    },
+    {
+      "en": "I stopped the subscription because I never watched it.",
+      "cz": "Předplatné jsem zrušil, protože jsem to nikdy nesledoval.",
+      "lemmas": [
+        "subscription"
+      ],
+      "accepts": [
+        "I stopped the subscription because I never watched it"
+      ]
+    },
+    {
+      "en": "She sent the report as an attachment, but I could not open it.",
+      "cz": "Poslala tu zprávu jako přílohu, ale nešlo mi ji otevřít.",
+      "lemmas": [
+        "attachment"
+      ],
+      "accepts": [
+        "She sent the report as an attachment, but I could not open it",
+        "She sent the report as an attachment, but I couldn't open it"
+      ]
+    },
+    {
+      "en": "I saved the photos to the cloud after my old phone broke.",
+      "cz": "Fotky jsem uložil do cloudu, když se mi rozbil starý telefon.",
+      "lemmas": [
+        "the cloud"
+      ],
+      "accepts": [
+        "I saved the photos to the cloud after my old phone broke"
+      ]
+    },
+    {
+      "en": "The new app has a bug that deletes the last line.",
+      "cz": "Nová aplikace má chybu, která maže poslední řádek.",
+      "lemmas": [
+        "bug"
+      ],
+      "accepts": [
+        "The new app has a bug that deletes the last line"
+      ]
+    },
+    {
+      "en": "The computer will crash if you open too many files.",
+      "cz": "Počítač spadne, jestli otevřeš moc souborů.",
+      "lemmas": [
+        "crash"
+      ],
+      "accepts": [
+        "The computer will crash if you open too many files",
+        "The computer'll crash if you open too many files"
+      ]
+    },
+    {
+      "en": "The internet is very slow tonight because everybody is watching films.",
+      "cz": "Internet je dneska večer hodně pomalý, protože všichni koukají na filmy.",
+      "lemmas": [
+        "slow"
+      ],
+      "accepts": [
+        "The internet is very slow tonight because everybody is watching films"
+      ]
+    },
+    {
+      "en": "If you restart the phone, the problem usually goes.",
+      "cz": "Když telefon restartuješ, problém většinou zmizí.",
+      "lemmas": [
+        "restart"
+      ],
+      "accepts": [
+        "If you restart the phone, the problem usually goes"
+      ]
+    },
+    {
+      "en": "The bank was offline all morning, so nobody could pay.",
+      "cz": "Banka byla celé dopoledne offline, takže nikdo nemohl platit.",
+      "lemmas": [
+        "offline"
+      ],
+      "accepts": [
+        "The bank was offline all morning, so nobody could pay"
+      ]
+    },
+    {
+      "en": "They tried to hack the school website in the summer.",
+      "cz": "V létě se pokusili hacknout školní web.",
+      "lemmas": [
+        "hack"
+      ],
+      "accepts": [
+        "They tried to hack the school website in the summer"
+      ]
+    },
+    {
+      "en": "Half of my spam is about cheap flights.",
+      "cz": "Polovina mého spamu je o levných letenkách.",
+      "lemmas": [
+        "spam"
+      ],
+      "accepts": [
+        "Half of my spam is about cheap flights"
+      ]
+    },
+    {
+      "en": "The message about the free phone was a scam.",
+      "cz": "Ta zpráva o telefonu zdarma byl podvod.",
+      "lemmas": [
+        "scam"
+      ],
+      "accepts": [
+        "The message about the free phone was a scam"
+      ]
+    },
+    {
+      "en": "You can block a person who writes to you every day.",
+      "cz": "Můžeš zablokovat člověka, který ti píše každý den.",
+      "lemmas": [
+        "block (a user)"
+      ],
+      "accepts": [
+        "You can block a person who writes to you every day"
+      ]
     }
-   ]
-  },
-  {
-   "title": "You will use these words in",
-   "title_cz": "Tato slova použiješ ve větách",
-   "frames": [
-    "I have a … · *Mám …*",
-    "I need a … · *Potřebuju …*",
-    "I want to … · *Chci …*",
-    "We need to … · *Musíme …*",
-    "Let's talk about … · *Pojďme mluvit o …*",
-    "… is important · *… je důležité*"
-   ]
-  }
- ],
- "blocks": [
-  {
-   "id": "b1_technology_1",
-   "title": "Technology · devices",
-   "items": [
+  ],
+  "use_mode": "rewrite",
+  "use_hint": "Rewrite the sentence. Replace the underlined words.",
+  "use_sentences": [
     {
-     "en": "device",
-     "cz": "zařízení",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "connect",
+      "prompt": "I cannot get on the wifi in this room.",
+      "underline": "get on",
+      "en": "I cannot connect to the wifi in this room.",
+      "lemmas": [
+        "connect"
+      ],
+      "accepts": [
+        "I cannot connect to the wifi in this room",
+        "I can't connect to the wifi in this room"
+      ]
     },
     {
-     "en": "screen",
-     "cz": "obrazovka",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "install",
+      "prompt": "You have to put the app on your phone before the meeting.",
+      "underline": "put the app on your phone",
+      "en": "You have to install the app before the meeting.",
+      "lemmas": [
+        "install"
+      ],
+      "accepts": [
+        "You have to install the app before the meeting"
+      ]
     },
     {
-     "en": "keyboard",
-     "cz": "klávesnice",
-     "use": [
-      "this_is_a"
-     ]
+      "lemma": "back up",
+      "prompt": "Please make a second copy of your files before you leave the office.",
+      "underline": "make a second copy of",
+      "en": "Please back up your files before you leave the office.",
+      "lemmas": [
+        "back up"
+      ],
+      "accepts": [
+        "Please back up your files before you leave the office"
+      ]
     },
     {
-     "en": "charger",
-     "cz": "nabíječka",
-     "use": [
-      "we_need_to"
-     ]
+      "lemma": "crash",
+      "prompt": "The computer will stop working if you open too many files.",
+      "underline": "stop working",
+      "en": "The computer will crash if you open too many files.",
+      "lemmas": [
+        "crash"
+      ],
+      "accepts": [
+        "The computer will crash if you open too many files"
+      ]
     },
     {
-     "en": "battery",
-     "cz": "baterie",
-     "use": [
-      "we_need_to"
-     ]
+      "lemma": "restart",
+      "prompt": "If you turn the phone off and on again, the problem usually goes.",
+      "underline": "turn the phone off and on again",
+      "en": "If you restart the phone, the problem usually goes.",
+      "lemmas": [
+        "restart"
+      ],
+      "accepts": [
+        "If you restart the phone, the problem usually goes"
+      ]
     },
     {
-     "en": "headphones",
-     "cz": "sluchátka",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "offline",
+      "prompt": "The bank was not on the internet all morning, so nobody could pay.",
+      "underline": "not on the internet",
+      "en": "The bank was offline all morning, so nobody could pay.",
+      "lemmas": [
+        "offline"
+      ],
+      "accepts": [
+        "The bank was offline all morning, so nobody could pay"
+      ]
     },
     {
-     "en": "camera",
-     "cz": "fotoaparát",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "hack",
+      "prompt": "They tried to get into the school website in the summer.",
+      "underline": "get into",
+      "en": "They tried to hack the school website in the summer.",
+      "lemmas": [
+        "hack"
+      ],
+      "accepts": [
+        "They tried to hack the school website in the summer"
+      ]
     },
     {
-     "en": "printer",
-     "cz": "tiskárna",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "scam",
+      "prompt": "The message about the free phone was not real, it only wanted money.",
+      "underline": "not real, it only wanted money",
+      "en": "The message about the free phone was a scam.",
+      "lemmas": [
+        "scam"
+      ],
+      "accepts": [
+        "The message about the free phone was a scam"
+      ]
     },
     {
-     "en": "tablet",
-     "cz": "tablet",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "subscription",
+      "prompt": "I stopped paying every month because I never watched it.",
+      "underline": "paying every month",
+      "en": "I stopped the subscription because I never watched it.",
+      "lemmas": [
+        "subscription"
+      ],
+      "accepts": [
+        "I stopped the subscription because I never watched it"
+      ]
     },
     {
-     "en": "smart watch",
-     "cz": "chytré hodinky",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "screenshot",
+      "prompt": "Send me a picture of your screen and I will tell you what to do.",
+      "underline": "picture of your screen",
+      "en": "Send me a screenshot and I will tell you what to do.",
+      "lemmas": [
+        "screenshot"
+      ],
+      "accepts": [
+        "Send me a screenshot and I will tell you what to do",
+        "Send me a screenshot and I'll tell you what to do"
+      ]
     },
     {
-     "en": "speaker",
-     "cz": "reproduktor",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "signal",
+      "prompt": "The phone does not work well in the office behind the station.",
+      "underline": "The phone does not work well",
+      "en": "The signal is bad in the office behind the station.",
+      "lemmas": [
+        "signal"
+      ],
+      "accepts": [
+        "The signal is bad in the office behind the station"
+      ]
     },
     {
-     "en": "mouse",
-     "cz": "myš",
-     "use": [
-      "i_have_a"
-     ]
+      "lemma": "headphones",
+      "prompt": "I listen with something over my ears on the train so I can work.",
+      "underline": "something over my ears",
+      "en": "I wear headphones on the train so I can work.",
+      "lemmas": [
+        "headphones"
+      ],
+      "accepts": [
+        "I wear headphones on the train so I can work"
+      ]
     }
-   ]
-  },
-  {
-   "id": "b1_technology_2",
-   "title": "Technology · using it",
-   "items": [
-    {
-     "en": "download",
-     "cz": "stáhnout",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "upload",
-     "cz": "nahrát",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "save",
-     "cz": "uložit",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "delete",
-     "cz": "smazat",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "password",
-     "cz": "heslo",
-     "use": [
-      "we_need_to"
-     ]
-    },
-    {
-     "en": "account",
-     "cz": "účet",
-     "use": [
-      "i_have_a"
-     ]
-    },
-    {
-     "en": "connect",
-     "cz": "připojit",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "update",
-     "cz": "aktualizovat",
-     "use": [
-      "we_need_to"
-     ]
-    },
-    {
-     "en": "install",
-     "cz": "nainstalovat",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "link",
-     "cz": "odkaz",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "attachment",
-     "cz": "příloha",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "the cloud",
-     "cz": "cloud",
-     "use": [
-      "lets_talk_about"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "b1_technology_3",
-   "title": "Technology · when it breaks",
-   "items": [
-    {
-     "en": "bug",
-     "cz": "chyba",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "crash",
-     "cz": "spadnout",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "slow",
-     "cz": "pomalý",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "block",
-     "cz": "zablokovat",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "virus",
-     "cz": "virus",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "hack",
-     "cz": "hacknout",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "error",
-     "cz": "chyba",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "restart",
-     "cz": "restartovat",
-     "use": [
-      "we_need_to"
-     ]
-    },
-    {
-     "en": "offline",
-     "cz": "offline",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "warning",
-     "cz": "varování",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "fix",
-     "cz": "opravit",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
-     "en": "back up",
-     "cz": "zálohovat",
-     "use": [
-      "we_need_to"
-     ]
-    }
-   ]
-  }
- ],
- "sentences": [
-  {
-   "en": "I need to download the new app before the meeting starts.",
-   "cz": "Musím si stáhnout tu novou aplikaci, než začne schůzka.",
-   "lemmas": [
-    "download"
-   ],
-   "accepts": [
-    "I need to download the new app before the meeting starts"
-   ]
-  },
-  {
-   "en": "My laptop battery lasts four hours, but it was ten hours last year.",
-   "cz": "Baterie v notebooku vydrží čtyři hodiny, ale loni to bylo deset.",
-   "lemmas": [
-    "battery"
-   ],
-   "accepts": [
-    "My laptop battery lasts four hours, but it was ten hours last year"
-   ]
-  },
-  {
-   "en": "I forgot my password again, but my sister remembered it.",
-   "cz": "Zase jsem zapomněl heslo, ale sestra si ho pamatovala.",
-   "lemmas": [
-    "password"
-   ],
-   "accepts": [
-    "I forgot my password again, but my sister remembered it"
-   ]
-  },
-  {
-   "en": "The computer crashed twice today because the room was too hot.",
-   "cz": "Počítač dnes dvakrát spadl, protože bylo v místnosti moc horko.",
-   "lemmas": [
-    "crash"
-   ],
-   "accepts": [
-    "The computer crashed twice today because the room was too hot"
-   ]
-  },
-  {
-   "en": "Please back up your files before you leave the office.",
-   "cz": "Zálohuj si prosím soubory, než odejdeš z kanceláře.",
-   "lemmas": [
-    "back up"
-   ],
-   "accepts": [
-    "Please back up your files before you leave the office"
-   ]
-  },
-  {
-   "en": "She sent the report as an attachment, but I could not open it.",
-   "cz": "Poslala tu zprávu jako přílohu, ale nemohl jsem ji otevřít.",
-   "lemmas": [
-    "attachment"
-   ],
-   "accepts": [
-    "She sent the report as an attachment, but I could not open it",
-    "She sent the report as an attachment, but I couldn't open it"
-   ]
-  },
-  {
-   "en": "The internet is very slow tonight because everybody is watching films.",
-   "cz": "Internet je dnes večer moc pomalý, protože všichni koukají na filmy.",
-   "lemmas": [
-    "slow"
-   ],
-   "accepts": [
-    "The internet is very slow tonight because everybody is watching films"
-   ]
-  },
-  {
-   "en": "I saved the photos to the cloud after my old phone broke.",
-   "cz": "Uložil jsem fotky do cloudu poté, co se mi rozbil starý telefon.",
-   "lemmas": [
-    "the cloud"
-   ],
-   "accepts": [
-    "I saved the photos to the cloud after my old phone broke"
-   ]
-  }
- ]
+  ]
 }

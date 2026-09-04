@@ -6,7 +6,7 @@
  "codex_unit": "G_SS-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "Above a1_agreement / a2_agreement. Three groups that trip Czech speakers: everybody/everyone/nobody take a singular verb; news / information / advice are uncountable singular; people and police are plural. Czech policie is singular (*The police is coming) and noviny is plural (*The news are bad) - the interference runs both ways. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "Above a1_agreement / a2_agreement. Three groups that trip Czech speakers: everybody/everyone/nobody take a singular verb; news / information / advice are uncountable singular; people and police are plural. Czech policie is singular (*The police is coming) and noviny is plural (*The news are bad) - the interference runs both ways. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, five or six per group, including the questions (Is the news…? Does everybody…?) and the negatives (don't agree, was not correct) that the singular/plural choice also lands on. Rules applied this pass: A7 nobody / no one - the pair is declared in gen_senses.py and, because the canonicaliser is word-by-word and `no one` is two words, every nobody item also carries the `no one` wording in accepts; A4 two cleared by giving the Czech the demonstrative it really uses (tu odpoved, ty zpravy). The three that stand are all `the police`, where English forces the article and Czech policie takes neither an article nor a natural demonstrative - noted in DECISIONS.md under the A4 entry.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -152,7 +152,7 @@
    "items": [
     {
      "en": "Everybody knows the answer.",
-     "cz": "Všichni znají odpověď.",
+     "cz": "Všichni znají tu odpověď.",
      "gap": "Everybody ____ the answer. (know)",
      "gap_answer": "knows",
      "quiz_options": [
@@ -170,7 +170,7 @@
     },
     {
      "en": "The news is bad today.",
-     "cz": "Zprávy jsou dnes špatné.",
+     "cz": "Ty zprávy jsou dnes špatné.",
      "gap": "The news ____ bad today. (be)",
      "gap_answer": "is",
      "quiz_options": [
@@ -216,10 +216,12 @@
       "have been"
      ],
      "accepts": [
-      "Nobody was at home."
+      "Nobody was at home.",
+      "No one was at home."
      ],
      "explanation": "**nobody** is singular: was.",
-     "explanation_cz": "**nobody** je jednotné: was."
+     "explanation_cz": "**nobody** je jednotné: was.",
+     "wrong": "Nobody were at home."
     },
     {
      "en": "People are waiting outside.",
@@ -325,6 +327,281 @@
      "wrong": "The police was very helpful.",
      "explanation": "Plural **police** in the past: were.",
      "explanation_cz": "Množné **police** v minulém čase: were."
+    },
+    {
+     "en": "Everyone was very tired.",
+     "cz": "Všichni byli hodně unavení.",
+     "gap": "Everyone ____ very tired. (be)",
+     "gap_answer": "was",
+     "quiz_options": [
+      "was",
+      "were",
+      "are",
+      "have been"
+     ],
+     "accepts": [
+      "Everyone was very tired."
+     ],
+     "wrong": "Everyone were very tired.",
+     "explanation": "**everyone** is one group, so the verb is singular: **was**.",
+     "explanation_cz": "**everyone** je jedna skupina, takže sloveso je v jednotném čísle: **was**."
+    },
+    {
+     "en": "Nobody knows his name.",
+     "cz": "Nikdo nezná jeho jméno.",
+     "gap": "Nobody ____ his name. (know)",
+     "gap_answer": "knows",
+     "quiz_options": [
+      "knows",
+      "know",
+      "are knowing",
+      "do know"
+     ],
+     "accepts": [
+      "Nobody knows his name.",
+      "No one knows his name."
+     ],
+     "wrong": "Nobody know his name.",
+     "explanation": "**nobody** takes the -s form, exactly like *he*: nobody **knows**.",
+     "explanation_cz": "**nobody** má tvar s -s, přesně jako *he*: nobody **knows**."
+    },
+    {
+     "en": "Someone is waiting for you.",
+     "cz": "Někdo na tebe čeká.",
+     "gap": "Someone ____ for you. (wait)",
+     "gap_answer": "is waiting",
+     "quiz_options": [
+      "is waiting",
+      "are waiting",
+      "wait",
+      "were waiting"
+     ],
+     "accepts": [
+      "Someone is waiting for you."
+     ],
+     "wrong": "Someone are waiting for you.",
+     "explanation": "**someone** is singular: **is** waiting, never are.",
+     "explanation_cz": "**someone** je jednotné číslo: **is** waiting, nikdy are."
+    },
+    {
+     "en": "Everybody wants to be happy.",
+     "cz": "Každý chce být šťastný.",
+     "gap": "Everybody ____ to be happy. (want)",
+     "gap_answer": "wants",
+     "quiz_options": [
+      "wants",
+      "want",
+      "are wanting",
+      "is want"
+     ],
+     "accepts": [
+      "Everybody wants to be happy."
+     ],
+     "wrong": "Everybody want to be happy.",
+     "explanation": "The verb after **everybody** takes -s: **wants**, however many people you mean.",
+     "explanation_cz": "Sloveso po **everybody** má -s: **wants**, ať máš na mysli kolik lidí chceš."
+    },
+    {
+     "en": "Nobody has seen him since Monday.",
+     "cz": "Nikdo ho neviděl od pondělí.",
+     "gap": "Nobody ____ him since Monday. (see)",
+     "gap_answer": "has seen",
+     "quiz_options": [
+      "has seen",
+      "have seen",
+      "are seeing",
+      "did seen"
+     ],
+     "accepts": [
+      "Nobody has seen him since Monday.",
+      "No one has seen him since Monday."
+     ],
+     "wrong": "Nobody have seen him since Monday.",
+     "explanation": "**nobody** is singular, so the auxiliary is **has**, not have.",
+     "explanation_cz": "**nobody** je jednotné číslo, takže pomocné sloveso je **has**, ne have."
+    },
+    {
+     "en": "This information is very useful.",
+     "cz": "Tahle informace je moc užitečná.",
+     "gap": "This information ____ very useful. (be)",
+     "gap_answer": "is",
+     "quiz_options": [
+      "is",
+      "are",
+      "were",
+      "have been"
+     ],
+     "accepts": [
+      "This information is very useful."
+     ],
+     "wrong": "This informations are very useful.",
+     "explanation": "**information** has no plural and takes a singular verb: **is**.",
+     "explanation_cz": "**information** nemá množné číslo a má sloveso v jednotném čísle: **is**."
+    },
+    {
+     "en": "That information was not correct.",
+     "cz": "Ta informace nebyla správná.",
+     "gap": "That information ____ correct. (not / be)",
+     "gap_answer": "was not",
+     "quiz_options": [
+      "was not",
+      "were not",
+      "are not",
+      "did not be"
+     ],
+     "accepts": [
+      "That information was not correct.",
+      "That information wasn't correct."
+     ],
+     "wrong": "Those informations were not correct.",
+     "explanation": "One singular word, one singular verb: information **was not**.",
+     "explanation_cz": "Jedno slovo v jednotném čísle, jedno sloveso v jednotném čísle: information **was not**."
+    },
+    {
+     "en": "His advice was not very good.",
+     "cz": "Jeho rada nebyla moc dobrá.",
+     "gap": "His advice ____ very good. (not / be)",
+     "gap_answer": "was not",
+     "quiz_options": [
+      "was not",
+      "were not",
+      "are not",
+      "have not been"
+     ],
+     "accepts": [
+      "His advice was not very good.",
+      "His advice wasn't very good."
+     ],
+     "wrong": "His advices were not very good.",
+     "explanation": "**advice** is uncountable — no *advices*, and the verb is **was**.",
+     "explanation_cz": "**advice** je nepočitatelné — žádné *advices* a sloveso je **was**."
+    },
+    {
+     "en": "Is the news good today?",
+     "cz": "Jsou ty zprávy dnes dobré?",
+     "gap": "____ good today? (the news / be)",
+     "gap_answer": "Is the news",
+     "quiz_options": [
+      "Is the news",
+      "Are the news",
+      "Were the news",
+      "Do the news be"
+     ],
+     "accepts": [
+      "Is the news good today?"
+     ],
+     "wrong": "Are the news good today?",
+     "explanation": "Even in a question, **news** is singular: **Is** the news…?",
+     "explanation_cz": "I v otázce je **news** jednotné číslo: **Is** the news…?"
+    },
+    {
+     "en": "The news was better yesterday.",
+     "cz": "Ty zprávy byly včera lepší.",
+     "gap": "The news ____ better yesterday. (be)",
+     "gap_answer": "was",
+     "quiz_options": [
+      "was",
+      "were",
+      "are",
+      "have been"
+     ],
+     "accepts": [
+      "The news was better yesterday."
+     ],
+     "wrong": "The news were better yesterday.",
+     "explanation": "*Zprávy* is plural in Czech, **news** is singular in English: **was**.",
+     "explanation_cz": "*Zprávy* jsou česky množné číslo, **news** je anglicky jednotné: **was**."
+    },
+    {
+     "en": "People often ask me that.",
+     "cz": "Lidé se mě na to často ptají.",
+     "gap": "People often ____ me that. (ask)",
+     "gap_answer": "ask",
+     "quiz_options": [
+      "ask",
+      "asks",
+      "is asking",
+      "was asking"
+     ],
+     "accepts": [
+      "People often ask me that."
+     ],
+     "wrong": "People often asks me that.",
+     "explanation": "**people** is plural, so no -s on the verb: people **ask**.",
+     "explanation_cz": "**people** je množné číslo, takže na slovese není -s: people **ask**."
+    },
+    {
+     "en": "Young people are always on their phones.",
+     "cz": "Mladí lidé jsou pořád na telefonu.",
+     "gap": "Young people ____ always on their phones. (be)",
+     "gap_answer": "are",
+     "quiz_options": [
+      "are",
+      "is",
+      "was",
+      "has been"
+     ],
+     "accepts": [
+      "Young people are always on their phones."
+     ],
+     "wrong": "Young people is always on their phones.",
+     "explanation": "**people** takes a plural verb: **are**. There is no *peoples* here either.",
+     "explanation_cz": "**people** má sloveso v množném čísle: **are**. A žádné *peoples* tu není."
+    },
+    {
+     "en": "Most people don't agree with him.",
+     "cz": "Většina lidí s ním nesouhlasí.",
+     "gap": "Most people ____ with him. (not / agree)",
+     "gap_answer": "don't agree",
+     "quiz_options": [
+      "don't agree",
+      "doesn't agree",
+      "isn't agree",
+      "aren't agree"
+     ],
+     "accepts": [
+      "Most people don't agree with him.",
+      "Most people do not agree with him."
+     ],
+     "wrong": "Most people doesn't agree with him.",
+     "explanation": "Plural **people** takes **don't**, not doesn't.",
+     "explanation_cz": "Množné **people** má **don't**, ne doesn't."
+    },
+    {
+     "en": "The police have found my car.",
+     "cz": "Policie našla moje auto.",
+     "gap": "The police ____ my car. (find)",
+     "gap_answer": "have found",
+     "quiz_options": [
+      "have found",
+      "has found",
+      "is finding",
+      "was found"
+     ],
+     "accepts": [
+      "The police have found my car."
+     ],
+     "wrong": "The police has found my car.",
+     "explanation": "**police** is plural in English, so the auxiliary is **have**, whatever Czech does.",
+     "explanation_cz": "**police** je v angličtině množné číslo, takže pomocné sloveso je **have**, ať čeština dělá cokoli."
+    },
+    {
+     "en": "Does everybody understand?",
+     "cz": "Rozumí všichni?",
+     "gap": "____ understand? (everybody / do)",
+     "gap_answer": "Does everybody",
+     "quiz_options": [
+      "Does everybody",
+      "Do everybody",
+      "Is everybody",
+      "Are everybody"
+     ],
+     "accepts": [
+      "Does everybody understand?"
+     ],
+     "wrong": "Do everybody understand?",
+     "explanation": "**everybody** is singular, so the question word is **Does**.",
+     "explanation_cz": "**everybody** je jednotné číslo, takže se ptáme s **Does**."
     }
    ]
   }

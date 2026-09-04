@@ -34,6 +34,76 @@ Answers to the first run's queue. These are settled; do not re-ask them.
 | **Intros on units James has played** | A `- [x][ ]` unit's intro **may** be restructured when a written rule is broken — an EXACT lint hit, or the card-count target. Merge cards that restate one row of another card's own table; cut a C17 recap. Say in the commit what moved, because he has a feel for these units and will notice. |
 | **Card count vs C11** | **C11 wins.** Every word the Quiz can ask must be named by a card, so a unit that absorbs a cluster earns more cards. The target is one *job* per card, never one word per card — `b1_degree_adverbs` at nine (low · middle · high-and-top · all-the-way · not-quite · too/enough · so/such · errors) is right, not a breach. Do not cut banked words to hit 4–6. |
 
+## One-off tasks, ahead of new units
+
+**Rewrite swaps that do not reconstruct — 157 findings across 22 B1 leaves.
+This is the top priority.** `py -X utf8 codex/check_rewrite.py <pack>` lists
+them. In `use_mode: "rewrite"` the student replaces the underlined words with
+the lemma; if that swap does not produce the target sentence, **a correct answer
+is marked wrong**. James hit four in one unit on 2026-09-04. `b1_personality`
+and `b1_word_families` are 12 of 12.
+
+Fix by moving the underline so it covers exactly what changes, or by changing
+the target to what a correct swap produces. Worked examples in `b1_travel`
+(clean now): *long wait* → underline only *wait*; *a cheap place to stay* →
+*cheap places to stay*, so no article is stranded on uncountable
+*accommodation*; *never know where we are* → *always lose our way*, no silent
+polarity flip; *tell the hotel we are not happy* → target is what the swap
+yields, fuller version also accepted.
+
+The check has false positives — a student legitimately supplies an article
+before a countable noun (`refund`, `deposit`), and it already ignores that
+case. **Judge every finding; do not batch-rewrite.** Verify with
+`check_rewrite.py <pack>` returning clean, and never by loosening `accepts` to
+swallow a wrong answer.
+
+**Same script checks C57 on the leaves**, which `lint.py` cannot see (it only
+reads `data/grammar/blocks/`). Sequel leaves need a "You already know" card 0 —
+the F8 pattern the A2 leaves already use. `b1_travel` card 0 is the model: four
+tiles, not the full picture set, plus a note saying what the earlier unit
+covered and which words genuinely repeat.
+
+**Anything the script marks `[PROTECTED]` is A1 or A2 — leave it. James has
+been told those are there.**
+
+
+**C29 timelines on the tense units that lack one.** `lint.py` now flags this as
+`notimeline`. Every tense unit needs at least one timeline, sometimes two, to
+compare with another tense (James 2026-09-04). Outstanding: `b2_past_perfect`,
+`b2_present_perfect_continuous`, `a2_simple_vs_continuous` (**A2 — protected,
+leave it, James has been told**), and the two empty narrative shells
+(`b2_narrative_tenses`, `c1_narrative_mastery`) which need one when they are
+built. Copy the house idiom from `a2_past_continuous` card 0 and
+`b1_past_continuous_2` card 1: `var(--muted)` axis, `var(--vocab-accent)` bar
+for the continuous form, `var(--text)` dot for the past-simple point, dashed
+*now*. Read C29 in full first — it lists the ways a timeline misleads
+(a point right of *every day* reads as future; *used to* is not a station left
+of *I played*).
+
+
+**C57 recap cards on the 10 B1 sequel units.** `py -X utf8 codex/lint.py <id>`
+now flags this as `seqrecap`. Each needs a dedicated early card recapping its
+predecessor's form — the predecessor is named in the flag — then the new
+material, plus recycling from the earlier unit where it helps. Card 0 stays the
+unit name (C14), so the recap is card 1. The ten:
+`b1_past_continuous_2` · `b1_agreement_tricky` · `b1_articles_advanced` ·
+`b1_comparison_2` · `b1_prepositions_time_2` · `b1_reflexives_2` ·
+`b1_relative_clauses_2` · `b1_reported_speech_2` · `b1_verb_patterns_advanced` ·
+`b1_word_order_fronting`.
+Adding a card may push a unit past the 4–6 guideline; that is fine, C11 and C57
+both outrank the count. Do **not** touch the three A2 sequels the check also
+flags — A2 is protected, and James has been told they are there.
+
+
+
+**Sweep A14 across the 16 grammar units already drafted on this branch.** A14 was
+learned from James's smoke of `b1_past_perfect` on 2026-09-04, *after* those units
+were written, so none of them was checked against it. Any item whose only licence
+for a perfect or past-perfect form is a bare adverb (*before*, *ever*, *never*,
+*already*) needs a real past anchor — and check its `quiz_options` while you are
+there, because an unanchored item usually lists the better answer as a distractor.
+Do this before starting new vocab leaves. One commit, `A14 sweep: <units touched>`.
+
 ## Order of work
 
 1. The remaining unseen (`- [ ][ ]`) B1 **grammar** stubs.

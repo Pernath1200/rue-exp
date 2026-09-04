@@ -1,605 +1,1202 @@
 {
- "id": "b1_feelings",
- "title": "Feelings 3",
- "level": "B1",
- "tree_node": "leaf_feelings_b1",
- "codex_unit": "V_THM-A1B1-09",
- "quality": "draft",
- "note": "Nuanced emotion adjectives above leaf_feelings_a2. FOLDS IN codex/parked-stressed-stressful.json: stressed / stressful is the same person-feels vs thing-causes job as bored/boring but with a different ending, cut from A2 as an odd one out. Not b1_suffixes (that is CARE -> careful). First draft 2026-09-02, rough - 36 words, thicken the Use bank after smoke.",
- "default_direction": "cz_to_en",
- "quiz_mode": "sentence_gap",
- "intro": [
-  {
-   "title": "When things go wrong",
-   "title_cz": "Když se něco nepovede",
-   "pictures": [
+  "id": "b1_feelings",
+  "title": "Feelings 3",
+  "level": "B1",
+  "tree_node": "leaf_feelings_b1",
+  "codex_unit": "V_THM-A1B1-09",
+  "quality": "draft",
+  "note": "Nuanced emotion adjectives above leaf_feelings_a2. FOLDS IN codex/parked-stressed-stressful.json: the person-feels vs thing-causes job with a cause form that is not -ing. First draft 2026-09-02. · 2026-09-04 B1 loop: only 10 of the draft's 36 tiles were new — 26 were words already taught (the whole A2 -ed/-ing set, plus six leaf_self_b1 owns). F7/F8: the recycled ones are now two **You already know** review boards, and the Match list is 36 words that are new at this slot: stronger -ed feelings, the feeling NOUNS English needs at B1 (relief, joy, pride, shame, regret, envy, sympathy, panic), and the cause forms. · The parked spec's four pairs are all here — stressed/stressful, scared/scary, pleased/pleasant, delighted/delightful — with the -ed halves on the review board and a **person and the cause** table page carrying the contrast. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · Frames page was noun frames (I have a … / I need a …) on a pack of adjectives; fixed. · Pool-checked against everything taught before leaf_feelings_b1 — 0 unknown types.",
+  "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
+  "intro": [
     {
-     "icon": "😣",
-     "en": "stressed",
-     "cz": "ve stresu"
+      "title": "You already know · how you feel",
+      "title_cz": "Už znáš · jak se cítíš",
+      "pictures": [
+        {
+          "icon": "😰",
+          "en": "stressed",
+          "cz": "ve stresu"
+        },
+        {
+          "icon": "😨",
+          "en": "scared",
+          "cz": "vyděšený"
+        },
+        {
+          "icon": "😞",
+          "en": "disappointed",
+          "cz": "zklamaný"
+        },
+        {
+          "icon": "😳",
+          "en": "embarrassed",
+          "cz": "v rozpacích"
+        },
+        {
+          "icon": "😕",
+          "en": "confused",
+          "cz": "zmatený"
+        },
+        {
+          "icon": "😠",
+          "en": "annoyed",
+          "cz": "naštvaný"
+        },
+        {
+          "icon": "😃",
+          "en": "excited",
+          "cz": "natěšený"
+        },
+        {
+          "icon": "🕯️",
+          "en": "lonely",
+          "cz": "osamělý"
+        },
+        {
+          "icon": "🛋️",
+          "en": "relaxed",
+          "cz": "uvolněný"
+        },
+        {
+          "icon": "😊",
+          "en": "pleased",
+          "cz": "potěšený"
+        }
+      ]
     },
     {
-     "icon": "😞",
-     "en": "disappointed",
-     "cz": "zklamaný"
+      "title": "You already know · what causes it",
+      "title_cz": "Už znáš · co ten pocit způsobuje",
+      "pictures": [
+        {
+          "icon": "📉",
+          "en": "disappointing",
+          "cz": "zklamáním (věc)"
+        },
+        {
+          "icon": "🌀",
+          "en": "confusing",
+          "cz": "matoucí"
+        },
+        {
+          "icon": "🫣",
+          "en": "embarrassing",
+          "cz": "trapný"
+        },
+        {
+          "icon": "🎢",
+          "en": "exciting",
+          "cz": "vzrušující"
+        },
+        {
+          "icon": "🦇",
+          "en": "frightening",
+          "cz": "děsivý"
+        },
+        {
+          "icon": "😴",
+          "en": "boring",
+          "cz": "nudný"
+        },
+        {
+          "icon": "🎁",
+          "en": "surprising",
+          "cz": "překvapivý"
+        },
+        {
+          "icon": "🌊",
+          "en": "relaxing",
+          "cz": "uklidňující"
+        },
+        {
+          "icon": "🔔",
+          "en": "annoying",
+          "cz": "otravný"
+        },
+        {
+          "icon": "🌤️",
+          "en": "pleasant",
+          "cz": "příjemný"
+        }
+      ]
     },
     {
-     "icon": "😰",
-     "en": "anxious",
-     "cz": "úzkostný"
+      "title": "How you feel",
+      "title_cz": "Jak se cítíš",
+      "pictures": [
+        {
+          "icon": "😢",
+          "en": "upset",
+          "cz": "rozrušený / smutný"
+        },
+        {
+          "icon": "😍",
+          "en": "delighted",
+          "cz": "nadšený / potěšený"
+        },
+        {
+          "icon": "🤩",
+          "en": "thrilled",
+          "cz": "nadšený (velmi)"
+        },
+        {
+          "icon": "😲",
+          "en": "amazed",
+          "cz": "ohromený"
+        },
+        {
+          "icon": "😱",
+          "en": "terrified",
+          "cz": "vyděšený"
+        },
+        {
+          "icon": "😳",
+          "en": "shocked",
+          "cz": "šokovaný"
+        },
+        {
+          "icon": "😾",
+          "en": "offended",
+          "cz": "uražený"
+        },
+        {
+          "icon": "🌧️",
+          "en": "miserable",
+          "cz": "mizerně / nešťastný"
+        },
+        {
+          "icon": "🆘",
+          "en": "desperate",
+          "cz": "zoufalý"
+        },
+        {
+          "icon": "👏",
+          "en": "impressed",
+          "cz": "ohromený (obdivem)"
+        },
+        {
+          "icon": "✅",
+          "en": "satisfied",
+          "cz": "spokojený"
+        },
+        {
+          "icon": "😑",
+          "en": "fed up",
+          "cz": "mít toho dost"
+        }
+      ]
     },
     {
-     "icon": "😖",
-     "en": "frustrated",
-     "cz": "frustrovaný"
+      "title": "Steadier states, and the nouns",
+      "title_cz": "Klidnější pocity a podstatná jména",
+      "pictures": [
+        {
+          "icon": "🙂",
+          "en": "content",
+          "cz": "spokojený (klidně)"
+        },
+        {
+          "icon": "🎯",
+          "en": "motivated",
+          "cz": "motivovaný"
+        },
+        {
+          "icon": "🌱",
+          "en": "hopeful",
+          "cz": "plný naděje"
+        },
+        {
+          "icon": "🐾",
+          "en": "eager",
+          "cz": "dychtivý"
+        },
+        {
+          "icon": "😮‍💨",
+          "en": "relief",
+          "cz": "úleva"
+        },
+        {
+          "icon": "🎉",
+          "en": "joy",
+          "cz": "radost"
+        },
+        {
+          "icon": "🏅",
+          "en": "pride",
+          "cz": "hrdost"
+        },
+        {
+          "icon": "🙈",
+          "en": "shame",
+          "cz": "stud"
+        },
+        {
+          "icon": "↩️",
+          "en": "regret",
+          "cz": "lítost"
+        },
+        {
+          "icon": "👀",
+          "en": "envy",
+          "cz": "závist"
+        },
+        {
+          "icon": "🤝",
+          "en": "sympathy",
+          "cz": "soucit"
+        },
+        {
+          "icon": "🚨",
+          "en": "panic",
+          "cz": "panika"
+        }
+      ]
     },
     {
-     "icon": "😳",
-     "en": "embarrassed",
-     "cz": "trapně"
+      "title": "The thing, not the person",
+      "title_cz": "Věc, ne člověk",
+      "pictures": [
+        {
+          "icon": "📈",
+          "en": "stressful",
+          "cz": "stresující"
+        },
+        {
+          "icon": "👻",
+          "en": "scary",
+          "cz": "strašidelný"
+        },
+        {
+          "icon": "🌸",
+          "en": "delightful",
+          "cz": "rozkošný / moc příjemný"
+        },
+        {
+          "icon": "🥵",
+          "en": "exhausting",
+          "cz": "vyčerpávající"
+        },
+        {
+          "icon": "🧱",
+          "en": "frustrating",
+          "cz": "frustrující"
+        },
+        {
+          "icon": "💧",
+          "en": "upsetting",
+          "cz": "znepokojivý / smutný"
+        },
+        {
+          "icon": "⚡",
+          "en": "shocking",
+          "cz": "šokující"
+        },
+        {
+          "icon": "😄",
+          "en": "amusing",
+          "cz": "zábavný"
+        },
+        {
+          "icon": "🎁",
+          "en": "rewarding",
+          "cz": "obohacující"
+        },
+        {
+          "icon": "✨",
+          "en": "inspiring",
+          "cz": "inspirativní"
+        },
+        {
+          "icon": "🌫️",
+          "en": "depressing",
+          "cz": "deprimující"
+        },
+        {
+          "icon": "🔦",
+          "en": "terrifying",
+          "cz": "děsivý"
+        }
+      ]
     },
     {
-     "icon": "😢",
-     "en": "upset",
-     "cz": "rozrušený"
+      "title": "The person and the cause",
+      "title_cz": "Člověk a příčina",
+      "table": {
+        "headers": [
+          "the person feels",
+          "the thing is"
+        ],
+        "rows": [
+          [
+            "stressed",
+            "stressful"
+          ],
+          [
+            "scared",
+            "scary"
+          ],
+          [
+            "pleased",
+            "pleasant"
+          ],
+          [
+            "delighted",
+            "delightful"
+          ],
+          [
+            "bored",
+            "boring"
+          ],
+          [
+            "excited",
+            "exciting"
+          ]
+        ]
+      }
     },
     {
-     "icon": "😴",
-     "en": "exhausted",
-     "cz": "vyčerpaný"
-    },
-    {
-     "icon": "😕",
-     "en": "confused",
-     "cz": "zmatený"
-    },
-    {
-     "icon": "😬",
-     "en": "guilty",
-     "cz": "provinilý"
-    },
-    {
-     "icon": "🥺",
-     "en": "lonely",
-     "cz": "osamělý"
-    },
-    {
-     "icon": "😒",
-     "en": "annoyed",
-     "cz": "otrávený"
-    },
-    {
-     "icon": "😨",
-     "en": "scared",
-     "cz": "vyděšený"
+      "title": "You will use these words in",
+      "title_cz": "Tato slova použiješ ve větách",
+      "frames": [
+        "I was … · *Byl jsem …*",
+        "She looked … · *Vypadala …*",
+        "It was … · *Bylo to …*",
+        "I am fed up with … · *Mám dost …*",
+        "It was a … when … · *Byla to …, když …*"
+      ],
+      "note": "The person feels **stressed**; the thing is **stressful**. Same job as *bored / boring*, but the ending changes — there is no *stressing*. Same for **scared / scary** and **delighted / delightful**.",
+      "note_cz": "Člověk je **stressed**, věc je **stressful**. Tvar *stressing* neexistuje."
     }
-   ]
-  },
-  {
-   "title": "When things go well",
-   "title_cz": "Když se daří",
-   "pictures": [
+  ],
+  "blocks": [
     {
-     "icon": "😌",
-     "en": "relieved",
-     "cz": "ulevilo se mi"
+      "id": "b1_feelings_1",
+      "title": "Feelings · how you feel",
+      "items": [
+        {
+          "en": "upset",
+          "cz": "rozrušený / smutný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "delighted",
+          "cz": "nadšený / potěšený",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "thrilled",
+          "cz": "nadšený (velmi)",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "amazed",
+          "cz": "ohromený",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "terrified",
+          "cz": "vyděšený",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "shocked",
+          "cz": "šokovaný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "offended",
+          "cz": "uražený",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "miserable",
+          "cz": "mizerně / nešťastný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "desperate",
+          "cz": "zoufalý",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "impressed",
+          "cz": "ohromený (obdivem)",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "satisfied",
+          "cz": "spokojený",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "fed up",
+          "cz": "mít toho dost",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        }
+      ]
     },
     {
-     "icon": "🤩",
-     "en": "excited",
-     "cz": "nadšený"
+      "id": "b1_feelings_2",
+      "title": "Feelings · steadier states, and the nouns",
+      "items": [
+        {
+          "en": "content",
+          "cz": "spokojený (klidně)",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "motivated",
+          "cz": "motivovaný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "hopeful",
+          "cz": "plný naděje",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "eager",
+          "cz": "dychtivý",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "relief",
+          "cz": "úleva",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "joy",
+          "cz": "radost",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "pride",
+          "cz": "hrdost",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "shame",
+          "cz": "stud",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "regret",
+          "cz": "lítost",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "envy",
+          "cz": "závist",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "sympathy",
+          "cz": "soucit",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "panic",
+          "cz": "panika",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        }
+      ]
     },
     {
-     "icon": "😊",
-     "en": "grateful",
-     "cz": "vděčný"
-    },
-    {
-     "icon": "😃",
-     "en": "delighted",
-     "cz": "potěšený"
-    },
-    {
-     "icon": "😎",
-     "en": "proud",
-     "cz": "hrdý"
-    },
-    {
-     "icon": "🥰",
-     "en": "touched",
-     "cz": "dojatý"
-    },
-    {
-     "icon": "😇",
-     "en": "content",
-     "cz": "spokojený"
-    },
-    {
-     "icon": "💪",
-     "en": "motivated",
-     "cz": "motivovaný"
-    },
-    {
-     "icon": "🙂",
-     "en": "hopeful",
-     "cz": "plný naděje"
-    },
-    {
-     "icon": "🧘",
-     "en": "relaxed",
-     "cz": "uvolněný"
-    },
-    {
-     "icon": "🎉",
-     "en": "thrilled",
-     "cz": "nadšený"
-    },
-    {
-     "icon": "🤗",
-     "en": "comfortable",
-     "cz": "příjemně"
+      "id": "b1_feelings_3",
+      "title": "Feelings · the thing, not the person",
+      "items": [
+        {
+          "en": "stressful",
+          "cz": "stresující",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "scary",
+          "cz": "strašidelný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "delightful",
+          "cz": "rozkošný / moc příjemný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "exhausting",
+          "cz": "vyčerpávající",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "frustrating",
+          "cz": "frustrující",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "upsetting",
+          "cz": "znepokojivý / smutný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "shocking",
+          "cz": "šokující",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "amusing",
+          "cz": "zábavný",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "rewarding",
+          "cz": "obohacující",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "inspiring",
+          "cz": "inspirativní",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "depressing",
+          "cz": "deprimující",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        },
+        {
+          "en": "terrifying",
+          "cz": "děsivý",
+          "use": [
+            "i_am_adj",
+            "he_is_adj"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "title": "The thing, not the person",
-   "title_cz": "Věc, ne člověk",
-   "pictures": [
+  ],
+  "sentences": [
     {
-     "icon": "⚡",
-     "en": "stressful",
-     "cz": "stresující"
+      "en": "She was upset when nobody remembered her birthday.",
+      "cz": "Byla rozrušená, když si nikdo nevzpomněl na její narozeniny.",
+      "lemmas": [
+        "upset"
+      ],
+      "accepts": [
+        "She was upset when nobody remembered her birthday"
+      ]
     },
     {
-     "icon": "😐",
-     "en": "disappointing",
-     "cz": "zklamáním"
+      "en": "My parents were delighted with the news about the baby.",
+      "cz": "Rodiče byli nadšení ze zprávy o miminku.",
+      "lemmas": [
+        "delighted"
+      ],
+      "accepts": [
+        "My parents were delighted with the news about the baby"
+      ]
     },
     {
-     "icon": "😵",
-     "en": "confusing",
-     "cz": "matoucí"
+      "en": "He was thrilled to get a place at the university.",
+      "cz": "Byl nadšený, že se dostal na univerzitu.",
+      "lemmas": [
+        "thrilled"
+      ],
+      "accepts": [
+        "He was thrilled to get a place at the university"
+      ]
     },
     {
-     "icon": "😴",
-     "en": "exhausting",
-     "cz": "vyčerpávající"
+      "en": "We were amazed at how fast the work was finished.",
+      "cz": "Byli jsme ohromeni, jak rychle byla práce hotová.",
+      "lemmas": [
+        "amazed"
+      ],
+      "accepts": [
+        "We were amazed at how fast the work was finished"
+      ]
     },
     {
-     "icon": "😖",
-     "en": "frustrating",
-     "cz": "frustrující"
+      "en": "The children were terrified of the dog next door.",
+      "cz": "Děti byly vyděšené ze psa od sousedů.",
+      "lemmas": [
+        "terrified"
+      ],
+      "accepts": [
+        "The children were terrified of the dog next door"
+      ]
     },
     {
-     "icon": "😳",
-     "en": "embarrassing",
-     "cz": "trapný"
+      "en": "I was shocked when I saw the price of the tickets.",
+      "cz": "Byl jsem šokovaný, když jsem viděl cenu lístků.",
+      "lemmas": [
+        "shocked"
+      ],
+      "accepts": [
+        "I was shocked when I saw the price of the tickets"
+      ]
     },
     {
-     "icon": "🎢",
-     "en": "exciting",
-     "cz": "vzrušující"
+      "en": "He was offended because nobody asked for his opinion.",
+      "cz": "Byl uražený, protože se nikdo nezeptal na jeho názor.",
+      "lemmas": [
+        "offended"
+      ],
+      "accepts": [
+        "He was offended because nobody asked for his opinion"
+      ]
     },
     {
-     "icon": "😨",
-     "en": "frightening",
-     "cz": "děsivý"
+      "en": "The weather made everybody miserable for a week.",
+      "cz": "Počasí bylo celý týden všem mizerné.",
+      "lemmas": [
+        "miserable"
+      ],
+      "accepts": [
+        "The weather made everybody miserable for a week"
+      ]
     },
     {
-     "icon": "🥱",
-     "en": "boring",
-     "cz": "nudný"
+      "en": "She was desperate for a job after six months at home.",
+      "cz": "Po šesti měsících doma zoufale sháněla práci.",
+      "lemmas": [
+        "desperate"
+      ],
+      "accepts": [
+        "She was desperate for a job after six months at home"
+      ]
     },
     {
-     "icon": "🤔",
-     "en": "surprising",
-     "cz": "překvapivý"
+      "en": "The teacher was impressed by her first essay.",
+      "cz": "Učitele její první esej ohromila.",
+      "lemmas": [
+        "impressed"
+      ],
+      "accepts": [
+        "The teacher was impressed by her first essay"
+      ]
     },
     {
-     "icon": "😢",
-     "en": "upsetting",
-     "cz": "znepokojivý"
+      "en": "The customer was not satisfied with the answer.",
+      "cz": "Zákazník nebyl s odpovědí spokojený.",
+      "lemmas": [
+        "satisfied"
+      ],
+      "accepts": [
+        "The customer was not satisfied with the answer",
+        "The customer wasn't satisfied with the answer"
+      ]
     },
     {
-     "icon": "🧘",
-     "en": "relaxing",
-     "cz": "uklidňující"
+      "en": "I am fed up with the noise from the flat above.",
+      "cz": "Mám dost hluku z bytu nad námi.",
+      "lemmas": [
+        "fed up"
+      ],
+      "accepts": [
+        "I am fed up with the noise from the flat above",
+        "I'm fed up with the noise from the flat above"
+      ]
+    },
+    {
+      "en": "He is content with a small flat and a quiet street.",
+      "cz": "Je spokojený s malým bytem a tichou ulicí.",
+      "lemmas": [
+        "content"
+      ],
+      "accepts": [
+        "He is content with a small flat and a quiet street",
+        "He's content with a small flat and a quiet street"
+      ]
+    },
+    {
+      "en": "Students are more motivated when the lessons are short.",
+      "cz": "Studenti jsou motivovanější, když jsou hodiny krátké.",
+      "lemmas": [
+        "motivated"
+      ],
+      "accepts": [
+        "Students are more motivated when the lessons are short"
+      ]
+    },
+    {
+      "en": "The doctors are hopeful, but they want another week.",
+      "cz": "Lékaři jsou plní naděje, ale chtějí ještě týden.",
+      "lemmas": [
+        "hopeful"
+      ],
+      "accepts": [
+        "The doctors are hopeful, but they want another week"
+      ]
+    },
+    {
+      "en": "The new colleague is eager to learn everything at once.",
+      "cz": "Nová kolegyně dychtí naučit se všechno naráz.",
+      "lemmas": [
+        "eager"
+      ],
+      "accepts": [
+        "The new colleague is eager to learn everything at once"
+      ]
+    },
+    {
+      "en": "It was a relief when the exam was over at last.",
+      "cz": "Byla to úleva, když zkouška konečně skončila.",
+      "lemmas": [
+        "relief"
+      ],
+      "accepts": [
+        "It was a relief when the exam was over at last"
+      ]
+    },
+    {
+      "en": "The joy on his face when he won was lovely to see.",
+      "cz": "Radost v jeho tváři, když vyhrál, byla krásná.",
+      "lemmas": [
+        "joy"
+      ],
+      "accepts": [
+        "The joy on his face when he won was lovely to see"
+      ]
+    },
+    {
+      "en": "She felt pride when her daughter finished school.",
+      "cz": "Cítila hrdost, když její dcera dokončila školu.",
+      "lemmas": [
+        "pride"
+      ],
+      "accepts": [
+        "She felt pride when her daughter finished school"
+      ]
+    },
+    {
+      "en": "There is no shame in asking for help.",
+      "cz": "Není žádná ostuda požádat o pomoc.",
+      "lemmas": [
+        "shame"
+      ],
+      "accepts": [
+        "There is no shame in asking for help",
+        "There's no shame in asking for help"
+      ]
+    },
+    {
+      "en": "My only regret is that I did not travel more.",
+      "cz": "Moje jediná lítost je, že jsem víc necestoval.",
+      "lemmas": [
+        "regret"
+      ],
+      "accepts": [
+        "My only regret is that I did not travel more",
+        "My only regret is that I didn't travel more"
+      ]
+    },
+    {
+      "en": "The neighbours looked at his new car with envy.",
+      "cz": "Sousedi se na jeho nové auto dívali se závistí.",
+      "lemmas": [
+        "envy"
+      ],
+      "accepts": [
+        "The neighbours looked at his new car with envy"
+      ]
+    },
+    {
+      "en": "I have a lot of sympathy for people who work at night.",
+      "cz": "Mám velký soucit s lidmi, kteří pracují v noci.",
+      "lemmas": [
+        "sympathy"
+      ],
+      "accepts": [
+        "I have a lot of sympathy for people who work at night"
+      ]
+    },
+    {
+      "en": "There was panic in the shop when the lights went out.",
+      "cz": "Když zhasla světla, nastala v obchodě panika.",
+      "lemmas": [
+        "panic"
+      ],
+      "accepts": [
+        "There was panic in the shop when the lights went out"
+      ]
+    },
+    {
+      "en": "The exam was more stressful than the lessons before it.",
+      "cz": "Ta zkouška byla stresující víc než hodiny před ní.",
+      "lemmas": [
+        "stressful"
+      ],
+      "accepts": [
+        "The exam was more stressful than the lessons before it"
+      ]
+    },
+    {
+      "en": "The road to the village was scary in the snow.",
+      "cz": "Cesta do vesnice byla ve sněhu strašidelná.",
+      "lemmas": [
+        "scary"
+      ],
+      "accepts": [
+        "The road to the village was scary in the snow"
+      ]
+    },
+    {
+      "en": "The little hotel by the lake was delightful.",
+      "cz": "Ten malý hotel u jezera byl moc příjemný.",
+      "lemmas": [
+        "delightful"
+      ],
+      "accepts": [
+        "The little hotel by the lake was delightful"
+      ]
+    },
+    {
+      "en": "Teaching six lessons a day is exhausting.",
+      "cz": "Učit šest hodin denně je vyčerpávající.",
+      "lemmas": [
+        "exhausting"
+      ],
+      "accepts": [
+        "Teaching six lessons a day is exhausting"
+      ]
+    },
+    {
+      "en": "It is frustrating when the train is late every morning.",
+      "cz": "Je frustrující, když vlak jezdí každé ráno pozdě.",
+      "lemmas": [
+        "frustrating"
+      ],
+      "accepts": [
+        "It is frustrating when the train is late every morning",
+        "It's frustrating when the train is late every morning"
+      ]
+    },
+    {
+      "en": "The news about her father was upsetting for everybody.",
+      "cz": "Zpráva o jejím otci byla pro všechny smutná.",
+      "lemmas": [
+        "upsetting"
+      ],
+      "accepts": [
+        "The news about her father was upsetting for everybody"
+      ]
+    },
+    {
+      "en": "The price of the flat was shocking for a young couple.",
+      "cz": "Cena toho bytu byla pro mladý pár šokující.",
+      "lemmas": [
+        "shocking"
+      ],
+      "accepts": [
+        "The price of the flat was shocking for a young couple"
+      ]
+    },
+    {
+      "en": "His story about the taxi was amusing, but a little long.",
+      "cz": "Jeho historka o taxíku byla zábavná, ale trochu dlouhá.",
+      "lemmas": [
+        "amusing"
+      ],
+      "accepts": [
+        "His story about the taxi was amusing, but a little long"
+      ]
+    },
+    {
+      "en": "Teaching children is hard work, but it is rewarding.",
+      "cz": "Učit děti je těžká práce, ale je to obohacující.",
+      "lemmas": [
+        "rewarding"
+      ],
+      "accepts": [
+        "Teaching children is hard work, but it is rewarding",
+        "Teaching children is hard work, but it's rewarding"
+      ]
+    },
+    {
+      "en": "Her speech about the school was inspiring.",
+      "cz": "Její projev o té škole byl inspirativní.",
+      "lemmas": [
+        "inspiring"
+      ],
+      "accepts": [
+        "Her speech about the school was inspiring"
+      ]
+    },
+    {
+      "en": "Grey weather in November is depressing.",
+      "cz": "Šedivé počasí v listopadu je deprimující.",
+      "lemmas": [
+        "depressing"
+      ],
+      "accepts": [
+        "Grey weather in November is depressing"
+      ]
+    },
+    {
+      "en": "The last hour of the film was terrifying.",
+      "cz": "Poslední hodina toho filmu byla děsivá.",
+      "lemmas": [
+        "terrifying"
+      ],
+      "accepts": [
+        "The last hour of the film was terrifying"
+      ]
     }
-   ]
-  },
-  {
-   "title": "You will use these words in",
-   "title_cz": "Tato slova použiješ ve větách",
-   "frames": [
-    "I have a … · *Mám …*",
-    "I need a … · *Potřebuju …*",
-    "I want to … · *Chci …*",
-    "We need to … · *Musíme …*",
-    "Let's talk about … · *Pojďme mluvit o …*",
-    "… is important · *… je důležité*"
-   ],
-   "note": "The person feels **stressed**. The thing is **stressful**. Same job as *bored / boring*, but the ending is different — there is no *stressing*.",
-   "note_cz": "Člověk je **stressed**, věc je **stressful**. Tvar *stressing* neexistuje."
-  }
- ],
- "blocks": [
-  {
-   "id": "b1_feelings_1",
-   "title": "Feelings · when things go wrong",
-   "items": [
+  ],
+  "use_mode": "rewrite",
+  "use_hint": "Rewrite the sentence. Replace the underlined words.",
+  "use_sentences": [
     {
-     "en": "stressed",
-     "cz": "ve stresu",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "upset",
+      "prompt": "She was very unhappy when nobody remembered her birthday.",
+      "underline": "very unhappy",
+      "en": "She was upset when nobody remembered her birthday.",
+      "lemmas": [
+        "upset"
+      ],
+      "accepts": [
+        "She was upset when nobody remembered her birthday"
+      ]
     },
     {
-     "en": "disappointed",
-     "cz": "zklamaný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "fed up",
+      "prompt": "I have had enough of the noise from the flat above.",
+      "underline": "have had enough of",
+      "en": "I am fed up with the noise from the flat above.",
+      "lemmas": [
+        "fed up"
+      ],
+      "accepts": [
+        "I am fed up with the noise from the flat above",
+        "I'm fed up with the noise from the flat above"
+      ]
     },
     {
-     "en": "anxious",
-     "cz": "úzkostný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "satisfied",
+      "prompt": "The customer was not happy with the answer.",
+      "underline": "happy",
+      "en": "The customer was not satisfied with the answer.",
+      "lemmas": [
+        "satisfied"
+      ],
+      "accepts": [
+        "The customer was not satisfied with the answer",
+        "The customer wasn't satisfied with the answer"
+      ]
     },
     {
-     "en": "frustrated",
-     "cz": "frustrovaný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "relief",
+      "prompt": "It was a very good feeling when the exam was over at last.",
+      "underline": "a very good feeling",
+      "en": "It was a relief when the exam was over at last.",
+      "lemmas": [
+        "relief"
+      ],
+      "accepts": [
+        "It was a relief when the exam was over at last"
+      ]
     },
     {
-     "en": "embarrassed",
-     "cz": "trapně",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "regret",
+      "prompt": "The only thing I am sorry about is that I did not travel more.",
+      "underline": "The only thing I am sorry about",
+      "en": "My only regret is that I did not travel more.",
+      "lemmas": [
+        "regret"
+      ],
+      "accepts": [
+        "My only regret is that I did not travel more",
+        "My only regret is that I didn't travel more"
+      ]
     },
     {
-     "en": "upset",
-     "cz": "rozrušený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "shocking",
+      "prompt": "The price of the flat was hard to believe for a young couple.",
+      "underline": "hard to believe",
+      "en": "The price of the flat was shocking for a young couple.",
+      "lemmas": [
+        "shocking"
+      ],
+      "accepts": [
+        "The price of the flat was shocking for a young couple"
+      ]
     },
     {
-     "en": "exhausted",
-     "cz": "vyčerpaný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "scary",
+      "prompt": "The road to the village frightened me in the snow.",
+      "underline": "frightened me",
+      "en": "The road to the village was scary in the snow.",
+      "lemmas": [
+        "scary"
+      ],
+      "accepts": [
+        "The road to the village was scary in the snow"
+      ]
     },
     {
-     "en": "confused",
-     "cz": "zmatený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "exhausting",
+      "prompt": "Teaching six lessons a day makes you very tired.",
+      "underline": "makes you very tired",
+      "en": "Teaching six lessons a day is exhausting.",
+      "lemmas": [
+        "exhausting"
+      ],
+      "accepts": [
+        "Teaching six lessons a day is exhausting"
+      ]
     },
     {
-     "en": "guilty",
-     "cz": "provinilý",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "frustrating",
+      "prompt": "It makes me angry when the train is late every morning.",
+      "underline": "makes me angry",
+      "en": "It is frustrating when the train is late every morning.",
+      "lemmas": [
+        "frustrating"
+      ],
+      "accepts": [
+        "It is frustrating when the train is late every morning",
+        "It's frustrating when the train is late every morning"
+      ]
     },
     {
-     "en": "lonely",
-     "cz": "osamělý",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "rewarding",
+      "prompt": "Teaching children is hard work, but it gives you a lot back.",
+      "underline": "gives you a lot back",
+      "en": "Teaching children is hard work, but it is rewarding.",
+      "lemmas": [
+        "rewarding"
+      ],
+      "accepts": [
+        "Teaching children is hard work, but it is rewarding",
+        "Teaching children is hard work, but it's rewarding"
+      ]
     },
     {
-     "en": "annoyed",
-     "cz": "otrávený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "terrified",
+      "prompt": "The children were very afraid of the dog next door.",
+      "underline": "very afraid",
+      "en": "The children were terrified of the dog next door.",
+      "lemmas": [
+        "terrified"
+      ],
+      "accepts": [
+        "The children were terrified of the dog next door"
+      ]
     },
     {
-     "en": "scared",
-     "cz": "vyděšený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
+      "lemma": "motivated",
+      "prompt": "Students want to work more when the lessons are short.",
+      "underline": "want to work more",
+      "en": "Students are more motivated when the lessons are short.",
+      "lemmas": [
+        "motivated"
+      ],
+      "accepts": [
+        "Students are more motivated when the lessons are short"
+      ]
     }
-   ]
-  },
-  {
-   "id": "b1_feelings_2",
-   "title": "Feelings · when things go well",
-   "items": [
-    {
-     "en": "relieved",
-     "cz": "ulevilo se mi",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "excited",
-     "cz": "nadšený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "grateful",
-     "cz": "vděčný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "delighted",
-     "cz": "potěšený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "proud",
-     "cz": "hrdý",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "touched",
-     "cz": "dojatý",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "content",
-     "cz": "spokojený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "motivated",
-     "cz": "motivovaný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "hopeful",
-     "cz": "plný naděje",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "relaxed",
-     "cz": "uvolněný",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "thrilled",
-     "cz": "nadšený",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    },
-    {
-     "en": "comfortable",
-     "cz": "příjemně",
-     "use": [
-      "i_am_adj",
-      "he_is_adj"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "b1_feelings_3",
-   "title": "Feelings · the thing, not the person",
-   "items": [
-    {
-     "en": "stressful",
-     "cz": "stresující",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "disappointing",
-     "cz": "zklamáním",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "confusing",
-     "cz": "matoucí",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "exhausting",
-     "cz": "vyčerpávající",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "frustrating",
-     "cz": "frustrující",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "embarrassing",
-     "cz": "trapný",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "exciting",
-     "cz": "vzrušující",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "frightening",
-     "cz": "děsivý",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "boring",
-     "cz": "nudný",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "surprising",
-     "cz": "překvapivý",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "upsetting",
-     "cz": "znepokojivý",
-     "use": [
-      "it_is"
-     ]
-    },
-    {
-     "en": "relaxing",
-     "cz": "uklidňující",
-     "use": [
-      "it_is"
-     ]
-    }
-   ]
-  }
- ],
- "sentences": [
-  {
-   "en": "I was really stressed before the exam because I had not slept.",
-   "cz": "Před zkouškou jsem byl fakt ve stresu, protože jsem nespal.",
-   "lemmas": [
-    "stressed"
-   ],
-   "accepts": [
-    "I was really stressed before the exam because I had not slept",
-    "I was really stressed before the exam because I hadn't slept"
-   ]
-  },
-  {
-   "en": "The exam was more stressful than the lessons before it.",
-   "cz": "Ta zkouška byla stresující víc než všechny hodiny předtím.",
-   "lemmas": [
-    "stressful"
-   ],
-   "accepts": [
-    "The exam was more stressful than the lessons before it"
-   ]
-  },
-  {
-   "en": "She was disappointed with the result, but she will try again in June.",
-   "cz": "Byla zklamaná z výsledku, ale v červnu to zkusí znovu.",
-   "lemmas": [
-    "disappointed"
-   ],
-   "accepts": [
-    "She was disappointed with the result, but she will try again in June"
-   ]
-  },
-  {
-   "en": "I felt relieved when the doctor said the news was good.",
-   "cz": "Ulevilo se mi, když doktor řekl, že jsou zprávy dobré.",
-   "lemmas": [
-    "relieved"
-   ],
-   "accepts": [
-    "I felt relieved when the doctor said the news was good"
-   ]
-  },
-  {
-   "en": "The instructions were so confusing that nobody finished the task.",
-   "cz": "Ty pokyny byly tak matoucí, že úkol nikdo nedokončil.",
-   "lemmas": [
-    "confusing"
-   ],
-   "accepts": [
-    "The instructions were so confusing that nobody finished the task"
-   ]
-  },
-  {
-   "en": "He looked exhausted after work because he had a night shift.",
-   "cz": "Po práci vypadal vyčerpaně, protože měl noční směnu.",
-   "lemmas": [
-    "exhausted"
-   ],
-   "accepts": [
-    "He looked exhausted after work because he had a night shift"
-   ]
-  },
-  {
-   "en": "I am grateful for your help, but I still need one more day.",
-   "cz": "Jsem vděčný za tvoji pomoc, ale ještě potřebuju jeden den.",
-   "lemmas": [
-    "grateful"
-   ],
-   "accepts": [
-    "I am grateful for your help, but I still need one more day",
-    "I'm grateful for your help, but I still need one more day"
-   ]
-  },
-  {
-   "en": "That film was more frightening than the book which I read last year.",
-   "cz": "Ten film byl děsivější než kniha, kterou jsem četl loni.",
-   "lemmas": [
-    "frightening"
-   ],
-   "accepts": [
-    "That film was more frightening than the book which I read last year"
-   ]
-  }
- ]
+  ]
 }

@@ -1,5 +1,46 @@
 # BUILD DIGEST — one entry per run, newest at top
 
+## 2026-09-04 · cloud (B1 agent loop) — the B1 vocab lane, 23 leaves
+
+Every `- [ ][ ]` B1 **grammar** stub was already claimed on `b1/auto` by earlier runs
+of this routine, so this run took step 2 of AGENT-LOOP's order of work: the thin vocab
+leaves. All 23 vocab units on `path_order_b1` are now done, plus one grammar repair.
+
+**The class of fault under all of it.** `sentenceToFrame` matches the lemma **literally**
+against the frame's `en`. A frame that uses the past form (*threw away*, *got married*,
+*admitted*), the 3sg (*gets dark*, *charges*), the plural (*witnesses*, *chores*) or that
+splits a phrasal verb (*pick me up*) produces **no gap at all** — so with
+`quiz_mode: sentence_gap` that word silently has no Quiz and no Type item. It was in 11 of
+the 23 leaves, 40-odd frames in total, and on `leaf_word_families_b1` it was **every single
+one**: 36 words, zero frames, all three stages falling back to matching an arrow string
+(*decide → decision*) against a Czech arrow string.
+
+Also found and fixed across the lane:
+
+- **F7 at B1.** 48 tiles were taught as new on two different B1 leaves, and far more against
+  A1/A2. `leaf_personality_b1` was 24 of 36 review; `leaf_technology_b1` 21 of 36;
+  `leaf_feelings_b1` 26 of 36. Those three had their Match lists refilled and the recycled
+  words moved to **You already know** boards (F8). `leaf_phrasal_2_b1` listed *get on* twice
+  inside itself.
+- **A12.** Sense-marked instead of cut where the second sense is the point:
+  *mouse (computer)*, *speaker (for sound)*, *save (a file)*, *block (a user)*,
+  *fine (a penalty)*, *sentence (in court)*, *charge (a fee)* / *charge (with a crime)*,
+  *guilty (in court)*, *party (political)*, *report (a news story)*, *fall (a drop)*,
+  *interview (in the news)*, *date (romantic)*, *miss* (person vs train).
+- **E10.** Every leaf now has a 12-item `use_mode: rewrite` bank, so Use is production of
+  the new word rather than CZ→EN of the bank it just typed. On `trunk_chunks_b1` (a
+  `practice: frames` pack) Use had literally been Type replayed.
+- **B22.** `quiz_mode: sentence_gap` was missing on six packs.
+- **D3 / C48 / C20.** Slash-dual Czech prompts, prose card 0s, and two "thirty-six words in
+  three layers" author notes.
+
+**Gates.** verify_pack 5 errors throughout (unchanged; C9 fell 10 → 4, of which 2 are a
+counter artifact and 2 are A1/A2, off-limits). audit **805 → 794** unknown types, 103 → 101
+units. check_playable 0 errors. check_codex passed. Every leaf pool-checked at its own
+path position: 0 unknown types.
+
+**Not ticked.** Nothing here has been played. Rule I1.
+
 ## 2026-08-31 · local (interactive) — Clothes Next skipped the tree
 
 James: redid Quiz, Type, Use, Next each time, still no tree. Next must not leave a stage unfinished.

@@ -1,343 +1,641 @@
 {
- "id": "b1_second_conditional",
- "title": "Second conditional",
- "level": "B1",
- "tree_node": "b1_second_conditional",
- "codex_unit": "G_CL-B1B2-01",
- "practice": "frames",
- "quality": "draft",
- "note": "Unreal or unlikely present: If I had more time, I would learn Italian. Czech kdybych + conditional produces *If I would have more time word for word - that is the whole target error. a2_first_conditional is the real-possibility one; third and mixed stay B2. If I were you is taught as a fixed phrase for advice. First draft 2026-09-02, rough - thicken after smoke.",
- "default_direction": "cz_to_en",
- "use_mode": "correct",
- "check": {
-  "sequence": [
-   "quiz"
-  ]
- },
- "intro": {
-  "cards": [
-   {
-    "title": "Second conditional",
-    "title_cz": "Druhý kondicionál — kdybych…",
-    "points": [
-     "The past form does not mean the past. It means: this is not true now."
-    ],
-    "table": {
-     "headers": [
-      "Half",
-      "Form"
-     ],
-     "rows": [
-      [
-       "**if** + past simple",
-       "the unreal situation"
-      ],
-      [
-       "**would** + plain verb",
-       "the result"
-      ]
-     ]
-    },
-    "examples": [
-     {
-      "en": "**If** I had more time, I **would** learn Italian.",
-      "cz": "Kdybych měl víc času, učil bych se italsky."
-     },
-     {
-      "en": "What **would** you do if you won?",
-      "cz": "Co bys dělal, kdybys vyhrál?"
-     }
+  "id": "b1_second_conditional",
+  "title": "Second conditional",
+  "level": "B1",
+  "tree_node": "b1_second_conditional",
+  "codex_unit": "G_CL-B1B2-01",
+  "practice": "frames",
+  "quality": "draft",
+  "note": "Unreal or unlikely present: If I had more time, I would learn Italian. Czech kdybych + conditional produces *If I would have more time word for word - that is the whole target error. a2_first_conditional is the real-possibility one; third and mixed stay B2. If I were you is taught as a fixed phrase for advice. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, both clause orders, negatives in each half (would not say / did not have to), two more If I were you advice items, and questions. Rules applied this pass: A8 the would twin ('d) is now in accepts on every result half; A4 all four cleared (a million, more money, go out more often, and the Czech demonstrative on `tu odpoved`); F3 earlier / jobs swapped for at six / her job. KNOWN LINT FALSE POSITIVE: the seven remaining A8 flags all want *If I'd more time* / *If I'd a car* as the twin of `if I had ...`. Lexical had does not contract in modern English, so those accepts do not exist and must not be added - same lint gap as had-to on b1_past_modals and the negative tags on b1_question_tags. Queued in DECISIONS.md.",
+  "default_direction": "cz_to_en",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "quiz"
     ]
-   },
-   {
-    "title": "would never goes in the if half",
-    "title_cz": "would nikdy nepatří do části s if",
-    "points": [
-     "Czech puts the conditional in both halves. English puts it in one."
-    ],
-    "table": {
-     "headers": [
-      "Not this",
-      "Say this"
-     ],
-     "rows": [
-      [
-       "*If I would have more time…*",
-       "**If** I **had** more time…"
-      ],
-      [
-       "*If he would come…*",
-       "**If** he **came**…"
-      ],
-      [
-       "*If it would rain…*",
-       "**If** it **rained**…"
+  },
+  "intro": {
+    "cards": [
+      {
+        "title": "Second conditional",
+        "title_cz": "Druhý kondicionál — kdybych…",
+        "points": [
+          "The past form does not mean the past. It means: this is not true now."
+        ],
+        "table": {
+          "headers": [
+            "Half",
+            "Form"
+          ],
+          "rows": [
+            [
+              "**if** + past simple",
+              "the unreal situation"
+            ],
+            [
+              "**would** + plain verb",
+              "the result"
+            ]
+          ]
+        },
+        "examples": [
+          {
+            "en": "**If** I had time, I **would** learn Italian.",
+            "cz": "Kdybych měl čas, učil bych se italsky."
+          },
+          {
+            "en": "What **would** you do if you won?",
+            "cz": "Co bys dělal, kdybys vyhrál?"
+          }
+        ]
+      },
+      {
+        "title": "would never goes in the if half",
+        "title_cz": "would nikdy nepatří do části s if",
+        "points": [
+          "Czech puts the conditional in both halves. English puts it in one."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "*If I would have more time…*",
+              "**If** I **had** more time…"
+            ],
+            [
+              "*If he would come…*",
+              "**If** he **came**…"
+            ],
+            [
+              "*If it would rain…*",
+              "**If** it **rained**…"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "first or second?",
+        "title_cz": "první, nebo druhý?",
+        "points": [
+          "Real chance → the first kind. Imaginary → this one."
+        ],
+        "table": {
+          "headers": [
+            "Sentence",
+            "What it says"
+          ],
+          "rows": [
+            [
+              "If it **rains**, I **will** stay in.",
+              "it might really rain"
+            ],
+            [
+              "If it **rained**, I **would** stay in.",
+              "it is not going to, but imagine"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "If I were you",
+        "title_cz": "If I were you",
+        "points": [
+          "**were** is used for every person in this phrase.",
+          "~~If I was you~~ is not the set form."
+        ],
+        "table": {
+          "headers": [
+            "Phrase",
+            "Use"
+          ],
+          "rows": [
+            [
+              "**If I** were you, I'd take the job.",
+              "giving advice"
+            ],
+            [
+              "**If I** were rich…",
+              "imagining"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "One half gets **would**. The **if** half gets the past form."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~If I would have more time, I would learn Italian.~~",
+              "**If** I **had** more time, I would learn Italian."
+            ],
+            [
+              "~~If I will win, I would buy a house.~~",
+              "**If** I **won**, I **would** buy a house."
+            ],
+            [
+              "~~If I was you, I'd take the job.~~",
+              "**If I** were you, I'd take the job."
+            ],
+            [
+              "~~I would to go if I had time.~~",
+              "I **would** go if I had time."
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "b1_second_conditional_main",
+      "title": "Second conditional · B1",
+      "items": [
+        {
+          "en": "If I had more time, I would learn Italian.",
+          "cz": "Kdybych měl víc času, učil bych se italsky.",
+          "gap": "If I ____ more time, I would learn Italian. (have)",
+          "gap_answer": "had",
+          "quiz_options": [
+            "had",
+            "would have",
+            "have",
+            "will have"
+          ],
+          "accepts": [
+            "If I had more time, I would learn Italian.",
+            "If I had more time, I'd learn Italian."
+          ],
+          "wrong": "If I would have more time, I would learn Italian.",
+          "explanation": "The **if** half takes the past form **had**. would belongs in the other half.",
+          "explanation_cz": "Část s **if** má minulý tvar **had**. would patří do druhé části."
+        },
+        {
+          "en": "What would you do if you won a million?",
+          "cz": "Co bys dělal, kdybys vyhrál milion?",
+          "gap": "What ____ you do if you won a million? (will / would)",
+          "gap_answer": "would",
+          "quiz_options": [
+            "would",
+            "will",
+            "did",
+            "do"
+          ],
+          "accepts": [
+            "What would you do if you won a million?"
+          ],
+          "explanation": "The result half takes **would** + the plain verb do.",
+          "explanation_cz": "Výsledková část má **would** + základní tvar do.",
+          "wrong": "What will you do if you won a million?"
+        },
+        {
+          "en": "If I were you, I'd take the job.",
+          "cz": "Být tebou, vzal bych tu práci.",
+          "gap": "If I ____ you, I'd take the job. (be)",
+          "gap_answer": "were",
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "accepts": [
+            "If I were you, I'd take the job.",
+            "If I were you, I would take the job."
+          ],
+          "wrong": "If I was you, I'd take the job.",
+          "explanation": "**If I were you** is the fixed phrase for advice.",
+          "explanation_cz": "**If I were you** je ustálená fráze pro radu."
+        },
+        {
+          "en": "If he came at six, we would have more time.",
+          "cz": "Kdyby přišel v šest, měli bychom víc času.",
+          "gap": "If he ____ at six, we would have more time. (come)",
+          "gap_answer": "came",
+          "quiz_options": [
+            "came",
+            "would come",
+            "comes",
+            "will come"
+          ],
+          "accepts": [
+            "If he came at six, we would have more time.",
+            "If he came at six, we'd have more time."
+          ],
+          "wrong": "If he would come at six, we would have more time.",
+          "explanation": "Past form **came** in the if half, not would come.",
+          "explanation_cz": "Minulý tvar **came** v části s if, ne would come."
+        },
+        {
+          "en": "I would buy a bigger flat if I had more money.",
+          "cz": "Koupil bych si větší byt, kdybych měl víc peněz.",
+          "gap": "I ____ a bigger flat if I had more money. (buy)",
+          "gap_answer": "would buy",
+          "quiz_options": [
+            "would buy",
+            "will buy",
+            "would to buy",
+            "bought"
+          ],
+          "accepts": [
+            "I would buy a bigger flat if I had more money.",
+            "I'd buy a bigger flat if I had more money."
+          ],
+          "explanation": "**would** + the plain verb **buy**, with no to.",
+          "explanation_cz": "**would** + základní tvar **buy**, bez to.",
+          "wrong": "I would to buy a bigger flat if I had more money."
+        },
+        {
+          "en": "If I lived in London, I would go out more often.",
+          "cz": "Kdybych bydlel v Londýně, chodil bych častěji ven.",
+          "gap": "If I ____ in London, I would go out more often. (live)",
+          "gap_answer": "lived",
+          "quiz_options": [
+            "lived",
+            "would live",
+            "live",
+            "will live"
+          ],
+          "accepts": [
+            "If I lived in London, I would go out more often.",
+            "If I lived in London, I'd go out more often."
+          ],
+          "explanation": "**lived** — the past form marks it as not true now.",
+          "explanation_cz": "**lived** — minulý tvar značí, že to teď neplatí.",
+          "wrong": "If I would live in London, I would go out more often."
+        },
+        {
+          "en": "She would be happier if she changed her job.",
+          "cz": "Byla by šťastnější, kdyby změnila práci.",
+          "gap": "She ____ happier if she changed her job. (be)",
+          "gap_answer": "would be",
+          "quiz_options": [
+            "would be",
+            "will be",
+            "would is",
+            "was"
+          ],
+          "accepts": [
+            "She would be happier if she changed her job.",
+            "She'd be happier if she changed her job."
+          ],
+          "explanation": "**would be** in the result half.",
+          "explanation_cz": "**would be** ve výsledkové části.",
+          "wrong": "She will be happier if she changed her job."
+        },
+        {
+          "en": "If it rained, we would stay at home.",
+          "cz": "Kdyby pršelo, zůstali bychom doma.",
+          "gap": "If it ____, we would stay at home. (rain)",
+          "gap_answer": "rained",
+          "quiz_options": [
+            "rained",
+            "would rain",
+            "rains",
+            "will rain"
+          ],
+          "accepts": [
+            "If it rained, we would stay at home.",
+            "If it rained, we'd stay at home."
+          ],
+          "wrong": "If it will rain, we would stay at home.",
+          "explanation": "Imagining, not predicting, so **rained** and would stay.",
+          "explanation_cz": "Představa, ne předpověď, takže **rained** a would stay."
+        },
+        {
+          "en": "What would you say if she asked you?",
+          "cz": "Co bys řekl, kdyby se tě zeptala?",
+          "gap": "What would you say if she ____ you? (ask)",
+          "gap_answer": "asked",
+          "quiz_options": [
+            "asked",
+            "would ask",
+            "asks",
+            "will ask"
+          ],
+          "accepts": [
+            "What would you say if she asked you?"
+          ],
+          "explanation": "The **if** half stays in the past form: asked.",
+          "explanation_cz": "Část s **if** zůstává v minulém tvaru: asked."
+        },
+        {
+          "en": "If I knew the answer, I would tell you.",
+          "cz": "Kdybych znal tu odpověď, řekl bych ti.",
+          "gap": "If I ____ the answer, I would tell you. (know)",
+          "gap_answer": "knew",
+          "quiz_options": [
+            "knew",
+            "would know",
+            "know",
+            "will know"
+          ],
+          "accepts": [
+            "If I knew the answer, I would tell you.",
+            "If I knew the answer, I'd tell you."
+          ],
+          "wrong": "If I would know the answer, I would tell you.",
+          "explanation": "**knew** in the if half. The point is that I do not know it.",
+          "explanation_cz": "**knew** v části s if. Jde o to, že ji neznám."
+        },
+        {
+          "en": "If I had a car, I would drive to work.",
+          "cz": "Kdybych měl auto, jezdil bych do práce autem.",
+          "gap": "If I ____ a car, I would drive to work. (have)",
+          "gap_answer": "had",
+          "quiz_options": [
+            "had",
+            "would have",
+            "have",
+            "will have"
+          ],
+          "accepts": [
+            "If I had a car, I would drive to work.",
+            "If I had a car, I'd drive to work."
+          ],
+          "wrong": "If I would have a car, I would drive to work.",
+          "explanation": "The **if** half takes the past form **had**. Only the other half gets would.",
+          "explanation_cz": "Část s **if** má minulý tvar **had**. Would patří jen do té druhé."
+        },
+        {
+          "en": "If she spoke better English, she would get the job.",
+          "cz": "Kdyby uměla líp anglicky, tu práci by dostala.",
+          "gap": "If she ____ better English, she would get the job. (speak)",
+          "gap_answer": "spoke",
+          "quiz_options": [
+            "spoke",
+            "would speak",
+            "speaks",
+            "will speak"
+          ],
+          "accepts": [
+            "If she spoke better English, she would get the job.",
+            "If she spoke better English, she'd get the job."
+          ],
+          "wrong": "If she would speak better English, she would get the job.",
+          "explanation": "**spoke** is the past form doing unreal work: she does not speak better English.",
+          "explanation_cz": "**spoke** je minulý tvar v nereálné roli: líp anglicky neumí."
+        },
+        {
+          "en": "I would help you if I had time.",
+          "cz": "Pomohl bych ti, kdybych měl čas.",
+          "gap": "I ____ you if I had time. (help)",
+          "gap_answer": "would help",
+          "quiz_options": [
+            "would help",
+            "will help",
+            "would to help",
+            "helped"
+          ],
+          "accepts": [
+            "I would help you if I had time.",
+            "I'd help you if I had time."
+          ],
+          "wrong": "I would to help you if I had time.",
+          "explanation": "**would** + the plain verb **help** — no *to* after would.",
+          "explanation_cz": "**would** + základní tvar **help** — po would není žádné *to*."
+        },
+        {
+          "en": "If I were you, I would talk to your boss.",
+          "cz": "Být tebou, promluvil bych si se šéfem.",
+          "gap": "If I ____ you, I would talk to your boss. (be)",
+          "gap_answer": "were",
+          "quiz_options": [
+            "were",
+            "was",
+            "am",
+            "would be"
+          ],
+          "accepts": [
+            "If I were you, I would talk to your boss.",
+            "If I were you, I'd talk to your boss."
+          ],
+          "wrong": "If I was you, I would talk to your boss.",
+          "explanation": "In this advice phrase the form is **were** for every person, including I.",
+          "explanation_cz": "V téhle radě je tvar **were** pro každou osobu, i pro I."
+        },
+        {
+          "en": "If I were you, I would not wait.",
+          "cz": "Být tebou, nečekal bych.",
+          "gap": "If I ____ you, I would not wait. (be)",
+          "gap_answer": "were",
+          "quiz_options": [
+            "were",
+            "was",
+            "would be",
+            "am"
+          ],
+          "accepts": [
+            "If I were you, I would not wait.",
+            "If I were you, I wouldn't wait."
+          ],
+          "wrong": "If I was you, I would not wait.",
+          "explanation": "**If I were you** is fixed. The advice half can be negative: **would not** wait.",
+          "explanation_cz": "**If I were you** je ustálené. Rada může být záporná: **would not** wait."
+        },
+        {
+          "en": "He would not say that if he knew you.",
+          "cz": "Neřekl by to, kdyby tě znal.",
+          "gap": "He ____ that if he knew you. (not / say)",
+          "gap_answer": "would not say",
+          "quiz_options": [
+            "would not say",
+            "will not say",
+            "would not said",
+            "did not say"
+          ],
+          "accepts": [
+            "He would not say that if he knew you.",
+            "He wouldn't say that if he knew you."
+          ],
+          "wrong": "He would not said that if he knew you.",
+          "explanation": "Negative result half: **would not** + the plain verb **say**.",
+          "explanation_cz": "Záporná druhá část: **would not** + základní tvar **say**."
+        },
+        {
+          "en": "We would not go if it snowed.",
+          "cz": "Nejeli bychom, kdyby sněžilo.",
+          "gap": "We would not go if it ____. (snow)",
+          "gap_answer": "snowed",
+          "quiz_options": [
+            "snowed",
+            "would snow",
+            "snows",
+            "will snow"
+          ],
+          "accepts": [
+            "We would not go if it snowed.",
+            "We wouldn't go if it snowed."
+          ],
+          "wrong": "We would not go if it would snow.",
+          "explanation": "Even after a negative result, the **if** half keeps the past form: **snowed**.",
+          "explanation_cz": "I po záporné druhé části má část s **if** minulý tvar: **snowed**."
+        },
+        {
+          "en": "If they invited me, I would go.",
+          "cz": "Kdyby mě pozvali, šel bych.",
+          "gap": "If they ____ me, I would go. (invite)",
+          "gap_answer": "invited",
+          "quiz_options": [
+            "invited",
+            "would invite",
+            "invite",
+            "will invite"
+          ],
+          "accepts": [
+            "If they invited me, I would go.",
+            "If they invited me, I'd go."
+          ],
+          "wrong": "If they would invite me, I would go.",
+          "explanation": "**invited** in the if half, **would go** in the other. One conditional, not two.",
+          "explanation_cz": "**invited** v části s if, **would go** v druhé. Jeden kondicionál, ne dva."
+        },
+        {
+          "en": "What would you do if you lost your job?",
+          "cz": "Co bys dělal, kdybys přišel o práci?",
+          "gap": "What ____ you do if you lost your job? (will / would)",
+          "gap_answer": "would",
+          "quiz_options": [
+            "would",
+            "will",
+            "did",
+            "do"
+          ],
+          "accepts": [
+            "What would you do if you lost your job?"
+          ],
+          "wrong": "What will you do if you lost your job?",
+          "explanation": "The question half takes **would**; the **if** half stays past: *lost*.",
+          "explanation_cz": "Tázací část má **would**; část s **if** zůstává v minulém tvaru: *lost*."
+        },
+        {
+          "en": "If my brother had a bigger flat, we would stay with him.",
+          "cz": "Kdyby měl brácha větší byt, bydleli bychom u něj.",
+          "gap": "If my brother ____ a bigger flat, we would stay with him. (have)",
+          "gap_answer": "had",
+          "quiz_options": [
+            "had",
+            "would have",
+            "has",
+            "will have"
+          ],
+          "accepts": [
+            "If my brother had a bigger flat, we would stay with him.",
+            "If my brother had a bigger flat, we'd stay with him."
+          ],
+          "wrong": "If my brother would have a bigger flat, we would stay with him.",
+          "explanation": "**had** even in the third person: the if half never takes would.",
+          "explanation_cz": "**had** i ve třetí osobě: část s if nikdy nemá would."
+        },
+        {
+          "en": "If you asked her, she would tell you.",
+          "cz": "Kdyby ses jí zeptal, řekla by ti to.",
+          "gap": "If you ____ her, she would tell you. (ask)",
+          "gap_answer": "asked",
+          "quiz_options": [
+            "asked",
+            "would ask",
+            "ask",
+            "will ask"
+          ],
+          "accepts": [
+            "If you asked her, she would tell you.",
+            "If you asked her, she'd tell you."
+          ],
+          "wrong": "If you would ask her, she would tell you.",
+          "explanation": "**asked** is the unreal past: you are not going to ask.",
+          "explanation_cz": "**asked** je nereálný minulý tvar: ty se nezeptáš."
+        },
+        {
+          "en": "If I did not have to work, I would sleep all morning.",
+          "cz": "Kdybych nemusel do práce, spal bych celé dopoledne.",
+          "gap": "If I ____ have to work, I would sleep all morning. (not / do)",
+          "gap_answer": "did not",
+          "quiz_options": [
+            "did not",
+            "would not",
+            "do not",
+            "will not"
+          ],
+          "accepts": [
+            "If I did not have to work, I would sleep all morning.",
+            "If I did not have to work, I'd sleep all morning.",
+            "If I didn't have to work, I would sleep all morning.",
+            "If I didn't have to work, I'd sleep all morning."
+          ],
+          "wrong": "If I would not have to work, I would sleep all morning.",
+          "explanation": "The negative **if** half is **did not** + plain verb — still the past form, still no would.",
+          "explanation_cz": "Záporná část s **if** je **did not** + základní tvar — pořád minulý tvar, pořád bez would."
+        },
+        {
+          "en": "If she had more money, she would buy a house.",
+          "cz": "Kdyby měla víc peněz, koupila by si dům.",
+          "gap": "If she had more money, she ____ a house. (buy)",
+          "gap_answer": "would buy",
+          "quiz_options": [
+            "would buy",
+            "will buy",
+            "would bought",
+            "bought"
+          ],
+          "accepts": [
+            "If she had more money, she would buy a house.",
+            "If she had more money, she'd buy a house."
+          ],
+          "wrong": "If she had more money, she would bought a house.",
+          "explanation": "**would** + the plain verb **buy**, never a past form after would.",
+          "explanation_cz": "**would** + základní tvar **buy**, po would nikdy minulý tvar."
+        },
+        {
+          "en": "If I had a dog, I would walk every morning.",
+          "cz": "Kdybych měl psa, chodil bych každé ráno na procházku.",
+          "gap": "If I had a dog, I ____ every morning. (walk)",
+          "gap_answer": "would walk",
+          "quiz_options": [
+            "would walk",
+            "will walk",
+            "would walked",
+            "walked"
+          ],
+          "accepts": [
+            "If I had a dog, I would walk every morning.",
+            "If I had a dog, I'd walk every morning."
+          ],
+          "wrong": "If I had a dog, I will walk every morning.",
+          "explanation": "The situation is imaginary, so the result is **would walk**, not will walk.",
+          "explanation_cz": "Situace je smyšlená, takže výsledek je **would walk**, ne will walk."
+        },
+        {
+          "en": "If we had a bigger table, we would invite everybody.",
+          "cz": "Kdybychom měli větší stůl, pozvali bychom všechny.",
+          "gap": "If we ____ a bigger table, we would invite everybody. (have)",
+          "gap_answer": "had",
+          "quiz_options": [
+            "had",
+            "would have",
+            "have",
+            "will have"
+          ],
+          "accepts": [
+            "If we had a bigger table, we would invite everybody.",
+            "If we had a bigger table, we'd invite everybody."
+          ],
+          "wrong": "If we would have a bigger table, we would invite everybody.",
+          "explanation": "**had** in the if half. Czech puts the conditional in both halves; English puts it in one.",
+          "explanation_cz": "**had** v části s if. Čeština dává kondicionál do obou částí, angličtina jen do jedné."
+        }
       ]
-     ]
     }
-   },
-   {
-    "title": "first or second?",
-    "title_cz": "první, nebo druhý?",
-    "points": [
-     "Real chance → the first kind. Imaginary → this one."
-    ],
-    "table": {
-     "headers": [
-      "Sentence",
-      "What it says"
-     ],
-     "rows": [
-      [
-       "If it **rains**, I **will** stay in.",
-       "it might really rain"
-      ],
-      [
-       "If it **rained**, I **would** stay in.",
-       "it is not going to, but imagine"
-      ]
-     ]
-    }
-   },
-   {
-    "title": "If I were you",
-    "title_cz": "If I were you",
-    "points": [
-     "**were** is used for every person in this phrase. *If I was you* is not the set form."
-    ],
-    "table": {
-     "headers": [
-      "Phrase",
-      "Use"
-     ],
-     "rows": [
-      [
-       "**If I** were you, I'd take the job.",
-       "giving advice"
-      ],
-      [
-       "**If I** were rich…",
-       "imagining"
-      ]
-     ]
-    }
-   },
-   {
-    "title": "Common mistakes",
-    "title_cz": "Časté chyby",
-    "text_first": true,
-    "points": [
-     "One half gets **would**. The **if** half gets the past form."
-    ],
-    "table": {
-     "headers": [
-      "Not this",
-      "Say this"
-     ],
-     "rows": [
-      [
-       "~~If I would have more time, I would learn Italian.~~",
-       "**If** I **had** more time, I would learn Italian."
-      ],
-      [
-       "~~If I will win, I would buy a house.~~",
-       "**If** I **won**, I **would** buy a house."
-      ],
-      [
-       "~~If I was you, I'd take the job.~~",
-       "**If I** were you, I'd take the job."
-      ],
-      [
-       "~~I would to go if I had time.~~",
-       "I **would** go if I had time."
-      ]
-     ]
-    }
-   }
   ]
- },
- "blocks": [
-  {
-   "id": "b1_second_conditional_main",
-   "title": "Second conditional · B1",
-   "items": [
-    {
-     "en": "If I had more time, I would learn Italian.",
-     "cz": "Kdybych měl víc času, učil bych se italsky.",
-     "gap": "If I ____ more time, I would learn Italian. (have)",
-     "gap_answer": "had",
-     "quiz_options": [
-      "had",
-      "would have",
-      "have",
-      "will have"
-     ],
-     "accepts": [
-      "If I had more time, I would learn Italian."
-     ],
-     "wrong": "If I would have more time, I would learn Italian.",
-     "explanation": "The **if** half takes the past form **had**. would belongs in the other half.",
-     "explanation_cz": "Část s **if** má minulý tvar **had**. would patří do druhé části."
-    },
-    {
-     "en": "What would you do if you won the lottery?",
-     "cz": "Co bys dělal, kdybys vyhrál v loterii?",
-     "gap": "What ____ you do if you won the lottery? (will / would)",
-     "gap_answer": "would",
-     "quiz_options": [
-      "would",
-      "will",
-      "did",
-      "do"
-     ],
-     "accepts": [
-      "What would you do if you won the lottery?"
-     ],
-     "explanation": "The result half takes **would** + the plain verb do.",
-     "explanation_cz": "Výsledková část má **would** + základní tvar do."
-    },
-    {
-     "en": "If I were you, I'd take the job.",
-     "cz": "Být tebou, vzal bych tu práci.",
-     "gap": "If I ____ you, I'd take the job. (be)",
-     "gap_answer": "were",
-     "quiz_options": [
-      "were",
-      "was",
-      "am",
-      "would be"
-     ],
-     "accepts": [
-      "If I were you, I'd take the job.",
-      "If I were you, I would take the job."
-     ],
-     "wrong": "If I was you, I'd take the job.",
-     "explanation": "**If I were you** is the fixed phrase for advice.",
-     "explanation_cz": "**If I were you** je ustálená fráze pro radu."
-    },
-    {
-     "en": "If he came earlier, we would have more time.",
-     "cz": "Kdyby přišel dřív, měli bychom víc času.",
-     "gap": "If he ____ earlier, we would have more time. (come)",
-     "gap_answer": "came",
-     "quiz_options": [
-      "came",
-      "would come",
-      "comes",
-      "will come"
-     ],
-     "accepts": [
-      "If he came earlier, we would have more time."
-     ],
-     "wrong": "If he would come earlier, we would have more time.",
-     "explanation": "Past form **came** in the if half, not would come.",
-     "explanation_cz": "Minulý tvar **came** v části s if, ne would come."
-    },
-    {
-     "en": "I would buy a bigger flat if I had the money.",
-     "cz": "Koupil bych si větší byt, kdybych měl peníze.",
-     "gap": "I ____ a bigger flat if I had the money. (buy)",
-     "gap_answer": "would buy",
-     "quiz_options": [
-      "would buy",
-      "will buy",
-      "would to buy",
-      "bought"
-     ],
-     "accepts": [
-      "I would buy a bigger flat if I had the money."
-     ],
-     "explanation": "**would** + the plain verb **buy**, with no to.",
-     "explanation_cz": "**would** + základní tvar **buy**, bez to."
-    },
-    {
-     "en": "If I lived in London, I would go to the theatre every week.",
-     "cz": "Kdybych bydlel v Londýně, chodil bych každý týden do divadla.",
-     "gap": "If I ____ in London, I would go to the theatre. (live)",
-     "gap_answer": "lived",
-     "quiz_options": [
-      "lived",
-      "would live",
-      "live",
-      "will live"
-     ],
-     "accepts": [
-      "If I lived in London, I would go to the theatre every week."
-     ],
-     "explanation": "**lived** — the past form marks it as not true now.",
-     "explanation_cz": "**lived** — minulý tvar značí, že to teď neplatí."
-    },
-    {
-     "en": "She would be happier if she changed jobs.",
-     "cz": "Byla by šťastnější, kdyby změnila práci.",
-     "gap": "She ____ happier if she changed jobs. (be)",
-     "gap_answer": "would be",
-     "quiz_options": [
-      "would be",
-      "will be",
-      "would is",
-      "was"
-     ],
-     "accepts": [
-      "She would be happier if she changed jobs."
-     ],
-     "explanation": "**would be** in the result half.",
-     "explanation_cz": "**would be** ve výsledkové části."
-    },
-    {
-     "en": "If it rained, we would stay at home.",
-     "cz": "Kdyby pršelo, zůstali bychom doma.",
-     "gap": "If it ____, we would stay at home. (rain)",
-     "gap_answer": "rained",
-     "quiz_options": [
-      "rained",
-      "would rain",
-      "rains",
-      "will rain"
-     ],
-     "accepts": [
-      "If it rained, we would stay at home."
-     ],
-     "wrong": "If it will rain, we would stay at home.",
-     "explanation": "Imagining, not predicting, so **rained** and would stay.",
-     "explanation_cz": "Představa, ne předpověď, takže **rained** a would stay."
-    },
-    {
-     "en": "What would you say if she asked you?",
-     "cz": "Co bys řekl, kdyby se tě zeptala?",
-     "gap": "What would you say if she ____ you? (ask)",
-     "gap_answer": "asked",
-     "quiz_options": [
-      "asked",
-      "would ask",
-      "asks",
-      "will ask"
-     ],
-     "accepts": [
-      "What would you say if she asked you?"
-     ],
-     "explanation": "The **if** half stays in the past form: asked.",
-     "explanation_cz": "Část s **if** zůstává v minulém tvaru: asked."
-    },
-    {
-     "en": "If I knew the answer, I would tell you.",
-     "cz": "Kdybych znal odpověď, řekl bych ti.",
-     "gap": "If I ____ the answer, I would tell you. (know)",
-     "gap_answer": "knew",
-     "quiz_options": [
-      "knew",
-      "would know",
-      "know",
-      "will know"
-     ],
-     "accepts": [
-      "If I knew the answer, I would tell you."
-     ],
-     "wrong": "If I would know the answer, I would tell you.",
-     "explanation": "**knew** in the if half. The point is that I do not know it.",
-     "explanation_cz": "**knew** v části s if. Jde o to, že ji neznám."
-    }
-   ]
-  }
- ]
 }

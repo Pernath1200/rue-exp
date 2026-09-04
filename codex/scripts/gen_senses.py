@@ -70,6 +70,19 @@ SYNONYM_GROUPS = [
     ["biscuit", "cookie"],
     ["timetable", "schedule"],
     ["tv", "television"],
+    # A7 free English choices — interchangeable anywhere, and the class the
+    # rule was written from (`everyone` rejected for `everybody`). lint.py
+    # FREE_PAIRS flags any of these that is missing from this map.
+    # `no one` is two words and cannot be canonicalised word-by-word, so
+    # `nobody` has no partner here — keep it out of banks that grade strictly.
+    ["everyone", "everybody"],
+    ["someone", "somebody"],
+    ["anyone", "anybody"],
+    # `no one` is two words, so the word-by-word canonicaliser in js/synonyms.js
+    # cannot swap it. The pair is declared here anyway (lint's FREE_PAIRS asks
+    # for it, and it documents the class); the working half of the fix is that
+    # every `nobody` item also carries the `no one` wording in accepts.
+    ["nobody", "no one"],
 ]
 
 

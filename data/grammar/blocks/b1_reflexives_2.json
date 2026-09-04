@@ -6,7 +6,7 @@
  "codex_unit": "G_NP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "The half a2_reflexives handed forward in writing. A2 kept only the interference core (*I feel myself good, *It happened me). This unit is by myself / on my own for alone, and the emphatic I did it myself. Third job: each other vs themselves, where Czech se / si covers both. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "The half a2_reflexives handed forward in writing. A2 kept only the interference core (*I feel myself good, *It happened me). This unit is by myself / on my own for alone, and the emphatic I did it myself. Third job: each other vs themselves, where Czech se / si covers both. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new across the three jobs the unit exists for - by myself / on my own for alone, the emphatic -self at the end, and each other vs -selves, which Czech se/si does not separate. All persons are drilled, and the reflexive after a preposition (cook for themselves, play with each other) is in the bank now. Rules applied this pass: A4 both cleared (the Czech demonstrative on `ten byt`, and The children -> Our children); F3 painted / shed / looked swapped for taught verbs - `looked after` also had to go for F2, since phrasal verbs are taught nine slots later at b1_phrasal_verbs. Option lists carry this unit's own errors: by my own, theirselves, ourself, and each other vs themselves in both directions.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -196,9 +196,9 @@
      "explanation_cz": "**by myself** = sám. S **on** by to bylo *on my own*."
     },
     {
-     "en": "She painted the room herself.",
-     "cz": "Vymalovala pokoj sama.",
-     "gap": "She painted the room ____. (self)",
+     "en": "She cleaned the flat herself.",
+     "cz": "Uklidila ten byt sama.",
+     "gap": "She cleaned the flat ____. (self)",
      "gap_answer": "herself",
      "quiz_options": [
       "herself",
@@ -207,10 +207,11 @@
       "self"
      ],
      "accepts": [
-      "She painted the room herself."
+      "She cleaned the flat herself."
      ],
      "explanation": "**herself** at the end means she did the work, with no help.",
-     "explanation_cz": "**herself** na konci znamená, že to udělala sama, bez pomoci."
+     "explanation_cz": "**herself** na konci znamená, že to udělala sama, bez pomoci.",
+     "wrong": "She cleaned the flat by her own."
     },
     {
      "en": "They helped each other.",
@@ -265,9 +266,9 @@
      "explanation_cz": "**by himself** — nikdo s ním necestoval."
     },
     {
-     "en": "We built the shed ourselves.",
-     "cz": "Postavili jsme ten domek sami.",
-     "gap": "We built the shed ____. (self)",
+     "en": "We cooked dinner ourselves.",
+     "cz": "Večeři jsme uvařili sami.",
+     "gap": "We cooked dinner ____. (self)",
      "gap_answer": "ourselves",
      "quiz_options": [
       "ourselves",
@@ -276,15 +277,16 @@
       "by us"
      ],
      "accepts": [
-      "We built the shed ourselves."
+      "We cooked dinner ourselves."
      ],
      "explanation": "Plural **we** takes **ourselves**, at the end for emphasis.",
-     "explanation_cz": "Množné **we** má **ourselves**, na konci pro zdůraznění."
+     "explanation_cz": "Množné **we** má **ourselves**, na konci pro zdůraznění.",
+     "wrong": "We cooked dinner ourself."
     },
     {
-     "en": "The children looked after themselves.",
-     "cz": "Děti se o sebe postaraly samy.",
-     "gap": "The children looked after ____. (self)",
+     "en": "Our children can cook for themselves.",
+     "cz": "Naše děti si umí uvařit samy.",
+     "gap": "Our children can cook for ____. (self)",
      "gap_answer": "themselves",
      "quiz_options": [
       "themselves",
@@ -293,10 +295,11 @@
       "theirself"
      ],
      "accepts": [
-      "The children looked after themselves."
+      "Our children can cook for themselves."
      ],
-     "explanation": "Each child looked after himself, so **themselves**.",
-     "explanation_cz": "Každé dítě se postaralo samo o sebe, takže **themselves**."
+     "explanation": "Each child cooks for **himself**, so it is **themselves**. *each other* would mean they cook for one another.",
+     "explanation_cz": "Každé dítě vaří **sobě**, takže **themselves**. *each other* by znamenalo, že vaří jedno druhému.",
+     "wrong": "Our children can cook for each other."
     },
     {
      "en": "Do you want to go by yourself?",
@@ -348,6 +351,277 @@
      ],
      "explanation": "**myself** at the end stresses who did it.",
      "explanation_cz": "**myself** na konci zdůrazňuje, kdo to udělal."
+    },
+    {
+     "en": "He lives on his own now.",
+     "cz": "Teď bydlí sám.",
+     "gap": "He lives ____ his own now. (on / by)",
+     "gap_answer": "on",
+     "quiz_options": [
+      "on",
+      "by",
+      "with",
+      "in"
+     ],
+     "accepts": [
+      "He lives on his own now."
+     ],
+     "wrong": "He lives by his own now.",
+     "explanation": "**on** + his own is the twin of *by himself*. Never *by his own*.",
+     "explanation_cz": "**on** + his own je dvojče k *by himself*. Nikdy *by his own*."
+    },
+    {
+     "en": "Did you write this yourself?",
+     "cz": "Napsal jsi to sám?",
+     "gap": "Did you write this ____? (self)",
+     "gap_answer": "yourself",
+     "quiz_options": [
+      "yourself",
+      "by you",
+      "you",
+      "yourselves"
+     ],
+     "accepts": [
+      "Did you write this yourself?"
+     ],
+     "wrong": "Did you write this by your own?",
+     "explanation": "End position, so it is the emphatic one: nobody helped you. **yourself** for one person.",
+     "explanation_cz": "Na konci věty je to zdůraznění: nikdo ti nepomohl. **yourself** pro jednu osobu."
+    },
+    {
+     "en": "We drove there by ourselves.",
+     "cz": "Jeli jsme tam sami.",
+     "gap": "We drove there ____ ourselves. (by / on)",
+     "gap_answer": "by",
+     "quiz_options": [
+      "by",
+      "on",
+      "with",
+      "for"
+     ],
+     "accepts": [
+      "We drove there by ourselves."
+     ],
+     "wrong": "We drove there with ourselves.",
+     "explanation": "**by** + ourselves means nobody was with us.",
+     "explanation_cz": "**by** + ourselves znamená, že s námi nikdo nebyl."
+    },
+    {
+     "en": "They talk to each other every day.",
+     "cz": "Mluví spolu každý den.",
+     "gap": "They talk to ____ every day. (each / them)",
+     "gap_answer": "each other",
+     "quiz_options": [
+      "each other",
+      "themselves",
+      "them",
+      "each another"
+     ],
+     "accepts": [
+      "They talk to each other every day."
+     ],
+     "wrong": "They talk to themselves every day.",
+     "explanation": "A talks to B and B talks to A: **each other**. *themselves* would mean each one talks alone.",
+     "explanation_cz": "A mluví s B a B s A: **each other**. *themselves* by znamenalo, že si každý povídá sám pro sebe."
+    },
+    {
+     "en": "My sister and I help each other a lot.",
+     "cz": "Se sestrou si hodně pomáháme.",
+     "gap": "My sister and I help ____ a lot. (each / us)",
+     "gap_answer": "each other",
+     "quiz_options": [
+      "each other",
+      "ourselves",
+      "us",
+      "each"
+     ],
+     "accepts": [
+      "My sister and I help each other a lot."
+     ],
+     "wrong": "My sister and I help ourselves a lot.",
+     "explanation": "Two people helping in both directions is **each other**.",
+     "explanation_cz": "Dva lidé, kteří si pomáhají navzájem, mají **each other**."
+    },
+    {
+     "en": "She works better by herself.",
+     "cz": "Sama pracuje líp.",
+     "gap": "She works better ____ herself. (by / on)",
+     "gap_answer": "by",
+     "quiz_options": [
+      "by",
+      "on",
+      "with",
+      "for"
+     ],
+     "accepts": [
+      "She works better by herself."
+     ],
+     "wrong": "She works better on herself.",
+     "explanation": "**by herself** = alone. *on herself* is not the phrase; the *on* one is **on her own**.",
+     "explanation_cz": "**by herself** = sama. *on herself* není vazba; s *on* je to **on her own**."
+    },
+    {
+     "en": "The teacher wrote the test herself.",
+     "cz": "Ta učitelka ten test napsala sama.",
+     "gap": "The teacher wrote the test ____. (self)",
+     "gap_answer": "herself",
+     "quiz_options": [
+      "herself",
+      "her",
+      "by her",
+      "hisself"
+     ],
+     "accepts": [
+      "The teacher wrote the test herself."
+     ],
+     "wrong": "The teacher wrote the test by her own.",
+     "explanation": "Emphatic at the end: she wrote it, not somebody else. **herself**.",
+     "explanation_cz": "Zdůraznění na konci: napsala ho ona, ne někdo jiný. **herself**."
+    },
+    {
+     "en": "They bought the tickets themselves.",
+     "cz": "Ty lístky si koupili sami.",
+     "gap": "They bought the tickets ____. (self)",
+     "gap_answer": "themselves",
+     "quiz_options": [
+      "themselves",
+      "theirselves",
+      "them",
+      "each other"
+     ],
+     "accepts": [
+      "They bought the tickets themselves."
+     ],
+     "wrong": "They bought the tickets theirselves.",
+     "explanation": "There is no *theirselves*. The form is **themselves**.",
+     "explanation_cz": "Žádné *theirselves* neexistuje. Tvar je **themselves**."
+    },
+    {
+     "en": "We do not know each other very well.",
+     "cz": "Moc dobře se neznáme.",
+     "gap": "We do not know ____ very well. (each / us)",
+     "gap_answer": "each other",
+     "quiz_options": [
+      "each other",
+      "ourselves",
+      "us",
+      "each"
+     ],
+     "accepts": [
+      "We do not know each other very well.",
+      "We don't know each other very well."
+     ],
+     "wrong": "We do not know ourselves very well.",
+     "explanation": "You know him and he knows you: **each other**.",
+     "explanation_cz": "Ty znáš jeho a on tebe: **each other**."
+    },
+    {
+     "en": "He always travels on his own.",
+     "cz": "Cestuje vždycky sám.",
+     "gap": "He always travels ____ his own. (on / by)",
+     "gap_answer": "on",
+     "quiz_options": [
+      "on",
+      "by",
+      "with",
+      "for"
+     ],
+     "accepts": [
+      "He always travels on his own."
+     ],
+     "wrong": "He always travels by his own.",
+     "explanation": "**on** + his own is the twin of *by himself*. Never *by his own*.",
+     "explanation_cz": "**on** + his own je dvojče k *by himself*. Nikdy *by his own*."
+    },
+    {
+     "en": "Our children play with each other after school.",
+     "cz": "Naše děti si po škole hrají spolu.",
+     "gap": "Our children play with ____ after school. (each / them)",
+     "gap_answer": "each other",
+     "quiz_options": [
+      "each other",
+      "themselves",
+      "them",
+      "each"
+     ],
+     "accepts": [
+      "Our children play with each other after school."
+     ],
+     "wrong": "Our children play with themselves after school.",
+     "explanation": "They play together, so **each other**. *with themselves* says each child plays alone.",
+     "explanation_cz": "Hrají si spolu, takže **each other**. *with themselves* říká, že si každé hraje samo."
+    },
+    {
+     "en": "I told him myself.",
+     "cz": "Řekl jsem mu to sám.",
+     "gap": "I told him ____. (self)",
+     "gap_answer": "myself",
+     "quiz_options": [
+      "myself",
+      "me",
+      "by me",
+      "my own"
+     ],
+     "accepts": [
+      "I told him myself."
+     ],
+     "wrong": "I told him by my own.",
+     "explanation": "**myself** at the end: I did the telling, nobody passed the message on.",
+     "explanation_cz": "**myself** na konci: řekl jsem mu to já, nikdo to nevyřizoval."
+    },
+    {
+     "en": "She lives on her own in a small flat.",
+     "cz": "Bydlí sama v malém bytě.",
+     "gap": "She lives ____ her own in a small flat. (on / by)",
+     "gap_answer": "on",
+     "quiz_options": [
+      "on",
+      "by",
+      "with",
+      "in"
+     ],
+     "accepts": [
+      "She lives on her own in a small flat."
+     ],
+     "wrong": "She lives by her own in a small flat.",
+     "explanation": "**on** + his own is the twin of *by himself*. Never *by his own*.",
+     "explanation_cz": "**on** + his own je dvojče k *by himself*. Nikdy *by his own*."
+    },
+    {
+     "en": "I cut my hair myself.",
+     "cz": "Vlasy si stříhám sám.",
+     "gap": "I cut my hair ____. (self)",
+     "gap_answer": "myself",
+     "quiz_options": [
+      "myself",
+      "me",
+      "by me",
+      "mine"
+     ],
+     "accepts": [
+      "I cut my hair myself."
+     ],
+     "wrong": "I cut my hair by my own.",
+     "explanation": "Nobody cuts it for me, so the emphatic **myself** goes at the end.",
+     "explanation_cz": "Nikdo mi je nestříhá, takže na konec patří zdůrazňující **myself**."
+    },
+    {
+     "en": "Do you want to live by yourself?",
+     "cz": "Chceš bydlet sám?",
+     "gap": "Do you want to live ____ yourself? (by / on)",
+     "gap_answer": "by",
+     "quiz_options": [
+      "by",
+      "on",
+      "with",
+      "for"
+     ],
+     "accepts": [
+      "Do you want to live by yourself?"
+     ],
+     "wrong": "Do you want to live on yourself?",
+     "explanation": "**by yourself** = with nobody else. The *on* version is **on your own**.",
+     "explanation_cz": "**by yourself** = bez nikoho dalšího. Verze s *on* je **on your own**."
     }
    ]
   }

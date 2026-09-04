@@ -385,7 +385,8 @@ def lint_pack(uid):
                          "stemcue", "longtable", "plusminus",
                          "sortlabel", "sortbold", "patternchip", "bothsort",
                          "parencue", "practisenote", "sortcz", "sentquiz",
-                         "wordordertype", "slotgap", "closedset")}
+                         "wordordertype", "slotgap", "closedset",
+                         "ppanchor", "seqrecap", "notimeline")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -563,6 +564,52 @@ def lint_pack(uid):
                         r"before",
                         blob, re.I):
                     f["ppcuz"].append(it)
+
+        # A14 — past perfect with no past reference point  [CANDIDATE]
+        # James smoke of b1_past_perfect 2026-09-04: "____ you ever been to
+        # London before? (have)" expecting Had — "you wouldn't use past perfect
+        # here without context". A bare `before` / `ever` / `never` is an
+        # adverb, not an anchor; with no past point stated, present perfect is
+        # the honest answer and the Czech picks neither. The item's own
+        # distractor list usually offers the better answer as a wrong one.
+        ans = (it.get("accepts") or [it.get("en", "")])[0]
+        # Narrative past perfect only. A conditional or a wish licenses `had` +
+        # participle on its own grammar and needs no story anchor ("If she had
+        # studied, she would have passed", "I wish I had studied") — the first
+        # version of this check put 46 false hits on b2_third_conditional. And
+        # `had` must actually govern a PARTICIPLE: second conditional's "If I
+        # had more time" is past simple possessive, not past perfect at all.
+        conditional = re.search(r"\bif\b|\bwould(n't)? have\b|\bwish\b|\bif only\b", ans, re.I)
+        pp = re.search(r"\b(had|hadn't)\b\s+"
+                       r"(you|i|he|she|it|we|they|[A-Z]\w+)?\s*"   # question inversion
+                       r"(\w+ly\s+)?(never\s+|ever\s+|already\s+|just\s+)*"
+                       r"(\w+(ed|en)\b|been|gone|done|seen|taken|given|come|left|lost|"
+                       r"met|paid|put|read|run|said|sent|set|sold|spent|told|won|written|"
+                       r"begun|broken|brought|bought|caught|chosen|drunk|driven|eaten|"
+                       r"fallen|felt|found|forgotten|got|heard|held|kept|known|made)\b",
+                       ans, re.I)
+        if pp and not conditional:
+            # an anchor is a past-simple CLAUSE or an explicit past frame
+            anchored = re.search(
+                r"\b(when|before|after|by the time|until|till|because|so|since)\s+"
+                r"\w+(\s+\w+)?\s+\w+|"                       # subordinate clause
+                r"\b(that|last|previous)\s+\w+|"             # "that trip"
+                r"\bby\s+(\w+\s+)?(o'clock|noon|midnight|then|\d)|"  # "by six o'clock"
+                r"\b(yesterday|ago|earlier|first|already)\b|"
+                r"\b(said|told|asked|knew|realised|realized|found out)\b",
+                ans, re.I)
+            # ...or a second past-simple verb outside the had-clause. Any -ed
+            # form counts, plus the common irregulars: a hand list missed
+            # "She showed me the book she had bought" (b2_past_perfect).
+            outside = re.sub(r"\b(had|hadn't)\b.*?(?=[,.]|$)", "", ans, flags=re.I)
+            second = re.search(r"\b\w+ed\b|"
+                               r"\b(was|were|got|came|arrived|went|left|saw|found|"
+                               r"took|put|rang|ran|sat|stood|told|said|gave|made|"
+                               r"knew|met|felt|kept|held|brought|bought|caught|"
+                               r"sent|spent|lost|won|wrote|read|drove|fell|"
+                               r"couldn't|didn't|wouldn't)\b", outside, re.I)
+            if not anchored and not second:
+                f["ppanchor"].append(it)
 
         # F3 — Use production uses a word the path has not taught
         # The rule is scoped to EARLY A1 ("recognition may lead, production
@@ -1020,6 +1067,95 @@ def lint_pack(uid):
                 "en": "Say / Not — put the mistake first (Not / Say)",
             })
 
+    # C29 — a tense unit needs a timeline  [CANDIDATE]
+    # The rule has been `confirmed` since 2026-08-29 and was never enforced.
+    # James 2026-09-04: "all tenses units need at least one timeline diagram,
+    # sometimes two, to compare with another tense so as to make meaning
+    # clearer." A shape table is not that picture — the student has to see
+    # WHERE the form lives in time relative to the tenses already taught.
+    TENSE_RE = re.compile(
+        r"\b(present|past|future)[\s_-]+(simple|continuous|perfect)\b|"
+        r"present[\s_-]?perfect|past[\s_-]?perfect|"
+        r"\bwill\b.*\bgoing to\b|\bgoing to\b.*\bwill\b|"
+        r"\bused to\b|\btenses?\b", re.I)
+    # "be used to / get used to" is an adjective construction (= accustomed),
+    # not a tense — it only matched on the substring "used to".
+    NOT_A_TENSE = re.compile(r"\b(be|get)[\s_-]?used[\s_-]?to\b", re.I)
+    _tense_blob = "%s %s" % (uid, d.get("title") or "")
+    if TENSE_RE.search(_tense_blob) and not NOT_A_TENSE.search(_tense_blob):
+        # a timeline is a wide horizontal axis, or one of the timeline diagram keys
+        TIMELINE_KEY = {"timelines", "time_now", "pp_vs_past"}
+        # attribute order varies (x1 y1 x2 y2 in practice), so parse, don't guess
+        LINE_TAG = re.compile(r"<line\b[^>]*>", re.I)
+        ATTR = re.compile(r"\b(x1|x2|y1|y2)\s*=\s*\"(-?\d+(?:\.\d+)?)\"", re.I)
+
+        def is_axis(tag):
+            a = {k.lower(): float(v) for k, v in ATTR.findall(tag)}
+            if len(a) < 4:
+                return False
+            return abs(a["y1"] - a["y2"]) < 2 and abs(a["x2"] - a["x1"]) > 200
+        n_tl = 0
+        for c in intro_cards(d):
+            svg = str(c.get("svg") or "")
+            keys = [str(c.get("diagram") or "")] + [
+                (dg if isinstance(dg, str) else str((dg or {}).get("diagram") or ""))
+                for dg in (c.get("diagrams") or [])]
+            if any(k.strip() in TIMELINE_KEY for k in keys):
+                n_tl += 1
+                continue
+            if any(is_axis(tag) for tag in LINE_TAG.findall(svg)):
+                n_tl += 1
+        if n_tl == 0:
+            f["notimeline"].append({
+                "cz": "%d intro cards, no timeline" % len(intro_cards(d)),
+                "en": "C29 tense unit — needs a timeline against the tenses already taught",
+            })
+
+    # C57 — a sequel unit opens by recapping the one it builds on  [CANDIDATE]
+    # James, b1_past_continuous_2 2026-09-04: "every unit which is 2, or 3, or 4
+    # etc should refer to the previous units in the series and build on them...
+    # start with what we already know: a one page recap of Past Continuous 1."
+    # A single bullet saying "You already know was/were + -ing" is not the recap;
+    # card 0 has to do the job. 18 B1 units are sequels, so this is a class.
+    title_now = str(d.get("title") or "")
+    m_seq = re.match(r"^(.*?)\s*(?:([2-9])|\(?advanced\)?)\s*$", title_now, re.I)
+    if m_seq and m_seq.group(1).strip():
+        base = m_seq.group(1).strip().lower()
+        idx = tree_index()["by_id"]
+        prior = [n for nid, n in idx.items()
+                 if nid != uid
+                 # the predecessor is often "... 1", so strip 1-9 here even
+                 # though only 2-9 marks a unit AS a sequel above
+                 and re.sub(r"\s*(?:[1-9]|\(?advanced\)?)\s*$", "",
+                            str(n.get("label") or ""), flags=re.I).strip().lower() == base]
+        if prior:
+            # A dedicated CARD, not a bullet. b1_past_continuous_2 card 0 said
+            # "You already know was / were + -ing" inside the new unit's own
+            # shape table, and James still flagged it: a one-line nod is not
+            # the recap. So look at card TITLES, which is what separates a page
+            # about the predecessor from a mention of it.
+            cards = intro_cards(d)
+            prior_label = str(prior[0].get("label") or "")
+            prior_stem = re.sub(r"\s*(?:[1-9]|\(?advanced\)?)\s*$", "",
+                                prior_label, flags=re.I).strip().lower()
+            recaps = False
+            for i_c, c in enumerate(cards[:4]):
+                ttl = (str(c.get("title") or "") + " " +
+                       str(c.get("title_cz") or "")).lower()
+                if re.search(r"already know|you know|recap|remind|"
+                             r"už (znáš|víš)|opakován|zopakuj", ttl, re.I):
+                    recaps = True
+                # card 0 is the unit's own name (C14), so its title naming the
+                # predecessor's stem is just the family name, not a recap
+                elif i_c > 0 and prior_stem and prior_stem in ttl:
+                    recaps = True
+            if not recaps:
+                f["seqrecap"].append({
+                    "cz": "card 0 does not recap %s" % (
+                        prior[0].get("label") or prior[0].get("id")),
+                    "en": "%s is a sequel — open on what the student already has" % title_now,
+                })
+
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
     # cringe and unnecessary." Same leftover on questions_negatives / question_words.
@@ -1306,6 +1442,9 @@ LABELS = [
     ("czfuture",    "CANDIDATE  Czech looks future, English answer has no will"),
     ("article",     "CANDIDATE  demands `the`, Czech has no demonstrative"),
     ("useleadhi",   "CANDIDATE  F3 above A1 — Use item has words not yet taught"),
+    ("ppanchor",    "CANDIDATE  A14 past perfect with no past reference point"),
+    ("seqrecap",    "CANDIDATE  C57 sequel unit does not recap its predecessor"),
+    ("notimeline",  "CANDIDATE  C29 tense unit has no timeline diagram"),
 ]
 
 
