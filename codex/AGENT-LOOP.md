@@ -29,6 +29,19 @@ will not crash, it says nothing about whether it is any good.*
 3. Order them by position in `path_order_b1` in `data/tree.json`, lowest first.
    Path order, not alphabetical — he plays in path order.
 4. Skip any unit already carrying an unanswered entry in `codex/DECISIONS.md`.
+5. **Claim check — another run may be live right now.** Runs overlap: on
+   2026-09-04 two of them worked `b1_be_used_to` at the same time and one
+   overwrote the other. Before you start a unit, and again before every commit:
+
+   ```
+   git fetch origin b1/auto
+   git log origin/b1/auto --format=%s | grep '^<unit_id>:'
+   ```
+
+   If the unit already appears in a commit subject there, it is done or being
+   done — **take the next one instead**. Rebase onto `origin/b1/auto` before
+   each push, never force-push, and if a push is rejected, fetch and re-check
+   the claim before retrying: the unit may have been finished while you worked.
 5. Skip the five level-check shells (`b1_vocab_match`, `b1_vocab_type`,
    `b1_grammar_match`, `b1_grammar_type`, `b1_finale`) — they pool at runtime and
    have no pack to author. Spec is `codex/LEVEL-CHECKS.md`.
