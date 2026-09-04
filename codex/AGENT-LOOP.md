@@ -34,6 +34,37 @@ Answers to the first run's queue. These are settled; do not re-ask them.
 
 ## One-off tasks, ahead of new units
 
+**Rewrite swaps that do not reconstruct — 157 findings across 22 B1 leaves.
+This is the top priority.** `py -X utf8 codex/check_rewrite.py <pack>` lists
+them. In `use_mode: "rewrite"` the student replaces the underlined words with
+the lemma; if that swap does not produce the target sentence, **a correct answer
+is marked wrong**. James hit four in one unit on 2026-09-04. `b1_personality`
+and `b1_word_families` are 12 of 12.
+
+Fix by moving the underline so it covers exactly what changes, or by changing
+the target to what a correct swap produces. Worked examples in `b1_travel`
+(clean now): *long wait* → underline only *wait*; *a cheap place to stay* →
+*cheap places to stay*, so no article is stranded on uncountable
+*accommodation*; *never know where we are* → *always lose our way*, no silent
+polarity flip; *tell the hotel we are not happy* → target is what the swap
+yields, fuller version also accepted.
+
+The check has false positives — a student legitimately supplies an article
+before a countable noun (`refund`, `deposit`), and it already ignores that
+case. **Judge every finding; do not batch-rewrite.** Verify with
+`check_rewrite.py <pack>` returning clean, and never by loosening `accepts` to
+swallow a wrong answer.
+
+**Same script checks C57 on the leaves**, which `lint.py` cannot see (it only
+reads `data/grammar/blocks/`). Sequel leaves need a "You already know" card 0 —
+the F8 pattern the A2 leaves already use. `b1_travel` card 0 is the model: four
+tiles, not the full picture set, plus a note saying what the earlier unit
+covered and which words genuinely repeat.
+
+**Anything the script marks `[PROTECTED]` is A1 or A2 — leave it. James has
+been told those are there.**
+
+
 **C29 timelines on the tense units that lack one.** `lint.py` now flags this as
 `notimeline`. Every tense unit needs at least one timeline, sometimes two, to
 compare with another tense (James 2026-09-04). Outstanding: `b2_past_perfect`,
