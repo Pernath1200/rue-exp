@@ -32,7 +32,22 @@ Answers to the first run's queue. These are settled; do not re-ask them.
 | **`b1_used_to` A0** | Accept the *used to* twin on action items; the authored Quiz options are what force `would`. Do not cue the gap. |
 | **`b1_relative_clauses_2` "nothing"** | Mark those three items `type: false` — Quiz-only. The chip is the teaching point; nobody types "nothing" into a gap. **Do this on the next run that touches the unit.** |
 
-## One-off task, ahead of new units
+## One-off tasks, ahead of new units
+
+**C57 recap cards on the 10 B1 sequel units.** `py -X utf8 codex/lint.py <id>`
+now flags this as `seqrecap`. Each needs a dedicated early card recapping its
+predecessor's form — the predecessor is named in the flag — then the new
+material, plus recycling from the earlier unit where it helps. Card 0 stays the
+unit name (C14), so the recap is card 1. The ten:
+`b1_past_continuous_2` · `b1_agreement_tricky` · `b1_articles_advanced` ·
+`b1_comparison_2` · `b1_prepositions_time_2` · `b1_reflexives_2` ·
+`b1_relative_clauses_2` · `b1_reported_speech_2` · `b1_verb_patterns_advanced` ·
+`b1_word_order_fronting`.
+Adding a card may push a unit past the 4–6 guideline; that is fine, C11 and C57
+both outrank the count. Do **not** touch the three A2 sequels the check also
+flags — A2 is protected, and James has been told they are there.
+
+
 
 **Sweep A14 across the 16 grammar units already drafted on this branch.** A14 was
 learned from James's smoke of `b1_past_perfect` on 2026-09-04, *after* those units

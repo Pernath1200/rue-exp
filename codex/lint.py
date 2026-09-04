@@ -385,7 +385,8 @@ def lint_pack(uid):
                          "stemcue", "longtable", "plusminus",
                          "sortlabel", "sortbold", "patternchip", "bothsort",
                          "parencue", "practisenote", "sortcz", "sentquiz",
-                         "wordordertype", "slotgap", "closedset")}
+                         "wordordertype", "slotgap", "closedset",
+                         "ppanchor", "seqrecap")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -563,6 +564,31 @@ def lint_pack(uid):
                         r"before",
                         blob, re.I):
                     f["ppcuz"].append(it)
+
+        # A14 — past perfect with no past reference point  [CANDIDATE]
+        # James smoke of b1_past_perfect 2026-09-04: "____ you ever been to
+        # London before? (have)" expecting Had — "you wouldn't use past perfect
+        # here without context". A bare `before` / `ever` / `never` is an
+        # adverb, not an anchor; with no past point stated, present perfect is
+        # the honest answer and the Czech picks neither. The item's own
+        # distractor list usually offers the better answer as a wrong one.
+        ans = (it.get("accepts") or [it.get("en", "")])[0]
+        if re.search(r"\b(had|hadn't)\b", ans, re.I):
+            # an anchor is a past-simple CLAUSE or an explicit past frame
+            anchored = re.search(
+                r"\b(when|before|after|by the time|until|till|because|so|since)\s+"
+                r"\w+(\s+\w+)?\s+\w+|"                       # subordinate clause
+                r"\b(that|last|previous)\s+\w+|"             # "that trip"
+                r"\b(yesterday|ago|earlier|first)\b|"
+                r"\b(said|told|asked|knew|realised|realized|found out)\b",
+                ans, re.I)
+            # ...and a second past-simple verb somewhere outside the had-clause
+            outside = re.sub(r"\b(had|hadn't)\b.*?(?=[,.]|$)", "", ans, flags=re.I)
+            second = re.search(r"\b(was|were|got|came|arrived|called|went|left|"
+                               r"opened|saw|found|took|put|rang|couldn't|didn't|"
+                               r"walked|started|returned|moved)\b", outside, re.I)
+            if not anchored and not second:
+                f["ppanchor"].append(it)
 
         # F3 — Use production uses a word the path has not taught
         # The rule is scoped to EARLY A1 ("recognition may lead, production
@@ -1020,6 +1046,51 @@ def lint_pack(uid):
                 "en": "Say / Not — put the mistake first (Not / Say)",
             })
 
+    # C57 — a sequel unit opens by recapping the one it builds on  [CANDIDATE]
+    # James, b1_past_continuous_2 2026-09-04: "every unit which is 2, or 3, or 4
+    # etc should refer to the previous units in the series and build on them...
+    # start with what we already know: a one page recap of Past Continuous 1."
+    # A single bullet saying "You already know was/were + -ing" is not the recap;
+    # card 0 has to do the job. 18 B1 units are sequels, so this is a class.
+    title_now = str(d.get("title") or "")
+    m_seq = re.match(r"^(.*?)\s*(?:([2-9])|\(?advanced\)?)\s*$", title_now, re.I)
+    if m_seq and m_seq.group(1).strip():
+        base = m_seq.group(1).strip().lower()
+        idx = tree_index()["by_id"]
+        prior = [n for nid, n in idx.items()
+                 if nid != uid
+                 # the predecessor is often "... 1", so strip 1-9 here even
+                 # though only 2-9 marks a unit AS a sequel above
+                 and re.sub(r"\s*(?:[1-9]|\(?advanced\)?)\s*$", "",
+                            str(n.get("label") or ""), flags=re.I).strip().lower() == base]
+        if prior:
+            # A dedicated CARD, not a bullet. b1_past_continuous_2 card 0 said
+            # "You already know was / were + -ing" inside the new unit's own
+            # shape table, and James still flagged it: a one-line nod is not
+            # the recap. So look at card TITLES, which is what separates a page
+            # about the predecessor from a mention of it.
+            cards = intro_cards(d)
+            prior_label = str(prior[0].get("label") or "")
+            prior_stem = re.sub(r"\s*(?:[1-9]|\(?advanced\)?)\s*$", "",
+                                prior_label, flags=re.I).strip().lower()
+            recaps = False
+            for i_c, c in enumerate(cards[:4]):
+                ttl = (str(c.get("title") or "") + " " +
+                       str(c.get("title_cz") or "")).lower()
+                if re.search(r"already know|you know|recap|remind|"
+                             r"už (znáš|víš)|opakován|zopakuj", ttl, re.I):
+                    recaps = True
+                # card 0 is the unit's own name (C14), so its title naming the
+                # predecessor's stem is just the family name, not a recap
+                elif i_c > 0 and prior_stem and prior_stem in ttl:
+                    recaps = True
+            if not recaps:
+                f["seqrecap"].append({
+                    "cz": "card 0 does not recap %s" % (
+                        prior[0].get("label") or prior[0].get("id")),
+                    "en": "%s is a sequel — open on what the student already has" % title_now,
+                })
+
     # C17 — Remember / Pamatuj recap card  [EXACT]
     # James, a1_object_pronouns 2026-08-29: "cut this page: it's stupid and
     # cringe and unnecessary." Same leftover on questions_negatives / question_words.
@@ -1306,6 +1377,8 @@ LABELS = [
     ("czfuture",    "CANDIDATE  Czech looks future, English answer has no will"),
     ("article",     "CANDIDATE  demands `the`, Czech has no demonstrative"),
     ("useleadhi",   "CANDIDATE  F3 above A1 — Use item has words not yet taught"),
+    ("ppanchor",    "CANDIDATE  A14 past perfect with no past reference point"),
+    ("seqrecap",    "CANDIDATE  C57 sequel unit does not recap its predecessor"),
 ]
 
 

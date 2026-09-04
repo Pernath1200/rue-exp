@@ -212,6 +212,7 @@ A **ratchet** is a count of remaining violations that is only allowed to fall.
 It was how C9 survived a 986-hit corpus without turning the build red forever.
 As of 2026-08-28 the A1–B1 grammar count is **0**: a new `body`, or a bullet
 over ~15 words, is an error. Vocab and B2+ are not in that count.
+| **C57** | **A sequel unit opens with a recap of the one it builds on.** Any unit numbered 2, 3, 4 or *advanced* starts from what the student already has: a dedicated early card recapping the predecessor's form, then the new material, and recycling from the earlier unit wherever it is useful. A single bullet inside the new unit's own shape table (*You already know was / were + -ing*) is a mention, not a recap — the test is whether a **card** does the job. | `b1_past_continuous_2` 2026-09-04, James smoke: *"every unit which is 2, or 3, or 4 etc should refer to the previous units in the series and build on them... start with what we already know: a one page recap of Past Continuous 1."* 15 units across A2/B1/B2 have the same gap. | `enforced` — lint `seqrecap` |
 
 ---
 
