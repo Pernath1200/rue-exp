@@ -21,6 +21,33 @@ will not crash, it says nothing about whether it is any good.*
 | **Block waiting for an answer** | He may be on a plane. Queue the question and carry on with the next unit. |
 | **Invent node ids** | `codex/B1-PLAN.md` owns the roster. |
 
+## Standing decisions — James, 2026-09-04
+
+Answers to the first run's queue. These are settled; do not re-ask them.
+
+| | |
+|---|---|
+| **`lint.py` A8 / F4 / vocablevel** | **Fixed** in `lint.py` on main. The three false-positive classes (`had to`, `had` + object, negative question tags), the `She's` possessive misread, and `vocablevel` firing on grammar packs are all guarded now. Their counts are trustworthy again. Never write an ungrammatical string into `accepts` to move a number. |
+| **A4 `the` demands** | Leave them where English forces the article on a known referent (*the film*, *the station*, *the police*, *drive on the left*). Do not strip `the`, do not accept article-free wordings no native writes. Where the Czech can carry a demonstrative naturally, adding one is the better fix. |
+| **`b1_used_to` A0** | Accept the *used to* twin on action items; the authored Quiz options are what force `would`. Do not cue the gap. |
+| **`b1_relative_clauses_2` "nothing"** | Mark those three items `type: false` — Quiz-only. The chip is the teaching point; nobody types "nothing" into a gap. **Do this on the next run that touches the unit.** |
+
+## Order of work
+
+1. The remaining unseen (`- [ ][ ]`) B1 **grammar** stubs.
+2. Then the **thin vocab leaves** — 36 words but only 8 sentences. Target is one
+   sentence per lemma, under the same rules (C49 intro shows every word,
+   `quiz_mode: sentence_gap`, E10 Use is production of the new word).
+3. The 16 `- [x][ ]` grammar units James has already played are **repair** work
+   and come last, unless he says otherwise.
+
+## Start of every run
+
+`git fetch origin && git merge origin/main` into `b1/auto` before working. That
+is how James's answers, `lint.py` fixes and contract changes reach you. If the
+merge conflicts, take main's version of anything under `codex/` and keep yours
+under `data/`.
+
 ## Pick the next unit
 
 1. Read `codex/INSPECTED.md`. Take B1 rows only.
