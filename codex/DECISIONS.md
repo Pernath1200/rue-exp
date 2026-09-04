@@ -78,6 +78,18 @@ Format:
 **Default if unanswered:** b — done for the rest of this run. After the collision, this run took `b1_prepositions_time_2` (last unworked row in `path_order_b1`) and then `b1_cause_concession`, working backwards, and there were no further collisions. This is a deliberate deviation from "lowest first" in AGENT-LOOP.md and the only one made. It costs nothing pedagogically — every `[ ][ ]` unit still gets done — but it means the units nearest the front of your play order are the fast run's work, not this one's. (c) is the proper fix if two runs are meant to be normal; if they are not, the thing to fix is the schedule, not the loop.
 → (James: your answer here)
 
+### b1_degree_adverbs · nine intro cards cut to six, on a unit you have played
+**Q:** This pack is `- [x][ ]` — you played it and its note says the intro was rebuilt after that smoke. It had **nine** cards against the 4–6 target in AGENT-LOOP.md, and cards 1–4 (a bit · quite · very/really · extremely) each restated one row of card 0's own scale table. May a run restructure an intro you have already smoked?
+**Options:** a) yes, when a stated rule is broken — C17 (the Remember card) is an EXACT lint hit and the card count is a written target / b) only the EXACT hit (cut Remember, leave the eight) / c) never touch a smoked intro; queue it and wait.
+**Default if unanswered:** a — done this run. Card 8 (Remember) is cut under C17. Cards 1+2 merged into *a bit / quite* and 3+4 into *very / really / extremely*, keeping every row, every bold and the `scale` diagram, which gets it to six cards. Nothing was deleted except the recap. If you would rather (c) as a general rule, say so and the loop will stop at the EXACT hits on `[x][ ]` units.
+→ (James: your answer here)
+
+### b1_second_conditional · a real A8 gap the lint cannot see
+**Q:** All seven A8 flags on this pack are the unsatisfiable `had` class already queued above (*if I'd more time*). But underneath them there is a **real** one the check never reaches, because it stops at the first unsatisfied expansion: *I would* → **I'd**. *If I had more time, I'd learn Italian* is what a student will type, and the pack's `accepts` does not have it, so it grades wrong. Should the loop fix a real A8 gap when doing so cannot move the flag count?
+**Options:** a) yes — add the `'d` twins across the pack and say in the commit that the counter cannot move / b) no — the gate says the count must come down, so leave it and let the next run do it once the check is guarded / c) fix the check first.
+**Default if unanswered:** a, but **not done this run** — the run ended before it. Flagging it here so it is not lost: it is a live grading bug on a unit near the front of your B1 path, and `b1_wishes` has the same six flags with no real gap underneath (*I wish I'd more time* is not English, so there is nothing to add there).
+→ (James: your answer here)
+
 ---
 
 ## Answered
