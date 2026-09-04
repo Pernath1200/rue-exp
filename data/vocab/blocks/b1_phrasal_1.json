@@ -1,1013 +1,1013 @@
 {
-  "id": "b1_phrasal_1",
-  "title": "Phrasal verbs 1",
-  "level": "B1",
-  "tree_node": "leaf_phrasal_1_b1",
-  "codex_unit": "V_PHR-B1B2-01",
-  "quality": "draft",
-  "note": "LEXIS pack: the meanings. The grammar (separable/inseparable, pronoun position) is b1_phrasal_verbs, which plays immediately before. Course doc wants ~60 cumulative across packs 1 and 2. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Four of the eight shipped frames could never gap: three used a past form (*threw away*, *ran out of*, *looked up*) and one SPLIT the verb (*pick me up*), which is exactly what the pack teaches — but sentenceToFrame matches the lemma string literally, so a split frame produces no gap. Every frame here keeps its particle next to its verb; the split belongs to b1_phrasal_verbs, and the frames page now says so. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get up* belongs to leaf_get_b1 (path 43) and *clean up* to leaf_environment_b1 (39); replaced with **wash up** and **stay in**. · Pool-checked against everything taught before leaf_phrasal_1_b1 — 0 unknown types.",
-  "default_direction": "cz_to_en",
-  "quiz_mode": "sentence_gap",
-  "intro": [
+ "id": "b1_phrasal_1",
+ "title": "Phrasal verbs 1",
+ "level": "B1",
+ "tree_node": "leaf_phrasal_1_b1",
+ "codex_unit": "V_PHR-B1B2-01",
+ "quality": "draft",
+ "note": "LEXIS pack: the meanings. The grammar (separable/inseparable, pronoun position) is b1_phrasal_verbs, which plays immediately before. Course doc wants ~60 cumulative across packs 1 and 2. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Four of the eight shipped frames could never gap: three used a past form (*threw away*, *ran out of*, *looked up*) and one SPLIT the verb (*pick me up*), which is exactly what the pack teaches — but sentenceToFrame matches the lemma string literally, so a split frame produces no gap. Every frame here keeps its particle next to its verb; the split belongs to b1_phrasal_verbs, and the frames page now says so. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get up* belongs to leaf_get_b1 (path 43) and *clean up* to leaf_environment_b1 (39); replaced with **wash up** and **stay in**. · Pool-checked against everything taught before leaf_phrasal_1_b1 — 0 unknown types. · 2026-09-04: six rewrite items — the paraphrase had swallowed the object, so the swap left the phrasal verb with nothing after it. The underline now stops at the verb.",
+ "default_direction": "cz_to_en",
+ "quiz_mode": "sentence_gap",
+ "intro": [
+  {
+   "title": "Around the house",
+   "title_cz": "Doma",
+   "pictures": [
     {
-      "title": "Around the house",
-      "title_cz": "Doma",
-      "pictures": [
-        {
-          "icon": "💡",
-          "en": "turn on",
-          "cz": "zapnout"
-        },
-        {
-          "icon": "🔌",
-          "en": "turn off",
-          "cz": "vypnout"
-        },
-        {
-          "icon": "🔊",
-          "en": "turn up",
-          "cz": "zesílit"
-        },
-        {
-          "icon": "🔉",
-          "en": "turn down",
-          "cz": "ztlumit"
-        },
-        {
-          "icon": "🗑️",
-          "en": "throw away",
-          "cz": "vyhodit"
-        },
-        {
-          "icon": "🧹",
-          "en": "tidy up",
-          "cz": "uklidit"
-        },
-        {
-          "icon": "🧺",
-          "en": "put away",
-          "cz": "uklidit (na místo)"
-        },
-        {
-          "icon": "🍽️",
-          "en": "wash up",
-          "cz": "umýt nádobí"
-        },
-        {
-          "icon": "🔧",
-          "en": "put up",
-          "cz": "pověsit"
-        },
-        {
-          "icon": "📦",
-          "en": "take out",
-          "cz": "vynést"
-        },
-        {
-          "icon": "🪟",
-          "en": "open up",
-          "cz": "otevřít"
-        },
-        {
-          "icon": "🛏️",
-          "en": "make up (a bed)",
-          "cz": "ustlat"
-        }
-      ]
+     "icon": "💡",
+     "en": "turn on",
+     "cz": "zapnout"
     },
     {
-      "title": "Every day",
-      "title_cz": "Každý den",
-      "pictures": [
-        {
-          "icon": "⏰",
-          "en": "wake up",
-          "cz": "probudit se"
-        },
-        {
-          "icon": "🛋️",
-          "en": "stay in",
-          "cz": "zůstat doma"
-        },
-        {
-          "icon": "👕",
-          "en": "put on",
-          "cz": "obléct si"
-        },
-        {
-          "icon": "👚",
-          "en": "take off",
-          "cz": "svléknout si"
-        },
-        {
-          "icon": "🍳",
-          "en": "warm up",
-          "cz": "ohřát"
-        },
-        {
-          "icon": "🚪",
-          "en": "go out",
-          "cz": "jít ven"
-        },
-        {
-          "icon": "🏠",
-          "en": "come back",
-          "cz": "vrátit se"
-        },
-        {
-          "icon": "🛒",
-          "en": "run out of",
-          "cz": "dojít (zásoba)"
-        },
-        {
-          "icon": "🕐",
-          "en": "set off",
-          "cz": "vyrazit"
-        },
-        {
-          "icon": "😴",
-          "en": "lie down",
-          "cz": "lehnout si"
-        },
-        {
-          "icon": "🍽️",
-          "en": "eat out",
-          "cz": "jíst venku"
-        },
-        {
-          "icon": "📺",
-          "en": "switch over",
-          "cz": "přepnout"
-        }
-      ]
+     "icon": "🔌",
+     "en": "turn off",
+     "cz": "vypnout"
     },
     {
-      "title": "Small jobs",
-      "title_cz": "Drobnosti",
-      "pictures": [
-        {
-          "icon": "📝",
-          "en": "fill in",
-          "cz": "vyplnit"
-        },
-        {
-          "icon": "✂️",
-          "en": "cut off",
-          "cz": "odříznout"
-        },
-        {
-          "icon": "🔍",
-          "en": "look for",
-          "cz": "hledat"
-        },
-        {
-          "icon": "📖",
-          "en": "look up",
-          "cz": "vyhledat"
-        },
-        {
-          "icon": "🤝",
-          "en": "pick up",
-          "cz": "vyzvednout"
-        },
-        {
-          "icon": "📉",
-          "en": "cut down",
-          "cz": "omezit"
-        },
-        {
-          "icon": "🔁",
-          "en": "try again",
-          "cz": "zkusit znovu"
-        },
-        {
-          "icon": "🎁",
-          "en": "give away",
-          "cz": "rozdat"
-        },
-        {
-          "icon": "🧾",
-          "en": "pay back",
-          "cz": "vrátit peníze"
-        },
-        {
-          "icon": "⏳",
-          "en": "put off",
-          "cz": "odložit"
-        },
-        {
-          "icon": "🔨",
-          "en": "fix up",
-          "cz": "opravit"
-        },
-        {
-          "icon": "🧷",
-          "en": "hold on",
-          "cz": "počkat"
-        }
-      ]
+     "icon": "🔊",
+     "en": "turn up",
+     "cz": "zesílit"
     },
     {
-      "title": "You will use these words in",
-      "title_cz": "Tato slova použiješ ve větách",
-      "frames": [
-        "Please … the … · *Prosím, … …*",
-        "Can you … the …? · *Můžeš … …?*",
-        "We … at … · *… v …*",
-        "I need to … before … · *Musím …, než …*",
-        "Do not … the … · *Ne… …*"
-      ],
-      "note": "Many of these split around the object: *turn the light **off***, *pick the children **up***. The grammar of that split is **Phrasal verbs 1** (b1_phrasal_verbs), which plays just before this pack. Here the job is the meaning.",
-      "note_cz": "Gramatiku dělitelnosti řeší b1_phrasal_verbs, tady jde o význam."
+     "icon": "🔉",
+     "en": "turn down",
+     "cz": "ztlumit"
+    },
+    {
+     "icon": "🗑️",
+     "en": "throw away",
+     "cz": "vyhodit"
+    },
+    {
+     "icon": "🧹",
+     "en": "tidy up",
+     "cz": "uklidit"
+    },
+    {
+     "icon": "🧺",
+     "en": "put away",
+     "cz": "uklidit (na místo)"
+    },
+    {
+     "icon": "🍽️",
+     "en": "wash up",
+     "cz": "umýt nádobí"
+    },
+    {
+     "icon": "🔧",
+     "en": "put up",
+     "cz": "pověsit"
+    },
+    {
+     "icon": "📦",
+     "en": "take out",
+     "cz": "vynést"
+    },
+    {
+     "icon": "🪟",
+     "en": "open up",
+     "cz": "otevřít"
+    },
+    {
+     "icon": "🛏️",
+     "en": "make up (a bed)",
+     "cz": "ustlat"
     }
-  ],
-  "blocks": [
+   ]
+  },
+  {
+   "title": "Every day",
+   "title_cz": "Každý den",
+   "pictures": [
     {
-      "id": "b1_phrasal_1_1",
-      "title": "Phrasal 1 · around the house",
-      "items": [
-        {
-          "en": "turn on",
-          "cz": "zapnout",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "turn off",
-          "cz": "vypnout",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "turn up",
-          "cz": "zesílit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "turn down",
-          "cz": "ztlumit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "throw away",
-          "cz": "vyhodit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "tidy up",
-          "cz": "uklidit",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "put away",
-          "cz": "uklidit (na místo)",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "wash up",
-          "cz": "umýt nádobí",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "put up",
-          "cz": "pověsit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "take out",
-          "cz": "vynést",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "open up",
-          "cz": "otevřít",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "make up (a bed)",
-          "cz": "ustlat",
-          "use": [
-            "we_need_to"
-          ]
-        }
-      ]
+     "icon": "⏰",
+     "en": "wake up",
+     "cz": "probudit se"
     },
     {
-      "id": "b1_phrasal_1_2",
-      "title": "Phrasal 1 · every day",
-      "items": [
-        {
-          "en": "wake up",
-          "cz": "probudit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "stay in",
-          "cz": "zůstat doma",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "put on",
-          "cz": "obléct si",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "take off",
-          "cz": "svléknout si",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "warm up",
-          "cz": "ohřát",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "go out",
-          "cz": "jít ven",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "come back",
-          "cz": "vrátit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "run out of",
-          "cz": "dojít (zásoba)",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "set off",
-          "cz": "vyrazit",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "lie down",
-          "cz": "lehnout si",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "eat out",
-          "cz": "jíst venku",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "switch over",
-          "cz": "přepnout",
-          "use": [
-            "i_want_to"
-          ]
-        }
-      ]
+     "icon": "🛋️",
+     "en": "stay in",
+     "cz": "zůstat doma"
     },
     {
-      "id": "b1_phrasal_1_3",
-      "title": "Phrasal 1 · small jobs",
-      "items": [
-        {
-          "en": "fill in",
-          "cz": "vyplnit",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "cut off",
-          "cz": "odříznout",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "look for",
-          "cz": "hledat",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "look up",
-          "cz": "vyhledat",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "pick up",
-          "cz": "vyzvednout",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "cut down",
-          "cz": "omezit",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "try again",
-          "cz": "zkusit znovu",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "give away",
-          "cz": "rozdat",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "pay back",
-          "cz": "vrátit peníze",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "put off",
-          "cz": "odložit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "fix up",
-          "cz": "opravit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "hold on",
-          "cz": "počkat",
-          "use": [
-            "i_want_to"
-          ]
-        }
-      ]
+     "icon": "👕",
+     "en": "put on",
+     "cz": "obléct si"
+    },
+    {
+     "icon": "👚",
+     "en": "take off",
+     "cz": "svléknout si"
+    },
+    {
+     "icon": "🍳",
+     "en": "warm up",
+     "cz": "ohřát"
+    },
+    {
+     "icon": "🚪",
+     "en": "go out",
+     "cz": "jít ven"
+    },
+    {
+     "icon": "🏠",
+     "en": "come back",
+     "cz": "vrátit se"
+    },
+    {
+     "icon": "🛒",
+     "en": "run out of",
+     "cz": "dojít (zásoba)"
+    },
+    {
+     "icon": "🕐",
+     "en": "set off",
+     "cz": "vyrazit"
+    },
+    {
+     "icon": "😴",
+     "en": "lie down",
+     "cz": "lehnout si"
+    },
+    {
+     "icon": "🍽️",
+     "en": "eat out",
+     "cz": "jíst venku"
+    },
+    {
+     "icon": "📺",
+     "en": "switch over",
+     "cz": "přepnout"
     }
-  ],
-  "sentences": [
+   ]
+  },
+  {
+   "title": "Small jobs",
+   "title_cz": "Drobnosti",
+   "pictures": [
     {
-      "en": "Please turn on the light when you come in.",
-      "cz": "Až přijdeš, rozsviť prosím.",
-      "lemmas": [
-        "turn on"
-      ],
-      "accepts": [
-        "Please turn on the light when you come in"
-      ]
+     "icon": "📝",
+     "en": "fill in",
+     "cz": "vyplnit"
     },
     {
-      "en": "Please turn off the light before you leave the room.",
-      "cz": "Než odejdeš z pokoje, zhasni prosím.",
-      "lemmas": [
-        "turn off"
-      ],
-      "accepts": [
-        "Please turn off the light before you leave the room"
-      ]
+     "icon": "✂️",
+     "en": "cut off",
+     "cz": "odříznout"
     },
     {
-      "en": "Can you turn up the radio? I cannot hear it.",
-      "cz": "Můžeš zesílit rádio? Neslyším ho.",
-      "lemmas": [
-        "turn up"
-      ],
-      "accepts": [
-        "Can you turn up the radio? I cannot hear it",
-        "Can you turn up the radio? I can't hear it"
-      ]
+     "icon": "🔍",
+     "en": "look for",
+     "cz": "hledat"
     },
     {
-      "en": "Please turn down the music after ten.",
-      "cz": "Po desáté prosím ztlum hudbu.",
-      "lemmas": [
-        "turn down"
-      ],
-      "accepts": [
-        "Please turn down the music after ten"
-      ]
+     "icon": "📖",
+     "en": "look up",
+     "cz": "vyhledat"
     },
     {
-      "en": "Do not throw away the tickets; we need them later.",
-      "cz": "Nevyhazuj ty lístky, později je budeme potřebovat.",
-      "lemmas": [
-        "throw away"
-      ],
-      "accepts": [
-        "Do not throw away the tickets; we need them later",
-        "Don't throw away the tickets; we need them later"
-      ]
+     "icon": "🤝",
+     "en": "pick up",
+     "cz": "vyzvednout"
     },
     {
-      "en": "I need to tidy up the kitchen before my parents arrive.",
-      "cz": "Musím uklidit kuchyň, než přijedou rodiče.",
-      "lemmas": [
-        "tidy up"
-      ],
-      "accepts": [
-        "I need to tidy up the kitchen before my parents arrive"
-      ]
+     "icon": "📉",
+     "en": "cut down",
+     "cz": "omezit"
     },
     {
-      "en": "The children put away their books before dinner.",
-      "cz": "Děti si před večeří uklidily knihy.",
-      "lemmas": [
-        "put away"
-      ],
-      "accepts": [
-        "The children put away their books before dinner"
-      ]
+     "icon": "🔁",
+     "en": "try again",
+     "cz": "zkusit znovu"
     },
     {
-      "en": "I wash up while my husband makes the coffee.",
-      "cz": "Já myju nádobí a manžel dělá kávu.",
-      "lemmas": [
-        "wash up"
-      ],
-      "accepts": [
-        "I wash up while my husband makes the coffee"
-      ]
+     "icon": "🎁",
+     "en": "give away",
+     "cz": "rozdat"
     },
     {
-      "en": "We want to put up a picture above the sofa.",
-      "cz": "Chceme nad gauč pověsit obraz.",
-      "lemmas": [
-        "put up"
-      ],
-      "accepts": [
-        "We want to put up a picture above the sofa"
-      ]
+     "icon": "🧾",
+     "en": "pay back",
+     "cz": "vrátit peníze"
     },
     {
-      "en": "Please take out the old paper on Monday.",
-      "cz": "V pondělí prosím vynes starý papír.",
-      "lemmas": [
-        "take out"
-      ],
-      "accepts": [
-        "Please take out the old paper on Monday"
-      ]
+     "icon": "⏳",
+     "en": "put off",
+     "cz": "odložit"
     },
     {
-      "en": "They open up the shop at seven every morning.",
-      "cz": "Obchod otevírají každé ráno v sedm.",
-      "lemmas": [
-        "open up"
-      ],
-      "accepts": [
-        "They open up the shop at seven every morning"
-      ]
+     "icon": "🔨",
+     "en": "fix up",
+     "cz": "opravit"
     },
     {
-      "en": "I make up the bed when a guest comes.",
-      "cz": "Když přijde návštěva, ustelu postel.",
-      "lemmas": [
-        "make up (a bed)"
-      ],
-      "accepts": [
-        "I make up the bed when a guest comes"
-      ]
-    },
-    {
-      "en": "I wake up before seven every morning.",
-      "cz": "Každé ráno se budím před sedmou.",
-      "lemmas": [
-        "wake up"
-      ],
-      "accepts": [
-        "I wake up before seven every morning"
-      ]
-    },
-    {
-      "en": "We stay in on Sunday evening and watch a film.",
-      "cz": "V neděli večer zůstáváme doma a díváme se na film.",
-      "lemmas": [
-        "stay in"
-      ],
-      "accepts": [
-        "We stay in on Sunday evening and watch a film"
-      ]
-    },
-    {
-      "en": "He put on his coat because the weather changed.",
-      "cz": "Oblékl si kabát, protože se změnilo počasí.",
-      "lemmas": [
-        "put on"
-      ],
-      "accepts": [
-        "He put on his coat because the weather changed"
-      ]
-    },
-    {
-      "en": "Please take off your shoes at the door.",
-      "cz": "U dveří si prosím zuj boty.",
-      "lemmas": [
-        "take off"
-      ],
-      "accepts": [
-        "Please take off your shoes at the door"
-      ]
-    },
-    {
-      "en": "I warm up the food from yesterday.",
-      "cz": "Ohřeju jídlo ze včerejška.",
-      "lemmas": [
-        "warm up"
-      ],
-      "accepts": [
-        "I warm up the food from yesterday"
-      ]
-    },
-    {
-      "en": "We go out on Friday, but not on Saturday.",
-      "cz": "V pátek chodíme ven, ale v sobotu ne.",
-      "lemmas": [
-        "go out"
-      ],
-      "accepts": [
-        "We go out on Friday, but not on Saturday"
-      ]
-    },
-    {
-      "en": "They come back from Italy on Sunday.",
-      "cz": "Z Itálie se vracejí v neděli.",
-      "lemmas": [
-        "come back"
-      ],
-      "accepts": [
-        "They come back from Italy on Sunday"
-      ]
-    },
-    {
-      "en": "We often run out of milk before the weekend.",
-      "cz": "Před víkendem nám často dojde mléko.",
-      "lemmas": [
-        "run out of"
-      ],
-      "accepts": [
-        "We often run out of milk before the weekend"
-      ]
-    },
-    {
-      "en": "We set off at six to miss the traffic.",
-      "cz": "Vyrážíme v šest, abychom se vyhnuli provozu.",
-      "lemmas": [
-        "set off"
-      ],
-      "accepts": [
-        "We set off at six to miss the traffic"
-      ]
-    },
-    {
-      "en": "I lie down for ten minutes after lunch.",
-      "cz": "Po obědě si na deset minut lehnu.",
-      "lemmas": [
-        "lie down"
-      ],
-      "accepts": [
-        "I lie down for ten minutes after lunch"
-      ]
-    },
-    {
-      "en": "We eat out once a month, usually on a Friday.",
-      "cz": "Jednou za měsíc jdeme na jídlo ven, obvykle v pátek.",
-      "lemmas": [
-        "eat out"
-      ],
-      "accepts": [
-        "We eat out once a month, usually on a Friday"
-      ]
-    },
-    {
-      "en": "Can we switch over? The film has started.",
-      "cz": "Můžeme přepnout? Ten film už začal.",
-      "lemmas": [
-        "switch over"
-      ],
-      "accepts": [
-        "Can we switch over? The film has started"
-      ]
-    },
-    {
-      "en": "Please fill in the form before you send it.",
-      "cz": "Než ten formulář pošleš, vyplň ho prosím.",
-      "lemmas": [
-        "fill in"
-      ],
-      "accepts": [
-        "Please fill in the form before you send it"
-      ]
-    },
-    {
-      "en": "They cut off the water for two hours this morning.",
-      "cz": "Dneska ráno na dvě hodiny odstavili vodu.",
-      "lemmas": [
-        "cut off"
-      ],
-      "accepts": [
-        "They cut off the water for two hours this morning"
-      ]
-    },
-    {
-      "en": "I look for my keys every morning.",
-      "cz": "Klíče hledám každé ráno.",
-      "lemmas": [
-        "look for"
-      ],
-      "accepts": [
-        "I look for my keys every morning"
-      ]
-    },
-    {
-      "en": "I look up every new word in a dictionary.",
-      "cz": "Každé nové slovo si vyhledám ve slovníku.",
-      "lemmas": [
-        "look up"
-      ],
-      "accepts": [
-        "I look up every new word in a dictionary"
-      ]
-    },
-    {
-      "en": "Can you pick up the children at four?",
-      "cz": "Můžeš vyzvednout děti ve čtyři?",
-      "lemmas": [
-        "pick up"
-      ],
-      "accepts": [
-        "Can you pick up the children at four?"
-      ]
-    },
-    {
-      "en": "The doctor told me to cut down on coffee.",
-      "cz": "Doktor mi řekl, ať omezím kávu.",
-      "lemmas": [
-        "cut down"
-      ],
-      "accepts": [
-        "The doctor told me to cut down on coffee"
-      ]
-    },
-    {
-      "en": "If the machine says no, try again in a minute.",
-      "cz": "Když automat nechce, zkus to za minutu znovu.",
-      "lemmas": [
-        "try again"
-      ],
-      "accepts": [
-        "If the machine says no, try again in a minute"
-      ]
-    },
-    {
-      "en": "They give away free coffee on Monday morning.",
-      "cz": "V pondělí ráno rozdávají kávu zdarma.",
-      "lemmas": [
-        "give away"
-      ],
-      "accepts": [
-        "They give away free coffee on Monday morning"
-      ]
-    },
-    {
-      "en": "I will pay back the money at the end of the month.",
-      "cz": "Peníze vrátím na konci měsíce.",
-      "lemmas": [
-        "pay back"
-      ],
-      "accepts": [
-        "I will pay back the money at the end of the month",
-        "I'll pay back the money at the end of the month"
-      ]
-    },
-    {
-      "en": "They put off the meeting because the boss was ill.",
-      "cz": "Schůzku odložili, protože byl šéf nemocný.",
-      "lemmas": [
-        "put off"
-      ],
-      "accepts": [
-        "They put off the meeting because the boss was ill"
-      ]
-    },
-    {
-      "en": "My brother will fix up the old bike for my son.",
-      "cz": "Bratr spraví to staré kolo pro mého syna.",
-      "lemmas": [
-        "fix up"
-      ],
-      "accepts": [
-        "My brother will fix up the old bike for my son",
-        "My brother'll fix up the old bike for my son"
-      ]
-    },
-    {
-      "en": "Hold on a minute; I will find the number.",
-      "cz": "Počkej chvilku, najdu to číslo.",
-      "lemmas": [
-        "hold on"
-      ],
-      "accepts": [
-        "Hold on a minute; I will find the number",
-        "Hold on a minute; I'll find the number"
-      ]
+     "icon": "🧷",
+     "en": "hold on",
+     "cz": "počkat"
     }
-  ],
-  "use_mode": "rewrite",
-  "use_hint": "Rewrite the sentence. Replace the underlined words.",
-  "use_sentences": [
+   ]
+  },
+  {
+   "title": "You will use these words in",
+   "title_cz": "Tato slova použiješ ve větách",
+   "frames": [
+    "Please … the … · *Prosím, … …*",
+    "Can you … the …? · *Můžeš … …?*",
+    "We … at … · *… v …*",
+    "I need to … before … · *Musím …, než …*",
+    "Do not … the … · *Ne… …*"
+   ],
+   "note": "Many of these split around the object: *turn the light **off***, *pick the children **up***. The grammar of that split is **Phrasal verbs 1** (b1_phrasal_verbs), which plays just before this pack. Here the job is the meaning.",
+   "note_cz": "Gramatiku dělitelnosti řeší b1_phrasal_verbs, tady jde o význam."
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1_phrasal_1_1",
+   "title": "Phrasal 1 · around the house",
+   "items": [
     {
-      "lemma": "turn off",
-      "prompt": "Please put the light out before you leave the room.",
-      "underline": "put the light out",
-      "en": "Please turn off the light before you leave the room.",
-      "lemmas": [
-        "turn off"
-      ],
-      "accepts": [
-        "Please turn off the light before you leave the room"
-      ]
+     "en": "turn on",
+     "cz": "zapnout",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "throw away",
-      "prompt": "Do not get rid of the tickets; we need them later.",
-      "underline": "get rid of",
-      "en": "Do not throw away the tickets; we need them later.",
-      "lemmas": [
-        "throw away"
-      ],
-      "accepts": [
-        "Do not throw away the tickets; we need them later",
-        "Don't throw away the tickets; we need them later"
-      ]
+     "en": "turn off",
+     "cz": "vypnout",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "run out of",
-      "prompt": "We often have no milk before the weekend.",
-      "underline": "have no milk",
-      "en": "We often run out of milk before the weekend.",
-      "lemmas": [
-        "run out of"
-      ],
-      "accepts": [
-        "We often run out of milk before the weekend"
-      ]
+     "en": "turn up",
+     "cz": "zesílit",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "pick up",
-      "prompt": "Can you collect the children at four?",
-      "underline": "collect",
-      "en": "Can you pick up the children at four?",
-      "lemmas": [
-        "pick up"
-      ],
-      "accepts": [
-        "Can you pick up the children at four?"
-      ]
+     "en": "turn down",
+     "cz": "ztlumit",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "look up",
-      "prompt": "I find every new word in a dictionary.",
-      "underline": "find",
-      "en": "I look up every new word in a dictionary.",
-      "lemmas": [
-        "look up"
-      ],
-      "accepts": [
-        "I look up every new word in a dictionary"
-      ]
+     "en": "throw away",
+     "cz": "vyhodit",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "put off",
-      "prompt": "They moved the meeting to a later date because the boss was ill.",
-      "underline": "moved the meeting to a later date",
-      "en": "They put off the meeting because the boss was ill.",
-      "lemmas": [
-        "put off"
-      ],
-      "accepts": [
-        "They put off the meeting because the boss was ill"
-      ]
+     "en": "tidy up",
+     "cz": "uklidit",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "fill in",
-      "prompt": "Please write your name and address on the form before you send it.",
-      "underline": "write your name and address on",
-      "en": "Please fill in the form before you send it.",
-      "lemmas": [
-        "fill in"
-      ],
-      "accepts": [
-        "Please fill in the form before you send it"
-      ]
+     "en": "put away",
+     "cz": "uklidit (na místo)",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "cut down",
-      "prompt": "The doctor told me to drink less coffee.",
-      "underline": "drink less",
-      "en": "The doctor told me to cut down on coffee.",
-      "lemmas": [
-        "cut down"
-      ],
-      "accepts": [
-        "The doctor told me to cut down on coffee"
-      ]
+     "en": "wash up",
+     "cz": "umýt nádobí",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "pay back",
-      "prompt": "I will give you the money at the end of the month.",
-      "underline": "give you the money",
-      "en": "I will pay back the money at the end of the month.",
-      "lemmas": [
-        "pay back"
-      ],
-      "accepts": [
-        "I will pay back the money at the end of the month",
-        "I'll pay back the money at the end of the month"
-      ]
+     "en": "put up",
+     "cz": "pověsit",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "set off",
-      "prompt": "We leave at six to miss the traffic.",
-      "underline": "leave",
-      "en": "We set off at six to miss the traffic.",
-      "lemmas": [
-        "set off"
-      ],
-      "accepts": [
-        "We set off at six to miss the traffic"
-      ]
+     "en": "take out",
+     "cz": "vynést",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "eat out",
-      "prompt": "We go to a restaurant once a month, usually on a Friday.",
-      "underline": "go to a restaurant",
-      "en": "We eat out once a month, usually on a Friday.",
-      "lemmas": [
-        "eat out"
-      ],
-      "accepts": [
-        "We eat out once a month, usually on a Friday"
-      ]
+     "en": "open up",
+     "cz": "otevřít",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "tidy up",
-      "prompt": "I need to make the kitchen clean before my parents arrive.",
-      "underline": "make the kitchen clean",
-      "en": "I need to tidy up the kitchen before my parents arrive.",
-      "lemmas": [
-        "tidy up"
-      ],
-      "accepts": [
-        "I need to tidy up the kitchen before my parents arrive"
-      ]
+     "en": "make up (a bed)",
+     "cz": "ustlat",
+     "use": [
+      "we_need_to"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "b1_phrasal_1_2",
+   "title": "Phrasal 1 · every day",
+   "items": [
+    {
+     "en": "wake up",
+     "cz": "probudit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "stay in",
+     "cz": "zůstat doma",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "put on",
+     "cz": "obléct si",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "take off",
+     "cz": "svléknout si",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "warm up",
+     "cz": "ohřát",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "go out",
+     "cz": "jít ven",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "come back",
+     "cz": "vrátit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "run out of",
+     "cz": "dojít (zásoba)",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "set off",
+     "cz": "vyrazit",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "lie down",
+     "cz": "lehnout si",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "eat out",
+     "cz": "jíst venku",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "switch over",
+     "cz": "přepnout",
+     "use": [
+      "i_want_to"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1_phrasal_1_3",
+   "title": "Phrasal 1 · small jobs",
+   "items": [
+    {
+     "en": "fill in",
+     "cz": "vyplnit",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "cut off",
+     "cz": "odříznout",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "look for",
+     "cz": "hledat",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "look up",
+     "cz": "vyhledat",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "pick up",
+     "cz": "vyzvednout",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "cut down",
+     "cz": "omezit",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "try again",
+     "cz": "zkusit znovu",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "give away",
+     "cz": "rozdat",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "pay back",
+     "cz": "vrátit peníze",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "put off",
+     "cz": "odložit",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "fix up",
+     "cz": "opravit",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "hold on",
+     "cz": "počkat",
+     "use": [
+      "i_want_to"
+     ]
+    }
+   ]
+  }
+ ],
+ "sentences": [
+  {
+   "en": "Please turn on the light when you come in.",
+   "cz": "Až přijdeš, rozsviť prosím.",
+   "lemmas": [
+    "turn on"
+   ],
+   "accepts": [
+    "Please turn on the light when you come in"
+   ]
+  },
+  {
+   "en": "Please turn off the light before you leave the room.",
+   "cz": "Než odejdeš z pokoje, zhasni prosím.",
+   "lemmas": [
+    "turn off"
+   ],
+   "accepts": [
+    "Please turn off the light before you leave the room"
+   ]
+  },
+  {
+   "en": "Can you turn up the radio? I cannot hear it.",
+   "cz": "Můžeš zesílit rádio? Neslyším ho.",
+   "lemmas": [
+    "turn up"
+   ],
+   "accepts": [
+    "Can you turn up the radio? I cannot hear it",
+    "Can you turn up the radio? I can't hear it"
+   ]
+  },
+  {
+   "en": "Please turn down the music after ten.",
+   "cz": "Po desáté prosím ztlum hudbu.",
+   "lemmas": [
+    "turn down"
+   ],
+   "accepts": [
+    "Please turn down the music after ten"
+   ]
+  },
+  {
+   "en": "Do not throw away the tickets; we need them later.",
+   "cz": "Nevyhazuj ty lístky, později je budeme potřebovat.",
+   "lemmas": [
+    "throw away"
+   ],
+   "accepts": [
+    "Do not throw away the tickets; we need them later",
+    "Don't throw away the tickets; we need them later"
+   ]
+  },
+  {
+   "en": "I need to tidy up the kitchen before my parents arrive.",
+   "cz": "Musím uklidit kuchyň, než přijedou rodiče.",
+   "lemmas": [
+    "tidy up"
+   ],
+   "accepts": [
+    "I need to tidy up the kitchen before my parents arrive"
+   ]
+  },
+  {
+   "en": "The children put away their books before dinner.",
+   "cz": "Děti si před večeří uklidily knihy.",
+   "lemmas": [
+    "put away"
+   ],
+   "accepts": [
+    "The children put away their books before dinner"
+   ]
+  },
+  {
+   "en": "I wash up while my husband makes the coffee.",
+   "cz": "Já myju nádobí a manžel dělá kávu.",
+   "lemmas": [
+    "wash up"
+   ],
+   "accepts": [
+    "I wash up while my husband makes the coffee"
+   ]
+  },
+  {
+   "en": "We want to put up a picture above the sofa.",
+   "cz": "Chceme nad gauč pověsit obraz.",
+   "lemmas": [
+    "put up"
+   ],
+   "accepts": [
+    "We want to put up a picture above the sofa"
+   ]
+  },
+  {
+   "en": "Please take out the old paper on Monday.",
+   "cz": "V pondělí prosím vynes starý papír.",
+   "lemmas": [
+    "take out"
+   ],
+   "accepts": [
+    "Please take out the old paper on Monday"
+   ]
+  },
+  {
+   "en": "They open up the shop at seven every morning.",
+   "cz": "Obchod otevírají každé ráno v sedm.",
+   "lemmas": [
+    "open up"
+   ],
+   "accepts": [
+    "They open up the shop at seven every morning"
+   ]
+  },
+  {
+   "en": "I make up the bed when a guest comes.",
+   "cz": "Když přijde návštěva, ustelu postel.",
+   "lemmas": [
+    "make up (a bed)"
+   ],
+   "accepts": [
+    "I make up the bed when a guest comes"
+   ]
+  },
+  {
+   "en": "I wake up before seven every morning.",
+   "cz": "Každé ráno se budím před sedmou.",
+   "lemmas": [
+    "wake up"
+   ],
+   "accepts": [
+    "I wake up before seven every morning"
+   ]
+  },
+  {
+   "en": "We stay in on Sunday evening and watch a film.",
+   "cz": "V neděli večer zůstáváme doma a díváme se na film.",
+   "lemmas": [
+    "stay in"
+   ],
+   "accepts": [
+    "We stay in on Sunday evening and watch a film"
+   ]
+  },
+  {
+   "en": "He put on his coat because the weather changed.",
+   "cz": "Oblékl si kabát, protože se změnilo počasí.",
+   "lemmas": [
+    "put on"
+   ],
+   "accepts": [
+    "He put on his coat because the weather changed"
+   ]
+  },
+  {
+   "en": "Please take off your shoes at the door.",
+   "cz": "U dveří si prosím zuj boty.",
+   "lemmas": [
+    "take off"
+   ],
+   "accepts": [
+    "Please take off your shoes at the door"
+   ]
+  },
+  {
+   "en": "I warm up the food from yesterday.",
+   "cz": "Ohřeju jídlo ze včerejška.",
+   "lemmas": [
+    "warm up"
+   ],
+   "accepts": [
+    "I warm up the food from yesterday"
+   ]
+  },
+  {
+   "en": "We go out on Friday, but not on Saturday.",
+   "cz": "V pátek chodíme ven, ale v sobotu ne.",
+   "lemmas": [
+    "go out"
+   ],
+   "accepts": [
+    "We go out on Friday, but not on Saturday"
+   ]
+  },
+  {
+   "en": "They come back from Italy on Sunday.",
+   "cz": "Z Itálie se vracejí v neděli.",
+   "lemmas": [
+    "come back"
+   ],
+   "accepts": [
+    "They come back from Italy on Sunday"
+   ]
+  },
+  {
+   "en": "We often run out of milk before the weekend.",
+   "cz": "Před víkendem nám často dojde mléko.",
+   "lemmas": [
+    "run out of"
+   ],
+   "accepts": [
+    "We often run out of milk before the weekend"
+   ]
+  },
+  {
+   "en": "We set off at six to miss the traffic.",
+   "cz": "Vyrážíme v šest, abychom se vyhnuli provozu.",
+   "lemmas": [
+    "set off"
+   ],
+   "accepts": [
+    "We set off at six to miss the traffic"
+   ]
+  },
+  {
+   "en": "I lie down for ten minutes after lunch.",
+   "cz": "Po obědě si na deset minut lehnu.",
+   "lemmas": [
+    "lie down"
+   ],
+   "accepts": [
+    "I lie down for ten minutes after lunch"
+   ]
+  },
+  {
+   "en": "We eat out once a month, usually on a Friday.",
+   "cz": "Jednou za měsíc jdeme na jídlo ven, obvykle v pátek.",
+   "lemmas": [
+    "eat out"
+   ],
+   "accepts": [
+    "We eat out once a month, usually on a Friday"
+   ]
+  },
+  {
+   "en": "Can we switch over? The film has started.",
+   "cz": "Můžeme přepnout? Ten film už začal.",
+   "lemmas": [
+    "switch over"
+   ],
+   "accepts": [
+    "Can we switch over? The film has started"
+   ]
+  },
+  {
+   "en": "Please fill in the form before you send it.",
+   "cz": "Než ten formulář pošleš, vyplň ho prosím.",
+   "lemmas": [
+    "fill in"
+   ],
+   "accepts": [
+    "Please fill in the form before you send it"
+   ]
+  },
+  {
+   "en": "They cut off the water for two hours this morning.",
+   "cz": "Dneska ráno na dvě hodiny odstavili vodu.",
+   "lemmas": [
+    "cut off"
+   ],
+   "accepts": [
+    "They cut off the water for two hours this morning"
+   ]
+  },
+  {
+   "en": "I look for my keys every morning.",
+   "cz": "Klíče hledám každé ráno.",
+   "lemmas": [
+    "look for"
+   ],
+   "accepts": [
+    "I look for my keys every morning"
+   ]
+  },
+  {
+   "en": "I look up every new word in a dictionary.",
+   "cz": "Každé nové slovo si vyhledám ve slovníku.",
+   "lemmas": [
+    "look up"
+   ],
+   "accepts": [
+    "I look up every new word in a dictionary"
+   ]
+  },
+  {
+   "en": "Can you pick up the children at four?",
+   "cz": "Můžeš vyzvednout děti ve čtyři?",
+   "lemmas": [
+    "pick up"
+   ],
+   "accepts": [
+    "Can you pick up the children at four?"
+   ]
+  },
+  {
+   "en": "The doctor told me to cut down on coffee.",
+   "cz": "Doktor mi řekl, ať omezím kávu.",
+   "lemmas": [
+    "cut down"
+   ],
+   "accepts": [
+    "The doctor told me to cut down on coffee"
+   ]
+  },
+  {
+   "en": "If the machine says no, try again in a minute.",
+   "cz": "Když automat nechce, zkus to za minutu znovu.",
+   "lemmas": [
+    "try again"
+   ],
+   "accepts": [
+    "If the machine says no, try again in a minute"
+   ]
+  },
+  {
+   "en": "They give away free coffee on Monday morning.",
+   "cz": "V pondělí ráno rozdávají kávu zdarma.",
+   "lemmas": [
+    "give away"
+   ],
+   "accepts": [
+    "They give away free coffee on Monday morning"
+   ]
+  },
+  {
+   "en": "I will pay back the money at the end of the month.",
+   "cz": "Peníze vrátím na konci měsíce.",
+   "lemmas": [
+    "pay back"
+   ],
+   "accepts": [
+    "I will pay back the money at the end of the month",
+    "I'll pay back the money at the end of the month"
+   ]
+  },
+  {
+   "en": "They put off the meeting because the boss was ill.",
+   "cz": "Schůzku odložili, protože byl šéf nemocný.",
+   "lemmas": [
+    "put off"
+   ],
+   "accepts": [
+    "They put off the meeting because the boss was ill"
+   ]
+  },
+  {
+   "en": "My brother will fix up the old bike for my son.",
+   "cz": "Bratr spraví to staré kolo pro mého syna.",
+   "lemmas": [
+    "fix up"
+   ],
+   "accepts": [
+    "My brother will fix up the old bike for my son",
+    "My brother'll fix up the old bike for my son"
+   ]
+  },
+  {
+   "en": "Hold on a minute; I will find the number.",
+   "cz": "Počkej chvilku, najdu to číslo.",
+   "lemmas": [
+    "hold on"
+   ],
+   "accepts": [
+    "Hold on a minute; I will find the number",
+    "Hold on a minute; I'll find the number"
+   ]
+  }
+ ],
+ "use_mode": "rewrite",
+ "use_hint": "Rewrite the sentence. Replace the underlined words.",
+ "use_sentences": [
+  {
+   "lemma": "turn off",
+   "prompt": "Please put out the light before you leave the room.",
+   "underline": "put out",
+   "en": "Please turn off the light before you leave the room.",
+   "lemmas": [
+    "turn off"
+   ],
+   "accepts": [
+    "Please turn off the light before you leave the room"
+   ]
+  },
+  {
+   "lemma": "throw away",
+   "prompt": "Do not get rid of the tickets; we need them later.",
+   "underline": "get rid of",
+   "en": "Do not throw away the tickets; we need them later.",
+   "lemmas": [
+    "throw away"
+   ],
+   "accepts": [
+    "Do not throw away the tickets; we need them later",
+    "Don't throw away the tickets; we need them later"
+   ]
+  },
+  {
+   "lemma": "run out of",
+   "prompt": "We often have no milk before the weekend.",
+   "underline": "have no",
+   "en": "We often run out of milk before the weekend.",
+   "lemmas": [
+    "run out of"
+   ],
+   "accepts": [
+    "We often run out of milk before the weekend"
+   ]
+  },
+  {
+   "lemma": "pick up",
+   "prompt": "Can you collect the children at four?",
+   "underline": "collect",
+   "en": "Can you pick up the children at four?",
+   "lemmas": [
+    "pick up"
+   ],
+   "accepts": [
+    "Can you pick up the children at four?"
+   ]
+  },
+  {
+   "lemma": "look up",
+   "prompt": "I find every new word in a dictionary.",
+   "underline": "find",
+   "en": "I look up every new word in a dictionary.",
+   "lemmas": [
+    "look up"
+   ],
+   "accepts": [
+    "I look up every new word in a dictionary"
+   ]
+  },
+  {
+   "lemma": "put off",
+   "prompt": "They delayed the meeting because the boss was ill.",
+   "underline": "delayed",
+   "en": "They put off the meeting because the boss was ill.",
+   "lemmas": [
+    "put off"
+   ],
+   "accepts": [
+    "They put off the meeting because the boss was ill"
+   ]
+  },
+  {
+   "lemma": "fill in",
+   "prompt": "Please write your name and address on the form before you send it.",
+   "underline": "write your name and address on",
+   "en": "Please fill in the form before you send it.",
+   "lemmas": [
+    "fill in"
+   ],
+   "accepts": [
+    "Please fill in the form before you send it"
+   ]
+  },
+  {
+   "lemma": "cut down on",
+   "prompt": "The doctor told me to have less coffee.",
+   "underline": "have less",
+   "en": "The doctor told me to cut down on coffee.",
+   "lemmas": [
+    "cut down"
+   ],
+   "accepts": [
+    "The doctor told me to cut down on coffee"
+   ]
+  },
+  {
+   "lemma": "pay back",
+   "prompt": "I will give you the money at the end of the month.",
+   "underline": "give you",
+   "en": "I will pay back the money at the end of the month.",
+   "lemmas": [
+    "pay back"
+   ],
+   "accepts": [
+    "I will pay back the money at the end of the month",
+    "I'll pay back the money at the end of the month"
+   ]
+  },
+  {
+   "lemma": "set off",
+   "prompt": "We leave at six to miss the traffic.",
+   "underline": "leave",
+   "en": "We set off at six to miss the traffic.",
+   "lemmas": [
+    "set off"
+   ],
+   "accepts": [
+    "We set off at six to miss the traffic"
+   ]
+  },
+  {
+   "lemma": "eat out",
+   "prompt": "We go to a restaurant once a month, usually on a Friday.",
+   "underline": "go to a restaurant",
+   "en": "We eat out once a month, usually on a Friday.",
+   "lemmas": [
+    "eat out"
+   ],
+   "accepts": [
+    "We eat out once a month, usually on a Friday"
+   ]
+  },
+  {
+   "lemma": "tidy up",
+   "prompt": "I need to clean the kitchen before my parents arrive.",
+   "underline": "clean",
+   "en": "I need to tidy up the kitchen before my parents arrive.",
+   "lemmas": [
+    "tidy up"
+   ],
+   "accepts": [
+    "I need to tidy up the kitchen before my parents arrive"
+   ]
+  }
+ ]
 }

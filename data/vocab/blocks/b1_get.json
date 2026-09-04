@@ -1,1019 +1,1019 @@
 {
-  "id": "b1_get",
-  "title": "Get — senses & collocations (B1)",
-  "level": "B1",
-  "tree_node": "leaf_get_b1",
-  "codex_unit": "V_COR-B1B2-01",
-  "quality": "draft",
-  "note": "get is the highest-frequency verb Czech students avoid, because Czech splits its senses across different verbs. Own unit because it is too big for trunk_chunks_b1. Sorted by sense: receive, become, arrive, plus the fixed pairs. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. FIVE of the eight shipped frames could never gap — they used the past or 3sg form (*got a letter*, *got married*, *got a new job*, *got ill*, *gets dark*) while the lemma is the base chunk, so sentenceToFrame found nothing. Every frame here holds its chunk verbatim, which on this pack means the base form of get in every one. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get lost* belongs to leaf_travel_b1 (path 6) and *get on with* to leaf_relationships_b1 (24); replaced with **get wet** and **get over**. · The frames page offered noun frames (I have a … / I need a …) on a pack of verb chunks; they are get-shapes now. · Pool-checked against everything taught before leaf_get_b1 — 0 unknown types.",
-  "default_direction": "cz_to_en",
-  "quiz_mode": "sentence_gap",
-  "intro": [
+ "id": "b1_get",
+ "title": "Get — senses & collocations (B1)",
+ "level": "B1",
+ "tree_node": "leaf_get_b1",
+ "codex_unit": "V_COR-B1B2-01",
+ "quality": "draft",
+ "note": "get is the highest-frequency verb Czech students avoid, because Czech splits its senses across different verbs. Own unit because it is too big for trunk_chunks_b1. Sorted by sense: receive, become, arrive, plus the fixed pairs. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. FIVE of the eight shipped frames could never gap — they used the past or 3sg form (*got a letter*, *got married*, *got a new job*, *got ill*, *gets dark*) while the lemma is the base chunk, so sentenceToFrame found nothing. Every frame here holds its chunk verbatim, which on this pack means the base form of get in every one. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get lost* belongs to leaf_travel_b1 (path 6) and *get on with* to leaf_relationships_b1 (24); replaced with **get wet** and **get over**. · The frames page offered noun frames (I have a … / I need a …) on a pack of verb chunks; they are get-shapes now. · Pool-checked against everything taught before leaf_get_b1 — 0 unknown types. · 2026-09-04: one rewrite item re-cut so replacing the underline reconstructs the answer.",
+ "default_direction": "cz_to_en",
+ "quiz_mode": "sentence_gap",
+ "intro": [
+  {
+   "title": "get = receive or obtain",
+   "title_cz": "get = dostat nebo sehnat",
+   "pictures": [
     {
-      "title": "get = receive or obtain",
-      "title_cz": "get = dostat nebo sehnat",
-      "pictures": [
-        {
-          "icon": "🎁",
-          "en": "get a present",
-          "cz": "dostat dárek"
-        },
-        {
-          "icon": "✉️",
-          "en": "get a letter",
-          "cz": "dostat dopis"
-        },
-        {
-          "icon": "💼",
-          "en": "get a job",
-          "cz": "sehnat práci"
-        },
-        {
-          "icon": "🎫",
-          "en": "get a ticket",
-          "cz": "sehnat lístek"
-        },
-        {
-          "icon": "💰",
-          "en": "get paid",
-          "cz": "dostat zaplaceno"
-        },
-        {
-          "icon": "📞",
-          "en": "get a call",
-          "cz": "dostat hovor"
-        },
-        {
-          "icon": "🍞",
-          "en": "get some bread",
-          "cz": "koupit chleba"
-        },
-        {
-          "icon": "💡",
-          "en": "get an idea",
-          "cz": "dostat nápad"
-        },
-        {
-          "icon": "📧",
-          "en": "get an email",
-          "cz": "dostat e-mail"
-        },
-        {
-          "icon": "🎓",
-          "en": "get a degree",
-          "cz": "získat titul"
-        },
-        {
-          "icon": "🔑",
-          "en": "get the keys",
-          "cz": "dostat klíče"
-        },
-        {
-          "icon": "🛒",
-          "en": "get the shopping",
-          "cz": "nakoupit"
-        }
-      ]
+     "icon": "🎁",
+     "en": "get a present",
+     "cz": "dostat dárek"
     },
     {
-      "title": "get = become",
-      "title_cz": "get = stát se",
-      "pictures": [
-        {
-          "icon": "😴",
-          "en": "get tired",
-          "cz": "unavit se"
-        },
-        {
-          "icon": "🤒",
-          "en": "get ill",
-          "cz": "onemocnět"
-        },
-        {
-          "icon": "😡",
-          "en": "get angry",
-          "cz": "rozzlobit se"
-        },
-        {
-          "icon": "🥶",
-          "en": "get cold",
-          "cz": "ochladit se"
-        },
-        {
-          "icon": "💍",
-          "en": "get married",
-          "cz": "vzít se"
-        },
-        {
-          "icon": "😰",
-          "en": "get worried",
-          "cz": "začít se bát"
-        },
-        {
-          "icon": "🌑",
-          "en": "get dark",
-          "cz": "stmívat se"
-        },
-        {
-          "icon": "💪",
-          "en": "get better",
-          "cz": "zlepšit se"
-        },
-        {
-          "icon": "🌧️",
-          "en": "get wet",
-          "cz": "zmoknout"
-        },
-        {
-          "icon": "👴",
-          "en": "get old",
-          "cz": "zestárnout"
-        },
-        {
-          "icon": "🥱",
-          "en": "get bored",
-          "cz": "začít se nudit"
-        },
-        {
-          "icon": "🎉",
-          "en": "get ready",
-          "cz": "připravit se"
-        }
-      ]
+     "icon": "✉️",
+     "en": "get a letter",
+     "cz": "dostat dopis"
     },
     {
-      "title": "get = arrive, move, and fixed pairs",
-      "title_cz": "get = dorazit, pohyb a ustálené dvojice",
-      "pictures": [
-        {
-          "icon": "🏠",
-          "en": "get home",
-          "cz": "dostat se domů"
-        },
-        {
-          "icon": "🚉",
-          "en": "get to work",
-          "cz": "dostat se do práce"
-        },
-        {
-          "icon": "🚌",
-          "en": "get on",
-          "cz": "nastoupit"
-        },
-        {
-          "icon": "🚪",
-          "en": "get off",
-          "cz": "vystoupit"
-        },
-        {
-          "icon": "🛏️",
-          "en": "get up",
-          "cz": "vstávat"
-        },
-        {
-          "icon": "🚗",
-          "en": "get in",
-          "cz": "nastoupit (do auta)"
-        },
-        {
-          "icon": "🩹",
-          "en": "get over",
-          "cz": "překonat / dostat se z toho"
-        },
-        {
-          "icon": "🧹",
-          "en": "get rid of",
-          "cz": "zbavit se"
-        },
-        {
-          "icon": "🔙",
-          "en": "get back",
-          "cz": "vrátit se"
-        },
-        {
-          "icon": "📚",
-          "en": "get into",
-          "cz": "dostat se do"
-        },
-        {
-          "icon": "🏃",
-          "en": "get away",
-          "cz": "dostat se pryč"
-        },
-        {
-          "icon": "⏰",
-          "en": "get going",
-          "cz": "vyrazit"
-        }
-      ]
+     "icon": "💼",
+     "en": "get a job",
+     "cz": "sehnat práci"
     },
     {
-      "title": "You will use these words in",
-      "title_cz": "Tato slova použiješ ve větách",
-      "frames": [
-        "I get … every … · *Dostávám … každý …*",
-        "It gets … · *Stává se …*",
-        "We get … at … · *Dostaneme se … v …*",
-        "You will get … if … · *Budeš …, jestli …*",
-        "I need to get … · *Potřebuju …*"
-      ],
-      "note": "Czech uses a different verb for each of these — *dostat*, *stát se*, *dojít*. English uses **get** for all three, and the sense comes from the word after it.",
-      "note_cz": "Čeština má pro každý význam jiné sloveso. Angličtina má **get** a význam určuje slovo za ním."
+     "icon": "🎫",
+     "en": "get a ticket",
+     "cz": "sehnat lístek"
+    },
+    {
+     "icon": "💰",
+     "en": "get paid",
+     "cz": "dostat zaplaceno"
+    },
+    {
+     "icon": "📞",
+     "en": "get a call",
+     "cz": "dostat hovor"
+    },
+    {
+     "icon": "🍞",
+     "en": "get some bread",
+     "cz": "koupit chleba"
+    },
+    {
+     "icon": "💡",
+     "en": "get an idea",
+     "cz": "dostat nápad"
+    },
+    {
+     "icon": "📧",
+     "en": "get an email",
+     "cz": "dostat e-mail"
+    },
+    {
+     "icon": "🎓",
+     "en": "get a degree",
+     "cz": "získat titul"
+    },
+    {
+     "icon": "🔑",
+     "en": "get the keys",
+     "cz": "dostat klíče"
+    },
+    {
+     "icon": "🛒",
+     "en": "get the shopping",
+     "cz": "nakoupit"
     }
-  ],
-  "blocks": [
+   ]
+  },
+  {
+   "title": "get = become",
+   "title_cz": "get = stát se",
+   "pictures": [
     {
-      "id": "b1_get_1",
-      "title": "Get · receive or obtain",
-      "items": [
-        {
-          "en": "get a present",
-          "cz": "dostat dárek",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get a letter",
-          "cz": "dostat dopis",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get a job",
-          "cz": "sehnat práci",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get a ticket",
-          "cz": "sehnat lístek",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "get paid",
-          "cz": "dostat zaplaceno",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get a call",
-          "cz": "dostat hovor",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get some bread",
-          "cz": "koupit chleba",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "get an idea",
-          "cz": "dostat nápad",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get an email",
-          "cz": "dostat e-mail",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get a degree",
-          "cz": "získat titul",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get the keys",
-          "cz": "dostat klíče",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "get the shopping",
-          "cz": "nakoupit",
-          "use": [
-            "we_need_to"
-          ]
-        }
-      ]
+     "icon": "😴",
+     "en": "get tired",
+     "cz": "unavit se"
     },
     {
-      "id": "b1_get_2",
-      "title": "Get · become",
-      "items": [
-        {
-          "en": "get tired",
-          "cz": "unavit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get ill",
-          "cz": "onemocnět",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get angry",
-          "cz": "rozzlobit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get cold",
-          "cz": "ochladit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get married",
-          "cz": "vzít se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get worried",
-          "cz": "začít se bát",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get dark",
-          "cz": "stmívat se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get better",
-          "cz": "zlepšit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get wet",
-          "cz": "zmoknout",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get old",
-          "cz": "zestárnout",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get bored",
-          "cz": "začít se nudit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get ready",
-          "cz": "připravit se",
-          "use": [
-            "we_need_to"
-          ]
-        }
-      ]
+     "icon": "🤒",
+     "en": "get ill",
+     "cz": "onemocnět"
     },
     {
-      "id": "b1_get_3",
-      "title": "Get · arrive, move, fixed pairs",
-      "items": [
-        {
-          "en": "get home",
-          "cz": "dostat se domů",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get to work",
-          "cz": "dostat se do práce",
-          "use": [
-            "we_need_to"
-          ]
-        },
-        {
-          "en": "get on",
-          "cz": "nastoupit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get off",
-          "cz": "vystoupit",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get up",
-          "cz": "vstávat",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get in",
-          "cz": "nastoupit (do auta)",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get over",
-          "cz": "překonat / dostat se z toho",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get rid of",
-          "cz": "zbavit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get back",
-          "cz": "vrátit se",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get into",
-          "cz": "dostat se do",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get away",
-          "cz": "dostat se pryč",
-          "use": [
-            "i_want_to"
-          ]
-        },
-        {
-          "en": "get going",
-          "cz": "vyrazit",
-          "use": [
-            "we_need_to"
-          ]
-        }
-      ]
+     "icon": "😡",
+     "en": "get angry",
+     "cz": "rozzlobit se"
+    },
+    {
+     "icon": "🥶",
+     "en": "get cold",
+     "cz": "ochladit se"
+    },
+    {
+     "icon": "💍",
+     "en": "get married",
+     "cz": "vzít se"
+    },
+    {
+     "icon": "😰",
+     "en": "get worried",
+     "cz": "začít se bát"
+    },
+    {
+     "icon": "🌑",
+     "en": "get dark",
+     "cz": "stmívat se"
+    },
+    {
+     "icon": "💪",
+     "en": "get better",
+     "cz": "zlepšit se"
+    },
+    {
+     "icon": "🌧️",
+     "en": "get wet",
+     "cz": "zmoknout"
+    },
+    {
+     "icon": "👴",
+     "en": "get old",
+     "cz": "zestárnout"
+    },
+    {
+     "icon": "🥱",
+     "en": "get bored",
+     "cz": "začít se nudit"
+    },
+    {
+     "icon": "🎉",
+     "en": "get ready",
+     "cz": "připravit se"
     }
-  ],
-  "sentences": [
+   ]
+  },
+  {
+   "title": "get = arrive, move, and fixed pairs",
+   "title_cz": "get = dorazit, pohyb a ustálené dvojice",
+   "pictures": [
     {
-      "en": "Children get a present from their grandparents every Christmas.",
-      "cz": "Děti dostávají od prarodičů dárek každé Vánoce.",
-      "lemmas": [
-        "get a present"
-      ],
-      "accepts": [
-        "Children get a present from their grandparents every Christmas"
-      ]
+     "icon": "🏠",
+     "en": "get home",
+     "cz": "dostat se domů"
     },
     {
-      "en": "I get a letter from the bank every month.",
-      "cz": "Každý měsíc dostanu dopis z banky.",
-      "lemmas": [
-        "get a letter"
-      ],
-      "accepts": [
-        "I get a letter from the bank every month"
-      ]
+     "icon": "🚉",
+     "en": "get to work",
+     "cz": "dostat se do práce"
     },
     {
-      "en": "It is hard to get a job in a small town.",
-      "cz": "V malém městě je těžké sehnat práci.",
-      "lemmas": [
-        "get a job"
-      ],
-      "accepts": [
-        "It is hard to get a job in a small town",
-        "It's hard to get a job in a small town"
-      ]
+     "icon": "🚌",
+     "en": "get on",
+     "cz": "nastoupit"
     },
     {
-      "en": "You can get a ticket at the machine by the door.",
-      "cz": "Lístek si můžeš koupit v automatu u dveří.",
-      "lemmas": [
-        "get a ticket"
-      ],
-      "accepts": [
-        "You can get a ticket at the machine by the door"
-      ]
+     "icon": "🚪",
+     "en": "get off",
+     "cz": "vystoupit"
     },
     {
-      "en": "We get paid on the last Friday of the month.",
-      "cz": "Výplatu dostáváme poslední pátek v měsíci.",
-      "lemmas": [
-        "get paid"
-      ],
-      "accepts": [
-        "We get paid on the last Friday of the month"
-      ]
+     "icon": "🛏️",
+     "en": "get up",
+     "cz": "vstávat"
     },
     {
-      "en": "I get a call from my mother every Sunday.",
-      "cz": "Každou neděli mi volá máma.",
-      "lemmas": [
-        "get a call"
-      ],
-      "accepts": [
-        "I get a call from my mother every Sunday"
-      ]
+     "icon": "🚗",
+     "en": "get in",
+     "cz": "nastoupit (do auta)"
     },
     {
-      "en": "Can you get some bread on your way home?",
-      "cz": "Můžeš cestou domů koupit chleba?",
-      "lemmas": [
-        "get some bread"
-      ],
-      "accepts": [
-        "Can you get some bread on your way home?"
-      ]
+     "icon": "🩹",
+     "en": "get over",
+     "cz": "překonat / dostat se z toho"
     },
     {
-      "en": "Sometimes I get an idea in the night and write it down.",
-      "cz": "Někdy mě v noci napadne nápad a zapíšu si ho.",
-      "lemmas": [
-        "get an idea"
-      ],
-      "accepts": [
-        "Sometimes I get an idea in the night and write it down"
-      ]
+     "icon": "🧹",
+     "en": "get rid of",
+     "cz": "zbavit se"
     },
     {
-      "en": "You will get an email when the booking is ready.",
-      "cz": "Až bude rezervace hotová, přijde ti e-mail.",
-      "lemmas": [
-        "get an email"
-      ],
-      "accepts": [
-        "You will get an email when the booking is ready",
-        "You'll get an email when the booking is ready"
-      ]
+     "icon": "🔙",
+     "en": "get back",
+     "cz": "vrátit se"
     },
     {
-      "en": "She wants to get a degree before she is thirty.",
-      "cz": "Chce mít vysokou školu, než jí bude třicet.",
-      "lemmas": [
-        "get a degree"
-      ],
-      "accepts": [
-        "She wants to get a degree before she is thirty"
-      ]
+     "icon": "📚",
+     "en": "get into",
+     "cz": "dostat se do"
     },
     {
-      "en": "We get the keys after we pay the deposit.",
-      "cz": "Klíče dostaneme, až zaplatíme zálohu.",
-      "lemmas": [
-        "get the keys"
-      ],
-      "accepts": [
-        "We get the keys after we pay the deposit"
-      ]
+     "icon": "🏃",
+     "en": "get away",
+     "cz": "dostat se pryč"
     },
     {
-      "en": "I get the shopping on Saturday morning.",
-      "cz": "Nákup dělám v sobotu ráno.",
-      "lemmas": [
-        "get the shopping"
-      ],
-      "accepts": [
-        "I get the shopping on Saturday morning"
-      ]
-    },
-    {
-      "en": "I get tired if I read after ten.",
-      "cz": "Když čtu po desáté, jsem unavený.",
-      "lemmas": [
-        "get tired"
-      ],
-      "accepts": [
-        "I get tired if I read after ten"
-      ]
-    },
-    {
-      "en": "Children get ill more often in the winter.",
-      "cz": "Děti v zimě onemocní častěji.",
-      "lemmas": [
-        "get ill"
-      ],
-      "accepts": [
-        "Children get ill more often in the winter"
-      ]
-    },
-    {
-      "en": "He does not get angry, but he stops talking.",
-      "cz": "Nerozzlobí se, ale přestane mluvit.",
-      "lemmas": [
-        "get angry"
-      ],
-      "accepts": [
-        "He does not get angry, but he stops talking",
-        "He doesn't get angry, but he stops talking"
-      ]
-    },
-    {
-      "en": "Your dinner will get cold if you take a call now.",
-      "cz": "Večeře ti vychladne, jestli si teď vezmeš telefon.",
-      "lemmas": [
-        "get cold"
-      ],
-      "accepts": [
-        "Your dinner will get cold if you take a call now"
-      ]
-    },
-    {
-      "en": "They want to get married in the spring.",
-      "cz": "Chtějí se na jaře vzít.",
-      "lemmas": [
-        "get married"
-      ],
-      "accepts": [
-        "They want to get married in the spring"
-      ]
-    },
-    {
-      "en": "I get worried when the phone rings at night.",
-      "cz": "Když v noci zvoní telefon, mám strach.",
-      "lemmas": [
-        "get worried"
-      ],
-      "accepts": [
-        "I get worried when the phone rings at night"
-      ]
-    },
-    {
-      "en": "In December it can get dark before four.",
-      "cz": "V prosinci se může setmět před čtvrtou.",
-      "lemmas": [
-        "get dark"
-      ],
-      "accepts": [
-        "In December it can get dark before four"
-      ]
-    },
-    {
-      "en": "The weather will get better at the weekend.",
-      "cz": "O víkendu se počasí zlepší.",
-      "lemmas": [
-        "get better"
-      ],
-      "accepts": [
-        "The weather will get better at the weekend",
-        "The weather'll get better at the weekend"
-      ]
-    },
-    {
-      "en": "You will get wet if you walk home in this rain.",
-      "cz": "V tomhle dešti cestou domů zmokneš.",
-      "lemmas": [
-        "get wet"
-      ],
-      "accepts": [
-        "You will get wet if you walk home in this rain",
-        "You'll get wet if you walk home in this rain"
-      ]
-    },
-    {
-      "en": "Everybody wants to get old, but nobody wants to look old.",
-      "cz": "Každý chce zestárnout, ale nikdo nechce staře vypadat.",
-      "lemmas": [
-        "get old"
-      ],
-      "accepts": [
-        "Everybody wants to get old, but nobody wants to look old"
-      ]
-    },
-    {
-      "en": "Students get bored if the lesson is too long.",
-      "cz": "Studenty to přestane bavit, když je hodina moc dlouhá.",
-      "lemmas": [
-        "get bored"
-      ],
-      "accepts": [
-        "Students get bored if the lesson is too long"
-      ]
-    },
-    {
-      "en": "It takes me ten minutes to get ready in the morning.",
-      "cz": "Ráno mi trvá deset minut, než jsem připravený.",
-      "lemmas": [
-        "get ready"
-      ],
-      "accepts": [
-        "It takes me ten minutes to get ready in the morning"
-      ]
-    },
-    {
-      "en": "I get home at six, but the children are already there.",
-      "cz": "Domů se dostanu v šest, ale děti už tam jsou.",
-      "lemmas": [
-        "get home"
-      ],
-      "accepts": [
-        "I get home at six, but the children are already there"
-      ]
-    },
-    {
-      "en": "How do you get to work when the trains are not running?",
-      "cz": "Jak se dostaneš do práce, když vlaky nejezdí?",
-      "lemmas": [
-        "get to work"
-      ],
-      "accepts": [
-        "How do you get to work when the trains are not running?",
-        "How do you get to work when the trains aren't running"
-      ]
-    },
-    {
-      "en": "We get on the bus at the second stop.",
-      "cz": "Nastupujeme do autobusu na druhé zastávce.",
-      "lemmas": [
-        "get on"
-      ],
-      "accepts": [
-        "We get on the bus at the second stop"
-      ]
-    },
-    {
-      "en": "You get off at the station after the park.",
-      "cz": "Vystupuješ na zastávce za parkem.",
-      "lemmas": [
-        "get off"
-      ],
-      "accepts": [
-        "You get off at the station after the park"
-      ]
-    },
-    {
-      "en": "I usually get up at seven, but on Saturday I sleep much longer.",
-      "cz": "Obvykle vstávám v sedm, ale v sobotu spím mnohem déle.",
-      "lemmas": [
-        "get up"
-      ],
-      "accepts": [
-        "I usually get up at seven, but on Saturday I sleep much longer"
-      ]
-    },
-    {
-      "en": "We get in late, so do not wait for us.",
-      "cz": "Přijedeme pozdě, tak na nás nečekejte.",
-      "lemmas": [
-        "get in"
-      ],
-      "accepts": [
-        "We get in late, so do not wait for us",
-        "We get in late, so don't wait for us"
-      ]
-    },
-    {
-      "en": "It takes a week to get over a bad cold.",
-      "cz": "Než se z pořádné rýmy dostaneš, trvá to týden.",
-      "lemmas": [
-        "get over"
-      ],
-      "accepts": [
-        "It takes a week to get over a bad cold"
-      ]
-    },
-    {
-      "en": "I need to get rid of these old books because there is no space.",
-      "cz": "Musím se zbavit těch starých knih, protože není místo.",
-      "lemmas": [
-        "get rid of"
-      ],
-      "accepts": [
-        "I need to get rid of these old books because there is no space",
-        "I need to get rid of these old books because there's no space"
-      ]
-    },
-    {
-      "en": "We get back from Poland on Sunday evening.",
-      "cz": "Z Polska se vracíme v neděli večer.",
-      "lemmas": [
-        "get back"
-      ],
-      "accepts": [
-        "We get back from Poland on Sunday evening"
-      ]
-    },
-    {
-      "en": "It is not easy to get into that school.",
-      "cz": "Dostat se na tu školu není snadné.",
-      "lemmas": [
-        "get into"
-      ],
-      "accepts": [
-        "It is not easy to get into that school",
-        "It's not easy to get into that school",
-        "It isn't easy to get into that school"
-      ]
-    },
-    {
-      "en": "We want to get away for a few days in October.",
-      "cz": "V říjnu chceme na pár dní vypadnout.",
-      "lemmas": [
-        "get away"
-      ],
-      "accepts": [
-        "We want to get away for a few days in October"
-      ]
-    },
-    {
-      "en": "We should get going, or we will miss the train.",
-      "cz": "Měli bychom vyrazit, jinak nám ujede vlak.",
-      "lemmas": [
-        "get going"
-      ],
-      "accepts": [
-        "We should get going, or we will miss the train",
-        "We should get going, or we'll miss the train"
-      ]
+     "icon": "⏰",
+     "en": "get going",
+     "cz": "vyrazit"
     }
-  ],
-  "use_mode": "rewrite",
-  "use_hint": "Rewrite the sentence. Replace the underlined words.",
-  "use_sentences": [
+   ]
+  },
+  {
+   "title": "You will use these words in",
+   "title_cz": "Tato slova použiješ ve větách",
+   "frames": [
+    "I get … every … · *Dostávám … každý …*",
+    "It gets … · *Stává se …*",
+    "We get … at … · *Dostaneme se … v …*",
+    "You will get … if … · *Budeš …, jestli …*",
+    "I need to get … · *Potřebuju …*"
+   ],
+   "note": "Czech uses a different verb for each of these — *dostat*, *stát se*, *dojít*. English uses **get** for all three, and the sense comes from the word after it.",
+   "note_cz": "Čeština má pro každý význam jiné sloveso. Angličtina má **get** a význam určuje slovo za ním."
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1_get_1",
+   "title": "Get · receive or obtain",
+   "items": [
     {
-      "lemma": "get paid",
-      "prompt": "The money comes on the last Friday of the month.",
-      "underline": "The money comes",
-      "en": "We get paid on the last Friday of the month.",
-      "lemmas": [
-        "get paid"
-      ],
-      "accepts": [
-        "We get paid on the last Friday of the month"
-      ]
+     "en": "get a present",
+     "cz": "dostat dárek",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get a degree",
-      "prompt": "She wants to finish university before she is thirty.",
-      "underline": "finish university",
-      "en": "She wants to get a degree before she is thirty.",
-      "lemmas": [
-        "get a degree"
-      ],
-      "accepts": [
-        "She wants to get a degree before she is thirty"
-      ]
+     "en": "get a letter",
+     "cz": "dostat dopis",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get ill",
-      "prompt": "Children are sick more often in the winter.",
-      "underline": "are sick",
-      "en": "Children get ill more often in the winter.",
-      "lemmas": [
-        "get ill"
-      ],
-      "accepts": [
-        "Children get ill more often in the winter"
-      ]
+     "en": "get a job",
+     "cz": "sehnat práci",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get married",
-      "prompt": "They want to have their wedding in the spring.",
-      "underline": "have their wedding",
-      "en": "They want to get married in the spring.",
-      "lemmas": [
-        "get married"
-      ],
-      "accepts": [
-        "They want to get married in the spring"
-      ]
+     "en": "get a ticket",
+     "cz": "sehnat lístek",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "get better",
-      "prompt": "The weather will improve at the weekend.",
-      "underline": "improve",
-      "en": "The weather will get better at the weekend.",
-      "lemmas": [
-        "get better"
-      ],
-      "accepts": [
-        "The weather will get better at the weekend"
-      ]
+     "en": "get paid",
+     "cz": "dostat zaplaceno",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get ready",
-      "prompt": "It takes me ten minutes to wash and dress in the morning.",
-      "underline": "wash and dress",
-      "en": "It takes me ten minutes to get ready in the morning.",
-      "lemmas": [
-        "get ready"
-      ],
-      "accepts": [
-        "It takes me ten minutes to get ready in the morning"
-      ]
+     "en": "get a call",
+     "cz": "dostat hovor",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get rid of",
-      "prompt": "I need to throw out these old books because there is no space.",
-      "underline": "throw out",
-      "en": "I need to get rid of these old books because there is no space.",
-      "lemmas": [
-        "get rid of"
-      ],
-      "accepts": [
-        "I need to get rid of these old books because there is no space"
-      ]
+     "en": "get some bread",
+     "cz": "koupit chleba",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "get over",
-      "prompt": "It takes a week to be well again after a bad cold.",
-      "underline": "be well again after",
-      "en": "It takes a week to get over a bad cold.",
-      "lemmas": [
-        "get over"
-      ],
-      "accepts": [
-        "It takes a week to get over a bad cold"
-      ]
+     "en": "get an idea",
+     "cz": "dostat nápad",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get away",
-      "prompt": "We want to leave the city for a few days in October.",
-      "underline": "leave the city",
-      "en": "We want to get away for a few days in October.",
-      "lemmas": [
-        "get away"
-      ],
-      "accepts": [
-        "We want to get away for a few days in October"
-      ]
+     "en": "get an email",
+     "cz": "dostat e-mail",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get going",
-      "prompt": "We should start now, or we will miss the train.",
-      "underline": "start now",
-      "en": "We should get going, or we will miss the train.",
-      "lemmas": [
-        "get going"
-      ],
-      "accepts": [
-        "We should get going, or we will miss the train",
-        "We should get going, or we'll miss the train"
-      ]
+     "en": "get a degree",
+     "cz": "získat titul",
+     "use": [
+      "i_want_to"
+     ]
     },
     {
-      "lemma": "get a job",
-      "prompt": "It is hard to find work in a small town.",
-      "underline": "find work",
-      "en": "It is hard to get a job in a small town.",
-      "lemmas": [
-        "get a job"
-      ],
-      "accepts": [
-        "It is hard to get a job in a small town",
-        "It's hard to get a job in a small town"
-      ]
+     "en": "get the keys",
+     "cz": "dostat klíče",
+     "use": [
+      "we_need_to"
+     ]
     },
     {
-      "lemma": "get bored",
-      "prompt": "Students stop listening if the lesson is too long.",
-      "underline": "stop listening",
-      "en": "Students get bored if the lesson is too long.",
-      "lemmas": [
-        "get bored"
-      ],
-      "accepts": [
-        "Students get bored if the lesson is too long"
-      ]
+     "en": "get the shopping",
+     "cz": "nakoupit",
+     "use": [
+      "we_need_to"
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "b1_get_2",
+   "title": "Get · become",
+   "items": [
+    {
+     "en": "get tired",
+     "cz": "unavit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get ill",
+     "cz": "onemocnět",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get angry",
+     "cz": "rozzlobit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get cold",
+     "cz": "ochladit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get married",
+     "cz": "vzít se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get worried",
+     "cz": "začít se bát",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get dark",
+     "cz": "stmívat se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get better",
+     "cz": "zlepšit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get wet",
+     "cz": "zmoknout",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get old",
+     "cz": "zestárnout",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get bored",
+     "cz": "začít se nudit",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get ready",
+     "cz": "připravit se",
+     "use": [
+      "we_need_to"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1_get_3",
+   "title": "Get · arrive, move, fixed pairs",
+   "items": [
+    {
+     "en": "get home",
+     "cz": "dostat se domů",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get to work",
+     "cz": "dostat se do práce",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "get on",
+     "cz": "nastoupit",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get off",
+     "cz": "vystoupit",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get up",
+     "cz": "vstávat",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get in",
+     "cz": "nastoupit (do auta)",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get over",
+     "cz": "překonat / dostat se z toho",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get rid of",
+     "cz": "zbavit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get back",
+     "cz": "vrátit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get into",
+     "cz": "dostat se do",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get away",
+     "cz": "dostat se pryč",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get going",
+     "cz": "vyrazit",
+     "use": [
+      "we_need_to"
+     ]
+    }
+   ]
+  }
+ ],
+ "sentences": [
+  {
+   "en": "Children get a present from their grandparents every Christmas.",
+   "cz": "Děti dostávají od prarodičů dárek každé Vánoce.",
+   "lemmas": [
+    "get a present"
+   ],
+   "accepts": [
+    "Children get a present from their grandparents every Christmas"
+   ]
+  },
+  {
+   "en": "I get a letter from the bank every month.",
+   "cz": "Každý měsíc dostanu dopis z banky.",
+   "lemmas": [
+    "get a letter"
+   ],
+   "accepts": [
+    "I get a letter from the bank every month"
+   ]
+  },
+  {
+   "en": "It is hard to get a job in a small town.",
+   "cz": "V malém městě je těžké sehnat práci.",
+   "lemmas": [
+    "get a job"
+   ],
+   "accepts": [
+    "It is hard to get a job in a small town",
+    "It's hard to get a job in a small town"
+   ]
+  },
+  {
+   "en": "You can get a ticket at the machine by the door.",
+   "cz": "Lístek si můžeš koupit v automatu u dveří.",
+   "lemmas": [
+    "get a ticket"
+   ],
+   "accepts": [
+    "You can get a ticket at the machine by the door"
+   ]
+  },
+  {
+   "en": "We get paid on the last Friday of the month.",
+   "cz": "Výplatu dostáváme poslední pátek v měsíci.",
+   "lemmas": [
+    "get paid"
+   ],
+   "accepts": [
+    "We get paid on the last Friday of the month"
+   ]
+  },
+  {
+   "en": "I get a call from my mother every Sunday.",
+   "cz": "Každou neděli mi volá máma.",
+   "lemmas": [
+    "get a call"
+   ],
+   "accepts": [
+    "I get a call from my mother every Sunday"
+   ]
+  },
+  {
+   "en": "Can you get some bread on your way home?",
+   "cz": "Můžeš cestou domů koupit chleba?",
+   "lemmas": [
+    "get some bread"
+   ],
+   "accepts": [
+    "Can you get some bread on your way home?"
+   ]
+  },
+  {
+   "en": "Sometimes I get an idea in the night and write it down.",
+   "cz": "Někdy mě v noci napadne nápad a zapíšu si ho.",
+   "lemmas": [
+    "get an idea"
+   ],
+   "accepts": [
+    "Sometimes I get an idea in the night and write it down"
+   ]
+  },
+  {
+   "en": "You will get an email when the booking is ready.",
+   "cz": "Až bude rezervace hotová, přijde ti e-mail.",
+   "lemmas": [
+    "get an email"
+   ],
+   "accepts": [
+    "You will get an email when the booking is ready",
+    "You'll get an email when the booking is ready"
+   ]
+  },
+  {
+   "en": "She wants to get a degree before she is thirty.",
+   "cz": "Chce mít vysokou školu, než jí bude třicet.",
+   "lemmas": [
+    "get a degree"
+   ],
+   "accepts": [
+    "She wants to get a degree before she is thirty"
+   ]
+  },
+  {
+   "en": "We get the keys after we pay the deposit.",
+   "cz": "Klíče dostaneme, až zaplatíme zálohu.",
+   "lemmas": [
+    "get the keys"
+   ],
+   "accepts": [
+    "We get the keys after we pay the deposit"
+   ]
+  },
+  {
+   "en": "I get the shopping on Saturday morning.",
+   "cz": "Nákup dělám v sobotu ráno.",
+   "lemmas": [
+    "get the shopping"
+   ],
+   "accepts": [
+    "I get the shopping on Saturday morning"
+   ]
+  },
+  {
+   "en": "I get tired if I read after ten.",
+   "cz": "Když čtu po desáté, jsem unavený.",
+   "lemmas": [
+    "get tired"
+   ],
+   "accepts": [
+    "I get tired if I read after ten"
+   ]
+  },
+  {
+   "en": "Children get ill more often in the winter.",
+   "cz": "Děti v zimě onemocní častěji.",
+   "lemmas": [
+    "get ill"
+   ],
+   "accepts": [
+    "Children get ill more often in the winter"
+   ]
+  },
+  {
+   "en": "He does not get angry, but he stops talking.",
+   "cz": "Nerozzlobí se, ale přestane mluvit.",
+   "lemmas": [
+    "get angry"
+   ],
+   "accepts": [
+    "He does not get angry, but he stops talking",
+    "He doesn't get angry, but he stops talking"
+   ]
+  },
+  {
+   "en": "Your dinner will get cold if you take a call now.",
+   "cz": "Večeře ti vychladne, jestli si teď vezmeš telefon.",
+   "lemmas": [
+    "get cold"
+   ],
+   "accepts": [
+    "Your dinner will get cold if you take a call now"
+   ]
+  },
+  {
+   "en": "They want to get married in the spring.",
+   "cz": "Chtějí se na jaře vzít.",
+   "lemmas": [
+    "get married"
+   ],
+   "accepts": [
+    "They want to get married in the spring"
+   ]
+  },
+  {
+   "en": "I get worried when the phone rings at night.",
+   "cz": "Když v noci zvoní telefon, mám strach.",
+   "lemmas": [
+    "get worried"
+   ],
+   "accepts": [
+    "I get worried when the phone rings at night"
+   ]
+  },
+  {
+   "en": "In December it can get dark before four.",
+   "cz": "V prosinci se může setmět před čtvrtou.",
+   "lemmas": [
+    "get dark"
+   ],
+   "accepts": [
+    "In December it can get dark before four"
+   ]
+  },
+  {
+   "en": "The weather will get better at the weekend.",
+   "cz": "O víkendu se počasí zlepší.",
+   "lemmas": [
+    "get better"
+   ],
+   "accepts": [
+    "The weather will get better at the weekend",
+    "The weather'll get better at the weekend"
+   ]
+  },
+  {
+   "en": "You will get wet if you walk home in this rain.",
+   "cz": "V tomhle dešti cestou domů zmokneš.",
+   "lemmas": [
+    "get wet"
+   ],
+   "accepts": [
+    "You will get wet if you walk home in this rain",
+    "You'll get wet if you walk home in this rain"
+   ]
+  },
+  {
+   "en": "Everybody wants to get old, but nobody wants to look old.",
+   "cz": "Každý chce zestárnout, ale nikdo nechce staře vypadat.",
+   "lemmas": [
+    "get old"
+   ],
+   "accepts": [
+    "Everybody wants to get old, but nobody wants to look old"
+   ]
+  },
+  {
+   "en": "Students get bored if the lesson is too long.",
+   "cz": "Studenty to přestane bavit, když je hodina moc dlouhá.",
+   "lemmas": [
+    "get bored"
+   ],
+   "accepts": [
+    "Students get bored if the lesson is too long"
+   ]
+  },
+  {
+   "en": "It takes me ten minutes to get ready in the morning.",
+   "cz": "Ráno mi trvá deset minut, než jsem připravený.",
+   "lemmas": [
+    "get ready"
+   ],
+   "accepts": [
+    "It takes me ten minutes to get ready in the morning"
+   ]
+  },
+  {
+   "en": "I get home at six, but the children are already there.",
+   "cz": "Domů se dostanu v šest, ale děti už tam jsou.",
+   "lemmas": [
+    "get home"
+   ],
+   "accepts": [
+    "I get home at six, but the children are already there"
+   ]
+  },
+  {
+   "en": "How do you get to work when the trains are not running?",
+   "cz": "Jak se dostaneš do práce, když vlaky nejezdí?",
+   "lemmas": [
+    "get to work"
+   ],
+   "accepts": [
+    "How do you get to work when the trains are not running?",
+    "How do you get to work when the trains aren't running"
+   ]
+  },
+  {
+   "en": "We get on the bus at the second stop.",
+   "cz": "Nastupujeme do autobusu na druhé zastávce.",
+   "lemmas": [
+    "get on"
+   ],
+   "accepts": [
+    "We get on the bus at the second stop"
+   ]
+  },
+  {
+   "en": "You get off at the station after the park.",
+   "cz": "Vystupuješ na zastávce za parkem.",
+   "lemmas": [
+    "get off"
+   ],
+   "accepts": [
+    "You get off at the station after the park"
+   ]
+  },
+  {
+   "en": "I usually get up at seven, but on Saturday I sleep much longer.",
+   "cz": "Obvykle vstávám v sedm, ale v sobotu spím mnohem déle.",
+   "lemmas": [
+    "get up"
+   ],
+   "accepts": [
+    "I usually get up at seven, but on Saturday I sleep much longer"
+   ]
+  },
+  {
+   "en": "We get in late, so do not wait for us.",
+   "cz": "Přijedeme pozdě, tak na nás nečekejte.",
+   "lemmas": [
+    "get in"
+   ],
+   "accepts": [
+    "We get in late, so do not wait for us",
+    "We get in late, so don't wait for us"
+   ]
+  },
+  {
+   "en": "It takes a week to get over a bad cold.",
+   "cz": "Než se z pořádné rýmy dostaneš, trvá to týden.",
+   "lemmas": [
+    "get over"
+   ],
+   "accepts": [
+    "It takes a week to get over a bad cold"
+   ]
+  },
+  {
+   "en": "I need to get rid of these old books because there is no space.",
+   "cz": "Musím se zbavit těch starých knih, protože není místo.",
+   "lemmas": [
+    "get rid of"
+   ],
+   "accepts": [
+    "I need to get rid of these old books because there is no space",
+    "I need to get rid of these old books because there's no space"
+   ]
+  },
+  {
+   "en": "We get back from Poland on Sunday evening.",
+   "cz": "Z Polska se vracíme v neděli večer.",
+   "lemmas": [
+    "get back"
+   ],
+   "accepts": [
+    "We get back from Poland on Sunday evening"
+   ]
+  },
+  {
+   "en": "It is not easy to get into that school.",
+   "cz": "Dostat se na tu školu není snadné.",
+   "lemmas": [
+    "get into"
+   ],
+   "accepts": [
+    "It is not easy to get into that school",
+    "It's not easy to get into that school",
+    "It isn't easy to get into that school"
+   ]
+  },
+  {
+   "en": "We want to get away for a few days in October.",
+   "cz": "V říjnu chceme na pár dní vypadnout.",
+   "lemmas": [
+    "get away"
+   ],
+   "accepts": [
+    "We want to get away for a few days in October"
+   ]
+  },
+  {
+   "en": "We should get going, or we will miss the train.",
+   "cz": "Měli bychom vyrazit, jinak nám ujede vlak.",
+   "lemmas": [
+    "get going"
+   ],
+   "accepts": [
+    "We should get going, or we will miss the train",
+    "We should get going, or we'll miss the train"
+   ]
+  }
+ ],
+ "use_mode": "rewrite",
+ "use_hint": "Rewrite the sentence. Replace the underlined words.",
+ "use_sentences": [
+  {
+   "lemma": "get paid",
+   "prompt": "We receive the money on the last Friday of the month.",
+   "underline": "receive the money",
+   "en": "We get paid on the last Friday of the month.",
+   "lemmas": [
+    "get paid"
+   ],
+   "accepts": [
+    "We get paid on the last Friday of the month"
+   ]
+  },
+  {
+   "lemma": "get a degree",
+   "prompt": "She wants to finish university before she is thirty.",
+   "underline": "finish university",
+   "en": "She wants to get a degree before she is thirty.",
+   "lemmas": [
+    "get a degree"
+   ],
+   "accepts": [
+    "She wants to get a degree before she is thirty"
+   ]
+  },
+  {
+   "lemma": "get ill",
+   "prompt": "Children are sick more often in the winter.",
+   "underline": "are sick",
+   "en": "Children get ill more often in the winter.",
+   "lemmas": [
+    "get ill"
+   ],
+   "accepts": [
+    "Children get ill more often in the winter"
+   ]
+  },
+  {
+   "lemma": "get married",
+   "prompt": "They want to have their wedding in the spring.",
+   "underline": "have their wedding",
+   "en": "They want to get married in the spring.",
+   "lemmas": [
+    "get married"
+   ],
+   "accepts": [
+    "They want to get married in the spring"
+   ]
+  },
+  {
+   "lemma": "get better",
+   "prompt": "The weather will improve at the weekend.",
+   "underline": "improve",
+   "en": "The weather will get better at the weekend.",
+   "lemmas": [
+    "get better"
+   ],
+   "accepts": [
+    "The weather will get better at the weekend"
+   ]
+  },
+  {
+   "lemma": "get ready",
+   "prompt": "It takes me ten minutes to wash and dress in the morning.",
+   "underline": "wash and dress",
+   "en": "It takes me ten minutes to get ready in the morning.",
+   "lemmas": [
+    "get ready"
+   ],
+   "accepts": [
+    "It takes me ten minutes to get ready in the morning"
+   ]
+  },
+  {
+   "lemma": "get rid of",
+   "prompt": "I need to throw out these old books because there is no space.",
+   "underline": "throw out",
+   "en": "I need to get rid of these old books because there is no space.",
+   "lemmas": [
+    "get rid of"
+   ],
+   "accepts": [
+    "I need to get rid of these old books because there is no space"
+   ]
+  },
+  {
+   "lemma": "get over",
+   "prompt": "It takes a week to be well again after a bad cold.",
+   "underline": "be well again after",
+   "en": "It takes a week to get over a bad cold.",
+   "lemmas": [
+    "get over"
+   ],
+   "accepts": [
+    "It takes a week to get over a bad cold"
+   ]
+  },
+  {
+   "lemma": "get away",
+   "prompt": "We want to leave the city for a few days in October.",
+   "underline": "leave the city",
+   "en": "We want to get away for a few days in October.",
+   "lemmas": [
+    "get away"
+   ],
+   "accepts": [
+    "We want to get away for a few days in October"
+   ]
+  },
+  {
+   "lemma": "get going",
+   "prompt": "We should start now, or we will miss the train.",
+   "underline": "start now",
+   "en": "We should get going, or we will miss the train.",
+   "lemmas": [
+    "get going"
+   ],
+   "accepts": [
+    "We should get going, or we will miss the train",
+    "We should get going, or we'll miss the train"
+   ]
+  },
+  {
+   "lemma": "get a job",
+   "prompt": "It is hard to find work in a small town.",
+   "underline": "find work",
+   "en": "It is hard to get a job in a small town.",
+   "lemmas": [
+    "get a job"
+   ],
+   "accepts": [
+    "It is hard to get a job in a small town",
+    "It's hard to get a job in a small town"
+   ]
+  },
+  {
+   "lemma": "get bored",
+   "prompt": "Students stop listening if the lesson is too long.",
+   "underline": "stop listening",
+   "en": "Students get bored if the lesson is too long.",
+   "lemmas": [
+    "get bored"
+   ],
+   "accepts": [
+    "Students get bored if the lesson is too long"
+   ]
+  }
+ ]
 }
