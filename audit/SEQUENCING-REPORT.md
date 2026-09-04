@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**798 unknown word types** across 102 live units (of 190).
+**796 unknown word types** across 101 live units (of 190).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -91,7 +91,6 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b1_linkers** (B1 grammar): inside, rich, slow, hurried, none
 - **b1_cause_concession** (B1 grammar): outside×2
 - **b1_verb_patterns_advanced** (B1 grammar): forward×2, outside×2, moment, advised, allowed, noon, powerful, without, instead
-- **trunk_chunks_b1** (B1 vocab): favour, priority
 - **b1_phrasal_verbs** (B1 grammar): bottom
 - **b1_dependent_prepositions** (B1 grammar): villas, future, discussed
 - **b1_suffixes** (B1 grammar): without
