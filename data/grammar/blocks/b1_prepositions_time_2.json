@@ -6,13 +6,22 @@
  "codex_unit": "G_PP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "From codex/parked-once-a-week.json (Patrik, a1_prepositions_time smoke 2026-08-29: *3 times in week). once / twice / three times A WEEK is a ZERO-preposition pattern, not a fourth box next to at / on / in. Second job: every + period, also with no preposition. Items lifted and extended from the parked file rather than re-invented. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "From codex/parked-once-a-week.json (Patrik, a1_prepositions_time smoke 2026-08-29: *3 times in week). once / twice / three times A WEEK is a ZERO-preposition pattern, not a fourth box next to at / on / in. Second job: every + period, also with no preposition. Items lifted and extended from the parked file rather than re-invented. First draft 2026-09-02, rough - thicken after smoke. THICKENED 2026-09-04 by the B1 agent loop: 10 -> 24 drill items plus a 12-chip sort. B8 - the four gaps that were a bare `a` now gap the whole chunk (twice a / times a / once an), because the teaching point is the pattern, not the article; the bare-`a` gap was testing articles inside a preposition pack. C11 - a gap answer must be a string the intro shows, so the number stays on the stem and the answer is `times a`, which card 0 prints. B10/C11 - card 2 says this is not a fourth box next to at/on/in, so that contrast is now a sort with two bins, Monday against every Monday on the board, instead of a claim the intro makes and nothing checks. A4 - all three article demands fixed at the source (do posilovny -> chodi plavat, Autobus -> Nas vlak, Schuze -> Ta porada) and `in summer` replaced `in the summer`. F3 - minutes and cleans were untaught (every two hours, works from home). A2 - the four subjectless Czech prompts now name their subject. once an hour is new: the pattern takes `an` before a vowel, and card 0 and Common mistakes both show it.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
   "sequence": [
+   "sort_bins",
    "quiz"
   ]
+ },
+ "bins": [
+  "at / on / in",
+  "no preposition"
+ ],
+ "bin_captions": {
+  "at / on / in": "a clock time, a day, a month",
+  "no preposition": "how often — nothing in front"
  },
  "intro": {
   "cards": [
@@ -40,6 +49,10 @@
       [
        "number + **times** + a",
        "three **times a** year"
+      ],
+      [
+       "before a vowel → **an**",
+       "**once an** hour"
       ]
      ]
     },
@@ -49,8 +62,8 @@
       "cz": "Pracuju dvakrát týdně."
      },
      {
-      "en": "She goes three **times a** week.",
-      "cz": "Chodí tam třikrát týdně."
+      "en": "Jana goes swimming three **times a** week.",
+      "cz": "Jana chodí plavat třikrát týdně."
      }
     ]
    },
@@ -89,7 +102,8 @@
     "title": "every",
     "title_cz": "every",
     "points": [
-     "**every** takes no preposition either."
+     "**every** takes no preposition either.",
+     "One day is **on** Monday. Repeated, it is **every** Monday."
     ],
     "table": {
      "headers": [
@@ -103,7 +117,7 @@
       ],
       [
        "**every** + number",
-       "**every** two weeks"
+       "**every** two hours"
       ]
      ]
     }
@@ -136,6 +150,10 @@
       [
        "~~I go there one time a week.~~",
        "I go there **once a** week."
+      ],
+      [
+       "~~The train leaves once a hour.~~",
+       "The train leaves **once an** hour."
       ]
      ]
     }
@@ -144,19 +162,97 @@
  },
  "blocks": [
   {
+   "id": "b1_prepositions_time_2_sort",
+   "title": "Does it take a preposition?",
+   "items": [
+    {
+     "en": "six o'clock",
+     "cz": "šest hodin",
+     "bin": "at / on / in",
+     "use": false
+    },
+    {
+     "en": "Monday",
+     "cz": "pondělí",
+     "bin": "at / on / in",
+     "use": false
+    },
+    {
+     "en": "July",
+     "cz": "červenec",
+     "bin": "at / on / in",
+     "use": false
+    },
+    {
+     "en": "the morning",
+     "cz": "ráno",
+     "bin": "at / on / in",
+     "use": false
+    },
+    {
+     "en": "Saturday evening",
+     "cz": "sobota večer",
+     "bin": "at / on / in",
+     "use": false
+    },
+    {
+     "en": "the weekend",
+     "cz": "víkend",
+     "bin": "at / on / in",
+     "use": false
+    },
+    {
+     "en": "twice a week",
+     "cz": "dvakrát týdně",
+     "bin": "no preposition",
+     "use": false
+    },
+    {
+     "en": "every day",
+     "cz": "každý den",
+     "bin": "no preposition",
+     "use": false
+    },
+    {
+     "en": "once a month",
+     "cz": "jednou měsíčně",
+     "bin": "no preposition",
+     "use": false
+    },
+    {
+     "en": "every Monday",
+     "cz": "každé pondělí",
+     "bin": "no preposition",
+     "use": false
+    },
+    {
+     "en": "three times a year",
+     "cz": "třikrát ročně",
+     "bin": "no preposition",
+     "use": false
+    },
+    {
+     "en": "every two hours",
+     "cz": "každé dvě hodiny",
+     "bin": "no preposition",
+     "use": false
+    }
+   ]
+  },
+  {
    "id": "b1_prepositions_time_2_main",
    "title": "Prepositions of time 2 · B1",
    "items": [
     {
      "en": "I work twice a week.",
      "cz": "Pracuju dvakrát týdně.",
-     "gap": "I work twice ____ week. (how often)",
-     "gap_answer": "a",
+     "gap": "I work ____ week. (twice)",
+     "gap_answer": "twice a",
      "quiz_options": [
-      "a",
-      "in",
-      "in a",
-      "per"
+      "twice a",
+      "twice in",
+      "twice in a",
+      "twice on"
      ],
      "accepts": [
       "I work twice a week."
@@ -166,132 +262,225 @@
      "explanation_cz": "**twice a week**. Žádná předložka — nese to **a**."
     },
     {
-     "en": "She goes to the gym three times a week.",
-     "cz": "Chodí do posilovny třikrát týdně.",
-     "gap": "She goes three times ____ week. (a / in)",
-     "gap_answer": "a",
+     "en": "Jana goes swimming three times a week.",
+     "cz": "Jana chodí plavat třikrát týdně.",
+     "gap": "Jana goes swimming three ____ week. (times)",
+     "gap_answer": "times a",
      "quiz_options": [
-      "a",
-      "in",
-      "on",
-      "per"
+      "times a",
+      "times in",
+      "times in a",
+      "times on"
      ],
      "accepts": [
-      "She goes to the gym three times a week."
+      "Jana goes swimming three times a week."
      ],
-     "wrong": "She goes to the gym three times in week.",
-     "explanation": "number + **times a** + period.",
-     "explanation_cz": "číslovka + **times a** + období."
-    },
-    {
-     "en": "We meet every Monday.",
-     "cz": "Scházíme se každé pondělí.",
-     "gap": "We meet ____ Monday. (every / on every)",
-     "gap_answer": "every",
-     "quiz_options": [
-      "every",
-      "on every",
-      "in every",
-      "each of"
-     ],
-     "accepts": [
-      "We meet every Monday."
-     ],
-     "wrong": "We meet on every Monday.",
-     "explanation": "**every** takes no preposition.",
-     "explanation_cz": "**every** nemá předložku."
-    },
-    {
-     "en": "I see my parents once a month.",
-     "cz": "Vídám rodiče jednou měsíčně.",
-     "gap": "I see my parents ____ month. (once a / one time a)",
-     "gap_answer": "once a",
-     "quiz_options": [
-      "once a",
-      "one time a",
-      "once in a",
-      "one time in"
-     ],
-     "accepts": [
-      "I see my parents once a month."
-     ],
-     "wrong": "I see my parents one time a month.",
-     "explanation": "**once**, not *one time*.",
-     "explanation_cz": "**once**, ne *one time*."
-    },
-    {
-     "en": "The bus leaves every twenty minutes.",
-     "cz": "Autobus jezdí každých dvacet minut.",
-     "gap": "The bus leaves ____ twenty minutes. (every / in every)",
-     "gap_answer": "every",
-     "quiz_options": [
-      "every",
-      "in every",
-      "each",
-      "on every"
-     ],
-     "accepts": [
-      "The bus leaves every twenty minutes."
-     ],
-     "explanation": "**every** + a number + a period, with no preposition.",
-     "explanation_cz": "**every** + číslovka + období, bez předložky."
+     "wrong": "Jana goes swimming three times in week.",
+     "explanation": "number + **times a** + period. *In week* is the error this unit exists for.",
+     "explanation_cz": "číslovka + **times a** + období. *In week* je právě ta chyba, kvůli které tahle lekce je."
     },
     {
      "en": "He plays tennis twice a month.",
      "cz": "Hraje tenis dvakrát měsíčně.",
-     "gap": "He plays tennis twice ____ month. (how often)",
-     "gap_answer": "a",
+     "gap": "He plays tennis ____ month. (twice)",
+     "gap_answer": "twice a",
      "quiz_options": [
-      "a",
-      "in",
-      "in a",
-      "per"
+      "twice a",
+      "twice in",
+      "twice in a",
+      "twice at"
      ],
      "accepts": [
       "He plays tennis twice a month."
      ],
-     "explanation": "**twice a month** is the fixed shape.",
-     "explanation_cz": "**twice a month** je ustálený tvar."
+     "wrong": "He plays tennis twice in month.",
+     "explanation": "**twice a month** is the fixed shape — the period is singular after *a*.",
+     "explanation_cz": "**twice a month** je ustálený tvar — období je po *a* v jednotném čísle."
+    },
+    {
+     "en": "We go on holiday twice a year.",
+     "cz": "Jezdíme na dovolenou dvakrát ročně.",
+     "gap": "We go on holiday ____ year. (twice)",
+     "gap_answer": "twice a",
+     "quiz_options": [
+      "twice a",
+      "twice in",
+      "twice in a",
+      "twice on"
+     ],
+     "accepts": [
+      "We go on holiday twice a year."
+     ],
+     "wrong": "We go on holiday twice in year.",
+     "explanation": "*on holiday* keeps its own **on**; how often still takes **twice a**.",
+     "explanation_cz": "*on holiday* má vlastní **on**; jak často má pořád **twice a**."
+    },
+    {
+     "en": "I see my parents once a month.",
+     "cz": "Vídám rodiče jednou měsíčně.",
+     "gap": "I see my parents ____ month. (once)",
+     "gap_answer": "once a",
+     "quiz_options": [
+      "once a",
+      "once in",
+      "once in a",
+      "once at a"
+     ],
+     "accepts": [
+      "I see my parents once a month."
+     ],
+     "wrong": "I see my parents once in month.",
+     "explanation": "**once a month**, not *one time* and not *in*.",
+     "explanation_cz": "**once a month**, ne *one time* a ne *in*."
+    },
+    {
+     "en": "Lenka has an English lesson once a week.",
+     "cz": "Lenka má hodinu angličtiny jednou týdně.",
+     "gap": "Lenka has an English lesson ____ week. (once)",
+     "gap_answer": "once a",
+     "quiz_options": [
+      "once a",
+      "once in",
+      "once in a",
+      "one time in"
+     ],
+     "accepts": [
+      "Lenka has an English lesson once a week."
+     ],
+     "wrong": "Lenka has an English lesson once in week.",
+     "explanation": "**once**, not *one time*. The **a** is part of the pattern, not an article on *week*.",
+     "explanation_cz": "**once**, ne *one time*. To **a** patří ke vzorci, není to člen u *week*."
     },
     {
      "en": "We go to Prague four times a year.",
      "cz": "Jezdíme do Prahy čtyřikrát ročně.",
-     "gap": "We go to Prague four times ____ year. (how often)",
-     "gap_answer": "a",
+     "gap": "We go to Prague four ____ year. (times)",
+     "gap_answer": "times a",
      "quiz_options": [
-      "a",
-      "in",
-      "in a",
-      "per"
+      "times a",
+      "times in",
+      "times in a",
+      "times on"
      ],
      "accepts": [
       "We go to Prague four times a year."
      ],
      "wrong": "We go to Prague four times in year.",
-     "explanation": "four **times a year**.",
-     "explanation_cz": "four **times a year**."
+     "explanation": "Any number works the same way: number + **times a** + period.",
+     "explanation_cz": "Každá číslovka funguje stejně: číslovka + **times a** + období."
     },
     {
-     "en": "I check my email every day.",
-     "cz": "Kontroluju e-mail každý den.",
-     "gap": "I check my email ____ day. (every / in every)",
-     "gap_answer": "every",
+     "en": "The train leaves once an hour.",
+     "cz": "Ten vlak jede jednou za hodinu.",
+     "gap": "The train leaves ____ hour. (once)",
+     "gap_answer": "once an",
      "quiz_options": [
-      "every",
-      "in every",
-      "on every",
-      "each of"
+      "once an",
+      "once a",
+      "once in an",
+      "once at an"
      ],
      "accepts": [
-      "I check my email every day."
+      "The train leaves once an hour."
      ],
-     "explanation": "**every day** — two words, no preposition.",
-     "explanation_cz": "**every day** — dvě slova, bez předložky."
+     "wrong": "The train leaves once in hour.",
+     "explanation": "*hour* starts with a vowel sound, so the pattern takes **an**: once **an** hour.",
+     "explanation_cz": "*hour* začíná na samohlásku, takže vzorec bere **an**: once **an** hour."
+    },
+    {
+     "en": "Eva works from home once a week.",
+     "cz": "Eva jednou týdně pracuje z domova.",
+     "gap": "Eva works from home ____ week. (once)",
+     "gap_answer": "once a",
+     "quiz_options": [
+      "once a",
+      "once in",
+      "once in a",
+      "once on a"
+     ],
+     "accepts": [
+      "Eva works from home once a week."
+     ],
+     "wrong": "Eva works from home once in week.",
+     "explanation": "**once a week** — the whole thing answers *how often*.",
+     "explanation_cz": "**once a week** — celé to odpovídá na *jak často*."
+    },
+    {
+     "en": "I drink coffee three times a day.",
+     "cz": "Piju kávu třikrát denně.",
+     "gap": "I drink coffee three ____ day. (times)",
+     "gap_answer": "times a",
+     "quiz_options": [
+      "times a",
+      "times in",
+      "times in a",
+      "times at"
+     ],
+     "accepts": [
+      "I drink coffee three times a day."
+     ],
+     "wrong": "I drink coffee three times in day.",
+     "explanation": "Czech *denně* is English **a day** — the period after *times a*.",
+     "explanation_cz": "České *denně* je anglicky **a day** — období po *times a*."
+    },
+    {
+     "en": "Hana goes shopping once a week.",
+     "cz": "Hana chodí nakupovat jednou týdně.",
+     "gap": "Hana goes shopping ____ week. (once)",
+     "gap_answer": "once a",
+     "quiz_options": [
+      "once a",
+      "once in",
+      "once in a",
+      "at once a"
+     ],
+     "accepts": [
+      "Hana goes shopping once a week."
+     ],
+     "wrong": "Hana goes shopping once in week.",
+     "explanation": "Nothing goes in front of **once** — not *at*, not *in*.",
+     "explanation_cz": "Před **once** nejde nic — ani *at*, ani *in*."
+    },
+    {
+     "en": "In July I swim twice a day.",
+     "cz": "V červenci plavu dvakrát denně.",
+     "gap": "In July I swim ____ day. (twice)",
+     "gap_answer": "twice a",
+     "quiz_options": [
+      "twice a",
+      "twice in",
+      "twice in a",
+      "twice on"
+     ],
+     "accepts": [
+      "In July I swim twice a day."
+     ],
+     "wrong": "In July I swim twice in day.",
+     "explanation": "*In July* is the month, so it keeps **in**. How often is still **twice a**.",
+     "explanation_cz": "*In July* je měsíc, takže si drží **in**. Jak často je pořád **twice a**."
+    },
+    {
+     "en": "Hana works on Saturday twice a month.",
+     "cz": "Hana pracuje v sobotu dvakrát měsíčně.",
+     "gap": "Hana works on Saturday ____ month. (twice)",
+     "gap_answer": "twice a",
+     "quiz_options": [
+      "twice a",
+      "twice in",
+      "twice in a",
+      "twice on"
+     ],
+     "accepts": [
+      "Hana works on Saturday twice a month."
+     ],
+     "wrong": "Hana works on Saturday twice in month.",
+     "explanation": "Two different jobs in one sentence: **on** Saturday for the day, **twice a** month for how often.",
+     "explanation_cz": "Dvě různé úlohy v jedné větě: **on** Saturday pro den, **twice a** month pro to, jak často."
     },
     {
      "en": "The meeting is once a week, on Thursday.",
-     "cz": "Schůze je jednou týdně, ve čtvrtek.",
-     "gap": "The meeting is ____ week, on Thursday. (once a / once in a)",
+     "cz": "Ta porada je jednou týdně, ve čtvrtek.",
+     "gap": "The meeting is ____ week, on Thursday. (once)",
      "gap_answer": "once a",
      "quiz_options": [
       "once a",
@@ -302,13 +491,32 @@
      "accepts": [
       "The meeting is once a week, on Thursday."
      ],
+     "wrong": "The meeting is once in week, on Thursday.",
      "explanation": "**once a week** for how often; **on Thursday** for the day. Different jobs.",
      "explanation_cz": "**once a week** pro to, jak často; **on Thursday** pro den. Různé úlohy."
     },
     {
-     "en": "She calls her mother every evening.",
-     "cz": "Volá mámě každý večer.",
-     "gap": "She calls her mother ____ evening. (every / in every)",
+     "en": "We meet every Monday.",
+     "cz": "Scházíme se každé pondělí.",
+     "gap": "We meet ____ Monday. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "on every",
+      "in every",
+      "at every"
+     ],
+     "accepts": [
+      "We meet every Monday."
+     ],
+     "wrong": "We meet on every Monday.",
+     "explanation": "One day is *on Monday*; repeated it is **every** Monday, with nothing in front.",
+     "explanation_cz": "Jeden den je *on Monday*; opakovaně je to **every** Monday, bez ničeho před tím."
+    },
+    {
+     "en": "I check my email every day.",
+     "cz": "Kontroluju e-mail každý den.",
+     "gap": "I check my email ____ day. (every)",
      "gap_answer": "every",
      "quiz_options": [
       "every",
@@ -317,10 +525,156 @@
       "at every"
      ],
      "accepts": [
-      "She calls her mother every evening."
+      "I check my email every day."
      ],
-     "explanation": "**every evening**, with nothing in front.",
-     "explanation_cz": "**every evening**, nic před tím."
+     "wrong": "I check my email in every day.",
+     "explanation": "**every day** — two words, no preposition.",
+     "explanation_cz": "**every day** — dvě slova, bez předložky."
+    },
+    {
+     "en": "Klara calls her mother every evening.",
+     "cz": "Klára volá mámě každý večer.",
+     "gap": "Klara calls her mother ____ evening. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "in every",
+      "on every",
+      "at every"
+     ],
+     "accepts": [
+      "Klara calls her mother every evening."
+     ],
+     "wrong": "Klara calls her mother in every evening.",
+     "explanation": "*In the evening* has a preposition; **every evening** does not.",
+     "explanation_cz": "*In the evening* má předložku; **every evening** ne."
+    },
+    {
+     "en": "Our train leaves every two hours.",
+     "cz": "Náš vlak jede každé dvě hodiny.",
+     "gap": "Our train leaves ____ two hours. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "in every",
+      "on every",
+      "every of"
+     ],
+     "accepts": [
+      "Our train leaves every two hours."
+     ],
+     "wrong": "Our train leaves in every two hours.",
+     "explanation": "**every** + a number + a period, with no preposition and no *of*.",
+     "explanation_cz": "**every** + číslovka + období, bez předložky a bez *of*."
+    },
+    {
+     "en": "The meeting is every ten days.",
+     "cz": "Ta porada je každých deset dní.",
+     "gap": "The meeting is ____ ten days. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "in every",
+      "every of",
+      "on every"
+     ],
+     "accepts": [
+      "The meeting is every ten days."
+     ],
+     "wrong": "The meeting is every of ten days.",
+     "explanation": "After **every** the number comes straight away: *every ten days*.",
+     "explanation_cz": "Po **every** jde číslovka rovnou: *every ten days*."
+    },
+    {
+     "en": "We play football every Saturday.",
+     "cz": "Hrajeme fotbal každou sobotu.",
+     "gap": "We play football ____ Saturday. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "on every",
+      "in every",
+      "at every"
+     ],
+     "accepts": [
+      "We play football every Saturday."
+     ],
+     "wrong": "We play football on every Saturday.",
+     "explanation": "**every** Saturday. The *on* you know from *on Saturday* drops out here.",
+     "explanation_cz": "**every** Saturday. To *on* z *on Saturday* tady vypadává."
+    },
+    {
+     "en": "Patrik works every Sunday.",
+     "cz": "Patrik pracuje každou neděli.",
+     "gap": "Patrik works ____ Sunday. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "on every",
+      "in every",
+      "every of"
+     ],
+     "accepts": [
+      "Patrik works every Sunday."
+     ],
+     "wrong": "Patrik works on every Sunday.",
+     "explanation": "**every** Sunday — a repeated day takes nothing in front.",
+     "explanation_cz": "**every** Sunday — opakovaný den nemá nic před sebou."
+    },
+    {
+     "en": "I start work at eight every morning.",
+     "cz": "Začínám v práci v osm každé ráno.",
+     "gap": "I start work at eight ____ morning. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "in every",
+      "on every",
+      "at every"
+     ],
+     "accepts": [
+      "I start work at eight every morning."
+     ],
+     "wrong": "I start work at eight in every morning.",
+     "explanation": "**at** eight is the clock time; **every** morning is how often, with no preposition.",
+     "explanation_cz": "**at** eight je hodina; **every** morning je jak často, bez předložky."
+    },
+    {
+     "en": "Ondrej goes to bed late every night.",
+     "cz": "Ondřej chodí spát pozdě každý večer.",
+     "gap": "Ondrej goes to bed late ____ night. (every)",
+     "gap_answer": "every",
+     "quiz_options": [
+      "every",
+      "at every",
+      "in every",
+      "on every"
+     ],
+     "accepts": [
+      "Ondrej goes to bed late every night."
+     ],
+     "wrong": "Ondrej goes to bed late at every night.",
+     "explanation": "*At night* has a preposition; **every night** does not.",
+     "explanation_cz": "*At night* má předložku; **every night** ne."
+    },
+    {
+     "en": "Honza plays football twice a week in summer.",
+     "cz": "Honza hraje v létě fotbal dvakrát týdně.",
+     "gap": "Honza plays football ____ week in summer. (twice)",
+     "gap_answer": "twice a",
+     "quiz_options": [
+      "twice a",
+      "twice in",
+      "twice in a",
+      "twice on"
+     ],
+     "accepts": [
+      "Honza plays football twice a week in summer.",
+      "Honza plays football twice a week in the summer."
+     ],
+     "wrong": "Honza plays football twice in week in summer.",
+     "explanation": "*In summer* is the season and keeps **in**; how often is **twice a** week.",
+     "explanation_cz": "*In summer* je roční období a drží si **in**; jak často je **twice a** week."
     }
    ]
   }
