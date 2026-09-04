@@ -849,12 +849,20 @@ function ppVsPastChoices(it, pack) {
   const take = (x) => {
     const k = key(x);
     if (!k || seen.has(k) || opts.length >= 4) return;
+    // A chip that says a word twice ("have have", "did lived live") is not
+    // an error anyone makes - it is a build fault (James, 2026-09-04).
+    if (/\b(\w+)\s+\1\b/.test(k)) return;
     seen.add(k);
     opts.push(matchCase(answer, x));
   };
 
   const aux = ansKey.replace(/'/g, "'");
-  const qPhrase = /^(did|have|has|was|were)\s+([a-z]+)\b/.exec(aux);
+  // A question gap is aux + SUBJECT ("have you been"). Without the person
+  // list this also matched the statement "has lived", read "lived" as the
+  // subject, and built "did lived live" / "has lived lived"
+  // (James, 2026-09-04, b1_present_perfect_vs_past smoke). C54 person list.
+  const ADV = /\b(ever|already|just|never|still|yet)\s+/g;
+  const qPhrase = /^(did|have|has|was|were)\s+(i|you|he|she|it|we|they)\b/.exec(aux.replace(ADV, ""));
   if (qPhrase && lemma) {
     const subj = qPhrase[2];
     const past = simplePastOf(lemma);
@@ -888,18 +896,35 @@ function ppVsPastChoices(it, pack) {
   if (!lemma) return null;
   const past = simplePastOf(lemma);
   const pp = participleOf(lemma);
-  take(past);
-  take("have " + pp);
-  take("has " + pp);
-  if (past !== pp) {
-    take(pp);
-    if (lemma !== "be") take("have " + past);
-  } else {
-    take(lemma);
-    if (lemma !== "have") take("have " + lemma);
-    if (!/ed$/.test(lemma)) take("have " + lemma + "ed");
+
+  // James, 2026-09-04: the wrong chips are exactly two errors - wrong TENSE
+  // (the other side of the contrast this unit teaches) and wrong FORM (the
+  // agreement slip a learner really makes, "he have lived"). Nothing else.
+  const ppAns = /^(have|has)\s+([a-z]+)$/.exec(aux);
+  if (ppAns) {
+    const other = ppAns[1] === "has" ? "have" : "has";
+    take(past);                    // wrong tense: lived
+    take(other + " " + pp);        // wrong form:  he have lived
+    take(ppAns[1] + " " + lemma);  // wrong form:  he has live
+    return opts.length >= 2 ? opts : null;
   }
+  const mine = gapAux(it.gap);
+  const other = mine === "has" ? "have" : "has";
+  take(mine + " " + pp);           // wrong tense: has lived
+  take(other + " " + pp);          // wrong form:  he have lived
+  take("did " + past);             // wrong form:  did lived
   return opts.length >= 2 ? opts : null;
+}
+
+/* has or have for the subject in front of this gap (C54 person list). Builds
+ * a wrong-TENSE chip that is otherwise well formed, so the only error on it
+ * is the tense. */
+function gapAux(gap) {
+  const m = /([A-Za-z']+)\s+_{2,}/.exec(String(gap || ""));
+  const s = m ? m[1].toLowerCase() : "";
+  if (/^(i|you|we|they)$/.test(s)) return "have";
+  if (/[^s]s$/.test(s)) return "have";
+  return "has";
 }
 
 /** Articles Quiz: a / an / the / — or this noun with those articles.

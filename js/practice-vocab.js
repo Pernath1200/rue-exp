@@ -1279,6 +1279,10 @@ export function startPractice(root, block, opts) {
     // Review launches jump straight to production (opts.startMode = "type")
     mode: opts.startMode || (hasIntro ? "intro" : "match"),
     introPage: 0,
+    // Backspace = Back, set by whichever screen has a page to go back to.
+    // Grammar has had this since the intro nav landed; vocab rendered the
+    // Back button without it (James, 2026-09-04, b1_abstract intro).
+    onBackKey: null,
     match: null,
     quiz: null,
     typ: null,
@@ -1340,6 +1344,7 @@ export function startPractice(root, block, opts) {
       document.removeEventListener("keydown", state.keyHandler, false);
       state.keyHandler = null;
     }
+    state.onBackKey = null;
     if (state.advanceTimer) {
       clearTimeout(state.advanceTimer);
       state.advanceTimer = null;
@@ -1386,6 +1391,15 @@ export function startPractice(root, block, opts) {
   function bindEnter(handler) {
     clearKey();
     state.keyHandler = (e) => {
+      if (e.key === "Backspace" && typeof state.onBackKey === "function") {
+        // Backspace still deletes text wherever text is being typed.
+        if (e.target.closest("input, textarea, select")) return;
+        if (e.target.closest("#smoke-flags-host")) return;
+        e.preventDefault();
+        e.stopPropagation();
+        state.onBackKey();
+        return;
+      }
       if (e.key !== "Enter" || e.shiftKey) return;
       if (e.target.closest("select")) return;
       if (e.target.closest("#smoke-flags-host")) return;
@@ -2797,10 +2811,12 @@ export function startPractice(root, block, opts) {
           last ? "Next → Match" : "Next →"
         }</button>
       </div>`;
-    stage.querySelector("#in-prev")?.addEventListener("click", () => {
+    const goPrev = () => {
+      if (i <= 0) return;
       state.introPage = i - 1;
       render();
-    });
+    };
+    stage.querySelector("#in-prev")?.addEventListener("click", goPrev);
     stage.querySelector("#in-next").onclick = () => {
       if (last) {
         setMode("match");
@@ -2810,8 +2826,11 @@ export function startPractice(root, block, opts) {
       }
     };
     bindEnterPrimary(stage);
+    // After bindEnterPrimary: bindEnter -> clearKey wipes onBackKey.
+    state.onBackKey = i > 0 ? goPrev : null;
     return total > 1
-      ? `Intro ${i + 1} of ${total} · Enter = next`
+      ? `Intro ${i + 1} of ${total} · Enter = next` +
+          (i > 0 ? " · Backspace = back" : "")
       : "Intro · read · Enter = next";
   }
 

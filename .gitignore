@@ -16,3 +16,13 @@ codex/POOL.json
 # python bytecode (audit.py is imported by tooling, which rewrites this)
 __pycache__/
 *.pyc
+
+# accidental make_pool.py output written to flag-named files
+--before
+--before.json
+--help
+--help.json
+
+# deps / other agents
+node_modules/
+.grok/

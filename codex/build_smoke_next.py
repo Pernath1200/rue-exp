@@ -11,12 +11,17 @@ Nothing here needs a human. The ranking is derivable:
   error lists  codex/marking_topic_map.json  (marking-sheet label -> unit id)
   path order   data/tree.json                (path_order + _a2 + _b1)
 
-Priority (James 2026-09-02): the **A2 circle only**, path_order_a2
-from the top (`a2_present_continuous`) down to the checks. Grammar and
-vocab zigzag. Hide already-ticked ids. A1 and B1+ stay off the rail.
+Priority: **one circle at a time**, that band's path_order from the top down
+to the checks. Grammar and vocab zigzag. Hide already-ticked ids. Other bands
+stay off the rail.
 
-    python codex/build_smoke_next.py            # print it
-    python codex/build_smoke_next.py --write    # write it to the vault
+The band was hardcoded to A2 (James 2026-09-02). It became a flag on
+2026-09-04, when James finished A1 and A2 and the rail had to move to B1 —
+so the next move is a flag, not a code edit.
+
+    python codex/build_smoke_next.py                    # print it (B1)
+    python codex/build_smoke_next.py --write            # write it to the vault
+    python codex/build_smoke_next.py --band a2 --write  # go back to a finished band
 """
 
 from __future__ import annotations
@@ -34,7 +39,29 @@ VAULT = Path.home() / "Documents" / "original" / "TA"
 OUT = VAULT / "smoke-next.md"
 ORDER_JSON = VAULT / "smoke-order.json"
 
-A2_LEVEL = "A2"
+BANDS = ("a1", "a2", "b1", "b2", "c1")
+DEFAULT_BAND = "b1"
+
+
+def band_from_argv(argv) -> str:
+    """`--band b1` / `--band=b1`. Defaults to the band currently being smoked."""
+    for i, a in enumerate(argv):
+        v = None
+        if a == "--band" and i + 1 < len(argv):
+            v = argv[i + 1].lower()
+        elif a.startswith("--band="):
+            v = a.split("=", 1)[1].lower()
+        if v is not None:
+            if v not in BANDS:
+                raise SystemExit("--band must be one of: %s" % ", ".join(BANDS))
+            return v
+    return DEFAULT_BAND
+
+
+BAND = band_from_argv(sys.argv)
+LEVEL = BAND.upper()
+# A1 sits on the bare `path_order`; every later band has its own key.
+PATH_KEY = "path_order" if BAND == "a1" else f"path_order_{BAND}"
 TOP_N = 5
 BENCH_N = 10
 
@@ -65,12 +92,12 @@ def main() -> int:
     # (`I am · I have` became `I am`).
     labels = {uid: (n.get("label") or uid) for uid, n in by_id.items()}
 
-    # A2 circle only, top to bottom. Splice sitting_vocab halves after
+    # One circle, top to bottom. Splice sitting_vocab halves after
     # their grammar parent so the zigzag matches the tree.
-    a2_ids = list(tree.get("path_order_a2") or [])
+    band_ids = list(tree.get(PATH_KEY) or [])
     path = []
     seen: set[str] = set()
-    for nid in a2_ids:
+    for nid in band_ids:
         if not nid or nid in seen:
             continue
         seen.add(nid)
@@ -78,12 +105,12 @@ def main() -> int:
         vid = (by_id.get(nid) or {}).get("sitting_vocab")
         if vid and vid not in seen:
             vn = by_id.get(vid) or {}
-            if vn.get("status") == "live" and node_level(vn) == A2_LEVEL:
+            if vn.get("status") == "live" and node_level(vn) == LEVEL:
                 seen.add(vid)
                 path.append(vid)
-    def is_live_a2(u: str) -> bool:
+    def is_live_band(u: str) -> bool:
         n = by_id.get(u) or {}
-        return bool(n) and n.get("status") == "live" and node_level(n) == A2_LEVEL
+        return bool(n) and n.get("status") == "live" and node_level(n) == LEVEL
 
     def is_grammar(u: str) -> bool:
         return (by_id.get(u) or {}).get("domain") == "grammar"
@@ -91,7 +118,7 @@ def main() -> int:
     def is_vocab(u: str) -> bool:
         return (by_id.get(u) or {}).get("domain") == "vocab"
 
-    rail = [u for u in path if is_live_a2(u)]
+    rail = [u for u in path if is_live_band(u)]
     todo = [u for u in rail if u not in inspected]
     err = {v for v in tmap.values() if v in todo}
 
@@ -115,13 +142,13 @@ def main() -> int:
     aliases = dict(PARKED_ALIASES)
     aliases.update(vocab_pack_aliases(tree))
 
-    # Whole A2 rail (live, on path_order_a2). Inspected units stay in
+    # Whole band rail (live, on PATH_KEY). Inspected units stay in
     # `total` so "N down, M to go (of T)" rises when a unit is ticked.
     rail_total = len(rail)
 
     remaining_line = (
         f"Remaining: **{len(todo)} units** — "
-        f"A2 grammar {g_left} · A2 vocab {v_left} "
+        f"{LEVEL} grammar {g_left} · {LEVEL} vocab {v_left} "
         f"(rail {rail_total})."
     )
 
@@ -132,9 +159,9 @@ def main() -> int:
 needs is in the repo (INSPECTED.md, marking_topic_map.json, tree.json), so the
 ranking never has to be maintained by hand or on a particular machine.
 
-Priority: **A2 circle only**, `path_order_a2` from the top
-(`a2_present_continuous`) down, grammar and vocab zigzag (James 2026-09-02).
-Already-ticked ids are hidden. A1 and B1+ stay off the rail.
+Priority: **{LEVEL} circle only**, `{PATH_KEY}` from the top down, grammar and
+vocab zigzag. Already-ticked ids are hidden. Other bands stay off the rail.
+Rebuild another band with `--band a2`.
 Vocab ticks use the tree id (`leaf_routine_a2 tested`). Pack filenames
 (`a2_routine tested`) alias to the same id.
 

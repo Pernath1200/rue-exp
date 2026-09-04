@@ -72,7 +72,7 @@ function applySmokeChrome() {
  * on the rail and cannot be opened — not by rail, path, exam drill, or
  * deep link. Widen this list level by level as testing catches up.
  * A2 opened 2026-09-01 after A1 smoke. */
-const LIVE_LEVELS = ["A1", "A2"];
+const LIVE_LEVELS = ["A1", "A2", "B1"];
 
 function isShadowLevel(lv) {
   return !!lv && !LIVE_LEVELS.includes(lv);

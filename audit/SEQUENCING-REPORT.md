@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**837 unknown word types** across 101 live units (of 156).
+**814 unknown word types** across 107 live units (of 190).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -78,30 +78,36 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **leaf_things_a2** (A2 vocab): box, ball
 - **a2_reflexives** (A2 grammar): ourselves, happen, happened
 - **b1_present_perfect_vs_past** (B1 grammar): far×3, client×2, until, noon
-- **leaf_self_b1** (B1 vocab): terrible, apologise
-- **trunk_abstract_b1** (B1 vocab): slow, strange
-- **leaf_knowledge_b1** (B1 vocab): cannot
+- **b1_past_perfect** (B1 grammar): recognise
+- **b1_used_to** (B1 grammar): snowman
+- **b1_past_modals** (B1 grammar): fix
 - **b1_modals_speculation** (B1 grammar): true, bug, misread
 - **b1_passives** (B1 grammar): guard, noon, bridge, everywhere, package, rules, automatically, invoice
+- **b1_agreement_tricky** (B1 grammar): outside, somebody
 - **b1_reported_speech** (B1 grammar): ond, ej
+- **b1_reported_speech_2** (B1 grammar): outside, worry
 - **b1_relative_clauses** (B1 grammar): caf×2, outside×2, bridge×2, practise, treated, designed, safe, nearby, discussed, rules, clear, laugh, path, leads, muddy, born, simple
-- **b1_articles_advanced** (B1 grammar): rises, east, loud, hate, noisy, together, access, mount
+- **b1_relative_clauses_2** (B1 grammar): outside
+- **b1_second_conditional** (B1 grammar): lottery
+- **b1_wishes** (B1 grammar): wish×8, wishes×2, loud
+- **b1_articles_advanced** (B1 grammar): east, loud, hate, noisy, access, mount
 - **b1_it_subject** (B1 grammar): practise, repair, matter, guess, alone, enter, grammar
-- **b1_linkers** (B1 grammar): inside, rich, slow, careless, hurried, none
-- **b1_verb_patterns_advanced** (B1 grammar): forward×2, outside×2, moment, advised, allowed, noon, managed, powerful, without, instead
-- **trunk_chunks_b1** (B1 vocab): favour, wifi, priority
+- **leaf_crime_b1** (B1 vocab): stole
+- **b1_linkers** (B1 grammar): inside, rich, slow, hurried, none
+- **b1_cause_concession** (B1 grammar): outside
+- **b1_verb_patterns_advanced** (B1 grammar): forward×2, outside×2, moment, advised, allowed, noon, powerful, without, instead
+- **trunk_chunks_b1** (B1 vocab): favour, priority
 - **b1_phrasal_verbs** (B1 grammar): bottom
 - **b1_dependent_prepositions** (B1 grammar): villas, future, discussed
 - **b1_suffixes** (B1 grammar): without
-- **b1_prefixes** (B1 grammar): fell, asleep, none, terrible, inside
-- **trunk_core_b1** (B1 vocab): date, simple
-- **b2_present_perfect_continuous** (B2 grammar): kilometres×2, whole, dust, everywhere, quiz, halfway, episode, inbox, ticked, deal, mess
+- **b1_prefixes** (B1 grammar): asleep, none, terrible, inside
+- **b2_present_perfect_continuous** (B2 grammar): kilometres×2, whole, dust, everywhere, quiz, halfway, episode, inbox, ticked, mess
 - **b2_past_perfect** (B2 grammar): reached, recognise, thieves
 - **b2_delexical_collocations** (B2 vocab): local, finally
-- **b2_second_conditional** (B2 grammar): practised×2, lottery, rich, happen, simple, rather, truth, shocked, pizza
-- **b2_third_conditional** (B2 grammar): practised, crashed, truth, sunrise, pizza, invoice, dawn, battery
+- **b2_second_conditional** (B2 grammar): practised×2, lottery, rich, happen, rather, truth, shocked, pizza
+- **b2_third_conditional** (B2 grammar): practised, truth, sunrise, pizza, invoice, dawn
 - **b2_false_friends** (B2 vocab): local
-- **b2_fixed_phrases** (B2 vocab): while, positive, invitation
-- **b2_clear_claims** (B2 grammar): personally×2, social×2, negative, impact, teenagers, hate, ruins, sum, view, ban, together, anymore, conclusion, exist
-- **b2_word_formation** (B2 grammar): final×3, without×2, injured, committee, almost, rule, alone, incredibly, brilliantly, slow, bridges, rally, trade, attempt, impressive, shocked, excellent, bottom, outside, terribly, lunchtime, rather, resignation, eclipse, together, injection, quick, sides, reached, welcomed, doubled, local, finally
-- **c1_word_formation** (C1 grammar): final×2, until×2, local×2, doubled×2, led×2, blamed×2, several×2, fuel, region, trial, worldwide, debate, involvement, convinced, midnight, obvious, instant, genetic, spread, crew, measured, trench, diving, grip, measure, doorway, cruised, kilometres, crisis, pure, unmarked, shelter, survives, donors, sudden, guarded, struck, astonishing, judge, dismissed, case, religious, exile, shook, silent, inquiry, safety, campaign, aims, within, decade, roadworks, drummed, scandal, exposed, ministry, investigating, hikers, minor, lifelong, feud, paused, overnight, fleet, volunteering, grant, marine, rising, nations, certain, shot, viral, falling, among, thrived, firms, boilers, simple, dates, ruined, outbreak, worsened, tolerate, corridors, memo, act, false, immediate, auditors, fall, forever, cigarettes, plot, coincidences, proved
+- **b2_fixed_phrases** (B2 vocab): positive, invitation
+- **b2_clear_claims** (B2 grammar): social×2, negative, impact, teenagers, hate, ruins, sum, ban, anymore, conclusion, exist
+- **b2_word_formation** (B2 grammar): final×3, without×2, injured, committee, almost, rule, alone, incredibly, brilliantly, bridges, rally, trade, attempt, impressive, shocked, excellent, bottom, outside, terribly, lunchtime, rather, resignation, eclipse, injection, sides, reached, welcomed, local, finally
+- **c1_word_formation** (C1 grammar): final×2, until×2, local×2, led×2, blamed×2, several×2, region, worldwide, involvement, midnight, obvious, instant, genetic, spread, crew, measured, trench, diving, grip, measure, doorway, cruised, kilometres, pure, unmarked, shelter, survives, donors, sudden, guarded, struck, astonishing, dismissed, case, religious, exile, shook, silent, inquiry, safety, campaign, aims, within, decade, roadworks, drummed, scandal, exposed, ministry, hikers, minor, lifelong, feud, paused, overnight, fleet, volunteering, grant, marine, nations, certain, shot, viral, among, thrived, firms, boilers, dates, ruined, outbreak, worsened, tolerate, corridors, memo, act, false, immediate, auditors, forever, cigarettes, plot, coincidences, proved

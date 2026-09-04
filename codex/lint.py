@@ -49,14 +49,39 @@ CZ_FUTURE = re.compile(
     r"půjdu|půjdeme|pojede|pojedeš|přinese|přineseš|uvidí|uvidíš|dá|dáš|"
     r"skončí|začne|začneš|pošle|pošleš|vezme|vezmeš|napíše|napíšeš)\b", re.I)
 
+# short form -> EVERY long form it can stand for. The 1:1 version expanded
+# "she's been working" to "she is been working" and flagged the perfect
+# items in every perfect unit; `'s` is `is` OR `has`, `'d` is `had` OR
+# `would` (B1 sweep 2026-09-04). A twin counts as present if ANY listed
+# expansion is in accepts.
 CONTRACTIONS = {
-    "it's": "it is", "i'm": "i am", "you're": "you are", "we're": "we are",
-    "they're": "they are", "he's": "he is", "she's": "she is", "that's": "that is",
-    "don't": "do not", "doesn't": "does not", "didn't": "did not",
-    "won't": "will not", "isn't": "is not", "aren't": "are not",
-    "can't": "cannot", "couldn't": "could not", "wouldn't": "would not",
-    "let's": "let us", "i'll": "i will", "we'll": "we will", "you'll": "you will",
+    "it's": ["it is", "it has"], "i'm": ["i am"],
+    "you're": ["you are"], "we're": ["we are"], "they're": ["they are"],
+    "he's": ["he is", "he has"], "she's": ["she is", "she has"],
+    "that's": ["that is", "that has"],
+    "i've": ["i have"], "you've": ["you have"],
+    "we've": ["we have"], "they've": ["they have"],
+    "i'd": ["i had", "i would"], "he'd": ["he had", "he would"],
+    "she'd": ["she had", "she would"], "you'd": ["you had", "you would"],
+    "we'd": ["we had", "we would"], "they'd": ["they had", "they would"],
+    "don't": ["do not"], "doesn't": ["does not"], "didn't": ["did not"],
+    "won't": ["will not"], "isn't": ["is not"], "aren't": ["are not"],
+    "hasn't": ["has not"], "haven't": ["have not"], "hadn't": ["had not"],
+    "can't": ["cannot"], "couldn't": ["could not"],
+    "wouldn't": ["would not"],
+    "let's": ["let us"], "i'll": ["i will"], "we'll": ["we will"],
+    "you'll": ["you will"], "he'll": ["he will"], "she'll": ["she will"],
+    "they'll": ["they will"],
 }
+
+# long form -> the one short form it contracts to. Many-to-one: "he is" and
+# "he has" both contract to "he's".
+EXPANSIONS = {}
+for _short, _longs in CONTRACTIONS.items():
+    for _long in _longs:
+        EXPANSIONS[_long] = _short
+
+WORD = r"\b%s\b"
 
 # English free choices — interchangeable anywhere, unlike the Czech-ambiguity pairs
 # the synonym map was generated for. `everyone` rejected for `everybody` was the
@@ -70,8 +95,13 @@ FREE_PAIRS = {
 
 # Packs whose conditionals are UNREAL: `when` is genuinely wrong there, so the
 # if/when check must not fire.
+# A1's second half: `when` is accepted in a REAL conditional and NEVER in
+# an unreal one. A unit missing from this set throws false `ifwhen` flags
+# whose "fix" would break the rule. b1_second_conditional and b1_wishes
+# were authored after this set and never added (B1 sweep 2026-09-04).
 UNREAL = {"b2_second_conditional", "b2_third_conditional", "b2_mixed_conditionals",
-          "b2_wish_if_only", "c1_subjunctive"}
+          "b2_wish_if_only", "c1_subjunctive",
+          "b1_second_conditional", "b1_wishes"}
 
 CONNECTORS = ["if", "when", "until", "as soon as", "after", "unless", "before"]
 
@@ -286,6 +316,17 @@ def subjects(accepts):
     return {w.lower() for a in accepts for w in re.findall(r"\b(he|she|it)\b", a, re.I)}
 
 
+# A9, B11 and B12 were pinned to `uid == "a2_present_perfect"` and one B11
+# to `a2_present_continuous`, so none of them ran on
+# b1_present_perfect_vs_past, b1_present_perfect_continuous, b1_past_perfect
+# or b1_past_continuous_2 (B1 sweep 2026-09-04). Name the shape, not the
+# unit.
+def teaches_tense(d, uid, *needles):
+    blob = " ".join([uid, str(d.get("title") or ""),
+                     str(d.get("note") or "")]).lower()
+    return any(n in blob for n in needles)
+
+
 def lint_pack(uid):
     p = ROOT / "data/grammar/blocks" / f"{uid}.json"
     if not p.exists():
@@ -301,6 +342,12 @@ def lint_pack(uid):
         for it in b.get("items") or []:
             items.append(it)
             item_in_quiz[id(it)] = wants_q
+    pack_level = str(d.get("level", "")).upper()
+    perfect_unit = teaches_tense(d, uid, "present perfect", "past perfect",
+                                 "present_perfect", "past_perfect")
+    continuous_unit = teaches_tense(d, uid, "present continuous",
+                                    "past continuous", "present_continuous",
+                                    "past_continuous")
     strict_articles = bool(d.get("strict_articles"))
     lenient_if_when = bool(d.get("lenient_if_when"))
     syn = json.loads((ROOT / "data/senses.json").read_text(encoding="utf-8")).get("synonyms", {})
@@ -308,7 +355,8 @@ def lint_pack(uid):
     f = {k: [] for k in ("ifwhen", "subject", "article", "contraction", "synonym",
                          "czfuture", "zeromark", "noopts", "onewording",
                          "filler", "nopattern", "hardgloss", "badname", "vocablevel",
-                         "slash", "teachernote", "uselead", "qlead",
+                         "slash", "teachernote", "uselead", "useleadhi",
+                         "qlead",
                          "introex", "quizextra", "hardname", "chunkword",
                          "fakes3sg", "toparticle", "remember",
                          "articlegap", "theregap", "cancant", "a1meta",
@@ -421,7 +469,7 @@ def lint_pack(uid):
         # B11 — present continuous: I ____ to open the door. → am trying
         # 2026-09-01: "should have verb in brackets (try)". Aux-only questions
         # (____ you working?) already name the verb on the stem.
-        if uid == "a2_present_continuous" and ga:
+        if continuous_unit and ga:
             if re.fullmatch(r"(Are|Is|are|is)", ga):
                 if not re.search(r"\w+ing", gap, re.I):
                     f["verbcue"].append(it)
@@ -434,7 +482,7 @@ def lint_pack(uid):
 
         # B11 — present perfect whole VP (have just finished) with no (just/finish)
         # a2_present_perfect 2026-08-29: I ____. → have just finished.
-        if uid == "a2_present_perfect":
+        if perfect_unit:
             if re.search(r"\b(have|has|haven't|hasn't)\s+\w+", ga) and "(" not in gap:
                 after = re.split(r"_{2,}", gap, maxsplit=1)
                 rest = after[1] if len(after) > 1 else ""
@@ -475,25 +523,38 @@ def lint_pack(uid):
 
         # A9 — Czech past does not pick present perfect  [EXACT]
         # a2_present_perfect 2026-08-29: Uklidil jsem kuchyň is also I cleaned.
-        if uid == "a2_present_perfect" and it.get("gap"):
+        if perfect_unit and it.get("gap"):
             if re.search(r"\b(have|has|haven't|hasn't)\b", ga) and ga not in (
                     "have", "has"):
                 blob = " ".join([cz, en, gap]).lower()
                 if not re.search(
+                        # unfinished-time markers added when this check was
+                        # unpinned from a2_present_perfect and first ran on
+                        # the B1 units (B1 sweep 2026-09-04): today, so far,
+                        # this week and twice force the perfect on their own.
                         r"just|already|yet|never|ever|\bfor\b|since|"
                         r"už|ještě|právě|nikdy|někdy|dlouho|\brok|\blet\b|"
+                        r"today|so far|lately|recently|\btwice\b|times|"
+                        r"this (week|month|year|morning|afternoon)|"
+                        r"dnes|zatím|naposledy|tento|tenhle|letos|"
                         r"before",
                         blob, re.I):
                     f["ppcuz"].append(it)
 
-        # F3 — Use production uses a word the path has not taught  [EXACT]
+        # F3 — Use production uses a word the path has not taught
+        # The rule is scoped to EARLY A1 ("recognition may lead, production
+        # may not"). Ungated it was the loudest signal at B1 — 158 hits
+        # across 26 units of a rule that does not apply there (B1 sweep
+        # 2026-09-04). A1 keeps the EXACT flag; A2+ gets a CANDIDATE so the
+        # signal survives without drowning the rest.
         if it.get("use") is not False:
             leftover = [
                 w for w in _words(en)
                 if w not in taught and w not in FUNCTION and len(w) > 2
             ]
             if leftover:
-                f["uselead"].append({
+                key = "uselead" if pack_level == "A1" else "useleadhi"
+                f[key].append({
                     "cz": cz,
                     "en": "%s  ·  leads: %s" % (en, ", ".join(leftover[:6])),
                 })
@@ -515,16 +576,30 @@ def lint_pack(uid):
             f["article"].append(it)
 
         # A8 — contraction twin missing  [EXACT]
+        # A short form is satisfied if ANY of its expansions is in accepts
+        # ("he's lived" is covered by "he has lived"); a long form is
+        # satisfied by its one contraction.
         low = [a.lower() for a in acc]
+        hit = False
         for a in low:
-            hit = False
-            for short, long in CONTRACTIONS.items():
-                for x, y in ((short, long), (long, short)):
-                    if re.search(r"\b%s\b" % re.escape(x), a) and \
-                       re.sub(r"\b%s\b" % re.escape(x), y, a) not in low:
-                        f["contraction"].append(it); hit = True; break
-                if hit: break
-            if hit: break
+            for short, longs in CONTRACTIONS.items():
+                pat = WORD % re.escape(short)
+                if re.search(pat, a) and not any(
+                        re.sub(pat, lg, a) in low for lg in longs):
+                    f["contraction"].append(it); hit = True; break
+            if hit:
+                break
+            for lng, short in EXPANSIONS.items():
+                pat = WORD % re.escape(lng)
+                m = re.search(pat, a)
+                # "has not sent" -> "'s not sent" is marginal and the n't
+                # contraction already covers the negative. Skip it.
+                if m and a[m.end():m.end() + 4] == " not":
+                    continue
+                if m and re.sub(pat, short, a) not in low:
+                    f["contraction"].append(it); hit = True; break
+            if hit:
+                break
 
         # A7 — free English synonym absent from the map  [EXACT]
         for a in acc:
@@ -995,7 +1070,7 @@ def lint_pack(uid):
     # B12 — present perfect Check is sort, not Match  [EXACT]
     # a2_present_perfect 2026-08-29: see→seen and person→have/has both failed;
     # Czech cannot pick this tense. Three boxes, English sentences.
-    if uid == "a2_present_perfect":
+    if perfect_unit:
         if "match" in seq and "sort_bins" not in seq:
             f["ppsort"].append({
                 "cz": "check.sequence has match, no sort_bins",
@@ -1169,7 +1244,7 @@ LABELS = [
     ("a1meta",      "EXACT  C22 A1 intro says permission/quantifier/preposition with no Czech gloss"),
     ("slash",       "EXACT  D3  cz has two prompts joined with /"),
     ("teachernote", "EXACT  D3  teacher mark in cz (≈ → or English aside)"),
-    ("uselead",     "EXACT  F3  Use item has words not yet taught (partner+prior+this)"),
+    ("uselead",     "EXACT  F3  A1 Use item has words not yet taught (partner+prior+this)"),
     ("qlead",       "EXACT  F2  Use starts with Do/Does before the questions unit"),
     ("introex",     "EXACT  C4  intro example is not a sentence in this bank"),
     ("quizextra",   "EXACT  C11 teaching-word in Quiz never named in intro"),
@@ -1186,6 +1261,7 @@ LABELS = [
     ("vocablevel",  "CANDIDATE  unit vocabulary does not match its level"),
     ("czfuture",    "CANDIDATE  Czech looks future, English answer has no will"),
     ("article",     "CANDIDATE  demands `the`, Czech has no demonstrative"),
+    ("useleadhi",   "CANDIDATE  F3 above A1 — Use item has words not yet taught"),
 ]
 
 

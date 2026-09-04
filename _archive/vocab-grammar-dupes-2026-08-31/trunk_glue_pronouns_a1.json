@@ -1,0 +1,396 @@
+{
+  "id": "trunk_glue_pronouns_a1",
+  "title": "me · my · this & that",
+  "level": "A1",
+  "codex_unit": "G_NP-A1B1-01",
+  "tree_node": "trunk_glue_pronouns_a1",
+  "practice": "frames",
+  "note": "P7 glue — object pronouns, possessives, this/that + about/under/by. Gap on the glue word. Moved vocab→grammar 2026-08-31 (James: grammar not vocab); intro rebuilt to grammar rules — C9 no walltext, C10 table per card, C13 bold forms, C14 card 0 = unit name, C32 strike errors. Recycles a1_object_pronouns / a1_possessives on purpose (glue trunk).",
+  "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "match",
+      "quiz"
+    ]
+  },
+  "blocks": [
+    {
+      "id": "trunk_glue_pronouns_a1",
+      "title": "me · my · this & that",
+      "items": [
+        {
+          "en": "She helps me.",
+          "cz": "Pomáhá mi.",
+          "gap": "She helps ____.",
+          "gap_answer": "me",
+          "accepts": [
+            "She helps me",
+            "She helps me.",
+            "He helps me.",
+            "He helps me",
+            "It helps me."
+          ],
+          "quiz_options": [
+            "me",
+            "I",
+            "my",
+            "him"
+          ],
+          "explanation": "After the verb, **I** becomes **me**: She helps **me**. Not ~~She helps I~~.",
+          "explanation_cz": "Za slovesem se **I** mění na **me**.",
+          "use": false
+        },
+        {
+          "en": "I see him.",
+          "cz": "Vidím ho.",
+          "gap": "I see ____.",
+          "gap_answer": "him",
+          "gap_accepts": [
+            "it"
+          ],
+          "accepts": [
+            "I see him",
+            "I see him.",
+            "I see it."
+          ],
+          "quiz_options": [
+            "him",
+            "he",
+            "his",
+            "her"
+          ],
+          "explanation": "After the verb, **he** becomes **him**. **his** is the possessive (his bag), not the object.",
+          "explanation_cz": "Za slovesem se **he** mění na **him**. **his** je přivlastňovací (his bag)."
+        },
+        {
+          "en": "I see her.",
+          "cz": "Vidím ji.",
+          "gap": "I see ____.",
+          "gap_answer": "her",
+          "accepts": [
+            "I see her",
+            "I see her."
+          ],
+          "quiz_options": [
+            "her",
+            "she",
+            "him",
+            "them"
+          ],
+          "explanation": "After the verb, **she** becomes **her**: I see **her**.",
+          "explanation_cz": "Za slovesem se **she** mění na **her**."
+        },
+        {
+          "en": "Come with us.",
+          "cz": "Pojď s námi.",
+          "gap": "Come with ____.",
+          "gap_answer": "us",
+          "accepts": [
+            "Come with us",
+            "Come with us."
+          ],
+          "quiz_options": [
+            "us",
+            "we",
+            "our",
+            "them"
+          ],
+          "explanation": "After **with** use the object form: with **us**. Not ~~with we~~.",
+          "explanation_cz": "Po **with** je předmětový tvar: with **us**."
+        },
+        {
+          "en": "I know them.",
+          "cz": "Znám je.",
+          "gap": "I know ____.",
+          "gap_answer": "them",
+          "accepts": [
+            "I know them",
+            "I know them."
+          ],
+          "quiz_options": [
+            "them",
+            "they",
+            "their",
+            "him"
+          ],
+          "explanation": "After the verb, **they** becomes **them**: I know **them**.",
+          "explanation_cz": "Za slovesem se **they** mění na **them**."
+        },
+        {
+          "en": "This is my bag.",
+          "cz": "Tohle je moje taška.",
+          "gap": "____ is my bag.",
+          "gap_answer": "This",
+          "accepts": [
+            "This is my bag",
+            "This is my bag."
+          ],
+          "quiz_options": [
+            "This",
+            "That",
+            "These",
+            "Those"
+          ],
+          "explanation": "**This** points at something near you. Czech *tohle*.",
+          "explanation_cz": "**This** ukazuje na něco blízko. Česky *tohle*."
+        },
+        {
+          "en": "That is your car.",
+          "cz": "To je tvoje auto.",
+          "gap": "____ is your car.",
+          "gap_answer": "That",
+          "accepts": [
+            "That is your car",
+            "That's your car",
+            "That's your car.",
+            "That is your car.",
+            "It is your car.",
+            "It's your car."
+          ],
+          "quiz_options": [
+            "That",
+            "This",
+            "Those",
+            "These"
+          ],
+          "explanation": "**That** points at something further away. Czech *to* / *tamto*.",
+          "explanation_cz": "**That** ukazuje na něco vzdálenějšího. Česky *to* / *tamto*."
+        },
+        {
+          "en": "Our house is old.",
+          "cz": "Náš dům je starý.",
+          "gap": "____ house is old.",
+          "gap_answer": "Our",
+          "accepts": [
+            "Our house is old",
+            "Our house is old."
+          ],
+          "quiz_options": [
+            "Our",
+            "We",
+            "Us",
+            "Their"
+          ],
+          "explanation": "**Our** comes before the noun: **our** house. Not ~~We house~~.",
+          "explanation_cz": "**Our** stojí před podstatným jménem: **our** house."
+        },
+        {
+          "en": "Their teacher is friendly.",
+          "cz": "Jejich učitel je přátelský.",
+          "gap": "____ teacher is friendly.",
+          "gap_answer": "Their",
+          "accepts": [
+            "Their teacher is friendly",
+            "Their teacher is friendly."
+          ],
+          "quiz_options": [
+            "Their",
+            "They",
+            "Them",
+            "Our"
+          ],
+          "explanation": "**Their** comes before the noun: **their** teacher. Not ~~They teacher~~.",
+          "explanation_cz": "**Their** stojí před podstatným jménem: **their** teacher.",
+          "use": false
+        },
+        {
+          "en": "It is about love.",
+          "cz": "Je to o lásce.",
+          "gap": "It is ____ love.",
+          "gap_answer": "about",
+          "accepts": [
+            "It is about love",
+            "It's about love",
+            "It's about love.",
+            "It is about love."
+          ],
+          "quiz_options": [
+            "about",
+            "under",
+            "by",
+            "at"
+          ],
+          "explanation": "**about** = on the subject of. Czech *o*.",
+          "explanation_cz": "**about** = o (na téma). Czech *o lásce*."
+        },
+        {
+          "en": "The book is under the table.",
+          "cz": "Kniha je pod stolem.",
+          "gap": "The book is ____ the table.",
+          "gap_answer": "under",
+          "accepts": [
+            "The book is under the table",
+            "The book is under the table."
+          ],
+          "quiz_options": [
+            "under",
+            "on",
+            "about",
+            "by"
+          ],
+          "explanation": "**under** = lower than, covered by it. Czech *pod*.",
+          "explanation_cz": "**under** = pod."
+        },
+        {
+          "en": "The lamp is by the window.",
+          "cz": "Lampa je u okna.",
+          "gap": "The lamp is ____ the window.",
+          "gap_answer": "by",
+          "gap_accepts": [
+            "near",
+            "beside"
+          ],
+          "accepts": [
+            "The lamp is by the window",
+            "The lamp is near the window."
+          ],
+          "quiz_options": [
+            "by",
+            "under",
+            "about",
+            "on"
+          ],
+          "explanation": "**by** = next to it. Czech *u*. **near** and **beside** also work.",
+          "explanation_cz": "**by** = u, vedle. Také **near** / **beside**."
+        }
+      ]
+    }
+  ],
+  "intro": {
+    "cards": [
+      {
+        "title": "me · my · this & that",
+        "title_cz": "mě · můj · this a that",
+        "text_first": true,
+        "points": [
+          "You already know I, he, she, we, they.",
+          "After the verb they change: **I see him** — never ~~I see he~~."
+        ],
+        "table": {
+          "caption": "after the verb",
+          "headers": [
+            "subject",
+            "after the verb",
+            "example"
+          ],
+          "rows": [
+            [
+              "I",
+              "**me**",
+              "She helps **me**."
+            ],
+            [
+              "he",
+              "**him**",
+              "I see **him**."
+            ],
+            [
+              "she",
+              "**her**",
+              "I see **her**."
+            ],
+            [
+              "we",
+              "**us**",
+              "Come with **us**."
+            ],
+            [
+              "they",
+              "**them**",
+              "I know **them**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Before a noun: my · your · our · their",
+        "title_cz": "Před podstatným jménem",
+        "text_first": true,
+        "points": [
+          "Possessives (přivlastňovací) come before a noun."
+        ],
+        "table": {
+          "headers": [
+            "possessive",
+            "example",
+            "Czech"
+          ],
+          "rows": [
+            [
+              "**my**",
+              "This is **my** bag.",
+              "moje taška"
+            ],
+            [
+              "**your**",
+              "That is **your** car.",
+              "tvoje auto"
+            ],
+            [
+              "**our**",
+              "**Our** house is old.",
+              "náš dům"
+            ],
+            [
+              "**their**",
+              "**Their** teacher is friendly.",
+              "jejich učitel"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Pointing: this & that",
+        "title_cz": "Ukazování: this a that",
+        "text_first": true,
+        "points": [
+          "**This** is near you. **That** is further away."
+        ],
+        "table": {
+          "headers": [
+            "word",
+            "where",
+            "example"
+          ],
+          "rows": [
+            [
+              "**this**",
+              "near you",
+              "**This** is my bag."
+            ],
+            [
+              "**that**",
+              "further away",
+              "**That** is your car."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Three prepositions: about · under · by",
+        "title_cz": "Tři předložky: about · under · by",
+        "table": {
+          "headers": [
+            "EN",
+            "CZ"
+          ],
+          "rows": [
+            [
+              "It is **about** love.",
+              "Je to o lásce."
+            ],
+            [
+              "The book is **under** the table.",
+              "Kniha je pod stolem."
+            ],
+            [
+              "The lamp is **by** the window.",
+              "Lampa je u okna."
+            ]
+          ]
+        }
+      }
+    ]
+  },
+  "strict_determiners": true
+}

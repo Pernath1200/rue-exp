@@ -1,0 +1,948 @@
+{
+  "version": 2,
+  "title": "English zigzag spines · RUE2 ↔ RUE3",
+  "note": "A1 steps + A2 steps_a2 zigzag. B1+ paths built in sync from lab path_order_* + full vocab catalogue. Soft path; all levels open. | 2026-08-07: 12 orphaned live A1 vocab units routed into the path.",
+  "urls": {
+    "rue2_lab": "rue-auto/grammar",
+    "rue3_lab": "rue3-exp",
+    "rue_exp_local": "http://localhost:8097/",
+    "rue_exp_pages": "https://pernath1200.github.io/rue-exp/"
+  },
+  "steps": [
+    {
+      "id": "EN_META_01",
+      "title": "Word classes",
+      "note": "Metalanguage first — grammar only.",
+      "grammar": {
+        "node_id": "a1_word_classes",
+        "label": "Word classes",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": null,
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_BE_01",
+      "title": "Be & have · Core frames",
+      "note": "One sitting: grammar then core-frames vocab. Vocab half is not an A1 circle slot.",
+      "chain": true,
+      "grammar": {
+        "node_id": "a1_be_have",
+        "label": "Be & have",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_frames_a1",
+        "label": "Core frames",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_ORDER_01",
+      "title": "Word order · Social",
+      "grammar": {
+        "node_id": "a1_word_order",
+        "label": "Word order (SVO)",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_social_a1",
+        "label": "Social",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_PS_01",
+      "title": "Present simple · Daily verbs",
+      "grammar": {
+        "node_id": "a1_present_simple",
+        "label": "Present simple",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_verbs_daily_a1",
+        "label": "Verbs · daily",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_VERBS_MORE_01",
+      "title": "Verbs · more",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_verbs_more_a1",
+        "label": "Verbs · more",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_AGR_01",
+      "title": "Agreement · Home & family",
+      "grammar": {
+        "node_id": "a1_agreement",
+        "label": "Subject–verb agreement",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_home_family",
+        "label": "Home & Family",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_FREQ_01",
+      "title": "Frequency · Free time",
+      "grammar": {
+        "node_id": "a1_frequency",
+        "label": "Frequency adverbs",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_freetime_a1",
+        "label": "Free time",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_FEELINGS_01",
+      "title": "Feelings",
+      "note": "Vocab-only A1 leaf — split from Free time 2026-08-31. Hang inner_life_belief. Frequency pair stays leaf_freetime_a1.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_feelings_a1",
+        "label": "Feelings",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_QN_01",
+      "title": "Questions & negatives",
+      "grammar": {
+        "node_id": "a1_questions_negatives",
+        "label": "Questions & negatives",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_glue_questions_a1",
+        "label": "Question words",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_VERBS_SAY_01",
+      "title": "Verbs · say, tell, ask",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_verbs_say_a1",
+        "label": "Verbs · say, tell, ask",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_QW_01",
+      "title": "Question words · Places",
+      "grammar": {
+        "node_id": "a1_question_words",
+        "label": "Question words",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_places",
+        "label": "Places",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_COUNTRIES_01",
+      "title": "Countries",
+      "note": "Vocab-only A1 leaf — day-one countries / nationalities / languages (I'm Czech, from Prague, I speak…). Same house as Places.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_countries_a1",
+        "label": "Countries",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_ART_01",
+      "title": "Articles · Food",
+      "grammar": {
+        "node_id": "a1_articles",
+        "label": "Articles (a/an/the)",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_food_a1",
+        "label": "Food & drink",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_POSS_01",
+      "title": "Possessives · Clothes",
+      "grammar": {
+        "node_id": "a1_possessives",
+        "label": "Possessives",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_clothes_a1",
+        "label": "Clothes",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_OBJ_01",
+      "title": "Object pronouns · Body",
+      "grammar": {
+        "node_id": "a1_object_pronouns",
+        "label": "Object pronouns",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_body_a1",
+        "label": "Body",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_HEALTH_01",
+      "title": "Health",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_health_a1",
+        "label": "Health",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_PRON_02",
+      "title": "me · my · this & that",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path). | 2026-08-31: moved vocab->grammar (James: this is grammar not vocab).",
+      "grammar": {
+        "node_id": "trunk_glue_pronouns_a1",
+        "label": "me · my · this & that",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": null,
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_LIKE_01",
+      "title": "Like / want / need · Can·like·want trunk",
+      "grammar": {
+        "node_id": "a1_like_want_need",
+        "label": "Like / want / need",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_can_like_want_a1",
+        "label": "Can · like · want",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_VERBS_MORE_02",
+      "title": "Verbs · more 2",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_verbs_more2_a1",
+        "label": "Verbs · more 2",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_CAN_01",
+      "title": "Can · Work",
+      "grammar": {
+        "node_id": "a1_can",
+        "label": "Can (ability)",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_work_a1",
+        "label": "Work",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_SCHOOL_01",
+      "title": "School",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_school_a1",
+        "label": "School",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_MODALS_01",
+      "title": "Will · must",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_glue_modals_a1",
+        "label": "Will · must",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_PREP_P_01",
+      "title": "Prepositions of place · Prep trunk",
+      "grammar": {
+        "node_id": "a1_prepositions_place",
+        "label": "Prepositions of place",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_prepositions_a1",
+        "label": "Prepositions",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_VERBS_MORE_03",
+      "title": "Verbs · more 3",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_verbs_more3_a1",
+        "label": "Verbs · more 3",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_THERE_01",
+      "title": "There is/are · There·time trunk",
+      "grammar": {
+        "node_id": "a1_there_is",
+        "label": "There is / there are",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_there_time_a1",
+        "label": "There · time",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_SOME_01",
+      "title": "Some / any 1 · Quantity glue",
+      "grammar": {
+        "node_id": "a1_some_any",
+        "label": "Some / any 1",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_glue_quantity_a1",
+        "label": "Some · any",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_PREP_T_01",
+      "title": "Prepositions of time · Time & numbers",
+      "grammar": {
+        "node_id": "a1_prepositions_time",
+        "label": "Prepositions of time",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_time_a1",
+        "label": "Numbers / time 1",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_TIME_2_01",
+      "title": "Numbers / time 2",
+      "note": "Vocab-only A1 leaf — days, months, last/next week, once a week. After Time 1 numbers. Not in/on/at.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_time_2_a1",
+        "label": "Numbers / time 2",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_NATURE_01",
+      "title": "Nature",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_nature_a1",
+        "label": "Nature",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_TO_01",
+      "title": "To / for / with · Shopping",
+      "grammar": {
+        "node_id": "a1_to_for_with",
+        "label": "To / for / with",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_shopping_a1",
+        "label": "Shopping",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_ANIMALS_01",
+      "title": "Animals",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_animals_a1",
+        "label": "Animals",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_LINK_01",
+      "title": "And / but / because · Linkers",
+      "grammar": {
+        "node_id": "a1_and_but_because",
+        "label": "And / but / because",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_glue_linkers_a1",
+        "label": "And · but",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_IMP_01",
+      "title": "Imperatives · Action verbs",
+      "grammar": {
+        "node_id": "a1_imperatives",
+        "label": "Imperatives",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "trunk_verbs_action_a1",
+        "label": "Verbs · action",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_TECH_01",
+      "title": "Tech & media",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_tech_a1",
+        "label": "Tech & media",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_ADJ_01",
+      "title": "Adjectives · Colours (vocab spend)",
+      "note": "Grammar side optional later; colours leaf uses adj trunk.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_colours_a1",
+        "label": "Colours",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_ADJ_TRUNK_01",
+      "title": "Adjectives trunk",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_adjectives_a1",
+        "label": "Adjectives",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_IDEAS_01",
+      "title": "Ideas",
+      "note": "Vocab consolidation step — routed into the A1 path 2026-08-07 (unit was authored and live but on no path).",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_ideas_a1",
+        "label": "Ideas",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A1_VOCAB_MATCH",
+      "title": "A1 vocab · match (check)",
+      "note": "Level check, not a lesson. No fruit — Use only. Skipped by Do next.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "a1_vocab_match",
+        "label": "A1 vocab · match",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A1_VOCAB_TYPE",
+      "title": "A1 vocab · type (check)",
+      "note": "Level check, not a lesson. No fruit — Use only. Skipped by Do next. Same pool as match; frame sentences dropped.",
+      "grammar": {
+        "node_id": null,
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "a1_vocab_type",
+        "label": "A1 vocab · type",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A1_GRAMMAR_MATCH",
+      "title": "Which is correct? (check)",
+      "note": "Level check, not a lesson. No fruit — Use only. Skipped by Do next. Three English sentences, tap the right one.",
+      "grammar": {
+        "node_id": "a1_grammar_match",
+        "label": "Which is correct?",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": null,
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A1_GRAMMAR_TYPE",
+      "title": "A1 grammar · type (check)",
+      "note": "Level check, not a lesson. No fruit — Use only. Skipped by Do next. Cloze: type the missing form.",
+      "grammar": {
+        "node_id": "a1_grammar_type",
+        "label": "A1 grammar · type",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": null,
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A1_FINALE",
+      "title": "A1 review",
+      "note": "Last A1 check. CZ → English sentence. Whole A1 fruits this node only. Do next does not skip it.",
+      "grammar": {
+        "node_id": "a1_finale",
+        "label": "A1 review",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": null,
+        "status": "skip"
+      }
+    }
+  ],
+  "steps_a2": [
+    {
+      "id": "EN_A2_PC_01",
+      "title": "Present continuous · Routine",
+      "grammar": {
+        "node_id": "a2_present_continuous",
+        "label": "Present continuous",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_routine_a2",
+        "label": "Routine & habits",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_AGR_01",
+      "title": "Agreement · Family",
+      "grammar": {
+        "node_id": "a2_agreement",
+        "label": "Agreement",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_family_a2",
+        "label": "Family & people",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_PS_01",
+      "title": "Past simple · Travel",
+      "grammar": {
+        "node_id": "a2_past_simple",
+        "label": "Past simple",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_travel_a2",
+        "label": "Travel & holidays",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_PCN_01",
+      "title": "Past continuous · Free time",
+      "grammar": {
+        "node_id": "a2_past_continuous",
+        "label": "Past continuous",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_freetime_a2",
+        "label": "Free time",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_USEDTO_01",
+      "title": "Used to",
+      "note": "Moved from B1 2026-08-29 (James: used to is A2). Grammar only.",
+      "grammar": {
+        "node_id": "a2_used_to",
+        "label": "Used to",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": null,
+        "status": "skip"
+      }
+    },
+    {
+      "id": "EN_A2_PP_01",
+      "title": "Present perfect · Feelings",
+      "grammar": {
+        "node_id": "a2_present_perfect",
+        "label": "Present perfect",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_feelings_a2",
+        "label": "Feelings",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_FUT_01",
+      "title": "Will / going to · Work",
+      "grammar": {
+        "node_id": "a2_will_going_to",
+        "label": "Will / going to",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_work_a2",
+        "label": "Work",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_MOD_01",
+      "title": "Must / should · Society",
+      "grammar": {
+        "node_id": "a2_modals_must_should",
+        "label": "Modals must/should",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_society_a2",
+        "label": "Society",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_COMP_01",
+      "title": "Comparatives · Describing",
+      "grammar": {
+        "node_id": "a2_comparatives",
+        "label": "Comparatives",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_describing_a2",
+        "label": "Adjectives list",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_EDING_01",
+      "title": "-ed / -ing adjectives · Home",
+      "grammar": {
+        "node_id": "a2_ed_ing_adjectives",
+        "label": "-ed/-ing adjectives",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_home_a2",
+        "label": "Home life",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_COUNT_01",
+      "title": "Countable · Food",
+      "grammar": {
+        "node_id": "a2_countable",
+        "label": "Countable/uncountable",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_food_a2",
+        "label": "Food & drink",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_QUANT_01",
+      "title": "Quantifiers · Shopping",
+      "grammar": {
+        "node_id": "a2_quantifiers",
+        "label": "Quantifiers",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_shopping_a2",
+        "label": "Shopping & money",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_ADV_01",
+      "title": "Adverb order · Adverbs",
+      "grammar": {
+        "node_id": "a2_adverbs_order",
+        "label": "Adverb order",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_adverbs_a2",
+        "label": "Adverbs",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_COND_01",
+      "title": "First conditional · Ideas",
+      "grammar": {
+        "node_id": "a2_first_conditional",
+        "label": "First conditional",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_ideas_a2",
+        "label": "Abstract list",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_VP_01",
+      "title": "Verb patterns · Verbs list",
+      "grammar": {
+        "node_id": "a2_verb_patterns",
+        "label": "Verb patterns",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_verbs_a2",
+        "label": "Verbs list",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_PREP_01",
+      "title": "Prep movement · Sport",
+      "grammar": {
+        "node_id": "a2_prepositions_movement",
+        "label": "Prepositions of movement",
+        "status": "live"
+      },
+      "vocab": {
+        "node_id": "leaf_sports_a2",
+        "label": "Sport",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_HEALTH",
+      "title": "Health (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_health_a2",
+        "label": "Health",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_NATURE",
+      "title": "Nature (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_nature_a2",
+        "label": "Nature & weather",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_TECH",
+      "title": "Tech (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_tech_a2",
+        "label": "Tech & media",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_SCHOOL",
+      "title": "School (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_school_a2",
+        "label": "School & learning",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_CLOTHES",
+      "title": "Clothes (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_clothes_a2",
+        "label": "Clothes",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_MEDIA",
+      "title": "Media (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_media_a2",
+        "label": "Media & arts",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_V_MISC",
+      "title": "General list (vocab)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "leaf_misc_a2",
+        "label": "General list",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_T_RECYCLE",
+      "title": "Core recycle (trunk)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_recycle_a2",
+        "label": "Core · recycle",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_T_LEXIS",
+      "title": "Core lexis (trunk)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_lexis_a2",
+        "label": "Core · A2 lexis",
+        "status": "live"
+      }
+    },
+    {
+      "id": "EN_A2_T_CHUNKS",
+      "title": "Everyday chunks (trunk)",
+      "grammar": {
+        "status": "skip"
+      },
+      "vocab": {
+        "node_id": "trunk_chunks_a2",
+        "label": "Everyday chunks",
+        "status": "live"
+      }
+    }
+  ]
+}
