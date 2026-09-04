@@ -84,10 +84,10 @@ Format:
 **Default if unanswered:** a — done this run. Card 8 (Remember) is cut under C17. Cards 1+2 merged into *a bit / quite* and 3+4 into *very / really / extremely*, keeping every row, every bold and the `scale` diagram, which gets it to six cards. Nothing was deleted except the recap. If you would rather (c) as a general rule, say so and the loop will stop at the EXACT hits on `[x][ ]` units.
 → (James: your answer here)
 
-### b1_second_conditional · a real A8 gap the lint cannot see
-**Q:** All seven A8 flags on this pack are the unsatisfiable `had` class already queued above (*if I'd more time*). But underneath them there is a **real** one the check never reaches, because it stops at the first unsatisfied expansion: *I would* → **I'd**. *If I had more time, I'd learn Italian* is what a student will type, and the pack's `accepts` does not have it, so it grades wrong. Should the loop fix a real A8 gap when doing so cannot move the flag count?
-**Options:** a) yes — add the `'d` twins across the pack and say in the commit that the counter cannot move / b) no — the gate says the count must come down, so leave it and let the next run do it once the check is guarded / c) fix the check first.
-**Default if unanswered:** a, but **not done this run** — the run ended before it. Flagging it here so it is not lost: it is a live grading bug on a unit near the front of your B1 path, and `b1_wishes` has the same six flags with no real gap underneath (*I wish I'd more time* is not English, so there is nothing to add there).
+### b1_second_conditional / b1_wishes / b1_question_tags · their A8 counts are all false, and nothing is behind them
+**Q (for the record, not a decision):** These three packs end the 2026-09-04 run with 7, 6 and 9 EXACT A8 flags. Every one is the unsatisfiable `had` / negative-tag class already queued above — the check wants *if I'd more time*, *I wish I'd more time*, *are not you?*. This run checked whether a **real** contraction gap was hiding underneath (the check stops at the first unsatisfied expansion, so it could mask one): `I would` → **I'd** on all 25 second-conditional items, and the equivalent on the other two. There is none — the twins are already in `accepts` on every item.
+**Options:** a) nothing to do on the packs; the guard in the queued `lint.py` entry above is the only fix / b) something else you can see.
+**Default if unanswered:** a. Recording it so the next run does not re-open these three looking for a bug: their flag counts are noise, not debt, and the packs cannot be improved by moving them.
 → (James: your answer here)
 
 ---
