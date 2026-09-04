@@ -1,1036 +1,1281 @@
 {
-  "id": "b1_it_subject",
-  "title": "Introductory it",
-  "level": "B1",
-  "tree_node": "b1_it_subject",
-  "codex_unit": "G_SS-B1B2-01",
-  "practice": "frames",
-  "note": "Empty-subject it — front-chunk production gaps + sentence-choice quiz. · Bank 48 · Type redesign #2 2026-07-26 · Match off · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: intro C9 (tables/examples, no body); Quiz chips = dummy it vs drop-it vs there (quiz_axis it_subject); Use = fix-the-sentence, A2/B1, one it-subject error.",
-  "default_direction": "cz_to_en",
-  "check": {
-    "sequence": [
-      "quiz"
-    ]
-  },
-  "quality": "good_draft",
-  "blocks": [
+ "id": "b1_it_subject",
+ "title": "Introductory it",
+ "level": "B1",
+ "tree_node": "b1_it_subject",
+ "codex_unit": "G_SS-B1B2-01",
+ "practice": "frames",
+ "note": "Empty-subject it — front-chunk production gaps + sentence-choice quiz. · Bank 48 · Type redesign #2 2026-07-26 · Match off · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 smoke: intro C9 (tables/examples, no body); Quiz chips = dummy it vs drop-it vs there (quiz_axis it_subject); Use = fix-the-sentence, A2/B1, one it-subject error. · 2026-09-04 B1 loop: B3/B19 all 46 gap items had no chips (and the (possible) cue was a B19 EXACT) — each now offers the answer, the dropped-it calque (Is important…), and the there- version, which is the axis the pack note already named. D1 three explanations covered all 46; each now says which job the empty it is doing — propping up a that-clause, filling the slot before a to-clause, weather and the clock, or a fixed frame. D3 the getting-late item carried two Czech prompts joined with a slash. A8 four twins closed.",
+ "default_direction": "cz_to_en",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "quality": "good_draft",
+ "blocks": [
+  {
+   "id": "b1_it_subject_main",
+   "title": "Introductory it · B1",
+   "items": [
     {
-      "id": "b1_it_subject_main",
-      "title": "Introductory it · B1",
-      "items": [
-        {
-          "en": "It is important to practise every day.",
-          "cz": "Je důležité cvičit každý den.",
-          "gap": "____ to practise every day. (important)",
-          "gap_answer": "It is important",
-          "accepts": [
-            "It is important to practise every day.",
-            "It's important to practise every day.",
-            "It was important to practise every day."
-          ],
-          "gap_accepts": [
-            "It is important",
-            "It's important",
-            "It was important"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "There is important to practise every day."
-        },
-        {
-          "en": "It is easy to get to the centre by tram.",
-          "cz": "Je snadné se dostat do centra tramvají.",
-          "gap": "____ to get to the centre by tram. (easy)",
-          "gap_answer": "It is easy",
-          "accepts": [
-            "It is easy to get to the centre by tram.",
-            "It's easy to get to the centre by tram.",
-            "It was easy to get to the centre by tram."
-          ],
-          "gap_accepts": [
-            "It is easy",
-            "It's easy",
-            "It was easy"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "There is easy to get to the centre by tram."
-        },
-        {
-          "en": "It was nice to meet you.",
-          "cz": "Bylo hezké tě poznat.",
-          "gap": "____ to meet you. (nice / past)",
-          "gap_answer": "It was nice",
-          "accepts": [
-            "It was nice to meet you."
-          ],
-          "gap_accepts": [
-            "It was nice"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Was nice to meet you."
-        },
-        {
-          "en": "It is hard to wake up early in winter.",
-          "cz": "V zimě je těžké vstávat brzy.",
-          "gap": "____ to wake up early in winter. (hard)",
-          "gap_answer": "It is hard",
-          "accepts": [
-            "It is hard to wake up early in winter.",
-            "It's hard to wake up early in winter.",
-            "It was hard to wake up early in winter."
-          ],
-          "gap_accepts": [
-            "It is hard",
-            "It's hard",
-            "It was hard"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is hard to wake up early in winter."
-        },
-        {
-          "en": "It seems that he is busy.",
-          "cz": "Zdá se, že je zaneprázdněný.",
-          "gap": "____ he is busy. (seem)",
-          "gap_answer": "It seems that",
-          "accepts": [
-            "It seems that he is busy.",
-            "It seems he is busy.",
-            "It seemed that he is busy.",
-            "It seemed he is busy."
-          ],
-          "gap_accepts": [
-            "It seems that",
-            "It seems",
-            "It seemed that",
-            "It seemed"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Seems that he is busy."
-        },
-        {
-          "en": "It appears that she has left.",
-          "cz": "Zdá se, že odešla.",
-          "gap": "____ she has left. (appear)",
-          "gap_answer": "It appears that",
-          "accepts": [
-            "It appears that she has left.",
-            "It appears she has left.",
-            "It appeared that she has left.",
-            "It appeared she has left."
-          ],
-          "gap_accepts": [
-            "It appears that",
-            "It appears",
-            "It appeared that",
-            "It appeared"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Appears that she has left."
-        },
-        {
-          "en": "It is raining again.",
-          "cz": "Zase prší.",
-          "gap": "____ raining again.",
-          "gap_answer": "It is",
-          "accepts": [
-            "It is raining again.",
-            "It's raining again.",
-            "It was raining again."
-          ],
-          "gap_accepts": [
-            "It is",
-            "It's",
-            "It was"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Is raining again."
-        },
-        {
-          "en": "It is cold in the office today.",
-          "cz": "Dnes je v kanceláři zima.",
-          "gap": "____ cold in the office today.",
-          "gap_answer": "It is",
-          "accepts": [
-            "It is cold in the office today.",
-            "It's cold in the office today.",
-            "It was cold in the office today."
-          ],
-          "gap_accepts": [
-            "It is",
-            "It's",
-            "It was"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Is cold in the office today."
-        },
-        {
-          "en": "It takes an hour to get to Prague.",
-          "cz": "Cesta do Prahy trvá hodinu.",
-          "gap": "____ an hour to get to Prague. (take)",
-          "gap_answer": "It takes",
-          "accepts": [
-            "It takes an hour to get to Prague.",
-            "It took an hour to get to Prague."
-          ],
-          "gap_accepts": [
-            "It takes",
-            "It took"
-          ],
-          "explanation": "It takes / it costs — empty it, then the verb.",
-          "explanation_cz": "It takes / it costs — prázdné it a pak sloveso.",
-          "wrong": "Takes an hour to get to Prague."
-        },
-        {
-          "en": "It costs a lot to repair a car.",
-          "cz": "Oprava auta hodně stojí.",
-          "gap": "____ a lot to repair a car. (cost)",
-          "gap_answer": "It costs",
-          "accepts": [
-            "It costs a lot to repair a car.",
-            "It cost a lot to repair a car."
-          ],
-          "gap_accepts": [
-            "It costs",
-            "It cost"
-          ],
-          "explanation": "It takes / it costs — empty it, then the verb.",
-          "explanation_cz": "It takes / it costs — prázdné it a pak sloveso.",
-          "wrong": "Costs a lot to repair a car."
-        },
-        {
-          "en": "It is possible to finish today.",
-          "cz": "Je možné to dnes dokončit.",
-          "gap": "____ to finish today. (possible)",
-          "gap_answer": "It is possible",
-          "accepts": [
-            "It is possible to finish today.",
-            "It's possible to finish today.",
-            "It was possible to finish today."
-          ],
-          "gap_accepts": [
-            "It is possible",
-            "It's possible",
-            "It was possible"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "There is possible to finish today."
-        },
-        {
-          "en": "It is necessary to book early.",
-          "cz": "Je nutné rezervovat brzy.",
-          "gap": "____ to book early. (necessary)",
-          "gap_answer": "It is necessary",
-          "accepts": [
-            "It is necessary to book early.",
-            "It's necessary to book early.",
-            "It was necessary to book early."
-          ],
-          "gap_accepts": [
-            "It is necessary",
-            "It's necessary",
-            "It was necessary"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "There is necessary to book early."
-        },
-        {
-          "en": "It was a pleasure to help.",
-          "cz": "Bylo potěšením pomoct.",
-          "gap": "____ to help. (a pleasure / past)",
-          "gap_answer": "It was a pleasure",
-          "accepts": [
-            "It was a pleasure to help."
-          ],
-          "gap_accepts": [
-            "It was a pleasure"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Was a pleasure to help."
-        },
-        {
-          "en": "It is useful to take notes in meetings.",
-          "cz": "Na schůzkách je užitečné dělat si poznámky.",
-          "gap": "____ to take notes in meetings. (useful)",
-          "gap_answer": "It is useful",
-          "accepts": [
-            "It is useful to take notes in meetings.",
-            "It's useful to take notes in meetings.",
-            "It was useful to take notes in meetings."
-          ],
-          "gap_accepts": [
-            "It is useful",
-            "It's useful",
-            "It was useful"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is useful to take notes in meetings."
-        },
-        {
-          "en": "It is difficult to understand him on the phone.",
-          "cz": "Je těžké mu rozumět po telefonu.",
-          "gap": "____ to understand him on the phone. (difficult)",
-          "gap_answer": "It is difficult",
-          "accepts": [
-            "It is difficult to understand him on the phone.",
-            "It's difficult to understand him on the phone.",
-            "It was difficult to understand him on the phone."
-          ],
-          "gap_accepts": [
-            "It is difficult",
-            "It's difficult",
-            "It was difficult"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is difficult to understand him on the phone."
-        },
-        {
-          "en": "It is common to work from home now.",
-          "cz": "Teď je běžné pracovat z domova.",
-          "gap": "____ to work from home now. (common)",
-          "gap_answer": "It is common",
-          "accepts": [
-            "It is common to work from home now.",
-            "It's common to work from home now.",
-            "It was common to work from home now."
-          ],
-          "gap_accepts": [
-            "It is common",
-            "It's common",
-            "It was common"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "There is common to work from home now."
-        },
-        {
-          "en": "It looks like rain.",
-          "cz": "Vypadá to na déšť.",
-          "gap": "____ like rain. (look)",
-          "gap_answer": "It looks",
-          "accepts": [
-            "It looks like rain.",
-            "It looked like rain."
-          ],
-          "gap_accepts": [
-            "It looks",
-            "It looked"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Looks like rain."
-        },
-        {
-          "en": "It feels cold in here.",
-          "cz": "Tady je zima.",
-          "gap": "____ cold in here. (feel)",
-          "gap_answer": "It feels",
-          "accepts": [
-            "It feels cold in here.",
-            "It felt cold in here."
-          ],
-          "gap_accepts": [
-            "It feels",
-            "It felt"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Feels cold in here."
-        },
-        {
-          "en": "It doesn't matter.",
-          "cz": "Na tom nezáleží.",
-          "gap": "____ matter. (not)",
-          "gap_answer": "It doesn't",
-          "accepts": [
-            "It doesn't matter.",
-            "It does not matter.",
-            "It didn't matter.",
-            "It did not matter."
-          ],
-          "gap_accepts": [
-            "It doesn't",
-            "It does not",
-            "It didn't",
-            "It did not"
-          ],
-          "explanation": "Dummy it. Czech is subjectless here.",
-          "explanation_cz": "Prázdné it. Česky tu podmět není.",
-          "wrong": "Doesn't matter."
-        },
-        {
-          "en": "It is time to go.",
-          "cz": "Je čas jít.",
-          "gap": "____ to go. (time)",
-          "gap_answer": "It is time",
-          "accepts": [
-            "It is time to go.",
-            "It's time to go.",
-            "It was time to go."
-          ],
-          "gap_accepts": [
-            "It is time",
-            "It's time",
-            "It was time"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is time to go."
-        },
-        {
-          "en": "It is a good idea to wait.",
-          "cz": "Je dobrý nápad počkat.",
-          "gap": "____ to wait. (a good idea)",
-          "gap_answer": "It is a good idea",
-          "accepts": [
-            "It is a good idea to wait.",
-            "It's a good idea to wait.",
-            "It was a good idea to wait."
-          ],
-          "gap_accepts": [
-            "It is a good idea",
-            "It's a good idea",
-            "It was a good idea"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "There is a good idea to wait."
-        },
-        {
-          "en": "It is no use waiting here.",
-          "cz": "Nemá cenu tady čekat.",
-          "gap": "____ waiting here. (no use)",
-          "gap_answer": "It is no use",
-          "accepts": [
-            "It is no use waiting here.",
-            "It's no use waiting here.",
-            "It was no use waiting here."
-          ],
-          "gap_accepts": [
-            "It is no use",
-            "It's no use",
-            "It was no use"
-          ],
-          "explanation": "worth and no use take -ing, not to.",
-          "explanation_cz": "worth / no use + -ing, ne to.",
-          "wrong": "Is no use waiting here."
-        },
-        {
-          "en": "It is worth trying again.",
-          "cz": "Stojí za to to zkusit znovu.",
-          "gap": "____ trying again. (worth)",
-          "gap_answer": "It is worth",
-          "accepts": [
-            "It is worth trying again.",
-            "It's worth trying again.",
-            "It was worth trying again."
-          ],
-          "gap_accepts": [
-            "It is worth",
-            "It's worth",
-            "It was worth"
-          ],
-          "explanation": "worth and no use take -ing, not to.",
-          "explanation_cz": "worth / no use + -ing, ne to.",
-          "wrong": "Is worth trying again."
-        },
-        {
-          "en": "It is clear that we need help.",
-          "cz": "Je jasné, že potřebujeme pomoc.",
-          "gap": "____ we need help. (clear)",
-          "gap_answer": "It is clear that",
-          "accepts": [
-            "It is clear that we need help.",
-            "It is clear we need help.",
-            "It's clear that we need help.",
-            "It's clear we need help.",
-            "It was clear that we need help.",
-            "It was clear we need help."
-          ],
-          "gap_accepts": [
-            "It is clear that",
-            "It is clear",
-            "It's clear that",
-            "It's clear",
-            "It was clear that",
-            "It was clear"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Is clear that we need help."
-        },
-        {
-          "en": "It is true that he works hard.",
-          "cz": "Je pravda, že tvrdě pracuje.",
-          "gap": "____ he works hard. (true)",
-          "gap_answer": "It is true that",
-          "accepts": [
-            "It is true that he works hard.",
-            "It is true he works hard.",
-            "It's true that he works hard.",
-            "It's true he works hard.",
-            "It was true that he works hard.",
-            "It was true he works hard."
-          ],
-          "gap_accepts": [
-            "It is true that",
-            "It is true",
-            "It's true that",
-            "It's true",
-            "It was true that",
-            "It was true"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Is true that he works hard."
-        },
-        {
-          "en": "It surprised me that she called.",
-          "cz": "Překvapilo mě, že zavolala.",
-          "gap": "____ me that she called. (surprise / past)",
-          "gap_answer": "It surprised",
-          "accepts": [
-            "It surprised me that she called."
-          ],
-          "gap_accepts": [
-            "It surprised"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Surprised me that she called."
-        },
-        {
-          "en": "It is likely that they will come.",
-          "cz": "Je pravděpodobné, že přijdou.",
-          "gap": "____ they will come. (likely)",
-          "gap_answer": "It is likely that",
-          "accepts": [
-            "It is likely that they will come.",
-            "It is likely they will come.",
-            "It's likely that they will come.",
-            "It's likely they will come.",
-            "It was likely that they will come.",
-            "It was likely they will come."
-          ],
-          "gap_accepts": [
-            "It is likely that",
-            "It is likely",
-            "It's likely that",
-            "It's likely",
-            "It was likely that",
-            "It was likely"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Is likely that they will come."
-        },
-        {
-          "en": "It is better to ask than to guess.",
-          "cz": "Je lepší se zeptat než hádat.",
-          "gap": "____ to ask than to guess. (better)",
-          "gap_answer": "It is better",
-          "accepts": [
-            "It is better to ask than to guess.",
-            "It's better to ask than to guess.",
-            "It was better to ask than to guess."
-          ],
-          "gap_accepts": [
-            "It is better",
-            "It's better",
-            "It was better"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is better to ask than to guess."
-        },
-        {
-          "en": "It is safer to walk in pairs at night.",
-          "cz": "V noci je bezpečnější chodit ve dvojicích.",
-          "gap": "____ to walk in pairs at night. (safer)",
-          "gap_answer": "It is safer",
-          "accepts": [
-            "It is safer to walk in pairs at night.",
-            "It's safer to walk in pairs at night.",
-            "It was safer to walk in pairs at night."
-          ],
-          "gap_accepts": [
-            "It is safer",
-            "It's safer",
-            "It was safer"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is safer to walk in pairs at night."
-        },
-        {
-          "en": "It is strange to see him here.",
-          "cz": "Je zvláštní ho tady vidět.",
-          "gap": "____ to see him here. (strange)",
-          "gap_answer": "It is strange",
-          "accepts": [
-            "It is strange to see him here.",
-            "It's strange to see him here.",
-            "It was strange to see him here."
-          ],
-          "gap_accepts": [
-            "It is strange",
-            "It's strange",
-            "It was strange"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is strange to see him here."
-        },
-        {
-          "en": "It is fun to learn languages.",
-          "cz": "Je zábava učit se jazyky.",
-          "gap": "____ to learn languages. (fun)",
-          "gap_answer": "It is fun",
-          "accepts": [
-            "It is fun to learn languages.",
-            "It's fun to learn languages.",
-            "It was fun to learn languages."
-          ],
-          "gap_accepts": [
-            "It is fun",
-            "It's fun",
-            "It was fun"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is fun to learn languages."
-        },
-        {
-          "en": "It is boring to wait alone.",
-          "cz": "Je nuda čekat sám.",
-          "gap": "____ to wait alone. (boring)",
-          "gap_answer": "It is boring",
-          "accepts": [
-            "It is boring to wait alone.",
-            "It's boring to wait alone.",
-            "It was boring to wait alone."
-          ],
-          "gap_accepts": [
-            "It is boring",
-            "It's boring",
-            "It was boring"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is boring to wait alone."
-        },
-        {
-          "en": "It is dangerous to drive so fast.",
-          "cz": "Je nebezpečné jet tak rychle.",
-          "gap": "____ to drive so fast. (dangerous)",
-          "gap_answer": "It is dangerous",
-          "accepts": [
-            "It is dangerous to drive so fast.",
-            "It's dangerous to drive so fast.",
-            "It was dangerous to drive so fast."
-          ],
-          "gap_accepts": [
-            "It is dangerous",
-            "It's dangerous",
-            "It was dangerous"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is dangerous to drive so fast."
-        },
-        {
-          "en": "It is polite to say thank you.",
-          "cz": "Je slušné poděkovat.",
-          "gap": "____ to say thank you. (polite)",
-          "gap_answer": "It is polite",
-          "accepts": [
-            "It is polite to say thank you.",
-            "It's polite to say thank you.",
-            "It was polite to say thank you."
-          ],
-          "gap_accepts": [
-            "It is polite",
-            "It's polite",
-            "It was polite"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is polite to say thank you."
-        },
-        {
-          "en": "It is illegal to park here.",
-          "cz": "Je nelegální tady parkovat.",
-          "gap": "____ to park here. (illegal)",
-          "gap_answer": "It is illegal",
-          "accepts": [
-            "It is illegal to park here.",
-            "It's illegal to park here.",
-            "It was illegal to park here."
-          ],
-          "gap_accepts": [
-            "It is illegal",
-            "It's illegal",
-            "It was illegal"
-          ],
-          "explanation": "It + adjective + to + verb. Do not drop it.",
-          "explanation_cz": "It + přídavné jméno + to + sloveso. It nevynechávejte.",
-          "wrong": "Is illegal to park here."
-        },
-        {
-          "en": "It is free to enter the museum on Mondays.",
-          "cz": "V pondělí je vstup do muzea zdarma.",
-          "gap": "____ to enter the museum on Mondays. (free)",
-          "gap_answer": "It is free",
-          "accepts": [
-            "It is free to enter the museum on Mondays.",
-            "It's free to enter the museum on Mondays.",
-            "It was free to enter the museum on Mondays."
-          ],
-          "gap_accepts": [
-            "It is free",
-            "It's free",
-            "It was free"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Is free to enter the museum on Mondays."
-        },
-        {
-          "en": "It is five o'clock.",
-          "cz": "Je pět hodin.",
-          "gap": "____ five o'clock.",
-          "gap_answer": "It is",
-          "accepts": [
-            "It is five o'clock.",
-            "It's five o'clock.",
-            "It was five o'clock."
-          ],
-          "gap_accepts": [
-            "It is",
-            "It's",
-            "It was"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Is five o'clock."
-        },
-        {
-          "en": "It is a long way to the station.",
-          "cz": "Na nádraží je to daleko.",
-          "gap": "____ to the station. (a long way)",
-          "gap_answer": "It is a long way",
-          "accepts": [
-            "It is a long way to the station.",
-            "It's a long way to the station.",
-            "It was a long way to the station."
-          ],
-          "gap_accepts": [
-            "It is a long way",
-            "It's a long way",
-            "It was a long way"
-          ],
-          "explanation": "These phrases take empty it. Do not drop it.",
-          "explanation_cz": "Tyto fráze berou prázdné it. Nevynechávejte ho.",
-          "wrong": "Is a long way to the station."
-        },
-        {
-          "en": "It is up to you.",
-          "cz": "Je to na tobě.",
-          "gap": "____ up to you.",
-          "gap_answer": "It is",
-          "accepts": [
-            "It is up to you.",
-            "It's up to you.",
-            "It was up to you."
-          ],
-          "gap_accepts": [
-            "It is",
-            "It's",
-            "It was"
-          ],
-          "explanation": "These phrases take empty it. Do not drop it.",
-          "explanation_cz": "Tyto fráze berou prázdné it. Nevynechávejte ho.",
-          "wrong": "Is up to you."
-        },
-        {
-          "en": "It is kind of you to help.",
-          "cz": "Je od tebe milé pomoct.",
-          "gap": "____ of you to help. (kind)",
-          "gap_answer": "It is kind",
-          "accepts": [
-            "It is kind of you to help.",
-            "It's kind of you to help.",
-            "It was kind of you to help."
-          ],
-          "gap_accepts": [
-            "It is kind",
-            "It's kind",
-            "It was kind"
-          ],
-          "explanation": "It is + adjective + of + person + to.",
-          "explanation_cz": "It is + přídavné jméno + of + osoba + to.",
-          "wrong": "Is kind of you to help."
-        },
-        {
-          "en": "It is nice of her to call.",
-          "cz": "Je od ní milé zavolat.",
-          "gap": "____ of her to call. (nice)",
-          "gap_answer": "It is nice",
-          "accepts": [
-            "It is nice of her to call.",
-            "It's nice of her to call.",
-            "It was nice of her to call."
-          ],
-          "gap_accepts": [
-            "It is nice",
-            "It's nice",
-            "It was nice"
-          ],
-          "explanation": "It is + adjective + of + person + to.",
-          "explanation_cz": "It is + přídavné jméno + of + osoba + to.",
-          "wrong": "Is nice of her to call."
-        },
-        {
-          "en": "It is typical of him to be late.",
-          "cz": "Je pro něj typické přijít pozdě.",
-          "gap": "____ of him to be late. (typical)",
-          "gap_answer": "It is typical",
-          "accepts": [
-            "It is typical of him to be late.",
-            "It's typical of him to be late.",
-            "It was typical of him to be late."
-          ],
-          "gap_accepts": [
-            "It is typical",
-            "It's typical",
-            "It was typical"
-          ],
-          "explanation": "It is + adjective + of + person + to.",
-          "explanation_cz": "It is + přídavné jméno + of + osoba + to.",
-          "wrong": "Is typical of him to be late."
-        },
-        {
-          "en": "It is important that you come on time.",
-          "cz": "Je důležité, abys přišel včas.",
-          "gap": "____ you come on time. (important)",
-          "gap_answer": "It is important that",
-          "accepts": [
-            "It is important that you come on time.",
-            "It is important you come on time.",
-            "It's important that you come on time.",
-            "It was important that you come on time.",
-            "It was important you come on time."
-          ],
-          "gap_accepts": [
-            "It is important that",
-            "It is important",
-            "It's important that",
-            "It was important that",
-            "It was important"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Is important that you come on time."
-        },
-        {
-          "en": "It was lucky that we left early.",
-          "cz": "Bylo štěstí, že jsme odešli brzy.",
-          "gap": "____ we left early. (lucky / past)",
-          "gap_answer": "It was lucky that",
-          "accepts": [
-            "It was lucky that we left early.",
-            "It was lucky we left early."
-          ],
-          "gap_accepts": [
-            "It was lucky that",
-            "It was lucky"
-          ],
-          "explanation": "It + verb or adjective + that. Czech starts with the verb.",
-          "explanation_cz": "It + sloveso / přídavné jméno + that. Čeština začíná slovesem.",
-          "wrong": "Was lucky that we left early."
-        },
-        {
-          "en": "It takes patience to learn grammar.",
-          "cz": "Na učení gramatiky je potřeba trpělivost.",
-          "gap": "____ patience to learn grammar. (take)",
-          "gap_answer": "It takes",
-          "accepts": [
-            "It takes patience to learn grammar.",
-            "It took patience to learn grammar."
-          ],
-          "gap_accepts": [
-            "It takes",
-            "It took"
-          ],
-          "explanation": "It takes / it costs — empty it, then the verb.",
-          "explanation_cz": "It takes / it costs — prázdné it a pak sloveso.",
-          "wrong": "Takes patience to learn grammar."
-        },
-        {
-          "en": "It is getting late.",
-          "cz": "Už je pozdě. / Začíná být pozdě.",
-          "gap": "____ getting late.",
-          "gap_answer": "It is",
-          "accepts": [
-            "It is getting late.",
-            "It's getting late.",
-            "It was getting late."
-          ],
-          "gap_accepts": [
-            "It is",
-            "It's",
-            "It was"
-          ],
-          "explanation": "Weather, time and how things are: empty it.",
-          "explanation_cz": "Počasí, čas, stav: prázdné it. Česky bez podmětu.",
-          "wrong": "Is getting late."
-        }
-      ]
+     "en": "It is important to practise every day.",
+     "cz": "Je důležité cvičit každý den.",
+     "gap": "____ to practise every day. (important)",
+     "gap_answer": "It is important",
+     "accepts": [
+      "It is important to practise every day.",
+      "It's important to practise every day.",
+      "It was important to practise every day."
+     ],
+     "gap_accepts": [
+      "It is important",
+      "It's important",
+      "It was important"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is important**. It is important to practise every day.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is important**. It is important to practise every day.",
+     "wrong": "There is important to practise every day.",
+     "quiz_options": [
+      "It is important",
+      "Is important",
+      "There is important"
+     ]
+    },
+    {
+     "en": "It is easy to get to the centre by tram.",
+     "cz": "Je snadné se dostat do centra tramvají.",
+     "gap": "____ to get to the centre by tram. (easy)",
+     "gap_answer": "It is easy",
+     "accepts": [
+      "It is easy to get to the centre by tram.",
+      "It's easy to get to the centre by tram.",
+      "It was easy to get to the centre by tram."
+     ],
+     "gap_accepts": [
+      "It is easy",
+      "It's easy",
+      "It was easy"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is easy**. It is easy to get to the centre by tram.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is easy**. It is easy to get to the centre by tram.",
+     "wrong": "There is easy to get to the centre by tram.",
+     "quiz_options": [
+      "It is easy",
+      "Is easy",
+      "There is easy"
+     ]
+    },
+    {
+     "en": "It was nice to meet you.",
+     "cz": "Bylo hezké tě poznat.",
+     "gap": "____ to meet you. (nice / past)",
+     "gap_answer": "It was nice",
+     "accepts": [
+      "It was nice to meet you."
+     ],
+     "gap_accepts": [
+      "It was nice"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It was nice**. It was nice to meet you.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It was nice**. It was nice to meet you.",
+     "wrong": "Was nice to meet you.",
+     "quiz_options": [
+      "It was nice",
+      "Was nice",
+      "There was nice"
+     ]
+    },
+    {
+     "en": "It is hard to wake up early in winter.",
+     "cz": "V zimě je těžké vstávat brzy.",
+     "gap": "____ to wake up early in winter. (hard)",
+     "gap_answer": "It is hard",
+     "accepts": [
+      "It is hard to wake up early in winter.",
+      "It's hard to wake up early in winter.",
+      "It was hard to wake up early in winter."
+     ],
+     "gap_accepts": [
+      "It is hard",
+      "It's hard",
+      "It was hard"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is hard**. It is hard to wake up early in winter.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is hard**. It is hard to wake up early in winter.",
+     "wrong": "Is hard to wake up early in winter.",
+     "quiz_options": [
+      "It is hard",
+      "Is hard",
+      "There is hard"
+     ]
+    },
+    {
+     "en": "It seems that he is busy.",
+     "cz": "Zdá se, že je zaneprázdněný.",
+     "gap": "____ he is busy. (seem)",
+     "gap_answer": "It seems that",
+     "accepts": [
+      "It seems that he is busy.",
+      "It seems he is busy.",
+      "It seemed that he is busy.",
+      "It seemed he is busy.",
+      "It seems that he's busy.",
+      "It seems he's busy.",
+      "It seemed that he's busy.",
+      "It seemed he's busy."
+     ],
+     "gap_accepts": [
+      "It seems that",
+      "It seems",
+      "It seemed that",
+      "It seemed"
+     ],
+     "explanation": "**It seems that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It seems that he is busy.",
+     "explanation_cz": "**It seems that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It seems that he is busy.",
+     "wrong": "Seems that he is busy.",
+     "quiz_options": [
+      "It seems that",
+      "Seems that",
+      "There seems that"
+     ]
+    },
+    {
+     "en": "It appears that she has left.",
+     "cz": "Zdá se, že odešla.",
+     "gap": "____ she has left. (appear)",
+     "gap_answer": "It appears that",
+     "accepts": [
+      "It appears that she has left.",
+      "It appears she has left.",
+      "It appeared that she has left.",
+      "It appeared she has left.",
+      "It appears that she's left.",
+      "It appears she's left.",
+      "It appeared that she's left.",
+      "It appeared she's left."
+     ],
+     "gap_accepts": [
+      "It appears that",
+      "It appears",
+      "It appeared that",
+      "It appeared"
+     ],
+     "explanation": "**It appears that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It appears that she has left.",
+     "explanation_cz": "**It appears that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It appears that she has left.",
+     "wrong": "Appears that she has left.",
+     "quiz_options": [
+      "It appears that",
+      "Appears that",
+      "There appears that"
+     ]
+    },
+    {
+     "en": "It is raining again.",
+     "cz": "Zase prší.",
+     "gap": "____ raining again.",
+     "gap_answer": "It is",
+     "accepts": [
+      "It is raining again.",
+      "It's raining again.",
+      "It was raining again."
+     ],
+     "gap_accepts": [
+      "It is",
+      "It's",
+      "It was"
+     ],
+     "explanation": "Weather, the clock and how things are take an empty **it**: **It is**. Czech has no subject here at all — Zase prší.",
+     "explanation_cz": "Počasí, hodiny a jak to je berou prázdné **it**: **It is**. Čeština tu podmět nemá vůbec — Zase prší.",
+     "wrong": "Is raining again.",
+     "quiz_options": [
+      "It is",
+      "Is",
+      "There is"
+     ]
+    },
+    {
+     "en": "It is cold in the office today.",
+     "cz": "Dnes je v kanceláři zima.",
+     "gap": "____ cold in the office today.",
+     "gap_answer": "It is",
+     "accepts": [
+      "It is cold in the office today.",
+      "It's cold in the office today.",
+      "It was cold in the office today."
+     ],
+     "gap_accepts": [
+      "It is",
+      "It's",
+      "It was"
+     ],
+     "explanation": "Weather, the clock and how things are take an empty **it**: **It is**. Czech has no subject here at all — Dnes je v kanceláři zima.",
+     "explanation_cz": "Počasí, hodiny a jak to je berou prázdné **it**: **It is**. Čeština tu podmět nemá vůbec — Dnes je v kanceláři zima.",
+     "wrong": "Is cold in the office today.",
+     "quiz_options": [
+      "It is",
+      "Is",
+      "There is"
+     ]
+    },
+    {
+     "en": "It takes an hour to get to Prague.",
+     "cz": "Cesta do Prahy trvá hodinu.",
+     "gap": "____ an hour to get to Prague. (take)",
+     "gap_answer": "It takes",
+     "accepts": [
+      "It takes an hour to get to Prague.",
+      "It took an hour to get to Prague."
+     ],
+     "gap_accepts": [
+      "It takes",
+      "It took"
+     ],
+     "explanation": "**It takes** is a fixed English frame with an empty **it** in front. Drop the it and the sentence has no subject. It takes an hour to get to Prague.",
+     "explanation_cz": "**It takes** je pevná anglická vazba s prázdným **it** vepředu. Bez it věta nemá podmět. It takes an hour to get to Prague.",
+     "wrong": "Takes an hour to get to Prague.",
+     "quiz_options": [
+      "It takes",
+      "Takes",
+      "There takes"
+     ]
+    },
+    {
+     "en": "It costs a lot to repair a car.",
+     "cz": "Oprava auta hodně stojí.",
+     "gap": "____ a lot to repair a car. (cost)",
+     "gap_answer": "It costs",
+     "accepts": [
+      "It costs a lot to repair a car.",
+      "It cost a lot to repair a car."
+     ],
+     "gap_accepts": [
+      "It costs",
+      "It cost"
+     ],
+     "explanation": "**It costs** is a fixed English frame with an empty **it** in front. Drop the it and the sentence has no subject. It costs a lot to repair a car.",
+     "explanation_cz": "**It costs** je pevná anglická vazba s prázdným **it** vepředu. Bez it věta nemá podmět. It costs a lot to repair a car.",
+     "wrong": "Costs a lot to repair a car.",
+     "quiz_options": [
+      "It costs",
+      "Costs",
+      "There costs"
+     ]
+    },
+    {
+     "en": "It is possible to finish today.",
+     "cz": "Je možné to dnes dokončit.",
+     "gap": "____ to finish today. (possible)",
+     "gap_answer": "It is possible",
+     "accepts": [
+      "It is possible to finish today.",
+      "It's possible to finish today.",
+      "It was possible to finish today."
+     ],
+     "gap_accepts": [
+      "It is possible",
+      "It's possible",
+      "It was possible"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is possible**. It is possible to finish today.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is possible**. It is possible to finish today.",
+     "wrong": "There is possible to finish today.",
+     "quiz_options": [
+      "It is possible",
+      "Is possible",
+      "There is possible"
+     ]
+    },
+    {
+     "en": "It is necessary to book early.",
+     "cz": "Je nutné rezervovat brzy.",
+     "gap": "____ to book early. (necessary)",
+     "gap_answer": "It is necessary",
+     "accepts": [
+      "It is necessary to book early.",
+      "It's necessary to book early.",
+      "It was necessary to book early."
+     ],
+     "gap_accepts": [
+      "It is necessary",
+      "It's necessary",
+      "It was necessary"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is necessary**. It is necessary to book early.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is necessary**. It is necessary to book early.",
+     "wrong": "There is necessary to book early.",
+     "quiz_options": [
+      "It is necessary",
+      "Is necessary",
+      "There is necessary"
+     ]
+    },
+    {
+     "en": "It was a pleasure to help.",
+     "cz": "Bylo potěšením pomoct.",
+     "gap": "____ to help. (a pleasure / past)",
+     "gap_answer": "It was a pleasure",
+     "accepts": [
+      "It was a pleasure to help."
+     ],
+     "gap_accepts": [
+      "It was a pleasure"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It was a pleasure**. It was a pleasure to help.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It was a pleasure**. It was a pleasure to help.",
+     "wrong": "Was a pleasure to help.",
+     "quiz_options": [
+      "It was a pleasure",
+      "Was a pleasure",
+      "There was a pleasure"
+     ]
+    },
+    {
+     "en": "It is useful to take notes in meetings.",
+     "cz": "Na schůzkách je užitečné dělat si poznámky.",
+     "gap": "____ to take notes in meetings. (useful)",
+     "gap_answer": "It is useful",
+     "accepts": [
+      "It is useful to take notes in meetings.",
+      "It's useful to take notes in meetings.",
+      "It was useful to take notes in meetings."
+     ],
+     "gap_accepts": [
+      "It is useful",
+      "It's useful",
+      "It was useful"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is useful**. It is useful to take notes in meetings.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is useful**. It is useful to take notes in meetings.",
+     "wrong": "Is useful to take notes in meetings.",
+     "quiz_options": [
+      "It is useful",
+      "Is useful",
+      "There is useful"
+     ]
+    },
+    {
+     "en": "It is difficult to understand him on the phone.",
+     "cz": "Je těžké mu rozumět po telefonu.",
+     "gap": "____ to understand him on the phone. (difficult)",
+     "gap_answer": "It is difficult",
+     "accepts": [
+      "It is difficult to understand him on the phone.",
+      "It's difficult to understand him on the phone.",
+      "It was difficult to understand him on the phone."
+     ],
+     "gap_accepts": [
+      "It is difficult",
+      "It's difficult",
+      "It was difficult"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is difficult**. It is difficult to understand him on the phone.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is difficult**. It is difficult to understand him on the phone.",
+     "wrong": "Is difficult to understand him on the phone.",
+     "quiz_options": [
+      "It is difficult",
+      "Is difficult",
+      "There is difficult"
+     ]
+    },
+    {
+     "en": "It is common to work from home now.",
+     "cz": "Teď je běžné pracovat z domova.",
+     "gap": "____ to work from home now. (common)",
+     "gap_answer": "It is common",
+     "accepts": [
+      "It is common to work from home now.",
+      "It's common to work from home now.",
+      "It was common to work from home now."
+     ],
+     "gap_accepts": [
+      "It is common",
+      "It's common",
+      "It was common"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is common**. It is common to work from home now.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is common**. It is common to work from home now.",
+     "wrong": "There is common to work from home now.",
+     "quiz_options": [
+      "It is common",
+      "Is common",
+      "There is common"
+     ]
+    },
+    {
+     "en": "It looks like rain.",
+     "cz": "Vypadá to na déšť.",
+     "gap": "____ like rain. (look)",
+     "gap_answer": "It looks",
+     "accepts": [
+      "It looks like rain.",
+      "It looked like rain."
+     ],
+     "gap_accepts": [
+      "It looks",
+      "It looked"
+     ],
+     "explanation": "**It looks** is a fixed English frame with an empty **it** in front. Drop the it and the sentence has no subject. It looks like rain.",
+     "explanation_cz": "**It looks** je pevná anglická vazba s prázdným **it** vepředu. Bez it věta nemá podmět. It looks like rain.",
+     "wrong": "Looks like rain.",
+     "quiz_options": [
+      "It looks",
+      "Looks",
+      "There looks"
+     ]
+    },
+    {
+     "en": "It feels cold in here.",
+     "cz": "Tady je zima.",
+     "gap": "____ cold in here. (feel)",
+     "gap_answer": "It feels",
+     "accepts": [
+      "It feels cold in here.",
+      "It felt cold in here."
+     ],
+     "gap_accepts": [
+      "It feels",
+      "It felt"
+     ],
+     "explanation": "**It feels** is a fixed English frame with an empty **it** in front. Drop the it and the sentence has no subject. It feels cold in here.",
+     "explanation_cz": "**It feels** je pevná anglická vazba s prázdným **it** vepředu. Bez it věta nemá podmět. It feels cold in here.",
+     "wrong": "Feels cold in here.",
+     "quiz_options": [
+      "It feels",
+      "Feels",
+      "There feels"
+     ]
+    },
+    {
+     "en": "It doesn't matter.",
+     "cz": "Na tom nezáleží.",
+     "gap": "____ matter. (not)",
+     "gap_answer": "It doesn't",
+     "accepts": [
+      "It doesn't matter.",
+      "It does not matter.",
+      "It didn't matter.",
+      "It did not matter."
+     ],
+     "gap_accepts": [
+      "It doesn't",
+      "It does not",
+      "It didn't",
+      "It did not"
+     ],
+     "explanation": "**It doesn't matter** is a fixed frame with an empty **it**: nothing in the world is the subject. Czech *Na tom nezáleží* has no subject at all.",
+     "explanation_cz": "**It doesn't matter** je pevná vazba s prázdným **it**: podmětem není nic ve světě. České *Na tom nezáleží* podmět nemá vůbec.",
+     "wrong": "Doesn't matter.",
+     "quiz_options": [
+      "It doesn't",
+      "Doesn't",
+      "There doesn't"
+     ]
+    },
+    {
+     "en": "It is time to go.",
+     "cz": "Je čas jít.",
+     "gap": "____ to go. (time)",
+     "gap_answer": "It is time",
+     "accepts": [
+      "It is time to go.",
+      "It's time to go.",
+      "It was time to go."
+     ],
+     "gap_accepts": [
+      "It is time",
+      "It's time",
+      "It was time"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is time**. It is time to go.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is time**. It is time to go.",
+     "wrong": "Is time to go.",
+     "quiz_options": [
+      "It is time",
+      "Is time",
+      "There is time"
+     ]
+    },
+    {
+     "en": "It is a good idea to wait.",
+     "cz": "Je dobrý nápad počkat.",
+     "gap": "____ to wait. (a good idea)",
+     "gap_answer": "It is a good idea",
+     "accepts": [
+      "It is a good idea to wait.",
+      "It's a good idea to wait.",
+      "It was a good idea to wait."
+     ],
+     "gap_accepts": [
+      "It is a good idea",
+      "It's a good idea",
+      "It was a good idea"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is a good idea**. It is a good idea to wait.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is a good idea**. It is a good idea to wait.",
+     "wrong": "There is a good idea to wait.",
+     "quiz_options": [
+      "It is a good idea",
+      "Is a good idea",
+      "There is a good idea"
+     ]
+    },
+    {
+     "en": "It is no use waiting here.",
+     "cz": "Nemá cenu tady čekat.",
+     "gap": "____ waiting here. (no use)",
+     "gap_answer": "It is no use",
+     "accepts": [
+      "It is no use waiting here.",
+      "It's no use waiting here.",
+      "It was no use waiting here."
+     ],
+     "gap_accepts": [
+      "It is no use",
+      "It's no use",
+      "It was no use"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is no use**. It is no use waiting here.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is no use**. It is no use waiting here.",
+     "wrong": "Is no use waiting here.",
+     "quiz_options": [
+      "It is no use",
+      "Is no use",
+      "There is no use"
+     ]
+    },
+    {
+     "en": "It is worth trying again.",
+     "cz": "Stojí za to to zkusit znovu.",
+     "gap": "____ trying again. (worth)",
+     "gap_answer": "It is worth",
+     "accepts": [
+      "It is worth trying again.",
+      "It's worth trying again.",
+      "It was worth trying again."
+     ],
+     "gap_accepts": [
+      "It is worth",
+      "It's worth",
+      "It was worth"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is worth**. It is worth trying again.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is worth**. It is worth trying again.",
+     "wrong": "Is worth trying again.",
+     "quiz_options": [
+      "It is worth",
+      "Is worth",
+      "There is worth"
+     ]
+    },
+    {
+     "en": "It is clear that we need help.",
+     "cz": "Je jasné, že potřebujeme pomoc.",
+     "gap": "____ we need help. (clear)",
+     "gap_answer": "It is clear that",
+     "accepts": [
+      "It is clear that we need help.",
+      "It is clear we need help.",
+      "It's clear that we need help.",
+      "It's clear we need help.",
+      "It was clear that we need help.",
+      "It was clear we need help."
+     ],
+     "gap_accepts": [
+      "It is clear that",
+      "It is clear",
+      "It's clear that",
+      "It's clear",
+      "It was clear that",
+      "It was clear"
+     ],
+     "explanation": "**It is clear that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It is clear that we need help.",
+     "explanation_cz": "**It is clear that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It is clear that we need help.",
+     "wrong": "Is clear that we need help.",
+     "quiz_options": [
+      "It is clear that",
+      "Is clear that",
+      "There is clear that"
+     ]
+    },
+    {
+     "en": "It is true that he works hard.",
+     "cz": "Je pravda, že tvrdě pracuje.",
+     "gap": "____ he works hard. (true)",
+     "gap_answer": "It is true that",
+     "accepts": [
+      "It is true that he works hard.",
+      "It is true he works hard.",
+      "It's true that he works hard.",
+      "It's true he works hard.",
+      "It was true that he works hard.",
+      "It was true he works hard."
+     ],
+     "gap_accepts": [
+      "It is true that",
+      "It is true",
+      "It's true that",
+      "It's true",
+      "It was true that",
+      "It was true"
+     ],
+     "explanation": "**It is true that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It is true that he works hard.",
+     "explanation_cz": "**It is true that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It is true that he works hard.",
+     "wrong": "Is true that he works hard.",
+     "quiz_options": [
+      "It is true that",
+      "Is true that",
+      "There is true that"
+     ]
+    },
+    {
+     "en": "It surprised me that she called.",
+     "cz": "Překvapilo mě, že zavolala.",
+     "gap": "____ me that she called. (surprise / past)",
+     "gap_answer": "It surprised",
+     "accepts": [
+      "It surprised me that she called."
+     ],
+     "gap_accepts": [
+      "It surprised"
+     ],
+     "explanation": "**It surprised me that she called.** — the *that*-clause is the real subject, and the empty **it** holds its place in front of the verb.",
+     "explanation_cz": "**It surprised me that she called.** — skutečným podmětem je věta s *that* a prázdné **it** jí drží místo před slovesem.",
+     "wrong": "Surprised me that she called.",
+     "quiz_options": [
+      "It surprised",
+      "Surprised",
+      "There surprised"
+     ]
+    },
+    {
+     "en": "It is likely that they will come.",
+     "cz": "Je pravděpodobné, že přijdou.",
+     "gap": "____ they will come. (likely)",
+     "gap_answer": "It is likely that",
+     "accepts": [
+      "It is likely that they will come.",
+      "It is likely they will come.",
+      "It's likely that they will come.",
+      "It's likely they will come.",
+      "It was likely that they will come.",
+      "It was likely they will come.",
+      "It is likely that they'll come.",
+      "It is likely they'll come.",
+      "It's likely that they'll come.",
+      "It's likely they'll come.",
+      "It was likely that they'll come.",
+      "It was likely they'll come."
+     ],
+     "gap_accepts": [
+      "It is likely that",
+      "It is likely",
+      "It's likely that",
+      "It's likely",
+      "It was likely that",
+      "It was likely"
+     ],
+     "explanation": "**It is likely that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It is likely that they will come.",
+     "explanation_cz": "**It is likely that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It is likely that they will come.",
+     "wrong": "Is likely that they will come.",
+     "quiz_options": [
+      "It is likely that",
+      "Is likely that",
+      "There is likely that"
+     ]
+    },
+    {
+     "en": "It is better to ask than to guess.",
+     "cz": "Je lepší se zeptat než hádat.",
+     "gap": "____ to ask than to guess. (better)",
+     "gap_answer": "It is better",
+     "accepts": [
+      "It is better to ask than to guess.",
+      "It's better to ask than to guess.",
+      "It was better to ask than to guess."
+     ],
+     "gap_accepts": [
+      "It is better",
+      "It's better",
+      "It was better"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is better**. It is better to ask than to guess.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is better**. It is better to ask than to guess.",
+     "wrong": "Is better to ask than to guess.",
+     "quiz_options": [
+      "It is better",
+      "Is better",
+      "There is better"
+     ]
+    },
+    {
+     "en": "It is safer to walk in pairs at night.",
+     "cz": "V noci je bezpečnější chodit ve dvojicích.",
+     "gap": "____ to walk in pairs at night. (safer)",
+     "gap_answer": "It is safer",
+     "accepts": [
+      "It is safer to walk in pairs at night.",
+      "It's safer to walk in pairs at night.",
+      "It was safer to walk in pairs at night."
+     ],
+     "gap_accepts": [
+      "It is safer",
+      "It's safer",
+      "It was safer"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is safer**. It is safer to walk in pairs at night.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is safer**. It is safer to walk in pairs at night.",
+     "wrong": "Is safer to walk in pairs at night.",
+     "quiz_options": [
+      "It is safer",
+      "Is safer",
+      "There is safer"
+     ]
+    },
+    {
+     "en": "It is strange to see him here.",
+     "cz": "Je zvláštní ho tady vidět.",
+     "gap": "____ to see him here. (strange)",
+     "gap_answer": "It is strange",
+     "accepts": [
+      "It is strange to see him here.",
+      "It's strange to see him here.",
+      "It was strange to see him here."
+     ],
+     "gap_accepts": [
+      "It is strange",
+      "It's strange",
+      "It was strange"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is strange**. It is strange to see him here.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is strange**. It is strange to see him here.",
+     "wrong": "Is strange to see him here.",
+     "quiz_options": [
+      "It is strange",
+      "Is strange",
+      "There is strange"
+     ]
+    },
+    {
+     "en": "It is fun to learn languages.",
+     "cz": "Je zábava učit se jazyky.",
+     "gap": "____ to learn languages. (fun)",
+     "gap_answer": "It is fun",
+     "accepts": [
+      "It is fun to learn languages.",
+      "It's fun to learn languages.",
+      "It was fun to learn languages."
+     ],
+     "gap_accepts": [
+      "It is fun",
+      "It's fun",
+      "It was fun"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is fun**. It is fun to learn languages.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is fun**. It is fun to learn languages.",
+     "wrong": "Is fun to learn languages.",
+     "quiz_options": [
+      "It is fun",
+      "Is fun",
+      "There is fun"
+     ]
+    },
+    {
+     "en": "It is boring to wait alone.",
+     "cz": "Je nuda čekat sám.",
+     "gap": "____ to wait alone. (boring)",
+     "gap_answer": "It is boring",
+     "accepts": [
+      "It is boring to wait alone.",
+      "It's boring to wait alone.",
+      "It was boring to wait alone."
+     ],
+     "gap_accepts": [
+      "It is boring",
+      "It's boring",
+      "It was boring"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is boring**. It is boring to wait alone.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is boring**. It is boring to wait alone.",
+     "wrong": "Is boring to wait alone.",
+     "quiz_options": [
+      "It is boring",
+      "Is boring",
+      "There is boring"
+     ]
+    },
+    {
+     "en": "It is dangerous to drive so fast.",
+     "cz": "Je nebezpečné jet tak rychle.",
+     "gap": "____ to drive so fast. (dangerous)",
+     "gap_answer": "It is dangerous",
+     "accepts": [
+      "It is dangerous to drive so fast.",
+      "It's dangerous to drive so fast.",
+      "It was dangerous to drive so fast."
+     ],
+     "gap_accepts": [
+      "It is dangerous",
+      "It's dangerous",
+      "It was dangerous"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is dangerous**. It is dangerous to drive so fast.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is dangerous**. It is dangerous to drive so fast.",
+     "wrong": "Is dangerous to drive so fast.",
+     "quiz_options": [
+      "It is dangerous",
+      "Is dangerous",
+      "There is dangerous"
+     ]
+    },
+    {
+     "en": "It is polite to say thank you.",
+     "cz": "Je slušné poděkovat.",
+     "gap": "____ to say thank you. (polite)",
+     "gap_answer": "It is polite",
+     "accepts": [
+      "It is polite to say thank you.",
+      "It's polite to say thank you.",
+      "It was polite to say thank you."
+     ],
+     "gap_accepts": [
+      "It is polite",
+      "It's polite",
+      "It was polite"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is polite**. It is polite to say thank you.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is polite**. It is polite to say thank you.",
+     "wrong": "Is polite to say thank you.",
+     "quiz_options": [
+      "It is polite",
+      "Is polite",
+      "There is polite"
+     ]
+    },
+    {
+     "en": "It is illegal to park here.",
+     "cz": "Je nelegální tady parkovat.",
+     "gap": "____ to park here. (illegal)",
+     "gap_answer": "It is illegal",
+     "accepts": [
+      "It is illegal to park here.",
+      "It's illegal to park here.",
+      "It was illegal to park here."
+     ],
+     "gap_accepts": [
+      "It is illegal",
+      "It's illegal",
+      "It was illegal"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is illegal**. It is illegal to park here.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is illegal**. It is illegal to park here.",
+     "wrong": "Is illegal to park here.",
+     "quiz_options": [
+      "It is illegal",
+      "Is illegal",
+      "There is illegal"
+     ]
+    },
+    {
+     "en": "It is free to enter the museum on Mondays.",
+     "cz": "V pondělí je vstup do muzea zdarma.",
+     "gap": "____ to enter the museum on Mondays. (free)",
+     "gap_answer": "It is free",
+     "accepts": [
+      "It is free to enter the museum on Mondays.",
+      "It's free to enter the museum on Mondays.",
+      "It was free to enter the museum on Mondays."
+     ],
+     "gap_accepts": [
+      "It is free",
+      "It's free",
+      "It was free"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is free**. It is free to enter the museum on Mondays.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is free**. It is free to enter the museum on Mondays.",
+     "wrong": "Is free to enter the museum on Mondays.",
+     "quiz_options": [
+      "It is free",
+      "Is free",
+      "There is free"
+     ]
+    },
+    {
+     "en": "It is five o'clock.",
+     "cz": "Je pět hodin.",
+     "gap": "____ five o'clock.",
+     "gap_answer": "It is",
+     "accepts": [
+      "It is five o'clock.",
+      "It's five o'clock.",
+      "It was five o'clock."
+     ],
+     "gap_accepts": [
+      "It is",
+      "It's",
+      "It was"
+     ],
+     "explanation": "Weather, the clock and how things are take an empty **it**: **It is**. Czech has no subject here at all — Je pět hodin.",
+     "explanation_cz": "Počasí, hodiny a jak to je berou prázdné **it**: **It is**. Čeština tu podmět nemá vůbec — Je pět hodin.",
+     "wrong": "Is five o'clock.",
+     "quiz_options": [
+      "It is",
+      "Is",
+      "There is"
+     ]
+    },
+    {
+     "en": "It is a long way to the station.",
+     "cz": "Na nádraží je to daleko.",
+     "gap": "____ to the station. (a long way)",
+     "gap_answer": "It is a long way",
+     "accepts": [
+      "It is a long way to the station.",
+      "It's a long way to the station.",
+      "It was a long way to the station."
+     ],
+     "gap_accepts": [
+      "It is a long way",
+      "It's a long way",
+      "It was a long way"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is a long way**. It is a long way to the station.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is a long way**. It is a long way to the station.",
+     "wrong": "Is a long way to the station.",
+     "quiz_options": [
+      "It is a long way",
+      "Is a long way",
+      "There is a long way"
+     ]
+    },
+    {
+     "en": "It is up to you.",
+     "cz": "Je to na tobě.",
+     "gap": "____ up to you.",
+     "gap_answer": "It is",
+     "accepts": [
+      "It is up to you.",
+      "It's up to you.",
+      "It was up to you."
+     ],
+     "gap_accepts": [
+      "It is",
+      "It's",
+      "It was"
+     ],
+     "explanation": "Weather, the clock and how things are take an empty **it**: **It is**. Czech has no subject here at all — Je to na tobě.",
+     "explanation_cz": "Počasí, hodiny a jak to je berou prázdné **it**: **It is**. Čeština tu podmět nemá vůbec — Je to na tobě.",
+     "wrong": "Is up to you.",
+     "quiz_options": [
+      "It is",
+      "Is",
+      "There is"
+     ]
+    },
+    {
+     "en": "It is kind of you to help.",
+     "cz": "Je od tebe milé pomoct.",
+     "gap": "____ of you to help. (kind)",
+     "gap_answer": "It is kind",
+     "accepts": [
+      "It is kind of you to help.",
+      "It's kind of you to help.",
+      "It was kind of you to help."
+     ],
+     "gap_accepts": [
+      "It is kind",
+      "It's kind",
+      "It was kind"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is kind**. It is kind of you to help.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is kind**. It is kind of you to help.",
+     "wrong": "Is kind of you to help.",
+     "quiz_options": [
+      "It is kind",
+      "Is kind",
+      "There is kind"
+     ]
+    },
+    {
+     "en": "It is nice of her to call.",
+     "cz": "Je od ní milé zavolat.",
+     "gap": "____ of her to call. (nice)",
+     "gap_answer": "It is nice",
+     "accepts": [
+      "It is nice of her to call.",
+      "It's nice of her to call.",
+      "It was nice of her to call."
+     ],
+     "gap_accepts": [
+      "It is nice",
+      "It's nice",
+      "It was nice"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is nice**. It is nice of her to call.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is nice**. It is nice of her to call.",
+     "wrong": "Is nice of her to call.",
+     "quiz_options": [
+      "It is nice",
+      "Is nice",
+      "There is nice"
+     ]
+    },
+    {
+     "en": "It is typical of him to be late.",
+     "cz": "Je pro něj typické přijít pozdě.",
+     "gap": "____ of him to be late. (typical)",
+     "gap_answer": "It is typical",
+     "accepts": [
+      "It is typical of him to be late.",
+      "It's typical of him to be late.",
+      "It was typical of him to be late."
+     ],
+     "gap_accepts": [
+      "It is typical",
+      "It's typical",
+      "It was typical"
+     ],
+     "explanation": "English will not start a sentence with the **to**-clause, so the subject slot is filled first: **It is typical**. It is typical of him to be late.",
+     "explanation_cz": "Angličtina nezačne větu infinitivem s **to**, proto se nejdřív zaplní místo podmětu: **It is typical**. It is typical of him to be late.",
+     "wrong": "Is typical of him to be late.",
+     "quiz_options": [
+      "It is typical",
+      "Is typical",
+      "There is typical"
+     ]
+    },
+    {
+     "en": "It is important that you come on time.",
+     "cz": "Je důležité, abys přišel včas.",
+     "gap": "____ you come on time. (important)",
+     "gap_answer": "It is important that",
+     "accepts": [
+      "It is important that you come on time.",
+      "It is important you come on time.",
+      "It's important that you come on time.",
+      "It was important that you come on time.",
+      "It was important you come on time.",
+      "It's important you come on time."
+     ],
+     "gap_accepts": [
+      "It is important that",
+      "It is important",
+      "It's important that",
+      "It was important that",
+      "It was important"
+     ],
+     "explanation": "**It is important that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It is important that you come on time.",
+     "explanation_cz": "**It is important that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It is important that you come on time.",
+     "wrong": "Is important that you come on time.",
+     "quiz_options": [
+      "It is important that",
+      "Is important that",
+      "There is important that"
+     ]
+    },
+    {
+     "en": "It was lucky that we left early.",
+     "cz": "Bylo štěstí, že jsme odešli brzy.",
+     "gap": "____ we left early. (lucky / past)",
+     "gap_answer": "It was lucky that",
+     "accepts": [
+      "It was lucky that we left early.",
+      "It was lucky we left early."
+     ],
+     "gap_accepts": [
+      "It was lucky that",
+      "It was lucky"
+     ],
+     "explanation": "**It was lucky that** — the *that*-clause is the real subject, and English props it up with an empty **it**. Czech starts straight with the verb. It was lucky that we left early.",
+     "explanation_cz": "**It was lucky that** — skutečným podmětem je věta s *that*, a angličtina si ji podepře prázdným **it**. Čeština začne rovnou slovesem. It was lucky that we left early.",
+     "wrong": "Was lucky that we left early.",
+     "quiz_options": [
+      "It was lucky that",
+      "Was lucky that",
+      "There was lucky that"
+     ]
+    },
+    {
+     "en": "It takes patience to learn grammar.",
+     "cz": "Na učení gramatiky je potřeba trpělivost.",
+     "gap": "____ patience to learn grammar. (take)",
+     "gap_answer": "It takes",
+     "accepts": [
+      "It takes patience to learn grammar.",
+      "It took patience to learn grammar."
+     ],
+     "gap_accepts": [
+      "It takes",
+      "It took"
+     ],
+     "explanation": "**It takes** is a fixed English frame with an empty **it** in front. Drop the it and the sentence has no subject. It takes patience to learn grammar.",
+     "explanation_cz": "**It takes** je pevná anglická vazba s prázdným **it** vepředu. Bez it věta nemá podmět. It takes patience to learn grammar.",
+     "wrong": "Takes patience to learn grammar.",
+     "quiz_options": [
+      "It takes",
+      "Takes",
+      "There takes"
+     ]
+    },
+    {
+     "en": "It is getting late.",
+     "cz": "Začíná být pozdě.",
+     "gap": "____ getting late.",
+     "gap_answer": "It is",
+     "accepts": [
+      "It is getting late.",
+      "It's getting late.",
+      "It was getting late."
+     ],
+     "gap_accepts": [
+      "It is",
+      "It's",
+      "It was"
+     ],
+     "explanation": "Weather, the clock and how things are take an empty **it**: **It is**. Czech has no subject here at all — Začíná být pozdě.",
+     "explanation_cz": "Počasí, hodiny a jak to je berou prázdné **it**: **It is**. Čeština tu podmět nemá vůbec — Začíná být pozdě.",
+     "wrong": "Is getting late.",
+     "quiz_options": [
+      "It is",
+      "Is",
+      "There is"
+     ]
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "title": "What it is",
-        "title_cz": "Co to je",
-        "points": [
-          "English needs a subject in every sentence",
-          "When nothing is there, **it** takes the seat"
-        ],
-        "table": {
-          "headers": [
-            "Empty",
-            "Filled"
-          ],
-          "rows": [
-            [
-              "— is raining",
-              "**It** is raining."
-            ],
-            [
-              "— is late",
-              "**It** is late."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "The shape",
-        "title_cz": "Tvar",
-        "table": {
-          "headers": [
-            "Pattern",
-            "Example"
-          ],
-          "rows": [
-            [
-              "**It** + be + adjective + to",
-              "**It** is easy to learn."
-            ],
-            [
-              "**It** + verb + that",
-              "**It** seems that he is busy."
-            ],
-            [
-              "**It** takes / **It** costs",
-              "**It** takes an hour."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Where you need it",
-        "title_cz": "Kde ho potřebujete",
-        "table": {
-          "headers": [
-            "Kind",
-            "Example"
-          ],
-          "rows": [
-            [
-              "Weather",
-              "**It** is raining."
-            ],
-            [
-              "Time",
-              "**It** is five o'clock."
-            ],
-            [
-              "Distance",
-              "**It** is far."
-            ],
-            [
-              "Opinion",
-              "**It** is important to practise."
-            ],
-            [
-              "People",
-              "**It** is kind of you to help."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Czech drops it",
-        "title_cz": "Čeština ho vynechá",
-        "points": [
-          "Czech can start with the verb",
-          "English cannot — put **it** first"
-        ],
-        "table": {
-          "headers": [
-            "✗",
-            "✓"
-          ],
-          "rows": [
-            [
-              "Is important to…",
-              "**It** is important to…"
-            ],
-            [
-              "Seems that…",
-              "**It** seems that…"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "it, not there",
-        "title_cz": "it, ne there",
-        "table": {
-          "headers": [
-            "Use",
-            "Example"
-          ],
-          "rows": [
-            [
-              "empty **it**",
-              "**It** is important to wait."
-            ],
-            [
-              "there = a thing exists",
-              "There is a shop."
-            ],
-            [
-              "✗ there for it",
-              "~~There is important to wait.~~"
-            ]
-          ]
-        }
-      }
-    ]
-  },
-  "quiz_axis": "it_subject",
-  "use_mode": "correct"
+   ]
+  }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "title": "What it is",
+    "title_cz": "Co to je",
+    "points": [
+     "English needs a subject in every sentence",
+     "When nothing is there, **it** takes the seat"
+    ],
+    "table": {
+     "headers": [
+      "Empty",
+      "Filled"
+     ],
+     "rows": [
+      [
+       "— is raining",
+       "**It** is raining."
+      ],
+      [
+       "— is late",
+       "**It** is late."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "The shape",
+    "title_cz": "Tvar",
+    "table": {
+     "headers": [
+      "Pattern",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**It** + be + adjective + to",
+       "**It** is easy to learn."
+      ],
+      [
+       "**It** + verb + that",
+       "**It** seems that he is busy."
+      ],
+      [
+       "**It** takes / **It** costs",
+       "**It** takes an hour."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Where you need it",
+    "title_cz": "Kde ho potřebujete",
+    "table": {
+     "headers": [
+      "Kind",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Weather",
+       "**It** is raining."
+      ],
+      [
+       "Time",
+       "**It** is five o'clock."
+      ],
+      [
+       "Distance",
+       "**It** is far."
+      ],
+      [
+       "Opinion",
+       "**It** is important to practise."
+      ],
+      [
+       "People",
+       "**It** is kind of you to help."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Czech drops it",
+    "title_cz": "Čeština ho vynechá",
+    "points": [
+     "Czech can start with the verb",
+     "English cannot — put **it** first"
+    ],
+    "table": {
+     "headers": [
+      "✗",
+      "✓"
+     ],
+     "rows": [
+      [
+       "Is important to…",
+       "**It** is important to…"
+      ],
+      [
+       "Seems that…",
+       "**It** seems that…"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "it, not there",
+    "title_cz": "it, ne there",
+    "table": {
+     "headers": [
+      "Use",
+      "Example"
+     ],
+     "rows": [
+      [
+       "empty **it**",
+       "**It** is important to wait."
+      ],
+      [
+       "there = a thing exists",
+       "There is a shop."
+      ],
+      [
+       "✗ there for it",
+       "~~There is important to wait.~~"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "quiz_axis": "it_subject",
+ "use_mode": "correct"
 }
