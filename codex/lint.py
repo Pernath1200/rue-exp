@@ -386,7 +386,7 @@ def lint_pack(uid):
                          "sortlabel", "sortbold", "patternchip", "bothsort",
                          "parencue", "practisenote", "sortcz", "sentquiz",
                          "wordordertype", "slotgap", "closedset",
-                         "ppanchor", "seqrecap")}
+                         "ppanchor", "seqrecap", "notimeline")}
 
     taught = taught_lexicon(uid, items)
     q_ok = questions_already_taught(uid)
@@ -1067,6 +1067,50 @@ def lint_pack(uid):
                 "en": "Say / Not — put the mistake first (Not / Say)",
             })
 
+    # C29 — a tense unit needs a timeline  [CANDIDATE]
+    # The rule has been `confirmed` since 2026-08-29 and was never enforced.
+    # James 2026-09-04: "all tenses units need at least one timeline diagram,
+    # sometimes two, to compare with another tense so as to make meaning
+    # clearer." A shape table is not that picture — the student has to see
+    # WHERE the form lives in time relative to the tenses already taught.
+    TENSE_RE = re.compile(
+        r"\b(present|past|future)[\s_-]+(simple|continuous|perfect)\b|"
+        r"present[\s_-]?perfect|past[\s_-]?perfect|"
+        r"\bwill\b.*\bgoing to\b|\bgoing to\b.*\bwill\b|"
+        r"\bused to\b|\btenses?\b", re.I)
+    # "be used to / get used to" is an adjective construction (= accustomed),
+    # not a tense — it only matched on the substring "used to".
+    NOT_A_TENSE = re.compile(r"\b(be|get)[\s_-]?used[\s_-]?to\b", re.I)
+    _tense_blob = "%s %s" % (uid, d.get("title") or "")
+    if TENSE_RE.search(_tense_blob) and not NOT_A_TENSE.search(_tense_blob):
+        # a timeline is a wide horizontal axis, or one of the timeline diagram keys
+        TIMELINE_KEY = {"timelines", "time_now", "pp_vs_past"}
+        # attribute order varies (x1 y1 x2 y2 in practice), so parse, don't guess
+        LINE_TAG = re.compile(r"<line\b[^>]*>", re.I)
+        ATTR = re.compile(r"\b(x1|x2|y1|y2)\s*=\s*\"(-?\d+(?:\.\d+)?)\"", re.I)
+
+        def is_axis(tag):
+            a = {k.lower(): float(v) for k, v in ATTR.findall(tag)}
+            if len(a) < 4:
+                return False
+            return abs(a["y1"] - a["y2"]) < 2 and abs(a["x2"] - a["x1"]) > 200
+        n_tl = 0
+        for c in intro_cards(d):
+            svg = str(c.get("svg") or "")
+            keys = [str(c.get("diagram") or "")] + [
+                (dg if isinstance(dg, str) else str((dg or {}).get("diagram") or ""))
+                for dg in (c.get("diagrams") or [])]
+            if any(k.strip() in TIMELINE_KEY for k in keys):
+                n_tl += 1
+                continue
+            if any(is_axis(tag) for tag in LINE_TAG.findall(svg)):
+                n_tl += 1
+        if n_tl == 0:
+            f["notimeline"].append({
+                "cz": "%d intro cards, no timeline" % len(intro_cards(d)),
+                "en": "C29 tense unit — needs a timeline against the tenses already taught",
+            })
+
     # C57 — a sequel unit opens by recapping the one it builds on  [CANDIDATE]
     # James, b1_past_continuous_2 2026-09-04: "every unit which is 2, or 3, or 4
     # etc should refer to the previous units in the series and build on them...
@@ -1400,6 +1444,7 @@ LABELS = [
     ("useleadhi",   "CANDIDATE  F3 above A1 — Use item has words not yet taught"),
     ("ppanchor",    "CANDIDATE  A14 past perfect with no past reference point"),
     ("seqrecap",    "CANDIDATE  C57 sequel unit does not recap its predecessor"),
+    ("notimeline",  "CANDIDATE  C29 tense unit has no timeline diagram"),
 ]
 
 

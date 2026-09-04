@@ -34,6 +34,20 @@ Answers to the first run's queue. These are settled; do not re-ask them.
 
 ## One-off tasks, ahead of new units
 
+**C29 timelines on the tense units that lack one.** `lint.py` now flags this as
+`notimeline`. Every tense unit needs at least one timeline, sometimes two, to
+compare with another tense (James 2026-09-04). Outstanding: `b2_past_perfect`,
+`b2_present_perfect_continuous`, `a2_simple_vs_continuous` (**A2 — protected,
+leave it, James has been told**), and the two empty narrative shells
+(`b2_narrative_tenses`, `c1_narrative_mastery`) which need one when they are
+built. Copy the house idiom from `a2_past_continuous` card 0 and
+`b1_past_continuous_2` card 1: `var(--muted)` axis, `var(--vocab-accent)` bar
+for the continuous form, `var(--text)` dot for the past-simple point, dashed
+*now*. Read C29 in full first — it lists the ways a timeline misleads
+(a point right of *every day* reads as future; *used to* is not a station left
+of *I played*).
+
+
 **C57 recap cards on the 10 B1 sequel units.** `py -X utf8 codex/lint.py <id>`
 now flags this as `seqrecap`. Each needs a dedicated early card recapping its
 predecessor's form — the predecessor is named in the flag — then the new
