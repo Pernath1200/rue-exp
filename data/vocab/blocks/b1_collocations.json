@@ -1,741 +1,741 @@
 {
-  "id": "b1_collocations",
-  "title": "Collocations & chunks (B1)",
-  "level": "B1",
-  "tree_node": "trunk_chunks_b1",
-  "codex_unit": "V_PHR-B1B2-01",
-  "practice": "frames",
-  "note": "V_PHR-B1B2-01 · make/do/take/have + noun · strong adj–noun pairs · gap on collocation partner · not grammar · thickened 24->36 2026-09-04: 12 verb+object frames salvaged from b1_core_frames (retired; taught only `consider` that was new). Czech carried over verbatim from that pack - same unverified machine batch. · 2026-09-04 B1 loop: this pack is `practice: frames`, and on a frames pack Use replays block.items — the same 36 prompts Type just used. E10: a 12-item use_mode rewrite bank now makes Use production of the collocation instead. D3: three cz strings were dual prompts joined with a slash (silný déšť / hustě prší, Nemám tušení / Netuším, Řídím / vedu) — one prompt each now. P-lemma: *favour* and *priority* were this live unit's only two audit violations — the gap holds the collocation partner, so the noun was exposed but not a target. Both are taught in place on the intro table, so both now carry an item-level lemma.",
-  "default_direction": "cz_to_en",
-  "seed_vocab": [
-    "make",
-    "do",
-    "take",
-    "have",
-    "heavy",
-    "strong",
-    "close",
-    "high",
-    "deep",
-    "clear"
-  ],
-  "blocks": [
+ "id": "b1_collocations",
+ "title": "Collocations & chunks (B1)",
+ "level": "B1",
+ "tree_node": "trunk_chunks_b1",
+ "codex_unit": "V_PHR-B1B2-01",
+ "practice": "frames",
+ "note": "V_PHR-B1B2-01 · make/do/take/have + noun · strong adj–noun pairs · gap on collocation partner · not grammar · thickened 24->36 2026-09-04: 12 verb+object frames salvaged from b1_core_frames (retired; taught only `consider` that was new). Czech carried over verbatim from that pack - same unverified machine batch. · 2026-09-04 B1 loop: this pack is `practice: frames`, and on a frames pack Use replays block.items — the same 36 prompts Type just used. E10: a 12-item use_mode rewrite bank now makes Use production of the collocation instead. D3: three cz strings were dual prompts joined with a slash (silný déšť / hustě prší, Nemám tušení / Netuším, Řídím / vedu) — one prompt each now. P-lemma: *favour* and *priority* were this live unit's only two audit violations — the gap holds the collocation partner, so the noun was exposed but not a target. Both are taught in place on the intro table, so both now carry an item-level lemma. · 2026-09-04: eleven rewrite items — the light-verb targets now carry the whole collocation as `lemma` (the engine's letter clue already handles multi-word lemmas), so replacing the underline reconstructs the answer.",
+ "default_direction": "cz_to_en",
+ "seed_vocab": [
+  "make",
+  "do",
+  "take",
+  "have",
+  "heavy",
+  "strong",
+  "close",
+  "high",
+  "deep",
+  "clear"
+ ],
+ "blocks": [
+  {
+   "id": "b1_colloc_make_do",
+   "title": "Collocations · make / do / take / have",
+   "items": [
     {
-      "id": "b1_colloc_make_do",
-      "title": "Collocations · make / do / take / have",
-      "items": [
-        {
-          "en": "I need to make a decision.",
-          "cz": "Musím udělat rozhodnutí.",
-          "gap": "I need to ____ a decision.",
-          "gap_answer": "make",
-          "accepts": [
-            "I need to make a decision"
-          ]
-        },
-        {
-          "en": "She made a mistake.",
-          "cz": "Udělala chybu.",
-          "gap": "She ____ a mistake.",
-          "gap_answer": "made",
-          "accepts": [
-            "She made a mistake"
-          ]
-        },
-        {
-          "en": "We make progress every week.",
-          "cz": "Každý týden děláme pokroky.",
-          "gap": "We ____ progress every week.",
-          "gap_answer": "make",
-          "accepts": [
-            "We make progress every week"
-          ]
-        },
-        {
-          "en": "Can you do me a favour?",
-          "cz": "Můžeš mi udělat laskavost?",
-          "gap": "Can you ____ me a favour?",
-          "gap_answer": "do",
-          "gap_accepts": [
-            "do"
-          ],
-          "accepts": [
-            "Can you do me a favour?",
-            "Can you do me a favor?"
-          ],
-          "lemma": "favour"
-        },
-        {
-          "en": "I do my homework in the evening.",
-          "cz": "Dělám domácí úkol večer.",
-          "gap": "I ____ my homework in the evening.",
-          "gap_answer": "do",
-          "accepts": [
-            "I do my homework in the evening"
-          ]
-        },
-        {
-          "en": "They do business in Asia.",
-          "cz": "Dělají byznys v Asii.",
-          "gap": "They ____ business in Asia.",
-          "gap_answer": "do",
-          "accepts": [
-            "They do business in Asia"
-          ]
-        },
-        {
-          "en": "I take a break at ten.",
-          "cz": "V deset si dám pauzu.",
-          "gap": "I ____ a break at ten.",
-          "gap_answer": "take",
-          "accepts": [
-            "I take a break at ten"
-          ]
-        },
-        {
-          "en": "Please take a seat.",
-          "cz": "Posaďte se, prosím.",
-          "gap": "Please ____ a seat.",
-          "gap_answer": "take",
-          "accepts": [
-            "Please take a seat"
-          ]
-        },
-        {
-          "en": "He takes responsibility for the project.",
-          "cz": "Bere na sebe odpovědnost za projekt.",
-          "gap": "He ____ responsibility for the project.",
-          "gap_answer": "takes",
-          "accepts": [
-            "He takes responsibility for the project",
-            "She takes responsibility for the project.",
-            "She takes responsibility for the project"
-          ]
-        },
-        {
-          "en": "We have a meeting on Monday.",
-          "cz": "V pondělí máme schůzku.",
-          "gap": "We ____ a meeting on Monday.",
-          "gap_answer": "have",
-          "accepts": [
-            "We have a meeting on Monday"
-          ]
-        },
-        {
-          "en": "I have no idea.",
-          "cz": "Nemám tušení.",
-          "gap": "I ____ no idea.",
-          "gap_answer": "have",
-          "accepts": [
-            "I have no idea",
-            "I've no idea."
-          ]
-        },
-        {
-          "en": "She has a problem with the wifi.",
-          "cz": "Má problém s wifi.",
-          "gap": "She ____ a problem with the wifi.",
-          "gap_answer": "has",
-          "accepts": [
-            "She has a problem with the wifi",
-            "She has a problem with the Wi-Fi.",
-            "She's got a problem with the wifi.",
-            "He has a problem with the wifi.",
-            "He has a problem with the wifi",
-            "He has a problem with the Wi-Fi.",
-            "He's got a problem with the wifi."
-          ]
-        }
-      ]
+     "en": "I need to make a decision.",
+     "cz": "Musím udělat rozhodnutí.",
+     "gap": "I need to ____ a decision.",
+     "gap_answer": "make",
+     "accepts": [
+      "I need to make a decision"
+     ]
     },
     {
-      "id": "b1_colloc_adj_noun",
-      "title": "Collocations · adjective + noun",
-      "items": [
-        {
-          "en": "There is heavy rain today.",
-          "cz": "Dnes je silný déšť.",
-          "gap": "There is ____ rain today.",
-          "gap_answer": "heavy",
-          "accepts": [
-            "There is heavy rain today",
-            "There's heavy rain today."
-          ]
-        },
-        {
-          "en": "She has a strong accent.",
-          "cz": "Má silný přízvuk.",
-          "gap": "She has a ____ accent.",
-          "gap_answer": "strong",
-          "accepts": [
-            "She has a strong accent",
-            "He has a strong accent.",
-            "He has a strong accent"
-          ]
-        },
-        {
-          "en": "We are close friends.",
-          "cz": "Jsme blízcí přátelé.",
-          "gap": "We are ____ friends.",
-          "gap_answer": "close",
-          "accepts": [
-            "We are close friends",
-            "We're close friends."
-          ]
-        },
-        {
-          "en": "This is a high priority.",
-          "cz": "Tohle je vysoká priorita.",
-          "gap": "This is a ____ priority.",
-          "gap_answer": "high",
-          "accepts": [
-            "This is a high priority"
-          ],
-          "lemma": "priority"
-        },
-        {
-          "en": "I need a clear answer.",
-          "cz": "Potřebuju jasnou odpověď.",
-          "gap": "I need a ____ answer.",
-          "gap_answer": "clear",
-          "accepts": [
-            "I need a clear answer"
-          ]
-        },
-        {
-          "en": "He is under a lot of pressure.",
-          "cz": "Je pod velkým tlakem.",
-          "gap": "He is under a lot of ____.",
-          "gap_answer": "pressure",
-          "accepts": [
-            "He is under a lot of pressure",
-            "He's under a lot of pressure.",
-            "She is under a lot of pressure.",
-            "She is under a lot of pressure",
-            "She's under a lot of pressure."
-          ]
-        },
-        {
-          "en": "We had a serious conversation.",
-          "cz": "Měli jsme vážný rozhovor.",
-          "gap": "We had a ____ conversation.",
-          "gap_answer": "serious",
-          "accepts": [
-            "We had a serious conversation"
-          ]
-        },
-        {
-          "en": "That was a hard decision.",
-          "cz": "To bylo těžké rozhodnutí.",
-          "gap": "That was a ____ decision.",
-          "gap_answer": "hard",
-          "gap_accepts": [
-            "difficult",
-            "tough"
-          ],
-          "accepts": [
-            "That was a hard decision",
-            "That was a difficult decision.",
-            "That was a tough decision."
-          ]
-        },
-        {
-          "en": "She gave me useful advice.",
-          "cz": "Dala mi užitečnou radu.",
-          "gap": "She gave me ____ advice.",
-          "gap_answer": "useful",
-          "gap_accepts": [
-            "good",
-            "helpful"
-          ],
-          "accepts": [
-            "She gave me useful advice",
-            "She gave me good advice.",
-            "She gave me helpful advice."
-          ]
-        },
-        {
-          "en": "I have a busy schedule this week.",
-          "cz": "Tenhle týden mám nabitý rozvrh.",
-          "gap": "I have a ____ schedule this week.",
-          "gap_answer": "busy",
-          "accepts": [
-            "I have a busy schedule this week"
-          ]
-        },
-        {
-          "en": "We need more free time.",
-          "cz": "Potřebujeme víc volného času.",
-          "gap": "We need more ____ time.",
-          "gap_answer": "free",
-          "accepts": [
-            "We need more free time"
-          ]
-        },
-        {
-          "en": "It is common knowledge.",
-          "cz": "Je to všeobecně známá věc.",
-          "gap": "It is ____ knowledge.",
-          "gap_answer": "common",
-          "accepts": [
-            "It is common knowledge",
-            "It's common knowledge."
-          ]
-        }
-      ]
+     "en": "She made a mistake.",
+     "cz": "Udělala chybu.",
+     "gap": "She ____ a mistake.",
+     "gap_answer": "made",
+     "accepts": [
+      "She made a mistake"
+     ]
     },
     {
-      "id": "b1_colloc_verb_object",
-      "title": "Collocations · verb + object",
-      "items": [
-        {
-          "en": "We consider all options.",
-          "cz": "Zvažujeme všechny možnosti.",
-          "gap": "We ____ all options.",
-          "gap_answer": "consider",
-          "accepts": [
-            "We consider all options"
-          ]
-        },
-        {
-          "en": "She achieves good results.",
-          "cz": "Ona dosahuje dobrých výsledků.",
-          "gap": "She ____ good results.",
-          "gap_answer": "achieves",
-          "accepts": [
-            "She achieves good results"
-          ]
-        },
-        {
-          "en": "I take his advice seriously.",
-          "cz": "Beru jeho radu vážně.",
-          "gap": "I ____ his advice seriously.",
-          "gap_answer": "take",
-          "accepts": [
-            "I take his advice seriously"
-          ]
-        },
-        {
-          "en": "We face a big problem.",
-          "cz": "Čelíme velkému problému.",
-          "gap": "We ____ a big problem.",
-          "gap_answer": "face",
-          "accepts": [
-            "We face a big problem"
-          ]
-        },
-        {
-          "en": "Can you explain the problem?",
-          "cz": "Můžeš vysvětlit ten problém?",
-          "gap": "Can you ____ the problem?",
-          "gap_answer": "explain",
-          "accepts": [
-            "Can you explain the problem"
-          ]
-        },
-        {
-          "en": "Please describe your experience.",
-          "cz": "Prosím popiš svou zkušenost.",
-          "gap": "Please ____ your experience.",
-          "gap_answer": "describe",
-          "accepts": [
-            "Please describe your experience"
-          ]
-        },
-        {
-          "en": "We want to improve our English.",
-          "cz": "Chceme zlepšit svou angličtinu.",
-          "gap": "We want to ____ our English.",
-          "gap_answer": "improve",
-          "accepts": [
-            "We want to improve our English"
-          ]
-        },
-        {
-          "en": "They develop a new product.",
-          "cz": "Vyvíjejí nový produkt.",
-          "gap": "They ____ a new product.",
-          "gap_answer": "develop",
-          "accepts": [
-            "They develop a new product"
-          ]
-        },
-        {
-          "en": "I manage a small team.",
-          "cz": "Vedu malý tým.",
-          "gap": "I ____ a small team.",
-          "gap_answer": "manage",
-          "accepts": [
-            "I manage a small team"
-          ]
-        },
-        {
-          "en": "We agree with the plan.",
-          "cz": "Souhlasíme s plánem.",
-          "gap": "We ____ with the plan.",
-          "gap_answer": "agree",
-          "accepts": [
-            "We agree with the plan"
-          ]
-        },
-        {
-          "en": "I disagree with that idea.",
-          "cz": "Nesouhlasím s tím nápadem.",
-          "gap": "I ____ with that idea.",
-          "gap_answer": "disagree",
-          "accepts": [
-            "I disagree with that idea"
-          ]
-        },
-        {
-          "en": "I prefer a clear plan.",
-          "cz": "Preferuju jasný plán.",
-          "gap": "I ____ a clear plan.",
-          "gap_answer": "prefer",
-          "accepts": [
-            "I prefer a clear plan"
-          ]
-        }
-      ]
+     "en": "We make progress every week.",
+     "cz": "Každý týden děláme pokroky.",
+     "gap": "We ____ progress every week.",
+     "gap_answer": "make",
+     "accepts": [
+      "We make progress every week"
+     ]
+    },
+    {
+     "en": "Can you do me a favour?",
+     "cz": "Můžeš mi udělat laskavost?",
+     "gap": "Can you ____ me a favour?",
+     "gap_answer": "do",
+     "gap_accepts": [
+      "do"
+     ],
+     "accepts": [
+      "Can you do me a favour?",
+      "Can you do me a favor?"
+     ],
+     "lemma": "favour"
+    },
+    {
+     "en": "I do my homework in the evening.",
+     "cz": "Dělám domácí úkol večer.",
+     "gap": "I ____ my homework in the evening.",
+     "gap_answer": "do",
+     "accepts": [
+      "I do my homework in the evening"
+     ]
+    },
+    {
+     "en": "They do business in Asia.",
+     "cz": "Dělají byznys v Asii.",
+     "gap": "They ____ business in Asia.",
+     "gap_answer": "do",
+     "accepts": [
+      "They do business in Asia"
+     ]
+    },
+    {
+     "en": "I take a break at ten.",
+     "cz": "V deset si dám pauzu.",
+     "gap": "I ____ a break at ten.",
+     "gap_answer": "take",
+     "accepts": [
+      "I take a break at ten"
+     ]
+    },
+    {
+     "en": "Please take a seat.",
+     "cz": "Posaďte se, prosím.",
+     "gap": "Please ____ a seat.",
+     "gap_answer": "take",
+     "accepts": [
+      "Please take a seat"
+     ]
+    },
+    {
+     "en": "He takes responsibility for the project.",
+     "cz": "Bere na sebe odpovědnost za projekt.",
+     "gap": "He ____ responsibility for the project.",
+     "gap_answer": "takes",
+     "accepts": [
+      "He takes responsibility for the project",
+      "She takes responsibility for the project.",
+      "She takes responsibility for the project"
+     ]
+    },
+    {
+     "en": "We have a meeting on Monday.",
+     "cz": "V pondělí máme schůzku.",
+     "gap": "We ____ a meeting on Monday.",
+     "gap_answer": "have",
+     "accepts": [
+      "We have a meeting on Monday"
+     ]
+    },
+    {
+     "en": "I have no idea.",
+     "cz": "Nemám tušení.",
+     "gap": "I ____ no idea.",
+     "gap_answer": "have",
+     "accepts": [
+      "I have no idea",
+      "I've no idea."
+     ]
+    },
+    {
+     "en": "She has a problem with the wifi.",
+     "cz": "Má problém s wifi.",
+     "gap": "She ____ a problem with the wifi.",
+     "gap_answer": "has",
+     "accepts": [
+      "She has a problem with the wifi",
+      "She has a problem with the Wi-Fi.",
+      "She's got a problem with the wifi.",
+      "He has a problem with the wifi.",
+      "He has a problem with the wifi",
+      "He has a problem with the Wi-Fi.",
+      "He's got a problem with the wifi."
+     ]
     }
-  ],
-  "intro": [
+   ]
+  },
+  {
+   "id": "b1_colloc_adj_noun",
+   "title": "Collocations · adjective + noun",
+   "items": [
     {
-      "title": "The verb is fixed by the noun",
-      "title_cz": "Sloveso určuje podstatné jméno",
-      "table": {
-        "headers": [
-          "verb",
-          "goes with"
-        ],
-        "rows": [
-          [
-            "**make**",
-            "a decision · a mistake · progress"
-          ],
-          [
-            "**do**",
-            "somebody a favour · your homework · business"
-          ],
-          [
-            "**take**",
-            "a break · a seat · responsibility"
-          ],
-          [
-            "**have**",
-            "a meeting · no idea · a problem"
-          ]
-        ]
-      },
-      "note": "You cannot choose freely. Czech *udělat* is make, do or take — the noun decides.",
-      "note_cz": "O slovese rozhoduje podstatné jméno. České *udělat* je anglicky make, do nebo take."
+     "en": "There is heavy rain today.",
+     "cz": "Dnes je silný déšť.",
+     "gap": "There is ____ rain today.",
+     "gap_answer": "heavy",
+     "accepts": [
+      "There is heavy rain today",
+      "There's heavy rain today."
+     ]
     },
     {
-      "title": "Adjective + noun · 1",
-      "title_cz": "Přídavné jméno + podstatné jméno · 1",
-      "table": {
-        "headers": [
-          "collocation",
-          "example"
-        ],
-        "rows": [
-          [
-            "heavy rain",
-            "There is **heavy rain** today."
-          ],
-          [
-            "strong accent",
-            "She has a **strong accent**."
-          ],
-          [
-            "close friends",
-            "We are **close friends**."
-          ],
-          [
-            "high priority",
-            "This is a **high priority**."
-          ],
-          [
-            "clear answer",
-            "I need a **clear answer**."
-          ],
-          [
-            "under pressure",
-            "He is **under** a lot of **pressure**."
-          ]
-        ]
-      }
+     "en": "She has a strong accent.",
+     "cz": "Má silný přízvuk.",
+     "gap": "She has a ____ accent.",
+     "gap_answer": "strong",
+     "accepts": [
+      "She has a strong accent",
+      "He has a strong accent.",
+      "He has a strong accent"
+     ]
     },
     {
-      "title": "Adjective + noun · 2",
-      "title_cz": "Přídavné jméno + podstatné jméno · 2",
-      "table": {
-        "headers": [
-          "collocation",
-          "example"
-        ],
-        "rows": [
-          [
-            "serious conversation",
-            "We had a **serious conversation**."
-          ],
-          [
-            "hard decision",
-            "That was a **hard decision**."
-          ],
-          [
-            "useful advice",
-            "She gave me **useful advice**."
-          ],
-          [
-            "busy schedule",
-            "I have a **busy schedule** this week."
-          ],
-          [
-            "free time",
-            "We need more **free time**."
-          ],
-          [
-            "common knowledge",
-            "It is **common knowledge**."
-          ]
-        ]
-      }
+     "en": "We are close friends.",
+     "cz": "Jsme blízcí přátelé.",
+     "gap": "We are ____ friends.",
+     "gap_answer": "close",
+     "accepts": [
+      "We are close friends",
+      "We're close friends."
+     ]
     },
     {
-      "title": "Verb + object · 1",
-      "title_cz": "Sloveso + předmět · 1",
-      "table": {
-        "headers": [
-          "collocation",
-          "example"
-        ],
-        "rows": [
-          [
-            "consider options",
-            "We **consider** all options."
-          ],
-          [
-            "achieve results",
-            "She **achieves** good results."
-          ],
-          [
-            "take advice",
-            "I **take** his advice seriously."
-          ],
-          [
-            "face a problem",
-            "We **face** a big problem."
-          ],
-          [
-            "explain something",
-            "Can you **explain** the problem?"
-          ],
-          [
-            "describe something",
-            "Please **describe** your experience."
-          ]
-        ]
-      }
+     "en": "This is a high priority.",
+     "cz": "Tohle je vysoká priorita.",
+     "gap": "This is a ____ priority.",
+     "gap_answer": "high",
+     "accepts": [
+      "This is a high priority"
+     ],
+     "lemma": "priority"
     },
     {
-      "title": "Verb + object · 2",
-      "title_cz": "Sloveso + předmět · 2",
-      "table": {
-        "headers": [
-          "collocation",
-          "example"
-        ],
-        "rows": [
-          [
-            "improve something",
-            "We want to **improve** our English."
-          ],
-          [
-            "develop something",
-            "They **develop** a new product."
-          ],
-          [
-            "manage something",
-            "I **manage** a small team."
-          ],
-          [
-            "agree with",
-            "We **agree with** the plan."
-          ],
-          [
-            "disagree with",
-            "I **disagree with** that idea."
-          ],
-          [
-            "prefer something",
-            "I **prefer** a clear plan."
-          ]
-        ]
-      }
+     "en": "I need a clear answer.",
+     "cz": "Potřebuju jasnou odpověď.",
+     "gap": "I need a ____ answer.",
+     "gap_answer": "clear",
+     "accepts": [
+      "I need a clear answer"
+     ]
     },
     {
-      "title": "You will use these words in",
-      "title_cz": "Tato slova použiješ ve větách jako",
-      "frames": [
-        "I need to make a decision.",
-        "Can you do me a favour?",
-        "We have a meeting on Monday.",
-        "There is heavy rain today.",
-        "We consider all options."
-      ],
-      "note": "The whole phrase is the word. Learn make a decision, not make and decision.",
-      "note_cz": "Slovem je celé spojení. Uč se make a decision, ne make a decision zvlášť."
+     "en": "He is under a lot of pressure.",
+     "cz": "Je pod velkým tlakem.",
+     "gap": "He is under a lot of ____.",
+     "gap_answer": "pressure",
+     "accepts": [
+      "He is under a lot of pressure",
+      "He's under a lot of pressure.",
+      "She is under a lot of pressure.",
+      "She is under a lot of pressure",
+      "She's under a lot of pressure."
+     ]
+    },
+    {
+     "en": "We had a serious conversation.",
+     "cz": "Měli jsme vážný rozhovor.",
+     "gap": "We had a ____ conversation.",
+     "gap_answer": "serious",
+     "accepts": [
+      "We had a serious conversation"
+     ]
+    },
+    {
+     "en": "That was a hard decision.",
+     "cz": "To bylo těžké rozhodnutí.",
+     "gap": "That was a ____ decision.",
+     "gap_answer": "hard",
+     "gap_accepts": [
+      "difficult",
+      "tough"
+     ],
+     "accepts": [
+      "That was a hard decision",
+      "That was a difficult decision.",
+      "That was a tough decision."
+     ]
+    },
+    {
+     "en": "She gave me useful advice.",
+     "cz": "Dala mi užitečnou radu.",
+     "gap": "She gave me ____ advice.",
+     "gap_answer": "useful",
+     "gap_accepts": [
+      "good",
+      "helpful"
+     ],
+     "accepts": [
+      "She gave me useful advice",
+      "She gave me good advice.",
+      "She gave me helpful advice."
+     ]
+    },
+    {
+     "en": "I have a busy schedule this week.",
+     "cz": "Tenhle týden mám nabitý rozvrh.",
+     "gap": "I have a ____ schedule this week.",
+     "gap_answer": "busy",
+     "accepts": [
+      "I have a busy schedule this week"
+     ]
+    },
+    {
+     "en": "We need more free time.",
+     "cz": "Potřebujeme víc volného času.",
+     "gap": "We need more ____ time.",
+     "gap_answer": "free",
+     "accepts": [
+      "We need more free time"
+     ]
+    },
+    {
+     "en": "It is common knowledge.",
+     "cz": "Je to všeobecně známá věc.",
+     "gap": "It is ____ knowledge.",
+     "gap_answer": "common",
+     "accepts": [
+      "It is common knowledge",
+      "It's common knowledge."
+     ]
     }
-  ],
-  "use_mode": "rewrite",
-  "use_hint": "Rewrite the sentence. Replace the underlined words.",
-  "use_sentences": [
+   ]
+  },
+  {
+   "id": "b1_colloc_verb_object",
+   "title": "Collocations · verb + object",
+   "items": [
     {
-      "lemma": "make",
-      "prompt": "I need to decide by Friday.",
-      "underline": "decide",
-      "en": "I need to make a decision by Friday.",
-      "lemmas": [
-        "make"
-      ],
-      "accepts": [
-        "I need to make a decision by Friday"
-      ]
+     "en": "We consider all options.",
+     "cz": "Zvažujeme všechny možnosti.",
+     "gap": "We ____ all options.",
+     "gap_answer": "consider",
+     "accepts": [
+      "We consider all options"
+     ]
     },
     {
-      "lemma": "do",
-      "prompt": "Can you help me with something?",
-      "underline": "help me with something",
-      "en": "Can you do me a favour?",
-      "lemmas": [
-        "do"
-      ],
-      "accepts": [
-        "Can you do me a favour?"
-      ]
+     "en": "She achieves good results.",
+     "cz": "Ona dosahuje dobrých výsledků.",
+     "gap": "She ____ good results.",
+     "gap_answer": "achieves",
+     "accepts": [
+      "She achieves good results"
+     ]
     },
     {
-      "lemma": "take",
-      "prompt": "I stop for ten minutes at ten.",
-      "underline": "stop for ten minutes",
-      "en": "I take a break at ten.",
-      "lemmas": [
-        "take"
-      ],
-      "accepts": [
-        "I take a break at ten"
-      ]
+     "en": "I take his advice seriously.",
+     "cz": "Beru jeho radu vážně.",
+     "gap": "I ____ his advice seriously.",
+     "gap_answer": "take",
+     "accepts": [
+      "I take his advice seriously"
+     ]
     },
     {
-      "lemma": "have",
-      "prompt": "We meet the team on Monday.",
-      "underline": "meet the team",
-      "en": "We have a meeting on Monday.",
-      "lemmas": [
-        "have"
-      ],
-      "accepts": [
-        "We have a meeting on Monday"
-      ]
+     "en": "We face a big problem.",
+     "cz": "Čelíme velkému problému.",
+     "gap": "We ____ a big problem.",
+     "gap_answer": "face",
+     "accepts": [
+      "We face a big problem"
+     ]
     },
     {
-      "lemma": "heavy",
-      "prompt": "It is raining hard today.",
-      "underline": "raining hard",
-      "en": "There is heavy rain today.",
-      "lemmas": [
-        "heavy"
-      ],
-      "accepts": [
-        "There is heavy rain today",
-        "There's heavy rain today"
-      ]
+     "en": "Can you explain the problem?",
+     "cz": "Můžeš vysvětlit ten problém?",
+     "gap": "Can you ____ the problem?",
+     "gap_answer": "explain",
+     "accepts": [
+      "Can you explain the problem"
+     ]
     },
     {
-      "lemma": "strong",
-      "prompt": "You can hear where she is from when she speaks.",
-      "underline": "You can hear where she is from",
-      "en": "She has a strong accent.",
-      "lemmas": [
-        "strong"
-      ],
-      "accepts": [
-        "She has a strong accent"
-      ]
+     "en": "Please describe your experience.",
+     "cz": "Prosím popiš svou zkušenost.",
+     "gap": "Please ____ your experience.",
+     "gap_answer": "describe",
+     "accepts": [
+      "Please describe your experience"
+     ]
     },
     {
-      "lemma": "close",
-      "prompt": "We tell each other everything.",
-      "underline": "tell each other everything",
-      "en": "We are close friends.",
-      "lemmas": [
-        "close"
-      ],
-      "accepts": [
-        "We are close friends",
-        "We're close friends"
-      ]
+     "en": "We want to improve our English.",
+     "cz": "Chceme zlepšit svou angličtinu.",
+     "gap": "We want to ____ our English.",
+     "gap_answer": "improve",
+     "accepts": [
+      "We want to improve our English"
+     ]
     },
     {
-      "lemma": "useful",
-      "prompt": "She told me something that really helped.",
-      "underline": "told me something that really helped",
-      "en": "She gave me useful advice.",
-      "lemmas": [
-        "useful"
-      ],
-      "accepts": [
-        "She gave me useful advice"
-      ]
+     "en": "They develop a new product.",
+     "cz": "Vyvíjejí nový produkt.",
+     "gap": "They ____ a new product.",
+     "gap_answer": "develop",
+     "accepts": [
+      "They develop a new product"
+     ]
     },
     {
-      "lemma": "face",
-      "prompt": "There is a big problem in front of us.",
-      "underline": "There is a big problem in front of us",
-      "en": "We face a big problem.",
-      "lemmas": [
-        "face"
-      ],
-      "accepts": [
-        "We face a big problem"
-      ]
+     "en": "I manage a small team.",
+     "cz": "Vedu malý tým.",
+     "gap": "I ____ a small team.",
+     "gap_answer": "manage",
+     "accepts": [
+      "I manage a small team"
+     ]
     },
     {
-      "lemma": "improve",
-      "prompt": "We want our English to get better.",
-      "underline": "our English to get better",
-      "en": "We want to improve our English.",
-      "lemmas": [
-        "improve"
-      ],
-      "accepts": [
-        "We want to improve our English"
-      ]
+     "en": "We agree with the plan.",
+     "cz": "Souhlasíme s plánem.",
+     "gap": "We ____ with the plan.",
+     "gap_answer": "agree",
+     "accepts": [
+      "We agree with the plan"
+     ]
     },
     {
-      "lemma": "manage",
-      "prompt": "I am the boss of a small team.",
-      "underline": "am the boss of",
-      "en": "I manage a small team.",
-      "lemmas": [
-        "manage"
-      ],
-      "accepts": [
-        "I manage a small team"
-      ]
+     "en": "I disagree with that idea.",
+     "cz": "Nesouhlasím s tím nápadem.",
+     "gap": "I ____ with that idea.",
+     "gap_answer": "disagree",
+     "accepts": [
+      "I disagree with that idea"
+     ]
     },
     {
-      "lemma": "prefer",
-      "prompt": "I like a clear plan more than the other kind.",
-      "underline": "like",
-      "en": "I prefer a clear plan.",
-      "lemmas": [
-        "prefer"
-      ],
-      "accepts": [
-        "I prefer a clear plan"
-      ]
+     "en": "I prefer a clear plan.",
+     "cz": "Preferuju jasný plán.",
+     "gap": "I ____ a clear plan.",
+     "gap_answer": "prefer",
+     "accepts": [
+      "I prefer a clear plan"
+     ]
     }
-  ]
+   ]
+  }
+ ],
+ "intro": [
+  {
+   "title": "The verb is fixed by the noun",
+   "title_cz": "Sloveso určuje podstatné jméno",
+   "table": {
+    "headers": [
+     "verb",
+     "goes with"
+    ],
+    "rows": [
+     [
+      "**make**",
+      "a decision · a mistake · progress"
+     ],
+     [
+      "**do**",
+      "somebody a favour · your homework · business"
+     ],
+     [
+      "**take**",
+      "a break · a seat · responsibility"
+     ],
+     [
+      "**have**",
+      "a meeting · no idea · a problem"
+     ]
+    ]
+   },
+   "note": "You cannot choose freely. Czech *udělat* is make, do or take — the noun decides.",
+   "note_cz": "O slovese rozhoduje podstatné jméno. České *udělat* je anglicky make, do nebo take."
+  },
+  {
+   "title": "Adjective + noun · 1",
+   "title_cz": "Přídavné jméno + podstatné jméno · 1",
+   "table": {
+    "headers": [
+     "collocation",
+     "example"
+    ],
+    "rows": [
+     [
+      "heavy rain",
+      "There is **heavy rain** today."
+     ],
+     [
+      "strong accent",
+      "She has a **strong accent**."
+     ],
+     [
+      "close friends",
+      "We are **close friends**."
+     ],
+     [
+      "high priority",
+      "This is a **high priority**."
+     ],
+     [
+      "clear answer",
+      "I need a **clear answer**."
+     ],
+     [
+      "under pressure",
+      "He is **under** a lot of **pressure**."
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Adjective + noun · 2",
+   "title_cz": "Přídavné jméno + podstatné jméno · 2",
+   "table": {
+    "headers": [
+     "collocation",
+     "example"
+    ],
+    "rows": [
+     [
+      "serious conversation",
+      "We had a **serious conversation**."
+     ],
+     [
+      "hard decision",
+      "That was a **hard decision**."
+     ],
+     [
+      "useful advice",
+      "She gave me **useful advice**."
+     ],
+     [
+      "busy schedule",
+      "I have a **busy schedule** this week."
+     ],
+     [
+      "free time",
+      "We need more **free time**."
+     ],
+     [
+      "common knowledge",
+      "It is **common knowledge**."
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Verb + object · 1",
+   "title_cz": "Sloveso + předmět · 1",
+   "table": {
+    "headers": [
+     "collocation",
+     "example"
+    ],
+    "rows": [
+     [
+      "consider options",
+      "We **consider** all options."
+     ],
+     [
+      "achieve results",
+      "She **achieves** good results."
+     ],
+     [
+      "take advice",
+      "I **take** his advice seriously."
+     ],
+     [
+      "face a problem",
+      "We **face** a big problem."
+     ],
+     [
+      "explain something",
+      "Can you **explain** the problem?"
+     ],
+     [
+      "describe something",
+      "Please **describe** your experience."
+     ]
+    ]
+   }
+  },
+  {
+   "title": "Verb + object · 2",
+   "title_cz": "Sloveso + předmět · 2",
+   "table": {
+    "headers": [
+     "collocation",
+     "example"
+    ],
+    "rows": [
+     [
+      "improve something",
+      "We want to **improve** our English."
+     ],
+     [
+      "develop something",
+      "They **develop** a new product."
+     ],
+     [
+      "manage something",
+      "I **manage** a small team."
+     ],
+     [
+      "agree with",
+      "We **agree with** the plan."
+     ],
+     [
+      "disagree with",
+      "I **disagree with** that idea."
+     ],
+     [
+      "prefer something",
+      "I **prefer** a clear plan."
+     ]
+    ]
+   }
+  },
+  {
+   "title": "You will use these words in",
+   "title_cz": "Tato slova použiješ ve větách jako",
+   "frames": [
+    "I need to make a decision.",
+    "Can you do me a favour?",
+    "We have a meeting on Monday.",
+    "There is heavy rain today.",
+    "We consider all options."
+   ],
+   "note": "The whole phrase is the word. Learn make a decision, not make and decision.",
+   "note_cz": "Slovem je celé spojení. Uč se make a decision, ne make a decision zvlášť."
+  }
+ ],
+ "use_mode": "rewrite",
+ "use_hint": "Rewrite the sentence. Replace the underlined words.",
+ "use_sentences": [
+  {
+   "lemma": "make a decision",
+   "prompt": "I need to decide by Friday.",
+   "underline": "decide",
+   "en": "I need to make a decision by Friday.",
+   "lemmas": [
+    "make"
+   ],
+   "accepts": [
+    "I need to make a decision by Friday"
+   ]
+  },
+  {
+   "lemma": "do me a favour",
+   "prompt": "Can you help me with something?",
+   "underline": "help me with something",
+   "en": "Can you do me a favour?",
+   "lemmas": [
+    "do"
+   ],
+   "accepts": [
+    "Can you do me a favour?"
+   ]
+  },
+  {
+   "lemma": "take a break",
+   "prompt": "I stop for ten minutes at ten.",
+   "underline": "stop for ten minutes",
+   "en": "I take a break at ten.",
+   "lemmas": [
+    "take"
+   ],
+   "accepts": [
+    "I take a break at ten"
+   ]
+  },
+  {
+   "lemma": "have a meeting",
+   "prompt": "We meet the team on Monday.",
+   "underline": "meet the team",
+   "en": "We have a meeting on Monday.",
+   "lemmas": [
+    "have"
+   ],
+   "accepts": [
+    "We have a meeting on Monday"
+   ]
+  },
+  {
+   "lemma": "heavy rain",
+   "prompt": "There is a lot of rain today.",
+   "underline": "a lot of rain",
+   "en": "There is heavy rain today.",
+   "lemmas": [
+    "heavy"
+   ],
+   "accepts": [
+    "There is heavy rain today",
+    "There's heavy rain today"
+   ]
+  },
+  {
+   "lemma": "a strong accent",
+   "prompt": "She has a way of speaking that shows where she is from.",
+   "underline": "a way of speaking that shows where she is from",
+   "en": "She has a strong accent.",
+   "lemmas": [
+    "strong"
+   ],
+   "accepts": [
+    "She has a strong accent"
+   ]
+  },
+  {
+   "lemma": "close friends",
+   "prompt": "We are people who tell each other everything.",
+   "underline": "people who tell each other everything",
+   "en": "We are close friends.",
+   "lemmas": [
+    "close"
+   ],
+   "accepts": [
+    "We are close friends",
+    "We're close friends"
+   ]
+  },
+  {
+   "lemma": "useful advice",
+   "prompt": "She gave me something that really helped.",
+   "underline": "something that really helped",
+   "en": "She gave me useful advice.",
+   "lemmas": [
+    "useful"
+   ],
+   "accepts": [
+    "She gave me useful advice"
+   ]
+  },
+  {
+   "lemma": "face",
+   "prompt": "We are looking at a big problem.",
+   "underline": "are looking at",
+   "en": "We face a big problem.",
+   "lemmas": [
+    "face"
+   ],
+   "accepts": [
+    "We face a big problem"
+   ]
+  },
+  {
+   "lemma": "improve",
+   "prompt": "We want to raise the level of our English.",
+   "underline": "raise the level of",
+   "en": "We want to improve our English.",
+   "lemmas": [
+    "improve"
+   ],
+   "accepts": [
+    "We want to improve our English"
+   ]
+  },
+  {
+   "lemma": "manage",
+   "prompt": "I am the boss of a small team.",
+   "underline": "am the boss of",
+   "en": "I manage a small team.",
+   "lemmas": [
+    "manage"
+   ],
+   "accepts": [
+    "I manage a small team"
+   ]
+  },
+  {
+   "lemma": "prefer",
+   "prompt": "I would rather have a clear plan.",
+   "underline": "would rather have",
+   "en": "I prefer a clear plan.",
+   "lemmas": [
+    "prefer"
+   ],
+   "accepts": [
+    "I prefer a clear plan"
+   ]
+  }
+ ]
 }
