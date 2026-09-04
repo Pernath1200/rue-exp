@@ -1,1139 +1,1139 @@
 {
-  "id": "b1_crime",
-  "title": "Crime & law (B1)",
-  "level": "B1",
-  "tree_node": "leaf_crime_b1",
-  "codex_unit": "V_THM-A1B1-08",
-  "quality": "draft",
-  "note": "Course-doc theme. Basic crime and justice lexis: what happened, who did it, what follows. Strong passive feeder — pairs with b1_passives (He was arrested). First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Three of the eight shipped frames could never gap (*stole*, *arrested*, *witnesses* against their base lemmas) — and *stole* was also this live unit's only audit violation, so it is gone. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: eleven tiles leaf_society_a2 and friends already own (crime, steal, attack, thief, lawyer, evidence, innocent, prison, law, illegal, drugs) moved to a **You already know** board, and the list was refilled with murder, robbery, vandalism, shoplifting, bribe, offence, court, verdict, defendant, appeal, convict. A12: four tiles are a second sense of a word the student already has — **fine (a penalty)** against A1's *fajn*, **sentence (in court)** against A1's *věta*, **charge (with a crime)** against leaf_money_b1's fee, **guilty (in court)** against leaf_self_b1's feeling. They keep their tiles with the sense marked, and an intro table puts the four pairs side by side. · Pool-checked against everything taught before leaf_crime_b1 — 0 unknown types.",
-  "default_direction": "cz_to_en",
-  "quiz_mode": "sentence_gap",
-  "intro": [
+ "id": "b1_crime",
+ "title": "Crime & law (B1)",
+ "level": "B1",
+ "tree_node": "leaf_crime_b1",
+ "codex_unit": "V_THM-A1B1-08",
+ "quality": "draft",
+ "note": "Course-doc theme. Basic crime and justice lexis: what happened, who did it, what follows. Strong passive feeder — pairs with b1_passives (He was arrested). First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Three of the eight shipped frames could never gap (*stole*, *arrested*, *witnesses* against their base lemmas) — and *stole* was also this live unit's only audit violation, so it is gone. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: eleven tiles leaf_society_a2 and friends already own (crime, steal, attack, thief, lawyer, evidence, innocent, prison, law, illegal, drugs) moved to a **You already know** board, and the list was refilled with murder, robbery, vandalism, shoplifting, bribe, offence, court, verdict, defendant, appeal, convict. A12: four tiles are a second sense of a word the student already has — **fine (a penalty)** against A1's *fajn*, **sentence (in court)** against A1's *věta*, **charge (with a crime)** against leaf_money_b1's fee, **guilty (in court)** against leaf_self_b1's feeling. They keep their tiles with the sense marked, and an intro table puts the four pairs side by side. · Pool-checked against everything taught before leaf_crime_b1 — 0 unknown types. · 2026-09-04: six rewrite items re-cut so replacing the underline reconstructs the answer.",
+ "default_direction": "cz_to_en",
+ "quiz_mode": "sentence_gap",
+ "intro": [
+  {
+   "title": "You already know",
+   "title_cz": "Už znáš",
+   "pictures": [
     {
-      "title": "You already know",
-      "title_cz": "Už znáš",
-      "pictures": [
-        {
-          "icon": "🚨",
-          "en": "crime",
-          "cz": "zločin"
-        },
-        {
-          "icon": "🥷",
-          "en": "steal",
-          "cz": "krást"
-        },
-        {
-          "icon": "👊",
-          "en": "attack",
-          "cz": "napadení"
-        },
-        {
-          "icon": "🎒",
-          "en": "thief",
-          "cz": "zloděj"
-        },
-        {
-          "icon": "💼",
-          "en": "lawyer",
-          "cz": "právník"
-        },
-        {
-          "icon": "🔬",
-          "en": "evidence",
-          "cz": "důkazy"
-        },
-        {
-          "icon": "🕊️",
-          "en": "innocent",
-          "cz": "nevinný"
-        },
-        {
-          "icon": "🏚️",
-          "en": "prison",
-          "cz": "vězení"
-        },
-        {
-          "icon": "📖",
-          "en": "law",
-          "cz": "zákon"
-        },
-        {
-          "icon": "⛔",
-          "en": "illegal",
-          "cz": "nelegální"
-        },
-        {
-          "icon": "💊",
-          "en": "drugs",
-          "cz": "drogy"
-        }
-      ]
+     "icon": "🚨",
+     "en": "crime",
+     "cz": "zločin"
     },
     {
-      "title": "The crime",
-      "title_cz": "Trestný čin",
-      "pictures": [
-        {
-          "icon": "🪟",
-          "en": "burglary",
-          "cz": "vloupání"
-        },
-        {
-          "icon": "🎭",
-          "en": "robbery",
-          "cz": "loupež"
-        },
-        {
-          "icon": "💰",
-          "en": "rob",
-          "cz": "přepadnout / vyloupit"
-        },
-        {
-          "icon": "🔪",
-          "en": "murder",
-          "cz": "vražda"
-        },
-        {
-          "icon": "🔥",
-          "en": "arson",
-          "cz": "žhářství"
-        },
-        {
-          "icon": "🧾",
-          "en": "fraud",
-          "cz": "podvod"
-        },
-        {
-          "icon": "📦",
-          "en": "smuggle",
-          "cz": "pašovat"
-        },
-        {
-          "icon": "💻",
-          "en": "hacking",
-          "cz": "hackerský útok"
-        },
-        {
-          "icon": "🧱",
-          "en": "vandalism",
-          "cz": "vandalismus"
-        },
-        {
-          "icon": "🛒",
-          "en": "shoplifting",
-          "cz": "krádež v obchodě"
-        },
-        {
-          "icon": "🔨",
-          "en": "damage",
-          "cz": "škoda / poškodit"
-        },
-        {
-          "icon": "⚠️",
-          "en": "violence",
-          "cz": "násilí"
-        }
-      ]
+     "icon": "🥷",
+     "en": "steal",
+     "cz": "krást"
     },
     {
-      "title": "The people and the process",
-      "title_cz": "Lidé a postup",
-      "pictures": [
-        {
-          "icon": "👮",
-          "en": "police officer",
-          "cz": "policista"
-        },
-        {
-          "icon": "🕵️",
-          "en": "suspect",
-          "cz": "podezřelý"
-        },
-        {
-          "icon": "👁️",
-          "en": "witness",
-          "cz": "svědek"
-        },
-        {
-          "icon": "🩹",
-          "en": "victim",
-          "cz": "oběť"
-        },
-        {
-          "icon": "⚖️",
-          "en": "judge",
-          "cz": "soudce"
-        },
-        {
-          "icon": "👥",
-          "en": "jury",
-          "cz": "porota"
-        },
-        {
-          "icon": "🧍",
-          "en": "defendant",
-          "cz": "obžalovaný"
-        },
-        {
-          "icon": "🚔",
-          "en": "arrest",
-          "cz": "zatknout"
-        },
-        {
-          "icon": "🔍",
-          "en": "investigation",
-          "cz": "vyšetřování"
-        },
-        {
-          "icon": "📞",
-          "en": "report (a crime)",
-          "cz": "nahlásit (trestný čin)"
-        },
-        {
-          "icon": "📋",
-          "en": "charge (with a crime)",
-          "cz": "obvinit"
-        },
-        {
-          "icon": "🤝",
-          "en": "bribe",
-          "cz": "podplatit / úplatek"
-        }
-      ]
+     "icon": "👊",
+     "en": "attack",
+     "cz": "napadení"
     },
     {
-      "title": "The court and what follows",
-      "title_cz": "Soud a co následuje",
-      "pictures": [
-        {
-          "icon": "🏛️",
-          "en": "court",
-          "cz": "soud (budova, jednání)"
-        },
-        {
-          "icon": "📜",
-          "en": "trial",
-          "cz": "soudní proces"
-        },
-        {
-          "icon": "🔨",
-          "en": "verdict",
-          "cz": "rozsudek poroty"
-        },
-        {
-          "icon": "❌",
-          "en": "guilty (in court)",
-          "cz": "vinen (u soudu)"
-        },
-        {
-          "icon": "⏳",
-          "en": "sentence (in court)",
-          "cz": "trest"
-        },
-        {
-          "icon": "💸",
-          "en": "fine (a penalty)",
-          "cz": "pokuta"
-        },
-        {
-          "icon": "🚫",
-          "en": "punishment",
-          "cz": "trest (obecně)"
-        },
-        {
-          "icon": "↩️",
-          "en": "appeal",
-          "cz": "odvolat se"
-        },
-        {
-          "icon": "🔓",
-          "en": "release",
-          "cz": "propustit"
-        },
-        {
-          "icon": "✅",
-          "en": "legal",
-          "cz": "legální"
-        },
-        {
-          "icon": "📕",
-          "en": "offence",
-          "cz": "přestupek / trestný čin"
-        },
-        {
-          "icon": "🔒",
-          "en": "convict",
-          "cz": "odsoudit"
-        }
-      ]
+     "icon": "🎒",
+     "en": "thief",
+     "cz": "zloděj"
     },
     {
-      "title": "Four words you know in a new sense",
-      "title_cz": "Čtyři slova v novém významu",
-      "table": {
-        "headers": [
-          "you know it as",
-          "here it means"
-        ],
-        "rows": [
-          [
-            "fine = fajn",
-            "fine = pokuta"
-          ],
-          [
-            "sentence = věta",
-            "sentence = trest"
-          ],
-          [
-            "charge = účtovat (peníze)",
-            "charge = obvinit"
-          ],
-          [
-            "guilty = pocit viny",
-            "guilty = vinen u soudu"
-          ]
-        ]
-      }
+     "icon": "💼",
+     "en": "lawyer",
+     "cz": "právník"
     },
     {
-      "title": "You will use these words in",
-      "title_cz": "Tato slova použiješ ve větách",
-      "frames": [
-        "There was a … · *Došlo k …*",
-        "The police will … him · *Policie ho …*",
-        "He was found … · *Byl shledán …*",
-        "The … lasted three weeks · *… trval tři týdny*",
-        "It is … to … · *Je … …*"
-      ],
-      "note": "This pack feeds **b1_passives**: *He was arrested. The car was damaged. He was found guilty.* The passive is where these words actually live.",
-      "note_cz": "Tahle slova se často používají v trpném rodě (b1_passives)."
+     "icon": "🔬",
+     "en": "evidence",
+     "cz": "důkazy"
+    },
+    {
+     "icon": "🕊️",
+     "en": "innocent",
+     "cz": "nevinný"
+    },
+    {
+     "icon": "🏚️",
+     "en": "prison",
+     "cz": "vězení"
+    },
+    {
+     "icon": "📖",
+     "en": "law",
+     "cz": "zákon"
+    },
+    {
+     "icon": "⛔",
+     "en": "illegal",
+     "cz": "nelegální"
+    },
+    {
+     "icon": "💊",
+     "en": "drugs",
+     "cz": "drogy"
     }
-  ],
-  "blocks": [
+   ]
+  },
+  {
+   "title": "The crime",
+   "title_cz": "Trestný čin",
+   "pictures": [
     {
-      "id": "b1_crime_1",
-      "title": "Crime · the crime",
-      "items": [
-        {
-          "en": "burglary",
-          "cz": "vloupání",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "robbery",
-          "cz": "loupež",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "rob",
-          "cz": "přepadnout / vyloupit",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "murder",
-          "cz": "vražda",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "arson",
-          "cz": "žhářství",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "fraud",
-          "cz": "podvod",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "smuggle",
-          "cz": "pašovat",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "hacking",
-          "cz": "hackerský útok",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "vandalism",
-          "cz": "vandalismus",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "shoplifting",
-          "cz": "krádež v obchodě",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "damage",
-          "cz": "škoda / poškodit",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "violence",
-          "cz": "násilí",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        }
-      ]
+     "icon": "🪟",
+     "en": "burglary",
+     "cz": "vloupání"
     },
     {
-      "id": "b1_crime_2",
-      "title": "Crime · the people and the process",
-      "items": [
-        {
-          "en": "police officer",
-          "cz": "policista",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "suspect",
-          "cz": "podezřelý",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "witness",
-          "cz": "svědek",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "victim",
-          "cz": "oběť",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "judge",
-          "cz": "soudce",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "jury",
-          "cz": "porota",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "defendant",
-          "cz": "obžalovaný",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "arrest",
-          "cz": "zatknout",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "investigation",
-          "cz": "vyšetřování",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "report (a crime)",
-          "cz": "nahlásit (trestný čin)",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "charge (with a crime)",
-          "cz": "obvinit",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "bribe",
-          "cz": "podplatit / úplatek",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        }
-      ]
+     "icon": "🎭",
+     "en": "robbery",
+     "cz": "loupež"
     },
     {
-      "id": "b1_crime_3",
-      "title": "Crime · the court and what follows",
-      "items": [
-        {
-          "en": "court",
-          "cz": "soud (budova, jednání)",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "trial",
-          "cz": "soudní proces",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "verdict",
-          "cz": "rozsudek poroty",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "guilty (in court)",
-          "cz": "vinen (u soudu)",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "sentence (in court)",
-          "cz": "trest",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "fine (a penalty)",
-          "cz": "pokuta",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "punishment",
-          "cz": "trest (obecně)",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "appeal",
-          "cz": "odvolat se",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "release",
-          "cz": "propustit",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "legal",
-          "cz": "legální",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "offence",
-          "cz": "přestupek / trestný čin",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        },
-        {
-          "en": "convict",
-          "cz": "odsoudit",
-          "use": [
-            "this_is_a",
-            "i_have_a"
-          ]
-        }
-      ]
+     "icon": "💰",
+     "en": "rob",
+     "cz": "přepadnout / vyloupit"
+    },
+    {
+     "icon": "🔪",
+     "en": "murder",
+     "cz": "vražda"
+    },
+    {
+     "icon": "🔥",
+     "en": "arson",
+     "cz": "žhářství"
+    },
+    {
+     "icon": "🧾",
+     "en": "fraud",
+     "cz": "podvod"
+    },
+    {
+     "icon": "📦",
+     "en": "smuggle",
+     "cz": "pašovat"
+    },
+    {
+     "icon": "💻",
+     "en": "hacking",
+     "cz": "hackerský útok"
+    },
+    {
+     "icon": "🧱",
+     "en": "vandalism",
+     "cz": "vandalismus"
+    },
+    {
+     "icon": "🛒",
+     "en": "shoplifting",
+     "cz": "krádež v obchodě"
+    },
+    {
+     "icon": "🔨",
+     "en": "damage",
+     "cz": "škoda / poškodit"
+    },
+    {
+     "icon": "⚠️",
+     "en": "violence",
+     "cz": "násilí"
     }
-  ],
-  "sentences": [
+   ]
+  },
+  {
+   "title": "The people and the process",
+   "title_cz": "Lidé a postup",
+   "pictures": [
     {
-      "en": "There was a burglary in our street last night.",
-      "cz": "Minulou noc došlo v naší ulici k vloupání.",
-      "lemmas": [
-        "burglary"
-      ],
-      "accepts": [
-        "There was a burglary in our street last night",
-        "There was a burglary in our street last night"
-      ]
+     "icon": "👮",
+     "en": "police officer",
+     "cz": "policista"
     },
     {
-      "en": "The bank robbery took four minutes and nobody was hurt.",
-      "cz": "Ta bankovní loupež trvala čtyři minuty a nikdo nebyl zraněn.",
-      "lemmas": [
-        "robbery"
-      ],
-      "accepts": [
-        "The bank robbery took four minutes and nobody was hurt"
-      ]
+     "icon": "🕵️",
+     "en": "suspect",
+     "cz": "podezřelý"
     },
     {
-      "en": "Two young people tried to rob the shop on the corner.",
-      "cz": "Dva mladí lidé se pokusili vyloupit obchod na rohu.",
-      "lemmas": [
-        "rob"
-      ],
-      "accepts": [
-        "Two young people tried to rob the shop on the corner"
-      ]
+     "icon": "👁️",
+     "en": "witness",
+     "cz": "svědek"
     },
     {
-      "en": "The book is about a murder in a small village.",
-      "cz": "Ta kniha je o vraždě v malé vesnici.",
-      "lemmas": [
-        "murder"
-      ],
-      "accepts": [
-        "The book is about a murder in a small village"
-      ]
+     "icon": "🩹",
+     "en": "victim",
+     "cz": "oběť"
     },
     {
-      "en": "The fire was arson, not an accident.",
-      "cz": "Ten požár bylo žhářství, ne nehoda.",
-      "lemmas": [
-        "arson"
-      ],
-      "accepts": [
-        "The fire was arson, not an accident"
-      ]
+     "icon": "⚖️",
+     "en": "judge",
+     "cz": "soudce"
     },
     {
-      "en": "The company lost a lot of money in a fraud.",
-      "cz": "Firma přišla podvodem o spoustu peněz.",
-      "lemmas": [
-        "fraud"
-      ],
-      "accepts": [
-        "The company lost a lot of money in a fraud"
-      ]
+     "icon": "👥",
+     "en": "jury",
+     "cz": "porota"
     },
     {
-      "en": "They tried to smuggle wine across the border.",
-      "cz": "Pokusili se přes hranice pašovat víno.",
-      "lemmas": [
-        "smuggle"
-      ],
-      "accepts": [
-        "They tried to smuggle wine across the border"
-      ]
+     "icon": "🧍",
+     "en": "defendant",
+     "cz": "obžalovaný"
     },
     {
-      "en": "Hacking is a crime, even when nothing is taken.",
-      "cz": "Hackerský útok je trestný čin, i když se nic neukradne.",
-      "lemmas": [
-        "hacking"
-      ],
-      "accepts": [
-        "Hacking is a crime, even when nothing is taken"
-      ]
+     "icon": "🚔",
+     "en": "arrest",
+     "cz": "zatknout"
     },
     {
-      "en": "Vandalism in the park costs the city thousands every year.",
-      "cz": "Vandalismus v parku stojí město každý rok tisíce.",
-      "lemmas": [
-        "vandalism"
-      ],
-      "accepts": [
-        "Vandalism in the park costs the city thousands every year"
-      ]
+     "icon": "🔍",
+     "en": "investigation",
+     "cz": "vyšetřování"
     },
     {
-      "en": "Shoplifting is the most common offence in the town centre.",
-      "cz": "Krádeže v obchodech jsou v centru města nejčastější přestupek.",
-      "lemmas": [
-        "shoplifting"
-      ],
-      "accepts": [
-        "Shoplifting is the most common offence in the town centre"
-      ]
+     "icon": "📞",
+     "en": "report (a crime)",
+     "cz": "nahlásit (trestný čin)"
     },
     {
-      "en": "The storm did more damage to the roof than to the car.",
-      "cz": "Bouře nadělala větší škodu na střeše než na autě.",
-      "lemmas": [
-        "damage"
-      ],
-      "accepts": [
-        "The storm did more damage to the roof than to the car"
-      ]
+     "icon": "📋",
+     "en": "charge (with a crime)",
+     "cz": "obvinit"
     },
     {
-      "en": "There was no violence, but the police came.",
-      "cz": "K žádnému násilí nedošlo, ale policie přijela.",
-      "lemmas": [
-        "violence"
-      ],
-      "accepts": [
-        "There was no violence, but the police came"
-      ]
-    },
-    {
-      "en": "A police officer asked me where I was on Friday.",
-      "cz": "Policista se mě zeptal, kde jsem byl v pátek.",
-      "lemmas": [
-        "police officer"
-      ],
-      "accepts": [
-        "A police officer asked me where I was on Friday"
-      ]
-    },
-    {
-      "en": "The suspect was at work when the shop was robbed.",
-      "cz": "Podezřelý byl v práci, když ten obchod vyloupili.",
-      "lemmas": [
-        "suspect"
-      ],
-      "accepts": [
-        "The suspect was at work when the shop was robbed"
-      ]
-    },
-    {
-      "en": "The witness said the car was blue.",
-      "cz": "Svědek řekl, že to auto bylo modré.",
-      "lemmas": [
-        "witness"
-      ],
-      "accepts": [
-        "The witness said the car was blue"
-      ]
-    },
-    {
-      "en": "The victim did not want to go to court.",
-      "cz": "Oběť nechtěla jít k soudu.",
-      "lemmas": [
-        "victim"
-      ],
-      "accepts": [
-        "The victim did not want to go to court",
-        "The victim didn't want to go to court"
-      ]
-    },
-    {
-      "en": "The judge listened to the family for two hours.",
-      "cz": "Soudce poslouchal tu rodinu dvě hodiny.",
-      "lemmas": [
-        "judge"
-      ],
-      "accepts": [
-        "The judge listened to the family for two hours"
-      ]
-    },
-    {
-      "en": "The jury needed two days to decide.",
-      "cz": "Porota potřebovala na rozhodnutí dva dny.",
-      "lemmas": [
-        "jury"
-      ],
-      "accepts": [
-        "The jury needed two days to decide"
-      ]
-    },
-    {
-      "en": "The defendant said nothing during the trial.",
-      "cz": "Obžalovaný během procesu neřekl nic.",
-      "lemmas": [
-        "defendant"
-      ],
-      "accepts": [
-        "The defendant said nothing during the trial"
-      ]
-    },
-    {
-      "en": "The police will arrest him if he goes home.",
-      "cz": "Policie ho zatkne, jestli půjde domů.",
-      "lemmas": [
-        "arrest"
-      ],
-      "accepts": [
-        "The police will arrest him if he goes home",
-        "The police'll arrest him if he goes home"
-      ]
-    },
-    {
-      "en": "The investigation took six months because the office lost the first report.",
-      "cz": "Vyšetřování trvalo šest měsíců, protože úřad ztratil první zprávu.",
-      "lemmas": [
-        "investigation"
-      ],
-      "accepts": [
-        "The investigation took six months because the office lost the first report"
-      ]
-    },
-    {
-      "en": "You have to report a crime in the first week.",
-      "cz": "Trestný čin musíš nahlásit v prvním týdnu.",
-      "lemmas": [
-        "report (a crime)"
-      ],
-      "accepts": [
-        "You have to report a crime in the first week"
-      ]
-    },
-    {
-      "en": "The police will charge him with fraud.",
-      "cz": "Policie ho obviní z podvodu.",
-      "lemmas": [
-        "charge (with a crime)"
-      ],
-      "accepts": [
-        "The police will charge him with fraud"
-      ]
-    },
-    {
-      "en": "He tried to bribe the officer and made everything worse.",
-      "cz": "Pokusil se policistu podplatit a všechno tím zhoršil.",
-      "lemmas": [
-        "bribe"
-      ],
-      "accepts": [
-        "He tried to bribe the officer and made everything worse"
-      ]
-    },
-    {
-      "en": "The two families will meet in court in October.",
-      "cz": "Ty dvě rodiny se v říjnu potkají u soudu.",
-      "lemmas": [
-        "court"
-      ],
-      "accepts": [
-        "The two families will meet in court in October"
-      ]
-    },
-    {
-      "en": "The trial lasted three weeks and cost a fortune.",
-      "cz": "Ten proces trval tři týdny a stál jmění.",
-      "lemmas": [
-        "trial"
-      ],
-      "accepts": [
-        "The trial lasted three weeks and cost a fortune"
-      ]
-    },
-    {
-      "en": "The verdict surprised everybody in the room.",
-      "cz": "Rozsudek poroty všechny v místnosti překvapil.",
-      "lemmas": [
-        "verdict"
-      ],
-      "accepts": [
-        "The verdict surprised everybody in the room"
-      ]
-    },
-    {
-      "en": "He was found guilty at the trial, but his family still believes him.",
-      "cz": "U soudu byl shledán vinným, ale rodina mu pořád věří.",
-      "lemmas": [
-        "guilty (in court)"
-      ],
-      "accepts": [
-        "He was found guilty at the trial, but his family still believes him"
-      ]
-    },
-    {
-      "en": "The sentence was two years, but he came home after one.",
-      "cz": "Trest byl dva roky, ale domů se vrátil po roce.",
-      "lemmas": [
-        "sentence (in court)"
-      ],
-      "accepts": [
-        "The sentence was two years, but he came home after one"
-      ]
-    },
-    {
-      "en": "She had to pay a large fine because she drove too fast in the village.",
-      "cz": "Musela zaplatit vysokou pokutu, protože ve vesnici jela moc rychle.",
-      "lemmas": [
-        "fine (a penalty)"
-      ],
-      "accepts": [
-        "She had to pay a large fine because she drove too fast in the village"
-      ]
-    },
-    {
-      "en": "The punishment for a first offence is usually small.",
-      "cz": "Trest za první přestupek bývá malý.",
-      "lemmas": [
-        "punishment"
-      ],
-      "accepts": [
-        "The punishment for a first offence is usually small"
-      ]
-    },
-    {
-      "en": "His lawyer will appeal next month.",
-      "cz": "Jeho právník se příští měsíc odvolá.",
-      "lemmas": [
-        "appeal"
-      ],
-      "accepts": [
-        "His lawyer will appeal next month"
-      ]
-    },
-    {
-      "en": "They will release him in the spring if he is good.",
-      "cz": "Na jaře ho propustí, jestli se bude chovat dobře.",
-      "lemmas": [
-        "release"
-      ],
-      "accepts": [
-        "They will release him in the spring if he is good"
-      ]
-    },
-    {
-      "en": "It is legal to park here after six in the evening.",
-      "cz": "Parkovat tady po šesté večer je legální.",
-      "lemmas": [
-        "legal"
-      ],
-      "accepts": [
-        "It is legal to park here after six in the evening",
-        "It's legal to park here after six in the evening"
-      ]
-    },
-    {
-      "en": "Driving after a drink is a serious offence.",
-      "cz": "Řídit po alkoholu je vážný přestupek.",
-      "lemmas": [
-        "offence"
-      ],
-      "accepts": [
-        "Driving after a drink is a serious offence"
-      ]
-    },
-    {
-      "en": "It is hard to convict anybody when there is no witness.",
-      "cz": "Je těžké někoho odsoudit, když není žádný svědek.",
-      "lemmas": [
-        "convict"
-      ],
-      "accepts": [
-        "It is hard to convict anybody when there is no witness",
-        "It's hard to convict anybody when there is no witness"
-      ]
+     "icon": "🤝",
+     "en": "bribe",
+     "cz": "podplatit / úplatek"
     }
-  ],
-  "use_mode": "rewrite",
-  "use_hint": "Rewrite the sentence. Replace the underlined words.",
-  "use_sentences": [
+   ]
+  },
+  {
+   "title": "The court and what follows",
+   "title_cz": "Soud a co následuje",
+   "pictures": [
     {
-      "lemma": "rob",
-      "prompt": "Two young people tried to take money from the shop on the corner.",
-      "underline": "take money from",
-      "en": "Two young people tried to rob the shop on the corner.",
-      "lemmas": [
-        "rob"
-      ],
-      "accepts": [
-        "Two young people tried to rob the shop on the corner"
-      ]
+     "icon": "🏛️",
+     "en": "court",
+     "cz": "soud (budova, jednání)"
     },
     {
-      "lemma": "smuggle",
-      "prompt": "They tried to hide wine at the border.",
-      "underline": "hide wine at",
-      "en": "They tried to smuggle wine across the border.",
-      "lemmas": [
-        "smuggle"
-      ],
-      "accepts": [
-        "They tried to smuggle wine across the border"
-      ]
+     "icon": "📜",
+     "en": "trial",
+     "cz": "soudní proces"
     },
     {
-      "lemma": "arrest",
-      "prompt": "The police will come for him if he goes home.",
-      "underline": "come for him",
-      "en": "The police will arrest him if he goes home.",
-      "lemmas": [
-        "arrest"
-      ],
-      "accepts": [
-        "The police will arrest him if he goes home"
-      ]
+     "icon": "🔨",
+     "en": "verdict",
+     "cz": "rozsudek poroty"
     },
     {
-      "lemma": "witness",
-      "prompt": "The person who saw it said the car was blue.",
-      "underline": "person who saw it",
-      "en": "The witness said the car was blue.",
-      "lemmas": [
-        "witness"
-      ],
-      "accepts": [
-        "The witness said the car was blue"
-      ]
+     "icon": "❌",
+     "en": "guilty (in court)",
+     "cz": "vinen (u soudu)"
     },
     {
-      "lemma": "victim",
-      "prompt": "The person who lost the money did not want to go to court.",
-      "underline": "person who lost the money",
-      "en": "The victim did not want to go to court.",
-      "lemmas": [
-        "victim"
-      ],
-      "accepts": [
-        "The victim did not want to go to court",
-        "The victim didn't want to go to court"
-      ]
+     "icon": "⏳",
+     "en": "sentence (in court)",
+     "cz": "trest"
     },
     {
-      "lemma": "verdict",
-      "prompt": "The decision of the jury surprised everybody in the room.",
-      "underline": "decision of the jury",
-      "en": "The verdict surprised everybody in the room.",
-      "lemmas": [
-        "verdict"
-      ],
-      "accepts": [
-        "The verdict surprised everybody in the room"
-      ]
+     "icon": "💸",
+     "en": "fine (a penalty)",
+     "cz": "pokuta"
     },
     {
-      "lemma": "fine (a penalty)",
-      "prompt": "She had to pay a lot of money to the police because she drove too fast.",
-      "underline": "a lot of money to the police",
-      "en": "She had to pay a large fine because she drove too fast.",
-      "lemmas": [
-        "fine (a penalty)"
-      ],
-      "accepts": [
-        "She had to pay a large fine because she drove too fast"
-      ]
+     "icon": "🚫",
+     "en": "punishment",
+     "cz": "trest (obecně)"
     },
     {
-      "lemma": "punishment",
-      "prompt": "The thing the court gives you for a first offence is usually small.",
-      "underline": "thing the court gives you",
-      "en": "The punishment for a first offence is usually small.",
-      "lemmas": [
-        "punishment"
-      ],
-      "accepts": [
-        "The punishment for a first offence is usually small"
-      ]
+     "icon": "↩️",
+     "en": "appeal",
+     "cz": "odvolat se"
     },
     {
-      "lemma": "release",
-      "prompt": "They will let him go in the spring if he is good.",
-      "underline": "let him go",
-      "en": "They will release him in the spring if he is good.",
-      "lemmas": [
-        "release"
-      ],
-      "accepts": [
-        "They will release him in the spring if he is good"
-      ]
+     "icon": "🔓",
+     "en": "release",
+     "cz": "propustit"
     },
     {
-      "lemma": "legal",
-      "prompt": "The law says you can park here after six in the evening.",
-      "underline": "The law says you can",
-      "en": "It is legal to park here after six in the evening.",
-      "lemmas": [
-        "legal"
-      ],
-      "accepts": [
-        "It is legal to park here after six in the evening",
-        "It's legal to park here after six in the evening"
-      ]
+     "icon": "✅",
+     "en": "legal",
+     "cz": "legální"
     },
     {
-      "lemma": "investigation",
-      "prompt": "The work the police did took six months.",
-      "underline": "work the police did",
-      "en": "The investigation took six months.",
-      "lemmas": [
-        "investigation"
-      ],
-      "accepts": [
-        "The investigation took six months"
-      ]
+     "icon": "📕",
+     "en": "offence",
+     "cz": "přestupek / trestný čin"
     },
     {
-      "lemma": "convict",
-      "prompt": "It is hard to prove that anybody did it when there is no witness.",
-      "underline": "prove that anybody did it",
-      "en": "It is hard to convict anybody when there is no witness.",
-      "lemmas": [
-        "convict"
-      ],
-      "accepts": [
-        "It is hard to convict anybody when there is no witness",
-        "It's hard to convict anybody when there is no witness"
-      ]
+     "icon": "🔒",
+     "en": "convict",
+     "cz": "odsoudit"
     }
-  ]
+   ]
+  },
+  {
+   "title": "Four words you know in a new sense",
+   "title_cz": "Čtyři slova v novém významu",
+   "table": {
+    "headers": [
+     "you know it as",
+     "here it means"
+    ],
+    "rows": [
+     [
+      "fine = fajn",
+      "fine = pokuta"
+     ],
+     [
+      "sentence = věta",
+      "sentence = trest"
+     ],
+     [
+      "charge = účtovat (peníze)",
+      "charge = obvinit"
+     ],
+     [
+      "guilty = pocit viny",
+      "guilty = vinen u soudu"
+     ]
+    ]
+   }
+  },
+  {
+   "title": "You will use these words in",
+   "title_cz": "Tato slova použiješ ve větách",
+   "frames": [
+    "There was a … · *Došlo k …*",
+    "The police will … him · *Policie ho …*",
+    "He was found … · *Byl shledán …*",
+    "The … lasted three weeks · *… trval tři týdny*",
+    "It is … to … · *Je … …*"
+   ],
+   "note": "This pack feeds **b1_passives**: *He was arrested. The car was damaged. He was found guilty.* The passive is where these words actually live.",
+   "note_cz": "Tahle slova se často používají v trpném rodě (b1_passives)."
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1_crime_1",
+   "title": "Crime · the crime",
+   "items": [
+    {
+     "en": "burglary",
+     "cz": "vloupání",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "robbery",
+     "cz": "loupež",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "rob",
+     "cz": "přepadnout / vyloupit",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "murder",
+     "cz": "vražda",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "arson",
+     "cz": "žhářství",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "fraud",
+     "cz": "podvod",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "smuggle",
+     "cz": "pašovat",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "hacking",
+     "cz": "hackerský útok",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "vandalism",
+     "cz": "vandalismus",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "shoplifting",
+     "cz": "krádež v obchodě",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "damage",
+     "cz": "škoda / poškodit",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "violence",
+     "cz": "násilí",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1_crime_2",
+   "title": "Crime · the people and the process",
+   "items": [
+    {
+     "en": "police officer",
+     "cz": "policista",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "suspect",
+     "cz": "podezřelý",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "witness",
+     "cz": "svědek",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "victim",
+     "cz": "oběť",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "judge",
+     "cz": "soudce",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "jury",
+     "cz": "porota",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "defendant",
+     "cz": "obžalovaný",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "arrest",
+     "cz": "zatknout",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "investigation",
+     "cz": "vyšetřování",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "report (a crime)",
+     "cz": "nahlásit (trestný čin)",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "charge (with a crime)",
+     "cz": "obvinit",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "bribe",
+     "cz": "podplatit / úplatek",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1_crime_3",
+   "title": "Crime · the court and what follows",
+   "items": [
+    {
+     "en": "court",
+     "cz": "soud (budova, jednání)",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "trial",
+     "cz": "soudní proces",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "verdict",
+     "cz": "rozsudek poroty",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "guilty (in court)",
+     "cz": "vinen (u soudu)",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "sentence (in court)",
+     "cz": "trest",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "fine (a penalty)",
+     "cz": "pokuta",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "punishment",
+     "cz": "trest (obecně)",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "appeal",
+     "cz": "odvolat se",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "release",
+     "cz": "propustit",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "legal",
+     "cz": "legální",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "offence",
+     "cz": "přestupek / trestný čin",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "convict",
+     "cz": "odsoudit",
+     "use": [
+      "this_is_a",
+      "i_have_a"
+     ]
+    }
+   ]
+  }
+ ],
+ "sentences": [
+  {
+   "en": "There was a burglary in our street last night.",
+   "cz": "Minulou noc došlo v naší ulici k vloupání.",
+   "lemmas": [
+    "burglary"
+   ],
+   "accepts": [
+    "There was a burglary in our street last night",
+    "There was a burglary in our street last night"
+   ]
+  },
+  {
+   "en": "The bank robbery took four minutes and nobody was hurt.",
+   "cz": "Ta bankovní loupež trvala čtyři minuty a nikdo nebyl zraněn.",
+   "lemmas": [
+    "robbery"
+   ],
+   "accepts": [
+    "The bank robbery took four minutes and nobody was hurt"
+   ]
+  },
+  {
+   "en": "Two young people tried to rob the shop on the corner.",
+   "cz": "Dva mladí lidé se pokusili vyloupit obchod na rohu.",
+   "lemmas": [
+    "rob"
+   ],
+   "accepts": [
+    "Two young people tried to rob the shop on the corner"
+   ]
+  },
+  {
+   "en": "The book is about a murder in a small village.",
+   "cz": "Ta kniha je o vraždě v malé vesnici.",
+   "lemmas": [
+    "murder"
+   ],
+   "accepts": [
+    "The book is about a murder in a small village"
+   ]
+  },
+  {
+   "en": "The fire was arson, not an accident.",
+   "cz": "Ten požár bylo žhářství, ne nehoda.",
+   "lemmas": [
+    "arson"
+   ],
+   "accepts": [
+    "The fire was arson, not an accident"
+   ]
+  },
+  {
+   "en": "The company lost a lot of money in a fraud.",
+   "cz": "Firma přišla podvodem o spoustu peněz.",
+   "lemmas": [
+    "fraud"
+   ],
+   "accepts": [
+    "The company lost a lot of money in a fraud"
+   ]
+  },
+  {
+   "en": "They tried to smuggle wine across the border.",
+   "cz": "Pokusili se přes hranice pašovat víno.",
+   "lemmas": [
+    "smuggle"
+   ],
+   "accepts": [
+    "They tried to smuggle wine across the border"
+   ]
+  },
+  {
+   "en": "Hacking is a crime, even when nothing is taken.",
+   "cz": "Hackerský útok je trestný čin, i když se nic neukradne.",
+   "lemmas": [
+    "hacking"
+   ],
+   "accepts": [
+    "Hacking is a crime, even when nothing is taken"
+   ]
+  },
+  {
+   "en": "Vandalism in the park costs the city thousands every year.",
+   "cz": "Vandalismus v parku stojí město každý rok tisíce.",
+   "lemmas": [
+    "vandalism"
+   ],
+   "accepts": [
+    "Vandalism in the park costs the city thousands every year"
+   ]
+  },
+  {
+   "en": "Shoplifting is the most common offence in the town centre.",
+   "cz": "Krádeže v obchodech jsou v centru města nejčastější přestupek.",
+   "lemmas": [
+    "shoplifting"
+   ],
+   "accepts": [
+    "Shoplifting is the most common offence in the town centre"
+   ]
+  },
+  {
+   "en": "The storm did more damage to the roof than to the car.",
+   "cz": "Bouře nadělala větší škodu na střeše než na autě.",
+   "lemmas": [
+    "damage"
+   ],
+   "accepts": [
+    "The storm did more damage to the roof than to the car"
+   ]
+  },
+  {
+   "en": "There was no violence, but the police came.",
+   "cz": "K žádnému násilí nedošlo, ale policie přijela.",
+   "lemmas": [
+    "violence"
+   ],
+   "accepts": [
+    "There was no violence, but the police came"
+   ]
+  },
+  {
+   "en": "A police officer asked me where I was on Friday.",
+   "cz": "Policista se mě zeptal, kde jsem byl v pátek.",
+   "lemmas": [
+    "police officer"
+   ],
+   "accepts": [
+    "A police officer asked me where I was on Friday"
+   ]
+  },
+  {
+   "en": "The suspect was at work when the shop was robbed.",
+   "cz": "Podezřelý byl v práci, když ten obchod vyloupili.",
+   "lemmas": [
+    "suspect"
+   ],
+   "accepts": [
+    "The suspect was at work when the shop was robbed"
+   ]
+  },
+  {
+   "en": "The witness said the car was blue.",
+   "cz": "Svědek řekl, že to auto bylo modré.",
+   "lemmas": [
+    "witness"
+   ],
+   "accepts": [
+    "The witness said the car was blue"
+   ]
+  },
+  {
+   "en": "The victim did not want to go to court.",
+   "cz": "Oběť nechtěla jít k soudu.",
+   "lemmas": [
+    "victim"
+   ],
+   "accepts": [
+    "The victim did not want to go to court",
+    "The victim didn't want to go to court"
+   ]
+  },
+  {
+   "en": "The judge listened to the family for two hours.",
+   "cz": "Soudce poslouchal tu rodinu dvě hodiny.",
+   "lemmas": [
+    "judge"
+   ],
+   "accepts": [
+    "The judge listened to the family for two hours"
+   ]
+  },
+  {
+   "en": "The jury needed two days to decide.",
+   "cz": "Porota potřebovala na rozhodnutí dva dny.",
+   "lemmas": [
+    "jury"
+   ],
+   "accepts": [
+    "The jury needed two days to decide"
+   ]
+  },
+  {
+   "en": "The defendant said nothing during the trial.",
+   "cz": "Obžalovaný během procesu neřekl nic.",
+   "lemmas": [
+    "defendant"
+   ],
+   "accepts": [
+    "The defendant said nothing during the trial"
+   ]
+  },
+  {
+   "en": "The police will arrest him if he goes home.",
+   "cz": "Policie ho zatkne, jestli půjde domů.",
+   "lemmas": [
+    "arrest"
+   ],
+   "accepts": [
+    "The police will arrest him if he goes home",
+    "The police'll arrest him if he goes home"
+   ]
+  },
+  {
+   "en": "The investigation took six months because the office lost the first report.",
+   "cz": "Vyšetřování trvalo šest měsíců, protože úřad ztratil první zprávu.",
+   "lemmas": [
+    "investigation"
+   ],
+   "accepts": [
+    "The investigation took six months because the office lost the first report"
+   ]
+  },
+  {
+   "en": "You have to report a crime in the first week.",
+   "cz": "Trestný čin musíš nahlásit v prvním týdnu.",
+   "lemmas": [
+    "report (a crime)"
+   ],
+   "accepts": [
+    "You have to report a crime in the first week"
+   ]
+  },
+  {
+   "en": "The police will charge him with fraud.",
+   "cz": "Policie ho obviní z podvodu.",
+   "lemmas": [
+    "charge (with a crime)"
+   ],
+   "accepts": [
+    "The police will charge him with fraud"
+   ]
+  },
+  {
+   "en": "He tried to bribe the officer and made everything worse.",
+   "cz": "Pokusil se policistu podplatit a všechno tím zhoršil.",
+   "lemmas": [
+    "bribe"
+   ],
+   "accepts": [
+    "He tried to bribe the officer and made everything worse"
+   ]
+  },
+  {
+   "en": "The two families will meet in court in October.",
+   "cz": "Ty dvě rodiny se v říjnu potkají u soudu.",
+   "lemmas": [
+    "court"
+   ],
+   "accepts": [
+    "The two families will meet in court in October"
+   ]
+  },
+  {
+   "en": "The trial lasted three weeks and cost a fortune.",
+   "cz": "Ten proces trval tři týdny a stál jmění.",
+   "lemmas": [
+    "trial"
+   ],
+   "accepts": [
+    "The trial lasted three weeks and cost a fortune"
+   ]
+  },
+  {
+   "en": "The verdict surprised everybody in the room.",
+   "cz": "Rozsudek poroty všechny v místnosti překvapil.",
+   "lemmas": [
+    "verdict"
+   ],
+   "accepts": [
+    "The verdict surprised everybody in the room"
+   ]
+  },
+  {
+   "en": "He was found guilty at the trial, but his family still believes him.",
+   "cz": "U soudu byl shledán vinným, ale rodina mu pořád věří.",
+   "lemmas": [
+    "guilty (in court)"
+   ],
+   "accepts": [
+    "He was found guilty at the trial, but his family still believes him"
+   ]
+  },
+  {
+   "en": "The sentence was two years, but he came home after one.",
+   "cz": "Trest byl dva roky, ale domů se vrátil po roce.",
+   "lemmas": [
+    "sentence (in court)"
+   ],
+   "accepts": [
+    "The sentence was two years, but he came home after one"
+   ]
+  },
+  {
+   "en": "She had to pay a large fine because she drove too fast in the village.",
+   "cz": "Musela zaplatit vysokou pokutu, protože ve vesnici jela moc rychle.",
+   "lemmas": [
+    "fine (a penalty)"
+   ],
+   "accepts": [
+    "She had to pay a large fine because she drove too fast in the village"
+   ]
+  },
+  {
+   "en": "The punishment for a first offence is usually small.",
+   "cz": "Trest za první přestupek bývá malý.",
+   "lemmas": [
+    "punishment"
+   ],
+   "accepts": [
+    "The punishment for a first offence is usually small"
+   ]
+  },
+  {
+   "en": "His lawyer will appeal next month.",
+   "cz": "Jeho právník se příští měsíc odvolá.",
+   "lemmas": [
+    "appeal"
+   ],
+   "accepts": [
+    "His lawyer will appeal next month"
+   ]
+  },
+  {
+   "en": "They will release him in the spring if he is good.",
+   "cz": "Na jaře ho propustí, jestli se bude chovat dobře.",
+   "lemmas": [
+    "release"
+   ],
+   "accepts": [
+    "They will release him in the spring if he is good"
+   ]
+  },
+  {
+   "en": "It is legal to park here after six in the evening.",
+   "cz": "Parkovat tady po šesté večer je legální.",
+   "lemmas": [
+    "legal"
+   ],
+   "accepts": [
+    "It is legal to park here after six in the evening",
+    "It's legal to park here after six in the evening"
+   ]
+  },
+  {
+   "en": "Driving after a drink is a serious offence.",
+   "cz": "Řídit po alkoholu je vážný přestupek.",
+   "lemmas": [
+    "offence"
+   ],
+   "accepts": [
+    "Driving after a drink is a serious offence"
+   ]
+  },
+  {
+   "en": "It is hard to convict anybody when there is no witness.",
+   "cz": "Je těžké někoho odsoudit, když není žádný svědek.",
+   "lemmas": [
+    "convict"
+   ],
+   "accepts": [
+    "It is hard to convict anybody when there is no witness",
+    "It's hard to convict anybody when there is no witness"
+   ]
+  }
+ ],
+ "use_mode": "rewrite",
+ "use_hint": "Rewrite the sentence. Replace the underlined words.",
+ "use_sentences": [
+  {
+   "lemma": "rob",
+   "prompt": "Two young people tried to take money from the shop on the corner.",
+   "underline": "take money from",
+   "en": "Two young people tried to rob the shop on the corner.",
+   "lemmas": [
+    "rob"
+   ],
+   "accepts": [
+    "Two young people tried to rob the shop on the corner"
+   ]
+  },
+  {
+   "lemma": "smuggle",
+   "prompt": "They tried to secretly take wine across the border.",
+   "underline": "secretly take",
+   "en": "They tried to smuggle wine across the border.",
+   "lemmas": [
+    "smuggle"
+   ],
+   "accepts": [
+    "They tried to smuggle wine across the border"
+   ]
+  },
+  {
+   "lemma": "arrest",
+   "prompt": "The police will come for him if he goes home.",
+   "underline": "come for",
+   "en": "The police will arrest him if he goes home.",
+   "lemmas": [
+    "arrest"
+   ],
+   "accepts": [
+    "The police will arrest him if he goes home"
+   ]
+  },
+  {
+   "lemma": "witness",
+   "prompt": "The person who saw it said the car was blue.",
+   "underline": "person who saw it",
+   "en": "The witness said the car was blue.",
+   "lemmas": [
+    "witness"
+   ],
+   "accepts": [
+    "The witness said the car was blue"
+   ]
+  },
+  {
+   "lemma": "victim",
+   "prompt": "The person who lost the money did not want to go to court.",
+   "underline": "person who lost the money",
+   "en": "The victim did not want to go to court.",
+   "lemmas": [
+    "victim"
+   ],
+   "accepts": [
+    "The victim did not want to go to court",
+    "The victim didn't want to go to court"
+   ]
+  },
+  {
+   "lemma": "verdict",
+   "prompt": "The decision of the jury surprised everybody in the room.",
+   "underline": "decision of the jury",
+   "en": "The verdict surprised everybody in the room.",
+   "lemmas": [
+    "verdict"
+   ],
+   "accepts": [
+    "The verdict surprised everybody in the room"
+   ]
+  },
+  {
+   "lemma": "fine (a penalty)",
+   "prompt": "She had to pay money to the police because she drove too fast.",
+   "underline": "money to the police",
+   "en": "She had to pay a fine because she drove too fast.",
+   "lemmas": [
+    "fine (a penalty)"
+   ],
+   "accepts": [
+    "She had to pay a fine because she drove too fast"
+   ]
+  },
+  {
+   "lemma": "punishment",
+   "prompt": "The thing the court gives you for a first offence is usually small.",
+   "underline": "thing the court gives you",
+   "en": "The punishment for a first offence is usually small.",
+   "lemmas": [
+    "punishment"
+   ],
+   "accepts": [
+    "The punishment for a first offence is usually small"
+   ]
+  },
+  {
+   "lemma": "release",
+   "prompt": "They will free him in the spring if he is good.",
+   "underline": "free",
+   "en": "They will release him in the spring if he is good.",
+   "lemmas": [
+    "release"
+   ],
+   "accepts": [
+    "They will release him in the spring if he is good"
+   ]
+  },
+  {
+   "lemma": "legal",
+   "prompt": "It is allowed to park here after six in the evening.",
+   "underline": "allowed",
+   "en": "It is legal to park here after six in the evening.",
+   "lemmas": [
+    "legal"
+   ],
+   "accepts": [
+    "It is legal to park here after six in the evening",
+    "It's legal to park here after six in the evening"
+   ]
+  },
+  {
+   "lemma": "investigation",
+   "prompt": "The work the police did took six months.",
+   "underline": "work the police did",
+   "en": "The investigation took six months.",
+   "lemmas": [
+    "investigation"
+   ],
+   "accepts": [
+    "The investigation took six months"
+   ]
+  },
+  {
+   "lemma": "convict",
+   "prompt": "It is hard to punish anybody when there is no witness.",
+   "underline": "punish",
+   "en": "It is hard to convict anybody when there is no witness.",
+   "lemmas": [
+    "convict"
+   ],
+   "accepts": [
+    "It is hard to convict anybody when there is no witness",
+    "It's hard to convict anybody when there is no witness"
+   ]
+  }
+ ]
 }
