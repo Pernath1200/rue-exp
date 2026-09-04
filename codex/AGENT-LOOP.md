@@ -105,5 +105,8 @@ Append to `codex/DECISIONS.md` under **Open**, in the format that file specifies
 Always propose a default and say what you will do if he never answers — then do
 that and carry on. Never stop the loop for an answer.
 
-Send **one** push notification when four questions have accumulated, not one per
-question. Routine progress is never worth a notification.
+**Do not try to notify James.** A cloud run has no channel to him and no
+notification tool, and he does not want one — a scheduled ping about authoring
+questions is the kind of thing he ignores, which then buries the lines that
+mattered. The queue is a pull, not a push: he reads `DECISIONS.md` when he
+chooses. Your end-of-run summary is the whole report.
