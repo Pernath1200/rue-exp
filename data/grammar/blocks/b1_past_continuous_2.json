@@ -6,7 +6,7 @@
   "codex_unit": "G_VP-B1B2-01",
   "practice": "frames",
   "quality": "draft",
-  "note": "Questions, negatives and the when/while contrast above a2_past_continuous. C57 2026-09-04 (James smoke): card 1 is a recap of Past continuous 1. Correcting this note's old claim that a2_past_continuous 'did in-progress and background only' - it also has a Questions card and a Negative card, including 'Not Did you working?'. So questions and negatives here are REVISION at a harder level; the genuinely new material is while vs when and two simultaneous long actions. C33: the usual job is an interrupted action - was -ing WHEN + past simple - not clock-time snapshots. Czech trap: no auxiliary in the question (*What you did doing), and while/when both render kdyz.",
+  "note": "Questions, negatives and the when/while contrast above a2_past_continuous. C57 2026-09-04 (James smoke): card 1 is a recap of Past continuous 1. Correcting this note's old claim that a2_past_continuous 'did in-progress and background only' - it also has a Questions card and a Negative card, including 'Not Did you working?'. So questions and negatives here are REVISION at a harder level; the genuinely new material is while vs when and two simultaneous long actions. C33: the usual job is an interrupted action - was -ing WHEN + past simple - not clock-time snapshots. Czech trap: no auxiliary in the question (*What you did doing), and while/when both render kdyz. James smoke 2026-09-04: A0 - while and when are BOTH correct before a long action, so items 4 and 15 accept both and no longer list When as a Quiz distractor; two forced items added where the choice is real (when + short action). Two gap answers duplicated their own stem (Were you waiting still waiting). Negative item rebuilt - she wasn't studying when her friends arrived was not a thing anyone says; James picked 'when I phoned her', changed to 'when I saw her' because F3 fires on phoned (phone is taught as a noun before this slot, not as a verb). Use `wrong` sentences moved to form errors: a ringing phone and starting rain both have duration, so while + them is arguable, and B1 bans an arguable error.",
   "default_direction": "cz_to_en",
   "use_mode": "correct",
   "check": {
@@ -284,16 +284,20 @@
           "gap_answer": "While",
           "quiz_options": [
             "While",
-            "When",
             "During",
-            "Until"
+            "Until",
+            "After"
           ],
           "accepts": [
-            "While I was cooking, my phone rang."
+            "While I was cooking, my phone rang.",
+            "When I was cooking, my phone rang."
           ],
-          "wrong": "While my phone rang, I was cooking.",
-          "explanation": "**While** introduces the long action. The phone ringing is the short one.",
-          "explanation_cz": "**While** uvádí tu dlouhou akci. Zvonění telefonu je ta krátká."
+          "wrong": "While I was cook, my phone rang.",
+          "explanation": "**While** or **when** both work in front of the long action; **while** is the clearer one. Only **when** works in front of a short action.",
+          "explanation_cz": "Před dlouhou akcí jde **while** i **when**; **while** je jasnější. Před krátkou akcí jde jen **when**.",
+          "gap_accepts": [
+            "When"
+          ]
         },
         {
           "en": "I was reading when she came home.",
@@ -333,13 +337,13 @@
         {
           "en": "Were you still waiting when I called?",
           "cz": "Čekal jsi ještě, když jsem volal?",
-          "gap": "____ still waiting when I called? (you / wait)",
-          "gap_answer": "Were you waiting",
+          "gap": "____ when I called? (you / still / wait)",
+          "gap_answer": "Were you still waiting",
           "quiz_options": [
-            "Were you waiting",
-            "Did you wait",
-            "Was you waiting",
-            "You were waiting"
+            "Were you still waiting",
+            "Did you still wait",
+            "Was you still waiting",
+            "You were still waiting"
           ],
           "accepts": [
             "Were you still waiting when I called?"
@@ -462,26 +466,26 @@
           "explanation_cz": "**did** nikdy nestojí s tvarem na **-ing**. Otázka je **were** you talking."
         },
         {
-          "en": "She wasn't studying when her friends arrived.",
-          "cz": "Neučila se, když přišli její kamarádi.",
-          "gap": "She ____ when her friends arrived. (not / study)",
-          "gap_answer": "wasn't studying",
+          "en": "She wasn't working when I saw her.",
+          "cz": "Nepracovala, když jsem ji viděl.",
+          "gap": "She ____ when I saw her. (not / work)",
+          "gap_answer": "wasn't working",
           "gap_accepts": [
-            "was not studying"
+            "was not working"
           ],
           "quiz_options": [
-            "wasn't studying",
-            "didn't study",
-            "weren't studying",
-            "didn't studying"
+            "wasn't working",
+            "didn't work",
+            "wasn't worked",
+            "not working"
           ],
           "accepts": [
-            "She wasn't studying when her friends arrived.",
-            "She was not studying when her friends arrived."
+            "She wasn't working when I saw her.",
+            "She was not working when I saw her."
           ],
-          "wrong": "She didn't studying when her friends arrived.",
-          "explanation": "Negative: **wasn't** + studying. **she** takes was, and **didn't** never meets a -ing form.",
-          "explanation_cz": "Zápor: **wasn't** + studying. **she** má was a **didn't** se s -ing tvarem nepotkává."
+          "wrong": "She didn't working when I saw her.",
+          "explanation": "Negative: **wasn't** + working. Seeing her is the short action.",
+          "explanation_cz": "Zápor: **wasn't** + working. To, že jsem ji viděl, je krátká akce."
         },
         {
           "en": "While we were waiting, it started to rain.",
@@ -490,27 +494,31 @@
           "gap_answer": "While",
           "quiz_options": [
             "While",
-            "When",
             "During",
-            "Until"
+            "Until",
+            "After"
           ],
           "accepts": [
-            "While we were waiting, it started to rain."
+            "While we were waiting, it started to rain.",
+            "When we were waiting, it started to rain."
           ],
-          "wrong": "While it started to rain, we were waiting.",
-          "explanation": "**While** goes in front of the long action — the waiting, not the first drop of rain.",
-          "explanation_cz": "**While** stojí před dlouhou akcí — před čekáním, ne před začátkem deště."
+          "wrong": "While we waiting, it started to rain.",
+          "explanation": "**While** or **when** both work in front of the long action — the waiting. **While** is the clearer one.",
+          "explanation_cz": "Před dlouhou akcí — před čekáním — jde **while** i **when**. **While** je jasnější.",
+          "gap_accepts": [
+            "When"
+          ]
         },
         {
           "en": "Were they still working at six?",
           "cz": "Pracovali ještě v šest?",
-          "gap": "____ still working at six? (they / work)",
-          "gap_answer": "Were they",
+          "gap": "____ at six? (they / still / work)",
+          "gap_answer": "Were they still working",
           "quiz_options": [
-            "Were they",
-            "Was they",
-            "Did they",
-            "They were"
+            "Were they still working",
+            "Was they still working",
+            "Did they still work",
+            "They were still working"
           ],
           "accepts": [
             "Were they still working at six?"
@@ -683,6 +691,42 @@
           "wrong": "We was still eating when they arrived.",
           "explanation": "**we** takes **were**, and *still* puts the meal in progress: **were still eating**.",
           "explanation_cz": "**we** má **were** a *still* říká, že jídlo probíhalo: **were still eating**."
+        },
+        {
+          "en": "I was walking home when I met my old teacher.",
+          "cz": "Šel jsem domů, když jsem potkal svého starého učitele.",
+          "gap": "I was walking home ____ I met my old teacher. (when / while)",
+          "gap_answer": "when",
+          "quiz_options": [
+            "when",
+            "while",
+            "during",
+            "until"
+          ],
+          "accepts": [
+            "I was walking home when I met my old teacher."
+          ],
+          "wrong": "I was walking home while I met my old teacher.",
+          "explanation": "Meeting someone takes a moment, so only **when** fits. **While** needs the long action.",
+          "explanation_cz": "Potkat někoho je okamžik, proto jde jen **when**. **While** patří k dlouhé akci."
+        },
+        {
+          "en": "We were waiting when the bus arrived.",
+          "cz": "Čekali jsme, když přijel ten autobus.",
+          "gap": "We were waiting ____ the bus arrived. (when / while)",
+          "gap_answer": "when",
+          "quiz_options": [
+            "when",
+            "while",
+            "during",
+            "until"
+          ],
+          "accepts": [
+            "We were waiting when the bus arrived."
+          ],
+          "wrong": "We were waiting while the bus arrived.",
+          "explanation": "Arriving is the short action, so it takes **when**. The waiting is the long one.",
+          "explanation_cz": "Příjezd je krátká akce, proto **when**. Čekání je ta dlouhá."
         }
       ]
     }
