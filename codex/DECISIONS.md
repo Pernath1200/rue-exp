@@ -36,6 +36,12 @@ Format:
 **Default if unanswered:** a — done this run. A0 says fix the prompt or accept every legitimate answer, and (b) is asymmetric: the state items would then be answerable by "no *would* in the cue, so type *used to*", which is the B15 giveaway. The state items stay determinate on their own, because `would` is simply wrong with a state — that is the unit's teaching point, and it is the Quiz that carries it.
 → (James: your answer here)
 
+### lint.py · A8 demands a contraction that is not English (`had to` / `have to`)
+**Q:** `lint.py` flags *I had to work last Saturday* as missing its contraction twin, because `i had` → `i'd`. But *I'd to work* is not modern English, and neither is *Did you've to wait long?* for *Did you have to wait long?*. Four such flags sat on `b1_past_modals` at 10 items and nine at 25, all of them false.
+**Options:** a) guard the check — skip a short form whose expansion is immediately followed by `to` (had to / have to / has to) / b) leave it and let every past-obligation pack carry permanent EXACT flags / c) write the ungrammatical accepts in so the count goes green.
+**Default if unanswered:** a is the fix, but it is a change to `lint.py`, which this loop should not make unattended — so **b for now**: the two remaining flags on `b1_past_modals` stand, and the pack `note` says in capitals that they must not be "fixed". (c) is never acceptable: an accepts list is what grades the student, and *I'd to work* in it marks a wrong answer right. This run also reduced the count honestly, by rotating the obligation items onto noun subjects (F6), which the check does not fire on.
+→ (James: your answer here)
+
 ### B1 grammar · `vocablevel` fires on every grammar pack
 **Q:** The `vocablevel` candidate ("92% of words are 2+ levels below B1 — is this really a B1 unit?") fires on b1_past_perfect and on most B1 grammar packs. Should a grammar pack be lexically levelled at all?
 **Options:** a) ignore it on grammar packs — a form unit must carry easy vocabulary so the only difficulty is the form (A0: one degree of freedom) / b) raise the carrier vocabulary to B1 words / c) exempt grammar packs in `lint.py` so the signal stops firing.
