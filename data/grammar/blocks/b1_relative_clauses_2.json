@@ -6,7 +6,7 @@
  "codex_unit": "G_CL-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "THE comma rule, and the single biggest Czech interference target at B1: Czech puts a comma before every relative clause, so students write *The man, who lives next door, is a doctor where the clause is defining and takes none. Contrast pack with b1_relative_clauses (defining + omission), which plays immediately before. Second rule: no THAT in a non-defining clause. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, split about evenly between defining (no commas) and non-defining (commas + who/which, never that), plus three items whose answer is `nothing` at all. Rules applied this pass: A4 all six cleared - Czech really does say `ten muz, ktery ...` for a defining clause, so the demonstrative went into the cz where the noun is definite, and the two that could not take one were rewritten (near the centre -> which they bought last year; on the second floor -> which has no windows); F3 Moravia dropped. C11: `nothing` was the answer to three items and appeared nowhere in the intro - it now has a card (When the word can be nothing). D1: the 15 new items each carry an explanation naming their own noun and clause, after a first pass that shared two strings across 13 of them.",
+ "note": "THE comma rule, and the single biggest Czech interference target at B1: Czech puts a comma before every relative clause, so students write *The man, who lives next door, is a doctor where the clause is defining and takes none. Contrast pack with b1_relative_clauses (defining + omission), which plays immediately before. Second rule: no THAT in a non-defining clause. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, split about evenly between defining (no commas) and non-defining (commas + who/which, never that), plus three items whose answer is `nothing` at all. Rules applied this pass: A4 all six cleared - Czech really does say `ten muz, ktery ...` for a defining clause, so the demonstrative went into the cz where the noun is definite, and the two that could not take one were rewritten (near the centre -> which they bought last year; on the second floor -> which has no windows); F3 Moravia dropped. C11: `nothing` was the answer to three items and appeared nowhere in the intro - it now has a card (When the word can be nothing). D1: the 15 new items each carry an explanation naming their own noun and clause, after a first pass that shared two strings across 13 of them. · C57 recap card (You already know — Vztažné věty 1) added as card 1; the three `nothing` items are now Quiz-only (`type: false`) — James's standing answer: the chip is the teaching point, nobody types \"nothing\" into a gap.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -50,6 +50,43 @@
      {
       "en": "My brother, **who** lives in Brno.",
       "cz": "Můj bratr, který bydlí v Brně."
+     }
+    ]
+   },
+   {
+    "title": "You already know",
+    "title_cz": "Už znáš — Vztažné věty 1",
+    "text_first": true,
+    "points": [
+     "A relative clause sits **right after** the noun it describes.",
+     "**who** = people · **which** = things · **that** = both.",
+     "Drop the word only when a **new subject** follows it."
+    ],
+    "table": {
+     "caption": "Relative clauses 1",
+     "headers": [
+      "People",
+      "Things"
+     ],
+     "rows": [
+      [
+       "the man **who** called",
+       "the book **which** I bought"
+      ],
+      [
+       "the man **that** called",
+       "the book **that** I bought"
+      ],
+      [
+       "— *(a verb follows: keep it)*",
+       "the book I bought *(dropped)*"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "The man **who** called is my boss.",
+      "cz": "Ten muž, který volal, je můj šéf."
      }
     ]
    },
@@ -262,7 +299,8 @@
      ],
      "wrong": "The book, I read last week, was very good.",
      "explanation": "Defining and the pronoun is the object, so it can drop out — and there are no commas.",
-     "explanation_cz": "Určující věta a zájmeno je předmět, takže může vypadnout — a čárky nejsou."
+     "explanation_cz": "Určující věta a zájmeno je předmět, takže může vypadnout — a čárky nejsou.",
+     "type": false
     },
     {
      "en": "My sister, who is a nurse, works in Ostrava.",
@@ -440,7 +478,8 @@
      ],
      "wrong": "The man, I met yesterday, works with my brother.",
      "explanation": "The relative word is left out because it is the object of *met* — and the clause is still defining, so still no commas.",
-     "explanation_cz": "Vztažné slovo je vynechané, protože je předmětem k *met* — a věta je pořád určující, takže pořád bez čárek."
+     "explanation_cz": "Vztažné slovo je vynechané, protože je předmětem k *met* — a věta je pořád určující, takže pořád bez čárek.",
+     "type": false
     },
     {
      "en": "The bus that goes to the station is always late.",
@@ -476,7 +515,8 @@
      ],
      "wrong": "The letter, I sent last week, arrived today.",
      "explanation": "Nothing goes in front of *I sent*: the relative word is the object and can be dropped. Commas would make it a different sentence.",
-     "explanation_cz": "Před *I sent* nepatří nic: vztažné slovo je předmět a dá se vynechat. Čárky by z toho udělaly jinou větu."
+     "explanation_cz": "Před *I sent* nepatří nic: vztažné slovo je předmět a dá se vynechat. Čárky by z toho udělaly jinou větu.",
+     "type": false
     },
     {
      "en": "My mother, who is seventy, still works.",

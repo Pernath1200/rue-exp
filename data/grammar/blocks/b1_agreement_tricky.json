@@ -6,7 +6,7 @@
  "codex_unit": "G_SS-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "Above a1_agreement / a2_agreement. Three groups that trip Czech speakers: everybody/everyone/nobody take a singular verb; news / information / advice are uncountable singular; people and police are plural. Czech policie is singular (*The police is coming) and noviny is plural (*The news are bad) - the interference runs both ways. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, five or six per group, including the questions (Is the news…? Does everybody…?) and the negatives (don't agree, was not correct) that the singular/plural choice also lands on. Rules applied this pass: A7 nobody / no one - the pair is declared in gen_senses.py and, because the canonicaliser is word-by-word and `no one` is two words, every nobody item also carries the `no one` wording in accepts; A4 two cleared by giving the Czech the demonstrative it really uses (tu odpoved, ty zpravy). The three that stand are all `the police`, where English forces the article and Czech policie takes neither an article nor a natural demonstrative - noted in DECISIONS.md under the A4 entry.",
+ "note": "Above a1_agreement / a2_agreement. Three groups that trip Czech speakers: everybody/everyone/nobody take a singular verb; news / information / advice are uncountable singular; people and police are plural. Czech policie is singular (*The police is coming) and noviny is plural (*The news are bad) - the interference runs both ways. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, five or six per group, including the questions (Is the news…? Does everybody…?) and the negatives (don't agree, was not correct) that the singular/plural choice also lands on. Rules applied this pass: A7 nobody / no one - the pair is declared in gen_senses.py and, because the canonicaliser is word-by-word and `no one` is two words, every nobody item also carries the `no one` wording in accepts; A4 two cleared by giving the Czech the demonstrative it really uses (tu odpoved, ty zpravy). The three that stand are all `the police`, where English forces the article and Czech policie takes neither an article nor a natural demonstrative - noted in DECISIONS.md under the A4 entry. · C57 recap card (You already know — Shoda 1 a 2) added as card 1; card 0's title was the predecessor's name (Agreement 2) and is now this unit's own (C14).",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -17,8 +17,8 @@
  "intro": {
   "cards": [
    {
-    "title": "Agreement 2",
-    "title_cz": "Shoda 2 — everybody, news, police",
+    "title": "Agreement 3",
+    "title_cz": "Shoda 3 — everybody, news, police",
     "points": [
      "You already know that **he /** she / it takes the -s form.",
      "These three groups are the ones where the verb does not follow the meaning."
@@ -51,6 +51,47 @@
      {
       "en": "The police **are** coming.",
       "cz": "Policie přijíždí."
+     }
+    ]
+   },
+   {
+    "title": "You already know",
+    "title_cz": "Už znáš — Shoda 1 a 2",
+    "text_first": true,
+    "points": [
+     "The verb **fits** the subject: **he works**, **they work**.",
+     "Questions and negatives use **do** / **does** plus the base verb.",
+     "**was** / **were** and **there is** / **there are** follow the same fit."
+    ],
+    "table": {
+     "caption": "Agreement 1 and 2",
+     "headers": [
+      "Subject",
+      "Verb"
+     ],
+     "rows": [
+      [
+       "he / she / it",
+       "**works** · **was** · **Does** he work?"
+      ],
+      [
+       "I / you / we / they",
+       "**work** · **were** · **Do** they work?"
+      ],
+      [
+       "there + one / more",
+       "There **is** a problem. · There **are** problems."
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "She **doesn't** work here.",
+      "cz": "Tady nepracuje."
+     },
+     {
+      "en": "There **were** two letters.",
+      "cz": "Byly tam dva dopisy."
      }
     ]
    },
