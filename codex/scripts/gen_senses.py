@@ -78,6 +78,11 @@ SYNONYM_GROUPS = [
     ["everyone", "everybody"],
     ["someone", "somebody"],
     ["anyone", "anybody"],
+    # `no one` is two words, so the word-by-word canonicaliser in js/synonyms.js
+    # cannot swap it. The pair is declared here anyway (lint's FREE_PAIRS asks
+    # for it, and it documents the class); the working half of the fix is that
+    # every `nobody` item also carries the `no one` wording in accepts.
+    ["nobody", "no one"],
 ]
 
 

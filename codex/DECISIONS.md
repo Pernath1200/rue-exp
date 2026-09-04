@@ -28,6 +28,7 @@ Format:
 **Q:** Seven items demand `the` where the Czech carries no demonstrative (*the film*, *the station*, *the train*, *the room*, *the door*, *the shop*, *the window*) — is that a real A4 fault at B1, or is it English forcing the article?
 **Options:** a) leave them — English forces `the` on a second mention or a known referent, and stripping it would teach bad English / b) add the article-free wording to `accepts` where a native would also say it / c) rewrite the sentences onto nouns that do not need an article.
 **Default if unanswered:** a — every one of the seven is a *known referent* (the film we are watching, the station we were heading for). Dropping `the` there is not English, and (b) would accept sentences no native writes. The A4 candidate stays lit on this pack; the sequencing story is that `the` is not the teaching point here, so it costs the student nothing.
+**Same rule, harder case (`b1_agreement_tricky`):** three items are *The police …*, where English forces both the article and the plural, and Czech *policie* takes neither an article nor a natural demonstrative — *ta policie* is not what anyone says. Those three cannot be cleared by rewriting the Czech the way the rest of this run's A4 findings were. Default: they stand.
 → (James: your answer here)
 
 ### b1_used_to · A0 — the Czech picks neither *would* nor *used to*
