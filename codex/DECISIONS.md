@@ -36,6 +36,18 @@ Format:
 **Default if unanswered:** b for now — a lint change is not this loop's to make unattended, and (c) means writing worse Czech to move a number, which is the same class of thing as an ungrammatical `accepts`. When someone is in `lint.py`, (a) is the fix.
 → (James: your answer here)
 
+### lint.py · the connector check matches CONNECTORS as substrings
+**Q (for the record):** `promised = [c for c in CONNECTORS if c in cardtext]` tests substrings against the whole intro JSON, so on `b1_past_continuous_2` it found **if** inside `font-family="Lexend, sans-serif"` in an inline SVG, and **before** inside the ordinary sentence *"was / were comes before the subject"*. With `when` genuinely drilled 18 times, that was enough to fire the EXACT "cards promise connectors the bank barely drills" on a unit that promises nothing of the kind.
+**Options:** a) match on word boundaries — `re.search(r"\b%s\b" % c, cardtext)`, one line, the same regex the *used* count already applies / b) leave it and let authors reword around the check.
+**Default if unanswered:** b — done this run, because a lint change is not this loop's to make unattended. The card now says *"goes in front of the subject"*, which is plainer English anyway, and that alone drops the promised set below the three-connector threshold so the flag clears. The `sans-serif` hit is still there and would fire again on any pack that inline-SVGs a card and drills two connectors unevenly. (a) is the real fix.
+→ (James: your answer here)
+
+### B1 grammar · the A4 candidate on the passive and relative-clause packs
+**Q:** `b1_passives` carries 31 A4 candidates and `b1_relative_clauses` 42 — far more than any other pack. Should this run have cleared them the way it cleared the smaller sets elsewhere (adding *ten / ta / to* to the Czech)?
+**Options:** a) leave them: a passive with a definite subject, and a defining relative clause with a definite head, are exactly where English forces `the`, and the Czech reflexive passive (*Pokoj se uklízí*) carries no demonstrative you can add without changing what it says / b) add the demonstrative anyway, on all ~70 / c) rewrite the sentences onto indefinite subjects.
+**Default if unanswered:** a — done this run. Where the Czech genuinely reads better with a demonstrative the loop did add one (17 items on `b1_present_perfect_vs_past`, 8 on `b1_indirect_questions`, 6 on `b1_reported_speech`, 4 on `b1_modals_speculation`), and those counts fell honestly. On these two packs doing the same to seventy prompts would make every sentence in the unit deictic, which is a big unreviewed change to Czech nobody here can check — the known gap at the bottom of AUTHORING-RULES. (c) would gut the packs.
+→ (James: your answer here)
+
 ### b1_past_perfect · A4 `the` in past narrative
 **Q:** Seven items demand `the` where the Czech carries no demonstrative (*the film*, *the station*, *the train*, *the room*, *the door*, *the shop*, *the window*) — is that a real A4 fault at B1, or is it English forcing the article?
 **Options:** a) leave them — English forces `the` on a second mention or a known referent, and stripping it would teach bad English / b) add the article-free wording to `accepts` where a native would also say it / c) rewrite the sentences onto nouns that do not need an article.
