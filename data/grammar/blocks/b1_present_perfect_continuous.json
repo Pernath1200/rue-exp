@@ -1,618 +1,881 @@
 {
-  "id": "b1_present_perfect_continuous",
-  "title": "Present perfect continuous",
-  "level": "B1",
-  "tree_node": "b1_present_perfect_continuous",
-  "codex_unit": "G_VP-B1B2-01",
-  "practice": "frames",
-  "quality": "draft",
-  "note": "have/has been + -ing. The Czech trap is the PRESENT tense: Učím se anglicky pět let -> *I learn / *I am learning English for five years. Recycles for/since from a2_for_since (same job, no re-teach). Contrast card + sort drills how many (simple) vs how long (continuous) - B12, because Czech cannot pick that one. State verbs (know / have = own / be / like) take no -ing and have their own card, so the Quiz distractor *have been knowing* is taught first (C11). Use is error-correction (E7). First draft 2026-09-02, core half - thicken after smoke.",
-  "default_direction": "cz_to_en",
-  "use_mode": "correct",
-  "sort_cz": false,
-  "bins": [
-    "activity",
-    "result"
-  ],
-  "bin_captions": {
-    "activity": "how long · still going",
-    "result": "how many · finished"
-  },
-  "check": {
-    "sequence": [
-      "sort_bins",
-      "quiz"
-    ]
-  },
-  "intro": {
-    "cards": [
-      {
-        "title": "Present perfect continuous",
-        "title_cz": "Předpřítomný čas průběhový — have/has been + -ing",
-        "svg": "<svg viewBox=\"0 0 520 215\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"130\" x2=\"500\" y2=\"130\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,130 490,125 490,135\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"420\" y1=\"30\" x2=\"420\" y2=\"178\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"420\" y=\"22\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <text x=\"90\" y=\"22\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">five years ago</text>\n  <rect x=\"90\" y=\"76\" width=\"330\" height=\"22\" rx=\"11\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"255\" y=\"68\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I have been learning</text>\n  <text x=\"255\" y=\"114\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">started then · still going now</text>\n  <circle cx=\"150\" cy=\"130\" r=\"8\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"150\" y=\"152\" font-size=\"13\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I learned</text>\n  <text x=\"150\" y=\"169\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple · finished</text>\n  <rect x=\"404\" y=\"120\" width=\"32\" height=\"20\" rx=\"10\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"420\" y=\"196\" font-size=\"13\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I am learning</text>\n  <text x=\"420\" y=\"211\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present continuous · right now</text>\n</svg>",
-        "table": {
-          "caption": "frame",
-          "headers": [
-            "English",
-            "Job"
-          ],
-          "rows": [
-            [
-              "**have been** / **has been** + verb + **-ing**",
-              "started before now, still going now"
-            ],
-            [
-              "**have** / **has** + past participle",
-              "finished, but it counts now"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "I **have been** learning English for five years.",
-            "cz": "Učím se anglicky pět let."
-          },
-          {
-            "en": "She **has been** working here since March.",
-            "cz": "Pracuje tady od března."
-          }
-        ],
-        "points": [
-          "The action is not over. It began in the past and it is still happening."
-        ]
-      },
-      {
-        "title": "Czech says it in the present",
-        "title_cz": "Čeština to říká přítomným časem",
-        "text_first": true,
-        "points": [
-          "Czech uses the **present tense** for something still going on.",
-          "English uses **have been** plus **-ing** instead."
-        ],
-        "table": {
-          "headers": [
-            "Czech",
-            "English"
-          ],
-          "rows": [
-            [
-              "Učím se anglicky pět let. *(present)*",
-              "I **have been** learning English for five years."
-            ],
-            [
-              "Čekáme hodinu. *(present)*",
-              "We **have been** waiting for an hour."
-            ],
-            [
-              "Od rána sněží. *(present)*",
-              "It **has been** snowing since this morning."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "How long? for and since",
-        "title_cz": "Jak dlouho? for a since",
-        "table": {
-          "headers": [
-            "Word",
-            "Takes",
-            "Example"
-          ],
-          "rows": [
-            [
-              "**for**",
-              "a length of time",
-              "**for** five years · **for** an hour · **for** two days"
-            ],
-            [
-              "**since**",
-              "a point in time",
-              "**since** March · **since** 2019 · **since** this morning"
-            ]
-          ]
-        },
-        "examples": [
-          {
-            "en": "They **have been** living in Brno **since** last year.",
-            "cz": "Od loňska bydlí v Brně."
-          },
-          {
-            "en": "I **have been** waiting for twenty minutes.",
-            "cz": "Čekám dvacet minut."
-          }
-        ],
-        "points": [
-          "You already know **for** and **since** from the present perfect.",
-          "They do the same job here."
-        ]
-      },
-      {
-        "title": "Questions and negatives",
-        "title_cz": "Otázky a zápor",
-        "table": {
-          "headers": [
-            "",
-            "Shape"
-          ],
-          "rows": [
-            [
-              "Question",
-              "How long **have you** been waiting?"
-            ],
-            [
-              "Question",
-              "How long **has it** been raining?"
-            ],
-            [
-              "Negative",
-              "I **haven't been** sleeping well."
-            ],
-            [
-              "Negative",
-              "He **hasn't been** feeling well since Monday."
-            ]
-          ]
-        },
-        "points": [
-          "In a question the subject goes **between** have and been."
-        ]
-      },
-      {
-        "title": "How many, or how long?",
-        "title_cz": "Kolik, nebo jak dlouho?",
-        "table": {
-          "headers": [
-            "Sentence",
-            "It answers"
-          ],
-          "rows": [
-            [
-              "I **have read** three books this month.",
-              "how many — a finished result"
-            ],
-            [
-              "I have **been reading** all afternoon.",
-              "how long — the activity itself"
-            ],
-            [
-              "She **has written** two emails.",
-              "how many — they are done"
-            ],
-            [
-              "She has **been writing** all morning.",
-              "how long — she may still be writing"
-            ]
-          ]
-        },
-        "points": [
-          "Count the things → the simple. Measure the time → the continuous."
-        ]
-      },
-      {
-        "title": "Verbs that take no -ing",
-        "title_cz": "Slovesa, která nemají -ing",
-        "table": {
-          "headers": [
-            "Verb",
-            "Say"
-          ],
-          "rows": [
-            [
-              "**know**",
-              "I **have known** her for ten years."
-            ],
-            [
-              "**have** (= own)",
-              "We **have had** this car since 2019."
-            ],
-            [
-              "**be**",
-              "He **has been** ill for a week."
-            ],
-            [
-              "**like**",
-              "I **have liked** it since I was a child."
-            ]
-          ]
-        },
-        "points": [
-          "These verbs describe a **state**, not an activity.",
-          "Duration still takes the present perfect, without **-ing**."
-        ]
-      },
-      {
-        "title": "Common mistakes",
-        "title_cz": "Časté chyby",
-        "text_first": true,
-        "points": [
-          "The Czech present tense is the trap. Say **have been** + **-ing**."
-        ],
-        "table": {
-          "headers": [
-            "Not this",
-            "Say this"
-          ],
-          "rows": [
-            [
-              "~~I learn English for five years.~~",
-              "I **have been** learning English for five years."
-            ],
-            [
-              "~~I am learning English for five years.~~",
-              "I **have been** learning English for five years."
-            ],
-            [
-              "~~How long you are waiting?~~",
-              "How long **have you** been waiting?"
-            ],
-            [
-              "~~I have been knowing her for ten years.~~",
-              "I **have known** her for ten years."
-            ],
-            [
-              "~~She works here since March.~~",
-              "She **has been** working here since March."
-            ]
-          ]
-        }
-      }
-    ]
-  },
-  "blocks": [
-    {
-      "id": "ppc_main",
-      "title": "Present perfect continuous · B1",
-      "items": [
-        {
-          "en": "I have been learning English for five years.",
-          "cz": "Učím se anglicky pět let.",
-          "gap": "I ____ English for five years. (learn)",
-          "gap_answer": "have been learning",
-          "gap_accepts": [
-            "'ve been learning"
-          ],
-          "quiz_options": [
-            "have been learning",
-            "learn",
-            "am learning",
-            "have learned"
-          ],
-          "accepts": [
-            "I have been learning English for five years.",
-            "I've been learning English for five years."
-          ],
-          "wrong": "I learn English for five years.",
-          "explanation": "Czech uses the present here. English needs **have been** + **-ing** — it started five years ago and is still going.",
-          "explanation_cz": "Čeština má přítomný čas. Angličtina potřebuje **have been + -ing** — začalo to před pěti lety a pořád to trvá."
-        },
-        {
-          "en": "She has been working here since March.",
-          "cz": "Pracuje tady od března.",
-          "gap": "She ____ here since March. (work)",
-          "gap_answer": "has been working",
-          "gap_accepts": [
-            "'s been working"
-          ],
-          "quiz_options": [
-            "has been working",
-            "works",
-            "is working",
-            "has worked"
-          ],
-          "accepts": [
-            "She has been working here since March.",
-            "She's been working here since March."
-          ],
-          "wrong": "She works here since March.",
-          "explanation": "**since** + a point in time (March). Third person takes **has** been working.",
-          "explanation_cz": "**since** + bod v čase (March). Ve třetí osobě **has** been working."
-        },
-        {
-          "en": "We have been waiting for an hour.",
-          "cz": "Čekáme hodinu.",
-          "gap": "We ____ for an hour. (wait)",
-          "gap_answer": "have been waiting",
-          "gap_accepts": [
-            "'ve been waiting"
-          ],
-          "quiz_options": [
-            "have been waiting",
-            "wait",
-            "are waiting",
-            "waited"
-          ],
-          "accepts": [
-            "We have been waiting for an hour.",
-            "We've been waiting for an hour."
-          ],
-          "wrong": "We are waiting for an hour.",
-          "explanation": "**for** + a length of time. The waiting started an hour ago and has not stopped.",
-          "explanation_cz": "**for** + délka času. Čekání začalo před hodinou a ještě neskončilo."
-        },
-        {
-          "en": "They have been living in Brno since last year.",
-          "cz": "Od loňska bydlí v Brně.",
-          "gap": "They ____ in Brno since last year. (live)",
-          "gap_answer": "have been living",
-          "gap_accepts": [
-            "'ve been living"
-          ],
-          "quiz_options": [
-            "have been living",
-            "live",
-            "are living",
-            "lived"
-          ],
-          "accepts": [
-            "They have been living in Brno since last year.",
-            "They've been living in Brno since last year."
-          ],
-          "wrong": "They live in Brno since last year.",
-          "explanation": "**since last year** — it began then and they are still there. **have been living**.",
-          "explanation_cz": "**since last year** — začalo to tehdy a pořád tam bydlí. **have been living**."
-        },
-        {
-          "en": "How long have you been waiting?",
-          "cz": "Jak dlouho čekáš?",
-          "gap": "How long ____? (you / wait)",
-          "gap_answer": "have you been waiting",
-          "quiz_options": [
-            "have you been waiting",
-            "do you wait",
-            "are you waiting",
-            "you have been waiting"
-          ],
-          "accepts": [
-            "How long have you been waiting?"
-          ],
-          "explanation": "Question order: **have** + you + **been** + waiting. The subject sits between **have** and **been**.",
-          "explanation_cz": "Pořádek v otázce: **have** + you + **been** + waiting. Podmět je mezi **have** a **been**."
-        },
-        {
-          "en": "How long has it been raining?",
-          "cz": "Jak dlouho prší?",
-          "gap": "How long ____? (it / rain)",
-          "gap_answer": "has it been raining",
-          "quiz_options": [
-            "has it been raining",
-            "is it raining",
-            "does it rain",
-            "it has been raining"
-          ],
-          "accepts": [
-            "How long has it been raining?"
-          ],
-          "explanation": "**it** is third person, so **has** it been raining. Not *is it raining* — that asks about right now only.",
-          "explanation_cz": "**it** je třetí osoba, tedy **has** it been raining. Ne *is it raining* — to se ptá jen na tuto chvíli."
-        },
-        {
-          "en": "I haven't been sleeping well.",
-          "cz": "Nespím dobře.",
-          "gap": "I ____ well. (not / sleep)",
-          "gap_answer": "haven't been sleeping",
-          "gap_accepts": [
-            "have not been sleeping"
-          ],
-          "quiz_options": [
-            "haven't been sleeping",
-            "don't sleep",
-            "am not sleeping",
-            "didn't sleep"
-          ],
-          "accepts": [
-            "I haven't been sleeping well.",
-            "I have not been sleeping well."
-          ],
-          "explanation": "Negative: **haven't been** + sleeping. The bad sleep started earlier and is still going.",
-          "explanation_cz": "Zápor: **haven't been** + sleeping. Špatné spaní začalo dřív a pořád trvá."
-        },
-        {
-          "en": "He hasn't been feeling well since Monday.",
-          "cz": "Od pondělí se necítí dobře.",
-          "gap": "He ____ well since Monday. (not / feel)",
-          "gap_answer": "hasn't been feeling",
-          "gap_accepts": [
-            "has not been feeling"
-          ],
-          "quiz_options": [
-            "hasn't been feeling",
-            "doesn't feel",
-            "isn't feeling",
-            "didn't feel"
-          ],
-          "accepts": [
-            "He hasn't been feeling well since Monday.",
-            "He has not been feeling well since Monday."
-          ],
-          "wrong": "He doesn't feel well since Monday.",
-          "explanation": "Third person negative: **hasn't been** feeling. **since Monday** marks where it started.",
-          "explanation_cz": "Zápor ve třetí osobě: **hasn't been** feeling. **since Monday** říká, odkdy."
-        },
-        {
-          "en": "I have read three books this month.",
-          "cz": "Tento měsíc jsem přečetl tři knihy.",
-          "gap": "I ____ three books this month. (read)",
-          "gap_answer": "have read",
-          "gap_accepts": [
-            "'ve read"
-          ],
-          "quiz_options": [
-            "have read",
-            "have been reading",
-            "read",
-            "am reading"
-          ],
-          "accepts": [
-            "I have read three books this month.",
-            "I've read three books this month."
-          ],
-          "explanation": "**Three books** is how many — a finished result. Use the simple: **have read**.",
-          "explanation_cz": "**Tři knihy** je kolik — hotový výsledek. Použij prostý tvar: **have read**."
-        },
-        {
-          "en": "I have been reading all afternoon.",
-          "cz": "Celé odpoledne čtu.",
-          "gap": "I ____ all afternoon. (read)",
-          "gap_answer": "have been reading",
-          "gap_accepts": [
-            "'ve been reading"
-          ],
-          "quiz_options": [
-            "have been reading",
-            "have read",
-            "read",
-            "am reading"
-          ],
-          "accepts": [
-            "I have been reading all afternoon.",
-            "I've been reading all afternoon."
-          ],
-          "explanation": "**All afternoon** is how long, not how many. Use **have been reading**.",
-          "explanation_cz": "**Celé odpoledne** je jak dlouho, ne kolik. Použij **have been reading**."
-        },
-        {
-          "en": "I have known her for ten years.",
-          "cz": "Znám ji deset let.",
-          "gap": "I ____ her for ten years. (know)",
-          "gap_answer": "have known",
-          "gap_accepts": [
-            "'ve known"
-          ],
-          "quiz_options": [
-            "have known",
-            "have been knowing",
-            "know",
-            "am knowing"
-          ],
-          "accepts": [
-            "I have known her for ten years.",
-            "I've known her for ten years."
-          ],
-          "wrong": "I have been knowing her for ten years.",
-          "explanation": "**know** is a state, so no **-ing**. The duration still needs the present perfect: **have known**.",
-          "explanation_cz": "**know** je stav, takže žádné **-ing**. Délku času ale pořád nese předpřítomný čas: **have known**."
-        },
-        {
-          "en": "We have had this car since 2019.",
-          "cz": "To auto máme od roku 2019.",
-          "gap": "We ____ this car since 2019. (have)",
-          "gap_answer": "have had",
-          "gap_accepts": [
-            "'ve had"
-          ],
-          "quiz_options": [
-            "have had",
-            "have been having",
-            "have",
-            "are having"
-          ],
-          "accepts": [
-            "We have had this car since 2019.",
-            "We've had this car since 2019."
-          ],
-          "wrong": "We have been having this car since 2019.",
-          "explanation": "**have** here means own — a state, so no **-ing**. **have had** + since.",
-          "explanation_cz": "**have** tu znamená vlastnit — je to stav, takže žádné **-ing**. **have had** + since."
-        },
-        {
-          "en": "I am tired. I have been looking at a screen all day.",
-          "cz": "Jsem unavený. Celý den koukám na obrazovku.",
-          "gap": "I ____ at a screen all day. (look)",
-          "gap_answer": "have been looking",
-          "gap_accepts": [
-            "'ve been looking"
-          ],
-          "quiz_options": [
-            "have been looking",
-            "have looked",
-            "look",
-            "am looking"
-          ],
-          "accepts": [
-            "I am tired. I have been looking at a screen all day.",
-            "I'm tired. I've been looking at a screen all day.",
-            "I am tired. I've been looking at a screen all day.",
-            "I'm tired. I have been looking at a screen all day."
-          ],
-          "explanation": "The tiredness now comes from an activity that has run **all day**: **have been** looking.",
-          "explanation_cz": "Únava teď je z činnosti, která běží **celý den**: **have been** looking."
-        },
-        {
-          "en": "It has been snowing since this morning.",
-          "cz": "Od rána sněží.",
-          "gap": "It ____ since this morning. (snow)",
-          "gap_answer": "has been snowing",
-          "gap_accepts": [
-            "'s been snowing"
-          ],
-          "quiz_options": [
-            "has been snowing",
-            "snows",
-            "is snowing",
-            "has snowed"
-          ],
-          "accepts": [
-            "It has been snowing since this morning.",
-            "It's been snowing since this morning."
-          ],
-          "wrong": "It snows since this morning.",
-          "explanation": "**since this morning** — it started then and it is still snowing. **has been snowing**.",
-          "explanation_cz": "**since this morning** — začalo to ráno a pořád sněží. **has been snowing**."
-        }
+ "id": "b1_present_perfect_continuous",
+ "title": "Present perfect continuous",
+ "level": "B1",
+ "tree_node": "b1_present_perfect_continuous",
+ "codex_unit": "G_VP-B1B2-01",
+ "practice": "frames",
+ "quality": "draft",
+ "note": "have/has been + -ing. The Czech trap is the PRESENT tense: Učím se anglicky pět let -> *I learn / *I am learning English for five years. Recycles for/since from a2_for_since (same job, no re-teach). Contrast card + sort drills how many (simple) vs how long (continuous) - B12, because Czech cannot pick that one. State verbs (know / have = own / be / like) take no -ing and have their own card, so the Quiz distractor *have been knowing* is taught first (C11). Use is error-correction (E7). First draft 2026-09-02, core half. 2026-09-04 B1 loop: thickened 14 -> 26 main items (34 with the sort), A9 fixed on the three items whose Czech present alone did not force the perfect (now 'uz' / 'for a week'), C57 recap already present. Every new item carries authored chips (B3), a per-item explanation (D1) and a `wrong` for error-correction Use (E7).",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "sort_cz": false,
+ "bins": [
+  "activity",
+  "result"
+ ],
+ "bin_captions": {
+  "activity": "how long · still going",
+  "result": "how many · finished"
+ },
+ "check": {
+  "sequence": [
+   "sort_bins",
+   "quiz"
+  ]
+ },
+ "intro": {
+  "cards": [
+   {
+    "title": "Present perfect continuous",
+    "title_cz": "Předpřítomný čas průběhový — have/has been + -ing",
+    "svg": "<svg viewBox=\"0 0 520 215\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"130\" x2=\"500\" y2=\"130\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,130 490,125 490,135\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"420\" y1=\"30\" x2=\"420\" y2=\"178\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"420\" y=\"22\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <text x=\"90\" y=\"22\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">five years ago</text>\n  <rect x=\"90\" y=\"76\" width=\"330\" height=\"22\" rx=\"11\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"255\" y=\"68\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">I have been learning</text>\n  <text x=\"255\" y=\"114\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">started then · still going now</text>\n  <circle cx=\"150\" cy=\"130\" r=\"8\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"150\" y=\"152\" font-size=\"13\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I learned</text>\n  <text x=\"150\" y=\"169\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple · finished</text>\n  <rect x=\"404\" y=\"120\" width=\"32\" height=\"20\" rx=\"10\" fill=\"var(--muted, #a0a0a0)\"/>\n  <text x=\"420\" y=\"196\" font-size=\"13\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I am learning</text>\n  <text x=\"420\" y=\"211\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">present continuous · right now</text>\n</svg>",
+    "table": {
+     "caption": "frame",
+     "headers": [
+      "English",
+      "Job"
+     ],
+     "rows": [
+      [
+       "**have been** / **has been** + verb + **-ing**",
+       "started before now, still going now"
+      ],
+      [
+       "**have** / **has** + past participle",
+       "finished, but it counts now"
       ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "I **have been** learning English for five years.",
+      "cz": "Učím se anglicky pět let."
+     },
+     {
+      "en": "She **has been** working here since March.",
+      "cz": "Pracuje tady od března."
+     }
+    ],
+    "points": [
+     "The action is not over. It began in the past and it is still happening."
+    ]
+   },
+   {
+    "title": "Czech says it in the present",
+    "title_cz": "Čeština to říká přítomným časem",
+    "text_first": true,
+    "points": [
+     "Czech uses the **present tense** for something still going on.",
+     "English uses **have been** plus **-ing** instead."
+    ],
+    "table": {
+     "headers": [
+      "Czech",
+      "English"
+     ],
+     "rows": [
+      [
+       "Učím se anglicky pět let. *(present)*",
+       "I **have been** learning English for five years."
+      ],
+      [
+       "Čekáme hodinu. *(present)*",
+       "We **have been** waiting for an hour."
+      ],
+      [
+       "Od rána sněží. *(present)*",
+       "It **has been** snowing since this morning."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "How long? for and since",
+    "title_cz": "Jak dlouho? for a since",
+    "table": {
+     "headers": [
+      "Word",
+      "Takes",
+      "Example"
+     ],
+     "rows": [
+      [
+       "**for**",
+       "a length of time",
+       "**for** five years · **for** an hour · **for** two days"
+      ],
+      [
+       "**since**",
+       "a point in time",
+       "**since** March · **since** 2019 · **since** this morning"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "They **have been** living in Brno **since** last year.",
+      "cz": "Od loňska bydlí v Brně."
+     },
+     {
+      "en": "I **have been** waiting for twenty minutes.",
+      "cz": "Čekám dvacet minut."
+     }
+    ],
+    "points": [
+     "You already know **for** and **since** from the present perfect.",
+     "They do the same job here."
+    ]
+   },
+   {
+    "title": "Questions and negatives",
+    "title_cz": "Otázky a zápor",
+    "table": {
+     "headers": [
+      "",
+      "Shape"
+     ],
+     "rows": [
+      [
+       "Question",
+       "How long **have you** been waiting?"
+      ],
+      [
+       "Question",
+       "How long **has it** been raining?"
+      ],
+      [
+       "Negative",
+       "I **haven't been** sleeping well."
+      ],
+      [
+       "Negative",
+       "He **hasn't been** feeling well since Monday."
+      ]
+     ]
+    },
+    "points": [
+     "In a question the subject goes **between** have and been."
+    ]
+   },
+   {
+    "title": "How many, or how long?",
+    "title_cz": "Kolik, nebo jak dlouho?",
+    "table": {
+     "headers": [
+      "Sentence",
+      "It answers"
+     ],
+     "rows": [
+      [
+       "I **have read** three books this month.",
+       "how many — a finished result"
+      ],
+      [
+       "I have **been reading** all afternoon.",
+       "how long — the activity itself"
+      ],
+      [
+       "She **has written** two emails.",
+       "how many — they are done"
+      ],
+      [
+       "She has **been writing** all morning.",
+       "how long — she may still be writing"
+      ]
+     ]
+    },
+    "points": [
+     "Count the things → the simple. Measure the time → the continuous."
+    ]
+   },
+   {
+    "title": "Verbs that take no -ing",
+    "title_cz": "Slovesa, která nemají -ing",
+    "table": {
+     "headers": [
+      "Verb",
+      "Say"
+     ],
+     "rows": [
+      [
+       "**know**",
+       "I **have known** her for ten years."
+      ],
+      [
+       "**have** (= own)",
+       "We **have had** this car since 2019."
+      ],
+      [
+       "**be**",
+       "He **has been** ill for a week."
+      ],
+      [
+       "**like**",
+       "I **have liked** it since I was a child."
+      ]
+     ]
+    },
+    "points": [
+     "These verbs describe a **state**, not an activity.",
+     "Duration still takes the present perfect, without **-ing**."
+    ]
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "text_first": true,
+    "points": [
+     "The Czech present tense is the trap. Say **have been** + **-ing**."
+    ],
+    "table": {
+     "headers": [
+      "Not this",
+      "Say this"
+     ],
+     "rows": [
+      [
+       "~~I learn English for five years.~~",
+       "I **have been** learning English for five years."
+      ],
+      [
+       "~~I am learning English for five years.~~",
+       "I **have been** learning English for five years."
+      ],
+      [
+       "~~How long you are waiting?~~",
+       "How long **have you** been waiting?"
+      ],
+      [
+       "~~I have been knowing her for ten years.~~",
+       "I **have known** her for ten years."
+      ],
+      [
+       "~~She works here since March.~~",
+       "She **has been** working here since March."
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "ppc_main",
+   "title": "Present perfect continuous · B1",
+   "items": [
+    {
+     "en": "I have been learning English for five years.",
+     "cz": "Učím se anglicky pět let.",
+     "gap": "I ____ English for five years. (learn)",
+     "gap_answer": "have been learning",
+     "gap_accepts": [
+      "'ve been learning"
+     ],
+     "quiz_options": [
+      "have been learning",
+      "learn",
+      "am learning",
+      "have learned"
+     ],
+     "accepts": [
+      "I have been learning English for five years.",
+      "I've been learning English for five years."
+     ],
+     "wrong": "I learn English for five years.",
+     "explanation": "Czech uses the present here. English needs **have been** + **-ing** — it started five years ago and is still going.",
+     "explanation_cz": "Čeština má přítomný čas. Angličtina potřebuje **have been + -ing** — začalo to před pěti lety a pořád to trvá."
     },
     {
-      "id": "ppc_sort",
-      "title": "How long, or how many?",
-      "use": false,
-      "check": {
-        "sequence": [
-          "sort_bins"
-        ]
-      },
-      "items": [
-        {
-          "en": "I have **been waiting** for an hour.",
-          "bin": "activity",
-          "use": false
-        },
-        {
-          "en": "She has **been working** here since March.",
-          "bin": "activity",
-          "use": false
-        },
-        {
-          "en": "It has **been raining** all day.",
-          "bin": "activity",
-          "use": false
-        },
-        {
-          "en": "They have **been living** here since 2019.",
-          "bin": "activity",
-          "use": false
-        },
-        {
-          "en": "I **have read** three books this month.",
-          "bin": "result",
-          "use": false
-        },
-        {
-          "en": "She **has written** two emails.",
-          "bin": "result",
-          "use": false
-        },
-        {
-          "en": "We **have finished** the work.",
-          "bin": "result",
-          "use": false
-        },
-        {
-          "en": "I **have seen** that film twice.",
-          "bin": "result",
-          "use": false
-        }
-      ]
+     "en": "She has been working here since March.",
+     "cz": "Pracuje tady od března.",
+     "gap": "She ____ here since March. (work)",
+     "gap_answer": "has been working",
+     "gap_accepts": [
+      "'s been working"
+     ],
+     "quiz_options": [
+      "has been working",
+      "works",
+      "is working",
+      "has worked"
+     ],
+     "accepts": [
+      "She has been working here since March.",
+      "She's been working here since March."
+     ],
+     "wrong": "She works here since March.",
+     "explanation": "**since** + a point in time (March). Third person takes **has** been working.",
+     "explanation_cz": "**since** + bod v čase (March). Ve třetí osobě **has** been working."
+    },
+    {
+     "en": "We have been waiting for an hour.",
+     "cz": "Čekáme hodinu.",
+     "gap": "We ____ for an hour. (wait)",
+     "gap_answer": "have been waiting",
+     "gap_accepts": [
+      "'ve been waiting"
+     ],
+     "quiz_options": [
+      "have been waiting",
+      "wait",
+      "are waiting",
+      "waited"
+     ],
+     "accepts": [
+      "We have been waiting for an hour.",
+      "We've been waiting for an hour."
+     ],
+     "wrong": "We are waiting for an hour.",
+     "explanation": "**for** + a length of time. The waiting started an hour ago and has not stopped.",
+     "explanation_cz": "**for** + délka času. Čekání začalo před hodinou a ještě neskončilo."
+    },
+    {
+     "en": "They have been living in Brno since last year.",
+     "cz": "Od loňska bydlí v Brně.",
+     "gap": "They ____ in Brno since last year. (live)",
+     "gap_answer": "have been living",
+     "gap_accepts": [
+      "'ve been living"
+     ],
+     "quiz_options": [
+      "have been living",
+      "live",
+      "are living",
+      "lived"
+     ],
+     "accepts": [
+      "They have been living in Brno since last year.",
+      "They've been living in Brno since last year."
+     ],
+     "wrong": "They live in Brno since last year.",
+     "explanation": "**since last year** — it began then and they are still there. **have been living**.",
+     "explanation_cz": "**since last year** — začalo to tehdy a pořád tam bydlí. **have been living**."
+    },
+    {
+     "en": "How long have you been waiting?",
+     "cz": "Jak dlouho čekáš?",
+     "gap": "How long ____? (you / wait)",
+     "gap_answer": "have you been waiting",
+     "quiz_options": [
+      "have you been waiting",
+      "do you wait",
+      "are you waiting",
+      "you have been waiting"
+     ],
+     "accepts": [
+      "How long have you been waiting?"
+     ],
+     "explanation": "Question order: **have** + you + **been** + waiting. The subject sits between **have** and **been**.",
+     "explanation_cz": "Pořádek v otázce: **have** + you + **been** + waiting. Podmět je mezi **have** a **been**."
+    },
+    {
+     "en": "How long has it been raining?",
+     "cz": "Jak dlouho prší?",
+     "gap": "How long ____? (it / rain)",
+     "gap_answer": "has it been raining",
+     "quiz_options": [
+      "has it been raining",
+      "is it raining",
+      "does it rain",
+      "it has been raining"
+     ],
+     "accepts": [
+      "How long has it been raining?"
+     ],
+     "explanation": "**it** is third person, so **has** it been raining. Not *is it raining* — that asks about right now only.",
+     "explanation_cz": "**it** je třetí osoba, tedy **has** it been raining. Ne *is it raining* — to se ptá jen na tuto chvíli."
+    },
+    {
+     "en": "I haven't been sleeping well for a week.",
+     "cz": "Už týden nespím dobře.",
+     "gap": "I ____ well for a week. (not / sleep)",
+     "gap_answer": "haven't been sleeping",
+     "gap_accepts": [
+      "have not been sleeping"
+     ],
+     "quiz_options": [
+      "haven't been sleeping",
+      "don't sleep",
+      "am not sleeping",
+      "didn't sleep"
+     ],
+     "accepts": [
+      "I haven't been sleeping well for a week.",
+      "I have not been sleeping well for a week.",
+      "I've not been sleeping well for a week."
+     ],
+     "explanation": "Negative: **haven't been** + sleeping. The bad sleep started earlier and is still going.",
+     "explanation_cz": "Zápor: **haven't been** + sleeping. Špatné spaní začalo dřív a pořád trvá.",
+     "wrong": "I don't sleep well for a week."
+    },
+    {
+     "en": "He hasn't been feeling well since Monday.",
+     "cz": "Od pondělí se necítí dobře.",
+     "gap": "He ____ well since Monday. (not / feel)",
+     "gap_answer": "hasn't been feeling",
+     "gap_accepts": [
+      "has not been feeling"
+     ],
+     "quiz_options": [
+      "hasn't been feeling",
+      "doesn't feel",
+      "isn't feeling",
+      "didn't feel"
+     ],
+     "accepts": [
+      "He hasn't been feeling well since Monday.",
+      "He has not been feeling well since Monday."
+     ],
+     "wrong": "He doesn't feel well since Monday.",
+     "explanation": "Third person negative: **hasn't been** feeling. **since Monday** marks where it started.",
+     "explanation_cz": "Zápor ve třetí osobě: **hasn't been** feeling. **since Monday** říká, odkdy."
+    },
+    {
+     "en": "I have read three books this month.",
+     "cz": "Tento měsíc jsem přečetl tři knihy.",
+     "gap": "I ____ three books this month. (read)",
+     "gap_answer": "have read",
+     "gap_accepts": [
+      "'ve read"
+     ],
+     "quiz_options": [
+      "have read",
+      "have been reading",
+      "read",
+      "am reading"
+     ],
+     "accepts": [
+      "I have read three books this month.",
+      "I've read three books this month."
+     ],
+     "explanation": "**Three books** is how many — a finished result. Use the simple: **have read**.",
+     "explanation_cz": "**Tři knihy** je kolik — hotový výsledek. Použij prostý tvar: **have read**."
+    },
+    {
+     "en": "I have been reading all afternoon.",
+     "cz": "Celé odpoledne už čtu.",
+     "gap": "I ____ all afternoon. (read)",
+     "gap_answer": "have been reading",
+     "gap_accepts": [
+      "'ve been reading"
+     ],
+     "quiz_options": [
+      "have been reading",
+      "have read",
+      "read",
+      "am reading"
+     ],
+     "accepts": [
+      "I have been reading all afternoon.",
+      "I've been reading all afternoon."
+     ],
+     "explanation": "**All afternoon** is how long, not how many. Use **have been reading**.",
+     "explanation_cz": "**Celé odpoledne** je jak dlouho, ne kolik. Použij **have been reading**."
+    },
+    {
+     "en": "I have known her for ten years.",
+     "cz": "Znám ji deset let.",
+     "gap": "I ____ her for ten years. (know)",
+     "gap_answer": "have known",
+     "gap_accepts": [
+      "'ve known"
+     ],
+     "quiz_options": [
+      "have known",
+      "have been knowing",
+      "know",
+      "am knowing"
+     ],
+     "accepts": [
+      "I have known her for ten years.",
+      "I've known her for ten years."
+     ],
+     "wrong": "I have been knowing her for ten years.",
+     "explanation": "**know** is a state, so no **-ing**. The duration still needs the present perfect: **have known**.",
+     "explanation_cz": "**know** je stav, takže žádné **-ing**. Délku času ale pořád nese předpřítomný čas: **have known**."
+    },
+    {
+     "en": "We have had this car since 2019.",
+     "cz": "To auto máme od roku 2019.",
+     "gap": "We ____ this car since 2019. (have)",
+     "gap_answer": "have had",
+     "gap_accepts": [
+      "'ve had"
+     ],
+     "quiz_options": [
+      "have had",
+      "have been having",
+      "have",
+      "are having"
+     ],
+     "accepts": [
+      "We have had this car since 2019.",
+      "We've had this car since 2019."
+     ],
+     "wrong": "We have been having this car since 2019.",
+     "explanation": "**have** here means own — a state, so no **-ing**. **have had** + since.",
+     "explanation_cz": "**have** tu znamená vlastnit — je to stav, takže žádné **-ing**. **have had** + since."
+    },
+    {
+     "en": "I am tired. I have been looking at a screen all day.",
+     "cz": "Jsem unavený. Celý den už koukám na obrazovku.",
+     "gap": "I ____ at a screen all day. (look)",
+     "gap_answer": "have been looking",
+     "gap_accepts": [
+      "'ve been looking"
+     ],
+     "quiz_options": [
+      "have been looking",
+      "have looked",
+      "look",
+      "am looking"
+     ],
+     "accepts": [
+      "I am tired. I have been looking at a screen all day.",
+      "I'm tired. I've been looking at a screen all day.",
+      "I am tired. I've been looking at a screen all day.",
+      "I'm tired. I have been looking at a screen all day."
+     ],
+     "explanation": "The tiredness now comes from an activity that has run **all day**: **have been** looking.",
+     "explanation_cz": "Únava teď je z činnosti, která běží **celý den**: **have been** looking."
+    },
+    {
+     "en": "It has been snowing since this morning.",
+     "cz": "Od rána sněží.",
+     "gap": "It ____ since this morning. (snow)",
+     "gap_answer": "has been snowing",
+     "gap_accepts": [
+      "'s been snowing"
+     ],
+     "quiz_options": [
+      "has been snowing",
+      "snows",
+      "is snowing",
+      "has snowed"
+     ],
+     "accepts": [
+      "It has been snowing since this morning.",
+      "It's been snowing since this morning."
+     ],
+     "wrong": "It snows since this morning.",
+     "explanation": "**since this morning** — it started then and it is still snowing. **has been snowing**.",
+     "explanation_cz": "**since this morning** — začalo to ráno a pořád sněží. **has been snowing**."
+    },
+    {
+     "en": "I have been waiting for the report since nine.",
+     "cz": "Na tu zprávu čekám od devíti.",
+     "gap": "I ____ for the report since nine. (wait)",
+     "gap_answer": "have been waiting",
+     "gap_accepts": [
+      "'ve been waiting"
+     ],
+     "quiz_options": [
+      "have been waiting",
+      "wait",
+      "am waiting",
+      "have waited"
+     ],
+     "wrong": "I wait for the report since nine.",
+     "explanation": "**since nine** names the start, and the waiting is still going: **have been** + **waiting**.",
+     "explanation_cz": "**since nine** říká, kdy to začalo, a čekání pořád trvá: **have been + waiting**.",
+     "accepts": [
+      "I have been waiting for the report since nine.",
+      "I've been waiting for the report since nine."
+     ]
+    },
+    {
+     "en": "Petr has been studying for the exam for three weeks.",
+     "cz": "Petr se na tu zkoušku učí tři týdny.",
+     "gap": "Petr ____ for the exam for three weeks. (study)",
+     "gap_answer": "has been studying",
+     "gap_accepts": [
+      "'s been studying"
+     ],
+     "quiz_options": [
+      "has been studying",
+      "studies",
+      "is studying",
+      "has studied"
+     ],
+     "wrong": "Petr is studying for the exam for three weeks.",
+     "explanation": "**for three weeks** measures the whole stretch, so **has been studying**, not *is studying*.",
+     "explanation_cz": "**for three weeks** měří celý ten úsek, proto **has been studying**, ne *is studying*.",
+     "accepts": [
+      "Petr has been studying for the exam for three weeks."
+     ]
+    },
+    {
+     "en": "How long have you been learning English?",
+     "cz": "Jak dlouho se učíš anglicky?",
+     "gap": "How long ____ English? (you / learn)",
+     "gap_answer": "have you been learning",
+     "gap_accepts": [
+      "have you been learning"
+     ],
+     "quiz_options": [
+      "have you been learning",
+      "do you learn",
+      "are you learning",
+      "you have been learning"
+     ],
+     "wrong": "How long do you learn English?",
+     "explanation": "**How long** asks for the stretch up to now, so the question is **have you been** + **learning**.",
+     "explanation_cz": "**How long** se ptá na úsek až do teď, proto otázka zní **have you been + learning**.",
+     "accepts": [
+      "How long have you been learning English?"
+     ]
+    },
+    {
+     "en": "How long have you been looking for a flat?",
+     "cz": "Jak dlouho hledáš byt?",
+     "gap": "How long ____ for a flat? (you / look)",
+     "gap_answer": "have you been looking",
+     "gap_accepts": [
+      "have you been looking"
+     ],
+     "quiz_options": [
+      "have you been looking",
+      "do you look",
+      "are you looking",
+      "you have been looking"
+     ],
+     "wrong": "How long are you looking for a flat?",
+     "explanation": "The looking started in the past and has not stopped: **have you been looking**, not *are you looking*.",
+     "explanation_cz": "Hledání začalo v minulosti a neskončilo: **have you been looking**, ne *are you looking*.",
+     "accepts": [
+      "How long have you been looking for a flat?"
+     ]
+    },
+    {
+     "en": "I haven't been playing football since August.",
+     "cz": "Od srpna nehraju fotbal.",
+     "gap": "I ____ football since August. (not / play)",
+     "gap_answer": "haven't been playing",
+     "gap_accepts": [
+      "have not been playing"
+     ],
+     "quiz_options": [
+      "haven't been playing",
+      "don't play",
+      "am not playing",
+      "didn't play"
+     ],
+     "wrong": "I don't play football since August.",
+     "explanation": "**since August** reaches to now, so the negative is **haven't been** + **playing**.",
+     "explanation_cz": "**since August** sahá až do teď, proto zápor zní **haven't been + playing**.",
+     "accepts": [
+      "I haven't been playing football since August.",
+      "I have not been playing football since August."
+     ]
+    },
+    {
+     "en": "We haven't been studying much this week.",
+     "cz": "Tenhle týden se moc neučíme.",
+     "gap": "We ____ much this week. (not / study)",
+     "gap_answer": "haven't been studying",
+     "gap_accepts": [
+      "have not been studying"
+     ],
+     "quiz_options": [
+      "haven't been studying",
+      "don't study",
+      "aren't studying",
+      "didn't study"
+     ],
+     "wrong": "We don't study much this week.",
+     "explanation": "**this week** is still running, so **haven't been studying** — the week is not closed.",
+     "explanation_cz": "**this week** pořád běží, proto **haven't been studying** — týden není uzavřený.",
+     "accepts": [
+      "We haven't been studying much this week.",
+      "We have not been studying much this week."
+     ]
+    },
+    {
+     "en": "I have written three letters today.",
+     "cz": "Dnes jsem napsal tři dopisy.",
+     "gap": "I ____ three letters today. (write)",
+     "gap_answer": "have written",
+     "gap_accepts": [
+      "'ve written"
+     ],
+     "quiz_options": [
+      "have written",
+      "have been writing",
+      "write",
+      "am writing"
+     ],
+     "wrong": "I have been writing three letters today.",
+     "explanation": "**three** counts finished letters, so the simple form: **have written**. The continuous cannot count.",
+     "explanation_cz": "**three** počítá hotové dopisy, proto prostý tvar: **have written**. Průběhový počítat neumí.",
+     "accepts": [
+      "I have written three letters today.",
+      "I've written three letters today."
+     ]
+    },
+    {
+     "en": "I have been writing the letter all morning.",
+     "cz": "Ten dopis píšu už celé dopoledne.",
+     "gap": "I ____ the letter all morning. (write)",
+     "gap_answer": "have been writing",
+     "gap_accepts": [
+      "'ve been writing"
+     ],
+     "quiz_options": [
+      "have been writing",
+      "have written",
+      "write",
+      "am writing"
+     ],
+     "wrong": "I have written the letter all morning.",
+     "explanation": "**all morning** measures how long, not how many, so **have been writing**.",
+     "explanation_cz": "**all morning** měří jak dlouho, ne kolik, proto **have been writing**.",
+     "accepts": [
+      "I have been writing the letter all morning.",
+      "I've been writing the letter all morning."
+     ]
+    },
+    {
+     "en": "I have liked this music since I was a child.",
+     "cz": "Tuhle hudbu mám rád od dětství.",
+     "gap": "I ____ this music since I was a child. (like)",
+     "gap_answer": "have liked",
+     "gap_accepts": [
+      "'ve liked"
+     ],
+     "quiz_options": [
+      "have liked",
+      "have been liking",
+      "like",
+      "am liking"
+     ],
+     "wrong": "I have been liking this music since I was a child.",
+     "explanation": "**like** is a state verb: it takes no **-ing**, even over a long stretch. **have liked**.",
+     "explanation_cz": "**like** je stavové sloveso: nebere **-ing**, ani přes dlouhý úsek. **have liked**.",
+     "accepts": [
+      "I have liked this music since I was a child.",
+      "I've liked this music since I was a child."
+     ]
+    },
+    {
+     "en": "I have wanted this job for a year.",
+     "cz": "Tuhle práci chci už rok.",
+     "gap": "I ____ this job for a year. (want)",
+     "gap_answer": "have wanted",
+     "gap_accepts": [
+      "'ve wanted"
+     ],
+     "quiz_options": [
+      "have wanted",
+      "have been wanting",
+      "want",
+      "am wanting"
+     ],
+     "wrong": "I have been wanting this job for a year.",
+     "explanation": "**want** is a state verb, like **know** and **like**: no **-ing**. **have wanted**.",
+     "explanation_cz": "**want** je stavové sloveso, jako **know** a **like**: žádné **-ing**. **have wanted**.",
+     "accepts": [
+      "I have wanted this job for a year.",
+      "I've wanted this job for a year."
+     ]
+    },
+    {
+     "en": "I have been teaching the course since September.",
+     "cz": "Ten kurz učím od září.",
+     "gap": "I ____ the course since September. (teach)",
+     "gap_answer": "have been teaching",
+     "gap_accepts": [
+      "'ve been teaching"
+     ],
+     "quiz_options": [
+      "have been teaching",
+      "teach",
+      "am teaching",
+      "have taught"
+     ],
+     "wrong": "I teach the course since September.",
+     "explanation": "Czech uses the present. English needs **have been** + **teaching** with **since September**.",
+     "explanation_cz": "Čeština má přítomný čas. Angličtina potřebuje **have been + teaching** se **since September**.",
+     "accepts": [
+      "I have been teaching the course since September.",
+      "I've been teaching the course since September."
+     ]
+    },
+    {
+     "en": "She hasn't eaten anything since this morning.",
+     "cz": "Od dnešního rána nic nesnědla.",
+     "gap": "She ____ anything since this morning. (not / eat)",
+     "gap_answer": "hasn't eaten",
+     "gap_accepts": [
+      "has not eaten"
+     ],
+     "quiz_options": [
+      "hasn't eaten",
+      "doesn't eat",
+      "isn't eating",
+      "didn't eat"
+     ],
+     "wrong": "She doesn't eat anything since this morning.",
+     "explanation": "**anything** counts, not measures, so the simple form: **hasn't eaten**.",
+     "explanation_cz": "**anything** počítá, neměří, proto prostý tvar: **hasn't eaten**.",
+     "accepts": [
+      "She hasn't eaten anything since this morning.",
+      "She has not eaten anything since this morning."
+     ]
     }
-  ]
+   ]
+  },
+  {
+   "id": "ppc_sort",
+   "title": "How long, or how many?",
+   "use": false,
+   "check": {
+    "sequence": [
+     "sort_bins"
+    ]
+   },
+   "items": [
+    {
+     "en": "I have **been waiting** for an hour.",
+     "bin": "activity",
+     "use": false
+    },
+    {
+     "en": "She has **been working** here since March.",
+     "bin": "activity",
+     "use": false
+    },
+    {
+     "en": "It has **been raining** all day.",
+     "bin": "activity",
+     "use": false
+    },
+    {
+     "en": "They have **been living** here since 2019.",
+     "bin": "activity",
+     "use": false
+    },
+    {
+     "en": "I **have read** three books this month.",
+     "bin": "result",
+     "use": false
+    },
+    {
+     "en": "She **has written** two emails.",
+     "bin": "result",
+     "use": false
+    },
+    {
+     "en": "We **have finished** the work.",
+     "bin": "result",
+     "use": false
+    },
+    {
+     "en": "I **have seen** that film twice.",
+     "bin": "result",
+     "use": false
+    }
+   ]
+  }
+ ]
 }
