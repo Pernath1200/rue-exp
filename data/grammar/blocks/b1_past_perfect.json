@@ -6,7 +6,7 @@
  "codex_unit": "G_VP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "had + past participle for the EARLIER of two past events. Czech has one past tense, so the Czech never picks the form - every gap carries a (lemma) cue per B11, James dropdown 2026-09-02. Scope: core sequencing + already/just/never/by the time + the over-correction guard (2 items whose answer is past simple, because Czech learners under-use this form and then over-use it) + a backshift card and one item, since the same form is what reported speech lands on (C47 shape: direct sentence, reported sentence, tense named beside each). 'd taught with the would warning - I'd + participle is had, I'd + plain verb is would (b1_used_to). Check is quiz only: a sort into earlier/later is solvable by reading 'had' off the chip, which is the B15 toll. Use is error-correction (E7); the over-correction items carry the *had made / *had walked errors. Past participle is pretaught at a2_present_perfect. First draft 2026-09-02, core half - thicken after smoke.",
+ "note": "had + past participle for the EARLIER of two past events. Czech has one past tense, so the Czech never picks the form - every gap carries a (lemma) cue per B11, James dropdown 2026-09-02. Scope: core sequencing + already/just/never/by the time + the over-correction guard (3 items whose answer is past simple, because Czech learners under-use this form and then over-use it) + a backshift card and three items, since the same form is what reported speech lands on (C47 shape: direct sentence, reported sentence, tense named beside each). 'd taught with the would warning - I'd + participle is had, I'd + plain verb is would (b1_used_to). Check is quiz only: a sort into earlier/later is solvable by reading 'had' off the chip, which is the B15 toll. Use is error-correction (E7); the over-correction items carry the *had made / *had walked errors. Past participle is pretaught at a2_present_perfect. Thickened 16 -> 28 items 2026-09-04 (agent loop). Rules applied this pass: A8 contraction twins closed over every accepts list; A7 everyone/someone/anyone added to the senses.json synonym map; C9 walltext cut on cards 0/1/5/6; C11 the negative and the question now have an intro card (card 4) instead of appearing only in the bank; F3 recognise swapped for a taught verb; B4/B6 the unit's own error (bare past simple, and had + past simple form) is on every option list. A4 `the` in narrative and the vocablevel candidate are queued in DECISIONS.md.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -39,12 +39,12 @@
     },
     "examples": [
      {
-      "en": "When I arrived, the film **had** already started.",
-      "cz": "Když jsem přišel, film už začal."
+      "en": "The film **had** already started.",
+      "cz": "Film už začal."
      },
      {
-      "en": "I couldn't get in because I **had** lost my key.",
-      "cz": "Nemohl jsem se dostat dovnitř, protože jsem ztratil klíč."
+      "en": "I **had** lost my key.",
+      "cz": "Ztratil jsem klíč."
      }
     ],
     "points": [
@@ -56,7 +56,8 @@
     "title_cz": "Čeština má jen jeden minulý čas",
     "text_first": true,
     "points": [
-     "Czech uses the same past form for both events, so nothing in the Czech tells you which came first. English marks it with **had**."
+     "Czech uses the same past form for both events.",
+     "Nothing in the Czech says which came first. English says it with **had**."
     ],
     "table": {
      "headers": [
@@ -73,8 +74,8 @@
        "The train **had** left before we got there."
       ],
       [
-       "Nepoznal jsem ji, **ostříhala** si vlasy.",
-       "I didn't recognise her — she **had** cut her hair."
+       "Nevěděl jsem, že je to ona — **ostříhala** si vlasy.",
+       "I didn't know it was her — she **had** cut her hair."
       ]
      ]
     }
@@ -144,29 +145,34 @@
     ]
    },
    {
-    "title": "'d is had here",
-    "title_cz": "'d je tady had, ne would",
+    "title": "had — short, negative, question",
+    "title_cz": "had — zkráceně, zápor, otázka",
     "table": {
      "headers": [
-      "Short",
-      "Full",
-      "Means"
+      "Shape",
+      "Example",
+      "Note"
      ],
      "rows": [
       [
-       "I**'d** finished",
-       "I **had** finished",
-       "past perfect"
+       "short **'d**",
+       "I**'d** finished my work",
+       "the same as I **had** finished"
       ],
       [
-       "She**'d** left",
-       "She **had** left",
-       "past perfect"
+       "negative",
+       "It **hadn't** opened yet",
+       "**had not** + participle"
       ],
       [
+       "question",
+       "**Had** you ever been there?",
+       "**had** goes before the person"
+      ],
+      [
+       "**'d** + plain verb",
        "I**'d** like a coffee",
-       "I **would** like a coffee",
-       "a wish or a request — a different word"
+       "this one is **would** — a different word"
       ]
      ]
     },
@@ -195,7 +201,7 @@
      ]
     },
     "points": [
-     "Reporting moves the verb one step back in time, and past perfect is where it lands."
+     "Reporting moves the verb one step back — past perfect is where it lands."
     ]
    },
    {
@@ -203,7 +209,7 @@
     "title_cz": "Časté chyby",
     "text_first": true,
     "points": [
-     "Two traps: leaving **had** out, and putting it in when the events are already in order."
+     "Two traps: leaving **had** out, and using it when the events are in order."
     ],
     "table": {
      "headers": [
@@ -246,6 +252,9 @@
      "cz": "Když jsem přišel, film už začal.",
      "gap": "When I arrived, the film ____. (already / start)",
      "gap_answer": "had already started",
+     "gap_accepts": [
+      "'d already started"
+     ],
      "quiz_options": [
       "had already started",
       "already started",
@@ -264,14 +273,18 @@
      "cz": "Do toho dne nikdy neviděla moře.",
      "gap": "She ____ the sea before that day. (never / see)",
      "gap_answer": "had never seen",
+     "gap_accepts": [
+      "'d never seen"
+     ],
      "quiz_options": [
       "had never seen",
       "never saw",
       "has never seen",
-      "was never seeing"
+      "had never saw"
      ],
      "accepts": [
-      "She had never seen the sea before that day."
+      "She had never seen the sea before that day.",
+      "She'd never seen the sea before that day."
      ],
      "wrong": "She had never saw the sea before that day.",
      "explanation": "**never** sits between had and the participle: had **never** seen. The participle of see is **seen**.",
@@ -293,7 +306,9 @@
      ],
      "accepts": [
       "I couldn't get in because I had lost my key.",
-      "I could not get in because I had lost my key."
+      "I could not get in because I had lost my key.",
+      "I could not get in because I'd lost my key.",
+      "I couldn't get in because I'd lost my key."
      ],
      "wrong": "I couldn't get in because I lost my key.",
      "explanation": "Losing the key happened **before** the locked door, so it takes **had** lost.",
@@ -335,16 +350,21 @@
       "was just finishing"
      ],
      "accepts": [
-      "He had just finished when I called."
+      "He had just finished when I called.",
+      "He'd just finished when I called."
      ],
-     "explanation": "**just** goes between had and the participle: had **just** finished.",
-     "explanation_cz": "**just** patří mezi had a příčestí: had **just** finished."
+     "wrong": "He has just finished when I called.",
+     "explanation": "**just** goes between had and the participle: had **just** finished. *when I called* is past, so *has* cannot stand.",
+     "explanation_cz": "**just** patří mezi had a příčestí: had **just** finished. *when I called* je minulost, takže *has* tam nemůže být."
     },
     {
      "en": "The room was empty. Everyone had gone home.",
      "cz": "Místnost byla prázdná. Všichni šli domů.",
      "gap": "The room was empty. Everyone ____ home. (go)",
      "gap_answer": "had gone",
+     "gap_accepts": [
+      "'d gone"
+     ],
      "quiz_options": [
       "had gone",
       "went",
@@ -359,9 +379,9 @@
      "explanation_cz": "Prázdná místnost je pozdější fakt; odchod byl dřív, proto **had** gone."
     },
     {
-     "en": "I didn't recognise her because she had cut her hair.",
-     "cz": "Nepoznal jsem ji, protože si ostříhala vlasy.",
-     "gap": "I didn't recognise her because she ____ her hair. (cut)",
+     "en": "I didn't know it was her because she had cut her hair.",
+     "cz": "Nevěděl jsem, že je to ona, protože si ostříhala vlasy.",
+     "gap": "I didn't know it was her because she ____ her hair. (cut)",
      "gap_answer": "had cut",
      "gap_accepts": [
       "'d cut"
@@ -373,9 +393,12 @@
       "was cutting"
      ],
      "accepts": [
-      "I didn't recognise her because she had cut her hair."
+      "I didn't know it was her because she had cut her hair.",
+      "I did not know it was her because she had cut her hair.",
+      "I did not know it was her because she'd cut her hair.",
+      "I didn't know it was her because she'd cut her hair."
      ],
-     "wrong": "I didn't recognise her because she cut her hair.",
+     "wrong": "I didn't know it was her because she cut her hair.",
      "explanation": "The haircut came **before** the meeting: **had** cut. The participle of cut is **cut**.",
      "explanation_cz": "Účes byl **dřív** než setkání: **had** cut. Příčestí od cut je **cut**."
     },
@@ -391,13 +414,15 @@
       "had already eaten",
       "already ate",
       "have already eaten",
-      "were already eating"
+      "had already ate"
      ],
      "accepts": [
-      "We had already eaten when they arrived."
+      "We had already eaten when they arrived.",
+      "We'd already eaten when they arrived."
      ],
-     "explanation": "Dinner finished **before** they arrived. Participle of eat is **eaten**.",
-     "explanation_cz": "Večeře skončila **dřív**, než přišli. Příčestí od eat je **eaten**."
+     "wrong": "We have already eaten when they arrived.",
+     "explanation": "Dinner finished **before** they arrived, and *arrived* is past — so **had**, not have. Participle of eat is **eaten**.",
+     "explanation_cz": "Večeře skončila **dřív**, než přišli, a *arrived* je minulý čas — proto **had**, ne have. Příčestí od eat je **eaten**."
     },
     {
      "en": "I got up and made coffee.",
@@ -453,8 +478,9 @@
       "I had finished my work, so I went home.",
       "I'd finished my work, so I went home."
      ],
-     "explanation": "The work finished **before** going home. Short form: **I'd** finished.",
-     "explanation_cz": "Práce skončila **dřív** než cesta domů. Zkráceně: **I'd** finished."
+     "wrong": "I have finished my work, so I went home.",
+     "explanation": "The work finished **before** going home, and *went* is past, so **had**. Short form: **I'd** finished.",
+     "explanation_cz": "Práce skončila **dřív** než cesta domů a *went* je minulý čas, proto **had**. Zkráceně: **I'd** finished."
     },
     {
      "en": "By the time she called, I had gone to bed.",
@@ -471,14 +497,16 @@
       "was going"
      ],
      "accepts": [
-      "By the time she called, I had gone to bed."
+      "By the time she called, I had gone to bed.",
+      "By the time she called, I'd gone to bed."
      ],
+     "wrong": "By the time she called, I went to bed.",
      "explanation": "**By the time** she called, bed was already done: **had** gone.",
      "explanation_cz": "**By the time** zavolala, spaní už bylo hotové: **had** gone."
     },
     {
      "en": "He said he had finished the report.",
-     "cz": "Řekl, že dodělal zprávu.",
+     "cz": "Řekl, že tu zprávu dodělal.",
      "gap": "He said he ____ the report. (finish)",
      "gap_answer": "had finished",
      "gap_accepts": [
@@ -491,7 +519,8 @@
       "was finishing"
      ],
      "accepts": [
-      "He said he had finished the report."
+      "He said he had finished the report.",
+      "He said he'd finished the report."
      ],
      "wrong": "He said he has finished the report.",
      "explanation": "Reporting his words moves the verb one step back: *I have finished* becomes he **had** finished.",
@@ -508,11 +537,12 @@
      "quiz_options": [
       "had never been",
       "never were",
-      "have never been",
-      "were never"
+      "has never been",
+      "had never was"
      ],
      "accepts": [
-      "They had never been to Prague before."
+      "They had never been to Prague before.",
+      "They'd never been to Prague before."
      ],
      "explanation": "**never** after had, and the participle of be is **been**.",
      "explanation_cz": "**never** za had a příčestí od be je **been**."
@@ -535,6 +565,7 @@
       "The shop was closed. It hadn't opened yet.",
       "The shop was closed. It had not opened yet."
      ],
+     "wrong": "The shop was closed. It didn't open yet.",
      "explanation": "Negative: **hadn't** + opened. The closed shop is the later fact.",
      "explanation_cz": "Zápor: **hadn't** + opened. Zavřený obchod je pozdější fakt."
     },
@@ -550,7 +581,7 @@
       "had broken",
       "broke",
       "has broken",
-      "was breaking"
+      "had broke"
      ],
      "accepts": [
       "When we got home, someone had broken the window."
@@ -558,6 +589,265 @@
      "wrong": "When we got home, someone broke the window.",
      "explanation": "The window went **before** we got home. Participle of break is **broken**.",
      "explanation_cz": "Okno se rozbilo **dřív**, než jsme přišli. Příčestí od break je **broken**."
+    },
+    {
+     "en": "He had left his phone at home, so he couldn't call me.",
+     "cz": "Nechal si telefon doma, takže mi nemohl zavolat.",
+     "gap": "He ____ his phone at home, so he couldn't call me. (leave)",
+     "gap_answer": "had left",
+     "gap_accepts": [
+      "'d left"
+     ],
+     "quiz_options": [
+      "had left",
+      "left",
+      "has left",
+      "was leaving"
+     ],
+     "accepts": [
+      "He had left his phone at home, so he couldn't call me.",
+      "He had left his phone at home, so he could not call me.",
+      "He'd left his phone at home, so he could not call me.",
+      "He'd left his phone at home, so he couldn't call me."
+     ],
+     "wrong": "He has left his phone at home, so he couldn't call me.",
+     "explanation": "The phone stayed at home **before** he tried to call, and *couldn't* is past — so **had** left.",
+     "explanation_cz": "Telefon zůstal doma **dřív**, než chtěl volat, a *couldn't* je minulý čas — proto **had** left."
+    },
+    {
+     "en": "I couldn't pay because I had forgotten my wallet.",
+     "cz": "Nemohl jsem zaplatit, protože jsem zapomněl peněženku.",
+     "gap": "I couldn't pay because I ____ my wallet. (forget)",
+     "gap_answer": "had forgotten",
+     "gap_accepts": [
+      "'d forgotten"
+     ],
+     "quiz_options": [
+      "had forgotten",
+      "forgot",
+      "have forgotten",
+      "had forgot"
+     ],
+     "accepts": [
+      "I couldn't pay because I had forgotten my wallet.",
+      "I could not pay because I had forgotten my wallet.",
+      "I could not pay because I'd forgotten my wallet.",
+      "I couldn't pay because I'd forgotten my wallet."
+     ],
+     "wrong": "I couldn't pay because I had forgot my wallet.",
+     "explanation": "The participle of forget is **forgotten**, not forgot: had **forgotten**.",
+     "explanation_cz": "Příčestí od forget je **forgotten**, ne forgot: had **forgotten**."
+    },
+    {
+     "en": "We hadn't eaten all day, so we were very hungry.",
+     "cz": "Celý den jsme nejedli, takže jsme měli velký hlad.",
+     "gap": "We ____ all day, so we were very hungry. (not / eat)",
+     "gap_answer": "hadn't eaten",
+     "gap_accepts": [
+      "had not eaten"
+     ],
+     "quiz_options": [
+      "hadn't eaten",
+      "didn't eat",
+      "haven't eaten",
+      "hadn't ate"
+     ],
+     "accepts": [
+      "We hadn't eaten all day, so we were very hungry.",
+      "We had not eaten all day, so we were very hungry."
+     ],
+     "wrong": "We haven't eaten all day, so we were very hungry.",
+     "explanation": "The hunger is the later fact and *were* is past, so the empty day takes **hadn't** eaten.",
+     "explanation_cz": "Hlad je pozdější fakt a *were* je minulý čas, takže ten den bez jídla má **hadn't** eaten."
+    },
+    {
+     "en": "Had you ever been to London before?",
+     "cz": "Byl jsi předtím někdy v Londýně?",
+     "gap": "____ you ever been to London before? (have)",
+     "gap_answer": "Had",
+     "quiz_options": [
+      "Had",
+      "Did",
+      "Have",
+      "Were"
+     ],
+     "accepts": [
+      "Had you ever been to London before?"
+     ],
+     "wrong": "Did you ever been to London before?",
+     "explanation": "In a question **had** goes before the person: **Had** you been…? *Did* cannot stand in front of a participle.",
+     "explanation_cz": "V otázce jde **had** před osobu: **Had** you been…? *Did* nemůže stát před příčestím."
+    },
+    {
+     "en": "She said she had seen that film twice.",
+     "cz": "Řekla, že ten film viděla dvakrát.",
+     "gap": "She said she ____ that film twice. (see)",
+     "gap_answer": "had seen",
+     "gap_accepts": [
+      "'d seen"
+     ],
+     "quiz_options": [
+      "had seen",
+      "has seen",
+      "saw",
+      "had saw"
+     ],
+     "accepts": [
+      "She said she had seen that film twice.",
+      "She said she'd seen that film twice."
+     ],
+     "wrong": "She said she has seen that film twice.",
+     "explanation": "*She said* is past, so what she said moves back one step: **had** seen.",
+     "explanation_cz": "*She said* je minulý čas, takže i to, co řekla, jde o krok zpět: **had** seen."
+    },
+    {
+     "en": "She said she hadn't sent the email.",
+     "cz": "Řekla, že ten e-mail neposlala.",
+     "gap": "She said she ____ the email. (not / send)",
+     "gap_answer": "hadn't sent",
+     "gap_accepts": [
+      "had not sent"
+     ],
+     "quiz_options": [
+      "hadn't sent",
+      "hasn't sent",
+      "didn't sent",
+      "wasn't sending"
+     ],
+     "accepts": [
+      "She said she hadn't sent the email.",
+      "She said she had not sent the email."
+     ],
+     "wrong": "She said she hasn't sent the email.",
+     "explanation": "Her words were *I haven't sent it*; after *said* that becomes **hadn't** sent.",
+     "explanation_cz": "Její slova byla *I haven't sent it*; po *said* se z toho stane **hadn't** sent."
+    },
+    {
+     "en": "After I had finished my homework, I watched television.",
+     "cz": "Když jsem dodělal úkoly, díval jsem se na televizi.",
+     "gap": "After I ____ my homework, I watched television. (finish)",
+     "gap_answer": "had finished",
+     "gap_accepts": [
+      "'d finished"
+     ],
+     "quiz_options": [
+      "had finished",
+      "have finished",
+      "was finishing",
+      "had finish"
+     ],
+     "accepts": [
+      "After I had finished my homework, I watched television.",
+      "After I'd finished my homework, I watched television."
+     ],
+     "wrong": "After I have finished my homework, I watched television.",
+     "explanation": "**After** marks the earlier event, and *watched* is past — so the homework takes **had** finished.",
+     "explanation_cz": "**After** označuje dřívější děj a *watched* je minulý čas — úkoly tedy mají **had** finished."
+    },
+    {
+     "en": "It was cold because I had opened a window.",
+     "cz": "Byla zima, protože jsem otevřel okno.",
+     "gap": "It was cold because I ____ a window. (open)",
+     "gap_answer": "had opened",
+     "gap_accepts": [
+      "'d opened"
+     ],
+     "quiz_options": [
+      "had opened",
+      "opened",
+      "have opened",
+      "was opening"
+     ],
+     "accepts": [
+      "It was cold because I had opened a window.",
+      "It was cold because I'd opened a window."
+     ],
+     "wrong": "It was cold because I have opened a window.",
+     "explanation": "The window came first and *was* is past, so it takes **had** opened.",
+     "explanation_cz": "Okno bylo dřív a *was* je minulý čas, takže má **had** opened."
+    },
+    {
+     "en": "I had already paid when he offered to help.",
+     "cz": "Už jsem zaplatil, když nabídl, že pomůže.",
+     "gap": "I ____ when he offered to help. (already / pay)",
+     "gap_answer": "had already paid",
+     "gap_accepts": [
+      "'d already paid"
+     ],
+     "quiz_options": [
+      "had already paid",
+      "already paid",
+      "have already paid",
+      "had already pay"
+     ],
+     "accepts": [
+      "I had already paid when he offered to help.",
+      "I'd already paid when he offered to help."
+     ],
+     "wrong": "I have already paid when he offered to help.",
+     "explanation": "**already** sits after had, and *offered* is past — so **had already** paid.",
+     "explanation_cz": "**already** stojí za had a *offered* je minulý čas — proto **had already** paid."
+    },
+    {
+     "en": "She had studied English for two years before she moved to Brno.",
+     "cz": "Studovala angličtinu dva roky, než se přestěhovala do Brna.",
+     "gap": "She ____ English for two years before she moved to Brno. (study)",
+     "gap_answer": "had studied",
+     "gap_accepts": [
+      "'d studied"
+     ],
+     "quiz_options": [
+      "had studied",
+      "studied",
+      "has studied",
+      "was studying"
+     ],
+     "accepts": [
+      "She had studied English for two years before she moved to Brno.",
+      "She'd studied English for two years before she moved to Brno."
+     ],
+     "wrong": "She has studied English for two years before she moved to Brno.",
+     "explanation": "**before she moved** puts the studying earlier, and both are finished: **had** studied.",
+     "explanation_cz": "**before she moved** klade studium dřív a obojí je uzavřené: **had** studied."
+    },
+    {
+     "en": "Our children had gone to bed before we got home.",
+     "cz": "Naše děti šly spát, než jsme přišli domů.",
+     "gap": "Our children ____ to bed before we got home. (go)",
+     "gap_answer": "had gone",
+     "gap_accepts": [
+      "'d gone"
+     ],
+     "quiz_options": [
+      "had gone",
+      "went",
+      "have gone",
+      "had went"
+     ],
+     "accepts": [
+      "Our children had gone to bed before we got home."
+     ],
+     "wrong": "Our children had went to bed before we got home.",
+     "explanation": "The participle of go is **gone**, not went: had **gone**.",
+     "explanation_cz": "Příčestí od go je **gone**, ne went: had **gone**."
+    },
+    {
+     "en": "He put on his coat and left.",
+     "cz": "Oblékl si kabát a odešel.",
+     "gap": "He put on his coat and ____. (leave)",
+     "gap_answer": "left",
+     "quiz_options": [
+      "left",
+      "had left",
+      "has left",
+      "was leaving"
+     ],
+     "accepts": [
+      "He put on his coat and left."
+     ],
+     "wrong": "He put on his coat and had left.",
+     "explanation": "Coat first, then out — told **in order**, so past simple twice. **had** would put the leaving earlier, which is false.",
+     "explanation_cz": "Nejdřív kabát, pak ven — je to **v pořadí**, takže dvakrát minulý čas. **had** by kladlo odchod dřív, což není pravda."
     }
    ]
   }

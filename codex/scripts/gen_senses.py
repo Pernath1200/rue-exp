@@ -70,6 +70,14 @@ SYNONYM_GROUPS = [
     ["biscuit", "cookie"],
     ["timetable", "schedule"],
     ["tv", "television"],
+    # A7 free English choices — interchangeable anywhere, and the class the
+    # rule was written from (`everyone` rejected for `everybody`). lint.py
+    # FREE_PAIRS flags any of these that is missing from this map.
+    # `no one` is two words and cannot be canonicalised word-by-word, so
+    # `nobody` has no partner here — keep it out of banks that grade strictly.
+    ["everyone", "everybody"],
+    ["someone", "somebody"],
+    ["anyone", "anybody"],
 ]
 
 
