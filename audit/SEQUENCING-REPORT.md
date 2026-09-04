@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**808 unknown word types** across 103 live units (of 190).
+**805 unknown word types** across 103 live units (of 190).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -100,10 +100,10 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b2_present_perfect_continuous** (B2 grammar): kilometres×2, whole, dust, everywhere, quiz, halfway, episode, inbox, ticked, mess
 - **b2_past_perfect** (B2 grammar): reached, recognise, thieves
 - **b2_delexical_collocations** (B2 vocab): local, finally
-- **b2_second_conditional** (B2 grammar): practised×2, lottery, rich, happen, rather, truth, shocked, pizza
+- **b2_second_conditional** (B2 grammar): practised×2, lottery, rich, happen, truth, shocked, pizza
 - **b2_third_conditional** (B2 grammar): practised, truth, sunrise, pizza, invoice, dawn
 - **b2_false_friends** (B2 vocab): local
 - **b2_fixed_phrases** (B2 vocab): positive, invitation
 - **b2_clear_claims** (B2 grammar): social×2, negative, impact, teenagers, hate, ruins, sum, ban, anymore, conclusion, exist
-- **b2_word_formation** (B2 grammar): final×3, without×2, injured, committee, almost, rule, alone, incredibly, brilliantly, bridges, rally, trade, attempt, impressive, shocked, excellent, bottom, outside, terribly, lunchtime, rather, resignation, eclipse, injection, sides, reached, welcomed, local, finally
+- **b2_word_formation** (B2 grammar): final×3, without×2, injured, committee, rule, alone, incredibly, brilliantly, bridges, rally, trade, attempt, impressive, shocked, excellent, bottom, outside, terribly, lunchtime, resignation, eclipse, injection, sides, reached, welcomed, local, finally
 - **c1_word_formation** (C1 grammar): final×2, until×2, local×2, led×2, blamed×2, several×2, region, worldwide, involvement, midnight, obvious, instant, genetic, spread, crew, measured, trench, diving, grip, measure, doorway, cruised, kilometres, pure, unmarked, shelter, survives, donors, sudden, guarded, struck, astonishing, dismissed, case, religious, exile, shook, silent, inquiry, safety, campaign, aims, within, decade, roadworks, drummed, scandal, exposed, ministry, hikers, minor, lifelong, feud, paused, overnight, fleet, volunteering, grant, marine, nations, certain, shot, viral, among, thrived, firms, boilers, dates, ruined, outbreak, worsened, tolerate, corridors, memo, act, false, immediate, auditors, forever, cigarettes, plot, coincidences, proved
