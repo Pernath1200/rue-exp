@@ -95,3 +95,9 @@ Format:
 ## Answered
 
 *(empty)*
+
+### Process · two runs of this routine work the same unit
+**Q:** Two runs of the B1 loop were live at once on `b1/auto` on 2026-09-04 and both picked the same next unit twice — `b1_cause_concession` (10→24 and 10→25) and `b1_degree_adverbs` (12→27 and 12→36). The loop picks from `codex/INSPECTED.md`, which an agent may never tick, so a finished unit still looks unstarted to the other run. How should a second run know?
+**Options:** a) leave it — the loser drops its commit, and the cost is one unit of wasted work each time / b) have each run read `git log` on `b1/auto` first and skip any unit named in a commit subject there / c) a claim file (`codex/IN-PROGRESS.md`) that a run appends to before starting a unit and clears when it pushes.
+**Default if unanswered:** b, from the next run on — it needs no new file and no new rule, and the branch log is already the record of what is done. This run adopted it late (it started checking the log before each unit after the first collision). On `b1_cause_concession` the peer's version had landed first and this run dropped its own; on `b1_degree_adverbs` the two were **not** equivalent — the peer's 27 items drilled only the six words already in the pack, so this run kept the peer's items and folded the B1-PLAN work (so/such + the parked cluster) on top rather than discarding either.
+→ (James: your answer here)
