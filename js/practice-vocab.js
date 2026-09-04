@@ -665,11 +665,17 @@ export function typeLetterClue(answer) {
   return `${pat} · ${letters} letter${letters === 1 ? "" : "s"}`;
 }
 
-/** Use rewrite clue: r______ (7). Hidden target, Type-style length. */
+/** Use rewrite clue: r______ (7), or c____ o__ (5, 3) for a multi-word lemma.
+ * James, b1_travel 2026-09-04: "check out" rendered as c________ (9) — one
+ * blank of nine letters, so the clue said "one word" about a phrasal verb.
+ * 128 rewrite items across the B1 leaves have a multi-word lemma. */
 function rewriteLetterClue(lemma) {
   const w = lemmaBare(lemma);
   if (w.length < 2) return "";
-  return `${w[0]}${"_".repeat(w.length - 1)} (${w.length})`;
+  const words = w.split(/\s+/).filter(Boolean);
+  const mask = (x) => (x.length < 2 ? x : `${x[0]}${"_".repeat(x.length - 1)}`);
+  if (words.length < 2) return `${mask(w)} (${w.length})`;
+  return `${words.map(mask).join(" ")} (${words.map((x) => x.length).join(", ")})`;
 }
 
 function markUnderline(prompt, span) {

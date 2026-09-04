@@ -5,10 +5,38 @@
   "tree_node": "leaf_travel_b1",
   "codex_unit": "V_THM-A1B1-03",
   "quality": "draft",
-  "note": "Journeys, problems and accommodation, above leaf_travel_a2 (holidays). leaf_knowledge_b1 is titled Knowledge & travel but only half-covers this - keep them apart. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma (B22 quiz_mode sentence_gap was already set, but 28 of the 36 words had no frame to gap). · E10: Use is no longer CZ→EN of the bank — use_mode rewrite, 12 underlined paraphrases that make the student produce the new word. · E1/E4: every frame is a situation someone would actually say; no X is very important. · F6: people and places rotated (Petr, Ostrava, Telč, Rome, Vienna), no repeat of Anna/Brno. · Pool-checked against everything taught before leaf_travel_b1 — 0 unknown types.",
+  "note": "Journeys, problems and accommodation, above leaf_travel_a2 (holidays). leaf_knowledge_b1 is titled Knowledge & travel but only half-covers this - keep them apart. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma (B22 quiz_mode sentence_gap was already set, but 28 of the 36 words had no frame to gap). · E10: Use is no longer CZ→EN of the bank — use_mode rewrite, 12 underlined paraphrases that make the student produce the new word. · E1/E4: every frame is a situation someone would actually say; no X is very important. · F6: people and places rotated (Petr, Ostrava, Telč, Rome, Vienna), no repeat of Anna/Brno. · Pool-checked against everything taught before leaf_travel_b1 — 0 unknown types. James smoke 2026-09-04: F8/C57 recap card added (Travel 1 reminder, four tiles not the full set; luggage/booking/backpack are the only repeats). Four rewrite items had an underline that did not cover what actually changes, so a correct rewrite was marked wrong. Bad weather no longer closes the airport as its subject.",
   "default_direction": "cz_to_en",
   "quiz_mode": "sentence_gap",
   "intro": [
+    {
+      "title": "You already know",
+      "title_cz": "Už znáš — Travel 1",
+      "pictures": [
+        {
+          "en": "luggage",
+          "cz": "zavazadlo",
+          "icon": "🧳"
+        },
+        {
+          "en": "booking",
+          "cz": "rezervace",
+          "icon": "📖"
+        },
+        {
+          "en": "backpack",
+          "cz": "batoh",
+          "icon": "🎒"
+        },
+        {
+          "en": "journey",
+          "cz": "cesta",
+          "icon": "🚂"
+        }
+      ],
+      "note": "Travel 1 gave you the trip (journey, tour, abroad, destination), the bags and paper (luggage, passport, ticket, booking) and where you stay (hostel, camping, countryside). Luggage, booking and backpack come back here — the rest of this unit is new: what goes wrong, and what you do about it.",
+      "note_cz": "Travel 1 dal cestu (journey, tour, abroad, destination), zavazadla a doklady (luggage, passport, ticket, booking) a kde bydlíš (hostel, camping, countryside). Luggage, booking a backpack se sem vracejí — zbytek je nový: co se pokazí a co s tím uděláš."
+    },
     {
       "title": "On the way",
       "title_cz": "Na cestě",
@@ -727,13 +755,13 @@
       ]
     },
     {
-      "en": "Bad weather closed the airport on Sunday morning.",
-      "cz": "Špatné počasí v neděli ráno zavřelo letiště.",
+      "en": "The airport was closed on Sunday morning because of bad weather.",
+      "cz": "Letiště bylo v neděli ráno zavřené kvůli špatnému počasí.",
       "lemmas": [
         "bad weather"
       ],
       "accepts": [
-        "Bad weather closed the airport on Sunday morning"
+        "The airport was closed on Sunday morning because of bad weather"
       ]
     },
     {
@@ -863,7 +891,7 @@
     {
       "lemma": "delay",
       "prompt": "There was a long wait before the plane left.",
-      "underline": "long wait",
+      "underline": "wait",
       "en": "There was a long delay before the plane left.",
       "lemmas": [
         "delay"
@@ -898,8 +926,8 @@
     },
     {
       "lemma": "accommodation",
-      "prompt": "We found a cheap place to stay in Rome.",
-      "underline": "place to stay",
+      "prompt": "We found cheap places to stay in Rome.",
+      "underline": "places to stay",
       "en": "We found cheap accommodation in Rome.",
       "lemmas": [
         "accommodation"
@@ -910,8 +938,8 @@
     },
     {
       "lemma": "get lost",
-      "prompt": "We never know where we are in the old town.",
-      "underline": "never know where we are",
+      "prompt": "We always lose our way in the old town.",
+      "underline": "lose our way",
       "en": "We always get lost in the old town.",
       "lemmas": [
         "get lost"
@@ -924,11 +952,12 @@
       "lemma": "complain",
       "prompt": "We want to tell the hotel we are not happy about the noise.",
       "underline": "tell the hotel we are not happy",
-      "en": "We want to complain to the hotel about the noise.",
+      "en": "We want to complain about the noise.",
       "lemmas": [
         "complain"
       ],
       "accepts": [
+        "We want to complain about the noise",
         "We want to complain to the hotel about the noise"
       ]
     },
@@ -960,13 +989,13 @@
       "lemma": "insurance",
       "prompt": "Before the trip we bought cover for problems and illness.",
       "underline": "cover for problems and illness",
-      "en": "Before the trip we bought travel insurance.",
+      "en": "Before the trip we bought insurance.",
       "lemmas": [
         "insurance"
       ],
       "accepts": [
-        "Before the trip we bought travel insurance",
-        "Before the trip we bought insurance"
+        "Before the trip we bought insurance",
+        "Before the trip we bought travel insurance"
       ]
     },
     {
