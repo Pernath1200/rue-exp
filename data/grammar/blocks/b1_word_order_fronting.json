@@ -1,520 +1,569 @@
 {
-  "id": "b1_word_order_fronting",
-  "title": "Word order 2",
-  "level": "B1",
-  "tree_node": "b1_word_order_fronting",
-  "codex_unit": "G_SS-B1B2-01",
-  "practice": "frames",
-  "note": "B1 repair after a1_word_order. English order is fixed: subject first, SVO, place before time at the end. Czech inversion is the error (Important for me is… / Very long was… / In Prague live… / This email sent Petr). Dummy it stays in b1_it_subject; clause openers out; fronted adverbials are not the target. Fronted time accepted as an alternate, not taught. Check: sort Correct/Needs repair then Quiz. No Type (cloze cannot force the subject). Quiz: which sentence is correct. Use: error-correction (use_mode: correct). Spec_Word-Order_B1_G_SS_2026-08-30 · rewrite 2026-08-30.",
-  "default_direction": "cz_to_en",
-  "use_mode": "correct",
-  "quiz_axis": "sentence",
-  "ladder": {
-    "type": false
-  },
-  "check": {
+ "id": "b1_word_order_fronting",
+ "title": "Word order 2",
+ "level": "B1",
+ "tree_node": "b1_word_order_fronting",
+ "codex_unit": "G_SS-B1B2-01",
+ "practice": "frames",
+ "note": "B1 repair after a1_word_order. English order is fixed: subject first, SVO, place before time at the end. Czech inversion is the error (Important for me is… / Very long was… / In Prague live… / This email sent Petr). Dummy it stays in b1_it_subject; clause openers out; fronted adverbials are not the target. Fronted time accepted as an alternate, not taught. Check: sort Correct/Needs repair then Quiz. No Type (cloze cannot force the subject). Quiz: which sentence is correct. Use: error-correction (use_mode: correct). Spec_Word-Order_B1_G_SS_2026-08-30 · rewrite 2026-08-30. · C57 recap card (You already know — Slovosled 1) added as card 1.",
+ "default_direction": "cz_to_en",
+ "use_mode": "correct",
+ "quiz_axis": "sentence",
+ "ladder": {
+  "type": false
+ },
+ "check": {
+  "sequence": [
+   "sort_bins",
+   "quiz"
+  ]
+ },
+ "quality": "good_draft",
+ "bins": [
+  "Correct",
+  "Needs repair"
+ ],
+ "bin_captions": {
+  "Correct": "subject before the verb",
+  "Needs repair": "verb or description first"
+ },
+ "sort_cz": false,
+ "sort_rule": "Subject first. A verb or a description at the front needs repair.",
+ "blocks": [
+  {
+   "id": "b1_wo_sort",
+   "title": "Correct or needs repair",
+   "check": {
     "sequence": [
-      "sort_bins",
-      "quiz"
+     "sort_bins"
     ]
-  },
-  "quality": "good_draft",
-  "bins": [
-    "Correct",
-    "Needs repair"
-  ],
-  "bin_captions": {
-    "Correct": "subject before the verb",
-    "Needs repair": "verb or description first"
-  },
-  "sort_cz": false,
-  "sort_rule": "Subject first. A verb or a description at the front needs repair.",
-  "blocks": [
+   },
+   "items": [
     {
-      "id": "b1_wo_sort",
-      "title": "Correct or needs repair",
-      "check": {
-        "sequence": [
-          "sort_bins"
-        ]
-      },
-      "items": [
-        {
-          "en": "**I** drink coffee every morning.",
-          "cz": "Každé ráno piju kávu.",
-          "bin": "Correct",
-          "use": false
-        },
-        {
-          "en": "**My colleague** sent the report yesterday.",
-          "cz": "Můj kolega včera poslal tu zprávu.",
-          "bin": "Correct",
-          "use": false
-        },
-        {
-          "en": "**We** moved to Brno two years ago.",
-          "cz": "Před dvěma lety jsme se přestěhovali do Brna.",
-          "bin": "Correct",
-          "use": false
-        },
-        {
-          "en": "**The new system** works well.",
-          "cz": "Nový systém funguje dobře.",
-          "bin": "Correct",
-          "use": false
-        },
-        {
-          "en": "Important to me is **English**.",
-          "cz": "Důležitá je pro mě angličtina.",
-          "bin": "Needs repair",
-          "use": false
-        },
-        {
-          "en": "Very good was the **meeting**.",
-          "cz": "Ta schůzka byla velmi dobrá.",
-          "bin": "Needs repair",
-          "use": false
-        },
-        {
-          "en": "In Prague live many **people**.",
-          "cz": "V Praze žije mnoho lidí.",
-          "bin": "Needs repair",
-          "use": false
-        },
-        {
-          "en": "This problem solved **my team** last week.",
-          "cz": "Tenhle problém vyřešil minulý týden můj tým.",
-          "bin": "Needs repair",
-          "use": false
-        }
-      ]
+     "en": "**I** drink coffee every morning.",
+     "cz": "Každé ráno piju kávu.",
+     "bin": "Correct",
+     "use": false
     },
     {
-      "id": "b1_wo_practice",
-      "title": "Subject first",
-      "check": {
-        "sequence": [
-          "quiz"
-        ]
-      },
-      "items": [
-        {
-          "en": "English is important to me.",
-          "cz": "Důležitá je pro mě angličtina.",
-          "gap": "____ is important to me. (English)",
-          "gap_answer": "English",
-          "gap_accepts": [
-            "English"
-          ],
-          "quiz_options": [
-            "English is important to me.",
-            "Important to me is English.",
-            "To me is important English."
-          ],
-          "accepts": [
-            "English is important to me.",
-            "English is important for me."
-          ],
-          "wrong": "Important to me is English.",
-          "explanation": "The thing that is important is the subject: **English is**. Not *Important to me is English.",
-          "explanation_cz": "Podmět je věc, která je důležitá: **English is**. Ne *Important to me is English."
-        },
-        {
-          "en": "I drink coffee in the morning.",
-          "cz": "Kávu piju ráno.",
-          "gap": "I drink ____ in the morning. (coffee)",
-          "gap_answer": "coffee",
-          "quiz_options": [
-            "I drink coffee in the morning.",
-            "Coffee I drink in the morning.",
-            "I in the morning drink coffee."
-          ],
-          "accepts": [
-            "I drink coffee in the morning."
-          ],
-          "explanation": "The object **coffee** sits after the verb. Czech *Kávu piju* puts the object first.",
-          "explanation_cz": "Předmět **coffee** stojí za slovesem. Česky *Kávu piju* dává předmět dopředu."
-        },
-        {
-          "en": "Petr sent this email.",
-          "cz": "Tento e-mail poslal Petr.",
-          "gap": "____ sent this email. (Petr)",
-          "gap_answer": "Petr",
-          "quiz_options": [
-            "Petr sent this email.",
-            "This email sent Petr.",
-            "Sent Petr this email."
-          ],
-          "accepts": [
-            "Petr sent this email."
-          ],
-          "wrong": "This email sent Petr.",
-          "explanation": "**Petr** did the sending, so **Petr** comes first. *This email sent Petr* makes the email the actor.",
-          "explanation_cz": "**Petr** poslal ten e-mail, proto je **Petr** první. *This email sent Petr* z e-mailu dělá činitele."
-        },
-        {
-          "en": "Many people live in Prague.",
-          "cz": "V Praze žije mnoho lidí.",
-          "gap": "____ live in Prague. (people)",
-          "gap_answer": "Many people",
-          "gap_accepts": [
-            "Many people",
-            "many people"
-          ],
-          "quiz_options": [
-            "Many people live in Prague.",
-            "In Prague live many people.",
-            "Live many people in Prague."
-          ],
-          "accepts": [
-            "Many people live in Prague."
-          ],
-          "wrong": "In Prague live many people.",
-          "explanation": "**Many people** is the subject. Place follows the verb: live **in Prague**.",
-          "explanation_cz": "**Many people** je podmět. Místo jde za sloveso: live **in Prague**."
-        },
-        {
-          "en": "My team solved this problem last week.",
-          "cz": "Tenhle problém vyřešil minulý týden můj tým.",
-          "gap": "____ solved this problem last week. (team)",
-          "gap_answer": "My team",
-          "gap_accepts": [
-            "My team",
-            "my team"
-          ],
-          "quiz_options": [
-            "My team solved this problem last week.",
-            "This problem solved my team last week.",
-            "Solved my team this problem last week."
-          ],
-          "accepts": [
-            "My team solved this problem last week."
-          ],
-          "wrong": "This problem solved my team last week.",
-          "explanation": "**My team** solved it. The problem is the object, not the subject.",
-          "explanation_cz": "Vyřešil to **my team**. Problém je předmět, ne podmět."
-        },
-        {
-          "en": "The meeting was very long.",
-          "cz": "Velmi dlouhá byla ta schůzka.",
-          "gap": "____ was very long. (meeting)",
-          "gap_answer": "The meeting",
-          "gap_accepts": [
-            "The meeting",
-            "the meeting"
-          ],
-          "quiz_options": [
-            "The meeting was very long.",
-            "Very long was the meeting.",
-            "Was very long the meeting."
-          ],
-          "accepts": [
-            "The meeting was very long."
-          ],
-          "wrong": "Very long was the meeting.",
-          "explanation": "Descriptions follow **be**: **The meeting was** very long. Not *Very long was…",
-          "explanation_cz": "Popis jde za **be**: **The meeting was** very long. Ne *Very long was…"
-        },
-        {
-          "en": "I check my email every day.",
-          "cz": "Každý den kontroluju e-mail.",
-          "gap": "I ____ my email every day. (check)",
-          "gap_answer": "check",
-          "quiz_options": [
-            "I check my email every day.",
-            "I every day check my email.",
-            "Every day check I my email."
-          ],
-          "accepts": [
-            "I check my email every day."
-          ],
-          "wrong": "I every day check my email.",
-          "explanation": "Do not put **every day** between subject and verb. **I check**, then the object, then the time.",
-          "explanation_cz": "**every day** nestrkejte mezi podmět a sloveso. **I check**, pak předmět, pak čas."
-        },
-        {
-          "en": "I worked in Vienna last year.",
-          "cz": "Loni jsem pracoval ve Vídni.",
-          "gap": "I worked ____. (Vienna / last year)",
-          "gap_answer": "in Vienna last year",
-          "quiz_options": [
-            "I worked in Vienna last year.",
-            "I worked last year in Vienna.",
-            "I last year worked in Vienna."
-          ],
-          "accepts": [
-            "I worked in Vienna last year."
-          ],
-          "wrong": "I worked last year in Vienna.",
-          "explanation": "Place before time at the end: **in Vienna last year**. Not *last year in Vienna.",
-          "explanation_cz": "Místo před časem na konci: **in Vienna last year**. Ne *last year in Vienna."
-        },
-        {
-          "en": "I like black coffee very much.",
-          "cz": "Černou kávu mám moc rád.",
-          "gap": "I like ____. (coffee)",
-          "gap_answer": "black coffee very much",
-          "quiz_options": [
-            "I like black coffee very much.",
-            "I like very much black coffee.",
-            "Very much I like black coffee."
-          ],
-          "accepts": [
-            "I like black coffee very much.",
-            "I really like black coffee."
-          ],
-          "wrong": "I like very much black coffee.",
-          "explanation": "**like** + the object + **very much**. Not *like very much black coffee.",
-          "explanation_cz": "**like** + předmět + **very much**. Ne *like very much black coffee."
-        },
-        {
-          "en": "Twenty people work in our office.",
-          "cz": "V naší kanceláři pracuje dvacet lidí.",
-          "gap": "____ work in our office. (people)",
-          "gap_answer": "Twenty people",
-          "gap_accepts": [
-            "Twenty people",
-            "twenty people"
-          ],
-          "quiz_options": [
-            "Twenty people work in our office.",
-            "In our office work twenty people.",
-            "Work twenty people in our office."
-          ],
-          "accepts": [
-            "Twenty people work in our office."
-          ],
-          "wrong": "In our office work twenty people.",
-          "explanation": "**Twenty people** is the subject. Do not put the place before the subject.",
-          "explanation_cz": "**Twenty people** je podmět. Místo nedejte před podmět."
-        },
-        {
-          "en": "Our boss signed this contract yesterday.",
-          "cz": "Včera tu smlouvu podepsal náš šéf.",
-          "gap": "____ signed this contract yesterday. (boss)",
-          "gap_answer": "Our boss",
-          "gap_accepts": [
-            "Our boss",
-            "our boss"
-          ],
-          "quiz_options": [
-            "Our boss signed this contract yesterday.",
-            "This contract signed our boss yesterday.",
-            "Signed our boss this contract yesterday."
-          ],
-          "accepts": [
-            "Our boss signed this contract yesterday.",
-            "Yesterday our boss signed this contract."
-          ],
-          "wrong": "This contract signed our boss yesterday.",
-          "explanation": "**Our boss** signed the contract. The contract is the object. *Yesterday our boss signed…* is also fine — the subject still comes next.",
-          "explanation_cz": "**Our boss** smlouvu podepsal. Smlouva je předmět. *Yesterday our boss signed…* je taky v pořádku — podmět jde hned za tím."
-        },
-        {
-          "en": "The meeting was very interesting.",
-          "cz": "Velmi zajímavá byla ta schůzka.",
-          "gap": "____ was very interesting. (meeting)",
-          "gap_answer": "The meeting",
-          "gap_accepts": [
-            "The meeting",
-            "the meeting"
-          ],
-          "quiz_options": [
-            "The meeting was very interesting.",
-            "Very interesting was the meeting.",
-            "Was very interesting the meeting."
-          ],
-          "accepts": [
-            "The meeting was very interesting."
-          ],
-          "wrong": "Very interesting was the meeting.",
-          "explanation": "**The meeting was** very interesting. The description does not open the sentence.",
-          "explanation_cz": "**The meeting was** very interesting. Popis větu nezačíná."
-        },
-        {
-          "en": "We met at the office on Monday.",
-          "cz": "V pondělí jsme se sešli v kanceláři.",
-          "gap": "We met ____. (office / Monday)",
-          "gap_answer": "at the office on Monday",
-          "quiz_options": [
-            "We met at the office on Monday.",
-            "We met on Monday at the office.",
-            "We on Monday met at the office."
-          ],
-          "accepts": [
-            "We met at the office on Monday."
-          ],
-          "wrong": "We met on Monday at the office.",
-          "explanation": "Place before time at the end: **at the office on Monday**.",
-          "explanation_cz": "Místo před časem na konci: **at the office on Monday**."
-        }
-      ]
+     "en": "**My colleague** sent the report yesterday.",
+     "cz": "Můj kolega včera poslal tu zprávu.",
+     "bin": "Correct",
+     "use": false
+    },
+    {
+     "en": "**We** moved to Brno two years ago.",
+     "cz": "Před dvěma lety jsme se přestěhovali do Brna.",
+     "bin": "Correct",
+     "use": false
+    },
+    {
+     "en": "**The new system** works well.",
+     "cz": "Nový systém funguje dobře.",
+     "bin": "Correct",
+     "use": false
+    },
+    {
+     "en": "Important to me is **English**.",
+     "cz": "Důležitá je pro mě angličtina.",
+     "bin": "Needs repair",
+     "use": false
+    },
+    {
+     "en": "Very good was the **meeting**.",
+     "cz": "Ta schůzka byla velmi dobrá.",
+     "bin": "Needs repair",
+     "use": false
+    },
+    {
+     "en": "In Prague live many **people**.",
+     "cz": "V Praze žije mnoho lidí.",
+     "bin": "Needs repair",
+     "use": false
+    },
+    {
+     "en": "This problem solved **my team** last week.",
+     "cz": "Tenhle problém vyřešil minulý týden můj tým.",
+     "bin": "Needs repair",
+     "use": false
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "title": "Word order 2",
-        "title_cz": "Pořádek slov ve větě",
-        "diagram": "boxes_row",
-        "labels": [
-          "Subject",
-          "Verb",
-          "Object",
-          "I",
-          "drink",
-          "coffee"
-        ],
-        "table": {
-          "headers": [
-            "Czech",
-            "English"
-          ],
-          "rows": [
-            [
-              "Kávu piju ráno.",
-              "**I** drink coffee every morning."
-            ],
-            [
-              "Ráno piju kávu.",
-              "**I** drink coffee every morning."
-            ],
-            [
-              "Piju ráno kávu.",
-              "**I** drink coffee every morning."
-            ]
-          ]
-        },
-        "points": [
-          "English has one neutral order.",
-          "Czech can move the same words."
-        ]
-      },
-      {
-        "title": "The subject comes first",
-        "title_cz": "Podmět je první",
-        "diagram": "boxes_row",
-        "labels": [
-          "Subject",
-          "be",
-          "description",
-          "English",
-          "is",
-          "important"
-        ],
-        "table": {
-          "headers": [
-            "Not",
-            "Say"
-          ],
-          "rows": [
-            [
-              "~~Important to me is English.~~",
-              "**English** is important to me."
-            ],
-            [
-              "~~Very long was the meeting.~~",
-              "**The meeting** was very long."
-            ]
-          ]
-        },
-        "points": [
-          "Fill the **subject** slot before the verb.",
-          "A description after **be** does not open the sentence."
-        ]
-      },
-      {
-        "title": "Place and time",
-        "title_cz": "Místo a čas",
-        "table": {
-          "headers": [
-            "Subject",
-            "Verb",
-            "Place",
-            "Time"
-          ],
-          "rows": [
-            [
-              "I",
-              "worked",
-              "in Vienna",
-              "last year"
-            ],
-            [
-              "We",
-              "met",
-              "at the office",
-              "on Monday"
-            ]
-          ]
-        },
-        "points": [
-          "Place and time go last.",
-          "If both appear, put **place** before **time**.",
-          "A time word first is fine if the **subject** is next."
-        ]
-      },
-      {
-        "title": "Order changes the meaning",
-        "title_cz": "Pořadí mění význam",
-        "diagram": "contrast",
-        "labels": [
-          "Petr sent this",
-          "This sent Petr"
-        ],
-        "table": {
-          "headers": [
-            "Sentence",
-            "Who did it"
-          ],
-          "rows": [
-            [
-              "**Petr** sent this email.",
-              "Petr"
-            ],
-            [
-              "~~This email sent Petr.~~",
-              "the email — wrong"
-            ]
-          ]
-        },
-        "points": [
-          "Czech marks the actor with an ending.",
-          "English marks the actor by **order**."
-        ]
-      },
-      {
-        "title": "Common mistakes",
-        "title_cz": "Časté chyby",
-        "table": {
-          "headers": [
-            "Not",
-            "Say"
-          ],
-          "rows": [
-            [
-              "~~Important to me is English.~~",
-              "**English** is important to me."
-            ],
-            [
-              "~~Very good was the meeting.~~",
-              "**The meeting** was very good."
-            ],
-            [
-              "~~In Prague live many people.~~",
-              "**Many people** live in Prague."
-            ],
-            [
-              "~~This problem solved my team.~~",
-              "**My team** solved this problem."
-            ],
-            [
-              "~~I like very much black coffee.~~",
-              "I like **black coffee** very much."
-            ]
-          ]
-        }
-      }
+   ]
+  },
+  {
+   "id": "b1_wo_practice",
+   "title": "Subject first",
+   "check": {
+    "sequence": [
+     "quiz"
     ]
+   },
+   "items": [
+    {
+     "en": "English is important to me.",
+     "cz": "Důležitá je pro mě angličtina.",
+     "gap": "____ is important to me. (English)",
+     "gap_answer": "English",
+     "gap_accepts": [
+      "English"
+     ],
+     "quiz_options": [
+      "English is important to me.",
+      "Important to me is English.",
+      "To me is important English."
+     ],
+     "accepts": [
+      "English is important to me.",
+      "English is important for me."
+     ],
+     "wrong": "Important to me is English.",
+     "explanation": "The thing that is important is the subject: **English is**. Not *Important to me is English.",
+     "explanation_cz": "Podmět je věc, která je důležitá: **English is**. Ne *Important to me is English."
+    },
+    {
+     "en": "I drink coffee in the morning.",
+     "cz": "Kávu piju ráno.",
+     "gap": "I drink ____ in the morning. (coffee)",
+     "gap_answer": "coffee",
+     "quiz_options": [
+      "I drink coffee in the morning.",
+      "Coffee I drink in the morning.",
+      "I in the morning drink coffee."
+     ],
+     "accepts": [
+      "I drink coffee in the morning."
+     ],
+     "explanation": "The object **coffee** sits after the verb. Czech *Kávu piju* puts the object first.",
+     "explanation_cz": "Předmět **coffee** stojí za slovesem. Česky *Kávu piju* dává předmět dopředu."
+    },
+    {
+     "en": "Petr sent this email.",
+     "cz": "Tento e-mail poslal Petr.",
+     "gap": "____ sent this email. (Petr)",
+     "gap_answer": "Petr",
+     "quiz_options": [
+      "Petr sent this email.",
+      "This email sent Petr.",
+      "Sent Petr this email."
+     ],
+     "accepts": [
+      "Petr sent this email."
+     ],
+     "wrong": "This email sent Petr.",
+     "explanation": "**Petr** did the sending, so **Petr** comes first. *This email sent Petr* makes the email the actor.",
+     "explanation_cz": "**Petr** poslal ten e-mail, proto je **Petr** první. *This email sent Petr* z e-mailu dělá činitele."
+    },
+    {
+     "en": "Many people live in Prague.",
+     "cz": "V Praze žije mnoho lidí.",
+     "gap": "____ live in Prague. (people)",
+     "gap_answer": "Many people",
+     "gap_accepts": [
+      "Many people",
+      "many people"
+     ],
+     "quiz_options": [
+      "Many people live in Prague.",
+      "In Prague live many people.",
+      "Live many people in Prague."
+     ],
+     "accepts": [
+      "Many people live in Prague."
+     ],
+     "wrong": "In Prague live many people.",
+     "explanation": "**Many people** is the subject. Place follows the verb: live **in Prague**.",
+     "explanation_cz": "**Many people** je podmět. Místo jde za sloveso: live **in Prague**."
+    },
+    {
+     "en": "My team solved this problem last week.",
+     "cz": "Tenhle problém vyřešil minulý týden můj tým.",
+     "gap": "____ solved this problem last week. (team)",
+     "gap_answer": "My team",
+     "gap_accepts": [
+      "My team",
+      "my team"
+     ],
+     "quiz_options": [
+      "My team solved this problem last week.",
+      "This problem solved my team last week.",
+      "Solved my team this problem last week."
+     ],
+     "accepts": [
+      "My team solved this problem last week."
+     ],
+     "wrong": "This problem solved my team last week.",
+     "explanation": "**My team** solved it. The problem is the object, not the subject.",
+     "explanation_cz": "Vyřešil to **my team**. Problém je předmět, ne podmět."
+    },
+    {
+     "en": "The meeting was very long.",
+     "cz": "Velmi dlouhá byla ta schůzka.",
+     "gap": "____ was very long. (meeting)",
+     "gap_answer": "The meeting",
+     "gap_accepts": [
+      "The meeting",
+      "the meeting"
+     ],
+     "quiz_options": [
+      "The meeting was very long.",
+      "Very long was the meeting.",
+      "Was very long the meeting."
+     ],
+     "accepts": [
+      "The meeting was very long."
+     ],
+     "wrong": "Very long was the meeting.",
+     "explanation": "Descriptions follow **be**: **The meeting was** very long. Not *Very long was…",
+     "explanation_cz": "Popis jde za **be**: **The meeting was** very long. Ne *Very long was…"
+    },
+    {
+     "en": "I check my email every day.",
+     "cz": "Každý den kontroluju e-mail.",
+     "gap": "I ____ my email every day. (check)",
+     "gap_answer": "check",
+     "quiz_options": [
+      "I check my email every day.",
+      "I every day check my email.",
+      "Every day check I my email."
+     ],
+     "accepts": [
+      "I check my email every day."
+     ],
+     "wrong": "I every day check my email.",
+     "explanation": "Do not put **every day** between subject and verb. **I check**, then the object, then the time.",
+     "explanation_cz": "**every day** nestrkejte mezi podmět a sloveso. **I check**, pak předmět, pak čas."
+    },
+    {
+     "en": "I worked in Vienna last year.",
+     "cz": "Loni jsem pracoval ve Vídni.",
+     "gap": "I worked ____. (Vienna / last year)",
+     "gap_answer": "in Vienna last year",
+     "quiz_options": [
+      "I worked in Vienna last year.",
+      "I worked last year in Vienna.",
+      "I last year worked in Vienna."
+     ],
+     "accepts": [
+      "I worked in Vienna last year."
+     ],
+     "wrong": "I worked last year in Vienna.",
+     "explanation": "Place before time at the end: **in Vienna last year**. Not *last year in Vienna.",
+     "explanation_cz": "Místo před časem na konci: **in Vienna last year**. Ne *last year in Vienna."
+    },
+    {
+     "en": "I like black coffee very much.",
+     "cz": "Černou kávu mám moc rád.",
+     "gap": "I like ____. (coffee)",
+     "gap_answer": "black coffee very much",
+     "quiz_options": [
+      "I like black coffee very much.",
+      "I like very much black coffee.",
+      "Very much I like black coffee."
+     ],
+     "accepts": [
+      "I like black coffee very much.",
+      "I really like black coffee."
+     ],
+     "wrong": "I like very much black coffee.",
+     "explanation": "**like** + the object + **very much**. Not *like very much black coffee.",
+     "explanation_cz": "**like** + předmět + **very much**. Ne *like very much black coffee."
+    },
+    {
+     "en": "Twenty people work in our office.",
+     "cz": "V naší kanceláři pracuje dvacet lidí.",
+     "gap": "____ work in our office. (people)",
+     "gap_answer": "Twenty people",
+     "gap_accepts": [
+      "Twenty people",
+      "twenty people"
+     ],
+     "quiz_options": [
+      "Twenty people work in our office.",
+      "In our office work twenty people.",
+      "Work twenty people in our office."
+     ],
+     "accepts": [
+      "Twenty people work in our office."
+     ],
+     "wrong": "In our office work twenty people.",
+     "explanation": "**Twenty people** is the subject. Do not put the place before the subject.",
+     "explanation_cz": "**Twenty people** je podmět. Místo nedejte před podmět."
+    },
+    {
+     "en": "Our boss signed this contract yesterday.",
+     "cz": "Včera tu smlouvu podepsal náš šéf.",
+     "gap": "____ signed this contract yesterday. (boss)",
+     "gap_answer": "Our boss",
+     "gap_accepts": [
+      "Our boss",
+      "our boss"
+     ],
+     "quiz_options": [
+      "Our boss signed this contract yesterday.",
+      "This contract signed our boss yesterday.",
+      "Signed our boss this contract yesterday."
+     ],
+     "accepts": [
+      "Our boss signed this contract yesterday.",
+      "Yesterday our boss signed this contract."
+     ],
+     "wrong": "This contract signed our boss yesterday.",
+     "explanation": "**Our boss** signed the contract. The contract is the object. *Yesterday our boss signed…* is also fine — the subject still comes next.",
+     "explanation_cz": "**Our boss** smlouvu podepsal. Smlouva je předmět. *Yesterday our boss signed…* je taky v pořádku — podmět jde hned za tím."
+    },
+    {
+     "en": "The meeting was very interesting.",
+     "cz": "Velmi zajímavá byla ta schůzka.",
+     "gap": "____ was very interesting. (meeting)",
+     "gap_answer": "The meeting",
+     "gap_accepts": [
+      "The meeting",
+      "the meeting"
+     ],
+     "quiz_options": [
+      "The meeting was very interesting.",
+      "Very interesting was the meeting.",
+      "Was very interesting the meeting."
+     ],
+     "accepts": [
+      "The meeting was very interesting."
+     ],
+     "wrong": "Very interesting was the meeting.",
+     "explanation": "**The meeting was** very interesting. The description does not open the sentence.",
+     "explanation_cz": "**The meeting was** very interesting. Popis větu nezačíná."
+    },
+    {
+     "en": "We met at the office on Monday.",
+     "cz": "V pondělí jsme se sešli v kanceláři.",
+     "gap": "We met ____. (office / Monday)",
+     "gap_answer": "at the office on Monday",
+     "quiz_options": [
+      "We met at the office on Monday.",
+      "We met on Monday at the office.",
+      "We on Monday met at the office."
+     ],
+     "accepts": [
+      "We met at the office on Monday."
+     ],
+     "wrong": "We met on Monday at the office.",
+     "explanation": "Place before time at the end: **at the office on Monday**.",
+     "explanation_cz": "Místo před časem na konci: **at the office on Monday**."
+    }
+   ]
   }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "title": "Word order 2",
+    "title_cz": "Pořádek slov ve větě",
+    "diagram": "boxes_row",
+    "labels": [
+     "Subject",
+     "Verb",
+     "Object",
+     "I",
+     "drink",
+     "coffee"
+    ],
+    "table": {
+     "headers": [
+      "Czech",
+      "English"
+     ],
+     "rows": [
+      [
+       "Kávu piju ráno.",
+       "**I** drink coffee every morning."
+      ],
+      [
+       "Ráno piju kávu.",
+       "**I** drink coffee every morning."
+      ],
+      [
+       "Piju ráno kávu.",
+       "**I** drink coffee every morning."
+      ]
+     ]
+    },
+    "points": [
+     "English has one neutral order.",
+     "Czech can move the same words."
+    ]
+   },
+   {
+    "title": "You already know",
+    "title_cz": "Už znáš — Slovosled 1",
+    "text_first": true,
+    "points": [
+     "English keeps **Subject** → **Verb** → **Object**, in that order.",
+     "Place and time go at the end, **place** before **time**.",
+     "Word order 1 was the neutral order. Here it moves, on purpose."
+    ],
+    "table": {
+     "caption": "Word order 1",
+     "headers": [
+      "Subject",
+      "Verb",
+      "Object",
+      "Place",
+      "Time"
+     ],
+     "rows": [
+      [
+       "I",
+       "**have**",
+       "English",
+       "in Brno",
+       "on Monday"
+      ],
+      [
+       "She",
+       "**needs**",
+       "a phone",
+       "—",
+       "today"
+      ],
+      [
+       "We",
+       "**met**",
+       "the team",
+       "at the office",
+       "last week"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "We **have** English in Brno on Monday.",
+      "cz": "Máme angličtinu v Brně v pondělí."
+     }
+    ]
+   },
+   {
+    "title": "The subject comes first",
+    "title_cz": "Podmět je první",
+    "diagram": "boxes_row",
+    "labels": [
+     "Subject",
+     "be",
+     "description",
+     "English",
+     "is",
+     "important"
+    ],
+    "table": {
+     "headers": [
+      "Not",
+      "Say"
+     ],
+     "rows": [
+      [
+       "~~Important to me is English.~~",
+       "**English** is important to me."
+      ],
+      [
+       "~~Very long was the meeting.~~",
+       "**The meeting** was very long."
+      ]
+     ]
+    },
+    "points": [
+     "Fill the **subject** slot before the verb.",
+     "A description after **be** does not open the sentence."
+    ]
+   },
+   {
+    "title": "Place and time",
+    "title_cz": "Místo a čas",
+    "table": {
+     "headers": [
+      "Subject",
+      "Verb",
+      "Place",
+      "Time"
+     ],
+     "rows": [
+      [
+       "I",
+       "worked",
+       "in Vienna",
+       "last year"
+      ],
+      [
+       "We",
+       "met",
+       "at the office",
+       "on Monday"
+      ]
+     ]
+    },
+    "points": [
+     "Place and time go last.",
+     "If both appear, put **place** before **time**.",
+     "A time word first is fine if the **subject** is next."
+    ]
+   },
+   {
+    "title": "Order changes the meaning",
+    "title_cz": "Pořadí mění význam",
+    "diagram": "contrast",
+    "labels": [
+     "Petr sent this",
+     "This sent Petr"
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Who did it"
+     ],
+     "rows": [
+      [
+       "**Petr** sent this email.",
+       "Petr"
+      ],
+      [
+       "~~This email sent Petr.~~",
+       "the email — wrong"
+      ]
+     ]
+    },
+    "points": [
+     "Czech marks the actor with an ending.",
+     "English marks the actor by **order**."
+    ]
+   },
+   {
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
+    "table": {
+     "headers": [
+      "Not",
+      "Say"
+     ],
+     "rows": [
+      [
+       "~~Important to me is English.~~",
+       "**English** is important to me."
+      ],
+      [
+       "~~Very good was the meeting.~~",
+       "**The meeting** was very good."
+      ],
+      [
+       "~~In Prague live many people.~~",
+       "**Many people** live in Prague."
+      ],
+      [
+       "~~This problem solved my team.~~",
+       "**My team** solved this problem."
+      ],
+      [
+       "~~I like very much black coffee.~~",
+       "I like **black coffee** very much."
+      ]
+     ]
+    }
+   }
+  ]
+ }
 }
