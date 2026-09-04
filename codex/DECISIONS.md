@@ -70,3 +70,9 @@ Format:
 ## Answered
 
 *(empty)*
+
+### b1_relative_clauses_2 · typing the word *nothing*
+**Q:** Three items answer the gap with the literal string `nothing` (*The letter ____ I sent last week arrived today.* → `nothing`), which is how the 2026-09-02 draft already did it. That reads fine as a Quiz chip and badly as a Type answer — nobody types "nothing" — and `verify_pack` warns that the frame may not reconstruct.
+**Options:** a) keep it — the chip is the point, and the Type stage is a small cost on three of 25 items / b) mark those three `type: false` so they are Quiz-only / c) invent a different token (`—`, `no word`) — which is a new mechanism and needs the engine to agree.
+**Default if unanswered:** a — kept, because the pack already shipped one item of this shape and inventing a token unattended is worse than a rough Type on three items. (b) is the cheap improvement if you want it; say so and the next run does it.
+→ (James: your answer here)

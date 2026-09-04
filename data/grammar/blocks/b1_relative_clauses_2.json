@@ -6,7 +6,7 @@
  "codex_unit": "G_CL-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "THE comma rule, and the single biggest Czech interference target at B1: Czech puts a comma before every relative clause, so students write *The man, who lives next door, is a doctor where the clause is defining and takes none. Contrast pack with b1_relative_clauses (defining + omission), which plays immediately before. Second rule: no THAT in a non-defining clause. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "THE comma rule, and the single biggest Czech interference target at B1: Czech puts a comma before every relative clause, so students write *The man, who lives next door, is a doctor where the clause is defining and takes none. Contrast pack with b1_relative_clauses (defining + omission), which plays immediately before. Second rule: no THAT in a non-defining clause. Thickened 10 -> 25 items 2026-09-04 (agent loop): 15 new, split about evenly between defining (no commas) and non-defining (commas + who/which, never that), plus three items whose answer is `nothing` at all. Rules applied this pass: A4 all six cleared - Czech really does say `ten muz, ktery ...` for a defining clause, so the demonstrative went into the cz where the noun is definite, and the two that could not take one were rewritten (near the centre -> which they bought last year; on the second floor -> which has no windows); F3 Moravia dropped. C11: `nothing` was the answer to three items and appeared nowhere in the intro - it now has a card (When the word can be nothing). D1: the 15 new items each carry an explanation naming their own noun and clause, after a first pass that shared two strings across 13 of them.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -20,7 +20,8 @@
     "title": "Two kinds of relative clause",
     "title_cz": "Dva druhy vztažných vět",
     "points": [
-     "Take the clause out. If you still know who or what is meant, it needs **commas**."
+     "Take the clause out.",
+     "If you still know who is meant, it needs **commas**."
     ],
     "table": {
      "headers": [
@@ -44,11 +45,11 @@
     "examples": [
      {
       "en": "The man **who** lives next door is a doctor.",
-      "cz": "Muž, který bydlí vedle, je doktor."
+      "cz": "Ten muž, který bydlí vedle."
      },
      {
-      "en": "My brother, **who** lives in Brno, is a doctor.",
-      "cz": "Můj bratr, který bydlí v Brně, je doktor."
+      "en": "My brother, **who** lives in Brno.",
+      "cz": "Můj bratr, který bydlí v Brně."
      }
     ]
    },
@@ -126,6 +127,34 @@
     }
    },
    {
+    "title": "When the word can be nothing",
+    "title_cz": "Když tam vztažné slovo být nemusí",
+    "points": [
+     "If the relative word is the **object**, you can use **nothing** at all.",
+     "It still says which one, so there are still no commas."
+    ],
+    "table": {
+     "headers": [
+      "Full",
+      "Shorter"
+     ],
+     "rows": [
+      [
+       "The book **that** I read was good.",
+       "The book I read was good."
+      ],
+      [
+       "The man **who** I met was nice.",
+       "The man I met was nice."
+      ],
+      [
+       "The letter **which** I sent arrived.",
+       "The letter I sent arrived."
+      ]
+     ]
+    }
+   },
+   {
     "title": "Common mistakes",
     "title_cz": "Časté chyby",
     "text_first": true,
@@ -166,7 +195,7 @@
    "items": [
     {
      "en": "The man who lives next door is a doctor.",
-     "cz": "Muž, který bydlí vedle, je doktor.",
+     "cz": "Ten muž, který bydlí vedle, je doktor.",
      "gap": "The man ____ lives next door is a doctor. (who / , who)",
      "gap_answer": "who",
      "quiz_options": [
@@ -200,9 +229,9 @@
      "explanation_cz": "Doplňující informace o jednom známém člověku, takže čárky a **who**, nikdy that."
     },
     {
-     "en": "Prague, which is the capital, has over a million people.",
-     "cz": "Praha, která je hlavní město, má přes milion obyvatel.",
-     "gap": "Prague, ____ is the capital, has over a million people. (which / that)",
+     "en": "Prague, which is our capital, has over a million people.",
+     "cz": "Praha, která je naše hlavní město, má přes milion obyvatel.",
+     "gap": "Prague, ____ is our capital, has over a million people. (which / that)",
      "gap_answer": "which",
      "quiz_options": [
       "which",
@@ -211,15 +240,15 @@
       "what"
      ],
      "accepts": [
-      "Prague, which is the capital, has over a million people."
+      "Prague, which is our capital, has over a million people."
      ],
-     "wrong": "Prague, that is the capital, has over a million people.",
+     "wrong": "Prague, that is our capital, has over a million people.",
      "explanation": "A non-defining clause about a thing takes **which**, not that.",
      "explanation_cz": "Doplňující věta o věci má **which**, ne that."
     },
     {
      "en": "The book I read last week was very good.",
-     "cz": "Kniha, kterou jsem četl minulý týden, byla moc dobrá.",
+     "cz": "Ta kniha, kterou jsem četl minulý týden, byla moc dobrá.",
      "gap": "The book ____ I read last week was very good. (nothing / , which)",
      "gap_answer": "nothing",
      "quiz_options": [
@@ -254,7 +283,7 @@
     },
     {
      "en": "The woman who called you is waiting outside.",
-     "cz": "Žena, která ti volala, čeká venku.",
+     "cz": "Ta žena, která ti volala, čeká venku.",
      "gap": "The woman ____ called you is waiting outside. (who / , who)",
      "gap_answer": "who",
      "quiz_options": [
@@ -271,9 +300,9 @@
      "explanation_cz": "Určuje, **která** žena to je, takže bez čárek."
     },
     {
-     "en": "Brno, which is in Moravia, has a big student population.",
-     "cz": "Brno, které leží na Moravě, má hodně studentů.",
-     "gap": "Brno, ____ is in Moravia, has a big student population. (which / that)",
+     "en": "Brno, which is a big city, has a lot of students.",
+     "cz": "Brno, které je velké město, má hodně studentů.",
+     "gap": "Brno, ____ is a big city, has a lot of students. (which / that)",
      "gap_answer": "which",
      "quiz_options": [
       "which",
@@ -282,14 +311,15 @@
       "where"
      ],
      "accepts": [
-      "Brno, which is in Moravia, has a big student population."
+      "Brno, which is a big city, has a lot of students."
      ],
      "explanation": "A place name is already identified, so the clause is extra: **which** + commas.",
-     "explanation_cz": "Jméno města už je určené, takže je věta doplňující: **which** + čárky."
+     "explanation_cz": "Jméno města už je určené, takže je věta doplňující: **which** + čárky.",
+     "wrong": "Brno, that is a big city, has a lot of students."
     },
     {
      "en": "The train that leaves at six is always full.",
-     "cz": "Vlak, který odjíždí v šest, je vždycky plný.",
+     "cz": "Ten vlak, který odjíždí v šest, je vždycky plný.",
      "gap": "The train ____ leaves at six is always full. (that / , which)",
      "gap_answer": "that",
      "quiz_options": [
@@ -323,9 +353,9 @@
      "explanation_cz": "**my car** je už určené, takže je věta doplňující: **which** + čárky."
     },
     {
-     "en": "The people who work here are very friendly.",
-     "cz": "Lidé, kteří tady pracují, jsou moc přátelští.",
-     "gap": "The people ____ work here are very friendly. (who / , who)",
+     "en": "The teacher who helped me was very kind.",
+     "cz": "Ten učitel, který mi pomohl, byl moc milý.",
+     "gap": "The teacher ____ helped me was very kind. (who / , who)",
      "gap_answer": "who",
      "quiz_options": [
       "who",
@@ -334,11 +364,281 @@
       "whose"
      ],
      "accepts": [
-      "The people who work here are very friendly."
+      "The teacher who helped me was very kind."
      ],
-     "wrong": "The people, who work here, are very friendly.",
-     "explanation": "It says **which** people, so no commas.",
-     "explanation_cz": "Říká, **kteří** lidé, takže bez čárek."
+     "wrong": "The teacher, who helped me, was very kind.",
+     "explanation": "**who helped me** says which teacher, so the sentence runs straight through with no commas.",
+     "explanation_cz": "**who helped me** říká, který učitel, takže věta běží bez čárek."
+    },
+    {
+     "en": "The film that we saw yesterday was very long.",
+     "cz": "Ten film, který jsme včera viděli, byl moc dlouhý.",
+     "gap": "The film ____ we saw yesterday was very long. (that / , which)",
+     "gap_answer": "that",
+     "quiz_options": [
+      "that",
+      ", which",
+      ", that",
+      "who"
+     ],
+     "accepts": [
+      "The film that we saw yesterday was very long."
+     ],
+     "wrong": "The film, that we saw yesterday, was very long.",
+     "explanation": "**that we saw yesterday** says which film, so it takes no commas.",
+     "explanation_cz": "**that we saw yesterday** říká, který film, takže žádné čárky."
+    },
+    {
+     "en": "The email that arrived this morning was from my boss.",
+     "cz": "Ten e-mail, který přišel dnes ráno, byl od šéfa.",
+     "gap": "The email ____ arrived this morning was from my boss. (that / , which)",
+     "gap_answer": "that",
+     "quiz_options": [
+      "that",
+      ", which",
+      "who",
+      ", that"
+     ],
+     "accepts": [
+      "The email that arrived this morning was from my boss."
+     ],
+     "wrong": "The email, that arrived this morning, was from my boss.",
+     "explanation": "Which email? The one that arrived this morning — defining, so no commas.",
+     "explanation_cz": "Který e-mail? Ten, co přišel ráno — určující věta, takže bez čárek."
+    },
+    {
+     "en": "The woman who works in the shop is my neighbour.",
+     "cz": "Ta žena, která pracuje v obchodě, je moje sousedka.",
+     "gap": "The woman ____ works in the shop is my neighbour. (who / , who)",
+     "gap_answer": "who",
+     "quiz_options": [
+      "who",
+      ", who",
+      "which",
+      "whose"
+     ],
+     "accepts": [
+      "The woman who works in the shop is my neighbour."
+     ],
+     "wrong": "The woman, who works in the shop, is my neighbour.",
+     "explanation": "**who works in the shop** picks the woman out of all women. No commas.",
+     "explanation_cz": "**who works in the shop** vybere tu ženu ze všech žen. Žádné čárky."
+    },
+    {
+     "en": "The man I met yesterday works with my brother.",
+     "cz": "Ten muž, kterého jsem včera potkal, pracuje s mým bratrem.",
+     "gap": "The man ____ I met yesterday works with my brother. (nothing / , who)",
+     "gap_answer": "nothing",
+     "quiz_options": [
+      "nothing",
+      ", who",
+      ", that",
+      "what"
+     ],
+     "accepts": [
+      "The man I met yesterday works with my brother."
+     ],
+     "wrong": "The man, I met yesterday, works with my brother.",
+     "explanation": "The relative word is left out because it is the object of *met* — and the clause is still defining, so still no commas.",
+     "explanation_cz": "Vztažné slovo je vynechané, protože je předmětem k *met* — a věta je pořád určující, takže pořád bez čárek."
+    },
+    {
+     "en": "The bus that goes to the station is always late.",
+     "cz": "Ten autobus, který jede na nádraží, má vždycky zpoždění.",
+     "gap": "The bus ____ goes to the station is always late. (that / , which)",
+     "gap_answer": "that",
+     "quiz_options": [
+      "that",
+      ", which",
+      "who",
+      ", that"
+     ],
+     "accepts": [
+      "The bus that goes to the station is always late."
+     ],
+     "wrong": "The bus, that goes to the station, is always late.",
+     "explanation": "Not any bus — **the one that goes to the station**. Defining, no commas.",
+     "explanation_cz": "Ne jakýkoli autobus — **ten, který jede na nádraží**. Určující, bez čárek."
+    },
+    {
+     "en": "The letter I sent last week arrived today.",
+     "cz": "Ten dopis, který jsem poslal minulý týden, dnes přišel.",
+     "gap": "The letter ____ I sent last week arrived today. (nothing / , which)",
+     "gap_answer": "nothing",
+     "quiz_options": [
+      "nothing",
+      ", who",
+      "what",
+      ", which"
+     ],
+     "accepts": [
+      "The letter I sent last week arrived today."
+     ],
+     "wrong": "The letter, I sent last week, arrived today.",
+     "explanation": "Nothing goes in front of *I sent*: the relative word is the object and can be dropped. Commas would make it a different sentence.",
+     "explanation_cz": "Před *I sent* nepatří nic: vztažné slovo je předmět a dá se vynechat. Čárky by z toho udělaly jinou větu."
+    },
+    {
+     "en": "My mother, who is seventy, still works.",
+     "cz": "Moje máma, které je sedmdesát, pořád pracuje.",
+     "gap": "My mother, ____ is seventy, still works. (who / that)",
+     "gap_answer": "who",
+     "quiz_options": [
+      "who",
+      "that",
+      "which",
+      "she"
+     ],
+     "accepts": [
+      "My mother, who is seventy, still works."
+     ],
+     "wrong": "My mother, that is seventy, still works.",
+     "explanation": "You have one mother, so **who is seventy** is extra information: commas, and **who**, never that.",
+     "explanation_cz": "Máma je jen jedna, takže **who is seventy** je doplňující informace: čárky a **who**, nikdy that."
+    },
+    {
+     "en": "My best friend, who lives in Ostrava, is coming tomorrow.",
+     "cz": "Můj nejlepší kamarád, který bydlí v Ostravě, přijede zítra.",
+     "gap": "My best friend, ____ lives in Ostrava, is coming tomorrow. (who / that)",
+     "gap_answer": "who",
+     "quiz_options": [
+      "who",
+      "that",
+      "which",
+      "he"
+     ],
+     "accepts": [
+      "My best friend, who lives in Ostrava, is coming tomorrow."
+     ],
+     "wrong": "My best friend, that lives in Ostrava, is coming tomorrow.",
+     "explanation": "*My best friend* already names the person, so the clause only adds detail — commas, and **who**.",
+     "explanation_cz": "*My best friend* už tu osobu určuje, takže věta jen doplňuje — čárky a **who**."
+    },
+    {
+     "en": "This book, which I bought in Prague, is about Czech history.",
+     "cz": "Tahle kniha, kterou jsem koupil v Praze, je o českých dějinách.",
+     "gap": "This book, ____ I bought in Prague, is about Czech history. (which / that)",
+     "gap_answer": "which",
+     "quiz_options": [
+      "which",
+      "that",
+      "who",
+      "what"
+     ],
+     "accepts": [
+      "This book, which I bought in Prague, is about Czech history."
+     ],
+     "wrong": "This book, that I bought in Prague, is about Czech history.",
+     "explanation": "*This book* is already identified by **this**, so the clause is extra: commas and **which**.",
+     "explanation_cz": "*This book* je určená slovem **this**, takže věta je doplňující: čárky a **which**."
+    },
+    {
+     "en": "Their new flat, which they bought last year, is very small.",
+     "cz": "Jejich nový byt, který loni koupili, je moc malý.",
+     "gap": "Their new flat, ____ they bought last year, is very small. (which / that)",
+     "gap_answer": "which",
+     "quiz_options": [
+      "which",
+      "that",
+      "who",
+      "where"
+     ],
+     "accepts": [
+      "Their new flat, which they bought last year, is very small."
+     ],
+     "wrong": "Their new flat, that they bought last year, is very small.",
+     "explanation": "They have one new flat, so when they bought it is extra information — **which**, not that.",
+     "explanation_cz": "Nový byt mají jeden, takže kdy ho koupili je doplňující informace — **which**, ne that."
+    },
+    {
+     "en": "My phone, which I bought in June, is already broken.",
+     "cz": "Můj telefon, který jsem koupil v červnu, je už rozbitý.",
+     "gap": "My phone, ____ I bought in June, is already broken. (which / that)",
+     "gap_answer": "which",
+     "quiz_options": [
+      "which",
+      "that",
+      "what",
+      "who"
+     ],
+     "accepts": [
+      "My phone, which I bought in June, is already broken."
+     ],
+     "wrong": "My phone, that I bought in June, is already broken.",
+     "explanation": "*My phone* is one phone, so the clause adds a detail: commas, and **which** — *that* cannot follow a comma.",
+     "explanation_cz": "*My phone* je jeden telefon, takže věta doplňuje detail: čárky a **which** — *that* po čárce stát nemůže."
+    },
+    {
+     "en": "The girl who works with me is from Poland.",
+     "cz": "Ta holka, která se mnou pracuje, je z Polska.",
+     "gap": "The girl ____ works with me is from Poland. (who / , who)",
+     "gap_answer": "who",
+     "quiz_options": [
+      "who",
+      ", who",
+      "which",
+      "that,"
+     ],
+     "accepts": [
+      "The girl who works with me is from Poland."
+     ],
+     "wrong": "The girl, who works with me, is from Poland.",
+     "explanation": "**who works with me** says which girl, so no commas — even though Czech puts two in.",
+     "explanation_cz": "**who works with me** říká, která holka, takže žádné čárky — i když čeština dvě dává."
+    },
+    {
+     "en": "My sister, who I see every week, lives in Brno.",
+     "cz": "Moje sestra, kterou vidím každý týden, bydlí v Brně.",
+     "gap": "My sister, ____ I see every week, lives in Brno. (who / that)",
+     "gap_answer": "who",
+     "quiz_options": [
+      "who",
+      "that",
+      "which",
+      "she"
+     ],
+     "accepts": [
+      "My sister, who I see every week, lives in Brno."
+     ],
+     "wrong": "My sister, that I see every week, lives in Brno.",
+     "explanation": "One sister, so the clause is extra: commas, and **who** even though it is the object here.",
+     "explanation_cz": "Jedna sestra, takže věta je doplňující: čárky a **who**, i když je tu předmětem."
+    },
+    {
+     "en": "The hotel that we stayed in was very cheap.",
+     "cz": "Ten hotel, ve kterém jsme bydleli, byl moc levný.",
+     "gap": "The hotel ____ we stayed in was very cheap. (that / , which)",
+     "gap_answer": "that",
+     "quiz_options": [
+      "that",
+      ", which",
+      "who",
+      ", that"
+     ],
+     "accepts": [
+      "The hotel that we stayed in was very cheap."
+     ],
+     "wrong": "The hotel, that we stayed in, was very cheap.",
+     "explanation": "**that we stayed in** tells you which hotel. Defining clauses take no commas.",
+     "explanation_cz": "**that we stayed in** říká, který hotel. Určující věty nemají čárky."
+    },
+    {
+     "en": "Our office, which has no windows, is always cold.",
+     "cz": "Naše kancelář, která nemá okna, je pořád studená.",
+     "gap": "Our office, ____ has no windows, is always cold. (which / that)",
+     "gap_answer": "which",
+     "quiz_options": [
+      "which",
+      "that",
+      "who",
+      "where"
+     ],
+     "accepts": [
+      "Our office, which has no windows, is always cold."
+     ],
+     "wrong": "Our office, that has no windows, is always cold.",
+     "explanation": "We have one office, so the windows are extra information — commas and **which**.",
+     "explanation_cz": "Kancelář máme jednu, takže okna jsou doplňující informace — čárky a **which**."
     }
    ]
   }
