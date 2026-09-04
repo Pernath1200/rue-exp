@@ -24,6 +24,18 @@ Format:
 
 ## Open
 
+### AGENT-LOOP · the 24–40 item band on a unit that was never a stub
+**Q:** The gate says "item count is inside the target band above" (24–40 for grammar). Five B1 grammar packs were built well above it — `b1_present_perfect_vs_past` 79, `b1_relative_clauses` 66, `b1_linkers` 60, `b1_verb_patterns_advanced` 56, `b1_reported_speech` 54 — and the repair work now starting on them cannot meet that gate without gutting banks you asked to keep.
+**Options:** a) read the band as a **floor** for stubs and a target for thickening, never a cap on a bank that is already rich / b) cut those five to 40 / c) split them into two units each.
+**Default if unanswered:** a — done this run. `b1_present_perfect_vs_past` went 79 → **81**: two items were *added*, because the intro teaches *then / after that* as a past-simple signal on two cards and the bank drilled it nowhere (C4/C11). Cutting a 79-item bank you listed in B1-PLAN as *built · smoke* would throw away hand-written pairs to satisfy a number written for 10-item stubs. If you want (b) or (c), say which and the next run does it.
+→ (James: your answer here)
+
+### lint.py · A4's DEMONSTRATIVE regex has no instrumental or dative-plural forms
+**Q (mostly for the record):** `DEMONSTRATIVE` is `ten|ta|to|toho|tu|ty|tento|tato|toto|tomu|tom|těch|těm`. It has no **tím / tou / tím(i) / těmi**, so *Včera jsem mluvil s tím manažerem* — which does carry the demonstrative that licenses *the manager* — still reports an A4 candidate. Two items on `b1_present_perfect_vs_past` were fixed properly and the flag stayed lit on both.
+**Options:** a) add the missing forms to the regex — one line / b) leave it, and let authors know two of every pack's A4 candidates may be already-fixed items / c) write a different Czech case to please the regex.
+**Default if unanswered:** b for now — a lint change is not this loop's to make unattended, and (c) means writing worse Czech to move a number, which is the same class of thing as an ungrammatical `accepts`. When someone is in `lint.py`, (a) is the fix.
+→ (James: your answer here)
+
 ### b1_past_perfect · A4 `the` in past narrative
 **Q:** Seven items demand `the` where the Czech carries no demonstrative (*the film*, *the station*, *the train*, *the room*, *the door*, *the shop*, *the window*) — is that a real A4 fault at B1, or is it English forcing the article?
 **Options:** a) leave them — English forces `the` on a second mention or a known referent, and stripping it would teach bad English / b) add the article-free wording to `accepts` where a native would also say it / c) rewrite the sentences onto nouns that do not need an article.

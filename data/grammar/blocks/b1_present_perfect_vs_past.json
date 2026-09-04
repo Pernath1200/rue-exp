@@ -1,1838 +1,2144 @@
 {
-  "id": "b1_present_perfect_vs_past",
-  "title": "Present perfect vs past simple",
-  "level": "B1",
-  "teaches_lemmas": [
-    "after that",
-    "already",
-    "ever",
-    "in 2010",
-    "just",
-    "last night",
-    "last week",
-    "last year",
-    "never",
-    "since 2015",
-    "so far",
-    "then",
-    "yesterday",
-    "yet"
-  ],
-  "tree_node": "b1_present_perfect_vs_past",
-  "codex_unit": "G_VP-B1B2-01",
-  "practice": "frames",
-  "note": "Tense CHOICE · Type: lemma in gap · Use: scrambled use_cues bag (content words) · full sentence · 2026-08-06 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=workable_draft); auto-authored bank superseded.",
-  "default_direction": "en_gap",
-  "check": {
+ "id": "b1_present_perfect_vs_past",
+ "title": "Present perfect vs past simple",
+ "level": "B1",
+ "teaches_lemmas": [
+  "after that",
+  "already",
+  "ever",
+  "in 2010",
+  "just",
+  "last night",
+  "last week",
+  "last year",
+  "never",
+  "since 2015",
+  "so far",
+  "then",
+  "yesterday",
+  "yet"
+ ],
+ "tree_node": "b1_present_perfect_vs_past",
+ "codex_unit": "G_VP-B1B2-01",
+ "practice": "frames",
+ "note": "Tense CHOICE · Type: lemma in gap · Use: scrambled use_cues bag (content words) · full sentence · 2026-08-06 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=workable_draft); auto-authored bank superseded. · 2026-09-04 B1 loop repair: B11/A11 lemma cue on every gap · B3 authored chips on all 66 items (own error = aux + past form) · D1 per-item explanations · A8 twins closed · A9 on lost keys / broken phone / Where have you been · F3 client→doctor, emails→letter/tickets, noon→twelve · A4 Czech demonstratives on 17 items · C4/C11 two `then / after that` items added, slash-lists unbolded.",
+ "default_direction": "en_gap",
+ "check": {
+  "sequence": [
+   "sort_bins",
+   "quiz"
+  ]
+ },
+ "quality": "workable_draft",
+ "demo_priority": true,
+ "quiz_axis": "pp_vs_past",
+ "bins": [
+  "past simple",
+  "present perfect"
+ ],
+ "bin_captions": {
+  "past simple": "finished time",
+  "present perfect": "unfinished time · now"
+ },
+ "blocks": [
+  {
+   "id": "sort",
+   "title": "Finished or still now? · B1",
+   "check": {
     "sequence": [
-      "sort_bins",
-      "quiz"
+     "sort_bins"
     ]
-  },
-  "quality": "workable_draft",
-  "demo_priority": true,
-  "quiz_axis": "pp_vs_past",
-  "bins": [
-    "past simple",
-    "present perfect"
-  ],
-  "bin_captions": {
-    "past simple": "finished time",
-    "present perfect": "unfinished time · now"
-  },
-  "blocks": [
+   },
+   "items": [
     {
-      "id": "sort",
-      "title": "Finished or still now? · B1",
-      "check": {
-        "sequence": [
-          "sort_bins"
-        ]
-      },
-      "items": [
-        {
-          "en": "yesterday",
-          "bin": "past simple"
-        },
-        {
-          "en": "last week",
-          "bin": "past simple"
-        },
-        {
-          "en": "last year",
-          "bin": "past simple"
-        },
-        {
-          "en": "two years ago",
-          "bin": "past simple"
-        },
-        {
-          "en": "in 2010",
-          "bin": "past simple"
-        },
-        {
-          "en": "then",
-          "bin": "past simple"
-        },
-        {
-          "en": "after that",
-          "bin": "past simple"
-        },
-        {
-          "en": "last night",
-          "bin": "past simple"
-        },
-        {
-          "en": "since 2015",
-          "bin": "present perfect"
-        },
-        {
-          "en": "ever",
-          "bin": "present perfect"
-        },
-        {
-          "en": "never",
-          "bin": "present perfect"
-        },
-        {
-          "en": "just",
-          "bin": "present perfect"
-        },
-        {
-          "en": "already",
-          "bin": "present perfect"
-        },
-        {
-          "en": "yet",
-          "bin": "present perfect"
-        },
-        {
-          "en": "so far",
-          "bin": "present perfect"
-        }
-      ]
+     "en": "yesterday",
+     "bin": "past simple"
     },
     {
-      "id": "b1_present_perfect_vs_past_main",
-      "title": "Present perfect vs past simple · B1",
-      "check": {
-        "sequence": [
-          "quiz"
-        ]
-      },
-      "items": [
-        {
-          "en": "I saw him at the station yesterday.",
-          "cz": "Včera jsem ho viděl na nádraží.",
-          "gap": "I ____ him at the station yesterday.",
-          "gap_answer": "saw",
-          "gap_accepts": [
-            "saw"
-          ],
-          "accepts": [
-            "I saw him at the station yesterday."
-          ],
-          "lemma": "see",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "I",
-            "see",
-            "him",
-            "at the station",
-            "yesterday"
-          ]
-        },
-        {
-          "en": "I have seen that film before.",
-          "cz": "Ten film jsem už viděl.",
-          "gap": "I ____ that film before.",
-          "gap_answer": "have seen",
-          "gap_accepts": [
-            "have seen",
-            "I've seen"
-          ],
-          "accepts": [
-            "I have seen that film before.",
-            "I've seen that film before."
-          ],
-          "lemma": "see",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "see",
-            "that film",
-            "before"
-          ]
-        },
-        {
-          "en": "She finished the report last Friday.",
-          "cz": "Minulý pátek dokončila zprávu.",
-          "gap": "She ____ the report last Friday.",
-          "gap_answer": "finished",
-          "gap_accepts": [
-            "finished"
-          ],
-          "accepts": [
-            "She finished the report last Friday."
-          ],
-          "lemma": "finish",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "she",
-            "finish",
-            "the report",
-            "last Friday"
-          ]
-        },
-        {
-          "en": "She has already finished the report.",
-          "cz": "Zprávu už dokončila.",
-          "gap": "She ____ the report already.",
-          "gap_answer": "has finished",
-          "gap_accepts": [
-            "has finished",
-            "she's finished"
-          ],
-          "accepts": [
-            "She has already finished the report.",
-            "She's already finished the report.",
-            "She has finished the report already.",
-            "She's finished the report already."
-          ],
-          "lemma": "finish",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "she",
-            "finish",
-            "the report",
-            "already"
-          ]
-        },
-        {
-          "en": "We moved to Brno in 2019.",
-          "cz": "V roce 2019 jsme se přestěhovali do Brna.",
-          "gap": "We ____ to Brno in 2019.",
-          "gap_answer": "moved",
-          "gap_accepts": [
-            "moved"
-          ],
-          "accepts": [
-            "We moved to Brno in 2019."
-          ],
-          "lemma": "move",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "we",
-            "move",
-            "to Brno",
-            "in 2019"
-          ]
-        },
-        {
-          "en": "We have lived in Brno since 2019.",
-          "cz": "V Brně bydlíme od roku 2019.",
-          "gap": "We ____ in Brno since 2019.",
-          "gap_answer": "have lived",
-          "gap_accepts": [
-            "have lived",
-            "we've lived"
-          ],
-          "accepts": [
-            "We have lived in Brno since 2019.",
-            "We've lived in Brno since 2019."
-          ],
-          "lemma": "live",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "we",
-            "live",
-            "in Brno",
-            "since 2019"
-          ]
-        },
-        {
-          "en": "He lived in Prague for five years until 2019.",
-          "cz": "Pět let bydlel v Praze až do roku 2019.",
-          "gap": "He ____ in Prague for five years until 2019.",
-          "gap_answer": "lived",
-          "gap_accepts": [
-            "lived"
-          ],
-          "accepts": [
-            "He lived in Prague for five years until 2019."
-          ],
-          "lemma": "live",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "he",
-            "live",
-            "in Prague",
-            "for five years",
-            "until 2019"
-          ]
-        },
-        {
-          "en": "He has lived in Brno for five years now.",
-          "cz": "Už pět let bydlí v Brně.",
-          "gap": "He ____ in Brno for five years now.",
-          "gap_answer": "has lived",
-          "gap_accepts": [
-            "has lived",
-            "he's lived"
-          ],
-          "accepts": [
-            "He has lived in Brno for five years now.",
-            "He's lived in Brno for five years now."
-          ],
-          "lemma": "live",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "he",
-            "live",
-            "in Brno",
-            "for five years now"
-          ]
-        },
-        {
-          "en": "They bought the flat two years ago.",
-          "cz": "Koupili byt před dvěma lety.",
-          "gap": "They ____ the flat two years ago.",
-          "gap_answer": "bought",
-          "gap_accepts": [
-            "bought"
-          ],
-          "accepts": [
-            "They bought the flat two years ago."
-          ],
-          "lemma": "buy",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "they",
-            "buy",
-            "the flat",
-            "two years ago"
-          ]
-        },
-        {
-          "en": "They have just bought a new flat.",
-          "cz": "Právě koupili nový byt.",
-          "gap": "They ____ a new flat already. (buy)",
-          "gap_answer": "have bought",
-          "gap_accepts": [
-            "have bought",
-            "they've bought",
-            "have just bought",
-            "they've just bought"
-          ],
-          "accepts": [
-            "They have just bought a new flat.",
-            "They've just bought a new flat."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "they",
-            "buy",
-            "a new flat",
-            "just"
-          ],
-          "lemma": "buy"
-        },
-        {
-          "en": "I lost my keys this morning.",
-          "cz": "Dnes ráno jsem ztratil klíče.",
-          "gap": "I ____ my keys this morning.",
-          "gap_answer": "lost",
-          "gap_accepts": [
-            "lost",
-            "have lost"
-          ],
-          "accepts": [
-            "I lost my keys this morning.",
-            "I have lost my keys this morning."
-          ],
-          "lemma": "lose",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "I",
-            "lose",
-            "my keys",
-            "this morning"
-          ]
-        },
-        {
-          "en": "I have lost my keys — I can't find them.",
-          "cz": "Ztratil jsem klíče — nemůžu je najít.",
-          "gap": "I ____ my keys — I can't find them.",
-          "gap_answer": "have lost",
-          "gap_accepts": [
-            "have lost",
-            "I've lost"
-          ],
-          "accepts": [
-            "I have lost my keys — I can't find them.",
-            "I've lost my keys — I can't find them.",
-            "I have lost my keys - I can't find them.",
-            "I've lost my keys - I can't find them."
-          ],
-          "lemma": "lose",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "lose",
-            "my keys",
-            "can't find them"
-          ]
-        },
-        {
-          "en": "The train arrived late last night.",
-          "cz": "Vlak včera v noci přijel pozdě.",
-          "gap": "The train ____ late last night.",
-          "gap_answer": "arrived",
-          "gap_accepts": [
-            "arrived"
-          ],
-          "accepts": [
-            "The train arrived late last night."
-          ],
-          "lemma": "arrive",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "the train",
-            "arrive",
-            "late",
-            "last night"
-          ]
-        },
-        {
-          "en": "The train has just arrived.",
-          "cz": "Vlak právě přijel.",
-          "gap": "The train ____ already. (arrive)",
-          "gap_answer": "has arrived",
-          "gap_accepts": [
-            "has arrived",
-            "has just arrived",
-            "the train's arrived"
-          ],
-          "accepts": [
-            "The train has just arrived.",
-            "The train's just arrived."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "the train",
-            "arrive",
-            "just"
-          ],
-          "lemma": "arrive"
-        },
-        {
-          "en": "I worked there from 2018 to 2021.",
-          "cz": "Pracoval jsem tam od 2018 do 2021.",
-          "gap": "I ____ there from 2018 to 2021.",
-          "gap_answer": "worked",
-          "gap_accepts": [
-            "worked"
-          ],
-          "accepts": [
-            "I worked there from 2018 to 2021."
-          ],
-          "lemma": "work",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "I",
-            "work",
-            "there",
-            "from 2018 to 2021"
-          ]
-        },
-        {
-          "en": "I have worked here since 2021.",
-          "cz": "Tady pracuji od roku 2021.",
-          "gap": "I ____ here since 2021.",
-          "gap_answer": "have worked",
-          "gap_accepts": [
-            "have worked",
-            "I've worked"
-          ],
-          "accepts": [
-            "I have worked here since 2021.",
-            "I've worked here since 2021."
-          ],
-          "lemma": "work",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "work",
-            "here",
-            "since 2021"
-          ]
-        },
-        {
-          "en": "Did you call the client yesterday?",
-          "cz": "Volal jsi klientovi včera?",
-          "gap": "____ the client yesterday? (you/call)",
-          "gap_answer": "Did you call",
-          "gap_accepts": [
-            "Did you call",
-            "did you call"
-          ],
-          "quiz_options": [
-            "Did you call",
-            "Have you called",
-            "Did you called",
-            "Have you call"
-          ],
-          "accepts": [
-            "Did you call the client yesterday?"
-          ],
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "you",
-            "call",
-            "the client",
-            "yesterday",
-            "?"
-          ],
-          "lemma": "call"
-        },
-        {
-          "en": "Have you called the client yet?",
-          "cz": "Už jsi volal klientovi?",
-          "gap": "____ the client yet? (you/call)",
-          "gap_answer": "Have you called",
-          "gap_accepts": [
-            "Have you called",
-            "have you called"
-          ],
-          "quiz_options": [
-            "Have you called",
-            "Did you call",
-            "Have you call",
-            "Did you called"
-          ],
-          "accepts": [
-            "Have you called the client yet?"
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "you",
-            "call",
-            "the client",
-            "yet",
-            "?"
-          ],
-          "lemma": "call"
-        },
-        {
-          "en": "She didn't send the email on Monday.",
-          "cz": "V pondělí ten email neposlala.",
-          "gap": "She ____ the email on Monday. (send / not)",
-          "gap_answer": "didn't send",
-          "gap_accepts": [
-            "didn't send",
-            "did not send"
-          ],
-          "lemma": "send",
-          "accepts": [
-            "She didn't send the email on Monday.",
-            "She did not send the email on Monday."
-          ],
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "she",
-            "not",
-            "send",
-            "the email",
-            "on Monday"
-          ],
-          "use_prompt": "Full sentence — past simple or present perfect?"
-        },
-        {
-          "en": "She hasn't sent the email yet.",
-          "cz": "Ještě neposlala ten email.",
-          "gap": "She ____ the email yet. (send / not)",
-          "gap_answer": "hasn't sent",
-          "gap_accepts": [
-            "hasn't sent",
-            "has not sent"
-          ],
-          "lemma": "send",
-          "accepts": [
-            "She hasn't sent the email yet.",
-            "She has not sent the email yet."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "she",
-            "not",
-            "send",
-            "the email",
-            "yet"
-          ]
-        },
-        {
-          "en": "I met her at a conference in 2022.",
-          "cz": "Potkal jsem ji na konferenci v roce 2022.",
-          "gap": "I ____ her at a conference in 2022.",
-          "gap_answer": "met",
-          "gap_accepts": [
-            "met"
-          ],
-          "accepts": [
-            "I met her at a conference in 2022."
-          ],
-          "lemma": "meet",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "I",
-            "meet",
-            "her",
-            "at a conference",
-            "in 2022"
-          ]
-        },
-        {
-          "en": "I have met her twice already.",
-          "cz": "Už jsem ji dvakrát potkal.",
-          "gap": "I ____ her twice already. (meet)",
-          "gap_answer": "have met",
-          "gap_accepts": [
-            "have met",
-            "I've met"
-          ],
-          "accepts": [
-            "I have met her twice already.",
-            "I've met her twice already."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "meet",
-            "her",
-            "twice already"
-          ],
-          "lemma": "meet"
-        },
-        {
-          "en": "He broke his phone last week.",
-          "cz": "Minulý týden si rozbil telefon.",
-          "gap": "He ____ his phone last week.",
-          "gap_answer": "broke",
-          "gap_accepts": [
-            "broke"
-          ],
-          "accepts": [
-            "He broke his phone last week."
-          ],
-          "lemma": "break",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "he",
-            "break",
-            "his phone",
-            "last week"
-          ]
-        },
-        {
-          "en": "He has broken his phone — it doesn't work.",
-          "cz": "Rozbil si telefon — nefunguje.",
-          "gap": "He ____ his phone — it doesn't work.",
-          "gap_answer": "has broken",
-          "gap_accepts": [
-            "has broken",
-            "he's broken"
-          ],
-          "accepts": [
-            "He has broken his phone — it doesn't work.",
-            "He's broken his phone — it doesn't work."
-          ],
-          "lemma": "break",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "he",
-            "break",
-            "his phone",
-            "it doesn't work"
-          ]
-        },
-        {
-          "en": "They visited Prague last summer.",
-          "cz": "Loni v létě navštívili Prahu.",
-          "gap": "They ____ Prague last summer.",
-          "gap_answer": "visited",
-          "gap_accepts": [
-            "visited"
-          ],
-          "accepts": [
-            "They visited Prague last summer."
-          ],
-          "lemma": "visit",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "they",
-            "visit",
-            "Prague",
-            "last summer"
-          ]
-        },
-        {
-          "en": "They have visited Prague twice before.",
-          "cz": "Prahu už dvakrát navštívili.",
-          "gap": "They ____ Prague twice before.",
-          "gap_answer": "have visited",
-          "gap_accepts": [
-            "have visited",
-            "they've visited"
-          ],
-          "accepts": [
-            "They have visited Prague twice before.",
-            "They've visited Prague twice before."
-          ],
-          "lemma": "visit",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "they",
-            "visit",
-            "Prague",
-            "twice before"
-          ]
-        },
-        {
-          "en": "She went to the gym this morning.",
-          "cz": "Dnes ráno šla do posilovny.",
-          "gap": "She ____ to the gym this morning.",
-          "gap_answer": "went",
-          "gap_accepts": [
-            "went",
-            "has gone",
-            "has been"
-          ],
-          "accepts": [
-            "She went to the gym this morning.",
-            "She has gone to the gym this morning.",
-            "She has been to the gym this morning."
-          ],
-          "lemma": "go",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "she",
-            "go",
-            "to the gym",
-            "this morning"
-          ]
-        },
-        {
-          "en": "She has already been to the gym today.",
-          "cz": "Dnes už byla v posilovně.",
-          "gap": "She ____ to the gym already. (be)",
-          "gap_answer": "has been",
-          "gap_accepts": [
-            "has been",
-            "she's been",
-            "has already been",
-            "she's already been"
-          ],
-          "accepts": [
-            "She has already been to the gym today.",
-            "She's already been to the gym today."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "she",
-            "be",
-            "to the gym",
-            "already",
-            "today"
-          ],
-          "lemma": "be"
-        },
-        {
-          "en": "We chose the hotel in March.",
-          "cz": "Hotel jsme vybrali v březnu.",
-          "gap": "We ____ the hotel in March.",
-          "gap_answer": "chose",
-          "gap_accepts": [
-            "chose"
-          ],
-          "accepts": [
-            "We chose the hotel in March."
-          ],
-          "lemma": "choose",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "we",
-            "choose",
-            "the hotel",
-            "in March"
-          ]
-        },
-        {
-          "en": "We have already chosen the hotel.",
-          "cz": "Hotel už jsme vybrali.",
-          "gap": "We ____ the hotel already. (choose)",
-          "gap_answer": "have chosen",
-          "gap_accepts": [
-            "have chosen",
-            "we've chosen",
-            "have already chosen",
-            "we've already chosen"
-          ],
-          "accepts": [
-            "We have already chosen the hotel.",
-            "We've already chosen the hotel."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "we",
-            "choose",
-            "the hotel",
-            "already"
-          ],
-          "lemma": "choose"
-        },
-        {
-          "en": "He started the course last month.",
-          "cz": "Kurz začal minulý měsíc.",
-          "gap": "He ____ the course last month.",
-          "gap_answer": "started",
-          "gap_accepts": [
-            "started"
-          ],
-          "accepts": [
-            "He started the course last month."
-          ],
-          "lemma": "start",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "he",
-            "start",
-            "the course",
-            "last month"
-          ]
-        },
-        {
-          "en": "He has just started the course.",
-          "cz": "Kurz právě začal.",
-          "gap": "He ____ the course already. (start)",
-          "gap_answer": "has started",
-          "gap_accepts": [
-            "has started",
-            "he's started",
-            "has just started",
-            "he's just started"
-          ],
-          "accepts": [
-            "He has just started the course.",
-            "He's just started the course."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "he",
-            "start",
-            "the course",
-            "just"
-          ],
-          "lemma": "start"
-        },
-        {
-          "en": "I spoke to the manager yesterday.",
-          "cz": "Včera jsem mluvil s manažerem.",
-          "gap": "I ____ to the manager yesterday.",
-          "gap_answer": "spoke",
-          "gap_accepts": [
-            "spoke"
-          ],
-          "accepts": [
-            "I spoke to the manager yesterday.",
-            "Yesterday I spoke to the manager.",
-            "Yesterday I spoke to the manager"
-          ],
-          "lemma": "speak",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "I",
-            "speak",
-            "to the manager",
-            "yesterday"
-          ]
-        },
-        {
-          "en": "I have already spoken to the manager.",
-          "cz": "Už jsem mluvil s manažerem.",
-          "gap": "I ____ to the manager already. (speak)",
-          "gap_answer": "have spoken",
-          "gap_accepts": [
-            "have spoken",
-            "I've spoken",
-            "have already spoken",
-            "I've already spoken"
-          ],
-          "accepts": [
-            "I have already spoken to the manager.",
-            "I've already spoken to the manager."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "speak",
-            "to the manager",
-            "already"
-          ],
-          "lemma": "speak"
-        },
-        {
-          "en": "She wrote the email this morning.",
-          "cz": "Dnes ráno napsala email.",
-          "gap": "She ____ the email this morning.",
-          "gap_answer": "wrote",
-          "gap_accepts": [
-            "wrote",
-            "has written"
-          ],
-          "accepts": [
-            "She wrote the email this morning.",
-            "She has written the email this morning."
-          ],
-          "lemma": "write",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "she",
-            "write",
-            "the email",
-            "this morning"
-          ]
-        },
-        {
-          "en": "She has written three emails today so far.",
-          "cz": "Dnes zatím napsala tři emaily.",
-          "gap": "She ____ three emails today so far.",
-          "gap_answer": "has written",
-          "gap_accepts": [
-            "has written",
-            "she's written"
-          ],
-          "accepts": [
-            "She has written three emails today so far.",
-            "She's written three emails today so far.",
-            "She has written three emails so far today.",
-            "She's written three emails so far today.",
-            "She has written three emails so far today",
-            "She's written three emails so far today"
-          ],
-          "lemma": "write",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "she",
-            "write",
-            "three emails",
-            "today",
-            "so far"
-          ]
-        },
-        {
-          "en": "We drove to Ostrava last Saturday.",
-          "cz": "Minulou sobotu jsme jeli do Ostravy.",
-          "gap": "We ____ to Ostrava last Saturday.",
-          "gap_answer": "drove",
-          "gap_accepts": [
-            "drove"
-          ],
-          "accepts": [
-            "We drove to Ostrava last Saturday."
-          ],
-          "lemma": "drive",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "we",
-            "drive",
-            "to Ostrava",
-            "last Saturday"
-          ]
-        },
-        {
-          "en": "We have driven this route many times before.",
-          "cz": "Tudy jsme už mnohokrát jeli.",
-          "gap": "We ____ this route many times before.",
-          "gap_answer": "have driven",
-          "gap_accepts": [
-            "have driven",
-            "we've driven"
-          ],
-          "accepts": [
-            "We have driven this route many times before.",
-            "We've driven this route many times before."
-          ],
-          "lemma": "drive",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "we",
-            "drive",
-            "this route",
-            "many times before"
-          ]
-        },
-        {
-          "en": "Did they reply last week?",
-          "cz": "Odpověděli minulý týden?",
-          "gap": "____ last week? (they/reply)",
-          "gap_answer": "Did they reply",
-          "gap_accepts": [
-            "Did they reply",
-            "did they reply"
-          ],
-          "quiz_options": [
-            "Did they reply",
-            "Have they replied",
-            "Did they replied",
-            "Have they reply"
-          ],
-          "accepts": [
-            "Did they reply last week?"
-          ],
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "they",
-            "reply",
-            "last week",
-            "?"
-          ],
-          "lemma": "reply"
-        },
-        {
-          "en": "Have they replied yet?",
-          "cz": "Už odpověděli?",
-          "gap": "____ yet? (they/reply)",
-          "gap_answer": "Have they replied",
-          "gap_accepts": [
-            "Have they replied",
-            "have they replied"
-          ],
-          "quiz_options": [
-            "Have they replied",
-            "Did they reply",
-            "Have they reply",
-            "Did they replied"
-          ],
-          "accepts": [
-            "Have they replied yet?"
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "they",
-            "reply",
-            "yet",
-            "?"
-          ],
-          "lemma": "reply"
-        },
-        {
-          "en": "I found a better flat last month.",
-          "cz": "Minulý měsíc jsem našel lepší byt.",
-          "gap": "I ____ a better flat last month.",
-          "gap_answer": "found",
-          "gap_accepts": [
-            "found"
-          ],
-          "accepts": [
-            "I found a better flat last month."
-          ],
-          "lemma": "find",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "I",
-            "find",
-            "a better flat",
-            "last month"
-          ]
-        },
-        {
-          "en": "I have just found a better flat.",
-          "cz": "Právě jsem našel lepší byt.",
-          "gap": "I ____ a better flat already. (find)",
-          "gap_answer": "have found",
-          "gap_accepts": [
-            "have found",
-            "I've found",
-            "have just found",
-            "I've just found"
-          ],
-          "accepts": [
-            "I have just found a better flat.",
-            "I've just found a better flat."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "find",
-            "a better flat",
-            "just"
-          ],
-          "lemma": "find"
-        },
-        {
-          "en": "He took the train yesterday.",
-          "cz": "Včera jel vlakem.",
-          "gap": "He ____ the train yesterday.",
-          "gap_answer": "took",
-          "gap_accepts": [
-            "took"
-          ],
-          "accepts": [
-            "He took the train yesterday."
-          ],
-          "lemma": "take",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "he",
-            "take",
-            "the train",
-            "yesterday"
-          ]
-        },
-        {
-          "en": "He has taken the train twice this week.",
-          "cz": "Tenhle týden jel vlakem dvakrát.",
-          "gap": "He ____ the train twice this week.",
-          "gap_answer": "has taken",
-          "gap_accepts": [
-            "has taken",
-            "he's taken"
-          ],
-          "accepts": [
-            "He has taken the train twice this week.",
-            "He's taken the train twice this week."
-          ],
-          "lemma": "take",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "he",
-            "take",
-            "the train",
-            "twice this week"
-          ]
-        },
-        {
-          "en": "I read that book in 2020.",
-          "cz": "Tu knihu jsem četl v roce 2020.",
-          "gap": "I ____ that book in 2020.",
-          "gap_answer": "read",
-          "gap_accepts": [
-            "read"
-          ],
-          "accepts": [
-            "I read that book in 2020."
-          ],
-          "lemma": "read",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "I",
-            "read",
-            "that book",
-            "in 2020"
-          ]
-        },
-        {
-          "en": "I have already read that book.",
-          "cz": "Tu knihu jsem už četl.",
-          "gap": "I ____ that book already. (read)",
-          "gap_answer": "have read",
-          "gap_accepts": [
-            "have read",
-            "I've read",
-            "have already read",
-            "I've already read"
-          ],
-          "accepts": [
-            "I have already read that book.",
-            "I've already read that book."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "read",
-            "that book",
-            "already"
-          ],
-          "lemma": "read"
-        },
-        {
-          "en": "She paid the bill last night.",
-          "cz": "Včera večer zaplatila účet.",
-          "gap": "She ____ the bill last night.",
-          "gap_answer": "paid",
-          "gap_accepts": [
-            "paid"
-          ],
-          "accepts": [
-            "She paid the bill last night."
-          ],
-          "lemma": "pay",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "she",
-            "pay",
-            "the bill",
-            "last night"
-          ]
-        },
-        {
-          "en": "She has already paid the bill.",
-          "cz": "Účet už zaplatila.",
-          "gap": "She ____ the bill already. (pay)",
-          "gap_answer": "has paid",
-          "gap_accepts": [
-            "has paid",
-            "she's paid",
-            "has already paid",
-            "she's already paid"
-          ],
-          "accepts": [
-            "She has already paid the bill.",
-            "She's already paid the bill."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "she",
-            "pay",
-            "the bill",
-            "already"
-          ],
-          "lemma": "pay"
-        },
-        {
-          "en": "We sold the car in January.",
-          "cz": "Auto jsme prodali v lednu.",
-          "gap": "We ____ the car in January.",
-          "gap_answer": "sold",
-          "gap_accepts": [
-            "sold"
-          ],
-          "accepts": [
-            "We sold the car in January."
-          ],
-          "lemma": "sell",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "we",
-            "sell",
-            "the car",
-            "in January"
-          ]
-        },
-        {
-          "en": "We have sold the car — we don't have it now.",
-          "cz": "Auto jsme prodali — už nám nepatří.",
-          "gap": "We ____ the car — we don't have it now.",
-          "gap_answer": "have sold",
-          "gap_accepts": [
-            "have sold",
-            "we've sold"
-          ],
-          "accepts": [
-            "We have sold the car — we don't have it now.",
-            "We've sold the car — we don't have it now."
-          ],
-          "lemma": "sell",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "we",
-            "sell",
-            "the car",
-            "we don't have it now"
-          ]
-        },
-        {
-          "en": "Was he in Vienna last year?",
-          "cz": "Byl loni ve Vídni?",
-          "gap": "____ in Vienna last year? (he/be)",
-          "gap_answer": "Was he",
-          "gap_accepts": [
-            "Was he",
-            "was he"
-          ],
-          "quiz_options": [
-            "Was he",
-            "Has he been",
-            "Were he",
-            "Have he been"
-          ],
-          "accepts": [
-            "Was he in Vienna last year?"
-          ],
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "he",
-            "be",
-            "in Vienna",
-            "last year",
-            "?"
-          ],
-          "lemma": "be"
-        },
-        {
-          "en": "Has he ever been to Vienna?",
-          "cz": "Byl někdy ve Vídni?",
-          "gap": "____ to Vienna? (he/be)",
-          "gap_answer": "Has he ever been",
-          "gap_accepts": [
-            "Has he ever been",
-            "has he ever been",
-            "Has he been",
-            "has he been"
-          ],
-          "quiz_options": [
-            "Has he ever been",
-            "Was he ever",
-            "Have he ever been",
-            "Has he ever be"
-          ],
-          "accepts": [
-            "Has he ever been to Vienna?"
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "he",
-            "ever",
-            "be",
-            "to Vienna",
-            "?"
-          ],
-          "lemma": "be"
-        },
-        {
-          "en": "I checked the timetable an hour ago.",
-          "cz": "Před hodinou jsem zkontroloval jízdní řád.",
-          "gap": "I ____ the timetable an hour ago.",
-          "gap_answer": "checked",
-          "gap_accepts": [
-            "checked"
-          ],
-          "accepts": [
-            "I checked the timetable an hour ago."
-          ],
-          "lemma": "check",
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "I",
-            "check",
-            "the timetable",
-            "an hour ago"
-          ]
-        },
-        {
-          "en": "I have just checked the timetable.",
-          "cz": "Právě jsem zkontroloval jízdní řád.",
-          "gap": "I ____ the timetable already. (check)",
-          "gap_answer": "have checked",
-          "gap_accepts": [
-            "have checked",
-            "I've checked",
-            "have just checked",
-            "I've just checked"
-          ],
-          "accepts": [
-            "I have just checked the timetable.",
-            "I've just checked the timetable."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "check",
-            "the timetable",
-            "just"
-          ],
-          "lemma": "check"
-        },
-        {
-          "en": "They didn't finish the report yesterday.",
-          "cz": "Včera tu zprávu nedokončili.",
-          "gap": "They ____ the report yesterday. (finish / not)",
-          "gap_answer": "didn't finish",
-          "gap_accepts": [
-            "didn't finish",
-            "did not finish"
-          ],
-          "lemma": "finish",
-          "accepts": [
-            "They didn't finish the report yesterday.",
-            "They did not finish the report yesterday."
-          ],
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "they",
-            "not",
-            "finish",
-            "the report",
-            "yesterday"
-          ]
-        },
-        {
-          "en": "They haven't finished the report yet.",
-          "cz": "Tu zprávu ještě nedokončili.",
-          "gap": "They ____ the report yet. (finish / not)",
-          "gap_answer": "haven't finished",
-          "gap_accepts": [
-            "haven't finished",
-            "have not finished"
-          ],
-          "lemma": "finish",
-          "accepts": [
-            "They haven't finished the report yet.",
-            "They have not finished the report yet."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "they",
-            "not",
-            "finish",
-            "the report",
-            "yet"
-          ]
-        },
-        {
-          "en": "Where did you go last weekend?",
-          "cz": "Kam jsi jel minulý víkend?",
-          "gap": "Where ____ last weekend? (go)",
-          "gap_answer": "did you go",
-          "gap_accepts": [
-            "did you go",
-            "Did you go"
-          ],
-          "quiz_options": [
-            "did you go",
-            "have you been",
-            "have you gone",
-            "did you went"
-          ],
-          "accepts": [
-            "Where did you go last weekend?"
-          ],
-          "explanation": "Past simple with finished past time (yesterday, last…, ago).",
-          "explanation_cz": "Minulý prostý s hotovým časem (yesterday, last…, ago).",
-          "use_cues": [
-            "where",
-            "you",
-            "go",
-            "last weekend",
-            "?"
-          ],
-          "lemma": "go"
-        },
-        {
-          "en": "Where have you been?",
-          "cz": "Kde jsi byl?",
-          "gap": "Where ____? (be)",
-          "gap_answer": "have you been",
-          "gap_accepts": [
-            "have you been",
-            "Have you been"
-          ],
-          "quiz_options": [
-            "have you been",
-            "were you",
-            "did you go",
-            "have you gone"
-          ],
-          "accepts": [
-            "Where have you been?",
-            "Where have you been"
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "where",
-            "you",
-            "been",
-            "?"
-          ],
-          "use_prompt": "Full question — link to now (use been)",
-          "lemma": "be"
-        },
-        {
-          "en": "He left the office at six.",
-          "cz": "Odešel z kanceláře v šest.",
-          "gap": "He ____ the office at six.",
-          "gap_answer": "left",
-          "gap_accepts": [
-            "left"
-          ],
-          "accepts": [
-            "He left the office at six."
-          ],
-          "lemma": "leave",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "he",
-            "leave",
-            "the office",
-            "at six"
-          ]
-        },
-        {
-          "en": "He has already left the office.",
-          "cz": "Už odešel z kanceláře.",
-          "gap": "He ____ the office already. (leave)",
-          "gap_answer": "has left",
-          "gap_accepts": [
-            "has left",
-            "he's left",
-            "has already left",
-            "he's already left"
-          ],
-          "accepts": [
-            "He has already left the office.",
-            "He's already left the office."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "he",
-            "leave",
-            "the office",
-            "already"
-          ],
-          "lemma": "leave"
-        },
-        {
-          "en": "We had lunch at noon.",
-          "cz": "V poledne jsme obědvali.",
-          "gap": "We ____ lunch at noon. (have)",
-          "gap_answer": "had",
-          "gap_accepts": [
-            "had"
-          ],
-          "accepts": [
-            "We had lunch at noon."
-          ],
-          "lemma": "have",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "we",
-            "have",
-            "lunch",
-            "at noon"
-          ]
-        },
-        {
-          "en": "We have already had lunch.",
-          "cz": "Už jsme obědvali.",
-          "gap": "We ____ lunch already. (have)",
-          "gap_answer": "have had",
-          "gap_accepts": [
-            "have had",
-            "we've had",
-            "have already had",
-            "we've already had"
-          ],
-          "accepts": [
-            "We have already had lunch.",
-            "We've already had lunch.",
-            "We have eaten lunch already.",
-            "We've eaten lunch already.",
-            "We have already eaten lunch.",
-            "We've already eaten lunch.",
-            "We have had lunch already.",
-            "We've had lunch already.",
-            "We already have had lunch."
-          ],
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "we",
-            "have",
-            "lunch",
-            "already"
-          ],
-          "lemma": "have"
-        },
-        {
-          "en": "I sent three emails yesterday.",
-          "cz": "Včera jsem poslal tři emaily.",
-          "gap": "I ____ three emails yesterday.",
-          "gap_answer": "sent",
-          "gap_accepts": [
-            "sent"
-          ],
-          "accepts": [
-            "I sent three emails yesterday."
-          ],
-          "lemma": "send",
-          "explanation": "Past simple = finished time · present perfect = link to now.",
-          "explanation_cz": "Minulý prostý = hotový čas · předpřítomný = vazba na teď.",
-          "use_cues": [
-            "I",
-            "send",
-            "three emails",
-            "yesterday"
-          ]
-        },
-        {
-          "en": "I have sent three emails today so far.",
-          "cz": "Dnes jsem zatím poslal tři emaily.",
-          "gap": "I ____ three emails today so far.",
-          "gap_answer": "have sent",
-          "gap_accepts": [
-            "have sent",
-            "I've sent"
-          ],
-          "accepts": [
-            "I have sent three emails today so far.",
-            "I've sent three emails today so far."
-          ],
-          "lemma": "send",
-          "explanation": "Present perfect links past to now (no finished past time word).",
-          "explanation_cz": "Předpřítomný spojuje minulost s teď (bez hotového časového údaje).",
-          "use_cues": [
-            "I",
-            "send",
-            "three emails",
-            "today",
-            "so far"
-          ]
-        }
-      ]
+     "en": "last week",
+     "bin": "past simple"
+    },
+    {
+     "en": "last year",
+     "bin": "past simple"
+    },
+    {
+     "en": "two years ago",
+     "bin": "past simple"
+    },
+    {
+     "en": "in 2010",
+     "bin": "past simple"
+    },
+    {
+     "en": "then",
+     "bin": "past simple"
+    },
+    {
+     "en": "after that",
+     "bin": "past simple"
+    },
+    {
+     "en": "last night",
+     "bin": "past simple"
+    },
+    {
+     "en": "since 2015",
+     "bin": "present perfect"
+    },
+    {
+     "en": "ever",
+     "bin": "present perfect"
+    },
+    {
+     "en": "never",
+     "bin": "present perfect"
+    },
+    {
+     "en": "just",
+     "bin": "present perfect"
+    },
+    {
+     "en": "already",
+     "bin": "present perfect"
+    },
+    {
+     "en": "yet",
+     "bin": "present perfect"
+    },
+    {
+     "en": "so far",
+     "bin": "present perfect"
     }
-  ],
-  "intro": {
-    "cards": [
-      {
-        "diagram": "pp_vs_past",
-        "labels": [
-          "Past simple",
-          "moved",
-          "The moving finished last year.",
-          "Present perfect",
-          "moved",
-          "I live here",
-          "Same event — we talk about the result now."
-        ],
-        "points": [
-          "I **moved** last year. We name **when** the moving happened.",
-          "I **have moved**. Same moving — we name what is true **now**."
-        ]
-      },
-      {
-        "title": "Past simple — when?",
-        "diagram": "time_now",
-        "labels": [
-          "I moved",
-          "last year",
-          "closed"
-        ],
-        "table": {
-          "headers": [
-            "Signal",
-            "Example"
-          ],
-          "rows": [
-            [
-              "yesterday / last… / ago",
-              "I moved **last year**."
-            ],
-            [
-              "then / after that",
-              "**Then** I moved to a village."
-            ],
-            [
-              "a finished time",
-              "In 2010 I lived in Brno."
-            ]
-          ]
-        },
-        "points": [
-          "The **time** of the action is finished — not the whole story."
-        ]
-      },
-      {
-        "title": "Present perfect — now?",
-        "diagram": "time_now",
-        "labels": [
-          "lost keys",
-          "I don't have them",
-          "bridge"
-        ],
-        "table": {
-          "headers": [
-            "Idea",
-            "Example"
-          ],
-          "rows": [
-            [
-              "Experience (ever / never)",
-              "I **have** never **lived** abroad."
-            ],
-            [
-              "Result now",
-              "I **have lost** my keys. (I don’t have them now.)"
-            ],
-            [
-              "Unfinished time",
-              "I **have lived** here for 12 years. (I still do.)"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Why it matters",
-        "diagram": "time_now",
-        "labels": [
-          "Then I moved",
-          "a finished step",
-          "closed"
-        ],
-        "points": [
-          "Listeners hear **then** as a finished step → past simple",
-          "Present perfect with **then** often sounds wrong",
-          "*Then I **have moved*** → *Then I **moved***"
-        ]
-      },
-      {
-        "title": "Unfinished time",
-        "title_cz": "čas, který ještě běží",
-        "diagram": "time_now",
-        "labels": [
-          "I have lived here",
-          "still true",
-          "span"
-        ],
-        "points": [
-          "If the story says **then / after that**, use past simple.",
-          "**for / since** with a situation that continues → present perfect."
-        ]
-      },
-      {
-        "title": "Signal words",
-        "table": {
-          "headers": [
-            "Past simple",
-            "Present perfect"
-          ],
-          "rows": [
-            [
-              "yesterday, last week, ago",
-              "ever, never, just, already, yet"
-            ],
-            [
-              "then, after that, in 2019",
-              "for, since (unfinished time)"
-            ],
-            [
-              "when I was 10",
-              "this week / today (if still open)"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Common mistakes",
-        "diagram": "time_now",
-        "labels": [
-          "I saw him",
-          "yesterday",
-          "closed"
-        ],
-        "table": {
-          "headers": [
-            "✗",
-            "✓"
-          ],
-          "rows": [
-            [
-              "Then I have moved.",
-              "Then I **moved**."
-            ],
-            [
-              "I have seen him yesterday.",
-              "I **saw** him yesterday."
-            ],
-            [
-              "I lived here since 2015.",
-              "I **have lived** here since 2015."
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Quick check",
-        "table": {
-          "headers": [
-            "",
-            ""
-          ],
-          "rows": [
-            [
-              "I ___ (move) to Prague in 2012.",
-              "**moved**"
-            ],
-            [
-              "I ___ (live) here for twelve years. (still here)",
-              "**have lived**"
-            ],
-            [
-              "Then I ___ (start) a new job.",
-              "**started**"
-            ]
-          ]
-        }
-      }
+   ]
+  },
+  {
+   "id": "b1_present_perfect_vs_past_main",
+   "title": "Present perfect vs past simple · B1",
+   "check": {
+    "sequence": [
+     "quiz"
     ]
+   },
+   "items": [
+    {
+     "en": "I saw him at the station yesterday.",
+     "cz": "Včera jsem ho viděl na nádraží.",
+     "gap": "I ____ him at the station yesterday. (see)",
+     "gap_answer": "saw",
+     "gap_accepts": [
+      "saw"
+     ],
+     "accepts": [
+      "I saw him at the station yesterday."
+     ],
+     "lemma": "see",
+     "explanation": "\"yesterday\" names a finished time, so past simple: saw. Not have seen — that leaves the time open.",
+     "explanation_cz": "„yesterday“ pojmenovává uzavřený čas, proto minulý prostý: saw. Ne have seen — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "see",
+      "him",
+      "at the station",
+      "yesterday"
+     ],
+     "quiz_options": [
+      "saw",
+      "have seen",
+      "have saw"
+     ]
+    },
+    {
+     "en": "I have seen that film before.",
+     "cz": "Ten film jsem už viděl.",
+     "gap": "I ____ that film before. (see)",
+     "gap_answer": "have seen",
+     "gap_accepts": [
+      "have seen",
+      "I've seen"
+     ],
+     "accepts": [
+      "I have seen that film before.",
+      "I've seen that film before."
+     ],
+     "lemma": "see",
+     "explanation": "\"before\" counts experience up to now, so present perfect: have seen. Not saw — no finished time is named.",
+     "explanation_cz": "„before“ počítá zkušenost až do teď, proto předpřítomný: have seen. Ne saw — žádný uzavřený čas tu není.",
+     "use_cues": [
+      "I",
+      "see",
+      "that film",
+      "before"
+     ],
+     "quiz_options": [
+      "have seen",
+      "saw",
+      "have saw"
+     ]
+    },
+    {
+     "en": "She finished the report last Friday.",
+     "cz": "Minulý pátek dokončila tu zprávu.",
+     "gap": "She ____ the report last Friday. (finish)",
+     "gap_answer": "finished",
+     "gap_accepts": [
+      "finished"
+     ],
+     "accepts": [
+      "She finished the report last Friday."
+     ],
+     "lemma": "finish",
+     "explanation": "\"last Friday\" names a finished time, so past simple: finished. Not has finished — that leaves the time open.",
+     "explanation_cz": "„last Friday“ pojmenovává uzavřený čas, proto minulý prostý: finished. Ne has finished — ten nechává čas otevřený.",
+     "use_cues": [
+      "she",
+      "finish",
+      "the report",
+      "last Friday"
+     ],
+     "quiz_options": [
+      "finished",
+      "has finished",
+      "has finish"
+     ]
+    },
+    {
+     "en": "She has already finished the report.",
+     "cz": "Tu zprávu už dokončila.",
+     "gap": "She ____ the report already. (finish)",
+     "gap_answer": "has finished",
+     "gap_accepts": [
+      "has finished",
+      "she's finished"
+     ],
+     "accepts": [
+      "She has already finished the report.",
+      "She's already finished the report.",
+      "She has finished the report already.",
+      "She's finished the report already."
+     ],
+     "lemma": "finish",
+     "explanation": "\"already\" leaves the time open, so present perfect: has finished. Not finished — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: has finished. Ne finished — ten by ho uzavřel.",
+     "use_cues": [
+      "she",
+      "finish",
+      "the report",
+      "already"
+     ],
+     "quiz_options": [
+      "has finished",
+      "finished",
+      "has finish"
+     ]
+    },
+    {
+     "en": "We moved to Brno in 2019.",
+     "cz": "V roce 2019 jsme se přestěhovali do Brna.",
+     "gap": "We ____ to Brno in 2019. (move)",
+     "gap_answer": "moved",
+     "gap_accepts": [
+      "moved"
+     ],
+     "accepts": [
+      "We moved to Brno in 2019."
+     ],
+     "lemma": "move",
+     "explanation": "\"in 2019\" names a finished time, so past simple: moved. Not have moved — that leaves the time open.",
+     "explanation_cz": "„in 2019“ pojmenovává uzavřený čas, proto minulý prostý: moved. Ne have moved — ten nechává čas otevřený.",
+     "use_cues": [
+      "we",
+      "move",
+      "to Brno",
+      "in 2019"
+     ],
+     "quiz_options": [
+      "moved",
+      "have moved",
+      "have move"
+     ]
+    },
+    {
+     "en": "We have lived in Brno since 2019.",
+     "cz": "V Brně bydlíme od roku 2019.",
+     "gap": "We ____ in Brno since 2019. (live)",
+     "gap_answer": "have lived",
+     "gap_accepts": [
+      "have lived",
+      "we've lived"
+     ],
+     "accepts": [
+      "We have lived in Brno since 2019.",
+      "We've lived in Brno since 2019."
+     ],
+     "lemma": "live",
+     "explanation": "\"since 2019\" is a span that reaches now, so present perfect: have lived. lived would mean it is over.",
+     "explanation_cz": "„since 2019“ je úsek, který sahá až do teď, proto předpřítomný: have lived. lived by znamenalo, že už je konec.",
+     "use_cues": [
+      "we",
+      "live",
+      "in Brno",
+      "since 2019"
+     ],
+     "quiz_options": [
+      "have lived",
+      "lived",
+      "have live"
+     ]
+    },
+    {
+     "en": "He lived in Prague for five years until 2019.",
+     "cz": "Pět let bydlel v Praze až do roku 2019.",
+     "gap": "He ____ in Prague for five years until 2019. (live)",
+     "gap_answer": "lived",
+     "gap_accepts": [
+      "lived"
+     ],
+     "accepts": [
+      "He lived in Prague for five years until 2019."
+     ],
+     "lemma": "live",
+     "explanation": "\"until 2019\" names a finished time, so past simple: lived. Not has lived — that leaves the time open.",
+     "explanation_cz": "„until 2019“ pojmenovává uzavřený čas, proto minulý prostý: lived. Ne has lived — ten nechává čas otevřený.",
+     "use_cues": [
+      "he",
+      "live",
+      "in Prague",
+      "for five years",
+      "until 2019"
+     ],
+     "quiz_options": [
+      "lived",
+      "has lived",
+      "has live"
+     ]
+    },
+    {
+     "en": "He has lived in Brno for five years now.",
+     "cz": "Už pět let bydlí v Brně.",
+     "gap": "He ____ in Brno for five years now. (live)",
+     "gap_answer": "has lived",
+     "gap_accepts": [
+      "has lived",
+      "he's lived"
+     ],
+     "accepts": [
+      "He has lived in Brno for five years now.",
+      "He's lived in Brno for five years now."
+     ],
+     "lemma": "live",
+     "explanation": "\"for five years now\" is a span that reaches now, so present perfect: has lived. lived would mean it is over.",
+     "explanation_cz": "„for five years now“ je úsek, který sahá až do teď, proto předpřítomný: has lived. lived by znamenalo, že už je konec.",
+     "use_cues": [
+      "he",
+      "live",
+      "in Brno",
+      "for five years now"
+     ],
+     "quiz_options": [
+      "has lived",
+      "lived",
+      "has live"
+     ]
+    },
+    {
+     "en": "They bought the flat two years ago.",
+     "cz": "Ten byt koupili před dvěma lety.",
+     "gap": "They ____ the flat two years ago. (buy)",
+     "gap_answer": "bought",
+     "gap_accepts": [
+      "bought"
+     ],
+     "accepts": [
+      "They bought the flat two years ago."
+     ],
+     "lemma": "buy",
+     "explanation": "\"two years ago\" names a finished time, so past simple: bought. Not have bought — that leaves the time open.",
+     "explanation_cz": "„two years ago“ pojmenovává uzavřený čas, proto minulý prostý: bought. Ne have bought — ten nechává čas otevřený.",
+     "use_cues": [
+      "they",
+      "buy",
+      "the flat",
+      "two years ago"
+     ],
+     "quiz_options": [
+      "bought",
+      "have bought",
+      "have buy"
+     ]
+    },
+    {
+     "en": "They have just bought a new flat.",
+     "cz": "Právě koupili nový byt.",
+     "gap": "They ____ a new flat. (just/buy)",
+     "gap_answer": "have just bought",
+     "gap_accepts": [
+      "have just bought",
+      "they've just bought"
+     ],
+     "accepts": [
+      "They have just bought a new flat.",
+      "They've just bought a new flat."
+     ],
+     "explanation": "\"just\" means it happened a moment ago and still counts now, so present perfect: have just bought. Not bought — that would close the time.",
+     "explanation_cz": "„just“ znamená před chvílí a pořád to platí, proto předpřítomný: have just bought. Ne bought — to by čas uzavřelo.",
+     "use_cues": [
+      "they",
+      "buy",
+      "a new flat",
+      "just"
+     ],
+     "lemma": "buy",
+     "quiz_options": [
+      "have just bought",
+      "bought",
+      "have buy"
+     ]
+    },
+    {
+     "en": "I lost my keys on Saturday.",
+     "cz": "V sobotu jsem ztratil klíče.",
+     "gap": "I ____ my keys on Saturday. (lose)",
+     "gap_answer": "lost",
+     "gap_accepts": [
+      "lost"
+     ],
+     "accepts": [
+      "I lost my keys on Saturday."
+     ],
+     "lemma": "lose",
+     "explanation": "\"on Saturday\" names a finished time, so past simple: lost. Not have lost — that leaves the time open.",
+     "explanation_cz": "„on Saturday“ pojmenovává uzavřený čas, proto minulý prostý: lost. Ne have lost — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "lose",
+      "my keys",
+      "on Saturday"
+     ],
+     "quiz_options": [
+      "lost",
+      "have lost",
+      "have lose"
+     ]
+    },
+    {
+     "en": "I have lost my keys and I can't find them.",
+     "cz": "Ztratil jsem klíče a ještě je nemůžu najít.",
+     "gap": "I ____ my keys and I can't find them. (lose)",
+     "gap_answer": "have lost",
+     "gap_accepts": [
+      "have lost",
+      "I've lost"
+     ],
+     "accepts": [
+      "I have lost my keys and I can't find them.",
+      "I've lost my keys and I can't find them.",
+      "I have lost my keys and I cannot find them.",
+      "I've lost my keys and I cannot find them."
+     ],
+     "lemma": "lose",
+     "explanation": "The keys are still missing now, so present perfect: have lost. Past simple would only say when it happened.",
+     "explanation_cz": "Klíče chybí i teď, proto předpřítomný: have lost. Minulý prostý by řekl jen kdy se to stalo.",
+     "use_cues": [
+      "I",
+      "lose",
+      "my keys",
+      "not find them"
+     ],
+     "quiz_options": [
+      "have lost",
+      "lost",
+      "have lose"
+     ]
+    },
+    {
+     "en": "The train arrived late last night.",
+     "cz": "Ten vlak včera v noci přijel pozdě.",
+     "gap": "The train ____ late last night. (arrive)",
+     "gap_answer": "arrived",
+     "gap_accepts": [
+      "arrived"
+     ],
+     "accepts": [
+      "The train arrived late last night."
+     ],
+     "lemma": "arrive",
+     "explanation": "\"last night\" names a finished time, so past simple: arrived. Not has arrived — that leaves the time open.",
+     "explanation_cz": "„last night“ pojmenovává uzavřený čas, proto minulý prostý: arrived. Ne has arrived — ten nechává čas otevřený.",
+     "use_cues": [
+      "the train",
+      "arrive",
+      "late",
+      "last night"
+     ],
+     "quiz_options": [
+      "arrived",
+      "has arrived",
+      "has arrive"
+     ]
+    },
+    {
+     "en": "The train has just arrived.",
+     "cz": "Ten vlak právě přijel.",
+     "gap": "The train ____. (just/arrive)",
+     "gap_answer": "has just arrived",
+     "gap_accepts": [
+      "has just arrived",
+      "the train's just arrived"
+     ],
+     "accepts": [
+      "The train has just arrived.",
+      "The train's just arrived."
+     ],
+     "explanation": "\"just\" means it happened a moment ago and still counts now, so present perfect: has just arrived. Not arrived — that would close the time.",
+     "explanation_cz": "„just“ znamená před chvílí a pořád to platí, proto předpřítomný: has just arrived. Ne arrived — to by čas uzavřelo.",
+     "use_cues": [
+      "the train",
+      "arrive",
+      "just"
+     ],
+     "lemma": "arrive",
+     "quiz_options": [
+      "has just arrived",
+      "arrived",
+      "has arrive"
+     ]
+    },
+    {
+     "en": "I worked there from 2018 to 2021.",
+     "cz": "Pracoval jsem tam od 2018 do 2021.",
+     "gap": "I ____ there from 2018 to 2021. (work)",
+     "gap_answer": "worked",
+     "gap_accepts": [
+      "worked"
+     ],
+     "accepts": [
+      "I worked there from 2018 to 2021."
+     ],
+     "lemma": "work",
+     "explanation": "\"from 2018 to 2021\" names a finished time, so past simple: worked. Not have worked — that leaves the time open.",
+     "explanation_cz": "„from 2018 to 2021“ pojmenovává uzavřený čas, proto minulý prostý: worked. Ne have worked — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "work",
+      "there",
+      "from 2018 to 2021"
+     ],
+     "quiz_options": [
+      "worked",
+      "have worked",
+      "have work"
+     ]
+    },
+    {
+     "en": "I have worked here since 2021.",
+     "cz": "Tady pracuji od roku 2021.",
+     "gap": "I ____ here since 2021. (work)",
+     "gap_answer": "have worked",
+     "gap_accepts": [
+      "have worked",
+      "I've worked"
+     ],
+     "accepts": [
+      "I have worked here since 2021.",
+      "I've worked here since 2021."
+     ],
+     "lemma": "work",
+     "explanation": "\"since 2021\" is a span that reaches now, so present perfect: have worked. worked would mean it is over.",
+     "explanation_cz": "„since 2021“ je úsek, který sahá až do teď, proto předpřítomný: have worked. worked by znamenalo, že už je konec.",
+     "use_cues": [
+      "I",
+      "work",
+      "here",
+      "since 2021"
+     ],
+     "quiz_options": [
+      "have worked",
+      "worked",
+      "have work"
+     ]
+    },
+    {
+     "en": "Did you call the doctor yesterday?",
+     "cz": "Volal jsi včera doktorovi?",
+     "gap": "____ the doctor yesterday? (you/call)",
+     "gap_answer": "Did you call",
+     "gap_accepts": [
+      "Did you call",
+      "did you call"
+     ],
+     "quiz_options": [
+      "Did you call",
+      "Have you called",
+      "Did you called",
+      "Have you call"
+     ],
+     "accepts": [
+      "Did you call the doctor yesterday?"
+     ],
+     "explanation": "\"yesterday\" names a finished time, so the past question: Did you call. Have you called would leave the time open.",
+     "explanation_cz": "„yesterday“ pojmenovává uzavřený čas, proto minulá otázka: Did you call. Have you called by čas nechala otevřený.",
+     "use_cues": [
+      "you",
+      "call",
+      "the doctor",
+      "yesterday"
+     ],
+     "lemma": "call"
+    },
+    {
+     "en": "Have you called the doctor yet?",
+     "cz": "Už jsi volal doktorovi?",
+     "gap": "____ the doctor yet? (you/call)",
+     "gap_answer": "Have you called",
+     "gap_accepts": [
+      "Have you called",
+      "have you called"
+     ],
+     "quiz_options": [
+      "Have you called",
+      "Did you call",
+      "Have you call",
+      "Did you called"
+     ],
+     "accepts": [
+      "Have you called the doctor yet?"
+     ],
+     "explanation": "\"yet\" keeps the time open, so the perfect question: Have you called. Did you call would close it.",
+     "explanation_cz": "„yet“ nechává čas otevřený, proto předpřítomná otázka: Have you called. Did you call by ho uzavřelo.",
+     "use_cues": [
+      "you",
+      "call",
+      "the doctor",
+      "yet"
+     ],
+     "lemma": "call"
+    },
+    {
+     "en": "She didn't send the email on Monday.",
+     "cz": "V pondělí ten email neposlala.",
+     "gap": "She ____ the email on Monday. (send / not)",
+     "gap_answer": "didn't send",
+     "gap_accepts": [
+      "didn't send",
+      "did not send"
+     ],
+     "lemma": "send",
+     "accepts": [
+      "She didn't send the email on Monday.",
+      "She did not send the email on Monday."
+     ],
+     "explanation": "\"on Monday\" names a finished time, so the past negative: didn't send. Not hasn't sent — that would leave Monday open.",
+     "explanation_cz": "„on Monday“ pojmenovává uzavřený čas, proto minulý zápor: didn't send. Ne hasn't sent — to by pondělí nechalo otevřené.",
+     "use_cues": [
+      "she",
+      "not",
+      "send",
+      "the email",
+      "on Monday"
+     ],
+     "use_prompt": "Full sentence — past simple or present perfect?",
+     "quiz_options": [
+      "didn't send",
+      "hasn't sent",
+      "hasn't send"
+     ]
+    },
+    {
+     "en": "She hasn't sent the email yet.",
+     "cz": "Ještě neposlala ten email.",
+     "gap": "She ____ the email yet. (send / not)",
+     "gap_answer": "hasn't sent",
+     "gap_accepts": [
+      "hasn't sent",
+      "has not sent"
+     ],
+     "lemma": "send",
+     "accepts": [
+      "She hasn't sent the email yet.",
+      "She has not sent the email yet."
+     ],
+     "explanation": "\"yet\" keeps the time open, so the perfect negative: hasn't sent. Not didn't send — that would close the time.",
+     "explanation_cz": "„yet“ nechává čas otevřený, proto předpřítomný zápor: hasn't sent. Ne didn't send — to by čas uzavřelo.",
+     "use_cues": [
+      "she",
+      "not",
+      "send",
+      "the email",
+      "yet"
+     ],
+     "quiz_options": [
+      "hasn't sent",
+      "didn't send",
+      "hasn't send"
+     ]
+    },
+    {
+     "en": "I met her at a conference in 2022.",
+     "cz": "Potkal jsem ji na konferenci v roce 2022.",
+     "gap": "I ____ her at a conference in 2022. (meet)",
+     "gap_answer": "met",
+     "gap_accepts": [
+      "met"
+     ],
+     "accepts": [
+      "I met her at a conference in 2022."
+     ],
+     "lemma": "meet",
+     "explanation": "\"in 2022\" names a finished time, so past simple: met. Not have met — that leaves the time open.",
+     "explanation_cz": "„in 2022“ pojmenovává uzavřený čas, proto minulý prostý: met. Ne have met — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "meet",
+      "her",
+      "at a conference",
+      "in 2022"
+     ],
+     "quiz_options": [
+      "met",
+      "have met",
+      "have meet"
+     ]
+    },
+    {
+     "en": "I have met her twice already.",
+     "cz": "Už jsem ji dvakrát potkal.",
+     "gap": "I ____ her twice already. (meet)",
+     "gap_answer": "have met",
+     "gap_accepts": [
+      "have met",
+      "I've met"
+     ],
+     "accepts": [
+      "I have met her twice already.",
+      "I've met her twice already."
+     ],
+     "explanation": "\"twice already\" leaves the time open, so present perfect: have met. Not met — that would close it.",
+     "explanation_cz": "„twice already“ nechává čas otevřený, proto předpřítomný: have met. Ne met — ten by ho uzavřel.",
+     "use_cues": [
+      "I",
+      "meet",
+      "her",
+      "twice already"
+     ],
+     "lemma": "meet",
+     "quiz_options": [
+      "have met",
+      "met",
+      "have meet"
+     ]
+    },
+    {
+     "en": "He broke his phone last week.",
+     "cz": "Minulý týden si rozbil telefon.",
+     "gap": "He ____ his phone last week. (break)",
+     "gap_answer": "broke",
+     "gap_accepts": [
+      "broke"
+     ],
+     "accepts": [
+      "He broke his phone last week."
+     ],
+     "lemma": "break",
+     "explanation": "\"last week\" names a finished time, so past simple: broke. Not has broken — that leaves the time open.",
+     "explanation_cz": "„last week“ pojmenovává uzavřený čas, proto minulý prostý: broke. Ne has broken — ten nechává čas otevřený.",
+     "use_cues": [
+      "he",
+      "break",
+      "his phone",
+      "last week"
+     ],
+     "quiz_options": [
+      "broke",
+      "has broken",
+      "has broke"
+     ]
+    },
+    {
+     "en": "He has just broken his phone — it doesn't work.",
+     "cz": "Právě si rozbil telefon — nefunguje.",
+     "gap": "He ____ his phone — it doesn't work. (just/break)",
+     "gap_answer": "has just broken",
+     "gap_accepts": [
+      "has just broken",
+      "he's just broken",
+      "has broken",
+      "he's broken"
+     ],
+     "accepts": [
+      "He has just broken his phone — it doesn't work.",
+      "He has just broken his phone — it does not work.",
+      "He's just broken his phone — it doesn't work.",
+      "He's just broken his phone — it does not work."
+     ],
+     "lemma": "break",
+     "explanation": "\"just\" plus a result you can still see: has just broken. Past simple broke would only date it.",
+     "explanation_cz": "„just“ plus výsledek, který je pořád vidět: has just broken. Minulý prostý broke by to jen zařadil do minulosti.",
+     "use_cues": [
+      "he",
+      "just break",
+      "his phone",
+      "it not work"
+     ],
+     "quiz_options": [
+      "has just broken",
+      "broke",
+      "has broke"
+     ]
+    },
+    {
+     "en": "They visited Prague last summer.",
+     "cz": "Loni v létě navštívili Prahu.",
+     "gap": "They ____ Prague last summer. (visit)",
+     "gap_answer": "visited",
+     "gap_accepts": [
+      "visited"
+     ],
+     "accepts": [
+      "They visited Prague last summer."
+     ],
+     "lemma": "visit",
+     "explanation": "\"last summer\" names a finished time, so past simple: visited. Not have visited — that leaves the time open.",
+     "explanation_cz": "„last summer“ pojmenovává uzavřený čas, proto minulý prostý: visited. Ne have visited — ten nechává čas otevřený.",
+     "use_cues": [
+      "they",
+      "visit",
+      "Prague",
+      "last summer"
+     ],
+     "quiz_options": [
+      "visited",
+      "have visited",
+      "have visit"
+     ]
+    },
+    {
+     "en": "They have visited Prague twice before.",
+     "cz": "Prahu už dvakrát navštívili.",
+     "gap": "They ____ Prague twice before. (visit)",
+     "gap_answer": "have visited",
+     "gap_accepts": [
+      "have visited",
+      "they've visited"
+     ],
+     "accepts": [
+      "They have visited Prague twice before.",
+      "They've visited Prague twice before."
+     ],
+     "lemma": "visit",
+     "explanation": "\"twice before\" counts experience up to now, so present perfect: have visited. Not visited — no finished time is named.",
+     "explanation_cz": "„twice before“ počítá zkušenost až do teď, proto předpřítomný: have visited. Ne visited — žádný uzavřený čas tu není.",
+     "use_cues": [
+      "they",
+      "visit",
+      "Prague",
+      "twice before"
+     ],
+     "quiz_options": [
+      "have visited",
+      "visited",
+      "have visit"
+     ]
+    },
+    {
+     "en": "She went to the gym on Sunday morning.",
+     "cz": "V neděli ráno šla do posilovny.",
+     "gap": "She ____ to the gym on Sunday morning. (go)",
+     "gap_answer": "went",
+     "gap_accepts": [
+      "went"
+     ],
+     "accepts": [
+      "She went to the gym on Sunday morning."
+     ],
+     "lemma": "go",
+     "explanation": "\"on Sunday morning\" names a finished time, so past simple: went. The perfect has been would leave the morning open.",
+     "explanation_cz": "„on Sunday morning“ pojmenovává uzavřený čas, proto minulý prostý: went. Předpřítomné has been by ráno nechalo otevřené.",
+     "use_cues": [
+      "she",
+      "go",
+      "to the gym",
+      "on Sunday morning"
+     ],
+     "quiz_options": [
+      "went",
+      "has been",
+      "has went"
+     ]
+    },
+    {
+     "en": "She has already been to the gym today.",
+     "cz": "Dnes už byla v posilovně.",
+     "gap": "She ____ to the gym today. (already/be)",
+     "gap_answer": "has already been",
+     "gap_accepts": [
+      "has already been",
+      "she's already been",
+      "has been",
+      "she's been"
+     ],
+     "accepts": [
+      "She has already been to the gym today.",
+      "She's already been to the gym today."
+     ],
+     "explanation": "\"already\" with \"today\" keeps the time open, so present perfect: has already been. Past simple went would close it.",
+     "explanation_cz": "„already“ spolu s „today“ nechává čas otevřený, proto předpřítomný: has already been. Minulé went by ho uzavřelo.",
+     "use_cues": [
+      "she",
+      "be",
+      "to the gym",
+      "already",
+      "today"
+     ],
+     "lemma": "be",
+     "quiz_options": [
+      "has already been",
+      "went",
+      "has went"
+     ]
+    },
+    {
+     "en": "We chose the hotel in March.",
+     "cz": "Ten hotel jsme vybrali v březnu.",
+     "gap": "We ____ the hotel in March. (choose)",
+     "gap_answer": "chose",
+     "gap_accepts": [
+      "chose"
+     ],
+     "accepts": [
+      "We chose the hotel in March."
+     ],
+     "lemma": "choose",
+     "explanation": "\"in March\" names a finished time, so past simple: chose. Not have chosen — that leaves the time open.",
+     "explanation_cz": "„in March“ pojmenovává uzavřený čas, proto minulý prostý: chose. Ne have chosen — ten nechává čas otevřený.",
+     "use_cues": [
+      "we",
+      "choose",
+      "the hotel",
+      "in March"
+     ],
+     "quiz_options": [
+      "chose",
+      "have chosen",
+      "have chose"
+     ]
+    },
+    {
+     "en": "We have already chosen the hotel.",
+     "cz": "Ten hotel už jsme vybrali.",
+     "gap": "We ____ the hotel already. (choose)",
+     "gap_answer": "have chosen",
+     "gap_accepts": [
+      "have chosen",
+      "we've chosen",
+      "have already chosen",
+      "we've already chosen"
+     ],
+     "accepts": [
+      "We have already chosen the hotel.",
+      "We've already chosen the hotel."
+     ],
+     "explanation": "\"already\" leaves the time open, so present perfect: have chosen. Not chose — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: have chosen. Ne chose — ten by ho uzavřel.",
+     "use_cues": [
+      "we",
+      "choose",
+      "the hotel",
+      "already"
+     ],
+     "lemma": "choose",
+     "quiz_options": [
+      "have chosen",
+      "chose",
+      "have chose"
+     ]
+    },
+    {
+     "en": "He started the course last month.",
+     "cz": "Ten kurz začal minulý měsíc.",
+     "gap": "He ____ the course last month. (start)",
+     "gap_answer": "started",
+     "gap_accepts": [
+      "started"
+     ],
+     "accepts": [
+      "He started the course last month."
+     ],
+     "lemma": "start",
+     "explanation": "\"last month\" names a finished time, so past simple: started. Not has started — that leaves the time open.",
+     "explanation_cz": "„last month“ pojmenovává uzavřený čas, proto minulý prostý: started. Ne has started — ten nechává čas otevřený.",
+     "use_cues": [
+      "he",
+      "start",
+      "the course",
+      "last month"
+     ],
+     "quiz_options": [
+      "started",
+      "has started",
+      "has start"
+     ]
+    },
+    {
+     "en": "He has just started the course.",
+     "cz": "Ten kurz právě začal.",
+     "gap": "He ____ the course. (just/start)",
+     "gap_answer": "has just started",
+     "gap_accepts": [
+      "has just started",
+      "he's just started"
+     ],
+     "accepts": [
+      "He has just started the course.",
+      "He's just started the course."
+     ],
+     "explanation": "\"just\" means it happened a moment ago and still counts now, so present perfect: has just started. Not started — that would close the time.",
+     "explanation_cz": "„just“ znamená před chvílí a pořád to platí, proto předpřítomný: has just started. Ne started — to by čas uzavřelo.",
+     "use_cues": [
+      "he",
+      "start",
+      "the course",
+      "just"
+     ],
+     "lemma": "start",
+     "quiz_options": [
+      "has just started",
+      "started",
+      "has start"
+     ]
+    },
+    {
+     "en": "I spoke to the manager yesterday.",
+     "cz": "Včera jsem mluvil s tím manažerem.",
+     "gap": "I ____ to the manager yesterday. (speak)",
+     "gap_answer": "spoke",
+     "gap_accepts": [
+      "spoke"
+     ],
+     "accepts": [
+      "I spoke to the manager yesterday.",
+      "Yesterday I spoke to the manager.",
+      "Yesterday I spoke to the manager"
+     ],
+     "lemma": "speak",
+     "explanation": "\"yesterday\" names a finished time, so past simple: spoke. Not have spoken — that leaves the time open.",
+     "explanation_cz": "„yesterday“ pojmenovává uzavřený čas, proto minulý prostý: spoke. Ne have spoken — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "speak",
+      "to the manager",
+      "yesterday"
+     ],
+     "quiz_options": [
+      "spoke",
+      "have spoken",
+      "have spoke"
+     ]
+    },
+    {
+     "en": "I have already spoken to the manager.",
+     "cz": "S tím manažerem už jsem mluvil.",
+     "gap": "I ____ to the manager already. (speak)",
+     "gap_answer": "have spoken",
+     "gap_accepts": [
+      "have spoken",
+      "I've spoken",
+      "have already spoken",
+      "I've already spoken"
+     ],
+     "accepts": [
+      "I have already spoken to the manager.",
+      "I've already spoken to the manager."
+     ],
+     "explanation": "\"already\" leaves the time open, so present perfect: have spoken. Not spoke — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: have spoken. Ne spoke — ten by ho uzavřel.",
+     "use_cues": [
+      "I",
+      "speak",
+      "to the manager",
+      "already"
+     ],
+     "lemma": "speak",
+     "quiz_options": [
+      "have spoken",
+      "spoke",
+      "have spoke"
+     ]
+    },
+    {
+     "en": "She wrote the letter yesterday morning.",
+     "cz": "Ten dopis napsala včera ráno.",
+     "gap": "She ____ the letter yesterday morning. (write)",
+     "gap_answer": "wrote",
+     "gap_accepts": [
+      "wrote"
+     ],
+     "accepts": [
+      "She wrote the letter yesterday morning."
+     ],
+     "lemma": "write",
+     "explanation": "\"yesterday morning\" names a finished time, so past simple: wrote. Not has written — that leaves the time open.",
+     "explanation_cz": "„yesterday morning“ pojmenovává uzavřený čas, proto minulý prostý: wrote. Ne has written — ten nechává čas otevřený.",
+     "use_cues": [
+      "she",
+      "write",
+      "the letter",
+      "yesterday morning"
+     ],
+     "quiz_options": [
+      "wrote",
+      "has written",
+      "has wrote"
+     ]
+    },
+    {
+     "en": "She has already written the letter.",
+     "cz": "Ten dopis už napsala.",
+     "gap": "She ____ the letter already. (write)",
+     "gap_answer": "has written",
+     "gap_accepts": [
+      "has written",
+      "she's written",
+      "has already written",
+      "she's already written"
+     ],
+     "accepts": [
+      "She has already written the letter.",
+      "She has written the letter already.",
+      "She's already written the letter.",
+      "She's written the letter already."
+     ],
+     "lemma": "write",
+     "explanation": "\"already\" leaves the time open, so present perfect: has written. Not wrote — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: has written. Ne wrote — ten by ho uzavřel.",
+     "use_cues": [
+      "she",
+      "already write",
+      "the letter"
+     ],
+     "quiz_options": [
+      "has written",
+      "wrote",
+      "has wrote"
+     ]
+    },
+    {
+     "en": "We drove to Ostrava last Saturday.",
+     "cz": "Minulou sobotu jsme jeli do Ostravy.",
+     "gap": "We ____ to Ostrava last Saturday. (drive)",
+     "gap_answer": "drove",
+     "gap_accepts": [
+      "drove"
+     ],
+     "accepts": [
+      "We drove to Ostrava last Saturday."
+     ],
+     "lemma": "drive",
+     "explanation": "\"last Saturday\" names a finished time, so past simple: drove. Not have driven — that leaves the time open.",
+     "explanation_cz": "„last Saturday“ pojmenovává uzavřený čas, proto minulý prostý: drove. Ne have driven — ten nechává čas otevřený.",
+     "use_cues": [
+      "we",
+      "drive",
+      "to Ostrava",
+      "last Saturday"
+     ],
+     "quiz_options": [
+      "drove",
+      "have driven",
+      "have drove"
+     ]
+    },
+    {
+     "en": "We have driven this route many times before.",
+     "cz": "Tudy jsme už mnohokrát jeli.",
+     "gap": "We ____ this route many times before. (drive)",
+     "gap_answer": "have driven",
+     "gap_accepts": [
+      "have driven",
+      "we've driven"
+     ],
+     "accepts": [
+      "We have driven this route many times before.",
+      "We've driven this route many times before."
+     ],
+     "lemma": "drive",
+     "explanation": "\"many times before\" counts experience up to now, so present perfect: have driven. Not drove — no finished time is named.",
+     "explanation_cz": "„many times before“ počítá zkušenost až do teď, proto předpřítomný: have driven. Ne drove — žádný uzavřený čas tu není.",
+     "use_cues": [
+      "we",
+      "drive",
+      "this route",
+      "many times before"
+     ],
+     "quiz_options": [
+      "have driven",
+      "drove",
+      "have drove"
+     ]
+    },
+    {
+     "en": "Did they reply last week?",
+     "cz": "Odpověděli minulý týden?",
+     "gap": "____ last week? (they/reply)",
+     "gap_answer": "Did they reply",
+     "gap_accepts": [
+      "Did they reply",
+      "did they reply"
+     ],
+     "quiz_options": [
+      "Did they reply",
+      "Have they replied",
+      "Did they replied",
+      "Have they reply"
+     ],
+     "accepts": [
+      "Did they reply last week?"
+     ],
+     "explanation": "\"last week\" names a finished time, so the past question: Did they reply. Have they replied would leave the time open.",
+     "explanation_cz": "„last week“ pojmenovává uzavřený čas, proto minulá otázka: Did they reply. Have they replied by čas nechala otevřený.",
+     "use_cues": [
+      "they",
+      "reply",
+      "last week",
+      "?"
+     ],
+     "lemma": "reply"
+    },
+    {
+     "en": "Have they replied yet?",
+     "cz": "Už odpověděli?",
+     "gap": "____ yet? (they/reply)",
+     "gap_answer": "Have they replied",
+     "gap_accepts": [
+      "Have they replied",
+      "have they replied"
+     ],
+     "quiz_options": [
+      "Have they replied",
+      "Did they reply",
+      "Have they reply",
+      "Did they replied"
+     ],
+     "accepts": [
+      "Have they replied yet?"
+     ],
+     "explanation": "\"yet\" keeps the time open, so the perfect question: Have they replied. Did they reply would close it.",
+     "explanation_cz": "„yet“ nechává čas otevřený, proto předpřítomná otázka: Have they replied. Did they reply by ho uzavřelo.",
+     "use_cues": [
+      "they",
+      "reply",
+      "yet",
+      "?"
+     ],
+     "lemma": "reply"
+    },
+    {
+     "en": "I found a better flat last month.",
+     "cz": "Minulý měsíc jsem našel lepší byt.",
+     "gap": "I ____ a better flat last month. (find)",
+     "gap_answer": "found",
+     "gap_accepts": [
+      "found"
+     ],
+     "accepts": [
+      "I found a better flat last month."
+     ],
+     "lemma": "find",
+     "explanation": "\"last month\" names a finished time, so past simple: found. Not have found — that leaves the time open.",
+     "explanation_cz": "„last month“ pojmenovává uzavřený čas, proto minulý prostý: found. Ne have found — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "find",
+      "a better flat",
+      "last month"
+     ],
+     "quiz_options": [
+      "found",
+      "have found",
+      "have find"
+     ]
+    },
+    {
+     "en": "I have just found a better flat.",
+     "cz": "Právě jsem našel lepší byt.",
+     "gap": "I ____ a better flat. (just/find)",
+     "gap_answer": "have just found",
+     "gap_accepts": [
+      "have just found",
+      "I've just found"
+     ],
+     "accepts": [
+      "I have just found a better flat.",
+      "I've just found a better flat."
+     ],
+     "explanation": "\"just\" means it happened a moment ago and still counts now, so present perfect: have just found. Not found — that would close the time.",
+     "explanation_cz": "„just“ znamená před chvílí a pořád to platí, proto předpřítomný: have just found. Ne found — to by čas uzavřelo.",
+     "use_cues": [
+      "I",
+      "find",
+      "a better flat",
+      "just"
+     ],
+     "lemma": "find",
+     "quiz_options": [
+      "have just found",
+      "found",
+      "have find"
+     ]
+    },
+    {
+     "en": "He took the train yesterday.",
+     "cz": "Včera jel vlakem.",
+     "gap": "He ____ the train yesterday. (take)",
+     "gap_answer": "took",
+     "gap_accepts": [
+      "took"
+     ],
+     "accepts": [
+      "He took the train yesterday."
+     ],
+     "lemma": "take",
+     "explanation": "\"yesterday\" names a finished time, so past simple: took. Not has taken — that leaves the time open.",
+     "explanation_cz": "„yesterday“ pojmenovává uzavřený čas, proto minulý prostý: took. Ne has taken — ten nechává čas otevřený.",
+     "use_cues": [
+      "he",
+      "take",
+      "the train",
+      "yesterday"
+     ],
+     "quiz_options": [
+      "took",
+      "has taken",
+      "has took"
+     ]
+    },
+    {
+     "en": "He has taken the train twice this week.",
+     "cz": "Tenhle týden jel vlakem dvakrát.",
+     "gap": "He ____ the train twice this week. (take)",
+     "gap_answer": "has taken",
+     "gap_accepts": [
+      "has taken",
+      "he's taken"
+     ],
+     "accepts": [
+      "He has taken the train twice this week.",
+      "He's taken the train twice this week."
+     ],
+     "lemma": "take",
+     "explanation": "\"twice this week\" leaves the time open, so present perfect: has taken. Not took — that would close it.",
+     "explanation_cz": "„twice this week“ nechává čas otevřený, proto předpřítomný: has taken. Ne took — ten by ho uzavřel.",
+     "use_cues": [
+      "he",
+      "take",
+      "the train",
+      "twice this week"
+     ],
+     "quiz_options": [
+      "has taken",
+      "took",
+      "has took"
+     ]
+    },
+    {
+     "en": "I read that book in 2020.",
+     "cz": "Tu knihu jsem četl v roce 2020.",
+     "gap": "I ____ that book in 2020. (read)",
+     "gap_answer": "read",
+     "gap_accepts": [
+      "read"
+     ],
+     "accepts": [
+      "I read that book in 2020."
+     ],
+     "lemma": "read",
+     "explanation": "\"in 2020\" names a finished time, so past simple: read. Not have read — that leaves the time open.",
+     "explanation_cz": "„in 2020“ pojmenovává uzavřený čas, proto minulý prostý: read. Ne have read — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "read",
+      "that book",
+      "in 2020"
+     ],
+     "quiz_options": [
+      "read",
+      "have read",
+      "have readed"
+     ]
+    },
+    {
+     "en": "I have already read that book.",
+     "cz": "Tu knihu jsem už četl.",
+     "gap": "I ____ that book already. (read)",
+     "gap_answer": "have read",
+     "gap_accepts": [
+      "have read",
+      "I've read",
+      "have already read",
+      "I've already read"
+     ],
+     "accepts": [
+      "I have already read that book.",
+      "I've already read that book."
+     ],
+     "explanation": "\"already\" leaves the time open, so present perfect: have read. Not read — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: have read. Ne read — ten by ho uzavřel.",
+     "use_cues": [
+      "I",
+      "read",
+      "that book",
+      "already"
+     ],
+     "lemma": "read",
+     "quiz_options": [
+      "have read",
+      "read",
+      "have readed"
+     ]
+    },
+    {
+     "en": "She paid the bill last night.",
+     "cz": "Včera večer zaplatila ten účet.",
+     "gap": "She ____ the bill last night. (pay)",
+     "gap_answer": "paid",
+     "gap_accepts": [
+      "paid"
+     ],
+     "accepts": [
+      "She paid the bill last night."
+     ],
+     "lemma": "pay",
+     "explanation": "\"last night\" names a finished time, so past simple: paid. Not has paid — that leaves the time open.",
+     "explanation_cz": "„last night“ pojmenovává uzavřený čas, proto minulý prostý: paid. Ne has paid — ten nechává čas otevřený.",
+     "use_cues": [
+      "she",
+      "pay",
+      "the bill",
+      "last night"
+     ],
+     "quiz_options": [
+      "paid",
+      "has paid",
+      "has pay"
+     ]
+    },
+    {
+     "en": "She has already paid the bill.",
+     "cz": "Ten účet už zaplatila.",
+     "gap": "She ____ the bill already. (pay)",
+     "gap_answer": "has paid",
+     "gap_accepts": [
+      "has paid",
+      "she's paid",
+      "has already paid",
+      "she's already paid"
+     ],
+     "accepts": [
+      "She has already paid the bill.",
+      "She's already paid the bill."
+     ],
+     "explanation": "\"already\" leaves the time open, so present perfect: has paid. Not paid — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: has paid. Ne paid — ten by ho uzavřel.",
+     "use_cues": [
+      "she",
+      "pay",
+      "the bill",
+      "already"
+     ],
+     "lemma": "pay",
+     "quiz_options": [
+      "has paid",
+      "paid",
+      "has pay"
+     ]
+    },
+    {
+     "en": "We sold the car in January.",
+     "cz": "To auto jsme prodali v lednu.",
+     "gap": "We ____ the car in January. (sell)",
+     "gap_answer": "sold",
+     "gap_accepts": [
+      "sold"
+     ],
+     "accepts": [
+      "We sold the car in January."
+     ],
+     "lemma": "sell",
+     "explanation": "\"in January\" names a finished time, so past simple: sold. Not have sold — that leaves the time open.",
+     "explanation_cz": "„in January“ pojmenovává uzavřený čas, proto minulý prostý: sold. Ne have sold — ten nechává čas otevřený.",
+     "use_cues": [
+      "we",
+      "sell",
+      "the car",
+      "in January"
+     ],
+     "quiz_options": [
+      "sold",
+      "have sold",
+      "have sell"
+     ]
+    },
+    {
+     "en": "We have sold the car — we don't have it now.",
+     "cz": "To auto jsme prodali — už nám nepatří.",
+     "gap": "We ____ the car — we don't have it now. (sell)",
+     "gap_answer": "have sold",
+     "gap_accepts": [
+      "have sold",
+      "we've sold"
+     ],
+     "accepts": [
+      "We have sold the car — we don't have it now.",
+      "We've sold the car — we don't have it now.",
+      "We have sold the car — we do not have it now.",
+      "We've sold the car — we do not have it now."
+     ],
+     "lemma": "sell",
+     "explanation": "We do not have the car now — that result is the point, so present perfect: have sold. Past simple sold would only say when.",
+     "explanation_cz": "Auto teď nemáme — jde právě o ten výsledek, proto předpřítomný: have sold. Minulý prostý sold by řekl jen kdy.",
+     "use_cues": [
+      "we",
+      "sell",
+      "the car",
+      "we don't have it now"
+     ],
+     "quiz_options": [
+      "have sold",
+      "sold",
+      "have sell"
+     ]
+    },
+    {
+     "en": "Was he in Vienna last year?",
+     "cz": "Byl loni ve Vídni?",
+     "gap": "____ in Vienna last year? (he/be)",
+     "gap_answer": "Was he",
+     "gap_accepts": [
+      "Was he",
+      "was he"
+     ],
+     "quiz_options": [
+      "Was he",
+      "Has he been",
+      "Were he",
+      "Have he been"
+     ],
+     "accepts": [
+      "Was he in Vienna last year?"
+     ],
+     "explanation": "\"last year\" names a finished time, so the past question: Was he. Has he been would leave the year open.",
+     "explanation_cz": "„last year“ pojmenovává uzavřený čas, proto minulá otázka: Was he. Has he been by rok nechalo otevřený.",
+     "use_cues": [
+      "he",
+      "be",
+      "in Vienna",
+      "last year",
+      "?"
+     ],
+     "lemma": "be"
+    },
+    {
+     "en": "Has he ever been to Vienna?",
+     "cz": "Byl někdy ve Vídni?",
+     "gap": "____ to Vienna? (he/be)",
+     "gap_answer": "Has he ever been",
+     "gap_accepts": [
+      "Has he ever been",
+      "has he ever been",
+      "Has he been",
+      "has he been"
+     ],
+     "quiz_options": [
+      "Has he ever been",
+      "Was he ever",
+      "Have he ever been",
+      "Has he ever be"
+     ],
+     "accepts": [
+      "Has he ever been to Vienna?"
+     ],
+     "explanation": "\"ever\" counts experience up to now, so present perfect: Has he ever been. Not Was he — no finished time is named.",
+     "explanation_cz": "„ever“ počítá zkušenost až do teď, proto předpřítomný: Has he ever been. Ne Was he — žádný uzavřený čas tu není.",
+     "use_cues": [
+      "he",
+      "ever",
+      "be",
+      "to Vienna",
+      "?"
+     ],
+     "lemma": "be"
+    },
+    {
+     "en": "I checked the timetable an hour ago.",
+     "cz": "Před hodinou jsem zkontroloval ten jízdní řád.",
+     "gap": "I ____ the timetable an hour ago. (check)",
+     "gap_answer": "checked",
+     "gap_accepts": [
+      "checked"
+     ],
+     "accepts": [
+      "I checked the timetable an hour ago."
+     ],
+     "lemma": "check",
+     "explanation": "\"an hour ago\" names a finished time, so past simple: checked. Not have checked — that leaves the time open.",
+     "explanation_cz": "„an hour ago“ pojmenovává uzavřený čas, proto minulý prostý: checked. Ne have checked — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "check",
+      "the timetable",
+      "an hour ago"
+     ],
+     "quiz_options": [
+      "checked",
+      "have checked",
+      "have check"
+     ]
+    },
+    {
+     "en": "I have just checked the timetable.",
+     "cz": "Právě jsem zkontroloval ten jízdní řád.",
+     "gap": "I ____ the timetable. (just/check)",
+     "gap_answer": "have just checked",
+     "gap_accepts": [
+      "have just checked",
+      "I've just checked"
+     ],
+     "accepts": [
+      "I have just checked the timetable.",
+      "I've just checked the timetable."
+     ],
+     "explanation": "\"just\" means it happened a moment ago and still counts now, so present perfect: have just checked. Not checked — that would close the time.",
+     "explanation_cz": "„just“ znamená před chvílí a pořád to platí, proto předpřítomný: have just checked. Ne checked — to by čas uzavřelo.",
+     "use_cues": [
+      "I",
+      "check",
+      "the timetable",
+      "just"
+     ],
+     "lemma": "check",
+     "quiz_options": [
+      "have just checked",
+      "checked",
+      "have check"
+     ]
+    },
+    {
+     "en": "They didn't finish the report yesterday.",
+     "cz": "Včera tu zprávu nedokončili.",
+     "gap": "They ____ the report yesterday. (finish / not)",
+     "gap_answer": "didn't finish",
+     "gap_accepts": [
+      "didn't finish",
+      "did not finish"
+     ],
+     "lemma": "finish",
+     "accepts": [
+      "They didn't finish the report yesterday.",
+      "They did not finish the report yesterday."
+     ],
+     "explanation": "\"yesterday\" names a finished time, so the past negative: didn't finish. Not haven't finished — that would leave it open.",
+     "explanation_cz": "„yesterday“ pojmenovává uzavřený čas, proto minulý zápor: didn't finish. Ne haven't finished — to by čas nechalo otevřený.",
+     "use_cues": [
+      "they",
+      "not",
+      "finish",
+      "the report",
+      "yesterday"
+     ],
+     "quiz_options": [
+      "didn't finish",
+      "haven't finished",
+      "haven't finish"
+     ]
+    },
+    {
+     "en": "They haven't finished the report yet.",
+     "cz": "Tu zprávu ještě nedokončili.",
+     "gap": "They ____ the report yet. (finish / not)",
+     "gap_answer": "haven't finished",
+     "gap_accepts": [
+      "haven't finished",
+      "have not finished"
+     ],
+     "lemma": "finish",
+     "accepts": [
+      "They haven't finished the report yet.",
+      "They have not finished the report yet."
+     ],
+     "explanation": "\"yet\" keeps the time open, so the perfect negative: haven't finished. Not didn't finish — that would close it.",
+     "explanation_cz": "„yet“ nechává čas otevřený, proto předpřítomný zápor: haven't finished. Ne didn't finish — to by ho uzavřelo.",
+     "use_cues": [
+      "they",
+      "not",
+      "finish",
+      "the report",
+      "yet"
+     ],
+     "quiz_options": [
+      "haven't finished",
+      "didn't finish",
+      "haven't finish"
+     ]
+    },
+    {
+     "en": "Where did you go last weekend?",
+     "cz": "Kam jsi jel minulý víkend?",
+     "gap": "Where ____ last weekend? (go)",
+     "gap_answer": "did you go",
+     "gap_accepts": [
+      "did you go",
+      "Did you go"
+     ],
+     "quiz_options": [
+      "did you go",
+      "have you been",
+      "have you gone",
+      "did you went"
+     ],
+     "accepts": [
+      "Where did you go last weekend?"
+     ],
+     "explanation": "\"last weekend\" names a finished time, so the past question: did you go. Have you been would leave the time open.",
+     "explanation_cz": "„last weekend“ pojmenovává uzavřený čas, proto minulá otázka: did you go. Have you been by čas nechalo otevřený.",
+     "use_cues": [
+      "where",
+      "you",
+      "go",
+      "last weekend",
+      "?"
+     ],
+     "lemma": "go"
+    },
+    {
+     "en": "Where have you been this week?",
+     "cz": "Kde jsi tento týden byl?",
+     "gap": "Where ____ this week? (you/be)",
+     "gap_answer": "have you been",
+     "gap_accepts": [
+      "have you been",
+      "Have you been"
+     ],
+     "quiz_options": [
+      "have you been",
+      "were you",
+      "did you go",
+      "have you gone"
+     ],
+     "accepts": [
+      "Where have you been this week?"
+     ],
+     "explanation": "\"this week\" is still running, so present perfect: have you been. Where were you? asks about one finished moment.",
+     "explanation_cz": "„this week“ pořád běží, proto předpřítomný: have you been. Where were you? se ptá na jeden uzavřený okamžik.",
+     "use_cues": [
+      "where",
+      "you",
+      "be",
+      "this week"
+     ],
+     "use_prompt": "Full question — link to now (use been)",
+     "lemma": "be"
+    },
+    {
+     "en": "He left the office at six.",
+     "cz": "Odešel z kanceláře v šest.",
+     "gap": "He ____ the office at six. (leave)",
+     "gap_answer": "left",
+     "gap_accepts": [
+      "left"
+     ],
+     "accepts": [
+      "He left the office at six."
+     ],
+     "lemma": "leave",
+     "explanation": "\"at six\" names a finished time, so past simple: left. Not has left — that leaves the time open.",
+     "explanation_cz": "„at six“ pojmenovává uzavřený čas, proto minulý prostý: left. Ne has left — ten nechává čas otevřený.",
+     "use_cues": [
+      "he",
+      "leave",
+      "the office",
+      "at six"
+     ],
+     "quiz_options": [
+      "left",
+      "has left",
+      "has leave"
+     ]
+    },
+    {
+     "en": "He has already left the office.",
+     "cz": "Už odešel z kanceláře.",
+     "gap": "He ____ the office already. (leave)",
+     "gap_answer": "has left",
+     "gap_accepts": [
+      "has left",
+      "he's left",
+      "has already left",
+      "he's already left"
+     ],
+     "accepts": [
+      "He has already left the office.",
+      "He's already left the office."
+     ],
+     "explanation": "\"already\" leaves the time open, so present perfect: has left. Not left — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: has left. Ne left — ten by ho uzavřel.",
+     "use_cues": [
+      "he",
+      "leave",
+      "the office",
+      "already"
+     ],
+     "lemma": "leave",
+     "quiz_options": [
+      "has left",
+      "left",
+      "has leave"
+     ]
+    },
+    {
+     "en": "My parents had lunch at twelve.",
+     "cz": "Rodiče obědvali v poledne.",
+     "gap": "My parents ____ lunch at twelve. (have)",
+     "gap_answer": "had",
+     "gap_accepts": [
+      "had"
+     ],
+     "accepts": [
+      "My parents had lunch at twelve."
+     ],
+     "lemma": "have",
+     "explanation": "\"at twelve\" names a finished time, so past simple: had. Not have had — that leaves the time open.",
+     "explanation_cz": "„at twelve“ pojmenovává uzavřený čas, proto minulý prostý: had. Ne have had — ten nechává čas otevřený.",
+     "use_cues": [
+      "my parents",
+      "have",
+      "lunch",
+      "at twelve"
+     ],
+     "quiz_options": [
+      "had",
+      "have had",
+      "did had"
+     ]
+    },
+    {
+     "en": "My parents have already had lunch.",
+     "cz": "Rodiče už obědvali.",
+     "gap": "My parents ____ lunch already. (have)",
+     "gap_answer": "have had",
+     "gap_accepts": [
+      "have had",
+      "have already had"
+     ],
+     "accepts": [
+      "My parents have already had lunch.",
+      "My parents have had lunch already."
+     ],
+     "explanation": "\"already\" leaves the time open, so present perfect: have had. Not had — that would close it.",
+     "explanation_cz": "„already“ nechává čas otevřený, proto předpřítomný: have had. Ne had — ten by ho uzavřel.",
+     "use_cues": [
+      "my parents",
+      "already have",
+      "lunch"
+     ],
+     "lemma": "have",
+     "quiz_options": [
+      "have had",
+      "had",
+      "has had"
+     ]
+    },
+    {
+     "en": "I sent the tickets last Tuesday.",
+     "cz": "Ty lístky jsem poslal minulé úterý.",
+     "gap": "I ____ the tickets last Tuesday. (send)",
+     "gap_answer": "sent",
+     "gap_accepts": [
+      "sent"
+     ],
+     "accepts": [
+      "I sent the tickets last Tuesday."
+     ],
+     "lemma": "send",
+     "explanation": "\"last Tuesday\" names a finished time, so past simple: sent. Not have sent — that leaves the time open.",
+     "explanation_cz": "„last Tuesday“ pojmenovává uzavřený čas, proto minulý prostý: sent. Ne have sent — ten nechává čas otevřený.",
+     "use_cues": [
+      "I",
+      "send",
+      "the tickets",
+      "last Tuesday"
+     ],
+     "quiz_options": [
+      "sent",
+      "have sent",
+      "have send"
+     ]
+    },
+    {
+     "en": "I have just sent the tickets.",
+     "cz": "Právě jsem ty lístky poslal.",
+     "gap": "I ____ the tickets. (just/send)",
+     "gap_answer": "have just sent",
+     "gap_accepts": [
+      "have just sent",
+      "I've just sent",
+      "have sent",
+      "I've sent"
+     ],
+     "accepts": [
+      "I have just sent the tickets.",
+      "I've just sent the tickets."
+     ],
+     "lemma": "send",
+     "explanation": "\"just\" leaves the time open, so present perfect: have just sent. Not sent — that would close it.",
+     "explanation_cz": "„just“ nechává čas otevřený, proto předpřítomný: have just sent. Ne sent — ten by ho uzavřel.",
+     "use_cues": [
+      "I",
+      "just send",
+      "the tickets"
+     ],
+     "quiz_options": [
+      "have just sent",
+      "sent",
+      "have send"
+     ]
+    },
+    {
+     "en": "Then I moved to a smaller town.",
+     "cz": "Potom jsem se přestěhoval do menšího města.",
+     "gap": "Then I ____ to a smaller town. (move)",
+     "gap_answer": "moved",
+     "gap_accepts": [
+      "moved"
+     ],
+     "accepts": [
+      "Then I moved to a smaller town."
+     ],
+     "lemma": "move",
+     "quiz_options": [
+      "moved",
+      "have moved",
+      "have move"
+     ],
+     "use_cues": [
+      "then",
+      "I",
+      "move",
+      "to a smaller town"
+     ],
+     "explanation": "\"Then\" walks through finished steps, so past simple: moved. Present perfect cannot follow then.",
+     "explanation_cz": "„Then“ vypráví hotové kroky za sebou, proto minulý prostý: moved. Předpřítomný po then nejde."
+    },
+    {
+     "en": "After that he found a new job.",
+     "cz": "Pak si našel novou práci.",
+     "gap": "After that he ____ a new job. (find)",
+     "gap_answer": "found",
+     "gap_accepts": [
+      "found"
+     ],
+     "accepts": [
+      "After that he found a new job."
+     ],
+     "lemma": "find",
+     "quiz_options": [
+      "found",
+      "has found",
+      "has find"
+     ],
+     "use_cues": [
+      "after that",
+      "he",
+      "find",
+      "a new job"
+     ],
+     "explanation": "\"After that\" is the next finished step, so past simple: found. Present perfect would break the story line.",
+     "explanation_cz": "„After that“ je další hotový krok, proto minulý prostý: found. Předpřítomný by narušil linku vyprávění."
+    }
+   ]
   }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "diagram": "pp_vs_past",
+    "labels": [
+     "Past simple",
+     "moved",
+     "The moving finished last year.",
+     "Present perfect",
+     "moved",
+     "I live here",
+     "Same event — we talk about the result now."
+    ],
+    "points": [
+     "I **moved** last year. We name **when** the moving happened.",
+     "I **have moved**. Same moving — we name what is true **now**."
+    ]
+   },
+   {
+    "title": "Past simple — when?",
+    "diagram": "time_now",
+    "labels": [
+     "I moved",
+     "last year",
+     "closed"
+    ],
+    "table": {
+     "headers": [
+      "Signal",
+      "Example"
+     ],
+     "rows": [
+      [
+       "yesterday / last… / ago",
+       "I moved **last year**."
+      ],
+      [
+       "then / after that",
+       "**Then** I moved to a village."
+      ],
+      [
+       "a finished time",
+       "In 2010 I lived in Brno."
+      ]
+     ]
+    },
+    "points": [
+     "The **time** of the action is finished — not the whole story."
+    ]
+   },
+   {
+    "title": "Present perfect — now?",
+    "diagram": "time_now",
+    "labels": [
+     "lost keys",
+     "I don't have them",
+     "bridge"
+    ],
+    "table": {
+     "headers": [
+      "Idea",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Experience (ever / never)",
+       "I **have** never **lived** abroad."
+      ],
+      [
+       "Result now",
+       "I **have lost** my keys. (I don’t have them now.)"
+      ],
+      [
+       "Unfinished time",
+       "I **have lived** here for 12 years. (I still do.)"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Why it matters",
+    "diagram": "time_now",
+    "labels": [
+     "Then I moved",
+     "a finished step",
+     "closed"
+    ],
+    "points": [
+     "Listeners hear **then** as a finished step → past simple",
+     "Present perfect with **then** often sounds wrong",
+     "*Then I **have moved*** → *Then I **moved***"
+    ]
+   },
+   {
+    "title": "Unfinished time",
+    "title_cz": "čas, který ještě běží",
+    "diagram": "time_now",
+    "labels": [
+     "I have lived here",
+     "still true",
+     "span"
+    ],
+    "points": [
+     "If the story says **then** / **after that**, use past simple.",
+     "**for** / **since** with a situation that continues → present perfect."
+    ]
+   },
+   {
+    "title": "Signal words",
+    "table": {
+     "headers": [
+      "Past simple",
+      "Present perfect"
+     ],
+     "rows": [
+      [
+       "yesterday, last week, ago",
+       "ever, never, just, already, yet"
+      ],
+      [
+       "then, after that, in 2019",
+       "for, since (unfinished time)"
+      ],
+      [
+       "when I was 10",
+       "this week / today (if still open)"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Common mistakes",
+    "diagram": "time_now",
+    "labels": [
+     "I saw him",
+     "yesterday",
+     "closed"
+    ],
+    "table": {
+     "headers": [
+      "✗",
+      "✓"
+     ],
+     "rows": [
+      [
+       "Then I have moved.",
+       "Then I **moved**."
+      ],
+      [
+       "I have seen him yesterday.",
+       "I **saw** him yesterday."
+      ],
+      [
+       "I lived here since 2015.",
+       "I **have lived** here since 2015."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Quick check",
+    "table": {
+     "headers": [
+      "",
+      ""
+     ],
+     "rows": [
+      [
+       "I ___ (move) to Prague in 2012.",
+       "**moved**"
+      ],
+      [
+       "I ___ (live) here for twelve years. (still here)",
+       "**have lived**"
+      ],
+      [
+       "Then I ___ (start) a new job.",
+       "**started**"
+      ]
+     ]
+    }
+   }
+  ]
+ }
 }
