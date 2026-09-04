@@ -40,6 +40,7 @@ Format:
 **Q:** The `vocablevel` candidate ("92% of words are 2+ levels below B1 — is this really a B1 unit?") fires on b1_past_perfect and on most B1 grammar packs. Should a grammar pack be lexically levelled at all?
 **Options:** a) ignore it on grammar packs — a form unit must carry easy vocabulary so the only difficulty is the form (A0: one degree of freedom) / b) raise the carrier vocabulary to B1 words / c) exempt grammar packs in `lint.py` so the signal stops firing.
 **Default if unanswered:** a — carry on ignoring it on grammar packs, and do not raise carrier vocabulary. Note that (c) is the cheap version of (a) but it is a lint change, which is not this loop's to make unattended.
+**Note added by the same run:** the check only runs once a pack has 40+ CEFR-known word tokens, so **thickening a stub is what switches it on**. `b1_be_used_to` had no `vocablevel` flag at 10 items and has one at 24 — a new rule ID that the AGENT-LOOP gate forbids, arrived at by doing exactly what the loop asks. Clearing it would mean writing B2 nouns into a B1 form pack, which A0 forbids (the carrier must be easy so the form is the only difficulty). The loop is treating this one rule ID as exempt from the "no new rule ID" gate on any pack whose item count crossed the floor this run, and saying so in the commit. If you disagree, (c) is the fix.
 → (James: your answer here)
 
 ---

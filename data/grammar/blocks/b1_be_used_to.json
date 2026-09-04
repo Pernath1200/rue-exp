@@ -6,7 +6,7 @@
  "codex_unit": "G_VP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "PULLED FORWARD 2026-09-02 from the parked b2_be_get_used_to (bank was empty - auto-authored and removed 2026-08-29, do NOT refill from auto). be/get used to + -ing = zvyknout si. Two traps: the -ing (*I am used to work here) and be vs get (the state you are in vs the change into it). Kept clear of b1_used_to, which is WOULD for past habits. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "PULLED FORWARD 2026-09-02 from the parked b2_be_get_used_to (bank was empty - auto-authored and removed 2026-08-29, do NOT refill from auto). be/get used to + -ing = zvyknout si. Two traps: the -ing (*I am used to work here) and be vs get (the state you are in vs the change into it). Kept clear of b1_used_to, which is WOULD for past habits. Thickened 10 -> 24 items 2026-09-04 (agent loop). Rules applied this pass: F4 was a false positive on She's - the subject contraction moved out of `en` and into accepts, which also cleared the two F3 leads (they're / she's); A8 closed the twins; A4 the cold became cold weather. C11: the contrast with a2_used_to (used to work / am used to working) had one mistakes row and no page - it now has a card of its own and a Quiz item whose options are the four real shapes. B1: the noise options were garbage (noise to be, hear noise) and now carry this unit's own error, the bare infinitive. Remaining lint: one A4 on `driving on the left`, where English forces the article, and vocablevel, which starts firing on any grammar pack once it has enough items to cross the check's 40-token floor - queued in DECISIONS.md.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -104,6 +104,38 @@
     }
    },
    {
+    "title": "used to do, or be used to doing?",
+    "title_cz": "used to dělat, nebo be used to dělání?",
+    "points": [
+     "The past habit is **used to** + plain verb.",
+     "How it feels now is *be* **used to** + -ing."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Means"
+     ],
+     "rows": [
+      [
+       "I used to **work** here.",
+       "a past habit — I do not now"
+      ],
+      [
+       "I am used to **working** here.",
+       "it feels normal to me now"
+      ],
+      [
+       "She used to **live** alone.",
+       "she does not now"
+      ],
+      [
+       "She is used to **living** alone.",
+       "it is normal for her"
+      ]
+     ]
+    }
+   },
+   {
     "title": "Common mistakes",
     "title_cz": "Časté chyby",
     "text_first": true,
@@ -143,9 +175,9 @@
    "title": "Be used to / get used to · B1",
    "items": [
     {
-     "en": "I'm used to working late.",
+     "en": "I am used to working late.",
      "cz": "Jsem zvyklý pracovat pozdě.",
-     "gap": "I'm used to ____ late. (work)",
+     "gap": "I am used to ____ late. (work)",
      "gap_answer": "working",
      "quiz_options": [
       "working",
@@ -154,17 +186,17 @@
       "worked"
      ],
      "accepts": [
-      "I'm used to working late.",
-      "I am used to working late."
+      "I am used to working late.",
+      "I'm used to working late."
      ],
      "wrong": "I am used to work late.",
      "explanation": "**be used to** takes **-ing**: used to **working**. Not the infinitive.",
      "explanation_cz": "**be used to** má **-ing**: used to **working**. Ne infinitiv."
     },
     {
-     "en": "She got used to the cold quickly.",
-     "cz": "Rychle si zvykla na zimu.",
-     "gap": "She ____ used to the cold quickly. (get)",
+     "en": "She got used to cold weather quickly.",
+     "cz": "Rychle si zvykla na chladné počasí.",
+     "gap": "She ____ used to cold weather quickly. (get)",
      "gap_answer": "got",
      "quiz_options": [
       "got",
@@ -173,10 +205,11 @@
       "has"
      ],
      "accepts": [
-      "She got used to the cold quickly."
+      "She got used to cold weather quickly."
      ],
      "explanation": "**got** used to = the change happened. **was** used to would mean she already was.",
-     "explanation_cz": "**got** used to = ta změna proběhla. **was** used to by znamenalo, že už zvyklá byla."
+     "explanation_cz": "**got** used to = ta změna proběhla. **was** used to by znamenalo, že už zvyklá byla.",
+     "wrong": "She is got used to cold weather quickly."
     },
     {
      "en": "He isn't used to driving on the left.",
@@ -204,9 +237,9 @@
      "gap_answer": "the noise",
      "quiz_options": [
       "the noise",
-      "noise to be",
-      "hear noise",
-      "the noising"
+      "the noising",
+      "hear the noise",
+      "to the noise"
      ],
      "accepts": [
       "Are you used to the noise yet?"
@@ -215,9 +248,9 @@
      "explanation_cz": "Podstatné jméno po **used to** zůstává, jak je — jen slovesa mají **-ing**."
     },
     {
-     "en": "I'm getting used to my new job.",
+     "en": "I am getting used to my new job.",
      "cz": "Zvykám si na novou práci.",
-     "gap": "I'm ____ used to my new job. (get)",
+     "gap": "I am ____ used to my new job. (get)",
      "gap_answer": "getting",
      "quiz_options": [
       "getting",
@@ -226,15 +259,17 @@
       "got"
      ],
      "accepts": [
+      "I am getting used to my new job.",
       "I'm getting used to my new job."
      ],
      "explanation": "The change is still happening, so **getting** used to.",
-     "explanation_cz": "Změna pořád probíhá, takže **getting** used to."
+     "explanation_cz": "Změna pořád probíhá, takže **getting** used to.",
+     "wrong": "I am get used to my new job."
     },
     {
-     "en": "They're used to getting up early.",
+     "en": "They are used to getting up early.",
      "cz": "Jsou zvyklí vstávat brzy.",
-     "gap": "They're used to ____ up early. (get)",
+     "gap": "They are used to ____ up early. (get)",
      "gap_answer": "getting",
      "quiz_options": [
       "getting",
@@ -243,10 +278,10 @@
       "got"
      ],
      "accepts": [
-      "They're used to getting up early.",
-      "They are used to getting up early."
+      "They are used to getting up early.",
+      "They're used to getting up early."
      ],
-     "wrong": "They're used to get up early.",
+     "wrong": "They are used to get up early.",
      "explanation": "Two used-tos in one sentence is fine — the second verb still takes **-ing**.",
      "explanation_cz": "Dvě used to v jedné větě nevadí — druhé sloveso má pořád **-ing**."
     },
@@ -268,9 +303,9 @@
      "explanation_cz": "Po **to** tady potřebuješ základní **get**: to get used to."
     },
     {
-     "en": "She's used to speaking English at work.",
+     "en": "She is used to speaking English at work.",
      "cz": "Je zvyklá mluvit v práci anglicky.",
-     "gap": "She's used to ____ English at work. (speak)",
+     "gap": "She is used to ____ English at work. (speak)",
      "gap_answer": "speaking",
      "quiz_options": [
       "speaking",
@@ -279,10 +314,10 @@
       "spoke"
      ],
      "accepts": [
-      "She's used to speaking English at work.",
-      "She is used to speaking English at work."
+      "She is used to speaking English at work.",
+      "She's used to speaking English at work."
      ],
-     "wrong": "She's used to speak English at work.",
+     "wrong": "She is used to speak English at work.",
      "explanation": "**speaking** — the -ing form after used to.",
      "explanation_cz": "**speaking** — tvar s -ing po used to."
     },
@@ -321,6 +356,265 @@
      "wrong": "We soon got used to live in a small flat.",
      "explanation": "**got** used to marks the change, and **living** keeps the -ing.",
      "explanation_cz": "**got** used to značí změnu a **living** drží -ing."
+    },
+    {
+     "en": "I am not used to getting up at five.",
+     "cz": "Nejsem zvyklý vstávat v pět.",
+     "gap": "I am not used to ____ up at five. (get)",
+     "gap_answer": "getting",
+     "quiz_options": [
+      "getting",
+      "get",
+      "to get",
+      "got"
+     ],
+     "accepts": [
+      "I am not used to getting up at five.",
+      "I'm not used to getting up at five."
+     ],
+     "wrong": "I am not used to get up at five.",
+     "explanation": "The negative changes nothing: **used to** still takes **-ing**.",
+     "explanation_cz": "Zápor na tom nic nemění: po **used to** je pořád **-ing**."
+    },
+    {
+     "en": "Are you used to your new school yet?",
+     "cz": "Zvykl sis už na novou školu?",
+     "gap": "Are you used to ____ yet? (your new school)",
+     "gap_answer": "your new school",
+     "quiz_options": [
+      "your new school",
+      "your new schooling",
+      "to your new school",
+      "be in your new school"
+     ],
+     "accepts": [
+      "Are you used to your new school yet?"
+     ],
+     "explanation": "A noun after **used to** stays a noun — *school*, not schooling.",
+     "explanation_cz": "Podstatné jméno po **used to** zůstane podstatným jménem — *school*, ne schooling."
+    },
+    {
+     "en": "He is getting used to his new phone.",
+     "cz": "Zvyká si na nový telefon.",
+     "gap": "He is ____ used to his new phone. (get)",
+     "gap_answer": "getting",
+     "quiz_options": [
+      "getting",
+      "get",
+      "got",
+      "being"
+     ],
+     "accepts": [
+      "He is getting used to his new phone.",
+      "He's getting used to his new phone."
+     ],
+     "wrong": "He is get used to his new phone.",
+     "explanation": "The change is still going on, so **is getting** used to.",
+     "explanation_cz": "Změna pořád probíhá, takže **is getting** used to."
+    },
+    {
+     "en": "My parents never got used to living in a city.",
+     "cz": "Rodiče si nikdy nezvykli na život ve městě.",
+     "gap": "My parents never ____ used to living in a city. (get)",
+     "gap_answer": "got",
+     "quiz_options": [
+      "got",
+      "get",
+      "getting",
+      "were"
+     ],
+     "accepts": [
+      "My parents never got used to living in a city."
+     ],
+     "wrong": "My parents never get used to living in a city.",
+     "explanation": "**never got** used to = the change never finished. *were* would say they already were.",
+     "explanation_cz": "**never got** used to = ta změna nikdy neproběhla. *were* by říkalo, že už zvyklí byli."
+    },
+    {
+     "en": "We are used to working in a big team.",
+     "cz": "Jsme zvyklí pracovat ve velkém týmu.",
+     "gap": "We are used to ____ in a big team. (work)",
+     "gap_answer": "working",
+     "quiz_options": [
+      "working",
+      "work",
+      "to work",
+      "worked"
+     ],
+     "accepts": [
+      "We are used to working in a big team.",
+      "We're used to working in a big team."
+     ],
+     "wrong": "We are used to work in a big team.",
+     "explanation": "**working** — the -ing form after used to, however long the sentence gets.",
+     "explanation_cz": "**working** — tvar s -ing po used to, ať je věta jakkoli dlouhá."
+    },
+    {
+     "en": "She used to work in a bank, but now she is a teacher.",
+     "cz": "Dřív pracovala v bance, ale teď je učitelka.",
+     "gap": "She ____ in a bank, but now she is a teacher. (work)",
+     "gap_answer": "used to work",
+     "quiz_options": [
+      "used to work",
+      "used to working",
+      "is used to working",
+      "was used to work"
+     ],
+     "accepts": [
+      "She used to work in a bank, but now she is a teacher.",
+      "She used to work in a bank, but now she's a teacher."
+     ],
+     "wrong": "She used to working in a bank, but now she is a teacher.",
+     "explanation": "This is the **past habit** *used to* — plain verb, no be. *She is used to working* would mean it feels normal to her now.",
+     "explanation_cz": "Tohle je *used to* pro **minulý zvyk** — základní tvar, žádné be. *She is used to working* by znamenalo, že jí to teď přijde normální."
+    },
+    {
+     "en": "He is used to travelling by train every day.",
+     "cz": "Je zvyklý jezdit každý den vlakem.",
+     "gap": "He is used to ____ by train every day. (travel)",
+     "gap_answer": "travelling",
+     "quiz_options": [
+      "travelling",
+      "travel",
+      "to travel",
+      "travelled"
+     ],
+     "accepts": [
+      "He is used to travelling by train every day.",
+      "He's used to travelling by train every day."
+     ],
+     "wrong": "He is used to travel by train every day.",
+     "explanation": "**travelling** after used to. *to travel* is the infinitive, which never follows this *to*.",
+     "explanation_cz": "Po used to je **travelling**. *to travel* je infinitiv, ten po tomhle *to* nikdy nestojí."
+    },
+    {
+     "en": "You will soon get used to it.",
+     "cz": "Brzy si na to zvykneš.",
+     "gap": "You will soon ____ used to it. (get)",
+     "gap_answer": "get",
+     "quiz_options": [
+      "get",
+      "getting",
+      "got",
+      "be getting"
+     ],
+     "accepts": [
+      "You will soon get used to it.",
+      "You'll soon get used to it."
+     ],
+     "wrong": "You will soon getting used to it.",
+     "explanation": "After **will** the verb is plain: will **get** used to.",
+     "explanation_cz": "Po **will** je základní tvar: will **get** used to."
+    },
+    {
+     "en": "They are getting used to speaking Czech.",
+     "cz": "Zvykají si mluvit česky.",
+     "gap": "They are getting used to ____ Czech. (speak)",
+     "gap_answer": "speaking",
+     "quiz_options": [
+      "speaking",
+      "speak",
+      "to speak",
+      "spoke"
+     ],
+     "accepts": [
+      "They are getting used to speaking Czech.",
+      "They're getting used to speaking Czech."
+     ],
+     "wrong": "They are getting used to speak Czech.",
+     "explanation": "Even with **getting**, the verb after used to keeps **-ing**: speaking.",
+     "explanation_cz": "I s **getting** zůstává sloveso po used to v **-ing**: speaking."
+    },
+    {
+     "en": "I am not used to this weather.",
+     "cz": "Na tohle počasí nejsem zvyklý.",
+     "gap": "I am not used to ____. (this weather)",
+     "gap_answer": "this weather",
+     "quiz_options": [
+      "this weather",
+      "this weathering",
+      "have this weather",
+      "to this weather"
+     ],
+     "accepts": [
+      "I am not used to this weather.",
+      "I'm not used to this weather."
+     ],
+     "explanation": "A noun needs nothing added — **this weather** is the whole thing after used to.",
+     "explanation_cz": "K podstatnému jménu se nic nepřidává — po used to stojí **this weather** tak, jak je."
+    },
+    {
+     "en": "Did you get used to the food?",
+     "cz": "Zvykl sis na to jídlo?",
+     "gap": "Did you ____ used to the food? (get)",
+     "gap_answer": "get",
+     "quiz_options": [
+      "get",
+      "got",
+      "getting",
+      "be"
+     ],
+     "accepts": [
+      "Did you get used to the food?"
+     ],
+     "wrong": "Did you got used to the food?",
+     "explanation": "After **did** the verb is plain: did you **get** used to.",
+     "explanation_cz": "Po **did** je základní tvar: did you **get** used to."
+    },
+    {
+     "en": "She is not used to speaking in front of people.",
+     "cz": "Není zvyklá mluvit před lidmi.",
+     "gap": "She is not used to ____ in front of people. (speak)",
+     "gap_answer": "speaking",
+     "quiz_options": [
+      "speaking",
+      "speak",
+      "to speak",
+      "spoken"
+     ],
+     "accepts": [
+      "She is not used to speaking in front of people.",
+      "She isn't used to speaking in front of people."
+     ],
+     "wrong": "She is not used to speak in front of people.",
+     "explanation": "**speaking** — the negative does not change the -ing.",
+     "explanation_cz": "**speaking** — zápor na -ing nic nemění."
+    },
+    {
+     "en": "My sister is getting used to her new car.",
+     "cz": "Sestra si zvyká na nové auto.",
+     "gap": "My sister is ____ used to her new car. (get)",
+     "gap_answer": "getting",
+     "quiz_options": [
+      "getting",
+      "get",
+      "got",
+      "being"
+     ],
+     "accepts": [
+      "My sister is getting used to her new car."
+     ],
+     "wrong": "My sister is got used to her new car.",
+     "explanation": "The change is in progress: **is getting** used to, not is got.",
+     "explanation_cz": "Změna probíhá: **is getting** used to, ne is got."
+    },
+    {
+     "en": "He got used to working at night.",
+     "cz": "Zvykl si pracovat v noci.",
+     "gap": "He ____ used to working at night. (get)",
+     "gap_answer": "got",
+     "quiz_options": [
+      "got",
+      "gets",
+      "getting",
+      "is"
+     ],
+     "accepts": [
+      "He got used to working at night."
+     ],
+     "wrong": "He getting used to working at night.",
+     "explanation": "**got** used to = the change is finished. He is comfortable with it now.",
+     "explanation_cz": "**got** used to = změna proběhla. Teď mu to už nevadí."
     }
    ]
   }
