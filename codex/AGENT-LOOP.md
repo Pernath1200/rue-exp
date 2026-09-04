@@ -32,6 +32,16 @@ Answers to the first run's queue. These are settled; do not re-ask them.
 | **`b1_used_to` A0** | Accept the *used to* twin on action items; the authored Quiz options are what force `would`. Do not cue the gap. |
 | **`b1_relative_clauses_2` "nothing"** | Mark those three items `type: false` — Quiz-only. The chip is the teaching point; nobody types "nothing" into a gap. **Do this on the next run that touches the unit.** |
 
+## One-off task, ahead of new units
+
+**Sweep A14 across the 16 grammar units already drafted on this branch.** A14 was
+learned from James's smoke of `b1_past_perfect` on 2026-09-04, *after* those units
+were written, so none of them was checked against it. Any item whose only licence
+for a perfect or past-perfect form is a bare adverb (*before*, *ever*, *never*,
+*already*) needs a real past anchor — and check its `quiz_options` while you are
+there, because an unanchored item usually lists the better answer as a distractor.
+Do this before starting new vocab leaves. One commit, `A14 sweep: <units touched>`.
+
 ## Order of work
 
 1. The remaining unseen (`- [ ][ ]`) B1 **grammar** stubs.
