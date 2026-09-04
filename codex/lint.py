@@ -83,6 +83,25 @@ for _short, _longs in CONTRACTIONS.items():
 
 WORD = r"\b%s\b"
 
+# A8 guards — three classes of contraction the check used to demand that are not
+# English. Found by the B1 authoring loop 2026-09-04, confirmed by James.
+#
+#   had to / have to   "I had to work" does NOT contract to "I'd to work"
+#   had + object       "I had a car" does NOT contract to "I'd a car"
+#   question tags      the twin of "aren't you?" is "are you not?", never
+#                      "are not you?" — so every negative tag was flagged, and
+#                      the count grew as a tag unit was thickened
+#
+# These made the A8 count unusable on b1_question_tags (9 of 25 items) and on
+# every past-obligation pack. Suppressing them is not leniency: the ONLY way to
+# clear them by editing a pack was to write ungrammatical strings into
+# `accepts`, which is what grades the student.
+HAVE_TAIL = re.compile(r"\b(had|have|has)$", re.I)
+NOT_A_PARTICIPLE = re.compile(
+    r"^\s+(to|a|an|the|my|your|his|her|its|our|their|no|some|any|enough|"
+    r"one|two|three|four|five|lots|plenty)\b", re.I)
+TAG_AFTER = re.compile(r"^\s*(i|you|he|she|it|we|they|there)\s*\?", re.I)
+
 # English free choices — interchangeable anywhere, unlike the Czech-ambiguity pairs
 # the synonym map was generated for. `everyone` rejected for `everybody` was the
 # failure that exposed this.
@@ -395,6 +414,10 @@ def lint_pack(uid):
 
         # F4 — 's name the class does not already know  [EXACT]
         for name in re.findall(r"\b([A-Z][a-z]+)'s\b", it.get("en") or ""):
+            # F4 guard: "She's used to it" is a subject contraction, not the
+            # possessive of a person called She. (B1 loop, 2026-09-04.)
+            if name.lower() in ("she", "he", "it", "that", "there", "who", "what"):
+                continue
             if name.lower() not in CLASS_NAMES:
                 f["hardname"].append(it)
                 break
@@ -584,19 +607,32 @@ def lint_pack(uid):
         for a in low:
             for short, longs in CONTRACTIONS.items():
                 pat = WORD % re.escape(short)
-                if re.search(pat, a) and not any(
-                        re.sub(pat, lg, a) in low for lg in longs):
+                m = re.search(pat, a)
+                if not m:
+                    continue
+                # A8 guard: a question tag's twin is "are you not?", never
+                # "are not you?" — do not demand a string nobody writes.
+                if TAG_AFTER.match(a[m.end():]):
+                    continue
+                if not any(re.sub(pat, lg, a) in low for lg in longs):
                     f["contraction"].append(it); hit = True; break
             if hit:
                 break
             for lng, short in EXPANSIONS.items():
                 pat = WORD % re.escape(lng)
                 m = re.search(pat, a)
+                if not m:
+                    continue
                 # "has not sent" -> "'s not sent" is marginal and the n't
                 # contraction already covers the negative. Skip it.
-                if m and a[m.end():m.end() + 4] == " not":
+                if a[m.end():m.end() + 4] == " not":
                     continue
-                if m and re.sub(pat, short, a) not in low:
+                # A8 guard: "had"/"have" only contracts in front of a past
+                # participle. "I had to work" and "I had a car" do not become
+                # "I'd to work" / "I'd a car".
+                if HAVE_TAIL.search(lng) and NOT_A_PARTICIPLE.match(a[m.end():]):
+                    continue
+                if re.sub(pat, short, a) not in low:
                     f["contraction"].append(it); hit = True; break
             if hit:
                 break
@@ -1159,7 +1195,15 @@ def lint_pack(uid):
             at_or_below = sum(n for k, n in band.items() if k <= own)
             share = at_or_below / tot
             two_below = sum(n for k, n in band.items() if k <= own - 2) / tot
-            if two_below > 0.75:
+            # A grammar pack MUST carry easy vocabulary — A0 says the form is
+            # the only degree of freedom, so the carrier words have to be ones
+            # the student already owns. "2+ levels below" is a fault on a vocab
+            # leaf and a virtue on a form pack, and it only switched on once a
+            # stub was thickened past 40 known tokens, which made honest work
+            # look like a regression. (James, 2026-09-04.) The other half of
+            # the check — sentences ABOVE the unit's level — still applies.
+            is_grammar = (tree_index()["by_id"].get(uid) or {}).get("domain") == "grammar"
+            if two_below > 0.75 and not is_grammar:
                 f["vocablevel"].append(
                     {"cz": "%.0f%% of words are 2+ levels below %s" % (100 * two_below, lvl),
                      "en": "is this really a %s unit?" % lvl})
