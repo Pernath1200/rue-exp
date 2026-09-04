@@ -65,14 +65,21 @@ Format:
 **Default if unanswered:** b — done this run, because a lint change is not this loop's to make unattended. `b1_be_used_to` now shows *She is used to speaking English at work* in `en` and keeps *She's…* in `accepts`, so A8 still holds and nothing is lost on screen. (a) is the right fix when someone is in that file; (c) would suppress a genuine F4 hit on a name literally called *She*, which is nobody.
 → (James: your answer here)
 
----
-
-## Answered
-
-*(empty)*
-
 ### b1_relative_clauses_2 · typing the word *nothing*
 **Q:** Three items answer the gap with the literal string `nothing` (*The letter ____ I sent last week arrived today.* → `nothing`), which is how the 2026-09-02 draft already did it. That reads fine as a Quiz chip and badly as a Type answer — nobody types "nothing" — and `verify_pack` warns that the frame may not reconstruct.
 **Options:** a) keep it — the chip is the point, and the Type stage is a small cost on three of 25 items / b) mark those three `type: false` so they are Quiz-only / c) invent a different token (`—`, `no word`) — which is a new mechanism and needs the engine to agree.
 **Default if unanswered:** a — kept, because the pack already shipped one item of this shape and inventing a token unattended is worse than a rough Type on three items. (b) is the cheap improvement if you want it; say so and the next run does it.
 → (James: your answer here)
+*(moved up from under **Answered**, where the run that wrote it appended it by mistake — it is open, not answered.)*
+
+### The loop · two runs of this routine were live at once
+**Q:** On 2026-09-04 two cloud runs of the B1 agent loop were working `b1/auto` at the same time. Both picked `b1_be_used_to` (the first `- [ ][ ]` row in path order at that moment) and authored it independently; the second landed over the first. Should the loop keep taking the first unit in path order when it cannot see what another run is inside?
+**Options:** a) leave the contract alone and accept the occasional duplicate — the loser's work is simply thrown away / b) let a run that detects a live sibling (a push on `b1/auto` within the last few minutes) work the roster from the **tail** instead, so the two meet in the middle / c) make the loop claim a unit by pushing an empty marker commit before it starts.
+**Default if unanswered:** b — done for the rest of this run. After the collision, this run took `b1_prepositions_time_2` (last unworked row in `path_order_b1`) and then `b1_cause_concession`, working backwards, and there were no further collisions. This is a deliberate deviation from "lowest first" in AGENT-LOOP.md and the only one made. It costs nothing pedagogically — every `[ ][ ]` unit still gets done — but it means the units nearest the front of your play order are the fast run's work, not this one's. (c) is the proper fix if two runs are meant to be normal; if they are not, the thing to fix is the schedule, not the loop.
+→ (James: your answer here)
+
+---
+
+## Answered
+
+*(empty)*

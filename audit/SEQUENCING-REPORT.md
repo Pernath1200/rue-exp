@@ -89,7 +89,7 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b1_it_subject** (B1 grammar): practise, repair, matter, guess, alone, enter, grammar
 - **leaf_crime_b1** (B1 vocab): stole
 - **b1_linkers** (B1 grammar): inside, rich, slow, hurried, none
-- **b1_cause_concession** (B1 grammar): outside
+- **b1_cause_concession** (B1 grammar): outside×2
 - **b1_verb_patterns_advanced** (B1 grammar): forward×2, outside×2, moment, advised, allowed, noon, powerful, without, instead
 - **trunk_chunks_b1** (B1 vocab): favour, priority
 - **b1_phrasal_verbs** (B1 grammar): bottom

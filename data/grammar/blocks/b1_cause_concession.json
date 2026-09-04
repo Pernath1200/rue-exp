@@ -6,7 +6,7 @@
  "codex_unit": "G_PP-B1B2-01",
  "practice": "frames",
  "quality": "draft",
- "note": "Preposition + NOUN, which is exactly what separates this from b1_linkers (although / however take a clause or a sentence) - b1_linkers plays immediately before, so the pair is a contrast. Traps: *despite of, *in spite the rain, and *because of it was raining. thanks to for a cause with a good result. First draft 2026-09-02, rough - thicken after smoke.",
+ "note": "Preposition + NOUN, which is exactly what separates this from b1_linkers (although / however take a clause or a sentence) - b1_linkers plays immediately before, so the pair is a contrast. Traps: *despite of, *in spite the rain, and *because of it was raining. thanks to for a cause with a good result. First draft 2026-09-02, rough - thicken after smoke. THICKENED 2026-09-04 by the B1 agent loop: 10 -> 24 items, five per frame instead of two, and both directions of every trap (a noun after because, a clause after because of). A5 IS THE STRUCTURAL FIX HERE: despite and in spite of are the same word, so Czech navzdory picks neither - every one of those items now carries the twin wording in accepts, and the Quiz gap cue is what narrows it to one lemma so the only freedom left is the *of*. A4 - all six article demands cleared at the source: three sentences moved onto nouns English needs no article for (bad weather, heavy rain, heavy traffic) and the rest carry the Czech demonstrative that licenses `the`. F3 - sat and shorter were untaught (stayed outside, easier). A2 - the subjectless Czech prompts name their subject.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -54,12 +54,12 @@
     },
     "examples": [
      {
-      "en": "We stayed in **because of** the rain.",
-      "cz": "Zůstali jsme doma kvůli dešti."
+      "en": "We stayed in **because of** the heat.",
+      "cz": "Zůstali jsme doma kvůli tomu horku."
      },
      {
-      "en": "**Despite** the rain, we walked home.",
-      "cz": "Navzdory dešti jsme šli domů."
+      "en": "**Despite** heavy rain, we walked home.",
+      "cz": "Navzdory hustému dešti jsme šli domů."
      }
     ]
    },
@@ -94,7 +94,9 @@
     "title": "despite has no of",
     "title_cz": "despite nemá of",
     "points": [
-     "**despite** = **in spite** of. One has the *of*, the other does not."
+     "**despite** = **in spite** of. One has the *of*, the other does not.",
+     "Czech *navzdory* is both, so either wording is right.",
+     "Only the *of* is right or wrong."
     ],
     "table": {
      "headers": [
@@ -103,11 +105,11 @@
      ],
      "rows": [
       [
-       "*despite of the rain*",
+       "~~despite of the rain~~",
        "**despite** the rain"
       ],
       [
-       "*in spite the rain*",
+       "~~in spite the rain~~",
        "**in spite** of the rain"
       ]
      ]
@@ -153,74 +155,95 @@
    "title": "Because of / despite / in spite of · B1",
    "items": [
     {
-     "en": "We stayed in because of the rain.",
-     "cz": "Zůstali jsme doma kvůli dešti.",
-     "gap": "We stayed in ____ the rain. (because of / because)",
+     "en": "We stayed in because of the heat.",
+     "cz": "Zůstali jsme doma kvůli tomu horku.",
+     "gap": "We stayed in ____ the heat. (because of / because)",
      "gap_answer": "because of",
      "quiz_options": [
       "because of",
       "because",
       "despite",
-      "for"
+      "thanks to"
      ],
      "accepts": [
-      "We stayed in because of the rain."
+      "We stayed in because of the heat."
      ],
-     "explanation": "**the rain** is a noun, so **because of**.",
-     "explanation_cz": "**the rain** je podstatné jméno, takže **because of**."
+     "wrong": "We stayed in because the heat.",
+     "explanation": "**the heat** is a noun, so **because of**. Plain *because* would need a subject and a verb.",
+     "explanation_cz": "**the heat** je podstatné jméno, takže **because of**. Samotné *because* by potřebovalo podmět a sloveso."
     },
     {
-     "en": "Despite the rain, we walked home.",
-     "cz": "Navzdory dešti jsme šli domů.",
-     "gap": "____ the rain, we walked home. (despite / despite of)",
-     "gap_answer": "Despite",
+     "en": "The match was cancelled because of the snow.",
+     "cz": "Zápas byl zrušen kvůli tomu sněhu.",
+     "gap": "The match was cancelled ____ the snow. (because of / because)",
+     "gap_answer": "because of",
      "quiz_options": [
-      "Despite",
-      "Despite of",
-      "Although",
-      "However"
+      "because of",
+      "because",
+      "in spite of",
+      "thanks to"
      ],
      "accepts": [
-      "Despite the rain, we walked home."
+      "The match was cancelled because of the snow."
      ],
-     "wrong": "Despite of the rain, we walked home.",
-     "explanation": "**despite** takes no *of*.",
-     "explanation_cz": "**despite** nemá *of*."
+     "wrong": "The match was cancelled because the snow.",
+     "explanation": "**the snow** is a noun: because **of**. Dropping the *of* is the commonest version of this error.",
+     "explanation_cz": "**the snow** je podstatné jméno: because **of**. Vynechat *of* je nejčastější podoba téhle chyby."
     },
     {
-     "en": "In spite of the traffic, we arrived on time.",
-     "cz": "Navzdory provozu jsme dorazili včas.",
-     "gap": "____ the traffic, we arrived on time. (in spite of / in spite)",
-     "gap_answer": "In spite of",
+     "en": "Hana was late because of heavy traffic.",
+     "cz": "Hana přišla pozdě kvůli hustému provozu.",
+     "gap": "Hana was late ____ heavy traffic. (because of / because)",
+     "gap_answer": "because of",
      "quiz_options": [
-      "In spite of",
-      "In spite",
-      "Despite of",
-      "Although"
+      "because of",
+      "because",
+      "despite",
+      "although"
      ],
      "accepts": [
-      "In spite of the traffic, we arrived on time."
+      "Hana was late because of heavy traffic."
      ],
-     "wrong": "In spite the traffic, we arrived on time.",
-     "explanation": "**in spite of** always keeps the *of*.",
-     "explanation_cz": "**in spite of** si vždycky drží *of*."
+     "wrong": "Hana was late because heavy traffic.",
+     "explanation": "**because of** + noun gives the reason. *Despite* would mean the traffic did not stop her.",
+     "explanation_cz": "**because of** + podstatné jméno udává důvod. *Despite* by znamenalo, že ji provoz nezastavil."
     },
     {
-     "en": "Thanks to your help, I finished early.",
-     "cz": "Díky tvé pomoci jsem skončil brzy.",
-     "gap": "____ your help, I finished early. (thanks to / thanks for)",
-     "gap_answer": "Thanks to",
+     "en": "We didn't go out because of bad weather.",
+     "cz": "Nešli jsme ven kvůli špatnému počasí.",
+     "gap": "We didn't go out ____ bad weather. (because of / because)",
+     "gap_answer": "because of",
      "quiz_options": [
-      "Thanks to",
-      "Thanks for",
-      "Because",
-      "Despite"
+      "because of",
+      "because",
+      "in spite of",
+      "thanks to"
      ],
      "accepts": [
-      "Thanks to your help, I finished early."
+      "We didn't go out because of bad weather.",
+      "We did not go out because of bad weather."
      ],
-     "explanation": "**thanks to** + noun gives a cause with a good result. *thanks for* is what you say to a person.",
-     "explanation_cz": "**thanks to** + podstatné jméno dává příčinu s dobrým koncem. *thanks for* říkáš člověku."
+     "wrong": "We didn't go out because bad weather.",
+     "explanation": "**bad weather** is a noun, so the *of* stays: because **of** bad weather.",
+     "explanation_cz": "**bad weather** je podstatné jméno, takže *of* zůstává: because **of** bad weather."
+    },
+    {
+     "en": "Our office is closed because of a holiday.",
+     "cz": "Naše kancelář je kvůli svátku zavřená.",
+     "gap": "Our office is closed ____ a holiday. (because of / because)",
+     "gap_answer": "because of",
+     "quiz_options": [
+      "because of",
+      "because",
+      "despite",
+      "even though"
+     ],
+     "accepts": [
+      "Our office is closed because of a holiday."
+     ],
+     "wrong": "Our office is closed because a holiday.",
+     "explanation": "**a holiday** is a noun. *Because* on its own can never sit in front of one.",
+     "explanation_cz": "**a holiday** je podstatné jméno. Samotné *because* před ním nikdy stát nemůže."
     },
     {
      "en": "Because it was raining, we stayed in.",
@@ -237,64 +260,254 @@
       "Because it was raining, we stayed in."
      ],
      "wrong": "Because of it was raining, we stayed in.",
-     "explanation": "A subject and a verb follow, so plain **because**.",
-     "explanation_cz": "Následuje podmět a sloveso, takže samotné **because**."
+     "explanation": "*It was raining* is a subject and a verb, so plain **because** — no *of*.",
+     "explanation_cz": "*It was raining* je podmět a sloveso, takže samotné **because** — bez *of*."
     },
     {
-     "en": "The match was cancelled because of the snow.",
-     "cz": "Zápas byl zrušen kvůli sněhu.",
-     "gap": "The match was cancelled ____ the snow. (because of / because)",
-     "gap_answer": "because of",
+     "en": "We walked because the bus was late.",
+     "cz": "Šli jsme pěšky, protože ten autobus měl zpoždění.",
+     "gap": "We walked ____ the bus was late. (because / because of)",
+     "gap_answer": "because",
      "quiz_options": [
-      "because of",
       "because",
+      "because of",
       "despite",
       "thanks to"
      ],
      "accepts": [
-      "The match was cancelled because of the snow."
+      "We walked because the bus was late."
      ],
-     "explanation": "**the snow** is a noun: because of.",
-     "explanation_cz": "**the snow** je podstatné jméno: because of."
+     "wrong": "We walked because of the bus was late.",
+     "explanation": "*The bus was late* is a whole clause, so **because**. It is a noun that would want *because of*.",
+     "explanation_cz": "*The bus was late* je celá věta, takže **because**. *Because of* by chtělo podstatné jméno."
+    },
+    {
+     "en": "Eva was tired because she worked all night.",
+     "cz": "Eva byla unavená, protože pracovala celou noc.",
+     "gap": "Eva was tired ____ she worked all night. (because / because of)",
+     "gap_answer": "because",
+     "quiz_options": [
+      "because",
+      "because of",
+      "in spite of",
+      "although"
+     ],
+     "accepts": [
+      "Eva was tired because she worked all night."
+     ],
+     "wrong": "Eva was tired because of she worked all night.",
+     "explanation": "**because** + she worked. Put *of* in and the sentence has a preposition in front of a subject.",
+     "explanation_cz": "**because** + she worked. S *of* by před podmětem stála předložka."
+    },
+    {
+     "en": "Because the shop was closed, we went home.",
+     "cz": "Protože byl ten obchod zavřený, šli jsme domů.",
+     "gap": "____ the shop was closed, we went home. (because / because of)",
+     "gap_answer": "Because",
+     "quiz_options": [
+      "Because",
+      "Because of",
+      "Despite",
+      "Thanks to"
+     ],
+     "accepts": [
+      "Because the shop was closed, we went home."
+     ],
+     "wrong": "Because of the shop was closed, we went home.",
+     "explanation": "A clause follows, so **because**. *Because of the shop* would be a different sentence.",
+     "explanation_cz": "Následuje věta, takže **because**. *Because of the shop* by byla jiná věta."
+    },
+    {
+     "en": "Despite heavy rain, we walked home.",
+     "cz": "Navzdory hustému dešti jsme šli domů.",
+     "gap": "____ heavy rain, we walked home. (despite / despite of)",
+     "gap_answer": "Despite",
+     "quiz_options": [
+      "Despite",
+      "Despite of",
+      "Although",
+      "Because of"
+     ],
+     "accepts": [
+      "Despite heavy rain, we walked home.",
+      "In spite of heavy rain, we walked home."
+     ],
+     "wrong": "Despite of heavy rain, we walked home.",
+     "explanation": "**despite** takes no *of*. Czech *navzdory* is also *in spite of*, and that wording is right too.",
+     "explanation_cz": "**despite** nemá *of*. České *navzdory* je i *in spite of* a to znění je taky správně."
     },
     {
      "en": "Despite his age, he still works full time.",
      "cz": "Navzdory svému věku pořád pracuje na plný úvazek.",
-     "gap": "____ his age, he still works full time. (despite / although)",
+     "gap": "____ his age, he still works full time. (despite / despite of)",
      "gap_answer": "Despite",
      "quiz_options": [
       "Despite",
-      "Although",
       "Despite of",
-      "However"
-     ],
-     "accepts": [
-      "Despite his age, he still works full time."
-     ],
-     "explanation": "**his age** is a noun, so despite. *although* would need a clause.",
-     "explanation_cz": "**his age** je podstatné jméno, takže despite. *although* by potřebovalo větu."
-    },
-    {
-     "en": "Although it was cold, we sat outside.",
-     "cz": "I když byla zima, seděli jsme venku.",
-     "gap": "____ it was cold, we sat outside. (although / despite)",
-     "gap_answer": "Although",
-     "quiz_options": [
       "Although",
-      "Despite",
-      "In spite of",
       "Because of"
      ],
      "accepts": [
-      "Although it was cold, we sat outside."
+      "Despite his age, he still works full time.",
+      "In spite of his age, he still works full time."
      ],
-     "explanation": "A subject and a verb follow, so **although**, not despite.",
-     "explanation_cz": "Následuje podmět a sloveso, takže **although**, ne despite."
+     "wrong": "Despite of his age, he still works full time.",
+     "explanation": "**his age** is a noun, so despite. *Although* would need *he is old*, a clause.",
+     "explanation_cz": "**his age** je podstatné jméno, takže despite. *Although* by potřebovalo *he is old*, tedy větu."
     },
     {
-     "en": "Thanks to the new road, the journey is shorter.",
-     "cz": "Díky nové silnici je cesta kratší.",
-     "gap": "____ the new road, the journey is shorter. (thanks to / because)",
+     "en": "Despite the price, Klara bought the coat.",
+     "cz": "Navzdory ceně si Klára ten kabát koupila.",
+     "gap": "____ the price, Klara bought the coat. (despite / despite of)",
+     "gap_answer": "Despite",
+     "quiz_options": [
+      "Despite",
+      "Despite of",
+      "Because of",
+      "Even though"
+     ],
+     "accepts": [
+      "Despite the price, Klara bought the coat.",
+      "In spite of the price, Klara bought the coat."
+     ],
+     "explanation": "**despite** the price = the price did not stop her. *Because of* would mean the price is why she bought it.",
+     "explanation_cz": "**despite** the price = cena ji nezastavila. *Because of* by znamenalo, že kvůli ceně si ho koupila."
+    },
+    {
+     "en": "Despite our help, Honza didn't finish.",
+     "cz": "Navzdory naší pomoci to Honza nedokončil.",
+     "gap": "____ our help, Honza didn't finish. (despite / despite of)",
+     "gap_answer": "Despite",
+     "quiz_options": [
+      "Despite",
+      "Despite of",
+      "Thanks to",
+      "Although"
+     ],
+     "accepts": [
+      "Despite our help, Honza didn't finish.",
+      "Despite our help, Honza did not finish.",
+      "In spite of our help, Honza didn't finish.",
+      "In spite of our help, Honza did not finish."
+     ],
+     "explanation": "**despite** our help — the help did not work. *Thanks to* is for when it did.",
+     "explanation_cz": "**despite** our help — pomoc nepomohla. *Thanks to* je pro případ, kdy pomohla."
+    },
+    {
+     "en": "In spite of heavy traffic, we arrived on time.",
+     "cz": "Navzdory hustému provozu jsme dorazili včas.",
+     "gap": "____ heavy traffic, we arrived on time. (in spite of / in spite)",
+     "gap_answer": "In spite of",
+     "quiz_options": [
+      "In spite of",
+      "In spite",
+      "Despite of",
+      "Because of"
+     ],
+     "accepts": [
+      "In spite of heavy traffic, we arrived on time.",
+      "Despite heavy traffic, we arrived on time."
+     ],
+     "wrong": "In spite heavy traffic, we arrived on time.",
+     "explanation": "**in spite of** always keeps the *of*. It is the same meaning as *despite*, which never has one.",
+     "explanation_cz": "**in spite of** si vždycky drží *of*. Znamená to samé co *despite*, které ho nemá nikdy."
+    },
+    {
+     "en": "In spite of the noise, I slept well.",
+     "cz": "Navzdory tomu hluku jsem se dobře vyspal.",
+     "gap": "____ the noise, I slept well. (in spite of / in spite)",
+     "gap_answer": "In spite of",
+     "quiz_options": [
+      "In spite of",
+      "In spite",
+      "Despite of",
+      "Although"
+     ],
+     "accepts": [
+      "In spite of the noise, I slept well.",
+      "Despite the noise, I slept well."
+     ],
+     "wrong": "In spite the noise, I slept well.",
+     "explanation": "**in spite of** is the three-word form. *In spite the noise* drops the word that makes it work.",
+     "explanation_cz": "**in spite of** je tříslovný tvar. *In spite the noise* vynechává slovo, které to drží pohromadě."
+    },
+    {
+     "en": "In spite of the cold, the children played outside.",
+     "cz": "Navzdory tomu chladu si ty děti hrály venku.",
+     "gap": "____ the cold, the children played outside. (in spite of / in spite)",
+     "gap_answer": "In spite of",
+     "quiz_options": [
+      "In spite of",
+      "In spite",
+      "Because of",
+      "Even though"
+     ],
+     "accepts": [
+      "In spite of the cold, the children played outside.",
+      "Despite the cold, the children played outside."
+     ],
+     "explanation": "**in spite of** the cold — it was cold and they played anyway.",
+     "explanation_cz": "**in spite of** the cold — byla zima a stejně si hrály."
+    },
+    {
+     "en": "In spite of the rain, we played football.",
+     "cz": "Navzdory tomu dešti jsme hráli fotbal.",
+     "gap": "____ the rain, we played football. (in spite of / in spite)",
+     "gap_answer": "In spite of",
+     "quiz_options": [
+      "In spite of",
+      "In spite",
+      "Despite of",
+      "Because of"
+     ],
+     "accepts": [
+      "In spite of the rain, we played football.",
+      "Despite the rain, we played football."
+     ],
+     "wrong": "In spite the rain, we played football.",
+     "explanation": "**in spite of** + noun. Czech *navzdory* also gives *despite the rain*, with no *of*.",
+     "explanation_cz": "**in spite of** + podstatné jméno. České *navzdory* dává i *despite the rain*, bez *of*."
+    },
+    {
+     "en": "Thanks to your help, I finished early.",
+     "cz": "Díky tvé pomoci jsem skončil brzy.",
+     "gap": "____ your help, I finished early. (thanks to / thanks for)",
+     "gap_answer": "Thanks to",
+     "quiz_options": [
+      "Thanks to",
+      "Thanks for",
+      "Because",
+      "Despite"
+     ],
+     "accepts": [
+      "Thanks to your help, I finished early."
+     ],
+     "wrong": "Thanks for your help, I finished early.",
+     "explanation": "**thanks to** + noun gives a cause with a good result. *Thanks for* is what you say to a person.",
+     "explanation_cz": "**thanks to** + podstatné jméno dává příčinu s dobrým koncem. *Thanks for* říkáš člověku."
+    },
+    {
+     "en": "Thanks to a new road, our journey is easier.",
+     "cz": "Díky nové silnici je naše cesta jednodušší.",
+     "gap": "____ a new road, our journey is easier. (thanks to / thanks for)",
+     "gap_answer": "Thanks to",
+     "quiz_options": [
+      "Thanks to",
+      "Thanks for",
+      "Because",
+      "In spite of"
+     ],
+     "accepts": [
+      "Thanks to a new road, our journey is easier."
+     ],
+     "wrong": "Thanks for a new road, our journey is easier.",
+     "explanation": "A cause with a good result: **thanks to** + noun. You cannot thank a road *for* anything.",
+     "explanation_cz": "Příčina s dobrým koncem: **thanks to** + podstatné jméno. Silnici se za nic nedá poděkovat."
+    },
+    {
+     "en": "Thanks to Eva, we found the office.",
+     "cz": "Díky Evě jsme tu kancelář našli.",
+     "gap": "____ Eva, we found the office. (thanks to / because)",
      "gap_answer": "Thanks to",
      "quiz_options": [
       "Thanks to",
@@ -303,27 +516,85 @@
       "Thanks for"
      ],
      "accepts": [
-      "Thanks to the new road, the journey is shorter."
+      "Thanks to Eva, we found the office."
      ],
-     "explanation": "A cause with a good result: **thanks to** + noun.",
-     "explanation_cz": "Příčina s dobrým koncem: **thanks to** + podstatné jméno."
+     "explanation": "**thanks to** a person works the same way as *thanks to* a thing — a cause, and it went well.",
+     "explanation_cz": "**thanks to** s osobou funguje stejně jako s věcí — příčina, a dopadlo to dobře."
     },
     {
-     "en": "In spite of the noise, I slept well.",
-     "cz": "Navzdory hluku jsem se dobře vyspal.",
-     "gap": "____ the noise, I slept well. (in spite of / despite of)",
-     "gap_answer": "In spite of",
+     "en": "Although it was cold, we stayed outside.",
+     "cz": "I když byla zima, zůstali jsme venku.",
+     "gap": "____ it was cold, we stayed outside. (although / despite)",
+     "gap_answer": "Although",
      "quiz_options": [
+      "Although",
+      "Despite",
       "In spite of",
-      "Despite of",
-      "In spite",
-      "Although"
+      "Because of"
      ],
      "accepts": [
-      "In spite of the noise, I slept well."
+      "Although it was cold, we stayed outside.",
+      "Even though it was cold, we stayed outside."
      ],
-     "explanation": "**in spite of** is the three-word form. *despite of* does not exist.",
-     "explanation_cz": "**in spite of** je tříslovný tvar. *despite of* neexistuje."
+     "wrong": "Despite it was cold, we stayed outside.",
+     "explanation": "A subject and a verb follow, so **although** — or *even though*. *Despite* would need a noun.",
+     "explanation_cz": "Následuje podmět a sloveso, takže **although** — nebo *even though*. *Despite* by potřebovalo podstatné jméno."
+    },
+    {
+     "en": "Even though Patrik was tired, he went to work.",
+     "cz": "I když byl Patrik unavený, šel do práce.",
+     "gap": "____ Patrik was tired, he went to work. (even though / despite)",
+     "gap_answer": "Even though",
+     "quiz_options": [
+      "Even though",
+      "Despite",
+      "In spite of",
+      "Because of"
+     ],
+     "accepts": [
+      "Even though Patrik was tired, he went to work.",
+      "Although Patrik was tired, he went to work."
+     ],
+     "wrong": "Despite Patrik was tired, he went to work.",
+     "explanation": "**even though** + a clause. To use *despite* you would have to write *despite his tiredness*.",
+     "explanation_cz": "**even though** + věta. S *despite* bys musel napsat *despite his tiredness*."
+    },
+    {
+     "en": "Although the film was long, I liked it.",
+     "cz": "I když byl ten film dlouhý, líbil se mi.",
+     "gap": "____ the film was long, I liked it. (although / in spite of)",
+     "gap_answer": "Although",
+     "quiz_options": [
+      "Although",
+      "In spite of",
+      "Despite",
+      "Because"
+     ],
+     "accepts": [
+      "Although the film was long, I liked it.",
+      "Even though the film was long, I liked it."
+     ],
+     "wrong": "In spite of the film was long, I liked it.",
+     "explanation": "*The film was long* is a clause, so **although**. *In spite of* takes a noun: *in spite of its length*.",
+     "explanation_cz": "*The film was long* je věta, takže **although**. *In spite of* bere podstatné jméno: *in spite of its length*."
+    },
+    {
+     "en": "Although we left early, we were late.",
+     "cz": "I když jsme vyjeli brzy, přišli jsme pozdě.",
+     "gap": "____ we left early, we were late. (although / despite)",
+     "gap_answer": "Although",
+     "quiz_options": [
+      "Although",
+      "Despite",
+      "Because",
+      "Thanks to"
+     ],
+     "accepts": [
+      "Although we left early, we were late.",
+      "Even though we left early, we were late."
+     ],
+     "explanation": "**although** joins two clauses that do not fit together. *Because* would say the opposite.",
+     "explanation_cz": "**although** spojuje dvě věty, které k sobě nesedí. *Because* by řeklo pravý opak."
     }
    ]
   }
