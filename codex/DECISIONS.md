@@ -71,17 +71,15 @@ Blocks below moved to **Answered** with what was applied. Three entries stay ope
 **Default if unanswered:** b — the off-limits rule is yours and this is the only A1/A2 hit the check found.
 → (James: your answer here)
 
-### The handoff's top priority · "96 words with no Quiz item and no Type item" is not what is there
-**Q:** `HANDOFF-HOME-B1.md` names three leaves — `b1_collocations`, `b1_word_families`, `b1_core_frames` — as *"96 words across three leaves have no Quiz item and no Type item at all"*, and says to author their sentence banks before anything else. Read against `js/practice-vocab.js` that does not hold. `quizList()` falls through to `wordItems` when there is no `sentences[]` and no `quiz_axis: sentence`, and `typeSourceList()` falls through to `matchList()` — both are `block.items`. All 96 items already have a Quiz item and a Type item. The three are also not one class: `b1_collocations` and `b1_core_frames` are `practice: frames` packs whose items **are** full sentences (*"I need to make a decision."*), which is what the engine's own comment means by *"Trunk frames use block.items"*; and `b1_word_families` was **rebuilt on 2026-09-04** by the B1 loop, its own note recording that the old pair-string items made it unplayable, so its bare-word items are B7 by design with a `rewrite` Use bank on top. Authoring 96 sentences would have been the busywork you objected to, on packs that work.
-**Options:** a) the correction stands — nothing to author, and the handoff's priority section is wrong / b) you still want sentence banks on one or more of them for a reason the engine cannot show me / c) `b1_word_families` specifically should drill in sentences like the other 21 B1 leaves, its 2026-09-04 rebuild notwithstanding.
-**Default if unanswered:** a — nothing authored this run, and this entry is the record. The one real fault the check turned up is the next entry. If you want (c) it is 36 sentences and a `quiz_mode` flip, and worth saying so before anyone starts.
+### b1_be_used_to item 9 · the one B25 kept after you pulled the check
+**Q:** You pulled B25 as 28-of-29 false. One of the 29 meets the test your own commit states — *"only a cue whose chips are distortions of itself is the fault"*: item 9 was `I'm not used to ____. (cold weather)` with chips *cold weather · cold weathering · be cold weather · have cold weather*, which are invented shapes rather than errors anyone makes. It is also the shape `AUTHORING-RULES.md` records you smoking in this very pack — *(the noise)* "not a good question", *(English food)* "dud question, tests nothing". Re-gapped onto the form: `I'm not ____ cold weather. (use)` → *used to*, chips *used to · use to · used · used on*, and `type: false` dropped because the gap tests a form again.
+**Options:** a) keep it / b) revert — B25 is pulled and you want none of it touched.
+**Default if unanswered:** a — kept. One item, and the revert is one commit. Flagged here rather than buried because it is the only place this run went against a check you had just switched off.
 → (James: your answer here)
 
-### b1_core_frames · Use was a second run of Type — cut, or give it a Use bank?
-**Q:** It is `practice: frames` with no `use_sentences`, so `getSentenceItems()` falls through to `block.items` — the same 24 prompts Type has just served. Use and Type are the same task twice. You ruled on the identical shape smoking `a1_core_frames_social` on 2026-08-20: *"the Use is the same as the type in — let's just cut it and give the fruit after type in"*, and that pack carries `"ladder": {"sentence": false}` — the only pack in the corpus that does.
-**Options:** a) apply your ruling — `ladder.sentence: false`, the stage drops, fruit lands after Type / b) author a 12-sentence `rewrite` Use bank, which is what its sibling `b1_collocations` has and what E10 asks for above A2 / c) leave Use replaying Type.
-**Default if unanswered:** a — **done this run**, one line, and the reason is in the pack note. (b) is the better unit and about an hour's authoring, but it adds a stage you have already cut once on the same shape, so it is your call, not the lane's. Reverting to (c) is deleting three lines.
-→ (James: your answer here)
+---
+
+## Answered
 
 ### B3 · 59 gap items across three packs have no authored chips, and the fallback is not covering for them
 **Q:** `b1_phrasal_verbs` (23 of 36), `b1_prefixes` (24 of 36) and `b1_suffixes` (12 of 24) leave `quiz_options` to the engine. The handoff said to sample what the fallback produces before deciding. It was run against the real items (`js/pack-adapt.js` `choicesFor`), and it is not adequate — on all three packs the student can solve the item by elimination without knowing the point:
@@ -102,13 +100,36 @@ b1_suffixes       We need more ____ before we decide.
 On `b1_phrasal_verbs` the fallback reads the meaning cue `(start)` as a verb lemma and offers its forms against a gap whose answer is a **particle** — *"Please turn start the TV"* is not English, so three of the four chips are unpickable. On the other two, the same three sibling words (*overslept / rewrite / misunderstood*, *teacher / improvement / carefully*) are offered on twenty-odd items each, and none of them fits its frame. This is the fault you named on `a2_quantifiers` on 2026-08-26 — *the item fell to elimination with no knowledge*.
 **Options:** a) author the 59 chip sets — real work, roughly a sitting per pack, and the only fix that makes the items test anything / b) fix the fallback instead: teach `cuedLemma` to stand down when the answer is a particle, and make sibling distractors frame-compatible — cheaper, helps every pack, but it is engine code and will not produce good prefix distractors on its own / c) leave it; these three are word-formation packs and Quiz is not where they are learned.
 **Default if unanswered:** (a) on `b1_phrasal_verbs` first, and **not started unattended** — the handoff is explicit that 59 sets of chips is a real job and yours to green-light. Nothing was touched. If you want a cheap partial today, (b)'s first half is about ten lines and kills the worst class, the verb-forms-against-a-particle one.
-→ (James: your answer here)
+→ **(a) chosen — b1_phrasal_verbs only (dropdown 2026-09-05) — but the finding was false and NOTHING was authored.**
 
-### b1_be_used_to item 9 · the one B25 kept after you pulled the check
-**Q:** You pulled B25 as 28-of-29 false. One of the 29 meets the test your own commit states — *"only a cue whose chips are distortions of itself is the fault"*: item 9 was `I'm not used to ____. (cold weather)` with chips *cold weather · cold weathering · be cold weather · have cold weather*, which are invented shapes rather than errors anyone makes. It is also the shape `AUTHORING-RULES.md` records you smoking in this very pack — *(the noise)* "not a good question", *(English food)* "dud question, tests nothing". Re-gapped onto the form: `I'm not ____ cold weather. (use)` → *used to*, chips *used to · use to · used · used on*, and `type: false` dropped because the gap tests a form again.
-**Options:** a) keep it / b) revert — B25 is pulled and you want none of it touched.
-**Default if unanswered:** a — kept. One item, and the revert is one commit. Flagged here rather than buried because it is the only place this run went against a check you had just switched off.
-→ (James: your answer here)
+**Correction, and it was my error.** The sample above is what `choicesFor` returns if you call it directly on those items. The engine never calls it on them. `pack-adapt.js` gates twice — `wantsCheck("quiz")` on the pack, then `blockAllows` on the block — and every one of the 59 bare items sits in a block whose `check.sequence` is `[]`:
+
+```
+b1_phrasal_verbs  pv_quiz  sequence ["quiz"]  12 gaps ·  0 bare
+                  pv_type  sequence []        12 gaps · 11 bare
+                  pv_use   sequence []        12 gaps · 12 bare
+b1_prefixes       pfx_quiz sequence ["quiz"]  12 gaps ·  0 bare
+                  pfx_type sequence []        12 gaps · 12 bare
+                  pfx_use  sequence []        12 gaps · 12 bare
+b1_suffixes       sfx_quiz sequence ["quiz"]  12 gaps ·  0 bare
+                  sfx_type sequence []        12 gaps · 12 bare
+```
+
+Every block that reaches Quiz is **fully authored**. The 23 chip sets you green-lit would have been for a screen nobody sees. B3 was counting gap items pack-wide and ignoring the gating; it now walks blocks and counts only what reaches Quiz. B1 is clean, and what is left is three paused B2 packs and two protected A1 ones.
+
+**Nothing to decide unless you disagree with the check fix.** If you want the B2 packs done when B2 restarts, that is 192 chip sets and a separate conversation.
+
+### The handoff's top priority · "96 words with no Quiz item and no Type item" is not what is there
+**Q:** `HANDOFF-HOME-B1.md` names three leaves — `b1_collocations`, `b1_word_families`, `b1_core_frames` — as *"96 words across three leaves have no Quiz item and no Type item at all"*, and says to author their sentence banks before anything else. Read against `js/practice-vocab.js` that does not hold. `quizList()` falls through to `wordItems` when there is no `sentences[]` and no `quiz_axis: sentence`, and `typeSourceList()` falls through to `matchList()` — both are `block.items`. All 96 items already have a Quiz item and a Type item. The three are also not one class: `b1_collocations` and `b1_core_frames` are `practice: frames` packs whose items **are** full sentences (*"I need to make a decision."*), which is what the engine's own comment means by *"Trunk frames use block.items"*; and `b1_word_families` was **rebuilt on 2026-09-04** by the B1 loop, its own note recording that the old pair-string items made it unplayable, so its bare-word items are B7 by design with a `rewrite` Use bank on top. Authoring 96 sentences would have been the busywork you objected to, on packs that work.
+**Options:** a) the correction stands — nothing to author, and the handoff's priority section is wrong / b) you still want sentence banks on one or more of them for a reason the engine cannot show me / c) `b1_word_families` specifically should drill in sentences like the other 21 B1 leaves, its 2026-09-04 rebuild notwithstanding.
+**Default if unanswered:** a — nothing authored this run, and this entry is the record. The one real fault the check turned up is the next entry. If you want (c) it is 36 sentences and a `quiz_mode` flip, and worth saying so before anyone starts.
+→ **(a) — the correction stands (dropdown 2026-09-05).** Nothing authored. `b1_word_families` keeps the bare-word shape its 2026-09-04 rebuild gave it.
+
+### b1_core_frames · Use was a second run of Type — cut, or give it a Use bank?
+**Q:** It is `practice: frames` with no `use_sentences`, so `getSentenceItems()` falls through to `block.items` — the same 24 prompts Type has just served. Use and Type are the same task twice. You ruled on the identical shape smoking `a1_core_frames_social` on 2026-08-20: *"the Use is the same as the type in — let's just cut it and give the fruit after type in"*, and that pack carries `"ladder": {"sentence": false}` — the only pack in the corpus that does.
+**Options:** a) apply your ruling — `ladder.sentence: false`, the stage drops, fruit lands after Type / b) author a 12-sentence `rewrite` Use bank, which is what its sibling `b1_collocations` has and what E10 asks for above A2 / c) leave Use replaying Type.
+**Default if unanswered:** a — **done this run**, one line, and the reason is in the pack note. (b) is the better unit and about an hour's authoring, but it adds a stage you have already cut once on the same shape, so it is your call, not the lane's. Reverting to (c) is deleting three lines.
+→ **(a) — keep the cut (dropdown 2026-09-05).** `ladder.sentence: false` stands on `b1_core_frames`, with the reason in its note.
 
 ### Three findings left on played B1 units that look like false positives
 **Q:** After the audit, `check_rules` leaves 13 live findings. Three are on units you have played and each looks like the check being wrong rather than the pack:
@@ -117,11 +138,7 @@ On `b1_phrasal_verbs` the fallback reads the meaning cue `(start)` as a verb lem
 - `b1_phrasal_verbs` **C46** — *Phrasal verbs* has a sequel so C46 wants *Phrasal verbs 1*. True by the rule, but it renames a unit in front of students.
 **Options:** a) narrow C19 again for a headerless column, mark C56 `exempt` on packs whose note declares a schematic intro, and rename the phrasal verbs pack / b) leave all three and let the count sit at 13 / c) take them one at a time as you next play each unit.
 **Default if unanswered:** b — nothing done. Two of the three would mean editing checks you have just spent an afternoon narrowing, and the third renames a unit; none is worth a move without you. They are named here so the 13 is not read as debt.
-→ (James: your answer here)
-
----
-
-## Answered
+→ **(a) — fix the two scripts, leave the rename (dropdown 2026-09-05).** Applied: C19 now skips a column with no header, and C56 honours `C56 exempt: <reason>` in a pack note, which `b1_core_frames` now carries. `b1_phrasal_verbs` is NOT renamed. One consequence: with both hits gone, C19 has no hits anywhere, so its frozen fixture stopped firing and `test_checks` called it SILENT. The fixture was wrong, not the check — same as the H5 one. Recorded as `skip` in the manifest with the reason; C19 is unproven until a real instance appears. Say if you would rather have the check reverted than left unproven.
 
 ### b1_used_to / a2_will_going_to · the *Modal verbs N* series had holes at 2 and 6
 **Q:** Both packs sit in **Time and Tenses** and both were titled *Modal verbs N*. James, smoking `b1_used_to`: *"is this time and tenses or modal verbs? I thought it was time and tenses. if so, titles in this section are wrong."*

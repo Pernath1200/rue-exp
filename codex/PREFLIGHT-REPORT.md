@@ -1,18 +1,18 @@
 # Preflight — 2026-09-05, home lane
 
-**Swept** 28 unplayed units (14 B1) · **fixed** 12 findings in 7 packs · **left** 6,
-all of them standing lint candidates you have already ruled on.
+**Swept** 28 unplayed units (14 B1) · **fixed** 12 findings in 7 packs ·
+**retracted** 3 checks as false · **left** 6, all standing lint candidates you have
+already ruled on.
 
-**Every unplayed B1 unit is now clean of `check_rules` findings.** What is left on
-those rows is lint CANDIDATEs, and four of the six are the `the`-demand class your
-standing decision already answers.
+**Every unplayed B1 unit is clean of `check_rules` findings.** So is every played
+B1 unit. `check_rules` live went **19 → 8**, and all eight are on paused B2 packs
+or protected A1 ones.
 
-> **Read this first.** Your `de1e118` landed while this run was working, and it
-> pulled B25 and C14 — the two classes this lane had just spent most of its time on.
-> That work was **backed out**, not pushed. Details below under *Backed out*.
-> Separately, the handoff's top-priority job — *"96 words across three leaves with no
-> Quiz item and no Type item"* — does not survive being read against the engine. It
-> is wrong, nothing was authored, and the correction is in DECISIONS.
+> **Two things to read before anything else.**
+> 1. Your `de1e118` landed mid-run and pulled B25 and C14 — the two classes this
+>    lane had just worked. That work was **backed out, not pushed**.
+> 2. Three more findings turned out to be the check measuring the wrong thing, and
+>    one of them had already reached you as a dropdown. See *Retracted*.
 
 ## Fixed
 
@@ -22,71 +22,79 @@ standing decision already answers.
 | b1_relative_clauses_2 | C32 ×2 | same |
 | b1_reported_speech_2 | C32 ×3 | same |
 | b1_second_conditional | C32 ×3 | same |
-| b1_future | C13 ×1 | card 4's second example bolds the present simple, matching the example above it |
-| b1_be_used_to | E3 ×1 | false positive — `I'm getting` is a continuous, and the contraction hid the `am`, so E3 flagged the item's own uncontracted twin. Fixed in the check, not the pack |
-| b1_be_used_to | B25 ×1 | item 9's chips were distortions of itself (*cold weathering*, *be cold weather*). Re-gapped onto the form: `I'm not ____ cold weather. (use)` → *used to*. The one hit that meets your own test — flagged in DECISIONS because you had just pulled B25 |
-| b1_core_frames | — | Use was a second run of Type. `ladder.sentence: false`, your `a1_core_frames_social` ruling of 2026-08-20 |
-| test_checks.py | — | pulling B25 and C14 left their fixtures in the manifest, so the suite reported `SILENT — the check is broken` for both. Marked `pulled` with the reason; they print as pulled and count separately. The fixtures stay on disk |
+| b1_future | C13 ×1 | card 4's second example bolds the present simple, matching the one above it |
+| b1_be_used_to | B25 ×1 | item 9's chips were distortions of itself (*cold weathering*, *be cold weather*). Re-gapped onto the form: `I'm not ____ cold weather. (use)` → *used to*. The one hit that meets your own test — still flagged in DECISIONS, since you had just pulled the check |
+| b1_core_frames | — | Use was a second run of Type. `ladder.sentence: false` — your `a1_core_frames_social` ruling of 2026-08-20. **Dropdown: keep** |
+
+## Retracted — the check was wrong, not the pack
+
+| Rule | Was reported | What is actually there |
+|---|---|---|
+| **B3** | 59 gap items with no chips across `b1_phrasal_verbs`, `b1_prefixes`, `b1_suffixes` | Every one sits in a type-only or use-only block whose `check.sequence` is `[]`, so `pack-adapt.js` never hands it to `choicesFor`. Every block that *does* reach Quiz is fully authored. **This one had already reached you as a dropdown and you green-lit 23 chip sets. Nothing was authored.** B3 now counts only what reaches Quiz |
+| **E3** | `b1_be_used_to` item 12 accepts a continuous twin | `I'm getting` **is** a continuous — the contraction hid the `am`, so the check flagged the item's own uncontracted twin. E3 now expands `'m / 're / 's`. The five real E3 findings stand |
+| **C19** | Czech loose in an English table on `b1_modals_speculation` | A headerless two-column card whose left cell is the sentence *"Czech often uses možná / určitě / nemůže být"*. Its only other hit, `a1_word_classes`' *"**adjective** (*přídavné jméno*)"*, is a gloss C22 positively requires. **Dropdown: fix the script** — a column with no header is now skipped |
+| **C56** | `b1_core_frames` intro opens on a diagram, not pictures | Deliberate since 2026-08-10: the set is *decide / suggest / agree / refuse* and there is no picture of *agree*. **Dropdown: fix the script** — a pack may now say `C56 exempt: <reason>` in its note, and this one does |
+
+`C46` on `b1_phrasal_verbs` — *Phrasal verbs* should be *Phrasal verbs 1* — left
+alone. **Dropdown: the rename is yours.**
+
+### One consequence worth knowing
+
+Narrowing C19 leaves it with **no hits anywhere in the corpus**, so its frozen
+fixture — one of the two false hits — stopped firing and `test_checks` reported
+`SILENT — the check is broken`. That is the H5 story again: the fixture was wrong,
+not the check. There is no true C19 instance left to freeze, so the check is
+unproven until one appears. Recorded in the manifest rather than faked, and in
+DECISIONS in case you would rather revert C19 than leave it unproven.
+
+`test_checks`' `pulled` field is now `skip`, since a fixture can stop proving its
+check for more than one honest reason. Three carry it: B25 and C14 pulled, C19
+narrowed. Anything without `skip` must still fire.
 
 ## Backed out — your audit landed mid-run
 
 | Was done | Why it went |
 |---|---|
-| `b1_prepositions_time_2` — 9 `(every)` cues rewritten as conversion cues, card 0 renamed | you: *`(every)` against every / on every / in every tests the preposition, not the word* |
-| C14 renames on 7 packs — `b1_relative_clauses_2`, `b1_reported_speech_2`, `b1_comparison_2`, `b1_reflexives_2`, `b1_finale`, `b1_grammar_match`, `b1_grammar_type` | you: *"Two kinds of relative clause" is a good descriptive opener, which is what C1 asks for* |
-| A carve-out added to B25 so it stopped flagging verb-lemma cues | moot once the check was pulled. On record in `724de80` if B25 ever returns: it separated 46 of the 67 hits mechanically, by asking whether any chip is an inflection of the cue |
-
-Nothing you ruled against is on `b1/home`.
+| `b1_prepositions_time_2` — 9 `(every)` cues rewritten, card 0 renamed | you: *`(every)` against every / on every / in every tests the preposition, not the word* |
+| C14 renames on 7 packs | you: *"Two kinds of relative clause" is a good descriptive opener, which is what C1 asks for* |
+| A carve-out that stopped B25 flagging verb-lemma cues | moot once B25 was pulled. On record in `724de80`: it separated 46 of the 67 hits by asking whether any chip is an inflection of the cue |
 
 ## Left, and why
 
 | Unit | Rule | Why |
 |---|---|---|
-| b1_future · b1_past_perfect · b1_agreement_tricky · b1_be_used_to | lint A4 ×4 | your standing decision names these exact cases — *the film*, *the station*, *the police*, *drive on the left*. Leave where English forces the article |
-| b1_future · b1_past_continuous_2 | lint F3 ×2 | `useleadhi` — lint's own comment says F3 is scoped to early A1 and *does not apply* above it, which is why it is a CANDIDATE. `leads: i'll / we'll / rang` |
-| b1_phrasal_verbs · b1_prefixes · b1_suffixes | B3 ×3 | 59 items with no authored chips. The fallback was sampled against the real items and it is **not** covering — see DECISIONS. Not started: yours to green-light |
-| b1_modals_speculation | C19 | a headerless column holding the prose line *"Czech often uses možná / určitě / nemůže"*. Check, not pack |
-| b1_core_frames | C56 | its note declares the schematic intro deliberate — an abstract set has nothing to draw |
+| b1_future · b1_past_perfect · b1_agreement_tricky · b1_be_used_to | lint A4 ×4 | your standing decision names these exact cases — *the film*, *the station*, *the police*, *drive on the left* |
+| b1_future · b1_past_continuous_2 | lint F3 ×2 | `useleadhi` — lint's own comment says F3 is scoped to early A1 and does not apply above it, which is why it is a CANDIDATE |
 | b1_abstract | C49 | 7 of 36 words never shown in the intro. Played unit, outside this brief |
-| b1_phrasal_verbs | C46 | *Phrasal verbs* has a sequel. True, but it renames a unit in front of students |
+| b2_present_perfect_continuous · b2_second_conditional · b2_third_conditional | B3 ×3 | 192 gap items with no chips, and these ones **do** reach Quiz. B2 is paused; a real job when it restarts |
 
 ## The handoff's priority section is wrong
 
 It says `b1_collocations`, `b1_word_families` and `b1_core_frames` leave **96 words
 with no Quiz item and no Type item at all**, and to author their sentence banks
-before anything else. Read against `js/practice-vocab.js`:
+first. Read against `js/practice-vocab.js`, `quizList()` falls through to
+`wordItems` and `typeSourceList()` to `matchList()` — both `block.items`. All 96
+already have both. Two of the three are `practice: frames` packs whose items *are*
+full sentences; `b1_word_families` was rebuilt to bare words on 2026-09-04 because
+the old shape was unplayable. **Dropdown: the correction stands, nothing authored.**
+One real fault came out of checking it — `b1_core_frames` Use replaying Type — and
+that is fixed.
 
-- `quizList()` falls through to `wordItems` when there is no `sentences[]` and no
-  `quiz_axis: sentence`; `typeSourceList()` falls through to `matchList()`. Both are
-  `block.items`. **All 96 items already have a Quiz item and a Type item.**
-- `b1_collocations` and `b1_core_frames` are `practice: frames` packs whose items
-  **are** full sentences — *"I need to make a decision."* That is what the engine
-  means by *"Trunk frames use block.items"*.
-- `b1_word_families` was rebuilt on 2026-09-04 by the B1 loop; its own note records
-  that the old pair-string items made it unplayable, and the bare-word items are B7
-  by design, with a `rewrite` Use bank over them.
+## The pattern, since it is now three for three
 
-Authoring 96 sentences would have been exactly the busywork you objected to, on
-packs that work. One real fault came out of checking it — `b1_core_frames` Use
-replaying Type — and that is fixed.
-
-## Queued for you — `codex/DECISIONS.md`
-
-1. The 96-words correction above — does it stand, and do you want `b1_word_families`
-   drilling in sentences anyway?
-2. `b1_core_frames` — stage cut (done), or author it a 12-sentence Use bank?
-3. **B3 · 59 chip sets.** Sampled, with output. `b1_phrasal_verbs` offers
-   *on · start · will start · starts* for a particle gap — three chips that cannot fit
-   the frame. `b1_prefixes` and `b1_suffixes` repeat the same three sibling words on
-   twenty-odd items each. Elimination with no knowledge, the `a2_quantifiers` fault.
-4. `b1_be_used_to` item 9 — the one B25 kept after you pulled the check.
-5. The three findings on played units that look like the check being wrong.
+Every check written speculatively from rule text has cost more than it found: B2
+(496 false), B25 (28 of 29), C14 (15 of 17), C19 (2 of 2), C56 (1 of 1), B3 (59 of
+59), E3 (1 of 6). The ones that hold — F9, C6, C58, C32, C13 — were each written
+against a fault you had actually pointed at. Two of the six also shared one cause:
+the check read the JSON without knowing what the **engine** does with it, so B3
+missed block gating and E3 missed contractions. A check on pack data that has not
+been read against `js/` is a guess.
 
 ## Gates
 
-verify_pack 4 errors / 57 warnings · audit 790 · gloss 99 · rules 13 ·
-pretaught 104 · test_checks 9 proved / 0 silent / 2 pulled
+verify_pack 4 errors / 57 warnings · audit 790 · gloss 99 · rules 8 ·
+pretaught 104 · test_checks 8 proved / 0 silent / 3 skipped
 
-Every one unmoved from the start of the run except `rules`, which went 19 → 13.
-The two that were red before this lane touched anything — audit 790 vs 246, pretaught
-104 vs 92 — are still red at exactly the same numbers.
+All unmoved from the start of the run except `rules`, 19 → 8. The two that were red
+before this lane touched anything — audit 790 vs 246, pretaught 104 vs 92 — are red
+at exactly the same numbers.
