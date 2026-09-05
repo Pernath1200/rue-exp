@@ -260,6 +260,24 @@ a `git pull` on the home machine picks it up next iteration without a restart.
 **Options:** a) leave the stub exactly as it is and park the node when you next do a registry sitting / b) the lane parks it / c) the lane writes a pointer into the stub's note.
 **Default if unanswered:** a. Parking a node is a `nodes-*.json` edit and a hard never here. (c) is tempting but it would edit a file whose own note says do not touch it from auto. Nothing was changed; the content it was meant to hold is now in `b2_wish_if_only`'s past-regret block, so the stub is redundant rather than missing.
 
+### THE POOL CANNOT SEE ANY UNIT THIS LANE DRAFTS — the one failure no gate catches
+**Q:** `codex/make_pool.py` builds the pool from path nodes, but skips any node that is not live:
+
+```python
+if not node or node.get("status") != "live" or not node.get("content"):
+    continue
+```
+
+Every unit this lane drafts stays at `status: "coming"`, because flipping a node is a `nodes-*.json` edit and a hard never here. **So a unit drafted an hour ago is invisible to the pool for every unit drafted after it.** DRAFTING.md calls re-teaching a predecessor "the failure this step exists to prevent, and no gate catches it" — and the step is currently blind to a growing share of the course. As of now that is **345 targets across 13 units**: the ten this lane has drafted today, plus `b2_future_forms`, `b2_future_in_the_past` and `b2_narrative_tenses`, which were drafted before today and are also still `coming`. So this predates the home lane; it just gets worse the faster the lane runs.
+
+It has already nearly bitten. Sweeping `leaf_crime_b2` against the real pool returned **custody** and **surveillance** as clean; both are already taught, by `leaf_relationships_b2` and `leaf_news_b2`, drafted earlier today. The naive sweep would have waved through two re-taught words in one unit.
+
+**Checked, and the damage so far is nil:** the six vocab leaves this lane has drafted share **216 distinct words out of 216** — zero overlap. That was reasoning and theme separation, not the gate.
+
+**Options:** a) flip drafted nodes to `live` as they pass, in a coordination sitting — the pool then works as designed / b) make `make_pool.py` count `coming` nodes whose pack file exists and has items / c) leave it and accept that each unit must be swept by hand against the ones before it.
+
+**Default if unanswered:** the lane cannot apply any of these — (a) is a registry edit and (b) is a `codex/` script change, both outside what it may touch. What it IS doing meanwhile: sweeping every remaining unit against a **corrected** pool that unions POOL.json with the targets of every drafted-but-not-live pack before the cutoff, so nothing else gets re-taught while this is open. That correction lives in the lane's scratchpad, not in the repo. **(b) looks like the right fix** — a unit with a pack file and items has been taught whether or not its node has been flipped, and the one-line guard could read `status in ("live", "coming")` with a non-empty-blocks test. (a) works too but has to be repeated by hand every batch.
+
 ---
 
 ## Answered
