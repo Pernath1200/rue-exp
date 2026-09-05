@@ -1,0 +1,1370 @@
+{
+ "id": "b1_articles_advanced",
+ "title": "Articles 3",
+ "level": "B1",
+ "tree_node": "b1_articles_advanced",
+ "codex_unit": "G_NP-B1B2-01",
+ "practice": "frames",
+ "note": "Articles harder cases. · Bank 48 · REDESIGNED 2026-08-18 (James, from a lesson): (1) every case family the bank drills is now taught by an intro card — geography names, meals, nationalities/languages, instruments, superlatives and news had items but no card, so students were quizzed on rules never explained; (2) the 17 zero-article items no longer print their own answer in the cue — the gap covers article+noun, the bare form IS the zero-article choice, quiz_options authored; (3) the 31 article items carry authored quiz_options (correct · wrong articles · — (no article)) so the quiz stops mixing articles with nouns. Earlier: zero-article hints + Lake/Mount regap + isolation cross-accepts 2026-07-27. · 2026-08-19 (James, Patrik smoke): 4 a/the folds removed (they cancelled the paired contrast under strict_articles); all authored option sets brought to four; cards 7-9 given Czech; + 5 items for the centre / Karlín / end of April — his three logged article errors, none of which the bank drilled · renamed 'Articles (advanced)' -> 'Articles 2' on 2026-08-24 (James), same reason as b1_verb_patterns_advanced: the unit is B1, so 'advanced' was a false difficulty claim where a sequence number is the honest label — this is the second pass after a1_articles. Internal id unchanged. NB later article units (b2_articles_genericity, b2_articles_correction, c1_article_nuance) are NOT numbered; if that numbering is ever extended, do it deliberately rather than piecemeal. · INTRO REPLACED WHOLESALE 2026-08-24: 12 cards -> 13, from Desktop/Spec_Articles-2_App-Slides_2026-08-24.md (Claude.ai TA project). Three James decisions on top of the spec: (1) the spec dropped ALL Czech from the cards — his minimal-Czech policy is for B2 and this is B1, and he does not want many words before the activity either, so body_cz is on cards 1 and 4 ONLY, plus the three Czech contrast points; (2) the 8 calendar items go in as written, he will flag them in the smoke test; (3) mountain ranges get one extra geography item rather than the case being cut from card 9. The spec's rule-5 coverage check found 6 promised-but-undrilled cases, 5 of them on the new calendar card and closed by its own items; the Alps item closes the sixth. Do NOT re-add the item explanations job here — 11 items still carry 'the = we both know which one' where a different rule applies (superlative, unique, instrument, nationality, geography, job). · Use rebuilt 2026-08-24 (James, smoke): use_mode correct + a `wrong` sentence authored on all 62 items — Use was showing bare Czech translation at B1, now it is fix-the-sentence; wrongs are the natural Czech error (article dropped where one belongs, `the` inserted where zero is the point, teacher cues kept — without \"(as a patient)\" the hospital wrong is correct AmE). Same smoke round: 'the English language' was a correct-English distractor on the speaks-English item — swapped for 'an English' and accepted in typing. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · 2026-08-28 (James, smoke): Use wrongs restored after the 2026-08-25 transplant dropped them — same A2/B1 sentences, one article error each; student types the whole corrected sentence. · C57 recap card (You already know — Členy 1 a 2) added as card 1. · 2026-09-04 B1 loop: the 2026-08-18 authored quiz_options were lost in the RUE2 transplant — all 48 items had none again, so Check was mixing articles with nouns, the exact fault that redesign fixed. Rebuilt on the same axis: correct · wrong article · bare noun for the definite items, and — / the / a-an for the seventeen zero-article ones. D1 two explanations covered all 48, and eleven of them said 'the = we both know which one' where a different rule applied — the job the note explicitly parked. Each item now names its own rule: unique, instrument, institution-as-purpose, meal, general plural, job, superlative, geography, language. A8 six twins closed.",
+ "default_direction": "cz_to_en",
+ "check": {
+  "sequence": [
+   "quiz"
+  ]
+ },
+ "quality": "good_draft",
+ "blocks": [
+  {
+   "id": "b1_articles_advanced_main",
+   "title": "Articles (advanced) · B1",
+   "items": [
+    {
+     "en": "The sun rises in the east.",
+     "cz": "Slunce vychází na východě.",
+     "gap": "____ rises in the east. (sun)",
+     "gap_answer": "the sun",
+     "accepts": [
+      "The sun rises in the east."
+     ],
+     "explanation": "There is only one **sun**, so **the**. The sun rises in the east.",
+     "explanation_cz": "Slunce je jen jedno, proto **the**. The sun rises in the east.",
+     "gap_accepts": [
+      "the sun",
+      "The sun"
+     ],
+     "wrong": "Sun rises in the east.",
+     "quiz_options": [
+      "the sun",
+      "a sun",
+      "sun"
+     ]
+    },
+    {
+     "en": "I play the piano.",
+     "cz": "Hraju na piano.",
+     "gap": "I play ____. (piano)",
+     "gap_answer": "the piano",
+     "accepts": [
+      "I play the piano."
+     ],
+     "explanation": "After *play*, an instrument takes **the**: **the piano**. I play the piano.",
+     "explanation_cz": "Po *play* má nástroj **the**: **the piano**. I play the piano.",
+     "gap_accepts": [
+      "the piano",
+      "The piano"
+     ],
+     "wrong": "I play piano.",
+     "quiz_options": [
+      "the piano",
+      "a piano",
+      "piano"
+     ]
+    },
+    {
+     "en": "She is in hospital.",
+     "cz": "Je v nemocnici. (jako pacientka)",
+     "gap": "She is in ____ hospital. (as a patient)",
+     "gap_answer": "—",
+     "accepts": [
+      "She is in hospital.",
+      "She is in the hospital.",
+      "She's in hospital.",
+      "She's in the hospital."
+     ],
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article",
+      "the"
+     ],
+     "explanation": "**in hospital** with no article is the purpose — being a patient. The building is *the hospital*. She is in hospital.",
+     "explanation_cz": "**in hospital** bez členu je účel — být pacient. Budova je *the hospital*. She is in hospital.",
+     "zero_article": true,
+     "wrong": "She is in the hospital. (as a patient)",
+     "quiz_options": [
+      "—",
+      "a",
+      "an"
+     ]
+    },
+    {
+     "en": "The hospital is near the station.",
+     "cz": "Nemocnice je blízko nádraží. (budova)",
+     "gap": "____ is near the station. (hospital)",
+     "gap_answer": "the hospital",
+     "accepts": [
+      "The hospital is near the station.",
+      "A hospital is near the station."
+     ],
+     "gap_accepts": [
+      "the hospital",
+      "The hospital"
+     ],
+     "explanation": "This is the building you both know, so **the hospital**. The hospital is near the station.",
+     "explanation_cz": "Tohle je budova, kterou oba znáte, proto **the hospital**. The hospital is near the station.",
+     "wrong": "Hospital is near the station.",
+     "quiz_options": [
+      "the hospital",
+      "a hospital",
+      "hospital"
+     ]
+    },
+    {
+     "en": "He goes to school by bus.",
+     "cz": "Jezdí do školy autobusem.",
+     "gap": "He goes to ____ school by bus. (as a student)",
+     "gap_answer": "—",
+     "accepts": [
+      "He goes to school by bus."
+     ],
+     "explanation": "**to school** with no article is the purpose — being a student. He goes to school by bus.",
+     "explanation_cz": "**to school** bez členu je účel — být student. He goes to school by bus.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "He goes to the school by bus. (as a student)",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The school needs a new roof.",
+     "cz": "Škola potřebuje novou střechu.",
+     "gap": "____ needs a new roof. (school)",
+     "gap_answer": "the school",
+     "accepts": [
+      "The school needs a new roof.",
+      "A school needs a new roof."
+     ],
+     "gap_accepts": [
+      "the school",
+      "The school"
+     ],
+     "explanation": "The building you both know takes **the school**. The school needs a new roof.",
+     "explanation_cz": "Budova, kterou oba znáte, má **the school**. The school needs a new roof.",
+     "wrong": "School needs a new roof.",
+     "quiz_options": [
+      "the school",
+      "a school",
+      "school"
+     ]
+    },
+    {
+     "en": "I love music.",
+     "cz": "Miluju hudbu. (obecně)",
+     "gap": "I love ____ music.",
+     "gap_answer": "—",
+     "accepts": [
+      "I love music."
+     ],
+     "explanation": "**music** in general takes no article. *The music* would be one particular piece. I love music.",
+     "explanation_cz": "**music** obecně nemá člen. *The music* by byla jedna konkrétní hudba. I love music.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "I love the music. (in general)",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The music at the party was loud.",
+     "cz": "Hudba na party byla hlasitá.",
+     "gap": "____ at the party was loud. (music)",
+     "gap_answer": "the music",
+     "accepts": [
+      "The music at the party was loud."
+     ],
+     "explanation": "The music at the party is one particular music, so **the**. The music at the party was loud.",
+     "explanation_cz": "Hudba na té oslavě je jedna konkrétní, proto **the**. The music at the party was loud.",
+     "gap_accepts": [
+      "the music",
+      "The music"
+     ],
+     "wrong": "Music at the party was loud.",
+     "quiz_options": [
+      "the music",
+      "a music",
+      "music"
+     ]
+    },
+    {
+     "en": "She is a teacher.",
+     "cz": "Je učitelka.",
+     "gap": "What does she do? She is ____. (teacher)",
+     "gap_answer": "a teacher",
+     "accepts": [
+      "She is a teacher.",
+      "She's a teacher."
+     ],
+     "gap_accepts": [
+      "a teacher",
+      "A teacher"
+     ],
+     "explanation": "A job after *be* takes **a / an**: **a teacher**. She is a teacher.",
+     "explanation_cz": "Povolání po *be* má **a / an**: **a teacher**. She is a teacher.",
+     "wrong": "She is teacher.",
+     "quiz_options": [
+      "a teacher",
+      "the teacher",
+      "teacher"
+     ]
+    },
+    {
+     "en": "He is the best player in the team.",
+     "cz": "Je nejlepší hráč v týmu.",
+     "gap": "He is ____ in the team. (best player)",
+     "gap_answer": "the best player",
+     "accepts": [
+      "He is the best player in the team.",
+      "He's the best player in the team."
+     ],
+     "explanation": "A superlative names one only, so **the best player**. He is the best player in the team.",
+     "explanation_cz": "Superlativ pojmenuje jen jednoho, proto **the best player**. He is the best player in the team.",
+     "gap_accepts": [
+      "the best player",
+      "The best player"
+     ],
+     "wrong": "He is best player in the team.",
+     "quiz_options": [
+      "the best player",
+      "a best player",
+      "best player"
+     ]
+    },
+    {
+     "en": "We saw the Eiffel Tower.",
+     "cz": "Viděli jsme Eiffelovu věž.",
+     "gap": "We saw ____. (Eiffel Tower)",
+     "gap_answer": "the Eiffel Tower",
+     "accepts": [
+      "We saw the Eiffel Tower."
+     ],
+     "explanation": "Names with *Tower*, *Bridge*, *Museum* take **the**. We saw the Eiffel Tower.",
+     "explanation_cz": "Jména s *Tower*, *Bridge*, *Museum* mají **the**. We saw the Eiffel Tower.",
+     "gap_accepts": [
+      "the Eiffel Tower",
+      "The Eiffel Tower"
+     ],
+     "wrong": "We saw Eiffel Tower.",
+     "quiz_options": [
+      "the Eiffel Tower",
+      "an Eiffel Tower",
+      "Eiffel Tower"
+     ]
+    },
+    {
+     "en": "I live in the Czech Republic.",
+     "cz": "Bydlím v České republice.",
+     "gap": "I live in ____. (Czech Republic)",
+     "gap_answer": "the Czech Republic",
+     "accepts": [
+      "I live in the Czech Republic."
+     ],
+     "explanation": "Countries with *Republic*, *Kingdom*, *States* take **the**. I live in the Czech Republic.",
+     "explanation_cz": "Země s *Republic*, *Kingdom*, *States* mají **the**. I live in the Czech Republic.",
+     "gap_accepts": [
+      "the Czech Republic",
+      "The Czech Republic"
+     ],
+     "wrong": "I live in Czech Republic.",
+     "quiz_options": [
+      "the Czech Republic",
+      "a Czech Republic",
+      "Czech Republic"
+     ]
+    },
+    {
+     "en": "They live in France.",
+     "cz": "Bydlí ve Francii.",
+     "gap": "They live in ____ France.",
+     "gap_answer": "—",
+     "accepts": [
+      "They live in France."
+     ],
+     "explanation": "Most country names take no article: **France**. They live in France.",
+     "explanation_cz": "Většina názvů zemí nemá člen: **France**. They live in France.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "They live in the France.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The Danube is a long river.",
+     "cz": "Dunaj je dlouhá řeka.",
+     "gap": "____ is a long river. (Danube)",
+     "gap_answer": "the Danube",
+     "accepts": [
+      "The Danube is a long river."
+     ],
+     "explanation": "Rivers take **the**: **the Danube**. The Danube is a long river.",
+     "explanation_cz": "Řeky mají **the**: **the Danube**. The Danube is a long river.",
+     "gap_accepts": [
+      "the Danube",
+      "The Danube"
+     ],
+     "wrong": "Danube is a long river.",
+     "quiz_options": [
+      "the Danube",
+      "a Danube",
+      "Danube"
+     ]
+    },
+    {
+     "en": "Lake Michigan is big.",
+     "cz": "Jezero Michigan je velké.",
+     "gap": "____ Lake Michigan is big.",
+     "gap_answer": "—",
+     "accepts": [
+      "Lake Michigan is big."
+     ],
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "explanation": "**Lake** and **Mount** names take no article. Lake Michigan is big.",
+     "explanation_cz": "Jména s **Lake** a **Mount** nemají člen. Lake Michigan is big.",
+     "zero_article": true,
+     "wrong": "The Lake Michigan is big.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "I had breakfast at eight.",
+     "cz": "Snídal jsem v osm.",
+     "gap": "I had ____ breakfast at eight.",
+     "gap_answer": "—",
+     "accepts": [
+      "I had breakfast at eight.",
+      "I'd breakfast at eight."
+     ],
+     "explanation": "Meals take no article: **have breakfast**. I had breakfast at eight.",
+     "explanation_cz": "Jídla nemají člen: **have breakfast**. I had breakfast at eight.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "I had the breakfast at eight.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The breakfast at the hotel was good.",
+     "cz": "Snídaně v hotelu byla dobrá.",
+     "gap": "____ at the hotel was good. (breakfast)",
+     "gap_answer": "the breakfast",
+     "accepts": [
+      "The breakfast at the hotel was good."
+     ],
+     "explanation": "This breakfast is specified — at the hotel — so **the breakfast**. The breakfast at the hotel was good.",
+     "explanation_cz": "Tahle snídaně je určená — v hotelu — proto **the breakfast**. The breakfast at the hotel was good.",
+     "gap_accepts": [
+      "the breakfast",
+      "The breakfast"
+     ],
+     "wrong": "Breakfast at the hotel was good.",
+     "quiz_options": [
+      "the breakfast",
+      "a breakfast",
+      "breakfast"
+     ]
+    },
+    {
+     "en": "She speaks English well.",
+     "cz": "Mluví dobře anglicky.",
+     "gap": "She speaks ____ English well. (the language)",
+     "gap_answer": "—",
+     "accepts": [
+      "She speaks English well."
+     ],
+     "explanation": "A language takes no article: **speaks English**. She speaks English well.",
+     "explanation_cz": "Jazyk nemá člen: **speaks English**. She speaks English well.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "She speaks the English well. (the language)",
+     "quiz_options": [
+      "—",
+      "the",
+      "an"
+     ]
+    },
+    {
+     "en": "The English love tea.",
+     "cz": "Angličané milují čaj. (národ)",
+     "gap": "____ love tea. (English · people)",
+     "gap_answer": "the English",
+     "accepts": [
+      "The English love tea."
+     ],
+     "explanation": "**the English** with a plural verb means the people, not the language. The English love tea.",
+     "explanation_cz": "**the English** s množným slovesem znamená ty lidi, ne jazyk. The English love tea.",
+     "gap_accepts": [
+      "the English",
+      "The English"
+     ],
+     "wrong": "English love tea.",
+     "quiz_options": [
+      "the English",
+      "an English",
+      "English"
+     ]
+    },
+    {
+     "en": "I need a new laptop.",
+     "cz": "Potřebuju nový notebook.",
+     "gap": "I need ____. (new laptop)",
+     "gap_answer": "a new laptop",
+     "accepts": [
+      "I need a new laptop."
+     ],
+     "explanation": "First mention of one of many: **a new laptop**. I need a new laptop.",
+     "explanation_cz": "První zmínka jednoho z mnoha: **a new laptop**. I need a new laptop.",
+     "gap_accepts": [
+      "a new laptop",
+      "A new laptop"
+     ],
+     "wrong": "I need new laptop.",
+     "quiz_options": [
+      "a new laptop",
+      "the new laptop",
+      "new laptop"
+     ]
+    },
+    {
+     "en": "The laptop on the desk is mine.",
+     "cz": "Notebook na stole je můj.",
+     "gap": "____ on the desk is mine. (laptop)",
+     "gap_answer": "the laptop",
+     "accepts": [
+      "The laptop on the desk is mine."
+     ],
+     "explanation": "*on the desk* says which one, so **the laptop**. The laptop on the desk is mine.",
+     "explanation_cz": "*on the desk* říká který, proto **the laptop**. The laptop on the desk is mine.",
+     "gap_accepts": [
+      "the laptop",
+      "The laptop"
+     ],
+     "wrong": "Laptop on the desk is mine.",
+     "quiz_options": [
+      "the laptop",
+      "a laptop",
+      "laptop"
+     ]
+    },
+    {
+     "en": "Life is short.",
+     "cz": "Život je krátký. (obecně)",
+     "gap": "____ life is short.",
+     "gap_answer": "—",
+     "accepts": [
+      "Life is short."
+     ],
+     "explanation": "An idea in general takes no article: **life**. Life is short.",
+     "explanation_cz": "Obecný pojem nemá člen: **life**. Life is short.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "The life is short. (in general)",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The life of a pilot is hard.",
+     "cz": "Život pilota je těžký.",
+     "gap": "____ of a pilot is hard. (life)",
+     "gap_answer": "the life",
+     "accepts": [
+      "The life of a pilot is hard."
+     ],
+     "explanation": "*of a pilot* says whose life, so **the life**. The life of a pilot is hard.",
+     "explanation_cz": "*of a pilot* říká čí život, proto **the life**. The life of a pilot is hard.",
+     "gap_accepts": [
+      "the life",
+      "The life"
+     ],
+     "wrong": "Life of a pilot is hard.",
+     "quiz_options": [
+      "the life",
+      "a life",
+      "life"
+     ]
+    },
+    {
+     "en": "He is at work now.",
+     "cz": "Teď je v práci.",
+     "gap": "He is at ____ work now.",
+     "gap_answer": "—",
+     "accepts": [
+      "He is at work now.",
+      "He's at work now."
+     ],
+     "explanation": "**at work** with no article is the purpose, not the building. He is at work now.",
+     "explanation_cz": "**at work** bez členu je účel, ne budova. He is at work now.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "He is at the work now.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "I left my bag at the office.",
+     "cz": "Nechal jsem tašku v kanceláři.",
+     "gap": "I left my bag at ____. (office)",
+     "gap_answer": "the office",
+     "accepts": [
+      "I left my bag at the office."
+     ],
+     "explanation": "The building you both know takes **the office**. I left my bag at the office.",
+     "explanation_cz": "Budova, kterou oba znáte, má **the office**. I left my bag at the office.",
+     "gap_accepts": [
+      "the office",
+      "The office"
+     ],
+     "wrong": "I left my bag at office.",
+     "quiz_options": [
+      "the office",
+      "an office",
+      "office"
+     ]
+    },
+    {
+     "en": "She went to university in Brno.",
+     "cz": "Šla na univerzitu v Brně.",
+     "gap": "She went to ____ university in Brno. (as a student)",
+     "gap_answer": "—",
+     "accepts": [
+      "She went to university in Brno."
+     ],
+     "explanation": "**to university** with no article is the purpose — being a student. She went to university in Brno.",
+     "explanation_cz": "**to university** bez členu je účel — být student. She went to university in Brno.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "She went to the university in Brno. (as a student)",
+     "quiz_options": [
+      "—",
+      "the",
+      "an"
+     ]
+    },
+    {
+     "en": "The university is near the park.",
+     "cz": "Univerzita je blízko parku.",
+     "gap": "____ is near the park. (university)",
+     "gap_answer": "the university",
+     "accepts": [
+      "The university is near the park.",
+      "A university is near the park."
+     ],
+     "gap_accepts": [
+      "the university",
+      "The university"
+     ],
+     "explanation": "The building you both know takes **the university**. The university is near the park.",
+     "explanation_cz": "Budova, kterou oba znáte, má **the university**. The university is near the park.",
+     "wrong": "University is near the park.",
+     "quiz_options": [
+      "the university",
+      "an university",
+      "university"
+     ]
+    },
+    {
+     "en": "I hate waiting in queues.",
+     "cz": "Nesnáším čekání ve frontách.",
+     "gap": "I hate waiting in ____ queues.",
+     "gap_answer": "—",
+     "accepts": [
+      "I hate waiting in queues."
+     ],
+     "explanation": "A plural in general takes no article: **queues**. I hate waiting in queues.",
+     "explanation_cz": "Množné číslo obecně nemá člen: **queues**. I hate waiting in queues.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "I hate waiting in the queues. (in general)",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The queue was very long.",
+     "cz": "Fronta byla velmi dlouhá.",
+     "gap": "____ was very long. (queue)",
+     "gap_answer": "the queue",
+     "accepts": [
+      "The queue was very long."
+     ],
+     "explanation": "This is one particular queue, so **the queue**. The queue was very long.",
+     "explanation_cz": "Tohle je jedna konkrétní fronta, proto **the queue**. The queue was very long.",
+     "gap_accepts": [
+      "the queue",
+      "The queue"
+     ],
+     "wrong": "Queue was very long.",
+     "quiz_options": [
+      "the queue",
+      "a queue",
+      "queue"
+     ]
+    },
+    {
+     "en": "The police arrived quickly.",
+     "cz": "Policie rychle přijela.",
+     "gap": "____ arrived quickly. (police)",
+     "gap_answer": "the police",
+     "accepts": [
+      "The police arrived quickly."
+     ],
+     "explanation": "**the police** always takes **the**, and a plural verb. The police arrived quickly.",
+     "explanation_cz": "**the police** má vždy **the** a sloveso v množném čísle. The police arrived quickly.",
+     "gap_accepts": [
+      "the police",
+      "The police"
+     ],
+     "wrong": "Police arrived quickly.",
+     "quiz_options": [
+      "the police",
+      "a police",
+      "police"
+     ]
+    },
+    {
+     "en": "News travels fast.",
+     "cz": "Zprávy se šíří rychle.",
+     "gap": "____ news travels fast.",
+     "gap_answer": "—",
+     "accepts": [
+      "News travels fast."
+     ],
+     "explanation": "**news** is uncountable and general here, so no article. News travels fast.",
+     "explanation_cz": "**news** je tu nepočitatelné a obecné, proto bez členu. News travels fast.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "The news travels fast. (in general)",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The news was surprising.",
+     "cz": "Ty zprávy byly překvapivé.",
+     "gap": "____ was surprising. (news)",
+     "gap_answer": "the news",
+     "accepts": [
+      "The news was surprising."
+     ],
+     "explanation": "This is one particular piece of news, so **the news**. The news was surprising.",
+     "explanation_cz": "Tohle je jedna konkrétní zpráva, proto **the news**. The news was surprising.",
+     "gap_accepts": [
+      "the news",
+      "The news"
+     ],
+     "wrong": "News was surprising.",
+     "quiz_options": [
+      "the news",
+      "a news",
+      "news"
+     ]
+    },
+    {
+     "en": "I saw a film last night.",
+     "cz": "Včera večer jsem viděl film.",
+     "gap": "I saw ____ last night. (film)",
+     "gap_answer": "a film",
+     "accepts": [
+      "I saw a film last night.",
+      "I saw the film last night."
+     ],
+     "gap_accepts": [
+      "a film",
+      "A film"
+     ],
+     "explanation": "First mention of one of many: **a film**. I saw a film last night.",
+     "explanation_cz": "První zmínka jednoho z mnoha: **a film**. I saw a film last night.",
+     "wrong": "I saw film last night.",
+     "quiz_options": [
+      "a film",
+      "the film",
+      "film"
+     ]
+    },
+    {
+     "en": "The film we saw was long.",
+     "cz": "Film, který jsme viděli, byl dlouhý.",
+     "gap": "____ we saw was long. (film)",
+     "gap_answer": "the film",
+     "accepts": [
+      "The film we saw was long."
+     ],
+     "explanation": "*we saw* says which film, so **the film**. The film we saw was long.",
+     "explanation_cz": "*we saw* říká který film, proto **the film**. The film we saw was long.",
+     "gap_accepts": [
+      "the film",
+      "The film"
+     ],
+     "wrong": "Film we saw was long.",
+     "quiz_options": [
+      "the film",
+      "a film",
+      "film"
+     ]
+    },
+    {
+     "en": "Dogs are friendly.",
+     "cz": "Psi jsou přátelští. (obecně)",
+     "gap": "____ dogs are friendly.",
+     "gap_answer": "—",
+     "accepts": [
+      "Dogs are friendly."
+     ],
+     "explanation": "A plural in general takes no article: **dogs**. Dogs are friendly.",
+     "explanation_cz": "Množné číslo obecně nemá člen: **dogs**. Dogs are friendly.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "The dogs are friendly. (in general)",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The dogs next door are noisy.",
+     "cz": "Psi od sousedů jsou hluční.",
+     "gap": "____ next door are noisy. (dogs)",
+     "gap_answer": "the dogs",
+     "accepts": [
+      "The dogs next door are noisy."
+     ],
+     "explanation": "*next door* says which dogs, so **the dogs**. The dogs next door are noisy.",
+     "explanation_cz": "*next door* říká kteří psi, proto **the dogs**. The dogs next door are noisy.",
+     "gap_accepts": [
+      "the dogs",
+      "The dogs"
+     ],
+     "wrong": "Dogs next door are noisy.",
+     "quiz_options": [
+      "the dogs",
+      "a dogs",
+      "dogs"
+     ]
+    },
+    {
+     "en": "She is an engineer.",
+     "cz": "Je inženýrka.",
+     "gap": "What does she do? She is ____. (engineer)",
+     "gap_answer": "an engineer",
+     "accepts": [
+      "She is an engineer.",
+      "She's an engineer."
+     ],
+     "gap_accepts": [
+      "an engineer",
+      "An engineer"
+     ],
+     "explanation": "A job after *be* takes **a / an** — and *engineer* starts with a vowel sound: **an engineer**. She is an engineer.",
+     "explanation_cz": "Povolání po *be* má **a / an** — a *engineer* začíná samohláskou: **an engineer**. She is an engineer.",
+     "wrong": "She is engineer.",
+     "quiz_options": [
+      "an engineer",
+      "the engineer",
+      "engineer"
+     ]
+    },
+    {
+     "en": "He became the manager last year.",
+     "cz": "Loni se stal manažerem tohoto týmu.",
+     "gap": "He became ____ of this team last year. (manager)",
+     "gap_answer": "the manager",
+     "accepts": [
+      "He became the manager of this team last year.",
+      "He became the manager last year."
+     ],
+     "gap_accepts": [
+      "the manager",
+      "The manager"
+     ],
+     "explanation": "One role in one team, so **the manager**. He became the manager last year.",
+     "explanation_cz": "Jedna role v jednom týmu, proto **the manager**. He became the manager last year.",
+     "wrong": "He became manager last year.",
+     "quiz_options": [
+      "the manager",
+      "a manager",
+      "manager"
+     ]
+    },
+    {
+     "en": "I go to bed at eleven.",
+     "cz": "Jdu spát v jedenáct.",
+     "gap": "I go to ____ bed at eleven.",
+     "gap_answer": "—",
+     "accepts": [
+      "I go to bed at eleven."
+     ],
+     "explanation": "**go to bed** with no article is the purpose, not the furniture. I go to bed at eleven.",
+     "explanation_cz": "**go to bed** bez členu je účel, ne nábytek. I go to bed at eleven.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "I go to the bed at eleven.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "There is a bed in the room.",
+     "cz": "V pokoji je postel.",
+     "gap": "There is ____ in the room. (bed)",
+     "gap_answer": "a bed",
+     "accepts": [
+      "There is a bed in the room."
+     ],
+     "explanation": "One of several, first mention: **a bed**. There is a bed in the room.",
+     "explanation_cz": "Jedna z několika, první zmínka: **a bed**. There is a bed in the room.",
+     "gap_accepts": [
+      "a bed",
+      "A bed"
+     ],
+     "wrong": "There is bed in the room.",
+     "quiz_options": [
+      "a bed",
+      "the bed",
+      "bed"
+     ]
+    },
+    {
+     "en": "I like the sea.",
+     "cz": "Mám rád moře.",
+     "gap": "I like ____. (sea)",
+     "gap_answer": "the sea",
+     "accepts": [
+      "I like the sea."
+     ],
+     "explanation": "There is only one **sea** we mean here, so **the sea**. I like the sea.",
+     "explanation_cz": "Tady je řeč jen o jednom moři, proto **the sea**. I like the sea.",
+     "gap_accepts": [
+      "the sea",
+      "The sea"
+     ],
+     "wrong": "I like sea.",
+     "quiz_options": [
+      "the sea",
+      "a sea",
+      "sea"
+     ]
+    },
+    {
+     "en": "The Atlantic Ocean is cold.",
+     "cz": "Atlantský oceán je studený.",
+     "gap": "____ is cold. (Atlantic Ocean)",
+     "gap_answer": "the Atlantic Ocean",
+     "accepts": [
+      "The Atlantic Ocean is cold."
+     ],
+     "explanation": "Oceans take **the**: **the Atlantic Ocean**. The Atlantic Ocean is cold.",
+     "explanation_cz": "Oceány mají **the**: **the Atlantic Ocean**. The Atlantic Ocean is cold.",
+     "gap_accepts": [
+      "the Atlantic Ocean",
+      "The Atlantic Ocean"
+     ],
+     "wrong": "Atlantic Ocean is cold.",
+     "quiz_options": [
+      "the Atlantic Ocean",
+      "an Atlantic Ocean",
+      "Atlantic Ocean"
+     ]
+    },
+    {
+     "en": "She works as a nurse.",
+     "cz": "Pracuje jako zdravotní sestra.",
+     "gap": "She works as ____. (nurse)",
+     "gap_answer": "a nurse",
+     "accepts": [
+      "She works as a nurse."
+     ],
+     "explanation": "A job after *as* takes **a / an**: **a nurse**. She works as a nurse.",
+     "explanation_cz": "Povolání po *as* má **a / an**: **a nurse**. She works as a nurse.",
+     "gap_accepts": [
+      "a nurse",
+      "A nurse"
+     ],
+     "wrong": "She works as nurse.",
+     "quiz_options": [
+      "a nurse",
+      "the nurse",
+      "nurse"
+     ]
+    },
+    {
+     "en": "We had dinner together.",
+     "cz": "Večeřeli jsme spolu.",
+     "gap": "We had ____ dinner together.",
+     "gap_answer": "—",
+     "accepts": [
+      "We had dinner together.",
+      "We'd dinner together."
+     ],
+     "explanation": "Meals take no article: **have dinner**. We had dinner together.",
+     "explanation_cz": "Jídla nemají člen: **have dinner**. We had dinner together.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "We had the dinner together.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    },
+    {
+     "en": "The dinner at their place was lovely.",
+     "cz": "Večeře u nich byla skvělá.",
+     "gap": "____ at their place was lovely. (dinner)",
+     "gap_answer": "the dinner",
+     "accepts": [
+      "The dinner at their place was lovely."
+     ],
+     "explanation": "*at their place* says which dinner, so **the dinner**. The dinner at their place was lovely.",
+     "explanation_cz": "*at their place* říká která večeře, proto **the dinner**. The dinner at their place was lovely.",
+     "gap_accepts": [
+      "the dinner",
+      "The dinner"
+     ],
+     "wrong": "Dinner at their place was lovely.",
+     "quiz_options": [
+      "the dinner",
+      "a dinner",
+      "dinner"
+     ]
+    },
+    {
+     "en": "Internet access is free here.",
+     "cz": "Přístup na internet je tady zdarma.",
+     "gap": "____ internet access is free here.",
+     "gap_answer": "—",
+     "accepts": [
+      "Internet access is free here."
+     ],
+     "explanation": "Uncountable and general here, so no article: **internet access**. Internet access is free here.",
+     "explanation_cz": "Tady nepočitatelné a obecné, proto bez členu: **internet access**. Internet access is free here.",
+     "zero_article": true,
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "wrong": "The Internet access is free here.",
+     "quiz_options": [
+      "—",
+      "the",
+      "an"
+     ]
+    },
+    {
+     "en": "The internet is down again.",
+     "cz": "Internet zase nefunguje.",
+     "gap": "____ is down again. (internet)",
+     "gap_answer": "the internet",
+     "accepts": [
+      "The internet is down again."
+     ],
+     "explanation": "There is only one **internet**, so **the**. The internet is down again.",
+     "explanation_cz": "Internet je jen jeden, proto **the**. The internet is down again.",
+     "gap_accepts": [
+      "the internet",
+      "The internet"
+     ],
+     "wrong": "Internet is down again.",
+     "quiz_options": [
+      "the internet",
+      "an internet",
+      "internet"
+     ]
+    },
+    {
+     "en": "Mount Everest is high.",
+     "cz": "Mount Everest je vysoký.",
+     "gap": "____ Mount Everest is high.",
+     "gap_answer": "—",
+     "accepts": [
+      "Mount Everest is high."
+     ],
+     "gap_accepts": [
+      "—",
+      "–",
+      "-",
+      "no article"
+     ],
+     "explanation": "**Mount** names take no article: **Mount Everest**. Mount Everest is high.",
+     "explanation_cz": "Jména s **Mount** nemají člen: **Mount Everest**. Mount Everest is high.",
+     "zero_article": true,
+     "wrong": "The Mount Everest is high.",
+     "quiz_options": [
+      "—",
+      "the",
+      "a"
+     ]
+    }
+   ]
+  }
+ ],
+ "intro": {
+  "cards": [
+   {
+    "title": "Three choices",
+    "title_cz": "Tři volby",
+    "points": [
+     "Czech has no a / an / the",
+     "English chooses one of these"
+    ],
+    "diagram": "hub_spokes",
+    "labels": [
+     "NOUN",
+     "a / an: any one, new",
+     "I saw a dog.",
+     "the: we both know which",
+     "The dog barked.",
+     "zero: in general",
+     "Dogs bark."
+    ],
+    "table": {
+     "headers": [
+      "Form",
+      "Example"
+     ],
+     "rows": [
+      [
+       "a / an",
+       "a teacher · an hour"
+      ],
+      [
+       "the",
+       "the sun · the hospital"
+      ],
+      [
+       "zero",
+       "in hospital · I love music"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "You already know",
+    "title_cz": "Už znáš — Členy 1 a 2",
+    "text_first": true,
+    "points": [
+     "**a** / **an** = one of many. **the** = the one you both mean.",
+     "No article at all for a whole group or an idea: I like **dogs**.",
+     "Czech has no article, so **the** gets added where English wants none."
+    ],
+    "table": {
+     "caption": "Articles 1 and 2",
+     "headers": [
+      "Meaning",
+      "Say"
+     ],
+     "rows": [
+      [
+       "one of many",
+       "**a** dog · **an** hour"
+      ],
+      [
+       "the one you both mean",
+       "**the** door · **the** sun"
+      ],
+      [
+       "a group, an idea",
+       "**dogs** · **music** · **life**"
+      ]
+     ]
+    },
+    "examples": [
+     {
+      "en": "**Life** is hard.",
+      "cz": "Život je těžký."
+     },
+     {
+      "en": "I bought **a** book. **The** book was cheap.",
+      "cz": "Koupil jsem knihu. Ta kniha byla levná."
+     }
+    ]
+   },
+   {
+    "title": "First mention, then known",
+    "title_cz": "Nejdřív nové, pak známé",
+    "diagram": "boxes_row",
+    "labels": [
+     "FIRST MENTION · a / an",
+     "KNOWN · the",
+     "IN GENERAL · zero",
+     "I saw a dog.",
+     "The dog barked.",
+     "Dogs bark.",
+     "She sent an email.",
+     "The email was short.",
+     "Emails are quick."
+    ]
+   },
+   {
+    "title": "Institutions",
+    "title_cz": "Instituce",
+    "points": [
+     "Activity (patient, student, sleeping) → no article",
+     "This building / this place → the"
+    ],
+    "table": {
+     "headers": [
+      "Activity · zero",
+      "This building · the"
+     ],
+     "rows": [
+      [
+       "She's in hospital. (patient)",
+       "I visited her in the hospital."
+      ],
+      [
+       "He's at school. (student)",
+       "The school needs a new roof."
+      ],
+      [
+       "She went to university.",
+       "The university is near the park."
+      ],
+      [
+       "I'm in bed. (sleeping)",
+       "The cat is on the bed."
+      ],
+      [
+       "He's at work.",
+       "I left my bag at the office."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "General vs specific",
+    "title_cz": "Obecné vs konkrétní",
+    "table": {
+     "headers": [
+      "Zero · in general",
+      "the · this one"
+     ],
+     "rows": [
+      [
+       "I love music.",
+       "The music was loud."
+      ],
+      [
+       "Dogs are friendly.",
+       "The dogs next door are noisy."
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Countries and places",
+    "title_cz": "Země a místa",
+    "table": {
+     "headers": [
+      "Type",
+      "Article?",
+      "Examples"
+     ],
+     "rows": [
+      [
+       "Cities",
+       "no",
+       "Prague, London, Paris"
+      ],
+      [
+       "Most countries",
+       "no",
+       "France, Germany, Japan"
+      ],
+      [
+       "Republics, unions",
+       "the",
+       "the Czech Republic, the UK, the USA"
+      ],
+      [
+       "Continents",
+       "no",
+       "Europe, Asia"
+      ],
+      [
+       "One mountain",
+       "no",
+       "Mount Everest, Mont Blanc"
+      ],
+      [
+       "One island",
+       "no",
+       "Sicily, Ireland, Cuba"
+      ],
+      [
+       "Mountain ranges",
+       "the",
+       "the Alps, the Tatras, the Himalayas"
+      ],
+      [
+       "Lake + name",
+       "no",
+       "Lake Michigan, Loch Ness"
+      ],
+      [
+       "Rivers",
+       "the",
+       "the Danube, the Vltava, the Thames"
+      ],
+      [
+       "Oceans, seas",
+       "the",
+       "the Atlantic, the Mediterranean"
+      ],
+      [
+       "Island groups",
+       "the",
+       "the Philippines, the Canaries"
+      ],
+      [
+       "Deserts",
+       "the",
+       "the Sahara, the Gobi"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Unique",
+    "title_cz": "Jedinečné",
+    "table": {
+     "headers": [
+      "Kind",
+      "the"
+     ],
+     "rows": [
+      [
+       "Only one",
+       "the sun · the police · the internet"
+      ],
+      [
+       "This role (only one here)",
+       "the manager · the doctor on duty"
+      ]
+     ]
+    },
+    "points": [
+     "A job as one of many takes a / an: She is a teacher."
+    ]
+   },
+   {
+    "title": "Which article?",
+    "title_cz": "Který člen?",
+    "diagram": "decision_flow",
+    "labels": [
+     "A name on the map or the calendar, or a fixed case?",
+     "Use the pattern: the Danube · Prague · August · the piano · the news",
+     "In general: any, all, or the activity?",
+     "zero: Dogs are friendly · Life is hard · in hospital · breakfast",
+     "Do you both know which one, or is there only one?",
+     "the: the dog next door · the sun · the best",
+     "One thing: a / an. Some things: nothing. a dog · dogs · a teacher"
+    ],
+    "points": [
+     "Ask what the listener knows: new, known, or in general."
+    ]
+   }
+  ]
+ },
+ "strict_articles": true,
+ "quiz_axis": "articles",
+ "title_cz": "Členy 2",
+ "use_mode": "correct"
+}

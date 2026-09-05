@@ -3,6 +3,7 @@
  "title": "Travel 2",
  "level": "B1",
  "tree_node": "leaf_travel_b1",
+ "recaps": ["a2_travel", "a2_transport"],
  "codex_unit": "V_THM-A1B1-03",
  "quality": "draft",
  "note": "Journeys, problems and accommodation, above leaf_travel_a2 (holidays). leaf_knowledge_b1 is titled Knowledge & travel but only half-covers this - keep them apart. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma (B22 quiz_mode sentence_gap was already set, but 28 of the 36 words had no frame to gap). · E10: Use is no longer CZ→EN of the bank — use_mode rewrite, 12 underlined paraphrases that make the student produce the new word. · E1/E4: every frame is a situation someone would actually say; no X is very important. · F6: people and places rotated (Petr, Ostrava, Telč, Rome, Vienna), no repeat of Anna/Brno. · Pool-checked against everything taught before leaf_travel_b1 — 0 unknown types. James smoke 2026-09-04: F8/C57 recap card added (Travel 1 reminder, four tiles not the full set; luggage/booking/backpack are the only repeats). Four rewrite items had an underline that did not cover what actually changes, so a correct rewrite was marked wrong. Bad weather no longer closes the airport as its subject. · 2026-09-05 B1 loop: sentence texture. 18 of 36 Use sentences were `NP + be + ADJ` with nothing recycled — the shape check_sentence_texture.py was written for. All 18 rewritten so each makes one clause move (subordinate, relative, comparative, passive or contrast) and recycles at least two words the path already taught; the lemma stays contiguous so sentenceToFrame still gaps it. 0/36 fail now. E1: every rewrite carries a situation, not a frame.",
@@ -11,31 +12,67 @@
  "intro": [
   {
    "title": "You already know",
-   "title_cz": "Už znáš — Travel 1",
+   "title_cz": "Už znáš — Travel 1 a Transport",
    "pictures": [
     {
-     "en": "luggage",
-     "cz": "zavazadlo",
+     "en": "journey",
+     "cz": "cesta (delší)",
+     "icon": "🛤️"
+    },
+    {
+     "en": "suitcase",
+     "cz": "kufr",
      "icon": "🧳"
     },
     {
-     "en": "booking",
-     "cz": "rezervace",
-     "icon": "📖"
+     "en": "passport",
+     "cz": "pas",
+     "icon": "🛂"
     },
     {
-     "en": "backpack",
-     "cz": "batoh",
-     "icon": "🎒"
+     "en": "ticket",
+     "cz": "lístek / jízdenka",
+     "icon": "🎫"
     },
     {
-     "en": "journey",
-     "cz": "cesta",
-     "icon": "🚂"
+     "en": "flight",
+     "cz": "let",
+     "icon": "✈️"
+    },
+    {
+     "en": "gate",
+     "cz": "odletová brána",
+     "icon": "🚪"
+    },
+    {
+     "en": "fare",
+     "cz": "jízdné",
+     "icon": "💷"
+    },
+    {
+     "en": "destination",
+     "cz": "cíl cesty",
+     "icon": "📍"
     }
    ],
-   "note": "Travel 1 gave you the trip (journey, tour, abroad, destination), the bags and paper (luggage, passport, ticket, booking) and where you stay (hostel, camping, countryside). Luggage, booking and backpack come back here — the rest of this unit is new: what goes wrong, and what you do about it.",
-   "note_cz": "Travel 1 dal cestu (journey, tour, abroad, destination), zavazadla a doklady (luggage, passport, ticket, booking) a kde bydlíš (hostel, camping, countryside). Luggage, booking a backpack se sem vracejí — zbytek je nový: co se pokazí a co s tím uděláš."
+   "table": {
+    "headers": [
+     "from",
+     "words"
+    ],
+    "rows": [
+     [
+      "Travel 1",
+      "tour · tourist · abroad · foreign · book (verb) · guide · souvenir · hostel"
+     ],
+     [
+      "Transport",
+      "airline · terminal · railway · seat · return ticket · passenger · coach"
+     ]
+    ]
+   },
+   "note": "Travel 1 gave you the trip and the paperwork; Transport gave you the flight, the fare and the gate. This unit is what goes wrong on the way, and where you stay.",
+   "note_cz": "Travel 1 dal cestu a doklady; Transport let, jízdné a odletovou bránu. Tato lekce je o tom, co se cestou pokazí, a o ubytování."
   },
   {
    "title": "On the way",

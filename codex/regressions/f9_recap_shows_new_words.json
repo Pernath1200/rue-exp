@@ -1,0 +1,1042 @@
+{
+ "id": "b1_travel",
+ "title": "Travel 2",
+ "level": "B1",
+ "tree_node": "leaf_travel_b1",
+ "codex_unit": "V_THM-A1B1-03",
+ "quality": "draft",
+ "note": "Journeys, problems and accommodation, above leaf_travel_a2 (holidays). leaf_knowledge_b1 is titled Knowledge & travel but only half-covers this - keep them apart. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma (B22 quiz_mode sentence_gap was already set, but 28 of the 36 words had no frame to gap). · E10: Use is no longer CZ→EN of the bank — use_mode rewrite, 12 underlined paraphrases that make the student produce the new word. · E1/E4: every frame is a situation someone would actually say; no X is very important. · F6: people and places rotated (Petr, Ostrava, Telč, Rome, Vienna), no repeat of Anna/Brno. · Pool-checked against everything taught before leaf_travel_b1 — 0 unknown types. James smoke 2026-09-04: F8/C57 recap card added (Travel 1 reminder, four tiles not the full set; luggage/booking/backpack are the only repeats). Four rewrite items had an underline that did not cover what actually changes, so a correct rewrite was marked wrong. Bad weather no longer closes the airport as its subject. · 2026-09-05 B1 loop: sentence texture. 18 of 36 Use sentences were `NP + be + ADJ` with nothing recycled — the shape check_sentence_texture.py was written for. All 18 rewritten so each makes one clause move (subordinate, relative, comparative, passive or contrast) and recycles at least two words the path already taught; the lemma stays contiguous so sentenceToFrame still gaps it. 0/36 fail now. E1: every rewrite carries a situation, not a frame.",
+ "default_direction": "cz_to_en",
+ "quiz_mode": "sentence_gap",
+ "intro": [
+  {
+   "title": "You already know",
+   "title_cz": "Už znáš — Travel 1",
+   "pictures": [
+    {
+     "en": "luggage",
+     "cz": "zavazadlo",
+     "icon": "🧳"
+    },
+    {
+     "en": "booking",
+     "cz": "rezervace",
+     "icon": "📖"
+    },
+    {
+     "en": "backpack",
+     "cz": "batoh",
+     "icon": "🎒"
+    },
+    {
+     "en": "journey",
+     "cz": "cesta",
+     "icon": "🚂"
+    }
+   ],
+   "note": "Travel 1 gave you the trip (journey, tour, abroad, destination), the bags and paper (luggage, passport, ticket, booking) and where you stay (hostel, camping, countryside). Luggage, booking and backpack come back here — the rest of this unit is new: what goes wrong, and what you do about it.",
+   "note_cz": "Travel 1 dal cestu (journey, tour, abroad, destination), zavazadla a doklady (luggage, passport, ticket, booking) a kde bydlíš (hostel, camping, countryside). Luggage, booking a backpack se sem vracejí — zbytek je nový: co se pokazí a co s tím uděláš."
+  },
+  {
+   "title": "On the way",
+   "title_cz": "Na cestě",
+   "pictures": [
+    {
+     "icon": "🧳",
+     "en": "luggage",
+     "cz": "zavazadla"
+    },
+    {
+     "icon": "🎫",
+     "en": "boarding pass",
+     "cz": "palubní lístek"
+    },
+    {
+     "icon": "🛄",
+     "en": "baggage claim",
+     "cz": "výdej zavazadel"
+    },
+    {
+     "icon": "🚏",
+     "en": "platform",
+     "cz": "nástupiště"
+    },
+    {
+     "icon": "🕐",
+     "en": "delay",
+     "cz": "zpoždění"
+    },
+    {
+     "icon": "🔁",
+     "en": "connection",
+     "cz": "přípoj"
+    },
+    {
+     "icon": "🎒",
+     "en": "backpack",
+     "cz": "batoh"
+    },
+    {
+     "icon": "🛂",
+     "en": "passport control",
+     "cz": "pasová kontrola"
+    },
+    {
+     "icon": "🚕",
+     "en": "transfer",
+     "cz": "přesun"
+    },
+    {
+     "icon": "🗺️",
+     "en": "route",
+     "cz": "trasa"
+    },
+    {
+     "icon": "⛴️",
+     "en": "ferry",
+     "cz": "trajekt"
+    },
+    {
+     "icon": "🚙",
+     "en": "car hire",
+     "cz": "půjčovna aut"
+    }
+   ]
+  },
+  {
+   "title": "When it goes wrong",
+   "title_cz": "Když se to zvrtne",
+   "pictures": [
+    {
+     "icon": "❌",
+     "en": "cancel",
+     "cz": "zrušit"
+    },
+    {
+     "icon": "⏰",
+     "en": "miss (a train)",
+     "cz": "zmeškat"
+    },
+    {
+     "icon": "🧭",
+     "en": "get lost",
+     "cz": "ztratit se"
+    },
+    {
+     "icon": "💸",
+     "en": "refund",
+     "cz": "vrácení peněz"
+    },
+    {
+     "icon": "📄",
+     "en": "insurance",
+     "cz": "pojištění"
+    },
+    {
+     "icon": "🚨",
+     "en": "emergency",
+     "cz": "nouzová situace"
+    },
+    {
+     "icon": "🧳",
+     "en": "lost luggage",
+     "cz": "ztracené zavazadlo"
+    },
+    {
+     "icon": "🤒",
+     "en": "travel sick",
+     "cz": "cestovní nevolnost"
+    },
+    {
+     "icon": "🛑",
+     "en": "strike",
+     "cz": "stávka"
+    },
+    {
+     "icon": "🌧️",
+     "en": "bad weather",
+     "cz": "špatné počasí"
+    },
+    {
+     "icon": "📞",
+     "en": "complain",
+     "cz": "stěžovat si"
+    },
+    {
+     "icon": "🔒",
+     "en": "stolen",
+     "cz": "ukradený"
+    }
+   ]
+  },
+  {
+   "title": "Where you stay",
+   "title_cz": "Kde bydlíš",
+   "pictures": [
+    {
+     "icon": "🏨",
+     "en": "accommodation",
+     "cz": "ubytování"
+    },
+    {
+     "icon": "🛏️",
+     "en": "double room",
+     "cz": "dvoulůžkový pokoj"
+    },
+    {
+     "icon": "🔑",
+     "en": "check in",
+     "cz": "ubytovat se"
+    },
+    {
+     "icon": "🚪",
+     "en": "check out",
+     "cz": "odhlásit se"
+    },
+    {
+     "icon": "🍳",
+     "en": "breakfast included",
+     "cz": "snídaně v ceně"
+    },
+    {
+     "icon": "🏕️",
+     "en": "campsite",
+     "cz": "kemp"
+    },
+    {
+     "icon": "🏠",
+     "en": "guest house",
+     "cz": "penzion"
+    },
+    {
+     "icon": "⭐",
+     "en": "review",
+     "cz": "recenze"
+    },
+    {
+     "icon": "📶",
+     "en": "wifi",
+     "cz": "wifi"
+    },
+    {
+     "icon": "💶",
+     "en": "deposit",
+     "cz": "záloha"
+    },
+    {
+     "icon": "🧾",
+     "en": "booking",
+     "cz": "rezervace"
+    },
+    {
+     "icon": "👤",
+     "en": "receptionist",
+     "cz": "recepční"
+    }
+   ]
+  },
+  {
+   "title": "You will use these words in",
+   "title_cz": "Tato slova použiješ ve větách",
+   "frames": [
+    "I have a … · *Mám …*",
+    "I need a … · *Potřebuju …*",
+    "I want to … · *Chci …*",
+    "We need to … · *Musíme …*",
+    "Let's talk about … · *Pojďme mluvit o …*",
+    "… is important · *… je důležité*"
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "id": "b1_travel_1",
+   "title": "Travel · on the way",
+   "items": [
+    {
+     "en": "luggage",
+     "cz": "zavazadla",
+     "use": [
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "boarding pass",
+     "cz": "palubní lístek",
+     "use": [
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "baggage claim",
+     "cz": "výdej zavazadel",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "platform",
+     "cz": "nástupiště",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "delay",
+     "cz": "zpoždění",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "connection",
+     "cz": "přípoj",
+     "use": [
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "backpack",
+     "cz": "batoh",
+     "use": [
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "passport control",
+     "cz": "pasová kontrola",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "transfer",
+     "cz": "přesun",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "route",
+     "cz": "trasa",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "ferry",
+     "cz": "trajekt",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "car hire",
+     "cz": "půjčovna aut",
+     "use": [
+      "this_is_a"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1_travel_2",
+   "title": "Travel · problems",
+   "items": [
+    {
+     "en": "cancel",
+     "cz": "zrušit",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "miss (a train)",
+     "cz": "zmeškat",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "get lost",
+     "cz": "ztratit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "refund",
+     "cz": "vrácení peněz",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "insurance",
+     "cz": "pojištění",
+     "use": [
+      "is_important"
+     ]
+    },
+    {
+     "en": "emergency",
+     "cz": "nouzová situace",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "lost luggage",
+     "cz": "ztracené zavazadlo",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "travel sick",
+     "cz": "cestovní nevolnost",
+     "use": [
+      "i_am_adj",
+      "he_is_adj"
+     ]
+    },
+    {
+     "en": "strike",
+     "cz": "stávka",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "bad weather",
+     "cz": "špatné počasí",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "complain",
+     "cz": "stěžovat si",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "stolen",
+     "cz": "ukradený",
+     "use": [
+      "i_am_adj",
+      "he_is_adj"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "b1_travel_3",
+   "title": "Travel · where you stay",
+   "items": [
+    {
+     "en": "accommodation",
+     "cz": "ubytování",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "double room",
+     "cz": "dvoulůžkový pokoj",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "check in",
+     "cz": "ubytovat se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "check out",
+     "cz": "odhlásit se",
+     "use": [
+      "i_want_to"
+     ]
+    },
+    {
+     "en": "breakfast included",
+     "cz": "snídaně v ceně",
+     "use": [
+      "is_important"
+     ]
+    },
+    {
+     "en": "campsite",
+     "cz": "kemp",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "guest house",
+     "cz": "penzion",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "review",
+     "cz": "recenze",
+     "use": [
+      "this_is_a"
+     ]
+    },
+    {
+     "en": "wifi",
+     "cz": "wifi",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "deposit",
+     "cz": "záloha",
+     "use": [
+      "we_need_to"
+     ]
+    },
+    {
+     "en": "booking",
+     "cz": "rezervace",
+     "use": [
+      "i_have_a"
+     ]
+    },
+    {
+     "en": "receptionist",
+     "cz": "recepční",
+     "use": [
+      "this_is_a"
+     ]
+    }
+   ]
+  }
+ ],
+ "sentences": [
+  {
+   "en": "Our flight had a long delay because the weather was bad in Vienna.",
+   "cz": "Náš let měl velké zpoždění, protože ve Vídni bylo špatné počasí.",
+   "lemmas": [
+    "delay"
+   ],
+   "accepts": [
+    "Our flight had a long delay because the weather was bad in Vienna"
+   ]
+  },
+  {
+   "en": "The airline lost my luggage, which arrived three days later.",
+   "cz": "Aerolinky mi ztratily zavazadlo, které dorazilo o tři dny později.",
+   "lemmas": [
+    "luggage"
+   ],
+   "accepts": [
+    "The airline lost my luggage, which arrived three days later"
+   ]
+  },
+  {
+   "en": "We had to cancel the trip because my daughter was ill.",
+   "cz": "Museli jsme ten výlet zrušit, protože byla dcera nemocná.",
+   "lemmas": [
+    "cancel"
+   ],
+   "accepts": [
+    "We had to cancel the trip because my daughter was ill"
+   ]
+  },
+  {
+   "en": "The accommodation was cheaper than the hotel we found online.",
+   "cz": "Ubytování bylo levnější než hotel, který jsme našli na internetu.",
+   "lemmas": [
+    "accommodation"
+   ],
+   "accepts": [
+    "The accommodation was cheaper than the hotel we found online"
+   ]
+  },
+  {
+   "en": "I missed my connection in Vienna because the first train left late.",
+   "cz": "Ve Vídni jsem zmeškal přípoj, protože první vlak jel pozdě.",
+   "lemmas": [
+    "connection"
+   ],
+   "accepts": [
+    "I missed my connection in Vienna because the first train left late"
+   ]
+  },
+  {
+   "en": "They gave us a full refund after we wrote to the company.",
+   "cz": "Vrátili nám všechny peníze poté, co jsme napsali firmě.",
+   "lemmas": [
+    "refund"
+   ],
+   "accepts": [
+    "They gave us a full refund after we wrote to the company"
+   ]
+  },
+  {
+   "en": "We check in at the hotel as soon as we arrive from the airport.",
+   "cz": "Ubytujeme se v hotelu, jakmile přijedeme z letiště.",
+   "lemmas": [
+    "check in"
+   ],
+   "accepts": [
+    "We check in at the hotel as soon as we arrive from the airport"
+   ]
+  },
+  {
+   "en": "Travel insurance is cheaper if you buy it before the holiday starts.",
+   "cz": "Cestovní pojištění je levnější, když si ho koupíš před začátkem dovolené.",
+   "lemmas": [
+    "insurance"
+   ],
+   "accepts": [
+    "Travel insurance is cheaper if you buy it before the holiday starts"
+   ]
+  },
+  {
+   "en": "I keep my boarding pass on my phone, which is faster at the airport.",
+   "cz": "Palubní lístek mám v telefonu, což je na letišti rychlejší.",
+   "lemmas": [
+    "boarding pass"
+   ],
+   "accepts": [
+    "I keep my boarding pass on my phone, which is faster at the airport"
+   ]
+  },
+  {
+   "en": "We waited at baggage claim for an hour because our bags were on a later flight.",
+   "cz": "U výdeje zavazadel jsme čekali hodinu, protože naše zavazadla letěla pozdějším letem.",
+   "lemmas": [
+    "baggage claim"
+   ],
+   "accepts": [
+    "We waited at baggage claim for an hour because our bags were on a later flight"
+   ]
+  },
+  {
+   "en": "We ran to platform four because our train was already leaving.",
+   "cz": "Běželi jsme na čtvrté nástupiště, protože náš vlak už odjížděl.",
+   "lemmas": [
+    "platform"
+   ],
+   "accepts": [
+    "We ran to platform four because our train was already leaving"
+   ]
+  },
+  {
+   "en": "Petr takes only a small backpack when he travels by train.",
+   "cz": "Petr si bere jen malý batoh, když cestuje vlakem.",
+   "lemmas": [
+    "backpack"
+   ],
+   "accepts": [
+    "Petr takes only a small backpack when he travels by train"
+   ]
+  },
+  {
+   "en": "Passport control took longer than we expected.",
+   "cz": "Pasová kontrola trvala déle, než jsme čekali.",
+   "lemmas": [
+    "passport control"
+   ],
+   "accepts": [
+    "Passport control took longer than we expected"
+   ]
+  },
+  {
+   "en": "The transfer from the airport was included in the price we paid.",
+   "cz": "Přesun z letiště byl zahrnutý v ceně, kterou jsme zaplatili.",
+   "lemmas": [
+    "transfer"
+   ],
+   "accepts": [
+    "The transfer from the airport was included in the price we paid"
+   ]
+  },
+  {
+   "en": "This route is faster, but the road is worse.",
+   "cz": "Tahle trasa je rychlejší, ale silnice je horší.",
+   "lemmas": [
+    "route"
+   ],
+   "accepts": [
+    "This route is faster, but the road is worse"
+   ]
+  },
+  {
+   "en": "We took the ferry because the road was closed.",
+   "cz": "Jeli jsme trajektem, protože silnice byla zavřená.",
+   "lemmas": [
+    "ferry"
+   ],
+   "accepts": [
+    "We took the ferry because the road was closed"
+   ]
+  },
+  {
+   "en": "Car hire at the station is cheaper than a taxi from the airport.",
+   "cz": "Půjčovna aut na nádraží je levnější než taxi z letiště.",
+   "lemmas": [
+    "car hire"
+   ],
+   "accepts": [
+    "Car hire at the station is cheaper than a taxi from the airport"
+   ]
+  },
+  {
+   "en": "If we walk slowly, we will miss the train.",
+   "cz": "Když půjdeme pomalu, zmeškáme vlak.",
+   "lemmas": [
+    "miss (a train)"
+   ],
+   "accepts": [
+    "If we walk slowly, we will miss the train",
+    "If we walk slowly, we'll miss the train"
+   ]
+  },
+  {
+   "en": "Tourists often get lost in the old town.",
+   "cz": "Turisté se ve starém městě často ztratí.",
+   "lemmas": [
+    "get lost"
+   ],
+   "accepts": [
+    "Tourists often get lost in the old town"
+   ]
+  },
+  {
+   "en": "Call this number only if you need help in an emergency.",
+   "cz": "Na tohle číslo volej jen tehdy, když potřebuješ pomoc v nouzové situaci.",
+   "lemmas": [
+    "emergency"
+   ],
+   "accepts": [
+    "Call this number only if you need help in an emergency"
+   ]
+  },
+  {
+   "en": "She wrote to the airline twice, but her lost luggage never arrived.",
+   "cz": "Napsala aerolinkám dvakrát, ale její ztracené zavazadlo nikdy nedorazilo.",
+   "lemmas": [
+    "lost luggage"
+   ],
+   "accepts": [
+    "She wrote to the airline twice, but her lost luggage never arrived"
+   ]
+  },
+  {
+   "en": "My son gets travel sick if he reads on the bus.",
+   "cz": "Můj syn má cestovní nevolnost, když v autobuse čte.",
+   "lemmas": [
+    "travel sick"
+   ],
+   "accepts": [
+    "My son gets travel sick if he reads on the bus"
+   ]
+  },
+  {
+   "en": "When the strike stopped every train, we drove to Brno by car.",
+   "cz": "Když stávka zastavila všechny vlaky, jeli jsme do Brna autem.",
+   "lemmas": [
+    "strike"
+   ],
+   "accepts": [
+    "When the strike stopped every train, we drove to Brno by car"
+   ]
+  },
+  {
+   "en": "The airport was closed on Sunday morning because of bad weather.",
+   "cz": "Letiště bylo v neděli ráno zavřené kvůli špatnému počasí.",
+   "lemmas": [
+    "bad weather"
+   ],
+   "accepts": [
+    "The airport was closed on Sunday morning because of bad weather"
+   ]
+  },
+  {
+   "en": "I decided to complain because nobody cleaned our room.",
+   "cz": "Rozhodl jsem se stěžovat si, protože náš pokoj nikdo neuklidil.",
+   "lemmas": [
+    "complain"
+   ],
+   "accepts": [
+    "I decided to complain because nobody cleaned our room"
+   ]
+  },
+  {
+   "en": "Her phone was stolen on the night bus.",
+   "cz": "Telefon jí ukradli v nočním autobuse.",
+   "lemmas": [
+    "stolen"
+   ],
+   "accepts": [
+    "Her phone was stolen on the night bus"
+   ]
+  },
+  {
+   "en": "We asked for a double room that was quieter than the first one.",
+   "cz": "Požádali jsme o dvoulůžkový pokoj, který byl tišší než ten první.",
+   "lemmas": [
+    "double room"
+   ],
+   "accepts": [
+    "We asked for a double room that was quieter than the first one"
+   ]
+  },
+  {
+   "en": "We had to check out early because our train left at seven.",
+   "cz": "Museli jsme se odhlásit brzy, protože nám v sedm jel vlak.",
+   "lemmas": [
+    "check out"
+   ],
+   "accepts": [
+    "We had to check out early because our train left at seven"
+   ]
+  },
+  {
+   "en": "I always book a hotel with breakfast included when I travel for work.",
+   "cz": "Vždycky si rezervuju hotel se snídaní v ceně, když cestuju za prací.",
+   "lemmas": [
+    "breakfast included"
+   ],
+   "accepts": [
+    "I always book a hotel with breakfast included when I travel for work"
+   ]
+  },
+  {
+   "en": "We could not stay at the campsite near the lake because it was full.",
+   "cz": "Nemohli jsme zůstat v kempu u jezera, protože byl plný.",
+   "lemmas": [
+    "campsite"
+   ],
+   "accepts": [
+    "We could not stay at the campsite near the lake because it was full"
+   ]
+  },
+  {
+   "en": "They stayed in a small guest house because the hotels were all full.",
+   "cz": "Bydleli v malém penzionu, protože hotely byly všechny plné.",
+   "lemmas": [
+    "guest house"
+   ],
+   "accepts": [
+    "They stayed in a small guest house because the hotels were all full"
+   ]
+  },
+  {
+   "en": "I read every review before I book a room.",
+   "cz": "Přečtu si každou recenzi, než si zamluvím pokoj.",
+   "lemmas": [
+    "review"
+   ],
+   "accepts": [
+    "I read every review before I book a room"
+   ]
+  },
+  {
+   "en": "The wifi in the room stopped working at night.",
+   "cz": "Wifi na pokoji v noci přestala fungovat.",
+   "lemmas": [
+    "wifi"
+   ],
+   "accepts": [
+    "The wifi in the room stopped working at night"
+   ]
+  },
+  {
+   "en": "We paid a deposit when we booked the flat.",
+   "cz": "Když jsme si zamluvili byt, zaplatili jsme zálohu.",
+   "lemmas": [
+    "deposit"
+   ],
+   "accepts": [
+    "We paid a deposit when we booked the flat"
+   ]
+  },
+  {
+   "en": "My booking was for Friday, not for Saturday, so we paid for another night at the hotel.",
+   "cz": "Moje rezervace byla na pátek, ne na sobotu, takže jsme zaplatili další noc v hotelu.",
+   "lemmas": [
+    "booking"
+   ],
+   "accepts": [
+    "My booking was for Friday, not for Saturday, so we paid for another night at the hotel"
+   ]
+  },
+  {
+   "en": "The receptionist gave us a map and showed us where the station was.",
+   "cz": "Recepční nám dal mapu a ukázal nám, kde je nádraží.",
+   "lemmas": [
+    "receptionist"
+   ],
+   "accepts": [
+    "The receptionist gave us a map and showed us where the station was"
+   ]
+  }
+ ],
+ "use_mode": "rewrite",
+ "use_hint": "Rewrite the sentence. Replace the underlined words.",
+ "use_sentences": [
+  {
+   "lemma": "delay",
+   "prompt": "There was a long wait before the plane left.",
+   "underline": "wait",
+   "en": "There was a long delay before the plane left.",
+   "lemmas": [
+    "delay"
+   ],
+   "accepts": [
+    "There was a long delay before the plane left"
+   ]
+  },
+  {
+   "lemma": "cancel",
+   "prompt": "They are going to stop the flight because of the snow.",
+   "underline": "stop",
+   "en": "They are going to cancel the flight because of the snow.",
+   "lemmas": [
+    "cancel"
+   ],
+   "accepts": [
+    "They are going to cancel the flight because of the snow"
+   ]
+  },
+  {
+   "lemma": "refund",
+   "prompt": "The company gave us our money back.",
+   "underline": "our money back",
+   "en": "The company gave us a refund.",
+   "lemmas": [
+    "refund"
+   ],
+   "accepts": [
+    "The company gave us a refund"
+   ]
+  },
+  {
+   "lemma": "accommodation",
+   "prompt": "We found cheap places to stay in Rome.",
+   "underline": "places to stay",
+   "en": "We found cheap accommodation in Rome.",
+   "lemmas": [
+    "accommodation"
+   ],
+   "accepts": [
+    "We found cheap accommodation in Rome"
+   ]
+  },
+  {
+   "lemma": "get lost",
+   "prompt": "We always lose our way in the old town.",
+   "underline": "lose our way",
+   "en": "We always get lost in the old town.",
+   "lemmas": [
+    "get lost"
+   ],
+   "accepts": [
+    "We always get lost in the old town"
+   ]
+  },
+  {
+   "lemma": "complain",
+   "prompt": "We want to tell the hotel we are not happy about the noise.",
+   "underline": "tell the hotel we are not happy",
+   "en": "We want to complain about the noise.",
+   "lemmas": [
+    "complain"
+   ],
+   "accepts": [
+    "We want to complain about the noise",
+    "We want to complain to the hotel about the noise"
+   ]
+  },
+  {
+   "lemma": "receptionist",
+   "prompt": "The woman at the desk gave us the keys.",
+   "underline": "woman at the desk",
+   "en": "The receptionist gave us the keys.",
+   "lemmas": [
+    "receptionist"
+   ],
+   "accepts": [
+    "The receptionist gave us the keys"
+   ]
+  },
+  {
+   "lemma": "check out",
+   "prompt": "You must leave the room and give the key back before eleven.",
+   "underline": "leave the room and give the key back",
+   "en": "You must check out before eleven.",
+   "lemmas": [
+    "check out"
+   ],
+   "accepts": [
+    "You must check out before eleven"
+   ]
+  },
+  {
+   "lemma": "insurance",
+   "prompt": "Before the trip we bought cover for problems and illness.",
+   "underline": "cover for problems and illness",
+   "en": "Before the trip we bought insurance.",
+   "lemmas": [
+    "insurance"
+   ],
+   "accepts": [
+    "Before the trip we bought insurance",
+    "Before the trip we bought travel insurance"
+   ]
+  },
+  {
+   "lemma": "miss (a train)",
+   "prompt": "We will not catch the train.",
+   "underline": "not catch",
+   "en": "We will miss the train.",
+   "lemmas": [
+    "miss (a train)"
+   ],
+   "accepts": [
+    "We will miss the train"
+   ]
+  },
+  {
+   "lemma": "deposit",
+   "prompt": "We paid some money first and the rest later.",
+   "underline": "some money first",
+   "en": "We paid a deposit and the rest later.",
+   "lemmas": [
+    "deposit"
+   ],
+   "accepts": [
+    "We paid a deposit and the rest later"
+   ]
+  },
+  {
+   "lemma": "platform",
+   "prompt": "The train left from the wrong place at the station.",
+   "underline": "place at the station",
+   "en": "The train left from the wrong platform.",
+   "lemmas": [
+    "platform"
+   ],
+   "accepts": [
+    "The train left from the wrong platform"
+   ]
+  }
+ ],
+ "recaps": [
+  "a2_travel",
+  "a2_transport"
+ ]
+}

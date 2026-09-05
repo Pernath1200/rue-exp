@@ -14,7 +14,7 @@ Sync: `python codex/reconcile_inspected.py` (register + Top 5). Undo a premature
 
 ---
 
-**Grammar: 72 inspected · 0 approved · 25 unseen** of 97 live units
+**Grammar: 72 inspected · 0 approved · 26 unseen** of 98 live units
 
 **Vocab A1–B1: 65 inspected · 0 approved · 25 unseen** of 90 live units
 
@@ -85,7 +85,7 @@ Of the 6 cloud-authored units, **6 have any tick**.
 - [x][ ] `a2_verb_patterns` — Verb patterns 1 · 36 items
 - [x][ ] `a2_will_going_to` — Modal verbs 2: will / going to · 8 items
 
-## B1 — 16 inspected / 0 approved / 34 units
+## B1 — 16 inspected / 0 approved / 35 units
 
 - [ ][ ] `b1_agreement_tricky` — Agreement 3 · 25 items
 - [x][ ] `b1_articles_advanced` — Articles 3 · 48 items · seen?
@@ -95,6 +95,7 @@ Of the 6 cloud-authored units, **6 have any tick**.
 - [x][ ] `b1_degree_adverbs` — Degree adverbs (B1) · 39 items
 - [x][ ] `b1_dependent_prepositions` — Dependent prepositions 1 · 34 items
 - [ ][ ] `b1_finale` — B1 review · 0 items
+- [ ][ ] `b1_future` — Future 1 · 31 items
 - [ ][ ] `b1_grammar_match` — B1 grammar · match · 0 items
 - [ ][ ] `b1_grammar_type` — B1 grammar · type · 0 items
 - [x][ ] `b1_indirect_questions` — Indirect questions 2 · 30 items

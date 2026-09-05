@@ -5,9 +5,34 @@
    "title_cz": "Už znáš — Home 1 a Home 2",
    "pictures": [
     {
+     "en": "house",
+     "cz": "dům",
+     "icon": "🏠"
+    },
+    {
      "en": "flat",
      "cz": "byt",
      "icon": "🏢"
+    },
+    {
+     "en": "kitchen",
+     "cz": "kuchyně",
+     "icon": "🍳"
+    },
+    {
+     "en": "bathroom",
+     "cz": "koupelna",
+     "icon": "🚿"
+    },
+    {
+     "en": "bedroom",
+     "cz": "ložnice",
+     "icon": "🛏️"
+    },
+    {
+     "en": "garden",
+     "cz": "zahrada",
+     "icon": "🌳"
     },
     {
      "en": "rent",
@@ -18,15 +43,26 @@
      "en": "landlord",
      "cz": "majitel bytu",
      "icon": "🔑"
-    },
-    {
-     "en": "upstairs",
-     "cz": "nahoře",
-     "icon": "🪜"
     }
    ],
-   "note": "Home 1 gave you the rooms (kitchen, bathroom, bedroom, garden) and the things in them (table, bed, window, wall). Home 2 gave you renting and the parts of a building (rent, landlord, neighbour, roof, stairs, upstairs). Flat, rent, landlord and upstairs come back here — everything else in this unit is new: what a place is like, what goes wrong in it, and who lives there with you.",
-   "note_cz": "Home 1 dal místnosti (kitchen, bathroom, bedroom, garden) a věci v nich (table, bed, window, wall). Home 2 dal bydlení v nájmu a části domu (rent, landlord, neighbour, roof, stairs, upstairs). Flat, rent, landlord a upstairs se sem vracejí — zbytek je nový: jaké to bydlení je, co se v něm rozbije a kdo v něm s tebou žije."
+   "table": {
+    "headers": [
+     "from",
+     "words"
+    ],
+    "rows": [
+     [
+      "Home 1",
+      "room · window · wall · floor · table · bed"
+     ],
+     [
+      "Home 2",
+      "neighbour · roof · stairs · upstairs · sofa · washing"
+     ]
+    ]
+   },
+   "note": "Home 1 gave you the rooms and the things in them; Home 2 gave you renting and the parts of a building. This unit is what a place is like, what goes wrong in it, and who lives there with you.",
+   "note_cz": "Home 1 dal místnosti a věci v nich; Home 2 bydlení v nájmu a části domu. Tato lekce je o tom, jaké to bydlení je, co se v něm rozbije a kdo v něm s tebou žije."
   },
   {
    "title": "The place you live",
@@ -611,6 +647,7 @@
  "title": "Home 3",
  "level": "B1",
  "tree_node": "leaf_home_b1",
+ "recaps": ["a1_home", "a2_home"],
  "codex_unit": "V_HOM-B1B2-01",
  "note": "V_HOM-B1B2-01 · B1 home layer · describing the place you live, the renting-and-repairs language A2 could not reach, and how a family actually works · carriers via use[] · 2026-09-04 B1 loop: sentences 13 → 36, one gappable frame per lemma. Two of the thirteen shipped frames could never gap (*chores* and *decorated* against the base lemma), and two listed a second lemma that sentenceToFrame never reaches (nephew, storage). B22 quiz_mode sentence_gap added (it was missing). E10: Use is use_mode rewrite, 12 items. F7: neighbourhood and suburb (leaf_town_a2) and flatmate (leaf_relationships_b1, path 24) were already taught; replaced with radiator, estate agent and mould, which are not — three tiles is under F8's threshold for a review board, so they are simply gone. · The intro showed *detached house* / *terraced house* as tiles while the items are *detached* / *terraced*, and repeated six words across a picture board and a table. It is three boards of 12 now, one per block, so C49 holds word for word. · Pool-checked against everything taught before leaf_home_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut so replacing the underline reconstructs the answer. · C57 recap card (You already know — Home 1 a Home 2) added as page 0. · 2026-09-05 B1 loop: sentence texture. 17 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 17 rewritten to make one clause move and carry two or more already-taught words; lemma stays contiguous for sentenceToFrame. 0/36 fail now. `although` and `alone` were drafted and pulled — `although` is taught in b1_linkers three slots later, `alone` nowhere before this leaf.",
  "default_direction": "cz_to_en",

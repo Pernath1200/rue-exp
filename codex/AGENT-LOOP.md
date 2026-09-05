@@ -147,8 +147,13 @@ under `data/`.
 
 ## Work the unit
 
-**Grammar.** `py -X utf8 codex/lint.py <unit_id>` is the prep card. Findings are
-labelled:
+**Prep is `py -X utf8 codex/preflight.py <unit_id>`** — every check that can see the
+unit, in one card, in seconds. I10's shape was right when `lint.py` was the only
+check; there are now five that can be scoped to a unit. `preflight.py --unplayed`
+sweeps everything not yet ticked in `INSPECTED.md`, which is how a sitting should
+start.
+
+**Grammar.** `lint.py <unit_id>` findings are labelled:
 
 - **EXACT** — a fact about the data (contraction twin missing, `it` not accepted,
   synonym absent from the map). **Fix it. Do not ask.**
@@ -183,10 +188,19 @@ a stale pool has caused real sequencing bugs both ways.
 ## Gate — before you finish the unit
 
 ```
-py -X utf8 codex/lint.py <unit_id>      # grammar
+py -X utf8 codex/preflight.py <unit_id>   # every scoped check, one card
 py -X utf8 codex/verify_pack.py
-py -X utf8 codex/audit.py
+py -X utf8 codex/audit.py --check         # --check, or the ratchet cannot fail
+py -X utf8 codex/check_gloss.py           # C6 / C58, ratcheted
+py -X utf8 codex/check_rules.py           # the 2026-09-05 batch, ratcheted
+py -X utf8 codex/test_checks.py           # prove the checks still complain
 ```
+
+`test_checks.py` matters as much as the rest. On 2026-09-05 a new check reported
+clean across the whole corpus because a mangled `` made it match nothing — it
+looked exactly like success. A check that has never been seen to fire proves
+nothing, and the same suite caught a second one the same afternoon: an H5 check
+that was flagging the house `var(--accent, #hex)` pattern as a fault.
 
 Keep the work only if **all** of these hold:
 
@@ -215,6 +229,19 @@ DECISIONS.md: A4 `the` demands, vocablevel.
 ```
 
 Then push `b1/auto` and take the next unit.
+
+## Before a rule goes in the file
+
+**I11: a rule lands with its check, or it lands marked `manual` and says why.**
+`codex/RULE-ENFORCEMENT.md` carries the verdict on every rule that predates I11 —
+22 built, 12 buildable, 30 partly, 50 manual. `observed` with no check now means
+somebody owes a check, not that nobody has thought about it.
+
+If the check would redden protected A1/A2 packs, that is **not** a reason to skip
+it. Land it, mark those findings `[PROTECTED — do not touch]`, and seed a ratchet,
+the way `check_gloss.py` and `check_rules.py` do. A 2026-09-04 run measured two
+ready checks, found they would light up A2, and defaulted to not landing them —
+so both sat unbuilt behind a question nobody had answered.
 
 ## Questions
 

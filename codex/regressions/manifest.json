@@ -1,0 +1,79 @@
+[
+ {
+  "file": "f9_no_recap_page.json",
+  "kind": "vocab",
+  "script": "check_rewrite.py",
+  "rule": "F9",
+  "from": "b1_knowledge before 2026-09-05 — opened straight onto eight new words"
+ },
+ {
+  "file": "f9_recap_shows_new_words.json",
+  "kind": "vocab",
+  "script": "check_rewrite.py",
+  "rule": "F9",
+  "from": "b1_travel before 2026-09-05 — You already know showed luggage, booking, backpack, which the unit teaches"
+ },
+ {
+  "file": "c6_gloss_too_hard.json",
+  "kind": "grammar",
+  "script": "check_gloss.py",
+  "rule": "C6",
+  "from": "b1_past_modals before 2026-09-05 — had to glossed as 'you were obliged to do it'"
+ },
+ {
+  "file": "c6_gloss_too_hard.json",
+  "kind": "grammar",
+  "script": "check_gloss.py",
+  "rule": "C58",
+  "from": "the same card — a meaning table with no example sentence"
+ },
+ {
+  "file": "b25_cue_is_answer.json",
+  "kind": "grammar",
+  "script": "check_rules.py",
+  "rule": "B25",
+  "from": "b1_be_used_to — 'It took me a month to ____ used to the food. (get)'"
+ },
+ {
+  "file": "h5_hardcoded_hex.json",
+  "kind": "grammar",
+  "script": "check_rules.py",
+  "rule": "H5",
+  "from": "a1_present_simple — inline svg with a bare #d4b070. The first fixture here was b1_future, which turned out NOT to breach H5: it uses the house var(--vocab-accent, #4db6c7) pattern, and the check was wrong to flag it. This suite caught that."
+ },
+ {
+  "file": "c32_no_strike.json",
+  "kind": "grammar",
+  "script": "check_rules.py",
+  "rule": "C32",
+  "from": "b1_relative_clauses — a Wrong column whose errors are not struck through"
+ },
+ {
+  "file": "c49_words_not_shown.json",
+  "kind": "vocab",
+  "script": "check_rules.py",
+  "rule": "C49",
+  "from": "b1_abstract — seven of its words never appear in the intro"
+ },
+ {
+  "file": "c19_czech_in_table.json",
+  "kind": "grammar",
+  "script": "check_rules.py",
+  "rule": "C19",
+  "from": "b1_modals_speculation — Czech sitting in an English table column"
+ },
+ {
+  "file": "c14_card0_nickname.json",
+  "kind": "grammar",
+  "script": "check_rules.py",
+  "rule": "C14",
+  "from": "b1_articles_advanced — card 0 is called 'Three choices', the unit is 'Articles 3'"
+ },
+ {
+  "file": "b25_cue_is_answer.json",
+  "kind": "grammar",
+  "script": "lint.py",
+  "rule": "CANDIDATE",
+  "from": "b1_be_used_to — lint's article candidate, proving lint itself still speaks"
+ }
+]

@@ -109,6 +109,14 @@ function nodeById(id) {
   return (STATE.tree?.nodes || []).find((n) => n.id === id) || null;
 }
 
+/** "Time and Tenses 3: " — from node.category + tree.categories registry. */
+function categoryPrefix(node) {
+  const cat = node?.category && STATE.tree?.categories?.[node.category];
+  if (!cat?.label) return "";
+  const seq = node.category_seq ? ` ${node.category_seq}` : "";
+  return `${cat.label}${seq}: `;
+}
+
 /** Typed addresses arrive with any capitalisation — match ids case-blind. */
 function resolveNodeId(id) {
   const exact = nodeById(id);
@@ -1338,7 +1346,7 @@ function renderPath() {
     btn.innerHTML = `
       <span class="n">${n}</span>
       <span class="meta">
-        <span class="title">${dtag} ${escapeHtml(node.label)}</span>
+        <span class="title">${dtag} ${escapeHtml(categoryPrefix(node) + node.label)}</span>
       </span>
       <span class="${statusCls}">${escapeHtml(label)}</span>
     `;
@@ -1381,7 +1389,7 @@ function renderDetail() {
   box.innerHTML = `
     <button type="button" class="btn-ghost" id="btn-detail-back">← Home</button>
     <div>${pills.join("")}</div>
-    <p class="practice-prompt" style="margin-top:0.5rem">${escapeHtml(node.label)}</p>
+    <p class="practice-prompt" style="margin-top:0.5rem">${escapeHtml(categoryPrefix(node) + node.label)}</p>
     ${
       partner
         ? `<p class="tree-legend">Pair: <button type="button" class="today-link" id="btn-detail-partner">${escapeHtml(partner.label)}</button>

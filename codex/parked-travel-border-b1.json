@@ -1,0 +1,462 @@
+{
+  "parked_for": "Travel 3 / At the border — not on the path yet. Do not invent a node until James asks.",
+  "from": "b1_knowledge smoke 2026-09-05",
+  "why": "James: \"wondering if the vocab in this unit is a bit too diffuse — customs, revision, diploma\". Knowledge & travel was 24 study words plus 11 border-and-planning travel words, and leaf_travel_b1 sits four slots earlier at the 36-word ceiling, so there was no room to merge them. The study half became School 4; these eleven wait for a travel unit of their own. Everything needed to rebuild them is here: tiles with icons, one sentence per lemma, and the four Use rewrites.",
+  "words": [
+    "itinerary",
+    "visa",
+    "customs",
+    "departure",
+    "arrival",
+    "fare",
+    "excursion",
+    "guidebook",
+    "landmark",
+    "stopover",
+    "homesick"
+  ],
+  "tiles": [
+    {
+      "icon": "🗺️",
+      "en": "itinerary",
+      "cz": "itinerář / plán cesty"
+    },
+    {
+      "icon": "🛂",
+      "en": "visa",
+      "cz": "vízum"
+    },
+    {
+      "icon": "🛃",
+      "en": "customs",
+      "cz": "celnice / celní kontrola"
+    },
+    {
+      "icon": "🛫",
+      "en": "departure",
+      "cz": "odlet / odjezd"
+    },
+    {
+      "icon": "🛬",
+      "en": "arrival",
+      "cz": "přílet / příjezd"
+    },
+    {
+      "icon": "🎫",
+      "en": "fare",
+      "cz": "jízdné"
+    },
+    {
+      "icon": "🚌",
+      "en": "excursion",
+      "cz": "výlet (organizovaný)"
+    },
+    {
+      "icon": "📕",
+      "en": "guidebook",
+      "cz": "průvodce (kniha)"
+    },
+    {
+      "icon": "🗿",
+      "en": "landmark",
+      "cz": "památka"
+    },
+    {
+      "icon": "✈️",
+      "en": "stopover",
+      "cz": "mezipřistání / zastávka na cestě"
+    },
+    {
+      "icon": "😢",
+      "en": "homesick",
+      "cz": "komu se stýská po domově"
+    }
+  ],
+  "items": [
+    {
+      "en": "itinerary",
+      "cz": "itinerář / plán cesty",
+      "use": [
+        "i_have_a",
+        "this_is_a"
+      ]
+    },
+    {
+      "en": "visa",
+      "cz": "vízum",
+      "use": [
+        "i_need_a",
+        "i_have_a"
+      ]
+    },
+    {
+      "en": "customs",
+      "cz": "celnice / celní kontrola",
+      "use": [
+        "where_is_the",
+        "lets_talk_about"
+      ]
+    },
+    {
+      "en": "departure",
+      "cz": "odjezd / odlet",
+      "use": [
+        "this_is_a",
+        "lets_talk_about"
+      ]
+    },
+    {
+      "en": "arrival",
+      "cz": "příjezd / přílet",
+      "use": [
+        "this_is_a",
+        "lets_talk_about"
+      ]
+    },
+    {
+      "en": "fare",
+      "cz": "jízdné",
+      "use": [
+        "this_is_a",
+        "is_important"
+      ]
+    },
+    {
+      "en": "excursion",
+      "cz": "výlet (organizovaný)",
+      "use": [
+        "i_have_a",
+        "this_is_a"
+      ]
+    },
+    {
+      "en": "guidebook",
+      "cz": "průvodce (kniha)",
+      "use": [
+        "i_have_a",
+        "i_need_a"
+      ]
+    },
+    {
+      "en": "landmark",
+      "cz": "významná stavba / orientační bod",
+      "use": [
+        "this_is_a",
+        "where_is_the"
+      ]
+    },
+    {
+      "en": "stopover",
+      "cz": "mezipřistání / zastávka na cestě",
+      "use": [
+        "i_have_a",
+        "this_is_a"
+      ]
+    },
+    {
+      "en": "homesick",
+      "cz": "komu se stýská po domově",
+      "use": [
+        "i_am_adj",
+        "he_is_adj"
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Our departure was delayed because the road to the airport was closed.",
+      "cz": "Náš odjezd se zpozdil, protože byla silnice na letiště uzavřená.",
+      "lemmas": [
+        "departure"
+      ],
+      "accepts": [
+        "Our departure was delayed because the road to the airport was closed"
+      ]
+    },
+    {
+      "en": "You need a visa if you want to work in that country for a year.",
+      "cz": "Potřebuješ vízum, pokud chceš v té zemi rok pracovat.",
+      "lemmas": [
+        "visa"
+      ],
+      "accepts": [
+        "You need a visa if you want to work in that country for a year"
+      ]
+    },
+    {
+      "en": "I felt homesick after a week.",
+      "cz": "Po týdnu se mi stýskalo po domově.",
+      "lemmas": [
+        "homesick"
+      ],
+      "accepts": [
+        "I felt homesick after a week"
+      ]
+    },
+    {
+      "en": "We visited the most famous landmark.",
+      "cz": "Navštívili jsme tu nejznámější památku.",
+      "lemmas": [
+        "landmark"
+      ],
+      "accepts": [
+        "We visited the most famous landmark"
+      ]
+    },
+    {
+      "en": "Send me the itinerary before we leave on Thursday.",
+      "cz": "Pošli mi itinerář, než ve čtvrtek vyrazíme.",
+      "lemmas": [
+        "itinerary"
+      ],
+      "accepts": [
+        "Send me the itinerary before we leave on Thursday"
+      ]
+    },
+    {
+      "en": "Nobody stopped us at customs because our bags were small.",
+      "cz": "Na celnici nás nikdo nezastavil, protože jsme měli malá zavazadla.",
+      "lemmas": [
+        "customs"
+      ],
+      "accepts": [
+        "Nobody stopped us at customs because our bags were small"
+      ]
+    },
+    {
+      "en": "Our arrival was late, so the shops were closed.",
+      "cz": "Náš příjezd byl pozdě, takže obchody už byly zavřené.",
+      "lemmas": [
+        "arrival"
+      ],
+      "accepts": [
+        "Our arrival was late, so the shops were closed"
+      ]
+    },
+    {
+      "en": "The fare to the airport is higher if you travel after ten.",
+      "cz": "Jízdné na letiště je vyšší, když jedeš po desáté.",
+      "lemmas": [
+        "fare"
+      ],
+      "accepts": [
+        "The fare to the airport is higher if you travel after ten"
+      ]
+    },
+    {
+      "en": "The school excursion to Kutná Hora was cancelled.",
+      "cz": "Školní výlet do Kutné Hory zrušili.",
+      "lemmas": [
+        "excursion"
+      ],
+      "accepts": [
+        "The school excursion to Kutná Hora was cancelled"
+      ]
+    },
+    {
+      "en": "The guidebook says the church was built four hundred years ago.",
+      "cz": "V průvodci se píše, že ten kostel byl postavený před čtyřmi sty lety.",
+      "lemmas": [
+        "guidebook"
+      ],
+      "accepts": [
+        "The guidebook says the church was built four hundred years ago"
+      ]
+    },
+    {
+      "en": "We had a short stopover in Warsaw while we waited for the next plane.",
+      "cz": "Ve Varšavě jsme měli krátké mezipřistání, zatímco jsme čekali na další letadlo.",
+      "lemmas": [
+        "stopover"
+      ],
+      "accepts": [
+        "We had a short stopover in Warsaw while we waited for the next plane"
+      ]
+    }
+  ],
+  "use_sentences": [
+    {
+      "lemma": "itinerary",
+      "prompt": "Send me the plan of the trip before Thursday.",
+      "underline": "plan of the trip",
+      "en": "Send me the itinerary before Thursday.",
+      "lemmas": [
+        "itinerary"
+      ],
+      "accepts": [
+        "Send me the itinerary before Thursday"
+      ]
+    },
+    {
+      "lemma": "fare",
+      "prompt": "The price of the ticket is higher in the evening.",
+      "underline": "price of the ticket",
+      "en": "The fare is higher in the evening.",
+      "lemmas": [
+        "fare"
+      ],
+      "accepts": [
+        "The fare is higher in the evening"
+      ]
+    },
+    {
+      "lemma": "stopover",
+      "prompt": "We had a wait between flights in Warsaw for two hours.",
+      "underline": "wait between flights",
+      "en": "We had a stopover in Warsaw for two hours.",
+      "lemmas": [
+        "stopover"
+      ],
+      "accepts": [
+        "We had a stopover in Warsaw for two hours"
+      ]
+    },
+    {
+      "lemma": "homesick",
+      "prompt": "After a week he felt sad about being away from home.",
+      "underline": "sad about being away from home",
+      "en": "After a week he felt homesick.",
+      "lemmas": [
+        "homesick"
+      ],
+      "accepts": [
+        "After a week he felt homesick"
+      ]
+    }
+  ],
+  "intro_card": {
+    "title": "On the way",
+    "title_cz": "Na cestě",
+    "pictures": [
+      {
+        "icon": "🗺️",
+        "en": "itinerary",
+        "cz": "itinerář / plán cesty"
+      },
+      {
+        "icon": "🛃",
+        "en": "customs",
+        "cz": "celnice / celní kontrola"
+      },
+      {
+        "icon": "🎫",
+        "en": "fare",
+        "cz": "jízdné"
+      },
+      {
+        "icon": "🚌",
+        "en": "excursion",
+        "cz": "výlet (organizovaný)"
+      },
+      {
+        "icon": "📕",
+        "en": "guidebook",
+        "cz": "průvodce (kniha)"
+      },
+      {
+        "icon": "✈️",
+        "en": "stopover",
+        "cz": "mezipřistání / zastávka na cestě"
+      },
+      {
+        "icon": "😢",
+        "en": "homesick",
+        "cz": "komu se stýská po domově"
+      }
+    ]
+  },
+  "block": {
+    "id": "b1_kno_travel",
+    "title": "Travel · planning it and crossing the border",
+    "items": [
+      {
+        "en": "itinerary",
+        "cz": "itinerář / plán cesty",
+        "use": [
+          "i_have_a",
+          "this_is_a"
+        ]
+      },
+      {
+        "en": "visa",
+        "cz": "vízum",
+        "use": [
+          "i_need_a",
+          "i_have_a"
+        ]
+      },
+      {
+        "en": "customs",
+        "cz": "celnice / celní kontrola",
+        "use": [
+          "where_is_the",
+          "lets_talk_about"
+        ]
+      },
+      {
+        "en": "departure",
+        "cz": "odjezd / odlet",
+        "use": [
+          "this_is_a",
+          "lets_talk_about"
+        ]
+      },
+      {
+        "en": "arrival",
+        "cz": "příjezd / přílet",
+        "use": [
+          "this_is_a",
+          "lets_talk_about"
+        ]
+      },
+      {
+        "en": "fare",
+        "cz": "jízdné",
+        "use": [
+          "this_is_a",
+          "is_important"
+        ]
+      },
+      {
+        "en": "excursion",
+        "cz": "výlet (organizovaný)",
+        "use": [
+          "i_have_a",
+          "this_is_a"
+        ]
+      },
+      {
+        "en": "guidebook",
+        "cz": "průvodce (kniha)",
+        "use": [
+          "i_have_a",
+          "i_need_a"
+        ]
+      },
+      {
+        "en": "landmark",
+        "cz": "významná stavba / orientační bod",
+        "use": [
+          "this_is_a",
+          "where_is_the"
+        ]
+      },
+      {
+        "en": "stopover",
+        "cz": "mezipřistání / zastávka na cestě",
+        "use": [
+          "i_have_a",
+          "this_is_a"
+        ]
+      },
+      {
+        "en": "homesick",
+        "cz": "komu se stýská po domově",
+        "use": [
+          "i_am_adj",
+          "he_is_adj"
+        ]
+      }
+    ]
+  }
+}

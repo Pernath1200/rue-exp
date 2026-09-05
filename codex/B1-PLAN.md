@@ -23,8 +23,8 @@ A2 must be smoked and live before B1 unlocks. No A1/A2 re-smoke.
 | Word formation | **Two packs, not five.** `b1_suffixes` + `b1_prefixes` stay whole (rewritten 2026-08-30). Only *word families* is new |
 | Comparison 2 | **Pulled forward to B1**, new root_id. Tree says B2 — tree gets updated |
 | Reported speech 2 | **B1**, not B2. `b1_reported_speech` was already built with backshift + if/wh |
-| Future continuous | **Not at B1.** Course doc wanted it; tree keeps it B2. Cut |
-| Future forms consolidation | **Not a unit.** Consolidation only — A2 will / going to / arrangements recycle inside other B1 packs |
+| Future continuous | **Not at B1.** Course doc wanted it; tree keeps it B2. Cut. **Reconfirmed 2026-09-05** — still out; `b1_future` (below) does not carry it |
+| Future forms consolidation | ~~**Not a unit.**~~ **AMENDED 2026-09-05 (James dropdowns): it IS a unit.** `b1_future` · *Future 1* — full will / going to / present continuous / timetable consolidation **plus future time clauses** (when / until / as soon as / before / after + present simple, the *When I will arrive* calque). Slot 9, after `b1_be_used_to`, taking the 60th path slot freed when `b1_present_perfect_continuous` was retired 2026-09-04. Time and Tenses 17. Built and gated the same day: 31 items, 6 cards, lint 0 EXACT |
 | Reflexives 2 | **In.** A2 lock hands *by myself* / emphasis to B1 in writing |
 | Prepositions of time 2 | **In.** `parked-once-a-week.json` — items already drafted from Patrik smoke |
 | Trunk core frames | **Off-circle** to Topics, like `trunk_recycle_a2` / `trunk_lexis_a2`. Nouns duplicate `trunk_abstract_b1` |
@@ -99,7 +99,7 @@ All sixteen are `[x][ ]` in INSPECTED. Built, not played.
 | `leaf_work_b1` | Work & routine | 36 | play |
 | `leaf_home_b1` | Home & family | 36 | play |
 | `leaf_communication_b1` | Communication | 36 | play · **place before reported speech** — pretaught admit/deny/claim/warn/remind |
-| `leaf_knowledge_b1` | Knowledge & travel | 36 | play · **serves as education 2** |
+| `leaf_knowledge_b1` | School 4 | 23 | play · **serves as education 2** · renamed and cut to study-only 2026-09-05 (James smoke: too diffuse); the 11 travel words are parked in `codex/parked-travel-border-b1.json` for a Travel 3 |
 | `leaf_self_b1` | Self & body | 36 | play · **serves as health 2** |
 | `trunk_abstract_b1` | Abstraction starters | 24 | **thicken to 36 + sentences** · no practice mode set yet |
 | `trunk_chunks_b1` | Collocations & chunks | 24 | **thicken to 36** · make/do/take/have + strong adj–noun. Absorbs the take/have/give unit |
@@ -287,6 +287,15 @@ and the update that **C11 now includes sort**. C55 was applied to `b1_past_modal
 
 **These drafts have never been read by anyone.** Rule I1: a green gate says a unit will not
 crash and nothing about whether it is any good.
+
+## Addendum 2026-09-05 — b1_future stamped
+
+The plan's "60" changed shape twice after drafting: `b1_present_perfect_continuous`
+was retired from slot 3 on 2026-09-04 (59 left), and **`b1_future` · Future 1** was
+stamped 2026-09-05 (interactive session, James dropdowns) into the freed slot —
+placed at slot 9, after `b1_be_used_to`, not at slot 3. The path is 60 again.
+Scope and the amended lock are in the Locked decisions table above. The unit is
+`- [ ][ ]` in INSPECTED — built, never played.
 
 ## Week order
 

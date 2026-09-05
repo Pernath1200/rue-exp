@@ -151,6 +151,7 @@
     "leaf_travel_b1",
     "b1_used_to",
     "b1_be_used_to",
+    "b1_future",
     "leaf_knowledge_b1",
     "b1_past_modals",
     "b1_modals_speculation",
@@ -2896,9 +2897,32 @@
       ]
     },
     {
+      "id": "b1_future",
+      "domain": "grammar",
+      "label": "Future 1",
+      "kind": "topic",
+      "category": "time_and_tenses",
+      "category_seq": 17,
+      "root": "verb_phrase",
+      "tree_part": "verb_phrase",
+      "codex_unit": "G_VP-A1B1-01",
+      "levels": [
+        "B1"
+      ],
+      "status": "live",
+      "foundation": false,
+      "content": "grammar/blocks/b1_future.json",
+      "practice": "grammar",
+      "note": "NEW 2026-09-05 (James dropdowns, interactive session): B1 future consolidation - will vs going to vs present continuous vs timetable present simple, plus future time clauses (when / until / as soon as / before / after + present simple, the 'When I will arrive' calque). Amends the 2026-09-01 B1-PLAN lock 'future forms consolidation is not a unit'; takes the 60th path slot freed when b1_present_perfect_continuous was retired 2026-09-04. Future continuous stays B2.",
+      "related": [
+        "a2_will_going_to",
+        "a2_arrangements"
+      ]
+    },
+    {
       "id": "leaf_knowledge_b1",
       "domain": "vocab",
-      "label": "Knowledge & travel",
+      "label": "School 4",
       "kind": "leaf",
       "parent": "trunk",
       "tree_part": "knowledge_travel",
@@ -2909,7 +2933,7 @@
       "status": "live",
       "content": "vocab/blocks/b1_knowledge.json",
       "practice": "vocab",
-      "note": "Live · V_KNO-B1B2-01 · 3×12 · how you study, proving what you know, travel planning & borders"
+      "note": "Live · V_KNO-B1B2-01 · 2×12 · how you study, and proving what you know. Renamed from Knowledge & travel and cut to study-only, James smoke 2026-09-05; the eleven travel words are in codex/parked-travel-border-b1.json for a Travel 3."
     },
     {
       "id": "b1_past_modals",

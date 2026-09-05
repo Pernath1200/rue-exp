@@ -3,6 +3,7 @@
  "title": "Money & possessions (B1)",
  "level": "B1",
  "tree_node": "leaf_money_b1",
+ "recaps": ["a1_shopping", "a2_shopping", "b1_travel", "b1_news"],
  "codex_unit": "V_MON-B1B2-01",
  "note": "V_MON-B1B2-01 · B1 money layer above leaf_shopping_a1/a2 · spending & owing, charges & banking, possessions & attitudes · carriers via use[] · picture-led intro + Use bank 2026-08-10 · 2026-09-04 B1 loop: sentences 19 → 36, one gappable frame per lemma. Six frames listed two lemmas each, which hid the second word from sentenceToFrame, and the charge frame said *charges*, so that word had no gap either. B22 quiz_mode sentence_gap added (it was missing). E10: Use is use_mode rewrite, 12 items. F7: eight tiles an earlier pack already owns moved to a **You already know** board — spend, loss, share (A1 trunks), deposit, insurance, transfer (leaf_travel_b1, path 6), tax (leaf_news_b1), generous (leaf_personality_a2) — and the list was refilled with instalment, invoice, banknote, bankrupt, pay-rise, wealthy, valuable, stingy. A12: **charge (a fee)** is sense-marked; leaf_crime_b1 has the police one. C20/C23: card 0's 'thirty-six words in three layers' note is gone. Frames page was generic noun frames; they are the pack's own shapes now. Pool-checked against everything taught before leaf_money_b1 — 0 unknown types. · 2026-09-04: nine rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 12 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py, and the instalment item also carried an UNTAUGHT word (`others`). All 12 rewritten to make one clause move and carry two or more already-taught words; lemma stays contiguous for sentenceToFrame. 0/36 fail now.",
  "default_direction": "cz_to_en",
@@ -317,49 +318,67 @@
  "intro": [
   {
    "title": "You already know",
-   "title_cz": "Už znáš",
+   "title_cz": "Už znáš — Shopping 1 a 2",
    "pictures": [
     {
-     "icon": "💸",
-     "en": "spend",
-     "cz": "utrácet"
+     "en": "money",
+     "cz": "peníze",
+     "icon": "💰"
     },
     {
-     "icon": "🔐",
-     "en": "deposit",
-     "cz": "záloha"
+     "en": "pay",
+     "cz": "platit",
+     "icon": "💳"
     },
     {
-     "icon": "🏛️",
-     "en": "tax",
-     "cz": "daň"
+     "en": "cash",
+     "cz": "hotovost",
+     "icon": "💵"
     },
     {
-     "icon": "🛟",
-     "en": "insurance",
-     "cz": "pojištění"
+     "en": "save",
+     "cz": "šetřit (peníze)",
+     "icon": "🐷"
     },
     {
-     "icon": "↔️",
-     "en": "transfer",
-     "cz": "převod"
+     "en": "price",
+     "cz": "cena",
+     "icon": "🏷️"
     },
     {
-     "icon": "📉",
-     "en": "loss",
-     "cz": "ztráta"
+     "en": "cost",
+     "cz": "stát (o ceně)",
+     "icon": "💲"
     },
     {
-     "icon": "🤲",
-     "en": "generous",
-     "cz": "štědrý"
+     "en": "card",
+     "cz": "karta",
+     "icon": "💳"
     },
     {
-     "icon": "🤝",
-     "en": "share",
-     "cz": "podělit se"
+     "en": "receipt",
+     "cz": "účtenka",
+     "icon": "🧾"
     }
-   ]
+   ],
+   "table": {
+    "headers": [
+     "from",
+     "words"
+    ],
+    "rows": [
+     [
+      "Shopping 1–2",
+      "expensive · cheap · buy · sell · discount · sale · refund · bargain · quality"
+     ],
+     [
+      "Travel 2 · News",
+      "deposit · insurance · transfer · tax"
+     ]
+    ]
+   },
+   "note": "Shopping 1 and 2 gave you paying, prices and the shop; Travel 2 and News gave you deposit, insurance and tax. This unit is owing it, saving it, and what you own.",
+   "note_cz": "Shopping 1 a 2 daly placení, ceny a obchod; Travel 2 a News zálohu, pojištění a daň. Tato lekce je o dluzích, spoření a o tom, co vlastníš."
   },
   {
    "title": "Spending and owing",
