@@ -5,7 +5,7 @@
  "tree_node": "leaf_news_b1",
  "codex_unit": "V_THM-A1B1-11",
  "quality": "draft",
- "note": "Course-doc theme, above leaf_society_a2. Basic news literacy: the headline, the report, who governs. Feeds trunk_opinions_b1 and the second-conditional discussion work. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 underlined paraphrases, not CZ→EN of the bank. F7: six tiles an earlier pack already owns were replaced with news lexis that is new here — article→broadcast, daily→coverage, abroad→scandal, agreement→vote, development→issue, peace→campaign. A12: four tiles are the same string in a different sense and are sense-marked instead — party (political), interview (in the news), report (a news story), fall (a drop). Pool-checked against everything taught before leaf_news_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut so replacing the underline reconstructs the answer.",
+ "note": "Course-doc theme, above leaf_society_a2. Basic news literacy: the headline, the report, who governs. Feeds trunk_opinions_b1 and the second-conditional discussion work. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 underlined paraphrases, not CZ→EN of the bank. F7: six tiles an earlier pack already owns were replaced with news lexis that is new here — article→broadcast, daily→coverage, abroad→scandal, agreement→vote, development→issue, peace→campaign. A12: four tiles are the same string in a different sense and are sense-marked instead — party (political), interview (in the news), report (a news story), fall (a drop). Pool-checked against everything taught before leaf_news_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 27 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py — the worst bank at B1 for this fault: a news noun dropped into `The X did Y` with nothing recycled. All 27 rewritten to make one clause move and carry two or more already-taught words. 0/36 fail now. `somebody` was tried in the fire item and swapped for `a neighbour`: it is not taught anywhere before path slot 14.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -504,14 +504,13 @@
    ]
   },
   {
-   "en": "The government will announce a new law about taxes.",
-   "cz": "Vláda oznámí nový zákon o daních.",
+   "en": "The government will announce a new law when the summer holidays finish.",
+   "cz": "Vláda oznámí nový zákon, až skončí letní prázdniny.",
    "lemmas": [
     "announce"
    ],
    "accepts": [
-    "The government will announce a new law about taxes",
-    "The government'll announce a new law about taxes"
+    "The government will announce a new law when the summer holidays finish"
    ]
   },
   {
@@ -566,154 +565,153 @@
    ]
   },
   {
-   "en": "The report on the accident was two pages long.",
-   "cz": "Reportáž o té nehodě byla na dvě stránky.",
+   "en": "The report on the accident was two pages long, but nobody read it.",
+   "cz": "Zpráva o té nehodě měla dvě strany, ale nikdo si ji nepřečetl.",
    "lemmas": [
     "report (a news story)"
    ],
    "accepts": [
-    "The report on the accident was two pages long"
+    "The report on the accident was two pages long, but nobody read it"
    ]
   },
   {
-   "en": "The minister gave an interview to a Czech journalist.",
-   "cz": "Ministr poskytl rozhovor českému novináři.",
+   "en": "The minister gave an interview after the meeting finished.",
+   "cz": "Ministr poskytl rozhovor poté, co schůzka skončila.",
    "lemmas": [
     "interview (in the news)"
    ],
    "accepts": [
-    "The minister gave an interview to a Czech journalist"
+    "The minister gave an interview after the meeting finished"
    ]
   },
   {
-   "en": "This channel shows the news every hour.",
-   "cz": "Tenhle kanál dává zprávy každou hodinu.",
+   "en": "This channel shows the news every hour, but the films are old.",
+   "cz": "Tenhle kanál dává zprávy každou hodinu, ale filmy jsou staré.",
    "lemmas": [
     "channel"
    ],
    "accepts": [
-    "This channel shows the news every hour"
+    "This channel shows the news every hour, but the films are old"
    ]
   },
   {
-   "en": "The press asked the same question three times.",
-   "cz": "Tisk se třikrát zeptal na tu samou otázku.",
+   "en": "The press asked the same question three times because nobody answered it.",
+   "cz": "Tisk položil stejnou otázku třikrát, protože na ni nikdo neodpověděl.",
    "lemmas": [
     "the press"
    ],
    "accepts": [
-    "The press asked the same question three times"
+    "The press asked the same question three times because nobody answered it"
    ]
   },
   {
-   "en": "The police will investigate the fire at the school.",
-   "cz": "Policie bude vyšetřovat ten požár ve škole.",
+   "en": "The police will investigate the fire because a neighbour saw a man running.",
+   "cz": "Policie ten požár vyšetří, protože jeden soused viděl utíkat nějakého muže.",
    "lemmas": [
     "investigate"
    ],
    "accepts": [
-    "The police will investigate the fire at the school"
+    "The police will investigate the fire because a neighbour saw a man running"
    ]
   },
   {
-   "en": "The editor did not print the story about the hospital.",
-   "cz": "Redaktor ten článek o nemocnici neotiskl.",
+   "en": "The editor did not print the story because the photos arrived too late.",
+   "cz": "Redaktor ten článek neotiskl, protože fotky dorazily příliš pozdě.",
    "lemmas": [
     "editor"
    ],
    "accepts": [
-    "The editor did not print the story about the hospital",
-    "The editor didn't print the story about the hospital"
+    "The editor did not print the story because the photos arrived too late"
    ]
   },
   {
-   "en": "The station will broadcast the game on Sunday evening.",
-   "cz": "Stanice odvysílá ten zápas v neděli večer.",
+   "en": "The station will broadcast the game if the weather stays dry.",
+   "cz": "Stanice ten zápas odvysílá, pokud zůstane suché počasí.",
    "lemmas": [
     "broadcast"
    ],
    "accepts": [
-    "The station will broadcast the game on Sunday evening"
+    "The station will broadcast the game if the weather stays dry"
    ]
   },
   {
-   "en": "The coverage of the election was better on the radio.",
-   "cz": "Zpravodajství o volbách bylo lepší v rádiu.",
+   "en": "The coverage on the radio was better than anything on television.",
+   "cz": "Zpravodajství v rádiu bylo lepší než cokoli v televizi.",
    "lemmas": [
     "coverage"
    ],
    "accepts": [
-    "The coverage of the election was better on the radio"
+    "The coverage on the radio was better than anything on television"
    ]
   },
   {
-   "en": "The scandal cost the minister his job.",
-   "cz": "Ten skandál stál ministra místo.",
+   "en": "The scandal cost the minister his job, but his party won again.",
+   "cz": "Ten skandál stál ministra místo, ale jeho strana zase vyhrála.",
    "lemmas": [
     "scandal"
    ],
    "accepts": [
-    "The scandal cost the minister his job"
+    "The scandal cost the minister his job, but his party won again"
    ]
   },
   {
-   "en": "The government wants to spend more on schools.",
-   "cz": "Vláda chce dávat víc peněz do škol.",
+   "en": "The government wants to spend more on schools than on new roads.",
+   "cz": "Vláda chce dávat víc peněz na školy než na nové silnice.",
    "lemmas": [
     "government"
    ],
    "accepts": [
-    "The government wants to spend more on schools"
+    "The government wants to spend more on schools than on new roads"
    ]
   },
   {
-   "en": "No politician answered the question about the new tax.",
-   "cz": "Žádný politik na otázku o nové dani neodpověděl.",
+   "en": "No politician answered the question when the journalists asked about money.",
+   "cz": "Když se novináři zeptali na peníze, žádný politik neodpověděl.",
    "lemmas": [
     "politician"
    ],
    "accepts": [
-    "No politician answered the question about the new tax"
+    "No politician answered the question when the journalists asked about money"
    ]
   },
   {
-   "en": "The new law starts at the beginning of next year.",
-   "cz": "Nový zákon začne platit na začátku příštího roku.",
+   "en": "The new law starts in January, but many people have not read it.",
+   "cz": "Nový zákon začne platit v lednu, ale spousta lidí si ho ještě nepřečetla.",
    "lemmas": [
     "law"
    ],
    "accepts": [
-    "The new law starts at the beginning of next year"
+    "The new law starts in January, but many people have not read it"
    ]
   },
   {
-   "en": "The debate on the radio lasted more than an hour.",
-   "cz": "Debata v rádiu trvala víc než hodinu.",
+   "en": "The debate on the radio was longer than the film we wanted to watch.",
+   "cz": "Debata v rádiu byla delší než film, který jsme chtěli vidět.",
    "lemmas": [
     "debate"
    ],
    "accepts": [
-    "The debate on the radio lasted more than an hour"
+    "The debate on the radio was longer than the film we wanted to watch"
    ]
   },
   {
-   "en": "Her party won the election in every big city.",
-   "cz": "Její strana vyhrála volby v každém velkém městě.",
+   "en": "Her party won the election in every big city, but lost in the villages.",
+   "cz": "Její strana vyhrála volby v každém velkém městě, ale na vesnicích prohrála.",
    "lemmas": [
     "party (political)"
    ],
    "accepts": [
-    "Her party won the election in every big city"
+    "Her party won the election in every big city, but lost in the villages"
    ]
   },
   {
-   "en": "The poll says half the country wants a change.",
-   "cz": "Průzkum říká, že polovina země chce změnu.",
+   "en": "The poll says half the country wants a change, but nobody believes it.",
+   "cz": "Průzkum říká, že polovina země chce změnu, ale nikdo tomu nevěří.",
    "lemmas": [
     "poll"
    ],
    "accepts": [
-    "The poll says half the country wants a change"
+    "The poll says half the country wants a change, but nobody believes it"
    ]
   },
   {
@@ -727,43 +725,43 @@
    ]
   },
   {
-   "en": "The minister for health spoke on the news last night.",
-   "cz": "Ministr zdravotnictví včera večer mluvil ve zprávách.",
+   "en": "The minister spoke on the news last night because the hospitals are full.",
+   "cz": "Ministr včera večer mluvil ve zprávách, protože jsou nemocnice plné.",
    "lemmas": [
     "minister"
    ],
    "accepts": [
-    "The minister for health spoke on the news last night"
+    "The minister spoke on the news last night because the hospitals are full"
    ]
   },
   {
-   "en": "Workers have rights, and the union explains them.",
-   "cz": "Zaměstnanci mají práva a odbory jim je vysvětlují.",
+   "en": "Workers have rights, but many of them are afraid to ask.",
+   "cz": "Zaměstnanci mají práva, ale spousta z nich se bojí zeptat.",
    "lemmas": [
     "rights"
    ],
    "accepts": [
-    "Workers have rights, and the union explains them"
+    "Workers have rights, but many of them are afraid to ask"
    ]
   },
   {
-   "en": "The company has international offices in six countries.",
-   "cz": "Ta firma má mezinárodní pobočky v šesti zemích.",
+   "en": "The company has international offices, but the biggest one is in Prague.",
+   "cz": "Ta firma má mezinárodní pobočky, ale ta největší je v Praze.",
    "lemmas": [
     "international"
    ],
    "accepts": [
-    "The company has international offices in six countries"
+    "The company has international offices, but the biggest one is in Prague"
    ]
   },
   {
-   "en": "Her campaign lasted six weeks and cost a lot of money.",
-   "cz": "Její kampaň trvala šest týdnů a stála spoustu peněz.",
+   "en": "Her campaign cost a lot of money, but she still lost the election.",
+   "cz": "Její kampaň stála spoustu peněz, ale volby stejně prohrála.",
    "lemmas": [
     "campaign"
    ],
    "accepts": [
-    "Her campaign lasted six weeks and cost a lot of money"
+    "Her campaign cost a lot of money, but she still lost the election"
    ]
   },
   {
@@ -777,43 +775,43 @@
    ]
   },
   {
-   "en": "The tax on petrol went up again in January.",
-   "cz": "Daň z benzinu se v lednu zase zvýšila.",
+   "en": "The tax on petrol went up again because the government needs money.",
+   "cz": "Daň z benzinu zase stoupla, protože vláda potřebuje peníze.",
    "lemmas": [
     "tax"
    ],
    "accepts": [
-    "The tax on petrol went up again in January"
+    "The tax on petrol went up again because the government needs money"
    ]
   },
   {
-   "en": "The health service needs more doctors and nurses.",
-   "cz": "Zdravotnictví potřebuje víc lékařů a sester.",
+   "en": "The health service needs more doctors, but the pay is too low.",
+   "cz": "Zdravotnictví potřebuje víc lékařů, ale platy jsou příliš nízké.",
    "lemmas": [
     "health service"
    ],
    "accepts": [
-    "The health service needs more doctors and nurses"
+    "The health service needs more doctors, but the pay is too low"
    ]
   },
   {
-   "en": "The storm was the worst disaster in the country for years.",
-   "cz": "Ta bouře byla nejhorší katastrofa v zemi za mnoho let.",
+   "en": "The storm was the worst disaster this country has seen for years.",
+   "cz": "Ta bouře byla nejhorší katastrofa, jakou tahle země za mnoho let zažila.",
    "lemmas": [
     "disaster"
    ],
    "accepts": [
-    "The storm was the worst disaster in the country for years"
+    "The storm was the worst disaster this country has seen for years"
    ]
   },
   {
-   "en": "The conflict between the two families lasted for years.",
-   "cz": "Konflikt mezi těmi dvěma rodinami trval roky.",
+   "en": "The conflict between the two families started when a wall was built.",
+   "cz": "Konflikt mezi těmi dvěma rodinami začal, když se postavila zeď.",
    "lemmas": [
     "conflict"
    ],
    "accepts": [
-    "The conflict between the two families lasted for years"
+    "The conflict between the two families started when a wall was built"
    ]
   },
   {
@@ -827,33 +825,33 @@
    ]
   },
   {
-   "en": "The fall in the number of students closed two schools.",
-   "cz": "Pokles počtu studentů zavřel dvě školy.",
+   "en": "The fall in the number of students was bigger than the town expected.",
+   "cz": "Pokles počtu studentů byl větší, než město čekalo.",
    "lemmas": [
     "fall (a drop)"
    ],
    "accepts": [
-    "The fall in the number of students closed two schools"
+    "The fall in the number of students was bigger than the town expected"
    ]
   },
   {
-   "en": "The reform of the schools will take many years.",
-   "cz": "Reforma školství bude trvat mnoho let.",
+   "en": "The reform of the schools will take many years, but it has already started.",
+   "cz": "Reforma škol potrvá mnoho let, ale už začala.",
    "lemmas": [
     "reform"
    ],
    "accepts": [
-    "The reform of the schools will take many years"
+    "The reform of the schools will take many years, but it has already started"
    ]
   },
   {
-   "en": "The biggest issue in this election is the health service.",
-   "cz": "Největší téma těchhle voleb je zdravotnictví.",
+   "en": "The biggest issue in this election is money, not the health service.",
+   "cz": "Největší téma těchhle voleb jsou peníze, ne zdravotnictví.",
    "lemmas": [
     "issue"
    ],
    "accepts": [
-    "The biggest issue in this election is the health service"
+    "The biggest issue in this election is money, not the health service"
    ]
   }
  ],
