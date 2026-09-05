@@ -24,6 +24,37 @@ Format:
 
 ## Open
 
+### lint.py · A8 can never be satisfied when one sentence contracts twice to the same short form
+**Q (for the record, from the B2 lane 2026-09-05):** *If I had left earlier, I would have caught the train.* contracts to **I'd** twice — once from *had*, once from *would*. A8 checks a short form by substituting **every** occurrence at once (`re.sub(pat, lg, a)`), so the fully contracted accept can only be satisfied by *"if i had left earlier, i had have caught the train"* or *"if i would left earlier, i would have caught the train"*, and neither is English. No accepts set clears it. `b2_third_conditional` keeps **48** such flags and `b2_present_perfect_continuous` **4** (*she has been reading … and she is only*, two different `she's`).
+**Options:** a) guard it — skip the short-form direction when the same short form appears more than once in the string with different expansions / b) leave the flags and let authors know the last few on a conditional pack are structural / c) drop the fully contracted wording from `accepts`.
+**Default if unanswered:** b — done. (c) was measured and is worse: dropping the double form makes the singly-contracted accepts fail the long-form direction instead, so the count goes **up** and a student who types *If I'd left earlier, I'd have caught the train* is marked wrong. The accepts on both packs are correct and the engine grades them; only the checker is unhappy. (a) is the fix when someone is in `lint.py`.
+→ (James: your answer here)
+
+### lint.py · the A8 had-plus-object guard has no quantifier in its list
+**Q (for the record):** `NOT_A_PARTICIPLE` lists articles, possessives, *no/some/any/enough* and the small numerals, but not **more** / **less** / **fewer** / **most**. So *If I had more time…* is read as a missing contraction and A8 asks for *If I'd more time*, which is not what a native writes. Three items on `b2_second_conditional`.
+**Options:** a) add the quantifiers to the guard list — same one-line fix as the *had to* class you already settled / b) leave the three flags.
+**Default if unanswered:** b — the accepts stay right and nobody writes *If I'd more time*. This is the same class you fixed in `lint.py` on 2026-09-04, one word short.
+→ (James: your answer here)
+
+### B2 grammar · F3 "above A1" fires on every B2 pack
+**Q:** F3 is the A1 rule that production may not lead — Use may only contain words the path has already taught. It fires as a CANDIDATE on every B2 unit worked this run: 27 on `b2_third_conditional`, 23 on `b2_present_perfect_continuous`, 12 on `b2_second_conditional`, 4 on `b2_past_perfect`, on words like *reached*, *recognise*, *thieves*, *closer*, *politely*, *lottery*. At B2 that is ordinary vocabulary.
+**Options:** a) treat F3 as A1/A2-only and read the B2 counts as noise, the way `vocablevel` was settled for grammar packs / b) pin the check to level in `lint.py` / c) rewrite B2 sentences down to the taught lexicon.
+**Default if unanswered:** a — done this run, nothing changed on account of F3. (c) would flatten every B2 sentence into A1 vocabulary, which is the opposite of what B2 is for. (b) is the tidy version of (a) and is a `lint.py` change, not this loop's.
+→ (James: your answer here)
+
+### b2_present_perfect_continuous · seven items where BOTH aspects are good English
+**Q:** *It has been raining all day — that is why the streets are wet.* and *It has rained all day — …* are both natural. Same for *have been trying / have tried to call you all day*, *has been studying / has studied all week*, *have been playing / have played all afternoon*, *have been eating / have eaten healthier food lately*, *have been working / have worked on it for months*, *haven't been sleeping / haven't slept through the night for weeks*. The pack's own intro admitted this ("Both can look possible"). What should Check do with them?
+**Options:** a) take the simple twin **off** the chips and **into** accepts, and fill the chip with the present simple, which the stem does rule out / b) re-force each stem so only the continuous survives (*and she is still at her desk now*) / c) cut the seven.
+**Default if unanswered:** a — done this run. It means Type and Use never mark a correct answer wrong, and Quiz still has one defensible key with an explanation that says why the continuous is the better read. (b) is the better teaching and is seven rewrites of sentences you have not seen; say the word and the next run does it.
+→ (James: your answer here)
+
+### b2_present_perfect_continuous · 48 items, over the 24–40 band
+**Q:** The pack is 24 matched simple/continuous pairs. The gate wants 24–40. Trim?
+**Options:** a) leave it — the pairing is the design, and cutting four pairs is a content decision / b) cut to 40 (drop four pairs) / c) raise the band for aspect-contrast packs.
+**Default if unanswered:** a — done. Nothing was added this run; the count was 48 before it. Same shape as the 72-item conditionals B2-PLAN already parks with you.
+→ (James: your answer here)
+
+
 ### AGENT-LOOP · the 24–40 item band on a unit that was never a stub
 **Q:** The gate says "item count is inside the target band above" (24–40 for grammar). Five B1 grammar packs were built well above it — `b1_present_perfect_vs_past` 79, `b1_relative_clauses` 66, `b1_linkers` 60, `b1_verb_patterns_advanced` 56, `b1_reported_speech` 54 — and the repair work now starting on them cannot meet that gate without gutting banks you asked to keep.
 **Options:** a) read the band as a **floor** for stubs and a target for thickening, never a cap on a bank that is already rich / b) cut those five to 40 / c) split them into two units each.
