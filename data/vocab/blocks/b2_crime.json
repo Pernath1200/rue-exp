@@ -1,0 +1,1077 @@
+{
+  "id": "b2_crime",
+  "title": "Crime & justice 2",
+  "level": "B2",
+  "tree_node": "leaf_crime_b2",
+  "codex_unit": "V_THM-A1B1-24",
+  "quality": "workable_draft",
+  "note": "B2 vocab leaf, drafted 2026-09-05 on the home lane. b1_crime (36) owns the everyday layer — burglary, robbery, murder, fraud, vandalism, police officer, suspect, witness, victim, judge, jury, arrest, court, trial, verdict, guilty, sentence, fine, punishment, appeal, legal, offence, convict — so this unit is the machinery underneath it: the named crimes a headline uses (manslaughter, blackmail, forgery, money laundering, perjury, accomplice), how a case is built (forensic, alibi, motive, interrogate, crime scene, fingerprint, testify, testimony, prosecution, defence, barrister, plead), and what happens after the verdict (conviction, acquittal, bail, parole, imprisonment, community service, offender, reoffend, rehabilitation, deterrent). SWEPT AGAINST A CORRECTED POOL: make_pool.py only counts live nodes, so it could not see the ten units this lane drafted today. The naive sweep returned custody and surveillance as clean; both are already taught, by leaf_relationships_b2 and leaf_news_b2 earlier today, and both were dropped. See the DECISIONS.md entry on pool blindness. All 36 words here are clean against live nodes AND against every drafted-but-not-live pack. C57 card 0 recaps Crime 1. C49 all 36 across three boards of 12. Build-the-family card is half recap: convict and offence are already the student's, and this unit adds conviction and offender; acquit -> acquittal and testify -> testimony run inside the unit. All four derived forms are bank items. A12 sense on defence (in court), since the sport/military reading is commoner. E10 Use is rewrite production; every underline reconstructs.",
+  "default_direction": "cz_to_en",
+  "quiz_mode": "sentence_gap",
+  "intro": {
+    "cards": [
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — Crime 1",
+        "pictures": [
+          {
+            "en": "suspect",
+            "cz": "podezřelý",
+            "icon": "🙍"
+          },
+          {
+            "en": "jury",
+            "cz": "porota",
+            "icon": "👨‍⚖️"
+          },
+          {
+            "en": "trial",
+            "cz": "proces",
+            "icon": "🏛️"
+          },
+          {
+            "en": "verdict",
+            "cz": "rozsudek",
+            "icon": "📋"
+          },
+          {
+            "en": "punishment",
+            "cz": "trest",
+            "icon": "⛓️"
+          }
+        ],
+        "note": "Crime 1 gave you the crimes people talk about — burglary, robbery, murder, fraud, vandalism — and the people in the room: police officer, suspect, witness, victim, judge, jury. It took you as far as the verdict. Those words come back in this unit's sentences. What is new here is everything either side of that: how a case is actually built, and what happens to a person afterwards.",
+        "note_cz": "Crime 1 ti dal trestné činy, o kterých se mluví — burglary, robbery, murder, fraud, vandalism — a lidi v místnosti: police officer, suspect, witness, victim, judge, jury. Dovedl tě k rozsudku. Ta slova se vracejí ve větách. Nové je tu všechno po obou stranách: jak se případ staví a co se s člověkem děje potom."
+      },
+      {
+        "title": "The crimes themselves",
+        "title_cz": "Samotné trestné činy",
+        "pictures": [
+          {
+            "en": "assault",
+            "cz": "napadení",
+            "icon": "👊"
+          },
+          {
+            "en": "manslaughter",
+            "cz": "zabití",
+            "icon": "⚰️"
+          },
+          {
+            "en": "kidnap",
+            "cz": "unést",
+            "icon": "🚐"
+          },
+          {
+            "en": "ransom",
+            "cz": "výkupné",
+            "icon": "💼"
+          },
+          {
+            "en": "blackmail",
+            "cz": "vydírání",
+            "icon": "📸"
+          },
+          {
+            "en": "forgery",
+            "cz": "padělek",
+            "icon": "🖋️"
+          },
+          {
+            "en": "counterfeit",
+            "cz": "padělaný",
+            "icon": "💵"
+          },
+          {
+            "en": "money laundering",
+            "cz": "praní peněz",
+            "icon": "🧺"
+          },
+          {
+            "en": "trafficking",
+            "cz": "obchodování (nelegální)",
+            "icon": "📦"
+          },
+          {
+            "en": "perjury",
+            "cz": "křivá výpověď",
+            "icon": "🤥"
+          },
+          {
+            "en": "accomplice",
+            "cz": "spolupachatel",
+            "icon": "👥"
+          },
+          {
+            "en": "perpetrator",
+            "cz": "pachatel",
+            "icon": "🕵️"
+          }
+        ]
+      },
+      {
+        "title": "Building the case",
+        "title_cz": "Jak se staví případ",
+        "pictures": [
+          {
+            "en": "forensic",
+            "cz": "forenzní",
+            "icon": "🔬"
+          },
+          {
+            "en": "alibi",
+            "cz": "alibi",
+            "icon": "🗓️"
+          },
+          {
+            "en": "motive",
+            "cz": "motiv",
+            "icon": "❓"
+          },
+          {
+            "en": "interrogate",
+            "cz": "vyslýchat",
+            "icon": "💡"
+          },
+          {
+            "en": "crime scene",
+            "cz": "místo činu",
+            "icon": "🚧"
+          },
+          {
+            "en": "fingerprint",
+            "cz": "otisk prstu",
+            "icon": "👆"
+          },
+          {
+            "en": "testify",
+            "cz": "svědčit",
+            "icon": "🙋"
+          },
+          {
+            "en": "testimony",
+            "cz": "svědectví",
+            "icon": "📜"
+          },
+          {
+            "en": "prosecution",
+            "cz": "obžaloba",
+            "icon": "⚔️"
+          },
+          {
+            "en": "defence (in court)",
+            "cz": "obhajoba",
+            "icon": "🛡️"
+          },
+          {
+            "en": "barrister",
+            "cz": "advokát",
+            "icon": "👔"
+          },
+          {
+            "en": "plead",
+            "cz": "hájit se",
+            "icon": "🙏"
+          }
+        ]
+      },
+      {
+        "title": "After the verdict",
+        "title_cz": "Po rozsudku",
+        "pictures": [
+          {
+            "en": "conviction",
+            "cz": "odsouzení",
+            "icon": "🔨"
+          },
+          {
+            "en": "acquit",
+            "cz": "zprostit viny",
+            "icon": "🕊️"
+          },
+          {
+            "en": "acquittal",
+            "cz": "zproštění viny",
+            "icon": "🎗️"
+          },
+          {
+            "en": "bail",
+            "cz": "kauce",
+            "icon": "💰"
+          },
+          {
+            "en": "parole",
+            "cz": "podmínečné propuštění",
+            "icon": "🚪"
+          },
+          {
+            "en": "imprisonment",
+            "cz": "odnětí svobody",
+            "icon": "🔒"
+          },
+          {
+            "en": "community service",
+            "cz": "obecně prospěšné práce",
+            "icon": "🧹"
+          },
+          {
+            "en": "offender",
+            "cz": "pachatel (odsouzený)",
+            "icon": "🚸"
+          },
+          {
+            "en": "reoffend",
+            "cz": "znovu spáchat trestný čin",
+            "icon": "🔁"
+          },
+          {
+            "en": "rehabilitation",
+            "cz": "náprava",
+            "icon": "🌱"
+          },
+          {
+            "en": "deterrent",
+            "cz": "odstrašující prostředek",
+            "icon": "🚦"
+          },
+          {
+            "en": "magistrate",
+            "cz": "smírčí soudce",
+            "icon": "⚖️"
+          }
+        ]
+      },
+      {
+        "title": "Build the family",
+        "title_cz": "Postav si rodinu slov",
+        "text_first": true,
+        "points": [
+          "The first two you already know — here are the nouns built on them.",
+          "**-ion**, **-er**, **-al** and **-mony** do the building."
+        ],
+        "table": {
+          "headers": [
+            "Word",
+            "Word here"
+          ],
+          "rows": [
+            [
+              "convict",
+              "**conviction**"
+            ],
+            [
+              "offence",
+              "**offender**"
+            ],
+            [
+              "acquit",
+              "**acquittal**"
+            ],
+            [
+              "testify",
+              "**testimony**"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You will use these words in",
+        "title_cz": "Tato slova použiješ ve větách",
+        "frames": [
+          "This is a … · *To je …*",
+          "I have a … · *Mám …*",
+          "I need a … · *Potřebuju …*",
+          "I want to … · *Chci …*",
+          "We need to … · *Musíme …*"
+        ]
+      }
+    ]
+  },
+  "blocks": [
+    {
+      "id": "b2_crime_1",
+      "title": "Crime · the crimes themselves",
+      "items": [
+        {
+          "en": "assault",
+          "cz": "napadení",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "manslaughter",
+          "cz": "zabití",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "kidnap",
+          "cz": "unést",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "ransom",
+          "cz": "výkupné",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "blackmail",
+          "cz": "vydírání",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "forgery",
+          "cz": "padělek",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "counterfeit",
+          "cz": "padělaný",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "money laundering",
+          "cz": "praní peněz",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "trafficking",
+          "cz": "obchodování (nelegální)",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "perjury",
+          "cz": "křivá výpověď",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "accomplice",
+          "cz": "spolupachatel",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "perpetrator",
+          "cz": "pachatel",
+          "use": [
+            "this_is_a"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_crime_2",
+      "title": "Crime · building the case",
+      "items": [
+        {
+          "en": "forensic",
+          "cz": "forenzní",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "alibi",
+          "cz": "alibi",
+          "use": [
+            "i_have_a",
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "motive",
+          "cz": "motiv",
+          "use": [
+            "i_need_a",
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "interrogate",
+          "cz": "vyslýchat",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "crime scene",
+          "cz": "místo činu",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "fingerprint",
+          "cz": "otisk prstu",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "testify",
+          "cz": "svědčit",
+          "use": [
+            "i_want_to",
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "testimony",
+          "cz": "svědectví",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "prosecution",
+          "cz": "obžaloba",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "defence (in court)",
+          "cz": "obhajoba",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "barrister",
+          "cz": "advokát",
+          "use": [
+            "i_need_a",
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "plead",
+          "cz": "hájit se",
+          "use": [
+            "i_want_to"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_crime_3",
+      "title": "Crime · after the verdict",
+      "items": [
+        {
+          "en": "conviction",
+          "cz": "odsouzení",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "acquit",
+          "cz": "zprostit viny",
+          "use": [
+            "we_need_to"
+          ]
+        },
+        {
+          "en": "acquittal",
+          "cz": "zproštění viny",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "bail",
+          "cz": "kauce",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "parole",
+          "cz": "podmínečné propuštění",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "imprisonment",
+          "cz": "odnětí svobody",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "community service",
+          "cz": "obecně prospěšné práce",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "offender",
+          "cz": "pachatel (odsouzený)",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "reoffend",
+          "cz": "znovu spáchat trestný čin",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "rehabilitation",
+          "cz": "náprava",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "deterrent",
+          "cz": "odstrašující prostředek",
+          "use": [
+            "this_is_a"
+          ]
+        },
+        {
+          "en": "magistrate",
+          "cz": "smírčí soudce",
+          "use": [
+            "this_is_a"
+          ]
+        }
+      ]
+    }
+  ],
+  "sentences": [
+    {
+      "en": "He was charged with assault after the fight.",
+      "cz": "Po té rvačce byl obviněn z napadení.",
+      "lemmas": [
+        "assault"
+      ],
+      "accepts": [
+        "He was charged with assault after the fight"
+      ]
+    },
+    {
+      "en": "The court found him guilty of manslaughter.",
+      "cz": "Soud ho uznal vinným ze zabití.",
+      "lemmas": [
+        "manslaughter"
+      ],
+      "accepts": [
+        "The court found him guilty of manslaughter"
+      ]
+    },
+    {
+      "en": "Two men tried to kidnap the businessman.",
+      "cz": "Dva muži se pokusili unést toho podnikatele.",
+      "lemmas": [
+        "kidnap"
+      ],
+      "accepts": [
+        "Two men tried to kidnap the businessman"
+      ]
+    },
+    {
+      "en": "The family paid a large ransom for him.",
+      "cz": "Rodina za něj zaplatila velké výkupné.",
+      "lemmas": [
+        "ransom"
+      ],
+      "accepts": [
+        "The family paid a large ransom for him"
+      ]
+    },
+    {
+      "en": "She went to the police about the blackmail.",
+      "cz": "Kvůli tomu vydírání šla na policii.",
+      "lemmas": [
+        "blackmail"
+      ],
+      "accepts": [
+        "She went to the police about the blackmail"
+      ]
+    },
+    {
+      "en": "The old picture turned out to be a forgery.",
+      "cz": "Ukázalo se, že ten starý obraz je padělek.",
+      "lemmas": [
+        "forgery"
+      ],
+      "accepts": [
+        "The old picture turned out to be a forgery"
+      ]
+    },
+    {
+      "en": "Police found counterfeit notes in the car.",
+      "cz": "Policie našla v autě padělané bankovky.",
+      "lemmas": [
+        "counterfeit"
+      ],
+      "accepts": [
+        "Police found counterfeit notes in the car"
+      ]
+    },
+    {
+      "en": "The bank was investigated for money laundering.",
+      "cz": "Ta banka byla vyšetřována kvůli praní peněz.",
+      "lemmas": [
+        "money laundering"
+      ],
+      "accepts": [
+        "The bank was investigated for money laundering"
+      ]
+    },
+    {
+      "en": "The trial was about drug trafficking.",
+      "cz": "Ten proces byl o obchodování s drogami.",
+      "lemmas": [
+        "trafficking"
+      ],
+      "accepts": [
+        "The trial was about drug trafficking"
+      ]
+    },
+    {
+      "en": "Perjury is a very serious offence.",
+      "cz": "Křivá výpověď je velmi vážný trestný čin.",
+      "lemmas": [
+        "perjury"
+      ],
+      "accepts": [
+        "Perjury is a very serious offence"
+      ]
+    },
+    {
+      "en": "His accomplice waited in the car.",
+      "cz": "Jeho spolupachatel čekal v autě.",
+      "lemmas": [
+        "accomplice"
+      ],
+      "accepts": [
+        "His accomplice waited in the car"
+      ]
+    },
+    {
+      "en": "The perpetrator was never found by police.",
+      "cz": "Pachatele policie nikdy nenašla.",
+      "lemmas": [
+        "perpetrator"
+      ],
+      "accepts": [
+        "The perpetrator was never found by police"
+      ]
+    },
+    {
+      "en": "Forensic tests showed he was in the room.",
+      "cz": "Forenzní testy ukázaly, že byl v té místnosti.",
+      "lemmas": [
+        "forensic"
+      ],
+      "accepts": [
+        "Forensic tests showed he was in the room"
+      ]
+    },
+    {
+      "en": "The police checked his alibi very carefully.",
+      "cz": "Policie si jeho alibi velmi pečlivě ověřila.",
+      "lemmas": [
+        "alibi"
+      ],
+      "accepts": [
+        "The police checked his alibi very carefully"
+      ]
+    },
+    {
+      "en": "The police could not find a motive.",
+      "cz": "Policie nemohla najít motiv.",
+      "lemmas": [
+        "motive"
+      ],
+      "accepts": [
+        "The police could not find a motive"
+      ]
+    },
+    {
+      "en": "They will interrogate the suspect this morning.",
+      "cz": "Toho podezřelého budou vyslýchat dnes ráno.",
+      "lemmas": [
+        "interrogate"
+      ],
+      "accepts": [
+        "They will interrogate the suspect this morning"
+      ]
+    },
+    {
+      "en": "The police closed the crime scene quickly.",
+      "cz": "Policie místo činu rychle uzavřela.",
+      "lemmas": [
+        "crime scene"
+      ],
+      "accepts": [
+        "The police closed the crime scene quickly"
+      ]
+    },
+    {
+      "en": "A single fingerprint was enough for the police.",
+      "cz": "Jediný otisk prstu policii stačil.",
+      "lemmas": [
+        "fingerprint"
+      ],
+      "accepts": [
+        "A single fingerprint was enough for the police"
+      ]
+    },
+    {
+      "en": "She agreed to testify against her boss.",
+      "cz": "Souhlasila, že bude svědčit proti svému šéfovi.",
+      "lemmas": [
+        "testify"
+      ],
+      "accepts": [
+        "She agreed to testify against her boss"
+      ]
+    },
+    {
+      "en": "His words in court changed the jury's decision.",
+      "cz": "Jeho slova u soudu změnila rozhodnutí poroty.",
+      "lemmas": [
+        "testimony"
+      ],
+      "accepts": [
+        "His words in court changed the jury's decision"
+      ]
+    },
+    {
+      "en": "The prosecution called three more witnesses.",
+      "cz": "Obžaloba povolala další tři svědky.",
+      "lemmas": [
+        "prosecution"
+      ],
+      "accepts": [
+        "The prosecution called three more witnesses"
+      ]
+    },
+    {
+      "en": "The defence asked for more time.",
+      "cz": "Obhajoba požádala o víc času.",
+      "lemmas": [
+        "defence (in court)"
+      ],
+      "accepts": [
+        "The defence asked for more time"
+      ]
+    },
+    {
+      "en": "Her barrister spoke for nearly an hour.",
+      "cz": "Její advokát mluvil skoro hodinu.",
+      "lemmas": [
+        "barrister"
+      ],
+      "accepts": [
+        "Her barrister spoke for nearly an hour"
+      ]
+    },
+    {
+      "en": "He decided to plead guilty at the trial.",
+      "cz": "Rozhodl se u soudu přiznat vinu.",
+      "lemmas": [
+        "plead"
+      ],
+      "accepts": [
+        "He decided to plead guilty at the trial"
+      ]
+    },
+    {
+      "en": "The conviction was reported in every newspaper.",
+      "cz": "O tom odsouzení psaly všechny noviny.",
+      "lemmas": [
+        "conviction"
+      ],
+      "accepts": [
+        "The conviction was reported in every newspaper"
+      ]
+    },
+    {
+      "en": "The jury decided to acquit both men.",
+      "cz": "Porota rozhodla oba muže zprostit viny.",
+      "lemmas": [
+        "acquit"
+      ],
+      "accepts": [
+        "The jury decided to acquit both men"
+      ]
+    },
+    {
+      "en": "The acquittal surprised everyone in the court.",
+      "cz": "To zproštění viny překvapilo všechny v soudní síni.",
+      "lemmas": [
+        "acquittal"
+      ],
+      "accepts": [
+        "The acquittal surprised everyone in the court"
+      ]
+    },
+    {
+      "en": "The judge refused to give him bail.",
+      "cz": "Soudce mu odmítl povolit kauci.",
+      "lemmas": [
+        "bail"
+      ],
+      "accepts": [
+        "The judge refused to give him bail"
+      ]
+    },
+    {
+      "en": "He was released on parole after four years.",
+      "cz": "Po čtyřech letech byl podmínečně propuštěn.",
+      "lemmas": [
+        "parole"
+      ],
+      "accepts": [
+        "He was released on parole after four years"
+      ]
+    },
+    {
+      "en": "The sentence was five years imprisonment.",
+      "cz": "Trest byl pět let odnětí svobody.",
+      "lemmas": [
+        "imprisonment"
+      ],
+      "accepts": [
+        "The sentence was five years imprisonment"
+      ]
+    },
+    {
+      "en": "She was given community service, not a fine.",
+      "cz": "Dostala obecně prospěšné práce, ne pokutu.",
+      "lemmas": [
+        "community service"
+      ],
+      "accepts": [
+        "She was given community service, not a fine"
+      ]
+    },
+    {
+      "en": "A young offender needs help, not punishment.",
+      "cz": "Mladý pachatel potřebuje pomoc, ne trest.",
+      "lemmas": [
+        "offender"
+      ],
+      "accepts": [
+        "A young offender needs help, not punishment"
+      ]
+    },
+    {
+      "en": "Most of them never reoffend after release.",
+      "cz": "Většina z nich se po propuštění už nedopustí ničeho.",
+      "lemmas": [
+        "reoffend"
+      ],
+      "accepts": [
+        "Most of them never reoffend after release"
+      ]
+    },
+    {
+      "en": "Rehabilitation works better than a long sentence.",
+      "cz": "Náprava funguje líp než dlouhý trest.",
+      "lemmas": [
+        "rehabilitation"
+      ],
+      "accepts": [
+        "Rehabilitation works better than a long sentence"
+      ]
+    },
+    {
+      "en": "A heavy fine works as a deterrent.",
+      "cz": "Vysoká pokuta funguje jako odstrašující prostředek.",
+      "lemmas": [
+        "deterrent"
+      ],
+      "accepts": [
+        "A heavy fine works as a deterrent"
+      ]
+    },
+    {
+      "en": "The magistrate listened to both sides carefully.",
+      "cz": "Smírčí soudce si pečlivě vyslechl obě strany.",
+      "lemmas": [
+        "magistrate"
+      ],
+      "accepts": [
+        "The magistrate listened to both sides carefully"
+      ]
+    }
+  ],
+  "use_mode": "rewrite",
+  "use_hint": "Rewrite the sentence. Replace the underlined words.",
+  "use_sentences": [
+    {
+      "lemma": "conviction",
+      "prompt": "The court decision against him was reported in every newspaper.",
+      "underline": "The court decision against him",
+      "en": "The conviction was reported in every newspaper.",
+      "lemmas": [
+        "conviction"
+      ],
+      "accepts": [
+        "The conviction was reported in every newspaper"
+      ]
+    },
+    {
+      "lemma": "alibi",
+      "prompt": "The police checked his story about where he was very carefully.",
+      "underline": "story about where he was",
+      "en": "The police checked his alibi very carefully.",
+      "lemmas": [
+        "alibi"
+      ],
+      "accepts": [
+        "The police checked his alibi very carefully"
+      ]
+    },
+    {
+      "lemma": "motive",
+      "prompt": "The police could not find a reason for the crime.",
+      "underline": "a reason for the crime",
+      "en": "The police could not find a motive.",
+      "lemmas": [
+        "motive"
+      ],
+      "accepts": [
+        "The police could not find a motive"
+      ]
+    },
+    {
+      "lemma": "interrogate",
+      "prompt": "They will question the suspect this morning.",
+      "underline": "question",
+      "en": "They will interrogate the suspect this morning.",
+      "lemmas": [
+        "interrogate"
+      ],
+      "accepts": [
+        "They will interrogate the suspect this morning"
+      ]
+    },
+    {
+      "lemma": "testify",
+      "prompt": "She agreed to speak in court against her boss.",
+      "underline": "speak in court",
+      "en": "She agreed to testify against her boss.",
+      "lemmas": [
+        "testify"
+      ],
+      "accepts": [
+        "She agreed to testify against her boss"
+      ]
+    },
+    {
+      "lemma": "testimony",
+      "prompt": "His words in court changed the jury's decision.",
+      "underline": "words in court",
+      "en": "His testimony changed the jury's decision.",
+      "lemmas": [
+        "testimony"
+      ],
+      "accepts": [
+        "His testimony changed the jury's decision"
+      ]
+    },
+    {
+      "lemma": "acquittal",
+      "prompt": "The decision to free them surprised everyone in the court.",
+      "underline": "decision to free them",
+      "en": "The acquittal surprised everyone in the court.",
+      "lemmas": [
+        "acquittal"
+      ],
+      "accepts": [
+        "The acquittal surprised everyone in the court"
+      ]
+    },
+    {
+      "lemma": "bail",
+      "prompt": "The judge refused to give him temporary freedom.",
+      "underline": "temporary freedom",
+      "en": "The judge refused to give him bail.",
+      "lemmas": [
+        "bail"
+      ],
+      "accepts": [
+        "The judge refused to give him bail"
+      ]
+    },
+    {
+      "lemma": "imprisonment",
+      "prompt": "The sentence was five years in prison.",
+      "underline": "in prison",
+      "en": "The sentence was five years imprisonment.",
+      "lemmas": [
+        "imprisonment"
+      ],
+      "accepts": [
+        "The sentence was five years imprisonment"
+      ]
+    },
+    {
+      "lemma": "offender",
+      "prompt": "A young person who breaks the law needs help, not punishment.",
+      "underline": "person who breaks the law",
+      "en": "A young offender needs help, not punishment.",
+      "lemmas": [
+        "offender"
+      ],
+      "accepts": [
+        "A young offender needs help, not punishment"
+      ]
+    },
+    {
+      "lemma": "deterrent",
+      "prompt": "A heavy fine works as a warning to others.",
+      "underline": "warning to others",
+      "en": "A heavy fine works as a deterrent.",
+      "lemmas": [
+        "deterrent"
+      ],
+      "accepts": [
+        "A heavy fine works as a deterrent"
+      ]
+    },
+    {
+      "lemma": "perpetrator",
+      "prompt": "The person who did it was never found by police.",
+      "underline": "person who did it",
+      "en": "The perpetrator was never found by police.",
+      "lemmas": [
+        "perpetrator"
+      ],
+      "accepts": [
+        "The perpetrator was never found by police"
+      ]
+    }
+  ]
+}
