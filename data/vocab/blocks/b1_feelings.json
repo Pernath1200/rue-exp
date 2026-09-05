@@ -5,7 +5,7 @@
  "tree_node": "leaf_feelings_b1",
  "codex_unit": "V_THM-A1B1-09",
  "quality": "draft",
- "note": "Nuanced emotion adjectives above leaf_feelings_a2. FOLDS IN codex/parked-stressed-stressful.json: the person-feels vs thing-causes job with a cause form that is not -ing. First draft 2026-09-02. · 2026-09-04 B1 loop: only 10 of the draft's 36 tiles were new — 26 were words already taught (the whole A2 -ed/-ing set, plus six leaf_self_b1 owns). F7/F8: the recycled ones are now two **You already know** review boards, and the Match list is 36 words that are new at this slot: stronger -ed feelings, the feeling NOUNS English needs at B1 (relief, joy, pride, shame, regret, envy, sympathy, panic), and the cause forms. · The parked spec's four pairs are all here — stressed/stressful, scared/scary, pleased/pleasant, delighted/delightful — with the -ed halves on the review board and a **person and the cause** table page carrying the contrast. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · Frames page was noun frames (I have a … / I need a …) on a pack of adjectives; fixed. · Pool-checked against everything taught before leaf_feelings_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut — the -ing adjectives all needed the `is` standing in the prompt.",
+ "note": "Nuanced emotion adjectives above leaf_feelings_a2. FOLDS IN codex/parked-stressed-stressful.json: the person-feels vs thing-causes job with a cause form that is not -ing. First draft 2026-09-02. · 2026-09-04 B1 loop: only 10 of the draft's 36 tiles were new — 26 were words already taught (the whole A2 -ed/-ing set, plus six leaf_self_b1 owns). F7/F8: the recycled ones are now two **You already know** review boards, and the Match list is 36 words that are new at this slot: stronger -ed feelings, the feeling NOUNS English needs at B1 (relief, joy, pride, shame, regret, envy, sympathy, panic), and the cause forms. · The parked spec's four pairs are all here — stressed/stressful, scared/scary, pleased/pleasant, delighted/delightful — with the -ed halves on the review board and a **person and the cause** table page carrying the contrast. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · Frames page was noun frames (I have a … / I need a …) on a pack of adjectives; fixed. · Pool-checked against everything taught before leaf_feelings_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut — the -ing adjectives all needed the `is` standing in the prompt. · 2026-09-05 B1 loop: sentence texture. 17 of 36 Use sentences were FLAT under check_sentence_texture.py — an -ed/-ing feeling adjective is the shape most likely to sit in a bare `X was ADJ`, and this bank had fifteen of those. All 17 rewritten to make one clause move and carry two or more already-taught words. 0/36 fail now. Four drafts were pulled on the path ceiling — outside, terrible, anyway, laughed are taught nowhere before slot 27, and each of them raised the audit count before it was swapped.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -749,23 +749,23 @@
    ]
   },
   {
-   "en": "The weather made everybody miserable for a week.",
-   "cz": "Počasí bylo celý týden všem mizerné.",
+   "en": "The weather made everybody miserable because it rained for a week.",
+   "cz": "Počasí všechny sklíčilo, protože celý týden pršelo.",
    "lemmas": [
     "miserable"
    ],
    "accepts": [
-    "The weather made everybody miserable for a week"
+    "The weather made everybody miserable because it rained for a week"
    ]
   },
   {
-   "en": "She was desperate for a job after six months at home.",
-   "cz": "Po šesti měsících doma zoufale sháněla práci.",
+   "en": "She was desperate for a job because she had been at home for six months.",
+   "cz": "Zoufale sháněla práci, protože byla šest měsíců doma.",
    "lemmas": [
     "desperate"
    ],
    "accepts": [
-    "She was desperate for a job after six months at home"
+    "She was desperate for a job because she had been at home for six months"
    ]
   },
   {
@@ -779,36 +779,33 @@
    ]
   },
   {
-   "en": "The customer was not satisfied with the answer.",
-   "cz": "Zákazník nebyl s odpovědí spokojený.",
+   "en": "The customer was not satisfied with the answer, so she wrote to the manager.",
+   "cz": "Zákaznice nebyla s odpovědí spokojená, takže napsala manažerovi.",
    "lemmas": [
     "satisfied"
    ],
    "accepts": [
-    "The customer was not satisfied with the answer",
-    "The customer wasn't satisfied with the answer"
+    "The customer was not satisfied with the answer, so she wrote to the manager"
    ]
   },
   {
-   "en": "I am fed up with the noise from the flat above.",
-   "cz": "Mám dost hluku z bytu nad námi.",
+   "en": "I am fed up with the noise from the flat above because it starts late at night.",
+   "cz": "Mám dost hluku z bytu nade mnou, protože začíná pozdě v noci.",
    "lemmas": [
     "fed up"
    ],
    "accepts": [
-    "I am fed up with the noise from the flat above",
-    "I'm fed up with the noise from the flat above"
+    "I am fed up with the noise from the flat above because it starts late at night"
    ]
   },
   {
-   "en": "He is content with a small flat and a quiet street.",
-   "cz": "Je spokojený s malým bytem a tichou ulicí.",
+   "en": "He is content with a small flat because he spends every weekend in the mountains.",
+   "cz": "Je spokojený s malým bytem, protože každý víkend tráví na horách.",
    "lemmas": [
     "content"
    ],
    "accepts": [
-    "He is content with a small flat and a quiet street",
-    "He's content with a small flat and a quiet street"
+    "He is content with a small flat because he spends every weekend in the mountains"
    ]
   },
   {
@@ -832,13 +829,13 @@
    ]
   },
   {
-   "en": "The new colleague is eager to learn everything at once.",
-   "cz": "Nová kolegyně dychtí naučit se všechno naráz.",
+   "en": "The new colleague is eager to learn, but she asks too many questions.",
+   "cz": "Nová kolegyně se moc chce učit, ale klade příliš mnoho otázek.",
    "lemmas": [
     "eager"
    ],
    "accepts": [
-    "The new colleague is eager to learn everything at once"
+    "The new colleague is eager to learn, but she asks too many questions"
    ]
   },
   {
@@ -872,35 +869,33 @@
    ]
   },
   {
-   "en": "There is no shame in asking for help.",
-   "cz": "Není žádná ostuda požádat o pomoc.",
+   "en": "There is no shame in asking for help when the work is difficult.",
+   "cz": "Není žádná ostuda požádat o pomoc, když je práce těžká.",
    "lemmas": [
     "shame"
    ],
    "accepts": [
-    "There is no shame in asking for help",
-    "There's no shame in asking for help"
+    "There is no shame in asking for help when the work is difficult"
    ]
   },
   {
-   "en": "My only regret is that I did not travel more.",
-   "cz": "Moje jediná lítost je, že jsem víc necestoval.",
+   "en": "My only regret is that I did not travel more when I was young.",
+   "cz": "Moje jediná lítost je, že jsem víc necestoval, když jsem byl mladý.",
    "lemmas": [
     "regret"
    ],
    "accepts": [
-    "My only regret is that I did not travel more",
-    "My only regret is that I didn't travel more"
+    "My only regret is that I did not travel more when I was young"
    ]
   },
   {
-   "en": "The neighbours looked at his new car with envy.",
-   "cz": "Sousedi se na jeho nové auto dívali se závistí.",
+   "en": "The neighbours looked at his new car with envy because their own was old.",
+   "cz": "Sousedi se závistí koukali na jeho nové auto, protože to jejich bylo staré.",
    "lemmas": [
     "envy"
    ],
    "accepts": [
-    "The neighbours looked at his new car with envy"
+    "The neighbours looked at his new car with envy because their own was old"
    ]
   },
   {
@@ -934,33 +929,33 @@
    ]
   },
   {
-   "en": "The road to the village was scary in the snow.",
-   "cz": "Cesta do vesnice byla ve sněhu strašidelná.",
+   "en": "The road to the village was scary because the snow was deep.",
+   "cz": "Cesta do vesnice byla děsivá, protože byl hluboký sníh.",
    "lemmas": [
     "scary"
    ],
    "accepts": [
-    "The road to the village was scary in the snow"
+    "The road to the village was scary because the snow was deep"
    ]
   },
   {
-   "en": "The little hotel by the lake was delightful.",
-   "cz": "Ten malý hotel u jezera byl moc příjemný.",
+   "en": "The little hotel by the lake was delightful, but the road to it was bad.",
+   "cz": "Ten malý hotel u jezera byl rozkošný, ale cesta k němu byla špatná.",
    "lemmas": [
     "delightful"
    ],
    "accepts": [
-    "The little hotel by the lake was delightful"
+    "The little hotel by the lake was delightful, but the road to it was bad"
    ]
   },
   {
-   "en": "Teaching six lessons a day is exhausting.",
-   "cz": "Učit šest hodin denně je vyčerpávající.",
+   "en": "Teaching six lessons a day is exhausting when the classes are big.",
+   "cz": "Učit šest hodin denně je vyčerpávající, když jsou třídy velké.",
    "lemmas": [
     "exhausting"
    ],
    "accepts": [
-    "Teaching six lessons a day is exhausting"
+    "Teaching six lessons a day is exhausting when the classes are big"
    ]
   },
   {
@@ -975,23 +970,23 @@
    ]
   },
   {
-   "en": "The news about her father was upsetting for everybody.",
-   "cz": "Zpráva o jejím otci byla pro všechny smutná.",
+   "en": "The news about her father was upsetting, but she still went to work.",
+   "cz": "Zpráva o jejím otci byla znepokojivá, ale do práce stejně šla.",
    "lemmas": [
     "upsetting"
    ],
    "accepts": [
-    "The news about her father was upsetting for everybody"
+    "The news about her father was upsetting, but she still went to work"
    ]
   },
   {
-   "en": "The price of the flat was shocking for a young couple.",
-   "cz": "Cena toho bytu byla pro mladý pár šokující.",
+   "en": "The price of the flat was shocking for a young couple who both work.",
+   "cz": "Cena toho bytu byla šokující pro mladý pár, kde oba pracují.",
    "lemmas": [
     "shocking"
    ],
    "accepts": [
-    "The price of the flat was shocking for a young couple"
+    "The price of the flat was shocking for a young couple who both work"
    ]
   },
   {
@@ -1016,33 +1011,33 @@
    ]
   },
   {
-   "en": "Her speech about the school was inspiring.",
-   "cz": "Její projev o té škole byl inspirativní.",
+   "en": "Her speech about the school was inspiring, but nothing changed.",
+   "cz": "Její projev o škole byl inspirativní, ale nic se nezměnilo.",
    "lemmas": [
     "inspiring"
    ],
    "accepts": [
-    "Her speech about the school was inspiring"
+    "Her speech about the school was inspiring, but nothing changed"
    ]
   },
   {
-   "en": "Grey weather in November is depressing.",
-   "cz": "Šedivé počasí v listopadu je deprimující.",
+   "en": "Grey weather in November is depressing when the days are short.",
+   "cz": "Šedivé počasí v listopadu je depresivní, když jsou krátké dny.",
    "lemmas": [
     "depressing"
    ],
    "accepts": [
-    "Grey weather in November is depressing"
+    "Grey weather in November is depressing when the days are short"
    ]
   },
   {
-   "en": "The last hour of the film was terrifying.",
-   "cz": "Poslední hodina toho filmu byla děsivá.",
+   "en": "The last hour of the film was terrifying, but my brother was not afraid.",
+   "cz": "Poslední hodina toho filmu byla děsivá, ale můj bratr se nebál.",
    "lemmas": [
     "terrifying"
    ],
    "accepts": [
-    "The last hour of the film was terrifying"
+    "The last hour of the film was terrifying, but my brother was not afraid"
    ]
   }
  ],
