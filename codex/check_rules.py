@@ -80,14 +80,45 @@ def b2_borrowed_answer(uid, d):
     return out
 
 
+def reaches_quiz(d, block):
+    """Whether an item in this block is ever handed to the Quiz stage.
+
+    pack-adapt.js gates twice: wantsCheck("quiz") on the pack, then blockAllows
+    on the block — `check.sequence` absent means every phase, and an explicit
+    list means only those. b1_phrasal_verbs' pv_type and pv_use both carry
+    `"check": {"sequence": []}`, so their items never reach choicesFor and no
+    chips are ever built for them.
+    """
+    seq = (d.get("check") or {}).get("sequence")
+    if isinstance(seq, list) and "quiz" not in seq:
+        return False
+    bseq = (block.get("check") or {}).get("sequence")
+    return not isinstance(bseq, list) or "quiz" in bseq
+
+
 def b3_no_options(uid, d):
-    """B3 — a gap item in a form pack needs authored quiz_options."""
-    gaps = [it for it in items_of(d) if it.get("gap")]
-    bare = [it for it in gaps if not (it.get("quiz_options") or [])]
+    """B3 — a gap item in a form pack needs authored quiz_options.
+
+    Only where the student will actually meet chips. Counting gap items pack-wide
+    read b1_phrasal_verbs, b1_prefixes and b1_suffixes as 59 bare items between
+    them; every one sat in a type-only or use-only block, and every block that
+    does reach Quiz was fully authored. 59 false findings, and the authoring they
+    asked for would never have been seen (2026-09-05).
+    """
+    gaps, bare = [], []
+    for b in d.get("blocks") or []:
+        if not reaches_quiz(d, b):
+            continue
+        for it in b.get("items") or []:
+            if not it.get("gap"):
+                continue
+            gaps.append(it)
+            if not (it.get("quiz_options") or []):
+                bare.append(it)
     if not bare or len(bare) * 4 < len(gaps):
         return []                       # a handful is the engine fallback doing its job
-    return [("B3", None, "%d of %d gap items have no authored quiz_options"
-             % (len(bare), len(gaps)))]
+    return [("B3", None, "%d of %d gap items that reach Quiz have no authored "
+                         "quiz_options" % (len(bare), len(gaps)))]
 
 
 def b25_cue_is_answer(uid, d):
