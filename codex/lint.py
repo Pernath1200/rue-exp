@@ -38,7 +38,7 @@ from tree_path import teaching_path
 ROOT = Path(__file__).resolve().parent.parent
 
 # --- shared patterns ---------------------------------------------------------
-DEMONSTRATIVE = re.compile(r"\b(ten|ta|to|toho|tu|ty|tento|tato|toto|tomu|tom|těch|těm)\b", re.I)
+DEMONSTRATIVE = re.compile(r"\b(ten|ta|to|toho|tu|ty|ti|tím|tou|tento|tato|toto|tomu|tom|tomto|těch|těm|těmi)\b", re.I)
 
 # Czech perfective presents that MEAN FUTURE. A wordlist, not morphology, so this is
 # a candidate check. The walk-home item (`přijdeš` = you WILL arrive, answer demanded
@@ -97,9 +97,18 @@ WORD = r"\b%s\b"
 # clear them by editing a pack was to write ungrammatical strings into
 # `accepts`, which is what grades the student.
 HAVE_TAIL = re.compile(r"\b(had|have|has)$", re.I)
-NOT_A_PARTICIPLE = re.compile(
-    r"^\s+(to|a|an|the|my|your|his|her|its|our|their|no|some|any|enough|"
-    r"one|two|three|four|five|lots|plenty)\b", re.I)
+# had/have/has only contracts before a participle. The first guard was a
+# blacklist of common non-participles, which lost whack-a-mole to every noun
+# ("If I had TIME" still demanded "if I'd time", 2026-09-05). Whitelist the
+# participle instead — same alternation the A14 past-perfect check trusts.
+IS_PARTICIPLE = re.compile(
+    r"^\s+(never\s+|ever\s+|already\s+|just\s+|not\s+)*"
+    r"(\w+(ed|en)\b|been|gone|done|seen|taken|given|come|left|lost|"
+    r"met|paid|put|read|run|said|sent|set|sold|spent|told|won|written|"
+    r"begun|broken|brought|bought|caught|chosen|drunk|driven|eaten|"
+    r"fallen|felt|found|forgotten|got|heard|held|kept|known|made|"
+    r"become|thought|taught|understood|built|slept|shown|worn|grown|"
+    r"thrown|drawn|blown|hurt|cut|meant|learnt)\b", re.I)
 TAG_AFTER = re.compile(r"^\s*(i|you|he|she|it|we|they|there)\s*\?", re.I)
 
 # English free choices — interchangeable anywhere, unlike the Czech-ambiguity pairs
@@ -677,7 +686,7 @@ def lint_pack(uid):
                 # A8 guard: "had"/"have" only contracts in front of a past
                 # participle. "I had to work" and "I had a car" do not become
                 # "I'd to work" / "I'd a car".
-                if HAVE_TAIL.search(lng) and NOT_A_PARTICIPLE.match(a[m.end():]):
+                if HAVE_TAIL.search(lng) and not IS_PARTICIPLE.match(a[m.end():]):
                     continue
                 if re.sub(pat, short, a) not in low:
                     f["contraction"].append(it); hit = True; break
@@ -1303,7 +1312,9 @@ def lint_pack(uid):
 
     # C4 — cards promise connectors the bank barely drills  [EXACT]
     cardtext = json.dumps(d.get("intro", {}), ensure_ascii=False).lower()
-    promised = [c for c in CONNECTORS if c in cardtext]
+    # Word boundaries, same regex the `used` count applies: substring matching
+    # found `if` inside `sans-serif` and `before` inside ordinary card prose.
+    promised = [c for c in CONNECTORS if re.search(r"\b%s\b" % re.escape(c), cardtext)]
     used = {c: sum(1 for it in items
                    if re.search(r"\b%s\b" % c, (it.get("accepts") or [it.get("en", "")])[0], re.I))
             for c in promised}

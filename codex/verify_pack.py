@@ -79,7 +79,21 @@ c10_hits: list[tuple[str, str]] = []
 
 def c9_words(s: str) -> int:
     """Words in a student-facing string, ignoring markdown emphasis marks."""
-    return len(re.findall(r"[A-Za-zÀ-ÿ']+", str(s)))
+    return len(re.findall(r"[A-Za-zÀ-ÿěščřžůďťňĚŠČŘŽŮĎŤŇ']+", str(s)))
+
+
+def frame_gaps(lemma: str, en: str) -> bool:
+    """Mirror of the engine's sentenceToFrame match (practice-vocab.js):
+    lemmaBare (parens stripped, spaces squeezed) bound by the letter class,
+    not \\b — é is not \\w. A frame with no matching lemma yields NO gap,
+    so the word silently has no Quiz and no Type item (James, 2026-09-05)."""
+    form = re.sub(r"\s*\([^)]*\)\s*", " ", str(lemma or ""))
+    form = re.sub(r"\s+", " ", form).strip()
+    if not form:
+        return False
+    return bool(re.search(
+        r"(^|[^A-Za-zÀ-ž])(%s)(?![A-Za-zÀ-ž])" % re.escape(form),
+        str(en or ""), re.I))
 
 
 def intro_lint_scope(path: Path, d: dict) -> bool:
@@ -385,6 +399,18 @@ def lint_pack(path: Path) -> None:
                         warn(
                             f"{pid} {w}: lemma {lem!r} is not an item in this pack"
                         )
+                # Same family of fault as the warning above: an inflected or
+                # split lemma ("threw away" for "throw away") never matches
+                # its own en, so sentence_gap silently drops that word's
+                # Quiz/Type item with every check green.
+                lems = s.get("lemmas") or []
+                if lems and isinstance(s.get("en"), str) and \
+                        not any(frame_gaps(lem, s["en"]) for lem in lems
+                                if isinstance(lem, str)):
+                    warn(
+                        f"{pid} {w}: no lemma gaps in its own `en` — "
+                        f"sentence_gap yields no Quiz/Type item for this frame"
+                    )
 
 
 def cross_check_tree(pack_ids_by_file: dict[str, str]) -> None:

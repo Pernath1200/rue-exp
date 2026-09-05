@@ -163,7 +163,9 @@ Then walk the stage table in `AUTHORING-RULES.md` — Intro, Match, Quiz, Type, 
 of 8–12, not a sample · E10 Use is full-sentence production of the new word, never
 CZ→EN of the bank · A12 sense-mark homonyms.
 
-**Sentence quality**, everywhere: no frame twice in a pack · 7–9 words · recycle
+**Sentence quality**, everywhere: no frame twice in a pack · **10–14 words** — the
+texture bar wins over the old 7–9 line (James dropdown 2026-09-05): one clause move
+beyond `NP + be + ADJ` plus two recycled content words do not fit in nine · recycle
 vocabulary from earlier units · vary person and mood · kill "X is very important".
 Ceiling: only what the path teaches **before** this unit's own slot. Regenerate it
 per unit with `py -X utf8 codex/make_pool.py codex/POOL.md --before <unit_id>` —
@@ -173,7 +175,7 @@ a stale pool has caused real sequencing bugs both ways.
 
 | Kind | Target | Note |
 |---|---|---|
-| Grammar unit | **24–40 items** | 20 of 34 B1 grammar packs are 10–16 item stubs. Thickening them is the job, not an extra. |
+| Grammar unit | **24–40 items** | A **floor for stubs, never a cap on a built bank** (James dropdown 2026-09-05): 20 of 34 B1 grammar packs were 10–16 item stubs; thickening them is the job. Rich banks (81, 66, 60…) stay whole — first play serves **three sets of 12**, the rest of the bank rotates in on reviews. The serving mechanism is an engine job, not a cut; until it exists, the bank stands as authored. |
 | Vocab leaf | **36 words max** | 36 is a ceiling, not a target (`B1-PLAN.md`). Cut dumps. |
 | Vocab leaf sentences | **one per lemma** | 17 of 28 leaves have 36 words and 8 sentences. |
 | Intro | 4–6 cards **guideline**, one job per card | C9 no walltext · C10 a table or diagram on every card · C14 card 0 is the unit name + Czech. C11 outranks the count: if the bank needs more jobs named, take more cards rather than cutting words. |
@@ -188,9 +190,12 @@ py -X utf8 codex/audit.py
 
 Keep the work only if **all** of these hold:
 
-1. The unit's own lint flag count is **lower** than when you started.
+1. The unit's own lint flag count has **not risen** (James dropdown 2026-09-05 —
+   was "lower than when you started", which on repaired units forced reverting
+   real fixes to move a count already at 0 or made of standing candidates).
 2. **No new rule ID** appears that was not there before.
-3. Item count is inside the target band above.
+3. Item count is inside the target band above (read per the band row: a floor
+   for stubs, not a cap on built banks).
 4. `verify_pack` errors and `audit total_unknown_types` have not risen.
 
 A stub that is still a stub **fails** — "no number got worse" is not a pass. If
