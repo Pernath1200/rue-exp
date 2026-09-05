@@ -4,15 +4,955 @@
   "level": "B2",
   "tree_node": "b2_future_forms",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "note": "BUILT 2026-09-05 (b2/auto), from the 2026-08-29 empty stub. The choice unit B2-PLAN asks for: will · going to · present continuous arrangement · present simple timetable · future continuous · future perfect · the present after a time clause. 30 bank items + a 9-chip sort. A0 is the whole design problem here — Czech has one future, so nothing in the prompt can pick will from going to. Every stem carries the job instead (That looks heavy / Look at those clouds / at four on Thursday / from platform three), the same fix a2_will_going_to took after its 2026-08-29 smoke. C29 timeline on card 0 with now as a centre line, the point, the bar and the deadline to the right of it. B12/B17 Check is a sort into three jobs named by job, sort_cz false (B20), taught form bolded (C37). B3/B6/B4 authored quiz_options everywhere, same lemma, carrying the real errors (will to carry, is going rain, will you working, the museum will open). G4: where both forms would be correct English the chip was dropped, never offered as a wrong. B11 lemma cue on every gap. E7 Use is error-correction, one error per sentence (E2), never an already-correct prompt (E9). C10 a table on every card, C14 card 0 is the unit name, C32 mistakes struck through.",
   "default_direction": "cz_to_en",
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_future_forms_sort",
+      "title": "Which job?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "That looks heavy. I **will** carry it for you.",
+          "cz": "To vypadá těžké. Ponesu ti to.",
+          "bin": "Decided as you speak",
+          "explanation": "An offer made at this second → will.",
+          "explanation_cz": "Nabídka v tuhle chvíli → will."
+        },
+        {
+          "en": "The phone is ringing — I **will** get it.",
+          "cz": "Zvoní telefon — vezmu to.",
+          "bin": "Decided as you speak",
+          "explanation": "You decide while you speak → will.",
+          "explanation_cz": "Rozhoduješ se za řeči → will."
+        },
+        {
+          "en": "Perhaps she **will** change her mind.",
+          "cz": "Možná si to rozmyslí.",
+          "bin": "Decided as you speak",
+          "explanation": "A guess with nothing to point at → will.",
+          "explanation_cz": "Odhad bez důkazu → will."
+        },
+        {
+          "en": "We **are going to** paint the kitchen this summer.",
+          "cz": "V létě budeme malovat kuchyň.",
+          "bin": "Decided before now",
+          "explanation": "The plan existed before this conversation → going to.",
+          "explanation_cz": "Plán existoval už dřív → going to."
+        },
+        {
+          "en": "She **is going to** study medicine after school.",
+          "cz": "Po škole bude studovat medicínu.",
+          "bin": "Decided before now",
+          "explanation": "A decision already taken → going to.",
+          "explanation_cz": "Rozhodnutí padlo dřív → going to."
+        },
+        {
+          "en": "I **am meeting** the dentist at four on Thursday.",
+          "cz": "Ve čtvrtek ve čtyři mám schůzku u zubaře.",
+          "bin": "Decided before now",
+          "explanation": "A fixed arrangement with a time → present continuous.",
+          "explanation_cz": "Pevně domluvená schůzka s časem → přítomný průběhový."
+        },
+        {
+          "en": "This time tomorrow I **will be sitting** on a beach.",
+          "cz": "Zítra touhle dobou budu sedět na pláži.",
+          "bin": "Running at that moment",
+          "explanation": "It is under way at that future time → will be + -ing.",
+          "explanation_cz": "V ten budoucí čas to zrovna probíhá → will be + -ing."
+        },
+        {
+          "en": "At midnight they **will be crossing** the border.",
+          "cz": "O půlnoci budou překračovat hranici.",
+          "bin": "Running at that moment",
+          "explanation": "Midnight falls inside the crossing → will be + -ing.",
+          "explanation_cz": "Půlnoc padne doprostřed přejezdu → will be + -ing."
+        },
+        {
+          "en": "She **will be working** late all next week.",
+          "cz": "Příští týden bude celý pracovat dlouho do noci.",
+          "bin": "Running at that moment",
+          "explanation": "A whole week of it, seen from now → will be + -ing.",
+          "explanation_cz": "Celý týden, viděno z dneška → will be + -ing."
+        }
+      ]
+    },
+    {
+      "id": "b2_future_forms_main",
+      "title": "Future forms review",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "That looks heavy. I will carry it for you.",
+          "cz": "To vypadá těžké. Ponesu ti to.",
+          "gap": "That looks heavy. I ____ it for you. (carry)",
+          "gap_answer": "will carry",
+          "quiz_options": [
+            "will carry",
+            "am carrying",
+            "carry",
+            "carried"
+          ],
+          "accepts": [
+            "That looks heavy. I will carry it for you.",
+            "That looks heavy. I'll carry it for you."
+          ],
+          "explanation": "You offer as you speak — no plan existed a second ago → **will** carry.",
+          "explanation_cz": "Nabízíš to teď za řeči — před chvílí žádný plán nebyl → **will** carry.",
+          "wrong": "That looks heavy. I will to carry it for you.",
+          "gap_accepts": [
+            "will carry",
+            "'ll carry"
+          ]
+        },
+        {
+          "en": "Don't worry, I won't tell anyone.",
+          "cz": "Neboj, nikomu to neřeknu.",
+          "gap": "Don't worry, I ____ anyone. (not / tell)",
+          "gap_answer": "won't tell",
+          "quiz_options": [
+            "won't tell",
+            "don't tell",
+            "am not telling",
+            "didn't tell"
+          ],
+          "accepts": [
+            "Don't worry, I won't tell anyone.",
+            "Don't worry, I will not tell anyone.",
+            "Do not worry, I will not tell anyone.",
+            "Do not worry, I won't tell anyone.",
+            "Do not worry, I'll not tell anyone.",
+            "Don't worry, I'll not tell anyone."
+          ],
+          "explanation": "A promise made now → **won't** tell. The negative of will is won't.",
+          "explanation_cz": "Slib daný teď → **won't** tell. Zápor od will je won't.",
+          "wrong": "Don't worry, I not will tell anyone.",
+          "gap_accepts": [
+            "won't tell",
+            "will not tell"
+          ]
+        },
+        {
+          "en": "I think prices will rise again next year.",
+          "cz": "Myslím, že ceny příští rok zase porostou.",
+          "gap": "I think prices ____ again next year. (rise)",
+          "gap_answer": "will rise",
+          "quiz_options": [
+            "will rise",
+            "are rising",
+            "rise",
+            "rose"
+          ],
+          "accepts": [
+            "I think prices will rise again next year."
+          ],
+          "explanation": "**I think** marks an opinion about the future with nothing to point at → will rise.",
+          "explanation_cz": "**I think** značí názor na budoucnost bez důkazu → will rise.",
+          "wrong": "I think prices will to rise again next year."
+        },
+        {
+          "en": "The phone is ringing — I will get it.",
+          "cz": "Zvoní telefon — vezmu to.",
+          "gap": "The phone is ringing — I ____ it. (get)",
+          "gap_answer": "will get",
+          "quiz_options": [
+            "will get",
+            "am getting",
+            "get",
+            "got"
+          ],
+          "accepts": [
+            "The phone is ringing — I will get it.",
+            "The phone is ringing — I'll get it."
+          ],
+          "explanation": "You decide the moment you hear it → **will** get, not a plan.",
+          "explanation_cz": "Rozhoduješ se ve chvíli, kdy to slyšíš → **will** get, ne plán.",
+          "wrong": "The phone is ringing — I will getting it.",
+          "gap_accepts": [
+            "will get",
+            "'ll get"
+          ]
+        },
+        {
+          "en": "Perhaps she will change her mind.",
+          "cz": "Možná si to rozmyslí.",
+          "gap": "Perhaps she ____ her mind. (change)",
+          "gap_answer": "will change",
+          "quiz_options": [
+            "will change",
+            "changes",
+            "is changing",
+            "changed"
+          ],
+          "accepts": [
+            "Perhaps she will change her mind.",
+            "Perhaps she'll change her mind."
+          ],
+          "explanation": "**Perhaps** marks a guess → will change. After will comes the plain verb.",
+          "explanation_cz": "**Perhaps** značí odhad → will change. Po will následuje základní tvar.",
+          "wrong": "Perhaps she will changes her mind."
+        },
+        {
+          "en": "Look at those clouds — it is going to pour.",
+          "cz": "Podívej na ty mraky — bude lít.",
+          "gap": "Look at those clouds — it ____. (pour)",
+          "gap_answer": "is going to pour",
+          "quiz_options": [
+            "is going to pour",
+            "pours",
+            "is pouring",
+            "poured"
+          ],
+          "accepts": [
+            "Look at those clouds — it is going to pour.",
+            "Look at those clouds — it's going to pour."
+          ],
+          "explanation": "The clouds are evidence you can point at → **is going to** pour.",
+          "explanation_cz": "Mraky jsou důkaz, na který můžeš ukázat → **is going to** pour.",
+          "wrong": "Look at those clouds — it is going pour.",
+          "gap_accepts": [
+            "is going to pour",
+            "'s going to pour"
+          ]
+        },
+        {
+          "en": "We are going to paint the kitchen this summer.",
+          "cz": "V létě budeme malovat kuchyň.",
+          "gap": "We ____ the kitchen this summer. (paint)",
+          "gap_answer": "are going to paint",
+          "quiz_options": [
+            "are going to paint",
+            "paint",
+            "painted",
+            "are painted"
+          ],
+          "accepts": [
+            "We are going to paint the kitchen this summer.",
+            "We're going to paint the kitchen this summer."
+          ],
+          "explanation": "The plan was made before this conversation → **are going to** paint.",
+          "explanation_cz": "Plán vznikl před tímhle rozhovorem → **are going to** paint.",
+          "wrong": "We are going paint the kitchen this summer.",
+          "gap_accepts": [
+            "are going to paint",
+            "'re going to paint"
+          ]
+        },
+        {
+          "en": "She is going to study medicine after school.",
+          "cz": "Po škole bude studovat medicínu.",
+          "gap": "She ____ medicine after school. (study)",
+          "gap_answer": "is going to study",
+          "quiz_options": [
+            "is going to study",
+            "studies",
+            "studied",
+            "is studied"
+          ],
+          "accepts": [
+            "She is going to study medicine after school.",
+            "She's going to study medicine after school."
+          ],
+          "explanation": "A decision already taken about her life → **is going to** study.",
+          "explanation_cz": "Rozhodnutí už padlo → **is going to** study.",
+          "wrong": "She is going to studies medicine after school.",
+          "gap_accepts": [
+            "is going to study",
+            "'s going to study"
+          ]
+        },
+        {
+          "en": "Slow down — you are going to hit that post!",
+          "cz": "Zpomal — narazíš do toho sloupku!",
+          "gap": "Slow down — you ____ that post! (hit)",
+          "gap_answer": "are going to hit",
+          "quiz_options": [
+            "are going to hit",
+            "hit",
+            "are hitting",
+            "hits"
+          ],
+          "accepts": [
+            "Slow down — you are going to hit that post!",
+            "Slow down — you're going to hit that post!"
+          ],
+          "explanation": "You can see it coming, right now → **are going to** hit.",
+          "explanation_cz": "Vidíš to přicházet právě teď → **are going to** hit.",
+          "wrong": "Slow down — you are going hit that post!",
+          "gap_accepts": [
+            "are going to hit",
+            "'re going to hit"
+          ]
+        },
+        {
+          "en": "They aren't going to move after all.",
+          "cz": "Nakonec se přece jen nepřestěhují.",
+          "gap": "They ____ after all. (not / move)",
+          "gap_answer": "aren't going to move",
+          "quiz_options": [
+            "aren't going to move",
+            "don't move",
+            "aren't moved",
+            "didn't move"
+          ],
+          "accepts": [
+            "They aren't going to move after all.",
+            "They are not going to move after all.",
+            "They're not going to move after all."
+          ],
+          "explanation": "The plan is off — the negative of a plan is **aren't going to** move.",
+          "explanation_cz": "Plán padl — zápor plánu je **aren't going to** move.",
+          "wrong": "They aren't going move after all.",
+          "gap_accepts": [
+            "aren't going to move",
+            "are not going to move"
+          ]
+        },
+        {
+          "en": "I am meeting the dentist at four on Thursday.",
+          "cz": "Ve čtvrtek ve čtyři mám schůzku u zubaře.",
+          "gap": "I ____ the dentist at four on Thursday. (meet)",
+          "gap_answer": "am meeting",
+          "quiz_options": [
+            "am meeting",
+            "meet",
+            "was meeting",
+            "have met"
+          ],
+          "accepts": [
+            "I am meeting the dentist at four on Thursday.",
+            "I'm meeting the dentist at four on Thursday."
+          ],
+          "explanation": "A time, a place and another person → a fixed arrangement: **am meeting**.",
+          "explanation_cz": "Čas, místo a druhá osoba → pevná domluva: **am meeting**.",
+          "wrong": "I am meet the dentist at four on Thursday."
+        },
+        {
+          "en": "They are flying to Vienna on Saturday morning.",
+          "cz": "V sobotu ráno letí do Vídně.",
+          "gap": "They ____ to Vienna on Saturday morning. (fly)",
+          "gap_answer": "are flying",
+          "quiz_options": [
+            "are flying",
+            "fly",
+            "were flying",
+            "have flown"
+          ],
+          "accepts": [
+            "They are flying to Vienna on Saturday morning.",
+            "They're flying to Vienna on Saturday morning."
+          ],
+          "explanation": "Tickets are booked, so it is an arrangement → **are flying**.",
+          "explanation_cz": "Letenky jsou koupené, je to domluvené → **are flying**.",
+          "wrong": "They are fly to Vienna on Saturday morning."
+        },
+        {
+          "en": "We are having dinner with Petra tonight.",
+          "cz": "Dnes večer večeříme s Petrou.",
+          "gap": "We ____ dinner with Petra tonight. (have)",
+          "gap_answer": "are having",
+          "quiz_options": [
+            "are having",
+            "have",
+            "were having",
+            "had"
+          ],
+          "accepts": [
+            "We are having dinner with Petra tonight.",
+            "We're having dinner with Petra tonight."
+          ],
+          "explanation": "Agreed with Petra already → **are having**, the arrangement form.",
+          "explanation_cz": "S Petrou už domluveno → **are having**, tvar pro domluvu.",
+          "wrong": "We are have dinner with Petra tonight."
+        },
+        {
+          "en": "What are you doing on Friday evening?",
+          "cz": "Co děláš v pátek večer?",
+          "gap": "What ____ on Friday evening? (you / do)",
+          "gap_answer": "are you doing",
+          "quiz_options": [
+            "are you doing",
+            "do you do",
+            "did you do",
+            "will you doing"
+          ],
+          "accepts": [
+            "What are you doing on Friday evening?"
+          ],
+          "explanation": "Asking about someone's arrangements → **are you doing**, subject after are.",
+          "explanation_cz": "Ptáš se na domluvené plány → **are you doing**, podmět až za are.",
+          "wrong": "What you are doing on Friday evening?"
+        },
+        {
+          "en": "The train leaves at 6:40 from platform three.",
+          "cz": "Vlak jede v 6:40 z třetího nástupiště.",
+          "gap": "The train ____ at 6:40 from platform three. (leave)",
+          "gap_answer": "leaves",
+          "quiz_options": [
+            "leaves",
+            "leave",
+            "is going to leave",
+            "left"
+          ],
+          "accepts": [
+            "The train leaves at 6:40 from platform three."
+          ],
+          "explanation": "A timetable the railway set → present simple **leaves**.",
+          "explanation_cz": "Jízdní řád, který sestavily dráhy → přítomný prostý **leaves**.",
+          "wrong": "The train leave at 6:40 from platform three."
+        },
+        {
+          "en": "The museum opens at ten on Sundays.",
+          "cz": "Muzeum v neděli otevírá v deset.",
+          "gap": "The museum ____ at ten on Sundays. (open)",
+          "gap_answer": "opens",
+          "quiz_options": [
+            "opens",
+            "open",
+            "is opening",
+            "will open"
+          ],
+          "accepts": [
+            "The museum opens at ten on Sundays."
+          ],
+          "explanation": "Opening hours belong to the museum, not to you → **opens**.",
+          "explanation_cz": "Otevírací doba patří muzeu, ne tobě → **opens**.",
+          "wrong": "The museum open at ten on Sundays."
+        },
+        {
+          "en": "My course starts on the fifth of October.",
+          "cz": "Kurz mi začíná pátého října.",
+          "gap": "My course ____ on the fifth of October. (start)",
+          "gap_answer": "starts",
+          "quiz_options": [
+            "starts",
+            "start",
+            "is going to start",
+            "started"
+          ],
+          "accepts": [
+            "My course starts on the fifth of October."
+          ],
+          "explanation": "A date the school fixed → present simple **starts**.",
+          "explanation_cz": "Datum stanovila škola → přítomný prostý **starts**.",
+          "wrong": "My course start on the fifth of October."
+        },
+        {
+          "en": "This time tomorrow I will be sitting on a beach.",
+          "cz": "Zítra touhle dobou budu sedět na pláži.",
+          "gap": "This time tomorrow I ____ on a beach. (sit)",
+          "gap_answer": "will be sitting",
+          "quiz_options": [
+            "will be sitting",
+            "will sit",
+            "am sitting",
+            "would sit"
+          ],
+          "accepts": [
+            "This time tomorrow I will be sitting on a beach.",
+            "This time tomorrow I'll be sitting on a beach."
+          ],
+          "explanation": "**This time tomorrow** names a moment and the sitting runs through it → will be sitting.",
+          "explanation_cz": "**This time tomorrow** určuje okamžik a sezení jím prochází → will be sitting.",
+          "wrong": "This time tomorrow I will be sit on a beach.",
+          "gap_accepts": [
+            "will be sitting",
+            "'ll be sitting"
+          ]
+        },
+        {
+          "en": "Don't call at eight — we will be eating.",
+          "cz": "Nevolej v osm — budeme jíst.",
+          "gap": "Don't call at eight — we ____. (eat)",
+          "gap_answer": "will be eating",
+          "quiz_options": [
+            "will be eating",
+            "will eat",
+            "are eating",
+            "were eating"
+          ],
+          "accepts": [
+            "Don't call at eight — we will be eating.",
+            "Don't call at eight — we'll be eating.",
+            "Do not call at eight — we will be eating.",
+            "Do not call at eight — we'll be eating."
+          ],
+          "explanation": "Eight o'clock falls inside the meal → **will be** eating, a bar not a dot.",
+          "explanation_cz": "Osmá padne doprostřed jídla → **will be** eating, úsek ne bod.",
+          "wrong": "Don't call at eight — we will be ate.",
+          "gap_accepts": [
+            "will be eating",
+            "'ll be eating"
+          ]
+        },
+        {
+          "en": "She will be working late all next week.",
+          "cz": "Příští týden bude celý pracovat dlouho do noci.",
+          "gap": "She ____ late all next week. (work)",
+          "gap_answer": "will be working",
+          "quiz_options": [
+            "will be working",
+            "will work",
+            "is working",
+            "worked"
+          ],
+          "accepts": [
+            "She will be working late all next week.",
+            "She'll be working late all next week."
+          ],
+          "explanation": "A stretch of future time, seen from now → **will be** working.",
+          "explanation_cz": "Úsek budoucího času, viděno z dneška → **will be** working.",
+          "wrong": "She will be work late all next week.",
+          "gap_accepts": [
+            "will be working",
+            "'ll be working"
+          ]
+        },
+        {
+          "en": "Will you be working when I arrive?",
+          "cz": "Budeš pracovat, až přijdu?",
+          "gap": "____ when I arrive? (you / work)",
+          "gap_answer": "Will you be working",
+          "quiz_options": [
+            "Will you be working",
+            "Will you working",
+            "Are you work",
+            "Do you working"
+          ],
+          "accepts": [
+            "Will you be working when I arrive?"
+          ],
+          "explanation": "Question order: **Will** + you + be working. My arrival lands inside your work.",
+          "explanation_cz": "Pořádek v otázce: **Will** + you + be working. Můj příchod padne doprostřed práce.",
+          "wrong": "Will you working when I arrive?"
+        },
+        {
+          "en": "At midnight they will be crossing the border.",
+          "cz": "O půlnoci budou překračovat hranici.",
+          "gap": "At midnight they ____ the border. (cross)",
+          "gap_answer": "will be crossing",
+          "quiz_options": [
+            "will be crossing",
+            "will cross",
+            "are crossing",
+            "crossed"
+          ],
+          "accepts": [
+            "At midnight they will be crossing the border.",
+            "At midnight they'll be crossing the border."
+          ],
+          "explanation": "Midnight is the moment the crossing is running through → **will be** crossing.",
+          "explanation_cz": "Půlnoc je okamžik, kterým přejezd prochází → **will be** crossing.",
+          "wrong": "At midnight they will be cross the border.",
+          "gap_accepts": [
+            "will be crossing",
+            "'ll be crossing"
+          ]
+        },
+        {
+          "en": "I won't be coming to the meeting tomorrow.",
+          "cz": "Na zítřejší schůzi nepřijdu.",
+          "gap": "I ____ to the meeting tomorrow. (not / come)",
+          "gap_answer": "won't be coming",
+          "quiz_options": [
+            "won't be coming",
+            "won't coming",
+            "don't come",
+            "wasn't coming"
+          ],
+          "accepts": [
+            "I won't be coming to the meeting tomorrow.",
+            "I will not be coming to the meeting tomorrow.",
+            "I'll not be coming to the meeting tomorrow."
+          ],
+          "explanation": "Negative of the running form: **won't be** coming, not won't coming.",
+          "explanation_cz": "Zápor průběhového tvaru: **won't be** coming, ne won't coming.",
+          "wrong": "I won't coming to the meeting tomorrow.",
+          "gap_accepts": [
+            "won't be coming",
+            "will not be coming"
+          ]
+        },
+        {
+          "en": "By Friday I will have finished the report.",
+          "cz": "Do pátku tu zprávu dodělám.",
+          "gap": "By Friday I ____ the report. (finish)",
+          "gap_answer": "will have finished",
+          "quiz_options": [
+            "will have finished",
+            "have finished",
+            "will be finishing",
+            "had finished"
+          ],
+          "accepts": [
+            "By Friday I will have finished the report.",
+            "By Friday I'll have finished the report."
+          ],
+          "explanation": "**By Friday** is a deadline and the report is done before it → will have finished.",
+          "explanation_cz": "**By Friday** je termín a zpráva je hotová dřív → will have finished.",
+          "wrong": "By Friday I will have finish the report.",
+          "gap_accepts": [
+            "will have finished",
+            "'ll have finished"
+          ]
+        },
+        {
+          "en": "By the time you land, we will have left the airport.",
+          "cz": "Než přistaneš, my už z letiště odjedeme.",
+          "gap": "By the time you land, we ____ the airport. (leave)",
+          "gap_answer": "will have left",
+          "quiz_options": [
+            "will have left",
+            "have left",
+            "will be leaving",
+            "had left"
+          ],
+          "accepts": [
+            "By the time you land, we will have left the airport.",
+            "By the time you land, we'll have left the airport."
+          ],
+          "explanation": "Your landing is the deadline; our leaving is over before it → **will have left**.",
+          "explanation_cz": "Tvé přistání je termín, náš odjezd je hotový dřív → **will have left**.",
+          "wrong": "By the time you land, we will have leave the airport.",
+          "gap_accepts": [
+            "will have left",
+            "'ll have left"
+          ]
+        },
+        {
+          "en": "In August they will have lived here for ten years.",
+          "cz": "V srpnu tu budou bydlet deset let.",
+          "gap": "In August they ____ here for ten years. (live)",
+          "gap_answer": "will have lived",
+          "quiz_options": [
+            "will have lived",
+            "have lived",
+            "will be living",
+            "had lived"
+          ],
+          "accepts": [
+            "In August they will have lived here for ten years.",
+            "In August they'll have lived here for ten years."
+          ],
+          "explanation": "Counting up to a future point → **will have lived** for ten years.",
+          "explanation_cz": "Počítáš k budoucímu bodu → **will have lived** for ten years.",
+          "wrong": "In August they will have live here for ten years.",
+          "gap_accepts": [
+            "will have lived",
+            "'ll have lived"
+          ]
+        },
+        {
+          "en": "Will you have read it by Monday?",
+          "cz": "Přečteš to do pondělí?",
+          "gap": "____ it by Monday? (you / read)",
+          "gap_answer": "Will you have read",
+          "quiz_options": [
+            "Will you have read",
+            "Have you read",
+            "Will you reading",
+            "Do you have read"
+          ],
+          "accepts": [
+            "Will you have read it by Monday?",
+            "Will you've read it by Monday?"
+          ],
+          "explanation": "Question order: **Will** + you + have read. Monday is the deadline.",
+          "explanation_cz": "Pořádek v otázce: **Will** + you + have read. Pondělí je termín.",
+          "wrong": "Will you have readed it by Monday?"
+        },
+        {
+          "en": "I will call you as soon as I get there.",
+          "cz": "Zavolám ti, jakmile tam dorazím.",
+          "gap": "I will call you as soon as I ____ there. (get)",
+          "gap_answer": "get",
+          "quiz_options": [
+            "get",
+            "will get",
+            "am getting",
+            "got"
+          ],
+          "accepts": [
+            "I will call you as soon as I get there.",
+            "I'll call you as soon as I get there."
+          ],
+          "explanation": "After **as soon as** English keeps the present, even about the future → get.",
+          "explanation_cz": "Po **as soon as** zůstává angličtina v přítomném čase → get.",
+          "wrong": "I will call you as soon as I will get there."
+        },
+        {
+          "en": "We will wait until the rain stops.",
+          "cz": "Počkáme, dokud déšť nepřestane.",
+          "gap": "We will wait until the rain ____. (stop)",
+          "gap_answer": "stops",
+          "quiz_options": [
+            "stops",
+            "will stop",
+            "is stopping",
+            "stopped"
+          ],
+          "accepts": [
+            "We will wait until the rain stops.",
+            "We'll wait until the rain stops."
+          ],
+          "explanation": "After **until** the verb stays present → stops. The future is already marked once.",
+          "explanation_cz": "Po **until** zůstává sloveso v přítomném čase → stops. Budoucnost je značená jednou.",
+          "wrong": "We will wait until the rain will stop."
+        },
+        {
+          "en": "Send me a message when you arrive.",
+          "cz": "Napiš mi, až dorazíš.",
+          "gap": "Send me a message when you ____. (arrive)",
+          "gap_answer": "arrive",
+          "quiz_options": [
+            "arrive",
+            "will arrive",
+            "are arriving",
+            "arrived"
+          ],
+          "accepts": [
+            "Send me a message when you arrive."
+          ],
+          "explanation": "A time clause takes the present → **arrive**, however future the meaning is.",
+          "explanation_cz": "Časová věta má přítomný čas → **arrive**, ať je význam jakkoli budoucí.",
+          "wrong": "Send me a message when you will arrive."
+        }
+      ]
     }
   ],
-  "codex_unit": "G_VP-B1B2-01"
+  "codex_unit": "G_VP-B1B2-01",
+  "quality": "draft",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "Decided as you speak",
+    "Decided before now",
+    "Running at that moment"
+  ],
+  "bin_captions": {
+    "Decided as you speak": "you choose while you are speaking",
+    "Decided before now": "the plan or the booking already existed",
+    "Running at that moment": "in progress at that future time"
+  },
+  "sort_cz": false,
+  "intro": {
+    "cards": [
+      {
+        "title": "Future forms",
+        "title_cz": "Budoucí tvary",
+        "svg": "<svg viewBox=\"0 0 540 260\" xmlns=\"http://www.w3.org/2000/svg\">\n  <line x1=\"30\" y1=\"200\" x2=\"510\" y2=\"200\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"510,200 500,195 500,205\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"110\" y1=\"40\" x2=\"110\" y2=\"216\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"110\" y=\"32\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <text x=\"30\" y=\"232\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">past</text>\n  <text x=\"300\" y=\"232\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">everything below happens to the right of now</text>\n  <circle cx=\"190\" cy=\"200\" r=\"7\" fill=\"var(--text, #eaeaea)\"/>\n  <line x1=\"190\" y1=\"160\" x2=\"190\" y2=\"200\" stroke=\"var(--text, #eaeaea)\" stroke-width=\"1\"/>\n  <text x=\"190\" y=\"152\" font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">I will carry it</text>\n  <text x=\"190\" y=\"136\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">a point in the future</text>\n  <rect x=\"270\" y=\"88\" width=\"140\" height=\"20\" rx=\"10\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"340\" y=\"102\" font-size=\"12\" fill=\"var(--bg, #14161a)\" text-anchor=\"middle\">I will be sitting</text>\n  <line x1=\"340\" y1=\"108\" x2=\"340\" y2=\"200\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/>\n  <circle cx=\"340\" cy=\"200\" r=\"5\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"340\" y=\"80\" font-size=\"11\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">running through this time tomorrow</text>\n  <circle cx=\"440\" cy=\"200\" r=\"7\" fill=\"var(--text, #eaeaea)\"/>\n  <line x1=\"480\" y1=\"160\" x2=\"480\" y2=\"216\" stroke=\"var(--text, #eaeaea)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/>\n  <text x=\"480\" y=\"152\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">by Friday</text>\n  <text x=\"440\" y=\"176\" font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">I will have finished</text>\n  <text x=\"440\" y=\"252\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">done before the deadline</text>\n</svg>",
+        "points": [
+          "English has no one future tense. It has several forms, and each says something extra.",
+          "The form you pick says **how** you know: a decision, a plan, a schedule, a guess.",
+          "Czech has one future, so the choice has to come from the situation, not the translation."
+        ],
+        "table": {
+          "headers": [
+            "Form",
+            "What it adds"
+          ],
+          "rows": [
+            [
+              "**will** + verb",
+              "you decide as you speak, or you predict"
+            ],
+            [
+              "**going to** + verb",
+              "the plan already existed, or you can see it coming"
+            ],
+            [
+              "present continuous",
+              "a fixed arrangement, with a time"
+            ],
+            [
+              "present simple",
+              "a timetable somebody else set"
+            ],
+            [
+              "**will be** + -ing",
+              "running through a moment in the future"
+            ],
+            [
+              "**will have** + past participle",
+              "finished before a deadline"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Decided now, or decided already?",
+        "title_cz": "Rozhodnuto teď, nebo už dřív?",
+        "table": {
+          "headers": [
+            "The stem tells you",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "you offer or decide on the spot",
+              "**will**",
+              "That looks heavy. I **will** carry it for you."
+            ],
+            [
+              "the plan was made earlier",
+              "**going to**",
+              "We are **going to** paint the kitchen this summer."
+            ],
+            [
+              "you can see it coming",
+              "**going to**",
+              "Slow down — you are **going to** hit that post!"
+            ],
+            [
+              "a guess with no evidence",
+              "**will**",
+              "Perhaps she **will** change her mind."
+            ]
+          ]
+        },
+        "points": [
+          "Nothing in the Czech picks between these two. The words around the gap do.",
+          "**Look at…** and **Slow down…** are evidence you can point at."
+        ]
+      },
+      {
+        "title": "Arrangements and timetables",
+        "title_cz": "Domluvené schůzky a jízdní řády",
+        "table": {
+          "headers": [
+            "Who fixed it",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "you and another person",
+              "present continuous",
+              "I **am meeting** the dentist at four on Thursday."
+            ],
+            [
+              "an organisation",
+              "present simple",
+              "The train **leaves** at 6:40 from platform three."
+            ],
+            [
+              "nobody yet",
+              "**will**",
+              "Perhaps she **will** change her mind."
+            ]
+          ]
+        },
+        "points": [
+          "An arrangement has a time and usually a place — that is the test.",
+          "A timetable belongs to a company, a school, a cinema. You cannot change it."
+        ]
+      },
+      {
+        "title": "Running through a future moment",
+        "title_cz": "Bude to zrovna probíhat",
+        "table": {
+          "headers": [
+            "Shape",
+            "Job",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**will be** + -ing",
+              "in progress at that moment",
+              "This time tomorrow I **will be** sitting on a beach."
+            ],
+            [
+              "**will have** + past participle",
+              "over before that moment",
+              "By Friday I **will have** finished the report."
+            ],
+            [
+              "the moment",
+              "the point you measure from",
+              "This time tomorrow · at midnight · by Friday"
+            ]
+          ]
+        },
+        "points": [
+          "**will be** + -ing is the future twin of *was working* — a bar, not a dot.",
+          "**will have** + past participle is the future twin of *had finished*."
+        ]
+      },
+      {
+        "title": "After when, until, as soon as",
+        "title_cz": "Po when, until, as soon as",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~I will call you as soon as I will get there.~~",
+              "I will call you as soon as I **get** there."
+            ],
+            [
+              "~~We will wait until the rain will stop.~~",
+              "We will wait until the rain **stops**."
+            ],
+            [
+              "~~Send me a message when you will arrive.~~",
+              "Send me a message when you **arrive**."
+            ]
+          ]
+        },
+        "points": [
+          "English marks the future once. The time clause stays in the present.",
+          "Czech marks it twice, which is why this one has to be learned by hand."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~I will to carry it for you.~~",
+              "I **will** carry it for you."
+            ],
+            [
+              "~~It is going rain.~~",
+              "It is **going to** rain."
+            ],
+            [
+              "~~Will you working when I arrive?~~",
+              "**Will** you **be** working when I arrive?"
+            ],
+            [
+              "~~The museum will open at ten on Sundays.~~",
+              "The museum **opens** at ten on Sundays."
+            ]
+          ]
+        },
+        "points": [
+          "**will** takes the plain verb — no to.",
+          "**going to** keeps its to: going **to** rain."
+        ]
+      }
+    ]
+  }
 }
