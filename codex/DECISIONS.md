@@ -238,6 +238,23 @@ accommodation, cancel, check in, deposit, get lost, insurance, transfer (travel 
 **Options:** a) queue it on REPAIR-QUEUE.md for an interactive sitting / b) let a drafting run fix it in passing / c) leave it.
 **Default if unanswered:** a — flagged here, not touched. It is already on the repair list for being 72 items and over band, and the same sitting can close the accepts. A drafting run rewriting a live unit's accepts unattended is how a good bank gets quietly damaged; Mixed conditionals generates its accepts as a full contraction closure instead, and lints at 0 EXACT.
 
+### b2_mixed_conditionals · Open Cloze tagging was skipped on the first grammar unit
+**Q (for the tidy-up, not blocking):** `FCE-EXERCISES.md` says to retrofit
+`gap_class` into grammar units being drafted anyway. The home lane drafted
+`b2_mixed_conditionals` (35 items, gates clean) and tagged **zero** of them.
+Nothing is broken — `gap_class` is authoring metadata the engine does not branch
+on — but at this rate a level of grammar units arrives untagged and needs a
+retro pass.
+**Options:** a) tighten HOME-LANE.md so tagging is a numbered step in the
+per-iteration checklist, not a bullet in a side section / b) leave it and do one
+tagging sweep over all B2 grammar at the end / c) drop `gap_class` as not worth
+the authoring cost.
+**Default if unanswered:** a — the instruction is buried in a long file and the
+lane is anchored on the vocab-leaf recipe it keeps repeating. Cheapest fix, and
+a `git pull` on the home machine picks it up next iteration without a restart.
+→ (James: your answer here)
+
+
 ---
 
 ## Answered
