@@ -3,16 +3,1032 @@
   "title": "Mixed conditionals",
   "level": "B2",
   "tree_node": "b2_mixed_conditionals",
+  "codex_unit": "G_CL-B1B2-01",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty stub. 35 items, inside the 24-40 band. C57: card 1 recaps Second and Third conditional, the two units this one crosses. The teaching point is the TIME MISMATCH, so the unit is built as two named shapes with their own blocks — past cause -> present result (15) and present cause -> past result (14) — rather than one undifferentiated bank. Both halves are drilled: block 1 gaps the result auxiliary on eleven items and the if-half `had` on four, so the student cannot pass by always typing the same word. D1 is respected deliberately: every item carries its OWN explanation naming its own words and why the time is where it is. The live b2_third_conditional pastes one string across dozens of items and is on the repair queue for exactly that; this unit does not clone the fault. Distractors stay on the axis (B6) and the unit's own error — would have where would belongs, and vice versa — is on the board (B4). A5: `were` and `was` both accepted throughout the second-conditional half; A8 contractions accepted in every `accepts` list. Use is error-correction (E7), each prompt carrying one real error (E2): the would-have/would swap, `had took`, and `would` inside the if-clause, which is the commonest Czech-learner error in conditionals. KEY WORD TRANSFORMATION: this unit is on the KWT-native table in codex/FCE-EXERCISES.md, but KWT needs a js/ branch that is interactive/James-only under P-engine, so the Use stage here is ordinary error-correction and the KWT question is logged in DECISIONS.md.",
+  "intro": {
+    "cards": [
+      {
+        "title": "Mixed conditionals",
+        "title_cz": "Smíšené kondicionály",
+        "points": [
+          "One half is in the **past**, the other half is in the **present**.",
+          "Fact: I didn't study medicine, so I am not a doctor.",
+          "Unreal: If I **had studied** medicine, I **would be** a doctor now.",
+          "The two halves do not have to sit in the same time."
+        ],
+        "table": {
+          "headers": [
+            "What really happened",
+            "The unreal version"
+          ],
+          "rows": [
+            [
+              "I didn't study medicine. I am not a doctor.",
+              "If I **had studied** medicine, I **would be** a doctor now."
+            ],
+            [
+              "I am not organised. I missed the flight.",
+              "If I **were** more organised, I would not **have missed** the flight."
+            ],
+            [
+              "She didn't take the job. She lives here.",
+              "If she **had taken** that job, she **would live** in Berlin today."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — druhý a třetí kondicionál",
+        "text_first": true,
+        "points": [
+          "**Second conditional** keeps both halves in the present or future.",
+          "**Third conditional** keeps both halves in the closed past.",
+          "A mixed conditional takes one half from **each**."
+        ],
+        "table": {
+          "headers": [
+            "Unit",
+            "If half",
+            "Result half"
+          ],
+          "rows": [
+            [
+              "Second conditional",
+              "If I **had** more time,",
+              "I **would** learn Spanish."
+            ],
+            [
+              "Third conditional",
+              "If I **had had** more time,",
+              "I **would have** learned Spanish."
+            ],
+            [
+              "Mixed · past to present",
+              "If I **had learned** Spanish,",
+              "I **would speak** it now."
+            ],
+            [
+              "Mixed · present to past",
+              "If I **were** braver,",
+              "I **would have** spoken."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Past cause, present result",
+        "title_cz": "Minulá příčina, přítomný výsledek",
+        "text_first": true,
+        "points": [
+          "The **if** half is the closed past: **had** + past participle.",
+          "The result half is **now**: **would** + verb — never *would have*.",
+          "Look for *now*, *today*, *by now*, *already*."
+        ],
+        "table": {
+          "headers": [
+            "If half · past",
+            "Result half · now"
+          ],
+          "rows": [
+            [
+              "If I **had studied** medicine,",
+              "I **would be** a doctor now."
+            ],
+            [
+              "If she **had taken** that job,",
+              "she **would live** in Berlin today."
+            ],
+            [
+              "If we **had left** on time,",
+              "we **would be** at home by now."
+            ],
+            [
+              "If he **had gone** to bed earlier,",
+              "he would **not be** so tired."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Present cause, past result",
+        "title_cz": "Přítomná příčina, minulý výsledek",
+        "text_first": true,
+        "points": [
+          "The **if** half is a standing fact about now: **were**, **had**, or past simple.",
+          "The result half is one finished event: **would have** + past participle.",
+          "*were* and *was* are both heard in this half."
+        ],
+        "table": {
+          "headers": [
+            "If half · now",
+            "Result half · past"
+          ],
+          "rows": [
+            [
+              "If I **were** more organised,",
+              "I would not **have missed** the flight."
+            ],
+            [
+              "If he **were** a better driver,",
+              "he would not **have crashed**."
+            ],
+            [
+              "If I **spoke** Czech,",
+              "I would **have understood** the film."
+            ],
+            [
+              "If we **lived** closer,",
+              "we would **have visited** you last week."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "*Would* never appears in the **if** half — in any conditional."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~If I would study medicine…~~",
+              "If I **had studied** medicine…"
+            ],
+            [
+              "~~…I would have been a doctor now~~",
+              "…I **would be** a doctor now"
+            ],
+            [
+              "~~If she had took that job~~",
+              "If she **had taken** that job"
+            ],
+            [
+              "~~…I would not miss the flight~~",
+              "…I would not **have missed** the flight"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_mixed_conditionals_past_present",
+      "title": "Past cause, present result",
+      "items": [
+        {
+          "en": "If I had studied medicine, I would be a doctor now.",
+          "cz": "Kdybych studoval medicínu, byl bych teď doktor.",
+          "gap": "If I had studied medicine, I ____ be a doctor now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If I'd studied medicine, I'd be a doctor now.",
+            "If I had studied medicine, I'd be a doctor now.",
+            "If I'd studied medicine, I had be a doctor now.",
+            "If I had studied medicine, I had be a doctor now.",
+            "If I would studied medicine, I'd be a doctor now.",
+            "If I'd studied medicine, I would be a doctor now.",
+            "If I had studied medicine, I would be a doctor now.",
+            "If I would studied medicine, I had be a doctor now.",
+            "If I would studied medicine, I would be a doctor now."
+          ],
+          "explanation": "The studying is closed past, but *being a doctor* is **now** — so the result is **would be**, not *would have been*.",
+          "explanation_cz": "Studium je uzavřená minulost, ale *být doktor* je **teď** — proto **would be**, ne *would have been*.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If she had taken that job, she would live in Berlin today.",
+          "cz": "Kdyby vzala tu práci, bydlela by dnes v Berlíně.",
+          "gap": "If she had taken that job, she ____ live in Berlin today.",
+          "gap_answer": "would",
+          "accepts": [
+            "If she'd taken that job, she'd live in Berlin today.",
+            "If she had taken that job, she'd live in Berlin today.",
+            "If she'd taken that job, she had live in Berlin today.",
+            "If she had taken that job, she had live in Berlin today.",
+            "If she would taken that job, she'd live in Berlin today.",
+            "If she'd taken that job, she would live in Berlin today.",
+            "If she had taken that job, she would live in Berlin today.",
+            "If she would taken that job, she had live in Berlin today.",
+            "If she would taken that job, she would live in Berlin today."
+          ],
+          "explanation": "*Today* pins the result to the present: **would live**. The decision itself is past — *had taken*.",
+          "explanation_cz": "*Today* přišpendlí výsledek k přítomnosti: **would live**. Samotné rozhodnutí je minulé — *had taken*.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If they had saved more, they would be rich now.",
+          "cz": "Kdyby víc šetřili, byli by teď bohatí.",
+          "gap": "If they had saved more, they ____ be rich now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If they'd saved more, they'd be rich now.",
+            "If they had saved more, they'd be rich now.",
+            "If they'd saved more, they had be rich now.",
+            "If they had saved more, they had be rich now.",
+            "If they would saved more, they'd be rich now.",
+            "If they'd saved more, they would be rich now.",
+            "If they had saved more, they would be rich now.",
+            "If they would saved more, they had be rich now.",
+            "If they would saved more, they would be rich now."
+          ],
+          "explanation": "*Now* is the clue. Being rich is a present state — **would be**.",
+          "explanation_cz": "*Now* je vodítko. Být bohatý je přítomný stav — **would be**.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If he had not missed the train, he would be here already.",
+          "cz": "Kdyby nezmeškal vlak, už by tu byl.",
+          "gap": "If he had not missed the train, he ____ be here already.",
+          "gap_answer": "would",
+          "accepts": [
+            "If he'd not missed the train, he'd be here already.",
+            "If he hadn't missed the train, he'd be here already.",
+            "If he had not missed the train, he'd be here already.",
+            "If he'd not missed the train, he had be here already.",
+            "If he hadn't missed the train, he had be here already.",
+            "If he wouldn't missed the train, he'd be here already.",
+            "If he had not missed the train, he had be here already.",
+            "If he would not missed the train, he'd be here already.",
+            "If he'd not missed the train, he would be here already.",
+            "If he hadn't missed the train, he would be here already.",
+            "If he wouldn't missed the train, he had be here already.",
+            "If he had not missed the train, he would be here already.",
+            "If he would not missed the train, he had be here already.",
+            "If he wouldn't missed the train, he would be here already.",
+            "If he would not missed the train, he would be here already."
+          ],
+          "explanation": "Missing the train is finished; *being here* is the situation right now — **would be**.",
+          "explanation_cz": "Zmeškání vlaku je hotové; *být tady* je situace právě teď — **would be**.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If I had learned English earlier, I would speak it better now.",
+          "cz": "Kdybych se učil anglicky dřív, mluvil bych teď líp.",
+          "gap": "If I had learned English earlier, I ____ speak it better now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If I'd learned English earlier, I'd speak it better now.",
+            "If I had learned English earlier, I'd speak it better now.",
+            "If I'd learned English earlier, I had speak it better now.",
+            "If I had learned English earlier, I had speak it better now.",
+            "If I would learned English earlier, I'd speak it better now.",
+            "If I'd learned English earlier, I would speak it better now.",
+            "If I had learned English earlier, I would speak it better now.",
+            "If I would learned English earlier, I had speak it better now.",
+            "If I would learned English earlier, I would speak it better now."
+          ],
+          "explanation": "The learning is past, the speaking is a present ability — **would speak**.",
+          "explanation_cz": "Učení je minulé, mluvení je přítomná schopnost — **would speak**.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If we had left on time, we would be at home by now.",
+          "cz": "Kdybychom vyrazili včas, byli bychom už doma.",
+          "gap": "If we had left on time, we ____ be at home by now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If we'd left on time, we'd be at home by now.",
+            "If we had left on time, we'd be at home by now.",
+            "If we'd left on time, we had be at home by now.",
+            "If we had left on time, we had be at home by now.",
+            "If we would left on time, we'd be at home by now.",
+            "If we'd left on time, we would be at home by now.",
+            "If we had left on time, we would be at home by now.",
+            "If we would left on time, we had be at home by now.",
+            "If we would left on time, we would be at home by now."
+          ],
+          "explanation": "*By now* points at the present moment — **would be**, not *would have been*.",
+          "explanation_cz": "*By now* míří na přítomný okamžik — **would be**, ne *would have been*.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If you had told me, I would know what to do.",
+          "cz": "Kdybys mi to řekl, věděl bych, co dělat.",
+          "gap": "If you had told me, I ____ know what to do.",
+          "gap_answer": "would",
+          "accepts": [
+            "If you'd told me, I'd know what to do.",
+            "If you had told me, I'd know what to do.",
+            "If you'd told me, I had know what to do.",
+            "If you had told me, I had know what to do.",
+            "If you would told me, I'd know what to do.",
+            "If you'd told me, I would know what to do.",
+            "If you had told me, I would know what to do.",
+            "If you would told me, I had know what to do.",
+            "If you would told me, I would know what to do."
+          ],
+          "explanation": "*Know* is a present state — **would know**. The telling is the closed past half.",
+          "explanation_cz": "*Know* je přítomný stav — **would know**. Řeknutí je ta uzavřená minulá půlka.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If he had accepted the offer, he would work in London now.",
+          "cz": "Kdyby přijal tu nabídku, pracoval by teď v Londýně.",
+          "gap": "If he had accepted the offer, he ____ work in London now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If he'd accepted the offer, he'd work in London now.",
+            "If he had accepted the offer, he'd work in London now.",
+            "If he'd accepted the offer, he had work in London now.",
+            "If he had accepted the offer, he had work in London now.",
+            "If he would accepted the offer, he'd work in London now.",
+            "If he'd accepted the offer, he would work in London now.",
+            "If he had accepted the offer, he would work in London now.",
+            "If he would accepted the offer, he had work in London now.",
+            "If he would accepted the offer, he would work in London now."
+          ],
+          "explanation": "Accepting was a past moment; working there would be his life **now** — **would work**.",
+          "explanation_cz": "Přijetí byl minulý okamžik; pracovat tam by byl jeho život **teď** — **would work**.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If I had not eaten so much, I would feel better now.",
+          "cz": "Kdybych tolik nesnědl, cítil bych se teď líp.",
+          "gap": "If I had not eaten so much, I ____ feel better now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If I'd not eaten so much, I'd feel better now.",
+            "If I hadn't eaten so much, I'd feel better now.",
+            "If I had not eaten so much, I'd feel better now.",
+            "If I'd not eaten so much, I had feel better now.",
+            "If I hadn't eaten so much, I had feel better now.",
+            "If I wouldn't eaten so much, I'd feel better now.",
+            "If I had not eaten so much, I had feel better now.",
+            "If I would not eaten so much, I'd feel better now.",
+            "If I'd not eaten so much, I would feel better now.",
+            "If I hadn't eaten so much, I would feel better now.",
+            "If I wouldn't eaten so much, I had feel better now.",
+            "If I had not eaten so much, I would feel better now.",
+            "If I would not eaten so much, I had feel better now.",
+            "If I wouldn't eaten so much, I would feel better now.",
+            "If I would not eaten so much, I would feel better now."
+          ],
+          "explanation": "The eating is over; *feeling better* is how you would be right now — **would feel**.",
+          "explanation_cz": "Jídlo je pryč; *cítit se líp* je to, jak by ti bylo právě teď — **would feel**.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If she had chosen a different school, she would be happier.",
+          "cz": "Kdyby si vybrala jinou školu, byla by šťastnější.",
+          "gap": "If she had chosen a different school, she ____ be happier.",
+          "gap_answer": "would",
+          "accepts": [
+            "If she'd chosen a different school, she'd be happier.",
+            "If she had chosen a different school, she'd be happier.",
+            "If she'd chosen a different school, she had be happier.",
+            "If she had chosen a different school, she had be happier.",
+            "If she would chosen a different school, she'd be happier.",
+            "If she'd chosen a different school, she would be happier.",
+            "If she had chosen a different school, she would be happier.",
+            "If she would chosen a different school, she had be happier.",
+            "If she would chosen a different school, she would be happier."
+          ],
+          "explanation": "Being happier is a state she is in or not **today** — **would be**.",
+          "explanation_cz": "Být šťastnější je stav, ve kterém **dnes** je nebo není — **would be**.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If we had started earlier, we would be finished by now.",
+          "cz": "Kdybychom začali dřív, už bychom byli hotoví.",
+          "gap": "If we had started earlier, we ____ be finished by now.",
+          "gap_answer": "would",
+          "accepts": [
+            "If we'd started earlier, we'd be finished by now.",
+            "If we had started earlier, we'd be finished by now.",
+            "If we'd started earlier, we had be finished by now.",
+            "If we had started earlier, we had be finished by now.",
+            "If we would started earlier, we'd be finished by now.",
+            "If we'd started earlier, we would be finished by now.",
+            "If we had started earlier, we would be finished by now.",
+            "If we would started earlier, we had be finished by now.",
+            "If we would started earlier, we would be finished by now."
+          ],
+          "explanation": "*By now* is the present. **would be finished** describes the state you are not in.",
+          "explanation_cz": "*By now* je přítomnost. **would be finished** popisuje stav, ve kterém nejsi.",
+          "quiz_options": [
+            "would",
+            "would have",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If I had studied harder, I would have a better job now.",
+          "cz": "Kdybych se učil víc, měl bych teď lepší práci.",
+          "gap": "If I ____ studied harder, I would have a better job now.",
+          "gap_answer": "had",
+          "accepts": [
+            "If I'd studied harder, I'd have a better job now.",
+            "If I had studied harder, I'd have a better job now.",
+            "If I'd studied harder, I had have a better job now.",
+            "If I had studied harder, I had have a better job now.",
+            "If I would studied harder, I'd have a better job now.",
+            "If I'd studied harder, I would have a better job now.",
+            "If I had studied harder, I would have a better job now.",
+            "If I would studied harder, I had have a better job now.",
+            "If I would studied harder, I would have a better job now."
+          ],
+          "explanation": "The unreal past half always takes **had** + past participle — *had studied*.",
+          "explanation_cz": "Neskutečná minulá půlka má vždy **had** + příčestí minulé — *had studied*.",
+          "quiz_options": [
+            "had",
+            "would",
+            "have",
+            "would have"
+          ]
+        },
+        {
+          "en": "If she had listened to me, she would not be in trouble now.",
+          "cz": "Kdyby mě poslechla, neměla by teď problémy.",
+          "gap": "If she ____ listened to me, she would not be in trouble now.",
+          "gap_answer": "had",
+          "accepts": [
+            "If she'd listened to me, she'd not be in trouble now.",
+            "If she'd listened to me, she hadn't be in trouble now.",
+            "If she had listened to me, she'd not be in trouble now.",
+            "If she'd listened to me, she had not be in trouble now.",
+            "If she had listened to me, she hadn't be in trouble now.",
+            "If she'd listened to me, she wouldn't be in trouble now.",
+            "If she had listened to me, she had not be in trouble now.",
+            "If she would listened to me, she'd not be in trouble now.",
+            "If she'd listened to me, she would not be in trouble now.",
+            "If she had listened to me, she wouldn't be in trouble now.",
+            "If she would listened to me, she hadn't be in trouble now.",
+            "If she had listened to me, she would not be in trouble now.",
+            "If she would listened to me, she had not be in trouble now.",
+            "If she would listened to me, she wouldn't be in trouble now.",
+            "If she would listened to me, she would not be in trouble now."
+          ],
+          "explanation": "*If she had listened* — **had** + listened. The result half stays in the present: *would not be*.",
+          "explanation_cz": "*If she had listened* — **had** + listened. Výsledek zůstává v přítomnosti: *would not be*.",
+          "quiz_options": [
+            "had",
+            "would",
+            "have",
+            "would have"
+          ]
+        },
+        {
+          "en": "If they had booked earlier, they would have a better room.",
+          "cz": "Kdyby rezervovali dřív, měli by lepší pokoj.",
+          "gap": "If they ____ booked earlier, they would have a better room.",
+          "gap_answer": "had",
+          "accepts": [
+            "If they'd booked earlier, they'd have a better room.",
+            "If they had booked earlier, they'd have a better room.",
+            "If they'd booked earlier, they had have a better room.",
+            "If they had booked earlier, they had have a better room.",
+            "If they would booked earlier, they'd have a better room.",
+            "If they'd booked earlier, they would have a better room.",
+            "If they had booked earlier, they would have a better room.",
+            "If they would booked earlier, they had have a better room.",
+            "If they would booked earlier, they would have a better room."
+          ],
+          "explanation": "**had** booked, because the booking is the closed past half of the sentence.",
+          "explanation_cz": "**had** booked, protože rezervace je uzavřená minulá půlka věty.",
+          "quiz_options": [
+            "had",
+            "would",
+            "have",
+            "would have"
+          ]
+        },
+        {
+          "en": "If he had gone to bed earlier, he would not be so tired.",
+          "cz": "Kdyby šel spát dřív, nebyl by tak unavený.",
+          "gap": "If he ____ gone to bed earlier, he would not be so tired.",
+          "gap_answer": "had",
+          "accepts": [
+            "If he'd gone to bed earlier, he'd not be so tired.",
+            "If he'd gone to bed earlier, he hadn't be so tired.",
+            "If he had gone to bed earlier, he'd not be so tired.",
+            "If he'd gone to bed earlier, he had not be so tired.",
+            "If he had gone to bed earlier, he hadn't be so tired.",
+            "If he'd gone to bed earlier, he wouldn't be so tired.",
+            "If he had gone to bed earlier, he had not be so tired.",
+            "If he would gone to bed earlier, he'd not be so tired.",
+            "If he'd gone to bed earlier, he would not be so tired.",
+            "If he had gone to bed earlier, he wouldn't be so tired.",
+            "If he would gone to bed earlier, he hadn't be so tired.",
+            "If he had gone to bed earlier, he would not be so tired.",
+            "If he would gone to bed earlier, he had not be so tired.",
+            "If he would gone to bed earlier, he wouldn't be so tired.",
+            "If he would gone to bed earlier, he would not be so tired."
+          ],
+          "explanation": "**had** gone. Being tired is now, so the second half is *would not be*.",
+          "explanation_cz": "**had** gone. Únava je teď, takže druhá půlka je *would not be*.",
+          "quiz_options": [
+            "had",
+            "would",
+            "have",
+            "would have"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_mixed_conditionals_present_past",
+      "title": "Present cause, past result",
+      "items": [
+        {
+          "en": "If I were more organised, I would not have missed the flight.",
+          "cz": "Kdybych byl organizovanější, nezmeškal bych ten let.",
+          "gap": "If I were more organised, I ____ have missed the flight.",
+          "gap_answer": "would not",
+          "accepts": [
+            "If I were more organised, I'd not have missed the flight.",
+            "If I were more organised, I hadn't have missed the flight.",
+            "If I were more organised, I had not have missed the flight.",
+            "If I were more organised, I wouldn't have missed the flight.",
+            "If I were more organised, I would not have missed the flight.",
+            "If I was more organised, I'd not have missed the flight.",
+            "If I was more organised, I hadn't have missed the flight.",
+            "If I was more organised, I had not have missed the flight.",
+            "If I was more organised, I wouldn't have missed the flight.",
+            "If I was more organised, I would not have missed the flight."
+          ],
+          "explanation": "Being organised is how I am **generally**; missing the flight is one **past** event — **would not have missed**.",
+          "explanation_cz": "Být organizovaný je, jaký **obecně** jsem; zmeškaný let je jedna **minulá** událost — **would not have missed**.",
+          "quiz_options": [
+            "would not",
+            "will not",
+            "had not",
+            "would not have"
+          ]
+        },
+        {
+          "en": "If he were a better driver, he would not have crashed the car.",
+          "cz": "Kdyby byl lepší řidič, nenaboural by to auto.",
+          "gap": "If he ____ a better driver, he would not have crashed the car.",
+          "gap_answer": "were",
+          "accepts": [
+            "If he were a better driver, he'd not have crashed the car.",
+            "If he were a better driver, he hadn't have crashed the car.",
+            "If he were a better driver, he had not have crashed the car.",
+            "If he were a better driver, he wouldn't have crashed the car.",
+            "If he were a better driver, he would not have crashed the car.",
+            "If he was a better driver, he'd not have crashed the car.",
+            "If he was a better driver, he hadn't have crashed the car.",
+            "If he was a better driver, he had not have crashed the car.",
+            "If he was a better driver, he wouldn't have crashed the car.",
+            "If he was a better driver, he would not have crashed the car."
+          ],
+          "explanation": "**were** — a permanent quality, in the present. Both *were* and *was* are heard here.",
+          "explanation_cz": "**were** — trvalá vlastnost, v přítomnosti. Slyší se tu *were* i *was*.",
+          "quiz_options": [
+            "were",
+            "had been",
+            "would be",
+            "am"
+          ]
+        },
+        {
+          "en": "If she were not so shy, she would have spoken at the meeting.",
+          "cz": "Kdyby nebyla tak stydlivá, promluvila by na té schůzi.",
+          "gap": "If she were not so shy, she ____ have spoken at the meeting.",
+          "gap_answer": "would",
+          "accepts": [
+            "If she weren't so shy, she'd have spoken at the meeting.",
+            "If she were not so shy, she'd have spoken at the meeting.",
+            "If she weren't so shy, she had have spoken at the meeting.",
+            "If she were not so shy, she had have spoken at the meeting.",
+            "If she weren't so shy, she would have spoken at the meeting.",
+            "If she were not so shy, she would have spoken at the meeting.",
+            "If she wasn't so shy, she'd have spoken at the meeting.",
+            "If she was not so shy, she'd have spoken at the meeting.",
+            "If she wasn't so shy, she had have spoken at the meeting.",
+            "If she was not so shy, she had have spoken at the meeting.",
+            "If she wasn't so shy, she would have spoken at the meeting.",
+            "If she was not so shy, she would have spoken at the meeting."
+          ],
+          "explanation": "Shyness is what she is like now; the meeting is over — **would have spoken**.",
+          "explanation_cz": "Stydlivost je, jaká je teď; schůze je pryč — **would have spoken**.",
+          "quiz_options": [
+            "would",
+            "would be",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If I were taller, I would have played basketball at school.",
+          "cz": "Kdybych byl vyšší, hrál bych ve škole basketbal.",
+          "gap": "If I ____ taller, I would have played basketball at school.",
+          "gap_answer": "were",
+          "accepts": [
+            "If I were taller, I'd have played basketball at school.",
+            "If I were taller, I had have played basketball at school.",
+            "If I were taller, I would have played basketball at school.",
+            "If I was taller, I'd have played basketball at school.",
+            "If I was taller, I had have played basketball at school.",
+            "If I was taller, I would have played basketball at school."
+          ],
+          "explanation": "**were** taller — a fact about me that has not changed. The playing is finished past.",
+          "explanation_cz": "**were** taller — fakt o mně, který se nezměnil. Hraní je uzavřená minulost.",
+          "quiz_options": [
+            "were",
+            "had been",
+            "would be",
+            "am"
+          ]
+        },
+        {
+          "en": "If they were more careful, they would not have made that mistake.",
+          "cz": "Kdyby byli opatrnější, tu chybu by neudělali.",
+          "gap": "If they were more careful, they ____ have made that mistake.",
+          "gap_answer": "would not",
+          "accepts": [
+            "If they were more careful, they'd not have made that mistake.",
+            "If they were more careful, they hadn't have made that mistake.",
+            "If they were more careful, they had not have made that mistake.",
+            "If they were more careful, they wouldn't have made that mistake.",
+            "If they were more careful, they would not have made that mistake."
+          ],
+          "explanation": "Their carefulness is a present habit; the mistake is one past act — **would not have made**.",
+          "explanation_cz": "Jejich opatrnost je přítomný zvyk; chyba je jeden minulý čin — **would not have made**.",
+          "quiz_options": [
+            "would not",
+            "will not",
+            "had not",
+            "would not have"
+          ]
+        },
+        {
+          "en": "If he were not so lazy, he would have finished the work.",
+          "cz": "Kdyby nebyl tak líný, tu práci by dodělal.",
+          "gap": "If he ____ not so lazy, he would have finished the work.",
+          "gap_answer": "were",
+          "accepts": [
+            "If he weren't so lazy, he'd have finished the work.",
+            "If he were not so lazy, he'd have finished the work.",
+            "If he weren't so lazy, he had have finished the work.",
+            "If he were not so lazy, he had have finished the work.",
+            "If he weren't so lazy, he would have finished the work.",
+            "If he were not so lazy, he would have finished the work.",
+            "If he wasn't so lazy, he'd have finished the work.",
+            "If he was not so lazy, he'd have finished the work.",
+            "If he wasn't so lazy, he had have finished the work.",
+            "If he was not so lazy, he had have finished the work.",
+            "If he wasn't so lazy, he would have finished the work.",
+            "If he was not so lazy, he would have finished the work."
+          ],
+          "explanation": "**were** not so lazy — a standing quality. The work was a past job.",
+          "explanation_cz": "**were** not so lazy — trvalá vlastnost. Práce byla minulý úkol.",
+          "quiz_options": [
+            "were",
+            "had been",
+            "would be",
+            "am"
+          ]
+        },
+        {
+          "en": "If I spoke Czech, I would have understood the film.",
+          "cz": "Kdybych uměl česky, tomu filmu bych rozuměl.",
+          "gap": "If I spoke Czech, I ____ have understood the film.",
+          "gap_answer": "would",
+          "accepts": [
+            "If I spoke Czech, I'd have understood the film.",
+            "If I spoke Czech, I had have understood the film.",
+            "If I spoke Czech, I would have understood the film."
+          ],
+          "explanation": "Speaking Czech is a present ability; watching the film is past — **would have understood**.",
+          "explanation_cz": "Umět česky je přítomná schopnost; sledování filmu je minulost — **would have understood**.",
+          "quiz_options": [
+            "would",
+            "would be",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If she were a doctor, she would have known what to do.",
+          "cz": "Kdyby byla doktorka, věděla by, co dělat.",
+          "gap": "If she ____ a doctor, she would have known what to do.",
+          "gap_answer": "were",
+          "accepts": [
+            "If she were a doctor, she'd have known what to do.",
+            "If she were a doctor, she had have known what to do.",
+            "If she were a doctor, she would have known what to do.",
+            "If she was a doctor, she'd have known what to do.",
+            "If she was a doctor, she had have known what to do.",
+            "If she was a doctor, she would have known what to do."
+          ],
+          "explanation": "**were** a doctor — what she is, not what she did. The moment of knowing is past.",
+          "explanation_cz": "**were** a doctor — co je, ne co udělala. Ten okamžik je minulý.",
+          "quiz_options": [
+            "were",
+            "had been",
+            "would be",
+            "am"
+          ]
+        },
+        {
+          "en": "If we lived closer, we would have visited you last week.",
+          "cz": "Kdybychom bydleli blíž, minulý týden bychom vás navštívili.",
+          "gap": "If we lived closer, we ____ have visited you last week.",
+          "gap_answer": "would",
+          "accepts": [
+            "If we lived closer, we'd have visited you last week.",
+            "If we lived closer, we had have visited you last week.",
+            "If we lived closer, we would have visited you last week."
+          ],
+          "explanation": "*Live* is where we are now; *last week* is the past result — **would have visited**.",
+          "explanation_cz": "*Live* je, kde jsme teď; *last week* je minulý výsledek — **would have visited**.",
+          "quiz_options": [
+            "would",
+            "would be",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If he had more patience, he would have stayed until the end.",
+          "cz": "Kdyby měl víc trpělivosti, zůstal by do konce.",
+          "gap": "If he had more patience, he ____ have stayed until the end.",
+          "gap_answer": "would",
+          "accepts": [
+            "If he'd more patience, he'd have stayed until the end.",
+            "If he had more patience, he'd have stayed until the end.",
+            "If he'd more patience, he had have stayed until the end.",
+            "If he had more patience, he had have stayed until the end.",
+            "If he would more patience, he'd have stayed until the end.",
+            "If he'd more patience, he would have stayed until the end.",
+            "If he had more patience, he would have stayed until the end.",
+            "If he would more patience, he had have stayed until the end.",
+            "If he would more patience, he would have stayed until the end."
+          ],
+          "explanation": "*Had more patience* is his character now; staying was a past choice — **would have stayed**.",
+          "explanation_cz": "*Had more patience* je jeho povaha teď; zůstat byla minulá volba — **would have stayed**.",
+          "quiz_options": [
+            "would",
+            "would be",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If I were you, I would have said something.",
+          "cz": "Být tebou, něco bych řekl.",
+          "gap": "If I ____ you, I would have said something.",
+          "gap_answer": "were",
+          "accepts": [
+            "If I were you, I'd have said something.",
+            "If I were you, I had have said something.",
+            "If I were you, I would have said something.",
+            "If I was you, I'd have said something.",
+            "If I was you, I had have said something.",
+            "If I was you, I would have said something."
+          ],
+          "explanation": "**were** you — the fixed phrase for advice, and the moment it is about has passed.",
+          "explanation_cz": "**were** you — ustálená fráze pro radu, a ten okamžik už minul.",
+          "quiz_options": [
+            "were",
+            "had been",
+            "would be",
+            "am"
+          ]
+        },
+        {
+          "en": "If she trusted him, she would have told him the truth.",
+          "cz": "Kdyby mu věřila, řekla by mu pravdu.",
+          "gap": "If she trusted him, she ____ have told him the truth.",
+          "gap_answer": "would",
+          "accepts": [
+            "If she trusted him, she'd have told him the truth.",
+            "If she trusted him, she had have told him the truth.",
+            "If she trusted him, she would have told him the truth."
+          ],
+          "explanation": "*Trusted* here is how she feels now, not a past act — so the result is **would have told**.",
+          "explanation_cz": "*Trusted* je tu, jak se cítí teď, ne minulý čin — proto **would have told**.",
+          "quiz_options": [
+            "would",
+            "would be",
+            "will",
+            "had"
+          ]
+        },
+        {
+          "en": "If they were richer, they would have bought that house.",
+          "cz": "Kdyby byli bohatší, koupili by ten dům.",
+          "gap": "If they ____ richer, they would have bought that house.",
+          "gap_answer": "were",
+          "accepts": [
+            "If they were richer, they'd have bought that house.",
+            "If they were richer, they had have bought that house.",
+            "If they were richer, they would have bought that house."
+          ],
+          "explanation": "**were** richer — their situation in general. Buying the house was the past chance.",
+          "explanation_cz": "**were** richer — jejich situace obecně. Koupě domu byla minulá příležitost.",
+          "quiz_options": [
+            "were",
+            "had been",
+            "would be",
+            "am"
+          ]
+        },
+        {
+          "en": "If I did not work nights, I would have come to the wedding.",
+          "cz": "Kdybych nedělal noční, přišel bych na tu svatbu.",
+          "gap": "If I did not work nights, I ____ have come to the wedding.",
+          "gap_answer": "would",
+          "accepts": [
+            "If I didn't work nights, I'd have come to the wedding.",
+            "If I did not work nights, I'd have come to the wedding.",
+            "If I didn't work nights, I had have come to the wedding.",
+            "If I did not work nights, I had have come to the wedding.",
+            "If I didn't work nights, I would have come to the wedding.",
+            "If I did not work nights, I would have come to the wedding."
+          ],
+          "explanation": "Working nights is my ongoing job; the wedding was one past event — **would have come**.",
+          "explanation_cz": "Noční jsou moje trvalá práce; svatba byla jedna minulá událost — **would have come**.",
+          "quiz_options": [
+            "would",
+            "would be",
+            "will",
+            "had"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_mixed_conditionals_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "If I had studied medicine, I would be a doctor now.",
+          "cz": "Kdybych studoval medicínu, byl bych teď doktor.",
+          "wrong": "If I had studied medicine, I would have been a doctor now.",
+          "accepts": [
+            "If I'd studied medicine, I'd be a doctor now.",
+            "If I had studied medicine, I'd be a doctor now.",
+            "If I'd studied medicine, I had be a doctor now.",
+            "If I had studied medicine, I had be a doctor now.",
+            "If I would studied medicine, I'd be a doctor now.",
+            "If I'd studied medicine, I would be a doctor now.",
+            "If I had studied medicine, I would be a doctor now.",
+            "If I would studied medicine, I had be a doctor now.",
+            "If I would studied medicine, I would be a doctor now."
+          ],
+          "type": false,
+          "explanation": "*Now* makes the result present — **would be**, not *would have been*.",
+          "explanation_cz": "*Now* dělá výsledek přítomným — **would be**, ne *would have been*."
+        },
+        {
+          "en": "If she had taken that job, she would live in Berlin today.",
+          "cz": "Kdyby vzala tu práci, bydlela by dnes v Berlíně.",
+          "wrong": "If she had took that job, she would live in Berlin today.",
+          "accepts": [
+            "If she'd taken that job, she'd live in Berlin today.",
+            "If she had taken that job, she'd live in Berlin today.",
+            "If she'd taken that job, she had live in Berlin today.",
+            "If she had taken that job, she had live in Berlin today.",
+            "If she would taken that job, she'd live in Berlin today.",
+            "If she'd taken that job, she would live in Berlin today.",
+            "If she had taken that job, she would live in Berlin today.",
+            "If she would taken that job, she had live in Berlin today.",
+            "If she would taken that job, she would live in Berlin today."
+          ],
+          "type": false,
+          "explanation": "After *had* comes the past participle: **had taken**, not *had took*.",
+          "explanation_cz": "Po *had* následuje příčestí minulé: **had taken**, ne *had took*."
+        },
+        {
+          "en": "If he had not missed the train, he would be here already.",
+          "cz": "Kdyby nezmeškal vlak, už by tu byl.",
+          "wrong": "If he would not have missed the train, he would be here already.",
+          "accepts": [
+            "If he'd not missed the train, he'd be here already.",
+            "If he hadn't missed the train, he'd be here already.",
+            "If he had not missed the train, he'd be here already.",
+            "If he'd not missed the train, he had be here already.",
+            "If he hadn't missed the train, he had be here already.",
+            "If he wouldn't missed the train, he'd be here already.",
+            "If he had not missed the train, he had be here already.",
+            "If he would not missed the train, he'd be here already.",
+            "If he'd not missed the train, he would be here already.",
+            "If he hadn't missed the train, he would be here already.",
+            "If he wouldn't missed the train, he had be here already.",
+            "If he had not missed the train, he would be here already.",
+            "If he would not missed the train, he had be here already.",
+            "If he wouldn't missed the train, he would be here already.",
+            "If he would not missed the train, he would be here already."
+          ],
+          "type": false,
+          "explanation": "*Would* never goes in the **if** half. The if-clause takes **had** + past participle.",
+          "explanation_cz": "*Would* nikdy nepatří do půlky s **if**. Ta má **had** + příčestí minulé."
+        },
+        {
+          "en": "If I were more organised, I would not have missed the flight.",
+          "cz": "Kdybych byl organizovanější, nezmeškal bych ten let.",
+          "wrong": "If I were more organised, I would not miss the flight.",
+          "accepts": [
+            "If I were more organised, I'd not have missed the flight.",
+            "If I were more organised, I hadn't have missed the flight.",
+            "If I were more organised, I had not have missed the flight.",
+            "If I were more organised, I wouldn't have missed the flight.",
+            "If I were more organised, I would not have missed the flight."
+          ],
+          "type": false,
+          "explanation": "The flight is already missed — a **past** result needs **would not have missed**.",
+          "explanation_cz": "Let už je zmeškaný — **minulý** výsledek potřebuje **would not have missed**."
+        },
+        {
+          "en": "If he were a better driver, he would not have crashed the car.",
+          "cz": "Kdyby byl lepší řidič, nenaboural by to auto.",
+          "wrong": "If he had been a better driver, he would not have crashed the car.",
+          "accepts": [
+            "If he were a better driver, he'd not have crashed the car.",
+            "If he were a better driver, he hadn't have crashed the car.",
+            "If he were a better driver, he had not have crashed the car.",
+            "If he were a better driver, he wouldn't have crashed the car.",
+            "If he were a better driver, he would not have crashed the car."
+          ],
+          "type": false,
+          "explanation": "Being a better driver is how he **is**, not a closed past — so *were*, not *had been*.",
+          "explanation_cz": "Být lepší řidič je, jaký **je**, ne uzavřená minulost — proto *were*, ne *had been*."
+        },
+        {
+          "en": "If I spoke Czech, I would have understood the film.",
+          "cz": "Kdybych uměl česky, tomu filmu bych rozuměl.",
+          "wrong": "If I would speak Czech, I would have understood the film.",
+          "accepts": [
+            "If I spoke Czech, I'd have understood the film.",
+            "If I spoke Czech, I had have understood the film.",
+            "If I spoke Czech, I would have understood the film."
+          ],
+          "type": false,
+          "explanation": "*Would* never goes in the **if** half — the present-cause half takes a past-simple form: **spoke**.",
+          "explanation_cz": "*Would* nikdy nepatří do půlky s **if** — ta má tvar minulého času: **spoke**."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_CL-B1B2-01"
+  ]
 }

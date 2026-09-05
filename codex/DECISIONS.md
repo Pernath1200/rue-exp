@@ -228,6 +228,16 @@ accommodation, cancel, check in, deposit, get lost, insurance, transfer (travel 
 **Options:** a) leave them / b) strip the articles / c) reword each sentence.
 **Default if unanswered:** a, per the standing decision in AGENT-LOOP.md — leave `the` where English forces it on a known referent, and prefer a Czech demonstrative where one sits naturally. Six of the eight already carry one (*v té hře*, *mezi těmi dvěma*, *mezi těmi bratry*, *mezi těmi městy*, *té nabídky*); the other two are fixed English (*the freedom to speak*, *the distance between*). No item was changed to move a number.
 
+### `b2_mixed_conditionals` is KWT-native but shipped with an ordinary Use stage
+**Q:** `codex/FCE-EXERCISES.md` lists this unit on the **KWT-native** table — its form paraphrases naturally, which is exactly what Key Word Transformation tests. KWT needs a `use_mode: "transformation"` branch in `js/practice-grammar.js`, and `js/` is interactive/James-only under **P-engine**.
+**Options:** a) ship ordinary error-correction Use now, add KWT when the engine branch exists / b) author KWT items now so they are ready / c) leave the Use stage empty until the branch lands.
+**Default if unanswered:** a, and it is applied — this is what HOME-LANE.md instructs for a KWT-native unit. (b) would write items that do not render and that nobody could smoke-test; (c) ships a unit with no production stage. The six error-correction Use items target the real Czech-learner errors (would inside the if-clause, *had took*, and the would-have/would time swap), so the stage earns its place even once KWT arrives — the spec itself says a unit may carry both.
+
+### The live `b2_third_conditional` has 48 EXACT contraction failures
+**Q (for the record, not this lane's to fix):** while building Mixed conditionals I linted its neighbour for comparison. `b2_third_conditional` reports **48 EXACT** `contraction twin missing from accepts` and **32** A4 the-demands. A8 is the rule that a correct contracted answer must not be marked wrong, so each of those 48 is a potential false-wrong in a live 72-item unit a student can reach today.
+**Options:** a) queue it on REPAIR-QUEUE.md for an interactive sitting / b) let a drafting run fix it in passing / c) leave it.
+**Default if unanswered:** a — flagged here, not touched. It is already on the repair list for being 72 items and over band, and the same sitting can close the accepts. A drafting run rewriting a live unit's accepts unattended is how a good bank gets quietly damaged; Mixed conditionals generates its accepts as a full contraction closure instead, and lints at 0 EXACT.
+
 ---
 
 ## Answered
