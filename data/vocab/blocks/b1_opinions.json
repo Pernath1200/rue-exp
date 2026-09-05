@@ -5,7 +5,7 @@
  "tree_node": "trunk_opinions_b1",
  "codex_unit": "V_IFR-B1B2-01",
  "quality": "draft",
- "note": "Last teaching unit before the checks. I'd say, in my view, on the other hand, it depends — plus the first hedging buds. Chunks, not grammar: they are learned whole. Feeds the b1_finale Use stage. First draft 2026-09-02. · 2026-09-04 B1 loop: **on the other hand** and **then again** carried the SAME Czech prompt (*na druhou stranu*), so a Match board could show two tiles a student has no way to tell apart. *then again* is now *ale zase*. · The **I'm not sure but** tile had no comma while every real sentence does, which is why its own frame never gapped; the tile is *I'm not sure, but* now. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items — and on a discourse pack the paraphrase is exactly the job: *I think* → in my view, *But* → on the other hand, *nearly* → more or less. · C48: card 0's prose is a three-row table — what you want to do, and what you say. · Pool-checked against everything taught before trunk_opinions_b1 — 0 unknown types. · 2026-09-04: seven rewrite items — the discourse markers lost their comma in the swap, so the prompt now carries the same comma, and the paraphrase sits in the marker's own slot.",
+ "note": "Last teaching unit before the checks. I'd say, in my view, on the other hand, it depends — plus the first hedging buds. Chunks, not grammar: they are learned whole. Feeds the b1_finale Use stage. First draft 2026-09-02. · 2026-09-04 B1 loop: **on the other hand** and **then again** carried the SAME Czech prompt (*na druhou stranu*), so a Match board could show two tiles a student has no way to tell apart. *then again* is now *ale zase*. · The **I'm not sure but** tile had no comma while every real sentence does, which is why its own frame never gapped; the tile is *I'm not sure, but* now. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items — and on a discourse pack the paraphrase is exactly the job: *I think* → in my view, *But* → on the other hand, *nearly* → more or less. · C48: card 0's prose is a three-row table — what you want to do, and what you say. · Pool-checked against everything taught before trunk_opinions_b1 — 0 unknown types. · 2026-09-04: seven rewrite items — the discourse markers lost their comma in the swap, so the prompt now carries the same comma, and the paraphrase sits in the marker's own slot. · 2026-09-05 B1 loop: sentence texture. 12 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py — a discourse chunk carries no clause of its own, so the sentence behind it has to, and twelve of these had nothing after the chunk but a bare `NP + be + ADJ`. All 12 rewritten so the opinion is about something, with a clause and two or more already-taught words. 0/36 fail now.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -595,24 +595,23 @@
    ]
   },
   {
-   "en": "Personally, I would take the train.",
-   "cz": "Osobně bych jel vlakem.",
+   "en": "Personally, I would take the train because the road to Vienna is always full.",
+   "cz": "Osobně bych jel vlakem, protože silnice do Vídně je vždycky plná.",
    "lemmas": [
     "personally"
    ],
    "accepts": [
-    "Personally, I would take the train",
-    "Personally, I'd take the train"
+    "Personally, I would take the train because the road to Vienna is always full"
    ]
   },
   {
-   "en": "The way I see it, we have no choice.",
-   "cz": "Jak to vidím já, nemáme na výběr.",
+   "en": "The way I see it, we have no choice because the other flat is gone.",
+   "cz": "Jak to vidím já, nemáme na výběr, protože ten druhý byt je pryč.",
    "lemmas": [
     "the way I see it"
    ],
    "accepts": [
-    "The way I see it, we have no choice"
+    "The way I see it, we have no choice because the other flat is gone"
    ]
   },
   {
@@ -646,13 +645,13 @@
    ]
   },
   {
-   "en": "From my point of view, the meeting was a waste of time.",
-   "cz": "Z mého pohledu byla ta schůzka ztráta času.",
+   "en": "From my point of view, the meeting was a waste of time although the boss was happy.",
+   "cz": "Z mého pohledu byla ta schůzka ztráta času, i když šéf byl spokojený.",
    "lemmas": [
     "from my point of view"
    ],
    "accepts": [
-    "From my point of view, the meeting was a waste of time"
+    "From my point of view, the meeting was a waste of time although the boss was happy"
    ]
   },
   {
@@ -676,13 +675,13 @@
    ]
   },
   {
-   "en": "What's more, the hotel had no wifi.",
-   "cz": "Navíc v hotelu nebyla wifi.",
+   "en": "What's more, the hotel had no wifi although the brochure promised it.",
+   "cz": "A navíc, v tom hotelu nebyla wifi, i když ji prospekt sliboval.",
    "lemmas": [
     "what's more"
    ],
    "accepts": [
-    "What's more, the hotel had no wifi"
+    "What's more, the hotel had no wifi although the brochure promised it"
    ]
   },
   {
@@ -726,23 +725,23 @@
    ]
   },
   {
-   "en": "In some ways, the old office was better.",
-   "cz": "V některých ohledech byla stará kancelář lepší.",
+   "en": "In some ways, the old office was better than the new one.",
+   "cz": "V něčem byla ta stará kancelář lepší než ta nová.",
    "lemmas": [
     "in some ways"
    ],
    "accepts": [
-    "In some ways, the old office was better"
+    "In some ways, the old office was better than the new one"
    ]
   },
   {
-   "en": "That said, the food was very good.",
-   "cz": "I tak bylo jídlo moc dobré.",
+   "en": "That said, the food was very good although the service was slow.",
+   "cz": "I tak bylo jídlo moc dobré, i když obsluha byla pomalá.",
    "lemmas": [
     "that said"
    ],
    "accepts": [
-    "That said, the food was very good"
+    "That said, the food was very good although the service was slow"
    ]
   },
   {
@@ -756,14 +755,13 @@
    ]
   },
   {
-   "en": "Having said that, I would go again next year.",
-   "cz": "Přesto bych jel příští rok znovu.",
+   "en": "Having said that, I would go again next year if the price stays the same.",
+   "cz": "I tak bych tam příští rok jel znovu, pokud cena zůstane stejná.",
    "lemmas": [
     "having said that"
    ],
    "accepts": [
-    "Having said that, I would go again next year",
-    "Having said that, I'd go again next year"
+    "Having said that, I would go again next year if the price stays the same"
    ]
   },
   {
@@ -797,54 +795,53 @@
    ]
   },
   {
-   "en": "The train will probably be late again.",
-   "cz": "Vlak bude asi zase pozdě.",
+   "en": "The train will probably be late again because the snow has not stopped.",
+   "cz": "Vlak bude asi zase pozdě, protože sníh nepřestal padat.",
    "lemmas": [
     "probably"
    ],
    "accepts": [
-    "The train will probably be late again",
-    "The train'll probably be late again"
+    "The train will probably be late again because the snow has not stopped"
    ]
   },
   {
-   "en": "I suppose we could ask the neighbours.",
-   "cz": "Asi bychom se mohli zeptat sousedů.",
+   "en": "I suppose we could ask the neighbours although they are never at home.",
+   "cz": "Asi bychom se mohli zeptat sousedů, i když nikdy nejsou doma.",
    "lemmas": [
     "I suppose"
    ],
    "accepts": [
-    "I suppose we could ask the neighbours"
+    "I suppose we could ask the neighbours although they are never at home"
    ]
   },
   {
-   "en": "The work is more or less finished.",
-   "cz": "Práce je víceméně hotová.",
+   "en": "The work is more or less finished, but the report is still on my desk.",
+   "cz": "Ta práce je víceméně hotová, ale zpráva mi pořád leží na stole.",
    "lemmas": [
     "more or less"
    ],
    "accepts": [
-    "The work is more or less finished"
+    "The work is more or less finished, but the report is still on my desk"
    ]
   },
   {
-   "en": "In a way, he was right about the new teacher.",
-   "cz": "Svým způsobem měl o tom novém učiteli pravdu.",
+   "en": "In a way, he was right about the new teacher, although nobody agreed then.",
+   "cz": "V jistém smyslu měl o té nové učitelce pravdu, i když s ním tehdy nikdo nesouhlasil.",
    "lemmas": [
     "in a way"
    ],
    "accepts": [
-    "In a way, he was right about the new teacher"
+    "In a way, he was right about the new teacher, although nobody agreed then"
    ]
   },
   {
-   "en": "To some extent, the problem is the weather.",
-   "cz": "Do jisté míry je problém počasí.",
+   "en": "To some extent, the problem is the weather, but the road is also bad.",
+   "cz": "Do jisté míry je problém počasí, ale ta silnice je taky špatná.",
    "lemmas": [
     "to some extent"
    ],
    "accepts": [
-    "To some extent, the problem is the weather"
+    "To some extent, the problem is the weather, but the road is also bad"
    ]
   },
   {
