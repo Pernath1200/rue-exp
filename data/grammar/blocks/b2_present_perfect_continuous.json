@@ -4,7 +4,7 @@
   "level": "B2",
   "tree_node": "b2_present_perfect_continuous",
   "practice": "frames",
-  "note": "FORCED choice stems · Check past/PP simple/PP cont/wrong · lemmas · quiz only · P0 dual-OK force + intro table 2026-07-26 · moved B1→B2 2026-07-26 (aspect contrast not B1 core) · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded.",
+  "note": "FORCED choice stems · Check past/PP simple/PP cont/wrong · lemmas · quiz only · P0 dual-OK force + intro table 2026-07-26 · moved B1→B2 2026-07-26 (aspect contrast not B1 core) · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=good_draft); auto-authored bank superseded. · B2 REPAIR 2026-09-05 (b2/auto): B11 lemma cue on every gap (43 -> 0); B8 the four aux-only question gaps now gap the whole verb phrase, so they test the aspect and not have/has; B3/B6 authored quiz_options on all 48 — the same four structures the intro names (PP simple · PP continuous · past simple · present continuous), same lemma throughout; G4/B1 on 7 items where the twin aspect is also natural English (has rained, have tried, have studied…) the twin comes OFF the chips and goes INTO accepts, present simple takes the chip; A9 už/právě on 19 Czech prompts that a past simple would also translate, with the already/just wording accepted; A8 contraction twins; D1 48 distinct explanations naming this item's verb and reason (was 4 strings for 48 items); E4 item 44 rewritten (have played … and then left) and item 23; intro rebuilt: C14 card 0 is the unit name, C29 timeline vs past simple and PP simple, C20 the Check-options and Type lesson-plan cards cut and replaced by a teaching card, C23, C30/C32 Common mistakes. lint 125 -> 44.",
   "default_direction": "en_gap",
   "check": {
     "sequence": [
@@ -22,7 +22,7 @@
         {
           "en": "I have written three emails this morning — here they are.",
           "cz": "Dnes ráno jsem napsal tři emaily — tady jsou.",
-          "gap": "I ____ three emails this morning — here they are.",
+          "gap": "I ____ three emails this morning — here they are. (write)",
           "gap_answer": "have written",
           "gap_accepts": [
             "have written",
@@ -30,17 +30,25 @@
           ],
           "accepts": [
             "I have written three emails this morning — here they are.",
-            "I've written three emails this morning — here they are."
+            "I've written three emails this morning — here they are.",
+            "I have written three emails this morning — here they're.",
+            "I've written three emails this morning — here they're."
           ],
           "lemma": "write",
           "contrast": "simple_count_result",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Three emails, and here they are: a finished count with a result → have written.",
+          "explanation_cz": "Tři hotové emaily a výsledek → have written.",
+          "quiz_options": [
+            "have written",
+            "have been writing",
+            "wrote",
+            "am writing"
+          ]
         },
         {
           "en": "I have been writing emails all morning and I still have two left.",
-          "cz": "Celé dopoledne píšu emaily a pořád mi zbývají dva.",
-          "gap": "I ____ emails all morning and I still have two left.",
+          "cz": "Už celé dopoledne píšu emaily a pořád mi zbývají dva.",
+          "gap": "I ____ emails all morning and I still have two left. (write)",
           "gap_answer": "have been writing",
           "gap_accepts": [
             "have been writing",
@@ -52,31 +60,46 @@
           ],
           "lemma": "write",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Two still left, so the writing is unfinished — the time it has taken is the point → have been writing.",
+          "explanation_cz": "Zbývají dva, psaní není hotové — jde o dobu → have been writing.",
+          "quiz_options": [
+            "have been writing",
+            "have written",
+            "wrote",
+            "am writing"
+          ]
         },
         {
           "en": "She has read the whole report — she can answer now.",
-          "cz": "Přečetla celou zprávu — teď může odpovídat.",
-          "gap": "She ____ the whole report — she can answer now.",
+          "cz": "Už přečetla celou zprávu — teď může odpovídat.",
+          "gap": "She ____ the whole report — she can answer now. (read)",
           "gap_answer": "has read",
           "gap_accepts": [
             "has read",
-            "she's read"
+            "she's read",
+            "has already read"
           ],
           "accepts": [
             "She has read the whole report — she can answer now.",
-            "She's read the whole report — she can answer now."
+            "She's read the whole report — she can answer now.",
+            "She has already read the whole report — she can answer now.",
+            "She's already read the whole report — she can answer now."
           ],
           "lemma": "read",
           "contrast": "simple_complete",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "The whole report is read and she can answer → the result counts: has read.",
+          "explanation_cz": "Celá zpráva je přečtená a může odpovídat → počítá se výsledek: has read.",
+          "quiz_options": [
+            "has read",
+            "has been reading",
+            "read",
+            "is reading"
+          ]
         },
         {
           "en": "She has been reading the report for an hour and she is only on page two.",
           "cz": "Tu zprávu čte už hodinu a je teprve na straně dvě.",
-          "gap": "She ____ the report for an hour and she is only on page two.",
+          "gap": "She ____ the report for an hour and she is only on page two. (read)",
           "gap_answer": "has been reading",
           "gap_accepts": [
             "has been reading",
@@ -84,35 +107,52 @@
           ],
           "accepts": [
             "She has been reading the report for an hour and she is only on page two.",
-            "She's been reading the report for an hour and she is only on page two."
+            "She's been reading the report for an hour and she is only on page two.",
+            "She has been reading the report for an hour and she's only on page two.",
+            "She's been reading the report for an hour and she's only on page two."
           ],
           "lemma": "read",
           "contrast": "continuous_incomplete",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Only on page two: after an hour the reading is still running → has been reading.",
+          "explanation_cz": "Teprve na straně dvě: po hodině čtení stále běží → has been reading.",
+          "quiz_options": [
+            "has been reading",
+            "has read",
+            "read",
+            "is reading"
+          ]
         },
         {
           "en": "They have painted the kitchen — it looks new.",
-          "cz": "Vymalovali kuchyň — vypadá nově.",
-          "gap": "They ____ the kitchen — it looks new.",
+          "cz": "Kuchyň už vymalovali — vypadá nově.",
+          "gap": "They ____ the kitchen — it looks new. (paint)",
           "gap_answer": "have painted",
           "gap_accepts": [
             "have painted",
-            "they've painted"
+            "they've painted",
+            "have already painted"
           ],
           "accepts": [
             "They have painted the kitchen — it looks new.",
-            "They've painted the kitchen — it looks new."
+            "They've painted the kitchen — it looks new.",
+            "They have already painted the kitchen — it looks new.",
+            "They've already painted the kitchen — it looks new."
           ],
           "lemma": "paint",
           "contrast": "simple_complete",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "The kitchen looks new — the painting is done and you can see it → have painted.",
+          "explanation_cz": "Kuchyň vypadá nově — malování je hotové a je to vidět → have painted.",
+          "quiz_options": [
+            "have painted",
+            "have been painting",
+            "painted",
+            "are painting"
+          ]
         },
         {
           "en": "They have been painting the kitchen all day and it is still not finished.",
-          "cz": "Celý den malují kuchyň a pořád to není hotové.",
-          "gap": "They ____ the kitchen all day and it is still not finished.",
+          "cz": "Už celý den malují kuchyň a pořád to není hotové.",
+          "gap": "They ____ the kitchen all day and it is still not finished. (paint)",
           "gap_answer": "have been painting",
           "gap_accepts": [
             "have been painting",
@@ -120,65 +160,96 @@
           ],
           "accepts": [
             "They have been painting the kitchen all day and it is still not finished.",
-            "They've been painting the kitchen all day and it is still not finished."
+            "They've been painting the kitchen all day and it is still not finished.",
+            "They have been painting the kitchen all day and it's still not finished.",
+            "They've been painting the kitchen all day and it's still not finished."
           ],
           "lemma": "paint",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Still not finished after a whole day → the process, not the result: have been painting.",
+          "explanation_cz": "Po celém dni pořád nehotovo → děj, ne výsledek: have been painting.",
+          "quiz_options": [
+            "have been painting",
+            "have painted",
+            "painted",
+            "are painting"
+          ]
         },
         {
           "en": "How many times have you visited Prague?",
           "cz": "Kolikrát jsi byl v Praze?",
-          "gap": "How many times ____ you visited Prague?",
-          "gap_answer": "have",
+          "gap": "How many times ____ Prague? (visit)",
+          "gap_answer": "have you visited",
           "gap_accepts": [
-            "have"
+            "have you visited"
           ],
           "accepts": [
             "How many times have you visited Prague?"
           ],
           "contrast": "simple_count",
-          "explanation": "Present perfect continuous: have/has + been + -ing.",
-          "explanation_cz": "Předpřítomný průběhový: have/has + been + -ing."
+          "explanation": "How many times counts finished visits → present perfect simple: have you visited.",
+          "explanation_cz": "How many times počítá hotové návštěvy → have you visited.",
+          "quiz_options": [
+            "have you visited",
+            "have you been visiting",
+            "did you visit",
+            "are you visiting"
+          ],
+          "lemma": "visit"
         },
         {
           "en": "How long have you been waiting here?",
           "cz": "Jak dlouho tady čekáš?",
-          "gap": "How long ____ you been waiting here?",
-          "gap_answer": "have",
+          "gap": "How long ____ here? (wait)",
+          "gap_answer": "have you been waiting",
           "gap_accepts": [
-            "have"
+            "have you been waiting"
           ],
           "accepts": [
             "How long have you been waiting here?"
           ],
           "contrast": "continuous_duration",
-          "explanation": "Present perfect continuous: have/has + been + -ing.",
-          "explanation_cz": "Předpřítomný průběhový: have/has + been + -ing."
+          "explanation": "How long asks for duration up to now → present perfect continuous: have you been waiting.",
+          "explanation_cz": "How long se ptá na dobu až do teď → have you been waiting.",
+          "quiz_options": [
+            "have you been waiting",
+            "have you waited",
+            "did you wait",
+            "are you waiting"
+          ],
+          "lemma": "wait"
         },
         {
           "en": "I have cleaned the flat — you can come in.",
-          "cz": "Uklidil jsem byt — můžeš vejít.",
-          "gap": "I ____ the flat — you can come in.",
+          "cz": "Byt jsem už uklidil — můžeš vejít.",
+          "gap": "I ____ the flat — you can come in. (clean)",
           "gap_answer": "have cleaned",
           "gap_accepts": [
             "have cleaned",
-            "I've cleaned"
+            "I've cleaned",
+            "have already cleaned"
           ],
           "accepts": [
             "I have cleaned the flat — you can come in.",
-            "I've cleaned the flat — you can come in."
+            "I've cleaned the flat — you can come in.",
+            "I have already cleaned the flat — you can come in.",
+            "I've already cleaned the flat — you can come in."
           ],
           "lemma": "clean",
           "contrast": "simple_complete",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "You can come in, so the flat is clean now → the result: have cleaned.",
+          "explanation_cz": "Můžeš vejít, byt je uklizený → výsledek: have cleaned.",
+          "quiz_options": [
+            "have cleaned",
+            "have been cleaning",
+            "cleaned",
+            "am cleaning"
+          ]
         },
         {
           "en": "I have been cleaning all afternoon and there is still dust everywhere.",
           "cz": "Celé odpoledne uklízím a pořád je všude prach.",
-          "gap": "I ____ all afternoon and there is still dust everywhere.",
+          "gap": "I ____ all afternoon and there is still dust everywhere. (clean)",
           "gap_answer": "have been cleaning",
           "gap_accepts": [
             "have been cleaning",
@@ -186,35 +257,52 @@
           ],
           "accepts": [
             "I have been cleaning all afternoon and there is still dust everywhere.",
-            "I've been cleaning all afternoon and there is still dust everywhere."
+            "I've been cleaning all afternoon and there is still dust everywhere.",
+            "I have been cleaning all afternoon and there's still dust everywhere.",
+            "I've been cleaning all afternoon and there's still dust everywhere."
           ],
           "lemma": "clean",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Dust everywhere after a whole afternoon → the cleaning is unfinished: have been cleaning.",
+          "explanation_cz": "Po celém odpoledni všude prach → úklid není hotový: have been cleaning.",
+          "quiz_options": [
+            "have been cleaning",
+            "have cleaned",
+            "cleaned",
+            "am cleaning"
+          ]
         },
         {
           "en": "He has fixed the bike — we can ride now.",
-          "cz": "Opravil kolo — můžeme jet.",
-          "gap": "He ____ the bike — we can ride now.",
+          "cz": "Kolo právě opravil — můžeme jet.",
+          "gap": "He ____ the bike — we can ride now. (fix)",
           "gap_answer": "has fixed",
           "gap_accepts": [
             "has fixed",
-            "he's fixed"
+            "he's fixed",
+            "has just fixed"
           ],
           "accepts": [
             "He has fixed the bike — we can ride now.",
-            "He's fixed the bike — we can ride now."
+            "He's fixed the bike — we can ride now.",
+            "He has just fixed the bike — we can ride now.",
+            "He's just fixed the bike — we can ride now."
           ],
           "lemma": "fix",
           "contrast": "simple_complete",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "We can ride now, so the bike works → the result: has fixed.",
+          "explanation_cz": "Můžeme jet, kolo funguje → výsledek: has fixed.",
+          "quiz_options": [
+            "has fixed",
+            "has been fixing",
+            "fixed",
+            "is fixing"
+          ]
         },
         {
           "en": "He has been fixing the bike for two hours and it still does not work.",
           "cz": "Už dvě hodiny opravuje kolo a pořád nefunguje.",
-          "gap": "He ____ the bike for two hours and it still does not work.",
+          "gap": "He ____ the bike for two hours and it still does not work. (fix)",
           "gap_answer": "has been fixing",
           "gap_accepts": [
             "has been fixing",
@@ -222,35 +310,52 @@
           ],
           "accepts": [
             "He has been fixing the bike for two hours and it still does not work.",
-            "He's been fixing the bike for two hours and it still does not work."
+            "He's been fixing the bike for two hours and it still does not work.",
+            "He has been fixing the bike for two hours and it still doesn't work.",
+            "He's been fixing the bike for two hours and it still doesn't work."
           ],
           "lemma": "fix",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Two hours and it still does not work → duration, not result: has been fixing.",
+          "explanation_cz": "Dvě hodiny a pořád nefunguje → doba, ne výsledek: has been fixing.",
+          "quiz_options": [
+            "has been fixing",
+            "has fixed",
+            "fixed",
+            "is fixing"
+          ]
         },
         {
           "en": "We have cooked dinner — sit down.",
-          "cz": "Uvařili jsme večeři — sedni si.",
-          "gap": "We ____ dinner — sit down.",
+          "cz": "Večeři už jsme uvařili — sedni si.",
+          "gap": "We ____ dinner — sit down. (cook)",
           "gap_answer": "have cooked",
           "gap_accepts": [
             "have cooked",
-            "we've cooked"
+            "we've cooked",
+            "have already cooked"
           ],
           "accepts": [
             "We have cooked dinner — sit down.",
-            "We've cooked dinner — sit down."
+            "We've cooked dinner — sit down.",
+            "We have already cooked dinner — sit down.",
+            "We've already cooked dinner — sit down."
           ],
           "lemma": "cook",
           "contrast": "simple_complete",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Sit down — dinner is on the table → the finished result: have cooked.",
+          "explanation_cz": "Sedni si — večeře je hotová → hotový výsledek: have cooked.",
+          "quiz_options": [
+            "have cooked",
+            "have been cooking",
+            "cooked",
+            "are cooking"
+          ]
         },
         {
           "en": "We have been cooking for an hour and the sauce is not ready yet.",
           "cz": "Už hodinu vaříme a omáčka ještě není hotová.",
-          "gap": "We ____ for an hour and the sauce is not ready yet.",
+          "gap": "We ____ for an hour and the sauce is not ready yet. (cook)",
           "gap_answer": "have been cooking",
           "gap_accepts": [
             "have been cooking",
@@ -258,17 +363,25 @@
           ],
           "accepts": [
             "We have been cooking for an hour and the sauce is not ready yet.",
-            "We've been cooking for an hour and the sauce is not ready yet."
+            "We've been cooking for an hour and the sauce is not ready yet.",
+            "We have been cooking for an hour and the sauce isn't ready yet.",
+            "We've been cooking for an hour and the sauce isn't ready yet."
           ],
           "lemma": "cook",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "The sauce is not ready yet, so the cooking is still running → have been cooking.",
+          "explanation_cz": "Omáčka ještě není hotová, vaření běží → have been cooking.",
+          "quiz_options": [
+            "have been cooking",
+            "have cooked",
+            "cooked",
+            "are cooking"
+          ]
         },
         {
           "en": "She has made ten cakes this week for the sale.",
           "cz": "Tenhle týden udělala deset dortů na prodej.",
-          "gap": "She ____ ten cakes this week for the sale.",
+          "gap": "She ____ ten cakes this week for the sale. (make)",
           "gap_answer": "has made",
           "gap_accepts": [
             "has made",
@@ -280,13 +393,19 @@
           ],
           "lemma": "make",
           "contrast": "simple_count",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "Ten cakes is a count inside an unfinished week → has made.",
+          "explanation_cz": "Deset dortů je počet v nedokončeném týdnu → has made.",
+          "quiz_options": [
+            "has made",
+            "has been making",
+            "made",
+            "is making"
+          ]
         },
         {
           "en": "She has been making cakes all morning and the kitchen smells of sugar.",
-          "cz": "Celé dopoledne peče dorty a v kuchyni je cítit cukr.",
-          "gap": "She ____ cakes all morning and the kitchen smells of sugar.",
+          "cz": "Už celé dopoledne peče dorty a v kuchyni je cítit cukr.",
+          "gap": "She ____ cakes all morning and the kitchen smells of sugar. (make)",
           "gap_answer": "has been making",
           "gap_accepts": [
             "has been making",
@@ -298,13 +417,19 @@
           ],
           "lemma": "make",
           "contrast": "continuous_evidence",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "The kitchen still smells of sugar — the baking explains what you notice now → has been making.",
+          "explanation_cz": "V kuchyni je cítit cukr — pečení vysvětluje, co teď vnímáš → has been making.",
+          "quiz_options": [
+            "has been making",
+            "has made",
+            "made",
+            "is making"
+          ]
         },
         {
           "en": "I have learned twenty new words this week — quiz me.",
           "cz": "Tenhle týden jsem se naučil dvacet nových slov — vyzkoušej mě.",
-          "gap": "I ____ twenty new words this week — quiz me.",
+          "gap": "I ____ twenty new words this week — quiz me. (learn)",
           "gap_answer": "have learned",
           "gap_accepts": [
             "have learned",
@@ -320,13 +445,19 @@
           ],
           "lemma": "learn",
           "contrast": "simple_count",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Twenty words is a count you can be tested on → have learned.",
+          "explanation_cz": "Dvacet slov je počet, který lze vyzkoušet → have learned.",
+          "quiz_options": [
+            "have learned",
+            "have been learning",
+            "learned",
+            "am learning"
+          ]
         },
         {
           "en": "I have been learning English for three years and I am still only halfway to B2.",
           "cz": "Angličtinu se učím už tři roky a pořád jsem teprve v půlce cesty k B2.",
-          "gap": "I ____ English for three years and I am still only halfway to B2.",
+          "gap": "I ____ English for three years and I am still only halfway to B2. (learn)",
           "gap_answer": "have been learning",
           "gap_accepts": [
             "have been learning",
@@ -334,17 +465,25 @@
           ],
           "accepts": [
             "I have been learning English for three years and I am still only halfway to B2.",
-            "I've been learning English for three years and I am still only halfway to B2."
+            "I've been learning English for three years and I am still only halfway to B2.",
+            "I have been learning English for three years and I'm still only halfway to B2.",
+            "I've been learning English for three years and I'm still only halfway to B2."
           ],
           "lemma": "learn",
           "contrast": "continuous_duration",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Three years and still halfway, so the learning goes on → have been learning.",
+          "explanation_cz": "Tři roky a pořád v půlce, učení pokračuje → have been learning.",
+          "quiz_options": [
+            "have been learning",
+            "have learned",
+            "learned",
+            "am learning"
+          ]
         },
         {
           "en": "It has rained three times this week already.",
           "cz": "Tenhle týden už třikrát pršelo.",
-          "gap": "It ____ three times this week already.",
+          "gap": "It ____ three times this week already. (rain)",
           "gap_answer": "has rained",
           "gap_accepts": [
             "has rained",
@@ -356,49 +495,81 @@
           ],
           "lemma": "rain",
           "contrast": "simple_count",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "Three times this week counts finished rain → has rained.",
+          "explanation_cz": "Třikrát tento týden počítá hotové deště → has rained.",
+          "quiz_options": [
+            "has rained",
+            "has been raining",
+            "rained",
+            "is raining"
+          ]
         },
         {
           "en": "It has been raining all day — that is why the streets are wet.",
-          "cz": "Celý den prší — proto jsou ulice mokré.",
-          "gap": "It ____ all day — that is why the streets are wet.",
+          "cz": "Prší už celý den — proto jsou ulice mokré.",
+          "gap": "It ____ all day — that is why the streets are wet. (rain)",
           "gap_answer": "has been raining",
           "gap_accepts": [
             "has been raining",
-            "it's been raining"
+            "it's been raining",
+            "has rained"
           ],
           "accepts": [
             "It has been raining all day — that is why the streets are wet.",
-            "It's been raining all day — that is why the streets are wet."
+            "It's been raining all day — that is why the streets are wet.",
+            "It has rained all day — that is why the streets are wet.",
+            "It has been raining all day — that's why the streets are wet.",
+            "It's been raining all day — that's why the streets are wet.",
+            "It has rained all day — that's why the streets are wet.",
+            "It's rained all day — that is why the streets are wet.",
+            "It's rained all day — that's why the streets are wet."
           ],
           "lemma": "rain",
           "contrast": "continuous_evidence",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Wet streets are what the rain left behind — the process explains them → has been raining.",
+          "explanation_cz": "Mokré ulice jsou stopa deště — vysvětluje to děj → has been raining.",
+          "quiz_options": [
+            "has been raining",
+            "rains",
+            "rained",
+            "is raining"
+          ]
         },
         {
           "en": "I have broken my phone — it does not turn on.",
-          "cz": "Rozbil jsem telefon — nejde zapnout.",
-          "gap": "I ____ my phone — it does not turn on.",
+          "cz": "Právě jsem rozbil telefon — nejde zapnout.",
+          "gap": "I ____ my phone — it does not turn on. (break)",
           "gap_answer": "have broken",
           "gap_accepts": [
             "have broken",
-            "I've broken"
+            "I've broken",
+            "have just broken"
           ],
           "accepts": [
             "I have broken my phone — it does not turn on.",
-            "I've broken my phone — it does not turn on."
+            "I've broken my phone — it does not turn on.",
+            "I have just broken my phone — it does not turn on.",
+            "I have broken my phone — it doesn't turn on.",
+            "I've broken my phone — it doesn't turn on.",
+            "I have just broken my phone — it doesn't turn on.",
+            "I've just broken my phone — it does not turn on.",
+            "I've just broken my phone — it doesn't turn on."
           ],
           "lemma": "break",
           "contrast": "simple_result",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "The phone will not turn on: the break is done and its result is now → have broken.",
+          "explanation_cz": "Telefon nejde zapnout: rozbití je hotové a výsledek je teď → have broken.",
+          "quiz_options": [
+            "have broken",
+            "have been breaking",
+            "broke",
+            "am breaking"
+          ]
         },
         {
           "en": "I have been using your charger all morning because mine is broken.",
           "cz": "Celé dopoledne používám tvoji nabíječku, protože moje je rozbitá.",
-          "gap": "I ____ your charger all morning because mine is broken.",
+          "gap": "I ____ your charger all morning because mine is broken. (use)",
           "gap_answer": "have been using",
           "gap_accepts": [
             "have been using",
@@ -410,49 +581,77 @@
           ],
           "lemma": "use",
           "contrast": "continuous_process",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "All morning, and you still have it → the borrowing is still running: have been using.",
+          "explanation_cz": "Celé dopoledne a pořád ji máš → půjčování trvá: have been using.",
+          "quiz_options": [
+            "have been using",
+            "have used",
+            "used",
+            "am using"
+          ]
         },
         {
           "en": "They have finished the project — we can send it.",
-          "cz": "Dokončili projekt — můžeme ho poslat.",
-          "gap": "They ____ the project — we can send it.",
+          "cz": "Projekt už dokončili — můžeme ho poslat.",
+          "gap": "They ____ the project — we can send it. (finish)",
           "gap_answer": "have finished",
           "gap_accepts": [
             "have finished",
-            "they've finished"
+            "they've finished",
+            "have already finished"
           ],
           "accepts": [
             "They have finished the project — we can send it.",
-            "They've finished the project — we can send it."
+            "They've finished the project — we can send it.",
+            "They have already finished the project — we can send it.",
+            "They've already finished the project — we can send it."
           ],
           "lemma": "finish",
           "contrast": "simple_complete",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "We can send it, so the project is done → the result: have finished.",
+          "explanation_cz": "Můžeme to poslat, projekt je hotový → výsledek: have finished.",
+          "quiz_options": [
+            "have finished",
+            "have been finishing",
+            "finished",
+            "are finishing"
+          ]
         },
         {
-          "en": "They have been working on the project for months and they are still working on it right now.",
+          "en": "They have been working on the project for months and it is still not done.",
           "cz": "Na projektu pracují už měsíce a pořád na něm teď pracují.",
-          "gap": "They ____ on the project for months and they are still working on it right now.",
+          "gap": "They ____ on the project for months and it is still not done. (work)",
           "gap_answer": "have been working",
           "gap_accepts": [
             "have been working",
-            "they've been working"
+            "they've been working",
+            "have worked"
           ],
           "accepts": [
-            "They have been working on the project for months and they are still working on it right now.",
-            "They've been working on the project for months and they are still working on it right now."
+            "They have been working on the project for months and it is still not done.",
+            "They have worked on the project for months and it is still not done.",
+            "They have been working on the project for months and it's still not done.",
+            "They've been working on the project for months and it is still not done.",
+            "They've been working on the project for months and it's still not done.",
+            "They have worked on the project for months and it's still not done.",
+            "They've worked on the project for months and it is still not done.",
+            "They've worked on the project for months and it's still not done."
           ],
           "lemma": "work",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Months, and it is still not done → the work goes on: have been working.",
+          "explanation_cz": "Měsíce a pořád nehotovo → práce pokračuje: have been working.",
+          "quiz_options": [
+            "have been working",
+            "work",
+            "worked",
+            "are working"
+          ]
         },
         {
           "en": "He has run five kilometres today — see his watch.",
           "cz": "Dnes uběhl pět kilometrů — podívej na hodinky.",
-          "gap": "He ____ five kilometres today — see his watch.",
+          "gap": "He ____ five kilometres today — see his watch. (run)",
           "gap_answer": "has run",
           "gap_accepts": [
             "has run",
@@ -464,13 +663,19 @@
           ],
           "lemma": "run",
           "contrast": "simple_count",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "Five kilometres on the watch is a finished count → has run.",
+          "explanation_cz": "Pět kilometrů na hodinkách je hotový počet → has run.",
+          "quiz_options": [
+            "has run",
+            "has been running",
+            "ran",
+            "is running"
+          ]
         },
         {
           "en": "He has been running for forty minutes and he looks tired.",
           "cz": "Běží už čtyřicet minut a vypadá unaveně.",
-          "gap": "He ____ for forty minutes and he looks tired.",
+          "gap": "He ____ for forty minutes and he looks tired. (run)",
           "gap_answer": "has been running",
           "gap_accepts": [
             "has been running",
@@ -482,13 +687,19 @@
           ],
           "lemma": "run",
           "contrast": "continuous_evidence",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "He looks tired now — forty minutes of running explains it → has been running.",
+          "explanation_cz": "Vypadá unaveně — čtyřicet minut běhu to vysvětluje → has been running.",
+          "quiz_options": [
+            "has been running",
+            "has run",
+            "ran",
+            "is running"
+          ]
         },
         {
           "en": "We have watched three films this weekend already.",
           "cz": "Tenhle víkend jsme už viděli tři filmy.",
-          "gap": "We ____ three films this weekend already.",
+          "gap": "We ____ three films this weekend already. (watch)",
           "gap_answer": "have watched",
           "gap_accepts": [
             "have watched",
@@ -500,13 +711,19 @@
           ],
           "lemma": "watch",
           "contrast": "simple_count",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Three films is a count inside an unfinished weekend → have watched.",
+          "explanation_cz": "Tři filmy jsou počet v nedokončeném víkendu → have watched.",
+          "quiz_options": [
+            "have watched",
+            "have been watching",
+            "watched",
+            "are watching"
+          ]
         },
         {
           "en": "We have been watching this series all evening and we are only on episode two.",
           "cz": "Celý večer koukáme na tenhle seriál a jsme teprve u druhé epizody.",
-          "gap": "We ____ this series all evening and we are only on episode two.",
+          "gap": "We ____ this series all evening and we are only on episode two. (watch)",
           "gap_answer": "have been watching",
           "gap_accepts": [
             "have been watching",
@@ -514,53 +731,79 @@
           ],
           "accepts": [
             "We have been watching this series all evening and we are only on episode two.",
-            "We've been watching this series all evening and we are only on episode two."
+            "We've been watching this series all evening and we are only on episode two.",
+            "We have been watching this series all evening and we're only on episode two.",
+            "We've been watching this series all evening and we're only on episode two."
           ],
           "lemma": "watch",
           "contrast": "continuous_incomplete",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Only on episode two, so the watching is unfinished → have been watching.",
+          "explanation_cz": "Teprve druhý díl, sledování není hotové → have been watching.",
+          "quiz_options": [
+            "have been watching",
+            "have watched",
+            "watched",
+            "are watching"
+          ]
         },
         {
           "en": "I have sent the email — check your inbox.",
-          "cz": "Poslal jsem ten email — podívej se do schránky.",
-          "gap": "I ____ the email — check your inbox.",
+          "cz": "Ten email jsem právě poslal — podívej se do schránky.",
+          "gap": "I ____ the email — check your inbox. (send)",
           "gap_answer": "have sent",
           "gap_accepts": [
             "have sent",
-            "I've sent"
+            "I've sent",
+            "have just sent"
           ],
           "accepts": [
             "I have sent the email — check your inbox.",
-            "I've sent the email — check your inbox."
+            "I've sent the email — check your inbox.",
+            "I have just sent the email — check your inbox.",
+            "I've just sent the email — check your inbox."
           ],
           "lemma": "send",
           "contrast": "simple_complete",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Check your inbox — the email is there → the result: have sent.",
+          "explanation_cz": "Podívej se do schránky — email tam je → výsledek: have sent.",
+          "quiz_options": [
+            "have sent",
+            "have been sending",
+            "sent",
+            "am sending"
+          ]
         },
         {
           "en": "I have been trying to call you all day — why is your phone off?",
-          "cz": "Celý den se ti snažím dovolat — proč máš vypnutý telefon?",
-          "gap": "I ____ to call you all day — why is your phone off?",
+          "cz": "Snažím se ti dovolat už celý den — proč máš vypnutý telefon?",
+          "gap": "I ____ to call you all day — why is your phone off? (try)",
           "gap_answer": "have been trying",
           "gap_accepts": [
             "have been trying",
-            "I've been trying"
+            "I've been trying",
+            "have tried"
           ],
           "accepts": [
             "I have been trying to call you all day — why is your phone off?",
-            "I've been trying to call you all day — why is your phone off?"
+            "I've been trying to call you all day — why is your phone off?",
+            "I have tried to call you all day — why is your phone off?",
+            "I've tried to call you all day — why is your phone off?"
           ],
           "lemma": "try",
           "contrast": "continuous_process",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "All day and still no answer → the trying is still running: have been trying.",
+          "explanation_cz": "Celý den a pořád bez odpovědi → snaha trvá: have been trying.",
+          "quiz_options": [
+            "have been trying",
+            "try",
+            "tried",
+            "am trying"
+          ]
         },
         {
           "en": "She has taught five classes today — she can go home now.",
           "cz": "Dnes odučila pět hodin — teď může jít domů.",
-          "gap": "She ____ five classes today — she can go home now.",
+          "gap": "She ____ five classes today — she can go home now. (teach)",
           "gap_answer": "has taught",
           "gap_accepts": [
             "has taught",
@@ -572,13 +815,19 @@
           ],
           "lemma": "teach",
           "contrast": "simple_count",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "Five classes is a finished count, and she can go home → has taught.",
+          "explanation_cz": "Pět hodin je hotový počet a může jít domů → has taught.",
+          "quiz_options": [
+            "has taught",
+            "has been teaching",
+            "taught",
+            "is teaching"
+          ]
         },
         {
           "en": "She has been teaching since eight o'clock and she has not had a break.",
           "cz": "Učí od osmi a ještě neměla pauzu.",
-          "gap": "She ____ since eight o'clock and she has not had a break.",
+          "gap": "She ____ since eight o'clock and she has not had a break. (teach)",
           "gap_answer": "has been teaching",
           "gap_accepts": [
             "has been teaching",
@@ -586,35 +835,52 @@
           ],
           "accepts": [
             "She has been teaching since eight o'clock and she has not had a break.",
-            "She's been teaching since eight o'clock and she has not had a break."
+            "She's been teaching since eight o'clock and she has not had a break.",
+            "She has been teaching since eight o'clock and she hasn't had a break.",
+            "She's been teaching since eight o'clock and she hasn't had a break."
           ],
           "lemma": "teach",
           "contrast": "continuous_duration",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Since eight with no break → duration up to now: has been teaching.",
+          "explanation_cz": "Od osmi bez pauzy → doba až do teď: has been teaching.",
+          "quiz_options": [
+            "has been teaching",
+            "has taught",
+            "taught",
+            "is teaching"
+          ]
         },
         {
           "en": "They have built a new garage — come and see it.",
-          "cz": "Postavili novou garáž — pojď se podívat.",
-          "gap": "They ____ a new garage — come and see it.",
+          "cz": "Postavili už novou garáž — pojď se podívat.",
+          "gap": "They ____ a new garage — come and see it. (build)",
           "gap_answer": "have built",
           "gap_accepts": [
             "have built",
-            "they've built"
+            "they've built",
+            "have already built"
           ],
           "accepts": [
             "They have built a new garage — come and see it.",
-            "They've built a new garage — come and see it."
+            "They've built a new garage — come and see it.",
+            "They have already built a new garage — come and see it.",
+            "They've already built a new garage — come and see it."
           ],
           "lemma": "build",
           "contrast": "simple_complete",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Come and see it — the garage stands there → the result: have built.",
+          "explanation_cz": "Pojď se podívat — garáž stojí → výsledek: have built.",
+          "quiz_options": [
+            "have built",
+            "have been building",
+            "built",
+            "are building"
+          ]
         },
         {
           "en": "They have been building a new garage for weeks and it is still only walls.",
           "cz": "Novou garáž staví už týdny a pořád jsou to jen zdi.",
-          "gap": "They ____ a new garage for weeks and it is still only walls.",
+          "gap": "They ____ a new garage for weeks and it is still only walls. (build)",
           "gap_answer": "have been building",
           "gap_accepts": [
             "have been building",
@@ -622,53 +888,83 @@
           ],
           "accepts": [
             "They have been building a new garage for weeks and it is still only walls.",
-            "They've been building a new garage for weeks and it is still only walls."
+            "They've been building a new garage for weeks and it is still only walls.",
+            "They have been building a new garage for weeks and it's still only walls.",
+            "They've been building a new garage for weeks and it's still only walls."
           ],
           "lemma": "build",
           "contrast": "continuous_incomplete",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Weeks, and it is still only walls → unfinished: have been building.",
+          "explanation_cz": "Týdny a pořád jen zdi → nehotové: have been building.",
+          "quiz_options": [
+            "have been building",
+            "have built",
+            "built",
+            "are building"
+          ]
         },
         {
           "en": "I have eaten three sandwiches — I am full.",
-          "cz": "Snědl jsem tři sendviče — jsem plný.",
-          "gap": "I ____ three sandwiches — I am full.",
+          "cz": "Snědl jsem už tři sendviče — jsem plný.",
+          "gap": "I ____ three sandwiches — I am full. (eat)",
           "gap_answer": "have eaten",
           "gap_accepts": [
             "have eaten",
-            "I've eaten"
+            "I've eaten",
+            "have already eaten"
           ],
           "accepts": [
             "I have eaten three sandwiches — I am full.",
-            "I've eaten three sandwiches — I am full."
+            "I've eaten three sandwiches — I am full.",
+            "I have already eaten three sandwiches — I am full.",
+            "I have eaten three sandwiches — I'm full.",
+            "I've eaten three sandwiches — I'm full.",
+            "I have already eaten three sandwiches — I'm full.",
+            "I've already eaten three sandwiches — I am full.",
+            "I've already eaten three sandwiches — I'm full."
           ],
           "lemma": "eat",
           "contrast": "simple_count",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Three sandwiches is a count and being full is its result → have eaten.",
+          "explanation_cz": "Tři sendviče jsou počet a být plný je výsledek → have eaten.",
+          "quiz_options": [
+            "have eaten",
+            "have been eating",
+            "ate",
+            "am eating"
+          ]
         },
         {
           "en": "I have been eating healthier food lately, so I feel better.",
           "cz": "Poslední dobou jím zdravěji, takže se cítím líp.",
-          "gap": "I ____ healthier food lately, so I feel better.",
+          "gap": "I ____ healthier food lately, so I feel better. (eat)",
           "gap_answer": "have been eating",
           "gap_accepts": [
             "have been eating",
-            "I've been eating"
+            "I've been eating",
+            "have eaten"
           ],
           "accepts": [
             "I have been eating healthier food lately, so I feel better.",
-            "I've been eating healthier food lately, so I feel better."
+            "I've been eating healthier food lately, so I feel better.",
+            "I have eaten healthier food lately, so I feel better.",
+            "I've eaten healthier food lately, so I feel better."
           ],
           "lemma": "eat",
           "contrast": "continuous_process",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Lately marks a stretch of time that is still running → have been eating.",
+          "explanation_cz": "Lately označuje dobu, která pořád běží → have been eating.",
+          "quiz_options": [
+            "have been eating",
+            "eat",
+            "ate",
+            "am eating"
+          ]
         },
         {
           "en": "He has driven 200 kilometres today — he needs a rest.",
           "cz": "Dnes ujel 200 kilometrů — potřebuje odpočinek.",
-          "gap": "He ____ 200 kilometres today — he needs a rest.",
+          "gap": "He ____ 200 kilometres today — he needs a rest. (drive)",
           "gap_answer": "has driven",
           "gap_accepts": [
             "has driven",
@@ -680,13 +976,19 @@
           ],
           "lemma": "drive",
           "contrast": "simple_count",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "200 kilometres is a finished count on the clock → has driven.",
+          "explanation_cz": "200 kilometrů je hotový počet → has driven.",
+          "quiz_options": [
+            "has driven",
+            "has been driving",
+            "drove",
+            "is driving"
+          ]
         },
         {
           "en": "He has been driving since six this morning and he is still on the road.",
           "cz": "Řídí od šesti ráno a pořád je na cestě.",
-          "gap": "He ____ since six this morning and he is still on the road.",
+          "gap": "He ____ since six this morning and he is still on the road. (drive)",
           "gap_answer": "has been driving",
           "gap_accepts": [
             "has been driving",
@@ -694,17 +996,25 @@
           ],
           "accepts": [
             "He has been driving since six this morning and he is still on the road.",
-            "He's been driving since six this morning and he is still on the road."
+            "He's been driving since six this morning and he is still on the road.",
+            "He has been driving since six this morning and he's still on the road.",
+            "He's been driving since six this morning and he's still on the road."
           ],
           "lemma": "drive",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Since six and still on the road, so the driving goes on → has been driving.",
+          "explanation_cz": "Od šesti a pořád na cestě, jízda pokračuje → has been driving.",
+          "quiz_options": [
+            "has been driving",
+            "has driven",
+            "drove",
+            "is driving"
+          ]
         },
         {
           "en": "We have done five tasks today — all ticked off the list.",
           "cz": "Dnes jsme udělali pět úkolů — všechny odškrtnuté.",
-          "gap": "We ____ five tasks today — all ticked off the list.",
+          "gap": "We ____ five tasks today — all ticked off the list. (do)",
           "gap_answer": "have done",
           "gap_accepts": [
             "have done",
@@ -716,13 +1026,19 @@
           ],
           "lemma": "do",
           "contrast": "simple_count_result",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Five tasks ticked off is a count with a result → have done.",
+          "explanation_cz": "Pět odškrtnutých úkolů je počet s výsledkem → have done.",
+          "quiz_options": [
+            "have done",
+            "have been doing",
+            "did",
+            "are doing"
+          ]
         },
         {
           "en": "We have been negotiating the price all week and we still have no deal.",
-          "cz": "Celý týden vyjednáváme o ceně a pořád nemáme dohodu.",
-          "gap": "We ____ the price all week and we still have no deal.",
+          "cz": "Už celý týden vyjednáváme o ceně a pořád nemáme dohodu.",
+          "gap": "We ____ the price all week and we still have no deal. (negotiate)",
           "gap_answer": "have been negotiating",
           "gap_accepts": [
             "have been negotiating",
@@ -734,13 +1050,19 @@
           ],
           "lemma": "negotiate",
           "contrast": "continuous_ongoing",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "A week and still no deal → the talking is unfinished: have been negotiating.",
+          "explanation_cz": "Týden a pořád bez dohody → jednání není u konce: have been negotiating.",
+          "quiz_options": [
+            "have been negotiating",
+            "have negotiated",
+            "negotiated",
+            "are negotiating"
+          ]
         },
         {
           "en": "I haven't finished the report yet — give me ten more minutes.",
           "cz": "Tu zprávu jsem ještě nedokončil — dej mi ještě deset minut.",
-          "gap": "I ____ the report yet — give me ten more minutes.",
+          "gap": "I ____ the report yet — give me ten more minutes. (finish)",
           "gap_answer": "haven't finished",
           "gap_accepts": [
             "haven't finished",
@@ -752,126 +1074,197 @@
           ],
           "lemma": "finish",
           "contrast": "simple_not_complete",
-          "explanation": "have/has been + -ing: duration / ongoing process up to now.",
-          "explanation_cz": "have/has been + -ing: trvání / probíhající děj až do teď."
+          "explanation": "Not yet: the report is unfinished, and yet forces the perfect → haven't finished.",
+          "explanation_cz": "Ještě ne: zpráva není hotová a yet vyžaduje perfektum → haven't finished.",
+          "quiz_options": [
+            "haven't finished",
+            "haven't been finishing",
+            "didn't finish",
+            "am not finishing"
+          ]
         },
         {
           "en": "I haven't been sleeping through the night for weeks — I keep waking up every hour.",
           "cz": "Už týdny nespím celou noc — každou hodinu se budím.",
-          "gap": "I ____ through the night for weeks — I keep waking up every hour.",
+          "gap": "I ____ through the night for weeks — I keep waking up every hour. (sleep)",
           "gap_answer": "haven't been sleeping",
           "gap_accepts": [
             "haven't been sleeping",
-            "have not been sleeping"
+            "have not been sleeping",
+            "haven't slept"
           ],
           "accepts": [
             "I haven't been sleeping through the night for weeks — I keep waking up every hour.",
-            "I have not been sleeping through the night for weeks — I keep waking up every hour."
+            "I have not been sleeping through the night for weeks — I keep waking up every hour.",
+            "I haven't slept through the night for weeks — I keep waking up every hour.",
+            "I have not slept through the night for weeks — I keep waking up every hour."
           ],
           "lemma": "sleep",
           "contrast": "continuous_process",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Weeks of broken nights, and it is still going on → haven't been sleeping.",
+          "explanation_cz": "Týdny přerušovaných nocí, pořád to trvá → haven't been sleeping.",
+          "quiz_options": [
+            "haven't been sleeping",
+            "don't sleep",
+            "didn't sleep",
+            "am not sleeping"
+          ]
         },
         {
           "en": "She has started a new course — classes begin on Monday.",
-          "cz": "Začala nový kurz — hodiny začínají v pondělí.",
-          "gap": "She ____ a new course — classes begin on Monday.",
+          "cz": "Právě začala nový kurz — hodiny začínají v pondělí.",
+          "gap": "She ____ a new course — classes begin on Monday. (start)",
           "gap_answer": "has started",
           "gap_accepts": [
             "has started",
-            "she's started"
+            "she's started",
+            "has just started"
           ],
           "accepts": [
             "She has started a new course — classes begin on Monday.",
-            "She's started a new course — classes begin on Monday."
+            "She's started a new course — classes begin on Monday.",
+            "She has just started a new course — classes begin on Monday.",
+            "She's just started a new course — classes begin on Monday."
           ],
           "lemma": "start",
           "contrast": "simple_result",
-          "explanation": "he/she/it → has.",
-          "explanation_cz": "he/she/it → has."
+          "explanation": "The course has started and she is on it now → the result: has started.",
+          "explanation_cz": "Kurz začal a teď na něj chodí → výsledek: has started.",
+          "quiz_options": [
+            "has started",
+            "has been starting",
+            "started",
+            "is starting"
+          ]
         },
         {
           "en": "She has been studying all week for the exam and she is exhausted.",
           "cz": "Celý týden se učí na zkoušku a je vyčerpaná.",
-          "gap": "She ____ all week for the exam and she is exhausted.",
+          "gap": "She ____ all week for the exam and she is exhausted. (study)",
           "gap_answer": "has been studying",
           "gap_accepts": [
             "has been studying",
-            "she's been studying"
+            "she's been studying",
+            "has studied"
           ],
           "accepts": [
             "She has been studying all week for the exam and she is exhausted.",
-            "She's been studying all week for the exam and she is exhausted."
+            "She's been studying all week for the exam and she is exhausted.",
+            "She has studied all week for the exam and she is exhausted.",
+            "She has been studying all week for the exam and she's exhausted.",
+            "She's been studying all week for the exam and she's exhausted.",
+            "She has studied all week for the exam and she's exhausted.",
+            "She's studied all week for the exam and she is exhausted.",
+            "She's studied all week for the exam and she's exhausted."
           ],
           "lemma": "study",
           "contrast": "continuous_process",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "A week of studying is what left her exhausted → has been studying.",
+          "explanation_cz": "Týden učení ji vyčerpal → has been studying.",
+          "quiz_options": [
+            "has been studying",
+            "studies",
+            "studied",
+            "is studying"
+          ]
         },
         {
-          "en": "Look at the mess — the kids have played in here once and then left.",
-          "cz": "Podívej se na nepořádek — děti tu jednou hrály a pak odešly.",
-          "gap": "Look at the mess — the kids ____ in here once and then left.",
+          "en": "Look at the mess — the kids have played in here twice today.",
+          "cz": "Podívej se na nepořádek — děti si tu dnes hrály už dvakrát.",
+          "gap": "Look at the mess — the kids ____ in here twice today. (play)",
           "gap_answer": "have played",
           "gap_accepts": [
             "have played",
             "they've played"
           ],
           "accepts": [
-            "Look at the mess — the kids have played in here once and then left.",
-            "Look at the mess — they've played in here once and then left."
+            "Look at the mess — the kids have played in here twice today."
           ],
           "lemma": "play",
           "contrast": "simple_result",
-          "explanation": "I/you/we/they → have.",
-          "explanation_cz": "I/you/we/they → have."
+          "explanation": "Twice today counts finished visits to the room → have played.",
+          "explanation_cz": "Dvakrát dnes počítá hotové návštěvy pokoje → have played.",
+          "quiz_options": [
+            "have played",
+            "have been playing",
+            "played",
+            "are playing"
+          ]
         },
         {
           "en": "The kids have been playing in the garden all afternoon — that is why they are dirty.",
-          "cz": "Děti si celé odpoledne hrají na zahradě — proto jsou špinavé.",
-          "gap": "The kids ____ in the garden all afternoon — that is why they are dirty.",
+          "cz": "Děti si už celé odpoledne hrají na zahradě — proto jsou špinavé.",
+          "gap": "The kids ____ in the garden all afternoon — that is why they are dirty. (play)",
           "gap_answer": "have been playing",
           "gap_accepts": [
-            "have been playing"
+            "have been playing",
+            "have played"
           ],
           "accepts": [
-            "The kids have been playing in the garden all afternoon — that is why they are dirty."
+            "The kids have been playing in the garden all afternoon — that is why they are dirty.",
+            "The kids have played in the garden all afternoon — that is why they are dirty.",
+            "The kids have been playing in the garden all afternoon — that is why they're dirty.",
+            "The kids have been playing in the garden all afternoon — that's why they are dirty.",
+            "The kids have been playing in the garden all afternoon — that's why they're dirty.",
+            "The kids have played in the garden all afternoon — that is why they're dirty.",
+            "The kids have played in the garden all afternoon — that's why they are dirty.",
+            "The kids have played in the garden all afternoon — that's why they're dirty."
           ],
           "lemma": "play",
           "contrast": "continuous_evidence",
-          "explanation": "have/has been + -ing for duration up to now.",
-          "explanation_cz": "have/has been + -ing pro trvání až do teď."
+          "explanation": "Dirty kids are what the whole afternoon of playing left behind → have been playing.",
+          "explanation_cz": "Špinavé děti jsou stopa celého odpoledne hraní → have been playing.",
+          "quiz_options": [
+            "have been playing",
+            "play",
+            "played",
+            "are playing"
+          ]
         },
         {
           "en": "How many emails have you sent today?",
           "cz": "Kolik emailů jsi dnes poslal?",
-          "gap": "How many emails ____ you sent today?",
-          "gap_answer": "have",
+          "gap": "How many emails ____ today? (send)",
+          "gap_answer": "have you sent",
           "gap_accepts": [
-            "have"
+            "have you sent"
           ],
           "accepts": [
             "How many emails have you sent today?"
           ],
           "contrast": "simple_count",
-          "explanation": "Present perfect continuous: have/has + been + -ing.",
-          "explanation_cz": "Předpřítomný průběhový: have/has + been + -ing."
+          "explanation": "How many emails counts finished sends → present perfect simple: have you sent.",
+          "explanation_cz": "How many emails počítá hotová odeslání → have you sent.",
+          "quiz_options": [
+            "have you sent",
+            "have you been sending",
+            "did you send",
+            "are you sending"
+          ],
+          "lemma": "send"
         },
         {
           "en": "Sorry I am late — how long have you been waiting?",
           "cz": "Promiň za zpoždění — jak dlouho čekáš?",
-          "gap": "Sorry I am late — how long ____ you been waiting?",
-          "gap_answer": "have",
+          "gap": "Sorry I am late — how long ____? (wait)",
+          "gap_answer": "have you been waiting",
           "gap_accepts": [
-            "have"
+            "have you been waiting"
           ],
           "accepts": [
-            "Sorry I am late — how long have you been waiting?"
+            "Sorry I am late — how long have you been waiting?",
+            "Sorry I'm late — how long have you been waiting?"
           ],
           "contrast": "continuous_duration",
-          "explanation": "Present perfect continuous: have/has + been + -ing.",
-          "explanation_cz": "Předpřítomný průběhový: have/has + been + -ing."
+          "explanation": "How long asks for duration up to now → have you been waiting.",
+          "explanation_cz": "How long se ptá na dobu až do teď → have you been waiting.",
+          "quiz_options": [
+            "have you been waiting",
+            "have you waited",
+            "did you wait",
+            "are you waiting"
+          ],
+          "lemma": "wait"
         }
       ]
     }
@@ -879,20 +1272,43 @@
   "intro": {
     "cards": [
       {
-        "title": "One correct form",
-        "title_cz": "Jeden správný tvar",
-        "body": "Each stem is written so only one aspect fits. Read the whole line — count, finished result, or unfinished process.",
-        "body_cz": "Každá věta je napsaná tak, aby seděl jen jeden aspekt. Čti celý řádek — počet, hotový výsledek, nebo nedokončený proces.",
+        "title": "Present perfect simple vs continuous",
+        "title_cz": "Předpřítomný čas prostý vs průběhový",
+        "svg": "<svg viewBox=\"0 0 540 240\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"200\" x2=\"510\" y2=\"200\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"510,200 500,195 500,205\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"400\" y1=\"26\" x2=\"400\" y2=\"214\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"400\" y=\"18\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <circle cx=\"120\" cy=\"56\" r=\"7\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"140\" y=\"61\" font-size=\"13\" fill=\"var(--text, #eaeaea)\">I wrote it yesterday.</text>\n  <text x=\"30\" y=\"40\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">past simple · finished, no link to now</text>\n  <circle cx=\"120\" cy=\"118\" r=\"7\" fill=\"var(--text, #eaeaea)\"/>\n  <path d=\"M 127 118 L 396 118\" stroke=\"var(--text, #eaeaea)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/>\n  <polygon points=\"400,118 390,113 390,123\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"140\" y=\"104\" font-size=\"13\" fill=\"var(--text, #eaeaea)\">I have written three emails.</text>\n  <text x=\"30\" y=\"140\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">present perfect simple · done, and the result is here now</text>\n  <rect x=\"113\" y=\"163\" width=\"287\" height=\"20\" rx=\"10\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"140\" y=\"178\" font-size=\"12\" fill=\"var(--bg, #14161a)\">I have been writing all morning.</text>\n  <text x=\"30\" y=\"196\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">present perfect continuous · still running at now</text>\n</svg>",
         "points": [
-          "I have written three emails — here they are. (result / count)",
-          "I have been writing emails all morning and I still have two left. (process)"
-        ]
+          "Both reach up to **now** — that is what makes them perfect tenses.",
+          "Simple marks a **result** or a **count**: I have written three emails.",
+          "Continuous marks the **time spent**: I have been writing all morning.",
+          "Past simple stays back there with no link to now."
+        ],
+        "table": {
+          "headers": [
+            "Tense",
+            "Where it sits",
+            "Example"
+          ],
+          "rows": [
+            [
+              "past simple",
+              "a finished point, no link to now",
+              "I **wrote** it yesterday."
+            ],
+            [
+              "present perfect simple",
+              "done, result here now",
+              "I **have written** three emails."
+            ],
+            [
+              "present perfect continuous",
+              "still running at now",
+              "I **have been** writing all morning."
+            ]
+          ]
+        }
       },
       {
-        "title": "Form table",
-        "title_cz": "Tabulka tvarů",
-        "body": "Same perfect idea (link to now) — two shapes:",
-        "body_cz": "Stejná idea perfectu (vazba na teď) — dva tvary:",
+        "title": "The two shapes",
+        "title_cz": "Dva tvary",
         "table": {
           "caption": "Present perfect simple vs continuous",
           "headers": [
@@ -903,97 +1319,173 @@
           "rows": [
             [
               "Simple",
-              "have/has + past participle",
-              "how many / already / done / result now"
+              "**have/has** + past participle",
+              "how many · already · done · result now"
             ],
             [
               "Continuous",
-              "have/has been + -ing",
-              "how long / for / since / all… / still going"
+              "**have/has been** + -ing",
+              "how long · for · since · all… · still going"
             ]
           ]
         },
         "points": [
-          "Simple: have written · has finished · haven't done",
-          "Continuous: have been writing · has been waiting · haven't been sleeping"
+          "Simple: **have written** · has finished · haven't done",
+          "Continuous: **have been** writing · has been waiting · haven't been sleeping",
+          "The participle and the -ing come from the same verb — only the shape changes."
         ]
       },
       {
         "title": "Simple = result / count / done",
-        "title_cz": "Simple = výsledek / počet / hotovo",
-        "body": "have/has + past participle. Focus on finished outcome or how many.",
-        "body_cz": "have/has + příčestí. Důraz na hotový výsledek nebo kolikrát / kolik.",
+        "title_cz": "Prostý = výsledek / počet / hotovo",
+        "table": {
+          "headers": [
+            "What the stem shows",
+            "Example"
+          ],
+          "rows": [
+            [
+              "a result you can see now",
+              "She **has read** the whole report — she can answer now."
+            ],
+            [
+              "how many, inside unfinished time",
+              "She **has made** ten cakes this week for the sale."
+            ],
+            [
+              "a question counting occasions",
+              "How many emails **have** you sent today?"
+            ]
+          ]
+        },
         "points": [
-          "She has read the whole report — she can answer now.",
-          "How many emails have you sent today?"
+          "The activity is over. What is left is the **outcome**.",
+          "Words that go with it: **already** · **just** · **yet** · how many · three times."
         ]
       },
       {
         "title": "Continuous = process / duration",
-        "title_cz": "Continuous = proces / trvání",
-        "body": "have/has been + -ing. Activity over time; often still going or visible now.",
-        "body_cz": "have/has been + -ing. Činnost v čase; často pořád běží nebo je teď vidět.",
+        "title_cz": "Průběhový = děj / trvání",
+        "table": {
+          "headers": [
+            "What the stem shows",
+            "Example"
+          ],
+          "rows": [
+            [
+              "still going, not finished",
+              "They **have been** painting the kitchen all day and it is still not finished."
+            ],
+            [
+              "how long, up to now",
+              "She **has been** teaching since eight o'clock and she has not had a break."
+            ],
+            [
+              "evidence you can see now",
+              "He **has been** running for forty minutes and he looks tired."
+            ]
+          ]
+        },
         "points": [
-          "She has been reading for an hour and she is only on page two.",
-          "How long have you been waiting?"
+          "The activity itself is the point — **how long**, not how many.",
+          "Words that go with it: **for** · **since** · all day · all morning · still."
         ]
       },
       {
         "title": "How many vs How long",
         "title_cz": "How many vs How long",
-        "body": "Question words often choose the aspect for you:",
-        "body_cz": "Tázací slova často zvolí aspekt za tebe:",
         "table": {
           "headers": [
             "Question",
-            "Usual aspect",
+            "Aspect",
             "Example"
           ],
           "rows": [
             [
               "How many / how much",
               "simple",
-              "How many times have you visited Prague?"
+              "How many times **have** you visited Prague?"
             ],
             [
               "How long",
               "continuous",
-              "How long have you been waiting here?"
+              "How long **have** you been waiting here?"
             ]
           ]
         },
         "points": [
-          "Some items only blank Have (not Did) in the question — that is aux choice, not the full form contrast",
-          "Most items blank the full form: have written vs have been writing"
+          "The question word usually picks the aspect before you read the rest.",
+          "**How long** never counts — it measures."
         ]
       },
       {
-        "title": "Check options",
-        "title_cz": "Check — volby",
-        "body": "On full-form items you always see four structures: past simple · present perfect simple · present perfect continuous · one wrong form. Exactly one fits the stem.",
-        "body_cz": "U plných tvarů vždy čtyři struktury: past simple · PP simple · PP continuous · jeden špatný tvar. Sedí právě jeden."
-      },
-      {
-        "title": "Type",
-        "title_cz": "Type",
-        "body": "(verb) = base form. Type the full correct structure for the blank — not only -ing, not a different verb.",
-        "body_cz": "(verb) = základ. Do mezery piš celou správnou strukturu — ne jen -ing, ne jiné sloveso.",
+        "title": "Four shapes, one fits",
+        "title_cz": "Čtyři tvary, sedí jeden",
+        "table": {
+          "headers": [
+            "Shape",
+            "It says",
+            "Stem that picks it"
+          ],
+          "rows": [
+            [
+              "**have written**",
+              "three are done",
+              "— here they are."
+            ],
+            [
+              "**have been** writing",
+              "the morning went on it",
+              "— and I still have two left."
+            ],
+            [
+              "**wrote**",
+              "yesterday, over",
+              "— last Friday."
+            ],
+            [
+              "**am writing**",
+              "at this second",
+              "— right now, don't call me."
+            ]
+          ]
+        },
         "points": [
-          "I ____ (write) three emails… → have written",
-          "I ____ (write) emails all morning… → have been writing"
+          "The four shapes look alike. The words around the gap choose between them.",
+          "Read to the end of the line before you answer."
         ]
       },
       {
-        "title": "Both can look possible — trust the stem",
-        "title_cz": "Obojí může vypadat možné — věř větě",
-        "body": "Without a forcing detail, English sometimes allows both aspects. In this pack the extra words (still only halfway, right now, once and left, every hour…) pick one. Do not invent the other form.",
-        "body_cz": "Bez nápovědy angličtina někdy dovolí oba aspekty. Tady extra slova (pořád jen v půlce, právě teď, jednou a odešly…) volí jeden. Nevymýšlej druhý tvar."
-      },
-      {
-        "title": "Czech trap",
-        "title_cz": "Česká past",
-        "body": "Czech often one present for both ideas. English chooses done result vs ongoing process.",
-        "body_cz": "Čeština často jeden přítomný čas pro obojí. Angličtina volí hotový výsledek vs probíhající proces."
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~I am writing emails all morning.~~",
+              "I **have been** writing emails all morning."
+            ],
+            [
+              "~~How long do you wait here?~~",
+              "How long **have** you been waiting here?"
+            ],
+            [
+              "~~She has been reading the whole report, she can answer.~~",
+              "She **has read** the whole report — she can answer now."
+            ],
+            [
+              "~~I have wrote three emails.~~",
+              "I **have written** three emails."
+            ]
+          ]
+        },
+        "points": [
+          "Czech uses one present tense for both ideas, so the -ing form feels safe. It is not.",
+          "A finished result never takes **been** + -ing."
+        ]
       }
     ]
   }
