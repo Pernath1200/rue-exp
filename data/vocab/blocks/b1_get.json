@@ -5,7 +5,7 @@
  "tree_node": "leaf_get_b1",
  "codex_unit": "V_COR-B1B2-01",
  "quality": "draft",
- "note": "get is the highest-frequency verb Czech students avoid, because Czech splits its senses across different verbs. Own unit because it is too big for trunk_chunks_b1. Sorted by sense: receive, become, arrive, plus the fixed pairs. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. FIVE of the eight shipped frames could never gap — they used the past or 3sg form (*got a letter*, *got married*, *got a new job*, *got ill*, *gets dark*) while the lemma is the base chunk, so sentenceToFrame found nothing. Every frame here holds its chunk verbatim, which on this pack means the base form of get in every one. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get lost* belongs to leaf_travel_b1 (path 6) and *get on with* to leaf_relationships_b1 (24); replaced with **get wet** and **get over**. · The frames page offered noun frames (I have a … / I need a …) on a pack of verb chunks; they are get-shapes now. · Pool-checked against everything taught before leaf_get_b1 — 0 unknown types. · 2026-09-04: one rewrite item re-cut so replacing the underline reconstructs the answer.",
+ "note": "get is the highest-frequency verb Czech students avoid, because Czech splits its senses across different verbs. Own unit because it is too big for trunk_chunks_b1. Sorted by sense: receive, become, arrive, plus the fixed pairs. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. FIVE of the eight shipped frames could never gap — they used the past or 3sg form (*got a letter*, *got married*, *got a new job*, *got ill*, *gets dark*) while the lemma is the base chunk, so sentenceToFrame found nothing. Every frame here holds its chunk verbatim, which on this pack means the base form of get in every one. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get lost* belongs to leaf_travel_b1 (path 6) and *get on with* to leaf_relationships_b1 (24); replaced with **get wet** and **get over**. · The frames page offered noun frames (I have a … / I need a …) on a pack of verb chunks; they are get-shapes now. · Pool-checked against everything taught before leaf_get_b1 — 0 unknown types. · 2026-09-04: one rewrite item re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 23 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py — a `get + X` collocation is short by nature, so almost two thirds of this bank was one clause long. All 23 rewritten to make one clause move and carry two or more already-taught words; every multi-word `get` lemma stays contiguous, so sentenceToFrame still gaps the whole collocation and not just the verb. 0/36 fail now.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -495,44 +495,43 @@
  ],
  "sentences": [
   {
-   "en": "Children get a present from their grandparents every Christmas.",
-   "cz": "Děti dostávají od prarodičů dárek každé Vánoce.",
+   "en": "Children get a present from their grandparents when the family meets at Christmas.",
+   "cz": "Děti dostanou od prarodičů dárek, když se rodina sejde o Vánocích.",
    "lemmas": [
     "get a present"
    ],
    "accepts": [
-    "Children get a present from their grandparents every Christmas"
+    "Children get a present from their grandparents when the family meets at Christmas"
    ]
   },
   {
-   "en": "I get a letter from the bank every month.",
-   "cz": "Každý měsíc dostanu dopis z banky.",
+   "en": "I get a letter from the bank every month although the account is online.",
+   "cz": "Každý měsíc dostanu dopis z banky, i když je účet online.",
    "lemmas": [
     "get a letter"
    ],
    "accepts": [
-    "I get a letter from the bank every month"
+    "I get a letter from the bank every month although the account is online"
    ]
   },
   {
-   "en": "It is hard to get a job in a small town.",
-   "cz": "V malém městě je těžké sehnat práci.",
+   "en": "It is hard to get a job in a small town, but the rent is lower.",
+   "cz": "V malém městě je těžké sehnat práci, ale nájem je nižší.",
    "lemmas": [
     "get a job"
    ],
    "accepts": [
-    "It is hard to get a job in a small town",
-    "It's hard to get a job in a small town"
+    "It is hard to get a job in a small town, but the rent is lower"
    ]
   },
   {
-   "en": "You can get a ticket at the machine by the door.",
-   "cz": "Lístek si můžeš koupit v automatu u dveří.",
+   "en": "You can get a ticket at the machine by the door, but it does not take cards.",
+   "cz": "Lístek si můžeš koupit v automatu u dveří, ale nebere karty.",
    "lemmas": [
     "get a ticket"
    ],
    "accepts": [
-    "You can get a ticket at the machine by the door"
+    "You can get a ticket at the machine by the door, but it does not take cards"
    ]
   },
   {
@@ -546,54 +545,53 @@
    ]
   },
   {
-   "en": "I get a call from my mother every Sunday.",
-   "cz": "Každou neděli mi volá máma.",
+   "en": "I get a call from my mother every Sunday, although we live in the same street.",
+   "cz": "Každou neděli mi volá máma, i když bydlíme ve stejné ulici.",
    "lemmas": [
     "get a call"
    ],
    "accepts": [
-    "I get a call from my mother every Sunday"
+    "I get a call from my mother every Sunday, although we live in the same street"
    ]
   },
   {
-   "en": "Can you get some bread on your way home?",
-   "cz": "Můžeš cestou domů koupit chleba?",
+   "en": "Can you get some bread on your way home because the shop closes at six?",
+   "cz": "Můžeš cestou domů koupit chleba, protože obchod zavírá v šest?",
    "lemmas": [
     "get some bread"
    ],
    "accepts": [
-    "Can you get some bread on your way home?"
+    "Can you get some bread on your way home because the shop closes at six?"
    ]
   },
   {
-   "en": "Sometimes I get an idea in the night and write it down.",
-   "cz": "Někdy mě v noci napadne nápad a zapíšu si ho.",
+   "en": "Sometimes I get an idea in the night, but I forget it by the morning.",
+   "cz": "Někdy mě v noci napadne nápad, ale do rána ho zapomenu.",
    "lemmas": [
     "get an idea"
    ],
    "accepts": [
-    "Sometimes I get an idea in the night and write it down"
+    "Sometimes I get an idea in the night, but I forget it by the morning"
    ]
   },
   {
-   "en": "You will get an email when the booking is ready.",
-   "cz": "Až bude rezervace hotová, přijde ti e-mail.",
+   "en": "You will get an email when the booking is ready, but check the spam folder.",
+   "cz": "Až bude rezervace hotová, přijde ti e-mail, ale zkontroluj složku se spamem.",
    "lemmas": [
     "get an email"
    ],
    "accepts": [
-    "You will get an email when the booking is ready",
-    "You'll get an email when the booking is ready"
+    "You will get an email when the booking is ready, but check the spam folder"
    ]
   },
   {
-   "en": "She wants to get a degree before she is thirty.",
-   "cz": "Chce mít vysokou školu, než jí bude třicet.",
+   "en": "She wants to get a degree before she is thirty, although she works full-time.",
+   "cz": "Chce získat titul, než jí bude třicet, i když pracuje na plný úvazek.",
    "lemmas": [
     "get a degree"
    ],
    "accepts": [
-    "She wants to get a degree before she is thirty"
+    "She wants to get a degree before she is thirty, although she works full-time"
    ]
   },
   {
@@ -607,33 +605,33 @@
    ]
   },
   {
-   "en": "I get the shopping on Saturday morning.",
-   "cz": "Nákup dělám v sobotu ráno.",
+   "en": "I get the shopping on Saturday morning because the shops are empty then.",
+   "cz": "Nákup dělám v sobotu ráno, protože jsou obchody prázdné.",
    "lemmas": [
     "get the shopping"
    ],
    "accepts": [
-    "I get the shopping on Saturday morning"
+    "I get the shopping on Saturday morning because the shops are empty then"
    ]
   },
   {
-   "en": "I get tired if I read after ten.",
-   "cz": "Když čtu po desáté, jsem unavený.",
+   "en": "I get tired if I read after ten, although I sleep for eight hours.",
+   "cz": "Když čtu po desáté, jsem unavený, i když spím osm hodin.",
    "lemmas": [
     "get tired"
    ],
    "accepts": [
-    "I get tired if I read after ten"
+    "I get tired if I read after ten, although I sleep for eight hours"
    ]
   },
   {
-   "en": "Children get ill more often in the winter.",
-   "cz": "Děti v zimě onemocní častěji.",
+   "en": "Children get ill more often in the winter when the weather changes quickly.",
+   "cz": "Děti v zimě častěji onemocní, když se rychle mění počasí.",
    "lemmas": [
     "get ill"
    ],
    "accepts": [
-    "Children get ill more often in the winter"
+    "Children get ill more often in the winter when the weather changes quickly"
    ]
   },
   {
@@ -678,24 +676,23 @@
    ]
   },
   {
-   "en": "In December it can get dark before four.",
-   "cz": "V prosinci se může setmět před čtvrtou.",
+   "en": "In December it can get dark before the children leave school.",
+   "cz": "V prosinci se může setmět dřív, než děti odejdou ze školy.",
    "lemmas": [
     "get dark"
    ],
    "accepts": [
-    "In December it can get dark before four"
+    "In December it can get dark before the children leave school"
    ]
   },
   {
-   "en": "The weather will get better at the weekend.",
-   "cz": "O víkendu se počasí zlepší.",
+   "en": "The weather will get better at the weekend, although the nights stay cold.",
+   "cz": "O víkendu se počasí zlepší, i když noci zůstanou studené.",
    "lemmas": [
     "get better"
    ],
    "accepts": [
-    "The weather will get better at the weekend",
-    "The weather'll get better at the weekend"
+    "The weather will get better at the weekend, although the nights stay cold"
    ]
   },
   {
@@ -730,23 +727,23 @@
    ]
   },
   {
-   "en": "It takes me ten minutes to get ready in the morning.",
-   "cz": "Ráno mi trvá deset minut, než jsem připravený.",
+   "en": "It takes me ten minutes to get ready in the morning because I choose my clothes at night.",
+   "cz": "Připravit se mi ráno trvá deset minut, protože si oblečení vybírám večer.",
    "lemmas": [
     "get ready"
    ],
    "accepts": [
-    "It takes me ten minutes to get ready in the morning"
+    "It takes me ten minutes to get ready in the morning because I choose my clothes at night"
    ]
   },
   {
-   "en": "I get home at six, but the children are already there.",
-   "cz": "Domů se dostanu v šest, ale děti už tam jsou.",
+   "en": "I get home at six, but the children are already doing their homework.",
+   "cz": "Domů se dostanu v šest, ale děti už dělají úkoly.",
    "lemmas": [
     "get home"
    ],
    "accepts": [
-    "I get home at six, but the children are already there"
+    "I get home at six, but the children are already doing their homework"
    ]
   },
   {
@@ -761,13 +758,13 @@
    ]
   },
   {
-   "en": "We get on the bus at the second stop.",
-   "cz": "Nastupujeme do autobusu na druhé zastávce.",
+   "en": "We get on the bus at the second stop because the first one is always full.",
+   "cz": "Nastupujeme do autobusu na druhé zastávce, protože ta první je vždycky plná.",
    "lemmas": [
     "get on"
    ],
    "accepts": [
-    "We get on the bus at the second stop"
+    "We get on the bus at the second stop because the first one is always full"
    ]
   },
   {
@@ -791,24 +788,23 @@
    ]
   },
   {
-   "en": "We get in late, so do not wait for us.",
-   "cz": "Přijedeme pozdě, tak na nás nečekejte.",
+   "en": "We get in late because the last train is slow.",
+   "cz": "Přijedeme pozdě, protože poslední vlak jede pomalu.",
    "lemmas": [
     "get in"
    ],
    "accepts": [
-    "We get in late, so do not wait for us",
-    "We get in late, so don't wait for us"
+    "We get in late because the last train is slow"
    ]
   },
   {
-   "en": "It takes a week to get over a bad cold.",
-   "cz": "Než se z pořádné rýmy dostaneš, trvá to týden.",
+   "en": "It takes a week to get over a bad cold if you keep working.",
+   "cz": "Trvá týden dostat se z těžké rýmy, když pořád pracuješ.",
    "lemmas": [
     "get over"
    ],
    "accepts": [
-    "It takes a week to get over a bad cold"
+    "It takes a week to get over a bad cold if you keep working"
    ]
   },
   {
@@ -823,46 +819,43 @@
    ]
   },
   {
-   "en": "We get back from Poland on Sunday evening.",
-   "cz": "Z Polska se vracíme v neděli večer.",
+   "en": "We get back from Poland on Sunday evening, but the shops will be closed.",
+   "cz": "Z Polska se vrátíme v neděli večer, ale obchody už budou zavřené.",
    "lemmas": [
     "get back"
    ],
    "accepts": [
-    "We get back from Poland on Sunday evening"
+    "We get back from Poland on Sunday evening, but the shops will be closed"
    ]
   },
   {
-   "en": "It is not easy to get into that school.",
-   "cz": "Dostat se na tu školu není snadné.",
+   "en": "It is not easy to get into that school although my sister studied there.",
+   "cz": "Není snadné dostat se na tu školu, i když tam moje sestra studovala.",
    "lemmas": [
     "get into"
    ],
    "accepts": [
-    "It is not easy to get into that school",
-    "It's not easy to get into that school",
-    "It isn't easy to get into that school"
+    "It is not easy to get into that school although my sister studied there"
    ]
   },
   {
-   "en": "We want to get away for a few days in October.",
-   "cz": "V říjnu chceme na pár dní vypadnout.",
+   "en": "We want to get away for a few days in October when the hotels are cheaper.",
+   "cz": "Chceme na pár dní v říjnu odjet, když jsou hotely levnější.",
    "lemmas": [
     "get away"
    ],
    "accepts": [
-    "We want to get away for a few days in October"
+    "We want to get away for a few days in October when the hotels are cheaper"
    ]
   },
   {
-   "en": "We should get going, or we will miss the train.",
-   "cz": "Měli bychom vyrazit, jinak nám ujede vlak.",
+   "en": "We should get going because the train leaves in ten minutes.",
+   "cz": "Měli bychom vyrazit, protože vlak jede za deset minut.",
    "lemmas": [
     "get going"
    ],
    "accepts": [
-    "We should get going, or we will miss the train",
-    "We should get going, or we'll miss the train"
+    "We should get going because the train leaves in ten minutes"
    ]
   }
  ],
