@@ -27,18 +27,6 @@ Blocks below moved to **Answered** with what was applied. Three entries stay ope
 
 ## Open
 
-### b1_used_to / a2_will_going_to · the *Modal verbs N* series now has holes at 2 and 6
-**Q:** Both packs sit in the **Time and Tenses** category (`category_seq` 10 and 15) and both were titled *Modal verbs 2: will / going to* and *Modal verbs 6: would (past habits)*. You flagged it: *"is this time and tenses or modal verbs? I thought it was time and tenses."* Retitled to their registry labels — **Will / going to** and **Would for past habits** — which is what `nodes-grammar.json` already called them. That leaves the modal series running 1, 3, 4, 5, 7, 8.
-**Options:** a) leave the holes until a `modals` category is stamped, then renumber all six in one pass / b) renumber now to 1–6 (touches `a1_can`, `a2_modals_must_should`, `a2_have_to`, `a2_could_able`, `b1_past_modals`, `b1_modals_speculation` — four of them protected A1/A2) / c) drop the numbering from the modal titles entirely and let the category carry the order, the way Time and Tenses does.
-**Default if unanswered:** a — nothing further done. The category note in `tree.json` says conditionals/wishes/reporting are future sibling categories; modals is the obvious next one, and renumbering twice is worse than once. (c) is tempting and is what Time and Tenses already proves works.
-→ (James: your answer here)
-
-### b1_be_used_to · does one exercise test form and use together? (your flag 4)
-**Q:** *Ondrej ____ used to his new schedule. (get)* → `is getting`, chips *is getting / is get / getting / is got*. You: *"this just tests form, not use. wonder if I should do both in one exercise."* The pack has three points: the **-ing** (items 0–10), **be vs get** (11–20), and **used to vs be used to** (21–24). The third block already tests use — its four chips are all real English and only the situation picks. The **be vs get** block does not: every gap there is a form of *get* (*got / getting / get* after *will*, *can't*, *did*), so nothing ever asks *am used to* against *am getting used to* on meaning alone.
-**Options:** a) keep the axes apart and add two be/get **meaning** items where both forms are grammatical and only the situation picks (*I've lived here ten years. I ____ the noise.* → *am used to*; *It's my first week. I ____ the noise.* → *am getting used to*) / b) mix form and use chips on the same item (*is getting / is used to / was getting / is get*) / c) leave it — items 21–24 already carry the use axis and that is enough.
-**Default if unanswered:** a. (b) breaks B6 — options stay on one axis — and makes a wrong answer unreadable: you cannot tell whether the student missed the form or the meaning. (a) fills the hole that is actually there.
-→ (James: your answer here)
-
 ### lint.py · two cue checks are ready to land, and one of them lights up protected A2
 **Q:** B26 (negative answer, no negative in the cue) and B25 (the gap answer is the bracketed phrase copied out) are both cheap regex checks. Measured over all 240 packs: B26 hits **29 items in 7 packs** — `b1_question_tags` ×9 are false (a negative tag is the point, so tag packs need the same exemption A8's `TAG_AFTER` already has), `b1_reported_speech` ×3 are false (their cues say *negative* / *won't*), leaving 6 in `a2_used_to`, 7 in `a2_present_perfect`, 1 each in `a2_past_continuous` and `a2_will_going_to`, and 0 in B1 now that `b1_future`'s four are fixed. B25 hits **2 items**, one of which is `a2_have_to`. So landing either check turns protected A2 packs red.
 **Options:** a) land both as EXACT with the tag/cue guards, accept that A2 lights up, and leave those items alone as a recorded standing class / b) land them as CANDIDATE so they report without counting against the loop's gate 1 / c) do not land them; the rules stay prose in AUTHORING-RULES.
@@ -74,6 +62,14 @@ Blocks below moved to **Answered** with what was applied. Three entries stay ope
 ---
 
 ## Answered
+
+### b1_used_to / a2_will_going_to · the *Modal verbs N* series had holes at 2 and 6
+**Q:** Both packs sit in **Time and Tenses** and both were titled *Modal verbs N*. James, smoking `b1_used_to`: *"is this time and tenses or modal verbs? I thought it was time and tenses. if so, titles in this section are wrong."*
+→ **Retitle both, then renumber the rest 1–6 (James, 2026-09-05).** Applied. `b1_used_to` → **Would for past habits**, `a2_will_going_to` → **Will / going to** — the labels `nodes-grammar.json` already carried. The remaining six renumber in path order, EN and CZ card titles together: `a2_modals_must_should` 3→2, `a2_have_to` 4→3, `a2_could_able` 5→4, `b1_past_modals` 7→5, `b1_modals_speculation` 8→6. `a1_can` stays 1. The series is unbroken again and no unit is titled for a category it does not sit in. `INSPECTED.md` still prints the old titles; it is generated, so the next `reconcile_inspected.py` picks them up — do not hand-edit it.
+
+### b1_be_used_to · does one exercise test form and use together?
+**Q:** *Ondrej ____ used to his new schedule. (get)* — James, smoke flag 4: *"this just tests form, not use. wonder if I should do both in one exercise. think about this and then ask me."* The pack's third block (used to vs be used to) already tests use; the **be vs get** block did not — every gap there was a form of *get*, so nothing asked *am used to* against *am getting used to* on meaning alone.
+→ **(a) Keep the axes apart and fill the hole (James, 2026-09-05).** Applied: two Quiz-only minimal pairs at items 21–22, same noun, only the situation moves — *After ten years here, I ____ the noise* → **am used to**; *It's my first week here, so I ____ the noise* → **am getting used to**. Both chip rows are the same four real forms, so only the situation picks. `type: false` (a cloze cannot force one of two real forms, E8) and no `wrong` (a be/get swap is real English — the pack's own E9/G4 line). Item 13 stays a form item and keeps its form chips. Mixing the axes was rejected: it breaks B6, and a miss becomes unreadable — you cannot tell whether the student lost the form or the meaning.
 
 *(2026-09-05 — answered by dropdown in the B1 smoke tab; "applied" notes say what
 the interactive session did the same day.)*
