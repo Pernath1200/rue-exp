@@ -1,18 +1,791 @@
 {
   "id": "b2_modal_perfect",
-  "title": "Modals (meanings + perfect)",
+  "title": "Modal perfect",
   "level": "B2",
   "tree_node": "b2_modal_perfect",
+  "codex_unit": "G_MOD-B1B2-01",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty stub. 30 items, inside the 24-40 band. The two predecessors divide cleanly and neither is re-taught: b1_modals_speculation (48) owns PRESENT speculation (might/may/could/must + be) and b1_past_modals (25) owns past ability and obligation (had to / was able to / managed to). What neither has is modal + **have** + past participle, which is this unit. Two blocks: how sure about the past (14 — must have / cannot have / might have) and looking back with should (10 — should have / should not have). The teaching spine is the one Czech learners actually get wrong: THE NEGATIVE OF `must have` IS `cannot have`, never *must not have*. That is stated on the certainty card, sits in the distractors (B4), and is Use item 2. C43: the certainty card names its axis rather than just listing forms. C57: card 1 recaps the Modals 8 scale and moves it into the past. A0/A5: the possibility items carry gap_accepts [might, may, could] so all three grade correct, since the Czech *možná* does not pick one; the chips offer only one of the three so the Quiz stays single-answer. A8 accepts are a full contraction closure (cannot/can't, should not/shouldn't). D1: every item has its own explanation naming its own verb and its own evidence. gap_class auxiliary on all 24 gap items, per FCE-EXERCISES. KWT-native per that spec, but KWT needs a js/ branch that is James-only under P-engine, so Use is ordinary error-correction (E7), one real error each (E2).",
+  "intro": {
+    "cards": [
+      {
+        "title": "Modal perfect",
+        "title_cz": "Modální sloveso + have + příčestí",
+        "points": [
+          "A modal plus **have** plus a past participle looks back at the past.",
+          "The modal says how sure you are, or what should have happened.",
+          "The **have** never disappears: *must have left*, not *must left*."
+        ],
+        "table": {
+          "headers": [
+            "Now",
+            "The past version"
+          ],
+          "rows": [
+            [
+              "She **must be** at home.",
+              "She **must have** been at home."
+            ],
+            [
+              "He **cannot be** serious.",
+              "He **cannot have** been serious."
+            ],
+            [
+              "It **might rain**.",
+              "It **might have** rained."
+            ],
+            [
+              "You **should ask**.",
+              "You **should have** asked."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — Modals 8",
+        "text_first": true,
+        "points": [
+          "Modals 8 put the guessing scale in the **present**.",
+          "Here the same scale points **backwards**."
+        ],
+        "table": {
+          "headers": [
+            "How sure",
+            "Present · Modals 8",
+            "Past · here"
+          ],
+          "rows": [
+            [
+              "sure it is true",
+              "She **must be** ill.",
+              "She **must have** been ill."
+            ],
+            [
+              "not sure",
+              "She **might be** ill.",
+              "She **might have** been ill."
+            ],
+            [
+              "sure it is not",
+              "She **cannot be** ill.",
+              "She **cannot have** been ill."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "How sure, about the past",
+        "title_cz": "Jak jistý, o minulosti",
+        "text_first": true,
+        "points": [
+          "The axis is **how sure** you are that something happened.",
+          "Evidence decides which one you use.",
+          "The opposite of *must have* is **cannot have** — not *must not have*."
+        ],
+        "table": {
+          "headers": [
+            "How sure →",
+            "Form",
+            "Example"
+          ],
+          "rows": [
+            [
+              "sure it happened",
+              "must have",
+              "Her coat is gone. She **must have** left."
+            ],
+            [
+              "possible",
+              "might / may / could have",
+              "They **might have** missed the train."
+            ],
+            [
+              "sure it did not",
+              "cannot have",
+              "He was in Prague. She **cannot have** seen him."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Looking back with should",
+        "title_cz": "Ohlédnutí se should",
+        "text_first": true,
+        "points": [
+          "**should have** = the right thing, which did not happen.",
+          "**should not** have = it did happen, and it was wrong.",
+          "This is criticism or regret, not a guess."
+        ],
+        "table": {
+          "headers": [
+            "What happened",
+            "What you say"
+          ],
+          "rows": [
+            [
+              "You did not tell me.",
+              "You **should have** told me."
+            ],
+            [
+              "I did not ask.",
+              "I **should have** asked."
+            ],
+            [
+              "You said it.",
+              "You **should not** have said that."
+            ],
+            [
+              "He drove home.",
+              "He **should not** have driven."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Every one of these drops the *have*, or gets the participle wrong."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~She must left already~~",
+              "She **must have** left already"
+            ],
+            [
+              "~~He must not have known~~",
+              "He **cannot have** known"
+            ],
+            [
+              "~~You should told me~~",
+              "You **should have** told me"
+            ],
+            [
+              "~~I should have went~~",
+              "I should have **gone**"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_modal_perfect_sure",
+      "title": "How sure, about the past",
+      "items": [
+        {
+          "en": "She must have left already — her coat is gone.",
+          "cz": "Musela už odejít — kabát je pryč.",
+          "gap": "She ____ have left already — her coat is gone.",
+          "gap_answer": "must",
+          "accepts": [
+            "She must have left already — her coat is gone."
+          ],
+          "explanation": "The coat is the evidence, so this is a certainty about the past: **must** have left.",
+          "explanation_cz": "Kabát je důkaz, takže je to jistota o minulosti: **must** have left.",
+          "quiz_options": [
+            "must",
+            "cannot",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He must have known about it, because he was there.",
+          "cz": "Musel o tom vědět, protože tam byl.",
+          "gap": "He ____ have known about it, because he was there.",
+          "gap_answer": "must",
+          "accepts": [
+            "He must have known about it, because he was there."
+          ],
+          "explanation": "*He was there* forces the deduction — **must** have known.",
+          "explanation_cz": "*He was there* vynucuje ten závěr — **must** have known.",
+          "quiz_options": [
+            "must",
+            "cannot",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They must have finished the work by now.",
+          "cz": "Tu práci už museli dodělat.",
+          "gap": "They ____ have finished the work by now.",
+          "gap_answer": "must",
+          "accepts": [
+            "They must have finished the work by now."
+          ],
+          "explanation": "**must** have finished — you are sure, based on how much time has passed.",
+          "explanation_cz": "**must** have finished — jsi si jistý podle toho, kolik času uběhlo.",
+          "quiz_options": [
+            "must",
+            "cannot",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "You must have been very tired after that journey.",
+          "cz": "Po té cestě jsi musel být hrozně unavený.",
+          "gap": "You ____ have been very tired after that journey.",
+          "gap_answer": "must",
+          "accepts": [
+            "You must have been very tired after that journey."
+          ],
+          "explanation": "**must** have been — a confident guess about how someone felt.",
+          "explanation_cz": "**must** have been — jistý odhad, jak se někdo cítil.",
+          "quiz_options": [
+            "must",
+            "cannot",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "Somebody must have taken my umbrella.",
+          "cz": "Někdo mi musel vzít deštník.",
+          "gap": "Somebody ____ have taken my umbrella.",
+          "gap_answer": "must",
+          "accepts": [
+            "Somebody must have taken my umbrella."
+          ],
+          "explanation": "The umbrella is gone, so **must** have taken is the only reading.",
+          "explanation_cz": "Deštník je pryč, takže **must** have taken je jediné čtení.",
+          "quiz_options": [
+            "must",
+            "cannot",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She cannot have seen the film — it was not in cinemas yet.",
+          "cz": "Ten film nemohla vidět — ještě nebyl v kinech.",
+          "gap": "She ____ have seen the film — it was not in cinemas yet.",
+          "gap_answer": "cannot",
+          "accepts": [
+            "She can't have seen the film — it wasn't in cinemas yet.",
+            "She can't have seen the film — it was not in cinemas yet.",
+            "She cannot have seen the film — it wasn't in cinemas yet.",
+            "She can not have seen the film — it wasn't in cinemas yet.",
+            "She cannot have seen the film — it was not in cinemas yet.",
+            "She can not have seen the film — it was not in cinemas yet."
+          ],
+          "explanation": "The film was not out yet, so it is ruled out. The negative of *must have* is **cannot have** — never *must not have*.",
+          "explanation_cz": "Film ještě nebyl venku, takže je to vyloučené. Zápor od *must have* je **cannot have** — nikdy *must not have*.",
+          "quiz_options": [
+            "cannot",
+            "must",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "cannot",
+            "can't"
+          ]
+        },
+        {
+          "en": "He cannot have written that letter himself.",
+          "cz": "Ten dopis nemohl napsat sám.",
+          "gap": "He ____ have written that letter himself.",
+          "gap_answer": "cannot",
+          "accepts": [
+            "He can't have written that letter himself.",
+            "He cannot have written that letter himself.",
+            "He can not have written that letter himself."
+          ],
+          "explanation": "**cannot** have written — you are sure it did not happen.",
+          "explanation_cz": "**cannot** have written — jsi si jistý, že se to nestalo.",
+          "quiz_options": [
+            "cannot",
+            "must",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "cannot",
+            "can't"
+          ]
+        },
+        {
+          "en": "They cannot have arrived yet, the train is late.",
+          "cz": "Ještě nemohli dorazit, vlak má zpoždění.",
+          "gap": "They ____ have arrived yet, the train is late.",
+          "gap_answer": "cannot",
+          "accepts": [
+            "They can't have arrived yet, the train is late.",
+            "They cannot have arrived yet, the train is late.",
+            "They can not have arrived yet, the train is late."
+          ],
+          "explanation": "The late train makes it impossible — **cannot** have arrived.",
+          "explanation_cz": "Zpožděný vlak to znemožňuje — **cannot** have arrived.",
+          "quiz_options": [
+            "cannot",
+            "must",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "cannot",
+            "can't"
+          ]
+        },
+        {
+          "en": "You cannot have finished already — it is only ten.",
+          "cz": "Nemůžeš být hotový — je teprve deset.",
+          "gap": "You ____ have finished already — it is only ten.",
+          "gap_answer": "cannot",
+          "accepts": [
+            "You can't have finished already — it's only ten.",
+            "You can't have finished already — it is only ten.",
+            "You cannot have finished already — it's only ten.",
+            "You can not have finished already — it's only ten.",
+            "You cannot have finished already — it is only ten.",
+            "You can not have finished already — it is only ten."
+          ],
+          "explanation": "**cannot** have finished. The time is the evidence against it.",
+          "explanation_cz": "**cannot** have finished. Ten čas je důkaz proti.",
+          "quiz_options": [
+            "cannot",
+            "must",
+            "might",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "cannot",
+            "can't"
+          ]
+        },
+        {
+          "en": "They might have missed the train.",
+          "cz": "Možná zmeškali vlak.",
+          "gap": "They ____ have missed the train.",
+          "gap_answer": "might",
+          "accepts": [
+            "They might have missed the train."
+          ],
+          "explanation": "You do not know — **might** have missed. *May* and *could* work the same way.",
+          "explanation_cz": "Nevíš to — **might** have missed. *May* a *could* fungují stejně.",
+          "quiz_options": [
+            "might",
+            "must",
+            "cannot",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "might",
+            "may",
+            "could"
+          ]
+        },
+        {
+          "en": "She might have forgotten about the meeting.",
+          "cz": "Možná na tu schůzi zapomněla.",
+          "gap": "She ____ have forgotten about the meeting.",
+          "gap_answer": "might",
+          "accepts": [
+            "She might have forgotten about the meeting."
+          ],
+          "explanation": "**might** have forgotten — one possible explanation, not a certainty.",
+          "explanation_cz": "**might** have forgotten — jedno možné vysvětlení, ne jistota.",
+          "quiz_options": [
+            "might",
+            "must",
+            "cannot",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "might",
+            "may",
+            "could"
+          ]
+        },
+        {
+          "en": "He might have left his phone at home.",
+          "cz": "Možná si nechal telefon doma.",
+          "gap": "He ____ have left his phone at home.",
+          "gap_answer": "might",
+          "accepts": [
+            "He might have left his phone at home."
+          ],
+          "explanation": "**might** have left — a guess with no evidence either way.",
+          "explanation_cz": "**might** have left — odhad bez důkazu na obě strany.",
+          "quiz_options": [
+            "might",
+            "must",
+            "cannot",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "might",
+            "may",
+            "could"
+          ]
+        },
+        {
+          "en": "We might have met before, but I am not sure.",
+          "cz": "Možná jsme se už potkali, ale nejsem si jistý.",
+          "gap": "We ____ have met before, but I am not sure.",
+          "gap_answer": "might",
+          "accepts": [
+            "We might have met before, but I'm not sure.",
+            "We might have met before, but I am not sure."
+          ],
+          "explanation": "*I am not sure* names the uncertainty — **might** have met.",
+          "explanation_cz": "*I am not sure* pojmenovává nejistotu — **might** have met.",
+          "quiz_options": [
+            "might",
+            "must",
+            "cannot",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "might",
+            "may",
+            "could"
+          ]
+        },
+        {
+          "en": "Somebody might have moved the papers.",
+          "cz": "Možná někdo ty papíry přesunul.",
+          "gap": "Somebody ____ have moved the papers.",
+          "gap_answer": "might",
+          "accepts": [
+            "Somebody might have moved the papers."
+          ],
+          "explanation": "**might** have moved — nobody knows who, or whether.",
+          "explanation_cz": "**might** have moved — nikdo neví kdo ani jestli.",
+          "quiz_options": [
+            "might",
+            "must",
+            "cannot",
+            "should"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "might",
+            "may",
+            "could"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_modal_perfect_should",
+      "title": "Looking back with should",
+      "items": [
+        {
+          "en": "You should have told me about the change.",
+          "cz": "Měl jsi mi o té změně říct.",
+          "gap": "You ____ have told me about the change.",
+          "gap_answer": "should",
+          "accepts": [
+            "You should have told me about the change."
+          ],
+          "explanation": "**should** have told — looking back at the right thing that was not done.",
+          "explanation_cz": "**should** have told — ohlédnutí za správnou věcí, která se neudělala.",
+          "quiz_options": [
+            "should",
+            "should not",
+            "must",
+            "might"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "I should have asked before I bought it.",
+          "cz": "Měl jsem se zeptat, než jsem to koupil.",
+          "gap": "I ____ have asked before I bought it.",
+          "gap_answer": "should",
+          "accepts": [
+            "I should have asked before I bought it."
+          ],
+          "explanation": "**should** have asked — regret about your own past choice.",
+          "explanation_cz": "**should** have asked — lítost nad vlastní minulou volbou.",
+          "quiz_options": [
+            "should",
+            "should not",
+            "must",
+            "might"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She should have listened to her doctor.",
+          "cz": "Měla poslechnout svého lékaře.",
+          "gap": "She ____ have listened to her doctor.",
+          "gap_answer": "should",
+          "accepts": [
+            "She should have listened to her doctor."
+          ],
+          "explanation": "**should** have listened — criticism of a past decision.",
+          "explanation_cz": "**should** have listened — kritika minulého rozhodnutí.",
+          "quiz_options": [
+            "should",
+            "should not",
+            "must",
+            "might"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "We should have booked the table earlier.",
+          "cz": "Měli jsme si ten stůl rezervovat dřív.",
+          "gap": "We ____ have booked the table earlier.",
+          "gap_answer": "should",
+          "accepts": [
+            "We should have booked the table earlier."
+          ],
+          "explanation": "**should** have booked — the booking did not happen, and it was a mistake.",
+          "explanation_cz": "**should** have booked — rezervace se nestala a byla to chyba.",
+          "quiz_options": [
+            "should",
+            "should not",
+            "must",
+            "might"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They should have checked the address first.",
+          "cz": "Měli si nejdřív ověřit tu adresu.",
+          "gap": "They ____ have checked the address first.",
+          "gap_answer": "should",
+          "accepts": [
+            "They should have checked the address first."
+          ],
+          "explanation": "**should** have checked — the right action, taken too late or not at all.",
+          "explanation_cz": "**should** have checked — správný krok, provedený pozdě nebo vůbec.",
+          "quiz_options": [
+            "should",
+            "should not",
+            "must",
+            "might"
+          ],
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "You should not have said that to her.",
+          "cz": "Neměl jsi jí to říkat.",
+          "gap": "You ____ have said that to her.",
+          "gap_answer": "should not",
+          "accepts": [
+            "You shouldn't have said that to her.",
+            "You should not have said that to her."
+          ],
+          "explanation": "**should not** have said — it DID happen, and it was wrong. *Shouldn't* is the same answer.",
+          "explanation_cz": "**should not** have said — stalo se to a bylo to špatně. *Shouldn't* je totéž.",
+          "quiz_options": [
+            "should not",
+            "should",
+            "must not",
+            "cannot"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "should not",
+            "shouldn't"
+          ]
+        },
+        {
+          "en": "He should not have driven after the party.",
+          "cz": "Neměl po té oslavě řídit.",
+          "gap": "He ____ have driven after the party.",
+          "gap_answer": "should not",
+          "accepts": [
+            "He shouldn't have driven after the party.",
+            "He should not have driven after the party."
+          ],
+          "explanation": "**should not** have driven — criticism of something he actually did.",
+          "explanation_cz": "**should not** have driven — kritika něčeho, co opravdu udělal.",
+          "quiz_options": [
+            "should not",
+            "should",
+            "must not",
+            "cannot"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "should not",
+            "shouldn't"
+          ]
+        },
+        {
+          "en": "I should not have eaten so much.",
+          "cz": "Neměl jsem tolik jíst.",
+          "gap": "I ____ have eaten so much.",
+          "gap_answer": "should not",
+          "accepts": [
+            "I shouldn't have eaten so much.",
+            "I should not have eaten so much."
+          ],
+          "explanation": "**should not** have eaten — regret about a past action of your own.",
+          "explanation_cz": "**should not** have eaten — lítost nad vlastním minulým činem.",
+          "quiz_options": [
+            "should not",
+            "should",
+            "must not",
+            "cannot"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "should not",
+            "shouldn't"
+          ]
+        },
+        {
+          "en": "She should not have left the door open.",
+          "cz": "Neměla nechat dveře otevřené.",
+          "gap": "She ____ have left the door open.",
+          "gap_answer": "should not",
+          "accepts": [
+            "She shouldn't have left the door open.",
+            "She should not have left the door open."
+          ],
+          "explanation": "**should not** have left — the door was left open, and that was the mistake.",
+          "explanation_cz": "**should not** have left — dveře zůstaly otevřené a to byla chyba.",
+          "quiz_options": [
+            "should not",
+            "should",
+            "must not",
+            "cannot"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "should not",
+            "shouldn't"
+          ]
+        },
+        {
+          "en": "We should not have waited so long.",
+          "cz": "Neměli jsme čekat tak dlouho.",
+          "gap": "We ____ have waited so long.",
+          "gap_answer": "should not",
+          "accepts": [
+            "We shouldn't have waited so long.",
+            "We should not have waited so long."
+          ],
+          "explanation": "**should not** have waited — the waiting happened and it cost you.",
+          "explanation_cz": "**should not** have waited — čekání proběhlo a stálo tě to.",
+          "quiz_options": [
+            "should not",
+            "should",
+            "must not",
+            "cannot"
+          ],
+          "gap_class": "auxiliary",
+          "gap_accepts": [
+            "should not",
+            "shouldn't"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_modal_perfect_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "She must have left already.",
+          "cz": "Musela už odejít.",
+          "wrong": "She must left already.",
+          "accepts": [
+            "She must have left already."
+          ],
+          "type": false,
+          "explanation": "A modal needs **have** before the past participle: *must have left*.",
+          "explanation_cz": "Modální sloveso potřebuje před příčestím **have**: *must have left*."
+        },
+        {
+          "en": "He cannot have known about it.",
+          "cz": "Nemohl o tom vědět.",
+          "wrong": "He must not have known about it.",
+          "accepts": [
+            "He can't have known about it.",
+            "He cannot have known about it.",
+            "He can not have known about it."
+          ],
+          "type": false,
+          "explanation": "The opposite of *must have* is **cannot have**. *Must not have* is not English here.",
+          "explanation_cz": "Opak *must have* je **cannot have**. *Must not have* tu není angličtina."
+        },
+        {
+          "en": "You should have told me about the change.",
+          "cz": "Měl jsi mi o té změně říct.",
+          "wrong": "You should told me about the change.",
+          "accepts": [
+            "You should have told me about the change."
+          ],
+          "type": false,
+          "explanation": "**should have** + past participle. The *have* cannot be dropped.",
+          "explanation_cz": "**should have** + příčestí minulé. *Have* se vynechat nedá."
+        },
+        {
+          "en": "I should have gone earlier.",
+          "cz": "Měl jsem jít dřív.",
+          "wrong": "I should have went earlier.",
+          "accepts": [
+            "I should have gone earlier."
+          ],
+          "type": false,
+          "explanation": "After *have* comes the past participle: **gone**, not *went*.",
+          "explanation_cz": "Po *have* následuje příčestí minulé: **gone**, ne *went*."
+        },
+        {
+          "en": "They might have missed the train.",
+          "cz": "Možná zmeškali vlak.",
+          "wrong": "They might missed the train.",
+          "accepts": [
+            "They might have missed the train."
+          ],
+          "type": false,
+          "explanation": "**might have** + past participle — the *have* carries the past.",
+          "explanation_cz": "**might have** + příčestí minulé — *have* nese minulost."
+        },
+        {
+          "en": "She cannot have seen the film yesterday.",
+          "cz": "Ten film včera vidět nemohla.",
+          "wrong": "She cannot have saw the film yesterday.",
+          "accepts": [
+            "She can't have seen the film yesterday.",
+            "She cannot have seen the film yesterday.",
+            "She can not have seen the film yesterday."
+          ],
+          "type": false,
+          "explanation": "After *have* the form is the past participle: **seen**, not *saw*.",
+          "explanation_cz": "Po *have* je tvar příčestí minulé: **seen**, ne *saw*."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_VP-B1B2-01"
+  ]
 }
