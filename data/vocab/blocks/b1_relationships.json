@@ -5,7 +5,7 @@
  "tree_node": "leaf_relationships_b1",
  "codex_unit": "V_HOM-B1B2-01",
  "quality": "draft",
- "note": "Course-doc theme, above leaf_family_a2. How people get on, fall out and stay in touch. Phrasal-heavy, so it pretaught-feeds leaf_phrasal_2_b1. First draft 2026-09-02. · 2026-09-04 B1 loop: 16 of the 36 tiles were words already taught before this slot (colleague, neighbour, partner, couple, guest, invite, celebrate, chat, apologise, support, argue, tension, miss, gossip, jealous, misunderstanding). F7/F8: they moved to two **You already know** review boards and the Match list was refilled with 16 relationship words that are new here. A12: *date (romantic)* is sense-marked, and the frames note now separates this pack's **miss** (stýskat se) from Travel 2's **miss** (zmeškat). · sentences 8 → 36, one gappable frame per lemma. Two of the eight shipped frames could never gap: *let you down* and *broke up* do not contain the lemma string. E10: Use is use_mode rewrite, 12 underlined paraphrases. · The frames page offered noun frames (I have a … / I need a …) on a pack that is mostly phrasal verbs; they are the pack's own shapes now. · Pool-checked against everything taught before leaf_relationships_b1 — 0 unknown types. · 2026-09-04: four rewrite items re-cut so replacing the underline reconstructs the answer.",
+ "note": "Course-doc theme, above leaf_family_a2. How people get on, fall out and stay in touch. Phrasal-heavy, so it pretaught-feeds leaf_phrasal_2_b1. First draft 2026-09-02. · 2026-09-04 B1 loop: 16 of the 36 tiles were words already taught before this slot (colleague, neighbour, partner, couple, guest, invite, celebrate, chat, apologise, support, argue, tension, miss, gossip, jealous, misunderstanding). F7/F8: they moved to two **You already know** review boards and the Match list was refilled with 16 relationship words that are new here. A12: *date (romantic)* is sense-marked, and the frames note now separates this pack's **miss** (stýskat se) from Travel 2's **miss** (zmeškat). · sentences 8 → 36, one gappable frame per lemma. Two of the eight shipped frames could never gap: *let you down* and *broke up* do not contain the lemma string. E10: Use is use_mode rewrite, 12 underlined paraphrases. · The frames page offered noun frames (I have a … / I need a …) on a pack that is mostly phrasal verbs; they are the pack's own shapes now. · Pool-checked against everything taught before leaf_relationships_b1 — 0 unknown types. · 2026-09-04: four rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 21 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 21 rewritten to make one clause move and carry two or more already-taught words; the nine phrasal-verb lemmas (get on with, keep in touch, break up, fall out, make up...) stay contiguous, so sentenceToFrame still gaps them. 0/36 fail now. `although` and `worth` were both drafted and pulled: `although` belongs to b1_linkers at slot 37, thirteen slots after this leaf, and `worth` is not taught before it either.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -623,75 +623,73 @@
  ],
  "sentences": [
   {
-   "en": "My old classmate now works in the same building as me.",
-   "cz": "Můj starý spolužák teď pracuje ve stejné budově jako já.",
+   "en": "My old classmate now works in the building where I live.",
+   "cz": "Můj bývalý spolužák teď pracuje v budově, kde bydlím.",
    "lemmas": [
     "classmate"
    ],
    "accepts": [
-    "My old classmate now works in the same building as me"
+    "My old classmate now works in the building where I live"
    ]
   },
   {
-   "en": "She is a close friend, so I told her about the job.",
-   "cz": "Je to blízká kamarádka, takže jsem jí o té práci řekl.",
+   "en": "She is a close friend, but I did not tell her about the job.",
+   "cz": "Je to blízká kamarádka, ale o té práci jsem jí neřekl.",
    "lemmas": [
     "close friend"
    ],
    "accepts": [
-    "She is a close friend, so I told her about the job",
-    "She's a close friend, so I told her about the job"
+    "She is a close friend, but I did not tell her about the job"
    ]
   },
   {
-   "en": "He is only an acquaintance, not a real friend.",
-   "cz": "Je to jen známý, ne opravdový kamarád.",
+   "en": "He is only an acquaintance, not a real friend, so I never call him.",
+   "cz": "Je to jen známý, ne opravdový kamarád, takže mu nikdy nevolám.",
    "lemmas": [
     "acquaintance"
    ],
    "accepts": [
-    "He is only an acquaintance, not a real friend",
-    "He's only an acquaintance, not a real friend"
+    "He is only an acquaintance, not a real friend, so I never call him"
    ]
   },
   {
-   "en": "We have a relative in Vienna who never writes.",
-   "cz": "Máme ve Vídni příbuzného, který nikdy nepíše.",
+   "en": "We have a relative in Vienna who never writes, but she always sends money.",
+   "cz": "Máme ve Vídni příbuznou, která nikdy nepíše, ale vždycky posílá peníze.",
    "lemmas": [
     "relative"
    ],
    "accepts": [
-    "We have a relative in Vienna who never writes"
+    "We have a relative in Vienna who never writes, but she always sends money"
    ]
   },
   {
-   "en": "My flatmate leaves the kitchen dirty every morning.",
-   "cz": "Můj spolubydlící nechává každé ráno špinavou kuchyň.",
+   "en": "My flatmate leaves the kitchen dirty when he cooks at night.",
+   "cz": "Můj spolubydlící nechává kuchyň špinavou, když v noci vaří.",
    "lemmas": [
     "flatmate"
    ],
    "accepts": [
-    "My flatmate leaves the kitchen dirty every morning"
+    "My flatmate leaves the kitchen dirty when he cooks at night"
    ]
   },
   {
-   "en": "My in-laws come for lunch on the first Sunday of the month.",
-   "cz": "Tchán s tchyní k nám chodí na oběd první neděli v měsíci.",
+   "en": "My in-laws come for lunch on Sunday, but they never stay long.",
+   "cz": "Tchán s tchyní chodí v neděli na oběd, ale nikdy nezůstanou dlouho.",
    "lemmas": [
     "in-laws"
    ],
    "accepts": [
-    "My in-laws come for lunch on the first Sunday of the month"
+    "My in-laws come for lunch on Sunday, but they never stay long"
    ]
   },
   {
-   "en": "Her godparent still writes to her every birthday.",
-   "cz": "Její kmotra jí pořád píše ke každým narozeninám.",
+   "en": "Her godparent still writes to her every birthday, but they never meet.",
+   "cz": "Její kmotr jí pořád píše ke každým narozeninám, ale nikdy se nevidí.",
    "lemmas": [
     "godparent"
    ],
    "accepts": [
-    "Her godparent still writes to her every birthday"
+    "Her godparent still writes to her every birthday, but they never meet"
    ]
   },
   {
@@ -706,23 +704,23 @@
    ]
   },
   {
-   "en": "My ex still lives in the same street as my parents.",
-   "cz": "Můj bývalý pořád bydlí ve stejné ulici jako rodiče.",
+   "en": "My ex still lives in the same street, but we never speak.",
+   "cz": "Můj bývalý pořád bydlí ve stejné ulici, ale nikdy spolu nemluvíme.",
    "lemmas": [
     "ex"
    ],
    "accepts": [
-    "My ex still lives in the same street as my parents"
+    "My ex still lives in the same street, but we never speak"
    ]
   },
   {
-   "en": "He went to the match with an old mate from school.",
-   "cz": "Šel na zápas se starým kamarádem ze školy.",
+   "en": "He went to the match with an old mate who lives in Plzeň.",
+   "cz": "Šel na zápas se starým kamarádem, který bydlí v Plzni.",
    "lemmas": [
     "mate"
    ],
    "accepts": [
-    "He went to the match with an old mate from school"
+    "He went to the match with an old mate who lives in Plzeň"
    ]
   },
   {
@@ -737,13 +735,13 @@
    ]
   },
   {
-   "en": "The groom forgot the ring, so his brother ran home.",
-   "cz": "Ženich zapomněl prstýnek, tak jeho bratr běžel domů.",
+   "en": "The groom forgot the ring because he changed his jacket.",
+   "cz": "Ženich zapomněl prstýnek, protože si převlékl sako.",
    "lemmas": [
     "groom"
    ],
    "accepts": [
-    "The groom forgot the ring, so his brother ran home"
+    "The groom forgot the ring because he changed his jacket"
    ]
   },
   {
@@ -757,23 +755,23 @@
    ]
   },
   {
-   "en": "It takes a year to get to know a new city.",
-   "cz": "Poznat nové město trvá rok.",
+   "en": "It takes a year to get to know a new city when you work all day.",
+   "cz": "Trvá rok poznat nové město, když celý den pracuješ.",
    "lemmas": [
     "get to know"
    ],
    "accepts": [
-    "It takes a year to get to know a new city"
+    "It takes a year to get to know a new city when you work all day"
    ]
   },
   {
-   "en": "We keep in touch, even after she moved to Poland.",
-   "cz": "Zůstáváme v kontaktu, i po tom, co se přestěhovala do Polska.",
+   "en": "We keep in touch, even after she moved to Poland with her children.",
+   "cz": "Zůstáváme v kontaktu, i když se s dětmi odstěhovala do Polska.",
    "lemmas": [
     "keep in touch"
    ],
    "accepts": [
-    "We keep in touch, even after she moved to Poland"
+    "We keep in touch, even after she moved to Poland with her children"
    ]
   },
   {
@@ -788,13 +786,13 @@
    ]
   },
   {
-   "en": "All the family will get together at Christmas.",
-   "cz": "Celá rodina se o Vánocích sejde.",
+   "en": "All the family will get together at Christmas because my grandmother is ill.",
+   "cz": "Celá rodina se sejde o Vánocích, protože je babička nemocná.",
    "lemmas": [
     "get together"
    ],
    "accepts": [
-    "All the family will get together at Christmas"
+    "All the family will get together at Christmas because my grandmother is ill"
    ]
   },
   {
@@ -849,44 +847,43 @@
    ]
   },
   {
-   "en": "Loyalty means more than money in a small company.",
-   "cz": "V malé firmě znamená věrnost víc než peníze.",
+   "en": "Loyalty means more than money when the company is small.",
+   "cz": "Loajalita znamená víc než peníze, když je firma malá.",
    "lemmas": [
     "loyalty"
    ],
    "accepts": [
-    "Loyalty means more than money in a small company"
+    "Loyalty means more than money when the company is small"
    ]
   },
   {
-   "en": "Their friendship started at school and lasted forty years.",
-   "cz": "Jejich přátelství začalo ve škole a vydrželo čtyřicet let.",
+   "en": "Their friendship started at school because they sat at the same desk.",
+   "cz": "Jejich přátelství začalo ve škole, protože seděli ve stejné lavici.",
    "lemmas": [
     "friendship"
    ],
    "accepts": [
-    "Their friendship started at school and lasted forty years"
+    "Their friendship started at school because they sat at the same desk"
    ]
   },
   {
-   "en": "It is hard to break up with a person you still like.",
-   "cz": "Je těžké rozejít se s někým, koho máš pořád rád.",
+   "en": "It is hard to break up with a person who still loves you.",
+   "cz": "Je těžké rozejít se s člověkem, který tě pořád miluje.",
    "lemmas": [
     "break up"
    ],
    "accepts": [
-    "It is hard to break up with a person you still like",
-    "It's hard to break up with a person you still like"
+    "It is hard to break up with a person who still loves you"
    ]
   },
   {
-   "en": "Brothers often fall out about money, then forget it.",
-   "cz": "Bratři se často pohádají kvůli penězům a pak na to zapomenou.",
+   "en": "Brothers often fall out about money, but they forget it by the summer.",
+   "cz": "Bratři se často pohádají kvůli penězům, ale do léta na to zapomenou.",
    "lemmas": [
     "fall out"
    ],
    "accepts": [
-    "Brothers often fall out about money, then forget it"
+    "Brothers often fall out about money, but they forget it by the summer"
    ]
   },
   {
@@ -913,13 +910,13 @@
    ]
   },
   {
-   "en": "He was distant at the party, so I asked him what was wrong.",
-   "cz": "Na té oslavě byl odtažitý, tak jsem se ho zeptal, co se děje.",
+   "en": "He was distant at the party because his father was in hospital.",
+   "cz": "Na té oslavě byl odtažitý, protože měl tátu v nemocnici.",
    "lemmas": [
     "distant"
    ],
    "accepts": [
-    "He was distant at the party, so I asked him what was wrong"
+    "He was distant at the party because his father was in hospital"
    ]
   },
   {
@@ -933,13 +930,13 @@
    ]
   },
   {
-   "en": "The quarrel started about the television and lasted an hour.",
-   "cz": "Ta hádka začala kvůli televizi a trvala hodinu.",
+   "en": "The quarrel started about the television, but it ended in the kitchen.",
+   "cz": "Ta hádka začala kvůli televizi, ale skončila v kuchyni.",
    "lemmas": [
     "quarrel"
    ],
    "accepts": [
-    "The quarrel started about the television and lasted an hour"
+    "The quarrel started about the television, but it ended in the kitchen"
    ]
   },
   {
@@ -973,23 +970,23 @@
    ]
   },
   {
-   "en": "My parents celebrate their anniversary in a hotel every year.",
-   "cz": "Rodiče slaví výročí každý rok v hotelu.",
+   "en": "My parents celebrate their anniversary in the hotel where they married.",
+   "cz": "Rodiče slaví výročí v hotelu, kde se brali.",
    "lemmas": [
     "anniversary"
    ],
    "accepts": [
-    "My parents celebrate their anniversary in a hotel every year"
+    "My parents celebrate their anniversary in the hotel where they married"
    ]
   },
   {
-   "en": "The school reunion was in the same pub as last time.",
-   "cz": "Školní sraz byl ve stejné hospodě jako minule.",
+   "en": "The school reunion was in the same pub, but only ten people came.",
+   "cz": "Sraz ze školy byl ve stejné hospodě, ale přišlo jen deset lidí.",
    "lemmas": [
     "reunion"
    ],
    "accepts": [
-    "The school reunion was in the same pub as last time"
+    "The school reunion was in the same pub, but only ten people came"
    ]
   }
  ],
