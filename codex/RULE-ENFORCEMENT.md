@@ -162,7 +162,20 @@ lint-only (I10's shape was right when lint was the only check; there are now sev
 frozen copies of packs from before they were fixed — because a check that has never
 been seen to fire is decoration, and F9 shipped that way this morning.
 
-**B2 is the one that was attempted and pulled.** It found 496 things on B1 and was
+**Five were attempted and pulled or narrowed on the day**, after James said *"I don't
+want it to just do pointless busywork"* and the findings were read against real items:
+**B2** (496 hits, nearly all false), **B25** (28 of 29 false — a stem cue naming the
+lemma is A11 and is required), **C14** (15 of 17 false — descriptive card titles are
+what C1 asks for), **C19** (4 of 4 false — a CZ→EN pair table is not Czech sprinkled
+into an English one), and **F7** (real, but James's standing decision is per-unit as
+touched, so it is behind `--rule F7` rather than in the queue). B1's live count went
+116 → 19.
+
+The pattern is worth keeping: the checks that were precise — F9, C6, C58 — were each
+written against a fault James had actually pointed at. The ones written speculatively
+from rule text alone were mostly noise. **A rule being true does not make it checkable.**
+
+**B2 is the clearest of the pulled ones.** It found 496 things on B1 and was
 wrong about nearly all of them: in a paradigm pack, every chip *is* another item's
 answer, which is the axis, not borrowing. It is in **Partly** above with what it
 would need. A check that cries wolf costs more than no check.

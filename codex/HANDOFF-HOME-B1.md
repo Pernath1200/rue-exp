@@ -129,35 +129,72 @@ says so. If no rule says so, leave it and write the observation into `DECISIONS.
 
 ---
 
-## The queue, as at 2026-09-05 17:00
+## The queue — corrected 2026-09-05 18:00
 
-`py -X utf8 codex/preflight.py --unplayed` regenerates this. B1 rows only:
+**Read this section before you believe a finding count.** The first version of this
+handoff quoted 110 findings. James pushed back — *"the things I've seen on b1 are not
+that bad, I don't want any big rewrites, but I don't want it to just do pointless
+busywork"* — and he was right. Four of the checks written that afternoon were audited
+against real items and **pulled or narrowed**:
+
+| Check | Why it went |
+|---|---|
+| **B2** borrowed distractor | 496 findings on B1, nearly all false. In a paradigm pack every chip *is* another item's answer — that is the axis, not borrowing |
+| **B25** cue is the answer | 28 of 29 false. `(get)` against chips *get / be / being / getting* is the A11 stem cue and is **required**; `(every)` against *every / on every / in every* tests the preposition. Only a cue whose chips are distortions of itself is the fault |
+| **C14** card 0 nickname | 15 of 17 false. *"What is the passive?"*, *"Two kinds of relative clause"* are good descriptive openers — C1 asks for exactly that. The rule was written against a slogan (*"2 systems"*) and nothing can tell a slogan from a good title |
+| **C19** Czech in a table | 4 of 4 false. `b1_modals_speculation` card 7 is titled *"Czech trap · možná"* — a CZ→EN pair table, where Czech belongs. Narrowed to skip those |
+| **F7** word taught twice | 41 findings, but James's standing decision is *per-unit as touched, no one-commit sweep*. Now behind `--rule F7`; do not sweep it |
+
+**The lesson, and it applies to you too:** the checks that were precise came from a fault
+James had actually pointed at (F9, C6, C58 — all clean hits). The ones written
+speculatively from rule text alone were mostly noise. If a check you write fires on more
+than a handful of units, read ten of its findings against the real items before you act
+on any of them.
+
+### What is actually left on B1 grammar — 13 findings
 
 ```
- 10  b1_prepositions_time_2      3  b1_agreement_tricky · b1_relative_clauses_2 …
-  8  b1_be_used_to               1  b1_comparison_2 · b1_finale · b1_grammar_match
-  7  b1_future                      b1_grammar_type · b1_past_continuous_2
-  2  b1_relative_clauses_2          b1_past_perfect · b1_reflexives_2
-  2  b1_reported_speech_2           b1_second_conditional
+b1_phrasal_verbs    B3   23 of 36 gap items have no authored quiz_options
+b1_prefixes         B3   24 of 36 gap items have no authored quiz_options
+b1_suffixes         B3   12 of 24 gap items have no authored quiz_options
+b1_relative_clauses      C32  'Wrong' column has no ~~strike~~
+b1_relative_clauses_2    C32  'Not this' column has no ~~strike~~
+b1_reported_speech_2     C32  'Not this' column has no ~~strike~~
+b1_second_conditional    C32  'Not this' column has no ~~strike~~
+b1_phrasal_verbs    C46  has a sequel, so it should be 'Phrasal verbs 1'
+b1_abstract         C49  7 of 36 words never shown in the intro
+b1_core_frames      C56  vocab intro opens on a diagram with no picture board
+b1_future           C13  an intro example with nothing bolded
+b1_be_used_to       E3   continuous twin accepted for a simple-form answer
+b1_modals_speculation    C19  one Czech cell in an English column
 ```
 
-By rule, across B1: **F7 41 · B25 29 · C14 17 · C19 4 · C32 4 · B3 3 · C49 1 · E3 1 ·
-C56 1 · C13 1 · C46 1**
+The four **C32** ones are certain and mechanical: an error in a *Not this* column is
+`~~struck~~`, not *italic*. Do those without asking.
 
-Three of those need judgement, and they are the reason "fix wording too" matters:
+The three **B3** ones are not mechanical — authoring 59 sets of chips is a real job and
+the engine fallback may already be serving those word-formation packs adequately. Put it
+to James in DECISIONS with a sample of what the fallback currently produces, and do not
+start it unattended.
 
-- **B25 · 29 items** — the bracket cue hands the answer over. *"It took me a month to
-  ____ used to the food. **(get)**"* → the student copies `get`. Rewrite the cue so it
-  names what they convert **from**, never the answer itself (B28). Most are
-  `b1_be_used_to` and `b1_prepositions_time_2`.
-- **C14 · 17 units** — card 0 carries a nickname, not the unit's name: *"Three choices"*
-  for Articles 3, *"As tall as"* for Comparatives 2, *"Use it all"* for B1 review. Card 0
-  is the unit name in English and Czech.
-- **F7 · 41 words** — a word taught as new on two leaves. James's standing decision
-  (DECISIONS, "B1 vocab · F7"): the later pack drops the tile when a run works that unit,
-  no one-commit sweep. `charge` / `get on` / `guilty` are sense-pairs — A12-mark, never cut.
+### The work that is actually worth your time — three leaves with no sentence bank
 
----
+```
+b1_collocations    36 words · 0 sentences · 12 use items
+b1_word_families   36 words · 0 sentences · 12 use items
+b1_core_frames     24 words · 0 sentences ·  0 use items
+```
+
+Quiz and Type are built from `sentences[]`. With none, **96 words across three leaves
+have no Quiz item and no Type item at all**, and every gate is green because nothing
+checks for it. This is not cosmetic and it is not a rewrite of anything James likes —
+it is a hole. One sentence per lemma, under the rules that already govern them: B24 the
+lemma must appear contiguously or the frame gaps nothing; `quiz_mode: sentence_gap`;
+10–14 words with one clause move and two recycled content words; ceiling is what the
+path teaches before that leaf (`make_pool.py --before <unit_id>`).
+
+Do this before the 13 above. It is the only item here that changes what James meets when
+he plays.
 
 ## Reporting
 

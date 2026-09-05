@@ -54,8 +54,17 @@ def run_against(fixture: Path, kind: str, script: str) -> str:
 def main() -> int:
     manifest = json.loads((REG / "manifest.json").read_text(encoding="utf-8"))
     print("PROVING EACH CHECK STILL COMPLAINS\n")
-    silent, ok = [], 0
+    silent, ok, pulled = [], 0, 0
     for case in manifest:
+        # A check that was deliberately pulled is not a broken check. B25 and C14
+        # were audited against real items on 2026-09-05 and taken out of the
+        # runner; their fixtures stay so the evidence survives if either returns.
+        if case.get("pulled"):
+            pulled += 1
+            print("  %-16s %-5s pulled — not in the runner" % (
+                case["script"].replace(".py", ""), case["rule"]))
+            print("      %s" % case["pulled"])
+            continue
         out = run_against(REG / case["file"], case["kind"], case["script"])
         fired = case["rule"] in out
         print("  %-16s %-5s %s" % (case["script"].replace(".py", ""), case["rule"],
@@ -71,8 +80,8 @@ def main() -> int:
     for s in untested:
         print("  %-16s %-5s no fixture yet — untested" % (s.replace(".py", ""), "—"))
 
-    print("\ntest_checks: %d proved · %d silent · %d untested"
-          % (ok, len(silent), len(untested)))
+    print("\ntest_checks: %d proved · %d silent · %d untested · %d pulled"
+          % (ok, len(silent), len(untested), pulled))
     if silent:
         print("BROKEN: " + ", ".join(silent))
         return 1 if "--check" in sys.argv else 0
