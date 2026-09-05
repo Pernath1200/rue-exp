@@ -1,18 +1,718 @@
 {
   "id": "b2_passives_advanced",
-  "title": "Passives advanced",
+  "title": "Passives 2",
   "level": "B2",
   "tree_node": "b2_passives_advanced",
+  "codex_unit": "G_VOI-B1B2-01",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty shell. 30 items, inside the 24-40 band. b1_passives (48) owns the simple tenses — is/was + past participle, plus will be and must be — and every one of its stems is tense-forced. Nothing of that is repeated here. This unit adds the two things B1 could not reach: the LONGER AUXILIARY CHAINS (has been / had been / is being / was being + past participle, 12 items) and the REPORTING PASSIVE (It is said that… and He is thought to…, 12 items), which is the register a B2 student meets in news and academic writing and cannot produce. B11 is respected throughout the chain block: the gap swallows the whole verb phrase, so every stem carries its lemma cue — *The road ____ this week. (repair)*. Without it the gap is a guess. Distractors are the other four chains on the same lemma (B6 same-axis) and every set contains the unit's own error (B4): the active form where the passive belongs — *has finished*, *is repairing*, *have cleaned* — which is precisely what a Czech speaker writes, because Czech reflexive forms cover both. That error then drives four of the six Use items. D1: every item explains its own chain and names what the active reading would wrongly mean. A8 accepts generated as a contraction closure. gap_class auxiliary on all 24 gap items. KWT-native per FCE-EXERCISES, but KWT needs a js/ branch that is James-only under P-engine, so Use is ordinary error-correction (E7).",
+  "intro": {
+    "cards": [
+      {
+        "title": "Passives 2",
+        "title_cz": "Trpný rod 2",
+        "points": [
+          "The passive puts the **thing** first and the doer last, or nowhere.",
+          "Passives 1 did the simple tenses. Here the **be** part gets longer.",
+          "Whatever the chain, it always ends in a **past participle**."
+        ],
+        "table": {
+          "headers": [
+            "Tense",
+            "Passive form"
+          ],
+          "rows": [
+            [
+              "present simple",
+              "The room **is cleaned**."
+            ],
+            [
+              "present perfect",
+              "The room **has been** cleaned."
+            ],
+            [
+              "present continuous",
+              "The room **is being** cleaned."
+            ],
+            [
+              "past perfect",
+              "The room **had been** cleaned."
+            ],
+            [
+              "past continuous",
+              "The room **was being** cleaned."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — Trpný rod 1",
+        "text_first": true,
+        "points": [
+          "Passives 1 gave you **is** or **was** plus a past participle.",
+          "Everything here is the same idea with a longer **be** part."
+        ],
+        "table": {
+          "headers": [
+            "Passives 1",
+            "Passives 2"
+          ],
+          "rows": [
+            [
+              "The house **was built** in 1990.",
+              "The house **had been** built before the war."
+            ],
+            [
+              "The emails **are sent** every morning.",
+              "The emails **have been** sent already."
+            ],
+            [
+              "The room **is cleaned** every day.",
+              "The room **is being** cleaned right now."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Longer chains",
+        "title_cz": "Delší řetězce",
+        "text_first": true,
+        "points": [
+          "**been** is for finished; **being** is for going on now.",
+          "The two are one letter apart and mean opposite things."
+        ],
+        "table": {
+          "headers": [
+            "Chain",
+            "Meaning",
+            "Example"
+          ],
+          "rows": [
+            [
+              "has / have **been**",
+              "finished, matters now",
+              "The tickets **have been** sold."
+            ],
+            [
+              "had **been**",
+              "finished before another past point",
+              "The car **had been** stolen."
+            ],
+            [
+              "is / are **being**",
+              "going on right now",
+              "The road **is being** repaired."
+            ],
+            [
+              "was / were **being**",
+              "going on at a past moment",
+              "The bridge **was being** built."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Reporting with the passive",
+        "title_cz": "Trpný rod ve zprávách",
+        "text_first": true,
+        "points": [
+          "Used when the source does not matter, or nobody will name it.",
+          "Two frames do almost all the work."
+        ],
+        "table": {
+          "headers": [
+            "Frame",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**It is** said that…",
+              "**It is** said that the company is closing."
+            ],
+            [
+              "**It was** reported that…",
+              "**It was** reported that nobody was hurt."
+            ],
+            [
+              "subject + **is thought** to…",
+              "He **is thought** to be very rich."
+            ],
+            [
+              "subject + **is expected** to…",
+              "They **are expected** to arrive at six."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Czech uses a reflexive for both jobs, so the active slips in where English needs the passive."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~The report has finished~~",
+              "The report **has been** finished"
+            ],
+            [
+              "~~The road is repairing~~",
+              "The road **is being** repaired"
+            ],
+            [
+              "~~My car had stolen~~",
+              "My car **had been** stolen"
+            ],
+            [
+              "~~He is thought be rich~~",
+              "He is thought **to be** rich"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_passives_advanced_chain",
+      "title": "Longer chains",
+      "items": [
+        {
+          "en": "The report has been finished at last.",
+          "cz": "Ta zpráva je konečně hotová.",
+          "gap": "The report ____ at last. (finish)",
+          "gap_answer": "has been finished",
+          "accepts": [
+            "The report has been finished at last."
+          ],
+          "quiz_options": [
+            "has been finished",
+            "is finished",
+            "has finished",
+            "was being finished"
+          ],
+          "explanation": "Present perfect passive: **has been** + past participle. *Has finished* would mean the report did the finishing.",
+          "explanation_cz": "Předpřítomný trpný rod: **has been** + příčestí minulé. *Has finished* by znamenalo, že zprávu dokončila zpráva.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The road is being repaired this week.",
+          "cz": "Ta silnice se tento týden opravuje.",
+          "gap": "The road ____ this week. (repair)",
+          "gap_answer": "is being repaired",
+          "accepts": [
+            "The road is being repaired this week."
+          ],
+          "quiz_options": [
+            "is being repaired",
+            "is repaired",
+            "has been repaired",
+            "was repaired"
+          ],
+          "explanation": "Present continuous passive: **is being** + past participle — the work is going on now.",
+          "explanation_cz": "Průběhový trpný rod: **is being** + příčestí minulé — práce právě probíhá.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "My car had been stolen before I called.",
+          "cz": "Moje auto bylo ukradené, než jsem zavolal.",
+          "gap": "My car ____ before I called. (steal)",
+          "gap_answer": "had been stolen",
+          "accepts": [
+            "My car had been stolen before I called."
+          ],
+          "quiz_options": [
+            "had been stolen",
+            "was stolen",
+            "has been stolen",
+            "was being stolen"
+          ],
+          "explanation": "Past perfect passive: **had been** + past participle, because it happened before another past event.",
+          "explanation_cz": "Předminulý trpný rod: **had been** + příčestí minulé, protože se to stalo před jinou minulou událostí.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The house is being painted at the moment.",
+          "cz": "Ten dům se právě maluje.",
+          "gap": "The house ____ at the moment. (paint)",
+          "gap_answer": "is being painted",
+          "accepts": [
+            "The house is being painted at the moment."
+          ],
+          "quiz_options": [
+            "is being painted",
+            "is painted",
+            "has been painted",
+            "was being painted"
+          ],
+          "explanation": "*At the moment* forces the continuous: **is being painted**.",
+          "explanation_cz": "*At the moment* vynucuje průběhový tvar: **is being painted**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "All the tickets have been sold already.",
+          "cz": "Všechny lístky už jsou prodané.",
+          "gap": "All the tickets ____ already. (sell)",
+          "gap_answer": "have been sold",
+          "accepts": [
+            "All the tickets have been sold already."
+          ],
+          "quiz_options": [
+            "have been sold",
+            "are sold",
+            "have sold",
+            "were being sold"
+          ],
+          "explanation": "**have been** + sold. Plural subject, so *have*, not *has*.",
+          "explanation_cz": "**have been** + sold. Podmět je množné číslo, proto *have*, ne *has*.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The bridge was being built when we arrived.",
+          "cz": "Když jsme přijeli, ten most se stavěl.",
+          "gap": "The bridge ____ when we arrived. (build)",
+          "gap_answer": "was being built",
+          "accepts": [
+            "The bridge was being built when we arrived."
+          ],
+          "quiz_options": [
+            "was being built",
+            "was built",
+            "had been built",
+            "is being built"
+          ],
+          "explanation": "Past continuous passive: **was being** + built — it was going on at that past moment.",
+          "explanation_cz": "Minulý průběhový trpný rod: **was being** + built — probíhalo to v tom minulém okamžiku.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The letters have been sent to every member.",
+          "cz": "Ty dopisy byly rozeslány všem členům.",
+          "gap": "The letters ____ to every member. (send)",
+          "gap_answer": "have been sent",
+          "accepts": [
+            "The letters have been sent to every member."
+          ],
+          "quiz_options": [
+            "have been sent",
+            "are sent",
+            "have sent",
+            "were being sent"
+          ],
+          "explanation": "**have been sent** — finished, and it still matters now.",
+          "explanation_cz": "**have been sent** — hotovo a stále to platí.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The problem had been solved before the meeting.",
+          "cz": "Ten problém byl vyřešen před schůzí.",
+          "gap": "The problem ____ before the meeting. (solve)",
+          "gap_answer": "had been solved",
+          "accepts": [
+            "The problem had been solved before the meeting."
+          ],
+          "quiz_options": [
+            "had been solved",
+            "was solved",
+            "has been solved",
+            "was being solved"
+          ],
+          "explanation": "*Before the meeting* puts it earlier than another past point: **had been solved**.",
+          "explanation_cz": "*Before the meeting* to klade před jiný minulý bod: **had been solved**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "Dinner is being cooked in the kitchen now.",
+          "cz": "Večeře se teď vaří v kuchyni.",
+          "gap": "Dinner ____ in the kitchen now. (cook)",
+          "gap_answer": "is being cooked",
+          "accepts": [
+            "Dinner is being cooked in the kitchen now."
+          ],
+          "quiz_options": [
+            "is being cooked",
+            "is cooked",
+            "has been cooked",
+            "was being cooked"
+          ],
+          "explanation": "*Now* forces the continuous passive: **is being cooked**.",
+          "explanation_cz": "*Now* vynucuje průběhový trpný rod: **is being cooked**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The windows have been cleaned this morning.",
+          "cz": "Okna byla dnes ráno umytá.",
+          "gap": "The windows ____ this morning. (clean)",
+          "gap_answer": "have been cleaned",
+          "accepts": [
+            "The windows have been cleaned this morning."
+          ],
+          "quiz_options": [
+            "have been cleaned",
+            "are cleaned",
+            "have cleaned",
+            "were being cleaned"
+          ],
+          "explanation": "**have been cleaned** — this morning is not finished, so the present perfect fits.",
+          "explanation_cz": "**have been cleaned** — dnešní ráno neskončilo, proto se hodí předpřítomný čas.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The film was being shown when the lights failed.",
+          "cz": "Když zhaslo světlo, ten film se promítal.",
+          "gap": "The film ____ when the lights failed. (show)",
+          "gap_answer": "was being shown",
+          "accepts": [
+            "The film was being shown when the lights failed."
+          ],
+          "quiz_options": [
+            "was being shown",
+            "was shown",
+            "had been shown",
+            "is being shown"
+          ],
+          "explanation": "One past action interrupted another: **was being shown**.",
+          "explanation_cz": "Jeden minulý děj přerušil druhý: **was being shown**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "Nothing had been decided before the vote started.",
+          "cz": "Než začalo hlasování, nebylo nic rozhodnuto.",
+          "gap": "Nothing ____ before the vote started. (decide)",
+          "gap_answer": "had been decided",
+          "accepts": [
+            "Nothing had been decided before the vote started."
+          ],
+          "quiz_options": [
+            "had been decided",
+            "was decided",
+            "has been decided",
+            "was being decided"
+          ],
+          "explanation": "*Before the vote started* is the past point it looks back from: **had been decided**.",
+          "explanation_cz": "*Before the vote started* je ten minulý bod, ze kterého se dívá zpět: **had been decided**.",
+          "gap_class": "auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "b2_passives_advanced_report",
+      "title": "Reporting with the passive",
+      "items": [
+        {
+          "en": "It is said that the company is closing.",
+          "cz": "Říká se, že ta firma zavírá.",
+          "gap": "____ said that the company is closing.",
+          "gap_answer": "It is",
+          "accepts": [
+            "It's said that the company is closing.",
+            "It is said that the company is closing."
+          ],
+          "quiz_options": [
+            "It is",
+            "It says",
+            "There is",
+            "It has"
+          ],
+          "explanation": "The reporting passive starts with **It is** + past participle: *It is said that…*",
+          "explanation_cz": "Trpný rod pro zprávy začíná **It is** + příčestí: *It is said that…*",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He is thought to be very rich.",
+          "cz": "Myslí se, že je hodně bohatý.",
+          "gap": "He ____ to be very rich. (think)",
+          "gap_answer": "is thought",
+          "accepts": [
+            "He's thought to be very rich.",
+            "He is thought to be very rich."
+          ],
+          "quiz_options": [
+            "is thought",
+            "thinks",
+            "is thinking",
+            "has thought"
+          ],
+          "explanation": "**is thought** to be — the person becomes the subject and the verb goes passive.",
+          "explanation_cz": "**is thought** to be — osoba se stane podmětem a sloveso jde do trpného rodu.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The house is believed to be very old.",
+          "cz": "Věří se, že ten dům je hodně starý.",
+          "gap": "The house ____ to be very old. (believe)",
+          "gap_answer": "is believed",
+          "accepts": [
+            "The house is believed to be very old."
+          ],
+          "quiz_options": [
+            "is believed",
+            "believes",
+            "is believing",
+            "has believed"
+          ],
+          "explanation": "**is believed** to be — nobody says who believes it, which is the point.",
+          "explanation_cz": "**is believed** to be — neříká se, kdo tomu věří, a o to jde.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "It is known that she left early.",
+          "cz": "Ví se, že odešla brzy.",
+          "gap": "____ known that she left early.",
+          "gap_answer": "It is",
+          "accepts": [
+            "It's known that she left early.",
+            "It is known that she left early."
+          ],
+          "quiz_options": [
+            "It is",
+            "It has",
+            "There is",
+            "It was"
+          ],
+          "explanation": "**It is known** that — the same frame as *It is said*.",
+          "explanation_cz": "**It is known** that — stejný rámec jako *It is said*.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They are expected to arrive before six.",
+          "cz": "Čeká se, že dorazí před šestou.",
+          "gap": "They ____ to arrive before six. (expect)",
+          "gap_answer": "are expected",
+          "accepts": [
+            "They're expected to arrive before six.",
+            "They are expected to arrive before six."
+          ],
+          "quiz_options": [
+            "are expected",
+            "expect",
+            "are expecting",
+            "have expected"
+          ],
+          "explanation": "Plural subject, so **are expected** to arrive.",
+          "explanation_cz": "Podmět je množné číslo, proto **are expected** to arrive.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "It was reported that nobody was hurt.",
+          "cz": "Bylo hlášeno, že nikdo nebyl zraněn.",
+          "gap": "____ reported that nobody was hurt.",
+          "gap_answer": "It was",
+          "accepts": [
+            "It was reported that nobody was hurt."
+          ],
+          "quiz_options": [
+            "It was",
+            "It is",
+            "There was",
+            "It has"
+          ],
+          "explanation": "Past version of the frame: **It was** reported that…",
+          "explanation_cz": "Minulá verze rámce: **It was** reported that…",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She is said to speak five languages.",
+          "cz": "Říká se, že mluví pěti jazyky.",
+          "gap": "She ____ to speak five languages. (say)",
+          "gap_answer": "is said",
+          "accepts": [
+            "She's said to speak five languages.",
+            "She is said to speak five languages."
+          ],
+          "quiz_options": [
+            "is said",
+            "says",
+            "is saying",
+            "has said"
+          ],
+          "explanation": "**is said** to speak — *She says* would mean she is the one talking about herself.",
+          "explanation_cz": "**is said** to speak — *She says* by znamenalo, že o sobě mluví ona sama.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The picture is believed to be a forgery.",
+          "cz": "Věří se, že ten obraz je padělek.",
+          "gap": "The picture ____ to be a forgery. (believe)",
+          "gap_answer": "is believed",
+          "accepts": [
+            "The picture is believed to be a forgery."
+          ],
+          "quiz_options": [
+            "is believed",
+            "believes",
+            "is believing",
+            "was believing"
+          ],
+          "explanation": "**is believed** to be — the picture cannot believe anything, so it must be passive.",
+          "explanation_cz": "**is believed** to be — obraz nemůže ničemu věřit, takže to musí být trpný rod.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "It is hoped that the work will finish soon.",
+          "cz": "Doufá se, že práce brzy skončí.",
+          "gap": "____ hoped that the work will finish soon.",
+          "gap_answer": "It is",
+          "accepts": [
+            "It's hoped that the work will finish soon.",
+            "It is hoped that the work will finish soon."
+          ],
+          "quiz_options": [
+            "It is",
+            "It has",
+            "There is",
+            "It was"
+          ],
+          "explanation": "**It is hoped** that — the frame does not name who hopes.",
+          "explanation_cz": "**It is hoped** that — rámec neříká, kdo doufá.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He is understood to have left the country.",
+          "cz": "Rozumí se, že opustil zemi.",
+          "gap": "He ____ to have left the country. (understand)",
+          "gap_answer": "is understood",
+          "accepts": [
+            "He's understood to have left the country.",
+            "He is understood to have left the country."
+          ],
+          "quiz_options": [
+            "is understood",
+            "understands",
+            "is understanding",
+            "has understood"
+          ],
+          "explanation": "**is understood** to have left — the passive plus a perfect infinitive for the earlier action.",
+          "explanation_cz": "**is understood** to have left — trpný rod plus minulý infinitiv pro dřívější děj.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "It was announced that the school would close.",
+          "cz": "Bylo oznámeno, že se škola zavře.",
+          "gap": "____ announced that the school would close.",
+          "gap_answer": "It was",
+          "accepts": [
+            "It was announced that the school would close."
+          ],
+          "quiz_options": [
+            "It was",
+            "It is",
+            "There was",
+            "It had"
+          ],
+          "explanation": "Past frame again: **It was** announced that…",
+          "explanation_cz": "Zase minulý rámec: **It was** announced that…",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "The team is expected to win on Saturday.",
+          "cz": "Čeká se, že tým v sobotu vyhraje.",
+          "gap": "The team ____ to win on Saturday. (expect)",
+          "gap_answer": "is expected",
+          "accepts": [
+            "The team is expected to win on Saturday."
+          ],
+          "quiz_options": [
+            "is expected",
+            "expects",
+            "is expecting",
+            "has expected"
+          ],
+          "explanation": "**is expected** to win — singular subject, so *is*.",
+          "explanation_cz": "**is expected** to win — podmět je jednotné číslo, proto *is*.",
+          "gap_class": "auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "b2_passives_advanced_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "The report has been finished at last.",
+          "cz": "Ta zpráva je konečně hotová.",
+          "wrong": "The report has finished at last.",
+          "accepts": [
+            "The report has been finished at last."
+          ],
+          "type": false,
+          "explanation": "The report did not do the finishing — it needs **been**: *has been finished*.",
+          "explanation_cz": "Zpráva nic nedokončila — potřebuje **been**: *has been finished*."
+        },
+        {
+          "en": "The road is being repaired this week.",
+          "cz": "Ta silnice se tento týden opravuje.",
+          "wrong": "The road is repairing this week.",
+          "accepts": [
+            "The road is being repaired this week."
+          ],
+          "type": false,
+          "explanation": "*Is repairing* means the road repairs something. Passive is **is being repaired**.",
+          "explanation_cz": "*Is repairing* znamená, že silnice něco opravuje. Trpný rod je **is being repaired**."
+        },
+        {
+          "en": "He is thought to be very rich.",
+          "cz": "Myslí se, že je hodně bohatý.",
+          "wrong": "He is thought be very rich.",
+          "accepts": [
+            "He's thought to be very rich.",
+            "He is thought to be very rich."
+          ],
+          "type": false,
+          "explanation": "The infinitive keeps its **to**: *is thought **to** be*.",
+          "explanation_cz": "Infinitiv si nechává **to**: *is thought **to** be*."
+        },
+        {
+          "en": "My car had been stolen before I called.",
+          "cz": "Moje auto bylo ukradené, než jsem zavolal.",
+          "wrong": "My car had stolen before I called.",
+          "accepts": [
+            "My car had been stolen before I called."
+          ],
+          "type": false,
+          "explanation": "*Had stolen* means the car stole something. Passive is **had been stolen**.",
+          "explanation_cz": "*Had stolen* znamená, že auto něco ukradlo. Trpný rod je **had been stolen**."
+        },
+        {
+          "en": "The windows have been cleaned this morning.",
+          "cz": "Okna byla dnes ráno umytá.",
+          "wrong": "The windows have cleaned this morning.",
+          "accepts": [
+            "The windows have been cleaned this morning."
+          ],
+          "type": false,
+          "explanation": "The windows are not the cleaner. Add **been**: *have been cleaned*.",
+          "explanation_cz": "Okna nic neumyla. Přidej **been**: *have been cleaned*."
+        },
+        {
+          "en": "It is said that the company is closing.",
+          "cz": "Říká se, že ta firma zavírá.",
+          "wrong": "It says that the company is closing.",
+          "accepts": [
+            "It's said that the company is closing.",
+            "It is said that the company is closing."
+          ],
+          "type": false,
+          "explanation": "*It says* is active and needs a speaker. The reporting frame is **It is said that**.",
+          "explanation_cz": "*It says* je činný rod a potřebuje mluvčího. Rámec je **It is said that**."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_VP-B1B2-01"
+  ]
 }
