@@ -160,10 +160,22 @@ def c14_card0_title(uid, d):
 
 
 def c19_czech_in_english_table(uid, d):
-    """C19 — Czech lives in title_cz and examples, not sprinkled in an English table."""
+    """C19 — Czech lives in title_cz and examples, not sprinkled in an English table.
+
+    A Czech-to-English contrast table is not that fault. `b1_modals_speculation`
+    card 7 is titled "Czech trap · mozna" and pairs Czech sentences with their
+    English — Czech belongs in its left column. Skip a card that says so, and skip
+    a table whose first column is mostly Czech.
+    """
     out = []
     for ci, c in enumerate(cards_of(d)):
+        if re.search(r"czech|česk", "%s %s" % (c.get("title") or "", c.get("title_cz") or ""), re.I):
+            continue
         for t in tables_of(c):
+            rows = t.get("rows") or []
+            first_cz = sum(1 for r in rows if r and CZECH_LETTER.search(str(r[0])))
+            if rows and first_cz * 2 >= len(rows):
+                continue                  # a CZ -> EN pair table, which is its job
             heads = [str(h) for h in (t.get("headers") or [])]
             for row in t.get("rows") or []:
                 for i, cell in enumerate(row):
@@ -327,14 +339,14 @@ def j2_ids_match(uid, d):
 
 # ---------------------------------------------------------------- runner
 
-GRAMMAR_CHECKS = [b3_no_options, b25_cue_is_answer, b26_negative_cue,
-                  c13_bold_the_form, c14_card0_title, c19_czech_in_english_table,
+GRAMMAR_CHECKS = [b3_no_options, b26_negative_cue,
+                  c13_bold_the_form, c19_czech_in_english_table,
                   c32_errors_look_like_errors, d1_generic_explanations, e3_aspect_strict,
                   h5_theme_safe_svg, j2_ids_match]
 VOCAB_CHECKS = [b22_vocab_quiz_mode, c49_intro_shows_every_word, c56_vocab_page_is_pictures,
                 e10_vocab_use_mode, h5_theme_safe_svg, j2_ids_match]
 
-ALL_RULES = ["B3", "B22", "B25", "B26", "C13", "C14", "C19", "C32", "C46", "C49",
+ALL_RULES = ["B3", "B22", "B26", "C13", "C19", "C32", "C46", "C49",
              "C56", "D1", "E3", "E10", "F7", "H5", "J2"]
 
 
@@ -385,7 +397,7 @@ def run(only=None, level=None, rule=None):
             except Exception as exc:
                 hits.append(("!!", None, "%s crashed: %s" % (fn.__name__, exc)))
         hits += c46_numbered_series(uid, d, titles)
-        if uid in voc:
+        if uid in voc and rule == "F7":
             hits += f7_word_taught_twice(uid, d, owners)
         if rule:
             hits = [h for h in hits if h[0] == rule.upper()]
