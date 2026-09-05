@@ -218,6 +218,16 @@ accommodation, cancel, check in, deposit, get lost, insurance, transfer (travel 
 **Options:** a) you flip it to `live` in a coordination sitting, with any others waiting / b) the lane flips it / c) leave it `coming` until you have smoked it.
 **Default if unanswered:** a. `nodes-*.json` is a hard never for this lane (AGENT-LOOP.md, HOME-LANE.md) and two writers have corrupted those files before — so the pack is committed and the node is left alone. Note (c) is arguably the more honest state anyway: nothing here has been played yet, and I3 says a student-facing link needs a tick.
 
+### `b2_suffixes_1` has a seventh suffix the plan did not name
+**Q:** B2-PLAN scopes Suffixes 2 as **-ity / -ance-ence / -ship / -hood / -dom** — five groups, six tiles if -ance and -ence are split. `DRAFTING.md`'s word-formation shape asks for **7 map tiles**. I added **-cy** (fluent -> fluency, efficient -> efficiency) as the seventh.
+**Options:** a) keep -cy — it is the natural sibling of -ity/-ance in the abstract-noun set and both its roots passed the sweep / b) ship six tiles and let the shape bend / c) split -ity into -ity/-ty for a seventh that is not new content.
+**Default if unanswered:** a, and it is applied. (b) breaks the shape every other WF unit follows; (c) is a fake seventh — *-ty* and *-ity* are one ending. -cy costs the student two more words and completes the "abstract noun" idea the card is teaching. Say the word and the next run drops it back to six.
+
+### `b2_suffixes_1` · eight A4 `the` candidates left standing
+**Q (for the record):** `lint.py` flags 8 items as demanding `the` where the Czech has no demonstrative — *the play*, *the two*, *the freedom to speak*, *the brothers*, *the towns*, *the offer*.
+**Options:** a) leave them / b) strip the articles / c) reword each sentence.
+**Default if unanswered:** a, per the standing decision in AGENT-LOOP.md — leave `the` where English forces it on a known referent, and prefer a Czech demonstrative where one sits naturally. Six of the eight already carry one (*v té hře*, *mezi těmi dvěma*, *mezi těmi bratry*, *mezi těmi městy*, *té nabídky*); the other two are fixed English (*the freedom to speak*, *the distance between*). No item was changed to move a number.
+
 ---
 
 ## Answered
