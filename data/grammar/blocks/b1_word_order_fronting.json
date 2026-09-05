@@ -5,7 +5,7 @@
  "tree_node": "b1_word_order_fronting",
  "codex_unit": "G_SS-B1B2-01",
  "practice": "frames",
- "note": "B1 repair after a1_word_order. English order is fixed: subject first, SVO, place before time at the end. Czech inversion is the error (Important for me is… / Very long was… / In Prague live… / This email sent Petr). Dummy it stays in b1_it_subject; clause openers out; fronted adverbials are not the target. Fronted time accepted as an alternate, not taught. Check: sort Correct/Needs repair then Quiz. No Type (cloze cannot force the subject). Quiz: which sentence is correct. Use: error-correction (use_mode: correct). Spec_Word-Order_B1_G_SS_2026-08-30 · rewrite 2026-08-30. · C57 recap card (You already know — Slovosled 1) added as card 1.",
+ "note": "B1 repair after a1_word_order. English order is fixed: subject first, SVO, place before time at the end. Czech inversion is the error (Important for me is… / Very long was… / In Prague live… / This email sent Petr). Dummy it stays in b1_it_subject; clause openers out; fronted adverbials are not the target. Fronted time accepted as an alternate, not taught. Check: sort Correct/Needs repair then Quiz. No Type (cloze cannot force the subject). Quiz: which sentence is correct. Use: error-correction (use_mode: correct). Spec_Word-Order_B1_G_SS_2026-08-30 · rewrite 2026-08-30. · C57 recap card (You already know — Slovosled 1) added as card 1. · 2026-09-05 B1 loop: 21 -> 26 items, so the pack clears the 24-40 floor. Two Quiz distractors were correct English and both were also the Use prompt (B1/G4/E9): *I worked last year in Vienna* and *We met on Monday at the office* are things people say — time before place is a preference, not a rule, so a student who 'corrected' them was marked wrong for writing English. Both wrongs are now strings that cannot be said (*I last year worked…*, *We on Monday met…*), both time-first orders went into `accepts`, and the place-before-time card still teaches the neutral order. Items 5 and 11 were the same sentence with a different adjective — 11 is now *The film was really boring*. A4: *I drink coffee in the morning* demanded an article the Czech does not mark; the item is now *at work* and the pack is down to one A4 candidate (*at the office*, where English forces it). The five new items only drill classes the Common mistakes and Place-and-time cards already name (C11): object after the verb, adverb after the object, the actor first, time after the object, and no inversion after a fronted time phrase.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "quiz_axis": "sentence",
@@ -120,20 +120,21 @@
      "explanation_cz": "Podmět je věc, která je důležitá: **English is**. Ne *Important to me is English."
     },
     {
-     "en": "I drink coffee in the morning.",
-     "cz": "Kávu piju ráno.",
-     "gap": "I drink ____ in the morning. (coffee)",
+     "en": "I drink coffee at work.",
+     "cz": "Kávu piju v práci.",
+     "gap": "I drink ____ at work. (coffee)",
      "gap_answer": "coffee",
      "quiz_options": [
-      "I drink coffee in the morning.",
-      "Coffee I drink in the morning.",
-      "I in the morning drink coffee."
+      "I drink coffee at work.",
+      "Coffee I drink at work.",
+      "I at work drink coffee."
      ],
      "accepts": [
-      "I drink coffee in the morning."
+      "I drink coffee at work."
      ],
      "explanation": "The object **coffee** sits after the verb. Czech *Kávu piju* puts the object first.",
-     "explanation_cz": "Předmět **coffee** stojí za slovesem. Česky *Kávu piju* dává předmět dopředu."
+     "explanation_cz": "Předmět **coffee** stojí za slovesem. Česky *Kávu piju* dává předmět dopředu.",
+     "wrong": "I at work drink coffee."
     },
     {
      "en": "Petr sent this email.",
@@ -239,15 +240,16 @@
      "gap_answer": "in Vienna last year",
      "quiz_options": [
       "I worked in Vienna last year.",
-      "I worked last year in Vienna.",
-      "I last year worked in Vienna."
+      "I last year worked in Vienna.",
+      "In Vienna worked I last year."
      ],
      "accepts": [
-      "I worked in Vienna last year."
+      "I worked in Vienna last year.",
+      "I worked last year in Vienna."
      ],
-     "wrong": "I worked last year in Vienna.",
-     "explanation": "Place before time at the end: **in Vienna last year**. Not *last year in Vienna.",
-     "explanation_cz": "Místo před časem na konci: **in Vienna last year**. Ne *last year in Vienna."
+     "wrong": "I last year worked in Vienna.",
+     "explanation": "Nothing goes between the subject and the verb: **I worked**. Place and time follow it — *in Vienna last year*.",
+     "explanation_cz": "Mezi podmět a sloveso nepatří nic: **I worked**. Místo a čas jdou až za ně — *in Vienna last year*."
     },
     {
      "en": "I like black coffee very much.",
@@ -311,25 +313,25 @@
      "explanation_cz": "**Our boss** smlouvu podepsal. Smlouva je předmět. *Yesterday our boss signed…* je taky v pořádku — podmět jde hned za tím."
     },
     {
-     "en": "The meeting was very interesting.",
-     "cz": "Velmi zajímavá byla ta schůzka.",
-     "gap": "____ was very interesting. (meeting)",
-     "gap_answer": "The meeting",
+     "en": "The film was really boring.",
+     "cz": "Hodně nudný byl ten film.",
+     "gap": "____ was really boring. (film)",
+     "gap_answer": "The film",
      "gap_accepts": [
-      "The meeting",
-      "the meeting"
+      "The film",
+      "the film"
      ],
      "quiz_options": [
-      "The meeting was very interesting.",
-      "Very interesting was the meeting.",
-      "Was very interesting the meeting."
+      "The film was really boring.",
+      "Really boring was the film.",
+      "Was really boring the film."
      ],
      "accepts": [
-      "The meeting was very interesting."
+      "The film was really boring."
      ],
-     "wrong": "Very interesting was the meeting.",
-     "explanation": "**The meeting was** very interesting. The description does not open the sentence.",
-     "explanation_cz": "**The meeting was** very interesting. Popis větu nezačíná."
+     "wrong": "Really boring was the film.",
+     "explanation": "**The film was** really boring. A description does not open the sentence, even when Czech puts it first.",
+     "explanation_cz": "**The film was** really boring. Popis větu nezačíná, i když ho čeština dává dopředu."
     },
     {
      "en": "We met at the office on Monday.",
@@ -338,15 +340,124 @@
      "gap_answer": "at the office on Monday",
      "quiz_options": [
       "We met at the office on Monday.",
-      "We met on Monday at the office.",
-      "We on Monday met at the office."
+      "We on Monday met at the office.",
+      "On Monday met we at the office."
      ],
      "accepts": [
-      "We met at the office on Monday."
+      "We met at the office on Monday.",
+      "We met on Monday at the office."
      ],
-     "wrong": "We met on Monday at the office.",
-     "explanation": "Place before time at the end: **at the office on Monday**.",
-     "explanation_cz": "Místo před časem na konci: **at the office on Monday**."
+     "wrong": "We on Monday met at the office.",
+     "explanation": "**We met** stays together. The neutral end order is place then time: *at the office on Monday*.",
+     "explanation_cz": "**We met** zůstává pohromadě. Neutrální pořadí na konci je místo, pak čas: *at the office on Monday*."
+    },
+    {
+     "en": "I read a book every evening.",
+     "cz": "Knížku čtu každý večer.",
+     "gap": "I read ____ every evening. (book)",
+     "gap_answer": "a book",
+     "gap_accepts": [
+      "a book"
+     ],
+     "quiz_options": [
+      "I read a book every evening.",
+      "I read every evening a book.",
+      "A book I read every evening."
+     ],
+     "accepts": [
+      "I read a book every evening."
+     ],
+     "wrong": "I read every evening a book.",
+     "explanation": "The object follows the verb: **read a book**. The time word goes after it, not between them.",
+     "explanation_cz": "Předmět jde hned za sloveso: **read a book**. Časový výraz až za něj, ne mezi ně."
+    },
+    {
+     "en": "Petr speaks English very well.",
+     "cz": "Petr mluví anglicky velmi dobře.",
+     "gap": "Petr speaks ____. (English)",
+     "gap_answer": "English very well",
+     "gap_accepts": [
+      "English very well"
+     ],
+     "quiz_options": [
+      "Petr speaks English very well.",
+      "Petr speaks very well English.",
+      "Very well Petr speaks English."
+     ],
+     "accepts": [
+      "Petr speaks English very well."
+     ],
+     "wrong": "Petr speaks very well English.",
+     "explanation": "**speaks English**, then **very well**. The adverb never splits the verb from its object.",
+     "explanation_cz": "Nejdřív **speaks English**, pak **very well**. Příslovce nikdy nerozdělí sloveso a předmět."
+    },
+    {
+     "en": "Our neighbour broke this window.",
+     "cz": "Tohle okno rozbil náš soused.",
+     "gap": "____ broke this window. (neighbour)",
+     "gap_answer": "Our neighbour",
+     "gap_accepts": [
+      "Our neighbour",
+      "our neighbour",
+      "Our neighbor",
+      "our neighbor"
+     ],
+     "quiz_options": [
+      "Our neighbour broke this window.",
+      "This window broke our neighbour.",
+      "Broke our neighbour this window."
+     ],
+     "accepts": [
+      "Our neighbour broke this window.",
+      "Our neighbor broke this window."
+     ],
+     "wrong": "This window broke our neighbour.",
+     "explanation": "**Our neighbour** did it, so **Our neighbour** comes first. *This window broke our neighbour* makes the window the actor.",
+     "explanation_cz": "Udělal to **our neighbour**, proto stojí první. *This window broke our neighbour* dělá činitele z okna."
+    },
+    {
+     "en": "We finished the project on Friday.",
+     "cz": "Ten projekt jsme dokončili v pátek.",
+     "gap": "We finished ____ on Friday. (project)",
+     "gap_answer": "the project",
+     "gap_accepts": [
+      "the project",
+      "the project"
+     ],
+     "quiz_options": [
+      "We finished the project on Friday.",
+      "We finished on Friday the project.",
+      "On Friday finished we the project."
+     ],
+     "accepts": [
+      "We finished the project on Friday.",
+      "On Friday we finished the project."
+     ],
+     "wrong": "We finished on Friday the project.",
+     "explanation": "The time word goes after the object: **finished the project** on Friday. It cannot sit between the verb and the object.",
+     "explanation_cz": "Časový výraz jde až za předmět: **finished the project** on Friday. Mezi sloveso a předmět nepatří."
+    },
+    {
+     "en": "Many students come here every year.",
+     "cz": "Každý rok sem chodí mnoho studentů.",
+     "gap": "____ come here every year. (students)",
+     "gap_answer": "Many students",
+     "gap_accepts": [
+      "Many students",
+      "many students"
+     ],
+     "quiz_options": [
+      "Many students come here every year.",
+      "Every year come here many students.",
+      "Come here many students every year."
+     ],
+     "accepts": [
+      "Many students come here every year.",
+      "Every year many students come here."
+     ],
+     "wrong": "Every year come here many students.",
+     "explanation": "A time phrase at the front is fine, but the **subject** still comes next: *Every year many students come here*. English never swaps subject and verb here.",
+     "explanation_cz": "Časový výraz na začátku je v pořádku, ale hned po něm musí přijít **podmět**: *Every year many students come here*. Angličtina tu podmět a sloveso nikdy neprohodí."
     }
    ]
   }
