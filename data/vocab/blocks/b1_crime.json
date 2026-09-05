@@ -5,7 +5,7 @@
  "tree_node": "leaf_crime_b1",
  "codex_unit": "V_THM-A1B1-08",
  "quality": "draft",
- "note": "Course-doc theme. Basic crime and justice lexis: what happened, who did it, what follows. Strong passive feeder — pairs with b1_passives (He was arrested). First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Three of the eight shipped frames could never gap (*stole*, *arrested*, *witnesses* against their base lemmas) — and *stole* was also this live unit's only audit violation, so it is gone. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: eleven tiles leaf_society_a2 and friends already own (crime, steal, attack, thief, lawyer, evidence, innocent, prison, law, illegal, drugs) moved to a **You already know** board, and the list was refilled with murder, robbery, vandalism, shoplifting, bribe, offence, court, verdict, defendant, appeal, convict. A12: four tiles are a second sense of a word the student already has — **fine (a penalty)** against A1's *fajn*, **sentence (in court)** against A1's *věta*, **charge (with a crime)** against leaf_money_b1's fee, **guilty (in court)** against leaf_self_b1's feeling. They keep their tiles with the sense marked, and an intro table puts the four pairs side by side. · Pool-checked against everything taught before leaf_crime_b1 — 0 unknown types. · 2026-09-04: six rewrite items re-cut so replacing the underline reconstructs the answer.",
+ "note": "Course-doc theme. Basic crime and justice lexis: what happened, who did it, what follows. Strong passive feeder — pairs with b1_passives (He was arrested). First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Three of the eight shipped frames could never gap (*stole*, *arrested*, *witnesses* against their base lemmas) — and *stole* was also this live unit's only audit violation, so it is gone. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: eleven tiles leaf_society_a2 and friends already own (crime, steal, attack, thief, lawyer, evidence, innocent, prison, law, illegal, drugs) moved to a **You already know** board, and the list was refilled with murder, robbery, vandalism, shoplifting, bribe, offence, court, verdict, defendant, appeal, convict. A12: four tiles are a second sense of a word the student already has — **fine (a penalty)** against A1's *fajn*, **sentence (in court)** against A1's *věta*, **charge (with a crime)** against leaf_money_b1's fee, **guilty (in court)** against leaf_self_b1's feeling. They keep their tiles with the sense marked, and an intro table puts the four pairs side by side. · Pool-checked against everything taught before leaf_crime_b1 — 0 unknown types. · 2026-09-04: six rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 23 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 23 rewritten to make one clause move and carry two or more already-taught words; the six own-lemma packs of this leaf (police, court, trial, fraud, officer, offence) do not count as recycling, so several items needed a second taught word as well as the clause. 0/36 fail now.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -620,14 +620,13 @@
  ],
  "sentences": [
   {
-   "en": "There was a burglary in our street last night.",
-   "cz": "Minulou noc došlo v naší ulici k vloupání.",
+   "en": "There was a burglary in our street last night, but nobody heard anything.",
+   "cz": "Minulou noc došlo v naší ulici k vloupání, ale nikdo nic neslyšel.",
    "lemmas": [
     "burglary"
    ],
    "accepts": [
-    "There was a burglary in our street last night",
-    "There was a burglary in our street last night"
+    "There was a burglary in our street last night, but nobody heard anything"
    ]
   },
   {
@@ -641,23 +640,23 @@
    ]
   },
   {
-   "en": "Two young people tried to rob the shop on the corner.",
-   "cz": "Dva mladí lidé se pokusili vyloupit obchod na rohu.",
+   "en": "Two young people tried to rob the shop, but the door was locked.",
+   "cz": "Dva mladí lidé se pokusili vyloupit obchod, ale dveře byly zamčené.",
    "lemmas": [
     "rob"
    ],
    "accepts": [
-    "Two young people tried to rob the shop on the corner"
+    "Two young people tried to rob the shop, but the door was locked"
    ]
   },
   {
-   "en": "The book is about a murder in a small village.",
-   "cz": "Ta kniha je o vraždě v malé vesnici.",
+   "en": "The book is about a murder which nobody in the village saw.",
+   "cz": "Ta kniha je o vraždě, kterou ve vesnici nikdo neviděl.",
    "lemmas": [
     "murder"
    ],
    "accepts": [
-    "The book is about a murder in a small village"
+    "The book is about a murder which nobody in the village saw"
    ]
   },
   {
@@ -671,23 +670,23 @@
    ]
   },
   {
-   "en": "The company lost a lot of money in a fraud.",
-   "cz": "Firma přišla podvodem o spoustu peněz.",
+   "en": "The company lost a lot of money in a fraud which lasted two years.",
+   "cz": "Firma přišla o spoustu peněz podvodem, který trval dva roky.",
    "lemmas": [
     "fraud"
    ],
    "accepts": [
-    "The company lost a lot of money in a fraud"
+    "The company lost a lot of money in a fraud which lasted two years"
    ]
   },
   {
-   "en": "They tried to smuggle wine across the border.",
-   "cz": "Pokusili se přes hranice pašovat víno.",
+   "en": "They tried to smuggle wine across the border because the tax is lower in Poland.",
+   "cz": "Pokusili se pašovat víno přes hranici, protože je v Polsku nižší daň.",
    "lemmas": [
     "smuggle"
    ],
    "accepts": [
-    "They tried to smuggle wine across the border"
+    "They tried to smuggle wine across the border because the tax is lower in Poland"
    ]
   },
   {
@@ -701,13 +700,13 @@
    ]
   },
   {
-   "en": "Vandalism in the park costs the city thousands every year.",
-   "cz": "Vandalismus v parku stojí město každý rok tisíce.",
+   "en": "Vandalism in the park costs the city thousands, but nobody is ever caught.",
+   "cz": "Vandalismus v parku stojí město tisíce, ale nikdy nikoho nechytí.",
    "lemmas": [
     "vandalism"
    ],
    "accepts": [
-    "Vandalism in the park costs the city thousands every year"
+    "Vandalism in the park costs the city thousands, but nobody is ever caught"
    ]
   },
   {
@@ -721,33 +720,33 @@
    ]
   },
   {
-   "en": "The storm did more damage to the roof than to the car.",
-   "cz": "Bouře nadělala větší škodu na střeše než na autě.",
+   "en": "The storm did more damage than the insurance company will pay for.",
+   "cz": "Ta bouře napáchala větší škody, než kolik pojišťovna zaplatí.",
    "lemmas": [
     "damage"
    ],
    "accepts": [
-    "The storm did more damage to the roof than to the car"
+    "The storm did more damage than the insurance company will pay for"
    ]
   },
   {
-   "en": "There was no violence, but the police came.",
-   "cz": "K žádnému násilí nedošlo, ale policie přijela.",
+   "en": "There was no violence, but the neighbours were still afraid.",
+   "cz": "K násilí nedošlo, ale sousedi se stejně báli.",
    "lemmas": [
     "violence"
    ],
    "accepts": [
-    "There was no violence, but the police came"
+    "There was no violence, but the neighbours were still afraid"
    ]
   },
   {
-   "en": "A police officer asked me where I was on Friday.",
-   "cz": "Policista se mě zeptal, kde jsem byl v pátek.",
+   "en": "A police officer asked me where I was on Friday night, but I could not remember.",
+   "cz": "Policista se mě zeptal, kde jsem byl v pátek večer, ale nemohl jsem si vzpomenout.",
    "lemmas": [
     "police officer"
    ],
    "accepts": [
-    "A police officer asked me where I was on Friday"
+    "A police officer asked me where I was on Friday night, but I could not remember"
    ]
   },
   {
@@ -761,54 +760,53 @@
    ]
   },
   {
-   "en": "The witness said the car was blue.",
-   "cz": "Svědek řekl, že to auto bylo modré.",
+   "en": "The witness said the car was blue, but the photos showed a green one.",
+   "cz": "Svědek řekl, že to auto bylo modré, ale na fotkách bylo zelené.",
    "lemmas": [
     "witness"
    ],
    "accepts": [
-    "The witness said the car was blue"
+    "The witness said the car was blue, but the photos showed a green one"
    ]
   },
   {
-   "en": "The victim did not want to go to court.",
-   "cz": "Oběť nechtěla jít k soudu.",
+   "en": "The victim did not want to go to court because she was afraid.",
+   "cz": "Oběť nechtěla jít k soudu, protože se bála.",
    "lemmas": [
     "victim"
    ],
    "accepts": [
-    "The victim did not want to go to court",
-    "The victim didn't want to go to court"
+    "The victim did not want to go to court because she was afraid"
    ]
   },
   {
-   "en": "The judge listened to the family for two hours.",
-   "cz": "Soudce poslouchal tu rodinu dvě hodiny.",
+   "en": "The judge listened to the family for two hours before he spoke.",
+   "cz": "Soudce rodinu poslouchal dvě hodiny, než promluvil.",
    "lemmas": [
     "judge"
    ],
    "accepts": [
-    "The judge listened to the family for two hours"
+    "The judge listened to the family for two hours before he spoke"
    ]
   },
   {
-   "en": "The jury needed two days to decide.",
-   "cz": "Porota potřebovala na rozhodnutí dva dny.",
+   "en": "The jury needed two days to decide because the evidence was not clear.",
+   "cz": "Porota potřebovala dva dny na rozhodnutí, protože důkazy nebyly jasné.",
    "lemmas": [
     "jury"
    ],
    "accepts": [
-    "The jury needed two days to decide"
+    "The jury needed two days to decide because the evidence was not clear"
    ]
   },
   {
-   "en": "The defendant said nothing during the trial.",
-   "cz": "Obžalovaný během procesu neřekl nic.",
+   "en": "The defendant said nothing during the trial because his lawyer told him to stay quiet.",
+   "cz": "Obžalovaný během procesu nic neřekl, protože mu právník řekl, ať mlčí.",
    "lemmas": [
     "defendant"
    ],
    "accepts": [
-    "The defendant said nothing during the trial"
+    "The defendant said nothing during the trial because his lawyer told him to stay quiet"
    ]
   },
   {
@@ -833,63 +831,63 @@
    ]
   },
   {
-   "en": "You have to report a crime in the first week.",
-   "cz": "Trestný čin musíš nahlásit v prvním týdnu.",
+   "en": "You have to report a crime in the first week, but many people never do.",
+   "cz": "Trestný čin musíš nahlásit během prvního týdne, ale spousta lidí to nikdy neudělá.",
    "lemmas": [
     "report (a crime)"
    ],
    "accepts": [
-    "You have to report a crime in the first week"
+    "You have to report a crime in the first week, but many people never do"
    ]
   },
   {
-   "en": "The police will charge him with fraud.",
-   "cz": "Policie ho obviní z podvodu.",
+   "en": "The police will charge him with fraud if the bank finds the letters.",
+   "cz": "Policie ho obviní z podvodu, pokud banka najde ty dopisy.",
    "lemmas": [
     "charge (with a crime)"
    ],
    "accepts": [
-    "The police will charge him with fraud"
+    "The police will charge him with fraud if the bank finds the letters"
    ]
   },
   {
-   "en": "He tried to bribe the officer and made everything worse.",
-   "cz": "Pokusil se policistu podplatit a všechno tím zhoršil.",
+   "en": "He tried to bribe the officer, but that made everything worse.",
+   "cz": "Pokusil se toho policistu podplatit, ale tím všechno ještě zhoršil.",
    "lemmas": [
     "bribe"
    ],
    "accepts": [
-    "He tried to bribe the officer and made everything worse"
+    "He tried to bribe the officer, but that made everything worse"
    ]
   },
   {
-   "en": "The two families will meet in court in October.",
-   "cz": "Ty dvě rodiny se v říjnu potkají u soudu.",
+   "en": "The two families will meet in court because nobody wants to pay.",
+   "cz": "Ty dvě rodiny se sejdou u soudu, protože nikdo nechce platit.",
    "lemmas": [
     "court"
    ],
    "accepts": [
-    "The two families will meet in court in October"
+    "The two families will meet in court because nobody wants to pay"
    ]
   },
   {
-   "en": "The trial lasted three weeks and cost a fortune.",
-   "cz": "Ten proces trval tři týdny a stál jmění.",
+   "en": "The trial lasted three weeks, but the verdict took one minute.",
+   "cz": "Proces trval tři týdny, ale rozsudek zabral jednu minutu.",
    "lemmas": [
     "trial"
    ],
    "accepts": [
-    "The trial lasted three weeks and cost a fortune"
+    "The trial lasted three weeks, but the verdict took one minute"
    ]
   },
   {
-   "en": "The verdict surprised everybody in the room.",
-   "cz": "Rozsudek poroty všechny v místnosti překvapil.",
+   "en": "The verdict surprised everybody in the room because the evidence was strong.",
+   "cz": "Ten rozsudek všechny v místnosti překvapil, protože důkazy byly silné.",
    "lemmas": [
     "verdict"
    ],
    "accepts": [
-    "The verdict surprised everybody in the room"
+    "The verdict surprised everybody in the room because the evidence was strong"
    ]
   },
   {
@@ -923,23 +921,23 @@
    ]
   },
   {
-   "en": "The punishment for a first offence is usually small.",
-   "cz": "Trest za první přestupek bývá malý.",
+   "en": "The punishment for a first offence is a small fine, but the judge can send you to prison.",
+   "cz": "Trest za první přestupek je malá pokuta, ale soudce tě může poslat do vězení.",
    "lemmas": [
     "punishment"
    ],
    "accepts": [
-    "The punishment for a first offence is usually small"
+    "The punishment for a first offence is a small fine, but the judge can send you to prison"
    ]
   },
   {
-   "en": "His lawyer will appeal next month.",
-   "cz": "Jeho právník se příští měsíc odvolá.",
+   "en": "His lawyer will appeal next month if the family finds the money.",
+   "cz": "Jeho právník se příští měsíc odvolá, pokud rodina sežene peníze.",
    "lemmas": [
     "appeal"
    ],
    "accepts": [
-    "His lawyer will appeal next month"
+    "His lawyer will appeal next month if the family finds the money"
    ]
   },
   {
@@ -953,14 +951,13 @@
    ]
   },
   {
-   "en": "It is legal to park here after six in the evening.",
-   "cz": "Parkovat tady po šesté večer je legální.",
+   "en": "It is legal to park here after six, but the sign is hard to see.",
+   "cz": "Parkovat tady po šesté je legální, ale ta značka je špatně vidět.",
    "lemmas": [
     "legal"
    ],
    "accepts": [
-    "It is legal to park here after six in the evening",
-    "It's legal to park here after six in the evening"
+    "It is legal to park here after six, but the sign is hard to see"
    ]
   },
   {
