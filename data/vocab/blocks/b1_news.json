@@ -3,13 +3,49 @@
  "title": "News & current affairs (B1)",
  "level": "B1",
  "tree_node": "leaf_news_b1",
- "recaps": ["a2_media", "a2_society"],
+ "recaps": [
+  "a2_media",
+  "a2_society"
+ ],
  "codex_unit": "V_THM-A1B1-11",
  "quality": "draft",
- "note": "Course-doc theme, above leaf_society_a2. Basic news literacy: the headline, the report, who governs. Feeds trunk_opinions_b1 and the second-conditional discussion work. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 underlined paraphrases, not CZ→EN of the bank. F7: six tiles an earlier pack already owns were replaced with news lexis that is new here — article→broadcast, daily→coverage, abroad→scandal, agreement→vote, development→issue, peace→campaign. A12: four tiles are the same string in a different sense and are sense-marked instead — party (political), interview (in the news), report (a news story), fall (a drop). Pool-checked against everything taught before leaf_news_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 27 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py — the worst bank at B1 for this fault: a news noun dropped into `The X did Y` with nothing recycled. All 27 rewritten to make one clause move and carry two or more already-taught words. 0/36 fail now. `somebody` was tried in the fire item and swapped for `a neighbour`: it is not taught anywhere before path slot 14.",
+ "note": "Course-doc theme, above leaf_society_a2. Basic news literacy: the headline, the report, who governs. Feeds trunk_opinions_b1 and the second-conditional discussion work. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 underlined paraphrases, not CZ→EN of the bank. F7: six tiles an earlier pack already owns were replaced with news lexis that is new here — article→broadcast, daily→coverage, abroad→scandal, agreement→vote, development→issue, peace→campaign. A12: four tiles are the same string in a different sense and are sense-marked instead — party (political), interview (in the news), report (a news story), fall (a drop). Pool-checked against everything taught before leaf_news_b1 — 0 unknown types. · 2026-09-04: seven rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 27 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py — the worst bank at B1 for this fault: a news noun dropped into `The X did Y` with nothing recycled. All 27 rewritten to make one clause move and carry two or more already-taught words. 0/36 fail now. `somebody` was tried in the fire item and swapped for `a neighbour`: it is not taught anywhere before path slot 14. · 2026-09-05 F7/F9: 5 words dropped from the bank and moved onto the You already know page (created) — journalist, government, law, education, disaster. An earlier unit owns them; they stay in this unit's sentences as recycled vocabulary. The first pass on 2026-09-05 did this backwards, stripping such words off the page and leaving them in the bank.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
+  {
+   "title": "You already know",
+   "title_cz": "Už znáš",
+   "note": "These words are not new — earlier units taught them. They come back in this unit's sentences; what is new is everything after this page.",
+   "note_cz": "Tato slova nejsou nová — naučil ses je dřív. V této lekci se vracejí; nové je všechno, co následuje.",
+   "pictures": [
+    {
+     "en": "journalist",
+     "cz": "novinář",
+     "icon": "🎙️"
+    },
+    {
+     "en": "government",
+     "cz": "vláda",
+     "icon": "🏛️"
+    },
+    {
+     "en": "law",
+     "cz": "zákon",
+     "icon": "⚖️"
+    },
+    {
+     "en": "education",
+     "cz": "vzdělání",
+     "icon": "🎓"
+    },
+    {
+     "en": "disaster",
+     "cz": "katastrofa",
+     "icon": "🌪️"
+    }
+   ]
+  },
   {
    "title": "In the news",
    "title_cz": "Ve zprávách",
@@ -255,13 +291,6 @@
      ]
     },
     {
-     "en": "journalist",
-     "cz": "novinář",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
      "en": "channel",
      "cz": "kanál",
      "use": [
@@ -317,13 +346,6 @@
    "title": "News · who decides",
    "items": [
     {
-     "en": "government",
-     "cz": "vláda",
-     "use": [
-      "lets_talk_about"
-     ]
-    },
-    {
      "en": "election",
      "cz": "volby",
      "use": [
@@ -333,13 +355,6 @@
     {
      "en": "politician",
      "cz": "politik",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "law",
-     "cz": "zákon",
      "use": [
       "this_is_a"
      ]
@@ -435,24 +450,10 @@
      ]
     },
     {
-     "en": "education",
-     "cz": "školství",
-     "use": [
-      "is_important"
-     ]
-    },
-    {
      "en": "issue",
      "cz": "téma / sporná otázka",
      "use": [
       "lets_talk_about"
-     ]
-    },
-    {
-     "en": "disaster",
-     "cz": "katastrofa",
-     "use": [
-      "this_is_a"
      ]
     },
     {
@@ -536,16 +537,6 @@
    ]
   },
   {
-   "en": "She works as a journalist, but she started as a teacher.",
-   "cz": "Pracuje jako novinářka, ale začínala jako učitelka.",
-   "lemmas": [
-    "journalist"
-   ],
-   "accepts": [
-    "She works as a journalist, but she started as a teacher"
-   ]
-  },
-  {
    "en": "Thousands of people joined the protest because the prices were too high.",
    "cz": "Tisíce lidí se přidaly k protestu, protože byly ceny příliš vysoké.",
    "lemmas": [
@@ -553,16 +544,6 @@
    ],
    "accepts": [
     "Thousands of people joined the protest because the prices were too high"
-   ]
-  },
-  {
-   "en": "Education is more important now than it was fifty years ago.",
-   "cz": "Vzdělání je dnes důležitější, než bylo před padesáti lety.",
-   "lemmas": [
-    "education"
-   ],
-   "accepts": [
-    "Education is more important now than it was fifty years ago"
    ]
   },
   {
@@ -656,16 +637,6 @@
    ]
   },
   {
-   "en": "The government wants to spend more on schools than on new roads.",
-   "cz": "Vláda chce dávat víc peněz na školy než na nové silnice.",
-   "lemmas": [
-    "government"
-   ],
-   "accepts": [
-    "The government wants to spend more on schools than on new roads"
-   ]
-  },
-  {
    "en": "No politician answered the question when the journalists asked about money.",
    "cz": "Když se novináři zeptali na peníze, žádný politik neodpověděl.",
    "lemmas": [
@@ -673,16 +644,6 @@
    ],
    "accepts": [
     "No politician answered the question when the journalists asked about money"
-   ]
-  },
-  {
-   "en": "The new law starts in January, but many people have not read it.",
-   "cz": "Nový zákon začne platit v lednu, ale spousta lidí si ho ještě nepřečetla.",
-   "lemmas": [
-    "law"
-   ],
-   "accepts": [
-    "The new law starts in January, but many people have not read it"
    ]
   },
   {
@@ -793,16 +754,6 @@
    ],
    "accepts": [
     "The health service needs more doctors, but the pay is too low"
-   ]
-  },
-  {
-   "en": "The storm was the worst disaster this country has seen for years.",
-   "cz": "Ta bouře byla nejhorší katastrofa, jakou tahle země za mnoho let zažila.",
-   "lemmas": [
-    "disaster"
-   ],
-   "accepts": [
-    "The storm was the worst disaster this country has seen for years"
    ]
   },
   {
@@ -941,18 +892,6 @@
    ],
    "accepts": [
     "The country is in a crisis with money"
-   ]
-  },
-  {
-   "lemma": "disaster",
-   "prompt": "The storm was the worst thing that has happened here for years.",
-   "underline": "thing that has happened",
-   "en": "The storm was the worst disaster here for years.",
-   "lemmas": [
-    "disaster"
-   ],
-   "accepts": [
-    "The storm was the worst disaster here for years"
    ]
   },
   {

@@ -247,7 +247,7 @@ def check_recap(d: dict, packs: dict) -> list:
 
     claimed = sorted(review & own)
     if claimed:
-        out.append(("F9", "recap page shows %s — this unit teaches %s as new"
+        out.append(("F9", "recap page shows %s — this unit teaches %s as new; drop the tile (F7), do not strip the page"
                     % (", ".join(claimed), "them" if len(claimed) > 1 else "it"), "", ""))
 
     # the page has to SHOW earlier words, not just be titled as if it did

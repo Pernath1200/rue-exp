@@ -3,10 +3,13 @@
  "title": "Travel 2",
  "level": "B1",
  "tree_node": "leaf_travel_b1",
- "recaps": ["a2_travel", "a2_transport"],
+ "recaps": [
+  "a2_travel",
+  "a2_transport"
+ ],
  "codex_unit": "V_THM-A1B1-03",
  "quality": "draft",
- "note": "Journeys, problems and accommodation, above leaf_travel_a2 (holidays). leaf_knowledge_b1 is titled Knowledge & travel but only half-covers this - keep them apart. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma (B22 quiz_mode sentence_gap was already set, but 28 of the 36 words had no frame to gap). · E10: Use is no longer CZ→EN of the bank — use_mode rewrite, 12 underlined paraphrases that make the student produce the new word. · E1/E4: every frame is a situation someone would actually say; no X is very important. · F6: people and places rotated (Petr, Ostrava, Telč, Rome, Vienna), no repeat of Anna/Brno. · Pool-checked against everything taught before leaf_travel_b1 — 0 unknown types. James smoke 2026-09-04: F8/C57 recap card added (Travel 1 reminder, four tiles not the full set; luggage/booking/backpack are the only repeats). Four rewrite items had an underline that did not cover what actually changes, so a correct rewrite was marked wrong. Bad weather no longer closes the airport as its subject. · 2026-09-05 B1 loop: sentence texture. 18 of 36 Use sentences were `NP + be + ADJ` with nothing recycled — the shape check_sentence_texture.py was written for. All 18 rewritten so each makes one clause move (subordinate, relative, comparative, passive or contrast) and recycles at least two words the path already taught; the lemma stays contiguous so sentenceToFrame still gaps it. 0/36 fail now. E1: every rewrite carries a situation, not a frame.",
+ "note": "Journeys, problems and accommodation, above leaf_travel_a2 (holidays). leaf_knowledge_b1 is titled Knowledge & travel but only half-covers this - keep them apart. First draft 2026-09-02, rough. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma (B22 quiz_mode sentence_gap was already set, but 28 of the 36 words had no frame to gap). · E10: Use is no longer CZ→EN of the bank — use_mode rewrite, 12 underlined paraphrases that make the student produce the new word. · E1/E4: every frame is a situation someone would actually say; no X is very important. · F6: people and places rotated (Petr, Ostrava, Telč, Rome, Vienna), no repeat of Anna/Brno. · Pool-checked against everything taught before leaf_travel_b1 — 0 unknown types. James smoke 2026-09-04: F8/C57 recap card added (Travel 1 reminder, four tiles not the full set; luggage/booking/backpack are the only repeats). Four rewrite items had an underline that did not cover what actually changes, so a correct rewrite was marked wrong. Bad weather no longer closes the airport as its subject. · 2026-09-05 B1 loop: sentence texture. 18 of 36 Use sentences were `NP + be + ADJ` with nothing recycled — the shape check_sentence_texture.py was written for. All 18 rewritten so each makes one clause move (subordinate, relative, comparative, passive or contrast) and recycles at least two words the path already taught; the lemma stays contiguous so sentenceToFrame still gaps it. 0/36 fail now. E1: every rewrite carries a situation, not a frame. · 2026-09-05 F7/F9: 14 words dropped from the bank and moved onto the You already know page (extended) — luggage, backpack, booking, boarding pass, platform, delay, connection, route, ferry, check in, refund, emergency, complain, review. An earlier unit owns them; they stay in this unit's sentences as recycled vocabulary. The first pass on 2026-09-05 did this backwards, stripping such words off the page and leaving them in the bank.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -63,11 +66,15 @@
     "rows": [
      [
       "Travel 1",
-      "tour · tourist · abroad · foreign · book (verb) · guide · souvenir · hostel"
+      "journey · tour · tourist · abroad · foreign · guide · souvenir · hostel · luggage · backpack · booking"
      ],
      [
       "Transport",
-      "airline · terminal · railway · seat · return ticket · passenger · coach"
+      "airline · terminal · railway · seat · passenger · coach · boarding pass · platform · delay · connection · route · ferry · check in"
+     ],
+     [
+      "and from earlier",
+      "refund · emergency · complain · review"
      ]
     ]
    },
@@ -291,52 +298,10 @@
    "title": "Travel · on the way",
    "items": [
     {
-     "en": "luggage",
-     "cz": "zavazadla",
-     "use": [
-      "i_have_a"
-     ]
-    },
-    {
-     "en": "boarding pass",
-     "cz": "palubní lístek",
-     "use": [
-      "i_have_a"
-     ]
-    },
-    {
      "en": "baggage claim",
      "cz": "výdej zavazadel",
      "use": [
       "this_is_a"
-     ]
-    },
-    {
-     "en": "platform",
-     "cz": "nástupiště",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "delay",
-     "cz": "zpoždění",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "connection",
-     "cz": "přípoj",
-     "use": [
-      "i_have_a"
-     ]
-    },
-    {
-     "en": "backpack",
-     "cz": "batoh",
-     "use": [
-      "i_have_a"
      ]
     },
     {
@@ -349,20 +314,6 @@
     {
      "en": "transfer",
      "cz": "přesun",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "route",
-     "cz": "trasa",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
-     "en": "ferry",
-     "cz": "trajekt",
      "use": [
       "this_is_a"
      ]
@@ -402,24 +353,10 @@
      ]
     },
     {
-     "en": "refund",
-     "cz": "vrácení peněz",
-     "use": [
-      "we_need_to"
-     ]
-    },
-    {
      "en": "insurance",
      "cz": "pojištění",
      "use": [
       "is_important"
-     ]
-    },
-    {
-     "en": "emergency",
-     "cz": "nouzová situace",
-     "use": [
-      "this_is_a"
      ]
     },
     {
@@ -452,13 +389,6 @@
      ]
     },
     {
-     "en": "complain",
-     "cz": "stěžovat si",
-     "use": [
-      "i_want_to"
-     ]
-    },
-    {
      "en": "stolen",
      "cz": "ukradený",
      "use": [
@@ -484,13 +414,6 @@
      "cz": "dvoulůžkový pokoj",
      "use": [
       "we_need_to"
-     ]
-    },
-    {
-     "en": "check in",
-     "cz": "ubytovat se",
-     "use": [
-      "i_want_to"
      ]
     },
     {
@@ -522,13 +445,6 @@
      ]
     },
     {
-     "en": "review",
-     "cz": "recenze",
-     "use": [
-      "this_is_a"
-     ]
-    },
-    {
      "en": "wifi",
      "cz": "wifi",
      "use": [
@@ -543,13 +459,6 @@
      ]
     },
     {
-     "en": "booking",
-     "cz": "rezervace",
-     "use": [
-      "i_have_a"
-     ]
-    },
-    {
      "en": "receptionist",
      "cz": "recepční",
      "use": [
@@ -560,26 +469,6 @@
   }
  ],
  "sentences": [
-  {
-   "en": "Our flight had a long delay because the weather was bad in Vienna.",
-   "cz": "Náš let měl velké zpoždění, protože ve Vídni bylo špatné počasí.",
-   "lemmas": [
-    "delay"
-   ],
-   "accepts": [
-    "Our flight had a long delay because the weather was bad in Vienna"
-   ]
-  },
-  {
-   "en": "The airline lost my luggage, which arrived three days later.",
-   "cz": "Aerolinky mi ztratily zavazadlo, které dorazilo o tři dny později.",
-   "lemmas": [
-    "luggage"
-   ],
-   "accepts": [
-    "The airline lost my luggage, which arrived three days later"
-   ]
-  },
   {
    "en": "We had to cancel the trip because my daughter was ill.",
    "cz": "Museli jsme ten výlet zrušit, protože byla dcera nemocná.",
@@ -601,36 +490,6 @@
    ]
   },
   {
-   "en": "I missed my connection in Vienna because the first train left late.",
-   "cz": "Ve Vídni jsem zmeškal přípoj, protože první vlak jel pozdě.",
-   "lemmas": [
-    "connection"
-   ],
-   "accepts": [
-    "I missed my connection in Vienna because the first train left late"
-   ]
-  },
-  {
-   "en": "They gave us a full refund after we wrote to the company.",
-   "cz": "Vrátili nám všechny peníze poté, co jsme napsali firmě.",
-   "lemmas": [
-    "refund"
-   ],
-   "accepts": [
-    "They gave us a full refund after we wrote to the company"
-   ]
-  },
-  {
-   "en": "We check in at the hotel as soon as we arrive from the airport.",
-   "cz": "Ubytujeme se v hotelu, jakmile přijedeme z letiště.",
-   "lemmas": [
-    "check in"
-   ],
-   "accepts": [
-    "We check in at the hotel as soon as we arrive from the airport"
-   ]
-  },
-  {
    "en": "Travel insurance is cheaper if you buy it before the holiday starts.",
    "cz": "Cestovní pojištění je levnější, když si ho koupíš před začátkem dovolené.",
    "lemmas": [
@@ -641,16 +500,6 @@
    ]
   },
   {
-   "en": "I keep my boarding pass on my phone, which is faster at the airport.",
-   "cz": "Palubní lístek mám v telefonu, což je na letišti rychlejší.",
-   "lemmas": [
-    "boarding pass"
-   ],
-   "accepts": [
-    "I keep my boarding pass on my phone, which is faster at the airport"
-   ]
-  },
-  {
    "en": "We waited at baggage claim for an hour because our bags were on a later flight.",
    "cz": "U výdeje zavazadel jsme čekali hodinu, protože naše zavazadla letěla pozdějším letem.",
    "lemmas": [
@@ -658,26 +507,6 @@
    ],
    "accepts": [
     "We waited at baggage claim for an hour because our bags were on a later flight"
-   ]
-  },
-  {
-   "en": "We ran to platform four because our train was already leaving.",
-   "cz": "Běželi jsme na čtvrté nástupiště, protože náš vlak už odjížděl.",
-   "lemmas": [
-    "platform"
-   ],
-   "accepts": [
-    "We ran to platform four because our train was already leaving"
-   ]
-  },
-  {
-   "en": "Petr takes only a small backpack when he travels by train.",
-   "cz": "Petr si bere jen malý batoh, když cestuje vlakem.",
-   "lemmas": [
-    "backpack"
-   ],
-   "accepts": [
-    "Petr takes only a small backpack when he travels by train"
    ]
   },
   {
@@ -698,26 +527,6 @@
    ],
    "accepts": [
     "The transfer from the airport was included in the price we paid"
-   ]
-  },
-  {
-   "en": "This route is faster, but the road is worse.",
-   "cz": "Tahle trasa je rychlejší, ale silnice je horší.",
-   "lemmas": [
-    "route"
-   ],
-   "accepts": [
-    "This route is faster, but the road is worse"
-   ]
-  },
-  {
-   "en": "We took the ferry because the road was closed.",
-   "cz": "Jeli jsme trajektem, protože silnice byla zavřená.",
-   "lemmas": [
-    "ferry"
-   ],
-   "accepts": [
-    "We took the ferry because the road was closed"
    ]
   },
   {
@@ -749,16 +558,6 @@
    ],
    "accepts": [
     "Tourists often get lost in the old town"
-   ]
-  },
-  {
-   "en": "Call this number only if you need help in an emergency.",
-   "cz": "Na tohle číslo volej jen tehdy, když potřebuješ pomoc v nouzové situaci.",
-   "lemmas": [
-    "emergency"
-   ],
-   "accepts": [
-    "Call this number only if you need help in an emergency"
    ]
   },
   {
@@ -799,16 +598,6 @@
    ],
    "accepts": [
     "The airport was closed on Sunday morning because of bad weather"
-   ]
-  },
-  {
-   "en": "I decided to complain because nobody cleaned our room.",
-   "cz": "Rozhodl jsem se stěžovat si, protože náš pokoj nikdo neuklidil.",
-   "lemmas": [
-    "complain"
-   ],
-   "accepts": [
-    "I decided to complain because nobody cleaned our room"
    ]
   },
   {
@@ -872,16 +661,6 @@
    ]
   },
   {
-   "en": "I read every review before I book a room.",
-   "cz": "Přečtu si každou recenzi, než si zamluvím pokoj.",
-   "lemmas": [
-    "review"
-   ],
-   "accepts": [
-    "I read every review before I book a room"
-   ]
-  },
-  {
    "en": "The wifi in the room stopped working at night.",
    "cz": "Wifi na pokoji v noci přestala fungovat.",
    "lemmas": [
@@ -902,16 +681,6 @@
    ]
   },
   {
-   "en": "My booking was for Friday, not for Saturday, so we paid for another night at the hotel.",
-   "cz": "Moje rezervace byla na pátek, ne na sobotu, takže jsme zaplatili další noc v hotelu.",
-   "lemmas": [
-    "booking"
-   ],
-   "accepts": [
-    "My booking was for Friday, not for Saturday, so we paid for another night at the hotel"
-   ]
-  },
-  {
    "en": "The receptionist gave us a map and showed us where the station was.",
    "cz": "Recepční nám dal mapu a ukázal nám, kde je nádraží.",
    "lemmas": [
@@ -926,18 +695,6 @@
  "use_hint": "Rewrite the sentence. Replace the underlined words.",
  "use_sentences": [
   {
-   "lemma": "delay",
-   "prompt": "There was a long wait before the plane left.",
-   "underline": "wait",
-   "en": "There was a long delay before the plane left.",
-   "lemmas": [
-    "delay"
-   ],
-   "accepts": [
-    "There was a long delay before the plane left"
-   ]
-  },
-  {
    "lemma": "cancel",
    "prompt": "They are going to stop the flight because of the snow.",
    "underline": "stop",
@@ -947,18 +704,6 @@
    ],
    "accepts": [
     "They are going to cancel the flight because of the snow"
-   ]
-  },
-  {
-   "lemma": "refund",
-   "prompt": "The company gave us our money back.",
-   "underline": "our money back",
-   "en": "The company gave us a refund.",
-   "lemmas": [
-    "refund"
-   ],
-   "accepts": [
-    "The company gave us a refund"
    ]
   },
   {
@@ -983,19 +728,6 @@
    ],
    "accepts": [
     "We always get lost in the old town"
-   ]
-  },
-  {
-   "lemma": "complain",
-   "prompt": "We want to tell the hotel we are not happy about the noise.",
-   "underline": "tell the hotel we are not happy",
-   "en": "We want to complain about the noise.",
-   "lemmas": [
-    "complain"
-   ],
-   "accepts": [
-    "We want to complain about the noise",
-    "We want to complain to the hotel about the noise"
    ]
   },
   {
@@ -1057,18 +789,6 @@
    ],
    "accepts": [
     "We paid a deposit and the rest later"
-   ]
-  },
-  {
-   "lemma": "platform",
-   "prompt": "The train left from the wrong place at the station.",
-   "underline": "place at the station",
-   "en": "The train left from the wrong platform.",
-   "lemmas": [
-    "platform"
-   ],
-   "accepts": [
-    "The train left from the wrong platform"
    ]
   }
  ]

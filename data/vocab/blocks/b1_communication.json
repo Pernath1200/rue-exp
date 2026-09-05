@@ -1,6 +1,12 @@
 {
  "intro": [
   {
+   "title": "You already know",
+   "title_cz": "Už znáš",
+   "note": "These words are not new — earlier units taught them. They come back in this unit's sentences; what is new is everything after this page. **phrase** is here too — School 2 taught it.",
+   "note_cz": "Tato slova nejsou nová — naučil ses je dřív. V této lekci se vracejí; nové je všechno, co následuje."
+  },
+  {
    "title": "Saying, telling, and everything in between",
    "title_cz": "Slovesa mluvení",
    "pictures": [
@@ -505,16 +511,6 @@
    ]
   },
   {
-   "en": "This phrase is difficult to translate because the Czech word is longer.",
-   "cz": "Tuhle frázi je těžké přeložit, protože české slovo je delší.",
-   "lemmas": [
-    "phrase"
-   ],
-   "accepts": [
-    "This phrase is difficult to translate because the Czech word is longer"
-   ]
-  },
-  {
    "en": "The article started with a quote from the minister who lost his job.",
    "cz": "Ten článek začínal citátem ministra, který přišel o místo.",
    "lemmas": [
@@ -612,9 +608,13 @@
  "title": "Communication (B1)",
  "level": "B1",
  "tree_node": "leaf_communication_b1",
- "recaps": ["a1_core_frames_verbs_say", "a2_signals", "a1_core_frames_social"],
+ "recaps": [
+  "a1_core_frames_verbs_say",
+  "a2_signals",
+  "a1_core_frames_social"
+ ],
  "codex_unit": "V_COM-B1B2-01",
- "note": "V_COM-B1B2-01 · B1 communication layer · speech-act verbs, the message as a noun, manner & language skills · carriers via use[] · 2026-09-04 B1 loop: sentences 13 → 36, one gappable frame per lemma. Six of the thirteen shipped frames used the PAST form of their own lemma (admitted / denied / announced / insisted / persuaded / warned), so sentenceToFrame never matched and those six words had no Quiz or Type item; all six rewritten. B22 quiz_mode sentence_gap added (it was missing). E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: announce → confirm; leaf_news_b1 owns announce at path 14 and this leaf is at 16. C48: card 0's prose is now a three-row table. Pool-checked against everything taught before leaf_communication_b1 — 0 unknown types. · 2026-09-04: eleven rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 15 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 15 rewritten to make one clause move and carry two or more already-taught words; lemma stays contiguous for sentenceToFrame. 0/36 fail now.",
+ "note": "V_COM-B1B2-01 · B1 communication layer · speech-act verbs, the message as a noun, manner & language skills · carriers via use[] · 2026-09-04 B1 loop: sentences 13 → 36, one gappable frame per lemma. Six of the thirteen shipped frames used the PAST form of their own lemma (admitted / denied / announced / insisted / persuaded / warned), so sentenceToFrame never matched and those six words had no Quiz or Type item; all six rewritten. B22 quiz_mode sentence_gap added (it was missing). E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: announce → confirm; leaf_news_b1 owns announce at path 14 and this leaf is at 16. C48: card 0's prose is now a three-row table. Pool-checked against everything taught before leaf_communication_b1 — 0 unknown types. · 2026-09-04: eleven rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 15 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 15 rewritten to make one clause move and carry two or more already-taught words; lemma stays contiguous for sentenceToFrame. 0/36 fail now. · 2026-09-05 F7/F9: 1 word dropped from the bank and moved onto the You already know page (created) — phrase. An earlier unit owns them; they stay in this unit's sentences as recycled vocabulary. The first pass on 2026-09-05 did this backwards, stripping such words off the page and leaving them in the bank.",
  "default_direction": "cz_to_en",
  "blocks": [
   {
@@ -797,14 +797,6 @@
      "use": [
       "i_need_a",
       "we_need_to"
-     ]
-    },
-    {
-     "en": "phrase",
-     "cz": "fráze / slovní spojení",
-     "use": [
-      "this_is_a",
-      "i_need_a"
      ]
     },
     {
