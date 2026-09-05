@@ -12,6 +12,7 @@ Do not re-ask unless James reopens.
 | **P-deploy** | **A1+A2 polish before deploy** | No Pages / student cutover until James smokes and says go. |
 | **P-engine** | **Shell = interactive / James** | Auto never edits `js/`, `css/`, `index.html` unless an item is explicitly listed on `REPAIR-QUEUE.md` **and** marked engine-ok by James. |
 | **P-b2c1-stub** | **Auto B2/C1 banks are stubs** (2026-08-29) | Title-only: node `parked`, pack `status: stub`, empty items. **Keep live:** `b2_second_conditional`, `b2_third_conditional`, `b2_present_perfect_continuous`, `b2_past_perfect`, `b2_word_formation`, `c1_word_formation`, `b2_clear_claims`. Auto must not refill stubs. Rebuild by hand before any student play. |
+| **P-fce-shapes** | **B2/C1 exercise shapes spec'd** (2026-09-05) | `codex/FCE-EXERCISES.md` — Open Cloze (grammar-word Type stage, retrofit, no engine change) and Key Word Transformation (new `use_mode: "transformation"`, needs `js/practice-grammar.js` work — **P-engine**, interactive-only, cloud loop must not attempt). Spec only; nothing built yet. B1 explicitly out of scope until B2 pilot units are played. |
 
 ## Product goal (near-term)
 
