@@ -254,6 +254,10 @@ lane is anchored on the vocab-leaf recipe it keeps repeating. Cheapest fix, and
 a `git pull` on the home machine picks it up next iteration without a restart.
 → (James: your answer here)
 
+### `b2_hypothetical_past` is absorbed on paper but its stub is untouched
+**Q:** B2-PLAN has `b2_wish_if_only` absorb `b2_hypothetical_past`, and says absorbed nodes "park with `levels: []` and a note, once stamped". Wish / If only is now drafted and carries the past-regret content. The `b2_hypothetical_past` stub is still sitting there with 0 items and its own note saying "auto-authored bank removed (James). Do not refill from auto."
+**Options:** a) leave the stub exactly as it is and park the node when you next do a registry sitting / b) the lane parks it / c) the lane writes a pointer into the stub's note.
+**Default if unanswered:** a. Parking a node is a `nodes-*.json` edit and a hard never here. (c) is tempting but it would edit a file whose own note says do not touch it from auto. Nothing was changed; the content it was meant to hold is now in `b2_wish_if_only`'s past-regret block, so the stub is redundant rather than missing.
 
 ---
 

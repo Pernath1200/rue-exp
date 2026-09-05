@@ -1,18 +1,733 @@
 {
   "id": "b2_wish_if_only",
-  "title": "Wish / if only",
+  "title": "Wish / If only",
   "level": "B2",
   "tree_node": "b2_wish_if_only",
+  "codex_unit": "G_CL-B1B2-02",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty shell. 30 items, inside the 24-40 band. b1_wishes owns *wish* + past simple (present regret, 25 items) and its target error *I wish I have*; this unit deliberately does NOT re-teach that pattern as a bank — it appears once, as the first Use item, so the recap is a check rather than a repeat. The two genuinely new shapes get a block each: PAST REGRET, *wish/if only* + had + past participle (14), and WANTING SOMEONE TO CHANGE, *wish/if only* + would (10). *If only* is woven through both rather than given its own block, because it is the same grammar at a higher temperature. Answers are varied on purpose — had, had not, If only, would — so the student cannot pass the unit by typing one word every time. D1: every item carries its own explanation naming its own verb. A8 accepts are generated as a full contraction closure. Distractors stay on the axis and carry the unit's real errors (B4): *have* and *will* after *wish*, which are the two commonest Czech-learner mistakes here. Use is error-correction (E7), one error each (E2), including the *I wish I would* self-reference error which needs **could**. ABSORPTION: B2-PLAN has this unit absorb `b2_hypothetical_past`; that node's stub is left untouched, since parking it is a registry edit and a hard never for this lane — logged in DECISIONS.md. KWT: this unit is KWT-native per FCE-EXERCISES.md, but that needs a js/ branch which is James-only under P-engine, so Use is ordinary error-correction.",
+  "intro": {
+    "cards": [
+      {
+        "title": "Wish / If only",
+        "title_cz": "Wish / If only — kéž by",
+        "points": [
+          "*Wish* and *if only* say that reality is **not** what you want.",
+          "English shows this by stepping the verb one tense **further back**.",
+          "*If only* is the same grammar, said more strongly."
+        ],
+        "table": {
+          "headers": [
+            "What you mean",
+            "What you say"
+          ],
+          "rows": [
+            [
+              "I don't have time. (now)",
+              "I wish I **had** time."
+            ],
+            [
+              "I didn't study. (past)",
+              "I wish I **had studied**."
+            ],
+            [
+              "You keep making noise.",
+              "I wish you **would stop**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — I wish + minulý čas",
+        "text_first": true,
+        "points": [
+          "Wishes 1 taught the **present** regret: step back one tense.",
+          "Now come the **past** regret and the **would** complaint."
+        ],
+        "table": {
+          "headers": [
+            "Unit",
+            "Meaning",
+            "Form"
+          ],
+          "rows": [
+            [
+              "Wishes 1",
+              "now is wrong",
+              "I wish I **had** more time."
+            ],
+            [
+              "This one · past",
+              "the past went wrong",
+              "I wish I **had studied**."
+            ],
+            [
+              "This one · would",
+              "someone should change",
+              "I wish you **would stop**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Wishing about the past",
+        "title_cz": "Přání o minulosti",
+        "text_first": true,
+        "points": [
+          "Regret about something finished: **had** + past participle.",
+          "It is the same step-back, taken from the past instead of the present.",
+          "The negative is **had not** — *hadn't*."
+        ],
+        "table": {
+          "headers": [
+            "What happened",
+            "The wish"
+          ],
+          "rows": [
+            [
+              "I didn't study.",
+              "I wish I **had studied**."
+            ],
+            [
+              "She took the wrong job.",
+              "She wishes she **had taken** the other one."
+            ],
+            [
+              "We left too late.",
+              "If only we **had left** earlier."
+            ],
+            [
+              "I said it.",
+              "I wish I **had not** said that."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Wishing someone would change",
+        "title_cz": "Přání, aby se někdo změnil",
+        "text_first": true,
+        "points": [
+          "**would** + verb, when somebody else keeps doing something annoying.",
+          "Never *will* after *wish*.",
+          "About **yourself**, use *could* — you cannot wish your own behaviour into changing."
+        ],
+        "table": {
+          "headers": [
+            "The annoyance",
+            "The wish"
+          ],
+          "rows": [
+            [
+              "You keep making noise.",
+              "I wish you **would stop**."
+            ],
+            [
+              "It keeps raining.",
+              "I wish it **would stop** raining."
+            ],
+            [
+              "They never answer.",
+              "I wish they **would answer**."
+            ],
+            [
+              "I keep eating too much.",
+              "I wish I **could stop**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Every one of these is the tense failing to step back."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~I wish I have more time~~",
+              "I wish I **had** more time"
+            ],
+            [
+              "~~I wish I would studied~~",
+              "I wish I **had studied**"
+            ],
+            [
+              "~~I wish you will stop~~",
+              "I wish you **would stop**"
+            ],
+            [
+              "~~I wish I would stop eating~~",
+              "I wish I **could stop** eating"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_wish_if_only_past",
+      "title": "Wishing about the past",
+      "items": [
+        {
+          "en": "I wish I had studied harder at school.",
+          "cz": "Kéž bych se ve škole učil víc.",
+          "gap": "I wish I ____ studied harder at school.",
+          "gap_answer": "had",
+          "accepts": [
+            "I wish I'd studied harder at school.",
+            "I wish I had studied harder at school.",
+            "I wish I would studied harder at school."
+          ],
+          "explanation": "Regret about a finished past takes **had** + past participle — *had studied*.",
+          "explanation_cz": "Lítost nad uzavřenou minulostí má **had** + příčestí minulé — *had studied*.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "I wish I had not said that to her.",
+          "cz": "Kéž bych jí to byl neřekl.",
+          "gap": "I wish I ____ said that to her.",
+          "gap_answer": "had not",
+          "accepts": [
+            "I wish I'd not said that to her.",
+            "I wish I hadn't said that to her.",
+            "I wish I had not said that to her.",
+            "I wish I wouldn't said that to her.",
+            "I wish I would not said that to her."
+          ],
+          "explanation": "The regret is negative, so **had not** said. *Hadn't* is the same answer.",
+          "explanation_cz": "Lítost je záporná, proto **had not** said. *Hadn't* je totéž.",
+          "quiz_options": [
+            "had not",
+            "did not",
+            "have not",
+            "would not"
+          ]
+        },
+        {
+          "en": "She wishes she had taken the other job.",
+          "cz": "Kéž by byla vzala tu druhou práci.",
+          "gap": "She wishes she ____ taken the other job.",
+          "gap_answer": "had",
+          "accepts": [
+            "She wishes she'd taken the other job.",
+            "She wishes she had taken the other job.",
+            "She wishes she would taken the other job."
+          ],
+          "explanation": "**had** taken — the choice is closed, so the wish shifts one step further back.",
+          "explanation_cz": "**had** taken — volba je uzavřená, proto se přání posune o krok zpět.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "If only we had left the house earlier.",
+          "cz": "Kéž bychom byli vyšli z domu dřív.",
+          "gap": "If only we ____ left the house earlier.",
+          "gap_answer": "had",
+          "accepts": [
+            "If only we'd left the house earlier.",
+            "If only we had left the house earlier.",
+            "If only we would left the house earlier."
+          ],
+          "explanation": "*If only* is the stronger *I wish*, and it takes the same **had** + past participle.",
+          "explanation_cz": "*If only* je silnější *I wish* a má stejné **had** + příčestí minulé.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "I wish they had told me about the change.",
+          "cz": "Kéž by mi byli o té změně řekli.",
+          "gap": "I wish they ____ told me about the change.",
+          "gap_answer": "had",
+          "accepts": [
+            "I wish they'd told me about the change.",
+            "I wish they had told me about the change.",
+            "I wish they would told me about the change."
+          ],
+          "explanation": "**had** told — you are looking back at something they did not do.",
+          "explanation_cz": "**had** told — díváš se zpět na něco, co neudělali.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "He wishes he had learned to drive younger.",
+          "cz": "Kéž by se byl naučil řídit dřív.",
+          "gap": "He wishes he ____ learned to drive younger.",
+          "gap_answer": "had",
+          "accepts": [
+            "He wishes he'd learned to drive younger.",
+            "He wishes he had learned to drive younger.",
+            "He wishes he would learned to drive younger."
+          ],
+          "explanation": "**had** learned. The learning never happened, and that time is gone.",
+          "explanation_cz": "**had** learned. K učení nedošlo a ten čas je pryč.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "If only she had listened to her parents.",
+          "cz": "Kéž by byla poslechla rodiče.",
+          "gap": "If only she ____ listened to her parents.",
+          "gap_answer": "had",
+          "accepts": [
+            "If only she'd listened to her parents.",
+            "If only she had listened to her parents.",
+            "If only she would listened to her parents."
+          ],
+          "explanation": "**had** listened — one finished moment she cannot go back to.",
+          "explanation_cz": "**had** listened — jeden uzavřený okamžik, ke kterému se nedá vrátit.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "I wish I had never sold that car.",
+          "cz": "Kéž bych to auto nikdy nebyl prodal.",
+          "gap": "I wish I ____ never sold that car.",
+          "gap_answer": "had",
+          "accepts": [
+            "I wish I'd never sold that car.",
+            "I wish I had never sold that car.",
+            "I wish I would never sold that car."
+          ],
+          "explanation": "**had** never sold — *never* sits between *had* and the participle.",
+          "explanation_cz": "**had** never sold — *never* stojí mezi *had* a příčestím.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "We wish we had booked a bigger room.",
+          "cz": "Kéž bychom si byli zamluvili větší pokoj.",
+          "gap": "We wish we ____ booked a bigger room.",
+          "gap_answer": "had",
+          "accepts": [
+            "We wish we'd booked a bigger room.",
+            "We wish we had booked a bigger room.",
+            "We wish we would booked a bigger room."
+          ],
+          "explanation": "**had** booked — the booking is done and cannot change.",
+          "explanation_cz": "**had** booked — rezervace je hotová a nedá se změnit.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "If only I had known about the meeting.",
+          "cz": "Kéž bych byl o té schůzi věděl.",
+          "gap": "If only I ____ known about the meeting.",
+          "gap_answer": "had",
+          "accepts": [
+            "If only I'd known about the meeting.",
+            "If only I had known about the meeting.",
+            "If only I would known about the meeting."
+          ],
+          "explanation": "**had** known — *If only* is the strongest form, and takes the same past perfect.",
+          "explanation_cz": "**had** known — *If only* je nejsilnější podoba a má stejný předminulý čas.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "They wish they had stayed one more night.",
+          "cz": "Kéž by byli zůstali ještě jednu noc.",
+          "gap": "They wish they ____ stayed one more night.",
+          "gap_answer": "had",
+          "accepts": [
+            "They wish they'd stayed one more night.",
+            "They wish they had stayed one more night.",
+            "They wish they would stayed one more night."
+          ],
+          "explanation": "**had** stayed — the trip is over, so the wish is past perfect.",
+          "explanation_cz": "**had** stayed — výlet skončil, proto je přání v předminulém čase.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "I wish he had asked me first.",
+          "cz": "Kéž by se mě byl nejdřív zeptal.",
+          "gap": "I wish he ____ asked me first.",
+          "gap_answer": "had",
+          "accepts": [
+            "I wish he'd asked me first.",
+            "I wish he had asked me first.",
+            "I wish he would asked me first."
+          ],
+          "explanation": "**had** asked. He did not ask, and the moment has passed.",
+          "explanation_cz": "**had** asked. Nezeptal se a ten okamžik minul.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        },
+        {
+          "en": "She wishes she had not spent so much money.",
+          "cz": "Kéž by byla neutratila tolik peněz.",
+          "gap": "She wishes she ____ spent so much money.",
+          "gap_answer": "had not",
+          "accepts": [
+            "She wishes she'd not spent so much money.",
+            "She wishes she hadn't spent so much money.",
+            "She wishes she had not spent so much money.",
+            "She wishes she wouldn't spent so much money.",
+            "She wishes she would not spent so much money."
+          ],
+          "explanation": "**had not** spent — regret that something DID happen takes the negative.",
+          "explanation_cz": "**had not** spent — lítost, že se něco stalo, má zápor.",
+          "quiz_options": [
+            "had not",
+            "did not",
+            "have not",
+            "would not"
+          ]
+        },
+        {
+          "en": "If only he had answered the phone.",
+          "cz": "Kéž by byl zvedl telefon.",
+          "gap": "If only he ____ answered the phone.",
+          "gap_answer": "had",
+          "accepts": [
+            "If only he'd answered the phone.",
+            "If only he had answered the phone.",
+            "If only he would answered the phone."
+          ],
+          "explanation": "**had** answered — a single missed moment in the closed past.",
+          "explanation_cz": "**had** answered — jediný zmeškaný okamžik v uzavřené minulosti.",
+          "quiz_options": [
+            "had",
+            "have",
+            "would",
+            "did"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_wish_if_only_would",
+      "title": "Wishing someone would change",
+      "items": [
+        {
+          "en": "I wish you would stop making that noise.",
+          "cz": "Kéž bys přestal dělat ten rámus.",
+          "gap": "I wish you ____ stop making that noise.",
+          "gap_answer": "would",
+          "accepts": [
+            "I wish you'd stop making that noise.",
+            "I wish you had stop making that noise.",
+            "I wish you would stop making that noise."
+          ],
+          "explanation": "**would** — you want somebody else to change their behaviour. Never *will* after *wish*.",
+          "explanation_cz": "**would** — chceš, aby někdo jiný změnil chování. Po *wish* nikdy *will*.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "I wish it would stop raining.",
+          "cz": "Kéž by přestalo pršet.",
+          "gap": "I wish it ____ stop raining.",
+          "gap_answer": "would",
+          "accepts": [
+            "I wish it would stop raining."
+          ],
+          "explanation": "**would** stop — an annoying situation you want changed.",
+          "explanation_cz": "**would** stop — otravná situace, kterou chceš změnit.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "She wishes her neighbours would be quieter.",
+          "cz": "Kéž by byli sousedi tišší.",
+          "gap": "She wishes her neighbours ____ be quieter.",
+          "gap_answer": "would",
+          "accepts": [
+            "She wishes her neighbours would be quieter."
+          ],
+          "explanation": "**would** be — she wants them to act differently, so it is the *would* pattern.",
+          "explanation_cz": "**would** be — chce, aby se chovali jinak, proto vzorec s *would*.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "If only he would listen to me.",
+          "cz": "Kéž by mě poslouchal.",
+          "gap": "If only he ____ listen to me.",
+          "gap_answer": "would",
+          "accepts": [
+            "If only he'd listen to me.",
+            "If only he had listen to me.",
+            "If only he would listen to me."
+          ],
+          "explanation": "**would** listen — *If only* takes *would* for the same complaint.",
+          "explanation_cz": "**would** listen — *If only* má *would* u stejné stížnosti.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "I wish they would answer my emails.",
+          "cz": "Kéž by odpovídali na moje e-maily.",
+          "gap": "I wish they ____ answer my emails.",
+          "gap_answer": "would",
+          "accepts": [
+            "I wish they'd answer my emails.",
+            "I wish they had answer my emails.",
+            "I wish they would answer my emails."
+          ],
+          "explanation": "**would** answer — a repeated habit of theirs that annoys you.",
+          "explanation_cz": "**would** answer — jejich opakovaný zvyk, který tě štve.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "I wish my computer would work properly.",
+          "cz": "Kéž by ten počítač fungoval pořádně.",
+          "gap": "I wish my computer ____ work properly.",
+          "gap_answer": "would",
+          "accepts": [
+            "I wish my computer would work properly."
+          ],
+          "explanation": "**would** work — the *would* pattern also covers machines that misbehave.",
+          "explanation_cz": "**would** work — vzorec s *would* platí i pro stroje, které zlobí.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "She wishes her brother would not interrupt her.",
+          "cz": "Kéž by ji bratr nepřerušoval.",
+          "gap": "She wishes her brother ____ not interrupt her.",
+          "gap_answer": "would",
+          "accepts": [
+            "She wishes her brother wouldn't interrupt her.",
+            "She wishes her brother would not interrupt her."
+          ],
+          "explanation": "**would** not interrupt — the negative of the same behaviour pattern.",
+          "explanation_cz": "**would** not interrupt — zápor téhož vzorce chování.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "I wish the bus would come on time.",
+          "cz": "Kéž by ten autobus jezdil včas.",
+          "gap": "I wish the bus ____ come on time.",
+          "gap_answer": "would",
+          "accepts": [
+            "I wish the bus would come on time."
+          ],
+          "explanation": "**would** come — a recurring annoyance, not a one-off past event.",
+          "explanation_cz": "**would** come — opakovaná otrava, ne jednorázová minulá událost.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "If only they would tell us the truth.",
+          "cz": "Kéž by nám řekli pravdu.",
+          "gap": "If only they ____ tell us the truth.",
+          "gap_answer": "would",
+          "accepts": [
+            "If only they'd tell us the truth.",
+            "If only they had tell us the truth.",
+            "If only they would tell us the truth."
+          ],
+          "explanation": "**would** tell — you want them to start doing it.",
+          "explanation_cz": "**would** tell — chceš, aby s tím začali.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        },
+        {
+          "en": "I wish you would not talk so loudly.",
+          "cz": "Kéž bys nemluvil tak nahlas.",
+          "gap": "I wish you ____ not talk so loudly.",
+          "gap_answer": "would",
+          "accepts": [
+            "I wish you'd not talk so loudly.",
+            "I wish you hadn't talk so loudly.",
+            "I wish you had not talk so loudly.",
+            "I wish you wouldn't talk so loudly.",
+            "I wish you would not talk so loudly."
+          ],
+          "explanation": "**would** not talk — asking somebody to change, so *would*, never *will*.",
+          "explanation_cz": "**would** not talk — žádáš někoho o změnu, proto *would*, nikdy *will*.",
+          "quiz_options": [
+            "would",
+            "will",
+            "had",
+            "would have"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b2_wish_if_only_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "I wish I had more time.",
+          "cz": "Kéž bych měl víc času.",
+          "wrong": "I wish I have more time.",
+          "accepts": [
+            "I wish I'd more time.",
+            "I wish I had more time.",
+            "I wish I would more time."
+          ],
+          "type": false,
+          "explanation": "After *wish*, a present regret steps back one tense: **had**, not *have*.",
+          "explanation_cz": "Po *wish* se přítomná lítost posune o čas zpět: **had**, ne *have*."
+        },
+        {
+          "en": "I wish I had studied harder at school.",
+          "cz": "Kéž bych se ve škole učil víc.",
+          "wrong": "I wish I would studied harder at school.",
+          "accepts": [
+            "I wish I'd studied harder at school.",
+            "I wish I had studied harder at school.",
+            "I wish I would studied harder at school."
+          ],
+          "type": false,
+          "explanation": "*Would* never carries a past regret — that is **had** + past participle.",
+          "explanation_cz": "*Would* nikdy nenese lítost nad minulostí — ta má **had** + příčestí minulé."
+        },
+        {
+          "en": "I wish you would stop making that noise.",
+          "cz": "Kéž bys přestal dělat ten rámus.",
+          "wrong": "I wish you will stop making that noise.",
+          "accepts": [
+            "I wish you'd stop making that noise.",
+            "I wish you had stop making that noise.",
+            "I wish you would stop making that noise."
+          ],
+          "type": false,
+          "explanation": "*Will* cannot follow *wish*. Asking someone to change takes **would**.",
+          "explanation_cz": "Po *wish* nemůže být *will*. Žádost o změnu má **would**."
+        },
+        {
+          "en": "If only I had known about the meeting.",
+          "cz": "Kéž bych byl o té schůzi věděl.",
+          "wrong": "If only I would known about the meeting.",
+          "accepts": [
+            "If only I'd known about the meeting.",
+            "If only I had known about the meeting.",
+            "If only I would known about the meeting."
+          ],
+          "type": false,
+          "explanation": "*If only* about the past takes **had** + past participle, exactly like *I wish*.",
+          "explanation_cz": "*If only* o minulosti má **had** + příčestí minulé, přesně jako *I wish*."
+        },
+        {
+          "en": "I wish I could stop eating so much.",
+          "cz": "Kéž bych dokázal přestat tolik jíst.",
+          "wrong": "I wish I would stop eating so much.",
+          "accepts": [
+            "I wish I could stop eating so much."
+          ],
+          "type": false,
+          "explanation": "You cannot *wish* yourself into changing — about your own behaviour use **could**.",
+          "explanation_cz": "Sám sebe si *wish* nezměníš — o vlastním chování se říká **could**."
+        },
+        {
+          "en": "She wishes she had taken the other job.",
+          "cz": "Kéž by byla vzala tu druhou práci.",
+          "wrong": "She wishes she has taken the other job.",
+          "accepts": [
+            "She wishes she'd taken the other job.",
+            "She wishes she had taken the other job.",
+            "She wishes she would taken the other job."
+          ],
+          "type": false,
+          "explanation": "*Has taken* is a present perfect. The regret needs the further step back: **had taken**.",
+          "explanation_cz": "*Has taken* je předpřítomný čas. Lítost potřebuje krok dál zpět: **had taken**."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_CL-B1B2-01"
+  ]
 }
