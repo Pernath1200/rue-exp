@@ -300,6 +300,23 @@ All eleven are grammar units. The twenty-four vocab leaves are all on `coming` n
 
 **Default applied:** none of the three — all are yours. What the lane has done unilaterally is **stop**: `b2_discourse_markers` was not drafted, and the lane will draft only `coming` nodes from here (`leaf_opinions_b2`, `leaf_school_b2`, `leaf_phrasal_4_b2` and the five end-of-level checks are all `coming`). Nothing has been reverted, because deleting eleven passing units on my own reading of an ambiguous status is a worse error than the one I made.
 
+### B2 is drafted out — what is left is not drafting work
+**Where the path stands.** 60 slots: **54 content units built**, **5 end-of-level checks**, **1 node this lane may not touch**.
+
+**The five checks are already correct and are not a drafting job.** `b2_vocab_match`, `b2_vocab_type`, `b2_grammar_match`, `b2_grammar_type` and `b2_finale` all exist and all hold **0 items** — and that is their finished state, not a stub. Their own notes say so: *"not a teaching pack… Pool is live B2 vocab leaves at runtime"*. `a2_vocab_match` and `b1_finale` are 0-item in exactly the same way and their nodes are `live`. Authoring items into them would be the mistake, not the fix.
+
+What they actually need is **engine work, which is P-engine and yours**. `b1_vocab_match`'s note is explicit: *"Engine still A1-hardcoded (`vocab-sprint.js`) — it must take a level."* Until the sprint takes a level parameter, the B2 checks cannot draw a B2 pool no matter what is written in their JSON. That is a `js/` change and this lane must not attempt it.
+
+**The one remaining node is `b2_discourse_markers`, at status `parked`** — see the entry above about the eleven units drafted onto parked nodes. It was not drafted, deliberately, once I checked. Its content has nowhere else to go: the formal connectors (moreover, furthermore, nevertheless, consequently, hence, in contrast) were kept OUT of `leaf_opinions_b2` on F2 grounds rather than smuggled into a neighbour, so they are genuinely waiting on that node.
+
+**So the lane has run out of work it is permitted to do, rather than stopping part-way.** Three things are yours, in the order I would take them:
+
+1. **The parked-node question** — whether `parked` was ever meant to gate drafting, or only reachability. That decides both `b2_discourse_markers` and whether the eleven already-drafted grammar units need anything doing to them.
+2. **`make_pool.py` counting `coming` nodes** — the pool blindness entry above. It caught nine self-collisions today by hand; the next lane run will not have that.
+3. **`vocab-sprint.js` taking a level** — after which the five checks work as designed with no content change at all.
+
+Nothing here is blocking a smoke session. All 54 units are playable now at their own nodes, and INSPECTED.md is untouched — none of it has been ticked, and none of it should be until you have played it.
+
 ---
 
 ## Answered
