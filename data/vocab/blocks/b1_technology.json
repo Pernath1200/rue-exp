@@ -5,7 +5,7 @@
  "tree_node": "leaf_technology_b1",
  "codex_unit": "V_COM-B1B2-01",
  "quality": "draft",
- "note": "Extended layer above leaf_tech_a2. Devices, accounts and what goes wrong with them. First draft 2026-09-02. · 2026-09-04 B1 loop: only 15 of the 36 tiles were new against the pool at this slot. F7: seventeen same-sense repeats (device, screen, keyboard, charger, camera, printer, tablet, download, upload, delete, password, account, link, virus, error, warning, fix) moved to two **You already know** boards; the list was refilled with hardware, browser, subscription, notification, settings, stream, cable, plug, socket, screenshot, scan, wireless, touchscreen, folder, spam, scam and signal. A12: four tiles are the computer sense of a word the student already has — **mouse (computer)** against the animal, **speaker (for sound)** against the person, **save (a file)** against *ušetřit*, **block (a user)** against the city block — and an intro table puts the four pairs side by side. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · Pool-checked against everything taught before leaf_technology_b1 — 0 unknown types. · 2026-09-04: five rewrite items re-cut so replacing the underline reconstructs the answer.",
+ "note": "Extended layer above leaf_tech_a2. Devices, accounts and what goes wrong with them. First draft 2026-09-02. · 2026-09-04 B1 loop: only 15 of the 36 tiles were new against the pool at this slot. F7: seventeen same-sense repeats (device, screen, keyboard, charger, camera, printer, tablet, download, upload, delete, password, account, link, virus, error, warning, fix) moved to two **You already know** boards; the list was refilled with hardware, browser, subscription, notification, settings, stream, cable, plug, socket, screenshot, scan, wireless, touchscreen, folder, spam, scam and signal. A12: four tiles are the computer sense of a word the student already has — **mouse (computer)** against the animal, **speaker (for sound)** against the person, **save (a file)** against *ušetřit*, **block (a user)** against the city block — and an intro table puts the four pairs side by side. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · Pool-checked against everything taught before leaf_technology_b1 — 0 unknown types. · 2026-09-04: five rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 22 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 22 rewritten to make one clause move and carry two or more already-taught words; at slot 40 `although` is legal and carries five of them. 0/36 fail now. `reach` was drafted onto the cable item and is untaught before this slot.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -666,23 +666,23 @@
    ]
   },
   {
-   "en": "I wear headphones on the train so I can work.",
+   "en": "I wear headphones on the train so that I can work.",
    "cz": "Ve vlaku nosím sluchátka, abych mohl pracovat.",
    "lemmas": [
     "headphones"
    ],
    "accepts": [
-    "I wear headphones on the train so I can work"
+    "I wear headphones on the train so that I can work"
    ]
   },
   {
-   "en": "His smart watch tells him when to stand up.",
-   "cz": "Jeho chytré hodinky mu řeknou, kdy má vstát.",
+   "en": "His smart watch tells him when he should stand up.",
+   "cz": "Jeho chytré hodinky mu řeknou, kdy by se měl postavit.",
    "lemmas": [
     "smart watch"
    ],
    "accepts": [
-    "His smart watch tells him when to stand up"
+    "His smart watch tells him when he should stand up"
    ]
   },
   {
@@ -696,45 +696,43 @@
    ]
   },
   {
-   "en": "The speaker in the kitchen plays music all morning.",
-   "cz": "Reproduktor v kuchyni hraje hudbu celé dopoledne.",
+   "en": "The speaker in the kitchen plays music all morning although nobody listens.",
+   "cz": "Reproduktor v kuchyni hraje hudbu celé dopoledne, i když nikdo neposlouchá.",
    "lemmas": [
     "speaker (for sound)"
    ],
    "accepts": [
-    "The speaker in the kitchen plays music all morning"
+    "The speaker in the kitchen plays music all morning although nobody listens"
    ]
   },
   {
-   "en": "The cable is too short for the table.",
-   "cz": "Ten kabel je na stůl moc krátký.",
+   "en": "The cable is too short to use behind the desk.",
+   "cz": "Ten kabel je příliš krátký, aby se dal použít za stolem.",
    "lemmas": [
     "cable"
    ],
    "accepts": [
-    "The cable is too short for the table"
+    "The cable is too short to use behind the desk"
    ]
   },
   {
-   "en": "The plug does not fit the socket in this hotel.",
-   "cz": "Ta zástrčka do zásuvky v tomhle hotelu nepasuje.",
+   "en": "The plug does not fit the socket because this hotel is old.",
+   "cz": "Ta zástrčka nepasuje do zásuvky, protože je tenhle hotel starý.",
    "lemmas": [
     "plug"
    ],
    "accepts": [
-    "The plug does not fit the socket in this hotel",
-    "The plug doesn't fit the socket in this hotel"
+    "The plug does not fit the socket because this hotel is old"
    ]
   },
   {
-   "en": "There is only one socket in this room.",
-   "cz": "V tomhle pokoji je jen jedna zásuvka.",
+   "en": "There is only one socket in this room, but the office next door has four.",
+   "cz": "V téhle místnosti je jen jedna zásuvka, ale ve vedlejší kanceláři jsou čtyři.",
    "lemmas": [
     "socket"
    ],
    "accepts": [
-    "There is only one socket in this room",
-    "There's only one socket in this room"
+    "There is only one socket in this room, but the office next door has four"
    ]
   },
   {
@@ -749,44 +747,43 @@
    ]
   },
   {
-   "en": "A wireless keyboard is better on a small desk.",
-   "cz": "Na malý stůl je lepší bezdrátová klávesnice.",
+   "en": "A wireless keyboard is better than a cable on a small desk.",
+   "cz": "Bezdrátová klávesnice je na malém stole lepší než kabel.",
    "lemmas": [
     "wireless"
    ],
    "accepts": [
-    "A wireless keyboard is better on a small desk"
+    "A wireless keyboard is better than a cable on a small desk"
    ]
   },
   {
-   "en": "The hardware is fine; the problem is the program.",
-   "cz": "Hardware je v pořádku, problém je ten program.",
+   "en": "The hardware is fine, but the problem is the program.",
+   "cz": "Hardware je v pořádku, ale problém je ten program.",
    "lemmas": [
     "hardware"
    ],
    "accepts": [
-    "The hardware is fine; the problem is the program"
+    "The hardware is fine, but the problem is the program"
    ]
   },
   {
-   "en": "The signal is bad in the office behind the station.",
-   "cz": "V kanceláři za nádražím je špatný signál.",
+   "en": "The signal is bad in the office behind the station, although the wifi works.",
+   "cz": "V kanceláři za nádražím je špatný signál, i když wifi funguje.",
    "lemmas": [
     "signal"
    ],
    "accepts": [
-    "The signal is bad in the office behind the station"
+    "The signal is bad in the office behind the station, although the wifi works"
    ]
   },
   {
-   "en": "I cannot connect to the wifi in this room.",
-   "cz": "V tomhle pokoji se nemůžu připojit k wifi.",
+   "en": "I cannot connect to the wifi in this room although my phone shows it.",
+   "cz": "V téhle místnosti se nemůžu připojit k wifi, i když ji telefon ukazuje.",
    "lemmas": [
     "connect"
    ],
    "accepts": [
-    "I cannot connect to the wifi in this room",
-    "I can't connect to the wifi in this room"
+    "I cannot connect to the wifi in this room although my phone shows it"
    ]
   },
   {
@@ -800,13 +797,13 @@
    ]
   },
   {
-   "en": "The update took an hour and changed nothing.",
-   "cz": "Ta aktualizace trvala hodinu a nic nezměnila.",
+   "en": "The update took an hour, but it changed nothing.",
+   "cz": "Ta aktualizace trvala hodinu, ale nic nezměnila.",
    "lemmas": [
     "update"
    ],
    "accepts": [
-    "The update took an hour and changed nothing"
+    "The update took an hour, but it changed nothing"
    ]
   },
   {
@@ -830,13 +827,13 @@
    ]
   },
   {
-   "en": "The photos are in a folder with the old reports.",
-   "cz": "Ty fotky jsou ve složce se starými zprávami.",
+   "en": "The photos are in a folder which nobody has opened for years.",
+   "cz": "Ty fotky jsou ve složce, kterou už roky nikdo neotevřel.",
    "lemmas": [
     "folder"
    ],
    "accepts": [
-    "The photos are in a folder with the old reports"
+    "The photos are in a folder which nobody has opened for years"
    ]
   },
   {
@@ -850,34 +847,33 @@
    ]
   },
   {
-   "en": "You can change that in the settings of the app.",
-   "cz": "To můžeš změnit v nastavení té aplikace.",
+   "en": "You can change that in the settings if you know where to look.",
+   "cz": "Můžeš to změnit v nastavení, pokud víš, kde hledat.",
    "lemmas": [
     "settings"
    ],
    "accepts": [
-    "You can change that in the settings of the app"
+    "You can change that in the settings if you know where to look"
    ]
   },
   {
-   "en": "Send me a screenshot and I will tell you what to do.",
-   "cz": "Pošli mi snímek obrazovky a já ti řeknu, co dělat.",
+   "en": "Send me a screenshot when the message comes again.",
+   "cz": "Až se ta zpráva objeví znovu, pošli mi snímek obrazovky.",
    "lemmas": [
     "screenshot"
    ],
    "accepts": [
-    "Send me a screenshot and I will tell you what to do",
-    "Send me a screenshot and I'll tell you what to do"
+    "Send me a screenshot when the message comes again"
    ]
   },
   {
-   "en": "I need to scan the paper and send it today.",
-   "cz": "Potřebuju ten papír naskenovat a dneska ho poslat.",
+   "en": "I need to scan the paper before I send it to the office.",
+   "cz": "Musím ten papír naskenovat, než ho pošlu do kanceláře.",
    "lemmas": [
     "scan"
    ],
    "accepts": [
-    "I need to scan the paper and send it today"
+    "I need to scan the paper before I send it to the office"
    ]
   },
   {
@@ -891,24 +887,23 @@
    ]
   },
   {
-   "en": "Every notification comes to my watch, and it is too much.",
-   "cz": "Každé upozornění mi chodí na hodinky a je toho moc.",
+   "en": "Every notification comes to my watch, but I never look at them.",
+   "cz": "Každé upozornění mi chodí na hodinky, ale nikdy se na ně nedívám.",
    "lemmas": [
     "notification"
    ],
    "accepts": [
-    "Every notification comes to my watch, and it is too much",
-    "Every notification comes to my watch, and it's too much"
+    "Every notification comes to my watch, but I never look at them"
    ]
   },
   {
-   "en": "I stopped the subscription because I never watched it.",
-   "cz": "Předplatné jsem zrušil, protože jsem to nikdy nesledoval.",
+   "en": "I stopped the subscription because the price went up twice.",
+   "cz": "Zrušil jsem to předplatné, protože cena dvakrát stoupla.",
    "lemmas": [
     "subscription"
    ],
    "accepts": [
-    "I stopped the subscription because I never watched it"
+    "I stopped the subscription because the price went up twice"
    ]
   },
   {
@@ -933,13 +928,13 @@
    ]
   },
   {
-   "en": "The new app has a bug that deletes the last line.",
-   "cz": "Nová aplikace má chybu, která maže poslední řádek.",
+   "en": "The new app has a bug which deletes the last line.",
+   "cz": "Ta nová aplikace má chybu, která maže poslední řádek.",
    "lemmas": [
     "bug"
    ],
    "accepts": [
-    "The new app has a bug that deletes the last line"
+    "The new app has a bug which deletes the last line"
    ]
   },
   {
@@ -974,43 +969,43 @@
    ]
   },
   {
-   "en": "The bank was offline all morning, so nobody could pay.",
-   "cz": "Banka byla celé dopoledne offline, takže nikdo nemohl platit.",
+   "en": "The bank was offline all morning, but the shops still took cards.",
+   "cz": "Banka byla celé dopoledne mimo provoz, ale obchody pořád braly karty.",
    "lemmas": [
     "offline"
    ],
    "accepts": [
-    "The bank was offline all morning, so nobody could pay"
+    "The bank was offline all morning, but the shops still took cards"
    ]
   },
   {
-   "en": "They tried to hack the school website in the summer.",
-   "cz": "V létě se pokusili hacknout školní web.",
+   "en": "They tried to hack the school website, but nobody lost any work.",
+   "cz": "Pokusili se nabourat do školního webu, ale nikdo nepřišel o práci.",
    "lemmas": [
     "hack"
    ],
    "accepts": [
-    "They tried to hack the school website in the summer"
+    "They tried to hack the school website, but nobody lost any work"
    ]
   },
   {
-   "en": "Half of my spam is about cheap flights.",
-   "cz": "Polovina mého spamu je o levných letenkách.",
+   "en": "Half of my spam is about cheap flights, although I never fly.",
+   "cz": "Půlka mého spamu je o levných letenkách, i když nikdy nelétám.",
    "lemmas": [
     "spam"
    ],
    "accepts": [
-    "Half of my spam is about cheap flights"
+    "Half of my spam is about cheap flights, although I never fly"
    ]
   },
   {
-   "en": "The message about the free phone was a scam.",
-   "cz": "Ta zpráva o telefonu zdarma byl podvod.",
+   "en": "The message about the free phone was a scam, but my father believed it.",
+   "cz": "Ta zpráva o telefonu zdarma byl podvod, ale můj táta jí uvěřil.",
    "lemmas": [
     "scam"
    ],
    "accepts": [
-    "The message about the free phone was a scam"
+    "The message about the free phone was a scam, but my father believed it"
    ]
   },
   {
