@@ -4,15 +4,798 @@
   "level": "B2",
   "tree_node": "b2_future_in_the_past",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "note": "BUILT 2026-09-05 (b2/auto), from the 2026-08-29 empty stub. Four ways to look forward from a point in the past: was/were going to (the plan you had then), would (the story's own future, the same backshift as reported speech), was/were about to (the next second), was/were due to (somebody's timetable). 28 bank items + a 9-chip sort. Feeds b2_narrative_tenses and b1_reported_speech. C29 timeline on card 0: a solid `then` line inside the past, an arrow running forward from it, and everything still left of a dashed `now` — the rule's own warning is that a point right of the reference reads as future, so `now` is drawn well to the right and labelled. B12/B17 Check is a sort into three bins named by job, sort_cz false (B20), taught form bolded (C37). B3/B6/B4 authored quiz_options everywhere, same lemma, carrying the real errors (was going call, about leaving, he promised he will, would changed, was due land). B11 lemma cue on every gap. E7 Use is error-correction, one error per sentence (E2), never an already-correct prompt (E9). C10 a table on every card, C14 card 0 is the unit name, C32 mistakes struck through, C13 the taught form bolded.",
   "default_direction": "cz_to_en",
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_future_in_the_past_sort",
+      "title": "Which job?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "I **was going to** call you, but I fell asleep.",
+          "cz": "Chtěl jsem ti zavolat, ale usnul jsem.",
+          "bin": "A plan you had then",
+          "explanation": "An intention held at that past time → was going to.",
+          "explanation_cz": "Úmysl, který jsi tehdy měl → was going to."
+        },
+        {
+          "en": "We **were going to** move to Plzeň last spring.",
+          "cz": "Loni na jaře jsme se chtěli přestěhovat do Plzně.",
+          "bin": "A plan you had then",
+          "explanation": "A plan that belonged to last spring → were going to.",
+          "explanation_cz": "Plán, který patřil loňskému jaru → were going to."
+        },
+        {
+          "en": "She **was going to** study law before she changed her mind.",
+          "cz": "Chtěla studovat práva, než si to rozmyslela.",
+          "bin": "A plan you had then",
+          "explanation": "The plan existed, then it did not → was going to.",
+          "explanation_cz": "Plán existoval, pak už ne → was going to."
+        },
+        {
+          "en": "I **was about to** leave when the phone rang.",
+          "cz": "Zrovna jsem se chystal odejít, když zazvonil telefon.",
+          "bin": "On the point of it",
+          "explanation": "Seconds away from leaving → was about to.",
+          "explanation_cz": "Pár vteřin před odchodem → was about to."
+        },
+        {
+          "en": "We **were about to** give up when the door opened.",
+          "cz": "Zrovna jsme to chtěli vzdát, když se otevřely dveře.",
+          "bin": "On the point of it",
+          "explanation": "One moment more and they would have stopped → were about to.",
+          "explanation_cz": "Ještě chvíli a přestali by → were about to."
+        },
+        {
+          "en": "The train **was about to** leave, so we ran.",
+          "cz": "Vlak se zrovna chystal odjet, tak jsme běželi.",
+          "bin": "On the point of it",
+          "explanation": "The doors were closing → was about to.",
+          "explanation_cz": "Dveře se zavíraly → was about to."
+        },
+        {
+          "en": "He promised he **would** pay me back on Friday.",
+          "cz": "Slíbil, že mi to v pátek vrátí.",
+          "bin": "The story's own future",
+          "explanation": "A promise reported from the past → would, the backshifted will.",
+          "explanation_cz": "Slib převyprávěný z minulosti → would, posunuté will."
+        },
+        {
+          "en": "Nobody knew that the plan **would** fail.",
+          "cz": "Nikdo nevěděl, že plán selže.",
+          "bin": "The story's own future",
+          "explanation": "What the story went on to do → would.",
+          "explanation_cz": "Co příběh nakonec udělal → would."
+        },
+        {
+          "en": "She took the job that **would** change her life.",
+          "cz": "Vzala práci, která jí změnila život.",
+          "bin": "The story's own future",
+          "explanation": "Later than the taking, earlier than now → would.",
+          "explanation_cz": "Později než to vzetí, dřív než teď → would."
+        }
+      ]
+    },
+    {
+      "id": "b2_future_in_the_past_main",
+      "title": "Future in the past",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "I was going to call you, but I fell asleep.",
+          "cz": "Chtěl jsem ti zavolat, ale usnul jsem.",
+          "gap": "I ____ you, but I fell asleep. (call)",
+          "gap_answer": "was going to call",
+          "quiz_options": [
+            "was going to call",
+            "were going to call",
+            "am going to call",
+            "will call"
+          ],
+          "accepts": [
+            "I was going to call you, but I fell asleep."
+          ],
+          "explanation": "A plan you held at that past time → **was going to** call. The but half says it failed.",
+          "explanation_cz": "Plán, který jsi tehdy měl → **was going to** call. Druhá půlka říká, že padl.",
+          "wrong": "I was going call you, but I fell asleep."
+        },
+        {
+          "en": "We were going to walk, but it started raining.",
+          "cz": "Chtěli jsme jít pěšky, ale začalo pršet.",
+          "gap": "We ____, but it started raining. (walk)",
+          "gap_answer": "were going to walk",
+          "quiz_options": [
+            "were going to walk",
+            "was going to walk",
+            "are going to walk",
+            "would walking"
+          ],
+          "accepts": [
+            "We were going to walk, but it started raining."
+          ],
+          "explanation": "we takes **were**: were going to walk. The rain cancelled the plan.",
+          "explanation_cz": "we má **were**: were going to walk. Déšť plán zrušil.",
+          "wrong": "We were going walk, but it started raining."
+        },
+        {
+          "en": "She was going to study law before she changed her mind.",
+          "cz": "Chtěla studovat práva, než si to rozmyslela.",
+          "gap": "She ____ law before she changed her mind. (study)",
+          "gap_answer": "was going to study",
+          "quiz_options": [
+            "was going to study",
+            "were going to study",
+            "is going to study",
+            "would studying"
+          ],
+          "accepts": [
+            "She was going to study law before she changed her mind."
+          ],
+          "explanation": "The plan belonged to that past time → **was going to** study, then the plain verb.",
+          "explanation_cz": "Plán patřil té minulé době → **was going to** study, pak základní tvar.",
+          "wrong": "She was going to studying law before she changed her mind."
+        },
+        {
+          "en": "They weren't going to come, but the weather cleared.",
+          "cz": "Nechtěli přijít, ale počasí se umoudřilo.",
+          "gap": "They ____, but the weather cleared. (not / come)",
+          "gap_answer": "weren't going to come",
+          "quiz_options": [
+            "weren't going to come",
+            "wasn't going to come",
+            "aren't going to come",
+            "weren't going come"
+          ],
+          "accepts": [
+            "They weren't going to come, but the weather cleared.",
+            "They were not going to come, but the weather cleared."
+          ],
+          "explanation": "Negative plan: **weren't going to** come. they takes weren't.",
+          "explanation_cz": "Záporný plán: **weren't going to** come. they má weren't.",
+          "wrong": "They weren't going come, but the weather cleared.",
+          "gap_accepts": [
+            "weren't going to come",
+            "were not going to come"
+          ]
+        },
+        {
+          "en": "Were you going to say something?",
+          "cz": "Chtěl jsi něco říct?",
+          "gap": "____ something? (you / say)",
+          "gap_answer": "Were you going to say",
+          "quiz_options": [
+            "Were you going to say",
+            "Was you going to say",
+            "Are you going to say",
+            "Did you going to say"
+          ],
+          "accepts": [
+            "Were you going to say something?"
+          ],
+          "explanation": "Question order: **Were** + you + going to say. No did with a going-to form.",
+          "explanation_cz": "Pořádek v otázce: **Were** + you + going to say. S going to se did nepoužívá.",
+          "wrong": "Were you going say something?"
+        },
+        {
+          "en": "Tomáš was going to apologise, but she had already left.",
+          "cz": "Tomáš se chtěl omluvit, ale ona už odešla.",
+          "gap": "Tomáš ____, but she had already left. (apologise)",
+          "gap_answer": "was going to apologise",
+          "quiz_options": [
+            "was going to apologise",
+            "were going to apologise",
+            "is going to apologise",
+            "was going apologise"
+          ],
+          "accepts": [
+            "Tomáš was going to apologise, but she had already left.",
+            "Tomáš was going to apologise, but she'd already left."
+          ],
+          "explanation": "**was going to** + the plain verb: apologise, not apologising.",
+          "explanation_cz": "**was going to** + základní tvar: apologise, ne apologising.",
+          "wrong": "Tomáš was going to apologising, but she had already left."
+        },
+        {
+          "en": "I was going to book a table, then I forgot.",
+          "cz": "Chtěl jsem rezervovat stůl, pak jsem zapomněl.",
+          "gap": "I ____ a table, then I forgot. (book)",
+          "gap_answer": "was going to book",
+          "quiz_options": [
+            "was going to book",
+            "were going to book",
+            "am going to book",
+            "will book"
+          ],
+          "accepts": [
+            "I was going to book a table, then I forgot."
+          ],
+          "explanation": "The whole sentence is past, so the plan is past too → **was going to** book.",
+          "explanation_cz": "Celá věta je v minulosti, tedy i plán → **was going to** book.",
+          "wrong": "I was going to booking a table, then I forgot."
+        },
+        {
+          "en": "We were going to move to Plzeň last spring.",
+          "cz": "Loni na jaře jsme se chtěli přestěhovat do Plzně.",
+          "gap": "We ____ to Plzeň last spring. (move)",
+          "gap_answer": "were going to move",
+          "quiz_options": [
+            "were going to move",
+            "was going to move",
+            "are going to move",
+            "would moving"
+          ],
+          "accepts": [
+            "We were going to move to Plzeň last spring."
+          ],
+          "explanation": "**last spring** fixes the plan in the past → were going to move.",
+          "explanation_cz": "**last spring** ukotvuje plán v minulosti → were going to move.",
+          "wrong": "We were going move to Plzeň last spring."
+        },
+        {
+          "en": "He locked the door. He would never see the house again.",
+          "cz": "Zamkl dveře. Ten dům už nikdy neuviděl.",
+          "gap": "He locked the door. He ____ the house again. (never / see)",
+          "gap_answer": "would never see",
+          "quiz_options": [
+            "would never see",
+            "will never see",
+            "would never saw",
+            "would never seeing"
+          ],
+          "accepts": [
+            "He locked the door. He would never see the house again.",
+            "He locked the door. He'd never see the house again."
+          ],
+          "explanation": "What the story went on to do, told from the locking → **would never see**.",
+          "explanation_cz": "Co příběh dál udělal, vyprávěno od zamykání → **would never see**.",
+          "wrong": "He locked the door. He would never saw the house again."
+        },
+        {
+          "en": "She took the job that would change her life.",
+          "cz": "Vzala práci, která jí změnila život.",
+          "gap": "She took the job that ____ her life. (change)",
+          "gap_answer": "would change",
+          "quiz_options": [
+            "would change",
+            "will change",
+            "would changed",
+            "would changing"
+          ],
+          "accepts": [
+            "She took the job that would change her life.",
+            "She took the job that'd change her life."
+          ],
+          "explanation": "Later than the taking, earlier than now → **would change**, plain verb after would.",
+          "explanation_cz": "Později než to vzetí, dřív než teď → **would change**, po would základní tvar.",
+          "wrong": "She took the job that would changed her life."
+        },
+        {
+          "en": "Nobody knew that the plan would fail.",
+          "cz": "Nikdo nevěděl, že plán selže.",
+          "gap": "Nobody knew that the plan ____. (fail)",
+          "gap_answer": "would fail",
+          "quiz_options": [
+            "would fail",
+            "will fail",
+            "would failed",
+            "would failing"
+          ],
+          "accepts": [
+            "Nobody knew that the plan would fail."
+          ],
+          "explanation": "**knew** is past, so the future inside it backshifts → would fail.",
+          "explanation_cz": "**knew** je minulé, takže budoucnost uvnitř se posune → would fail.",
+          "wrong": "Nobody knew that the plan will fail."
+        },
+        {
+          "en": "He promised he would pay me back on Friday.",
+          "cz": "Slíbil, že mi to v pátek vrátí.",
+          "gap": "He promised he ____ me back on Friday. (pay)",
+          "gap_answer": "would pay",
+          "quiz_options": [
+            "would pay",
+            "will pay",
+            "would paid",
+            "would paying"
+          ],
+          "accepts": [
+            "He promised he would pay me back on Friday.",
+            "He promised he'd pay me back on Friday."
+          ],
+          "explanation": "After the past **promised**, will becomes would → would pay.",
+          "explanation_cz": "Po minulém **promised** se will mění na would → would pay.",
+          "wrong": "He promised he will pay me back on Friday."
+        },
+        {
+          "en": "They said the results would arrive by Tuesday.",
+          "cz": "Říkali, že výsledky dorazí do úterý.",
+          "gap": "They said the results ____ by Tuesday. (arrive)",
+          "gap_answer": "would arrive",
+          "quiz_options": [
+            "would arrive",
+            "will arrive",
+            "would arrived",
+            "would arriving"
+          ],
+          "accepts": [
+            "They said the results would arrive by Tuesday."
+          ],
+          "explanation": "**said** is past, so the reported future is **would arrive**.",
+          "explanation_cz": "**said** je minulé, převyprávěná budoucnost je **would arrive**.",
+          "wrong": "They said the results will arrive by Tuesday."
+        },
+        {
+          "en": "I hoped the meeting would end early.",
+          "cz": "Doufal jsem, že schůze skončí brzy.",
+          "gap": "I hoped the meeting ____ early. (end)",
+          "gap_answer": "would end",
+          "quiz_options": [
+            "would end",
+            "will end",
+            "would ended",
+            "would ending"
+          ],
+          "accepts": [
+            "I hoped the meeting would end early."
+          ],
+          "explanation": "**hoped** puts the whole sentence in the past → would end.",
+          "explanation_cz": "**hoped** posouvá celou větu do minulosti → would end.",
+          "wrong": "I hoped the meeting will end early."
+        },
+        {
+          "en": "We had no idea how long it would take.",
+          "cz": "Neměli jsme tušení, jak dlouho to potrvá.",
+          "gap": "We had no idea how long it ____. (take)",
+          "gap_answer": "would take",
+          "quiz_options": [
+            "would take",
+            "will take",
+            "would took",
+            "would taking"
+          ],
+          "accepts": [
+            "We had no idea how long it would take.",
+            "We had no idea how long it'd take."
+          ],
+          "explanation": "**had no idea** is past, so the future inside is **would take**.",
+          "explanation_cz": "**had no idea** je minulé, budoucnost uvnitř je **would take**.",
+          "wrong": "We had no idea how long it will take."
+        },
+        {
+          "en": "I was about to leave when the phone rang.",
+          "cz": "Zrovna jsem se chystal odejít, když zazvonil telefon.",
+          "gap": "I ____ when the phone rang. (leave)",
+          "gap_answer": "was about to leave",
+          "quiz_options": [
+            "was about to leave",
+            "were about to leave",
+            "am about to leave",
+            "was about leaving"
+          ],
+          "accepts": [
+            "I was about to leave when the phone rang."
+          ],
+          "explanation": "Seconds from going → **was about to** leave. The ring cut it off.",
+          "explanation_cz": "Pár vteřin před odchodem → **was about to** leave. Zvonění to přerušilo.",
+          "wrong": "I was about to leaving when the phone rang."
+        },
+        {
+          "en": "She was about to speak, but Marek interrupted her.",
+          "cz": "Zrovna se chystala promluvit, ale Marek jí skočil do řeči.",
+          "gap": "She ____, but Marek interrupted her. (speak)",
+          "gap_answer": "was about to speak",
+          "quiz_options": [
+            "was about to speak",
+            "were about to speak",
+            "is about to speak",
+            "was about speaking"
+          ],
+          "accepts": [
+            "She was about to speak, but Marek interrupted her."
+          ],
+          "explanation": "**about to** keeps its to and then the plain verb: about to speak.",
+          "explanation_cz": "**about to** si nechává to a pak základní tvar: about to speak.",
+          "wrong": "She was about speak, but Marek interrupted her."
+        },
+        {
+          "en": "We were about to give up when the door opened.",
+          "cz": "Zrovna jsme to chtěli vzdát, když se otevřely dveře.",
+          "gap": "We ____ when the door opened. (give up)",
+          "gap_answer": "were about to give up",
+          "quiz_options": [
+            "were about to give up",
+            "was about to give up",
+            "are about to give up",
+            "were about giving up"
+          ],
+          "accepts": [
+            "We were about to give up when the door opened."
+          ],
+          "explanation": "we takes **were**: were about to give up, one moment short of stopping.",
+          "explanation_cz": "we má **were**: were about to give up, chvilku před koncem.",
+          "wrong": "We were about to giving up when the door opened."
+        },
+        {
+          "en": "The train was about to leave, so we ran.",
+          "cz": "Vlak se zrovna chystal odjet, tak jsme běželi.",
+          "gap": "The train ____, so we ran. (leave)",
+          "gap_answer": "was about to leave",
+          "quiz_options": [
+            "was about to leave",
+            "were about to leave",
+            "is about to leave",
+            "was about leave"
+          ],
+          "accepts": [
+            "The train was about to leave, so we ran."
+          ],
+          "explanation": "The doors were closing → **was about to** leave, not about leave.",
+          "explanation_cz": "Dveře se zavíraly → **was about to** leave, ne about leave.",
+          "wrong": "The train was about leave, so we ran."
+        },
+        {
+          "en": "He was just about to sign when he read the small print.",
+          "cz": "Zrovna se chystal podepsat, když si přečetl to malé písmo.",
+          "gap": "He was just ____ when he read the small print. (about / sign)",
+          "gap_answer": "about to sign",
+          "quiz_options": [
+            "about to sign",
+            "about signing",
+            "about sign",
+            "to about sign"
+          ],
+          "accepts": [
+            "He was just about to sign when he read the small print."
+          ],
+          "explanation": "**just about to** sign — the pen was already moving. Plain verb after to.",
+          "explanation_cz": "**just about to** sign — pero už bylo v pohybu. Po to základní tvar.",
+          "wrong": "He was just about signing when he read the small print."
+        },
+        {
+          "en": "The flight was due to land at seven.",
+          "cz": "Let měl přistát v sedm.",
+          "gap": "The flight ____ at seven. (land)",
+          "gap_answer": "was due to land",
+          "quiz_options": [
+            "was due to land",
+            "were due to land",
+            "is due to land",
+            "was due landing"
+          ],
+          "accepts": [
+            "The flight was due to land at seven."
+          ],
+          "explanation": "A timetable said seven → **was due to** land. Not the speaker's plan.",
+          "explanation_cz": "Řád říkal sedm → **was due to** land. Není to plán mluvčího.",
+          "wrong": "The flight was due land at seven."
+        },
+        {
+          "en": "The results were due to come out on Monday.",
+          "cz": "Výsledky měly vyjít v pondělí.",
+          "gap": "The results ____ out on Monday. (come)",
+          "gap_answer": "were due to come",
+          "quiz_options": [
+            "were due to come",
+            "was due to come",
+            "are due to come",
+            "were due coming"
+          ],
+          "accepts": [
+            "The results were due to come out on Monday."
+          ],
+          "explanation": "results is plural → **were due to** come. Somebody else set the date.",
+          "explanation_cz": "results je množné → **were due to** come. Datum stanovil někdo jiný.",
+          "wrong": "The results were due come out on Monday."
+        },
+        {
+          "en": "She was due to speak after lunch.",
+          "cz": "Měla mluvit po obědě.",
+          "gap": "She ____ after lunch. (speak)",
+          "gap_answer": "was due to speak",
+          "quiz_options": [
+            "was due to speak",
+            "were due to speak",
+            "is due to speak",
+            "was due speaking"
+          ],
+          "accepts": [
+            "She was due to speak after lunch."
+          ],
+          "explanation": "The programme put her after lunch → **was due to** speak.",
+          "explanation_cz": "Program ji zařadil po obědě → **was due to** speak.",
+          "wrong": "She was due speak after lunch."
+        },
+        {
+          "en": "The builders were due to finish in April.",
+          "cz": "Stavaři měli skončit v dubnu.",
+          "gap": "The builders ____ in April. (finish)",
+          "gap_answer": "were due to finish",
+          "quiz_options": [
+            "were due to finish",
+            "was due to finish",
+            "are due to finish",
+            "were due finishing"
+          ],
+          "accepts": [
+            "The builders were due to finish in April."
+          ],
+          "explanation": "A contract date, not an intention → **were due to** finish.",
+          "explanation_cz": "Datum ze smlouvy, ne úmysl → **were due to** finish.",
+          "wrong": "The builders were due finish in April."
+        },
+        {
+          "en": "I was going to explain, but you were about to leave.",
+          "cz": "Chtěl jsem to vysvětlit, ale ty ses zrovna chystal odejít.",
+          "gap": "I was going to explain, but you ____. (about / leave)",
+          "gap_answer": "were about to leave",
+          "quiz_options": [
+            "were about to leave",
+            "was about to leave",
+            "are about to leave",
+            "were about leaving"
+          ],
+          "accepts": [
+            "I was going to explain, but you were about to leave."
+          ],
+          "explanation": "Two different distances: my plan, your next second → **were about to** leave.",
+          "explanation_cz": "Dvě různé vzdálenosti: můj plán, tvoje příští vteřina → **were about to** leave.",
+          "wrong": "I was going to explain, but you were about leave."
+        },
+        {
+          "en": "She said she would help, but she was already late.",
+          "cz": "Říkala, že pomůže, ale už měla zpoždění.",
+          "gap": "She said she ____, but she was already late. (help)",
+          "gap_answer": "would help",
+          "quiz_options": [
+            "would help",
+            "will help",
+            "would helped",
+            "would helping"
+          ],
+          "accepts": [
+            "She said she would help, but she was already late.",
+            "She said she'd help, but she was already late."
+          ],
+          "explanation": "After past **said**, the promise takes would → would help.",
+          "explanation_cz": "Po minulém **said** má slib would → would help.",
+          "wrong": "She said she will help, but she was already late."
+        },
+        {
+          "en": "The concert was due to start, but nobody was on stage.",
+          "cz": "Koncert měl začít, ale na pódiu nikdo nebyl.",
+          "gap": "The concert ____, but nobody was on stage. (start)",
+          "gap_answer": "was due to start",
+          "quiz_options": [
+            "was due to start",
+            "were due to start",
+            "is due to start",
+            "was due starting"
+          ],
+          "accepts": [
+            "The concert was due to start, but nobody was on stage."
+          ],
+          "explanation": "The programme said so, and it did not happen → **was due to** start.",
+          "explanation_cz": "Program to říkal a nestalo se → **was due to** start.",
+          "wrong": "The concert was due start, but nobody was on stage."
+        },
+        {
+          "en": "We were going to drive, but the car wouldn't start.",
+          "cz": "Chtěli jsme jet autem, ale auto nechtělo nastartovat.",
+          "gap": "We ____, but the car wouldn't start. (drive)",
+          "gap_answer": "were going to drive",
+          "quiz_options": [
+            "were going to drive",
+            "was going to drive",
+            "are going to drive",
+            "would driving"
+          ],
+          "accepts": [
+            "We were going to drive, but the car wouldn't start.",
+            "We were going to drive, but the car would not start."
+          ],
+          "explanation": "The plan was ours and it failed → **were going to** drive.",
+          "explanation_cz": "Plán byl náš a padl → **were going to** drive.",
+          "wrong": "We were going drive, but the car wouldn't start."
+        }
+      ]
     }
   ],
-  "codex_unit": "G_VP-B1B2-01"
+  "codex_unit": "G_VP-B1B2-01",
+  "quality": "draft",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "A plan you had then",
+    "On the point of it",
+    "The story's own future"
+  ],
+  "bin_captions": {
+    "A plan you had then": "an intention held at that past time",
+    "On the point of it": "seconds away, or on a timetable",
+    "The story's own future": "what happened later in the story"
+  },
+  "sort_cz": false,
+  "intro": {
+    "cards": [
+      {
+        "title": "Future in the past",
+        "title_cz": "Budoucnost v minulosti",
+        "svg": "<svg viewBox=\"0 0 540 230\" xmlns=\"http://www.w3.org/2000/svg\">\n  <line x1=\"30\" y1=\"180\" x2=\"510\" y2=\"180\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"510,180 500,175 500,185\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"440\" y1=\"34\" x2=\"440\" y2=\"196\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"440\" y=\"26\" font-size=\"13\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <line x1=\"120\" y1=\"60\" x2=\"120\" y2=\"196\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"120\" y=\"52\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">then</text>\n  <text x=\"120\" y=\"36\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">the point you are telling from</text>\n  <path d=\"M 128 110 L 292 110\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\"/>\n  <polygon points=\"300,110 288,105 288,115\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"210\" y=\"100\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">I was going to call you</text>\n  <circle cx=\"150\" cy=\"180\" r=\"6\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"150\" y=\"200\" font-size=\"11\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">I was about to leave</text>\n  <text x=\"150\" y=\"216\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">right on the edge of then</text>\n  <circle cx=\"300\" cy=\"180\" r=\"6\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"300\" y=\"200\" font-size=\"11\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">it would change her life</text>\n  <text x=\"300\" y=\"216\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">later than then, earlier than now</text>\n  <text x=\"330\" y=\"152\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">all of it still to the left of now</text>\n</svg>",
+        "points": [
+          "Sometimes a story needs the future — but the future as it looked back **then**.",
+          "You stand at a past point and look forward from it. Everything is still past for you now.",
+          "The plan often did not come off, and that is usually the point of saying it."
+        ],
+        "table": {
+          "headers": [
+            "Form",
+            "What it says",
+            "Example"
+          ],
+          "rows": [
+            [
+              "was / **were going** to",
+              "the plan you had then",
+              "I was **going to** call you."
+            ],
+            [
+              "**would** + verb",
+              "what happened later in the story",
+              "It **would** change her life."
+            ],
+            [
+              "was / **were about** to",
+              "on the point of doing it",
+              "I was **about to** leave."
+            ],
+            [
+              "was / **were due** to",
+              "the schedule said so",
+              "The flight was **due to** land at seven."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "The plan you had then",
+        "title_cz": "Plán, který jsi tehdy měl",
+        "table": {
+          "headers": [
+            "Shape",
+            "Example"
+          ],
+          "rows": [
+            [
+              "was / were + **going to** + verb",
+              "I was **going to** call you, but I fell asleep."
+            ],
+            [
+              "negative",
+              "They **weren't** going to come, but the weather cleared."
+            ],
+            [
+              "question",
+              "**Were** you going to say something?"
+            ]
+          ]
+        },
+        "points": [
+          "It is the past of **going to** — the plan was real, at that time.",
+          "The *but* half is why you say it: the plan did not survive.",
+          "Czech says *chtěl jsem* — an intention, not a wish."
+        ]
+      },
+      {
+        "title": "On the point of it",
+        "title_cz": "Chvíli před tím",
+        "table": {
+          "headers": [
+            "Form",
+            "How close",
+            "Example"
+          ],
+          "rows": [
+            [
+              "was / were **about to**",
+              "seconds away",
+              "I was **about to** leave when the phone rang."
+            ],
+            [
+              "was / were **due to**",
+              "a schedule said so",
+              "The results were **due to** come out on Monday."
+            ],
+            [
+              "was / were **going to**",
+              "a plan, no time attached",
+              "We were **going to** move to Plzeň."
+            ]
+          ]
+        },
+        "points": [
+          "**about to** is the next second. **due to** is somebody's timetable.",
+          "Both keep **to** and then the plain verb — never -ing."
+        ]
+      },
+      {
+        "title": "The story's own future",
+        "title_cz": "Budoucnost samotného příběhu",
+        "table": {
+          "headers": [
+            "Use",
+            "Example"
+          ],
+          "rows": [
+            [
+              "what happened later on",
+              "She took the job that **would** change her life."
+            ],
+            [
+              "after a past reporting verb",
+              "He promised he **would** pay me back on Friday."
+            ],
+            [
+              "after knew · hoped · had no idea",
+              "Nobody knew that the plan **would** fail."
+            ]
+          ]
+        },
+        "points": [
+          "This is the **will** of the story, backshifted one step into the past.",
+          "It is the same **would** you met in reported speech.",
+          "After **would** comes the plain verb — no to, no -ed, no -ing."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~I was going call you.~~",
+              "I was **going to** call you."
+            ],
+            [
+              "~~I was about leaving.~~",
+              "I was **about to** leave."
+            ],
+            [
+              "~~He promised he will pay me back.~~",
+              "He promised he **would** pay me back."
+            ],
+            [
+              "~~She took the job that would changed her life.~~",
+              "She took the job that **would change** her life."
+            ],
+            [
+              "~~The flight was due land at seven.~~",
+              "The flight was **due to** land at seven."
+            ]
+          ]
+        },
+        "points": [
+          "**going to** · **about to** · **due to** all keep their **to**.",
+          "**would** does not take one."
+        ]
+      }
+    ]
+  }
 }
