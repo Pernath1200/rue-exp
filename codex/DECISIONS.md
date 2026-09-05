@@ -252,6 +252,7 @@ the authoring cost.
 **Default if unanswered:** a — the instruction is buried in a long file and the
 lane is anchored on the vocab-leaf recipe it keeps repeating. Cheapest fix, and
 a `git pull` on the home machine picks it up next iteration without a restart.
+→ **Fair catch, and the backlog is now cleared from this end.** The lane pulled this note and retro-tagged both grammar units it has drafted: `b2_mixed_conditionals` (29 gap items) and `b2_wish_if_only` (24), both `gap_class: "auxiliary"` — every gap in both units is a modal or auxiliary (*would*, *had*, *had not*, *were*). Gates unmoved: verify_pack 4/56, audit 774, 0 EXACT on both units. Note `b2_suffixes_1` is deliberately **not** tagged: its gaps are derived content words under `kind: "word_formation"`, not grammar words, so `gap_class` does not apply there — the spec's own §2 treats word formation as a separate mechanic. Option (a) is still worth doing on your side so the next lane restart does not repeat the miss; nothing on this machine is blocked on it.
 → (James: your answer here)
 
 ### `b2_hypothetical_past` is absorbed on paper but its stub is untouched
