@@ -1,786 +1,811 @@
 {
-  "id": "b1_suffixes",
-  "title": "Word Formation: Suffixes",
-  "level": "B1",
-  "teaches_lemmas": ["actor", "careful", "carefully", "cook", "easily", "happiness", "helpful", "information", "kindness", "manager", "teacher", "useless"],
-  "tree_node": "b1_suffixes",
-  "codex_unit": "V_WFM-B1B2-01",
-  "kind": "word_formation",
-  "practice": "grammar",
-  "note": "Rewrite 2026-08-30 from Spec_Word-Formation-Suffixes_B1. Core 8: -er/-or, -tion, -ment, -ness, -ful, -less, -able, -ly. Match = suffix→job (tion/ment/ness share noun-maker). Quiz 12 · Type 12 FCE clozes · Use 12 error-correction (E7).",
-  "default_direction": "en_gap",
-  "use_mode": "correct",
-  "use_hint": "Fix the sentence · Enter = check · Enter = next",
-  "type_order": "as_authored",
-  "check": {
-    "sequence": [
-      "match",
-      "quiz"
-    ]
-  },
-  "quality": "good_draft",
-  "intro": {
-    "cards": [
-      {
-        "title": "Word Formation: Suffixes",
-        "title_cz": "Tvoření slov: přípony",
-        "points": [
-          "A **suffix** is an ending that changes the word's job.",
-          "A prefix changes meaning. This lesson is suffixes."
-        ],
-        "svg": "<svg viewBox=\"0 0 520 168\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"28\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"98\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" font-weight=\"600\">PREFIX</text>\n  <text x=\"98\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">un</text>\n  <rect x=\"190\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">ROOT</text>\n  <text x=\"260\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">help</text>\n  <rect x=\"352\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"422\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" font-weight=\"600\">SUFFIX</text>\n  <text x=\"422\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">ful</text>\n  <line x1=\"260\" y1=\"80\" x2=\"260\" y2=\"108\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <polygon points=\"260,114 255,104 265,104\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"260\" y=\"150\" text-anchor=\"middle\" font-size=\"22\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">unhelpful</text>\n</svg>",
-        "ref": {
-          "tab": "wordform",
-          "label": "Full prefix and suffix tables"
-        }
-      },
-      {
-        "title": "One root, four jobs",
-        "title_cz": "Jeden kořen, čtyři role",
-        "points": [
-          "The same root does different jobs with different suffixes."
-        ],
-        "svg": "<svg viewBox=\"0 0 520 200\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"196\" y=\"78\" width=\"128\" height=\"44\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">help</text>\n  <line x1=\"260\" y1=\"78\" x2=\"260\" y2=\"44\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"324\" y1=\"100\" x2=\"430\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"260\" y1=\"122\" x2=\"260\" y2=\"156\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"196\" y1=\"100\" x2=\"90\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">help (verb)</text>\n  <text x=\"470\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helper</text>\n  <text x=\"470\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">noun</text>\n  <text x=\"260\" y=\"176\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helpful</text>\n  <text x=\"260\" y=\"194\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">adjective</text>\n  <text x=\"50\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helpfully</text>\n  <text x=\"50\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">adverb</text>\n</svg>",
-        "table": {
-          "headers": [
-            "Root",
-            "New word"
-          ],
-          "rows": [
-            [
-              "help (verb)",
-              "**helper** (noun)"
-            ],
-            [
-              "help",
-              "**helpful** (adjective)"
-            ],
-            [
-              "helpful",
-              "**helpfully** (adverb)"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Noun makers 1: -er / -or",
-        "title_cz": "Přípony osob: -er / -or",
-        "points": [
-          "The person or thing that does the action."
-        ],
-        "table": {
-          "headers": [
-            "Root",
-            "Person"
-          ],
-          "rows": [
-            [
-              "teach",
-              "**teacher**"
-            ],
-            [
-              "act",
-              "**actor**"
-            ],
-            [
-              "manage",
-              "**manager**"
-            ]
-          ]
-        },
-        "tables": [
-          {
-            "headers": [
-              "Not",
-              "Say"
-            ],
-            "rows": [
-              [
-                "~~cooker~~ for a person",
-                "**cook** is the person"
-              ],
-              [
-                "~~a cook machine~~",
-                "a **cooker** is a machine"
-              ]
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Noun makers 2: -tion / -ment",
-        "title_cz": "Přípony: -tion / -ment",
-        "points": [
-          "These make nouns for actions and results."
-        ],
-        "table": {
-          "headers": [
-            "Root",
-            "Noun"
-          ],
-          "rows": [
-            [
-              "inform",
-              "informa**tion**"
-            ],
-            [
-              "decide",
-              "deci**sion**"
-            ],
-            [
-              "develop",
-              "develop**ment**"
-            ],
-            [
-              "improve",
-              "improve**ment**"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Noun maker 3: -ness",
-        "title_cz": "Přípona -ness",
-        "points": [
-          "A quality, made from an adjective.",
-          "Spelling: **y** → **i** (happy → happi**ness**)."
-        ],
-        "table": {
-          "headers": [
-            "Adjective",
-            "Noun"
-          ],
-          "rows": [
-            [
-              "kind",
-              "**kindness**"
-            ],
-            [
-              "ill",
-              "**illness**"
-            ],
-            [
-              "happy",
-              "**happiness**"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Adjective makers: -ful, -less, -able",
-        "title_cz": "Přípony přídavných jmen",
-        "points": [
-          "**-ful** = with. **-less** = without. **-able** = can be."
-        ],
-        "svg": "<svg viewBox=\"0 0 520 110\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"90\" y=\"58\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">careful</text>\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">with</text>\n  <line x1=\"160\" y1=\"52\" x2=\"360\" y2=\"52\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <polygon points=\"160,52 170,47 170,57\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <polygon points=\"360,52 350,47 350,57\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"260\" y=\"42\" text-anchor=\"middle\" font-size=\"16\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">care</text>\n  <text x=\"430\" y=\"58\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">careless</text>\n  <text x=\"430\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">without</text>\n</svg>",
-        "table": {
-          "headers": [
-            "Root",
-            "Adjectives"
-          ],
-          "rows": [
-            [
-              "care",
-              "**careful** / **careless**"
-            ],
-            [
-              "use",
-              "**useful** / **useless**"
-            ],
-            [
-              "enjoy",
-              "**enjoyable**"
-            ],
-            [
-              "rely",
-              "**reliable**"
-            ]
-          ]
-        }
-      },
-      {
-        "title": "Adverb maker: -ly",
-        "title_cz": "Přípona -ly",
-        "points": [
-          "How something is done. Spelling: **y** → **i**."
-        ],
-        "table": {
-          "headers": [
-            "Adjective",
-            "Adverb"
-          ],
-          "rows": [
-            [
-              "quick",
-              "**quickly**"
-            ],
-            [
-              "careful",
-              "**carefully**"
-            ],
-            [
-              "easy",
-              "**easily**"
-            ]
-          ]
-        },
-        "tables": [
-          {
-            "headers": [
-              "Not",
-              "Say"
-            ],
-            "rows": [
-              [
-                "~~friendly~~ as an adverb",
-                "**friendly** is an adjective"
-              ],
-              [
-                "~~lovely, lonely~~ as adverbs",
-                "same: they are adjectives"
-              ]
-            ]
-          }
-        ]
-      },
-      {
-        "title": "Ask: what job?",
-        "title_cz": "Jakou má to slovo roli?",
-        "points": [
-          "Before you write the word, ask: what job does it do?"
-        ],
-        "table": {
-          "headers": [
-            "Suffix",
-            "Job"
-          ],
-          "rows": [
-            [
-              "**-er / -or**",
-              "person or thing that does the action · noun"
-            ],
-            [
-              "**-tion** · **-ment** · **-ness**",
-              "turns a word into a noun · noun"
-            ],
-            [
-              "**-ful**",
-              "with, full of · adj"
-            ],
-            [
-              "**-less**",
-              "without · adj"
-            ],
-            [
-              "**-able**",
-              "can be done · adj"
-            ],
-            [
-              "**-ly**",
-              "how something is done · adv"
-            ]
-          ]
-        }
-      }
-    ]
-  },
-  "blocks": [
-    {
-      "id": "sfx_jobs",
-      "title": "Suffix → job",
-      "check": {
-        "sequence": [
-          "match"
-        ]
-      },
-      "items": [
-        {
-          "en": "-er / -or",
-          "cz": "person or thing that does the action · noun",
-          "lemma": "-er / -or",
-          "use": false
-        },
-        {
-          "en": "-tion",
-          "cz": "turns a word into a noun · noun",
-          "lemma": "-tion",
-          "use": false
-        },
-        {
-          "en": "-ment",
-          "cz": "turns a word into a noun · noun",
-          "lemma": "-ment",
-          "use": false
-        },
-        {
-          "en": "-ness",
-          "cz": "turns a word into a noun · noun",
-          "lemma": "-ness",
-          "use": false
-        },
-        {
-          "en": "-ful",
-          "cz": "with, full of · adj",
-          "lemma": "-ful",
-          "use": false
-        },
-        {
-          "en": "-less",
-          "cz": "without · adj",
-          "lemma": "-less",
-          "use": false
-        },
-        {
-          "en": "-able",
-          "cz": "can be done · adj",
-          "lemma": "-able",
-          "use": false
-        },
-        {
-          "en": "-ly",
-          "cz": "how something is done · adv",
-          "lemma": "-ly",
-          "use": false
-        }
-      ]
-    },
-    {
-      "id": "sfx_quiz",
-      "title": "Choose the form",
-      "check": {
-        "sequence": [
-          "quiz"
-        ]
-      },
-      "items": [
-        {
-          "en": "My sister works as a teacher in a school.",
-          "gap": "My sister works as a ____ in a school.",
-          "root": "TEACH",
-          "gap_answer": "teacher",
-          "quiz_options": [
-            "teacher",
-            "teaching",
-            "teachable"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "The job is a person: **teach** + **-er** → **teacher**.",
-          "explanation_cz": "Jde o osobu: **teach** + **-er** → **teacher**."
-        },
-        {
-          "en": "There was an improvement in salaries.",
-          "gap": "There was an ____ in salaries.",
-          "root": "IMPROVE",
-          "gap_answer": "improvement",
-          "quiz_options": [
-            "improvement",
-            "improver",
-            "improving"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "The result of getting better: **improve** + **-ment**.",
-          "explanation_cz": "Výsledek zlepšení: **improve** + **-ment**."
-        },
-        {
-          "en": "Please drive carefully — the roads are wet.",
-          "gap": "Please drive ____ — the roads are wet.",
-          "root": "CARE",
-          "gap_answer": "carefully",
-          "quiz_options": [
-            "carefully",
-            "careful",
-            "careless"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "**Drive** needs how: the adverb **carefully**, not the adjective.",
-          "explanation_cz": "**Drive** chce způsob: příslovce **carefully**, ne přídavné jméno."
-        },
-        {
-          "en": "It's useless to argue with him — he never listens.",
-          "gap": "It's ____ to argue with him — he never listens.",
-          "root": "USE",
-          "gap_answer": "useless",
-          "quiz_options": [
-            "useless",
-            "useful",
-            "usefully"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "He never listens, so arguing has no use: **useless**.",
-          "explanation_cz": "Nikdy neposlouchá, takže hádka k ničemu: **useless**."
-        },
-        {
-          "en": "Thank you for your kindness.",
-          "gap": "Thank you for your ____.",
-          "root": "KIND",
-          "gap_answer": "kindness",
-          "quiz_options": [
-            "kindness",
-            "kindly",
-            "kinder"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "**Your** + a quality: **kind** + **-ness** → **kindness**.",
-          "explanation_cz": "**Your** + vlastnost: **kind** + **-ness** → **kindness**."
-        },
-        {
-          "en": "We need more information before we decide.",
-          "gap": "We need more ____ before we decide.",
-          "root": "INFORM",
-          "gap_answer": "information",
-          "quiz_options": [
-            "information",
-            "informative",
-            "informer"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "A noun for facts: **inform** → **information** (-tion).",
-          "explanation_cz": "Podstatné jméno pro fakta: **inform** → **information**."
-        },
-        {
-          "en": "My favourite actor is in this film.",
-          "gap": "My favourite ____ is in this film.",
-          "root": "ACT",
-          "gap_answer": "actor",
-          "quiz_options": [
-            "actor",
-            "action",
-            "active"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "The person who acts: **act** + **-or** → **actor**.",
-          "explanation_cz": "Osoba, která hraje: **act** + **-or** → **actor**."
-        },
-        {
-          "en": "Be careful with that glass. It is old.",
-          "gap": "Be ____ with that glass. It is old.",
-          "root": "CARE",
-          "gap_answer": "careful",
-          "quiz_options": [
-            "careful",
-            "careless",
-            "carefully"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "**Be** + adjective: **care** + **-ful**. Not the adverb.",
-          "explanation_cz": "**Be** + přídavné jméno: **care** + **-ful**. Ne příslovce."
-        },
-        {
-          "en": "The hotel room was clean and comfortable.",
-          "gap": "The hotel room was clean and ____.",
-          "root": "COMFORT",
-          "gap_answer": "comfortable",
-          "quiz_options": [
-            "comfortable",
-            "comfort",
-            "comfortably"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "**Clean and ____** needs an adjective: **comfort** + **-able**.",
-          "explanation_cz": "**Clean and ____** chce přídavné jméno: **comfort** + **-able**."
-        },
-        {
-          "en": "She is our new manager.",
-          "gap": "She is our new ____.",
-          "root": "MANAGE",
-          "gap_answer": "manager",
-          "quiz_options": [
-            "manager",
-            "management",
-            "manageable"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "**She** is a person: **manage** + **-er** → **manager**.",
-          "explanation_cz": "**She** je osoba: **manage** + **-er** → **manager**."
-        },
-        {
-          "en": "Work can bring you happiness.",
-          "gap": "Work can bring you ____.",
-          "root": "HAPPY",
-          "gap_answer": "happiness",
-          "quiz_options": [
-            "happiness",
-            "happily",
-            "happier"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "A quality: **happy** → **happiness** (y → i, then **-ness**).",
-          "explanation_cz": "Vlastnost: **happy** → **happiness** (y → i, pak **-ness**)."
-        },
-        {
-          "en": "She answered all the questions easily.",
-          "gap": "She answered all the questions ____.",
-          "root": "EASY",
-          "gap_answer": "easily",
-          "quiz_options": [
-            "easily",
-            "easy",
-            "easier"
-          ],
-          "type": false,
-          "use": false,
-          "explanation": "How she answered: **easy** → **easily** (y → i).",
-          "explanation_cz": "Jak odpověděla: **easy** → **easily** (y → i)."
-        }
-      ]
-    },
-    {
-      "id": "sfx_type",
-      "title": "Type the word",
-      "check": {
-        "sequence": []
-      },
-      "items": [
-        {
-          "en": "We need more information before we decide.",
-          "gap": "We need more ____ before we decide.",
-          "root": "INFORM",
-          "gap_answer": "information",
-          "use": false,
-          "explanation": "A noun for facts: **inform** → **information** (-tion).",
-          "explanation_cz": "Podstatné jméno pro fakta: **inform** → **information**."
-        },
-        {
-          "en": "The hotel room was clean and comfortable.",
-          "gap": "The hotel room was clean and ____.",
-          "root": "COMFORT",
-          "gap_answer": "comfortable",
-          "use": false,
-          "explanation": "The room can be lived in easily: **comfort** + **-able**.",
-          "explanation_cz": "V pokoji se dá dobře bydlet: **comfort** + **-able**."
-        },
-        {
-          "en": "Be careful with that glass. It is old.",
-          "gap": "Be ____ with that glass. It is old.",
-          "root": "CARE",
-          "gap_answer": "careful",
-          "use": false,
-          "explanation": "**Be** + adjective: **care** + **-ful** → **careful**.",
-          "explanation_cz": "**Be** + přídavné jméno: **care** + **-ful** → **careful**."
-        },
-        {
-          "en": "My favourite actor is in this film.",
-          "gap": "My favourite ____ is in this film.",
-          "root": "ACT",
-          "gap_answer": "actor",
-          "gap_accepts": [
-            "actress"
-          ],
-          "use": false,
-          "explanation": "The person who acts: **act** + **-or**. **Actress** is also fine.",
-          "explanation_cz": "Osoba, která hraje: **act** + **-or**. **Actress** také platí."
-        },
-        {
-          "en": "She answered all the questions easily.",
-          "gap": "She answered all the questions ____.",
-          "root": "EASY",
-          "gap_answer": "easily",
-          "use": false,
-          "explanation": "How she answered: **easy** → **easily** (y → i).",
-          "explanation_cz": "Jak odpověděla: **easy** → **easily** (y → i)."
-        },
-        {
-          "en": "We need a helper for this job.",
-          "gap": "We need a ____ for this job.",
-          "root": "HELP",
-          "gap_answer": "helper",
-          "use": false,
-          "explanation": "A person for the job: **help** + **-er** → **helper**.",
-          "explanation_cz": "Osoba na tu práci: **help** + **-er** → **helper**."
-        },
-        {
-          "en": "She is a very helpful colleague.",
-          "gap": "She is a very ____ colleague.",
-          "root": "HELP",
-          "gap_answer": "helpful",
-          "use": false,
-          "explanation": "**help** + **-ful** = with help.",
-          "explanation_cz": "**help** + **-ful** = s pomocí."
-        },
-        {
-          "en": "Without my phone I felt helpless.",
-          "gap": "Without my phone I felt ____.",
-          "root": "HELP",
-          "gap_answer": "helpless",
-          "use": false,
-          "explanation": "**help** + **-less** = without help.",
-          "explanation_cz": "**help** + **-less** = bez pomoci."
-        },
-        {
-          "en": "This map is useful in a new city.",
-          "gap": "This map is ____ in a new city.",
-          "root": "USE",
-          "gap_answer": "useful",
-          "use": false,
-          "explanation": "**use** + **-ful** = with use.",
-          "explanation_cz": "**use** + **-ful** = užitečný."
-        },
-        {
-          "en": "This old map is useless now.",
-          "gap": "This old map is ____ now.",
-          "root": "USE",
-          "gap_answer": "useless",
-          "use": false,
-          "explanation": "**use** + **-less** = without use.",
-          "explanation_cz": "**use** + **-less** = bez užitku."
-        },
-        {
-          "en": "Our manager starts work at eight.",
-          "gap": "Our ____ starts work at eight.",
-          "root": "MANAGE",
-          "gap_answer": "manager",
-          "use": false,
-          "explanation": "A person starts work: **manage** + **-er** → **manager**.",
-          "explanation_cz": "Do práce chodí osoba: **manage** + **-er** → **manager**."
-        },
-        {
-          "en": "She wants to study hotel management next year.",
-          "gap": "She wants to study hotel ____ next year.",
-          "root": "MANAGE",
-          "gap_answer": "management",
-          "use": false,
-          "explanation": "A subject you study: **manage** + **-ment** → **management**.",
-          "explanation_cz": "Obor ke studiu: **manage** + **-ment** → **management**."
-        }
-      ]
-    },
-    {
-      "id": "sfx_use",
-      "title": "Use it",
-      "check": {
-        "sequence": []
-      },
-      "items": [
-        {
-          "en": "Please drive carefully.",
-          "wrong": "Please drive careful.",
-          "accepts": [
-            "Please drive carefully."
-          ],
-          "explanation": "**Drive** needs an adverb: **carefully**, not **careful**.",
-          "explanation_cz": "**Drive** chce příslovce: **carefully**, ne **careful**."
-        },
-        {
-          "en": "Be careful with that glass.",
-          "wrong": "Be carefully with that glass.",
-          "accepts": [
-            "Be careful with that glass."
-          ],
-          "explanation": "**Be** + adjective: **careful**, not the adverb **carefully**.",
-          "explanation_cz": "**Be** + přídavné jméno: **careful**, ne příslovce **carefully**."
-        },
-        {
-          "en": "My sister works as a teacher in a school.",
-          "wrong": "My sister works as a teaching in a school.",
-          "accepts": [
-            "My sister works as a teacher in a school.",
-            "My sister works as a teacher at a school."
-          ],
-          "explanation": "The job is a person: **teacher**, not **teaching**.",
-          "explanation_cz": "Povolání je osoba: **teacher**, ne **teaching**."
-        },
-        {
-          "en": "We need more information before we decide.",
-          "wrong": "We need more informative before we decide.",
-          "accepts": [
-            "We need more information before we decide."
-          ],
-          "explanation": "After **more** you need a noun: **information**, not the adjective **informative**.",
-          "explanation_cz": "Po **more** podstatné jméno: **information**, ne přídavné jméno **informative**."
-        },
-        {
-          "en": "Work can bring you happiness.",
-          "wrong": "Work can bring you happyness.",
-          "accepts": [
-            "Work can bring you happiness."
-          ],
-          "explanation": "**happy** → **happiness**: y → i, then **-ness**.",
-          "explanation_cz": "**happy** → **happiness**: y → i, pak **-ness**."
-        },
-        {
-          "en": "She did it easily.",
-          "wrong": "She did it easyly.",
-          "accepts": [
-            "She did it easily."
-          ],
-          "explanation": "**easy** → **easily**: y → i, then **-ly**.",
-          "explanation_cz": "**easy** → **easily**: y → i, pak **-ly**."
-        },
-        {
-          "en": "It is useless to talk. He does not listen.",
-          "wrong": "It is useful to talk. He does not listen.",
-          "accepts": [
-            "It is useless to talk. He does not listen.",
-            "It's useless to talk. He does not listen.",
-            "It is useless to talk. He doesn't listen.",
-            "It's useless to talk. He doesn't listen."
-          ],
-          "explanation": "He never listens, so arguing has no use: **useless**.",
-          "explanation_cz": "Nikdy neposlouchá, takže hádka k ničemu: **useless**."
-        },
-        {
-          "en": "She wants to be an actor.",
-          "wrong": "She wants to be an acting.",
-          "accepts": [
-            "She wants to be an actor.",
-            "She wants to be an actress."
-          ],
-          "explanation": "A person: **actor** / **actress**, not **acting**.",
-          "explanation_cz": "Osoba: **actor** / **actress**, ne **acting**."
-        },
-        {
-          "en": "She is very helpful at work.",
-          "wrong": "She is very helper at work.",
-          "accepts": [
-            "She is very helpful at work.",
-            "She's very helpful at work."
-          ],
-          "explanation": "**Very** + adjective: **helpful**, not the person-word **helper**.",
-          "explanation_cz": "**Very** + přídavné jméno: **helpful**, ne osoba **helper**."
-        },
-        {
-          "en": "She is our new manager.",
-          "wrong": "She is our new management.",
-          "accepts": [
-            "She is our new manager.",
-            "She's our new manager."
-          ],
-          "explanation": "**She** is a person: **manager**, not **management**.",
-          "explanation_cz": "**She** je osoba: **manager**, ne **management**."
-        },
-        {
-          "en": "Thank you for your kindness.",
-          "wrong": "Thank you for your kind.",
-          "accepts": [
-            "Thank you for your kindness."
-          ],
-          "explanation": "**Your** + a noun: **kindness**, not **kind**.",
-          "explanation_cz": "**Your** + podstatné jméno: **kindness**, ne **kind**."
-        },
-        {
-          "en": "He is a cook in a hotel.",
-          "wrong": "He is a cooker in a hotel.",
-          "accepts": [
-            "He is a cook in a hotel.",
-            "He's a cook in a hotel.",
-            "He is a cook at a hotel.",
-            "He's a cook at a hotel."
-          ],
-          "explanation": "A **cook** is a person. A **cooker** is a machine.",
-          "explanation_cz": "**Cook** je osoba. **Cooker** je sporák."
-        }
-      ]
-    }
+ "id": "b1_suffixes",
+ "title": "Word Formation: Suffixes",
+ "level": "B1",
+ "teaches_lemmas": [
+  "actor",
+  "careful",
+  "carefully",
+  "cook",
+  "easily",
+  "happiness",
+  "helpful",
+  "information",
+  "kindness",
+  "manager",
+  "teacher",
+  "useless"
+ ],
+ "tree_node": "b1_suffixes",
+ "codex_unit": "V_WFM-B1B2-01",
+ "kind": "word_formation",
+ "practice": "grammar",
+ "note": "Rewrite 2026-08-30 from Spec_Word-Formation-Suffixes_B1. Core 8: -er/-or, -tion, -ment, -ness, -ful, -less, -able, -ly. Match = suffix→job (tion/ment/ness share noun-maker). Quiz 12 · Type 12 FCE clozes · Use 12 error-correction (E7). · 2026-09-05 B1 loop: the 12 Choose-the-form items each offered three options — the answer and two class traps — so the half of the house style James set after smoking this pack (2026-08-18: answer + one class trap + two by-ear misspellings, because spelling is what the exam grades) was missing, and verify_pack had been warning on all twelve. Each item now keeps the class trap that teaches something (teaching / careful / useful / informative / action / comfortably / management / happily / easy) and swaps the second trap for two misspellings a Czech learner actually writes (teachor · techer, improvment · inprovement, carefuly · carfully, acter · actour, comfortible · confortable, happyness · happines, easyly · easely). That also takes *kinder*, *happier* and *easier* off word-formation chips, which is the fault G5 was written from.",
+ "default_direction": "en_gap",
+ "use_mode": "correct",
+ "use_hint": "Fix the sentence · Enter = check · Enter = next",
+ "type_order": "as_authored",
+ "check": {
+  "sequence": [
+   "match",
+   "quiz"
   ]
+ },
+ "quality": "good_draft",
+ "intro": {
+  "cards": [
+   {
+    "title": "Word Formation: Suffixes",
+    "title_cz": "Tvoření slov: přípony",
+    "points": [
+     "A **suffix** is an ending that changes the word's job.",
+     "A prefix changes meaning. This lesson is suffixes."
+    ],
+    "svg": "<svg viewBox=\"0 0 520 168\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"28\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"98\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" font-weight=\"600\">PREFIX</text>\n  <text x=\"98\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">un</text>\n  <rect x=\"190\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">ROOT</text>\n  <text x=\"260\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">help</text>\n  <rect x=\"352\" y=\"18\" width=\"140\" height=\"54\" rx=\"8\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"422\" y=\"40\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--muted, #a0a0a0)\" font-weight=\"600\">SUFFIX</text>\n  <text x=\"422\" y=\"60\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">ful</text>\n  <line x1=\"260\" y1=\"80\" x2=\"260\" y2=\"108\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <polygon points=\"260,114 255,104 265,104\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"260\" y=\"150\" text-anchor=\"middle\" font-size=\"22\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">unhelpful</text>\n</svg>",
+    "ref": {
+     "tab": "wordform",
+     "label": "Full prefix and suffix tables"
+    }
+   },
+   {
+    "title": "One root, four jobs",
+    "title_cz": "Jeden kořen, čtyři role",
+    "points": [
+     "The same root does different jobs with different suffixes."
+    ],
+    "svg": "<svg viewBox=\"0 0 520 200\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <rect x=\"196\" y=\"78\" width=\"128\" height=\"44\" rx=\"8\" fill=\"none\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"106\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">help</text>\n  <line x1=\"260\" y1=\"78\" x2=\"260\" y2=\"44\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"324\" y1=\"100\" x2=\"430\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"260\" y1=\"122\" x2=\"260\" y2=\"156\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <line x1=\"196\" y1=\"100\" x2=\"90\" y2=\"100\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <text x=\"260\" y=\"28\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">help (verb)</text>\n  <text x=\"470\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helper</text>\n  <text x=\"470\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">noun</text>\n  <text x=\"260\" y=\"176\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helpful</text>\n  <text x=\"260\" y=\"194\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">adjective</text>\n  <text x=\"50\" y=\"96\" text-anchor=\"middle\" font-size=\"14\" fill=\"var(--text, #eaeaea)\">helpfully</text>\n  <text x=\"50\" y=\"114\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">adverb</text>\n</svg>",
+    "table": {
+     "headers": [
+      "Root",
+      "New word"
+     ],
+     "rows": [
+      [
+       "help (verb)",
+       "**helper** (noun)"
+      ],
+      [
+       "help",
+       "**helpful** (adjective)"
+      ],
+      [
+       "helpful",
+       "**helpfully** (adverb)"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Noun makers 1: -er / -or",
+    "title_cz": "Přípony osob: -er / -or",
+    "points": [
+     "The person or thing that does the action."
+    ],
+    "table": {
+     "headers": [
+      "Root",
+      "Person"
+     ],
+     "rows": [
+      [
+       "teach",
+       "**teacher**"
+      ],
+      [
+       "act",
+       "**actor**"
+      ],
+      [
+       "manage",
+       "**manager**"
+      ]
+     ]
+    },
+    "tables": [
+     {
+      "headers": [
+       "Not",
+       "Say"
+      ],
+      "rows": [
+       [
+        "~~cooker~~ for a person",
+        "**cook** is the person"
+       ],
+       [
+        "~~a cook machine~~",
+        "a **cooker** is a machine"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Noun makers 2: -tion / -ment",
+    "title_cz": "Přípony: -tion / -ment",
+    "points": [
+     "These make nouns for actions and results."
+    ],
+    "table": {
+     "headers": [
+      "Root",
+      "Noun"
+     ],
+     "rows": [
+      [
+       "inform",
+       "informa**tion**"
+      ],
+      [
+       "decide",
+       "deci**sion**"
+      ],
+      [
+       "develop",
+       "develop**ment**"
+      ],
+      [
+       "improve",
+       "improve**ment**"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Noun maker 3: -ness",
+    "title_cz": "Přípona -ness",
+    "points": [
+     "A quality, made from an adjective.",
+     "Spelling: **y** → **i** (happy → happi**ness**)."
+    ],
+    "table": {
+     "headers": [
+      "Adjective",
+      "Noun"
+     ],
+     "rows": [
+      [
+       "kind",
+       "**kindness**"
+      ],
+      [
+       "ill",
+       "**illness**"
+      ],
+      [
+       "happy",
+       "**happiness**"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Adjective makers: -ful, -less, -able",
+    "title_cz": "Přípony přídavných jmen",
+    "points": [
+     "**-ful** = with. **-less** = without. **-able** = can be."
+    ],
+    "svg": "<svg viewBox=\"0 0 520 110\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <text x=\"90\" y=\"58\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">careful</text>\n  <text x=\"90\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">with</text>\n  <line x1=\"160\" y1=\"52\" x2=\"360\" y2=\"52\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <polygon points=\"160,52 170,47 170,57\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <polygon points=\"360,52 350,47 350,57\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"260\" y=\"42\" text-anchor=\"middle\" font-size=\"16\" fill=\"var(--vocab-accent, #4db6c7)\" font-weight=\"600\">care</text>\n  <text x=\"430\" y=\"58\" text-anchor=\"middle\" font-size=\"18\" fill=\"var(--text, #eaeaea)\" font-weight=\"600\">careless</text>\n  <text x=\"430\" y=\"80\" text-anchor=\"middle\" font-size=\"12\" fill=\"var(--vocab-accent, #4db6c7)\">without</text>\n</svg>",
+    "table": {
+     "headers": [
+      "Root",
+      "Adjectives"
+     ],
+     "rows": [
+      [
+       "care",
+       "**careful** / **careless**"
+      ],
+      [
+       "use",
+       "**useful** / **useless**"
+      ],
+      [
+       "enjoy",
+       "**enjoyable**"
+      ],
+      [
+       "rely",
+       "**reliable**"
+      ]
+     ]
+    }
+   },
+   {
+    "title": "Adverb maker: -ly",
+    "title_cz": "Přípona -ly",
+    "points": [
+     "How something is done. Spelling: **y** → **i**."
+    ],
+    "table": {
+     "headers": [
+      "Adjective",
+      "Adverb"
+     ],
+     "rows": [
+      [
+       "quick",
+       "**quickly**"
+      ],
+      [
+       "careful",
+       "**carefully**"
+      ],
+      [
+       "easy",
+       "**easily**"
+      ]
+     ]
+    },
+    "tables": [
+     {
+      "headers": [
+       "Not",
+       "Say"
+      ],
+      "rows": [
+       [
+        "~~friendly~~ as an adverb",
+        "**friendly** is an adjective"
+       ],
+       [
+        "~~lovely, lonely~~ as adverbs",
+        "same: they are adjectives"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "title": "Ask: what job?",
+    "title_cz": "Jakou má to slovo roli?",
+    "points": [
+     "Before you write the word, ask: what job does it do?"
+    ],
+    "table": {
+     "headers": [
+      "Suffix",
+      "Job"
+     ],
+     "rows": [
+      [
+       "**-er / -or**",
+       "person or thing that does the action · noun"
+      ],
+      [
+       "**-tion** · **-ment** · **-ness**",
+       "turns a word into a noun · noun"
+      ],
+      [
+       "**-ful**",
+       "with, full of · adj"
+      ],
+      [
+       "**-less**",
+       "without · adj"
+      ],
+      [
+       "**-able**",
+       "can be done · adj"
+      ],
+      [
+       "**-ly**",
+       "how something is done · adv"
+      ]
+     ]
+    }
+   }
+  ]
+ },
+ "blocks": [
+  {
+   "id": "sfx_jobs",
+   "title": "Suffix → job",
+   "check": {
+    "sequence": [
+     "match"
+    ]
+   },
+   "items": [
+    {
+     "en": "-er / -or",
+     "cz": "person or thing that does the action · noun",
+     "lemma": "-er / -or",
+     "use": false
+    },
+    {
+     "en": "-tion",
+     "cz": "turns a word into a noun · noun",
+     "lemma": "-tion",
+     "use": false
+    },
+    {
+     "en": "-ment",
+     "cz": "turns a word into a noun · noun",
+     "lemma": "-ment",
+     "use": false
+    },
+    {
+     "en": "-ness",
+     "cz": "turns a word into a noun · noun",
+     "lemma": "-ness",
+     "use": false
+    },
+    {
+     "en": "-ful",
+     "cz": "with, full of · adj",
+     "lemma": "-ful",
+     "use": false
+    },
+    {
+     "en": "-less",
+     "cz": "without · adj",
+     "lemma": "-less",
+     "use": false
+    },
+    {
+     "en": "-able",
+     "cz": "can be done · adj",
+     "lemma": "-able",
+     "use": false
+    },
+    {
+     "en": "-ly",
+     "cz": "how something is done · adv",
+     "lemma": "-ly",
+     "use": false
+    }
+   ]
+  },
+  {
+   "id": "sfx_quiz",
+   "title": "Choose the form",
+   "check": {
+    "sequence": [
+     "quiz"
+    ]
+   },
+   "items": [
+    {
+     "en": "My sister works as a teacher in a school.",
+     "gap": "My sister works as a ____ in a school.",
+     "root": "TEACH",
+     "gap_answer": "teacher",
+     "quiz_options": [
+      "teacher",
+      "teaching",
+      "teachor",
+      "techer"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "The job is a person: **teach** + **-er** → **teacher**.",
+     "explanation_cz": "Jde o osobu: **teach** + **-er** → **teacher**."
+    },
+    {
+     "en": "There was an improvement in salaries.",
+     "gap": "There was an ____ in salaries.",
+     "root": "IMPROVE",
+     "gap_answer": "improvement",
+     "quiz_options": [
+      "improvement",
+      "improving",
+      "improvment",
+      "inprovement"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "The result of getting better: **improve** + **-ment**.",
+     "explanation_cz": "Výsledek zlepšení: **improve** + **-ment**."
+    },
+    {
+     "en": "Please drive carefully — the roads are wet.",
+     "gap": "Please drive ____ — the roads are wet.",
+     "root": "CARE",
+     "gap_answer": "carefully",
+     "quiz_options": [
+      "carefully",
+      "careful",
+      "carefuly",
+      "carfully"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "**Drive** needs how: the adverb **carefully**, not the adjective.",
+     "explanation_cz": "**Drive** chce způsob: příslovce **carefully**, ne přídavné jméno."
+    },
+    {
+     "en": "It's useless to argue with him — he never listens.",
+     "gap": "It's ____ to argue with him — he never listens.",
+     "root": "USE",
+     "gap_answer": "useless",
+     "quiz_options": [
+      "useless",
+      "useful",
+      "usless",
+      "uselless"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "He never listens, so arguing has no use: **useless**.",
+     "explanation_cz": "Nikdy neposlouchá, takže hádka k ničemu: **useless**."
+    },
+    {
+     "en": "Thank you for your kindness.",
+     "gap": "Thank you for your ____.",
+     "root": "KIND",
+     "gap_answer": "kindness",
+     "quiz_options": [
+      "kindness",
+      "kindly",
+      "kindnes",
+      "kindess"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "**Your** + a quality: **kind** + **-ness** → **kindness**.",
+     "explanation_cz": "**Your** + vlastnost: **kind** + **-ness** → **kindness**."
+    },
+    {
+     "en": "We need more information before we decide.",
+     "gap": "We need more ____ before we decide.",
+     "root": "INFORM",
+     "gap_answer": "information",
+     "quiz_options": [
+      "information",
+      "informative",
+      "informaton",
+      "infomation"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "A noun for facts: **inform** → **information** (-tion).",
+     "explanation_cz": "Podstatné jméno pro fakta: **inform** → **information**."
+    },
+    {
+     "en": "My favourite actor is in this film.",
+     "gap": "My favourite ____ is in this film.",
+     "root": "ACT",
+     "gap_answer": "actor",
+     "quiz_options": [
+      "actor",
+      "action",
+      "acter",
+      "actour"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "The person who acts: **act** + **-or** → **actor**.",
+     "explanation_cz": "Osoba, která hraje: **act** + **-or** → **actor**."
+    },
+    {
+     "en": "Be careful with that glass. It is old.",
+     "gap": "Be ____ with that glass. It is old.",
+     "root": "CARE",
+     "gap_answer": "careful",
+     "quiz_options": [
+      "careful",
+      "carefully",
+      "carefull",
+      "carful"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "**Be** + adjective: **care** + **-ful**. Not the adverb.",
+     "explanation_cz": "**Be** + přídavné jméno: **care** + **-ful**. Ne příslovce."
+    },
+    {
+     "en": "The hotel room was clean and comfortable.",
+     "gap": "The hotel room was clean and ____.",
+     "root": "COMFORT",
+     "gap_answer": "comfortable",
+     "quiz_options": [
+      "comfortable",
+      "comfortably",
+      "comfortible",
+      "confortable"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "**Clean and ____** needs an adjective: **comfort** + **-able**.",
+     "explanation_cz": "**Clean and ____** chce přídavné jméno: **comfort** + **-able**."
+    },
+    {
+     "en": "She is our new manager.",
+     "gap": "She is our new ____.",
+     "root": "MANAGE",
+     "gap_answer": "manager",
+     "quiz_options": [
+      "manager",
+      "management",
+      "managor",
+      "managger"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "**She** is a person: **manage** + **-er** → **manager**.",
+     "explanation_cz": "**She** je osoba: **manage** + **-er** → **manager**."
+    },
+    {
+     "en": "Work can bring you happiness.",
+     "gap": "Work can bring you ____.",
+     "root": "HAPPY",
+     "gap_answer": "happiness",
+     "quiz_options": [
+      "happiness",
+      "happily",
+      "happyness",
+      "happines"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "A quality: **happy** → **happiness** (y → i, then **-ness**).",
+     "explanation_cz": "Vlastnost: **happy** → **happiness** (y → i, pak **-ness**)."
+    },
+    {
+     "en": "She answered all the questions easily.",
+     "gap": "She answered all the questions ____.",
+     "root": "EASY",
+     "gap_answer": "easily",
+     "quiz_options": [
+      "easily",
+      "easy",
+      "easyly",
+      "easely"
+     ],
+     "type": false,
+     "use": false,
+     "explanation": "How she answered: **easy** → **easily** (y → i).",
+     "explanation_cz": "Jak odpověděla: **easy** → **easily** (y → i)."
+    }
+   ]
+  },
+  {
+   "id": "sfx_type",
+   "title": "Type the word",
+   "check": {
+    "sequence": []
+   },
+   "items": [
+    {
+     "en": "We need more information before we decide.",
+     "gap": "We need more ____ before we decide.",
+     "root": "INFORM",
+     "gap_answer": "information",
+     "use": false,
+     "explanation": "A noun for facts: **inform** → **information** (-tion).",
+     "explanation_cz": "Podstatné jméno pro fakta: **inform** → **information**."
+    },
+    {
+     "en": "The hotel room was clean and comfortable.",
+     "gap": "The hotel room was clean and ____.",
+     "root": "COMFORT",
+     "gap_answer": "comfortable",
+     "use": false,
+     "explanation": "The room can be lived in easily: **comfort** + **-able**.",
+     "explanation_cz": "V pokoji se dá dobře bydlet: **comfort** + **-able**."
+    },
+    {
+     "en": "Be careful with that glass. It is old.",
+     "gap": "Be ____ with that glass. It is old.",
+     "root": "CARE",
+     "gap_answer": "careful",
+     "use": false,
+     "explanation": "**Be** + adjective: **care** + **-ful** → **careful**.",
+     "explanation_cz": "**Be** + přídavné jméno: **care** + **-ful** → **careful**."
+    },
+    {
+     "en": "My favourite actor is in this film.",
+     "gap": "My favourite ____ is in this film.",
+     "root": "ACT",
+     "gap_answer": "actor",
+     "gap_accepts": [
+      "actress"
+     ],
+     "use": false,
+     "explanation": "The person who acts: **act** + **-or**. **Actress** is also fine.",
+     "explanation_cz": "Osoba, která hraje: **act** + **-or**. **Actress** také platí."
+    },
+    {
+     "en": "She answered all the questions easily.",
+     "gap": "She answered all the questions ____.",
+     "root": "EASY",
+     "gap_answer": "easily",
+     "use": false,
+     "explanation": "How she answered: **easy** → **easily** (y → i).",
+     "explanation_cz": "Jak odpověděla: **easy** → **easily** (y → i)."
+    },
+    {
+     "en": "We need a helper for this job.",
+     "gap": "We need a ____ for this job.",
+     "root": "HELP",
+     "gap_answer": "helper",
+     "use": false,
+     "explanation": "A person for the job: **help** + **-er** → **helper**.",
+     "explanation_cz": "Osoba na tu práci: **help** + **-er** → **helper**."
+    },
+    {
+     "en": "She is a very helpful colleague.",
+     "gap": "She is a very ____ colleague.",
+     "root": "HELP",
+     "gap_answer": "helpful",
+     "use": false,
+     "explanation": "**help** + **-ful** = with help.",
+     "explanation_cz": "**help** + **-ful** = s pomocí."
+    },
+    {
+     "en": "Without my phone I felt helpless.",
+     "gap": "Without my phone I felt ____.",
+     "root": "HELP",
+     "gap_answer": "helpless",
+     "use": false,
+     "explanation": "**help** + **-less** = without help.",
+     "explanation_cz": "**help** + **-less** = bez pomoci."
+    },
+    {
+     "en": "This map is useful in a new city.",
+     "gap": "This map is ____ in a new city.",
+     "root": "USE",
+     "gap_answer": "useful",
+     "use": false,
+     "explanation": "**use** + **-ful** = with use.",
+     "explanation_cz": "**use** + **-ful** = užitečný."
+    },
+    {
+     "en": "This old map is useless now.",
+     "gap": "This old map is ____ now.",
+     "root": "USE",
+     "gap_answer": "useless",
+     "use": false,
+     "explanation": "**use** + **-less** = without use.",
+     "explanation_cz": "**use** + **-less** = bez užitku."
+    },
+    {
+     "en": "Our manager starts work at eight.",
+     "gap": "Our ____ starts work at eight.",
+     "root": "MANAGE",
+     "gap_answer": "manager",
+     "use": false,
+     "explanation": "A person starts work: **manage** + **-er** → **manager**.",
+     "explanation_cz": "Do práce chodí osoba: **manage** + **-er** → **manager**."
+    },
+    {
+     "en": "She wants to study hotel management next year.",
+     "gap": "She wants to study hotel ____ next year.",
+     "root": "MANAGE",
+     "gap_answer": "management",
+     "use": false,
+     "explanation": "A subject you study: **manage** + **-ment** → **management**.",
+     "explanation_cz": "Obor ke studiu: **manage** + **-ment** → **management**."
+    }
+   ]
+  },
+  {
+   "id": "sfx_use",
+   "title": "Use it",
+   "check": {
+    "sequence": []
+   },
+   "items": [
+    {
+     "en": "Please drive carefully.",
+     "wrong": "Please drive careful.",
+     "accepts": [
+      "Please drive carefully."
+     ],
+     "explanation": "**Drive** needs an adverb: **carefully**, not **careful**.",
+     "explanation_cz": "**Drive** chce příslovce: **carefully**, ne **careful**."
+    },
+    {
+     "en": "Be careful with that glass.",
+     "wrong": "Be carefully with that glass.",
+     "accepts": [
+      "Be careful with that glass."
+     ],
+     "explanation": "**Be** + adjective: **careful**, not the adverb **carefully**.",
+     "explanation_cz": "**Be** + přídavné jméno: **careful**, ne příslovce **carefully**."
+    },
+    {
+     "en": "My sister works as a teacher in a school.",
+     "wrong": "My sister works as a teaching in a school.",
+     "accepts": [
+      "My sister works as a teacher in a school.",
+      "My sister works as a teacher at a school."
+     ],
+     "explanation": "The job is a person: **teacher**, not **teaching**.",
+     "explanation_cz": "Povolání je osoba: **teacher**, ne **teaching**."
+    },
+    {
+     "en": "We need more information before we decide.",
+     "wrong": "We need more informative before we decide.",
+     "accepts": [
+      "We need more information before we decide."
+     ],
+     "explanation": "After **more** you need a noun: **information**, not the adjective **informative**.",
+     "explanation_cz": "Po **more** podstatné jméno: **information**, ne přídavné jméno **informative**."
+    },
+    {
+     "en": "Work can bring you happiness.",
+     "wrong": "Work can bring you happyness.",
+     "accepts": [
+      "Work can bring you happiness."
+     ],
+     "explanation": "**happy** → **happiness**: y → i, then **-ness**.",
+     "explanation_cz": "**happy** → **happiness**: y → i, pak **-ness**."
+    },
+    {
+     "en": "She did it easily.",
+     "wrong": "She did it easyly.",
+     "accepts": [
+      "She did it easily."
+     ],
+     "explanation": "**easy** → **easily**: y → i, then **-ly**.",
+     "explanation_cz": "**easy** → **easily**: y → i, pak **-ly**."
+    },
+    {
+     "en": "It is useless to talk. He does not listen.",
+     "wrong": "It is useful to talk. He does not listen.",
+     "accepts": [
+      "It is useless to talk. He does not listen.",
+      "It's useless to talk. He does not listen.",
+      "It is useless to talk. He doesn't listen.",
+      "It's useless to talk. He doesn't listen."
+     ],
+     "explanation": "He never listens, so arguing has no use: **useless**.",
+     "explanation_cz": "Nikdy neposlouchá, takže hádka k ničemu: **useless**."
+    },
+    {
+     "en": "She wants to be an actor.",
+     "wrong": "She wants to be an acting.",
+     "accepts": [
+      "She wants to be an actor.",
+      "She wants to be an actress."
+     ],
+     "explanation": "A person: **actor** / **actress**, not **acting**.",
+     "explanation_cz": "Osoba: **actor** / **actress**, ne **acting**."
+    },
+    {
+     "en": "She is very helpful at work.",
+     "wrong": "She is very helper at work.",
+     "accepts": [
+      "She is very helpful at work.",
+      "She's very helpful at work."
+     ],
+     "explanation": "**Very** + adjective: **helpful**, not the person-word **helper**.",
+     "explanation_cz": "**Very** + přídavné jméno: **helpful**, ne osoba **helper**."
+    },
+    {
+     "en": "She is our new manager.",
+     "wrong": "She is our new management.",
+     "accepts": [
+      "She is our new manager.",
+      "She's our new manager."
+     ],
+     "explanation": "**She** is a person: **manager**, not **management**.",
+     "explanation_cz": "**She** je osoba: **manager**, ne **management**."
+    },
+    {
+     "en": "Thank you for your kindness.",
+     "wrong": "Thank you for your kind.",
+     "accepts": [
+      "Thank you for your kindness."
+     ],
+     "explanation": "**Your** + a noun: **kindness**, not **kind**.",
+     "explanation_cz": "**Your** + podstatné jméno: **kindness**, ne **kind**."
+    },
+    {
+     "en": "He is a cook in a hotel.",
+     "wrong": "He is a cooker in a hotel.",
+     "accepts": [
+      "He is a cook in a hotel.",
+      "He's a cook in a hotel.",
+      "He is a cook at a hotel.",
+      "He's a cook at a hotel."
+     ],
+     "explanation": "A **cook** is a person. A **cooker** is a machine.",
+     "explanation_cz": "**Cook** je osoba. **Cooker** je sporák."
+    }
+   ]
+  }
+ ]
 }
