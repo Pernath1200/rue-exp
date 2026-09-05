@@ -71,6 +71,54 @@ Blocks below moved to **Answered** with what was applied. Three entries stay ope
 **Default if unanswered:** b — the off-limits rule is yours and this is the only A1/A2 hit the check found.
 → (James: your answer here)
 
+### The handoff's top priority · "96 words with no Quiz item and no Type item" is not what is there
+**Q:** `HANDOFF-HOME-B1.md` names three leaves — `b1_collocations`, `b1_word_families`, `b1_core_frames` — as *"96 words across three leaves have no Quiz item and no Type item at all"*, and says to author their sentence banks before anything else. Read against `js/practice-vocab.js` that does not hold. `quizList()` falls through to `wordItems` when there is no `sentences[]` and no `quiz_axis: sentence`, and `typeSourceList()` falls through to `matchList()` — both are `block.items`. All 96 items already have a Quiz item and a Type item. The three are also not one class: `b1_collocations` and `b1_core_frames` are `practice: frames` packs whose items **are** full sentences (*"I need to make a decision."*), which is what the engine's own comment means by *"Trunk frames use block.items"*; and `b1_word_families` was **rebuilt on 2026-09-04** by the B1 loop, its own note recording that the old pair-string items made it unplayable, so its bare-word items are B7 by design with a `rewrite` Use bank on top. Authoring 96 sentences would have been the busywork you objected to, on packs that work.
+**Options:** a) the correction stands — nothing to author, and the handoff's priority section is wrong / b) you still want sentence banks on one or more of them for a reason the engine cannot show me / c) `b1_word_families` specifically should drill in sentences like the other 21 B1 leaves, its 2026-09-04 rebuild notwithstanding.
+**Default if unanswered:** a — nothing authored this run, and this entry is the record. The one real fault the check turned up is the next entry. If you want (c) it is 36 sentences and a `quiz_mode` flip, and worth saying so before anyone starts.
+→ (James: your answer here)
+
+### b1_core_frames · Use was a second run of Type — cut, or give it a Use bank?
+**Q:** It is `practice: frames` with no `use_sentences`, so `getSentenceItems()` falls through to `block.items` — the same 24 prompts Type has just served. Use and Type are the same task twice. You ruled on the identical shape smoking `a1_core_frames_social` on 2026-08-20: *"the Use is the same as the type in — let's just cut it and give the fruit after type in"*, and that pack carries `"ladder": {"sentence": false}` — the only pack in the corpus that does.
+**Options:** a) apply your ruling — `ladder.sentence: false`, the stage drops, fruit lands after Type / b) author a 12-sentence `rewrite` Use bank, which is what its sibling `b1_collocations` has and what E10 asks for above A2 / c) leave Use replaying Type.
+**Default if unanswered:** a — **done this run**, one line, and the reason is in the pack note. (b) is the better unit and about an hour's authoring, but it adds a stage you have already cut once on the same shape, so it is your call, not the lane's. Reverting to (c) is deleting three lines.
+→ (James: your answer here)
+
+### B3 · 59 gap items across three packs have no authored chips, and the fallback is not covering for them
+**Q:** `b1_phrasal_verbs` (23 of 36), `b1_prefixes` (24 of 36) and `b1_suffixes` (12 of 24) leave `quiz_options` to the engine. The handoff said to sample what the fallback produces before deciding. It was run against the real items (`js/pack-adapt.js` `choicesFor`), and it is not adequate — on all three packs the student can solve the item by elimination without knowing the point:
+
+```
+b1_phrasal_verbs  Please turn ____ the TV. (start)
+                  answer "on"     chips  on · start · will start · starts
+                  Don't give ____. (quit)
+                  answer "up"     chips  up · quit · will quit · quits
+b1_prefixes       My glasses always ____ just when I need them.
+                  answer "disappear"   chips  disappear · overslept · rewrite · misunderstood
+                  Don't be so ____ — the bus will come in a minute.
+                  answer "impatient"   chips  impatient · overslept · rewrite · misunderstood
+b1_suffixes       We need more ____ before we decide.
+                  answer "information" chips  information · teacher · improvement · carefully
+```
+
+On `b1_phrasal_verbs` the fallback reads the meaning cue `(start)` as a verb lemma and offers its forms against a gap whose answer is a **particle** — *"Please turn start the TV"* is not English, so three of the four chips are unpickable. On the other two, the same three sibling words (*overslept / rewrite / misunderstood*, *teacher / improvement / carefully*) are offered on twenty-odd items each, and none of them fits its frame. This is the fault you named on `a2_quantifiers` on 2026-08-26 — *the item fell to elimination with no knowledge*.
+**Options:** a) author the 59 chip sets — real work, roughly a sitting per pack, and the only fix that makes the items test anything / b) fix the fallback instead: teach `cuedLemma` to stand down when the answer is a particle, and make sibling distractors frame-compatible — cheaper, helps every pack, but it is engine code and will not produce good prefix distractors on its own / c) leave it; these three are word-formation packs and Quiz is not where they are learned.
+**Default if unanswered:** (a) on `b1_phrasal_verbs` first, and **not started unattended** — the handoff is explicit that 59 sets of chips is a real job and yours to green-light. Nothing was touched. If you want a cheap partial today, (b)'s first half is about ten lines and kills the worst class, the verb-forms-against-a-particle one.
+→ (James: your answer here)
+
+### b1_be_used_to item 9 · the one B25 kept after you pulled the check
+**Q:** You pulled B25 as 28-of-29 false. One of the 29 meets the test your own commit states — *"only a cue whose chips are distortions of itself is the fault"*: item 9 was `I'm not used to ____. (cold weather)` with chips *cold weather · cold weathering · be cold weather · have cold weather*, which are invented shapes rather than errors anyone makes. It is also the shape `AUTHORING-RULES.md` records you smoking in this very pack — *(the noise)* "not a good question", *(English food)* "dud question, tests nothing". Re-gapped onto the form: `I'm not ____ cold weather. (use)` → *used to*, chips *used to · use to · used · used on*, and `type: false` dropped because the gap tests a form again.
+**Options:** a) keep it / b) revert — B25 is pulled and you want none of it touched.
+**Default if unanswered:** a — kept. One item, and the revert is one commit. Flagged here rather than buried because it is the only place this run went against a check you had just switched off.
+→ (James: your answer here)
+
+### Three findings left on played B1 units that look like false positives
+**Q:** After the audit, `check_rules` leaves 13 live findings. Three are on units you have played and each looks like the check being wrong rather than the pack:
+- `b1_modals_speculation` **C19** — your narrowing skips a card that says *Czech* and a table whose first column is mostly Czech. This hit is neither: it is a prose line, *"Czech often uses možná / určitě / nemůže"*, sitting in a column with an empty header, so the check reads the word *možná* as stray L1.
+- `b1_core_frames` **C56** — a vocab intro that opens on a diagram with no picture board. Its note records that as deliberate: *"text/schematic intro added 2026-08-10 (cloud lane C · abstract set → schematic, no emoji)"*. An abstract set has nothing to draw.
+- `b1_phrasal_verbs` **C46** — *Phrasal verbs* has a sequel so C46 wants *Phrasal verbs 1*. True by the rule, but it renames a unit in front of students.
+**Options:** a) narrow C19 again for a headerless column, mark C56 `exempt` on packs whose note declares a schematic intro, and rename the phrasal verbs pack / b) leave all three and let the count sit at 13 / c) take them one at a time as you next play each unit.
+**Default if unanswered:** b — nothing done. Two of the three would mean editing checks you have just spent an afternoon narrowing, and the third renames a unit; none is worth a move without you. They are named here so the 13 is not read as debt.
+→ (James: your answer here)
+
 ---
 
 ## Answered
