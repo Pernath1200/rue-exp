@@ -5,7 +5,7 @@
  "tree_node": "leaf_confusables_b1",
  "codex_unit": "V_WFM-B1B2-01",
  "quality": "draft",
- "note": "English pairs that Czech collapses into one verb: lend/borrow (půjčit), bring/take, remember/remind, look/watch/see, hear/listen. The direction of the action is the whole point. First draft 2026-09-02. · 2026-09-04 B1 loop: **learn was tiled twice** — *learn (get)* against teach in block 1 and *learn (the result)* against study in block 3, so one word had two tiles and two Czech glosses. Block 3 now pairs **study / practise**. · C52, which the draft's own note flagged as the doubt: each block gains a **contrast table page** — every pair side by side with the direction spelled out (*lend = you give it* / *borrow = you take it*), sitting right after that block's picture board. Eighteen separate pages, one per pair, would be unplayable; three tables put the same contrast on screen. · sentences 8 → 36, one gappable frame per lemma. Three of the eight shipped frames used a past form (*borrowed*, *watched*, *heard*) and produced no gap. E10: Use is use_mode rewrite, 12 items, and on this pack the paraphrase is the trap itself: *take* → borrow, *give me* → lend, *see* → watch, *hear* → listen to, *home* → house. · Pool-checked against everything taught before leaf_confusables_b1 — 0 unknown types. · 2026-09-04: five rewrite items re-cut so replacing the underline reconstructs the answer.",
+ "note": "English pairs that Czech collapses into one verb: lend/borrow (půjčit), bring/take, remember/remind, look/watch/see, hear/listen. The direction of the action is the whole point. First draft 2026-09-02. · 2026-09-04 B1 loop: **learn was tiled twice** — *learn (get)* against teach in block 1 and *learn (the result)* against study in block 3, so one word had two tiles and two Czech glosses. Block 3 now pairs **study / practise**. · C52, which the draft's own note flagged as the doubt: each block gains a **contrast table page** — every pair side by side with the direction spelled out (*lend = you give it* / *borrow = you take it*), sitting right after that block's picture board. Eighteen separate pages, one per pair, would be unplayable; three tables put the same contrast on screen. · sentences 8 → 36, one gappable frame per lemma. Three of the eight shipped frames used a past form (*borrowed*, *watched*, *heard*) and produced no gap. E10: Use is use_mode rewrite, 12 items, and on this pack the paraphrase is the trap itself: *take* → borrow, *give me* → lend, *see* → watch, *hear* → listen to, *home* → house. · Pool-checked against everything taught before leaf_confusables_b1 — 0 unknown types. · 2026-09-04: five rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 20 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. A confusable pair is taught by a minimal sentence, which is the shape the check catches. All 20 rewritten to make one clause move and carry two or more already-taught words, while keeping each sentence a context where only one of the pair fits — that is the whole point of the leaf, so no rewrite was allowed to make the cousin acceptable too. 0/36 fail now. `bridge` was drafted onto the see item and is untaught before slot 53.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -613,13 +613,13 @@
    ]
   },
   {
-   "en": "I want to borrow this book from the library for a week.",
-   "cz": "Chci si tu knihu půjčit z knihovny na týden.",
+   "en": "I want to borrow this book from the library although I already have two at home.",
+   "cz": "Chci si tuhle knihu půjčit z knihovny, i když už doma dvě mám.",
    "lemmas": [
     "borrow (take)"
    ],
    "accepts": [
-    "I want to borrow this book from the library for a week"
+    "I want to borrow this book from the library although I already have two at home"
    ]
   },
   {
@@ -633,24 +633,23 @@
    ]
   },
   {
-   "en": "Take these keys to your brother on your way home.",
-   "cz": "Vezmi tyhle klíče bratrovi cestou domů.",
+   "en": "Take these keys to your brother when you go past his flat.",
+   "cz": "Vezmi tyhle klíče bratrovi, až půjdeš kolem jeho bytu.",
    "lemmas": [
     "take (there)"
    ],
    "accepts": [
-    "Take these keys to your brother on your way home"
+    "Take these keys to your brother when you go past his flat"
    ]
   },
   {
-   "en": "She will teach my son to swim in the summer.",
-   "cz": "V létě naučí mého syna plavat.",
+   "en": "She will teach my son to swim although he is afraid of water.",
+   "cz": "Naučí mého syna plavat, i když se bojí vody.",
    "lemmas": [
     "teach (give)"
    ],
    "accepts": [
-    "She will teach my son to swim in the summer",
-    "She'll teach my son to swim in the summer"
+    "She will teach my son to swim although he is afraid of water"
    ]
   },
   {
@@ -685,34 +684,33 @@
    ]
   },
   {
-   "en": "Do not say anything to the boss before Monday.",
-   "cz": "Do pondělí šéfovi nic neříkej.",
+   "en": "Do not say anything to the boss before the meeting on Monday.",
+   "cz": "Před pondělní schůzkou šéfovi nic neříkej.",
    "lemmas": [
     "say (words)"
    ],
    "accepts": [
-    "Do not say anything to the boss before Monday",
-    "Don't say anything to the boss before Monday"
+    "Do not say anything to the boss before the meeting on Monday"
    ]
   },
   {
-   "en": "Please tell your sister about the change of plan.",
-   "cz": "Řekni prosím sestře o změně plánu.",
+   "en": "Please tell your sister about the change of plan before she books the train.",
+   "cz": "Řekni prosím sestře o změně plánu, než si koupí lístek na vlak.",
    "lemmas": [
     "tell (a person)"
    ],
    "accepts": [
-    "Please tell your sister about the change of plan"
+    "Please tell your sister about the change of plan before she books the train"
    ]
   },
   {
-   "en": "Prices always rise before the winter.",
-   "cz": "Ceny před zimou vždycky stoupají.",
+   "en": "Prices always rise before the winter because everybody buys at once.",
+   "cz": "Ceny vždycky stoupají před zimou, protože všichni nakupují najednou.",
    "lemmas": [
     "rise (go up)"
    ],
    "accepts": [
-    "Prices always rise before the winter"
+    "Prices always rise before the winter because everybody buys at once"
    ]
   },
   {
@@ -727,13 +725,13 @@
    ]
   },
   {
-   "en": "From the window you can see the river.",
-   "cz": "Z okna je vidět řeka.",
+   "en": "From the window you can see the river, but not the old church.",
+   "cz": "Z okna je vidět řeka, ale ne ten starý kostel.",
    "lemmas": [
     "see (it happens)"
    ],
    "accepts": [
-    "From the window you can see the river"
+    "From the window you can see the river, but not the old church"
    ]
   },
   {
@@ -757,13 +755,13 @@
    ]
   },
   {
-   "en": "I hear a noise in the garden every night.",
-   "cz": "Každou noc slyším na zahradě nějaký zvuk.",
+   "en": "I hear a noise in the garden every night although the dog is quiet.",
+   "cz": "Každou noc slyším na zahradě nějaký zvuk, i když je pes potichu.",
    "lemmas": [
     "hear (it happens)"
    ],
    "accepts": [
-    "I hear a noise in the garden every night"
+    "I hear a noise in the garden every night although the dog is quiet"
    ]
   },
   {
@@ -798,33 +796,33 @@
    ]
   },
   {
-   "en": "Did you notice the new shop next to the bank?",
-   "cz": "Všiml sis toho nového obchodu vedle banky?",
+   "en": "Did you notice the new shop next to the bank when you walked past?",
+   "cz": "Všiml sis toho nového obchodu vedle banky, když jsi šel kolem?",
    "lemmas": [
     "notice (spot)"
    ],
    "accepts": [
-    "Did you notice the new shop next to the bank?"
+    "Did you notice the new shop next to the bank when you walked past?"
    ]
   },
   {
-   "en": "I always find my keys in the last place I look.",
-   "cz": "Klíče vždycky najdu na posledním místě, kam se podívám.",
+   "en": "I always find my keys in the last place, although I start with the kitchen.",
+   "cz": "Klíče vždycky najdu na posledním místě, i když začínám v kuchyni.",
    "lemmas": [
     "find (the result)"
    ],
    "accepts": [
-    "I always find my keys in the last place I look"
+    "I always find my keys in the last place, although I start with the kitchen"
    ]
   },
   {
-   "en": "I look for a parking place for ten minutes every morning.",
-   "cz": "Každé ráno hledám deset minut místo k parkování.",
+   "en": "I look for a parking place for ten minutes every morning because the street is full.",
+   "cz": "Každé ráno hledám deset minut místo k parkování, protože je ulice plná.",
    "lemmas": [
     "look for (the search)"
    ],
    "accepts": [
-    "I look for a parking place for ten minutes every morning"
+    "I look for a parking place for ten minutes every morning because the street is full"
    ]
   },
   {
@@ -838,14 +836,13 @@
    ]
   },
   {
-   "en": "I cannot think of a better name for the shop.",
-   "cz": "Nenapadá mě lepší jméno pro ten obchod.",
+   "en": "I cannot think of a better name for the shop, although we tried all evening.",
+   "cz": "Nemůžu vymyslet lepší název pro ten obchod, i když jsme to zkoušeli celý večer.",
    "lemmas": [
     "think of"
    ],
    "accepts": [
-    "I cannot think of a better name for the shop",
-    "I can't think of a better name for the shop"
+    "I cannot think of a better name for the shop, although we tried all evening"
    ]
   },
   {
@@ -859,24 +856,23 @@
    ]
   },
   {
-   "en": "The trip to Vienna takes four hours by bus.",
-   "cz": "Výlet do Vídně trvá autobusem čtyři hodiny.",
+   "en": "The trip to Vienna takes four hours by bus, but the train is faster.",
+   "cz": "Cesta do Vídně trvá autobusem čtyři hodiny, ale vlak je rychlejší.",
    "lemmas": [
     "trip (one journey)"
    ],
    "accepts": [
-    "The trip to Vienna takes four hours by bus"
+    "The trip to Vienna takes four hours by bus, but the train is faster"
    ]
   },
   {
-   "en": "There is a lot of work in the office before Christmas.",
-   "cz": "Před Vánoci je v kanceláři spousta práce.",
+   "en": "There is a lot of work in the office before Christmas, but nobody wants to stay.",
+   "cz": "Před Vánoci je v kanceláři spousta práce, ale nikdo nechce zůstávat.",
    "lemmas": [
     "work (uncountable)"
    ],
    "accepts": [
-    "There is a lot of work in the office before Christmas",
-    "There's a lot of work in the office before Christmas"
+    "There is a lot of work in the office before Christmas, but nobody wants to stay"
    ]
   },
   {
@@ -891,13 +887,13 @@
    ]
   },
   {
-   "en": "After ten years in Prague, this city is my home.",
-   "cz": "Po deseti letech v Praze je tohle město můj domov.",
+   "en": "After ten years in Prague, this city is my home although my family lives in Brno.",
+   "cz": "Po deseti letech v Praze je tohle město můj domov, i když moje rodina žije v Brně.",
    "lemmas": [
     "home (where you belong)"
    ],
    "accepts": [
-    "After ten years in Prague, this city is my home"
+    "After ten years in Prague, this city is my home although my family lives in Brno"
    ]
   },
   {
@@ -921,53 +917,53 @@
    ]
   },
   {
-   "en": "We waited for two hours and nobody came.",
-   "cz": "Čekali jsme dvě hodiny a nikdo nepřišel.",
+   "en": "We waited for two hours, but nobody came to open the door.",
+   "cz": "Čekali jsme dvě hodiny, ale nikdo nepřišel otevřít.",
    "lemmas": [
     "for (how long)"
    ],
    "accepts": [
-    "We waited for two hours and nobody came"
+    "We waited for two hours, but nobody came to open the door"
    ]
   },
   {
-   "en": "The price of the flat went up again in June.",
-   "cz": "Cena toho bytu v červnu zase stoupla.",
+   "en": "The price of the flat went up again in June, although nobody wants to buy it.",
+   "cz": "Cena toho bytu v červnu zase stoupla, i když ho nikdo nechce koupit.",
    "lemmas": [
     "price (what it costs)"
    ],
    "accepts": [
-    "The price of the flat went up again in June"
+    "The price of the flat went up again in June, although nobody wants to buy it"
    ]
   },
   {
-   "en": "The tickets cost more than we expected.",
-   "cz": "Ty lístky stály víc, než jsme čekali.",
+   "en": "The tickets cost more money than we expected, so we did not go.",
+   "cz": "Ty lístky stály víc peněz, než jsme čekali, takže jsme nešli.",
    "lemmas": [
     "cost (verb)"
    ],
    "accepts": [
-    "The tickets cost more than we expected"
+    "The tickets cost more money than we expected, so we did not go"
    ]
   },
   {
-   "en": "I study for two hours every evening.",
-   "cz": "Každý večer se učím dvě hodiny.",
+   "en": "I study for two hours every evening because the exam is in June.",
+   "cz": "Každý večer se učím dvě hodiny, protože zkouška je v červnu.",
    "lemmas": [
     "study (the activity)"
    ],
    "accepts": [
-    "I study for two hours every evening"
+    "I study for two hours every evening because the exam is in June"
    ]
   },
   {
-   "en": "You have to practise every day to play well.",
-   "cz": "Abys hrál dobře, musíš cvičit každý den.",
+   "en": "You have to practise every day if you want to play well.",
+   "cz": "Musíš cvičit každý den, jestli chceš hrát dobře.",
    "lemmas": [
     "practise (repeat to improve)"
    ],
    "accepts": [
-    "You have to practise every day to play well"
+    "You have to practise every day if you want to play well"
    ]
   }
  ],
