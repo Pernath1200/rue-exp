@@ -5,7 +5,7 @@
  "tree_node": "leaf_personality_b1",
  "codex_unit": "V_THM-A1B1-12",
  "quality": "draft",
- "note": "Above leaf_personality_a2 (kind, honest, rude, serious). The adjectives an adult uses about colleagues and friends. Not feelings-now — that is leaf_feelings_b1. First draft 2026-09-02. · 2026-09-04 B1 loop: the draft's word list was 24/36 REVIEW — twelve tiles were leaf_personality_a2's own words (reliable, generous, clever, calm, ambitious, selfish, lazy, shy, cheerful, serious, creative, curious) and twelve more were taught elsewhere earlier (patient, confident, understanding, mean, nervous, quiet, funny, fair, and four that leaf_self_b1 owns). Only twelve words were new. F7/F8: the recycled ones moved to a **You already know** review board (intro page 1) and the Match list was refilled with 24 character adjectives that are new at this position. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · The frames page carried generic noun frames (I have a … / I need a …) on a pack of adjectives; they are adjective frames now, and the false-friend note moved from *sympathetic* (leaf_false_friends_b1 owns it, F2) to *sensible*, which is a tile here. · Pool-checked against everything taught before leaf_personality_b1 — 0 unknown types. · 2026-09-04: all twelve rewrite items marked a correct answer wrong — every one was an adjective whose `be` the swap could not supply. The prompt now carries is/are/was and the underline covers only the paraphrase.",
+ "note": "Above leaf_personality_a2 (kind, honest, rude, serious). The adjectives an adult uses about colleagues and friends. Not feelings-now — that is leaf_feelings_b1. First draft 2026-09-02. · 2026-09-04 B1 loop: the draft's word list was 24/36 REVIEW — twelve tiles were leaf_personality_a2's own words (reliable, generous, clever, calm, ambitious, selfish, lazy, shy, cheerful, serious, creative, curious) and twelve more were taught elsewhere earlier (patient, confident, understanding, mean, nervous, quiet, funny, fair, and four that leaf_self_b1 owns). Only twelve words were new. F7/F8: the recycled ones moved to a **You already know** review board (intro page 1) and the Match list was refilled with 24 character adjectives that are new at this position. · sentences 8 → 36, one gappable frame per lemma. E10: Use is use_mode rewrite, 12 items. · The frames page carried generic noun frames (I have a … / I need a …) on a pack of adjectives; they are adjective frames now, and the false-friend note moved from *sympathetic* (leaf_false_friends_b1 owns it, F2) to *sensible*, which is a tile here. · Pool-checked against everything taught before leaf_personality_b1 — 0 unknown types. · 2026-09-04: all twelve rewrite items marked a correct answer wrong — every one was an adjective whose `be` the swap could not supply. The prompt now carries is/are/was and the underline covers only the paraphrase. · 2026-09-05 B1 loop: sentence texture. 15 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py. All 15 rewritten to make one clause move and carry two or more already-taught words. This leaf is at path slot 20, seventeen slots before b1_linkers, so five drafts written with `although` had to come back to `but` — the ceiling written up in DECISIONS.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -608,23 +608,23 @@
    ]
   },
   {
-   "en": "My new boss is easy-going about the start of the day.",
-   "cz": "Můj nový šéf je pohodový, co se týče začátku dne.",
+   "en": "My new boss is easy-going about the start of the day, but not about the reports.",
+   "cz": "Můj nový šéf bere začátek dne na lehkou váhu, ale zprávy ne.",
    "lemmas": [
     "easy-going"
    ],
    "accepts": [
-    "My new boss is easy-going about the start of the day"
+    "My new boss is easy-going about the start of the day, but not about the reports"
    ]
   },
   {
-   "en": "Petr is practical, so he fixed the door in ten minutes.",
-   "cz": "Petr je praktický, takže ty dveře spravil za deset minut.",
+   "en": "Petr is practical, so he fixed the door before the guests arrived.",
+   "cz": "Petr je praktický, takže spravil dveře, než dorazili hosté.",
    "lemmas": [
     "practical"
    ],
    "accepts": [
-    "Petr is practical, so he fixed the door in ten minutes"
+    "Petr is practical, so he fixed the door before the guests arrived"
    ]
   },
   {
@@ -658,23 +658,23 @@
    ]
   },
   {
-   "en": "It was thoughtful of him to send flowers to the hospital.",
-   "cz": "Bylo od něj pozorné poslat do nemocnice květiny.",
+   "en": "It was thoughtful of him to send flowers, but he had never met her.",
+   "cz": "Bylo od něj pozorné poslat květiny, ale nikdy ji nepotkal.",
    "lemmas": [
     "thoughtful"
    ],
    "accepts": [
-    "It was thoughtful of him to send flowers to the hospital"
+    "It was thoughtful of him to send flowers, but he had never met her"
    ]
   },
   {
-   "en": "Please be considerate and turn the music down after ten.",
-   "cz": "Buď prosím ohleduplný a po desáté ztlum hudbu.",
+   "en": "Please be considerate and turn the music down because the neighbours work early.",
+   "cz": "Buď prosím ohleduplný a ztlum hudbu, protože sousedi chodí brzo do práce.",
    "lemmas": [
     "considerate"
    ],
    "accepts": [
-    "Please be considerate and turn the music down after ten"
+    "Please be considerate and turn the music down because the neighbours work early"
    ]
   },
   {
@@ -699,13 +699,13 @@
    ]
   },
   {
-   "en": "The company is flexible about the hours we work.",
-   "cz": "Firma je flexibilní, pokud jde o naši pracovní dobu.",
+   "en": "The company is flexible about the hours we work, but the deadline never moves.",
+   "cz": "Firma je ohledně naší pracovní doby flexibilní, ale termín se nikdy neposouvá.",
    "lemmas": [
     "flexible"
    ],
    "accepts": [
-    "The company is flexible about the hours we work"
+    "The company is flexible about the hours we work, but the deadline never moves"
    ]
   },
   {
@@ -731,35 +731,33 @@
    ]
   },
   {
-   "en": "He is bad-tempered before his first coffee.",
-   "cz": "Než si dá první kávu, je nabručený.",
+   "en": "He is bad-tempered before his first coffee, but the students never notice.",
+   "cz": "Před první kávou je nevrlý, ale studenti si toho nikdy nevšimnou.",
    "lemmas": [
     "bad-tempered"
    ],
    "accepts": [
-    "He is bad-tempered before his first coffee",
-    "He's bad-tempered before his first coffee"
+    "He is bad-tempered before his first coffee, but the students never notice"
    ]
   },
   {
-   "en": "Nobody wants a dishonest person in a bank.",
-   "cz": "Nikdo nechce v bance nepoctivého člověka.",
+   "en": "Nobody wants a dishonest person in a bank because the money is not his.",
+   "cz": "Nikdo nechce v bance nepoctivého člověka, protože ty peníze nejsou jeho.",
    "lemmas": [
     "dishonest"
    ],
    "accepts": [
-    "Nobody wants a dishonest person in a bank"
+    "Nobody wants a dishonest person in a bank because the money is not his"
    ]
   },
   {
-   "en": "The waiter was unfriendly, so we did not leave anything.",
-   "cz": "Číšník byl nepřátelský, takže jsme nic nenechali.",
+   "en": "The waiter was unfriendly, so we did not leave anything, but the food was good.",
+   "cz": "Číšník byl nepříjemný, takže jsme nic nenechali, ale jídlo bylo dobré.",
    "lemmas": [
     "unfriendly"
    ],
    "accepts": [
-    "The waiter was unfriendly, so we did not leave anything",
-    "The waiter was unfriendly, so we didn't leave anything"
+    "The waiter was unfriendly, so we did not leave anything, but the food was good"
    ]
   },
   {
@@ -784,23 +782,23 @@
    ]
   },
   {
-   "en": "One careless driver closed the road for two hours.",
-   "cz": "Jeden nedbalý řidič zavřel silnici na dvě hodiny.",
+   "en": "One careless driver closed the road for two hours when the snow started.",
+   "cz": "Jeden nepozorný řidič zavřel silnici na dvě hodiny, když začalo sněžit.",
    "lemmas": [
     "careless"
    ],
    "accepts": [
-    "One careless driver closed the road for two hours"
+    "One careless driver closed the road for two hours when the snow started"
    ]
   },
   {
-   "en": "My little sister is bossy, even with the older children.",
-   "cz": "Moje malá sestra je panovačná, i na starší děti.",
+   "en": "My little sister is bossy, but she is the youngest of the four children.",
+   "cz": "Moje malá sestra je panovačná, ale ze čtyř dětí je nejmladší.",
    "lemmas": [
     "bossy"
    ],
    "accepts": [
-    "My little sister is bossy, even with the older children"
+    "My little sister is bossy, but she is the youngest of the four children"
    ]
   },
   {
@@ -814,13 +812,13 @@
    ]
   },
   {
-   "en": "My son is fussy about food, so we cook two dinners.",
-   "cz": "Můj syn je vybíravý na jídlo, takže vaříme dvě večeře.",
+   "en": "My son is fussy about food, but he eats everything at his grandmother's.",
+   "cz": "Můj syn je na jídlo vybíravý, ale u babičky sní všechno.",
    "lemmas": [
     "fussy"
    ],
    "accepts": [
-    "My son is fussy about food, so we cook two dinners"
+    "My son is fussy about food, but he eats everything at his grandmother's"
    ]
   },
   {
@@ -834,24 +832,23 @@
    ]
   },
   {
-   "en": "She is pessimistic about the weather for the weekend.",
-   "cz": "Ohledně víkendového počasí je pesimistická.",
+   "en": "She is pessimistic about the weather, but the sun came out on Saturday.",
+   "cz": "Ohledně počasí je pesimistická, ale v sobotu vysvitlo slunce.",
    "lemmas": [
     "pessimistic"
    ],
    "accepts": [
-    "She is pessimistic about the weather for the weekend",
-    "She's pessimistic about the weather for the weekend"
+    "She is pessimistic about the weather, but the sun came out on Saturday"
    ]
   },
   {
-   "en": "My cousin is adventurous and travels on her own every summer.",
-   "cz": "Moje sestřenice je dobrodružná a každé léto cestuje sama.",
+   "en": "My cousin is adventurous and travels on her own, but her parents do not like it.",
+   "cz": "Moje sestřenice je dobrodružná a cestuje sama, ale rodičům se to nelíbí.",
    "lemmas": [
     "adventurous"
    ],
    "accepts": [
-    "My cousin is adventurous and travels on her own every summer"
+    "My cousin is adventurous and travels on her own, but her parents do not like it"
    ]
   },
   {
@@ -887,13 +884,13 @@
    ]
   },
   {
-   "en": "My grandmother is energetic for a woman of eighty.",
-   "cz": "Na osmdesátiletou ženu je moje babička energická.",
+   "en": "My grandmother is energetic for a woman who is eighty years old.",
+   "cz": "Moje babička je na ženu, které je osmdesát let, plná energie.",
    "lemmas": [
     "energetic"
    ],
    "accepts": [
-    "My grandmother is energetic for a woman of eighty"
+    "My grandmother is energetic for a woman who is eighty years old"
    ]
   },
   {
@@ -907,14 +904,13 @@
    ]
   },
   {
-   "en": "Be realistic: we cannot finish this before Friday.",
-   "cz": "Buď realistický: do pátku to nestihneme.",
+   "en": "Be realistic, because we cannot finish this before Friday.",
+   "cz": "Buď realista, protože tohle do pátku nedokončíme.",
    "lemmas": [
     "realistic"
    ],
    "accepts": [
-    "Be realistic: we cannot finish this before Friday",
-    "Be realistic: we can't finish this before Friday"
+    "Be realistic, because we cannot finish this before Friday"
    ]
   },
   {
