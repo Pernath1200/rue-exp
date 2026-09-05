@@ -5,7 +5,7 @@
  "tree_node": "b1_indirect_questions",
  "codex_unit": "G_SS-B1B2-01",
  "practice": "frames",
- "note": "Embedded statement order after tell me / know / wonder. · Bank 8 · order-zone gaps 2026-07-26 · Match off 2026-07-26 · dressed 8→24 items 2026-08-16 (Patrik: \"ask him when is he\") · 2026-08-19: item 17 duplicated item 2 ('how much it costs') — replaced · 2026-09-04 B1 loop: D1 — two explanations covered 20 of 24 items; each now quotes the direct question it came from and says whether the fault would be do-support or inversion. A2 two items whose Czech named no subject now name one (your brother, your sister). A4 eight Czech prompts gained the demonstrative that licenses their `the`. A8 twin closed on the would-like item.",
+ "note": "Embedded statement order after tell me / know / wonder. · Bank 8 · order-zone gaps 2026-07-26 · Match off 2026-07-26 · dressed 8→24 items 2026-08-16 (Patrik: \"ask him when is he\") · 2026-08-19: item 17 duplicated item 2 ('how much it costs') — replaced · 2026-09-04 B1 loop: D1 — two explanations covered 20 of 24 items; each now quotes the direct question it came from and says whether the fault would be do-support or inversion. A2 two items whose Czech named no subject now name one (your brother, your sister). A4 eight Czech prompts gained the demonstrative that licenses their `the`. A8 twin closed on the would-like item. · 2026-09-05 B1 loop: 24 -> 30 items. I7 — the previous run renamed two subjects (he -> your brother / your sister) and left the old strings in `gap_accepts` and in `wrong`; since `wrong` is the Use prompt, a student who correctly repaired *where does he work* was graded against *your brother works* and marked wrong. Both closed. B8 — item 12 still hid `if` inside the gap, which is the exact flag from the 2026-08-30 smoke ('question should have if in it'); `if` is now on the stem. E9 — item 18 (*who is responsible*) had no `wrong`, and a subject-*who* question has no inversion to undo, so it is `use: false` rather than carrying an invented error. Intro 8 -> 6 cards: C20 cut the Practice focus card (it described the drill, not the language); C32/C27 merged the two one-row CZ trap cards into one Common mistakes table with `~~strike~~` rows, so the errors look like errors instead of carrying a ✗; the Form card stopped restating card 1's own row and now shows the three slots. The six new items add the modal-inversion error (*where can I buy*), which is now a row on that card, and three more past-tense *did* items — the bank had only three. The 3 F3 CANDIDATEs are the *wonder* items and stand: lint's `taught` set is prior-path packs plus this pack's own gap_answers, and *wonder* is a frame verb that never lands in a gap.",
  "default_direction": "cz_to_en",
  "use_mode": "correct",
  "check": {
@@ -220,11 +220,11 @@
       "Can you tell me where your brother works?"
      ],
      "gap_accepts": [
-      "he works"
+      "your brother works"
      ],
      "explanation": "The direct question is *does your brother work?* — inside this sentence the **does** disappears and the verb carries the tense: **your brother works**. Can you tell me where your brother works?",
      "explanation_cz": "Přímá otázka zní *does your brother work?* — uvnitř této věty **does** mizí a čas nese sloveso: **your brother works**. Can you tell me where your brother works?",
-     "wrong": "Can you tell me where does he work?"
+     "wrong": "Can you tell me where does your brother work?"
     },
     {
      "en": "Ask him when he is coming.",
@@ -277,20 +277,20 @@
     {
      "en": "Do you know if the shop is open?",
      "cz": "Víš, jestli je ten obchod otevřený?",
-     "gap": "Do you know ____ open? (shop)",
-     "gap_answer": "if the shop is",
+     "gap": "Do you know if ____ open? (shop / be)",
+     "gap_answer": "the shop is",
      "quiz_options": [
-      "if the shop is",
-      "if is the shop"
+      "the shop is",
+      "is the shop"
      ],
      "accepts": [
       "Do you know if the shop is open?"
      ],
      "gap_accepts": [
-      "if the shop is"
+      "the shop is"
      ],
-     "explanation": "**if the shop is** is statement order — subject, then verb. *if is the shop* is direct-question order, which an indirect question never takes. Do you know if the shop is open?",
-     "explanation_cz": "**if the shop is** je pořádek oznamovací věty — podmět, pak sloveso. *if is the shop* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. Do you know if the shop is open?",
+     "explanation": "**the shop is** is statement order — subject, then verb. *is the shop* is direct-question order, which an indirect question never takes. Do you know if the shop is open?",
+     "explanation_cz": "**the shop is** je pořádek oznamovací věty — podmět, pak sloveso. *is the shop* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. Do you know if the shop is open?",
      "wrong": "Do you know if is the shop open?"
     },
     {
@@ -413,7 +413,8 @@
       "who is"
      ],
      "explanation": "**who is** is statement order — subject, then verb. *is who* is direct-question order, which an indirect question never takes. I would like to know who is responsible.",
-     "explanation_cz": "**who is** je pořádek oznamovací věty — podmět, pak sloveso. *is who* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. I would like to know who is responsible."
+     "explanation_cz": "**who is** je pořádek oznamovací věty — podmět, pak sloveso. *is who* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. I would like to know who is responsible.",
+     "use": false
     },
     {
      "en": "Do you know what your sister wants?",
@@ -429,11 +430,11 @@
       "Do you know what your sister wants?"
      ],
      "gap_accepts": [
-      "he wants"
+      "your sister wants"
      ],
      "explanation": "The direct question is *does your sister want?* — inside this sentence the **does** disappears and the verb carries the tense: **your sister wants**. Do you know what your sister wants?",
      "explanation_cz": "Přímá otázka zní *does your sister want?* — uvnitř této věty **does** mizí a čas nese sloveso: **your sister wants**. Do you know what your sister wants?",
-     "wrong": "Do you know what does he want?"
+     "wrong": "Do you know what does your sister want?"
     },
     {
      "en": "Ask her where she put the keys.",
@@ -515,6 +516,125 @@
      "explanation": "**the plan is** is statement order — subject, then verb. *is the plan* is direct-question order, which an indirect question never takes. No one knows what the plan is.",
      "explanation_cz": "**the plan is** je pořádek oznamovací věty — podmět, pak sloveso. *is the plan* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. No one knows what the plan is.",
      "wrong": "No one knows what is the plan."
+    },
+    {
+     "en": "Can you tell me where I can buy a ticket?",
+     "cz": "Můžeš mi říct, kde si můžu koupit lístek?",
+     "gap": "Can you tell me where ____ buy a ticket? (I / can)",
+     "gap_answer": "I can",
+     "gap_accepts": [
+      "I can"
+     ],
+     "quiz_options": [
+      "I can",
+      "can I"
+     ],
+     "accepts": [
+      "Can you tell me where I can buy a ticket?"
+     ],
+     "wrong": "Can you tell me where can I buy a ticket?",
+     "explanation": "**I can** is statement order — subject, then verb. *can I* is direct-question order, which an indirect question never takes. Can you tell me where I can buy a ticket?",
+     "explanation_cz": "**I can** je pořádek oznamovací věty — podmět, pak sloveso. *can I* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. Can you tell me where I can buy a ticket?"
+    },
+    {
+     "en": "Do you know why the bus is late?",
+     "cz": "Víš, proč má ten autobus zpoždění?",
+     "gap": "Do you know why ____ late? (bus / be)",
+     "gap_answer": "the bus is",
+     "gap_accepts": [
+      "the bus is"
+     ],
+     "quiz_options": [
+      "the bus is",
+      "is the bus"
+     ],
+     "accepts": [
+      "Do you know why the bus is late?"
+     ],
+     "wrong": "Do you know why is the bus late?",
+     "explanation": "**the bus is** is statement order — subject, then verb. *is the bus* is direct-question order, which an indirect question never takes. Do you know why the bus is late?",
+     "explanation_cz": "**the bus is** je pořádek oznamovací věty — podmět, pak sloveso. *is the bus* je pořádek přímé otázky, který nepřímá otázka nikdy nemá. Do you know why the bus is late?"
+    },
+    {
+     "en": "Ask her how much the room costs.",
+     "cz": "Zeptej se jí, kolik ten pokoj stojí.",
+     "gap": "Ask her how much ____. (room / cost)",
+     "gap_answer": "the room costs",
+     "gap_accepts": [
+      "the room costs"
+     ],
+     "quiz_options": [
+      "the room costs",
+      "does the room cost",
+      "the room cost"
+     ],
+     "accepts": [
+      "Ask her how much the room costs."
+     ],
+     "wrong": "Ask her how much does the room cost.",
+     "explanation": "The direct question is *does the room cost?* — inside this sentence the **does** disappears and the verb carries the tense: **the room costs**. Ask her how much the room costs.",
+     "explanation_cz": "Přímá otázka zní *does the room cost?* — uvnitř této věty **does** mizí a čas nese sloveso: **the room costs**. Ask her how much the room costs."
+    },
+    {
+     "en": "I am not sure where he left the keys.",
+     "cz": "Nejsem si jistý, kde nechal ty klíče.",
+     "gap": "I am not sure where ____ the keys. (he / leave)",
+     "gap_answer": "he left",
+     "gap_accepts": [
+      "he left"
+     ],
+     "quiz_options": [
+      "he left",
+      "did he leave",
+      "he leave"
+     ],
+     "accepts": [
+      "I am not sure where he left the keys.",
+      "I'm not sure where he left the keys."
+     ],
+     "wrong": "I am not sure where did he leave the keys.",
+     "explanation": "The direct question is *did he leave?* — inside this sentence the **did** disappears and the verb carries the tense: **he left**. I am not sure where he left the keys.",
+     "explanation_cz": "Přímá otázka zní *did he leave?* — uvnitř této věty **did** mizí a čas nese sloveso: **he left**. I am not sure where he left the keys."
+    },
+    {
+     "en": "Do you know what she said?",
+     "cz": "Víš, co řekla?",
+     "gap": "Do you know what ____? (she / say)",
+     "gap_answer": "she said",
+     "gap_accepts": [
+      "she said"
+     ],
+     "quiz_options": [
+      "she said",
+      "did she say",
+      "she say"
+     ],
+     "accepts": [
+      "Do you know what she said?"
+     ],
+     "wrong": "Do you know what did she say?",
+     "explanation": "The direct question is *did she say?* — inside this sentence the **did** disappears and the verb carries the tense: **she said**. Do you know what she said?",
+     "explanation_cz": "Přímá otázka zní *did she say?* — uvnitř této věty **did** mizí a čas nese sloveso: **she said**. Do you know what she said?"
+    },
+    {
+     "en": "Do you have any idea when the shop opens?",
+     "cz": "Máš tušení, kdy ten obchod otevírá?",
+     "gap": "Do you have any idea when ____? (shop / open)",
+     "gap_answer": "the shop opens",
+     "gap_accepts": [
+      "the shop opens"
+     ],
+     "quiz_options": [
+      "the shop opens",
+      "does the shop open",
+      "the shop open"
+     ],
+     "accepts": [
+      "Do you have any idea when the shop opens?"
+     ],
+     "wrong": "Do you have any idea when does the shop open?",
+     "explanation": "The direct question is *does the shop open?* — inside this sentence the **does** disappears and the verb carries the tense: **the shop opens**. Do you have any idea when the shop opens?",
+     "explanation_cz": "Přímá otázka zní *does the shop open?* — uvnitř této věty **does** mizí a čas nese sloveso: **the shop opens**. Do you have any idea when the shop opens?"
     }
    ]
   }
@@ -584,18 +704,31 @@
     "title_cz": "Tvar",
     "table": {
      "headers": [
-      "Direct",
-      "Inside the frame"
+      "Frame",
+      "Question word",
+      "Statement order"
      ],
      "rows": [
       [
-       "Where is the station?",
-       "where the station is"
+       "Can you tell me",
+       "where",
+       "the station **is**"
+      ],
+      [
+       "Do you know",
+       "what time",
+       "the train **leaves**"
+      ],
+      [
+       "I am not sure",
+       "if / whether",
+       "he **got** the email"
       ]
      ]
     },
     "points": [
-     "Frame + question word + statement order"
+     "Three slots, always in this order.",
+     "Nothing changes shape in the third slot."
     ]
    },
    {
@@ -638,54 +771,31 @@
     ]
    },
    {
-    "title": "CZ trap 1 — keeping question order",
-    "title_cz": "Česká past 1 — otázkové pořadí",
+    "title": "Common mistakes",
+    "title_cz": "Časté chyby",
     "table": {
      "headers": [
-      "",
-      ""
+      "Wrong",
+      "Right"
      ],
      "rows": [
       [
-       "Can you tell me where is the station? ✗",
-       "…where the station is. ✓"
-      ]
-     ]
-    }
-   },
-   {
-    "title": "CZ trap 2 — keeping do",
-    "title_cz": "Česká past 2 — nechané do",
-    "table": {
-     "headers": [
-      "",
-      ""
-     ],
-     "rows": [
+       "~~Can you tell me where is the station?~~",
+       "Can you tell me where the station **is**?"
+      ],
       [
-       "Can you tell me what time does the train leave? ✗",
-       "…what time the train leaves. ✓"
-      ]
-     ]
-    }
-   },
-   {
-    "title": "Practice focus",
-    "title_cz": "Nácvik",
-    "table": {
-     "headers": [
-      "Cue",
-      "You type"
-     ],
-     "rows": [
+       "~~Can you tell me what time does the train leave?~~",
+       "Can you tell me what time the train **leaves**?"
+      ],
       [
-       "where ____ (station)?",
-       "where the station is"
+       "~~Can you tell me where can I buy a ticket?~~",
+       "Can you tell me where **I can** buy a ticket?"
       ]
      ]
     },
     "points": [
-     "Type the inside part in statement order"
+     "Czech keeps question order inside; English does not.",
+     "The helper **do**, **does** or **did** never survives the move."
     ]
    }
   ]
