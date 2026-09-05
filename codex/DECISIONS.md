@@ -27,6 +27,18 @@ Blocks below moved to **Answered** with what was applied. Three entries stay ope
 
 ## Open
 
+### B27 · which other packs lean on the Czech to say "this is past"?
+**Q:** `b1_past_modals` needed 17 of 21 cues marked `/ past` — nothing in the English said the sentence was past. Is that unit-specific or a class? A sweep for past-form answers whose stem has no past anchor returns **171 items in 14 packs**, but most are noise: the conditional and wish packs (`b2_second_conditional` 40, `b1_wishes` 13, `b1_second_conditional` 8) use a past FORM for unreal time, not past time; `a2_used_to` / `b1_used_to` / `b1_be_used_to` (57 between them) carry the past in *used to* / *would* itself; the agreement and tag packs (15) are matching *was* / *were* to a subject, not choosing a tense. Nothing there needs a marker.
+**Options:** a) leave it at `b1_past_modals` and treat B27 as a rule to apply when a unit is next played / b) hand-check the two packs the sweep leaves standing — `b1_reported_speech` (9 items) and `b1_past_continuous_2` (8) — where the tense really is the choice / c) try to make the sweep precise enough to enforce.
+**Default if unanswered:** a. (c) is not worth it: the sweep cannot tell an unreal past from a past-time past without knowing what each unit teaches, which is the pack note's job, not a regex. (b) is a cheap 20-minute look if you want it before you play either unit.
+→ (James: your answer here)
+
+### b1_past_modals · the Use stage has the same hole, and the cue cannot reach it
+**Q:** The `/ past` markers fix Type and Quiz, where the bracket is on screen. Use shows only the wrong English sentence — no cue, no Czech — so *He mustn't work on Saturday.* and *My son must study all weekend.* are still real English sentences the student is asked to correct (E9). The tense there can only come from the sentence.
+**Options:** a) anchor those sentences — a one-word edit on most (*on Saturday* → *last Saturday*, *all weekend* → *all last weekend*), which changes `en` / `cz` / `accepts` / `wrong` on the affected items / b) show the Czech in fix-mode Use as a support line, the way Type already does / c) drop those items from Use (`use: false`) and let Quiz carry the meaning contrast.
+**Default if unanswered:** a when you next play the unit — it is the only fix that makes all three stages honest, and four items in the pack already do it. Not done now: your brief was accepts, cues and UI, and this rewrites sentences on a pack you have smoked three times. (b) is a one-line engine change but weakens Use everywhere else, which is the stage that exists precisely because you cannot check the Czech.
+→ (James: your answer here)
+
 ### lint.py · two cue checks are ready to land, and one of them lights up protected A2
 **Q:** B26 (negative answer, no negative in the cue) and B25 (the gap answer is the bracketed phrase copied out) are both cheap regex checks. Measured over all 240 packs: B26 hits **29 items in 7 packs** — `b1_question_tags` ×9 are false (a negative tag is the point, so tag packs need the same exemption A8's `TAG_AFTER` already has), `b1_reported_speech` ×3 are false (their cues say *negative* / *won't*), leaving 6 in `a2_used_to`, 7 in `a2_present_perfect`, 1 each in `a2_past_continuous` and `a2_will_going_to`, and 0 in B1 now that `b1_future`'s four are fixed. B25 hits **2 items**, one of which is `a2_have_to`. So landing either check turns protected A2 packs red.
 **Options:** a) land both as EXACT with the tag/cue guards, accept that A2 lights up, and leave those items alone as a recorded standing class / b) land them as CANDIDATE so they report without counting against the loop's gate 1 / c) do not land them; the rules stay prose in AUTHORING-RULES.
@@ -153,3 +165,36 @@ the interactive session did the same day.)*
 **Q:** F9 (2026-09-05) makes a vocab leaf name its predecessors in a `recaps` field; `check_rewrite.py` then enforces that the first page reviews those words before the unit teaches new ones. All 23 B1 leaves now carry it. `b2_delexical_collocations`, `b2_false_friends` and `b2_fixed_phrases` do not, and each reports one F9 finding.
 **Why it was not just done:** B2 is being drafted on `b2/auto` on the home machine, unattended. Editing those three packs here would collide with that run.
 **Default if unanswered:** the B2 run adds the field when it next touches each pack — `"recaps": [...]` naming the earlier packs the leaf builds on, `[]` where there is genuinely no predecessor. Until then `check_rewrite` carries three standing findings, which is honest: nothing is hidden, and no B1 work is blocked.
+
+### leaf_knowledge_b1 · the unit was two units in one coat
+**Flagged by James, 2026-09-05 smoke:** "wondering if the vocab in this unit is a bit too diffuse — customs, revision, diploma". 24 study words plus 11 border-and-planning travel words, while `leaf_travel_b1` sits four slots earlier and is already at the 36-word ceiling, so there was nowhere to merge them.
+→ **Applied (dropdown, four answers):**
+- **Park the travel eleven.** `codex/parked-travel-border-b1.json` holds them whole — tiles with icons, one sentence per lemma, the four Use rewrites and the "On the way" intro card — for a Travel 3 / At the border leaf whenever James wants one. No node invented.
+- **Keep the five abstractions** (beginner, expertise, talent, theory, proof): "they are what knowledge means".
+- **Drop the F7 duplicates.** `exam` (School 1, A1) is no longer a tile — it sits on the recap page and still carries three sentences as recycled vocabulary. `fare` (Transport, A2) left with the travel eleven.
+- **Numbered into the existing set.** James: "there should be a school/study set by now: this could be part 2 or 3 of the same set." School 1 · School 2 · School 3 → **School 4**. `label` changed in `tree.json` and `nodes-vocab.json`; the node id `leaf_knowledge_b1` and the filename are unchanged (J2).
+
+Now 23 words in two blocks of 12 and 11, one sentence per lemma, five intro cards, C49 clean. `js/tree-portrait.js` still calls the *branch* "Knowledge & travel" — that is the branch, not this unit, and other travel leaves hang there, so it was left alone.
+
+### Intro glosses · "uses complex word to define a simple word"
+**Flagged by James, 2026-09-05 smoke of `b1_past_modals`:** the Job column defined **had to** as *"you were obliged to do it"* — "bad pedagogy · use simpler words and give an example sentence". *obliged* is C1 in the Oxford 5000. The same card set also said *"not that it was forbidden"* (off-list), a card later.
+→ **Applied (dropdown, four answers):**
+- **The card** is now three columns — Form / Job / Example — with the job in A1 words and the form shown in a sentence on the same row.
+- **Swept every B1 grammar unit**, not only this one: 45 gloss rewrites across 21 packs (*governs* → decides, *stance* → how sure the speaker is, *neutral* → normal, *duration* → how long, *creeps in* → gets added, *retell* → say again, *slot* → part, *skip the doer* → leave out the doer, *plain verb* → verb (*go*, not *gone*)). Each judged one at a time; nothing batch-replaced.
+- **Four more meaning tables** got an Example column: `b1_modals_speculation` (the nine modals), `b1_prepositions_time_2`, `b1_suffixes`, plus the flagged one. `b1_second_conditional`'s Phrase column is already full sentences, so it needed nothing.
+- **`codex/check_gloss.py`** enforces both, ratcheted at **99** — every remaining finding is on a protected A1/A2 pack and marked as such. B1 grammar is clean. C6 moves `observed` → `enforced`; **C58** is new.
+
+The check reads levels from `codex/vocab/oxford-5k-cefr.csv` and irregular forms from the app's own `data/reference.json`, and drops five classes of false positive found by reading the output: the unit's own material, words inside emphasis (a quoted Czech word or the form being taught), affixes, grammar metalanguage, and cells that are whole example sentences. It is not a spell-check — it asks one question: is this word harder than the thing it explains.
+
+### b1_past_modals · could vs was able to, and the question that was no good
+**Flagged by James, 2026-09-05:** "difference between could and were able to is not clear (and often not really important, I think)" and, of Quiz item 1, "this question is no good".
+**What was actually wrong:** the contrast was never tested. All five *be able to* items cue `(be able)` in brackets, so the student is told which form to write. The only two items asking for a choice — *I ____ read when I was five. (can)* and *____ swim when you were a child? (you / can)* — both offered a second right answer, and the chip "Were you able" was ungrammatical against its own stem (*Were you able swim*).
+→ **Applied (dropdown, four answers):**
+- **Card 2 narrowed** to the one case that bites: could and was able to are the same for known ability and in every negative, and part company only for one thing done on one occasion. Three rows, examples drawn from the bank.
+- **Both choice items keep their place, with honest chips** — the right-but-broken option replaced by a clearly wrong form of the same word, keeping *Did you could* as the unit's own error (B4).
+- **couldn't accepted** on the two negatives whose frame allows it (item 2 prints *to* on the stem, so it cannot take couldn't), each with its uncontracted twin per A8, and the card now says both are right in negatives.
+- **Four of the seven identical *had to* affirmatives cut**: 25 → 21 items. Below the 24 floor in AGENT-LOOP, deliberately — no gate enforces it, the band is a floor for stubs, and this bank's problem was repetition, not thinness.
+
+**New rule B25** (`observed`): if a unit teaches a contrast, some item must make the student choose, and the bracket cue must not name the answer's own form. Cueing what the student converts *from* is fine — `(must)` → *had to* is the teaching point.
+
+Two lint flags my own edit introduced, both fixed before finishing: C4 (lint reads any bolded run of three or more words as an example sentence and asks the bank for it — the pack bolds **was able** to, two words, everywhere else) and A8 (the couldn't I added to accepts needed its *could not* twin).
