@@ -1,18 +1,675 @@
 {
   "id": "b2_reported_speech_advanced",
-  "title": "Reported speech advanced",
+  "title": "Reported speech 3",
   "level": "B2",
   "tree_node": "b2_reported_speech_advanced",
+  "codex_unit": "G_RPT-B1B2-01",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty shell. 30 items, inside the 24-40 band. Two predecessors already own the mechanics and neither is repeated: b1_reported_speech (54) has backshift, said/told and if/wh reporting, and b1_reported_speech_2 (25) has the word order of a reported question and reported commands and requests. Between them *say*, *tell* and *ask* are finished. What is left, and what a B2 student cannot do, is the REPORTING VERBS THEMSELVES and the pattern each one demands — the classic FCE area. Two blocks, deliberately different jobs. The PATTERN block (12) gives the verb and gaps what follows it, lemma cued (B11): *He admitted ____ the money. (take)*, with the other three patterns as distractors on the same lemma (B6). The VERB block (12) does the reverse and solves A0 the only honest way: the DIRECT SPEECH IS PRINTED IN THE STEM, so exactly one reporting verb fits — *'It was not me.' -> He ____ taking the money* can only be *denied*. Without that stem the item would accept four answers. Use is error-correction (E7) on the six real Czech-learner pattern errors: *admitted to take*, *suggested to go*, *refused paying*, *apologised to be late*, *insisted to pay*, *advised me seeing*. NO gap_class here, and that is deliberate rather than the earlier miss: these gaps are verb-pattern forms, not grammar words, and FCE-EXERCISES scopes gap_class to prepositions, conjunctions, articles, pronouns, auxiliaries, quantifiers and relatives. Same reasoning as b2_suffixes_1. A8 accepts generated as a contraction closure; D1 every item names its own verb and its own pattern.",
+  "intro": {
+    "cards": [
+      {
+        "title": "Reported speech 3",
+        "title_cz": "Nepřímá řeč 3",
+        "points": [
+          "*Say*, *tell* and *ask* are finished. English has many more reporting verbs.",
+          "Each one chooses **one** pattern, and the pattern is not guessable.",
+          "The verb you choose says what kind of speech act it was."
+        ],
+        "table": {
+          "headers": [
+            "They said",
+            "You report it as"
+          ],
+          "rows": [
+            [
+              "'Yes, I took it.'",
+              "He **admitted** taking it."
+            ],
+            [
+              "'It was not me.'",
+              "He **denied** taking it."
+            ],
+            [
+              "'I will help.'",
+              "He **offered** to help."
+            ],
+            [
+              "'You should go.'",
+              "She **advised** me to go."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — Nepřímá řeč 1 a 2",
+        "text_first": true,
+        "points": [
+          "Reported speech 1 gave you backshift and said/told.",
+          "Reported speech 2 gave you reported questions and commands.",
+          "Here the machinery is the same — only the **verb** and its pattern are new."
+        ],
+        "table": {
+          "headers": [
+            "Unit",
+            "What it does"
+          ],
+          "rows": [
+            [
+              "Reported speech 1",
+              "He **said** he was tired."
+            ],
+            [
+              "Reported speech 2",
+              "He **asked** me where I lived."
+            ],
+            [
+              "This one",
+              "He **admitted** being tired."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Verbs that take -ing",
+        "title_cz": "Slovesa s -ing",
+        "text_first": true,
+        "points": [
+          "These four never take *to* + verb. This is the commonest mistake in the unit."
+        ],
+        "table": {
+          "headers": [
+            "Verb",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**admit**",
+              "He admitted **taking** the money."
+            ],
+            [
+              "**deny**",
+              "She denied **breaking** the window."
+            ],
+            [
+              "**suggest**",
+              "We suggested **going** by train."
+            ],
+            [
+              "**apologise for**",
+              "She apologised for **being** late."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Verbs that take to + verb",
+        "title_cz": "Slovesa s to + sloveso",
+        "text_first": true,
+        "points": [
+          "Some take *to* straight away; others need a **person** first."
+        ],
+        "table": {
+          "headers": [
+            "Pattern",
+            "Verbs",
+            "Example"
+          ],
+          "rows": [
+            [
+              "verb + **to**",
+              "offer · refuse · promise",
+              "She **offered to** help."
+            ],
+            [
+              "verb + person + **to**",
+              "advise · remind · warn · invite",
+              "She **reminded** me **to** lock it."
+            ],
+            [
+              "negative",
+              "any of them",
+              "He warned us **not to** swim."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Czech uses one clause for all of these, so the English pattern has to be learned per verb."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~admitted to take~~",
+              "admitted **taking**"
+            ],
+            [
+              "~~suggested to go~~",
+              "suggested **going**"
+            ],
+            [
+              "~~refused paying~~",
+              "refused **to pay**"
+            ],
+            [
+              "~~apologised to be late~~",
+              "apologised **for being** late"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_reported_speech_advanced_pattern",
+      "title": "Which pattern",
+      "items": [
+        {
+          "en": "She offered to help me with the boxes.",
+          "cz": "Nabídla se, že mi pomůže s krabicemi.",
+          "gap": "She offered ____ me with the boxes. (help)",
+          "gap_answer": "to help",
+          "accepts": [
+            "She offered to help me with the boxes."
+          ],
+          "quiz_options": [
+            "to help",
+            "helping",
+            "help",
+            "for helping"
+          ],
+          "explanation": "**offer** takes **to** + verb: *offered to help*.",
+          "explanation_cz": "**offer** má **to** + sloveso: *offered to help*."
+        },
+        {
+          "en": "He admitted taking the money.",
+          "cz": "Přiznal, že ty peníze vzal.",
+          "gap": "He admitted ____ the money. (take)",
+          "gap_answer": "taking",
+          "accepts": [
+            "He admitted taking the money."
+          ],
+          "quiz_options": [
+            "taking",
+            "to take",
+            "take",
+            "for taking"
+          ],
+          "explanation": "**admit** takes **-ing**: *admitted taking*. Never *admitted to take*.",
+          "explanation_cz": "**admit** má **-ing**: *admitted taking*. Nikdy *admitted to take*."
+        },
+        {
+          "en": "They refused to pay the extra cost.",
+          "cz": "Odmítli zaplatit ten příplatek.",
+          "gap": "They refused ____ the extra cost. (pay)",
+          "gap_answer": "to pay",
+          "accepts": [
+            "They refused to pay the extra cost."
+          ],
+          "quiz_options": [
+            "to pay",
+            "paying",
+            "pay",
+            "for paying"
+          ],
+          "explanation": "**refuse** takes **to** + verb: *refused to pay*.",
+          "explanation_cz": "**refuse** má **to** + sloveso: *refused to pay*."
+        },
+        {
+          "en": "She denied breaking the window.",
+          "cz": "Popřela, že to okno rozbila.",
+          "gap": "She denied ____ the window. (break)",
+          "gap_answer": "breaking",
+          "accepts": [
+            "She denied breaking the window."
+          ],
+          "quiz_options": [
+            "breaking",
+            "to break",
+            "break",
+            "for breaking"
+          ],
+          "explanation": "**deny** takes **-ing**: *denied breaking*.",
+          "explanation_cz": "**deny** má **-ing**: *denied breaking*."
+        },
+        {
+          "en": "He promised to call me the next day.",
+          "cz": "Slíbil, že mi druhý den zavolá.",
+          "gap": "He promised ____ me the next day. (call)",
+          "gap_answer": "to call",
+          "accepts": [
+            "He promised to call me the next day."
+          ],
+          "quiz_options": [
+            "to call",
+            "calling",
+            "call",
+            "for calling"
+          ],
+          "explanation": "**promise** takes **to** + verb. Note *the next day*, not *tomorrow*.",
+          "explanation_cz": "**promise** má **to** + sloveso. Všimni si *the next day*, ne *tomorrow*."
+        },
+        {
+          "en": "We suggested going by train.",
+          "cz": "Navrhli jsme jet vlakem.",
+          "gap": "We suggested ____ by train. (go)",
+          "gap_answer": "going",
+          "accepts": [
+            "We suggested going by train."
+          ],
+          "quiz_options": [
+            "going",
+            "to go",
+            "go",
+            "for going"
+          ],
+          "explanation": "**suggest** takes **-ing**: *suggested going*. Never *suggested to go*.",
+          "explanation_cz": "**suggest** má **-ing**: *suggested going*. Nikdy *suggested to go*."
+        },
+        {
+          "en": "She apologised for being late.",
+          "cz": "Omluvila se, že přišla pozdě.",
+          "gap": "She apologised ____ late. (be)",
+          "gap_answer": "for being",
+          "accepts": [
+            "She apologised for being late."
+          ],
+          "quiz_options": [
+            "for being",
+            "to be",
+            "being",
+            "for be"
+          ],
+          "explanation": "**apologise** takes a preposition first: **for** + **-ing**.",
+          "explanation_cz": "**apologise** má nejdřív předložku: **for** + **-ing**."
+        },
+        {
+          "en": "He insisted on paying for dinner.",
+          "cz": "Trval na tom, že večeři zaplatí.",
+          "gap": "He insisted ____ for dinner. (pay)",
+          "gap_answer": "on paying",
+          "accepts": [
+            "He insisted on paying for dinner."
+          ],
+          "quiz_options": [
+            "on paying",
+            "to pay",
+            "paying",
+            "on pay"
+          ],
+          "explanation": "**insist** takes **on** + **-ing**.",
+          "explanation_cz": "**insist** má **on** + **-ing**."
+        },
+        {
+          "en": "They advised me to see a doctor.",
+          "cz": "Poradili mi, ať jdu k lékaři.",
+          "gap": "They advised me ____ a doctor. (see)",
+          "gap_answer": "to see",
+          "accepts": [
+            "They advised me to see a doctor."
+          ],
+          "quiz_options": [
+            "to see",
+            "seeing",
+            "see",
+            "for seeing"
+          ],
+          "explanation": "**advise** takes a person, then **to** + verb.",
+          "explanation_cz": "**advise** má osobu a pak **to** + sloveso."
+        },
+        {
+          "en": "She reminded me to lock the door.",
+          "cz": "Připomněla mi, ať zamknu dveře.",
+          "gap": "She reminded me ____ the door. (lock)",
+          "gap_answer": "to lock",
+          "accepts": [
+            "She reminded me to lock the door."
+          ],
+          "quiz_options": [
+            "to lock",
+            "locking",
+            "lock",
+            "for locking"
+          ],
+          "explanation": "**remind** takes a person, then **to** + verb.",
+          "explanation_cz": "**remind** má osobu a pak **to** + sloveso."
+        },
+        {
+          "en": "He warned us not to swim there.",
+          "cz": "Varoval nás, ať tam neplaveme.",
+          "gap": "He warned us ____ there. (swim)",
+          "gap_answer": "not to swim",
+          "accepts": [
+            "He warned us not to swim there."
+          ],
+          "quiz_options": [
+            "not to swim",
+            "to not swim",
+            "not swimming",
+            "no swimming"
+          ],
+          "explanation": "The negative sits before *to*: **not to swim**.",
+          "explanation_cz": "Zápor je před *to*: **not to swim**."
+        },
+        {
+          "en": "She invited us to stay for dinner.",
+          "cz": "Pozvala nás, ať zůstaneme na večeři.",
+          "gap": "She invited us ____ for dinner. (stay)",
+          "gap_answer": "to stay",
+          "accepts": [
+            "She invited us to stay for dinner."
+          ],
+          "quiz_options": [
+            "to stay",
+            "staying",
+            "stay",
+            "for staying"
+          ],
+          "explanation": "**invite** takes a person, then **to** + verb.",
+          "explanation_cz": "**invite** má osobu a pak **to** + sloveso."
+        }
+      ]
+    },
+    {
+      "id": "b2_reported_speech_advanced_verb",
+      "title": "Which reporting verb",
+      "items": [
+        {
+          "en": "She apologised for being late.",
+          "cz": "Omluvila se, že přišla pozdě.",
+          "gap": "'I am sorry I was late.' -> She ____ for being late.",
+          "gap_answer": "apologised",
+          "accepts": [
+            "She apologised for being late."
+          ],
+          "quiz_options": [
+            "apologised",
+            "admitted",
+            "denied",
+            "suggested"
+          ],
+          "explanation": "*I am sorry* is an apology, so **apologised**.",
+          "explanation_cz": "*I am sorry* je omluva, proto **apologised**."
+        },
+        {
+          "en": "He denied taking the money.",
+          "cz": "Popřel, že ty peníze vzal.",
+          "gap": "'It was not me.' -> He ____ taking the money.",
+          "gap_answer": "denied",
+          "accepts": [
+            "He denied taking the money."
+          ],
+          "quiz_options": [
+            "denied",
+            "admitted",
+            "promised",
+            "offered"
+          ],
+          "explanation": "*It was not me* is a denial: **denied** + -ing.",
+          "explanation_cz": "*It was not me* je popření: **denied** + -ing."
+        },
+        {
+          "en": "He admitted taking the money.",
+          "cz": "Přiznal, že ty peníze vzal.",
+          "gap": "'Yes, I took it.' -> He ____ taking the money.",
+          "gap_answer": "admitted",
+          "accepts": [
+            "He admitted taking the money."
+          ],
+          "quiz_options": [
+            "admitted",
+            "denied",
+            "refused",
+            "warned"
+          ],
+          "explanation": "*Yes, I took it* is a confession: **admitted** + -ing.",
+          "explanation_cz": "*Yes, I took it* je přiznání: **admitted** + -ing."
+        },
+        {
+          "en": "She suggested going by train.",
+          "cz": "Navrhla jet vlakem.",
+          "gap": "'Shall we go by train?' -> She ____ going by train.",
+          "gap_answer": "suggested",
+          "accepts": [
+            "She suggested going by train."
+          ],
+          "quiz_options": [
+            "suggested",
+            "insisted",
+            "refused",
+            "promised"
+          ],
+          "explanation": "*Shall we…?* is a suggestion: **suggested** + -ing.",
+          "explanation_cz": "*Shall we…?* je návrh: **suggested** + -ing."
+        },
+        {
+          "en": "He offered to help.",
+          "cz": "Nabídl, že pomůže.",
+          "gap": "'I will help you.' -> He ____ to help.",
+          "gap_answer": "offered",
+          "accepts": [
+            "He offered to help."
+          ],
+          "quiz_options": [
+            "offered",
+            "warned",
+            "denied",
+            "admitted"
+          ],
+          "explanation": "An unasked-for *I will help* is an offer: **offered** to help.",
+          "explanation_cz": "Nevyžádané *I will help* je nabídka: **offered** to help."
+        },
+        {
+          "en": "She refused to pay.",
+          "cz": "Odmítla zaplatit.",
+          "gap": "'No, I will not pay.' -> She ____ to pay.",
+          "gap_answer": "refused",
+          "accepts": [
+            "She refused to pay."
+          ],
+          "quiz_options": [
+            "refused",
+            "promised",
+            "offered",
+            "reminded"
+          ],
+          "explanation": "*No, I will not* is a refusal: **refused** to pay.",
+          "explanation_cz": "*No, I will not* je odmítnutí: **refused** to pay."
+        },
+        {
+          "en": "He promised to call.",
+          "cz": "Slíbil, že zavolá.",
+          "gap": "'I promise I will call.' -> He ____ to call.",
+          "gap_answer": "promised",
+          "accepts": [
+            "He promised to call."
+          ],
+          "quiz_options": [
+            "promised",
+            "suggested",
+            "denied",
+            "apologised"
+          ],
+          "explanation": "**promised** to call — the speaker gave his word.",
+          "explanation_cz": "**promised** to call — mluvčí dal slovo."
+        },
+        {
+          "en": "He warned us not to swim there.",
+          "cz": "Varoval nás, ať tam neplaveme.",
+          "gap": "'Do not swim there — it is dangerous.' -> He ____ us not to swim there.",
+          "gap_answer": "warned",
+          "accepts": [
+            "He warned us not to swim there."
+          ],
+          "quiz_options": [
+            "warned",
+            "invited",
+            "offered",
+            "admitted"
+          ],
+          "explanation": "Danger plus an instruction is a warning: **warned**.",
+          "explanation_cz": "Nebezpečí plus pokyn je varování: **warned**."
+        },
+        {
+          "en": "She advised me to see a doctor.",
+          "cz": "Poradila mi, ať jdu k lékaři.",
+          "gap": "'You should see a doctor.' -> She ____ me to see a doctor.",
+          "gap_answer": "advised",
+          "accepts": [
+            "She advised me to see a doctor."
+          ],
+          "quiz_options": [
+            "advised",
+            "ordered",
+            "denied",
+            "apologised"
+          ],
+          "explanation": "*You should…* is advice: **advised** me to see.",
+          "explanation_cz": "*You should…* je rada: **advised** me to see."
+        },
+        {
+          "en": "She reminded me to lock the door.",
+          "cz": "Připomněla mi, ať zamknu dveře.",
+          "gap": "'Do not forget to lock the door.' -> She ____ me to lock the door.",
+          "gap_answer": "reminded",
+          "accepts": [
+            "She reminded me to lock the door."
+          ],
+          "quiz_options": [
+            "reminded",
+            "warned",
+            "invited",
+            "suggested"
+          ],
+          "explanation": "*Do not forget* is a reminder: **reminded** me to lock.",
+          "explanation_cz": "*Do not forget* je připomínka: **reminded** me to lock."
+        },
+        {
+          "en": "She invited us to stay for dinner.",
+          "cz": "Pozvala nás, ať zůstaneme na večeři.",
+          "gap": "'Would you like to stay for dinner?' -> She ____ us to stay.",
+          "gap_answer": "invited",
+          "accepts": [
+            "She invited us to stay for dinner."
+          ],
+          "quiz_options": [
+            "invited",
+            "reminded",
+            "warned",
+            "refused"
+          ],
+          "explanation": "*Would you like to…?* is an invitation: **invited** us to stay.",
+          "explanation_cz": "*Would you like to…?* je pozvání: **invited** us to stay."
+        },
+        {
+          "en": "He insisted on paying for dinner.",
+          "cz": "Trval na tom, že večeři zaplatí.",
+          "gap": "'No, I really must pay.' -> He ____ on paying for dinner.",
+          "gap_answer": "insisted",
+          "accepts": [
+            "He insisted on paying for dinner."
+          ],
+          "quiz_options": [
+            "insisted",
+            "offered",
+            "apologised",
+            "admitted"
+          ],
+          "explanation": "Refusing to be talked out of it is **insisted** on + -ing.",
+          "explanation_cz": "Když se nenechá odradit, je to **insisted** on + -ing."
+        }
+      ]
+    },
+    {
+      "id": "b2_reported_speech_advanced_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "He admitted taking the money.",
+          "cz": "Přiznal, že ty peníze vzal.",
+          "wrong": "He admitted to take the money.",
+          "accepts": [
+            "He admitted taking the money."
+          ],
+          "type": false,
+          "explanation": "**admit** takes **-ing**, never *to* + verb: *admitted taking*.",
+          "explanation_cz": "**admit** má **-ing**, nikdy *to* + sloveso: *admitted taking*."
+        },
+        {
+          "en": "We suggested going by train.",
+          "cz": "Navrhli jsme jet vlakem.",
+          "wrong": "We suggested to go by train.",
+          "accepts": [
+            "We suggested going by train."
+          ],
+          "type": false,
+          "explanation": "**suggest** takes **-ing**: *suggested going*.",
+          "explanation_cz": "**suggest** má **-ing**: *suggested going*."
+        },
+        {
+          "en": "They refused to pay the extra cost.",
+          "cz": "Odmítli zaplatit ten příplatek.",
+          "wrong": "They refused paying the extra cost.",
+          "accepts": [
+            "They refused to pay the extra cost."
+          ],
+          "type": false,
+          "explanation": "**refuse** takes **to** + verb: *refused to pay*.",
+          "explanation_cz": "**refuse** má **to** + sloveso: *refused to pay*."
+        },
+        {
+          "en": "She apologised for being late.",
+          "cz": "Omluvila se, že přišla pozdě.",
+          "wrong": "She apologised to be late.",
+          "accepts": [
+            "She apologised for being late."
+          ],
+          "type": false,
+          "explanation": "**apologise** needs its preposition: **for** + **-ing**.",
+          "explanation_cz": "**apologise** potřebuje předložku: **for** + **-ing**."
+        },
+        {
+          "en": "He insisted on paying for dinner.",
+          "cz": "Trval na tom, že večeři zaplatí.",
+          "wrong": "He insisted to pay for dinner.",
+          "accepts": [
+            "He insisted on paying for dinner."
+          ],
+          "type": false,
+          "explanation": "**insist** takes **on** + **-ing**: *insisted on paying*.",
+          "explanation_cz": "**insist** má **on** + **-ing**: *insisted on paying*."
+        },
+        {
+          "en": "She advised me to see a doctor.",
+          "cz": "Poradila mi, ať jdu k lékaři.",
+          "wrong": "She advised me seeing a doctor.",
+          "accepts": [
+            "She advised me to see a doctor."
+          ],
+          "type": false,
+          "explanation": "**advise** takes a person then **to** + verb: *advised me to see*.",
+          "explanation_cz": "**advise** má osobu a pak **to** + sloveso: *advised me to see*."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_CL-B1B2-01"
+  ]
 }
