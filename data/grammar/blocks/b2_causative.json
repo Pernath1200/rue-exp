@@ -1,18 +1,679 @@
 {
   "id": "b2_causative",
-  "title": "Causative (have/get done)",
+  "title": "Causative",
   "level": "B2",
   "tree_node": "b2_causative",
+  "codex_unit": "G_VOI-B1B2-02",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty shell. 28 items, inside the 24-40 band. Sits on the passives thread, immediately after b2_passives_advanced, and shares its logic: the subject arranges the action, somebody else performs it. Two blocks split the two things a student gets wrong. The FORM block (12) gaps the past participle with a lemma cue (B11) — *She had her car ____ last week. (repair)* — and its distractors are the other forms of the same lemma (B6): repair / repairing / to repair, with the irregulars (took vs taken, wrote vs written) carrying their own trap. The AUXILIARY block (10) gaps have/get/having/had, so the student meets the pattern across tenses, after modals and after *to*, rather than only in the past. WORD ORDER is the real error and it is deliberately NOT a gap: a cloze cannot test order (E8 territory), so it drives the Use stage instead, where five of six items contrast *had my hair cut* with *had cut my hair* — two grammatical English sentences with completely different meanings, which is exactly the failure G4 warns about and the reason this had to be error-correction rather than a gap. The adversity use (*had his passport stolen*, *had their house broken into*) is taught alongside, because Czech expresses it with a plain active and learners produce the wrong voice. A8 accepts generated as a contraction closure; D1 every item explains its own form. gap_class auxiliary on all 22 gap items. KWT-native per FCE-EXERCISES, but that needs a js/ branch which is James-only under P-engine, so Use is ordinary error-correction.",
+  "intro": {
+    "cards": [
+      {
+        "title": "Causative",
+        "title_cz": "Nechat si něco udělat",
+        "points": [
+          "You arrange it; somebody else does the work.",
+          "**have** or **get** + the thing + **past participle**.",
+          "The order never changes, and the order carries the meaning."
+        ],
+        "table": {
+          "headers": [
+            "You do it",
+            "Somebody does it for you"
+          ],
+          "rows": [
+            [
+              "I **cut** my hair.",
+              "I **had** my hair **cut**."
+            ],
+            [
+              "She **repaired** the car.",
+              "She **had** the car **repaired**."
+            ],
+            [
+              "We **painted** the kitchen.",
+              "We **had** the kitchen **painted**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — trpný rod",
+        "text_first": true,
+        "points": [
+          "The passive hides the doer. The causative says **you** arranged it.",
+          "Both end in a past participle — that part is familiar."
+        ],
+        "table": {
+          "headers": [
+            "Form",
+            "Example",
+            "Who arranged it"
+          ],
+          "rows": [
+            [
+              "passive",
+              "The car **was repaired**.",
+              "not said"
+            ],
+            [
+              "causative",
+              "She **had** the car **repaired**.",
+              "she did"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "have or get",
+        "title_cz": "have nebo get",
+        "text_first": true,
+        "points": [
+          "**get** is the everyday twin of **have**. The pattern is identical.",
+          "It works in every tense, after modals, and after *to*."
+        ],
+        "table": {
+          "headers": [
+            "When",
+            "Example"
+          ],
+          "rows": [
+            [
+              "past",
+              "I **had** my hair **cut**."
+            ],
+            [
+              "everyday present",
+              "We **get** the car serviced every autumn."
+            ],
+            [
+              "now",
+              "They are **having** the roof replaced."
+            ],
+            [
+              "after *to*",
+              "I need to **get** my computer fixed."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "When it is bad news",
+        "title_cz": "Když je to špatná zpráva",
+        "text_first": true,
+        "points": [
+          "The same shape covers things that happen **to** you, with nobody arranging anything.",
+          "Czech says this with a plain active sentence, so the shape is easy to miss."
+        ],
+        "table": {
+          "headers": [
+            "What happened",
+            "English"
+          ],
+          "rows": [
+            [
+              "Someone stole his passport.",
+              "He **had** his passport **stolen**."
+            ],
+            [
+              "Someone took his wallet.",
+              "He **got** his wallet **taken**."
+            ],
+            [
+              "Someone broke into their house.",
+              "They **had** their house **broken into**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "Both versions are real English. Only the order says who did the work."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~I had cut my hair~~ (you did it)",
+              "I **had** my hair **cut**"
+            ],
+            [
+              "~~She had repaired her car~~",
+              "She **had** her car **repaired**"
+            ],
+            [
+              "~~get fixed my computer~~",
+              "get my computer **fixed**"
+            ],
+            [
+              "~~the photographs took~~",
+              "the photographs **taken**"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_causative_form",
+      "title": "The participle",
+      "items": [
+        {
+          "en": "I had my hair cut on Friday.",
+          "cz": "V pátek jsem si nechal ostříhat vlasy.",
+          "gap": "I had my hair ____ on Friday. (cut)",
+          "gap_answer": "cut",
+          "accepts": [
+            "I'd my hair cut on Friday.",
+            "I had my hair cut on Friday."
+          ],
+          "quiz_options": [
+            "cut",
+            "cutted",
+            "cutting",
+            "to cut"
+          ],
+          "explanation": "**have** + object + **past participle**. The participle of *cut* does not change: **cut**.",
+          "explanation_cz": "**have** + předmět + **příčestí minulé**. Příčestí od *cut* se nemění: **cut**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She had her car repaired last week.",
+          "cz": "Minulý týden si nechala opravit auto.",
+          "gap": "She had her car ____ last week. (repair)",
+          "gap_answer": "repaired",
+          "accepts": [
+            "She'd her car repaired last week.",
+            "She had her car repaired last week."
+          ],
+          "quiz_options": [
+            "repaired",
+            "repair",
+            "repairing",
+            "to repair"
+          ],
+          "explanation": "The car did not repair anything — it was repaired. Past participle: **repaired**.",
+          "explanation_cz": "Auto nic neopravilo — bylo opraveno. Příčestí minulé: **repaired**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "We are having the kitchen painted this month.",
+          "cz": "Tento měsíc si necháváme vymalovat kuchyň.",
+          "gap": "We are having the kitchen ____ this month. (paint)",
+          "gap_answer": "painted",
+          "accepts": [
+            "We're having the kitchen painted this month.",
+            "We are having the kitchen painted this month."
+          ],
+          "quiz_options": [
+            "painted",
+            "paint",
+            "painting",
+            "to paint"
+          ],
+          "explanation": "The causative works in any tense; the participle stays **painted**.",
+          "explanation_cz": "Vazba funguje v každém čase; příčestí zůstává **painted**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He had his suit cleaned before the wedding.",
+          "cz": "Před svatbou si nechal vyčistit oblek.",
+          "gap": "He had his suit ____ before the wedding. (clean)",
+          "gap_answer": "cleaned",
+          "accepts": [
+            "He'd his suit cleaned before the wedding.",
+            "He had his suit cleaned before the wedding."
+          ],
+          "quiz_options": [
+            "cleaned",
+            "clean",
+            "cleaning",
+            "to clean"
+          ],
+          "explanation": "**had** + suit + **cleaned** — somebody else did the cleaning.",
+          "explanation_cz": "**had** + suit + **cleaned** — čistil to někdo jiný.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They had the photographs taken in the garden.",
+          "cz": "Fotky si nechali udělat na zahradě.",
+          "gap": "They had the photographs ____ in the garden. (take)",
+          "gap_answer": "taken",
+          "accepts": [
+            "They'd the photographs taken in the garden.",
+            "They had the photographs taken in the garden."
+          ],
+          "quiz_options": [
+            "taken",
+            "took",
+            "taking",
+            "to take"
+          ],
+          "explanation": "Irregular participle: *take* becomes **taken**, never *took*.",
+          "explanation_cz": "Nepravidelné příčestí: z *take* je **taken**, nikdy *took*.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "I must have these shoes mended.",
+          "cz": "Musím si nechat spravit tyhle boty.",
+          "gap": "I must have these shoes ____. (mend)",
+          "gap_answer": "mended",
+          "accepts": [
+            "I must have these shoes mended."
+          ],
+          "quiz_options": [
+            "mended",
+            "mend",
+            "mending",
+            "to mend"
+          ],
+          "explanation": "After a modal the causative keeps its shape: have + object + **mended**.",
+          "explanation_cz": "Po modálním slovese si vazba drží tvar: have + předmět + **mended**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She is having her eyes tested tomorrow.",
+          "cz": "Zítra si nechá vyšetřit oči.",
+          "gap": "She is having her eyes ____ tomorrow. (test)",
+          "gap_answer": "tested",
+          "accepts": [
+            "She's having her eyes tested tomorrow.",
+            "She is having her eyes tested tomorrow.",
+            "She has having her eyes tested tomorrow."
+          ],
+          "quiz_options": [
+            "tested",
+            "test",
+            "testing",
+            "to test"
+          ],
+          "explanation": "**tested** — the eyes are what gets acted on.",
+          "explanation_cz": "**tested** — oči jsou to, s čím se něco dělá.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "We had the old tree removed in spring.",
+          "cz": "Na jaře jsme si nechali odstranit ten starý strom.",
+          "gap": "We had the old tree ____ in spring. (remove)",
+          "gap_answer": "removed",
+          "accepts": [
+            "We'd the old tree removed in spring.",
+            "We had the old tree removed in spring."
+          ],
+          "quiz_options": [
+            "removed",
+            "remove",
+            "removing",
+            "to remove"
+          ],
+          "explanation": "**removed** — you arranged it, somebody else did it.",
+          "explanation_cz": "**removed** — zařídil jsi to, udělal to někdo jiný.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He had his passport stolen at the airport.",
+          "cz": "Na letišti mu ukradli pas.",
+          "gap": "He had his passport ____ at the airport. (steal)",
+          "gap_answer": "stolen",
+          "accepts": [
+            "He'd his passport stolen at the airport.",
+            "He had his passport stolen at the airport."
+          ],
+          "quiz_options": [
+            "stolen",
+            "stole",
+            "stealing",
+            "to steal"
+          ],
+          "explanation": "Same shape, unhappy meaning: this happened TO him. Participle **stolen**.",
+          "explanation_cz": "Stejný tvar, nepříjemný význam: stalo se to JEMU. Příčestí **stolen**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "I want to have my teeth checked this year.",
+          "cz": "Letos si chci nechat zkontrolovat zuby.",
+          "gap": "I want to have my teeth ____ this year. (check)",
+          "gap_answer": "checked",
+          "accepts": [
+            "I want to have my teeth checked this year."
+          ],
+          "quiz_options": [
+            "checked",
+            "check",
+            "checking",
+            "to check"
+          ],
+          "explanation": "The causative also follows an infinitive: to have + object + **checked**.",
+          "explanation_cz": "Vazba jde i po infinitivu: to have + předmět + **checked**.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They had the report written by a lawyer.",
+          "cz": "Tu zprávu si nechali napsat od právníka.",
+          "gap": "They had the report ____ by a lawyer. (write)",
+          "gap_answer": "written",
+          "accepts": [
+            "They'd the report written by a lawyer.",
+            "They had the report written by a lawyer."
+          ],
+          "quiz_options": [
+            "written",
+            "wrote",
+            "writing",
+            "to write"
+          ],
+          "explanation": "Irregular again: **written**. *By a lawyer* names who actually did it.",
+          "explanation_cz": "Zase nepravidelné: **written**. *By a lawyer* říká, kdo to opravdu udělal.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She had her bag searched at the border.",
+          "cz": "Na hranici jí prohledali tašku.",
+          "gap": "She had her bag ____ at the border. (search)",
+          "gap_answer": "searched",
+          "accepts": [
+            "She'd her bag searched at the border.",
+            "She had her bag searched at the border."
+          ],
+          "quiz_options": [
+            "searched",
+            "search",
+            "searching",
+            "to search"
+          ],
+          "explanation": "**searched** — again something done to her, not by her.",
+          "explanation_cz": "**searched** — zase něco, co udělali jí, ne ona.",
+          "gap_class": "auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "b2_causative_aux",
+      "title": "have or get",
+      "items": [
+        {
+          "en": "I had my hair cut on Friday.",
+          "cz": "V pátek jsem si nechal ostříhat vlasy.",
+          "gap": "I ____ my hair cut on Friday.",
+          "gap_answer": "had",
+          "accepts": [
+            "I'd my hair cut on Friday.",
+            "I had my hair cut on Friday."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "was",
+            "did"
+          ],
+          "explanation": "Past time, so **had** my hair cut.",
+          "explanation_cz": "Minulý čas, proto **had** my hair cut.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "We get the car serviced every autumn.",
+          "cz": "Auto si necháváme servisovat každý podzim.",
+          "gap": "We ____ the car serviced every autumn.",
+          "gap_answer": "get",
+          "accepts": [
+            "We get the car serviced every autumn."
+          ],
+          "quiz_options": [
+            "get",
+            "got",
+            "have got",
+            "are getting"
+          ],
+          "explanation": "**get** is the everyday twin of *have* here, and *every autumn* makes it present simple.",
+          "explanation_cz": "**get** je tu běžnější dvojče slova *have* a *every autumn* dělá přítomný prostý.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She is going to have the flat cleaned.",
+          "cz": "Nechá si uklidit byt.",
+          "gap": "She is going to ____ the flat cleaned.",
+          "gap_answer": "have",
+          "accepts": [
+            "She's going to have the flat cleaned.",
+            "She is going to have the flat cleaned.",
+            "She has going to have the flat cleaned."
+          ],
+          "quiz_options": [
+            "have",
+            "having",
+            "had",
+            "has"
+          ],
+          "explanation": "After *to* comes the bare form: **have** the flat cleaned.",
+          "explanation_cz": "Po *to* je základní tvar: **have** the flat cleaned.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He got his bike repaired at the shop.",
+          "cz": "Nechal si v obchodě opravit kolo.",
+          "gap": "He ____ his bike repaired at the shop.",
+          "gap_answer": "got",
+          "accepts": [
+            "He got his bike repaired at the shop."
+          ],
+          "quiz_options": [
+            "got",
+            "get",
+            "gets",
+            "getting"
+          ],
+          "explanation": "Past of *get*: **got** his bike repaired.",
+          "explanation_cz": "Minulý čas od *get*: **got** his bike repaired.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They are having the roof replaced this week.",
+          "cz": "Tento týden si nechávají vyměnit střechu.",
+          "gap": "They are ____ the roof replaced this week.",
+          "gap_answer": "having",
+          "accepts": [
+            "They're having the roof replaced this week.",
+            "They are having the roof replaced this week."
+          ],
+          "quiz_options": [
+            "having",
+            "have",
+            "had",
+            "got"
+          ],
+          "explanation": "Present continuous, so the *-ing* form: **having** the roof replaced.",
+          "explanation_cz": "Přítomný průběhový, proto tvar s *-ing*: **having** the roof replaced.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "I need to get my computer fixed.",
+          "cz": "Potřebuju si nechat spravit počítač.",
+          "gap": "I need to ____ my computer fixed.",
+          "gap_answer": "get",
+          "accepts": [
+            "I need to get my computer fixed."
+          ],
+          "quiz_options": [
+            "get",
+            "getting",
+            "got",
+            "gets"
+          ],
+          "explanation": "After *to* the bare form again: **get** my computer fixed.",
+          "explanation_cz": "Po *to* zase základní tvar: **get** my computer fixed.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "She has had her passport renewed already.",
+          "cz": "Pas už si nechala obnovit.",
+          "gap": "She has ____ her passport renewed already.",
+          "gap_answer": "had",
+          "accepts": [
+            "She's had her passport renewed already.",
+            "She is had her passport renewed already.",
+            "She has had her passport renewed already."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "got",
+            "having"
+          ],
+          "explanation": "Present perfect: has + **had** + object + past participle.",
+          "explanation_cz": "Předpřítomný čas: has + **had** + předmět + příčestí minulé.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "We will have the windows measured on Monday.",
+          "cz": "V pondělí si necháme změřit okna.",
+          "gap": "We will ____ the windows measured on Monday.",
+          "gap_answer": "have",
+          "accepts": [
+            "We'll have the windows measured on Monday.",
+            "We will have the windows measured on Monday."
+          ],
+          "quiz_options": [
+            "have",
+            "having",
+            "had",
+            "got"
+          ],
+          "explanation": "After *will* the bare form: **have** the windows measured.",
+          "explanation_cz": "Po *will* základní tvar: **have** the windows measured.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "He got his wallet taken on the tram.",
+          "cz": "V tramvaji mu vzali peněženku.",
+          "gap": "He ____ his wallet taken on the tram.",
+          "gap_answer": "got",
+          "accepts": [
+            "He got his wallet taken on the tram."
+          ],
+          "quiz_options": [
+            "got",
+            "get",
+            "had got",
+            "gets"
+          ],
+          "explanation": "**got** works for the unhappy meaning too — it happened to him.",
+          "explanation_cz": "**got** funguje i pro nepříjemný význam — stalo se to jemu.",
+          "gap_class": "auxiliary"
+        },
+        {
+          "en": "They had their house broken into last year.",
+          "cz": "Loni se jim vloupali do domu.",
+          "gap": "They ____ their house broken into last year.",
+          "gap_answer": "had",
+          "accepts": [
+            "They'd their house broken into last year.",
+            "They had their house broken into last year."
+          ],
+          "quiz_options": [
+            "had",
+            "have",
+            "got",
+            "were"
+          ],
+          "explanation": "**had** their house broken into — the classic bad-news causative.",
+          "explanation_cz": "**had** their house broken into — klasická vazba pro špatnou zprávu.",
+          "gap_class": "auxiliary"
+        }
+      ]
+    },
+    {
+      "id": "b2_causative_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "I had my hair cut on Friday.",
+          "cz": "V pátek jsem si nechal ostříhat vlasy.",
+          "wrong": "I had cut my hair on Friday.",
+          "accepts": [
+            "I'd my hair cut on Friday.",
+            "I had my hair cut on Friday."
+          ],
+          "type": false,
+          "explanation": "Word order carries the meaning. **have + hair + cut** means somebody cut it for you; *had cut my hair* means you did it yourself.",
+          "explanation_cz": "Slovosled nese význam. **have + hair + cut** znamená, že to udělal někdo jiný; *had cut my hair* znamená, že jsi to udělal sám."
+        },
+        {
+          "en": "She had her car repaired last week.",
+          "cz": "Minulý týden si nechala opravit auto.",
+          "wrong": "She had repaired her car last week.",
+          "accepts": [
+            "She'd her car repaired last week.",
+            "She had her car repaired last week."
+          ],
+          "type": false,
+          "explanation": "Object before the participle: **her car repaired**, not *repaired her car*.",
+          "explanation_cz": "Předmět před příčestím: **her car repaired**, ne *repaired her car*."
+        },
+        {
+          "en": "They had the photographs taken in the garden.",
+          "cz": "Fotky si nechali udělat na zahradě.",
+          "wrong": "They had the photographs took in the garden.",
+          "accepts": [
+            "They'd the photographs taken in the garden.",
+            "They had the photographs taken in the garden."
+          ],
+          "type": false,
+          "explanation": "The causative needs the **past participle**: *taken*, not *took*.",
+          "explanation_cz": "Vazba potřebuje **příčestí minulé**: *taken*, ne *took*."
+        },
+        {
+          "en": "I need to get my computer fixed.",
+          "cz": "Potřebuju si nechat spravit počítač.",
+          "wrong": "I need to get fixed my computer.",
+          "accepts": [
+            "I need to get my computer fixed."
+          ],
+          "type": false,
+          "explanation": "The object comes first: get **my computer fixed**.",
+          "explanation_cz": "Předmět je první: get **my computer fixed**."
+        },
+        {
+          "en": "We are having the kitchen painted this month.",
+          "cz": "Tento měsíc si necháváme vymalovat kuchyň.",
+          "wrong": "We are having painted the kitchen this month.",
+          "accepts": [
+            "We're having the kitchen painted this month.",
+            "We are having the kitchen painted this month."
+          ],
+          "type": false,
+          "explanation": "Same order every time: having **the kitchen painted**.",
+          "explanation_cz": "Pokaždé stejné pořadí: having **the kitchen painted**."
+        },
+        {
+          "en": "He had his passport stolen at the airport.",
+          "cz": "Na letišti mu ukradli pas.",
+          "wrong": "He had stolen his passport at the airport.",
+          "accepts": [
+            "He'd his passport stolen at the airport.",
+            "He had his passport stolen at the airport."
+          ],
+          "type": false,
+          "explanation": "*Had stolen his passport* makes him the thief. **had his passport stolen** is what happened to him.",
+          "explanation_cz": "*Had stolen his passport* z něj dělá zloděje. **had his passport stolen** je to, co se mu stalo."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_VP-B1B2-01"
+  ]
 }
