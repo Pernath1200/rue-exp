@@ -1,18 +1,715 @@
 {
   "id": "b2_articles_genericity",
-  "title": "Articles / genericity",
+  "title": "Articles 4",
   "level": "B2",
   "tree_node": "b2_articles_genericity",
+  "codex_unit": "G_ART-B1B2-01",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "quality": "workable_draft",
   "default_direction": "cz_to_en",
+  "check": {
+    "sequence": [
+      "quiz"
+    ]
+  },
+  "use_mode": "correct",
+  "use_hint": "Fix the sentence · Enter = check · Enter = next",
+  "note": "B2 grammar unit, drafted 2026-09-05 on the home lane, replacing the empty shell. 30 items, inside the 24-40 band. THE FIRST OPEN CLOZE UNIT on this lane, built to the spec in codex/FCE-EXERCISES.md: every gap is a grammar word of one class, tagged `gap_class: \"article\"`, the Quiz options are the four article choices and nothing else (B6 taken literally), and Type carries zero scaffold. No engine change was needed, exactly as the spec predicted. Two predecessors own the rest of the topic and neither is repeated: a1_articles (32) has first-mention a/an against second-mention the, and b1_articles_advanced (48) has the hard lexical cases — the sun, play the piano, in hospital against the hospital, geography, meals, nationalities as languages. What neither has is GENERIC REFERENCE, which is where a Czech speaker at B2 still goes wrong, and always in the same direction: Czech has no articles at all, so the learner who has finally accepted *the* starts putting it everywhere. So block 1 is six general statements against six specific ones with the SAME nouns — dogs, music, history, spiders, politics, children — so the contrast is the lesson rather than a rule to memorise. Block 2 is the-plus-adjective for groups (the poor, the elderly, the unemployed, the young, the rich, the homeless) and the-plus-nationality, with three deliberate counterexamples: *a Frenchman*, *a Czech* and *poor families*, so the rule cannot be over-applied either. THE ZERO-ARTICLE ITEMS ARE QUIZ-ONLY (`type: false`), following James's standing decision on b1_relative_clauses_2: a dash is a fine chip and a bad thing to type. b2_articles_correction is absorbed here per B2-PLAN; its stub is left untouched, since its own note says do not refill from auto and parking a node is a registry edit.",
+  "intro": {
+    "cards": [
+      {
+        "title": "Articles 4",
+        "title_cz": "Členy 4 — obecně a konkrétně",
+        "points": [
+          "The question is never *which article* — it is general or **particular**?",
+          "General plural or uncountable: **no article**.",
+          "Particular, and we both know which: **the**."
+        ],
+        "table": {
+          "headers": [
+            "In general",
+            "This particular one"
+          ],
+          "rows": [
+            [
+              "I like **dogs**.",
+              "Please feed **the dogs**."
+            ],
+            [
+              "She studies **history**.",
+              "the **history** of Brno"
+            ],
+            [
+              "**Music** is important.",
+              "**The music** at the party"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "You already know",
+        "title_cz": "Už znáš — Členy 1 a 3",
+        "text_first": true,
+        "points": [
+          "Articles 1 gave you *a* for the first time, *the* for the second.",
+          "Articles 3 gave you the fixed cases: the sun, the piano, in hospital.",
+          "What is left is talking about things **in general**."
+        ],
+        "table": {
+          "headers": [
+            "Unit",
+            "Example"
+          ],
+          "rows": [
+            [
+              "Articles 1",
+              "I have **a** dog. **The** dog is black."
+            ],
+            [
+              "Articles 3",
+              "She plays **the** piano. He is in **-** hospital."
+            ],
+            [
+              "This one",
+              "I like **-** dogs. Feed **the** dogs."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "In general means no article",
+        "title_cz": "Obecně znamená bez členu",
+        "text_first": true,
+        "points": [
+          "Czech has no articles, so the danger is putting **the** everywhere once you learn it.",
+          "A plural or an uncountable noun meaning ALL of them takes **nothing**."
+        ],
+        "table": {
+          "headers": [
+            "General · no article",
+            "Particular · the"
+          ],
+          "rows": [
+            [
+              "I have always liked **dogs**.",
+              "Please feed **the dogs**."
+            ],
+            [
+              "She studies **history**.",
+              "She writes about **the history** of Brno."
+            ],
+            [
+              "**Politics** is difficult.",
+              "**The politics** of the new law"
+            ],
+            [
+              "**Children** learn fast.",
+              "I can hear **the children** next door."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Groups of people",
+        "title_cz": "Skupiny lidí",
+        "text_first": true,
+        "points": [
+          "**the** + adjective makes a whole group, and the verb is **plural**.",
+          "**the** + nationality does the same. One person takes **a**."
+        ],
+        "table": {
+          "headers": [
+            "Group · the",
+            "One person · a"
+          ],
+          "rows": [
+            [
+              "**the poor** · **the elderly**",
+              "**a** Frenchman"
+            ],
+            [
+              "**the unemployed** · **the young**",
+              "**a** Czech"
+            ],
+            [
+              "**the Czechs** · **the French**",
+              "**a** Pole"
+            ],
+            [
+              "but: **-** poor families",
+              "(the adjective has a noun after it)"
+            ]
+          ]
+        }
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "text_first": true,
+        "points": [
+          "The first two put **the** where English wants nothing. The last two do the opposite."
+        ],
+        "table": {
+          "headers": [
+            "Not this",
+            "Say this"
+          ],
+          "rows": [
+            [
+              "~~She studies the history~~",
+              "She studies **-** history"
+            ],
+            [
+              "~~We talked about the politics~~",
+              "We talked about **-** politics"
+            ],
+            [
+              "~~more for poor~~",
+              "more for **the** poor"
+            ],
+            [
+              "~~She married Frenchman~~",
+              "She married **a** Frenchman"
+            ]
+          ]
+        }
+      }
+    ]
+  },
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_articles_genericity_general",
+      "title": "In general, or this one",
+      "items": [
+        {
+          "en": "I have always liked dogs.",
+          "cz": "Vždycky jsem měl rád psy.",
+          "gap": "I have always liked ____ dogs.",
+          "gap_answer": "-",
+          "accepts": [
+            "I've always liked dogs.",
+            "I have always liked dogs."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "Dogs in general, not any particular ones — English uses **no article** with a plural.",
+          "explanation_cz": "Psi obecně, ne konkrétní — angličtina má u množného čísla **žádný člen**.",
+          "gap_class": "article",
+          "type": false
+        },
+        {
+          "en": "She studies history at university.",
+          "cz": "Studuje na univerzitě historii.",
+          "gap": "She studies ____ history at university.",
+          "gap_answer": "-",
+          "accepts": [
+            "She studies history at university."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "A subject in general takes **no article**. *The history* would mean the history OF something.",
+          "explanation_cz": "Obor obecně má **žádný člen**. *The history* by znamenalo historie NĚČEHO.",
+          "gap_class": "article",
+          "type": false
+        },
+        {
+          "en": "Everybody agrees that music is important.",
+          "cz": "Všichni se shodnou, že hudba je důležitá.",
+          "gap": "Everybody agrees that ____ music is important.",
+          "gap_answer": "-",
+          "accepts": [
+            "Everybody agrees that music is important."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "An uncountable idea in general: **no article**.",
+          "explanation_cz": "Nepočitatelná věc obecně: **žádný člen**.",
+          "gap_class": "article",
+          "type": false
+        },
+        {
+          "en": "He has been afraid of spiders since childhood.",
+          "cz": "Od dětství se bojí pavouků.",
+          "gap": "He has been afraid of ____ spiders since childhood.",
+          "gap_answer": "-",
+          "accepts": [
+            "He's been afraid of spiders since childhood.",
+            "He is been afraid of spiders since childhood.",
+            "He has been afraid of spiders since childhood."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "All spiders, everywhere. Plural and general, so **no article**.",
+          "explanation_cz": "Všichni pavouci, všude. Množné číslo a obecně, proto **žádný člen**.",
+          "gap_class": "article",
+          "type": false
+        },
+        {
+          "en": "We talked about politics all evening.",
+          "cz": "Celý večer jsme mluvili o politice.",
+          "gap": "We talked about ____ politics all evening.",
+          "gap_answer": "-",
+          "accepts": [
+            "We talked about politics all evening."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "The subject in general: **no article**.",
+          "explanation_cz": "Téma obecně: **žádný člen**.",
+          "gap_class": "article",
+          "type": false
+        },
+        {
+          "en": "Everyone knows that children learn languages quickly.",
+          "cz": "Každý ví, že děti se učí jazyky rychle.",
+          "gap": "Everyone knows that ____ children learn languages quickly.",
+          "gap_answer": "-",
+          "accepts": [
+            "Everyone knows that children learn languages quickly."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "Children as a whole class of people: **no article**.",
+          "explanation_cz": "Děti jako celá skupina: **žádný člen**.",
+          "gap_class": "article",
+          "type": false
+        },
+        {
+          "en": "Please feed the dogs before you leave.",
+          "cz": "Než odejdeš, nakrm ty psy.",
+          "gap": "Please feed ____ dogs before you leave.",
+          "gap_answer": "the",
+          "accepts": [
+            "Please feed the dogs before you leave."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "Now it is OUR dogs, the ones we both know: **the**.",
+          "explanation_cz": "Teď jde o NAŠE psy, které oba známe: **the**.",
+          "gap_class": "article"
+        },
+        {
+          "en": "I did not like the music at the party.",
+          "cz": "Ta hudba na té oslavě se mi nelíbila.",
+          "gap": "I did not like ____ music at the party.",
+          "gap_answer": "the",
+          "accepts": [
+            "I didn't like the music at the party.",
+            "I did not like the music at the party."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "One particular music, at one particular party: **the**.",
+          "explanation_cz": "Jedna konkrétní hudba na jedné konkrétní oslavě: **the**.",
+          "gap_class": "article"
+        },
+        {
+          "en": "She is writing about the history of Brno.",
+          "cz": "Píše o historii Brna.",
+          "gap": "She is writing about ____ history of Brno.",
+          "gap_answer": "the",
+          "accepts": [
+            "She's writing about the history of Brno.",
+            "She is writing about the history of Brno.",
+            "She has writing about the history of Brno."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "*Of Brno* makes it a specific history: **the**.",
+          "explanation_cz": "*Of Brno* z toho dělá konkrétní historii: **the**.",
+          "gap_class": "article"
+        },
+        {
+          "en": "He is afraid of the spider in the bath.",
+          "cz": "Bojí se toho pavouka ve vaně.",
+          "gap": "He is afraid of ____ spider in the bath.",
+          "gap_answer": "the",
+          "accepts": [
+            "He's afraid of the spider in the bath.",
+            "He is afraid of the spider in the bath.",
+            "He has afraid of the spider in the bath."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "One spider, and we both know which: **the**.",
+          "explanation_cz": "Jeden pavouk a oba víme který: **the**.",
+          "gap_class": "article"
+        },
+        {
+          "en": "We discussed the politics of the new law.",
+          "cz": "Diskutovali jsme o politice toho nového zákona.",
+          "gap": "We discussed ____ politics of the new law.",
+          "gap_answer": "the",
+          "accepts": [
+            "We discussed the politics of the new law."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "*Of the new law* narrows it to one thing: **the**.",
+          "explanation_cz": "*Of the new law* to zúží na jednu věc: **the**.",
+          "gap_class": "article"
+        },
+        {
+          "en": "I can hear the children next door.",
+          "cz": "Slyším ty děti od vedle.",
+          "gap": "I can hear ____ children next door.",
+          "gap_answer": "the",
+          "accepts": [
+            "I can hear the children next door."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "Particular children, in a particular flat: **the**.",
+          "explanation_cz": "Konkrétní děti v konkrétním bytě: **the**.",
+          "gap_class": "article"
+        }
+      ]
+    },
+    {
+      "id": "b2_articles_genericity_groups",
+      "title": "Groups of people",
+      "items": [
+        {
+          "en": "The government should do more for the poor.",
+          "cz": "Vláda by měla dělat víc pro chudé.",
+          "gap": "The government should do more for ____ poor.",
+          "gap_answer": "the",
+          "accepts": [
+            "The government should do more for the poor."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the** + adjective names a whole GROUP of people. *For poor* is not English.",
+          "explanation_cz": "**the** + přídavné jméno pojmenuje celou SKUPINU lidí. *For poor* není angličtina.",
+          "gap_class": "article"
+        },
+        {
+          "en": "This law helps the elderly.",
+          "cz": "Tenhle zákon pomáhá starším lidem.",
+          "gap": "This law helps ____ elderly.",
+          "gap_answer": "the",
+          "accepts": [
+            "This law helps the elderly."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the elderly** = elderly people as a group. The adjective becomes the noun.",
+          "explanation_cz": "**the elderly** = starší lidé jako skupina. Přídavné jméno se stane podstatným.",
+          "gap_class": "article"
+        },
+        {
+          "en": "Support goes to the unemployed first.",
+          "cz": "Podpora jde nejdřív nezaměstnaným.",
+          "gap": "Support goes to ____ unemployed first.",
+          "gap_answer": "the",
+          "accepts": [
+            "Support goes to the unemployed first."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the unemployed** — same pattern, and it is always plural in meaning.",
+          "explanation_cz": "**the unemployed** — stejný vzorec a významem je vždy množné.",
+          "gap_class": "article"
+        },
+        {
+          "en": "Many say the young do not read newspapers.",
+          "cz": "Mnozí říkají, že mladí nečtou noviny.",
+          "gap": "Many say ____ young do not read newspapers.",
+          "gap_answer": "the",
+          "accepts": [
+            "Many say the young don't read newspapers.",
+            "Many say the young do not read newspapers."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the young** = young people in general.",
+          "explanation_cz": "**the young** = mladí lidé obecně.",
+          "gap_class": "article"
+        },
+        {
+          "en": "Many think the rich are getting richer.",
+          "cz": "Mnozí si myslí, že bohatí bohatnou.",
+          "gap": "Many think ____ rich are getting richer.",
+          "gap_answer": "the",
+          "accepts": [
+            "Many think the rich are getting richer."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the rich** takes a plural verb: *are*, not *is*.",
+          "explanation_cz": "**the rich** má sloveso v množném čísle: *are*, ne *is*.",
+          "gap_class": "article"
+        },
+        {
+          "en": "The city does a lot for the homeless.",
+          "cz": "Město dělá hodně pro lidi bez domova.",
+          "gap": "The city does a lot for ____ homeless.",
+          "gap_answer": "the",
+          "accepts": [
+            "The city does a lot for the homeless."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the homeless** — the group, not one person.",
+          "explanation_cz": "**the homeless** — skupina, ne jeden člověk.",
+          "gap_class": "article"
+        },
+        {
+          "en": "Everyone says the Czechs drink a lot of beer.",
+          "cz": "Všichni říkají, že Češi pijou hodně piva.",
+          "gap": "Everyone says ____ Czechs drink a lot of beer.",
+          "gap_answer": "the",
+          "accepts": [
+            "Everyone says the Czechs drink a lot of beer."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "A whole nation takes **the**: *the Czechs*, *the Poles*.",
+          "explanation_cz": "Celý národ má **the**: *the Czechs*, *the Poles*.",
+          "gap_class": "article"
+        },
+        {
+          "en": "It is said that the French take food seriously.",
+          "cz": "Říká se, že Francouzi berou jídlo vážně.",
+          "gap": "It is said that ____ French take food seriously.",
+          "gap_answer": "the",
+          "accepts": [
+            "It's said that the French take food seriously.",
+            "It is said that the French take food seriously.",
+            "It has said that the French take food seriously."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "Nationality words ending in *-ch* or *-sh* need **the** and no *-s*.",
+          "explanation_cz": "Národnosti končící na *-ch* nebo *-sh* mají **the** a žádné *-s*.",
+          "gap_class": "article"
+        },
+        {
+          "en": "People joke that the British queue for everything.",
+          "cz": "Lidé vtipkují, že Britové stojí frontu na všechno.",
+          "gap": "People joke that ____ British queue for everything.",
+          "gap_answer": "the",
+          "accepts": [
+            "People joke that the British queue for everything."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "**the British** — again no *-s*, and the verb is plural.",
+          "explanation_cz": "**the British** — zase žádné *-s* a sloveso je v množném čísle.",
+          "gap_class": "article"
+        },
+        {
+          "en": "She married a Frenchman last year.",
+          "cz": "Loni si vzala Francouze.",
+          "gap": "She married ____ Frenchman last year.",
+          "gap_answer": "a",
+          "accepts": [
+            "She married a Frenchman last year."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "ONE person from that country takes **a**, not *the*.",
+          "explanation_cz": "JEDEN člověk z té země má **a**, ne *the*.",
+          "gap_class": "article"
+        },
+        {
+          "en": "His new neighbour is a Czech.",
+          "cz": "Jeho nový soused je Čech.",
+          "gap": "His new neighbour is ____ Czech.",
+          "gap_answer": "a",
+          "accepts": [
+            "His new neighbour is a Czech."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "One person again: **a** Czech. *The Czechs* would be the whole nation.",
+          "explanation_cz": "Zase jeden člověk: **a** Czech. *The Czechs* by byl celý národ.",
+          "gap_class": "article"
+        },
+        {
+          "en": "This charity helps poor families in the city.",
+          "cz": "Tahle charita pomáhá chudým rodinám ve městě.",
+          "gap": "This charity helps ____ poor families in the city.",
+          "gap_answer": "-",
+          "accepts": [
+            "This charity helps poor families in the city."
+          ],
+          "quiz_options": [
+            "-",
+            "a",
+            "an",
+            "the"
+          ],
+          "explanation": "With a NOUN after it the adjective is just an adjective, so **no article** in the plural.",
+          "explanation_cz": "Když po přídavném jméně následuje PODSTATNÉ, je to jen přídavné jméno, takže v množném čísle **žádný člen**.",
+          "gap_class": "article",
+          "type": false
+        }
+      ]
+    },
+    {
+      "id": "b2_articles_genericity_use",
+      "title": "Fix the sentence",
+      "items": [
+        {
+          "en": "She studies history at university.",
+          "cz": "Studuje na univerzitě historii.",
+          "wrong": "She studies the history at university.",
+          "accepts": [
+            "She studies history at university."
+          ],
+          "type": false,
+          "explanation": "A subject in general takes **no article**: *studies history*.",
+          "explanation_cz": "Obor obecně má **žádný člen**: *studies history*."
+        },
+        {
+          "en": "We talked about politics all evening.",
+          "cz": "Celý večer jsme mluvili o politice.",
+          "wrong": "We talked about the politics all evening.",
+          "accepts": [
+            "We talked about politics all evening."
+          ],
+          "type": false,
+          "explanation": "*All evening* makes it the subject in general, so no **the**.",
+          "explanation_cz": "*All evening* z toho dělá téma obecně, takže žádné **the**."
+        },
+        {
+          "en": "The government should do more for the poor.",
+          "cz": "Vláda by měla dělat víc pro chudé.",
+          "wrong": "The government should do more for poor.",
+          "accepts": [
+            "The government should do more for the poor."
+          ],
+          "type": false,
+          "explanation": "An adjective used as a group noun always needs **the**: *the poor*.",
+          "explanation_cz": "Přídavné jméno použité jako skupina vždy potřebuje **the**: *the poor*."
+        },
+        {
+          "en": "This law helps the elderly.",
+          "cz": "Tenhle zákon pomáhá starším lidem.",
+          "wrong": "This law helps elderly.",
+          "accepts": [
+            "This law helps the elderly."
+          ],
+          "type": false,
+          "explanation": "Same rule: **the elderly**, never bare *elderly*.",
+          "explanation_cz": "Stejné pravidlo: **the elderly**, nikdy holé *elderly*."
+        },
+        {
+          "en": "Many think the rich are getting richer.",
+          "cz": "Mnozí si myslí, že bohatí bohatnou.",
+          "wrong": "Many think rich are getting richer.",
+          "accepts": [
+            "Many think the rich are getting richer."
+          ],
+          "type": false,
+          "explanation": "**the rich** — the group needs its article.",
+          "explanation_cz": "**the rich** — skupina potřebuje svůj člen."
+        },
+        {
+          "en": "She married a Frenchman last year.",
+          "cz": "Loni si vzala Francouze.",
+          "wrong": "She married Frenchman last year.",
+          "accepts": [
+            "She married a Frenchman last year."
+          ],
+          "type": false,
+          "explanation": "One person from a country takes **a**: *a Frenchman*.",
+          "explanation_cz": "Jeden člověk z nějaké země má **a**: *a Frenchman*."
+        }
+      ]
     }
-  ],
-  "codex_unit": "G_NP-B1B2-01"
+  ]
 }
