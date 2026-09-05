@@ -145,6 +145,14 @@ under `data/`.
    `b1_grammar_match`, `b1_grammar_type`, `b1_finale`) — they pool at runtime and
    have no pack to author. Spec is `codex/LEVEL-CHECKS.md`.
 
+## Drafting a unit that does not exist yet
+
+`codex/DRAFTING.md` is the method: sweep the position pool **before** writing
+a bank (the obvious words are usually already taught), the leaf and
+word-formation shapes with their models, the gate order, and the four faults
+that hit every draft. Read it before authoring new content; this file only
+tells you what you may touch and what the bar is.
+
 ## Work the unit
 
 **Grammar.** `py -X utf8 codex/lint.py <unit_id>` is the prep card. Findings are
