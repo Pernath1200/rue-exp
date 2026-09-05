@@ -4,15 +4,896 @@
   "level": "B2",
   "tree_node": "b2_narrative_tenses",
   "practice": "frames",
-  "status": "stub",
-  "note": "STUB 2026-08-29: auto-authored bank removed (James). Title kept. Do not refill from auto. Rebuild by hand before any student play.",
+  "note": "BUILT 2026-09-05 (b2/auto), from the 2026-08-29 empty stub. Weaves the four past tenses: past simple is the spine, past continuous the background, past perfect and its continuous everything earlier. C29 timeline on card 0 against the tenses already taught (a2_past_simple, a2_past_continuous, b1_past_continuous_2, b1_past_perfect, b2_past_perfect). B12 Check is a sort of English sentences into the three jobs (bins named by job per B17, sort_cz false per B20, taught form bolded per C37) — Czech cannot pick the tense. A14: every past-perfect item carries a stated past anchor (when we got there / by the time / it was her first flight), and no item's distractor list offers a reading that is also correct (G4). B3/B6/B4 authored quiz_options on every item, same lemma, carrying the errors a Czech learner makes. B11 lemma cue on every gap. E7 Use is error-correction, one error per sentence (E2), never a correct sentence (E9).",
   "default_direction": "cz_to_en",
   "blocks": [
     {
-      "id": "stub",
-      "title": "Not built",
-      "items": []
+      "id": "b2_narrative_tenses_sort",
+      "title": "Which job?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "The storm **started** at four.",
+          "cz": "Bouřka začala ve čtyři.",
+          "bin": "The events",
+          "explanation": "It moves the story on → past simple.",
+          "explanation_cz": "Posouvá příběh dál → past simple."
+        },
+        {
+          "en": "First he knocked, then he **rang** the bell.",
+          "cz": "Nejdřív zaklepal, pak zazvonil.",
+          "bin": "The events",
+          "explanation": "It moves the story on → past simple.",
+          "explanation_cz": "Posouvá příběh dál → past simple."
+        },
+        {
+          "en": "The lights went out and the room **fell** silent.",
+          "cz": "Zhasla světla a v místnosti nastalo ticho.",
+          "bin": "The events",
+          "explanation": "It moves the story on → past simple.",
+          "explanation_cz": "Posouvá příběh dál → past simple."
+        },
+        {
+          "en": "We **were waiting** outside when the storm started.",
+          "cz": "Čekali jsme venku, když začala bouřka.",
+          "bin": "The background",
+          "explanation": "It was already running → past continuous.",
+          "explanation_cz": "Už probíhalo → past continuous."
+        },
+        {
+          "en": "While she **was writing** the report, the power failed.",
+          "cz": "Zatímco psala zprávu, vypadl proud.",
+          "bin": "The background",
+          "explanation": "It was already running → past continuous.",
+          "explanation_cz": "Už probíhalo → past continuous."
+        },
+        {
+          "en": "The dog **was barking** when I opened the gate.",
+          "cz": "Pes štěkal, když jsem otevřel bránu.",
+          "bin": "The background",
+          "explanation": "It was already running → past continuous.",
+          "explanation_cz": "Už probíhalo → past continuous."
+        },
+        {
+          "en": "When we got to the stop, the bus **had already left**.",
+          "cz": "Když jsme došli na zastávku, autobus už odjel.",
+          "bin": "Before the story",
+          "explanation": "It was finished before the story reached it → past perfect.",
+          "explanation_cz": "Skončilo dřív, než tam příběh došel → past perfect."
+        },
+        {
+          "en": "She couldn't pay because she **had left** her wallet at home.",
+          "cz": "Nemohla zaplatit, protože si nechala peněženku doma.",
+          "bin": "Before the story",
+          "explanation": "It was finished before the story reached it → past perfect.",
+          "explanation_cz": "Skončilo dřív, než tam příběh došel → past perfect."
+        },
+        {
+          "en": "The room was empty; everyone **had gone** home.",
+          "cz": "Místnost byla prázdná; všichni už šli domů.",
+          "bin": "Before the story",
+          "explanation": "It was finished before the story reached it → past perfect.",
+          "explanation_cz": "Skončilo dřív, než tam příběh došel → past perfect."
+        }
+      ]
+    },
+    {
+      "id": "b2_narrative_tenses_main",
+      "title": "Narrative tenses · the four jobs",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
+      "items": [
+        {
+          "en": "We were waiting outside when the storm started.",
+          "cz": "Čekali jsme venku, když začala bouřka.",
+          "gap": "We ____ outside when the storm started. (wait)",
+          "gap_answer": "were waiting",
+          "quiz_options": [
+            "were waiting",
+            "waited",
+            "had waited",
+            "was waiting"
+          ],
+          "accepts": [
+            "We were waiting outside when the storm started."
+          ],
+          "wrong": "We were wait outside when the storm started.",
+          "explanation": "The waiting was already running when the storm landed on it → **were waiting**.",
+          "explanation_cz": "Čekání už probíhalo, když přišla bouřka → **were waiting**."
+        },
+        {
+          "en": "She was checking her email while the meeting went on.",
+          "cz": "Kontrolovala si e-maily, zatímco schůze pokračovala.",
+          "gap": "She ____ her email while the meeting went on. (check)",
+          "gap_answer": "was checking",
+          "quiz_options": [
+            "was checking",
+            "checked",
+            "had checked",
+            "were checking"
+          ],
+          "accepts": [
+            "She was checking her email while the meeting went on."
+          ],
+          "wrong": "She was check her email while the meeting went on.",
+          "explanation": "Two long actions at once → **was checking**. she takes **was**.",
+          "explanation_cz": "Dvě dlouhé akce zároveň → **was checking**. she má **was**."
+        },
+        {
+          "en": "The dog was barking when I opened the gate.",
+          "cz": "Pes štěkal, když jsem otevřel bránu.",
+          "gap": "The dog ____ when I opened the gate. (bark)",
+          "gap_answer": "was barking",
+          "quiz_options": [
+            "was barking",
+            "barked",
+            "had barked",
+            "were barking"
+          ],
+          "accepts": [
+            "The dog was barking when I opened the gate."
+          ],
+          "wrong": "The dog was bark when I opened the gate.",
+          "explanation": "The barking was the background; opening the gate is the short event → **was barking**.",
+          "explanation_cz": "Štěkání je pozadí, otevření brány krátká událost → **was barking**."
+        },
+        {
+          "en": "They were painting the hall when we arrived.",
+          "cz": "Zrovna malovali chodbu, když jsme přijeli.",
+          "gap": "They ____ the hall when we arrived. (paint)",
+          "gap_answer": "were painting",
+          "quiz_options": [
+            "were painting",
+            "painted",
+            "had painted",
+            "was painting"
+          ],
+          "accepts": [
+            "They were painting the hall when we arrived."
+          ],
+          "wrong": "They was painting the hall when we arrived.",
+          "explanation": "they takes **were**: the painting was under way when we arrived.",
+          "explanation_cz": "they má **were**: malování probíhalo, když jsme přijeli."
+        },
+        {
+          "en": "I wasn't listening when he explained the rules.",
+          "cz": "Neposlouchal jsem, když vysvětloval pravidla.",
+          "gap": "I ____ when he explained the rules. (not / listen)",
+          "gap_answer": "wasn't listening",
+          "quiz_options": [
+            "wasn't listening",
+            "didn't listen",
+            "wasn't listened",
+            "not listening"
+          ],
+          "accepts": [
+            "I wasn't listening when he explained the rules.",
+            "I was not listening when he explained the rules."
+          ],
+          "wrong": "I didn't listening when he explained the rules.",
+          "explanation": "Negative background: **wasn't** + listening, not didn't + -ing.",
+          "explanation_cz": "Záporné pozadí: **wasn't** + listening, ne didn't + -ing.",
+          "gap_accepts": [
+            "wasn't listening",
+            "was not listening"
+          ]
+        },
+        {
+          "en": "While she was writing the report, the power failed.",
+          "cz": "Zatímco psala zprávu, vypadl proud.",
+          "gap": "While she ____ the report, the power failed. (write)",
+          "gap_answer": "was writing",
+          "quiz_options": [
+            "was writing",
+            "wrote",
+            "had written",
+            "were writing"
+          ],
+          "accepts": [
+            "While she was writing the report, the power failed."
+          ],
+          "wrong": "While she was wrote the report, the power failed.",
+          "explanation": "**while** introduces the long action → **was writing**; the failure cuts it.",
+          "explanation_cz": "**while** uvádí dlouhou akci → **was writing**; výpadek ji přeruší."
+        },
+        {
+          "en": "Where were you sitting when the film started?",
+          "cz": "Kde jsi seděl, když začal film?",
+          "gap": "Where ____ when the film started? (you / sit)",
+          "gap_answer": "were you sitting",
+          "quiz_options": [
+            "were you sitting",
+            "did you sit",
+            "you were sitting",
+            "was you sitting"
+          ],
+          "accepts": [
+            "Where were you sitting when the film started?"
+          ],
+          "wrong": "Where you were sitting when the film started?",
+          "explanation": "Question order: **were** + you + sitting. No **did** with a continuous form.",
+          "explanation_cz": "Pořádek v otázce: **were** + you + sitting. S průběhovým tvarem se **did** nepoužívá."
+        },
+        {
+          "en": "When we got to the stop, the bus had already left.",
+          "cz": "Když jsme došli na zastávku, autobus už odjel.",
+          "gap": "When we got to the stop, the bus ____. (already / leave)",
+          "gap_answer": "had already left",
+          "quiz_options": [
+            "had already left",
+            "already left",
+            "has already left",
+            "was already leaving"
+          ],
+          "accepts": [
+            "When we got to the stop, the bus had already left."
+          ],
+          "wrong": "When we got to the stop, the bus had already leave.",
+          "explanation": "Getting to the stop is the anchor; the leaving is earlier → **had already left**.",
+          "explanation_cz": "Příchod na zastávku je kotva, odjezd je dřív → **had already left**."
+        },
+        {
+          "en": "By the time the doctor arrived, the pain had stopped.",
+          "cz": "Než přijel doktor, bolest už přestala.",
+          "gap": "By the time the doctor arrived, the pain ____. (stop)",
+          "gap_answer": "had stopped",
+          "quiz_options": [
+            "had stopped",
+            "has stopped",
+            "was stopping",
+            "had stop"
+          ],
+          "accepts": [
+            "By the time the doctor arrived, the pain had stopped."
+          ],
+          "wrong": "By the time the doctor arrived, the pain had stop.",
+          "explanation": "**by the time** + past simple gives the point; the pain stopped before it → **had stopped**.",
+          "explanation_cz": "**by the time** + minulý čas dává bod; bolest přestala dřív → **had stopped**."
+        },
+        {
+          "en": "She couldn't pay because she had left her wallet at home.",
+          "cz": "Nemohla zaplatit, protože si nechala peněženku doma.",
+          "gap": "She couldn't pay because she ____ her wallet at home. (leave)",
+          "gap_answer": "had left",
+          "quiz_options": [
+            "had left",
+            "has left",
+            "was leaving",
+            "had leaved"
+          ],
+          "accepts": [
+            "She couldn't pay because she had left her wallet at home.",
+            "She could not pay because she had left her wallet at home.",
+            "She could not pay because she'd left her wallet at home.",
+            "She couldn't pay because she'd left her wallet at home."
+          ],
+          "wrong": "She couldn't pay because she had leaved her wallet at home.",
+          "explanation": "The wallet was left before she tried to pay → **had left**. leave is irregular: left.",
+          "explanation_cz": "Peněženku nechala doma dřív, než chtěla platit → **had left**. leave je nepravidelné: left."
+        },
+        {
+          "en": "The room was empty; everyone had gone home.",
+          "cz": "Místnost byla prázdná; všichni už šli domů.",
+          "gap": "The room was empty; everyone ____ home. (go)",
+          "gap_answer": "had gone",
+          "quiz_options": [
+            "had gone",
+            "has gone",
+            "was going",
+            "had went"
+          ],
+          "accepts": [
+            "The room was empty; everyone had gone home."
+          ],
+          "wrong": "The room was empty; everyone had went home.",
+          "explanation": "The empty room is the moment; the leaving came earlier → **had gone**, not had went.",
+          "explanation_cz": "Prázdná místnost je ten okamžik, odchod byl dřív → **had gone**, ne had went."
+        },
+        {
+          "en": "I recognised the street because I had been there before.",
+          "cz": "Poznal jsem tu ulici, protože jsem tam už byl.",
+          "gap": "I recognised the street because I ____ there before. (be)",
+          "gap_answer": "had been",
+          "quiz_options": [
+            "had been",
+            "have been",
+            "had being",
+            "am"
+          ],
+          "accepts": [
+            "I recognised the street because I had been there before.",
+            "I recognised the street because I'd been there before."
+          ],
+          "wrong": "I recognised the street because I had be there before.",
+          "explanation": "Recognising is the moment in the story; the earlier visit takes **had been**.",
+          "explanation_cz": "Poznání je okamžik v příběhu, dřívější návštěva má **had been**."
+        },
+        {
+          "en": "It was her first flight; she had never been on a plane.",
+          "cz": "Byl to její první let; nikdy předtím neletěla letadlem.",
+          "gap": "It was her first flight; she ____ on a plane. (never / be)",
+          "gap_answer": "had never been",
+          "quiz_options": [
+            "had never been",
+            "never was",
+            "has never been",
+            "had never being"
+          ],
+          "accepts": [
+            "It was her first flight; she had never been on a plane.",
+            "It was her first flight; she'd never been on a plane."
+          ],
+          "wrong": "It was her first flight; she had never be on a plane.",
+          "explanation": "The first flight is the past frame; everything before it takes **had never been**.",
+          "explanation_cz": "První let je minulý rámec, všechno před ním má **had never been**."
+        },
+        {
+          "en": "When I checked my bag, I saw someone had taken my laptop.",
+          "cz": "Když jsem zkontroloval tašku, viděl jsem, že mi někdo vzal notebook.",
+          "gap": "When I checked my bag, I saw someone ____ my laptop. (take)",
+          "gap_answer": "had taken",
+          "quiz_options": [
+            "had taken",
+            "has taken",
+            "was taking",
+            "had took"
+          ],
+          "accepts": [
+            "When I checked my bag, I saw someone had taken my laptop."
+          ],
+          "wrong": "When I checked my bag, I saw someone had took my laptop.",
+          "explanation": "Checking the bag is the anchor; the theft was earlier → **had taken**, not had took.",
+          "explanation_cz": "Kontrola tašky je kotva, krádež byla dřív → **had taken**, ne had took."
+        },
+        {
+          "en": "They had locked the gate by the time the last guest arrived.",
+          "cz": "Než dorazil poslední host, už bránu zamkli.",
+          "gap": "They ____ the gate by the time the last guest arrived. (lock)",
+          "gap_answer": "had locked",
+          "quiz_options": [
+            "had locked",
+            "have locked",
+            "were locking",
+            "had lock"
+          ],
+          "accepts": [
+            "They had locked the gate by the time the last guest arrived.",
+            "They'd locked the gate by the time the last guest arrived."
+          ],
+          "wrong": "They had lock the gate by the time the last guest arrived.",
+          "explanation": "The guest's arrival is the point; the locking is earlier → **had locked**.",
+          "explanation_cz": "Příchod hosta je ten bod, zamykání je dřív → **had locked**."
+        },
+        {
+          "en": "He failed the test because he had not revised.",
+          "cz": "Neudělal test, protože se neučil.",
+          "gap": "He failed the test because he ____. (not / revise)",
+          "gap_answer": "had not revised",
+          "quiz_options": [
+            "had not revised",
+            "has not revised",
+            "was not revising",
+            "had not revise"
+          ],
+          "accepts": [
+            "He failed the test because he had not revised.",
+            "He failed the test because he hadn't revised."
+          ],
+          "wrong": "He failed the test because he had not revise.",
+          "explanation": "Negative earlier past: **had not** + revised. The failing is the later point.",
+          "explanation_cz": "Záporná dřívější minulost: **had not** + revised. Neúspěch je pozdější bod.",
+          "gap_accepts": [
+            "had not revised",
+            "hadn't revised"
+          ]
+        },
+        {
+          "en": "We had been waiting for an hour when the train finally came.",
+          "cz": "Čekali jsme už hodinu, když vlak konečně přijel.",
+          "gap": "We ____ for an hour when the train finally came. (wait)",
+          "gap_answer": "had been waiting",
+          "quiz_options": [
+            "had been waiting",
+            "have been waiting",
+            "are waiting",
+            "had been waited"
+          ],
+          "accepts": [
+            "We had been waiting for an hour when the train finally came.",
+            "We'd been waiting for an hour when the train finally came."
+          ],
+          "wrong": "We had been wait for an hour when the train finally came.",
+          "explanation": "How long up to that moment → **had been waiting**, not the passive had been waited.",
+          "explanation_cz": "Jak dlouho až do toho okamžiku → **had been waiting**, ne trpné had been waited."
+        },
+        {
+          "en": "His eyes were red; he had been crying.",
+          "cz": "Měl červené oči; plakal.",
+          "gap": "His eyes were red; he ____. (cry)",
+          "gap_answer": "had been crying",
+          "quiz_options": [
+            "had been crying",
+            "has been crying",
+            "was cried",
+            "had been cried"
+          ],
+          "accepts": [
+            "His eyes were red; he had been crying.",
+            "His eyes were red; he'd been crying."
+          ],
+          "wrong": "His eyes were red; he had been cry.",
+          "explanation": "The red eyes are the evidence left by the crying → **had been crying**.",
+          "explanation_cz": "Červené oči jsou stopa po pláči → **had been crying**."
+        },
+        {
+          "en": "The pitch was wet because it had been raining all night.",
+          "cz": "Hřiště bylo mokré, protože celou noc pršelo.",
+          "gap": "The pitch was wet because it ____ all night. (rain)",
+          "gap_answer": "had been raining",
+          "quiz_options": [
+            "had been raining",
+            "has been raining",
+            "was rained",
+            "had been rained"
+          ],
+          "accepts": [
+            "The pitch was wet because it had been raining all night.",
+            "The pitch was wet because it'd been raining all night."
+          ],
+          "wrong": "The pitch was wet because it had been rain all night.",
+          "explanation": "All night of rain explains the wet pitch → **had been raining**.",
+          "explanation_cz": "Celá noc deště vysvětluje mokré hřiště → **had been raining**."
+        },
+        {
+          "en": "She was exhausted; she had been driving since dawn.",
+          "cz": "Byla vyčerpaná; řídila už od svítání.",
+          "gap": "She was exhausted; she ____ since dawn. (drive)",
+          "gap_answer": "had been driving",
+          "quiz_options": [
+            "had been driving",
+            "has been driving",
+            "was driven",
+            "had been driven"
+          ],
+          "accepts": [
+            "She was exhausted; she had been driving since dawn.",
+            "She was exhausted; she'd been driving since dawn."
+          ],
+          "wrong": "She was exhausted; she had been drive since dawn.",
+          "explanation": "**since dawn** measures the time up to that moment → **had been driving**.",
+          "explanation_cz": "**since dawn** měří dobu až do toho okamžiku → **had been driving**."
+        },
+        {
+          "en": "They had been living in Brno for years before they moved.",
+          "cz": "Bydleli v Brně roky, než se odstěhovali.",
+          "gap": "They ____ in Brno for years before they moved. (live)",
+          "gap_answer": "had been living",
+          "quiz_options": [
+            "had been living",
+            "have been living",
+            "are living",
+            "had been lived"
+          ],
+          "accepts": [
+            "They had been living in Brno for years before they moved.",
+            "They'd been living in Brno for years before they moved."
+          ],
+          "wrong": "They had been live in Brno for years before they moved.",
+          "explanation": "Years of living, up to the move → **had been living**.",
+          "explanation_cz": "Roky bydlení až do stěhování → **had been living**."
+        },
+        {
+          "en": "How long had you been working there before you left?",
+          "cz": "Jak dlouho jsi tam pracoval, než jsi odešel?",
+          "gap": "How long ____ there before you left? (you / work)",
+          "gap_answer": "had you been working",
+          "quiz_options": [
+            "had you been working",
+            "have you been working",
+            "did you been working",
+            "were you been working"
+          ],
+          "accepts": [
+            "How long had you been working there before you left?"
+          ],
+          "wrong": "How long you had been working there before you left?",
+          "explanation": "Question order: **had** + you + been working. Leaving is the point you measure to.",
+          "explanation_cz": "Pořádek v otázce: **had** + you + been working. Odchod je bod, ke kterému měříš."
+        },
+        {
+          "en": "We arrived at six, ate quickly and caught the last bus.",
+          "cz": "Přijeli jsme v šest, rychle se najedli a stihli poslední autobus.",
+          "gap": "We arrived at six, ate quickly and ____ the last bus. (catch)",
+          "gap_answer": "caught",
+          "quiz_options": [
+            "caught",
+            "had caught",
+            "were catching",
+            "has caught"
+          ],
+          "accepts": [
+            "We arrived at six, ate quickly and caught the last bus."
+          ],
+          "wrong": "We arrived at six, ate quickly and had caught the last bus.",
+          "explanation": "Three events in order — all past simple. Nothing here is earlier than the story.",
+          "explanation_cz": "Tři události za sebou — všechny past simple. Nic tu není dřív než příběh."
+        },
+        {
+          "en": "First he knocked, then he rang the bell.",
+          "cz": "Nejdřív zaklepal, pak zazvonil.",
+          "gap": "First he knocked, then he ____ the bell. (ring)",
+          "gap_answer": "rang",
+          "quiz_options": [
+            "rang",
+            "had rung",
+            "was ringing",
+            "has rung"
+          ],
+          "accepts": [
+            "First he knocked, then he rang the bell."
+          ],
+          "wrong": "First he knocked, then he had rung the bell.",
+          "explanation": "**first … then** already puts them in order, so past simple does the whole job.",
+          "explanation_cz": "**first … then** je už seřadilo, past simple stačí."
+        },
+        {
+          "en": "The train pulled in and everyone stood up.",
+          "cz": "Vlak zastavil a všichni vstali.",
+          "gap": "The train pulled in and everyone ____. (stand up)",
+          "gap_answer": "stood up",
+          "quiz_options": [
+            "stood up",
+            "had stood up",
+            "was standing up",
+            "has stood up"
+          ],
+          "accepts": [
+            "The train pulled in and everyone stood up."
+          ],
+          "wrong": "The train pulled in and everyone had stood up.",
+          "explanation": "Two events, one after the other → past simple **stood up**.",
+          "explanation_cz": "Dvě události po sobě → past simple **stood up**."
+        },
+        {
+          "en": "He finished the letter and posted it the same day.",
+          "cz": "Dopis dopsal a ještě týž den ho poslal.",
+          "gap": "He finished the letter and ____ it the same day. (post)",
+          "gap_answer": "posted",
+          "quiz_options": [
+            "posted",
+            "had posted",
+            "was posting",
+            "has posted"
+          ],
+          "accepts": [
+            "He finished the letter and posted it the same day."
+          ],
+          "wrong": "He finished the letter and had posted it the same day.",
+          "explanation": "The same day, in order → past simple **posted**. No earlier layer here.",
+          "explanation_cz": "Týž den, po sobě → past simple **posted**. Žádná dřívější vrstva."
+        },
+        {
+          "en": "The lights went out and the room fell silent.",
+          "cz": "Zhasla světla a v místnosti nastalo ticho.",
+          "gap": "The lights went out and the room ____ silent. (fall)",
+          "gap_answer": "fell",
+          "quiz_options": [
+            "fell",
+            "had fallen",
+            "was falling",
+            "has fallen"
+          ],
+          "accepts": [
+            "The lights went out and the room fell silent."
+          ],
+          "wrong": "The lights went out and the room had fallen silent.",
+          "explanation": "One event follows the other → past simple **fell**, the irregular form of fall.",
+          "explanation_cz": "Jedna událost následuje druhou → past simple **fell**, nepravidelný tvar od fall."
+        },
+        {
+          "en": "While I was packing, I realised I had lost the tickets.",
+          "cz": "Zatímco jsem balil, zjistil jsem, že jsem ztratil lístky.",
+          "gap": "While I was packing, I realised I ____ the tickets. (lose)",
+          "gap_answer": "had lost",
+          "quiz_options": [
+            "had lost",
+            "have lost",
+            "was losing",
+            "am losing"
+          ],
+          "accepts": [
+            "While I was packing, I realised I had lost the tickets.",
+            "While I was packing, I realised I'd lost the tickets."
+          ],
+          "wrong": "While I was packing, I realised I had lose the tickets.",
+          "explanation": "Three layers: packing is the background, realising is the event, losing is earlier → **had lost**.",
+          "explanation_cz": "Tři vrstvy: balení pozadí, zjištění událost, ztráta dřív → **had lost**."
+        },
+        {
+          "en": "The kitchen smelled of smoke; someone had burnt the toast.",
+          "cz": "V kuchyni byl cítit kouř; někdo spálil toast.",
+          "gap": "The kitchen smelled of smoke; someone ____ the toast. (burn)",
+          "gap_answer": "had burnt",
+          "quiz_options": [
+            "had burnt",
+            "has burnt",
+            "was burning",
+            "had burn"
+          ],
+          "accepts": [
+            "The kitchen smelled of smoke; someone had burnt the toast.",
+            "The kitchen smelled of smoke; someone had burned the toast."
+          ],
+          "wrong": "The kitchen smelled of smoke; someone had burn the toast.",
+          "explanation": "The smell is the moment; the burning came before it → **had burnt**.",
+          "explanation_cz": "Zápach je ten okamžik, spálení bylo dřív → **had burnt**.",
+          "gap_accepts": [
+            "had burnt",
+            "had burned"
+          ]
+        },
+        {
+          "en": "He was still typing when the deadline passed.",
+          "cz": "Pořád ještě psal, když uplynula lhůta.",
+          "gap": "He ____ when the deadline passed. (still / type)",
+          "gap_answer": "was still typing",
+          "quiz_options": [
+            "was still typing",
+            "still typed",
+            "had still typed",
+            "were still typing"
+          ],
+          "accepts": [
+            "He was still typing when the deadline passed."
+          ],
+          "wrong": "He was still type when the deadline passed.",
+          "explanation": "**still** + the background form: the typing was under way when the deadline passed.",
+          "explanation_cz": "**still** + průběhový tvar: psaní probíhalo, když lhůta uplynula."
+        },
+        {
+          "en": "By the time she called, I had already fallen asleep.",
+          "cz": "Než zavolala, už jsem usnul.",
+          "gap": "By the time she called, I ____ asleep. (already / fall)",
+          "gap_answer": "had already fallen",
+          "quiz_options": [
+            "had already fallen",
+            "already fell",
+            "have already fallen",
+            "was already falling"
+          ],
+          "accepts": [
+            "By the time she called, I had already fallen asleep.",
+            "By the time she called, I'd already fallen asleep."
+          ],
+          "wrong": "By the time she called, I had already fall asleep.",
+          "explanation": "Her call is the point; falling asleep happened before it → **had already fallen**.",
+          "explanation_cz": "Její hovor je ten bod, usnutí bylo dřív → **had already fallen**."
+        }
+      ]
     }
   ],
-  "codex_unit": "G_VP-B1B2-01"
+  "codex_unit": "G_VP-B1B2-01",
+  "quality": "draft",
+  "use_mode": "correct",
+  "check": {
+    "sequence": [
+      "sort_bins",
+      "quiz"
+    ]
+  },
+  "bins": [
+    "The events",
+    "The background",
+    "Before the story"
+  ],
+  "bin_captions": {
+    "The events": "moves the story on",
+    "The background": "already running when it happened",
+    "Before the story": "finished earlier than the story"
+  },
+  "sort_cz": false,
+  "intro": {
+    "cards": [
+      {
+        "title": "Narrative tenses",
+        "title_cz": "Vyprávěcí časy",
+        "svg": "<svg viewBox=\"0 0 540 250\" xmlns=\"http://www.w3.org/2000/svg\">\n  <line x1=\"30\" y1=\"210\" x2=\"510\" y2=\"210\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"510,210 500,205 500,215\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"450\" y1=\"30\" x2=\"450\" y2=\"224\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"450\" y=\"22\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <text x=\"30\" y=\"46\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">the story happens here, left of now</text>\n  <circle cx=\"90\" cy=\"210\" r=\"7\" fill=\"var(--text, #eaeaea)\"/>\n  <line x1=\"90\" y1=\"150\" x2=\"90\" y2=\"210\" stroke=\"var(--text, #eaeaea)\" stroke-width=\"1\"/>\n  <text x=\"90\" y=\"142\" font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">they had locked it</text>\n  <text x=\"90\" y=\"126\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past perfect · before the story</text>\n  <rect x=\"170\" y=\"176\" width=\"200\" height=\"20\" rx=\"10\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"270\" y=\"190\" font-size=\"12\" fill=\"var(--bg, #14161a)\" text-anchor=\"middle\">we were waiting</text>\n  <text x=\"270\" y=\"168\" font-size=\"11\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\">past continuous · the background</text>\n  <circle cx=\"230\" cy=\"210\" r=\"6\" fill=\"var(--text, #eaeaea)\"/>\n  <circle cx=\"310\" cy=\"210\" r=\"6\" fill=\"var(--text, #eaeaea)\"/>\n  <text x=\"230\" y=\"230\" font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">it started</text>\n  <text x=\"310\" y=\"230\" font-size=\"12\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\">we ran</text>\n  <text x=\"270\" y=\"246\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">past simple · the events, in order</text>\n</svg>",
+        "points": [
+          "A story needs more than one past tense. Each one has its own job.",
+          "The **events** move the story forward — past simple.",
+          "The **background** was already running — past continuous.",
+          "Anything from **before** the story — past perfect."
+        ],
+        "table": {
+          "headers": [
+            "Job",
+            "Tense",
+            "Example"
+          ],
+          "rows": [
+            [
+              "before the story",
+              "past perfect",
+              "They **had locked** the gate."
+            ],
+            [
+              "the background",
+              "past continuous",
+              "We **were waiting** outside."
+            ],
+            [
+              "the events",
+              "past simple",
+              "The storm **started**."
+            ]
+          ]
+        }
+      },
+      {
+        "title": "The events, in order",
+        "title_cz": "Události za sebou",
+        "table": {
+          "headers": [
+            "Signal",
+            "Example"
+          ],
+          "rows": [
+            [
+              "and / then",
+              "First he knocked, then he **rang** the bell."
+            ],
+            [
+              "a time you can name",
+              "We arrived at six, ate quickly and **caught** the last bus."
+            ],
+            [
+              "two events in order",
+              "The lights went out and the room **fell** silent."
+            ]
+          ]
+        },
+        "points": [
+          "Past simple is the spine. Everything else hangs off it.",
+          "Two things that simply happened in order are both past simple.",
+          "Do not reach for **had** just because the sentence is about the past."
+        ]
+      },
+      {
+        "title": "The background",
+        "title_cz": "Pozadí",
+        "table": {
+          "headers": [
+            "Shape",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**was** / **were** + -ing, cut by past simple",
+              "We **were waiting** outside when the storm started."
+            ],
+            [
+              "**while** + the long action",
+              "While she **was writing** the report, the power failed."
+            ],
+            [
+              "two long actions at once",
+              "They **were arguing** quietly while the children slept."
+            ]
+          ]
+        },
+        "points": [
+          "The continuous is already running when the event lands on it.",
+          "**when** usually introduces the short one, **while** the long one."
+        ]
+      },
+      {
+        "title": "Before the story",
+        "title_cz": "Před příběhem",
+        "table": {
+          "headers": [
+            "Shape",
+            "Job",
+            "Example"
+          ],
+          "rows": [
+            [
+              "**had** + past participle",
+              "an earlier finished thing",
+              "When we got to the stop, the bus **had** already left."
+            ],
+            [
+              "**had been** + -ing",
+              "how long it had run",
+              "We **had been** waiting for an hour when the train finally came."
+            ],
+            [
+              "the anchor",
+              "the point it is earlier than",
+              "When we got to the stop…"
+            ]
+          ]
+        },
+        "points": [
+          "Past perfect always needs a point in the story to be earlier **than**.",
+          "With no such point, past simple is the honest tense.",
+          "**already** · **never** · **just** sit comfortably with it."
+        ]
+      },
+      {
+        "title": "Which one?",
+        "title_cz": "Který z nich?",
+        "table": {
+          "headers": [
+            "Ask yourself",
+            "Then use"
+          ],
+          "rows": [
+            [
+              "Did it move the story on?",
+              "past simple"
+            ],
+            [
+              "Was it already running?",
+              "past continuous"
+            ],
+            [
+              "Was it finished before that moment?",
+              "past perfect"
+            ],
+            [
+              "How long had it run up to that moment?",
+              "past perfect continuous"
+            ]
+          ]
+        },
+        "points": [
+          "Read the whole sentence. The other clause tells you which job this one has.",
+          "Czech marks the order with *už*, *zrovna*, *zatímco* — English marks it with the tense."
+        ]
+      },
+      {
+        "title": "Common mistakes",
+        "title_cz": "Časté chyby",
+        "table": {
+          "headers": [
+            "Avoid",
+            "Say"
+          ],
+          "rows": [
+            [
+              "~~I was cook when the phone rang.~~",
+              "I **was cooking** when the phone rang."
+            ],
+            [
+              "~~The bus had already leave.~~",
+              "The bus **had** already left."
+            ],
+            [
+              "~~We arrived at six and had caught the last bus.~~",
+              "We arrived at six, ate quickly and **caught** the last bus."
+            ],
+            [
+              "~~While I was wrote the report…~~",
+              "While I **was writing** the report…"
+            ],
+            [
+              "~~How long you had been working there?~~",
+              "How long **had you** been working there before you left?"
+            ]
+          ]
+        },
+        "points": [
+          "Past perfect is not a politer past simple. It needs something to be earlier than.",
+          "**was** and **were** take -ing. **had** takes a past participle."
+        ]
+      }
+    ]
+  }
 }
