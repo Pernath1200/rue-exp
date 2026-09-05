@@ -213,6 +213,11 @@ accommodation, cancel, check in, deposit, get lost, insurance, transfer (travel 
 **Default if unanswered:** a — the band's own row in AGENT-LOOP says "20 of 34 B1 grammar packs are 10-16 item stubs. Thickening them is the job", which is a floor. (c) would delete 41 working items from the first unit on the B1 path. (b) is a real option for `b1_present_perfect_vs_past` if you ever find it long to play, but it needs a node id and that is yours to stamp.
 → (James: your answer here)
 
+### `leaf_tech_b2` is drafted and passing, but its node is still `coming`
+**Q:** `data/vocab/blocks/b2_tech.json` (Tech 4, 36 words) is written and holds every gate at baseline — `check_rewrite` clean, `verify_pack` 4 errors / 56 warnings unchanged, `audit` 774 unchanged. Its node in `data/nodes-vocab.json` is `status: "coming"`. The four B2 vocab leaves drafted before it (`leaf_travel_b2`, `leaf_work_b2`, `leaf_media_b2`, `leaf_home_b2`) are all `live`, so the flip is normally done once the pack passes.
+**Options:** a) you flip it to `live` in a coordination sitting, with any others waiting / b) the lane flips it / c) leave it `coming` until you have smoked it.
+**Default if unanswered:** a. `nodes-*.json` is a hard never for this lane (AGENT-LOOP.md, HOME-LANE.md) and two writers have corrupted those files before — so the pack is committed and the node is left alone. Note (c) is arguably the more honest state anyway: nothing here has been played yet, and I3 says a student-facing link needs a tick.
+
 ---
 
 ## Answered
