@@ -40,7 +40,11 @@ ROW_RE = re.compile(r"^- \[(x| )\]\[(x| )\]\s+`([a-z0-9_]+)`", re.I)
 GRAMMAR_CLOUD_RE = re.compile(r"cloud run|cloud routine|routine", re.I)
 VOCAB_CLOUD_RE = re.compile(r"cloud run|cloud routine", re.I)
 EVIDENCE_RE = re.compile(r"James[^.]{0,40}(smok|smoke)", re.I)
-VOCAB_SMOKE_LEVELS = {"A1", "A2"}
+# B1 added 2026-09-05 (James). The 25 live B1 leaves were authored by the auto
+# loop and were invisible here, so nothing recorded whether anyone had played
+# them — the exact hole this file was built to close after the August routine
+# shipped 36 unread units behind green gates.
+VOCAB_SMOKE_LEVELS = {"A1", "A2", "B1"}
 
 
 def read_existing():
@@ -180,7 +184,7 @@ def main():
     o.append("---\n")
     o.append(f"**Grammar: {g_insp} inspected · {g_appr} approved · "
              f"{len(g_unseen)} unseen** of {len(grammar_rows)} live units\n")
-    o.append(f"**Vocab A1–A2: {v_insp} inspected · {v_appr} approved · "
+    o.append(f"**Vocab A1–B1: {v_insp} inspected · {v_appr} approved · "
              f"{len(v_unseen)} unseen** of {len(vocab_rows)} live units\n")
     o.append(f"Of the {len(cloud)} cloud-authored units, "
              f"**{sum(1 for r in cloud if r['insp'] or r['appr'])} have any tick**.\n")
@@ -198,7 +202,7 @@ def main():
         o.append(_fmt_row(r))
 
     o.append("\n---\n")
-    o.append("Vocab A1–A2 is on the Telegram smoke rail (path order). "
+    o.append("Vocab A1–B1 is on the Telegram smoke rail (path order). "
              "B1 vocab stays off the rail.\n")
     cur = None
     for r in vocab_rows:
