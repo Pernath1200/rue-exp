@@ -5,46 +5,115 @@
   "tree_node": "b2_past_perfect",
   "codex_unit": "G_VP-B1B2-01",
   "practice": "frames",
-  "note": "REWRITE 2026-08-05 · workable unit: earlier past vs past simple. Decision bank (not had/past participle form drills). Old 72-item form bank archived in git history pre this commit. Match idea/timeline → Quiz tense chips → Type full form → Use full sentence. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=workable_draft); auto-authored bank superseded.",
+  "note": "REWRITE 2026-08-05 · workable unit: earlier past vs past simple. Decision bank (not had/past participle form drills). Old 72-item form bank archived in git history pre this commit. Match idea/timeline → Quiz tense chips → Type full form → Use full sentence. · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=workable_draft); auto-authored bank superseded. · B2 REPAIR 2026-09-05 (b2/auto): A8 contraction twins on every accept (13 -> 0); C28 dead diagram key past-perfect-timeline replaced by inline SVG, which is also the C29 timeline (earlier point + past-simple point + dashed now); C4 four bolded non-bank strings unbolded or matched to the bank; C32 Common mistakes now ~~strike~~; B12 Check is a sort (Earlier past / Finished past, bins named by job per B17, sort_cz false per B20, chips bolded per C37) instead of the old gloss Match. 26 -> 36 items, lint 33 -> 13 (all CANDIDATE: A4 known referents, F3 above A1).",
   "default_direction": "cz_to_en",
   "quality": "workable_draft",
   "demo_priority": true,
   "check": {
     "sequence": [
-      "match",
+      "sort_bins",
       "quiz"
-    ],
-    "match_pairs": [
-      [
-        "she leave · then I arrive",
-        "earlier → had left"
-      ],
-      [
-        "they finish · then we start",
-        "earlier → had finished"
-      ],
-      [
-        "I lose keys · then I tell you",
-        "earlier → had lost"
-      ],
-      [
-        "rain all night · then morning come",
-        "earlier → had rained"
-      ],
-      [
-        "I go to Prague yesterday (one past time)",
-        "only past simple → went"
-      ],
-      [
-        "we meet in 2019 (finished year)",
-        "only past simple → met"
-      ]
     ]
   },
+  "bins": [
+    "Earlier past",
+    "Finished past"
+  ],
+  "bin_captions": {
+    "Earlier past": "before another past event",
+    "Finished past": "one past time, nothing earlier"
+  },
+  "sort_cz": false,
   "blocks": [
+    {
+      "id": "b2_past_perfect_sort",
+      "title": "Earlier or finished?",
+      "check": {
+        "sequence": [
+          "sort_bins"
+        ]
+      },
+      "items": [
+        {
+          "en": "When I arrived, she **had left**.",
+          "cz": "Když jsem přijel, už odešla.",
+          "bin": "Earlier past",
+          "explanation": "Two past points: leaving is the earlier one → had left.",
+          "explanation_cz": "Dva body v minulosti: odchod je ten dřívější → had left."
+        },
+        {
+          "en": "They **had finished** before we started.",
+          "cz": "Dokončili to, než jsme začali.",
+          "bin": "Earlier past",
+          "explanation": "Before we started marks the second point → had finished is earlier.",
+          "explanation_cz": "Before we started je druhý bod → had finished je dřívější."
+        },
+        {
+          "en": "By the time we got there, the film **had started**.",
+          "cz": "Než jsme tam dorazili, film už začal.",
+          "bin": "Earlier past",
+          "explanation": "By the time we got there is the later point → had started is earlier.",
+          "explanation_cz": "By the time we got there je pozdější bod → had started je dřívější."
+        },
+        {
+          "en": "She was tired because she **had worked** all day.",
+          "cz": "Byla unavená, protože celý den pracovala.",
+          "bin": "Earlier past",
+          "explanation": "The work explains was tired, so it came first → had worked.",
+          "explanation_cz": "Práce vysvětluje únavu, takže byla dřív → had worked."
+        },
+        {
+          "en": "I found the bag I **had lost**.",
+          "cz": "Našel jsem tašku, kterou jsem ztratil.",
+          "bin": "Earlier past",
+          "explanation": "You lose it before you find it → had lost.",
+          "explanation_cz": "Ztratit dřív než najít → had lost."
+        },
+        {
+          "en": "I **went** to Prague yesterday.",
+          "cz": "Včera jsem jel do Prahy.",
+          "bin": "Finished past",
+          "explanation": "Yesterday is one finished time and nothing is earlier → past simple.",
+          "explanation_cz": "Yesterday je jeden hotový čas, nic dřívějšího → past simple."
+        },
+        {
+          "en": "We **met** in 2019.",
+          "cz": "Seznámili jsme se v roce 2019.",
+          "bin": "Finished past",
+          "explanation": "A finished year, no second event → past simple.",
+          "explanation_cz": "Hotový rok, žádný druhý děj → past simple."
+        },
+        {
+          "en": "She **called** me last night.",
+          "cz": "Včera v noci mi volala.",
+          "bin": "Finished past",
+          "explanation": "Last night is one finished time → past simple.",
+          "explanation_cz": "Last night je jeden hotový čas → past simple."
+        },
+        {
+          "en": "I **saw** that film two years ago.",
+          "cz": "Ten film jsem viděl před dvěma lety.",
+          "bin": "Finished past",
+          "explanation": "Ago names one finished time → past simple.",
+          "explanation_cz": "Ago udává jeden hotový čas → past simple."
+        },
+        {
+          "en": "They **bought** a house last summer.",
+          "cz": "Minulé léto koupili dům.",
+          "bin": "Finished past",
+          "explanation": "Last summer is one finished time → past simple.",
+          "explanation_cz": "Last summer je jeden hotový čas → past simple."
+        }
+      ]
+    },
     {
       "id": "b2_past_perfect_main",
       "title": "Past perfect · earlier past",
+      "check": {
+        "sequence": [
+          "quiz"
+        ]
+      },
       "items": [
         {
           "en": "When I arrived, she had left.",
@@ -55,7 +124,8 @@
             "had left"
           ],
           "accepts": [
-            "When I arrived, she had left."
+            "When I arrived, she had left.",
+            "When I arrived, she'd left."
           ],
           "quiz_options": [
             "left",
@@ -75,7 +145,8 @@
             "had finished"
           ],
           "accepts": [
-            "They had finished before we started."
+            "They had finished before we started.",
+            "They'd finished before we started."
           ],
           "quiz_options": [
             "finished",
@@ -95,7 +166,8 @@
             "had eaten"
           ],
           "accepts": [
-            "After she had eaten, she went out."
+            "After she had eaten, she went out.",
+            "After she'd eaten, she went out."
           ],
           "quiz_options": [
             "ate",
@@ -135,7 +207,8 @@
             "had already left"
           ],
           "accepts": [
-            "I called him, but he had already left."
+            "I called him, but he had already left.",
+            "I called him, but he'd already left."
           ],
           "quiz_options": [
             "already left",
@@ -155,7 +228,8 @@
             "had worked"
           ],
           "accepts": [
-            "She was tired because she had worked all day."
+            "She was tired because she had worked all day.",
+            "She was tired because she'd worked all day."
           ],
           "quiz_options": [
             "worked",
@@ -195,7 +269,10 @@
             "had forgotten"
           ],
           "accepts": [
-            "He couldn't get in because he had forgotten his keys."
+            "He couldn't get in because he had forgotten his keys.",
+            "He couldn't get in because he'd forgotten his keys.",
+            "He could not get in because he had forgotten his keys.",
+            "He could not get in because he'd forgotten his keys."
           ],
           "quiz_options": [
             "forgot",
@@ -215,7 +292,8 @@
             "had lived"
           ],
           "accepts": [
-            "I knew the city well. I had lived there for five years."
+            "I knew the city well. I had lived there for five years.",
+            "I knew the city well. I'd lived there for five years."
           ],
           "quiz_options": [
             "lived",
@@ -255,7 +333,10 @@
             "had changed"
           ],
           "accepts": [
-            "I didn't recognise her. She had changed a lot."
+            "I didn't recognise her. She had changed a lot.",
+            "I didn't recognise her. She'd changed a lot.",
+            "I did not recognise her. She had changed a lot.",
+            "I did not recognise her. She'd changed a lot."
           ],
           "quiz_options": [
             "changed",
@@ -275,7 +356,8 @@
             "had never met"
           ],
           "accepts": [
-            "We had never met before that day."
+            "We had never met before that day.",
+            "We'd never met before that day."
           ],
           "quiz_options": [
             "never met",
@@ -295,7 +377,8 @@
             "had packed"
           ],
           "accepts": [
-            "After they had packed, they called a taxi."
+            "After they had packed, they called a taxi.",
+            "After they'd packed, they called a taxi."
           ],
           "quiz_options": [
             "packed",
@@ -335,7 +418,8 @@
             "had passed"
           ],
           "accepts": [
-            "I was happy because I had passed the exam."
+            "I was happy because I had passed the exam.",
+            "I was happy because I'd passed the exam."
           ],
           "quiz_options": [
             "passed",
@@ -375,7 +459,8 @@
             "had bought"
           ],
           "accepts": [
-            "She showed me the book she had bought."
+            "She showed me the book she had bought.",
+            "She showed me the book she'd bought."
           ],
           "quiz_options": [
             "bought",
@@ -395,7 +480,8 @@
             "had rained"
           ],
           "accepts": [
-            "We stayed home because it had rained all morning."
+            "We stayed home because it had rained all morning.",
+            "We stayed home because it'd rained all morning."
           ],
           "quiz_options": [
             "rained",
@@ -557,7 +643,8 @@
             "had lost"
           ],
           "accepts": [
-            "I found the bag I had lost."
+            "I found the bag I had lost.",
+            "I found the bag I'd lost."
           ],
           "quiz_options": [
             "lost",
@@ -600,12 +687,37 @@
       },
       {
         "title": "Timeline",
-        "diagram": "past-perfect-timeline",
-        "body": "Think left → right on a past line. Past perfect sits on the **left** (earlier).",
+        "title_cz": "Časová osa",
         "points": [
-          "When I arrived, she had left.",
-          "Arrive = later · leave = earlier → **had left**"
-        ]
+          "Two past points. The **earlier** one takes **had** + past participle.",
+          "The later one is past simple — the tense you already have.",
+          "One past point only → past simple, never **had**."
+        ],
+        "table": {
+          "headers": [
+            "On the line",
+            "Tense",
+            "Example"
+          ],
+          "rows": [
+            [
+              "1 · earlier",
+              "past perfect",
+              "she **had left**"
+            ],
+            [
+              "2 · later",
+              "past simple",
+              "I **arrived**"
+            ],
+            [
+              "one point only",
+              "past simple",
+              "I **went** to Prague yesterday."
+            ]
+          ]
+        },
+        "svg": "<svg viewBox=\"0 0 520 210\" xmlns=\"http://www.w3.org/2000/svg\" font-family=\"Lexend, sans-serif\">\n  <line x1=\"30\" y1=\"120\" x2=\"500\" y2=\"120\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1.5\"/>\n  <polygon points=\"500,120 490,115 490,125\" fill=\"var(--muted, #a0a0a0)\"/>\n  <line x1=\"460\" y1=\"40\" x2=\"460\" y2=\"156\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\" stroke-dasharray=\"3 3\"/>\n  <text x=\"460\" y=\"32\" font-size=\"13\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">now</text>\n  <circle cx=\"120\" cy=\"120\" r=\"8\" fill=\"var(--vocab-accent, #4db6c7)\"/>\n  <text x=\"120\" y=\"92\" font-size=\"14\" fill=\"var(--vocab-accent, #4db6c7)\" text-anchor=\"middle\" font-weight=\"600\">she had left</text>\n  <text x=\"120\" y=\"74\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">1 · earlier · past perfect</text>\n  <line x1=\"120\" y1=\"100\" x2=\"120\" y2=\"120\" stroke=\"var(--vocab-accent, #4db6c7)\" stroke-width=\"1.5\"/>\n  <circle cx=\"300\" cy=\"120\" r=\"8\" fill=\"var(--text, #eaeaea)\"/>\n  <line x1=\"300\" y1=\"120\" x2=\"300\" y2=\"140\" stroke=\"var(--text, #eaeaea)\" stroke-width=\"1.5\"/>\n  <text x=\"300\" y=\"160\" font-size=\"14\" fill=\"var(--text, #eaeaea)\" text-anchor=\"middle\" font-weight=\"600\">I arrived</text>\n  <text x=\"300\" y=\"178\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\" text-anchor=\"middle\">2 · later · past simple</text>\n  <path d=\"M 132 108 Q 210 84 288 108\" fill=\"none\" stroke=\"var(--muted, #a0a0a0)\" stroke-width=\"1\" stroke-dasharray=\"2 3\"/>\n  <text x=\"30\" y=\"204\" font-size=\"11\" fill=\"var(--muted, #a0a0a0)\">When I arrived, she had left.</text>\n</svg>"
       },
       {
         "title": "Form (short)",
@@ -634,9 +746,9 @@
       {
         "title": "Signals",
         "points": [
-          "**when / after / before / by the time** + two past events",
-          "**already / never / just** often with the earlier event",
-          "because + earlier reason in the past"
+          "**when** · **after** · **before** · by the time — two past events",
+          "**already** · **never** · **just** sit with the earlier one",
+          "because + the earlier reason: She was tired because she **had worked**."
         ],
         "table": {
           "headers": [
@@ -654,7 +766,7 @@
             ],
             [
               "by the time…",
-              "By the time we got there, it **had started**."
+              "By the time we got there, the film **had started**."
             ]
           ]
         }
@@ -668,22 +780,22 @@
           ],
           "rows": [
             [
-              "When I arrived, she **left**.",
+              "~~When I arrived, she left.~~",
               "When I arrived, she **had left**."
             ],
             [
-              "I **had gone** to Prague yesterday.",
+              "~~I had gone to Prague yesterday.~~",
               "I **went** to Prague yesterday."
             ],
             [
-              "We **had met** in 2019.",
+              "~~We had met in 2019.~~",
               "We **met** in 2019."
             ]
           ]
         },
         "points": [
-          "**Miss past perfect** when something is clearly earlier",
-          "**Don't use past perfect** for every past fact — one finished time (yesterday, last year, ago) → past simple"
+          "Czech leaves the earlier event in plain past — English marks it with **had**.",
+          "One finished time (yesterday, last year, ago) → past simple, not **had**."
         ]
       },
       {
