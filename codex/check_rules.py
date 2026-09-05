@@ -90,6 +90,39 @@ def b3_no_options(uid, d):
              % (len(bare), len(gaps)))]
 
 
+AUX = "will to is am are was were be been being do does did has have had".split()
+
+
+def inflections(lemma):
+    """The shapes a single verb lemma can take — enough to recognise a form choice."""
+    out = {lemma + "s", lemma + "es", lemma + "ed", lemma + "d", lemma + "ing"}
+    if len(lemma) > 2:
+        out |= {lemma + lemma[-1] + "ed", lemma + lemma[-1] + "ing"}
+    if lemma.endswith("e"):
+        out |= {lemma[:-1] + "ing", lemma[:-1] + "ed"}
+    if lemma.endswith("y"):
+        out |= {lemma[:-1] + "ies", lemma[:-1] + "ied"}
+    return out
+
+
+def gap_still_picks_a_form(cue, chips):
+    """B25's own carve-out: a verb LEMMA cue whose answer is the bare form is not
+    B25, because the gap still picks a form. Believe that only when the chips prove
+    it — one of them is an inflection of the cue, or an auxiliary plus one.
+    `(every)` against `on every` / `in every` is a prefix, not a form: still B25."""
+    if " " in cue or not cue.isalpha():
+        return False
+    forms = inflections(cue)
+    for c in chips:
+        w = norm(c).split()
+        while w and w[0] in AUX:
+            w = w[1:]
+        rest = " ".join(w)
+        if rest and rest != cue and rest in forms:
+            return True
+    return False
+
+
 def b25_cue_is_answer(uid, d):
     """B25 — the answer is the bracketed cue copied out; the item tests nothing."""
     out = []
@@ -98,8 +131,11 @@ def b25_cue_is_answer(uid, d):
         if not cue or not ans:
             continue
         cue = re.sub(r"^(the|a|an)\s+", "", cue)
-        if cue == ans:
-            out.append(("B25", i, "cue (%s) is the answer" % cue))
+        if cue != ans:
+            continue
+        if gap_still_picks_a_form(cue, it.get("quiz_options") or []):
+            continue
+        out.append(("B25", i, "cue (%s) is the answer" % cue))
     return out
 
 
@@ -259,11 +295,20 @@ def d1_generic_explanations(uid, d):
     return []
 
 
+def expand_contractions(s):
+    """`I'm getting` is a continuous. E3 read it as a simple form and then flagged
+    the item's own uncontracted twin — b1_be_used_to item 12, 2026-09-05."""
+    s = re.sub(r"\b(I)'m\b", r"\1 am", s)
+    s = re.sub(r"\b(\w+)'re\b", r"\1 are", s)
+    s = re.sub(r"\b(\w+)'s\b", r"\1 is", s)
+    return s
+
+
 def e3_aspect_strict(uid, d):
     """E3 — a continuous twin is not an accepted variant of a simple-form answer."""
     out = []
     for i, it in enumerate(items_of(d)):
-        en = str(it.get("en") or "")
+        en = expand_contractions(str(it.get("en") or ""))
         if not en or re.search(r"\b(am|is|are|was|were)\s+\w+ing\b", en):
             continue
         for a in it.get("accepts") or []:
