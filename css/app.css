@@ -1108,6 +1108,18 @@ button.m.wrong {
   color: var(--wrong);
 }
 
+/* Neither right nor wrong: one word is misspelt and the sentence comes back
+ * for a second go (James, 2026-09-05 — a spelling slip graded as a grammar
+ * miss "was a bit harsh"). */
+.feedback.near {
+  color: var(--accent);
+}
+
+.spell-slip {
+  text-decoration: underline wavy;
+  text-underline-offset: 0.2em;
+}
+
 .score-line {
   font-size: 0.78rem;
   color: var(--muted);

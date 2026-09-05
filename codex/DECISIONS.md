@@ -27,6 +27,31 @@ Blocks below moved to **Answered** with what was applied. Three entries stay ope
 
 ## Open
 
+### b1_used_to / a2_will_going_to · the *Modal verbs N* series now has holes at 2 and 6
+**Q:** Both packs sit in the **Time and Tenses** category (`category_seq` 10 and 15) and both were titled *Modal verbs 2: will / going to* and *Modal verbs 6: would (past habits)*. You flagged it: *"is this time and tenses or modal verbs? I thought it was time and tenses."* Retitled to their registry labels — **Will / going to** and **Would for past habits** — which is what `nodes-grammar.json` already called them. That leaves the modal series running 1, 3, 4, 5, 7, 8.
+**Options:** a) leave the holes until a `modals` category is stamped, then renumber all six in one pass / b) renumber now to 1–6 (touches `a1_can`, `a2_modals_must_should`, `a2_have_to`, `a2_could_able`, `b1_past_modals`, `b1_modals_speculation` — four of them protected A1/A2) / c) drop the numbering from the modal titles entirely and let the category carry the order, the way Time and Tenses does.
+**Default if unanswered:** a — nothing further done. The category note in `tree.json` says conditionals/wishes/reporting are future sibling categories; modals is the obvious next one, and renumbering twice is worse than once. (c) is tempting and is what Time and Tenses already proves works.
+→ (James: your answer here)
+
+### b1_be_used_to · does one exercise test form and use together? (your flag 4)
+**Q:** *Ondrej ____ used to his new schedule. (get)* → `is getting`, chips *is getting / is get / getting / is got*. You: *"this just tests form, not use. wonder if I should do both in one exercise."* The pack has three points: the **-ing** (items 0–10), **be vs get** (11–20), and **used to vs be used to** (21–24). The third block already tests use — its four chips are all real English and only the situation picks. The **be vs get** block does not: every gap there is a form of *get* (*got / getting / get* after *will*, *can't*, *did*), so nothing ever asks *am used to* against *am getting used to* on meaning alone.
+**Options:** a) keep the axes apart and add two be/get **meaning** items where both forms are grammatical and only the situation picks (*I've lived here ten years. I ____ the noise.* → *am used to*; *It's my first week. I ____ the noise.* → *am getting used to*) / b) mix form and use chips on the same item (*is getting / is used to / was getting / is get*) / c) leave it — items 21–24 already carry the use axis and that is enough.
+**Default if unanswered:** a. (b) breaks B6 — options stay on one axis — and makes a wrong answer unreadable: you cannot tell whether the student missed the form or the meaning. (a) fills the hole that is actually there.
+→ (James: your answer here)
+
+### lint.py · two cue checks are ready to land, and one of them lights up protected A2
+**Q:** B26 (negative answer, no negative in the cue) and B25 (the gap answer is the bracketed phrase copied out) are both cheap regex checks. Measured over all 240 packs: B26 hits **29 items in 7 packs** — `b1_question_tags` ×9 are false (a negative tag is the point, so tag packs need the same exemption A8's `TAG_AFTER` already has), `b1_reported_speech` ×3 are false (their cues say *negative* / *won't*), leaving 6 in `a2_used_to`, 7 in `a2_present_perfect`, 1 each in `a2_past_continuous` and `a2_will_going_to`, and 0 in B1 now that `b1_future`'s four are fixed. B25 hits **2 items**, one of which is `a2_have_to`. So landing either check turns protected A2 packs red.
+**Options:** a) land both as EXACT with the tag/cue guards, accept that A2 lights up, and leave those items alone as a recorded standing class / b) land them as CANDIDATE so they report without counting against the loop's gate 1 / c) do not land them; the rules stay prose in AUTHORING-RULES.
+**Default if unanswered:** c — nothing added to `lint.py` this pass. Adding an EXACT check that reddens A1/A2 mid-flight is exactly the kind of thing that stalls the other tab, and the sweep above is already the answer to "how much debt is behind this": about fifteen real items, all on packs you have ruled off limits.
+→ (James: your answer here)
+
+### b1_be_used_to · it sits directly after *would for past habits*, which you say compounds the confusion
+**Q:** Your flag 2: *"its place directly after used to / would for past habits could make this more confusing."* `category_seq` 15 is `b1_used_to` (would), 16 is `b1_be_used_to`. Fixed inside the pack instead: card 0 now says *"**Not** the past-habit *used to* — that one is over. This one is **now**"*, and the *used to · be used to* contrast card moved from position 3 to position 1 (your flag 3). Moving the unit itself is a `tree.json` / `path_order_b1` change and that file belongs to the other tab.
+**Options:** a) leave the adjacency — the contrast is sharpest while the past-habit unit is fresh, now that the intro names it / b) move `b1_be_used_to` later in `path_order_b1` so the two are not consecutive.
+**Default if unanswered:** a — nothing done to the path. Replay the intro before ruling; the two cards may already have closed it.
+→ (James: your answer here)
+
+
 ### The loop · two runs of this routine were live at once
 **Q:** On 2026-09-04 two cloud runs of the B1 agent loop were working `b1/auto` at the same time. Both picked `b1_be_used_to` (the first `- [ ][ ]` row in path order at that moment) and authored it independently; the second landed over the first. Should the loop keep taking the first unit in path order when it cannot see what another run is inside?
 **Options:** a) leave the contract alone and accept the occasional duplicate — the loser's work is simply thrown away / b) let a run that detects a live sibling (a push on `b1/auto` within the last few minutes) work the roster from the **tail** instead, so the two meet in the middle / c) make the loop claim a unit by pushing an empty marker commit before it starts.
@@ -127,3 +152,8 @@ the interactive session did the same day.)*
 **Options:** a) keep it — the chip is the point, and the Type stage is a small cost on three of 25 items / b) mark those three `type: false` so they are Quiz-only / c) invent a different token (`—`, `no word`) — which is a new mechanism and needs the engine to agree.
 **Default if unanswered:** a — kept, because the pack already shipped one item of this shape and inventing a token unattended is worse than a rough Type on three items. (b) is the cheap improvement if you want it; say so and the next run does it.
 → **(b), and it is applied.** The standing-decisions table in AGENT-LOOP.md answers this — "mark those three items `type: false` — Quiz-only. The chip is the teaching point; nobody types nothing into a gap. Do this on the next run that touches the unit." The 2026-09-05 run checked: all three items already carry `type: false`, so an earlier run had done it. The three `verify_pack` warnings that remain are the check not knowing about `type: false`; they are not a Type stage that still asks for the word. Moved here so nobody works it again.
+
+### B2 vocab · the three B2 leaves have no `recaps` field, so F9 cannot check them
+**Q:** F9 (2026-09-05) makes a vocab leaf name its predecessors in a `recaps` field; `check_rewrite.py` then enforces that the first page reviews those words before the unit teaches new ones. All 23 B1 leaves now carry it. `b2_delexical_collocations`, `b2_false_friends` and `b2_fixed_phrases` do not, and each reports one F9 finding.
+**Why it was not just done:** B2 is being drafted on `b2/auto` on the home machine, unattended. Editing those three packs here would collide with that run.
+**Default if unanswered:** the B2 run adds the field when it next touches each pack — `"recaps": [...]` naming the earlier packs the leaf builds on, `[]` where there is genuinely no predecessor. Until then `check_rewrite` carries three standing findings, which is honest: nothing is hidden, and no B1 work is blocked.

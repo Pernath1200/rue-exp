@@ -30,7 +30,7 @@ import { setSmokeContext } from "./smoke-flags.js?v=2026-09-03-flagon";
 /** Alias for dual-engine shell */
 export { startPractice as startGrammarPractice };
 /* exported for engine tests only */
-export { isCorrect as _gradeGrammar, articleMatch as _articleMatch, gradeGrammarSentence };
+export { isCorrect as _gradeGrammar, articleMatch as _articleMatch, gradeGrammarSentence, nearMissWord as _nearMissWord };
 
 /**
  * Default questions per graded stage (Check quiz · Type · Use).
@@ -414,6 +414,82 @@ function isCorrect(user, item, mode) {
     return forms.some((f) => canonSynonyms(f) === uc);
   }
   return false;
+}
+
+/* A spelling slip is not a grammar mistake (James, 2026-09-05, b1_future smoke:
+ * "this was a bit harsh. one small spelling mistake on one of the words. should
+ * be highlighted or given a hint rather than just: wrong"). A Use sentence that
+ * differs from an accepted answer in ONE word, and that word only by a letter or
+ * two, gets the word named and one more go — instead of the answer revealed and
+ * the item banked wrong.
+ *
+ * Three guards keep it off the teaching point. The pair must not be two FORMS of
+ * one word (fly/flying, stop/stopped, study/studies) — that is the grammar, and
+ * it stays wrong. The typed word must not be one this item deliberately puts on
+ * the page as the error (every word of `wrong` that the answer does not have:
+ * for item 22 that is *fly*, so "We are fly to Rome" never reads as a typo).
+ * And short words are out: are/were, for/from, will/well are one or two edits
+ * apart and are never typing.
+ *
+ * Use only. A Type answer IS the form under test — a misspelt gap is a miss. */
+function editDistance(a, b) {
+  const m = a.length, n = b.length;
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i += 1) {
+    const cur = [i];
+    for (let j = 1; j <= n; j += 1) {
+      cur[j] = Math.min(
+        prev[j] + 1,
+        cur[j - 1] + 1,
+        prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
+    }
+    prev = cur;
+  }
+  return prev[n];
+}
+
+/** Two forms of one lemma — never a typo, whatever the edit distance says. */
+function isFormTwin(a, b) {
+  if (a === b) return true;
+  const [s, l] = a.length <= b.length ? [a, b] : [b, a];
+  if (l.startsWith(s)) return true;
+  const stem = s.replace(/y$/, "i").replace(/e$/, "");
+  return stem.length >= 3 && l.startsWith(stem) && l.length - stem.length <= 3;
+}
+
+/**
+ * @returns {{typed: string, target: string}|null} the one misspelt word, if
+ * that is all that stands between the typed sentence and an accepted one.
+ */
+function nearMissWord(typed, item) {
+  const words = (s) => norm(s).split(" ").filter(Boolean);
+  const u = words(typed);
+  if (u.length < 3) return null;
+
+  const forms = [item.answer, ...(item.accepts || [])].filter(Boolean);
+  const ok = new Set(forms.flatMap(words));
+  // Only the words the `wrong` sentence adds are planted errors; the rest of it
+  // is the carrier sentence and must stay eligible.
+  const planted = new Set(words(item.wrong || "").filter((w) => !ok.has(w)));
+
+  for (const form of forms) {
+    const g = words(form);
+    if (g.length !== u.length) continue;
+    let at = -1;
+    for (let i = 0; i < g.length; i += 1) {
+      if (g[i] === u[i]) continue;
+      if (at >= 0) { at = -1; break; }
+      at = i;
+    }
+    if (at < 0) continue;
+    const t = u[at], target = g[at];
+    if (target.length < 5 || planted.has(t) || isFormTwin(t, target)) continue;
+    if (editDistance(t, target) <= (target.length >= 8 ? 2 : 1)) {
+      return { typed: t, target };
+    }
+  }
+  return null;
 }
 
 function el(html) {
@@ -2291,6 +2367,7 @@ export function startPractice(rawPack, root, opts) {
 
     let answered = false;
     let retype = false; // correction practice after a miss — never scored
+    let spellChance = false; // one spelling re-try per item, first go only
     let advanceTimer = null;
 
     const goNext = () => {
@@ -2330,6 +2407,26 @@ export function startPractice(rawPack, root, opts) {
             ? `✓ Correct · ${fullFormOf(item) || item.stem + item.ending}`
             : "✓ Correct") + (retype ? " (retyped)" : "");
       } else {
+        // One word out by a letter or two, on the first go: name it and hand
+        // the sentence back. Not scored either way until the second answer.
+        const slip =
+          kind === "use" && !retype && !spellChance
+            ? nearMissWord(typedVal, item)
+            : null;
+        if (slip) {
+          spellChance = true;
+          answered = false;
+          fb.className = "feedback near";
+          fb.innerHTML = `Almost — check the spelling of <strong class="spell-slip">${esc(
+            slip.typed,
+          )}</strong>. Everything else is right.`;
+          input.disabled = false;
+          btn.textContent = "Check";
+          input.focus();
+          input.setSelectionRange(input.value.length, input.value.length);
+          state.enterAdvance = onEnter;
+          return;
+        }
         if (!retype) {
           if (kind === "type") {
             if (!state.typeWrong.includes(item)) state.typeWrong.push(item);

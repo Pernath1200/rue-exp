@@ -20,7 +20,8 @@
     "title": "Be used to / get used to",
     "title_cz": "Be used to / get used to — zvyknout si",
     "points": [
-     "Czech **zvyknout si** covers both. English splits the state from the change."
+     "Czech **zvyknout si** covers both. English splits the state from the change.",
+     "**Not** the past-habit *used to* — that one is over. This one is **now**."
     ],
     "table": {
      "headers": [
@@ -48,6 +49,34 @@
       "cz": "Rychle si zvykla na ten hluk."
      }
     ]
+   },
+   {
+    "title": "used to · be used to",
+    "title_cz": "used to × be used to",
+    "points": [
+     "**used to** + verb is a past habit — you stopped.",
+     "**be used** to + -ing is how it feels to you now."
+    ],
+    "table": {
+     "headers": [
+      "Sentence",
+      "Means"
+     ],
+     "rows": [
+      [
+       "I **used to** work in a shop.",
+       "a past habit — I don't now"
+      ],
+      [
+       "I **am used** to working in a shop.",
+       "it is normal for me now"
+      ],
+      [
+       "I **got used** to working in a shop.",
+       "it stopped feeling strange"
+      ]
+     ]
+    }
    },
    {
     "title": "Always -ing",
@@ -99,34 +128,6 @@
       [
        "I **got used** to it last year.",
        "the change — finished"
-      ]
-     ]
-    }
-   },
-   {
-    "title": "used to · be used to",
-    "title_cz": "used to × be used to",
-    "points": [
-     "**used to** + verb is a past habit — you stopped.",
-     "**be used** to + -ing is how it feels to you now."
-    ],
-    "table": {
-     "headers": [
-      "Sentence",
-      "Means"
-     ],
-     "rows": [
-      [
-       "I **used to** work in a shop.",
-       "a past habit — I don't now"
-      ],
-      [
-       "I **am used** to working in a shop.",
-       "it is normal for me now"
-      ],
-      [
-       "I **got used** to working in a shop.",
-       "it stopped feeling strange"
       ]
      ]
     }
@@ -288,9 +289,9 @@
      "explanation_cz": "Otázka po *used to* nic nemění: pořád **working**."
     },
     {
-     "en": "My mother is used to cooking for six people.",
-     "cz": "Moje matka je zvyklá vařit pro šest lidí.",
-     "gap": "My mother is used to ____ for six people. (cook)",
+     "en": "My mother is used to cooking for a large group of people.",
+     "cz": "Moje matka je zvyklá vařit pro velkou skupinu lidí.",
+     "gap": "My mother is used to ____ for a large group of people. (cook)",
      "gap_answer": "cooking",
      "quiz_options": [
       "cooking",
@@ -299,9 +300,9 @@
       "cooks"
      ],
      "accepts": [
-      "My mother is used to cooking for six people."
+      "My mother is used to cooking for a large group of people."
      ],
-     "wrong": "My mother is used to cook for six people.",
+     "wrong": "My mother is used to cook for a large group of people.",
      "explanation": "**cooking** — after *is used to* the verb carries -ing, not the third person -s.",
      "explanation_cz": "**cooking** — po *is used to* má sloveso -ing, ne koncovku třetí osoby -s."
     },
@@ -327,20 +328,20 @@
     {
      "en": "Are you used to the noise yet?",
      "cz": "Zvykl sis už na ten hluk?",
-     "gap": "Are you used to ____ yet? (the noise)",
-     "gap_answer": "the noise",
+     "gap": "Are you ____ the noise yet? (use)",
+     "gap_answer": "used to",
      "quiz_options": [
-      "the noise",
-      "the noising",
-      "to the noise",
-      "the noise being"
+      "used to",
+      "use to",
+      "used",
+      "using to"
      ],
      "accepts": [
       "Are you used to the noise yet?"
      ],
      "wrong": "Are you use to the noise yet?",
-     "explanation": "A noun after **used to** stays as it is — only verbs take **-ing**.",
-     "explanation_cz": "Podstatné jméno po **used to** zůstává, jak je — jen slovesa mají **-ing**."
+     "explanation": "**used to** — a noun after it changes nothing, but the **d** is easy to lose: *use to* is not English.",
+     "explanation_cz": "**used to** — podstatné jméno za tím nic nemění, ale **d** se snadno ztratí: *use to* není angličtina."
     },
     {
      "en": "I'm not used to cold weather.",
@@ -358,25 +359,29 @@
       "I am not used to cold weather."
      ],
      "explanation": "*cold weather* is a noun phrase, so nothing changes after **used to**.",
-     "explanation_cz": "*cold weather* je jmenná fráze, takže se po **used to** nic nemění."
+     "explanation_cz": "*cold weather* je jmenná fráze, takže se po **used to** nic nemění.",
+     "type": false
     },
     {
      "en": "Jana isn't used to English food yet.",
      "cz": "Jana si ještě nezvykla na anglické jídlo.",
-     "gap": "Jana isn't used to ____ yet. (English food)",
-     "gap_answer": "English food",
+     "gap": "Jana ____ used to English food yet. (not be)",
+     "gap_answer": "isn't",
      "quiz_options": [
-      "English food",
-      "eat English food",
-      "English fooding",
-      "to English food"
+      "isn't",
+      "doesn't",
+      "didn't",
+      "hasn't"
      ],
      "accepts": [
       "Jana isn't used to English food yet.",
       "Jana is not used to English food yet."
      ],
-     "explanation": "*English food* is a noun, so it follows **used to** unchanged.",
-     "explanation_cz": "*English food* je podstatné jméno, takže po **used to** zůstává beze změny."
+     "explanation": "**isn't** — *used to* here sits after **be**, so the negative is *isn't used to*, never *doesn't*.",
+     "explanation_cz": "**isn't** — *used to* tu stojí po **be**, takže zápor je *isn't used to*, nikdy *doesn't*.",
+     "gap_accepts": [
+      "is not"
+     ]
     },
     {
      "en": "She got used to the noise quickly.",
@@ -418,7 +423,7 @@
     {
      "en": "Ondrej is getting used to his new schedule.",
      "cz": "Ondrej si zvyká na nový rozvrh.",
-     "gap": "Ondrej ____ used to his new schedule. (get)",
+     "gap": "Ondrej ____ used to his new schedule. (be / get)",
      "gap_answer": "is getting",
      "quiz_options": [
       "is getting",
@@ -573,7 +578,9 @@
       "am used to work"
      ],
      "accepts": [
-      "I used to work in a shop."
+      "I used to work in a shop.",
+      "I am used to working in a shop.",
+      "I'm used to working in a shop."
      ],
      "wrong": "I used to working in a shop.",
      "explanation": "**used to work** is the past habit — plain verb, no *be*. *Am used to working* would mean it feels normal now.",
