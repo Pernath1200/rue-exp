@@ -1,6 +1,6 @@
 # Sequencing audit (advisory — leads, not verdicts)
 
-**791 unknown word types** across 101 live units (of 190).
+**777 unknown word types** across 100 live units (of 192).
 
 A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn't teach it itself, and it isn't function-word GLUE.
 
@@ -102,6 +102,5 @@ A word is *unknown* at a unit if no earlier live unit taught it, the unit doesn'
 - **b2_third_conditional** (B2 grammar): truth, sunrise, pizza, dawn
 - **b2_false_friends** (B2 vocab): local
 - **b2_fixed_phrases** (B2 vocab): positive, invitation
-- **b2_clear_claims** (B2 grammar): social×2, negative, impact, teenagers, hate, ruins, sum, ban, anymore, conclusion, exist
 - **b2_word_formation** (B2 grammar): final×3, without×2, injured, committee, rule, alone, incredibly, brilliantly, bridges, rally, trade, attempt, impressive, excellent, bottom, outside, terribly, lunchtime, resignation, eclipse, injection, sides, reached, welcomed, local, finally
-- **c1_word_formation** (C1 grammar): final×2, until×2, local×2, led×2, blamed×2, several×2, region, worldwide, involvement, midnight, obvious, instant, genetic, spread, crew, measured, trench, diving, grip, measure, doorway, cruised, kilometres, pure, unmarked, shelter, survives, donors, sudden, guarded, struck, astonishing, dismissed, case, religious, exile, shook, silent, inquiry, safety, aims, within, decade, roadworks, drummed, exposed, ministry, hikers, minor, lifelong, feud, paused, overnight, fleet, volunteering, grant, marine, nations, certain, shot, viral, among, thrived, firms, boilers, ruined, outbreak, worsened, tolerate, corridors, memo, act, false, immediate, auditors, forever, cigarettes, plot, coincidences, proved
+- **c1_word_formation** (C1 grammar): final×2, until×2, local×2, led×2, blamed×2, several×2, region, worldwide, involvement, midnight, obvious, instant, genetic, spread, measured, trench, diving, grip, measure, doorway, kilometres, pure, unmarked, shelter, survives, donors, sudden, guarded, struck, astonishing, dismissed, case, religious, exile, shook, silent, inquiry, safety, aims, within, decade, roadworks, drummed, exposed, ministry, hikers, minor, lifelong, feud, paused, fleet, volunteering, grant, marine, nations, certain, shot, viral, among, thrived, firms, boilers, ruined, outbreak, worsened, tolerate, corridors, memo, act, false, immediate, auditors, forever, cigarettes, plot, coincidences, proved

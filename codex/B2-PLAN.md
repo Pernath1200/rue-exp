@@ -57,11 +57,11 @@ work, never a cloud run's.
 
 | id | Title | Job |
 |----|-------|-----|
-| `b2_prefixes_1` *(new)* | Prefixes 2 — negative & opposite | un-, in-/im-/il-/ir-, dis-, mis-, non- above `b1_prefixes` |
-| `b2_suffixes_1` *(new)* | Suffixes 2 — making nouns | -tion, -ment, -ness, -ity, -ship, -hood above `b1_suffixes` |
+| `b2_prefixes_1` *(new)* | Prefixes 2 — between, against, together | **Rescoped 2026-09-05**: `b1_prefixes` already owns the core 8 (un/dis/in-family/re/pre/over/under/mis). B2 tranche A: inter- / trans- / non- / anti- / co- / sub- / ex-. **Template drafted.** |
+| `b2_suffixes_1` *(new)* | Suffixes 2 — making nouns | **Rescoped 2026-09-05**: `b1_suffixes` owns -er/-tion/-ment/-ness/-ful/-less/-able/-ous/-al/-ly. B2: -ity / -ance/-ence / -ship / -hood / -dom. |
 | `b2_pie_roots` *(new)* | Roots — the oldest layer | PIE/Latin roots: spect, port, dict, duct, struct, press, form; ties the families together |
-| `b2_prefixes_2` *(new)* | Prefixes 3 — degree & direction | over-, under-, re-, out-, co-, anti-, ex- |
-| `b2_suffixes_2` *(new)* | Suffixes 3 — adjectives & verbs | -ive, -ous, -ful/-less, -able/-ible, -en, -ise |
+| `b2_prefixes_2` *(new)* | Prefixes 3 — making & degree | **Rescoped 2026-09-05** (over/under/re are B1's): en-/em- / de- / self- / semi- / multi- / out- / post- / fore- |
+| `b2_suffixes_2` *(new)* | Suffixes 3 — adjectives & verbs | **Rescoped 2026-09-05** (-ous/-ful/-less/-able are B1's): -ive / -ic/-ical / -ish / -en (verb) / -ise |
 | `b2_word_formation` | Word formation (FCE Part 3) | **exists, live 72** — the capstone, near the end |
 
 ---
@@ -123,6 +123,14 @@ E10 Use, **"Build the family" card + 4–6 derived bank items**, 36-word cap.
 six WF lessons + per-leaf family bits now).
 
 ---
+
+## Registry — STAMPED 2026-09-05
+
+All 37 nodes are in `tree.json` + `nodes-vocab.json` / `nodes-grammar.json` on
+`b2/auto`, status `coming`; both `path_order_b2` copies rebuilt to the 60 above
+(stale `b2_be_get_used_to` and `craft` purged). A node flips to `live` when its
+pack file lands and passes the gates. Templates live so far: `leaf_travel_b2`,
+`b2_prefixes_1`.
 
 ## Checks — 5
 
