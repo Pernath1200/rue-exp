@@ -196,6 +196,30 @@ path teaches before that leaf (`make_pool.py --before <unit_id>`).
 Do this before the 13 above. It is the only item here that changes what James meets when
 he plays.
 
+## Next job — the duplicate audit, dropdowned 2026-09-05 18:30
+
+`check_dupes.py` now covers B1 and is ratcheted. Full evidence and James's three
+answers are in DECISIONS under *"B1 · total duplicate audit"*. In order:
+
+1. **Drop 32 later tiles** (F7 — the first pack owns the word). `b1_travel` 14,
+   `b1_abstract` 7, `b1_news` 5, `b1_self` 3, one each in `b1_work`,
+   `b1_communication`, `b1_technology`. Remove the item **and** its dedicated
+   sentence and Use item, the way `b1_knowledge` was cut on the same day, then put
+   the word on that unit's "You already know" page — it is an earlier word now, which
+   is exactly what F9 wants there. `b1_travel` lands at 22 words; that is expected and
+   James has ruled it.
+2. **`b1_word_families`: tiles become pairs** — `decide → decision`, not `decision`.
+   Then author its missing `sentences[]`, one per lemma, B24-contiguous.
+3. **The other two sentence-less leaves**: `b1_collocations` 36 words, `b1_core_frames`
+   24 words, no `sentences[]` between them.
+4. **`senses.json` for the true synonym pairs** — humble/modest, outgoing/sociable,
+   count on/rely on, miserable/unhappy, scared/terrified, delighted/excited,
+   amusing/fun, careful/cautious, argument/quarrel. Both answers are right; A5 says
+   both are accepted. Leave *hlas* (voice/vote) and *směna* (exchange/shift) alone —
+   those are different senses and need the Czech marked, item by item.
+
+`py -X utf8 codex/check_dupes.py` after each unit. Every count may fall; none may rise.
+
 ## Reporting
 
 **`codex/PREFLIGHT-REPORT.md`, rewritten each run.** Overwrite it; it is a status board,

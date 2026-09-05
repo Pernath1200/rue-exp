@@ -218,3 +218,45 @@ The avoidable half: **C6 was written 2026-08-29 with its own state cell reading 
 **What happened:** HEAD moved from `8588836` to `bc62862` while this session worked — four commits at 12:22, 12:28, 14:19 and 14:41, from another run. Commit `f29a3f0` ("b1_past_modals: the Czech was carrying the tense on its own") **swept up this session's uncommitted edits to the same pack** along with its own.
 **How it came out:** intact, by luck. `b1_past_modals` now carries both this session's work (the could/was-able-to contrast table, the fixed Quiz chips, 25→21 items) and the other run's 17 `/ past` cues, and `AUTHORING-RULES.md` has 153 rows with no duplicate ids. Nothing was lost.
 **Why it is worth recording anyway:** it also silently invalidated the regression fixtures, which were built from "HEAD" on the assumption that HEAD was this morning. They captured the *fixed* packs, and `check_gloss` duly reported clean on its own founding example. Rebuilt from `8588836` explicitly. The AGENT-LOOP claim check (read `git log origin/b1/auto` before starting a unit) is written for cloud runs and did not cover an interactive session — a session that is editing packs should assume HEAD can move under it, and pin an explicit commit whenever it needs "before".
+
+### B1 · total duplicate audit — 32 words introduced twice, and 15 Czech prompts with two right answers
+**James, 2026-09-05:** "can we do a total audit of b1 for duplicates … make sure that words have never been introduced more than once."
+
+`check_dupes.py` had never covered B1 — its scope note said B1 re-teaches A2 words deliberately, which is true of six packs and of nothing else. Widened to B1 (2,300 distinct words walked in teaching-path order; introduction = `blocks[].items[].en`, intro tiles are recycling and do not count). Two independent implementations agree on the number.
+
+→ **Applied (dropdown, three answers):**
+
+**1. The 32 real duplicates: drop the later tile, per the standing F7 decision.** The word keeps appearing in sentences as recycled vocabulary and belongs on the "You already know" page; it just stops being introduced as new.
+
+| Pack | n | Words |
+|---|---|---|
+| `b1_travel` | 14 | luggage · boarding pass · platform · delay · connection · backpack · route · ferry · refund · emergency · complain · check in · review · booking |
+| `b1_abstract` | 7 | problem · reason · opinion · advice · goal · knowledge · relationship |
+| `b1_news` | 5 | journalist · government · law · education · disaster |
+| `b1_self` | 3 | cough · ambitious · selfish |
+| `b1_work` / `b1_communication` / `b1_technology` | 1 each | routine · phrase · mouse |
+
+Twelve of `b1_travel`'s fourteen come from `a2_travel` and `a2_transport`, the two units directly beneath it. Three of them — luggage, booking, backpack — were on its *You already know* page **and** in its bank, which is why that page read wrong on 2026-09-05.
+
+**2. `b1_word_families`: rebuild the tiles as pairs.** The item becomes `decide → decision`, not `decision`. That resolves 21 of its duplicates at a stroke (the pair is new even when the noun is not), and gives the sentence bank something to gap — it currently has 36 words and **no `sentences[]` at all**, so none of those words has a Quiz or Type item.
+
+**3. `check_dupes.py` extended to B1 and ratcheted.** Six re-examination packs are named as exemptions in the file, so the reasoning is visible rather than assumed: false friends, confusables, get, phrasal 1 and 2, collocations, word families, opinions.
+
+**4. Not asked for, and the more serious find: `uncovered cz across` went 2 → 15.** Two items share a Czech prompt with no entry in `data/senses.json`, so the student is asked to produce one of two English words with nothing to choose by — A0, and it marks a correct answer wrong.
+
+```
+skromný        humble [b1_personality]   modest [b1_self]
+společenský    outgoing [b1_self]        sociable [b1_personality]
+spolehnout se na  count on [b1_phrasal_2]   rely on [b1_relationships]
+nešťastný      miserable [b1_feelings]   unhappy [a2_feelings]
+vyděšený       scared [a2_feelings]      terrified [b1_feelings]
+nadšený        delighted [b1_feelings]   excited [a1_feelings]
+zábavný        amusing [b1_feelings]     fun [a1_freetime]
+smutný         sad [a1_feelings]         upset / upsetting [b1_feelings]
+opatrný        careful [a2_personality]  cautious [b1_personality]
+hádka          argument [a2_signals]     quarrel [b1_relationships]
+hlas           voice [a2_media]          vote [b1_news]
+směna          exchange [b1_money]       shift [b1_work]
+```
+**Q:** these split two ways. Some are true synonyms where both answers are right and the fix is `data/senses.json` (*humble/modest*, *outgoing/sociable*, *count on/rely on*). Others are genuinely different senses of one Czech word where the fix is an A12 mark on the Czech side (*hlas* = voice or vote; *směna* = exchange or shift).
+**Default if unanswered:** the synonym pairs go into `senses.json` so both grade correct — that is A5, already settled as a rule. The different-sense ones get the Czech marked, item by item, when a run works that pack; nothing is cut. The baseline is seeded at 15 so it can only fall.

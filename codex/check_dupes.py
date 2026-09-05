@@ -52,7 +52,20 @@ DATA = ROOT / "data"
 AUDIT_DIR = ROOT / "audit"
 BASELINE = AUDIT_DIR / "dupes-baseline.json"
 
-LEVELS = ("A1", "A2")
+LEVELS = ("A1", "A2", "B1")
+
+# Packs whose job IS a word you already know, seen again: false friends, confusables,
+# the get senses, phrasal verbs, collocations, word families. A second tile there is
+# the unit working, not a duplicate. Everything else at B1 introduces once (F7).
+#
+# B1 was outside this check until 2026-09-05 — the scope note said B1 re-teaches A2
+# words deliberately, which is true of these six packs and of nothing else. Run over
+# B1 for the first time it found 32 real duplicates, fourteen of them in b1_travel,
+# twelve of those from the two units directly beneath it (a2_travel, a2_transport).
+REEXAMINE = {
+    "b1_false_friends", "b1_confusables", "b1_get", "b1_collocations",
+    "b1_phrasal_1", "b1_phrasal_2", "b1_word_families", "b1_opinions",
+}
 PATH_KEY = {"A1": "path_order", "A2": "path_order_a2", "B1": "path_order_b1",
             "B2": "path_order_b2", "C1": "path_order_c1"}
 PAREN = re.compile(r"\s*\([^)]*\)")
@@ -150,7 +163,18 @@ def main() -> int:
             if len(set(ens)) > 1:
                 per_pack_cz.append((pid, s, sorted(set(ens))))
 
-    dupes = {en: v for en, v in exact.items() if len(v) > 1}
+    def introductions(v):
+        """Occurrences that count as introducing the word.
+
+        `packs` is walked in teaching-path order, so v[0] is the owner. A later
+        occurrence in a re-examination pack is that pack doing its job — false
+        friends and confusables exist to show a known word again — so it does not
+        count as a second introduction.
+        """
+        return [v[0]] + [x for x in v[1:] if x[0] not in REEXAMINE]
+
+    dupes = {en: kept for en, v in exact.items()
+             if len(v) > 1 and len(kept := introductions(v)) > 1}
 
     hollow = []
     for b, v in family.items():
