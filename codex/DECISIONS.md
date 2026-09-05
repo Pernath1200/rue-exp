@@ -278,6 +278,11 @@ It has already nearly bitten. Sweeping `leaf_crime_b2` against the real pool ret
 
 **Default if unanswered:** the lane cannot apply any of these — (a) is a registry edit and (b) is a `codex/` script change, both outside what it may touch. What it IS doing meanwhile: sweeping every remaining unit against a **corrected** pool that unions POOL.json with the targets of every drafted-but-not-live pack before the cutoff, so nothing else gets re-taught while this is open. That correction lives in the lane's scratchpad, not in the repo. **(b) looks like the right fix** — a unit with a pack file and items has been taught whether or not its node has been flipped, and the one-line guard could read `status in ("live", "coming")` with a non-empty-blocks test. (a) works too but has to be repeated by hand every batch.
 
+### `b2_pie_roots` · the CAPS cue could not be a pool word, so it is a card word
+**Q:** In `b2_prefixes_1` and `b2_suffixes_1` the capitalised cue is always a word already in the pool — that is the rule that sank fourteen roots in Suffixes 2. It cannot hold for a **roots** unit. The taught members of these eight families are too thin to reach the 24-item floor: `dict` has only *dictionary* and *verdict* in the pool and neither derives, `vert` has only *advertise* and *version*, and `spect` has only *respect*.
+**Options:** a) let the cue be any word this unit's own root cards name, since a roots unit teaches the family before drilling it / b) ship ~16 items and fall under the band floor / c) drop the roots unit from the plan.
+**Default if unanswered:** a, and it is applied. Every CAPS cue in the bank appears on card 2, 3 or 4, so C11 holds in the direction that matters — nothing is tested that no card named. Where a pool word was available it was still preferred: RESPECT, SUPPORT, REDUCE, PRODUCT, DESTROY, STRUCTURE, INFORM, FORMAL, TRANSFORM and REFORM are all already taught. (b) would ship a unit below the floor; (c) throws away the one unit that ties the three affix lessons together, which is its stated job in B2-PLAN. If you would rather the cue rule stayed absolute, the honest consequence is that this unit shrinks to about sixteen items and needs the band relaxed for it.
+
 ---
 
 ## Answered
