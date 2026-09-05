@@ -664,6 +664,14 @@ a.today-link:hover {
   text-underline-offset: 0.18em;
 }
 
+/* Build Use: the situation in note form, in place of the sentence the
+ * student used to copy (James, 2026-09-05, b1_work). */
+.rw-cue {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin: 0.3rem 0 0.5rem;
+}
+
 .rw-clue {
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 1.05rem;
@@ -1680,6 +1688,21 @@ button.link:hover {
 .reveal {
   color: var(--accent);
   font-weight: 700;
+}
+
+/* Why a rewrite answer was wrong, under the model answer (James, 2026-09-05,
+ * b1_work: "it should at least highlight what was wrong about it"). */
+.fb-why {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.fb-why .w-extra {
+  color: var(--wrong);
+  font-weight: 700;
+  text-decoration: underline wavy;
+  text-underline-offset: 0.2em;
 }
 
 /* Frames: word pills above the frame prompt */

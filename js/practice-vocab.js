@@ -489,7 +489,7 @@ function nearMiss(userInput, item, primary, opts = {}) {
   return null;
 }
 
-export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants, placeVariants, detFold, determinerMatch };
+export { norm, isCorrectAnswer, itemAccepts, expandContractions, nearMiss, articleVariants, placeVariants, detFold, determinerMatch , usesLemma as _usesLemma, sentenceDiff as _sentenceDiff, buildVerdict as _buildVerdict };
 
 /** Ball-and-box SVG diagrams (from Teaching Material basic-prepositions.html), RUE3 dark tokens. */
 function diagramSvg(key) {
@@ -676,6 +676,126 @@ function rewriteLetterClue(lemma) {
   const mask = (x) => (x.length < 2 ? x : `${x[0]}${"_".repeat(x.length - 1)}`);
   if (words.length < 2) return `${mask(w)} (${w.length})`;
   return `${words.map(mask).join(" ")} (${words.map((x) => x.length).join(", ")})`;
+}
+
+/* Why a rewrite answer was wrong, not just that it was (James, 2026-09-05,
+ * b1_work smoke). Two different misses were both showing the same bare
+ * "✗ Answer: …":
+ *
+ *   "the company wants to RECRUIT two new people" — real English, and a real
+ *   synonym, but not the word this leaf teaches. The clue h___ (4) was on
+ *   screen and the feedback never mentioned it. Say so instead.
+ *
+ *   "chooses his OWN hours" — the target word was produced correctly and one
+ *   carrier word differed. "it should at least highlight what was wrong about
+ *   it." E10's whole point is that Use tests the new word, so a carrier slip
+ *   must not read as the same failure as missing the word.
+ *
+ * Neither widens the answer key: both paths still score wrong and still show
+ * the model answer. */
+
+/** Did the answer contain this unit's word, in any ordinary inflection? */
+/* Build Use (James, 2026-09-05, b1_work: "wondering if this is too easy and
+ * requires too little production ... maybe give prompts not full sentence to
+ * copy?"). A rewrite item shows the whole target sentence with one span
+ * underlined, so the student rebuilds it and swaps that span — E10 production
+ * on paper, transcription in practice. An item that carries a `cue` instead
+ * drops the sentence: the cue is the situation in note form, and the student
+ * writes the sentence. Graded on what E10 actually asks for — this unit’s
+ * word, used in a real sentence that says what the cue said — never on
+ * matching the model, which is shown afterwards as one way of many.
+ *
+ * Authored on b1_work only, alongside the rewrite fields, so removing `cue`
+ * puts the unit straight back. Roll out after James has played it. */
+function buildVerdict(typed, it) {
+  const words = norm(typed).split(" ").filter(Boolean);
+  if (words.length < 5) {
+    return { ok: false, why: "Write a whole sentence, not just the word." };
+  }
+  if (it.lemma && !usesLemma(typed, it.lemma)) {
+    return { ok: false, why: `Use this unit’s word: ${rewriteLetterClue(it.lemma)}` };
+  }
+  const missing = (it.targets || []).filter((x) => !usesLemma(typed, x));
+  if (missing.length) {
+    return { ok: false, why: `The sentence still has to say: ${missing.join(" · ")}` };
+  }
+  return { ok: true, why: "" };
+}
+
+function usesLemma(typed, lemma) {
+  const bare = lemmaBare(lemma).toLowerCase();
+  if (!bare) return true; // nothing to ask for
+  const typedWords = norm(typed).split(" ").filter(Boolean);
+  // hire -> hires / hired / hiring; study -> studies / studied. Written as a
+  // suffix table, not a RegExp, so no lemma needs escaping.
+  const SUFFIX = ["", "s", "es", "d", "ed", "ing", "ies", "ied"];
+  return bare.split(" ").filter(Boolean).every((w) => {
+    const stems = [w];
+    if (w.length > 2 && w.endsWith("e")) stems.push(w.slice(0, -1));
+    if (w.length > 2 && w.endsWith("y")) stems.push(w.slice(0, -1) + "i");
+    return typedWords.some((t) =>
+      stems.some((st) => SUFFIX.some((sfx) => t === st + sfx)),
+    );
+  });
+}
+
+
+/**
+ * Word-level diff against the closest accepted wording.
+ * @returns {{html: string, extra: string[], missing: string[]}|null}
+ *   `html` is the student's own sentence with the words that do not belong
+ *   marked, so the eye lands on the difference instead of hunting for it.
+ */
+function sentenceDiff(typed, item, primary, opts = {}) {
+  const u = norm(typed).split(" ").filter(Boolean);
+  if (!u.length) return null;
+  const forms = itemAccepts(item, primary, opts)
+    .map((f) => String(f).split(" ").filter(Boolean))
+    .filter((f) => f.length);
+  if (!forms.length) return null;
+
+  let best = null;
+  for (const g of forms) {
+    // longest common subsequence, so a dropped or added word does not shift
+    // every word after it into the diff
+    const m = u.length, n = g.length;
+    const dp = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+    for (let i = 1; i <= m; i += 1) {
+      for (let j = 1; j <= n; j += 1) {
+        dp[i][j] = u[i - 1] === g[j - 1]
+          ? dp[i - 1][j - 1] + 1
+          : Math.max(dp[i - 1][j], dp[i][j - 1]);
+      }
+    }
+    const cost = m + n - 2 * dp[m][n];
+    if (!best || cost < best.cost) best = { cost, g, dp };
+  }
+  // Beyond a handful of words apart it is a different sentence, not a slip.
+  if (!best || best.cost === 0 || best.cost > 4) return null;
+
+  const { g, dp } = best;
+  const keep = new Array(u.length).fill(false);
+  const missing = [];
+  let i = u.length, j = g.length;
+  while (i > 0 && j > 0) {
+    if (u[i - 1] === g[j - 1]) { keep[i - 1] = true; i -= 1; j -= 1; }
+    else if (dp[i - 1][j] >= dp[i][j - 1]) { i -= 1; }
+    else { missing.unshift(g[j - 1]); j -= 1; }
+  }
+  while (j > 0) { missing.unshift(g[j - 1]); j -= 1; }
+
+  const words = String(typed).trim().split(/\s+/);
+  const flat = norm(typed).split(" ").filter(Boolean);
+  // norm() can merge or drop tokens; only mark when the two line up word for
+  // word, otherwise the highlight would land on the wrong word.
+  const html = words.length === flat.length
+    ? words
+        .map((w, k) => (keep[k] ? escapeHtml(w) : `<span class="w-extra">${escapeHtml(w)}</span>`))
+        .join(" ")
+    : escapeHtml(String(typed).trim());
+  const extra = flat.filter((_, k) => !keep[k]);
+  if (!extra.length && !missing.length) return null;
+  return { html, extra, missing };
 }
 
 function markUnderline(prompt, span) {
@@ -2560,12 +2680,15 @@ export function startPractice(root, block, opts) {
     const itemIndex = t.order[t.pos];
     const it = list[itemIndex];
     flagItem(it, itemIndex, "sentence");
-    const rewriteUse = isRewriteItem(it);
-    const frameUse = Boolean(it.frame) && !rewriteUse;
+    // A `cue` turns a rewrite item into a build item: the model sentence is
+    // withheld and the student writes it from the situation.
+    const buildUse = Boolean(it.cue) && Boolean(it.en);
+    const rewriteUse = !buildUse && isRewriteItem(it);
+    const frameUse = Boolean(it.frame) && !rewriteUse && !buildUse;
     const frameHint = rewriteUse
       ? rewriteHintFrame(it)
       : it.frame || it.gap || "";
-    const letterClue = rewriteUse ? rewriteLetterClue(it.lemma) : "";
+    const letterClue = rewriteUse || buildUse ? rewriteLetterClue(it.lemma) : "";
     const rewriteTask =
       (block.use_hint ||
         "Rewrite the sentence. Replace the underlined words.") +
@@ -2573,7 +2696,12 @@ export function startPractice(root, block, opts) {
     /* Rewrite: English prompt, target hidden, Type-style blank.
      * Frame Use: do not print the English lemma (B15).
      * Default: CZ→EN translation. */
-    const promptHtml = rewriteUse
+    const promptHtml = buildUse
+      ? `<p class="fix-label">Write the sentence</p>
+        <div class="rw-cue">${escapeHtml(it.cue)}</div>
+        ${letterClue ? `<div class="rw-clue">${escapeHtml(letterClue)}</div>` : ""}
+        <div class="sub">Use the word · write the whole sentence · Enter = check / next</div>`
+      : rewriteUse
       ? `<p class="fix-label">Rewrite</p>
         <div class="prompt" style="font-size:1.15rem">${markUnderline(it.prompt, it.underline)}</div>
         ${letterClue ? `<div class="rw-clue">${escapeHtml(letterClue)}</div>` : ""}
@@ -2590,7 +2718,7 @@ export function startPractice(root, block, opts) {
         ${diagramBlock(it)}
         ${structureHint(it)}
         ${promptHtml}
-        <textarea class="type-in type-area" id="ti" rows="2" autocomplete="off" spellcheck="false" placeholder="${rewriteUse ? "type the new sentence…" : "write the English sentence…"}"></textarea>
+        <textarea class="type-in type-area" id="ti" rows="2" autocomplete="off" spellcheck="false" placeholder="${buildUse ? "write your sentence…" : rewriteUse ? "type the new sentence…" : "write the English sentence…"}"></textarea>
         <div class="fb" id="tfb"></div>
         <div class="nav"><button type="button" class="btn primary" id="chk">Check</button></div>
         ${frameHint ? `<button type="button" class="link" id="hint">Hint · frame</button> · ` : ""}
@@ -2635,14 +2763,19 @@ export function startPractice(root, block, opts) {
       if (t.answered) return;
       t.answered = true;
       t.missedThis = false;
-      if (isCorrectAnswer(inp.value, it, it.en)) {
+      // Build items grade on the word and the situation, never on matching
+      // the model — that model is one wording of many.
+      const verdict = buildUse ? buildVerdict(inp.value, it) : null;
+      if (verdict ? verdict.ok : isCorrectAnswer(inp.value, it, it.en)) {
         if (strictCaps && !capitalsOk(inp.value, [it.en, ...(it.accepts || [])])) {
           t.missedThis = true;
           fb.innerHTML = `✗ Capital letter: <span class="reveal">${escapeHtml(it.en)}</span>`;
           fb.className = "fb bad";
         } else {
           t.score++;
-          fb.textContent = "✓ Correct";
+          fb.innerHTML = buildUse
+            ? `✓ Correct<div class="fb-why">One way: ${escapeHtml(it.en)}</div>`
+            : "✓ Correct";
           fb.className = "fb good";
         }
       } else {
@@ -2653,7 +2786,34 @@ export function startPractice(root, block, opts) {
           Array.isArray(it.reject) &&
           it.reject.some((r) => typedN.includes(norm(r)));
         const trapNote = trap && it.trap_note ? ` ${escapeHtml(it.trap_note)}` : "";
-        fb.innerHTML = `✗ Answer: <span class="reveal">${escapeHtml(it.en)}</span>${trapNote}`;
+        /* Say WHICH miss it was (James, 2026-09-05, b1_work). A rewrite that
+         * paraphrases round this unit’s word is a different failure from one
+         * that produced the word and slipped on a carrier — and E10 says Use
+         * tests the new word, so the two must not read alike. Neither line
+         * widens the answer key; both still score wrong. */
+        const missedWord =
+          rewriteUse && it.lemma && !usesLemma(inp.value, it.lemma)
+            ? letterClue || lemmaBare(it.lemma)
+            : "";
+        const diff = missedWord || buildUse ? null : sentenceDiff(inp.value, it, it.en);
+        const extraNote = verdict
+          ? `<div class="fb-why">${escapeHtml(verdict.why)}</div>`
+          : missedWord
+          ? `<div class="fb-why">Good English — but this unit wants <strong>${escapeHtml(
+              missedWord,
+            )}</strong>.</div>`
+          : diff
+            ? `<div class="fb-why">You wrote: ${diff.html}${
+                diff.missing.length
+                  ? ` · missing <strong>${escapeHtml(diff.missing.join(" "))}</strong>`
+                  : ""
+              }</div>`
+            : "";
+        fb.innerHTML = buildUse
+          ? `✗ ${extraNote}<div class="fb-why">One way: <span class="reveal">${escapeHtml(
+              it.en,
+            )}</span></div>`
+          : `✗ Answer: <span class="reveal">${escapeHtml(it.en)}</span>${trapNote}${extraNote}`;
         fb.className = "fb bad";
         const s = document.createElement("button");
         s.type = "button";

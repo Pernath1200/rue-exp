@@ -3,8 +3,9 @@
  "title": "Work 3",
  "level": "B1",
  "tree_node": "leaf_work_b1",
+ "recaps": ["a1_work", "a2_work"],
  "codex_unit": "V_WRK-B1B2-01",
- "note": "V_WRK-B1B2-01 · B1 work layer above leaf_work_a1/a2 · contract & status lexis, people/pay/progress, load & balance · carriers via use[] · picture-led intro + Use bank 2026-08-10 · 2026-09-04 B1 loop: sentences 18 → 35, one gappable frame per lemma; the four frames that listed two lemmas each hid the second word from sentenceToFrame, so qualification, temporary, feedback and responsibility had no gap. B22 quiz_mode sentence_gap added (it was missing). E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: cancel dropped — leaf_travel_b1 owns it at path 6. C20/C23: card 0's 'thirty-six words in three layers' note is now a table of the three layers. Pool-checked against everything taught before leaf_work_b1 — 0 unknown types. · 2026-09-04: three rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 12 of 35 Use sentences were FLAT or THIN under check_sentence_texture.py. All 12 rewritten to make one clause move (because / when / if / but / a comparative / a relative) and carry two or more already-taught words; lemma stays contiguous for sentenceToFrame. 0/35 fail now.",
+ "note": "V_WRK-B1B2-01 · B1 work layer above leaf_work_a1/a2 · contract & status lexis, people/pay/progress, load & balance · carriers via use[] · picture-led intro + Use bank 2026-08-10 · 2026-09-04 B1 loop: sentences 18 → 35, one gappable frame per lemma; the four frames that listed two lemmas each hid the second word from sentenceToFrame, so qualification, temporary, feedback and responsibility had no gap. B22 quiz_mode sentence_gap added (it was missing). E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: cancel dropped — leaf_travel_b1 owns it at path 6. C20/C23: card 0's 'thirty-six words in three layers' note is now a table of the three layers. Pool-checked against everything taught before leaf_work_b1 — 0 unknown types. · 2026-09-04: three rewrite items re-cut so replacing the underline reconstructs the answer. · 2026-09-05 B1 loop: sentence texture. 12 of 35 Use sentences were FLAT or THIN under check_sentence_texture.py. All 12 rewritten to make one clause move (because / when / if / but / a comparative / a relative) and carry two or more already-taught words; lemma stays contiguous for sentenceToFrame. 0/35 fail now. · 2026-09-05 James smoke: C49 — Kinds of work was split 6 + 1 (\"why is there 6 words on one page and only one on the next page?\"). One board of seven now; duty sits next to responsibility, the word it is confused with. D7 — the freelance rewrite takes *chooses his own hours*, which is the more idiomatic of the two. The other two Use flags were answered in the engine, not here: a rewrite that paraphrases round this leaf's word now says so and names the letter clue, and one that produces the word and slips on a carrier gets the differing word marked. hire still does not accept recruit — the clue on screen says h___ (4) and this is a word-production task; queued in DECISIONS. E12 — all 12 Use items are now build items: `cue` carries the situation in note form, the sentence is withheld, and grading is the lemma plus `targets` (base forms — matching is stem + suffix), never one wording. James answered (b) in dropdowns; this pack goes first and he plays it before the other ~128 rewrite items across the B1 leaves follow. `prompt` / `underline` are still on every item, so deleting `cue` puts the unit back to rewrite with no other edit.",
  "default_direction": "cz_to_en",
  "blocks": [
   {
@@ -306,6 +307,70 @@
  ],
  "intro": [
   {
+   "title": "You already know",
+   "title_cz": "Už znáš — Work 1 a Work 2",
+   "pictures": [
+    {
+     "en": "job",
+     "cz": "práce / povolání",
+     "icon": "💼"
+    },
+    {
+     "en": "boss",
+     "cz": "šéf",
+     "icon": "👔"
+    },
+    {
+     "en": "colleague",
+     "cz": "kolega",
+     "icon": "👥"
+    },
+    {
+     "en": "office",
+     "cz": "kancelář",
+     "icon": "🏢"
+    },
+    {
+     "en": "company",
+     "cz": "firma / společnost",
+     "icon": "🏛️"
+    },
+    {
+     "en": "meeting",
+     "cz": "schůzka / porada",
+     "icon": "📅"
+    },
+    {
+     "en": "apply",
+     "cz": "požádat (o práci)",
+     "icon": "📝"
+    },
+    {
+     "en": "contract",
+     "cz": "smlouva",
+     "icon": "✍️"
+    }
+   ],
+   "table": {
+    "headers": [
+     "from",
+     "words"
+    ],
+    "rows": [
+     [
+      "Work 1",
+      "work · manager · teacher · salary · career · business · start / finish work"
+     ],
+     [
+      "Work 2",
+      "employee · employer · staff · skill · training · earn · profession"
+     ]
+    ]
+   },
+   "note": "Work 1 gave you the job and the people around it; Work 2 gave you applying, the contract and the pay. This unit is getting hired, moving on, and the shape of the working week.",
+   "note_cz": "Work 1 dal práci a lidi kolem ní; Work 2 přihlášku, smlouvu a plat. Tato lekce je o tom, jak práci získáš, jak se posuneš dál, a jaký je pracovní týden."
+  },
+  {
    "title": "Work: the job, the people, the week",
    "title_cz": "Práce: místo, lidé, týden",
    "pictures": [
@@ -484,7 +549,7 @@
    ]
   },
   {
-   "title": "Kinds of work · 1",
+   "title": "Kinds of work",
    "title_cz": "Druhy práce",
    "table": {
     "headers": [
@@ -515,19 +580,7 @@
      [
       "responsibility",
       "zodpovědnost"
-     ]
-    ]
-   }
-  },
-  {
-   "title": "Kinds of work · 2",
-   "title_cz": "Druhy práce",
-   "table": {
-    "headers": [
-     "word",
-     "Czech"
-    ],
-    "rows": [
+     ],
      [
       "duty",
       "povinnost"
@@ -920,6 +973,10 @@
    ],
    "accepts": [
     "Our company has a vacancy for a teacher"
+   ],
+   "cue": "your company · you need a teacher · the job is still open",
+   "targets": [
+    "teacher"
    ]
   },
   {
@@ -932,6 +989,10 @@
    ],
    "accepts": [
     "The company wants to hire two new people"
+   ],
+   "cue": "your company · two new people · you are going to give them jobs",
+   "targets": [
+    "people"
    ]
   },
   {
@@ -944,6 +1005,10 @@
    ],
    "accepts": [
     "He is going to resign at the end of May"
+   ],
+   "cue": "he is leaving his job · at the end of May · his own choice",
+   "targets": [
+    "May"
    ]
   },
   {
@@ -956,6 +1021,10 @@
    ],
    "accepts": [
     "I commute by train every day"
+   ],
+   "cue": "you · by train · to work and back · every day",
+   "targets": [
+    "train"
    ]
   },
   {
@@ -968,6 +1037,10 @@
    ],
    "accepts": [
     "The deadline for the report is Friday"
+   ],
+   "cue": "the report · Friday is the last day you can hand it in",
+   "targets": [
+    "report"
    ]
   },
   {
@@ -980,6 +1053,10 @@
    ],
    "accepts": [
     "We must postpone the meeting to next week"
+   ],
+   "cue": "the meeting · you have to move it to next week",
+   "targets": [
+    "meeting"
    ]
   },
   {
@@ -992,6 +1069,10 @@
    ],
    "accepts": [
     "My brother got a promotion after five years"
+   ],
+   "cue": "your brother · after five years · a better position",
+   "targets": [
+    "brother"
    ]
   },
   {
@@ -1004,6 +1085,10 @@
    ],
    "accepts": [
     "I worked overtime on Saturday"
+   ],
+   "cue": "Saturday · you worked more hours than usual",
+   "targets": [
+    "Saturday"
    ]
   },
   {
@@ -1016,6 +1101,10 @@
    ],
    "accepts": [
     "The workload is bigger this month"
+   ],
+   "cue": "this month · the amount of work is bigger than usual",
+   "targets": [
+    "month"
    ]
   },
   {
@@ -1028,7 +1117,13 @@
    ],
    "accepts": [
     "He is now freelance and chooses his hours",
-    "He's now freelance and chooses his hours"
+    "He's now freelance and chooses his hours",
+    "He is now freelance and chooses his own hours",
+    "He's now freelance and chooses his own hours"
+   ],
+   "cue": "he works for himself now · nobody sets his hours",
+   "targets": [
+    "hour"
    ]
   },
   {
@@ -1041,6 +1136,10 @@
    ],
    "accepts": [
     "My grandmother lives on her pension"
+   ],
+   "cue": "your grandmother · she lives on money from the state",
+   "targets": [
+    "grandmother"
    ]
   },
   {
@@ -1053,6 +1152,10 @@
    ],
    "accepts": [
     "This job is temporary, only for six months"
+   ],
+   "cue": "this job · only six months · not for ever",
+   "targets": [
+    "month"
    ]
   }
  ]
