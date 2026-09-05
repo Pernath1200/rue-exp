@@ -33,7 +33,7 @@
   "script": "check_rules.py",
   "rule": "B25",
   "from": "b1_be_used_to — 'I'm not used to ____. (cold weather)', whose chips have to be invented nonsense because there is no real error to offer. The fixture also holds the five '(get)' items this check used to flag; B25's own carve-out says a verb lemma cue whose answer is the bare form still picks a form, and 2026-09-05 the check learned that, so those five no longer fire and this one still does",
-  "pulled": "pulled 2026-09-05 — 28 of 29 findings were false; `(get)` against get / be / being / getting is the A11 stem cue and is required. The fixture stays: item 9, `I'm not used to ____. (cold weather)`, is the one real instance, its chips being distortions of itself"
+  "skip": "pulled 2026-09-05 — 28 of 29 findings were false; `(get)` against get / be / being / getting is the A11 stem cue and is required. The fixture stays: item 9, `I'm not used to ____. (cold weather)`, is the one real instance, its chips being distortions of itself"
  },
  {
   "file": "h5_hardcoded_hex.json",
@@ -61,7 +61,8 @@
   "kind": "grammar",
   "script": "check_rules.py",
   "rule": "C19",
-  "from": "b1_modals_speculation — Czech sitting in an English table column"
+  "from": "b1_modals_speculation — Czech sitting in an English table column",
+  "skip": "narrowed 2026-09-05 — C19 now ignores a column with no header, and this pack was never in breach: its card 3 is a headerless two-column card whose left cell is the sentence 'Czech often uses možná / určitě / nemůže být'. The check's only other hit, a1_word_classes' '**adjective** (*přídavné jméno*)', is a gloss C22 positively requires. After the narrowing C19 has NO hits anywhere in the corpus, so there is no true instance left to freeze — the check is unproven until a real one appears. Same shape as the H5 fixture that turned out not to breach; flagged in DECISIONS rather than faked."
  },
  {
   "file": "c14_card0_nickname.json",
@@ -69,7 +70,7 @@
   "script": "check_rules.py",
   "rule": "C14",
   "from": "b1_articles_advanced — card 0 is called 'Three choices', the unit is 'Articles 3'",
-  "pulled": "pulled 2026-09-05 — 15 of 17 findings were false; 'Two kinds of relative clause' is a good descriptive opener, which is what C1 asks for. Nothing can tell a slogan from a good title"
+  "skip": "pulled 2026-09-05 — 15 of 17 findings were false; 'Two kinds of relative clause' is a good descriptive opener, which is what C1 asks for. Nothing can tell a slogan from a good title"
  },
  {
   "file": "b25_cue_is_answer.json",

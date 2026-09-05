@@ -182,6 +182,15 @@ def c19_czech_in_english_table(uid, d):
                     head = heads[i] if i < len(heads) else ""
                     if re.search(r"cz|czech|česk", head, re.I):
                         continue
+                    # A column with no header is not a form-table column. C19 is
+                    # about Czech sprinkled into a table that names its categories;
+                    # a headerless two-column card is prose laid out in a grid, and
+                    # what it says about Czech belongs in it. Both remaining hits
+                    # were that: b1_modals_speculation's "Czech often uses možná /
+                    # určitě / nemůže být", and a1_word_classes' "**adjective**
+                    # (*přídavné jméno*)", which C22 positively requires.
+                    if not head.strip():
+                        continue
                     if CZECH_LETTER.search(str(cell)):
                         out.append(("C19", ci, "Czech in the %r column: %r" % (head, str(cell)[:40])))
     return out
@@ -240,9 +249,18 @@ def c49_intro_shows_every_word(uid, d):
 
 
 def c56_vocab_page_is_pictures(uid, d):
-    """C56 — a diagram-only page is grammar; vocab intros are picture boards."""
+    """C56 — a diagram-only page is grammar; vocab intros are picture boards.
+
+    A pack whose words cannot be drawn may say so in its `note`, as
+    `C56 exempt: <reason>`. b1_core_frames teaches decide / suggest / agree —
+    there is no picture of *agree*, and its schematic intro was authored that way
+    on purpose (James, 2026-09-05 dropdown: let a pack say in its note that its
+    diagram-first intro is deliberate).
+    """
     cs = cards_of(d)
     if not cs:
+        return []
+    if re.search(r"C56 exempt", str(d.get("note") or ""), re.I):
         return []
     c = cs[0]
     if c.get("pictures"):

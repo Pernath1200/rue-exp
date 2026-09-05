@@ -54,16 +54,18 @@ def run_against(fixture: Path, kind: str, script: str) -> str:
 def main() -> int:
     manifest = json.loads((REG / "manifest.json").read_text(encoding="utf-8"))
     print("PROVING EACH CHECK STILL COMPLAINS\n")
-    silent, ok, pulled = [], 0, 0
+    silent, ok, skipped = [], 0, 0
     for case in manifest:
-        # A check that was deliberately pulled is not a broken check. B25 and C14
-        # were audited against real items on 2026-09-05 and taken out of the
-        # runner; their fixtures stay so the evidence survives if either returns.
-        if case.get("pulled"):
-            pulled += 1
-            print("  %-16s %-5s pulled — not in the runner" % (
+        # A fixture can stop proving its check for a reason that is not the check
+        # breaking: the check was pulled from the runner (B25, C14), or it was
+        # narrowed and this pack turned out never to have been in breach (C19).
+        # Those say so in `skip`, and the reason is the record. Anything without
+        # `skip` must still fire, or it is broken.
+        if case.get("skip"):
+            skipped += 1
+            print("  %-16s %-5s skipped" % (
                 case["script"].replace(".py", ""), case["rule"]))
-            print("      %s" % case["pulled"])
+            print("      %s" % case["skip"])
             continue
         out = run_against(REG / case["file"], case["kind"], case["script"])
         fired = case["rule"] in out
@@ -80,8 +82,8 @@ def main() -> int:
     for s in untested:
         print("  %-16s %-5s no fixture yet — untested" % (s.replace(".py", ""), "—"))
 
-    print("\ntest_checks: %d proved · %d silent · %d untested · %d pulled"
-          % (ok, len(silent), len(untested), pulled))
+    print("\ntest_checks: %d proved · %d silent · %d untested · %d skipped"
+          % (ok, len(silent), len(untested), skipped))
     if silent:
         print("BROKEN: " + ", ".join(silent))
         return 1 if "--check" in sys.argv else 0
