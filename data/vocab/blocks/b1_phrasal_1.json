@@ -5,7 +5,7 @@
  "tree_node": "leaf_phrasal_1_b1",
  "codex_unit": "V_PHR-B1B2-01",
  "quality": "draft",
- "note": "LEXIS pack: the meanings. The grammar (separable/inseparable, pronoun position) is b1_phrasal_verbs, which plays immediately before. Course doc wants ~60 cumulative across packs 1 and 2. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Four of the eight shipped frames could never gap: three used a past form (*threw away*, *ran out of*, *looked up*) and one SPLIT the verb (*pick me up*), which is exactly what the pack teaches — but sentenceToFrame matches the lemma string literally, so a split frame produces no gap. Every frame here keeps its particle next to its verb; the split belongs to b1_phrasal_verbs, and the frames page now says so. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get up* belongs to leaf_get_b1 (path 43) and *clean up* to leaf_environment_b1 (39); replaced with **wash up** and **stay in**. · Pool-checked against everything taught before leaf_phrasal_1_b1 — 0 unknown types. · 2026-09-04: six rewrite items — the paraphrase had swallowed the object, so the swap left the phrasal verb with nothing after it. The underline now stops at the verb.",
+ "note": "LEXIS pack: the meanings. The grammar (separable/inseparable, pronoun position) is b1_phrasal_verbs, which plays immediately before. Course doc wants ~60 cumulative across packs 1 and 2. First draft 2026-09-02. · 2026-09-04 B1 loop: sentences 8 → 36, one gappable frame per lemma. Four of the eight shipped frames could never gap: three used a past form (*threw away*, *ran out of*, *looked up*) and one SPLIT the verb (*pick me up*), which is exactly what the pack teaches — but sentenceToFrame matches the lemma string literally, so a split frame produces no gap. Every frame here keeps its particle next to its verb; the split belongs to b1_phrasal_verbs, and the frames page now says so. E10: Use is use_mode rewrite, 12 underlined paraphrases. F7: *get up* belongs to leaf_get_b1 (path 43) and *clean up* to leaf_environment_b1 (39); replaced with **wash up** and **stay in**. · Pool-checked against everything taught before leaf_phrasal_1_b1 — 0 unknown types. · 2026-09-04: six rewrite items — the paraphrase had swallowed the object, so the swap left the phrasal verb with nothing after it. The underline now stops at the verb. · 2026-09-05 B1 loop: sentence texture. 27 of 36 Use sentences were FLAT or THIN under check_sentence_texture.py — level with the news leaf for the worst count at B1. A separable phrasal verb wants a short sentence, so this bank was almost entirely `V + it + time phrase`. All 27 rewritten to make one clause move and carry two or more already-taught words. Every phrasal stays contiguous, per this pack's own frames note: the split form (pick me up) is only seen in b1_phrasal_verbs, the grammar unit, because sentenceToFrame cannot gap across it. 0/36 fail now. `box` was drafted onto the take-out item and is untaught before slot 45.",
  "default_direction": "cz_to_en",
  "quiz_mode": "sentence_gap",
  "intro": [
@@ -495,13 +495,13 @@
  ],
  "sentences": [
   {
-   "en": "Please turn on the light when you come in.",
-   "cz": "Až přijdeš, rozsviť prosím.",
+   "en": "Please turn on the light when you come in because I cannot see the keys.",
+   "cz": "Až přijdeš, rozsviť prosím světlo, protože nevidím na klíče.",
    "lemmas": [
     "turn on"
    ],
    "accepts": [
-    "Please turn on the light when you come in"
+    "Please turn on the light when you come in because I cannot see the keys"
    ]
   },
   {
@@ -515,35 +515,33 @@
    ]
   },
   {
-   "en": "Can you turn up the radio? I cannot hear it.",
-   "cz": "Můžeš zesílit rádio? Neslyším ho.",
+   "en": "Can you turn up the radio because I cannot hear the news?",
+   "cz": "Můžeš zesílit rádio, protože neslyším zprávy?",
    "lemmas": [
     "turn up"
    ],
    "accepts": [
-    "Can you turn up the radio? I cannot hear it",
-    "Can you turn up the radio? I can't hear it"
+    "Can you turn up the radio because I cannot hear the news?"
    ]
   },
   {
-   "en": "Please turn down the music after ten.",
-   "cz": "Po desáté prosím ztlum hudbu.",
+   "en": "Please turn down the music after ten because the neighbours work early.",
+   "cz": "Po desáté prosím ztlum hudbu, protože sousedi chodí brzo do práce.",
    "lemmas": [
     "turn down"
    ],
    "accepts": [
-    "Please turn down the music after ten"
+    "Please turn down the music after ten because the neighbours work early"
    ]
   },
   {
-   "en": "Do not throw away the tickets; we need them later.",
-   "cz": "Nevyhazuj ty lístky, později je budeme potřebovat.",
+   "en": "Do not throw away the tickets because we need them at the station.",
+   "cz": "Nevyhazuj ty lístky, protože je budeme potřebovat na nádraží.",
    "lemmas": [
     "throw away"
    ],
    "accepts": [
-    "Do not throw away the tickets; we need them later",
-    "Don't throw away the tickets; we need them later"
+    "Do not throw away the tickets because we need them at the station"
    ]
   },
   {
@@ -557,13 +555,13 @@
    ]
   },
   {
-   "en": "The children put away their books before dinner.",
-   "cz": "Děti si před večeří uklidily knihy.",
+   "en": "The children put away their books before dinner although nobody asked them.",
+   "cz": "Děti si uklidily knihy před večeří, i když je o to nikdo nepožádal.",
    "lemmas": [
     "put away"
    ],
    "accepts": [
-    "The children put away their books before dinner"
+    "The children put away their books before dinner although nobody asked them"
    ]
   },
   {
@@ -577,63 +575,63 @@
    ]
   },
   {
-   "en": "We want to put up a picture above the sofa.",
-   "cz": "Chceme nad gauč pověsit obraz.",
+   "en": "We want to put up a picture above the sofa which my mother painted.",
+   "cz": "Chceme nad pohovku pověsit obraz, který namalovala moje máma.",
    "lemmas": [
     "put up"
    ],
    "accepts": [
-    "We want to put up a picture above the sofa"
+    "We want to put up a picture above the sofa which my mother painted"
    ]
   },
   {
-   "en": "Please take out the old paper on Monday.",
-   "cz": "V pondělí prosím vynes starý papír.",
+   "en": "Please take out the old paper on Monday because the bag is full.",
+   "cz": "V pondělí prosím vynes starý papír, protože je ta taška plná.",
    "lemmas": [
     "take out"
    ],
    "accepts": [
-    "Please take out the old paper on Monday"
+    "Please take out the old paper on Monday because the bag is full"
    ]
   },
   {
-   "en": "They open up the shop at seven every morning.",
-   "cz": "Obchod otevírají každé ráno v sedm.",
+   "en": "They open up the shop at seven although the first customers come at nine.",
+   "cz": "Otevírají obchod v sedm, i když první zákazníci přijdou až v devět.",
    "lemmas": [
     "open up"
    ],
    "accepts": [
-    "They open up the shop at seven every morning"
+    "They open up the shop at seven although the first customers come at nine"
    ]
   },
   {
-   "en": "I make up the bed when a guest comes.",
-   "cz": "Když přijde návštěva, ustelu postel.",
+   "en": "I make up the bed when a guest comes, but nobody stays long.",
+   "cz": "Když přijede návštěva, ustelu postel, ale nikdo nezůstane dlouho.",
    "lemmas": [
     "make up (a bed)"
    ],
    "accepts": [
-    "I make up the bed when a guest comes"
+    "I make up the bed when a guest comes, but nobody stays long"
    ]
   },
   {
-   "en": "I wake up before seven every morning.",
-   "cz": "Každé ráno se budím před sedmou.",
+   "en": "I wake up before seven because the children are already talking.",
+   "cz": "Budím se před sedmou, protože děti už si povídají.",
    "lemmas": [
     "wake up"
    ],
    "accepts": [
-    "I wake up before seven every morning"
+    "I wake up before seven because the children are already talking"
    ]
   },
   {
-   "en": "We stay in on Sunday evening and watch a film.",
-   "cz": "V neděli večer zůstáváme doma a díváme se na film.",
+   "en": "We stay in on Sunday evening and watch a film which nobody has seen.",
+   "cz": "V neděli večer zůstáváme doma a díváme se na film, který nikdo neviděl.",
    "lemmas": [
     "stay in"
    ],
    "accepts": [
-    "We stay in on Sunday evening and watch a film"
+    "We stay in on Sunday evening and watch a film which nobody has seen"
    ]
   },
   {
@@ -647,43 +645,43 @@
    ]
   },
   {
-   "en": "Please take off your shoes at the door.",
-   "cz": "U dveří si prosím zuj boty.",
+   "en": "Please take off your shoes at the door because the floor is clean.",
+   "cz": "U dveří si prosím zuj boty, protože je podlaha čistá.",
    "lemmas": [
     "take off"
    ],
    "accepts": [
-    "Please take off your shoes at the door"
+    "Please take off your shoes at the door because the floor is clean"
    ]
   },
   {
-   "en": "I warm up the food from yesterday.",
-   "cz": "Ohřeju jídlo ze včerejška.",
+   "en": "I warm up the food from yesterday because there is no time to cook.",
+   "cz": "Ohřeju si včerejší jídlo, protože není čas vařit.",
    "lemmas": [
     "warm up"
    ],
    "accepts": [
-    "I warm up the food from yesterday"
+    "I warm up the food from yesterday because there is no time to cook"
    ]
   },
   {
-   "en": "We go out on Friday, but not on Saturday.",
-   "cz": "V pátek chodíme ven, ale v sobotu ne.",
+   "en": "We go out on Friday, but on Saturday we stay at home with the children.",
+   "cz": "V pátek chodíme ven, ale v sobotu zůstáváme doma s dětmi.",
    "lemmas": [
     "go out"
    ],
    "accepts": [
-    "We go out on Friday, but not on Saturday"
+    "We go out on Friday, but on Saturday we stay at home with the children"
    ]
   },
   {
-   "en": "They come back from Italy on Sunday.",
-   "cz": "Z Itálie se vracejí v neděli.",
+   "en": "They come back from Italy on Sunday, but the school starts on Monday.",
+   "cz": "Z Itálie se vrátí v neděli, ale škola začíná v pondělí.",
    "lemmas": [
     "come back"
    ],
    "accepts": [
-    "They come back from Italy on Sunday"
+    "They come back from Italy on Sunday, but the school starts on Monday"
    ]
   },
   {
@@ -697,33 +695,33 @@
    ]
   },
   {
-   "en": "We set off at six to miss the traffic.",
-   "cz": "Vyrážíme v šest, abychom se vyhnuli provozu.",
+   "en": "We set off at six because the traffic is bad after seven.",
+   "cz": "Vyrazíme v šest, protože po sedmé je hustý provoz.",
    "lemmas": [
     "set off"
    ],
    "accepts": [
-    "We set off at six to miss the traffic"
+    "We set off at six because the traffic is bad after seven"
    ]
   },
   {
-   "en": "I lie down for ten minutes after lunch.",
-   "cz": "Po obědě si na deset minut lehnu.",
+   "en": "I lie down for ten minutes after lunch because the afternoon is long.",
+   "cz": "Po obědě si na deset minut lehnu, protože odpoledne je dlouhé.",
    "lemmas": [
     "lie down"
    ],
    "accepts": [
-    "I lie down for ten minutes after lunch"
+    "I lie down for ten minutes after lunch because the afternoon is long"
    ]
   },
   {
-   "en": "We eat out once a month, usually on a Friday.",
-   "cz": "Jednou za měsíc jdeme na jídlo ven, obvykle v pátek.",
+   "en": "We eat out once a month, although the restaurant near us is expensive.",
+   "cz": "Jednou za měsíc jdeme na jídlo ven, i když je restaurace u nás drahá.",
    "lemmas": [
     "eat out"
    ],
    "accepts": [
-    "We eat out once a month, usually on a Friday"
+    "We eat out once a month, although the restaurant near us is expensive"
    ]
   },
   {
@@ -747,53 +745,53 @@
    ]
   },
   {
-   "en": "They cut off the water for two hours this morning.",
-   "cz": "Dneska ráno na dvě hodiny odstavili vodu.",
+   "en": "They cut off the water for two hours this morning, but nobody told us.",
+   "cz": "Dnes ráno na dvě hodiny odstavili vodu, ale nikdo nám to neřekl.",
    "lemmas": [
     "cut off"
    ],
    "accepts": [
-    "They cut off the water for two hours this morning"
+    "They cut off the water for two hours this morning, but nobody told us"
    ]
   },
   {
-   "en": "I look for my keys every morning.",
-   "cz": "Klíče hledám každé ráno.",
+   "en": "I look for my keys every morning although they are always in my coat.",
+   "cz": "Každé ráno hledám klíče, i když jsou vždycky v kabátě.",
    "lemmas": [
     "look for"
    ],
    "accepts": [
-    "I look for my keys every morning"
+    "I look for my keys every morning although they are always in my coat"
    ]
   },
   {
-   "en": "I look up every new word in a dictionary.",
-   "cz": "Každé nové slovo si vyhledám ve slovníku.",
+   "en": "I look up every new word in a dictionary, but I forget it by the evening.",
+   "cz": "Každé nové slovo si najdu ve slovníku, ale do večera ho zapomenu.",
    "lemmas": [
     "look up"
    ],
    "accepts": [
-    "I look up every new word in a dictionary"
+    "I look up every new word in a dictionary, but I forget it by the evening"
    ]
   },
   {
-   "en": "Can you pick up the children at four?",
-   "cz": "Můžeš vyzvednout děti ve čtyři?",
+   "en": "Can you pick up the children at four because my meeting finishes late?",
+   "cz": "Můžeš ve čtyři vyzvednout děti, protože mi schůzka končí pozdě?",
    "lemmas": [
     "pick up"
    ],
    "accepts": [
-    "Can you pick up the children at four?"
+    "Can you pick up the children at four because my meeting finishes late?"
    ]
   },
   {
-   "en": "The doctor told me to cut down on coffee.",
-   "cz": "Doktor mi řekl, ať omezím kávu.",
+   "en": "The doctor told me to cut down on coffee, but I drink more than before.",
+   "cz": "Doktor mi řekl, ať omezím kávu, ale piju jí víc než dřív.",
    "lemmas": [
     "cut down"
    ],
    "accepts": [
-    "The doctor told me to cut down on coffee"
+    "The doctor told me to cut down on coffee, but I drink more than before"
    ]
   },
   {
@@ -807,24 +805,23 @@
    ]
   },
   {
-   "en": "They give away free coffee on Monday morning.",
-   "cz": "V pondělí ráno rozdávají kávu zdarma.",
+   "en": "They give away free coffee on Monday morning although the shop is always empty.",
+   "cz": "V pondělí ráno rozdávají kávu zdarma, i když je obchod vždycky prázdný.",
    "lemmas": [
     "give away"
    ],
    "accepts": [
-    "They give away free coffee on Monday morning"
+    "They give away free coffee on Monday morning although the shop is always empty"
    ]
   },
   {
-   "en": "I will pay back the money at the end of the month.",
-   "cz": "Peníze vrátím na konci měsíce.",
+   "en": "I will pay back the money at the end of the month because I get paid then.",
+   "cz": "Peníze vrátím na konci měsíce, protože tehdy dostanu výplatu.",
    "lemmas": [
     "pay back"
    ],
    "accepts": [
-    "I will pay back the money at the end of the month",
-    "I'll pay back the money at the end of the month"
+    "I will pay back the money at the end of the month because I get paid then"
    ]
   },
   {
@@ -838,25 +835,23 @@
    ]
   },
   {
-   "en": "My brother will fix up the old bike for my son.",
-   "cz": "Bratr spraví to staré kolo pro mého syna.",
+   "en": "My brother will fix up the old bike which my son wants for his birthday.",
+   "cz": "Můj bratr spraví to staré kolo, které chce syn k narozeninám.",
    "lemmas": [
     "fix up"
    ],
    "accepts": [
-    "My brother will fix up the old bike for my son",
-    "My brother'll fix up the old bike for my son"
+    "My brother will fix up the old bike which my son wants for his birthday"
    ]
   },
   {
-   "en": "Hold on a minute; I will find the number.",
-   "cz": "Počkej chvilku, najdu to číslo.",
+   "en": "Hold on a minute because I cannot find the number.",
+   "cz": "Vydrž chvilku, protože nemůžu najít to číslo.",
    "lemmas": [
     "hold on"
    ],
    "accepts": [
-    "Hold on a minute; I will find the number",
-    "Hold on a minute; I'll find the number"
+    "Hold on a minute because I cannot find the number"
    ]
   }
  ],
