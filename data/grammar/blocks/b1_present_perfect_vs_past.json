@@ -21,7 +21,7 @@
  "tree_node": "b1_present_perfect_vs_past",
  "codex_unit": "G_VP-B1B2-01",
  "practice": "frames",
- "note": "Tense CHOICE · Type: lemma in gap · Use: scrambled use_cues bag (content words) · full sentence · 2026-08-06 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=workable_draft); auto-authored bank superseded. · 2026-09-04 B1 loop repair: B11/A11 lemma cue on every gap · B3 authored chips on all 66 items (own error = aux + past form) · D1 per-item explanations · A8 twins closed · A9 on lost keys / broken phone / Where have you been · F3 client→doctor, emails→letter/tickets, noon→twelve · A4 Czech demonstratives on 17 items · C4/C11 two `then / after that` items added, slash-lists unbolded.",
+ "note": "Tense CHOICE · Type: lemma in gap · Use: scrambled use_cues bag (content words) · full sentence · 2026-08-06 · RUE2 TRANSPLANT 2026-08-25: blocks+intro restored from rue2-grok-v1.0 (James-smoked, quality=workable_draft); auto-authored bank superseded. · 2026-09-04 B1 loop repair: B11/A11 lemma cue on every gap · B3 authored chips on all 66 items (own error = aux + past form) · D1 per-item explanations · A8 twins closed · A9 on lost keys / broken phone / Where have you been · F3 client→doctor, emails→letter/tickets, noon→twelve · A4 Czech demonstratives on 17 items · C4/C11 two `then / after that` items added, slash-lists unbolded. · 2026-09-05 B1 loop (intro only — A9 was re-scanned and is clean: all 66 main items whose answer is a present perfect carry a Czech marker): C14 card 0 had no title at all, on the first unit of the B1 path — it is now the unit name in both languages. C18/duplication: 'Why it matters' was a slogan and every line on it was the *then* rule, which card 4 then repeated as its own first point; card 3 is now 'then / after that' with the narrative sequence in a table, and card 4 is only unfinished time, with a table that asks whether the time is closed. C32: Common mistakes marked its errors with a ✗ column header and no strike — the rows are `~~struck~~` now, under Wrong / Right. C20: the Quick check card was three gapped sentences with their answers printed beside them — the drill on an intro card, in an unlabelled table. Cut, 8 -> 7 cards. The 11 A4 candidates stand: *the station*, *the doctor*, *the gym*, *take the train*, *leave the office* are all known referents where English forces the article and no Czech demonstrative fits.",
  "default_direction": "en_gap",
  "check": {
   "sequence": [
@@ -1960,6 +1960,8 @@
  "intro": {
   "cards": [
    {
+    "title": "Present perfect vs past simple",
+    "title_cz": "Předpřítomný čas vs minulý čas",
     "diagram": "pp_vs_past",
     "labels": [
      "Past simple",
@@ -2037,17 +2039,37 @@
     }
    },
    {
-    "title": "Why it matters",
+    "title": "then / after that",
+    "title_cz": "pak / potom",
     "diagram": "time_now",
     "labels": [
      "Then I moved",
      "a finished step",
      "closed"
     ],
+    "table": {
+     "headers": [
+      "Story step",
+      "Tense"
+     ],
+     "rows": [
+      [
+       "I moved to Prague in 2012.",
+       "past simple"
+      ],
+      [
+       "**Then** I started a new job.",
+       "past simple"
+      ],
+      [
+       "**After that** we moved again.",
+       "past simple"
+      ]
+     ]
+    },
     "points": [
-     "Listeners hear **then** as a finished step → past simple",
-     "Present perfect with **then** often sounds wrong",
-     "*Then I **have moved*** → *Then I **moved***"
+     "A step in a story is a finished time, even with no date.",
+     "*then* and *after that* never take the present perfect."
     ]
    },
    {
@@ -2060,9 +2082,29 @@
      "span"
     ],
     "points": [
-     "If the story says **then** / **after that**, use past simple.",
-     "**for** / **since** with a situation that continues → present perfect."
-    ]
+     "**for** and **since** with a situation that continues.",
+     "The time is still running, so the tense reaches now."
+    ],
+    "table": {
+     "headers": [
+      "Time phrase",
+      "Is the time closed?"
+     ],
+     "rows": [
+      [
+       "for twelve years",
+       "no — still running"
+      ],
+      [
+       "since 2015",
+       "no — still running"
+      ],
+      [
+       "in 2015",
+       "yes — closed"
+      ]
+     ]
+    }
    },
    {
     "title": "Signal words",
@@ -2097,47 +2139,25 @@
     ],
     "table": {
      "headers": [
-      "✗",
-      "✓"
+      "Wrong",
+      "Right"
      ],
      "rows": [
       [
-       "Then I have moved.",
+       "~~Then I have moved.~~",
        "Then I **moved**."
       ],
       [
-       "I have seen him yesterday.",
+       "~~I have seen him yesterday.~~",
        "I **saw** him yesterday."
       ],
       [
-       "I lived here since 2015.",
+       "~~I lived here since 2015.~~",
        "I **have lived** here since 2015."
       ]
      ]
-    }
-   },
-   {
-    "title": "Quick check",
-    "table": {
-     "headers": [
-      "",
-      ""
-     ],
-     "rows": [
-      [
-       "I ___ (move) to Prague in 2012.",
-       "**moved**"
-      ],
-      [
-       "I ___ (live) here for twelve years. (still here)",
-       "**have lived**"
-      ],
-      [
-       "Then I ___ (start) a new job.",
-       "**started**"
-      ]
-     ]
-    }
+    },
+    "title_cz": "Časté chyby"
    }
   ]
  }
